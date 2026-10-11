@@ -1,0 +1,152 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1001.2933v4",
+ "source_sha256": "b02636c86d593c02",
+ "brief": "Analytic Continuation Of Chern-Simons Theory — The title of this article refers to analytic continuation of three-dimensional Chern\u0002Simons gauge theory away from integer values of the usual coupling",
+ "extended": "**Analytic Continuation Of Chern-Simons Theory**\n\n*Edward Witten*\n\n126 pp, 26 sections.\n\n**Abstract.** The title of this article refers to analytic continuation of three-dimensional Chern\u0002Simons gauge theory away from integer values of the usual coupling parameter k, to explore questions such as the volume conjecture, or analytic continuation of three\u0002dimensional quantum gravity (to the extent that it can be described by gauge theory) from Lorentzian to Euclidean signature. Such analytic continuation can be carried out by generalizing the usual integration cycle of the Feynman path integral. Morse theory or Picard-Lefschetz theory gives a natural framework for describing the appropriate integration cycles. An important part of the analysis involves flow equations that turn out to have a surprising four-dimensional symmetry. After developing a general framework, we describe some specific examples (involving the trefoil and figure-eight knots in S 3 ).\n\n**Outline.** Front matter (title, abstract, contents); 1 Introduction; 2 Overview; 2.1 Finite-Dimensional Analogs; 2.2 Role Of Morse Theory; 2.3 Stokes Phenomena; 2.4 Singularities Of The Analytically Continue; 2.5 Analytic Continuation For Compact Gauge Gr; 2.6 Comparing Compact And Complex Lie Groups; 2.7 Other Real Forms; 3 Finite-Dimensional Oscillatory Integrals, Mo; 3.1 The Airy Function; 3.2 Generalization To Dimension n; 3.3 Symmetries; 3.4 Singularities; 3.5 Analytic Continuation In k: A Prototype; 4 Application To Chern-Simons Theory; 4.1 The Flow Equation For Chern-Simons\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: ). Instead of simply setting ǫ = 0, we can consider the limit n → ∞, ǫ → 0 with",
+ "tokens": {
+  "brief": 49,
+  "extended": 424
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter (title, abstract, contents)",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-001-2-overview",
+   "title": "Overview",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-002-2-1-finite-dimensional-analogs",
+   "title": "Finite-Dimensional Analogs",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-003-2-2-role-of-morse-theory",
+   "title": "Role Of Morse Theory",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-004-2-3-stokes-phenomena",
+   "title": "Stokes Phenomena",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-005-2-4-singularities-of-the-analytically-contin",
+   "title": "Singularities Of The Analytically Continued Theory",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-006-2-5-analytic-continuation-for-compact-gauge",
+   "title": "Analytic Continuation For Compact Gauge Groups",
+   "pages": "12-17"
+  },
+  {
+   "id": "sec-007-2-6-comparing-compact-and-complex-lie-groups",
+   "title": "Comparing Compact And Complex Lie Groups",
+   "pages": "17-20"
+  },
+  {
+   "id": "sec-008-2-7-other-real-forms",
+   "title": "Other Real Forms",
+   "pages": "20-23"
+  },
+  {
+   "id": "sec-009-3-finite-dimensional-oscillatory-integrals-m",
+   "title": "Finite-Dimensional Oscillatory Integrals, Morse Theory, And Steepest De\u0002scent",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-010-3-1-the-airy-function",
+   "title": "The Airy Function",
+   "pages": "23-34"
+  },
+  {
+   "id": "sec-011-3-2-generalization-to-dimension-n",
+   "title": "Generalization To Dimension n",
+   "pages": "34-41"
+  },
+  {
+   "id": "sec-012-3-3-symmetries",
+   "title": "Symmetries",
+   "pages": "41-48"
+  },
+  {
+   "id": "sec-013-3-4-singularities",
+   "title": "Singularities",
+   "pages": "48-55"
+  },
+  {
+   "id": "sec-014-3-5-analytic-continuation-in-k-a-prototype",
+   "title": "Analytic Continuation In k: A Prototype",
+   "pages": "55-62"
+  },
+  {
+   "id": "sec-015-4-application-to-chern-simons-theory",
+   "title": "Application To Chern-Simons Theory",
+   "pages": "62-63"
+  },
+  {
+   "id": "sec-016-4-1-the-flow-equation-for-chern-simons",
+   "title": "The Flow Equation For Chern-Simons",
+   "pages": "63-71"
+  },
+  {
+   "id": "sec-017-4-2-knots-and-morse-theory",
+   "title": "Knots And Morse Theory",
+   "pages": "71-85"
+  },
+  {
+   "id": "sec-018-5-analytic-continuation-of-the-colored-jones",
+   "title": "Analytic Continuation Of The Colored Jones Polynomial",
+   "pages": "85-86"
+  },
+  {
+   "id": "sec-019-5-1-preliminaries",
+   "title": "Preliminaries",
+   "pages": "86-94"
+  },
+  {
+   "id": "sec-020-5-2-the-trefoil-knot",
+   "title": "The Trefoil Knot",
+   "pages": "94-108"
+  },
+  {
+   "id": "sec-021-5-3-the-figure-eight-knot",
+   "title": "The Figure-Eight Knot",
+   "pages": "108-121"
+  },
+  {
+   "id": "sec-022-6-four-or-five-dimensional-interpretation",
+   "title": "Four Or Five-Dimensional Interpretation",
+   "pages": "121-122"
+  },
+  {
+   "id": "sec-023-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "122-122"
+  },
+  {
+   "id": "sec-024-references",
+   "title": "References",
+   "pages": "122-126"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

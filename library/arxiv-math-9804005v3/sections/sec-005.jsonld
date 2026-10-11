@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9804005v3/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The existence of an Auslander rigid dualizing complex is transferre d to related",
+  "pageStart": 4,
+  "pageEnd": 6,
+  "contains": [
+    "library/arxiv-math-9804005v3/blocks/prose-sec-005",
+    "library/arxiv-math-9804005v3/blocks/example-sec-005-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9804005v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9804005v3/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -8,141 +8,90 @@ pages: 9-10
 source_pdf: 2103.07383v1.pdf
 source_sha256: 9dca35ea16490ad8
 doc_brief: "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case — We prove the analyticity of smooth critical points for generalized integral Menger cur- vature"
+text_source: latex
+latex_prose_ratio: 0.937
+latex_coverage_ratio: 0.867
 ---
-In this subsection we are concerned with an alternative representation of the remainder term
-R(p) and its derivatives. Let us ﬁrst recall the following result.
-Lemma 4.1 (Regularity of the remainder integrand, [BR15, Lemma 4.4]).
-Letγ∈W (3p−4)/2+σ,2(R/Z, Rn) be a simple curve parametrized by arc-length.
-• If σ= 0, thengp∈L1(R/Z×D, Rn) and
-• if σ >0, then ((v,w )↦→gp(·,v,w ;...))∈L1(D,W ˜σ,1(R/Z, Rn)) for any ˜σ <σ.
-The respective norms are bounded independently ofs1,...,sK.
-We then derive a representation of the remainder termR(p) corresponding to theL2-repre-
-sentation of the main termQ(p) in the ﬁrst variation ofintM(p,2). Recall that⊗denotes any kind
-of bilinear product structure, such as cross product, dot product, scalar or matrix multiplication.
-Lemma 4.2. Letγ∈C∞(R/Z, Rn) be parametrized by arc-length and leth∈W
-3
-2p−2,2(R/Z, Rn).
-Then,
-R(p)(γ,h) =
-
-R/Z
-⟨
-⟨R(p)(γ)(u),h (u)
-⟩
-du
-with
-⟨R(p)(γ)o(u) :=
-kmax∑
-k=1
-
-D
-
-···
-
-[0,1]K
-d
-dugp
-k(u−sK−1v−sKw,v,w ;s1,...,sK−2) dθ1···dθK dv dw⊗eo.
-Here,eo∈Rn is theo-th canonical unit vector, eachgp
-k is of the same form asgp in Lemma 2.1
-and neitherK nor kmax depend onγ. Furthermore,u↦→gp
-k(u,v,w ;s1,...,sK)∈C∞(R/Z, Rn)
-for allk∈{1,...,k max}.
-Proof. Sinceγ∈C∞(R/Z, Rn), Lemma 4.1 yields that the integrand is in fact integrable on the
-integration domain, allowing us to substituteu by ˜u :=u +sK−1v +sKw. We also obtain that
-u↦→gp(u,v,w ;s1,...,sK)∈C∞(R/Z, Rn) and note that⊗is a bilinear operation. Thus we
-may use integration by parts component-wise to obtain that (5) is equal to
-
-R/Z×D
-
-···
-
-[0,1]K
-( d
-d˜ugp(˜u−sK−1v−sKw,v,w ;s1,...,sK−2))⊗h(˜u) dθ1···dθK dv dw d˜u.
-Note that we have no boundary terms because bothh andgp are periodic. Using the bilinearity
-of⊗, we may write⟨R(p) as 
-R/Z
-R
-(p)
-(γ)(u)⊗h(u) du
-9
-with
-R
-(p)
-(γ)(u) :=
-kmax∑
-k=1
-
-D
-
-···
-
-[0,1]K
-d
-dugp
-k(u−sK−1v−sKw,v,w ;s1,...,sK−2) dθ1···dθK dv dw.
-Seeing asx↦→R
-(p)
-(γ)(u)⊗x∈R is linear, we may set
-⟨R(p)(γ)o(u) :=R
-(p)
-(γ)(u)⊗eo
-and obtain forx =∑n
-o=1xoeo∈Rn:
-R
-(p)
-(γ)(u)⊗x =
-n∑
-o=1
-xo·R
-(p)
-(γ)(u)⊗eo =
-n∑
-o=1
-xo·⟨R(p)(γ)o(u) =
-⟨
-⟨R(p)(γ)(u),x
-⟩
-.
-The l-th derivative of the remainder representation⟨R(p) can be computed as follows.
-Lemma 4.3. Letγ∈C∞(R/Z, Rn) be parametrized by arc-length. Then,
-dl
-dul
-⟨R(p)(γ)o(u)
-=
-kmax∑
-k=1
-
-D
-
-···
-
-[0,1]K
-dl+1
-dul+1gp
-k(u−sK−1v−sKw,v,w ;s1,...,sK−2) dθ1···dθK dv dw⊗eo
-for alll∈N.
-Note that we do not need the assumption of arc-length parametrization here, as⟨R(p) is well-
-deﬁned without it. However, for other parametrizations, we do not expect⟨R(p)(γ) to be related
-to R(p)(γ,·).
-Proof. Since X ↦→X⊗eo is a ﬁxed linear map, dl
-dul (X(u)⊗eo) = ( dl
-dul∂lX(u))⊗eo, so
-we only need to worry about the integral term. By Lemma 4.1,((v,w )↦→gp
-k(·,v,w ;...))∈
-L1(D,W ˜σ,1(R/Z, Rn)) for all ˜σ >0 and its norm is independent ofs1,...,sK. This means that
-gp
-k is diﬀerentiable with respect tou arbitrarily many times and the derivatives are all integrable
-with the majorant
-‖∂l+1
-1 gp
-k(·,v,w ;s1,...,sK)‖L∞.
-By the Morrey- (see e.g. [AF03, Paragraph 4.16]) and Sobolev-embedding theorems, we can
-bound this above by
-C‖∂l+1
-1 gp
-k(·,v,w ;s1,...,sK)‖W 1,2≤⟨C‖gp
-k(·,v,w ;s1,...,sK)‖W l+ 5
-2 ,1.
-As we have a uniformL1-bound on the latter, we may exchange integration and diﬀerentiation.
+In this subsection we are concerned with an alternative representation of the remainder term $R^{(p)}$ and its derivatives.
+Let us first recall the following result.
+
+\begin{lemma}[Regularity of the remainder integrand, \protecting{\cite[Lemma 4.4]{BlattReiter:2015:Menger}}]
+    \label{lemma:regularityIntegrandRemainder}\ \\
+    Let $\g\in W^{(3p-4)/2+\s,2}(\R/\Z,\R^n)$ be a simple curve parametrized by arc-length.
+    \begin{itemize}
+        \item If $\s=0$, then $\gp\in L^{1}(\R/\Z\times D,\R^{n})$ and
+        \item if $\s>0$, then $((v,w) \mapsto \gp(\cdot,v,w;\dots))\in L^{1}(D,\W[\tilde\s,1](\R/\Z, \R^{n}))$ for any $\tilde\s<\s$.
+    \end{itemize}
+    The respective norms are bounded independently of $s_{1},\dots,s_{K}$.
+\end{lemma}
+
+We then derive a representation of the remainder term $R^{(p)}$ corresponding to the $L^2$-re\-pre\-sen\-ta\-tion of the main term $Q^{(p)}$ in the first variation of $\Mpz$. Recall that  $\otimes$ denotes any kind of bilinear product structure, such as cross product, dot product, scalar or matrix multiplication.
+
+\begin{lemma}
+    \label{lemma:L2formRemainder}
+    Let $\gamma \in C^\infty(\R/\Z,\R^n)$ be parametrized by arc-length and let $h \in W^{\frac 3 2 p -2,2}(\R/\Z,\R^n)$. 
+    Then,
+    \[
+        R^{(p)}(\gamma,h)=\int_{\R/\Z} \left<\Rpt(\gamma)(u), h(u)\right>  \d u
+    \]
+    with
+    \[	
+        \Rpt(\gamma)_o(u) := \sum_{k=1}^{k_{\max}} \iint_{D} \idotsint\limits_{[0,1]^K} \frac \d {\d u} g^p_k(u - s_{K-1}v - s_K w,v,w;s_{1},\dots,s_{K-2}) \d\theta_{1}\cdots\d\theta_{K}\d v \d w \otimes e_o.
+    \]
+    Here, $e_o \in \R^n$ is the $o$-th canonical unit vector, each $g^p_k$ is of the same form as $g^p$ in \thref{lemma:formRemainder} and neither $K$ nor $k_{\max}$ depend on $\gamma$.
+    Furthermore, $u \mapsto g^p_k(u,v,w;s_1,\ldots,s_K) \in C^\infty(\R/\Z,\R^n)$ for all $k \in \set{1,\ldots,k_{\max}}$.
+\end{lemma}
+\begin{proof}
+	Since $\gamma \in C^\infty(\R/\Z,\R^n)$, \thref{lemma:regularityIntegrandRemainder} yields that the integrand is in fact integrable on the integration domain, allowing us to substitute $u$ by $\tilde u := u +s_{K-1}v + s_K w$.
+	We also obtain that $u \mapsto g^p(u,v,w;s_1,\ldots,s_K) \in C^\infty(\R/\Z,\R^n)$ and note that $\otimes$ is a bilinear operation. Thus we may use integration by parts component-wise to obtain that \eqref{lemma:formRemainder:formula} is equal to
+	\[
+	\iiint\limits_{\mathbb R / \mathbb Z \times D} \idotsint\limits_{[0,1]^K} (\tfrac \d {\d \tilde u} g^p(\tilde u - s_{K-1}v - s_K w,v,w;s_{1},\dots,s_{K-2}) ) \otimes h(\tilde u)
+	\d\theta_{1}\cdots\d\theta_{K}\d v \d w \d \tilde u.
+	\]
+	Note that we have no boundary terms because both $h$ and $g^p$ are periodic.
+	Using the bilinearity of $\otimes$, we may write \Rpt{} as
+    \[
+        \int_{\R/\Z} \overline{R}^{(p)}(\gamma)(u) \otimes h(u) \d u 
+    \]
+    with
+    \[
+        \overline{R}^{(p)}(\gamma)(u) := \sum_{k=1}^{k_{\max}} \iint_{D} \idotsint\limits_{[0,1]^K} \frac \d {\d u} g^p_k(u - s_{K-1}v - s_K w,v,w;s_{1},\dots,s_{K-2}) \d\theta_{1}\cdots\d\theta_{K}\d v \d w.
+    \]
+    Seeing as $x \mapsto \overline{R}^{(p)}(\gamma)(u) \otimes x \in \R$ is linear, we may set
+    \[
+        \Rpt(\gamma)_o(u) := \overline{R}^{(p)}(\gamma)(u) \otimes e_o
+    \]
+    and obtain for $x = \sum_{o=1}^n x_oe_o \in \R^n$:
+    \[
+        \overline{R}^{(p)}(\gamma)(u) \otimes x = \sum_{o=1}^n x_o \cdot \overline{R}^{(p)}(\gamma)(u) \otimes e_o = \sum_{o=1}^n x_o \cdot \Rpt(\gamma)_o(u) = \left<\Rpt(\gamma)(u),x\right>.
+    \]
+\end{proof}
+
+The $l$-th derivative of the remainder representation \Rpt{} can be computed as follows.
+\begin{lemma}
+    Let $\gamma \in C^\infty(\R/\Z,\R^n)$ be parametrized by arc-length.
+    Then, 
+    \[
+        \begin{split}
+            &\frac {\d^l} {\d u^l} \Rpt(\gamma)_o(u)\\
+            =& \sum_{k=1}^{k_{\max}} \iint_{D} \idotsint\limits_{[0,1]^K} \frac {\d^{l+1}} {\d u^{l+1}} g^p_k(u - s_{K-1}v - s_K w,v,w;s_{1},\dots,s_{K-2}) \d\theta_{1}\cdots\d\theta_{K}\d v \d w\otimes e_o
+        \end{split}
+    \]
+    for all $l \in \N$.
+\end{lemma}
+Note that we do not need the assumption of arc-length parametrization here, as $\Rpt$ is well-defined without it.
+However, for other parametrizations, we do not expect $\Rpt(\gamma)$ to be related to $R^{(p)}(\gamma,\cdot)$.
+\begin{proof}
+    Since $X \mapsto X \otimes e_o$ is a fixed linear map, $\frac {\d^l} {\d u^l} (X(u) \otimes e_o) = ( \frac {\d^l} {\d u^l} \partial^l X(u)) \otimes e_o$, so we only need to worry about the integral term.
+    By \thref{lemma:regularityIntegrandRemainder}, $((v,w) \mapsto \gp_k(\cdot,v,w;\dots))\in L^{1}(D,W^{\tilde \sigma,1}(\R/\Z, \R^{n}))$ for all $\tilde\sigma>0$ and its norm is independent of $s_1, \ldots, s_K$.
+    This means that $g^p_k$ is differentiable with respect to $u$ arbitrarily many times and the derivatives are all integrable with the majorant
+    \[
+        \norm[L^\infty]{\partial_1^{l+1} g^p_k(\cdot,v,w;s_1,\ldots,s_K)}.
+    \]
+    By the Morrey- (see e.g.\ \cite[Paragraph~4.16]{AdamsFournier:2003:SobolevSpaces}) and Sobolev-embedding theorems, we can bound this above by
+    \[
+        C\norm[W^{1,2}]{\partial_1^{l+1} g^p_k(\cdot,v,w;s_1,\ldots,s_K)}
+        \le \widetilde C \norm[W^{l + \frac 5 2,1}]{g^p_k(\cdot,v,w;s_1,\ldots,s_K)}.
+    \]
+    As we have a uniform $L^1$-bound on the latter, we may exchange integration and differentiation.
+\end{proof}

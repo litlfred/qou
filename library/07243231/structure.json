@@ -6,45 +6,163 @@
   "sha256": "e3880af88c7d91a3d9428218f028f5381ccfd5208b957d165102359851c3f6cb",
   "bytes": 274387,
   "pages": 5,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:17Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Elias, Ben ; Makisumi, Shotaro ; Thiel, Ulrich ; Williamson, Geordie Introduction to Soergel bimodules. (English) \u0001Zbl 07243231 RSME Springer Series 5. Cham: Springer (ISBN 978-3-030-48825-3/hbk; 978-3-030-48828-4/pbk; 978-3-",
+  "title": "Elias, Ben; Makisumi, Shotaro; Thiel, Ulrich; Williamson, Geordie",
   "authors_raw": null,
   "title_lines": [
-   "Elias, Ben ; Makisumi, Shotaro ; Thiel, Ulrich ; Williamson, Geordie",
-   "Introduction to Soergel bimodules. (English)",
-   "\u0001Zbl 07243231",
-   "RSME Springer Series 5. Cham: Springer (ISBN 978-3-030-48825-3/hbk; 978-3-030-48828-4/pbk; 978-3-"
+   "Elias, Ben; Makisumi, Shotaro; Thiel, Ulrich; Williamson, Geordie"
   ],
   "abstract": null,
   "docinfo": {
-   "Creator": "LaTeX with hyperref",
    "Producer": "XeTeX 0.99999",
+   "Creator": "LaTeX with hyperref",
    "CreationDate": "D:20230120011143+01'00'"
+  },
+  "title_raw": "Elias, Ben; Makisumi, Shotaro; Thiel, Ulrich; Williamson, Geordie",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Elias, Ben ; Makisumi, Shotaro ; Thiel, Ulrich ; Williamson, Geordie Introduction to Soergel bimodules. (English) Zbl 07243231 RSME Springer Series 5. Cham: Springer (ISBN 978-3-030-48825-3/hbk; 978-3-030-48828-4/pbk; 978-3- 030-48826-0/ebook). xxv, 588 p. (2020) The theory of Soergel bimodules bega",
+   "text": "Elias, Ben; Makisumi, Shotaro; Thiel, Ulrich; Williamson, Geordie",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [],
  "toc_source": "none",
+ "toc_undetermined_reason": null,
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted: one section per page.",
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-document",
+   "id": "page-001",
    "number": null,
-   "title": "Document",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
+   "page_end": 1,
+   "n_chars": 4641,
+   "n_words": 719,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 4029,
+   "n_words": 597,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 4400,
+   "n_words": 664,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 4750,
+   "n_words": 707,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
    "page_end": 5,
-   "n_chars": 18827,
-   "n_words": 2875
+   "n_chars": 953,
+   "n_words": 138,
+   "label_start": "5",
+   "label_end": "5"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 0,
-  "sections": 1,
-  "chars_total": 18827
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 18773
  }
 }

@@ -8,65 +8,23 @@ pages: 19-20
 source_pdf: 1608.07308v1.pdf
 source_sha256: bcc3b6f1a91a55c6
 doc_brief: "FLAG HILBERT SCHEMES, COLORED PROJECTORS AND KHOV ANOV-ROZANSKY HOMOLOGY — We construct a categoriﬁcation of the maximal commutative subalgebra of the type A Hecke algebra."
+text_source: latex
+latex_prose_ratio: 0.955
+latex_coverage_ratio: 0.871
 ---
-Hn = C(q)⟨σ1,...,σ n−1⟩
-modulo relations:
-(3.1)
-(
-σi−q
-1
-2
-)(
-σi +q− 1
-2
-)
-= 0 ∀i∈{ 1,...,n − 1}
-(3.2) σiσi+1σi =σi+1σiσi+1 ∀i∈{ 1,...,n − 2}
-(3.3) σiσj =σjσi ∀|i−j|> 1.
-The algebra Hn is a q-deformation of the group algebra of the symmetric group C[Sn]. The
-irreducible representations Vλ ofHn at generic parameter q are labeled by partitions of n, or,
-equivalently, by Young diagrams of size n. The multiplicity of Vλ in the regular representa-
-tion is equal to its dimension, which is itself equal to the number of standard Young tableaux
-(henceforth abbreviated SYT) of shape λ. Therefore, the regular representation of Hn splits
-into a direct sum of irreducible representations labeled by standard tableaux. For each such
-20 EUGENE GORSKY, ANDREI NEGUT , , AND JACOB RASMUSSEN
-tableauT , let PT denote the projector onto the irreducible summand in Hn labeled by T . By
-construction, these projectors have the following properties:
-(3.4) PTPT′ =δT
-T′PT,
-∑
-T
-PT = 1.
-The projectors PT can be written very explicitly in terms of the generators σi, see [4, 33] for
-details. They satisfy the following branching rule:
-(3.5) i(PT ) =
-∑
-□
-PT +□,
-wherei :Hn→Hn+1 is the natural inclusion and the summation in the right hand side is over
-all possible SYT obtained fromT by adding a single box labeled byn + 1.
-The renormalized Markov traceχ :Hn→ C(a,q ) satisﬁes the relations:
-(3.6) χ(σσ′) =χ(σ′σ), χ (i(σ)) =χ(σ)· 1−a
-q
-1
-2−q− 1
-2
-, χ (i(σ)σn) =χ(σ).
-There is a natural pairing ⟨·,·⟩ : Hn×Hn→ C(a,q ) given by⟨σ,τ⟩ = χ(στ†), where σ†
-is the “Hermitian conjugate” of σ (this is the C-antilinear map determined by the relations
-q† = q−1, σ†
-i = σ−1
-i , and (στ )† = τ†σ†). With respect to this pairing, the adjoint of the
-inclusioni :Hn→Hn+1 is the partial Markov trace:
-Tr :Hn+1→Hn⊗ C[a].
-It follows easily from the deﬁnitions that for allσ∈Hn, we haveχ(σ) = Trn(σ).
-The Markov trace of a projectorPT only depends on the underlying Young diagramλ of the
-SYTT , and is equal to theλ-colored HOMFLY-PT polynomial of the unknot. Speciﬁcally, we
-have the following result:
-Proposition 3.1. (e.g. [3]) The Markov trace ofPT equals:
-Trn(PT ) =
-∏
-□∈λ
-1−aqc(□)
-1−qh(□) ,
-wherec(□) andh(□) respectively denote the content and the hook length of a square□ inλ.
+Recall that the Hecke algebra of type $A_n$ has $n-1$ generators: $$H_n = \mathbb{C}(q) \langle \sigma_1,...,\sigma_{n-1} \rangle$$ modulo relations: $$\label{eqn:hecke1}
+\left(\sigma_i-q^{\frac 12} \right)\left(\sigma_i+q^{-\frac 12} \right) = 0 \ \qquad \ \forall \ i\in \{1,\ldots,n-1\}$$ $$\label{eqn:hecke2}
+\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1} \qquad \forall \ i\in \{1,\ldots,n-2\}$$ $$\label{eqn:hecke3}
+\sigma_i\sigma_j = \sigma_j\sigma_i \qquad \quad \ \ \forall \ |i-j|>1.$$ The algebra $H_n$ is a $q$-deformation of the group algebra of the symmetric group $\mathbb{C}[S_n]$. The irreducible representations $V_{\lambda}$ of $H_n$ at generic parameter $q$ are labeled by partitions of $n$, or, equivalently, by Young diagrams of size $n$. The multiplicity of $V_{\lambda}$ in the regular representation is equal to its dimension, which is itself equal to the number of standard Young tableaux (henceforth abbreviated SYT) of shape $\lambda$. Therefore, the regular representation of $H_n$ splits into a direct sum of irreducible representations labeled by standard tableaux. For each such tableau $T$, let $P_T$ denote the projector onto the irreducible summand in $H_n$ labeled by $T$. By construction, these projectors have the following properties: $$\label{proj}
+P_T P_{T'} = \delta_{T'}^T P_T, \qquad \sum_{T}P_{T}=1.$$ The projectors $P_T$ can be written very explicitly in terms of the generators $\sigma_i$, see [@AiMor; @gyoja] for details. They satisfy the following **branching rule**: $$\label{branching}
+i(P_T)=\sum_{\square}P_{T+\square},$$ where $i:H_n\to H_{n+1}$ is the natural inclusion and the summation in the right hand side is over all possible SYT obtained from $T$ by adding a single box labeled by $n+1$.
+
+The renormalized **Markov trace** $\chi: H_n \to \mathbb{C}(a,q)$ satisfies the relations: $$\chi(\sigma \sigma ') = \chi(\sigma'  \sigma), \qquad
+\chi(i(\sigma)) = \chi(\sigma) \cdot \frac{1-a}{q^{\frac 12}-q^{-\frac 12}}, \qquad
+\chi(i(\sigma) \sigma_n) = \chi(\sigma).$$ There is a natural pairing $\langle  \cdot, \cdot \rangle:  H_n \times H_n \to \mathbb{C}(a,q)$ given by $\langle \sigma, \tau \rangle = \chi(\sigma \tau ^\dagger)$, where $\sigma^\dagger$ is the "Hermitian conjugate" of $\sigma$ (this is the $\mathbb{C}$-antilinear map determined by the relations $q^\dagger = q^{-1}$, $\sigma_i^\dagger = \sigma _i^{-1}$, and $(\sigma \tau )^\dagger = \tau^\dagger \sigma ^\dagger$). With respect to this pairing, the adjoint of the inclusion $i: H_n \to H_{n+1}$ is the **partial Markov trace**: $$\mathop{\mathrm{Tr}}: H_{n+1} \to H_n \otimes \mathbb{C}[a].$$ It follows easily from the definitions that for all $\sigma \in H_n$, we have $\chi(\sigma) = \mathop{\mathrm{Tr}}^n(\sigma).$
+
+The Markov trace of a projector $P_T$ only depends on the underlying Young diagram $\lambda$ of the SYT $T$, and is equal to the $\lambda$-colored HOMFLY-PT polynomial of the unknot. Specifically, we have the following result:
+
+::: proposition
+(e.g. [@Ai]) The Markov trace of $P_T$ equals: $$\mathop{\mathrm{Tr}}^n(P_T)=\prod_{\square\in \lambda}\frac{1-aq^{c(\square)}}{1-q^{h(\square)}},$$ where $c(\square)$ and $h(\square)$ respectively denote the content and the hook length of a square $\square$ in $\lambda$.
+:::

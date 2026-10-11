@@ -1,0 +1,315 @@
+\newenvironment{abst}{%
+\vspace{2ex}\begin{center}\begin{minipage}{12.5cm}%
+\setlength{\baselineskip}{.85\baselineskip}%
+\begin{small}{\sc Abstract}:\ }%
+{\end{small}\end{minipage}\end{center}}
+
+\renewcommand{\thefootnote}{(\arabic{footnote})}
+
+\newcommand{\Am}{A_{\rm mot}}
+\newcommand{\PSm}{\boldsymbol{\matheur{PSm}}}
+\newcommand{\Hdr}{\mathrm{H}_{\mathrm{dR}}}
+\newcommand{\Hb}{\mathrm{H}_{\mathrm{B}}}
+\newcommand{\Het}{\mathrm{H}_{\mathrm{\acute{e}t}}}
+\newcommand{\Hcrys}{\mathrm{H}_{\mathrm{crys}}}
+\newcommand{\fiberb}{\omega_{\mathrm{B}}}
+\newcommand{\fiberd}{\omega_{\mathrm{dR}}}
+\newcommand{\fibere}{\omega_{\mathrm{et}}}
+\newcommand{\fiberc}{\omega_{\mathrm{crys}}}
+\newcommand{\Rad}{\mathcal{R}\mathrm{ad}}
+\newcommand{\Sh}{\mathcal{S}h}
+\newcommand{\MT}{\mathrm{MT}}
+\newcommand{\Hod}{\mathrm{Hod}}
+\newcommand{\getsfrom}{\ensuremath{\gets\kern-.45em\lower-.1ex\hbox%
+{$\shortmid\,$}}}
+\newcommand{\bigzero}{\smash{\hbox{\large 0}}}
+\newcommand{\Bigzero}{\smash{\hbox{\Large 0}}}
+\newcommand{\hugezero}{\smash{\hbox{\huge 0}}}
+\newcommand{\defeq}{\overset{\rm{def}}{=}}
+\newcommand{\ovl}[1]{\overline{#1}}
+\newcommand{\udl}[1]{\underline{#1}}
+\newcommand{\til}[1]{\widetilde{#1}}% tilde
+\newcommand{\ud}{\underline}
+\newcommand{\FRAC}[2]{\leavevmode\kern-.1em%
+\raise.5ex\hbox{\the\scriptfont0 #1}\kern-.1em%
+/\kern-.15em\lower.25ex\hbox{\the\scriptfont0 #2}}
+\newcommand{\one}{{\bf 1}}
+\newcommand{\bp}{{\lower -0.4ex \hbox{\bf{.}}}}
+\newcommand{\bbp}{{\lower -0.4ex \hbox{\huge\bf{.}}}}
+\newcommand{\bD}{\boldsymbol{D}}
+\newcommand{\bcD}{\boldsymbol{\mathcal{D}}}
+%\newcommand{\bD}{D}
+%\newcommand{\bcD}{\mathcal{D}}
+\newcommand{\D}{\mathbf{D}}
+
+\newcommand{\Alt}{\mathop{\mathrm{Alt}}\nolimits}
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits}
+\newcommand{\bAut}{\mathop{\boldsymbol{\mathrm{Aut}}}\nolimits}
+\newcommand{\BIEXT}{\mathop{\mathrm{BIEXT}}\nolimits}
+\newcommand{\Biext}{\mathop{\mathrm{Biext}}\nolimits}
+\newcommand{\Bdr}{\mathop{B_{\mathrm{dR}}}\nolimits}
+\newcommand{\Ch}{\mathop{\mathrm{Ch}}\nolimits}
+\newcommand{\CH}{\mathop{\mathrm{CH}}\nolimits}
+\newcommand{\ch}{\mathop{\mathrm{char}}\nolimits}
+\newcommand{\Cl}{\mathop{\mathrm{Cl}}\nolimits}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
+\newcommand{\Cok}{\mathop{\mathrm{Cok}}\nolimits}
+\newcommand{\CoLie}{\mathop{\mathrm{CoLie}}\nolimits}
+\newcommand{\Cov}{\mathop{\mathrm{Cov}}\nolimits}
+\newcommand{\diarg}{\mathop{\mathrm{diarg}}\nolimits}
+\newcommand{\Div}{\mathop{\mathrm{Div}}\nolimits}
+\newcommand{\Def}{\mathop{\mathrm{Def}}\nolimits}
+\newcommand{\Der}{\mathop{\mathrm{Der}}\nolimits}
+%\newcommand{\det}{\mathop{\mathrm{det}}\nolimits}
+%\newcommand{\dim}{\mathop{\mathrm{dim}}\nolimits}
+\newcommand{\dlog}{\mathop{\mathrm{dlog}}\nolimits}
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits}
+\newcommand{\iend}{\mathop{\mathcal{E}nd}\nolimits}
+\newcommand{\Ind}{\mathop{\mathrm{Ind}}\nolimits}
+\newcommand{\Ext}{\mathop{\mathrm{Ext}}\nolimits}
+\newcommand{\ext}{\mathop{\mathcal{E}xt}\nolimits}
+\newcommand{\Fil}{\mathop{\mathrm{Fil}}\nolimits}
+\newcommand{\Frac}{\mathop{\mathrm{Frac}}\nolimits}
+\newcommand{\Gal}{\mathop{\mathrm{Gal}}\nolimits}
+\newcommand{\fil}{\mathop{\mathrm{fil}}\nolimits}
+\newcommand{\Gr}{\mathop{\mathrm{Gr}}\nolimits}
+\newcommand{\Grass}{\mathop{\mathrm{Grass}}\nolimits}
+\newcommand{\gr}{\mathop{\mathrm{gr}}\nolimits}
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits}
+\renewcommand{\hom}{\mathop{\mathcal{H}om}\nolimits}
+\newcommand{\Id}{\mathop{\mathrm{Id}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\inv}{\mathop{\mathrm{inv}}\nolimits}
+\newcommand{\Isom}{\mathop{\mathrm{Isom}}\nolimits}
+\newcommand{\Jac}{\mathop{\mathrm{Jac}}\nolimits}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\length}{\mathop{\mathrm{length}}\nolimits}
+\newcommand{\Lie}{\mathop{\mathrm{Lie}}\nolimits}
+\newcommand{\LOG}{\mathop{\mathrm{LOG}}\nolimits}
+\newcommand{\Log}{\mathop{\mathrm{Log}}\nolimits}
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits}
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits}
+\newcommand{\mymod}[1]{\ensuremath{\;\mathrm{mod}\;#1}}
+\newcommand{\Nil}{\mathop{\mathrm{Nil}}\nolimits}
+\newcommand{\Norm}{\mathop{\mathrm{Norm}}\nolimits}
+\newcommand{\Nr}{\mathop{\mathrm{Nr}}\nolimits}
+\newcommand{\Ob}{\mathop{\mathrm{Obj}}\nolimits}
+\newcommand{\Obj}{\mathop{\mathrm{Obj}}\nolimits}
+\newcommand{\ord}{\mathop{\mathrm{ord}}\nolimits}
+\newcommand{\Pic}{\mathop{\mathrm{Pic}}\nolimits}
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits}
+\newcommand{\Proj}{\mathop{\mathrm{Proj}}\nolimits}
+\newcommand{\qisog}{\mathop{\mathrm{qisog}}\nolimits}
+\newcommand{\rank}{\mathop{\mathrm{rank}}\nolimits}
+\newcommand{\rk}{\mathop{\mathrm{rk}}\nolimits}
+\newcommand{\reg}{\mathop{\mathrm{reg}}\nolimits}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+\newcommand{\Rep}{\mathop{\mathrm{Rep}}\nolimits}
+\newcommand{\Res}{\mathop{\mathrm{Res}}\nolimits}
+\newcommand{\res}{\mathop{\mathrm{res}}\nolimits}
+\newcommand{\Set}{\mathop{\mathrm{Set}}\nolimits}
+\newcommand{\Sets}{\mathop{\mathrm{Sets}}\nolimits}
+%\newcommand{\Sp}{\mathop{\mathrm{Sp}}\nolimits}
+%\renewcommand{\Sp}{\mathop{\mathrm{Sp}}\nolimits}
+\renewcommand{\sp}{\mathop{\mathrm{sp}}\nolimits}
+\newcommand{\Spec}{\mathop{\mathrm{Spec}}\nolimits}
+\newcommand{\Spa}{\mathop{\mathrm{Spa}}\nolimits}
+\newcommand{\Spf}{\mathop{\mathrm{Spf}}\nolimits}
+\newcommand{\Spm}{\mathop{\mathrm{Spm}}\nolimits}
+\newcommand{\Stab}{\mathop{\mathrm{Stab}}\nolimits}
+\newcommand{\Supp}{\mathop{\mathrm{Supp}}\nolimits}
+\newcommand{\Sym}{\mathop{\mathrm{Sym}}\nolimits}
+\newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
+\newcommand{\Tr}{\mathop{\mathrm{Tr}}\nolimits}
+\newcommand{\tr}{\mathop{\mathrm{tr}}\nolimits}
+\newcommand{\trdeg}{\mathop{\mathrm{tr.deg}}\nolimits}
+
+\newcommand{\Dash}{\normalfont\bfseries\textendash}
+
+\def\dfrac{\displaystyle\frac}
+\def\A{\mathbb{A}}
+\def\C{\mathbb{C}}
+\def\E{\mathbb{E}}
+\def\F{\mathbb{F}}
+\def\G{\mathbb{G}}
+\def\H{\mathbb{H}}
+\def\N{\mathbb{N}}
+\def\P{\mathbb{P}}
+\def\Q{\mathbb{Q}}
+\def\Qp{\mathbb{Q}_p}
+\def\R{\mathbb{R}}
+\def\Z{\mathbb{Z}}
+\def\Cp{\mathbb{C}_p}
+\def\bnorm#1{\|#1\|}
+\def\norm#1{|#1|}
+\def\supnorm#1{\|#1\|_{\mathrm{sp}}}
+\def\gaussnorm#1{\|#1\|_{\mathrm{Gauss}}}
+\def\Ac{\hat\mathbb{A}}
+\def\AA{\mathcal{A}}
+\def\BB{\mathcal{B}}
+\def\CC{\mathcal{C}}
+\def\DD{\mathcal{D}}
+\def\EE{\mathcal{E}}
+\def\FF{\mathcal{F}}
+\def\GG{\mathcal{G}}
+\def\HH{\mathcal{H}}
+\def\KK{\mathcal{K}}
+\def\LL{\mathcal{L}}
+\def\MM{\mathcal{M}}
+\def\OO{\mathcal{O}}
+\def\PP{\mathcal{P}}
+\def\QQ{\mathcal{Q}}
+\def\RR{\mathcal{R}}
+\def\SS{\mathcal{S}}
+\def\TT{\mathcal{T}}
+\def\UU{\mathcal{U}}
+\def\VV{\mathcal{V}}
+\def\WW{\mathcal{W}}
+\def\XX{\mathcal{X}}
+\def\YY{\mathcal{Y}}
+\def\AAA{\mathfrak{A}}
+\def\BBB{\mathfrak{B}}
+\def\EEE{\mathfrak{E}}
+\def\FFF{\mathfrak{F}}
+\def\RRR{\mathfrak{R}}
+\def\SSS{\mathfrak{S}}
+\def\XXX{\mathfrak{X}}
+\def\m{\mathfrak{m}}
+\def\p{\mathfrak{p}}
+\def\q{\mathfrak{q}}
+%\newcommand{\liminj}{\setbox1=\hbox{\oalign{\vadjust{\vskip -2pt}%
+%  \rm lim\cr \vadjust{\vskip -2pt}
+%    \hidewidth$-\mkern -12mu\rightarrow$\hidewidth\cr}}
+%      \mathop{\box1}}
+%\newcommand{\limproj}{\setbox1=\hbox{\oalign{\vadjust{\vskip -2pt}%
+%  \rm lim\cr \vadjust{\vskip -2pt}
+%    \hidewidth$\leftarrow\mkern -12mu-$\hidewidth\cr}}
+%      \mathop{\box1}}
+%\newcommand{\liminj}{\operatornamewithlimits{\varinjlim}}
+%\newcommand{\limproj}{\operatornamewithlimits{\varprojlim}}
+\newcommand{\liminj}{\varinjlim}
+\newcommand{\limproj}{\varprojlim}
+\newcommand{\an}[1]{\langle#1\rangle}
+\newcommand{\lan}[1]{\bigl\langle#1\bigr\rangle}
+\newcommand{\Lan}[1]{\Bigl\langle#1\Bigr\rangle}
+\font\euex=euex10
+\def\vint{\mathop{\vcenter{\hbox{\euex\char'132}}}\nolimits}
+\def\vsmallint{\mathop{\vcenter{\hbox{\euex\char'122}}}\nolimits}
+\newcommand{\ie}{{\it i.e. }}
+\newcommand{\cf}{{\it cf. }}
+\newcommand{\resp}{{\it resp. }}
+\newcommand{\eg}{{\it e.g. }}
+\newcommand{\loccit}{{\it loc.~cit. }}
+
+\numberwithin{equation}{section}
+\theoremstyle{plain}
+\newtheorem{thm}{\bf Theorem}[subsection]
+\newtheorem{pro}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{klem}[thm]{Key lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{coj}[thm]{Conjecture}
+\newtheorem{var}[thm]{Variant}
+\newtheorem{dream}[thm]{Dream}
+\newtheorem{clm}[thm]{Claim}
+\newtheorem{que}[thm]{Question}
+\newtheorem{prb}[thm]{Problem}
+
+\theoremstyle{definition}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{lemdef}[thm]{Lemma--definition}
+%\newtheorem{ax}[thm]{Axiom}
+\newtheorem{cex}[thm]{Counter-example}
+\newtheorem{con}[thm]{Construction}
+\newtheorem{ntn}[thm]{Notation}
+\newtheorem{ter}[thm]{Terminology}
+\newtheorem{tes}[thm]{Terminologies}
+\newtheorem{fac}[thm]{Fact}
+\newtheorem{clu}[thm]{Conclusion}
+\newtheorem{para}[thm]{\bf\hspace{-.34em}}
+
+\theoremstyle{remark}
+\newtheorem{exa}[thm]{Example}
+\newtheorem{exs}[thm]{Examples}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{rems}[thm]{Remarks}
+
+\newcommand{\thmref}[1]{Theorem~\ref{#1}}
+\newcommand{\conjref}[1]{Conjecture~\ref{#1}}
+\newcommand{\corref}[1]{Corollary~\ref{#1}}
+\newcommand{\defref}[1]{Definition~\ref{#1}}
+\newcommand{\chapref}[1]{Chapter~\ref{#1}}
+\newcommand{\appref}[1]{Appendix~\ref{#1}}
+\newcommand{\secref}[1]{\S~\ref{#1}}
+\newcommand{\subsecref}[1]{\S\S\ref{#1}}
+%\newcommand{\secref}[1]{\ref{#1}}
+%\newcommand{\subsecref}[1]{\ref{#1}}
+\newcommand{\lemref}[1]{Lemma~\ref{#1}}
+\newcommand{\remref}[1]{Remark~\ref{#1}}
+%\newcommand{\examref}[1]{Example~\ref{#1}}
+\newcommand{\examref}[1]{\ref{#1}}
+\newcommand{\propref}[1]{Proposition~\ref{#1}}
+\newcommand\upin{\setlength{\unitlength}{1pt}
+                      \begin{picture}(6,0)(0,2)
+		       \bezier{30}(0,4)(0,0)(3,0)
+		       \bezier{30}(0,4)(0,4.5)(0,5)
+		       \bezier{30}(6,4)(6,0)(3,0)
+		       \bezier{30}(6,4)(6,4.5)(6,5)
+		       \bezier{20}(3,0)(3,3)(3,5)
+                      \end{picture}}
+%
+% For appendix
+%
+\newtheorem{appthm}{\bf Theorem}[section]
+\newtheorem{apppro}[appthm]{Proposition}
+\newtheorem{applem}[appthm]{Lemma}
+\newtheorem{appcor}[appthm]{Corollary}
+\newtheorem{appcoj}[appthm]{Conjecture}
+\newtheorem{appvar}[appthm]{Variant}
+\newtheorem{appdream}[appthm]{Dream}
+\newtheorem{appclm}[appthm]{Claim}
+
+\theoremstyle{definition}
+\newtheorem{appdfn}[appthm]{Definition}
+\newtheorem{applemdef}[appthm]{Lemma--definition}
+%\newtheorem{ax}[appthm]{Axiom}
+\newtheorem{appexa}[appthm]{Example}
+\newtheorem{appexs}[appthm]{Examples}
+\newtheorem{appcon}[appthm]{Construction}
+\newtheorem{appntn}[appthm]{Notation}
+\newtheorem{appter}[appthm]{Terminology}
+\newtheorem{apptes}[appthm]{Terminologies}
+\newtheorem{appfac}[appthm]{Fact}
+\newtheorem{appclu}[appthm]{Conclusion}
+\newtheorem{apppara}[appthm]{\bf\hspace{-.34em}}
+\newtheorem{appprb}[appthm]{Problem}
+
+\theoremstyle{remark}
+\newtheorem{apprem}[appthm]{Remark}
+
+\hyphenation{mor-phism}
+\hyphenation{mor-phisms}
+\hyphenation{homo-mor-phism}
+\hyphenation{homo-mor-phisms}
+\hyphenation{homeo-mor-phism}
+\hyphenation{auto-mor-phism}
+\hyphenation{auto-mor-phisms}
+\hyphenation{iso-mor-phism}
+\hyphenation{iso-mor-phisms}
+\hyphenation{de-gen-er-ate}
+\hyphenation{semi-stable}
+\hyphenation{struc-tures}
+\hyphenation{ar-gu-ments}
+\hyphenation{oth-er-wise}
+\hyphenation{im-mer-sion}
+\hyphenation{ad-mis-si-ble}
+\hyphenation{be-long-ing}
+\hyphenation{ho-mo-ge-ne-ous}
+\hyphenation{rep-re-sent-ablity}
+\hyphenation{e-quiv-a-lent}
+\hyphenation{con-struc-tion}
+\hyphenation{straight-for-ward}
+\hyphenation{rep-re-sent-a-ble}
+\hyphenation{quasi-iso-gen-ies}
+\hyphenation{iso-gen-ies}

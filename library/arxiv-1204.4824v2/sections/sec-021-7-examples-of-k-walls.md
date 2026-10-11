@@ -8,5 +8,8 @@ pages: 42-42
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
 doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
+text_source: latex
+latex_prose_ratio: 0.8
+latex_coverage_ratio: 1.0
 ---
-In this section we illustrate the general discussion of §6 with some examples.
+In this section we illustrate the general discussion of \S\ref{sec:varying-theta} with some examples.

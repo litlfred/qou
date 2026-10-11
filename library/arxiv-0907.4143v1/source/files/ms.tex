@@ -1,0 +1,910 @@
+\documentclass{elsart}
+\usepackage{ifpdf}
+\usepackage{graphicx,natbib,amssymb,lineno}
+\ifpdf
+\usepackage[%
+  pdftitle={Soft and Supersoft X-ray Sources in Symbiotic Stars},%
+  pdfauthor={Chunhua Zhu},%
+  pdfsubject={The preprint document class elsart},%
+  pdfkeywords={X-ray sources, Symbiotic stars},%
+  pdfstartview=FitH,%
+  bookmarks=true,%
+  bookmarksopen=true,%
+  breaklinks=true,%
+  colorlinks=true,%
+  linkcolor=blue,anchorcolor=blue,%
+  citecolor=blue,filecolor=blue,%
+  menucolor=blue,pagecolor=blue,%
+  urlcolor=blue]{hyperref}
+\else
+\usepackage[%
+  breaklinks=true,%
+  colorlinks=true,%
+  linkcolor=blue,anchorcolor=blue,%
+  citecolor=blue,filecolor=blue,%
+  menucolor=blue,pagecolor=blue,%
+  urlcolor=blue]{hyperref}
+\fi
+
+\renewcommand\floatpagefraction{.2}
+\makeatletter
+\def\elsartstyle{%
+    \def\normalsize{\@setfontsize\normalsize\@xiipt{14.5}}
+    \def\small{\@setfontsize\small\@xipt{13.6}}
+    \let\footnotesize=\small
+    \def\large{\@setfontsize\large\@xivpt{18}}
+    \def\Large{\@setfontsize\Large\@xviipt{22}}
+    \skip\@mpfootins = 18\p@ \@plus 2\p@
+    \normalsize
+}
+\@ifundefined{square}{}{\let\Box\square}
+\makeatother
+
+\def\file#1{\texttt{#1}}
+
+\pagestyle{plain}
+\begin{document}
+
+\begin{frontmatter}
+\title{Soft and Supersoft X-ray Sources in Symbiotic Stars$^{1}$}
+
+\author{Chunhua Zhu$^{a,b}$,}
+\author{Guoliang L\"{u}$^{b}$,}
+\author{Zhaojun Wang$^{a,b}$ and}
+\author[]{Jun Zhang\corauthref{cor}}{$^{b}$}
+\corauth[cor]{Corresponding author.}
+\address{$^a$School of Science, Xi'an Jiaotong University, Xi'an, 710049,
+China}
+\address{$^b$School of Physics, Xinjiang University, Urumqi, 830046,
+China} \ead{zhuchunhua@xju.edu.cn(Chunhua Zhu), zhj@xju.edu.cn}
+\footnotetext[1]{Supported by the National Science Foundation of
+China (Grant Nos. 10647003 and 10763001).}
+
+\begin{abstract}
+Assuming that soft X-ray sources in symbiotic stars result from
+strong thermonuclear runaways, and supersoft X-ray sources from weak
+thermonuclear runaways or steady hydrogen burning symbiotic stars,
+we investigate the Galactic soft and supersoft X-ray sources in
+symbiotic stars by means of population synthesis. The Galactic
+occurrence rates of soft X-ray sources and supersoft X-ray sources
+are from $\sim$ 2 to 20 $\rm yr^{-1}$, and $\sim$ 2 to 17 $\rm
+yr^{-1}$, respectively. The numbers of X-ray sources in symbiotic
+stars range from 2390 to 6120. We simulate the distribution of X-ray
+sources over orbital periods, masses and mass-accretion rates of
+white dwarfs. The agreement with observations is reasonable.
+\end{abstract}
+
+\begin{keyword}
+ binaries: symbiotic; Stars: fundamental parameters; X-rays:
+ binaries
+\PACS classification codes: 97.10.-q; 97.30.Qt; 97.80.Gm
+\end{keyword}
+\end{frontmatter}
+
+\section{Introduction}
+\label{intro} Symbiotic stars (SySs) are usually interacting
+binaries, composed of a cool star, a hot component and a nebula. The
+cool component is a red giant which is a first giant branch (FGB) or
+an asymptotic giant branch (AGB) star. The hot component is a white
+dwarf (WD), a subdwarf, an accreting low-mass main-sequence star, or
+a neutron star \citep{kw84,mur91}. The peculiar optical spectrum of
+SySs is a very important and interesting phenomenon, and offers some
+exciting observational facts \citep{k86,ms99,b00,m03}. \citet{mur97}
+showed that the majority of the known galactic SySs are detectable
+X-ray sources. According to ROSAT observations of SySs, \cite{mur97}
+divided X-ray sources into three distinct classes: $\alpha$-type
+X-ray sources in which the photon energies are below 0.4 keV;
+$\beta$-type X-ray sources in which the photon energies are roughly
+between 0.1 and 10 keV and the peak at about 0.8 keV; and
+$\gamma$-type relatively hard X-ray sources like GX 1+4. Following
+\cite{v92}, \cite{yun96} and \cite{mur97}, we call $\alpha$-type
+X-ray sources as super-soft X-ray sources (SSSs), $\beta$-type X-ray
+sources as soft X-sources (SSs)\citep{mur97}. Due to hard X-ray
+sources resulting from accreting neutron stars
+\citep{v92,mur97,o07}, we do not discuss them in the present paper.
+
+
+In general, SSSs result from the steady hydrogen burning on
+accreting WD in binary systems. While for SSs, it was widely
+believed that they are arisen from the colliding winds from the
+giant and WD \citep{l95,mur97}. In recent years, many theoretical
+studies on SySs have been published, e.g.
+\citet{yun95,h95a,it96,h02,lu06,lu07,lu08}. However, there are few
+detailed theoretical studies about the Galactic population of X-ray
+sources in SySs. \cite{yun96} investigated the Galactic binary SSSs
+with white dwarf accretors by means of a population synthesis. They
+considered that SSSs in SySs result from the steady hydrogen burning
+and thermonuclear runaways, but they did not distinguish SSs from
+SSSs.
+
+In the present paper we model possible formation paths for the
+Galactic population of SSs and SSSs in SySs with white dwarf
+accretors.  In Section 2, we present our assumptions and describe
+some details of the algorithm. In Section 3, we discuss the main
+results. In Section 4, the main conclusions are given.
+
+\section{The model}
+\label{mod} For binary evolution, we use a rapid binary star
+evolution (BSE) code of \cite{h02}. Below we describe our algorithm
+from several aspects.
+\subsection{Symbiotic stars}
+SySs are complex binary systems, and can be divided into two
+subgroups: `ordinary' SySs, which are assumed to burn hydrogen
+steadily; and symbiotic novae, which experience thermonuclear
+runaways in their surface hydrogen layers \citep{ty76,m03}. There
+are many uncertain physical parameters which can affect the
+population of SySs. \citet{lu06} showed that the numbers of SySs and
+the occurrences of symbiotic novae are greatly affected by the
+algorithm of common envelope evolution, the terminal velocity of
+stellar wind $v(\infty)$ and the critical ignition mass $\Delta
+M_{\rm crit}^{\rm WD}$ which is necessary mass accreted by WD for a
+thermonuclear runaway. The structure factor of the stellar wind
+velocity $\alpha_{\rm W}$ and an optically thick wind give a small
+uncertainty. In this work, we use the models of SySs in \citet{lu06}
+and discuss the Galactic population of SSs and SSSs in SySs.\\
+
+Common envelope:\ Following \cite{nt05} and \citet{lu06}, we use two
+algorithms ($\alpha$-algorithm and $\gamma$-algorithm) for common
+envelope evolution. The $\alpha$-algorithm results in much shorter
+binary separation after undergoing common envelope phase than the
+$\gamma$-algorithm. In this work, we take the `combined' parameter
+$\alpha_{\rm ce}\lambda_{\rm ce}$ as 0.5 for $\alpha$-algorithm.
+$\lambda_{\rm ce}$ is a structure parameter that depends on the
+evolutionary stage of the donor. For $\gamma$-algorithm,
+$\gamma=1.75$.
+
+%For the common envelope evolution, it is generally assumed that the
+%orbital energy of the binary is used to expel the
+%envelope of the donor with an efficiency $\alpha_{\rm ce}$. %:
+%\begin{equation}
+% E_{\rm bind}=\alpha_{\rm ce}\Delta E_{\rm orb},
+% \label{eq:alpha}
+%\end{equation}
+%where $E_{\rm bind}$ is the total binding energy of the envelope and
+%$\Delta E_{\rm orb}$ is the orbital energy released in the
+%spiral-in.
+%\citet{n20} suggested to describe the variation of the separation of
+%components in the common envelopes by an algorithm. This algorithm
+%is founded on the equation for the system orbital angular momentum
+%balance which implicitly assumes the conservation of energy.% :
+%\begin{equation}
+%\frac{\Delta J}{J}=\gamma\frac{M_{\rm e}}{M+m}, \label{eq:gamma}
+%\end{equation}
+%where $J$ is the total angular momentum and $\Delta J$ is the change
+%of the total angular momentum during common envelope phase. In the
+%above formula, $M$ and $M_{\rm e}$ are respectively the mass and the
+%envelope mass of the donor, and $m$ is the companion mass.
+%Following \cite{nt05} and \citet{lu06}, we call the former as
+%$\alpha$-algorithm and the latter as $\gamma$-algorithm, which are
+%respectively simulated in different cases (see Table
+%\ref{tab:case}). We take the `combined' parameter $\alpha_{\rm
+%ce}\lambda_{\rm ce}$ as 0.5 for $\alpha$-algorithm. $\lambda_{\rm
+%ce}$ is a structure parameter that depends on the evolutionary stage
+%of the donor.
+%For $\gamma$-algorithm, $\gamma=1.75$. \\
+
+$v({\infty})$:\ It is difficult to determine the terminal velocity
+of stellar wind $v({\infty})$. \cite{lu06} used two completely
+different $v({\infty})$s: \\
+(i)$v(\infty)=\frac{1}{2}v_{\rm esc}$, where $v_{\rm esc}$ is the
+escape velocity. With ascent of star along giant branch, the stellar
+radius becomes larger and larger, which results in the lower
+$v(\infty)$.\\
+(ii)Using the relation between the mass-loss rates and the terminal
+wind velocities fitted by \cite{w03}:
+\begin{equation}
+\log_{10} (\dot{M}/M_\odot{\rm yr}^{-1})=-7.40+\frac{4}{3}\log_{10}
+(v({\infty})/{\rm km \, s^{-1}}). \label{eq:winters}
+\end{equation} With ascent of star along giant branch, the
+mass-loss rate becomes higher and higher, which results in the
+higher $v(\infty)$. However, Eq. (\ref{eq:winters}) is valid for
+$\dot{M}$ close to $ 10^{-6}M_\odot$ yr$^{-1}$. For a mass-loss rate
+higher than $ 10^{-6}M_\odot$ yr$^{-1}$, Eq. (\ref{eq:winters})
+gives too high $v(\infty)$. Based on the models of \citet{win00}, we
+assume $v(\infty)=30 {\rm km\, s^{-1}}$ if $v(\infty)\geq30 {\rm
+km\, s^{-1}}$.
+
+%It is difficult to determine the terminal velocity
+%of stellar wind $v({\infty})$. \cite{w03} fitted the relation
+%between the mass-loss rates and the terminal wind velocities derived
+%from their CO(2-1) observation by
+%\begin{equation}
+%\log_{10} (\dot{M}/M_\odot{\rm yr}^{-1})=-7.40+\frac{4}{3}\log_{10}
+%(v({\infty})/{\rm km \, s^{-1}}). \label{eq:winters}
+%\end{equation} The mass-loss rate is given by the formulation of
+%\cite{vw93} or \cite{b95} and $v(\infty)$ can be obtained by Eq.
+%(\ref{eq:winters}). However, Eq. (\ref{eq:winters}) is valid for
+%$\dot{M}$ close to $ 10^{-6}M_\odot$ yr$^{-1}$. For a mass-loss rate
+%higher than $ 10^{-6}M_\odot$ yr$^{-1}$, Eq. (\ref{eq:winters})
+%gives too high $v(\infty)$. Based on the models of \citet{win00}, we
+%assume $v(\infty)=30 {\rm km\, s^{-1}}$ if $v(\infty)\geq30 {\rm
+%km\, s^{-1}}$. In the standard model of \citet{lu06},
+%$v({\infty})=\frac{1}{2}v_{\rm esc}$ where $v_{\rm esc}$ is the
+%escape velocity. In the present paper, we also carry
+%out various $v(\infty)$s simulations.\\
+
+$\Delta M_{\rm crit}^{\rm WD}$:\ The critical ignition mass of the
+nova depends mainly on the mass of accreting WD, its temperature and
+material accreting rate. Following \cite{lu06}, we use $\Delta
+M_{\rm crit}^{\rm WD}$s by Eq. (A1) of \citet{n04} and Eq. (16) of
+\cite{yun95}. As far as whole populations of SySs are considered,
+the former gives lower $\Delta M_{\rm crit}^{\rm WD}$ than the
+latter \citep{lu06}.
+
+%\citet{yun95} gave the `constant pressure' expression for $\Delta
+%M_{\rm crit}^{\rm WD}$ as
+%\begin{equation}
+%\frac{\Delta M_{{\rm crit}}^{{\rm WD}}}{M_\odot}=2\times
+%10^{-6}\left(\frac{M_{{\rm WD}}}{R^4_{{\rm WD}}}\right)^{-0.8},
+%\label{eq:yunm}
+%\end{equation}
+%where $M_{\rm WD}$ is the mass of WD accretor and $R_{{\rm WD}}$ is
+%the radius of zero-temperature degenerate objects \citep{n72},
+%\begin{equation}
+%R_{{\rm WD}}=0.0112R_\odot[(M_{{\rm WD}}/M_{{\rm
+%ch}})^{-2/3}-(M_{{\rm WD}}/M_{{\rm ch}})^{2/3}]^{1/2},
+%\end{equation}
+%where $M_{{\rm ch}}=1.433M_{\odot}$ and $R_{\odot}=7\times 10^{10}$
+%cm. \citet{n04} gave numerical fits to the critical ignition masses
+%for novae models calculated by \citet{pk95}. In most simulations, we
+%adopt Eq. (\ref{eq:yunm}) for $\Delta M_{\rm crit}^{\rm WD}$.
+%However, in order to investigate the influences of the $\Delta
+%M_{\rm crit}^{\rm WD}$ on our results, we also carry out a
+%simulation for Eq. (A1) of \citet{n04} in which $\Delta M_{\rm
+%crit}^{\rm WD}$ depends on the mass accretion rates and masses of WD
+%accretors.
+
+\begin{table*}
+% \begin{minipage}{170mm}
+  \caption{Parameters of the models for the population of SSs and SSSs in SySs. The first column
+           gives the model number. Columns 2, 3 and 4 show the algorithm of the common envelope,
+           the terminal velocity and the critical ignition mass, respectively.
+           }
+  \tabcolsep4.mm
+  \begin{center}
+  \begin{tabular}{cccc}
+  \hline
+Cases & Common envelope&$v(\infty)$&$\Delta M_{\rm crit}^{\rm WD}$ \\
+Case 1& $\alpha_{\rm ce}\lambda_{\rm ce}=0.5$&$\frac{1}{2}v_{\rm esc}$   &Eq.(A1) in \citet{n04}\\
+Case 2& $\gamma=1.75$                        &$\frac{1}{2}v_{\rm esc}$   &Eq.(A1) in \citet{n04}\\
+Case 3& $\alpha_{\rm ce}\lambda_{\rm ce}=0.5$&Eq.(\ref{eq:winters})      &Eq.(A1) in \citet{n04}\\
+Case 4& $\alpha_{\rm ce}\lambda_{\rm ce}=0.5$&$\frac{1}{2}v_{\rm esc}$   &Eq.(16) in \citet{yun95}\\
+\hline
+ \label{tab:case}
+\end{tabular}
+%\end{minipage}
+\end{center}
+\end{table*}
+
+\subsection{X-ray sources}
+ \cite{v92} explained super-soft X-ray
+emissions by steady nuclear burning of hydrogen accreted onto WD.
+Most of the known SySs are sufficiently bright X-ray sources. As
+mentioned in Introduction, \cite{mur97} divided X-ray sources into
+SSSs, SSs and relatively hard X-ray resources. It is well known that
+the SSSs in SySs are hot WDs whose photospheres can produce
+sufficiently hard ($h\nu\approx0.2$kev) photons. For SSs in SySs,
+\cite{jor94}, \cite{for95} and \cite{mur97} suggested that they
+originate from the collision of two stellar winds. During some
+strong thermonuclear runaways, WD can eject some materials with high
+velocity ($\sim$ 1000 km s$^{-1}$). Cool giant usually has a high
+mass-loss rate with a low velocity (5---30 km s$^{-1}$). Therefore,
+a violent collision of the stellar winds is unavoidable in the
+strong thermonuclear runaways of SySs. An eruption of the recurrent
+nova RS Oph on February 12, 2006 provided the opportunity to perform
+comprehensive X-ray observations. \cite{nel08} showed its X-ray
+spectroscopy from 0.33 to 10 kev. The spectra indicated a
+collisionally dominated plasma with a broad range of temperature and
+an energy-dependent velocity structure.  \cite{sok06} and
+\cite{orl08} suggested that most of the early X-ray emission of the
+2006 outburst of RS Oph originates from the interaction between the
+high-velocity ejecta from WD and the circumstellar medium which
+results mainly from the stellar wind of the cool giant in SyS.
+%\cite{sok06} showed the X-ray spectra (from
+%$\sim$ 2 to 20 kev) from the first 3 weeks of the 2006 outburst of
+%RS Oph.
+%According to the classifications of \cite{mur06}, RS Oph should be a
+%SS.
+
+The high-velocity ejecta is a key factor for producing soft X-ray
+emissions in SySs. According to \citet{yar05}, \cite{lu06} divided
+the thermonuclear runaways in SySs into two varieties: weak
+symbiotic nova in which most of the accreted mater is deposited at
+the surface of the WD accretors; strong symbiotic nova in which WD
+accretors eject the majority of the accreted mater via high velocity
+wind.  We assume SSs in SySs stem from the strong symbiotic novae,
+and the steady hydrogen burning `ordinary' SySs and weak symbiotic
+novae result in SSSs.
+
+The strength of a thermonuclear runaway depends on the mass and the
+mass accretion rate of the WD. Using the results in \cite{yar05},
+\cite{lu06} roughly defined the boundary between strong and weak
+symbiotic nova via the mass accretion rate and the mass of WD. We
+adopt the descriptions in \citet{lu06}. Following \citet{yun96}, we
+take the time which takes the WD to decline by 3 mag in its
+bolometric luminosity, $t_{\rm 3bol}$, as the lifetime of SSSs. For
+SSs which originate from the interaction between the high-velocity
+ejecta from WD and the circumstellar medium, we take the duration of
+mass loss during strong symbiotic nova, $t_{\rm ml}$, as the their
+lifetime. One should note that $t_{\rm 3bol}$ and $t_{\rm ml}$ are
+only a zero-order approximation. By a bilinear interpolation
+\citep{pre92} of Table 3 in \cite{yar05}, $t_{\rm 3bol}$ and $t_{\rm
+ml}$ are calculated from the models in which the temperature of WD
+equals $10\times 10^6$ K. If the mass or the mass accretion rate of
+the WD in SSs are not in the range of the bilinear interpolation,
+they are taken as the most vicinal those.
+
+%\begin{equation}
+%{\rm log} t_{\rm 3bol}\approx \left\{
+%\begin{array}{cc}
+%           2.04-3.92 (M_{\rm WD}-0.65) \ \ \ \ & {\rm for} M_{\rm WD}\leq 1.25M_\odot,\\
+%           -0.31-9.33 (M_{\rm WD}-1.25) \ \ \ \ & {\rm for} M_{\rm
+%           WD}>1.25M_\odot,
+%\end{array}
+%\end{equation}
+%where $M_{\rm WD}$ is in $M_\odot$.
+
+\subsection{Basic parameters of the Monte Carlo simulation}
+We carry out binary population synthesis via Monte Carlo simulation
+technique in order to obtain the properties of SSs and SSSs'
+population in SySs. For the population synthesis of binary stars,
+the main input model parameters are: (i) the initial mass function
+(IMF) of the primaries; (ii) the mass-ratio distribution of the
+binaries; (iii)
+ the distribution of orbital separations; (iv) the eccentricity
+distribution; (v) the metallicity $Z$ of the binary systems.
+
+
+%\begin{equation}
+%\xi(m)dm=\left\{
+%\begin{array}{cc}
+%           0 \ \ \ & m\leq m_0,\\
+%           a_1m^{-1.3}dm \ \ \ \ & m_0<m\leq 0.5,\\
+%           a_2m^{-2.2}dm \ \ \ \ & 0.5<m\leq 1.0,\\
+%           a_2m^{-2.7}dm \ \ \ \ & 1.0<m<\infty,
+%\end{array}
+% \right.
+% \label{eq:tbol}
+%\end{equation}
+%where $\xi(m)dm$ is the probability with which a star has a mass (in
+%solar units) between $m$ and $m+dm$; $m_0=0.1M_\odot$;
+%$a_1=0.29056$; $a_2=0.15571$.
+We take IMF in \cite{ktg93} as the primary mass distribution. The
+lower and the upper mass cut-offs of the primaries are $0.8M_\odot$
+and $8M_\odot$, respectively. For the mass-ratio distribution of
+binary systems, we consider only
+a constant distribution\citep{kr79,m92,gm94}.%,
+%\begin{equation}
+%n(q)=1,~~    0< q \leq 1,
+%\end{equation}
+%where $q$ is mass-ratio of binary system.
+
+
+The distribution of separations is given by
+\begin{equation}
+\log a =5X+1,
+\end{equation}
+where $X$ is a random variable uniformly distributed in the range
+[0,1] and $a$ is in $R_\odot$.
+
+In our work, the metallicity $Z$=0.02 is adopted. We assume that all
+binaries have initially circular orbits, and we follow the evolution
+of both components by BSE code, including the effect of tides on
+binary evolution \citep{h02}.
+
+We assume that one binary with primary mass more massive than 0.8
+$M_\odot$ is formed annually in the Galaxy to calculate the
+birthrate of SSs and SSSs in SySs \citep{yun94,h95a,h95b}.
+
+\section{Results}
+\label{res} We construct a set of models in which we vary different
+input parameters relevant to the population of SSSs and SSs in SySs.
+Table \ref{tab:case} gives all cases considered in this work. Many
+observational evidences showed that the terminal velocity of stellar
+wind $v(\infty)$ increases when a star ascends along the AGB
+\citep{o02,w03,b05}. In this work, we take $v(\infty)$ calculated by
+Eq. (\ref{eq:winters}) as the standard terminal velocity of stellar
+wind.
+
+ We take $1\times10^6$ initial binary systems for each case.
+For every simulation with $1\times10^6$ binaries, the relative
+errors for the symbiotic systems are lower than 1\%. Thus,
+$1\times10^6$ initial binaries appear to be an acceptable sample for
+our study. The main results of our study are given in Table
+\ref{tab:result} and in Figures \ref{fig:numporb} -
+\ref{fig:numdmdt}.
+
+\subsection{Population of X-ray sources}
+%\begin{table*}
+% \begin{minipage}{170mm}
+%  \caption{Different models of the population of SSSs and SSs in
+%  SySs. The first column gives case number according to Table
+%  \ref{tab:case}. Columns 2, 4 and 6 give the numbers of SSs and
+%  SSSs, respectively. Columns 3, 5, and 7 show the occurrence rate of SSs
+%  and SSSs, respectively.
+%           }
+%  \tabcolsep0.3mm
+%  \begin{center}
+%  \label{tab:result}
+%  \begin{tabular*}{200mm}{|c|c|c|c|c|c|c|}
+%\cline{1-7} \multicolumn{1}{|c|}{}&\multicolumn{2}{|c|}{SSs}&
+%\multicolumn{4}{|c|}{SSSs}\\
+%\cline{2-7} \multicolumn{1}{|c|}{Cases}&\multicolumn{2}{|c|}{strong
+%symbiotic novae}&
+%\multicolumn{2}{|c|}{weak symbiotic novae}&\multicolumn{2}{|c|}{`ordinary' SySs}\\
+%\cline{2-7}
+%  & Number&Occurrence&Number&Occurrence &Number&Formation\\
+%  & &rate ($\rm yr^{-1}$)& & rate ($\rm yr^{-1}$)& & rate ($\rm yr^{-1}$)\\
+
+%\cline{1-7}
+%1&2&3&4&5&6&7\\
+%Case 1& 17&2.20&68&1.60&2354&0.02\\
+%Case 2& 47&5.96&255&4.61&5548&0.04\\
+%Case 3& 81&10.50&228&2.40&2247&0.02\\
+%Case 4& 18&4.36&238&5.99&2354&0.02\\
+%\cline{1-7}
+%\end{tabular*}
+%\end{minipage}
+%\end{center}
+%\end{table*}
+
+%\begin{table*}
+% \begin{minipage}{170mm}
+%  \caption{Different models of the population of SSSs and SSs in
+%  SySs. The first column gives case number according to Table
+%  \ref{tab:case}. Columns 2, 3 and 4 give the numbers of SSs which have undergone
+%  channel I, II and III, respectively. Column 5 shows the total number of SSs.
+%  Columns 6, 7, and 8 show the occurrence rate of SSs which have undergone
+%  channel I, II and III, respectively. Column 9 shows the total occurrence rate of SSs.
+%  Columns 10, 11 and 12 give the numbers of SSSs which have undergone
+%  channel I, II and III, respectively. Column 13 shows the total number of SSSs. In these columns,
+%  the numbers in parentheses mean SSSs which originate from weak symbiotic novae.
+%  Columns 14, 15, and 16 show the occurrence rate of SSSs which originate
+%  from weak symbiotic novae and have undergone
+%  channel I, II and III, respectively. Column 17 shows the total occurrence rate of
+%  SSSs which originate from weak symbiotic novae.
+%           }
+%  \tabcolsep0.10mm
+%  \begin{center}
+%  \label{tab:result}
+%  \begin{tabular*}{200mm}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+%\cline{1-17} \multicolumn{1}{|c|}{Cases}&\multicolumn{8}{|c|}{SSs
+%(strong symbiotic novae)}&\multicolumn{8}{|c|}{SSSs
+%(weak symbiotic novae or stable hydrogen burning)}\\
+%\multicolumn{1}{|c|}{}&\multicolumn{8}{|c|}{}&\multicolumn{8}{|c|}{and stable hydrogen burning )}\\
+%\cline{1-17}\multicolumn{1}{|c|}{}&\multicolumn{4}{|c|}{Number}&\multicolumn{4}{|c|}{Occurrent
+%rate($\rm yr^{-1}$)}
+%&\multicolumn{4}{|c|}{Number}&\multicolumn{4}{|c|}{Occurrent rate  ($\rm yr^{-1}$)}\\
+%\multicolumn{1}{|c|}{}&\multicolumn{4}{|c|}{}&\multicolumn{4}{|c|}{}
+%&\multicolumn{4}{|c|}{}&\multicolumn{4}{|c|}{(weak symbiotic novae)}\\
+%\cline{1-17}\multicolumn{1}{|c|}{}&\multicolumn{1}{|c|}{I}&\multicolumn{1}{|c|}{II}&\multicolumn{1}{|c|}{III}&\multicolumn{1}{|c|}{Total}
+%&\multicolumn{1}{|c|}{I}&\multicolumn{1}{|c|}{II}&\multicolumn{1}{|c|}{III}&\multicolumn{1}{|c|}{Total}&
+%\multicolumn{1}{|c|}{I}&\multicolumn{1}{|c|}{II}&\multicolumn{1}{|c|}{III}&\multicolumn{1}{|c|}{Total}
+%&\multicolumn{1}{|c|}{I}&\multicolumn{1}{|c|}{II}&\multicolumn{1}{|c|}{III}&\multicolumn{1}{|c|}{Total}\\
+%\cline{2-17}1&2&3&4&5&6&7&8&9       &10&11&12&13&14&15&16&17\\
+%Case 1&7&8&11&26&0.4&0.7&1.0&2.1    &0(0)&1340(28)&1050(18)&2390(46)&0&0.7&1.0&1.7\\
+%Case 2&46&8&11&65&4.8&0.7&1.0&6.4   &3280(87)&1340(28)&1050(18)&5670(133)&3.2&0.7&1.0&4.9\\
+%Case 3&6&9&133&148&0.2&1.2&8.8&10.2 &0(0)&460(14)&1940(142)&2400(156)&0&0.7&1.7&2.4\\
+%Case 4&8&22&25&55&0.5&1.5&2.1&4.1   &0(0)&1440(124)&1110(83)&2550(207)&0&2.6&3.6&6.2\\
+%\cline{1-17}
+
+%\end{tabular*}
+%\end{minipage}
+%\end{center}
+%\end{table*}
+\begin{table*}
+% \begin{minipage}{170mm}
+  \caption{Different models of the population of SSSs and SSs in
+  SySs. The first column gives case number according to Table
+  \ref{tab:case}. Columns 2, 3 and 4 give the occurrence rate of SSs which have undergone
+  channel I, II and III, respectively. Column 5 shows the total occurrence rate of SSs.
+  Columns 6, 7 and 8 give the numbers of SSSs which have undergone
+  channel I, II and III, respectively. Column 9 shows the total number of SSSs. In these columns,
+  the numbers in parentheses mean SSSs which originate from weak symbiotic novae.
+  Columns 10, 11 and 12 show the occurrence rate of SSSs which originate
+  from weak symbiotic novae and have undergone
+  channel I, II and III, respectively. Column 13 shows the total occurrence rate of
+  SSSs which originate from weak symbiotic novae.
+           }
+  \tabcolsep0.80mm
+  \begin{center}
+  \label{tab:result}
+  \begin{tabular*}{200mm}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\cline{1-13} \multicolumn{1}{|c|}{Cases}&\multicolumn{4}{|c|}{SSs
+}&\multicolumn{8}{|c|}{SSSs
+(weak symbiotic novae or stable hydrogen burning)}\\
+%\multicolumn{1}{|c|}{}&\multicolumn{8}{|c|}{}&\multicolumn{8}{|c|}{and stable hydrogen burning )}\\
+\cline{1-13}\multicolumn{1}{|c|}{}&\multicolumn{4}{|c|}{Occurrence
+rate($\rm yr^{-1}$)}
+&\multicolumn{4}{|c|}{Number}&\multicolumn{4}{|c|}{Occurrence rate  ($\rm yr^{-1}$)}\\
+\multicolumn{1}{|c|}{}&\multicolumn{4}{|c|}{(strong symbiotic
+novae)}
+&\multicolumn{4}{|c|}{}&\multicolumn{4}{|c|}{(weak symbiotic novae)}\\
+\cline{1-13}\multicolumn{1}{|c|}{}
+&\multicolumn{1}{|c|}{I}&\multicolumn{1}{|c|}{II}&\multicolumn{1}{|c|}{III}&\multicolumn{1}{|c|}{Total}&
+\multicolumn{1}{|c|}{I}&\multicolumn{1}{|c|}{II}&\multicolumn{1}{|c|}{III}&\multicolumn{1}{|c|}{Total}
+&\multicolumn{1}{|c|}{I}&\multicolumn{1}{|c|}{II}&\multicolumn{1}{|c|}{III}&\multicolumn{1}{|c|}{Total}\\
+\cline{2-13}1&2&3&4&5&6&7&8&9       &10&11&12&13\\
+Case 1&0.5&1.5&2.1&4   &0(0)&1440(124)&1110(83)&2550(207)&0&2.6&3.6&6\\
+Case 2&9.9&1.5&2.1&14   &3570(380)&1440(124)&1110(82)&6120(596)&10.3&2.6&3.6&17\\
+Case 3&0.2&3.2&16.3&20 &0(0)&530(80)&2340(540)&2870(620)&0&2.9&6.1&8\\
+Case 4&0.4&0.7&1.0&2    &0(0)&1340(28)&1050(18)&2390(46)&0&0.7&1.0&2\\
+\cline{1-13}
+
+\end{tabular*}
+%\end{minipage}
+\end{center}
+\end{table*}
+ According to \cite{yun95} and \cite{lu06}, all progenitors of
+SySs
+pass through one of the three routes:\\
+(i) Channel I: unstable Roche lobe overflow (RLOF) with formation of
+a common
+envelope;\\
+(ii)Channel II: stable RLOF;\\
+(iii)Channel III: formation of a white dwarf+red giant pair without RLOF. \\
+Table \ref{tab:result} gives the results of SSs' and SSSs'
+populations in SySs which have undergone channels I, II or III,
+respectively.
+
+In our model, SSs in SySs result from strong symbiotic novae. As
+Table 2 shows, the Galactic occurrence rate of SSs in SySs is from
+about 2 (case 4) to 20 (case 3) $\rm yr^{-1}$. Channels I, II and
+III can produce SSs. According to \cite{yar05}, the typical duration
+of mass loss ($t_{\rm ml}$) for a strong outburst is about dozens of
+days. Therefore, SSs are transitory X-ray sources. SSSs in SySs
+result from weak symbiotic novae or steady hydrogen burning
+`ordinary' SySs. For SSSs from the former, their number is between
+46 (case 4) and 620 (case 3), and their occurrence rate is from 2
+(case 4) to 17 $\rm yr^{-1}$ (case 2). For SSSs from the latter,
+their formation rate [between 0.01 (cases 1, 3 and 4) and 0.03 (case
+2) $\rm yr^{-1}$] is very low and is not shown in Table
+\ref{tab:result}. However, the lifetime of SSSs from steady hydrogen
+burning is very long, which results in large numbers [ between 2244
+(case 4) and 5537 (case 2)]. Due to $\gamma$-algorithm which gives
+wide binary separation after common envelope evolution, SSSs in case
+2 can be produced by channel I. While, SSSs in other cases do not
+undergo channel I.
+
+As the above descriptions, the input physical parameters (the
+algorithm of the common envelope, terminal velocity of the stellar
+wind $v(\infty)$ and the critical ignition mass $\Delta M_{\rm
+crit}^{\rm WD}$) have great effects on the population of SSs and
+SSSs in SySs. For SSs, $v(\infty)$ is a key factor, and the Galactic
+occurrence rate of SSs in case 3 are about 5 times of those in case
+1. For SSSs from weak symbiotic novae, $\Delta M_{\rm crit}^{\rm
+WD}$ affects their Galactic number and occurrence rate within a
+factor of 4; for SSSs from `ordinary' SySs, the algorithm of the
+common envelope affects their Galactic number and formation rate
+within a factor of 2.4. A detailed analysis for the effects of these
+parameters can be seen in \cite{lu06}.
+
+%\cite{mur97} showed the classification of 16 detected SySs in the
+%Galaxy. According to their Table 3, 4 SySs are SSSs from April 1992
+%to April 1993, and 7 are SSs  from July 1991 to June 1993. We can
+%roughly estimate that the Galactic occurrence rates of SSSs and SSs
+%in SySs are $\sim$ 4.0 and 3.5 yr$^{-1}$, respectively. This is
+%consistent with our results.
+
+According to \cite{lu06}, the Galactic numbers of SySs in the cases
+with the same input physical parameters are 5400 in case 1 and 4300
+in case 4. The number ratios of the X-ray sources including SSs and
+SSSs to SySs are $\sim$ 50\% in case 1 and $\sim$ 60\% in case 4.
+$v(\infty)$ in case 3 is unfavorable for the formation of stable
+hydrogen burning `ordinary' SySs \citep{lu06}, the number ratio is
+about 20\%. \cite{mur97} found that 60\% of the known Galactic SySs
+are sufficiently X-ray bright to be detected. This result is
+agreement with our result. On comparing our results with
+observations, one should note that the number of X-ray sources
+depends greatly on the lifetime of the thermonuclear runaways as
+X-ray sources.
+
+In addition, it is very difficult to detect SSs and SSSs. The main
+reason is that dominant interaction with interstellar matter for
+X-rays between 0.1 keV and 10 keV is photoelectric absorption, and
+the cross section increases rapidly at lower energies, scaling
+approximately as $E^{-3}$ \citep{dm90}. According to \cite{m94},
+SSSs have to be closer than $\sim$ 2 kpc to the Sun in order to be
+detected. This means that only about $\frac{4}{225}$ of SSSs can be
+observed. There are 4 SSSs whose distances from the Sun are shorter
+than 2.6 kpc in \cite{mur97}. Hence, the Galactic number of SSSs in
+SySs is about 200 if 4 SSSs in SySs are a completed sample within
+2.6 kpc from the Sun. However, the orbital motion, the magnetic
+field and the gravitational influence of the companions  in SySs can
+complicate the structure of circumstellar material. The nova ejecta
+and winds from the cool components in SySs act as shielding agents.
+Therefore, 4 SSSs are a uncompleted sample.  A detailed work on
+X-ray spectrum absorptions by circumstellar material and
+interstellar medium is very difficult and beyond the scope of this
+work.
+
+% which is given by Eq.
+%(\ref{eq:tbol}) in our work.
+%It is worth mentioning that interstellar absorption (or intrinsic
+%absorption in most sources), novae ejecta and winds from the cool
+%components will effectively prevent the discovery of Galactic SSSs
+%\citep{dm90,m94,yun96}. \citet{mur97} showed for the Galactic
+%symbiotic stars the ratio of SSSs to SSs is 4:7, i.e. about 0.57.
+%According to our model, the ratios of the occurrence rate of SSSs to
+%that of the SSs may range from 0.23 (case 3) to 1.38 (case 4), which
+%is consistent with the result in \citet{mur97}.
+
+\subsection{Properties of X-ray sources}
+In this subsection, we describe potentially observable physical
+quantities of SSSs and SSs in SySs.
+%\begin{newpage}
+\begin{figure*}
+\begin{tabular}{c@{\hspace{3pc}}c}
+\includegraphics[totalheight=4.5in,width=3.2in,angle=-90]{fig1.ps}\\
+\end{tabular}
+\caption{Number distributions of X-ray sources in the Galactic SySs
+as a function of orbital periods (all numbers are normalized to 1).
+The solid, dashed and dotted lines represent SSs, SSSs from weak
+symbiotic novae and from steady hydrogen burning `ordinary' SySs,
+respectively.
+            }
+\label{fig:numporb}
+\end{figure*}
+%\end{newpage}
+
+Figure \ref{fig:numporb} gives the distributions of X-ray sources in
+the Galactic SySs over orbital periods. As we can see from case 1,
+SSSs have periods between 100 and 100000 days. SSSs from steady
+hydrogen burning `ordinary' SySs and from weak symbiotic novae have
+strong peaks at 7000 days and 11000 days, respectively. While SSs
+have orbital periods from 10 to 1000000 days, with a typical peak at
+36000 days. According to \cite{yun95} and \cite{lu06}, SySs via
+channel I have short orbital periods, while they via channel III
+have long orbital periods. As Table \ref{tab:result} shows, SSs can
+be produced via channels I, II and III, but SSSs can be done via
+channels II and III (except case 2). Therefore, SSs span wider range
+of orbital periods than SSSs.
+%\citet{i03} showed the
+%observed and theoretical properties of 8 symbiotic novae. According
+%to Table 3 of \cite{mur97}, within these 8 symbiotic novae, one is
+%SSS and five are SSs. The orbital periods of five SSs are between
+%800 and 700000 days. Although five symbiotic novae are too small
+%sample for good statistic, we can find that the peak of their
+%orbital periods distribution is about 5000 days. In \cite{m03}, the
+%peak of the orbital periods observed in SySs is about 800 days. The
+%theoretical peak in \cite{lu06} is about 1500 days. Therefore, SSs
+%belong to the long orbital period group in SySs. In other words, SSs
+%have orbital periods longer than SSSs, which is in agreement with
+%our results.
+
+%\begin{newpage}
+\begin{figure*}
+\begin{tabular}{c@{\hspace{3pc}}c}
+\includegraphics[totalheight=4.5in,width=3.2in,angle=-90]{fig2.ps}\\
+\end{tabular}
+\caption{Number distributions of X-ray sources in the Galactic SySs
+as a function of WD mass (all numbers are normalized to 1). The
+solid, dashed and dotted lines represent SSs, SSSs from weak
+symbiotic novae and steady hydrogen burning `ordinary' SySs,
+respectively.
+            }
+\label{fig:nummass}
+\end{figure*}
+%\end{newpage}
+
+Figure \ref{fig:nummass} shows the distributions of numbers  of the
+modeled X-ray sources in SySs each as a function of WD mass. The
+distribution for case 2 is wider than that in other cases. The main
+reason is that $\gamma$ algorithm for common envelope can form SySs
+with low-mass WD accretors \citep{lu06}. For all models, the
+distributions have typical masses in the 0.5-0.8$M_\odot$ range, but
+the peaks of the distributions are different from each type of X-ray
+sources. For example, in case 1, SSs have a peak at about
+0.7$M_\odot$. While, SSSs have a peak at about 0.6$M_\odot$, which
+is in agreement with the results in \citet{yun96}. According to
+\cite{lu06} and \cite{yar05}, massive WD favors to produce strong
+thermonuclear outburst. \cite{m03} gave the distribution of the
+measured masses of the WD in SySs. The peak is at about 0.5
+$M_\odot$ regardless of \cite{m03} estimating low limits
+\citep{lu06}. \citet{i03} showed average mass of WD in symbiotic
+novae systems which are SSs is 0.73$M_\odot$.  It looks likely that
+WD accretors in SSs have masses slightly larger than those in SSSs.
+Our results are compatible with the observations.
+
+\begin{figure*}
+\begin{tabular}{c@{\hspace{3pc}}c}
+\includegraphics[totalheight=4.5in,width=4.0in,angle=-90]{fig3.ps}\\
+\end{tabular}
+\caption{Gray-scale maps of WD's mass vs. orbital
+          period distributions
+            for SSs and SSSs in SySs for case 1. The gradations of gray-scale
+            correspond to the regions where the number density of systems is,
+            respectively,  within 1 -- 1/2,
+            1/2 -- 1/4, 1/4 -- 1/8, 1/8 -- 0 of the maximum of
+             ${{{\partial^2{N}}\over{\partial {\log P}}{\partial {M_{\rm WD}}}}}$,
+             and blank regions do not contain any stars.
+            }
+\label{fig:mp}
+\end{figure*}
+
+Figure \ref{fig:mp} shows the distributions of SSs and SSSs in case
+1, in the `` WD's mass -- orbital period'' plane. The ranges of
+orbital periods and WD's masses in SSs are wider than those in SSSs.
+The main reason is that producing SSSs needs higher mass accretion
+rates and the critical ignition mass $\Delta M_{\rm crit}^{\rm WD}$
+than producing SSs. As the top panel in Figure \ref{fig:mp} shows,
+the distribution in SSs is cut into two regions. The low region
+represents these SSs which have undergone channel I, while the top
+region is for SSs which have undergone channels II and III.
+
+
+
+
+
+
+
+
+%\begin{newpage}
+\begin{figure*}
+\begin{tabular}{c@{\hspace{3pc}}c}
+\includegraphics[totalheight=4.5in,width=3.2in,angle=-90]{fig4.ps}\\
+\end{tabular}
+\caption{Number distributions of X-ray sources in the Galactic SySs
+as a function of the mass accretion rate of WD (all numbers are
+normalized to 1). The solid, dashed and dotted lines represent SSs,
+SSSs from weak symbiotic novae and from steady hydrogen burning
+`ordinary' SySs, respectively.
+            }
+\label{fig:numdmdt}
+\end{figure*}
+%\end{newpage}
+
+The distributions of numbers of X-ray sources in the Galactic SySs
+over the mass accretion rate of WD, $\dot{M}_{\rm acc}$, is given in
+Figure \ref{fig:numdmdt}. According to our model, $\dot{M}_{\rm
+acc}$ determines the strength of the hydrogen burning. For low
+$\dot{M}_{\rm acc}$, the accreting WD experiences the strong
+thermonuclear outburst which results in SSs. For high $\dot{M}_{\rm
+acc}$, the accreting WD can undergo stable hydrogen burning.
+Therefore, the peaks of magnitude of $\dot{M}_{\rm acc}$ in Figure
+\ref{fig:numdmdt} are $10^{-9}$, $10^{-8}$ and $10^{-7}$$M_\odot \rm
+yr^{-1}$ for SSs, SSSs from weak symbiotic novae and from `ordinary'
+SySs, respectively. In \cite{i03}, theoretically estimated
+$\dot{M}_{\rm acc}$ of five SSs is between $10^{-9}$ and $10^{-8}
+M_\odot\rm yr^{-1}$, which is in good agreement with our results.
+
+\section{Conclusions}
+\label{conc}Assuming that SSs in SySs result from the violent
+collisions of the stellar winds during strong symbiotic novae, and
+SSSs from weak symbiotic novae or steady hydrogen burning SySs, we
+investigate the Galactic population of SSs and SSSs in SySs. The
+Galactic occurrence rates of SSs and SSSs are from $\sim$ 2 to 20
+$\rm yr^{-1}$, and $\sim$ 2 to 17 $\rm yr^{-1}$, respectively. The
+numbers of X-ray sources in SySs range from 2390 to 6120. The
+percentage of the X-ray sources in all SySs is between $\sim$ 20\%
+and 60\%, which is in agreement with the observations.
+
+In the present paper we do not model the X-ray spectra emissions of
+SSs and SSSs, and do not consider the interstellar medium's
+absorptions for X-ray spectra. Our work only shows some primary
+results. It is necessary for a detailed model of SSs and SSSs to
+simulate X-ray spectra emissions and interstellar medium's
+absorptions. We will consider them in the next paper.
+
+\begin{thebibliography}{}
+\bibitem[Belczy$\rm \acute{n}$ski et al.(2000)]{b00}
+Belczy$\rm \acute{n}$ski K., Miko{\l}ajewska J., Munari U., Ivison
+R.J., Friedjung M., 2000, A\&AS, 146, 407.
+\bibitem[Bergeat \& Chevallier(2005)]{b05}
+Bergeat J., Chevallier L., 2005, A\&A, 429, 235.
+%\bibitem[Bl\"{o}cker(1995)]{b95}
+%Bl\"{o}cker T., 1995, A\&A, 297, 727.
+%\bibitem[Brecher et al.(1977)]{bim77} Brecher K., Ingham W.H.,
+%Morrison P., 1977, ApJ, 213, 492.
+\bibitem[Formiggini et al.(1995)]{for95}Formiggini L., Contini M.,
+Leibowitz E. M., 1995, MNRAS, 277, 1071.
+\bibitem[Goldberg \& Mazeh(1994)]{gm94}
+Goldberg D., Mazeh T., 1994, A\&A, 282, 801.
+\bibitem[Han et al.(1995a)]{h95a}
+Han Z., Eggleton P.P., Podsiadlowski P., Tout C.A., 1995a, MNRAS,
+277, 1443.
+\bibitem[Han et al.(1995b)]{h95b}
+Han Z., Podsiadlowski P., Eggleton P.P., 1995b, MNRAS, 272, 800.
+\bibitem[Hurley et al.(2002)]{h02}
+Hurley J.R., Tout C.A., Pols R., 2002, MNRAS, 329, 897.
+\bibitem[Iben(2003)]{i03}
+Iben I.Jr., 2003, ASP Conference Series, 303, 177.
+\bibitem[Iben \& Tutukov(1996)]{it96}
+Iben I.Jr., Tutukov A.V., 1996, ApJS, 105, 145.
+\bibitem[Jordan et al.(1994)]{jor94}Jordan S., M\"{u}rset U., Werner
+K., 1994, A\&A, 283, 475.
+%\bibitem[Kenny \& Taylor(2005)]{kt05}
+%Kenny H.T., Taylor A.R., 2005, ApJ, 619, 527.
+\bibitem[Kenyon(1986)]{k86}
+Kenyon S.J., 1986, The Symbiotic Stars, Cambridge, Cambridge
+Univ.Press.
+\bibitem[Kenyon \& Webbink(1984)]{kw84}
+Kenyon S.J., Webbink R.F., 1984, ApJ, 279, 252.
+\bibitem[Kraicheva et al. (1979)]{kr79}Kraicheva Z. T., Popova E.
+I., Tutukov A. V., Yungelson L. R., 1979, Soviet Astronomy, 23, 290.
+\bibitem[Kroupa et al.(1993)]{ktg93}
+Kroupa P., Tout C.A., Gilmore G., 1993, MNRAS, 262, 545.
+\bibitem[Leahy \& Volk(1995)]{l95}
+Leahy D.A., Volk K., 1995, ApJ, 440, 847.
+\bibitem[L\"{u} et al.(2006)]{lu06}
+L\"{u} G.L., Yungelson L., Han Z., 2006, MNRAS, 372,1389.
+\bibitem[L\"{u} et al.(2007)]{lu07}L\"{u} G.L., Zhu C.H., Han Z.,
+2007, Chin. J. Astron. Astrophys., 7, 101.
+\bibitem[L\"{u} et al.(2008)]{lu08}
+L\"{u} G.L., Zhu C.H., Han Z., Wang Z.J., 2008, ApJ, 683, 990.
+\bibitem[Mazeh et al.(1992)]{m92}
+Mazeh T., Goldberg D., Duquennoy A., Mayor M., 1992, ApJ, 401, 265.
+\bibitem[McCammon \& Wilton(1990)]{dm90}
+McCammon D., Sanders W. T., 1990, ARA\&A, 28, 657.
+\bibitem[Miko{\l}ajewska(2003)]{m03}
+Miko{\l}ajewska J., 2003, in Corradi R.L.M., Miko{\l}ajewska J.,
+Mahoney T.J., eds, ASP Conf. Ser. Vol.303, Symbiotic stars probing
+stellar evolution. Astron. Soc. Pac., San Francisco, p.9.
+\bibitem[Motch et al.(1994)]{m94}
+Motch C., Hasinger G., Pietch W., 1994, A\&A, 284, 827.
+\bibitem[M\"{u}rset et al.(1991)]{mur91}
+M\"{u}rset U., Nussbaumer H., Schmid H.M., Vogel M., 1991, A\&A,
+248, 458.
+\bibitem[M\"{u}rset \& Schmid(1999)]{ms99}
+M\"{u}rset U., Schmid H.M., 1999, A\&A, 137, 473.
+\bibitem[M\"{u}rset et al.(1997)]{mur97}
+M\"{u}rset U., Wolff B., Jordan S., 1997, A\&A, 319, 201.
+%\bibitem[Nauenberg(1972)]{n72}
+%Nauenberg M., 1972, ApJ, 175, 417.
+\bibitem[Nelemans \& Tout(2005)]{nt05}
+Nelemans G., Tout C.A., 2005, MNRAS, 356, 753.
+%\bibitem[Nelemans et al.(2000)]{n20}
+%Nelemans G., Verbunt F., Yungelson L.R., Portegies Zwart S.F., 2000,
+%A\&A, 360, 1011.
+\bibitem[Nelson et al.(2004)]{n04}
+Nelson L.A., MacCannell K.A., Dubeau E., 2004, ApJ, 602, 938.
+\bibitem[Nelson et al.(2008)]{nel08}Nelson T., Orio M., Cassinelli
+J. P., Still M., Leibowitz E., Mucciarelli P., 2008, ApJ, 673, 1067.
+\bibitem[Olofsson et al.(2002)]{o02}
+Olofsson H., Gonz\'{a}lez Delgado D., Kerschbaum F., Sch\"{o}ier
+F.L., 2002, A\&A, 391, 1053.
+\bibitem[Orlando et al.(2009)]{orl08}Orlando S., Drake J. J., Laming
+J. M., 2009, A\&A, 493, 1049.
+%\bibitem[Orio et al.(2001)]{ori01}Orio M., Covington J., \"{O}gelman
+%H., 2001, A\&A, 373, 542.
+\bibitem[Orio et al.(2007)]{o07}
+Orio M., Zezas A., Munari U., Siviero A., Tepedelenlioglu E., 2007,
+ApJ, 661, 1105.
+\bibitem[Press et al.
+(1992)]{pre92}Press W. H., Teukolsky S. A., Vetterling W. T.,
+Flannery B. P., 1992, Numerical Recipes In Fortran 77. The Art of
+Scientific Computing Second Edition. Cambridge Univ. Press,
+Combridge.
+%\bibitem[Prialnik \& Kovetz(1995)]{pk95}
+%Prialnik D., Kovetz A., 1995, ApJ, 445, 789.
+%\bibitem[Pringle(1977)]{p77}
+%Pringle J.E., 1977, MNRAS, 178, 195.
+\bibitem[Sokolooski et al.(2006)]{sok06}Sokoloski J. L., Luna G. J.
+M., Mukai K., Kenyon S. J., 2006, Nat., 442, 276.
+\bibitem[Tutukov \& Yungelson (1976)]{ty76}Tutukov A.V.,
+Yungelson L. R., 1976, Astrophysics, 12, 321.
+\bibitem[van den Heuvel et al.(1992)]{v92}
+van den Heuvel E.P.J., Bhattacharya D., Nomoto K., Rappaport S.A.,
+1992, A\&A, 262, 97.
+%\bibitem[Vassiliadis \& Wood(1993)]{vw93}
+%Vassiliadis E., Wood P.R., 1993, ApJ, 413, 641.
+\bibitem[Winters et al.(2000)]{win00}
+Winters J.M., Le Bertre T., Jeong K.S., Helling Ch., Sedlmayr E.,
+2000, A\&A, 361, 641.
+\bibitem[Winters et al.(2003)]{w03}
+Winters J.M., Le Bertre T., Jeong K.S., Nyman L.-\AA., Epchtein N.,
+2003, A\&A, 409, 715.
+\bibitem[Yaron et al.(2005)]{yar05}
+Yaron O., Prialnik D., Shara M.M., Kovetz A., 2005, ApJ, 623, 398.
+\bibitem[Yungelson et al.(1996)]{yun96}
+Yungelson L., Livio M., Truran J.W., Tutukov A., Fedorova A., 1996,
+ApJ, 466, 890.
+\bibitem[Yungelson et al.(1995)]{yun95}
+Yungelson L., Livio M., Tutukov A.V., Kenyon S.J., 1995, ApJ, 447,
+656.
+\bibitem[Yungelson et al.(1994)]{yun94}
+Yungelson L., Livio M., Tutukov A.V., Saffer R.A., 1994, ApJ, 420,
+336.
+\end{thebibliography}
+
+\end{document}

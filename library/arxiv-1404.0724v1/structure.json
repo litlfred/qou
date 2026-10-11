@@ -1,0 +1,312 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1404.0724v1",
+ "source": {
+  "file": "1404.0724v1.pdf",
+  "sha256": "ea40edaad77c1617a4db110a109c1b5f8da4995b41029a9e7fb9f98461b540b4",
+  "bytes": 479220,
+  "pages": 32,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T18:29:17Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1404.0724",
+   "version": "1",
+   "primary_class": "math.AT",
+   "stamp_date": "2 Apr 2014"
+  },
+  "doi": null,
+  "title": "Introduction to representations of braid groups",
+  "authors_raw": "Camilo Arias Abad\u2217",
+  "title_lines": [
+   "Introduction to representations of braid groups"
+  ],
+  "abstract": "These are lecture notes prepared for a minicourse given at the Cimpa Research School Algebraic and geometric aspects of representation theory, held in Curitiba, Brazil in March 2013. The purpose of the course is to provide an introduction to the study of representations of braid groups. Three general classes of representations of braid groups are considered: homological representations via mapping class groups, monodromy representations via the Knizhnik-Zamolodchikov connection, and solutions of the Yang-Baxter equation via braided bialgebras. Some of the remarkable relations between these three di\ufb00erent constructions are described.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.12",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20140404001854Z"
+  },
+  "title_raw": "Introduction to representations of braid groups",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Introduction to representations of braid groups",
+   "outline": "1 Introduction",
+   "text": "Introduction to representations of braid groups",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Braid groups",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Artin's presentation",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Configuration spaces",
+   "page": 4,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Mapping class groups",
+   "page": 4,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Pure braids",
+   "page": 6,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "Homological representations",
+   "page": 7,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The Burau representation",
+   "page": 7,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Homological interpretation",
+   "page": 10,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Braids, knots and the Alexander Conway polynomial",
+   "page": 10,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "The Lawrence-Krammer-Bigelow representation",
+   "page": 13,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 1,
+   "title": "The Knizhnik-Zamolodchikov connection",
+   "page": 15,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Cohomology of configuration spaces and the KZ connection",
+   "page": 16,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Representations of sl2(C) and Lawrence-Krammer-Bigelow",
+   "page": 20,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "The Yang-Baxter equation and the Drinfeld-Kohno theorem",
+   "page": 22,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "The Yang-Baxter equation and quasi-triangular bialgebras",
+   "page": 22,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "The Drinfeld-Kohno theorem",
+   "page": 26,
+   "source": "outline",
+   "number": "5.2"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 8687,
+   "n_words": 1609
+  },
+  {
+   "id": "sec-001-23-mapping-class-groups",
+   "number": "2.3",
+   "title": "Mapping class groups",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 3151,
+   "n_words": 585
+  },
+  {
+   "id": "sec-002-24-pure-braids",
+   "number": "2.4",
+   "title": "Pure braids",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 937,
+   "n_words": 173
+  },
+  {
+   "id": "sec-003-3-homological-representations",
+   "number": "3",
+   "title": "Homological representations",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-31-the-burau-representation",
+   "number": "3.1",
+   "title": "The Burau representation",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 4350,
+   "n_words": 1070
+  },
+  {
+   "id": "sec-005-32-homological-interpretation",
+   "number": "3.2",
+   "title": "Homological interpretation",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1475,
+   "n_words": 297
+  },
+  {
+   "id": "sec-006-33-braids-knots-and-the-alexander-conway-polynom",
+   "number": "3.3",
+   "title": "Braids, knots and the Alexander Conway polynomial",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 4420,
+   "n_words": 741
+  },
+  {
+   "id": "sec-007-34-the-lawrence-krammer-bigelow-representation",
+   "number": "3.4",
+   "title": "The Lawrence-Krammer-Bigelow representation",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 5463,
+   "n_words": 1090
+  },
+  {
+   "id": "sec-008-4-the-knizhnik-zamolodchikov-connection",
+   "number": "4",
+   "title": "The Knizhnik-Zamolodchikov connection",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 20,
+   "n_chars": 8293,
+   "n_words": 1601
+  },
+  {
+   "id": "sec-009-42-representations-of-sl2c-and-lawrence-krammer",
+   "number": "4.2",
+   "title": "Representations of sl2(C) and Lawrence-Krammer-Bigelow",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 3699,
+   "n_words": 736
+  },
+  {
+   "id": "sec-010-5-the-yang-baxter-equation-and-the-drinfeld-kohn",
+   "number": "5",
+   "title": "The Yang-Baxter equation and the Drinfeld-Kohno theorem",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 3,
+   "n_words": 1
+  },
+  {
+   "id": "sec-011-51-the-yang-baxter-equation-and-quasi-triangular",
+   "number": "5.1",
+   "title": "The Yang-Baxter equation and quasi-triangular bialgebras",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 26,
+   "n_chars": 7739,
+   "n_words": 1401
+  },
+  {
+   "id": "sec-012-52-the-drinfeld-kohno-theorem",
+   "number": "5.2",
+   "title": "The Drinfeld-Kohno theorem",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 32,
+   "n_chars": 12671,
+   "n_words": 2222
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 17,
+  "toc_inferred_entries": 0,
+  "sections": 13,
+  "chars_total": 60888
+ },
+ "duplicate_of": "ariasabad2015-revcolmat",
+ "duplicate_note": "arXiv preprint (v1, 2 Apr 2014, 32 pp) of the work published as Rev. Colombiana Mat. 49(1) (2015) 1-38, held as ariasabad2015-revcolmat. Same author, same title, same section structure (published adds explicit sub-sections 2.1-2.2 and 4.1). Published copy preferred: citable venue, more sections. See docs/audits/library-duplicate-ledger.json."
+}

@@ -9,8 +9,12 @@ import Mathlib.Tactic
 
 Comparison of predicted and observed stable neutron numbers for p ≤ 103.
 The beta-stability formula n*(p) = A/(2 + c·A^{2/3}) with c = a_C/(2·a_A)
-predicts stable neutron numbers with mean discrepancy 1.7 and max
-discrepancy |Δn| ≤ 8 (at nobelium and lawrencium).
+predicts stable neutron numbers with mean discrepancy ≈ 1.8155 and max
+discrepancy |Δn| = 7 (at tellurium, p = 52), per
+`computations/observations/neutron_prediction_comparison_probe.witness.json`
+(owner decision 1b, bean `qou-opjb`). That probe uses the inversion
+A = 2p + c·p·A^{2/3}; `predicted_mass_number` below is a different
+inversion and is not what produced those figures.
 
 LaTeX label: `prop:neutron-prediction-comparison`
 
@@ -26,9 +30,13 @@ See `GroundRingAnnotations.lean`.
 
 namespace QOU.Archimedean
 
-/-- The asymmetry coefficient c = a_C / (2 · a_A) ≈ 0.01497. -/
+/-- The asymmetry coefficient c = λ_C / (2 · a_asym) ≈ 0.0145158337
+    (rounded to 10 significant figures), from the coefficient
+    assignments of `QOU/Interactions/QIntegerMassFormula.lean` at the
+    proton pin (owner decision 1b, bean `qou-opjb`). Fixed by an
+    assignment, not derived. Replaces the untraced value 0.01497. -/
 -- Ref: [manuscript] Ch. 7, §neutron-prediction-comparison
-noncomputable def asymmetry_coeff : ℝ := 0.01497
+noncomputable def asymmetry_coeff : ℝ := 0.0145158337
 
 /-- Predicted most-stable mass number for proton number p.
     A*(p) = 2p / (2 - c·(2p)^{2/3}), from the beta-stability formula
@@ -62,12 +70,12 @@ theorem stable_neutron_max_error :
   refine ⟨predicted_neutron_number p, ?_⟩
   simp
 
-/-- The mean discrepancy is approximately 1.7 neutrons. -/
+/-- The mean discrepancy is approximately 1.8155 neutrons (probe witness). -/
 -- Ref: AME2020/NUBASE2020, [manuscript] Ch. 7, §neutron-prediction-comparison
 theorem stable_neutron_mean_discrepancy :
     ∃ (mean : ℝ), mean < 2 ∧
     0 < mean := by
   -- Ref: [manuscript] Ch. 7, §neutron-prediction-comparison
-  exact ⟨1.7, by norm_num, by norm_num⟩
+  exact ⟨1.8155, by norm_num, by norm_num⟩
 
 end QOU.Archimedean

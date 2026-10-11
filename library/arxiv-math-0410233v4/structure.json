@@ -5,7 +5,8 @@
   "file": "0410233v4.pdf",
   "sha256": "1f7215c9f21aa2b7eb8d5133c1a63ab14837ae2694c14e3ff1521d54a41616fe",
   "bytes": 458848,
-  "pages": 46
+  "pages": 46,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "Cusp shapes under cone deformation",
   "authors_raw": null,
-  "abstract": "A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp sh ape. We bound the change in cusp shape when the hyperbolic structure of the manifold is deformed via cone deformation preserving the cusp. The bo unds are in terms of the change in structure in a neighborhood of the si ngular locus alone. We then apply this result to provide information on the cusp s hape of many hyperbolic knots, given only a diagram of the knot. Spec iﬁcally, we show there is a universal constant C such that if a knot admits a prime, twist reduced diagram with at least C crossings per twist reg ion, then the length of the second shortest curve on the cusp torus is bo unded. The bound is linear in the number of twist regions of the diagr am.",
+  "abstract": "A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp sh ape. We bound the change in cusp shape when the hyperbolic structure of the manifold is deformed via cone deformation preserving the cusp. The bo unds are in terms of the change in structure in a neighborhood of the si ngular locus alone. We then apply this result to provide information on the cusp s hape of many hyperbolic knots, given only a diagram of the knot. Spec i\ufb01cally, we show there is a universal constant C such that if a knot admits a prime, twist reduced diagram with at least C crossings per twist reg ion, then the length of the second shortest curve on the cusp torus is bo unded. The bound is linear in the number of twist regions of the diagr am.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20211119103803-05'00'",
@@ -118,7 +119,7 @@
   },
   {
    "level": 2,
-   "title": "Teichmüller Space",
+   "title": "Teichm\u00fcller Space",
    "page": 12,
    "source": "outline",
    "number": "3.2"
@@ -195,7 +196,7 @@
   },
   {
    "level": 2,
-   "title": "Example: 2–bridge knots",
+   "title": "Example: 2\u2013bridge knots",
    "page": 41,
    "source": "outline",
    "number": "6.4"
@@ -413,7 +414,7 @@
   {
    "id": "sec-020-64-example-2bridge-knots",
    "number": "6.4",
-   "title": "Example: 2–bridge knots",
+   "title": "Example: 2\u2013bridge knots",
    "level": 2,
    "page_start": 41,
    "page_end": 44,
@@ -436,6 +437,173 @@
   "likely_scanned": false,
   "toc_entries": 25,
   "sections": 22,
-  "chars_total": 103471
+  "chars_total": 103471,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "jpurcell-cusps.tex",
+   "tex_sections": 30,
+   "overlaid": 14,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-11-motivation",
+     "title": "Motivation",
+     "prose_ratio": 0.61,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-13-cusp-shapes",
+     "title": "Cusp shapes",
+     "prose_ratio": 0.311,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-12-cone-deformations",
+     "title": "Cone deformations",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.616,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-14-applications-to-knot-theory",
+     "title": "Applications to knot theory",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-15-organization-of-this-paper",
+     "title": "Organization of this paper",
+     "prose_ratio": 0.762,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-16-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 0.152,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-2-background-on-cone-deformation",
+     "title": "Background on Cone Deformation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-22-boundary-terms",
+     "title": "Boundary terms",
+     "prose_ratio": 0.903,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-3-change-in-cusp-shape",
+     "title": "Change in Cusp Shape",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-31-boundary-relations",
+     "title": "Boundary relations",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-33-normalized-lengths-on-the-torus",
+     "title": "Normalized lengths on the torus",
+     "prose_ratio": 0.843,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-4-bounding-the-boundary-terms",
+     "title": "Bounding the boundary terms",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-41-convex-combinations-of-deformations",
+     "title": "Convex combinations of deformations",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-42-selecting-local-deformations",
+     "title": "Selecting local deformations",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-43-boundary-bound",
+     "title": "Boundary bound",
+     "prose_ratio": 0.779,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-5-bounding-the-meridian",
+     "title": "Bounding the meridian",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-6-cusp-shapes-of-hyperbolic-knots",
+     "title": "Cusp shapes of hyperbolic knots",
+     "prose_ratio": 0.935,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-61-an-initial-manifold",
+     "title": "An initial manifold",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-62-finding-values-for-tube-radius",
+     "title": "Finding values for tube radius",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-64-example-2bridge-knots",
+     "title": "Example: 2\u2013bridge knots",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -352,7 +352,7 @@ def _find_non_py_producer(root: Path, name: str) -> Path | None:
     """Locate a non-Python producer anywhere in the tree, by basename."""
     if not name.endswith(_NON_PY_PRODUCER_SUFFIXES):
         return None
-    skip = {".git", "node_modules", ".lake", "_deprecated", "__pycache__"}
+    skip = {".git", "node_modules", ".lake", "_deprecated", "fsh-guts", "__pycache__"}
     # sorted: `rglob` yields in os.scandir order, so an unsorted first-match
     # returns a filesystem-dependent answer. This one only feeds an
     # exists/does-not-exist decision (UNCONFIRMED vs SCRIPT_MISSING), so a
@@ -379,7 +379,7 @@ def scan(root: Path) -> list[dict]:
     # Bean qou-kcii.
     by_name: dict[str, list[Path]] = {}
     for p in sorted(comp.rglob("*.py")):
-        if "_deprecated" in p.parts:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue
         by_name.setdefault(p.name, []).append(p)
 
@@ -402,7 +402,7 @@ def scan(root: Path) -> list[dict]:
         return None, cands
     out: list[dict] = []
     for w in sorted(comp.rglob("*.witness.json")):
-        if "_deprecated" in w.parts:
+        if ("_deprecated" in w.parts or "fsh-guts" in w.parts):
             continue
         try:
             d = json.loads(w.read_text(encoding="utf-8"))

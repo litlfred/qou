@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0806.2317v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0806.2317v1",
+  "contains": [
+    "library/arxiv-0806.2317v1/sections/sec-000",
+    "library/arxiv-0806.2317v1/sections/sec-001",
+    "library/arxiv-0806.2317v1/sections/sec-002",
+    "library/arxiv-0806.2317v1/sections/sec-003",
+    "library/arxiv-0806.2317v1/sections/sec-004",
+    "library/arxiv-0806.2317v1/sections/sec-005",
+    "library/arxiv-0806.2317v1/sections/sec-006",
+    "library/arxiv-0806.2317v1/sections/sec-007",
+    "library/arxiv-0806.2317v1/sections/sec-008",
+    "library/arxiv-0806.2317v1/sections/sec-009",
+    "library/arxiv-0806.2317v1/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0806.2317&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0806.2317v1",
+    "title_source": "slug",
+    "source_file": "0806.2317v1.pdf",
+    "source_sha256": "c54e80d460413a5e63ba14144065186a96e50c74471d5619f314374a7c97e5cd",
+    "pages": 33,
+    "arxiv": {
+      "id": "0806.2317",
+      "version": "1",
+      "primary_class": "math.CO",
+      "stamp_date": "13 Jun 2008"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

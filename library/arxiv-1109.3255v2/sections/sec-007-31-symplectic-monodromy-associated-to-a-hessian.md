@@ -8,161 +8,62 @@ pages: 20-22
 source_pdf: 1109.3255v2.pdf
 source_sha256: dd4579be8e9b7e25
 doc_brief: "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE — We construct a family of Lagrangian submanifolds in the Landau– Ginzburg mirror to the projective plane equipped with a binodal cubic curve as"
+text_source: latex
+latex_prose_ratio: 0.995
+latex_coverage_ratio: 0.968
 ---
-dimensional aﬃne manifold with aﬃne coordinates ( η,ξ ) that embed B as a subset of
-R2. In this subsection B does not have any singularities. Suppose that η :B → R is
-a submersion over some interval I ⊂ R, and that the ﬁbers of this map are connected
-intervals. For our purposes, we consider the case where B is a quadrilateral, bounded
-on two opposite sides by line segments of constant η (the vertical boundary ∂vB),
-and on the other two sides by line segments that are transverse to the projection to
-η (the horizontal boundary ∂hB).
-Associated to B and I, we deﬁne complex manifolds X(B) and X(I). The space
-X(B) is the subset of the complex torus ( C∗)2 with coordinates w and z such that
-(η,ξ ) = (log |w|, log |z|) lies in B, and X(I) is the subset of ( C∗) with coordinate
-w such that η = log |w| lies in I. Thus X(I) is an annulus, and we have a map
-w :X(B) →X(I), which is a non-singular ﬁbration with ﬁbers isomorphic to annuli.
-Philosophically speaking, the map η : B → I is a tropical model of the map w :
-X(B) →X(I).
-In this situation, the most natural way to prescribe a K¨ ahler stru cture on X(B)
-is through a Hessian metric on the base B. This is a metric g such that locally
-g = Hess K for some function K : B → R, where the Hessian is computed with
-respect to an aﬃne coordinate system. If π : X(B) → B denotes the projection,
-then φ = K ◦π is a K¨ ahler potential on X(B), and the positivity of g = Hess K
-corresponds to the positivity of the real closed (1 , 1)-form ω = −ddcφ. Explicitly, if
-y1,...,y n are aﬃne coordinates corresponding to complex coordinates z1,...,z n on
-(C∗)n, then
-(48) g =
-n∑
-i,j=1
-∂2K
-∂yi∂yj
-dyidyj
-(49) ω = −ddcφ =
-√−1
-2
-n∑
-i,j=1
-∂2K
-∂yi∂yj
-dzi
-zi
-∧d¯zj
-¯zj
-Any such K¨ ahler structure is invariant under the S1–action eiθ(z,w ) = ( eiθz,w )
-that rotates the ﬁbers of the map w :X(B) →X(I).
-We now have a K¨ ahler structure on X(B) such that the ﬁbration w : X(B) →
-X(I) has symplectic ﬁbers. Thus there is a symplectic connection on this ﬁbration
-whose horizontal subspaces are the symplectic orthogonal spac es to the ﬁbers. This
-connection deﬁnes a notion of symplectic parallel transport along p aths in the base
-X(I), and symplectic monodromy around loops in the base. Since our ﬁbe rs have
-boundary we must show that the symplectic parallel transport pre serves the boundary.
-Given that, symplectic parallel transport deﬁnes symplectomorph isms between the
-ﬁbers.
-We now compute the symplectic connection. Let X ∈T(z,w)X(B) denote a tangent
-vector. Let Y ∈ kerdw denote the general vertical vector. The relation deﬁning the
-MIRROR OF THE PROJECTIVE PLANE 21
-horizontal distribution is ω(X,Y ) = 0, or,
-0 =
-{
-Kηη
-dw
-w ∧ d ¯w
-¯w +Kηξ
-(dw
-w ∧d¯z
-¯z + dz
-z ∧ d ¯w
-¯w
-)
-+Kξξ
-dz
-z ∧ d¯z
-¯z
-}
-(X,Y )
-=Kηξ
-(dw(X)
-w
-d¯z(Y )
-¯z − d ¯w(X)
-¯w
-dz(Y )
-z
-)
-+Kξξ
-(dz(X)
-z
-d¯z(Y )
-¯z −dz(Y )
-z
-d¯z(X)
-¯z
-)
-=
-(
-Kηξ
-dw(X)
-w +Kξξ
-dz(X)
-z
-)d¯z(Y )
-¯z − complex conjugate
-(50)
-Since dz(Y ) can have any phase, this shows that the quantity in parentheses on the
-last line must vanish:
-(51) d logz(X) = −Kηξ
-Kξξ
-d logw(X)
-Tropically, this formula has the following interpretation: In the ( η,ξ ) coordinates,
-the vertical tangent space is spanned by the vector (0 , 1). The g-orthogonal to this
-space is spanned by the vector ( Kξξ, −Kηξ), whose slope with respect to the aﬃne
-coordinates is the factor −Kηξ/Kξξ appearing in the formula for the connection.
-Lemma 3.1. Let K be such that ∂hB is g-orthogonal to the ﬁbers of the map η :
-B →I, and assume that the slope σF of each boundary face F ofB is rational. Then
-(1) parallel transport around the loop {|w| =R} acts on the ﬁber over w =R by
-rotating each circle of constant |z| through a phase 2π(−Kηξ/Kξξ), and
-(2) for each boundary face F , we have 2π(−Kηξ/Kξξ) = 2πσF , the part of ∂hX(B)
-lying over F is foliated by multi-sections of the ﬁbration that are horiz ontal
-with respect to the symplectic connection.
-Proof. Consider the parallel transport of the connection around the loop {|w| =R},
-which is a generator of π1(X(I)). As w traverses the path R exp(it), the initial condi-
-tion (z,w ) = (r exp(iθ),R ) generates the solution (r exp(iθ+(−Kηξ/Kξξ)it),R exp(it)),
-where the expression −Kηξ/Kξξ is constant along the solution curve. As a self-map
-of the ﬁber over w =R, this monodromy transformation maps circles of constant |z|
-to themselves, but rotates each by the phase 2 π(−Kηξ/Kξξ).
-We now consider the behavior of the symplectic connection near the horizontal
-boundary ∂hX(B). Let F be a component of ∂hB. Since F is a straight line segment
-g-orthogonal to the ﬁbers of η, the function −Kηξ/Kξξ is constant on F and equal
-to its slope, which we denote σ = σF . This slope is rational by assumption. The
-part of X(B) lying over F is deﬁned by the condition log |z| = σ log |w| +C. Let
-w = w0 exp(ρ(t) + iφ(t)) describe an arbitrary curve in the base annulus X(I). If
-(z0,w 0) is an initial point that lies over F , then
-(52) z =z0 exp {σ(ρ(t) +iφ(t))},w =w0 exp(ρ(t) +iφ(t))
-is a path in X(B) that lies entirely over F , and which by virtue of this fact also solves
-the symplectic parallel transport equation. Thus the part of ∂hX(B) that lies over
-F is foliated by horizontal sections of the ﬁbration, namely ( w/w0)σ = (z/z0) where
-π(z0,w 0) ∈F . Take note that σ is merely rational, so these horizontal sections may
-actually be multi-sections. □
-22 JAMES PASCALEFF
-Figure 4. The ﬁbration B →I.
-Examples of the Hessian metrics such that ∂hB is g-orthogonal to the ﬁbers of η
-may be constructed by starting with the function
-(53) F (x,y ) = x2 + y2
-x
-(54) Hess F =
-(
-2 + 2 y2
-x3 −2 y
-x2
-−2 y
-x2 2 1
-x
-)
-(55) −Fxy
-Fyy
-= y
-x
-Thus the families of lines x = c and y = σx form an orthogonal net for Hess F . By
-taking x and y to be shifts of the aﬃne coordinates η and ξ on B, we can obtain
-a Hessian metric on B such that the vertical boundary consists of lines of the form
-x =c, while the horizontal boundary consists of lines of the form y =σx.
+[]{#sec:monodromy-hessian label="sec:monodromy-hessian"}
+
+Let $B$ be a two-dimensional affine manifold with affine coordinates $(\eta,\xi)$ that embed $B$ as a subset of $\R^2$. In this subsection $B$ does not have any singularities. Suppose that $\eta: B \to \R$ is a submersion over some interval $I \subset \R$, and that the fibers of this map are connected intervals. For our purposes, we consider the case where $B$ is a quadrilateral, bounded on two opposite sides by line segments of constant $\eta$ (the *vertical* boundary $\partial^v B$), and on the other two sides by line segments that are transverse to the projection to $\eta$ (the *horizontal* boundary $\partial^h B$).
+
+Associated to $B$ and $I$, we define complex manifolds $X(B)$ and $X(I)$. The space $X(B)$ is the subset of the complex torus $(\C^*)^2$ with coordinates $w$ and $z$ such that $(\eta,\xi) =
+(\log|w|,\log|z|)$ lies in $B$, and $X(I)$ is the subset of $(\C^*)$ with coordinate $w$ such that $\eta = \log|w|$ lies in $I$. Thus $X(I)$ is an annulus, and we have a map $w : X(B) \to X(I)$, which is a non-singular fibration with fibers isomorphic to annuli. Philosophically speaking, the map $\eta: B \to I$ is a tropical model of the map $w: X(B)\to X(I)$.
+
+In this situation, the most natural way to prescribe a Kähler structure on $X(B)$ is through a Hessian metric on the base $B$. This is a metric $g$ such that locally $g = \Hess K$ for some function $K:
+B\to \R$, where the Hessian is computed with respect to an affine coordinate system. If $\pi: X(B) \to B$ denotes the projection, then $\phi = K\circ \pi$ is a Kähler potential on $X(B)$, and the positivity of $g = \Hess K$ corresponds to the positivity of the real closed $(1,1)$-form $\omega = -dd^c \phi$. Explicitly, if $y_1,\dots,
+y_n$ are affine coordinates corresponding to complex coordinates $z_1,\dots,z_n$ on $(\C^*)^n$, then $$\label{eq:hessian-metric}
+  g = \sum_{i,j=1}^n \frac{\partial^2 K}{\partial y_i\partial y_j}dy_idy_j$$ $$\label{eq:hessian-kahler-form}
+  \omega = -dd^c \phi = \frac{\sqrt{-1}}{2}\sum_{i,j=1}^n  \frac{\partial^2 K}{\partial y_i\partial y_j}\frac{dz_i}{z_i} \wedge \frac{d\bar{z}_j}{\bar{z}_j}$$
+
+Any such Kähler structure is invariant under the $S^1$--action $e^{i\theta}(z,w) = (e^{i\theta}z,w)$ that rotates the fibers of the map $w: X(B)\to X(I)$.
+
+We now have a Kähler structure on $X(B)$ such that the fibration $w: X(B) \to X(I)$ has symplectic fibers. Thus there is a symplectic connection on this fibration whose horizontal subspaces are the symplectic orthogonal spaces to the fibers. This connection defines a notion of symplectic parallel transport along paths in the base $X(I)$, and symplectic monodromy around loops in the base. Since our fibers have boundary we must show that the symplectic parallel transport preserves the boundary. Given that, symplectic parallel transport defines symplectomorphisms between the fibers.
+
+We now compute the symplectic connection. Let $X \in T_{(z,w)}X(B)$ denote a tangent vector. Let $Y \in \ker dw$ denote the general vertical vector. The relation defining the horizontal distribution is $\omega(X,Y) = 0$, or, $$\begin{split}
+ 0 &=  \left\{K_{\eta\eta}\frac{dw}{w} \wedge \frac{d\bar{w}}{\bar{w}} + K_{\eta\xi}\left(\frac{dw}{w}
+ \wedge \frac{d\bar{z}}{\bar{z}} + \frac{dz}{z} \wedge \frac{d\bar{w}}{\bar{w}}\right) + K_{\xi\xi}
+   \frac{dz}{z} \wedge \frac{d\bar{z}}{\bar{z}}\right\}(X,Y)\\
+&= K_{\eta\xi}\left(\frac{dw(X)}{w}\frac{d\bar{z}(Y)}{\bar{z}} -
+  \frac{d\bar{w}(X)}{\bar{w}}\frac{dz(Y)}{z}\right) +
+K_{\xi\xi}\left(\frac{dz(X)}{z}\frac{d\bar{z}(Y)}{\bar{z}}-
+  \frac{dz(Y)}{z}\frac{d\bar{z}(X)}{\bar{z}}\right)\\
+&= \left(K_{\eta\xi}\frac{dw(X)}{w} + K_{\xi\xi}
+  \frac{dz(X)}{z}\right)\frac{d\bar{z}(Y)}{\bar{z}} - \text{ complex conjugate}
+\end{split}$$ Since $dz(Y)$ can have any phase, this shows that the quantity in parentheses on the last line must vanish: $$\label{eq:symplectic-connection}
+  d\log z (X) = -\frac{K_{\eta\xi}}{K_{\xi\xi}}d\log w (X)$$ Tropically, this formula has the following interpretation: In the $(\eta,\xi)$ coordinates, the vertical tangent space is spanned by the vector $(0,1)$. The $g$-orthogonal to this space is spanned by the vector $(K_{\xi\xi}, -K_{\eta\xi})$, whose slope with respect to the affine coordinates is the factor $-K_{\eta\xi}/K_{\xi\xi}$ appearing in the formula for the connection.
+
+::: lemma
+[]{#lem:monodromy-hessian label="lem:monodromy-hessian"} Let $K$ be such that $\partial^h B$ is $g$-orthogonal to the fibers of the map $\eta: B\to I$, and assume that the slope $\sigma_F$ of each boundary face $F$ of $B$ is rational. Then
+
+1.  parallel transport around the loop $\{|w|= R\}$ acts on the fiber over $w = R$ by rotating each circle of constant $|z|$ through a phase $2\pi (-K_{\eta\xi}/K_{\xi\xi})$, and
+
+2.  for each boundary face $F$, we have $2\pi(-K_{\eta\xi}/K_{\xi\xi}) = 2\pi\sigma_F$, the part of $\partial^h X(B)$ lying over $F$ is foliated by multi-sections of the fibration that are horizontal with respect to the symplectic connection.
+:::
+
+::: proof
+*Proof.* Consider the parallel transport of the connection around the loop $\{|w|
+= R\}$, which is a generator of $\pi_1(X(I))$.
+
+As $w$ traverses the path $R\exp(it)$, the initial condition $(z,w) = (r\exp(i\theta), R)$ generates the solution $(r\exp
+(i \theta + (-K_{\eta\xi}/K_{\xi\xi})it), R\exp(it))$, where the expression $-K_{\eta\xi}/K_{\xi\xi}$ is constant along the solution curve. As a self-map of the fiber over $w = R$, this monodromy transformation maps circles of constant $|z|$ to themselves, but rotates each by the phase $2\pi (-K_{\eta\xi}/K_{\xi\xi})$.
+
+We now consider the behavior of the symplectic connection near the horizontal boundary $\partial^h X(B)$. Let $F$ be a component of $\partial^h B$. Since $F$ is a straight line segment $g$-orthogonal to the fibers of $\eta$, the function $-K_{\eta\xi}/K_{\xi\xi}$ is constant on $F$ and equal to its slope, which we denote $\sigma = \sigma_F$. This slope is rational by assumption. The part of $X(B)$ lying over $F$ is defined by the condition $\log|z| = \sigma \log|w| + C$. Let $w = w_0\exp(\rho(t) + i
+\phi(t))$ describe an arbitrary curve in the base annulus $X(I)$. If $(z_0,w_0)$ is an initial point that lies over $F$, then $$z = z_0\exp\left\{\sigma(\rho(t)+i\phi(t))\right\}, w = w_0\exp(\rho(t)+i\phi(t))$$ is a path in $X(B)$ that lies entirely over $F$, and which by virtue of this fact also solves the symplectic parallel transport equation. Thus the part of $\partial^h X(B)$ that lies over $F$ is foliated by horizontal sections of the fibration, namely $(w/w_0)^\sigma =
+(z/z_0)$ where $\pi(z_0,w_0) \in F$. Take note that $\sigma$ is merely rational, so these horizontal sections may actually be multi-sections. ◻
+:::
+
+Examples of the Hessian metrics such that $\partial^hB$ is $g$-orthogonal to the fibers of $\eta$ may be constructed by starting with the function $$F(x,y) = x^2 + \frac{y^2}{x}$$ $$\Hess F = 
+  \begin{pmatrix}
+    2+ 2\frac{y^2}{x^3} & -2\frac{y}{x^2}\\
+    -2 \frac{y}{x^2} & 2\frac{1}{x}
+  \end{pmatrix}$$ $$\frac{-F_{xy}}{F_{yy}} = \frac{y}{x}$$ Thus the families of lines $x = c$ and $y = \sigma x$ form an orthogonal net for $\Hess F$. By taking $x$ and $y$ to be shifts of the affine coordinates $\eta$ and $\xi$ on $B$, we can obtain a Hessian metric on $B$ such that the vertical boundary consists of lines of the form $x = c$, while the horizontal boundary consists of lines of the form $y = \sigma x$.

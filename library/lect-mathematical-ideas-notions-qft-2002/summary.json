@@ -1,0 +1,82 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "lect-mathematical-ideas-notions-qft-2002",
+ "source_sha256": "95cac1ccd6c80226",
+ "brief": "Mathematical ideas and notions of quantum field theory — 1. Generalities on quantum field theory 1.1. Classical mechanics. In classical mechanics, we study the motion of a par- ticle.",
+ "extended": "**Mathematical ideas and notions of quantum field theory**\n\n78 pp, 12 sections.\n\n**Abstract.** 1. Generalities on quantum field theory 1.1. Classical mechanics. In classical mechanics, we study the motion of a par- ticle. This motion is described by a (vector) function of one variable, q = q(t), representing the position of the particle as a function of time. This function must satisfy the Newton equation of motion, 0 q¨ = −U (q); where U the potential energy, and the mass of the particle is 1. Another way to express this law of motion is to say that q(t) must be a solution of a certain variational problem. Namely, one introduces the Lagrangian 2 q_ L(q) = − U(q) 2 (the difference of ki\n\n**Outline.** Front matter; 1 Generalities on quantum field theory; 2 The steepest descent and stationary phase fo; 3 Feynman calculus; 4 Matrix integrals; 5 The Euler characteristic of the moduli space; 6 Matrix integrals and counting planar diagram; 7 Quantum mechanics; 8 Operator approach to quantum mechanics; 9 Fermionic integrals; 10 Quantum mechanics for fermions; 11 Free field theories in higher dimensions\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.1: (The steepest descent formula) Assume that f attains a global min-\n- Theorem 2.2: Assume that f has a unique critical point c 2 (a; b), with f (c) 6= 0,\n- Theorem: s 2.1,2.2 have multidimensional analogs. To formulate them, let V be a\n- Theorem 2.3: Assume that f has global minimum on B at a unique interior point\n- Theorem 2.4: Assume that f has a unique critical point c in B, such that det f (c)\n- Theorem 3.1: Let B denote the inverse form on V , and let `1; : : : ; `m 2 V .",
+ "tokens": {
+  "brief": 45,
+  "extended": 414
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-generalities-on-quantum-field-theory",
+   "title": "Generalities on quantum field theory",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-2-the-steepest-descent-and-stationary-phase",
+   "title": "The steepest descent and stationary phase formulas",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-002-3-feynman-calculus",
+   "title": "Feynman calculus",
+   "pages": "7-21"
+  },
+  {
+   "id": "sec-003-4-matrix-integrals",
+   "title": "Matrix integrals",
+   "pages": "21-30"
+  },
+  {
+   "id": "sec-004-5-the-euler-characteristic-of-the-moduli-spa",
+   "title": "The Euler characteristic of the moduli space of curves",
+   "pages": "30-38"
+  },
+  {
+   "id": "sec-005-6-matrix-integrals-and-counting-planar-diagr",
+   "title": "Matrix integrals and counting planar diagrams",
+   "pages": "38-41"
+  },
+  {
+   "id": "sec-006-7-quantum-mechanics",
+   "title": "Quantum mechanics",
+   "pages": "41-54"
+  },
+  {
+   "id": "sec-007-8-operator-approach-to-quantum-mechanics",
+   "title": "Operator approach to quantum mechanics",
+   "pages": "54-61"
+  },
+  {
+   "id": "sec-008-9-fermionic-integrals",
+   "title": "Fermionic integrals",
+   "pages": "61-67"
+  },
+  {
+   "id": "sec-009-10-quantum-mechanics-for-fermions",
+   "title": "Quantum mechanics for fermions",
+   "pages": "67-73"
+  },
+  {
+   "id": "sec-010-11-free-field-theories-in-higher-dimensions",
+   "title": "Free field theories in higher dimensions",
+   "pages": "73-78"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

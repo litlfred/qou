@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-019",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-019",
   "kind": "prose",
-  "title": "Realizing q-diﬀerence modules overK as connections",
-  "pageStart": 39,
-  "pageEnd": 47,
-  "text": "../sections/sec-019-6-realizing-q-diﬀerence-modules-overk-as-connect.md",
-  "derivedFrom": "library/afst-2007-6-16-3-665-0/manifest",
-  "sourceDocument": "library/afst-2007-6-16-3-665-0/manifest",
+  "title": "Bibliography",
+  "pageStart": 54,
+  "pageEnd": 55,
+  "text": "../sections/sec-019-bibliography.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/afst-2007-6-16-3-665-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/afst-2007-6-16-3-665-0/manifest.jsonld",
   "provenance": "ingested"
 }

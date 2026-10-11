@@ -7,82 +7,231 @@
   "bytes": 149842,
   "pages": 13,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:17Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "M\u00f6bius energy of thick knots",
+  "title": "PII: S0166-8641(01)00263-2",
   "authors_raw": "Eric J. Rawdon a,1, Jonathan Simon b,\u2217",
   "title_lines": [
    "M\u00f6bius energy of thick knots"
   ],
-  "abstract": "The M\u00f6bius energy of a knot is an energy functional for smooth curves based on an idea of self- repelling. If a knot has a thick tubular neighborhood, we would intuitively expect the energy to be low. In this paper, we give explicit bounds for energy in terms of the ropelength of the knot, i.e., the ratio of the length of a thickest tube to its radius. \uf6d9 2001 Elsevier Science B.V . All rights reserved.",
+  "abstract": "The M\u00f6bius energy of a knot is an energy functional for smooth curves based on an idea of self- repelling. If a knot has a thick tubular neighborhood, we would intuitively expect the energy to be low. In this paper, we give explicit bounds for energy in terms of the ropelength of the knot, i.e., the ratio of the length of a thickest tube to its radius. \uf6d92001 Elsevier Science B.V. All rights reserved.",
   "docinfo": {
-   "CreationDate": "D:20021003141621",
+   "Title": "PII: S0166-8641(01)00263-2",
    "Producer": "Acrobat Distiller 4.05 for Windows",
-   "Title": "PII: S0166-8641(01)00263-2"
+   "CreationDate": "D:20021003141621"
+  },
+  "title_raw": "M\u00f6bius energy of thick knots",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "PII: S0166-8641(01)00263-2",
+   "heading": "M\u00f6bius energy of thick knots",
+   "text": "M\u00f6bius energy of thick knots",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "97"
   },
   {
    "level": 1,
    "title": "The lemmas",
    "page": 3,
    "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Each element of Rlow is < each element of Rhigh. Thus, r1 \u2a7d r\u2032",
-   "page": 6,
-   "source": "inferred",
-   "number": "1"
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "99"
   },
   {
    "level": 1,
    "title": "Thick knots have bounded energy",
    "page": 7,
    "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "L. (6)",
-   "page": 8,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "L + 4. (7)",
-   "page": 8,
-   "source": "inferred",
-   "number": "2"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "103"
   },
   {
    "level": 1,
    "title": "References",
    "page": 11,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "107"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "97",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "98",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "99",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "100",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "101",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "102",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "103",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "104",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "105",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "106",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "107",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "108",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "109",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -91,95 +240,75 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 310,
-   "n_words": 48
+   "n_chars": 799,
+   "n_words": 132,
+   "label_start": "97",
+   "label_end": "97"
   },
   {
-   "id": "sec-000-abstract",
-   "number": null,
-   "title": "Abstract",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 481,
-   "n_words": 85
-  },
-  {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 5429,
-   "n_words": 946
+   "n_chars": 5414,
+   "n_words": 931,
+   "label_start": "97",
+   "label_end": "99"
   },
   {
-   "id": "sec-002-2-the-lemmas",
+   "id": "sec-001-2-the-lemmas",
    "number": "2",
    "title": "The lemmas",
    "level": 1,
    "page_start": 3,
-   "page_end": 6,
-   "n_chars": 7436,
-   "n_words": 1552
-  },
-  {
-   "id": "sec-003-1-each-element-of-rlow-is-each-element-of-rhigh",
-   "number": "1",
-   "title": "Each element of Rlow is < each element of Rhigh. Thus, r1 \u2a7d r\u2032",
-   "level": 1,
-   "page_start": 6,
    "page_end": 7,
-   "n_chars": 1940,
-   "n_words": 453
+   "n_chars": 8939,
+   "n_words": 1839,
+   "label_start": "99",
+   "label_end": "103"
   },
   {
-   "id": "sec-004-3-thick-knots-have-bounded-energy",
+   "id": "sec-002-3-thick-knots-have-bounded-energy",
    "number": "3",
    "title": "Thick knots have bounded energy",
    "level": 1,
    "page_start": 7,
-   "page_end": 8,
-   "n_chars": 2408,
-   "n_words": 483
-  },
-  {
-   "id": "sec-005-2-l-6",
-   "number": "2",
-   "title": "L. (6)",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 81,
-   "n_words": 16
-  },
-  {
-   "id": "sec-006-2-l-4-7",
-   "number": "2",
-   "title": "L + 4. (7)",
-   "level": 1,
-   "page_start": 8,
    "page_end": 11,
-   "n_chars": 6364,
-   "n_words": 1457
+   "n_chars": 8495,
+   "n_words": 1866,
+   "label_start": "103",
+   "label_end": "107"
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-003-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 5002,
-   "n_words": 793
+   "n_chars": 4995,
+   "n_words": 786,
+   "label_start": "107",
+   "label_end": "109"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 8,
-  "sections": 9,
-  "chars_total": 29451
+  "toc_entries": 4,
+  "toc_inferred_entries": 4,
+  "toc_inferred_mean_confidence": 0.75,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 28642
  }
 }

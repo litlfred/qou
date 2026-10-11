@@ -8,240 +8,75 @@ pages: 58-61
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
 doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
+text_source: latex
+latex_prose_ratio: 0.944
+latex_coverage_ratio: 0.954
 ---
-ods of singularity analysis and the transfer theorems between the singularities of a gen-
-erating series and the asymptotic behavior of its coefﬁcients (see e.g. [FS09, Chapter
-VI]) can be use to prove mod-φ convergence (this is not surprising as they can be used
-to establish the related concept of quasi-powers, see Section 4.5.3). We examine here an-
-other example where we do not have strictly speaking mod- φ convergence since the
-reference law is not inﬁnitely divisible, but where our methods can nevertheless be
-used.
-If σ∈ S(n) is a permutation, a rise of σ is an integer i∈ [ [1, n− 1] ]such that σ(i) <
-σ(i + 1). The number of rises R(σ) is thus a quantity between 0 and n− 1, the two ex-
-tremal values corresponding to the permutationsn(n− 1) . . . 21 and 12 . . .(n− 1)n. We
-denote Rn = R(σn) the random variable which counts the number of rises of a random
-MOD-φ CONVERGENCE, I 59
-permutation σn∈ S(n) chosen under the uniform measure. The double generating
-series
-R(z, t) =
-∞
-∑
-n=0
-E[ezRn] tn
-is computed in [FS09, III.7, p. 209]:
-R(z, t) = ez− 1
-ez− et(ez−1) .
-If Re(z)≤ log 2, then|ez|≤ 2 and the smallest (in modulus) root of the denominator is
-t = ρ(z) = z
-ez− 1.
-We then have R(z, t) = 1
-ρ(z)−t + (ez− 1) S(z, t) with S(z, t) = 1
-ez−et(ez−1)− 1
-z−t(ez−1)
-analytic in t and on the band z∈S (−∞,log 2). This implies:
-Theorem 7.23 ([FS09], p. 658). For z∈S (−∞,log 2), one has locally uniformly
-E[ezRn] = τ(z)n+1 + O(|z| 2−n),
-where τ(z) = ez−1
-z .
-Notice that τ(z) = ez−1
-z = ∫ 1
-0 ezu du is the Laplace transform of a uniform random
-variable U in the interval [0, 1]. Informally, the previous should be thought as follows:
-(Rn)n∈N converges mod-U onS(−∞,log 2) with parameters tn = n + 1 and limit ψ(z) =
-1. However, the uniform law U is not inﬁnitely divisible, and τ(z) vanishes on any
-z∈ 2iπZ, therefore the error term O(|z| 2−n) cannot be rewritten as a multiplicative
-error term, as we did before. Still, every computation of Section 4 can be performed in
-this case. Let us stress out the necessary adjustments:
-• Berry-Esseen estimates. Set Fn(x) = P[Rn− n+1
-2 ≥
-√
-n+1
-12 x] and Gn(x) =∫ x
-−∞ g(y) dy. We have by Feller’s lemma
-|Fn(x)− Gn(x)|≤ 24m
-∆π√tn
-+ 1
-π√tn
-∫
-[±δ√tn]
-⏐⏐⏐⏐⏐⏐
-f∗
-n (ξ)− e− ξ2
-2
-ξ
-⏐⏐⏐⏐⏐⏐
-dξ
-+ 1
-πδ√tn
-∫
-[±∆√tn]\[±δ√tn]
-⏐⏐⏐⏐ f∗
-n (ξ)− e− ξ2
-2
-⏐⏐⏐⏐ dξ,
-where as in the proof of Proposition 4.1, f∗
-n (ξ) is the Fourier transform of Rn− tn
-2√ tn
-12
-.
-From Theorem 7.23 and a Taylor expansion of τ(iξ), one has
-f∗
-n (ξ) = e
-− ξ2
-2
-(
-1+O
-(
-ξ2
-tn
-))
-+ O(|ξ| 2−tn).
-In the ﬁrst integral of Feller’s bound, we are integrating
-⏐⏐⏐⏐
-f∗
-n (ξ)− g∗(ξ)
-ξ
-⏐⏐⏐⏐ = O
-(
-δ2 e− ξ2
-2
-)
-+ O(2−tn),
-so we get a o( 1√tn
-) as δ goes to zero. Then, regarding the second integral, we
-are integrating a O((qδ)tn) for some qδ∈ [ 1
-2, 1), so it does not contribute to the
-60 VALENTIN FÉRAY, PIERRE-LOÏC MÉLIOT, AND ASHKAN NIKEGHBALI
-asymptotics. Thus, we get the uniform estimate|Fn(x)− Gn(x)| = o( 1√tn
-) as in
-Proposition 4.1.
-• Tilting method and large deviation estimates. When tilting by h > 0, the new
-random variable Rh
-n with law P[Rh
-n∈ dy] = ehy
-E[ehRn ] P[Rn∈ dy] has its Fourier
-transform that has asymptotics
-τ(h + iξ)n+1 + O(2−n)
-τ(h)n+1 + O(2−n) =
-( τ(h + iξ)
-τ(h)
-)n+1
-(1 + o(1))
-the second formula holding if h and ξ are small enough (more precisely, we
-want 0 < h < log 2 and then ξ small enough with bounds depending on h).
-Notice that the new exponent τ(h+iξ)
-τ(h) does not vanish anymore, so we can now
-use the same argument as in Theorem 4.3. Thus, if F is the Legendre-Fenchel
-transform of the uniform law on[0, 1] (not really explicit), and ifh is the solution
-of 1+ε
-2 = η′(h) with η(h) = log
-(
-eh−1
-h
-)
-, then for
-ε∈ (2η′(0)− 1, 2η′(log 2)− 1) =
-(
-0, 3− 2
-log 2
-)
-⊇ (0, 0.114),
-we obtain the large deviation estimate:
-P
-[
-Rn≥ (1 + ε)(n + 1)
-2
-]
-= e−tn F( 1+ε
-2 )
-h
-√
-2πtn η′′(h) (1 + o(1))
-since we have mod- U convergence of (Rn)n∈N with parameters tn = n+1
-2 and
-residue ψ(x) = 1. Similarly, for the negative deviations, the estimate of the
-Fourier transform of the tilted random variable Rh
-n can be used if h > h0, where
-h0≈− 1.594 is the solution of the equation τ(h) = 1
-2. Therefore, for
-ε∈
-(
-0, 2
-h0
-− 1
-)
-⊇ (0, 0.254),
-we have
-P
-[
-Rn≤ (1− ε)(n + 1)
-2
-]
-= e−tn F( 1−ε
-2 )
-|h|
-√
-2πtn η′′(h) (1 + o(1)),
-where h is the solution of 1−ε
-2 = η′(h).
-• Extended central limit theorem. The result of Lemma 4.9 holds, because
-⏐⏐⏐⏐
-τ(h + iu)
-τ(h)
-⏐⏐⏐⏐
-2
-=
-⏐⏐⏐⏐⏐
-eh+iu− 1
-eh− 1
-h
-h + iu
-⏐⏐⏐⏐⏐
-2
-=
-(
-1 + 2eh (1− cos u)
-(eh− 1)2
-)
-h2
-h2 + u2 = h2 + 2t(h) (1− cos(u))
-h2 + u2 ,
-where t(h) = h2eh
-(eh−1)2≤ 1 for any h. From this inequality, one deduces that
-qδ = max
-u∈R\[−δ,δ]
-⏐⏐⏐⏐
-τ(h + iu)
-τ(h)
-⏐⏐⏐⏐≤ 1− Dδ2
-for some constant D > 0 and any h∈ (−ε, ε), with ε small enough.
-MOD-φ CONVERGENCE, I 61
-Since η(x) = log(τ(x)) has Taylor expansion x
-2 + x2
-24− x4
-2880 + o(x5), we thus
-get from Equation (19):
-P
-[
-Rn≥ n + 1
-2 +
-√
-n + 1
-12 y
-]
-= (1 + o(1))
-y
-√
-2π
-exp
-(
-− y2
-2 + y4
-240tn
-)
-for any positive y with y = o((tn)
-1
-2− 1
-6 ) = o((tn)
-5
-12 ).
+\label{subsec:rises}
+As illustrated in the previous section,
+the methods of singularity analysis and the \emph{transfer theorems} between the singularities of a generating series and the asymptotic behavior of its coefficients (see \emph{e.g.} \cite[Chapter VI]{FSe09})
+can be use to prove mod-$\phi$ convergence
+(this is not surprising as they can be used to establish the related concept of {\em quasi-powers},
+see Section~\ref{Subsect:QP}).
+We examine here another example where we do not have strictly speaking mod-$\phi$ convergence 
+since the reference law is not infinitely divisible,
+but where our methods can nevertheless be used.
+
+If $\sigma \in \sym(n)$ is a permutation, a \emph{rise} of $\sigma$ is an integer $i \in \lle 1,n-1\rre$ such that $\sigma(i)<\sigma(i+1)$. The number of rises $R(\sigma)$ is thus a quantity between $0$ and $n-1$, the two extremal values corresponding to the permutations $n(n-1)\ldots 2 1$ and $12\ldots (n-1)n$. We denote $R_n=R(\sigma_n)$ the random variable which counts the number of rises of a random permutation $\sigma_n \in \sym(n)$ chosen under the uniform measure. The double generating series
+$$R(z,t) = \sum_{n=0}^\infty \esper[\E^{z R_n}]\,t^n$$
+is computed in \cite[III.7, p. 209]{FSe09}:
+$$R(z,t)=\frac{\E^{z}-1}{\E^z-\E^{t(\E^z-1)}}.$$
+If $\Re (z)\leq \log 2$, then $|\E^{z}|\leq 2$ and the smallest (in modulus) root of the denominator is 
+$$t=\rho(z)=\frac{z}{\E^z-1}.$$
+We then have $R(z,t) = \frac{1}{\rho(z)-t} + (\E^z-1)\,S(z,t)$ with $S(z,t)=\frac{1}{\E^z - \E^{t(\E^z-1)}}-\frac{1}{z-t(\E^z-1)}$ analytic in $t$ and on the band $z \in \mathcal{S}_{(-\infty,\log 2)}$. This implies:
+
+\begin{theorem}[\cite{FSe09}, p. 658]\label{thm:flajoletrises}
+For $z \in \mathcal{S}_{(-\infty,\log 2)}$, one has locally uniformly
+$$\esper[\E^{zR_n}] = \tau(z)^{n+1} + O(|z|\,2^{-n}),$$
+where $\tau(z) = \frac{\E^z-1}{z}$.
+\end{theorem}
+\noindent Notice that $\tau(z) = \frac{\E^z-1}{z} = \int_0^1 \E^{zu}\,du$ is the Laplace transform of a uniform random variable $U$ in the interval $[0,1]$. 
+Informally, the previous should be thought as follows: $(R_n)_{n \in \N}$ converges mod-$U$ on $\mathcal{S}_{(-\infty,\log 2)}$ with parameters $t_n=n+1$ and limit $\psi(z)=1$.
+However, the uniform law $U$ is not infinitely divisible, and $\tau(z)$ vanishes on any $z \in 2\I \pi\Z$,
+therefore the error term $O(|z|\,2^{-n})$ cannot be rewritten as a multiplicative error term,
+as we did before.
+Still, every computation of Section \ref{sec:nonlattice} can be performed in this case. 
+Let us stress out the necessary adjustments:
+\begin{itemize}
+    \item Berry-Esseen estimates. Set $F_n(x) = \proba[R_n - \frac{n+1}{2}\geq \sqrt{\frac{n+1}{12}}\,x]$ and $G_n(x)=\int_{-\infty}^x g(y)\,dy$. We have by Feller's lemma
+    \begin{align*}
+    |F_n(x)-G_n(x)| &\leq \frac{24m}{\Delta\pi\sqrt{t_n}} + \frac{1}{\pi\sqrt{t_n}} \int_{[\pm\delta \sqrt{t_n}]} \left|\frac{f_n^*(\xi)-\E^{-\frac{\xi^2}{2}}}{\xi}\right|\,d\xi  \\
+    &\quad+ \frac{1}{\pi\delta\sqrt{t_n}} \int_{[\pm \Delta \sqrt{t_n}]\setminus [\pm \delta \sqrt{t_n}]} \left|f_n^*(\xi)-\E^{-\frac{\xi^2}{2}}\right|\,d\xi,
+    \end{align*}
+    where as in the proof of Proposition \ref{prop:berryesseen}, $f_n^*(\xi)$ is the Fourier transform of $\frac{R_n-\frac{t_n}{2}}{\sqrt{\frac{t_n}{12}}}$.
+    From Theorem \ref{thm:flajoletrises} and a Taylor expansion of $\tau(\I \xi)$, one has 
+    $$f_n^*(\xi) = \E^{-\frac{\xi^2}{2}\left(1+O\!\left(\frac{\xi^2}{t_n}\right)\right)} + O(|\xi|\,2^{-t_n}).$$
+    In the first integral of Feller's bound, we are integrating 
+    $$\left|\frac{f_n^*(\xi)-g^*(\xi)}{\xi}\right| = O\left(\delta^2\,\E^{-\frac{\xi^2}{2}}\right)+O(2^{-t_n}),$$
+    so we get a $o(\frac{1}{\sqrt{t_n}})$ as $\delta$ goes to zero. Then, regarding the second integral, we are integrating a $O((q_\delta)^{t_n})$ for some $q_\delta\in [\frac{1}{2},1)$, so it does not contribute to the asymptotics. Thus, we get the uniform estimate $|F_n(x)-G_n(x)|=o(\frac{1}{\sqrt{t_n}})$ as in Proposition \ref{prop:berryesseen}.\vspace{2mm}
+    \item Tilting method and large deviation estimates. When tilting by $h > 0$, the new random variable $R_n^h$ with law $\proba[R_n^h \in dy]=\frac{\E^{hy}}{\esper[\E^{hR_n}]}\,\proba[R_n \in dy]$ has its Fourier transform that has asymptotics
+    $$\frac{\tau(h+\I\xi)^{n+1}+O(2^{-n})}{\tau(h)^{n+1}+O(2^{-n})} = \left(\frac{\tau(h+\I \xi)}{\tau(h)}\right)^{n+1} (1+o(1))$$ 
+    the second formula holding if $h$ and $\xi$ are small enough (more precisely, we want $0<h<\log 2$ and then $\xi$ small enough with bounds depending on $h$).
+    Notice that the new exponent $\frac{\tau(h+\I \xi)}{\tau(h)}$ does not vanish anymore, so we can now use the same argument as in Theorem \ref{thm:mainnonlattice}. Thus, if $F$ is the Legendre-Fenchel transform of the uniform law on $[0,1]$ (not really explicit), and if $h$ is the solution of $\frac{1+\eps}{2}=\eta'(h)$ with $\eta(h) = \log\left(\frac{\E^h-1}{h}\right)$, then for 
+    $$\eps \in(2\eta'(0)-1,2\eta'(\log 2)-1) = \left(0,\,3-\frac{2}{\log 2}\right)\supseteq (0,0.114),$$
+     we obtain the large deviation estimate:
+    $$\proba\!\left[R_n \geq \frac{(1+\eps)(n+1)}{2}\right] = \frac{\E^{-t_n\,F(\frac{1+\eps}{2})}}{h\sqrt{2\pi t_n\,\eta''(h)}} (1+o(1))$$
+    since we have mod-$U$ convergence of $(R_n)_{n \in \N}$ with parameters $t_n=\frac{n+1}{2}$ and residue $\psi(x)=1$. Similarly, for the negative deviations, the estimate of the Fourier transform of the tilted random variable $R^h_n$ can be used if $h>h_0$, where $h_0 \approx -1.594$ is the solution of the equation $\tau(h)=\frac{1}{2}$. Therefore, for
+    $$\eps \in \left(0,\,\frac{2}{h_0}-1\right) \supseteq (0,0.254),$$
+    we have
+    $$\proba\!\left[R_n \leq \frac{(1-\eps)(n+1)}{2}\right] = \frac{\E^{-t_n\,F(\frac{1-\eps}{2})}}{|h|\sqrt{2\pi t_n\,\eta''(h)}} (1+o(1)),$$
+    where $h$ is the solution of $\frac{1-\eps}{2}=\eta'(h)$.\vspace{2mm}
+    \item Extended central limit theorem. The result of Lemma \ref{lem:technicqdelta_nonlattice} holds, because
+\begin{align*}
+\left|\frac{\tau(h+\I u)}{\tau(h)}\right|^2 &= \left|\frac{\E^{h+\I u}-1}{\E^{h}-1}\,\frac{h}{h+\I u}\right|^2 \\
+&=\left(1+\frac{2\E^h\,(1-\cos u)}{(\E^h-1)^2}\right) \,\frac{h^2}{h^2+u^2} = \frac{h^2+2t(h)\,(1-\cos(u))}{h^2+u^2},
+\end{align*}
+where $t(h) = \frac{h^2\E^h}{(\E^h-1)^2} \leq 1$ for any $h$. From this inequality, one deduces that
+$$q_\delta = \max_{u \in \R\setminus [-\delta,\delta]} \left|\frac{\tau(h+\I u)}{\tau(h)}\right| \leq 1-D\delta^2 $$
+for some constant $D>0$ and any $h \in (-\eps,\eps)$, with $\eps$ small enough.\medskip
+
+Since $\eta(x)=\log (\tau(x))$ has Taylor expansion $\frac{x}{2}+\frac{x^2}{24}-\frac{x^4}{2880}+o(x^5)$, we thus get from Equation \eqref{EqCramerOrdreMNL}:
+$$\proba\!\left[R_n \geq \frac{n+1}{2} + \sqrt{\frac{n+1}{12}}\,y\right] =\frac{(1+o(1))}{y\sqrt{2\pi}}\,\exp\left(-\frac{y^2}{2} + \frac{y^4}{240t_n}\right)$$
+for any positive $y$ with $y = o((t_n)^{\frac{1}{2}-\frac{1}{6}}) = o((t_n)^{\frac{5}{12}})$. 
+\end{itemize}
+\bigskip

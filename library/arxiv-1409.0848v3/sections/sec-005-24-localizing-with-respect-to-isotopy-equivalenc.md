@@ -8,339 +8,198 @@ pages: 23-26
 source_pdf: 1409.0848v3.pdf
 source_sha256: 5af73ef812ccee40
 doc_brief: "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES — This work forms a foundational study of factorization homol ogy, or topological chiral homology, at the generality of stratiﬁed spaces with tangen tial"
+text_source: latex
+latex_prose_ratio: 0.973
+latex_coverage_ratio: 0.972
 ---
-Here we explain that the∞-category Disk(B)/X , which appears in the Deﬁnition 2.14 of factorization
-homology, can be witnessed as a localization of its un-topologized ver sion Disk(B)/X on the collection
-of those inclusions of ﬁnite disjoint unions of disks U⊂V inX for which this inclusion is isotopic to
-an isomorphism. This comparison plays a fundamental role in recogniz ing certain colimit expressions
-in this theory, for instance that support the pushforward formu la of§2.5.
-Given a topological space X and a ﬁnite set J, we let ConfJ (X) denote the topological space
-of injections from J to X. There is an evident action of the symmetric group Σ J on this space,
-and we denote the coinvariants as Conf J (X)Σ J . Finally, given a basic U∼= Rn×C(Z), we denote
-by Aut0(U ) the Kan complex of isomorphisms U → U that preserve the origin (0 ,∗)∈ U . (See
-Section 4.3 of [AFT].) In the following lemma, B is the classifying space functor.
-Lemma 2.21. For B a category of basics, the maximal ∞-groupoid of Disk(B) is canonically
-identiﬁed as (
-Disk(B)
-) ∼
-≃
-∐
-[U= ⨆
-i∈I
-U ⊔Ji
-i ]
-∏
-i∈I
-B
-(
-Σ Ji≀ EndB(Ui)
-)
-where the coproduct is indexed by isomorphism classes of ﬁni te disjoint unions of objects of B, whose
-connected components are grouped here according to isomorphism type. In particular, the symmetric
-monoidal functor [−] : Disk(B)→ Fin is conservative.
-For X a B-manifold, the underlying ∞-groupoid of Disk(B)/X is canonically identiﬁed as the
-space (
-Disk(B)/X
-) ∼
-≃
-∐
-[U= ⨆
-i∈I
-U
-⊔Ji
-i ]
-∏
-i∈I
-Conf Ji(X[Ui])Σ Ji
-given in terms of unordered conﬁguration spaces of various s trata of X.
-Proof. The statement concerning Disk(B) follows immediately from the characterization of Bsc
-in [AFT].
-Upon the canonical equivalence of ∞-categories Disk(B)/X≃ Disk(Bsc)/X , we can assume B =
-Bsc, so that Mﬂd(B)≃ Snglr is an ∞-category associated to a Kan-enriched category. In §4.3
-23
-of [AFT] it is shown that the inclusion of Kan-groups Aut0(U )→ EndBsc(U ) is an equivalence of
-underlying Kan complexes. Upon these considerations, to show the ﬁrst statement it is suﬃcient to
-show that, for each ﬁnite set J, and each basic U , the Σ J -equivariant map which is evaluation at
-each center of U
-ev(0)j∈J : MapSnglr
-(
-U ⊔J,X
-)
-Aut0(U)J
-≃
-−−→ConfJ (X[U])
-is an equivalence of Σ J -spaces. We do this by induction on the cardinality |J|, with the base case
-|J| = 1 oﬀered by results in [AFT]. Now suppose |J| > 1, and choose a non-empty proper subset
-J ′⊂J. Restriction along this inclusion of subsets gives the commutative dia gram
-MapSnglr
-(
-U ⊔J,X
-)
-Aut0(U)J
-/d47/d47
-ev0
-/d15/d15
-MapSnglr
-(
-U ⊔J ′
-,X
-)
-Aut0(U)J′
-ev0
-/d15/d15
-Conf J (X[U]) /d47/d47 Conf J ′ (X[U])
-which is evidently appropriately equivariant. In a standard manner, the map of ﬁbers of the hori-
-zontal maps is canonically identiﬁed as the map of Σ J/integerdivideJ ′ -spaces
-MapSnglr
-(
-U ⊔J/integerdivideJ ′
-,X /integerdivideJ ′)
-Aut0(U)J/integerdivideJ′
-ev0
-−−−→Conf J/integerdivideJ ′ (X[U] /integerdivideJ ′) ,
-which is an equivalence by induction. The result follows.
-□
-Let B be a category of basics; let X be a B-manifold. Consider the ∞-subcategory
-(2.4.1) IX⊂ Disk(B)/X
-consisting of the same objects but only those morphisms (֒→X)֒→( ֒→X) whose image in
-Disk(B)/X is an equivalence. Note that in 2.4.1, we think of X as an object of Mﬂd(B), while when
-we refer to Disk(B)/X , we think of X as an object of Mﬂd(B).
-Proposition 2.22. The standard functor
-(2.4.2) Disk(B)/X−→ Disk(B)/X
-witness an equivalence between ∞-operads from the localization (among ∞-operads):
-(
-Disk(B)/X
-)
-[I−1
-X ] ≃ Disk(B)/X .
-In particular, for each symmetric monoidal ∞-category V, restriction deﬁnes a fully faithful functor
-AlgDisk(B)/X (V)֒→AlgDisk(B)/X (V)
-whose image consists of those Disk(B)/X algebras that carry each isotopy equivalence to an equiva-
-lence in V.
-Proof. First note that the ∞-subcategory IX⊂ Disk(B)/X lies over equivalences in Fin∗. As so, the
-localization
-(
-Disk(B)/X
-)
-[I−1
-X ] (among ∞-categories) canonically lies over Fin∗. Therefore, should
-the canonical functor
-(
-Disk(B)/X
-)
-[I−1
-X ]
-≃
-− →Disk(B)/X from the localization (among ∞-categories)
-be an equivalence between ∞-categories, then this localization among ∞-categories is in fact an
-∞-operad itself; furthermore, this localization among ∞-categories also presents the ∞-operadic
-localization. We are thusly reduced to showing that the functor (2.4 .2) is a localization between
-∞-categories.
-Note that the functor (2.4.2) is essentially surjective, manifestly. We will argue that the resulting
-functor from the localization is an equivalence by showing it is an equiva lence on underlying ∞-
-groupoids, then that it is an equivalence on spaces of morphisms. We recall that, as in Observation
-2.7, since Mﬂd(B)→ Snglr is a right ﬁbration there are canonical equivalences of ∞-categories
-Disk(B)/X ≃ Disk(Bsc)/X =: DX and Disk(B)/X ≃ Disk(Bsc)/X =: DX
-and we adopt the indicated notation for this proof. Therefore, we can assume B = Bsc.
-24
-The underlying∞-groupoid of DX is the classifying space BIX . In light of the above coproduct
-in Lemma 2.21, ﬁx an isomorphism type [ U = ⨆
-i∈I
-U ⊔Ji
-i ] of a ﬁnite disjoint union of a basic stratiﬁed
-space. Consider the full subcategory I[U]
-X ⊂ IX consisting of those (֒→X) for which V ∼=U . We
-thus seek to show that the resulting functor I[U]
-X → ∏
-i∈I
-Conf Ji(X[Ui])Σ Ji witnesses an equivalence
-from the classifying space. We will do this by ﬁrst showing that the fu nctor ∏
-i∈I
-ConfJi(X[Ui])∩
-− : I[U]
-X → ∏
-i∈I
-I
-[(U
-⊔Ji
-i )[Ui ]
-X[Ui]
-induces an equivalence on classifying spaces, then observing a cano nical
-equivalence of spaces BI
-[(U ⊔Ji
-i )[Ui]]
-X[Ui ]
-≃ Conf Ji(X[Ui])Σ Ji .
-Consider the slice category ( I[U]
-X )(Ri֒→X[Ui])i∈I /. An object is an object ( U ′֒→X) of I[U]
-X for
-which, for each i∈ I, there is an inclusion Ri⊂ U ′
-[Ui] which is a bijection on components, and a
-morphism is an inclusion of such. Because such ( U ′
-[Ui]֒→X[Ui]) form a base for the topology about
-Ri֒→X[Ui], then this category is ﬁltered. In particular, the classifying space B(I[U]
-X )(Ri֒→X[Ui ])i∈I /≃
-∗ is contractible. It follows that the functor ∏
-i∈I
-Conf Ji(X[Ui])∩− : I[U]
-X → ∏
-i∈I
-I
-[(U ⊔Ji
-i )[Ui]]
-X[Ui ]
-induces an
-equivalence on classifying spaces, as desired.
-Now, let M be a smooth manifold, so that I =∗ is a singleton. The category I[U]
-M forms a basis
-for the standard Grothendieck topology on ConfJi (M )Σ Ji . It follows from Corollary 1.6 of [DI] that
-the canonical map of topological spaces
-colim
-( ⊔
-j∈Ji
-Rj֒→M)∈I[U ]
-M
-∏
-j∈Ji
-Rj
-≃
-−−→ Conf Ji(M )Σ Ji
-is a homotopy equivalence. Because each term Rj in this colimit is contractible, then this colimit is
-identiﬁed as the classifying space
-BI[U]
-M ≃ colim
-( ⊔
-j∈Ji
-Rj֒→M)∈I[U ]
-M
-∏
-j∈Ji
-Rj .
-Applying this to the case M =X[Ui], we conclude that BI
-[(U ⊔Ji
-i )[Ui]
-X[Ui ]
-≃ ConfJi(M )Σ Ji . In summary,
-we have veriﬁed that the map of underlying ∞-groupoids
-(
-DX [I−1
-X ]
-) ∼ ≃
-−−→
-(
-DX
-) ∼
-is an equivalence.
-We now show that the functor induces an equivalence on spaces of m orphisms. Consider the
-diagram of spaces
-(
-DU [I−1
-U ]
-) ∼ /d47/d47
-(֒→X)
-/d15/d15
-D∼
-U
-(֒→X)
-/d15/d15(
-DX [I−1
-X ]
-) (1) /d47/d47
-ev1
-/d15/d15
-D(1)
-X
-ev1
-/d15/d15(
-DX [I−1
-X ]
-) ∼ /d47/d47 D∼
-X
-where a superscript (1) indicates a space of morphisms, and the upper vertical arrows are given as
-(֒→U )↦→
-(
-(֒→X)֒→( ֒→X)
-)
-. Our goal is to show that the middle horizontal arrow is an
-equivalence. We will accomplish this by showing that the diagram is a map of ﬁber sequences, for
-we have already shown that the top and bottom horizontal maps ar e equivalences.
-25
-The right vertical sequence is a ﬁber sequence because such evalu ation maps are coCartesian
-ﬁbrations, in general. Then, by inspection, the ﬁber over (֒→X) is the underlying ∞-groupoid
-of the slice ( DX )/(֒→X). This slice is canonically identiﬁed as DU .
-Let us show that the left vertical sequence is a ﬁber sequence. Th e space of morphisms of(
-DX [I−1
-X ]
-) (1)
-is the classifying space of the subcategory of the functor catego ry FunIX
-(
-[1], DX
-)
-⊂
-Fun
-(
-[1], DX
-)
-consisting of the same objects but only those natural transform ations by I. We claim
-the ﬁber over (֒→X) of the evaluation map is canonically identiﬁed as in the sequence
-(
-DU [I−1
-U ]
-) ∼ (֒→X)
-−−−−−−→
-(
-DX [I−1
-X ]
-) (1) ev1
-−−−→
-(
-DX [I−1
-X ]
-) ∼
-.
-This claim is justiﬁed through Quillen’s Theorem B, for the named ﬁber is the classifying space of
-the slice category ( IX )/(֒→X) which is canonically isomorphic to IU . To apply Quillen’s Theorem
-B, we must show that each morphism (֒→X)֒→( ֒→X) in I induces an equivalence of spaces
-B
-(
-(IX )/(֒→X)
-)
-≃ B
-(
-(IX )/(֒→X)
-)
-. This map of spaces is canonically identiﬁed as BIU → BIV .
-Through the previous analysis of this proof, this map is further iden tiﬁed as the map of spaces∐
-[B]
-U[B]→ ∐
-[B]
-V[B] induced from the inclusion֒→V . Because U and V are abstractly isomorphic,
-then results of [AFT] give that each such inclusion is isotopic through stratiﬁed open embeddings to
-an isomorphism. We conclude that Quillen’s Theorem B applies. See also T heorem 5.3 of [Ba]. □
-Lemma 2.23. Letr : ~X→X be a reﬁnement between stratiﬁed spaces. Then there is a func tor
-Disk(Bsc)/ ~X−→ Disk(Bsc)/X
+Here we explain that the $\infty$-category $\disk(\cB)_{/X}$, which appears in the Definition~\ref{def:fact-hmlgy} of factorization homology, can be witnessed as a localization of its un-topologized version $\diskd(\cB)_{/X}$ on the collection of those inclusions of finite disjoint unions of disks $U\subset V$ in $X$ for which this inclusion is isotopic to an isomorphism.  
+This comparison plays a fundamental role in recognizing certain colimit expressions in this theory, for instance that support the pushforward formula of~\S\ref{sec.pushforward}.
+
+Given a topological space $X$ and a finite set $J$, we let $\conf_J(X)$ denote the topological space of injections from $J$ to $X$.  There is an evident action of the symmetric group $\Sigma_J$ on this space, and we denote the coinvariants as $\conf_J(X)_{\Sigma_J}$. Finally, given a basic $U \cong \RR^n \times C(Z)$, we denote by $\Aut_0(U)$ the Kan complex of isomorphisms $U \to U$ that preserve the origin $(0,\ast) \in U$. (See Section~4.3 of~\cite{aft1}.) In the following lemma, $\sB$ is the classifying space functor.
+
+\begin{lemma}\label{EE-equivs}
+For $\cB$ a category of basics, the maximal $\infty$-groupoid of $\disk(\cB)$ is canonically identified as
+\[
+\bigl(\disk(\cB)\bigr)^\sim~{}~\simeq~{}~ \underset{[U = \underset{i\in I} \bigsqcup U_i^{\sqcup J_i}]} \coprod \prod_{i\in I} \sB\bigl(\Sigma_{J_i} \wr \End_{\cB}(U_i)\bigr)
+\]
+where the coproduct is indexed by isomorphism classes of finite disjoint unions of objects of $\cB$, whose connected components are grouped here according to isomorphism type.
+In particular, the symmetric monoidal functor $[-]\colon \disk(\cB) \to \Fin$ is conservative.  
+
+For $X$ a $\cB$-manifold, the underlying $\infty$-groupoid of $\disk(\cB)_{/X}$ is canonically identified as the space
+\[
+\bigl(\disk(\cB)_{/X}\bigr)^\sim~{}~\simeq~{}~ \underset{[U = \underset{i\in I} \bigsqcup U_i^{\sqcup J_i}]} \coprod \prod_{i\in I} \conf_{J_i}(X_{[U_i]})_{\Sigma_{J_i}}
+\]
+given in terms of unordered configuration spaces of various strata of $X$.  
+
+\end{lemma}
+
+\begin{proof}
+The statement concerning $\disk(\cB)$ follows immediately from the characterization of $\bsc$ in~\cite{aft1}.  
+
+Upon the canonical equivalence of $\infty$-categories $\disk(\cB)_{/X} \simeq \disk(\bsc)_{/X}$, we can assume $\cB = \bsc$, so that $\mfld(\cB) \simeq \snglr$ is an $\infty$-category associated to a ${\sf Kan}$-enriched category.  
+In \S4.3 of~\cite{aft1} it is shown that the inclusion of $\sf Kan$-groups $\Aut_0(U) \to \End_{\bsc}(U)$ is an equivalence of underlying Kan complexes.  
+Upon these considerations, to show the first statement it is sufficient to show that, for each finite set $J$, and each basic $U$, the $\Sigma_J$-equivariant map which is evaluation at each center of $U$
+\[
+{\sf ev}_{(0)_{j\in J}}\colon \Map_{\snglr}\bigl(U^{\sqcup J}, X\bigr)_{\Aut_0(U)^J} ~\xra{~\simeq~}~\conf_J(X_{[U]}) 
+\]
+is an equivalence of $\Sigma_J$-spaces.  
+We do this by induction on the cardinality $|J|$, with the base case $|J|=1$ offered by results in~\cite{aft1}.  
+Now suppose $|J|>1$, and choose a non-empty proper subset $J'\subset J$.
+Restriction along this inclusion of subsets gives the commutative diagram
+\[
+\xymatrix{
+\Map_{\snglr}\bigl(U^{\sqcup J}, X\bigr)_{\Aut_0(U)^J}  \ar[rr] \ar[d]^-{{\sf ev}_0}
+&&
+\Map_{\snglr}\bigl(U^{\sqcup J'}, X\bigr)_{\Aut_0(U)^{J'}}  \ar[d]^-{{\sf ev}_0}
+\\
+\conf_J(X_{[U]})  \ar[rr]
+&&
+\conf_{J'}(X_{[U]})
+}
+\]
+which is evidently appropriately equivariant.
+In a standard manner, the map of fibers of the horizontal maps is canonically identified as the map of $\Sigma_{J\smallsetminus J'}$-spaces
+\[
+\Map_{\snglr}\bigl(U^{\sqcup J\smallsetminus J'}, X\smallsetminus J'\bigr)_{\Aut_0(U)^{J\smallsetminus J'}}  \xra{~{\sf ev}_0~}  \conf_{J\smallsetminus J'}(X_{[U]}\smallsetminus J')~,
+\]
+which is an equivalence by induction. 
+The result follows.  
+
+\end{proof}
+
+Let $\cB$ be a category of basics; let $X$ be a $\cB$-manifold.
+Consider the $\infty$-subcategory 
+\begin{equation}\label{eqn.I_X}
+\cI_X\subset \diskd(\cB)_{/X}
+\end{equation}
+consisting of the same objects but only those morphisms $(U\hookrightarrow X) \hookrightarrow (V\hookrightarrow X)$ whose image in $\disk(\cB)_{/X}$ is an equivalence. Note that in~\ref{eqn.I_X}, we think of $X$ as an object of $\mfldd(\cB)$, while when we refer to $\disk(\cB)_{/X}$, we think of $X$ as an object of $\mfld(\cB)$.
+
+\begin{prop}\label{EEd-vs-EE}
+The standard functor
+\begin{equation}\label{disc-to-cont}
+\diskd(\cB)_{/X} \longrightarrow \disk(\cB)_{/X}
+\end{equation}
+witness an equivalence between $\infty$-operads from the localization (among $\infty$-operads):
+\[
+\bigl(\diskd(\cB)_{/X}\bigr)[\cI_X^{-1}]~\simeq~\disk(\cB)_{/X}~.
+\]
+In particular, for each symmetric monoidal $\infty$-category $\cV$, restriction defines a fully faithful functor
+\[
+\Alg_{\disk(\cB)_{/X}}(\cV)  ~{}~\hookrightarrow~{}~\Alg_{\diskd(\cB)_{/X}}(\cV)
+\]
+whose image consists of those $\diskd(\cB)_{/X}$ algebras that carry each isotopy equivalence to an equivalence in $\cV$.  
+\end{prop}
+
+\begin{proof}
+First note that the $\infty$-subcategory $\cI_X\subset \diskd(\cB)_{/X}$ lies over equivalences in $\Fin_\ast$.
+As so, the localization $\bigl(\diskd(\cB)_{/X}\bigr)[\cI_X^{-1}]$ (among $\infty$-categories) canonically lies over $\Fin_\ast$.  
+Therefore, should the canonical functor $\bigl(\diskd(\cB)_{/X}\bigr)[\cI_X^{-1}]\xra{\simeq}\disk(\cB)_{/X}$ from the localization (among $\infty$-categories) be an equivalence between $\infty$-categories, then this localization among $\infty$-categories is in fact an $\infty$-operad itself; furthermore, this localization among $\infty$-categories also presents the $\infty$-operadic localization. 
+We are thusly reduced to showing that the functor~(\ref{disc-to-cont}) is a localization between $\infty$-categories.  
+
+
+Note that the functor~(\ref{disc-to-cont}) is essentially surjective, manifestly.  
+We will argue that the resulting functor from the localization is an equivalence by showing it is an equivalence on underlying $\infty$-groupoids, then that it is an equivalence on spaces of morphisms.
+We recall that, as in Observation \ref{B-independent}, since $\mfld(\cB) \to \snglr$ is a right fibration there are canonical equivalences of $\infty$-categories
+\[
+\diskd(\cB)_{/X}~ \simeq~ \diskd(\bsc)_{/X} ~=:~ \sD_X \qquad\text{ and }\qquad \disk(\cB)_{/X}~\simeq~ \disk(\bsc)_{/X} ~=:~ \cD_X
+\]
+and we adopt the indicated notation for this proof.
+Therefore, we can assume $\cB = \bsc$.  
+
+The underlying $\infty$-groupoid of $\sD_X$ is the classifying space $\sB \cI_X$.  
+In light of the above coproduct in Lemma~\ref{EE-equivs}, fix an isomorphism type $[U=\underset{i\in I} \bigsqcup U_i^{\sqcup J_i}]$ of a finite disjoint union of a basic stratified space.
+Consider the full subcategory $\cI_X^{[U]}\subset \cI_X$ consisting of those $(V\hookrightarrow X)$ for which $V\cong U$.
+We thus seek to show that the resulting functor $\cI_X^{[U]} \to \underset{i\in I} \prod \conf_{J_i}(X_{[U_i]})_{\Sigma_{J_i}}$ witnesses an equivalence from the classifying space.  
+We will do this by first showing that the functor $\underset{i\in I} \prod \conf_{J_i}(X_{[U_i]})\cap - \colon \cI_X^{[U]} \to \underset{i\in I} \prod \cI^{[(U_i^{\sqcup J_i})_{[U_i]}}_{X_{[U_i]}}$ induces an equivalence on classifying spaces, then observing a canonical equivalence of spaces $\sB \cI^{[(U_i^{\sqcup J_i})_{[U_i]}]}_{X_{[U_i]}} \simeq \conf_{J_i}(X_{[U_i]})_{\Sigma_{J_i}}$.  
+
+Consider the slice category $(\cI_X^{[U]})^{(R_i\hookrightarrow X_{[U_i]})_{i\in I}/}$.
+An object is an object $(U'\hookrightarrow X)$ of $\cI_X^{[U]}$ for which, for each $i\in I$, there is an inclusion $R_i\subset U'_{[U_i]}$ which is a bijection on components, and a morphism is an inclusion of such.
+Because such $(U'_{[U_i]}\hookrightarrow X_{[U_i]})$ form a base for the topology about $R_i\hookrightarrow X_{[U_i]}$, then this category is filtered. 
+In particular, the classifying space $\sB(\cI_X^{[U]})^{(R_i\hookrightarrow X_{[U_i]})_{i\in I}/}\simeq \ast$ is contractible.  
+It follows that the functor $\underset{i\in I} \prod \conf_{J_i}(X_{[U_i]})\cap - \colon \cI_X^{[U]} \to \underset{i\in I} \prod \cI^{[(U_i^{\sqcup J_i})_{[U_i]}]}_{X_{[U_i]}}$ induces an equivalence on classifying spaces, as desired.  
+
+Now, let $M$ be a smooth manifold, so that $I=\ast$ is a singleton. 
+The category $\cI_M^{[U]}$ forms a basis for the standard Grothendieck topology on $\conf_{J_i}(M)_{\Sigma_{J_i}}$.  
+It follows from Corollary 1.6 of~\cite{Dugger--Isaksen} that the canonical map of topological spaces
+\[
+\underset{(\underset{j\in J_i} \sqcup R_j\hookrightarrow M)\in \cI^{[U]}_M} \colim~ \underset{j\in J_i} \prod R_j~{}~\xra{~\simeq~}~{}~ \conf_{J_i}(M)_{\Sigma_{J_i}}
+\]
+is a homotopy equivalence.  
+Because each term $R_j$ in this colimit is contractible, then this colimit is identified as the classifying space
+\[
+\sB \cI^{[U]}_M~\simeq~ \underset{(\underset{j\in J_i} \sqcup R_j\hookrightarrow M)\in \cI^{[U]}_M} \colim~ \underset{j\in J_i}\prod R_j~.
+\]
+Applying this to the case $M=X_{[U_i]}$, we conclude that $\sB \cI^{[(U_i^{\sqcup J_i})_{[U_i]}}_{X_{[U_i]}} \simeq \conf_{J_i}(M)_{\Sigma_{J_i}}$.
+In summary, we have verified that the map of underlying $\infty$-groupoids
+\[
+\bigl(\sD_X[\cI_X^{-1}]\bigr)^{\sim} \xra{~\simeq~} \bigl(\cD_X\bigr)^{\sim}
+\]
+is an equivalence.  
+
+We now show that the functor induces an equivalence on spaces of morphisms.
+Consider the diagram of spaces
+\[
+\xymatrix{
+\bigl(\sD_U[\cI_U^{-1}]\bigr)^{\sim}  \ar[r]  \ar[d]_-{(U\hookrightarrow X)}
+&
+\cD_U^{\sim}  \ar[d]^-{(U\hookrightarrow X)}
+\\
+\bigl(\sD_X[\cI_X^{-1}]\bigr)^{(1)} \ar[r]  \ar[d]_-{{\sf ev}_1}
+&
+\cD_X^{(1)}  \ar[d]^-{{\sf ev}_1}
+\\
+\bigl(\sD_X[\cI_X^{-1}]\bigr)^{\sim}  \ar[r]
+&
+\cD_X^{\sim}
+}
+\]
+where a superscript ${}^{(1)}$ indicates a space of morphisms, and the upper vertical arrows are given as $(V\hookrightarrow U)\mapsto \bigl((V\hookrightarrow X)\hookrightarrow (U\hookrightarrow X)\bigr)$.
+Our goal is to show that the middle horizontal arrow is an equivalence.
+We will accomplish this by showing that the diagram is a map of fiber sequences, for we have already shown that the top and bottom horizontal maps are equivalences.
+
+The right vertical sequence is a fiber sequence because such evaluation maps are coCartesian fibrations, in general.  
+Then, by inspection, the fiber over $(U\hookrightarrow X)$ is the underlying $\infty$-groupoid of the slice $(\cD_X)_{/(U\hookrightarrow X)}$.
+This slice is canonically identified as $\cD_U$.  
+
+Let us show that the left vertical sequence is a fiber sequence.  
+The space of morphisms of $\bigl(\sD_X[\cI_X^{-1}]\bigr)^{(1)}$ is the classifying space of the subcategory of the functor category $\Fun^{\cI_X}\bigl([1],\sD_X\bigr) \subset \Fun\bigl([1],\sD_X\bigr)$ consisting of the same objects but only those natural transformations by $\cI$.  
+We claim the fiber over $(U\hookrightarrow X)$ of the evaluation map is canonically identified as in the sequence
+\[
+\bigl(\sD_U[\cI_U^{-1}]\bigr)^{\sim} \xra{~(U\hookrightarrow X)~}\bigl(\sD_X[\cI_X^{-1}]\bigr)^{(1)} \xra{~{\sf ev}_1~} \bigl(\sD_X[\cI_X^{-1}]\bigr)^{\sim}~.
+\]
+This claim is justified through Quillen's Theorem B, for the named fiber is the classifying space of the slice category $(\cI_X)_{/(U\hookrightarrow X)}$ which is canonically isomorphic to $\cI_U$.  
+To apply Quillen's Theorem B, we must show that each morphism $(U\hookrightarrow X) \hookrightarrow (V\hookrightarrow X)$ in $\cI$ induces an equivalence of spaces $\sB\bigl((\cI_X)_{/(U\hookrightarrow X)}\bigr) \simeq \sB\bigl((\cI_X)_{/(V\hookrightarrow X)}\bigr)$.  
+This map of spaces is canonically identified as $\sB \cI_U \to \sB \cI_V$.
+Through the previous analysis of this proof, this map is further identified as the map of spaces $\underset{[B]} \coprod U_{[B]} \to \underset{[B]} \coprod V_{[B]}$ induced from the inclusion $U\hookrightarrow V$.
+Because $U$ and $V$ are abstractly isomorphic, then results of~\cite{aft1} give that each such inclusion is isotopic through stratified open embeddings to an isomorphism.  
+We conclude that Quillen's Theorem B applies. See also Theorem~5.3 of~\cite{barwick}.
+\end{proof}
+
+\begin{lemma}\label{refinement-localize}
+
+Let $r\colon \w{X}\to X$ be a refinement between stratified spaces.
+Then there is a functor 
+\[
+\disk(\bsc)_{/\w{X}} \longrightarrow \disk(\bsc)_{/X}
+\]
 which is a localization.
-Proof. There is an obvious functor Snglr(Bsc)/ ~X→ Snglr(Bsc)/X given by assigning to ( ~i : ~֒→~X)
-the object (i :֒→X) where Z = ~i( ~Z)⊂X is the image with the inherited stratiﬁcation. Observe
-that this functor sends ﬁnite disjoint unions of basics conically smoo thly openly embedding into ~X,
-to ﬁnite disjoint unions conically smoothly openly embedding into X. Also observe that this functor
-sends stratiﬁed isotopy equivalences to stratiﬁed isotopy equivale nces. After these observations, the
-desired functor happens through Proposition 2.22.
-Notice that the map of underlying ∞-groupoids
-(
-Disk(Bsc)/ ~X
-) ∼
-→
-(
-Disk(Bsc)/X
-) ∼
-respects the
-presentation of these spaces in Lemma 2.21 as a coproduct of a pro duct. Through the same logic
-as in the proof of Proposition 2.22, it is enough to show that the func tor
-Bsc/ Confi( ~M )−→ Bsc/ Confi(M)
-is a localization for each ﬁnite cardinality i and each reﬁnement ~M
-r
-− →M of a smooth manifold.
-Because ~M→M is a reﬁnement, then so is the map of stratiﬁed spaces Conf i( ~M )→ Confi(M ), by
-inspection. The result is an instance of Proposition 1.2.14 of [AFT].
-□
+
+\end{lemma}
+
+\begin{proof}
+
+There is an obvious functor $\snglrd(\bsc)_{/\w{X}}\to \snglrd(\bsc)_{/X}$ given by assigning to $(\w{i}\colon \w{Z}\hookrightarrow\w{X})$ the object $(i\colon Z\hookrightarrow X)$ where $Z=\w{i}(\w{Z})\subset X$ is the image with the inherited stratification. 
+Observe that this functor sends finite disjoint unions of basics conically smoothly openly embedding into $\w{X}$, to finite disjoint unions conically smoothly openly embedding into $X$.  
+Also observe that this functor sends stratified isotopy equivalences to stratified isotopy equivalences.  
+After these observations, the desired functor happens through Proposition~\ref{EEd-vs-EE}.
+
+Notice that the map of underlying $\infty$-groupoids $\bigl(\disk(\bsc)_{/\w{X}}\bigr)^\sim \to \bigl(\disk(\bsc)_{/X}\bigr)^\sim$ respects the presentation of these spaces in Lemma~\ref{EE-equivs} as a coproduct of a product.  
+Through the same logic as in the proof of Proposition~\ref{EEd-vs-EE}, it is enough to show that the functor
+\[
+\bsc_{/\conf_i(\w{M})} \longrightarrow \bsc_{/\conf_i(M)}
+\]
+is a localization for each finite cardinality $i$ and each refinement $\w{M}\xra{r} M$ of a smooth manifold.  
+Because $\w{M}\to M$ is a refinement, then so is the map of stratified spaces $\conf_i(\w{M})\to \conf_i(M)$, by inspection.  
+The result is an instance of Proposition~1.2.14 of~\cite{aft1}.  
+
+\end{proof}

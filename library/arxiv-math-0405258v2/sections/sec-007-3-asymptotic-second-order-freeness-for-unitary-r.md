@@ -8,1457 +8,1336 @@ pages: 10-30
 source_pdf: 0405258v2.pdf
 source_sha256: dbd6bf5a94deebaf
 doc_brief: "SECOND ORDER FREENESS AND FLUCTUATIONS OF RANDOM MATRICES: II. UNITARY RANDOM MATRICES — We extend the relation between random matrices and free probability theory from the level of expectations to"
+text_source: latex
+latex_prose_ratio: 0.831
+latex_coverage_ratio: 1.0
 ---
-matrices
-Notation 3.1. Suppose ǫ : [2 l] → {− 1, 1} is such that ∑ 2l
-i=1 ǫi = 0.
-We write ǫ−1(1) = {p1, p2, . . . , pl} and ǫ−1(−1) = {q1, q2, . . . , ql}, with
-p1 < p 2 < · · · < p l and q1 < q 2 < · · · < q l. Let S(ǫ)
-2l be the permutations
-π in S2l such that π takes {p1, . . . , pl} onto {q1, . . . , ql} and vice versa.
-Given a π in S(ǫ)
-2l we may extract a pair of permutations απ and βπ in
-Sl from the equations
-(6) π(pαπ(k)) = qk and π(qk) = pβπ(k)
-and conversely: ( α, β) ↦→πα,β. Thus we have a bijection of sets between
-S(ǫ)
-2l and Sl × Sl.
-Given π ∈ S(ǫ)
-2l we let ˜π ∈ Sl be deﬁned by
-π2(pk) = p˜π(k)
-Note that ˜πα,β = βα −1.
+\begin{notation}\label{notation1}
+Suppose $\epsilon : [2l] \rightarrow \{-1, 1\}$ is such that
+$\sum_{i=1}^{2l} \epsilon_i = 0$. We write $\epsilon^{-1}(1) = \{
+p_1, p_2, \dots , p_l\}$ and $\epsilon^{-1}(-1) = \{q_1, q_2, \dots
+, q_l\}$, with $p_1 < p_2 < \cdots < p_l$ and $q_1 < q_2 < \cdots <
+q_l$. Let $S^{(\epsilon)}_{2l}$ be the permutations $\pi$ in
+$S_{2l}$ such that $\pi$ takes $\{p_1,\dots,p_l\}$ onto
+$\{q_1,\dots,q_l\}$ and vice versa. Given a $\pi$ in
+$S^{(\epsilon)}_{2l}$ we may extract a pair of permutations
+$\alpha_\pi$ and $\beta_\pi$ in $S_l$ from the equations 
+
+\begin{equation}\label{pi_definition}
+\pi(p_{\alpha_\pi(k)}) = q_{k} \mbox{ and } \pi(q_k) =
+p_{\beta_\pi(k)}
+\end{equation}
+
+and conversely: $(\alpha, \beta) \mapsto
+\pi_{\alpha, \beta}$. Thus we have a bijection of sets between
+$S^{(\epsilon)}_{2l}$ and $S_l \times S_l$.
+
+Given $\pi \in S^{(\epsilon)}_{2l}$ we let $\tilde \pi \in S_l$ be
+defined by $$ \pi^2(p_k) = p_{\tilde \pi(k)}$$ Note that $\tilde
+\pi_{\alpha, \beta} = \beta \alpha^{-1}$.
+\end{notation}
+
 Also we have
-#(π) = #(˜π),
+$$\#(\pi)=\#(\tilde\pi),$$
 and thus
-|π| = |˜π| + l.
-Lemma 3.2. Fix l ∈ N and γ ∈ S2l. Let, for N ∈ N, U be a Haar
-distributed unitary N × N random matrix. Let ǫ : [2l] → {−1, 1} such
-that ∑ 2l
-i=1 ǫi = 0 . Then we have for all 1 ≤ r1, . . . , r2l, s1, . . . , s2l ≤ N
-that
-(7) E
-(
-U ǫ1
-r1,sγ(1) · · · U ǫ2l
-r2l,sγ(2l)
-)
-=
-∑
-π∈S(ǫ)
-2l
-2l∏
-k=1
-δrk,sγ(π(k)) Wg(N, ˜π).
-Proof. Let ik, i′
-k, jk, j′
-k (1 ≤ k ≤ l) be such that
-E
-(
-U ǫ1
-r1,sγ(1) · · · U ǫ2l
-r2l,sγ(2l)
-)
-= E
-(
-Ui′
-1,j′
-1 · · · Ui′
-l,j′
-l
-U −1
-j1,i1 · · · U −1
-jl,il
-)
-,
-FLUCTUATIONS OF UNITARY RANDOM MATRICES 11
-i.e. let ǫ−1(1) = {p1, . . . , pl} with p1 < · · · < p l and ǫ−1(−1) =
-{q1, . . . , ql} with q1 < · · · < q l and i′
-k = rpk, j′
-k = sγ(pk), ik = sγ(qk), and
-jk = rqk.
-Now suppose that α and β in Sl and π ∈ S(ǫ)
-2l is as in equation (6)
-above.
+$$\vert \pi\vert=\vert\tilde\pi\vert+l.$$
+
+\begin{lemma}
+Fix $l\in\NN$ and $\gamma\in S_{2l}$. Let, for $N\in\NN$, $U$ be a
+Haar distributed unitary $N\times N$ random matrix. Let $\epsilon :
+[2l] \rightarrow \{-1, 1\}$ such that $\sum_{i=1}^{2l} \epsilon_i =
+0$. Then we have for all $1\leq
+r_1,\dots,r_{2l},s_1,\dots,s_{2l}\leq N$ that
+\begin{equation}
+\EE\big(U^{\epsilon_1}_{r_1, s_{\gamma(1)}} \cdots\
+         U^{\epsilon_{2l}}_{r_{2l}, s_{\gamma(2l)}}
+\big) = \sum_{\pi \in S^{(\epsilon)}_{2l}} \prod_{k=1}^{2l}
+\delta_{r_k, s_{\gamma(\pi(k))}}\,\Wg(N,\tilde \pi).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Let $i_k,i'_k, j_k, j'_k$ ($1 \leq k \leq l$) be such that
+$$\EE\big( U^{\epsilon_1}_{r_1, s_{\gamma(1)}} \cdots\
+       U^{\epsilon_{2l}}_{r_{2l}, s_{\gamma(2l)}}
+\big)
+ =
+\EE\big(
+ U_{i'_1, j'_1} \cdots\ U_{i'_l, j'_l}
+       U^{-1}_{j_1, i_1}\cdots\ U^{-1}_{j_l,i_l}
+\bigr),
+$$
+i.e. let $\epsilon^{-1}(1) = \{p_1, \dots , p_l\}$ with $p_1 <
+\cdots < p_l$ and $\epsilon^{-1}(-1) = \{q_1 , \dots, q_l \}$
+with $q_1 < \cdots < q_l$ and $i'_k = r_{p_k}$, $j'_k =
+s_{\gamma(p_k)}$, $i_k = s_{\gamma(q_k)}$, and $j_k =
+r_{q_k}$. 
+
+Now suppose that $\alpha$ and $\beta$ in $S_l$ and $\pi \in
+S_{2l}^{(\epsilon)}$ is as in equation (\ref{pi_definition})
+above. 
+
+
 Thus we have
-ik = sγ(qk) = sγ(π(pα(k))), and i′
-α(k) = rpα(k),
-and
-j′
-β(k) = sγ(pβ(k)) = sγ(π(qk)), and jk = rqk
-which shows that
-ik = i′
-α(k) ⇐ ⇒ rpα(k) = sγ(π(pα(k)))
-and
-jk = j′
-β(k) ⇐ ⇒ rqk = sγ(π(qk)).
+$$i_k = s_{\gamma(q_k)} =
+s_{\gamma(\pi(p_{\alpha(k)}))},\quad\text{and}\quad
+i'_{\alpha(k)} = r_{p_{\alpha(k)}},$$ and
+$$j'_{\beta(k)}
+= s_{\gamma(p_{\beta(k)})} = s_{\gamma(\pi(q_k))},
+\quad\text{and}\quad j_k = r_{q_k}$$ which shows that
+$$ i_k = i'_{\alpha(k)} \iff r_{p_{\alpha(k)}} =
+s_{ \gamma(\pi(p_{\alpha(k)}))  }$$ and
+$$j_k = j'_{\beta(k)} \iff r_{q_k} = s_{\gamma(\pi(q_k))}. $$
 Thus
-l∏
-k=1
-δik,i′
-α(k)
-δjk,j′
-β(k)
-=
-2l∏
-k=1
-δrk,sγ(π(k)).
+$$ \prod_{k=1}^l \delta_{i_k, i'_{\alpha(k)}} \delta_{j_k,
+j'_{\beta(k)}} = \prod_{k=1}^{2l} \delta_{r_k,
+s_{\gamma(\pi(k))}}.
+$$
 Hence
-E
-(
-U ǫ1
-r1,sγ(1) · · · U ǫ2l
-r2l,sγ(2l)
-)
-= E
-(
-Ui′
-1,j′
-1 · · · Ui′
-l,j′
-l
-U −1
-j1,i1 · · · U −1
-jl,il
-)
-=
-∑
-α,β∈Sn
-δi1i′
-α(1)
-· · · δini′
-α(n)
-δj1j′
-β(1)
-· · · δjnj′
-β(n)
-Wg(βα −1)
-=
-∑
-π∈S(ǫ)
-2l
-2l∏
-k=1
-δrk,sγ(π(k)) Wg(˜π).
+\begin{align*}
+\EE\big(&
+       U^{\epsilon_1}_{r_1, s_{\gamma(1)}} \cdots \
+       U^{\epsilon_{2l}}_{r_{2l}, s_{\gamma(2l)}}
+\big) =\EE\big(
+ U_{i'_1, j'_1} \cdots\ U_{i'_l, j'_l}
+       U^{-1}_{j_1, i_1}\cdots\ U^{-1}_{j_l,i_l}
+\big)\\
+&=\sum_{\alpha,\beta\in S_n} \delta_{i_1i'_{\alpha(1)}}\cdots
+\delta_{i_ni'_{\alpha(n)}}
+\delta_{j_1j'_{\beta(1)}}\cdots\delta_{j_nj'_{\beta(n)}}
+\Wg(\beta\alpha^{-1})\\
+&=
+ \sum_{\pi \in S^{(\epsilon)}_{2l}}
+  \prod_{k=1}^{2l} \delta_{r_k, s_{\gamma(\pi(k))}}\,
+                   \Wg(\tilde \pi).
+\end{align*}
+\end{proof}
+
 We can now address the question how to calculate expectations of
-products of traces of our matrices. The following result is exact fo r
-each N; later on we will look on its asymptotic version.
-Note that the notation Tr π(D1, . . . , Dn) for π ∈ Sn is deﬁned in the
-usual multiplicative way, as was done in Notation 2.6 for ϕ1.
-We shall need the following standard lemma. For D1, . . . , Dp ∈
-MN (A) let the entries of Di be ( D(i)
-r,s).
-Lemma 3.3. Let π ∈ Sn and D1, . . . , Dn ∈ MN (A). Then
-Trπ(D1, D2, . . . , Dn) =
-∑
-j1,j2,...,jn
-D(1)
-j1,jπ(1)
-D(2)
-j2,jπ(2)
-· · · D(n)
-jn,jπ(n)
-12 J. A. MINGO, P. ´SNIADY, AND R. SPEICHER
-Given m1, . . . , mk, let γm1,...,mk be the permutation of [ m1 + · · ·+ mk]
-with k cycles where the ith cycle is (m1+· · ·+mi−1+1, . . . , m1+· · ·+mi).
-Proposition 3.4. Fix m1, . . . , mk ∈ N such that m1 + · · · + mk = 2 l
-is even. Let, for ﬁxed N ∈ N, U be a Haar distributed unitary N × N-
-random matrix and D1, . . . , D2l be N × N-random matrices which are
-independent from U. Let ǫ : [2 l] → {− 1, 1} with ∑ 2l
-i=1 ǫi = 0 . Put
-γ = γm1,...,mk. Then
-(8) E
-(
-Tr(D1U ǫ1 · · · Dm1U ǫm1 )
-× Tr(Dm1+1U ǫm1+1 · · · Dm1+m2U ǫm1+m2 ) × · · ·
-× Tr(Dm1+···+mk−1+1U ǫm1+···+mk−1+1 · · · Dm1+···+mkU ǫm1+···+mk )
-)
-=
-∑
-π∈S(ǫ)
-2l
-Wg(N, ˜π) · E
-(
-Trγπ −1(D1, . . . , D2l)
-)
-.
-Proof. Summations over r’s and s’s in the following formulas are from
-1 to N.
-E
-(
-Tr(D1U ǫ1 · · · Dm1U ǫm1 )Tr(Dm1+1U ǫm1 +1 · · · Dm1+m2U ǫm1 +m2 )
-· · · × Tr(Dm1+···+mk−1+1U ǫm1+···+mk−1+1 · · · Dm1+···+mkU ǫm1 +···+mk )
-)
-=
-∑
-r1,...,r2l
-s1,...,s2l
-E
-(
-U ǫ1
-s1,rγ(1) · · · U ǫ2l
-s2l,rγ(2l)
-)
-· E
-(
-D(1)
-r1,s1 · · · D(2l)
-r2l,s2l
-)
-=
-∑
-r1,...,r2l
-s1,...,s2l
-∑
-π∈S(ǫ)
-2l
-2l∏
-k=1
-δsk,rγ(π(k)) Wg(˜π) · E
-(
-D(1)
-r1,s1 · · · D(2l)
-r2l,s2l
-)
-=
-∑
-π∈S(ǫ)
-2l
-Wg(˜π)
-∑
-r1,...,r2l
-s1,...,s2l
-2l∏
-k=1
-δsk,rγ(π(k)) · E
-(
-D(1)
-r1,s1 · · · D(2l)
-r2l,s2l
-)
-=
-∑
-π∈S(ǫ)
-2l
-Wg(˜π)
-∑
-r1,...,r2l
-E
-(
-D(1)
-r1,rγ(π(1)) · · ·D(2l)
-r2l,rγ(π(2l))
-)
-=
-∑
-π∈S(ǫ)
-2l
-Wg(˜π)E
-(
-Trγπ (D1, . . . , D2l)
-)
-=
-∑
-π∈S(ǫ)
-2l
-Wg(˜π)E
-(
-Trγπ −1(D1, . . . , D2l)
-)
-In the last equality we used that Wg(˜π) depends only on the conjugacy
-class of π.
-FLUCTUATIONS OF UNITARY RANDOM MATRICES 13
-Motivated by the result of Voiculescu [Voi1, Voi2] that Haar dis-
-tributed unitary random matrices and constant matrices are asym p-
-totically free, we want to investigate now the corresponding quest ion
-for second order freeness. It will turn out that one can replace t he
-constant matrices by another ensemble of random matrices, as lon g as
-those are independent from the unitary random matrices. Of cour se,
-we have to assume that the second ensemble has some asymptotic lim it
-distribution. This is formalized in the following deﬁnition. Note that
-we make a quite strong requirement on the vanishing of the higher
-order cumulants. This is however in accordance with the observatio n
-that in many cases the unnormalized traces converge to Gaussian r an-
-dom variables. Of course, if we have a non-probabilistic ensemble of
-constant matrices, then the only requirement is the convergence of k 1;
-all other cumulants are automatically zero.
-Deﬁnition 3.5. 1) Let {A1, . . . , As}N be a sequence of N × N-random
-matrices. We say that they have a second order limit distribution if
-there exists a second order non-commutative probability space ( A, ϕ1,
-ϕ2) and a1, . . . , as ∈ A such that for all polynomials p1, p2, . . . in s
-non-commuting indeterminates we have
-(9) lim
-N →∞
-k1
-(
-tr(p1(A1, . . . , As)
-))
-= ϕ1
-(
-p1(a1, . . . , as)
-)
-,
-(10) lim
-N →∞
-k2
-(
-Tr(p1(A1, . . . , As)), Tr(p2(A1, . . . , As))
-)
-= ϕ2
-(
-p1(a1, . . . , as), p2(a1, . . . , as)
-)
-,
-and, for r ≥ 3,
-(11) lim
-N →∞
-kr
-(
-Tr(p1(A1, . . . , As)), . . . ,Tr(pr(A1, . . . , As))
-)
-= 0.
-2) We say that two sequences of N ×N-random matrices, {A1, . . . , As}N
-and {B1, . . . , Bt}N , are asymptotically free of second order if the se-
-quence {A1, . . . , As, B1, . . . , Bt}N has a second order limit distribution,
-given by ( A, ϕ1, ϕ2) and a1, . . . , as, b1, . . . , bt ∈ A , and if the unital
-algebras
-A1 := alg(1, a1, . . . , as) and A2 := alg(1, b1, . . . , bt)
-are free with respect to ( ϕ1, ϕ2).
-Notation 3.6. Fix m, n ∈ N and let ǫ : [1 , m + n] → {− 1, +1}. We
-deﬁned S(ǫ)
-m+n in Notation 3.1, for the case where ∑ m+n
-k=1 ǫ(k) = 0, as
-those permutations in Sm+n for which ǫ alternates cyclically between
-−1 and +1 on all cycles. Note that this deﬁnition also makes sense
-14 J. A. MINGO, P. ´SNIADY, AND R. SPEICHER
-in the case where the sum of the ǫ’s is not equal to zero, then we just
-have S(ǫ)
-m+n = ∅. Let ǫ1 and ǫ2 be the restrictions of ǫ to [1 , m] and to
-[m + 1, m + n], respectively. Then we put
-S(ǫ)
-N C(m, n) := S(ǫ)
-m+n ∩ SN C(m, n)
+products of traces of our matrices. The following result is exact
+for each $N$; later on we will look on its asymptotic version.
+
+Note that the notation $\Tr_\pi(D_1,\dots,D_n)$ for $\pi\in
+S_n$ is defined in the usual multiplicative way, as was done
+in Notation \ref{extension} for $\ff_1$.
+
+We shall need  the following standard lemma. For $D_1, \dots
+,\ab D_p \in M_N(\mathcal{A})$ let the entries of $D_i$ be
+$(D^{(i)}_{r,s})$.
+
+\begin{lemma}
+Let $\pi \in S_n$ and $D_1, \dots , D_n \in
+M_N(\mathcal{A})$. Then 
+$$
+\Tr_\pi(D_1, D_2, \dots, D_n) = 
+\sum_{j_1, j_2, \dots, j_n}
+D^{(1)}_{j_1, j_{\pi(1)}} 
+D^{(2)}_{j_2, j_{\pi(2)}} \cdots
+D^{(n)}_{j_n, j_{\pi(n)}} 
+$$
+\end{lemma}
+
+Given $m_1, \dots , m_k$, let $\gamma_{m_1, \dots , m_k}$ be
+the permutation of $[m_1 + \dots  + m_k]$ with $k$ cycles
+where the $i^{th}$ cycle is $(m_1 + \cdots + m_{i-1}+1, \dots
+, m_1 + \cdots + m_i)$.
+
+\begin{proposition}
+\label{prop:computationofmoments} Fix $m_1,\dots,m_k\in\NN$ such
+that $m_1+\cdots+m_k=2l$ is even. Let, for fixed $N\in \NN$, $U$ be
+a Haar distributed unitary $N\times N$-random matrix and
+$D_1,\dots,D_{2l}$ be $N\times N$-random matrices which are
+independent from $U$. Let $\epsilon: [2l] \rightarrow \{-1, 1\}$
+with $\sum_{i=1}^{2l} \epsilon_i = 0$. Put
+$\gamma=\gamma_{m_1,\dots,m_k}$. Then
+\begin{multline}\label{eq:computationofmoments} 
+\EE\big(\Tr(D_{1}U^{\epsilon_1}
+\cdots D_{m_1}U^{\epsilon_{m_1}}) \\
+\times    \Tr(D_{m_1+1}U^{\epsilon_{m_1+1}} \cdots
+    D_{m_1+m_2}U^{\epsilon_{m_1+m_2}}) \times \cdots \\
+\times  \Tr(D_{m_1+ \cdots + m_{k-1} + 1}U^{\epsilon_{m_1+  \cdots + m_{k-1} + 1}} \cdots
+    D_{m_1+ \cdots + m_k}U^{\epsilon_{m_1+ \cdots +
+m_k}})\big)\\ 
+= \sum_{\pi \in S^{(\epsilon)}_{2l}}
+ \Wg(N,\tilde \pi)\cdot \EE\big(\Tr_{\gamma
+\pi^{-1}}(D_1,\dots,D_{2l})
+\big).
+\end{multline}
+\end{proposition}
+
+\begin{proof}
+Summations over $r$'s and $s$'s in the following formulas are
+from 1 to $N$.
+
+\begin{eqnarray*}
+\lefteqn{ \EE\big(\Tr(D_{1}U^{\epsilon_1} \cdots
+D_{m_1}U^{\epsilon_{m_1}}) 
+        \Tr(D_{m_1+1}U^{\epsilon_{m_1+1}} \cdots
+    D_{m_1+m_2}U^{\epsilon_{m_1+m_2}}) }\\
+&& \cdots \times  
+\Tr(D_{m_1+ \cdots + m_{k-1} + 1}U^{\epsilon_{m_1+  
+\cdots + m_{k-1} + 1}} \cdots
+    D_{m_1+ \cdots + m_k}U^{\epsilon_{m_1+ \cdots +
+m_k}})\big)  \\
+& = &
+\mathop{\sum_{r_1, \dots , r_{2l}}}_{s_1,\dots,s_{2l}} 
+         \EE\big(
+         U^{\epsilon_1}_{s_1, r_{\gamma(1)}} \cdots\
+         U^{\epsilon_{2l}}_{s_{2l}, r_{\gamma(2l)}}
+\big)
+\cdot \EE\big(D^{(1)}_{r_1, s_1}\cdots D^{(2l)}_{r_{2l}, 
+s_{2l}}\big)
+ \\
+& = &
+\mathop{\sum_{r_1, \dots , r_{2l}}}_{s_1,\dots, s_{2l}}\
+ \sum_{\pi \in S^{(\epsilon)}_{2l}} \
+  \prod_{k=1}^{2l} \delta_{s_k, r_{\gamma(\pi(k))}}\
+                   \Wg(\tilde \pi) \cdot
+\EE\big(D^{(1)}_{r_1, s_1}\cdots D^{(2l)}_{r_{2l},
+s_{2l}}\big)  \\
+& = & 
+\sum_{\pi \in S^{(\epsilon)}_{2l}}\Wg(\tilde \pi)
+ \mathop{\sum_{r_1,\dots, r_{2l}}}_{s_1, \dots , s_{2l}}
+  \prod_{k=1}^{2l} \delta_{s_k, r_{\gamma(\pi(k))}}\cdot
+\EE\big( D^{(1)}_{r_1, s_1}\cdots D^{(2l)}_{r_{2l}, s_{2l}}
+\big) \\
+& = & 
+\sum_{\pi \in S^{(\epsilon)}_{2l}}\Wg(\tilde \pi)
+\sum_{r_1,\dots, r_{2l}}
+\EE\big( D^{(1)}_{r_1, r_{\gamma(\pi(1))}}
+\cdots D^{(2l)}_{r_{2l}, r_{\gamma(\pi(2l))}}
+\big) \\
+& = & 
+\sum_{\pi \in S^{(\epsilon)}_{2l}} \Wg(\tilde \pi)
+\EE\big( \Tr_{\gamma\pi} (D_1,\dots,D_{2l}) \big) \\
+& = & 
+\sum_{\pi \in S^{(\epsilon)}_{2l}} \Wg(\tilde \pi)
+\EE\big( \Tr_{\gamma\pi^{-1}} (D_1,\dots,D_{2l}) \big)
+\end{eqnarray*}
+In the last equality we used that $\Wg(\tilde\pi)$ depends
+only on the conjugacy class of $\pi$.
+\end{proof}
+
+Motivated by the result of Voiculescu \cite{Voi1,Voi2} that Haar
+distributed unitary random matrices and constant matrices are
+asymptotically free, we want to investigate now the corresponding
+question for second order freeness. It will turn out that one can
+replace the constant matrices by another ensemble of random
+matrices, as long as those are independent from the unitary random
+matrices. Of course, we have to assume that the second ensemble has
+some asymptotic limit distribution. This is formalized in the
+following definition. Note that we make a quite strong requirement
+on the vanishing of the higher order cumulants. This is however in
+accordance with the observation that in many cases the unnormalized
+traces converge to Gaussian random variables. Of course, if we have
+a non-probabilistic ensemble of constant matrices, then the only
+requirement is the convergence of $\kk_1$; all other cumulants are
+automatically zero.
+
+\begin{definition} \label{def:asymptoticfreeness}
+1) Let $\{A_1,\dots,A_s\}_N$ be a sequence of $N\times N$-random
+matrices. We say that they have a \emph{second order limit
+distribution} if there exists a second order non-commutative
+probability space $(\cA,\ff_1, \ab \ff_2)$ and $a_1,\dots,a_s\in\cA$
+such that for all polynomials $p_1,p_2,\dots$ in $s$ non-commuting
+indeterminates we have
+\begin{equation}\label{asymp1}
+\lim_{N\to\infty}\kk_1\big(\tr(p_1(A_1,\dots, A_s)\big)\big)=
+\ff_1\bigl(p_1(a_1,\dots, a_s)\bigr),
+\end{equation}
+
+\begin{multline}\label{asymp2}
+\lim_{N\to\infty} \kk_2\big(\Tr(p_1(A_1,\dots,A_s)),
+\Tr(p_2(A_{1},\dots, A_{s}))\big) \\
+\mbox{} =
+\ff_2\bigl(p_1(a_1,\dots,a_s), p_2 (a_{1},\dots, a_{s})\bigr),
+\end{multline}
+and, for $r\geq 3$,
+\begin{equation}\label{asymp3}
+\lim_{N\to\infty} \kk_r\big( \Tr( p_1(A_1,\dots, A_s)),\dots,
+\Tr( p_r(A_1,\dots, A_s)) \big) = 0.
+\end{equation}
+2) We say that two sequences of $N\times N$-random matrices,
+$\{A_1,\dots,A_s\}_N$ and $\{B_1,\dots,B_t\}_N$, are
+\emph{asymptotically free of second order} if the sequence
+$\{A_1,\dots,A_s,B_1,\dots,B_t\}_N$ has a second order limit
+distribution, given by $(\cA,\ff_1,\ff_2)$ and $a_1,\dots,a_s,
+b_1,\dots,b_t\in\cA$, and if the unital algebras
+$$\cA_1:=\alg(1,a_1,\dots,a_s)\qquad\text{and}\qquad
+\cA_2:=\alg(1,b_1,\dots,b_t)$$ are free with respect to
+$(\ff_1,\ff_2)$.
+\end{definition}
+
+
+\begin{notation}
+Fix $m,n\in\NN$ and let $\epsilon:[1,m+n]\to \{-1,+1\}$. We defined
+$S_{m+n}^\he$ in Notation \ref{notation1}, for the case where
+$\sum_{k=1}^{m+n} \epsilon(k)=0$, as those permutations in $S_{m+n}$
+for which $\epsilon$ alternates cyclically between $-1$ and $+1$ on
+all cycles. Note that this definition also makes sense in the case
+where the sum of the $\epsilon$'s is not equal to zero, then we just
+have $S_{m+n}^\he=\emptyset$. Let $\epsilon_1$ and $\epsilon_2$ be
+the restrictions of $\epsilon$ to $[1,m]$ and to $[m+1,m+n]$,
+respectively. Then we put
+$$\SNCe(m,n):=S_{m+n}^\he\cap \SNC(m,n)$$
 and
-N C(ǫ1)(m) := S(ǫ1)
-m ∩ N C(m), N C (ǫ2)(n) := S(ǫ2)
-n ∩ N C(n).
-Theorem 3.7. Let {U}N be a sequence of Haar distributed unitary
-N × N-random matrices and {A1, . . . , As}N a sequence of N × N-
-random matrices which has a second order limit distribution , given by
-(A, ϕ1, ϕ2) and a1, . . . , as ∈ A . Furthermore, assume that {U}N and
-{A1, . . . , As}N are independent. Fix now m, n ∈ N and consider poly-
-nomials p1, . . . , pm+n in s non-commuting indeterminates. If we put
-(for i = 1, . . . , m+ n)
-Di := pi(A1, . . . , As) and di := pi(a1, . . . , as),
-then we have for all ǫ(1), . . . , ǫ(m + n) ∈ {−1, +1} that
-lim
-N →∞
-k2
-(
-Tr(D1U ǫ1 · · · DmU ǫm), Tr(Dm+1U ǫm+1 · · · Dm+nU ǫm+n)
-)
-(12)
-=
-∑
-π∈S(ǫ)
-N C(m,n)
-µ(˜π) · ϕ1(γm,nπ−1)[d1, . . . , dm+n]
-+
-∑
-π1∈N C(ǫ1)(m)
-π2∈N C(ǫ2)(n)
-(
-µ2(˜π1, ˜π2) · ϕ1(γmπ−1
-1 × γnπ−1
-2 )[d1, . . . , dm+n]
-+ µ(˜π1 × ˜π2) · ϕ2(γmπ−1
-1 , γnπ−1
-2 )[d1, . . . , dm+n]
-)
-.
-Note that in the case where the sum of the ǫ’s is diﬀerent from zero
-this just states that the limit of k 2 vanishes.
-Proof. For notational convenience, we will sometimes write m + n = 2l
-in the following, and also use γ := γm,n.
+$$NC^{(\epsilon_1)}(m):=S_m^{(\epsilon_1)}\cap \NC(m),\qquad
+NC^{(\epsilon_2)}(n):=S_n^{(\epsilon_2)}\cap \NC(n).$$
+\end{notation}
+
+\begin{theorem}\label{main}
+Let $\{U\}_N$ be a sequence of Haar distributed unitary $N\times
+N$-random matrices and $\{A_1,\dots,A_s\}_N$ a sequence of $N\times
+N$-random matrices which has a second order limit distribution,
+given by $(\cA,\ff_1,\ff_2)$ and $a_1,\dots,a_s\in\cA$. Furthermore,
+assume that $\{U\}_N$ and $\{A_1,\dots,A_s\}_N$ are independent. Fix
+now $m,n\in\NN$ and consider polynomials $p_1,\dots,p_{m+n}$ in $s$
+non-commuting indeterminates. If we put $($for $i=1,\dots,m+n)$
+$$D_i:=p_i(A_1,\dots,A_s)\qquad\text{and}\qquad
+d_i:=p_i(a_1,\dots,a_s),$$ then we have for all
+$\epsilon(1),\dots,\epsilon(m+n)\in\{-1,+1\}$ that
+
+
+\begin{align}\label{main:eq}
+&\lim_{N\to\infty} \kk_2\big(
+\Tr(D_{1}U^{\epsilon_1} \cdots
+D_{m}U^{\epsilon_m}),
+        \Tr(D_{m+1}U^{\epsilon_{m+1}} \cdots
+    D_{m+n}U^{\epsilon_{m+n}})\big) \\ \notag
+&= \sum_{\pi\in\SNCe(m,n)} \mu(\tilde \pi)\cdot
+\ff_1(\gamma_{m,n}\pi^{-1})[d_1,\dots,d_{m+n}]    \\ \notag
+&\quad+
+\mathop{\sum_{\pi_1\in NC^{(\epsilon_1)}(m)}}_{\pi_2\in
+NC^{(\epsilon_2)}(n)} 
+\Bigl(\mu_2(\tilde \pi_1, \tilde \pi_2)\cdot
+\ff_1(\gamma_m\pi_1^{-1}\times \gamma_n\pi_2^{-1})[d_1,\dots,
+d_{m+n}]\\
+\notag 
+&  \quad\qquad\qquad\qquad+
+\mu(\tilde \pi_1 \times\tilde \pi_2)\cdot
+\ff_2(\gamma_m\pi_1^{-1},\gamma_n\pi_2^{-1})
+[d_1,\dots, d_{m+n}]\Bigr).
+\end{align}
+\end{theorem}
+
+Note that in the case where the sum of the $\epsilon$'s is different
+from zero this just states that the limit of $\kk_2$ vanishes.
+
+\begin{proof}
+For notational convenience, we will sometimes write $m+n=2l$ in the
+following, and also use $\gamma:=\gamma_{m,n}$.
+
 We have
-k2
-(
-Tr(D1U ǫ1 · · · DmU ǫm), Tr(Dm+1U ǫm+1 · · · D2lU ǫ2l)
-)
-= E
-(
-Tr(D1U ǫ1 · · ·DmU ǫm)Tr(Dm+1U ǫm+1 · · · D2lU ǫ2l)
-)
-− E
-(
-Tr(D1U ǫ1 · · · DmU ǫm)
-)
-· E
-(
-Tr(Dm+1U ǫm+1 · · · D2lU ǫ2l)
-)
-=
-∑
-π∈S(ǫ)
-2l
-Wg(˜π) · E
-(
-Trγπ −1(D1, . . . , D2l)
-)
-FLUCTUATIONS OF UNITARY RANDOM MATRICES 15
-−
-∑
-π1∈S(ǫ1)
-m
-π2∈S(ǫ2)
-n
-Wg(˜π1)Wg(˜π2) · E
-(
-Trγmπ−1
-1
-(D1, . . . , Dm)
-)
-· E
-(
-Trγnπ−1
-2
-(Dm+1, . . . , D2l)
-)
-=
-∑
-π∈S(ǫ)
-2l
-π connected
-Wg(˜π) · E
-(
-Trγπ −1(D1, . . . , D2l)
-)
-+
-∑
-π1∈S(ǫ1)
-m
-π2∈S(ǫ2)
-n
-(
-Wg(˜π1 × ˜π2) · E
-(
-Trγmπ−1
-1 ×γnπ−1
-2
-(D1, . . . , D2l)
-)
-− Wg(˜π1)Wg(˜π2)E
-(
-Trγmπ−1
-1
-(D1, . . . , Dm)
-)
-· E
-(
-Trγnπ−1
-2
-(Dm+1, . . . , D2l)
-) )
-Note that if either m or n is odd then the last two terms are zero,
-which is consistent with equation (12), as in this case N C(ǫ1)(m) and
-N C(ǫ2)(n) are empty. So for the remainder of the proof we shall assume
-that m and n are even.
-The leading order in the ﬁrst summand for a connected π is given
-by
-µ(˜π)N −(|˜π|+(m+n)/2) · N #(γπ −1) · E
-(
-trγπ −1(D1, . . . , Dm+n)
-)
-=
-= N m+n−|π|−|γπ −1| · µ(˜π) · E
-(
-trγπ −1(D1, . . . , Dm+n)
-)
-.
-Recall that, for a connected π, we always have
-m + n − |π| − |γπ −1| ≤ 0,
-and equality is exactly achieved in the case where π is annular non-
-crossing. Thus, in the limit N → ∞ the ﬁrst sum gives the contribution
-∑
-π∈S(ǫ)
-N C(m,n)
-µ(˜π) · ϕ1(γπ −1)[d1, . . . , dm+n].
+\begin{eqnarray*}\lefteqn{
+\kk_2\big(\Tr(D_1U^{\epsilon_1} \cdots D_{m}U^{\epsilon_m}),
+        \Tr(D_{m+1}U^{\epsilon_{m+1}} \cdots
+    D_{2l}U^{\epsilon_{2l}})\big)  }  \\  
+& = &
+\EE\big( \Tr(D_{1}U^{\epsilon_1} \cdots D_{m}U^{\epsilon_m})
+        \Tr(D_{m+1}U^{\epsilon_{m+1}} \cdots
+    D_{2l}U^{\epsilon_{2l}})\big)   \\
+&& \mbox{} - \EE\big( \Tr(D_{1}U^{\epsilon_1} \cdots
+D_{m}U^{\epsilon_m})\big)  \cdot \EE\big(
+        \Tr(D_{m+1}U^{\epsilon_{m+1}} \cdots
+    D_{2l}U^{\epsilon_{2l}})\big)     \\ 
+& = &
+\sum_{\pi \in S^{(\epsilon)}_{2l}}
+\Wg(\tilde \pi)\cdot 
+\EE\big( \Tr_{\gamma \pi^{-1}
+}(D_1,\dots,D_{2l})\big) \\ 
+&& \mbox{} - 
+\mathop{\sum_{\pi_1\in S^{(\epsilon_1)}_{m}}}_{\pi_2\in
+S^{(\epsilon_2)}_n} 
+\Wg(\tilde \pi_1)\Wg(\tilde \pi_2) \cdot
+\EE\big( \Tr_{\gamma_m \pi_1^{-1}}(D_1,\dots,D_{m})\big)
+ \\[-10pt] 
+&& \mbox{}\hskip10em\cdot
+\EE\big( \Tr_{\gamma_n \pi_2^{-1}}
+(D_{m+1},\dots,D_{2l}) \big) \\
+& = &
+\mathop{\sum_{\pi \in 
+S^{(\epsilon)}_{2l}}}_{\pi\text{\ connected}}
+\Wg(\tilde \pi)\cdot \EE\big(\Tr_{\gamma\pi^{-1}} 
+(D_1,\dots,D_{2l})  \big)\\ 
+&& \mbox{} + 
+\mathop{\sum_{\pi_1\in S^{(\epsilon_1)}_{m}}}_{\pi_2\in
+S^{(\epsilon_2)}_n} 
+\Bigl(\Wg(\tilde \pi_1\times\tilde \pi_2) \cdot
+\EE\big( \Tr_{\gamma_m \pi_1^{-1} \times \gamma_n \pi_2^{-1}}
+(D_1,\dots,D_{2l})  \big) \\ 
+&& \mbox{} -
+\Wg(\tilde \pi_1)\Wg(\tilde \pi_2) 
+\EE\big( \Tr_{\gamma_m \pi_1^{-1}}
+(D_1,\dots,D_{m}) \big) \\ && \hskip10em\mbox{} \cdot
+\EE\big( \Tr_{\gamma_n \pi_2^{-1}}(D_{m+1},\dots,D_{2l})
+\big) \Bigr) 
+\end{eqnarray*} 
+
+Note that if either $m$ or $n$ is odd then the last two terms
+are zero, which is consistent with equation (\ref{main:eq}), as
+in this case $NC^{(\epsilon_1)}(m)$ and $NC^{(\epsilon_2)}(n)$
+are empty. So for the remainder of the proof we shall assume
+that $m$ and $n$ are even.
+
+The leading order in the first summand for a connected $\pi$
+is given by
+\begin{multline*}
+\mu(\tilde\pi)N^{-(\vert\tilde\pi\vert+(m+n)/2)}\cdot
+N^{\#(\gamma\pi^{-1})}\cdot \EE\big( \tr_{\gamma
+\pi^{-1} }(D_1,\dots,D_{m+n})
+\big) = \\
+=N^{m+n-\vert\pi\vert-\vert\gamma\pi^{-1}\vert}\cdot
+\mu(\tilde\pi)\cdot \EE\big(\tr_{\gamma
+\pi^{-1}}( D_1,\dots,D_{m+n}) \big).
+\end{multline*}
+
+\noindent
+Recall that, for a connected $\pi$, we always have
+$$m+n-\vert\pi\vert-\vert\gamma\pi^{-1}\vert\leq 0,$$
+and equality is exactly achieved in the case where $\pi$
+is annular non-crossing. Thus, in the limit $N\to\infty$ the
+first sum gives the contribution
+$$
+\sum_{\pi\in\SNCe(m,n)}\mu(\tilde \pi)
+\cdot\ff_1(\gamma\pi^{-1}) [d_1,\dots,d_{m+n}].
+$$ 
+
+
+
 We can rewrite the second sum as
-∑
-π1∈S(ǫ1)
-m
-π2∈S(ǫ2)
-n
-{
-Wg(˜π1 × ˜π2) − Wg(˜π1)Wg(˜π2)
-}
-(13)
-× E
-(
-Trγmπ−1
-1 ×γnπ−1
-2
-(D1, . . . , Dm+n)
-)
-+ Wg(˜π1)Wg(˜π2)
-{
-E
-(
-Trγmπ−1
-1 ×γnπ−1
-2
-(D1, . . . , Dm+n)
-)
-− E
-(
-Trγmπ−1
-1
-(D1, . . . , Dm)
-)
-· E
-(
-Trγnπ−1
-2
-(Dm+1, . . . , Dm+n)
-) }
-16 J. A. MINGO, P. ´SNIADY, AND R. SPEICHER
-For a disconnected π1 × π2 the leading orders in N of all relevant
-terms are given as follows: Wg(˜π1 × ˜π2) and Wg(˜π1)Wg(˜π2) both have
-leading order (note that µ is multiplicative)
-µ(˜π1)µ(˜π2)N −(m+n)+#(π1)+#(π2);
-E
-(
-Trγmπ−1
-1
-(D1, . . . , Dm)
-)
-· E
-(
-Trγnπ−1
-2
-(Dm+1, . . . , Dm+n)
-)
-and
-E
-(
-Trγmπ−1
-1 ×γnπ−1
-2
-(D1, . . . , Dm+n)
-)
-are both asymptotic to
-ϕ1(γmπ−1
-1 × γnπ−1
-2 )[d1, . . . , dm+n]N #(γmπ−1
-1 )+#(γnπ−1
-2 );
-Wg(˜π1 × ˜π2) − Wg(˜π1)Wg(˜π2) has leading order
-µ2(˜π1, ˜π2) · N −(m+n)+#(π1)+#(π2)−2.
-Now
-− (m + n) + #(π1) + #(π2) − 2 + #(γmπ−1
-1 ) + #(γnπ−1
-2 )
-= −(m + 1 − #(π1) − #(γmπ−1
-1 )) − (n + 1 − #(π2) − #(γnπ−1
-2 )) ≤ 0
-with equality only if both π1 ∈ N C(ǫ1)(m) and π2 ∈ N C(ǫ2)(n).
+\begin{eqnarray}\label{secondsum}\lefteqn{ 
+\mathop{\sum_{\pi_1\in S^{(\epsilon_1)}_{m}}}_{\pi_2\in
+S^{(\epsilon_2)}_n} 
+\Big\{ \Wg(\tilde \pi_1\times\tilde \pi_2) -
+\Wg(\tilde \pi_1)\Wg(\tilde \pi_2) \Big\} } \\[-20pt]\notag
+&& \hskip6em\mbox{} \times
+\EE\big( \Tr_{\gamma_m \pi_1^{-1} \times \gamma_n \pi_2^{-1}}
+(D_1,\dots,D_{m+n})  \big)  \\ \notag
+&& \mbox{} +
+\Wg(\tilde \pi_1)\Wg(\tilde \pi_2) \Big\{  
+\EE\big( \Tr_{\gamma_m \pi_1^{-1} \times \gamma_n \pi_2^{-1}}
+(D_1,\dots,D_{m+n})  \big) \\ \notag && \mbox{} -
+\EE\big( \Tr_{\gamma_m \pi_1^{-1}}
+(D_1,\dots,D_{m}) \big) \cdot
+\EE\big( \Tr_{\gamma_n \pi_2^{-1}}(D_{m+1},\dots,D_{m+n})
+\big)  \Big\}
+\end{eqnarray} 
+
+
+
+
+
+
+For a disconnected $\pi_1\times\pi_2$ the
+leading orders in $N$ of all relevant terms are given as
+follows: 
+$\Wg(\tilde \pi_1\times\tilde \pi_2)$ and
+$\Wg(\tilde\pi_1)\Wg(\tilde\pi_2)$ both have leading order
+(note that $\mu$ is multiplicative)
+$$\mu(\tilde\pi_1)\mu(\tilde\pi_2)N^{-(m+n) +\#(\pi_1)
++ \#(\pi_2)};$$
+
+\noindent
+$\EE\big( \Tr_{\gamma_m \pi_1^{-1}}( D_1,\dots,D_{m})\big)
+\cdot
+\EE\big( \Tr_{\gamma_n \pi_2^{-1}}( D_{m+1},\dots,D_{m+n})
+\big)$ and \\
+$\EE\big(\Tr_{\gamma_m \pi_1^{-1}\times \gamma_n \pi_2^{-1}}
+( D_1,\dots,D_{m+n}) \big) $ are both asymptotic to
+$$\ff_1(\gamma_m\pi_1^{-1}\times \gamma_n\pi_2^{-1})[d_1,\dots,
+d_{m+n}] N^{\#(\gamma_m\pi_1^{-1}) + \#(
+\gamma_n\pi_2^{-1})};$$
+
+
+$\Wg(\tilde \pi_1\times\tilde
+\pi_2)-\Wg(\tilde\pi_1)\Wg(\tilde\pi_2)$ has leading order
+$$\mu_2(\tilde\pi_1,\tilde\pi_2)
+\cdot N^{-(m+n) + \#(\pi_1) + \#(\pi_2) - 2}.
+$$
+
+
+Now 
+\begin{multline*}
+-(m+n) + \#(\pi_1) + \#(\pi_2) - 2 + \#(\gamma_m
+\pi_1^{-1}) + \#( \gamma_n \pi_2^{-1} )\\
+= -( m + 1 - \#(\pi_1) - \#(\gamma_m \pi_1^{-1} )) 
+-( n + 1 - \#(\pi_2) - \#(\gamma_n \pi_2^{-1} )) \leq 0
+\end{multline*}
+with equality only if both $\pi_1 \in NC^{(\epsilon_1)}(m)$
+and $\pi_2 \in NC^{(\epsilon_2)}(n)$.
+
 Thus
-lim
-N
-{
-Wg(˜π1 × ˜π2) − Wg(˜π1)Wg(˜π2)
-}
-E(Trγm,n(π1×π2)−1(D1, . . . , Dm+n)
+$$
+\lim_N \Big\{ \Wg(\tilde \pi_1 \times \tilde \pi_2) -
+\Wg(\tilde  \pi_1) \Wg(\tilde \pi_2) \Big\} \EE(
+\Tr_{\gamma_{m,n}(\pi_1 \times \pi_2)^{-1}} (
+D_1, \dots , D_{m+n} )  
+$$
+$$
+ = 
+\begin{cases}
+\mu_2( \tilde\pi_1, \tilde\pi_2 ) 
+\ff_1(\gamma_m\pi_1^{-1}\times \gamma_n\pi_2^{-1})[d_1,\dots,
+d_{m+n}] & \begin{cases}
+\pi_1 \in NC^{(\epsilon_1)}(m) \\
+\textrm{\ and\ } &\\
+\pi_2 \in NC^{(\epsilon_2)}(n) 
+\end{cases} \\
+0 & \textrm{otherwise} \\
+\end{cases}
+$$
+
+To deal with the second term of the second sum
+(\ref{secondsum}) we will use the following notation. Let the
+cycles of $\gamma_m \pi_1^{-1}$ be $c_1  \cdots 
+c_r$ and the cycles of $\gamma_n\pi_2^{-1}$ be $c_{r+1} 
+\cdots  c_{r+s}$. Let $a_i = \Tr_{c_i}(D_1, \dots D_m)$ for $1
+\leq i \leq r$ and $b_j = \Tr_{c_{r+j}}(D_{m+1}, \dots ,
+D_{m+n})$ for $1 \leq j \leq s$. Then
+\begin{multline*}
+\kk_2( \Tr_{\gamma_m\pi_1^{-1}}(D_1,     \dots, D_m), 
+       \Tr_{\gamma_n\pi_2^{-1}}(D_{m+1}, \dots, D_{m+n}) \\
 =
-
-
-
-
-
-
-
-
-
-µ2(˜π1, ˜π2)ϕ1(γmπ−1
-1 × γnπ−1
-2 )[d1, . . . , dm+n]
-
-
-
-
-
-π1 ∈ N C(ǫ1)(m)
-and
-π2 ∈ N C(ǫ2)(n)
-0 otherwise
-To deal with the second term of the second sum (13) we will use the
-following notation. Let the cycles of γmπ−1
-1 be c1 · · · cr and the cycles
-of γnπ−1
-2 be cr+1 · · · cr+s. Let ai = Trci(D1, . . . Dm) for 1 ≤ i ≤ r and
-bj = Trcr+j(Dm+1, . . . , Dm+n) for 1 ≤ j ≤ s. Then
-k2(Trγmπ−1
-1
-(D1, . . . , Dm), Trγnπ−1
-2
-(Dm+1, . . . , Dm+n)
-= k 2(a1 · · · ar, b1 · · · bs)
-So let us ﬁnd for which π1 ∈ S(ǫ1)
-m , π2 ∈ S(ǫ2)
-n , and τ ∈ P (r + s) we
-have a non-zero limit of
-(14) Wg(˜ π1) Wg(˜π2) kτ (a1, . . . , ar, b1, . . . , bs)
-As noted above the order of Wg(˜ π1) Wg(˜π2) is N −(m+n)+#(π1)+#(π2).
-By equation (1) and the deﬁnition of a second order limit distribution,
-FLUCTUATIONS OF UNITARY RANDOM MATRICES 17
-kτ (a1, . . . , ar, b1, . . . , bs) is O(N c) where c is the number of singletons
-of τ . Thus the order of (14) is
-−(m + n) + #(π1) + #(π2) + c
-= −
-(
-m + 1 − #(π1) − #(γmπ−1
-1 )
-)
-−
-(
-n + 1 − #(π2) − #(γnπ−1
-2 )
-)
-+ c + 2 − (r + s)
-Hence (14) will vanish unless three conditions are satisﬁed: we must
-have that π1 and π2 are non-crossing and c = r + s − 2, i.e. τ has one
-pair and the rest of its blocks are singletons.
+\kk_2(a_1 \cdots a_r, b_1 \cdots b_s)
+\end{multline*}
+
+So let us find for which $\pi_1 \in S_m^{(\epsilon_1)}$,
+$\pi_2 \in S_n^{(\epsilon_2)}$, and  $\tau \in \cP(r+s)$ we have a
+non-zero limit of
+\begin{equation}\label{generalterm}
+\Wg(\tilde\pi_1)\, \Wg(\tilde\pi_2) \,
+\kk_\tau ( a_1, \dots, a_r, b_1, \dots , b_s)
+\end{equation}
+
+As noted above the order of $\Wg(\tilde\pi_1)\,
+\Wg(\tilde\pi_2)$ is $N^{-(m+n) + \#(\pi_1) + \#(\pi_2)}$. 
+By equation (\ref{leonov}) and the definition of a second order limit
+distribution, $\kk_\tau ( a_1, \dots, a_r, b_1, \dots , b_s)$ is
+$O(N^c)$ where $c$ is the number of singletons of $\tau$. Thus the order of
+(\ref{generalterm}) is 
+\begin{eqnarray*}\lefteqn{
+-(m+n) + \#(\pi_1) + \#(\pi_2) + c }\\
+&=& - \big( m + 1 - \#(\pi_1) - \#(\gamma_m\pi_1^{-1})\big) -
+ \big(n + 1 - \#(\pi_2) - \#(\gamma_n\pi_2^{-1}) \big) \\
+&&\quad \mbox{} + c + 2 - (r + s)
+\end{eqnarray*}
+Hence (\ref{generalterm}) will vanish unless three conditions
+are satisfied: we must have that $\pi_1$ and $\pi_2$ are
+non-crossing and $c = r + s -2$, i.e. $\tau$ has one pair and
+the rest of its blocks are singletons. 
+
 Thus
-lim
-N
-∑
-π1∈S(ǫ1)
-m ,π2∈S(ǫ2)
-n
-Wg(˜π1)Wg(˜π2)
-× k2
-(
-Trγmπ−1
-1
-(D1, . . . , Dm), Trγnπ−1
-2
-(Dm+1, . . . , D2l)
-)
-=
-∑
-π1∈N C(ǫ1)(m)
-π2∈N C(ǫ2)(n)
-µ(˜π1)µ(˜π2)
-× lim
-N
-N r+s−2
-∑
-τ ∈P(r+s)
-kτ (a1, . . . , ar, b1, . . . , bs)
-where the τ ’s in the sum have one pair and the remainder are singletons
-and τ ∨ 1r,s = 1 r+s.
+\begin{eqnarray*}\label{secondsumlimit}
+\lefteqn{ \lim_N
+\sum_{\pi_1\in S^{(\epsilon_1)}_{m}, \pi_2\in
+S^{(\epsilon_2)}_n} 
+\Wg(\tilde \pi_1)\Wg(\tilde \pi_2) } \\ 
+&& \qquad \mbox{} \times
+\kk_2 \Big( \Tr_{\gamma_m \pi_1^{-1}}
+            (D_1,\dots,D_{m}) ,
+      \Tr_{\gamma_n \pi_2^{-1}}
+            (D_{m+1},\dots,D_{2l})
+  \Big) \\
+&=&
+\mathop{\sum_{\pi_1\in NC^{(\epsilon_1)}(m)}}_{\pi_2\in
+NC^{(\epsilon_2)}(n)} \mu(\tilde\pi_1) \mu(\tilde\pi_2) \\
+&& \qquad  \mbox{} \times
+\lim_N N^{r+s-2} \sum_{\tau \in \cP(r+s)}
+\kk_\tau (a_1, \dots , a_r, b_1, \dots , b_s)
+\end{eqnarray*} 
+where the $\tau$'s in the sum have one pair and the remainder are
+singletons and $\tau \vee 1_{r,s} = 1_{r+s}$.
+
 So the remainder of the proof is to show that
-lim
-N
-N r+s−2 ∑
-τ ∈P(r+s)
-kτ (a1, . . . , ar, b1, . . . , bs)
-= ϕ2(γmπ−1
-1 , γnπ−1
-2 )[d1, . . . , dm+n]
-where the sum runs over τ ’s as above.
-Let τ ∈ P (r + s) be as above with pair ( i, j) where 1 ≤ i ≤ r and
-1 ≤ j ≤ s and all other blocks singletons. Then
-kτ (a1, . . . , ar, b1, . . . , bs)
-= k 1(a1) · · · ˆk1(ai) · · · k1(ar)k1(b1) · · · ˆk1(bj) · · ·k1(bs)k2(ai, bj)
-where the hatted elements are deleted. So after multiplying by N r+s−2
-and taking a limit we get (after omitting the arguments d1, . . . , dm+n
-which are the same for each factor)
-ϕ1(c1) · · · ˆϕ1(ci) · · · ϕ1(cr)ϕ1(cr+1) · · · ˆϕ1(cr+j) · · · ϕ1(cr+s)ϕ2(ci, cr+j)
-18 J. A. MINGO, P. ´SNIADY, AND R. SPEICHER
-Now summing over all τ , which is equivalent to summing over all i and
-j, we get via the derivation property of ϕ2 (see equations (4) and (5))
-ϕ2(γmπ−1
-1 , γnπ−1
-2 )[d1, . . . , dm+n]
-as required.
-Remark 3.8. When all the D’s are equal to 1, equation (12) implies
-the following well known result of Diaconis and Shahshahani [DS]: for
-integers r and s
-(15) lim
-N
-k2
-(
-Tr(U r), Tr(U s)
-)
+\begin{multline*}
+\lim_N  N^{r+s-2} \mathop{\sum_{\tau \in \cP(r+s)}}
+\kk_\tau (a_1, \dots , a_r, b_1, \dots , b_s)\\
 =
-{
-0 r ⁄= −s
-|r| r = −s
-Indeed let m = |r| and for 1 ≤ i ≤ m, let ǫi = sgn( r), where sgn( r)
-denotes the sign of r; let n = |s| and for m + 1 ≤ i ≤ m + n, let
-ǫi = sgn(s). Then ǫ1 + · · ·+ ǫm+n = r + s. So if r + s ⁄= 0 then equation
-(12) says that
-lim
-n
-k2
-(
-Tr(U r), Tr(U s)
-)
-= 0
-Suppose that r + s = 0. The second term on the right hand side of (12)
-is zero since both N C(ǫ1)(m) and N C(ǫ2)(n) are empty. For the ﬁrst
-term in (12), note that the only elements of S(ǫ)
-N C(m, n) which connect
-in this alternating way are pairings, where each block must contain on e
-U and one U ∗. This forces m and n to be equal. In that case, we have
-the freedom of pairing the ﬁrst U with any of the n U ∗’s. After this
-choice is made, the rest is determined. Thus there are n possibilities for
-such pairings. Since µ(˜π) is always 1 for a pairing we get the claimed
-formula.
-Let ǫ : [2 l] → {− 1, 1} be such that ∑ 2l
-i=1 ǫi = 0. For π ∈ S(ǫ)
-2l
-let ˜π ∈ Sl be as in 3.1. A π-invariant partition A of [2 l] gives ˜A,
-a ˜π-invariant partition of [ l] as follows. For each block V of A let
-˜V = {k | pk ∈ V }, where we have used the notation of 3.1. Also each
-˜π-invariant partition of [ l] comes from a unique π-invariant partition
-of [2 l].
-Let M¨ ob be the M¨ obius function on the partially ordered set of par-
-titions of [ l] ordered by inclusion. Let π ∈ Sl and A be a π-invariant
-partition of [ l]. In [C, §2.3] Collins denotes the relative cumulant by
-CΠ π,A(π, N ), which we will denote by Cπ,A. In our notation
-Cπ,A =
-∑
-C∈[π,A]
-C={V1,...,Vk}
-M¨ ob(C, A)Wg(π|V1) · · ·Wg(π|Vk)
-FLUCTUATIONS OF UNITARY RANDOM MATRICES 19
-where π|Vi denotes the restriction of π to the invariant subset Vi and
-where necessary we have identiﬁed π with the partition given by its
-cycles. Conversely given A = {V1, . . . , Vk} a π-invariant partition of [ l]
-we write Wg A(π) for Wg( π|V1) · · · Wg(π|Vk). Then by M¨ obius inversion
-we have
-WgA(π) =
-∑
-C∈[π,A]
-Cπ,C
-Remark 3.9. When π ∈ S(ǫ)
-2l and A ∈ P (2l) is π-invariant the equation
-above can also be written
-(16) Wg A(˜π) =
-∑
-C∈[π,A]
-C˜π, ˜C
-In [C, Cor. 2.9] Collins showed that the order of C˜π, ˜C is at most
-N −2l−#(π)+2#(C).
-In the following we address the estimates for higher order cumulant s,
-kr for r ≥ 3.
-If D1, . . . , D2l are random matrices and π ∈ S2l is a permutation
-with cycle structure π = π1 × · · · × πr with πi = ( πi,1, . . . , πi,l(i)) we
-denote
-kπ(D1, . . . , Dl) = k r
-(
-Tr(Dπ1,1 · · · Dπ1,l(1)), Tr(Dπ2,1 · · · Dπ2,l(2)), . . .
-)
-.
-When A = {A1, . . . , Ak} is a π-invariant partition of [2l] we can write
-π = π1 × · · · × πk where πi = π|Ai is a permutation of the set Ai. We
-denote the multiplicative extension of k π by
-kπ,A(D1, . . . , D2l) = k π1(D1, . . . , D2l) · · · kπk(D1, . . . , D2l)
-M¨ obius inversion gives us that
-E
-(
-Trπ(D1, . . . , D2l)
-)
-=
-∑
-A∈P(2l)
-A π -inv.
-kπ,A(D1, . . . , D2l)
-where the sums run over all π-invariant partitions A in P(2l).
-Theorem 3.10. Let {U}N be a sequence of Haar distributed unitary
-N × N-random matrices and {A1, . . . , As}N a sequence of N × N-
-random matrices which has a second order limit distribution , given by
-(A, ϕ1, ϕ2) and a1, . . . , as ∈ A . Furthermore, assume that {U}N and
-{A1, . . . , As}N are independent.
-Suppose r > 1 and m1, · · · , mr are positive integers such that m1 +
-· · · + mr = 2 l and ǫ1, . . . , ǫ2l ∈ {− 1, +1} are such that ∑ 2l
-i=1 ǫi = 0 .
-Consider polynomials p1, . . . , p2l in s non-commuting indeterminates.
-For i = 1, . . . ,2l we set
-20 J. A. MINGO, P. ´SNIADY, AND R. SPEICHER
-Di := pi(A1, . . . , As)
-and for 1 ≤ i ≤ r let
-Xi = Tr
-(
-Dm1+···+mi−1+1U ǫ(m1+···+mi−1+1) · · · Dm1+···+miU ǫ(m1+···+mi))
+\ff_2(\gamma_m\pi_1^{-1},\gamma_n\pi_2^{-1})
+[d_1,\dots, d_{m+n}]
+\end{multline*}
+where the sum runs over $\tau$'s as above.
+
+
+
+
+Let $\tau \in \cP(r+s)$ be as above with pair $(i,j)$ where
+$1 \leq i \leq r$ and $1 \leq j \leq s$ and all other blocks
+singletons. Then 
+\begin{eqnarray*}\lefteqn{
+\kk_\tau( a_1, \dots , a_r, b_1, \dots , b_s) }\\
+&=&
+\kk_1(a_1) \cdots \widehat{\kk_1(a_i)} \cdots \kk_1(a_r)
+\kk_1(b_1) \cdots \widehat{\kk_1(b_j)} \cdots \kk_1(b_s)
+\kk_2(a_i, b_j)
+\end{eqnarray*}
+where the hatted elements are deleted. So after multiplying by
+$N^{r+s-2}$
+and taking a limit we get
+(after omitting the arguments $d_1, \dots , d_{m+n}$ which are
+the same for each factor)
+$$
+\ff_1(c_1) \cdots \widehat{\ff_1(c_i)} \cdots \ff_1(c_r)
+\ff_1(c_{r+1}) \cdots \widehat{\ff_1(c_{r+j})} \cdots
+\ff_1 (c_{r + s}) \ff_2(c_i, c_{r+j})
+$$
+Now summing over all $\tau$, which is equivalent to summing
+over all $i$ and $j$, we get via the derivation property of
+$\ff_2$ (see equations (\ref{leftderivation}) and
+(\ref{rightderivation}))
+$$
+\ff_2(\gamma_m \pi_1^{-1}, \gamma_n \pi_2^{-1})
+[d_1, \dots , d_{m+n}]
+$$
+as required. \end{proof}
+
+\begin{remark}\label{remark:ds}
+When all the $D$'s are equal to 1, equation (\ref{main:eq}) implies
+the following well known result of Diaconis and Shahshahani
+\cite{DS}: for integers $r$ and $s$ 
+\begin{equation}\label{diaconis-shashahani}
+\lim_N \kk_2\big( \Tr(U^r), \Tr(U^s) \big) =
+\begin{cases}
+0   & r \not= - s \\
+|r| & r = - s
+\end{cases}
+\end{equation}
+Indeed let $m = |r|$ and for $1 \leq i \leq m$, let $\epsilon_i =
+\textrm{sgn}(r)$, where $\textrm{sgn}(r)$ denotes the sign of $r$;
+let $n = |s|$ and for $m+1 \leq i \leq m+n$, let $\epsilon_i =
+\textrm{sgn}(s)$. Then $\epsilon_1 + \cdots + \epsilon_{m+n} = r
++ s$. So if $r+s \not = 0$ then equation (\ref{main:eq}) says
+that  \[
+\lim_n \kk_2 \big( \Tr(U^r), \Tr(U^s) \big) = 0
+\]
+Suppose that $r + s = 0$. The second term on the right hand side of
+(\ref{main:eq}) is zero since both $NC^{(\epsilon_1)}(m)$ and
+$NC^{(\epsilon_2)}(n)$ are empty. For the first term in
+(\ref{main:eq}), note that the only elements of
+$S_{NC}^{(\epsilon)}(m,n)$ which connect in this alternating way
+are pairings, where each block must contain one $U$ and one
+$U^\ast$. This forces $m$ and $n$ to be equal. In that case, we
+have the freedom of pairing the first $U$ with any of the $n$
+$U^\ast$'s. After this choice is made, the rest is determined. Thus
+there are $n$ possibilities for such pairings. Since $\mu(\tilde
+\pi)$ is always 1 for a pairing we get the claimed formula. \qed
+\end{remark}
+
+
+
+Let $\epsilon: [2l] \rightarrow \{-1, 1\}$ be such that
+$\sum_{i = 1}^{2l} \epsilon_i = 0$. For $\pi \in
+S^{(\epsilon)}_{2l}$ let $\tilde\pi \in S_l$ be as in 3.1. A
+$\pi$-invariant partition $A$ of $[2l]$ gives $\tilde A$, a
+$\tilde\pi$-invariant  partition of $[l]$ as follows. For each
+block $V$ of $A$ let $\tilde V = \{ k \mid p_k \in V\}$, where
+we have used the notation of 3.1. Also each
+$\tilde\pi$-invariant partition of $[l]$ comes from a unique
+$\pi$-invariant partition of $[2l]$.
+
+Let $\moeb$ be the M\"obius function on the partially ordered
+set of partitions of $[l]$ ordered by inclusion. Let $\pi \in
+S_l$ and $A$ be a $\pi$-invariant partition of $[l]$. In
+\cite[\S 2.3]{Col} Collins denotes the relative cumulant by
+$C_{\Pi_\pi, A}(\pi,N)$, which we will denote by $C_{\pi,A}$. In our
+notation  $$
+C_{\pi, A} =
+\mathop{\sum_{C \in [ \pi, A]}}_{C = \{V_1, \dots , V_k\} }
+\moeb(C, A) \Wg(\pi|_{V_1}) \cdots
+\Wg(\pi|_{V_k})
+$$
+where $\pi|_{V_i}$ denotes the restriction of $\pi$ to the
+invariant subset $V_i$ and where necessary we have identified $\pi$ with the
+partition given by its cycles. Conversely given $A = \{V_1, \dots , V_k \}$ a
+$\pi$-invariant partition of $[l]$ we write $\Wg_A(\pi)$ for $\Wg(\pi|_{V_1})
+\cdots \Wg(\pi|_{V_k})$. Then by M\"obius inversion we have
+$$
+\Wg_A(\pi) =
+\sum_{C \in [\pi, A]} C_{\pi, C}
+$$
+
+\begin{remark} 
+When $\pi \in S_{2l}^{(\epsilon)}$ and $A \in \cP(2l)$ is
+$\pi$-invariant the equation above can also be written
+\begin{equation}\label{weingartencumulant}
+\Wg_A(\tilde\pi) =
+\sum_{C \in [\pi, A]} C_{\tilde\pi, \tilde
+C}
+\end{equation}
+In \cite[Cor. 2.9]{Col} Collins showed that the order of
+$C_{\tilde\pi, \tilde C}$ is at most
+$N^{-2l - \#(\pi) + 2 \#(C)}$.  \end{remark}
+
+
+In the following we address the estimates for higher order
+cumulants, $\kk_r$ for $r\geq 3$.
+
+If $D_1,\dots,D_{2l}$ are random matrices and $\pi\in S_{2l}$
+is a permutation with cycle structure $\pi=\pi_1 \times
+\cdots \times \pi_r$ with
+$\pi_i=(\pi_{i,1},\dots,\pi_{i,l(i)})$ we denote $$
+\kk_{\pi}(D_1,\dots,D_l)= \kk_r \big( \Tr (D_{\pi_{1,1}}
+\cdots D_{\pi_{1,l(1)}}), \Tr (D_{\pi_{2,1}} \cdots
+D_{\pi_{2,l(2)}} ),\dots \big). $$
+
+When $A=\{A_1,\dots,A_k\}$ is a
+$\pi$-invariant partition of $[2l]$ we can write
+$\pi=\pi_1\times \cdots \times\pi_k$ where $\pi_i
+= \pi|_{A_i}$  is a permutation of the set $A_i$. We denote
+the multiplicative extension of $\kk_\pi$ by
+$$ \kk_{\pi,A}(D_1,\dots,D_{2l})=
+\kk_{\pi_1} (D_1,\dots,D_{2l})\cdots \kk_{\pi_k}
+(D_{1},\dots,D_{2l}) $$
+
+M\"obius inversion gives us that
+$$ \EE \big( \Tr_{\pi} (D_1,\dots,D_{2l}) \big)
+= 
+\mathop{\sum_{A \in \cP(2l)}}_{A\ \pi\textrm{-inv.}}
+\kk_{\pi,A} (D_1,\dots,D_{2l})
+$$ 
+where
+the sums run over all $\pi$-invariant partitions $A$ in
+$\cP(2l)$.
+
+
+
+\begin{theorem}\label{main:higherorder}
+Let $\{U\}_N$ be a sequence of Haar distributed unitary
+$N\times N$-random matrices and $\{A_1,\dots,A_s\}_N$ a
+sequence of $N\times N$-random matrices which has a second
+order limit distribution, given by $(\cA,\ff_1,\ff_2)$ and
+$a_1,\dots,a_s\in\cA$. Furthermore, assume that $\{U\}_N$ and
+$\{A_1,\dots,A_s\}_N$ are independent.  
+
+Suppose $r > 1$ and $m_1,\cdots,m_r$ are positive integers such that
+$m_1+\cdots+m_r = 2l$ and $\epsilon_1, \dots, \epsilon_{2l} \in
+\{-1,+1\}$ are such that $\sum_{i=1}^{2l} \epsilon_i = 0$.
+Consider polynomials
+$p_1,\dots,p_{2l}$ in $s$ non-commuting indeterminates. For
+$i=1,\dots, 2l$ we set
+
+$$D_i:=p_i(A_1,\dots,A_s)$$ and for $1 \leq i
+\leq r$ let
+$$
+X_i =
+\Tr\big( D_{m_1 + \cdots + m_{i-1} +1} U^{\epsilon(m_1 + \cdots
++ m_{i-1} +1)} \cdots
+D_{m_1 + \cdots + m_i} U^{\epsilon(m_1 + \cdots +
+m_i)} \big)
+$$
+
 Then
-(17) k r
-(
-X1, . . . , Xr) =
-∑
-π∈S(ǫ)
-n
-∑
-A,B
-A∨B=1[1,2l]
-C˜π, ˜A · kγπ −1,B(D1, . . . , D2l),
-where the second sum runs over pairs (A, B) of partitions of [1, 2l]
-such that A is π-invariant and B is γπ −1-invariant and furthermore
-A ∨ B = 1 [1,2l].
-Secondly, we have for r ≥ 3 that
-(18) lim
-N →∞
-kr
-(
-X1, . . . , Xr
-)
-= 0.
-If we have m1, . . . , mr for which m1 + · · · + mr is odd or ǫ1, . . . , ǫ2l for
-which ∑ 2l
-i=1 ǫi ⁄= 0 then kr(X1, . . . , Xr) = 0 .
-Proof. In order to simplify the writing we shall write ⃗D for ( D1, . . . ,
-D2l). Let Ii be the interval [ m1 + · · · + mi−1 + 1, m1 + · · · + mi] and for
-any subset V ⊂ [r], IV = ∪j∈V Ij.
-If C = {V1, . . . , Vk} is a partition of [ r] we let S(ǫ)
-Vi the set of permu-
-tations of IVi that take ǫ−1(1) ∩ IVi onto ǫ−1(−1) ∩ IVi. If these two sets
-have diﬀerent cardinalities then S(ǫ)
-Vi is empty. Let 1 C be the partition
-{IV1, . . . , IVk} of [2 l]. Let γi be the cyclic permutation of Ii given by
-(m1 + · · · + mi−1 + 1, . . . , m1 + · · · + mi)
+\begin{equation}\label{main:eqhigherorder}
+\kk_r\big(X_1, \dots , X_r)
+= \sum_{\pi\in S^{(\epsilon)}_{n}} 
+  \sum_{\substack{A,B \\ A\vee B =1_{[1,2l]}}} \kern-1em
+C_{\tilde\pi, \tilde A}
+  \cdot
+\kk_{\gamma \pi^{-1},B} (D_1,\dots,D_{2l}),
+\end{equation}
+where the second sum runs over pairs $(A,B)$ of partitions of
+$[1,2l]$ such that $A$ is $\pi$-invariant and $B$ is
+$\gamma\pi^{-1}$-invariant and furthermore $A\vee
+B=1_{[1,2l]}$.
+
+Secondly, we have for $r\geq 3$ that
+\begin{equation} \label{main:eqhigherorderB}
+\lim_{N\to\infty} \kk_r\big( X_1, \dots, X_r \big) = 0.
+\end{equation}
+If we have $m_1, \dots , m_r$ for which $m_1 + \cdots + m_r$ is
+odd or $\epsilon_1, \dots , \epsilon_{2l}$ for which
+$\sum_{i=1}^{2l} \epsilon_i \not = 0$ then $\kk_r(X_1, \dots ,
+X_r) = 0$. 
+\end{theorem}
+
+\begin{proof}
+ In order to simplify the writing we shall write $\vec D$ for
+$(D_1, \dots ,\ab D_{2l})$. Let $I_i $ be the interval $[m_1 +
+\cdots + m_{i-1} + 1, m_1 + \cdots + m_i]$ and for any subset $V
+\subset [r]$, $I_V = \cup_{j \in V} I_j$. 
+
+
+If $C = \{V_1, \dots , V_k\}$ is a
+partition of $[r]$ we let $S_{V_i}^{(\epsilon)}$ the set of
+permutations of $I_{V_i}$ that take $\epsilon^{-1}(1) \cap
+I_{V_i}$ onto $\epsilon^{-1}(-1) \cap I_{V_i}$. If these two
+sets have different cardinalities then $S_{V_i}^{(\epsilon)}$
+is empty. Let $1_C$ be the
+partition $\{ I_{V_1}, \dots , I_{V_k} \}$ of $[2l]$. Let
+$\gamma_i$ be the cyclic permutation of $I_i$ given by $(m_1 +
+\cdots + m_{i-1} + 1, \dots, m_1 + \cdots + m_i)$
+
 With this notation
-EC(X1, . . . , Xr) = E V1(X1, . . . , Xr) · · ·EVk (X1, . . . , Xr)
-=
-∑
-π1∈S(ǫ)
-V1
-· · ·
-∑
-πk∈S(ǫ)
-Vk
-Wg(˜π1) · · ·Wg(˜πk)E
-(
-Trγ1π−1
-1
-( ⃗D)
-)
-· · · E
-(
-Trγkπ−1
-k
-( ⃗D)
-)
-=
-∑
-π∈S(ǫ)
-2l
-1cπ-inv.
-Wg1C (˜π)EC
-(
-Trγπ −1( ⃗D)
-)
-=
-∑
-π∈S(ǫ)
-2l
-1cπ-inv.
-∑
-A∈[π,1C ]
-C˜π, ˜A
-∑
-B∈P(2l)
-B γπ −1-inv.
-kγπ −1,B( ⃗D)
+\begin{eqnarray*}\lefteqn{
+\EE_C( X_1, \dots , X_r) = \EE_{V_1}( X_1, \dots , X_r)
+\cdots \EE_{V_k}( X_1, \dots , X_r) }\\
+&=& \kern-0.5em
+    \sum_{\pi_1 \in S_{V_1}^{(\epsilon)}} 
+     \kern-0.5em\cdots\kern-0.5em
+    \sum_{\pi_k \in S_{V_k}^{(\epsilon)}}
+\Wg(\tilde\pi_1) \cdots \Wg(\tilde\pi_k)
+\EE\big( \Tr_{\gamma_1\pi_1^{-1}}( \vec D) \big) \cdots
+\EE\big( \Tr_{\gamma_k\pi_k^{-1}}( \vec D) \big) \\
+&=& \mathop{\sum_{\pi \in S_{2l}^{(\epsilon)}}}_{1_c
+\pi\textrm{-inv.}}
+  \Wg_{1_C}(\tilde\pi)
+  \EE_C \big( \Tr_{\gamma\pi^{-1}}( \vec D ) \big) \\
+&=& \mathop{\sum_{\pi \in S_{2l}^{(\epsilon)}}}_{1_c
+\pi\textrm{-inv.}}
+\sum_{A \in [\pi, 1_C]} C_{\tilde\pi, \tilde
+A}
+\mathop{\sum_{B \in \cP(2l)}}_{B\ \gamma\pi^{-1}\textrm{-inv.}}
+\kk_{\gamma\pi^{-1},B} (\vec D) 
+\end{eqnarray*}
 Thus
-kr(X1, . . . , Xr)
-FLUCTUATIONS OF UNITARY RANDOM MATRICES 21
-=
-∑
-C∈P(r)
-M¨ ob(C, 1r)EC(X1, . . . Xr)
-=
-∑
-C∈P(r)
-M¨ ob(C, 1r)
-∑
-π∈S(ǫ)
-2l
-1C π-inv.
-∑
-A∈[π,1C ]
-C˜π, ˜A
-∑
-B∈P(2l)
-B γπ −1-inv.
-kγπ −1,B( ⃗D)
-=
-∑
-π∈S(ǫ)
-2l
-∑
-C∈P(r)
-1C π-inv.
-∑
-A∈[π,1C ]
-∑
-B∈P(2l)
-B γπ −1-inv.
-M¨ ob(C, 1r) C˜π, ˜A kγπ −1,B( ⃗D)
-=
-∑
-π∈S(ǫ)
-2l
-∑
-A∈P(2l)
-π-inv.
-∑
-B∈P(2l)
-B γπ −1-inv.
-∑
-C∈P(r)
-A,B≤1C
-M¨ ob(C, 1r) C˜π, ˜A kγπ −1,B( ⃗D)
-=
-∑
-π∈S(ǫ)
-2l
-∑
-A,B∈P(2l)
-A∨B=12l
-C˜π, ˜A kγπ −1,B( ⃗D)
-where the sum is over all A and B which are π and γπ −1-invariant
-respectively. The last equality followed from the identity
-∑
-C∈P(r)
-A,B≤1C
-M¨ ob(C, 1r) =
-{
-1 A ∨ B = 1 2l
-0 otherwise
-This proves (17).
-We know that the order of C˜π, ˜A is N −2l−#(π)+2#(A). Let ci be the
-number of blocks of B that contain i cycles of γπ −1. By our assumption
-on the second order limiting distribution of {A1, . . . , As}N
-kγπ −1,B( ⃗D) =
-{
-O(N c1) c3 + c4 + · · · = 0
-o(N c1) c3 + c4 + · · · > 0
-Suppose ﬁrst that c3 + c4 + · · · > 0. Then
-∑
-i≥2
-ici = (c2 + c3 + · · ·) +
-∑
-i≥1
-(i − 1)ci ≥ 1 + #(γπ −1) − #(B)
+\begin{eqnarray*}\lefteqn{
+\kk_r(X_1, \dots , X_r) }\\
+&=& \sum_{C \in \cP(r)} \moeb(C, 1_r) \EE_C(X_1, \dots X_r) \\
+&=& \sum_{C \in \cP(r)} \moeb(C, 1_r)
+\mathop{\sum_{\pi \in S_{2l}^{(\epsilon)}}}_{1_C
+\pi\textrm{-inv.}}
+\sum_{A \in [\pi, 1_C]} C_{\tilde\pi, \tilde
+A}
+\mathop{\sum_{B \in \cP(2l)}}_{B\ \gamma\pi^{-1}\textrm{-inv.}}
+\kk_{\gamma\pi^{-1},B} (\vec D) \\
+&=& \sum_{\pi \in S_{2l}^{(\epsilon)}}
+\mathop{\sum_{C \in \cP(r)}}_{1_C \pi\textrm{-inv.}}  
+\sum_{A \in [\pi, 1_C]}
+\mathop{\sum_{B \in \cP(2l)}}_{B\ \gamma\pi^{-1}
+\textrm{-inv.}} 
+\moeb(C, 1_r)\, C_{\tilde\pi, \tilde A}\,
+\kk_{\gamma\pi^{-1},B} (\vec D) \\
+&=& \sum_{\pi \in S_{2l}^{(\epsilon)}}
+\mathop{\sum_{A \in \cP(2l)}}_{\pi\textrm{-inv.}}
+\mathop{\sum_{B \in \cP(2l)}}_{B\ \gamma\pi^{-1}\textrm{-inv.}}
+\mathop{\sum_{C \in \cP(r)}}_{A, B \leq 1_C} 
+\moeb(C, 1_r)\, C_{\tilde\pi, \tilde A}\,
+\kk_{\gamma\pi^{-1},B} (\vec D) \\
+&=& \sum_{\pi \in S_{2l}^{(\epsilon)}}
+\mathop{\sum_{A, B \in \cP(2l)}}_{A \vee B = 1_{2l}}
+C_{\tilde\pi, \tilde A}\,
+\kk_{\gamma\pi^{-1},B} (\vec D)
+\end{eqnarray*}
+where the sum is over all $A$ and $B$ which are $\pi$ and
+$\gamma\pi^{-1}$-invariant respectively. The last equality
+followed from the identity
+$$
+\mathop{\sum_{C \in \cP(r)}}_{A, B \leq 1_C} 
+\moeb(C, 1_r) =
+\begin{cases}
+1 & A \vee B = 1_{2l} \\
+0 & \textrm{otherwise}
+\end{cases}
+$$
+This proves (\ref{main:eqhigherorder}). 
+
+
+We know that the order of $C_{\tilde\pi, \tilde
+A}$ is $N^{-2l - \#(\pi) + 2 \#(A)}$. Let $c_i$
+be the number of blocks of $B$ that contain $i$ cycles of
+$\gamma\pi^{-1}$. By our assumption on the second order
+limiting distribution of $\{A_1,\dots,A_s\}_N$
+$$
+\kk_{\gamma\pi^{-1}, B}(\vec D) =
+\begin{cases}
+O(N^{c_1})  & c_3 + c_4 + \cdots =0\\
+o(N^{c_1})  & c_3 + c_4 + \cdots >0
+\end{cases}
+$$
+
+Suppose first that $c_3 + c_4 + \cdots >0$. Then 
+$$\sum_{i\geq 2} i c_i=
+(c_2+c_3+\cdots)+\sum_{i\geq 1} (i-1) c_i\geq 1+
+\#(\gamma\pi^{-1})-\#(B)$$
 So
-c1 = #(γπ −1) −
-∑
-i≥2
-ici ≤ #(B) − 1
-By Lemma 2.2 (1), #( A) + #(B) ≤ 2l + 1. Thus
-−2l − #(π) + 2#(A) + c1 ≤ −2l − #(π) + 2#(A) + #(B) − 1 ≤ 0
-Hence C˜π, ˜A · kγπ −1( ⃗D) = o(N 0) as required.
-22 J. A. MINGO, P. ´SNIADY, AND R. SPEICHER
-So now suppose that c3 + c4 + · · · = 0. Then #( γπ −1) = c2 + #(B).
-In this case
-C˜π, ˜A · kγπ −1( ⃗D) = O(N −2l−#(π)+2#(A)+c1)
+$$
+c_1 = \#(\gamma\pi^{-1}) - \sum_{i\geq 2} i c_i \leq \#(B) - 1
+$$
+By Lemma \ref{triangleinequality} (1), $\#(A) + \#(B) \leq
+2 l + 1$. Thus
+$$
+-2l - \#(\pi) + 2 \#(A) + c_1 \leq
+-2l - \#(\pi) + 2 \#(A) + \#(B) - 1 \leq 0
+$$
+Hence $C_{\tilde\pi, \tilde A} \cdot
+\kk_{\gamma\pi^{-1}}(\vec D) = o(N^0)$ as required.
+
+So now suppose that $c_3 + c_4 + \cdots =0$. Then
+$\#(\gamma\pi^{-1}) = c_2 + \#(B)$. In this case 
+$$
+C_{\tilde\pi, \tilde A} \cdot
+\kk_{\gamma\pi^{-1}}(\vec D)
+= O(N^{-2l - \#(\pi) + 2 \#(A) + c_1})
+$$
 and thus it remains to show that
-(19) −2l − #(π) + 2#(A) + c1 ≤ 2 − r
+\begin{equation}\label{thefinalbit}
+-2l - \#(\pi) + 2\#(A) + c_1 \leq 2 - r
+\end{equation}
 Note that
-|(12l, γ)| = 2|12l| − |γ| = 2l − 2 + r,
-|(A, π)| = 2|A| − |π| = 2l − 2#(A) + #(π)
+$$
+|(1_{2l}, \gamma)| = 2 |1_{2l}| - |\gamma| = 2l -2 + r, 
+$$
+$$
+|(A, \pi)| = 2 |A| - |\pi| = 2l - 2\#(A) + \#(\pi)
+$$
 and
-|(B, γπ −1)| = 2|B| − |γπ −1| = 2l − 2#(B) + #(γπ −1)
-So by Lemma 2.2 (2)
-(20) 2
-(
-#(A) + #(B)) − 2l − #(π) − #(γπ −1) ≤ 2 − r
-However
-2#(B) − #(γπ −1) = #( B) − c2 = c1
-together with (20) proves (19)
-Remark 3.11. As a corollary of Theorem 3.10 we obtain that if {U}N
-is a sequence of Haar distributed unitary random matrices, then {U}N
-has a second order limit distribution given by equation (15). Indeed,
-relative to E
-(
-Tr(·)
-)
-, U is already a Haar unitary so condition (9) of
-Deﬁnition 3.5 is satisﬁed. We have observed in Remark 3.8 that condi-
-tion (10) is satisﬁed and by Theorem 3.10 above we have that conditio n
-(11) is satisﬁed.
-Then {U}N has a second order limit distribution which is given by
-lim
-N →∞
-k2
-(
-Tr(U ǫ1 · · · U ǫm), Tr(U ǫm+1 · · · U ǫm+n)
-)
-(21)
-=
-∑
-π∈S(ǫ)
-N C(m,n)
-µ(˜π) +
-∑
-π1∈N C(ǫ1)(m)
-π2∈N C(ǫ2)(n)
-µ2(˜π1, ˜π2)
-Combining this formula with equation (15) allows one to derive the
-values of µ2. These kind of questions will be considered elsewhere.
-Theorem 3.12. Let {U}N be a sequence of Haar distributed unitary
-N ×N random matrices and {A1, . . . , As}N a sequence of N ×N random
-matrices which has a second order limit distribution. If {U}N and
-{A1, . . . , As}N are independent, then they are asymptotically free of
-second order.
-FLUCTUATIONS OF UNITARY RANDOM MATRICES 23
-Proof. The asymptotic freeness with respect to k 1
-(
-tr(·)
-)
-is essentially
-the same argument as Voiculescu’s proof [Voi1, Voi2] for the case of
-constant matrices, see also the proof of Collins [C].
-Theorem 3.10 provides the bound on higher order cumulants so we
-need to prove now only the second order statement.
-We have to consider cyclically alternating and centered words in
-the U’s and the A’s. For the U’s, every centered word is a linear
-combination of non-trivial powers of U, thus it suﬃces to consider such
-powers. Thus we have to look at expressions of the form
-(22) k 2
-(
-Tr(B1U i(1) · · · BpU i(p)), Tr(U j(r)Cr · · · U j(1)C1)
-)
-,
-where the B’s and the C’s are centered polynomials in the A’s and
-i(1), . . . , i(p), j(1), . . . , j(r) are integers diﬀerent from zero. We have
-to show that in the limit N → ∞ the expression (22) converges to
-(23)
-lim
-N
-δpr
-p−1∑
-k=0
-ϕ1(B1C1+k)ϕ1(U i(1)U j(1+k)) · · · ϕ1(BpCp+k)ϕ1(U i(p)U j(p+k)).
-We can bring the expression (22) into the form considered in Theore m
-3.7 by inserting 1’s between neighbouring factors U or neighbouring
-factors U ∗. If we relabel the B’s, C’s, and 1’s as D’s then we have to
-look at the following situation: For polynomials pi in s non-commuting
-indeterminates we consider
-Di := pi(A1, . . . , As),
+$$
+|(B, \gamma\pi^{-1})| = 2 |B| - |\gamma\pi^{-1}|
+= 2l - 2 \#(B) + \#(\gamma\pi^{-1})
+$$
+So by Lemma \ref{triangleinequality} (2) 
+\begin{equation}\label{thetriangleinequalityunfolded}
+2\big( \#(A) + \#(B) ) - 2l - \#(\pi) - \#(\gamma\pi^{-1})
+\leq 2 - r
+\end{equation}
+However 
+$$
+2 \#(B) - \#(\gamma\pi^{-1}) = \#(B) - c_2 = c_1
+$$
+together with (\ref{thetriangleinequalityunfolded}) proves (\ref{thefinalbit})
+\end{proof}
+
+
+\begin{remark}
+As a corollary of Theorem \ref{main:higherorder} we obtain that if
+$\{ U \}_N$ is a sequence of Haar distributed unitary random
+matrices, then $\{ U \}_N$ has a second order limit distribution
+given by equation (\ref{diaconis-shashahani}). Indeed, relative to
+$\EE\big( \Tr( \cdot ) \big)$, $U$ is already a Haar unitary so
+condition (\ref{asymp1}) of Definition \ref{def:asymptoticfreeness}
+is satisfied. We have observed in Remark \ref{remark:ds} that
+condition (\ref{asymp2}) is satisfied and by Theorem
+\ref{main:higherorder} above we have that condition (\ref{asymp3})
+is satisfied. 
+
+Then $\{U\}_N$ has a second order limit
+distribution which is given by
+\begin{align}
+\lim_{N\to\infty} & \kk_2\big(\Tr(U^{\epsilon_1} \cdots
+U^{\epsilon_m}),
+        \Tr(U^{\epsilon_{m+1}} \cdots
+    U^{\epsilon_{m+n}})\big)\\ \notag
+&= \sum_{\pi\in\SNCe(m,n)} \mu(\tilde \pi) + 
+\mathop{\sum_{\pi_1\in NC^{(\epsilon_1)}(m)}}_{
+\pi_2\in NC^{(\epsilon_2)}(n)}
+\mu_2(\tilde\pi_1, \tilde \pi_2)
+\end{align}
+
+Combining this formula with equation (\ref{diaconis-shashahani})
+allows one to derive the values of $\mu_2$. These kind of
+questions will be considered elsewhere.\qed
+\end{remark}
+
+\begin{theorem}\label{main:free}
+Let $\{U\}_N$ be a sequence of Haar distributed unitary $N\times N$
+random matrices and $\{A_1,\dots,A_s\}_N$ a sequence of $N\times
+N$ random matrices which has a second order limit distribution. If
+$\{U\}_N$ and $\{A_1,\dots,A_s\}_N$ are independent, then they are
+asymptotically free of second order.
+\end{theorem}
+
+\begin{proof}
+The asymptotic freeness with respect to $\kk_1\big( \tr(\cdot)\big)$
+is essentially the same argument as Voiculescu's proof
+\cite{Voi1,Voi2} for the case of constant matrices, see also the
+proof of Collins \cite{Col}.
+
+Theorem \ref{main:higherorder} provides the bound on higher order
+cumulants so we need to prove now only the second order statement.
+
+We have to consider cyclically alternating and centered words in the
+$U$'s and the $A$'s. For the $U$'s, every centered word is a linear
+combination of non-trivial powers of $U$, thus it suffices to
+consider such powers. Thus we have to look at expressions of the
+form
+\begin{equation}\label{express}
+\kk_2\big(\Tr(B_1 U^{i(1)}\cdots B_p
+U^{i(p)}),\Tr(U^{j(r)}C_r\cdots U^{j(1)}C_1)\big),
+\end{equation}
+where the $B$'s and the $C$'s are centered polynomials in the $A$'s
+and $i(1),\dots,i(p),j(1),\dots,j(r)$ are integers different from
+zero. We have to show that in the limit $N\to\infty$ the expression
+(\ref{express}) converges to
+\begin{equation} \lim_N
+\delta_{pr}\sum_{k=0}^{p-1}\ff_1(B_1C_{1+k})\ff_1(U^{i(1)}U^{j(1+k)})
+\cdots \ff_1(B_pC_{p+k})\ff_1(U^{i(p)}U^{j(p+k)}).
+\end{equation}
+We can bring the expression (\ref{express}) into the form considered
+in Theorem \ref{main} by inserting $1$'s between neighbouring
+factors $U$ or neighbouring factors $U^*$. If we relabel the $B$'s,
+$C$'s, and $1$'s as $D$'s then we have to look at the following
+situation: For polynomials $p_i$ in $s$ non-commuting indeterminates
+we consider
+$$D_i:=p_i(A_1,\dots,A_s),$$
 which are either asymptotically centered or equal to 1. The latter
-case can only appear if we have cyclically the pattern . . . U DiU . . . or
-. . . U∗DiU ∗ . . . . Formally, this means:
-• if ǫγ−1(i) = ǫi then either Di = 1 (for all N, i.e., pi = 1) or
-lim
-N →∞
-k1
-(
-tr[Di]
-)
-= 0.
-• if ǫγ−1(i) ⁄= ǫi then
-lim
-N →∞
-k1
-(
-tr[Di]
-)
-= 0.
-We can now use Theorem 3.7 for calculating the limit
-lim
-N →∞
-k2
-(
-Tr(D1U ǫ1 · · ·DmU ǫm), Tr(Dm+1U ǫm+1 · · · Dm+nU ǫm+n)
-)
-,
-and we will argue that most terms appearing there will vanish. First
-consider the last two sums in equation (12), corresponding to π1 ∈
-N C(m) and π2 ∈ N C(n). Since π1 is non-crossing we have that #(π1)+
-24 J. A. MINGO, P. ´SNIADY, AND R. SPEICHER
-#(γmπ−1
-1 ) = m + 1. Since each cycle of π1 must contain at least one U
-and one U ∗, we have
-#(π1) ≤ m
-2 ,
-which implies #( γmπ−1
-1 ) ≥ m/2 + 1. However, this can only be true if
-γmπ−1
-1 contains at least two singletons. Note that if ( i) is a singleton
-of γmπ−1
-1 and if we have Di = 1 for that i, then we have
-γmπ−1
-1 (i) = i, thus π−1
-1 (i) = γ−1
-m (i) = γ−1(i),
-and hence
-ǫπ−1
-1 (i) = ǫγ−1(i) = ǫi,
-which is not allowed because π1 is from N C(ǫ1)(m), i.e., it must connect
-alternatingly U with U ∗. Hence Di ⁄= 1 and so ϕ1(di) = lim N k1(tr(Di))
-= 0. Thus, both
-ϕ1(γmπ−1
-1 × γnπ−1
-2 )[d1, . . . , dm+n]
-and
-ϕ2(γmπ−1
-1 , γnπ−1
-2 )[d1, . . . , dm+n]
-are zero, because at least one singleton ( i) gives the contribution ϕ1(di)
-= 0.
-Consider now the ﬁrst summand of equation (12). Suppose π ∈
-S(ǫ)
-N C(m, n). Let us again put γ := γm,n. Since π is annular non-crossing
-we have
-|π| + |γπ −1| = m + n,
+case can only appear if we have cyclically the pattern $\dots
+UD_iU\dots$ or $\dots U^*D_iU^*\dots$. Formally, this means:
+\begin{itemize}
+\item if $\epsilon_{\gamma^{-1}(i)}=\epsilon_i$ then either
+$D_i=1$ (for all $N$, i.e., $p_i=1$) or
+$$\lim_{N\to\infty}\kk_1\big(\tr[D_i]\big)=0.$$
+\item if $\epsilon_{\gamma^{-1}(i)}\not=\epsilon_i$ then
+$$\lim_{N\to\infty}\kk_1\big(\tr[D_i]\big)=0.$$
+\end{itemize}
+We can now use Theorem \ref{main} for calculating the limit
+$$
+\lim_{N\to\infty} \kk_2\big(\Tr(D_{1}U^{\epsilon_1} \cdots
+D_{m}U^{\epsilon_m}),
+        \Tr(D_{m+1}U^{\epsilon_{m+1}} \cdots
+    D_{m+n}U^{\epsilon_{m+n}})\big),
+$$
+and we will argue that most terms appearing there will vanish.
+First consider the last two sums in equation (\ref{main:eq}),
+corresponding to $\pi_1\in NC(m)$ and $\pi_2\in NC(n)$. Since
+$\pi_1$ is non-crossing we have that
+$\#(\pi_1)+\#(\gamma_m\pi_1^{-1})=m+1$. Since each cycle of $\pi_1$
+must contain at least one $U$ and one $U^*$, we have
+$$\#(\pi_1)\leq \frac m2,$$ which implies
+$\#(\gamma_m\pi_1^{-1})\geq m/2+1$. However, this can only be true
+if $\gamma_m\pi_1^{-1}$ contains at least two singletons. Note that
+if $(i)$ is a singleton of $\gamma_m\pi_1^{-1}$ and if we have
+$D_i=1$ for that $i$, then we have
+$$\gamma_m\pi_1^{-1}(i)=i,\qquad\text{thus}\qquad
+\pi_1^{-1}(i)=\gamma_m^{-1}(i)=\gamma^{-1}(i),$$ and hence
+$$\epsilon_{\pi_1^{-1}(i)}=\epsilon_{\gamma^{-1}(i)}=\epsilon_i,$$
+which is not allowed because $\pi_1$ is from $NC^{(\epsilon_1)}(m)$,
+i.e., it must connect alternatingly $U$ with $U^*$. Hence $D_i \not
+= 1$ and so $\ff_1(d_i) = \lim_N \kk_1(\tr(D_i))\ab = 0$.
+Thus, both
+$$\ff_1(\gamma_m\pi_1^{-1}\times \gamma_n\pi_2^{-1})[d_1,\dots,
+d_{m+n}]$$ and
+$$\ff_2(\gamma_m\pi_1^{-1}, \gamma_n\pi_2^{-1})[d_1,\dots,
+d_{m+n}]$$ are zero, because at least one singleton $(i)$
+gives the contribution $\ff_1(d_i) \ab = 0$.
+
+Consider now the first summand of equation (\ref{main:eq}). Suppose
+$\pi\in\SNCe(m,n)$. Let us again put $\gamma:=\gamma_{m,n}$.
+Since $\pi$ is annular non-crossing we have
+$$\vert\pi\vert+\vert\gamma\pi^{-1}\vert=m+n,$$
 or
-#(π) + #(γπ −1) = m + n.
-Again, each cycle of π must contain at least two elements, i.e.,
-#(π) ≤ m + n
-2 ,
+$$\#(\pi) +\#(\gamma\pi^{-1})=m+n.$$
+Again, each cycle of $\pi$ must contain at least two elements, i.e.,
+$$\#(\pi) \leq \frac{m+n}2,$$
 thus
-#(γπ −1) ≥ m + n
-2 .
-If γπ −1 has a singleton ( i), then this will contribute ϕ1(di) and since,
-as above the case di = 1 is excluded for a singleton, we get a van-
-ishing contribution in this case. This implies that, in order to get a
-non-vanishing contribution, γπ −1 must contain no singletons, which,
-however, means that we must have
-#(γπ −1) = m + n
-2 , and thus also #( π) = m + n
-2
-i.e., all cycles of γπ −1 and of π contain exactly two elements. This,
-however, can only be the case if each cycle connects one point on th e
-FLUCTUATIONS OF UNITARY RANDOM MATRICES 25
-outer circle to one point on the inner circle. Being non-crossing ﬁxes
-the permutation up to a rotation of the inner circle. Thus, in order t o
-get a non-vanishing contribution, we need m = n and
-π = (1, γk(2n))(2, γk(2n − 1)), . . . ,(n, γk(n + 1))
-for some k = 0, 1, . . . , n−1. Note that π must always couple a U with a
-U ∗ and the factor µ(˜π) is always 1 for such pairings. This gives exactly
-the contribution as needed for second order freeness.
-Of course, a natural question in this context is how the result of Di-
-aconis and Shahshahani (Remark 3.8) generalizes to the case of se veral
-independent unitary random matrices. Note that as we have estab -
-lished the existence of a second order limit distribution for Haar dis-
-tributed unitary random matrices we can use an independent copy o f
-them as the ensemble {A1, . . . , As} in our Theorem 3.12. By Remark
-2.7 this can be iterated to give the following.
-Theorem 3.13. Let {U (1)}N , . . . ,{U (r)}N be r sequences of Haar dis-
-tributed unitary N × N-random matrices. If {U (1)}N , . . . ,{U (r)}N are
-independent, then they are asymptotically free of second or der.
-This contains the information about the ﬂuctuation of several inde -
-pendent Haar distributed unitary random matrices. Again, it suﬃce s
-to consider traces of reduced words in our random matrices, i.e., ex -
-pressions of the form
-(24) Tr( U k(1)
-i(1) · · · U k(n)
-i(n) )
-for n ∈ N, and k(r) ∈ Z\{0} and i(r) ⁄= i(r + 1) for all r = 1 , . . . , n
-(where i(n + 1) = i(1)). But these are now products in cyclically
-alternating and centered variables, so that by the very deﬁnition o f
-second order freeness we get
-lim
-N →∞
-k2
-(
-Tr(U k(1)
-i(1) · · ·U k(m)
-i(m) ), Tr(U l(n)
-j(n) · · · U l(1)
-j(1))
-)
-(25)
-= δmn
-n−1∑
-r=0
-ϕ1
-(
-U k(1)
-i(1) U l(1+r)
-j(1+r)
-)
-· · · ϕ1
-(
-U k(n)
-i(n) U l(n+r)
-j(n+r)
-)
-.
-The contribution of ϕ1 in these terms vanishes unless the matrices and
-their powers match. Note also that the vanishing of higher cumulant s
-can be rephrased in a more probabilistic language by saying that the
-random variables (24) converge to a Gaussian family.
-Corollary 3.14. Let {U(1)}N , . . . ,{U(r)}N be independent sequences of
-Haar distributed unitary N × N-random matrices. Then, the collection
-(24) of unnormalized traces in cyclically reduced words in t hese random
-26 J. A. MINGO, P. ´SNIADY, AND R. SPEICHER
-matrices converges to a Gaussian family of centered random v ariables
-whose covariance is given by the number of matchings between the two
-reduced words,
-lim
-N →∞
-k2
-(
-Tr(U k(1)
-i(1) · · · U k(m)
-i(m) ), Tr(U l(n)
-j(n) · · · U l(1)
-j(1))
-)(26)
-= δmn · #
-{
-r ∈ {1, . . . , n} | i(s) = j(s + r),
-k(s) = −l(s + r) ∀s = 1, . . . , n
-}
+$$\#(\gamma\pi^{-1})\geq\frac{m+n}2.$$
+If $\gamma\pi^{-1}$ has a singleton $(i)$, then this will contribute
+$\ff_1(d_i)$ and since, as above the case $d_i=1$ is excluded for a
+singleton, we get a vanishing contribution in this case. This
+implies that, in order to get a non-vanishing contribution,
+$\gamma\pi^{-1}$ must contain no singletons, which, however, means
+that we must have
+$$\#(\gamma\pi^{-1})=\frac{m+n}2,\qquad\text{and thus also}\qquad
+\#(\pi)=\frac{m+n}2$$ i.e., all cycles of $\gamma\pi^{-1}$ and of
+$\pi$ contain exactly two elements. This, however, can only be the
+case if each cycle connects one point on the outer circle to one
+point on the inner circle. Being non-crossing fixes the permutation
+up to a rotation of the inner circle. Thus, in order to get a
+non-vanishing contribution, we need $m=n$ and
+$$\pi=(1,\gamma^k(2n))(2,\gamma^k(2n-1)),\dots,(n,\gamma^k(n+1))$$
+for some $k=0,1,\dots,n-1$. Note that $\pi$ must always couple a $U$
+with a $U^*$ and the factor $\mu(\tilde \pi)$ is always 1 for such
+pairings. This gives exactly the contribution as needed for second
+order freeness.
+\end{proof}
+
+Of course, a natural question in this context is how the 
+result of Diaconis and Shahshahani (Remark \ref{remark:ds}) generalizes to the
+case of several independent unitary random matrices. Note that as we have
+established the existence of a second order limit distribution for Haar
+distributed unitary random matrices we can use an independent copy of them as
+the ensemble $\{A_1,\dots,A_s\}$ in our Theorem \ref{main:free}. By Remark
+\ref{associativity} this can be iterated to give the following.
+
+\begin{theorem}
+Let $\{U^{(1)}\}_N,\dots,\{U^{(r)}\}_N$ be $r$ sequences of Haar
+distributed unitary $N\times N$-random matrices. If
+$\{U^{(1)}\}_N,\dots,\{U^{(r)}\}_N$ are independent, then they are
+asymptotically free of second order.
+\end{theorem}
+
+This contains the information about the fluctuation of several
+independent Haar distributed unitary random matrices. Again, it
+suffices to consider traces of reduced words in our random matrices,
+i.e., expressions of the form
+\begin{equation}\label{words}
+\Tr(U_{i(1)}^{k(1)}\cdots U_{i(n)}^{k(n)})
+\end{equation}
+for $n\in\NN$, and $k(r)\in\ZZ\backslash \{0\}$ and $i(r)\not=
+i(r+1)$ for all $r=1,\dots,n$ (where $i(n+1)=i(1)$). But these are
+now products in cyclically alternating and centered variables, so
+that by the very definition of second order freeness we get
+\begin{align}
+\lim_{N\to\infty} 
+\kk_2\big(&\Tr(U_{i(1)}^{k(1)}\cdots
+U_{i(m)}^{k(m)}), \Tr(U_{j(n)}^{l(n)}\cdots
+U_{j(1)}^{l(1)})\big) \\ \notag 
+&=\delta_{mn} \sum_{r=0}^{n-1}
+\ff_1\bigl(U_{i(1)}^{k(1)}U_{j(1+r)}^{l(1+r)}\bigr) \cdots
+ \ff_1\bigl(U_{i(n)}^{k(n)}U_{j(n+r)}^{l(n+r)}\bigr).
+\end{align}
+The contribution of $\ff_1$ in these terms vanishes unless the
+matrices and their powers match. Note also that the vanishing of
+higher cumulants can be rephrased in a more probabilistic language
+by saying that the random variables (\ref{words}) converge to a
+Gaussian family.
+
+\begin{corollary}
+Let $\{U_{(1)}\}_N,\dots,\{U_{(r)}\}_N$ be independent sequences of
+Haar distributed unitary $N\times N$-random matrices. Then, the
+collection (\ref{words}) of unnormalized traces in cyclically
+reduced words in these random matrices converges to a Gaussian
+family of centered random variables whose covariance is given by the
+number of matchings between the two reduced words,
+\begin{align}
+\lim_{N\to\infty} &\kk_2\big(\Tr(U_{i(1)}^{k(1)}\cdots
+U_{i(m)}^{k(m)}),
+\Tr(U_{j(n)}^{l(n)}\cdots U_{j(1)}^{l(1)})\big) \\
+&=\notag \delta_{mn}\cdot\#\bigl\{ r\in\{1,\dots,n\}\mid
+i(s)=j(s+r),\\\notag &\qquad\qquad\qquad\qquad\qquad\qquad
+k(s)=-l(s+r) \quad\forall s=1,\dots,n \bigl\}
+\end{align}
+\end{corollary}
+
 This result was also obtained independently in the recent work of
-R˘ adulescu [R] around Connes’s embedding problem.
+R\u{a}dulescu \cite{Rad} around Connes's embedding problem.
+
+
 The following theorem gives an easy way to construct families of
 random matrices which are asymptotically free of second order.
-Theorem 3.15. Let {U}N be a sequence of Haar distributed unitary
-N × N-random matrices. Suppose that {A1, . . . , As}N and {B1, . . . ,
-Bt}N are sequences of N × N random matrices each of which has a
-second order limit distribution. Furthermore, assume that {A1, . . . ,
-As}N , {B1, . . . , Bt}N , and {U}N are independent. Then the sequences
-{A1, . . . , As}N and {U B1U ∗, . . . , U BtU ∗}N are asymptotically free of
+
+\begin{theorem}
+Let $\{U\}_N$ be a sequence of Haar distributed unitary $N\times
+N$-random matrices. Suppose that $\{A_1,\dots,A_s\}_N$ and
+$\{B_1,\dots, \ab B_t\}_N$ are sequences of $N \times N$ random matrices each of
+which has a second order limit distribution.  Furthermore, assume that $\{A_1,
+\ab \dots, \ab A_s\}_N$, $\{B_1,\dots,B_t\}_N$, and $\{U\}_N$ are independent.
+Then the sequences $\{A_1,\dots, \ab A_s\}_N$ and
+$\{UB_1U^\ast,\dots,UB_tU^\ast\}_N$ are asymptotically free of
 second order.
-Proof. The proof is a repetition of the proof of Theorem 3.12 except
-that we cannot assume that {A1, . . . , As, B1, . . . , Bt}N has a second
-order limit distribution. Instead we have the independence of the Ai
-from the Bi’s and a special ǫ. So we shall only indicate how the proof
-has to be modiﬁed.
-The ﬁrst order freeness follows as in the proof of Theorem 3.12. In
-the proofs of Theorems 3.7, 3.10, and 3.12 the cumulants we need ar e all
-sums over S(ǫ)
-2n for various n’s. Now we have a special form of ǫ, namely
-ǫi = (−1)i+1. Thus if π ∈ S(ǫ)
-2n then π takes even numbers to odd num-
-bers and vice versa. Since the same applies to any of the γ’s, we have
-that γπ −1 takes even numbers to even numbers and odd numbers to
-odd numbers. Thus the orbits of γπ −1 consist either of all odd numbers
-or of all even numbers. Hence if P1, . . . , Pn are words in A1, . . . , As and
-Q1, . . . , Qn are words in B1, . . . , Bt, then by the independence of the
-A’s and the B’s
-E
-(
-Trγπ −1(P1, Q1, . . . , Pn, Qn)
-)
-= E
-(
-Tr(W1) · · ·Tr(Wj)
-)
-· E
-(
-Tr(Wj+1) · · · Tr(Wk)
-)
-where k = #( γπ −1) and Wi for 1 ≤ i ≤ j is a word only in A’s and
-for j + 1 ≤ i ≤ k is a word only in B’s. This means that as far as
-FLUCTUATIONS OF UNITARY RANDOM MATRICES 27
-the asymptotic behaviour of E
-(
-Trγπ −1(P1, Q1, . . . , Pn, Qn)
-)
-is concerned
-we may assume that {A1, . . . , As, B1, . . . , Bt}N has a second order limit
-distribution. Hence our claim follows from Theorem 3.12
-We say that a tuple {B1, . . . , Bs} of N ×N-random matrices is U(N)–
-invariant if for every U ∈ U (N) the joint probability distribution of
-the random matrices {B1, . . . , Bs} coincides with the joint probability
-distribution of the random matrices {U B1U ∗, . . . , U BsU ∗}.
-Corollary 3.16. Let {A1, . . . , As}N be a sequence of N × N-random
-matrices which has a second order limit distribution and let {B1, . . . ,
-Bt}N be a sequence of U(N)–invariant N × N-random matrices which
-has a second order limit distribution. Furthermore assume t hat the ma-
-trices {A1, . . . , As}N and the matrices {B1, . . . , Bt}N are independent.
-Then the sequences {A1, . . . , As}N and {B1, . . . , Bt}N are asymptoti-
-cally free of second order.
-4. F ailure of Universality for multi-matrix models
-In this section we want to make the meaning of second order freene ss
-for ﬂuctuations of random matrices more explicit and relate this with
-the question of universality of such ﬂuctuations. There has been m uch
-interest in global ﬂuctuations of random matrices, in particular, sin ce
-it was observed that for large classes of one-matrix models these ﬂ uctu-
-ations are universal. In the physical literature this observation go es at
-least back to Politzer [P], culminating in the paper of Ambjørn et al.
-[AJM], whereas a proof on the mathematical level of rigour is due to
-Johansson [J]. Universality for one-matrix models lets one expect th at
-one would also have such universality for multi-matrix models. Indeed ,
-this expectation was one of the starting points of our investigation s.
-However, our machinery around second order freeness shows th at such
-universality is not present in multi-matrix models.
-Before we address multi-matrix models let us ﬁrst recall the relevan t
-result of Johansson [J]. We consider Hermitian N ×N-random matrices
-A = (aij)N
-i,j=1 equipped with the probability measure
-(27) dµN (A) = 1
-ZN
-exp
-{
-−NTr[P (A)]
-}
-dA,
-where
-dA =
-∏
-1≤i<j≤N
-d Re aij d Im aij
-N∏
-i=1
-daii.
-Here, P is a polynomial in one variable, which we will address as “po-
-tential” in the following, and ZN is a normalization constant. If one
-28 J. A. MINGO, P. ´SNIADY, AND R. SPEICHER
-restricts to a special class V of potentials P (the most important con-
-dition being that the limit eigenvalue distribution has a single interval
-as support – which we normalize in the following to [ −2, 2]) then Jo-
-hansson proved the following universality of ﬂuctuations for this cla ss:
-Consider the sequence of N ×N-random matrices {AN }N given by (27).
-Then this sequence has a second order limit distribution which can be
-described as follows:
-(1) We have
-lim
-N →∞
-k1{tr[An
-N ]} =
-∫
-tndνP (t) ( n ∈ N),
-where νP is a probability measure on R (“limiting eigenvalue
-distribution”) which is given as the solution of the singular in-
-tegral equation
-(28)
-∫ dνP (t)
-t − s = −1
-2 P ′(s) for all s ∈ supp νP .
-(2) Let Tn (n ∈ N) be the Chebyshev polynomials of ﬁrst kind
-(which are the orthogonal polynomials with respect to the arc-
-sine law on [ −2, 2]). Then
-lim
-N →∞
-k2{Tr[Tn(AN )], Tr[Tm(AN )]} = δmn · n.
-Whereas the limiting eigenvalue distribution νP depends on the form
-of the potential P , the ﬂuctuations are the same for all potentials in
-the class V – they are always diagonalized by the same polynomials
-{Tn | n ∈ N}. Note that the most prominent example for the considered
-class of random matrices is given by P (A) = A2, which corresponds
-to the Gaussian random matrix ensemble. So one can phrase this uni-
-versality also in the way that all considered random matrices have th e
-same ﬂuctuations as Gaussian random matrices (but their eigenvalu e
-distributions are of course diﬀerent from Wigner’s semi-circle law).
-Let us now consider multi-matrix models. For notational convenienc e
-we restrict to the case of two-matrix models. Take now a polynomial
-P (A, B) in two non-commuting variables and consider pairs of hermit-
-ian N × N-matrices A = (aij)N
-i,j=1 and B = (bij)N
-i,j=1 equipped with the
+\end{theorem}
+
+\begin{proof}
+The proof is a repetition of the proof of Theorem \ref{main:free}
+except that we cannot assume that $\{A_1, \dots , A_s, B_1, \dots ,
+B_t\}_N$ has a second order limit distribution. Instead we have the
+independence of the $A_i$ from the $B_i$'s and a special
+$\epsilon$. So we shall only indicate how the proof has to be
+modified. 
+
+The first order freeness follows as in the proof of Theorem
+\ref{main:free}. In the proofs of Theorems \ref{main},
+\ref{main:higherorder}, and \ref{main:free} the cumulants we need
+are all sums over $S_{2n}^{(\epsilon)}$ for various $n$'s. Now we
+have a special form of $\epsilon$, namely $\epsilon_i =
+(-1)^{i+1}$. Thus if $\pi \in S_{2n}^{(\epsilon)}$ then $\pi$ takes
+even numbers to odd numbers and vice versa. Since the same applies
+to any of the $\gamma$'s, we have that $\gamma \pi^{-1}$ takes even
+numbers to even numbers and odd numbers to odd numbers. Thus
+the orbits of $\gamma\pi^{-1}$ consist either of all odd numbers
+or of all even numbers. Hence if $P_1, \dots , P_{n}$ are words in
+$A_1, \dots , A_s$ and $Q_1, \dots , Q_{n}$ are words in $B_1,
+\dots , B_t$, then by the independence of the $A$'s and the $B$'s 
+\begin{multline*} 
+\EE\big( \Tr_{\gamma\pi^{-1}}(P_1, Q_1, \dots , P_{n}, Q_n) \big) \\
+= \EE\big( \Tr(W_1) \cdots \Tr(W_j) \big) \cdot \EE\big(
+\Tr(W_{j+1}) \cdots \Tr(W_k) \big) 
+\end{multline*}
+where $k = \#(\gamma\pi^{-1})$ and $W_i$ for $1 \leq i \leq j$ is a
+word only in $A$'s and for $j+1 \leq i \leq k$ is a word only
+in $B$'s. This means that as far as the asymptotic behaviour of
+$\EE\big( \Tr_{\gamma\pi^{-1}}(P_1, Q_1, \dots , P_{n}, Q_n) \big)$
+is concerned we may assume that $\{A_1, \dots , A_s, B_1, \dots ,
+B_t\}_N$ has a second order limit distribution. Hence our claim
+follows from Theorem \ref{main:free} 
+\end{proof}
+
+We say that a tuple $\{B_1,\dots,B_s\}$ of $N\times N$-random
+matrices is $\UU(N)$--invariant if for every $U\in\UU(N)$ the joint
+probability distribution of the random matrices $\{B_1,\dots,B_s\}$
+coincides with the joint probability distribution of the random
+matrices $\{UB_1U^\ast,\dots,UB_sU^\ast\}$.
+
+
+\begin{corollary}\label{cor:3.14}
+Let $\{A_1,\dots,A_s\}_N$ be a sequence of $N\times N$-random
+matrices which has a second order limit distribution and let $\{B_1,
+\ab \dots, \ab B_t\}_N$ be a sequence of $\UU(N)$--invariant
+$N\times N$-random matrices which has a second order limit
+distribution. Furthermore assume that the matrices
+$\{A_1,\dots,A_s\}_N$ and the matrices $\{B_1,\dots,B_t\}_N$ are
+independent. Then the sequences $\{A_1,\dots,A_s\}_N$ and
+$\{B_1,\dots,B_t\}_N$ are asymptotically free of second order.
+\end{corollary}
+
+
+\section{Failure of Universality for multi-matrix models}
+In this section we want to make the meaning of second order freeness
+for fluctuations of random matrices more explicit and relate this
+with the question of universality of such fluctuations. There has
+been much interest in global fluctuations of random matrices, in
+particular, since it was observed that for large classes of
+one-matrix models these fluctuations are universal. In the physical
+literature this observation goes at least back to Politzer \cite{P},
+culminating in the paper of Ambj\o{}rn et al. \cite{AJM}, whereas a
+proof on the mathematical level of rigour is due to Johansson
+\cite{J}. Universality for one-matrix models lets one expect
+that one would also have such universality for multi-matrix
+models. Indeed, this expectation was one of the starting points
+of our investigations. However, our machinery around second order
+freeness shows that such universality is {\it not}\/ present in
+multi-matrix models.
+
+Before we address multi-matrix models let us first recall the
+relevant result of Johansson \cite{J}. We consider Hermitian
+$N\times N$-random matrices $A=(a_{ij})_{i,j=1}^N$ equipped with the
 probability measure
-(29) dµN (A, B) = 1
-ZN
-exp{−NTr[P (A, B)]}dAdB,
-where ZN is a normalization constant. The simplest ensemble of this
-kind is the case of two independent Gaussian random matrices which
-corresponds to the choice P (A, B) = A2 + B2. The above mentioned
-universality result for the one-matrix case lets one expect that on e
-FLUCTUATIONS OF UNITARY RANDOM MATRICES 29
-might also have universality for multi-matrix ensembles which are close
-to the ensemble of independent Gaussian random matrices. How-
-ever, we will now show that even restricted to potentials of the for m
-P (A, B) = P1(A) + P2(B) we do not have universal ﬂuctuations.
-Let us ﬁrst observe that our concept of second order freeness tells
-us how to diagonalize ﬂuctuations. We spell this out in the following
-theorem which is an easy consequence of Deﬁnition 2.5 of second ord er
-freeness.
-Theorem 4.1. Let {AN }N and {BN }N be two sequences of N × N-
-random matrices which are asymptotically free of second ord er. Let
-{QA
-n | n ∈ N} and {QB
-n | n ∈ N} be the orthogonal polynomials for the
-limiting eigenvalue distribution of AN and BN , respectively, determined
-by the requirements that QA
-n and QB
-n are polynomials of degree n and
-that
-lim
-N →∞
-k1{tr[QA
-n (AN )QA
-m(AN )]} = δnm,
-lim
-N →∞
-k1{tr[QB
-n (BN )QB
-m(BN )]} = δnm.
-Then the ﬂuctuations of mixed traces in AN and BN are diagonalized
-by cyclically alternating products of QA
-n and QB
-n and the covariances
-are given by the number of cyclic matchings of these products :
-lim
-N →∞
-k2
-{
-Tr[QA
-i(1)(AN )QB
-j(1)(BN ) · · ·QA
-i(m)(AN )QB
-j(m)(BN )],
-Tr[QB
-l(n)(BN )QA
-k(n)(AN ) · · ·QB
-l(1)(BN )QA
-k(1)(AN )]
-}
-= δmn·#{r ∈ {1, . . . , n} |i(s) = k(s+r), j(s) = l(s+r) ∀s = 1, . . . , n}
-To come back to our problem of universality for multi-matrix mod-
-els we only have to observe that Corollary 3.16 tells us that we have
-asymptotic freeness of second order if we choose a potential of t he form
-P (A, B) = P1(A) + P2(B).
-Theorem 4.2. Let P (A, B) = P1(A) + P2(B) where P1 and P2 are
-polynomials from the class V. Consider the two-matrix model {AN ,
-BN }N given by the probability measure (29). Let ν1 and ν2 be the
-limiting eigenvalue distribution for P1 and P2, respectively (as described
-in Eq. (28)) and denote by {Q1
-n | n ∈ N} and {Q2
-n | n ∈ N} the
-respective orthogonal polynomials. Then the sequence {AN , BN }N has
-a second order limit distribution given by (A, ϕ1, ϕ2) and a, b ∈ A which
-can be described as follows:
-(1) ϕ1 is the free product of ν1 and ν2.
-(2) ϕ2 is diagonalized by the following collection of polynomials :
-{Tn(a) | n ∈ N}
-30 J. A. MINGO, P. ´SNIADY, AND R. SPEICHER
-{Tn(b) | n ∈ N}
-{Q1
-i(1)(a)Q2
-j(1)(b) · · · Q1
-i(n)(a)Q2
-j(n)(b)},
-where in the last set we choose one representative from each
-cyclic equivalence class, i.e. for all n ∈ N, n-tuples
-(
-(i(1), j(1)),
-. . . ,(i(n), j(n))
-)
-which are diﬀerent modulo cyclic rotation
-Proof. Note that the additive form of the potential P (A, B) = P1(A) +
-P2(B) means that AN and BN are independent, AN is a one-matrix
-ensemble corresponding, via (27), to a potential P1, and BN is a one-
-matrix ensemble corresponding to a potential P2. Thus the statement
-about the diagonalizing polynomials in either only AN or in only BN
-is just Johansson’s result. For getting the statement about the d iag-
-onalizing polynomials in both AN and BN we have to note that the
-random matrices AN (and also BN ) are U(N)-invariant, thus Corol-
-lary 3.16 implies that {AN }N and {BN }N are asymptotically free of
-second order. Hence we can apply Theorem 4.1 above.
+\begin{equation}\label{ensemble}
+d\mu_N(A)=\frac 1{Z_N}\exp\bigl\{-N\Tr[P(A)]\bigr\}dA,
+\end{equation}
+where
+$$dA=\prod_{1\leq i<j\leq N}d\,\text{Re}\, a_{ij}\, d\,\text{Im}\, a_{ij}
+\prod_{i=1}^N da_{ii}.$$ Here, $P$ is a polynomial in one variable,
+which we will address as ``potential" in the following, and $Z_N$ is
+a normalization constant. If one restricts to a special class
+$\mathcal{V}$ of potentials $P$ (the most important condition being
+that the limit eigenvalue distribution has a single interval as
+support -- which we normalize in the following to $[-2,2]$) then
+Johansson proved the following universality of fluctuations for this
+class: Consider the sequence of $N\times N$-random matrices
+$\{A_N\}_N$ given by (\ref{ensemble}). Then this sequence has a
+second order limit distribution which can be described as follows:
+\begin{enumerate}
+\item
+We have
+$$\lim_{N\to\infty}
+\kk_1\{\tr[A^n_N]\}=\int t^nd\nu_P(t)\qquad (n\in\NN),$$ where
+$\nu_P$ is a probability measure on $\RR$ (``limiting eigenvalue
+distribution") which is given as the solution of the singular
+integral equation
+\begin{equation}\label{integral}
+\int\frac{d\nu_P(t)}{t-s}=-\frac 12 P'(s)\qquad \text{for all
+$s\in\text{supp } \nu_P$}.
+\end{equation}
+\item
+Let $T_n$ ($n\in\NN$) be the Chebyshev polynomials of first kind
+(which are the orthogonal polynomials with respect to the arcsine
+law on $[-2,2]$). Then
+$$\lim_{N\to\infty}
+\kk_2\{\Tr[T_n(A_N)],\Tr[T_m(A_N)]\}=\delta_{mn}\cdot n.$$
+\end{enumerate}
+Whereas the limiting eigenvalue distribution $\nu_P$ depends on the
+form of the potential $P$, the fluctuations are the same for all
+potentials in the class $\mathcal{V}$ -- they are always
+diagonalized by the same polynomials $\{T_n\mid n\in\NN\}$. Note
+that the most prominent example for the considered class of random
+matrices is given by $P(A)=A^2$, which corresponds to the Gaussian
+random matrix ensemble. So one can phrase this universality also in
+the way that all considered random matrices have the same
+fluctuations as Gaussian random matrices (but their eigenvalue
+distributions are of course different from Wigner's semi-circle
+law).
+
+Let us now consider multi-matrix models. For notational convenience
+we restrict to the case of two-matrix models. Take now a polynomial
+$P(A,B)$ in two non-commuting variables and consider pairs of
+hermitian $N\times N$-matrices $A=(a_{ij})_{i,j=1}^N$ and
+$B=(b_{ij})_{i,j=1}^N$ equipped with the probability measure
+\begin{equation}\label{ensemble-two}
+d\mu_N(A,B)=\frac 1{Z_N}\exp\{-N\Tr[P(A,B)]\}dA dB,
+\end{equation}
+where $Z_N$ is a normalization constant. The simplest ensemble of
+this kind is the case of two independent Gaussian random matrices
+which corresponds to the choice $P(A,B)=A^2+B^2$. The above
+mentioned universality result for the one-matrix case lets one
+expect that one might also have universality for multi-matrix
+ensembles which are close to the ensemble of independent Gaussian
+random matrices. However, we will now show that even restricted to
+potentials of the form $P(A,B)= P_1(A)+P_2(B)$ we do not have
+universal fluctuations.
+
+Let us first observe that our concept of second order freeness tells
+us how to diagonalize fluctuations. We spell this out in the
+following theorem which is an easy consequence of Definition
+\ref{free} of second order freeness.
+
+\begin{theorem}\label{meaning}
+Let $\{A_N\}_N$ and $\{B_N\}_N$ be two sequences of $N\times
+N$-random matrices which are asymptotically free of second order.
+Let $\{Q_n^A\mid n\in\NN\}$ and $\{Q_n^B\mid n\in\NN\}$ be the
+orthogonal polynomials for the limiting eigenvalue distribution of
+$A_N$ and $B_N$, respectively, determined by the requirements that
+$Q_n^A$ and $Q_n^B$ are polynomials of degree $n$ and that
+$$\lim_{N\to\infty}\kk_1\{\tr[Q_n^A(A_N)Q_m^A(A_N)]\}=\delta_{nm},$$
+$$\lim_{N\to\infty}\kk_1\{\tr[Q_n^B(B_N)Q_m^B(B_N)]\}=\delta_{nm}.$$
+Then the fluctuations of mixed traces in $A_N$ and $B_N$ are
+diagonalized by cyclically alternating products of $Q_n^A$ and
+$Q_n^B$ and the covariances are given by the number of cyclic
+matchings of these products:
+\begin{multline*}
+\lim_{N\to\infty}
+\kk_2\bigl\{\Tr[Q^A_{i(1)}(A_N)Q^B_{j(1)}(B_N)\cdots
+Q^A_{i(m)}(A_N)Q^B_{j(m)}(B_N)],\\
+\Tr[Q^B_{l(n)}(B_N) Q^A_{k(n)}(A_N) \cdots
+Q^B_{l(1)}(B_N) Q^A_{k(1)}(A_N)]\bigr\}\\
+=\delta_{mn} \cdot\#\{r\in\{1,\dots,n\}\!\mid\! i(s)=k(s+r),
+j(s)=l(s+r)\,\forall s=1,\dots,n\}
+\end{multline*}
+\end{theorem}
+
+To come back to our problem of universality for multi-matrix models
+we only have to observe that Corollary \ref{cor:3.14} tells us that
+we have asymptotic freeness of second order if we choose a potential
+of the form $P(A,B)=P_1(A)+P_2(B)$.
+
+\begin{theorem}
+Let $P(A,B)=P_1(A)+P_2(B)$ where $P_1$ and $P_2$ are polynomials
+from the class $\mathcal{V}$. Consider the two-matrix model
+$\{A_N, \ab B_N \}_N$ given by the probability measure
+(\ref{ensemble-two}). Let $\nu_1$ and $\nu_2$ be the limiting
+eigenvalue distribution for $P_1$ and $P_2$, respectively (as
+described in Eq. (\ref{integral})) and denote by $\{Q^1_n\mid
+n\in\NN\}$ and $\{Q^2_n\mid n\in\NN\}$ the respective orthogonal
+polynomials. Then the sequence $\{A_N,B_N\}_N$ has a second order
+limit distribution given by $(\cA,\ff_1,\ff_2)$ and $a,b\in\cA$
+which can be described as follows:
+\begin{enumerate}
+\item
+$\ff_1$ is the free product of $\nu_1$ and $\nu_2$.
+\item
+$\ff_2$ is diagonalized by the following collection of polynomials:
+$$\{T_n(a)\mid n\in\NN\}$$
+$$\{T_n(b)\mid n\in\NN\}$$
+$$\{Q^1_{i(1)}(a)Q^2_{j(1)}(b)\cdots
+Q^1_{i(n)}(a)Q^2_{j(n)}(b) \},$$ 
+where in the last set we choose one representative from each cyclic
+equivalence class, i.e. for all $n\in\NN$,
+$n$-tuples $\bigl((i(1),j(1)), \ab \dots , \ab
+(i(n), \ab j(n))\bigr)$   which are
+different modulo cyclic rotation
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Note that the additive form of the potential $P(A,B)=P_1(A)+P_2(B)$
+means that $A_N$ and $B_N$ are independent, $A_N$ is a one-matrix
+ensemble corresponding, via (\ref{ensemble}), to a potential $P_1$,
+and $B_N$ is a one-matrix ensemble corresponding to a potential
+$P_2$. Thus the statement about the diagonalizing polynomials in
+either only $A_N$ or in only $B_N$ is just Johansson's result. For
+getting the statement about the diagonalizing polynomials in both
+$A_N$ and $B_N$ we have to note that the random matrices $A_N$ (and
+also $B_N$) are $\UU(N)$-invariant, thus Corollary \ref{cor:3.14}
+implies that $\{A_N\}_N$ and $\{B_N\}_N$ are asymptotically free of
+second order. Hence we can apply Theorem \ref{meaning} 
+above.\end{proof}
+
 Note that whereas the polynomials in only one of the matrices are
-universal (namely equal to the Chebyshev polynomials {Tn}n), the
+universal (namely equal to the Chebyshev polynomials $\{T_n\}_n$), the
 polynomials which involve both matrices are not universal but depend
-on the eigenvalue distributions ν1 and ν2. Since the latter vary with
-the potentials P1 and P2, the polynomials Q1
-n and Q2
-n, and thus also
-the alternating products in them, depend on the choice of P . Thus
-we can conclude that even within the very restricted class of P ’s of
-the form P (A, B) = P1(A) + P2(B) we have no universality of global
-ﬂuctuations in multi-matrix models.
+on the eigenvalue distributions $\nu_1$ and $\nu_2$. Since the
+latter vary with the potentials $P_1$ and $P_2$, the polynomials
+$Q^1_n$ and $Q^2_n$, and thus also the alternating products in them,
+depend on the choice of $P$. Thus we can conclude that even within
+the very restricted class of $P$'s of the form
+$P(A,B)=P_1(A)+P_2(B)$ we have no universality of global
+fluctuations in multi-matrix models.

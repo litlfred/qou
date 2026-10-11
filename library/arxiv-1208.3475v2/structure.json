@@ -7,7 +7,11 @@
   "bytes": 268293,
   "pages": 10,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:19Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,18 +21,27 @@
    "stamp_date": "12 Sep 2012"
   },
   "doi": null,
-  "title": "Poisson - Random Matrix transition in the QCD Dirac spectrum Tam\u00e1s G. Kov\u00e1cs Institute for Nuclear Research of the Hungarian Academy of Sciences",
-  "authors_raw": "H-4026 Debrecen, Bem t\u00e9r 18/c, Hungary",
+  "title": "Poisson - Random Matrix transition in the QCD Dirac spectrum",
+  "authors_raw": "Tam\u00e1s G. Kov\u00e1cs",
   "title_lines": [
-   "Poisson - Random Matrix transition in the QCD Dirac spectrum",
-   "Tam\u00e1s G. Kov\u00e1cs",
-   "Institute for Nuclear Research of the Hungarian Academy of Sciences"
+   "Poisson - Random Matrix transition in the QCD Dirac spectrum"
   ],
   "abstract": null,
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20180305064439-05'00'"
+  },
+  "title_raw": "Poisson - Random Matrix transition in the QCD Dirac spectrum",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Poisson - Random Matrix transition in the QCD Dirac spectrum",
+   "text": "Poisson - Random Matrix transition in the QCD Dirac spectrum",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -37,163 +50,542 @@
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": null
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "What is the distance scale l on which the lowest",
-   "page": 6,
+   "title": "Simulation details",
+   "page": 2,
    "source": "inferred",
-   "number": "1"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
-   "title": "How far up in the spectrum (\u03bbc) are the modes",
+   "title": "Anderson transition in the Dirac spectrum",
+   "page": 2,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
+  },
+  {
+   "level": 2,
+   "title": "Analogy with the Anderson transition",
+   "page": 4,
+   "source": "inferred",
+   "number": "3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "Second moment of the unfolded level spacing distribution",
+   "page": 4,
+   "source": "inferred",
+   "number": "3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "Eigenvector statistics",
+   "page": 5,
+   "source": "inferred",
+   "number": "3.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
+  },
+  {
+   "level": 1,
+   "title": "Continuum limit and renormalization",
+   "page": 5,
+   "source": "inferred",
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
+  },
+  {
+   "level": 2,
+   "title": "Localization length",
    "page": 6,
    "source": "inferred",
-   "number": "2"
+   "number": "4.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "6"
+  },
+  {
+   "level": 2,
+   "title": "Renormalization and temperature dependence of $\\lambda_c$",
+   "page": 7,
+   "source": "inferred",
+   "number": "4.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Conclusions",
    "page": 8,
    "source": "inferred",
-   "number": null
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Acknowledgments",
    "page": 9,
    "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "Hip,",
-   "page": 9,
-   "source": "inferred",
-   "number": "I"
-  },
-  {
-   "level": 1,
-   "title": "B. Lang",
-   "page": 9,
-   "source": "inferred",
-   "number": "C"
-  },
-  {
-   "level": 1,
-   "title": "G. Bornyakov, E. V. Luschevskaya, S. M. Mo-",
-   "page": 9,
-   "source": "inferred",
-   "number": "V"
-  },
-  {
-   "level": 1,
-   "title": "Jung, O. Kaczmarek, F. Karsch and E. Laermann",
-   "page": 10,
-   "source": "inferred",
-   "number": "C"
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "9"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The unfolded level spacing distribution in di\ufb00erent regions of the spectrum of ensemble C3. The \ufb01gures correspond to the spectral regions 0.15 \u2264\u03bba \u22640.19 (a), 0.29 \u2264\u03bba \u22640.32 (b), 0.34 \u2264\u03bba \u22640.35 (c) and 0.375 \u2264\u03bba \u22640.385 (d)",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Variance of the unfolded level spacing distribution across the transition in the spectrum for ensembles C1, C2 and C3 that di\ufb00er only in their spatial volume. The dashed horizontal lines at 1 and 0.178 indicate the expected limits in the localized (Poisson) and delocalized (RMT) regime",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The same as Fig. 1 but zooming in on the transitions region. The dotted, dashed and the continuous curve indicate the \ufb01ts of the form Eq. (4) to the Ns = 16, 24 and 32 data respectively",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Average PR of the eigenvectors for lattices with the same temperature and lattice spacing but with four di\ufb00erent aspect ratios.Nt = 4",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The localization length (Eq. 7) of eigenmodes along the spectrum for ensembles D1 and D2 di\ufb00ering only in their spatial volumes. Both l and the location in the spectrum, \u03bb are given in lattice units. Statistical errors are not shown as they are smaller than the size of the symbols",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The localization length of the localized modes as a function of the lattice spacing. The three points correspond to the same physical temperature of about 400MeV (ensembles C, D and E)",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "The localization length in units of the inverse temperature as a function of the physical temperature. The di\ufb00erent symbols represent data obtained at di\ufb00erent values of the lattice spacing",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "The temperature dependence of the renormalized critical point",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "The number of localized (below \u03bbc) eigenmodes per cubic Fermi as a function of the temperature. Di\ufb00erent symbols refer to simulations at di\ufb00erent values of the lattice spacing",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-introduction",
+   "id": "sec-front-matter",
    "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1208,
+   "n_words": 188,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 6,
-   "n_chars": 23540,
-   "n_words": 3965
+   "page_end": 2,
+   "n_chars": 6903,
+   "n_words": 1091,
+   "label_start": null,
+   "label_end": "2"
   },
   {
-   "id": "sec-001-1-what-is-the-distance-scale-l-on-which-the-lowe",
-   "number": "1",
-   "title": "What is the distance scale l on which the lowest",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 25,
-   "n_words": 3
-  },
-  {
-   "id": "sec-002-2-how-far-up-in-the-spectrum-\u03bbc-are-the-modes",
+   "id": "sec-001-2-simulation-details",
    "number": "2",
-   "title": "How far up in the spectrum (\u03bbc) are the modes",
+   "title": "Simulation details",
    "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 6806,
+   "n_words": 1189,
+   "label_start": "2",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-002-31-analogy-with-the-anderson-transition",
+   "number": "3.1",
+   "title": "Analogy with the Anderson transition",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 6720,
+   "n_words": 1163,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-003-33-eigenvector-statistics",
+   "number": "3.3",
+   "title": "Eigenvector statistics",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 3270,
+   "n_words": 559,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-004-41-localization-length",
+   "number": "4.1",
+   "title": "Localization length",
+   "level": 2,
    "page_start": 6,
    "page_end": 8,
-   "n_chars": 10764,
-   "n_words": 1890
+   "n_chars": 10630,
+   "n_words": 1867,
+   "label_start": "6",
+   "label_end": "8"
   },
   {
-   "id": "sec-003-conclusions",
-   "number": null,
+   "id": "sec-005-5-conclusions",
+   "number": "5",
    "title": "Conclusions",
    "level": 1,
    "page_start": 8,
    "page_end": 9,
    "n_chars": 3327,
-   "n_words": 538
+   "n_words": 538,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-004-acknowledgments",
+   "id": "sec-006-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 1,
    "page_start": 9,
-   "page_end": 9,
-   "n_chars": 1016,
-   "n_words": 157
-  },
-  {
-   "id": "sec-005-i-hip",
-   "number": "I",
-   "title": "Hip,",
-   "level": 1,
-   "page_start": 9,
-   "page_end": 9,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-006-c-b-lang",
-   "number": "C",
-   "title": "B. Lang",
-   "level": 1,
-   "page_start": 9,
-   "page_end": 9,
-   "n_chars": 1074,
-   "n_words": 174
-  },
-  {
-   "id": "sec-007-v-g-bornyakov-e-v-luschevskaya-s-m-mo",
-   "number": "V",
-   "title": "G. Bornyakov, E. V. Luschevskaya, S. M. Mo-",
-   "level": 1,
-   "page_start": 9,
    "page_end": 10,
-   "n_chars": 1386,
-   "n_words": 226
-  },
-  {
-   "id": "sec-008-c-jung-o-kaczmarek-f-karsch-and-e-laermann",
-   "number": "C",
-   "title": "Jung, O. Kaczmarek, F. Karsch and E. Laermann",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 938,
-   "n_words": 150
+   "n_chars": 4532,
+   "n_words": 730,
+   "label_start": "9",
+   "label_end": "10"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 9,
-  "sections": 9,
-  "chars_total": 42070
+  "toc_entries": 11,
+  "toc_inferred_entries": 11,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 9,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 43396,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "article.tex",
+   "tex_sections": 11,
+   "overlaid": 6,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-simulation-details",
+     "title": "Simulation details",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-31-analogy-with-the-anderson-transition",
+     "title": "Analogy with the Anderson transition",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-33-eigenvector-statistics",
+     "title": "Eigenvector statistics",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-41-localization-length",
+     "title": "Localization length",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-5-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.231,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

@@ -5,7 +5,8 @@
   "file": "1203.4538v1.pdf",
   "sha256": "5e44909e355c78d6de43c56b420491a7dc92e577bbada483a116276cd97b111a",
   "bytes": 145357,
-  "pages": 15
+  "pages": 15,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,7 +17,7 @@
   },
   "doi": null,
   "title": "The exponential-logarithmic equivalence classes of surreal numbers",
-  "authors_raw": "Salma Kuhlmann and Mickaël Matusinski",
+  "authors_raw": "Salma Kuhlmann and Micka\u00ebl Matusinski",
   "abstract": null,
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
@@ -166,6 +167,74 @@
   "likely_scanned": false,
   "toc_entries": 8,
   "sections": 7,
-  "chars_total": 32731
+  "chars_total": 32731,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 8,
+   "overlaid": 6,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction.",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-preliminaries-on-surreal-numbers",
+     "title": "Preliminaries on surreal numbers.",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.87,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-22-sign-sequences",
+     "title": "Sign sequences.",
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-23-generalized-epsilon-numbers",
+     "title": "Generalized epsilon numbers",
+     "prose_ratio": 0.875,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-3-the-kappa-map",
+     "title": "The kappa map.",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-4-sign-sequences-formulae-for-the-kappa-map",
+     "title": "Sign sequences formulae for the kappa map.",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-5-transseries-and-exp-log-series",
+     "title": "Transseries and exp-log series.",
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.474,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

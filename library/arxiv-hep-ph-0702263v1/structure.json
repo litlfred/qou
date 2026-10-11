@@ -5,7 +5,8 @@
   "file": "0702263v1.pdf",
   "sha256": "8ae381b4eba60286de841a313e8653030f43c6f6a0c157fcc8043b46b41eb644",
   "bytes": 126602,
-  "pages": 12
+  "pages": 12,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -138,6 +139,67 @@
   "likely_scanned": false,
   "toc_entries": 6,
   "sections": 6,
-  "chars_total": 19312
+  "chars_total": 19312,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 7,
+   "overlaid": 6,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-strong-interactions",
+     "title": "Strong interactions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-nonleptonic-weak-interactions",
+     "title": "Nonleptonic weak interactions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-dynamical-photons",
+     "title": "Dynamical photons",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-dynamical-photons-and-leptons",
+     "title": "Dynamical photons and leptons",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-outlook",
+     "title": "Outlook",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.552,
+     "result": "overlaid",
+     "converter": "latex"
+    }
+   ]
+  }
  }
 }

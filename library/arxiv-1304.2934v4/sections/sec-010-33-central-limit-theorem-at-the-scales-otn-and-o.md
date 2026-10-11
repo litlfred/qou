@@ -8,437 +8,219 @@ pages: 21-26
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
 doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
+text_source: latex
+latex_prose_ratio: 0.916
+latex_coverage_ratio: 0.966
 ---
-has described in the lattice case the ﬂuctuations of (Xn)n∈N in the regime O(tn), with
-a result akin to large deviations. In this section, we establish in the same setting an
-extended central limit theorem, for ﬂuctuations of order up to o(tn). In particular, for
-ﬂuctuations of order o((tn)2/3), we obtain the usual central limit theorem. Hence, we
-describe the panorama of ﬂuctuations drawn on Figure 4.
-order of ﬂuctuations
-large deviations (η′(0) < x):
-extended central limit
-central limit theorem (y≪ (tn)1/6):
-theorem ((tn)1/6≲ y≪ (tn)1/2):
-P[ Xn
-tn ≥ x]≃ exp(−tn F(x))√
-2πtnη′(x)
-1
-1−e−F′(x) ψ(F′(x));
-P[ Xn−tnη′(0)√
-tn η′′(0) ≥ y]≃ exp(−tn F(x))
-F′(x)
-√
-2πtnη′(x);
-P[ Xn−tnη′(0)√
-tn η′′(0) ≥ y]≃ P[NR(0, 1)≥ y].
-O(tn)
-O((tn)2/3)
-O((tn)1/2)
-FIGURE 4. Panorama of the ﬂuctuations of a sequence of random vari-
-ables (Xn)n∈N that converges modulo a lattice distribution (with x =
-η′(0) +
-√
-η′′(0)/tn y).
-Theorem 3.9. Consider a sequence (Xn)n∈N that converges mod-φ, with a reference inﬁnitely
-divisible law φ that is a lattice distribution. Assume y = o((tn)1/6). Then,
-P
-[
-Xn≥ tnη′(0) +
-√
-tnη′′(0) y
-]
-= P[NR(0, 1)≥ y] (1 + o(1)) .
-On the other hand, assuming y≫ 1 and y = o((tn)1/2), if x = η′(0) +
-√
-η′′(0)/tn y and h
-is the solution of η′(h) = x, then
-P
-[
-Xn≥ tnη′(0) +
-√
-tnη′′(0) y
-]
-= e−tnF(x)
-h
-√
-2πtn η′′(h) (1 + o(1));
-= e−tnF(x)
-y
-√
-2π
-(1 + o(1)). (5)
-Remark 3.10. The case y = O(1), which is the classical central limit theorem, follows im-
-mediately from the assumptions of Deﬁnition 1.1, since by a Taylor expansion around
-0 of η the characteristic functions of the rescaled r.v.
-Yn = Xn− tnη′(0)√
-tnη′′(0)
-22 VALENTIN FÉRAY, PIERRE-LOÏC MÉLIOT, AND ASHKAN NIKEGHBALI
-converge pointwise to e− ζ2
-2 , the characteristic function of the standard Gaussian dis-
-tribution. In the ﬁrst statement, the improvement here is the weaker assumption
-y = o((tn)1/6).
-As we shall see, the ingredients of the proof are very similar to the ones in the previ-
-ous paragraph. We start with a technical lemma of control of the module of the Fourier
-transform of the reference law φ.
-Lemma 3.11. Consider a non-constant inﬁnitely divisible law φ, of type lattice, and with
-convergent moment generating function
-∫
-ezx φ(dx) = eη(z) on a stripS(c,d) with c < 0 < d.
-We assume without loss of generality thatφ has minimal latticeZ. Then, there exists a constant
-D > 0 only depending on φ, and an interval (−ε, ε)⊂ (c, d), such that for all h ∈ (−ε, ε)
-and all δ small enough,
-qδ = max
-u∈[−π,π]\(−δ,δ)
-| exp(η(h + iu)− η(h))|
-is smaller than 1− D δ2.
-Proof. Denote X a random variable under the inﬁnitely divisible distribution φ. We
-claim that there exist two consecutive integers n and m = n− 1 with P[X = n]⁄= 0
-and P[X = m]⁄= 0. Indeed, under our hypotheses, if Π is the Lévy measure of φ, then
-Z = Z[supp(Π)] = N[supp(Π)]− N[supp(Π)],
-so there exist a and b in N[supp(Π)] such that b− a = 1. However, supp (φ) = γ +
-N[supp(Π)] for some γ∈ Z, so n = γ + b and m = γ + a satisfy the claim.
-Now, we have seen that exp(η(h + iu)− η(h)) can be interpreted as the characteristic
-function of X under the new probability measure dQ = ehX
-E[ehX ] dP. So, for any u,
-| exp(η(h + iu)− η(h))|2 =
-⏐⏐⏐EQ[eiuX ]
-⏐⏐⏐
-2
-= ∑
-n,m∈Z
-Q[X = n] Q[X = m] eiu(n−m)
-= ∑
-k∈Z
-(
-∑
-n−m=k
-Q[X = n] Q[X = m]
-)
-cos ku.
-Fix two integers n and m = n− 1 such that P[X = n]⁄= 0 and P[X = m]⁄= 0. Then
-one also has Q[X = n]⁄= 0, Q[X = m]⁄= 0, and there exists D > 0 such that
-Q[X = n] Q[X = m]≥ 15 D > 0
-for h small enough (Q tends to P for h→ 0). As cos u≤ 1− u2
-5 for all u∈ (−π, π),
-| exp(η(h + iu)− η(h))|2≤ 1 + 15 D (cos u− 1)≤ 1− 3 D u2;
-qδ≤
-√
-1− 3 D δ2≤ 1− D δ2 for δ small enough.
-This concludes the proof of the Lemma. □
-Proof of Theorem 3.9. Notice that η′′(0)⁄= 0 since this is the variance of the law φ, as-
-sumed to be non-trivial. Set x = η′(0) + s, and assume s = o(1). The analogue of
-Equation (3) reads in our setting
-P[Xn≥ tnx] = e−tnF(x)
-2π
-∫ π
-−π
-etn(η(h+iu)−η(h)−iuη′(h))
-1− e−h−iu ψn(h + iu) du. (6)
-MOD-φ CONVERGENCE, I 23
-Since h′(x) = 1
-η′′(x), one has h = s
-η′′(0) + O(s2). The same argument as in the proof of
-Theorem 3.4 shows that the integral over (−δ, δ)c is bounded by C δ (qδ)tn, where qδ <
-1, and C δ (with C a constant independent from s and δ) comes from the computation
-of
-max
-u∈(−δ,δ)c
-⏐⏐⏐⏐
-ψ(h + iu)
-1− e−h−iu
-⏐⏐⏐⏐ .
-In the following we shall need to makeδ go to zero sufﬁciently fast, but withδ
-√
-tnη′′(0)
-still going to inﬁnity. Thus, set δ = ( tn)−2/5, so that in particular (tn)−1/2 ≪ δ≪
-(tn)−1/3. Notice that I(−δ,δ)c etnF(x) still goes to zero faster than any power oftn; indeed,
-(qδ)tn≤
-(
-1− D
-(tn)4/5
-)tn
-≤ e−D (tn)1/5
-by Lemma 3.11. The other part of (6) is
-e−tnF(x)
-2π
-√
-tnη′′(h)
-∫ δ
-√
-tnη′′(h)
-−δ
-√
-tnη′′(h)
-ψ
-(
-h + iw√
-tnη′′(h)
-)
-etn∆n(w) e− w2
-2
-1− e
-−h− iw√
-tnη′′ (h)
-dw,
-up to a factor (1 + o(1)). Let us analyze each part of the integral:
-• The difference between ψ
-(
-h + iw√
-tnη′′(h)
-)
-and ψ(0) is bounded by
-max
-z∈[−s,s]+i[−δ,δ]
-|ψ(z)− ψ(0)| = o(1)
-by continuity of ψ, so one can replace the term with ψ by the constant ψ(0) = 1,
-up to factor (1 + o(1)).
-• The term ∆n(w) has for Taylor expansion
-η(3)(h)
-6
-(
-iw√
-tnη′′(h)
-)3
-+ O
-( 1
-(tn)2
-)
-,
-so tn ∆n(w) is bounded by a O(tn δ3), which is a o(1) since δ≪ (tn)−1/3. So
-again one can replace etn∆n(w) by the constant 1.
-• The Taylor expansion of
-(
-1− e
-−h− iw√
-tnη′′ (h)
-)−1
-is 1
-h+ iw√
-tnη′′ (h)
-(1 + o(1)). Hence,
-P
-[
-Xn≥ tn(η′(0) + s)
-]
-= e−tnF(x)
-2π
-
-
-∫
-R
-e− w2
-2
-√
-tnη′′(h) h + iw
-dw
-
-(
-1 + o(1)
-)
-= e−tnF(x)+ h2 tn η′′ (h)
-2 P
-[
-NR(0, 1)≥ h
-√
-tnη′′(h)
-](
-1 + o(1)
-)
-.
-Indeed, setting β = h
-√
-tn η′′(h), this leads directly to the computation done in
-Lemma 2.7, (4).
+The previous paragraph has described in the lattice case the fluctuations of $(X_n)_{n \in \N}$ in the regime $O(t_n)$, with a result akin to large deviations. In this section, we establish in the same setting an extended central limit theorem, for fluctuations of order up to $o(t_n)$. In particular, for fluctuations of order $o((t_n)^{2/3})$, we obtain the usual central limit theorem. Hence, we describe the panorama of fluctuations drawn on Figure \ref{fig:panoramalattice}.
+
+\begin{center}
+\begin{figure}[ht]
+\begin{tikzpicture}
+\draw (-0.5,1.5) node {order of fluctuations};
+\draw (2.3,0) node {large deviations ($\eta'(0)<x$):};
+\draw (1.75,-1) node {extended central limit};
+\draw (3,-3) node {central limit theorem ($y \ll (t_n)^{1/6}$):};
+\draw (2.7,-1.4) node {theorem ($(t_n)^{1/6}\lesssim y \ll (t_n)^{1/2}$):};
+\draw (9.2,-0.05) node {$\proba[\frac{X_n}{t_n} \geq x] \simeq \frac{\exp(-t_n\,F(x))}{\sqrt{2\pi t_n\eta'(x)}}\,\frac{1}{1-\E^{-F'(x)}}\,\psi(F'(x));$};
+\draw (9.2,-1.5) node {$\proba[\frac{X_n-t_n\eta'(0)}{\sqrt{t_n\,\eta''(0)}} \geq y] \simeq \frac{\exp(-t_n\,F(x))}{F'(x)\,\sqrt{2\pi t_n \eta'(x)}};$};
+\draw (9.23,-3.8) node {$\proba[\frac{X_n-t_n\eta'(0)}{\sqrt{t_n\,\eta''(0)}} \geq y] \simeq \proba[\mathcal{N}_{\R}(0,1)\geq y].$};
+\draw[->,thick] (-2,-5) -- (-2,1) ;
+\draw[thick] (-2.1,0) -- (-1.9,0);
+\draw (-1.25,0) node {$O(t_n)$} ;
+\draw[->,thick] (-2.1,-2) -- (-1.9,-2) -- (-1.9,-0.1);
+\draw (-0.85,-2) node {$O((t_n)^{2/3})$} ;
+\draw[->,thick] (-2.1,-4) -- (-1.9,-4) -- (-1.9,-2.1) ;
+\draw (-0.85,-4) node {$O((t_n)^{1/2})$} ;
+\end{tikzpicture}
+\caption{Panorama of the fluctuations of a sequence of random variables $(X_n)_{n\in\N}$ that converges modulo a lattice distribution (with $x=\eta'(0) + \sqrt{\eta''(0)/t_n}\,y$).}\label{fig:panoramalattice}
+\end{figure}
+\end{center}
+
+\begin{theorem}\label{thm:cltlattice}
+Consider a sequence $(X_n)_{n \in \N}$ that converges mod-$\phi$, with a reference infinitely divisible law $\phi$ that is a lattice distribution. Assume $y=o((t_{n})^{1/6})$. Then,
+$$\proba\!\left[X_{n}\geq t_{n}\eta'(0)+\sqrt{t_{n}\eta''(0)}\,y\right]=\proba[\mathcal{N}_{\R}(0,1)\geq y]\left(1+o(1)\right).$$
+On the other hand, assuming $y \gg 1$ and $y=o((t_n)^{1/2})$, if $x=\eta'(0)+\sqrt{\eta''(0)/t_n}\,y$ and $h$ is the solution of $\eta'(h)=x$, then
+\begin{align}
+    \proba\!\left[X_{n}\geq t_{n}\eta'(0)+\sqrt{t_{n}\eta''(0)}\,y\right]
+& = \frac{\E^{-t_n F(x)}}{h \sqrt{2\pi t_{n}\,\eta''(h)}}(1+o(1)) ; \nonumber\\
+& = \frac{\E^{-t_n F(x)}}{y \sqrt{2\pi}} (1+o(1)).
+\label{EqGaussianTailY}
+\end{align}
+\end{theorem}
+\medskip
+
+\begin{remark}
+The case $y=O(1)$, which is the classical central limit theorem, follows immediately from the assumptions of Definition \ref{def:modphi}, since by a Taylor expansion around $0$ of $\eta$ the characteristic functions of the rescaled r.v. 
+\[Y_{n}=\frac{X_{n}-t_{n}\eta'(0)}{\sqrt{t_{n}\eta''(0)}}\] 
+converge pointwise to $\E^{-\frac{\zeta^{2}}{2}}$, the characteristic function of the standard Gaussian distribution.
+In the first statement, the improvement here is the weaker assumption $y=o((t_{n})^{1/6})$.
+\end{remark}\medskip
+
+As we shall see, the ingredients of the proof are very similar to the ones in the previous paragraph. We start with a technical lemma of control of the module of the Fourier transform of the reference law $\phi$. 
+
+\begin{lemma}\label{lem:technicqdelta_lattice}
+Consider a non-constant infinitely divisible law $\phi$, of type lattice, and with convergent moment generating function $\int \E^{zx}\,\phi(dx) = \E^{\eta(z)}$ on a strip $\mathcal{S}_{(c,d)}$ with $c<0<d$. We assume without loss of generality that $\phi$ has minimal lattice $\Z$. Then, there exists a constant $D>0$ only depending on $\phi$, and an interval $(-\eps,\eps)\subset (c,d)$, such that for all $h \in (-\eps,\eps)$ and all $\delta$ small enough,
+$$q_{\delta}= \max_{u \in [-\pi,\pi]\setminus (-\delta,\delta)} |\exp(\eta(h+\I u)-\eta(h))|$$ 
+is smaller than $1-D\,\delta^{2}$.
+\end{lemma}
+
+\begin{proof}
+Denote $X$ a random variable under the infinitely divisible distribution $\phi$. We claim that there exist two consecutive integers $n$ and $m=n-1$ with $\proba[X=n]\neq 0$ and $\proba[X=m]\neq 0$. Indeed, under our hypotheses, if $\Pi$ is the L\'evy measure of $\phi$, then 
+$$\Z=\Z[\supp(\Pi)]=\N[\supp(\Pi)]-\N[\supp(\Pi)],$$ 
+so there exist $a$ and $b$ in $\N[\supp(\Pi)]$ such that $b-a=1$. However, $\supp(\phi)=\gamma+\N[\supp(\Pi)]$ for some $\gamma \in \Z$, so $n=\gamma+b$ and $m=\gamma+a$ satisfy the claim.\bigskip
+
+Now, we have seen that $\exp(\eta(h+\I u)-\eta(h))$ can be interpreted as the characteristic function of $X$ under the new probability measure $d\mathbb{Q}=\frac{\E^{hX}}{\esper[\E^{hX}]}\,d\proba$. So, for any $u$,
+\begin{align*}
+|\exp(\eta(h+\I u)-\eta(h))|^{2}&=\left|\esper_{\mathbb{Q}}[\E^{\I u X}]\right|^{2} = \sum_{n,m \in \Z} \mathbb{Q}[X=n]\,\mathbb{Q}[X=m]\,\E^{\I u (n-m)} \\
+&= \sum_{k \in \Z}  \left(\sum_{n-m=k} \mathbb{Q}[X=n]\,\mathbb{Q}[X=m] \right)\cos ku.
+\end{align*}
+Fix two integers $n$ and $m=n-1$ such that $\proba[X=n]\neq 0$ and $\proba[X=m]\neq 0$. Then one also has $\mathbb{Q}[X=n]\neq 0$, $\mathbb{Q}[X=m]\neq 0$, and there exists
+$D >0$ such that
+$$\mathbb{Q}[X=n]\,\mathbb{Q}[X=m] \geq 15\,D>0$$
+for $h$ small enough ($\mathbb{Q}$ tends to $\mathbb{P}$ for $h\to 0$).
+As $\cos u \leq 1-\frac{u^{2}}{5}$ for all $u \in (-\pi,\pi)$, 
+\begin{align*}
+&|\exp(\eta(h+\I u)-\eta(h))|^{2} \leq 1+15\,D\,(\cos u-1) \leq 1-3\,D\,u^{2};\\ 
+&q_{\delta} \leq \sqrt{1-3\,D\,\delta^{2}} \leq 1-D\,\delta^{2} \text{ for $\delta$ small enough}.
+\end{align*}
+This concludes the proof of the Lemma.\end{proof}
+\medskip
+
+\begin{proof}[Proof of Theorem \ref{thm:cltlattice}]
+Notice that $\eta''(0)\neq 0$ since this is the variance of the law $\phi$, 
+assumed to be non-trivial.
+Set $x=\eta'(0)+s$, and assume $s =o(1)$. The analogue of Equation \eqref{eq:tobesplit} reads in our setting
+\begin{equation}\proba[X_{n}\geq t_{n}x]=\frac{ \E^{-t_{n}F(x)}}{2\pi}\int_{-\pi}^{\pi}\,\frac{\E^{t_{n}(\eta(h+\I u) - \eta(h)- \I u \eta'(h))}}{1-\E^{-h-\I u}}\,\psi_{n}(h + \I u)\,du.\label{eq:tobesplit2}\end{equation}
+Since $h'(x)=\frac{1}{\eta''(x)}$, one has $h=\frac{s}{\eta''(0)}+O(s^{2})$.
+The same argument as in the proof of Theorem \ref{thm:mainlattice} shows that the integral over $(-\delta,\delta)^{\mathrm{c}}$ is bounded by $C\,\delta\,(q_{\delta})^{t_{n}},$ where $q_{\delta} <1$, and $C\,\delta$ (with $C$ a constant independent from $s$ and $\delta$) comes from the computation of 
+$$\max_{u \in (-\delta,\delta)^{\mathrm{c}}}\left|\frac{\psi(h+\I u)}{1-\E^{-h-\I u}}\right|.$$
+In the following we shall need to make $\delta$ go to zero sufficiently fast, but with $\delta\sqrt{t_{n}\eta''(0)}$ still going to infinity. Thus, set $\delta=(t_{n})^{-2/5}$, so that in particular $(t_{n})^{-1/2}\ll \delta \ll (t_{n})^{-1/3}$.
+Notice that $I_{(-\delta,\delta)^\mathrm{c}}\,\,\E^{t_{n}F(x)}$ still goes to zero faster than any power of $t_{n}$; indeed, 
+$$(q_{\delta})^{t_{n}}\leq \left(1-\frac{D}{(t_{n})^{4/5}}\right)^{t_{n}} \leq \E^{-D\,(t_{n})^{1/5}}$$
+by Lemma \ref{lem:technicqdelta_lattice}. The other part of \eqref{eq:tobesplit2} is 
+$$\frac{\E^{-t_{n}F(x)}}{2\pi \sqrt{t_{n}\eta''(h)}}\int_{-\delta \sqrt{t_{n}\eta''(h)}}^{\delta  \sqrt{t_{n}\eta''(h)}} \psi\!\left(h+\frac{\I w}{ \sqrt{t_{n}\eta''(h)}}\right) \,\E^{t_{n}\Delta_n(w)}\,\frac{\E^{-\frac{w^{2}}{2}}}{1-\E^{-h-\frac{\I w}{\sqrt{t_{n}\eta''(h)}}}}\,dw,$$
+up to a factor $(1+o(1))$. Let us analyze each part of the integral:\vspace{2mm}
+\begin{itemize}
+\item The difference between $\psi\left(h+\frac{\I w}{ \sqrt{t_{n}\eta''(h)}}\right)$ and $\psi(0)$ is bounded by
+$$\max_{z \in [-s,s]+\I[-\delta,\delta]}|\psi(z)-\psi(0)|=o(1)$$
+by continuity of $\psi$, so one can replace the term with $\psi$ by the constant $\psi(0)=1$, up to factor $(1+o(1))$.\vspace{2mm}
+\item The term $\Delta_n(w)$ has for Taylor expansion
+$$\frac{\eta^{(3)}(h)}{6}\,\left(\frac{\I w}{\sqrt{t_{n}\eta''(h)}}\right)^{\!3}+O\left(\frac{1}{(t_{n})^{2}}\right),$$
+so $t_{n}\,\Delta_n(w)$ is bounded by a $O(t_{n}\,\delta^{3})$, which is a $o(1)$ since $\delta\ll(t_{n})^{-1/3}$. So again one can replace $\E^{t_{n}\Delta_n(w)}$ by the constant $1$.\vspace{2mm}
+\item The Taylor expansion of $\left(1-\E^{-h-\frac{\I w}{\sqrt{t_{n}\eta''(h)}}}\right)^{-1}$ is $\frac{1}{h+\frac{\I w}{\sqrt{t_{n}\eta''(h)}}}\,(1+o(1))$. Hence,
+\begin{align*}\proba\left[X_{n}\geq t_{n}(\eta'(0)+s)\right]&= \frac{\E^{-t_{n}F(x)}}{2\pi} \left(\int_{\R} \frac{\E^{-\frac{w^{2}}{2}}}{\sqrt{t_{n}\eta''(h)} \,h+\I w} \,dw\right)\big(1+o(1)\big)\\
+&=\E^{-t_{n}F(x)+\frac{h^{2}\,t_{n}\,\eta''(h)}{2}}\,\,\proba\!\left[\mathcal{N}_{\R}(0,1)\geq h\,\sqrt{t_{n}\eta''(h)}\right]\big(1+o(1)\big).
+\end{align*}
+Indeed, setting $\beta=h\sqrt{t_{n}\,\eta''(h)}$, this leads directly to the computation done in Lemma \ref{lem:gaussintegral}, \eqref{item:gausscomplex}.
+\end{itemize}
 Hence, we have shown so far that
-P
-[
-Xn≥ tn(η′(0) + s)
-]
-= e−tnF(η′(0)+s) e
-β2
-2 P[NR(0, 1)≥ β]
-(
-1 + o(1)
-)
-, (7)
-with β = h
-√
-tn η′′(h).
-24 VALENTIN FÉRAY, PIERRE-LOÏC MÉLIOT, AND ASHKAN NIKEGHBALI
-We now set y = s
-√
-tn/η′′(0) = o(t1/2
-n ), and we consider the following regimes.
-If y≫ 1 (and a fortiori if y is of order bigger than O(tn)1/6), then s≫ (tn)−1/2, so
-h≫ (tn)−1/2 and β≫ 1. We can then use Lemma 2.7, (3) to replace in Equation (7) the
-function of β by the tail-estimate of the Gaussian:
-P
-[
-Xn≥ tnη′(0) +
-√
-tn η′′(0)y
-]
-= e−tn F(x)
-h
-√
-2πtn η′′(h) (1 + o(1)). (8)
-Recall that h = s
-η′′(0) (1 + O(s)), so that the denominator above can be approximated
-as follows:
-h
-√
-tn η′′(h) = s
-η′′(0) (1 + O(s))
-√
-tn (η′′(0) + O(s)) = y (1 + O(s)) = y(1 + o(1)).
+\begin{equation}
+\proba\left[X_{n}\geq t_{n}(\eta'(0)+s)\right]=\E^{-t_{n}F(\eta'(0)+s)}\,\E^{\frac{\beta^{2}}{2}}\,\proba[\mathcal{N}_{\R}(0,1)\geq \beta]\big(1+o(1)\big),\label{eq:forcomparisionwithradziwill}
+\end{equation}
+with $\beta=h\sqrt{t_{n}\,\eta''(h)}$.
+\medskip
+
+We now set $y=s\sqrt{t_{n}/\eta''(0)}=o(t_n^{1/2})$, and we consider the following regimes. If $y \gg 1$ (and \emph{a fortiori} if $y$ is of order bigger than $O(t_n)^{1/6}$), then  $s\gg (t_n)^{-1/2}$, so $h \gg (t_n)^{-1/2}$ and $\beta \gg 1$. We can then use Lemma \ref{lem:gaussintegral}, \eqref{item:gausstail} to replace in Equation \eqref{eq:forcomparisionwithradziwill} the function of $\beta$ by the tail-estimate of the Gaussian:
+\begin{equation}
+    \proba\left[X_n \geq t_n\eta'(0) + \sqrt{t_n\,\eta''(0)}y\right] 
+= \frac{\E^{-t_n\,F(x)}}{h\,\sqrt{2\pi t_n\, \eta''(h)}}(1+o(1)).
+\label{EqGaussianTail}
+\end{equation}
+Recall that $h=\frac{s}{\eta''(0)}\,(1+O(s))$, so that the denominator above can be approximated as follows:
+\[h \sqrt{t_n\, \eta''(h)} =\frac{s}{\eta''(0)}\,(1+O(s))\, \sqrt{t_{n}\,(\eta''(0)+O(s))}= y\,(1+O(s))=y(1+o(1)).\]
 This completes the proof of the second part of the theorem.
-Suppose on the opposite that y = o((tn)1/6), or, equivalently,s = o((tn)−1/3). Let us
-then see how everything is transformed.
-• By making a Taylor expansion aroundη′(0) of the Legendre-Fenchel transform,
-we get (recall that x = η′(0) implies h = 0)
-F(x) = F(η′(0)) + F′(η′(0)) s + F′′(η′(0))
-2 s2 + O(s3) = y2
-2tn
-+ o((tn)−1), (9)
-so e−tnF(η′(0)+s)≃ e− y2
-2 .
-• As above,
-β = h
-√
-tn η′′(h) = y (1 + O(s)) = y (1 + o((tn)−1/3))
-Consequently, β2 = y2(1 + o((tn)−1/3)) = y2 + o(1), so e
-β2
-2 can be replaced
-safely by e
-y2
-2 , which compensates the previous term.
-• Finally, ﬁx y, and denote Fy(λ) = P[NR(0, 1)≥ λy]. Then, for|λ| say between
-1
-2 and 2,
-|F′
-y(λ)| =
-⏐⏐⏐⏐
-y√
-2π
-e− λ2y2
-2
-⏐⏐⏐⏐≤ max
-y∈R
-⏐⏐⏐⏐
-y√
-2π
-e− y2
-8
-⏐⏐⏐⏐ = C < +∞;
+\medskip
+
+Suppose on the opposite that $y=o((t_{n})^{1/6})$, or, equivalently, $s=o((t_{n})^{-1/3})$. Let us then see how everything is transformed.\vspace{2mm}
+\begin{itemize}
+\item By making a Taylor expansion around $\eta'(0)$ of the Legendre-Fenchel transform, we get (recall that $x=\eta'(0)$ implies $h=0$)
+    \begin{equation}
+        F(x)=F(\eta'(0))+F'(\eta'(0))\,s+\frac{F''(\eta'(0))}{2}\,s^{2}+O(s^{3})=\frac{y^{2}}{2t_{n}}+o((t_{n})^{-1}),
+        \label{EqTaylorF}
+    \end{equation}
+so $\E^{-t_{n}F(\eta'(0)+s)}\simeq \E^{-\frac{y^{2}}{2}}$.  \vspace{2mm}
+\item As above,
+\[
+\beta=h\sqrt{t_{n}\,\eta''(h)} = y\,(1+O(s))= y\,(1+o((t_{n})^{-1/3}))
+\]
+Consequently, $\beta^{2}=y^{2}(1+o((t_{n})^{-1/3}))=y^{2}+o(1)$, so $\E^{\frac{\beta^{2}}{2}}$ can be replaced safely by $\E^{\frac{y^{2}}{2}}$, which compensates the previous term.
+\vspace{2mm}
+\item Finally, fix $y$, and denote $F_{y}(\lambda)=\proba[\mathcal{N}_{\R}(0,1)\geq \lambda y]$. Then, for $|\lambda|$ say between $\frac{1}{2}$ and $2$,
+$$|F_{y}'(\lambda)|=\left|\frac{y}{\sqrt{2\pi}}\,\E^{-\frac{\lambda^{2}y^{2}}{2}}\right|\leq \max_{y \in \R} \left|\frac{y}{\sqrt{2\pi}}\,\E^{-\frac{y^{2}}{8}}\right|=C<+\infty;$$
 as a consequence,
-|P[NR(0, 1)≥ β]− P[NR(0, 1)≥ y]| =
-⏐⏐⏐Fy(1 + o((tn)−1/3))− Fy(1)
-⏐⏐⏐
-≤ C
-(tn)1/3 = o(1).
-This ends the proof of Theorem 3.9. □
-Remark 3.12. Equation (7) is the probabilistic counterpart of the number-theoretic re-
-sults of [Kub72, Rad09], see in particular Theorems 2.1 and 2.2 in [Rad09]. In Section
-7.2, we shall explain how to recover the precise large deviation results of [Rad09] for
-arithmetic functions whose Dirichlet series can be studied with the Selberg-Delange
-method.
-MOD-φ CONVERGENCE, I 25
-The following corollary gives a more explicit form of Theorem 3.9, depending on the
-order of magnitude of y.
-Corollary 3.13. If y = o((tn)1/4), then one has
-P
-[
-Xn≥ tnη′(0) +
-√
-tnη′′(0) y
-]
-= (1 + o(1))
-y
-√
-2π
-e− y2
-2 exp
-( η′′′(0)
-6 (η′′(0))3/2
-y3
-√tn
-)
-. (10)
-More generally, if y = o((tn)1/2−1/m), then one has
-P
-[
-Xn≥ tnη′(0) +
-√
-tnη′′(0) y
-]
-= (1 + o(1))
-y
-√
-2π
-exp
-(
-−
-m−1
-∑
-i=2
-F(i)(η′(0))
-i!
-(η′′(0))i/2 yi
-(tn)(i−2)/2
-)
-.
-(11)
-Proof. As above in Equation (9), we write s = y
-√
-η′′(0)/tn and x = η′(0) + s and do a
-Taylor expansion of F around η′(0):
-F(x) =
-m−1
-∑
-i=0
-F(i)(η′(0))
-i!
-
-y
-√
-η′′(0)
-tn
-
-
-i
-+ O(sm).
-Note that F(η(0)) = F′(η′(0)) = 0. Because of the hypothesis y = o((tn)1/2−1/m), we
-have tnO(sm) = o(1). Therefore, plugging the equation above in Equation (5), we get
-(11).
-Observing that F′′(η′(0)) = 1/η′′(0) and F′′′(η′(0)) = −η′′′ (0)
-η′′(0)3 , we get the ﬁrst equa-
-tion. □
-To summarize, in the lattice case, mod-φ convergence implies a large deviation prin-
-ciple (Theorem 3.4) and a precised central limit theorem (Theorem 3.9), and these two
-results cover a whole interval of possible scalings for the ﬂuctuations of the sequence
-(Xn)n∈N. As we shall see in the next Section 4, the same holds for non-lattice reference
-distributions.
-4. F LUCTUATIONS IN THE NON -LATTICE CASE
-In this section we prove the analogues of Theorems 3.4 and 3.9 when φ is not lattice-
-distributed; hence, by Proposition 3.2,|eη(iu)| < 1 for any u⁄= 0. In this setting, assum-
-ing φ absolutely continuous w.r.t. the Lebesgue measure, there is a formula equivalent
-to the one given in Lemma 3.3, namely,
-P[X≥ x] = lim
-R→∞
-(
-1
-2π
-∫ R
-−R
-e−x(h+iu)
-h + iu ϕX(h + iu) du
-)
-(12)
-if ϕX(h) = E[ehX ] < +∞ for h > 0 (see [Fel71, Chapter XV , Section 3]). However,
-in order to manipulate this formula as in Section 3, one would need strong additional
-assumptions of integrability on the characteristic functions of the random variables
-Xn. Thus, instead of Equation (12), our main tool will be a Berry-Esseen estimate (see
-Proposition 4.1 hereafter), which we shall then combine with techniques of tilting of
-measures (Lemma 4.7) similar to those used in the classical theory of large deviations
-(see [DZ98, p. 32]).
-26 VALENTIN FÉRAY, PIERRE-LOÏC MÉLIOT, AND ASHKAN NIKEGHBALI
+\begin{align*}
+\left|\proba[\mathcal{N}_{\R}(0,1)\geq \beta]-\proba[\mathcal{N}_{\R}(0,1)\geq y]\right|&=\left|F_{y}(1+o((t_{n})^{-1/3}))-F_{y}(1)\right|\\
+&\leq \frac{C}{(t_{n})^{1/3}}=o(1).
+\end{align*}
+\end{itemize}
+This ends the proof of Theorem \ref{thm:cltlattice}.
+\end{proof}
+\medskip
+
+\begin{remark}
+Equation \eqref{eq:forcomparisionwithradziwill} is the probabilistic counterpart of the number-theoretic results of \cite{Kub72,Rad09}, see in particular Theorems 2.1 and 2.2 in \cite{Rad09}. In Section \ref{subsec:arithmetic}, we shall explain how to recover the precise large deviation results of \cite{Rad09} for arithmetic functions whose Dirichlet series can be studied with the Selberg-Delange method.
+\end{remark}\bigskip
+
+The following corollary gives
+a more explicit form of Theorem \ref{thm:cltlattice},
+depending on the order of magnitude of $y$.
+\begin{corollary}
+    If $y=o((t_n)^{1/4})$, then one has
+\begin{equation}
+    \proba\!\big[X_n \ge t_n \eta'(0) + \sqrt{t_n \eta''(0)}\, y\big] 
+    =\frac{ (1+o(1))}{y\sqrt{2\pi}} \,\E^{-\frac{y^2}{2}}\, \exp\left( \frac{\eta'''(0)}{6\,(\eta''(0))^{3/2}}\,\frac{y^3}{\sqrt{t_n}}
+    \right) .
+\label{EqCramerOrdre3}
+\end{equation}
+More generally, if $y=o((t_n)^{1/2-1/m})$, then one has
+\begin{equation}
+    \proba\!\big[X_n \ge t_n \eta'(0) + \sqrt{t_n \eta''(0)}\, y\big] 
+    =\frac{(1+o(1))}{y\sqrt{2\pi}} \exp\left( - \sum_{i=2}^{m-1} \frac{F^{(i)}(\eta'(0))}{i!}\,\frac{(\eta''(0))^{i/2}\, y^i}{(t_n)^{(i-2)/2}}
+    \right).
+\label{EqCramerOrdreM}
+\end{equation}
+\end{corollary}
+\begin{proof}
+    As above in Equation \eqref{EqTaylorF}, we write $s=y\sqrt{\eta''(0)/t_{n}}$
+    and $x=\eta'(0)+s$ and do a Taylor expansion of $F$ around $\eta'(0)$:
+    \[F(x) = \sum_{i=0}^{m-1} \frac{F^{(i)}(\eta'(0))}{i!} \left( y\sqrt{\frac{\eta''(0)}{t_{n}}} \right)^i +O(s^{m}).\]
+    Note that $F(\eta(0))=F'(\eta'(0))=0$.
+    Because of the hypothesis $y=o((t_n)^{1/2-1/m})$, we have $t_n O(s^{m})=o(1)$.
+    Therefore, plugging the equation above in Equation \eqref{EqGaussianTailY},
+    we get \eqref{EqCramerOrdreM}.\medskip
+
+    Observing that $F''(\eta'(0))=1/\eta''(0)$ and $F'''(\eta'(0))=\frac{-\eta'''(0)}{\eta''(0)^3}$,
+    we get the first equation.
+\end{proof}
+
+To summarize, in the lattice case, mod-$\phi$ convergence implies a large deviation principle (Theorem \ref{thm:mainlattice}) and a precised central limit theorem (Theorem \ref{thm:cltlattice}), and these two results cover a whole interval of possible scalings for the fluctuations of the sequence $(X_n)_{n \in \N}$. As we shall see in the next Section \ref{sec:nonlattice}, the same holds for non-lattice reference distributions.
+\bigskip
+\bigskip
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Fluctuations in the non-lattice case}\label{sec:nonlattice}
+In this section we prove the analogues of Theorems \ref{thm:mainlattice} and \ref{thm:cltlattice} when $\phi$ is not lattice-distributed; hence, by Proposition \ref{prop:latticeandnonlattice}, $|\E^{\eta(\I u)}|<1$ for any $u\neq 0$. In this setting, assuming $\phi$ absolutely continuous w.r.t.~the Lebesgue measure, there is a formula equivalent to the one given in Lemma \ref{lem:fourier}, namely,
+\begin{equation}\proba[X\geq x]=\lim_{R \to \infty}\left(\frac{1}{2\pi}\int_{-R}^{R} \frac{\E^{-x(h+\I u)}}{h+\I u}\,\varphi_{X}(h+\I u)\,du\right)\label{eq:notuseful}
+\end{equation}
+if $\varphi_{X}(h)=\esper[\E^{hX}]<+\infty$ for $h>0$ (see \cite[Chapter XV, Section 3]{Fel71}). However, in order to manipulate this formula as in Section \ref{sec:lattice}, one would need strong additional assumptions of integrability on the characteristic functions of the random variables $X_{n}$. Thus, instead of Equation \eqref{eq:notuseful}, our main tool will be a Berry-Esseen estimate (see Proposition \ref{prop:berryesseen} hereafter), which we shall then combine with techniques of tilting of measures (Lemma \ref{lem:exponchange}) similar to those used in the classical theory of large deviations (see \cite[p. 32]{DZ98}).\bigskip

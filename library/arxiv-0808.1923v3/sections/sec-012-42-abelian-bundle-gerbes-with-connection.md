@@ -8,190 +8,162 @@ pages: 33-36
 source_pdf: 0808.1923v3.pdf
 source_sha256: 3c53f7c0fd9acf89
 doc_brief: "Connections on Non-Abelian Gerbes and their Holonomy — We introduce an axiomatic framework for the parallel transp ort of connections on gerbes."
+text_source: latex
+latex_prose_ratio: 0.974
+latex_coverage_ratio: 0.975
 ---
-In this section we consider the target 2-category T = B(S1-Tor), the monoidal category of S1-torsors
-viewed as a 2-category with a single object [SW, Example A.2]. Associa ted to this 2-category is the
-2-functor
-iS1 : BBS1 /d47/d47 B(S1-Tor)
-that sends the single 1-morphism of BBS1 to the circle, viewed as an S1-torsor over itself. The main
-result of this section is:
-Theorem 4.2.1. There is an equivalence
-TransBBS1 (M, B(S1-Tor)) ∼= BGrb∇(M )
-between the 2-category of transport 2-functors on M with values in B(S1-Tor) and with BBS1-structure,
-and the 2-category of bundle gerbes with connection over M .
-Let us ﬁrst recall the deﬁnition of bundle gerbes following [Mur96, M S00, Ste00, Wal07]. For a
-surjective submersion π :Y /d47/d47 M , we ﬁrst deﬁne the following 2-category BGrb∇(π):
-1. An object is a tuple ( B,L,ω,µ ) consisting of a 2-form B ∈ Ω 2(Y ), a principal S1-bundle L
-with connection ω overY [2] of curvature curv(ω) = π∗
-1B −π∗
-2B, and an associative, connection-
-preserving bundle isomorphism
-µ :π∗
-23L ⊗π∗
-12L /d47/d47 π∗
-13L
-– 33 –
-overY [3].
-2. A 1-morphism ( B,L,ω,µ ) /d47/d47 (B′,L ′,ω ′,µ ′), also known as stable isomorphism , is a principal
-S1-bundleA with connection ς overY of curvature curv(ς) = B −B′ together with a connection-
-preserving bundle isomorphism
-α :π∗
-2A ⊗L /d47/d47 L′ ⊗π∗
-1A
-overY [2], such that the diagram
-π∗
-3A ⊗π∗
-23L ⊗π∗
-12L
-id ⊗µ /d47/d47
-π∗
-23α ⊗id
-/d15/d15
-π∗
-3A ⊗π∗
-13L
-π∗
-13α
-/d15/d15
-π∗
-23L′ ⊗π∗
-2A ⊗L
-id⊗π∗
-12α
-/d15/d15
-π∗
-23L′ ⊗π∗
-12L′ ⊗π∗
-1A
-µ′ ⊗id
-/d47/d47π∗
-13L′ ⊗π∗
-1A
-(4.2.1)
-of bundle isomorphisms over Y [3] is commutative.
-3. A 2-morphism ( A,ς,α ) /d43/d51 (A′,ς ′,α ′) is a connection-preserving bundle isomorphism ϕ :
-A /d47/d47 A′ overY , such that the diagram
-π∗
-2A ⊗L
-π∗
-2ϕ ⊗idL
-/d15/d15
-α /d47/d47L′ ⊗π∗
-1A
-idL′ ⊗π∗
-1ϕ
-/d15/d15
-π∗
-2A′ ⊗L
-α′
-/d47/d47L′ ⊗π∗
-1A′
-(4.2.2)
-of bundle isomorphisms over Y [2] is commutative.
-The full 2-category of bundle gerbes with connection over M is then deﬁned as the direct limit
-BGrb∇(M ) := lim− →π
-BGrb∇(π).
-The strategy to prove Theorem 4.2.1 is to ﬁrst establish the equivale nce on a local level:
-Proposition 4.2.2. For every surjective submersion π :Y /d47/d47 M there is a surjective equivalence of
-2-categories:
-Des2
-π(iS1)∞ ∼= BGrb∇(π).
-A 2-functor Des2
-π(iS1)∞ /d47/d47 BGrb∇(π) realizing the claimed equivalence is deﬁned in the following
-way. For a smooth descent object (triv,g,ψ,f ), the smooth 2-functor triv : P2(Y ) /d47/d47 BBS1 deﬁnes by
-Theorem 4.1.1 a 2-form B ∈ Ω 2(Y ), this is the ﬁrst ingredient of the bundle gerbe. The pseudonatur al
-transformation g yields a transport functor
-F (g) : P1(Y [2]) /d47/d47 ΛiS1 B(S1-Tor)
-– 34 –
-with Λ BBS1-structure. Despite of the heavy notation, the following lemma tra nslates this functor into
-familiar language.
-Lemma 4.2.3. For X a smooth manifold, there is a canonical surjective equivale nce of monoidal
-categories
-Bun∇
-S1 (X) ∼= Trans1
-Λ BBS1 (X, ΛiS1 B(S1-Tor))
-between principal S1-bundles with connection and transport functors with Λ BBS1-structure.
-Proof. First of all, we have evidently Λ BBS1 = BS1. Second, there is a canonical equivalence of
-categories
-ΛiS1 B(S1-Tor) ∼=S1-Tor. (4.2.3)
-This comes from the fact that an object is in both categories an S1-torsor. A morphism between
-S1-torsors V and W in Λ iS1 B(S1-Tor) is by deﬁnition a 2-morphism
-∗ S1
-/d47/d47
-V
-/d15/d15
-∗
-W
-/d15/d15
-f ⑧⑧⑧⑧⑧⑧⑧⑧
-/d123/d3 ⑧⑧⑧⑧⑧⑧
-∗
-S1
-/d47/d47 ∗
-in B(S1-Tor), and this is in turn an S1-equivariant map
-f :W ⊗S1 /d47/d47 S1 ⊗V .
-It can be identiﬁed canonically with an S1-equivariant map f −1 : V /d47/d47 W , i.e. a morphism in
-S1-Tor. It is straightforward to see that (4.2.3) is even a monoidal eq uivalence. Then, the claim is
-proved by Theorem 2.4.2. □
-Now, via Lemma 4.2.3 the transport functor F (g) is a principal S1-bundle L with connection ω
-overY [2]. This circle bundle will be the second ingredient of the bundle gerbe.
-Lemma 4.2.4. The curvature of the connection ∇ on the circle bundle L satisﬁes
-curv(ω) = π∗
-1B −π∗
-2B.
-Proof. Let Uα be open sets covering Y [2], and let ( ~triv, ˜t) be a local iS1-trivialization of the transport
-functor F (g) consisting of smooth functors ~trivα : P1(Uα) /d47/d47 BS1 and natural transformations
-˜tα : F (g)|Uα
-/d47/d47 (~trivα)iS1 .
-We observe that the functors ~trivα and the natural transformation ˜tα lie in the image of the functor
-F , such that there exist smooth pseudonatural transformations ρα : π∗
-1 triv|Uα
-/d47/d47 π∗
-2 triv|Uα and
-modiﬁcations tα :g|Uα
-/d43/d51 ρα with
-~trivα = F (ρα) and ˜tα = F (tα).
-As found in [SW11] and reviewed in Section 2.3 of the present article, a ssociated to the smooth
-pseudonatural transformation ρα is a 1-form ϕα ∈ Ω 1(Uα), and equation (4.1.4) infers in the present
-situation
-π∗
-1B −π∗
-2B = dϕα.
-– 35 –
-It remains to trace back the relation between ϕα and the curvature of the connection ω on circle bundle
-L. Namely, if Aα is the 1-form corresponding to the smooth functor ~trivα, we have
-Aα =ϕα and d Aα = curv(ω).
-This shows the claim. □
-In order to complete the construction of the bundle gerbe, we not e that the modiﬁcation f :π∗
-23g ◦
-π∗
-12g /d43/d51 π∗
-13g induces an isomorphism
-F (f ) : π∗
-23F (g) ⊗π∗
-12F (g) /d47/d47 π∗
-13F (g)
-of transport functors; again by Lemma 4.2.3 this deﬁnes an isomorp hism
-µ :π∗
-12L ⊗π∗
-23L /d47/d47 π∗
-13L
-of circle bundles with connection, which is the last ingredient of the bu ndle gerbe. The coherence
-axiom of [SW, Deﬁnition 2.2.1] implies the associativity condition on µ. This shows that ( B,L, ∇,µ )
-is a bundle gerbe with connection. The descent datum ψ has been forgotten by this construction.
-Using Lemma 4.2.3 in the same way as just demonstrated it is easy to as sign bundle gerbe 1-
-morphisms to descent 1-morphisms and bundle gerbe 2-morphisms t o descent 2-morphisms. Here the
-coherence conditions of [SW, Deﬁnitions 2.2.2 and 2.2.3] translate int o the commutative diagrams
-(4.2.1) and (4.2.2). The composition for 1-morphisms and 2-morphism s of bundle gerbes (which we
-have not carried out above) is precisely reproduced by the compos ition laws of the descent 2-category
-Des2
-π(iS1)∞. This deﬁnes the 2-functor of Proposition 4.2.2.
-It is evident that this 2-functor is an equivalence of 2-categories, since all manipulations we have
-made are equivalences according to Lemma 4.2.3 and Theorem 4.1.1. It remains to remark that the
-descent datum ψ can be reproduced in a canonical way from a given bundle gerbe using the existence
-of dual circle bundles, see Lemma 1 in [Wal07]. This ﬁnishes the proof of Proposition 4.2.2.
-It is clear that the equivalence of Proposition 4.2.2 is compatible with th e reﬁnement of surjective
-submersions, so that it given an equivalence in the direct limits:
-Des2(iS1)∞
-M ∼= BGrb∇(M ).
-With Theorem 3.2.2 this proves Theorem 4.2.1.
+\label{sec3_2}
+
+
+In this section we consider the target 2-category $T=\mathcal{B}(S^1\text{-}\mathrm{Tor})$,  the monoidal category of $S^1$-torsors viewed as a 2-category with a single object \cite[Example A.2]{schreiber6}. Associated to this 2-category is the 2-functor 
+\begin{equation*}
+i_{S^1}: \mathcal{BB}S^1 \to \mathcal{B}(S^1\text{-}\mathrm{Tor})
+\end{equation*}
+that sends the single 1-morphism of $\mathcal{BB}S^1$ to the circle, viewed as an $S^1$-torsor over itself. The main result of this section is:
+\begin{theorem}
+\label{th:bgrb}
+There is an equivalence
+\begin{equation*}
+\mathrm{Trans}_{\mathcal{BB}S^1}(M,\mathcal{B}(S^1\text{-}\mathrm{Tor})) \cong \mathfrak{BGrb}^{\nabla}(M) 
+\end{equation*}
+between the 2-category of transport 2-functors on $M$ with values in $\mathcal{B}(S^1\text{-}\mathrm{Tor})$ and with $\mathcal{BB}S^1$-structure, and the 2-category of  bundle gerbes with connection over $M$.
+\end{theorem}
+
+
+Let us first recall the definition of  bundle gerbes following \cite{murray,murray2,stevenson1,waldorf1}. For a surjective submersion $\pi:Y \to M$, we first define the following 2-category $\mathfrak{BGrb}^{\nabla}(\pi)$:
+
+\begin{enumerate}
+\item
+An object is a tuple $(B,L,\omega,\mu)$ consisting of  a 2-form $B\in \Omega^{2}(Y)$, a principal $S^{1}$-bundle $L$ with connection $\omega$ over $Y^{[2]}$ of curvature $\mathrm{curv}(\omega) = \pi_1^{*}B - \pi_2^{*}B$, and an associative, connection-preserving bundle isomorphism 
+\begin{equation*}
+\mu: \pi_{23}^{*}L \otimes \pi_{12}^{*}L \to \pi_{13}^{*}L
+\end{equation*}
+over $Y^{[3]}$. 
+
+\item
+A 1-morphism $(B,L,\omega,\mu) \to (B',L',\omega',\mu')$, also known as   \emph{stable isomorphism}, is a principal $S^{1}$-bundle $A$ with connection $\varsigma$ over $Y$ of curvature $\mathrm{curv}(\varsigma)=B - B'$ together with a connection-preserving bundle isomorphism 
+\begin{equation*}
+\alpha:  \pi_2^{*}A \otimes L \to L' \otimes \pi_1^{*}A
+\end{equation*}
+over $Y^{[2]}$, such that the diagram
+\begin{equation}
+\label{43}
+\alxydim{@C=2cm}{\pi_3^{*}A \otimes \pi_{23}^{*}L \otimes \pi_{12}^{*}L \ar[r]^-{\id\otimes\mu} \ar[d]_{\pi_{23}^{*}\alpha \otimes \id} & \pi_3^{*}A \otimes  \pi_{13}^{*}L  \ar[dd]^{\pi_{13}^{*}\alpha} \\ \pi_{23}^{*}L' \otimes \pi_{2}^{*}A \otimes L \ar[d]_{\id\otimes \pi_{12}^{*}\alpha} & \\ \pi_{23}^{*}L' \otimes \pi_{12}^{*}L'\otimes\pi_1^{*}A   \ar[r]_-{\mu'\otimes\id} & \pi_{13}^{*}L' \otimes \pi_{1}^{*}A}
+\end{equation}
+of bundle isomorphisms over $Y^{[3]}$ is commutative. 
+
+\item
+A 2-morphism $(A,\varsigma,\alpha) \Rightarrow (A',\varsigma',\alpha')$ is a connection-preserving bundle isomorphism $\varphi: A \to A'$ over $Y$, such that the diagram
+\begin{equation}
+\label{45}
+\alxydim{@R=1.3cm@C=1.3cm}{\pi_2^{*}A \otimes L \ar[d]_{\pi_2^{*}\varphi \otimes \id_L} \ar[r]^{\alpha} & L' \otimes \pi_1^{*}A \ar[d]^{\id_{L'} \otimes \pi_1^{*}\varphi} \\ \pi_2^{*}A' \otimes L \ar[r]_{\alpha'} & L' \otimes \pi_1^{*}A'}
+\end{equation}
+of bundle isomorphisms over $Y^{[2]}$ is commutative.
+\end{enumerate}
+The full 2-category of bundle gerbes with connection  over $M$ is then defined as the direct limit
+\begin{equation*}
+\mathfrak{BGrb}^{\nabla}(M) := \lim_{\overrightarrow{\pi}} \mathfrak{BGrb}^{\nabla}(\pi)\text{.}
+\end{equation*}
+
+
+The strategy to prove Theorem \ref{th:bgrb} is to first establish the equivalence on a local level: 
+
+\begin{proposition}
+\label{prop:bgrb}
+For every surjective submersion $\pi:Y \to M$ there is a  surjective equivalence of 2-categories:
+\begin{equation*}
+\transsmooth{i_{S^1}}{2}{\Sigma\Sigmna U(1)} \cong \mathfrak{BGrb}^{\nabla}(\pi)\text{.}
+\end{equation*}
+\end{proposition}
+
+A 2-functor $\transsmooth{i_{S^1}}{2}{\Sigma\Sigmna U(1)} \to \mathfrak{BGrb}^{\nabla}(\pi)$ realizing the claimed equivalence is defined in the following way. For a smooth descent object $(\mathrm{triv},g,\psi,f)$,  the smooth 2-functor $\mathrm{triv}:\mathcal{P}_2(Y) \to \mathcal{B}\mathcal{B}S^1$ defines by Theorem \ref{th1}  a 2-form $B\in\Omega^2(Y)$, this is the first ingredient of the bundle gerbe. The \pt\ $g$ yields a transport functor 
+\begin{equation*}
+\holo(g):\mathcal{P}_1(Y^{[2]})
+\to \Lambda_{i_{S^1}}\mathcal{B}(S^1\text{-}\mathrm{Tor})
+\end{equation*}
+with $\Lambda\mathcal{B\mathcal{B}}S^1$-structure. 
+Despite of the heavy notation, the following lemma  translates this functor into familiar language. 
+\begin{lemma}
+\label{lem6}
+For $X$ a smooth manifold, there is a canonical surjective equivalence of monoidal categories
+\begin{equation*}
+\sbunX \cong \transportX{2}{1}{_{\Lambda \mathcal{BB}S^1}}{\Lambda_{i_{S^1}}\mathcal{B}(S^1\text{-}\mathrm{Tor})}
+\end{equation*}
+between principal $S^1$-bundles with connection and transport functors with $\Lambda\mathcal{BB}S^1$-structure.
+\end{lemma}
+
+\begin{proof}
+First of all, we have evidently
+$\Lambda\mathcal{B}\mathcal{B}S^1 = \mathcal{B}S^1$. Second, there is a canonical equivalence of categories
+\begin{equation}
+\label{44}
+\Lambda_{i_{S^1}}\mathcal{B}(S^1\text{-}\mathrm{Tor}) \cong S^1\text{-}\mathrm{Tor}\text{.}
+\end{equation}
+This comes from the fact that an object is in both categories an $S^1$-torsor. A morphism between $S^1$-torsors $V$ and $W$ in $\Lambda_{i_{S^1}}\mathcal{B}(S^1\text{-}\mathrm{Tor})$ is by definition a 2-morphism  
+\begin{equation*}
+\alxydim{@=1.2cm}{\ast \ar[r]^{S^1} \ar[d]_{V} & \ast \ar[d]^{W} \ar@{=>}[dl]|*+{f} \\ \ast \ar[r]_{S^1} & \ast }
+\end{equation*}
+in $\mathcal{B}(S^1\text{-}\mathrm{Tor})$, and this is in turn an $S^1$-equivariant map
+\begin{equation*}
+f: W \otimes S^1 \to S^1 \otimes V\text{.}
+\end{equation*}
+It can be identified canonically with an $S^1$-equivariant map $f^{-1}: V \to W$, i.e. a morphism in $S^1\text{-}\mathrm{Tor}$. It is straightforward to see that \erf{44} is even a monoidal equivalence. Then, the claim is proved by Theorem \ref{th3}.
+\end{proof}
+
+ Now, via Lemma \ref{lem6}  the transport functor $\holo(g)$ is  a principal $S^1$-bundle $L$ with connection $\omega$ over $Y^{[2]}$. This circle bundle will be the second ingredient of the bundle gerbe.
+\begin{lemma}
+\label{lem8}
+The curvature of the connection $\nabla$ on the circle bundle $L$ satisfies \begin{equation*}
+\mathrm{curv}(\omega)=\pi_1^{*}B - \pi_2^{*}B\text{.}
+\end{equation*}
+\end{lemma}
+
+\begin{proof}
+Let $U_{\alpha}$ be open sets covering $Y^{[2]}$, and let $(\widetilde{\mathrm{triv}},\tilde t)$ be a local $i_{S^1}$-trivialization of the transport functor $\holo(g)$ consisting of smooth functors $\widetilde{\mathrm{triv}}_{\alpha}: \mathcal{P}_1(U_{\alpha}) \to \mathcal{B}S^1$ and natural transformations
+\begin{equation*}
+\tilde t_{\alpha}:  \holo(g)|_{U_{\alpha}} \to (\widetilde{\mathrm{triv}}_{\alpha})_{i_{S^1}}\text{.}
+\end{equation*}
+We observe that the functors $\widetilde{\mathrm{triv}}_{\alpha}$ and the natural transformation $\tilde t_{\alpha}$ lie in the image of the functor $\holo$, such that there exist smooth \pt s $\rho_{\alpha}: \pi_1^{*}\mathrm{triv}|_{U_{\alpha}} \to \pi_2^{*}\mathrm{triv}|_{U_{\alpha}}$ and modifications $t_{\alpha}: g|_{U_{\alpha}} \Rightarrow \rho_{\alpha}$ with 
+\begin{equation*}
+\widetilde{\mathrm{triv}}_{\alpha} = \holo(\rho_{\alpha})
+\quad\text{ and }\quad
+\tilde t_{\alpha} = \holo(t_{\alpha})\text{.}
+\end{equation*}
+As found in \cite{schreiber5} and reviewed in Section \ref{sec3_1} of the present article, associated to the smooth \pt\ $\rho_{\alpha}$ is a 1-form $\varphi_{\alpha}\in \Omega^1(U_{\alpha})$,
+and equation \erf{55} infers in the present situation
+\begin{equation*}
+\pi_{1}^{*}B - \pi_2^{*}B =  \mathrm{d}\varphi_{\alpha}\text{.}
+\end{equation*}
+It remains to trace back the relation between $\varphi_{\alpha}$ and the curvature of the connection $\omega$ on circle bundle $L$. Namely, if $A_{\alpha}$ is the 1-form corresponding to the smooth functor $\widetilde{\mathrm{triv}}_{\alpha}$, we have
+\begin{equation*}
+A_{\alpha} = \varphi_{\alpha}
+\quad\text{ and }\quad
+\mathrm{d}A_{\alpha} = \mathrm{curv}(\omega)\text{.}
+\end{equation*}
+This shows the claim. 
+\end{proof}
+
+In order to complete the construction of the bundle gerbe, we note that the modification $f\maps \pi_{23}^{*}g \circ \pi_{12}^{*}g \Rightarrow \pi_{13}^{*}g$ induces an isomorphism 
+\begin{equation*}
+\holo(f): \pi_{23}^{*}\holo(g) \otimes \pi_{12}^{*}\holo(g) \to \pi_{13}^{*}\holo(g)
+\end{equation*}
+of transport functors; again by Lemma \ref{lem6} this defines an isomorphism
+\begin{equation*}
+\mu : \pi_{12}^{*}L \otimes \pi_{23}^{*}L \to \pi_{13}^{*}L 
+\end{equation*}
+of circle bundles with connection, which is the last ingredient of the bundle gerbe. The coherence axiom of \cite[Definition 2.2.1]{schreiber6}
+implies the associativity condition on $\mu$. This shows that $(B,L,\nabla,\mu)$ is a bundle gerbe with connection. The descent datum $\psi$ has been forgotten by this construction.
+
+Using Lemma \ref{lem6} in the same way as just demonstrated it is easy to assign bundle gerbe 1-morphisms to descent 1-morphisms and bundle gerbe 2-morphisms to descent 2-morphisms. Here the  coherence conditions of \cite[Definitions 2.2.2 and 2.2.3]{schreiber6}  translate  into the commutative diagrams \erf{43} and \erf{45}. The composition  for 1-morphisms and 2-morphisms  of bundle gerbes (which we have not carried out above) is precisely reproduced by the composition laws of the descent 2-category $\transsmooth{i_{S^1}}{2}{}$. This defines the 2-functor of Proposition \ref{prop:bgrb}. 
+
+It is  evident that this 2-functor is an equivalence of 2-categories, since all manipulations we have made are equivalences according to Lemma \ref{lem6} and Theorem \ref{th1}. It remains to remark that the descent datum $\psi$ can be reproduced in a canonical way from a given bundle gerbe using the existence of dual circle bundles, see Lemma 1 in \cite{waldorf1}.
+This finishes the proof of Proposition \ref{prop:bgrb}.
+
+
+
+It is clear that the equivalence of Proposition \ref{prop:bgrb} is compatible with the refinement of surjective submersions, so that it given an equivalence in the direct limits:
+\begin{equation*}
+\mathfrak{Des}^2(i_{S^1})^{\infty}_M
+ \cong \mathfrak{BGrb}^{\nabla}(M)\text{.}
+\end{equation*}
+With Theorem \ref{th4} this proves Theorem \ref{th:bgrb}.

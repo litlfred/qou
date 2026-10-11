@@ -8,150 +8,58 @@ pages: 30-32
 source_pdf: 1202.6268v2.pdf
 source_sha256: 209af6ae25439050
 doc_brief: "THE QUANTUM CONTENT OF THE GLUING EQUATIONS — The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that"
+text_source: latex
+latex_prose_ratio: 0.907
+latex_coverage_ratio: 0.585
 ---
-solutions to the gluing equations
-(5.3) critical points ←→ zA(1−z−1)B = (−1)ν,
-with z = exp(Z). In particular, the critical points are isolated. Then, choosing th e discrete
-faithful solution to (
-5.3), we formally expand the state integral to ﬁnd that
-• ST , 0, the evaluation of leading-order part of the integrand at the critic al point, is the
-complex volume of M;
-• exp(−2ST , 1) is expressed as the determinant of a Hessian matrix
-H =−B−1A + ∆ −1
-1−z,
-with a suitable monomial correction, and reproduces the torsion ( 1.8); and
-• the higherST ,n are obtained via a ﬁnite-dimensional Feynman calculus, and explicitly
-appear as rational functions of shape parameters.
-It follows from the formalism of [ Dim], reviewed in Appendix C, that the state integral
-(5.2) is only well deﬁned up to multiplicative prefactors of the form
-(5.4) exp
-(π2
-6ℏa + iπ
-4b + ℏ
-24c
-)
-, a, b, c ∈ Z.
-This means that we only obtain
-(
-ST , 0,τ T = 4π3e−2ST , 1,S T , 2
-)
-modulo
-(π 2
-6 Z, i, 1
-24 Z
-)
-, respec-
-tively; however, all the higher invariantsST ,n ≥3 should be unambiguous. Moreover, in Section
-3 we saw that the ambiguity in τT could be lifted 6 to a sign ±1. Although the construction
-of the asymptotic series ( 5.1) appears to depend on T , we certainly expect that
-Conjecture 5.1. The invariants
-{
-ST ,n
-} ∞
-n=0 are independent of the choice of regular trian-
-gulation and Neumann-Zagier datum (including the choice of quad typ e with det B⁄= 0,
-etc.), up to the ambiguity (
-5.4), and thus constitute topological invariants of M.
-We now proceed to analyze the critical points and asymptotics of ( 5.2) in greater detail.
-In Section 5.5, we will also generalize the state integral to arbitrary representa tions, with
-non-unit meridian eigenvalue m = eu ⁄= 1, and give an example of ST , 2(m), ST , 3(m) as
-functions on the character variety Y geom
-M for the ﬁgure-eight knot.
-5.1. Critical points. We begin by showing that the critical points of ( 5.2) are indeed
-solutions to the gluing equations. For this purpose, we need to know the quantum dilogarithm
-ψℏ(Z). The latter is given by [ DGLZ09, Eqn.3.22]
-(5.5) ψℏ(Z) =
-∞∏
-r=1
-1−qre−Z
-1− (Lq)−r+1e−LZ ,
-6It may also be possible to lift the ambiguities in ST ,0 and ST ,2 by using ordered triangulations, as in
-[Neu04] or [ Zic09].
-THE QUANTUM CONTENT OF THE GLUING EQUATIONS 31
-for|q|< 1, where
-(5.6) q := exp ℏ, Lq := exp−4π2
-ℏ , LZ := 2πi
-ℏ Z.
-The quantum dilogarithm ψℏ(Z) coincides with the restriction to |q|< 1 of Faddeev’s quan-
-tum dilogarithm [ Fad95], as follows from [ DGLZ09, Eqn.3.23]. ψℏ(Z) is the Chern-Simons
-wavefunction of a single tetrahedron [ Dim]. The quantum dilogarithm has an asymptotic
-expansion as ℏ→ 0, given by ( cf. [DGLZ09, Eqn.3.26])
-ψℏ(Z)
-ℏ→0
-∼ exp
-∞∑
-n=0
-Bn ℏn−1
-n!
-~Li2−n(e−Z)(5.7)
-= exp
-[ 1
-ℏ
-~Li2(e−Z) + 1
-2
-~Li1(e−Z)− ℏ
-12z′ + ℏ3
-720z(1 +z)z′3 +...
-]
-,
-where Bn is the nth Bernoulli number, with B1 = 1/2.
-The coeﬃcients of strictly positive powers of ℏ (i.e. n≥ 2) in the expansion are rational
-functions ofz =eZ, but the two leading asymptotics — the logarithm and dilogarithm — are
-multivalued and have branch cuts. In contrast, the function ψℏ(Z) itself is a meromorphic
-function on C for any ﬁxed ℏ⁄= 0. Branch cuts in its asymptotics arise when families of
-poles collide in the ℏ→ 0 limit. In the case of purely imaginary ℏ with Im ℏ> 0 (a natural
-choice in the analytic continuation of SU(2) Chern-Simons theory), a careful analysis of this
-pole-collision process leads to branch cuts for ~Li2 and ~Li1 that are diﬀerent from the standard
-ones (Figure 9). We indicate the modiﬁed analytic structure of these two function s (really
-functions of Z rather than e−Z) with an extra tilde.
-2πi 
-πi 
-4πi 
-− 2πi 
-− 4πi 
-0
-Re( Z )
-Im( Z )
-~Li 1,2(e− Z )Li 1,2(e− Z )
-2πi 
-πi 
-4πi 
-− 2πi 
-− 4πi 
-0
-Re( Z )
-Im( Z )
-Figure 9. Rotating the standard branch cuts of Li 2(e−Z) and Li 1(e−Z) to
-produce ~Li2(e−Z) and ~Li1(e−Z), as functions of Z. The shaded region indicates
-where the standard logarithms of shape parameters for the discr ete faithful
-representation lie.
-32 TUDOR DIMOFTE AND STA VROS GAROUF ALIDIS
-Now, the critical points of the integrand, at leading order 7 in the ℏ expansion, are solutions
-to
-0 = ∂
-∂Zi
-(
-− π2
-2 f· B−1ν−iπZ· B−1ν + 1
-2Z· B−1AZ +
-∑
-i
-~Li2(e−Zi)
-)
-=−iπ
-(
-B−1ν)i +
-(
-B−1AZ)i−~Li1(e−Zi),
+[]{#sec.saddle label="sec.saddle"}
+
+We begin by showing that the critical points of [\[SIM\]](#SIM){reference-type="eqref" reference="SIM"} are indeed solutions to the gluing equations. For this purpose, we need to know the quantum dilogarithm $\psi_{\hbar}(Z)$. The latter is given by [@DGLZ Eqn.3.22]
+
+$$\label{qdl} \psi_{\hbar}(Z) = \prod_{r=1}^\infty \frac{1-q^r e^{-Z}} {1-({}^Lq)^{-r+1}e^{-{}^LZ}}\,,$$
+
+for $|q|<1$, where
+
+$$q := \exp \hbar,\,\quad {}^L q := \exp \frac{-4\pi^2}{\hbar}\,,
+\qquad {}^LZ := \frac{2\pi i}{\hbar}Z\,.$$
+
+The quantum dilogarithm $\psi_{\hbar}(Z)$ coincides with the restriction to $|q|<1$ of Faddeev's quantum dilogarithm [@Fa], as follows from [@DGLZ Eqn.3.23]. $\psi_{\hbar}(Z)$ is the Chern-Simons wavefunction of a single tetrahedron [@D1]. The quantum dilogarithm has an asymptotic expansion as $\hbar\to 0$, given by (*cf.* [@DGLZ Eqn.3.26])
+
+$$\begin{aligned}
+ \label{qdlasymp}
+\psi_{\hbar}(Z) &\overset{\hbar\to 0}{\sim} 
+\exp \sum_{n=0}^\infty \frac{B_n\,\hbar^{n-1}}{n!} \widetilde{\rm Li}_{2-n}(e^{-Z}) \\
+&= \exp\left[\frac{1}{\hbar}\widetilde{\rm Li}_2(e^{-Z})+\frac12\widetilde{\rm Li}_1(e^{-Z})
+-\frac\hbar{12}z'+\frac{\hbar^3}{720}z(1+z)z'^3+\ldots\right]\,,  \notag
+\end{aligned}$$
+
+where $B_n$ is the $n^{\rm th}$ Bernoulli number, with $B_1=1/2$.
+
+The coefficients of strictly positive powers of $\hbar$ (*i.e.* $n\geq 2$) in the expansion are rational functions of $z=e^{Z}$, but the two leading asymptotics --- the logarithm and dilogarithm --- are multivalued and have branch cuts. In contrast, the function $\psi_{\hbar}(Z)$ itself is a meromorphic function on $\mathbb{C}$ for any fixed $\hbar\neq 0$. Branch cuts in its asymptotics arise when families of poles collide in the $\hbar\to 0$ limit. In the case of purely imaginary $\hbar$ with $\mathrm{Im}\,\hbar>0$ (a natural choice in the analytic continuation of $\mathrm{SU}(2)$ Chern-Simons theory), a careful analysis of this pole-collision process leads to branch cuts for $\widetilde{\rm Li}_2$ and $\widetilde{\rm Li}_1$ that are different from the standard ones (Figure [1](#fig.cuts){reference-type="ref" reference="fig.cuts"}). We indicate the modified analytic structure of these two functions (really functions of $Z$ rather than $e^{-Z}$) with an extra tilde.
+
+![Rotating the standard branch cuts of ${\rm Li}_2(e^{-Z})$ and ${\rm Li}_1(e^{-Z})$ to produce $\widetilde{\rm Li}_2(e^{-Z})$ and $\widetilde{\rm Li}_1(e^{-Z})$, as functions of $Z$. The shaded region indicates where the standard logarithms of shape parameters for the discrete faithful representation lie.](cuts){#fig.cuts width="5.5in"}
+
+Now, the critical points of the integrand, at leading order
+
+[^1]
+
+in the $\hbar$ expansion, are solutions to
+
+$$\begin{aligned}
+ \notag
+0 &= \frac{\partial}{\partial Z_i}\Big(-\frac{\pi^2}{2}f\cdot 
+\mathbf B^{-1}\nu-i\pi Z\cdot\mathbf B^{-1}\nu+\frac1{2}Z\cdot\mathbf{B}^{-1}\mathbf A Z
++\sum_i\widetilde{{\rm Li}}_2(e^{-Z_i})\Big)  \\
+&= -i\pi \big(\mathbf B^{-1}\nu)_i+\big(\mathbf B^{-1} \mathbf A Z)_i
+-\widetilde{\rm Li}_1(e^{-Z_i})\,, \notag
+\end{aligned}$$
+
 in other words,
-(5.8) AZ + B(−~Li1(e−Z)) = iπν.
-Since exp[−~Li1(e−Zi)] = 1−z−1
-i , we see that every solution to (
-5.8) is a particular logarithmic
-lift of a solution to the actual gluing equations zA(1−z−1)B = (−1)ν . It is a lift that precisely
-satisﬁes the logarithmic constraints ( 2.6) of Section 2, with Z ′′
-i =−~Li1(e−Zi).
-When 0≤ ImZi≤π, the branches of the standard logarithms and dilogarithms agree w ith
-those of the modiﬁed ones. In particular, given the discrete faithf ul solution tozA(1−z−1)B =
-(−1)n, taking standard logarithms immediately produces a solution to ( 5.8). Therefore, the
-discrete faithful representation always corresponds to a critica l point of the state integral.
+
+$$\mathbf A Z+\mathbf B (-\widetilde{\rm Li}_1(e^{-Z}))=i\pi \nu\,. \label{crit}$$
+
+Since $\exp[-\widetilde{\rm Li}_1(e^{-Z_i})]=1-z_i^{-1}$, we see that every solution to [\[crit\]](#crit){reference-type="eqref" reference="crit"} is a particular logarithmic lift of a solution to the actual gluing equations $z^{\mathbf A}(1-z^{-1})^{\mathbf B}=(-1)^\nu$. It is a lift that precisely satisfies the logarithmic constraints [\[NZlin\]](#NZlin){reference-type="eqref" reference="NZlin"} of Section [\[sec.triang\]](#sec.triang){reference-type="ref" reference="sec.triang"}, with $Z_i''=-\widetilde{\rm Li}_1(e^{-Z_i})$.
+
+When $0\leq {\rm Im}\,Z_i\leq \pi$, the branches of the standard logarithms and dilogarithms agree with those of the modified ones. In particular, given the discrete faithful solution to $z^{\mathbf A}(1-z^{-1})^{\mathbf B}=(-1)^n$, taking standard logarithms immediately produces a solution to [\[crit\]](#crit){reference-type="eqref" reference="crit"}. Therefore, the discrete faithful representation always corresponds to a critical point of the state integral.
+
+[^1]: We treat all sub-leading terms as perturbations. The exact location of the critical point will acquire perturbative corrections, described in Section [\[sec.diags\]](#sec.diags){reference-type="ref" reference="sec.diags"}.

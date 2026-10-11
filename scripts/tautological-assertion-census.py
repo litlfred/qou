@@ -43,7 +43,7 @@ def main() -> int:
 
     taut, fixture_taut, total_calls, by_file = [], [], 0, {}
     for p in files:
-        if "_deprecated" in p.parts:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue
         try:
             tree = ast.parse(p.read_text(encoding="utf-8", errors="replace"))

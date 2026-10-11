@@ -5,7 +5,8 @@
   "file": "0910.0096v1.pdf",
   "sha256": "805a75c337599adc06d940638ec33ea7184ec733a6a13a372a1c4c4653625132",
   "bytes": 210649,
-  "pages": 21
+  "pages": 21,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -15,9 +16,9 @@
    "stamp_date": "1 Oct 2009"
   },
   "doi": null,
-  "title": "Gröbner-Shirshov bases for Coxeter groups I∗",
+  "title": "Gr\u00f6bner-Shirshov bases for Coxeter groups I\u2217",
   "authors_raw": "Yuqun Chen and Cihua Liu",
-  "abstract": "A conjecture of Gr¨ obner-Shirshov basis of any Coxeter group h as proposed by L.A. Bokut and L.-S. Shiao [4]. In this paper, we give an example to s how that the conjecture is not true in general. We list all possible nontrivial inclusio n compositions when we deal with the general cases of the Coxeter groups. We giv e a Gr¨ obner-Shirshov basis of a Coxeter group which is without nontrivial inclusion composit ions mentioned the above.",
+  "abstract": "A conjecture of Gr\u00a8 obner-Shirshov basis of any Coxeter group h as proposed by L.A. Bokut and L.-S. Shiao [4]. In this paper, we give an example to s how that the conjecture is not true in general. We list all possible nontrivial inclusio n compositions when we deal with the general cases of the Coxeter groups. We giv e a Gr\u00a8 obner-Shirshov basis of a Coxeter group which is without nontrivial inclusion composit ions mentioned the above.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20211127173816-05'00'",
@@ -25,9 +26,9 @@
    "Title": "",
    "Author": ""
   },
-  "title_prev": "Gr¨ obner-Shirshov bases for Coxeter groups I∗",
+  "title_prev": "Gr\u00a8 obner-Shirshov bases for Coxeter groups I\u2217",
   "title_lines": [
-   "Gröbner-Shirshov bases for Coxeter groups I∗"
+   "Gr\u00f6bner-Shirshov bases for Coxeter groups I\u2217"
   ]
  },
  "toc": [
@@ -47,7 +48,7 @@
   },
   {
    "level": 1,
-   "title": "Gröbner-Shirshov bases of Coxeter groups",
+   "title": "Gr\u00f6bner-Shirshov bases of Coxeter groups",
    "page": 3,
    "source": "outline",
    "number": null
@@ -81,6 +82,35 @@
   "likely_scanned": false,
   "toc_entries": 3,
   "sections": 2,
-  "chars_total": 45731
+  "chars_total": 45731,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 3,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.749,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

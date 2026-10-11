@@ -8,465 +8,291 @@ pages: 476-487
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-We have discovered that “most” Dehn ﬁllings of a cusped ﬁnite-volume
-hyperbolic manifold are hyperbolic, and we now discuss their volumes.
-Let M be a complete orientable ﬁnite-volume cusped hyperbolic three-
-manifold. We say that a Dehn ﬁlling ofM is non-trivial if it ﬁlls at least one
-boundarytorus; inotherwords, itisdeterminedbysomeDehnﬁllingparameter
-s diﬀerent from(∞,..., ∞), after ﬁxing some arbitrary homology bases for
-the boundary tori. We prove in this section the following theorem.
-Theorem 15.4.1.If a non-trivial Dehn ﬁllingMﬁll ofM admits a complete
-ﬁnite-volume hyperbolic metric, then
-Vol(Mﬁll)< Vol(M).
-If si is any sequence of non-trivial Dehn ﬁlling parameters converging to
-(∞,..., ∞), andMi is the manifold obtained by ﬁllingM along si, thenMi
-is eventually hyperbolic and
-Vol(Mi )↗ Vol(M).
-The cores of the ﬁlling solid tori are eventually simple closed geodesics and
-their lengths tend to zero.
-We already know that ifsi→ (∞,..., ∞) then Vol(Mi )→ Vol(M) and
-the cores of the solid tori are closed geodesics whose length tend to zero:
-this follows from the construction of the metric onMi via geometric ideal
-triangulations. In some sense (that we will not make precise), the metric on
-Mi converges to that ofM, and the core geodesics become so short that they
-disappear in the limit opening the ﬁlling solid torus to a cusp.
-The only new fact to prove is that the volume strictly decreases under
-any Dehn ﬁllingMﬁll, not only those that are close to(∞,..., ∞): this is
-rather subtle, because the hyperbolic metric onMﬁll might not be obtained by
-completing ideal triangulations ofM. (For instance, the core tori inMﬁll may
-not be isotopic to closed geodesics.)
-15.4. VOLUMES 469
-We prove the theorem as follows. We ﬁrst consider the case whereM has
-an ideal geometric triangulationT: in that caseDef(M,T ) is a nice smooth
-complex manifold and we investigate the volume function
-Vol : Def(M,T )−→ R>0
-that computes the volume of each hyperbolic structure onM. We show that
-the volume function makes sense in a bigger convex set containingDef(M,T )
-and is also easier to study there. This bigger convex set is the set ofangle
-structures onT. We prove that the volume function is strictly concave there,
-and the complete solution is a global maximum.
-We conclude with a couple of ﬁnite-covering tricks to pass from local (near
-(∞,..., ∞)) to global, and to deal with more general manifoldsM that do
-not decompose into hyperbolic ideal tetrahedra.
-15.4.1. Anglestructures. LetM = int(N)whereN isanorientablecom-
-pact three-manifold bounded byc > 0 tori, equipped with an oriented ideal
-triangulationT withn tetrahedra ∆1,..., ∆n andn edgese1,...,e n. We iden-
-tify orientation-preservingly each∆i with the one shown in Figure 15.5, and
-we label the edge pairs of type 1, 2, 3, with the numbersi,i +n, andi + 2n
-respectively.
-An angle structureθ on M is the assignment of anangle 0< θj < πto
-thej-th edge pair inT, with the following requirements:
-(1) at each tetrahedron∆i we haveθi +θi+n +θi+2n =π,
-(2) at each edgeei, the sum of the incident angles is2π.
-The set of angle structures is thus a subsetA⊂ R3n
->0. It is the intersection
-of the aﬃne subspace inR3n determined by the conditions (1) and (2) with
-the cone R3n
->0, so in particular it is convex. By deﬁnition this aﬃne subspace
-is the solution space of the linear system
-Aθ =
-(π
-2π
-)
-where A is the incidence 2n× 3n deﬁned in Section 15.2.2 and depicted in
-Figure 15.6-(left), andθ = (θ1,...,θ 3n)∈ R3n.
-What is the geometric meaning of an angle structureθ onT? Thanks
-to condition (1), every∆i is realised by a unique ideal hyperbolic tetrahedron
-with dihedral anglesθi,θi+n, andθi+2n whose complex modulus is
-(31) zi = sinθi+n
-sinθi+2n
-eiθi.
-Angle structures are then in natural 1-1 correspondence with the realisations
-of the tetrahedra ∆1,..., ∆n as ideal hyperbolic tetrahedra, with the mild
-condition (2) that their dihedral angles around each edgeei must sum to2π.
-Condition (2) is only “half” of the consistency equation at eachei, which
-requires the product of the complex moduli to be 1: condition (2) alone does
-470 15. HYPERBOLIC DEHN FILLING
-not guarantee that by gluing these tetrahedra we get a hyperbolic structure
-onM: some “shearing” may arise when you turn around an edgeei.
-With this geometric description, the deformation spaceDef(M,T ) is nat-
-urally a smooth submanifold ofA.
-15.4.2. Dimensions. We will henceforth suppose thatDef(M,T ) is non-
-empty and contains a complete solutionz 0, that isT can be realised as a
-geometric ideal triangulation. This implies in particular thatA is also non-
-empty and has dimension dim kerA = 3n− (2n−c) = n +c by Corollary
-15.2.8. The spaceDef(M,T ) is a real smooth submanifold of dimension2c.
-The tangent spaceTθA at any pointθ∈A is of coursekerA. We now
-construct an explicit set of generators forkerA. Recall from Section 15.2.6
-that every simplicial closed oriented curveγ in a triangulated boundary torus
-Ti deﬁnes an integer vectorvγ∈ R3n.
-Recall the alternating formω on R3n from Section 15.2.3: we consider it
-as a matrix and writev∗ = ωv for allv ∈ R3n, so thatω(v,w ) = ⟨v,w ∗⟩
-where⟨,⟩ is the Euclidean scalar product. We denote byAi thei-th row ofA,
-considered as a vector inR3n.
-We ﬁx two arbitrary generatorsmi,li ofπ1(Ti ) for alli = 1,...,c .
-Proposition 15.4.2. The tangent spaceTθA = kerA is generated by the
-(not independent)n + 2c vectorsA∗
-n+1,...,A ∗
-2n,v∗
-m1,v∗
-l1,...,v ∗
-mc,v∗
-lc.
-Proof. Propositions 15.2.9 and 15.2.14 say that the rows ofA are ω-
-orthogonal to themselves and tovγ for anyγ, hence they are⟨,⟩-orthogonal
-to all vectorsA∗
-i andv∗
-γ, in other wordsA∗
-i,v∗
-γ∈ kerA.
-To prove that then + 2c listed vectors generatekerA it suﬃces to show
-that they span a subspace of dimensionn +c. Proposition 15.2.15 says that
-if we add the rowsvm1,...,v mc to A we get a rank-2n matrix. The same
-proof shows that by further adding the rowsvl1,...,v lc we get a rank-(2n +c)
-matrix.
-The vectorsA1,...,A 2n,vm1,vl1,...,v mc,vlc span a dimension-(2n +c)
-space. Since dim kerω =n, the vectorsA∗
-1,...,A ∗
-2n,v∗
-m1,v∗
-l1,...,v ∗
-mc,v∗
-lc span
-a space of dimension at least2n +c−n =n +c. SinceA∗
-1 =... =A∗
-n = 0,
-we are done. □
-15.4.3. The volume function. The volume function onDef(M,T ) ex-
-tends naturally to a function
-Vol :A−→ R>0
-which assigns to each angle structureθ the sum of the volumes of the ideal
-hyperbolic realisations of ∆1,..., ∆n determined byθ. Recall from Section
-13.1 that the volume of∆i is
-Vol(∆i ) = Λ(θi ) + Λ(θi+n) + Λ(θi+2n)
-15.4. VOLUMES 471
-where Λ is the Lobachevsky function
-Λ(α) =−
-∫ α
-0
-log|2 sint|dt.
+We have discovered that ``most'' Dehn fillings of a cusped finite-volume hyperbolic manifold are hyperbolic, and we now discuss their volumes.
+
+Let $M$ be a complete orientable finite-volume cusped hyperbolic three-manifold. We say that  a Dehn filling of $M$ is \emph{non-trivial} if it fills at least one boundary torus; in other words, it is determined by some Dehn filling parameter $s$ different from $(\infty, \ldots, \infty)$, after fixing some arbitrary homology bases for the boundary tori. We prove in this section the following theorem. 
+
+\begin{teo} \label{vol:vol:teo}
+If a non-trivial Dehn filling $M^{\rm fill}$ of $M$ admits a complete finite-volume hyperbolic metric, then
+$$\Vol(M^{\rm fill}) < \Vol(M).$$
+If $s^i$ is any sequence of non-trivial Dehn filling parameters converging to $(\infty,\ldots, \infty)$, and $M^i$ is the manifold obtained by filling $M$ along $s^i$, then $M^i$ is eventually hyperbolic and
+$$\Vol (M^i) \nearrow \Vol(M).$$
+The cores of the filling solid tori are eventually simple closed geodesics and their lengths tend to zero.
+\end{teo}
+
+We already know that if $s^i \to (\infty, \ldots, \infty)$ then $\Vol(M^i) \to \Vol(M)$ and the cores of the solid tori are closed geodesics whose length tend to zero: this follows from the construction of the metric on $M^i$ via geometric ideal triangulations. In some sense (that we will not make precise), the metric on $M^i$ converges to that of $M$, and the core geodesics become so short that they disappear in the limit opening the filling solid torus to a cusp.
+
+The only new fact to prove is that the volume strictly decreases under \emph{any} Dehn filling $M^{\rm fill}$, not only those that are close to $(\infty, \ldots, \infty)$: this is rather subtle, because the hyperbolic metric on $M^{\rm fill}$ might not be obtained by completing ideal triangulations of $M$. (For instance, the core tori in $M^{\rm fill}$ may not be isotopic to closed geodesics.)
+
+We prove the theorem as follows. We first consider the case where $M$ has an ideal geometric triangulation $\calT$: in that case $\Def(M,\calT)$ is a nice smooth complex manifold and we investigate the volume function 
+$$\Vol\colon \Def(M,\calT) \longrightarrow \matR_{>0}$$
+that computes the volume of each hyperbolic structure on $M$. We show that the volume function makes sense in a bigger convex set containing $\Def(M,\calT)$ and is also easier to study there. This bigger convex set is the set of \emph{angle structures} on $\calT$. We prove that the volume function is strictly concave there, and the complete solution is a global maximum.\index{angle structure} 
+
+We conclude with a couple of finite-covering tricks to pass from local (near $(\infty, \ldots, \infty)$) to global, and to deal with more general manifolds $M$ that do not decompose into hyperbolic ideal tetrahedra.
+
+
+\subsection{Angle structures}
+Let $M= \interior{N}$ where $N$ is an orientable compact three-manifold bounded by $c>0$ tori, equipped with an oriented ideal triangulation $\calT$ with $n$ tetrahedra $\Delta_1,\ldots, \Delta_n$ and $n$ edges $e_1,\ldots, e_n$. We identify orientation-preservingly each $\Delta_i$ with the one shown in Figure \ref{tetrahedron_labels:fig}, and we label the edge pairs of type 1, 2, 3, with the numbers $i$, $i+n$, and $i+2n$ respectively.
+
+An \emph{angle structure} $\theta$ on $M$ is the assignment of an \emph{angle} $0< \theta_j < \pi$ to the $j$-th edge pair in $\calT$, with the following requirements:
+\begin{enumerate}
+\item at each tetrahedron $\Delta_i$ we have $\theta_i + \theta_{i+n} + \theta_{i+2n} = \pi$,
+\item at each edge $e_i$, the sum of the incident angles is $2\pi$.
+\end{enumerate}
+The set of angle structures is thus a subset $\calA \subset \matR_{>0}^{3n}$. It is the intersection of the affine subspace in $\matR^{3n}$ determined by the conditions (1) and (2) with the cone $\matR_{>0}^{3n}$, so in particular it is convex. By definition this affine subspace is the solution space of the linear system
+$$A\theta = \begin{pmatrix} \pi \\ 2\pi \end{pmatrix}$$
+where $A$ is the incidence $2n \times 3n$ defined in Section \ref{incidence:matrices:subsection} and depicted in Figure \ref{ABmatrices:fig}-(left), and $\theta = (\theta_1, \ldots, \theta_{3n})\in \matR^{3n}$.
+
+What is the geometric meaning of an angle structure $\theta$ on $\calT$? Thanks to condition (1), every $\Delta_i$ is realised by a unique ideal hyperbolic tetrahedron with dihedral angles $\theta_i, \theta_{i+n}$, and $\theta_{i+2n}$ whose complex modulus is
+\begin{equation} \label{theta:z:eqn}
+z_i = \frac{\sin \theta_{i+n}}{\sin \theta_{i+2n}}e^{i\theta_i}.
+\end{equation}
+Angle structures are then in natural 1-1 correspondence with the realisations of the tetrahedra $\Delta_1,\dots, \Delta_n$ as ideal hyperbolic tetrahedra, with the mild condition (2) that their dihedral angles around each edge $e_i$ must sum to $2\pi$. 
+
+Condition (2) is only ``half'' of the consistency equation at each $e_i$, which requires the product of the complex moduli to be 1: condition (2) alone does \emph{not} guarantee that by gluing these tetrahedra we get a hyperbolic structure on $M$: some ``shearing'' may arise when you turn around an edge $e_i$.
+
+With this geometric description, the deformation space $\Def(M,\calT)$ is naturally a smooth submanifold of $\calA$. 
+
+
+\subsection{Dimensions}
+We will henceforth suppose that $\Def(M,\calT)$ is non-empty and contains a complete solution $z^0$, that is $\calT$ can be realised as a geometric ideal triangulation. This implies in particular that $\calA$ is also non-empty and has dimension $\dim\ker A = 3n - (2n-c) =n+c$ by Corollary \ref{rk:A:cor}. The space $\Def(M,\calT)$ is a real smooth submanifold of dimension $2c$. 
+
+The tangent space $T_\theta\calA$ at any point $\theta\in\calA$ is of course $\ker A$. We now construct an explicit set of generators for $\ker A$. Recall from Section \ref{boundary:curves:subsection} that every simplicial closed oriented curve $\gamma$ in a triangulated boundary torus $T_i$ defines an integer vector $v_\gamma \in \matR^{3n}$. 
+
+Recall the alternating form $\omega$ on $\matR^{3n}$ from Section \ref{symplectic:form:subsection}: we consider it as a matrix and write $v^* = \omega v$ for all $v\in \matR^{3n}$, so that $\omega(v,w) = \langle v, w^* \rangle$ where $\langle, \rangle$ is the Euclidean scalar product. We denote by $A_i$ the $i$-th row of $A$, considered as a vector in $\matR^{3n}$.
+
+We fix two arbitrary generators $m_i, l_i$ of $\pi_1(T_i)$ for all $i=1,\ldots, c$.
+
+\begin{prop} \label{redundant:generators:prop}
+The tangent space $T_\theta \calA = \ker A$ is generated by the (not independent) $n+2c$ vectors
+$A_{n+1}^*,\ldots, A_{2n}^*, v_{m_1}^*, v_{l_1}^*, \ldots, v_{m_c}^*, v_{l_c}^*$.
+\end{prop}
+\begin{proof}
+Propositions \ref{rows:lagrangian:prop} and \ref{A:gamma:gamma':prop} say that the rows of $A$ are $\omega$-orthogonal to themselves and to $v_\gamma$ for any $\gamma$, hence they are $\langle, \rangle$-orthogonal to all vectors $A_i^*$ and $v_\gamma^*$, in other words $A_i^*, v_\gamma^* \in \ker A$.
+
+To prove that the $n+2c$ listed vectors generate $\ker A$ it suffices to show that they span a subspace of dimension $n+c$. Proposition \ref{A:bar:lagrangian:prop} says that if we add the rows $v_{m_1}, \ldots, v_{m_c}$ to $A$ we get a rank-$2n$ matrix. The same proof shows that by further adding the rows $v_{l_1},\ldots, v_{l_c}$ we get a rank-$(2n+c)$ matrix. 
+
+The vectors $A_1,\ldots, A_{2n},v_{m_1}, v_{l_1}, \ldots, v_{m_c}, v_{l_c}$  span a dimension-$(2n+c)$ space. Since $\dim \ker \omega = n$, the vectors $A_1^*,\ldots, A_{2n}^*,v_{m_1}^*, v_{l_1}^*, \ldots, v_{m_c}^*, v_{l_c}^*$ span a space of dimension at least $2n+c-n = n+c$. Since $A_1^* = \ldots = A_n^* = 0$, we are done.
+\end{proof}
+
+
+\subsection{The volume function}
+The volume function on $\Def(M,\calT)$ extends naturally to a function
+$$\Vol\colon \calA \longrightarrow \matR_{>0}$$
+which assigns to each angle structure $\theta$ the sum of the volumes of the ideal hyperbolic realisations of $\Delta_1,\ldots, \Delta_n$ determined by $\theta$. 
+Recall from Section \ref{volume:tetrahedra:section} that the volume of $\Delta_i$ is
+$$\Vol(\Delta_i) = \Lambda(\theta_i) + \Lambda(\theta_{i+n}) + \Lambda(\theta_{i+2n})$$
+where $\Lambda$ is the Lobachevsky function
+$$\Lambda(\alpha) = -\int_0^\alpha \log |2\sin t| dt.$$
 We therefore get a simple-looking formula
-Vol(θ) =
-3n∑
-j=1
-Λ(θj )
+$$\Vol(\theta) = \sum_{j=1}^{3n} \Lambda(\theta_j)$$
 which implies immediately the following important fact.
-Proposition 15.4.3. For everyθ∈A andv∈TθA we have
-∂Vol
-∂v =
-3n∑
-j=1
-−vj log sinθj, ∂2Vol
-∂v 2 < 0.
-Proof. We consider a single addendumΛ(θj ) of Vol(θ). We have
-∂Λ(θj )
-∂v = Λ′(θj )∂θj
-∂v =− log|2 sinθj|vj =−vj log 2−vj log sinθj.
-Sincev∈TθA we havevi +vi+n +vi+2n = 0 for alli and hence∑
-jvj sin 2 = 0.
-This proves the ﬁrst equality. To estimate the second derivative, we may
-suppose up to symmetries thatθi,θi+n< π
-2 and we get
-−∂2Vol(∆i )
-∂v 2 =v 2
-i cotθi +v 2
-i+n cotθi+n +v 2
-i+2n cotθi+2n
-=v 2
-i cotθi +v 2
-i+n cotθi+n + (vi +vi+n)2 1− cotθi cotθi+n
-cotθi + cotθi+n
-= (vi +vi+n)2 + (vi cotθi−vi+n cotθi+n)2
-cotθi + cotθi+n
-> 0.
-Indeed the denominator is positive sinceθi,θi+n < π
-2, and if the numerator is
-zero we getvi =−vi+n and hence cotθi =− cotθi+n, a contradiction. □
-We have discovered thatVol is a smooth strictly concave function onA.
-15.4.4. Thecompletesolution. Wenowrememberthat Def(M,T )con-
-tains a complete solutionz 0 by assumption.
-Proposition 15.4.4.The functionVol :A→ R>0 has a unique global max-
-imum at the complete solutionz 0.
-Proof. The complete solutionz 0 has an angle structureθ. Proposition
-15.4.3 says that
-∂Vol
-∂v =
-3n∑
-j=1
-−vj log sinθj
-472 15. HYPERBOLIC DEHN FILLING
-for all v ∈ TθA. At every edge ei, the consistency equation is of type∑
-j logwj = 2πi where w1,...,w k are the moduli of the incident tetrahe-
-dra. The imaginary part of this equation is satisﬁed at every point ofA, so
-we look at the real part and using (31) we discover that
-0 =ℜ
-∑
-j
-logwj =
-∑
-j
-log|wj| =
-∑
-j
-(
-log sinα1
-j− log sinα2
-j
-)
-where α1
-j and α2
-j are the other two angles in the tetrahedron with modulus
-wj, in counterclockwise order. The latter expression is in fact equivalent to
-−
-3n∑
-j=1
-(A∗
-n+i )j log sinθj = ∂Vol
-∂A∗
-n+i
-which is hence zero for alli = 1,...,n .
-We make some analogous considerations for the completeness equations.
-Sincez 0 iscomplete, foreverysimplicialboundarycurve γ wehave ∑
-j logwj =
-|γ|πi wherew1,...,w k are the moduli encountered byγ at its right, and the
-real part of this equation implies that∂Vol
-∂v∗γ
-= 0.
-Proposition 15.4.2 shows that vectors of typeA∗
-n+i andv∗
-γ generateTθA,
-hence the gradient of Vol vanishes atθ. Since Vol is strictly concave, this
-critical point is the unique global maximum. □
-Corollary 15.4.5. The space Def(M,T ) contains at most one complete
-solution.
-15.4.5. Volumes and Dehn ﬁlling.We can now prove Theorem 15.4.1
-on manifolds having a geometric ideal triangulation. We start with a “local”
-version which also considers generalised Dehn ﬁllings, see Section 15.1.1.
-Lemma 15.4.6.IfM has a geometric ideal triangulation, there is a neigh-
-bourhoodU of (∞,..., ∞) such thatVol(Mﬁll)< Vol(M) for every non-trivial
-generalised Dehn ﬁlling parameters∈U. Moreover Vol(Mﬁll)↗ Vol(M) ass
-tends to (∞,..., ∞).
-Proof. The Dehn Filling Theorem 15.1.1 says that all Dehn ﬁllings in an
-open neighbourhoodU of (∞,..., ∞) are hyperbolic and constructed by com-
-pleting solutions inDef(M,T ), and they have smaller volume thanM in virtue
-of Proposition 15.4.4. (The completion adds a circle toM which does not
-contribute to the volume.)
-The volume ofMﬁll depends smoothly ons∈U and has a global maximum
-at (∞,..., ∞). In particular, when s → (∞,..., ∞) we get Vol(Mﬁll)→
-Vol(M) from below. □
-We now need to drop the open setU and prove that volume decreases
-under any Dehn ﬁlling ofM.
-15.4. VOLUMES 473
-Lemma 15.4.7. Let M have a geometric ideal triangulation. If a non-
-trivial Dehn ﬁllingMﬁll admits a complete ﬁnite-volume hyperbolic metric,
-then Vol(Mﬁll)< Vol(M).
-Proof. Lets = (s1,...,s c) be the Dehn ﬁlling parameter givingMﬁll and
-letU be the open neighbourhood of(∞,..., ∞) furnished by Lemma 15.4.6.
-For suﬃciently big integerk >0 we haveks∈U and henceMﬁll also admits a
-hyperbolic metric with cone angles2π
-k on the core geodesics of the ﬁlling solid
-tori, with volume strictly smaller thanVol(M). We may interpret this metric
-as a hyperbolic orbifoldO, and we haveVol(O)< Vol(M).
-IfMﬁll is closed Proposition 13.3.8 givesVol(M)> Vol(O)>v3‖Mﬁll‖ =
-Vol(Mﬁll) and we are done.
-If Mﬁll is not closed, we can ﬁnd some closed ﬁllings ofMﬁll with vol-
-ume arbitrarily close toVol(O) that can be interpreted as orbifolds, and get
-Vol(O)> Vol(Mﬁll) as a limit. □
-The proof of Lemma 15.4.7 shows also the following.
-Lemma 15.4.8. Let M have a geometric ideal triangulation. We have
-v3‖Mﬁll‖< Vol(M) for every closed Dehn ﬁllingMﬁll ofM.
+
+\begin{prop} \label{derivative:Vol:prop}
+For every $\theta \in \calA$ and $v\in T_\theta  \calA$ we have 
+$$\frac{\partial \Vol}{\partial v} = \sum_{j=1}^{3n} -v_j \log \sin \theta_j, \qquad 
+\frac{\partial^2 \Vol}{\partial v^2} < 0.$$
+\end{prop}
+\begin{proof}
+We consider a single addendum $\Lambda(\theta_j)$ of $\Vol(\theta)$. We have
+$$\frac{\partial \Lambda(\theta_j)}{\partial v} = 
+\Lambda'(\theta_j) \frac{\partial \theta_j}{\partial v}
+= - \log |2\sin \theta_j| v_j = -v_j\log 2 - v_j\log\sin \theta_j. $$
+Since $v\in T_\theta \calA$ we have $v_i+v_{i+n}+v_{i+2n}=0$ for all $i$ and hence $\sum_j v_j\sin 2=0$. This proves the first equality. To estimate the second derivative, we may suppose up to symmetries that $\theta_i, \theta_{i+n} < \frac \pi 2$ and we get
+\begin{align*}
+-\frac {\partial^2 \Vol(\Delta_i)}{\partial v^2} 
+& = v_i^2 \cot \theta_i + v_{i+n}^2 \cot \theta_{i+n} + v_{i+2n}^2 \cot \theta_{i+2n} \\
+& = v_i^2 \cot \theta_i + v_{i+n}^2 \cot \theta_{i+n} + 
+(v_i+v_{i+n})^2 \frac{1-\cot \theta_i\cot\theta_{i+n}}{\cot \theta_i + \cot \theta_{i+n}} \\
+& = \frac{(v_i+v_{i+n})^2 + (v_i\cot\theta_i - v_{i+n}\cot\theta_{i+n})^2}
+{\cot \theta_i + \cot \theta_{i+n}} > 0.
+\end{align*}
+Indeed the denominator is positive since $\theta_i, \theta_{i+n} < \frac \pi 2$, and if the numerator is zero we get $v_i=-v_{i+n}$ and hence $\cot \theta_i = -\cot \theta_{i+n}$, a contradiction.
+\end{proof}
+
+We have discovered that $\Vol$ is a smooth strictly concave function on $\calA$. 
+
+
+\subsection{The complete solution}
+We now remember that $\Def(M,\calT)$ contains a complete solution $z^0$ by assumption.
+
+\begin{prop} \label{Vol:maximum:prop}
+The function $\Vol\colon \calA \to \matR_{>0}$ has a unique global maximum at the complete solution $z^0$.
+\end{prop}
+\begin{proof}
+The complete solution $z^0$ has an angle structure $\theta$. Proposition \ref{derivative:Vol:prop} says that
+$$\frac{\partial \Vol}{\partial v} = \sum_{j=1}^{3n} -v_j \log \sin \theta_j$$
+for all $v\in T_{\theta}\calA$. At every edge $e_i$, the consistency equation is of type $\sum_j \log w_j = 2\pi i$ where $w_1,\ldots, w_k$ are the moduli of the incident tetrahedra. The imaginary part of this equation is satisfied at every point of $\calA$, so we look at the real part and using (\ref{theta:z:eqn}) we discover that 
+$$0 = \Re \sum_j \log w_j = \sum_j \log |w_j| = \sum_j \big(\log \sin \alpha_{j}^1 - \log \sin \alpha_j^2\big) $$
+where $\alpha_j^1$ and $\alpha_j^2$ are the other two angles in the tetrahedron with modulus $w_j$, in counterclockwise order. The latter expression is in fact equivalent to 
+$$-\sum_{j=1}^{3n} (A_{n+i}^*)_j\log\sin \theta_j = \frac{\partial \Vol}{\partial A_{n+i}^*}$$
+which is hence zero for all $i=1,\ldots, n$.
+
+We make some analogous considerations for the completeness equations. Since $z^0$ is complete, for every simplicial boundary curve $\gamma$ we have $\sum_j \log w_j = |\gamma|\pi i$ where $w_1,\ldots, w_k$ are the moduli encountered by $\gamma$ at its right, and the real part of this equation implies that $\frac{\partial \Vol}{\partial v_\gamma^*} = 0$.
+
+Proposition \ref{redundant:generators:prop} shows that vectors of type $A_{n+i}^*$ and $v_\gamma^*$ generate $T_{\theta}\calA$, hence the gradient of $\Vol$ vanishes at $\theta$. Since $\Vol$ is strictly concave, this critical point is the unique global maximum.
+\end{proof}
+
+\begin{cor}
+The space $\Def(M,\calT)$ contains at most one complete solution.
+\end{cor}
+
+
+\subsection{Volumes and Dehn filling}
+We can now prove Theorem \ref{vol:vol:teo} on manifolds having a geometric ideal triangulation. We start with a ``local'' version which also considers generalised Dehn fillings, see Section \ref{generalised:subsection}.
+
+\begin{lemma} \label{U:lemma}
+If $M$ has a geometric ideal triangulation, there is a neighbourhood $U$ of $(\infty,\ldots, \infty)$ such that $\Vol(M^{\rm fill})< \Vol(M)$ for every non-trivial generalised Dehn filling parameter $s\in U$. Moreover $\Vol(M^{\rm fill}) \nearrow \Vol(M)$ as $s$ tends to $(\infty, \ldots, \infty)$.
+\end{lemma}
+\begin{proof}
+The Dehn Filling Theorem \ref{DF:teo} says that all Dehn fillings in an open neighbourhood $U$ of $(\infty,\ldots,\infty)$ are hyperbolic and constructed by completing solutions in $\Def(M,\calT)$, and they have smaller volume than $M$ in virtue of Proposition \ref{Vol:maximum:prop}. (The completion adds a circle to $M$ which does not contribute to the volume.)
+
+The volume of $M^{\rm fill}$ depends smoothly on $s\in U$ and has a global maximum at $(\infty,\ldots,\infty)$. In particular, when $s\to (\infty, \ldots, \infty)$ we get $\Vol(M^{\rm fill}) \to \Vol(M)$ from below.
+\end{proof}
+
+We now need to drop the open set $U$ and prove that volume decreases under \emph{any} Dehn filling of $M$. 
+
+\begin{lemma} \label{strict:everywhere:lemma}
+Let $M$ have a geometric ideal triangulation. If a non-trivial Dehn filling $M^{\rm fill}$ admits a complete finite-volume hyperbolic metric, then $\Vol(M^{\rm fill}) < \Vol(M)$.
+\end{lemma}
+\begin{proof}
+Let $s=(s_1,\ldots, s_c)$ be the Dehn filling parameter giving $M^{\rm fill}$ and let
+$U$ be the open neighbourhood of $(\infty,\ldots, \infty)$ furnished by Lemma \ref{U:lemma}. For sufficiently big integer $k>0$ we have $ks \in U$ and hence $M^{\rm fill}$ also admits a hyperbolic metric with cone angles $\frac{2\pi}k$ on the core geodesics of the filling solid tori, with volume strictly smaller than $\Vol(M)$. We may interpret this metric as a hyperbolic orbifold $O$, and we have $\Vol(O)<\Vol(M)$.
+
+If $M^{\rm fill}$ is closed Proposition \ref{Vol:M:O:prop} gives $\Vol(M) > \Vol(O) \geqslant v_3\|M^{\rm fill}\| = \Vol(M^{\rm fill})$ and we are done.
+
+If $M^{\rm fill}$ is not closed, we can find some closed fillings of $M^{\rm fill}$ with volume arbitrarily close to $\Vol(O)$ that can be interpreted as orbifolds, and get $\Vol(O)\geqslant \Vol(M^{\rm fill})$ as a limit.
+\end{proof}
+
+The proof of Lemma \ref{strict:everywhere:lemma} shows also the following.
+\begin{lemma} \label{closed:decreases:lemma}
+Let $M$ have a geometric ideal triangulation. We have $v_3\|M^{\rm fill}\| < \Vol(M)$ for every closed Dehn filling $M^{\rm fill}$ of $M$.
+\end{lemma}
+
 We prove a lemma that will be useful below.
-Lemma 15.4.9. Let M have a geometric ideal triangulation. IfMi is a
-hyperbolic Dehn ﬁlling ofM with parametersi and Vol(Mi )→ Vol(M), then
-si→ (∞,..., ∞).
-Proof. We may suppose that theMi are closed, since every sequence of
-Dehn ﬁllings can be approximated by a sequence of closed ones. Ifsi lies
-deﬁnitely in the open setU furnished by Theorem 15.1.1, the assertion follows
-because the volume function there hasVol(M) as a unique maximum (thanks
-to Proposition 15.4.4).
-Otherwise, there is a ﬁxed bigk ∈ N such that ksi ∈ U for alli, but
-ksi does not converge to (∞,..., ∞). Therefore Mi admits a hyperbolic
-orbifold structureOi with Vol(M)−ε> Vol(Oi ) and Proposition 13.3.8 gives
-Vol(M)−ε> Vol(O)>v3‖Mi‖ = Vol(Mi ) for alli. □
+\begin{lemma} 
+Let $M$ have a geometric ideal triangulation. If $M_i$ is a hyperbolic Dehn filling of $M$ with parameter $s^i$ and $\Vol(M_i) \to \Vol(M)$, then $s^i \to (\infty,\ldots, \infty)$.
+\end{lemma}
+\begin{proof}
+We may suppose that the $M_i$ are closed, since every sequence of Dehn fillings can be approximated by a sequence of closed ones. If $s^i$ lies definitely in the open set $U$ furnished by Theorem \ref{DF:teo}, the assertion follows because the volume function there has $\Vol(M)$ as a unique maximum (thanks to Proposition \ref{Vol:maximum:prop}). 
+
+Otherwise, there is a fixed big $k\in\matN$ such that $ks^i\in U$ for all $i$, but $ks^i$ does not converge to $(\infty,\ldots, \infty)$. Therefore $M_i$ admits a hyperbolic orbifold structure $O_i$ with $\Vol(M) - \varepsilon > \Vol(O_i) $ and Proposition \ref{Vol:M:O:prop} gives $\Vol(M) -\varepsilon > \Vol(O) \geqslant v_3\|M_i\| = \Vol(M_i)$ for all $i$. 
+\end{proof}
+
 Again, the proof shows also the following.
-Lemma 15.4.10. Let M have a geometric ideal triangulation. If Mi is
-a closed Dehn ﬁlling ofM with parametersi and v3‖Mi‖→ Vol(M), then
-si→ (∞,..., ∞).
-To conclude the proof of Theorem 15.4.1 we only need to consider the
-unlucky case whereM has no geodesic ideal triangulations. We prove that
-geometric triangulations exist on some ﬁnite cover ofM, and this will suﬃce.
-474 15. HYPERBOLIC DEHN FILLING
-15.4.6. Geometric triangulations exist virtually.We prove here the fol-
-lowing.
-Theorem 15.4.11.Every cusped complete ﬁnite-volume three-manifoldM
-has a ﬁnite-sheeted cover˜M that has a geometric ideal triangulationT.
-Proof. The Epstein-Penner decomposition subdividesM into ideal polyhe-
-draP1,...,P k. If distinct vertices ofPi lie in distinct cusps ofM for alli, then
-the decomposition can be easily subdivided into an ideal triangulation: we or-
-der the cusps, so the vertices of eachPi inherit an ordering which is preserved
-along the matching faces; we subdivide eachPi as in the proof of Proposition
-15.3.2 by coning on the smallest vertex at each step: the triangulations on
-the paired faces match and we get a geometric ideal triangulation forM itself.
-We now show that some cover˜M has a decomposition of this type. The
-decomposition ofM intoP1,...,P k lifts in any degree-d cover ˜M to a decom-
-position of ˜M into Pi
-1,...,P i
-k with i = 1,...,d . We now prove that there is
-a ˜M such that distinct vertices ofPi
-j lie in distinct cusps, for alli,j .
-To do so, we prove that for every pair of verticesv⁄=v′ of somePi there
-is a covering where the lifts˜v, ˜v′ in Pj
-i for somej lie in distinct cusps. This
-is enough to conclude: pick aregular covering ˜M that covers all these ﬁnitely
-many coverings; since its desk transformation group acts transitively on lifts,
-all distinct vertices on everyPj
-i lie in distinct cusps.
-We haveM = H3/Γ. We ﬁx an arbitrary lift˜Pi⊂ H3 ofPi. Two vertices
-v⁄=v′ ofPi lie in the same cuspT⇔ there is aγ∈ Γ such thatγ(˜v ) = ˜v′,
-where ˜v, ˜v′∈ ˜Pi are the lifts ofv,v ′. The subgroup StabΓ(˜v ) = π1(T ) is
-separable by Corollary 4.3.13 and hence there is a ﬁnite-indexH < Γ that
-contains StabΓ(˜v ) but avoidsγ.
-No element ϕ ∈ H is such that ϕ(˜v ) = ˜v′, otherwise we would have
-γ−1ϕ∈ StabΓ(v ) < Hand hence γ ∈ H, a contradiction. We have con-
-structed a ﬁnite-coverH3/H where in some liftPj
-i ofPi the two lifted vertices
-˜v, ˜v′ lie in distinct cusps. □
-15.4.7. Conclusion of the proof.We can ﬁnally prove Theorem 15.4.1.
-Proof of 15.4.1. Some degree-d cover ˜M ofM has an ideal geometric trian-
-gulation, hence the theorem holds for˜M.
-For every Dehn ﬁllingMﬁll of M, there is a Dehn ﬁlling˜Mﬁll of ˜M such
-that the cover ˜M→M extends to a degree-d map ˜Mﬁll→Mﬁll.
-IfMﬁll is closed hyperbolic, we have
-dVol(M) = Vol( ˜M)>v 3‖( ˜Mﬁll)‖>dv 3‖Mﬁll‖ =dVol(Mﬁll)
-using Lemma 15.4.8, henceVol(M)> Vol(Mﬁll).
-If Mﬁll is cusped hyperbolic, it can be approximated by closed hyperbolic
-ﬁllingsMﬁll
-i , and there are closed ﬁllings˜Mﬁll
-i of ˜Mﬁll with degree-d maps
-15.4. VOLUMES 475
-˜Mﬁll
-i →Mﬁll
-i . By Lemma 15.4.10 there is anε> 0 such that
-Vol( ˜M)−ε>v 3‖ ˜Mﬁll
-i ‖>dv 3‖Mﬁll
-i ‖ =dVol(Mﬁll
-i )
-for alli, hencedVol(M)−ε = Vol( ˜M)−ε>dVol(Mﬁll). □
-15.4.8. Boundedvolume. Howmanyhyperbolicmanifoldsaretherewith
-bounded volume? In general, inﬁnitely many.
-We have just discovered that there are inﬁnitely many hyperbolic manifolds
-with volume smaller than 2v3 = 2.0298832128... because the ﬁgure-eight
-knot complementM has Vol(M) = 2v3 and every hyperbolic Dehn ﬁlling ofM
-has volume smaller thanVol(M). Moreover, the volumes of the Dehn ﬁllings
-ofM form an indiscrete set that tends to2v3 from below.
-Theorem 15.4.1 shows that this is the typical situation: the hyperbolic
-Dehn ﬁlling produces inﬁnite sequences of manifolds with bounded volume.
-Despite this variety of manifolds, we can still control topologically the hyper-
-bolic manifolds having bounded volume, at least in principle.
-Theorem 15.4.12. For every V > 0 there is a compact 3-manifold N
-bounded by tori, such that every complete ﬁnite-volume orientable hyperbolic
-3-manifoldM with Vol(M)<V is diﬀeomorphic to the interior of some Dehn
-ﬁlling ofN.
-Proof. This is a consequence of the thick-thin decomposition. Letε> 0
-be a ﬁxed Margulis constant: every complete ﬁnite-volumeM decomposes
-along disjoint embedded tori asM =Mthick∪Mthin where Mthick is compact
-and has injectivity radius>ε , andMthin consists of truncated cusps and tube
-neighbourhoods of short geodesics. In particularM is a Dehn ﬁlling ofMthick.
-We now show that there are only ﬁnitely many possible diﬀeomorphism
-types forMthick with volume<V . This concludes the proof: by Proposition
-11.3.18 every such diﬀeomorphism type is realised from a linkL∪C⊂S3 by
-surgerying alongL and drilling alongC; we take a disjoint union of all these
-links inS3, and the complement of the resulting link inS3 is ourN.
-Let X ⊂ Mthick be a maximal ε
-2-net, that is a ﬁnite set of points that
-stay at pairwise distance> ε
-2, such that every other point inMthick stays
-at distance< ε
-2 from X (X exists becauseMthick is compact). The ε
-4-balls
-centred at the points inX are embedded and disjoint: henceX has cardinality
-at mostC(V ) =V/ Vol
-(
-B(x, ε
-4)
-)
-.
-The set X determines a cellularisation ofMthick as follows. Lift X to
-˜X⊂ H3, taketheVoronoitessellation(seeSection3.3.4)determinedby ˜X and
-projectitbackto M: thisfurnishesasubdivisionof Mthick intopolyhedra. Since
-X is maximal, every polyhedron has at mostC′(ε) faces withC′ depending
-only onε. Hence there are ﬁnitely many combinatorial types of polyhedra,
-depending only onε. With at mostC(V ) of them we obtain only ﬁnitely many
-476 15. HYPERBOLIC DEHN FILLING
-manifolds. (The proof of Proposition 11.1.6 applies to polyhedra and shows
-that the combinatorial subdivision determines the smooth manifold.) □
-15.4.9. Volumes of hyperbolic three-manifolds.We ﬁnish this chapter
-by furnishing some qualitative information on the set of volumes of hyperbolic
-three-manifolds. We start with the following.
-Proposition 15.4.13. LetMi be a sequence of pairwise non-diﬀeomorphic
-complete orientable hyperbolic three-manifolds of uniformly bounded volume.
-After passing to a subsequence, we may suppose that there is a hyperbolic
-manifold M such that eachMi is a Dehn ﬁlling ofM with parametersi →
-(∞,..., ∞) .
-Proof using geometrisation. We know from Theorem 15.4.12 that there
-is a manifoldN such that eachMi is a Dehn ﬁlling ofN with parametersi.
-After passing to a subsequence, we may suppose that at each boundary torus
-Tj ofN the slopesi
-j is either constant or goes to inﬁnity. LetM be obtained
-fromN by Dehn ﬁlling the slopes that stay constant.
-IfM is hyperbolic, we are done. Unfortunately, this may not be the case,
-and we use geometrisation to solve this annoying possibility (the original proof
-of Jørgensen and Thurston [56] does not need geometrisation and follows
-from a discussion on the geometric convergence of hyperbolic manifolds: we
-employ geometrisation only for simplicity). If M is not prime, it contains
-some essential spheres that always bound balls in the ﬁlledMi and hence we
-may cutM along them and cup oﬀ with balls (reducing the components of
-∂M). Now M is prime and its geometric decomposition must contain some
-hyperbolic block, otherwiseM would be a graph manifold and no Dehn ﬁlling
-of M would be hyperbolic (it would be a graph manifold again). The tori
-of the decomposition ofM become compressible inMi, so up to passing to
-a subsequence we may suppose that eachMi is a Dehn ﬁlling of one ﬁxed
-hyperbolic block ofM. Ifsi does not tend to(∞,..., ∞) in this new setting,
-we restart from the beginning and proceed by induction on the number of
-boundary components ofM. □
-Corollary 15.4.14.The set of volumes of all complete orientable hyperbolic
-three-manifolds is well-ordered. For every valueV there are only ﬁnitely many
-such manifolds with volumeV.
-Proof. Suppose that there is a sequence of manifoldsMi with Vol(M1)>
-Vol(M2) > ... By the previous proposition these are all obtained by Dehn
-ﬁlling the same hyperbolicM with si → (∞,..., ∞), and Theorem 15.4.1
-says they should converge toVol(M) from below, a contradiction. The same
-argument show that there are ﬁnitely many manifolds of any ﬁxed volume.□
-We deduce that the volumes of all the complete orientable hyperbolic
-three-manifoldsareindexedbycountableordinals. Thevolumes v1<v 2<...,
-15.4. VOLUMES 477
-Figure 15.14. The volumes of all the complete orientable hyperbolic
-three-manifolds form a well-ordered subset ofR of typeωω.
-of the smallest closed manifolds converge to the volumevω of the smallest
-1-cusped manifold; the volumes vω < v2ω < ... of the smallest 1-cusped
-manifolds converge to the volumevω2 of the smallest 2-cusped manifold, and
-so on. The set of all volumes has order typeωω, see Figure 15.14.
+\begin{lemma} \label{sse:converge:lemma}
+Let $M$ have a geometric ideal triangulation. If $M_i$ is a closed Dehn filling of $M$ with parameter $s^i$ and $v_3\|M_i\| \to \Vol(M)$, then $s^i \to (\infty, \ldots, \infty)$.
+\end{lemma}
+
+To conclude the proof of Theorem \ref{vol:vol:teo} we only need to consider the unlucky case where $M$ has no geodesic ideal triangulations. We prove that geometric triangulations exist on some finite cover of $M$, and this will suffice.
+
+
+\subsection{Geometric triangulations exist virtually}
+We prove here the following.
+
+\begin{teo}
+Every cusped complete finite-volume three-manifold $M$ has a finite-sheeted cover $\tilde M$ that has a geometric ideal triangulation $\calT$.
+\end{teo}
+\begin{proof}
+The Epstein-Penner decomposition subdivides $M$ into ideal polyhedra $P_1,\ldots, P_k$. If distinct vertices of $P_i$ lie in distinct cusps of $M$ for all $i$, then the decomposition can be easily subdivided into an ideal triangulation: we order the cusps, so the vertices of each $P_i$ inherit an ordering which is preserved along the matching faces; we subdivide each $P_i$ as in the proof of Proposition \ref{poly:tetra:prop} by coning on the smallest vertex at each step: the triangulations on the paired faces match and we get a geometric ideal triangulation for $M$ itself.
+
+We now show that some cover $\tilde M$ has a decomposition of this type. The decomposition of $M$ into $P_1,\ldots, P_k$ lifts in any degree-$d$ cover $\tilde M$ to a decomposition of $\tilde M$ into $P_1^i, \ldots, P_k^i$ with $i=1,\ldots, d$. We now prove that there is a $\tilde M$ such that distinct vertices of $P_j^i$ lie in distinct cusps, for all $i,j$.
+
+To do so, we prove that for every pair of vertices $v \neq v'$ of some $P_i$ there is a covering where the lifts $\tilde v, \tilde v'$ in $P_i^j$ for some $j$ lie in distinct cusps. This is enough to conclude: pick a \emph{regular} covering $\tilde M$ that covers all these finitely many coverings; since its desk transformation group acts transitively on lifts, all distinct vertices on every $P_i^j$ lie in distinct cusps.
+
+We have $M=\matH^3/_\Gamma$. We fix an arbitrary lift $\tilde P_i \subset \matH^3$ of $P_i$. Two vertices $v \neq v'$ of $P_i$ lie in the same cusp $T$ $\Leftrightarrow$ there is a $\gamma \in \Gamma$ such that $\gamma(\tilde v) = \tilde v'$, where $\tilde v, \tilde v' \in \tilde P_i$ are the lifts of $v,v'$.
+The subgroup $\Stab_\Gamma(\tilde v) = \pi_1(T)$ is separable by Corollary \ref{separable:cor} and hence there is a finite-index $H< \Gamma$ that contains $\Stab_\Gamma(\tilde v)$ but avoids $\gamma$. 
+
+No element $\varphi\in H$ is such that $\varphi(\tilde v) = \tilde v'$, otherwise we would have $\gamma^{-1}\varphi \in \Stab_\Gamma(v) < H$ and hence $\gamma \in H$, a contradiction. We have constructed a finite-cover $\matH^3/_H$ where in some lift $P_i^j$ of $P_i$ the two lifted vertices $\tilde v,\tilde v'$ lie in distinct cusps.
+\end{proof}
+
+
+\subsection{Conclusion of the proof}
+We can finally prove Theorem \ref{vol:vol:teo}.
+
+\dimo{vol:vol:teo}
+Some degree-$d$ cover $\tilde M$ of $M$ has an ideal geometric triangulation, hence the theorem holds for $\tilde M$. 
+
+For every Dehn filling $M^{\rm fill}$ of $M$, there is a Dehn filling $\tilde M^{\rm fill}$ of $\tilde M$ such that the cover $\tilde M \to M$ extends to a degree-$d$ map $\tilde M^{\rm fill} \to M^{\rm fill}$. 
+
+If $M^{\rm fill}$ is closed hyperbolic, we have 
+$$d\Vol(M) =\Vol(\tilde M) > v_3\| (\tilde M^{\rm fill})\|  \geqslant dv_3\|M^{\rm fill}\| =d\Vol(M^{\rm fill}) $$
+using Lemma \ref{closed:decreases:lemma}, hence $\Vol(M) > \Vol(M^{\rm fill})$. 
+
+If $M^{\rm fill}$ is cusped hyperbolic, it can be approximated by closed hyperbolic fillings $M^{\rm fill}_i$, and there are closed fillings $\tilde M^{\rm fill}_i$ of $\tilde M^{\rm fill}$ with degree-$d$ maps $\tilde M^{\rm fill}_i \to M^{\rm fill}_i$.
+By Lemma \ref{sse:converge:lemma} there is an $\varepsilon > 0$ such that 
+$$\Vol(\tilde M) - \varepsilon > v_3\|\tilde M^{\rm fill}_i\| \geqslant d v_3\|M^{\rm fill}_i\| = d\Vol(M^{\rm fill}_i)$$
+for all $i$, hence $d\Vol(M) - \varepsilon = \Vol(\tilde M) - \varepsilon \geqslant d\Vol(M^{\rm fill})$. 
+\finedimo
+
+
+\subsection{Bounded volume}
+How many hyperbolic manifolds are there with bounded volume? In general, infinitely many. 
+
+We have just discovered that there are infinitely many hyperbolic manifolds with volume smaller than $2v_3 = 2.0298832128 \ldots$ because the figure-eight knot complement $M$ has $\Vol(M) = 2v_3$ and every hyperbolic Dehn filling of $M$ has volume smaller than $\Vol(M)$. Moreover, the volumes of the Dehn fillings of $M$ form an indiscrete set that tends to $2v_3$ from below.
+
+Theorem \ref{vol:vol:teo} shows that this is the typical situation: the hyperbolic Dehn filling produces infinite sequences of manifolds with bounded volume. Despite this variety of manifolds, we can still control topologically the hyperbolic manifolds having bounded volume, at least in principle.
+
+\begin{teo} \label{V:teo}
+For every $V>0$ there is a compact 3-manifold $N$ bounded by tori, such that every complete finite-volume orientable hyperbolic 3-manifold $M$ with $\Vol(M)<V$ is diffeomorphic to the interior of some Dehn filling of $N$.
+\end{teo}
+\begin{proof}
+This is a consequence of the thick-thin decomposition. Let $\varepsilon>0$ be a fixed Margulis constant: every complete finite-volume $M$ decomposes along disjoint embedded tori as $M=M^{\rm thick} \cup M^{\rm thin}$ where $M^{\rm thick}$ is compact and has injectivity radius $>\varepsilon$, and $M^{\rm thin}$ consists of truncated cusps and tube neighbourhoods of short geodesics. In particular $M$ is a Dehn filling of $M^{\rm thick}$.
+
+We now show that there are only finitely many possible diffeomorphism types for $M^{\rm thick}$ with volume $<V$. This concludes the proof: by Proposition \ref{LW:bordo:prop}
+every such diffeomorphism type is realised from a link $L\cup C\subset S^3$ by surgerying along $L$ and drilling along $C$; we take a disjoint union of all these links in $S^3$, and the complement of the resulting link in $S^3$ is our $N$.
+
+Let $X\subset M^{\rm thick}$ be a \emph{maximal $\frac{\varepsilon}2$-net}, that is a finite set of points that stay at pairwise distance $\geqslant \frac{\varepsilon}2$, such that every other point in $M^{\rm thick}$ stays at distance $< \frac {\varepsilon}2$ from $X$ ($X$ exists because $M^{\rm thick}$ is compact). The $\frac{\varepsilon}4$-balls centred at the points in $X$ are embedded and disjoint: hence $X$ has cardinality at most $C(V) = V/\Vol\big(B(x, \frac{\varepsilon}4)\big)$.
+
+The set $X$ determines a cellularisation of $M^{\rm thick}$ as follows. Lift $X$ to $\tilde X\subset \matH^3$, take the Voronoi tessellation (see Section \ref{Voronoi:subsection}) determined by $\tilde X$ and project it back to $M$: this furnishes a subdivision of $M^{\rm thick}$ into polyhedra. Since $X$ is maximal, every polyhedron has at most $C'(\varepsilon)$ faces with $C'$ depending only on $\varepsilon$. Hence there are finitely many combinatorial types of polyhedra, depending only on $\varepsilon$. With at most $C(V)$ of them we obtain only finitely many manifolds. (The proof of Proposition \ref{X:triangulation:prop} applies to polyhedra and shows that the combinatorial subdivision determines the smooth manifold.)
+\end{proof}
+
+
+\subsection{Volumes of hyperbolic three-manifolds}
+We finish this chapter by furnishing some qualitative information on the set of volumes of hyperbolic three-manifolds. We start with the following.
+
+\begin{prop}
+Let $M_i$ be a sequence of pairwise non-diffeomorphic complete orientable hyperbolic three-manifolds of uniformly bounded volume. After passing to a subsequence, we may suppose that there is a hyperbolic manifold $M$ such that each $M_i$ is a Dehn filling of $M$ with parameter $s^i\to (\infty, \ldots, \infty)$ . 
+\end{prop}
+\begin{proof}[Proof using geometrisation]
+We know from Theorem \ref{V:teo} that there is a manifold $N$ such that each $M_i$ is a Dehn filling of $N$ with parameter $s^i$. After passing to a subsequence, we may suppose that at each boundary torus $T_j$ of $N$ the slope $s^i_j$ is either constant or goes to infinity. Let $M$ be obtained from $N$ by Dehn filling the slopes that stay constant.
+
+If $M$ is hyperbolic, we are done. Unfortunately, this may not be the case, and we use geometrisation to solve this annoying possibility (the original proof of J\o rgensen and Thurston \cite{Th} does not need geometrisation and follows from a discussion on the geometric convergence of hyperbolic manifolds: we employ geometrisation only for simplicity). If $M$ is not prime, it contains some essential spheres that always bound balls in the filled $M_i$ and hence we may cut $M$ along them and cup off with balls (reducing the components of $\partial M$). Now $M$ is prime and its geometric decomposition must contain some hyperbolic block, otherwise $M$ would be a graph manifold and no Dehn filling of $M$ would be hyperbolic (it would be a graph manifold again). The tori of the decomposition of $M$ become compressible in $M_i$, so up to passing to a subsequence we may suppose that each $M_i$ is a Dehn filling of one fixed hyperbolic block of $M$. If $s_i$ does not tend to $(\infty, \ldots, \infty)$ in this new setting, we restart from the beginning and proceed by induction on the number of boundary components of $M$.
+\end{proof}
+
+\begin{cor}
+The set of volumes of all complete orientable hyperbolic three-manifolds is well-ordered. For every value $V$ there are only finitely many such manifolds with volume $V$.
+\end{cor}
+\begin{proof}
+Suppose that there is a sequence of manifolds $M_i$ with $\Vol(M_1) > \Vol (M_2) > \ldots $ By the previous proposition these are all obtained by Dehn filling the same hyperbolic $M$ with $s^i \to (\infty,\ldots,\infty)$, and Theorem \ref{vol:vol:teo} says they should converge to $\Vol(M)$ from below, a contradiction. The same argument show that there are finitely many manifolds of any fixed volume.
+\end{proof}
+
+We deduce that the volumes of all the complete orientable hyperbolic three-manifolds are indexed by countable ordinals. The volumes $v_1< v_2< \ldots, $ of the smallest closed manifolds converge to the volume $v_\omega$ of the smallest 1-cusped manifold; the volumes $v_\omega < v_{2\omega} < \ldots$ of the smallest 1-cusped manifolds converge to the volume $v_{\omega^2}$ of the smallest 2-cusped manifold, and so on. The set of all volumes has order type $\omega^\omega$, see Figure \ref{ordinal:fig}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 6 cm] {Omega-exp-omega-labeled} 
+\nota{The volumes of all the complete orientable hyperbolic three-manifolds form a well-ordered subset of $\matR$ of type $\omega^\omega$.}
+\label{ordinal:fig}
+\end{center}
+\end{figure}
+
 We can also deduce the following.
-Corollary 15.4.15.For everyV > 0 andR> 0 there are only ﬁnite many
-closed hyperbolic three-manifoldsM with Vol(M)<V and inj(M)>R .
-Proof. On a sequence of closed hyperbolic three-manifolds with bounded
-volume, the length of some core geodesic tends to zero. □
-15.4.10. References. To furnish a complete proof of Thurston’s Dehn
-ﬁlling Theorem we have patched together a number of diﬀerent sources. The
-most relevant ones are as usual Thurston’s notes [56], Benedetti – Petronio
-[4], and Ratcliﬀe [49], together with Neumann – Zagier [42].
-Some arguments have been updated here in light of some new results that
-were discovered more recently by some authors. The list of non-exceptional
-slopes for the ﬁgure-eight knot and the Whitehead link can be found in Martelli
-– Petronio [38]. The smoothness of the deformation space stated in Corollary
-15.2.13 has been proved by Choi [13] in 2004. Many of the arguments of this
-chapter, including all the discussion on angle structures, have been taken from
-a nice paper of Futer – Guéritaud [21]. The ﬁrst complete proof of Thurson’s
-Dehn ﬁlling Theorem, that takes care of the annoying case of triangulations
-withﬂattetrahedra,isduetoPetronio–Porti[ 48]. Wedivergefromthatproof
-478 15. HYPERBOLIC DEHN FILLING
-in the last arguments, where we extend Choi’s smoothness theorem to this
-partially ﬂat context in Proposition 15.3.4 (this proposition is probably the only
-original result of this book). The virtual existence of geometric triangulations
-was proved by Luo – Schleimer – Tillmann [37] in 2008.
+
+\begin{cor}
+For every $V>0$ and $R>0$ there are only finite many closed hyperbolic three-manifolds $M$ with $\Vol(M)<V$ and $\inj(M)>R$.
+\end{cor}
+\begin{proof}
+On a sequence of closed hyperbolic three-manifolds with bounded volume, the length of some core geodesic tends to zero.
+\end{proof}
+
+
+
+\subsection{References}
+To furnish a complete proof of Thurston's Dehn filling Theorem we have patched together a number of different sources. The most relevant ones are as usual Thurston's notes \cite{Th}, Benedetti -- Petronio \cite{BP}, and Ratcliffe \cite{R}, together with Neumann -- Zagier \cite{NZ}. 
+
+Some arguments have been updated here in light of some new results that were discovered more recently by some authors. The list of non-exceptional slopes for the figure-eight knot and the Whitehead link can be found in Martelli -- Petronio \cite{MP}. The smoothness of the deformation space stated in Corollary \ref{smooth:cor} has been proved by Choi \cite{Ch} in 2004. Many of the arguments of this chapter, including all the discussion on angle structures, have been taken from a nice paper of Futer -- Gu\'eritaud \cite{FG}. The first complete proof of Thurson's Dehn filling Theorem, that takes care of the annoying case of triangulations with flat tetrahedra, is due to Petronio -- Porti \cite{PP}. We diverge from that proof in the last arguments, where we extend Choi's smoothness theorem to this partially flat context in Proposition \ref{smooth:flat:prop} (this proposition is probably the only original result of this book). The virtual existence of geometric triangulations was proved by Luo -- Schleimer -- Tillmann \cite{LST} in 2008.

@@ -1,0 +1,106 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usepackage[outline]{contour}
+
+\begin{document}
+  %noformat{
+  \begin{tikzpicture}
+    \contourlength{1.2pt}
+    \tikzstyle{v1} = [circle, outer xsep=0.5pt, fill, inner sep=1.5pt]
+    \tikzstyle{v2} = [circle, outer xsep=0.5pt, fill, inner sep=3.0pt]
+    \tikzstyle{v3} = [circle, outer xsep=0.5pt, fill, inner sep=4.5pt]
+    \tikzstyle{unf} = [color=darkgray]
+    \tikzstyle{frz} = [color=blue!60!darkgray!70]
+    \tikzstyle{e} = [->, >={stealth}, preaction={draw=white, -, ultra thick}]
+    \tikzstyle{h} = [dashed, color=gray, ->, >={stealth}]
+    \tikzstyle{r} = [->, color=red!70!darkgray!70, >={stealth}]
+
+    \tikzset{font=\tiny}
+
+    \coordinate[v1] (v21) at (0.25,1.0) {};
+    \coordinate[v1] (v11) at (-0.0625,2.0) {};
+    \coordinate[v1] (v31) at (0.5625,3.0) {};
+    \coordinate[v1] (B2) at (-2.6125,1.0) {};
+    \coordinate[v1] (B1) at (-2.3875,2.0) {};
+    \coordinate[v1] (B3) at (-1.225,3.0) {};
+    \coordinate[v1] (C2) at (5.1125,1.0) {};
+    \coordinate[v1] (C1) at (4.2625,2.0) {};
+    \coordinate[v1] (C3) at (4.35,3.0) {};
+    \coordinate[v1] (A2) at (0.875,-0.0) {};
+    \coordinate[v1] (A1) at (0.25,0.3333333333333333) {};
+    \coordinate[v1] (A3) at (-0.375,-0.3333333333333333) {};
+
+    \coordinate[v2] (v41) at (2.25,2.5) {};
+    \coordinate[v1] (v51) at (2.25,3.5) {};
+    \coordinate[v2] (B4) at (-0.575,4.0) {};
+    \coordinate[v1] (B5) at (-0.0375,5.0) {};
+    \coordinate[v2] (C4) at (4.075,4.0) {};
+    \coordinate[v1] (C5) at (3.5375,5.0) {};
+    \coordinate[v2] (A4) at (3.875,-0.0) {};
+    \coordinate[v1] (A5) at (2.625,-0.0) {};
+
+    \draw[e] (v21) -- (v11);
+    \draw[e] (v21) -- (v31);
+    \draw[e] (v21) -- (C2);
+    \draw[e] (v11) -- (B2);
+    \draw[e] (v11) -- (C1);
+    \draw[e] (v11) -- (A3);
+    \draw[e] (v31) -- (B2);
+    \draw[e] (v31) -- (C3);
+    \draw[e] (v31) -- (A1);
+    \draw[e] (B2) -- (v21);
+    \draw[h] (B2) -- (B1);
+    \draw[h] (B2) -- (B3);
+    \draw[e] (B1) -- (v11);
+    \draw[e] (B3) -- (v31);
+    \draw[h] (C2) -- (C1);
+    \draw[h] (C2) -- (C3);
+    \draw[e] (C2) -- (A2);
+    \draw[e] (C1) -- (v21);
+    \draw[e] (C3) -- (v21);
+    \draw[e] (A2) -- (v21);
+    \draw[e] (A1) -- (B3);
+    \draw[h] (A1) -- (A2);
+    \draw[e] (A3) -- (B1);
+    \draw[h] (A3) -- (A2);
+
+    \draw[e] (v41) -- (v51);
+    \draw[e] (v41) -- (C4);
+    \draw[e] (v51) -- (B4);
+    \draw[e] (v51) -- (C5);
+    \draw[e] (v51) -- (A5);
+    \draw[e] (B4) -- (v41);
+    \draw[h] (B4) -- (B5);
+    \draw[e] (B5) -- (v51);
+    \draw[h] (C4) -- (C5);
+    \draw[e] (C4) -- (A4);
+    \draw[e] (C5) -- (v41);
+    \draw[e] (A4) -- (v41);
+    \draw[e] (A5) -- (B5);
+    \draw[h] (A5) -- (A4);
+
+    \node[v1,label={[label distance=-3pt]95:{\contour{white}{$v_{21}$}}}, unf] (n_v21) at (v21) {};
+    \node[v1,label={[label distance=-3pt]95:{\contour{white}{$v_{11}$}}}, unf] (n_v11) at (v11) {};
+    \node[v1,label={[label distance=-3pt]95:{\contour{white}{$v_{31}$}}}, unf] (n_v31) at (v31) {};
+    \node[v1,label={180:{\contour{white}{$B_{2}$}}}, frz] (n_B2) at (B2) {};
+    \node[v1,label={180:{\contour{white}{$B_{1}$}}}, frz] (n_B1) at (B1) {};
+    \node[v1,label={180:{\contour{white}{$B_{3}$}}}, frz] (n_B3) at (B3) {};
+    \node[v1,label={0:{\contour{white}{$C_{2}$}}}, frz] (n_C2) at (C2) {};
+    \node[v1,label={0:{\contour{white}{$C_{1}$}}}, frz] (n_C1) at (C1) {};
+    \node[v1,label={0:{\contour{white}{$C_{3}$}}}, frz] (n_C3) at (C3) {};
+    \node[v1,label={270:{\contour{white}{$A_{2}$}}}, frz] (n_A2) at (A2) {};
+    \node[v1,label={270:{\contour{white}{$A_{1}$}}}, frz] (n_A1) at (A1) {};
+    \node[v1,label={270:{\contour{white}{$A_{3}$}}}, frz] (n_A3) at (A3) {};
+
+    \node[v2,label={[label distance=-3pt]95:{\contour{white}{$v_{41}$}}}, unf] (n_v41) at (v41) {};
+    \node[v1,label={[label distance=-3pt]95:{\contour{white}{$v_{51}$}}}, unf] (n_v51) at (v51) {};
+    \node[v2,label={180:{\contour{white}{$B_{4}$}}}, frz] (n_B4) at (B4) {};
+    \node[v1,label={180:{\contour{white}{$B_{5}$}}}, frz] (n_B5) at (B5) {};
+    \node[v2,label={0:{\contour{white}{$C_{4}$}}}, frz] (n_C4) at (C4) {};
+    \node[v1,label={0:{\contour{white}{$C_{5}$}}}, frz] (n_C5) at (C5) {};
+    \node[v2,label={270:{\contour{white}{$A_{4}$}}}, frz] (n_A4) at (A4) {};
+    \node[v1,label={270:{\contour{white}{$A_{5}$}}}, frz] (n_A5) at (A5) {};
+  \end{tikzpicture}
+  %}noformat
+\end{document}

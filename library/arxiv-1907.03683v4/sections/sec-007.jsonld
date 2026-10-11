@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1907.03683v4/sections/sec-007",
   "@type": [
     "doco:Section"
   ],
-  "title": "Notation. The set of non-negative integers is denoted by N. For n ∈N and a ∈C,",
+  "title": "Notation",
   "pageStart": 5,
-  "pageEnd": 6,
+  "pageEnd": 8,
   "contains": [
     "library/arxiv-1907.03683v4/blocks/prose-sec-007"
   ],
-  "derivedFrom": "library/arxiv-1907.03683v4/manifest",
-  "sourceDocument": "library/arxiv-1907.03683v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.03683v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.03683v4/manifest.jsonld",
   "provenance": "ingested"
 }

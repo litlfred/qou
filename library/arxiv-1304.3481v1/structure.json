@@ -5,7 +5,8 @@
   "file": "1304.3481v1.pdf",
   "sha256": "d0840f2775c0f761c2e03dc01af6a4879456eccf53f70cd0e3e8da76b3b6d00d",
   "bytes": 886486,
-  "pages": 78
+  "pages": 78,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,8 +17,8 @@
   },
   "doi": null,
   "title": "Quadruply-graded colored homology of knots",
-  "authors_raw": "Eugene Gorsky, Sergei Gukov, and Marko Stoˇ sić",
-  "abstract": "W e conjecture the existence of four independent gradings in the colored HOMFLY homology. W e describe these gradings explic itly for the rectangular colored homology of torus knots and make qualit ative predictions of various interesting structures and symmetries in the col ored homology of general knots. W e also give a simple representation-theore tic model for the HOMFLY homology of the unknot colored by any representation . While some of these structures have a natural interpretation in the phy sical realization of knot homologies based on counting supersymmetric conﬁgu rations (BPS states, instantons, and vortices), others are completely n ew. They suggest new geometric and physical realizations of colored HOMFLY h omology as the Hochschild homology of the category of branes in a Landau-Gi nzburg B-model or, equivalently, in the mirror A-model. Supergroups and su permanifolds are surprisingly ubiquitous in all aspects of this work. CALT-68-2903",
+  "authors_raw": "Eugene Gorsky, Sergei Gukov, and Marko Sto\u02c7 si\u0107",
+  "abstract": "W e conjecture the existence of four independent gradings in the colored HOMFLY homology. W e describe these gradings explic itly for the rectangular colored homology of torus knots and make qualit ative predictions of various interesting structures and symmetries in the col ored homology of general knots. W e also give a simple representation-theore tic model for the HOMFLY homology of the unknot colored by any representation . While some of these structures have a natural interpretation in the phy sical realization of knot homologies based on counting supersymmetric con\ufb01gu rations (BPS states, instantons, and vortices), others are completely n ew. They suggest new geometric and physical realizations of colored HOMFLY h omology as the Hochschild homology of the category of branes in a Landau-Gi nzburg B-model or, equivalently, in the mirror A-model. Supergroups and su permanifolds are surprisingly ubiquitous in all aspects of this work. CALT-68-2903",
   "docinfo": {
    "Producer": "GPL Ghostscript 10.01.2",
    "CreationDate": "D:20241127010604-05'00'",
@@ -159,6 +160,56 @@
   "likely_scanned": false,
   "toc_entries": 10,
   "sections": 5,
-  "chars_total": 189433
+  "chars_total": 189433,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "higher_v17.tex",
+   "tex_sections": 49,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-bosonic-and-fermionic-generators",
+     "title": "Bosonic and Fermionic generators",
+     "prose_ratio": 0.67,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-4-examples",
+     "title": "Examples",
+     "prose_ratio": 0.93,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-appendix-a-rectangle-colored-invariants-of-2m-to",
+     "title": "Appendix A. Rectangle-colored invariants of (2,m) torus knots",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

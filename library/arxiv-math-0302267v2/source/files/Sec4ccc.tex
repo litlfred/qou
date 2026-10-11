@@ -1,0 +1,769 @@
+
+
+
+\newpage
+
+%\footline={\hss\folio\hss}
+%\pageno=1
+
+\dspace
+\subhead
+4. Le groupe fondamental unipotent motivique
+d'une vari\'et\'e rationnelle
+\endsubhead
+
+\subhead
+4.1
+\endsubhead
+Soient $k$ un corps de nombres, $P$ une droite
+projective sur $k$, $X$ le compl\'ement d'un
+ensemble fini $S$ de points rationnels et $x,y\in
+X(k)$.
+Dans Deligne (1989) \S{13}, nous avons d\'efini un
+``espace de (classes d'homotopie de) 
+chemins motivique'' not\'e $P_{y,x}$.
+Sous les hypoth\`eses ci-dessus, et apr\`es
+oubli de l'aspect cristallin de loc. cit.,
+c'est un sch\'ema affine en la cat\'egorie
+tannakienne $\scrR^{H+\ell}$ de 2.15.
+Nous le noterons ici $P_{y,x}^{H+\ell}$, ou
+$P_{y,x}^{H+\ell}(X)$ s'il y a lieu de
+pr\'eciser $X$.
+On dispose d'une ``composition des chemins''
+$P_{z,y}^{H+\ell}\times P_{y,x}^{H+\ell}
+\to P_{z,x}^{H+\ell}$.
+Posons $\pi_1^{H+\ell}(X,x):=P_{x,x}^{H+\ell}$.
+Pour la composition des chemins, c'est un
+$\scrR^{H+\ell}$-sch\'ema en groupes affine et
+$P_{y,x}^{H+\ell}$ est un espace principal
+homog\`ene \`a droite sous
+$\pi_1^{H+\ell}(X,x)$, \`a gauche sous
+$\pi_1^{H+\ell}(X,y)$: un
+$(\pi_1^{H+\ell}(X,x),
+\pi_1^{H+\ell}(X,y))$-bitorseur.
+Pour $\sigma$ un plongement de $k$ dans une
+cl\^{o}ture alg\'ebrique $C$ de $\dbR$, la
+r\'ealisation $\sigma$ de
+$\pi_1^{H+\ell}(X,x)$ est l'enveloppe
+alg\'ebrique prounipotente de $\pi_1(X(C),x)$.
+Si $I$ est l'id\'eal d'augmentation de
+l'alg\`ebre de groupe $\dbQ[\pi_1(X(C),x)]$, c'est
+le spectre de l'alg\`ebre de Hopf commutative
+$$
+\colim(\dbQ[\pi_1(X(C),x)]/I^N)\upvee.
+$$
+i.e. c'est l'enveloppe alg\'ebrique
+pro-unipotente de $\pi_1(X(C),x)$.
+
+\subhead
+4.2
+\endsubhead
+Soit $A_{y,x}^{H+\ell}$ l'alg\`ebre affine
+(2.6) de $P_{y,x}^{H+\ell}$.
+D'apr\`es 3.12, 3.13, le 
+Ind-objet $A_{y,x}^{H+\ell}$ de
+$\scrR^{H+\ell}$ est l'image par le foncteur
+r\'ealisation d'un Ind-objet $A_{y,x}$ de
+$MT(k)$.
+D'apr\`es 2.14, 2.15 (ii), le produit
+$A_{y,x}^{H+\ell}\otimes A_{y,x}^{H+\ell}\to
+A_{y,x}^{H+\ell}$ provient d'un produit sur
+$A_{y,x}$, et $P_{y,x}^{H+\ell}$ est la
+r\'ealisation du $MT(k)$-sch\'ema affine
+$P_{y,x}:=\Spec(A_{y,x})$.
+De m\^{e}me, la composition des chemins est
+d\'efinie par un coproduit $A_{z,x}^{H+\ell}\to
+A_{z,y}^{H+\ell}\otimes A_{y,x}^{H+\ell}$, ce
+coproduit se rel\`eve \`a $MT(k)$ et d\'efinit
+un morphisme $P_{z,y}\times P_{y,x}\to
+P_{z,x}$.
+
+Nous appellerons ici $P_{y,x}$ l'{\it espace
+de chemins de $x$ \`a $y$ motivique}.
+Nous appelerons $P_{x,x}$ le groupe
+fondamental motivique de $X$ en $x$ et le
+noterons $\pi_1^{\mot}(X,x)$ ou simplement
+$\pi_1(X,x)$.
+Mise en garde: bien que la notation ne
+l'indique pas, il s'agit de $\pi_1$ rendus
+unipotents.
+
+\subhead
+4.3
+\endsubhead
+Appelons ``point base de $X$'' soit un point
+rationnel de $X=P-S$, soit un vecteur tangent
+non nul en un point de $S$ (``points base \`a
+l'infini'').
+Pour $x$ et $y$ deux points-base de $X$, 
+Deligne (1989) d\'efinit \S{15} un
+``espace de chemins motivique de $x$ \`a
+$y$''.
+Comme en 4.1, c'est, apr\`es oubli d'un
+aspect cristallin, un
+$\scrR^{H+\ell}$-sch\'ema affine.
+Nous le noterons ici $P_{y,x}^{H+\ell}$, et,
+pour $x=y$, $\pi_1^{H+\ell}(X,x)$.
+
+\proclaim{Th\'eor\`eme 4.4}
+Avec les notations de 4.1 et 4.3, si $x$ et
+$y$ sont deux points-base de $X$, le
+$\scrR^{H+\ell}$-sch\'ema $P_{y,x}^{H+\ell}$
+est motivique, i.e. la r\'ealisation d'un
+$MT(k)$-sch\'ema $P_{y,x}$.
+\endproclaim
+
+Si $S$ est vide ou r\'eduit \`a un point,
+$X=P-S$ est simplement connexe, les
+$P_{y,x}^{H+\ell}$ sont r\'eduits \`a un point
+et 4.4 est trivial.
+Nous pouvons donc supposer,
+et supposerons, que $\vert S\vert\Ge
+2$.
+Le cas o\`u $x$ et
+$y$ sont \`a distance finie ayant d\'ej\`a
+\'et\'e trait\'e, nous supposerons
+au moins l'un de $x$ et $y$ \`a l'infini.
+
+\medskip\noindent
+{\sans Cas 1.}
+$x\in X(k)$ et $y$ est un vecteur tangent non
+nul en $\ybar\in S$.
+
+Soit $Z$ le $\MT(k)$-sch\'ema
+des homomorphismes de $\dbQ(1)$
+dans $\pi_1^{\mot}(X,x)$.
+Identifiant homomorphismes de sch\'emas en
+groupe unipotents, et homomorphismes entre
+leurs alg\`ebres de Lie, on peut en donner la
+description suivante: Lie $\pi_1^{\mot}(X,x)$
+est une pro-alg\`ebre de Lie dans $MT(k)$, en
+particulier un pro-objet de $MT(k)$ (c'est la
+limite projective des Lie~$(\pi_1^{\mot}(X,x)/\grZ^N)$, pour $\grZ$ la
+s\'erie centrale descendante),
+et on d\'efinit $Z$ comme \'etant le
+$MT(k)$-sch\'ema pro-vectoriel (2.6) Lie
+$\pi_1^{\mot}(X,x)(-1)$.
+
+Dans $Z^{H+\ell}:=\real^{H+\ell}(Z)$,
+on dispose du sous-sch\'ema ferm\'e ``classe de
+conjugaison de la monodromie locale autour de
+$\ybar\,$''.
+Voici sa d\'efinition.
+Ecrivons $\dbQ(1)^{H+\ell}$ pour
+$\real^{H+\ell}(\dbQ(1))$.
+On dispose d'un morphisme ``monodromie locale
+autour de $\ybar\,$'':
+$$
+\dbQ(1)^{H+\ell}\to\pi_1^{H+\ell}(X,y).
+\tag{4.4.1}
+$$
+Dans (4.4.1), $\dbQ(1)^{H+\ell}$ est vu comme
+un $\scrR^{H+\ell}$-sch\'ema vectoriel, avec sa
+structure de groupe.
+Si $T_{\ybar}$ est l'espace tangent en
+$\ybar$, et que
+$T_{\ybar}^*:=T_{\ybar}-\{0\}$, il y a lieu de
+voir (4.4.1) comme un morphisme
+$$
+\pi_1^{H+\ell}(T_{\ybar}^*,y)\to\pi_1^{H+\ell}
+(X,y).
+$$
+La donn\'ee de (4.4.1) \'equivaut \`a celle de
+$$
+\dbQ(1)^{H+\ell}\to\Lie\,\pi_1^{H+\ell}
+(X,y).
+\tag4.4.2
+$$
+Dans (4.4.2), $\dbQ(1)^{H+\ell}$ est un objet
+de $\scrR^{H+\ell}$, muni de sa structure
+d'alg\`ebre de Lie commutative.
+
+On dispose aussi de l'espace de chemins
+$P_{y,x}^{H+\ell}$ et, par composition des
+chemins, de
+$$
+(p,\gamma)\longmapsto p^{-1}\gamma p\colon\,
+P_{y,x}^{H+\ell}\times\pi_1^{H+\ell}(X,y)\to
+\pi_1^{H+\ell}(X,x).
+$$
+Composant avec (4.4.1), on en d\'eduit
+$$
+P_{y,x}^{H+\ell}\times\dbQ(1)^{H+\ell}\to
+\pi_1^{H+\ell}(X,x).
+\tag4.4.2
+$$
+
+Le groupe $\pi_1^{H+\ell}(X,y)$ agit par
+composition \`a gauche sur
+$P_{y,x}^{H+\ell}$.
+Divisant \`a gauche par
+$\dbQ(1)^{H+\ell}$, vu par (4.4.1) comme
+sous-groupe de $\pi_1^{H+\ell}(X,y)$, on d\'efinit
+$$
+P_{\ybar,x}^{H+\ell}:=\dbQ(1)^{H+\ell}\setminus
+P_{y,x}^{H+\ell}
+$$
+et (4.4.2) se factorise par
+$P_{\ybar,x}^{H+\ell}\times\dbQ(1)^{H+\ell}$,
+d\'efinissant
+$$
+P_{\ybar,x}^{H+\ell}\to Z^{H+\ell}\tag4.4.3
+$$
+
+\proclaim{Lemme 4.5}
+Le morphisme (4.4.3) est un plongement ferm\'e
+de $\scrR^{H+\ell}$-sch\'emas.
+\endproclaim
+
+\demo{Preuve}
+Il suffit de le v\'erifier en r\'ealisation de
+de Rham, o\`u l'assertion se r\'eduit \`a la
+suivante.
+\enddemo
+
+\proclaim{Lemme 4.6}
+Soit $\scrL$ l'alg\`ebre de Lie sur $k$
+engendr\'ee  par des \'el\'ements $(e_s)_{s\in
+S}$ soumis \`a la seule relation que $\sum
+e_s=0$.
+On suppose $\vert S\vert\Ge 2$, on fixe
+$\ybar\in S$ et on pose $e:=e_{\ybar}$.
+Soit $G$ le sch\'ema en groupe prounipotent
+limite projective des
+$G_N:=\exp(\scrL/\grZ^N)$.
+Le morphisme de $G/\exp(ke)$ dans $\Lie(G)$:
+$g\mapsto \ad\,g(e)$, identifie $G/\exp(ke)$
+\`a un sous-sch\'ema ferm\'e de $\Lie(G)$,
+l'orbite adjointe de $e$.
+\endproclaim
+
+Dans 4.6, $\Lie(G)$ est le sch\'ema pro-vectoriel
+limite projective des sch\'emas vectoriels
+$\Lie(G_N)$.
+
+\demo{Preuve}
+Les orbites de l'action d'un groupe unipotent
+sur un sch\'ema affine sont ferm\'ees Demazure,
+Gabriel (1970) IV 2.2.7).
+Si $e_N$ est l'image de $e$ dans
+$\scrL/\grZ^N$ et $Z_N\Subset G_N$ son
+fixateur, l'application $g\mapsto \ad\,g(e_N)$
+de $G_N/Z_N$ dans $\Lie(G_N)$ est donc un
+plongement ferm\'e.
+Par passage \`a la limite projective,
+l'application $g\mapsto\ad\,g(e)$ de
+$\lim\,G_N/Z_N$ dans $\Lie(G)=\lim\,\Lie(G_N)$
+est \'egalement un plongement ferm\'e.
+
+L'alg\`ebre de Lie du 
+sous-groupe $Z_N$ de $G_N$ est le
+centralisateur de $e_N$ dans
+$\scrL/\grZ^N$.
+Fixons $b$ dans $S$ distinct de $\ybar$.
+L'alg\`ebre de Lie $\scrL$ est librement
+engendr\'ee par les $e_s$ ($s\not=b$).
+D'apr\`es 4.7 ci-dessous, le centralisateur de
+$e$ est r\'eduit \`a $ke$.
+Munissons $\scrL$ de la graduation pour
+laquelle les $e_s$ sont de degr\'e $1$.
+La sous-alg\`ebre $\grZ^N$ est la
+sous-alg\`ebre ``degr\'e $\Ge N$''.
+L'application lin\'eaire
+$\ad\,e\colon\,\scrL\to\scrL$ \'etant de
+degr\'e $1$ et de noyau r\'eduit \`a $ke$, on a
+$$
+\Lie\,Z_N=\Ker(\ad\,e_N\colon\,\scrL/\grZ^N\to
+\scrL/\grZ^N)=ke_N+\grZ^{N-1}/\grZ^N.
+$$
+
+La projection de $G_{N+1}/Z_{N+1}$ sur 
+$G_N/Z_N$ se factorise donc par
+$G_N/\exp(ke_N)$ et
+$$
+G/\exp(ke)=
+\lim\,G_N/\exp(ke_N)\simover \lim\,G_N/Z_N(e).
+$$
+\enddemo
+
+\proclaim{Lemme 4.7}
+Dans une alg\`ebre de Lie libre $\scrL$ sur
+$k$, le centralisateur d'un g\'en\'erateur $e$
+est r\'eduit aux multiples de ce
+g\'en\'erateur.
+\endproclaim
+
+D'apr\`es Reutenauer (1993) 2.10, 
+dans une alg\`ebre de Lie
+libre, deux \'el\'ements non nuls quelconques
+qui commutent sont multiples l'un de l'autre.
+Le cas particulier 4.7 est, plus simplement,
+cons\'equence de ce que l'alg\`ebre de Lie
+libre $\Lib(\{e\}\CUP A)$ est le produit
+semi-direct de $ke$ et de
+$\Lib((\ad\,e^n(a))_{a\in A,n\Ge 0}$ et de ce
+que la d\'erivation $\ad\,e^n(a)\mapsto
+\ad\,e^{n+1}(a)$ de l'alg\`ebre associative
+libre engendr\'ee par les $\ad\,e^n(a)$ est
+injective.
+
+Il r\'esulte de 4.5 que $P_{\ybar,x}^{H+\ell}$
+est motivique.
+Soient en effet $A$ l'alg\`ebre de $Z$ et
+$A^{H+\ell}:=\real^{H+\ell}(A)$ celle de
+$Z^{H+\ell}$.
+D'apr\`es 4.5, $P_{\ybar,x}^{H+\ell}$ est
+isomorphe \`a un sous-sch\'ema ferm\'e de
+$Z^{H+\ell}$, d\'efini par un id\'eal
+$a^{H+\ell}$ de $A^{H+\ell}$.
+D'apr\`es  2.14, 2.15, cet id\'eal est la
+r\'ealisation d'un id\'eal $a$ de $A$, et
+$P_{\ybar,x}^{H+\ell}$ est isomorphe \`a la
+r\'ealisation de $\Spec(A/a)$.
+
+
+\subhead
+4.8 Fin du cas $1$ de la preuve de 4.4
+\endsubhead
+Soit $b\in S$ distinct de $\ybar$, et
+$X':=P-\{\ybar,b\}$.
+Identifions $\dbP$ et $\dbP^1$, par un
+isomorphisme envoyant $\ybar$ sur $0$ et $b$
+sur $\infty$, donc $X'$ sur
+$A^*=\Spec\,k[u,u^{-1}]$.
+Soit $t:=$ du $(y)$ la coordonn\'ee du vecteur
+tangent $y$ en $u=0$, et notons encore $t$ le
+point de $\dbG_m$ de coordonn\'ee $t$.
+Les espaces de chemins $P_{y,x}^{H+\ell}(X')$
+et $P_{t,x}^{H+\ell}(\dbG_m)$ sont
+canoniquement isomorphes (Deligne (1989) \S{14}).
+Puisque $t$ et $x$ sont des points-base \`a
+distance finie de $\dbG_m$, $P_{y,x}^{H+\ell}$
+est motivique.
+C'est d'ailleurs simplement un torseur de
+Kummer: on a $\pi_1^{\mot}(\dbG_m,x)=\dbQ(1)$,
+$t/x\in k^*$ d\'efinit une extension de
+$\dbQ(0)$ par $\dbQ(1)$, donc un
+$\dbQ(1)$-torseur, et $P_{y,x}^{H+\ell}$ 
+est la r\'ealisation de ce torseur.
+
+\proclaim{Lemme 4.9}
+Le morphisme
+$$
+P_{y,x}^{H+\ell}(X)\to
+P_{y,x}^{H+\ell}(X')\times
+P_{\ybar,x}^{H+\ell}(X)
+$$
+$(1^{\text{\rm en}}$ facteur: fonctorialit\'e
+en $X$; $2^{\text{\rm e}}$ facteur: passage ou
+quotient$)$ est un isomorphisme.
+\endproclaim
+
+Puisque tant $P_{y,x}^{H+\ell}(X')$ que
+$P_{\ybar,x}^{H+\ell}(X)$ sont motiviques 4.9 
+implique que $P_{y,x}^{H+\ell}(X)$ est motivique.
+
+\demo{Preuve de 4.9}
+Il suffit de v\'erifier 4.9 en r\'ealisation
+de de Rham.
+Avec les notations de 3.6, l'assertion se
+r\'eduit \`a la suivante.
+\enddemo
+
+\proclaim{Lemme 4.10}
+Regardons $\dbG_a=\exp(ke)$ comme un quotient
+de $G$ par $e\mapsto e$, $e_a\mapsto 0$ pour
+$a\not=\ybar,b$.
+L'application
+$$
+G\to \exp(ke)\times\exp(ke)\setminus G
+$$
+est un isomorphisme.
+\endproclaim
+
+\demo{Preuve}
+$G$ est le produit semi-direct de $\exp(ke)$
+par le noyau de la projection sur $\exp(ke)$,
+cf. la preuve de 4.7.
+\enddemo
+
+\subhead
+4.11
+\endsubhead
+Pour finir la preuve de 4.4 il reste, compte
+tenu de ce que $P_{y,x}^{H+\ell}$, est
+isomorphe comme $\scrR^{H+\ell}$-sch\'ema \`a
+$P_{x,y}^{H+\ell}$, \`a traiter le
+
+\medskip\noindent
+{\sans Cas 2.}
+$x$ et $y$ sont des points base \`a l'infini.
+
+Choisissons un point base $z\in X(k)$.
+On a une expression de $P_{y,x}^{H+\ell}$
+comme compos\'e de bitorseurs
+$$
+P_{y,x}^{H+\ell}=P_{y,z}^{H+\ell}
+\times_{\pi_1^{H+\ell}(X,z)}  P_{z,x}^{H+\ell}
+$$
+o\`u au second membre chaque
+$\scrR^{H+\ell}$-sch\'ema est motivique.
+Que $P_{y,x}^{H+\ell}$ soit motivique en
+r\'esulte.
+
+\subhead
+4.12
+\endsubhead
+Soit $X$ une vari\'et\'e alg\'ebrique lisse
+sur un corps de nombres $k$, et $x,y\in X(k)$.
+On suppose $X$ s\'epar\'e.
+Sous l'hypoth\`ese que $H^1(\Xbar,\scrO)=0$
+pour $\Xbar$ une compactification lisse de $X$,
+nous avons d\'efini dans Deligne (1989) \S{13} un
+``espace de chemins'' $P_{y,x}$ qui est un
+sch\'ema en une cat\'egorie de syst\`emes de
+r\'ealisations.
+Nous le noterons ici,
+apr\`es omission de l'aspect cristallin,
+$P_{y,x}^{\real}$.
+Comme pr\'ec\'edemment, les $P_{y,x}^{\real}$
+forment un groupo{\umi}de.
+
+\proclaim{Th\'eor\`eme 4.13}
+Si la vari\'et\'e $X$ est unirationnelle,
+$P_{y,x}^{\real}$ est motivique,
+r\'ealisation d'un $\MAT(k)$-sch\'ema.
+\endproclaim
+
+Les cat\'egories de syst\`emes de
+r\'ealisations consid\'er\'es sont des champs
+sur $\Spec(k)_{\et}$.
+Le th\'eor\`eme \'equivaut donc \`a dire qu'il
+existe une extension galoisienne $k_1$ de $k$
+telle qu'apr\`es extension du corps de base
+\`a $k'$ dans $\scrC(k_1/k)$,
+$P_{y,x}^{\real}(X_{k'})$ est motivique,
+r\'ealisation d'un $\MT(k')$-sch\'emas.
+
+\demo{\bf Preuve pour $X$ un ouvert de $\dbP^n$}
+Soit $D\Subset\dbP^n$ une droite, assez
+g\'en\'erale pour que le morphisme de
+sch\'emas en groupe unipotents
+$$
+\pi_1^{\real}(X\CAP D,x)\to
+\pi_1^{\real}(X,x)
+$$
+($x$ quelconque dans $X\CAP D$) soit surjectif.
+\enddemo
+
+Si $X\CAP D$ est le compl\'ement dans $D$ d'un
+ensemble fini de points rationnels,\break
+$\pi_1^{\real}
+(X\CAP D,x)$ est dans $\scrR^{H+\ell}$ et,
+d'apr\`es 4.4, motivique, r\'ealisation
+de $\pi_1^{\mot}(X\CAP D,x)$ dans $MT(k)$.
+L'alg\`ebre affine de $\pi_1^{\real}(X,x)$ est
+une sous-alg\`ebre de celle de $\pi_1^{\real}(X
+\CAP D,x)$, donc est \'egalement motivique,
+dans $MT(k)$.
+En g\'en\'eral, pour $k'$ assez grand (i.e.,
+dans un $\scrC(k_1/k)$ convenable), $X\CAP D$
+deviendra apr\`es extension du corps de base
+de $k$ \`a $k'$ le compl\'ement d'un ensemble de
+points rationnels sur $k'$, et la construction
+ci-dessus nous fournit
+$\pi_1^{\mot}(X_{k'},x)$ dans $MT(k')$,
+fonctoriel en $k'$, i.e. $\pi_1^{\mot}(X,x)$
+dans $\MAT(k)$.
+
+Soit $y\in X(k)$, distinct de $x$.
+Prouvons que $P_{y,x}^{\real}$ est motivique.
+Soit $D$ la droite de $\dbP^n$ passant par $x$
+et $y$.
+Comme pr\'ec\'edemment, on se ram\`ene \`a
+supposer que $X\CAP D$ est le compl\'ement, dans
+$D$, d'un ensemble fini de points rationnels.
+Le $\scrR^{H+\ell}$-sch\'ema
+$P_{y,x}^{\real}(X\CAP D)$ est alors la
+r\'ealisation de $P_{y,x}^{\mot}(X\CAP D)$
+dans $\MT(k)$.
+On obtient $P_{y,x}^{\mot}(X)$ en poussant le
+$\pi_1(D\CAP X,x)$-torseur
+$P_{y,x}^{\mot}(D\CAP X)$ par
+$$
+\pi_1(D\CAP X,x)\to\pi_1(X,x).
+$$
+
+Pour $y,z\in X(k)$, $P_{y,z}^{\mot}$ est
+d\'eduit
+des $\pi_1^{\mot}(X,x)$-torseurs
+$P_{y,x}^{\mot}$ et $P_{z,x}^{\mot}$.
+
+\demo{\bf Preuve de $4.13$ {\rm (cas g\'en\'eral)}}
+La vari\'et\'e $X$, \'etant unirationelle, est
+domin\'ee par un ouvert $U$ de $\dbP^n$.
+Fixons $x\in U(k)$.
+Pour $\sigma$ un plongement complexe de $k$,
+le morphisme
+$\pi_1(U(\dbC),x)\to\pi_1(X(\dbC),x)$ a une
+image d'indice fini.
+Le morphisme induit sur les enveloppes
+alg\'ebriques unipotentes est donc surjectif,
+et l'alg\`ebre affine de $\pi_1^{\real}(X,x)$
+est motivique en tout que sous-alg\`ebre de
+l'alg\`ebre affine de $\pi_1^{\real}(X,x)$,
+que nous savons d\'ej\`a \^{e}tre motivique.
+Le cas des $P_{y,x}$ se traite ensuite comme
+plus haut, en utilisant que deux points de $X$
+peuvent \^{e}tre connect\'es par une 
+cha\^{\dotless\char'020}ne de courbes
+rationnelles.
+\enddemo
+
+\remark{\bf Remarque 4.14}
+Utilisant 4.4, on pourrait aussi dans 4.13
+prendre pour $x$ et $y$ des points-base \`a
+l'infini, au sens de Deligne (1989) \S{15}.
+\endremark
+
+\proclaim{Proposition 4.15}
+Supposons que $\Xbar$ soit une
+compactification normale de la vari\'et\'e
+unirationelle $X$, et soient $x,y\in X$.
+Si les composantes irr\'eductibles de
+codimension un dans $X$ de $Y:=\Xbar-X$ sont
+absolument irr\'eductibles, alors
+$P_{y,x}^{\mot}$ est un $\MT(k)$-sch\'ema.
+\endproclaim
+
+\demo{Preuve}
+Supposons d'abord que $x=y$.
+Pour que $\pi_1(X,x)$ soit un
+$\MT(k)$-sch\'ema il suffit que
+$\Lie\,\pi_1(X,x)$ soit dans $\MT(k)$.
+D'apr\`es 2.18, il suffit m\^{e}me que son
+gradu\'e par le poids le soit.
+Ce gradu\'e \'etant engendr\'e par $H_1(X)$,
+purement de poids $-2$, il suffit que l'action
+de $\Gal(\kbar/k)$ sur $\omega H_1(X)$ soit
+triviale.
+Ce groupe est
+$$
+\scrO^*(X_{\kbar})/\kbar^*\otimes\dbQ
+$$
+et ses \'el\'ements sont d\'etermin\'es par
+leurs valuations le long des composantes
+irr\'eductibles de codimension un de
+$Y_{\kbar}$.
+Si le groupe $\Gal(\kbar/k)$ ne les permute
+pas, il agit donc trivialement sur
+$\scrO^*(X_{\kbar})/\kbar^*\otimes\dbQ$.
+\enddemo
+
+Le cas g\'en\'eral r\'esulte du
+
+\proclaim{Lemme 4.16}
+Si un $\MAT(k)$-sch\'ema $P$ est un torseur
+sous un $\MT(k)$-sch\'ema en groupes unipotent
+$G$, il est lui-m\^{e}me un $\MT(k)$-sch\'ema.
+\endproclaim
+
+\demo{Preuve}
+Le groupe $G$ \'etant unipotent, si on le fait
+agir sur son alg\`ebre affine $A$ par
+translations \`a droite, celle-ci admet une
+filtrations exhaustive Fil par des sous-motifs
+stables sous $G$, et tels que $G$ agisse
+trivialement sur le gradu\'e associ\'e.
+L'alg\`ebre affine $A_P$ de $P$, d\'eduite de
+$A$ en poussant par le $G$-torseur $P$, admet
+donc une filtration, encore not\'ee Fil, telle
+que $\Gr^{\Fil}(A)\simover \Gr^{\Fil}(A_P)$.
+Il reste \`a appliquer 2.18.
+\enddemo
+
+\proclaim{Proposition 4.17}
+Soit $S$ un ensemble fini de places finies de
+$k$ et supposons que la vari\'et\'e
+unirationelle $X$ est la fibre g\'en\'erale du
+compl\'ement $X_{\scrO}$, dans $\Xbar_{\scrO}$
+propre et lisse sur $\Spec(\scrO_S)$, d'un
+diviseur \`a croisements normaux relatif,
+r\'eunion de diviseurs lisses, chacun de fibre
+g\'en\'erale absolument irr\'eductible.
+Si $x$ et $y$ dans $X(k)$ proviennent de
+$x_{\scrO}$, $y_{\scrO}$ dans
+$X_{\scrO}(\scrO_S)$, alors $P_{y,x}^{\mot}$
+est dans $\MT(\scrO_S)$.
+\endproclaim
+
+\demo{Preuve}
+Pour tout nombre premier $\ell$, l'hypoth\`ese
+assure que la r\'ealisation $\ell$-adique de
+$P_{y,x}^{\mot}$ est non ramifi\'ee en dehors
+de $S$ et des places au-dessus de $\ell$, et on
+applique 1.5.
+\enddemo
+
+\remark{\bf 4.18 Remarque}
+Un \'enonc\'e analogue vaut pour $x$ ou $y$ \`a
+l'infini.
+\endremark
+
+
+\subhead
+4.19
+\endsubhead
+Soit $X$ une vari\'et\'e lisse unirationnelle
+sur un corps de nombres $k$.
+Le th\'eor\`eme 4.13 permet de d\'efini la
+cat\'egorie 
+$\MAT(X/k)$ des {\it syst\`emes locaux
+unipotents de motifs d'Artin-Tate mixtes} sur
+$X$.
+On choisit $x\in X(k)$ et on d\'efinit un
+objet $M$ de $\MAT(X/k)$ comme \'etant la
+donn\'ee de $M_x$ dans $\MAT(k)$ muni d'une
+action de $\pi_1(X,x)$.
+Il y a lieu de voir $M_x$ comme \'etant la
+fibre de $M$ en $x$.
+Le choix de $x$ n'importe pas: pour $y$ dans
+$X(k)$, on d\'efinit $M_y$ comme \'etant le
+tordu de $M_x$ par le $\pi_1(X,x)$-torseur
+$P_{y,x}$.
+Il reviendrait au m\^{e}me de d\'efinir
+$\MAT(X/k)$ comme la cat\'egorie des 
+repr\'esentations, dans $\MAT(k)$, du
+groupo{\umi}de des $P_{y,x}$ pour $x,y\in
+X(k)$.
+On pourrait aussi prendre des points base \`a
+l'infini.
+
+Puisque $\Lie\,\pi_1(X,x)$ est en poids $<0$,
+$\pi_1(X,x)$ agit trivialement sur
+$\Gr^W(M_x)$ et, pour $x$ et $y$ deux  points
+base de $X$, $\Gr^W(M_x)$ et $\Gr^W(M_y)$ sont
+canoniquement isomorphes.
+Le foncteur fibre $\omega(M):=\omega(M_x)$ est
+donc 
+ind\'ependant de $x$.
+On d\'efinit la sous-cat\'egorie $\MT(X)$ de
+$\MAT(X/k)$ par la condition ``$M_x$ est dans
+$\MT(k)$''.
+Le choix de $x$ n'importe pas (2.18).
+
+\subhead
+4.20
+\endsubhead
+Soit $\sigma$ un plongement de $k$ dans une
+cl\^{o}ture alg\'ebrique $C$ de $\dbR$.
+Pour $M$ dans $\MAT(X/k)$, $(M_x)_\sigma$ est
+une structure de Hodge-Tate mixte, munie d'une
+action de Hodge mixte de $\pi_1(X,x)_\sigma$.
+D'apr\`es Hain and Zucker (1987) (5.21),
+ces donn\'ees d\'efinissent
+une variation admissible $M_\sigma$ de
+structures de Hodge mixtes sur $X(C)$.
+
+Le torseur $(P_{y,x})_\sigma$ tord $(M_\sigma)_x$ 
+en $(M_\sigma)_y$ et la variation $M_\sigma$ ne 
+d\'epend donc pas du choix de $x$.
+
+De m\^{e}me, $M$ d\'efinit un
+$\dbQ_\ell$-faisceaux lisse sur $X$.
+
+\subhead
+4.21
+\endsubhead
+R\'eciproquement, supposons donn\'e sur $X$ un
+syst\`eme de r\'ealisations $M$, candidat \`a
+\^{e}tre la r\'ealisation d'un syst\`eme local
+unipotent de motifs de Tate mixtes, de
+gradu\'e par le poids constant.
+Alors, si en un point $x$ de $X$ ce syst\`eme
+est motivique, il est lui-m\^{e}me motivique.
+En effet, dans les diverses r\'ealisations, il
+d\'efinit une repr\'esentation de
+$\pi_1(X,x)$.
+Appliquant 2.14, on obtient une
+repr\'esentation de $\pi_1^{\mot}(X,x)$ sur
+le motif de r\'ealisation $M_x$, et cette
+repr\'esentation d\'efinit le syst\`eme local
+voulu.
+
+\subhead
+4.22
+\endsubhead
+Si $K$ est le corps des fonctions rationnelles
+sur $X$, il est raisonnable de d\'efini
+$\MT(K)$ comme la limite inductive des
+cat\'egorie $\MT(U)$, pour $U$ un ouvert non
+vide de plus en plus petit de $X$.
+La relation entre cette cat\'egorie et la
+cat\'egorie d\'eriv\'ee motivique $\DM(K)$ de
+Voevodsky n'est pas claire.
+Faute de disposer de la conjecture
+d'annulation de Beilinson-Soul\'e pour $K$, on
+ne sait pas extraire de $\DM(K)$ une
+cat\'egorie ab\'elienne de motifs de Tate
+mixtes sur $K$.
+Pour $X$ rationnelle de dimension un, la
+conjecture d'annulation est vraie, mais
+nous n'avons pas prouv\'e l'\'equivalence des
+deux constructions.
+Pour la cat\'egorie $\MT(K)$ d\'efinie ici, on
+a
+$$
+\alignat2
+&\Ext^1(\dbQ(0),\dbQ(1))=K^*\otimes\dbQ
+  &\qquad&\text{\rm et}\\
+&\Ext^1(\dbQ(0),\dbQ(n))=K_{2n-1}(k) 
+  &\qquad&\text{\rm pour $n\Ge 2$}.
+\endalignat
+$$
+
+\subhead
+4.23 Remarque
+\endsubhead
+Soit $\dbQbar$ une cl\^{o}ture alg\'ebrique de
+$\dbQ$ et d\'efinissons $\MT(\dbQbar)$ 
+comme la limite inductive des $\MT(F)$, pour
+$F$ une extension finie de $\dbQ$ dans
+$\dbQbar$.
+Goncharov (1994) conjecture que, dans
+cette limite, les $P_{y,x}(\dbP^1-S)$
+engendrent tous les motifs de Tate
+mixte.
+En d'autres termes: que tout motif de Tate mixte
+sur $\dbQbar$ est un sous-quotient d'un
+produit tensoriel de sous-motifs d'alg\`ebres
+affines $\scrO(P_{y,x}(\dbP^1-S))$ et de duaux
+de tels sous-motifs.
+
+Les remarques suivantes montrent qu'il est en
+tout cas difficile de sortir de la
+sous-cat\'egorie tannakienne $\scrT$ de
+$\MT(\dbQbar)$ engendr\'ee par les
+$P_{y,x}(\dbP^1-S)$.
+
+\medskip\noindent
+{\sans (a)}\enspace
+Pour $X$ lisse unirationnelle, les
+$P_{y,x}(X)$ sont dans $\scrT$.
+Cela r\'esulte de la preuve de 4.13.
+
+\smallskip\noindent
+{\sans (b)}\enspace
+Si $M$ est un syst\`eme local unipotent de
+motifs de Tate mixte sur $X$ lisse
+unirationnelle, et si en un point $M$ est dans
+$\scrT$, alors $M$ est en chaque point dans
+$\scrT$.
+En effet, $M_y$ est tordu de $M_x$ par
+$P_{y,x}$.
+Il se plonge donc dans
+$M_x\otimes\scrO(P_{y,x})$, et est dans
+$\scrT$ puisque $M_x$ et $\scrO(P_{y,x})$ le
+sont.
+
+

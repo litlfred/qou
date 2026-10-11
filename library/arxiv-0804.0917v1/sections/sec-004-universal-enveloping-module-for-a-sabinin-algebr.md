@@ -9,268 +9,156 @@ source_pdf: 0804.0917v1.pdf
 source_sha256: 887fbd8be47a2781
 doc_brief: "Czechoslovak Mathematical Journal — 9 sections: Front matter; Introduction; Composition-Diamond lemma for left"
 duplicate_of: "czechmathj-60-2010-1-4"
+text_source: latex
+latex_prose_ratio: 0.978
+latex_coverage_ratio: 0.992
 ---
-In this section, we deal with the universal enveloping module for a Sa binin algebra.
-Deﬁnition 7.1 ([21]) A vector space V is called a Sabinin algebra if it is endowed with
-multilinear operation ⟨; ⟩: for any x1, x 2, · · · , x m, y, z ∈ V and any m ≥ 0,
-⟨x1, x 2, · · · , x m; y, z ⟩
-11
-satisfying the identities
-⟨x1, x 2, · · · , x m; y, z ⟩ = −⟨x1, x 2, · · · , x m; z, y ⟩,
-⟨x1, x 2, · · · , x r, a, b, x r+1, · · · , x m; y, z ⟩ − ⟨x1, x 2, · · · , x r, b, a, x r+1, · · · , x m; y, z ⟩
-+
-r∑
-k=0
-∑
-α
-⟨xα1, · · · , x αk, ⟨xαk+1, · · · , x αr ; a, b ⟩, · · · , x m; y, z ⟩ = 0,
-σx,y,z(⟨x1, x 2, · · · , x r, x ; y, z ⟩ +
-r∑
-k=0
-∑
-α
-⟨xα1, · · · , x αk; ⟨xαk+1, · · · , x αr ; y, z ⟩, x ⟩) = 0 ,
-where α runs the set of all bijections of the type α : {1, 2, · · · , r } → { 1, 2, · · · , r }, i ↦→
-α i, α 1 < α 2 < · · · < α k, α k+1 < · · · < α r, r ≥ 0, σ x,y,z denotes the cyclic sum by x, y, z .
-Let X = {ai|i ∈ Λ } be a totally ordered basis of V . We deﬁne the deg-lex order on X ∗.
-Let ∆ : V → V ⊗ V be a linear map which satisﬁes: ∆( ai) = 1 ⊗ ai + ai ⊗ 1, (Id ⊗ ∆)∆ =
-(∆ ⊗ Id)∆ (coassociative) and if τ∆ = ∆ then τ(x ⊗ y) = y ⊗ x (cocommutative).
-It is customary to write ∆( x) = ∑ x(1) ⊗ x(2).
-Let T (V ) be the tensor algebra over V endowed with its natural structure of cocom-
-mutative Hopf algebra, that is, V ⊆ P rim(T (V )) (the primitive element of T (V )). Let
-⟨; ⟩ : T (V ) ⨂ V ⨂ V → V be a map. Then we may write the deﬁnition of a Sabinin
-algebra very shortly as
-⟨x; a, b ⟩ = −⟨x; b, a ⟩,
-⟨x[a, b ]y; c, e ⟩ +
-∑
-⟨x(1)⟨x(2); a, b ⟩y; c, e ⟩ = 0,
-σa,b,c(⟨xc; a, b ⟩ +
-∑
-⟨x(1); ⟨x(2); a, b ⟩, c ⟩) = 0 ,
-where [ a, b ] = ab − ba.
-Deﬁnition 7.2 ([21]) Let ( V, ⟨; ⟩) be a Sabinin algebra. Then
-~S(V ) = T (V )/span ⟨xaby − xbay +
-∑
-x(1)⟨x(2); a, b ⟩y|x, y ∈ T (V ), a, b ∈ V ⟩
-is called the universal enveloping module for V .
-Since T (V ) ≃ k⟨X⟩ as k-algebras, we can view ~S(V ) as a right k⟨X⟩-module:
-~S(V ) = mod⟨X|I⟩k⟨X⟩,
-where I = {xab − xba + ∑ x(1)⟨x(2); a, b ⟩|x ∈ X ∗, a > b, a, b ∈ X}.
+In this section, we deal with the universal enveloping module for a Sabinin algebra.
+
+::: definition
+*([@pe]) A vector space $V$ is called a Sabinin algebra if it is endowed with multilinear operation $\langle;\rangle$: for any $x_1,x_2,\cdots,x_m,y,z\in V$ and any $m\geq0$, $$\langle x_1,x_2,\cdots,x_m;y,z\rangle$$ satisfying the identities $$\begin{aligned}
+&& \langle x_1,x_2,\cdots,x_m;y,
+z\rangle =-\langle x_1,x_2,\cdots,x_m;z,y\rangle,\\
+&& \langle x_1,x_2,\cdots, x_r,a,b,x_{r+1},\cdots,x_m; y,z\rangle
+-\langle x_1,x_2,\cdots, x_r,b,a,x_{r+1},\cdots,x_m; y,z\rangle\\
+&& \ \  \ \ \ +\sum_ {k=0}^ {r}\sum_ {\alpha}\langle
+x_{\alpha_1},\cdots,x_{\alpha_k},\langle
+x_{\alpha_{k+1}},\cdots ,x_{\alpha_r};a,b\rangle,\cdots,x_m;y,z\rangle =0,\\
+&& \sigma_{x,y,z}(\langle x_1,x_2,\cdots, x_r,x; y,z\rangle+\sum_
+{k=0}^ {r}\sum_ {\alpha}\langle
+x_{\alpha_1},\cdots,x_{\alpha_k};\langle x_{\alpha_{k+1}},\cdots
+,x_{\alpha_r};y,z\rangle,x\rangle) =0,
+\end{aligned}$$ where $\alpha$ runs the set of all bijections of the type $\alpha:\
+\{1,2,\cdots,r\}\rightarrow \{1,2,\cdots,r\},\ i\mapsto \alpha_i,\
+\alpha_1<\alpha_2<\cdots<\alpha_k,\ \alpha_{k+1}<\cdots<\alpha_r,\
+r\geq0,\ \sigma_{x,y,z}$ denotes the cyclic sum by $x,y,z$.*
+:::
+
+Let $X=\{a_i|i\in \Lambda\}$ be a totally ordered basis of $V$. We define the deg-lex order on $X^*$. Let $\Delta: \ V\rightarrow
+V\otimes V$ be a linear map which satisfies: $\Delta(a_i)=1\otimes
+a_i+a_i\otimes 1, \ (Id\otimes\Delta)\Delta=(\Delta\otimes Id)\Delta
+\mbox{ (coassociative)}\ \mbox{\ and \ if }\  \tau\Delta=\Delta \
+\mbox{\ then }\  \tau(x\otimes y)=y\otimes x \ \mbox{
+(cocommutative)}$. It is customary to write $\Delta(x)=\sum
+x_{(1)}\otimes x_{(2)}$.
+
+Let $T(V)$ be the tensor algebra over $V$ endowed with its natural structure of cocommutative Hopf algebra, that is, $V\subseteq
+Prim(T(V))$ (the primitive element of $T(V)$). Let $\langle;\rangle:
+T(V)\bigotimes V \bigotimes V\rightarrow V$ be a map. Then we may write the definition of a Sabinin algebra very shortly as $$\begin{aligned}
+&&\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \langle x;a,
+b\rangle =-\langle x;b,a\rangle,\\
+&&\\
+ &&\ \ \ \ \ \langle x[a,b]y;
+c,e\rangle
++\sum\langle x_{(1)}\langle x_{(2)};a,b\rangle y; c,e\rangle=0,\\
+&&\\
+&&\ \ \ \ \ \sigma_{a,b,c}(\langle xc; a,b\rangle+\sum\langle
+x_{(1)};\langle x_{(2)};a,b\rangle,c\rangle) =0,
+\end{aligned}$$ where $[a,b]=ab-ba$.
+
+::: definition
+*([@pe]) Let $(V,\langle;\rangle)$ be a Sabinin algebra. Then $$\widetilde{S}(V)=T(V)/span\langle xaby-xbay+\sum x_{(1)}\langle
+x_{(2)};a,b\rangle y|x,y\in T(V),a,b\in V\rangle$$ is called the universal enveloping module for $V$.*
+:::
+
+Since $T(V)\simeq k\langle X\rangle$ as $k$-algebras, we can view $\widetilde{S}(V)$ as a right $k\langle X\rangle$-module: $$\widetilde{S}(V)=mod\langle X|I\rangle_{k\langle X\rangle},$$ where $I=\{xab-xba+\sum x_{(1)}\langle x_{(2)};a,b\rangle|x\in
+X^*,a>b, \ a,b\in X\}.$
+
 Then we have the following theorem.
-Theorem 7.3 Let I be as above. Then I is the Gr¨ obner-Shirshov basis in mod⟨X⟩k⟨X⟩.
-12
-Proof: There are two kinds of compositions: w1 = xabc (a > b > c ) and w2 =
-ucdvab (c > d, a > b ). Denote by
-f1 = xabc − xacb +
-∑
-(xa)(1)⟨(xa)(2); b, c ⟩,
-f2 = xab − xba +
-∑
-x(1)⟨x(2); a, b ⟩,
-f3 = ucdvab − ucdvba +
-∑
-(ucdv)(1)⟨(ucdv)(2); a, b ⟩,
-f4 = ucd − udc +
-∑
-u(1)⟨u(2); c, d ⟩.
-Then
-(f1, f 2)w1 = xabc − xacb +
-∑
-x(1)a⟨x(2); b, c ⟩ +
-∑
-x(1)⟨x(2)a; b, c ⟩
-−xabc + xbac −
-∑
-x(1)⟨x(2); a, b ⟩c
-≡ − xcab +
-∑
-x(1)⟨x(2); a, c ⟩b +
-∑
-x(1)a⟨x(2); b, c ⟩ +
-∑
-x(1)⟨x(2)a; b, c ⟩
-+xbca −
-∑
-x(1)b⟨x(2); a, c ⟩ −
-∑
-x(1)⟨x(2)b; a, c ⟩ −
-∑
-x(1)⟨x(2); a, b ⟩c
-≡
-∑
-x(1)c⟨x(2); a, b ⟩ +
-∑
-x(1)⟨x(2)c; a, b ⟩ +
-∑
-x(1)⟨x(2); a, c ⟩b
-+
-∑
-x(1)a⟨x(2); b, c ⟩ +
-∑
-x(1)⟨x(2)a; b, c ⟩ −
-∑
-x(1)⟨x(2); b, c ⟩a
-−
-∑
-x(1)b⟨x(2); a, c ⟩ −
-∑
-x(1)⟨x(2)b; a, c ⟩ −
-∑
-x(1)⟨x(2); a, b ⟩c
-≡
-∑
-x(1)⟨x(2)a; b, c ⟩ +
-∑
-x(1)⟨x(2); ⟨x(3); b, c ⟩, a ⟩ +
-∑
-x(1)⟨x(2)b; c, a ⟩
-+
-∑
-x(1)⟨x(2)c; a, b ⟩ +
-∑
-x(1)⟨x(2); ⟨x(3); c, a ⟩, b ⟩
-+
-∑
-x(1)⟨x(2); ⟨x(3); a, b ⟩, c ⟩
-≡ 0
-since σa,b,c(⟨xc; a, b ⟩ + ∑ ⟨x(1); ⟨x(2); a, b ⟩, c ⟩) = 0.
-13
-(f3, f 4)w2 = ucdvab − ucdvba +
-∑
-u(1)v(1)⟨u(2)cdv(2); a, b ⟩ +
-∑
-u(1)cv(1)⟨u(2)dv(2); a, b ⟩
-+
-∑
-u(1)dv(1)⟨u(2)cv(2); a, b ⟩ +
-∑
-u(1)cdv(1)⟨u(2)v(2); a, b ⟩
-−ucdvab + udcvab −
-∑
-u(1)⟨u(2); c, d ⟩vab
-≡ − udcvba +
-∑
-u(1)⟨u(2); c, d ⟩vba +
-∑
-u(1)v(1)⟨u(2)cdv(2); a, b ⟩
-+
-∑
-u(1)cv(1)⟨u(2)dv(2); a, b ⟩ +
-∑
-u(1)dv(1)⟨u(2)cv(2); a, b ⟩
-+
-∑
-u(1)cdv(1)⟨u(2)v(2); a, b ⟩ + udcvba −
-∑
-u(1)v(1)⟨u(2)dcv(2); a, b ⟩
-−
-∑
-u(1)cv(1)⟨u(2)dv(2); a, b ⟩ −
-∑
-u(1)dv(1)⟨u(2)cv(2); a, b ⟩
-−
-∑
-u(1)dcv(1)⟨u(2)v(2); a, b ⟩ +
-∑
-u(1)v(1)⟨u(2)⟨u(3); c, d ⟩v(2); a, b ⟩
-+
-∑
-u(1)⟨u(2); c, d ⟩v(1)⟨u(3)v(2); a, b ⟩ −
-∑
-u(1)⟨u(2); c, d ⟩vba
-≡
-∑
-u(1)v(1)⟨u(2)[c, d ]v(2); a, b ⟩ +
-∑
-u(1)[c, d ]v(1)⟨u(2)v(2); a, b ⟩
-+
-∑
-u(1)v(1)⟨u(2)⟨u(3); c, d ⟩v(2); a, b ⟩ +
-∑
-u(1)⟨u(2); c, d ⟩v(1)⟨u(3)v(2); a, b ⟩
-≡
-∑
-(u(1)[c, d ] + u(1)⟨u(2); c, d ⟩)v(1)⟨u(3)v(2); a, b ⟩
-+
-∑
-u(1)v(1)⟨u(2)[c, d ]v(2); a, b ⟩ +
-∑
-u(1)v(1)⟨u(2)⟨u(3); c, d ⟩v(2); a, b ⟩
-≡ 0
-since ⟨x[a, b ]y; c, e ⟩ + ∑ ⟨x(1)⟨x(2); a, b ⟩y; c, e ⟩ = 0.
-Hence, I is a Gr¨ obner-Shirshov basis in mod⟨X⟩k⟨X⟩. □
-Remark: From the above proof, we know that for ~S(V ) = mod⟨X|I⟩k⟨X⟩, the minimal
-Gr¨ obner-Shirshov basis is
-G = {xab − xba + ∑ x(1)⟨x(2); a, b ⟩|x = ai1 · · ·ain(i1 ≤ · · · ≤ in, n ≥ 0), a > b, a, b ∈ X}.
-Now, by Lemma 3.2 and Theorem 7.3, we can easily get the following theo rem.
-Theorem 7.4 ([21], Poincare-Birkhoﬀ-Witt) Let {ai|i ∈ Λ } be a totally ordered basis of
-V . Then {ai1 · · · ain|i1 ≤ i2 ≤ · · · ≤ in, n ≥ 0} is a basis of ~S(V ).
-Acknowledgement: The authors would like to express their deepest gratitude to Prof es-
-sor L. A. Bokut for his kind guidance, useful discussions and enthu siastic encouragement.
-We also thank Professor J. M. Perez-Izquierdo for some remarks .
-References
-[1] L. A. Bokut, Unsolvability of the word problem, and subalgebras o f ﬁnitely presented
-Lie algebras, Izv. Akad. Nauk. SSSR Ser. Mat. , 36, 1173-1219(1972).
-[2] L. A. Bokut, Imbeddings into simple associative algebras, Algebra i Logika , 15, 117-
-142(1976).
-14
-[3] L. A. Bokut and Yuqun Chen, Grobner-Shirshov bases for Lie alg ebras: after A.I.
-Shirshov, SEA Bull Math., 31, 811-831(2007).
-[4] L. A. Bokut Y. Fong and W.-F. Ke, Gr¨ obner-Shirshov bases and composition lemma
-for associative conformal algebras: an example, Contemporary Mathematics , N 264,
-AMS, 63-91(2000).
-[5] L. A. Bokut and A. A. Klein, Serre relations and Gr¨ obner-Shirsh ov bases for simple
-Lie algebras. I, II, Internat. J. Algebra Comput. , 6, 389-400, 401-412(1996).
-[6] L. A. Bokut and A. A. Klein, Gr¨ obner-Shirshov bases for excep tional Lie algebras. I,
-Ring Theory. Selected Papers from the Conference Held in Miskolc, J uly 15-20, 1996,
-Amsterdam(1998), pp. 51-57.
-[7] L. A. Bokut and A. A. Klein, Gr¨ obner-Shirshov bases for excep tional Lie alge-
-bras E6, E 7, and E8, Algebras and Combinatorivs, Springer-Verlag, Singapore, 37-
-46(1999).
-[8] L. A. Bokut and P. Malcolson, Gr¨ obner-Shirshov bases for qua ntum enveloping alge-
-bras, Israel J. Math. , 96, 97-113(1996).
-[9] L. A. Bokut and P. Malcolson, Gr¨ obner-Shirshov bases for rela tions of a Lie algebra
-and its enveloping algebra, Algebras and Combinatorics , Springer-Verlag, Singapore,
-47-54(1999).
-[10] L. A. Bokut, S.-J. Kang, K.-H. Lee and P. Malcolmson: Gr¨ obner -Shirshov bases for
-Lie super-algebras and their universal enveloping algebras, J. Algebra , 217, 461-495
-(1999).
-[11] E.S. Chibrikov, On free Lie conformal algebras, Vestnik Novosibirsk State University ,
-4(1), 65-83(2004).
-[12] James E. Humphreys, Introduction to Lie Algebras and Repres entation Theory,
-Springer-Verlag, 2000, 1970.
-[13] V.-G. Kac, Inﬁnite-Dimensional Lie Algebras, Cambridge Univers ity Press, Cam-
-bridge, third edition, 1990.
-[14] V.-G. Kac, Vertex Algebra for Beginners, University lecture series. , 10, AMS, Prov-
-idence, RI, 1997.
-[15] S.-J. Kang and K.-H. Lee, Gr¨ obner-Shirshov bases for repre sentation theory, J. Ko-
-rean Math. Soc. , 37, 55-72(2000).
-[16] S.-J. Kang and K.-H. Lee, Gr¨ obner-Shirshov bases for irredu cible sln+1-modules, J.
-Algebra, 232, 1-20(2000).
-[17] S.-J. Kang, I.-S. Lee, K.-H. Lee and H. OH, Hecke algebras, Spe che modules and
-Gr¨ obner-Shirshov bases,J. Algebra, 252, 258-292(2002).
-[18] S.-J. Kang, I.-S. Lee, K.-H. Lee and H. OH, Representations of Ariki-Koike algebras
-and Gr¨ obner-Shirshov bases,Proc. London Math. Soc. , 89(3), 54-70(2004).
-15
-[19] S.-J. Kang and K.-H. Lee, Linear algebraic approach to Gr¨ obne r-Shirshov basis the-
-ory, J. Algebra, 313, 988-1004(2007).
-[20] P. Lalonde and A. Ram, Standard Lyndon bases of Lie algebras a nd enveloping
-algebras, Trans. Amer. Math. Soc. , 347(5), 1821-1830(1995).
-[21] J. M. Perez-Izquierdo, Algebras, hyperalgebras, nonassoc iative bialgebras and loops,
-Advances in Mathematics , 208, 834-876(2007).
-[22] E. N. Poroshenko, Gr¨ obner-Shirshov bases for the Kac-Mo ody algebras of the type
-A(1)
-n , Commun. Algebra, 30, No.6, 2617-2637(2002).
-[23] E. N. Poroshenko, Gr¨ obner-Shirshov bases for the Kac-Mo ody algebras of the type
-C (1)
-n and D(1)
-n , Vestn. Novosib. Gos. Univ. Ser. Mat. Mekh. Inﬀorm. , 2, No.1, 58-
-70(2002).
-[24] E. N. Poroshenko, Gr¨ obner-Shirshov bases for the Kac-Mo ody algebras of the type
-B(1)
-n , Int. J. Math. Game Theory Algebra , 13, No.2, 117-128(2003).
-[25] M. Roitman, On the free conformal and vertex algebras, J. Algebra , 217(2), 496-
-527(1999).
-[26] A. I. Shirshov, Some algorithmic problem for Lie algebras, Sibirsk. Mat. Z. , 3(1962),
-292-296(in Russian); English translation in SIGSAM Bull., 33(2), 3-6( 1999).
-16
+
+::: theorem
+[]{#t7.1 label="t7.1"} Let $I$ be as above. Then $I$ is the Gröbner-Shirshov basis in $mod\langle X\rangle_{k\langle X\rangle}$.
+:::
+
+**Proof:** There are two kinds of compositions: $w_1=xabc\
+(a>b>c) \ \mbox{ and } \ w_2=ucdvab\ (c>d,a>b)$. Denote by $$\begin{aligned}
+f_1&=&xabc-xacb+\sum(xa)_{(1)}\langle (xa)_{(2)};b,c\rangle,\\
+f_2&=&xab-xba+\sum x_{(1)}\langle x_{(2)};a,b\rangle,\\
+f_3&=&ucdvab-ucdvba+\sum(ucdv)_{(1)}\langle
+(ucdv)_{(2)};a,b\rangle,\\
+f_4&=&ucd-udc+\sum u_{(1)}\langle u_{(2)};c,d\rangle.
+\end{aligned}$$ Then $$\begin{aligned}
+(f_1,f_2)_{w_1}&=&xabc-xacb+\sum x_{(1)}a\langle
+x_{(2)};b,c\rangle+\sum
+x_{(1)}\langle x_{(2)}a;b,c\rangle\\
+&&-xabc+xbac-\sum x_{(1)}\langle
+x_{(2)};a,b\rangle c\\
+&\equiv&-xcab+\sum x_{(1)}\langle x_{(2)};a,c\rangle b+\sum
+x_{(1)}a\langle
+x_{(2)};b,c\rangle+\sum x_{(1)}\langle x_{(2)}a;b,c\rangle\\
+&&+xbca-\sum x_{(1)}b\langle x_{(2)};a,c\rangle -\sum x_{(1)}\langle
+x_{(2)}b;a,c\rangle-\sum x_{(1)}\langle x_{(2)};a,b\rangle c\\
+ &\equiv&\sum x_{(1)}c\langle x_{(2)};a,b\rangle+\sum
+x_{(1)}\langle
+x_{(2)}c;a,b\rangle+\sum x_{(1)}\langle x_{(2)};a,c\rangle b\\
+&&+\sum x_{(1)}a\langle x_{(2)};b,c\rangle+\sum x_{(1)}\langle
+x_{(2)}a;b,c\rangle -\sum x_{(1)}\langle x_{(2)};b,c\rangle a\\
+&&-\sum x_{(1)}b\langle x_{(2)};a,c\rangle-\sum x_{(1)}\langle
+x_{(2)}b;a,c\rangle-\sum x_{(1)}\langle x_{(2)};a,b\rangle c\\
+&\equiv&\sum x_{(1)}\langle x_{(2)}a;b,c\rangle+\sum x_{(1)}\langle
+x_{(2)};\langle x_{(3)};b,c\rangle,
+a\rangle+\sum x_{(1)}\langle x_{(2)}b;c,a\rangle\\
+&&+\sum x_{(1)}\langle x_{(2)}c;a,b\rangle +\sum x_{(1)}\langle
+x_{(2)};\langle x_{(3)};c,a\rangle, b\rangle \\
+&&+\sum x_{(1)}\langle x_{(2)};\langle x_{(3)};a,b\rangle,
+c\rangle\\
+&\equiv&0
+\end{aligned}$$ since $\sigma_{a,b,c}(\langle xc; a,b\rangle+\sum\langle
+x_{(1)};\langle x_{(2)};a,b\rangle,c\rangle) =0$.
+
+$$\begin{aligned}
+(f_3,f_4)_{w_2}&=& ucdvab-ucdvba+\sum u_{(1)}v_{(1)}\langle
+u_{(2)}cdv_{(2)};a,b\rangle+\sum u_{(1)}cv_{(1)}\langle
+u_{(2)}dv_{(2)};a,b\rangle\\
+&&+\sum u_{(1)}dv_{(1)}\langle u_{(2)}cv_{(2)};a,b\rangle+\sum
+u_{(1)}cdv_{(1)}\langle
+u_{(2)}v_{(2)};a,b\rangle\\
+&&-ucdvab+udcvab-\sum
+u_{(1)}\langle u_{(2)};c,d\rangle vab\\
+&\equiv&-udcvba+\sum u_{(1)}\langle u_{(2)};c,d\rangle vba+\sum
+u_{(1)}v_{(1)}\langle u_{(2)}cdv_{(2)};a,b\rangle\\
+&&+\sum u_{(1)}cv_{(1)}\langle u_{(2)}dv_{(2)};a,b\rangle+\sum
+u_{(1)}dv_{(1)}\langle u_{(2)}cv_{(2)};a,b\rangle\\
+&&+\sum u_{(1)}cdv_{(1)}\langle u_{(2)}v_{(2)};a,b\rangle
++udcvba-\sum u_{(1)}v_{(1)}\langle
+u_{(2)}dcv_{(2)};a,b\rangle\\
+&&-\sum u_{(1)}cv_{(1)}\langle u_{(2)}dv_{(2)};a,b\rangle-\sum
+u_{(1)}dv_{(1)}\langle u_{(2)}cv_{(2)};a,b\rangle\\
+&&-\sum u_{(1)}dcv_{(1)}\langle u_{(2)}v_{(2)};a,b\rangle+\sum
+u_{(1)}v_{(1)}\langle u_{(2)}\langle u_{(3)};c,d\rangle
+v_{(2)};a,b\rangle\\
+&&+\sum u_{(1)}\langle u_{(2)};c,d\rangle
+v_{(1)}\langle u_{(3)}v_{(2)};a,b\rangle-\sum u_{(1)}\langle u_{(2)};c,d\rangle vba\\
+ &\equiv&\sum u_{(1)}v_{(1)}\langle
+u_{(2)}[c,d]v_{(2)};a,b\rangle+\sum u_{(1)}[c,d]v_{(1)}\langle
+u_{(2)}v_{(2)};a,b\rangle\\
+&&+\sum u_{(1)}v_{(1)}\langle u_{(2)}\langle u_{(3)};c,d\rangle
+v_{(2)};a,b\rangle+\sum u_{(1)}\langle u_{(2)};c,d\rangle
+v_{(1)}\langle u_{(3)}v_{(2)};a,b\rangle\\
+ &\equiv&\sum(u_{(1)}[c,d]+u_{(1)}\langle
+u_{(2)};c,d\rangle)v_{(1)}\langle u_{(3)}v_{(2)};a,b\rangle\\
+&&+\sum u_{(1)}v_{(1)}\langle u_{(2)}[c,d]v_{(2)};a,b\rangle+\sum
+u_{(1)}v_{(1)}\langle u_{(2)}\langle u_{(3)};c,d\rangle
+v_{(2)};a,b\rangle\\
+&\equiv&0
+\end{aligned}$$ since $\langle x[a,b]y; c,e\rangle +\sum\langle x_{(1)}\langle
+x_{(2)};a,b\rangle y; c,e\rangle=0$.
+
+Hence, $I$ is a Gröbner-Shirshov basis in $mod\langle
+X\rangle_{k\langle X\rangle}$.  $\square$
+
+: From the above proof, we know that for $\widetilde{S}(V)=mod\langle X|I\rangle_{k\langle X\rangle}$, the minimal Gröbner-Shirshov basis is\
+$G=\{xab-xba+\sum x_{(1)}\langle x_{(2)};a,b\rangle|x=a_{i_1}\cdots
+a_{i_n}(i_1\leq \cdots\leq i_n,\ n\geq0),a>b, \
+ a,b\in X\}$.
+
+  
+
+Now, by Lemma [\[l3.5\]](#l3.5){reference-type="ref" reference="l3.5"} and Theorem [\[t7.1\]](#t7.1){reference-type="ref" reference="t7.1"}, we can easily get the following theorem.
+
+::: theorem
+*([@pe], Poincare-Birkhoff-Witt) Let $\{a_i|i\in \Lambda\}$ be a totally ordered basis of $V$. Then $\{a_{i_1}\cdots a_{i_n}|i_1\leq i_2\leq\cdots \leq i_n,\
+n\geq0\}$ is a basis of $\widetilde{S}(V)$.*
+:::
+
+: The authors would like to express their deepest gratitude to Professor L. A. Bokut for his kind guidance, useful discussions and enthusiastic encouragement. We also thank Professor J. M. Perez-Izquierdo for some remarks.

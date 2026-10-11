@@ -7,7 +7,8 @@
   "bytes": 240949,
   "pages": 15,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -173,6 +174,50 @@
   "likely_scanned": false,
   "toc_entries": 13,
   "sections": 4,
-  "chars_total": 47973
+  "chars_total": 47973,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "SIAMOPT.tex",
+   "tex_sections": 14,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction.",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.67,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-11-our-contributions",
+     "title": "Our Contributions",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-2-proofs",
+     "title": "Proofs",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-3-concluding-remarks",
+     "title": "Concluding remarks",
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.427,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

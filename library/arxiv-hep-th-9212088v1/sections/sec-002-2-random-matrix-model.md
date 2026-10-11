@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9212088v1
-doc_title: "Random matrix theory and spectral sum rules for the Dirac operator in QCD1"
+doc_title: "arXiv:hep-th/9212088v1 14 Dec 1992"
 section_id: sec-002-2-random-matrix-model
 section_title: "Random matrix model"
 section_number: 2
 pages: 3-6
 source_pdf: 9212088v1.pdf
 source_sha256: ecb2c02ec6fe11bd
-doc_brief: "Random matrix theory and spectral sum rules for the Dirac operator in QCD1 — We construct a random matrix model that, in the large N limit, reduces to the low energy limit of the QCD partition"
+toc_source: inferred
 ---
 was inspired by the semiclassical approximation to the QCD partition function where
 instantons are the main degrees of freedom [10, 11, 12]. Therefore, it is natural to check

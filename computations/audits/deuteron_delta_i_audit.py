@@ -185,7 +185,7 @@ whose rows carry a different schema entirely. The resolved formula
 fields are legacy-only by construction.
 
 This audit is therefore dead by construction. Disposition (deprecate to
-computations/_deprecated/, or delete) is an owner decision; bean `qou-s1yn`.""")
+fsh-guts/deprecated/computations/, or delete) is an owner decision; bean `qou-s1yn`.""")
     s3 = record_upstream(s3_path, _UPSTREAM_RECORDS)
     rows = {r["atom"]: r for r in s3["data"]["rows"]}
 

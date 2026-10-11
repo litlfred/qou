@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2509.04267v3/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2509.04267v3/blocks/prose-sec-004",
   "kind": "prose",
-  "title": "Then there exists an",
-  "pageStart": 8,
-  "pageEnd": 10,
-  "text": "../sections/sec-004-1-then-there-exists-an.md",
-  "derivedFrom": "library/arxiv-2509.04267v3/manifest",
-  "sourceDocument": "library/arxiv-2509.04267v3/manifest",
+  "title": "YB cohomology in low dimensions",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "text": "../sections/sec-004-31-yb-cohomology-in-low-dimensions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2509.04267v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2509.04267v3/manifest.jsonld",
   "provenance": "ingested"
 }

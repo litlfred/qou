@@ -1,0 +1,3028 @@
+
+
+% new file names from date 20171119: 
+% block4_171119.tex 
+
+\renewcommand{\thisfile}{block4\_190328}
+ 
+\cleardoublepage 
+\mysection{Dualizing Complexes over Commutative Rings} 
+\label{sec:dual-cplx-comm-rng} 
+
+\AYcopyright 
+
+In this section we finally explain what was outlined, as a motivating 
+discussion, in Subsection \ref{subsec:2160} of the Introduction. Dualizing 
+complexes are perhaps the most compelling reason to study derived categories. In 
+the commutative ring setting of the current section the technicalities are 
+milder than in the geometric setting (see Remark \ref{rem:4192}) and the 
+noncommutative ring setting (that is treated in Sections \ref{sec:BDC} and 
+\ref{sec:rigid-DC-NC}). 
+
+In the first and third subsections of this section we talk about {\em dualizing 
+complexes} and {\em residue complexes}, respectively, over commutative rings. 
+This material is based on the original treatment by A. Grothendieck in 
+\cite{RD}, but with a much more detailed discussion. Sandwiched between them is 
+a reminder on the  classification of injective modules, due to E. Matlis. 
+
+The last two subsections are on {\em rigid dualizing complexes} in the sense of 
+M. Van den Bergh. 
+
+In this section all rings are commutative $\K$-rings by default (see 
+Convention \ref{conv:2490}). However, the base ring $\K$ will remain implicit 
+most of the time. 
+
+
+\mysubsection{Dualizing Complexes} \label{subsec:du-cplxs}
+
+Let $A$ be a commutative ring. The category of $A$-modules is 
+$\dcat{M}(A) = \cat{Mod} A$. Because $A$ is 
+commutative, the Hom bifunctor has its target in $\dcat{M}(A)$~: 
+\[ \opn{Hom}_A(-,-) : \dcat{M}(A)^{\mrm{op}} \times \dcat{M}(A)
+\to \dcat{M}(A) . \]
+Likewise for the right derived bifunctor: 
+\[ \opn{RHom}_A(-,-) : \dcat{D}(A)^{\mrm{op}} \times \dcat{D}(A)
+\to \dcat{D}(A) . \]
+See Proposition \ref{prop:3105}.
+
+Let $M \in \dcat{C}(A)$. The DG $A$-module 
+$\opn{End}_A(M) = \opn{Hom}_A(M, M)$ 
+is a noncommutative DG central $A$-ring; namely there is a central DG ring 
+homomorphism 
+\begin{equation} \label{eqn:2390}
+\opn{hm}_{M} : A \to \opn{Hom}_A(M, M) 
+\end{equation}
+called {\em homothety}. 
+When we forget the ring structure, $\opn{hm}_{M}$ becomes a homomorphism in
+$\dcat{C}_{\mrm{str}}(A)$. 
+
+\begin{dfn} \label{dfn:2392}
+Given a complex $M \in \dcat{D}(A)$, the 
+{\em derived homothety morphism}%
+\index{Homothety morphism! derived}
+\[ \opn{hm}^{\mrm{R}}_{M} : A \to \opn{RHom}_A(M, M) \]
+is the morphism in $\dcat{D}(A)$ with this formula:
+$\opn{hm}^{\mrm{R}}_{M} := \eta^{\mrm{R}}_{M,M} \circ \opn{Q}(\opn{hm}_{M})$.
+\end{dfn}
+
+In other words, the diagram 
+\[ \UseTips \xymatrix @C=10ex @R=8ex {
+A
+\ar[r]^(0.35){\opn{Q}(\opn{hm}_{M})}
+\ar@(u,u)[rr]^{\opn{hm}^{\mrm{R}}_{M}}
+&
+\opn{Hom}_A(M, M) 
+\ar[r]^(0.45){\eta^{\mrm{R}}_{M,M}}
+&
+\opn{RHom}_A(M, M) 
+} \]
+in $\dcat{D}(A)$ is commutative.
+The letter ``R'' in the superscript of the expression 
+$\opn{hm}^{\mrm{R}}_{M}$ refers to ``right derived functor''. 
+
+\begin{exer} \label{exer:2393}
+Prove that if $\rho : M \to I$ is a K-injective resolution, then 
+the diagram 
+\[ \UseTips \xymatrix @C=10ex @R=6ex {
+A
+\ar[r]^(0.3){\opn{Q}(\opn{hm}_{I})}
+\ar@(dr,l)[drr]_{\opn{hm}^{\mrm{R}}_{M}}
+&
+\opn{Hom}_A(I, I)
+\ar[r]^{\eta^{\mrm{R}}_{I, I}}_{\cong}
+&
+\opn{RHom}_A(I, I)
+\ar[d]^{\opn{RHom}(\opn{Q}(\rho), \opn{Q}(\rho)^{-1})}_{\cong}
+\\
+&
+&
+\opn{RHom}_A(M, M)
+} \]
+in $\dcat{D}(A)$ is commutative.
+\end{exer}
+
+\begin{exer} \label{exer:2165}
+Formulate and prove a version of the previous exercise with a K-projective 
+resolution of $M$. 
+\end{exer}
+
+\begin{dfn} \label{dfn:2394}
+A complex $M \in \dcat{D}(A)$ is said to have the {\em derived Morita property}
+\index{Derived Morita property} 
+if the derived homothety morphism 
+$\opn{hm}^{\mrm{R}}_{M} : A \to \opn{RHom}_A(M, M)$ 
+in $\dcat{D}(A)$ is an isomorphism. 
+\end{dfn}
+
+\begin{prop} \label{prop:2335}
+The following conditions are equivalent for a complex 
+$M \in \dcat{D}(A)$~\tup{:}
+\begin{itemize}
+\rmitem{i} $M$ has the  derived Morita property.
+
+\rmitem{ii} The homothety ring homomorphism 
+$A \to \opn{End}_{\dcat{D}(A)}(M)$
+is a bijective, and 
+$\opn{Hom}_{\dcat{D}(A)} \bigl( M, M[p] \bigr) = 0$ 
+for all $p \neq 0$. 
+
+\rmitem{iii} The $A$-module 
+$\opn{H}^0 \bigl( \opn{RHom}_{A}(M, M) \bigr)$ 
+is free of rank $1$, with basis the element $\opn{id}_M$, and 
+$\opn{H}^p \bigl( \opn{RHom}_{A}(M, M) \bigr) = 0$ 
+for every $p \neq 0$.  
+\end{itemize}
+\end{prop}
+
+\begin{exer}
+Prove Proposition \ref{prop:2335}.
+(Hint: see Corollary \ref{cor:2120} and the preceding material.) 
+\end{exer}
+
+\begin{rem} \label{rem:2390}
+In some texts (e.g.\ in \cite{AIL}), a complex $M$ with the derived Morita 
+property is called a {\em semi-dualizing complex}. This name is only partly 
+justified, because this 
+property occurs in the definition of a dualizing complex -- see Definition 
+\ref{dfn:2155} below. However, there is a whole other class of 
+complexes with the derived Morita property -- these are the {\em tilting 
+complexes}. Often these two classes of complexes are disjoint. More on these 
+notions, and their noncommutative variants, can be found in Sections 
+\ref{sec:perf-tilt-NC} and \ref{sec:rigid-DC-NC} of the book. 
+\end{rem}
+
+From here on the commutative ring $A$ is assumed to be noetherian.
+Recall that $\dcat{D}_{\mrm{f}}(A)$ is the full subcategory of 
+$\dcat{D}(A)$ on the complexes with finitely generated cohomology modules. The 
+subcategory $\dcat{D}_{\mrm{f}}(A)$ is triangulated. 
+
+The next definition first appeared in \cite[Section V.2]{RD}. 
+The injective dimension of a complex was defined in Definition \ref{dfn:2128}.
+
+\begin{dfn} \label{dfn:2155}
+Let $A$ be a noetherian commutative ring. A complex of $A$-modules $R$ is 
+called a {\em dualizing complex} 
+\index{Dualizing complex! commutative}
+if it has the following three 
+properties\tup{:} 
+\begin{enumerate}
+\rmitem{i} $R \in \dcat{D}^{\mrm{b}}_{\mrm{f}}(A)$. 
+
+\rmitem{ii} $R$ has finite injective dimension. 
+
+\rmitem{iii} $R$ has the derived Morita property.
+\end{enumerate}
+\end{dfn}
+
+Recall that in the traditional literature (e.g.\ \cite{Mats}), a noetherian 
+ring $A$ is called {\em regular} if all its local 
+rings $A_{\p}$ are regular local rings. The {\em Krull dimension} of $A$ is the 
+dimension of the scheme $\opn{Spec}(A)$; namely the supremum of the 
+lengths of strictly ascending chains of prime ideals in $A$. 
+In practice we never see regular rings that are not finite dimensional (there 
+are only pretty exotic examples of them). 
+The following definition will simplify matters for us:
+
+\begin{dfn} \label{dfn:3075}
+We shall say that a noetherian commutative ring $A$ is 
+{\em regular}% 
+\index{Regular commutative ring} 
+if it has 
+finite Krull dimension, and all its local rings $A_{\p}$ are regular local 
+rings, in the sense of \cite{Mats}. 
+\end{dfn}
+
+Every field $\K$, and the ring of integers $\Z$, are regular rings. 
+If $A$ is regular, then so is the polynomial ring 
+$A[t_1, \ldots, t_n]$ in $n < \infty$ variables, and also the 
+localization of $A$ at every multiplicatively closed set. See 
+\cite[Chapter 7]{Mats}. 
+
+As proved by Serre (see \cite[Theorem 19.2]{Mats}) a regular ring $A$ has 
+{\em finite global cohomological dimension}. This means that there is a number 
+$d \in \N$ such that for all modules $M, N \in \dcat{M}(A)$ and all 
+$q > d$, the modules $\opn{Ext}^q_A(M, N)$ vanish. This implies that every
+$A$-module $M$ has injective, projective and flat dimensions $\leq d$.
+It follows that every complex 
+$M \in \dcat{D}^{\mrm{b}}(A)$ has finite injective, projective and flat 
+dimensions (see Definitions \ref{dfn:2128} and \ref{dfn:2390}).  
+
+\begin{exa} \label{exa:2171}
+Let $A$ be a regular ring. Taking $R := A$ we see that $R$ satisfies condition 
+(ii) of Definition \ref{dfn:2155}. The other two conditions hold regardless of 
+the regularity of $A$. Thus the complex $R = A$ is a dualizing complex over the 
+ring $A$. 
+
+In  Subsection \ref{subsec:2160} of the Introduction we used this fact for 
+the ring $A = \Z$. 
+\end{exa}
+
+\begin{dfn} \label{dfn:2156}
+Given a dualizing complex $R \in \dcat{D}(A)$, the {\em duality functor}
+\index{Duality functor} 
+associated to it is the triangulated functor 
+\[ D : \dcat{D}(A)^{\mrm{op}} \to \dcat{D}(A), \quad 
+D := \opn{RHom}_A(-, R) .  \]
+\end{dfn}
+
+The notation ``$D$'' deliberately keeps the dualizing complex $R$ implicit. 
+Note that upon applying the functor $D$ to the object $A \in \dcat{D}(A)$ we 
+get $D(A) = R$. 
+
+Let us choose a K-injective resolution $\rho : R \to I$. There is an 
+isomorphism of triangulated functors
+\begin{equation} \label{eqn:3235}
+\opn{pres}_{I} : D \iso \opn{Hom}_A(-, I)
+\end{equation}
+from $\dcat{D}(A)^{\mrm{op}}$ to $\dcat{D}(A)$,
+that we call a presentation of $D$. For every 
+$M \in \dcat{D}(A)$ the diagram 
+\begin{equation} \label{eqn:4195}
+\UseTips \xymatrix @C=8ex @R=6ex {
+D(M)
+\ar[r]^(0.4){\opn{id}}
+\ar[d]^{\cong}_{\opn{pres}_{I, M}}
+&
+\opn{RHom}_A(M, R)
+\ar[d]^{\opn{RHom}(\opn{id}_M, \opn{Q}(\rho))}_{\cong}
+\\
+\opn{Hom}_A(M, I)
+\ar[r]^{\eta^{\mrm{R}}_{M, I}}_{\cong}
+&
+\opn{RHom}_A(M, I)
+}
+\end{equation}
+is commutative. (Note that we can choose $I$ to be a bounded complex of 
+injectives, by Proposition \ref{prop:2115}.)
+
+Let $M, I \in \dcat{C}(A)$. There is a homomorphism 
+\begin{equation} \label{eqn:3236}
+\opn{ev}_{M, I} : M \to \opn{Hom}_A \bigl( \opn{Hom}_A(M, I), I \bigr) 
+\end{equation}
+in $\dcat{C}_{\mrm{str}}(A)$, called {\em Hom-evaluation}, with formula 
+\[ \opn{ev}_{M, N}(m)(\phi) := (-1)^{p \cd q} \cd \phi(m) \]
+for $m \in M^p$ and $\phi \in \opn{Hom}_A(M, I)^q$. 
+
+\begin{lem} \label{lem:2156} 
+Let $R$ be a dualizing complex over $A$, with associated duality functor $D$. 
+\begin{enumerate}
+\item The functor 
+$D \circ D : \dcat{D}(A) \to \dcat{D}(A)$
+is triangulated.
+
+\item There is a unique morphism  
+$\opn{ev}^{\mrm{R, R}} : \opn{Id} \to D \circ D$ 
+of triangulated functors from $\dcat{D}(A)$ to itself, called {\em derived 
+Hom-eval\-uation}, such that for every K-injective resolution  
+$\rho : R \to I$, and every complex $M \in \dcat{D}(A)$, the diagram 
+\[ \UseTips \xymatrix @C=8ex @R=6ex {
+M
+\ar[r]^(0.4){\opn{ev}^{\mrm{R, R}}_M}
+\ar[dr]_{\opn{Q}(\opn{ev}_{M, I}) \ \ }
+&
+D(D(M))
+\ar[d]^{\cong}
+\\
+&
+ \opn{Hom}_A \bigl( \opn{Hom}_A (M, I), I \bigr)
+} \]
+is commutative. Here the vertical isomorphism is a double application of the 
+presentation $\opn{pres}_{I}$.
+
+\item For $M = A$ there is equality 
+$\opn{ev}^{\mrm{R, R}}_A = \opn{hm}^{\mrm{R}}_{R}$ 
+of morphisms $A \to (D \circ D)(A)$ in $\dcat{D}(A)$.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+(1) Choose a K-injective resolution $\rho : R \to I$. 
+Let's write 
+$F := \lb \opn{Hom}_A \bigl( \opn{Hom}_A (-, I), I \bigr)$.
+The functor $F$ can be seen as a DG functor from $\dcat{C}(A)$ to itself, that 
+is then made into a functor from $\dcat{D}(A)$ to itself. So by Theorem 
+\ref{thm:1265}(1), $F$ is a triangulated functor (i.e.\ there is a 
+translation isomorphism $\tau_F$ etc.). Using the presentation 
+(\ref{eqn:3235}) twice we get an isomorphism
+$D \circ D \cong  F$  of functors from $\dcat{D}(A)$ to itself. This makes 
+$D \circ D$ triangulated. 
+
+\medskip \noindent 
+(2) With the K-injective resolution $\rho : R \to I$ above, we define 
+the morphism $\opn{ev}$ so as to make the diagram commutative. According to
+Theorem \ref{thm:1265}(2), $\opn{ev}$ is a morphism of triangulated functors. 
+Because the resolution $\rho : R \to I$ is unique up to homotopy, 
+we get the same morphism $\opn{ev}$ regardless of choice of resolution. 
+
+\medskip \noindent 
+(3) This is clear from Exercise \ref{exer:2393}. 
+\end{proof}
+
+\begin{exer} \label{exer:3245}
+Suppose that $A$ is a regular ring, and we take the dualizing complex $R := A$. 
+Let $P$ be a bounded complex of finitely generated projective $A$-modules. 
+Show that:
+\begin{enumerate}
+\item There is a canonical isomorphism 
+$D(P) \cong \opn{Hom}_{A}(P, A)$ 
+in $\dcat{D}(A)$. 
+
+\item There is a canonical isomorphism 
+\[ (D \circ D)(P) \cong \opn{Hom}_{A} \bigl( \opn{Hom}_{A}(P, A), A \bigr) \]
+in $\dcat{D}(A)$.
+
+\item Under the isomorphism in item (2), the morphism 
+$\opn{ev}^{\mrm{R, R}}_{P}$ goes to 
+$\opn{Q}(\opn{ev}_{P, A})$. 
+
+\item The homomorphism $\opn{ev}_P$ is a quasi-isomorphism. 
+\end{enumerate}
+\end{exer}
+
+Here is the first important result regarding dualizing complexes. 
+
+\begin{thm} \label{thm:2155}
+Suppose $R$ is a dualizing complex over the noetherian commutative ring $A$, 
+with associated duality functor $D$. Then for every complex 
+$M \in \dcat{D}_{\mrm{f}}(A)$ the following hold\tup{:}
+\begin{enumerate}
+\item The complex $D(M)$ belongs to $\dcat{D}_{\mrm{f}}(A)$. 
+
+\item The morphism 
+\[ \opn{ev}^{\mrm{R, R}}_M : M \to D(D(M)) \]
+in $\dcat{D}(A)$ is an isomorphism. 
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+(1) Condition (ii) of Definition \ref{dfn:2155} says that the functor $D$ has 
+finite cohomological dimension. Condition (i) says that 
+$D(A) \in \dcat{D}_{\mrm{f}}(A)$.
+The assertion follows from Theorem \ref{thm:2160}, with 
+$\cat{N}_0 := \dcat{M}_{\mrm{f}}(A)$. 
+
+\medskip \noindent
+(2) The composition $D \circ D$ is a triangulated functor with finite 
+cohomological dimension (at most twice the injective dimension of $R$). The 
+cohomological dimension of the identity functor
+$\opn{Id}$ is $0$ (if $A \neq 0$). 
+By condition (iii) of Definition \ref{dfn:2155} we know that 
+$\opn{ev}_A$ is an isomorphism. 
+Now we can use Theorem \ref{thm:2135}. 
+\end{proof}
+
+\begin{cor} \label{cor:2155}
+Under the assumptions of Theorem \tup{\ref{thm:2155}}, let 
+$\star$ be one of the boundedness conditions $\mrm{b}$, $+$, $-$ or 
+$\bra{\mrm{empty}}$, and let  $-\star$ be the reversed boundedness condition.
+Then the functor 
+\[ D : \dcat{D}^{\star}_{\mrm{f}}(A)^{\mrm{op}} \to 
+\dcat{D}^{-\star}_{\mrm{f}}(A) \]
+is an equivalence of triangulated categories. 
+\end{cor}
+
+\begin{proof}
+The previous theorem tells us that $D$ is its own quasi-inverse. The claim 
+about the boundedness holds because $D$ has finite cohomological dimension.
+\end{proof}
+
+We saw that dualizing complexes exist over regular rings. This fact is used 
+for the very general existence result Theorem \ref{thm:2170}. But first we need 
+some preparation. 
+
+Here are some adjunction properties related to homomorphisms between 
+commutative rings. These are enhancements of the material from Subsection 
+\ref{subsec:adjs-comm}.
+
+Recall that a ring homomorphism $u : A \to B$ gives rise to a forgetful functor 
+$\opn{Rest}_u : \dcat{D}(B) \to \dcat{D}(A)$.
+This functor is going to be implicit in the discussion below. 
+
+\begin{lem} \label{lem:2170}
+Let $A \to B$ be a ring homomorphism. 
+\begin{enumerate}
+\item If $I \in \dcat{C}(A)$ is K-injective, then 
+$J := \opn{Hom}_A(B, I) \in \dcat{C}(B)$ is K-injective. 
+
+\item Given $M \in \dcat{D}(A)$, let us define 
+$N := \opn{RHom}_A(B, M) \in \dcat{D}(B)$.
+Then there is an isomorphism 
+$\opn{RHom}_B(-, N) \cong \opn{RHom}_A(-, M)$
+of triangulated functors
+$\dcat{D}(B)^{\mrm{op}} \to \dcat{D}(B)$.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+(1) This is an adjunction calculation. Suppose $L \in \dcat{C}(B)$ is acyclic. 
+There are isomorphisms  
+\begin{equation} \label{eqn:2182}
+\opn{Hom}_B(L,J) \cong 
+\opn{Hom}_B \bigl( L, \opn{Hom}_A(B, I) \bigr) \cong  
+\opn{Hom}_A(L,I) 
+\end{equation}
+in $\dcat{C}(B)$. Since $I$ is K-injective over $A$, the complex
+$\opn{Hom}_A(L,I)$ is acyclic. 
+
+\medskip \noindent
+(2) Choose a K-injective resolution $M \to I$ in $\dcat{C}(A)$. 
+Let $J := \opn{Hom}_A(B, I)$. Then $N \to J$ is a K-injective 
+resolution in 
+$\dcat{C}(B)$. There are isomorphisms of triangulated functors 
+\begin{equation} \label{eqn:2180}
+\opn{RHom}_A(-, M) \cong \opn{Hom}_A(-, I) 
+\end{equation}
+and 
+\begin{equation} \label{eqn:2181}
+\opn{RHom}_B(-, N) \cong \opn{Hom}_B(-, J) ,
+\end{equation}
+where the functors (\ref{eqn:2180}) are contravariant functors from 
+$\dcat{D}(A)$ to itself, and the functors (\ref{eqn:2181}) are contravariant 
+functors from $\dcat{D}(B)$ to itself. But given $L \in \dcat{C}(B)$
+we can view $\opn{Hom}_A(L, I)$ as a complex of $B$-modules, and in this way 
+the functors (\ref{eqn:2180}) become contravariant triangulated functors
+from $\dcat{D}(B)$ to itself. Formula (\ref{eqn:2182}) shows that the functors 
+(\ref{eqn:2180}) and (\ref{eqn:2181}) are isomorphic.
+\end{proof}
+
+\begin{lem} \label{lem:2171}
+Let $A \to B$ be a flat ring homomorphism, let 
+$M \in \dcat{D}^{-}_{\mrm{f}}(A)$, and let 
+$N \in \dcat{D}^{+}(A)$. Then there is an isomorphism 
+\[ \opn{RHom}_A(M, N) \ot_A B \cong 
+\opn{RHom}_B(B \ot_A M, B \ot_A N) \]
+in $\dcat{D}(B)$. This isomorphism is functorial in $M$ and $N$. 
+\end{lem}
+
+\begin{proof}
+Theorem \ref{thm:2700} tells us that 
+\[  \opn{RHom}_A(M, N) \ot_A B \cong 
+\opn{RHom}_A(M, B \ot_A N) \]
+in $\dcat{D}(B)$. Then, by forward adjunction (Theorem \ref{thm:3085})
+we get 
+\[ \opn{RHom}_A(M, B \ot_A N) \cong \opn{RHom}_B(B \ot_A M, B \ot_A N) . \]
+The functoriality is clear. 
+\end{proof}
+
+\begin{lem} \label{lem:2185} 
+Let $I$ be an $A$-module. The following conditions are equivalent\tup{:}
+\begin{enumerate}
+\rmitem{i} $I$ is injective.
+
+\rmitem{ii} For every finitely generated $A$-module $M$ the module 
+$\opn{Ext}^1_A(M, I)$ is zero.  
+\end{enumerate}
+\end{lem}
+
+\begin{exer} \label{exer:2185}
+Prove Lemma \ref{lem:2185}. (Hint: use the Baer criterion, Theorem 
+\ref{thm:151}.) 
+\end{exer}
+
+\begin{lem} \label{lem:2172} 
+The injective dimension of a complex $N \in \dcat{D}(A)$ equals the 
+cohomological dimension of the functor
+\[ \opn{RHom}_{A}(-, N)|_{\dcat{M}_{\mrm{f}}(A)^{\mrm{op}}} : 
+\dcat{M}_{\mrm{f}}(A)^{\mrm{op}} \to \dcat{D}(A) . \]
+\end{lem}
+
+\begin{proof}
+By definition the injective dimension of $N$, say $d$,
+is the cohomological dimension of the functor
+$\opn{RHom}_{A}(-, N) : \dcat{D}(A)^{\mrm{op}} \to \dcat{D}(A)$.
+Let $d'$ be  the cohomological dimension of the functor
+$\opn{RHom}_{A}(-, N)|_{\dcat{M}_{\mrm{f}}(A)^{\mrm{op}}}$. 
+Obviously the inequality $d \geq d'$ holds. 
+For the reverse inequality we may assume that $\opn{H}(N)$ is nonzero
+and $d' < \infty$. This implies that there are integers $q_1 = q_0 + d'$
+such that for every $M \in \dcat{M}_{\mrm{f}}(A)$ there is an inclusion
+\[ \opn{con} \bigl( \opn{H} \bigl( \opn{RHom}_{A}(M, N) \bigr) \bigr) \sub 
+[q_0, q_1] . \]
+In particular, for $M = A$, we get 
+$\opn{con}(\opn{H}(N)) \sub [q_0, q_1]$. 
+Let $N \to J$ be an injective resolution in 
+$\dcat{C}(A)$ with $\opn{inf}(J) \geq q_0$.  
+Take $I := \opn{smt}^{\leq q_1}(J)$, the smart truncation from
+Definition \ref{dfn:2320}.
+The proof of Proposition \ref{prop:2115}, plus Lemma \ref{lem:2185}, 
+show that $N \to I$ is an injective resolution. But then 
+$\opn{RHom}_{A}(-, N) \cong \opn{Hom}_{A}(-, I)$,
+so this functor has cohomological displacement in the interval 
+$[q_0, q_1]$, that has length $d'$. 
+\end{proof}
+
+Recall that a ring homomorphism $A \to B$ is called {\em finite} if it makes
+$B$ into a finitely generated $A$-module.  
+
+\begin{prop} \label{prop:2200}
+Let $A \to B$ be a finite ring homomorphism, and let $R_A$ be a dualizing 
+complex over $A$. Then the complex 
+\[ R_B := \opn{RHom}_{A}(B, R_A) \in \dcat{D}(B) \]
+is a dualizing complex over $B$. 
+\end{prop}
+
+\begin{proof}
+Consider the duality functors
+$D_{A} := \opn{RHom}_{A}(-, R_{A})$
+and $D_{B} := \lb \opn{RHom}_B(-, R_B)$.
+As explained in the proof of Lemma \ref{lem:2170}(2),
+they are isomorphic as contravariant triangulated functors from $\dcat{D}(B)$ 
+to itself. 
+Since $R_{B} = D_A(B)$ and $B \in \dcat{D}^{\mrm{b}}_{\mrm{f}}(A)$,
+by Corollary \ref{cor:2155} we have 
+$R_B \in \dcat{D}^{\mrm{b}}_{\mrm{f}}(A)$. 
+But then also $R_B \in \dcat{D}^{\mrm{b}}_{\mrm{f}}(B)$.
+Next, because $D_B(L) \cong D_A(L)$ for all $L \in \dcat{D}(B)$, this implies 
+that the cohomological dimension of $D_B$ is at most that of 
+$D_A$, which is finite. We see that the injective dimension of the complex 
+$R_B$ is finite. Lastly, there is an isomorphism
+$D_B \circ D_B \cong D_A \circ D_A$
+as functors from $\dcat{D}^{\mrm{b}}_{\mrm{f}}(B)$ to itself, 
+and hence 
+$\opn{ev}^{\mrm{R, R}} : \opn{Id} \to D_B \circ D_B$ is an isomorphism.
+Applying this to the object 
+$B \in \dcat{D}^{\mrm{b}}_{\mrm{f}}(B)$
+we see that 
+$\opn{hm}^{\mrm{R}}_{R_B} = \opn{ev}^{\mrm{R, R}}_{B} : B \to 
+(D_B \circ D_{B})(B)$  
+is an isomorphism. So $R_B$ has the derived Morita property.
+The conclusion is that $R_B$ is a dualizing complex over 
+$B$. 
+\end{proof}
+
+Recall that a ring homomorphism $A \to B$ is called a {\em localization} if $B$ 
+is isomorphic, as an $A$-ring, to the localization $A_S$ of $A$ with respect to 
+some multiplicatively closed subset $S$. 
+
+\begin{prop} \label{prop:2201}
+Let $A \to B$ be a localization ring homomorphism, and let $R_A$ be a 
+dualizing complex over $A$. Then the complex 
+\[ R_B := B \ot_A R_A \in \dcat{D}(B) \]
+is a dualizing complex over $B$. 
+\end{prop}
+
+\begin{proof}
+It is clear that 
+$R_B \in \dcat{D}^{\mrm{b}}_{\mrm{f}}(B)$.
+By Lemma \ref{lem:2172}, to compute the injective dimension of 
+$R_B$ it is enough to look at $\opn{RHom}_B(M, R_B)$
+for $M \in \dcat{M}_{\mrm{f}}(B)$. 
+We can find a finitely generated $A$-submodule $M' \sub M$ such that 
+$B \cd M' = M$; and then $M \cong B \ot_{A} M'$. Lemma \ref{lem:2171} 
+tells us that 
+\[ \opn{RHom}_B(M, R_B) \cong 
+\opn{RHom}_{A}(M', R_{A}) \ot_{A} B . \]
+We conclude that the injective dimension of $R_B$ is at most that of 
+$R_{A}$, which  is finite. Lastly, by the same lemma we get an isomorphism 
+\[ \opn{RHom}_B(R_B, R_B) \cong 
+\opn{RHom}_{A}(R_{A}, R_{A}) \ot_{A} B  , \]
+and it is compatible with the morphisms from $B$. Thus $R_B$ has the derived 
+Morita property.  
+\end{proof}
+
+Recall that a ring homomorphism $A \to B$ is called {\em finite type} if 
+$B$ is finitely generated as an $A$ ring (i.e.\ $B$ is a quotient of the 
+polynomial ring $A[t_1, \ldots, t_n]$ for some $n < \infty$). 
+
+\begin{dfn} \label{dfn:3211}
+A ring homomorphism $u : A \to B$ is called {\em essentially finite type}
+\index{Essentially finite type}
+(EFT) if it can be factored into $u = u_{\mrm{loc}} \circ u_{\mrm{ft}}$, where 
+$u_{\mrm{ft}} : A \to B_{\mrm{ft}}$ is a finite type ring homomorphism, and 
+$u_{\mrm{loc}} : B_{\mrm{ft}} \to B$ is a localization homomorphism.
+\end{dfn}
+
+This is illustrated in the following commutative diagram. 
+\[ \UseTips \xymatrix @C=14ex @R=6ex {
+A
+\ar[r]_{\tup{finite type}}^{u_{\mrm{ft}}}
+\ar@(u,u)[rr]^{u}
+&
+B_{\mrm{ft}}
+\ar[r]_{\tup{localization}}^{u_{\mrm{loc}}}
+&
+B 
+} \]
+
+\begin{prop} \label{prop:3255}
+Let $u : A \to  B$ be an EFT ring homomorphism.
+\begin{enumerate}
+\item Let $v : B \to C$ be another EFT ring homomorphism. Then 
+$v \circ u : A \to C$ is an EFT ring homomorphism.
+
+\item Let $A \to A'$ be a ring homomorphism, and define 
+$B' := A' \ot_A B$. Then the induced ring homomorphism 
+$u' : A' \to B'$ is EFT. 
+
+\item If the ring $A$ is noetherian, then $B$ is also noetherian. 
+\end{enumerate}
+\end{prop}
+
+\begin{exer} \label{exer:3256}
+Prove Proposition \ref{prop:3255}.
+\end{exer}
+
+\begin{exa} \label{exa:3255}
+Let $\K$ be a noetherian ring, let $X$ be a finite type $\K$-scheme, and let 
+$x \in X$ be a point. Then the local ring $\OO_{X, x}$ is an EFT $\K$-ring. 
+\end{exa}
+
+\begin{thm} \label{thm:2170}
+Let $\K$ be a regular noetherian commutative ring, and let $A$ be an 
+essentially finite type commutative $\K$-ring. Then $A$ has a dualizing 
+complex% 
+\index{Dualizing complex! commutative}. 
+\end{thm}
+
+See Definition \ref{dfn:3075} regarding regular rings. 
+
+\begin{proof}
+The ring homomorphism $\K \to A$ can be factored as 
+$\K \to A_{\mrm{pl}} \to A_{\mrm{ft}} \to A$, 
+where $A_{\mrm{pl}} = \K[t_1, \ldots, t_n]$ is a polynomial ring,
+$A_{\mrm{pl}} \to A_{\mrm{ft}}$ is surjective, and $A_{\mrm{ft}} \to A$ is a 
+localization. (The subscripts stand for ``polynomial'' and ``finite type'' 
+respectively.) According to \cite[Theorem 19.5]{Mats} the ring $A_{\mrm{pl}}$ 
+is regular; so, as shown in Example \ref{exa:2171}, the complex
+$R_{\mrm{pl}} := A_{\mrm{pl}}$ is a dualizing complex over $A_{\mrm{pl}}$. 
+
+Define 
+$R_{\mrm{ft}} := \opn{RHom}_{A_{\mrm{pl}}}(A_{\mrm{ft}}, R_{\mrm{pl}}) \in 
+\dcat{D}(A_{\mrm{ft}})$. 
+By Proposition \ref{prop:2200} this is a 
+dualizing complex over $A_{\mrm{ft}}$. 
+Finally define 
+$R := A \ot_{A_{\mrm{ft}}} R_{\mrm{ft}} \in \dcat{D}^{\mrm{b}}_{\mrm{f}}(A)$. 
+By Proposition \ref{prop:2201} this is dualizing complex over $A$. 
+\end{proof}
+
+The proof of Theorem \ref{thm:2170} might give the impression that $A$ could 
+have a lot of nonisomorphic dualizing complexes. This is not quite true, as the 
+next theorem demonstrates. 
+
+\begin{thm} \label{thm:2175}
+Let $A$ be a noetherian commutative ring with connected spectrum, and let $R$ 
+and $R'$ be dualizing complexes over $A$. Then there is a rank $1$ projective 
+$A$-module $L$ and an integer $d$, such that 
+$R' \cong R \ot_A L[d]$ in $\dcat{D}(A)$. 
+\end{thm}
+
+We need some lemmas before proving the theorem. 
+
+\begin{lem}[K\"unneth Trick] \label{lem:2177} 
+Let $M, M' \in  \dcat{D}^{-}(A)$, and let $i, i' \in \Z$ be such that 
+$\opn{sup}(\opn{H}(M)) \leq i$ and $\opn{sup}(\opn{H}(M')) \leq i'$. 
+Then 
+\[ \opn{H}^{i + i'}(M \ot^{\mrm{L}}_A M') \cong 
+\opn{H}^i(M) \ot_A \opn{H}^{i'}(M')  \]
+as $A$-modules. 
+\end{lem}
+
+\begin{exer} \label{exer:2178}
+Prove Lemma \ref{lem:2177}.
+\end{exer}
+
+\begin{lem}[Projective Truncation Trick] \label{lem:2189} 
+Let $M \in \dcat{D}^-(A)$, with $i_1 := \lb \opn{sup}(\opn{H}(M)) \in \Z$. 
+Assume the $A$-module $P := \opn{H}^{i_1}(M)$ is projective. 
+Then there is an isomorphism 
+$M \cong \opn{smt}^{\leq i_1 - 1}(M) \oplus P[- i_1]$  
+in $\dcat{D}(A)$. 
+\end{lem}
+
+\begin{exer} \label{exer:2189}
+Prove Lemma \ref{lem:2189}. (Hint: first replace $M$ with its truncation 
+$\opn{smt}^{\leq i_1}(M)$. Then prove that $P$ is a direct summand of 
+$M^{i_1}$.) 
+\end{exer}
+
+By a {\em principal open set} in the affine scheme in $\opn{Spec}(A)$ we mean a 
+set of the form $\opn{Spec}(A_s)$, where $A_s$ is the localization of $A$ at an 
+element $s \in A$. Thus 
+\[ \opn{Spec}(A_s) = \{ \p \in \opn{Spec}(A) \mid s \notin \p \} . \]
+
+\begin{lem} \label{lem:2186} 
+Let $M, M' \in \dcat{M}_{\mrm{f}}(A)$, and let $\p \sub A$ be a prime ideal. 
+\begin{enumerate}
+\item If $M_{\p} \neq 0$ and $M'_{\p} \neq 0$ then 
+$M_{\p} \ot_{A_{\p}} M'_{\p} \neq 0$. 
+
+\item If $M_{\p} \ot_{A_{\p}} M'_{\p} \cong A_{\p}$ then 
+$M_{\p} \cong M'_{\p} \cong A_{\p}$.
+
+\item If $M_{\p} \cong A_{\p}$, then there is a principal open neighborhood 
+$\opn{Spec}(A_s)$ of $\p$ in $\opn{Spec}(A)$ such that 
+$M_s \cong A_s$ as $A_s$-modules. 
+\end{enumerate}
+\end{lem}
+
+\begin{exer} \label{exer:2187}
+Prove Lemma \ref{lem:2186}. (Hint: use the Nakayama Lemma.) 
+\end{exer}
+
+Here is a pretty difficult technical lemma. 
+
+\begin{lem} \label{lem:2175}
+In the situation of the theorem, let 
+$M, M' \in \dcat{D}^{-}_{\mrm{f}}(A)$
+satisfy \lb 
+$M \ot^{\mrm{L}}_A M' \cong A$ in $\dcat{D}(A)$. 
+Then $M \cong L[d]$ in $\dcat{D}(A)$ for some rank $1$ projective $A$-module 
+$L$ and an integer $d$.
+\end{lem}
+
+\begin{proof}
+For each prime $\p \sub A$ let $M_{\p} := A_{\p} \ot_A M$, and define 
+$e_{\p} := \opn{sup}(\opn{H}(M_{\p}))$ in $\Z \cup \{ -\infty \}$.
+Define the generalized integer $e'_{\p}$ similarly. 
+
+Fix one prime $\p$. 
+The associativity and symmetry of the left derived tensor product imply the 
+existence of these isomorphisms
+\begin{equation} \label{2189}
+\begin{aligned}
+& M_{\p} \ot^{\mrm{L}}_{A_{\p}} M'_{\p} = 
+(A_{\p} \ot^{\mrm{L}}_{A} M) \ot^{\mrm{L}}_{A_{\p}}
+(A_{\p} \ot^{\mrm{L}}_{A} M')
+\\
+& \qquad 
+\cong A_{\p} \ot^{\mrm{L}}_{A} (M \ot^{\mrm{L}}_A M') 
+\cong A_{\p} \ot^{\mrm{L}}_{A} A \cong A_{\p} 
+\end{aligned}
+\end{equation}
+in $\dcat{D}(A_{\p})$. Since $A_{\p} \neq 0$, it follows that
+$\opn{H}(M_{\p}) \neq 0$ and $\opn{H}(M'_{\p}) \neq 0$.
+So $e_{\p}, e'_{\p} \in \Z$, and 
+$\opn{H}^{e_{\p}}(M_{\p})$, $\opn{H}^{e'_{\p}}(M'_{\p})$ are nonzero finitely 
+generated $A_{\p}$-modules. By Lemma \ref{lem:2186}(1) we know that 
+\[ \opn{H}^{e_{\p}}(M_{\p}) \ot_{A_{\p}} \opn{H}^{e'_{\p}}(M'_{\p}) \neq 0 . \]
+According to Lemma \ref{lem:2177} we have 
+\[ \opn{H}^{e_{\p}}(M_{\p}) \ot_{A_{\p}} \opn{H}^{e'_{\p}}(M'_{\p}) \cong 
+\opn{H}^{(e_{\p} + e'_{\p})}(M_{\p} \ot^{\mrm{L}}_{A_{\p}} M'_{\p}) \cong 
+\opn{H}^{(e_{\p} + e'_{\p})}(A_{\p}) . \]
+But $A_{\p}$ is concentrated in degree $0$; this forces 
+$e_{\p} + e'_{\p} = 0$ and 
+\[ \opn{H}^{e_{\p}}(M_{\p}) \ot_{A_{\p}} \opn{H}^{e'_{\p}}(M'_{\p}) \cong 
+A_{\p} \]
+in $\dcat{D}(A_{\p})$. 
+By Lemma \ref{lem:2186}(2) we now see that
+$\opn{H}^{e_{\p}}(M_{\p}) \cong \opn{H}^{e'_{\p}}(M'_{\p}) \cong A_{\p}$. 
+According to Lemma \ref{lem:2189} there are isomorphisms 
+\begin{equation} \label{eqn:2196}
+M_{\p} \cong A_{\p}[-e_{\p}] \oplus \opn{smt}^{\leq e_{\p} - 1}(M_{\p}) 
+\end{equation}
+and 
+\[ M'_{\p} \cong A_{\p}[-e'_{\p}] \oplus \opn{smt}^{\leq e'_{\p} - 1}(M'_{\p})  
+\]
+in $\dcat{D}(A_{\p})$. 
+These, with (\ref{2189}), give an isomorphism
+\begin{equation} \label{eqn:2195}
+\bigl( A_{\p}[-e_{\p}] \oplus \opn{smt}^{\leq e_{\p} - 1}(M_{\p}) \bigr) 
+\ot^{\mrm{L}}_{A_{\p}}
+\bigl( A_{\p}[-e'_{\p}] \oplus \opn{smt}^{\leq e'_{\p} - 1}(M'_{\p}) \bigr)
+\cong A_{\p} .
+\end{equation}
+The left side of (\ref{eqn:2195}) is the direct sum of four objects. 
+Passing to the cohomology of (\ref{eqn:2195}) we see that 
+$N := \opn{H} \bigl( \opn{smt}^{\leq e_{\p} - 1}(M_{\p})[-e'_{\p}] \bigr)$ 
+is a direct summand of $A_{\p}$.
+But, since $e'_{\p} + e_{\p} = 0$, the graded module $N$ is concentrated in the 
+degree interval $[\infty,  -1]$. It follows that $N = 0$. Therefore, by 
+(\ref{eqn:2196}), we deduce that 
+\begin{equation} \label{eqn:2197}
+M_{\p} \cong A_{\p}[-e_{\p}] . 
+\end{equation}
+
+The calculation above works for every prime $\p$. 
+From (\ref{eqn:2197}) we get 
+\begin{equation} \label{eqn:2189}
+A_{\p} \ot_A \opn{H}^i(M) \cong \opn{H}^i(M_{\p}) \cong 
+\begin{cases}
+A_{\p} & \tup{if} \ i = e_{\p} , 
+\\
+0 & \tup{otherwise} . 
+\end{cases}
+\end{equation}
+
+We now use Lemma \ref{lem:2186}(3) to deduce that for every prime $\p$ there is 
+an open neighborhood $U_{\p}$ of $\p$ in $\opn{Spec}(A)$ such that 
+$\opn{H}^{e_{\p}}(M_{\q}) \cong A_{\q}$ for all $\q \in U_{\p}$.
+This implies, by equation (\ref{eqn:2189}), that 
+$e_{\q} = e_{\p}$.  Therefore $\p \mapsto e_{\p}$ is a locally constant function
+$\opn{Spec}(A) \to \Z$. We assumed that $\opn{Spec}(A)$ is connected, and this 
+implies that this is a constant function, say $e_{\p} = -d$ for some integer 
+$d$. 
+
+Define $L := \opn{H}^{-d}(M) \in \dcat{M}_{\mrm{f}}(A)$. 
+Using truncation we see that $M \cong L[d]$ in 
+$\dcat{D}(A)$. We know that $L_{\p} \cong A_{\p}$ for all primes $\p$. 
+Finally, Lemma \ref{lem:2171} says that the $A$-module $L$ is projective. 
+\end{proof}
+
+\begin{rem} \label{rem:2185}
+Lemma \ref{lem:2175} is actually true in much greater generality: 
+the ring $A$ does not have to be noetherian, and we do not have to assume 
+that the complexes $M$ and $M'$ have bounded above or finite cohomology. 
+The proof is harder (see the proof of Theorem \ref{thm:3585}).
+\end{rem}
+
+\begin{proof}[Proof of Theorem \tup{\ref{thm:2175}}]
+Define the duality functors
+$D := \opn{RHom}_{A}(-, R)$ and \lb $D' := \opn{RHom}_{A}(-, R')$; these are 
+finite 
+dimensional contravariant triangulated functors from $\dcat{D}_{\mrm{f}}(A)$ to 
+itself. And define $F := D' \circ D$ and $F' := D \circ D'$, that are finite 
+dimensional (covariant) triangulated functors from $\dcat{D}_{\mrm{f}}(A)$ to 
+itself. Let
+\begin{equation} \label{eqn:2177}
+M := F(A) = D'(D(A)) = \opn{RHom}_{A}(R, R')
+\end{equation}
+and
+\[ M' := F'(A) = D(D'(A)) = \opn{RHom}_{A}(R', R) . \]
+These are objects of $\dcat{D}^{\mrm{b}}_{\mrm{f}}(A)$. 
+
+For every object $N \in \dcat{D}(A)$ there is a morphism 
+\[ \psi_N : N \ot^{\mrm{L}}_A \opn{RHom}_{A}(R, R') \to 
+\opn{RHom}_{A} \bigl( \opn{RHom}_{A} (N, R) , R' \bigr) \]
+defined as follows: we choose a K-projective resolution $P \to N$
+and a K-injective resolution $R' \to I'$. Then $\psi_N$ is represented by the 
+obvious homomorphism of complexes 
+\[ P \ot^{}_A \opn{Hom}_{A}(R, I') \to 
+\opn{Hom}_{A} \bigl( \opn{Hom}_{A} (P, R) , I' \bigr) . \]
+As $N$ changes, $\psi_N$ is a morphism of triangulated functors
+$\psi : (-) \ot^{\mrm{L}}_A M \to D' \circ D  = F$.
+For $N = A$ the morphism $\psi_A$ is an isomorphism, by equation 
+(\ref{eqn:2177}). The functor $F$ has finite cohomological dimension, and the 
+functor $(-) \ot^{\mrm{L}}_A M$ has bounded above cohomological displacement. 
+According to Theorem \ref{thm:2135}, the morphism 
+$\psi_N$ is an isomorphism for every $N \in \dcat{D}^-_{\mrm{f}}(A)$. 
+In particular this is true for $N := M'$. So, using Theorem \ref{thm:2155}, 
+we obtain 
+\[ M' \ot^{\mrm{L}}_A M \cong (D' \circ D)(M') \cong 
+(D' \circ D \circ D \circ D')(A) \cong A . \]
+According to Lemma \ref{lem:2175} there is an isomorphism 
+$M \cong L[d]$. Finally, using the isomorphism $\psi_R$, we get 
+\[ R \ot_A L[d] \cong F(R) = D'(D(R)) \cong D'(A) = R' . \qedhere \]
+\end{proof}
+
+What if $\opn{Spec}(A)$ has more than one connected component?
+
+\begin{dfn} \label{dfn:3210}
+Let $A$ be a ring. 
+\begin{enumerate}
+\item We say that $A$ has a {\em finite connected component decomposition}
+if 
+\[ \opn{Spec}(A) = \coprod_{i = 1}^{m} \, \opn{Spec}(A_i) , \] 
+a finite disjoint union of nonempty connected closed subschemes. 
+
+\item If $A$ has a finite connected component decomposition as above, then 
+the 
+{\em connected component decomposition}%
+\index{Connected component decomposition}
+of $A$ is the ring isomorphism 
+$A \cong \prod_{i = 1}^{m} \, A_i$.
+\end{enumerate}
+\end{dfn}
+
+Of course, if $A$ has a finite connected component decomposition, then 
+this decomposition is unique, up to renumbering. 
+
+\begin{prop} \label{prop:5080}
+If $A$ is noetherian, then it has a finite connected component decomposition.
+\end{prop}
+
+\begin{exer} \label{exer:5080} \mbox{}
+\begin{enumerate}
+\item Prove the proposition above. 
+
+\item Find a ring $A$ that does not have a finite connected component 
+decomposition.
+\end{enumerate}
+\end{exer}
+
+\begin{cor} \label{cor:2175}
+Let $R$ and $R'$ be dualizing complexes over $A$, and let 
+$A = \prod_{i = 1}^m A_i$ be the connected component decomposition of $A$.
+Then there is an isomorphism 
+\[ R' \cong R \ot_A \bigl( L_1[d_1] \oplus \cdots \oplus L_m[d_m] \bigr) \]
+in $\dcat{D}(A)$, where each $L_i$ is a rank $1$ projective 
+$A_i$-module, and each $d_i$ is an integer. Furthermore, the modules $L_i$ are 
+unique up to isomorphism, and the integers $d_i$ are unique. 
+\end{cor}
+
+\begin{exer} \label{exer:2176}
+Prove Corollary \ref{cor:2175}.
+\end{exer}
+
+\begin{rem} \label{rem:2195}
+A rank $1$ projective $A$-module $L$ is also called an {\em invertible 
+$A$-module}. This is because $L$ is invertible for the tensor product. 
+Recall that the group of isomorphism classes of invertible $A$-modules is 
+the {\em commutative Picard group} $\opn{Pic}_A(A)$. 
+
+The {\em commutative derived Picard group} $\opn{DPic}_A(A)$ is the abelian 
+group $\opn{Pic}_A(A) \times \Z^m$ that classifies dualizing complexes over 
+$A$, as in Corollary \ref{cor:2175}.
+
+Now assume that $A$ is {\em noncommutative}, and flat central over a 
+commutative ring $\K$. There are noncommutative versions of dualizing complexes 
+and of ``invertible'' complexes, that are called {\em tilting complexes}. The 
+latter form the nonabelian group $\opn{DPic}_{\K}(A)$, and it classifies 
+noncommutative dualizing complexes. See
+\cite{Ric1}, \cite{Ric2}, \cite{Kel1}, \cite{Ye4} and \cite{RoZi}. 
+We shall study this material in Sections \ref{sec:perf-tilt-NC} 
+and \ref{sec:rigid-DC-NC} of the book. 
+\end{rem}
+
+\begin{rem} \label{rem:2196}
+The lack of uniqueness of dualizing complexes has always been a source of 
+difficulty. A certain uniqueness or functoriality is needed, already for 
+proving existence of dualizing complexes on schemes. 
+
+In \cite{RD} Grothendieck utilized local and global duality in 
+order to formulate a suitable uniqueness of dualizing 
+complexes. This approach was very cumbersome (even without providing details!).
+
+Since then there have been a few approaches in the literature to attack this 
+difficulty. Generally speaking, these approaches came in two flavors:
+\begin{itemize}
+\item {\em Representability}. This started with P. Deligne's Appendix to 
+\cite{RD}, and continued most notably in the work of A. Neeman, J. Lipman and 
+their coauthors. See \cite{Ne2}, \cite{Li2} and their references. 
+
+\item {\em Explicit Constructions}. Mostly in the early work of Lipman et 
+al., including \cite{Li1} and \cite{LNS}, and in the work of A. Yekutieli 
+\cite{Ye2}, and \cite{Ye3} and \cite{Ye5}. 
+\end{itemize}
+
+In Subsection \ref{subsec:rig-res-cplx-rng} of the book we will present {\em 
+rigid residue complexes}, for which there is a built-in uniqueness, and even 
+functoriality (see Remark \ref{rem:4191}). 
+\end{rem}
+
+\newpage
+
+
+
+\mysubsection{Interlude: The Matlis Classification of Injective Modules}
+\label{subsec:mr-inj-res}
+
+We start with a few facts about injective modules over rings that are neither 
+commutative nor noetherian. Sources for this material are \cite{Rot} and
+\cite{Lam}. 
+
+\begin{dfn} \label{dfn:2205} \mbox{}
+\begin{enumerate}
+\item Let $M$ be an $A$-module. A submodule $N \sub M$ is called an 
+{\em essential submodule} 
+\index{Essential! submodule}
+if for every nonzero submodule $L \sub M$, the 
+intersection $N \cap L$ is nonzero. In this case we also say that $M$ is an 
+{\em essential extension} of $N$. 
+
+\item An {\em essential monomorphism}
+\index{Essential! monomorphism} 
+is a monomorphism $\phi : N \inj M$
+whose image is an essential submodule of $M$.   
+
+\item Let $M$ be an $A$-module. An {\em injective hull}
+\index{Injective hull}
+(or {\em injective 
+envelope}) of $M$ is an injective module $I$, together with an essential 
+monomorphism $M \inj I$. 
+\end{enumerate}
+\end{dfn}
+
+\begin{prop} \label{prop:2225}
+Every $A$-module $M$ admits an injective hull. 
+\end{prop}
+
+\begin{proof}
+See \cite[Theorem 3.30]{Rot} or \cite[Section 3.D]{Lam}. 
+\end{proof}
+
+There is a weak uniqueness result for injective hulls.
+
+\begin{prop} \label{prop:2207}
+Let $M$ be an $A$-module, and suppose $\phi : M \inj I$ and 
+$\phi' : M \inj I'$ are monomorphisms into injective modules. 
+\begin{enumerate}
+\item If $\phi$ is essential, then there is a monomorphism 
+$\psi : I \inj I'$ such that $\psi \circ \phi = \phi'$.
+
+\item If $\phi'$ is also essential, then $\psi$ above is an isomorphism.
+\end{enumerate}
+\end{prop}
+
+\begin{exer} \label{exer:2207}
+Prove Proposition \ref{prop:2207}.
+\end{exer}
+
+In classical homological algebra we talk about the minimal injective resolution 
+of a module $M$. Let us recall it. We start by taking the injective hull
+$\phi : M \inj I^0$. This gives an exact sequence 
+\[ 0 \to M \xar{\phi} I^0 \to M^1 \to 0 , \]
+where $M^1$ is the cokernel of $\phi$. Then we take the injective hull
+$M^1 \inj I^1$, and this gives a longer exact sequence 
+\[ 0 \to M \to I^0 \to I^1 \to M^2 \to 0 , \]
+and so on. We want to generalize this idea to complexes. 
+
+\begin{dfn} \label{dfn:2210}
+\mbox{}
+\begin{enumerate}
+\item A {\em minimal complex of injective $A$-modules}%
+\index{Complex in abelian category! minimal injective}
+is a bounded below complex of injective modules $I$, such that for every integer 
+$q$ the submodule of cocycles $\opn{Z}^q(I) \sub I^q$ is essential. 
+
+\item Let $M \in \dcat{D}^+(A)$. A 
+{\em minimal injective resolution}% 
+\index{Resolution! minimal injective}
+of $M$ is a quasi-iso\-morphism $M \to I$ into a minimal complex of injectives 
+$I$.
+\end{enumerate}
+\end{dfn}
+
+\begin{prop} \label{prop:2210}
+Let $M \in \dcat{D}^+(A)$.
+\begin{enumerate}
+\item  There exists a minimal injective resolution $\phi : M \to I$.
+
+\item If $\phi' : M \to I'$ is another minimal injective resolution, then there 
+is an isomorphism $\psi : I \to I'$ in $\dcat{C}_{\mrm{str}}(A)$ such that 
+$\phi' = \psi \circ \phi$.
+
+\item If $M$ has finite injective dimension, then it has a bounded minimal 
+injective resolution $I$. 
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+(1) We know that there is a quasi-isomorphism $M \to J$ where $J$ is a bounded 
+below complex of injective modules. For every $q$ let $E^q$ be an injective 
+hull of $\opn{Z}^q(J)$. By Proposition \ref{prop:2207}(1) we can assume that 
+$E^q$ sits inside $J^q$ like this: $\opn{Z}^q(J) \sub E^q \sub J^q$.
+Since $E^q$ is injective, we can decompose $J^q$ into a direct sum:
+$J^q \cong E^q \oplus K^q$. The homomorphism 
+$\d_J^q : K^q \to J^{q + 1}$ 
+is a monomorphism since $K^q \cap \opn{Z}^q(J) = 0$.
+And the image $\d_J^q(K^q)$ is contained in $E^{q + 1}$. 
+Thus $\d_J^q(K^q)$ is a direct summand of $E^{q + 1}$, and this shows that the 
+quotient
+\[ I ^{q + 1} := E^{q + 1} / \d_J^q(K^q) \cong
+J^{q + 1} / (K^{q + 1} \oplus \d_J^q(K^q)) \]
+is an injective module. The canonical surjection of graded modules 
+$\pi : J \to I$ is a homomorphism of complexes, with kernel the acyclic complex 
+\[ \bigoplus_{q \in \Z} \ \Bigl( K^q[-q] \xar{\d_J^q} \d_J^q(K^q)[-q - 1] 
+\Bigr) . \]
+Therefore $\pi$ is a quasi-isomorphism. A short calculation shows that $I$ is a 
+minimal complex of injectives, i.e.\ $\opn{Z}^q(I) \sub I^q$ is essential. 
+
+\medskip \noindent
+(2) See next exercise. (We will not need this fact.) 
+
+\medskip \noindent
+(3) According to Proposition \ref{prop:2115}, the complex $J$ that appears in 
+item (1) can be chosen to be bounded. 
+\end{proof}
+
+\begin{exer} \label{exer:2215}
+Prove Proposition \ref{prop:2210}(2). 
+\end{exer}
+
+\begin{rem} \label{rem:2210}
+Important: the isomorphisms $\psi$ in Propositions \ref{prop:2207} and 
+\ref{prop:2210} are not unique (see next exercise). We will see below (in 
+Subsection \ref{subsec:rig-res-cplx-rng}) 
+that a rigid residue complex is a minimal complex of injectives that has no 
+nontrivial rigid automorphisms. 
+\end{rem}
+
+\begin{exer} \label{exer:2210}
+Take $A := \K[[t]]$, the power series ring over a field $\K$. 
+Let $M := A / (t)$, the trivial module (the residue field viewed as an 
+$A$-module). 
+\begin{enumerate}
+\item Find a minimal injective resolution $M \to  I$. 
+
+\item Find a nontrivial automorphism of the complex $I$ in 
+$\dcat{C}_{\mrm{str}}(A)$ that fixes the submodule $M \sub I^0$. 
+\end{enumerate}
+\end{exer}
+
+Now we add the noetherian condition. 
+
+\begin{prop} \label{prop:2205}
+Assume $A$ is a left noetherian ring. 
+Let $\{ I_z \}_{z \in Z}$ be a collection of injective $A$-modules. Then 
+$I := \bigoplus_{z \in Z} I_z$ is an injective $A$-module. 
+\end{prop}
+
+\begin{exer} \label{exer:2205}
+Prove Proposition \ref{prop:2205}. (Hint: use the Baer criterion.)
+\end{exer}
+
+From here on in this subsection all rings are noetherian commutative. For 
+them much more can be said.
+
+Recall that a module $M$ is called {\em indecomposable} if it is not the 
+direct sum of two nonzero modules.  
+
+\begin{dfn} \label{dfn:2208}
+Let $\a \sub A$ be an ideal.
+\begin{enumerate}
+\item Let $M$ be an $A$-module. The {\em 
+$\a$-torsion submodule} of $M$ is the submodule $\Ga_{\a}(M)$ 
+consisting of the elements that are annihilated by powers of $\a$. Thus 
+\[ \Ga_{\a}(M) = \lim_{i \to} \, \opn{Hom}_A(A / \a^i, M) \sub M . \]
+
+\item If $\Ga_{\a}(M) = M$ then $M$ is called an {\em $\a$-torsion module}. 
+
+\item The functor 
+$\Ga_{\a} : \dcat{M}(A) \to \dcat{M}(A)$
+is called the {\em $\a$-torsion functor}. 
+\end{enumerate}
+\end{dfn}
+
+Here are some important properties of the torsion functor.
+
+\begin{prop} \label{prop:3085}
+Let $\a$ be an ideal in $A$. 
+\begin{enumerate}
+\item The functor $\Ga_{\a}$ is left exact. 
+
+\item The functor $\Ga_{\a}$ commutes with infinite direct sums. 
+\end{enumerate}
+\end{prop}
+
+\begin{exer} \label{exer:3085}
+Prove the proposition above. 
+\end{exer}
+
+Perhaps the most important theorem about injective modules over 
+noetherian commutative rings is the following structural result due to E. 
+Matlis \cite{Matl} from 1958. See also \cite[Section V.4]{Ste}, 
+\cite[Sections 3.F and 3.I]{Lam}, \cite[Section 18]{Mats} and \cite{BrSh}.
+
+For a prime ideal $\p \sub A$ we write 
+$\kk(\p) := A_{\p} / \p_{\p}$, the residue field of $\p$. 
+
+\begin{thm}[Matlis] \label{thm:2026}
+Let $A$ be a noetherian commutative ring. 
+\begin{enumerate}
+\item Let $\p \sub A$ be a prime ideal, and let $J(\p)$ be the injective hull 
+of the $A_{\p}$-module $\kk(\p)$. Then, as an $A$-module, $J(\p)$ is
+injective, indecomposable and $\p$-torsion. 
+
+\item Suppose $I$ is an indecomposable injective $A$-module. Then 
+$I \cong J(\p)$ for a unique prime ideal $\p \sub A$. 
+
+\item Every injective $A$ module $I$ is a direct sum of indecomposable 
+injective $A$-modules. 
+\end{enumerate}
+\end{thm}
+
+Theorem \ref{thm:2026} tells us that every injective $A$-module $I$ can be 
+written as a direct sum 
+\begin{equation} \label{eqn:2215}
+I \cong \bigoplus_{\p \in \opn{Spec}(A)} \, J(\p)^{\oplus \mu_{\p}} 
+\end{equation}
+for a collection of cardinal numbers 
+$\{ \mu_{\p} \}_{\p \in \opn{Spec}(A)}$, called the {\em Bass numbers}. 
+General counting tricks can show that the multiplicity $\mu_{\p}$ is an 
+invariant of $I$. But we can be more precise: 
+
+\begin{prop} \label{prop:2208}
+Let $I$ be an injective $A$-module, with direct sum decomposition 
+\tup{(\ref{eqn:2215})}.
+Then for every $\p$ there is equality
+\[ \mu_{\p} = \opn{rank}_{\kk(\p)} \bigl( 
+\opn{Hom}_{A_{\p}} \bigl( \kk(\p) , A_{\p} \ot_A I \bigr) \bigr) . \]
+\end{prop}
+
+\begin{proof}
+Consider another prime $\q$. If $\q \nsubseteq \p$ then there is an element
+$a \in \q - \p$, and then $a$ is both invertible and locally nilpotent on 
+$A_{\p} \ot_A J(\q)$. This implies that $A_{\p} \ot_A J(\q) = 0$.
+On the other hand, if $\q \sub \p$, then 
+$A_{\p} \ot_A J(\q) \cong J(\q)$. Therefore 
+$A_{\p} \ot_A I \cong  \bigoplus_{\q \sub \p} J(\p)^{\oplus \mu_{\p}}$.
+
+Next, if $\q \varsubsetneq \p$, then there is an element $b \in \p - \q$, 
+and it is both invertible and zero on the module 
+$\opn{Hom}_{A_{\p}} \bigl( \kk(\p) , J(\q)  \bigr)$.
+The implication is that this module is zero.
+
+Finally, if $\q = \p$ then we have 
+\[ \opn{Hom}_{A_{\p}} \bigl( \kk(\p) , J(\p)  \bigr) \cong 
+\opn{Hom}_{A_{\p}} \bigl( \kk(\p) , \kk(\p)  \bigr) \cong 
+\kk(\p) , \]
+because the inclusion $\kk(\p) \sub J(\p)$ is essential. 
+
+Since $\kk(\p)$ is a finitely generated $A_{\p}$-module, the functor 
+$\opn{Hom}_{A_{\p}}(\kk(\p), -)$
+commutes with infinite direct sums. Therefore, putting all these cases 
+together, we see that 
+\[ \opn{Hom}_{A_{\p}} \bigl( \kk(\p) , A_{\p} \ot_A I \bigr) \bigr) \cong 
+\kk(\p)^{\oplus \mu_{\p}}  \]
+as $\kk(\p)$-modules.
+\end{proof}
+
+
+
+
+\mysubsection{Residue Complexes} \label{subsec:res-cplx-ring}
+
+In this subsection $A$ is a noetherian commutative ring. 
+Here we introduce residue complexes (called residual complexes in \cite{RD}). 
+Most of the material is taken from the original \cite{RD}. 
+In Example \ref{exa:2245} we will see the relation between the geometry of 
+$\opn{Spec}(A)$ and the structure of dualizing complexes over $A$ (continuing 
+Example \ref{exa:2252} from the Introduction). 
+
+\begin{lem} \label{lem:2200}
+Let $R$ be a dualizing complex over $A$ and let $\p \sub A$ be a prime ideal. 
+We write 
+$R_{\p} := A_{\p} \ot_A R \in \dcat{D}(A_{\p})$.
+There is an integer $d$ such that 
+\[ \opn{Ext}^i_{A_{\p}} \bigl(\kk(\p), R_{\p} \bigr) \cong 
+\begin{cases}
+\kk(\p) & \tup{if} \ i = -d , 
+\\
+0 & \tup{otherwise} . 
+\end{cases} \]
+\end{lem}
+
+\begin{proof}
+By Proposition \ref{prop:2201}, $R_{\p}$ is a dualizing complex over the local 
+ring $A_{\p}$. And by Proposition \ref{prop:2200},
+$S := \opn{RHom}_{A_{\p}} \bigl( \kk(\p), R_{\p} \bigr)$ 
+is a dualizing complex over the residue field $\kk(\p)$.  
+Since $\kk(\p)$ is a field, it is a regular ring, and so it is a dualizing 
+complex over itself. Theorem  \ref{thm:2175} tells us that 
+$S \cong \kk(\p)[d]$ in $\dcat{D}(\kk(\p))$ 
+for some integer $d$.  
+\end{proof}
+
+\begin{dfn} \label{dfn:2200}
+The number $d$ in Lemma \ref{lem:2200} is called the {\em dimension of $\p$ 
+relative to $R$}, and is denoted by $\opn{dim}_R(\p)$. 
+In this way we obtain a function
+\[  \opn{dim}_R : \opn{Spec}(A) \to  \Z , \]
+called the {\em dimension function} 
+\index{Dimension function}
+associated to $R$. 
+\end{dfn}
+
+Let us recall a few notions regarding the combinatorics of prime ideals in a 
+ring $A$. A prime ideal $\q$ is an {\em immediate specialization} of another 
+prime $\p$ if $\p \subsetneqq \q$, and there is no other prime $\p'$ such that 
+$\p \subsetneqq \p' \subsetneqq \q$. 
+In other words, if the dimension of the local ring $A_{\q} / \p_{\q}$ is $1$. 
+
+A {\em chain of prime ideals} in $A$ is a sequence 
+$(\p_0, \ldots, \p_n)$ of primes such that 
+$\p_i \subsetneqq \p_{i + 1}$ for all $i$. The number $n$ is the {\em length} 
+of the chain. The chain is called {\em saturated} if for each $i$ the prime 
+$\p_{i + 1}$ is an immediate specialization of $\p_i$. 
+
+\begin{thm} \label{thm:2205}
+Let $R$ be a dualizing complex over $A$ and let $\p, \q \sub A$ be prime 
+ideals. Assume that $\q$ is an immediate specialization of $\p$. Then
+\[ \opn{dim}_R(\q) = \opn{dim}_R(\p) - 1 . \]
+\end{thm}
+
+To prove this theorem we need a baby version of local cohomology: 
+codimension $1$ only. 
+
+Let $\a$ be an ideal in $A$. 
+The torsion functor $\Ga_{\a}$ has a right derived functor
+$\mrm{R} \Ga_{\a}$. For every complex $M \in \dcat{D}(A)$, the module 
+$\opn{H}^p_{\a}(M) := \opn{H}^p(\mrm{R} \Ga_{\a}(M))$ 
+is called the {\em $p$-th cohomology of $M$ with support in $\a$}. 
+In case $A$ is a local ring and $\m$ is its maximal ideal, then 
+$\opn{H}^p_{\m}(M)$ is also called the {\em local cohomology of $M$}. 
+
+Now suppose $\a$ is a principal ideal in $A$, generated by an 
+element $a$. Let $A_a  = A[a^{-1}]$ be the localized ring.
+For any $A$-module $M$ we write $M_a = A_a \ot_A M$. 
+There is a canonical exact sequence 
+\begin{equation} \label{eqn:2206}
+0 \to \Ga_{\a}(M) \to M \to M_a . 
+\end{equation}
+
+\begin{lem} \label{lem:2220}
+Let $\a = (a)$ be a principal ideal in $A$. 
+\begin{enumerate}
+\item For every injective module $I$ the sequence 
+$0 \to \Ga_{\a}(I) \to I \to I_a \to 0$
+is exact. 
+
+\item For every $M \in \dcat{D}^+(A)$ there is a long exact sequence of 
+$A$-modules 
+\[ \cdots \to \opn{H}^p_{\a}(M) \to \opn{H}^p(M) \to \opn{H}^p(M_a) \to 
+\opn{H}^{p + 1}_{\a}(M) \to  \cdots . \]
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+(1) Let $J(\q)$ be an indecomposable injective $A$-module. According to Theorem 
+\ref{thm:2026}(1), if $a \in \q$ then 
+$\Ga_{\a}(J(\q)) = J(\q)$ and $J(\q)_a = 0$. But if $a \notin \q$
+then $J(\q) = J(\q)_a$ and $\Ga_{\a}(J(\q)) = 0$.
+By Theorem \ref{thm:2026} and Proposition \ref{prop:3085}(2)
+we see that each injective module $I$ breaks up into 
+a direct sum $I = \Ga_{\a}(I) \oplus I_a$, and this proves that the sequence 
+is split exact.  
+
+\medskip \noindent
+(2) Choose a resolution $M \to I$ by a bounded below complex of injectives. 
+We obtain an exact sequence of complexes as in item (1). The long 
+exact sequence in cohomology
+\[ \cdots \to \opn{H}^p(\Ga_{\a}(I)) \to \opn{H}^p(I) \to 
+\opn{H}^p(I_a) \to \opn{H}^{p + 1}(\Ga_{\a}(I)) \to  \cdots  \]
+is what we want. 
+\end{proof}
+
+\begin{lem} \label{lem:2235}
+Suppose $A$ is an integral domain, with fraction field $K$, such that
+$A \neq K$. Then $K$ is not a finitely generated $A$-module. 
+\end{lem}
+
+\begin{proof}
+Let $a \in A$ be a nonzero element that is not invertible. Then 
+\[ A \subsetneqq a^{-1} \cd A \subsetneqq a^{-2} \cd A \subsetneqq
+\cdots \sub K \]
+is an infinite ascending sequence of $A$-submodules of $K$. 
+\end{proof}
+
+\begin{lem} \label{lem:2221}
+For every ideal $\a$ and every $M \in \dcat{D}(A)$ there is an isomorphism of 
+$A$-modules 
+$\opn{H}^p_{\a}(M) \cong \lim_{k \to} \opn{Ext}^p_A( A / \a^k, M)$.
+\end{lem}
+
+\begin{proof}
+Choose a K-injective resolution $M \to I$. Then, using the fact that cohomology 
+commutes with direct limits, we have
+\[ \begin{aligned}
+& \opn{H}^p_{\a}(M) \cong \opn{H}^p(\Ga_{\a}(I)) \cong 
+\opn{H}^p \bigl( \lim\nolimits_{k \to} \, \opn{Hom}_A(A / \a^k, I) \bigr)
+\\ & \quad \cong  
+\lim_{k \to} \, \opn{H}^p \bigl( \opn{Hom}_A (A / \a^k, I) \bigr) 
+\cong \lim_{k \to} \, \opn{Ext}^p_A(A / \a^k, M) .
+\end{aligned} \]
+\end{proof}
+
+\begin{lem} \label{lem:2250}
+Assume $A$ is local, with maximal ideal $\m$. Let $R$ be a dualizing complex 
+over $A$, and let $d := \opn{dim}_R(\m)$. Then for every $i \neq -d$ 
+the local cohomology $\opn{H}^{i}_{\m}(R)$ vanishes. 
+\end{lem}
+
+See Remark \ref{rem:2250} for more about $\opn{H}^{-d}_{\m}(R)$. 
+
+\begin{proof}
+We know that 
+\[ \opn{Ext}^i_{A} \bigl( \kk(\m), R \bigr) \cong 
+\begin{cases}
+\kk(\m) & \tup{if} \ i = -d , 
+\\
+0 & \tup{otherwise} .
+\end{cases} \]
+Let $N$ be a finite length $A$-module. Since $N$ is gotten from the residue 
+field $\kk(\m)$ by finitely many extensions, induction on the length of $N$ 
+shows that 
+$\opn{Ext}^i_{A}(N, R) = 0$ for all $i \neq -d$. 
+This holds in particular for $N := A / \m^k$. 
+Now use Lemma \ref{lem:2221}.
+\end{proof}
+
+
+\begin{proof}[Proof of Theorem \tup{\ref{thm:2205}}]
+Define $d := \opn{dim}_R(\q)$ and $e := \opn{dim}_R(\p)$.
+We need to prove that $e = d + 1$. 
+
+By definition, $d$ is the unique integer s.t.\ 
+$\opn{Ext}^{-d}_{A_{\q}} \bigl( \kk(\q), R_{\q} \bigr) \neq 0$.
+Let's define $\bar{A} := A / \p$. 
+We know that 
+$\bar{R} := \opn{RHom}_{A}(\bar{A}, R)$
+is a dualizing complex over $\bar{A}$. There are isomorphisms 
+\[ \begin{aligned}
+& \opn{RHom}_{A_{\q}} \bigl( \kk(\q), R_{\q} \bigr) \cong 
+\opn{RHom}_{\bar{A}_{\q}} \bigl( \kk(\q), 
+\opn{RHom}_{A_{\q}} \bigl( \bar{A}_{\q} , R_{\q} \bigr) \bigr)
+\\
+& \quad 
+\cong \opn{RHom}_{\bar{A}_{\q}} \bigl( \kk(\q), \bar{R}_{\q} \bigr)
+\end{aligned} \]
+in $\dcat{D}(\bar{A}_{\q})$, coming from adjunction for the homomorphism 
+$A_{\q} \to \bar{A}_{\q}$. 
+There is also an isomorphism 
+\[ \opn{RHom}_{A_{\p}} \bigl( \kk(\p), R_{\p} \bigr)  
+\cong \opn{RHom}_{\bar{A}_{\p}} \bigl( \kk(\p), \bar{R}_{\p} \bigr) \]
+in $\dcat{D}(\bar{A}_{\p})$.
+Hence we can replace $A$ and $R$ with $\bar{A}_{\q}$ and $\bar{R}_{\q}$ 
+respectively. 
+
+Now we have $\p = 0$ and $A = A_{\q}$. Thus $A$ is a $1$-dimensional local 
+integral domain, 
+with only two primes ideals: $0 = \p$ and the maximal ideal $\q$. Take 
+any nonzero element $a \in \q$. Then the localization $A_a$ is the field of 
+fractions of $A$, i.e.\ $A_a = \kk(\p)$. 
+On the other hand, letting $\a := (a) \sub A$, the quotient 
+$A / \a$ is an artinian local ring. So $A / \a$ is a finite length 
+$A$-module, the ideal $\a$ is $\q$-primary, and $\Ga_{\a} = \Ga_{\q}$. 
+ 
+By Lemma \ref{lem:2220} there is an exact sequence of $A$-modules 
+\[ \cdots \to \opn{H}^{-e}_{\a}(R) \to \opn{H}^{-e}(R) \xar{\phi} 
+\opn{H}^{-e}(R_a) \to \opn{H}^{-e + 1}_{\a}(R) \to  \cdots . \]
+Since $a \neq 0$ there are equalities $A_a = A_{\p} = \opn{Frac}(A) = \kk(\p)$. 
+Then 
+$\opn{H}^{-e}(R_a) \cong \kk(\p)$, and this is not a finitely generated 
+$A$-module by Lemma \ref{lem:2235}. On the other hand the $A$-module 
+$\opn{H}^{-e}(R)$ is finitely generated. 
+We conclude that homomorphism $\phi$ is not surjective, and thus 
+$\opn{H}^{-e + 1}_{\a}(R) \neq 0$. 
+But 
+$\opn{H}^{-e + 1}_{\a}(R) = \opn{H}^{-e + 1}_{\q}(R)$,
+so according to Lemma \ref{lem:2250} we must have 
+$-e + 1 = -d$. Thus $e = d + 1$ as claimed. 
+\end{proof}
+
+\begin{cor} \label{cor:2235}
+If $A$ has a dualizing complex, then the Krull dimension of $A$ is finite. 
+More precisely, if $R$ is a dualizing complex over $A$, then 
+$\opn{dim}(A)$ is at most the injective dimension of $R$. 
+\end{cor}
+
+\begin{proof}
+Let $[i_0, i_1]$ be the injective concentration of the complex $R$. See 
+Definition \ref{dfn:2128}. This is a bounded interval. Since 
+\[ \opn{Ext}^i_{A_{\p}}(\kk(\p), R_{\p}) \cong
+\opn{Ext}^i_{A}(A / \p, R)_{\p} ,  \]
+we see that 
+$\opn{dim}_{R}(\p) \in -[i_0, i_1] = [-i_1, -i_0]$. 
+
+Let $(\p_0, \ldots, \p_n)$ be a chain of prime ideals in $A$. Because $A$ is 
+noetherian, we can squeeze more primes into this chain, until after finitely 
+many steps it becomes saturated. According to Theorem \ref{thm:2205}, for a 
+saturated chain we have 
+$n = \opn{dim}_{R}(\p_0) - \opn{dim}_{R}(\p_n)$.
+Therefore $n \leq i_1 - i_0$. 
+\end{proof}
+
+\begin{dfn} \label{dfn:2237}
+The ring $A$ is called {\em catenary} if for every pair of primes 
+$\p \sub \q$ there is a number $n_{\p, \q}$ such that for every saturated chain 
+$(\p_0, \ldots, \p_n)$ with $\p_0 = \p$ and $\p_n = \q$, there is equality
+$n = n_{\p, \q}$. 
+\end{dfn}
+
+\begin{cor} \label{cor:2236}
+If $A$ has a dualizing complex, then it is catenary.
+\end{cor}
+
+\begin{proof}
+Let $R$ be a dualizing complex over $A$. The proof of the previous corollary 
+shows that the number 
+$n_{\p, \q}= \opn{dim}_{R}(\p) - \opn{dim}_{R}(\q)$
+has the desired property. 
+\end{proof}
+
+\begin{exa} \label{exa:2245}
+This is a continuation of Example \ref{exa:2252} from the Introduction. 
+Consider the ring 
+$A = \mbb{R}[t_1, t_2, t_3] / (t_3 \cd t_1, \, t_3 \cd t_2)$.
+The affine algebraic variety
+$X = \opn{Spec}(A) \sub \mbf{A}^3_{\mbb{R}}$
+is shown in figure \ref{fig:2250}. 
+It is the union of a plane $Y$ and a line 
+$Z$, meeting at the origin. 
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.3]{fig2.jpg}
+\caption{An algebraic variety $X$ that is connected but not equidimensional: it 
+has irreducible components $Y$ and $Z$ of dimensions $2$ and $1$ respectively.
+The generic points $\p \in Y$ and $\q \in Z$ are shown.}
+\label{fig:2250}
+\end{figure}
+
+Since the ring $A$ is finite type over the field $\R$, it has a dualizing 
+complex $R$. We will now prove that there is some integer $i$ s.t.\ 
+$\mrm{H}^i(R)$ and $\mrm{H}^{i+1}(R)$ are nonzero. 
+
+Define the prime ideals 
+$\m := (t_1, t_2, t_3)$, 
+$\q := (t_1, t_2)$ and 
+$\p := (t_3)$. Thus $\m$ is the origin, $\q$ is the generic point of the line
+$Z = \opn{Spec}(A / \q)$, and $\p$ is the generic point of the plane
+$Y = \opn{Spec}(A / \p)$. 
+By translating $R$ as needed, we can assume that 
+$\opn{dim}_R(\m) = 0$. Since $\m$ is an immediate specialization of $\q$, 
+Theorem \ref{thm:2205} tells us that $\opn{dim}_R(\q) = 1$. 
+Similarly, since every line in $Y$ passing through the origin gives 
+rise to a saturated chain 
+$(\p, \q', \m)$, we see that $\opn{dim}_R(\p) = 2$.
+
+Since $\q$ is the generic point of $Z$, its local ring is the residue field: 
+$A_{\q} = \kk(\q)$. We know that $\opn{dim}_R(\q) = 1$. Hence 
+\[ \kk(\q) \cong \opn{Ext}^{-1}_{A_{\q}}(\kk(\q), R_{\q}) =
+\opn{Ext}^{-1}_{A_{\q}}(A_{\q}, R_{\q}) \cong 
+\opn{Ext}^{-1}_{A}(A, R)_{\q} \cong \opn{H}^{-1}(R)_{\q} . \]
+Therefore $\opn{H}^{-1}(R) \neq 0$. 
+A similar calculation involving $\p$ shows that 
+$\opn{H}^{-2}(R) \neq 0$.
+\end{exa}
+
+\begin{exa} \label{2255}
+Let $A$ be a local ring, with maximal ideal $\m$ and residue field  
+$\kk(\m)$. Recall that $A$ is called {\em Gorenstein} if the free 
+module $A$ has finite injective dimension. The ring $A$ is called called {\em 
+Cohen-Macaulay} if its depth is equal to its dimension, where the depth of $A$ 
+is the minimal integer $i$ such that 
+$\opn{Ext}^i_A(\kk(\m), A) \neq 0$. It is known that Gorenstein implies 
+Cohen-Macaulay. See \cite{Mats} for details. 
+
+As is our usual practice (cf.\ Definition \ref{dfn:3075}) we shall say that 
+a noetherian commutative ring $A$ is Cohen-Macaulay (resp.\ Gorenstein) if it 
+has finite Krull dimension, and all its local rings $A_{\p}$ are Cohen-Macaulay 
+(resp.\ Gorenstein) local rings, as defined above. 
+
+Assume $A$ has a connected spectrum, and let $R$ be a dualizing complex over 
+$A$. Grothendieck showed in \cite[Section V.9]{RD} that $A$ is a Cohen-Macaulay 
+ring iff $R \cong L[d]$ for some finitely generated module $L$ and some integer 
+$d$; the proof is not easy. It is however pretty easy to prove (using Theorem 
+\ref{thm:2175}) that $A$ is a Gorenstein ring iff $R \cong L[d]$ for some 
+invertible module $L$ and some integer $d$. 
+
+There is a lot more to say about the relation between the CM (Cohen-Macaulay) 
+property and duality. See Remark \ref{rem:2270}
+\end{exa}
+
+Recall that for each $\p \in \opn{Spec}(A)$ we denote by $J(\p)$ the 
+corresponding indecomposable injective $A$-module. 
+
+\begin{dfn} \label{dfn:2236}
+A {\em residue complex} 
+\index{Residue complex}
+over $A$ is a complex of $A$-modules $\KK$ having these properties:
+\begin{itemize}
+\rmitem{i} $\KK$ is a dualizing complex. 
+
+\rmitem{ii} For every integer $d$ there is an isomorphism of $A$-modules 
+\[ \KK^{-d} \cong 
+\bigoplus_{\substack{ \p \in \opn{Spec}(A) \\  
+\opn{dim}_{\KK}(\p)  = d }}  J(\p) \ . \]
+\end{itemize}
+\end{dfn}
+
+The reason we like residue complexes is this:
+
+\begin{thm} \label{thm:2240}
+Suppose $\KK$ and $\KK'$ are residue complexes over $A$ that have the same 
+dimension function. Then the homomorphism 
+\[ \opn{Q} : \opn{Hom}_{\dcat{C}_{\mrm{str}}(A)}(\KK, \KK') \to 
+\opn{Hom}_{\dcat{D}(A)}(\KK, \KK') \]
+is bijective. 
+\end{thm}
+
+In other words, for each morphism $\psi : \KK \to \KK'$ in 
+$\dcat{D}(A)$ there is a unique strict homomorphism of complexes 
+$\phi : \KK \to \KK'$ such that $\psi = \opn{Q}(\phi)$. 
+
+\begin{proof}
+Since the complex $\KK'$ is K-injective, by Theorem \ref{thm:3135}
+we know that the homomorphism 
+\[ \opn{Q} : \opn{Hom}_{\dcat{K}(A)}(\KK, \KK') \to 
+\opn{Hom}_{\dcat{D}(A)}(\KK, \KK') \]
+is bijective. And by definition the homomorphism 
+\[ \opn{P} : \opn{Hom}_{\dcat{C}_{\mrm{str}}(A)}(\KK, \KK') \to 
+\opn{Hom}_{\dcat{K}(A)}(\KK, \KK') \]
+is surjective. It remains to prove that 
+$\opn{Hom}_{A}(\KK, \KK')^{-1} = 0$,
+i.e.\ here are no nonzero degree $-1$ homomorphisms $\ga : \KK \to \KK'$. 
+
+The residue complexes $\KK$ and $\KK'$ decompose into indecomposable summands 
+by the formula in property (ii) of Definition \ref{dfn:2236}. 
+A homomorphism $\ga : \KK \to \KK'$ of degree $-1$ 
+is nonzero iff at least one of its components 
+$\ga_{\p, \q} : J(\p) \to J(\q)$ 
+is nonzero, for some $J(\p) \sub \KK^{-i}$ and $J(\q) \sub \KK'^{\, -i - 1}$.
+Denoting by $\opn{dim}$ the dimension function of both these dualizing 
+complexes, we have $\opn{dim}(\p) = i$ and $\opn{dim}(\q) = i + 1$. 
+But the lemma below says that $\q$ has to be a specialization of $\p$. 
+Therefore, as in the proof of Corollary \ref{cor:2235}, there is an inequality 
+in the oppose direction:  
+$\opn{dim}(\p) \geq \opn{dim}(\q)$. 
+We see that it is impossible to have a  nonzero degree $-1$ 
+homomorphism $\ga : \KK \to \KK'$. 
+\end{proof}
+
+\begin{lem} \label{lem:2240}
+Let $\p, \q$ be prime ideals. If there is a nonzero homomorphism 
+$\ga : J(\p) \to J(\q)$, then 
+$\q$ is a specialization of $\p$. 
+\end{lem}
+
+\begin{proof}
+Assume $\q$ is not a specialization of $\p$; i.e.\ 
+$\p \nsubseteq \q$. So there is an element $a \in \p - \q$. 
+Let $\ga : J(\p) \to J(\q)$ be a homomorphism, and consider the module 
+$N := \ga(J(\p)) \sub J(\q)$. Since $J(\p)$ is $\p$-torsion, the element $a$ 
+acts on $N$ locally-nilpotently. On the other hand, $J(\q)$ is a module over 
+$A_{\q}$, so $a$ acts invertibly on $J(\q)$, and hence it has zero annihilator 
+in $N$. The conclusion is that $N = 0$. 
+\end{proof}
+
+Here is a general existence theorem. 
+Minimal injective resolutions were defined in Definition \ref{dfn:2210}.
+Their existence was proved in Proposition \ref{prop:2210}. 
+
+\begin{thm} \label{thm:2245}
+Suppose the ring $A$ has a dualizing complex $R$. 
+Let $R \to \KK$ be a minimal injective resolution of $R$. Then $\KK$ is a 
+residue complex over $A$. 
+\end{thm}
+
+The proof is after two lemmas. 
+
+\begin{lem} \label{lem:2230}
+Let $S \sub A$ be a multiplicatively closed set, with localization $A_S$. 
+For each complex of $A$-modules $M$ we write $M_S := A_S \ot_A M$.
+\begin{enumerate}
+\item If $I$ is an injective $A$-module, then $I_S$ is an 
+injective $A_S$-module.
+
+\item If $I$ is an injective $A$-module and $M \sub I$ is an essential 
+$A$-submodule, then $M_S \sub I_S$ is an essential $A_S$-submodule.
+
+\item If $I$ is a minimal complex of injective $A$-modules, then 
+$I_S$ is a minimal complex of injective $A_S$-modules.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+(1) By Theorem \ref{thm:2026} there is a direct sum decomposition 
+$I \cong I' \oplus I''$, where 
+$I' \cong \bigoplus_{\p \cap S = \varnothing}  
+J(\p)^{\oplus \mu_{\p}}$
+and 
+$I'' \cong \bigoplus_{\p \cap S \neq \varnothing} 
+J(\p)^{\oplus \mu_{\p}}$.
+If $\p \cap S = \varnothing$ then $J(\p) \cong J(\p)_S$ is an injective 
+$A_S$-module; and if $\p \cap S \neq \varnothing$ then $J(\p)_S = 0$. 
+We see that $I_S \cong I'$ is  an injective $A_S$-module.
+
+\medskip \noindent 
+(2) Denote by $\la : I \to I_S$ the canonical homomorphism. 
+Under the decomposition $I \cong I' \oplus I''$ above, 
+$\la|_{I'} : I' \to I_S$ is an isomorphism. 
+
+Let $L$ be a nonzero $A_S$-submodule of $I_S$. 
+Consider the $A$-submodule 
+$L' := (\la|_{I'})^{-1}(L) \sub I'$;
+so $\la|_{L'} : L' \to L$ is an isomorphism and $L' \neq 0$.  
+Because $M \sub I$ is essential, the intersection $M \cap L'$ is 
+nonzero. But then $\la(M \cap L')$ is a nonzero submodule of 
+$M_S \cap L$, so $M_S \cap L$ is nonzero. 
+
+\medskip \noindent 
+(3) By part (1) the complex $I_S$ is a bounded below complex of injective 
+$A_S$-modules. Exactness of localization shows that 
+$\opn{Z}^n(I_S) = \opn{Z}^n(I)_S$ inside $I^n_S$; so by part (2) the inclusion 
+$\opn{Z}^n(I_S) \inj I^n_S$ is essential.
+\end{proof}
+
+\begin{lem} \label{lem:2231}
+Let $\a \sub A$ be an ideal, and define $B := A / \a$. 
+\begin{enumerate}
+\item If $I$ is an injective $A$-module, then 
+$J := \opn{Hom}_A(B, I)$ is an injective $B$-module. 
+
+\item Let $I$ and $J$ be as above. If $M \sub I$ is an essential $A$-submodule, 
+then $N := \opn{Hom}_A(B, M)$ is an essential $B$-submodule of $J$.
+
+\item If $I$ is a minimal complex of injective $A$-modules, then 
+$J := \opn{Hom}_A(B, I)$ is a minimal complex of injective $B$-modules,
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+(1) This is immediate from adjunction. 
+
+\medskip \noindent
+(2) We identify $J$ and $N$ with the submodules of $I$ and $M$ respectively 
+that are annihilated by $\a$. Let $L \sub J$ be a nonzero $B$-submodule.
+Then $L$ is a nonzero $A$-submodule of $I$. 
+Because $M$ is essential, the intersection $L \cap M$ is nonzero.
+But $L \cap M$ is annihilated by $\a$, so it sits inside $N$, and in fact 
+$L \cap M = L \cap N$. 
+
+\medskip \noindent
+(3) By part (1) the complex $J$ is a bounded below complex of injective 
+$B$-modules. Left exactness of $\opn{Hom}_A(B, -)$ shows that 
+$\opn{Z}^n(J) = \opn{Hom}_A(B, \opn{Z}^n(I))$ inside $J^n$; so by part (2) 
+the inclusion $\opn{Z}^n(J) \inj J^n$ is essential.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \tup{\ref{thm:2245}}]
+Since $\KK \cong R$ in $\dcat{D}(A)$ it follows that $\KK$ is a dualizing 
+complex. To show that $\KK$ has property (ii) of Definition \ref{dfn:2236} we 
+have to count multiplicities. For every $\p$ and $d$ let $\mu_{\p, d}$ be the 
+multiplicity of $J(\p)$ in $\KK^{-d}$, so that  
+\[ \KK^{-d} \cong 
+\bigoplus_{\p \in \opn{Spec}(A)}  J(\p)^{\oplus \mu_{\p, d}} . \]
+We have to prove that 
+\begin{equation} \label{eqn:2245}
+\mu_{\p, d} = 
+\begin{cases}
+1 & \tup{if} \ \opn{dim}_{\KK}(\p) = d ,  
+\\
+0 & \tup{otherwise} . 
+\end{cases}
+\end{equation}
+Now by Lemma \ref{lem:2230}(3) the complex $\KK_{\p} = A_{\p} \ot_A \KK$ is a  
+minimal complex of injective  $A_{\p}$-modules. Because $\KK_{\p}$ is 
+K-injective over $A_{\p}$ we get   
+\[ \opn{Ext}^{-d}_{A_{\p}}(\kk(\p), R_{\p}) \cong
+\opn{H}^{-d} \bigl( \opn{Hom}_{A_{\p}}(\kk(\p), \KK_{\p}) \bigr)  \]
+as $\kk(\p)$-modules. By Lemma \ref{lem:2231}(3) the complex 
+$\opn{Hom}_{A_{\p}}(\kk(\p), \KK_{\p})$
+is a  minimal complex of injective  $\kk(\p)$-modules.
+It is easy to see (and we leave this verification to the reader) that a 
+minimal complex of injectives over a field must have zero differential. 
+Therefore 
+\[ \opn{H}^{-d} \bigl( \opn{Hom}_{A_{\p}}(\kk(\p), \KK_{\p}) \bigr) \cong 
+\opn{Hom}_{A_{\p}}(\kk(\p), \KK_{\p}^{-d}) . \]
+Now by arguments like in the proofs of Lemmas \ref{lem:2230}(1) 
+and \ref{lem:2240} we know that 
+\[ \opn{Hom}_{A_{\p}} \bigl( \kk(\p), J(\q)_{\p} \bigr) \cong 
+\begin{cases}
+\kk(\p) & \tup{if} \ \q = \p ,  
+\\
+0 & \tup{otherwise} . 
+\end{cases} \]
+It follows that 
+\[ \opn{Hom}_{A_{\p}} \bigl( \kk(\p), \KK_{\p}^{-d} \bigr) \cong 
+\kk(\p)^{\oplus \mu_{\p, d}} . \]
+We see that 
+\[ \opn{rank}_{\kk(\p)} \bigl( \opn{Ext}^{-d}_{A_{\p}}(\kk(\p), R_{\p}) \bigr) 
+= \mu_{\p, d} . \]
+But by Definition \ref{dfn:2200} this number satisfies (\ref{eqn:2245}). 
+\end{proof}
+
+\begin{cor} \label{cor:2245}
+If $\KK$ is a residue complex over $A$, then it is a minimal complex 
+of injective $A$-modules. 
+\end{cor}
+
+\begin{proof}
+Let $\phi : \KK \to \KK'$ be a minimal injective resolution of $\KK$. According 
+to Theorem \ref{thm:2245}, $\KK'$ is also a residue complex. Now 
+$\opn{Q}(\phi) : \KK \to \KK'$ is an isomorphism in $\dcat{D}(A)$, so by Theorem
+\ref{thm:2240} we know that $\phi : \KK \to \KK'$ is an isomorphism in 
+$\dcat{C}_{\mrm{str}}(A)$. 
+\end{proof}
+
+\begin{exer} \label{exer:2245}
+Find a direct proof of Corollary \ref{cor:2245}, without resorting to Theorems 
+\ref{thm:2245} and \ref{thm:2240}. (Hint: look at the proof of Proposition 
+\ref{prop:2210}.) 
+\end{exer}
+
+We end this subsection with three remarks. 
+
+\begin{rem} \label{rem:2245}
+Here is a brief explanation of {\em Matlis Duality}. For more details see 
+\cite[Section V.5]{RD}, \cite[Theorem 18.6]{Mats} or \cite[Section 10.2]{BrSh}. 
+Assume $A$ is a complete local ring with maximal ideal $\m$. As usual, the 
+category of finitely generated $A$-modules is $\dcat{M}_{\mrm{f}}(A)$. There is 
+also the category $\dcat{M}_{\mrm{a}}(A)$ of artinian $A$-modules. These are 
+full abelian subcategories of $\dcat{M}(A)$. Note that these subcategories are 
+characterized by dual properties: the objects of $\dcat{M}_{\mrm{f}}(A)$ are 
+noetherian, i.e.\ they satisfy the ascending chain condition; and the objects 
+of $\dcat{M}_{\mrm{a}}(A)$ satisfy the descending chain condition. 
+
+Consider the indecomposable injective module $J(\m)$.  
+The functor 
+$D := \lb \opn{Hom}_A \bigl( -, J(\m) \bigr)$  
+is exact of course. Matlis Duality asserts that
+$D : \dcat{M}_{\mrm{f}}(A)^{\mrm{op}} \to \dcat{M}_{\mrm{a}}(A)$ 
+is an equivalence, with quasi-inverse 
+$D : \dcat{M}_{\mrm{a}}(A)^{\mrm{op}} \to \dcat{M}_{\mrm{f}}(A)$.
+
+Later in this book we present a noncommutative graded version of Matlis 
+Duality -- this is Theorem \ref{thm:4045}.
+\end{rem}
+
+\begin{rem} \label{rem:2250}
+We now provide a brief discussion of {\em Local Duality}, based on 
+\cite[Section V.6]{RD}. (There is a weaker variant of this result, 
+for modules instead of complexes, that can be found in 
+\cite[Theorem 11.2.6]{BrSh}.) Again $A$ is local, with maximal ideal $\m$. 
+Let $R$ be a dualizing complex over $A$. By translating $R$ we can assume that 
+$\opn{dim}_R(\m) = 0$. Lemma \ref{lem:2250} tells us that 
+$\opn{H}^i_{\m}(R) = 0$ for all $i \neq 0$. A calculation, that relies on 
+Matlis duality, shows that 
+$\opn{H}^0_{\m}(R) \cong J(\m)$, the indecomposable injective corresponding to 
+$\m$. 
+
+Let us fix an isomorphism $\be : \opn{H}^0_{\m}(R) \iso J(\m)$. This induces 
+a morphism 
+\begin{equation} \label{eqn:2260}
+\th_M : \mrm{R} \Ga_{\m}(M) \to 
+\opn{Hom}_A \bigl( \opn{RHom}_A(M, R), J(\m) \bigr) ,
+\end{equation}
+functorial in $M \in \dcat{D}^+(A)$. The Local Duality Theorem
+\cite[Theorem V.6.2]{RD} says that 
+$\th_M$ is an isomorphism if $M \in \dcat{D}^+_{\mrm{f}}(A)$.
+
+Here is a modern take on this theorem: we can construct the morphism $\th_M$ 
+for all $M \in \dcat{D}(A)$. Let's replace $R$ by the residue complex $\KK$ 
+(the minimal injective resolution of $R$). Then $\be$ 
+is just an $A$-module isomorphism $\be : \KK^0 \iso J(\m)$. 
+For each complex $M$ we choose a K-injective resolution $M \to I(M)$.
+Then $\th_M$ is represented by the homomorphism 
+\[ \til{\th}_M : \Ga_{\m}(I(M)) \to 
+\opn{Hom}_A \bigl( \opn{Hom}_A \bigl( I(M), \KK \bigr), \KK^0 \bigr) \]
+in $\dcat{C}_{\mrm{str}}(A)$
+that sends an element $u \in \Ga_{\m} \bigl( I(M) \bigr)^p$ 
+and a homomorphism 
+$\phi \in \opn{Hom}_A \bigl( I(M), \KK \bigr)^{-p}$
+to $(-1)^p \cd \phi(u) \in \KK^0$. 
+
+We know that the functor $\mrm{R} \Ga_{\m}$ has finite cohomological 
+dimension, \lb bounded by the number of generators of the ideal $\m$; see 
+\cite{LC} or \cite{PSY}. The functor 
+$\opn{RHom}_{A}(-, R)$
+has finite cohomological dimension, which is the injective dimension of $R$. 
+And the functor 
+$\opn{Hom}_{A}(-, J(\m))$ has cohomological dimension $0$. 
+Since $A \in \dcat{D}^+_{\mrm{f}}(A)$, the local duality theorem from \cite{RD}
+tells us that $\th_A$ is an isomorphism. Now we can apply Theorem \ref{thm:2135}
+to conclude that $\th_M$ is an isomorphism for every 
+$M \in \dcat{D}_{\mrm{f}}(A)$.
+
+Finally, let us mention that in Subsection \ref{subsec:bal-NCDC-LocDu} there is 
+a noncommutative graded version of Local Duality. 
+\end{rem}
+
+\begin{rem} \label{rem:2270}
+Here is more on the CM (Cohen-Macaulay) property and duality. 
+Let $A$ be a noetherian ring with connected spectrum. Assume $A$ has a 
+dualizing complex $R$, and corresponding dimension function $\opn{dim}_{R}$. 
+
+Consider a complex $M \in  \dcat{D}_{\mrm{f}}^{\mrm{b}}(A)$.
+In \cite{RD} Grothendieck defines $M$ to be a {\em CM complex with respect to 
+$R$} if for every prime ideal $\p \sub A$ and every 
+$i \neq - \opn{dim}_{R}(\p)$ the local cohomology satisfies 
+$\opn{H}^i_{\p}(M_{\p}) = 0$.
+
+It is proved in \cite{RD} that when $A$ is a regular ring, 
+$R = A$, and $M$ is a finitely generated $A$-module, then $M$ is a CM module 
+(in the conventional sense, see \cite{Mats}) iff it is a CM complex. 
+
+Let $\dcat{D}_{\mrm{f}}^{0}(A)$ be the full subcategory of 
+$\dcat{D}_{\mrm{f}}^{\mrm{b}}(A)$ on the complexes $M$ such that 
+$\opn{H}^i(M) = 0$ for all $i \neq 0$.
+We know that $\dcat{D}_{\mrm{f}}^{0}(A)$
+is equivalent to 
+$\dcat{M}_{\mrm{f}}(A) = \cat{Mod}_{\mrm{f}} A$.
+In \cite{YeZh2} it was proved that the following
+are equivalent for a complex $M \in  \dcat{D}_{\mrm{f}}^{\mrm{b}}(A)$~:
+\begin{enumerate}
+\rmitem{i} The complex $M$ is CM w.r.t.\ $R$. 
+
+\rmitem{ii} The complex $\opn{RHom}_A(M, R)$ belongs to 
+$\dcat{D}_{\mrm{f}}^{0}(A)$. 
+\end{enumerate}
+
+It follows that the CM complexes form an abelian subcategory of 
+$\dcat{D}^{\mrm{b}}_{\mrm{f}}(A)$,
+dual to $\dcat{M}_{\mrm{f}}(A)$. 
+In fact, they are the heart of a perverse t-structure on 
+$\dcat{D}^{\mrm{b}}_{\mrm{f}}(A)$,
+and hence they deserve to be called {\em perverse finitely generated 
+$A$-modules}. Geometrically, on the scheme $X := \opn{Spec}(A)$, 
+the CM complexes inside $\dcat{D}^{\mrm{b}}_{\mrm{c}}(X)$
+form a stack of abelian categories, and so they are 
+{\em perverse coherent sheaves}. All this is explained in 
+\cite[Section 6]{YeZh2}.
+\end{rem}
+
+
+
+\mysubsection{Van den Bergh Rigidity}
+\label{subsec:squaring}
+
+As we saw in Theorem \ref{thm:2175}, a dualizing complex $R$ 
+over a noetherian commutative ring $A$ is not unique. This lack of uniqueness 
+(not to mention any sort of functoriality!) was the source of major 
+difficulties 
+in \cite{RD}, first for gluing dualizing complexes on schemes, and then for 
+producing the trace morphisms associated to maps of schemes. 
+
+In 1997, M. Van den Bergh \cite{VdB} discovered the idea of {\em rigidity} for 
+dualizing complexes. This was done in the context of noncommutative ring 
+theory: $A$ is a noncommutative noetherian ring, central over a base field 
+$\K$. The theory of noncommutative rigid dualizing complexes was developed 
+further in several papers of J.J. Zhang and A. Yekutieli, among them 
+\cite{YeZh1} and \cite{YeZh2}. We shall talk about this noncommutative theory in 
+Section \ref{sec:rigid-DC-NC} of the book. 
+
+Here we will deal with the commutative side only, which turns out to be 
+extremely powerful. Before explaining it, let us first observe that this is 
+one of the rare cases in which an idea originating from noncommutative 
+algebra had significant impact in commutative algebra and algebraic geometry.  
+
+In this subsection we study Van den Bergh rigidity in the following context: 
+
+\begin{setup} \label{set:2285}
+$A$ is a commutative ring, and $B$ is a flat commutative $A$-ring. 
+\end{setup}
+
+We introduce the notion of {\em rigid complex over $B$ relative to $A$},
+and describe some of its properties. In Subsection 
+\ref{subsec:rig-res-cplx-rng} we will discuss {\em rigid dualizing and residue
+complexes}. This material is adapted from the papers \cite{YeZh3}, \cite{YeZh4} 
+and \cite{Ye11}. 
+
+The theory of rigid complexes does not really require the assumption
+that $B$ is flat over $A$, but flatness makes the theory much easier. See 
+Remark \ref{rem:2285}. 
+
+Consider the enveloping ring $B \ot_A B$. It comes equipped with a few ring 
+homomorphisms: 
+\begin{equation} \label{eqn:2281}
+B \xar{\eta_i} B \ot_{A} B \xar{\ep} B ,
+\end{equation}
+where $\eta_0(b) := b \ot 1$, $\eta_1(b) := 1 \ot b$, and  
+$\ep(b_0 \ot b_1) := b_0 \cd b_1$. We view $B$ as a module over 
+$B \ot_{A} B$ via $\ep$. Of course $\ep \circ \eta_i = \opn{id}_B$. 
+
+Suppose we are given $B$-modules $M_0$ and $M_1$. Then the tensor product
+$M_0 \ot_{A} M_1$ is a $(B \ot_{A} B)$-module. In this way we get an additive 
+bifunctor
+\[ (- \ot_A -) : \dcat{M}(B) \times \dcat{M}(B) \to \dcat{M}(B \ot_{A} B) . \]
+Passing to complexes, and then to homotopy categories, we obtain a triangulated 
+bifunctor
+\begin{equation} \label{eqn:2276}
+(- \ot_A -) : \dcat{K}(B) \times \dcat{K}(B) \to \dcat{K}(B \ot_{A} B) . 
+\end{equation}
+
+\begin{lem} \label{lem:2276}
+The bifunctor \tup{(\ref{eqn:2276})} has a left derived bifunctor 
+\[ (- \ot^{\mrm{L}}_A -) 
+: \dcat{D}(B) \times \dcat{D}(B) \to \dcat{D}(B \ot_{A} B) . \]
+If either $M_0$ or $M_1$ is a complex of $B$-modules that is K-flat over $A$, 
+then the morphism 
+$\eta^{\mrm{L}}_{M_0, M_1} : M_0 \ot^{\mrm{L}}_A M_1 \to M_0 \ot_A M_1$
+in $\dcat{D}(B \ot_{A} B)$ is an isomorphism. 
+\end{lem}
+
+\begin{proof}
+This is a variant of Theorem \ref{thm:2107}. 
+We know by Corollary \ref{cor:1580} and Proposition \ref{prop:1525} 
+that every complex $M \in \dcat{C}(B)$ admits a K-flat resolution 
+$P \to M$. Because $B$ is flat over $A$, the complex $P$ is also K-flat over 
+$A$. By Theorem \ref{thm:2106} the left derived bifunctor 
+$(- \ot^{\mrm{L}}_A -)$ exists, and the condition on 
+$\eta^{\mrm{L}}_{M_0, M_1}$ holds. 
+\end{proof}
+
+\begin{rem} \label{rem:2275}
+The innocuous looking Lemma \ref{lem:2276} is actually of 
+tremendous importance. Without the flatness of $A \to B$ we could do very 
+little homological algebra of bimodules. Getting around the lack of flatness 
+requires the use of flat DG ring resolutions, as explained in Remark 
+\ref{rem:2285}. 
+\end{rem}
+
+Every module $L \in \dcat{M}(B)$ has an action by $B \ot_{A} B$ coming from the 
+homomorphism $\ep$ in (\ref{eqn:2281}). Consider now a module 
+$N \in \dcat{M}(B \ot_{A} B)$.
+The $\K$-module $N$ has two possible $B$-module structures, coming from the 
+homomorphisms $\eta_i$. Thus the $\K$-module
+$\opn{Hom}_{B \ot_{A} B}(L, N)$
+has three possible $B$-module structures: there is one action from the 
+$B$-module structure on $L$, and there are two from the 
+$B$-module structures on $N$. 
+
+\begin{lem} \label{lem:2325}
+The three $B$-module structures on $\opn{Hom}_{B \ot_{A} B}(L, N)$ coincide. 
+\end{lem}
+
+\begin{exer} \label{exer:2325}
+Prove the lemma. 
+\end{exer}
+
+We are mostly interested in the $B$-module $L = B$. As the module $N$ changes,
+we get an additive functor 
+\[ \opn{Hom}_{B \ot_{A} B}(B, -) : \dcat{M}(B \ot_{A} B) \to \dcat{M}(B) . \]
+Passing to complexes, and then to homotopy categories, we get a triangulated 
+functor 
+\[ \opn{Hom}_{B \ot_{A} B}(B, -) : \dcat{K}(B \ot_{A} B) \to \dcat{K}(B) . \]
+This has a right derived functor
+\begin{equation} \label{eqn:2279}
+\opn{RHom}_{B \ot_{A} B}(B, -) :
+\dcat{D}(B \ot_{A} B) \to \dcat{D}(B)  , 
+\end{equation}
+that is calculated by K-injective resolutions. Namely if 
+$I \in \dcat{C}(B \ot_{A} B)$ is a K-injective complex, then the morphism 
+\[ \eta^{\mrm{R}}_{B, I} : \opn{Hom}_{B \ot_{A} B}(B, I) \to 
+\opn{RHom}_{B \ot_{A} B}(B, I) \]
+in $\dcat{D}(B)$ is an isomorphism. 
+
+By composing the bifunctor $(- \ot^{\mrm{L}}_A -)$ from Lemma \ref{lem:2276} 
+and the functor \lb 
+$\opn{RHom}_{B \ot_{A} B}(B, -)$ from (\ref{eqn:2279})
+we obtain a triangulated bifunctor 
+\begin{equation} \label{eqn:2280}
+\opn{RHom}_{B \ot_{A} B}(B, - \ot^{\mrm{L}}_{A} -) :
+\dcat{D}(B) \times \dcat{D}(B) \to \dcat{D}(B) .
+\end{equation}
+
+\begin{dfn} \label{dfn:2275} 
+Under Setup \tup{\ref{set:2285}}, the {\em squaring operation} 
+\index{Squaring operation}
+\index{1-SqBA@$\opn{Sq}_{B / A}$}
+is the functor 
+\[ \opn{Sq}_{B / A} : \dcat{D}(B) \to \dcat{D}(B) \]
+defined as follows:
+\begin{enumerate}
+\item For a complex $M \in \dcat{D}(B)$, its square is the complex 
+\[ \opn{Sq}_{B / A}(M) := 
+\opn{RHom}_{B \ot_{A} B}(B, M \ot^{\mrm{L}}_{A} M) \in \dcat{D}(B) . \]
+
+\item For a morphism 
+$\phi : M \to N$ in $\dcat{D}(B)$, its square is the morphism 
+\[ \opn{Sq}_{B / A}(\phi) := 
+\opn{RHom}_{B \ot_{A} B}(B, \phi \ot^{\mrm{L}}_{A} \phi) :
+\opn{Sq}_{B / A}(M) \to \opn{Sq}_{B / A}(N) \]
+in $\dcat{D}(B)$.
+\end{enumerate}
+\end{dfn}
+
+It will be good to have an explicit formulation of the squaring operation. 
+Let us first choose a K-projective resolution 
+$\si : P \to M$ in $\dcat{C}(B)$. 
+Note that $P$ is unique up to homotopy equivalence, and $\si$ is unique up to 
+homotopy. Since $B$ is flat over $A$, the complex $P$ is K-flat over $A$. We 
+get an isomorphism 
+$\opn{pres}_{P} : P \ot_A P \iso M \ot^{\mrm{L}}_{A} M$ 
+in $\dcat{D}(B \ot_{A} B)$, that we call a {\em presentation}. It is uniquely 
+characterized by the commutativity of the diagram
+\[ \UseTips \xymatrix @C=10ex @R=6ex {
+M \ot^{\mrm{L}}_{A} M
+\ar[r]^{\eta^{\mrm{L}}_{M, M}}
+&
+M \ot_A M
+\\
+P \ot^{\mrm{L}}_{A} P
+\ar[r]_{\eta^{\mrm{L}}_{P, P}}^{\cong}
+\ar[u]^{\opn{Q}(\si) \ot^{\mrm{L}}_A \opn{Q}(\si)}_{\cong}
+&
+P \ot_A P
+\ar[ul]_{\opn{pres}_{P}}^(0.6){\cong}
+\ar[u]_{\opn{Q}(\si \ot_A \si)}
+} \]
+in $\dcat{D}(B \ot_{A} B)$. 
+
+Next we choose a K-injective resolution 
+$\rho : P \ot_A P \to I$ in $\dcat{C}(B \ot_{A} B)$. 
+The complex $I$ is unique up to homotopy equivalence,
+and the homomorphism $\rho$ is unique up to homotopy. The resolution 
+$\rho$ gives rise to an isomorphism
+\[ \opn{pres}_{I} : \opn{Hom}_{B \ot_{A} B}(B, I) \iso 
+\opn{RHom}_{B \ot_{A} B}(B, P \ot_{A} P) \]
+in $\dcat{D}(B)$ such that the diagram 
+\[ \UseTips \xymatrix @C=10ex @R=7ex {
+\opn{Hom}_{B \ot_{A} B}(B, P \ot_{A} P)
+\ar[r]^{\eta^{\mrm{R}}_{B, P \ot_{A} P}}
+\ar[d]_{\opn{Q}(\opn{Hom}(\opn{id}, \rho))}
+&
+\opn{RHom}_{B \ot_{A} B}(B, P \ot_{A} P)
+\ar[d]^{\opn{RHom}(\opn{id}, \opn{Q}(\rho))}_{\cong}
+\\
+\opn{Hom}_{B \ot_{A} B}(B, I)
+\ar[r]_{\eta^{\mrm{R}}_{B, I}}^{\cong}
+\ar[ur]^{\opn{pres}_{I}}_(0.6){\cong}
+&
+\opn{RHom}_{B \ot_{A} B}(B, I)
+} \]
+is commutative. 
+
+The combination of the presentations $\opn{pres}_{P}$ and 
+$\opn{pres}_{I}$ gives an isomorphism 
+\[ \opn{pres}_{P, I} : 
+\opn{Hom}_{B \ot_{A} B}(B, I) \iso \opn{Sq}_{B / A}(M) \]
+in $\dcat{D}(B)$, that we also call a presentation. 
+
+Let $\phi : M \to N$ be a morphism in $\dcat{D}(B)$. The morphism 
+$\opn{Sq}_{B / A}(\phi)$ can also be made explicit using presentations. 
+For that we need to choose a K-projective resolution 
+$\si_N : Q \to N$ in $\dcat{C}(B)$, and a K-injective resolution 
+$\rho_N : Q \ot_A Q \to J$ in $\dcat{C}(B \ot_{A} B)$. 
+These provide us with a presentation 
+\[ \opn{pres}_{Q, J} : \opn{Hom}_{B \ot_{A} B}(M, J) \iso \opn{Sq}_{B / A}(N) .
+\]
+There are homomorphisms
+$\til{\phi} : P \to Q$ in $\dcat{C}_{\mrm{str}}(B)$,
+and 
+$\chi : I \to J$ in $\dcat{C}_{\mrm{str}}(B \ot_{A} B)$,
+both unique up to homotopy, such that the diagrams 
+\[ \UseTips \xymatrix @C=8ex @R=6ex {
+P
+\ar[r]^{\opn{Q}(\si)}_{\cong}
+\ar[d]_{\opn{Q}(\til{\phi})}
+&
+M
+\ar[d]^{\phi}
+\\
+Q
+\ar[r]^{\opn{Q}(\si_N)}_{\cong}
+&
+N
+} 
+\qquad \quad 
+\UseTips \xymatrix @C=9ex @R=6ex {
+M \ot^{\mrm{L}}_A M
+\ar[d]_{\phi \ot^{\mrm{L}}_A \phi}
+&
+P \ot_A P
+\ar[l]_{\opn{pres}_{P}}^{\cong}
+\ar[r]^(0.6){\opn{Q}(\rho)}_{\cong}
+\ar[d]_{\opn{Q}(\til{\phi} \ot_A \til{\phi})}
+&
+I
+\ar[d]^{\opn{Q}(\chi)}
+\\
+N \ot^{\mrm{L}}_A N
+&
+Q \ot_A Q
+\ar[l]_{\opn{pres}_{Q}}^{\cong}
+\ar[r]^(0.6){\opn{Q}(\rho_N)}_(0.6){\cong}
+&
+J
+}
+\]
+in $\dcat{D}(B)$ and $\dcat{D}(B \ot_{A} B)$ respectively are commutative. 
+See Subsections \ref{subsec:K-inj} and \ref{subsec:K-proj}. Then the diagram 
+\begin{equation} \label{eqn:2329}
+\UseTips \xymatrix @C=10ex @R=6ex {
+\opn{Hom}_{B \ot_{A} B}(B, I)
+\ar[r]^(0.55){\opn{pres}_{P, I}}_(0.55){\cong}
+\ar[d]_{\opn{Q}(\opn{Hom}(\opn{id}, \chi))}
+&
+\opn{Sq}_{B / A}(M)
+\ar[d]^{\opn{Sq}_{B / A}(\phi)}
+\\
+\opn{Hom}_{B \ot_{A} B}(B, J)
+\ar[r]^(0.55){\opn{pres}_{Q, J}}_(0.55){\cong}
+&
+\opn{Sq}_{B / A}(N)
+} 
+\end{equation}
+in $\dcat{D}(B)$ is commutative.
+
+The squaring operation is not an additive functor. In fact, it is a 
+{\em quadratic functor}:
+
+\begin{thm} \label{thm:2325} 
+Let $\phi : M \to N$ be a morphism in $\dcat{D}(B)$ and let $b \in B$.
+Then 
+\[ \opn{Sq}_{B / A}(b \cd \phi) = b^2 \cd \opn{Sq}_{B / A}(\phi) , \]
+as morphisms 
+$\opn{Sq}_{B / A}(M) \to \opn{Sq}_{B / A}(N)$ in $\dcat{D}(B)$. 
+\end{thm}
+
+\begin{proof}
+We shall use presentations. Let 
+$\til{\phi} : P \to Q$ be a homomorphism in $\dcat{C}_{\mrm{str}}(B)$
+that represents $\phi$, as above. Then the homomorphism
+$b \cd \til{\phi} : P \to Q$ 
+$\dcat{C}_{\mrm{str}}(B)$ represents $b \cd \phi$.
+Tensoring we get a homomorphism
+\[ (b \cd \til{\phi}) \ot_A (b \cd \til{\phi}) : 
+P \ot_A P \to Q \ot_A Q \]
+$\dcat{C}_{\mrm{str}}(B \ot_A B)$.
+But 
+\[ (b \cd \til{\phi}) \ot_A (b \cd \til{\phi}) = 
+(b \ot b) \cd (\til{\phi} \ot_A \til{\phi}) . \]
+Hence on the K-injectives we get the homomorphism
+$(b \ot b) \cd \chi : I \to  J$ 
+$\dcat{C}_{\mrm{str}}(B \ot_A B)$.  We conclude that 
+\[ \opn{Hom}_{B \ot_{A} B} \bigl( \opn{id}_B, (b \ot b) \cd \chi \bigr) : 
+\opn{Hom}_{B \ot_{A} B}(B, I) \to 
+\opn{Hom}_{B \ot_{A} B}(B, J) \]
+represents 
+$\opn{Sq}_{B / A}(b \cd \phi)$. Finally, by Lemma \ref{lem:2325} 
+we know that 
+\[ \begin{aligned}
+& \opn{Hom}_{B \ot_{A} B} \bigl( \opn{id}_B, (b \ot b) \cd \chi \bigr) = 
+\opn{Hom}_{B \ot_{A} B}(b^2 \cd \opn{id}_B, \chi) 
+\\
+& \quad = b^2 \cd  \opn{Hom}_{B \ot_{A} B}(\opn{id}_B, \chi) . 
+\end{aligned} \]
+\end{proof}
+
+\begin{dfn} \label{dfn:2276} 
+Let $M \in \dcat{D}(B)$. 
+A {\em rigidifying isomorphism} 
+\index{Rigidifying isomorphism}
+for $M$ over $B$ 
+relative to $A$ is an isomorphism 
+$\rho : M \iso \opn{Sq}_{B / A}(M)$
+in $\dcat{D}(B)$. 
+\end{dfn}
+
+\begin{dfn} \label{dfn:2295}
+A {\em rigid complex} 
+\index{Rigid complex}
+over $B$ relative to $A$ is a pair 
+$(M, \rho)$, consisting of a complex $M \in \dcat{D}(B)$ 
+and a rigidifying isomorphism 
+$\rho : M \iso \opn{Sq}_{B / A}(M)$
+in $\dcat{D}(B)$. 
+\end{dfn}
+
+\begin{dfn} \label{dfn:2296}
+Suppose $(M, \rho)$ and $(N, \si)$ are rigid complexes over $B$ relative 
+to $A$. A {\em morphism of rigid complexes}
+\index{Rigid complex! morphism of {\indash}s} 
+$\phi : (M, \rho) \to (N, \si)$ 
+is a morphism $\phi : M \to N$ in $\dcat{D}(B)$, such that the diagram 
+\[ \UseTips \xymatrix @C=8ex @R=6ex {
+M
+\ar[r]^(0.35){\rho}_(0.35){\cong}
+\ar[d]_{\phi}
+&
+\opn{Sq}_{B / A}(M)
+\ar[d]^{\opn{Sq}_{B / A}(\phi)}
+\\
+N
+\ar[r]^(0.35){\si}_(0.35){\cong}
+&
+\opn{Sq}_{B / A}(N)
+} \]
+in $\dcat{D}(B)$ is commutative. 
+
+The category of rigid complexes over $B$ relative to $A$ is denoted by
+\index{1-D(A)rigK@$\dcat{D}(A)_{\mrm{rig} / \K}$}
+$\dcat{D}(B)_{\mrm{rig} / A}$. 
+\end{dfn}
+
+Recall (Definition \ref{dfn:2394}) that a complex $M \in \dcat{D}(B)$ 
+has the derived Morita property 
+if the derived homothety morphism 
+$\opn{hm}^{\mrm{R}}_{M} : B \to \opn{RHom}_B(M, M)$
+in $\dcat{D}(B)$ is an isomorphism. 
+
+\begin{thm} \label{thm:2275}
+Let $(M, \rho)$ be a rigid complex over $B$ relative to $A$. If $M$ has the 
+derived Morita property, then the only automorphism of 
+$(M, \rho)$ in $\dcat{D}(B)_{\mrm{rig} / A}$ is the identity. 
+\end{thm}
+
+\begin{proof}
+Let 
+$\phi : (M, \rho) \iso (M, \rho)$
+be an automorphism in $\dcat{D}(B)_{\mrm{rig} / A}$.
+By Proposition \ref{prop:2335}, there is a unique invertible element $b \in B$ 
+such that $\phi = b \cd \opn{id}_M$, as morphisms $M \to M$ in 
+$\dcat{D}(B)$. 
+
+Next, according to Theorem \ref{thm:2325}, we have 
+\[ \opn{Sq}_{B / A}(\phi) = \opn{Sq}_{B / A}(b \cd \opn{id}_M) = 
+b^2 \cd \opn{Sq}_{B / A}(\opn{id}_M) . \]
+Plugging this into the diagram in Definition \ref{dfn:2296} we get a 
+commutative diagram 
+\[ \UseTips \xymatrix @C=8ex @R=6ex {
+M
+\ar[r]^(0.35){\rho}_(0.35){\cong}
+\ar[d]_{b \cd \opn{id}_M}
+&
+\opn{Sq}_{B / A}(M)
+\ar[d]^{b^2 \cd \opn{id}_M}
+\\
+M
+\ar[r]^(0.35){\rho}_(0.35){\cong}
+&
+\opn{Sq}_{B / A}(M)
+} \]
+in $\dcat{D}(B)$. 
+Once more using Proposition \ref{prop:2335} we see that $b^2 = b$. 
+Because $b$ is an invertible element, it follows that $b = 1$. Thus 
+$\phi = \opn{id}_M$. 
+\end{proof}
+
+\begin{exa} \label{exa:2275}
+Assume $B = A$, and take $M := B$. Then $B \ot_{A} B \cong B$, 
+$M \ot^{\mrm{L}}_A M \cong M$, and there are canonical isomorphisms
+\[ \opn{Sq}_{B / A}(M) = \opn{RHom}_{B \ot_{A} B}(B, M \ot^{\mrm{L}}_A M) \cong 
+\opn{Hom}_{B}(B, M) \cong M . \]
+Thus the pair $(M, \opn{id}_M)$ belongs to $\dcat{D}(B)_{\mrm{rig} / A}$.
+Furthermore, the complex $M$ has the derived Morita property, so Theorem 
+\ref{thm:2275} applies. 
+\end{exa}
+
+\begin{rem} \label{rem:3120}
+To the reader who might object to Example \ref{exa:2275} for being silly, 
+we have two things to say. First, the existence theorem for rigid dualizing 
+complexes \ref{thm:3210}, whose proof is beyond the scope of this book, starts  
+with the {\em tautological rigid structure} of $\K \in \dcat{D}(\K)$, where 
+$\K$ is the regular base ring. The rigid structure is then propagated to all 
+flat essentially finite type (FEFT) $\K$-rings using {\em induction} and {\em 
+coinduction} of rigid structures. See the exercise and examples below for an 
+indication of these procedures. 
+
+The second fact we want to point out is that when $A$ is an FEFT $\K$-ring, 
+then {\em $A$ has exactly one rigid complex} 
+$(M, \rho) \in \dcat{D}(A)_{\mrm{rig} / \K}$ (up to a unique isomorphism) 
+that is nonzero on each connected component of $\opn{Spec}(A)$; and it is the 
+rigid dualizing complex of $A$ (that will be defined in the next subsection). 
+This is proved in \cite{YeZh3}, \cite{AIL} and \cite{Sha3}. 
+\end{rem}
+
+\begin{exer} \label{exer:2395}
+Assume $A \neq 0$, and take $B := A[t_1, \ldots, t_n]$, the polynomial ring in 
+$n$ variables. 
+\begin{enumerate}
+\item Let $C := B \ot_A B$, and let $I$ be the kernel of the multiplication 
+homomorphism $\ep : C \to B$. Show that $I$ is generated by the sequence 
+$\bsym{c} = (c_1, \ldots, c_n)$, where 
+$c_j := t_j \ot 1 - 1 \ot t_j$. 
+
+\item Show that the Koszul complex 
+$\opn{K}(C; \bsym{c})$ is a free resolution of $B$ over $C$. 
+(Hint: for $1 \leq m \leq n$ define 
+$B_m := A[t_1, \ldots, t_m]$ and 
+$C_m := B_m \ot_A B_m$. 
+By  direct calculation show that 
+$\opn{K}(C_1; \bsym{c}_1) \to B_1$
+is a quasi-isomorphism. Next, there is a ring isomorphism 
+$B_m \ot_A B_1 \iso B_{m + 1}$, 
+$1 \ot t_1 \mapsto t_{m + 1}$.
+This induces a ring isomorphism 
+$C_m \ot_A C_1 \cong C_{m + 1}$ 
+and an isomorphism of complexes 
+\[ \opn{K}(C_m; \bsym{c}_m) \ot_A \opn{K}(C_1; \bsym{c}_1)
+\cong \opn{K}(C_{m + 1}; \bsym{c}_{m + 1}) . \]
+Use this last formula and induction on $m$ to prove that 
+$\opn{K}(C_m; \bsym{c}_m) \to B_m$ 
+is a quasi-isomorphism.)
+
+\item  Prove that 
+\[ \opn{Ext}^i_{C}(B, C) \cong 
+\begin{cases}
+B & \tup{if} \quad i = n \\
+0 & \tup{if} \quad i \neq n  . 
+\end{cases} \]
+(Hint: use the Koszul resolution from above.)
+
+\item Conclude from item (3) that the complex $B[n] \in \dcat{D}(B)$ is rigid 
+relative to $A$; namely that there is a rigidifying isomorphism 
+$\rho : B[n] \iso \opn{Sq}_{B / A} \bigl( B[n] \bigr)$
+in $\dcat{D}(B)$. 
+\end{enumerate}
+\end{exer}
+
+\begin{exa} \label{exa:2576}
+Let $A$ be a nonzero noetherian ring, and let
+$B := \lb A[t_1, \ldots, t_n]$ as in the exercise above. 
+Let $\Delta_{B / A} := \Om^n_{B / A}$, the module of degree $n$ 
+differential forms of $B$ relative to $A$. 
+It is the $n$-th exterior power of $\Om^1_{B / A}$, so it is a free 
+$B$ module of rank $1$, with basis 
+$\d(t_1) \wedge \cdots \wedge \d(t_n)$.
+By the previous example, there exists some rigidifying isomorphism $\rho$ for 
+the complex $\Delta_{B / A}[n]$. 
+
+However, it can be shown (see \cite{YeZh3} or \cite{Ye11}) that the complex
+$\Delta_{B / A}[n]$ has a {\em canonical rigidifying isomorphism relative to 
+$A$}. I.e.\ there is a rigidifying isomorphism 
+$\rho : \Delta_{B / A}[n] \iso 
+\opn{Sq}_{B / A} \bigl( \Delta_{B / A}[n] \bigr)$
+in $\dcat{D}(B)$ which is invariant under $A$-ring automorphisms of $B$. 
+
+This rigidifying isomorphism $\rho$ is an incarnation of Grothendieck's 
+Fundamental Local Isomorphism \cite[Proposition II.7.2]{RD} and the Residue 
+Isomorphism
+\cite[Theorem II.8.2]{RD}. 
+\end{exa}
+
+It is well-known that a finitely generated module $M$ over a noetherian ring 
+$A$ is flat iff it is projective. See \cite[Corollary to Theorem 7.12]{Mats}. 
+
+\begin{exa} \label{exa:2575}
+Let $A$ be a noetherian ring, and let $A \to B$ be a finite flat ring 
+homomorphism. So $B$ is a finitely generated projective $A$-module. Define 
+$\Delta_{B / A} := \opn{Hom}_{A}(B, A) \in \dcat{M}(B)$.
+It can be shown (see \cite{Ye11}) that the complex 
+$\Delta_{B / A}$ has a canonical rigidifying isomorphism relative to $A$. I.e.\ 
+there is a rigidifying isomorphism 
+$\rho : \Delta_{B / A} \iso \opn{Sq}_{B / A}(\Delta_{B / A})$
+in $\dcat{D}(B)$ which is invariant under $A$-ring automorphisms of $B$. 
+\end{exa}
+
+\begin{rem} \label{rem:4190}
+The squaring operation $\opn{Sq}_{B / A}$ is functorial also in the ring $B$, 
+in two directions. For this remark we assume that the ring $A$ is noetherian, 
+and the rings $B$ and $C$ are flat essentially finite type $A$-rings. (See 
+Remark \ref{rem:2285} regarding the flatness.)
+
+Suppose $u : B \to C$ is a finite 
+$A$-ring homomorphism, and $\th : N \to M$ is a backward (or trace) morphism 
+in $\dcat{D}(B)$ over $u$, in the sense of Definition \ref{dfn:3110}. 
+Then there is a backward morphism
+\[ \opn{Sq}_{u / A}(\th) : \opn{Sq}_{C / A}(N) \to \opn{Sq}_{B / A}(M) \]
+in $\dcat{D}(B)$ over $u$. The morphism $\opn{Sq}_{u / A}(\th)$ is functorial 
+in $u$ and $\th$ in an obvious sense. Furthermore, under suitable finiteness 
+conditions, if $\th$ is a nondegenerate backward morphism (see Definition 
+\ref{dfn:3190}), then so is $\opn{Sq}_{u / A}(\th)$. We call this property the 
+{\em trace functoriality} of the squaring operation. 
+
+The trace functoriality of the squaring operation allows us to talk about {\em 
+rigid trace morphisms}. With $u : B \to C$ as above, suppose that 
+$(M, \rho) \in \dcat{D}(B)_{\mrm{rig} / A}$ and 
+$(N, \si) \in \dcat{D}(C)_{\mrm{rig} / A}$. A {\em rigid trace morphism} 
+$\th : (N, \si) \to (M, \rho)$
+over $u$ relative to $A$ is a trace morphism $\th : N \to M$ over $u$ such 
+that the diagram 
+\[ \UseTips \xymatrix @C=8ex @R=6ex {
+N
+\ar[r]^(0.35){\si}_(0.35){\cong}
+\ar[d]_{\th}
+&
+\opn{Sq}_{C / A}(N)
+\ar[d]^{\opn{Sq}_{u / A}(\th)}
+\\
+M
+\ar[r]^(0.35){\rho}_(0.35){\cong}
+&
+\opn{Sq}_{B / A}(M)
+} \]
+in $\dcat{D}(B)$ is commutative. 
+
+Next, suppose $v : B \to C$ is an essentially \'etale homomorphism 
+(i.e.\ formally \'etale, plus the EFT condition that was already assumed) of 
+$A$-rings, and $\la : M \to N$ is a forward morphism over $v$, in 
+the sense of Definition \ref{dfn:3111}. Then there is a forward morphism 
+\[ \opn{q}_{v / A}(\la) : \opn{Sq}_{B / A}(M) \to \opn{Sq}_{C / A}(N) \]
+in $\dcat{D}(B)$ over $u$. The morphism $\opn{Sq}_{v / A}(\la)$ is functorial 
+in $v$ and $\la$ in an obvious sense. Furthermore, under suitable finiteness 
+conditions, if $\la$ is a nondegenerate forward morphism (see Definition 
+\ref{dfn:3191}), then so is $\opn{Sq}_{v / A}(\la)$. We call this property the 
+{\em \'etale functoriality} of the squaring operation. 
+
+The \'etale functoriality of the squaring operation allows us to talk about 
+{\em rigid localization morphisms}. With $v : B \to C$ as above, suppose that 
+$(M, \rho) \in \dcat{D}(B)_{\mrm{rig} / A}$, and 
+$(N, \si) \in \dcat{D}(C)_{\mrm{rig} / A}$. A {\em rigid localization morphism} 
+$\la : (M, \rho) \to (N, \si)$
+over $v$ relative to $A$ is a forward morphism $\la : N \to M$ over $v$ such 
+that the diagram 
+\[ \UseTips \xymatrix @C=8ex @R=6ex {
+M
+\ar[r]^(0.35){\rho}_(0.35){\cong}
+\ar[d]_{\la}
+&
+\opn{Sq}_{B / A}(M)
+\ar[d]^{\opn{Sq}_{v / A}(\la)}
+\\
+N
+\ar[r]^(0.35){\si}_(0.35){\cong}
+&
+\opn{Sq}_{C / A}(N)
+} \]
+in $\dcat{D}(B)$ is commutative. 
+
+These functorialities of the squaring operation are hard to prove. An imprecise 
+study of them was made in the papers \cite{ YeZh3} and \cite{YeZh4}. 
+A correct treatment of the trace functoriality can be found in the paper 
+\cite{Ye9}; and a correct treatment of the \'etale functoriality will 
+appear in \cite{Ye11}. 
+\end{rem}
+
+\begin{rem} \label{rem:2347}
+The squaring operation is related to {\em Hochschild cohomology}.
+Assume for simplicity that $A$ is a field and $M$ is a $B$-module. 
+Then for each $i$ the cohomology 
+\[ \opn{H}^i (\opn{Sq}_{B / A}(M)) = 
+\opn{Ext}^i_{B \ot_{A} B}(B, M \ot_A M) \]
+is the $i$-th Hochschild cohomology with values in the $B$-bimodule 
+$M \ot_A M$. 
+For more on this material see \cite{AILN}, \cite{Sha1} and \cite{Sha2}. 
+\end{rem}
+
+\begin{rem} \label{rem:2285}
+It is possible to avoid the assumption that $B$ is flat over $A$. 
+This is done by choosing a commutative DG ring $\til{B}$ that is K-flat as a DG 
+$A$-module, with a DG ring quasi-isomorphism $\til{B} \to B$ over $A$. 
+Such resolutions always exist (see \cite{YeZh3} or \cite{Ye9}). Then we take 
+\begin{equation} \label{eqn:2345}
+\opn{Sq}_{B / A}(M) := 
+\opn{RHom}_{\til{B} \ot_{A} \til{B}}(B, M \ot^{\mrm{L}}_A M) .
+\end{equation}
+This was the construction used by Zhang and Yekutieli in the paper 
+\cite{YeZh3}.
+
+Unfortunately there was a serious error in \cite{YeZh3}: 
+we did not prove that formula (\ref{eqn:2345}) is independent of  
+the resolution $\til{B}$. This error was discovered, and corrected,
+by L. Avramov, S. Iyengar, J. Lipman and S. Nayak in their paper \cite{AILN}. 
+
+There were ensuing errors in \cite{YeZh3} regarding the functoriality of the 
+squaring operation in the ring $B$ (as described in Remark \ref{rem:4190}). 
+The paper \cite{AILN} did not treat such functoriality at all, and the 
+constructions and proofs of the trace functoriality were corrected only 
+in our recent paper \cite{Ye9}. It is worthwhile to mention that the correct 
+proofs (both in \cite{AILN} and \cite{Ye9}) rely on {\em noncommutative DG 
+rings} and {\em DG bimodules} over them; and the squaring operation is 
+replaced by the {\em rectangle operation}. 
+
+Because the non-flat case is so much more complicated, we have decided not to 
+reproduce it in the book. The interested reader can look up the research papers 
+\cite{Ye9}, \cite{Ye11}, \cite{Ye12} and \cite{Ye13}, the survey article 
+\cite{Ye5}, or the lecture notes \cite{Ye10}. 
+
+A general treatment of derived categories of bimodules, based on K-flat DG ring 
+resolutions, will be in the paper \cite{Ye14}.
+\end{rem}
+
+
+
+\mysubsection{Rigid Dualizing and Residue Complexes}
+\label{subsec:rig-res-cplx-rng}
+
+In this subsection we make these assumptions:
+
+\begin{setup} \label{set:3210}
+$\K$ is a nonzero regular noetherian commutative ring (Definition 
+\ref{dfn:3075}). All other rings are in the 
+category $\ringcfeft{\K}$ of FEFT commutative $\K$-rings, where 
+``FEFT'' is short for ``flat essentially finite type''. 
+\end{setup}
+
+\begin{dfn} \label{dfn:2530}
+A {\em rigid dualizing complex}% 
+\index{Dualizing complex! commutative rigid}
+over $A$ relative to $\K$ is a rigid complex 
+$(R, \rho)$ over $A$ relative to $\K$, as in Definition \ref{dfn:2295}, such 
+that $R$ is a dualizing complex over $A$, in the sense of Definition 
+\ref{dfn:2155}.
+\end{dfn}
+
+See Remark \ref{rem:2285} regarding the flatness condition. 
+
+\begin{dfn} \label{dfn:4200}
+For $A \in \ringcfeft{\K}$ we write  
+$A^{\mrm{en}} := A \ot_{\K} A$ for the 
+{\em enveloping ring}%
+\index{Enveloping ring}%
+\index{1-Aen@$A^{\mrm{en}}$}
+of $A$ relative to $\K$.
+\end{dfn}
+
+With this notation the square of a complex $M \in \dcat{D}(A)$ relative to $\K$ 
+is 
+\[ \opn{Sq}_{A / \K}(M) = 
+\opn{RHom}_{A^{\mrm{en}}}(A, M \otimes^{\mrm{L}}_{\K} M)
+\in \dcat{D}(A)  . \]
+
+Recall the category $\dcat{D}(A)_{\mrm{rig} / \K}$ of rigid complexes over 
+$A$ relative to $\K$, from Definition \ref{dfn:2296}. 
+
+\begin{thm}[Uniqueness] \label{thm:2280}
+Let $A$ be a flat essentially finite type ring over the regular noetherian ring 
+$\K$. If $A$ has a rigid dualizing complex $(R, \rho)$, then it is 
+unique up to a unique isomorphism in $\dcat{D}(A)_{\mrm{rig} / \K}$. 
+\end{thm}
+
+\begin{proof}
+Suppose $(R', \rho')$ is another rigid dualizing 
+complex over $A$ relative to $\K$. Let 
+$A = \prod_{i = 1}^r A_i$ be the connected component decomposition of $A$. 
+Corollary \ref{cor:2175} says that 
+$R' \cong R \ot^{\mrm{L}}_A P$,
+where 
+$P \cong \bigoplus_{i = 1}^r L_i[n_i]$
+for integers $n_i$ and rank $1$ projective $A_i$-modules $L_i$. 
+There is an isomorphism 
+\begin{equation} \label{eqn:2545}
+R' \otimes^{\mrm{L}}_{\K} R' = 
+(R \ot^{\mrm{L}}_A P) \otimes^{\mrm{L}}_{\K} (R \ot^{\mrm{L}}_A P) \cong 
+(R \otimes^{\mrm{L}}_{\K} R) \otimes^{\mrm{L}}_{A^{\mrm{en}}}
+(P \otimes^{\mrm{L}}_{\K} P) 
+\end{equation}
+in $\dcat{D}(A^{\mrm{en}})$, and 
+$P \otimes^{\mrm{L}}_{\K} P$
+has finite flat dimension over $A^{\mrm{en}}$. 
+So we have this sequence of isomorphisms in $\dcat{D}(A)$~:
+\begin{equation} \label{eqn:2530}
+\begin{aligned}
+& R \ot^{\mrm{L}}_A P \cong R' \cong \opn{Sq}_{A / \K}(R')
+=  \mrm{RHom}_{A^{\mrm{en}}}(A, R' \otimes^{\mrm{L}}_{\K} R') 
+\\
+& \quad 
+\cong^{\diamondsuit} 
+\mrm{RHom}_{A^{\mrm{en}}}
+\bigl( A, (R \otimes^{\mrm{L}}_{\K} R) \otimes^{\mrm{L}}_{A^{\mrm{en}}}
+(P \otimes^{\mrm{L}}_{\K} P) \bigr) 
+\\
+& \quad 
+\cong^{\dag} \mrm{RHom}_{A^{\mrm{en}}}(A, R \otimes^{\mrm{L}}_{\K} R) 
+\otimes^{\mrm{L}}_{A^{\mrm{en}}} (P \otimes^{\mrm{L}}_{\K} P)
+\\
+& \quad 
+= \opn{Sq}_{A / \K}(R) 
+\otimes^{\mrm{L}}_{A^{\mrm{en}}} (P \otimes^{\mrm{L}}_{\K} P)
+\\
+& \quad 
+\cong R \otimes^{\mrm{L}}_{A^{\mrm{en}}} (P \otimes^{\mrm{L}}_{\K} P)
+\cong R \ot^{\mrm{L}}_A P  \ot^{\mrm{L}}_A P .
+\end{aligned}
+\end{equation}
+The isomorphism $\cong^{\diamondsuit}$ is by (\ref{eqn:2545}), and the 
+isomorphism $\cong^{\dag}$ is by Theorem \ref{thm:2700}.
+We also used the rigidifying isomorphisms of $R$ and $R'$. Now 
+\[ \opn{RHom}_{A}(R, R \ot^{\mrm{L}}_A P) \cong 
+\opn{RHom}_{A}(R, R) \ot^{\mrm{L}}_A P \cong P , \]
+again using Theorem \ref{thm:2700}, and by the derived Morita property of 
+$R$. Likewise there are isomorphisms
+\[ \begin{aligned}
+& 
+\opn{RHom}_{A}(R, R \ot^{\mrm{L}}_A P \ot^{\mrm{L}}_A P) \cong 
+\opn{RHom}_{A}(R, R \ot^{\mrm{L}}_A P) \ot^{\mrm{L}}_A P
+\\
+& \quad
+\cong \opn{RHom}_{A}(R, R) \ot^{\mrm{L}}_A P \ot^{\mrm{L}}_A P
+\cong P \ot^{\mrm{L}}_A P 
+\end{aligned} \]
+in $\dcat{D}(A)$.
+Thus, together with (\ref{eqn:2530}), we deduce that 
+$P \ot^{\mrm{L}}_A P \cong P$. 
+But then on each connected component $A_i$ we have 
+\[ L_i[n_i] \cong L_i[n_i] \ot_A L_i[n_i]  = 
+(L_i \ot_A L_i)[2 \cd n_i] . \]
+This implies that $L_i \cong A_i$ and $n_i = 0$. 
+We see that actually $P \cong A$, so there is an isomorphism 
+$\phi_0 : R \iso R'$ in $\dcat{D}(A)$. 
+
+The isomorphism $\phi_0$ might not be rigid; but due to the derived 
+Morita property of the complex $R'$, there is an invertible element $a \in A$ 
+such that 
+$\opn{Sq}_{A / \K}(\phi_0) \circ \rho = a \cd \rho' \circ \phi_0$ 
+as isomorphisms 
+$R \iso \opn{Sq}_{A / \K}(R')$. 
+Define $\phi := a^{-1} \cd \phi_0$. 
+Then, according to Theorem \ref{thm:2325}, we have 
+\[ \opn{Sq}_{A / \K}(\phi) \circ \rho = 
+a^{-2} \cd \opn{Sq}_{A / \K}(\phi_0) \circ \rho = 
+a^{-2} \cd a \cd \rho' \circ \phi_0 = \rho' \circ \phi . \]
+We see that
+$\phi : (R, \rho) \iso (R', \rho')$
+is a rigid isomorphism. Its uniqueness is already known by Theorem 
+\ref{thm:2275}, since $R'$ has the derived Morita property.
+\end{proof}
+
+\begin{thm}[Existence] \label{thm:3210}
+Let $A$ be a flat essentially finite type ring over the regular noetherian ring 
+$\K$. Then $A$ has a rigid dualizing complex $(R_A, \rho_A)$. 
+\end{thm}
+
+The proof of this theorem is beyond the scope of the book, as it requires 
+the study of {\em induced and coinduced rigid structures}. 
+For a proof see \cite{Ye11}. (There is an incomplete proof in 
+\cite[Theorem 1.1]{YeZh4}.)
+The next two examples provide proofs in some cases. 
+
+\begin{exa} \label{exa:4200}
+Suppose $A = \K[t_1, \ldots, t_n]$, the polynomial ring in $n$ variables.
+(More generally, we can take $A$ to be any essentially smooth $\K$-ring of 
+relative dimension $n$). Define the complex 
+$R_A := \Om^n_{A / \K}[n]$. According to Example \ref{exa:2576} there is a 
+rigidifying isomorphism 
+$\rho_A : R_A \iso \opn{Sq}_{A / \K}(R_A)$.
+Because $A$ is a regular ring, it follows that $R_A$ is a dualizing complex. We 
+see that $(R_A, \rho_A)$ is a rigid dualizing complex. 
+\end{exa}
+
+\begin{exa} \label{exa:4201}
+Suppose $A$ is a finite type $\K$-ring. As explained in Example \ref{exa:4506},
+$A$ has a noncommutative rigid dualizing complex, that is actually $A$-central. 
+Thus it is a rigid dualizing complex over $A$ relative to $\K$ in the sense of 
+Definition \ref{dfn:2530}. 
+\end{exa}
+
+The dimension function $\opn{dim}_R$ relative to a dualizing complex $R$
+was introduced in Definition \ref{dfn:2200}. If $R' \cong R$, then of course 
+the dimension functions satisfy 
+$\opn{dim}_{R'} = \opn{dim}_R$. 
+In view of the previous theorem, the next definition is valid. 
+
+\begin{dfn} \label{dfn:2537}
+Let $A \in \ringcfeft{\K}$. The {\em rigid dimension function 
+relative to $\K$} is the function
+\[   \opn{rig{.}dim}_{\K} : \opn{Spec}(A) \to \Z \]
+given by the formula 
+$\opn{rig{.}dim}_{\K}(\p) := \opn{dim}_R(\p)$,
+where $R$ is any rigid dualizing complex over $A$ relative to $\K$. 
+\end{dfn}
+
+The next examples (taken from \cite{Ye11}) give an idea what the rigid 
+dimension function looks like.  
+
+\begin{exa} \label{exa:3235}
+Let $\K$ be a field and $A$ a finite type $\K$-ring. 
+Then for every $\p \in \opn{Spec}(A)$ there is equality
+$\opn{rig{.}dim}_{\K}(\p) = \opn{dim}(A / \p)$, 
+where the latter is the Krull dimension of the ring $A / \p$. 
+\end{exa}
+
+\begin{exa} \label{exa:3236}
+Again $\K$ is a field, but now $L$ is a finitely generated field extension of 
+$\K$; or in other words, $L$ is a field in $\ringcfeft{\K}$ . 
+Then, writing $\p := (0) \sub L$, we have  
+$\opn{rig{.}dim}_{\K}(\p) = \opn{tr{.}deg}_{\K}(L)$,
+the transcendence degree of the field extension $\K \to L$. 
+\end{exa}
+
+\begin{exa} \label{exa:3237}
+Take $\K = A = \Z$. For a maximal ideal $\m = (p) \sub \Z$ we 
+have $\opn{rig{.}dim}_{\K}(\m) = -1$; and for the generic ideal 
+$\p = (0) \sub \Z$ we have $\opn{rig{.}dim}_{\K}(\p) = 0$. 
+\end{exa}
+
+Residue complexes were introduced in Subsection \ref{subsec:res-cplx-ring}.
+
+\begin{dfn} \label{dfn:2535}
+A {\em rigid residue complex} 
+\index{Residue complex! rigid}
+over $A$ relative to $\K$ is a 
+rigid complex $(\KK_A, \rho_A)$ over $A$ relative to $\K$, such that $\KK_A$ is 
+a residue complex over $A$. 
+\end{dfn}
+
+Using the rigid dimension function relative to $\K$, we have this decomposition 
+of the $A$-module $\KK^{-i}_A$ for each $i$~:
+$\KK_A^{-i} \cong \bigoplus_{\opn{rig{.}dim}_{\K}(\p) = i} J(\p)$,
+where $J(\p)$ is the indecomposable injective module corresponding to the prime 
+ideal $\p$. 
+
+In Definition \ref{dfn:2296} we introduced the category 
+$\dcat{D}(A)_{\mrm{rig} / \K}$. Recall that the objects of 
+$\dcat{D}(A)_{\mrm{rig} / \K}$
+are rigid complexes $(M, \rho)$ over $A$ relative to $\K$; and the morphisms 
+$\phi : (M, \rho) \to (N, \si)$
+are the morphisms $\phi : M \to N$ in $\dcat{D}(A)$ for which there is equality 
+$\si \circ \phi = \opn{Sq}_{A / \K}(\phi) \circ \rho$.
+Rigid residue complexes live, or rather move, in another category. 
+
+\begin{dfn} \label{dfn:2536}
+The category $\dcat{C}(A)_{\mrm{rig} / \K}$
+\index{1-C(A)rigK@$\dcat{C}(A)_{\mrm{rig} / \K}$}
+is defined as follows. Its objects are the rigid complexes $(M, \rho)$ over $A$ 
+relative to $\K$. Given two objects 
+$(M, \rho)$ and $(N, \si)$, a morphism 
+$\phi : (M, \rho) \to (N, \si)$
+in $\dcat{C}(A)_{\mrm{rig} / \K}$ is a morphism 
+$\phi : M \to  N$ in $\dcat{C}_{\mrm{str}}(A)$,
+such that the diagram 
+\[ \UseTips \xymatrix @C=8ex @R=6ex {
+M
+\ar[d]_{\opn{Q}(\phi)}
+\ar[r]^(0.35){\rho}_(0.35){\cong}
+&
+\opn{Sq}_{A / \K}(M)
+\ar[d]^{\opn{Sq}_{A / \K}(\opn{Q}(\phi))}
+\\
+N
+\ar[r]^(0.35){\si}_(0.35){\cong}
+&
+\opn{Sq}_{A / \K}(N)
+} \]
+in $\dcat{D}(A)$ is commutative.
+\end{dfn}
+
+Let us emphasize the hybrid nature of the category 
+$\dcat{C}(A)_{\mrm{rig} / \K}$~:
+the morphisms are homomorphisms of complexes (literally degree $0$ 
+homomorphisms of graded $A$-modules  $\phi : M \to N$ that commute with the 
+differentials); but they must satisfy a compatibility condition (rigidity) in 
+the derived category. 
+
+\begin{thm} \label{thm:2535}
+Let $A$ be an FEFT ring over the regular noetherian ring 
+$\K$. The ring $A$ has a rigid residue complex $(\KK_{A}, \rho_{A})$ 
+relative to $\K$, and it is unique, up to a unique isomorphism in 
+$\dcat{C}(A)_{\mrm{rig} / \K}$.
+\end{thm}
+
+\begin{proof}
+Existence: by Theorem \ref{thm:3210} there is a rigid dualizing complex 
+$(R_{A}, \rho_{A})$ over $A$ relative to $\K$. Let 
+$\KK_{A}$ be the minimal injective resolution of the complex $R_{A}$. 
+According to Theorem \ref{thm:2245}, $\KK_{A}$ is a residue complex. It 
+inherits the rigidifying isomorphism $\rho_{A}$ from $R_{A}$. So the 
+pair $(\KK_{A}, \rho_{A})$ is a rigid residue complex over $A$ relative to 
+$\K$. 
+
+Uniqueness: suppose $(\KK', \rho')$ is another rigid residue complex over 
+$A$ relative to $\K$.  Theorem \ref{thm:2280} tells us that there is a unique 
+isomorphism 
+$\phi : (\KK_{A}, \rho_{A}) \iso (\KK', \rho')$
+in $\dcat{D}(A)_{\mrm{rig} / \K}$. 
+Now the dimension functions of these two residue complexes are equal (both are 
+$\opn{rig{.}dim}_{\K}$). So by Theorem \ref{thm:2240} the function 
+\[ \opn{Q} : \opn{Hom}_{\dcat{C}(A)_{\mrm{rig} / \K}}
+\bigl( (\KK_{A}, \rho_{A}), (\KK', \rho') \bigr) \to 
+\opn{Hom}_{\dcat{D}(A)_{\mrm{rig} / \K}}
+\bigl( (\KK_{A}, \rho_{A}), (\KK', \rho') \bigr) \]
+is bijective. Thus $\phi$ lifts uniquely to an isomorphism in 
+$\dcat{C}(A)_{\mrm{rig} / \K}$. 
+\end{proof}
+
+\begin{rem} \label{rem:4191}   
+The rigid residue complex $\KK_{A}$ is functorial in the ring $A$ in two 
+different ways, that we briefly explain here. As in Setup \ref{set:3210}, we 
+work in the category $\ringcfeft{\K}$. The flatness condition can be removed 
+(at a price, see Remark \ref{rem:2285}), but it seems that the assumption that 
+the base ring $\K$ is regular, and the other rings are EFT over it, are 
+necessary.  
+ 
+Suppose $u : A \to B$ is a finite homomorphism in $\ringcfeft{\K}$. 
+Then there is a homomorphism 
+$\opn{tr}_{B / A} : \KK_B \to \KK_A$
+in $\dcat{C}_{\mrm{str}}(A)$, called the {\em rigid trace homomorphism}. 
+It is a nondegenerate rigid trace morphism over $u$ (see Remark \ref{rem:4190}),
+namely it respects the rigidifying isomorphisms, and the induced homomorphism 
+$\KK_B \to \opn{Hom}_{A}(B, \KK_A)$
+in $\dcat{C}_{\mrm{str}}(B)$ is an isomorphism. Furthermore, generalizing 
+Theorem \ref{thm:2535}, $\opn{tr}_{B / A}$ is the unique 
+nondegenerate rigid trace morphism over $u$. If $B \to C$ is another finite 
+homomorphism in $\ringcfeft{\K}$, then 
+$\opn{tr}_{B / A} \circ \opn{tr}_{C / B}  = \opn{tr}_{C / A}$.
+
+Suppose $v : A \to A'$ is an essentially \'etale homomorphism in 
+$\ringcfeft{\K}$. Then there is a homomorphism 
+$\opn{q}_{A' / A} : \KK_{A} \to \KK_{A'}$
+in $\dcat{C}_{\mrm{str}}(A)$, called the {\em rigid localization homomorphism}. 
+It is a nondegenerate rigid localization morphism over $v$ (see Remark 
+\ref{rem:4190}), namely it respects the rigidifying isomorphisms, and the 
+induced homomorphism 
+$A' \ot_{A} \KK_{A} \to \KK_{A'}$
+in $\dcat{C}_{\mrm{str}}(A')$ is an isomorphism. Furthermore,
+$\opn{q}_{A' / A}$ is the unique nondegenerate rigid localization morphism over 
+$v$. If $A' \to A''$ is another essentially \'etale homomorphism in 
+$\ringcfeft{\K}$, then 
+$\opn{q}_{A'' / A'} \circ \opn{q}_{A' / A} = \opn{q}_{A'' / A}$.
+
+The two functorialities of the rigid residue complex $\KK_A$ commute with each 
+other, in the following sense. Suppose we are given the first commutative 
+diagram below in $\ringcfeft{\K}$, which is cocartesian (i.e.\ 
+$B' \cong A' \ot_A B$), $A \to B$ is finite, and $A \to A'$ is essentially 
+\'etale. Then the second diagram in $\dcat{C}_{\mrm{str}}(A)$ is commutative. 
+\[ 
+\UseTips \xymatrix @C=6ex @R=6ex {
+A
+\ar[r]^{}
+\ar[d]_{}
+&
+B
+\ar[d]
+\\
+A' 
+\ar[r]
+&
+B'
+}
+\qquad \quad 
+\UseTips \xymatrix @C=8ex @R=6ex {
+\KK_{A}
+\ar[d]_{\opn{q}_{A' / A}}
+&
+\KK_{B}
+\ar[l]_{\opn{tr}_{B / A}}
+\ar[d]^{\opn{q}_{B' / B}}
+\\
+\KK_{A'}
+&
+\KK_{B'}
+\ar[l]_{\opn{tr}_{B' / A'}}
+} 
+\]
+
+Imprecise proofs of these assertions can be found in the papers \cite{ YeZh3} 
+and \cite{YeZh4}. A correct treatment will appear in \cite{Ye11}. 
+\end{rem}
+
+\begin{rem} \label{rem:4192}  
+The functorialities of the rigid residue complexes that were outlined in Remark 
+\ref{rem:4190} enable similar construction for schemes. In this remark we shall 
+dispense with the flatness condition (invoking Remark \ref{rem:2285}); so  
+$\K$ is a nonzero regular noetherian base ring (e.g.\ a field or the ring of 
+integers $\Z$), and we consider the category $\catt{Sch} \eftover \K$
+of EFT $\K$-schemes. 
+
+Let $X$ be an EFT $\K$-scheme. A {\em rigid residue complex} on $X$ is a pair
+$(\KK_X, \bsym{\rho}_X)$, consisting of a bounded complex of injective 
+quasi-coherent $\OO_X$-modules $\KK_X$, and a {\em rigid structure} 
+$\bsym{\rho}_X$ on $\KK_X$, to be explained below. 
+For every affine open set $U \sub X$ which is 
+{\em strictly EFT}, namely $A := \Ga(U, \OO_X)$ is an EFT $\K$-ring, the 
+complex $\KK_A := \Ga(U, \KK_X)$
+is equipped with a rigidifying isomorphism $\rho_U$, making it into a 
+rigid residue complex over $A$ relative to $\K$.
+If $U' \sub U$ is a smaller strictly EFT open set of $X$, 
+then the restriction homomorphism 
+$\KK_{A} \to \KK_{A'}$
+must be the unique rigid localization homomorphism, for the given 
+rigidifying isomorphisms $\rho_{U}$ and $\rho_{U'}$.
+The collection of these rigidifying isomorphisms 
+$\bsym{\rho}_X := \{ \rho_U \}$
+is the rigid structure on $\KK_X$. 
+The scheme $X$ admits a rigid residue complex $(\KK_X, \bsym{\rho}_X)$, and it 
+is unique up to a unique rigid isomorphism. 
+
+If $f : Y \to X$ is a finite map in $\catt{Sch} \eftover \K$, then 
+there is the rigid trace homomorphism 
+$\opn{tr}_f : f_{*}(\KK_Y) \to \KK_X$
+in $\dcat{C}_{\mrm{str}}(X) := \dcat{C}_{\mrm{str}}(\cat{Mod} \OO_X)$; 
+and it is nondegenerate, in the sense that the 
+induced homomorphism 
+$f_{*}(\KK_Y) \to \Hom_{X} \bigl( f_*(\OO_Y), \KK_X \bigr)$
+in $\dcat{C}_{\mrm{str}}(X)$ is an isomorphism. 
+If $g : X' \to X$ is an essentially \'etale map in 
+$\catt{Sch} \eftover \K$, then 
+there is the rigid localization homomorphism 
+$\opn{q}_g : \KK_X \to g_{*}(\KK_{X'})$
+in $\dcat{C}_{\mrm{str}}(X)$; and it is nondegenerate, in the sense that the 
+induced homomorphism 
+$g^*(\KK_X) \to \KK_{X'}$
+is an isomorphism in $\dcat{C}_{\mrm{str}}(X')$. In this way the rigid residue 
+complexes become a sheaf on the small \'etale site of $X$. 
+
+Actually, an infinitesimal local construction gives, for every morphism 
+$f : Y \to X$ $\catt{Sch} \eftover \K$, 
+the {\em ind-rigid trace homomorphism}
+$\opn{tr}_f : f_{*}(\KK_Y) \to \KK_X$
+in $\dcat{G}_{\mrm{str}}(X)$; namely this is a homomorphism of graded 
+quasi-coherent sheaves on $X$. The {\em Residue Theorem} says that when $f$ is 
+proper, the homomorphism $\opn{tr}_f$ commutes with the differentials. 
+And the {\em Duality Theorem} says that in the proper case, the ind-rigid trace 
+$\opn{tr}_f$ induces an isomorphism 
+\[ \mrm{R} f_{*} \bigl( \mrm{R} \Hom_{Y}(\NN, \KK_Y) \bigr) \to  
+\mrm{R} \Hom_{X} \bigr( \mrm{R} f_{*}(\NN), \KK_X \bigr) \]
+in $\dcat{D}(X)$ for every 
+$\NN \in \dcat{D}_{\mrm{c}}^{\mrm{b}}(X)$.
+This explicit rigid version of the original theorems of Grothendieck from 
+\cite{RD} will appear in \cite{Ye12}. 
+\end{rem}
+
+
+\begin{rem} \label{rem:4193}
+In this remark we consider {\em Deligne-Mumford stacks}, of finite type 
+over the regular noetherian base ring $\K$. Due to the \'etale functoriality of 
+the rigid residue complexes, as explained in Remark \ref{rem:4191}, every such 
+stack $\mfrak{X}$ admits a rigid residue complex 
+$(\KK_{\mfrak{X}}, \bsym{\rho}_{\mfrak{X}})$.
+Here the rigid structure 
+$\bsym{\rho}_{\mfrak{X}} = \{ \rho_{(U, g)} \}$
+is indexed by the \'etale maps $g : U \to \mfrak{X}$ from strictly EFT affine 
+$\K$-schemes $U$. 
+
+To a map $f : \mfrak{Y} \to \mfrak{X}$ between DM stacks 
+we associate the ind-rigid trace 
+$\opn{tr}_{f} : f_{*}(\KK_{\mfrak{Y}}) \to \KK_{\mfrak{X}}$,
+which is a homomorphism of graded quasi-coherent sheaves on $\mfrak{X}$. 
+In order to construct the ind-rigid trace for stacks we need another property 
+of rigid residue complexes over rings, that we call {\em \'etale codescent}. 
+Suppose $v : A \to A'$ is a faithfully \'etale ring homomorphism of EFT 
+$\K$-rings. Let $w_1, w_2 : A' \to A' \ot_{A} A'$ be the two inclusions. 
+\'Etale codescent says that in every degree $i$ the sequence of $A$-module 
+homomorphisms 
+\[ \KK^i_{A' \ot_{A} A'} \xar{ \, \opn{tr}_{w_1} - \opn{tr}_{w_2} \, }
+\KK^i_{A'} \xar{ \, \opn{tr}_{v} \, } \KK^i_A \to 0 \]
+is exact. 
+
+As for the Residue Theorem: we can only prove it for a proper map of DM stacks 
+$f : \mfrak{Y} \to \mfrak{X}$ which is {\em coarsely schematic}.
+Likewise, we can only prove the Duality Theorem for a proper map of DM stacks 
+$f$ which is coarsely schematic and {\em tame}. These conditions, and a sketch 
+of the proofs, can be found in the lecture notes \cite{Ye10}. 
+These results shall be written in detail in the future paper \cite{Ye13}. 
+Observe that duality is not expected to hold without the tameness condition; 
+but the coarsely schematic condition seems to be a temporary technical hitch. 
+\end{rem}
+  
+
+
+
+
+
+
+

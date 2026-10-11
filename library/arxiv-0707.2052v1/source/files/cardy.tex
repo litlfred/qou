@@ -1,0 +1,291 @@
+\section{Open-closed TQFTs and the Cardy Condition}
+\label{sec:cardy}
+
+We conclude with a discussion of open-closed topological field theories in the B-model and we prove that a condition holds for
+Hochschild homology which is equivalent to the Cardy Condition in the
+Calabi-Yau case.  Appropriate references for open-closed 2d
+topological field theories include Moore-Segal~\cite{MooSeg},
+Costello~\cite{Cos} and Lauda-Pfeiffer~\cite{LaudaPfeifer}.
+
+ \subsection{Open-closed 2d TQFTs.}
+Consider the open and closed 2-cobordism category $\TwoCob$ whose
+objects are oriented, compact one-manifolds --- in other words,
+disjoint unions of circles and intervals --- and whose morphisms are
+(diffeomorphism classes of) cobordisms-with-corners between the source
+and target one-manifolds.  A morphism can be drawn as a vertical
+cobordism, from the source at the bottom to the target at the top.  As
+well as parts of the boundary being at the top and the bottom, there
+will be parts of the boundary in between, corresponding to the fact
+that this is a cobordism with corners.  An example is shown below.
+\[\pic{cobordism}\]
+Disjoint union makes $\TwoCob$ into a symmetric monoidal category and
+an open-closed two-dimensional topological quantum field theory (2d
+TQFT) is defined to be a symmetric monoidal functor from $\TwoCob$ to
+some appropriate symmetric monoidal target category, which we will
+take to be the category of vector spaces or the category of graded
+vector spaces.  The category $\TwoCob$ has a simple description in
+terms of generators and relations which means that there is a
+reasonably straight forward classification of open-closed 2d TQFTs up
+to equivalence.  This is what we will now describe.  The following
+morphisms generate $\TwoCob$ as a symmetric monoidal category.
+\[\pic{fig1}\]
+We will come back to the relations below.
+
+
+To specify an open-closed 2d TQFT up to equivalence on objects it
+suffices to specify the image $\closed$ of the circle and the image
+$\open$ of the interval.  The former is called the space of closed
+string states and the latter is called the space of open-string
+states.  Using the four \emph{planar} generating morphisms pictured
+above, together with the relations between them, it transpires that
+$\open$, the space of open-string states is precisely a symmetric, but
+not-necessarily commutative Frobenius algebra. This means that it is a
+unital algebra with a non-degenerate, symmetric, invariant
+inner-product.  It is useful to note here that the inner product is
+symmetric because the two surfaces pictured below are diffeomorphic,
+however these surfaces are \emph{not} ambient isotopic --- so one
+cannot be deformed to the other in three-space while the bottom
+boundary is fixed.
+\[\pic{syminnerprod1}\stackrel{\text{diffeo}}{=}\pic{syminnerprod2}\]
+On the other hand, the first four generating morphisms, along with
+their relations, mean that $\closed$, the space of closed string
+states, is a \emph{commutative} Frobenius algebra. The last two
+morphisms mean that there are maps $i_*\colon \closed\to\open$ and
+$i^*\colon \open \to \closed$, and by the relations these are adjoint
+with respect to the pairings on these spaces.  Moreover, $i_*$ is an
+algebra map, such that its image lies in the centre of $\open$. The
+final relation that these must satisfy is the \emph{Cardy Condition}.
+In terms of the generators pictured above this is the following
+relation:
+\[\pic{cardy1}=\pic{cardy2}.\]
+Note again that these surfaces are diffeomorphic but not isotopic in
+three-space.  In terms of maps, writing $\mu\colon \open\otimes
+\open\to \open$ and $\delta\colon\open\to\open\otimes\open$ for the
+product and coproduct of the open string state space and writing
+$\tau\colon\open\otimes\open\to\open\otimes\open$ for the symmetry in
+the target category, the Cardy Condition is the equality of maps from
+$\open$ to $\open$:
+\[\mu\circ \tau\circ \delta=i_*\circ i^*.\]
+We will have reason to use an equivalent condition below.
+
+
+To summarize, having an open-closed 2d TQFT is equivalent to having
+the data of a commutative Frobenius algebra $\closed$, a symmetric
+Frobenius algebra $\open$, and an algebra map $i_*\colon \closed \to
+\open$ with central image, such that the Cardy Condition is satisfied.
+
+ \subsection{Open-closed 2d TQFTs with D-branes.}
+A more interesting model of string theory is obtained when we specify
+a set of `boundary conditions' or `D-branes' for the open strings. For
+a mathematician this just means a set of labels for the boundary
+points of objects.  So fix a set $\Lambda$ of labels, and consider the
+category $\TwoCobL$ of open-closed cobordisms such that the objects
+are compact, oriented one-manifolds with the boundary points labelled
+with elements of the set $\Lambda$, and morphisms having their
+internal boundaries labelled compatibly with their boundaries. Here is
+an example of a morphism from the union of the circle and the interval
+labelled $(B,A)$, to the interval labelled $(B,A)$.
+\[\pic{labelledcobordism}\]
+
+
+Now a $\Lambda$-labelled open-closed TQFT is a symmetric monoidal
+functor to some appropriate target category which we will again take
+to be the category of vector spaces or the category of graded vector
+spaces. Moreover, the category $\TwoCobL$ is similarly generated by
+morphisms as listed above, but now they must all be labelled, and the
+relations are just labelled versions of the previous relations.  Thus
+we can similarly classify $\Lambda$-labelled open-closed TQFTs.  Once
+again the image of the circle is a commutative Frobenius algebra,
+$\closed$.  However, rather than getting a single vector space $\open$
+associated to an interval, we get a vector space $\open_{BA}$
+associated to each ordered pair $(B,A)$ of elements of $\Lambda$; so
+we do not get a single Frobenius algebra, but rather something which
+could be called a `Frobenius algebra with many objects' or a
+`Frobenius algebroid', but, for the reason explained below, such a
+thing is commonly known as a Calabi-Yau category.  It is a category in
+the following sense.  We take the category whose objects are
+parametrized by $\Lambda$ and, for $A,B\in \Lambda$, the morphism set
+$\Hom(A,B)$ is taken to be $\open_{BA}$ (this is consistent with us
+reading diagrams from right to left).  The composition
+$\mu_{CBA}\colon\open_{CB}\otimes\open_{BA}\to\open_{CA}$ is given by
+the image of the appropriately labelled version of the morphism
+pictured.
+\[\pic{labelledproduct}\]
+The Frobenius or Calabi-Yau part of the structure is a --- possibly
+graded --- perfect pairing $\open_{AB}\otimes\open_{BA}\to \k$: the
+grading degree of this map is called the dimension of the Calabi-Yau
+category.
+
+
+So to specify a labelled open-closed 2d TQFT it suffices to specify a
+commutative Frobenius algebra $\closed$, a Calabi-Yau category $\open$
+and an algebra map $i_A\colon \closed\to \open_{AA}$ with central
+image, for each object $A$, such that the labelled version of the
+Cardy Condition holds.
+
+ \subsection{The open-closed 2d TQFT from a Calabi-Yau
+  manifold.}
+Associated to a Calabi-Yau manifold $X$ there are two standard 2d TQFTs
+coming from string theory, imaginatively named the 
+A-model and the B-model:  it is the B-model we will be
+interested in here.  In the B-model the boundary conditions are
+supposed to be ``generated'' by complex submanifolds of $X$ so the boundary conditions are
+taken to be complexes of coherent sheaves on $X$;  the open string
+category is then supposed to be the derived category of coherent sheaves on
+$X$.  This is indeed a Calabi-Yau category, which is why such
+categories are so named:  for each $\cE$ and $\cF$, the requisite pairing
+$\Hom^\blob_{\D(X)}(\cE,\cF)\otimes \Hom^\blob_{\D(X)}(\cF,\cE)\to
+\k[-\dim X]$ comes from the Serre pairing as a Calabi-Yau
+manifold is precisely a manifold with a trivial canonical bundle.
+
+
+According to the physics, the closed string state space $\closed$ should be $\Hom^\blob_{\D(X\times X)}(\cO_\Delta,\cO_\Delta)$, in other words, the
+Hochschild cohomology algebra
+ $\HH^\blob(X)$.
+%  This agrees with the fact that $\closed$ should be closely related to
+%the center of $\open$.  Indeed, Hochschild cohomology is a derived
+%version of the notion of center of a ring or a category.
+As $X$ is Calabi-Yau, a trivialization of the canonical bundle induces
+an isomorphism between Hochschild cohomology and Hochschild homology,
+up to a shift. This means that the closed string space $\closed$
+has both the cohomological product and the Mukai pairing, and these make  $\closed$ into a
+Frobenius algebra.
+
+We need to specify the algebra maps $i_\cE\colon \closed \to
+\open_{\cE\cE}$.  These are maps
+\[ i_\cE\colon \Hom^\blob(\cO_\Delta,\cO_\Delta)\to
+\Hom^\blob(\cE,\cE) \]
+which can be given by interpreting $\cE$  as a kernel $\pt\to X$ and taking $i_\cE$ to be convolution with the identity on $\cE$. This is given
+diagrammatically on an element
+$\phi\in\Hom^\blob(\cO_\Delta,\cO_\Delta)$ as follows.
+\[\pic{phiinHH}\quad\mapsto\quad \pic{iEofphiinHH}.\]
+
+At this point it should be noted that $\closed$ is to be thought of as the centre of the category $\open$.  The notion of centre is generalized from algebras to categories by taking the centre of a category to be the natural transformations of the identity functor; however, in a 2-category an appropriate notion of the centre of an object is the set of 2-endomorphisms of the identity morphism on that object.  This means that $\closed$ is the centre, in this sense, of the category $\open$ in the 2-category $\gVar$.
+
+The map going the other way, $i^\cE\colon \Hom^\blob(\cE,\cE)\to
+\Hom^\blob(\cO_\Delta,\cO_\Delta)$ is given by taking the trace, namely for
+$e\in \Hom_{\D(X)}(\cE,\cE)$ the map is given by
+\[\pic{ereallyinHomEE}\quad\mapsto \quad\pic{iEofeinHomEE}.\]
+This definition relies on the fact that $X$ is Calabi-Yau, so that the
+Serre kernel is, up to a shift, just the identity 1-morphism $\Id_X$.
+
+
+%
+%
+%There is an obvious map from closed states to open states labelled by
+%$\cE$ given by convolution with the identity:
+%\[ i_\cE\colon \Hom^\blob(\cO_\Delta,\cO_\Delta)\to
+%\Hom^\blob(\cE,\cE). \]
+%Interpreting $\cE$ as an object of $D(\pt\times X)$, this is given
+%diagrammatically on an element
+%$\phi\in\Hom^\blob(\cO_\Delta,\cO_\Delta)$ as follows.
+%\[\pic{phiinHH}\quad\mapsto\quad \pic{iEofphiinHH}.\]
+%The dual operation $i^\cE\colon \Hom(\cE,\cE)\to
+%\Hom(\cO_\Delta,\cO_\Delta)$ is given by taking the trace, namely for
+%$e\in \Hom_{\D(X)}(\cE,\cE)$ the map is given by
+%\[\pic{ereallyinHomEE}\quad\mapsto \quad\pic{iEofeinHomEE}.\]
+%This trace is again not defined in general; its definition requires
+%$X$ to be Calabi-Yau.  In fact, the natural target space for the trace
+%is precisely the Hochschild {\em homology} $\HH_\blob(X)$, in a
+%fashion similar to the definition of the Chern character.  The target
+%of the trace map can then be taken to be $\HH^\blob(X)$, under the
+%identification $\HH^\blob(X) \iso \HH_{\dim X - \blob}(X)$.
+
+An argument similar to Proposition~\ref{prop:iotasadjoint} shows that
+$i_\cE$ and $i^\cE$ are adjoint.  In order to argue that we indeed
+have an open-closed TQFT it remains to show that the Cardy Condition
+holds.  In fact, we will prove a more general statement, the Baggy
+Cardy Condition.
+
+ \subsection{The Baggy Cardy Condition.}
+In the case of a manifold $X$ that is not necessarily Calabi-Yau we
+don't have the same coincidence of structure as above: we no longer
+have a Frobenius algebra $\HH^\blob(X)$; rather we have an algebra
+$\HH^\blob(X)$ and an inner product space $\HH_\blob(X)$.  This means
+that we can not formulate the Cardy Condition as it stands.  We now state a
+condition which makes sense for an arbitrary, non-Calabi-Yau manifold and
+which is equivalent to the Cardy Condition in the  Calabi-Yau case.
+
+\begin{Theorem}
+  Suppose that $\open$ is a Calabi-Yau category and $\closed$ is an
+  inner product space, such that for each $A\in \open$ there are
+  adjoint maps $i^A\colon \open_{AA}\to \closed$ and $i_A\colon
+  \closed \to \open_{AA}$.  Then the Cardy Condition
+  \[\mu_{BAB}\circ\tau\circ\delta_{ABA}=i_B\circ i^A\]
+  is equivalent to the following equality holding for all $a\in
+  \open_{AA}$ and $b\in \open_{BB}$, where the map ${}_{a}m_{b}\colon
+  \open_{AB}\to \open_{AB}$ is the map obtained by pre-composing with
+  $a$ and post-composing with $b$:
+  \[\left\langle i^B{-},i^A{-}\right\rangle_\closed=
+  \Tr{}_{-}m_{-}.\]
+\end{Theorem}
+
+\begin{Proof}
+  The first thing to do is examine the left-hand side of the Cardy
+  Condition.  As $\open$ is a Calabi-Yau category there is the
+  following equality of morphisms $\open_{AA}\to \open_{BB}$.
+  \[\pic{cardyA}=\pic{cardyB}\]
+  Note that this does not require any reference to $\closed$, but it
+  does fundamentally require the symmetry of the inner product.  This
+  is reflected in the fact that the surfaces underlying the above
+  pictures are diffeomorphic but not ambient isotopic.
+
+  This means that the Cardy Condition is equivalent to the following
+  equality.
+  \[\pic{cardyC}=\pic{cardyD}\]
+  By the non-degeneracy of the inner product on $\open_{BB}$ this is
+  equivalent to the equality of two maps $\open_{BB}\otimes
+  \open_{AA}\to\k$ which are drawn as follows.
+  \[\pic{cardyE}=\pic{cardyF}\]
+  The right-hand side is instantly identifiable as $\left\langle
+    i^B{-},i^A{-}\right\rangle_\closed$.  The left-hand side is
+  identifiable as the trace of the triple composition map
+  $\open_{BB}\otimes\open_{BA}\otimes\open_{AA}\to \open_{BA}$ which
+  gives the required result.
+\end{Proof}
+
+We can now show that the alternative condition given in the above
+theorem holds for the derived category and Hochschild homology of
+\emph{any} space: in particular, the Cardy Condition holds for
+Calabi-Yau spaces.
+
+\begin{Theorem}[The Baggy Cardy Condition]
+\label{thm:cardy}
+Let $X$ be a space, let $\cE$ and $\cF$ be objects in $\D(X)$ and
+consider morphisms
+\[ e\in \Hom_{\D(X)}(\cE, \cE) \quad\text{and}\quad f\in
+\Hom_{\D(X)}(\cF, \cF). \]
+Define the operator
+\[ {}_f m_e \colon\Hom^\blob_{\D(X)}(\cE, \cF) \ra
+\Hom^\blob_{\D(X)}(\cE, \cF) \]
+to be post-composition by $f$ and pre-composition by $e$.  Then we
+have
+\[ \Tr {}_f m_e=\MP{\iota^\cE(e)}{\iota^\cF(f)}, \]
+where $\iota^\cE$, $\iota^\cF$ are the maps defined in
+Section~\ref{subsec:iotae}, and $\Tr$ denotes the (super) trace.
+\end{Theorem}
+
+\begin{Proof}
+  The proof is very similar to the proof of the
+  Semi-Hirzebruch-Rie\-mann-Roch Theorem (Theorem~\ref{thm:hrr}).  The first thing
+  to observe is that $\Hom(\cE,\cF)\cong \cE^\chk\circ \cF$ and that
+  ${}_f m_e$ is just $e^\chk\circ f$. However, we have
+  $\tau_R(e)=\SerK_\pt\circ e^\chk$ and $\SerK_\pt$ is trivial so
+  $e^\chk=\tau_R(e)$.  Putting this together with the invariance of
+  the Serre trace under the partial trace we get the following
+  sequence, and hence the required result.
+  \begin{align*}
+    \Tr {}_f m_e&=\Tr\left(\pic{baggy1}\right)
+    =\Tr\left( \pic{baggy2}\right)\\
+    &=\Tr\left( \pic{baggy3}\right)
+    =\Tr\left( \pic{baggy4}\right)\\
+    &=\MPbig{\pic{baggy5a}}{\pic{baggy5b}}
+    =\MP{\iota^\cE\!(e)}{\iota^\cF\!(f)}.\qedhere
+  \end{align*}
+\end{Proof}
+\medskip
+
+\noindent
+Observe that the Semi-Hirzebruch-Riemann-Roch Theorem is a direct
+consequence of the Baggy Cardy Condition, with $e=\id_\cE$,
+$f=\id_\cF$.

@@ -5,7 +5,8 @@
   "file": "2211.08164v2.pdf",
   "sha256": "aff9ff3ef5ac28be3bd457a9e79832ec60e7a69b95c070e09043659fc75d6ce6",
   "bytes": 164522,
-  "pages": 10
+  "pages": 10,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,8 +17,8 @@
   },
   "doi": null,
   "title": "INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS",
-  "authors_raw": "SEBASTI ÁN REYES-CAROCCA AND PIETRO SPEZIALI",
-  "abstract": "In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann surfaces with automorp hism group act- ing transitively on the Weierstrass points. We also ﬁnd all compact Rie mann sur- faces with automorphism group acting transitively on the Weierstra ss points, under the assumption that they are simple.",
+  "authors_raw": "SEBASTI \u00c1N REYES-CAROCCA AND PIETRO SPEZIALI",
+  "abstract": "In this short note, we prove the existence of in\ufb01nitely many pairwise non-isomorphic, non-hyperelliptic Riemann surfaces with automorp hism group act- ing transitively on the Weierstrass points. We also \ufb01nd all compact Rie mann sur- faces with automorphism group acting transitively on the Weierstra ss points, under the assumption that they are simple.",
   "docinfo": {
    "Producer": "GPL Ghostscript 10.01.2",
    "CreationDate": "D:20240416210726-04'00'",
@@ -228,6 +229,99 @@
   "likely_scanned": false,
   "toc_entries": 11,
   "sections": 11,
-  "chars_total": 23851
+  "chars_total": 23851,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 10,
+   "overlaid": 8,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction-and-statement-of-the-result",
+     "title": "Introduction and statement of the result",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-a-family-of-riemann-surfaces",
+     "title": "A family of Riemann surfaces",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-proof-of-the-main-theorem",
+     "title": "Proof of the main theorem",
+     "prose_ratio": 0.811,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-4-simple-weierstrass-points",
+     "title": "Simple Weierstrass points",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-5-future-directions-and-final-comments",
+     "title": "Future directions and final comments",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-the-action-on-c3",
+     "title": "The action on C3",
+     "prose_ratio": 0.818,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-the-jacobian-variety",
+     "title": "The Jacobian variety",
+     "prose_ratio": 0.894,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-new-examples",
+     "title": "New examples",
+     "prose_ratio": 0.9,
+     "coverage_ratio": 0.829,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-the-case-of-positive-characteristic",
+     "title": "The case of positive characteristic",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-acknowledgement",
+     "title": "Acknowledgement",
+     "prose_ratio": 0.143,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

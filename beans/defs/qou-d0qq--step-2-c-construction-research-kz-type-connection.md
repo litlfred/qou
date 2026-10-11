@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T08:13:53Z
-updated_at: 2026-10-04T15:13:59Z
+updated_at: 2026-10-10T18:11:06Z
 parent: qou-wp3h
 ---
 
@@ -64,3 +64,6 @@ conj:hecke-monodromy-step-two §'What remains conjectural' now carries the secon
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-10-10 — now also gates the continuous mass identity (qou-ywyq)
+The discrete mass identity tr_M(β) = (1+q²)^{-n}·Tr(K^{⊗n}·Hol(β)) is proved (QOU.Torsion.MassTraceMarkov, PR #7632). Promoting Hol to a continuous KZ holonomy at the real pin q₀ needs the imaginary level this bean studies; the real-level route is pruned (qou-74ip). Cross-link only; no new work done here.

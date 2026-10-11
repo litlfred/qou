@@ -7,7 +7,8 @@
   "bytes": 129200,
   "pages": 5,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -110,6 +111,48 @@
   "likely_scanned": false,
   "toc_entries": 4,
   "sections": 4,
-  "chars_total": 12258
+  "chars_total": 12258,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "isd1.tex",
+   "tex_sections": 3,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-formulation-of-the-result",
+     "title": "Formulation of the result",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.932,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-relation-to-the-logarithmic-comparison-theorem",
+     "title": "Relation to the logarithmic comparison theorem",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-proof-of-the-theorem",
+     "title": "Proof of the theorem",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -168,7 +168,7 @@ def _c_level_is_prose_only(txt: str) -> bool:
 def _files():
     for p in sorted(ROOT.rglob("*.py")):
         s = p.as_posix()
-        if "/.claude/" in s or "_deprecated" in s or "/.lake/" in s:
+        if "/.claude/" in s or ("_deprecated" in s or "fsh-guts" in s) or "/.lake/" in s:
             continue
         # Exclude this file. It quotes C's level (2.5995, 1.7202, u*=1.13068) and
         # the negative-weight vocabulary in order to DESCRIBE the trap, so without

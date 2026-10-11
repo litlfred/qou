@@ -52,7 +52,7 @@ the injected file stays under 200 lines. Newest first.
   docstrings differ — harmless only because chapter-dir `.lean` sit outside the
   `srcDir="."` + `globs=["QOU","QOU.+"]` library and are never imported together;
   and `Checks.refCodata` has no consumer and its literal is absent from the
-  witness its docstring names (present only under `computations/_deprecated/`),
+  witness its docstring names (present only under `fsh-guts/deprecated/computations/`),
   though the residuals it would imply reproduce to ~8 sig figs. All 6 chapter-dir
   sidecars FRESH (`source_hashes.lean` == `sha256(file)[:12]`). New TRAP recorded:
   docstring prose reads as code to line-oriented matchers (`grep -cw sorry`
@@ -400,3 +400,8 @@ Start state: **10 oleans total** (cache genuinely unrestored), and a SessionStar
   `rm -f` each olean before `lean -o` into it. First module 79 s cold (user 5.6 s).
 - `QOU.BraidKnot` aggregator unverifiable here: `HookSumThicknessBound.olean`
   missing from the cache (pre-existing gap, not this change).
+## 2026-10-11 — MobiusRegulator.lean (qou-uh5f), worktree /home/claude/qou-r3
+- Rebased onto origin/main 6e6d992da2 with no conflicts; new tip 656a7af6e6, pushed.
+- The file imports Mathlib only, so there is no QOU cone: a bare lean-direct run against root `.lake/packages/*/.lake/build/lib/lean` (mathlib 3480, cache already present) is sufficient. exit 0, 3m53s wall / 8.4 s user, so the time was COLD PAGE CACHE.
+- TRAP: `--force-with-lease` in a worktree was rejected as "(stale info)" because the local tracking ref was never fetched. `git ls-remote` showed that the remote tip equalled the pre-rebase sha, so I pushed with an explicit `--force-with-lease=<branch>:<that sha>`, which is safe.
+- Also: a `cmd | tail` inside a retry loop always "succeeds", so the loop breaks on the first failure. Check PIPESTATUS.

@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/pjm-v161-n1-p02-p/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Paciﬁc Journal of Mathematics STUDYING LINKS VIA CLOSED BRAIDS. III. CLASSIFYING LINKS WHICH ARE CLOSED 3-BRAIDS",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/pjm-v161-n1-p02-p/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Studying links via closed braids. III. Classifying links which are closed 3-braids",
   "contains": [
     "library/pjm-v161-n1-p02-p/sections/sec-000",
     "library/pjm-v161-n1-p02-p/sections/sec-001",
@@ -32,8 +37,11 @@
     "library/pjm-v161-n1-p02-p/sections/sec-023"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "pjm-v161-n1-p02-p",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "pjm-v161-n1-p02-p.pdf",
     "source_sha256": "a93e922eab1ee67c4e275d97302f3523f4d5c6567797f2963b10cf08f9fa814c",
     "pages": 93,

@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/revmodphys97025002pdf/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "CODATA recommended values of the fundamental physical constants: 2022 *",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/revmodphys97025002pdf/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "CODATA recommended values of the fundamental physical constants: 2022*",
   "contains": [
     "library/revmodphys97025002pdf/sections/sec-000",
     "library/revmodphys97025002pdf/sections/sec-001",
@@ -81,8 +86,11 @@
     "library/revmodphys97025002pdf/sections/sec-072"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "revmodphys97025002pdf",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "RevModPhys.97.025002.pdf.pdf",
     "source_sha256": "e7fa786c5b66640784451f40883c886bddaee52d87521382af71c55e1636af41",
     "pages": 62,

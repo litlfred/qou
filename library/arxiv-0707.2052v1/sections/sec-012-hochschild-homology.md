@@ -8,30 +8,14 @@ pages: 18-18
 source_pdf: 0707.2052v1.pdf
 source_sha256: 0a1d1cca848706be
 doc_brief: "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasiz ing the importance of a pairing which generalizes Mukai’s pairi ng on the cohomology of K3"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Now we deﬁne HH•(X) the Hochschild homology of a space X as follows:
-HH•(X) := 2-Hom•
-V ar(Σ− 1
-X , IdX)
-or, in more concrete terms,
-HH•(X) = Ext− •
-X×X(Σ− 1
-X , O∆ ).
-Thus an element w ∈ HH•(X) will be denoted
-w ,
-where again the shifts are understood.
-It is worth taking a moment to compare this with other deﬁniti ons of
-Hochschild homology, such as that of Weibel [19]. He deﬁnes t he Hochschild
-homology of a space X as H•(X, ∆∗O∆ ), where as usual by ∆∗ we mean
-the left-derived functor. This cohomology group is natural ly identiﬁed with
-the hom-set Hom•
-X(OX, ∆∗O∆ ) which is isomorphic to Hom•
-X×X(∆!OX, O∆ )
-where ∆! is the left-adjoint of ∆∗. Direct calculation shows that ∆!OX ∼= Σ− 1
-X
-and so our deﬁnition is recovered. Another feasible deﬁniti on of Hochschild
-homology is H•(X×X, O∆ ⊗O∆ ), and this again is equivalent to our deﬁnition
-as there is the isomorphism Σ− 1
-X
-∼= O ∨
-∆ .
+Now we define $\mathop{\mathrm{HH}}_\bullet(X)$ the Hochschild *homology* of a space $X$ as follows: $$\mathop{\mathrm{HH}}_\bullet(X):=\mathop{\mathrm{{2\mbox{-}Hom}}}_{\mathscr{V}\textsf{ar}}^\bullet(\Sigma_X^{-1},\mathsf {Id}_X)$$ or, in more concrete terms, $$\mathop{\mathrm{HH}}_\bullet(X) = \mathop{\mathrm{Ext}}_{X\times X}^{-\bullet}(\Sigma^{-1}_X,{\mathscr O}_\Delta).$$ Thus an element $w\in \mathop{\mathrm{HH}}_\bullet(X)$ will be denoted $$\raisebox{-.45\height}{},$$ where again the shifts are understood.
+
+It is worth taking a moment to compare this with other definitions of Hochschild homology, such as that of Weibel [@Weibel]. He defines the Hochschild homology of a space $X$ as $\mathsf H^\bullet(X,\Delta^*{\mathscr O}_\Delta)$, where as usual by $\Delta^*$ we mean the left-derived functor. This cohomology group is naturally identified with the hom-set $\mathop{\mathrm{Hom}}^\bullet_{X}({\mathscr O}_X,\Delta^*{\mathscr O}_\Delta)$ which is isomorphic to $\mathop{\mathrm{Hom}}^\bullet_{X\times
+  X}(\Delta_!{\mathscr O}_X,{\mathscr O}_\Delta)$ where $\Delta_!$ is the left-adjoint of $\Delta^*$. Direct calculation shows that $\Delta_!{\mathscr O}_X\cong
+\Sigma_X^{-1}$ and so our definition is recovered. Another feasible definition of Hochschild homology is $\mathsf H^\bullet(X\times
+X,{\mathscr O}_\Delta\otimes {\mathscr O}_\Delta)$, and this again is equivalent to our definition as there is the isomorphism $\Sigma_X^{-1}\cong
+{\mathscr O}_\Delta^{\scriptscriptstyle\vee}$.

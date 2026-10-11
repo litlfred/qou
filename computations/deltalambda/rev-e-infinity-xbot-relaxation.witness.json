@@ -1,0 +1,2847 @@
+{
+  "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
+  "computedAt": "2026-10-10T18:15:06.003547+00:00",
+  "computation": {
+    "script": "computations/deltalambda/rev_e_infinity_xbot_relaxation_probe.py"
+  },
+  "bean": "qou-hok7",
+  "anchor": "physical_proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "description": "The bottom edge of the e_inf staircase is concave in the displacement vector for the same reason the top edge is, so sup_s Xbot is a concave program and its maximum can be certified rather than enumerated.  This matters because gap G1 -- Xbot(s) <= Xblock(s) -- cannot be settled by enumeration at all (a capped maximum is a LOWER bound on its own supremum), and because the join does not actually need G1: it needs a finite window, which follows from SEPARATE caps on the two edges.  So a certified B_bot REMOVES G1 from the argument rather than proving it.  The extension to real u is not automatic: the one-body term fi(beta) - fi(b0) is a partial sum, and the obvious integral extension is concave but not exact at integers; R(b0) - R(b0+u) with R(x) = sum_{j>=1} eps(x+j) is both, because the constant sum_m eps(m) cancels.  #7349's block-length bound does NOT transfer, and the reason is the class: its blocks have every entry >= 1, so a row whose tangent slope is small contributes a NEGATIVE cap and the cumulative cap eventually falls below the bound; the bottom class permits zero entries, so every row cap is >= 0 and the cumulative cap never falls.  What replaces it is stronger: Gamma_j is exactly independent of the block length, so a length-T program is the restriction of one infinite program, and the certificate taken at the best ascent point PADDED WITH ZEROS charges every padded row exactly zero (gradient <= 0 puts the box maximum at lo_j, and lo_j = 0 = w_j) -- one number bounding every block length at once.",
+  "constants": {
+    "mp_dps": 25,
+    "series_depth": 269,
+    "k": 320,
+    "pe_max_measured": 8,
+    "T_max_measured": 12,
+    "J_pad": 26,
+    "BMAX": 10,
+    "BUMAX": 3,
+    "enumerated_max_Xbot": "2.15980237611828596160353039235",
+    "enumerated_argmax": {
+      "s": 14,
+      "bot": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "pe": 3
+    },
+    "B_relax_bottom": "3.08251683268933314115295424591",
+    "B_certified_per_program": "3.08251683269811053498506892148",
+    "B_certified_at": {
+      "pe": 4,
+      "T": 12
+    },
+    "B_certified_all_T": "3.37712160481715115067162838122",
+    "B_certified_all_T_integer_box": "3.37604722643986568255885118223",
+    "B_certified_all_T_integer_box_at_pe": 8,
+    "cut_G1_free_real_box": 48,
+    "checkpoint": [
+      {
+        "stage": "R1",
+        "restored": true,
+        "key": "035515cefb314b5aeddb3116e8fd26ed6903f3714bb3c00ad22756d338a63735",
+        "computed_at": "2026-10-10T14:55:37+00:00"
+      },
+      {
+        "stage": "R2",
+        "restored": true,
+        "key": "f16def29c4a3bbf263a8c82ffbacc9f4628113adceb08140c9384271d291d7c5",
+        "computed_at": "2026-10-10T14:55:55+00:00"
+      },
+      {
+        "stage": "R3",
+        "restored": true,
+        "key": "27e38b95e9377dd2056458ec473bc047c474a8a49d409f7765f35d59402abf53",
+        "computed_at": "2026-10-10T14:55:56+00:00"
+      },
+      {
+        "stage": "R4",
+        "restored": true,
+        "key": "ccbcc33390adc64404b2b05d7abca89317f55e1913a9dd0e949e26989e2a6c5d",
+        "computed_at": "2026-10-10T15:58:34+00:00"
+      },
+      {
+        "stage": "R5",
+        "restored": false,
+        "key": "d040b16ef4b0971487146fe7944ce8f683306d5c919d1d60c1d977a7773cabce",
+        "seconds": 1257.9,
+        "not_checkpointed": []
+      }
+    ],
+    "B_bot": "3.37604722643986568255885118223",
+    "B_tangent_bottom_T_free": "14.1872617951729972293518310906",
+    "B_tangent_by_pe": {
+      "0": "11.537178778853194795",
+      "1": "13.705883573670009714",
+      "2": "14.169340441113418371",
+      "3": "14.187261795172997229",
+      "4": "14.187261795172997229",
+      "5": "14.187261795172997229",
+      "6": "14.187261795172997229",
+      "7": "14.187261795172997229",
+      "8": "14.187261795172997229"
+    },
+    "lam_star": "0.0104340720319519512315906291515",
+    "lam_max_concavity_limit": "0.0521703601597597561579531457573",
+    "tangent_sum_by_lam": {
+      "0.0": "14.187261795172997229",
+      "0.010434072": "17.279662405261873701",
+      "0.02608518": "26.606619834012617617"
+    },
+    "lam_scan": [
+      {
+        "lam": "0.0",
+        "frac_of_max": "0.0",
+        "ascent": "3.1725889571895169",
+        "all_T_bound": "3.48334065438827752",
+        "padded_charge": "0.3107517",
+        "rows": 152
+      },
+      {
+        "lam": "0.010434072032",
+        "frac_of_max": "0.2",
+        "ascent": "3.23776802870188959",
+        "all_T_bound": "3.23776802872448722",
+        "padded_charge": "0.0",
+        "rows": 32
+      },
+      {
+        "lam": "0.0260851800799",
+        "frac_of_max": "0.5",
+        "ascent": "3.38316424568918906",
+        "all_T_bound": "3.38316424572944435",
+        "padded_charge": "0.0",
+        "rows": 32
+      }
+    ],
+    "lam_scan_frame": 4,
+    "all_T_at_scan_frame_lam0": "3.48334065438827752",
+    "all_T_at_scan_frame_lam_star": "3.23776802872448722",
+    "lam_gain_like_for_like": "0.2455726256637903",
+    "_lam_note": "the tangent sum RISES with lam (14.17 -> 251 across the grid) because the cap is Gamma'^2 / (2(ln q0 - 2 lam)) and the denominator collapses faster than the numerator shrinks on the dominant row.  Selecting lam by that proxy returns lam = 0 and discards the tightening; the certificate is the right selector, because what lam buys is at the other end of the frame -- a padded row with Gamma_j < lam is charged exactly zero.",
+    "last_T_increment_by_pe": {
+      "0": "0.00446227136009",
+      "1": "0.00922448871792",
+      "2": "0.0170517783836",
+      "3": "0.0293415821793",
+      "4": "0.0480473526356",
+      "5": "0.0758866924607",
+      "6": "0.116652430044",
+      "7": "0.179845111452",
+      "8": "0.278763631582"
+    },
+    "certificate_slack": "8.7773938321146869686e-12",
+    "worst_kkt_residual": "9.82555051347e-14",
+    "monotonicity_violations_in_T": [],
+    "_ascent_note": "the certificate is valid at ANY w, so a badly converged ascent point gives a SOUND but useless bound and nothing else reports it.  Two guards: the KKT residual above, and the invariant that sup is non-decreasing in T (padding the length-(T-1) optimum with a zero is feasible at length T and has the same value, since Gamma is T-free).  The second caught a cold-start ascent returning 1.8466 at T = 6 against 2.0310 at T = 5 at pe = 2.",
+    "ratio_to_enumerated": "1.5631278415886739457",
+    "ratio_tangent_to_enumerated": "6.5687777511714354353",
+    "B_top_certified_7349": "2.25373556700090488296611002132",
+    "gamma_max": "1.4189571916251339953",
+    "pe0_rigorous": 66,
+    "_note": "B_certified / B_bot are the RIGOROUS numbers; B_relax is the coordinate-ascent value, a LOWER bound on the sup rather than an upper one.  B_tangent is the T-free per-row cap sum -- valid, and the loose bound the certificate exists to replace."
+  },
+  "certificate_R4": {
+    "form": "G concave => G(u) <= G(w) + grad G(w).(u - w); the per-row tangent confines each u_j to [lo_j, U_j] for any u reaching the incumbent, and the linear term is maximised over that box",
+    "gradient": "analytic (gx, Rg, Wg in closed form), NOT a finite difference",
+    "incumbent": "3.08251683268933314115295424591",
+    "incumbent_provenance": "the coordinate-ascent value, which is ACHIEVED at a feasible point and so is a valid lower bound on the sup; a larger incumbent narrows the box and tightens the bound, a smaller one only loosens it -- neither can invalidate it",
+    "slack": "8.7773938321146869686e-12",
+    "slack_if_boundary_rows_mischarged": "9.43994902761e-12",
+    "rows": [
+      {
+        "row": 0,
+        "grad": "7.09566662846e-14",
+        "lo": "0.0",
+        "U": "13.3293914741",
+        "w": "0.378698721904",
+        "term": "9.18937983775e-13"
+      },
+      {
+        "row": 1,
+        "grad": "7.20048212339e-14",
+        "lo": "0.0",
+        "U": "15.1738949187",
+        "w": "0.75368474326",
+        "term": "1.03832465584e-12"
+      },
+      {
+        "row": 2,
+        "grad": "7.36769631868e-14",
+        "lo": "0.0",
+        "U": "17.5683173536",
+        "w": "1.19247958607",
+        "term": "1.20652199635e-12"
+      },
+      {
+        "row": 3,
+        "grad": "6.10255269731e-14",
+        "lo": "0.0",
+        "U": "21.0352472718",
+        "w": "1.69481260966",
+        "term": "1.18026021715e-12"
+      },
+      {
+        "row": 4,
+        "grad": "6.37945784893e-14",
+        "lo": "0.0",
+        "U": "28.1870583498",
+        "w": "2.25660752819",
+        "term": "1.65422218021e-12"
+      },
+      {
+        "row": 5,
+        "grad": "5.1017449288e-14",
+        "lo": "0.0",
+        "U": "19.5683173536",
+        "w": "1.87274918836",
+        "term": "9.02782751493e-13"
+      },
+      {
+        "row": 6,
+        "grad": "4.19014469259e-14",
+        "lo": "0.0",
+        "U": "17.2699899172",
+        "w": "1.53754760368",
+        "term": "6.59212096615e-13"
+      },
+      {
+        "row": 7,
+        "grad": "3.96791986893e-14",
+        "lo": "0.0",
+        "U": "16.1823673286",
+        "w": "1.2448287956",
+        "term": "5.9270955938e-13"
+      },
+      {
+        "row": 8,
+        "grad": "2.35779636844e-14",
+        "lo": "0.0",
+        "U": "15.578005667",
+        "w": "0.987841139877",
+        "term": "3.44006369371e-13"
+      },
+      {
+        "row": 9,
+        "grad": "1.38745862873e-14",
+        "lo": "0.0",
+        "U": "15.2170782708",
+        "w": "0.758804576955",
+        "term": "2.00602565932e-13"
+      },
+      {
+        "row": 10,
+        "grad": "5.36326158177e-15",
+        "lo": "0.0",
+        "U": "14.9930980085",
+        "w": "0.547320815509",
+        "term": "7.74764818379e-14"
+      },
+      {
+        "row": 11,
+        "grad": "1.60974643862e-16",
+        "lo": "0.0",
+        "U": "14.8509748465",
+        "w": "0.333320904632",
+        "term": "2.336974173e-15"
+      }
+    ],
+    "_trap": "at the optimum the constrained rows sit ON the lower boundary with strictly negative gradients (correct KKT).  Charging them |g_j|(U_j - lo_j) instead of g_j(lo_j - w_j) destroys the result; the figure is recomputed every run."
+  },
+  "all_T_certificate_R5": {
+    "pe_of_best": 8,
+    "rows_carried": 32,
+    "bound": "3.37712160481715115067162838122",
+    "padded_rows_total_charge": "0.100062827467815",
+    "tail_beyond_carried_rows": "0.0",
+    "tail_mode": "exactly zero (g <= 0, lo = w = 0, Gamma monotone)",
+    "by_pe": {
+      "0": {
+        "bound": "2.159802376118285961604",
+        "bound_integer_box": "2.159802376118285961604",
+        "rows": 32,
+        "ascent_rows": 26,
+        "ascent_value": "1.538721090271611532961",
+        "kkt_residual": "8.6911739e-14",
+        "excluded": false,
+        "padded_charge": "0.0",
+        "tail": "0.0",
+        "tail_mode": "exactly zero (g <= 0, lo = w = 0, Gamma monotone)"
+      },
+      "1": {
+        "bound": "2.311711694005961899768",
+        "bound_integer_box": "2.311711694005274102805",
+        "rows": 32,
+        "ascent_rows": 26,
+        "ascent_value": "2.311711693982459232998",
+        "kkt_residual": "9.8255505e-14",
+        "excluded": false,
+        "padded_charge": "0.0",
+        "tail": "0.0",
+        "tail_mode": "exactly zero (g <= 0, lo = w = 0, Gamma monotone)"
+      },
+      "2": {
+        "bound": "2.813909194961075972455",
+        "bound_integer_box": "2.813909194960382179925",
+        "rows": 32,
+        "ascent_rows": 26,
+        "ascent_value": "2.813909194937351964881",
+        "kkt_residual": "9.320101e-14",
+        "excluded": false,
+        "padded_charge": "0.0",
+        "tail": "0.0",
+        "tail_mode": "exactly zero (g <= 0, lo = w = 0, Gamma monotone)"
+      },
+      "3": {
+        "bound": "3.103098065726976767187",
+        "bound_integer_box": "3.103098065726562421829",
+        "rows": 32,
+        "ascent_rows": 26,
+        "ascent_value": "3.103098065705840765153",
+        "kkt_residual": "7.9742846e-14",
+        "excluded": false,
+        "padded_charge": "0.0",
+        "tail": "0.0",
+        "tail_mode": "exactly zero (g <= 0, lo = w = 0, Gamma monotone)"
+      },
+      "4": {
+        "bound": "3.237768028724151377731",
+        "bound_integer_box": "3.237768028723662968644",
+        "rows": 32,
+        "ascent_rows": 26,
+        "ascent_value": "3.237768028701889588835",
+        "kkt_residual": "8.2971291e-14",
+        "excluded": false,
+        "padded_charge": "0.0",
+        "tail": "0.0",
+        "tail_mode": "exactly zero (g <= 0, lo = w = 0, Gamma monotone)"
+      },
+      "5": {
+        "bound": "3.276382119296549309327",
+        "bound_integer_box": "3.276382119295986758128",
+        "rows": 32,
+        "ascent_rows": 26,
+        "ascent_value": "3.276382119274749609941",
+        "kkt_residual": "7.6967689e-14",
+        "excluded": false,
+        "padded_charge": "0.0",
+        "tail": "0.0",
+        "tail_mode": "exactly zero (g <= 0, lo = w = 0, Gamma monotone)"
+      },
+      "6": {
+        "bound": "3.277080954122834109472",
+        "bound_integer_box": "3.277080954122140442277",
+        "rows": 32,
+        "ascent_rows": 26,
+        "ascent_value": "3.277080954096875444786",
+        "kkt_residual": "9.4448091e-14",
+        "excluded": false,
+        "padded_charge": "0.0",
+        "tail": "0.0",
+        "tail_mode": "exactly zero (g <= 0, lo = w = 0, Gamma monotone)"
+      },
+      "7": {
+        "bound": "3.277080954120576749446",
+        "bound_integer_box": "3.277080954119938154606",
+        "rows": 32,
+        "ascent_rows": 26,
+        "ascent_value": "3.277080954096875444786",
+        "kkt_residual": "8.2546129e-14",
+        "excluded": false,
+        "padded_charge": "0.0",
+        "tail": "0.0",
+        "tail_mode": "exactly zero (g <= 0, lo = w = 0, Gamma monotone)"
+      },
+      "8": {
+        "bound": "3.377121604817151150672",
+        "bound_integer_box": "3.376047226439865682559",
+        "rows": 32,
+        "ascent_rows": 26,
+        "ascent_value": "3.277058777324258943736",
+        "kkt_residual": "9.1611304e-14",
+        "excluded": false,
+        "padded_charge": "0.1000628275",
+        "tail": "0.0",
+        "tail_mode": "exactly zero (g <= 0, lo = w = 0, Gamma monotone)"
+      }
+    },
+    "why_it_covers_every_length": "Gamma_j is independent of T (R3, measured across T = 3, 7, 11), so a length-T program is the restriction of one infinite program to its first T coordinates and padding the ascent point with zeros changes neither G(w) nor any box.  The padded rows are NOT charged zero: every Gamma_j is strictly positive -- in the pure AP it is exactly sum_{i odd >= 1} gx(b0_j + i), the odd gaps the one-body term reaches and the gap-2 ladder does not -- so their charges decay geometrically and are carried until negligible, after which the remainder is BOUNDED by its geometric tail rather than dropped.",
+    "why_7349s_T0_does_not_transfer": "#7349's blocks have every entry >= 1, so a row whose tangent slope falls below ln q0 / 2 contributes a strictly NEGATIVE cap and the cumulative cap eventually drops below the certified bound.  The bottom class permits zero entries, the relaxation therefore has u >= 0, every row cap is >= 0, and the cumulative cap is non-decreasing.  Reusing the T0 argument here would be a false transfer."
+  },
+  "wall_depth_bound_R5": {
+    "pe0": 66,
+    "gamma_max_measured": "1.4189571916251339953",
+    "gamma_bound_uniform_in_pe": "4.39205996819515134",
+    "argument": "every row of a block of length T in a pe-deep wall pays a linear cost ln q0 * (pe - j) >= ln q0 * (pe - T + 1), while its slope is at most 2*Rg(0) uniformly in pe and j -- the one-body slope plus the downward pair gains, which sit at distinct positive integer gaps and so sum to at most Rg(0).  Past pe0 the per-row caps cannot sum to the incumbent.",
+    "measured_range": 8
+  },
+  "cut_R6": {
+    "via_G1": {
+      "cut": 27,
+      "blocks": 6325874,
+      "assumption": "Xbot(s) <= Xblock(s) for every s"
+    },
+    "G1_free": {
+      "cut": 48,
+      "blocks": null,
+      "assumption": "none beyond the two certified edge bounds"
+    }
+  },
+  "programs_R4": [
+    {
+      "pe": 0,
+      "T": 1,
+      "sup": "0.5964767807049386253718",
+      "kkt_residual": "2.5157051e-15",
+      "argmax": [
+        "0.8696292315"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "-3.80160853675e-15",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 0,
+      "T": 2,
+      "sup": "0.9373056686080023196237",
+      "kkt_residual": "8.3213683e-14",
+      "argmax": [
+        "1.166364845",
+        "0.7384790917"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "2.0573629697e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 0,
+      "T": 3,
+      "sup": "1.151435089088316111328",
+      "kkt_residual": "2.3738749e-14",
+      "argmax": [
+        "1.311360676",
+        "1.005257333",
+        "0.6230561153"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "7.59480013943e-13",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 0,
+      "T": 4,
+      "sup": "1.28880162677167111832",
+      "kkt_residual": "5.5484667e-14",
+      "argmax": [
+        "1.392740814",
+        "1.141474049",
+        "0.8486603514",
+        "0.5222687353"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "2.27258145229e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 0,
+      "T": 5,
+      "sup": "1.37768564246673406343",
+      "kkt_residual": "4.9504066e-14",
+      "argmax": [
+        "1.441474247",
+        "1.219633134",
+        "0.9664969228",
+        "0.7094577152",
+        "0.4352186062"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "2.34535048226e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 0,
+      "T": 6,
+      "sup": "1.435448378705028444237",
+      "kkt_residual": "5.4209563e-14",
+      "argmax": [
+        "1.471692535",
+        "1.267005934",
+        "1.035037792",
+        "0.8084652314",
+        "0.5891448509",
+        "0.3608177071"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "3.10992024017e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 0,
+      "T": 7,
+      "sup": "1.47307501675015550506",
+      "kkt_residual": "8.2369767e-14",
+      "argmax": [
+        "1.490811607",
+        "1.296585568",
+        "1.076919259",
+        "0.8665321751",
+        "0.6711526365",
+        "0.4867343567",
+        "0.2978182146"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "5.50491021925e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 0,
+      "T": 8,
+      "sup": "1.497617253831778435674",
+      "kkt_residual": "8.3028615e-14",
+      "argmax": [
+        "1.503055854",
+        "1.315377754",
+        "1.103198346",
+        "0.9021960311",
+        "0.7194934445",
+        "0.55410624",
+        "0.4004746647",
+        "0.244900606"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "6.33617993077e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 0,
+      "T": 9,
+      "sup": "1.513636761150684729607",
+      "kkt_residual": "6.6773529e-14",
+      "argmax": [
+        "1.510956027",
+        "1.327442262",
+        "1.119943295",
+        "0.9246444983",
+        "0.7492789835",
+        "0.5939431248",
+        "0.4555382214",
+        "0.328398667",
+        "0.2007541626"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "5.65095046307e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 0,
+      "T": 10,
+      "sup": "1.524097265969666296102",
+      "kkt_residual": "7.4511588e-14",
+      "argmax": [
+        "1.516077013",
+        "1.335237836",
+        "1.130712797",
+        "0.938976175",
+        "0.7680646123",
+        "0.6185376857",
+        "0.4881587614",
+        "0.373249465",
+        "0.2685561921",
+        "0.1641357109"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "6.93108417159e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 0,
+      "T": 11,
+      "sup": "1.530929114710382511348",
+      "kkt_residual": "6.9886392e-14",
+      "argmax": [
+        "1.519406097",
+        "1.340295327",
+        "1.137679051",
+        "0.9482042929",
+        "0.7800723257",
+        "0.6340684005",
+        "0.5083224853",
+        "0.3998497996",
+        "0.3050037042",
+        "0.2191254091",
+        "0.1339062653"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "6.76398606368e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 0,
+      "T": 12,
+      "sup": "1.535391386070473832835",
+      "kkt_residual": "8.1266847e-14",
+      "argmax": [
+        "1.521574177",
+        "1.343584714",
+        "1.142201331",
+        "0.9541775902",
+        "0.7878096009",
+        "0.6440028844",
+        "0.5210646715",
+        "0.4163041142",
+        "0.3266342893",
+        "0.2486964062",
+        "0.1784647634",
+        "0.1090494961"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "8.64678454536e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 1,
+      "T": 1,
+      "sup": "0.07901318917782693940896",
+      "kkt_residual": "4.3684991e-15",
+      "argmax": [
+        "0.2310678795"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 1,
+      "T": 2,
+      "sup": "0.9600888814802776378268",
+      "kkt_residual": "3.6980509e-15",
+      "argmax": [
+        "0.6762289423",
+        "1.012237117"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "1.45657588687e-13",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 1,
+      "T": 3,
+      "sup": "1.453851809300630004519",
+      "kkt_residual": "3.7100613e-14",
+      "argmax": [
+        "0.8861066852",
+        "1.404687519",
+        "0.8499789251"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "1.25576038549e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 1,
+      "T": 4,
+      "sup": "1.755539361067176460787",
+      "kkt_residual": "8.3274654e-14",
+      "argmax": [
+        "1.001365643",
+        "1.601748511",
+        "1.177507098",
+        "0.7142742508"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "3.24753880368e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 1,
+      "T": 5,
+      "sup": "1.945832184975758132307",
+      "kkt_residual": "7.4527705e-14",
+      "argmax": [
+        "1.069534231",
+        "1.713385149",
+        "1.347198017",
+        "0.9841060151",
+        "0.5981650118"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "3.72014516818e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 1,
+      "T": 6,
+      "sup": "2.067714808521504531296",
+      "kkt_residual": "8.836176e-14",
+      "argmax": [
+        "1.111500166",
+        "1.780517563",
+        "1.445185261",
+        "1.126261901",
+        "0.8192292871",
+        "0.4987006838"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "5.52060889126e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 1,
+      "T": 7,
+      "sup": "2.146429701113660667476",
+      "kkt_residual": "6.7183232e-14",
+      "argmax": [
+        "1.137941012",
+        "1.822237722",
+        "1.504779526",
+        "1.209291605",
+        "0.9367989868",
+        "0.6792150832",
+        "0.4139169366"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "5.23241645571e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 1,
+      "T": 8,
+      "sup": "2.197506958815536787466",
+      "kkt_residual": "8.3893365e-14",
+      "argmax": [
+        "1.154833844",
+        "1.848669752",
+        "1.542066944",
+        "1.260148769",
+        "1.005944557",
+        "0.7757449401",
+        "0.5609802797",
+        "0.3421261243"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "7.00536800432e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 1,
+      "T": 9,
+      "sup": "2.230742598337030895728",
+      "kkt_residual": "7.310943e-14",
+      "argmax": [
+        "1.165719105",
+        "1.865612563",
+        "1.565787584",
+        "1.292108695",
+        "1.048484712",
+        "0.8327556131",
+        "0.6398699621",
+        "0.4617291161",
+        "0.2817465813"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "6.58076167581e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 1,
+      "T": 10,
+      "sup": "2.252404301328532860067",
+      "kkt_residual": "7.8717332e-14",
+      "argmax": [
+        "1.172770428",
+        "1.876551265",
+        "1.581030028",
+        "1.312494435",
+        "1.075291283",
+        "0.8679255472",
+        "0.686580911",
+        "0.5260009575",
+        "0.3788851226",
+        "0.2312816669"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "8.38079969204e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 1,
+      "T": 11,
+      "sup": "2.266536124911152649625",
+      "kkt_residual": "7.6727574e-14",
+      "argmax": [
+        "1.177353155",
+        "1.883645195",
+        "1.59088542",
+        "1.325614951",
+        "1.092418433",
+        "0.8901251312",
+        "0.7154445433",
+        "0.5641140836",
+        "0.4311330056",
+        "0.3100910061",
+        "0.1893372512"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "8.60483990479e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 1,
+      "T": 12,
+      "sup": "2.275760613629070528539",
+      "kkt_residual": "9.4357083e-14",
+      "argmax": [
+        "1.180337529",
+        "1.888258515",
+        "1.597282267",
+        "1.334106358",
+        "1.103452578",
+        "0.9043231386",
+        "0.7336819518",
+        "0.5876879823",
+        "0.46214276",
+        "0.3524977",
+        "0.2532220343",
+        "0.1546421107"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "1.14100722614e-11",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 2,
+      "T": 1,
+      "sup": "0.01605489384123464466925",
+      "kkt_residual": "2.7080888e-15",
+      "argmax": [
+        "0.1029167287"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 2,
+      "T": 2,
+      "sup": "0.129686858391170186921",
+      "kkt_residual": "2.8668482e-14",
+      "argmax": [
+        "0.2060619348",
+        "0.2777740676"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 2,
+      "T": 3,
+      "sup": "1.164680125499469880819",
+      "kkt_residual": "4.5782041e-14",
+      "argmax": [
+        "0.4905151363",
+        "0.8200973034",
+        "1.076126211"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "1.1473998439e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 2,
+      "T": 4,
+      "sup": "1.759868736408957690532",
+      "kkt_residual": "3.7225386e-14",
+      "argmax": [
+        "0.6438103831",
+        "1.089106911",
+        "1.524035674",
+        "0.9109582621"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "1.46716467008e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 2,
+      "T": 5,
+      "sup": "2.124687088535406037286",
+      "kkt_residual": "4.1655859e-14",
+      "argmax": [
+        "0.73346045",
+        "1.239632946",
+        "1.754876811",
+        "1.27782387",
+        "0.7691066419"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "2.192102874e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 2,
+      "T": 6,
+      "sup": "2.354751140990738920291",
+      "kkt_residual": "6.5521462e-14",
+      "argmax": [
+        "0.7882890197",
+        "1.329440969",
+        "1.887243595",
+        "1.470694036",
+        "1.068778776",
+        "0.6462909257"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "3.79533470724e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 2,
+      "T": 7,
+      "sup": "2.502008848661703631597",
+      "kkt_residual": "5.6038176e-14",
+      "argmax": [
+        "0.8227029482",
+        "1.384989099",
+        "1.967366693",
+        "1.582904371",
+        "1.228069158",
+        "0.8906685946",
+        "0.5403104345"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "4.2800394581e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 2,
+      "T": 8,
+      "sup": "2.597058711558302057361",
+      "kkt_residual": "7.5409251e-14",
+      "argmax": [
+        "0.8446428828",
+        "1.4200848",
+        "2.017354218",
+        "1.65144794",
+        "1.321554623",
+        "1.021384674",
+        "0.7393213629",
+        "0.4494863754"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "6.14715008343e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 2,
+      "T": 9,
+      "sup": "2.658712677410728938033",
+      "kkt_residual": "6.4314593e-14",
+      "argmax": [
+        "0.8587645116",
+        "1.442546419",
+        "2.049101459",
+        "1.694451618",
+        "1.37898357",
+        "1.098506127",
+        "0.8461499171",
+        "0.611353386",
+        "0.3722506746"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "6.40575021695e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 2,
+      "T": 10,
+      "sup": "2.698821760682383097149",
+      "kkt_residual": "8.8062743e-14",
+      "argmax": [
+        "0.8679076133",
+        "1.457036792",
+        "2.069483726",
+        "1.721856963",
+        "1.415141019",
+        "1.146047267",
+        "0.9093783898",
+        "0.6984116046",
+        "0.5037626753",
+        "0.3070608758"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "8.69781753582e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 2,
+      "T": 11,
+      "sup": "2.724960392296101663878",
+      "kkt_residual": "8.4406302e-14",
+      "argmax": [
+        "0.873848884",
+        "1.466430885",
+        "2.082657119",
+        "1.739487872",
+        "1.438232825",
+        "1.176044075",
+        "0.9484372492",
+        "0.7500352799",
+        "0.5745631052",
+        "0.4138086586",
+        "0.2524132286"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "9.29125393436e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 2,
+      "T": 12,
+      "sup": "2.742012170679736206887",
+      "kkt_residual": "6.6752889e-14",
+      "argmax": [
+        "0.877718149",
+        "1.472539604",
+        "2.091206579",
+        "1.750896763",
+        "1.453107549",
+        "1.195226298",
+        "0.9731139222",
+        "0.7819648856",
+        "0.6165909665",
+        "0.4712992586",
+        "0.3389894684",
+        "0.2068785194"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "8.10995244275e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 3,
+      "T": 1,
+      "sup": "0.0006081488081735872630603",
+      "kkt_residual": "2.7184706e-15",
+      "argmax": [
+        "0.01988726248"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 3,
+      "T": 2,
+      "sup": "0.02053031834279984193613",
+      "kkt_residual": "1.4899757e-14",
+      "argmax": [
+        "0.05834259705",
+        "0.1188451329"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 3,
+      "T": 3,
+      "sup": "0.1473338486853666660058",
+      "kkt_residual": "3.9656875e-14",
+      "argmax": [
+        "0.1226706104",
+        "0.2458274156",
+        "0.2942096698"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 3,
+      "T": 4,
+      "sup": "1.258916300160973119327",
+      "kkt_residual": "4.0938153e-14",
+      "argmax": [
+        "0.3179290092",
+        "0.6001630597",
+        "0.8836419807",
+        "1.107024555"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "1.26040678399e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 3,
+      "T": 5,
+      "sup": "1.914855169719649953304",
+      "kkt_residual": "5.4943546e-14",
+      "argmax": [
+        "0.4310364913",
+        "0.7959773895",
+        "1.186865482",
+        "1.587502449",
+        "0.9444780035"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "2.44397025627e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 3,
+      "T": 6,
+      "sup": "2.320621300373417850386",
+      "kkt_residual": "9.2228973e-14",
+      "argmax": [
+        "0.4997982722",
+        "0.9118217133",
+        "1.35948269",
+        "1.84010615",
+        "1.33597153",
+        "0.8013735683"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "4.9271056195e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 3,
+      "T": 7,
+      "sup": "2.57757233550094945498",
+      "kkt_residual": "9.2697143e-14",
+      "argmax": [
+        "0.542804465",
+        "0.9831030203",
+        "1.463424145",
+        "1.986476063",
+        "1.544238845",
+        "1.120276448",
+        "0.6757869899"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "5.82081042892e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 3,
+      "T": 8,
+      "sup": "2.742396779196316666621",
+      "kkt_residual": "6.1069671e-14",
+      "argmax": [
+        "0.5701673763",
+        "1.028001681",
+        "1.528059893",
+        "2.075613818",
+        "1.666204675",
+        "1.291054289",
+        "0.9354145553",
+        "0.5664817838"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "5.0849522707e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 3,
+      "T": 9,
+      "sup": "2.848918856632398615773",
+      "kkt_residual": "6.3858669e-14",
+      "argmax": [
+        "0.5877613048",
+        "1.056688148",
+        "1.569032191",
+        "2.131432337",
+        "1.741003785",
+        "1.391707444",
+        "1.074962594",
+        "0.7776914033",
+        "0.4722465349"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "5.78336957622e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 3,
+      "T": 10,
+      "sup": "2.918068157088727648644",
+      "kkt_residual": "8.3030135e-14",
+      "argmax": [
+        "0.5991475462",
+        "1.075178005",
+        "1.595310216",
+        "2.166966742",
+        "1.788050159",
+        "1.453702849",
+        "1.157526037",
+        "0.8914361419",
+        "0.6439229368",
+        "0.3917549088"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "8.22946687383e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 3,
+      "T": 11,
+      "sup": "2.963076363109448071945",
+      "kkt_residual": "9.0806214e-14",
+      "argmax": [
+        "0.6065457775",
+        "1.087160479",
+        "1.612286079",
+        "2.189815699",
+        "1.818080888",
+        "1.492801909",
+        "1.208512309",
+        "0.9588852512",
+        "0.7364609066",
+        "0.5311804884",
+        "0.3235863369"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "9.27832918436e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 3,
+      "T": 12,
+      "sup": "2.992417945288782159587",
+      "kkt_residual": "7.9374812e-14",
+      "argmax": [
+        "0.6113644208",
+        "1.094951752",
+        "1.623301721",
+        "2.204598578",
+        "1.837421813",
+        "1.517800525",
+        "1.240720354",
+        "1.000601795",
+        "0.7914046412",
+        "0.6063556943",
+        "0.4367306697",
+        "0.2662895738"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "8.71052136807e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 4,
+      "T": 1,
+      "sup": "-1.392234003071224935881e-23",
+      "kkt_residual": "0.0",
+      "argmax": [
+        "1.0e-22"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 4,
+      "T": 2,
+      "sup": "0.0006081488081735872630484",
+      "kkt_residual": "2.7184707e-15",
+      "argmax": [
+        "1.0e-22",
+        "0.01988726248"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 4,
+      "T": 3,
+      "sup": "0.02053031834279984193613",
+      "kkt_residual": "1.4899757e-14",
+      "argmax": [
+        "1.0e-22",
+        "0.05834259705",
+        "0.1188451329"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 4,
+      "T": 4,
+      "sup": "0.1479213974302381041756",
+      "kkt_residual": "7.0952657e-14",
+      "argmax": [
+        "0.02186215871",
+        "0.1309974818",
+        "0.2505529886",
+        "0.2963603696"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 4,
+      "T": 5,
+      "sup": "1.285472288924546861285",
+      "kkt_residual": "7.1106165e-14",
+      "argmax": [
+        "0.1600102349",
+        "0.3795805865",
+        "0.6396649193",
+        "0.9089237751",
+        "1.119773759"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "2.31280061243e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 4,
+      "T": 6,
+      "sup": "1.971120338801651432242",
+      "kkt_residual": "5.3360103e-14",
+      "argmax": [
+        "0.2436285043",
+        "0.5253245472",
+        "0.8595557522",
+        "1.232034947",
+        "1.618054127",
+        "0.9608903229"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "2.7799087733e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 4,
+      "T": 7,
+      "sup": "2.399338879442657278738",
+      "kkt_residual": "6.9964565e-14",
+      "argmax": [
+        "0.2957721317",
+        "0.614488914",
+        "0.9911814648",
+        "1.418480769",
+        "1.883876606",
+        "1.366476935",
+        "0.8184521526"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "3.74747585023e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 4,
+      "T": 8,
+      "sup": "2.671872346043722561514",
+      "kkt_residual": "9.4096728e-14",
+      "argmax": [
+        "0.3288907514",
+        "0.6704569835",
+        "1.072719165",
+        "1.531624324",
+        "2.039198555",
+        "1.584201987",
+        "1.148610319",
+        "0.692096118"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "6.84625900738e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 4,
+      "T": 9,
+      "sup": "2.847197055006790448027",
+      "kkt_residual": "9.6683467e-14",
+      "argmax": [
+        "0.3501662027",
+        "0.7061448046",
+        "1.124287103",
+        "1.602313509",
+        "2.134265643",
+        "1.712386217",
+        "1.326444851",
+        "0.9607542951",
+        "0.5813454729"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "8.2939801744e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 4,
+      "T": 10,
+      "sup": "2.960704098021677660601",
+      "kkt_residual": "8.0982105e-14",
+      "argmax": [
+        "0.3639300769",
+        "0.7291232766",
+        "1.157318805",
+        "1.647255186",
+        "2.193985065",
+        "1.791258906",
+        "1.431620701",
+        "1.105708589",
+        "0.7998241497",
+        "0.4853978544"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "7.43014362825e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 4,
+      "T": 11,
+      "sup": "3.034469480053694334989",
+      "kkt_residual": "8.693974e-14",
+      "argmax": [
+        "0.3728729898",
+        "0.7440076908",
+        "1.178644424",
+        "1.67613366",
+        "2.232079811",
+        "1.8409723",
+        "1.496543833",
+        "1.191667607",
+        "0.9177845147",
+        "0.662939343",
+        "0.4031548969"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "8.9267494518e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 4,
+      "T": 12,
+      "sup": "3.082516832689333141153",
+      "kkt_residual": "7.3676963e-14",
+      "argmax": [
+        "0.3786987219",
+        "0.7536847433",
+        "1.192479586",
+        "1.69481261",
+        "2.256607528",
+        "1.872749188",
+        "1.537547604",
+        "1.244828796",
+        "0.9878411399",
+        "0.758804577",
+        "0.5473208155",
+        "0.3333209046"
+      ],
+      "certified_bound": "3.082516832698110534985",
+      "slack": "8.77739383211e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 5,
+      "T": 1,
+      "sup": "-3.076706180995016507066e-23",
+      "kkt_residual": "0.0",
+      "argmax": [
+        "1.0e-22"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 5,
+      "T": 2,
+      "sup": "-4.437920911095502905139e-23",
+      "kkt_residual": "0.0",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 5,
+      "T": 3,
+      "sup": "0.0006081488081735872630177",
+      "kkt_residual": "2.7184707e-15",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "0.01988726248"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 5,
+      "T": 4,
+      "sup": "0.0205303183427998419361",
+      "kkt_residual": "1.4899757e-14",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "0.05834259705",
+        "0.1188451329"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 5,
+      "T": 5,
+      "sup": "0.1479213974302381041756",
+      "kkt_residual": "7.0952657e-14",
+      "argmax": [
+        "1.0e-22",
+        "0.02186215871",
+        "0.1309974818",
+        "0.2505529886",
+        "0.2963603696"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 5,
+      "T": 6,
+      "sup": "1.285821645048583170864",
+      "kkt_residual": "5.479782e-14",
+      "argmax": [
+        "0.01731429045",
+        "0.1672967119",
+        "0.3845063355",
+        "0.6431520646",
+        "0.9112510592",
+        "1.120971487"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "2.11483316956e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 5,
+      "T": 7,
+      "sup": "1.977876606408233653604",
+      "kkt_residual": "8.4903065e-14",
+      "argmax": [
+        "0.07900887918",
+        "0.2767614532",
+        "0.5483805815",
+        "0.8767390151",
+        "1.244771272",
+        "1.626859531",
+        "0.9656724516"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "4.43047365357e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 5,
+      "T": 8,
+      "sup": "2.413794868755462692296",
+      "kkt_residual": "7.9633963e-14",
+      "argmax": [
+        "0.1181495403",
+        "0.3452052585",
+        "0.649440562",
+        "1.017915991",
+        "1.439221451",
+        "1.899614724",
+        "1.377587062",
+        "0.8247113268"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "4.88676313014e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 5,
+      "T": 9,
+      "sup": "2.692558500337820093979",
+      "kkt_residual": "8.8409549e-14",
+      "argmax": [
+        "0.1432779548",
+        "0.3887476201",
+        "0.7131776798",
+        "1.105874576",
+        "1.557958397",
+        "2.060025609",
+        "1.600201846",
+        "1.160045706",
+        "0.6987032647"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "6.46581615211e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 5,
+      "T": 10,
+      "sup": "2.872403611789742938928",
+      "kkt_residual": "7.7963466e-14",
+      "argmax": [
+        "0.1595311002",
+        "0.4167480364",
+        "0.7539391174",
+        "1.161701631",
+        "1.632428772",
+        "2.158604624",
+        "1.731813611",
+        "1.341460271",
+        "0.9715620162",
+        "0.5876998687"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "6.68936724892e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 5,
+      "T": 11,
+      "sup": "2.989043454348178709206",
+      "kkt_residual": "8.3444753e-14",
+      "argmax": [
+        "0.1700922035",
+        "0.4348746236",
+        "0.780233454",
+        "1.197542329",
+        "1.679890403",
+        "2.220689101",
+        "1.813010103",
+        "1.449047125",
+        "1.119208703",
+        "0.809576797",
+        "0.491201468"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "8.30922986213e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 5,
+      "T": 12,
+      "sup": "3.064930146808840171425",
+      "kkt_residual": "7.8762987e-14",
+      "argmax": [
+        "0.1769737943",
+        "0.4466573812",
+        "0.7972863493",
+        "1.220715229",
+        "1.710436349",
+        "2.26035805",
+        "1.864275645",
+        "1.515575122",
+        "1.20692284",
+        "0.9296031853",
+        "0.6714900758",
+        "0.4082857533"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "8.57733910218e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 6,
+      "T": 1,
+      "sup": "-4.554383205780551159532e-23",
+      "kkt_residual": "0.0",
+      "argmax": [
+        "1.0e-22"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 6,
+      "T": 2,
+      "sup": "-7.672448417403219050341e-23",
+      "kkt_residual": "0.0",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 6,
+      "T": 3,
+      "sup": "-9.056927602231759351771e-23",
+      "kkt_residual": "0.0",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 6,
+      "T": 4,
+      "sup": "0.0006081488081735872629721",
+      "kkt_residual": "2.7184708e-15",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "0.01988726248"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 6,
+      "T": 5,
+      "sup": "0.02053031834279984193605",
+      "kkt_residual": "1.4899757e-14",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "0.05834259705",
+        "0.1188451329"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 6,
+      "T": 6,
+      "sup": "0.1479213974302381041755",
+      "kkt_residual": "7.0952657e-14",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "0.02186215871",
+        "0.1309974818",
+        "0.2505529886",
+        "0.2963603696"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 6,
+      "T": 7,
+      "sup": "1.285821645048583170864",
+      "kkt_residual": "5.4797821e-14",
+      "argmax": [
+        "1.0e-22",
+        "0.01731429045",
+        "0.1672967119",
+        "0.3845063355",
+        "0.6431520646",
+        "0.9112510592",
+        "1.120971487"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "2.11483317109e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 6,
+      "T": 8,
+      "sup": "1.977876606408233653604",
+      "kkt_residual": "8.4903065e-14",
+      "argmax": [
+        "1.0e-22",
+        "0.07900887918",
+        "0.2767614532",
+        "0.5483805815",
+        "0.8767390151",
+        "1.244771272",
+        "1.626859531",
+        "0.9656724516"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "4.43047365508e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 6,
+      "T": 9,
+      "sup": "2.413794868755462692296",
+      "kkt_residual": "7.9633963e-14",
+      "argmax": [
+        "1.0e-22",
+        "0.1181495403",
+        "0.3452052585",
+        "0.649440562",
+        "1.017915991",
+        "1.439221451",
+        "1.899614724",
+        "1.377587062",
+        "0.8247113268"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "4.88676313156e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 6,
+      "T": 10,
+      "sup": "2.692558500337820093979",
+      "kkt_residual": "8.8409549e-14",
+      "argmax": [
+        "1.0e-22",
+        "0.1432779548",
+        "0.3887476201",
+        "0.7131776798",
+        "1.105874576",
+        "1.557958397",
+        "2.060025609",
+        "1.600201846",
+        "1.160045706",
+        "0.6987032647"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "6.46581615348e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 6,
+      "T": 11,
+      "sup": "2.872403611789742938928",
+      "kkt_residual": "7.7963466e-14",
+      "argmax": [
+        "1.0e-22",
+        "0.1595311002",
+        "0.4167480364",
+        "0.7539391174",
+        "1.161701631",
+        "1.632428772",
+        "2.158604624",
+        "1.731813611",
+        "1.341460271",
+        "0.9715620162",
+        "0.5876998687"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "6.68936725025e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 6,
+      "T": 12,
+      "sup": "2.989056041833607381624",
+      "kkt_residual": "7.8571175e-14",
+      "argmax": [
+        "0.003324571102",
+        "0.171577295",
+        "0.4359565171",
+        "0.7810940876",
+        "1.198249021",
+        "1.680476989",
+        "2.221175667",
+        "1.813409873",
+        "1.449369236",
+        "1.119459188",
+        "0.809758202",
+        "0.4913095703"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "7.90852512827e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 7,
+      "T": 1,
+      "sup": "-5.990701199938434428255e-23",
+      "kkt_residual": "0.0",
+      "argmax": [
+        "1.0e-22"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 7,
+      "T": 2,
+      "sup": "-1.053991452689052916482e-22",
+      "kkt_residual": "0.0",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 7,
+      "T": 3,
+      "sup": "-1.370192370855507665086e-22",
+      "kkt_residual": "0.0",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 7,
+      "T": 4,
+      "sup": "-1.506572337806979126041e-22",
+      "kkt_residual": "0.0",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 7,
+      "T": 5,
+      "sup": "0.0006081488081735872629121",
+      "kkt_residual": "2.7184708e-15",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "0.01988726248"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 7,
+      "T": 6,
+      "sup": "0.02053031834279984193599",
+      "kkt_residual": "1.4899757e-14",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "0.05834259705",
+        "0.1188451329"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 7,
+      "T": 7,
+      "sup": "0.1479213974302381041755",
+      "kkt_residual": "7.0952657e-14",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "0.02186215871",
+        "0.1309974818",
+        "0.2505529886",
+        "0.2963603696"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 7,
+      "T": 8,
+      "sup": "1.285821645048583170864",
+      "kkt_residual": "5.4797821e-14",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "0.01731429045",
+        "0.1672967119",
+        "0.3845063355",
+        "0.6431520646",
+        "0.9112510592",
+        "1.120971487"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "2.11483317165e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 7,
+      "T": 9,
+      "sup": "1.977876606408233653604",
+      "kkt_residual": "8.4903065e-14",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "0.07900887918",
+        "0.2767614532",
+        "0.5483805815",
+        "0.8767390151",
+        "1.244771272",
+        "1.626859531",
+        "0.9656724516"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "4.43047365567e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 7,
+      "T": 10,
+      "sup": "2.413794868755462692296",
+      "kkt_residual": "7.9633963e-14",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "0.1181495403",
+        "0.3452052585",
+        "0.649440562",
+        "1.017915991",
+        "1.439221451",
+        "1.899614724",
+        "1.377587062",
+        "0.8247113268"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "4.88676313213e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 7,
+      "T": 11,
+      "sup": "2.692558500337820093979",
+      "kkt_residual": "8.8409549e-14",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "0.1432779548",
+        "0.3887476201",
+        "0.7131776798",
+        "1.105874576",
+        "1.557958397",
+        "2.060025609",
+        "1.600201846",
+        "1.160045706",
+        "0.6987032647"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "6.46581615405e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 7,
+      "T": 12,
+      "sup": "2.872403611789742938928",
+      "kkt_residual": "7.7963466e-14",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "0.1595311002",
+        "0.4167480364",
+        "0.7539391174",
+        "1.161701631",
+        "1.632428772",
+        "2.158604624",
+        "1.731813611",
+        "1.341460271",
+        "0.9715620162",
+        "0.5876998687"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "6.68936725081e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 8,
+      "T": 1,
+      "sup": "-7.292602344556450699812e-23",
+      "kkt_residual": "0.0",
+      "argmax": [
+        "1.0e-22"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 8,
+      "T": 2,
+      "sup": "-1.326262402918105943619e-22",
+      "kkt_residual": "0.0",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 8,
+      "T": 3,
+      "sup": "-1.789197047797422872876e-22",
+      "kkt_residual": "0.0",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 8,
+      "T": 4,
+      "sup": "-2.102296038666803767699e-22",
+      "kkt_residual": "0.0",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 8,
+      "T": 5,
+      "sup": "-2.238417511676852407506e-22",
+      "kkt_residual": "0.0",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 8,
+      "T": 6,
+      "sup": "0.000608148808173587262839",
+      "kkt_residual": "2.7184708e-15",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "0.01988726248"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 8,
+      "T": 7,
+      "sup": "0.02053031834279984193592",
+      "kkt_residual": "1.4899757e-14",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "0.05834259705",
+        "0.1188451329"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 8,
+      "T": 8,
+      "sup": "0.1479213974302381041754",
+      "kkt_residual": "7.0952657e-14",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "0.02186215871",
+        "0.1309974818",
+        "0.2505529886",
+        "0.2963603696"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": null,
+      "excluded_by_row_box": true
+    },
+    {
+      "pe": 8,
+      "T": 9,
+      "sup": "1.285821645048583170864",
+      "kkt_residual": "5.4797821e-14",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "0.01731429045",
+        "0.1672967119",
+        "0.3845063355",
+        "0.6431520646",
+        "0.9112510592",
+        "1.120971487"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "2.11483317199e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 8,
+      "T": 10,
+      "sup": "1.977876606408233653604",
+      "kkt_residual": "8.4903065e-14",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "0.07900887918",
+        "0.2767614532",
+        "0.5483805815",
+        "0.8767390151",
+        "1.244771272",
+        "1.626859531",
+        "0.9656724516"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "4.43047365604e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 8,
+      "T": 11,
+      "sup": "2.413794868755462692296",
+      "kkt_residual": "7.9633963e-14",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "0.1181495403",
+        "0.3452052585",
+        "0.649440562",
+        "1.017915991",
+        "1.439221451",
+        "1.899614724",
+        "1.377587062",
+        "0.8247113268"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "4.88676313249e-12",
+      "excluded_by_row_box": false
+    },
+    {
+      "pe": 8,
+      "T": 12,
+      "sup": "2.692558500337820093979",
+      "kkt_residual": "8.8409549e-14",
+      "argmax": [
+        "1.0e-22",
+        "1.0e-22",
+        "1.0e-22",
+        "0.1432779548",
+        "0.3887476201",
+        "0.7131776798",
+        "1.105874576",
+        "1.557958397",
+        "2.060025609",
+        "1.600201846",
+        "1.160045706",
+        "0.6987032647"
+      ],
+      "certified_bound": "3.082516832689333141153",
+      "slack": "6.46581615441e-12",
+      "excluded_by_row_box": false
+    }
+  ],
+  "restriction_R1": [
+    {
+      "pe": 0,
+      "bot": [
+        1
+      ],
+      "integer": "0.5819531864438767969772",
+      "real": "0.5819531864438767969772",
+      "diff": "4.3944e-25"
+    },
+    {
+      "pe": 0,
+      "bot": [
+        1,
+        1
+      ],
+      "integer": "0.8537519976966274094505",
+      "real": "0.8537519976966274094505",
+      "diff": "4.52364e-25"
+    },
+    {
+      "pe": 0,
+      "bot": [
+        1,
+        2
+      ],
+      "integer": "0.5441104394286188219352",
+      "real": "0.5441104394286188219352",
+      "diff": "1.42172e-25"
+    },
+    {
+      "pe": 0,
+      "bot": [
+        1,
+        1,
+        1
+      ],
+      "integer": "0.9906553487543495459703",
+      "real": "0.9906553487543495459703",
+      "diff": "4.78214e-25"
+    },
+    {
+      "pe": 0,
+      "bot": [
+        1,
+        1,
+        2
+      ],
+      "integer": "0.7952390530914939492695",
+      "real": "0.7952390530914939492695",
+      "diff": "3.87741e-26"
+    },
+    {
+      "pe": 0,
+      "bot": [
+        1,
+        2,
+        1
+      ],
+      "integer": "0.4850846779003677647657",
+      "real": "0.4850846779003677647657",
+      "diff": "8.65955e-25"
+    },
+    {
+      "pe": 0,
+      "bot": [
+        1,
+        2,
+        2
+      ],
+      "integer": "0.5737541116210403472835",
+      "real": "0.5737541116210403472835",
+      "diff": "3.36042e-25"
+    },
+    {
+      "pe": 0,
+      "bot": [
+        1,
+        2,
+        3
+      ],
+      "integer": "-0.2675229975310286131012",
+      "real": "-0.2675229975310286131012",
+      "diff": "3.61892e-25"
+    },
+    {
+      "pe": 0,
+      "bot": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "integer": "1.054857027020087153461",
+      "real": "1.054857027020087153461",
+      "diff": "5.94536e-25"
+    },
+    {
+      "pe": 0,
+      "bot": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "integer": "0.8968240599918763629896",
+      "real": "0.8968240599918763629896",
+      "diff": "2.58494e-26"
+    },
+    {
+      "pe": 0,
+      "bot": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "integer": "0.6635116187712583630707",
+      "real": "0.6635116187712583630707",
+      "diff": "8.65955e-25"
+    },
+    {
+      "pe": 0,
+      "bot": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "integer": "0.7895643811265757518182",
+      "real": "0.7895643811265757518182",
+      "diff": "2.84343e-25"
+    },
+    {
+      "pe": 1,
+      "bot": [
+        1,
+        1
+      ],
+      "integer": "0.8665517327505225731843",
+      "real": "0.8665517327505225731843",
+      "diff": "1.29247e-26"
+    },
+    {
+      "pe": 1,
+      "bot": [
+        1,
+        1,
+        1
+      ],
+      "integer": "1.252575806608426176472",
+      "real": "1.252575806608426176472",
+      "diff": "0.0"
+    },
+    {
+      "pe": 1,
+      "bot": [
+        1,
+        2,
+        1
+      ],
+      "integer": "1.227019977723945768175",
+      "real": "1.227019977723945768175",
+      "diff": "2.84343e-25"
+    },
+    {
+      "pe": 1,
+      "bot": [
+        1,
+        2,
+        2
+      ],
+      "integer": "0.6958972437630029922945",
+      "real": "0.6958972437630029922945",
+      "diff": "2.1972e-25"
+    },
+    {
+      "pe": 1,
+      "bot": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "integer": "1.426862486300793119222",
+      "real": "1.426862486300793119222",
+      "diff": "1.29247e-25"
+    },
+    {
+      "pe": 1,
+      "bot": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "integer": "1.515531920021465701739",
+      "real": "1.515531920021465701739",
+      "diff": "1.03398e-25"
+    },
+    {
+      "pe": 1,
+      "bot": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "integer": "1.045442838451467643594",
+      "real": "1.045442838451467643594",
+      "diff": "4.1359e-25"
+    },
+    {
+      "pe": 1,
+      "bot": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "integer": "0.9823254678377560557526",
+      "real": "0.9823254678377560557526",
+      "diff": "1.29247e-26"
+    },
+    {
+      "pe": 1,
+      "bot": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "integer": "1.355080630941956817489",
+      "real": "1.355080630941956817489",
+      "diff": "2.58494e-25"
+    },
+    {
+      "pe": 1,
+      "bot": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "integer": "0.9992168119771117501584",
+      "real": "0.9992168119771117501584",
+      "diff": "2.58494e-25"
+    },
+    {
+      "pe": 1,
+      "bot": [
+        1,
+        2,
+        3,
+        1
+      ],
+      "integer": "0.6280287843950408479189",
+      "real": "0.6280287843950408479189",
+      "diff": "4.78214e-25"
+    },
+    {
+      "pe": 1,
+      "bot": [
+        1,
+        2,
+        3,
+        2
+      ],
+      "integer": "0.5562506948137239598069",
+      "real": "0.5562506948137239598069",
+      "diff": "1.16322e-25"
+    },
+    {
+      "pe": 2,
+      "bot": [
+        1,
+        1,
+        1
+      ],
+      "integer": "0.9296691033642341610258",
+      "real": "0.9296691033642341610258",
+      "diff": "3.87741e-26"
+    },
+    {
+      "pe": 2,
+      "bot": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "integer": "1.376726829613082482049",
+      "real": "1.376726829613082482049",
+      "diff": "5.16988e-26"
+    },
+    {
+      "pe": 2,
+      "bot": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "integer": "1.465396263333755064567",
+      "real": "1.465396263333755064567",
+      "diff": "3.10193e-25"
+    },
+    {
+      "pe": 2,
+      "bot": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "integer": "1.218359258756340467905",
+      "real": "1.218359258756340467905",
+      "diff": "4.1359e-25"
+    },
+    {
+      "pe": 2,
+      "bot": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "integer": "0.5041071472633196620685",
+      "real": "0.5041071472633196620685",
+      "diff": "1.16322e-25"
+    },
+    {
+      "pe": 2,
+      "bot": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "integer": "1.575823968073848565493",
+      "real": "1.575823968073848565493",
+      "diff": "5.16988e-26"
+    },
+    {
+      "pe": 2,
+      "bot": [
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "integer": "1.778718664399674138826",
+      "real": "1.778718664399674138826",
+      "diff": "2.58494e-25"
+    },
+    {
+      "pe": 2,
+      "bot": [
+        1,
+        1,
+        2,
+        2,
+        1
+      ],
+      "integer": "1.592715312213204259899",
+      "real": "1.592715312213204259899",
+      "diff": "4.65289e-25"
+    },
+    {
+      "pe": 2,
+      "bot": [
+        1,
+        1,
+        2,
+        2,
+        2
+      ],
+      "integer": "0.9158465293548282602925",
+      "real": "0.9158465293548282602925",
+      "diff": "2.06795e-25"
+    },
+    {
+      "pe": 2,
+      "bot": [
+        1,
+        2,
+        1,
+        1,
+        1
+      ],
+      "integer": "1.168670278245456308254",
+      "real": "1.168670278245456308254",
+      "diff": "2.58494e-25"
+    },
+    {
+      "pe": 2,
+      "bot": [
+        1,
+        2,
+        2,
+        1,
+        1
+      ],
+      "integer": "1.655650703954810060805",
+      "real": "1.655650703954810060805",
+      "diff": "5.16988e-25"
+    },
+    {
+      "pe": 2,
+      "bot": [
+        1,
+        2,
+        2,
+        2,
+        1
+      ],
+      "integer": "1.583872614373493172693",
+      "real": "1.583872614373493172693",
+      "diff": "6.72084e-25"
+    },
+    {
+      "pe": 3,
+      "bot": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "integer": "0.8096570964458677189119",
+      "real": "0.8096570964458677189119",
+      "diff": "3.61892e-25"
+    },
+    {
+      "pe": 3,
+      "bot": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "integer": "1.294098151329360846165",
+      "real": "1.294098151329360846165",
+      "diff": "1.55096e-25"
+    },
+    {
+      "pe": 3,
+      "bot": [
+        1,
+        2,
+        1,
+        1,
+        1
+      ],
+      "integer": "1.443801237440978146419",
+      "real": "1.443801237440978146419",
+      "diff": "2.58494e-25"
+    },
+    {
+      "pe": 3,
+      "bot": [
+        1,
+        2,
+        2,
+        1,
+        1
+      ],
+      "integer": "1.310989495468716540571",
+      "real": "1.310989495468716540571",
+      "diff": "4.3944e-25"
+    },
+    {
+      "pe": 3,
+      "bot": [
+        1,
+        2,
+        2,
+        2,
+        1
+      ],
+      "integer": "0.880823113359223913953",
+      "real": "0.880823113359223913953",
+      "diff": "6.97934e-25"
+    },
+    {
+      "pe": 3,
+      "bot": [
+        1,
+        2,
+        2,
+        2,
+        2
+      ],
+      "integer": "0.006123478564213637486713",
+      "real": "0.006123478564213637486712",
+      "diff": "6.23011e-26"
+    },
+    {
+      "pe": 4,
+      "bot": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "integer": "0.529197566225511806168",
+      "real": "0.529197566225511806168",
+      "diff": "3.74816e-25"
+    }
+  ],
+  "open_gaps": {
+    "G1_status": "NOT proved and NOT refuted.  What changes is that the e_inf cut no longer needs it: separate certified caps on the two edges give the same finite window.",
+    "what_remains": "certifying pe = 9..66 (this run certified pe <= 8; the bound above is rigorous but the intermediate frames are not individually certified), and then the honest enumeration inside the G1-free cut",
+    "headline": "still the upper bound on M_n, which none of this touches"
+  },
+  "checks": [
+    {
+      "name": "R1 the extended objective restricts to the integer one",
+      "ok": true,
+      "detail": "over 43 (pe, block) pairs the real-u objective agrees with the committed `delta_excess` to 8.66e-25 \u2014 scale-1e-40 integers against mp.dps = 25 reals.  This is the check that makes the relaxation a relaxation of the RIGHT problem: the one-body term `fi(beta) - fi(b0)` is a partial sum with no canonical real extension, and the obvious integral extension is concave but NOT exact at integers.  `R(b0) - R(b0+u)` with `R(x) = sum_{j>=1} eps(x+j)` is both, because the constant `sum_m eps(m)` cancels"
+    },
+    {
+      "name": "R2 the bottom-edge value is concave in u \u2014 measured, not assumed",
+      "ok": true,
+      "detail": "minimum concavity gap 0.00167078 over 300 random feasible triples spanning both environments of the frame.  The reason is one second derivative used four times: `-R(b0 + u)` is concave because `-R' = sum_j gx(b0+u+j)` is decreasing; every pair term is `-eps(g + (u_i - u_j))`, concave composed with a linear map; the above-block tail is `-eps(g - u_j)`; the cost is `-(ln q0/2) sum u^2`.  So maximising over real u is a CONCAVE PROGRAM and a coordinate-wise stationary point is the global maximum"
+    },
+    {
+      "name": "R3 the closed-form tails, the analytic gradient and the T-independence of Gamma hold",
+      "ok": true,
+      "detail": "the resummed `R` and `W` agree with direct sums to 6.204e-25 and their derivative forms to 5.17e-25; the analytic gradient agrees with a central difference to 4.2e-16.  The direction of that last test matters: the CERTIFICATE uses the analytic form, because the supergradient inequality is about the true gradient and a difference quotient would make it a statement about the step size \u2014 the finite difference is here only to catch an algebra slip.  And `Gamma_j` agrees to 1.677e-23 across block lengths 3, 7 and 11, which is the fact the all-T certificate rests on: the block rows above `j` and the undisplaced tail above the block are one sum split at an arbitrary place"
+    },
+    {
+      "name": "R4 the plain u >= 0 relaxation is valid and CONVERGED \u2014 and measurably not tight",
+      "ok": true,
+      "detail": "B_cert = 3.082516832698110534985 at (pe, T) = (4, 12), 1.42722x the enumerated maximum 2.159802376118286.  The ascent point is verified stationary rather than assumed to be: worst KKT residual 9.66835e-14 over 108 programs, and 0 violations of the invariant that sup is non-decreasing in T (padding the length-(T-1) optimum with a zero is feasible) \u2014 which is the check that caught a cold-start ascent returning 1.8466 at T = 6 against 2.0310 at T = 5, and again a search whose lower barrier was wrongly fixed at 0 when the rows BELOW force `u_i > u_j - (b0_i - b0_j)`.  **But the sup does not settle**: the last increment in T is still 0.278764 at T = 12.  That is not a convergence failure, it is the relaxation being loose in kind \u2014 every Gamma_j is strictly positive, so a real u collects a gain from an arbitrarily small displacement on arbitrarily many rows, and no integer block can do that because its entries jump from 0 to 1.  The top edge has no such gap: its class forces u >= 1, which is exactly why ITS relaxation lands at 1.04x.  R5 closes the gap with a valid inequality rather than by running T further"
+    },
+    {
+      "name": "R5b the integer box is sound and no looser than the real box",
+      "ok": true,
+      "detail": "B_allT with every charged row's interval rounded to its integers is 3.376047226439865682559 against 3.377121604817151150672 on the real box \u2014 1.56313x the enumerated maximum, a gain of 0.0010743784.  Sound because Xbot is a maximum over integer blocks only (as the lam program already requires: u^2 >= u holds on integers only), and it still dominates the enumerated maximum, which an integer block attains"
+    },
+    {
+      "name": "R5 the all-T bound is sound, both dimensions are bounded, and the tightening is measured",
+      "ok": true,
+      "detail": "Every integer `u_j >= 0` satisfies `u_j^2 >= u_j`, so for any `lam >= 0` the integer supremum is bounded by `sup_{real u >= 0} [G(u) + lam sum_j (u_j^2 - u_j)]` \u2014 and since `+lam sum u^2` eats into `G`'s own `-(ln q0/2) sum u^2`, that stays CONCAVE for `lam < ln q0/2 = 0.05217036`.  Every lam gives a valid bound, so the best is the smallest: the scan picks lam = 0.010434072 (0.2 of the concavity limit), giving B_allT = 3.377121604817151150672 at pe = 8, which is 1.56363x the enumerated maximum against 9.62x for the sibling probe's per-row coercivity bound.  What lam is worth, measured LIKE FOR LIKE at the scan frame pe = 4: 3.48334065439 with the tightening off against 3.23776802872 at lam*, a gain of 0.245573.  (`B_cert` = 1.42722x is NOT comparable to either \u2014 it is a per-program bound over T <= 12 only.)  The charge `-lam u_j` falls on exactly the rows the relaxation was exploiting: every row with `Gamma_j < lam` is driven to zero, which truncates at a finite support the accumulation of arbitrarily-small displacements that no integer block can make.  The bound covers every block length because `Gamma_j` is T-free (R3), so padding the ascent point with zeros changes neither `G(w)` nor any box; the padded rows are charged 0.100063 in total and the remainder beyond them is exactly zero (g <= 0, lo = w = 0, Gamma monotone) (0.0) \u2014 never dropped.  The wall depth is bounded separately and uniformly in pe: every slope is at most `2 Rg(0) = 4.39206` (one-body plus downward gains, which sit at distinct positive integer gaps), while a block of length <= 26 in a pe-deep wall pays `ln q0 (pe - T + 1)` per row, so none in a wall deeper than pe0 = 66 reaches the incumbent.  pe was a CAP in the enumeration (P_EXT_MAX = 8), not a bound"
+    },
+    {
+      "name": "R6 the G1-free cut is enumerable",
+      "ok": false,
+      "detail": "the G1-free cut is 48, too wide to enumerate.  B_bot = 3.37604722644 is not tight enough to replace G1 yet"
+    }
+  ],
+  "verdict": "Carries #7349's concave-relaxation + supergradient-certificate route across to the bottom edge, over a frame that is two glued environments with an extra linear cost and a second unbounded dimension.  The payoff is not a proof of G1 but its elimination: with both edges certified separately the join's finite window follows without the Xbot <= Xblock assumption at all."
+}

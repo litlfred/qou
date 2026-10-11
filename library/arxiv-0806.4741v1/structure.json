@@ -5,7 +5,8 @@
   "file": "0806.4741v1.pdf",
   "sha256": "5e7ad85a99fb355293d35eb086cb3b6b761482e01a4afac313a2e33d7067692f",
   "bytes": 450196,
-  "pages": 26
+  "pages": 26,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "The deformation quantizations of the hyperbolic plane",
   "authors_raw": null,
-  "abstract": "We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order hyperbolic diﬀerential operator. The construction is entirely explicit and relies on non-commutative harmonic analytical techniques on symplectic symmetric spaces. The present work presents a uniﬁed method producing every quantization of D, and provides, in the 2-dimensional context, an exact solution to Weinstein’s WKB quantization program within geometric terms. The construction reveals the existence of a metric of Lorentz signature canonically attached (or ‘dual’) to the geometry of the hyperbolic plane through the quantization process.",
+  "abstract": "We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order hyperbolic di\ufb00erential operator. The construction is entirely explicit and relies on non-commutative harmonic analytical techniques on symplectic symmetric spaces. The present work presents a uni\ufb01ed method producing every quantization of D, and provides, in the 2-dimensional context, an exact solution to Weinstein\u2019s WKB quantization program within geometric terms. The construction reveals the existence of a metric of Lorentz signature canonically attached (or \u2018dual\u2019) to the geometry of the hyperbolic plane through the quantization process.",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20181031210849Z",
@@ -25,12 +26,12 @@
    "Producer": "pdfTeX-1.40.4",
    "Title": ""
   },
-  "title_prev": "The deformation quantizations of the hyperbolic plane P. Bieliavsky Géométrie et Physique mathématique Université Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium",
+  "title_prev": "The deformation quantizations of the hyperbolic plane P. Bieliavsky G\u00e9om\u00e9trie et Physique math\u00e9matique Universit\u00e9 Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium",
   "title_lines": [
    "The deformation quantizations of the hyperbolic plane",
    "P. Bieliavsky",
-   "Géométrie et Physique mathématique",
-   "Université Catholique de Louvain",
+   "G\u00e9om\u00e9trie et Physique math\u00e9matique",
+   "Universit\u00e9 Catholique de Louvain",
    "2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium"
   ]
  },
@@ -93,7 +94,7 @@
   },
   {
    "level": 2,
-   "title": "The space of star products on the Poincaré orbit M:=SO(1,1)R2/R",
+   "title": "The space of star products on the Poincar\u00e9 orbit M:=SO(1,1)R2/R",
    "page": 11,
    "source": "outline",
    "number": null
@@ -156,7 +157,7 @@
   },
   {
    "level": 2,
-   "title": "Co-adjoint orbits of iso(1,1): the Poincaré plane",
+   "title": "Co-adjoint orbits of iso(1,1): the Poincar\u00e9 plane",
    "page": 23,
    "source": "outline",
    "number": null
@@ -314,6 +315,115 @@
   "likely_scanned": false,
   "toc_entries": 20,
   "sections": 13,
-  "chars_total": 65014
+  "chars_total": 65014,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Source.tex",
+   "tex_sections": 16,
+   "overlaid": 10,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-motivations",
+     "title": "Motivations",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-what-is-done-in-the-present-work",
+     "title": "What is done in the present work",
+     "prose_ratio": 0.845,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-symplectic-symmetric-spaces",
+     "title": "Symplectic symmetric spaces",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.606,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-group-type-symplectic-symmetric-surfaces-curvatu",
+     "title": "Group type symplectic symmetric surfaces, curvature contractions",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-admissible-functions-on-symplectic-symmetric-sur",
+     "title": "Admissible functions on symplectic symmetric surfaces",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-deformation-quantization",
+     "title": "Deformation Quantization",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-sl2r--triplets-of-derivations-and-an-unexpected",
+     "title": "sl2(R)- triplets of derivations and an unexpected Lorentzian structure",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-the-de-contraction-procedure-evolution-of-the-da",
+     "title": "The de-contraction procedure: evolution of the Dalembert operator",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.928,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-finding-solutions-of-the-dalembertian-evolution",
+     "title": "Finding solutions of the Dalembertian evolution by variable separation",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.911,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-normalizations-and-asymptotic-expansions",
+     "title": "Normalizations and asymptotic expansions",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.928,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-complements",
+     "title": "Complements",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-on-d-and-m",
+     "title": "On D and M",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

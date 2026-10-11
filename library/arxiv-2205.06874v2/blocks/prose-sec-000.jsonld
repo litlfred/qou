@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2205.06874v2/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2205.06874v2/blocks/prose-sec-000",
   "kind": "prose",
   "title": "Spherical fusion categories",
   "pageStart": 3,
   "pageEnd": 3,
   "text": "../sections/sec-000-spherical-fusion-categories.md",
-  "derivedFrom": "library/arxiv-2205.06874v2/manifest",
-  "sourceDocument": "library/arxiv-2205.06874v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2205.06874v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2205.06874v2/manifest.jsonld",
   "provenance": "ingested"
 }

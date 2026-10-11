@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2007.13108v1/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2007.13108v1/blocks/prose-sec-009",
   "kind": "prose",
   "title": "Proof of Fact 3",
   "pageStart": 14,
   "pageEnd": 15,
   "text": "../sections/sec-009-4-proof-of-fact-3.md",
-  "derivedFrom": "library/arxiv-2007.13108v1/manifest",
-  "sourceDocument": "library/arxiv-2007.13108v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2007.13108v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2007.13108v1/manifest.jsonld",
   "provenance": "ingested"
 }

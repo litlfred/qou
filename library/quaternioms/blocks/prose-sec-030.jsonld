@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/quaternioms/blocks/prose-sec-030",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/quaternioms/blocks/prose-sec-030",
   "kind": "prose",
   "title": "Synthesis of Contributions and Answers to Research Questions—Additional Details",
   "pageStart": 27,
   "pageEnd": 30,
   "text": "../sections/sec-030-synthesis-of-contributions-and-answers-to-resear.md",
-  "derivedFrom": "library/quaternioms/manifest",
-  "sourceDocument": "library/quaternioms/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/quaternioms/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/quaternioms/manifest.jsonld",
   "provenance": "ingested"
 }

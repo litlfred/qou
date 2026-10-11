@@ -8,30 +8,20 @@ pages: 41-41
 source_pdf: 2410.14661v1.pdf
 source_sha256: 3362fcd5e28eb1f0
 doc_brief: "On the asymptotic expansion of various quantum invariants III: the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by integral surgery along the figure-eight knot — This is"
+text_source: latex
+latex_prose_ratio: 0.6
+latex_coverage_ratio: 0.846
 ---
-Proof. Using formula (5.69), together with Proposition 5.12, we obtain
-RTr(Mp,q) = 4ˆhN(0, 0, 0) +O(e(N + 1
-2 )(ζR(p,q))−ϵ),(5.116)
-= (−1)p+1√
-−1eσp,q( 3
-2N +1 +N +1
-2 )π√−1ω(p,q )e(N + 1
-2 )ζR(p,q)
-·
- 
-1 +
-dX
-i=1
-κi(p,q )
-2π√−1
-N + 1
-2
-i
-+O
- 1
-(N + 1
-2)d+1
-!
-,
-ford≥ 1, where ω(p,q ) is given by formula (5.104) and κi(p,q ) are constants determined
-byMp,q. □
+[]{#subsection-final label="subsection-final"}
+
+Now we can finish the proof of Theorem [\[theorem-main\]](#theorem-main){reference-type="ref" reference="theorem-main"} as follows.
+
+::: proof
+*Proof.* Using formula ([\[formula-propRT\]](#formula-propRT){reference-type="ref" reference="formula-propRT"}), together with Proposition [\[prop-m0n0\]](#prop-m0n0){reference-type="ref" reference="prop-m0n0"}, we obtain $$\begin{aligned}
+        RT_{r}(M_{p,q})&=4\hat{h}_{N}(0,0,0)+O(e^{(N+\frac{1}{2})(\zeta_\mathbb{R}(p,q))-\epsilon}),
+        \\\nonumber
+        &=(-1)^{p+1}\sqrt{-1}e^{\sigma_{p,q}\left(\frac{3}{2N+1}+\frac{N+1}{2}\right)\pi\sqrt{-1}}\omega(p,q)e^{(N+\frac{1}{2})\zeta_{\mathbb{R}}(p,q)}\\\nonumber
+&\cdot\left(1+\sum_{i=1}^d\kappa_i(p,q)\left(\frac{2\pi\sqrt{-1}}{N+\frac{1}{2}}\right)^i+O\left(\frac{1}{(N+\frac{1}{2})^{d+1}}\right)\right),
+    
+\end{aligned}$$ for $d\geq 1$, where $\omega(p,q)$ is given by formula ([\[formula-omega\]](#formula-omega){reference-type="ref" reference="formula-omega"}) and $\kappa_i(p,q)$ are constants determined by $M_{p,q}$. ◻
+:::

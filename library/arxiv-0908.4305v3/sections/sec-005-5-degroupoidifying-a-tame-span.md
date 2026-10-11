@@ -8,10 +8,10 @@ pages: 45-45
 source_pdf: 0908.4305v3.pdf
 source_sha256: ab8d2b335b026a36
 doc_brief: "Higher Dimensional Algebra VII: Groupoidification — Groupoidiﬁcation is a form of categoriﬁcation in which vect or spaces are replaced by groupoids and linear operators are replaced by spans of"
+text_source: latex
+latex_prose_ratio: 0.941
+latex_coverage_ratio: 1.0
 ---
-In Section 2 we described a process for turning a tame span of grou poids into
-a linear operator. In this section we show this process is well-deﬁned . The
-calculations in the proof yield an explicit criterion for when a span is tam e.
-They also give an explicit formula for the the operator coming from a t ame
-span. As part of our work, we also show that equivalent spans give t he same
-operator.
+[]{#processes label="processes"}
+
+In Section [\[degroupoidification\]](#degroupoidification){reference-type="ref" reference="degroupoidification"} we described a process for turning a tame span of groupoids into a linear operator. In this section we show this process is well-defined. The calculations in the proof yield an explicit criterion for when a span is tame. They also give an explicit formula for the the operator coming from a tame span. As part of our work, we also show that equivalent spans give the same operator.

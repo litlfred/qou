@@ -212,5 +212,5 @@ is already Lean-adjacent via the GAP-A-4 verifier; no new identity to formalize 
 - `docs/audits/2026-05-31-gap-a3-a4-feasibility-assessment.md` — GAP-A-4 H_3 impossibility theorem.
 - `docs/lambda-scale-absorbed-into-vol-density.md` — m(K) = m_e·VolDensity single-call framing.
 - `computations/_li_2_q_util.py` — vol_density_borromean (production) + spectral_correction (exploratory composite).
-- `computations/_deprecated/per_block_phi_q.py` — the fit_three_E0 (the thing to replace).
+- `fsh-guts/deprecated/computations/per_block_phi_q.py` — the fit_three_E0 (the thing to replace).
 - `computations/rho-prefactor-structural-verifier.witness.json` — proton≡neutron≡he3 at H_3 (the falsification data).

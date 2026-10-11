@@ -8,196 +8,190 @@ pages: 19-22
 source_pdf: 1712.04212v4.pdf
 source_sha256: 521911fc8724f3c2
 doc_brief: "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION — In this paper, we consider a concentration of measure problem on Riemannian manifolds with"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-In what follows, let (M,dM,mM,f ) denote ann-dimensional weighted
-Riemannian manifold with boundary deﬁned as (1.4) such thatmM,f is
-a Borel probability measure. We study the metric measure space with
-boundary (M,f ) deﬁned as (1.7).
-4.1. Boundary separation distances and Dirichlet eigenvalues.
-Let us show the following relation between the boundary separation
-distance and the Dirichlet eigenvalue:
-Lemma 4.1. LetM be compact. Then for all η1,...,η k > 0 we have
-BSep ((M,f );η1,...,η k)≤ 2√
-νf,k(M) minα=1,...,kηα
-,
-whereνf,k(M) is the k-th Dirichlet eigenvalue of ∆f deﬁned as (1.6).
-Proof. We set S := BSep((M,f );η1,...,η k). We may assume S > 0.
-Let us ﬁx a suﬃciently smallϵ> 0. There exists a sequence{Ωα}k
-α=1∈
-S(M,f )(η1,...,η k) such thatS−ϵ< D(M,f )
-(
-{Ωα}k
-α=1
-)
-. Put Sϵ :=S−ϵ.
-For eachα, we deﬁne a Lipschitz function φα :M→ R by
-φα(x) := max
-{
-1− 2
-Sϵ
-dM(x, Ωα), 0
-}
-.
-Notice that the support of φα coincides with BSϵ/2(Ωα). Furthermore,
+\label{sec:Dirichlet eigenvalues}
+In what follows,
+let $(M,d_{M},m_{M,f})$ denote an $n$-dimensional weighted Riemannian manifold with boundary defined as (\ref{eq:weighted volume measure}) such that $m_{M,f}$ is a Borel probability measure.
+We study the metric measure space with boundary $(M,f)$ defined as (\ref{eq:weighted Riemannian manifold}).
+
+
+
+\subsection{Boundary separation distances and Dirichlet eigenvalues}
+Let us show the following relation between the boundary separation distance and the Dirichlet eigenvalue:
+\begin{lem}\label{lem:Dirichlet eigenvalue and Dirichlet separation distance}
+Let $M$ be compact.
+Then for all $\eta_{1},\dots,\eta_{k}>0$
+we have
+\begin{equation*}
+\DS\left((M,f);\eta_{1},\dots,\eta_{k}\right)\leq \frac{2}{\sqrt{\nu_{f,k}(M)\, \min_{\alpha=1,\dots,k} \eta_{\alpha}}},
+\end{equation*}
+where $\nu_{f,k}(M)$ is the $k$-th Dirichlet eigenvalue of $\Delta_{f}$ defined as $(\ref{eq:notation of Dirichlet eigenvalue})$.
+\end{lem}
+\begin{proof}
+We set $S:=\DS((M,f);\eta_{1},\dots,\eta_{k})$.
+We may assume $S>0$.
+Let us fix a sufficiently small $\epsilon>0$.
+There exists a sequence $\{\Omega_{\alpha}\}^{k}_{\alpha=1} \in \mathcal{S}_{(M,f)}(\eta_{1},\dots,\eta_{k})$ such that $S-\epsilon<\mathcal{D}_{(M,f)}\bigl(\{\Omega_{\alpha}\}^{k}_{\alpha=1}\bigl)$.
+Put $S_{\epsilon}:=S-\epsilon$.
+For each $\alpha$,
+we define a Lipschitz function $\phi_{\alpha}:M\to \mathbb{R}$ by
+\begin{equation*}
+\phi_{\alpha}(x):=\max \left\{1-\frac{2}{S_{\epsilon}}\,d_{M}(x,\Omega_{\alpha}),0\right\}.
+\end{equation*}
+Notice that
+the support of $\phi_{\alpha}$ coincides with $B_{S_{\epsilon}/2}(\Omega_{\alpha})$.
+Furthermore,
 the following properties hold:
-(1) φα≡ 0 on BSϵ/2(∂M );
-(2) φα≡ 0 on BSϵ/2(Ωβ) for every β = 1,...,k with β⁄=α;
-(3) φα≡ 1 on Ωα;
-(4)‖∇φα‖≤ 2/Sϵ mM,f -almost everywhere on M.
-20 YOHEI SAKURAI
-By (1),φα belongs to the Sobolev spaceH1
-0(M,mM,f ). By (2), the func-
-tions φ1,...,φ k are orthogonal to each other in H1
-0(M,mM,f ). Let L0
-be the k-dimensional subspace of H1
-0(M,mM,f ) spanned by φ1,...,φ k.
-From (3) and (4), for every φ∈L0\{ 0} we deduce
-∫
-M
-φ2dmM,f =
-k∑
-α=1
-c2
-α
-∫
-M
-φ2
-αdmM,f≥
-k∑
-α=1
-c2
-αηα≥ min
-α
-ηα
-k∑
-α=1
-c2
-α,
-∫
-M
-‖∇φ‖2dmM,f =
-k∑
-α=1
-c2
-α
-∫
-M
-‖∇φα‖2dmM,f≤
-( 2
-Sϵ
-)2 k∑
-α=1
-c2
-α,
-where c1,...,c k are determined by φ =∑k
-α=1 cαφα. Hence we have
-Rf(φ) =
-∫
-M‖∇φ‖2dmM,f∫
-M φ2dmM,f
-≤ 1
-minαηα
-( 2
-Sϵ
-)2
-,
-where Rf(φ) is the Rayleigh quotient of φ deﬁned as (2.9). From the
-min-max principle (2.10) we derive
-νf,k(M)≤ sup
-φ∈L0\{0}
-Rf(φ)≤ 1
-minαηα
-( 2
-Sϵ
-)2
-.
-Letting ϵ→ 0, we conclude the inequality. 2
-Remark 4.1. In the forthcoming paper [11], Funano and the author
-prove the following reﬁned estimate for k = 1 (see Theorem 2.3 in
-[11]): For every η >0 we have
-BSep ((M,f );η)≤ 1√
-νf,1(M)
-loge
-η.
-Remark 4.2. Colbois and Savo [9] have shown a similar estimate for
-the k-th closed eigenvalue of the Laplacian (see Lemma 5 in [9]).
-Remark 4.3. Chung, Grigor’yan and Yau [8] have estimated the k-th
-closed eigenvalue and Robin eigenvalue of the Laplacian in terms of
-the separation distance (see Theorem 1.1 in [8]). By applying the same
-argument in [8] to our setting, we see the following estimate forνf,k(M):
-Suppose thatM is compact. Then for every integerk >2, and for every
-sequence{Ωα}k
-α=1 of Borel subsets with minα⁄=βdM(Ωα, Ωβ)≥D,
-νf,k(M)−νf,1(M)≤ 1
-D2 max
-α⁄=β
-(
-log 4∫
-Ωα
-φ2
-f,1dmM,f
-∫
-Ωβ
-φ2
-f,1dmM,f
-)2
-,
-where φf,1 is an L2-normalized eigenfunction for νf,1(M).
-1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY 21
-4.2. Observable inscribed radii and Dirichlet eigenvalues.Now,
-Lemma 4.1 together with Lemma 3.4 leads us to the following relation
-between the observable inscribed radius and the Dirichlet eigenvalue:
-Proposition 4.2. LetM be compact. Then for every η >0,
-ObsInRad((M,f );−η)≤ 2√
-νf,1(M)η
-.
-Remark 4.4. Under the curvature condition (2.1) and InRad M≤ D,
-the author [43] has provided a lower bound of νf,1(M) depending only
-on κ, λ, Nand D (see Theorem 1.6 in [43] and Remark 2.8, and also
-pioneering works of Li-Yau [27] and Kasue [17]). Combining Proposi-
-tion 4.2 with the lower estimate tells us that we have an upper bound
-of ObsInRad((M,f );−η) depending only on κ, λ, N, Dand η.
-Similarly, under the condition (2.3) forκ andλ satisfying the convex-
-ball-condition, and under f≤ (n− 1)δ, the author [45] has obtained a
-lower bound of νf,1(M) depending only on n, κ, λandδ (see Theorem
-8.5 in [45]). In virtue of Proposition 4.2, we possess an upper bound of
-ObsInRad((M,f );−η) depending only on n, κ, λ, δand η.
-Proposition 4.2 enables us to prove Theorem 1.1.
-Proof of Theorem 1.1. Let{(Mn,fn)} be a sequence of compact metric
-measure spaces with boundary deﬁned as (1 .7). By Proposition 4.2, if
-νfn,1(Mn)→∞ asn→∞ , then ObsInRad((Mn,fn);−η)→ 0. Hence,
-{(Mn,fn)} is a boundary concentration family. 2
-We also derive the following from Proposition 4.2 and Theorem 2.4:
-Theorem 4.3. LetM be compact. If Ric∞
-f,M≥ 0 and Hf,∂M≥ 0, then
-there is a universal constant C >0 such that for all k≥ 1 and η >0,
-ObsInRad((M,f );−η)≤ Ck√
-νf,k(M)η
-.
-Let us give a proof of Theorem 1.2 by using Theorem 4.3.
-Proof of Theorem 1.2. Let{(Mn,fn)} denote a sequence of compact
-metric measure spaces with boundary deﬁned as (1 .7). Assume that
-Ric∞
-fn,Mn≥ 0 and Hfn,∂Mn≥ 0. Due to Theorem 4.3, if νfn,k(Mn)→∞
-for k, then ObsInRad((Mn,fn);−η)→ 0. We complete the proof. 2
-Remark 4.5. The author wonders whether the following statement of E.
-Milman type holds (see [33], [34], and Theorem 9.46 in [46]): Under the
-same setting as in Theorems 1.1, 1.2, if Ric∞
-fn,Mn≥ 0 and Hfn,∂Mn≥ 0,
-and if{(Mn,fn)} is a boundary concentration family, thenνfn,1(Mn)→
-22 YOHEI SAKURAI
-∞. If it is true, then in virtue of Theorems 1.1, 1.2, we can say that
-under Ric∞
-fn,Mn≥ 0 and Hfn,∂Mn≥ 0, the following are equivalent:
-(1){(Mn,fn)} is a boundary concentration family;
-(2) νfn,1(Mn)→∞ as n→∞ ;
-(3) νfn,k(Mn)→∞ as n→∞ for some k≥ 1.
-The author also wonders if one can extend the above equivalence to
-a weaker setting Ric N
-fn,Mn≥ 0 and Hfn,∂Mn≥ 0 for N∈ (−∞, 1] (see
-Remark 2.1). Under Ric N
-f,∂M⊥≥ 0 and Hf,∂M ≥ 0 for N∈ (−∞, 1],
-the author [44] has proved a dimension free inequality
-νf,1(M)≥π2(2 InRadM)−2,
-of Li-Yau, Kasue type, and a rigidity result for the equality case (see
-Corollary 6.5 in [44], and also [27], [17], and cf. Remarks 2.3 and 2.8).
+\begin{enumerate}\setlength{\itemsep}{+1.5mm}
+\item $\phi_{\alpha} \equiv 0$ on $B_{S_{\epsilon}/2}(\bm)$; \label{item:vanish on boundary}
+\item $\phi_{\alpha} \equiv 0$ on $B_{S_{\epsilon}/2}(\Omega_{\beta})$ for every $\beta=1,\dots,k$ with $\beta \neq \alpha$; \label{item:vanish on another domain}
+\item $\phi_{\alpha} \equiv 1$ on $\Omega_{\alpha}$; \label{item:identity}
+\item $\Vert \nabla \phi_{\alpha} \Vert \leq 2/S_{\epsilon}$ $m_{M,f}$-almost everywhere on $M$. \label{item:gradient estimate}
+\end{enumerate}
+By (\ref{item:vanish on boundary}),
+$\phi_{\alpha}$ belongs to the Sobolev space $H^{1}_{0}(M,m_{M,f})$.
+By (\ref{item:vanish on another domain}),
+the functions $\phi_{1},\dots,\phi_{k}$ are orthogonal to each other in $H^{1}_{0}(M,m_{M,f})$.
+Let $L_{0}$ be the $k$-dimensional subspace of $H^{1}_{0}(M,m_{M,f})$ spanned by $\phi_{1},\dots,\phi_{k}$.
+From (\ref{item:identity}) and (\ref{item:gradient estimate}),
+for every $\phi \in L_{0}\setminus \{0\}$
+we deduce
+\begin{align*}
+\int_{M}\,\phi^{2}\,dm_{M,f}&=\sum^{k}_{\alpha=1}\,c^{2}_{\alpha}\,\int_{M}\,\phi^{2}_{\alpha}\,dm_{M,f} \geq \sum^{k}_{\alpha=1}\,c^{2}_{\alpha}\, \eta_{\alpha} \geq \min_{\alpha} \eta_{\alpha}\,\sum^{k}_{\alpha=1}\,c^{2}_{\alpha} ,\\
+\int_{M}\,\Vert \nabla \phi \Vert^{2}\,dm_{M,f}&=\sum^{k}_{\alpha=1}\,c^{2}_{\alpha}\,\int_{M}\, \Vert \nabla \phi_{\alpha} \Vert^{2}\,dm_{M,f} \leq \left(\frac{2}{S_{\epsilon}}\right)^{2} \sum^{k}_{\alpha=1}\,c^{2}_{\alpha},
+\end{align*}
+where $c_{1},\dots,c_{k}$ are determined by $\phi=\sum^{k}_{\alpha=1}\,c_{\alpha} \phi_{\alpha}$.
+Hence
+we have
+\begin{equation*}
+R_{f}(\phi)=\frac{\int_{M} \,\Vert \nabla \phi \Vert^{2} \,dm_{M,f}}{\int_{M} \,\phi^{2} \,dm_{M,f}} \leq \frac{1}{\min_{\alpha} \eta_{\alpha}}\left(\frac{2}{S_{\epsilon}}\right)^{2},
+\end{equation*}
+where $R_{f}(\phi)$ is the Rayleigh quotient of $\phi$ defined as (\ref{eq:Rayleigh quotient}).
+From the min-max principle (\ref{eq:min-max principle})
+we derive
+\begin{equation*}
+\nu_{f,k}(M) \leq \sup_{\phi \in L_{0}\setminus \{0\}}\,R_{f}(\phi) \leq \frac{1}{\min_{\alpha} \eta_{\alpha}}\left(\frac{2}{S_{\epsilon}}\right)^{2}.
+\end{equation*}
+Letting $\epsilon \to 0$,
+we conclude the inequality.
+\end{proof}
+
+\begin{rem}
+In the forthcoming paper \cite{FSa},
+Funano and the author prove the following refined estimate for $k=1$ (see Theorem 2.3 in \cite{FSa}):
+For every $\eta>0$
+we have
+\begin{equation*}
+\DS\left((M,f);\eta\right)\leq \frac{1}{\sqrt{\nu_{f,1}(M)}} \,\log \frac{e}{\eta}.
+\end{equation*}
+\end{rem}
+
+\begin{rem}
+Colbois and Savo \cite{CS} have shown a similar estimate for the $k$-th closed eigenvalue of the Laplacian (see Lemma 5 in \cite{CS}). 
+\end{rem}
+
+\begin{rem}
+Chung, Grigor'yan and Yau \cite{CGY} have estimated the $k$-th closed eigenvalue and Robin eigenvalue of the Laplacian in terms of the separation distance (see Theorem 1.1 in \cite{CGY}).
+By applying the same argument in \cite{CGY} to our setting,
+we see the following estimate for $\nu_{f,k}(M)$:
+Suppose that $M$ is compact.
+Then for every integer $k>2$,
+and for every sequence $\{\Omega_{\alpha}\}^{k}_{\alpha=1}$ of Borel subsets with $\min_{\alpha \neq \beta} d_{M}(\Omega_{\alpha},\Omega_{\beta})\geq D$,
+\begin{equation*}
+\nu_{f,k}(M)-\nu_{f,1}(M) \leq \frac{1}{D^{2}}\,\max_{\alpha \neq \beta} \,\left( \log\,\frac{4}{\int_{\Omega_{\alpha}} \,\phi^{2}_{f,1}\,dm_{M,f} \, \int_{\Omega_{\beta}} \,\phi^{2}_{f,1}\,dm_{M,f}   }  \right)^{2},
+\end{equation*}
+where $\phi_{f,1}$ is an $L^{2}$-normalized eigenfunction for $\nu_{f,1}(M)$.
+\end{rem}
+
+
+
+\subsection{Observable inscribed radii and Dirichlet eigenvalues}
+Now,
+Lemma \ref{lem:Dirichlet eigenvalue and Dirichlet separation distance} together with Lemma \ref{lem:observable inscribed radius is smaller than Dirichlet separation distance}
+leads us to the following relation between the observable inscribed radius and the Dirichlet eigenvalue:
+\begin{prop}\label{prop:logarithmic Dirichlet eigenvalue and observable inscribed radius}
+Let $M$ be compact.
+Then for every $\eta>0$,
+\begin{equation*}
+\OI((M,f);-\eta)\leq \frac{2}{\sqrt{\nu_{f,1}(M)\, \eta}}.
+\end{equation*}
+\end{prop}
+
+\begin{rem}
+Under the curvature condition (\ref{eq:finite dimensional curvature bound}) and $\IR M \leq D$,
+the author \cite{S1} has provided a lower bound of $\nu_{f,1}(M)$ depending only on $\kappa,\,\lambda,\,N$ and $D$ (see Theorem 1.6 in \cite{S1} and Remark \ref{rem:remark on the curvature assumption},
+and also pioneering works of Li-Yau \cite{LY} and Kasue \cite{K2}).
+Combining Proposition \ref{prop:logarithmic Dirichlet eigenvalue and observable inscribed radius} with the lower estimate tells us that
+we have an upper bound of $\OI((M,f);-\eta)$ depending only on $\kappa,\,\lambda,\,N,\,D$ and $\eta$.
+
+Similarly,
+under the condition (\ref{eq:one dimensional curvature bound}) for $\kappa$ and $\lambda$ satisfying the convex-ball-condition,
+and under $f\leq (n-1)\delta$,
+the author \cite{S2} has obtained a lower bound of $\nu_{f,1}(M)$ depending only on $n,\,\kappa,\,\lambda$ and $\delta$ (see Theorem 8.5 in \cite{S2}).
+In virtue of Proposition \ref{prop:logarithmic Dirichlet eigenvalue and observable inscribed radius},
+we possess an upper bound of $\OI((M,f);-\eta)$ depending only on $n,\,\kappa,\,\lambda,\,\delta$ and $\eta$.
+\end{rem}
+
+Proposition \ref{prop:logarithmic Dirichlet eigenvalue and observable inscribed radius} enables us to prove Theorem \ref{thm:Dirichlet eigenvalue and Dirichlet Levy family}.
+\begin{proof}[Proof of Theorem \ref{thm:Dirichlet eigenvalue and Dirichlet Levy family}]
+Let $\{(M_{n},f_{n})\}$ be a sequence of compact metric measure spaces with boundary defined as $(\ref{eq:weighted Riemannian manifold})$.
+By Proposition \ref{prop:logarithmic Dirichlet eigenvalue and observable inscribed radius},
+if $\nu_{f_{n},1}(M_{n})\to \infty$ as $n\to \infty$,
+then $\OI((M_{n},f_{n});-\eta)\to 0$.
+Hence,
+$\{(M_{n},f_{n})\}$ is a boundary concentration family.
+\end{proof}
+
+We also derive the following from Proposition \ref{prop:logarithmic Dirichlet eigenvalue and observable inscribed radius} and Theorem \ref{thm:universal inequality}:
+\begin{thm}\label{thm:higer order Dirichlet eigenvalue and observable inscribed radius}
+Let $M$ be compact.
+If $\ric^{\infty}_{f,M}\geq 0$ and $H_{f,\bm}\geq 0$,
+then there is a universal constant $C>0$ such that
+for all $k\geq 1$ and $\eta>0$,
+\begin{equation*}
+\OI((M,f);-\eta)\leq \frac{C\,k}{\sqrt{\nu_{f,k}(M)\, \eta}}.
+\end{equation*}
+\end{thm}
+
+Let us give a proof of Theorem \ref{thm:higher order Dirichlet eigenvalue and Dirichlet Levy family} by using Theorem \ref{thm:higer order Dirichlet eigenvalue and observable inscribed radius}.
+\begin{proof}[Proof of Theorem \ref{thm:higher order Dirichlet eigenvalue and Dirichlet Levy family}]
+Let $\{(M_{n},f_{n})\}$ denote a sequence of compact metric measure spaces with boundary defined as $(\ref{eq:weighted Riemannian manifold})$.
+Assume that
+$\ric^{\infty}_{f_{n},M_{n}}\geq 0$ and $H_{f_{n},\bm_{n}}\geq 0$.
+Due to Theorem \ref{thm:higer order Dirichlet eigenvalue and observable inscribed radius},
+if $\nu_{f_{n},k}(M_{n})\to \infty$ for $k$,
+then $\OI((M_{n},f_{n});-\eta)\to 0$.
+We complete the proof.
+\end{proof}
+
+\begin{rem}\label{rem:conjecture}
+The author wonders whether the following statement of E. Milman type holds (see \cite{Mi1}, \cite{Mi2}, and Theorem 9.46 in \cite{Sh}):
+Under the same setting as in Theorems \ref{thm:Dirichlet eigenvalue and Dirichlet Levy family}, \ref{thm:higher order Dirichlet eigenvalue and Dirichlet Levy family},
+if $\ric^{\infty}_{f_{n},M_{n}}\geq 0$ and $H_{f_{n},\bm_{n}}\geq 0$,
+and if $\{(M_{n},f_{n})\}$ is a boundary concentration family,
+then $\nu_{f_{n},1}(M_{n})\to \infty$.
+If it is true,
+then
+in virtue of Theorems \ref{thm:Dirichlet eigenvalue and Dirichlet Levy family}, \ref{thm:higher order Dirichlet eigenvalue and Dirichlet Levy family},
+we can say that
+under $\ric^{\infty}_{f_{n},M_{n}}\geq 0$ and $H_{f_{n},\bm_{n}}\geq 0$,
+the following are equivalent:
+\begin{enumerate}\setlength{\itemsep}{+0.7mm}
+\item $\{(M_{n},f_{n})\}$ is a boundary concentration family;
+\item $\nu_{f_{n},1}(M_{n})\to \infty$ as $n\to \infty$;
+\item $\nu_{f_{n},k}(M_{n})\to \infty$ as $n\to \infty$ for some $k\geq 1$.
+\end{enumerate}
+
+The author also wonders if
+one can extend the above equivalence to a weaker setting $\ric^{N}_{f_{n},M_{n}}\geq 0$ and $H_{f_{n},\bm_{n}}\geq 0$ for $N\in (-\infty,1]$ (see Remark \ref{rem:monotonicity of weighted Ricci curvature}).
+Under $\ric^{N}_{f,\bm^{\perp}}\geq 0$ and $H_{f,\bm}\geq 0$ for $N\in (-\infty,1]$,
+the author \cite{S1.5} has proved a dimension free inequality
+\begin{equation*}
+\nu_{f,1}(M)\geq \pi^{2} (2\IR M)^{-2},
+\end{equation*}
+of Li-Yau, Kasue type,
+and a rigidity result for the equality case (see Corollary 6.5 in \cite{S1.5}, and also \cite{LY}, \cite{K2}, and cf. Remarks \ref{rem:Li-Yau dimension free} and \ref{rem:remark on the curvature assumption}).
+\end{rem}

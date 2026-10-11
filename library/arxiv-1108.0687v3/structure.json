@@ -6,7 +6,8 @@
   "sha256": "66ba88e13a429a0a3d01f1a7a2b0a8c5fdfd52b816427d94d0b95d09b6791499",
   "bytes": 271299,
   "pages": 23,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -249,6 +250,105 @@
   "likely_scanned": false,
   "toc_entries": 14,
   "sections": 11,
-  "chars_total": 48199
+  "chars_total": 48199,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "concentration130701.tex",
+   "tex_sections": 16,
+   "overlaid": 10,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-11-classical-concentration-inequalities",
+     "title": "Classical concentration inequalities",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-12-generalizations",
+     "title": "Generalizations",
+     "prose_ratio": 0.932,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-2-strong-rayleigh-property-stochastic-covering-p",
+     "title": "Strong Rayleigh property, stochastic covering property, and other negative dependence conditions",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-3-results",
+     "title": "Results",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-4-proofs",
+     "title": "Proofs",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-41-the-classical-proofs",
+     "title": "The classical proofs",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-5-applications",
+     "title": "Applications",
+     "prose_ratio": 0.769,
+     "coverage_ratio": 0.808,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-51-matroids",
+     "title": "Matroids",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-52-exclusion-measures",
+     "title": "Exclusion measures",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-6-determinantal-point-processes",
+     "title": "Determinantal point processes",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

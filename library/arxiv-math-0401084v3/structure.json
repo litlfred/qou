@@ -5,7 +5,8 @@
   "file": "0401084v3.pdf",
   "sha256": "f56bbd4cee4f3418d4741504d48a78a4a9ec5e1154d88bde650832c13192651d",
   "bytes": 224478,
-  "pages": 17
+  "pages": 17,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "Some limits of the colored Jones polynomials of the figure-eight knot",
   "authors_raw": "FIGURE-EIGHT KNOT AND ITS DEHN SURGERY SPACES",
-  "abstract": "W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine the volumes and the Chern–Simons invariants of the three-manifolds obtain ed by Dehn surgeries along it.",
+  "abstract": "W e calculate limits of the colored Jones polynomials of the \ufb01 gure- eight knot and conclude that in most cases they determine the volumes and the Chern\u2013Simons invariants of the three-manifolds obtain ed by Dehn surgeries along it.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20220524025808-04'00'",
@@ -142,6 +143,64 @@
   "likely_scanned": false,
   "toc_entries": 6,
   "sections": 6,
-  "chars_total": 30377
+  "chars_total": 30377,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "dehn.tex",
+   "tex_sections": 5,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-main-result",
+     "title": "Main result",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-limits-of-the-colored-jones-polynomials",
+     "title": "Limits of the colored Jones polynomials",
+     "prose_ratio": 0.928,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-proof-of-the-main-theorem",
+     "title": "Proof of the main theorem",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.887,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-appendix-optimistic-limit",
+     "title": "Appendix. Optimistic limit",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

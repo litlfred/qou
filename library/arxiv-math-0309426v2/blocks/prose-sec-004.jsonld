@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0309426v2/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0309426v2/blocks/prose-sec-004",
   "kind": "prose",
-  "title": "MATTHIAS K ¨UNZER AND ANDREW MATHAS",
-  "pageStart": 4,
-  "pageEnd": 4,
-  "text": "../sections/sec-004-4-matthias-k-unzer-and-andrew-mathas.md",
-  "derivedFrom": "library/arxiv-math-0309426v2/manifest",
-  "sourceDocument": "library/arxiv-math-0309426v2/manifest",
+  "title": "Elementary divisors for conjugate partitions",
+  "pageStart": 5,
+  "pageEnd": 9,
+  "text": "../sections/sec-004-5-elementary-divisors-for-conjugate-partitions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0309426v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0309426v2/manifest.jsonld",
   "provenance": "ingested"
 }

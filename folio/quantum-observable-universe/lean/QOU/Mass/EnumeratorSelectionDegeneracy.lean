@@ -5,7 +5,7 @@
 already is one — `binding_k_enumerator.py` ranks by Frobenius residual — and this
 file is why it does not work. Three independent defects, each fatal on its own,
 all readable off the enumerator's **own recorded output** in
-`computations/_deprecated/binding-k-enumerator.witness.json`.
+`fsh-guts/deprecated/computations/binding-k-enumerator.witness.json`.
 
 ## 🛑 First, correcting a correction of mine
 

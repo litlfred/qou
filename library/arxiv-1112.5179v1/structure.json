@@ -5,7 +5,8 @@
   "file": "1112.5179v1.pdf",
   "sha256": "b58af08336c409942719db3c4e209817a0e76451983f7b84e9fbc1da15f0a4f8",
   "bytes": 1824365,
-  "pages": 79
+  "pages": 79,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "3-Manifolds and 3d Indices",
   "authors_raw": null,
-  "abstract": "We identify a large classR of three-dimensionalN = 2 superconformal ﬁeld the- ories. This class includes the eﬀective theories TM of M5-branes wrapped on 3-manifolds M, discussed in previous work by the authors, and more generally comprises theories that admit a UV description as abelian Chern-Simons-matter theories with (possibly non-perturbative) superpotential. Mathematically, class R might be viewed as an extreme quantum general- ization of the Bloch group; in particular, the equivalence relation among theories in class R is a quantum-ﬁeld-theoretic “2–3 move.” We proceed to study the supersymmetric index of theories in classR, uncovering its physical and mathematical properties, including relations to algebras of line operators and to 4d indices. For 3-manifold theories TM, the index is a new topological invariant, which turns out to be equivalent to non-holomorphic SL(2, C) Chern-Simons theory on M with a previously unexplored “integration cycle.” arXiv:1112.5179v1 [hep-th] 21 Dec 2011",
+  "abstract": "We identify a large classR of three-dimensionalN = 2 superconformal \ufb01eld the- ories. This class includes the e\ufb00ective theories TM of M5-branes wrapped on 3-manifolds M, discussed in previous work by the authors, and more generally comprises theories that admit a UV description as abelian Chern-Simons-matter theories with (possibly non-perturbative) superpotential. Mathematically, class R might be viewed as an extreme quantum general- ization of the Bloch group; in particular, the equivalence relation among theories in class R is a quantum-\ufb01eld-theoretic \u201c2\u20133 move.\u201d We proceed to study the supersymmetric index of theories in classR, uncovering its physical and mathematical properties, including relations to algebras of line operators and to 4d indices. For 3-manifold theories TM, the index is a new topological invariant, which turns out to be equivalent to non-holomorphic SL(2, C) Chern-Simons theory on M with a previously unexplored \u201cintegration cycle.\u201d arXiv:1112.5179v1 [hep-th] 21 Dec 2011",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20241127014543Z",
@@ -490,6 +491,192 @@
   "likely_scanned": false,
   "toc_entries": 31,
   "sections": 23,
-  "chars_total": 198166
+  "chars_total": 198166,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "indexbox.tex",
+   "tex_sections": 30,
+   "overlaid": 18,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-actions-on-the-3d-index",
+     "title": "Actions on the 3d index",
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-23-adding-a-superpotential",
+     "title": "Adding a superpotential",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.795,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-24-a-discrete-symmetry",
+     "title": "A discrete symmetry",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-25-an-operator-algebra",
+     "title": "An operator algebra",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-3-the-tetrahedron-index",
+     "title": "The tetrahedron index",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.624,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-32-triality",
+     "title": "Triality",
+     "prose_ratio": 0.908,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-4-the-index-of-tm",
+     "title": "The index of TM",
+     "prose_ratio": 0.094,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-41-gluing-rules",
+     "title": "Gluing rules",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.764,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-42-the-bipyramid",
+     "title": "The bipyramid",
+     "prose_ratio": 0.914,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-43-some-knot-complements",
+     "title": "Some knot complements",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.468,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-011-45-quantum-lagrangian-operators",
+     "title": "Quantum Lagrangian operators",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-46-tentacles-and-vacua",
+     "title": "Tentacles and vacua",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-47-mutation-invariance-from-gauge-theory",
+     "title": "Mutation invariance from gauge theory",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-5-the-index-from-four-dimensions-and-line-operat",
+     "title": "The index from four dimensions and line operators",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.611,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-51-line-operator-algebra",
+     "title": "Line operator algebra",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-52-boundary-conditions-for-hypermultiplets",
+     "title": "Boundary conditions for hypermultiplets",
+     "prose_ratio": 0.764,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-53-non-abelian-line-defects",
+     "title": "Non-abelian line defects",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-62-symplectic-action",
+     "title": "Symplectic action",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.933,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-63-chern-simons-theory-from-6d",
+     "title": "Chern-Simons theory from 6d",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-a-proof-of-triality-for-the-tetrahedron-index",
+     "title": "A Proof of triality for the tetrahedron index",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-b-figure-eight-index-from-six-tetrahedra",
+     "title": "B Figure-eight index from six tetrahedra",
+     "prose_ratio": 0.103,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-022-c-quantum-lagrangian-calculations",
+     "title": "C Quantum Lagrangian calculations",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -3,7 +3,7 @@ import { simulator } from "../../schema/builders";
 export default simulator({
   label: "sim:knot-atom-diagrams",
   title: "Knot Diagrams of Light Atoms ($Z \\leq 4$)",
-  html: "fsh-guts/deprecated/simulators/knot_atom_diagrams.html",
+  html: "simulators/knot_atom_diagrams.html",
   uses: ["rem:knot-atom-diagrams"],
   tags: [
     "knot-diagram",

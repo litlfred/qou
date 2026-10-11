@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0905.0488v5/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0905.0488v5",
+  "contains": [
+    "library/arxiv-0905.0488v5/sections/sec-000",
+    "library/arxiv-0905.0488v5/sections/sec-001",
+    "library/arxiv-0905.0488v5/sections/sec-002",
+    "library/arxiv-0905.0488v5/sections/sec-003",
+    "library/arxiv-0905.0488v5/sections/sec-004",
+    "library/arxiv-0905.0488v5/sections/sec-005",
+    "library/arxiv-0905.0488v5/sections/sec-006",
+    "library/arxiv-0905.0488v5/sections/sec-007",
+    "library/arxiv-0905.0488v5/sections/sec-008",
+    "library/arxiv-0905.0488v5/sections/sec-009",
+    "library/arxiv-0905.0488v5/sections/sec-010",
+    "library/arxiv-0905.0488v5/sections/sec-011",
+    "library/arxiv-0905.0488v5/sections/sec-012"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0905.0488&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0905.0488v5",
+    "title_source": "slug",
+    "source_file": "0905.0488v5.pdf",
+    "source_sha256": "fcf8dee7cd3849b945dd5a85e4ae2cc19f5a36730f236f997c4bb6f545e6d0fe",
+    "pages": 50,
+    "arxiv": {
+      "id": "0905.0488",
+      "version": "5",
+      "primary_class": "math.AG",
+      "stamp_date": "5 Sep 2014"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

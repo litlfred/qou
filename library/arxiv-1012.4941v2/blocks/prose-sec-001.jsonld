@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1012.4941v2/blocks/prose-sec-001",
+  "kind": "prose",
+  "title": "Automorphisms of Linear Programs",
+  "pageStart": 2,
+  "pageEnd": 7,
+  "text": "../sections/sec-001-2-automorphisms-of-linear-programs.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1012.4941v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1012.4941v2/manifest.jsonld",
+  "provenance": "ingested"
+}

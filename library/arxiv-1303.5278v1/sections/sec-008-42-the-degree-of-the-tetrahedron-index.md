@@ -9,22 +9,22 @@ source_pdf: 1303.5278v1.pdf
 source_sha256: 92e417c93f8b883a
 doc_brief: "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD — In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of"
 duplicate_of: "topologicalinvariance3dindex"
+text_source: latex
+latex_prose_ratio: 0.818
+latex_coverage_ratio: 0.929
 ---
-to q of I∆(m,e ) is given by
-(12) δ(m,e ) = 1
-2 (m+(m +e)+ + (−m)+e+ + (−e)+(−e−m)+ + max{0,m,−e})
-It follows thatδ(m,e ) is a piecewise quadratic polynomial shown in Figure 6.
-e = 0
-m = 0
-e +m = 0
-−em
-2 m(e+m)
-2 + m
-2
-e(e+m)
-2 − e
-2
-Figure 6. The degree of the tetrahedron indexI∆(m,e ). Here the positive
-m axis is to the right and the positivee axis is upwards.
-The regions of polynomiality ofδ(m,e ) give a fan inR2 with rays spanned by the vectors
-(0, 1), (−1, 0) and (1,−1). An important feature ofδ is that it is a convex function on rays.
+[]{#sub.degI label="sub.degI"}
+
+The (minimum) degree $\delta(m,e)$ with respect to $q$ of $I_{\Delta}(m,e)$ is given by
+
+$$\label{eq.degID}
+\delta(m,e) = \frac{1}{2}\left( m_+(m+e)_+ + (-m)_+ e_+ + (-e)_+(-e-m)_+
++\max\{0,m,-e\} \right)$$ It follows that $\delta(m,e)$ is a piecewise quadratic polynomial shown in Figure [1](#degI){reference-type="ref" reference="degI"}.
+
+<figure id="degI">
+<p><span class="math inline"><em>e</em> = 0</span> at 65 145 <span class="math inline"><em>m</em> = 0</span> at 235 295 <span class="math inline"><em>e</em> + <em>m</em> = 0</span> at 405 35 <span class="math inline">$-\frac{em}{2}$</span> at 185 192 <span class="math inline">$\frac{m(e+m)}{2}+\frac{m}{2}$</span> at 335 160 <span class="math inline">$\frac{e(e+m)}{2}-\frac{e}{2}$</span> at 190 80</p>
+<img src="draws_eps/degI" style="width:40.0%" />
+<figcaption>The degree of the tetrahedron index <span class="math inline"><em>I</em><sub><em>Δ</em></sub>(<em>m</em>,<em>e</em>)</span>. Here the positive <span class="math inline"><em>m</em></span> axis is to the right and the positive <span class="math inline"><em>e</em></span> axis is upwards.</figcaption>
+</figure>
+
+The regions of polynomiality of $\delta(m,e)$ give a fan in $\mathbb R^2$ with rays spanned by the vectors $(0,1)$, $(-1,0)$ and $(1,-1)$. An important feature of $\delta$ is that it is a convex function on rays.

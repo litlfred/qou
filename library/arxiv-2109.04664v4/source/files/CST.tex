@@ -1,0 +1,142 @@
+\section{Topological interpretations}\label{sec:CST}
+In this section we give topological interpretations for $T(\xi)$ and $S(\xi)$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Representations}
+Let $X$ be the complement of the open tubular neighborhood of $E\subset S^3$.
+The fundamental group $\pi_1(X)$ is presented as
+\begin{equation*}
+  \langle
+    x,y
+    \mid
+    wx=yw
+  \rangle,
+\end{equation*}
+with $w:=xy^{-1}x^{-1}y$.
+Let $\rho$ be a non-Abelian representation of $\pi_1(X)$ to $\SL(2;\C)$ given by
+\begin{equation}\label{eq:presentation_F_2}
+  \rho(x)
+  =
+  \begin{pmatrix}e^{\xi/2}&1\\0&e^{-\xi/2}\end{pmatrix},
+  \quad
+  \rho(y)
+  =
+  \begin{pmatrix}e^{\xi/2}&0\\-d&e^{-\xi/2}\end{pmatrix},
+\end{equation}
+where $d$ annihilates the Riley polynomial
+\begin{equation}\label{eq:Riley}
+  d^2-(2\cosh(\xi)-3)d-2\cosh(\xi)+3.
+\end{equation}
+The preferred longitude $\lambda$ is presented by $y^{-1}xyx^{-2}yxy^{-1}$ and it is sent to
+\begin{equation*}
+  \rho(\lambda)
+  =
+  \begin{pmatrix}
+    e^{\eta/2}&\ast \\
+    0          &e^{-\eta/2}
+  \end{pmatrix},
+\end{equation*}
+where
+\begin{multline*}
+  \eta
+  :=
+  \log
+  \left(
+    \frac{1}{2}
+    \left(\vphantom{\frac{1}{2}}
+      e^{2\xi}-e^{\xi}-e^{-\xi}+e^{-2\xi}-2
+    \right.
+  \right.
+  \\
+  \left.
+    \left.
+      +(e^{-\xi}-e^{\xi})\sqrt{(e^{\xi}+e^{-\xi}-3)(e^{\xi}+e^{-\xi}+1)}
+    \right)
+  \right).
+\end{multline*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Adjoint Reidemeister torsion}
+For a representation $\rho\colon\pi_1(X)\to\SL(2;\C)$, one can consider the cochain complex $C^{\ast}(X;\mathfrak{sl}(2;\C)_{\rho}):=\Hom_{\Z[\pi_1(X)]}(C_{\ast}(\tilde{X};\Z),\mathfrak{sl}(2;\C))$ twisted by the adjoint action of $\rho$.
+Here $\tilde{X}$ is the universal cover of $X$, $\pi_1(X)$ acts on $\tilde{X}$ as the deck transformation, and the Lie algebra $\mathfrak{sl}(2;\C)$ is regarded as a $\Z[\pi_1(X)]$-module by the adjoint action of $\rho$.
+The Reidemeister torsion $\Tor_{\mu}(\rho)\in\C$ associated with the meridian $\mu$, twisted by the adjoint action of $\rho$ is defined as the torsion of the cochain complex $C^{\ast}(X;\mathfrak{sl}(2;\C)_{\rho})$.
+The following formula is known for the case of the figure-eight knot:
+\begin{equation*}
+  {\Tor}_{\mu}(\rho)
+  =
+  \pm
+  \frac{2}{\sqrt{(e^{\xi}+e^{-\xi}+1)(e^{\xi}+e^{\xi}-3)}}.
+\end{equation*}
+See \cite{Porti:MAMCAU1997,Dubois:CANMB2006,Murakami:JTOP2013}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Chern--Simons invariant}
+Let $M$ be a three-manifold with boundary a torus $T$, and $\{\mu,\lambda\}$ be generators of $\pi_1(T)$.
+For a representation $\rho\colon\pi_1(M)\to\SL(2;\C)$, we can define the Chern--Simons invariant as follows.
+\par
+Let $A$ be an $\sl(2;\C)$-valued $1$-form $A$ on $M$ that defines the flat connection corresponding to $\rho$.
+Assume that $\rho\Bigm|_{T}$ is diagonalizable for simplicity.
+Then by a suitable conjugation, one has
+\begin{equation*}
+  \rho(\mu)
+  =
+  \begin{pmatrix}
+    e^{2\pi\i\alpha}& 0               \\
+    0               & e^{-2\pi\i\alpha}
+  \end{pmatrix},
+  \quad
+  \rho(\lambda)
+  =
+  \begin{pmatrix}
+    e^{2\pi\i\beta}& 0               \\
+    0              &e^{-2\pi\i\beta}
+  \end{pmatrix}.
+\end{equation*}
+Then up to gauge equivalence, we can assume that $A$ is of the form
+\begin{equation*}
+  \begin{pmatrix}
+    \i\alpha& 0       \\
+    0       & -\i\alpha
+  \end{pmatrix}
+  \,dx
+  +
+  \begin{pmatrix}
+    \i\beta& 0      \\
+    0      &-\i\beta
+  \end{pmatrix}
+  \,dy
+\end{equation*}
+near $T$, where $dx$ and $dy$ are the $1$-forms corresponding to $\mu$ and $\lambda$ respectively.
+Then the Chern--Simons invariant $\cs_{M}(\rho;\alpha,\beta)$ of $\rho$ associated with $(\alpha,\beta)$ is defined by
+\begin{equation*}
+  \CS_{M}(\rho;\alpha,\beta)
+  :=
+  \frac{-1}{8}
+  \int_{M}\Tr\left(dA\wedge A+\frac{2}{3}A\wedge A\wedge A\right)\in\C/(\pi^2\Z).
+\end{equation*}
+Note that $\Im\CS_{M}(\rho_0;0,0)$ coincides with the hyperbolic volume if the interior of $M$ possesses a complete hyperbolic structure, where $\rho_0$ is the Levi--Civita connection.
+See \cite{Kirk/Klassen:COMMP1993} for details.
+\par
+In \cite{Murakami/Tran:2020}, we proved the following theorem.
+\begin{thm}[{\cite{Murakami/Tran:2020}}]
+The Chern--Simons invariant $\CS_{E}(\rho;\xi,\eta)$ of the representation $\rho$ associated with $(\xi,\eta)$ is given by
+\begin{equation*}
+  \CS_{E}(\rho;\xi,\eta)
+  =
+  S(\xi)-\frac{\xi\eta}{2}.
+\end{equation*}
+Here we choose $\mu$ and $\lambda$ to be the meridian and the preferred longitude of $E$ respectively, and we assume that $\rho$ sends
+\begin{equation*}
+  \mu
+  \mapsto
+  \begin{pmatrix}
+    e^{\xi/2}&\ast \\
+    0          &e^{-\xi/2}
+  \end{pmatrix},
+  \quad
+  \lambda
+  \mapsto
+  \begin{pmatrix}
+    e^{\eta/2}&\ast \\
+    0         &e^{-\eta/2}
+  \end{pmatrix}.
+\end{equation*}
+up to conjugation.
+\end{thm}

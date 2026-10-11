@@ -1,0 +1,27 @@
+{
+ "url": "https://arxiv.org/e-print/2207.07246v2",
+ "content_type": "application/gzip",
+ "sha256": "6bb93f63fa8c574f10904901fd2973cf7161a463cad239d022ff231f6dfe3790",
+ "bytes": 10367723,
+ "fetched": "2026-10-10T15:17:50+00:00",
+ "files": [
+  {
+   "path": "files/asudis.sty",
+   "role": "sty",
+   "sha256": "f00e0754c7372fb127e191992afbc5091065035c0692fe1cf525c438893c37e9",
+   "bytes": 12188
+  },
+  {
+   "path": "files/dis.bbl",
+   "role": "bbl",
+   "sha256": "bd7988ef158e8ad7c8218297a890f45f9113a9c18958684881807338e1f94810",
+   "bytes": 308
+  },
+  {
+   "path": "files/dis.tex",
+   "role": "tex",
+   "sha256": "5cbb5e14c351221f26309f3c1024aa58b5a469ccf8527e22a9a7a4bc1bcc70af",
+   "bytes": 370440
+  }
+ ]
+}

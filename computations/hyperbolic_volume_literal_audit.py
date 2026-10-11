@@ -288,7 +288,7 @@ def scan() -> list[dict]:
         if not root.exists():
             continue
         for path in sorted(root.rglob("*.py")):
-            if any(p in {"_deprecated", "__pycache__", ".git"}
+            if any(p in {"_deprecated", "fsh-guts", "__pycache__", ".git"}
                    for p in path.parts):
                 continue
             if path.resolve() == Path(__file__).resolve():

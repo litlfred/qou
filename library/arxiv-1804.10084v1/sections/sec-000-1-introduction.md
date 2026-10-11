@@ -8,13 +8,10 @@ pages: 1-1
 source_pdf: 1804.10084v1.pdf
 source_sha256: 716da9708f06d930
 doc_brief: "Concentration of Lipschitz Functions of Negatively Dependent Variables — We explore the question whether Lipschitz functions of random var iables under various forms of negative correlation satisfy"
+text_source: latex
+latex_prose_ratio: 0.912
+latex_coverage_ratio: 1.0
 ---
-We study the question whether functions of negatively dependent random variables satisfy concen-
-tration bounds, similar to functions of independent random variable s. Many tools are known for
-functions of independent random variables — e.g., martingales, Talag rand’s inequality, the Kim-Vu
-inequality, and the entropy method for self-bounding functions. I t is also known that Chernoﬀ-
-Hoeﬀding bounds for (linear functions of) independent random var iables generalize to negatively
-dependent variables, assuming a relatively weak property known as negative cylinder dependence.
-A natural question therefore arises, whether more sophisticate d concentration bounds also gener-
-alize to some form of negative dependence. In this paper, we discus s the question of concentration
-bounds for Lipschitz functions 1 on {0, 1}n, under certain forms of negative dependence.
+We study the question whether functions of negatively dependent random variables satisfy concentration bounds, similar to functions of independent random variables. Many tools are known for functions of independent random variables --- e.g., martingales, Talagrand's inequality, the Kim-Vu inequality, and the entropy method for self-bounding functions. It is also known that Chernoff-Hoeffding bounds for (linear functions of) independent random variables generalize to negatively dependent variables, assuming a relatively weak property known as negative cylinder dependence. A natural question therefore arises, whether more sophisticated concentration bounds also generalize to some form of negative dependence. In this paper, we discuss the question of concentration bounds for Lipschitz functions[^1] on $\{0,1\}^n$, under certain forms of negative dependence.
+
+[^1]: A function $f:\{0,1\}^n \rightarrow {\mathbb R}$ is $c$-Lipschitz, if each variable can affect the value additively by at most $c$.

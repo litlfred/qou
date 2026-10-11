@@ -5,7 +5,8 @@
   "file": "2104.06067v1.pdf",
   "sha256": "750303181ca019ba16d94fa009a6505e6ede47d1b9ac2976f9d84ed69b0e01e8",
   "bytes": 236619,
-  "pages": 21
+  "pages": 21,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "ON IRREDUCIBLE CHARACTERS OF THE IWAHORI-HECKE ALGEBRA IN TYPE A",
   "authors_raw": "NAIHUAN JING AND NING LIU",
-  "abstract": "We use vertex operators to compute irreducible characters o f the Iwahori-Hecke algebra of type A. Two general formulas are given for the irreducible charact ers in terms of those of the symmetric groups or the Iwahori-Hecke algebras in lower degrees. Expl icit formulas are derived for the irreducible characters labeled by hooks and two-row partitions. Using d uality, we also formulate a determinant type Murnaghan-Nakayama formula and give another proof of Ram’s combinatorial Murnaghan-Nakayama formula. As applications, we study super-characters of the Iwahori-Hecke algebra as well as the bitrace of the regular representation and provide a simple proof of t he Halverson-Luduc-Ram formula.",
+  "abstract": "We use vertex operators to compute irreducible characters o f the Iwahori-Hecke algebra of type A. Two general formulas are given for the irreducible charact ers in terms of those of the symmetric groups or the Iwahori-Hecke algebras in lower degrees. Expl icit formulas are derived for the irreducible characters labeled by hooks and two-row partitions. Using d uality, we also formulate a determinant type Murnaghan-Nakayama formula and give another proof of Ram\u2019s combinatorial Murnaghan-Nakayama formula. As applications, we study super-characters of the Iwahori-Hecke algebra as well as the bitrace of the regular representation and provide a simple proof of t he Halverson-Luduc-Ram formula.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20210413204011-04'00'",
@@ -133,6 +134,54 @@
   "likely_scanned": false,
   "toc_entries": 6,
   "sections": 5,
-  "chars_total": 35241
+  "chars_total": 35241,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 5,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.556,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-3-applications-of-the-hook-and-two-row-formulas",
+     "title": "Applications of the hook and two-row formulas",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-4-determinant-type-murnaghan-nakayama-rule",
+     "title": "Determinant type Murnaghan-Nakayama rule",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-5-the-bitrace-of-the-regular-representation",
+     "title": "The bitrace of the regular representation",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

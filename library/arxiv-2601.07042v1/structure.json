@@ -6,7 +6,8 @@
   "sha256": "c2f3e302624e7abbb7516137ad7e9faa828eda570f211604863674015ae4352e",
   "bytes": 487308,
   "pages": 26,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -332,6 +333,140 @@
   "likely_scanned": false,
   "toc_entries": 19,
   "sections": 16,
-  "chars_total": 77964
+  "chars_total": 77964,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "localKal-7.tex",
+   "tex_sections": 18,
+   "overlaid": 13,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-motivation-and-overview",
+     "title": "Motivation and overview",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.741,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-12-preliminary-notation",
+     "title": "Preliminary notation",
+     "prose_ratio": 0.897,
+     "coverage_ratio": 0.694,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-13-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 0.652,
+     "coverage_ratio": 0.739,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-2-construction-of-tannakian-categories",
+     "title": "Construction of Tannakian Categories",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-21-products-of-gerbes",
+     "title": "Products of gerbes",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.568,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-22-limits-of-gerbes",
+     "title": "Limits of gerbes",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.764,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-23-modules",
+     "title": "Modules",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.689,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-24-descent",
+     "title": "Descent",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.659,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-25-concrete-tannakian-categories",
+     "title": "Concrete Tannakian categories",
+     "prose_ratio": 0.895,
+     "coverage_ratio": 0.64,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-26-transition-maps",
+     "title": "Transition maps",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.626,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-31-the-newton-map",
+     "title": "The Newton map",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.663,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-32-comparison-with-isocrystals",
+     "title": "Comparison with isocrystals",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.685,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-34-reduction-to-newton-centralizers",
+     "title": "Reduction to Newton centralizers",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.656,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-35-classification-of-simple-objects",
+     "title": "Classification of simple objects",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.566,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

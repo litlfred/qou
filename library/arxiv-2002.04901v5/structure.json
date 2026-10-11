@@ -6,7 +6,8 @@
   "sha256": "f1320c4b872292153272c76a2047a215d3aa89508c7bf47f7297b3c752ad701a",
   "bytes": 473216,
   "pages": 20,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -123,6 +124,35 @@
   "likely_scanned": false,
   "toc_entries": 9,
   "sections": 2,
-  "chars_total": 53318
+  "chars_total": 53318,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 8,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-0-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-1-idealistic-derived-completion-and-torsion",
+     "title": "Idealistic Derived Completion and Torsion",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.816,
+     "result": "overlaid",
+     "converter": "latex"
+    }
+   ]
+  }
  }
 }

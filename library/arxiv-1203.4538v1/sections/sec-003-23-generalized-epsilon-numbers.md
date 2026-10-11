@@ -8,18 +8,16 @@ pages: 7-7
 source_pdf: 1203.4538v1.pdf
 source_sha256: 5e44909e355c78d6
 doc_brief: "The exponential-logarithmic equivalence classes of surreal numbers — 7 sections: Introduction.; Preliminaries on surreal numbers.; Sign sequences."
+text_source: latex
+latex_prose_ratio: 0.875
+latex_coverage_ratio: 0.957
 ---
-We recall [
-Gon86, Theorems 9.5 and 9.6]:
-Theorem 2.10 •A surreal number a = α0 ⊕ /binampersandβ0 ⊖ /binampersandα1 ⊕ /binampersandβ1 ⊖ /binampersand· · · is an epsilon
-number if and only ifα0 /nequal0, all αµ diﬀerent from 0 are ordinary epsilon numbers
-satisfying αµ > l.u.b.{αλ | λ < µ } and furthermore βµ is a multiple of ωαµω for
-αµ /nequal0 and a multiple of ωγµω where δµ :=
-∑
-λ<µ
-αλ (ordinal sum) for αµ = 0.
-•Let γµ :=
-∑
-λ≤µ
-αλ (ordinal sum). Then the µth block of pluses in ǫa consists of ǫγµ
-pluses and the µth block of minuses of (ǫγµ)ωβµ minuses.
+We recall [@gonshor_surreal Theorems 9.5 and 9.6]:
+
+::: thm
+[]{#theo:sign-seq-epsilon label="theo:sign-seq-epsilon"}
+
+-   A surreal number $a=\alpha_0\oplus\binampersand \beta_0\ominus\binampersand \alpha_1\oplus\binampersand \beta_1\ominus\binampersand\cdots$ is an epsilon number if and only if $\alpha_0\neq 0$, all $\alpha_\mu$ different from 0 are ordinary epsilon numbers satisfying $\alpha_\mu  > l.u.b.\{ \alpha_\lambda\ |\ \lambda<\mu\}$ and furthermore $\beta_\mu$ is a multiple of $\omega^{\alpha_\mu \omega}$ for $\alpha_\mu \neq 0$ and a multiple of $\omega^{\gamma_\mu \omega}$ where $\delta_\mu:=\displaystyle\sum_{\lambda<\mu}\alpha_\lambda$ (ordinal sum) for $\alpha_\mu  = 0$.
+
+-   Let $\gamma_\mu:=\displaystyle\sum_{\lambda\leq\mu}\alpha_\lambda$ (ordinal sum). Then the $\mu$th block of pluses in $\epsilon_a$ consists of $\epsilon_{\gamma_\mu}$ pluses and the $\mu$th block of minuses of $(\epsilon_{\gamma_\mu})^\omega \beta_\mu$ minuses.
+:::

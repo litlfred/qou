@@ -1,0 +1,45 @@
+\begin{picture}(0,0)%
+\epsfig{file=ps/pic43.ps}%
+\end{picture}%
+\setlength{\unitlength}{0.00041700in}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined
+% extract first six characters in \fmtname
+\def\x#1#2#3#4#5#6#7\relax{\def\x{#1#2#3#4#5#6}}%
+\expandafter\x\fmtname xxxxxx\relax \def\y{splain}%
+\ifx\x\y   % LaTeX or SliTeX?
+\gdef\SetFigFont#1#2#3{%
+  \ifnum #1<17\tiny\else \ifnum #1<20\small\else
+  \ifnum #1<24\normalsize\else \ifnum #1<29\large\else
+  \ifnum #1<34\Large\else \ifnum #1<41\LARGE\else
+     \huge\fi\fi\fi\fi\fi\fi
+  \csname #3\endcsname}%
+\else
+\gdef\SetFigFont#1#2#3{\begingroup
+  \count@#1\relax \ifnum 25<\count@\count@25\fi
+  \def\x{\endgroup\@setsize\SetFigFont{#2pt}}%
+  \expandafter\x
+    \csname \romannumeral\the\count@ pt\expandafter\endcsname
+    \csname @\romannumeral\the\count@ pt\endcsname
+  \csname #3\endcsname}%
+\fi
+\fi\endgroup
+\begin{picture}(8914,1751)(879,-1467)
+\put(1051,-1096){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$h$}}}
+\put(4336,-676){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$=$}}}
+\put(1531,-691){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$=$}}}
+\put(2551,-781){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm},}}}
+\put(5986,-781){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm},}}}
+\put(1021,-211){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$g$}}}
+\put(1996,-646){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$gh$}}}
+\put(3961,-661){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$h$}}}
+\put(3106,-646){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$g$}}}
+\put(8476,-241){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$g$}}}
+\put(6556,-826){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$g$}}}
+\put(5446,-646){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$g$}}}
+\put(4711,-676){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$\delta_{g,h}$}}}
+\put(9376,-961){\makebox(0,0)[lb]{\smash{\special{ps:gsave currentpoint currentpoint translate
+-90.0 rotate neg exch neg exch translate}\SetFigFont{12}{14.4}{rm}$gh$\special{ps:currentpoint grestore moveto}}}}
+\put(7501,-211){\makebox(0,0)[lb]{\smash{\special{ps:gsave currentpoint currentpoint translate
+-90.0 rotate neg exch neg exch translate}\SetFigFont{12}{14.4}{rm}$h$\special{ps:currentpoint grestore moveto}}}}
+\end{picture}

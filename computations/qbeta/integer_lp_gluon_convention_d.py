@@ -6,7 +6,7 @@ WHY THIS EXISTS (bean `qou-1qsw`).
 
 The 2 x sigma_0 "gluon self-coupling" that takes each nucleon from 9 to 11
 crossings is DERIVED, not decorative. Its derivation is
-`computations/_deprecated/integer-lp-gluon.py`:
+`fsh-guts/deprecated/computations/integer-lp-gluon.py`:
 
     For each nucleon (proton uud, neutron udd), the 9-crossing element
     B_3 x Delta_3(quarks) is LP UNSTABLE (Frobenius positivity Gx[gamma] < 0).

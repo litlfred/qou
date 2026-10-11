@@ -1,0 +1,202 @@
+\documentclass{ert-l}
+\usepackage{amssymb,enumerate}
+\overfullrule 5pt
+%%\usepackage{showlabels}
+
+%%\textwidth150mm
+
+ %% Operatoren
+ %%%%%%%%%%%%%%%%
+\newcommand{\Irr}{{\operatorname{Irr}}}
+
+\newcommand{\GL}{{\operatorname{GL}}}
+\newcommand{\PSL}{{\operatorname{L}}}
+\newcommand{\SL}{{\operatorname{SL}}}
+\newcommand{\Sp}{{\operatorname{Sp}}}
+\newcommand{\Spin}{{\operatorname{Spin}}}
+
+\newcommand{\tw}[1]{{}^{#1}\!}
+\newcommand{\Chevie}{{\sf Chevie}}
+
+
+ %% theorem style plain --- default
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{thm}{Theorem}%%[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+
+\raggedbottom
+
+
+\begin{document}
+
+\title[Corrigendum: Murnaghan--Nakayama rule]
+      {Corrigendum: A Murnaghan--Nakayama rule\\ for values of unipotent
+       characters in\\ classical groups}
+
+\date{\today}
+
+
+\author{Frank L\"ubeck}
+\address{Lehrstuhl D f\"ur Mathematik, RWTH Aachen, Pontdriesch 14/16,
+  52062 Aachen, Germany.}
+\email{Frank.Luebeck@math.rwth-aachen.de}
+
+\author{Gunter Malle }
+\address{FB Mathematik, TU Kaiserslautern, Postfach 3049,
+         67653 Kaisers\-lautern, Germany.}
+\email{malle@mathematik.uni-kl.de}
+
+%%\thanks{The second author gratefully acknowledges financial support by ERC
+%%  Advanced Grant 291512.}
+
+\keywords{finite simple groups, Cartan invariants}
+
+\subjclass[2010]{Primary 20C20; Secondary 20C33,20C34 }
+
+\begin{abstract}
+We settle a missing case in the proof of one of the main applications of
+our results in \cite{LM16}.
+\end{abstract}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In \cite{LM16} we derived a Murnaghan--Nakayama formula for the values of
+unipotent characters of finite classical groups. As one application, we showed
+that the first Cartan invariant $c_{11}^{(\ell)}$ of a finite simple classical
+group $G$ in non-defining characteristic~$\ell$ is never equal to~2 if Sylow
+$\ell$-subgroups of $G$ are
+non-cyclic. But contrary to what was claimed in the first line of the proof
+of \cite[Thm.~7.1]{LM16}, the same assertion for the case of defining
+characteristic does not follow from the work of Koshitani, K\"ulshammer and
+Sambale \cite{KKS}. We thank Shigeo Koshitani and J\"urgen M\"uller for
+pointing this out to us.
+
+Here, we give a short argument for the missing case. The argument also
+covers the
+analogous statement in \cite[Prop.~6.3]{LM15} pertaining to simple groups of
+exceptional Lie type. The crucial observation is that Sylow $p$-subgroups in
+groups of Lie type of characteristic~$p$ are large. Except for a few small
+rank cases we do not need any knowledge about the ordinary character table of
+the group $G$. 
+
+Note that if $c_{11}^{(p)}=2$ then there exists $\chi\in\Irr(G)$ such that
+$1_G+\chi$ is the character of a projective module; in particular $\chi(g)=-1$
+for all $p$-singular elements $g\in G$.
+
+\begin{lem}   \label{lem:main}
+ Let $G$ be a finite group and $p$ a prime. Assume that $H\le G$ is a
+ subgroup such that $|G:H|$ is divisible by $p$, but $|G:H|<|G|_p$. Then
+ $c_{11}^{(p)}>2$.
+\end{lem}
+
+\begin{proof}
+The permutation character $\pi$ of $G$ on the cosets of $H$ has exactly one
+trivial constituent $1_G$. On the other hand, as $|G:H|$ is divisible by $p$,
+the modular reduction of the permutation representation has (at least) two
+trivial modular constituents, one in the socle, one in the head. Thus the
+$p$-modular reduction of one of the non-trivial ordinary constituents $\chi$
+of $\pi$ must contain the trivial $p$-modular character of $G$. By Brauer
+reciprocity,
+$\chi$ then occurs in the projective cover $\Psi$ of the trivial character. If
+we had $c_{11}^{(p)}=2$ then necessarily $\Psi=1_G+\chi$. Since the degree of
+any projective character is divisible by $|G|_p$, this is a contradiction to
+$$|G|_p\le\Psi(1)=1_G(1)+\chi(1)\le\pi(1)=|G:H|.$$
+\end{proof}
+
+\begin{prop}   \label{main}
+ Let $G$ be a finite simple group of Lie type in characteristic~$p$. Then
+ $c_{11}^{(p)}>2$ unless $G=\PSL_2(p)$.
+\end{prop}
+
+\begin{proof}
+If the Lie-rank of $G$ is not very small, then we can find a subgroup of $G$
+which fulfills the condition of Lemma~\ref{lem:main}. In Table~\ref{tab} we
+give a subgroup $\hat H$ (see e.g.~\cite[\S13]{MT} for the existence) of a
+suitable central extension $\hat G$ of $G$.  From the order formulae for 
+these groups (see for example~\cite[Tab.~24.1]{MT})
+it is easy to check that $\hat H \leq \hat G$ fulfills the condition of
+Lemma~\ref{lem:main}. Since the center of $\hat G$ is of order prime to $p$
+the same holds for $H \leq G$ where $H$ is the image of $\hat H$ in $G$.
+
+It remains to consider the groups of type $A_1$, $A_2$, $\tw2A_2$,
+$\tw3D_4$, $\tw2B_2$, $\tw2G_2$ and $\tw2F_4$.  For all of these the
+(generic) character tables are known and available in \Chevie~\cite{Chv}. 
+Here we look for all irreducible characters $\chi$ which have value $-1$ on all
+$p$-singular (non-semisimple) elements, so that $\chi+1_G$ is a candidate
+for the $1$-PIM of $G$.
+It is easy to see that apart from two exceptions all characters either
+vanish on some $p$-singular element or that a value on a non-trivial
+unipotent class is positive or that the values on two non-trivial 
+unipotent classes are different.
+
+The two exceptions occur in type $A_1$, so $G = \PSL_2(q)$, which has a
+family of characters of degree $q-1$ with value $-1$ on all $p$-singular
+elements,
+and in type $A_2$, so $G = \PSL_3(q)$, which has a family of characters
+of degree $q^3-1$ which also take value $-1$ on all $p$-singular elements.
+By \cite[Thm.~5.2]{MW08} the $1$-PIM of $G=\PSL_2(q)$ has degree $(2^f-1)q$,
+where $q=p^f$. Since the maximal character degree for $G$ is $q+1$, this
+shows that $c_{11}^{(p)}>2$ unless $f=1$, that is, unless $q=p$ is prime, in
+which case the Sylow $p$-subgroups of $G$ are cyclic (and so indeed
+$c_{11}^{(p)}=2$). 
+Similarly, by~\cite[Thm.~5.3]{MW08} the $1$-PIM of $G=\PSL_3(q)$, $q=p^f$,
+has degree $(12^f-6^f+1)q^3$, so none of the candidate $1_G+\chi$ mentioned
+above can be the $1$-PIM.
+\end{proof}
+
+\begin{table}[htbp]
+ \caption{Large subgroups}   \label{tab}
+\[\begin{array}{|llc||cc|}
+\hline
+     \hat G&& \hat H&  \hat G& \hat H\cr
+\hline
+ \SL_4^\pm(q)&& \Sp_4(q)&                   G_2(q)& \tw2A_2(q)\\
+ \SL_n^\pm(q)& (n\ge5)& \GL_{n-1}^\pm(q)&   F_4(q)& B_4(q)\\
+ \Spin_{2n+1}(q)& (n\ge2)& \Spin_{2n}^-(q)&    E^\pm_6(q)& F_4(q)\\
+ \Sp_{2n}(q)& (n\ge3)& \Sp_{2n-2}(q)\Sp_2(q)&      E_7(q)& E_6(q)\\
+ \Spin_{2n}^\pm(q)& (n\ge4)& \Spin_{2n-1}(q)&  E_8(q)& E_7(q)\\
+\hline
+\end{array}\]
+\end{table}
+
+Observe that the case $p=2$ was already dealt with in \cite[Thm.~4.5]{KKS}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{131}
+
+\bibitem{Chv}
+{\sc M.~Geck, G.~Hiss, F.~L\"ubeck, G.~Malle, G.~Pfeiffer},
+  {\sf CHEVIE} --- A system for computing and processing generic character
+  tables for finite groups of Lie type, Weyl groups and Hecke algebras.
+  Appl. Algebra Engrg. Comm. Comput. {\bf7} (1996), 175--210.
+
+\bibitem{KKS}
+{\sc S. Koshitani, B. K\"ulshammer, B. Sambale}, On Loewy lengths of blocks.
+  Math. Proc. Cambridge Philos. Soc. {\bf156} (2014), 555--570.
+
+\bibitem{LM15}
+{\sc C. Lassueur, G. Malle}, Simple endotrivial modules for linear, unitary
+  and exceptional groups. Math. Z. {\bf280} (2015), 1047--1074.
+  
+\bibitem{LM16}
+{\sc F. L\"ubeck, G. Malle}, A Murnaghan-Nakayama rule for values of unipotent
+  characters in classical groups. Represent. Theory {\bf20} (2016), 139--161.
+  
+\bibitem{MT}
+{\sc G. Malle, D. Testerman}, \emph{Linear Algebraic Groups and Finite Groups
+  of Lie Type}. Cambridge University Press, Cambridge, 2011.
+
+\bibitem{MW08}
+{\sc G. Malle, Th. Weigel}, Finite groups with minimal 1-PIM. Manuscripta
+  Math. {\bf126} (2008), 315--332.
+  
+\end{thebibliography}
+
+\end{document}

@@ -8,82 +8,74 @@ pages: 21-23
 source_pdf: 0910.5695v2.pdf
 source_sha256: 703c2a2f1f9380b1
 doc_brief: "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St) — We describe blocks in Deligne’s category Re p(St)."
+text_source: latex
+latex_prose_ratio: 0.921
+latex_coverage_ratio: 0.878
 ---
-dimension of indecomposable objects in Re p(ST ;K). Let us start by deﬁning the
-hook length formula.
-Deﬁnition 3.26. The hook length of a ﬁxed box in a Young diagram λ is the
-number of boxes in λ which are either directly below or directly to the right of
-the ﬁxed box, counting the ﬁxed box itself once. Given a Young diagram λ let Pλ
-denote the unique polynomial such that
-Pλ(d) = d!∏(hook lengths of λ(d))
-for every integer d≥ 2|λ|.
-Example 3.27. Let λ =
- and suppose d≥ 10 is an integer. In the following
-picture each box of λ(d) is labeled by its hook length.
-¶Deligne assumesd≥ 2|λ| in [Del07, Proposition 6.4]. If that assumption is removed, Deligne’s
-proof will show Proposition 3.25.
-22 JONATHAN COMES AND VICTOR OSTRIK
-ThusPλ(d) = d!
-24(d−3)(d−4)(d−6)(d−8)! = 1
-24d(d− 1)(d− 2)(d− 5)(d− 7). 2
-First, we show how Pλ is related to the indecomposable object in Re p(ST ;K)
-corresponding to λ.
-Proposition 3.28. dimRep(ST ;K)L(λ) =Pλ(T ) for any Young diagram λ.
-Proof. Fix a Young diagram λ. Let K′ = F (T ) and suppose ε∈ K′P|λ|(T ) is a
-primitive idempotent with L(λ) = ([|λ|],ε ) in Re p(ST ;K′). Applying Proposition
-3.8 to the ﬁeld extension K′⊂K showsL(λ) = ([|λ|],ε ) in Rep(ST ;K) too. Thus
-dimRep(ST ;K)L(λ) = tr (ε) is a rational function in T . Now, by Proposition 3.12(4)
-and Proposition 3.25 we can ﬁnd an integer N so that Lift d(L(λ)) = L(λ) and
-F : Rep(Sd;F )→ Rep(Sd;F ) hasF(L(λ)) = Lλ(d) for all integers d > N. Hence,
-if d>N is an integer, we have
-Pλ(d) = dimRep(Sd;F )Lλ(d) (see e.g. [FH91, 4.12])
-= dimRep(Sd;F )L(λ) (since tensor functors preserve dimension)
-= (dimRep(ST ;K)L(λ))|T =d (by Proposition 3.12(2))
-Hence, dim Rep(ST ;K)L(λ) (a rational function in T ) agrees with Pλ(T ) (a polyno-
-mial in T ) for inﬁnitely many values of T . Hence they must always agree. □
-Next, we wish to determine the roots of Pλ. The following combinatorics will be
-useful toward that endeavor.
-Deﬁnition 3.29. Given a Young diagram λ and an integer d≥ 2|λ|, create the
-(λ,d ) grid marking as follows: Start with a grid of (|λ| + 1)× (d−|λ|) black boxes.
-Place the Young diagram λ(d) (with white boxes) atop the grid so that the upper
-left corner of λ(d) is atop the upper left corner of the grid. Now place the numbers
-0,...,d − 1 into the boxes of the grid using the following rules:
-• Begin by placing the number 0 in the lower left box of the grid.
-• If the number i is in a black box, place i + 1 into the box directly above i.
-• If the number i is in a white box, place i + 1 into the box directly to the
-right of i.
-Label the rows of the grid 0 ,..., |λ| (from top to bottom) and the columns of the
-grid 1,...,d −|λ| (from left to right).
-Example 3.30. Set λ = (4, 3, 1, 1, 0,... ) and d = 25. Below is the λ-marking of
-the 10× 16 grid.
-2
-ON BLOCKS OF DELIGNE’S CATEGORY Re p(St). 23
-The following proposition records the properties of the (λ,d ) grid marking which
-will be useful for determining the roots of Pλ.
-Proposition 3.31. The (λ,d ) grid marking has the following properties:
-(1) If
- appears in the ith row, then k =|λ| +λi−i.
-(2) If
- appears in the ith column, then d−k is the hook length of the row 0,
-columni box in λ(d).
-Proof. (1) If
- appears in the ith row, then
- must be in column µi + 1. Hence
-k is the number of up/right moves it takes to get from the lower left corner to the
-upper right corner in a (|λ|− i)× (λi + 1) grid. The result follows.
-(2) Let ci denote the number of boxes in the ith column of λ. Notice there are
-ci boxes below, andd−|λ|−i boxes to the right of the row 0, column i box inλ(d).
-Hence the hook length of that box is d−|λ|− i +ci + 1. On the other hand, if
-appears in the ith column, then
- must be in row ci. Hence k is the number of
-up/right moves it takes to get from the lower left corner to the upper right corner
-in a (|λ|− ci)×i grid. Thus k =|λ|− ci +i− 1. □
-Using Proposition 3.31, we can determine all the roots of the polynomial Pλ.
-Proposition 3.32. Pλ is a degree |λ| polynomial with |λ| distinct, integer roots
-given by|λ| +λi−i for each i = 1,..., |λ|.
-Proof. Suppose d is an integer with d >2|λ|. It follows from Deﬁnition 3.26 that
-the roots of Pλ are exactly the integers 0 ≤ k < dsuch that d−k is not a hook
-length of a box in the top row of λ(d). By Proposition 3.31(2), those are exactly
-the values of k for which
- appears in the ( λ,d ) grid marking. The result now
-follows from Proposition 3.31(1). □
+[]{#dim label="dim"} In this section we study a hook length formula which gives the dimension of indecomposable objects in $\underline{\operatorname{Re}}\!\operatorname{p}(S_T; K)$. Let us start by defining the hook length formula.
+
+::: definition
+[]{#hookpoly label="hookpoly"} The *hook length* of a fixed box in a Young diagram $\lambda$ is the number of boxes in $\lambda$ which are either directly below or directly to the right of the fixed box, counting the fixed box itself once. Given a Young diagram $\lambda$ let $P_\lambda$ denote the unique polynomial such that $$P_\lambda(d)=\frac{d!}{\prod(\text{hook lengths of }\lambda(d))}$$ for every integer $d\geq2|\lambda|$.
+:::
+
+::: example
+Let $\lambda=\includegraphics[bb= 0 4 16 1]{diss49.pdf}$ and suppose $d\geq 10$ is an integer. In the following picture each box of $\lambda(d)$ is labeled by its hook length. $$\includegraphics{diss50.pdf}$$ Thus $P_\lambda(d)=\frac{d!}{24(d-3)(d-4)(d-6)(d-8)!}=\frac{1}{24}d(d-1)(d-2)(d-5)(d-7)$.$\rotatebox{45}{$\Box$}$
+:::
+
+First, we show how $P_\lambda$ is related to the indecomposable object in $\underline{\operatorname{Re}}\!\operatorname{p}(S_T; K)$ corresponding to $\lambda$.
+
+::: proposition
+[]{#gendimen label="gendimen"} $\dim_{\underline{\operatorname{Re}}\!\operatorname{p}(S_T; K)}L(\lambda)=P_\lambda(T)$ for any Young diagram $\lambda$.
+:::
+
+::: proof
+*Proof.* Fix a Young diagram $\lambda$. Let $K'=F(T)$ and suppose $\varepsilon\in K'P_{|\lambda|}(T)$ is a primitive idempotent with $L(\lambda)=([|\lambda|], \varepsilon)$ in $\underline{\operatorname{Re}}\!\operatorname{p}(S_T; K')$. Applying Proposition [\[fieldex\]](#fieldex){reference-type="ref" reference="fieldex"} to the field extension $K'\subset K$ shows $L(\lambda)=([|\lambda|], \varepsilon)$ in $\underline{\operatorname{Re}}\!\operatorname{p}(S_T; K)$ too. Thus $\dim_{\underline{\operatorname{Re}}\!\operatorname{p}(S_T; K)}L(\lambda)=\text{tr}\,(\varepsilon)$ is a rational function in $T$. Now, by Proposition [\[Liftprop\]](#Liftprop){reference-type="ref" reference="Liftprop"}(4) and Proposition [\[Findy\]](#Findy){reference-type="ref" reference="Findy"} we can find an integer $N$ so that $\operatorname{Lift}_d(L(\lambda))=L(\lambda)$ and $\mathcal{F}:\underline{\operatorname{Re}}\!\operatorname{p}(S_d; F)\to \operatorname{Rep}(S_d; F)$ has $\mathcal{F}(L(\lambda))=L_{\lambda(d)}$ for all integers $d>N$. Hence, if $d>N$ is an integer, we have $$\begin{array}{rll}
+P_\lambda(d)\hspace{-.1in} & = \dim_{\operatorname{Rep}(S_d; F)}L_{\lambda(d)} & \text{(see e.g. \cite[4.12]{MR1153249})}\\
+ & =\dim_{\underline{\operatorname{Re}}\!\operatorname{p}(S_d; F)}L(\lambda) & \text{(since tensor functors preserve dimension)}\\
+ & =(\dim_{\underline{\operatorname{Re}}\!\operatorname{p}(S_T; K)}L(\lambda))|_{T=d}  & \text{(by Proposition \ref{Liftprop}(2))}
+\end{array}$$ Hence, $\dim_{\underline{\operatorname{Re}}\!\operatorname{p}(S_T; K)}L(\lambda)$ (a rational function in $T$) agrees with $P_\lambda(T)$ (a polynomial in $T$) for infinitely many values of $T$ . Hence they must always agree. ◻
+:::
+
+Next, we wish to determine the roots of $P_\lambda$. The following combinatorics will be useful toward that endeavor.
+
+::: definition
+Given a Young diagram $\lambda$ and an integer $d\geq2|\lambda|$, create the *$(\lambda, d)$ grid marking* as follows: Start with a grid of $(|\lambda|+1)\times (d-|\lambda|)$ black boxes. Place the Young diagram $\lambda(d)$ (with white boxes) atop the grid so that the upper left corner of $\lambda(d)$ is atop the upper left corner of the grid. Now place the numbers $0,\ldots, d-1$ into the boxes of the grid using the following rules:
+
+-   Begin by placing the number 0 in the lower left box of the grid.
+
+-   If the number $i$ is in a black box, place $i+1$ into the box directly above $i$.
+
+-   If the number $i$ is in a white box, place $i+1$ into the box directly to the right of $i$.
+
+Label the rows of the grid $0,\ldots, |\lambda|$ (from top to bottom) and the columns of the grid $1,\ldots, d-|\lambda|$ (from left to right).
+:::
+
+::: example
+Set $\lambda=(4, 3, 1, 1, 0,\ldots)$ and $d=25$. Below is the $\lambda$-marking of the $10\times 16$ grid. $$~\hspace{.75in}\includegraphics{diss51.pdf}\hspace{.7in}\rotatebox{45}{$\Box$}$$
+:::
+
+The following proposition records the properties of the $(\lambda, d)$ grid marking which will be useful for determining the roots of $P_\lambda$.
+
+::: proposition
+[]{#grid label="grid"} The $(\lambda, d)$ grid marking has the following properties:
+
+1.  If $\includegraphics[bb= 0 4 12 1]{diss52.pdf}$ appears in the $i$th row, then $k=|\lambda|+\lambda_i-i$.
+
+2.  If $\includegraphics[bb= 0 4 12 1]{diss53.pdf}$ appears in the $i$th column, then $d-k$ is the hook length of the row $0$, column $i$ box in $\lambda(d)$.
+:::
+
+::: proof
+*Proof.* (1) If $\includegraphics[bb= 0 4 12 1]{diss52.pdf}$ appears in the $i$th row, then $\includegraphics[bb= 0 4 12 1]{diss52.pdf}$ must be in column $\mu_i+1$. Hence $k$ is the number of up/right moves it takes to get from the lower left corner to the upper right corner in a $(|\lambda|-i)\times(\lambda_i+1)$ grid. The result follows.
+
+\(2\) Let $c_i$ denote the number of boxes in the $i$th column of $\lambda$. Notice there are $c_i$ boxes below, and $d-|\lambda|-i$ boxes to the right of the row $0$, column $i$ box in $\lambda(d)$. Hence the hook length of that box is $d-|\lambda|-i+c_i+1$. On the other hand, if $\includegraphics[bb= 0 4 12 1]{diss53.pdf}$ appears in the $i$th column, then $\includegraphics[bb= 0 4 12 1]{diss53.pdf}$ must be in row $c_i$. Hence $k$ is the number of up/right moves it takes to get from the lower left corner to the upper right corner in a $(|\lambda|-c_i)\times i$ grid. Thus $k=|\lambda|-c_i+i-1$. ◻
+:::
+
+Using Proposition [\[grid\]](#grid){reference-type="ref" reference="grid"}, we can determine all the roots of the polynomial $P_\lambda$.
+
+::: proposition
+[]{#roots label="roots"} $P_\lambda$ is a degree $|\lambda|$ polynomial with $|\lambda|$ distinct, integer roots given by $|\lambda|+\lambda_i-i$ for each $i=1,\ldots,|\lambda|$.
+:::
+
+::: proof
+*Proof.* Suppose $d$ is an integer with $d>2|\lambda|$. It follows from Definition [\[hookpoly\]](#hookpoly){reference-type="ref" reference="hookpoly"} that the roots of $P_\lambda$ are exactly the integers $0\leq k<d$ such that $d-k$ is not a hook length of a box in the top row of $\lambda(d)$. By Proposition [\[grid\]](#grid){reference-type="ref" reference="grid"}(2), those are exactly the values of $k$ for which $\includegraphics[bb= 0 4 12 1]{diss52.pdf}$ appears in the $(\lambda, d)$ grid marking. The result now follows from Proposition [\[grid\]](#grid){reference-type="ref" reference="grid"}(1). ◻
+:::

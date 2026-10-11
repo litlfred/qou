@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0904.1556v2/blocks/prose-sec-016",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0904.1556v2/blocks/prose-sec-016",
   "kind": "prose",
   "title": "The Pati–Salam Model",
   "pageStart": 48,
   "pageEnd": 55,
   "text": "../sections/sec-016-33-the-patisalam-model.md",
-  "derivedFrom": "library/arxiv-0904.1556v2/manifest",
-  "sourceDocument": "library/arxiv-0904.1556v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0904.1556v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0904.1556v2/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1806.09450v1/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1806.09450v1/blocks/prose-sec-003",
   "kind": "prose",
   "title": "The exceptional Lie groups E6 and E7",
   "pageStart": 10,
   "pageEnd": 12,
   "text": "../sections/sec-003-33-the-exceptional-lie-groups-e6-and-e7.md",
-  "derivedFrom": "library/arxiv-1806.09450v1/manifest",
-  "sourceDocument": "library/arxiv-1806.09450v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1806.09450v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1806.09450v1/manifest.jsonld",
   "provenance": "ingested"
 }

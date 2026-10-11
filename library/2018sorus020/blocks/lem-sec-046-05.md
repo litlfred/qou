@@ -1,1 +1,0 @@
-The morphismα is surjective.

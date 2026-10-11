@@ -247,7 +247,7 @@ def _producer_solver(doc) -> str:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--include-deprecated", action="store_true",
-                    help="also list hits under computations/_deprecated/")
+                    help="also list hits under fsh-guts/deprecated/computations/")
     args = ap.parse_args()
 
     declared = collections.Counter()

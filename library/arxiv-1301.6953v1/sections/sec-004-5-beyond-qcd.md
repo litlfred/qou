@@ -7,237 +7,129 @@ section_number: 5
 pages: 8-10
 source_pdf: 1301.6953v1.pdf
 source_sha256: 8c9231d0832df3b6
-doc_brief: "LU TP 13-03 Januray 2013 — 12 sections: Chiral Perturbation Theory; Introduction; Determining low-energy-constants i"
+toc_source: inferred
+text_source: latex
+latex_prose_ratio: 0.967
+latex_coverage_ratio: 0.865
 ---
-The methods of effective ﬁeld theory and in particular ChPT can also be used for extensions. A
-simple extension is to take QCD withN light ﬂavours but one can also envisage usingN fermions in
-different representations of the gauge group. The represen tations can be complex, real or pseudo-
-real so we have in general three generic cases to study for the spontaneous breaking of the global
-8
-Chiral Perturbation Theory and Mesons Johan Bijnens
- 0.7
- 0.8
- 0.9
- 1
- 1.1
- 1.2
- 0  0.2  0.4  0.6  0.8  1  1.2  1.4
-f+(q2)
-q2 [GeV2]
-f+ D→π
-f+ D→ K
- 0.7
- 0.8
- 0.9
- 1
- 1.1
- 1.2
- 0  0.2  0.4  0.6  0.8  1  1.2  1.4
-f+(q2)
-q2 [GeV2]
-f+ D→π FD→ K/FD→π
-f+ D→ K
-Figure 4: The left plot shows the form-factor f+ in D → πeν and D → Keν decays from CLEO [46]. In the
-right hand side theD → Keν has been corrected with the chiral logarithms viaf+D→π = f+D→KFD→π/FD→K
-[42].
-symmetries [47, 48]
-SU(N) × SU(N) → SU(N), SU(2N) → SO(2N), SU(2N) → Sp(2N) . (5.1)
-The cases correspond to a complex, real and pseudo-real repr esentation for the N fermions. The
-global symmetry group in the latter two cases isSU(2N) since both fermion and antifermion are in
-the same representation of the gauge group. Many one-loop re sults existed especially for the ﬁrst
-case, the equal mass case has been pushed to two-loop order in [49 – 51]. The main observation
-[49] is that the whole machinery developed for ChPT can be brought over with a few simple mod-
-iﬁcations to the three cases given above. This allowed us to p erform the calculations for the mass
-and decay constants [49], meson-meson scattering [50] and t he electroweak precision parameters
-[51]. The main idea was that lattice calculation can use our formulas to extrapolate to the massless
-case, see e.g. [52].
-The main trick involved is that in all cases mesons can be desc ribed by a unitary matrix U =
-exp(i
-φaX a/(
-√
-2F)) with the X a a different set of generators for the three cases. All ﬂavour sums
-in the equal mass case can be done using the relations
-⟨X aAX aB⟩ = ⟨A⟩⟨B⟩ − 1
-NF
-⟨AB⟩, ⟨X aA⟩⟨X aB⟩ = ⟨AB⟩ − 1
-NF
-⟨A⟩⟨B⟩.
-⟨X aAX aB⟩ = ⟨A⟩⟨B⟩
-2 + 1
-2 ⟨AJSBT JS⟩ −⟨AB⟩
-2NF
-, ⟨X aA⟩⟨X aB⟩ = 1
-2 ⟨AB⟩+ 1
-2 ⟨AJSBT JS⟩ −⟨A⟩⟨B⟩
-2NF
-.
-⟨X aAX aB⟩ = ⟨A⟩⟨B⟩
-2 + 1
-2 ⟨AJABT JA⟩ −⟨AB⟩
-2NF
-, ⟨X aA⟩⟨X aB⟩ = 1
-2 ⟨AB⟩ −1
-2 ⟨AJABT JA⟩ −⟨A⟩⟨B⟩
-2NF
-.
-(5.2)
-The lines are for the complex, real and pseudo-real case and JS =
-(
-0 I
-I 0
-)
-, JA =
-(
-0 −I
-I 0
-)
-.
-9
-Chiral Perturbation Theory and Mesons Johan Bijnens
-QCD Adjoint 2-colour
-aV n − 1
-n n + 1
-2 − 1
-2n n − 1
-2 − 1
-2n
-bV 16nLr
-6 + 8Lr
-8 + 4Hr
-2
-32nLr
-6 + 8Lr
-8 + 4Hr
-2
-32nLr
-6 + 8Lr
-8 + 4Hr
-2
-cV 3
-2
-(
-−1 + 1
-n2
-) 3
-8
-(
-−1 + 1
-n2 − 2
-n + 2n
-) 3
-8
-(
-−1 + 1
-n2 + 2
-n − 2n
-)
-dV −24
-(
-n2 − 1
-)(
-LA + LB
-n
-)
-−12
-(
-2n2 + n − 1
-)(
-2LA + LB
-n
-)
-−12
-(
-2n2 − n − 1
-)(
-2LA + LB
-n
-)
-eV 1 − 1
-n2
-1
-4
-(
-1 − 1
-n2 + 2
-n − 2n
-) 1
-4
-(
-1 − 1
-n2 − 2
-n + 2n
-)
-fV 48
-(
-Kr
-25 + nKr
-26 + n2Kr
-27
-)
-rr
-VA rr
-V T
-gV 8
-(
-n2 − 1
-)(
-LA + 1
-nLB
-)
-4
-(
-2n2 + n − 1
-)(
-2LA + 1
-nLB
-)
-4
-(
-2n2 − n − 1
-)(
-2LA + 1
-nLB
-)
-Table 3: The coefﬁcients appearing the corrections to the vacuum-ex pectation-value for the three generic
-cases with n ﬂavours. Table from [49]. We have deﬁned the abbreviationsLA = Lr
-4 − 2Lr
-6 and LB = Lr
-5 − 2Lr
-8.
-As an example I quote the results for the vacuum expectation value ⟨¯qq⟩ for all three cases.
-⟨
-qq⟩ = ⟨qq⟩LO + ⟨qq⟩NLO + ⟨qq⟩NNLO .
-⟨qq⟩LO ≡ ∑
-i=1,NF
-⟨qRiqLi + qLiqRi⟩LO = −NFB0F2
-⟨qq⟩NLO = ⟨qq⟩LO
-(
-aV
-A(M2)
-F 2 + bV
-M2
-F2
-)
-,
-⟨qq⟩NNLO = ⟨qq⟩LO
-(
-cV
-A(M2)2
-F4 + M2A(M2)
-F4
-(
-dV + eV
-16π2
-)
-+ M4
-F4
-(
-fV + gV
-16π2
-) )
-. (5.3)
-I used here M2 = 2B0 ˆm and A(M2) = − M2
-16π2 log M2
-μ2 . The coefﬁcients appearing are given in Tab. 3.
-Note the similarity between the different results and the existence of a number of large n relations
-between the various cases [49].
+The methods of effective field theory and in particular ChPT can also be
+used for extensions. A simple extension is to take QCD with $N$ light
+flavours but one can also envisage using $N$ fermions in different
+representations of the gauge group. The representations can be complex, real or
+pseudo-real so we have in general three generic cases to study for
+the spontaneous breaking of the global symmetries \cite{Peskin,Preskill}
+\begin{equation}
+SU(N)\times SU(N)\to SU(N),\quad
+SU(2N)\to SO(2N),\quad
+SU(2N)\to Sp(2N)\,.
+\end{equation}
+The cases correspond to a complex, real and pseudo-real representation for
+the $N$ fermions. The global symmetry group in the latter two cases
+is $SU(2N)$ since both fermion and antifermion are in the same representation
+of the gauge group.
+Many one-loop results existed especially for the first case,
+the equal mass case has been pushed to two-loop order in
+\cite{BL1,BL2,BL3}. The main observation \cite{BL1} is that the whole
+machinery developed for ChPT can be brought over with a few simple
+modifications to the three cases given above. This allowed us to perform
+the calculations for the mass and decay constants \cite{BL1},
+meson-meson scattering \cite{BL2} and the electroweak precision
+parameters \cite{BL3}. The main idea was that lattice calculation can use
+our formulas to extrapolate to the massless case, see e.g. \cite{Buchoff}.
+
+The main trick involved is that in all cases mesons can be described by a
+unitary matrix $U=\exp(i\phi^a X^a/(\sqrt{2}F))$ with the $X^a$
+a different set of generators for the three cases. All flavour sums in
+the equal mass case can be done using the relations
+\newcommand{\trfa}[1]{\langle #1\rangle}
+\begin{align}
+
+\trfa{X^a A X^a B}&= \trfa{A}\trfa{B}
+ -\frac{1}{N_F}\trfa{AB}\,,&
+\trfa{ X^a A}\trfa{X^a B}&=
+ \trfa{AB}
+ -\frac{1}{N_F}\trfa{A}\trfa{B}\,.
+\nonumber\\
+
+\trfa{X^a A X^a B}&= \frac{\trfa{A}\trfa{B}}{2}
+ +\frac{1}{2}\trfa{AJ_S B^T J_S}-\frac{\trfa{AB}}{2N_F}\,,&
+\trfa{ X^a A}\trfa{X^a B}&=
+ \frac{1}{2}\trfa{AB}+\frac{1}{2}\trfa{AJ_S B^T J_S}
+ -\frac{\trfa{A}\trfa{B}}{2N_F}\,.
+\nonumber\\
+
+\trfa{X^a A X^a B}&= \frac{\trfa{A}\trfa{B}}{2}
++\frac{1}{2}\trfa{AJ_A B^T J_A} -\frac{\trfa{AB}}{2N_F}\,,&
+\trfa{ X^a A}\trfa{X^a B}&=
+ \frac{1}{2}\trfa{AB}-\frac{1}{2}\trfa{AJ_A B^T J_A}
+ -\frac{\trfa{A}\trfa{B}}{2N_F}.
+\end{align}
+The lines are for the complex, real and pseudo-real case and
+$J_S=
+\left(\begin{array}{cc} 0 & I\\
+I & 0\end{array}\right)$, $J_A=
+\left(\begin{array}{cc} 0 & -I\\
+I & 0\end{array}\right)$.
+
+As an example I quote the results for the vacuum expectation value $\langle\bar q q\rangle$ for all three cases.
+\begin{align}
+\langle \overline q q\rangle &=
+\langle \overline q q\rangle_\mathrm{LO}+
+\langle \overline q q\rangle_\mathrm{NLO}+
+\langle \overline q q\rangle_\mathrm{NNLO}\,.
+\nonumber\\
+\langle \overline q q\rangle_\mathrm{LO} &\equiv \sum_{i=1,N_F}
+\langle \overline q_{Ri}q_{Li}+\overline q_{Li}q_{Ri}\rangle_\mathrm{LO}
+= -N_F B_0 F^2
+\nonumber\\
+\langle \overline q q\rangle_\mathrm{NLO}
+ &= \langle \overline q q\rangle_\mathrm{LO}
+\left(a_V \frac{\overline A(M^2)}{F^2}+b_V\frac{M^2}{F^2}\right)\,,
+\nonumber\\
+\langle \overline q q\rangle_\mathrm{NNLO}
+ &= \langle \overline q q\rangle_\mathrm{LO}
+\Bigg(c_V \frac{\overline A(M^2)^2}{F^4}
+     +\frac{M^2\overline A(M^2)}{F^4}\left(d_V+\frac{e_V}{16\pi^2}\right)
+  +\frac{M^4}{F^4}\left(f_V+\frac{g_V}{16\pi^2}\right)\Bigg)\,.
+\label{xvev}
+\end{align}
+I used here 
+$M^2 = 2 B_0\hat m$ and $
+\overline A(M^2) = -\frac{M^2}{16\pi^2}\log\frac{M^2}{\mu^2}\,.
+$ The coefficients appearing are given in Tab.~\ref{tab3}.
+Note the similarity between the different results and the existence of
+a number of large $n$ relations between the various cases \cite{BL1}.
+\begin{table}
+\begin{tabular}{|c|c|c|c|}
+\hline
+ & QCD & Adjoint & 2-colour \\
+\hline
+$a_V$ & $n-\frac{1}{n}$ & $ n+\frac{1}{2}-\frac{1}{2n}$
+ & $ n-\frac{1}{2}-\frac{1}{2n}$\\
+$b_V$ & $16 n L_6^r+8 L_8^r +4 H_2^r$& $32 n L_6^r+8 L_8^r +4 H_2^r$
+ & $32 n L_6^r+8 L_8^r +4 H_2^r$ \\
+$c_V$ & $\frac{3}{2}\left(-1+\frac{1}{n^2}\right)$& $\frac{3}{8}\left(-1+\frac{1}{n^2}-\frac{2}{n}+2n\right)$
+ & $\frac{3}{8}\left(-1+\frac{1}{n^2}+\frac{2}{n}-2n\right)$ \\
+$d_V$ & $-24\left(n^2-1\right)\,
+  \left(L_A+\frac{L_B}{n}\right)$& $-12\left(2n^2+n-1\right)
+  \left(2L_A+\frac{L_B}{n}\right)$
+ &  $-12\left(2n^2-n-1\right)
+  \left(2L_A+\frac{L_B}{n}\right)$\\
+$e_V$ & $1-\frac{1}{n^2}$&$\frac{1}{4}\left(1-\frac{1}{n^2}+\frac{2}{n}-2n\right)$
+& $\frac{1}{4}\left(1-\frac{1}{n^2}-\frac{2}{n}+2n\right)$ \\
+$f_V$ & $48\left(K_{25}^r+n K_{26}^r+n^2 K_{27}^r\right)$& $r^r_{VA}$ 
+& $r^r_{VT}$ \\
+$g_V$ & $8\left(n^2-1\right)\,
+\left(L_A+\frac{1}{n}L_B\right)$& $4\left(2n^2+n-1\right)
+  \left(2L_A+\frac{1}{n}L_B\right)$
+ & $4\left(2n^2-n-1\right)
+  \left(2L_A+\frac{1}{n}L_B\right)$ \\
+\hline
+\end{tabular}
+\caption{\label{tab3} The coefficients appearing 
+the corrections to the vacuum-expectation-value for the three generic cases
+with $n$ flavours. Table from \cite{BL1}.
+We have defined the abbreviations 
+ $L_A=L_4^r-2L_6^r$ and
+$L_B=L_5^r-2L_8^r$.}
+\end{table}

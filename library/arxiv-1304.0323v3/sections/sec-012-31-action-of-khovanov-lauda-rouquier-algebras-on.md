@@ -8,191 +8,259 @@ pages: 27-31
 source_pdf: 1304.0323v3.pdf
 source_sha256: 92e2b9dc876e1a52
 doc_brief: "SYMMETRIC QUIVER HECKE ALGEBRAS — Let J be a set of pairs consisting of good U ′ q(g)-modules and invertible elements in the base ﬁeld C(q)."
+text_source: latex
+latex_prose_ratio: 0.971
+latex_coverage_ratio: 0.925
 ---
-family of good U′
-q(g)-modules and let λs be a dominant extremal weight of Vs and vs
-a dominant extremal weight vector in Vs of weight λs.
-Let J be an index set and let X : J→ T and S : J→S be maps, where T = k× is
-the algebraic torus. For each i,j ∈J, we choose ci,j(u,v )∈ k[[u,v ]] such that
-ci,j(u,v )cj,i(v,u ) = 1,
-ci,i(u,v ) = 1.(3.1.1)
-28 S.-J. KANG, M. KASHIW ARA, M. KIM
+Let $\{V_s\}_{s\in \mathcal{S}}$ be a family of good $\uqpg$-modules
+and  let $\lambda_s$ be a dominant extremal weight of $V_s$ and $v_s$
+a dominant extremal weight vector in $V_s$ of weight $\lambda_s$.
+
+
+Let $J$ be an index set and
+let $X \colon J \rightarrow \mathbb{T}$ and
+$S \colon J \rightarrow \Ss$ be maps,
+where $\mathbb{T}=\cor^\times$ is the algebraic torus.
+For each $i,j \in J $,
+we choose $c_{i,j}(u,v)\in\cor[[u,v]]$ such that
+\eq&&\ba{l} \label{cond:cij}
+c_{i,j}(u,v)c_{j,i}(v,u)=1,\\
+c_{i,i}(u,v)=1.
+\ea
+\eneq
 Set
-(3.1.2) Pij(u,v ) = (u−v)dijci,j(u,v ),
-where dij denotes the order of the zero of dVS(i),VS(j)(z2/z1) at z2/z1 =X(j)/X(i).
-Let RJ be the symmetric Khovanov-Lauda-Rouquier algebra associated w ith
-(3.1.3) Qij(u,v ) = δ(i⁄=j)Pij(u,v )Pji(v,u ) = δ(i⁄=j)(u−v)dij (v−u)dji
-for i,j ∈J.
-Remark 3.1.1. If we consider the non-graded RJ -module category RJ -mod, the choice
-of ci,j is not important, and we can choose, for example, ci,j(u,v ) = 1. Indeed, adding
-ci,j(u,v ) is equivalent to the change of generators τke(ν)↦→cνk,νk+1(xx,xk+1)τke(ν).
-However, as we shall see later in Theorem 4.6.5, we need to choose ci,j(u,v ) carefully
-when we are concerned with localizations of the graded RJ -module category RJ -gmod.
-Remark 3.1.2. The underlying Cartan matrix AJ = (aJ
-ij)i,j∈J is given by
-(3.1.4) aJ
-ij =
-{
-2 if i =j,
-−dij−dji if i⁄=j.
-Consider the quiver Γ J := (J, Ω) with the set of vertices J and the set of oriented edges
-Ω such that
-♯{h∈ Ω|s(h) = i,t (h) = j} =dij for all i,j∈J,
-where s(h) and t(h) denote the source and the target of an oriented edge h ∈ Ω.
-Theorem 2.2.1 implies that X(j)/X(i)∈ C[[q1/m]]q1/m for some m > 0 if dij > 0.
+\begin{equation}
+P_{ij}(u,v) =(u-v)^{d_{ij}}c_{i,j}(u,v),\label{def:Pij}
+\end{equation}
+where $d_{ij}$ denotes the order of the zero of
+$d_{V_{S(i)},V_{S(j)}}(z_2 / z_1)$ at $z_2 / z_1 = {X(j) / X(i)}$.
+
+Let $R^{J}$ be the symmetric \KLR\ associated with
+\begin{equation}\label{eq:Q_omega}
+Q_{ij}(u,v) = \delta(i\not=j)P_{ij}(u,v)P_{ji}(v,u)=\delta(i\not=j) (u-v)^{d_{ij}}(v-u)^{d_{ji}}\end{equation}
+for $i,j \in J$.
+
+\Rem \label{rmk:cij} If we consider the non-graded $R^{J}$-module category $R^J\smod$,
+the choice of $c_{i,j}$ is not important, and we can choose, for example,
+$c_{i,j}(u,v)=1$. Indeed, adding $c_{i,j}(u,v)$
+is equivalent to  the change of  generators
+$\tau_ke(\nu)\mapsto c_{\nu_k,\nu_{k+1}}(x_x,x_{k+1})\tau_ke(\nu)$.
+However, as we shall see later in Theorem~\ref{thm:cij},
+we need to choose $c_{i,j}(u,v)$ carefully when we  are concerned with
+localizations of the graded $R^{J}$-module category $R^J\gmod$.
+\enrem
+
+\begin{remark}
+The underlying Cartan matrix $A_J=(a^J_{ij})_{i,j\in J}$ is given by
+\begin{equation}\label{eq:quiver}
+a^J_{ij}=\begin{cases}
+2&\text{if $i=j$,}\\
+-d_{ij}-d_{ji}&\text{if $i\not=j$.}\end{cases}
+\end{equation}
+Consider the quiver $\Gamma_J \seteq (J, \Omega)$ with the set of
+vertices $J$ and the set of oriented edges $\Omega$ such that
+$$\sharp\set{h \in \Omega}{s(h) = i, t(h)=j } = d_{ij}
+\qtext{ for all $i,j\in J$,}$$
+where $s(h)$ and $t(h)$ denote the source and the target of an oriented edge $h \in \Omega$.
+
+Theorem~\ref{th:zero} implies that $X(j)/X(i)\in\C[[q^{1/m}]]q^{1/m}$ for some $m>0$
+if $d_{ij}>0$.
 Hence we obtain
-if dij > 0, then dji = 0.
-Thus the quiver Γ J has neither loops nor cycles. The underlying unoriented graph of
-ΓJ gives a symmetric Cartan datum and the polynomials in ( 3.1.3) are essentially same
-as the ones used in [ 37] associated with the symmetric Cartan datum of Γ J .
+$$\text{if $d_{ij} > 0$, then $d_{ji} =0$.}$$
+Thus the quiver $\Gamma_J$ has neither loops nor cycles.
+The underlying unoriented graph of $\Gamma_J$ gives a symmetric Cartan datum and the polynomials in \eqref{eq:Q_omega}
+are essentially same as
+the ones used in \cite{VV09} associated with
+ the symmetric Cartan datum of $\Gamma_J$.
+\end{remark}
+
+\bigskip
 Let
-ˆOTn,X(ν) = k[[X1−X(ν1),...,X n−X(νn)]]
-be the completion of the local ring OTn,X(ν) of Tn at X(ν) := (X(ν1),...,X (νn)) and
-ˆKν the fraction ﬁeld of ˆOTn,X(ν). For β∈ Q+ with|β| =n, set
-Pβ := ⨁
-ν∈J β
-k[x1,...,x n]e(ν)⊂RJ (β),
-ˆPβ := ⨁
-ν∈J β
-ˆOTn,X(ν)e(ν),
-ˆKβ := ⨁
-ν∈J β
-ˆKνe(ν).
-SYMMETRIC QUIVER HECKE ALGEBRAS AND R-MATRICES 29
+\begin{equation*}
+\Oh_{\mathbb{T}^n, X(\nu)} = \cor [[X_1 - X(\nu_1), \ldots, X_n-X(\nu_n)]]
+\end{equation*}
+ be the completion of
+the local ring $\sho_{\mathbb{T}^n, X(\nu)}$
+ of $\mathbb{T}^n$ at  $X(\nu)\seteq(X(\nu_1),\ldots,X(\nu_n))$
+ and $\bK[\nu]$  the fraction field of $\Oh_{\mathbb{T}^n, X(\nu)}$.
+
+ For $\beta \in \rootl^+$ with $|\beta|=n$,
+set
+\begin{align*}
+&\bP_{ \beta } \seteq \soplus_{\nu \in J^{ \beta }} \cor [x_1, \ldots, x_n] e(\nu)\subset R^J( \beta ), \\
+&\bPh_{ \beta }\seteq\soplus_{\nu\in J^{ \beta }}\Oh_{\mathbb{T}^n, X(\nu)}e(\nu), \\
+&\bK[ \beta ] \seteq \soplus_{\nu \in J^{ \beta }} \bK[\nu]e(\nu).\end{align*}
+
 Then we have
-Pβ֒→ˆPβ֒→ˆKβ
-as k-algebras, where the ﬁrst arrow is given by
-xke(ν)↦→X(νk)−1(
-Xk−X(νk)
-)
-e(ν).
+\begin{equation*}
+\bP_{ \beta }\hookrightarrow\bPh_{ \beta }\hookrightarrow\bK[ \beta ]
+\end{equation*}
+as $\cor$-algebras, where the first arrow is given by
+\begin{equation*}
+x_k e(\nu) \mapsto X(\nu_k)^{-1}\bl X_k -X(\nu_k)\br e(\nu).
+\end{equation*}
 Note that
-k[X±1
-1 ,...,X ±1
-n ]⊂ ˆOTn,X(ν) and ˆOTn,X(ν)≃ k[[x1,...,x n]] for all ν∈Jβ.
+\begin{equation*}
+\cor [X_1^{\pm1}, \ldots, X_n^{\pm1}] \subset \Oh_{\mathbb{T}^n, X(\nu)}
+\qtext{and}\quad \Oh_{\mathbb{T}^n, X(\nu)}\simeq\cor[[x_1,\ldots,x_n]]
+\qtext{for all} \ \nu \in J^{ \beta }.
+\end{equation*}
 Let
-k[Sn] :=
-⨁
-w∈Sn
-krw
-be the group algebra of Sn; i.e., the k-algebra with the multiplication rwrw′ =rww′ for
-w,w′∈ Sn. We denote rsi byri for i = 1,...,n − 1.
-The symmetric group Sn acts on Pβ, ˆPβ, ˆKβ from the left and we have
-Pβ⊗ k[Sn]֒→ˆPβ⊗ k[Sn]֒→ˆKβ⊗ k[Sn]
-as algebras. Here the algebra structure on ˆKβ⊗ k[Sn] is given by
-rwf =w(f )rw for f∈ ˆKβ, w∈ Sn.(3.1.5)
-Then ˆKβ may be regarded as a right ˆKβ⊗ k[Sn]-module by
-a(f⊗rw) = w−1(af ) ( a,f ∈ ˆKβ, w∈ Sn).
-Deﬁne τa∈ ˆKβ⊗ k[Sn] by
-e(ν)τa =
-{
-e(ν)Pνa,νa+1(xa,xa+1)ra if νa⁄=νa+1,
-e(ν)(ra− 1)(xa−xa+1)−1 if νa =νa+1.
-Then the subalgebra of ˆKβ⊗ k[Sn] generated by
-e(ν) (ν∈Jβ), x a (1≤a≤n), τ a (1≤a≤n− 1)
-is isomorphic to the Khovanov-Lauda-Rouquier algebra RJ (β) at β associated with
-Qij(u,v ) = δ(i⁄=j)Pij(u,v )Pji(v,u ) ([ 34, Proposition 3.12], [ 24, Theorem 2.5]).
-For each ν = (ν1,...,ν n)∈Jβ, we set
-Vν = (VS(ν1))aﬀ⊗···⊗ (VS(νn))aﬀ
-30 S.-J. KANG, M. KASHIW ARA, M. KIM
-which is a
-(
-k[X±1
-1 ,...,X ±1
-n ]⊗U′
-q(g)
-)
--module, where Xk =zVS(νk ). We deﬁne
-ˆVν := ˆOTn,X(ν)⊗k[X ±1
-1 ,...,X ±1
-n ]Vν,
-ˆV⊗β := ⨁
-ν∈J β ˆVνe(ν),
-ˆV⊗β
-ˆK := ˆKβ⊗ˆPβ
-ˆV⊗β≃ ⨁
-ν∈J β ˆKν⊗ ˆOTn,X(ν)
-ˆVν.
-(3.1.6)
-For each ν∈Jβ and a = 1,...,n − 1, there exists a U′
-q(g)-module homomorphism
-Rν
-a,a+1 : k(X1,...,X n)⊗k[X ±1
-1 ,...X±1
-n ]Vν→ k(X1,...,X n)⊗k[X ±1
-1 ,...X±1
-n ]Vsa(ν)
+\begin{align*}
+\cor [\sym_n] \seteq \bigoplus_{w \in \sym_n} \cor r_w
+\end{align*}
+be the group algebra of $\sym_n$;
+i.e., the $\cor$-algebra with the multiplication
+$r_{w}r_{w'}=r_{ww'}$ for $w,w'\in \sym_n$.
+We denote $r_{s_i}$ by $r_i$ for $i=1,\ldots, n-1$.
+
+The symmetric group $\sym_n$ acts on $\bP_{ \beta }$, $\bPh_{ \beta }$, $\bK[ \beta ]$
+from the left and we have
+\begin{equation*}
+\bP_{ \beta }\otimes {\cor[\sym_n]} \hookrightarrow \bPh_{ \beta }\otimes {\cor[\sym_n]} \hookrightarrow \bK[ \beta ]\otimes {\cor[\sym_n]}
+\end{equation*}
+as algebras. Here the algebra structure on $\bK[ \beta ]\otimes {\cor[\sym_n]}$ is given by
+\begin{align} \label{eq:rel of Khat S_n}
+r_w f =w(f) r_w & \quad \text{for $f \in \bK[ \beta ]$, $w \in \sym_n$.}
+\end{align}
+Then $\bK[ \beta ]$
+may be regarded as a right $\bK[ \beta ] \otimes {\cor[\sym_n]}$-module
+by
+$$a (f\otimes r_w)=w^{-1}(af) \quad (a,f\in \bK[ \beta ], \ w\in
+\sym_n).$$
+
+
+
+
+ Define $\tau_a\in\bK[ \beta ]\otimes {\cor[\sym_n]}$ by
+\begin{equation*}
+e(\nu) \tau_a = \begin{cases}
+e(\nu)  P_{\nu_a, \nu_{a+1}}(x_{a}, x_{a+1})r_a & \text{if $\nu_a \neq \nu_{a+1}$,} \\
+e(\nu) (r_a -1)(x_a -x_{a+1})^{-1} & \text{if $\nu_a = \nu_{a+1}$.}
+\end{cases}
+\end{equation*}
+Then the subalgebra of $\bK[ \beta ]\otimes {\cor[\sym_n]}$
+generated by \eqn &&e(\nu) \ (\nu \in J^{ \beta }),\quad x_a \ (1
+\leq a \leq n), \quad \tau_a  \ (1 \leq a \leq n-1) \eneqn is
+isomorphic to the \KLR\ $R^J({ \beta })$ at ${ \beta }$ associated
+with $Q_{ij}(u,v) = \delta(i\not=j)P_{ij}(u,v) P_{ji}(v,u)$
+(\cite[Proposition 3.12]{R08}, \cite[Theorem 2.5]{KL09}).
+
+\bigskip
+For each $\nu =(\nu_1,\ldots, \nu_n) \in J^{ \beta }$, we set
+$$
+V_\nu =( V_{S(\nu_1)})_\aff \otimes \cdots
+\otimes (V_{S(\nu_n)})_\aff$$
+which is a $\bl\cor[X_1^{\pm1},\ldots, X_n^{\pm1}]\otimes\uqpg \br$-module,
+where $X_k=z_{V_{S(\nu_k)}}$.
+ We   define
+\begin{align}
+\ba{ll}
+\hV_\nu&\seteq \Oh_{\mathbb{T}^n, X(\nu)}\otimes _{\cor[X_1^{\pm1},\ldots,X_n^{\pm1}]}
+V_\nu,\\[1ex]
+\bV[ \beta ]&\seteq \soplus\nolimits_{\nu \in J^{ \beta }}
+\hV_\nu e(\nu),\\[1ex]
+\bVK[ \beta ]&\seteq \bK[ \beta ]\tens_{\bPh_{ \beta }}\bV[{ \beta
+}] \simeq\soplus\nolimits_{\nu\in J^\beta}\bK[\nu]\tens
+\nolimits_{\Oh_{\mathbb{T}^n, X(\nu)}} \hV_\nu.\ea
+\label{eq:Vhat}
+\end{align}
+For each $\nu \in J^{ \beta }$ and $a=1,\ldots, n-1$, there exists a $\uqpg$-module homomorphism
+\begin{equation*}
+R^{\nu}_{a, a+1} \colon \cor(X_1,\ldots,X_n) \otimes_{\cor[X_1^{\pm1}, \ldots X_n^{\pm1}]}
+V_\nu \rightarrow
+\cor(X_1,\ldots,X_n) \otimes_{\cor[X_1^{\pm1}, \ldots X_n^{\pm1}]} V_{s_a(\nu)}
+\end{equation*}
 which is given by
-v1⊗···⊗ va⊗va+1⊗···⊗ vn↦→v1⊗···⊗ Rnorm
-VS(νa),VS(νa+1)(va⊗va+1)⊗···⊗ vn
-for vk∈ (VS(νk))aﬀ (1≤k≤n). It follows that
-Rν
-a,a+1◦Xk =Xsa(k)◦Rν
-a,a+1 from ( 2.2.2),
-Rsa(ν)
-a,a+1◦Rν
-a,a+1 = 1Vν from ( 2.2.4),
-Rsa+1sa(ν)
-a,a+1 ◦Rsa(ν)
-a+1,a+2◦Rν
-a,a+1 =Rsasa+1(ν)
-a+1,a+2 ◦Rsa+1(ν)
-a,a+1 ◦Rν
-a+1,a+2 from ( 2.2.5).
-Set dνa,νa+1(u) = dVS(νa),VS(νa+1)(u). Then, we have
-(3.1.7) Rν
-a,a+1◦dνa,νa+1(Xa+1/Xa) :Vν→Vsa(ν).
-The algebra ˆKβ⊗ k[Sn] acts on ˆV⊗β
-ˆK from the right, where
-e(ν)ra : ˆKν⊗k[X ±1
-1 ,...X ±1
-n ]Vν
-→ ˆKsa(ν)⊗k(X1,...,Xn)
-(
-k(X1,...,X n)⊗k[X ±1
-1 ,...X±1
-n ]Vsa(ν)
-)
-is given by
-(f⊗v)e(ν)ra =sa(f )e(sa(ν))⊗Rν
-a,a+1(v)
-for f∈ ˆKν, v∈ k(X1,...,X n)⊗k[X ±1
-1 ,...,X ±1
-n ]Vν. The subalgebra ˆKβ acts by the mul-
-tiplication. The relation ( 3.1.5) follows from the properties of normalized R-matrices
-and hence we have a well-deﬁned right action of the algebra ˆKβ⊗ k[Sn] on ˆV⊗β
-ˆK . Since
-the normalized R-matrices are U′
-q(g)-module homomorphisms, ˆV⊗β
-ˆK has a structure of
-(U′
-q(g), ˆKβ⊗ k[Sn])-bimodule.
-Theorem 3.1.3. The subspace ˆV⊗β of ˆV⊗β
-ˆK is stable under the right action of the
-subalgebraRJ (β) of ˆKβ⊗ k[Sn]. In particular, ˆV⊗β has a structure of (U′
-q(g),RJ (β))-
-bimodule.
-SYMMETRIC QUIVER HECKE ALGEBRAS AND R-MATRICES 31
-Proof. It is obvious that ˆV⊗β is stable under the actions of e(ν) (ν∈Jβ) and xa (1≤
-a≤n). Thus it is enough to show that ˆV⊗β is stable under e(ν)τa (ν∈Jβ, 1≤a<n ).
-Assume νa⁄=νa+1. Then we have
-e(ν)Pνa,νa+1(xa,xa+1)
-=e(ν)dνa,νa+1(Xa+1/Xa) (X(νa)−1Xa−X(νa+1)−1Xa+1)dνa,νa+1cνa,νa+1(xa,xa+1)
-dνa,νa+1(Xa+1/Xa) .
-Since dνa,νa+1 is the multiplicity of the zero of the polynomial dνa,νa+1(Xa+1/Xa) at
-Xa+1/Xa =X(νa+1)/X(νa), we have
-(X(νa)−1Xa−X(νa+1)−1Xa+1)dνa,νa+1cνa,νa+1(xa,xa+1)
-dνa,νa+1(Xa+1/Xa) ∈ ˆOTn,X(ν).
+\begin{equation*}
+ v_1 \otimes \cdots \otimes v_a \otimes v_{a+1} \otimes \cdots \otimes v_n
+\mapsto v_1 \otimes \cdots \otimes \Rnorm_{V_{S(\nu_a)},V_{S(\nu_{a+1})}}(v_a \otimes v_{a+1}) \otimes \cdots \otimes v_n
+\end{equation*}
+for $v_k \in (V_{S(\nu_k)})_\aff$ $(1 \leq k \leq n)$.
 It follows that
-ˆVνe(ν)Pνa,νa+1(xa,xa+1)⊂ ˆVνe(ν)dνa,νa+1(Xa+1/Xa).
+\begin{align}
+&R^{\nu}_{a, a+1} \circ X_k = X_{s_a(k)} \circ R^{\nu}_{a, a+1} && \text{from \eqref{eq:r-matrix commute with z},} \nonumber\\
+&R^{s_a(\nu)}_{a, a+1} \circ R^{\nu}_{a, a+1} = 1_{V_{\nu}}&& \text{from \eqref{eq:r^2=1},} \nonumber \\
+&R^{s_{a+1}s_a(\nu)}_{a, a+1} \circ R^{s_a (\nu)}_{a+1, a+2} \circ R^{\nu}_{a, a+1} =
+R^{s_a s_{a+1}(\nu)}_{a+1, a+2} \circ R^{s_{a+1}(\nu)}_{a, a+1} \circ R^{\nu}_{a+1, a+2}
+&& \text{from \eqref{eq:r_YB}.} \ \nonumber
+\end{align}
+Set $d_{\nu_a,\nu_{a+1}}(u)=d_{V_{S(\nu_a)}, V_{S(\nu_{a+1})}} (u)$. Then,
+we have
+\begin{equation}
+ R^{\nu}_{a, a+1}\circ d_{\nu_a,\nu_{a+1}}(X_{a+1}/X_a)
+\colon V_{\nu} \rightarrow V_{s_a(\nu)}.\label{eq:regR}
+\end{equation}
+
+The algebra $\bK[ \beta ] \otimes {\cor[\sym_n]}$ acts on $\bVK[{ \beta }]$ from the right, where
+
+\begin{align*}
+e(\nu) r_a \col \; &\widehat{\mathbb K}_\nu \otimes_{\cor[X_1^{\pm1}, \ldots X_n^{\pm1}]} V_\nu \\
+&\rightarrow \widehat{\mathbb K}_{s_a(\nu)} \otimes_{\cor(X_1,\ldots,X_n)} \big( \cor(X_1,\ldots,X_n) \otimes_{\cor[X_1^{\pm1}, \ldots X_n^{\pm1}]} V_{s_a(\nu)}\big)
+\end{align*}
+is given by
+\begin{equation*}
+(f \otimes v) e(\nu) r_a = s_a(f) e(s_a(\nu)) \otimes R^{\nu}_{a, a+1}(v)
+\end{equation*}
+for $f \in \widehat{\mathbb K}_{\nu}$, $v \in \cor(X_1,\ldots,X_n) \otimes_{\cor[X_1^{\pm1}, \ldots, X_n^{\pm1}]} V_\nu$.
+The subalgebra $\widehat{\mathbb{K}}_{ \beta }$ acts by the multiplication.
+The relation
+\eqref{eq:rel of Khat S_n} follows from the properties of normalized R-matrices and hence we have a well-defined right action of the algebra $\widehat{\mathbb{K}}_{ \beta } \otimes {\cor[\sym_n]}$ on
+$\bVK[{ \beta }]$.
+Since the normalized R-matrices are $\uqpg$-module homomorphisms,
+$\bVK[{ \beta }]$ has a structure of
+ $(\uqpg,\widehat{\mathbb{K}}_{ \beta } \otimes {\cor[\sym_n]})$-bimodule.
+
+\begin{theorem}
+The subspace $\bV[{ \beta }]$ of \/  $\bVK[{ \beta }]$ is stable under
+the  right action of the subalgebra $R^J({ \beta })$ of\/ $\widehat{\mathbb{K}}_{ \beta } \otimes {\cor[\sym_n]}$.
+In particular, $\bV[{ \beta }]$ has a structure of
+$(\uqpg, R^J({ \beta }))$-bimodule.
+\begin{proof}
+It is obvious that $\bV[{ \beta }]$
+is stable under the actions of $e(\nu)$ $(\nu \in J^{ \beta })$ and
+$x_a$ $(1 \leq a \leq n)$.
+Thus it is enough to show that $\bV[{ \beta }]$ is stable under $e(\nu) \tau_a$ $(\nu \in J^{ \beta }, \ 1 \leq a < n)$.
+
+Assume $\nu_a \neq \nu_{a+1}$. Then we have
+\eqn
+&&e(\nu) P_{\nu_a,\nu_{a+1}}(x_{a},x_{a+1})\\
+&&\hs{1ex}=e(\nu) d_{\nu_a,\nu_{a+1}}(X_{a+1}/X_a)
+\dfrac{ (X(\nu_{a})^{-1}X_a-X(\nu_{a+1})^{-1}X_{a+1})^{d_{\nu_a, \nu_{a+1}}}
+c_{\nu_a,\nu_{a+1}}(x_{a},x_{a+1})} {d_{\nu_a,\nu_{a+1}}(X_{a+1}/X_a)} \nonumber.
+\eneqn
+Since $d_{\nu_a, \nu_{a+1}}$ is the multiplicity of the zero of the polynomial
+$d_{\nu_a,\nu_{a+1}}(X_{a+1}/X_a)$ at $X_{a+1}/X_a=X(\nu_{a+1}) / X(\nu_{a})$,
+we have
+$$\dfrac{ (X(\nu_{a})^{-1}X_a-X(\nu_{a+1})^{-1}X_{a+1})^{d_{\nu_a, \nu_{a+1}}}
+c_{\nu_a,\nu_{a+1}}(x_{a},x_{a+1})} {d_{\nu_a,\nu_{a+1}}(X_{a+1}/X_a)} \in
+ \Oh_{\mathbb{T}^n, X(\nu)}.$$
+It follows that
+$$\hV_\nu e(\nu) P_{\nu_a,\nu_{a+1}}(x_a,x_{a+1})
+\subset\hV_\nu e(\nu)d_{\nu_a,\nu_{a+1}}(X_{a+1}/ X_{a}).$$
 Hence
-ˆVνe(ν)τa = ˆVνe(ν)Pνa,νa+1(xa,xa+1)ra⊂ ˆVνe(ν)dνa,νa+1(Xa+1/Xa)ra,
-and it is contained in ˆVsa(ν)e(sa(ν)) by ( 3.1.7).
-Assume νa = νa+1. Then Rnorm
-VS(νa),VS(νa) does not have a pole at Xa = Xa+1 by
-Theorem 2.2.1. Since ( VS(νa))x⊗ (VS(νa))x is irreducible for any x∈ k×, we obtain
-Rnorm
-VS(νa),VS(νa)|Xa=Xa+1 = id. Therefore, we have
-ˆVνe(ν)τa = ˆVνe(ν)(ra− 1)(xa−xa+1)−1
-= ˆVνe(ν)X(νa)(ra− 1)(Xa−Xa+1)−1⊂ ˆVνe(ν),
-as desired. □
+\eqn
+&&\hV_\nu e(\nu)\tau_a
+=\hV_\nu e(\nu)P_{\nu_a,\nu_{a+1} }(x_{a}, x_{a+1})r_a
+\subset \hV_\nu e(\nu) d_{\nu_a,\nu_{a+1}}(X_{a+1} / X_{a})r_a,
+\eneqn
+and it is contained in $\hV_{s_a(\nu)} e(s_a(\nu))$ by \eqref{eq:regR}.
+
+\smallskip
+
+Assume $\nu_a=\nu_{a+1}$.
+Then $\Rnorm_{V_{S(\nu_a)},V_{S(\nu_a)}}$ does not have a pole at
+$X_a=X_{a+1}$ by Theorem~\ref{th:zero}.
+Since $(V_{S(\nu_a)})_x\otimes (V_{S(\nu_{a})})_x$ is irreducible for any $x\in\cor^\times$, we obtain
+$\Rnorm_{V_{S(\nu_a)},V_{S(\nu_a)}}\vert_{X_a=X_{a+1}}=\id$.
+
+Therefore, we have
+\begin{align*}
+\hV_\nu e(\nu) \tau_a
+&=\hV_\nu e(\nu) (r_a -1)(x_a -x_{a+1})^{-1} \\
+&=\hV_\nu e(\nu) X(\nu_a) (r_a -1) (X_a -X_{a+1})^{-1}
+\subset \hV_\nu e(\nu),
+\end{align*}
+as desired.
+\end{proof}
+\end{theorem}

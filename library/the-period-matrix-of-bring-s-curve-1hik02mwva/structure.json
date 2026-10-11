@@ -7,68 +7,449 @@
   "bytes": 810241,
   "pages": 22,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:26Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "PACIFI C\u00a0JOURNA L\u00a0OF\u00a0MATHEMATICS",
-  "authors_raw": "TH E\u00a0PERIOD\u00a0MATRIX\u00a0O F\u00a0BRING' S\u00a0CURVE",
+  "title": "The period matrix of Bring\u2019s curve",
+  "authors_raw": "GONZALO RlERA AND RUBI E. RODRIGUEZ",
   "title_lines": [
-   "PACIFI C\u00a0JOURNA L\u00a0OF\u00a0MATHEMATICS"
+   "PACIFIC\u00a0JOURNAL\u00a0OF\u00a0MATHEMATICS",
+   "THE\u00a0PERIOD\u00a0MATRIX OF\u00a0BRING'S\u00a0CURVE"
   ],
   "abstract": null,
   "docinfo": {
-   "Producer": "PyPDF2",
    "Title": "The period matrix of Bring\u2019s curve",
-   "Author": "Gonzalo Riera, Rub\u00ed E. Rodr\u00edguez"
+   "Author": "Gonzalo Riera, Rub\u00ed E. Rodr\u00edguez",
+   "Producer": "PyPDF2"
+  },
+  "title_raw": "PACIFIC\u00a0JOURNAL\u00a0OF\u00a0MATHEMATICS THE\u00a0PERIOD\u00a0MATRIX OF\u00a0BRING'S\u00a0CURVE",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "The period matrix of Bring\u2019s curve",
+   "heading": "THE PERIOD MATRIX OF BRING'S CURVE 1. Introduction. When studying the general equation of degree five, Bring constructed a curve of genus four admitting the symmetric group \u03b9^5 as a group of automorphisms. Namely he considered the equations in homogeneous coordinates in P 4 where the group acts by",
+   "text": "PACIFIC JOURNAL OF MATHEMATICS THE PERIOD MATRIX OF BRING'S CURVE",
+   "corroborated_by": [
+    "text",
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Introduction.\u00a0Whe n\u00a0studyin g\u00a0th e\u00a0general\u00a0equatio n\u00a0of\u00a0degree\u00a0five,",
-   "page": 1,
+   "title": "H\u03b9(B",
+   "page": 4,
    "source": "inferred",
-   "number": "1"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "182"
   },
   {
    "level": 1,
-   "title": "The\u00a0universal\u00a0cover\u00a0of\u00a0Bring's\u00a0curve.\u00a0I f\u00a0/ :\u00a0B \u2014>\u00a0B\u00a0i s\u00a0an\u00a0automor -",
-   "page": 1,
+   "title": "This means that under an integral change of basis \u03a9",
+   "page": 4,
    "source": "inferred",
-   "number": "2"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "182"
   },
   {
    "level": 1,
-   "title": "The\u00a0Riemann\u00a0matrix.\u00a0We\u00a0now\u00a0compute\u00a0the\u00a0values\u00a0of\u00a0the\u00a0complex",
+   "title": "cac~",
+   "page": 5,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "183"
+  },
+  {
+   "level": 1,
+   "title": "fcbc-",
+   "page": 5,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "183"
+  },
+  {
+   "level": 2,
+   "title": "nc",
+   "page": 5,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "183"
+  },
+  {
+   "level": 2,
+   "title": "\\pc~",
+   "page": 5,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "183"
+  },
+  {
+   "level": 2,
+   "title": "qi",
+   "page": 5,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "183"
+  },
+  {
+   "level": 2,
+   "title": "( ml",
+   "page": 5,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "183"
+  },
+  {
+   "level": 2,
+   "title": "B does not admit more automorphisms, we obtain",
    "page": 7,
    "source": "inferred",
-   "number": "3"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "185"
+  },
+  {
+   "level": 2,
+   "title": "Thus if dw is the differential in H projects to a differential on the elliptic curve with modulus \u00b5, its periods are",
+   "page": 7,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "185"
+  },
+  {
+   "level": 2,
+   "title": "We may now complete dw to a basis of differentials on B us-",
+   "page": 7,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "185"
+  },
+  {
+   "level": 2,
+   "title": "'- 1+ \u03b9Vf",
+   "page": 9,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "187"
+  },
+  {
+   "level": 2,
+   "title": "'- 1 + /V\u0393\u0393",
+   "page": 9,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "187"
+  },
+  {
+   "level": 3,
+   "title": "We then set",
+   "page": 16,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "194"
   },
   {
    "level": 1,
-   "title": "(z,\u00a0Z)\u00a0= \u03a3",
-   "page": 12,
+   "title": "oi",
+   "page": 17,
    "source": "inferred",
-   "number": "1"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "195"
   },
   {
-   "level": 1,
-   "title": "(l -",
-   "page": 13,
+   "level": 2,
+   "title": "\\ 2niq",
+   "page": 20,
    "source": "inferred",
-   "number": "4"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "198"
   },
   {
-   "level": 1,
-   "title": "J K",
-   "page": 14,
+   "level": 2,
+   "title": "j\u0393",
+   "page": 21,
    "source": "inferred",
-   "number": "2"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "199"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "179",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "180",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "181",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "182",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "183",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "184",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "185",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "186",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "187",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "188",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "189",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "190",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "191",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "192",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "193",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "194",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "195",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "196",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "197",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "198",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "199",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "200",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -76,36 +457,220 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 13,
-   "n_chars": 20186,
-   "n_words": 5302
+   "page_end": 4,
+   "n_chars": 5445,
+   "n_words": 1081,
+   "label_start": "179",
+   "label_end": "182"
   },
   {
-   "id": "sec-000-2-j-k",
-   "number": "2",
-   "title": "J K",
+   "id": "sec-000-h\u03b9b",
+   "number": null,
+   "title": "H\u03b9(B",
    "level": 1,
-   "page_start": 13,
-   "page_end": 13,
-   "n_chars": 630,
-   "n_words": 175
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 865,
+   "n_words": 221,
+   "label_start": "182",
+   "label_end": "182"
   },
   {
-   "id": "sec-001-4-l",
-   "number": "4",
-   "title": "(l -",
+   "id": "sec-001-this-means-that-under-an-integral-change-of-basi",
+   "number": null,
+   "title": "This means that under an integral change of basis \u03a9",
    "level": 1,
-   "page_start": 13,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "182",
+   "label_end": "182"
+  },
+  {
+   "id": "sec-002-nc",
+   "number": null,
+   "title": "nc",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 624,
+   "n_words": 189,
+   "label_start": "182",
+   "label_end": "183"
+  },
+  {
+   "id": "sec-003-cac",
+   "number": null,
+   "title": "cac~",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 4,
+   "n_words": 2,
+   "label_start": "183",
+   "label_end": "183"
+  },
+  {
+   "id": "sec-004-fcbc",
+   "number": null,
+   "title": "fcbc-",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 395,
+   "n_words": 89,
+   "label_start": "183",
+   "label_end": "183"
+  },
+  {
+   "id": "sec-005-pc",
+   "number": null,
+   "title": "\\pc~",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1,
+   "n_words": 1,
+   "label_start": "183",
+   "label_end": "183"
+  },
+  {
+   "id": "sec-006-qi",
+   "number": null,
+   "title": "qi",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 134,
+   "n_words": 28,
+   "label_start": "183",
+   "label_end": "183"
+  },
+  {
+   "id": "sec-007-ml",
+   "number": null,
+   "title": "( ml",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 2671,
+   "n_words": 482,
+   "label_start": "183",
+   "label_end": "185"
+  },
+  {
+   "id": "sec-008-b-does-not-admit-more-automorphisms-we-obtain",
+   "number": null,
+   "title": "B does not admit more automorphisms, we obtain",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1194,
+   "n_words": 238,
+   "label_start": "185",
+   "label_end": "185"
+  },
+  {
+   "id": "sec-009-we-may-now-complete-dw-to-a-basis-of-differentia",
+   "number": null,
+   "title": "We may now complete dw to a basis of differentials on B us-",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 3649,
+   "n_words": 727,
+   "label_start": "185",
+   "label_end": "187"
+  },
+  {
+   "id": "sec-010---1-\u03b9vf",
+   "number": null,
+   "title": "'- 1+ \u03b9Vf",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "187",
+   "label_end": "187"
+  },
+  {
+   "id": "sec-011---1-v\u03b3\u03b3",
+   "number": null,
+   "title": "'- 1 + /V\u0393\u0393",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 16,
+   "n_chars": 7124,
+   "n_words": 1479,
+   "label_start": "187",
+   "label_end": "194"
+  },
+  {
+   "id": "sec-012-we-then-set",
+   "number": null,
+   "title": "We then set",
+   "level": 3,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 68,
+   "n_words": 15,
+   "label_start": "194",
+   "label_end": "195"
+  },
+  {
+   "id": "sec-013-oi",
+   "number": null,
+   "title": "oi",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 20,
+   "n_chars": 2525,
+   "n_words": 471,
+   "label_start": "195",
+   "label_end": "198"
+  },
+  {
+   "id": "sec-014-2niq",
+   "number": null,
+   "title": "\\ 2niq",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 682,
+   "n_words": 141,
+   "label_start": "198",
+   "label_end": "199"
+  },
+  {
+   "id": "sec-015-j\u03b3",
+   "number": null,
+   "title": "j\u0393",
+   "level": 2,
+   "page_start": 21,
    "page_end": 22,
-   "n_chars": 8044,
-   "n_words": 1955
+   "n_chars": 2410,
+   "n_words": 400,
+   "label_start": "199",
+   "label_end": "200"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 6,
-  "sections": 3,
-  "chars_total": 28860
+  "toc_entries": 17,
+  "toc_inferred_entries": 17,
+  "toc_inferred_mean_confidence": 0.6,
+  "toc_inferred_empty_share": 0.25,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 17,
+  "chars_total": 27791
  }
 }

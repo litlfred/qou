@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/1-s20-s0166864101002632-main/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Thick knots have bounded energy",
+  "pageStart": 7,
+  "pageEnd": 11,
+  "contains": [
+    "library/1-s20-s0166864101002632-main/blocks/prose-sec-002"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-s0166864101002632-main/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-s0166864101002632-main/manifest.jsonld",
+  "provenance": "ingested"
+}

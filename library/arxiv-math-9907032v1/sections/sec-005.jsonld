@@ -1,19 +1,24 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-9907032v1/sections/sec-005",
   "@type": [
     "doco:Section"
   ],
-  "title": "DIHEDRAL ANGLES OF DELAUNAY TRIANGULATIONS",
+  "title": "Dihedral angles of Delaunay triangulations",
   "pageStart": 9,
-  "pageEnd": 11,
+  "pageEnd": 13,
   "contains": [
     "library/arxiv-math-9907032v1/blocks/prose-sec-005",
     "library/arxiv-math-9907032v1/blocks/def-sec-005-01",
     "library/arxiv-math-9907032v1/blocks/def-sec-005-02",
     "library/arxiv-math-9907032v1/blocks/thm-sec-005-03"
   ],
-  "derivedFrom": "library/arxiv-math-9907032v1/manifest",
-  "sourceDocument": "library/arxiv-math-9907032v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9907032v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9907032v1/manifest.jsonld",
   "provenance": "ingested"
 }

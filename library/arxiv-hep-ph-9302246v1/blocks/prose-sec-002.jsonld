@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-ph-9302246v1/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-ph-9302246v1/blocks/prose-sec-002",
   "kind": "prose",
-  "title": "The low-energy chiral Lagrangians",
-  "pageStart": 2,
-  "pageEnd": 3,
-  "text": "../sections/sec-002-2-the-low-energy-chiral-lagrangians.md",
-  "derivedFrom": "library/arxiv-hep-ph-9302246v1/manifest",
-  "sourceDocument": "library/arxiv-hep-ph-9302246v1/manifest",
+  "title": "The anomalous sector",
+  "pageStart": 12,
+  "pageEnd": 16,
+  "text": "../sections/sec-002-4-the-anomalous-sector.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9302246v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9302246v1/manifest.jsonld",
   "provenance": "ingested"
 }

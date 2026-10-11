@@ -5,7 +5,8 @@
   "file": "0205308v2.pdf",
   "sha256": "2de5a4f40d80174c10370befaf89d78ebc5290a1773452e01173a674d2cf7572",
   "bytes": 145065,
-  "pages": 9
+  "pages": 9,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -124,6 +125,59 @@
   "likely_scanned": false,
   "toc_entries": 5,
   "sections": 5,
-  "chars_total": 18792
+  "chars_total": 18792,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 6,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-wdvv-and-dispersionless-hirota-equations",
+     "title": "WDVV and dispersionless Hirota equations",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-the-associativity-equations-as-cocycle-condition",
+     "title": "The associativity equations as cocycle conditions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-example-perturbative-seiberg-witten-prepotential",
+     "title": "Example: perturbative Seiberg-Witten prepotentials",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-discussion",
+     "title": "Discussion",
+     "prose_ratio": 0.87,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

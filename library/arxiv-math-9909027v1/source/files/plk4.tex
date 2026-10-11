@@ -1,0 +1,576 @@
+But, by pictures, the image of $F_{n+2}$ restricted to the
+Temperley-Lieb subalgebra of  $N'\cap M_{n+1}$ is
+$\dsize{\frac{1}{n+2}{2(n+1)\choose n+1}}$.
+Hence on $TL^{\perp}$, \
+dim$(F_1(TL^{\perp})=1$. So by Lemma 4.2.10,
+dim$(TL^{\perp})\geq 2n+4$, a contradiction. \qed
+
+
+
+
+We have obtained far more powerful results than the following by a
+study of the representation theory of $AT(n,\d)$. These results
+will be presented in a future paper of this series. We gave the
+result here because it was announced some time ago. It is a version
+of the ``triple point obstruction" of Haagerup and Ocneanu (see
+[Ha]) but proved by a rather different method!
+
+If we apply the argument we have just given when $\d \leq 2$
+we obtain nontrivial but known results. The argument is very
+simple so we present it.
+
+{\bf Definition 4.2.12} The {\it critical depth} of a planar 
+algebra $P$ will be the smallest $k$ for which there is an element
+in $P_k$ which is not in the Temperley-Lieb subalgebra $TL_k$.
+
+In the $C^*$- case, if $\d < 2$ ,the norm of the principal graph is less than $2$ so
+as in [GHJ] it follows that the principal graph is an $A$,$D$ or
+$E$ Coxeter graph with $*$ as far as possible from a vertex of 
+valence $3$. In particular if $k$ is the critical depth, the 
+dimension of the quotient $\frac {P_k}{V_k}$ is at most $1$ so the
+rotation acts on it by multiplication by a $k$-th root of unity.
+We will use the term ``chirality" for this root of unity in an
+appropriate planar algebra.
+
+The restrictions on the principal graph in the following theorem were first obtained by
+Ocneanu.
+
+{\bf Theorem 4.2.13} If $P$ is a $C^*$-planar algebra with $\d < 2$
+then the principal graph can be neither $D_n$ with $n$ odd nor $E_7$.
+If the principal graph is $D_{2n}$ the chirality is $-1$, if it
+is $E_6$ the chirality is $e^{\pm 2\pi i/3}$ and if it is $E_8$ the 
+chirality is $e^{\pm 2\pi i/5}$.
+
+
+\bs
+{\sc Proof.} If $k$ is the critical depth, by drawing diagrams one 
+sees that the $\o$ in the $(2k+2)$x$(2k+2)$ matrix $\D_n(\o)$ is the chirality. Also if
+$\d = z + z^{-1}$, we have  det$(\D_n(\o))= z^{2k+2} + z^{-(2k+2)} - \o - \o ^{-1}$.
+If $\kappa$ is the Coxeter number of the principal graph we have 
+$z = e^{\pm \pi i/{\kappa}}$. 
+ 
+  On the other hand, by the argument of Corollary 4.2.11, the dimension
+of $P_{k+1}$ would be too great if the determinant were non-zero. 
+Thus we have, whatever the Coxeter graph may be,  
+
+$$
+{ e^{(2k+2)\pi i /\kappa} + e^{-(2k+2)\pi i /\kappa} = \o + \o ^{-1}}
+$$
+
+for a $k$-th root of unity $\o$.
+
+The critical depth for $D_m$ would 
+be $m-2$ so the left hand side of the equation is $-2$ so that $\o$ has to
+be $-1$. But if $m$ is odd, $-1$ is not an $m-2$th root of unity so $D_m$ cannot
+be a principal graph. If $m$ is even we conclude that the chirality is $-1$.
+
+The critcal depth for $E_7$ is $4$ and the Coxeter number is 18. The above equation
+clearly has no solution $\o$ which is a fourth root of unity.
+
+For $E_6$ the critical depth is $3$ and the Coxeter number is $12$ so $\o = e^{\pm 2\pi i/3}$.
+For $E_8$ the critical depth is $5$ and the Coxeter number is $30$ so $\o = e^{\pm 2\pi i/5}$. 
+
+ 
+\qed
+ 
+
+  The above analysis may also be carried out for $\d = 2$ where the Coxeter graphs are
+replaced by the extended Coxeter graphs. In the $D$ case the presence of the Fuss Catalan 
+algebra of example $2.3$ makes it appropriate to replace the notion of critical depth
+by the first integer such that $P_k$ is bigger than the Fuss Catalan algebra. One obtains 
+then that the chirality, together with the principal graph, is a complete invariant for
+$C^*$-planar algebras with $\d = 2$ (see [EK] p. 586).
+  
+We end this section by giving more details of the planar structure
+on $N\subset M$. In particular we give the subfactor
+interpretations of duality, reduction, cabling and tensor product.
+The free product for subfactors is less straightforward.
+
+\bs\ni
+{\bf Corollary 4.2.12} If $N\subset M$ is an extremal $II_1$
+subfactor then, with the notation of $\S$3.2,
+$\l_1(P^{N\subset M})=P^{M\subset M_1}$, as planar algebras.
+(Note that $P^{M\subset M_1}_k=M'\cap M_{k}$ which is a subset of
+$P^{N\subset M}_{k+1}$. We are saying that the identity map is an
+isomorphism of planar algebras.)
+
+\bs
+{\sc Proof.} Equality of $P^{N\subset M}_k$ and
+$\l_1(P^{N\subset M})$ as sets follows immediately from (ii) of
+4.2.1. To show equality of the planar algebra structure we use the
+uniqueness part of 4.2.1.
+
+By definition of $\l_1(\Phi)$, for $x\in M'\cap M_k\subset N'\cap
+M_k$,
+\[
+x=\Phi^{M\subset M_1}(\boxe{x})=
+\Phi^{N\cap M}(\tangle{x}\ )=
+\l_1(\Phi)(\boxe{x}\ ).
+\]
+Properties (i) and (iv) are straightforward as is the second
+equation of (ii). So we only need to check the first equation of
+(ii), i.e.,
+\[
+\l_1(\Phi^{N\subset M})( \vln\ \tanglel{x}\ )=\d E_{M_1}(x) 
+\mbox{for}  x\in M'\cap M_k.
+\]
+But by definition
+\[
+\l_1(\Phi^{N\subset M})(\vln\ \tanglel{x}\ )
+=\frac 1\d \Phi(\vln\  \vln\ \tanglel{x}\ ).
+\]
+If we define $g:\otimes^k_N M\to \otimes^k_N M$ and
+$f:\otimes^k_N M\to\otimes^{k-2}_N M$ by
+$g(y)=\sum_{b\in B} byb^*$ and
+$f(x_1\otimes\dots\otimes x_k)=E(x_1)x_2\otimes\dots\otimes
+x_{k-1} E(x_k)$, and if $\th(y)=x$ for $x\in M'\cap M_k$, by the
+definition of $\Phi^{N\subset M}$ in Theorem 4.2.1,
+\[
+\Phi^{N\subset M}(\vln\ \vln\  \tanglel{x}\ )=\th
+(\sum_{b\in B} b\otimes f(g(y))\otimes b^*).
+\]
+But since $\th$
+is an $M-M$ bimodule map and $x$ commutes with $M$, \
+$g(y)=\d^2y$. But by definition of $\th$ and 4.1.8,
+\[
+\th(\sum_{b\in B} b\otimes f(y)\otimes b^*)=
+\d^{-2}\sum_{b\in B} bE_1 xE_1b^* \ .
+\]
+Since $\{bE_1\}$ is a basis for $M_1$ over $M$, we are done by
+4.1.5. \qed
+
+\bs Iterating, we see that $\l_n(P^{N\subset M})$ is the planar
+algebra for the subfactor $M_{n-1}\subset M_n$.
+
+For cabling we have the following
+
+\bigskip
+\ni{\bf Corollary 4.2.13} If $N\subset M$ is an extremal $II_1$
+subfactor, the cabled planar algebra ${\cal C}_n(P^{N\subset M})$ of
+$\S3.3$ is isomorphic to $P^{N\subset M_{n-1}}$.
+
+\bigskip
+{\sc Proof.} We will again use the uniqueness part of 4.2.1.
+It follows from [PP2] that if we define $E^n_i$ to be
+$$
+(E_{ni}E_{ni-1}E_{ni-2}\dots E_{n(i-1)+1})
+(E_{ni+1}E_{ni}\dots E_{n(i-1)+2})\dots
+(E_{n(i+1)-1}E_{n(i+1)}\dots E_{ni})
+$$
+(a product of $n$ products of $E$'s with indices decreasing by
+one), and $v^n_i$ with respect to $E^n_i$ as in 4.1.9, then the map
+$x_1\otimes_N x_2\dots \otimes_N x_k\to x_1v^n_1 x_2v^n_2\dots
+v^n_kx_k$ establishes, via the appropriate $\th$'s, a $*$-algebra
+isomorphism between the $(k-1)$-th algebra in the tower for
+$N\subset M_{n-1}$ and $M_{kn-1}$, hence between
+$P_k^{N\subset M_{n-1}}$ and $P_{nk}^{N\subset M}=\cal C_n(P^{N\subset M})$.
+
+If $\g$ is the inverse of this map, $\g\circ\cal C_n(\Phi)$ thus
+defines a spherical planar algebra structure on
+$P^{N\subset M_{n-1}}$. The labelling set is identified with
+$P^{N\subset M_{n-1}}$ via $\g$, so
+\[
+\g\circ\Bbb C_n(\Phi^{N\subset M})(\tangle{x}\ )=
+\Phi^{N\subset M})(\tangle{x})=x.
+\]
+Condition (i) of 4.1 for $\g\circ\Bbb C_n(\Phi)$ follows by
+observing that\\ 
+$\Bbb C_n(\Phi)(\boxj )=E^n_i$.
+Condition (ii) follows from 4.2.12, and condition (iv) is clear.
+\qed
+
+\bs Reduction is a little more difficult to prove.
+
+\bigskip
+\ni{\bf  Corollary 4.2.14} Let $N\subset M$ be an extremal $II_1$
+subfactor and $p$ a projection in $N'\cap M$. The planar algebra
+$p(P^{N\subset M})p$ of $\S$3.3 is naturally isomorphic to the
+planar algebra of the reduced subfactor
+$pN\subset pMp$.
+
+\bigskip
+{\sc Proof.}  We first claim that the tautological map
+$$
+\a:\bigotimes^k_{pN} pMp\to\bigotimes^k_N M \ , \qquad
+\a(\bigotimes^k_{i=1} x_i)=\bigotimes^k_{i=1} x_i
+$$
+is an injective homomorphism of $*$-algebras when both domain and
+range of $\a$ are equipped with their algebra structures via the
+respective maps $\th$ as in 4.1.10. To see this observe that the
+conditional expectation $E_{pN}: pMp\to pN$ is just
+$\frac{1}{\op{tr}(p)} E_N$. It follows that
+$\a a_j=a_j\a$ and clearly $\a\mu_j=\mu_j\a$, so by 4.1.24,  $\a$
+is a $*$-algebra homomorphism.
+
+The next thing to show is that $\a$ takes $pN$-central vectors to
+$\th^{-1}(p_k(N'\cap M_{k-1})p_k)$, with $p_k$ as in 3.3, using
+the planar algebra structure on $N'\cap M_k$. Let
+$\pi:\otimes^k_NM\to \otimes^k_N M$ be the map
+$\pi(x_1\otimes x_2\dots\otimes x_k)=px_1p\otimes px_2p
+\otimes \dots\otimes px_kp$, which is well defined since $p$
+commutes with $N$. Then a diagram shows that, for
+$x\in N'\cap M_{k-1}$,
+$p_kxp_k=\th(\pi(\th(x)))$, and conversely, if
+$\th^{-1}(x)$ is in the image of $\a$,
+$\pi(\th^{-1}(x))=\th^{-1}(x)$ so $p_kxp_k=x$. Hence $\a$ induces
+a $*$-algebra isomorphism between $P_k^{pN\subset pMp}$ and
+$p_k(N'\cap M_{k-1})p_k$. To check that this map induces the
+right planar algebra structure, we first observe that $\a$
+commutes suitably with the maps $\eta$ and $\kappa$ of 4.1.19.
+For $\eta$ we have $\a\circ\eta=\pi\circ\eta\circ\a$ by
+definition. For $\kappa$, note that if we perform the basic
+construction of [J1] on $L^2(M)$, \
+$\frac{1}{\op{tr}(p)} pE_Np$ is the basic construction projection
+for $pN\subset pMp$ on $L^2(pMp)$. Thus if $\{b\}$ is a basis for
+$pMp$ over $pN$ we have
+$\sum_b bE_N b^*={\op{tr}}(p)p$. So if
+$$
+x=x_1\otimes \dots\otimes x_k\in \bigotimes^k_{pN} pMp \ ,
+$$
+$$
+\a(\kappa_j(x))=\frac{1}{\op{tr}(p)\d} \sum_b
+x_1\otimes \dots\otimes x_j
+b\otimes b^*\otimes x_{j+1}\otimes\dots\otimes x_k
+$$
+and
+$$
+\kappa_j(\a(x))=\frac 1\d \sum_c
+x_1\otimes \dots\otimes x_j
+c\otimes c^*\otimes x_{j+1}\otimes\dots\otimes x_k \ .
+$$
+Applying $\th$ we see that $\a \kappa_j=\kappa_j\a$.
+
+With these two commutation results it is an easy matter to check
+that $\a$ defines planar algebra isomorphism between
+$P^{Np\subset pMp}$ and $p(P^{N\subset M})p$, using the uniqueness
+part of 4.2.1 or otherwise.
+
+\bigskip
+\ni{\bf Corollary 4.2.15} If $N_1\subset M_1$ and
+$N_2\subset M_2$ are extremal finite index subfactors, then
+$P^{N_1\otimes N_2\subset M_1\otimes M_2}$ is naturally isomorphic
+to the tensor product $P^{N_1\subset M_1}\otimes
+P^{N_2\subset M_2}$ of $\S$3.4.
+
+\bigskip
+{\sc Proof.} We leave the details to the reader. \qed
+
+
+
+
+
+\bs\bs\ni{\bf 4.3 \ Planar algebras give subfactors}
+
+\smallskip
+The following theorem relies heavily on a result of Popa [Po2].
+
+\bigskip
+\ni{\bf Theorem 4.3.1} Let $(P,\Phi)$ be a spherical $C^*$-planar
+algebra with invariant $Z$ and trace ${\op{tr}}$. Then there is a
+subfactor $N\subseteq M$ and isomorphisms $\Omega: N'\cap M_i\to
+P_i$ with
+\begin{verse}
+(i) $\Omega$ is compatible with inclusions
+
+(ii) ${\op{tr}}(\Omega(x))={\op{tr}}(x)$
+
+(iii) $\Omega(M'\cap M_i)=P_{1,i}$
+ (linear span of tangles with vertical first string)
+
+(iv) $\Omega(e_i)=\frac{1}{\d}(\Phi(\bigtank ) )$
+
+(v) $[M:N]=\d^2$. If $x\in N'\cap M_i$, choose $T\in\P$
+with $\Phi(T)=\Omega(x)$.
+
+
+(vi) $\Omega(E_{M'}(x))=\frac{1}{\d}\Phi (\boxk{T})$
+
+
+(vii) $\Omega(E_{M_{i-1}}(x))=\frac{1}{\d}\Phi (\boxl{T})$
+\end{verse}
+
+\bigskip
+{\sc Proof.} By theorem 3.1 of [Po2], the pair $N\subseteq M$
+exists given a system $(A_{ij})$, $0 \leq i < j < \i$ of finite
+dimensional $C^*$-algebras with $A_{i,j}\subset A_{k,\ell}$ if
+$k\leq i$, $j\leq\ell$ and a faithful trace on $\bigcup^\i_{n=0}
+A_{0n}$ satisfying 1.1.1, 1.1.2, 1.3.3$'$ and 2.1.1 of
+[Po2]. We set $A_{i,j}=P_{i,j}$ (Definition 1.20). Then
+$A_{ii}=\Bbb C$ since $Z$ is multiplicative and non-degenerate. The
+conditions of %\linebreak% 
+[Po2]  involve $e_i$'s and conditional
+expectations
+$E_{A_{ij}}$. We define the $e_i$'s in $P$ to be what we have called
+$\Omega(e_i)$ (note our $e_i$ is
+Popa's ``$e_{i+1}$"). The map $E_{A_{ij}}$ is defined by the
+relation tr$(xE_{A_{ij}}(y))={\op{tr}}(xy)$ for $x$ in $A_{ij}$ and
+$y$ arbitrary. Since $Z$ is an $S^2$ invariant one easily checks
+that $E_{A_{ij}}$ is given by the element of $\cal A_{kj}(\emptyset)$ 
+given in the figure below (for $x\in A_{0,k}$) 
+\[
+	\input{xfig/pic108}
+\]
+\ni Popa's  (1.1.1) and (1.1.2) and b)$'$ of (1.3.3) follow
+immediately from pictures (note that the power of $\frac 1\d$ is
+checked by applying $E_{A_{ij}}$ to 1). Condition a)$'$ of 1.3.3$'$
+is dim $A_{ij}=
+{\op{dim}} \ A_{i,j+1}e_j={\op{dim}} \ A_{i-1,j+1}$. But it is easy
+from pictures that $E_{A_{ij}}$ defines a linear map from
+$A_{i,j+1}e_j$ onto $A_{i,j}$, whose inverse is to embed in
+$A_{i,j+1}$ and multiply on the right by $e_j$. Moreover th element
+of $\cal A(\emptyset)$ (illustrated for $i\!=\!0$) in Figure 1
+defines a linear isomorphism from $A_{i,j}$ to $A_{i+1,j+1}$ ---
+the inverse is a similar picture.
+\[
+	\input{xfig/pic109}
+\]
+\ni Finally  the commutation relations 2.1.1,
+$[A_{ij},A_{k\ell}]=0$ for $i\leq j\leq k \leq\ell$ are trivial
+since they are true in $\P$, involving non-overlapping strings.
+
+It is standard theory for external subfactors that $E_{M'}$
+restricted to $N'\cap M_i$ is $E_{A_{1,i}}$ and
+$E_{M_{i-1}}=E_{A_{1,i-1}}$. So (vi) and (vii) are clear. \qed
+
+\bigskip
+\ni{\bf Corollary 4.3.2} If $(P,\Phi)$ is as before, the
+Poincar\'e series $\sum^\i_{n=0}\dim (P_n)z^n$ has radius of
+convergence $\geq\frac{1}{\d^2}$.
+
+\bigskip
+This result could be proved without the full strength of Theorem
+4.3.1 (as pointed out by D.Bisch), using the principal graph and
+the trace. The Poincar\'e series of planar subfactors enjoy many
+special properties as we shall explore in future papers.
+
+\newpage
+\centerline{\bf References}
+
+\begin{verse}
+[A] V. Arnold, Remarks on the enumeration of plane curves.
+{\it Amer. Math. Soc. Transl.} {\bf 173}(1996), 17--32.
+
+[Bi] D.Bisch, Bimodules, higher relative commutants and the fusion algebra associated
+to a subfactor,
+{\it The Fields Institute for Research in Mathematical 
+Sciences Communications Series} {\bf 13} (1997), 13--63.
+ 
+[BW] J.Barrett and B.Westbury, ``Spherical Categories", hep-th/9310164.
+
+[BiW] J.Birman and H.Wenzl, Braids, link polynomials and a new algebra.
+{\it Trans. Amer. Math. Soc.} {\bf 163} (1989), 249--273.
+
+[Ba] R. Baxter, {\it Exactly Solved Models in Statistical
+Mechanics},   Academic Press, New York, 1982.
+
+[Ban] T. Banica, Hopf algebras and subfactors associated to vertex models,
+math.QA/9804016
+
+[BH] D.Bisch and U.Haagerup, Composition of subfactors: new examples of infinite depth subfactors,
+{\it Ann. scient. {\'E}c. Norm. Sup.} {\bf 29} (1996),329--383.
+
+[BJ1] D.Bisch and V.Jones, ``Singly generated planar
+algebras of small dimension",  preprint 1998.
+
+[BJ2] D.Bisch and V.Jones, Algebras associated to
+intermediate subfactors, {\it Invent. Math.} {\bf 128}, 89--157.
+(1997).
+
+
+[BJ3] D.Bisch and V.Jones, A note on free composition of
+subfactors, Geometry and physics
+ (Aarhus, 1995), 339--361 in {\it Lecture Notes in Pure and Appl.
+Math.} {\bf 184}, Dekker, New York, 1997
+
+
+[Co1] A.Connes, {\it Noncommutative Geometry}, Academic
+Press (1994).
+
+[dlH] P. de la Harpe,
+Spin models for link polynomials, strongly regular graphs and Jaeger's Higman-Sims model.
+{\it Pacific J. Math} {\bf 162}
+(1994), 57--96.
+
+[Dr] V.Drinfeld, Quantum groups, {\it Proceedings ICM
+1986}, vol.~{\bf 1}, pp.798--820.
+
+
+[EK] D.Evans and Y.Kawahigashi, {\it Quantum symmetries on operator algebras},
+Oxford University Press (1998).
+
+[F+] P.Freyd, D.Yetter, J.Hoste, W.Lickorish, K.Millett,
+and A.Ocneanu, A new polynomial invariant of knots and links.
+{\it Bull. AMS} {\bf 12} (1985), 183--190.
+
+
+[FY] P.Freyd and D.Yetter,
+ Braided compact closed categories with applications to low
+dimensional topology, {\it Adv. in Math.} {\bf 77}
+(1989), 156--182.
+
+
+[FRS] K.~Fredenhagen, K-H.~Rehren and B.~Schroer,
+Superselection sectors with braid group statistics and exchange
+algebras, {\it Comm.~Math.~Phys.} {\bf 125} (1989), 201--226.
+
+
+
+[GHJ] F.Goodman, P. de la Harpe and V.F.R.Jones, {\it
+Coxeter Graphs and  Towers of Algebras}, Springer Verlag, MSRI
+publications (1989).
+
+
+
+[GL] J. Graham and G. Lehrer , ``The representation theory
+of affine Temperley-Lieb algebras", preprint, University of Sydney
+(1997).
+
+[Gn] S. Gnerre, Free composition of paragroups,
+Thesis, UC Berkeley, (1997).
+
+[Ha] U.Haagerup,
+Principal graphs of subfactors in the index range $4 < [M:N] <
+3 + \sqrt{2}$
+{\it Subfactors}, World Scientific, Singapore-New
+Jersey-London-Hong Kong (1994), 1--39.
+
+
+
+[JMN] F.Jaeger, M.Matsumoto and  K.Nomura, ``Bose-Mesner
+algebras related with type  II matrices and spin models," RIMS
+preprint (1995).
+
+[Ja] F.JaegerStrongly regular graphs and spin models for the Kauffman polynomial, 
+{\it Geom. Dedicata } {\bf 44} (1992), 23--52 
+
+
+[J1] V.Jones,  Index for subfactors, {\it Invent.
+Math.} {\bf 72}  (1983), 1--25.
+
+
+[J2]  V.Jones, A polynomial invariant for knots via
+von Neumann algebras.
+       {\it Bulletin of the Amer. Math. Soc.} {\bf 12} (1985),
+103--112.
+
+
+[J3] V.Jones,  Hecke algebra representations of
+braid groups and link polynomials, {\it Ann. Math.} {\bf 126}
+(1987), 335--388.
+
+[J4] V.Jones. On a certain value of the Kauffman polynomial,
+{\it Comm. Math. Phys.} {\bf 125} (1989), 459-467
+
+[J5] V.Jones Index for subrings of rings.
+{\it Contemporary Math.} {/bf 43} (1985), 181--190.
+
+
+[JS] V.F.R.Jones and V.Sunder, Introduction to
+Subfactors, LMS lecture note
+        series no.~{\bf 234} (1997) 162 pages.
+
+
+[Ka1] L.Kauffman,
+ State models and the Jones polynomial, {\it Topology} {\bf 26}
+(1987), 395--407.
+
+[Ka2] L.Kauffman,
+An Invariant of regular isotopy, {\it Trans. Amer. Math. Soc.}
+{\bf 318} (1990), 417--471.
+
+[KS] Krishnan amd V.Sunder, On biunitary permutation matrices and some subfactors of index $9$, 
+ {\it  Trans. Amer. Math. Soc} {\bf 348} (1996), 4691--4736.
+
+[Ku] G.Kuperberg, Spiders for rank 2 Lie algebras, {\it
+Commun. Math. Phys.} {\bf 180} (1996), 109--151, q-alg/9712003.
+
+[La] Z. Landau, Thesis, UC Berkeley, 1998
+
+[Lo] R.Longo, Index of subfactors and statistics of
+quantum fields, I.
+ {\it Comm. Math. Phys.} {\bf 126} (1989), 217--247.
+
+[LM] W.Lickorish and K.Millett, Some evaluations of link 
+polynomials.
+{\it Comment. Math. Helv.} {\bf 61} (1986), 349--359.
+
+[LR] R.Longo and J. Roberts, A Theory of Dimension,
+{\it Journal of K-theory} {\bf 11} (1997), 103--159, funct-an/9604008.
+
+[Ma] J.May, Definitions: operads, algebras and
+modules, {\it Contemporary
+              Mathematics } {\bf 202} (1997) 1--7.
+
+
+[MvN] F.Murray and J.von Neumann, On rings of operators,
+IV, {\it Annals Math.} {\bf 44} (1943)
+      716--808.
+
+[Mu] J.Murakami The Kauffman polynomial of links and representation theory,
+{\it Osaka Journal of Mathematics} {\bf 24} (1987), 745--758.
+
+[O1] A.Ocneanu,
+ Quantum symmetry, differential geometry of finite graphs and
+classification of subfactors,  University of Tokyo Seminary Notes
+(notes recorded by Y. Kawahigashi).
+
+
+[Pe] R.Penrose, Application of negative dimensional
+tensors, in  {\it Combinatorial
+    Mathematics and Its Applications}, Academic Press (1971)
+221--244.
+
+
+[Po1] S. Popa, Classification of subfactors and their
+endomorphisms,  {\it CBMS Lecture Notes}, {\bf 86} (1995).
+
+
+
+[Po2] S. Popa, An axiomatization of the lattice of higher
+relative commutants of a subfactor, {\it Invent. Math.} {\bf120}
+(1995), 427--445.
+
+
+[PP] M.Pimsner and S.Popa, Entropy and index for
+subfactors,  {\it Ann.
+Sci. Ecole Norm. Sup.} {\bf19} (1986), 57--106.
+
+[TL] H. Temperley and E.Lieb, Relations between the percolation....,
+{\it Proc. Royal Soc. London} {\bf A322} (1971), 251--280.
+
+[Tu] V.Turaev , {\it Quantum Invariants for knots and $3-$manifolds},
+de Gruyter Berlin (1994).
+
+
+[TV] V.Turaev and O.Viro, State sum invariants of
+3-manifolds and quantum 6-j symbols. {\it
+     Topology} {\bf 31} (1992) 86--902.
+
+[Tut] W.Tutte, On dichromatic polynomials, 
+{\it J. Combinatorial Theory} {\bf 2} (1967), 301--320.
+
+
+[V] D.Voiculescu, Multiplication of certain non-commuting
+random variables. {\it J. Operator Theory} {\bf 18} (1987),223--235.
+
+[Wa] A.Wassermann, Operator algebras and conformal field theory, III:
+Fusion of positive energy representations of LSU(N) using bounded
+operators,
+{\it Inventiones Math.} {\bf 133} (1998) 467--538, math.OA/9806031.
+
+[We1]  H.~Wenzl,  Hecke algebras of type $A_n$ and
+subfactors, {\it Invent.~Math.} {\bf 92} (1988), 249--383.
+
+[We2]  H.~Wenzl,  Quantum groups and subfactors of type B, C
+  and D, {\it Comm. Math. Phys.} {\bf 133} (1990), 383--432.
+
+[We3]  H.~Wenzl, C* tensor categories from quantum groups,
+{\ J. Amer. Math. Soc.} {\bf 11} (1998), 261--282. 
+
+[X] F.Xu Standard $\lambda$-lattices from quantum groups,
+{\it Inventiones Math.} {\bf 134} (1998),
+\end{verse}
+
+\enddocument
+
+

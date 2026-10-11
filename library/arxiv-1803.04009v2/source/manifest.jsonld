@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1803.04009v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1803.04009v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1803.04009v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1803.04009&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1803.04009v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1803.04009v2",
+    "content_type": "application/gzip",
+    "sha256": "0133447d392ff6b3a0a02dd7551daed242aae361d079c494f97532fd8abe2c54",
+    "bytes": 549750,
+    "fetched": "2026-10-10T15:13:19+00:00",
+    "files": [
+      {
+        "path": "source/files/jhepexample.bbl",
+        "role": "bbl",
+        "sha256": "3f60c51de41c7dd1acacd69aa18c6a19259c6daf6b3c34f6c8540d55c18cd871",
+        "bytes": 14345
+      },
+      {
+        "path": "source/files/jhepexample.tex",
+        "role": "tex",
+        "sha256": "b11c28185898572a1e5813ad5530f5d4e08adfcf35d741fbd306626fe5351bbf",
+        "bytes": 186963
+      },
+      {
+        "path": "source/files/jheppub.sty",
+        "role": "sty",
+        "sha256": "e73b2ddb75c396b8a366be04b661b69492d85c74326555dc6ff0b6d6fae7467d",
+        "bytes": 11816
+      },
+      {
+        "path": "source/files/ref.bbl",
+        "role": "bbl",
+        "sha256": "9de67cf76a8370feeb8d9e0d9c8af3ec5cde38fe25f7a2b33c9d5e7fbd01ba17",
+        "bytes": 110
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

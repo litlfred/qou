@@ -71,7 +71,7 @@ def producer_field(d: dict) -> str | None:
 def _producers() -> dict[str, list[str]]:
     out: dict[str, list[str]] = {}
     for p in glob.glob("**/*.py", recursive=True):
-        if "_deprecated" in p:
+        if ("_deprecated" in p or "fsh-guts" in p):
             continue
         out.setdefault(Path(p).stem, []).append(p)
     return out
@@ -98,7 +98,7 @@ def attribute(witness_path: str, prods: dict[str, list[str]]) -> tuple[str, str 
 def scan() -> dict:
     prods = _producers()
     wits = [f for f in glob.glob("**/*.witness.json", recursive=True)
-            if "_deprecated" not in f]
+            if ("_deprecated" not in f and "fsh-guts" not in f)]
     have, missing = [], []
     for f in wits:
         try:

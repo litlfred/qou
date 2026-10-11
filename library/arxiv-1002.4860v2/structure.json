@@ -6,7 +6,8 @@
   "sha256": "a2cfe924f7a9f5a0156048952718b6d7482871967b7792cef4f79f703fe2f211",
   "bytes": 137203,
   "pages": 8,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -193,6 +194,81 @@
   "likely_scanned": false,
   "toc_entries": 9,
   "sections": 9,
-  "chars_total": 14160
+  "chars_total": 14160,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "statesumnew.tex",
+   "tex_sections": 8,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-22-iwahori-hecke-algebra",
+     "title": "Iwahori-Hecke algebra",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.128,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-braid-group",
+     "title": "Braid group",
+     "prose_ratio": 0.242,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-2-semi-normal-representations-of-hecke-algebras",
+     "title": "Semi-normal representations of Hecke algebras",
+     "prose_ratio": 0.818,
+     "coverage_ratio": 0.111,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-004-23-seminormal-representations",
+     "title": "Seminormal representations",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-25-sign-sequences-and-hook-partitions",
+     "title": "Sign sequences and hook partitions",
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-3-construction",
+     "title": "Construction",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-4-example",
+     "title": "Example",
+     "prose_ratio": 0.864,
+     "coverage_ratio": 0.917,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

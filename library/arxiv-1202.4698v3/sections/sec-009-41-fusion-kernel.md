@@ -8,68 +8,67 @@ pages: 10-11
 source_pdf: 1202.4698.pdf
 source_sha256: 54171c652161ca5b
 doc_brief: "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as"
+text_source: latex
+latex_prose_ratio: 0.966
+latex_coverage_ratio: 0.967
 ---
-Recall that the fusion kernel is usually deﬁned in terms of th e conformal blocks appearing in
-the holomorphically factorized form of the four-point functions,
-⟨Vα4(z4, ¯z4)Vα3(z3, ¯z3)Vα2(z2, ¯z2)Vα1(z1, ¯z1) ⟩ =
-=
-∫
-Q/2+iR
-dαsC(α4,α 3,α s)C(Q −αs,α 2,α 1)F (s)
-αs (A|Z)F (s)
-αs (A| ¯Z) (4.1)
-=
-∫
-Q/2+iR
-dαtC(α4,α t,α 1)C(Q −αt,α 3,α 2)F (t)
-αt (A|Z)F (t)
-αt (A| ¯Z) (4.2)
-whereA = (α1,α 2,α 3,α 4),Z = (z1,z 2,z 3,z 4), and
-C(α1,α 2,α 3) = (πµγ(b2)b2−2b2
-)
-1
-b (Q−α1−α2−α3)× (4.3)
-× Υ 0Υ(2α1)Υ(2α2)Υ(2α3)
-Υ(α1 +α2 +α3 −Q)Υ(α1 +α3 −α2)Υ(α1 +α2 −α3)Υ(α2 +α3 −α1),
-hereµ is the so-called cosmological constant in Liouville ﬁeld th eory andγ(x) = Γ(x)/Γ(1 −
-x). We also used Υ(x) = (Γ b(x)Γ b(Q −x))−1, Υ 0 = dΥ( x)
-dx |x=0 where the function Γ b(x) is the
-Barnes double Gamma function. Appendix A lists the deﬁnitio n and the relevant properties of
-Γ b(x).
-The ﬁrst expression (4.1) for the four-point functions represents the operator product expan-
-sion of the ﬁelds Vα2(z2, ¯z2) andVα1(z1, ¯z1), while the second expression (4.2) represents the
-operator product expansion of the ﬁelds Vα3(z3, ¯z3) and Vα2(z2, ¯z2). The equality of the two
-expressions (4.1) and (4.2) follows from the validity of the relations
-F (s)
-αs (A|Z) =
-∫
-Q/2+iR
-dαtFαsαt
-[ α3
-α4
-α2
-α1
-]
-F (t)
-αt (A|Z), (4.4)
-which were established in [T01]. The following formula was found in [PT1, T01],
-Fαsαt
-[ α3
-α4
-α2
-α1
-]
-= N(αs,α 2,α 1)N(α4,α 3,α s)
-N(αt,α 3,α 2)N(α4,α t,α 1) M(αt)
-{ α1
-α3
-α2
-α4 | αs
-αt
-} an
-, (4.5)
+Recall that the fusion kernel is usually defined in terms 
+of the conformal blocks appearing in the holomorphically 
+factorized form of the four-point functions,
+\begin{align}\notag
+& \left\langle\, V_{\al_4}(z_4,\bz_4) V_{\al_3}(z_3,\bz_3)
+V_{\al_2}(z_2,\bz_2)V_{\al_1}(z_1,\bz_1)\,\right\rangle
+=\\ \label{s-channel}
+&\qquad
+=\int_{{Q}/{2}+\textup{i}\BR}d\al_s\;C(\al_4,\al_3,\al_s)C(Q-\al_s,\al_2,\al_1)
+\CF_{\al_s}^{(s)}(A|Z)\CF_{\al_s}^{(s)}(A|\bar{Z})\,\\
+&\qquad \label{t-channel}
+=\int_{{Q}/{2}+\textup{i}\BR}d\al_t\;C(\al_4,\al_t,\al_1)C(Q-\al_t,\al_3,\al_2)
+\CF_{\al_t}^{(t)}(A|Z)\CF_{\al_t}^{(t)}(A|\bar{Z})\,
+\end{align}
+where $A=(\al_1,\al_2,\al_3,\al_4)$, $Z=(z_1,z_2,z_3,z_4)$, and
+\begin{align}\label{DOZZ}
+C(\al_1 &,\al_2,\al_3)  =
+(\pi \mu\ga(b^2)b^{2-2b^2})^{\frac{1}{b}(Q-\al_1-\al_2-\al_3)}\times \\
+&\times\frac{\up_0\up(2\al_1)\up(2\al_2)\up(2\al_3)}
+{\up(\al_1+\al_2+\al_3-Q)\up(\al_1+\al_3-\al_2)
+\up(\al_1+\al_2-\al_3)\up(\al_2+\al_3-\al_1)
+}
+\,,
+\notag\end{align}
+here $\mu$ is the so-called cosmological constant in Liouville field 
+theory and $\gamma(x)=\Ga(x)/\Ga(1-x)$. We also used $\up(x) = 
+(\Ga_b(x)\Ga_b(Q-x))^{-1}$, $\up_0 = \frac{d \up(x)}{dx}|_{x=0}$ where 
+the function $\Ga_b(x)$ is the Barnes double Gamma function.
+Appendix A lists the definition and the relevant properties of $\Ga_b(x)$.
+
+The first expression \rf{s-channel} for the four-point functions 
+represents the operator product expansion of the fields 
+$V_{\al_2}(z_2,\bz_2)$ and $V_{\al_1}(z_1,\bz_1)$, while the 
+second expression \rf{t-channel} 
+represents the operator product expansion of the fields 
+$V_{\al_3}(z_3,\bz_3)$ and $V_{\al_2}(z_2,\bz_2)$. The equality of 
+the two expressions \rf{s-channel} and \rf{t-channel} follows from the
+validity of the relations 
+\begin{equation}\label{fusion}
+\CF_{\al_s}^{(s)}(A|Z)\,=\,\int_{{Q/2}+\textup{i}\BR} d\al_t\;F_{\al_s\al_t}
+\big[\,{}^{\al_3}_{\al_4}\,{}^{\al_2}_{\al_1}\,\big]\,
+\CF_{\al_t}^{(t)}(A|Z)\,,
+\end{equation}
+which were established in \cite{Teschner:2001rv}. The following formula was
+found in \cite{PT1,Teschner:2001rv},
+\begin{equation}\label{FvsRW}
+F_{\al_s\al_t}
+\big[\,{}^{\al_3}_{\al_4}\,{}^{\al_2}_{\al_1}\,\big]\,=\,
+\frac{N(\alpha_s,\alpha_2,\alpha_1)N(\alpha_4,\alpha_3,\alpha_s)}
+{N(\alpha_t,\alpha_3,\alpha_2) N(\alpha_4,\alpha_t,\alpha_1)} 
+\,M(\al_t)\,\big\{\,{}^{\al_1}_{\al_3}\;{}^{\al_2}_{{\al}_4}\,|\,
+{}^{\al_s}_{\al_t}\big\}^{\rm an}\,,
+\end{equation}
 where
-N(α3,α 2,α 1) = (4.6)
-= Γ b(2Q − 2α3)Γ b(2α2)Γ b(2α1)
-Γ b(2Q −α1 −α2 −α3)Γ b(Q −α1 −α2 +α3)Γ b(α1 +α3 −α2)Γ b(α2 +α3 −α1).
-11
+\begin{align} \label{normcoefN}
+& N(\alpha_3,\alpha_2,\alpha_1)= \\ \nonumber & = 
+\frac{\Ga_b(2Q-2\al_3)\Ga_b(2\al_2)\Ga_b(2\al_1)}
+{\Ga_b(2Q-\alpha_1-\alpha_2-\alpha_3) \Ga_b(Q-\alpha_1-\alpha_2+\alpha_3) 
+\Ga_b(\alpha_1+\alpha_3-\alpha_2) \Ga_b(\alpha_2+\alpha_3-\alpha_1)}.
+\end{align}

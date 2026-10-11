@@ -5,7 +5,8 @@
   "file": "1105.1998v3.pdf",
   "sha256": "daf3bffad8eb2749fdfcc69cde5ee683ab90c9a7f3007930e1b37b8d0da9e59a",
   "bytes": 160668,
-  "pages": 11
+  "pages": 11,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": "10.3842/SIGMA.2011.115",
   "title": "A Connection Formula of the Hahn-Exton q-Bessel Function",
   "authors_raw": "Graduate School of Information Science and Technology, Osak a University",
-  "abstract": "We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity. We introduce the q-Borel transformation and the q-Laplace transformation following C. Zhang to obtain the connection formula . We consider the limit p → 1− of the connection formula.",
+  "abstract": "We show a connection formula of the Hahn\u2013Exton q-Bessel function around the origin and the infinity. We introduce the q-Borel transformation and the q-Laplace transformation following C. Zhang to obtain the connection formula . We consider the limit p \u2192 1\u2212 of the connection formula.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20181028105506-04'00'",
@@ -27,10 +28,10 @@
   },
   "title_lines": [
    "A Connection Formula",
-   "of the Hahn–Exton q-Bessel Function",
+   "of the Hahn\u2013Exton q-Bessel Function",
    "Takeshi MORITA"
   ],
-  "title_prev": "A Connection Formula of the Hahn–Exton q-Bessel Function Takeshi MORITA"
+  "title_prev": "A Connection Formula of the Hahn\u2013Exton q-Bessel Function Takeshi MORITA"
  },
  "toc": [
   {
@@ -158,6 +159,60 @@
   "likely_scanned": false,
   "toc_entries": 8,
   "sections": 6,
-  "chars_total": 18292
+  "chars_total": 18292,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "sigma11-115.tex",
+   "tex_sections": 8,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-the-connection-formula",
+     "title": "The connection formula",
+     "prose_ratio": 0.357,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-the-theta-function-of-jacobi",
+     "title": "The theta function of Jacobi",
+     "prose_ratio": 0.218,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-23-the-p-borel-transformation-and-the-p-laplace",
+     "title": "The p-Borel transformation and the p-Laplace transformation",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.598,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-3-the-limit-of-the-connection-formula",
+     "title": "The limit of the connection formula",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

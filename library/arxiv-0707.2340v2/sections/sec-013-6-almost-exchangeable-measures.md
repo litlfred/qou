@@ -8,615 +8,578 @@ pages: 33-41
 source_pdf: 0707.2340v2.pdf
 source_sha256: bf0f91277a5874ff
 doc_brief: "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS — W e introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polyno mials that amount"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-By Pemantle’s result (Theorem 3.7 in §3.5), for symmetric measures in Pn all
-ﬁve conditions NLC, h-NLC, Rayleigh/h-NLC+, CNA, CNA+ are equiva lent to the
-ULC condition for the rank sequence. Therefore, the relations be tween all these
-negative dependence properties are completely understood in the exchangeable case.
-In this section we study the almost exchangeable case, that is, mea sures whose gen-
-erating polynomials are symmetric in all but possibly one variable (Deﬁn ition 2.1).
-34 J. BORCEA, P. BR ¨AND ´EN, AND T. M. LIGGETT
-We prove that for such measures one has both h-NLC ⇔ CNA and Rayleigh/h-
-NLC+ ⇔ CNA+, which conﬁrms Pemantle’s Conjecture 2.6 in this case. In the
-next section we will use this result to show that the counterexample s in 20 or more
-variables that we construct there satisfy all negative dependenc e properties other
-than strongly Rayleigh.
-Let C be an m × n matrix (where m, n are allowed to be inﬁnite), and let i and
-j be ﬁnite equi-numerous subsets of [ m] and [ n], respectively. Denote by C(i, j) the
-minor of C with rows indexed by i and columns indexed by j. The Cauchy-Binet
-theorem, see, e.g., [49], asserts that
-(AB)(i, j) =
-∑
-k, |k|=|i|=|j|
-A(i, k)B(k, j)
-for any m × n matrix A and n × q matrix B, where 1 ≤ m, n, q ≤ ∞, provided that
-the sum in the right-hand side converges absolutely.
-Recall the notion of (non-negative) LC sequence from Deﬁnition 2.8 . For conve-
-nience, we ﬁrst prove a technical result that will be frequently use d later on.
-Lemma 6.1. Let {aj}n
-j=0 and {bj}n
-j=0 be two LC sequences that satisfy
-(i) {aj + bj}n
-j=0 is LC, and
-(ii) ajbj+1 ≥ aj+1bj for all 0 ≤ j ≤ n − 1.
-If ℓ < k and bℓak > 0, then brar > 0 for all ℓ ≤ r ≤ k.
-Proof. Suppose that ar = 0 for some ℓ ≤ r < k and let s the largest such index.
-Assumption (ii) for j = s gives bs = 0, hence as + bs = 0. This contradicts the “no
-internal zeros” part of assumption (i) (cf. Deﬁnition 2.8). Theref ore ar > 0, and a
-similar argument shows that br > 0 as well. □
-The following proposition shows that for almost exchangeable measu res the
-Rayleigh property is the same as the negative lattice condition (NLC) closed under
-conditioning and external ﬁelds on the last variable. Indeed, condit ion (ii) follows
-directly from NLC while (i) follows from NLC after having imposed an ext ernal
-ﬁeld on the last coordinate and then projected onto the ﬁrst n coordinates.
-Proposition 6.2. Let µ ∈ Pn+1 be such that its generating polynomial g = gµ is
-symmetric in its ﬁrst n variables, so that
-g(z1, . . . , zn+1) = zn+1
-n∑
-k=0
-akek(z1, . . . , zn) +
-n∑
-k=0
-bkek(z1, . . . , zn).
-Then µ is Rayleigh if and only if
-(i) {θak + (1 − θ)bk}n
-k=0 is LC for all 0 ≤ θ ≤ 1, and
-(ii) akbk+1 ≥ ak+1bk for all 0 ≤ k ≤ n − 1.
-Proof. Suppose ﬁrst that µ is Rayleigh. By Proposition 2.1 we get that if 0 ≤ θ < 1
-then g(z1, . . . , zn, θ/(1 − θ)) is a Rayleigh polynomial that is symmetric in all its
-n variables. Condition (i) now follows from the exchangeable case (The orem 3.7).
-Let S ⊆ [n − 1] be of cardinality i. The NLC condition gives
-aibi+1 = µ(S ∪ {n + 1})µ(S ∪ {n}) ≥ µ(S ∪ {n, n + 1})µ(S) = ai+1bi,
-which veriﬁes (ii).
-NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS 35
-Assume now that {ak}n
-k=0 and {bk}n
-k=0 satisfy (i) and (ii). The inequality
-∂g
-∂zi
-(x) ∂g
-∂zj
-(x) ≥ ∂2g
-∂zi∂zj
-(x)g(x), x ∈ Rn+1
-+ , i, j ∈ [n],
-follows from the exchangeable case and (i). What is left to prove is th e inequality
-∂g
-∂zi
-(x) ∂g
-∂zn+1
-(x) ≥ ∂2g
-∂zi∂zn+1
-(x)g(x), x ∈ Rn+1
-+ , i ∈ [n],
-and by symmetry (in the ﬁrst n variables) we only need to check it for e.g. i = n.
-We may write g as
-g(z1, . . . , zn+1) =
-n∑
-k=0
-bkek(z1, . . . , zn−1) + zn
-n∑
-k=0
-bk+1ek(z1, . . . , zn−1)
-+ zn+1
-n∑
-k=0
-akek(z1, . . . , zn−1) + znzn+1
-n∑
-k=0
-ak+1ek(z1, . . . , zn−1),
-so the desired inequality is equivalent to
-
-∑
-j
-ajej
-
-
-
-∑
-j
-bj+1ej
-
- −
-
-∑
-j
-aj+1ej
-
-
-
-∑
-j
-bjej
-
- ≥ 0 (20)
-for all x ∈ Rn−1
-+ , where ej = ej(x1, . . . , xn−1). Let now
-C =
-( a0 a1 a2 . . . a n
-b0 b1 b2 . . . b n
-)
-and recall the deﬁnition of a TP p matrix from §3.5. We claim that C is TP 2. Let
-1 ≤ i < j ≤ n. We need to prove that aibj ≥ biaj. Clearly, we may assume that
-biaj ⁄= 0 and that j − i ≥ 2. By Lemma 6.1 we have brar > 0 for i ≤ r ≤ j and
-thus ai
-bi
-≥ ai+1
-bi+1
-≥ · · · ≥ aj
-bj
-by (ii), which shows that C is indeed TP 2. Let E = ( ei−j)n
-i,j=0. By Theorem 3.8
-we have that E is TP 2 and by the Cauchy-Binet formula so is CE . Now
-CE =
-( ∑ ajej
-∑ aj+1ej . . .∑ bjej
-∑ bj+1ej . . .
-)
-,
-from which (20) follows. □
-The next result is the analog of Proposition 6.2 for the h-NLC proper ty.
-Proposition 6.3. Let µ ∈ Pn+1 be such that its generating polynomial g = gµ is
-symmetric in its ﬁrst n variables, so that
-g(z1, . . . , zn+1) = zn+1
-n∑
-k=0
-akek(z1, . . . , zn) +
-n∑
-k=0
-bkek(z1, . . . , zn).
-Then µ is h-NLC if and only if
-(i) {ak}n
-k=0, {bk}n
-k=0, and {ak + bk}n
-k=0 are LC, and
-(ii) akbk+1 ≥ ak+1bk for all 0 ≤ k ≤ n − 1.
-36 J. BORCEA, P. BR ¨AND ´EN, AND T. M. LIGGETT
-Proof. Let S, T ⊂ [n]. The NLC condition applied to each of the three pairs ( S, T ),
-(S, T ∪ {n + 1}), and ( S ∪ {n + 1}, T ∪ {n + 1}) gives respectively
-b|S|b|T | ≥ b|S∪T |b|S∩T |, b |S|a|T | ≥ a|S∪T |b|S∩T |, a |S|a|T | ≥ a|S∪T |a|S∩T |.
-Therefore, setting ℓ = |S|, k = |T |, m = |S ∩ T |, we see that NLC is equivalent to
-bℓbk ≥ bk+ℓ−mbm, b ℓak ≥ ak+ℓ−mbm, a ℓak ≥ ak+ℓ−mam (21)
-for m ≤ k, ℓ ≤ n and k + ℓ ≤ n + m.
-If S ⊆ [n] has cardinality n − j, the measure obtained by projecting µ onto
-2S∪{n+1} is of the same form as µ with coeﬃcients
-ak(j) =
-j∑
-i=0
-(j
-i
-)
-ak+i and bk(j) =
-j∑
-i=0
-(j
-i
-)
-bk+i, 0 ≤ k ≤ n − j,
-while the one obtained by projecting µ onto 2 S is exchangeable with coeﬃcients
-ak(j) + bk(j), 0 ≤ k ≤ n − j. Therefore, h-NLC is equivalent to the statement that
-for each 0 ≤ j ≤ n one has
-bℓ(j)bk(j) ≥ bk+ℓ−m(j)bm(j),
-bℓ(j)ak(j) ≥ ak+ℓ−m(j)bm(j), a ℓ(j)ak(j) ≥ ak+ℓ−m(j)am(j),
-(aℓ(j) + bℓ(j))(ak(j) + bk(j)) ≥ (ak+ℓ−m(j) + bk+ℓ−m(j))(am(j) + bm(j))
-(22)
-for m ≤ k, ℓ ≤ n − j and k + ℓ ≤ n − j + m.
-It follows from this that the h-NLC property implies that the sequen ces in (i)
-have no internal zeros. For example, if k ≤ ℓ, bk−1 > 0, bk = · · · = bℓ = 0, bℓ+1 > 0
-contradicts bkbℓ ≥ bk−1bℓ+1. Given this, the fact that the three sequences are LC
-and satisfy (ii) is a consequence of the ﬁrst and last inequalities in (21 ) with ℓ = k,
-m = k − 1, the middle inequality in (21) with ℓ = k + 1, m = k, and the last
-inequality in (22) with j = 0, ℓ = k, m = k − 1.
-For the converse, assume that (i) and (ii) hold. Note that for each j, {ak(j)}n−j
-k=0
-is a convolution of two LC sequences, and hence is LC by [49, Theore m 1.2 on
-p. 394], and the same holds for the sequences bk(j) and ak(j) + bk(j). This gives
-three of the four inequalities in (22). For the other one, note that since evaluating
-the elementary symmetric polynomials at the “all ones vector” prod uces binomial
-coeﬃcients, it follows from (20) that
-ak(j)bk+1(j) ≥ ak+1(j)bk(j). (23)
-We need to check that
-ak(j)bℓ(j) ≥ ak+ℓ−m(j)bm(j)
-for m ≤ k, ℓ, and in doing so, can assume that the right-hand side is not zero. By
-Lemma 6.1, it follows that ai(j)bi(j) > 0 for m ≤ i ≤ k + ℓ − m. To conclude the
-proof, write
-ak(j)
-ak+ℓ−m(j) ≥ am(j)
-aℓ(j) ≥ bm(j)
-bℓ(j) .
-The ﬁrst inequality comes from the already proved part of (22), wh ile the second
-is obtained by repeated application of (23). □
-NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS 37
-Theorem 6.4. Let µ ∈ Pn+1 be such that its generating polynomial g = gµ is
-symmetric in its ﬁrst n variables, so that
-g(z1, . . . , zn) = zn+1
-n∑
-k=0
-akek(z1, . . . , zn) +
-n∑
-k=0
-bkek(z1, . . . , zn).
-Suppose that {ak}n
-k=0 and {bk}n
-k=0 are LC sequences that satisfy
-(i) {ak + bk}n
-k=0 is LC, and
-(ii) akbk+1 ≥ ak+1bk for all 0 ≤ k ≤ n − 1.
-Then µ is CNA.
-Proof. As in §2.1, we denote by Xi, i ∈ [n+1], the i-th coordinate function/random
-(binary) variable on 2 [n+1]. First, observe that it is enough to prove that µ is NA.
-To see this, note that if µ is conditioned on Xi = 1 for k values of i ≤ n, on Xi = 0
-for l values of i ≤ n, and possibly on the value of Xn+1, the resulting measure is
-of the same form with a new value n′ of n and new ai’s and bi’s that again satisfy
-the assumptions of the theorem. Using primes to denote the new va lues, we have
-n′ = n − k − l and if the value of Xn+1 is not conditioned on, then, except for
-a constant factor, a′
-i = ai+k and b′
-i = bi+k. If the value of Xn+1 is conditioned
-on, then a′
-i = b′
-i = ai+k if the conditioning is on Xn+1 = 1 and a′
-i = b′
-i = bi+k if
-the conditioning is on Xn+1 = 0. Now take two increasing functions F and G on
-2[n+1] that depend on disjoint sets of coordinates (cf. Deﬁnition 2.2). Wit hout loss
-of generality, we may assume that there is an m satisfying 1 ≤ m ≤ n such that
-F depends on the coordinates {X1 . . . , Xm}, and G depends on the coordinates
-{Xm+1, . . . , Xn+1}. We need to prove
-∫
-F Gdµ ≤
-∫
-F dµ
-∫
-Gdµ. (24)
-Since µ is symmetric in the ﬁrst n coordinates, these three integrals are not changed
-if F and G are replaced by the functions obtained by symmetrizing them with
-respect to the coordinates {X1, . . . , Xm} and {Xm+1, ..., Xn}, respectively. These
-symmetrized functions are also increasing. Therefore, we may ass ume that F and
-G are of the following form:
-F (X1, . . . , Xm) = fk if
-m∑
-i=1
-Xi = k,
-G(Xm+1, . . . , Xn, Xn+1 = 0) = gk if
-n∑
-i=m+1
-Xi = k, and
-G(Xm+1, . . . , Xn, Xn+1 = 1) = hk if
-n∑
-i=m+1
-Xi = k,
-where fk, gk and hk are increasing, and gk ≤ hk for each k. Using the fact that the
-covariance of F and G with respect to the measure µ can be written as
-1
-2
-∑
-S,T ∈2[n+1]
-[F (S) − F (T )][G(S) − G(T )]µ(S)µ(T ),
-38 J. BORCEA, P. BR ¨AND ´EN, AND T. M. LIGGETT
-(24) becomes
-∑
-i,j,k,ℓ
-(m
-i
-)(m
-j
-)(n − m
-k
-)(n − m
-ℓ
-)
-(fj − fi)
-[
-(hk − hℓ)ak+iaℓ+j
-+ (gk − gℓ)bk+ibℓ+j + (hk − gℓ)ak+ibℓ+j + (gk − hℓ)aℓ+jbk+i
-]
-≥ 0.
-Note that we are using the usual convention that
-(n
-m
-)
-= 0 unless 0 ≤ m ≤ n. Since
-the summand above is not changed if the roles of i and j are interchanged and the
-roles of k and ℓ are interchanged, this can be written as
-∑
-i<j
-∑
-k,ℓ
-(m
-i
-)(m
-j
-)(n − m
-k
-)(n − m
-ℓ
-)
-(fj − fi)
-[
-(hk − hℓ)ak+iaℓ+j
-+ (gk − gℓ)bk+ibℓ+j + (hk − gℓ)ak+ibℓ+j + (gk − hℓ)aℓ+jbk+i
-]
-≥ 0. (25)
-So, it is enough to show that for ﬁxed i < j , and ﬁxed p,
-∑
-k+ℓ=p
-(n − m
-k
-)(n − m
-ℓ
-)[
-(hk − hℓ)ak+iaℓ+j
-+ (gk − gℓ)bk+ibℓ+j + (hk − gℓ)ak+ibℓ+j + (gk − hℓ)aℓ+jbk+i
-]
-≥ 0.
-Furthermore, it is enough to prove this in case when the gk’s and hk’s take only the
-values 0 and 1, since any increasing function on a partially ordered se t (in this case,
-{0, . . . , n} × { 0, 1}) can be written as a positive linear combination of increasing
+\label{Almost}
+
+By Pemantle's result (Theorem~\ref{pro-w} in \S \ref{ss-ex-case}), for 
+symmetric measures in $\fP_n$ all five conditions NLC, h-NLC, 
+Rayleigh/h-NLC+, CNA, CNA+ are equivalent to the ULC condition for the rank 
+sequence. Therefore, the relations between 
+all these negative dependence properties are completely understood in the 
+exchangeable case. In this section we study the almost exchangeable
+case, that is, measures whose generating polynomials are 
+symmetric in all but possibly one variable (Definition~\ref{d-exc}). We prove 
+that for such measures one has both 
+h-NLC $\Leftrightarrow$ CNA and 
+Rayleigh/h-NLC+ $\Leftrightarrow$ CNA+, which confirms 
+Pemantle's Conjecture \ref{con-cna-R} in this case. In the next section we 
+will use this result to show that the counterexamples in 20 or more 
+variables  that we 
+construct there satisfy 
+all negative dependence properties other than strongly Rayleigh.
+
+Let $C$ be an $m \times n$ matrix (where $m,n$ are allowed to be infinite), 
+and let $\mathbf{i}$ and $\mathbf{j}$ be 
+finite equi-numerous subsets of $[m]$ and $[n]$, respectively. Denote by 
+$C(\mathbf{i}, \mathbf{j})$ the minor of $C$ with rows indexed by 
+$\mathbf{i}$ and columns indexed by $\mathbf{j}$. The Cauchy-Binet theorem, 
+see, e.g., \cite{Kar}, asserts that 
+$$
+(AB)(\mathbf{i}, \mathbf{j})
+= \sum_{\mathbf{k},\,|\mathbf{k}|=|\mathbf{i}|=|\mathbf{j}|} A(\mathbf{i}, 
+\mathbf{k})B(\mathbf{k}, \mathbf{j})
+$$
+for any $m\times n$ matrix $A$ and $n\times q$ matrix $B$, where
+$1\le m,n,q\le \infty$, provided that the sum in the right-hand side converges
+absolutely. 
+
+Recall the notion of (non-negative) $\LC$ sequence from 
+Definition \ref{d-ulc}. For convenience, we first prove a technical result 
+that will be frequently used later on.
+
+\begin{lemma}\label{l-tech}
+Let $\{a_j\}_{j=0}^n$ and $\{b_j\}_{j=0}^n$ be two LC 
+sequences that satisfy
+\begin{itemize} 
+\item[(i)] $\{a_j +  b_j\}_{j=0}^n$ is LC, and 
+\item[(ii)] $a_jb_{j+1} \geq a_{j+1}b_j$ for all $0 \leq j \leq n-1$. 
+\end{itemize}
+If $\ell<k$ and $b_\ell a_k>0$, then $b_ra_r>0$ for all $\ell\leq r\leq k$.
+\end{lemma}
+
+\begin{proof}
+Suppose that $a_r=0$ for
+some $\ell \leq r< k$ and let $s$ the largest such index. Assumption (ii) 
+for $j=s$ gives $b_s=0$, hence $a_s+b_s=0$. This contradicts the 
+``no internal zeros" part of assumption (i) (cf.~Definition~\ref{d-ulc}). 
+Therefore $a_r>0$, and a similar argument shows that $b_r>0$ as well. 
+
+
+
+
+
+
+
+
+\end{proof}
+
+The following proposition shows that for almost exchangeable measures the 
+Rayleigh property is the same as the negative lattice condition (NLC) 
+closed under conditioning and external fields on the last variable. 
+Indeed, condition (ii) follows directly from 
+NLC while (i) follows from NLC after having imposed an external field on the 
+last coordinate and then projected onto the first $n$ coordinates. 
+
+\begin{proposition}\label{RAS}
+Let $\mu\in\fP_{n+1}$ be such that its generating polynomial $g=g_\mu$ is 
+symmetric in its first $n$ variables, so that
+$$
+g(z_1,\ldots,z_{n+1})= z_{n+1}\sum_{k=0}^{n}a_ke_k(z_1,\ldots, z_n)+
+\sum_{k=0}^{n}b_ke_k(z_1,\ldots, z_n).
+$$
+Then $\mu$ is Rayleigh if and only if 
+\begin{itemize} 
+\item[(i)] $\{\theta a_k + (1-\theta) b_k\}_{k=0}^n$ is LC 
+for all $0 \leq \theta \leq 1$, and 
+\item[(ii)] $a_kb_{k+1} \geq a_{k+1}b_k$ for all $0 \leq k \leq n-1$. 
+\end{itemize}
+\end{proposition}
+\begin{proof}
+Suppose first that $\mu$ is Rayleigh. By Proposition~\ref{p-proper} we get 
+that if
+$0 \leq \theta < 1$ then
+$g(z_1, \ldots, z_n,\theta/(1-\theta))$ is a Rayleigh polynomial that is 
+symmetric in all its $n$ variables. Condition (i) now follows from the 
+exchangeable case (Theorem~\ref{pro-w}).  
+Let $S \subseteq [n-1]$ be of cardinality $i$.
+The NLC condition gives 
+$$
+a_ib_{i+1} = \mu(S \cup \{n+1\})\mu(S \cup \{n\}) \geq 
+\mu(S \cup \{n,n+1\})\mu(S)= a_{i+1}b_i, 
+$$
+which verifies (ii). 
+
+Assume now that $\{a_k\}_{k=0}^{n}$ and $\{b_k\}_{k=0}^n$ satisfy (i) and 
+(ii). The inequality 
+$$
+\frac {\partial g} {\partial z_i}(x) \frac {\partial g} {\partial z_j}(x) 
+\geq \frac {\partial^2 g} {\partial z_i \partial z_j}(x) g(x), 
+\quad x\in \RR_+^{n+1}, \,i,j \in [n],
+$$
+follows from the exchangeable case and (i). What is left to prove is the 
+inequality 
+$$
+\frac {\partial g} {\partial z_i}(x) \frac {\partial g} {\partial z_{n+1}}(x) 
+\geq \frac {\partial^2 g} {\partial z_i \partial z_{n+1}}(x) g(x), 
+\quad x\in \RR_+^{n+1},\, i\in [n], 
+$$
+and by symmetry (in the first $n$ variables) we only need to check it for
+e.g.~$i=n$. We may write $g$ as 
+\begin{multline*}
+g(z_1,\ldots,z_{n+1})= \sum_{k=0}^{n} b_k e_k(z_1, \ldots, z_{n-1})+
+z_n\sum_{k=0}^{n} b_{k+1} e_k(z_1, \ldots, z_{n-1}) \\
++ z_{n+1}\sum_{k=0}^n a_k e_k(z_1, \ldots, z_{n-1})+ z_nz_{n+1} 
+\sum_{k=0}^n a_{k+1} e_k(z_1, \ldots, z_{n-1}),
+\end{multline*}
+so the desired inequality is equivalent to 
+\begin{equation}\label{eqq}
+\left(\sum_j a_je_j\right)\!\left(\sum_j b_{j+1}e_j\right)
+-\left(\sum_j a_{j+1}e_j\right)\!\left(\sum_j b_je_j\right)\geq 0
+\end{equation}
+for all $x \in \RR_+^{n-1}$, where $e_j=e_j(x_1,\ldots, x_{n-1})$. Let now
+ $$C=\left( \begin{array}{ccccc}
+  a_0 & a_1 & a_2 & \ldots & a_n \\
+  b_0 & b_1 & b_2 & \ldots  & b_n
+\end{array} \right)$$
+and recall the definition of a $\TP_p$ matrix from \S \ref{ss-ex-case}.
+We claim that $C$ is $\TP_2$. Let $1 \leq i<j \leq n$. We need to 
+prove that 
+$a_ib_j \geq b_ia_j$. Clearly, we may assume that $b_ia_j \neq 0$ and that 
+$j-i \geq 2$. By Lemma~\ref{l-tech} we have $b_ra_r>0$ for $i\le r\le j$ and
+thus 
+$$
+\frac {a_i} {b_i} \geq \frac {a_{i+1}} {b_{i+1}} \geq \cdots 
+\geq \frac {a_j} {b_j}
+$$
+by (ii), which shows that $C$ is indeed $\TP_2$. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Let $E=(e_{i-j})_{i,j=0}^{n}$. By Theorem~\ref{ESC} we have that $E$ is 
+$\TP_2$ and by the Cauchy-Binet formula so is $CE$.  Now 
+ $$CE=\left( \begin{array}{ccc}
+  \sum a_je_j  & \sum a_{j+1}e_j\ & \ldots  \\
+  \sum b_je_j & \sum b_{j+1}e_j & \ldots 
+\end{array} \right),$$
+from which \eqref{eqq} follows. 
+\end{proof}
+
+The next result is the analog of Proposition~\ref{RAS} for the h-NLC property.
+
+\begin{proposition}\label{pro-h-NLC}
+Let $\mu\in \fP_{n+1}$ be such that its  generating polynomial $g=g_{\mu}$
+is symmetric in its first $n$ variables, so that
+$$g(z_1,\ldots,z_{n+1})
+=z_{n+1}\sum_{k=0}^n a_ke_k(z_1,\ldots,z_n)+
+\sum_{k=0}^n b_ke_k(z_1,\ldots,z_n).$$
+Then $\mu$ is $h$-NLC if and only if
+\begin{itemize}
+\item[(i)] $\{a_k\}_{k=0}^n$, $\{b_k\}_{k=0}^n$, and 
+$\{a_k+b_k\}_{k=0}^n$ are LC, and
+\item[(ii)] $a_kb_{k+1}\geq a_{k+1}b_k$ for all $0\leq k\leq n-1$. 
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+Let $S,T\subset [n]$. The NLC condition applied to each of the three pairs
+$(S,T)$, $(S,T\cup\{n+1\})$, and $(S\cup\{n+1\},T\cup\{n+1\})$ gives  
+respectively
+$$b_{|S|}b_{|T|}\geq b_{|S\cup T|}b_{|S\cap T|},\quad b_{|S|}a_{|T|} 
+\geq a_{|S\cup T|}b_{|S\cap T|},
+\quad a_{|S|}a_{|T|}\geq a_{|S\cup T|}a_{|S\cap T|}.$$
+Therefore, setting $\ell=|S|$, $k=|T|$, $m=|S\cap T|$, we see that 
+NLC is  equivalent to
+\begin{equation}\label{tech1}
+b_\ell b_k\geq b_{k+\ell-m}b_m,\quad b_\ell a_k\geq a_{k+\ell-m}b_m,\quad 
+a_\ell a_k \geq a_{k+\ell-m}a_m
+\end{equation}
+for $m\leq k,\ell\leq n$ and $k+\ell\leq n+m$.
+
+If $S\subseteq [n]$ has cardinality $n-j$, the measure obtained by  
+projecting $\mu$ onto $2^{S\cup\{n+1\}}$
+is of the same form as $\mu$ with  coefficients
+$$a_k(j)=\sum_{i=0}^j\binom jia_{k+i}\quad\text{and}\quad 
+b_k(j)=\sum_ {i=0}^j\binom jib_{k+i},
+\quad 0\leq k\leq n-j,$$
+while the one obtained by projecting $\mu$ onto $2^S$ is exchangeable with  
+coefficients $a_k(j)+b_k(j)$, $0\leq k\leq n-j$.
+Therefore, h-NLC is equivalent to the statement that for each 
+$0 \leq j\leq n$ one has 
+\begin{equation}\label{tech2}
+\begin{split}
+&b_\ell(j)b_k(j)\geq b_{k+\ell-m}(j)b_m(j),\\  
+&b_\ell(j)a_k(j)\geq  a_{k+\ell-m}(j)b_m(j),\,\,
+a_\ell(j)a_k(j)\geq a_{k+\ell-m}(j)a_m(j),\\
+&(a_\ell(j)+b_\ell(j))(a_k(j)+b_k(j))\geq 
+(a_{k+\ell-m}(j)+b_{k+\ell-m}(j))(a_m(j) +b_m(j))
+\end{split}
+\end{equation}
+for $m\leq k,\ell\leq n-j$ and $k+\ell\leq n-j+m$.
+
+It follows from this that the h-NLC property implies that the sequences in 
+(i) have no internal zeros.
+For example, if $k\leq \ell$, $b_{k-1}>0, b_k=\cdots=b_\ell=0$, 
+$b_{\ell+1}>0$  contradicts $b_kb_\ell\geq
+b_{k-1}b_{\ell+1}$. Given this, the fact that the three sequences are LC  
+and satisfy (ii) is
+a consequence of the first and last inequalities in \eqref{tech1} with 
+$\ell=k$, $m=k-1$, the middle
+inequality in \eqref{tech1} with $\ell=k+1$, $m=k$, and the last inequality 
+in \eqref{tech2} with $j=0$, $\ell=k$, $m=k-1.$
+
+For the converse, assume that (i) and (ii) hold. Note that for  
+each $j$, $\{a_k(j)\}_{k=0}^{n-j}$
+is a convolution of two LC sequences, and hence is LC by 
+\cite[Theorem 1.2 on p.~394]{Kar},
+and the same holds for the sequences $b_k(j)$ and $a_k(j)+b_k(j)$.  
+This gives three of the
+four inequalities in \eqref{tech2}. For the other one, note that since  
+evaluating the elementary symmetric
+polynomials at the ``all ones vector'' produces binomial coefficients, 
+it follows 
+from \eqref{eqq} that
+\begin{equation}\label{tech3}
+a_k(j)b_{k+1}(j)\geq a_{k+1}(j)b_k(j).
+\end{equation}
+We need to check that 
+$$a_k(j)b_\ell(j)\geq a_{k+\ell-m}(j)b_m(j)$$
+for $m\leq k,\ell$, and in doing so, can assume that the right-hand side is  
+not zero. By Lemma~\ref{l-tech},
+it follows that $a_i(j)b_i(j)>0$ for $m\leq i\leq k+\ell-m$. To conclude  
+the proof, write
+$$\frac{a_k(j)}{a_{k+\ell-m}(j)}\geq 
+\frac{a_m(j)}{a_\ell(j)}\geq\frac{b_m (j)}{b_\ell(j)}.$$
+The first inequality comes from the already proved part of 
+\eqref{tech2}, while  the second
+is obtained by repeated application of \eqref{tech3}. 
+\end{proof}
+
+\begin{theorem}\label{th-a-ex}
+Let $\mu\in\fP_{n+1}$ be such that its generating polynomial $g=g_\mu$ 
+is symmetric in its first $n$ variables, so that
+$$
+g(z_1,\ldots,z_n)= z_{n+1}\sum_{k=0}^{n}a_ke_k(z_1,\ldots, z_n)+
+\sum_{k=0}^{n}b_ke_k(z_1,\ldots, z_n).
+$$
+Suppose that $\{a_k\}_{k=0}^n$ and $\{b_k\}_{k=0}^n$ are LC 
+sequences that satisfy
+\begin{itemize} 
+\item[(i)] $\{a_k +  b_k\}_{k=0}^n$ is LC, and 
+\item[(ii)] $a_kb_{k+1} \geq a_{k+1}b_k$ for all $0 \leq k \leq n-1$. 
+\end{itemize}
+Then $\mu$ is $\CNA$. 
+\end{theorem}
+
+\begin{proof}
+As in \S \ref{s21}, we denote by $X_i$, $i\in [n+1]$, the $i$-th coordinate
+function/random (binary) variable on $2^{[n+1]}$. First, observe that it is 
+enough to prove that $\mu$ is  NA. To see this, note
+that if $\mu$ is conditioned on 
+$X_i=1$ for $k$ values of $i\leq n$, on $X_i=0$ for
+$l$ values of $i\leq n$, and possibly on the value of $X_{n+1}$, the  
+resulting measure is
+of the same form with a new value $n'$ of $n$ and new $a_i$'s and $b_i$'s  
+that again satisfy the assumptions of the
+theorem. Using primes to denote the new values, we have $n'=n-k-l$ and if the  
+value of $X_{n+1}$ is not conditioned on,
+then, except for a constant factor, $a_i'=a_{i+k}$ and $b_i'=b_{i+k}$. If
+the value of $X_{n+1}$ is conditioned on, then $a_i'=b_i'=a_{i+k}$ if  
+the conditioning is on
+$X_{n+1}=1$ and $a_i'=b_i'=b_{i+k}$ if the conditioning is on $X_{n+1} =0$.
+Now take two increasing functions $F$ and $G$ on $2^{[n+1]}$ that  depend on 
+disjoint sets of coordinates (cf.~Definition~\ref{d-inc-ev}). Without loss of 
+generality, we may assume that there  is an $m$ satisfying
+$1\leq m\leq n$ such that $F$ depends on the coordinates $\{X_1\ldots,X_m \}$, 
+and $G$ depends on the
+coordinates $\{X_{m+1},\ldots,X_{n+1}\}$. We need to prove
+\begin{equation}\label{cna1}
+\int FGd\mu\leq\int Fd\mu\int G d\mu.
+\end{equation}
+Since $\mu$ is symmetric in the first $n$ coordinates, these three  
+integrals are not
+changed if $F$ and $G$ are replaced by the functions obtained by  
+symmetrizing them with
+respect to the coordinates $\{X_1,\ldots,X_m\}$ and $\{X_{m+1},...,X_n\}$, 
+respectively. These symmetrized
+functions are also increasing. Therefore, we may assume that $F$ and  $G$ are 
+of the following form:
+\begin{equation*}
+\begin{split}
+&F(X_1,\ldots,X_m)=f_k\text{ if }\sum_{i=1}^mX_i =k,\\
+&G(X_{m+1},\ldots,X_n,X_{n+1}=0)=g_k\text{ if }\sum_{i=m+1}^nX_i =k,
+\text{ and}\\
+&G(X_{m+1},\ldots,X_n,X_{n+1}=1)=h_k\text{ if }\sum_{i=m+1}^nX_i =k,
+\end{split}
+\end{equation*}
+where $f_k,g_k$ and $h_k$ are increasing, and $g_k\leq h_k$ for each  $k$.
+Using the fact that the covariance of $F$ and $G$ with respect to the  
+measure $\mu$
+can be written as
+$$\frac 12\sum_{S,T\in 2^{[n+1]}}[F(S)-F(T)][G(S)-G(T)]\mu(S)\mu(T),$$
+\eqref{cna1} becomes
+\begin{multline*}
+\sum_{i,j,k,\ell}\binom mi\binom mj\binom {n-m}k\binom {n-m}\ell 
+(f_j-f_i)\bigg[(h_k-h_\ell)a_{k+i}a_{\ell+j}\\+
+(g_k-g_\ell)b_{k+i}b_{\ell+j}+(h_k-g_\ell)a_{k+i}b_{\ell+j}
++(g_k-h_\ell)a_{\ell+j}b_{k +i}\bigg]\geq 0.
+\end{multline*}
+Note that we are using the usual convention that $\binom nm=0$ unless  
+$0\leq m\leq n$.
+Since the summand above is not changed if the roles of $i$ and $j$  
+are interchanged and the roles
+of $k$ and $\ell$ are interchanged, this can be written as
+\begin{multline}\label{cna2}
+\sum_{i<j}\sum_{k,\ell}\binom mi\binom mj\binom {n-m}k\binom
+{n-m}\ell(f_j-f_i)\bigg[(h_k-h_\ell)a_{k+i}a_{\ell+j}\\
++ (g_k-g_\ell)b_{k+i}b_{\ell +j}+(h_k-g_\ell)a_{k+i}b_{\ell+j}
++(g_k-h_\ell)a_{\ell+j}b_{k+i}\bigg]\geq 0.
+\end{multline}
+So, it is enough to show that for fixed $i<j$, and fixed $p$,
+\begin{multline*}
+\sum_{k+\ell=p}\binom {n-m}k\binom {n-m}\ell
+\bigg[(h_k-h_\ell)a_{k+i} a_{\ell+j}\\
++ (g_k-g_\ell)b_{k+i}b_{\ell+j}+(h_k-g_\ell)a_{k+i}b_{\ell+j}
++(g_k-h_\ell)a_{\ell+j}b_{k +i}\bigg]\geq 0.
+\end{multline*}
+Furthermore, it is enough to prove this in case when the $g_k$'s and $h_k $'s 
+take only the values 0 and 1,
+since any increasing function on a partially ordered set (in this  case, 
+$\{0,\ldots,n\}\times \{0,1\}$)
+can be written as a positive linear combination of increasing  
 functions that take only the values 0 and 1.
-We will in fact prove that for such gk’s and hk’s,
-Sq =
-∑
-k+ℓ=p, |k−ℓ|≤2q
-(n − m
-k
-)(n − m
-ℓ
-)[
-(hk − hℓ)ak+iaℓ+j
-+ (gk − gℓ)bk+ibℓ+j + (hk − gℓ)ak+ibℓ+j + (gk − hℓ)aℓ+jbk+i
-]
-≥ 0
-by induction on q. For the basis step, note that S0 = 0 if p is odd, while if p = 2 r
-is even, then
-S0 =
-(n − m
-r
-)2
-(hr − gr)(ar+ibr+j − ar+jbr+i),
-which is non-negative by (ii), since i < j .
-We will prove now that Sq ≥ 0, assuming that Sq−1 ≥ 0. The diﬀerence Sq −Sq−1
-consists of two summands, which when combined, become
-(n − m
-k
-)(n − m
-ℓ
-)[
-(hk −hℓ)(ak+iaℓ+j −aℓ+iak+j )+(gk −gℓ)(bk+ibℓ+j −bℓ+ibk+j)
-+ (hk − gℓ)(ak+ibℓ+j − ak+j bℓ+i) + (gk − hℓ)(aℓ+j bk+i − aℓ+ibk+j )
-]
-, (26)
-where k + ℓ = p while k − ℓ = 2q if p is even and k − ℓ = 2q − 1 if p is odd. Now we
-consider the possible values of gℓ, hk for this pair k, ℓ. Recall that gℓ ≤ hℓ, gk ≤ hk.
-If gℓ = hk, then gt = ht = this common value for all ℓ ≤ t ≤ k, so that (26) is zero.
-NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS 39
-So, we may assume that gℓ = 0, hk = 1. Now there are four possible values for the
-pair ( hℓ, gk) (note that the use of the fractions that appear below is justiﬁed by
-Lemma 6.1):
-(a) hℓ = gk = 1. In this case, (26) becomes
-(n − m
-k
-)(n − m
-ℓ
-)[
-(bk+ibℓ+j − bℓ+ibk+j ) + (ak+ibℓ+j − ak+jbℓ+i)
-]
-.
-This is non-negative by the log-concavity of the b’s and (ii):
-ak+i
-ak+j
-≥ bk+i
-bk+j
-≥ bℓ+i
-bℓ+j
-.
-(b) hℓ = 0, gk = 1. Now (26) is
-(n − m
-k
-)(n − m
-ℓ
-)[
-(ak+i + bk+i)(aℓ+j + bℓ+j) − (aℓ+i + bℓ+i)(ak+j + bk+j )
-]
-,
+
+We will in fact prove that for such $g_k$'s and $h_k$'s,
+\begin{multline*}
+S_q=\sum_{k+\ell=p,\,|k-\ell|\leq 2q}
+\binom{n-m}k\binom{n-m}\ell\bigg[(h_k-h_\ell)a_{k+i}a_{\ell+j}\\
++ (g_k-g_\ell)b_{k+i}b_{\ell+j}+(h_k-g_\ell)a_{k+i}b_{\ell+j}
++(g_k-h_\ell)a_{\ell+j}b_ {k+i}\bigg]\geq 0
+\end{multline*}
+by induction on $q$.  For the
+basis step, note that $S_0=0$ if $p$ is odd, while if $p=2r$ is even,  
+then
+$$S_0=\binom{n-m}{r}^2(h_r-g_r)(a_{r+i}b_{r+j}-a_{r+j}b_{r+i}),$$
+which is non-negative by (ii), since $i<j$.
+
+We will prove now that $S_q\geq 0$, assuming that $S_{q-1}\geq 0$.  
+The difference $S_q-S_{q-1}$ consists
+of two summands, which when combined, become
+\begin{multline}\label{cna3}
+\binom {n-m}k\binom {n-m}\ell\bigg[(h_k-h_\ell)(a_{k+i}a_{\ell+j}
+-a_ {\ell+i}a_{k+j})+
+(g_k-g_\ell)(b_{k+i}b_{\ell+j}-b_{\ell+i}b_{k+j})\\
++(h_k-g_\ell)(a_{k+i}b_{\ell+j}
+-a_ {k+j}b_{\ell+i})+
+(g_k-h_\ell)(a_{\ell+j}b_{k+i}-a_{\ell+i}b_{k+j})\bigg],
+\end{multline}
+where $k+\ell=p$ while $k-\ell=2q$ if $p$ is even and 
+$k-\ell=2q-1$ if $p$ is odd.
+Now we consider the possible values of $g_\ell,h_k$ for this pair $k,\ell$.  
+Recall that
+$g_\ell\leq h_\ell,g_k\leq h_k$. If $g_\ell=h_k$, then $g_t=h_t=$ this common  
+value for all $\ell\leq t\leq k$,
+so that \eqref{cna3} is zero. So, we may assume that $g_\ell=0,h_k=1$. 
+Now there  are four
+possible values for the pair $(h_\ell,g_k)$ (note that the use of the 
+fractions that appear below is justified by Lemma~\ref{l-tech}):
+
+\medskip
+
+(a) $\quad h_\ell=g_k=1$. In this case, \eqref{cna3} becomes
+$$\binom {n-m}k\binom
+{n-m}\ell\bigg[(b_{k+i}b_{\ell+j}-b_{\ell+i}b_{k+j})
++(a_{k+i}b_{\ell+j}-a_{k+j}b_ {\ell+i})\bigg].$$
+This is non-negative by the log-concavity of the $b$'s and (ii):
+$$\frac{a_{k+i}}{a_{k+j}}\geq\frac{b_{k+i}}{b_{k+j}}\geq
+\frac{b_{\ell+i}} {b_{\ell+j}}.$$
+
+\medskip
+
+(b) $\quad h_\ell=0,g_k=1$. Now \eqref{cna3} is
+$$\binom {n-m}k\binom {n-m}\ell\bigg[(a_{k+i}+b_{k+i})(a_{\ell+j}+b_{\ell+j})
+- (a_{\ell+i}+b_{\ell+i})(a_{k+j}+b_{k+j})
+\bigg],$$
 which is non-negative by (i).
-(c) hℓ = gk = 0. This time (26) is
-(n − m
-k
-)(n − m
-ℓ
-)[
-(ak+iaℓ+j − aℓ+iak+j) + (ak+ibℓ+j − ak+j bℓ+i)
-]
-,
-which is non-negative by the log-concavity of the a’s and (ii).
-In these three cases, (26) is non-negative, and therefore Sq ≥ 0 by the induction
-hypothesis. The fourth case is diﬀerent, since (26) need not be no n-negative:
-(d) hℓ = 1, gk = 0. In this case, gt ≡ 0 and ht ≡ 1 for ℓ ≤ t ≤ k, so
-Sq =
-∑
-r+s=p, |r−s|≤2q
-(n − m
-r
-)(n − m
-s
-)
-(ar+ibs+j − as+jbr+i).
+
+\medskip
+
+(c) $\quad h_\ell=g_k=0$. This time \eqref{cna3} is
+$$\binom {n-m}k\binom {n-m}\ell\bigg[(a_{k+i}a_{\ell+j}-a_{\ell+i}a_{k+j})+
+(a_{k+i}b_{\ell+j}-a_{k+j}b_{\ell+i})\bigg],$$
+which is non-negative by the log-concavity of the $a$'s and (ii).
+
+In these three cases, \eqref{cna3} is non-negative, and therefore 
+$S_q \geq 0$ by the induction
+hypothesis. The fourth case is different, since \eqref{cna3} need not be  
+non-negative:
+
+\medskip
+
+(d) $\quad h_\ell=1, g_k=0$. In this case, $g_t\equiv 0$ and $h_t\equiv 1$ 
+for  
+$\ell\leq t\leq k$, so
+$$S_q=\sum_{r+s=p,\,|r-s|\leq 2q}\binom {n-m}r\binom  {n-m}s(
+a_{r+i}b_{s+j}-a_{s+j}b_{r+i}).$$
 Now use summation by parts, together with the fact that
-u(r) =
-(n − m
-r
-)(n − m
-p − r
-)
-is decreasing in r for r ≥ p/2, to argue that it suﬃces to show that
-Tq =
-∑
-r+s=p, r,s≥0, |r−s|≤2q
-(ar+ibs+j − as+jbr+i) ≥ 0 (27)
-for each q. Here is the argument: noting that
-Sq − Sq−1 = (Tq − Tq−1)u
-(
-q + [p/2]
-)
+$$u(r)=\binom{n-m}r\binom{n-m}{p-r}$$
+is decreasing in $r$ for $r\geq p/2$, to argue that it suffices to  show that
+\begin{equation}\label{cna4}
+T_q=\sum_{r+s=p,\,r,s\geq 0,\,|r-s|\leq 2q}(
+a_{r+i}b_{s+j}-a_{s+j}b_{r+i})\geq 0
+\end{equation}
+for each $q$. Here is the argument: noting that
+$$S_q-S_{q-1}=(T_q-T_{q-1})u\big(q+[p/2]\big)$$
 and summing, we have
-Sq =
-∑
-r≤q
-(Sr − Sr−1) =
-∑
-r≤q
-(Tr − Tr−1)u
-(
-r + [p/2]
-)
-= Tqu
-(
-q + [p/2]
-)
-+
-∑
-r<q
-Tr
-[
-u
-(
-r + [p/2]
-)
-−
-[
-u
-(
-r + 1 + [p/2]
-)]
-.
-Now to check (27), we rearrange the sum as follows, noting that th ere may be some
-cancellation of terms, leading to the truncation of the upper limit of t he sum:
-(k+i)∧(ℓ+j−1)∑
-r=ℓ+i
-(arbp−r+i+j − ap−r+i+jbr).
-40 J. BORCEA, P. BR ¨AND ´EN, AND T. M. LIGGETT
-Here again k + ℓ = p, and k − ℓ = 2q if p is even and k − ℓ = 2q − 1 if p is odd. The
-summands in this sum are non-negative by (ii) since for all r appearing in the sum,
-r ≤ p − r + i + j. To check this, write 2 r = r + r ≤ (k + i) + (ℓ + j) = p + i + j. □
-Corollary 6.5. Suppose {ak}n
-k=0 and {bk}n
-k=0 are LC sequences that satisfy
-(i) {λak + bk}n
-k=0 is LC for all λ > 0, and
-(ii) akbk+1 ≥ ak+1bk for 0 ≤ k < n.
-Then µ is CNA+.
-Proof. Let {wi > 0}n+1
-i=1 be the external ﬁeld that is applied to µ, and µ′ be the
-resulting measure:
-µ′(S) = constant ×
-n+1∏
-i=1
-wXi (S)
-i µ(S), S ⊆ [n + 1].
-We need to show that (24) holds with µ replaced by µ′. First, note that the eﬀect
-of wn+1 is to replace ak by a constant multiple of ak, so since we have introduced
-a general positive λ in assumption (i), we may assume that wn+1 = 1. The analog
-of (25) that we must check is
-∑
-i<j
-∑
-k,ℓ
-(fj − fi)cicjdkdℓ
-[
-(hk − hℓ)ak+iaℓ+j
-+ (gk − gℓ)bk+ibℓ+j + (hk − gℓ)ak+ibℓ+j + (gk − hℓ)aℓ+jbk+i
-]
-≥ 0, (28)
-where now the fk’s, gk’s and hk’s are obtained by symmetrizing F and G with
-respect to the ﬁeld on the set of coordinates {X1, . . . , Xm} in the case of F and
-{Xm+1, . . . , Xn} in the case of G. For example,
-fk = c−1
-k ·
-∑
-F (S)
-m∏
-i=1
-wXi(S)
-i ,
-where
-ck =
-∑ m∏
-i=1
-wXi (S)
-i
-and the above sums are taken over all S ⊆ [m] such that ∑ m
-i=1 Xi(S) = k. The
-formulas for gk and hk are exactly analogous and the corresponding normalization
-factor (instead of ck) is
-dk =
-∑ n∏
-i=m+1
-wXi (S)
-i ,
-the sum being taken over all S ⊆ { m + 1, . . . , n} such that ∑ n
-i=m+1 Xi(S) = k.
-Note that if wi ≡ 1, then ck =
-(m
-k
-)
-and dk =
-(n−m
-k
-)
-, so that fk reduces to the
-symmetrization used in the proof of Theorem 6.4, and (28) reduces to (25).
-In order to deduce (28) from the arguments used to prove (25), we then need to
-check the following statements:
-(a) fk ≤ fk+1, gk ≤ gk+1, hk ≤ hk+1 and gk ≤ hk for all k, and
-(b) {dk}n−m
-k=0 is an LC sequence.
-The latter is needed to check that drdp−r is decreasing in r for r ≥ p/2, which is
-then used in the analog of the treatment of case (d) in the proof of Theorem 6.4.
-NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS 41
-Note that statement (b) follows from e.g. Theorem 3.8, since dk is just the k-th
-elementary symmetric function on {wm+1, . . . , wn}.
-Now the fact that gk ≤ hk is immediate from the monotonicity of G in its last
-argument. The veriﬁcation of the ﬁrst three statements in (a) is t he same for all of
-them, so we check (a) only for fk. Letting as usual |S| denote the cardinality of a
-set S, write
-ckck+1(fk+1 − fk) =
-∑
-|S|=k, |T |=k+1
-[F (T ) − F (S)]
-m∏
-i=1
-wXi(S)+Xi(T )
-i .
-Consider the sum of the terms corresponding to S’s and T ’s that satisfy Xi(S) +
-Xi(T ) = zi for all i and an arbitrarily ﬁxed z ∈ {0, 1, 2}m. If A, B, C are the index
-sets corresponding to those coordinates Xi for which zi = 0 , 1, 2, respectively, we
-see that we need to check
-∑
-|T |=k+1, Xi(T )=0, i∈A,
-Xi (T )=1, i∈C
-F (T ) ≥
-∑
-|S|=k, Xi (S)=0,i∈A,
-Xi (S)=1,i∈C
-F (S). (29)
-Noting that the sums above have the same number of summands, na mely
-(2k − 2|C| + 1
-k − |C| + 1
-)
+\begin{equation*}
+\begin{split}
+S_q=&\,\,\sum_{r\leq q}(S_r-S_{r-1})=\sum_{r\leq q}(T_r-T_{r-1})u 
+\big(r+[p/2]\big)\\
+=&\,\,T_qu\big(q+[p/2]\big)+\sum_{r<q}T_r\big[u\big(r+[p/2]\big)
+-\big[u\big(r+1+[p/2]\big)\big].
+\end{split}
+\end{equation*}
+Now to check \eqref{cna4}, we rearrange the sum as follows, 
+noting  that there
+may be some cancellation of terms, leading to the truncation of the  
+upper limit
+of the sum:
+$$\sum_{r=\ell+i}^{(k+i)\wedge(\ell+j-1)}(a_rb_{p-r+i+j}-a_{p-r+i+j}b_r).$$
+Here again $k+\ell=p,$ and $k-\ell=2q$ if $p$ is even and $k-\ell=2q-1$ if 
+$p$  is odd. The summands in this sum are
+non-negative by (ii) since for all $r$ appearing in the sum, $r\leq p-r +i+j$.
+To check this, write $2r=r+r\leq (k+i)+(\ell+j)=p+i+j$.
+\end{proof}
+
+\begin{corollary}\label{cor-cna+}
+Suppose $\{a_k\}_{k=0}^n$ and $\{b_k\}_{k=0}^n$ are LC sequences
+that satisfy
+\begin{itemize}
+\item[(i)] $\{\lambda a_k+b_k\}_{k=0}^n$ is LC for all $\lambda>0$, and
+\item[(ii)] $a_kb_{k+1}\geq a_{k+1}b_k$ for $0\leq k<n.$
+\end{itemize}
+Then $\mu$ is CNA+.
+\end{corollary}
+
+\begin{proof}
+Let $\{w_i>0\}_{i=1}^{n+1}$ be the external field that is  applied to $\mu$, 
 and
-(2k − 2|C| + 1
-k − |C|
-)
-,
-respectively, we see that (29) is a consequence of the monotonicit y of F . □
-Recall from Remark 2.4 that CNA+ ⇒ Rayleigh/h-NLC+ and CNA ⇒ h-NLC.
-By combining Proposition 6.2 and Corollary 6.5 on the one hand, and Pro posi-
-tion 6.3 and Theorem 6.4 on the other hand, we deduce the following re sult.
-Corollary 6.6. If µ is an almost symmetric measure (i.e., its generating polyno -
-mial is symmetric in all but possibly one variable, cf. Deﬁni tion 2.1), then
-(1) µ is Rayleigh/h-NLC+ ⇐ ⇒µ is CNA+;
-(2) µ is h-NLC ⇐ ⇒µ is CNA.
-This shows that Pemantle’s Conjecture 2.6 is true for almost symmet ric measures
-(recall that by the results in §4.2, Conjecture 2.6 also holds for strongly Rayleigh
-measures and PHR measures).
+$\mu'$ be the resulting measure:
+$$\mu'(S)=\text{ constant }\times\prod_{i=1}^{n+1}w_i^{X_i(S)}\mu(S), \quad 
+S\subseteq [n+1].$$
+We need to show that \eqref{cna1} holds with $\mu$ replaced by $\mu'$. 
+First,  note that the effect
+of $w_{n+1}$ is to replace $a_k$ by a constant multiple of $a_k$, so  
+since we have introduced a general
+positive $\lambda$ in assumption (i), we may assume that $w_{n+1}=1.$  
+The analog of \eqref{cna2} that we must check is
+\begin{multline}\label{cna5}
+\sum_{i<j}\sum_{k,\ell}(f_j-f_i)c_ic_jd_kd_\ell
+\bigg[(h_k-h_\ell)a_ {k+i}a_{\ell+j}\\+
+(g_k-g_\ell)b_{k+i}b_{\ell+j}+(h_k-g_\ell)a_{k+i}b_{\ell+j} 
++(g_k-h_\ell)a_{\ell+j}b_{k +i}\bigg]\geq 0,
+\end{multline}
+where now the $f_k$'s, $g_k$'s and $h_k$'s are obtained by  symmetrizing $F$ 
+and $G$ with respect to the
+field on the set of coordinates $\{X_1,\ldots,X_m\}$ in the case of $F$  
+and $\{X_{m+1},\ldots,X_n\}$
+in the case of $G$. For example,
+$$f_k=c_k^{-1}\cdot\sum F(S)\prod_{i=1}^mw_i^{X_i(S)},$$
+where 
+$$c_k=\sum \prod_{i=1}^mw_i^{X_i(S)}$$
+and the above sums are taken over all $S\subseteq [m]$ such that 
+$\sum_{i=1} ^mX_i(S)=k$. The formulas for $g_k$ and $h_k$ are exactly 
+analogous and the corresponding normalization factor (instead of $c_k$) is
+$$d_k=\sum \prod_{i=m+1}^{n}w_{i}^{X_i(S)},$$
+the sum being taken over all $S\subseteq \{m+1,\ldots,n\}$ such that 
+$\sum_{i=m+1}^{n}X_i(S)=k$. 
+Note that if $w_i\equiv 1$, then $c_k=\binom mk$ and $d_k=\binom{n-m} {k}$, 
+so that $f_k$ reduces to the symmetrization used in the proof of 
+Theorem~\ref{th-a-ex}, and \eqref{cna5} reduces
+to \eqref{cna2}.
+
+In order to deduce \eqref{cna5} from the arguments used to prove \eqref{cna2},
+we then  need to check the following statements:
+
+\medskip
+
+(a) $\quad f_k\le f_{k+1}$, $g_k\le g_{k+1}$, $h_k\le h_{k+1}$ and
+$g_k\leq h_k$ for all $k$, and
+
+(b) $\quad \{d_k\}_{k=0}^{n-m}$ is an LC sequence.
+
+\medskip
+
+\noindent The latter is needed to check that
+$d_rd_{p-r}$
+is decreasing in $r$ for $r\geq p/2$, which is then used in the analog  
+of the treatment of case (d) in the proof of Theorem~\ref{th-a-ex}. Note that 
+statement (b) follows from e.g.~Theorem~\ref{ESC}, since $d_k$ is just the
+$k$-th elementary symmetric function on $\{w_{m+1},\ldots,w_n\}$.
+ 
+Now the fact that $g_k\leq h_k$ is immediate from the monotonicity of $G$  
+in its last argument. The
+verification of the first three statements in (a) is the  same 
+for all of them, so
+we check (a) only for $f_k$. Letting as usual $|S|$ denote the cardinality
+of a set $S$, write
+$$c_kc_{k+1}(f_{k+1}-f_k)= 
+\sum_{|S|=k,\,|T|=k+1} [F(T)-F(S)] \prod_{i=1}^mw_i^{X_i(S)+X_i(T)}.$$
+Consider the sum of the terms corresponding to $S$'s and $T$'s that  
+satisfy $X_i(S)+X_i(T)=z_i$
+for all $i$ and an arbitrarily fixed $z\in\{0,1,2\}^m$. If $A,B,C$ are the  
+index sets corresponding to those coordinates $X_i$ for which
+$z_i=0,1,2$, respectively, we see that we need to check
+\begin{equation}\label{cna6}
+\sum_{|T|=k+1,\,X_i(T)=0,\,i\in A,\atop X_i(T)=1,\,i\in C} F(T)\geq
+\sum_{|S|=k,\,X_i(S)=0,i\in A,\atop X_i(S)=1,i\in C} F(S).
+\end{equation}
+Noting that the sums above have the same number of summands, namely
+$$\binom{2k-2|C|+1}{k-|C|+1}\quad\text{and}\quad\binom{2k-2|C|+1}{k-| C|},$$
+respectively, we see that \eqref{cna6} is a consequence of the monotonicity  
+of $F$.
+
+
+\end{proof}
+
+Recall from Remark~\ref{r-cn-hn} that CNA+ $\Rightarrow$ Rayleigh/h-NLC+ and 
+CNA $\Rightarrow$ h-NLC. By combining Proposition~\ref{RAS} and 
+Corollary~\ref{cor-cna+} on the one hand, and Proposition~\ref{pro-h-NLC} and 
+Theorem~\ref{th-a-ex} on the other hand, we deduce the following result.
+
+\begin{corollary}\label{RandC}
+If $\mu$ is an almost symmetric measure (i.e., its
+generating polynomial is symmetric in all but possibly one variable,
+cf.~Definition~\ref{d-exc}), then 
+\begin{enumerate}
+\item $\mu$ is Rayleigh/h-NLC+ $\Longleftrightarrow$ $\mu$ is CNA+;
+\item $\mu$ is h-NLC $\Longleftrightarrow$ $\mu$ is CNA.
+\end{enumerate}
+\end{corollary} 
+
+This shows that Pemantle's Conjecture~\ref{con-cna-R} 
+is true for almost 
+symmetric measures (recall that by the results in \S \ref{s-sna}, 
+Conjecture~\ref{con-cna-R} also holds for strongly Rayleigh measures and
+PHR measures).

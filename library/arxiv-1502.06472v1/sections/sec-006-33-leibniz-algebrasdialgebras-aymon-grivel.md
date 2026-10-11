@@ -8,12 +8,18 @@ pages: 5-5
 source_pdf: 1502.06472v1.pdf
 source_sha256: 381cd869fcc06f08
 doc_brief: "Gröbner-Shirshov bases and PBW theorems — We review some applications of Gr¨ obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for groups and"
+text_source: latex
+latex_prose_ratio: 0.944
+latex_coverage_ratio: 0.944
 ---
-Dialgebra: a ⊣ (b ⊢ c) = a ⊣ b ⊣ c, (a ⊣ b) ⊢ c = a ⊢ b ⊢ c, a ⊢ (b ⊣ c) = ( a ⊢ b) ⊣ c and
-⊢, ⊣ associative.
-Leibniz identity: [[ a, b ], c ] = [[ a, c ], b ] + [a, [b, c ]].
-Di-commutator: [ a, b ] = a ⊣ b − b ⊢ a.
-L = Lei(xi, i ∈ I|[xi, x j] = {xi, x j}, i, j ∈ I),
-UDialg (L) = D(X|S(−)).
-A GS basis for UDialg(L) is given by Bokut-Chen-Liu [22] and then a linear basis for
-UDialg(L) by Composition-Diamond lemma for dialgebras which implies L ⊂ UDialg (L).
+Dialgebra: $a\dashv(b\vdash c)=a\dashv b\dashv c,\ (a\dashv b)\vdash
+c=a\vdash b\vdash c,\ a\vdash(b\dashv c)=(a\vdash b)\dashv c$ and $\vdash,\dashv$ associative.
+
+Leibniz identity: $[[a,b],c]=[[a,c],b]+[a,[b,c]]$.
+
+Di-commutator: $[a,b]=a\dashv b-b\vdash a$. $$\begin{aligned}
+&&L=Lei(x_i,i\in I|[x_i,x_j]=\{x_i,x_j\},\ i,j\in I),\\
+&&U_{Dialg}(L)=D(X|S^{(-)}).
+\end{aligned}$$
+
+A GS basis for $U_{Dialg}(L)$ is given by Bokut-Chen-Liu [@{[BCLiu10]}] and then a linear basis for $U_{Dialg}(L)$ by Composition-Diamond lemma for dialgebras which implies $L\subset U_{Dialg}(L)$.

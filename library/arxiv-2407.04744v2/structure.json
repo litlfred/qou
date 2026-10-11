@@ -7,7 +7,8 @@
   "bytes": 2297272,
   "pages": 29,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -449,6 +450,169 @@
   "likely_scanned": false,
   "toc_entries": 28,
   "sections": 21,
-  "chars_total": 114029
+  "chars_total": 114029,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "paper_v9.tex",
+   "tex_sections": 21,
+   "overlaid": 14,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-theory",
+     "title": "Theory",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.015,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-001-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-quantum-monte-carlo-methods",
+     "title": "Quantum Monte Carlo methods",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-the-norfolk-interaction-model",
+     "title": "The Norfolk interaction model",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-the-electromagnetic-current-operator",
+     "title": "The electromagnetic current operator",
+     "prose_ratio": 0.888,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-magnetic-form-factors-and-moments",
+     "title": "Magnetic form factors and moments",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-results-and-discussion",
+     "title": "Results and Discussion",
+     "prose_ratio": 0.267,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-magnetic-moments",
+     "title": "Magnetic moments",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-scaled-two-body-magnetic-densities",
+     "title": "Scaled two-body magnetic densities",
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-model-dependencies-in-two-body-magnetic-densitie",
+     "title": "Model dependencies in two-body magnetic densities",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-tritium-and-helium-3",
+     "title": "Tritium and Helium-3",
+     "prose_ratio": 0.935,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-lithium-6",
+     "title": "Lithium-6",
+     "prose_ratio": 0.899,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-lithium-7-and-beryllium-7",
+     "title": "Lithium-7 and Beryllium-7",
+     "prose_ratio": 0.831,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-lithium-8-and-boron-8",
+     "title": "Lithium-8 and Boron-8",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-boron-10",
+     "title": "Boron-10",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.674,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-acknowledgments",
+     "title": "Acknowledgments",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-evaluation-of-the-magnetic-multipoles",
+     "title": "Evaluation of the magnetic multipoles",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-note-on-the-magnetic-form-factors-data",
+     "title": "Note on the magnetic form factors data",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

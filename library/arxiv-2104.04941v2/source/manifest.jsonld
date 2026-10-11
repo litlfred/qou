@@ -1,0 +1,484 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2104.04941v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Fock–Goncharov Coordinates for Semisimple Lie Groups (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2104.04941v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2104.04941&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2104.04941v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2104.04941v2",
+    "content_type": "application/gzip",
+    "sha256": "c7b4fefd947f30a791dd62f5c17798d8e87a58d60b16d1de5e359079c7e66688",
+    "bytes": 95400,
+    "fetched": "2026-10-10T15:16:13+00:00",
+    "files": [
+      {
+        "path": "source/files/fig/F4-Q1s.tex",
+        "role": "tex",
+        "sha256": "6de2bad88d5c7a18768ad95cf67d13aa870cfb41afca6c35ae7147a2cb94bfe2",
+        "bytes": 7584
+      },
+      {
+        "path": "source/files/fig/Psi-Phi-murot-cd.tex",
+        "role": "tex",
+        "sha256": "38e30b38c69501e26d1bb3b7dc01dd750e4a97df591a4822c37c5e835473ddaa",
+        "bytes": 594
+      },
+      {
+        "path": "source/files/fig/Q0-2F4.tex",
+        "role": "tex",
+        "sha256": "adcc0b2714616e607e8990b100d25f4898d417861b922f70b32e67252befc578",
+        "bytes": 3368
+      },
+      {
+        "path": "source/files/fig/QA1-and-flip.tex",
+        "role": "tex",
+        "sha256": "e4481d7fa97b9ab5f643f83aafab5702d274553b4458dc170344d3d141be46c5",
+        "bytes": 3010
+      },
+      {
+        "path": "source/files/fig/QA3-C2.tex",
+        "role": "tex",
+        "sha256": "b6e63c1dc67b2cd647f12677b4532883dfb4f0d674fb95657975340de0f6ecdd",
+        "bytes": 4364
+      },
+      {
+        "path": "source/files/fig/QA5.tex",
+        "role": "tex",
+        "sha256": "af9b99f41495d4bda8a9a51d73f27337d5d718afc0ed3dd2b5db5bc29fca95e3",
+        "bytes": 5660
+      },
+      {
+        "path": "source/files/fig/QB3.tex",
+        "role": "tex",
+        "sha256": "be6c23495b10b8d0d237cf8b27734f11ba1e73d3b212d264fbb1ca2ce04c53c0",
+        "bytes": 3558
+      },
+      {
+        "path": "source/files/fig/QC2-and-flip.tex",
+        "role": "tex",
+        "sha256": "f4100b31fa5b06c06ef89fdcfc05c98555e7a8bbe2e404d981f4d213a0a4c4b2",
+        "bytes": 7880
+      },
+      {
+        "path": "source/files/fig/QC2-and-rot.tex",
+        "role": "tex",
+        "sha256": "175b24ec7ac504b1c0430553f92a8d8b8d5b0644fd15bb12b456b75435e879d8",
+        "bytes": 6172
+      },
+      {
+        "path": "source/files/fig/QC2.tex",
+        "role": "tex",
+        "sha256": "428daaa774f4580e4cba60415b3ed11317a4c794162d59849efc1e1afe65c2aa",
+        "bytes": 2117
+      },
+      {
+        "path": "source/files/fig/QC4-middle-murot.tex",
+        "role": "tex",
+        "sha256": "d7243a2cc83a483370421d303995be2f8b45534fa79de1e461c8635c98d312fb",
+        "bytes": 5485
+      },
+      {
+        "path": "source/files/fig/QD2.tex",
+        "role": "tex",
+        "sha256": "c1edce145a5c52fca66262e94b52592af57a247344414dd2a2d830c88a2e223b",
+        "bytes": 1682
+      },
+      {
+        "path": "source/files/fig/QD5.tex",
+        "role": "tex",
+        "sha256": "dc1502c88402f1d80d256affb972f413aee527858698459c2e32b8c449f44001",
+        "bytes": 6726
+      },
+      {
+        "path": "source/files/fig/QE6.tex",
+        "role": "tex",
+        "sha256": "8558099673e2f181a8dde2288c360e7f21cfbf09b1c89371980a34876d5a34b6",
+        "bytes": 10612
+      },
+      {
+        "path": "source/files/fig/QE7.tex",
+        "role": "tex",
+        "sha256": "8c667355478f738c355b57b22611315673851beac4fde0e954c6cdee2cc15b94",
+        "bytes": 17098
+      },
+      {
+        "path": "source/files/fig/QE8.tex",
+        "role": "tex",
+        "sha256": "4b2233697fad7e6e31619135913a76ea6ab508b9d1f79b106d7169909c09484f",
+        "bytes": 30210
+      },
+      {
+        "path": "source/files/fig/QF4.tex",
+        "role": "tex",
+        "sha256": "25285058d1e626f22ab91cd8093a07f59f81b6ba2b956ee91526c36fbcb9eb82",
+        "bytes": 7160
+      },
+      {
+        "path": "source/files/fig/QG2.tex",
+        "role": "tex",
+        "sha256": "4b1c928471b584e8176932c4708d34b597ec5dd1e7190b3e00dba3786f54927e",
+        "bytes": 2541
+      },
+      {
+        "path": "source/files/fig/Qdv-naming.tex",
+        "role": "tex",
+        "sha256": "2fdb65dd0d05590fb469a961db26827640c6b8b036dc53870322039860c7b100",
+        "bytes": 9524
+      },
+      {
+        "path": "source/files/fig/amalgamation-QAn.tex",
+        "role": "tex",
+        "sha256": "4730e058223f11fbe2747bf45f91b810a6432f87ece71796b1d7ec906f698888",
+        "bytes": 9673
+      },
+      {
+        "path": "source/files/fig/dh-construction.tex",
+        "role": "tex",
+        "sha256": "7f131ecdf7b7926cb8513ef1ac1af8470da41b96965c7b5031f1e397e4e6f9c3",
+        "bytes": 5796
+      },
+      {
+        "path": "source/files/fig/doubly-truncated-simplex.tex",
+        "role": "tex",
+        "sha256": "6cd615894899fedabcd1953e2f54cbb36913fa8d3f090de68376380eb2eb4a17",
+        "bytes": 6045
+      },
+      {
+        "path": "source/files/fig/dv-construction.tex",
+        "role": "tex",
+        "sha256": "ee474fe624b33e2750c68be5321364bbec058495a6a06b84e70dc764eaf14a4d",
+        "bytes": 5702
+      },
+      {
+        "path": "source/files/fig/dynkin-A3-C2.tex",
+        "role": "tex",
+        "sha256": "42aa60ac4965bf0f123d497b9c2d79fa10a317a11fe393d0e55c9fcdff3ea56e",
+        "bytes": 1388
+      },
+      {
+        "path": "source/files/fig/dynkin-A5.tex",
+        "role": "tex",
+        "sha256": "6bd4cf74fe71b1ff78edf025bea65b9b5e8173f6170f381b53ff2adf28c0b8c0",
+        "bytes": 506
+      },
+      {
+        "path": "source/files/fig/dynkin-B3.tex",
+        "role": "tex",
+        "sha256": "f6a946f0d8427978532fa06dcf4e284a36aaf8a69e7a598fc5386ddbf79d2d28",
+        "bytes": 1275
+      },
+      {
+        "path": "source/files/fig/dynkin-D2.tex",
+        "role": "tex",
+        "sha256": "b150ba85bb9c6d878f50e8afb9428a46ce2ddcc8cc399402d10f096f2136b267",
+        "bytes": 296
+      },
+      {
+        "path": "source/files/fig/dynkin-D5.tex",
+        "role": "tex",
+        "sha256": "64b038e40479fa866f6d5236e4f906dd6773ec77005c02f447563c0b26b87b5c",
+        "bytes": 564
+      },
+      {
+        "path": "source/files/fig/dynkin-E6.tex",
+        "role": "tex",
+        "sha256": "c3d85cf092d6d86a16d532f984317b0695def4742b948fb2ff28b201728e70cf",
+        "bytes": 562
+      },
+      {
+        "path": "source/files/fig/dynkin-E7.tex",
+        "role": "tex",
+        "sha256": "ab0077acac922bb749cd5c1d4c8bb632d333c7e11d9e95abcede358e3990db24",
+        "bytes": 623
+      },
+      {
+        "path": "source/files/fig/dynkin-E8.tex",
+        "role": "tex",
+        "sha256": "12cafdd48d4e73f1f2e857f01e21ac5aa61c8ee7acae0f37c41180ab8f555177",
+        "bytes": 780
+      },
+      {
+        "path": "source/files/fig/dynkin-F4.tex",
+        "role": "tex",
+        "sha256": "026ba8b2c327ef59c6fcb65225c87f5800f5d059d1809588fe1b6a328dcf55d8",
+        "bytes": 1343
+      },
+      {
+        "path": "source/files/fig/dynkin-G2.tex",
+        "role": "tex",
+        "sha256": "51c46d71ee32c10ce77170334e4a9292439823ec3521f077962f7e9384fd4054",
+        "bytes": 1320
+      },
+      {
+        "path": "source/files/fig/dynkin-type-A3-C2.tex",
+        "role": "tex",
+        "sha256": "b229c5681d21361dcc44dec1b1dd691fc9c6ad81067ef269ac95ad5cbe2b7bb3",
+        "bytes": 654
+      },
+      {
+        "path": "source/files/fig/dynkin-type-A5.tex",
+        "role": "tex",
+        "sha256": "15ce8390ee5f6a4d2b5fac6068f47426eb6f8002b3f6f449d63f91d01342a54f",
+        "bytes": 679
+      },
+      {
+        "path": "source/files/fig/dynkin-type-Al.tex",
+        "role": "tex",
+        "sha256": "3fdd1030f3974993cf9a232b6e9594b6f30c4c39896cabb993c5d2f34b6994c4",
+        "bytes": 1521
+      },
+      {
+        "path": "source/files/fig/dynkin-type-B3.tex",
+        "role": "tex",
+        "sha256": "032866ef5408afa90ba2f73c069c2eaaa328343104d079e8ebe733bb73f24f27",
+        "bytes": 525
+      },
+      {
+        "path": "source/files/fig/dynkin-type-D2.tex",
+        "role": "tex",
+        "sha256": "b4b79158a32745a628e15e966f298b1ff74da9d2cc49b4a179f6da4bb24d554e",
+        "bytes": 439
+      },
+      {
+        "path": "source/files/fig/dynkin-type-D5.tex",
+        "role": "tex",
+        "sha256": "e74c0fbf6e13cbed8b4b3f496fc79fefc8a0c58691dcaf4e2e0b7496d35fca9b",
+        "bytes": 674
+      },
+      {
+        "path": "source/files/fig/dynkin-type-E6.tex",
+        "role": "tex",
+        "sha256": "171f2a02deb7ab14bca928e3e4cf63260d9098ec020abe208551437cdfe955c9",
+        "bytes": 738
+      },
+      {
+        "path": "source/files/fig/dynkin-type-E7.tex",
+        "role": "tex",
+        "sha256": "fe0f99d501c3e4d7f80604b1a61887556c9d82b8cf38900c704672b9d818e980",
+        "bytes": 805
+      },
+      {
+        "path": "source/files/fig/dynkin-type-E8.tex",
+        "role": "tex",
+        "sha256": "3dc1511595ee2c19f66f2381a63a15eef46f2c08ad0e1a1a6d0d9738eef2e755",
+        "bytes": 874
+      },
+      {
+        "path": "source/files/fig/dynkin-type-F4.tex",
+        "role": "tex",
+        "sha256": "deae7a26d42f170f3a2efaeb0288787b30651b2b7db696e1454e7655fd834c2d",
+        "bytes": 592
+      },
+      {
+        "path": "source/files/fig/dynkin-type-G2.tex",
+        "role": "tex",
+        "sha256": "0590e3f0bcfbe20157c88fecd2f8848cf0c126cef3ff99261e079566c6337eff",
+        "bytes": 458
+      },
+      {
+        "path": "source/files/fig/flip-C3-120-230-post-flipcore.tex",
+        "role": "tex",
+        "sha256": "aa5e4bf2ff18f253b925d5036d4985d123b8b8f87a3fb150e2468f03e0c6f24b",
+        "bytes": 5217
+      },
+      {
+        "path": "source/files/fig/flip-C3-120-230.tex",
+        "role": "tex",
+        "sha256": "beae7af311e91439aecbbc65a0fc545951e6966f7777107de4309a300313ea12",
+        "bytes": 5217
+      },
+      {
+        "path": "source/files/fig/flip-C3-120-302.tex",
+        "role": "tex",
+        "sha256": "8260802d2cfb1fc7a2122a11afb1a5fd7bdc44c35e86257378649cb59a6b1177",
+        "bytes": 7638
+      },
+      {
+        "path": "source/files/fig/flip-C3-123-013.tex",
+        "role": "tex",
+        "sha256": "0fd95eb86b4513c1aac1c673ffb2e071c41b62032e827ad5d1012ac772b3418f",
+        "bytes": 7600
+      },
+      {
+        "path": "source/files/fig/labeled-sufficiently-generic-simplex.tex",
+        "role": "tex",
+        "sha256": "be73ca7b203ddece160fd11a8d418d2b88064ee23baf7b189ecd80c1a7fb18c5",
+        "bytes": 1497
+      },
+      {
+        "path": "source/files/fig/murot-QD7-stage0.tex",
+        "role": "tex",
+        "sha256": "ec63a2573d7660fa14f06145b2211b156013eaf90131826adfcac1ab3da10b37",
+        "bytes": 12749
+      },
+      {
+        "path": "source/files/fig/murot-QD7-stage1.tex",
+        "role": "tex",
+        "sha256": "c8d2124a20c2519dfd3386a7bc3f36745110bef0f5a5db8e6e8f439a238b5840",
+        "bytes": 12837
+      },
+      {
+        "path": "source/files/fig/murot-QD7-stage2.tex",
+        "role": "tex",
+        "sha256": "2a28982eec74180ac09a3869ac4f0865166dfdde83add21e85e7332690357d75",
+        "bytes": 12704
+      },
+      {
+        "path": "source/files/fig/pentagon-recurrence.tex",
+        "role": "tex",
+        "sha256": "7fc467788a600a2a4975f8fadabe0718402440b264c55af38a369756d0956d62",
+        "bytes": 4082
+      },
+      {
+        "path": "source/files/fig/ptolemy-euclidean.tex",
+        "role": "tex",
+        "sha256": "c55718c1536e698e15c54126d7262e5487058507e627509c2e660c83444d4a03",
+        "bytes": 800
+      },
+      {
+        "path": "source/files/fig/ptolemy-hyperbolic.tex",
+        "role": "tex",
+        "sha256": "484bc1533fa8caea042fa90ee9b7a83b664383469a6e730d856d611c94b593b7",
+        "bytes": 1114
+      },
+      {
+        "path": "source/files/fig/quiver-mutation-example.tex",
+        "role": "tex",
+        "sha256": "e6107309dfb7508d7e757bde6f7354ad4cbed39281de87e7c2495330cf6edac7",
+        "bytes": 3638
+      },
+      {
+        "path": "source/files/fig/rect-F4-in-progress.tex",
+        "role": "tex",
+        "sha256": "0ed98739a3d025767aeb635bd6c76a3611d7faccea54c59881da2d96b27d2977",
+        "bytes": 2629
+      },
+      {
+        "path": "source/files/fig/rect-F4.tex",
+        "role": "tex",
+        "sha256": "f985cbe06e5f515cb3453638455f81c30cff717f7353292593d9fa7059b47386",
+        "bytes": 3167
+      },
+      {
+        "path": "source/files/fig/short-flip.tex",
+        "role": "tex",
+        "sha256": "2e1f6fb90da52f849aeb79583a60289a37f6e4903beaab7b7f936febf61c6505",
+        "bytes": 1845
+      },
+      {
+        "path": "source/files/fig/short-rot.tex",
+        "role": "tex",
+        "sha256": "8c969de03bf089f229e6af4fba839455ef8d56802d5df1665331bdc432cf8ccc",
+        "bytes": 1464
+      },
+      {
+        "path": "source/files/fig/sigma-1.tex",
+        "role": "tex",
+        "sha256": "655ce0cc7c82c10e7a1f5dce3bc5d18811f5b0519177f40672d01d13d495a3f4",
+        "bytes": 3659
+      },
+      {
+        "path": "source/files/fig/sigma-2.tex",
+        "role": "tex",
+        "sha256": "0ce538e23979a99eb1d8281157a6be184650b2cbeb6ab2c991ac52e30a54c521",
+        "bytes": 3840
+      },
+      {
+        "path": "source/files/fig/sigma-3.tex",
+        "role": "tex",
+        "sha256": "3a4ee791910737b8a72ef6303a792227ae041f2e8312bff30ab5e2665881e3a7",
+        "bytes": 882
+      },
+      {
+        "path": "source/files/fig/sigma-5.tex",
+        "role": "tex",
+        "sha256": "3e445b5d1f36ad1ec0fa9cd14599e432f7b4b98c9ae4d8078695e952e706a77f",
+        "bytes": 1596
+      },
+      {
+        "path": "source/files/fig/sigma-6.tex",
+        "role": "tex",
+        "sha256": "5e65e01393268dc97bf27e952d0fdd9c01addb84a7c668cb2a43aa89701d5a99",
+        "bytes": 1860
+      },
+      {
+        "path": "source/files/fig/sigma-7.tex",
+        "role": "tex",
+        "sha256": "922864c186acc86c796a9b1bd038a1194f596cccf273c257393fb1b40585eae5",
+        "bytes": 1675
+      },
+      {
+        "path": "source/files/fig/sigma-8.tex",
+        "role": "tex",
+        "sha256": "5bf2cc423d69a3bddcf63e3befebd450475004b31df75800504b2cb4ef0f1e4d",
+        "bytes": 1675
+      },
+      {
+        "path": "source/files/fig/sigma-9.tex",
+        "role": "tex",
+        "sha256": "f13a413a0365239c8570378ffdc3506e42d7d2b3bc6595493f778260caa51b62",
+        "bytes": 1659
+      },
+      {
+        "path": "source/files/fig/sigmaG-action-on-D5.tex",
+        "role": "tex",
+        "sha256": "4a849ea7669102a6b89cf0ef80a4011fd4b174ddac6e256c08124a8651ca92c7",
+        "bytes": 752
+      },
+      {
+        "path": "source/files/fig/tetrahedra-with-quivers.tex",
+        "role": "tex",
+        "sha256": "02496bc79151b31a1d751bb90195b63299f4bfd28a6c5d27de1d3c8aac712949",
+        "bytes": 3591
+      },
+      {
+        "path": "source/files/fig/truncated-simplex.tex",
+        "role": "tex",
+        "sha256": "40a357f8a0338b5ff44416d59c474d047b2569b6c2891e254744766558d1dae5",
+        "bytes": 1927
+      },
+      {
+        "path": "source/files/fig/visually-triangular.tex",
+        "role": "tex",
+        "sha256": "2ca3d4e89908962ec8107884cd10de9ce55a41220fad95dd48781ffbb59d1f28",
+        "bytes": 3920
+      },
+      {
+        "path": "source/files/fig/well-rooted-E6.tex",
+        "role": "tex",
+        "sha256": "c155d0aba0e92fa15d1701e16710aa76b046242d5e065196946ed65b082eb374",
+        "bytes": 1445
+      },
+      {
+        "path": "source/files/ms.bbl",
+        "role": "bbl",
+        "sha256": "d8f28ce7b26648cb98fc8a199afd71a42136704689ae3f4a13a0f6f32f9a612a",
+        "bytes": 47928
+      },
+      {
+        "path": "source/files/ms.tex",
+        "role": "tex",
+        "sha256": "e3780e4af2a42e02e45e90a6fca285d314e44ecdc713467c61ee108f1dd0e03a",
+        "bytes": 239087
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

@@ -8,76 +8,49 @@ pages: 18-19
 source_pdf: 2104.01786v1.pdf
 source_sha256: 34087d5063ef5507
 doc_brief: "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real"
+text_source: latex
+latex_prose_ratio: 0.949
+latex_coverage_ratio: 0.979
 ---
-We now interrupt our representation theoretic discussion to revie w the left/right symmetric
-extensions of the SM, as these are most closely related to our form alism. We follow [21], see in
-particular Section 1.3.1.
-5.1 Spinor ﬁelds
-It is convenient to organise the fermionic ﬁelds into the following multip lets
-Qi =
-(
-ui
-di
-)
-, L =
-(
-ν
-e
-)
-, ¯Qi =
-( ¯di
-−¯ui
-)
-, ¯L =
-(
-¯e
-−¯ν
-)
-. (64)
-These ﬁelds transform under the left/right-symmetric gauge gro up
-GLR = SU(3) × SU(2)L × SU(2)R × U(1)B−L (65)
-in the following representations
-Q = (3, 2, 1, + 1
-3), L = (1, 2, 1, −1), ¯Q = (¯3, 1, 2, −1
-3), ¯L = (1, 1, 2, +1). (66)
-Speciﬁcally, the transformation properties under SU(2) L × SU(2)R are
-Q →ULQ, L →ULL, ¯Q →UR ¯Q, ¯L →UR ¯L. (67)
-5.2 Bi-doublet Higgs ﬁeld
-Most (but not all, see below) versions of the left/right symmetric mo del require a Higgs ﬁeld
-in the bi-doublet representation
-Φ = (1 , 2, 2, 0), Φ →ULΦU †
-R. (68)
-18
-Out of the components of Φ ∗ of the complex conjugate matrix one can construct another matr ix
-˜Φ = ǫΦ ∗ǫT, ǫ :=
-(
-0 1
-−1 0
-)
-(69)
-that has the same transformation properties ˜Φ →UL ˜ΦU †
-R as Φ. The VEV of this Higgs ﬁeld
-Φ =
-( v1 0
-0 v2
-)
-, ˜Φ =
-( v∗
-2 0
-0 v∗
-1
-)
-(70)
-breaks the symmetry down to the diagonal U(1) ⊂ SU(2)L ×SU(2)R. The U(1) B−L remains un-
-broken. To break the remaining symmetries to the electromagnetic U(1) one needs to introduce
-further Higgs ﬁelds, see below.
-It is very convenient to have the Higgs ﬁeld Φ because it allows constr uction of Yukawa
-mass terms. The GLR invariant (lepton) mass term that can be constructed from Φ , ˜Φ is
-YLLTǫT Φ ¯L + ˜YLLTǫT ˜Φ ¯L, (71)
-where YL, ˜YL are mass parameters (matrices in the case there is more than one g eneration).
-Evaluating these terms on the VEV’s of Φ , ˜Φ we get
-(YLv1 + ˜YLv∗
-2)e¯e + (YLv2 + ˜YLv∗
-1)ν ¯ν, (72)
-which are the Dirac mass terms for the electron and the neutrino. N ote that it is suﬃcient to
-takev1 ⁄= 0,v 2 = 0 to obtain the Dirac masses.
+[]{#sec:left-right label="sec:left-right"}
+
+We now interrupt our representation theoretic discussion to review the left/right symmetric extensions of the SM, as these are most closely related to our formalism. We follow [@DiLuzio:2011mda], see in particular Section 1.3.1.
+
+## Spinor fields
+
+It is convenient to organise the fermionic fields into the following multiplets $$\begin{aligned}
+\label{fermions}
+Q^i = \left( \begin{array}{c} u^i \\ d^i \end{array}\right), \quad
+L = \left( \begin{array}{c} \nu \\ e \end{array}\right), \quad
+\bar{Q}^i = \left( \begin{array}{ccc} \bar{d}^i \\ -\bar{u}^i \end{array}\right), \quad
+\bar{L} = \left( \begin{array}{c} \bar{e} \\ -\bar{\nu} \end{array}\right).
+\end{aligned}$$ These fields transform under the left/right-symmetric gauge group $$\begin{aligned}
+\label{GLR}
+G_{\rm LR}={\rm SU}(3)\times{\rm SU}(2)_L\times{\rm SU}(2)_R\times {\rm U}(1)_{B-L}
+\end{aligned}$$ in the following representations $$\begin{aligned}
+\label{charges}
+Q = (3,2,1,+\frac{1}{3}), \quad L= (1,2,1,-1), \quad \bar{Q}=(\bar{3}, 1, 2, -\frac{1}{3}), \quad \bar{L}= (1,1,2,+1).
+\end{aligned}$$ Specifically, the transformation properties under ${\rm SU}(2)_L\times{\rm SU}(2)_R$ are $$\begin{aligned}
+Q\to U_L Q, \quad L\to U_L L, \quad \bar{Q} \to U_R \bar{Q}, \quad \bar{L}\to U_R \bar{L}.
+\end{aligned}$$
+
+## Bi-doublet Higgs field
+
+Most (but not all, see below) versions of the left/right symmetric model require a Higgs field in the bi-doublet representation $$\begin{aligned}
+\label{Phi}
+\Phi = (1,2,2,0), \qquad \Phi \to U_L \Phi U_R^\dagger.
+\end{aligned}$$ Out of the components of $\Phi^*$ of the complex conjugate matrix one can construct another matrix $$\begin{aligned}
+\label{epsilon}
+\tilde{\Phi} = \epsilon \Phi^* \epsilon^T, \qquad \epsilon:=\left( \begin{array}{cc} 0 & 1 \\ -1 & 0\end{array}\right)
+\end{aligned}$$ that has the same transformation properties $\tilde{\Phi}\to U_L \tilde{\Phi} U_R^\dagger$ as $\Phi$. The VEV of this Higgs field $$\begin{aligned}
+\label{Phi-vev}
+\Phi =\left( \begin{array}{cc} v_1 & 0 \\ 0 & v_2 \end{array}\right), \qquad
+\tilde{\Phi} =\left( \begin{array}{cc} v^*_2 & 0 \\ 0 & v^*_1 \end{array}\right)
+\end{aligned}$$ breaks the symmetry down to the diagonal ${\rm U}(1)\subset{\rm SU}(2)_L\times{\rm SU}(2)_R$. The ${\rm U}(1)_{B-L}$ remains unbroken. To break the remaining symmetries to the electromagnetic ${\rm U}(1)$ one needs to introduce further Higgs fields, see below.
+
+It is very convenient to have the Higgs field $\Phi$ because it allows construction of Yukawa mass terms. The $G_{\rm LR}$ invariant (lepton) mass term that can be constructed from $\Phi,\tilde{\Phi}$ is $$\begin{aligned}
+\label{Phi-Y}
+Y_L L^T \epsilon^T \Phi \bar{L} + \tilde{Y}_L L^T \epsilon^T \tilde{\Phi} \bar{L},
+\end{aligned}$$ where $Y_L,\tilde{Y}_L$ are mass parameters (matrices in the case there is more than one generation). Evaluating these terms on the VEV's of $\Phi,\tilde{\Phi}$ we get $$\begin{aligned}
+(Y_L v_1 +\tilde{Y}_L v_2^*) e\bar{e} + (Y_L v_2 +\tilde{Y}_L v_1^*) \nu\bar{\nu},
+\end{aligned}$$ which are the Dirac mass terms for the electron and the neutrino. Note that it is sufficient to take $v_1\not=0, v_2=0$ to obtain the Dirac masses.

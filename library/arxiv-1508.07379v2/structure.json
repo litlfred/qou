@@ -6,7 +6,8 @@
   "sha256": "c3dbf93d1cac198e6d9fafe655dd69a38ba09aa944daf273017aca0b74e5ce2f",
   "bytes": 214166,
   "pages": 15,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -161,6 +162,59 @@
   "likely_scanned": false,
   "toc_entries": 10,
   "sections": 5,
-  "chars_total": 34492
+  "chars_total": 34492,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 11,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-model-and-results",
+     "title": "Model and Results",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-31-general-penrose-identity",
+     "title": "General Penrose identity",
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-32-partition-scheme-via-minimum-spanning-tree",
+     "title": "Partition scheme via minimum spanning tree",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-5-comparison-with-recent-results-and-concluding",
+     "title": "Comparison with recent results and concluding remarks",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.597,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

@@ -1,82 +1,133 @@
 {
-  "_schema": "pdf-structure/v1",
-  "doc_id": "arxiv-2408.04921v2",
-  "source": {
-    "file": "2408.04921v2.pdf",
-    "sha256": "dcfe112640a8adda54dcd50a68fd16956766b45749fb254c2c8a157fe05b7ae4",
-    "bytes": 275899,
-    "pages": 24
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2408.04921v2",
+ "source": {
+  "file": "2408.04921v2.pdf",
+  "sha256": "dcfe112640a8adda54dcd50a68fd16956766b45749fb254c2c8a157fe05b7ae4",
+  "bytes": 275899,
+  "pages": 24,
+  "math_source": "latex"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2408.04921",
+   "version": "2",
+   "primary_class": "math.RT",
+   "stamp_date": "25 Sep 2024"
   },
-  "metadata": {
-    "arxiv": {
-      "id": "2408.04921",
-      "version": "2",
-      "primary_class": "math.RT",
-      "stamp_date": "25 Sep 2024"
-    },
-    "doi": null,
-    "title": "IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP HUIMIN GAO AND NAIHUAN JING",
-    "authors_raw": "HUIMIN GAO AND NAIHUAN JING"
+  "doi": null,
+  "title": "IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP HUIMIN GAO AND NAIHUAN JING",
+  "authors_raw": "HUIMIN GAO AND NAIHUAN JING"
+ },
+ "toc": [],
+ "toc_source": "headings",
+ "sections": [
+  {
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "id": "sec-000-introduction",
+   "n_chars": 8060,
+   "n_words": 1372
   },
-  "toc": [],
-  "toc_source": "headings",
-  "sections": [
-    {
-      "number": "1",
-      "title": "Introduction",
-      "level": 1,
-      "page_start": 1,
-      "page_end": 4,
-      "id": "sec-000-introduction",
-      "n_chars": 8060,
-      "n_words": 1372
-    },
-    {
-      "number": "2",
-      "title": "Irreducible characters of Ck \u2240 Sn",
-      "level": 1,
-      "page_start": 4,
-      "page_end": 6,
-      "id": "sec-001-irreducible-characters-of-ck-sn",
-      "n_chars": 4540,
-      "n_words": 1002
-    },
-    {
-      "number": "1",
-      "title": "X ij",
-      "level": 1,
-      "page_start": 6,
-      "page_end": 7,
-      "id": "sec-002-x-ij",
-      "n_chars": 1416,
-      "n_words": 340
-    },
-    {
-      "number": "3",
-      "title": "Two Iterative Formulas",
-      "level": 1,
-      "page_start": 7,
-      "page_end": 13,
-      "id": "sec-003-two-iterative-formulas",
-      "n_chars": 13578,
-      "n_words": 2946
-    },
-    {
-      "number": "4",
-      "title": "Further examples",
-      "level": 1,
-      "page_start": 13,
-      "page_end": 24,
-      "id": "sec-004-further-examples",
-      "n_chars": 19271,
-      "n_words": 4033
-    }
-  ],
-  "diagnostics": {
-    "pages_without_text": 0,
-    "likely_scanned": false,
-    "toc_entries": 0,
-    "sections": 5,
-    "chars_total": 47527
+  {
+   "number": "2",
+   "title": "Irreducible characters of Ck \u2240 Sn",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "id": "sec-001-irreducible-characters-of-ck-sn",
+   "n_chars": 4540,
+   "n_words": 1002
+  },
+  {
+   "number": "1",
+   "title": "X ij",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "id": "sec-002-x-ij",
+   "n_chars": 1416,
+   "n_words": 340
+  },
+  {
+   "number": "3",
+   "title": "Two Iterative Formulas",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 13,
+   "id": "sec-003-two-iterative-formulas",
+   "n_chars": 13578,
+   "n_words": 2946
+  },
+  {
+   "number": "4",
+   "title": "Further examples",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 24,
+   "id": "sec-004-further-examples",
+   "n_chars": 19271,
+   "n_words": 4033
   }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 0,
+  "sections": 5,
+  "chars_total": 47527,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 4,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-irreducible-characters-of-ck-sn",
+     "title": "Irreducible characters of Ck \u2240 Sn",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-x-ij",
+     "title": "X ij",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-two-iterative-formulas",
+     "title": "Two Iterative Formulas",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-further-examples",
+     "title": "Further examples",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
+ }
 }

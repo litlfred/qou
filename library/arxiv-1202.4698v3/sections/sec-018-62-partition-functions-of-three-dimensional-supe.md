@@ -8,37 +8,33 @@ pages: 19-20
 source_pdf: 1202.4698.pdf
 source_sha256: 54171c652161ca5b
 doc_brief: "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as"
+text_source: latex
+latex_prose_ratio: 0.964
+latex_coverage_ratio: 0.965
 ---
-Let us brieﬂy review the general form of the partition functi ons for 3d supersymmetric ﬁeld
-theories. According to [HHL2], following [KWY, J, HHL1], the partition function for 3d N =
-2 SYM theory with gauge group G and ﬂavor symmetry group F deﬁned on a squashed three
-sphere has the form
-Z(f ) =
-∫ i∞
-−i∞
-rank G∏
-j=1
-dujJ(u)Z vec(u)
-∏
-I
-Z chir
-Φ I (f,u ). (6.2)
-Here fk are the chemical potentials for the ﬂavor symmetry group F while uj-variables are
-associated with the Weyl weights for the Cartan subalgebra o f the gauge group G. For Chern-
-Simons theories one has J(u) = e−πik ∑ rank G
-j=1 u2
-j , wherek is the level of CS-term, and for SYM
-theories one has J(u
-) = e2πiλ ∑ rank G
-j=1 uj, where λ is the Fayet-Illiopoulos term. There are two
-different contributions to the partition function (6.2): Z vec(u) which comes from vector super-
-ﬁelds and Z chir
-Φ I (f,u ) arising from the matter ﬁelds. All these terms are expressed in terms of
-noncompact quantum dilogarithms. The contribution of vector superﬁeld forG =SU (2) which
-we are interested in coincides with the Plancherel measure (2.16) introduced above,
-Z vec(u) = M(Q/2 + iu), (6.3)
-as follows from [HHL2, Equation (5.33)] using (A.15) and (A. 16). For each chiral superﬁeld
-Φ I the contribution to the partition function is Sb(α) where α is some linear combination of
-theR-charge and mass parameters which can be derived from the gro up representation of the
-matter content (see, for example, [DSV]).
-20
+Let us briefly review the general form of the 
+partition functions for $3d$ supersymmetric field theories.
+According to \cite{Hama:2010av}, following \cite{Kapustin:2010xq,J,HHL1},
+the partition function for $3d$ $\mathcal{N}=2$ SYM  theory with gauge group $G$ and flavor symmetry group $F$ defined on a squashed three sphere has the form
+\beq \label{PF_def}
+Z(\underline{f}) \ = \ \int_{-\textup{i}\infty}^{\textup{i}\infty}
+\prod_{j=1}^{\rank G}du_j\,  J(\underline{u})
+Z^{vec}(\underline{u}) \prod_{I} Z_{\Phi_I}^{chir}(\underline{f},\underline{u}).
+\eeq
+Here $f_k$ are the chemical potentials for the flavor symmetry group $F$ while
+$u_j$-variables are associated with the Weyl weights for the Cartan
+subalgebra of the gauge group $G$. For Chern-Simons theories one has
+$J(\underline{u})=e^{-\pi \textup{i} k \sum_{j=1}^{\rank G} u_j^2}$,
+where $k$ is the level of CS-term, and for SYM theories one has
+$J(\underline{u}) = e^{2 \pi \textup{i} \lambda \sum_{j=1}^{\rank G} u_j}$,
+where $\lambda$ is the Fayet-Illiopoulos term. There are two different contributions to the partition function (\ref{PF_def}): $Z^{vec}(\underline{u})$ which comes from vector superfields and $Z_{\Phi_I}^{chir}(\underline{f},\underline{u})$ arising from the matter fields. All these terms are expressed in terms of noncompact quantum dilogarithms. The contribution of vector superfield for $G=SU(2)$ which we are interested in coincides
+with the Plancherel measure (\ref{Pmeas}) introduced above, 
+\begin{equation}
+Z^{vec}(\underline{u}) \,=\,M(Q/2 + \textup{i} u)\,,
+\end{equation}
+as follows from \cite[Equation (5.33)]{Hama:2010av} 
+using (\ref{Sb2}) and (\ref{Sb3}). For each chiral superfield $\Phi_I$ 
+the contribution to the partition function is $S_b(\alpha)$ where 
+$\alpha$ is some linear combination of the $R$-charge and mass 
+parameters which can be derived from the group representation of 
+the matter content (see, for example, \cite{DSV}).

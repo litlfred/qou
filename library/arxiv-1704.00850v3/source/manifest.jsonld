@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1704.00850v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1704.00850v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1704.00850v3/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1704.00850&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1704.00850v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1704.00850v3",
+    "content_type": "application/gzip",
+    "sha256": "004b70303fb1e26314633986b0561ad4a1105e3df3eef9d239e4e565d9ddad9c",
+    "bytes": 58914,
+    "fetched": "2026-10-10T15:11:56+00:00",
+    "files": [
+      {
+        "path": "source/files/eigsums-r3.bbl",
+        "role": "bbl",
+        "sha256": "9a0c12be021cfd1abda2a1dd5ae716147881bb360160c7a3785c776b1658d7f5",
+        "bytes": 9734
+      },
+      {
+        "path": "source/files/eigsums-r3.tex",
+        "role": "tex",
+        "sha256": "76f3c615104679b529d7f2dc32aa90c0a16d011bb182f2775ee37c4e765f0996",
+        "bytes": 100225
+      },
+      {
+        "path": "source/files/jhtitle.sty",
+        "role": "sty",
+        "sha256": "6a985b57e4f24214597f7b087c9f237b5f76a5c9de1246fc2a382df9dae0cd5a",
+        "bytes": 1849
+      },
+      {
+        "path": "source/files/probmacros.sty",
+        "role": "sty",
+        "sha256": "2f8a5558a4b3b1e0b257d8d02a1dbd9ab0a9eb689890b373f436b9fb1dfa8c73",
+        "bytes": 1894
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

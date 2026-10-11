@@ -8,85 +8,81 @@ pages: 17-18
 source_pdf: 2108.09349v2.pdf
 source_sha256: 4c732bfcbf3dfb16
 doc_brief: "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS BARBARA NIMERSHIEM — We construct topological triangulations for complements of ( −2, 3,n )-pretzel knots and links with n≥ 7."
+text_source: latex
+latex_prose_ratio: 0.917
+latex_coverage_ratio: 0.963
 ---
-allows us to introduce convenient coordinates for a point θ inA(τp). For T in τp, let θDT denote
-the angle assigned to the diagonals of T , θRT the angle assigned to the red edges, and θBT to the
-blue edges. Thus, we can write θ∈A (τp)⊂ (0,π )3(2p+1) as
-(θRw′
-0,θBw′
-0,θDw′
-0,...,θ Rw′
-p−1,θBw′
-p−1,θDw′
-p−i,
-θRw1,θBw1,θDw1,...,θ Rwp,θBwp,θDwp,θRs,θBs,θDs).
-18 BARBARA NIMERSHIEM
-Observation 4. Using this notation, the edge identiﬁcations in Observations 1 and 2 and Equa-
-tions (2) and (3) together with Condition (3) of Deﬁnition 3.1 yield the following edge equations:
-(p−1∑
-i=0
-2θRw′
-i
-)
-+
-( p∑
-i=1
-2θRwi
-)
-+ 2θRs +θDw′
-0 +θDwp = 2π
-θBw′
-0 +θDw1 +θBs +θDw′
-p−1 +θBwp = 2π
-θBw′
-0 +θDw′
-1 +θBs +θDwp−1 +θBwp = 2π
-θDwi−1 +θBwi +θBw′
-i +θDw′
-i+1 = 2π for i = 2,...p − 2
-θDw′
-i−1 +θBwi +θBw′
-i +θDwi+1 = 2π for i = 1,...p − 1
-θDs +θBw′
-1 +θBw1 +θDw′
-2 = 2π
-θDs +θBw′
-p−1 +θBwp−1 +θDwp−2 = 2π.
-These equations hold for p> 1 as long as each term is deﬁned. (Recall that there are no tetrahedra
-labelled w0 or w′
-p.)
-The ﬁrst two equations also hold when p = 1, and, after substituting s(db) and s(ac) for the
-undeﬁned terms w′
-1(02) and wp−1(20) as in Observation 2, so does the third:
-θBw′
-0 +θDs +θBs +θDs +θBw1 = 2π.
-Observation 5. Several pairs of edge equations above share angles coming from the blue edges.
-These angles will cancel when one equation is subtracted from the other, yielding the following
-equalities for the diagonals:
-θDw1−θDw′
-1 =θDw3−θDw′
-3 =θDw5−θDw′
-5 =···
-θDw2−θDw′
-2 =θDw4−θDw′
-4 =θDw6−θDw′
-6 =··· .
+\label{sec:coordinates}
+
+The veering structure on~$\tau_{p}$ allows us to introduce convenient coordinates for a point $\theta$ in $\mathcal A(\tau_{p})$.  For $T$ in~$\tau_{p}$, let~$\theta_D T$ denote the angle assigned to the diagonals of~$T$, $\theta_R T$ the angle assigned to the red edges, and $\theta_B T$ to the blue edges.  Thus, we can write $\theta\in\mathcal{A}(\tau_{p})\subset(0,\pi)^{3(2p+1)}$ as
+\begin{multline*}
+(\theta_R w_0^\prime,
+\theta_B w_0^\prime,
+\theta_D w_0^\prime,\dots,
+\theta_R w_{p-1}^\prime,
+\theta_B w_{p-1}^\prime,
+\theta_D w_{p-i}^\prime,\\
+\theta_R w_1,
+\theta_B w_1,
+\theta_D w_1,\dots,
+\theta_R w_p,
+\theta_B w_p,
+\theta_D w_p,
+\theta_R s,
+\theta_B s,
+\theta_D s).
+\end{multline*}
+\begin{observation}\label{obs:edgeeqs}
+Using this notation, the edge identifications in Observations~\ref{obs:veeringred} and~\ref{obs:veeringblue5} and Equations~\eqref{eq:deg4} and~\eqref{eq:s} together with Condition~(3) of Definition~\ref{def:anglestructure} yield the following \emph{edge equations}:
+\begin{align*}
+\left(\sum_{i=0}^{p-1} 2\theta_R w_i^\prime\right) +\left(\sum_{i=1}^{p} 2\theta_R w_i\right) +2\theta_R s + \theta_Dw_0^\prime+\theta_Dw_p&=2\pi\\
+\theta_B w_0^\prime+\theta_D w_1+\theta_B s+\theta_D w_{p-1}^\prime+\theta_B w_p&=2\pi\\
+\theta_B w_0^\prime+\theta_D w_1^\prime+\theta_B s+\theta_D  w_{p-1}+\theta_B w_p&=2\pi\\
+\theta_D w_{i-1}+\theta_B w_{i}+\theta_B w_{i}^\prime+\theta_D  w_{i+1}^\prime&=2\pi&\text{ for } i=2, \dots p-2\\
+\theta_D w_{i-1}^\prime+\theta_B w_{i}+\theta_B w_{i}^\prime+\theta_D  w_{i+1}&=2\pi&\text{ for } i=1, \dots p-1\\
+\theta_D s+\theta_B w_1^\prime+\theta_B w_1+\theta_D  w_2^\prime&=2\pi\\
+\theta_D s+\theta_B w_{p-1}^\prime+\theta_B w_{p-1}+\theta_D  w_{p-2}&=2\pi.
+\end{align*}
+These equations hold for $p>1$ as long as each term is defined.  (Recall that there are no tetrahedra labelled $w_0$ or $w_p^\prime$.)  
+
+The first two equations also hold when $p=1$, and, after substituting $s(db)$ and~$s(ac)$ for the undefined terms $w_1^\prime(02)$ and $w_{p-1}(20)$ as in Observation~\ref{obs:veeringblue5}, so does the third:
+$$
+\theta_B w_0^\prime+\theta_D s+\theta_B s+\theta_D  s+\theta_B w_1=2\pi.
+$$
+\end{observation}
+
+\begin{observation}\label{obs:diagonaleqs}
+Several pairs of  edge equations above share angles coming from the blue edges.  These angles will cancel when one equation is subtracted from the other, yielding the following equalities for the diagonals:
+\begin{align*}
+    \theta_D w_1-\theta_D w_1^\prime
+    =\theta_D w_3-\theta_D w_3^\prime
+    =\theta_D w_5-\theta_D w_5^\prime
+    =&\cdots
+    \\
+\theta_D w_2-\theta_D w_2^\prime
+    =\theta_D w_4-\theta_D w_4^\prime
+    =\theta_D w_6-\theta_D w_6^\prime
+    =&\cdots.
+\end{align*}
 In addition,
-θDwp−2−θDw′
-p−2 =θDwp−θDs
-θDs−θDw′
-0 =θDw2−θDw′
-2
-θDwp−1−θDw′
-p−1 =θDw1−θDw′
-1.
-These equations hold when p> 1 and each term is deﬁned. The ﬁnal equation, which is derived by
-taking the diﬀerence between the equations for the degree-5 edges implies that, if p is odd (so p− 1
-is even), then all of the diﬀerences listed above are equal. If p is even, all diﬀerences, θDwj−θDw′
-j,
-withj even are also equal to θDs−θDw′
-0 andθDwp−θDs, but not necessarily to θDw1−θDw′
-1, etc.
-The corresponding equation for p = 1 is:
-θDs−θDw′
-0 =θDw1−θDs.
+\begin{align*}
+      \theta_D w_{p-2}-\theta_D w_{p-2}^\prime
+    &=\theta_D w_p-\theta_D s
+      \\
+       \theta_D s-\theta_D w_0^\prime
+    &=\theta_D w_2-\theta_D w_2^\prime
+    \\
+ \theta_D w_{p-1}-\theta_D w_{p-1}^\prime
+    &=\theta_D w_1-\theta_D w_1^\prime.
+\end{align*}
+These equations hold when $p>1$ and each term is defined.
+The final equation, which is derived by taking the difference between the equations for the degree-5 edges implies that, if $p$ is odd (so $p-1$
+ is even), then all of the differences listed above are equal.  If $p$ is even, all differences, $\theta_D w_j-\theta_D w_j^\prime$, with $j$ even are also equal to $\theta_D s-\theta_D w_0^\prime$ and $\theta_D w_p-\theta_D s$, but not necessarily to $\theta_D w_1-\theta_D w_1^\prime$, etc. 
+ 
+ 
+\end{observation}
+The corresponding equation for $p=1$ is:
+$$
+      \theta_D s-\theta_D w_0^\prime
+    =\theta_D w_1-\theta_D s.
+$$

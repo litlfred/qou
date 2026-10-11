@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2210.09583v1/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2210.09583v1/blocks/prose-sec-005",
   "kind": "prose",
   "title": "Quantum covering group",
   "pageStart": 6,
   "pageEnd": 6,
   "text": "../sections/sec-005-32-quantum-covering-group.md",
-  "derivedFrom": "library/arxiv-2210.09583v1/manifest",
-  "sourceDocument": "library/arxiv-2210.09583v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2210.09583v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2210.09583v1/manifest.jsonld",
   "provenance": "ingested"
 }

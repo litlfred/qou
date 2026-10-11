@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2009.03688v6/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "E 8 -singularity, invariant theory and modular forms (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2009.03688v6/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2009.03688&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2009.03688v6",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2009.03688v6",
+    "content_type": "application/gzip",
+    "sha256": "3023d451d80e9b82fb2e223eedfa8b0bbfdedf2b249481e558663bb3e30ab9e1",
+    "bytes": 27212,
+    "fetched": "2026-10-10T15:15:34+00:00",
+    "files": [
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "2b502061d3b46f8b8c194ceb96426dd06e297c329e115b7466ace1d8ee762876",
+        "bytes": 122041
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

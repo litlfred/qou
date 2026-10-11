@@ -8,15 +8,25 @@ pages: 42-42
 source_pdf: 0508291v1.pdf
 source_sha256: d2d541426aaec742
 doc_brief: "Stein’s Method and Random Character Ratios — Stein’s method is used to prove limit theorems for random character ratios."
+text_source: latex
+latex_prose_ratio: 0.962
+latex_coverage_ratio: 1.0
 ---
-This ﬁnal section adapts techniques from earlier sections t o study the
-spectrum of an adjacency matrix of an association scheme. As is well known
-(see for instance Chapter 3 of [BaI]) this includes the spect rum a distance
-regular graph as a special case.
-Subsection 6.1 discusses needed facts about association sc hemes. Sub-
-section 6.2 derives a general central limit theorem for the s pectrum of an
-association scheme. Subsection 6.3 illustrates the theory of Subsection 6.2
-for the special case of the Hamming scheme, where the result a mounts to
-a central limit theorem for the spectrum of the Hamming graph , or equiva-
-lently for values of q-Krawtchouk polynomials. For an appli cation of tools
-in this section to a problem with a non-normal limit, see [CF] .
+\label{assoc}
+
+	This final section adapts techniques from earlier sections to
+	study the spectrum of an adjacency matrix of an
+	association scheme. As is well known (see for instance Chapter
+	3 of \cite{BI}) this includes the spectrum a distance regular
+	graph as a special case.
+
+	Subsection \ref{rtassoc} discusses needed facts about
+	association schemes. Subsection \ref{assocCLT} derives a
+	general central limit theorem for the spectrum of an
+	association scheme. Subsection \ref{Hamming} illustrates the
+	theory of Subsection \ref{assocCLT} for the special case of
+	the Hamming scheme, where the result amounts to a central
+	limit theorem for the spectrum of the Hamming graph, or
+	equivalently for values of q-Krawtchouk polynomials. For an
+	application of tools in this section to a problem with a
+	non-normal limit, see \cite{CF}.

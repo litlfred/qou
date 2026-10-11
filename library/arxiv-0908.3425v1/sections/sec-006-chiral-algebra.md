@@ -8,49 +8,27 @@ pages: 8-8
 source_pdf: 0908.3425v1.pdf
 source_sha256: 5e88d45bbc1c1b9b
 doc_brief: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer — We provide an introduction to the basic concepts of chiral pe rturbation theory and discuss some"
+text_source: latex
+latex_prose_ratio: 0.959
+latex_coverage_ratio: 0.974
 ---
-The invariance of L0
-QCD under global SU(3) L × SU(3)R × U(1)V transformations implies that also the
-QCD Hamilton operator in the chiral limit, H 0
-QCD, exhibits a global SU(3) L ×SU(3)R ×U(1)V symmetry.
-As usual, the charge operators are deﬁned as the space integr als of the charge densities,
-QaL(t) =
-∫
-d3xq †
-L(t,⃗ x)λa
-2 qL(t,⃗ x), (23)
-QaR(t) =
-∫
-d3xq †
-R(t,⃗ x)λa
-2 qR(t,⃗ x), (24)
-QV (t) =
-∫
-d3x
-[
-q†
-L(t,⃗ x)qL(t,⃗ x) +q†
-R(t,⃗ x)qR(t,⃗ x)
-]
-. (25)
-For conserved symmetry currents, these operators are time i ndependent, i.e., they commute with the
-Hamiltonian,
-[QaL,H 0
-QCD] = [QaR,H 0
-QCD] = [QV,H 0
-QCD] = 0. (26)
-The commutation relations among the charge operators reﬂec t the underlying Lie algebra of SU(3) L ×
-SU(3)R × U(1)V ,
-[QaL,Q bL] = ifabcQcL, (27)
-[QaR,Q bR] = ifabcQcR, (28)
-[QaL,Q bR] = 0 , (29)
-[QaL,Q V ] = [ QaR,Q V ] = 0. (30)
-Equations (27) - (30) are veriﬁed by expressing the commutat ors in terms of equal-time anti-commutation
-relations of the quark ﬁelds.
-It should be stressed that, even without being able to explic itly solve the equation of motion of the
-quark ﬁelds entering the charge operators of Eqs. (27) - (30) , we know from the equal-time commuta-
-tion relations and the symmetry of the Lagrangian that these charge operators are the generators of
-inﬁnitesimal transformations of the Hilbert space associa ted with H 0
-QCD. Furthermore, their commu-
-tation relations with a given operator specify the transfor mation behavior of the operator in question
-under the group SU(3) L × SU(3)R × U(1)V .
+[]{#subsec_ca label="subsec_ca"} The invariance of ${\cal L}^0_{\rm QCD}$ under global $\mbox{SU(3)}_L\times\mbox{SU(3)}_R\times\mbox{U(1)}_V$ transformations implies that also the QCD Hamilton operator in the chiral limit, $H^0_{\rm QCD}$, exhibits a global $\mbox{SU(3)}_L\times\mbox{SU(3)}_R\times\mbox{U(1)}_V$ symmetry. As usual, the charge operators are defined as the space integrals of the charge densities, $$\begin{aligned}
+\label{2:1:4:ql}
+Q_{aL}(t)&=&\int \mbox{d}^3x\,q^\dagger_L(t,\vec{x})\frac{\lambda_a}{2}q_L(t,\vec{x}),\\
+\label{2:1:4:qr}
+Q_{aR}(t)&=&\int \mbox{d}^3x\,q^\dagger_R(t,\vec{x})\frac{\lambda_a}{2}q_R(t,\vec{x}),\\
+\label{2:1:4:qv}
+Q_V(t)&=&\int \mbox{d}^3x\,\left[q^\dagger_L(t,\vec{x})q_L(t,\vec{x})+
+q^\dagger_R(t,\vec{x})q_R(t,\vec{x})\right].
+\end{aligned}$$ For conserved symmetry currents, these operators are time independent, i.e., they commute with the Hamiltonian, $$\label{2:1:4:vrhq} [Q_{aL},H^0_{\rm QCD}]=[Q_{aR},H^0_{\rm
+QCD}]=[Q_V,H^0_{\rm QCD}]=0.$$ The commutation relations among the charge operators reflect the underlying Lie algebra of $\mbox{SU(3)}_L\times\mbox{SU(3)}_R\times\mbox{U(1)}_V$, $$\begin{aligned}
+\label{2:1:4:crqll}
+[Q_{aL},Q_{bL}]&=&if_{abc}Q_{cL},\\
+\label{2:1:4:crqrr}
+{[Q_{aR},Q_{bR}]}&=&if_{abc}Q_{cR},\\
+\label{2:1:4:crqlr}
+{[Q_{aL},Q_{bR}]}&=&0,\\
+\label{2:1:4:crqlvrv} {[Q_{aL},Q_V]}&=&[Q_{aR},Q_V]=0.
+\end{aligned}$$ Equations ([\[2:1:4:crqll\]](#2:1:4:crqll){reference-type="ref" reference="2:1:4:crqll"}) - ([\[2:1:4:crqlvrv\]](#2:1:4:crqlvrv){reference-type="ref" reference="2:1:4:crqlvrv"}) are verified by expressing the commutators in terms of equal-time anti-commutation relations of the quark fields.
+
+It should be stressed that, even without being able to explicitly solve the equation of motion of the quark fields entering the charge operators of Eqs. ([\[2:1:4:crqll\]](#2:1:4:crqll){reference-type="ref" reference="2:1:4:crqll"}) - ([\[2:1:4:crqlvrv\]](#2:1:4:crqlvrv){reference-type="ref" reference="2:1:4:crqlvrv"}), we know from the equal-time commutation relations and the symmetry of the Lagrangian that these charge operators are the generators of infinitesimal transformations of the Hilbert space associated with $H^0_{\rm QCD}$. Furthermore, their commutation relations with a given operator specify the transformation behavior of the operator in question under the group $\mbox{SU(3)}_L\times\mbox{SU(3)}_R\times\mbox{U(1)}_V$.

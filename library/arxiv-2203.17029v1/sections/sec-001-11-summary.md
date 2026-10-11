@@ -9,90 +9,66 @@ source_pdf: 2203.17029v1.pdf
 source_sha256: 5557f7f272cb8a43
 doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
 duplicate_of: "modularqholonomicmodules"
+text_source: latex
+latex_prose_ratio: 0.98
+latex_coverage_ratio: 0.652
 ---
-1.2. Motivation 3
-1.3. Deﬁnition and properties 3
-1.4. The generalised q-hypergeometric equation is modular 5
-1.5. Modular q-holonomic modules in Chern–Simons theory 7
-2. A review of linear q-diﬀerence equations 12
-2.1. Preliminaries 12
-2.2. An algorithm for a fundamental matrix 13
-2.3. The q-Borel and the q-Laplace transforms 14
-2.4. The slash operator and proof of Theorem 1.2 17
-2.5. Duality 20
-2.6. Categorical aspects 23
-3. Heine’s q-hypergeometric functions 24
-3.1. Solutions 24
-3.2. Self duality 25
-3.3. State integral 28
-3.4. Resonance 29
-4. Proof of Theorems 1.5 and 1.6 30
-4.1. The q-Pochhammer symbol 30
-4.2. The Appell-Lerch sums 32
-Date: 31 March 2022.
-Key words and phrases : q-diﬀerence equations, modular linear q-diﬀerence equations, conformal ﬁeld
-theory, vertex operator algebras, q-holonomic modules, modular q-holonomic modules, q-Borel transform,
-q-Laplace transform, resummation, monodromy, elliptic functions, q-hypergeometric equations, generalised q-
-hypergeometric equations, Jacobi theta function, Appell-Lerch sums, Mordell integral, quantum dilogarithm,
-knots, 3-manifolds, Chern-Simons theory, holomorphic quantum m odular forms, Conformal Field Theory,
-Vertex Operator Alegbras.
-1
-2 STA VROS GAROUF ALIDIS AND CAMPBELL WHEELER
-5. A q-diﬀerence equation of the 4 1 knot 37
-5.1. Solutions 37
-5.2. Monodromy 40
-5.3. Residues 42
-5.4. Determinants 44
-5.5. State integral 46
-5.6. The inhomogeneous equation 47
-5.7. The x-deformation 52
-5.8. An analytic lift of the colored Jones polynomial 62
-5.9. Specialisation t = qm 62
-Acknowledgements 62
-References 63
-1. Introduction
-1.1. Summary. We introduce a new class of linear q-diﬀerence equations and (correspond-
-ing q-holonomic modules) which we call modular, with several key features.
-• Their fundamental solutions at 0 and inﬁnity have explicitly computab le monodromy.
-• A natural SL2( /CI )-cocycle constructed from a fundamental solution extends fro m /BV \ /CA
-to the complex plane minus a ray in the real numbers.
-• Their fundamental solutions are meromorphic and their residues ar e expressed in
-terms of the solutions themselves (kind of ’resurgence’).
-Modular q-holonomic modules are abundant. We show that the generalised q-hypergeometric
-equation ( 11) (and in particular the q-hypergeometric equation) is modular and self-dual;
-see Theorem 1.4 below. Among other things, this implies an improved analyticity for the
-q-hypergeometric function
-2φ1(a, b; c; q, t) =
-∞∑
-k=0
-(a; q)k(b; q)k
-(c; q)k(q; q)k
-tk , (1)
+We introduce a new class of linear $q$-difference equations and (corresponding
+$q$-holonomic modules) which we call \emph{modular}, with several key features.
+
+\begin{itemize}
+  \item
+ Their fundamental solutions at 0 and infinity have explicitly
+  computable monodromy.
+\item
+  A natural $\SL_2(\BZ)$-cocycle constructed from a fundamental
+  solution extends from $\BC\setminus\BR$ to the complex plane minus a ray in
+  the real numbers.
+\item
+  Their fundamental solutions are meromorphic and their residues are
+  expressed in terms of the solutions themselves (kind of 'resurgence').
+\end{itemize}
+Modular $q$-holonomic modules are abundant. We show that the generalised
+$q$-hypergeometric equation ~\eqref{gener.qhyper} (and in particular
+the $q$-hypergeometric equation) is modular and self-dual; see
+Theorem~\ref{thm.heine} below. Among other things, this implies an improved
+analyticity for the $q$-hypergeometric function
+\be
+\label{2phi1}
+  {}_{2}\phi_{1}(a,b;c;q,t) =
+  \sum_{k=0}^{\infty}\frac{(a;q)_{k}(b;q)_{k}}{(c;q)_{k}(q;q)_{k}}t^{k} \,,
+\ee
 namely, that the bilinear combination
-(q; q)∞(c; q)∞
-(a; q)∞(b; q)∞
-(˜q˜a; ˜q)∞(˜q˜b; ˜q)∞
-(˜q; ˜q)∞(˜q˜c; ˜q)∞
-2φ1(a, b; c; q, t)2φ1(˜a−1, ˜b−1; ˜c−1; ˜q, ˜q˜a˜b˜c−1˜t)
-+ τ θ(q−1ct; q)(q; q)3
-∞
-θ(t; q)θ(q−1c; q)
-(q2c−1; q)∞(q; q)∞
-(qac−1; q)∞(qbc−1; q)∞
-θ(˜q˜c; ˜q)θ(˜t; ˜q)
-θ(˜q˜c˜t; ˜q)(˜q; ˜q)3
-∞
-(˜a˜c−1; ˜q)∞(˜b˜c−1; ˜q)∞
-(˜q−1˜c−1; ˜q)∞(˜q; ˜q)∞
-× 2φ1(qac−1, qbc−1; q2c−1; q, t)2φ1(˜q˜a−1˜c, ˜q˜b−1˜c; ˜q2˜c; ˜q, ˜q˜a˜b˜c−1˜t)
-(2)
-(which a priori is a meromorphic function of τ ∈ /BV \ /CA ) extends to τ ∈ /BV \ (−∞, 0]. We also
-show that modular linear q-diﬀerence equations and the corresponding q-holonomic mod-
-ules appear naturally in complex Chern-Simons theory. We illustrate w ith three examples
-(Theorems 1.5, 1.6 and 1.7 below) whose corresponding cocycles are the Faddeev quantum
-dilogarithm, the Appell-Lerch sums, and the Andersen–Kashaev st ate integrals of the 4 1
-knot.
-MODULAR q-HOLONOMIC MODULES 3
-We expect that all proper (i.e., basic) q-hypergeometric modules are modular, and in par-
-ticular the ones that appear in the quantum diﬀerential equation in Q uantum Cohomology,
-or the linear q-diﬀerence equation for the small J-function of Quan tum K-Theory.
+\be
+\begin{aligned}
+  &\frac{(q;q)_{\infty}(c;q)_{\infty}}{(a;q)_{\infty}(b;q)_{\infty}}
+  \frac{(\tq\tilde{a};\tq)_{\infty}(\tq\tilde{b};\tq)_{\infty}}{
+    (\tq;\tq)_{\infty}(\tq\tilde{c};\tq)_{\infty}}{}_{2}\phi_{1}(a,b;c;q,t)
+  {}_{2}\phi_{1}(\tilde{a}^{-1},\tilde{b}^{-1};\tilde{c}^{-1};\tq,\tq\tilde{a}
+  \tilde{b}\tilde{c}^{-1}\tilde{t})\\
+  &+\tau\frac{\theta(q^{-1}ct;q)(q;q)_{\infty}^{3}}{\theta(t;q)\theta(q^{-1}c;q)}
+  \frac{(q^{2}c^{-1};q)_{\infty}(q;q)_{\infty}}{
+    (qac^{-1};q)_{\infty}(qbc^{-1};q)_{\infty}}
+  \frac{\theta(\tq\tilde{c};\tq)\theta(\tilde{t};\tq)}{
+    \theta(\tq\tilde{c}\tilde{t};\tq)
+    (\tq;\tq)_{\infty}^3}\frac{(\tilde{a}\tilde{c}^{-1};\tq)_{\infty}
+    (\tilde{b}\tilde{c}^{-1};\tq)_{\infty}}{(\tq^{-1}\tilde{c}^{-1};\tq)_{\infty}
+    (\tq;\tq)_{\infty}}\\
+  &\quad\times{}_{2}\phi_{1}(qac^{-1},qbc^{-1};q^2c^{-1};q,t)
+  {}_{2}\phi_{1}(\tq\tilde{a}^{-1}\tilde{c},
+  \tq\tilde{b}^{-1}\tilde{c};\tq^2\tilde{c};
+  \tq,\tq\tilde{a}\tilde{b}\tilde{c}^{-1}\tilde{t})
+\end{aligned}
+\ee
+(which a priori is a meromorphic function of $\tau \in \BC\setminus\BR$)
+extends to $\tau\in\BC\setminus(-\infty,0]$.
+We also show that modular linear $q$-difference equations and the corresponding
+$q$-holonomic modules appear naturally in complex Chern-Simons theory. We illustrate
+with three examples (Theorems~\ref{thm.ex1}, ~\ref{thm.ex2} and ~\ref{thm.41} below)
+whose corresponding cocycles are the Faddeev quantum dilogarithm, the Appell-Lerch
+sums, and the Andersen--Kashaev state integrals of the $4_1$ knot.
+
+We expect that all proper (i.e., basic) $q$-hypergeometric modules are modular, and
+in particular the ones that appear in the quantum differential equation in Quantum
+Cohomology, or the linear q-difference equation for the small J-function of
+Quantum K-Theory.

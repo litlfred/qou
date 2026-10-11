@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "45-2_09.dvi",
   "contains": [
+    "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-front-matter",
     "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-000",
     "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-001",
     "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-002",
@@ -16,12 +22,14 @@
     "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-007",
     "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-008",
     "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-009",
-    "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-010",
-    "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-011"
+    "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-010"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "fujii-2005-degeneration-of-hyperbolic-structures-figure-eight.pdf",
     "source_sha256": "bca3996c7a667b189b9c46e2d745be632afdcc86ed6517a602c25da21db975cb",
     "pages": 12,

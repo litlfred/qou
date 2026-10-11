@@ -8,7 +8,10 @@ pages: 4-4
 source_pdf: 2607.10525v1.pdf
 source_sha256: b893cb4c87ea1d66
 doc_brief: "FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE TENSOR CATEGORIES — LetGbe a finite group acting on a finite tensor categoryC."
+text_source: latex
+latex_prose_ratio: 0.929
+latex_coverage_ratio: 0.929
 ---
-We use [EGNO15, EO04] as our main references for finite tensor categories and
-module categories. All categories and functors arek-linear, and functors are additive,
-unless stated otherwise.
+[]{#sec:preliminaries label="sec:preliminaries"}
+
+We use [@EGNO15; @EO04] as our main references for finite tensor categories and module categories. All categories and functors are ${\Bbbk}$-linear, and functors are additive, unless stated otherwise.

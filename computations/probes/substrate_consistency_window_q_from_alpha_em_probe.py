@@ -13,7 +13,7 @@ repo. They sit in a table whose prose says only
 
 with no formula, no script and no witness; the block's `.ts` is an
 `extracted-table` citing a proposition and nothing computational. Every
-`alpha_EM`-inversion module in the tree is under `computations/_deprecated/`.
+`alpha_EM`-inversion module in the tree is under `fsh-guts/deprecated/computations/`.
 
 That is the shape a stale figure has, so it was worth checking rather than
 assuming. **It checks out.**

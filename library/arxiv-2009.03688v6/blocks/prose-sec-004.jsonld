@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2009.03688v6/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2009.03688v6/blocks/prose-sec-004",
   "kind": "prose",
-  "title": "A diﬀerent construction: E8-singularity from CY /SL(2, 13) over X(13)",
-  "pageStart": 2,
-  "pageEnd": 2,
-  "text": "../sections/sec-004-4-a-diﬀerent-construction-e8-singularity-from-cy.md",
-  "derivedFrom": "library/arxiv-2009.03688v6/manifest",
-  "sourceDocument": "library/arxiv-2009.03688v6/manifest",
+  "title": "icosahedral singularity",
+  "pageStart": 14,
+  "pageEnd": 16,
+  "text": "../sections/sec-004-icosahedral-singularity.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2009.03688v6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2009.03688v6/manifest.jsonld",
   "provenance": "ingested"
 }

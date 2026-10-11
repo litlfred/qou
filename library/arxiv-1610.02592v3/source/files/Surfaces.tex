@@ -1,0 +1,1201 @@
+\chapter{Surfaces} \label{superfici:chapter} \label{surfaces:chapter}
+
+A surface is a differentiable manifold of dimension $n=2$, possibly with boundary. The closed orientable surfaces are classified topologically by their Euler characteristic, a complete invariant that also determines their possible geometries: a closed surface has a hyperbolic, flat, or spherical structure if and only if its Euler characteristic is negative, null, or positive.
+
+We devote some time here to expose the topological classification and the geometrisation of closed surfaces. Then we describe some of the beautiful features of geometrisation: the geometry of a surface (typically, hyperbolic geometry) can be used to prove in an elegant way various non-trivial topological facts. 
+
+We end this chapter by defining and studying the \emph{mapping class group}, a group that encodes the topological symmetries of a surface.
+
+\section{Topological classification}
+A surface can be topologically quite complicated: think for instance of $\matR^2$ with a Cantor set removed. We decide to restrict our investigation to the surfaces \emph{of finite type}, i.e.~obtained from a closed one by removing points and/or open discs: these include all the compact surfaces with or without boundary.
+We introduce here these surfaces and classify them up to diffeomorphism.
+
+We manipulate surfaces using various cut-and-paste tools: boundary gluings, removal of discs or points, handle decompositions, connected sums. See Section \ref{differential:topology:section} to refresh these notions.
+
+\subsection{Gluing surfaces}
+A simple way to construct a surface is by gluing simpler surfaces along their boundaries. We show here that the glued surface depends only on the orientation classes of the gluing maps.
+
+Two self-diffeomorphisms of $S^1$ are \emph{co-oriented} if they both preserve or both invert the orientation of $S^1$.
+\begin{lemma} \label{diffeo:isotopi:lemma}
+Two co-oriented self-diffeomorphisms of $S^1$ are isotopic.
+\end{lemma}
+\begin{proof}
+Let $f_0, f_1\colon S^1 \to S^1$ be two co-oriented self-diffeomorphisms. Their lifts $\tilde f_0, \tilde f_1\colon \matR\to\matR$ are periodic and monotone, hence $\tilde f_t = (1-t)\tilde f_0 + t\tilde f_1$ also is and descends to an isotopy $f_t$ connecting $f_0$ and $f_1$.
+\end{proof}
+
+\begin{cor} \label{not:depend:cor}
+If we glue two oriented surfaces along their boundaries via orientation-reversing diffeomorphisms, the resulting oriented surface does not depend on the diffeomorphisms chosen.
+\end{cor}
+\begin{proof}
+All the orientation-reversing gluing maps are isotopic by Lemma \ref{diffeo:isotopi:lemma}, and isotopic gluing maps produce diffeomorphic manifolds, as stated in Proposition \ref{depend:diffeo:prop}.
+\end{proof}
+
+In a non-oriented context, we have two possible maps for every glued boundary component.
+
+\begin{cor} \label{sphere:cor}
+If we glue two discs we get a sphere.
+\end{cor}
+\begin{proof}
+The two discs are copies of $D^2\subset \matC$ and are glued along a diffeomorphism $\varphi\colon S^1\to S^1$. Up to mirroring one disc we may suppose that $\varphi$ is orientation-reversing, and by Corollary \ref{not:depend:cor} we may suppose that $\varphi(z) = \bar z$. The resulting surface is diffeomorphic to a sphere (exercise).
+\end{proof}
+
+\begin{warning}
+In dimension $n\geqslant 7$, by gluing two discs we may get a manifold homeomorphic but \emph{not} diffeomorphic to a sphere! See Section \ref{self:disc:subsection}.
+\end{warning}
+
+
+\subsection{Classification of surfaces}
+In Section \ref{sum:subsection} we introduced the connected sum, a two-steps operation which consists of first removing balls and then gluing the new sphere boundaries. Let $S_g$ be the connected sum 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 3 cm] {\iftoggle{BW}{Sphere_with_three_handles-BW}{500px-Sphere_with_three_handles}}
+\quad \includegraphics[width = 3 cm] {\iftoggle{BW}{Triple_torus_array-BW}{500px-Triple_torus_array}}
+\quad \includegraphics[width = 3 cm] {\iftoggle{BW}{Triple_torus_illustration-BW}{500px-Triple_torus_illustration}}
+\nota{A surface of genus $3$ may be represented in various ways.}
+\label{handles_surface:fig}
+\end{center}
+\end{figure}
+
+$$S_g = \underbrace{T \# \ldots \# T}_g$$ 
+of $g$ tori $T=S^1\times S^1$. By convention $S_0 = S^2$ is the sphere and $S_1=T$ is the torus. The number $g$ is the \emph{genus} of the closed surface $S_g$. The surface $S_g$ may be represented in $\matR^3$ in various ways, see Figure \ref{handles_surface:fig}.\index{surface!genus of a surface}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11 cm] {\iftoggle{BW}{classification-BW}{classification}}
+\nota{The 0-handle and $k$ 1-handles form a subsurface $S'\subset S$ with connected boundary, to which the 2-handle is attached (left). A 0-handle and two linked 1-handles (centre). If we attach a 2-handle to the centre figure we get a handle decomposition of the torus (right).}
+\label{classification:fig}
+\end{center}
+\end{figure}
+
+\begin{prop}
+We have $\chi(S_g) = 2-2g$.
+\end{prop}
+\begin{proof}
+Let $S,S'$ be surfaces and $D\subset \interior S, D'\subset \interior{S'}$ be discs. Then
+$$\chi(S\# S') = \chi(S\setminus D) + \chi(S' \setminus D') - \chi(S^1) = \chi (S) + \chi(S') - 2.$$
+Therefore $\chi(S_g) =2-2g$ by induction on $g$.
+\end{proof}
+
+\begin{teo}[Classification of surfaces] Every closed, connected, orientable surface is diffeomorphic to $S_g$ for some $g\geqslant 0$.\index{surface!classification of surfaces}
+\end{teo}
+\begin{proof}
+Being a closed manifold, every closed orientable surface $S$ has a handle decomposition. By Proposition \ref{0:handle:prop} it has one with one 0-handle, a certain number $k$ of 1-handles, and one 2-handle. We get $\chi(S) = 2-k$. We prove by induction on $k$ that $k=2g$ is even and $S$ is diffeomorphic to $S_g$.
+
+If $k=0$ then $S$ is obtained by gluing two discs (the 0- and 2-handle) and is hence a sphere by Corollary \ref{sphere:cor}.
+
+Suppose $k>0$. The 0-handle is a disc and the 1-handles are rectangles attached to its boundary as in Figure \ref{classification:fig}-(left). Note that since $S$ is orientable every rectangle is attached without a twist, otherwise it would create a M\"obius strip. The 0- and 1-handles altogether form a compact surface $S'\subset S$ with only one boundary component, to which the 2-handle is attached.
+
+Since $\partial S'$ is connected, every rectangle is linked to some other rectangle as in Figure \ref{classification:fig}-(centre). A pair of linked rectangles form a sub-subsurface $S''\subset S'\subset S$ as in Figure \ref{classification:fig}-(centre) with connected boundary. If we cut $S$ along the curve $\partial S''$ and then cap off with two discs we perform the inverse of a connected sum. 
+
+Therefore $S = S_1\# S_2$, where $S_1$ is $S''$ with a disc attached, \emph{i.e.}~a torus  as Figure \ref{classification:fig}-(right) shows. The surface $S_2$ decomposes into a 0-handle, $k-2$ 1-handles, and one 2-handle. We conclude by induction on $k$.
+\end{proof}
+
+\subsection{Homology} \label{homolgy:surface:subsection}
+The homology of $S_g$ is easily calculated.
+\begin{prop}
+We have
+$$H_0(S_g,\matZ) = \matZ, \quad H_1(S_g,\matZ) = \matZ^{2g}, \quad H_2(S_g,\matZ) = \matZ.$$
+\end{prop}
+\begin{proof}
+Since $S_g$ is closed, connected, and orientable, we have $H_0(S_g) = H_2(S_g) = \matZ$. Since $\chi(S_g) = 2-2g$, the group $H_1(S_g)$ has rank $2g$. By Poincar\'e duality $H_1(S_g) = H^1(S_g) = \Hom(\pi_1(S_g),\matZ)$ has no torsion.
+\end{proof}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 10cm] {\iftoggle{BW}{surface_homology-BW}{surface_homology}}
+\nota{These 6 oriented curves represent a symplectic basis for $H_1(S_3,\matZ) = \matZ^6$.}
+\label{surface_homology:fig}
+\end{center}
+\end{figure}
+
+Recall from Section \ref{intersection:subsection} that by fixing an orientation for $S_g$ we get a symplectic intersection form $\omega$ on $H_1(S_g,\matZ)$. 
+A basis for $H_1(S_g, \matZ)$ is \emph{symplectic} if $\omega = \matr 0 {I_g} {-I_g} 0$ with respect to this basis: an example is in Figure \ref{surface_homology:fig}.\index{symplectic basis} 
+
+The \emph{algebraic intersection} of two closed curves is the intersection form of their classes in $H_1(S_g, \matZ)$; if the curves are transverse, this is just the algebraic sum of their intersections, where each intersection counts as $\pm 1$ according to the local orientations.\index{algebraic intersection!algebraic intersection of curves}
+
+\subsection{Surfaces of finite type}
+We extend our investigation to a larger interesting class of surfaces.\index{surface!surface of finite type} 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 6cm] {tipo_finito.pdf}
+\nota{The finite type surface $S_{g,b,p}$.}
+\label{tipo_finito:fig}
+\end{center}
+\end{figure}
+
+\begin{defn}
+Let $g,b,p\geqslant 0$ be three natural numbers. The \emph{surface of finite type} $S_{g,b,p}$ is the surface obtained from $S_g$ by removing the interior of $b$ disjoint discs and $p$ points. 
+\end{defn}
+See Figure \ref{tipo_finito:fig}. We say that $S_{g,b,p}$ has genus $g$, has $b$ boundary components, and $p$ punctures. Its Euler characteristic is
+$$\chi(S_{g,b,p}) = 2-2g-b-p.$$
+
+We also use the notation $S_{g,b}$ to indicate $S_{g,b,0}$.
+
+\begin{prop}
+Every compact connected orientable surface with boundary is diffeomorphic to $S_{g,b}$ for some $g,b\geqslant 0$.
+\end{prop}
+\begin{proof}
+Let $S$ be a compact orientable surface with some $b$ boundary components.
+If we glue $b$ discs to $\partial S$ we get a closed orientable surface, hence diffeomorphic to $S_g$ for some $g\geqslant 0$. The original $S$ is obtained from $S_g$ by removing the interiors of $b$ disjoint open discs.
+\end{proof}
+
+The compact connected orientable surfaces with $\chi>0$ are $S^2=S_0$ and $D^2=S_{0,1}$, those with $\chi=0$ are the annulus $A=S_{0,2}$ and the torus $T=S_1$.
+
+\begin{cor}[Smooth Jordan curve Theorem] \label{Jordan:cor}
+Every smooth simple closed curve $\gamma \subset \matR^2$ bounds a disc.\index{smooth Jordan curve theorem}
+\end{cor}
+\begin{proof}
+Consider the curve $\gamma$ inside $S^2 = \matR^2\cup\{\infty\}$. By cutting $S^2$ along $\gamma$ we get one or two compact orientable surfaces with non-empty boundary and with $\chi=2$ in total. The only possibility is that we get two discs.
+\end{proof}
+
+\subsection{Triangulations} \label{surface:triangulations:subsection}
+Like every honest smooth compact manifold, compact surfaces admit smooth triangulations, see Section \ref{triangulations:subsection}. Conversely, we may use simplicial complexes to construct smooth surfaces combinatorially.
+
+Let $X$ be a two-dimensional pure simplicial complex where every edge is incident to two faces, and the link of every vertex is a circle.
+
+\begin{prop}
+The complex $X$ is the smooth triangulation of a closed surface $S$, unique up to diffeomorphism.
+\end{prop}
+\begin{proof}
+By dualising $X$ we get a handle decomposition: triangles, edges, and vertices transform into 0-, 1-, and 2-handles, and we get a smooth surface $S$ triangulated by $X$. The way the handles are attached is determined up to isotopy, therefore $S$ is determined up to diffeomorphism.
+\end{proof}
+
+\begin{warning}
+It is worth noting that this procedure (getting a unique smooth structure from a simplicial complex) does not work in all dimensions (here we used implicitly Lemma \ref{diffeo:isotopi:lemma}).
+\end{warning}
+
+\section{Geometrisation} \label{surface:geometrisation:section}
+We now prove that every surface $S_{g,b,p}$ of finite type can be \emph{geometrised}, that is it may be equipped with a hyperbolic, flat, or elliptic metric. The metric type is prescribed by the sign of the Euler characteristic of the surface.
+
+\subsection{Hyperbolic pair-of-pants} \label{pantaloni:subsection}
+The sphere has of course an elliptic structure, and the torus has many flat structures, see Section \ref{piatte:subsection}. We now construct hyperbolic structures on all the surfaces $S_g$ of genus $g\geqslant 2$, and more generally on all the surfaces $S_{g,b,p}$ of negative Euler characteristic.
+We start with a simple block, the \emph{pair-of-pants} $S_{0,3}$, with Euler characteristic $-1$.\index{pair-of-pants}
+
+\begin{prop} \label{pantaloni:prop}
+Given three real numbers $a,b,c\geqslant 0$ there is (up to isometries) a unique complete finite-volume hyperbolic pair-of-pants with geodesic boundary, with boundary curves of length $a$, $b$, and $c$.
+\end{prop}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {\iftoggle{BW}{pantalone_degenere-BW}{pantalone_degenere}}
+\nota{A pair-of-pants, an annulus with one puncture, a disc with two punctures, and a thrice-punctured sphere. The last three surfaces may be considered as some degenerated hyperbolic pairs-of-pants where one or more boundary lengths $a,b$, or $c$ are zero, and we get cusps instead of geodesic boundary components there.}
+\label{pantalone_degenere:fig}
+\end{center}
+\end{figure}
+
+When some length in $a,b,c$ is zero, we mean that the geodesic boundary is actually a cusp (recall Section \ref{finite-volume:subsection}) and hence the surface is topologically a punctured annulus $S_{0,2,1}$, a twice punctured disc $S_{0,1,2}$, or a thrice-punctured sphere $S_{0,0,3}$: see Figure \ref{pantalone_degenere:fig}. 
+
+To prove this proposition we construct some right-angled hexagons in $\matH^2$ as in Figure \ref{esagono:fig}-(left). Three \emph{alternate sides} on a hexagon are three pairwise non-incident sides, like the $a,b,c$ shown in the figure. A \emph{degenerate} hexagon is one where the length of some alternate sides is zero as in Figure \ref{esagoni_generalizzati:fig}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11cm] {\iftoggle{BW}{esagono-BW}{esagono}}
+\nota{A right-angled hexagon with alternate sides of length $a$, $b$ and $c$ (left) and its construction (right), which goes as follows: take a line $l$ with two arbitrary points $A$ and $B$ in it  (bottom black). Draw the perpendiculars from $A$ and $B$ (\iftoggle{BW}{grey}{red}). At distances $a$ and $b$ we find two points $A'$ and $B'$ and we draw again two perpendiculars (black) $r$ and $s$, with some points at infinity $P$ and $Q$. 
+Draw the (unique) perpendiculars to $l$ pointing to $P$ and $Q$ (\iftoggle{BW}{dark grey}{blue}): they intersect $l$ in two points $T$ and $U$. Note that $AT$ and $UB$ have some fixed length depending only on $a$ and $b$. We can vary the parameter $x=TU$: if $x>0$ the lines $r$ and $s$ are ultra-parallel and there is a unique segment orthogonal to both of some length $f(x)$.} 
+\label{esagono:fig}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {\iftoggle{BW}{esagoni_generalizzati-BW}{esagoni_generalizzati}}
+\nota{A right-angled hexagon with parameters $a,b,c\geqslant 0$ degenerates to a pentagon, quadrilateral, or triangle with ideal vertices if one, two, or three parameters are zero.}
+\label{esagoni_generalizzati:fig}
+\end{center}
+\end{figure}
+
+\begin{lemma} \label{esagono:lemma}
+Given three real numbers $a,b,c\geqslant0$ there exists (up to isometries) a unique (possibly degenerate) hyperbolic right-angled hexagon with three alternate sides of length $a$, $b$, and $c$.
+\end{lemma}
+\begin{proof}
+We first suppose $a,b>0$. The construction of the hexagon is depicted in Figure \ref{esagono:fig}-(right). If $x=0$ the \iftoggle{BW}{dark grey}{blue} lines coincide, hence $P=Q$ and $f(0)=0$. The function $f\colon [0,+\infty) \to [0,+\infty)$ is continuous, strictly monotonic, and with $\lim_{x\to \infty} f(x) = \infty$: therefore there is precisely one $x$ such that $f(x)=c$. 
+
+If exactly two parameters are zero, say $a=b=0$, a simpler construction works: take a segment of length $c$ as in Figure \ref{esagoni_generalizzati:fig}-(centre), draw the perpendiculars at their endpoints, and a line connecting the endpoints of these. 
+
+If $a=b=c=0$, pick any ideal triangle. Ideal triangles are indeed unique up to isometry: use the half-space model and recall that $\PSLR$ acts transitively on the ordered triples of points in $\partial \matH^2$.
+\end{proof}
+The most degenerate case is so important that we single it out.
+\begin{cor}
+All the ideal triangles in $\matH^2$ are isometric.
+\end{cor}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 10cm] {\iftoggle{BW}{pantalone-BW}{pantalone}}
+\nota{By gluing two identical right-angled hexagons along their black sides we get a hyperbolic pair-of-pants with geodesic boundary.}
+\label{pantalone:fig}
+\end{center}
+\end{figure}
+
+By gluing two identical (possibly degenerate) hexagons along alternate sides as in Figure \ref{pantalone:fig} we construct a (possibly degenerate) hyperbolic pair-of-pants whose geodesic boundary consists of three simple closed geodesics of length $2a$, $2b$, and $2c$. 
+
+\begin{proof}[Proof of Proposition \ref{pantaloni:prop}]
+We have proved the existence of a geodesic pairs-of-pants with any parameters $a,b,c\geqslant 0$, and we now turn to its uniqueness. Let $P$ be a pair-of-pants with geodesic boundary curves $C_1, C_2, C_3$ of length $a, b, c>0$.
+
+Since $P, C_1$, and $C_2$ are compact, there are points $x_1\in C_1$ and $x_2 \in C_2$ at minimum distance $d=d(x_1,x_2)$, connected by some curve $\gamma_3$ of length $d$. The curve is a simple geodesic orthogonal to both $C_1$ and $C_2$: if not, some other curve connecting $x_1$ and $x_2$ would be shorter. We construct analogously two orthogeodesics $\gamma_1$ and $\gamma_2$ connecting $C_2$ to $C_3$ and $C_3$ to $C_1$ having minimal length.
+
+The fact that $\gamma_1,\gamma_2,\gamma_3$ have minimal length easily implies that they are disjoint (if they intersect, we find shorter curves). The three orthogeodesics subdivide $P$ into two hexagons, with alternate sides of length $L(\gamma_1)$, $L(\gamma_2)$, and $L(\gamma_3)$: by Lemma \ref{esagono:lemma} the two hexagons are isometric, and hence the three other alternating sides also have the same length $\frac a2, \frac b2$, and $\frac c2$. Hexagons are unique up to isometry and hence the original pair-of-pants also are.
+
+We can extend the argument to the more general case $2a, 2b, 2c \geqslant 0$ as follows. If $a=0$, a neighbourhood of the puncture is a cusp, and we truncate it at some small horocycle $C_1$ (we do the same if $b=0$ or $c=0$). After these truncations we get a compact pair-of-pants (whose boundary is \emph{not} geodesic at the horocycles) and decompose it into two hexagons as above. The resulting curve $\gamma_3$ is orthogonal to the horocycle $C_1$, hence it extends to a half-line pointing towards the puncture. The curves $\gamma_1, \gamma_2, \gamma_3$ decompose the surface into degenerate hexagons.
+\end{proof}
+
+\subsection{Hyperbolic surfaces} \label{hyperbolic:surfaces:subsection}
+The pairs-of-pants can be used as building blocks to construct topologically all finite type surfaces with $\chi<0$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 8cm] {\iftoggle{BW}{surface-BW}{surface}}
+\nota{Every surface of finite type with $\chi<0$ decomposes into pair-of-pants. We show here a decomposition of $S_3$.}
+\label{surface:fig}
+\end{center}
+\end{figure}
+
+\begin{prop} \label{decompone:pantaloni:prop}
+If $\chi (S_{g,b,p}) <0$ then $S_{g,b,p}$ decomposes topologically into $-\chi(S_{g,b,p})$ (possibly degenerate) pairs-of-pants.
+\end{prop}
+\begin{proof}
+If $b+p=0$ then $g\geqslant 2$ and the surface decomposes easily in many ways, see for instance Figure \ref{surface:fig}. If $b+p>0$ and $\chi < -1$, a decomposition for $S_{g,b,p}$ may be obtained from one of $S_{g,b-1,p}$ or $S_{g,b,p-1}$ by inserting one more (possibly degenerate) pair-of-pants. If $\chi=-1$ the surface is either a pair-of-pants, or a torus with a puncture or boundary component, which is in turn obtained by glueing two boundary components of a pair-of-pants.
+\end{proof}
+
+We can use this building block to construct hyperbolic structures.
+
+\begin{cor} \label{ammette:cor}
+If $\chi(S_{g,b,p})<0$ then $S_{g,b,p}$ admits a complete hyperbolic metric with $b$ geodesic boundary components of arbitrary length.
+\end{cor}
+\begin{proof}
+Decompose $S_{g,b,p}$ in pair-of-pants, assign an arbitrary length to all the closed curves of the decomposition (the 6 \iftoggle{BW}{grey}{red} curves shown in Figure \ref{surface:fig}) and give each pair-of-pants the hyperbolic metric determined by the three assigned boundary lengths. Everything glues to a complete hyperbolic metric for $S_{g,b,p}$ thanks to Proposition \ref{geodesic:glue:prop}.
+\end{proof}
+
+Can we geometrise the few orientable surfaces with $\chi \geqslant 0$? Yes, but since there are no cusps in the elliptic and flat geometries we do not consider surfaces with punctures. The compact orientable surfaces with $\chi >0$ are the sphere and the disc, and they all have an elliptic metric with geodesic boundary (represent the disc as a hemisphere). Those with $\chi = 0$ are the torus and the annulus, and they admit flat metrics with geodesic boundary.
+
+\subsection{Non-orientable surfaces}
+The classification of all the finite-type non-orientable surfaces is also simple. Let $S^{\rm no}_g$ be the connected sum
+$$S_g^{\rm no} = \underbrace{\matRP^2 \# \ldots \# \matRP^2}_g$$ 
+of $g\geqslant 1$ copies of the projective plane $\matRP^2$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 6 cm] {\iftoggle{BW}{Klein_bottle-BW}{Klein_bottle}}
+\nota{The Klein bottle immersed in $\matR^3$.}
+\label{Klein_bottle:fig}
+\end{center}
+\end{figure}
+
+\begin{prop}
+We have $\chi(S_g^{\rm no}) = 2-g$. The surface $S_2^{\rm no}$ is diffeomorphic to the Klein bottle $K$ shown in Figure \ref{Klein_bottle:fig}. We have
+$$S_g \#\matRP^2 \isom S^{\rm no}_{2g+1}.$$
+\end{prop}
+\begin{proof}
+The formula for $\chi$ follows from $\chi(\matRP^2)=1$. The Klein bottle $K$ may be cut along a closed curve into two M\"obius strips, and $\matRP^2$ minus an open disc is a M\"obius strip too, hence $\matRP^2\#\matRP^2 = K$. The latter equality is a consequence of $T\#\matRP^2 \isom K \# \matRP^2$ which is left as an exercise.
+\end{proof}
+
+\begin{prop}
+Every closed, connected, non-orientable surface is diffeomorphic to $S_g^{\rm no}$ for some $g\geqslant 1$.
+\end{prop}
+\begin{proof}
+Pick a handle decomposition of the surface $S$. Since it is non-orientable, at least one 1-handle is twisted and forms a M\"bius strip. We have proved that $S$ contains a M\"obius strip, and we now remove it and substitute it with a disc to get a new surface $S'$. We have $S=S'\#\matRP^2$ and we conclude by induction on $-\chi(S')$.
+\end{proof}
+
+We may also denote by $S^{\rm no}_{g,b,p}$ the surface obtained from $S^{\rm no}_g$ by removing the interiors of $b$ discs and $p$ points.
+
+\begin{ex}
+If $\chi(S^{\rm no}_{g,b,p})<0$ then $S^{\rm no}_{g,b,p}$ decomposes into pairs-of-pants and hence admits a complete hyperbolic metric with geodesic boundaries of arbitrary length.
+\end{ex}
+
+As in the orientable case, compact surfaces with $\chi \geqslant 0$ can be geometrised: these are $\matRP^2$, the M\"obius strip, and the Klein bottle. The first has an elliptic structure while the other two have flat structures with geodesic boundary.
+
+\subsection{Orbifolds} \label{orbifold:surface:subsection}
+We can push the classification and geometrisation further to compact two-dimensional orbifolds. 
+
+The finite subgroups of $\On(2)$ are: the cyclic $\matZ_2$ generated by a reflection, the cyclic $\matZ_n$ generated by a rotation, and the dihedral $D_{2n}$ containing reflections and rotations. Therefore every singular point $x$ on a two-dimensional orbifold $O$ is locally of one of these types:
+$$V/_{\matZ_2}, \quad V/_{\matZ_n}, \quad V/_{D_{2n}}$$
+with $V$ the unit ball in $\matR^2$. The point $x$ is called respectively a \emph{mirror}, a \emph{cone}, and a \emph{corner reflector} point of $O$, see Figure \ref{orbifold_types:fig}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 8 cm] {\iftoggle{BW}{orbifold_types-BW}{orbifold_types}}
+\nota{A mirror, a cone point, and a corner reflector on a two-dimensional orbifold.}
+\label{orbifold_types:fig}
+\end{center}
+\end{figure}
+
+We consider for simplicity only \emph{locally orientable} orbifolds, \emph{i.e.}~orbifolds with isotropy groups in $\SO(2)$. In other words, we exclude mirrors and corner reflectors. One such orbifold $O$ is easily encoded as
+$$(S, p_1, \ldots, p_k)$$
+where $S$ is a surface, and the orbifold $O$ is $S$ with $k$ cone points with rotational isotropy groups of order $p_1, \ldots, p_k >1$. We do not require $O$ to be globally orientable, so $S$ can be a non-orientable surface like $\matRP^2$. We define the \emph{Euler characteristic} of that orbifold as\index{Euler characteristic!of an orbifold} 
+$$\chi(O) = \chi(S) - \sum \left( 1 - \frac 1{p_i} \right).$$
+This definition is designed to behave well under coverings. The \emph{degree} of an orbifold covering $O\to O'$ is the cardinality of the fibre of any non-singular point in $O'$.
+\begin{prop}
+If $O \to O'$ is a degree-$d$ orbifold covering then 
+$$\chi(O) = d \cdot \chi(O').$$
+\end{prop}
+\begin{proof}
+Pick a cellularisation of $O'$ whose vertices contain the cone points: it lifts to a similar cellularisation of $O$. We consider all the vertices of these cellularisations as cone points, possibly with order 1, and we get
+$$\chi(O') = V - E + F - \sum \left(1-\frac 1{p_i'}\right) = - E + F + \sum \frac 1 {p_i'}$$
+where $V, E, F$ is the number of vertices, edges, and faces in the cellularisation of $O'$. The same formula holds for $O$: 
+$$\chi(O) = - dE + dF + \sum \frac 1 {p_j}.$$
+A cone point of order $p_i'$ in $O'$ lifts to some cone points with orders $p_{j_1}, \ldots, p_{j_l}$ of $O$, such that
+$$d = \sum_{a=1}^l \frac {p_i'}{p_{j_a}} \quad \Longrightarrow \quad 
+d \cdot \frac 1 {p_i'} = \sum_{a=1}^l \frac 1{p_{j_a}}.$$
+This implies that $\chi(O) = d\cdot \chi(O')$.
+\end{proof}
+
+\subsection{Geometrisation of orbifolds}
+Recall that an orbifold is good if it is covered by a manifold.
+With a couple of exceptions, all the closed two-orbifolds are good and geometric.\index{orbifold!geometrisation of orbifolds}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{c||c}
+\phantom{\Big|} \!\! orbifold & $\Gamma$ \\
+\hline \hline
+\phantom{\Big|} \!\! $S^2$ & \{e\} \\
+\phantom{\big|} \!\! $(S^2, n, n)$ & $\matZ_n$ \\ 
+\phantom{\Big|} \!\! $\matRP^2$ & $\matZ_2$ \\ 
+\phantom{\big|} \!\! $(\matRP^2, n)$ & $D_{2n}$
+\end{tabular}
+\quad
+\begin{tabular}{c||c}
+\phantom{\Big|} \!\! orbifold & $\Gamma$ \\
+\hline \hline
+\phantom{\Big|} \!\! $(S^2, 2, 2, n)$ & $D_{2n}$ \\
+\phantom{\big|} \!\! $(S^2, 2, 3, 3)$ & $T_{12}$ \\
+\phantom{\Big|} \!\! $(S^2, 2, 3, 4)$ & $O_{24}$ \\
+\phantom{\big|} \!\! $(S^2, 2, 3, 5)$ & $I_{60}$ 
+\end{tabular}
+\vspace{.2 cm}
+\nota{Except the two bad cases, every locally orientable closed orbifold $O$ with $\chi(O)>0$ can be geometrised as $O=S^2/_{\Gamma}$ for some discrete $\Gamma <\On(3)$. In all cases $\Gamma < \SO(3)$ and hence $O$ is orientable, except $\matRP^2$ and $(\matRP^2,n)$ whose $\Gamma$ contains the antipodal map. 
+The groups on the right table are the spherical Von Dyck groups, see Section \ref{more:examples:subsection}. 
+The groups $T_{12}, O_{24}, I_{60}$ are the orientation-preserving isometry groups of the tetrahedron, octahedron, and icosahedron, and are isomorphic to $A_4$, $S_4$, $A_5$ respectively.}
+\label{orbifold:elliptic:table}
+\end{center}
+\end{table}
+
+\begin{teo} \label{O:geometrisation:teo}
+Every closed locally orientable 2-orbifold $O$ is good except
+$$(S^2, p), \quad (S^2,p_1,p_2)$$
+with $p_1 \neq p_2$. A good orbifold $O$ has an elliptic, flat, hyperbolic structure $\Longleftrightarrow$ $\chi(O)$ is positive, zero, negative. The elliptic orbifolds are listed in Table \ref{orbifold:elliptic:table}.
+\end{teo}
+\begin{proof}
+The orbifolds $(S^2, p)$ and $(S^2,p_1,p_2)$ are bad: subdivide $S^2$ into two discs, each containing at most one cone point; each disc has a unique surface (disc) covering, but the two coverings do not match if $p\neq 1$ or $p_1\neq p_2$.
+The remaining orbifolds with $\chi(O)>0$ are 
+$$S^2,\ (S^2, n, n),\ \matRP^2,\ (\matRP^2, n),$$ 
+$$(S^2, 2, 2, n),\ (S^2, 2, 3, 3),\ (S^2, 2, 3, 4),\ (S^2, 2, 3, 5)$$
+and they can all be realised as $S^2/_\Gamma$ for an appropriate finite $\Gamma < \On(3)$, see Table \ref{orbifold:elliptic:table}. The orbifolds with $\chi(O)=0$ are
+$$(S^2, 2,3,6), \ (S^2,2,4,4),\ (S^2, 3,3,3),\ (S^2, 2,2,2,2),$$
+$$(\matRP^2, 2,2),\ K,\ T$$
+where $K$ and $T$ are the Klein bottle and the torus. The first four orbifolds were obtained as $\matR^2/_\Gamma$ in Section \ref{more:examples:subsection}. The orbifold $(\matRP^2, 2,2)$ is $\matR^2/_\Gamma$ where $\Gamma$ is generated by two glide reflections with orthogonal axis:
+$$(x,y) \mapsto (x+1, -y), \quad (x,y) \mapsto (-x, y+1).$$
+To prove this, consider the fundamental domain $[-\frac 12, \frac 12]\times [-\frac 12, \frac 12]$.
+
+If $\chi(O)<0$ we construct a hyperbolic metric as we did in the surface case. If $O = (S^2, p_1, p_2, p_3)$ we get $O = \matH^2/_{\Gamma^{\rm or}(p_1,p_2,p_3)}$ using Von Dyck groups, see Section \ref{more:examples:subsection}. Otherwise, the orbifold $O$ easily decomposes along disjoint simple closed curves (that avoid the cone points) into some basic pieces with $\chi<0$, which are of the following kind: 
+$$P,\ (A, p),\ (D, p_1, p_2)$$
+where $P,A,D$ are the pair-of-pants, the annulus, and the disc, and $(p_1,p_2)\neq (2,2)$. We can give a hyperbolic structure to $P$ with any fixed length at the boundaries. 
+
+Analogously, we can give a cone manifold structure with geodesic boundary to $(A,p)$ (respectively, $(D,p_1,p_2)$) with one (two) cone point of angle $\frac{2\pi}p$ ($\frac{2\pi}{p_1}$ and $\frac{2\pi}{p_2}$), for any fixed lengths at the boundaries. We already know this for $P$, and the proof for $(A,p)$ and $(D,p_1,p_2)$ is similar: instead of constructing right-angled hexagons, we construct pentagons with angles $\frac \pi 2, \frac \pi 2, \frac \pi 2, \frac \pi 2, \frac \pi p$ and quadrilaterals with angles $\frac \pi 2, \frac \pi 2, \frac \pi {p_1}, \frac \pi {p_2}$, and we double them, see Figure \ref{orbifold_pieces:fig}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {orbifold_pieces.pdf}
+\nota{For every angle $\alpha\leqslant \frac \pi 2$ and lengths $b,c>0$ there is a pentagon as shown (left); by doubling it along the unmarked edges we get a hyperbolic annulus with a cone point of angle $2\alpha$. For every angles $\alpha, \beta\leqslant \frac \pi 2$ and every length $c>0$ there is a quadrilateral as shown (right). By doubling it along the unmarked edges we get a hyperbolic disc with cone points of angle $2\alpha$ and $2\beta$.}
+\label{orbifold_pieces:fig}
+\end{center}
+\end{figure}
+
+By gluing all the pieces we obtain a hyperbolic cone structure on $O$ with cone angles $\frac{2\pi}{p_i}$ and we apply Proposition \ref{from:cone:to:orbifold:prop} to translate it to a hyperbolic orbifold structure.
+\end{proof}
+
+Recall that an orbifold is very good if it is finitely covered by a manifold. In the following corollary we use the geometrisation to prove shortly a non-trivial topological fact.
+
+\begin{cor} \label{very:good:surface:cor}
+Every good closed locally orientable 2-orbifold is very good.
+\end{cor}
+\begin{proof}
+Every such orbifold is geometric, so Corollary \ref{very:good:cor} applies.
+\end{proof}
+
+The punctured case is also interesting when $\chi(O)<0$. We define a \emph{punctured orbifold} to be one of type
+$$O = (S_{g,0,b}, p_1, \ldots, p_k).$$
+\begin{teo}
+Every punctured orbifold $O$ with $\chi(O)<0$ has a hyperbolic structure.
+\end{teo}
+\begin{proof}
+Same proof as above, where we use triangular groups with possibly ideal vertices and we allow the pieces $P$, $(A, p)$, $(D, p_1, p_2)$ to have boundary components and/or cone points that degenerate to cusps. To construct them we build hexagons, pentagons, quadrilaterals with some lengths or angles that may be zero.
+\end{proof}
+
+These punctured orbifolds are also very good for the same reason above. It is also possible to consider orbifolds based on surfaces $S_{g,b,p}$ with boundary: every boundary component can be considered in two natural but distinct ways, either as a mirror (hence the orbifold is locally non-orientable), or as a boundary component: to do this we need to define an appropriate notion of orbifold with boundary.
+
+\subsection{Gauss--Bonnet formula}
+How can we compute the area of a hyperbolic surface? We can easily answer this question in the closed case.\index{Gauss--Bonnet formula} 
+
+\begin{prop}[Gauss--Bonnet] \label{GB:prop}
+Let $S$ be a closed hyperbolic surface. We have
+$$\Area (S) = -2\pi \chi(S).$$
+\end{prop}
+\begin{proof}
+Pick a Dirichlet domain $D$ for $S$. It is a $(2n)$-gon with inner angles $\alpha_1, \ldots, \alpha_{2n}$. By Proposition \ref{polygon:area:prop} we have
+$$\Area(S) = \Area(D) = (2n-2)\pi - \sum_{i=1}^{2n} \alpha_i.$$
+The surface $S$ is obtained from $D$ by gluing isometrically some pairs of edges. We get a cellularisation of $S$ with some $v$ vertices, $n$ edges, and one face $D$. Therefore 
+$$\chi(S) = v - n + 1.$$
+Each of the $v$ vertices is obtained by identifying some of the vertices of $D$, whose inner angles must sum to $2 \pi$. Therefore we get
+$$\sum_{i=1}^{2n} \alpha_i = 2\pi v$$
+and hence 
+$$\Area(S) = (2n-2)\pi - 2\pi v = -2\pi(v-n+1) = -2\pi \chi(S).$$
+The proof is complete.
+\end{proof}
+We can extend the formula to orbifolds and to the other geometries. 
+\begin{cor}
+Let $O$ be a closed hyperbolic, flat, or elliptic locally orientable 2-orbifold. We have
+$$K\cdot\Area(O) = 2\pi \chi(O)$$
+where $K=-1$, $0$, or $+1$ respectively.
+\end{cor}
+\begin{proof}
+If $O$ is an orientable surface, then the equality holds: in the hyperbolic case this is Proposition \ref{GB:prop}, in the flat case we get $0=0$, and in the elliptic case $S=S^2$ and $\Area(S^2) = 4\pi = 2\pi \chi(S^2)$.
+
+In general there is a degree-$d$ covering $S\to O$ of an orientable geometric surface $S$ by Corollary \ref{very:good:surface:cor}. The equality holds for $S$ and hence also for $O$ since 
+$$\chi(S) = d \cdot \chi(O), \qquad \Area (S) = d \cdot \Area (O).$$
+The proof is complete.
+\end{proof}
+
+\subsection{Lie subgroups of $\SO(3)$}
+The following proposition is of general interest and is used in many different contexts.
+It shows, among other things, that orientable elliptic orbifolds are \emph{rigid}: their geometry is fully determined by their fundamental group. (Flat and hyperbolic surfaces are not rigid, as we will soon see.)\index{$\SO(3)$}
+
+\begin{prop} \label{subgroups:SO3:prop}
+Every non-trivial proper Lie subgroup of $\SO(3)$ is conjugate to one of the following:
+$$C_n, \ D_{2n},\ T_{12},\ O_{24},\ I_{60},\ \SO(2),\ \SO(2) \rtimes C_2.$$
+These are the orientation-preserving isometry groups of: a regular $n$-pyramid, $n$-prism, tetrahedron, octahedron, icosahedron, cone, and cylinder.
+\end{prop}
+\begin{proof}
+The Lie algebra $\frakg = \frakso(3,\matR)$ is generated by the matrices
+$$A_x = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & -1 \\ 0 & 1 & 0 \end{pmatrix}, \quad
+A_y = \begin{pmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ -1 & 0 & 0 \end{pmatrix}, \quad
+A_z = \begin{pmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix} $$
+with the relations
+$$[A_x, A_y] = A_z, \quad [A_y, A_z] = A_x, \quad [A_z, A_x] = A_y.$$
+Therefore $\frakg$ is isomorphic to $\matR^3$ equipped with the standard vector product $\times$. We deduce that the only non-trivial proper sub-algebras of $\frakg$ have dimension 1, and hence every non-trivial proper Lie subgroup $G<\SO(3)$ has dimension $0$ or $1$.
+
+If a Lie subgroup $G<\SO(3)$ has dimension zero, it is finite. Every non-trivial element in $G$ is a rotation along some axis, and hence it acts on $S^2$ with two (antipodal) fixed points.
+Let $P\subset S^2$ be the set of the fixed points of all the non-trivial elements of $G$. 
+
+The group $G$ clearly acts on $P$, and a double-counting argument gives
+$$2\big(|G| - 1\big) = \sum_{p \in P}\big(|G_p| - 1\big)$$
+where $G_p < G$ is the stabiliser of $p$. The fundamental theorem on group actions says that 
+$$|G_p| = \frac{|G|}{|O(p)|}$$
+where $O(p)$ is the orbit of $p$. Therefore
+$$2\big(|G| - 1\big) = \sum_{p \in P}\left(\frac{|G|}{|O(p)|} - 1\right) = 
+\sum_{O}\big({|G|} - |O|\big)
+$$
+where in the latter we sum on orbits $O$. We divide by $|G|$ to get
+\begin{equation} \label{G:orbit:eqn}
+2-\frac 2{|G|}  = \sum_{i=1}^r \left(1- \frac 1{a_i}\right)
+\end{equation}
+where $a_1,\ldots, a_r$ are the orders of the stabilisers of the $r$ orbits.
+
+If $r=1$ we get $a_1 = |G| = 1$ and hence $G$ is trivial, a contradiction. If $r=2$ we get $a_1 = a_2 = |G|$ and hence every orbit is a single point, with stabiliser $G$. Therefore the points are antipodal and $G=C_n$.
+
+If $r=3$ then $(a_1,a_2, a_3)$ is a triple with $\frac 1{a_1} + \frac 1{a_2} + \frac 1{a_3} > 1$, that is one of
+$$(2,2,n), \quad (2,3,3), \quad (2,3,4), \quad (2,3,5).$$
+In each case one calculates $|G|$ using (\ref{G:orbit:eqn}) and deduces the cardinalities of the three orbits. For instance in the $(2,2,n)$ case we have $|G|=2n$ and the orbits have cardinality $(n,n,2)$. One deduces that $G$ contains an index-two cyclic group $C_n$ and is the symmetry group $D_{2n}$ of the prism.
+
+In the $(2,3,3)$ case we get $|G|=12$ and hence the orbits have order $(6,4,4)$. The stabiliser of a point in the order-4 orbit $O$ is a $\frac{2\pi}3$-rotation that rotates the other three points: one deduces that the points in $O$ are the vertices of a regular tetrahedron and $G$ is its symmetry group. The other cases are treated analogously.
+
+If $G$ has dimension one, it contains the group $\SO(2)$ of all rotations along some axis $r$. Either $G=\SO(2)$, or there is a $g \in G \setminus \SO(2)$. If $g(r)\neq r$, then $G$ contains another $\SO(2)$ of rotations along $g(r)$, and these two copies of $\SO(2)$ generate a Lie subgroup of dimension $\geqslant 2$ in $G$, a contradiction. Therefore every element in $G\setminus \SO(2)$ preserves $r$ and is hence a $\pi$-rotation along an axis perpendicular to $r$. Therefore $G=\SO(2) \rtimes C_2$.
+\end{proof}
+
+\section{Curves on surfaces} \label{curves:surfaces:section}
+It is natural to study a manifold by examining the lower-dimensional sub-manifolds that it contains: we now look at closed curves in surfaces and unveil an unexpectedly rich world. We will discover that the study of curves in surfaces is tightly connected to hyperbolic geometry: 
+each of the two topics seems designed to give us a better understanding of the other.
+
+We first prove various facts on curves, and then we use this knowledge to deduce some topological non-trivial results on surfaces. We will end up by showing that two self-diffeomorphisms of a closed surface $S_g$ are homotopic if and only if they are isotopic, a theorem that will be important also in our topological study of three-manifolds in the subsequent chapters.
+
+We concentrate for simplicity on the genus-$g$ closed orientable surfaces $S_g$, although much of the discussion could be easily extended to finite-type surfaces $S_{g,b,p}$ with the appropriate modifications. 
+
+\subsection{Definitions}
+We start by recalling and fixing some basic definitions.
+A \emph{curve} on a differentiable manifold $M$ is a smooth map $\gamma \colon I\to M$ defined on some interval $I$, while a \emph{closed curve} is a smooth map $\gamma\colon S^1\to M$.\index{closed curve}\index{regular curve} 
+
+A (possibly closed) curve $\gamma$ is \emph{regular} if $\gamma'(t)\neq 0$ for all $t$. All the curves will be tacitly assumed to be regular; moreover, with a little abuse we will sometimes indicate by $\gamma$ the \emph{support} of the curve $\gamma$, that is its image.
+
+A curve is \emph{simple} if it is an embedding, and the support of a simple closed curve is a one-dimensional submanifold of $M$ diffeomorphic to $S^1$. Recall that all isotopies are smooth by assumption, see Section \ref{isotopy:subsection}. Two simple closed curves are isotopic if and only if they are ambiently isotopic. Two simple closed curves with the same support and orientation are isotopic by Lemma \ref{diffeo:isotopi:lemma}. 
+
+\subsection{Simple closed curves on the sphere}
+We would like to classify the simple closed curves on a given closed surface up to isotopy, but we will soon realise that this task is harder than one could expect. A closed surface may contain many complicated closed curves, difficult to draw and visualise.
+
+For the moment we content ourselves with a very simple case. A simple closed curve on a surface $S$ is \emph{trivial} if it bounds a disc.
+
+\begin{prop}
+All simple closed curves in $S^2$ are trivial and isotopic.
+\end{prop}
+\begin{proof}
+Every simple closed curve in $S^2$ is trivial by Jordan's Theorem (see Corollary \ref{Jordan:cor}). 
+
+Theorem \ref{dischi:teo} and Lemma~\ref{diffeo:isotopi:lemma} together imply that there are at most two isotopy classes of trivial simple closed curves on any connected surface $S$, depending on their orientations. When $S=S^2$ the situation is quite special and the two classes reduce to one: a $\pi$-rotation along a horizontal axis transforms an eastward-run equator into a westward-run one.
+\end{proof}
+
+The simple closed curves in a torus are much more interesting.
+
+\subsection{Simple closed curves in the torus}
+We now classify the simple closed curves in the torus $T=S^1\times S^1$ up to isotopy. The fundamental group $\pi_1(T) = \matZ\times \matZ$ is abelian, hence a closed curve $\gamma$ is determined up to free homotopy by its class $(m,n)\in\matZ\times\matZ$.
+
+\begin{prop} \label{mn:prop}
+The class $(m,n)\neq (0,0)$ is represented by a simple closed curve if and only if 
+$m$ and $n$ are coprime. In that case, the simple closed curve is unique up to isotopy.
+\end{prop}
+\begin{proof}
+We visualise the torus as a quotient $T = \matR^2/_{\matZ^2}$. If $m$ and $n$ are coprime, the vector line generated by $(m,n)\in \matR^2$ projects to a simple closed curve in $T$ representing the class $(m,n)$, see Figure \ref{toro32:fig}. 
+
+Conversely, let $\gamma\subset T$ be a simple closed curve. We cut $T$ along $\gamma$ and get a surface $S$ with $\chi(S) =0$. If $\gamma$ separates, then by the classification of surfaces the only possibility is that $S$ consists of a one-holed torus and a disc, so $\gamma$ is trivial and $(m,n)=(0,0)$, which is excluded. If $\gamma$ does not separate, there is another curve $\eta$ intersecting it transversely in one point. This implies that $\eta$ and $\gamma$ have algebraic intersection $\pm 1$ and hence $(m,n)$ are coprime: if $(m,n) = k(p,q)$ with $k\geqslant 2$ the algebraic intersection would be divided by $k$.
+
+Finally, we pick two simple closed curves $\gamma, \eta$ of the same type $(m,n)\neq (0,0)$ and prove that they are isotopic. We put $\gamma, \eta$ in transverse position, and we cut $T$ along $\gamma$ to get an annulus $A$. If $\eta$ does not intersect $\gamma$, by cutting $A$ along $\eta$ we get two annuli: hence $\eta$ and $\gamma$ cobound an annulus and we can use this annulus to build an isotopy between them. If $\eta$ intersects $\gamma$, the curve $\eta$ decomposes into arcs in $A$ as in Figure \ref{torus_simple_curve:fig}-(left). Since the algebraic intersection of $\eta$ and $\gamma$ is zero, there is an arc with both endpoints in the same boundary component of $A$. This arc forms a bigon, which we can slide by isotopy as in Figure \ref{torus_simple_curve:fig}-(right) to decrease the intersection points in $\gamma \cap \eta$ and conclude by induction.
+\end{proof}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 9 cm] {\iftoggle{BW}{toro32-BW}{toro32}}
+\nota{If $(m,n)$ are coprime the line generated by $(m,n)\in\matR^2$ projects to a simple closed curve in $T$. Here $(m,n) = (3,2)$.}
+\label{toro32:fig}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {\iftoggle{BW}{torus_simple_curve-BW}{torus_simple_curve}}
+\nota{Two homotopic simple closed curves in a torus are isotopic: put them in transverse position, cut the first to get an annulus, then remove bigons by isotopy to destroy intersections.}
+\label{torus_simple_curve:fig}
+\end{center}
+\end{figure}
+
+Simple closed curves in surfaces of higher genus are more complicated to classify, but are still very important. A couple of techniques used in the previous proof (cutting along curves and simplifying bigons) will be employed again in the higher-genus context.
+
+\subsection{Preliminaries on simple curves}
+Let $S_g$ be a closed orientable surface of some genus $g\geqslant 1$. We now prove some topological facts on simple closed curves in $S_g$, sometimes employing hyperbolic geometry.
+\begin{prop} \label{finitely:prop}
+There are finitely many simple closed curves in $S_{g}$ up to diffeomorphisms of $S_g$.
+\end{prop}
+\begin{proof}
+By cutting $S_g$ along a simple closed curve $\gamma$ we get a surface $S'$ with the same Euler characteristic as $S_g$, with one or two components, and with the boundary oriented as $\gamma$: there are only finitely many diffeomorphism types for $S'$. 
+
+Suppose that by cutting $S_g$ along $\gamma_1$ and $\gamma_2$ we get two surfaces $S'_1$ and $S'_2$ of the same type. By hypothesis there is a diffeomorphism $\varphi\colon S'_1 \to S'_2$ that preserves the boundary orientations. By Lemma \ref{diffeo:isotopi:lemma} we may modify $\varphi$ near the boundary so that it extends to a diffeomorphism $\varphi\colon S_g \to S_g$ sending $\gamma_1$ to $\gamma_2$. This concludes the proof.
+\end{proof}
+
+\begin{ex} \label{one:non-sep:ex}
+There is precisely \emph{one} non-separating simple closed curve in $S_g$ up to diffeomorphism! 
+\end{ex}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 7 cm] {\iftoggle{BW}{surface_non_sep-BW}{surface_non_sep}}
+\nota{There are infinitely many non-separating simple closed curves in $S_g$ up to isotopy when $g\geqslant 1$, but there is only one up to self-diffeomorphism of $S_g$. For instance, some diffeomorphism of $S_2$ sends the \iftoggle{BW}{left}{blue} simple closed curve to the \iftoggle{BW}{right}{red} one (a self-diffeomorphism may be quite hard to visualise directly...).}
+\label{surface_non_sep:fig}
+\end{center}
+\end{figure}
+
+Every non-separating simple closed curve in $S_g$ may be transformed into your favourite one by some diffeomorphism of $S_g$, see Figure \ref{surface_non_sep:fig}. This quite useful fact, analogous to the possibility of changing a basis in a vector space, was called the \emph{change of coordinates principle} by Farb and Margalit.\index{change of coordinates principle} 
+
+Recall that a non-trivial element $g\in G$ in a group is \emph{primitive} if it cannot be written as $g=h^n$ for some $n\geqslant 2$ and some $h\in G$. This condition is conjugacy-invariant, so the following makes sense. 
+
+\begin{prop} \label{disco:prop}
+Let $\gamma$ be a simple closed curve in $S_g$. It holds:
+\begin{itemize}
+\item if $\gamma$ is homotopically trivial, it bounds a disc;
+\item if $\gamma$ is not homotopically trivial, it is primitive in $\pi_1(S_g)$.
+\end{itemize}
+\end{prop}
+\begin{proof}
+Let $S'$ be the surface obtained by cutting $S=S_g$ along $\gamma$. The surface $S'$ may have one or two components and has the same Euler characteristic of $S$. If one component of $S'$ is a disc, we are done. If $S'$ is an annulus, then $S$ is a torus and we are done by Proposition \ref{mn:prop}.
+
+In all the other cases there is a hyperbolic metric on $S$ where $\gamma$ is a geodesic: each component of $S'$ has negative Euler characteristic and hence can be given a hyperbolic structure with geodesic boundary curves of length $1$; by gluing them we get the hyperbolic metric on $S$. 
+
+We now apply Proposition \ref{unique:closed:geodesic:prop} multiple times. Since $\gamma$ is a closed geodesic, it is not homotopically trivial. If $\gamma = \eta^k$ is not primitive in $\pi_1(S_g)$, then $\eta$ is homotopic to a closed geodesic $\bar\eta$ and hence $\gamma$ is homotopic to $\bar\eta$ run $k$ times: a closed curve cannot be homotopic to two distinct closed geodesics, a contradiction.
+\end{proof}
+
+We have employed hyperbolic geometry to prove a topological fact on surfaces: this will be a refrain in this chapter. Let the \emph{inverse} $\gamma^*$ of a closed curve $\gamma$ be $\gamma$ run with opposite orientation.
+
+\begin{prop} \label{no:inverso:prop}
+A non-trivial simple closed curve in $S_g$ is never freely homotopic to its inverse. 
+\end{prop}
+\begin{proof}
+If $g=1$ the curves $\gamma$ and $\gamma^*$ represent distinct elements (and hence conjugacy classes) in $\pi_1(S_1) =  \matZ \times \matZ$. If $g\geqslant 2$, give $S_g$ a hyperbolic metric. The curve $\gamma$ is homotopic to a closed geodesic $\bar\gamma$ and hence $\gamma^*$ is homotopic to its inverse $\bar\gamma^*$, which is distinct from $\bar\gamma$ as a closed geodesic by definition. Distinct closed geodesics are not homotopic.
+\end{proof}
+
+\subsection{Simple closed geodesics}
+Let now $S_g$ have genus $g\geqslant 2$ and be equipped with a hyperbolic metric.
+We know from Corollary \ref{unique:closed:geodesic:cor}
+that every homotopically non-trivial closed curve in $S_g$ has a unique geodesic representative. We now prove that, if the original curve is simple, then the geodesic representative also is. 
+
+Recall that the \emph{$R$-neighbourhood} of an object in a metric space is the set of all points of distance at most $R$ from that object. The $R$-neighbourhoods of lines in $\matH^2$ are particularly simple. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11.5 cm] {\iftoggle{BW}{intorni-BW}{intorni}}
+\nota{The cones and bananas $R$-neighbourhoods of a geodesic $l$ in the half-plane (left) and disc (right) models.}
+\label{intorni:fig}
+\end{center}
+\end{figure}
+
+\begin{prop} \label{banana:prop}
+The $R$-neighbourhood of a line $l\subset\matH^2$ in a conformal model is bounded by two Euclidean lines or circle arcs having the same endpoints as $l$ as in Figure \ref{intorni:fig}.
+\end{prop}
+\begin{proof}
+Put $l$ in the half-space model with endpoints at $0$ and $\infty$. A $R$-neighbourhood is invariant by the isometry $x\mapsto \lambda x$ and is hence a cone as in the figure. The other cases follow because isometries and inversions send lines and circles to lines and circles. 
+\end{proof}
+
+We use $R$-neighbourhoods to prove the following.
+
+\begin{prop} \label{semplice:prop}
+Let $S_g$ be equipped with a hyperbolic metric. Every non-trivial simple closed curve in $S_g$ is homotopic to a simple closed geodesic.
+\end{prop}
+\begin{proof}
+Every non-trivial simple closed curve $\gamma$ in $S_g=\matH^2/_\Gamma$ is homotopic to a closed geodesic $\bar\gamma$ by Corollary \ref{unique:closed:geodesic:cor}, and we now prove that $\bar\gamma$ is simple. The counterimage of $\gamma$ in $\matH^2$ consists of disjoint simple \emph{arcs}, while the counterimage of $\bar{\gamma}$ consists of straight \emph{lines}: we prove that these lines are also disjoint. 
+
+The homotopy between $\gamma$ and $\bar{\gamma}$ lifts to a homotopy between the arcs and the lines. The homotopy between $\gamma$ and $\bar{\gamma}$ has compact support, hence there is a $R>0$ such that every point in the arcs is moved in the lifted homotopy to some distance smaller than $R$. Therefore every arc is contained in the $R$-neighbourhood of a line as in Figure \ref{geodetica:fig}-(left). 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11.5 cm] {\iftoggle{BW}{geodetica-BW}{geodetica}}
+\nota{The lifts of $\gamma$ (black arcs) and of its geodesic representative (\iftoggle{BW}{grey}{red} lines) have the same endpoints in $\partial \matH^2$ (left). If two lines intersect, the corresponding arcs do (right).}
+\label{geodetica:fig}
+\end{center}
+\end{figure}
+
+This shows that lines and arcs have the same endpoints in $\partial \matH^2$. If two lines intersects, their endpoints are linked in the circle $\partial \matH^2$ and hence also the corresponding arcs intersect, see Figure \ref{geodetica:fig}-(right): a contradiction.
+
+Since the lifts of $\bar\gamma$ do not intersect, the geodesic $\bar\gamma$ does not self-intersect transversely. Then $\bar\gamma$ is either simple or wraps multiple times a simple geodesic, but the second possibility is excluded by Proposition \ref{disco:prop}.
+\end{proof}
+
+We will soon promote ``homotopic'' to ``isotopic''.
+
+\subsection{Geometric intersection}
+Isotopy classes of simple closed curves on $S_g$ form a complicate and interesting set, and a way to study it consists of looking at the way these curves intersect each other. The \emph{algebraic} intersection is too weak a tool, because it detects only their homology classes. We now introduce the much finer \emph{geometric} intersection.
+
+Let $\gamma_1$ and $\gamma_2$ be two simple closed curves in an orientable surface $S$. Let the \emph{geometric intersection} $i(\gamma_1,\gamma_2)$ be the minimum number of intersections of two transverse simple closed curves $\gamma_1', \gamma_2'$ homotopic to $\gamma_1$ and $\gamma_2$. The geometric intersection depends only on the homotopy classes of $\gamma_1$ and $\gamma_2$.\index{geometric intersection of curves}
+
+\begin{prop} We have $i(\gamma,\gamma)=0$ for every simple closed curve $\gamma$.
+\end{prop}
+\begin{proof}
+A tubular neighbourhood of $\gamma$ is diffeomorphic to $S^1\times [-1,1]$ because $S$ is orientable, hence $\gamma$ has two disjoint parallel representatives $S^1\times \left\{-\frac {1}2\right\}$ and $S^1 \times \left\{\frac 12\right\}$ which do not intersect.
+\end{proof}
+
+Recall that the \emph{algebraic} intersection of two curves counts the intersections with sign. Geometric and algebraic intersections behave much differently and are equal only modulo $2$.
+
+The geometric intersection $i(\gamma_1,\gamma_2)$ remains unaffected if we substitute $\gamma_1$ with its inverse, that is if we reverse its orientation. 
+
+\subsection{The bigon criterion}
+Two simple closed curves $\gamma_1$ and $\gamma_2$ in an orientable surface $S$ are in \emph{minimal position} if they intersect transversely in exactly $i(\gamma_1,\gamma_2)$ points. How can we know if two transverse simple closed curves in $S_g$ are in minimal position? We now prove a nice and simple criterion: they are in minimal position if and only if they do not form \emph{bigons}.
+
+The complement of two transverse simple closed curves is a finite disjoint union of open sets with polygonal boundaries; one such set is a \emph{bigon} if it is a disc with two sides as in Figure \ref{bigono:fig}. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 4 cm] {\iftoggle{BW}{bigono-BW}{bigono}}
+\nota{Two curves $\gamma_1$ and $\gamma_2$ are in minimal position if and only if they do not create bigons, like this one.}
+\label{bigono:fig}
+\end{center}
+\end{figure}
+
+\begin{teo}[Bigon criterion] \label{bigono:teo}
+Two transverse simple closed curves $\gamma_1,\gamma_2$ in $S_g$ are in minimal position if and only if they do not form bigons.
+\end{teo}
+\begin{proof}
+If $\gamma_1$ and $\gamma_2$ create a bigon, the homotopies in Figure \ref{bigono_proof:fig}-(left) transform $\gamma_1$ and $\gamma_2$ into two curves that intersect in a smaller number of points: hence $\gamma_1$ and $\gamma_2$ are not in minimal position.
+
+Suppose now that $\gamma_1$ and $\gamma_2$ do not form bigons: we must show that they are in minimal position. If $\gamma_1$ is trivial, it bounds a disc $D$ as in Figure \ref{bigono_proof:fig}-(right). If $\gamma_2$ intersects $\gamma_1$, an \emph{innermost} argument shows that they form a bigon: the curve $\gamma_2$ intersects $D$ in arcs, each dividing $D$ into two parts; if one part contains no other arc it is a bigon, otherwise we iterate. Therefore $\gamma_1$ and $\gamma_2$ are disjoint and hence in minimal position.\index{innermost argument}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 9 cm] {\iftoggle{BW}{bigono_proof-BW}{bigono_proof}}
+\nota{A bigon can be eliminated via homotopies (left). If $\gamma_1$ bounds a disc and $\gamma_2$ intersects $\gamma_1$, there is a bigon (right).}
+\label{bigono_proof:fig}
+\end{center}
+\end{figure}
+
+It remains to consider the case where both $\gamma_1$ and $\gamma_2$ are non-trivial. 
+The torus case $g=1$ is obtained by readapting the proof of Proposition \ref{mn:prop} and is left as an exercise, so we suppose $g\geqslant 2$.
+
+Fix an arbitrary hyperbolic metric $S_g=\matH^2/_\Gamma$ and let $\pi\colon \matH^2 \to \matH^2/_\Gamma$ be the projection. The closed curves $\gamma_1$ and $\gamma_2$ are now homotopic to two simple closed geodesics $\bar{\gamma}_1$ and $\bar{\gamma}_2$. The lifts
+of $\gamma_i$ and $\bar{\gamma}_i$ in $\matH^2$ are \emph{arcs} and \emph{lines} and there is a $R>0$ such that every arc lies in the $R$-neighbourhood of a line, see the proof of Proposition \ref{semplice:prop}. Arcs and lines have the same endpoints at infinity as in Figure \ref{geodetiche0:fig}-(left). 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 10 cm] {\iftoggle{BW}{geodetiche0-BW}{geodetiche0}}
+\nota{The lifts of $\gamma_i$ and $\bar{\gamma}_i$ have distance bounded by $R$ and hence have the same endpoints (left). Two curves that intersect in more than one point form a bigon (right).} 
+\label{geodetiche0:fig}
+\end{center}
+\end{figure}
+
+Two distinct arcs may intersect at most in one point: if they intersect more, an innermost argument shows that they form a bigon $D$ as in Figure \ref{geodetiche0:fig}-(right), which projects to a bigon $\pi(D)$ in $S_g$. (It is not immediate that $\pi(D)$ is a bigon! The two vertices of $\pi(D)$ might coincide, but this is easily excluded because $S_g$ is orientable.) 
+
+We now show how to count the intersections between $\gamma_1$ and $\gamma_2$ directly in $\matH^2$. Let $C(\gamma_i)\subset \Gamma$ be the conjugacy class of all the hyperbolic transformations corresponding to $\gamma_i$. We know that the lifts of $\bar{\gamma}_i$ are precisely the axis of the hyperbolic transformations in $C(\gamma_i)$.
+
+By Corollary \ref{axis:cor} any two such axis are either incident or ultra-parallel. Hence two lifts of $\gamma_1$ and $\gamma_2$ intersect (in a single point) if and only if the corresponding lifts of $\bar{\gamma}_1$ and $\bar{\gamma}_2$ intersect (in a single point), and this holds if and only if the endpoints are linked in $\partial \matH^2$. We have established two bijective correspondences
+$$\pi^{-1}(\gamma_1) \cap \pi^{-1}(\gamma_2) \longleftrightarrow \pi^{-1}(\bar{\gamma}_1) \cap \pi^{-1}(\bar{\gamma}_2) \longleftrightarrow X$$
+with
+$$X = \big\{(\varphi_1,\varphi_2) \in C(\gamma_1) \times C(\gamma_2) \ \big| 
+\ \Fix(\varphi_1) \ {\rm and}\ \Fix(\varphi_2) \ {\rm are\ linked} \big\}.$$
+The bijective correspondences are $\Gamma$-equivariant. We quotient by $\Gamma$ and find
+$$\gamma_1 \cap \gamma_2 \longleftrightarrow \bar{\gamma}_1 \cap \bar{\gamma}_2 \longleftrightarrow X/_\Gamma.$$
+The cardinality $k$ of $X/_\Gamma$ depends only on the homotopy type of $\gamma_1$ and $\gamma_2$. Therefore any two curves homotopic to $\gamma_1$ and $\gamma_2$ will have at least these $k$ intersections. Hence $\gamma_1$ and $\gamma_2$ are in minimal position.
+\end{proof}
+
+The bigon criterion furnishes an efficient algorithm to calculate the geometric intersection of any pair $\gamma_1$ and $\gamma_2$ of simple closed curves in $S_g$: we put them in transverse position, and then we simplify bigons as much as we can. After finitely many steps we get two curves in minimal position.
+
+Geodesic representatives are typically efficient: they minimise lengths (see Proposition  \ref{minimum:cor}), and they also minimise mutual intersections.
+
+\begin{cor} \label{geodetiche:cor}
+Let $g\geqslant 2$ and $S_g$ have a hyperbolic metric. Two simple closed geodesics with distinct supports are always in minimal position.
+\end{cor}
+\begin{proof}
+Two geodesics do not form bigons: if they do, the bigon lifts to a bigon between two lines in $\matH^2$, but lines intersect at most once.
+\end{proof}
+
+Here is a very simple application of the bigon criterion.
+
+\begin{cor} If two simple closed curves $\gamma, \eta$ intersect transversely in one point, we have $i(\gamma,\eta)=1$. In particular, they are both non-trivial.
+\end{cor}
+\begin{proof}
+The curves $\gamma$ and $\eta$ cannot form bigons.
+\end{proof}
+
+The following exercise shows that the geometric intersection distinguishes a trivial curve from a non-trivial one.
+
+\begin{ex} \label{eta:prop}
+If a simple closed curve $\gamma$ is not trivial, there is another simple closed curve $\eta$ such that $i(\gamma, \eta)>0$.
+\end{ex}
+\begin{proof}[Hint] Use Proposition \ref{finitely:prop} to transform $\gamma$ into a comfortable curve and draw a $\eta$ which intersects $\gamma$ in at most $2$ points without bigons.
+\end{proof}
+
+On the contrary, the algebraic intersection does \emph{not} distinguish the trivial curve from any other separating curve.
+
+\begin{ex} \label{i:torus:ex}
+Let $\gamma$ and $\eta$ be non-trivial simple closed curves in the torus $T$ of type $(p,q)$ and $(r,s)$. We have
+$$i(\gamma, \eta \big) = \left|\det \begin{pmatrix} p & r \\ q & s \end{pmatrix}\right|.$$
+\end{ex}
+
+\subsection{Homotopy and isotopy of curves}
+We are now going to prove some ``homotopy implies isotopy'' theorems: we start with closed curves and we end in the next section with self-diffeomorphisms of surfaces. These slightly technical theorems have the remarkable and pleasant effect of making life easier in dimensions two and three (their impact to three-dimensional topology will be clear in the next chapter): topologists use these theorems everyday when they manipulate two- and three-manifolds.
+
+We start by showing that two non-trivial simple closed curves are homotopic if and only if they are isotopic. We first consider a particular case.
+
+\begin{lemma} \label{parallele:lemma}
+Let $\gamma_1$ and $\gamma_2$ be two non-trivial simple closed curves in $S_g$. If they are disjoint and homotopic, they are parallel. 
+\end{lemma}
+\begin{proof}
+Cut $S_g$ along $\gamma_1\cup \gamma_2$. We do not obtain discs because the curves are non-trivial and if we obtain an annulus the two curves are parallel. In all the other cases we obtain surfaces of negative Euler characteristic, and we may assign some hyperbolic metrics to them that glue to a hyperbolic metric on $S_g$ where both $\gamma_1$ and $\gamma_2$ are distinct geodesics: a contradiction.
+\end{proof}
+
+We now turn to the general case. 
+
+\begin{prop}[Homotopy implies isotopy] \label{ambiente:prop}
+Two non-trivial simple closed curves in $S_g$ are homotopic if and only if they are isotopic. 
+\end{prop}
+\begin{proof}
+Let $\gamma_1$ and $\gamma_2$ be two non-trivial simple closed curves. With a small isotopy we put them in transverse position. 
+Since $i(\gamma_1,\gamma_2) = i(\gamma_1,\gamma_1)=0$ the two curves are either disjoint or form some bigon. If they form a bigon, we can eliminate it via isotopies as in Figure \ref{bigono_proof:fig}-(left) and after finitely many steps we get two disjoint curves.
+
+The curves $\gamma_1$ and $\gamma_2$ are parallel by Lemma \ref{parallele:lemma}, and we use the annulus they cobound to move $\gamma_2$ isotopically over $\gamma_1$. The two curves now have the same support and the same orientation by Proposition \ref{no:inverso:prop}: by Lemma \ref{diffeo:isotopi:lemma} they are isotopic. 
+\end{proof}
+
+\begin{warning}
+Two homotopic simple closed curves in a \emph{three}-manifold are not necessarily isotopic, because they may be knotted differently: the \emph{knot theory} studies precisely this phenomenon.
+\end{warning}
+
+\begin{cor}
+Let $g\geqslant 2$ and $S_g$ have a hyperbolic metric. Every non-trivial simple closed curve in $S_g$ is isotopic to a simple closed geodesic.
+\end{cor}
+
+\subsection{Multicurves}
+Our next goal is to prove a ``homotopy implies isotopy'' theorem for self-diffeomorphisms of surfaces. The core of the proof is contained in the next section, and we will need there the notion of \emph{multicurve}: we now introduce this simple concept and extend some of the previous results from curves to multicurves.\index{multicurve} 
+
+\begin{defn} A \emph{multicurve} $\mu$ in $S_g$ is a finite set of disjoint non-trivial simple closed curves.
+\end{defn}
+See an example in Figure \ref{multicurva:fig}, and note that every component of a multicurve is oriented. A multicurve is \emph{essential} if it has no parallel components. By cutting $S_g$ along an essential multicurve $\mu$ we get finitely many surfaces of negative Euler characteristic: if each such surface is a pair-of-pants, then $\mu$ is a \emph{pants decomposition}, already considered in Section \ref{hyperbolic:surfaces:subsection}.\index{pants decomposition}
+
+\begin{prop} \label{parallele:prop}
+An essential multicurve $\mu$ in $S_g$ with $g\geqslant 2$ has at most $3g-3$ components, and it has $3g-3$ if and only if it is a pants decomposition.
+\end{prop}
+\begin{proof}
+By cutting $S_g$ along $\mu$ we get some surfaces $S^1,\ldots, S^k$ of negative Euler characteristic such that $\chi(S_g) = \chi(S^1)+\ldots +\chi(S^k)$. If each $S^i$ is a pair-of-pants then $\chi(S^i)=-1$ and $k=-\chi(S_g) = 2g-2$; the curves are $\frac 32(2g-2) = 3g-3$ because each curve separates two pants. If some $S^i$ is not a pair-of-pants it can be further subdivided into pair-of-pants.
+\end{proof}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 7 cm] {\iftoggle{BW}{multicurva-BW}{multicurva}}
+\nota{A multicurve in a surface of genus two.} 
+\label{multicurva:fig}
+\end{center}
+\end{figure}
+
+We define the \emph{geometric intersection} $i(\mu_1,\mu_2)$ of two multicurves $\mu_1$ and $\mu_2$ as the minimum number of intersections of two transverse multicurves $\mu_1'$, $\mu_2'$ isotopic to $\mu_1, \mu_2$. This definition extends the geometric intersection of simple closed curves (the original definition for simple closed curves is with ``homotopic'' instead of ``isotopic'', but these are equivalent by Proposition \ref{ambiente:prop}).
+
+Two transverse multicurves $\mu_1$ and $\mu_2$ are in \emph{minimal position} if they intersect exactly in $i(\mu_1, \mu_2)$ points: the bigon criterion easily extends to this context. 
+
+\begin{prop} \label{multicurve:sum:prop}
+Let $\mu_1, \mu_2 \subset S_g$ be two transverse multicurves. The following equality holds:
+$$i(\mu_1, \mu_2) = 
+\sum_{\tiny{\begin{array}{c} \gamma_1 \subset \mu_1 \\ \gamma_2 \subset \mu_2 \end{array}} }  
+i(\gamma_1, \gamma_2)$$
+where the sum is taken on all components $\gamma_1$, $\gamma_2$ of $\mu_1$, $\mu_2$. The multicurves $\mu_1$ and $\mu_2$ are in minimal position if and only if they do not form bigons.
+\end{prop}
+\begin{proof}
+If $\mu_1$ and $\mu_2$ form no bigons, then any two components $\gamma_1$ and $\gamma_2$ form no bigons too (exercise) and are therefore in minimal position. This proves the equality and that $\mu_1$ and $\mu_2$ are in minimal position.
+\end{proof}
+
+The formula says that if we consider a multicurve as a ``sum'' of disjoint simple closed curves, then the geometric intersection $i$ behaves like a bilinear form: this viewpoint will be further explored in Chapter \ref{automorfismi:chapter}.
+
+Note again that $i(\mu,\mu)=0$. We extend Proposition \ref{ambiente:prop} to essential multicurves.
+
+\begin{prop}[Homotopy implies isotopy] \label{ambiente:multicurve:prop}
+Let
+$$\mu_1 = \{\gamma_{1,1}, \ldots, \gamma_{1,n}\}, \quad \mu_2 = \{\gamma_{2,1}, \ldots, \gamma_{2,n}\}$$
+be two essential multicurves in $S_g$.
+If $\gamma_{1,i}$ is homotopic to $\gamma_{2,i}$ for all $i$ then there is an isotopy moving $\mu_1$ to $\mu_2$. 
+\end{prop}
+\begin{proof}
+We adapt the proof of Proposition \ref{ambiente:prop}. Since
+$i(\gamma_{1,i}, \gamma_{2,j}) = i(\gamma_{1,i},\gamma_{1,j}) = 0$ we get $i(\mu_1,\mu_2)=0$ by Proposition \ref{multicurve:sum:prop} and after an isotopy that destroys the bigons we get $\mu_1\cap\mu_2 = \emptyset$. Then Lemma \ref{parallele:lemma} implies that $\gamma_{1,i}$ and $\gamma_{2,i}$ are parallel and we are done.
+\end{proof}
+ 
+\begin{cor} \label{isotopia:geodetiche:cor}
+Let $g\geqslant 2$ and $S_g$ have a hyperbolic metric. Every essential multicurve can be isotoped to a (unique) geodesic essential multicurve. 
+\end{cor}
+
+In particular every pants decomposition straightens to a (unique) geodesic one: this fact will be used in Chapter \ref{Teichmuller:chapter} to parametrize all the hyperbolic metrics on a given $S_g$.
+
+\subsection{Minimal position}
+We end this discussion on multicurves by showing that the minimal position is unique up  to isotopy.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 8 cm] {\iftoggle{BW}{minimale_unica-BW}{minimale_unica}}
+\nota{A bigon between $\eta$ and $\eta'$ intersects $\mu$ in vertical arcs and can be removed via an ambient isotopy that preserves the support of $\mu$.}
+\label{minimale_unica:fig}
+\end{center}
+\end{figure}
+
+\begin{prop} \label{minimale:unica:prop}
+Let $\mu, \eta$ be two multicurves in minimal position in $S_g$. The union $\mu\cup \eta$ of their supports depends up to ambient isotopy only on the isotopy classes of $\mu$ and $\eta$.
+\end{prop}
+\begin{proof}
+Let $\mu', \eta'$ be multicurves in minimal position, individually isotopic to $\mu, \eta$. We need to prove that the supports $\mu'\cup \eta'$ and $\mu\cup \eta$ are ambiently isotopic.
+
+By hypothesis there is an isotopy carrying $\mu'$ to $\mu$, which is ambient since multicurves are compact: hence we can suppose $\mu' = \mu$. We now construct an isotopy that fixes $\mu'=\mu$ as a set (not pointwise!) and carries $\eta'$ to $\eta$. 
+
+Up to a small ambient isotopy fixing the set $\mu$ we may suppose that $\eta$ and $\eta'$ intersect transversely. If $\eta\cap \eta' \neq \emptyset$ then $\eta$ and $\eta'$ form a bigon as in Figure \ref{minimale_unica:fig}-(left): the multicurve $\mu$ intersects the bigon in arcs that join distinct edges as in the figure (because $\mu' = \mu$ forms no bigons with $\eta$ and $\eta'$). We can eliminate the bigon by an ambient isotopy that fixes $\mu$
+as a set, as shown in Figure \ref{minimale_unica:fig}. 
+
+After finitely many steps we get $\eta\cap \eta' = \emptyset$. Since $\eta$ and $\eta'$ are disjoint and isotopic, every component of $\eta$ is parallel to a component of $\eta'$. A maximal set of parallel curves in $\eta \cup \eta'$ is contained in a bigger annulus $[-1,1] \times S^1$ which intersects $\mu$ either into arcs $[-1,1] \times \{{\rm pt}\}$ or into circles $\{{\rm pt}\} \times S^1$. In both cases we easily see that $\mu\cup\eta$ is ambiently isotopic to $\mu\cup \eta'$.
+\end{proof}
+
+As an example, consider two essential multicurves $\eta$ and $\mu$ in $S_g$ with $g\geqslant 2$ (for instance, two non-trivial simple closed curves). A hyperbolic metric on $S_g$ produces two geodesic representatives $\bar{\eta}$ and $\bar{\mu}$ for them, and the following holds:
+\begin{cor} \label{unica:configurazione:cor}
+The support $\bar{\eta}\cup \bar{\mu}$ in $S_g$ does not depend (up to ambient isotopy) on the chosen hyperbolic metric.
+\end{cor}
+\begin{proof}
+With the exception of the common components of $\bar{\eta}$ and $\bar{\mu}$, the rest intersects in minimal position. 
+\end{proof}
+
+This corollary is one of the many instances of the following nice phenomenon: a hyperbolic metric on $S_g$ may be used as an auxiliary structure to define objects or to prove statements which turn out \emph{a posteriori} not to depend on the chosen metric. We will employ this strategy many times in Chapter \ref{automorfismi:chapter}.
+
+\section{Homotopy and isotopy}
+We have proved that ``homotopy implies isotopy'' for non-trivial simple closed curves in $S_g$, and now we want to prove an analogous result for diffeomorphisms of $S_g$.
+A crucial ingredient is the following theorem proved by Smale in the 1950s, which considers the self-diffeomorphisms of the disc $D^2$.
+
+\begin{teo} \label{Smale:teo}
+Two diffeomorphisms $\varphi, \psi\colon D^2 \to D^2$ that coincide on $\partial D^2$ are isotopic, via an isotopy that fixes $\partial D^2$ pointwise.
+\end{teo}
+
+There is a proof of Theorem \ref{Smale:teo} in the topological category that is surprisingly easy and works in any dimension. % it uses a tool called the \emph{Alexander trick}.
+
+\subsection{The Alexander trick} \label{Alexander:subsection}
+The proof of the following fact is so immediate, that it has a name: it is usually called the \emph{Alexander trick}.\index{Alexander trick}
+
+\begin{prop}[Alexander trick] Two homeomorphisms $\varphi$, $\psi\colon D^n \to D^n$ that coincide on $\partial D^n$ are continuously isotopic, via an isotopy that fixes $\partial D^n$ pointwise.
+\end{prop}
+\begin{proof}
+We consider $f=\varphi\circ \psi^{-1}$ and $\id_{D^n}$ and define an isotopy that transforms $f$ into $\id_{D^n}$ fixing $\partial D^n$. The following function does the job:
+$$F(x,t) = \left\{ \begin{matrix} x & {\rm if \ } \|x\| \geqslant t, \\ t f\left(\frac xt \right) & {\rm if\  } \|x\| \leqslant t. \end{matrix} \right.$$
+The proof is complete.
+\end{proof}
+
+Unfortunately this proof does not work in the smooth category, because the function $F$ is not smooth (and not smoothable) at $(0,0)$. Of course, as every continuous map, our $F$ may be approximated by smooth functions, but the injectivity of the slices $F(\cdot, t)$ can be lost in the approximation.  
+
+Moreover, the statement in the smooth category is just false in dimension $n\geqslant 7$: there are self-diffeomorphisms of $D^n$ that are \emph{not} smoothly isotopic to $\id_{D^n}$ in high dimension, and this is connected to the existence of \emph{exotic spheres}, differentiable manifolds that are homeomorphic but not diffeomorphic to $S^n$.\index{exotic sphere} 
+
+\subsection{Self-diffeomorphisms of the disc} \label{self:disc:subsection}
+After this very brief excursion in the topological world, we turn back to the smooth category: every map considered so far is smooth by assumption like in the rest of the book. 
+
+We prove here Theorem \ref{Smale:teo}. We need a fact on planar fields. 
+
+\begin{prop} \label{PB:prop}
+On a nowhere-vanishing vector field on $\matR^2$, a maximal integral curve is never trapped in a compact set.
+\end{prop}
+\begin{proof}
+Suppose by contradiction that a maximal integral curve $\alpha\colon I \to \matR^2$ lies in a compact set $K$ for all $t>t_0$. Its \emph{$\omega$-limit} $\omega(\alpha)\subset K$ is the set of all points $x\in K$ to which $\gamma$ accumulates, that is the intersection of the closures of $\alpha(t_0,\infty)$ for all $t_0 \in I$. The $\omega$-limit is the intersection of a filtration of compact sets and is hence non-empty. Pick a point $p\in\omega(\alpha)$.
+
+Up to a local diffeomorphism, the vector field near $p$ is constant vertical as in Figure \ref{PB:fig}-(1). The integral curves near $p$ are vertical. Since $p\in\omega(\alpha)$, the curve $\alpha$ contains infinitely many of them that tend to the one containing $p$. Two subsequent ones determine a closed curve as in Figure \ref{PB:fig}-(2), that bounds a disc by the Jordan curve theorem. 
+
+We prove that such a disc cannot exist. If it existed, we could reverse all arrows and rotate it to obtain another disc as in Figure \ref{PB:fig}-(3), and by gluing the two discs we would construct as in Figure \ref{PB:fig}-(4) a nowhere-vanishing vector field on the sphere. Such a field of course does not exist since the sphere has non-zero Euler characteristic.
+\end{proof}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11 cm] {\iftoggle{BW}{PB-BW}{PB}}
+\nota{At a point $p$, after a local diffeomorphism we may suppose that the vector field is constantly vertical (1). If $p$ is a limit point of an integral curve $\alpha$ we may find a closed curve that bounds a disc (2). If such a disc existed, we could rotate it and inverse all arrows (3) and glue the two portions to form a nowhere-vanishing vector field on the sphere (4). }
+\label{PB:fig}
+\end{center}
+\end{figure}
+
+We can now prove Theorem \ref{Smale:teo}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {\iftoggle{BW}{trajectories-BW}{trajectories}}
+\nota{A self-diffeomorphism $\varphi$ of $D^2$ fixing $\partial D^2$ pointwise (left). To get an isotopy fixing $\partial D^2$ pointwise we need to rescale via a diffeomorphism that maps each arc as in the right figure to itself, and varies smoothly from $\id$ to $f_t^{-1}$ from bottom to top (right).}
+\label{trajectories:fig}
+\end{center}
+\end{figure}
+
+\begin{proof}[Proof of Theorem \ref{Smale:teo}]
+After composing with $\psi^{-1}$ we can suppose that $\psi=\id$. Now $\varphi|_{S^1}$ is the identity. Every self-diffeomorphism of any compact manifold that fixes the boundary is isotopic to one which is the identity on a collar of the boundary: hence we can suppose that $\varphi=\id$ on a collar of $S^1$.
+
+We sketch $\varphi$ in Figure \ref{trajectories:fig}-(left): vertical lines are transformed into paths with the same endpoints. We want to construct an isotopy between $\varphi$ and $\id_{D^2}$ that ``straightens'' smoothly these lines, and we start by straightening their tangent vector fields.
+
+Consider the constant unitary vertical vector field $X_0=(0,1)$ on $D^2$ and let $X_1$ be its image along the diffeomorphism $\varphi$. It is easy to construct a  homotopy $X_t$ between $X_0$ and $X_1$ through non-vanishing vector fields: we see both $X_0$ and $X_1$ as maps $D^2 \to \matC^*$, we lift them to maps $D^2\to \matC$ via the universal cover $\exp\colon \matC \to \matC^*$, we make a convex combination and we project it back to $\matC^*$.
+By construction the vectors $X_t$ are constantly $(0,1)$ on a collar of $S^1$.
+
+We now carefully integrate the homotopy $X_t$ of vector fields to an isotopy of diffeomorphisms. Let $S^1_+$ and $S^1_-$ be the upper and lower hemisphere of $S^1$. The vectors $X_t$ at $S^1_-$ point inside and those at $S^1_+$ point outside $D^2$. By Proposition \ref{PB:prop} the integral curve $\gamma_x^t$ of $X_t$ starting from a point $(x,-\sqrt{1-x^2}) \in S^1_-$ exits at some point in $S^1_+$ after some time $T_x^t$ that varies smoothly in $x$ and $t$.
+
+The point $\gamma_x^t(u)$ is defined for $u\in [0, T_x^t]$ and varies smoothly on $x,t,u$. We obviously have $T_x^0= 2\sqrt{1-x^2}$ and also $T_x^1 = T_x^0$ since $\gamma_x^1 = \varphi\circ\gamma_x^0$. However $T_x^t$ may not be constant in $t$, so we rescale the integral curves as
+$$\tilde\gamma_x^t(u) = \gamma_x^t\left( u \cdot \frac{T_x^t}{2\sqrt{1-x^2}}\right).$$
+The new curve $\tilde\gamma_x^t$ is defined in the interval $\big[0, 2\sqrt{1-x^2}\big]$ not depending on $t$. We can now define
+$$ \varphi_t \big(x, -\sqrt{1-x^2} + u \big) = \tilde\gamma_x^t\left(u\right).
+$$
+The diffeomorphism $\varphi_t\colon D^2 \to D^2$ furnishes an isotopy between $\id = \varphi_0$ and $\varphi=\varphi_1$. However, the diffeomorphism $\varphi_t$ does not fix the points in $S^1_+$ since the endpoint of $\tilde\gamma_x^t$ has a first coordinate $f_t(x)$ which might be distinct from $x$ when $0<t<1$ (but varies smoothly on $t$ and $x$). 
+
+To fix that it suffices to compose each $\varphi_t$ with a diffeomorphism of $D^2$ that maps each arc as in Figure \ref{trajectories:fig}-(right) to itself and varies smoothly from $\id$ to $f_t^{-1}$ from bottom to top.
+\end{proof}
+
+\begin{oss} \label{Smale:collar:rem}
+If $\varphi\colon D^2 \to D^2$ is the identity on a collar of $S^1$, we can easily transform the isotopy $\varphi_t$ so that it is the identity on this collar for all $t$. This will be useful to glue isotopies.
+\end{oss}
+
+\subsection{Homotopy and isotopy of diffeomorphisms}
+We are now ready to promote homotopies to isotopies of diffeomorphisms. We start with the easier sphere case, which is a simple consequence of Theorem \ref{Smale:teo}.
+
+\begin{teo} \label{S2:omotopi:teo}
+Two diffeomorphisms $\varphi, \psi\colon S^2 \to S^2$ are isotopic $\Longleftrightarrow$ they are homotopic $\Longleftrightarrow$ they are co-oriented.
+\end{teo}
+\begin{proof}
+We suppose that $\varphi$ and $\psi$ are co-oriented and we must prove that they are isotopic. Pick any disc $D\subset S^2$. Both $\varphi$ and $\psi$ send $D$ to some disc in $S^2$. Theorem \ref{dischi:teo} furnishes an ambient isotopy relating these maps, so we may suppose that $\varphi$ and $\psi$ coincide on $D$. The closed complement is another disc and we conclude by Theorem \ref{Smale:teo}.
+
+More precisely, we pick a smaller closed disc $D' \subset \interior D$ and consider the closed complement $D'' = S^2\setminus \interior {D'}$. The diffeomorphisms $\varphi$ and $\psi$ of $D''$ coincide on a collar of $\partial D''$ and Theorem \ref{Smale:teo} together with Remark \ref{Smale:collar:rem} furnishes an isotopy that is the identity on that collar. We extend this isotopy as the identity on $D\setminus D''$ and we are done.
+\end{proof}
+
+The theorem has a very important three-dimensional application.\index{Smale theorem}
+
+\begin{cor} [Smale's Theorem]
+Every self-diffeomorphism of $S^2$ extends to a self-diffeomorphism of $D^3$.
+\end{cor}
+\begin{proof}
+Every self-diffeomorphism of $S^2$ is isotopic either to the identity or to a reflection by Theorem \ref{S2:omotopi:teo}. We map a collar of $S^2$ to itself using this isotopy, then extend to the rest of $D^3$ using the identity or the reflection.
+\end{proof}
+
+We can finally promote homotopies to isotopies on a general genus-$g$ surface $S_g$. The proof uses many of the techniques introduced in the last sections: we employ multicurves to cut the surface into discs, and then use Theorem \ref{Smale:teo} individually on each disc.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 10cm] {\iftoggle{BW}{decomposizione2-BW}{decomposizione}}
+\nota{Two essential multicurves (\iftoggle{BW}{dark and light grey}{blue and red}) in minimal position, which subdivide the surface into hexagons.}
+\label{multicurva_decomposizione:fig}
+\end{center}
+\end{figure}
+
+\begin{teo} \label{omotopi:isotopi:teo}
+Two diffeomorphisms $\varphi$, $\psi\colon S_g \to S_g$ are isotopic if and only if they are homotopic.
+\end{teo}
+\begin{proof}
+We have seen the case $g=0$, so we suppose $g\geqslant 1$. By composing with $\psi^{-1}$ we can suppose that $\psi = \id$.
+
+Fix two essential multicurves $\mu$ and $\eta$ as in Figure \ref{multicurva_decomposizione:fig}. The figure easily generalises to any genus $g$, and the reader may check that $\mu$ and $\eta$ subdivide the surface into hexagons (or a single square when $g=1$). The important point is that $S_g \setminus (\mu \cup \eta)$ consists of polygons, none of which is a bigon.
+
+By hypothesis $\varphi$ is homotopic to the identity, so the image multicurves $\varphi(\mu)$ and $\varphi(\eta)$ are curve by curve homotopic to $\mu$ and $\eta$. By Proposition \ref{ambiente:multicurve:prop} the multicurve $\varphi(\mu)$ is isotopic to $\mu$, and $\varphi(\eta)$ is isotopic to $\eta$.
+
+The curves $\mu$ and $\eta$ are in minimal position because there are no bigons. The images $\varphi(\mu)$ and $\varphi(\eta)$ are also in minimal position because $\varphi$ is a diffeomorphism. 
+By Proposition \ref{minimale:unica:prop} the supports $\mu \cup \eta$ and $\varphi(\mu\cup \eta)$ are ambiently isotopic, so we may suppose that they coincide.
+
+The graph $\mu\cup \eta$ is made of vertices (the intersections $\mu\cap \eta$) and edges. The components of $\mu$ and $\eta$ are pairwise non-homotopic simple closed curves, hence $\varphi$ sends necessarily every component to itself, and it does so orientation-preservingly by Proposition \ref{no:inverso:prop}. This implies easily that vertices and edges are sent to themselves by $\varphi$. Hence $\varphi=\id$ on vertices and after an isotopy we may suppose that $\varphi=\id$ on edges too. 
+
+After an isotopy we may also suppose that $\varphi = \id$ on a regular neighbourhood $U$ of $\mu\cup\eta$, obtained by thickening the cellularisation of $\mu\cup\eta$ to a handle decomposition with 0- and 1-handles. The complement of $U$ consists of discs (the hexagons). Consider one such disc $D$, enlarged a bit so that $\partial D \subset \interior U$. The map $\varphi$ sends $D$ to itself and is the identity on a collar of $\partial D$. By Theorem \ref{Smale:teo} and Remark \ref{Smale:collar:rem} there is an isotopy connecting $\varphi$ to $\id$ on every such disc $D$ that fixes pointwise this collar, so we can extend it constantly on the rest of $U$ and get a global isotopy on $S_g$ connecting $\varphi$ and $\id$.
+\end{proof}
+
+This theorem has important consequences in dimensions two and three.
+
+\section{Mapping class group} \label{MCG:section}
+We have just proved that two self-diffeomorphisms of $S_g$ are homotopic if and only if they are isotopic. We have also seen that when $g=0$ there are only two self-diffeomorphisms up to isotopy: the identity and a reflection. Do we get a more complicated picture when $g\geqslant 1$? Yes, we get an interesting group, called the \emph{mapping class group} of $S_g$. The group is naturally defined on all finite-type surfaces $S_{g,b,p}$.\index{group!mapping class group}
+
+\subsection{Definition}
+Recall that the finite-type orientable surface $S_{g,b,p}$ has genus $g$, it has $b$ boundary components, and $p$ punctures. 
+\begin{defn}
+The \emph{mapping class group} of $S_{g,b,p}$ is the group
+$$\MCG(S_{g,b,p}) = \Diffeo^+(S_{g,b,p})/_\sim$$
+where $\Diffeo^+(S_{g,b,p})$ indicates the group of all orientation-preserving diffeomorphisms $S_{g,b,p}\to S_{g,b,p}$ that fix pointwise the boundary and $\varphi\sim\psi$ if $\varphi$ and $\psi$ are connected by an isotopy that fixes the boundary pointwise at every level.
+\end{defn}
+
+\begin{example}
+The groups $\MCG(S^2)$ and $\MCG(D^2)$ are trivial by Theorems \ref{Smale:teo} and \ref{S2:omotopi:teo}.
+\end{example}
+
+The group $\MCG(S_{g,b,p})$ acts on $H_1(S_{g,b,p}, \matZ)$ since homotopic functions induce the same maps in homology. We get a group homomorphism 
+$$\MCG(S_{g,b,p}) \longrightarrow \Aut^+\big(H_1(S_{g,b,p}, \matZ)\big) = \Aut^+ \big(\matZ^{n}\big) = \SL_{n}(\matZ)$$
+with $n=2g+ \max\{b+p-1,0\}$. This homomorphism is neither injective nor surjective in general. Its kernel is called the \emph{Torelli group} of $S_{g,b,p}$.\index{group!Torelli group} 
+
+The mapping class group of a sphere is trivial, so we look at the torus.
+
+\subsection{The torus}
+The mapping class group of the torus is a familiar group of $2\times 2$ matrices.
+
+\begin{prop} \label{Torelli:toro:prop}
+The Torelli group of the torus $T$ is trivial and
+$$\MCG(T) \Isom \Aut^+(H_1(T)) = \SLZ.$$
+\end{prop}
+\begin{proof}
+Fix a meridian $m$ and longitude $l$ of $T$. A diffeomorphism $\varphi$ of $T$ that acts trivially on $H_1(T) = \pi_1(T) = \matZ^2$ sends $m$ and $l$ to two simple closed curves $\varphi(m)$ and $\varphi(l)$ homotopic and hence isotopic to $m$ and $l$: the proof of Theorem \ref{omotopi:isotopi:teo} shows that $\varphi$ is isotopic to the identity. Therefore the Torelli group is trivial.
+
+A matrix $A\in\SLZ$ acts linearly on $\matR^2$ preserving the orientation and the lattice $\matZ^2$ and hence descends to a self-diffeomorphism of $T=\matR^2/_{\matZ^2}$. This shows that the map $\MCG(T) \to \Aut^+(H_1(T)) = \SL_2(\matZ)$ is surjective.
+\end{proof}
+
+The mapping class group of a surface $S_g$ of genus $g\geqslant 2$ is not isomorphic to a familiar group of matrices, at least as far as we know: indeed (except some low-genus cases) it is still unknown whether $\MCG(S_{g,b,p})$ is \emph{linear}, \emph{i.e.}~isomorphic to a subgroup of $\GL(n,\matC)$ for some integer $n$.
+
+For the moment we content ourselves with a concrete description of some particularly simple elements of $\MCG(S_{g,b,p})$ called \emph{Dehn twists}.
+
+\subsection{Dehn twists} \label{Dehn:twist:subsection}
+Let $\gamma$ be a non-trivial simple closed curve in the interior of $S_{g,b,p}$. The \emph{Dehn twist} along $\gamma$ is the element $T_\gamma \in \MCG(S_{g,b,p})$ defined as follows.\index{Dehn twist}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {\iftoggle{BW}{Dehn_twist-BW}{Dehn_twist}}
+\nota{A Dehn twist along a curve $\gamma$ maps a transverse arc $\mu$ onto an arc which makes a complete left turn.}
+\label{Dehn_twist:fig}
+\end{center}
+\end{figure}
+
+Pick a tubular neighbourhood of $\gamma$ orientation-preservingly diffeomorphic to $S^1\times [-1,1]$ where $\gamma$ lies as $S^1\times\{0\}$. Let $f\colon[-1, 1] \to \matR$ be a smooth function which is zero in $\left[-1, -\frac 1 2\right]$ and $2\pi$ on $\left[\frac 1 2,1\right]$. Let 
+$$T_\gamma\colon S_{g,b,p} \longrightarrow S_{g,b,p}$$ 
+be the diffeomorphism that acts on the tubular neighbourhood as $T_\gamma(e^{i\alpha},t) = (e^{i(\alpha+f(t))},t)$ and on its complementary set in $S_{g,b,p}$ as the identity. We may visualise $T_\gamma$ by noting that it gives a complete left turn to any arc $\mu$ that intersects $\gamma$ as in Figure \ref{Dehn_twist:fig}. 
+
+\begin{prop} The element $T_\gamma \in \MCG(S_{g,b,p})$ is well-defined and depends only on the isotopy class of $\gamma$.
+\end{prop}
+\begin{proof}
+In the definition of $T_\gamma$ we have chosen a tubular neighbourhood for $\gamma$ and a smooth function $f$. Tubular neighbourhoods are ambiently isotopic, and functions with fixed extremes are isotopic too: these facts imply easily that the isotopy class of $T_\gamma$ is well-defined and depends only on the isotopy class of $\gamma$.
+\end{proof}
+
+\begin{oss} To define $T_\gamma$ we needed the orientation of $S_{g,b,p}$, but not an orientation for $\gamma$. A bit surprisingly, if we change the orientation of $\gamma$ the element $T_\gamma$ remains unaffected. 
+
+The inverse $T_\gamma^{-1}$ transforms every curve $\mu$ crossing $\gamma$ via a complete \emph{right}-turn and is sometimes called a \emph{negative Dehn twist}.
+\end{oss}
+
+We construct some examples in the torus $T$.
+Let $m$ and $l$ be some fixed meridian and longitude on the oriented $T$ forming a positive basis, so that $m\cdot l = +1$ and we get an identification $\MCG(T) = \SLZ$.
+
+\begin{prop}
+The Dehn twists $T_m$ and $T_l$ are
+$$T_m=\begin{pmatrix} 1 & {-1} \\ 0 & 1 \end{pmatrix}, \qquad T_l = \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix}.$$
+\end{prop}
+\begin{proof}
+In homology we find
+$$T_m(m) = m, \quad T_m(l) = l-m, \qquad T_l(l) = l, \quad T_l(m) =m+l.$$
+The proof is complete.
+\end{proof}
+
+By Exercise \ref{one:non-sep:ex} there is a unique non-separating simple closed curve $\gamma$ in $S_g$ up to self-diffeomorphism for every $g\geq 1$. Therefore the Dehn twists $T_\gamma$ along non-separating curves in $S_g$ are all conjugate in $\MCG(S_g)$. In the torus case these can be easily identified algebraically.
+
+\begin{cor}
+An element $A\in \SL_2(\matZ) = \MCG(T)$ is a (positive or negative) Dehn twist $\Longleftrightarrow$ it is primitive and $\tr A = 2$.
+\end{cor}
+\begin{proof}
+Every such matrix in $\SL_2(\matZ)$ is conjugate to $\matr 1 {\pm 1} 0 1$. 
+\end{proof}
+
+\begin{ex} The Dehn twists $T_m$ and $T_l$ generate $\MCG(T)$.
+\end{ex}
+
+We have seen that Dehn twists generate $\MCG(T)$, while many elements $A\in \MCG(T)$ are neither Dehn twists nor powers of Dehn twists (those with $\tr A \neq 2$). These two facts extend to higher-genus surfaces $S_g$; we start by generalising the first.
+
+\subsection{Dehn twists generate}
+Dehn twists are basic elements in the mapping class group, and we now prove that they generate the whole group. We restrict ourselves for simplicity to compact surfaces $S_{g,b}$.
+
+\begin{teo} \label{twists:generate:teo}
+The group $\MCG(S_{g,b})$ is generated by Dehn twists.
+\end{teo}
+
+To prove the theorem we will need some preliminary facts. We say that two non-separating simple closed curves in the interior of $S_{g,b}$ are \emph{related} if there is a combination of isotopies and Dehn twists transforming the first into the second.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 9 cm] {\iftoggle{BW}{related-BW}{related}}
+\nota{Two curves $\alpha$ \iftoggle{BW}{}{(red) }and $\beta$ \iftoggle{BW}{}{(green) }intersecting in one point are related: we get $\alpha = T_\beta(T_\alpha(\beta))$.}
+\label{related:fig}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {\iftoggle{BW}{related2-BW}{related2}}
+\nota{Pick two consecutive points in $\alpha$ \iftoggle{BW}{}{(green) }that intersect $\beta$\iftoggle{BW}{}{ (red)}. We can find a third non-separating curve $\gamma$ \iftoggle{BW}{}{(blue) }intersecting $\alpha$ and $\beta$ in $<k$ points. There are two cases (1) and (2): in (1) the curve $\gamma$ intersects $\beta$ in one point and is hence non-separating, in (2) we have two possibilities $\gamma_1, \gamma_2$, and one is certainly non-separating since $\beta$ is.}
+\label{related2:fig}
+\end{center}
+\end{figure}
+
+\begin{lemma}
+The non-separating curves in $S_{g,b}$ are all related.
+\end{lemma}
+\begin{proof}
+Let $\alpha$ and $\beta$ be two non-separating curves. 
+Up to isotopy they intersect transversely into some $k$ points.
+If $k=1$ they are related by a couple of Dehn twists as shown in Figure \ref{related:fig}. If $k=0$, since they are both non-separating, one sees easily that there is another curve $\gamma$ with $i(\alpha,\gamma) = i(\beta,\gamma)=1$: hence $\alpha$ and $\beta$ are both related to $\gamma$, so they are related themselves. If $k\geqslant 2$ we can find a curve $\gamma$ intersecting $\alpha$ and $\beta$ transversely into $<k$ points as shown in Figure \ref{related2:fig} and we proceed by induction on $k$.
+\end{proof}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {\iftoggle{BW}{related3-BW}{related3}}
+\nota{The arcs $\alpha$ \iftoggle{BW}{}{(red) }and $\beta$ \iftoggle{BW}{}{(green) }intersect at their endpoints and maybe at some $k$ interior points. If $k=0$ and they are oriented as in (1), a Dehn twist along $\gamma$ transforms $\beta$ into $\alpha$. If they are oriented as in (2), a negative Dehn twist along $\gamma$ transforms this configuration into (1). If $k>0$ we look at the first intersection point in $\alpha$. If the orientations are coherent as in (3) a Dehn twist along $\gamma$ decreases $k$. It the orientations are not coherent we change them as in (2).}
+\label{related3:fig}
+\end{center}
+\end{figure}
+
+We now consider $S_{g,b}$ with $b\geqslant 2$ and fix two points $p,q$ in two distinct boundary components of $S_{g,b}$. We consider all the properly embedded arcs in $S_{g,b}$ with endpoints at $p$ and $q$. As above, we say that two such arcs are \emph{related} if there is a combination of Dehn twists and isotopies transforming the first into the second.
+
+\begin{lemma}
+The arcs in $S_{g,b}$ with endpoints at $p$ and $q$ are all related.
+\end{lemma}
+\begin{proof}
+Pick two arcs $\alpha$ and $\beta$ and put them into transverse position: they intersect at their endpoints $p$ and $q$ and maybe transversely at some $k$ other points. Figure \ref{related3:fig} shows that after isotopies and Dehn twists we get $\alpha = \beta$.
+\end{proof}
+
+We can finally prove Theorem \ref{twists:generate:teo}.
+\begin{proof}[Proof of Theorem \ref{twists:generate:teo}]
+Let $\varphi$ be a self-diffeomorphism of $S_{g,b}$ fixing pointwise the boundary. We prove that $\varphi$ is generated by isotopies and Dehn twists.
+
+We first prove the case $g=0$ by induction on $b$. We know that $\MCG(S_{0,1})$ is trivial, so we suppose $b\geqslant 2$. Let $p,q$ be points in distinct boundary components of $S_{0,b}$, and $\alpha$ be an arc connecting them. All the arcs with endpoints in $p$ and $q$ are related, and hence $\alpha$ and $\varphi(\alpha)$ are. Therefore up to composing with Dehn twists and isotopies we may suppose that $\varphi$ is the identity of $\alpha$ and hence also on a tubular neighbourhood of $\alpha$. We cut $S_{0,b}$ along $\alpha$ and get $S_{0,b-1}$, with $\varphi$ transformed into a self-diffeomorphism of $S_{0,b-1}$. By induction on $b$ the new $\varphi$ is generated by Dehn twists and isotopies, so the original $\varphi$ also is.
+
+We prove the case $g>0$ by induction on $g$. Let $\alpha$ be a non-separating simple closed curve. Since these are all related, up to isotopies and Dehn twists we may suppose that $\varphi$ is the identity on $\alpha$; as above we can cut $S_{g,b}$ along $\alpha$, get $S_{g-1,b+2}$ and conclude by induction on $g$. 
+\end{proof}
+
+\subsection{Action on simple closed curves}
+We now show that every element $\varphi\in\MCG(S_g)$ is determined by the way it permutes the (isotopy classes of) simple closed curves in $S_g$.
+
+\begin{prop} \label{action:curves:prop}
+The action of $\varphi\in\MCG(S_g)$ on the isotopy classes of simple closed curves is faithful.
+\end{prop}
+\begin{proof}
+The proof of Theorem \ref{omotopi:isotopi:teo} shows that if $\varphi$ fixes the isotopy classes of two essential multicurves $\mu$ and $\eta$ as in Figure \ref{multicurva_decomposizione:fig} then it is isotopic to the identity.
+\end{proof}
+
+Recall that every simple closed curve is oriented by assumption: if we considered \emph{unoriented} simple closed curves the proposition would be false, because in low genus there are some $\varphi$ that send every curve to its inverse: this happens for instance with the map $-I \in \SLZ = \MCG(T)$. 
+
+\subsection{References}
+The main source for this chapter is the book of Farb -- Margalit \cite{FM}, which contains a lot more information on the mapping class group of surfaces. We have also consulted Benedetti -- Petronio \cite{BP} and Thurson's notes \cite{Th} and book \cite{Th_book}, in particular for Smale's Theorem, that was originally proved in \cite{Sma}.
+

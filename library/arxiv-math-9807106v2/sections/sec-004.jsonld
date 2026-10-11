@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-9807106v2/sections/sec-004",
   "@type": [
     "doco:Section"
   ],
-  "title": "Quantised ‘q’-characters",
-  "pageStart": 25,
-  "pageEnd": 28,
+  "title": "Character ring and its structure constants",
+  "pageStart": 17,
+  "pageEnd": 25,
   "contains": [
     "library/arxiv-math-9807106v2/blocks/prose-sec-004"
   ],
-  "derivedFrom": "library/arxiv-math-9807106v2/manifest",
-  "sourceDocument": "library/arxiv-math-9807106v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9807106v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9807106v2/manifest.jsonld",
   "provenance": "ingested"
 }

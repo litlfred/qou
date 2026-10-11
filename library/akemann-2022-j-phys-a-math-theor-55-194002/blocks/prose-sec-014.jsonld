@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-014",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-014",
   "kind": "prose",
-  "title": "The large-n limit at fixed k, Nf and ν",
-  "pageStart": 21,
-  "pageEnd": 24,
-  "text": "../sections/sec-014-51-the-large-n-limit-at-fixed-k-nf-and-ν.md",
-  "derivedFrom": "library/akemann-2022-j-phys-a-math-theor-55-194002/manifest",
-  "sourceDocument": "library/akemann-2022-j-phys-a-math-theor-55-194002/manifest",
+  "title": "Data availability statement",
+  "pageStart": 33,
+  "pageEnd": 33,
+  "text": "../sections/sec-014-data-availability-statement.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/akemann-2022-j-phys-a-math-theor-55-194002/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/akemann-2022-j-phys-a-math-theor-55-194002/manifest.jsonld",
   "provenance": "ingested"
 }

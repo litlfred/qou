@@ -5,7 +5,8 @@
   "file": "0904.1556v2.pdf",
   "sha256": "a1a43786d817f08560d09660297fa55e37cfc3c8c861e12d06c24781f52764f3",
   "bytes": 572122,
-  "pages": 73
+  "pages": 73,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "The Algebra of Grand Unified Theories",
   "authors_raw": "John Baez and John Huerta",
-  "abstract": "The Standard Model is the best tested and most widely accepte d theory of elementary particles we have today. It may seem complicated and arbitrary, but it has hidden patterns that are revealed by the relations hip between three ‘grand uniﬁed theories’: theories that unify forces and par ticles by extend- ing the Standard Model symmetry group U(1) × SU(2) × SU(3) to a larger group. These three are Georgi and Glashow’s SU(5) theory, Ge orgi’s theory based on the group Spin(10), and the Pati–Salam model based o n the group SU(2) × SU(2) × SU(4). In this expository account for mathematicians, we ex - plain only the portion of these theories that involves ﬁnite -dimensional group representations. This allows us to reduce the prerequisite s to a bare minimum while still giving a taste of the profound puzzles that physi cists are struggling to solve.",
+  "abstract": "The Standard Model is the best tested and most widely accepte d theory of elementary particles we have today. It may seem complicated and arbitrary, but it has hidden patterns that are revealed by the relations hip between three \u2018grand uni\ufb01ed theories\u2019: theories that unify forces and par ticles by extend- ing the Standard Model symmetry group U(1) \u00d7 SU(2) \u00d7 SU(3) to a larger group. These three are Georgi and Glashow\u2019s SU(5) theory, Ge orgi\u2019s theory based on the group Spin(10), and the Pati\u2013Salam model based o n the group SU(2) \u00d7 SU(2) \u00d7 SU(4). In this expository account for mathematicians, we ex - plain only the portion of these theories that involves \ufb01nite -dimensional group representations. This allows us to reduce the prerequisite s to a bare minimum while still giving a taste of the profound puzzles that physi cists are struggling to solve.",
   "docinfo": {
    "Producer": "GPL Ghostscript 10.01.2",
    "CreationDate": "D:20241126171342-05'00'",
@@ -25,7 +26,7 @@
    "Title": "",
    "Author": ""
   },
-  "title_prev": "The Algebra of Grand Uniﬁed Theories",
+  "title_prev": "The Algebra of Grand Uni\ufb01ed Theories",
   "title_lines": [
    "The Algebra of Grand Unified Theories"
   ]
@@ -152,14 +153,14 @@
   },
   {
    "level": 2,
-   "title": "The Pati–Salam Model",
+   "title": "The Pati\u2013Salam Model",
    "page": 48,
    "source": "outline",
    "number": "3.3"
   },
   {
    "level": 2,
-   "title": "The Route to Spin(10) via Pati–Salam",
+   "title": "The Route to Spin(10) via Pati\u2013Salam",
    "page": 55,
    "source": "outline",
    "number": "3.4"
@@ -344,7 +345,7 @@
   {
    "id": "sec-016-33-the-patisalam-model",
    "number": "3.3",
-   "title": "The Pati–Salam Model",
+   "title": "The Pati\u2013Salam Model",
    "level": 2,
    "page_start": 48,
    "page_end": 55,
@@ -354,7 +355,7 @@
   {
    "id": "sec-017-34-the-route-to-spin10-via-patisalam",
    "number": "3.4",
-   "title": "The Route to Spin(10) via Pati–Salam",
+   "title": "The Route to Spin(10) via Pati\u2013Salam",
    "level": 2,
    "page_start": 55,
    "page_end": 62,
@@ -387,6 +388,173 @@
   "likely_scanned": false,
   "toc_entries": 21,
   "sections": 20,
-  "chars_total": 156061
+  "chars_total": 156061,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "guts.arxiv.2.tex",
+   "tex_sections": 22,
+   "overlaid": 17,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.998,
+     "coverage_ratio": 0.796,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-the-standard-model",
+     "title": "The Standard Model",
+     "prose_ratio": 0.053,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-11-guide-to-further-reading",
+     "title": "Guide to Further Reading",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.687,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-21-isospin-and-su2",
+     "title": "Isospin and SU(2)",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-22-the-fundamental-fermions",
+     "title": "The Fundamental Fermions",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-221-quarks",
+     "title": "Quarks",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-222-leptons",
+     "title": "Leptons",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-23-the-fundamental-forces",
+     "title": "The Fundamental Forces",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-231-isospin-and-su2-redux",
+     "title": "Isospin and SU(2), Redux",
+     "prose_ratio": 0.945,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-232-hypercharge-and-u1",
+     "title": "Hypercharge and U(1)",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-233-electroweak-symmetry-breaking",
+     "title": "Electroweak Symmetry Breaking",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-234-color-and-su3",
+     "title": "Color and SU(3)",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-24-the-standard-model-representation",
+     "title": "The Standard Model Representation",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-25-generations",
+     "title": "Generations",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-31-the-su5-gut",
+     "title": "The SU(5) GUT",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-32-the-spin10-theory",
+     "title": "The Spin(10) Theory",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-33-the-patisalam-model",
+     "title": "The Pati\u2013Salam Model",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-34-the-route-to-spin10-via-patisalam",
+     "title": "The Route to Spin(10) via Pati\u2013Salam",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-35-the-question-of-compatibility",
+     "title": "The Question of Compatibility",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-4-conclusion",
+     "title": "Conclusion",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

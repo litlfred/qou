@@ -10,7 +10,7 @@ import { simulator } from "../../schema/builders";
 export default simulator({
   label: "sim:double-slit-analytical",
   title: "Double-Slit Analytical Simulator",
-  html: "fsh-guts/deprecated/simulators/double_slit_simulator.html",
+  html: "simulators/double_slit_simulator.html",
   uses: [
     "prop:local-substrate-q",
     "def:categorical-dirac-operator",

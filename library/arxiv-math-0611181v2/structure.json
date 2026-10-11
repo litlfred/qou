@@ -5,7 +5,8 @@
   "file": "0611181v2.pdf",
   "sha256": "6931e3ebca584de90bfb4efe82875c3f342a15db7e492c2956c70b53a7141b60",
   "bytes": 199563,
-  "pages": 13
+  "pages": 13,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "Proof of the volume conjecture for Whitehead chains",
   "authors_raw": "November 29, 2021",
-  "abstract": "We prove the volume conjecture for an inﬁnite family of links called White- head chains that generalizes both the Whitehead link and the Borromean rings.",
+  "abstract": "We prove the volume conjecture for an in\ufb01nite family of links called White- head chains that generalizes both the Whitehead link and the Borromean rings.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20211203101352-05'00'",
@@ -93,6 +94,43 @@
   "likely_scanned": false,
   "toc_entries": 3,
   "sections": 3,
-  "chars_total": 20909
+  "chars_total": 20909,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "artikelscriptie7.tex",
+   "tex_sections": 3,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-proof-of-the-main-theorem",
+     "title": "Proof of the main theorem",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-proof-of-the-lemmas",
+     "title": "Proof of the lemmas",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

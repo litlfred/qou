@@ -8,28 +8,23 @@ pages: 19-20
 source_pdf: 1702.00039v1.pdf
 source_sha256: b47ca7d1cf7b44be
 doc_brief: "Gentle introduction to Soergel bimodules I: The basics NICOLAS LIBEDINSKY — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.938
 ---
-It is one of the most important achievements in the theory of Soergel bimod-
-ules the proof [EW] by B. Elias and G. Williamson of the conjecture (stated
-by Kazhdan and Lusztig) that Kazhdan-Lusztig polynomials have positive co-
-efﬁcients. We will come back to this beautiful and fundamental result in a
-subsequent paper of this saga. For the moment, this theorem gives rise to the
-following question.
-Question 3.6 Give a combinatorial formula for the coefﬁcients of Kazhdan-
-Lusztig polynomials, i.e. express the coefﬁcients of px,y as the cardinality of
-some combinatorially deﬁned set (even for the symmetric group this would be
-extremely interesting).
-19
-For the second question we have to introduce the Braid groupBW of a Coxeter
-system (W,S ). It is the group
-⟨σs,s∈S| (σsσr)msr =e if s⁄=r∈S andmsr is ﬁnite⟩.
-The fact that we imposes⁄=r is equivalent to not ask thats2 =e for alls∈S.
-Thus the braid group ofW is inﬁnite unless W is trivial.
-Question 3.7 Is the following group morphism
-BW→H (W )
-σs↦→hs
-an injection?
-There is a categorical version of this question due to Rouquier. He conjectures
-that “the braid group injects in the 2-braid group”. We will explain this conjec-
-ture in detail in a subsequent paper. But we must say that Question 3.7 implies
-the conjecture of Rouquier.
+It is one of the most important achievements in the theory of Soergel bimodules the proof [@EW] by B. Elias and G. Williamson of the conjecture (stated by Kazhdan and Lusztig) that Kazhdan-Lusztig polynomials have positive coefficients. We will come back to this beautiful and fundamental result in a subsequent paper of this saga. For the moment, this theorem gives rise to the following question.
+
+::: ques
+Give a combinatorial formula for the coefficients of Kazhdan-Lusztig polynomials, i.e. express the coefficients of $p_{x,y}$ as the cardinality of some combinatorially defined set (even for the symmetric group this would be extremely interesting).
+:::
+
+For the second question we have to introduce the *Braid group* $B_W$ of a Coxeter system $(W,S)$. It is the group $$\langle \sigma_s, s\in S\ \vert \ (\sigma_s\sigma_r)^{m_{sr}}=e\ \ \mathrm{if}\  s\neq r \in S \ \mathrm{and}\  m_{sr} \ \mathrm{is}\ \ \mathrm{finite} \rangle.$$ The fact that we impose $s\neq r$ is equivalent to not ask that $s^2=e$ for all $s\in S.$ Thus the braid group of $W$ is infinite unless $W$ is trivial.
+
+::: ques
+[]{#braid label="braid"} Is the following group morphism $$\begin{aligned}
+B_W&\rightarrow \mathcal H(W)\\
+\sigma_s&\mapsto h_s
+\end{aligned}$$ an injection?
+:::
+
+There is a categorical version of this question due to Rouquier. He conjectures that "the braid group injects in the 2-braid group". We will explain this conjecture in detail in a subsequent paper. But we must say that Question [\[braid\]](#braid){reference-type="ref" reference="braid"} implies the conjecture of Rouquier.

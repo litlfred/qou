@@ -30,5 +30,7 @@ computation with left multiplication yields the opposite sign.
 Nothing in the argument uses an ordering, a radical, or any other archimedean
 construct — only the quaternion multiplication table — so the Lean statement is
 made over a generic commutative ring and specializes to $\mathbb{H} =
-\mathrm{Quaternion}\,\mathbb{R}$ for the quaternionic-contact geometry.
+\mathrm{Quaternion}\,\mathbb{R}$, the smooth local model of the cone. The
+bracket is therefore a statement about that model, not about the link
+$UT(\Sigma_4)$, whose own triad is the split $\mathfrak{sl}_2(\mathbb{R})$.
 $\blacksquare$

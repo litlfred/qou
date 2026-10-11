@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1804.10084v1/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1804.10084v1/blocks/prose-sec-005",
   "kind": "prose",
   "title": "Discussion and conclusion",
   "pageStart": 8,
   "pageEnd": 10,
   "text": "../sections/sec-005-4-discussion-and-conclusion.md",
-  "derivedFrom": "library/arxiv-1804.10084v1/manifest",
-  "sourceDocument": "library/arxiv-1804.10084v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1804.10084v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1804.10084v1/manifest.jsonld",
   "provenance": "ingested"
 }

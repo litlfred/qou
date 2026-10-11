@@ -6,7 +6,8 @@
   "sha256": "45b9ed90006536b3c3ed2678f246941eac8deb7ca9ab740a7b67f3c9b54c7458",
   "bytes": 692539,
   "pages": 21,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -145,6 +146,64 @@
   "likely_scanned": false,
   "toc_entries": 6,
   "sections": 6,
-  "chars_total": 48976
+  "chars_total": 48976,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "note.tex",
+   "tex_sections": 8,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-octahedral-colorings",
+     "title": "Octahedral colorings",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-the-holonomy-of-an-octahedral-coloring",
+     "title": "The holonomy of an octahedral coloring",
+     "prose_ratio": 0.913,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-gauge-transformations",
+     "title": "Gauge transformations",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-shape-parameters-and-the-potential-function",
+     "title": "Shape parameters and the potential function",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-bibliography",
+     "title": "Bibliography",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

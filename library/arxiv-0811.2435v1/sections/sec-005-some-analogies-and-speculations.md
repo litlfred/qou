@@ -8,83 +8,20 @@ pages: 15-17
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
 doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
+text_source: latex
+latex_prose_ratio: 0.984
+latex_coverage_ratio: 0.979
 ---
-The above formulas for symplectomorphisms are partially mo tivated by [40],
-Section 10, where similar formulas appeared in a diﬀerent pr oblem. Both
-formulas involve Hamiltonian vector ﬁelds associated with the dilogarithm
-function. The problem discussed in [40] was the reconstruct ion of the rigid
-analytic K3 surface from its skeleton, which is a sphere S2 equipped with an
-integral aﬃne structure, singular at a ﬁnite set of points. T he group which
-is very similar to the pro-nilpotent group GV was introduced in the loc. cit.
-where we assigned symplectomorphisms to edges of a certain t ree inS2. That
-tree should be thought of as an analog of the walls in the space of stability
-structures. Edges of the tree (we called them “lines” in [40] ) correspond to
-pseudo-holomorphic discs with the boundary on the Lagrangi an toric ﬁbers
-of the dual K3 surface. When we approach the “large complex st ructure
-limit” cusp in the moduli space of K3 surfaces, the discs dege nerate into
-gradient lines of some smooth functions on S2, thus deﬁning edges of the
-tree. Hence the reconstruction problem for K3 surfaces (and for higher-
-dimensional Calabi-Yau manifolds, see [27], [28]) is gover ned by the counting
-of rational curves in the mirror dual Calabi-Yau manifold. T his observation
-suggests by analogy the questions below.
-1) First, let us note that we may assume that the bilinear form ⟨•,•⟩is
-non-degenerate on Γ by replacing Γ by a “larger” lattice (e.g . by Γ ⊕ Γ∨,
-15
-where Γ ∨ = Hom(Γ , Z) is the dual lattice, see Section 2.6). Then the Lie
-algebra gΓ will be realized as the Lie algebra of exact Hamiltonian vect or
-ﬁelds on the algebraic symplectic torus Hom(Γ , Gm). The collection of for-
-mal symplectomorphisms AV deﬁned above give rise to a rigid analytic space
-Xan over any non-archimedean ﬁeld, similarly to [40]. This spac e carries an
-analytic symplectic form and describes “the behavior at inﬁ nity” of a (possi-
-bly non-algebraic) formal smooth symplectic scheme over Z. String Theory
-suggests that there exists an actual complex symplectic man ifoldM (vector
-or hyper multiplet moduli space) admitting a (partial) comp actiﬁcation M
-and such that
-Xan(C((t))) =M(C[[t]])\ (M(C[[t]])∪ (M\M )(C[[t]])) ,
-i.e. it is the space of formal paths hitting the compactifyin g divisor but
-not belonging to it). In the case of the Fukaya category of a co mplex 3d
-Calabi-Yau manifold X the spaceM looks “at inﬁnity” as a deformation of
-a complex symplectic manifold Mcl where dimM = dimMcl = dimH 3(X).
-The latter is the total space of the bundle Mcl→M X, where MX is the
-moduli space of complex structures on X. The ﬁber of the bundle is isomor-
-phic to the space
-(H 3,0(X)\{ 0})× (H 3(X, C)/H 3,0(X)⊕H 2,1(X)⊕H 3(X, Z))
-parametrizing pairs (holomorphic volume element, point of the intermediate
-Jacobian).6 Furthermore, as we discuss in Section 7.2, we expect that the re
-is a complex integrable system associated with an arbitrary homologically
-smooth 3d Calabi-Yau category and the ﬁber being the “Deligne cohomol ogy”
-of the category.
-2) Is it true that the counting of the invariants Ω( γ) forC is equivalent to
-the counting of (some) holomorphic discs “near inﬁnity” in M? Is it possible
-to construct an A∞-category associated with those discs and to prove that
-it is a 3-dimensional Calabi-Yau category?
-3) The study of the dependence of BPS states on a point of the mo duli
-space of vector and hyper multiplets given in [18] and [13] su ggests thatM
-is hyperk¨ ahler and the invariants Ω( γ) for C (counting of objects of C) can
-be interpreted as the counting of some “quaternion curves” i nM. Punctures
-6In a very interesting paper [24] a construction of the hyperk ¨ ahler structure onM was
-suggested by means of our wall-crossing formulas.
-16
-“at inﬁnity” of those curves can be interpreted as 4 d black holes. It would
-be nice to think about the problem of counting such maps as a “q uaternionic
-analog” of the counting of rational Gromov-Witten invarian ts. Hopefully
-(by the analogy with the “Gromov-Witten story”) one can deﬁn e an appro-
-priate A∞-category (“quaternionic Fukaya category”) and prove that it is a
-3-dimensional Calabi-Yau category. This would relate our i nvariants Ω( γ)
-with “quaternionic” Gromov-Witten invariants.
-4) Geometry similar to the one discussed in this paper also ap pears in the
-theory of moduli spaces of holomorphic abelian diﬀerential s (see e.g. [78]).
-The moduli space of abelian diﬀerentials is a complex manifo ld, divided by
-real “walls” of codimension one into pieces glued from conve x cones. It also
-carries a natural non-holomorphic action of the group GL+(2, R). There is
-an analog of the central charge Z in the story. It is given by the integral of an
-abelian diﬀerential over a path between marked points in a co mplex curve.
-This makes plausible the idea that the moduli space of abelia n diﬀerentials
-associated with a complex curve with marked points, is isomo rphic to the
-moduli space of stability structures on the (properly deﬁne d) Fukaya category
-of this curve.
-5) We expect that our wall-crossing formulas are related to t hose in the
-Donaldson theory of 4 d manifolds with b+
-2 = 1 (cf. e.g. recent paper [52])
-as well as with Borcherds hyperbolic Kac-Moody algebras and multiplicative
-automorphic forms. The formulas from [12] also look very sim ilar.
+The above formulas for symplectomorphisms are partially motivated by [@KoSo1], Section 10, where similar formulas appeared in a different problem. Both formulas involve Hamiltonian vector fields associated with the dilogarithm function. The problem discussed in [@KoSo1] was the reconstruction of the rigid analytic K3 surface from its skeleton, which is a sphere $S^2$ equipped with an integral affine structure, singular at a finite set of points. The group which is very similar to the pro-nilpotent group $G_V$ was introduced in the loc. cit. where we assigned symplectomorphisms to edges of a certain tree in $S^2$. That tree should be thought of as an analog of the walls in the space of stability structures. Edges of the tree (we called them "lines\" in [@KoSo1]) correspond to pseudo-holomorphic discs with the boundary on the Lagrangian toric fibers of the dual K3 surface. When we approach the "large complex structure limit\" cusp in the moduli space of K3 surfaces, the discs degenerate into gradient lines of some smooth functions on $S^2$, thus defining edges of the tree. Hence the reconstruction problem for K3 surfaces (and for higher-dimensional Calabi-Yau manifolds, see [@GS1], [@GS2]) is governed by the counting of rational curves in the mirror dual Calabi-Yau manifold. This observation suggests by analogy the questions below.
+
+1\) First, let us note that we may assume that the bilinear form $\langle \bullet,\bullet \rangle$ is non-degenerate on $\Gamma$ by replacing $\Gamma$ by a "larger\" lattice (e.g. by $\Gamma\oplus \Gamma^{\vee}$, where $\Gamma^{\vee}=\op{Hom}(\Gamma, \Z)$ is the dual lattice, see Section 2.6). Then the Lie algebra $\g_{\Gamma}$ will be realized as the Lie algebra of exact Hamiltonian vector fields on the algebraic symplectic torus $\op{Hom}(\Gamma, {\bf G}_m)$. The collection of formal symplectomorphisms $A_V$ defined above give rise to a rigid analytic space ${\cal X}^{an}$ over any non-archimedean field, similarly to [@KoSo1]. This space carries an analytic symplectic form and describes "the behavior at infinity\" of a (possibly non-algebraic) formal smooth symplectic scheme over $\Z$. String Theory suggests that there exists an actual complex symplectic manifold ${\cal M}$ (vector or hyper multiplet moduli space) admitting a (partial) compactification $\overline{\cal M}$ and such that $${\cal X}^{an}(\C((t)))=\overline{\cal M}(\C[[t]])\setminus ({\cal M}(\C[[t]])\cup (\overline{\cal M}\setminus {\cal M})(\C[[t]]))\,\,,$$ i.e. it is the space of formal paths hitting the compactifying divisor but not belonging to it). In the case of the Fukaya category of a complex $3d$ Calabi-Yau manifold $X$ the space ${\cal M}$ looks "at infinity\" as a deformation of a complex symplectic manifold ${\cal M}^{cl}$ where $\dim  {\cal M}=\dim  {\cal M}^{cl}=\dim  H^3(X)$. The latter is the total space of the bundle ${\cal M}^{cl}\to {\cal M}_X$, where ${\cal M}_X$ is the moduli space of complex structures on $X$. The fiber of the bundle is isomorphic to the space $$(H^{3,0}(X)\setminus \{0\})\times (H^3(X,\C)/H^{3,0}(X)\oplus H^{2,1}(X)\oplus H^3(X,\Z))$$ parametrizing pairs *(holomorphic volume element, point of the intermediate Jacobian)*.[^1] Furthermore, as we discuss in Section 7.2, we expect that there is a complex integrable system associated with an arbitrary homologically smooth $3d$ Calabi-Yau category and the fiber being the "Deligne cohomology\" of the category.
+
+2\) Is it true that the counting of the invariants $\Omega(\gamma)$ for ${\cal C}$ is equivalent to the counting of (some) holomorphic discs "near infinity\" in $\overline{\cal M}$? Is it possible to construct an $\A$-category associated with those discs and to prove that it is a $3$-dimensional Calabi-Yau category?
+
+3\) The study of the dependence of BPS states on a point of the moduli space of vector and hyper multiplets given in [@DiM] and [@DM] suggests that ${\cal M}$ is hyperkähler and the invariants $\Omega(\gamma)$ for ${\cal C}$ (counting of objects of $\CC$) can be interpreted as the counting of some "quaternion curves\" in ${\cal M}$. Punctures "at infinity\" of those curves can be interpreted as $4d$ black holes. It would be nice to think about the problem of counting such maps as a "quaternionic analog\" of the counting of rational Gromov-Witten invariants. Hopefully (by the analogy with the "Gromov-Witten story\") one can define an appropriate $\A$-category ("quaternionic Fukaya category\") and prove that it is a $3$-dimensional Calabi-Yau category. This would relate our invariants $\Omega(\gamma)$ with "quaternionic\" Gromov-Witten invariants.
+
+4\) Geometry similar to the one discussed in this paper also appears in the theory of moduli spaces of holomorphic abelian differentials (see e.g. [@Zo]). The moduli space of abelian differentials is a complex manifold, divided by real "walls\" of codimension one into pieces glued from convex cones. It also carries a natural non-holomorphic action of the group $GL^+(2,\R)$. There is an analog of the central charge $Z$ in the story. It is given by the integral of an abelian differential over a path between marked points in a complex curve. This makes plausible the idea that the moduli space of abelian differentials associated with a complex curve with marked points, is isomorphic to the moduli space of stability structures on the (properly defined) Fukaya category of this curve.
+
+5\) We expect that our wall-crossing formulas are related to those in the Donaldson theory of $4d$ manifolds with $b_2^+=1$ (cf. e.g. recent paper [@NaYo]) as well as with Borcherds hyperbolic Kac-Moody algebras and multiplicative automorphic forms. The formulas from [@ChVer] also look very similar.
+
+[^1]: In a very interesting paper [@GaMNeit] a construction of the hyperkähler structure on ${\cal M}$ was suggested by means of our wall-crossing formulas.

@@ -8,336 +8,96 @@ pages: 10-14
 source_pdf: 1108.1048v3.pdf
 source_sha256: 6f2b83450ba923d0
 doc_brief: "CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS — We give an explicit construction of irreducible modules ove r Khovanov-Lauda- Rouquier algebras R and their"
+text_source: latex
+latex_prose_ratio: 0.974
+latex_coverage_ratio: 0.866
 ---
-In this subsection, we give a construction of irreducible gr aded R-modules as the irreducible
-heads of certain induced modules, which is compatible with t he Kashiwara operators. More
-precisely, set I(n+1) = I and let I(k) ⊂ I (k = 1, . . . , n) be subsets of I such that I(k) ⊆ I(k+1)
-and |I(k)| = k. Let Bk be the crystal obtained from B(∞) by forgetting the i-arrows for
-i /∈ I(k). Using highest weight vectors of connected components of Bk, we deﬁne irreducible
-R-modules Nk(v) for k = 1, . . . , n and v ∈ B(∞). Then, we construct a crystal isomorphism
-Φ : B(∞) → B(∞) deﬁned by Φ( v) = hd Ind(N1(v) ⊠ · · · ⊠ Nn(v)) (Proposition 1.10). We
-emphasize that this crystal isomorphism Φ exists for an arbi trary symmetrizable Cartan
-datum.
-For M ∈ R(β)-fmod, Mk ∈ R(βk)-fmod (k = 1, . . . , m) and d ∈ Z>0, set
-M ⊠0 = C, M ⊠d = M ⊠ · · · ⊠ M/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
-d
-m
-⊠
-k=1
-Mk = M1 ⊠ · · · ⊠ Mm.
-Lemma 1.7. Let Mk ∈ R(βk)-fmod, dk ∈ Z≥0, and ik ∈ I dkβk for k = 1 , . . . , m. Suppose
-that ik occurs in ch Ind(M ⊠dk
-k ) with multiplicity ξk ∈ Z>0 for k = 1, . . . , m. Assume
-(i) Ind (Mk ⊠ Mk′) ≃ Ind (Mk′ ⊠ Mk) for k, k′ = 1, . . . , m,
-(ii) Ind
-(
-M ⊠dk
-k
-)
-is irreducible for k = 1, . . . , m, and
-(iii) i := i1 ∗ · · · ∗ im occurs in ch Ind
-( m
-⊠
-k=1
-M ⊠dk
-k
-)
-with multiplicity ξ1ξ2 · · ·ξm.
-REPRESENTATIONS OVER KLR ALGEBRAS OF FINITE CLASSICAL TYPE 11
-Then Ind
-( m
-⊠
-k=1
-M ⊠dk
-k
-)
-is irreducible.
-Proof. Let Nk = Ind
-(
-M ⊠dk
-k
-)
-for k = 1, . . . , m, and let Q be a nonzero quotient of the module
-Ind
-( m
-⊠
-k=1
-Nk
-)
-. By (ii) and Lemma 1.5 (2), we have an injective homomorphism
-m
-⊠
-k=1
-Nk֒→Resd1β1,...,dmβmQ.
-Hence, by (iii), i occurs in chQ with multiplicity ξ1ξ2 · · ·ξm. Since Q is arbitrary, we obtain
-that hd Ind
-( m
-⊠
-k=1
-Nk
-)
-is irreducible.
-Now it follows from (i) that
-Ind
-( m
-⊠
-k=1
-Nk
-)
-≃ Ind (Nm ⊠ Nm−1 ⊠ · · · ⊠ N1) .
-Let L be a nonzero submodule of Ind
-( m
-⊠
-k=1
-Nk
-)
-. By (ii) and Lemma 1.5, there exists a
-surjective homomorphism
-ResL ։
-m
-⊠
-k=1
-Nk,
-which implies that i occurs in chL with multiplicity ξ1ξ2 · · ·ξm by (iii). Therefore, we conclude
-Ind
-( m
-⊠
-k=1
-Nk
-)
-= Ind
-( m
-⊠
-k=1
-M ⊠dk
-k
-)
-is irreducible. □
-Lemma 1.8. Let ∅ = I(0) ⊊ I(1) ⊊ I(2) ⊊ · · · ⊊ I(m) ⊂ I, and assume βk ∈ ∑
-i∈I(k)
-Z≥0αi for
-k = 1, . . . , m. Let Mk ∈ R(βk)-fmod (1 ≤ k ≤ m) be such that
-(i) εi(Mk) = 0 for i ∈ I(k−1),
-(ii) hdMk is irreducible, and
-(iii) hdMk occurs with multiplicity one as a composition factor of Mk.
+In this subsection, we give a construction of irreducible graded $R$-modules as the irreducible heads of certain induced modules, which is compatible with the Kashiwara operators. More precisely, set $I_{(n+1)} = I$ and let $I_{(k)} \subset I\ (k=1, \ldots,n)$ be subsets of $I$ such that $I_{(k)} \subseteq I_{(k+1)}$ and $|I_{(k)}| = k$. Let $\mathfrak{B}_k$ be the crystal obtained from $B(\infty)$ by forgetting the $i$-arrows for $i \notin  I_{(k)}$. Using highest weight vectors of connected components of $\mathfrak{B}_k$, we define irreducible $R$-modules $\mathcal{N}_k(v)$ for $k=1,\ldots,n$ and $v \in B(\infty)$. Then, we construct a crystal isomorphism $\Phi: B(\infty) \rightarrow \mathbb{B}(\infty)$ defined by $\Phi(v) = \mathsf{ hd}\,\mathsf {Ind}(\mathcal{N}_1(v) \boxtimes \cdots \boxtimes \mathcal{N}_n(v))$ (Proposition [\[Prop: crystal iso\]](#Prop: crystal iso){reference-type="ref" reference="Prop: crystal iso"}). We emphasize that this crystal isomorphism $\Phi$ exists for an arbitrary symmetrizable Cartan datum.
+
+For $M \in R(\beta)\text{-}\mathsf{fmod}$, $M_k \in R(\beta_k)\text{-}\mathsf{fmod}$ ($k =1,\ldots, m$) and $d \in \mathbb{Z}_{>0}$, set $$\begin{aligned}
+M^{\boxtimes 0} = \mathbb{C}, \qquad M^{\boxtimes d} = \underbrace{M\boxtimes \cdots \boxtimes M}_d \qquad
+\overset{m}{\underset{k=1}{\boxtimes}}  M_k = M_1 \boxtimes \cdots \boxtimes M_m.
+\end{aligned}$$
+
+::: lemma
+[]{#Lem: irr of induced module label="Lem: irr of induced module"} Let $M_k \in R(\beta_k)\text{-}\mathsf{fmod}$,  $d_k \in \mathbb{Z}_{\ge 0}$, and $\mathbf{i}_k \in I^{d_k \beta_k}$ for $k = 1, \ldots, m$. Suppose that $\mathbf{i}_k$ occurs in $\mathsf{ ch}\,\mathsf {Ind}(M_k^{\boxtimes d_k})$ with multiplicity $\xi_k \in \mathbb{Z}_{>0}$ for $k = 1, \ldots, m$. Assume
+
+1.  $\mathsf {Ind}\left(M_k \boxtimes M_{k'}\right) \simeq \mathsf {Ind}\left(M_{k'} \boxtimes M_k\right)$ for $k,k'=1, \ldots,m$,
+
+2.  $\mathsf {Ind}\left(M_k^{\boxtimes d_k}\right)$ is irreducible for $k=1, \ldots,m$, and
+
+3.  $\mathbf{i} := \mathbf{i}_1 * \cdots *\mathbf{i}_m$ occurs in $\mathsf{ ch}\,\mathsf {Ind}\left(\overset{m}{\underset{k=1}{\boxtimes}}  M_k^{\boxtimes d_k}
+    \right)$ with multiplicity $\xi_1 \xi_2 \cdots \xi_m$.
+
+Then $\mathsf {Ind}\left(\overset{m}{\underset{k=1}{\boxtimes}}  M_k^{\boxtimes d_k}\right)$ is irreducible.
+:::
+
+::: proof
+*Proof.* Let $N_k = \mathsf {Ind}\left(M_k^{\boxtimes d_k}\right)$ for $k=1, \ldots, m$, and let $Q$ be a nonzero quotient of the module $\mathsf {Ind}\left(\overset{m}{\underset{k=1}{\boxtimes}} 
+N_k\right)$. By (ii) and Lemma [\[Lem: Frobenius reciprocity\]](#Lem: Frobenius reciprocity){reference-type="ref" reference="Lem: Frobenius reciprocity"} (2), we have an injective homomorphism $$\overset{m}{\underset{k=1}{\boxtimes}}  N_k    \hookrightarrow {\mathsf{Res}}_{d_1 \beta_1, \ldots, d_m \beta_m} Q.$$ Hence, by (iii),  $\mathbf{i}$ occurs in $\mathsf{ ch}Q$ with multiplicity $\xi_1 \xi_2\cdots \xi_m$. Since $Q$ is arbitrary, we obtain that $\mathsf{ hd}\,\mathsf {Ind}\left(\overset{m}{\underset{k=1}{\boxtimes}}  N_k\right)$ is irreducible.
+
+Now it follows from (i) that $$\mathsf {Ind}\left(\overset{m}{\underset{k=1}{\boxtimes}}  N_k\right) \simeq \mathsf {Ind}\left(N_m \boxtimes N_{m-1} \boxtimes \cdots \boxtimes N_1\right).$$ Let $L$ be a nonzero submodule of $\mathsf {Ind}\left(\overset{m}{\underset{k=1}{\boxtimes}}  N_k\right)$. By $\rm (ii)$ and Lemma [\[Lem: Frobenius reciprocity\]](#Lem: Frobenius reciprocity){reference-type="ref" reference="Lem: Frobenius reciprocity"}, there exists a surjective homomorphism $${\mathsf{Res}}L \twoheadrightarrow \overset{m}{\underset{k=1}{\boxtimes}}  N_k,$$ which implies that $\mathbf{i}$ occurs in $\mathsf{ ch}L$ with multiplicity $\xi_1 \xi_2\cdots \xi_m$ by $\rm (iii)$. Therefore, we conclude $\mathsf {Ind}\left(\overset{m}{\underset{k=1}{\boxtimes}}  N_k\right) = \mathsf {Ind}\left(\overset{m}{\underset{k=1}{\boxtimes}}  M_k^{\boxtimes d_k}\right)$ is irreducible. ◻
+:::
+
+::: lemma
+[]{#Lem: sum of fi label="Lem: sum of fi"} Let $\emptyset = I_{(0)} \subsetneq I_{(1)} \subsetneq I_{(2)} \subsetneq \cdots \subsetneq I_{(m)} \subset I$, and assume $\beta_k \in \sum_{i \in I_{(k)}} \mathbb{Z}_{\ge0}\alpha_i$ for $k=1,\ldots, m$. Let $M_k \in R(\beta_{k})\text{-}\mathsf{fmod}\ \ (1 \le k \le m)$ be such that
+
+1.  $\varepsilon_i(M_k)=0$ for $i \in I_{(k-1)}$,
+
+2.  $\mathsf{ hd}M_k$ is irreducible, and
+
+3.  $\mathsf{ hd}M_k$ occurs with multiplicity one as a composition factor of $M_k$.
+
 Then
-(1) hd Ind
-( m
-⊠
-k=1
-Mk
-)
-is irreducible,
-(2) hd Ind
-( m
-⊠
-k=1
-Mk
-)
-occurs with multiplicity one as a composition factor of Ind
-( m
-⊠
-k=1
-Mk
-)
-,
-(3) if ˜fik1 ≃ hdMk for some ik ∈ I βk , then ˜fi1
-˜fi2 · · · ˜fim1 ≃ hd Ind
-( m
-⊠
-k=1
-Mk
-)
-.
-Proof. We may assume that Mk ⁄= 1 for k = 1 , . . . , m. Let dk = |βk| for k = 1 , . . . , m, and
-set d = d1 + · · · + dm. For w ∈ Sd and a reduced expression w = σi1 · · ·σis, let
-τw = τi1 · · · τis.
-12 GEORGIA BENKART, SEOK-JIN KANG, SE-JIN OH, AND EUIYONG PA RK
-For k = 1 , . . . , m, take ik = ( ik,1, . . . , ik,dk ) ∈ I βk such that e(ik)Mk ⁄= 0. It follows from (i)
-that ik,1 ∈ I(k) \ I(k−1). Since Mk ∈ R(βk)-fmod, we have
-e(β1, . . . , βm)τwe(i1 ∗ · · · ∗ im) ⁄= 0 if and only if w = id
-for w ∈ Sd/Sd1 × · · · × Sdm. Therefore,
-Resβ1,...,βm
-(
-Ind
-( m
-⊠
-k=1
-Mk
-))
-≃
-m
-⊠
-k=1
-Mk.
-Let L =
-m
-⊠
-k=1
-hdMk. It follows from (ii) and (iii) that [ L] occurs with multiplicity one in
-[Resβ1,...,βm
-(
-Ind
-( m
-⊠
-k=1
-Mk
-))
-] in the Grothendieck group G0(R(β1) ⊗ · · · ⊗ R(βm)). Let Q be
-a nonzero quotient of Ind
-( m
-⊠
-k=1
-Mk
-)
-. By Lemma 1.5, we have a nontrivial homomorphism
-m
-⊠
-k=1
-Mk → Resβ1,...,βmQ,
-which implies that [ L] occurs in [ Resβ1,...,βmQ] with multiplicity one. Since Q is arbitrary, we
-obtain assertions (1) and (2).
-Now assume that N = hd Ind
-( m
-⊠
-k=1
-Mk
-)
-, and let Nk = hdMk for k = 1, . . . , m. Then there
-is a surjective homomorphism
-Ind
-( m
-⊠
-k=1
-Mk
-)
-։ Ind
-( m
-⊠
-k=1
-Nk
-)
-,
-which implies that N = hd Ind
-( m
-⊠
-k=1
-Nk
-)
-. We will use induction on |wt(N )|. If |wt(N )| = 0,
-there is nothing to prove, so suppose that |wt(N )| > 0. Since N1 is nontrivial, we can take
-i ∈ I(1) such that εi(N1) ⁄= 0. Let ε = εi(N1). Then, by (i) and Lemma 1.5, we have
-ε = εi
-(
-Ind
-( m
-⊠
-k=1
-Nk
-))
-= εi(N ).
-Since ei is exact, there is a surjective homomorphism
-eε
-i
-(
-Ind
-( m
-⊠
-k=1
-Nk
-) )
-։ eε
-i N.
-Then, by [15, Lem. 3.9], we know that [ eε
-i N ] = q−ε+1
-i [ε]qi! [˜eε
-i N ] and
-[
-eε
-i
-(
-Ind
-( m
-⊠
-k=1
-Nk
-))]
-= [Ind ((eε
-i N1) ⊠ N2 ⊠ · · · ⊠ Nm)]
-= q−ε+1
-i [ε]qi! [Ind ((˜eε
-i N1) ⊠ N2 ⊠ · · · ⊠ Nm)]
-at the level of the Grothendieck group G0(R(β1 + · · · + βm − εαi)). Since hd Ind((˜eε
-i N1) ⊠
-N2 ⊠ · · · ⊠ Nm) is irreducible by (1), we obtain
-hd Ind(˜eε
-i N1 ⊠ · · · ⊠ Nm) ≃ ˜eε
-i N.
-REPRESENTATIONS OVER KLR ALGEBRAS OF FINITE CLASSICAL TYPE 13
-Therefore, assertion (3) follows from a standard induction argument. □
-Let n = |I| be the rank of Uq(g), and let I(k) ⊂ I (k = 1 , . . . , n) be subsets of I = I(n+1)
-such that I(k) ⊂ I(k+1) and |I(k)| = k for all k. We denote by Uq(gk) the subalgebra of Uq(g)
-generated by ei, f i (i ∈ I(k)) and qh (h ∈ P∨). Let Bk be the crystal obtained from B(∞)
-by forgetting the i-arrows for i /∈ I(k). Then Bk can be viewed as a Uq(gk)-crystal.
-Lemma 1.9. For each k = 1, . . . , n, every connected component of Bk has a unique highest
-weight vector.
-Proof. Let C be a connected component of Bk. For λ ∈ P+, let ιλ : B(λ) → B(∞) ⊗ Tλ ⊗ C
-be the embedding in (1.1) and let
-~C = {v ⊗ tλ ⊗ c | v ∈ C} ⊂ B(∞) ⊗ Tλ ⊗ C.
-By taking λ ≫ 0, we can assume that ~C ∩ im(ιλ) ⁄= ∅. Since Cλ := ι−1
-λ ( ~C) is a nontrivial
-highest weight subcrystal of the crystal obtained from B(λ) by forgetting the i-arrows with
-i /∈ I(k), there is an element uC ∈ C such that ι−1
-λ (uC ⊗ tλ ⊗ c) is the highest weight vector
-of the subcrystal Cλ. Note that uC does not depend on the choice of λ if ~C ∩ im(ιλ) ⁄= ∅. By
-construction, the element uC is a unique highest weight vector of C. □
-Take v ∈ B(∞). Let u0 = v and let uk be the highest weight vector of the connected
-component Ck of Bk containing v for k = 1 , . . . , n. By construction, there is a chain of
-injective maps
-C1֒C 2֒· · ·֒C n−1֒→B(∞).
-For k = 1, . . . , n, let ik be a sequence of I such that uk−1 = ˜fikuk. Note that v = ˜fi1
-˜fi1 · · · ˜fin1.
-Let
-Nk(v) = ˜fik1 ∈ B(∞).(1.4)
-Hence, for each v ∈ B(∞), we have the corresponding n-tuple ( N1(v), N2(v), . . . ,Nn(v)) of
-modules in B(∞).
-Proposition 1.10.
-(1) For v ∈ B(∞), let Nk(v) be the irreducible module deﬁned by (1.4). Then hd Ind
-( n
-⊠
-k=1
-Nk(v)
-)
-is irreducible.
-(2) The map Φ : B(∞) − →B(∞) deﬁned by
-Φ( v) = hd Ind
-( n
-⊠
-k=1
-Nk(v)
-)
-for v ∈ B(∞)
-is a crystal isomorphism.
-14 GEORGIA BENKART, SEOK-JIN KANG, SE-JIN OH, AND EUIYONG PA RK
-Proof. Since it is obvious that Φ( 1) = 1, we assume 1 ⁄= v ∈ B(∞) and let Nk(v) = ˜fik1 be
-the corresponding irreducible module given in (1.4) for k = 1 , · · · , n. By construction, we
-have
-v = ˜fi1
-˜fi1 · · · ˜fin1 and εi(Nk(v)) = 0 for all i ∈ I(k−1).
-Therefore, it follows from Lemma 1.8 that hd Ind
-( n
-⊠
-k=1
-Nk(v)
-)
-is irreducible and
-Φ( ˜fi1
-˜fi2 · · · ˜fin1) = hd Ind
-( n
-⊠
-k=1
-Nk(v)
-)
-= ˜fi1
-˜fi2 · · · ˜finΦ( 1).
-□
+
+1.  $\mathsf{ hd}\,\mathsf {Ind}\left(\overset{m}{\underset{k=1}{\boxtimes}} M_k\right)$ is irreducible,
+
+2.  $\mathsf{ hd}\,\mathsf {Ind}\left(\overset{m}{\underset{k=1}{\boxtimes}} M_k\right)$ occurs with multiplicity one as a composition factor of $\mathsf {Ind}\left(\overset{m}{\underset{k=1}{\boxtimes}} M_k\right)$,
+
+3.  if $\tilde{f}_{\mathbf{i}_k} \mathbf{1} \simeq \mathsf{ hd}M_k$ for some $\mathbf{i}_k \in I^{\beta_{k}}$, then $\tilde{f}_{\mathbf{i}_1} \tilde{f}_{\mathbf{i}_2} \cdots  \tilde{f}_{\mathbf{i}_{m}} \mathbf{1} \simeq \mathsf{ hd}\,\mathsf {Ind}\left(\overset{m}{\underset{k=1}{\boxtimes}} M_k\right)$.
+:::
+
+::: proof
+*Proof.* We may assume that $M_k \ne \mathbf{1}$ for $k=1, \ldots, m$. Let $d_k = |\beta_k|$ for $k=1,\ldots,m$, and set $d = d_1 + \cdots + d_m$. For $w\in S_d$ and a reduced expression $w = \sigma_{i_1}\cdots \sigma_{i_s}$, let $$\tau_w = \tau_{i_1}\cdots \tau_{i_s}.$$ For $k=1,\ldots,m$, take $\mathbf{i}_k = (i_{k,1}, \ldots,  i_{k,d_{k}}) \in I^{\beta_{k}}$ such that $e({\mathbf{i}_k}) M_k \ne 0$. It follows from (i) that $i_{k,1} \in I_{(k)} \setminus I_{(k-1)}$. Since $M_k \in R(\beta_{k})\text{-}\mathsf{fmod}$, we have $$e({\beta_1, \ldots, \beta_{m}}) \tau_w e({\mathbf{i}_1* \cdots *\mathbf{i}_{m}}) \ne 0 \ \ \text{ if and only if } w =  \mathsf{id}$$ for $w \in S_{d} / S_{d_1} \times \cdots \times S_{d_m}$. Therefore, $${\mathsf{Res}}_{\beta_1, \ldots, \beta_m} \Big(\mathsf {Ind}\Big( \overset{m}{\underset{k=1}{\boxtimes}} M_k\Big) \Big) \simeq \overset{m}{\underset{k=1}{\boxtimes}} M_k.$$
+
+Let $L =  \overset{m}{\underset{k=1}{\boxtimes}}  \mathsf{ hd}M_k$. It follows from (ii) and (iii) that $[L]$ occurs with multiplicity one in $[
+{\mathsf{Res}}_{\beta_1, \ldots, \beta_m} \Big(\mathsf {Ind}\Big( \overset{m}{\underset{k=1}{\boxtimes}} M_k\Big)
+\Big) ]$ in the Grothendieck group $G_0(R(\beta_1) \otimes \cdots
+\otimes R(\beta_m))$. Let $Q$ be a nonzero quotient of $\mathsf {Ind}\Big(
+\overset{m}{\underset{k=1}{\boxtimes}} M_k\Big)$. By Lemma [\[Lem: Frobenius reciprocity\]](#Lem: Frobenius reciprocity){reference-type="ref" reference="Lem: Frobenius reciprocity"}, we have a nontrivial homomorphism $$\overset{m}{\underset{k=1}{\boxtimes}} M_k  \rightarrow {\mathsf{Res}}_{\beta_1, \ldots, \beta_m} Q,$$ which implies that $[L]$ occurs in $[{\mathsf{Res}}_{\beta_1, \ldots, \beta_m} Q]$ with multiplicity one. Since $Q$ is arbitrary, we obtain assertions (1) and (2).
+
+Now assume that $N = \mathsf{ hd}\,\mathsf {Ind}\Big(\overset{m}{\underset{k=1}{\boxtimes}} M_k\Big )$, and let $N_k = \mathsf{ hd}M_k$ for $k=1,\ldots, m$. Then there is a surjective homomorphism $$\mathsf {Ind}\Big(\overset{m}{\underset{k=1}{\boxtimes}} M_k\Big) \twoheadrightarrow \mathsf {Ind}\Big(\overset{m}{\underset{k=1}{\boxtimes}} N_k\Big) ,$$ which implies that $N = \mathsf{ hd}\,\mathsf {Ind}\Big(\overset{m}{\underset{k=1}{\boxtimes}} N_k\Big)$. We will use induction on $|\mathsf{wt}(N)|$. If $|\mathsf{wt}(N)|=0$, there is nothing to prove, so suppose that $|\mathsf{wt}(N)|>0$. Since $N_1$ is nontrivial, we can take $i \in I_{(1)}$ such that $\varepsilon_i(N_1) \ne 0$. Let $\varepsilon = \varepsilon_i(N_1).$ Then, by $\rm (i)$ and Lemma [\[Lem: Frobenius reciprocity\]](#Lem: Frobenius reciprocity){reference-type="ref" reference="Lem: Frobenius reciprocity"}, we have $$\varepsilon = \varepsilon_i\Big(\mathsf {Ind}\Big(\overset{m}{\underset{k=1}{\boxtimes}} N_k\Big)\Big) = \varepsilon_i(N) .$$ Since $e_i$ is exact, there is a surjective homomorphism $$e_i^\varepsilon \left( \mathsf {Ind}\Big(\overset{m}{\underset{k=1}{\boxtimes}} N_k\Big) \right) \twoheadrightarrow e_i^{\varepsilon}N.$$ Then, by [@KP10 Lem. 3.9], we know that $[e_i^{\varepsilon} N]  = q_{i}^{-\varepsilon + 1}\, [\varepsilon]_{q_i} !\,[  \tilde{e}_i^{\varepsilon}N]$ and $$\begin{aligned}
+\Big[e_i^\varepsilon\Big ( \mathsf {Ind}\Big(\overset{m}{\underset{k=1}{\boxtimes}} N_k\Big)\Big)\Big] & =  [\mathsf {Ind}\left((e_i^\varepsilon N_1)\boxtimes N_2 \boxtimes \cdots \boxtimes N_{m})\right] \\
+& = q_i^{-\varepsilon + 1} [\varepsilon]_{q_i} ! \, [\mathsf {Ind}\left(( \tilde{e}_i^\varepsilon N_1)\boxtimes N_2 \boxtimes \cdots \boxtimes N_{m}\right)]
+\end{aligned}$$ at the level of the Grothendieck group $G_0(R( \beta_1 + \cdots + \beta_m - \varepsilon \alpha_i))$. Since $\mathsf{ hd}\,\mathsf {Ind}( ( \tilde{e}_i^\varepsilon N_1)\boxtimes N_2 \boxtimes \cdots \boxtimes N_{m})$ is irreducible by $(1)$, we obtain $$\mathsf{ hd}\,\mathsf {Ind}( \tilde{e}_i^{\varepsilon}N_1 \boxtimes \cdots \boxtimes N_{m}) \simeq  \tilde{e}_i^{\varepsilon} N.$$ Therefore, assertion (3) follows from a standard induction argument. ◻
+:::
+
+Let $n = |I|$ be the rank of $U_q(\mathfrak{g})$, and let $I_{(k)} \subset I\ (k=1,\ldots,n)$ be subsets of $I = I_{(n+1)}$ such that $I_{(k)} \subset I_{(k+1)}$ and $|I_{(k)}|=k$ for all $k$. We denote by $U_q(\mathfrak{g}_k)$ the subalgebra of $U_q(\mathfrak{g})$ generated by $e_i,\ f_i\ (i\in I_{(k)})$ and $q^h\ (h \in \mathsf{P}^{\vee})$. Let $\mathfrak{B}_k$ be the crystal obtained from $B(\infty)$ by forgetting the $i$-arrows for $i \notin  I_{(k)}$. Then $\mathfrak{B}_k$ can be viewed as a $U_q(\mathfrak{g}_k)$-crystal.
+
+::: lemma
+For each $k=1,\ldots, n$, every connected component of $\mathfrak{B}_k$ has a unique highest weight vector.
+:::
+
+::: proof
+*Proof.* Let $\mathcal{C}$ be a connected component of $\mathfrak{B}_k$. For $\lambda \in \mathsf{P}^+$, let $\iota_\lambda : B(\lambda) \rightarrow B(\infty)\otimes T_\lambda \otimes C$ be the embedding in $\eqref{Eq: crystal embedding}$ and let $$\widetilde{ \mathcal{C}} = \{ v \otimes t_\lambda \otimes c \mid  v \in \mathcal{C} \} \subset B(\infty) \otimes T_\lambda \otimes C.$$ By taking $\lambda \gg 0$, we can assume that $\widetilde{ \mathcal{C}} \cap {\mathsf {im}}(\iota_\lambda) \ne \emptyset.$ Since $\mathcal{C}_\lambda: = \iota_\lambda^{-1}(\widetilde{ \mathcal{C}})$ is a nontrivial highest weight subcrystal of the crystal obtained from $B(\lambda)$ by forgetting the $i$-arrows with $i \notin I_{(k)}$, there is an element $u_{\mathcal{C}} \in \mathcal{C}$ such that $\iota_\lambda^{-1}(u_{\mathcal{C}} \otimes t_\lambda \otimes c)$ is the highest weight vector of the subcrystal $\mathcal{C}_\lambda$. Note that $u_\mathcal{C}$ does not depend on the choice of $\lambda$ if $\widetilde{ \mathcal{C}} \cap {\mathsf {im}}(\iota_\lambda) \ne \emptyset$. By construction, the element $u_\mathcal{C}$ is a unique highest weight vector of $\mathcal{C}$. ◻
+:::
+
+Take $v \in B(\infty)$. Let $u_0 = v$ and let $u_k$ be the highest weight vector of the connected component $\mathcal{C}_k$ of $\mathfrak{B}_k$ containing $v$ for $k=1,\ldots, n$. By construction, there is a chain of injective maps $$\mathcal{C}_1 \hookrightarrow \mathcal{C}_2 \hookrightarrow \cdots \hookrightarrow \mathcal{C}_{n-1} \hookrightarrow B(\infty).$$ For $k=1,\ldots, n$, let $\mathbf{i}_k$ be a sequence of $I$ such that $u_{k-1} =  \tilde{f}_{\mathbf{i}_k} u_{k}$. Note that $v =  \tilde{f}_{\mathbf{i}_1}  \tilde{f}_{\mathbf{i}_1} \cdots  \tilde{f}_{\mathbf{i}_{n}} \mathsf{1}$. Let $$\begin{aligned}
+ \label{Eq: def of Nk}
+\mathcal{N}_k(v) =  \tilde{f}_{\mathbf{i}_k} \mathbf{1} \in \mathbb{B}(\infty) .
+\end{aligned}$$ Hence, for each $v\in B(\infty)$, we have the corresponding $n$-tuple $(\mathcal{N}_1(v), \mathcal{N}_2(v), \ldots, \mathcal{N}_{n}(v))$ of modules in $\mathbb{B}(\infty)$.
+
+::: proposition
+[]{#Prop: crystal iso label="Prop: crystal iso"}  
+
+1.  For $v \in B(\infty)$, let $\mathcal{N}_k(v)$ be the irreducible module defined by $\eqref{Eq: def of Nk}$. Then $\mathsf{ hd}\,\mathsf {Ind}\left( \overset{n}{\underset{k=1}{\boxtimes}}  \mathcal{N}_k(v)\right)$ is irreducible.
+
+2.  The map $\Phi: B(\infty) \longrightarrow \mathbb{B}(\infty)$ defined by $$\Phi(v) = \mathsf{ hd}\,\mathsf {Ind}\left( \overset{n}{\underset{k=1}{\boxtimes}}  \mathcal{N}_k(v)\right) \ \  \text{ for } v \in B(\infty)$$ is a crystal isomorphism.
+:::
+
+::: proof
+*Proof.* Since it is obvious that $\Phi(\mathsf{1}) = \mathbf{1}$, we assume $\mathsf{1} \ne v \in B(\infty)$ and let $\mathcal{N}_k(v) =  \tilde{f}_{\mathbf{i}_k} \mathbf{1}$ be the corresponding irreducible module given in $\eqref{Eq: def of Nk}$ for $k=1, \cdots, n$. By construction, we have $$v =  \tilde{f}_{\mathbf{i}_1}  \tilde{f}_{\mathbf{i}_1} \cdots  \tilde{f}_{\mathbf{i}_{n}} \mathsf{1}\ \  \text{ and }\ \   \varepsilon_i( \mathcal{N}_k(v)) = 0
+\ \ \text{ for all }  i\in I_{(k-1)}.$$ Therefore, it follows from Lemma [\[Lem: sum of fi\]](#Lem: sum of fi){reference-type="ref" reference="Lem: sum of fi"} that $\mathsf{ hd}\,\mathsf {Ind}\left( \overset{n}{\underset{k=1}{\boxtimes}}  \mathcal{N}_k(v) \right)$ is irreducible and $$\Phi(   \tilde{f}_{\mathbf{i}_1}  \tilde{f}_{\mathbf{i}_2} \cdots  \tilde{f}_{\mathbf{i}_{n}} \mathsf{1} )
+= \mathsf{ hd}\,\mathsf {Ind}\left( \overset{n}{\underset{k=1}{\boxtimes}}  \mathcal{N}_k(v)\right) =  \tilde{f}_{\mathbf{i}_1}  \tilde{f}_{\mathbf{i}_2}
+\cdots  \tilde{f}_{\mathbf{i}_{n}} \Phi(\mathsf{1}).$$ ◻
+:::

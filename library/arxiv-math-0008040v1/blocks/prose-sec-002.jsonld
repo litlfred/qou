@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0008040v1/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0008040v1/blocks/prose-sec-002",
   "kind": "prose",
-  "title": "Parametrizations of the canonical basis",
-  "pageStart": 3,
-  "pageEnd": 4,
-  "text": "../sections/sec-002-2-parametrizations-of-the-canonical-basis.md",
-  "derivedFrom": "library/arxiv-math-0008040v1/manifest",
-  "sourceDocument": "library/arxiv-math-0008040v1/manifest",
+  "title": "The Lusztig cones and their spanning vectors",
+  "pageStart": 5,
+  "pageEnd": 8,
+  "text": "../sections/sec-002-3-the-lusztig-cones-and-their-spanning-vectors.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0008040v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0008040v1/manifest.jsonld",
   "provenance": "ingested"
 }

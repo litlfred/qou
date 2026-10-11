@@ -8,50 +8,51 @@ pages: 22-23
 source_pdf: 2104.01786v1.pdf
 source_sha256: 34087d5063ef5507
 doc_brief: "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.646
 ---
-sectors. The choices made in (68), (71) motivate the assignments as in (64).
-7 Mass terms
-We now put the formalism developed to some use. We search for a ”Hig gs” ﬁeld that can break
-the Spin(11, 3) symmetry, and also be used to write mass terms for the semi-spin orS+ = O⊗ ˜O.
-We thus need a ﬁeld that lives in the tensor product of the represen tation S+ with itself. We
-have the following decomposition of this tensor product
-S+ ×S+ = Λ 1(R11, 3) ⊕ Λ 3(R11, 3) ⊕ Λ 5(R11, 3) ⊕ Λ 7
-sd(R11, 3). (88)
-Here Λ k(R11, 3) is the space of anti–symmetric tensors of rank k in R11, 3. The space of 7-forms
-is not an irreducible representation, but the space Λ 7
-sd of self-dual 7-forms is. The ﬁrst factor
-in this sum is anti-symmetric, i.e. projection on it does not vanish only if we assume that the
-two S+ factors anti-commute. The second term is symmetric. We are inter ested in the mass
-terms arising by projecting onto this representation. Thus, we ar e interested in the symmetric
-bilinear forms on S+ that can be written as
-C µνρ ⟨ ⟨Ψ, Γ µ Γ νΓ ρΨ ⟩ ⟩. (89)
-7.1 Projection onto Λ 3R11,3
-Three copies of Γ-matrices can be inserted between two S+ states and produce a so(11, 3)
-invariant expression. The diﬀerent arising components are
-⟨ ⟨Ψ, Γ x1x2x3Ψ ⟩ ⟩= ⟨ ⟨Ψ,L x1Lx2Lx3 ⊗ IΨ ⟩ ⟩, ⟨ ⟨Ψ, Γ y1y2y3Ψ ⟩ ⟩= −⟨ ⟨Ψ, I ⊗Ly1Ly2Ly3Ψ ⟩ ⟩, (90)
-⟨ ⟨Ψ, Γ x1x2y1Ψ ⟩ ⟩= ⟨ ⟨Ψ,L x1Lx2 ⊗Ly1Ψ ⟩ ⟩, ⟨ ⟨Ψ, Γ x1y1y2Ψ ⟩ ⟩= −⟨ ⟨Ψ,L x1 ⊗Ly1Ly2Ψ ⟩ ⟩.
-22
-This means we have the following expression for the projection S+ ×S+ → Λ 3R11, 3
-⟨ ⟨Ψ, ΓΓΓΨ ⟩ ⟩= ⟨ ⟨Ψ,E iEjEk ⊗ IΨ ⟩ ⟩eijk + ⟨ ⟨Ψ,E iEj ⊗ ˜EkΨ ⟩ ⟩eij ˜ek (91)
-−⟨ ⟨Ψ,E i ⊗ ˜Ej ˜EkΨ ⟩ ⟩ei˜ej ˜ek − ⟨ ⟨Ψ, I ⊗ ˜Ei ˜Ej ˜EkΨ ⟩ ⟩˜ei˜ej ˜ek.
-7.2 SU(3) × U(1) and Lorentz invariant pairing
-We now select among the 364 terms in (91) those that are SU(3), U( 1)EM and Lorentz invariant.
-We have the SU(3) invariant 3-forms in R6 ⊂ Im(O). These arise as the real and imaginary
-parts of an SU(3) invariant (3 , 0) form
-Ω := ( e1 − ie5)(e2 − ie6)(e3 − ie7). (92)
-Note, however, that Ω is a singlet with respect to SU(2) L ×SU(2)R, but transforms non-trivially
-under the U(1) B−L. This means that Ω is not a singlet with respect to U(1) EM , and cannot be
-used. There is then an SU(3) × U(1)B−L invariant real 2-form
-ω =e15 +e26 +e37. (93)
-The last building block we are allowed to use in the R7 factor is the 1-form e4.
-For objects in Im( ˜O), we are only allowed to use the 1-, 2- and 3-forms built from ˜ e1, 2, 3.
-These 1- and 2-forms transform as vectors under the weak SU(2 ), while the 3-form is invariant.
-We can use objects that transform non-trivially under the SU(2) b ecause we do not intend to
-preserve this symmetry. In other words, objects that transfo rm non-trivially under the SU(2)
-are components of a ”Higgs” ﬁeld that we know is present in the mass terms of the SM.
-This leads us to consider the following ”mass” quadratic form in S+
-⟨ ⟨Ψ, Ψ ⟩ ⟩M =m1⟨ ⟨Ψ, (E1E5 +E2E6 +E3E7)E4 ⊗ IΨ ⟩ ⟩ −m2⟨ ⟨Ψ, I ⊗ ˜E1 ˜E2 ˜E3Ψ ⟩ ⟩ (94)
-+ψi⟨ ⟨Ψ, (E1E5 +E2E6 +E3E7) ⊗ ˜EiΨ ⟩ ⟩+ 1
-2φiǫijk⟨ ⟨Ψ,E 4 ⊗ ˜Ej ˜EkΨ ⟩ ⟩.
-Here the indices i,j,k run over the values 1 , 2, 3, and summation convention is implied. Here
-ξ ∈ C is a complex parameter, m1, 2 ∈ R and φi,ψ i are two real vectors.
+[]{#sec:mass label="sec:mass"}
+
+We now put the formalism developed to some use. We search for a \"Higgs\" field that can break the ${\rm Spin}(11,3)$ symmetry, and also be used to write mass terms for the semi-spinor $S_+={\mathbb O}\otimes\tilde{{\mathbb O}}$. We thus need a field that lives in the tensor product of the representation $S_+$ with itself. We have the following decomposition of this tensor product $$\begin{aligned}
+S_+\times S_+ = \Lambda^1 ({\mathbb R}^{11,3}) \oplus \Lambda^3 ({\mathbb R}^{11,3}) \oplus \Lambda^5 ({\mathbb R}^{11,3}) \oplus \Lambda^7_{sd} ({\mathbb R}^{11,3}).
+\end{aligned}$$ Here $\Lambda^k ({\mathbb R}^{11,3})$ is the space of anti--symmetric tensors of rank $k$ in ${\mathbb R}^{11,3}$. The space of 7-forms is not an irreducible representation, but the space $\Lambda^7_{sd}$ of self-dual 7-forms is. The first factor in this sum is anti-symmetric, i.e. projection on it does not vanish only if we assume that the two $S_+$ factors anti-commute. The second term is symmetric. We are interested in the mass terms arising by projecting onto this representation. Thus, we are interested in the symmetric bilinear forms on $S_+$ that can be written as $$\begin{aligned}
+C^{\mu\nu\rho} \langle\!\langle\Psi, \Gamma_\mu \Gamma_\nu \Gamma_\rho\Psi \rangle\!\rangle.
+\end{aligned}$$
+
+## Projection onto $\Lambda^3 {\mathbb R}^{11,3}$
+
+Three copies of $\Gamma$-matrices can be inserted between two $S_+$ states and produce a ${\mathfrak so}(11,3)$ invariant expression. The different arising components are $$\begin{aligned}
+\langle\!\langle\Psi, \Gamma_{x_1 x_2 x_3} \Psi \rangle\!\rangle= \langle\!\langle\Psi, L_{x_1} L_{x_2} L_{x_3} \otimes {\mathbb I}\Psi \rangle\!\rangle, 
+\quad
+\langle\!\langle\Psi, \Gamma_{y_1 y_2 y_3} \Psi \rangle\!\rangle= - \langle\!\langle\Psi, {\mathbb I}\otimes L_{y_1} L_{y_2} L_{y_3}  \Psi \rangle\!\rangle, 
+\\ \nonumber
+\langle\!\langle\Psi, \Gamma_{x_1 x_2 y_1} \Psi \rangle\!\rangle= \langle\!\langle\Psi, L_{x_1} L_{x_2}  \otimes  L_{y_1} \Psi \rangle\!\rangle, 
+\quad
+\langle\!\langle\Psi, \Gamma_{x_1 y_1 y_2} \Psi \rangle\!\rangle= - \langle\!\langle\Psi,   L_{x_1} \otimes L_{y_1} L_{y_2}  \Psi \rangle\!\rangle.
+\end{aligned}$$ This means we have the following expression for the projection $S_+\times S_+ \to \Lambda^3 {\mathbb R}^{11,3}$ $$\begin{aligned}
+\label{364-rep}
+\langle\!\langle\Psi, \Gamma\Gamma\Gamma \Psi \rangle\!\rangle= \langle\!\langle\Psi, E^i E^j E^k \otimes {\mathbb I}\Psi \rangle\!\rangle e^{ijk} + \langle\!\langle\Psi, E^i E^j \otimes  \tilde{E}^k  \Psi \rangle\!\rangle e^{ij} \tilde{e}^k \\ \nonumber
+-\langle\!\langle\Psi,   E^i \otimes \tilde{E}^j \tilde{E}^k  \Psi \rangle\!\rangle e^i \tilde{e}^j \tilde{e}^k 
+-\langle\!\langle\Psi, {\mathbb I}\otimes \tilde{E}^i \tilde{E}^j \tilde{E}^k   \Psi \rangle\!\rangle\tilde{e}^i \tilde{e}^j \tilde{e}^k.
+\end{aligned}$$
+
+##  ${\rm SU}(3)\times{\rm U}(1)$ and Lorentz invariant pairing
+
+We now select among the 364 terms in ([\[364-rep\]](#364-rep){reference-type="ref" reference="364-rep"}) those that are ${\rm SU}(3)$, ${\rm U}(1)_{EM}$ and Lorentz invariant.
+
+We have the ${\rm SU}(3)$ invariant 3-forms in ${\mathbb R}^6\subset{\rm Im}({\mathbb O})$. These arise as the real and imaginary parts of an ${\rm SU}(3)$ invariant $(3,0)$ form $$\begin{aligned}
+\Omega := ( e^1 - {\rm i\,}e^5)(e^2-{\rm i\,}e^6) (e^3-{\rm i\,}e^7).
+\end{aligned}$$ Note, however, that $\Omega$ is a singlet with respect to ${\rm SU}(2)_L\times{\rm SU}(2)_R$, but transforms non-trivially under the ${\rm U}(1)_{B-L}$. This means that $\Omega$ is not a singlet with respect to ${\rm U}(1)_{EM}$, and cannot be used. There is then an ${\rm SU}(3)\times{\rm U}(1)_{B-L}$ invariant real 2-form $$\begin{aligned}
+\omega = e^{15} + e^{26}+e^{37}.
+\end{aligned}$$ The last building block we are allowed to use in the ${\mathbb R}^7$ factor is the 1-form $e^4$.
+
+For objects in ${\rm Im}(\tilde{{\mathbb O}})$, we are only allowed to use the 1-, 2- and 3-forms built from $\tilde{e}^{1,2,3}$. These 1- and 2-forms transform as vectors under the weak ${\rm SU}(2)$, while the 3-form is invariant. We can use objects that transform non-trivially under the ${\rm SU}(2)$ because we do not intend to preserve this symmetry. In other words, objects that transform non-trivially under the ${\rm SU}(2)$ are components of a \"Higgs\" field that we know is present in the mass terms of the SM.
+
+This leads us to consider the following \"mass\" quadratic form in $S_+$ $$\begin{aligned}
+\label{mass}
+\langle\!\langle\Psi, \Psi\rangle\!\rangle_M = m_1 \langle\!\langle\Psi, ( E^1 E^5 + E^2 E^6+E^3 E^7) E^4 \otimes {\mathbb I}\Psi \rangle\!\rangle
+- m_2 \langle\!\langle\Psi, {\mathbb I}\otimes \tilde{E}^1 \tilde{E}^2 \tilde{E}^3 \Psi \rangle\!\rangle\\ \nonumber
++ \psi^i \langle\!\langle\Psi , ( E^1 E^5 + E^2 E^6+E^3 E^7) \otimes \tilde{E}^i \Psi \rangle\!\rangle
++ \frac{1}{2} \phi^i \epsilon^{ijk} \langle\!\langle\Psi, E^4 \otimes \tilde{E}^j \tilde{E}^k \Psi\rangle\!\rangle.
+\end{aligned}$$ Here the indices $i,j,k$ run over the values $1,2,3$, and summation convention is implied. Here $\xi\in{\mathbb C}$ is a complex parameter, $m_{1,2}\in{\mathbb R}$ and $\phi^i,\psi^i$ are two real vectors.

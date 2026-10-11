@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-sec-008",
   "kind": "prose",
   "title": "The Squier representation. — We ﬁrst prove Propositions 2.1",
   "pageStart": 12,
   "pageEnd": 14,
   "text": "../sections/sec-008-23-the-squier-representation-we-ﬁrst-prove-propo.md",
-  "derivedFrom": "library/gambaudo-ghys-braids-signatures-2005/manifest",
-  "sourceDocument": "library/gambaudo-ghys-braids-signatures-2005/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gambaudo-ghys-braids-signatures-2005/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gambaudo-ghys-braids-signatures-2005/manifest.jsonld",
   "provenance": "ingested"
 }

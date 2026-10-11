@@ -8,569 +8,82 @@ pages: 34-37
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
 doc_brief: "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and"
+text_source: latex
+latex_prose_ratio: 0.931
+latex_coverage_ratio: 0.967
 ---
-4.1. Approximation of pζ
-d by proper maps. Recall from (43) (and the remark
-following it) the morphism
-pζ
-d : Mζ -ss
-d → Mζ -ss
-d
-taking aζ-semistable d-dimensional CQ-representation to the associated polystable
-representation. We start this section by showing that there is a mo dule-theoretic
-compactiﬁcation of Totaro’s construction relative to Mζ -ss
-d , which we may use
-as in Section 2.2 to deﬁne the direct image along pζ
-d of the monodromic mixed
-Hodge module of vanishing cycles from the stack of d-dimensional ζ-semistable
-representations of CQ.
-Recall the deﬁnition of ζ(µ )
-f from Section 3.3. Recall from (52) the notation
-Xf ,d :=X(Qf )(1,d)
-Yζ
-f ,d :=X
-ζ (µ )
-f -ss
-f ,d .
-We replaceζ(µ )
-f by an equivalent King stability condition for Qf , as we always can,
-by Remark 3.2. Then ζ(µ )
-f deﬁnes a linearization of the natural G(1,d)-action on
-Xf ,d and we have
-Mζ
-f ,d :=Xf ,d/ /χ G(1,d)
-∼
-=Yζ
-f ,d/Gd
-where G(1,d) = GL 1(C) × Gd. As a Gd-equivariant variety, Xf ,d admits a product
-decomposition Xf ,d = Xd×Vf ,d, where Vf ,d :=⨁
-i∈Q0 Hom(Cfi , Cdi), and the extra
-GL1(C) factor acts by rescaling Vf ,d. We deﬁne Uf ,d ⊂ Vf ,d to be the subspace of
-Q0-tuples of surjective maps. The group Gd acts freely on Uf ,d, and the quotient
-is a product of Grassmannians, and is a ﬁbre bundle quotient in the ca tegory of
-COHAS AND QUANTUM ENVELOPING ALGEBRAS 35
-schemes. Therefore Gd also acts freely on Xζ -ss
-d × Uf ,d, which is a ﬁbre bundle in
-the category of schemes by [15, Prop.23]. Consider the commutativ e diagram
-(Xζ -ss
-d × Uf ,d)/Gd
-i
-/d43/d43
-κζ
-f , d
-/d43/d43❲❲❲❲❲❲❲❲❲❲❲❲❲❲❲❲❲❲❲❲❲❲❲❲❲❲
-/d31 /d127 h /d47/d47
-Yζ
-f ,d/Gd
-/d31 /d127 /d47/d47
-πζ
-f , d
-/d39/d39❖❖❖❖❖❖❖❖❖❖❖❖ (Xζ -ss
-d × Vf ,d)/Gd
-/d15/d15
-Mζ -ss
-d .
-All of the objects in the above diagram are algebraic varieties, with t he exception
-of ( Xζ -ss
-d × Vf ,d)/Gd, which is strictly an Artin stack. The diagram obtained by
-deleting this stack and all arrows incident to it is a relative compactiﬁc ation of the
-map κζ
-f ,d.
-In what follows we use the notation f ≫ 0 to mean that fi ≫ 0 for every i ∈ Q0.
-Lemma 4.1. For ﬁxed n and f ≫ 0 the natural map
-Hn
-(
-πζ
-f ,d,∗φ mon
-T r(W )ζ
-f , d
-QYζ
-f , d/Gd
-)
-→ H n
-(
-κζ
-f ,d,∗φ mon
-T r(W )ζ
-f , d
-Q(Xζ -ss
-d ×Uf , d)/Gd
-)
-is an isomorphism.
-Proof. As in the proof of Proposition 2.16 it is enough to show that for ﬁxed n ∈ Z,
-Hn
-con
-(
-φ
-T r(W )
-ζ
-f , d
-QYζ
-f , d
-→
-h∗h
-∗
-φ T r(W )
-ζ
-f , d
-QYζ
-f , d
-)
-is an isomorphism for f ≫ 0, whereh : Xζ -ss
-d × Uf ,d → Yζ
-f ,d
-is the open inclusion and
-T r(W )
-ζ
-f ,d : Yζ
-f ,d → C
-is the composition of T r(W )ζ
-f ,d with the quotient map. On the other hand, the com-
-plex of sheavesφ
-T r(W )
-ζ
-f , d
-QYζ
-f , d
-is given by restriction of the pullbackρ∗φ
-T r(W )d
-QXζ -ss
-d
-of φ T r(W )d
-QXζ -ss
-d
-along the projection ρ : Xζ -ss
-d × Vf ,d → Xζ -ss
-d . It follows that
-for each x ∈ Xζ -ss
-d , the complex of constructible sheaves φ T r(W )
-ζ
-f , d
-QYζ
-f , d
-|Yζ
-f , d∩ρ −1(x)
-is a constant complex, supported in degrees that are bounded inde pendently of x.
-The codimension of the complement of ( Xζ -ss
-d × Uf ,d) ∩ρ−1(x) inside Yζ
-f ,d ∩ρ−1(x)
-tends to inﬁnity as f ↦→ ∞, and so for suﬃciently large f
-Hn
-con
-(
-φ
-T r(W )
-ζ
-f , d
-QYζ
-f , d
-)
-Yζ
-f , d∩ρ −1(x)
-→ H n
-con
-(
-h∗h
-∗
-φ T r(W )
-ζ
-f , d
-QYζ
-f , d
-)
-Yζ
-f , d∩ρ −1(x)
-is an isomorphism for all x ∈ Xζ -ss
-d , and the result follows. □
-We deduce that for ﬁxed d ∈ NQ0 and n ∈ Z, and for f ≫ 0 there are isomor-
-phisms
-(54)
-Φ f ,d,W : Hn
-(
-πζ
-f ,d,∗φ mon
-T r(W )ζ
-f , d
-QMζ
-f , d
-)
-→ H n
-(
-κζ
-f ,d,∗φ mon
-T r(W )ζ
-f , d
-Q(Xζ -ss
-d ×Uf , d)/Gd
-)
-and
-(55)
-Ψ f ,d,W : Hn
-(
-κζ
-f ,d,!φ mon
-T r(W )ζ
-f , d
-L−f ·d
-(Xζ -ss
-d ×Uf , d)/Gd
-)
-→ H n
-(
-πζ
-f ,d,!φ mon
-T r(W )ζ
-f , d
-L−f ·d
-Mζ
-f , d
-)
-where the argument that Ψ f ,d,W is an isomorphism is as in Lemma 4.1. On the other
-hand, for f ≫ 0, the right hand side of (54) is by deﬁnition Hn(pζ
-d,∗φ mon
-Tr(W )ζ
-d
-QMζ -ss
-d
-),
-while the left hand side of (55) is Hn(pζ
-d,!φ mon
-Tr(W )ζ
-d
-QMζ -ss
-d
-).
-36 BEN DA VISON AND SVEN MEINHARDT
-Remark 4.2. Put in words, we can say that the direct image of the vanishing cy-
-cle monodromic mixed Hodge module along the non-representa ble map pζ
-d : Mζ -ss
-d →
-Mζ -ss
-d is approximated by the direct image along proper maps of sche mesπζ
-f ,d : Mζ
-f ,d →
-Mζ -ss
-d .
-For f ≫ 0 we obtain isomorphisms
-(56)
-Φ
-S
-f ,d,W : H n(Mζ ,S
-f ,d ,φ mon
-T r(W )ζ
-f , d
-QMζ
-f , d
-) ∼
-= Hn(Mζ -ss,S
-d ,φ mon
-Tr(W )ζ
-d
-QMζ -ss
-d
-)
-and
-(57)
-Ψ
-S
-f ,d,W : H n
-c (Mζ -ss,S
-d ,φ mon
-Tr(W )ζ
-d
-QMζ -ss
-d
-) ∼
-= Hn
-c (Mζ ,S
-f ,d ,φ mon
-T r(W )ζ
-f , d
-L−f ·d
-Mζ
-f , d
-)
-in the same way.
-Since each map πζ
-f ,d is proper, and φ mon
-T r(W )ζ
-d
-is exact, we deduce the following
-proposition.
-Proposition 4.3. For every d ∈ NQ0 there are natural isomorphisms
-(58) ν d : H(pζ
-d,∗φ mon
-Tr(W )ζ
-d
-QMζ -ss
-d
-) ∼
-=φ mon
-T r(W )ζ
-d
-H(pζ
-d,∗QMζ -ss
-d
-).
-Proof. The isomorphisms ν d are obtained by considering the left hand side of (54)
-and using the natural isomorphisms
-φ mon
-T r(W )ζ
-d
-πζ
-f ,d,∗QMζ
-f , d
-∼
-=πζ
-f ,d,∗φ mon
-T r(W )ζ
-f , d
-QMζ
-f , d
-.
-The isomorphisms ν d are well-deﬁned by commutativity of the square
-πζ
-f ′,d,∗φ mon
-T r(W )ζ
-f ′ , d
-QMζ
-f ′, d
-/d47/d47
-πζ
-f ′,d,∗ιf ,f ′,∗φ mon
-T r(W )ζ
-f , d
-QMζ
-f , d
-φ mon
-T r(W )ζ
-d
-πζ
-f ′,d,∗QMζ
-f ′, d
-/d79/d79
-/d47/d47φ mon
-T r(W )ζ
-d
-πζ
-f ′,d,∗ιf ,f ′,∗QMζ
-f , d
-/d79/d79
-where f ′ > f and ιf ,f ′ : Mζ
-f ,d → Mζ
-f ′,d is the natural inclusion obtained by extending
-a framing by zero. The square commutes as it is obtained by applying t he natural
-transformation
-φ mon
-T r(W )ζ
-d
-πζ
-f ′,d,∗ →πζ
-f ′,d,∗φ mon
-T r(W )ζ
-f ′, d
-to the restriction map
-QMζ
-f ′, d
-→ ιf ,f ′,∗QMζ
-f , d
-.
-□
-Similarly, the natural isomorphismsφ mon
-T r(W )ζ
-d
-πζ
-f ,d,!QMζ
-f , d
-∼
-=πζ
-f ,d,!φ mon
-T r(W )ζ
-f , d
-QMζ
-f , d
-,
-along with exactness of φ mon
-T r(W )ζ
-d
-, induce natural isomorphisms
-(59) ν c,d : H(pζ
-d,!φ mon
-Tr(W )ζ
-d
-QMζ -ss
-d
-) ∼
-=φ mon
-T r(W )ζ
-d
-H(pζ
-d,!QMζ -ss
-d
-).
-Proposition 4.4. With Q as above a ﬁnite quiver, d ∈ NQ0 a dimension vector,
-and W a potential for Q, there are (non natural) isomorphisms
-H
-(
-Mζ -ss
-d ,φ mon
-Tr(W )ζ
-d
-IC Mζ -ss
-d
-(Q)
-)
-∼
-= H(dim∗ H(pζ
-d,∗φ mon
-Tr(W )ζ
-d
-IC Mζ -ss
-d
-(Q)))
-Hc
-(
-Mζ -ss
-d ,φ mon
-Tr(W )ζ
-d
-IC Mζ -ss
-d
-(Q)
-)
-∼
-= H(dim! H(pζ
-d,!φ mon
-Tr(W )ζ
-d
-IC Mζ -ss
-d
-(Q)))
-Hc
-(
-Mζ -ss,S
-d ,φ mon
-Tr(W )ζ
-d
-IC Mζ -ss
-d
-(Q)
-)
-∼
-= H(dim! ˜ωζ ,∗
-d H(pζ
-d,!φ mon
-Tr(W )ζ
-d
-IC Mζ -ss
-d
-(Q)))
-where ˜ωζ
-d is as in (40).
-COHAS AND QUANTUM ENVELOPING ALGEBRAS 37
-Proof. Fix n ∈ Z. We prove the existence of the ﬁnal isomorphism, the proof of
-the second follows from the special case Mζ -ss,S
-d = Mζ -ss
-d , and the proof of the ﬁrst
-follows from commutativity of Verdier duality with φ mon
-Tr(W )ζ
-d
-. For suﬃciently large
-f we may write the degree n piece of the left hand side as
-Hn
-(
-dim!πζ ,S
-f ,d,! ˜ωζ ,∗
-f ,dφ mon
-T r(W )ζ
-f , d
-L(d,d)/2
-Mζ
-f , d
-)
-while the right hand side is written as
-Hn
-(
-dim! ˜ωζ ,∗
-d H
-(
-πζ
-f ,d,!φ mon
-T r(W )ζ
-f , d
-L(d,d)/2
-Mζ
-f , d
-))
-.
-The result then follows from proper base change, and the following c hain of iso-
-morphisms, coming from properness of πζ
-f ,d, exactness of vanishing cycles functors,
-and the decomposition theorem
-H
-(
-πζ
-d,f ,!φ mon
-T r(W )ζ
-f , d
-L(d,d)/2
-Mζ
-f , d
-)
-∼
-= H
-(
-φ mon
-T r(W )ζ
-f , d
-πζ
-d,f ,!L(d,d)/2
-Mζ
-f , d
-)
-∼
-=φ mon
-T r(W )ζ
-f , d
-H
-(
-πζ
-d,f ,!L(d,d)/2
-Mζ
-f , d
-)
-∼
-=φ mon
-T r(W )ζ
-f , d
-πζ
-d,f ,!L(d,d)/2
-Mζ
-f , d
-∼
-=πζ
-f ,d,!φ mon
-T r(W )ζ
-f , d
-L(d,d)/2
-Mζ
-f , d
-.
-□
-Remark 4.5. Throughout the paper we work over the complex numbers, and in the
-algebraic setting. For greater generality, we could instea d have considered analytic
-mixed Hodge modules — by Saito’s work the same fundamental fa cts that we have
-used regarding the vanishing cycle functor remain true in th e category of analytic
-mixed Hodge modules (see [44, Sec.2]). In particular, if W is a formal potential such
-that T r(W )ζ
-d deﬁnes an analytic function in some neighbourhood Ud of 0 ∈ Mζ -ss
-d ,
-then Proposition 4.3 applies in the neighbourhood Ud. If, moreover, there is a Serre
-subcategory U of the category of ζ-semistable CQ-modules of slope µ such that for
-all d ∈Λζ
-µ the inclusion Mζ -ss,U
-d ⊂ Mζ -ss
-d is an analytic open inclusion factoring
-through an open set Ud as above, then the relative versions of Theorems A, B, C
-and D hold with unmodiﬁed proofs. See [48] for results deﬁning such a subcategory
-U of the category of coherent sheaves on a Calabi–Yau 3-fold.
+[]{#CoDTSec label="CoDTSec"}
+
+## Approximation of $p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}$ by proper maps {#cohaDT}
+
+Recall from ([\[pdef\]](#pdef){reference-type="ref" reference="pdef"}) (and the remark following it) the morphism $$p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}\colon \mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}\rightarrow\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}$$ taking a $\upzeta$-semistable $\mathop{\mathrm{\mathbf{d}}}$-dimensional $\mathbb{C}Q$-representation to the associated polystable representation. We start this section by showing that there is a module-theoretic compactification of Totaro's construction relative to $\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}$, which we may use as in Section [\[TotCon\]](#TotCon){reference-type="ref" reference="TotCon"} to define the direct image along $p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}$ of the monodromic mixed Hodge module of vanishing cycles from the stack of $\mathop{\mathrm{\mathbf{d}}}$-dimensional $\upzeta$-semistable representations of $\mathbb{C}Q$.
+
+Recall the definition of $\upzeta_{\mathbf{f}}^{(\upmu)}$ from Section [\[framedSec\]](#framedSec){reference-type="ref" reference="framedSec"}. Recall from ([\[Ydef\]](#Ydef){reference-type="ref" reference="Ydef"}) the notation $$\begin{aligned}
+X_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}\colonequals &X(Q_{\mathbf{f}})_{(1,\mathop{\mathrm{\mathbf{d}}})}\\
+Y_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}\colonequals &X_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta_{\mathbf{f}}^{(\upmu)}\mathop{\mathrm{-ss}}}.
+\end{aligned}$$ We replace $\upzeta_{\mathbf{f}}^{(\upmu)}$ by an equivalent King stability condition for $Q_{\mathbf{f}}$, as we always can, by Remark [\[BtoK\]](#BtoK){reference-type="ref" reference="BtoK"}. Then $\upzeta_{\mathbf{f}}^{(\upmu)}$ defines a linearization of the natural $G_{(1,\mathop{\mathrm{\mathbf{d}}})}$-action on $X_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}$ and we have $$\begin{aligned}
+\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}\colonequals &X_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}/\!\!/_{\upchi}G_{(1,\mathop{\mathrm{\mathbf{d}}})}
+\\\cong &Y_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}/G_{\mathop{\mathrm{\mathbf{d}}}}
+\end{aligned}$$ where $G_{(1,\mathop{\mathrm{\mathbf{d}}})}=\mathop{\mathrm{GL}}_1(\mathbb{C})\times G_{\mathop{\mathrm{\mathbf{d}}}}$. As a $G_{\mathop{\mathrm{\mathbf{d}}}}$-equivariant variety, $X_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}$ admits a product decomposition $X_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}=X_{\mathop{\mathrm{\mathbf{d}}}}\times V_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}$, where $V_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}\colonequals \bigoplus_{i\in Q_0}\mathop{\mathrm{Hom}}(\mathbb{C}^{\mathbf{f}_i},\mathbb{C}^{\mathop{\mathrm{\mathbf{d}}}_i})$, and the extra $\mathop{\mathrm{GL}}_1(\mathbb{C})$ factor acts by rescaling $V_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}$. We define $U_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}\subset V_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}$ to be the subspace of $Q_0$-tuples of surjective maps. The group $G_{\mathop{\mathrm{\mathbf{d}}}}$ acts freely on $U_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}$, and the quotient is a product of Grassmannians, and is a fibre bundle quotient in the category of schemes. Therefore $G_{\mathop{\mathrm{\mathbf{d}}}}$ also acts freely on $X_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}\times U_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}$, which is a fibre bundle in the category of schemes by [@EdGr98 Prop.23]. Consider the commutative diagram $$\xymatrix{
+(X_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}\times U_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}})/G_{\mathop{\mathrm{\mathbf{d}}}}\ar@/^1.5pc/[rr]^-{i}\ar[drr]_{\kappa_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\ar@{^(->}[r]^-h& Y_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}/G_{\mathop{\mathrm{\mathbf{d}}}}\ar@{^(->}[r]\ar[rd]^{\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}& (X_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}\times V_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}})/G_{\mathop{\mathrm{\mathbf{d}}}}\ar[d]
+\\&& \mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}.
+}$$ All of the objects in the above diagram are algebraic varieties, with the exception of $(X_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}\times V_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}})/G_{\mathop{\mathrm{\mathbf{d}}}}$, which is strictly an Artin stack. The diagram obtained by deleting this stack and all arrows incident to it is a relative compactification of the map $\kappa_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}$.
+
+In what follows we use the notation $\mathbf{f}\gg 0$ to mean that $\mathbf{f}_i\gg 0$ for every $i\in Q_0$.
+
+::: lemma
+[]{#appLem label="appLem"} For fixed $n$ and $\mathbf{f}\gg 0$ the natural map $$\mathop{\mathrm{\mathcal{H}}}^n\left(\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},*}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\mathbb{Q}_{Y_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}/G_{\mathop{\mathrm{\mathbf{d}}}}}\right)\rightarrow\mathop{\mathrm{\mathcal{H}}}^n\left(\kappa^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},*}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\mathbb{Q}_{(X_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}\times U_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}})/G_{\mathop{\mathrm{\mathbf{d}}}}}\right)$$ is an isomorphism.
+:::
+
+::: proof
+*Proof.* As in the proof of Proposition [\[stabProp\]](#stabProp){reference-type="ref" reference="stabProp"} it is enough to show that for fixed $n\in\mathbb{Z}$, $\mathop{\mathrm{\mathcal{H}}}_{\mathop{\mathrm{con}}}^n\left(\upphi_{\overline{\mathcal{T}r(W)}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{Q}_{Y_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\rightarrow\overline{h}_*\overline{h}^*\upphi_{\overline{\mathcal{T}r(W)}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{Q}_{Y_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\right)$ is an isomorphism for $\mathbf{f}\gg 0$, where $$\overline{h}\colon X_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}\times U_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}} \rightarrow Y_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}$$ is the open inclusion and $$\overline{\mathcal{T}r(W)}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}\colon Y_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}\rightarrow \mathbb{C}$$ is the composition of $\mathcal{T}r(W)_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}$ with the quotient map. On the other hand, the complex of sheaves $\upphi_{\overline{\mathcal{T}r(W)}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{Q}_{Y_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}$ is given by restriction of the pullback $\uprho^*\upphi_{\overline{\mathcal{T}r(W)}_{\mathop{\mathrm{\mathbf{d}}}}}\mathbb{Q}_{X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}}$ of $\upphi_{\overline{\mathcal{T}r(W)}_{\mathop{\mathrm{\mathbf{d}}}}}\mathbb{Q}_{X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}}$ along the projection $\uprho\colon X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}\times V_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}\rightarrow X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}$. It follows that for each $x\in X_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}$, the complex of constructible sheaves $\upphi_{\overline{\mathcal{T}r(W)}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{Q}_{Y_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}|_{Y_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}\cap\uprho^{-1}(x)}$ is a constant complex, supported in degrees that are bounded independently of $x$. The codimension of the complement of $(X_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}\times U_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}})\cap\uprho^{-1}(x)$ inside $Y_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}\cap{\uprho^{-1}(x)}$ tends to infinity as $\mathbf{f}\mapsto\infty$, and so for sufficiently large $\mathbf{f}$ $$\mathop{\mathrm{\mathcal{H}}}_{\mathop{\mathrm{con}}}^n\left(\upphi_{\overline{\mathcal{T}r(W)}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{Q}_{Y_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\right)_{Y_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}\cap\uprho^{-1}(x)}\rightarrow\mathop{\mathrm{\mathcal{H}}}_{\mathop{\mathrm{con}}}^n\left(\overline{h}_*\overline{h}^*\upphi_{\overline{\mathcal{T}r(W)}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{Q}_{Y_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\right)_{Y_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}\cap\uprho^{-1}(x)}$$ is an isomorphism for all $x\in X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}$, and the result follows. ◻
+:::
+
+We deduce that for fixed $\mathop{\mathrm{\mathbf{d}}}\in\mathbb{N}^{Q_0}$ and $n\in\mathbb{Z}$, and for $\mathbf{f}\gg 0$ there are isomorphisms $$\label{PhiSurj}
+\Phi_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},W}\colon \mathop{\mathrm{\mathcal{H}}}^n\left(\uppi\hspace{0.05em}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},*}^{\upzeta}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{Q}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\right)\rightarrow \mathop{\mathrm{\mathcal{H}}}^n\left(\kappa^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},*}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{Q}_{(X_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}\times U_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}})/G_{\mathop{\mathrm{\mathbf{d}}}}}\right)$$ and $$\label{PsiSurj}
+\Psi_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},W}\colon  \mathop{\mathrm{\mathcal{H}}}^n\left(\kappa^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},!}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{L}^{-\mathbf{f}\cdot \mathop{\mathrm{\mathbf{d}}}}_{(X_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}\times U_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}})/G_{\mathop{\mathrm{\mathbf{d}}}}}\right)\rightarrow \mathop{\mathrm{\mathcal{H}}}^n\left(\uppi\hspace{0.05em}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},!}^{\upzeta}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{L}^{-\mathbf{f}\cdot\mathop{\mathrm{\mathbf{d}}}}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\right)$$ where the argument that $\Psi_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},W}$ is an isomorphism is as in Lemma [\[appLem\]](#appLem){reference-type="ref" reference="appLem"}. On the other hand, for $\mathbf{f}\gg 0$, the right hand side of ([\[PhiSurj\]](#PhiSurj){reference-type="ref" reference="PhiSurj"}) is by definition $\mathop{\mathrm{\mathcal{H}}}^n(p_{\mathop{\mathrm{\mathbf{d}}},*}^{\upzeta}\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{Q}_{\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}})$, while the left hand side of ([\[PsiSurj\]](#PsiSurj){reference-type="ref" reference="PsiSurj"}) is $\mathop{\mathrm{\mathcal{H}}}^n(p_{\mathop{\mathrm{\mathbf{d}}},!}^{\upzeta}\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{Q}_{\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}})$.
+
+::: remark
+Put in words, we can say that the direct image of the vanishing cycle monodromic mixed Hodge module along the non-representable map $p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}\colon\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}\rightarrow\mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}$ is approximated by the direct image along *proper* maps of schemes $\uppi\hspace{0.05em}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}\colon \mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}\rightarrow\mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}$.
+:::
+
+For $\mathbf{f}\gg 0$ we obtain isomorphisms $$\label{PhiBar}
+\overline{\Phi}^{\mathcal{S}}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},W }\colon \mathop{\mathrm{H}}^n(\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta,\mathcal{S}},\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{Q}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}})\cong\mathop{\mathrm{H}}^n(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}},\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}}\mathbb{Q}_{\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}})$$ and $$\label{PsiBar}
+\overline{\Psi}^{\mathcal{S}}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},W }\colon \mathop{\mathrm{H}}^n_c(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}},\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}}\mathbb{Q}_{\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}})\cong \mathop{\mathrm{H}}^n_c(\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta,\mathcal{S}},\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\mathbb{L}^{-\mathbf{f}\cdot \mathop{\mathrm{\mathbf{d}}}}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}})$$ in the same way.
+
+Since each map $\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}$ is proper, and $\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}}$ is exact, we deduce the following proposition.
+
+::: proposition
+[]{#cvs label="cvs"} For every $\mathop{\mathrm{\mathbf{d}}}\in\mathbb{N}^{Q_0}$ there are natural isomorphisms $$\label{nudef}
+\upnu_{\mathop{\mathrm{\mathbf{d}}}}\colon \mathop{\mathrm{\mathcal{H}}}(p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}},*}\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}}\mathbb{Q}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}})\cong \upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}}\mathop{\mathrm{\mathcal{H}}}(p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}},*}\mathbb{Q}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}}).$$
+:::
+
+::: proof
+*Proof.* The isomorphisms $\upnu_{\mathop{\mathrm{\mathbf{d}}}}$ are obtained by considering the left hand side of ([\[PhiSurj\]](#PhiSurj){reference-type="ref" reference="PhiSurj"}) and using the natural isomorphisms $$\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}}\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},*}\mathbb{Q}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\cong \uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},*}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\mathbb{Q}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}.$$ The isomorphisms $\upnu_{\mathop{\mathrm{\mathbf{d}}}}$ are well-defined by commutativity of the square $$\xymatrix{
+\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f}',\mathop{\mathrm{\mathbf{d}}},*}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f}',\mathop{\mathrm{\mathbf{d}}}}}\mathbb{Q}_{\mathcal{M}_{\mathbf{f}',\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\ar[r]&\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f}',\mathop{\mathrm{\mathbf{d}}},*}\iota_{\mathbf{f},\mathbf{f}',*}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\mathbb{Q}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\\
+\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}}\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f}',\mathop{\mathrm{\mathbf{d}}},*}\mathbb{Q}_{\mathcal{M}_{\mathbf{f}',\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\ar[u]\ar[r]& \upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}}\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f}',\mathop{\mathrm{\mathbf{d}}},*}\iota_{\mathbf{f},\mathbf{f}',*}\mathbb{Q}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\ar[u]
+}$$ where $\mathbf{f}'>\mathbf{f}$ and $\iota_{\mathbf{f},\mathbf{f}'}\colon\mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}\rightarrow \mathcal{M}^{\upzeta}_{\mathbf{f}',\mathop{\mathrm{\mathbf{d}}}}$ is the natural inclusion obtained by extending a framing by zero. The square commutes as it is obtained by applying the natural transformation $$\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f}',\mathop{\mathrm{\mathbf{d}}},*}\rightarrow \uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f}',\mathop{\mathrm{\mathbf{d}}},*}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f}',\mathop{\mathrm{\mathbf{d}}}}}$$ to the restriction map $$\mathbb{Q}_{\mathcal{M}_{\mathbf{f}',\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\rightarrow \iota_{\mathbf{f},\mathbf{f}',*}\mathbb{Q}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}.$$ ◻
+:::
+
+Similarly, the natural isomorphisms $\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}}\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},!}\mathbb{Q}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\cong \uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},!}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\mathbb{Q}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}$, along with exactness of $\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}}$, induce natural isomorphisms $$\upnu_{c,\mathop{\mathrm{\mathbf{d}}}}\colon \mathop{\mathrm{\mathcal{H}}}(p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}},!}\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}}\mathbb{Q}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}})\cong\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}}\mathop{\mathrm{\mathcal{H}}}(p_{\mathop{\mathrm{\mathbf{d}}},!}^{\upzeta}\mathbb{Q}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}}).$$
+
+::: proposition
+[]{#bcprop label="bcprop"} With $Q$ as above a finite quiver, $\mathop{\mathrm{\mathbf{d}}}\in\mathbb{N}^{Q_0}$ a dimension vector, and $W$ a potential for $Q$, there are (non natural) isomorphisms $$\begin{aligned}
+\mathop{\mathrm{H}}\left(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}},\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathcal{IC}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}}(\mathbb{Q})\right)\cong& \mathop{\mathrm{\mathcal{H}}}(\dim_*\mathop{\mathrm{\mathcal{H}}}(p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}},*}\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathcal{IC}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}}(\mathbb{Q})))\\
+\mathop{\mathrm{H}}_c\left(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}},\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathcal{IC}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}}(\mathbb{Q})\right)\cong& \mathop{\mathrm{\mathcal{H}}}(\dim_!\mathop{\mathrm{\mathcal{H}}}(p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}},!}\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathcal{IC}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}}(\mathbb{Q})))\\
+\mathop{\mathrm{H}}_c\left(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}},\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathcal{IC}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}}(\mathbb{Q})\right)\cong&\mathop{\mathrm{\mathcal{H}}}(\dim_!\tilde{\omega}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta,*}\mathop{\mathrm{\mathcal{H}}}(p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}},!}\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathcal{IC}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}}(\mathbb{Q})))
+\end{aligned}$$ where $\tilde{\omega}^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}$ is as in ([\[tomdef\]](#tomdef){reference-type="ref" reference="tomdef"}).
+:::
+
+::: proof
+*Proof.* Fix $n\in\mathbb{Z}$. We prove the existence of the final isomorphism, the proof of the second follows from the special case $\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}}=\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}$, and the proof of the first follows from commutativity of Verdier duality with $\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}}$. For sufficiently large $\mathbf{f}$ we may write the degree $n$ piece of the left hand side as $$\mathop{\mathrm{\mathcal{H}}}^n\left(\dim_!\uppi\hspace{0.05em}^{\upzeta,\mathcal{S}}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},!}\tilde{\omega}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta,*}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\mathbb{L}_{\mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}^{(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}\right)$$ while the right hand side is written as $$\mathop{\mathrm{\mathcal{H}}}^n\left(\dim_!\tilde{\omega}^{\upzeta,*}_{\mathop{\mathrm{\mathbf{d}}}}\mathop{\mathrm{\mathcal{H}}}\left(\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},!}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\mathbb{L}_{\mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}^{(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}\right)\right).$$ The result then follows from proper base change, and the following chain of isomorphisms, coming from properness of $\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}$, exactness of vanishing cycles functors, and the decomposition theorem $$\begin{aligned}
+\mathop{\mathrm{\mathcal{H}}}\left(\uppi\hspace{0.05em}^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}},\mathbf{f},!}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\mathbb{L}_{\mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}^{(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}\right)\cong&\mathop{\mathrm{\mathcal{H}}}\left(\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\uppi\hspace{0.05em}^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}},\mathbf{f},!}\mathbb{L}_{\mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}^{(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}\right)\\
+\cong&\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\mathop{\mathrm{\mathcal{H}}}\left(\uppi\hspace{0.05em}^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}},\mathbf{f},!}\mathbb{L}_{\mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}^{(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}\right)\\
+\cong&\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\uppi\hspace{0.05em}^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}},\mathbf{f},!}\mathbb{L}_{\mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}^{(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}\\
+\cong&\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},!}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\mathbb{L}_{\mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}^{(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}.
+\end{aligned}$$ ◻
+:::
+
+::: remark
+Throughout the paper we work over the complex numbers, and in the algebraic setting. For greater generality, we could instead have considered analytic mixed Hodge modules --- by Saito's work the same fundamental facts that we have used regarding the vanishing cycle functor remain true in the category of analytic mixed Hodge modules (see [@Saito90 Sec.2]). In particular, if $W$ is a formal potential such that $\mathcal{T}r(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}$ defines an analytic function in some neighbourhood $U_{\mathop{\mathrm{\mathbf{d}}}}$ of $0\in\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}$, then Proposition [\[cvs\]](#cvs){reference-type="ref" reference="cvs"} applies in the neighbourhood $U_{\mathop{\mathrm{\mathbf{d}}}}$. If, moreover, there is a Serre subcategory $\mathcal{U}$ of the category of $\upzeta$-semistable $\mathbb{C}Q$-modules of slope $\upmu$ such that for all $\mathop{\mathrm{\mathbf{d}}}\in\Uplambda_{\upmu}^{\upzeta}$ the inclusion $\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{U}}_{\mathop{\mathrm{\mathbf{d}}}}\subset \mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}$ is an analytic open inclusion factoring through an open set $U_{\mathop{\mathrm{\mathbf{d}}}}$ as above, then the relative versions of Theorems [\[ThmA\]](#ThmA){reference-type="ref" reference="ThmA"}, [\[CWCT\]](#CWCT){reference-type="ref" reference="CWCT"}, [\[qea\]](#qea){reference-type="ref" reference="qea"} and [\[strongPBW\]](#strongPBW){reference-type="ref" reference="strongPBW"} hold with unmodified proofs. See [@Toda17-2] for results defining such a subcategory $\mathcal{U}$ of the category of coherent sheaves on a Calabi--Yau 3-fold.
+:::

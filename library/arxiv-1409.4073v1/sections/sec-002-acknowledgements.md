@@ -8,200 +8,111 @@ pages: 5-9
 source_pdf: 1409.4073v1.pdf
 source_sha256: b40be7f0022f70a1
 doc_brief: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — W e introduce “sheaﬁﬁcation” functors from categories of (l ax monoidal) linear functors to categories of quasi-coherent sheaves"
+text_source: latex
+latex_prose_ratio: 0.915
+latex_coverage_ratio: 0.972
 ---
-I would like to thank Jarod Alper, David Rydh, Daniel Schäppi , Mattia Talpo and Angelo
-Vistoli for the useful conversations I had with them and all t he suggestions they gave me.
-1. Preliminaries on shea ves and fibered categories
-Let π : X − → Aﬀ /R be a ﬁbered category. There is a functor of rings OX : X op − →(Sets)
-deﬁned by OX (ξ) = H0(Oπ (ξ)), so that (X, OX ) is a ringed category. A presheaf of OX -modules
-on X is a functor F : X op − → (Sets) together with an H 0(Oπ (ξ))-module structure on F (ξ)
-for all ξ ∈ X such that, if ξ − →η is a map on X , then the map F (η) − → F(ξ) is H 0(Oπ (η ))-
-linear. Morphism of presheaves of OX -modules are natural transformations respecting the modul e
-structures. We denote by Mod OX the category of presheaves of OX -modules.
-SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION 6
-Deﬁnition 1.1. A quasi-coherent sheaf over X is a presheaf of OX -modules such that for all
-maps ξ − →η in X the induced map
-F (η) ⊗H0(Oπ (η )) H0(Oπ (ξ)) − → F(ξ)
-is an isomorphism. We denote by QCoh X the full subcategory of Mod OX of quasi-coherent
-sheaves.
-Notice that by fpqc descent of modules a quasi-coherent shea f is a sheaf for the fpqc topology
-of X .
-If f : Y − → X is a morphism of ﬁbered categories and F ∈ Mod OX we deﬁne f ∗F =
-F ◦ f : Y op f
-− − → Xop F
-− − →(Sets). This association deﬁnes a functor f ∗ : Mod OX − →Mod OY ,
-called the pull-back functor, and restricts to a functor f ∗ : QCoh X − → QCoh Y. Notice that
-f ∗OX = OY tautologically.
-The category Mod OX is an abelian category and cokernels of maps between quasi-c oherent
-sheaves are again quasi-coherent and thus cokernels in QCoh X . Notice that, since we have
-restricted our ﬁber categories to aﬃne schemes, a map f : F − → G of quasi-coherent sheaves
-is an epimorphism if and only if it is pointwise surjective, t hat is surjective in Mod OX . The
-category QCoh X is R-linear but it is unclear if it is abelian. Moreover kernels i n Mod OX of
-maps between quasi-coherent sheaves are almost never quasi -coherent, essentially because pull-
-backs are not left exact. There is a natural condition on X which allows us to prove that QCoh X
-is an R-linear abelian category.
-Deﬁnition 1.2. An fpqc atlas (or simply atlas) of a ﬁbered category X is a representable fpqc
-coveringX − → X from a scheme. A ﬁber category is called pseudo-algebraic if it has an atlas,
-it is called quasi-compact if it has an atlas from an aﬃne scheme.
-Letf : Y − → X be a morphism of ﬁbered categories. The map f is called pseudo-algebraic
-(resp. quasi-compact) if for all maps T − → X from a scheme (resp. quasi-compact scheme) the
-ﬁber product T ×X Y is pseudo-algebraic (resp. quasi-compact). It is called quasi-separated if
-the diagonal Y − → Y ×X Y is quasi-compact.
-If X is pseudo-algebraic then the diagonal ∆ X : X − → X ×R X is not necessarily representable.
-It is unclear whether this is true or not if X is a fpqc stack, because it is not known if algebraic
-spaces satisfy eﬀective descent along fpqc coverings.
-Let f : Y − → X be a map of ﬁbered categories. If X and f are pseudo-algebraic then Y is
-pseudo-algebraic. If Y is pseudo-algebraic and ∆ X is representable then f is pseudo-algebraic.
-If C is a (not full) subcategory of X one can analogously deﬁne presheaves of (OX )|C -modules
-and quasi-coherent sheaves on C just replacing all occurrences of X with C . We denote by
-Mod(OX )|C and QCoh C the resulting categories.
-Deﬁnition 1.3. We deﬁne Xﬂ (resp. Xsm, Xet) as the (not full) subcategory of X of objects
-ξ : SpecB − → X which are representable and ﬂat (resp. smooth, étale) and th e arrows are
-morphisms in X whose underlying map of aﬃne schemes is ﬂat (resp. smooth, ét ale).
-IfX − → X is an fpqc atlas then by deﬁnition R =X ×X X is an algebraic space and the two
-projections R ⇒X extends to a groupoid in algebraic spaces. We denote by QCoh (R ⇒X) the
-category of quasi-coherent sheaves on R ⇒X (see [ SP014, Tag 0440]). By standard arguments
-of fpqc descent for modules we have:
-Proposition 1.4. If X admits an fpqc (resp. smooth, étale) atlas then the restricti on QCoh X − →
-QCoh Xﬂ (resp. QCoh Xsm, QCoh Xet) is an equivalence of categories. If f : X − → X is an
-fpqc atlas then f ∗ : QCoh X − → QCohX is faithful and it induces an equivalence QCoh X − →
-QCoh(R ⇒X).
-SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION 7
-We see that if X is pseudo-algebraic then QCoh X is equivalent to anR-linear abelian category,
-namely QCoh (R ⇒X). Moreover if α : F − → G is a map of quasi-coherent sheaves then Ker (α)
-is deﬁned by taking Ker (α|Xﬂ ) ∈ QCoh Xﬂ , which is just given by Ker (α|Xﬂ )(SpecB
-ξ
-− − → X) =
-Ker(α(ξ) : F (ξ) − → G(ξ)) forξ ∈ X ﬂ , and then extending it to the whole X . If X is an algebraic
-stack or a scheme we see that QCoh X is equivalent to the usual category of quasi-coherent
-sheaves via an R-linear and exact functor. If it is given a subcategory D of QCoh X , an exact
-sequence of sheaves in D will always be an exact sequence in QCoh X of sheaves belonging to D.
-We now deal with the problem of deﬁning a right adjoint of a pul l-back functor. Given
-F ∈ Mod OX we deﬁne the global section F (X ) = Hom(OX, F ) of F , also denoted by H 0(X, F )
-or simply H 0(F ), which is an OX (X )-module. More generally given a map of ﬁbered categories
-g : Z − → X we deﬁne F (Z) = ( g∗F )(Z). If Z = SpecB is aﬃne we will often write F (B)
-instead of F (SpecB).
-Letf : Y − → X be a map of ﬁbered categories. Given G ∈ Mod OY and an object ξ : T − → X
-of X we deﬁne
-(fpG)(ξ) = G(T ×X Y)
-Given another object ξ′ : T ′ − → X and a morphism β : ξ′ − →ξ in X there is an induced
-morphism (fpG)(ξ) − →(fpG)(ξ′). This data deﬁne a functor fp : Mod OY − →Mod OX and we
-have:
-Proposition 1.5. Letf : Y − → X be a map of ﬁbered categories. Then fp is a right adjoint of
-f ∗ and, if
-Y ′ Y
-X ′ X
-g′
-g
-ff ′
-is a 2-cartesian diagram of ﬁbered categories, there is an isomorphi sm of functors
-g∗fp − →f ′
-pg′∗ : Mod OY − →Mod OX ′
-Iff is aﬃne then fp(QCoh Y) ⊆ QCoh X and (fp)| QCoh Y : QCoh Y − →QCoh X is right adjoint
-to f ∗ : QCoh X − → QCoh Y.
-Proof. The adjunction betweenf ∗ andfp can be found in [ SP014, Tag 00XF]. With notation from
-this reference, we have that f
-η I ≃ T ×X Y for an object η : T − → X. Moreover if F ∈ Mod OY
-then F (T ×X Y) is the limit of F|T ×X Y over the whole T ×X Y. Thus what is denoted by pf
-is easily seen to be equivalent to our fp if we take limits of R-modules and not of sets. The
-isomorphism for the base change is tautological. For the las t claim we can assume that X is
-an aﬃne scheme in which case the result follows because (usua l) push-forwards commutes with
-arbitrary base changes. □
-In general fp does not preserve quasi-coherent sheaves, even if f is a proper map of schemes.
-To get a right adjoint of pullback we have to require more.
-Deﬁnition 1.6. A pseudo-algebraic map f : Y − → X of ﬁbered categories is called ﬂat if given
-an object ξ : T − → X of X and an atlas V − →T ×X Y the resulting map V − →T is ﬂat.
-Proposition 1.7. Let f : Y − → X be a quasi-compact and quasi-separated map of pseudo-
-algebraic ﬁbered categories. Then the composition QCoh Y
-fp
-− − →Mod OX − → Mod(OX )|Xﬂ
-has values in QCoh Xﬂ . The induced map f∗ : QCoh Y − → QCoh X is a right adjoint of
-SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION 8
-f ∗ : QCoh X − → QCoh Y. If
-Y ′ Y
-X ′ X
-g′
-g
-ff ′
-is a 2-cartesian diagram of ﬁbered categories with X ′ pseudo-algebraic then Y ′ is pseudo-algebraic,
-f ′ is quasi-compact and quasi-separated and there is a natural transformation of functors
-g∗f∗ − →f ′
-∗g′∗ : QCoh X − → QCoh Y ′
-which is an isomorphism if g is ﬂat.
-Proof. Consider the 2-Cartesian diagram in the statement. The diagonal of f ′ is quasi-compact
-because it is base change of the diagonal of f . To see that fp(F )|Xﬂ is quasi-coherent for
-F ∈ QCoh Y, we can assume X = SpecB aﬃne and that Y is quasi-compact with quasi-compact
-diagonal. If U = SpecA − → Y is a fpqc atlas, it follows that R = U ×Y U is a quasi-compact
-algebraic space. By covering R by ﬁnitely many aﬃne schemes Spec Ai we can write F (Y) as
-kernel of a map F (A) − → ⊕iF (Ai). If we base change along a ﬂat map B − →B′ it is now easy
-to see that F (Y ×BB′) ≃ F (Y) ⊗BB′, as required.
-To deﬁne the natural transformation α : g∗f∗ − →f ′
-∗g′∗ notice that there is a natural map
-f∗F − →fpF which extends the identity on Xﬂ . Applying g∗ we get g∗f∗F − →g∗fpF ≃ f ′
-pg′∗F
-and then, restricting to X ′
-ﬂ , a map (g∗f∗F )|X ′
-ﬂ
-− →(f ′
-∗g′∗F )|X ′
-ﬂ
-. Since both sides are in QCoh X ′
-ﬂ
-this map uniquely extends to a natural transformation α as required. Finally assume that g is
-ﬂat and let ξ : SpecB − → X′ ∈ X ′
-ﬂ . If the composition Spec B − → X is in Xﬂ then one can
-easily check that α(ξ) is an isomorphism. Otherwise, by deﬁnition of ﬂatness, ther e exists an
-fpqc covering Spec B′ − →SpecB whose composition ξ′ : SpecB′ − → X′ satisﬁes the previous
-condition. Since α(ξ) ⊗BB′ ≃α(ξ′) we get the desired result. □
-Remark 1.8. There are set-theoretic problems in considering global sec tions of presheaves and
-therefore push-forwards, because Mod OX is in general not locally small. The common way to
-solve this problem is to use Grothendieck universes. Take a u niverse U and deﬁne rings inside
-U , so that Aﬀ /R is small (with respect to a bigger universe). Fibered catego ries should then
-be required to be small too. In this situation it is easy to sho w that Mod OX is locally small
-and therefore global sections and push-forwards are well de ﬁned. With this approach we have
-to be careful in considering (big) rings deﬁned starting fro m some F ∈ Mod OX : for instance
-Spec OX (X ) is in general not an object of Aﬀ /R.
-Notice that global sections and pushforwards of quasi-cohe rent sheaves are always well deﬁned
-for a pseudo-algebraic ﬁbered category and a pseudo-algebr aic map respectively. The reason is
-that if F ∈ QCoh X and p : X − → X is a fpqc atlas then F (X ) − →(p∗F )(X) is injective and
-thus F (X ) is a set.
-In the rest of the paper we will not be concerned about those se t-theoretic problems.
-Deﬁnition 1.9. IfA is anR-algebra and F ∈ Mod OX then a compatible A-module structure on
-F is the data of A-module structures on F (ξ) commuting with the H 0(Oπ (ξ))-module structure
-on F (ξ) for all ξ ∈ X and such that, for all ξ − →η in X , the map F (η) − → F(ξ) isA-linear. We
-deﬁne QCoh A X as the category of quasi-coherent sheaves over X with an A-module structure.
-We also deﬁne XA as the ﬁber product Spec A ×R X .
-Notice that if Y
-g
-− − → Xis a map of ﬁbered categories and F is a presheaf of OX -modules with
-anA-module structure then g∗F inherits an A-module structure. In particular g∗ : QCoh X − →
-QCoh Y extends to a functor QCoh A X − → QCohA Y.
-SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION 9
-Proposition 1.10. LetA be an R-algebra. Then the push-forward map QCoh XA − →QCoh X
-extends naturally to an equivalence QCoh XA − →QCohA X .
-Proof. The result is very simple if X is an aﬃne scheme. In general, if we set g : XA − → X for
-the projection and we consider G ∈ QCoh XA, then g∗G ∈ QCoh X and it inherits an A-module
-structure from the action of A on G. Therefore g∗G ∈ QCohA X . If h : SpecB − → X is a map
-consider the diagrams
-Spec(B ⊗RA) XA QCoh XA QCoh Spec(B ⊗RA)
-SpecB X QCohA X QCohA SpecB
-h′
-g
-h
-g′
-∗g∗g′
-h′∗
-h∗
-The second diagram is 2-commutative and the last vertical map is an equivalence. Us ing those
-diagrams it is easy to deﬁne a quasi-inverse QCoh A X − → QCoh XA of g∗.
-□
-We will almost always regard quasi-coherent sheaves over XA as objects of QCoh A X .
-Remark 1.11. If F, G ∈ QCohA X then F ⊗ OX G does not correspond to the tensor product in
-QCoh XA: F ⊗ OX G has two distinct A-module structures. Under the equivalence QCoh XA − →
-QCohA X the tensor product of F and G, that we will denote by F ⊗ OXA
-G, is given by
-U ↦− → F(U ) ⊗H0(OU ) G(U )/⟨ax ⊗y −x ⊗ay | x ∈ F (U ),y ∈ G (U )⟩
-Deﬁnition 1.12. A locally free sheaf E (of rank n) over X is a quasi-coherent sheaf such
-that E(SpecB − → X ) is a ﬁnitely generated projective B-module (of rank n) for all maps
-SpecB − → X. We denote by Loc X the subcategory of QCoh X of locally free sheaves.
-We will say that a ﬁber category X has the resolution property if Loc X generates QCoh X .
+I would like to thank Jarod Alper, David Rydh, Daniel Sch�ppi, Mattia Talpo and Angelo Vistoli for the useful conversations I had with them and all the suggestions they gave me.
+
+# []{#sec: Preliminaries on sheaves label="sec: Preliminaries on sheaves"} Preliminaries on sheaves and fibered categories
+
+Let $\pi\colon\stX\arr\mathop{\mathrm{\textup{Aff}}}/R$ be a fibered category. There is a functor of rings $\odi{\stX}\colon\stX^{\mathop{\mathrm{\textup{op}}}}\arr\sets$ defined by $\odi{\stX}(\xi)=\mathop{\mathrm{\textup{H}}}^{0}(\odi{\pi(\xi)})$, so that $(\stX,\odi{\stX})$ is a ringed category. A presheaf of $\odi{\stX}$-modules on $\stX$ is a functor $\shF\colon\stX^{\text{op}}\arr\sets$ together with an $\mathop{\mathrm{\textup{H}}}^{0}(\odi{\pi(\xi)})$-module structure on $\shF(\xi)$ for all $\xi\in\stX$ such that, if $\xi\arr\eta$ is a map on $\stX$, then the map $\shF(\eta)\arr\shF(\xi)$ is $\mathop{\mathrm{\textup{H}}}^{0}(\odi{\pi(\eta)})$-linear. Morphism of presheaves of $\odi{\stX}$-modules are natural transformations respecting the module structures. We denote by $\mathop{\mathrm{\textup{Mod}}}\odi{\stX}$ the category of presheaves of $\odi{\stX}$-modules.
+
+::: defn
+A quasi-coherent sheaf over $\stX$ is a presheaf of $\odi{\stX}$-modules such that for all maps $\xi\arr\eta$ in $\stX$ the induced map $$\shF(\eta)\otimes_{\mathop{\mathrm{\textup{H}}}^{0}(\odi{\pi(\eta)})}\mathop{\mathrm{\textup{H}}}^{0}(\odi{\pi(\xi)})\arr\shF(\xi)$$ is an isomorphism. We denote by $\mathop{\mathrm{\textup{QCoh}}}\stX$ the full subcategory of $\mathop{\mathrm{\textup{Mod}}}\odi{\stX}$ of quasi-coherent sheaves.
+:::
+
+Notice that by fpqc descent of modules a quasi-coherent sheaf is a sheaf for the fpqc topology of $\stX$.
+
+If $f\colon\stY\arr\stX$ is a morphism of fibered categories and $\shF\in\mathop{\mathrm{\textup{Mod}}}\odi{\stX}$ we define $f^{*}\shF=\shF\circ f\colon\stY^{\mathop{\mathrm{\textup{op}}}}\arrdi f\stX^{\mathop{\mathrm{\textup{op}}}}\arrdi{\shF}\sets$. This association defines a functor $f^{*}\colon\mathop{\mathrm{\textup{Mod}}}\odi{\stX}\arr\mathop{\mathrm{\textup{Mod}}}\odi{\stY}$, called the pull-back functor, and restricts to a functor $f^{*}\colon\mathop{\mathrm{\textup{QCoh}}}\stX\arr\mathop{\mathrm{\textup{QCoh}}}\stY$. Notice that $f^{*}\odi{\stX}=\odi{\stY}$ tautologically.
+
+The category $\mathop{\mathrm{\textup{Mod}}}\odi{\stX}$ is an abelian category and cokernels of maps between quasi-coherent sheaves are again quasi-coherent and thus cokernels in $\mathop{\mathrm{\textup{QCoh}}}\stX$. Notice that, since we have restricted our fiber categories to affine schemes, a map $f\colon\shF\arr\shG$ of quasi-coherent sheaves is an epimorphism if and only if it is pointwise surjective, that is surjective in $\mathop{\mathrm{\textup{Mod}}}\odi{\stX}$. The category $\mathop{\mathrm{\textup{QCoh}}}\stX$ is $R$-linear but it is unclear if it is abelian. Moreover kernels in $\mathop{\mathrm{\textup{Mod}}}\odi{\stX}$ of maps between quasi-coherent sheaves are almost never quasi-coherent, essentially because pull-backs are not left exact. There is a natural condition on $\stX$ which allows us to prove that $\mathop{\mathrm{\textup{QCoh}}}\stX$ is an $R$-linear abelian category.
+
+::: defn
+An *fpqc atlas* (or simply *atlas*) of a fibered category $\stX$ is a representable fpqc covering $X\arr\stX$ from a scheme. A fiber category is called *pseudo-algebraic* if it has an atlas, it is called *quasi-compact* if it has an atlas from an affine scheme.
+
+Let$f\colon\stY\arr\stX$ be a morphism of fibered categories. The map $f$ is called *pseudo-algebraic* (resp. *quasi-compact*) if for all maps $T\arr\stX$ from a scheme (resp. quasi-compact scheme) the fiber product $T\times_{\stX}\stY$ is pseudo-algebraic (resp. quasi-compact). It is called *quasi-separated* if the diagonal $\stY\arr\stY\times_{\stX}\stY$ is quasi-compact.
+:::
+
+If $\stX$ is pseudo-algebraic then the diagonal $\Delta_{\stX}\colon\stX\arr\stX\times_{R}\stX$ is not necessarily representable. It is unclear whether this is true or not if $\stX$ is a fpqc stack, because it is not known if algebraic spaces satisfy effective descent along fpqc coverings.
+
+Let $f\colon\stY\arr\stX$ be a map of fibered categories. If $\stX$ and $f$ are pseudo-algebraic then $\stY$ is pseudo-algebraic. If $\stY$ is pseudo-algebraic and $\Delta_{\stX}$ is representable then $f$ is pseudo-algebraic.
+
+If $\catC$ is a (not full) subcategory of $\stX$ one can analogously define presheaves of $(\odi{\stX})_{|\catC}$-modules and quasi-coherent sheaves on $\catC$ just replacing all occurrences of $\stX$ with $\catC$. We denote by $\mathop{\mathrm{\textup{Mod}}}(\odi{\stX})_{|\catC}$ and $\mathop{\mathrm{\textup{QCoh}}}\catC$ the resulting categories.
+
+::: defn
+We define $\stX_{\text{fl}}$ (resp. $\stX_{\text{sm}}$, $\stX_{\text{et}}$) as the (not full) subcategory of $\stX$ of objects $\xi\colon\mathop{\mathrm{\textup{Spec}}}B\arr\stX$ which are representable and flat (resp. smooth, �tale) and the arrows are morphisms in $\stX$ whose underlying map of affine schemes is flat (resp. smooth, �tale).
+:::
+
+If $X\arr\stX$ is an fpqc atlas then by definition $R=X\times_{\stX}X$ is an algebraic space and the two projections $\shR\rightrightarrows X$ extends to a groupoid in algebraic spaces. We denote by $\mathop{\mathrm{\textup{QCoh}}}(R\rightrightarrows X)$ the category of quasi-coherent sheaves on $R\rightrightarrows X$ (see [@SP014 Tag 0440]). By standard arguments of fpqc descent for modules we have:
+
+::: prop
+[]{#prop:reducing to atlases for quasi-geometric categories label="prop:reducing to atlases for quasi-geometric categories"} If $\stX$ admits an fpqc (resp. smooth, �tale) atlas then the restriction $\mathop{\mathrm{\textup{QCoh}}}\stX\arr\mathop{\mathrm{\textup{QCoh}}}\stX_{\text{fl}}$ (resp. $\mathop{\mathrm{\textup{QCoh}}}\stX_{\text{sm}}$, $\mathop{\mathrm{\textup{QCoh}}}\stX_{\text{et}}$) is an equivalence of categories. If $f\colon X\arr\stX$ is an fpqc atlas then $f^{*}\colon\mathop{\mathrm{\textup{QCoh}}}\stX\arr\mathop{\mathrm{\textup{QCoh}}}X$ is faithful and it induces an equivalence $\mathop{\mathrm{\textup{QCoh}}}\stX\arr\mathop{\mathrm{\textup{QCoh}}}(R\rightrightarrows X)$.
+:::
+
+We see that if $\stX$ is pseudo-algebraic then $\mathop{\mathrm{\textup{QCoh}}}\stX$ is equivalent to an $R$-linear abelian category, namely $\mathop{\mathrm{\textup{QCoh}}}(R\rightrightarrows X)$. Moreover if $\alpha\colon\shF\arr\shG$ is a map of quasi-coherent sheaves then $\mathop{\mathrm{\textup{Ker}}}(\alpha)$ is defined by taking $\mathop{\mathrm{\textup{Ker}}}(\alpha_{|\stX_{\text{fl}}})\in\mathop{\mathrm{\textup{QCoh}}}\stX_{\text{fl}}$, which is just given by $\mathop{\mathrm{\textup{Ker}}}(\alpha_{|\stX_{\text{fl}}})(\mathop{\mathrm{\textup{Spec}}}B\arrdi{\xi}\stX)=\mathop{\mathrm{\textup{Ker}}}(\alpha(\xi)\colon\shF(\xi)\arr\shG(\xi))$ for $\xi\in\stX_{\text{fl}}$, and then extending it to the whole $\stX$. If $\stX$ is an algebraic stack or a scheme we see that $\mathop{\mathrm{\textup{QCoh}}}\stX$ is equivalent to the usual category of quasi-coherent sheaves via an $R$-linear and exact functor. If it is given a subcategory $\shD$ of $\mathop{\mathrm{\textup{QCoh}}}\stX$, an exact sequence of sheaves in $\shD$ will always be an exact sequence in $\mathop{\mathrm{\textup{QCoh}}}\stX$ of sheaves belonging to $\shD$.
+
+We now deal with the problem of defining a right adjoint of a pull-back functor. Given $\shF\in\mathop{\mathrm{\textup{Mod}}}\odi{\stX}$ we define the global section $\shF(\stX)=\mathop{\mathrm{\textup{Hom}}}(\odi{\stX},\shF)$ of $\shF$, also denoted by $\mathop{\mathrm{\textup{H}}}^{0}(\stX,\shF)$ or simply $\mathop{\mathrm{\textup{H}}}^{0}(\shF)$, which is an $\odi{\stX}(\stX)$-module. More generally given a map of fibered categories $g\colon\stZ\arr\stX$ we define $\shF(\stZ)=(g^{*}\shF)(\stZ)$. If $\stZ=\mathop{\mathrm{\textup{Spec}}}B$ is affine we will often write $\shF(B)$ instead of $\shF(\mathop{\mathrm{\textup{Spec}}}B)$.
+
+Let $f\colon\stY\arr\stX$ be a map of fibered categories. Given $\shG\in\mathop{\mathrm{\textup{Mod}}}\odi{\stY}$ and an object $\xi\colon T\arr\stX$ of $\stX$ we define $$(f_{p}\shG)(\xi)=\shG(T\times_{\stX}\stY)$$ Given another object $\xi'\colon T'\arr\stX$ and a morphism $\beta\colon\xi'\arr\xi$ in $\stX$ there is an induced morphism $(f_{p}\shG)(\xi)\arr(f_{p}\shG)(\xi')$. This data define a functor $f_{p}\colon\mathop{\mathrm{\textup{Mod}}}\odi{\stY}\arr\mathop{\mathrm{\textup{Mod}}}\odi{\stX}$ and we have:
+
+::: prop
+Let $f\colon\stY\arr\stX$ be a map of fibered categories. Then $f_{p}$ is a right adjoint of $f^{*}$ and, if $$\begin{tikzpicture}[xscale=1.5,yscale=-1.2]     \node (A0_0) at (0, 0) {$\stY'$};     \node (A0_1) at (1, 0) {$\stY$};     \node (A1_0) at (0, 1) {$\stX'$};     \node (A1_1) at (1, 1) {$\stX$};     \path (A0_0) edge [->]node [auto] {$\scriptstyle{g'}$} (A0_1);     \path (A1_0) edge [->]node [auto] {$\scriptstyle{g}$} (A1_1);     \path (A0_1) edge [->]node [auto] {$\scriptstyle{f}$} (A1_1);     \path (A0_0) edge [->]node [auto] {$\scriptstyle{f'}$} (A1_0);   \end{tikzpicture}$$ is a $2$-cartesian diagram of fibered categories, there is an isomorphism of functors $$g^{*}f_{p}\arr f'_{p}g'^{*}\colon\mathop{\mathrm{\textup{Mod}}}\odi{\stY}\arr\mathop{\mathrm{\textup{Mod}}}\odi{\stX'}$$ If $f$ is affine then $f_{p}(\mathop{\mathrm{\textup{QCoh}}}\stY)\subseteq\mathop{\mathrm{\textup{QCoh}}}\stX$ and $(f_{p})_{|\mathop{\mathrm{\textup{QCoh}}}\stY}\colon\mathop{\mathrm{\textup{QCoh}}}\stY\arr\mathop{\mathrm{\textup{QCoh}}}\stX$ is right adjoint to $f^{*}\colon\mathop{\mathrm{\textup{QCoh}}}\stX\arr\mathop{\mathrm{\textup{QCoh}}}\stY$.
+:::
+
+::: proof
+*Proof.* The adjunction between $f^{*}$ and $f_{p}$ can be found in [@SP014 Tag 00XF]. With notation from this reference, we have that $_{\eta}^{f}\shI\simeq T\times_{\stX}\stY$ for an object $\eta\colon T\arr\stX$. Moreover if $\shF\in\mathop{\mathrm{\textup{Mod}}}\odi{\stY}$ then $\shF(T\times_{\stX}\stY)$ is the limit of $\shF_{|T\times_{\stX}\stY}$ over the whole $T\times_{\stX}\stY$. Thus what is denoted by $_{p}f$ is easily seen to be equivalent to our $f_{p}$ if we take limits of $R$-modules and not of sets. The isomorphism for the base change is tautological. For the last claim we can assume that $\stX$ is an affine scheme in which case the result follows because (usual) push-forwards commutes with arbitrary base changes. ◻
+:::
+
+In general $f_{p}$ does not preserve quasi-coherent sheaves, even if $f$ is a proper map of schemes. To get a right adjoint of pullback we have to require more.
+
+::: defn
+A pseudo-algebraic map $f\colon\stY\arr\stX$ of fibered categories is called *flat* if given an object $\xi\colon T\arr\stX$ of $\stX$ and an atlas $V\arr T\times_{\stX}\stY$ the resulting map $V\arr T$ is flat.
+:::
+
+::: prop
+[]{#prop:properties of push-forward label="prop:properties of push-forward"} Let $f\colon\stY\arr\stX$ be a quasi-compact and quasi-separated map of pseudo-algebraic fibered categories. Then the composition $\mathop{\mathrm{\textup{QCoh}}}\stY\arrdi{f_{p}}\mathop{\mathrm{\textup{Mod}}}\odi{\stX}\arr\mathop{\mathrm{\textup{Mod}}}(\odi{\stX})_{|\stX_{\text{fl}}}$ has values in $\mathop{\mathrm{\textup{QCoh}}}\stX_{\text{fl}}$. The induced map $f_{*}\colon\mathop{\mathrm{\textup{QCoh}}}\stY\arr\mathop{\mathrm{\textup{QCoh}}}\stX$ is a right adjoint of $f^{*}\colon\mathop{\mathrm{\textup{QCoh}}}\stX\arr\mathop{\mathrm{\textup{QCoh}}}\stY$. If $$\begin{tikzpicture}[xscale=1.5,yscale=-1.2]     \node (A0_0) at (0, 0) {$\stY'$};     \node (A0_1) at (1, 0) {$\stY$};     \node (A1_0) at (0, 1) {$\stX'$};     \node (A1_1) at (1, 1) {$\stX$};     \path (A0_0) edge [->]node [auto] {$\scriptstyle{g'}$} (A0_1);     \path (A1_0) edge [->]node [auto] {$\scriptstyle{g}$} (A1_1);     \path (A0_1) edge [->]node [auto] {$\scriptstyle{f}$} (A1_1);     \path (A0_0) edge [->]node [auto] {$\scriptstyle{f'}$} (A1_0);   \end{tikzpicture}$$ is a $2$-cartesian diagram of fibered categories with $\stX'$ pseudo-algebraic then $\stY'$ is pseudo-algebraic, $f'$ is quasi-compact and quasi-separated and there is a natural transformation of functors $$g^{*}f_{*}\arr f'_{*}g'^{*}\colon\mathop{\mathrm{\textup{QCoh}}}\stX\arr\mathop{\mathrm{\textup{QCoh}}}\stY'$$ which is an isomorphism if $g$ is flat.
+:::
+
+::: proof
+*Proof.* Consider the $2$-Cartesian diagram in the statement. The diagonal of $f'$ is quasi-compact because it is base change of the diagonal of $f$. To see that $f_{p}(\shF)_{|\stX_{\text{fl}}}$ is quasi-coherent for $\shF\in\mathop{\mathrm{\textup{QCoh}}}\stY$, we can assume $\stX=\mathop{\mathrm{\textup{Spec}}}B$ affine and that $\stY$ is quasi-compact with quasi-compact diagonal. If $U=\mathop{\mathrm{\textup{Spec}}}A\arr\stY$ is a fpqc atlas, it follows that $R=U\times_{\stY}U$ is a quasi-compact algebraic space. By covering $R$ by finitely many affine schemes $\mathop{\mathrm{\textup{Spec}}}A_{i}$ we can write $\shF(\stY)$ as kernel of a map $\shF(A)\arr\oplus_{i}\shF(A_{i})$. If we base change along a flat map $B\arr B'$ it is now easy to see that $\shF(\stY\times_{B}B')\simeq\shF(\stY)\otimes_{B}B'$, as required.
+
+To define the natural transformation $\alpha\colon g^{*}f_{*}\arr f'_{*}g'^{*}$ notice that there is a natural map $f_{*}\shF\arr f_{p}\shF$ which extends the identity on $\stX_{\text{fl}}$. Applying $g^{*}$ we get $g^{*}f_{*}\shF\arr g^{*}f_{p}\shF\simeq f'_{p}g'^{*}\shF$ and then, restricting to $\stX'_{\text{fl}}$, a map $(g^{*}f_{*}\shF)_{|\stX'_{\text{fl}}}\arr(f'_{*}g'^{*}\shF)_{|\stX'_{\text{fl}}}$. Since both sides are in $\mathop{\mathrm{\textup{QCoh}}}\stX'_{\text{fl}}$ this map uniquely extends to a natural transformation $\alpha$ as required. Finally assume that $g$ is flat and let $\xi\colon\mathop{\mathrm{\textup{Spec}}}B\arr\stX'\in\stX'_{\text{fl}}$. If the composition $\mathop{\mathrm{\textup{Spec}}}B\arr\stX$ is in $\stX_{\text{fl}}$ then one can easily check that $\alpha(\xi)$ is an isomorphism. Otherwise, by definition of flatness, there exists an fpqc covering $\mathop{\mathrm{\textup{Spec}}}B'\arr\mathop{\mathrm{\textup{Spec}}}B$ whose composition $\xi'\colon\mathop{\mathrm{\textup{Spec}}}B'\arr\stX'$ satisfies the previous condition. Since $\alpha(\xi)\otimes_{B}B'\simeq\alpha(\xi')$ we get the desired result. ◻
+:::
+
+::: rem
+There are set-theoretic problems in considering global sections of presheaves and therefore push-forwards, because $\mathop{\mathrm{\textup{Mod}}}\odi{\stX}$ is in general not locally small. The common way to solve this problem is to use Grothendieck universes. Take a universe $U$ and define rings inside $U$, so that $\mathop{\mathrm{\textup{Aff}}}/R$ is small (with respect to a bigger universe). Fibered categories should then be required to be small too. In this situation it is easy to show that $\mathop{\mathrm{\textup{Mod}}}\odi{\stX}$ is locally small and therefore global sections and push-forwards are well defined. With this approach we have to be careful in considering (big) rings defined starting from some $\shF\in\mathop{\mathrm{\textup{Mod}}}\odi{\stX}$: for instance $\mathop{\mathrm{\textup{Spec}}}\odi{\stX}(\stX)$ is in general not an object of $\mathop{\mathrm{\textup{Aff}}}/R$.
+
+Notice that global sections and pushforwards of quasi-coherent sheaves are always well defined for a pseudo-algebraic fibered category and a pseudo-algebraic map respectively. The reason is that if $\shF\in\mathop{\mathrm{\textup{QCoh}}}\stX$ and $p\colon X\arr\stX$ is a fpqc atlas then $\shF(\stX)\arr(p^{*}\shF)(X)$ is injective and thus $\shF(\stX)$ is a set.
+
+In the rest of the paper we will not be concerned about those set-theoretic problems.
+:::
+
+::: defn
+[]{#rem: A module structures of odix modules label="rem: A module structures of odix modules"} If $A$ is an $R$-algebra and $\shF\in\mathop{\mathrm{\textup{Mod}}}\odi{\stX}$ then a compatible $A$-module structure on $\shF$ is the data of $A$-module structures on $\shF(\xi)$ commuting with the $\mathop{\mathrm{\textup{H}}}^{0}(\odi{\pi(\xi)})$-module structure on $\shF(\xi)$ for all $\xi\in\stX$ and such that, for all $\xi\arr\eta$ in $\stX$, the map $\shF(\eta)\arr\shF(\xi)$ is $A$-linear. We define $\mathop{\mathrm{\textup{QCoh}}}_{A}\stX$ as the category of quasi-coherent sheaves over $\stX$ with an $A$-module structure. We also define $\stX_{A}$ as the fiber product $\mathop{\mathrm{\textup{Spec}}}A\times_{R}\stX$.
+:::
+
+Notice that if $\stY\arrdi g\stX$ is a map of fibered categories and $\shF$ is a presheaf of $\odi{\stX}$-modules with an $A$-module structure then $g^{*}\shF$ inherits an $A$-module structure. In particular $g^{*}\colon\mathop{\mathrm{\textup{QCoh}}}\stX\arr\mathop{\mathrm{\textup{QCoh}}}\stY$ extends to a functor $\mathop{\mathrm{\textup{QCoh}}}_{A}\stX\arr\mathop{\mathrm{\textup{QCoh}}}_{A}\stY$.
+
+::: prop
+Let $A$ be an $R$-algebra. Then the push-forward map $\mathop{\mathrm{\textup{QCoh}}}\stX_{A}\arr\mathop{\mathrm{\textup{QCoh}}}\stX$ extends naturally to an equivalence $\mathop{\mathrm{\textup{QCoh}}}\stX_{A}\arr\mathop{\mathrm{\textup{QCoh}}}_{A}\stX$.
+:::
+
+::: proof
+*Proof.* The result is very simple if $\stX$ is an affine scheme. In general, if we set $g\colon\stX_{A}\arr\stX$ for the projection and we consider $\shG\in\mathop{\mathrm{\textup{QCoh}}}\stX_{A}$, then $g_{*}\shG\in\mathop{\mathrm{\textup{QCoh}}}\stX$ and it inherits an $A$-module structure from the action of $A$ on $\shG$. Therefore $g_{*}\shG\in\mathop{\mathrm{\textup{QCoh}}}_{A}\stX$. If $h\colon\mathop{\mathrm{\textup{Spec}}}B\arr\stX$ is a map consider the diagrams $$\begin{tikzpicture}[xscale=3.4,yscale=-1.0]     
+\node (A0_0) at (0.3, 0) {$\mathop{\mathrm{\textup{Spec}}}(B\otimes_R A)$};     
+\node (A0_1) at (1, 0) {$\stX_A$};     \node (A0_2) at (2, 0) {$\mathop{\mathrm{\textup{QCoh}}}\stX_A$};     \node (A0_3) at (3, 0) {$\mathop{\mathrm{\textup{QCoh}}}\mathop{\mathrm{\textup{Spec}}}(B\otimes_R A)$};     \node (A1_0) at (0.3, 1) {$\mathop{\mathrm{\textup{Spec}}}B$};    
+\node (A1_1) at (1, 1) {$\stX$};     \node (A1_2) at (2, 1) {$\mathop{\mathrm{\textup{QCoh}}}_A \stX$};     \node (A1_3) at (3, 1) {$\mathop{\mathrm{\textup{QCoh}}}_A \mathop{\mathrm{\textup{Spec}}}B$};     \path (A0_0) edge [->]node [auto] {$\scriptstyle{h'}$} (A0_1);     \path (A0_1) edge [->]node [auto] {$\scriptstyle{g}$} (A1_1);     \path (A1_0) edge [->]node [auto] {$\scriptstyle{h}$} (A1_1);     \path (A0_3) edge [->]node [auto] {$\scriptstyle{g'_*}$} (A1_3);     \path (A0_2) edge [->]node [auto] {$\scriptstyle{g_*}$} (A1_2);     \path (A0_0) edge [->]node [auto] {$\scriptstyle{g'}$} (A1_0);     \path (A0_2) edge [->]node [auto] {$\scriptstyle{h'^*}$} (A0_3);     \path (A1_2) edge [->]node [auto] {$\scriptstyle{h^*}$} (A1_3);   \end{tikzpicture}$$ The second diagram is $2$-commutative and the last vertical map is an equivalence. Using those diagrams it is easy to define a quasi-inverse $\mathop{\mathrm{\textup{QCoh}}}_{A}\stX\arr\mathop{\mathrm{\textup{QCoh}}}\stX_{A}$ of $g_{*}$. ◻
+:::
+
+We will almost always regard quasi-coherent sheaves over $\stX_{A}$ as objects of $\mathop{\mathrm{\textup{QCoh}}}_{A}\stX$.
+
+::: rem
+[]{#rem: remark on the tensor product over A label="rem: remark on the tensor product over A"} If $\shF,\shG\in\mathop{\mathrm{\textup{QCoh}}}_{A}\stX$ then $\shF\otimes_{\odi{\stX}}\shG$ does not correspond to the tensor product in $\mathop{\mathrm{\textup{QCoh}}}\stX_{A}$: $\shF\otimes_{\odi{\stX}}\shG$ has two distinct $A$-module structures. Under the equivalence $\mathop{\mathrm{\textup{QCoh}}}\stX_{A}\arr\mathop{\mathrm{\textup{QCoh}}}_{A}\stX$ the tensor product of $\shF$ and $\shG$, that we will denote by $\shF\otimes_{\odi{\stX_{A}}}\shG$, is given by $$U\longmapsto\shF(U)\otimes_{\mathop{\mathrm{\textup{H}}}^{0}(\odi U)}\shG(U)/\langle ax\otimes y-x\otimes ay\st x\in\shF(U),y\in\shG(U)\rangle$$
+:::
+
+::: defn
+A locally free sheaf $\E$ (of rank $n$) over $\stX$ is a quasi-coherent sheaf such that $\E(\mathop{\mathrm{\textup{Spec}}}B\arr\stX)$ is a finitely generated projective $B$-module (of rank $n$) for all maps $\mathop{\mathrm{\textup{Spec}}}B\arr\stX$. We denote by $\mathop{\mathrm{\textup{Loc}}}\stX$ the subcategory of $\mathop{\mathrm{\textup{QCoh}}}\stX$ of locally free sheaves.
+
+We will say that a fiber category $\stX$ has the *resolution property* if $\mathop{\mathrm{\textup{Loc}}}\stX$ generates $\mathop{\mathrm{\textup{QCoh}}}\stX$.
+:::

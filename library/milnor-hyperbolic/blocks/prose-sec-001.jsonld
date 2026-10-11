@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/milnor-hyperbolic/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/milnor-hyperbolic/blocks/prose-sec-001",
   "kind": "prose",
   "title": "JOHN MILNOR",
   "pageStart": 4,
   "pageEnd": 6,
   "text": "../sections/sec-001-12-john-milnor.md",
-  "derivedFrom": "library/milnor-hyperbolic/manifest",
-  "sourceDocument": "library/milnor-hyperbolic/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/milnor-hyperbolic/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/milnor-hyperbolic/manifest.jsonld",
   "provenance": "ingested"
 }

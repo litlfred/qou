@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-011",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-011",
   "kind": "prose",
-  "title": "Asymptotic Behavior and 3-dimensional Picture",
-  "pageStart": 11,
-  "pageEnd": 14,
-  "text": "../sections/sec-011-4-asymptotic-behavior-and-3-dimensional-picture.md",
-  "derivedFrom": "library/arxiv-math-ph-0105039v1/manifest",
-  "sourceDocument": "library/arxiv-math-ph-0105039v1/manifest",
+  "title": "Acknowledgement",
+  "pageStart": 29,
+  "pageEnd": 31,
+  "text": "../sections/sec-011-acknowledgement.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-ph-0105039v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-ph-0105039v1/manifest.jsonld",
   "provenance": "ingested"
 }

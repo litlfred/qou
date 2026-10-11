@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/lee-vanderveen-colored-jones-polynomials-without-tails/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/lee-vanderveen-colored-jones-polynomials-without-tails/blocks/prose-sec-000",
   "kind": "prose",
   "title": "Colored Jones polynomial",
   "pageStart": 1,
   "pageEnd": 1,
   "text": "../sections/sec-000-2-colored-jones-polynomial.md",
-  "derivedFrom": "library/lee-vanderveen-colored-jones-polynomials-without-tails/manifest",
-  "sourceDocument": "library/lee-vanderveen-colored-jones-polynomials-without-tails/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lee-vanderveen-colored-jones-polynomials-without-tails/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lee-vanderveen-colored-jones-polynomials-without-tails/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,672 @@
+
+\section{Equivariant structure of matrix factorizations and their push-forwards}\label{sec: eq push}
+
+In this section we discuss  the properties of equivariant matrix factorizations and construct the push forward of matrix factorizations
+along the embedding of affine varieties $j: Spec(R)\to Spec(S)$. There is a more general, more sophisticated
+construction for push forward of matrix factorization that could be found in \cite{DM} but the functor from \cite{DM} is of different nature then ours.
+Our construction of the push-forward relies on the generalizations of the lemmas from the previous section and we discuss these extensions first.
+
+
+\subsection{Technical lemmas: non-equivariant version}
+
+
+We keep notations consistent with the previous section. Let $\SymbolPrint{\Mod_{per}}(\calZ)$ be a category  of $\ZZ_2$-graded free $\CC[\calZ]$ modules with  endomorphisms.
+An object $\calF\in \Mod_{per}(\calZ)$ is a pair $(M,D)$, $M=M^0\oplus M^1$, $M^i=\CC[\calZ]^{d_i}$ and $D\in \Hom_{\CC[\calZ]}(M^1,M^0)\oplus \Hom_{\CC[\calZ]}(M^0,M^1)$.
+The space of morphisms between two elements of $\Mod_{per}(\calZ)$ consists of  morphisms of the corresponding   $\CC[\calZ]$-modules that intertwine the endomorphisms.
+
+
+
+We denote by $\SymbolPrint{\Com_{per}}(\calZ)$ be the category of complexes of $\ZZ_2$-graded modules with endomorphisms.
+We denote by \(\Mod_{per}(\calZ)\) the abelian category with objects \((M,D)\) where \(M=M^0\oplus M^1\) is a \(\ZZ_2\)-graded \(\CC[\calZ]\)-module
+and \(D\in \Hom_{\CC[\calZ]}(M^i,M^{i+1})\). The morphisms in \(\Mod_{per}(\calZ)\) preserve \(\ZZ_2\)-grading and intertwine the endomorphisms.
+We would like to emphasize that the elements of \(\Mod_{per}(\calZ)\) are not matrix factorizations in general since we do not
+impose constraint \(D^2=W\) and do not require the modules \(M_i\) to be free.
+
+An object of
+$\Com_{per}(\calZ)$ is a collection of objects $\calF_i\in \Mod_{per}(\calZ)$, $\calF_i=(M_i,D_i)$, $M_i=\CC[\calZ]^{r_i}$ and morphisms
+$d^+_i: M_i\to M_{i-1}$ which are morphisms of elements of $\Mod_{per}(\calZ)$ and $(d^+)^2=0$ as a  linear map $M_i\to M_{i-2}$.
+Since \(d^+_i\) intertwines the endomorphisms \(D_{i-1}\) and \(D_i\) the kernel \(\ker d^+_i\subset M_i \) and image \( \im d^+_i\subset M_{i-1}\) are
+elements of \(\Mod_{per}(\calZ)\) and we use notation $H^i(\calF)$ for
+the quotient \(\ker d^+_i/\im d^+_{i+1}\). For subset of $\Com_{per}(\calZ)$ consisting of complexes $\calF$ such that $M_i=0$ for $i\notin [0,\ell]$
+we use notation $\SymbolPrint{\Com^\ell_{per}}(\calZ)$.
+
+
+Analogously to the previous case we introduce notation $\Hom^k(\calF_\bullet,\calF_\bullet)=\oplus_i \Hom(\calF_i,\calF_{i-k})$ respectively we use notation
+$\xExt^k_{d^+}(\calF_\bullet,\calF_\bullet)$ for the elements of $\Hom^k(\calF_\bullet,\calF_\bullet)$ that commute with the differential $d^+$. The homotopy relations
+between the elements of $\xExt^k_{d^+}(\calF_\bullet,\calF_\bullet)$ is defined in the natural way:
+$$ f\sim g,\mbox{ iff there is } h\in \Hom^{k-1}(\calF_\bullet,\calF_\bullet), \quad f-g=d^+\circ h-h\circ d^+.$$
+
+
+
+
+
+The technical lemma that we need later is a generalization of lemmas~\ref{lem: ext MF} and \ref{lem: ext uniq}, the proof is essentially identical to the proof of the above mentioned lemmas.
+%and we omit them.
+\begin{lemma}
+  \label{lem: ext MF+} Let $(\calF_\bullet,d_\bullet^+)$, $\calF_i=(M_i,D_i)$ be an element of $\Com^\ell_{per}(\calZ)$ and $F\in \CC[\calZ]$ such that \( M_i\) are free \(\CC[\calZ]\)-modules
+  and
+\begin{enumerate}
+%\item $(F-\tilde{F})|_{\calZ_0}=0$
+\item Elements of $\xExtdpv{<0}(\calF_\bullet,\calF_\bullet)$ are homotopic to $0$
+\item Element $F-D^2\in \xExtdpv{0}(\calF_\bullet,\calF_\bullet)$ is homotopic to $0$
+%\item $F\in \Ann(\mathrm{H}^0(C_\bullet,d_\bullet^+))$.
+\end{enumerate}
+Then there are maps  $d_{ij}^-\in \Hom( \calF_i, \calF_j)$, $j>i$ such that
+$$ [(\calF_\bullet, D+d^++d^-)]_{per}\in \MFs(\calZ,F).$$
+\end{lemma}
+\begin{proof}
+By assumption of the lemma there exist  morphisms of $\CC[\calZ]$ modules
+$h^{(-1)}_i\in\Hom( \calF_i, \calF_{i+1})$ such that $F-D^2=h^{(-1)}_i\circ d_{i+1}^++d_i^+\circ h^{(-1)}_{i-1}$. Then a new differential $D^{(-1)}:=D+d^++h^{(-1)}$ satisfies the relation
+$$ \left(D^{(-1)}\right)^2-F =(h^{(-1)})^2\in \yHom^{\leq-2}(C_\bullet,C_\bullet).$$
+%is not quite a matrix factorization we were looking for. However we found an extension $D^{(1)}$ of $d^-$ which satisfies
+%$$ \left(D^{(-1)}\right)^2-F\in Hom^{\leq<-2}(C_\bullet,C_\bullet).$$
+%where $Hom^{k}(C_\bullet,C_\bullet)=\oplus_{m} Hom(C_m,C_{m-k})$.
+Thus $D^{(-1)}$ provides a base 
+%This would provide us with the seed
+of induction for the proof of existence $h^{(-2i-1)}\in \yHom^{-2i-1}(\calF_\bullet,\calF_\bullet)$, $i\ge 0$ such that
+\begin{enumerate}
+\item $[h^{(-1)},d^+]_+=F-D^2$
+\item $[h^{(-2i-1)},d^+]_+=\sum_{j=0}^{i-1} h^{(-2j-1)} h^{(-2i+2j+1)}$, $i>0$
+\end{enumerate}
+were we used the notation $[a,b]_+=ab+ba$.
+
+Indeed, suppose we constructed $h^{(-2i-1)}$ for all $i<j$. Define $D^{(-2j+1)}=D+d^++\sum_{k=0}^{j-1} h^{(-1-2k)}$, then the inductive
+assumption implies:
+\begin{equation}\label{eq: D2 ext}
+  \begin{aligned}
+    \left( D^{(-2j+1)}\right)^2-F+D^2-R^{(-2j)}\in \yHom^{<-2j}(\calF_\bullet,\calF_\bullet),\\
+    R^{(-2j)}=\sum_{k=0}^{j-1} h^{(-2k-1)} h^{(-2j+1+2k)}
+    \end{aligned}
+\end{equation}
+On the other hand, a direct computation using the inductive assumptions and the fact that $F$ commutes with all $h^{(2i-1)}$ and $d^+$ implies
+\begin{equation}\label{eq: com d+ ext}
+ [d^+,R^{(-2j)}]=0.
+\end{equation}
+In more details, let us introduce notation $R^{(<-2j)}:=(D^{(-2j-1)})^2-F-R^{(-2j)}$ then
+\begin{multline*}
+0=[D^{(-2j-1)}, (D^{(2j-1)})^2]=[D+d^+ +\sum_i h^{(-2i-1)}, F-D^2+R^{(-2j)}+R^{(<-2j)}]\\=[d^+,R^{(-2j)}]+[d_++\sum_i h^{(-2i-1)},R^{(<-2j)}]+[\sum_i h^{(-2j-1)},R^{(-2j)}+R^{(-2j-1)}].
+\end{multline*}
+The first term in the last sum is from $\xHom^{-2j+1}(\calF_\bullet,\calF_\bullet)$, on the other hand the last two   are from
+$\xHom^{<-2j+1}(\calF_\bullet,\calF_\bullet)$ thus (\ref{eq: com d+ ext}) follows.
+
+
+Thus $R^{(-2j)}$ is the morphism of the complex $(\calF_\bullet,d^+)$ of degree $-2j$, that is, an element of $\Hom^{-2j}(\calF_\bullet,\calF_\bullet)$. The assumption of our lemma implies that such
+morphism is homotopic to zero and the homotopy morphism $h^{(-2j-1)}\in \xHom^{-2j-1}(\calF_\bullet,\calF_\bullet)$ provides the induction step
+since $[h^{(-2j-1)},d^+]_+=R^{(-2j)}$.
+
+
+Thus by setting $d_i^-=\sum_i h^{(-2i-1)}$ we obtain the desired extension because of (\ref{eq: D2 ext}).
+\end{proof}
+
+
+\begin{lemma}\label{lem: uniq MF+} Let $(\calF_\bullet,d_\bullet^+)$ be an element of $\Com^\ell(\calZ)$ and $F\in \CC[\calZ]$ that satisfy conditions
+of the previous lemma. Suppose there two sets of differentials  $d^-_{ij},\hat{d}^-_{ij}: \calF_i\to \calF_j$, $j>i$ such that
+$$ [(\calF_\bullet, D+d^++d^-)]_{per}\in \MFs(\calZ,F),\quad [(\calF_\bullet, D+d^++\hat{d}^-)]_{per}\in \MFs(\calZ,F)$$
+then there is $\Psi=\sum_{i\le 0}\Psi_i$, $\Psi_i\in \Hom^{-i}(\calF_\bullet,\calF_\bullet)$, $\Psi=\mathrm{Id}$ such
+$$ \Psi\circ (D+d^++d^-)\circ \Psi^{-1}= D+d^++\hat{d}^-.$$
+\end{lemma}
+
+Proof of the this lemma is identical to the proof of lemma~\ref{lem: ext uniq} and we omit it.
+
+%The main application of the lemmas is in the case when we seek to extend a matrix factorization on  $\calZ_0$ to the matrix factorization on bigger variety $\calZ\supset \calZ$.
+ %If $\calZ_0$ could be defined inside $\calZ$ by a regular sequence: the conditions of the lemmas are satisfied and we explain the statement of the lemma in this case below.
+
+%Let $F,\tilde{F}\in \CC[\calZ]$, and $\calZ_0\subset \calZ$.
+%We  introduce the category $\MFs^{\ell}(\calZ_0,\calZ,\tilde{F},F)$. An object $\calF\in \MFs^{\ell}(\calZ,\tilde{F},F)$ is pair $\calF=((\calF_\bullet,d^+),d^-)$ where $(\calF_\bullet,d^+)\in \Com^\ell(\calZ,\tilde{F})$
+%and $d^-_{ij}:(\calF^+_i,D_i)\to(\calF^+_j,D_j)$, $j>i$ are morphisms of the matrix factorizations such that
+%\begin{enumerate}
+%\item $[\calF_\bullet, d^++d^-+D]_{per}\in \MF(\calZ,F),$
+%where $d^+=\sum_i d^+_i$, $d^-=\sum_{ij} d^-_{ij}$
+%\item $(\textup{H}^0(\calF_\bullet,d^+),D_0)\in \MF(\calZ_0,\tilde{F})$, that is $\textup{H}^0(\calF^+_\bullet, d^+)=\CC[\calZ_0]^{r}$ for some positive $r$.
+%\item $(F-\tilde{F})|_{\calZ_0}=0.$
+%\end{enumerate}
+
+%\begin{lemma} Let $\calZ_0\subset \calZ$ be a sub variety such that its ideal $I\subset \CC[\calZ]$ is generated by a regular sequence $f_1,\dots,f_n$ and $\mathrm{K}(I)=(\Lambda^\bullet W\otimes \CC[\calZ],d_K)$, $W=\CC^n$ is the corresponding
+%Koszul complex with differential $d_K$. Suppose we are given $\calF=(M,D)\in \MF(\calZ,\tilde{F})$ and $F\in \CC[\calZ]$ such that $(F-\tilde{F})|_{\calZ_0}=0$ then there is a collection of morphisms of matrix factorizations
+%$d_{ij}^-\in \calF\otimes \Lambda^i W\to \calF\otimes \Lambda^j W$,$j>i$ such that
+%$$ ((\calF\otimes \Lambda^\bullet W,d_K),d^-)\in \MF^n(\calZ_0,\calZ,\tilde{F},F).$$
+%Moreover the element  $((\calF\otimes \Lambda^\bullet W,d_K),d^-)$ is unique up to isomorphism.
+%\end{lemma}
+
+%We believe the construction below is constistent with the construction of \cite{DM}.
+
+
+
+\subsection{Push forward}\label{ssec: noneq push f}
+Let us assume that $R=S/I$ where $I=(f_1,\dots,f_n)$ and functions $f_i$ form a regular sequence in $S$. In other words, the Koszul complex $K(I)=(\Lambda^\bullet W\otimes \CC[\calZ],d_K)$, $W=\CC^n$ has homologies only in degree $0$.
+For $W\in S$ let $w$ be its image under the quotient map $j\colon S\rightarrow R$.
+%Let $w\in R$ and $W\in S$ such that $W-w\in I $
+For a matrix factorization $\calF=(M,D)\in \MFs(R,w)$, $M=R^k$, we can construct
+a matrix factorization
+$j_*(\calF)\in \MFs(S,W)$
+in two steps.
+
+{\it Step 1:} Let us choose a lift $\tilde{D}\in \Hom (\tilde{M},\tilde{M})$, $\tilde{M}:=%j_*(M)\cong
+%M\otimes_R S=
+S^k$ for the matrix coefficients of $D$.
+
+{\it Step 2 :} The difference $D^2- (\tilde{D})^2$ has entries in the ideal $I$. The data $((\tilde{M}\otimes\Lambda^\bullet W,\tilde{D}),d_K)$ defines an element of $\Com_{per}^n(\calZ)$.
+By our first remark this element satisfies the second condition of lemma~\ref{lem:  ext MF} and the regularity of the sequence $f_i$ implies the first condition.Thus we can apply the lemma to
+obtain differentials $d^-_{ij}: \tilde{M}\otimes \Lambda^i W\to \tilde{M}\otimes \Lambda^j W$ such that
+$$(\tilde{M}\otimes \Lambda^\bullet W, d_K+D+d^-)_{per}\in \MFs(\calZ,F),$$
+we denote this element $j_*(\calF)$.
+
+
+
+The first step of our construction involves a choice of $\tilde{D}$,  but the homotopy class of  $((\tilde{M}\otimes\Lambda^\bullet W,\tilde{D}),d_K)\in \Com_{per}^n(\calZ)$ is independent of this choice since
+any two choices of lift $D$ differ by the  endomorphism that is homotopic to $0$. The second step produces an element that is unique up to automorphism according to lemma~\ref{lem: uniq MF+}.
+
+To show that  the element $j_*(\calF)\in \MFs(\calZ,F)$ is well-defined,  we also need to show that we can extend $j_*$ to the space of morphisms between the objects and that
+homotopy equivalent morphisms get mapped into the homotopy equivalent maps. We prove this later for the equivariant version of the push-forward and since there is a natural forgetful functor from the
+equivariant to non-equivariant category the well defines of $j_*(\calF)$ follows.
+
+\begin{remark} \label{rem: section} In the case when $j$ is a section of a  map \(\pi\) the first step of our construction could be made canonical and  we encounter this situation in our work. In more details: suppose there is map
+ $\pi:\calZ\to \calZ_0$ such that $\pi\circ j=\mathrm{id}$ and $\calF\in \MFs(\calZ_0,w)$. Then the pull back $\pi^*(\calF)\in \MFs(\calZ,\pi^*(w))$ provides an extension of $\calF$ on $\calZ$ required by the
+ first step of our construction.
+\end{remark}
+
+ \subsection{Chevalley-Eilenberg complex} Let us remind the general setting of Che\-val\-ley-Eilenberg homology. Suppose that $\frh$ is a Lie algebra. Chevalley-Eilenberg complex
+ $\SymbolPrint{\CE_\frh}$ is the complex $(V_\bullet(\frh),d)$ with $V_p(\frh)=U(\frh)\otimes_\CC\Lambda^p \frh$ and differential $\SymbolPrint{d_{ce}}=d_1+d_2$ where:
+ \def\dtheta{d}
+ $$ d_1(u\otimes x_1\wedge\dots \wedge x_p)=\sum_{i=1}^p (-1)^{i+1} ux_i\otimes x_1\wedge\dots \wedge \hat{x}_i\wedge\dots\wedge x_p,$$
+ $$ d_2(u\otimes x_1\wedge\dots \wedge x_p)=\sum_{i<j} (-1)^{i+j} u\otimes [x_i,x_j]\wedge x_1\wedge\dots \wedge \hat{x}_i\wedge\dots\wedge \hat{x}_j\wedge\dots \wedge x_p,$$
+
+ For $\frh$ module $V$ we define $\SymbolPrint{\CE_\frh(V)}:=\Hom_{U(\frh)}(\CE_\frh,V)$. The homology of this complex is called Chevalley-Eilenberg cohomology of $V$: $\mathrm{H}^*_{\Lie}(\frh,V)$.
+  Consider a group $H$ such that $\mathrm{Lie}(H)=\frh$, $\calZ$ is an affine variety with $H$-action and $H$-invariant function $F$.
+ Suppose we  are given $\calF\in \MFs_\frh(\calZ,F)$, that is, we have a $\ZZ_2$-graded $\CC[\calZ]$ module $M$ with differential $D$ such that $D^2=F\cdot \mathrm{Id}$ and
+ $D(h\cdot m)=h\cdot D(m)$ for any $h\in H$. The complex $\Hom_{U(\frh)}(\CE_\frh,M)$ is a $\ZZ\times \ZZ_2$-graded module and we collapse the first
+ $\ZZ$-grading to $\ZZ_2$-grading.
+
+ The map $D+d_{ce}$ respects $\ZZ_2$-grading and the direct computation shows that $D$ and $d_{ce}$ anti-commute.
+ Hence $(D+d_{ce})^2=F$ and we define $\CE_\frh(\calF):=(\Hom_{U\frh}(\CE_\frh,M),D+d_{ce})$. The differential $d_{ce}$ commutes with the elements of the ring invariants
+ $\CC[\calZ]^\frh$, thus the complex $\CE_\frh(\calF)\in \MFs(\calZ/H,F)$ where $\calZ/H=Spec(\CC[\calZ]^\frh)$.
+
+ %\subsection{Eilenberg-Chevalley complex}
+ Later on we will need an analog for the lemma~\ref{lem: ext MF} in the case of equivariant matrix factorizations. Our proof the lemma~\ref{lem: ext MF} relies on the fact that
+ every map from $\Hom^{<0}(C^+,C^+)$ is homotopically trivial and hence we can  construct a homotopy that connects this map to $0$. It appears to us that the analog of this
+ statement does not hold in the equivariant setting: the homotopy connecting the map to $0$ in general is equivariant up to homotopy.
+
+ Thus to make our proof
+ of lemma~\ref{lem: ext MF} work in equivariant setting one would have to enlarge our category of equivariant complexes to the category of $L_\infty$-complexes.
+ That would make our theory extremely technical and we postpone  this development for subsequent publications. Below we explain more elementary way to
+ get around this problem: we incorporate Eilenberg-Chevalley  complex in our definition of equivariant matrix factorizations. We give details below and we start with some
+ preliminary material.
+
+Let us define by $\Delta$ the standard map $\frh\to \frh\otimes \frh$ defined by $x\mapsto x\otimes 1+1\otimes x$.
+ Suppose $V$ and $W$ are modules over Lie algebra $\frh$ then we use notation $\SymbolPrint{V\stackon{\otimes}{\scriptstyle\Delta} W}$ for $\frh$-module which is isomorphic to $V\otimes W$ as vector space, the $\frh$-module structure being defined by  $\Delta$. Respectively, for a given $\frh$-equivariant matrix factorization $\calF=(M,D)$ we denote by $\SymbolPrint{\CE_{\frh}\stackon{\otimes}{\scriptstyle\Delta} \calF}$
+ the $\frh$-equivariant matrix factorization $(CE_\frh \stackon{\otimes}{\scriptstyle\Delta}\calF, D+d_{ce})$. The $\frh$-equivariant structure on $\CE_{\frh}\stackon{\otimes}{\scriptstyle\Delta} \calF$ originates from the
+ left action of $U(\frh)$ that commutes with right action on $U(\frh)$ used in the construction of $\CE_\frh$.
+
+ In more details, for a given $\frh$-module $M$ the complex $\CE_\frh\stackon{\otimes}{\scriptstyle\Delta} M$ has terms $U(\frh)\otimes \Lambda^i(\frh)\otimes M$ with $\frh$-module structure
+ $$ x\cdot(u\otimes \omega\otimes m)=x\cdot u\otimes \omega\otimes m,$$
+ and the differential of the complex is   $d_{ce}=\dtheta_1+\dtheta_2$ where:
+ \begin{multline*}
+  \dtheta_1(u\otimes x_1\wedge\dots \wedge x_p\otimes m)=\sum_{i=1}^p (-1)^{i+1} \left(ux_i\otimes m x_1\wedge\dots \wedge \hat{x}_i\wedge\dots\wedge x_p\otimes m+\right.\\
+\left. x_1\wedge\dots \wedge \hat{x}_i\wedge\dots\wedge x_p\otimes x_i\cdot m\right) ,
+\end{multline*}
+ $$ \dtheta_2(u\otimes x_1\wedge\dots \wedge x_p)=\sum_{i<j} (-1)^{i+j} u\otimes [x_i,x_j]\wedge x_1\wedge\dots \wedge \hat{x}_i\wedge\dots\wedge \hat{x}_j\wedge\dots \wedge x_p.$$
+
+A slight modification of the standard fact that $\CE_\frh$ is the resolution of the trivial module implies that $\CE_\frh\stackon{\otimes}{\scriptstyle\Delta} M$ is a free resolution of the
+$\frh$-module $M$.
+
+
+\subsection{Equivariant matrix factorizations}
+We keep previous notations: $\calZ$ is an affine variety with $H$-action and $F\in \CC[\calZ]^\frh$. Define a category $\Mod_{\frh}$ whose objects are finite-dimensional $H$-representations
+$V$.
+Now define the category $\SymbolPrint{\MFs_\frh}(\calZ,F)$ whose objects are triples $(M,D,\partial)$ where $M=M^0\oplus M^1$ and $M^i=\CC[\calZ]\otimes V^i$, $V^i \in \Mod_{H}$,
+$\SymbolPrint{\partial}\in \oplus_{i>j} \Hom_{\CC[\calZ]}(\Lambda^i\frh\otimes M, \Lambda^j\frh\otimes M)$ and $D$ is an odd endomorphism
+$D\in \Hom_{\CC[\calZ]}(M,M)$ such that
+$$D^2=F,\quad \SymbolPrint{ D_{tot}}^2=F,\quad D_{tot}=D+d_{ce}+\partial,$$
+where the total differential $D_{tot}$ is an endomorphism of $\CE_\frh\odel M$, that commutes with the $U(\frh)$-action.
+
+%Given two $H$-equivariant matrix factorizations $\calF=(M,D,\partial)$ and $\tilde{\calF}=(\tilde{M},\tilde{D},\tilde{\partial})$
+
+Note that we do not impose the equivariance condition on the differential $D$ in our definition of matrix factorizations. On the other hand, if $\calF=(M,D)\in \MFs(\calZ,F)$ is a matrix factorization with
+$D$ that commutes with $\frh$-action on $M$ then $(M,D,0)\in \MFs_\frh(\calZ,F)$.
+
+There is a natural forgetful functor $\MFs_\frh(\calZ,F)\to \MFs(\calZ,F)$ that forgets about the correction differentials:
+$$\calF=(M,D,\partial)\mapsto \SymbolPrint{\calF^\sharp}:=(M,D).$$
+
+Given two $\frh$-equivariant matrix factorizations $\calF=(M,D,\partial)$, $\tilde{\calF}=(\tilde{M},\tilde{D},\tilde{\partial})$ the space of morphisms $\Hom(\calF,\tilde{\calF})$ consists of
+homotopy equivalence classes of elements $\Psi\in \Hom_{\CC[\calZ]}(\CE_\frh\odel M, \CE_\frh\odel \tilde{M})$ such that $\Psi\circ D_{tot}=\tilde{D}_{tot}\circ \Psi$ and $\Psi$ commutes with
+$U(\frh)$-action on $\CE_\frh\odel M$. Two map $\Psi,\Psi'\in \Hom(\calF,\tilde{\calF})$ are homotopy equivalent if
+there is $h\in  \Hom_{\CC[\calZ]}(\CE_\frh\odel M,\CE\frh\odel\tilde{M})$ such that $\Psi-\Psi'=\tilde{D}_{tot}\circ h+ h\circ D_{tot}$ and $h$ commutes with $U(h)$-action on  $\CE_\frh\odel M$.
+
+
+ Given two $\frh$-equivariant matrix factorizations $\calF=(M,D,\partial)\in \MFs_\frh(\calZ,F)$ and $\tilde{\calF}=(\tilde{M},\tilde{D},\tilde{\partial})\in \MFs_\frh(\calZ,\tilde{F})$
+ $\calF\otimes\tilde{\calF}\in \MFs_\frh(\calZ,F+\tilde{F})$ as the equivariant matrix factorization $(M\otimes \tilde{M},D+\tilde{D},\partial+\tilde{\partial})$.
+
+ %Hence the matrix factorization $CE_\frh \stackon{\otimes}{\scriptstyle\Delta}\calF$ is an $\frh$-equivariant resolution of $\calF$ by the matrix factorizations with free $\frh$-equivariant matrix factorizations.
+ %We use similar notations for the resolutions of the complexes of $\frh$-modules.
+
+
+ \subsection{Extension lemmas} We have the following analog of Lemma~\ref{lem: ext MF} and respective uniqueness result.
+
+
+
+
+\begin{lemma}\label{lem: ext MF eq} Let $(C_\bullet,d_\bullet^+)$ be a $\frh$-equivariant  complex
+$$C_0\xleftarrow{d_1^+}C_1\xleftarrow{d_2^+}\dots\xleftarrow{d_\ell^+} C_\ell$$
+of $\CC[\calZ]$ modules and $F\in \CC[\calZ]^\frh$ such that
+\begin{enumerate}
+\item Elements of $\xExtdpv{<0}(C_\bullet,C_\bullet)$ are homotopic to $0$
+%\item $\mathrm{H}^{>0}(C_\bullet,d_\bullet^+)=0$
+\item The element $F\in \xExtdpv{0}(C_\bullet,C_\bullet)$ is homotopic to $0$.
+%\item $F\in \CC[\calZ]^{\frh}$.
+\end{enumerate}
+Then there are homomophisms $d^-_{ij}: C_i\to C_j$, $i>j$ of $\CC[\calZ]$-modules such that
+$$[(C_\bullet,d^++d^-)]_{per}\in \MFs(\calZ,F)$$
+and there are homomorphisms of $\CC[\calZ]$, $\partial_{ij}^-: \Lambda^\bullet\frh\otimes C_i\to \Lambda^{<\bullet}\frh\otimes C_j$, $j>i$ such that
+$$ [(C_\bullet, d^-+d^+,\partial^-)]_{per}\in \MFs_\frh(\calZ,F).$$
+
+% Then there are $\frh$-equivariant maps of matrix factorizations $\partial_{ij}^-: \CE_\frh\stackon{\otimes}{\scriptstyle\Delta}C_i\to \CE_\frh\stackon{\otimes}{\scriptstyle\Delta}C_j$, $j>i$ such that
+%$$ [(\CE_\frh\stackon{\otimes}{\scriptstyle\Delta}C_\bullet, D+d^++d_{ce}+\partial^-)]_{per}\in \MFs_\frh(\calZ,F).$$
+\end{lemma}
+
+
+ We do not provide a proof of this lemma since it is a particular case of a more general statement that is proven below. The more general statement is an equivariant version of lemmas~\ref{lem: ext MF+} and \ref{lem: uniq MF+}.
+
+
+
+Let $\Mod^{\frh}_{per}(\calZ)$ be a category  of $\ZZ_2$-graded free  $\CC[\calZ]$ modules with endomorphisms equipped with $\frh$-equivariant structure.
+That is an object $\calF\in \Mod^\frh_{per}(\calZ)$ is the triple $(M,D,\partial)$, $M=M^0\oplus M^1$, $M^i=\CC[\calZ]\otimes W^i$
+where $W^i\in \Mod_\frh$, $D\in \Hom_{\CC[\calZ]}(M^1,M^0)\oplus \Hom_{\CC[\calZ]}(M^0,M^1)$, $\partial=\sum_{i> j} \partial_{ij}$,
+$\partial_{ij}\in \Hom_{\CC[\calZ]}(\Lambda^i\frh\otimes M, \Lambda^j\frh\otimes M)$.
+
+The $\frh$-action on $M_i$ is defined by the Hopf formula and using this action one define differential $d_{ce}$ on $\CE_\frh\odel M$.
+The space of morphism between two objects $(M,D,\partial),  (\tilde{M},\tilde{D},\tilde{\partial})\in \Mod^{\frh}_{per}(\calZ)$ consists of morphisms $\Psi\in \Hom_{\CC[\calZ]}(M,\tilde{M})$  that intertwine the endomorphisms:
+$$ \Psi\circ(D+d_{ce}+\partial)=(\tilde{D}+\tilde{d}_{ce}+\tilde{\partial})\circ \Psi.$$
+We do not require $\frh$-equivariance for the morphisms in the category and we do not require $\frh$-equivariance of $D$.
+
+%The degree non-equivariance of $D$ is measured by it variance
+%$\delta(D)\in \frh^*\otimes Hom_{\CC[\calZ]}(M,M)$, $\delta(D)(x)=x\cdot D- D x\cdot$.
+
+Similarly we define $\Com^{\frh}_{per}(\calZ)$ to be the category of (not necessarily $\frh$-equivariant) complexes of objects of $\Mod_{per}^\frh(\calZ)$, we do not impose $\frh$-equivariance conditions
+on the morphisms and homotopies in $\Com^{\frh}_{per}(\calZ)$.
+In this setting we have the following equivariant version lemma~\ref{lem: ext MF+},\ref{lem: uniq MF+}:
+
+
+\begin{lemma}
+\label{lem: ext MF+eq} Let $(\calF_\bullet,d_\bullet^+)$, $\calF_i=(M_i,D_i,\partial_i)$ be an element of $\Com^{\frh,\ell}_{per}(\calZ)$ and $F\in \CC[\calZ]^\frh$ such that
+\begin{enumerate}
+%\item $(F-\tilde{F})|_{\calZ_0}=0$
+\item Elements of $\xExtdpv{<0}(\calF_\bullet,\calF_\bullet)$ are homotopic to $0$
+\item Element $F-D^2\in \xExtdpv{0}(\calF_\bullet,\calF_\bullet)$ is homotopic to $0$
+\item Element $F-(D+\partial+d_{ce})^2\in \xExtdpv{0}(\CE_\frh\odel \calF_\bullet,\CE_\frh\odel \calF_\bullet)$ is homotopic to $0$.
+%\item The variation $[d_{ce},D+\partial]\in U(h)\otimes Hom(\Lambda^*\frh,\Lambda^\bullet\frh)\otimes $
+%\item The variation $\delta D\in \frh^*\otimes Ext^0_{d_+}(\calF_\bullet,\calF_\bullet)$ is homotopic to $0$
+%\item $F\in \Ann(\mathrm{H}^0(C_\bullet,d_\bullet^+))$.
+\end{enumerate}
+Then there are maps $d^-_{ij}: \calF_i\to \calF_j$, $i>j$ of elements of $\Mod_{per}(\calZ)$ such that
+$$[(\calF_\bullet,d^++D+d^-)]_{per}\in \MFs(\calZ,F)$$
+and there are maps   of elements of $\Mod_{per}(\calZ)$, $\partial_{ij}^-: \Lambda^\bullet\frh\otimes\calF_i\to \Lambda^{<\bullet}\frh\otimes \calF_j$, $j>i$ such that
+$$ [(\calF_\bullet, D+d^-+d^+,\partial+\partial^-)]_{per}\in \MFs_\frh(\calZ,F).$$
+\end{lemma}
+\begin{proof}
+In the proof we would use short hand notations $\Hom^{i}$, $\xExtdpv{i}$ for space morphisms $\xHom^i(\calF_\bullet,\calF_\bullet)$ and
+$\xExtdpv{i}(\calF_\bullet,\calF_\bullet)$.
+We also assume that we have chosen the signs in our construction of $d_+$ in such that the equivariance condition is equivalent to
+$[d_++D,d_{ce}+\partial]_+=0$.
+Given linear map $A\in \xHom(\CE_\frh\odel \calF_\bullet,\CE_\frh\odel \calF_\bullet)$ we denote by $[A]_{k}$ the part of $A$ that is in
+$\xHom(\CE_\frh,\CE_\frh)\otimes \xHom^i$.
+
+As first step of our construction we apply the lemma~\ref{lem: ext MF+} to construct differentials $d^-_{ij}: \calF_i\to \calF_j$ such that
+$$[(\calF_\bullet,D+d^++d^-)]_{per}\in \MFs(\calZ,F).$$
+
+
+
+By the first step and the assumption of the lemma we have
+\begin{multline*} (d^++d^-+D+\partial+d_{ce})^2-F=[d^++d^-+D,\partial +d_{ce}]_+\\+(\partial+d_{ce})^2\in \Hom(\Lambda^*\frh,\Lambda^*\frh)\otimes \Hom^{\le 0}.\end{multline*}
+%is homotopic to $0$. 
+Since $\partial+d_{ce}\in \Hom(\Lambda^\bullet \frh,\Lambda^{<\bullet}\frh)\otimes \Hom^0$, we conclude that there is
+$h^{(-1)}\in \Hom(\Lambda^\bullet \frh,\Lambda^{<\bullet}\frh)\otimes \Hom^{-1}$ such that $[h^{(-1)},d_+]_+=(\partial+d_{ce})^2$
+and hence
+\begin{gather*}
+  d^{(-1)}:= (d^++d^-+D+\partial+d_{ce})^2-F-[h^{(-1)},d_+]_+\\
+  =[d^-,\partial+d_{ce}]\in \Hom(\Lambda^*\frh,\Lambda^*\frh)\otimes \Hom^{<0}.
+  \end{gather*}
+
+ Let us define $D^{(0)}:=d^++D+\partial+d_{ce}+d^-+h^{(-1)}$ then we see that
+ $$ (D^{(0)})^2-F=d^{(-1)}+[h^{(-1)},d^-+D+\partial+d_{ce}]_++(h^{(-1)})^2\in \Hom(\Lambda^\bullet\frh,\Lambda^{<\bullet})\otimes \Hom^{<0}.$$
+
+
+%The assumption of the lemma implies that $[d_{ce},D]_+\in \frh^*\otimes Ext^0_{d^+}(\calF_\bullet,\calF_\bullet)$ is homotopic to zero.
+%Thus there $g_{-1}\in \frh^*\otimes Hom^{-1}(\calF_\bullet,\calF_\bullet)$ such that $[i_{g^{(-1)}},d^+]_+=[d_{ce},D]$. Let us use shorthand notation $i_{-1}$ for $i_{g^{(-1)}}$
+%Let us introduce notation $D^{(0)}=d_++D+d_{ce}+d^-+i_{-1}$. Since the differentials $d_\pm$, $i_{-1}$ and $d_{ce}$ are compatible with $D$ and $d^+$ is equivariant we have
+%$$d^{(-1)}:=(D^{(0)})^2-F=[d_{ce},d^-]_+\in \frh^*\otimes Hom^{<0}.$$
+%Moreover $d^{(-1)}\in Ext^{<0}$ because of:
+%$$ [d^+,d^{(-1)}]=[[d^+,d_{ce}]_+,d^-]_+ +[d_{ce},[d^+,d^-]_+]_+=0+[d_{ce},F]=0,$$
+%here we used $[d^+,d^-]_+=F$.
+%Thus there is an element $h^{(-2)}\in Hom^{-2}$ such that $[h^{(-2)},d^+]_+ +d^{(-1)}\in Hom^{<-1}$. Let us shorthand notation $i_{-2}$ for the operator $i_{h^{(-2)}}$.
+%We define $D^{(-1)}=D^{(0)}+i_{-2}$ and by construction we have
+%$$ (D^{(-1)})^2-F\in Hom^{<-1}.$$
+
+We have proved the seed of induction for the following statement. For any $k$ there is $h^{(k)}\in \Hom(\Lambda^{\bullet}\frh,\Lambda^{<\bullet}\frh)\otimes \Hom^{-k}$ such that
+$$ (D^{(k)})^2-F\in \Hom( \Lambda^\bullet\frh,\Lambda^{<\bullet}\frh) \otimes \Hom^{<-k},\quad  D^{(k)}=D^{(k-1)}+h^{(-k-1)}.$$
+
+Suppose we have constructed $D^{(k)}$ and $h^{(-i)}$, $i\le k+1$. By induction assumption we have $ (D^{(k)})^2=
+F+[(D^{(k)})^2]_{<-k}$ and we see that
+
+\begin{multline*}
+0=[D^{(k)}, (D^{(k)})^2]=[D^{(k)},[(D^{(k)})^2]_{<-k}]=[d_+, [(D^{(k)})^2)]_{-k-1}]\\+[d_+,[(D^{(k)})^2]_{<-k-1}]+[D+\partial+d_{ce}+d^-+\sum_i h^{(-i)},[(D^{(k)})^2]_{<-k}].
+\end{multline*}
+the first summand of the last expression is from $\Hom(\Lambda^\bullet\frh,\Lambda^{<\bullet}\frh)\otimes \Hom^{-k}$ and the last two summands are from
+$\Hom(\Lambda^\bullet\frh,\Lambda^{<\bullet}\frh)\otimes \Hom^{<-k}$. Hence $[(D^{(k)})^2]_{-k-1}\in \Hom_{d_+}^{-k-1}$ and hence it is homotopic to $0$ and thus there
+is \[h^{(-k-2)}\in \Hom(\Lambda^\bullet\frh,\Lambda^{<\bullet}\frh)\otimes \Hom^{-k-2}\] such that $[(D^{(k)})^2]_{-k-1}=[d_+,h^{(-k-2)}]_+$.
+The differential $D^{(k+1)}=D^{(k)}+h^{(-k-2)}$ provides the induction step.
+
+By setting $\partial^-=\sum_{i} h^{(-i)}$ we complete our proof.
+\end{proof}
+
+
+
+\begin{lemma}\label{lem: uniq MF+eq} Let $(\calF_\bullet,d_\bullet^+)$ be an element of $\Com^{\frh,\ell}(\calZ)$ and $F\in \CC[\calZ]^H$ that satisfy conditions
+of the previous lemma. Suppose there two sets of differentials
+  $d^-,\hat{d}^-: \calF_i\to \calF_j$,
+  $\partial_{ij}^-,\hat{\partial}_{ij}: \Lambda^\bullet\frh\otimes\calF_i\to \Lambda^{<\bullet}\frh\otimes \calF_j$, $j>i$ such that
+$$ [(\calF_\bullet, D+\partial+d^++d^-+d_{ce}+\partial^-)]_{per}, [(\calF_\bullet, D+\partial+d^++d_{ce}+\hat{d}^-+\hat{\partial}^-)]_{per}\in \MFs(\calZ,F)$$
+then there is $\Psi=\sum_{i\le 0}\Psi_i$, $\Psi_{-i}\in \Hom^{-i}(\CE_\frh\odel \calF_\bullet,\CE_\frh\odel\calF_\bullet)$, $\Psi_0=\mathrm{Id}$, $\Psi_{-1}=0$,
+%$[\Psi_i,D+\partial+d_{ce}]=0$
+such
+$$ \Psi\circ (D+\partial+d^++d^-+d_{ce}+\partial^-)\circ \Psi^{-1}= D+\partial+d^++\hat{d}^-+d_{ce}+\hat{\partial}^-.$$
+\end{lemma}
+\begin{proof} Let $d_0=D+\partial+d_{ce}$, $d_-=d^-+\partial^-$ and $D_{tot}=d^++d_0+d_-$, $\hat{d}_-=\hat{\partial}^-+\hat{d}^-$, $\hat{D}_{tot}=d^++d_0+\hat{d}_-$.
+Suppose we constructed  $\Psi_{-i}\in \Hom^{-i}(\CE_\frh\odel \calF_\bullet,\CE_\frh\odel\calF_\bullet)$, $k>i\ge 0$ such that  $\Psi^{(k)}:=\sum_{0\le i<k}\Psi_{-i}$ satisfies
+$$ \hat{D}_{tot}-D^{(k)}_{tot}\in \Hom^{\ge -k+1},\quad  D^{(k)}_{tot}=\Psi^{(k)}\circ D_{tot}\circ (\Psi^{(k)})^{-1}.$$
+
+Let us use notation $\Delta=-\hat{D}_{tot}+D^{(k)}_{tot}$ then we have
+$$ 0=(\hat{D}_{tot}+\Delta)^2-(\hat{D}_{tot})^2=[[\Delta]_{-k+1},d_+]_+  + [[\Delta]_{\le -k},d_+]_++[\Delta,d_0+\hat{d}_-]_++\Delta^2.$$
+Since the first summand is from $\Hom^{-k+2}$ and the rest of summands are from $\Hom^{\le -k+1}$ we get that $[[\Delta]_{-k+1},d_+]_+=0$.
+Thus there is $\Psi_{-k}\in \Hom^{-k}$ such that $[\Delta]_{-k+1}=[d^+,\Psi_{-k}]$. The element $\Psi^{(k+1)}:=\Psi^{(k)}+\Psi_{-k}$ prove our inductive statement.
+
+\end{proof}
+%The lemma~\ref{lem: ext MF eq} is the particular case of the previous lemmas in the case $D=0$. Let $h=\omega^*\otimes \Psi\in \Lambda^k \frh^*\otimes Hom(\calF_\bullet,\calF_\bullet)$ then we define the
+%contraction operator: $$i_h\in \oplus_m Hom_{\CC[\calZ]}( U(\frh)\otimes\Lambda^m \frh\otimes\calF_\bullet,
+ %U(\frh)\otimes\Lambda^{m-k} \frh\otimes\calF_\bullet),\quad
+ % i_{h}(u\otimes \eta\otimes m)=u\otimes i_{\omega^*}(\eta)\otimes \Psi(m).$$
+
+
+\subsection{Lifting lemma for morphisms} To define equivariant push-forward below we need to state few extra facts about our lifting procedure.
+
+\begin{lemma}\label{lem: ext mor} Suppose we are
+are given $(\calF_\bullet,d_\bullet^+)$, $\calF_i=(M_i,D_i)$  and $(\tilde{\calF}_\bullet,\tilde{d}_\bullet^+)$, $\tilde{\calF}_i=(\tilde{M}_i,\tilde{D}_i)$ be an element of $\Com^{\frh,\ell}_{per}(\calZ)$ and $F\in \CC[\calZ]^\frh$ such that
+they satisfy conditions of lemma~\ref{lem: ext MF+eq} and $\partial,d^-$, $\tilde{\partial},\tilde{d}^-$ are as in conclusion of lemma~\ref{lem: ext MF+eq}. Let us also assume that
+ elements of $\mathrm{\xExt}^{<0}_{d^+,\tilde{d}^+}(\calF_\bullet,\tilde{\calF}_\bullet)$ are homotopic to $0$
+
+Suppose also that there is a %$\frh$-equivariant
+ map $\Psi\in \Hom^{k}(\CE_\frh\odel \calF_\bullet,\CE_\frh\odel\tilde{\calF}_\bullet)$, $k\le  0$ such that
+ $\tilde{d}^+\circ \Psi=-\Psi\circ d^+$ and
+$(\tilde{D}+\tilde{d}_{ce}+\partial)\circ \Psi-\Psi\circ (D+d_{ce}+\tilde{\partial})$ is $d^+,\tilde{d}^+$ homotopic to $0$.
+Then there are $\frh$-equivariant elements $\Psi_i  \in \Hom^{k-i}(\CE_\frh\odel \calF_\bullet,\CE_\frh\odel\tilde{\calF}_\bullet)$, $i>0$ such that
+$$\tilde{D}_{tot}\circ(\Psi+\sum_i \Psi_i)=(\Psi+\sum_i \Psi_i)\circ D_{tot},$$ $$ \tilde{D}_{tot}:=\tilde{d}^++\tilde{D}+\partial+\tilde{d}^-+\tilde{d}_{ce}+\tilde{\partial}^-,\quad
+D_{tot}:= d^++D+\partial+d_{ce}+\partial^-,$$
+
+The elements $\Psi_i$ are unique up-to the homotopy: if \[\Psi'_i \in \Hom^{k-i}(\CE_\frh\odel \calF_\bullet,\CE_\frh\odel\tilde{\calF}_\bullet)\] is another collection of elements
+satisfying previous equation then there is $h$ such that
+$$\sum_i \Psi_i-\Psi'_i=\tilde{D}_{tot}\circ h- h\circ D_{tot}$$
+\end{lemma}
+\begin{proof}
+Let us introduce short-hand notations $d_0=D+\partial+d_{ce}$ and $\tilde{d}_0=\tilde{D}+\tilde{\partial}+\tilde{d}_{ce}$, $d_-=d^-+\partial^-$, $\tilde{d}^-=\tilde{d}^-+\tilde{\partial}^-$. We also use notations
+$\Hom^i$, $\xExtdpv{i}$ as in the previous lemmas.
+
+First let us notice that
+$$ \tilde{D}_{tot}\circ \Psi-\Psi\circ D_{tot}=\left( \tilde{d}_0\circ \Psi-\Psi\circ d_0\right)+\left(\tilde{d}_-\circ \Psi-\Psi\circ d_-\right).$$
+The first summand is homotopic to $0$ by the theorem assumption and the second term is from $\Hom^{<k}$ and
+$$ [d^+,\tilde{d}_-\circ \Psi-\Psi\circ d_-]= [d^+,\tilde{d}_-]_+\circ \Psi-\Psi\circ [d^+,d_-]_+=(F-\tilde{d}_0^2)\circ\Psi-\Psi\circ (F-d_0^2)=0.$$
+
+Thus there are maps $\Psi_1\in \Hom^{k-1}, \Psi_2\in \Hom^{k-2}$ such that $[d^+,\Psi_2]_+=[\tilde{d}_-\circ \Psi-\Psi\circ d_-]_{k-1}$ and
+$[d^+,\Psi_1]_+= \tilde{d}_0\circ \Psi-\Psi\circ d_0$. Hence $\Psi^{(2)}=\Psi+\Psi_1+\Psi_2$ such that
+$$ \tilde{D}_{tot}\circ \Psi^{(2)}-\Psi^{(2)}\circ D_{tot}\in \Hom^{\le k-2}.$$
+That is the seed to the inductive construction of $\Psi^{(m)}=\Psi+\sum_{i=1}^m \Psi_m$ such that
+$$ \tilde{D}_{tot}\circ \Psi^{(m)}-\Psi^{(m)}\circ D_{tot}\in \Hom^{\le k-m}.$$
+To prove the step of induction we observe that
+$$\tilde{D}_{tot}\circ\left(  \tilde{D}_{tot}\circ \Psi^{(m)}-\Psi^{(m)}\circ D_{tot}\right)-\left(  \tilde{D}_{tot}\circ \Psi^{(m)}-\Psi^{(m)}\circ D_{tot}\right)\circ D_{tot}=0 $$
+because $D_{tot}^2=F$ and $\tilde{D}_{tot}=F$. If we denote by $R$ the expression $\tilde{D}_{tot}\circ \Psi^{(m)}-\Psi^{(m)}\circ D_{tot}$ then we get:
+\begin{multline*}
+  0=\tilde{D}_{tot}\circ R-R\circ D_{tot}=[d^+, [R]_{k-m}]+\left((\tilde{d}_0+\tilde{d}_-)\circ [R]_{k-m}\right.\\
+  \left.-
+[R]_{k-m}\circ(d_0+d_-)\right)+\left(\tilde{D}_{tot}\circ [R]_{<k-m}-[R]_{<k-m}\circ D_{tot}\right).
+\end{multline*}
+Since the first summand of the last expression is from $\Hom^{k-m+1}$ and the last two terms are from $\Hom^{\le k+m}$ we conclude that
+$[d^+,[R]_{k-m}]=0$. Thus $[R]_{k-m}\in \xExtdpv{k-m}$ and there is $\Psi_{m+1}\in \Hom^{k-m-1}$ such that $[R]_{k-m}=[\Psi_{m+1},d^+]_+$.
+Hence $\Psi^{(m+1)}=\Psi^{(m)}+\Psi_{m+1}$ proves the induction step.
+
+The last part of the lemma follows from the following statement. Suppose $\Psi\in \Hom^{<k}$, $k\le 0$ is such that $\tilde{D}_{tot}\circ \Psi=\Psi\circ D_{tot}$ then there
+is $h\in \Hom^{<k+1}$ such that $\Psi'=\Psi-(\tilde{D}_{tot}\circ h+ h\circ D_{tot})\in \Hom^{<k-1} $. Indeed, since
+$$\tilde{D}_{tot}\Psi'-\Psi'\circ D_{tot}=(\tilde{D}_{tot})^2\circ h-h\circ (D_{tot})^2=0,$$
+we can run inductive argument and construct $g$ such that $\Psi=\tilde{D}_{tot}\circ g+ g\circ D_{tot}$.
+
+The statement itself follows from the computation below:
+\begin{multline*}
+  0=\tilde{D}_{tot}\circ \Psi-\Psi\circ D_{tot}=[d^+,[\Psi]_{k-1}]+\left( (\tilde{d}_0+\tilde{d}_-)\circ[\Psi]_{k-1}]\right.
+  \\\left.-[\Psi]_{<k-1}\circ (d_0+d_-)\right)
++\left(\tilde{D}_{tot}\circ [\Psi]_{<k-1}-[\Psi]_{<k-1}\circ D_{tot}\right)
+\end{multline*}
+since the first summand is from $\Hom^k$ and the other summands are from $\Hom^{<k}$ and thus $[d^+,[\Psi]_{k-1}]=0$ and
+$[\Psi]_{k-1}$ is homotopically trivial with respect to $d_+$. It is easy to check that $h$, such that $[d^+,h]_-=[\Psi]_{k-1}$ provides a proof of the statement.
+\end{proof}
+
+\subsection{Equivariant push-forward} \label{ssec: eq push f} Let $S=\CC[\calZ]$ and Lie algebra $\frh$ acts on $\calZ$.
+Let us assume that $R=S/I$ where $I=(f_1,\dots,f_n)$ and functions $f_i$ form a regular sequence in $S$ and $I$ is $\frh$-invariant. Let \(\calZ_0=\mathrm{Spec}(R)\).
+The Koszul complex $K(I)=(\Lambda^\bullet W\otimes \CC[\calZ],d_K)$, $W=\CC^n$ is $\frh$-equivariant and has homologies only in degree $0$.
+Let $w\in R^\frh$ and $W\in S^\frh$ such that $W-w\in I $. Let us choose $\calF=(M,D,\partial)\in \MFs_\frh(\calZ_0,w)$, $M=S^k$ then we can construct
+a matrix factorization
+${}^\frh j_*(\calF)\in \MFs_\frh(\calZ,W)$
+in two steps.
+
+{\it Step 1:}  We apply method of subsection~\ref{ssec: noneq push f} to construct $j_*(\calF)=(\tilde{M},\tilde{D}+d_K+d^-)\in \MFs(\calZ,W)$.
+
+
+{\it Step 2 :} Use lemma~\ref{lem: ext MF+eq} to construct $\partial^-$ such that $\tilde{\calF}:=(\tilde{M}, \tilde{D}+d_K+d^-,\partial^-+\partial)\in \MFs_\frh(\calZ,W)$.
+ The element $\calF$ is defined up to isomorphism according to lemma~\ref{lem: uniq MF+eq} and we set $ j^*(\calF):=\tilde{\calF}$. To complete our construction
+ of the functor:
+ \begin{equation}\label{eq: push f eq}
+   j_*: \MFs_\frh(\calZ_0,w)\to \MFs_\frh(\calZ,W).
+ \end{equation}
+ we still need to discuss the action of the functor on the space of morphisms and homotopies between the morphisms and that is done below.
+
+ Let $\calF=(M,D,\partial)$, $\tilde{\calF}=(\tilde{M},\tilde{D},\partial)\in \MFs_\frh (\calZ_0,w)$ and $\psi$ is the morphism between $\calF$ and $\tilde{\calF}$ in the category $\MFs_\frh(\calZ_0,w)$.
+ Let us constrict $\calF'=(M',D',\partial')=j_*(\calF)$ and $\tilde{\calF}'=(\tilde{M}',\tilde{M}',\tilde{\partial}')=  j_*(\tilde{\calF})$ as above.
+ The lemma~\ref{lem: ext mor} implies that we extend it to the morphism $\Psi$ in $\MFs_\frh(\calZ,W)$. Indeed if we choose a extension $\tilde{\psi}\in \Hom_{\CC[\calZ]}(M,\tilde{M})$,
+  of $\psi$ then $\tilde{\psi}$ satisfies the assumptions of the lemma~\ref{lem: ext mor} and the lift $\Psi=\tilde{\psi}+\sum_{i>0}\tilde{\psi}_i$ exists. Moreover the second part of the lemma implies that
+  the lift is unique up to the  homotopy thus we have the map:
+  $$  j_*:  \Hom_{\MFs_\frh(\calZ_0,w)}(\calF,\tilde{\calF})\to    \Hom_{\MFs_\frh(\calZ_0,w)}(\calF',\tilde{\calF}').$$
+
+  Thus completed our construction of the functor of homotopic categories (\ref{eq: push f eq}).
+
+
+
+
+%Proof of the lemma is identical to the ones of lemmas~\ref{lem: ext MF} and \ref{lem: uniq} with one change: we replace homological grading in $C_\bullet$ by the total grading of bicomplex  $\CE_\frh\stackon{\otimes}{\scriptstyle\Delta}C_\bullet$.
+%We will use notation $\mathrm{mfe}_{F,\frh}(C_\bullet)\in \MF_\frh(\calZ,F)$  for the extension from the lemma.
+
+
+
+
+
+
+%In our examples this action will be upper-triangular. Geometrically, the free module $\xxV$ determines a $\xG$-equivariant vector bundle over $\mfg\times\rmTsB\times\rmTsB$, while $\xdl$ and $\xdr$ are the sections of this bundle and of its dual.
+
+
+
+
+%\subsection{}
+%Putting two braids side by side creates a homomorphism $\brgrNo\times\brgrNt \rightarrow \brgrNopt$,
+
+\section{Convolution algebra: definition}\label{sec:convolution}
+In this section we define convolution product on  categories $\MFs_{B^2}(\calX_2,W)$ and $\MFs_{B^2}(\calXr_2,\Wr)$ and explain how
+these two convolutions are related. Thus we construct the functor $$\Phi: \MFs_{B^2}(\calXr_2,\Wr)\to \MFs_{B^2}(\calX_2,W)$$ which is an equivariant
+version of Knorrer periodicity functor \cite{Kn}.
+
+\subsection{Category of $B^2$-equivariant matrix factorizations}
+The Borel subgroup $B$ is the semi-direct product $B=T\ltimes U$ where $U$ is the unipotent group with $\Lie(U)=\frn$.
+Suppose we are given a variety $\calZ$ with $B^2$-action and $F\in \CC[\calZ]^{B^2}$.
+Then we define $\MFs_{B^2}(\calZ,F)$ as a subcategory of $\MFs_{\frn^2}(\calZ,F)$ that has objects and morphisms
+which are strongly $T^2$-equivariant. In more details, an object $\calF\in \SymbolPrint{\MFs_{B^2}}(\calZ,F)$ is the following collection of data:
+$$ \calF=(M,D,\partial_l,\partial_r),$$
+where $M=\CC[\calZ]\otimes W$, $W\in \Mod_{\frn^2}^{filt}$ is a $\ZZ_2$-graded $B^2$-module with the strict filtration; $D$ is $T^2$-equivariant odd $\CC[\calZ]$-equivariant endomorphism of $M$;
+$\partial_l,\partial_r\in \Hom(\Lambda^\bullet (\frn),\Lambda^{<\bullet}\frn)\otimes \Hom_{\CC[\calZ]}(M_\bullet,M_{>\bullet})$ are $T^2$-equivariant maps such that
+$$D^2=F,\quad (D_{tot})^2=F,  \quad D_{tot}=D+d_{ce}+\partial_l+\partial_r,$$ where $D_{tot}$ is $\frn^2$-equivariant endomorphism of $\CE_{\frn^2}\odel M$.
+Here we assume that
+$$ (\partial_l+\partial_r)(\omega_l\otimes \omega_r\otimes m)=\mathrm{sw}(\omega_r\otimes\partial_l(\omega_l\otimes m))+\omega_l\otimes\partial_r(\omega_r\otimes m),$$
+where $\frn^2=\frn_l\oplus \frn_r$ and $\omega_l\in \frn_l$, $\omega_r\in \frn_r$ and $\mathrm{sw}: \Lambda^\bullet\frn\otimes\Lambda^\bullet\frn\otimes M\to \Lambda^\bullet\frn \otimes \Lambda^\bullet \frn \otimes M$ is
+the linear map that switches the first two factors.
+
+
+For a matrix factorization $\tilde{\calF}=(\tilde{M},\tilde{D},\partial)$, the  morphism space $\Hom_{\MFs_{B^2}}(\calF,\tilde{F})$ consists of homotopy equivalence classes of
+$T^2$-equivariant maps \[\Psi\in \Hom_{\CC[\calZ]}(\CE_{\frh^2}\odel M,\CE_{\frh^2}\odel\tilde{M})\] such that  $\Psi\circ D_{tot}=\tilde{D}_{tot}\circ \Psi$ and $\Psi$-commutes with
+$\frh^2$ action on $\CE_{\frh^2}\odel M$ and $\CE_{\frh^2}\odel \tilde{M}$
+
+More generally, for a variety $\calZ$ with $B^\ell$-action and $F\in \CC[\calZ]^{B^\ell}$ there is analogously defined category $\MFs_{B^\ell}(\calZ,F)$ with morphism and objects being $T^\ell$-equivariant in the
+strong sense. Details of the definition of $\MFs_{B^\ell}(\calZ,F)$ are basically identical to the previously given definition.
+
+
+
+\def\MFGBv#1{ \MF_{G\times B^{#1}}}
+\def\MFGBt{ \MFGBv{2}}
+\def\MFGBh{ \MFGBv{3}}
+\def\MFBv#1{ \MF_{B^{#1}}}
+\def\MFBt{ \MFBv{2}}
+\def\MFBh{ \MFBv{3}}
+\def\cXv#1{ \calX_{#1}}
+\def\cXt{ \cXv{2}}
+\def\cXh{ \cXv{3}}
+
+\subsection{Potential and main category of matrix factorizations} In this section we introduce an associative convolution operation in the category of matrix factorizations on the space $\calX_2$. In subsequent sections we construct a homomorphism from the braid group into this
+convolution algebra. This allows us to associate a particular matrix factorization to a braid and in the section~\ref{sec: link inv 2} we explain how one can extract knot homology out of this matrix factorization.
+
+We choose coordinates on  $\calX_2=\frg\times (G\times \frb)^2$ as $(X,g_1,Y_1,g_2,Y_2)$ and consider a $G\times B^2$-invariant potential on $\calX_2$:
+\begin{equation}\label{eq: potential}
+ \SymbolPrint{W}(X,g_1,Y_1,g_2,Y_2)=\Tr(X(\Ad_{g_1}(Y_1)-\Ad_{g_2}(Y_2))).
+\end{equation}
+
+The torus $T_{sc}$ acts on $\calX_2$ and $\dgTsc W = t^2$.
+%the potential $W$ has $(q,t)$ degree $t^2$. We define $\MF_{B^2}(\calX_2,W)$ to be a category of matrix factorizations from
+Consider the category of 
+%$\MFGBt(\cXt,W)$
+$\SymbolPrint{\MF_{B^2}(\calX_2,W)}$  
+of $\Tsc$-graded $ B^2$-equivariant matrix factorizations whose differentials have degree $\dgTsc D = t$.
+%$\MFs_{B^2}(\calX_2,W)$ with $T_{sc}$-equivariant structure and the restriction that the differentials are of degree $t$.
+The morphisms  and homotopies in the
+category are assumed to be $T_{sc}$-invariant. 
+
+Our main category is the subcategory $\MF_{ B^2}(\calX_2,W)^G$ of
+$\MF_{B^2}(\calX_2,W)$ that consists of the complexes that are $G$-equivariant in the strong sense. The $G$-action on $\calX_2$ is
+free and as we show in subsection \ref{ssec: Gslice} the category $\MF_{ B^2}(\calX_2,W)^G$ is equivalent to 
+the category of $B^2$-equivariant matrix factorizations on $\calX_2/G$. To simplify notations, from now on we use notation 
+$\MF_{B^2}(\calX_2,W)$ for $\MF_{B^2}(\calX_2,W)^G$.
+
+%Slightly abusing notation, we denote by
+%$\MF_{B^2}(\calX_2,W)$  the  subcategory of $\MF_{B^2}(\calX_2,W)$ consisting of the matrix factorizations that are $G$ invariant in the strong sense.
+%We do not use either $T_{sc}$ or $G_n$-equivariant structure in the definition of the convolution product. However it is easy to check that
+%both equivariant structures are preserved by the convolution product.
+
+
+%\def\Tsc{T_{sc}}
+%\def\dgTsc{ \deg_{\Tsc}}
+%\def\shdg#1{ \mathbf{#1}}
+%\def\shq{ \shdg{q}}
+%\def\sht{ \shdg{t}}
+%\def\sha{ \shdg{a}}
+We also use notation $\SymbolPrint{\mathbf{q}^k\mathbf{t}^m}$ for shift functor for the weights of the action of $T_{sc}$:  if $V$ is a vector space with $\CC^*_t\times\CC^*_q$ action then $\mathbf{q}^k\mathbf{t}^m\cdot V$
+is the same vector space with $q$- and $t$-degrees shifted by $k$ and $m$: for $v\in V$ and $(\lambda,\mu)\in\CC^*_t\times\CC^*_q$ we define $(\lambda,\mu)\cdot(\mathbf{q}^k\mathbf{t}^m v) = \lambda^k\mu^m \mathbf{q}^k\mathbf{t}^m((\lambda,\mu)\cdot v)$.
+Respectively we use notation $\mathbf{q}^k\mathbf{t}^m\cdot \calF\in \MF_{B^2}(\calX_2,W)$ for the matrix factorization with the same differentials as $\calF\in \MF_{B^2}(\calX_2,W)$ but the the twisted $T_{sc}$-equivariant structure of the underlying module.
+
+
+Let us make a small clarification about the  $t$-grading in our categories. Let $F$ be 
+a potential on the space $\calZ$ and $\calZ$ has $T_{sc}=\CC^*_t\times \CC^*_q$ action such that $F$ has  the weight $t^2$. Then we define $\MF(\calZ,F)$ to the 
+homotopic category whose objects are  $2$-quasi-periodic complexes:
+$$\dots \xrightarrow{D_{-1}}M_{0}\xrightarrow{D_0}M_1\xrightarrow{D_1}M_2\xrightarrow{D_2}\dots,$$
+such that $D_{i+2}=D_i$ and $M_{i+2}=\mathbf{t}^2 \cdot M_i$ and $D_i$ are of 
+degree $t$. In particular, if $F=0$ then for 
+$\calF=(M_\bullet,D_\bullet)\in \MF(\calZ,F)$ we have well defined $T_{sc}$-equivariant modules:
+$$ \SymbolPrint{\textup{H}^{even}}(\calF):=\textup{H}^0(M_\bullet,D_\bullet),\quad 
+\SymbolPrint{\textup{H}^{odd}}(\calF):=\textup{H}^1(M_\bullet,D_\bullet).$$
+
+
+
+%Below we explain a construction for the convolution operation on  $\MF_{ B^2}(\calX_2,W)$.
+
+
+ \subsection{Convolution}
+There are three natural projection maps $\SymbolPrint{\pi_{12},\pi_{23},\pi_{13}}:\calX_3\to\calX_2$ and $\pi_{12}^*(W)+\pi_{23}^*(W)=\pi_{13}^*(W)$. If we extend the action of $G\times B^2$ on $\calX_2$ to the action
+of $G\times B^3$ by natural projectors $\pi_{ij}:G\times B^3\to G\times B^2$ then
+the maps $\pi_{ij}$ become $G\times B^3$-equivariant and hence
+% the following element $\MFs^{str}_{ B^2}(\calX_2,W)$ is well defined
+ for any $\calF,\calG\in \MF_{B^2}(\calX_2,W)$ we can define an object
+ $$\pi_{12}^*(\calF)\otimes\pi_{23}^*(\calG)\in \MF_{B^3}(\calX_3,\pi_{13}^*(W)).$$
+
+ Naively we could define the convolution between $\calF$ and $\calG$ as a quotient of the tensor product by the action of the second copy $B^{(2)}$ of $B$ inside $G\times B^3$.
+ We define a derived quotient with the help of the Chevalley-Eilenberg complex, we also explain how to define the convolution in a bigger category $\MF_{B^2}(\calZ,W)$.
+
+%Below we mostly omit $G$ from subscript for $\MF$ since all of our constructions a $G$-invariant and $G$-invariant and no non-trivial $G$-equivariance appears in our constructions.
+
+ Let $\calF,\calG\in \MF_{B^2}(\calX_2,W)$, $\calF=(M,D,\partial_l,\partial_r)$, $\calG=(\tilde{M},\tilde{D},\tilde{\partial}_l,\tilde{\partial}_r)$.
+ The tensor product $M\otimes\tilde{M}$ is naturally a module over $B^3$ with the action $(b_1,b_2,b_3)(m\otimes\tilde{m})=(b_1,b_2)\cdot m\otimes (b_2,b_3)\cdot \tilde{m}$, hence
+ we can define a tensor product of pull backs $\pi_{12}^*(\calF)$ and $\pi_{23}^*(\calG)$ as an object of $\MF_{B^3}(\calX_3,\pi_{13}^*(W))$:
+ $$ \pi_{12}^*(\calF)\otimes \pi_{23}^*(\calG)=(\pi_{12}^*(M)\otimes\pi_{23}^*(\tilde{M}),D+\tilde{D},\partial_l,\partial_r+\tilde{\partial}_l,\tilde{\partial}_r).$$
+
+  %The Borel group $B$ is a semi-direct product $T\ltimes U$ where $U$ is the unipotent subgroup. Let $\frn=\mathrm{Lie}(U)$,
+  From here on  we use notation $\SymbolPrint{\frn^{(1)},\frn^{(2)},\frn^{(3)}}$ for the first, second and third copy of $\frn$ on $\frn^3$; respectively for given
+  $\frn^3$ module $M$ we denote by $d^{(i)}_{ce}$ the  Chevalley-Eilenberg differential on $\CE_{\frn^3}\odel M$ corresponding $i$-th copy of $\frn$.
+
+  The complex $\CE_\frn$ is
+ $T$-equivariant  hence $T^{(2)}$-invariant part  $\CE_{\frn^{(2)}}(\pi_{12}^*(\calF)\otimes\pi_{23}^*(\calG))^{T^{(2)}}$ is the matrix factorization
+ from $\MF_{B^2}(\calX_3/B_{(2)},\pi_{13}^*(W))$. In more details:
+ $\CE_{\frn^{(2)}}(\pi_{12}^*(\calF)\otimes_B\pi_{23}^*(\calG))^{T^{(2)}}$ is the matrix factorization with underlying module
+ $$\CE_{\frn^{(2)}}(\pi_{12}^*(M)\otimes\pi_{23}^*(\tilde{M}))^{T^{(2)}}:=\Hom_{\frn^{(2)}}(\CE_{\frn^{(2)}},\CE_{\frn^{(2)}}\odel \left( \pi_{12}^*(M)\otimes\pi_{23}^*(\tilde{M}) \right))^{T^{(2)}},$$
+ the matrix factorization differential $D^{(2)}:=d^{(2)}_{ce}+\partial_r+\tilde{\partial}_l+D+\tilde{D}$ and $\frn^{(1)}\times\frn^{(2)}$ equivariant structure differentials are
+ $\partial_l,\tilde{\partial}_r.$
+
+
+  In particular   $(\CE_{\frn^{(2)}}(\pi_{12}^*(M)\otimes\pi_{23}^*(\tilde{M}))^{T^{(2)}}, D^{(2)})$ is
+ a complex over the ring $\pi_{13}^*(\CC[\calX_2])\subset\CC[\calX_3]^{\frb_{(2)}}$ and as such it is an object of
+ $\MF_{B^2}(\calX,W)$ which we denote $\pi_{13*}(\CE_{\frn_{(2)}}(\pi_{12}^*(\calF)\otimes\pi_{23}^*(\calG))^T_{(2)}$. The last complex
+ provides us a bilinear operation on $\MF_{B^2}(\calX_2,W)$:
+ \begin{multline}\label{eq: convolution}
+\calF\SymbolPrint{\star}\calG:=\pi_{13*}(\CE_{\frn^{(2)}}(\pi_{12}^*(\calF)\otimes\pi_{23}^*(\calG))^{T^{(2)}})=\\(\CE_{\frn^{(2)}}(\pi_{12}^*(M)\otimes\pi_{23}^*(\tilde{M}))^{T^{(2)}},D^{(2)},\partial_l,\tilde{\partial}_r).
+ \end{multline}
+ The proof of the following proposition is standard: it literally repeats the proof of the associativity of the convolution from the book \cite{CG}:
+ \begin{proposition} The binary operation $\star$ defines a strictures of associative algebra on $\MF_{B^2}(\calX_2,W)$.
+ \end{proposition}
+
+
+
+
+
+\subsection{Convolution of the $G$-slice}\label{ssec: Gslice}
+As we mentioned earlier,  $\MF_{B^2}(\calX_2,W)^G$ signifies $ B^2$-equivariant matrix factorizations from $\MFs_{B^2}(\calX_2,W)$ that \(G\)-invariant.
+This description becomes simpler when
+%At this point we need to make this description more precise and that is why
+we introduce a smaller space $\SymbolPrint{\calX_2^\circ}:=\frg\times G\times \frb^2$ and the map
+$\SymbolPrint{p_\circ}: \calX_2\to \calX_2^\circ$ defined by \[p_\circ(X,g_1,Y_1,g_2,Y_2)=(\Ad_{g_1}^{-1}(X),g_{12},Y_1,\Ad_{g_{12}}(Y_2)_{++}).\] This map is $G$-equivariant with the
+trivial $G$-action on the target. The space $\calX_2^\circ$ is a slice to $G$-action on $\calX_2$.
+
+If we define the function $W$ on $\calX^\circ_2$ by
+$$ W(X,g,Y_1,Y_2)=\Tr(X(Y_1-\Ad_g(Y_2))) $$
+Then the pull back $(p_\circ)^*:\MF_{B^2}(\calX_2^\circ,W)\to \MFs_{B^2}(\calX_2,W)^G$ provides an equivalence of categories.
+
+Indeed, we have an  \(G\times B^2\)-equivariant isomorphism \(\SymbolPrint{\Psi_G}:\calX_2\to G\times \calX_2^\circ\):
+\[\Psi_G(X,g_1,Y_1,g_2,Y_2)=(g_1,p_\circ(X,g_1,Y_1,g_2,Y_2)).\]
+The group \(G\)-acts on the first factor of \(G\times\calX_2^\circ\) by left multiplication and acts trivially on the
+second factor hence the pull-back functor \(pr_2^*: \MF_{B^2}(G\times\calX_2^\circ,W)^G\to \MF_{B^2}(\calX_2^\circ,W)\) is
+an isomorphism. Thus the equivalence follows because \(p_\circ=\Psi_G\circ pr_2\).
+Thus we can work with the category
+$\MF_{B^2}(\calX_2^\circ,W)$ instead of $\MF_{B^2}(\calX_2,W)^{G}$.
+
+%Similarly to the previous case we define space $\calX_2^\circ(P_{k\dots m})\subset \calX_2^\circ(G_n)$ as locus of $(X,g,Y_1,Y_2)$ such that
+%$g_{12}\in P_{k\dots m}$.
+
+Define $\calX_3^\circ:=\frg\times G^2\times \frn^3$.
+The convolution for the objects of $\MFBt(\calX^\circ_2,W)$ is defined with modified maps $\SymbolPrint{\pi_{ij}^\circ}:\calX_3^\circ\to\calX_2^\circ$:
+$$\pi^\circ_{12}(X,g_{12},g_{23},Y_1,Y_2,Y_3)=(X,g_{12},Y_1,Y_2),$$
+$$\pi^\circ_{23}(X,g_{12},g_{23},Y_1,Y_2,Y_3)=(\Ad_{g_{12}}^{-1}(X),g_{23},Y_2,Y_3),$$
+$$\pi^\circ_{13}(X,g_{12},g_{23},Y_1,Y_2,Y_3)=(\Ad_{g_{13}}^{-1}(X),g_{13},Y_1,Y_3),$$
+ where $g_{13}=g_{12} g_{23}$.
+ The convolution is then defined by
+ $$ \calG\star \calF=\pi^\circ_{13*}(\CE_{\frn^{(2)}}( \pi^{\circ,*}_{12}(\calF)\otimes_B\pi^{\circ,*}_{23}(\calG)))^{T^{(2)}}.$$
+Obviously, the pull-back map $p_\circ^*$ is an isomorphism of the convolution algebras.
+
+
+
+

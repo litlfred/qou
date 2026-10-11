@@ -6,7 +6,8 @@
   "sha256": "311730670d2fdcb75f76fa40c3fb76ad8d3a0415e88ac2d9d50af4d0f84a4ff6",
   "bytes": 1062408,
   "pages": 87,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -173,6 +174,44 @@
   "likely_scanned": false,
   "toc_entries": 13,
   "sections": 4,
-  "chars_total": 240876
+  "chars_total": 240876,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "derivedHecke.tex",
+   "tex_sections": 78,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.046,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-001-2-derived-hecke-algebra",
+     "title": "Derived Hecke algebra",
+     "prose_ratio": 0.825,
+     "coverage_ratio": 0.722,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-index-of-symbols-and-important-notation",
+     "title": "Index of symbols and important notation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

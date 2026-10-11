@@ -9,7 +9,7 @@ tags:
     - correction
     - reorg-2026-10-04
 created_at: 2026-08-11T11:20:00Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-10-10T13:00:00Z
 parent: qou-avtq
 ---
 
@@ -44,3 +44,18 @@ Evidence: Every factual claim checks against the held GGM text. Eq (21) `S⁺_{�
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+## 2026-10-10 — the owed correction is made: GGM Conjecture 3 is not proved, and "{3, 4}" is not 4₁ data (owner-approved)
+
+Checked against the held paper `library/arxiv-2012.00062v3`.
+- **Conjecture 3 stays a conjecture there** (`sec-003-…md:35`), including (d): *"the Stokes constants are integers corresponding to the Donaldson–Thomas invariants … and the BPS degeneracies"*.
+- **What GGM prove** is Theorem 6: *"Conjecture 5 holds for the 4₁ and 5₂ knots"*, via Theorems 17 and 25. They *verify* Conjecture 4 by computation (§5.2 for 4₁, §6.2 for 5₂).
+- **Eq. (60) is in §3.1**, *"The 4₁ knot when u = 0"*. **Eqs. (96)/(98) are in §3.2**, *"The 5₂ knot when u = 0"*. So the integer 4 quoted beside 3 as a "4₁ spectrum {3, 4}" is 5₂ data.
+
+Corrected, owner choice "fix + mark conditional":
+- **`mass-theory/aomega-fourone-dt-count.{md,ts}`**: the Scope now states the result is conditional for 4₁ as well as in general, because no bridge instance is discharged. "{3, 4}" becomes the 4₁ Stokes integer 3. The `.ts` status note drops "theorem for 4₁" and gains a dated correction note.
+- **`mass-theory/stokes-dt-bps-bridge.md`**: "proved … for the figure-eight" now says what GGM state and prove. The closed-sector count is 3, with the eq. (60)/(96)/(98) provenance. "A theorem for 4₁" is replaced by "conditional for every knot, 4₁ included".
+
+The Lean (`QOU.QBeta.aomega_fourOne_dt_count`, conditional on `[StokesDTBPSBridge]`) is unchanged and was already correct. Only the prose claimed the class instance was discharged for 4₁. Nothing downstream changes: the block already stated that no mass prediction and no Q_β rung depends on it.
+
+**Not swept.** Other blocks quote "{3, 4}" in unrelated senses (torus-knot sets, tables). Those were not touched, and no other block was found claiming GGM proved Conjecture 3.

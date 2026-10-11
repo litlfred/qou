@@ -5,7 +5,8 @@
   "file": "2203.17029v1.pdf",
   "sha256": "5557f7f272cb8a438cdf7b35118d702cd0f14dd029e0a66b8e1c951b7bbf014e",
   "bytes": 722072,
-  "pages": 65
+  "pages": 65,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "MODULAR q-HOLONOMIC MODULES",
   "authors_raw": "STA VROS GAROUF ALIDIS AND CAMPBELL WHEELER",
-  "abstract": "We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and sh ow that the generalised q-hypergeometric equation, as well as three key q-holonomic modules of complex Chern– Simons theory are modular. This notion explains conceptually recent structural properties of quantum invariants of knots and 3-manifolds, and of exact and p erturbative Chern– Simons theory [ 22, 23, 24, 33], and in addition provides an eﬀective method to solve the corresponding linear q-diﬀerence equations. An alternative title of our paper, emphasisin g the equations rather than the modules, is: Modular linear q-diﬀerence equations",
+  "abstract": "We introduce the notion of modular q-holonomic modules whose fundamental matrices de\ufb01ne a cocycle with improved analyticity properties and sh ow that the generalised q-hypergeometric equation, as well as three key q-holonomic modules of complex Chern\u2013 Simons theory are modular. This notion explains conceptually recent structural properties of quantum invariants of knots and 3-manifolds, and of exact and p erturbative Chern\u2013 Simons theory [ 22, 23, 24, 33], and in addition provides an e\ufb00ective method to solve the corresponding linear q-di\ufb00erence equations. An alternative title of our paper, emphasisin g the equations rather than the modules, is: Modular linear q-di\ufb00erence equations",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20220331204928-04'00'",
@@ -67,7 +68,7 @@
   },
   {
    "level": 2,
-   "title": "Modular q-holonomic modules in Chern–Simons theory",
+   "title": "Modular q-holonomic modules in Chern\u2013Simons theory",
    "page": 7,
    "source": "outline",
    "number": "1.5"
@@ -307,7 +308,7 @@
   {
    "id": "sec-004-15-modular-q-holonomic-modules-in-chernsimons-th",
    "number": "1.5",
-   "title": "Modular q-holonomic modules in Chern–Simons theory",
+   "title": "Modular q-holonomic modules in Chern\u2013Simons theory",
    "level": 2,
    "page_start": 7,
    "page_end": 12,
@@ -570,8 +571,247 @@
   "likely_scanned": false,
   "toc_entries": 33,
   "sections": 30,
-  "chars_total": 136589
+  "chars_total": 136589,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "text55.tex",
+   "tex_sections": 32,
+   "overlaid": 24,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-summary",
+     "title": "Summary",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.652,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-12-motivation",
+     "title": "Motivation",
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-14-the-generalised-q-hypergeometric-equation-is",
+     "title": "The generalised q-hypergeometric equation is modular",
+     "prose_ratio": 0.921,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-15-modular-q-holonomic-modules-in-chernsimons-th",
+     "title": "Modular q-holonomic modules in Chern\u2013Simons theory",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-2-a-review-of-linear-q-difference-equations",
+     "title": "A review of linear q-difference equations",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-21-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.844,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-22-an-algorithm-for-a-fundamental-matrix",
+     "title": "An algorithm for a fundamental matrix",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-23-the-q-borel-and-the-q-laplace-transforms",
+     "title": "The q-Borel and the q-Laplace transforms",
+     "prose_ratio": 0.931,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-24-the-slash-operator-and-proof-of-theorem-12",
+     "title": "The slash operator and proof of Theorem 1.2",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-25-duality",
+     "title": "Duality",
+     "prose_ratio": 0.91,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-26-categorical-aspects",
+     "title": "Categorical aspects",
+     "prose_ratio": 0.876,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-31-solutions",
+     "title": "Solutions",
+     "prose_ratio": 0.689,
+     "coverage_ratio": 0.943,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-32-self-duality",
+     "title": "Self duality",
+     "prose_ratio": 0.901,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-33-state-integral",
+     "title": "State integral",
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-34-resonance",
+     "title": "Resonance",
+     "prose_ratio": 0.884,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-4-proof-of-theorems-15-and-16",
+     "title": "Proof of Theorems 1.5 and 1.6",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-41-the-q-pochhammer-symbol",
+     "title": "The q-Pochhammer symbol",
+     "prose_ratio": 0.845,
+     "coverage_ratio": 0.92,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-42-the-appell-lerch-sums",
+     "title": "The Appell-Lerch sums",
+     "prose_ratio": 0.844,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-51-solutions",
+     "title": "Solutions",
+     "prose_ratio": 0.095,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-020-5-a-q-difference-equation-of-the-41-knot",
+     "title": "A q-difference equation of the 41 knot",
+     "prose_ratio": 0.828,
+     "coverage_ratio": 0.899,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-021-52-monodromy",
+     "title": "Monodromy",
+     "prose_ratio": 0.862,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-022-53-residues",
+     "title": "Residues",
+     "prose_ratio": 0.894,
+     "coverage_ratio": 0.824,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-023-54-determinants",
+     "title": "Determinants",
+     "prose_ratio": 0.695,
+     "coverage_ratio": 0.919,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-024-55-state-integral",
+     "title": "State integral",
+     "prose_ratio": 0.272,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-025-56-the-inhomogeneous-equation",
+     "title": "The inhomogeneous equation",
+     "prose_ratio": 0.875,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-026-57-the-x-deformation",
+     "title": "The x-deformation",
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-027-58-an-analytic-lift-of-the-colored-jones-polynom",
+     "title": "An analytic lift of the colored Jones polynomial",
+     "prose_ratio": 0.88,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-028-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 0.636,
+     "coverage_ratio": 0.812,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-029-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  },
  "duplicate_of": "modularqholonomicmodules",
- "duplicate_note": "Same work as library/modularqholonomicmodules/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."
+ "duplicate_note": "Same work as library/modularqholonomicmodules/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted \u2014 existing citations may point here \u2014 but skipped by the ranking and the summary index so one work is not counted twice."
 }

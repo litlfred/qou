@@ -90,7 +90,6 @@ export default chapter({
             "g-action-on-substrate",
             "g-action-on-substrate-table1-data",
             "g-action-on-substrate-table2-data",
-            "g-action-on-substrate-table3-data",
           ],
         }),
       ],

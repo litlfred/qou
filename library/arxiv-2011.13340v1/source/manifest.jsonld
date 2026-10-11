@@ -1,0 +1,70 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2011.13340v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2011.13340v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2011.13340v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2011.13340&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2011.13340v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2011.13340v1",
+    "content_type": "application/gzip",
+    "sha256": "e4b62a2235becc99b0f270998fcc4d3ee0ea08289a98209ac92c37a797b32ec1",
+    "bytes": 25995,
+    "fetched": "2026-10-10T15:15:45+00:00",
+    "files": [
+      {
+        "path": "source/files/abstract.tex",
+        "role": "tex",
+        "sha256": "bd5b30162889a8193e989ce8b620c43501745df9a19430b86ba60b7ccfcfe0bf",
+        "bytes": 1347
+      },
+      {
+        "path": "source/files/macros-pc.tex",
+        "role": "tex",
+        "sha256": "4469bba3cbed0b806f670ce2ea8ec6b0e66b3a9a7b0f208b7ba3881e48a09985",
+        "bytes": 6733
+      },
+      {
+        "path": "source/files/macros.tex",
+        "role": "tex",
+        "sha256": "6a2a94d6a119ff1f9d68bde8a66d4abc605693bb6406e5a73605a2f3a61126b3",
+        "bytes": 24629
+      },
+      {
+        "path": "source/files/pc.bbl",
+        "role": "bbl",
+        "sha256": "f555d857ccf60ce45110879ef9757c754530d7cbfa2abef38e9198de12f9431c",
+        "bytes": 4890
+      },
+      {
+        "path": "source/files/pc.tex",
+        "role": "tex",
+        "sha256": "1ec1c7a19714c534b8be09bb229817a35556e3a97de7d7ca3d1c14311f0cfc57",
+        "bytes": 1466
+      },
+      {
+        "path": "source/files/single-file-new.tex",
+        "role": "tex",
+        "sha256": "f3ad71c8f9de5ba0b89bfdd279d5f001a1ec16201f25797ea6bbad10128aa7c1",
+        "bytes": 49375
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

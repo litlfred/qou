@@ -8,305 +8,287 @@ pages: 38-42
 source_pdf: 1409.0848v3.pdf
 source_sha256: 5af73ef812ccee40
 doc_brief: "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES — This work forms a foundational study of factorization homol ogy, or topological chiral homology, at the generality of stratiﬁed spaces with tangen tial"
+text_source: latex
+latex_prose_ratio: 0.98
+latex_coverage_ratio: 0.951
 ---
-Let E be a spectrum object of PShv∗(B), a model for which is as a functor Bop→ Spectra. Now,
-Corollary 1.4.4.5 of [Lu2] grants that a ﬁnite limit preserving functor f rom a stable ∞-category to
-Spaces canonically factors through Spectra
-Ω ∞
-−−→Spaces. In particular, for S a stable ∞-category,
-the Yoneda functor Sop× S→ Spaces canonically factors through Spectra
-Ω ∞
-−−→Spaces. In particular,
-there is a factorization of the Yoneda functor
-MapPShv∗(B)(−, Ω ∞E) : PShv∗(B)op E−
-−−→Spectra
-Ω ∞
-−−→Spaces∗ ,
-the ﬁrst of which is symmetric monoidal with respect to coproduct o n the source and on the target,
-and the second of which is symmetric monoidal with respect to copro duct on the source and product
-on the target. We will denote the composite symmetric monoidal fun ctor
-(3.3.1) Ec : Mﬂd(B)ﬁn τ +
-−−→PShvﬁn
-∗ (B)op E−
-−−→Spectra
-where here the target is equipped with the symmetric monoidal stru cture given by wedge sum. We
-will use the notation
-AE := ( Ec)| Disk(B)∈ AlgDisk(B)(Spectra)
-for the restriction. We give notation for the relative version:
-EX + : Mﬂd(B)/X +
-τ X+
-−−−→PShv∗(B)
-E−
-−−→Spectra .
-38
-Proposition 3.5 (Compactly supported cohomology) . Let E be a spectrum object of PShv∗(B).
-Then the symmetric monoidal functor Ec : Mﬂd(B)→ Spectra satisﬁes⊗-excision. In particular,
-the canonical map ∫
-−
-AE
-≃
-−−→Ec(−)
-is an equivalence of symmetric monoidal functors Mﬂd(B)ﬁn→ Spectra.
-Proof. Let X∼=X−
-⋃
-R×X0
-X+ be a collar-gluing among B-manifolds. After Lemma 3.4, there is the
-pullback diagram among spectra
-Ec(X +) /d47/d47
-/d15/d15
-EX + (X+)
-/d15/d15
-EX + (X−) /d47/d47 EX + (R×X0) .
-Thereafter, using the canonical identiﬁcation Ω EX + (R×X0)≃ Ec(R×X0) and Lemma 3.4 again,
-there is the pushout diagram of spectra
-Ec(X0) /d47/d47
-/d15/d15
-Ec(X+)
-/d15/d15
-Ec(X−) /d47/d47 Ec(X +) .
-Because we are equipping spectra with wedge sum, which is its catego rical coproduct, the forgetful
-functor AlgAssRL (Spectra)
-≃
-− →Fun
-(
-(−← 0→ +), Spectra
-)
-is an equivalence; and, for ( P←A→Q)
-an object of this functor category, regarded as an AssRL-algebra in Spectra, then the canonical map
-from the pushout P ∐
-A
-Q
-≃
-− →P ⨂
-A
-Q is an equivalence of spectra. And so, we have veriﬁed that Ec
-satisﬁes⊗-excision.
-□
-Specializing Proposition 3.5 to the case that E = S : Bop→ Spectra is the constant functor at the
-sphere spectrum, we have the following classical consequence. Fo r this case, we will use the special
-notation
-D
-(
-(−)+)
-:= Sc(−) , and ω := AS .
-This notation is invoked because, for each B-manifold X, the spectrum D(X +) is the Spanier-
-Whitehead dual of the 1-point compactiﬁcation of the underlying sp ace of X; and the value of ω on
-a basic U is D(U +), the stalk of the dualizing sheaf for the site Mﬂd(B) at U .
-Immediate from the present deﬁnitions is the following result.
-Proposition 3.6. Let B = BO(n), so that a B-manifold is an ordinary smooth n-manifold. Let
-X be smooth n-manifold that is the interior of a compact manifold with bou ndary. Then there is a
-canonical identiﬁcation
-X −τX≃
-∫
-X
-ω
-from the Thom spectrum of the virtual negative of the tangent bundle of X.
-Corollary 3.7 (Atiyah duality). Let X be a ﬁnitary B-manifold. Then there is a canonical iden-
-tiﬁcation ∫
-X
-ω ≃ D(X +) .
-More generally, for each functor E : Bop→ Spectra, there is a canonical identiﬁcation∫
-X
-E∧ω ≃ Ec(X) .
-39
-Example 3.8 (Classical Poincar´ e duality). Let us consider the case B = Dor
-n so that a B-manifold
-is an oriented smooth n-manifold; and an oriented n-manifold X that is the interior of a compact
-manifold with boundary; and E = HZ : ( Dor
-n )op→ Spectra is the constant functor at the Eilenberg-
-MacLane spectrum for Z. Identify HZc(X)≃ HZX +
-as the mapping spectrum from the 1-point
-compactiﬁcation. For each object U∈ Dor
-n there is a canonical identiﬁcation HZ∧ω(U )≃ HZ∧S−n≃
-Ω nHZ. And so, there is a canonical equivalence of spectra
-∫
-X HZ∧ω ≃ Ω nHZ∧X+. Putting these
-identiﬁcation into Corollary 3.7 arrives at a canonical equivalence of s pectra: Ω nHZ∧X+ ≃ HZX +
-.
-Upon taking homotopy groups, indexed appropriately, we arrive at classical Poincar´ e duality:
-H∗(X; Z)∼= Hn−∗
-c (X; Z) .
-3.4. Non-abelian Poincar´ e duality
-Deﬁnition 3.9 (Coeﬃcient system) . A coeﬃcient system (for B-manifolds) is a pointed presheaf
-on B. Let E be a coeﬃcient system. The compactly supported sections functor is the composition
-of the symmetric monoidal functors
-Γ E
-c : Mﬂd(B)ﬁn τ +
-−−→PShvﬁn
-∗ (B)op MapPShv∗ (B)(−,E)
-−−−−−−−−−−−→Spaces∗
-where the target is equipped with the symmetric monoidal structur e given by product. We denote
-the resulting Disk(B)-algebra
-AE :=
-(
-Γ E
-c
-)
-| Disk(B) ∈ AlgDisk(B)(Spaces∗) .
-Example 3.10. Consider a ﬂag of maps of based spaces Zop
-≥0
-Z•
-− − →Spaces∗. It corresponds to a right
-ﬁbrationZ→ Z≥0, equipped with a section. In [AFT] is constructed the functor Depth : Bsc→ Z≥0.
-There results the coeﬃcient system Depth∗Z→ Bsc.
-Example 3.11. Let B = Dfr
-n≃∗ . Then a coeﬃcient system is equivalent to the datum of a based
-space Z. Such a coeﬃcient system is connective, in the sense of Deﬁnition 3.1 4, exactly if Z is
-n-connective.
-Example 3.12. A coeﬃcient system on D∂
-n is map of ﬁbrations
-En−1 /d47/d47
-/d15/d15
-En
-/d15/d15
-BO(n− 1) /d47/d47 BO(n)
-together with a pair of (compatible) sections of each.
-Consider the more elaborate example D⟨n⟩ codifying smooth n-manifolds with corners. A coeﬃ-
-cient system on D⟨n⟩ is the data of a ﬁbration ES→ BO(RS) for each subset S⊂{ 1,...,n }, and for
-each inclusion S⊂T a map ES→ET over the inclusion BO(RS)
-−⊕RT /integerdivideS
-−−−−−−→BO(RT ), which respect
-composition; together with a compatible section of each of these ﬁb rations.
-We now concern ourselves with the question of when Γ E
-c is a homology theory. We will only
-consider this question in the case that there is an integer n≥ 0 such that each basic U∈ B has
-pure dimension n – that is to say, the local topological dimension at each point in the un derlying
-stratiﬁed space equals n. To address the problem, it is convenient to extend Γ E
-c to stratiﬁed spaces
-X equipped with a B-structure on Rn−k×X for somek. Here are the relevant temporary deﬁnitions.
-40
-Deﬁnition 3.13 (Mﬂd(Bk)). Letk be an integer. Denote the ∞-categories which are the pullbacks
-Bk /d47/d47
-/d15/d15
-Mﬂd(Bk)
-Rn−r×− /d47/d47
-/d15/d15
-Mﬂd(B)
-/d15/d15
-Bsc ι /d47/d47 Snglr
-Rn−k×− /d47/d47 Snglr.
-Denote the composite functor
-Γ E
-c : Mﬂd(Bk)
-(
-(−1,1)n−k⊂Rn−k
-)
-×−
-−−−−−−−−−−−−−−−→Fun
-(
-[1], Mﬂd(B)
-) Entr
-(
-ev0(−)ev1(−)+
-)
-−−−−−−−−−−−−−→Spaces∗ .
+Let $\cE$ be a spectrum object of $\Psh_\ast(\cB)$, a model for which is as a functor $\cB^{\op} \to \spectra$.  
+Now, Corollary~1.4.4.5 of~\cite{HA} grants that a finite limit preserving functor from a stable $\infty$-category to $\spaces$ canonically factors through $\spectra \xra{\Omega^\infty} \spaces$.  
+In particular, for $\cS$ a stable $\infty$-category, the Yoneda functor $\cS^{\op}\times \cS \to \spaces$ canonically factors through $\spectra \xra{\Omega^\infty}\spaces$. 
+In particular, there is a factorization of the Yoneda functor
+\[
+\Map_{\Psh_\ast(\cB)}(-,\Omega^\infty\cE)\colon \Psh_\ast(\cB)^{\op} \xra{\cE^-} \spectra \xra{\Omega^\infty} \spaces_\ast~,
+\]
+the first of which is symmetric monoidal with respect to coproduct on the source and on the target, and the second of which is symmetric monoidal with respect to coproduct on the source and product on the target.  
+We will denote the composite symmetric monoidal functor
+\begin{equation}\label{E-c}
+\cE_{\sf c}\colon \mfld(\cB)^{\sf fin} \xra{\tau^+}\Psh^{\sf fin}_\ast(\cB)^{\op}\xra{\cE^-} \spectra
+\end{equation}
+where here the target is equipped with the symmetric monoidal structure given by wedge sum.
+We will use the notation
+\[
+A_\cE ~:=~ (\cE_{\sf c})_{|\disk(\cB)} \in \Alg_{\disk(\cB)}(\spectra)
+\]
+for the restriction.  
+We give notation for the relative version:
+\[
+\cE_{X^+}\colon \mfld(\cB)_{/X^+} \xra{\tau^{X^+}}\Psh_\ast(\cB)\xra{\cE^-} \spectra~.  
+\]
+
+\begin{prop}[Compactly supported cohomology]\label{sections-excision}
+Let $\cE$ be a spectrum object of $\Psh_\ast(\cB)$.  
+Then the symmetric monoidal functor $\cE_{\sf c}\colon \mfld(\cB) \to \spectra$ satisfies $\ot$-excision.
+In particular, the canonical map
+\[
+\int_- A_\cE\xra{~\simeq~} \cE_{\sf c}(-)
+\]
+is an equivalence of symmetric monoidal functors $\mfld(\cB)^{\sf fin}\to \spectra$.  
+
+\end{prop}
+
+\begin{proof}
+Let $X\cong X_-\underset{\RR\times X_0}\bigcup X_+$ be a collar-gluing among $\cB$-manifolds.  
+After Lemma~\ref{pre-excision}, there is the pullback diagram among spectra
+\[
+\xymatrix{
+\cE_{\sf c}(X^+)  \ar[r]  \ar[d]
+&
+\cE_{X^+}(X_+)  \ar[d]
+\\
+\cE_{X^+}(X_-)  \ar[r]
+&
+\cE_{X^+}(\RR\times X_0)~.
+}
+\]
+Thereafter, using the canonical identification $\Omega \cE_{X^+}(\RR\times X_0) \simeq \cE_{\sf c}(\RR\times X_0)$ and Lemma~\ref{pre-excision} again, there is the pushout diagram of spectra
+\[
+\xymatrix{
+\cE_{\sf c}(X_0) \ar[r]  \ar[d]
+&
+\cE_{\sf c}(X_+)  \ar[d]
+\\
+\cE_{\sf c}(X_-)\ar[r]
+&
+\cE_{\sf c}(X^+)~.
+}
+\]
+
+Because we are equipping spectra with wedge sum, which is its categorical coproduct, the forgetful functor $\Alg_{\Ass^{\sf RL}}(\spectra) \xra{\simeq} \Fun\bigl((-\la 0 \to +), \spectra\bigr)$ is an equivalence; and, for $(P\la A \to Q)$ an object of this functor category, regarded as an $\Ass^{\sf RL}$-algebra in $\spectra$, then the canonical map from the pushout $P\underset{A} \coprod Q \xra{\simeq} P\underset{A}\bigotimes Q$ is an equivalence of spectra.  
+And so, we have verified that $\cE_{\sf c}$ satisfies $\ot$-excision.  
+
+\end{proof}
+
+Specializing Proposition~\ref{sections-excision} to the case that $\cE = \SS \colon \cB^{\op} \to \spectra$ is the constant functor at the sphere spectrum, we have the following classical consequence.
+For this case, we will use the special notation 
+\[
+\DD\bigl((-)^+\bigr)~:=~\SS_{\sf c}(-) ~,\qquad \text{ and }\qquad \omega ~:=~ A_{\SS}~.
+\]
+This notation is invoked because, for each $\cB$-manifold $X$, the spectrum $\DD(X^+)$ is the Spanier-Whitehead dual of the 1-point compactification of the underlying space of $X$; and the value of $\omega$ on a basic $U$ is $\DD(U^+)$, the stalk of the dualizing sheaf for the site $\mfldd(\cB)$ at $U$.  
+
+Immediate from the present definitions is the following result. 
+\begin{prop}
+Let $\cB = \BO(n)$, so that a $\cB$-manifold is an ordinary smooth $n$-manifold.  
+Let $X$ be smooth $n$-manifold that is the interior of a compact manifold with boundary.
+Then there is a canonical identification 
+\[
+X^{-\tau_X} \simeq \int_X\omega
+\] 
+from the Thom spectrum of the virtual negative of the tangent bundle of $X$.  
+
+\end{prop}
+
+  
+\begin{cor}[Atiyah duality]\label{atiyah}
+Let $X$ be a finitary $\cB$-manifold.
+Then there is a canonical identification
+\[
+\int_X \omega  ~\simeq~ \DD(X^+)~.
+\]
+More generally, for each functor $\cE\colon \cB^{\op} \to \spectra$, there is a canonical identification
+\[
+\int_X \cE\wedge \omega~\simeq~ \cE_{\sf c}(X)~.
+\]
+
+\end{cor}
+
+\begin{example}[Classical Poincar\'e duality]
+Let us consider the case $\cB = \sD_n^{\sf or}$ so that a $\cB$-manifold is an oriented smooth $n$-manifold; and an oriented $n$-manifold $X$ that is the interior of a compact manifold with boundary; and $\cE = \sH\ZZ\colon (\sD_n^{\sf or})^{\op} \to \spectra$ is the constant functor at the Eilenberg-MacLane spectrum for $\ZZ$.
+Identify $\sH\ZZ_{\sf c}(X)\simeq \sH\ZZ^{X^+}$ as the mapping spectrum from the 1-point compactification.  
+For each object $U\in \sD_n^{\sf or}$ there is a canonical identification $\sH\ZZ\wedge \omega(U)\simeq \sH\ZZ\wedge \SS^{-n}\simeq \Omega^n \sH\ZZ$.    
+And so, there is a canonical equivalence of spectra $\int_X \sH\ZZ\wedge \omega~\simeq \Omega^n\sH\ZZ\wedge X_+$.
+Putting these identification into Corollary~\ref{atiyah} arrives at a canonical equivalence of spectra:
+$
+\Omega^n \sH\ZZ\wedge X_+~\simeq~ \sH\ZZ^{X^+}.  
+$
+Upon taking homotopy groups, indexed appropriately, we arrive at classical Poincar\'e duality: 
+\[
+\sH_\ast(X;\ZZ)\cong \sH^{n-\ast}_{\sf c}(X;\ZZ)~.
+\]
+
+\end{example}
+
+
+\subsection{Non-abelian Poincar\'e duality}
+
+\begin{definition}[Coefficient system]\label{def.coef-sys}
+A \emph{coefficient system (for $\cB$-manifolds)} is a pointed presheaf on $\cB$.  
+Let $E$ be a coefficient system.
+The \emph{compactly supported sections} functor is the composition of the symmetric monoidal functors
+\[
+\Gamma_{\!\sf c}^E\colon \mfld(\cB)^{\sf fin} \xra{\tau^+} \Psh^{\sf fin}_\ast(\cB)^{\op} \xra{\Map_{\Psh_\ast(\cB)}(-,E)} \spaces_\ast
+\]
+where the target is equipped with the symmetric monoidal structure given by product.
+We denote the resulting $\disk(\cB)$-algebra
+\[
+A_E~:=~ \bigl(\Gamma_{\!\sf c}^E\bigr)_{|\disk(\cB)}~\in\Alg_{\disk(\cB)}(\spaces_\ast)~.
+\]
+\end{definition}
+
+\begin{example}
+Consider a flag of maps of based spaces $\ZZ_{\geq 0}^{\op} \xra{Z_\bullet} \spaces_\ast$.  It corresponds to a right fibration $Z\to \ZZ_{\geq 0}$, equipped with a section.  
+In~\cite{aft1} is constructed the functor ${\sf Depth}\colon \bsc \to \ZZ_{\geq 0}$.  
+There results the coefficient system ${\sf Depth}^\ast Z \to \bsc$.  
+
+\end{example}
+
+\begin{example}\label{ordinary-coefs}
+Let $\cB = \sD^{\fr}_n\simeq \ast$. Then a coefficient system is equivalent to the datum of a based space $Z$.  
+Such a coefficient system is connective, in the sense of Definition \ref{connective-coefs}, exactly if $Z$ is $n$-connective.  
+
+\end{example}
+
+\begin{example}\label{coefs-corners}
+A coefficient system on $\sD^\partial_n$ is map of fibrations 
+\[
+\xymatrix{
+E_{n-1}  \ar[r]  \ar[d]
+&
+E_n   \ar[d]
+\\
+{\BO}(n-1) \ar[r]  
+&
+{\BO}(n)
+}
+\]
+together with a pair of (compatible) sections of each.  
+
+Consider the more elaborate example $\sD_{\langle n \rangle}$ codifying smooth $n$-manifolds with corners.  
+A coefficient system on $\sD_{\langle n \rangle}$ is the data of a fibration $E_S \to\BO(\RR^S)$ for each subset $S\subset \{1,\dots,n\}$, and for each inclusion $S\subset T$ a map $E_S \to E_T$ over the inclusion $\BO(\RR^S) \xra{-\oplus \RR^{T\smallsetminus S}} \BO(\RR^T)$, which respect composition; together with a compatible section of each of these fibrations.  
+
+\end{example}
+
+We now concern ourselves with the question of when $\Gamma_{\!\sf c}^E$ is a homology theory.
+We will only consider this question in the case that there is an integer $n\geq 0$ such that each basic $U\in \cB$ has pure dimension $n$ -- that is to say, the local topological dimension at each point in the underlying stratified space equals $n$.  
+To address the problem, it is convenient to extend $\Gamma_{\!\sf c}^E$ to stratified spaces $X$ equipped with a $\cB$-structure on $\RR^{n-k}\times X$ for some $k$.
+Here are the relevant temporary definitions.
+\begin{definition}[$\mfld(\cB_k)$]\label{B-less-than}
+Let $k$ be an integer.
+Denote the $\infty$-categories which are the pullbacks
+\[
+\xymatrix{
+\cB_k \ar[r]  \ar[d]
+&
+\mfld(\cB_{k})  \ar[rr]^-{\RR^{n-r}\times -}  \ar[d]
+&&
+\mfld(\cB)  \ar[d]
+\\
+\bsc  \ar[r]^-{\iota}
+&
+\snglr \ar[rr]^-{\RR^{n-k}\times -}
+&&
+\snglr.
+}
+\]
+Denote the composite functor 
+\[
+\Gamma_{\!\sf c}^E\colon \mfld(\cB_k) \xra{\bigl((-1,1)^{n-k} \subset \RR^{n-k}\bigr)\times -} \Fun\bigl([1],\mfld(\cB)\bigr)\xra{{\sf Entr}\bigl({\sf ev}_0(-)_{{\sf ev}_1(-)^+}\bigr)} \spaces_\ast~.
+\]
 Explicitly, this functor evaluates as
-Γ E
-c : X ↦→ Entr
-( (
-(−1, 1)n−k×X
-)
-(Rn−k×X)+
-)
-which we think of as “sections of E|Rn−k×X that are compactly supported in the X-direction”.
-Deﬁnition 3.14. Let B be a category of basics each of pure dimension n. Say the coeﬃcient system
-E is connective if the based space Γ E
-c (V ) is connected for every V ∈ Bk with k <n.
-Example 3.15. Consider the case B = Dfr
-n≃∗ . Here, a connective coeﬃcient system is the datum
-of an n-connective based space Z, and the associated Diskfr
-n-algebra is Ω nZ. This Diskfr
-n-algebra is
-group-like. Through May’s recognition principle there is an equivalence of ∞-categories between
-connective coeﬃcient systems for framed n-manifolds, and that of group-like En-spaces. Accordingly,
-one can think of the data of a connective coeﬃcient system as a gen eralization of the notion of a
-group-like algebra, for the structured stratiﬁed setting.
-Example 3.16. Let us return to Example 3.12 for the case of D∂
-n. For simplicity, let us assume the
-two ﬁbrations are trivialized with (based) ﬁbers Zn andZn−1 respectively. This coeﬃcient system is
-connective exactly if Zn isn-connective and the map Zn−1→Zn isn-connective; the last condition
-being equivalent to saying the homotopy ﬁber F of the map Zn−1 → Zn is (n− 1)-connective.
-Indeed, for this coeﬃcient system to be connective, then both Γ E
-c (Rk)≃ Ω kZn and Γ E
-c (Hk)≃ Ω kF
-must be connected for each k < n. Now, recall from Example 2.13 a consolidation of the data of
-a Disk∂
-n-algebra. The associated Disk∂
-n-algebra AE is the data (Ω nZn, Ω n−1F,α ) where α is the
-action of Ω nZn on Ω n−1F from the Ω-Puppe sequence of the ﬁbration F→Zn−1→Zn.
-Remark 3.17. The previous example can be generalized to the case of D⟨n⟩, as we indicate here.
-For simplicity, let us assume each of the said ﬁbrations is trivial with re spective ﬁbers ZS. Denote
-by FT = hoﬁb(ZT → holimS⊊ TZS) the total homotopy ﬁber of the T -subcube. This coeﬃcient
-system is connective exactly if each FT is (n−|T|)-connective. The associated Disk⟨n⟩-algebra AE
-is the data
-(
-(Ω n/integerdivideSFS
-)
-S⊂{1,...,n};
-(
-aS⊂T )
-)
-whereaS⊂T is the action of Ω n/integerdivideSFS on Ω n/integerdivideTFT from an
-elaboration of the Ω-Puppe sequence.
-Theorem 3.18. (Non-abelian Poincar´ e duality) Let B be an ∞-category of basics each of pure
-dimension n. Let E be a connective coeﬃcient system for B-manifolds. Then the canonical arrow
-∫
-−
-AE
-≃
-−−→Γ E
-c (−)
-is an equivalence of functors Mﬂd(B)ﬁn→ Spaces∗.
-Proof. From Theorem 2.43, we must show Γ E
-c : Mﬂd(B)→ Spaces satisﬁes excision. Consider a
-collar-gluing X ∼= X−
-⋃
-R×X0
-X+ among Bk-manifolds where −1≤ k≤ n. We will show that the
-canonical map
-Γ E
-c (X−)
-⨂
-Γ Ec (R×V )
-Γ E
-c (X+)−→ Γ E
-c (X) ,
-41
-is an equivalence; the desired case is k =n. There is the sequence of maps of pointed spaces
-(3.4.1) Γ E
-c (X−)× Γ E
-c (X+)→ Γ E
-c (X)→ Γ E
-c (X0) ,
-which is a ﬁber sequence because of Lemma 3.4 applied to the modiﬁed c ollar-gluing X∼= (X−⊔
-X+) ⋃
-R×(X0⊔X0)
-R×X0. It is suﬃcient to show that the base of this ﬁber sequence is conne cted. We
-will do this by induction on k.
-Let Y be a ﬁnitary Bk manifold. If k =−1, then Γ E
-c (Y )≃∗ is terminal. In particular it is
-connected. So suppose Γ E
-c (W ) is connected for each Bj manifold W for j < k. From Theorem 1,
-Y can be witnessed as a ﬁnite iteration of collar-gluings of basics. We pr ove Γ E
-c (Y ) is connected by
-induction on the minimal number r of iterated collar-gluings to obtain Y . If r = 0 the statement
-is vacuously true. If Y is a basic then Γ E
-c (Y ) is connected, by the connectivity assumption. If
-r≥ 2, write Y = Y−
-⋃
-R×W
-Y+ with each of the Bk-manifolds Y± witnessed through strictly fewer
-than r collar-gluings, and with W a Bk−1-manifold. By induction on r, each of the spaces Γ E
-c (Y±)
-is connected. As in (3.4.1), there is the ﬁber sequence of pointed sp aces
-Γ E
-c (Y−)× Γ E
-c (Y+)→ Γ E
-c (Y )→ Γ E
-c (W ) ;
-now the base is connected, by induction on k. It follows that Γ E
-c (Y ) is connected. □
-Remark 3.19. We elaborate on Example 3.15. The space of stratiﬁed continuous ma ps is a
-homotopy invariant of the underlying stratiﬁed space X. In this sense, Theorem 3.18 tells us that
-connective coeﬃcient systems (think, ‘ Disk(B)-spaces that are group-like’) cannot detect more than
-the stratiﬁed proper homotopy type of B-manifolds.
+\[
+\Gamma_{\!\sf c}^E\colon X~\mapsto~{\sf Entr}\Bigl(\bigl((-1,1)^{n-k}\times X\bigr)_{(\RR^{n-k}\times X)^+}\Bigr)
+\]
+which we think of as ``sections of $E_{|\RR^{n-k}\times X}$ that are compactly supported in the $X$-direction''.  
+
+\end{definition}
+
+\begin{definition}\label{connective-coefs}
+Let $\cB$ be a category of basics each of pure dimension $n$.
+Say the coefficient system $E$ is \emph{connective} if the based space $\Gamma_{\!\sf c}^E(V)$ is connected for every $V\in \cB_{k}$ with $k<n$.  
+\end{definition}
+
+\begin{example}\label{fr-coefs}
+
+Consider the case $\cB=\sD_n^{\fr}\simeq \ast$.
+Here, a connective coefficient system is the datum of an $n$-connective based space $Z$, and the associated $\disk^{\fr}_n$-algebra is $\Omega^n Z$.
+This $\disk_n^{\sf fr}$-algebra is \emph{group-like}.  
+Through May's recognition principle there is an equivalence of $\infty$-categories between connective coefficient systems for framed $n$-manifolds, and that of group-like $\cE_n$-spaces.  
+Accordingly, one can think of the data of a connective coefficient system as a generalization of the notion of a group-like algebra, for the structured stratified setting.
+\end{example}
+
+\begin{example}
+Let us return to Example~\ref{coefs-corners} for the case of $\sD_n^\partial$.   
+For simplicity, let us assume the two fibrations are trivialized with (based) fibers $Z_n$ and $Z_{n-1}$ respectively.  
+This coefficient system is connective exactly if $Z_n$ is $n$-connective and the map $Z_{n-1} \to Z_n$ is $n$-connective; the last condition being equivalent to saying the homotopy fiber $F$ of the map $Z_{n-1}\to Z_n$ is $(n-1)$-connective.  
+Indeed, for this coefficient system to be connective, then both $\Gamma_{\!\sf c}^E(\RR^k) \simeq \Omega^k Z_n$ and $\Gamma_{\!\sf c}^E(\HH^k)\simeq \Omega^k F$ must be connected for each $k<n$.
+Now, recall from Example~\ref{deligne-boundary} a consolidation of the data of a $\disk_n^\partial$-algebra.
+The associated $\disk^{\partial}_n$-algebra $A_E$ is the data $(\Omega^n Z_n, \Omega^{n-1}F , \alpha)$ where $\alpha$ is the action of $\Omega^n Z_n$ on $\Omega^{n-1} F$ from the $\Omega$-Puppe sequence of the fibration $F \to Z_{n-1} \to Z_n$.  
+\end{example}
+
+\begin{remark}
+The previous example can be generalized to the case of $\sD_{\langle n\rangle}$, as we indicate here.
+For simplicity, let us assume each of the said fibrations is trivial with respective fibers $Z_S$.  Denote by $F_T = \mathsf{hofib}(Z_T \to \holim_{S\subsetneq T} Z_S)$ the total homotopy fiber of the $T$-subcube.  
+This coefficient system is connective exactly if each $F_T$ is $(n-|T|)$-connective.  
+The associated $\disk_{\langle n \rangle}$-algebra $A_E$ is the data $\bigl((\Omega^{n\smallsetminus S} F_S\bigr)_{S\subset \{1,\dots,n\}}; \bigl(a_{S\subset T})\bigr)$ where $a_{S\subset T}$ is the action of $\Omega^{n\smallsetminus S}F_S$ on $\Omega^{n\smallsetminus T} F_T$ from an elaboration of the $\Omega$-Puppe sequence.  
+\end{remark}
+
+
+\begin{theorem}(Non-abelian Poincar\'e duality)\label{non-abel}
+Let $\cB$ be an $\oo$-category of basics each of pure dimension $n$.  
+Let $E$ be a connective coefficient system for $\cB$-manifolds.
+Then the canonical arrow
+\[
+\int_- A_E~\xra{~\simeq~} ~\Gamma_{\!\sf c}^E(-)
+\]
+is an equivalence of functors $\mfld(\cB)^{\sf fin} \to \spaces_\ast$. 
+
+\end{theorem}
+
+\begin{proof}
+From Theorem~\ref{hmlgy=FH}, we must show $\Gamma_{\!\sf c}^E\colon \mfld(\cB) \to \spaces$ satisfies excision.  
+Consider a collar-gluing $X\cong X_-\underset{\RR\times X_0}\bigcup X_+$ among $\cB_{k}$-manifolds where $-1\leq k \leq n$.
+We will show that the canonical map
+\[
+\Gamma_{\!\sf c}^E(X_-)\underset{\Gamma_{\!\sf c}^E(\RR\times V)} \bigotimes \Gamma_{\!\sf c}^E(X_+) \longrightarrow \Gamma_{\!\sf c}^E(X)~,
+\]
+is an equivalence; the desired case is $k=n$.  
+There is the sequence of maps of pointed spaces
+\begin{equation}\label{conn-base?}
+\Gamma_{\!\sf c}^E(X_-)\times \Gamma_{\!\sf c}^E(X_+) \to \Gamma_{\!\sf c}^E(X) \to \Gamma_{\!\sf c}^E(X_0)~,
+\end{equation}
+which is a fiber sequence because of Lemma~\ref{pre-excision} applied to the modified collar-gluing $X \cong (X_-\sqcup X_+)\underset{\RR\times (X_0\sqcup X_0)}\bigcup \RR\times X_0$.
+It is sufficient to show that the base of this fiber sequence is connected.  
+We will do this by induction on $k$.  
+
+Let $Y$ be a finitary $\cB_k$ manifold.
+If $k=-1$, then $\Gamma_{\!\sf c}^E(Y) \simeq \ast$ is terminal.  In particular it is connected.
+So suppose $\Gamma_{\!\sf c}^E(W)$ is connected for each $\cB_j$ manifold $W$ for $j<k$.   
+From Theorem~\ref{recollections}, $Y$ can be witnessed as a finite iteration of collar-gluings of basics.  
+We prove $\Gamma_{\!\sf c}^E(Y)$ is connected by induction on the minimal number $r$ of iterated collar-gluings to obtain $Y$.  
+If $r=0$ the statement is vacuously true.   
+If $Y$ is a basic then $\Gamma_{\!\sf c}^E(Y)$ is connected, by the connectivity assumption.  
+If $r\geq 2$, write $Y = Y_-\underset{\RR\times W}\bigcup Y_+$ with each of the $\cB_k$-manifolds $Y_\pm$ witnessed through strictly fewer than $r$ collar-gluings, and with $W$ a $\cB_{k-1}$-manifold.  
+By induction on $r$, each of the spaces $\Gamma_{\!\sf c}^E(Y_\pm)$ is connected.  
+As in~(\ref{conn-base?}), there is the fiber sequence of pointed spaces
+\[
+\Gamma_{\!\sf c}^E(Y_-)\times \Gamma_{\!\sf c}^E(Y_+) \to \Gamma_{\!\sf c}^E(Y) \to \Gamma_{\!\sf c}^E(W)~;
+\]
+now the base is connected, by induction on $k$.
+It follows that $\Gamma_{\!\sf c}^E(Y)$ is connected.  
+\end{proof}
+
+\begin{remark}\label{remark:grouplike}
+We elaborate on Example~\ref{fr-coefs}.  
+The space of stratified continuous maps is a homotopy invariant of the underlying stratified space $X$. 
+In this sense, Theorem~\ref{non-abel} tells us that connective coefficient systems (think, `$\disk(\cB)$-spaces that are \emph{group-like}') cannot detect more than the stratified proper homotopy type of $\cB$-manifolds. 
+
+\end{remark}

@@ -8,83 +8,80 @@ pages: 50-51
 source_pdf: 1608.03227v4.pdf
 source_sha256: c71128e9a6c35343
 doc_brief: "January 30, 2018 — For each braid β ∈ Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗ × C∗ - equivariant sheaves on the non-commutative nested Hilbert scheme Hilb f ree 1,n ."
+text_source: latex
+latex_prose_ratio: 0.984
+latex_coverage_ratio: 1.0
 ---
-of the generators of the braid group. We also introduce the matrix factorizationC• that corresponds to the
-blob or fat point in the MOY calculus [31]. We use this connection later t o relate our homology theory of
-links to the HOMFLY-PT polynomial.
-We use the following parameterization of the variety X ◦
-2 (G) = g×G× n2:
-X =
-ñ
-x0 x1
-x−1 −x0
-ô
-, Y i =
-ñ
-0 yi
-0 0
-ô
-i = 1, 2, g =
-ñ
-a11 a12
-a21 a22
-ô
-.
-The tori T (1), T (2) of the Borel groups in the product B2 are C∗ and the weights of their action are in the
-table:
-variable a11 a12 a21 a22 x−1 x0 x1 ˜x0 y1 y2
-T (1) 1 1 −1 −1 −2 0 2 1 2 0
-T (2) −1 1 −1 1 0 0 0 −1 0 2
-.
-The generator of the nilpotent part of Lie( B), n =⟨δ⟩ acts on the coordinates by
-δ1a11 =a21, δ 1a12 =a22, δ 1x0 =x−1, δ 1x1 =−2x0,
-δ2a12 =−a11, δ 2a22 =−a21,
-In the table above and in the proofs in this section we use following fun ctions of the coordinates:
-˜x0 = 2x0a11 +x1a21, ˜˜x0 = 2x0a12 +x1a22,
-so that
-δ1 ˜x0 = 2x−1a11, δ 1 ˜˜x0 = 2x−1a12, δ 2 ˜˜x0 =−˜x0.
-The matrix factorization was discussed previously but in this section we need an explicit description of this
-matrix factorization as a strongly B2-equivariant matrix factorization. We use Koszul matrix factoriza tion
-conventions of the subsection 2.3, so the matrix factorization of t he identity braid has the form
-C‖ =
-ñ
-x−1 y1−y2a2
-11 θ1
-y2 ˜x0 a21 θ2
-ô
-, δ 1θ1 =−2y2a11θ2,
-with deg Tscθ1 = (2, 1) and deg Tscθ2 = (0,−1). The blob matrix factorization has the form
-C• =
-ñ
-x−1 y1−y2a2
-11 θ1
-a21 ˜x0 y2 θ′
-2
-ô
-, δ 1θ1 =−2a21a11θ′
-2
-or equivalently
-C• =
-ñ
-x−1 y1 θ′
-1
-−a2
-11x−1 +a21 ˜x0 y2 θ′
-2
-ô
-, θ ′
-1 =θ1 +a2
-22θ′
-2, δ 1θ′
-1 = 0
-The matrix factorization of the positive intersection is
-C+ = (qt)−1
-ñ
-x−1 y1−y2a2
-11 θ1
-˜x0 a21y2 θ2
-ô
-, δ 1θ1 =−2a11θ2,
-while
-C− =C+⟨−1,−1⟩.
-50
+In this subsection we discuss the equivariant structure of the generators of the braid group. We also introduce the matrix factorization $\calC_\bullet$ that corresponds to the blob or fat point in the MOY calculus [@MOY]. We use this connection later to relate our homology theory of links to the HOMFLY-PT polynomial.
+
+We use the following parameterization of the variety $\calX^\circ_2(G)=\frg\times G\times \frn^2$: $$\begin{aligned}
+\xX &= \xmtr{ \SymbolPrint{\xz} & \SymbolPrint{\xo} \\ \SymbolPrint{\xmo} & -\xz },&
+\xYi & = \xmtr{0 & \SymbolPrint{\yi} \\ 0 & 0 }\quad i=1,2,&
+\xg &=\xmtr{ \SymbolPrint{\exaoo} & \SymbolPrint{\exaot} \\ \SymbolPrint{\exato} & \SymbolPrint{\exatt} }.
+\end{aligned}$$ The tori $T^{(1)}$, $T^{(2)}$ of the Borel groups in the product $B^2$ are $\CC^*$ and the weights of their action are in the table: $$\begin{tabu}{| c ||r |r |r |r |r | r | r | r | r | r|}
+\hline
+\text{variable} &
+\exaoo &\exaot & \exato &\exatt & \xmo & \xz & \xo &\txz & \yo & \yt
+\\
+\hline
+T^{(1)} &
+1 & 1 & -1 & -1 & -2 & 0 & 2 & 1 & 2 & 0
+\\
+\hline
+T^{(2)} &
+-1 & 1 & -1 & 1 & 0 & 0 & 0 & -1 & 0 & 2
+\\
+\hline
+\end{tabu}.$$
+
+The generator of the nilpotent part of $\Lie(B)$, $\frn=\langle \delta\rangle$ acts on the coordinates by $$\begin{aligned}
+\dlto\exaoo &= \exato,&\dlto\exaot & = \exatt,&\dlto\xz & = \xmo,&\dlto\xo & = -2\xz,
+
+
+
+\\
+\dltt\exaot & = -\exaoo,&\dltt\exatt&=-\exato, 
+\end{aligned}$$
+
+In the table above and in the proofs in this section we use following functions of the coordinates: $$\begin{aligned}
+\SymbolPrint{\txz} & = 2\xz \exaoo + \xo\exato, & \SymbolPrint{\ttxz} & = 2 \xz \exaot + \xo \exatt,
+\end{aligned}$$ so that $$\begin{aligned}
+\dlto\txz & = 2\xmo\exaoo, & \dlto \ttxz &= 2\xmo \exaot, & \dltt\ttxz & = -\txz.
+\end{aligned}$$
+
+The matrix factorization was discussed previously but in this section we need an explicit description of this matrix factorization as a strongly $B^2$-equivariant matrix factorization. We use Koszul matrix factorization conventions of the subsection [\[ssec: str eq Kosz\]](#ssec: str eq Kosz){reference-type="ref" reference="ssec: str eq Kosz"}, so the matrix factorization of the identity braid has the form $$\crXpr =
+\begin{bmatrix}
+\xmo & \yo - \yt\exaoo^2 & \theta_1
+\\
+\yt\txz
+
+& \exato & \theta_2
+\end{bmatrix},\quad
+\dlto\theta_1 = -2\yt\exaoo\theta_2,$$ with $\deg_{\Tsc}\theta_1=(2,1)$ and $\deg_{\Tsc}\theta_2=(0,-1)$. The blob matrix factorization has the form $$\crXbl=
+\begin{bmatrix}
+\xmo & \yo - \yt\exaoo^2 & \theta_1
+\\
+\exato \txz
+
+& \yt & \theta_2'
+\end{bmatrix},\quad
+\dlto\theta_1 = -2\exato\exaoo\theta_2'$$ or equivalently $$\crXbl=\begin{bmatrix}
+\xmo & \yo & \theta'_1
+\\
+-\exaoo^2\xmo+
+\exato \txz
+
+& \yt & \theta_2'
+\end{bmatrix},\quad \theta'_1=\theta_1 +\exatt^2\theta_2',\quad
+\dlto\theta'_1 = 0$$
+
+The matrix factorization of the positive intersection is $$\crXp= (  \mathsf{q}  \mathsf{t})^{-1}
+\begin{bmatrix}
+\xmo & \yo - \yt\exaoo^2 & \theta_1
+\\
+
+\txz & \exato\yt & \theta_2
+\end{bmatrix}
+
+,\quad
+\dlto\theta_1 = -2\exaoo\theta_2,$$ while $$\crXn = \,\crXp\brwsh{-1}{-1}.$$

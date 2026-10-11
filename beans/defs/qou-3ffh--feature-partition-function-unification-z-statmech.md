@@ -6,8 +6,9 @@ type: feature
 priority: normal
 tags:
     - reorg-2026-10-04
+    - 8f-qcd
 created_at: 2026-08-02T18:33:15Z
-updated_at: 2026-10-04T15:15:54Z
+updated_at: 2026-10-10T07:16:09Z
 parent: qou-8lxd
 ---
 

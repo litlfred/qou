@@ -5,7 +5,8 @@
   "file": "1906.12122v2.pdf",
   "sha256": "955e3eda48672e2869a025a83565121851b8ccef1494aeaddac7b4231526460e",
   "bytes": 3132867,
-  "pages": 76
+  "pages": 76,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -25,12 +26,12 @@
    "Producer": "pdfTeX-1.40.17",
    "Title": ""
   },
-  "title_prev": "Nuclear effective field theory: status and perspectives H.-W. Hammer∗ Institut für Kernphysik, Technische Universität Darmstadt, 64289 Darmstadt, Germany ExtreMe Matter Institute EMMI",
+  "title_prev": "Nuclear effective field theory: status and perspectives H.-W. Hammer\u2217 Institut f\u00fcr Kernphysik, Technische Universit\u00e4t Darmstadt, 64289 Darmstadt, Germany ExtreMe Matter Institute EMMI",
   "title_lines": [
    "Nuclear effective field theory: status and perspectives",
-   "H.-W. Hammer∗",
-   "Institut für Kernphysik",
-   "Technische Universität Darmstadt",
+   "H.-W. Hammer\u2217",
+   "Institut f\u00fcr Kernphysik",
+   "Technische Universit\u00e4t Darmstadt",
    "64289 Darmstadt",
    "Germany",
    "ExtreMe Matter Institute EMMI"
@@ -1044,6 +1045,278 @@
   "likely_scanned": false,
   "toc_entries": 94,
   "sections": 34,
-  "chars_total": 393381
+  "chars_total": 393381,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "NFreview.tex",
+   "tex_sections": 70,
+   "overlaid": 29,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-contents",
+     "title": "Contents",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-two-body-scattering-amplitude",
+     "title": "Two-body scattering amplitude",
+     "prose_ratio": 0.051,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-2-power-counting",
+     "title": "Power counting",
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.72,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-3-regularization-and-renormalization",
+     "title": "Regularization and renormalization",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-4-renormalization-group",
+     "title": "Renormalization group",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-6-spin-isospin-projection-and-parametrizations",
+     "title": "Spin-isospin projection and parametrizations",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-8-external-currents",
+     "title": "External currents",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-1-extension-to-three-particles",
+     "title": "Extension to three particles",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-3-more-neutron-deuteron-scattering",
+     "title": "More neutron-deuteron scattering",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-4-proton-deuteron-scattering-and-helion",
+     "title": "Proton-deuteron scattering and helion",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-5-infrared-regulators",
+     "title": "Infrared regulators",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-6-four-nucleons",
+     "title": "Four nucleons",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-7-beyond-four-nucleons",
+     "title": "Beyond four nucleons",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-8-external-currents-and-reactions",
+     "title": "External currents and reactions",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-1-form-factors",
+     "title": "Form Factors",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-2-e1-transition-and-photodisintegration",
+     "title": "E1 transition and photodisintegration",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-3-correlations",
+     "title": "Correlations",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-4-neutron-capture",
+     "title": "Neutron capture",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-1-degrees-of-freedom-and-symmetries",
+     "title": "Degrees of freedom and symmetries",
+     "prose_ratio": 0.82,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-1-power-counting",
+     "title": "Power counting",
+     "prose_ratio": 0.114,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-020-2-chiral-lagrangian",
+     "title": "Chiral Lagrangian",
+     "prose_ratio": 0.886,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-021-2-nuclear-potential",
+     "title": "Nuclear potential",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-022-2-renormalization-of-singular-potentials",
+     "title": "Renormalization of singular potentials",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-023-3-connection-with-pionless-eft",
+     "title": "Connection with Pionless EFT",
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-024-4-perturbative-pions",
+     "title": "Perturbative pions",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-025-5-partly-perturbative-pions",
+     "title": "Partly perturbative pions",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-026-6-other-approaches",
+     "title": "Other approaches",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-027-1-nuclear-physics-at-large-quark-masses",
+     "title": "Nuclear physics at large quark masses",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-028-2-fine-tuning-in-chiral-eft-and-infrared-limit-c",
+     "title": "Fine-tuning in Chiral EFT and infrared limit cycle",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-029-1-parity-violation",
+     "title": "Parity violation",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-030-2-time-reversal-violation",
+     "title": "Time-reversal violation",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-031-3-other-symmetries",
+     "title": "Other symmetries",
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-032-acknowledgments",
+     "title": "Acknowledgments",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

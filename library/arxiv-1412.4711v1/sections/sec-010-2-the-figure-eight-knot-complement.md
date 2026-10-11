@@ -7,54 +7,127 @@ section_number: 2
 pages: 9-10
 source_pdf: 1412.4711v1.pdf
 source_sha256: 4fb1d6ee062cca8c
+text_source: latex
+latex_prose_ratio: 0.837
+latex_coverage_ratio: 0.927
 doc_brief: "CHARACTER VARIETIES FOR SL (3, C): THE FIGURE EIGHT KNOT — We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or"
 ---
-We present here the geometric and combinatorial facts on the ﬁgure eight
-knot complementM we use afterwards. We need a triangulationT ofM – in
-order to study the variety Defor(M,T ) – together with some presentations
-of its fundamental group for paramtrizing matrices.
-2.1. Triangulation. It is a well-known fact, due to Riley and used by
-Thurston [22], that the ﬁgure eight knot complement may be triangulated
-by two tetrahedra, with the combinatorics of face gluings displayed in ﬁgure
-3. In order to simplify the notations, we denote by uij and vij be the coor-
-dinates associated to the edge ij of the two tetrahedra as shown in Figure
-3.
-10 E. FALBEL, A. GUILLOUX, P.-V. KOSELEFF, F. ROUILLIER AND M. THISTLETHWAITE
-u343 u43 4
-u12
-1
-u21
-2
-v343 v43 4
-v12
-1
-v21
-2
-Figure 3. The ﬁgure eight knot represented by two tetrahedra.
-From this triangulation, it is an elementary exercise to compute the equa-
-tions deﬁning Defor(M,T ) as explained in §1.4. These equations will actu-
-ally be displayed in§3.2.
-2.2. Presentations. Depending on the situations we will use two diﬀerent
-presentations of the ﬁgure eight knot complement fundamental group Γ 8.
-We ﬁrst use the presentation (with generators as in [11])
-⟨ g1,g 2,g 3| g−1
-2 g1g−1
-3 g−1
-1 g3, g−1
-3 g2g1g−1
-2 ⟩.
+\label{section:intro-eight}
+
+We present here the geometric and combinatorial facts on the figure eight knot complement $M$ we use afterwards. We need a triangulation $\mathcal T$ of $M$ -- in order to study the variety $\mathrm{Defor}(M,\mathcal T)$ -- together with some presentations of its fundamental group for paramtrizing matrices.
+
+\subsection{Triangulation}
+
+It is a well-known fact, due to Riley and used by Thurston \cite{Thurston}, that the figure eight knot complement may be triangulated by two tetrahedra, with the combinatorics of face gluings displayed in figure \ref{fig:triang8}.
+In order to simplify the notations, we denote by $u_{ij}$ and $v_{ij}$ be the coordinates associated to the edge $ij$ of the two tetrahedra as  shown in Figure \ref{fig:triang8}.
+
+\begin{figure}[ht] \label{eight}
+\begin{center}
+\begin{asy}
+   size(8cm);
+  defaultpen(1);
+  usepackage("amssymb");
+  import geometry;
+  
+  point o = (8,0);
+  point oo = (24,0);
+  pair ph = (10,0);
+  pair pv = (5,8);
+ 
+  
+  // 
+  draw(o -- o+pv,Arrow(5bp,position=.4), Arrow(5bp,position=.5));
+  draw(o+pv -- o+ph, Arrow(5bp,position=.6));
+  draw(o+ph-pv-- o, Arrow(5bp,position=.6));
+  draw(o+ph-pv-- o+ph, Arrow(5bp,position=.6));
+  draw(o+ ph/2+(0,.2)--o+pv, Arrow(5bp,position=.4), Arrow(5bp,position=.5));
+  draw(o+ph-pv -- o+ph/2+ (0,-.2));
+  draw(o -- o+ph,Arrow(5bp,position=.3), Arrow(5bp,position=.4) );
+  
+  // 
+  label("\small { $u_{34}$}", o, 3*dir(25));
+  //
+  //
+  label("{\small  $3$}", o, 1*W);
+  
+  label("\small {$u_{43}$}", o+ph, 3*dir(180-25));
+  //
+  //
+  label("{\small $4$}", o+ph, .6*E);
+  
+  //
+  label(" \small $ u_{12}$", o+pv, 9*dir(-80));
+  //
+  label("{\small $1$}", o+pv, 1*N);
+  
+   //
+  label(" \small $ u_{21}$", o+ph-pv, 9*dir(80));
+  //
+  label("{\small $2$}", o+ph -pv, 1*S);
+
+  // 
+  draw( oo+pv -- oo,Arrow(5bp,position=.6));
+  draw( oo+pv -- oo+ph,Arrow(5bp,position=.6));
+  draw( oo+ph-pv -- oo,Arrow(5bp,position=.6));
+  draw(oo+ ph/2+(0,.2)--oo +pv,Arrow(5bp,position=.4), Arrow(5bp,position=.5));
+  draw(oo+ph-pv -- oo+ ph/2-(0,.2));
+  draw(oo+ph-pv -- oo+ ph,Arrow(5bp,position=.5),Arrow(5bp,position=.6));
+  draw(oo -- oo+ph,Arrow(5bp,position=.3), Arrow(5bp,position=.4));
+  
+   // 
+  label("\small { $v_{34}$}", oo, 3*dir(25));
+  //
+  //
+  label("{ \small $3$}", oo, 1*W);
+  
+  label("\small {$v_{43}$}", oo+ph, 3*dir(180-25));
+  //
+  //
+  label("{ \small $4$}", oo+ph, .6*E);
+  
+  //
+  label(" \small $  v_{12}$", oo+pv, 9*dir(-77));
+  //
+  label("{ \small $1$}", oo+pv, 1*N);
+  
+   //
+  label(" \small $ v_{21}$", oo+ph-pv, 9*dir(80));
+  //
+  label("{\small $2$}", oo+ph -pv, 1*S);
+
+\end{asy}
+\caption{ The figure eight knot represented by two tetrahedra.} \label{fig:triang8}
+\end{center}
+\end{figure}
+
+From this triangulation, it is an elementary exercise to compute the equations defining $\mathrm{Defor}(M,\mathcal T)$ as explained in \S \ref{ss:deformationvariety}. These equations will actually be displayed in \S \ref{ss:equations}.
+
+\subsection{Presentations}
+
+Depending on the situations we will use two different presentations of the figure eight knot complement fundamental group $\Gamma_8$. 
+
+We first use the presentation (with generators as in \cite{FKR14})
+$$ 
+\langle\ g_1, g_2,
+g_3\ |\ g_2^{-1}g_1g_3^{-1}g_1^{-1}g_3,\ g_3^{-1}g_2g_1g_2^{-1}\ \rangle.
+$$  
 Observe then that
-g2 = [g1,g−1
-3 ] and g3 =g2g1g−1
-2 .
-This presentation is the SnapPea non-simpliﬁed presentation with a change
-of notations. Keeping only the generators g1 andg3, we get the usual para-
-bolic presentation, used in §5.2, with a =g1 and b =g3.
-The simpliﬁed presentation in SnapPea, which we use in §5.1, is given
-(uppercase denotes inverse) by
-⟨ a,b | ab3aBA2B⟩
-with a =g3g2 and b =g−1
-2 (hence g1 =ba).
-With this notation, we know [22] that the canonical meridian ism =ab =
-g3 and the longitude l =abABaBAb = [g3,g−1
-2 ][g3,g 2].
+$$
+g_2 = [g_1,g_3^{-1}]
+\quad
+\textrm{and}\quad
+g_3 = g_2g_1g_2^{-1}.
+$$
+This presentation is the SnapPea non-simplified presentation with a change of notations.
+
+Keeping only the generators $g_1$ and $g_3$, we get the usual parabolic presentation, used in \S \ref{ss:R_2-R_3}, with $a=g_1$ and $b=g_3$.
+
+
+The simplified presentation in SnapPea, which we use in \S \ref{ss:R1}, is given (uppercase denotes inverse) by
+$$ 
+\langle\ a, b\ |\ \ ab^3aBA^{2}B \ \rangle
+$$  
+with $a=  g_3g_2$ and $b=g_2^{-1}$ (hence $g_1=ba$).
+
+With this notation, we know \cite{Thurston} that the canonical meridian is $m=ab=g_3$ and the longitude 
+$l=abABaBAb=[g_3,g_2^{-1}][g_3,g_2]$.

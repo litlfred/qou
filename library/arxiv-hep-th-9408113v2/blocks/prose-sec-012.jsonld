@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9408113v2/blocks/prose-sec-012",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-9408113v2/blocks/prose-sec-012",
   "kind": "prose",
-  "title": "Anatol N. Kirillov",
-  "pageStart": 16,
-  "pageEnd": 16,
-  "text": "../sections/sec-012-16-anatol-n-kirillov.md",
-  "derivedFrom": "library/arxiv-hep-th-9408113v2/manifest",
-  "sourceDocument": "library/arxiv-hep-th-9408113v2/manifest",
+  "title": "K.Lloyd), London Math. Soc., Lecture Note Series, No.82, Cambridge University",
+  "pageStart": 95,
+  "pageEnd": 96,
+  "text": "../sections/sec-012-e-klloyd-london-math-soc-lecture-note-series-no8.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9408113v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9408113v2/manifest.jsonld",
   "provenance": "ingested"
 }

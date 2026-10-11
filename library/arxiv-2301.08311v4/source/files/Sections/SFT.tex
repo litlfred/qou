@@ -1,0 +1,462 @@
+
+\section{SFT Compactness} \label{sec:SFT}
+
+
+In this section, we will explain a version of the neck-stretching procedure where the Lagrangian passes through the neck region and prove a compactness result with assumptions on the Legendrian that models the Lagrangian in the neck region.
+
+Bourgeois, Eliashberg, Hofer, Wysocki and Zehnder \cite{bhewz} proves compactness result for closed holomorphic curves under neck-stretching for Morse-Bott Reeb dynamics. Abbas \cite{Abbasbook} proves compactness for open holomorphic curves with boundary on cylindrical Lagrangians  for the case of non-degenerate Reeb dynamics. We prove a version of the compactness result for neck-stretching along a contact type hypersurface $Z$ with a  free $S^1$ action that generates the Reeb field  for discs with boundary on a cylindrical Lagrangian that intersects $Z$ at the Legendrian $\Lambda$ in the neck region such that $\Lambda$ is a finite cover of an embedded Lagrangian in $Z/S^1$. Notice that the case of stretching along the boundary of a Darboux ball where we perform a local mutation falls in this case since the boundary sphere $S^{2n-1}$ has a natural $S^1$ action that generates the Reeb field, the Lagrangian intersects the sphere in two disjoint tori that descends to the Clifford torus in $\P^{n-1}$.
+
+
+
+
+\subsection{Setup}\label{subsec:sftsetup}
+We begin by setting the notations and conventions for this section. Let $(W,\omega,J)$ be a closed symplectic manifold and $Z$ be a compact codimension 1 submanifold of contact-type, i.e. in a tubular neighbourhood  $N \cong (-\epsilon,\epsilon) \times Z$, there is a contact form $\lambda$ on $Z$ such that  $\omega = d(e^{kt}\lambda)$ where $t\in(-\e,\e)$ and $k$ is a positive integer. In our case, we assume $Z$ separates $W$ into two connected components for simplifying the combinatorial structure, but this is not a necessary assumption. Let $L$ be a Lagrangian such that in the tubular neighbourhood of the hypersurface $Z$, $L$ is translation invariant over a Legendrian, i.e. there is a Legendrian $\Lambda \sub Z$ such that $N \cap L = (-\e,\e) \times \Lambda$, we call such Lagrangians to be cylindrical near $Z$. Assume $J$ is a compatible complex structure on $(W,\omega)$ such that it is translation invariant on $N$ and is adjusted to the form $\omega$ in the SFT sense, i.e., $J\frac{\del}{\del t} = R$ where $R$ is the Reeb field of $\lambda$ . Call the metric induced by the compatible pair $(\omega,J)$ on $W$ to be $g_W.$ Assume there is a free $S^1$ action on $Z$ that generates the Reeb field, the quotient $Y=Z/S^1$ has a natural symplectic form induced from $d\lambda$. Assume $\Lambda$ is closed under multiplying by $-1$ from the $S^1$ action (i.e. $-\Lambda = \Lambda$), projects to an embedded Lagrangian $L_Y$ in $Y$ and the projection map is a finite cover.
+
+\begin{figure}[ht]
+    \centering
+    \incfig{1.5}{SFTsetup}
+    \caption{Symplectic manifold $W$ and Lagrangian submanifold $L$ with neck pieces of length $2\e$}
+    \label{fig:sftsetup}
+\end{figure}
+
+
+\begin{example}
+A sphere $S^{2n-1}_r$ of radius $r$ centred at $0$ inside $\C^n$ has a tubular neighbourhood $\Phi : (-\e,\e) \times S^{2n-1}_r \to \C^n $ given by $\Phi(s,p)= e^sp$. Clearly $\Phi^*J_0$ is a translation invariant almost complex structure as scaling is a biholomorphism in $\C^n$. Moreover, $\Phi^*\omega_0 =  d(e^{2s}\lambda)$ where $\lambda = \frac{\lambda_0}{\sum |x_i|^2 + |y_i|^2}$. Here $\omega_0,\lambda_0$ are the standard symplectic and contact forms respectively. 
+
+Note that $T_\gamma$ for an admissible $\gamma$ is cylindrical over disjoint union of two Legendrian tori. This follows from the fact that $f_a(T_z)) = T_{a^nz}$ where $f_a$ is the scaling map, multiplication by $a$.
+\end{example}
+
+\subsubsection{Neck stretching}
+We now explain the process of \textit{neck stretching}. The $\tau-$stretched manifold $W^\tau$ is defined by removing the tubular `neck' around $Z$ and replacing with a $2\tau$ sized neck as defined below - 
+$$W^\tau =  \underbrace{(W \setminus N ) \cup   (-\tau,\tau)\times Z} _{\text{ gluing $Z$ at the ends}}. $$
+Since $J$ is translation invariant on $ N$, $W^\tau$ can be given a complex structure $J^\tau$ adjusted to $\omega$   by requiring $J^\tau$ on the extending the translation invariant complex structure $J|_N$ . We define the $\tau-$ stretched Lagrangian $L^\tau$ similarly as $W^\tau$.
+$$L^\tau =  \underbrace{(L \setminus N ) \cup   (-\tau,\tau)\times \Lambda} _{\text{ gluing $\Lambda$ at the ends}} .$$
+
+\noindent From our assumption, the manifold with the hypersurface removed $W\setminus Z$ has two connected components. Thus if we remove the neck $N$ from the manifold $W$, there are two connected components of $W \setminus N$,   call the connected components  $W_{in}$, $W_{out}$. Clearly, all the $\tau$ stretched manifolds are diffeomorphic to $W$ by choosing a diffeomorphism between the intervals $(-\e,\e)$ and $(-\tau,\tau)$. The metric on the stretched manifolds is defined to be $g_W$ away from the necks and cylindrical extension of the compatible metric on $Z$ in the neck piece.
+
+
+\subsubsection{ Energy}
+For establishing compactness of a family of objects, it is essential for the family to be bounded in some sense.  The notion of \textit{energy} has been used to bound families of $J-$holomorphic curves, for SFT, there is a similar notion of \textit{energy} which we describe now. 
+
+There are more than one way of defining energy for the neck-stretched manifolds. Cielibak-Mohnke \cite{ciel} defines it to be the symplectic area induced from a particular choice of diffeomorphism between $W$ and $W^\tau.$  
+Bourgeois et. al. \cite{bhewz} defines energy  analogous to Hofer energy. We will use the approach in op. cit. for dealing with energy , see section 9.2 in \cite{bhewz}.
+
+We recall the definition of Hofer energy. Given a symplectic manifold $M$ with a cylindrical end $\R_+ \times Z$ where $Z$ is a contact type hypersurface i.e. there is a contact form $\lambda$ on $Z$ such that $\omega=d(e^t\lambda)$.  Denote the compact complement of the cylindrical end by $\overline{M}$. The Hofer energy is of a curve $u:\Sigma \to M$  is defined as follows : 
+
+$$E_H(u) = \int_{u\inv (\bar{M})} u^* \omega   + \text{sup}_{\phi \in \mathcal{T}} \int_{u\inv (\R_+ \times Z)} u^* d(e^{\phi(t)} \lambda),  $$
+where $\mathcal{T}$ is the family of increasing diffeomorphism from $\R$ to $(0,1)$ .
+
+The horizontal energy $E_{Hor}$ refers to the energy of the projection to $Z$ in the cylindrical end along with the energy away from the cylindrical end. The formula for  the horizontal energy is  $$E_{Hor}(u) = \int_{u\inv (\bar{M})} u^* \omega   +  \int_{u\inv (\R_+ \times Z)} u^* p_Z^* d \lambda .$$ Here $p_Z$ is the projection on to $Z$. It is clear that  finiteness of Hofer energy implies finiteness of the horizontal energy. In SFT literature this is commonly called the  $E_\omega$ energy, but we avoid this notation since for us $\omega$ is a symplectic form and not a part of stable Hamiltonian structure. The energy for the stretched manifold is defined similarly, let $u:\Sigma \to W^\tau$ be a curve, the energy is defined by $$E(u) =  \int_{u\inv (\bar{W})} u^* \omega   + \text{sup}_{\phi \in \mathcal{T}} \int_{u\inv ((-\tau,\tau) \times Z)} u^* d(e^{\phi(t)} \lambda) .$$
+where $\bar{W}$ is the compact manifold obtained by removing the tubular neighborhood $N$ from $W$ and  $\mathcal{T}$ is the family of increasing diffeomorphism from $(-\tau,\tau)$ to $(0,1)$.
+
+
+\begin{remark} \label{rem:horizontalmajorizes}
+    Lemma 9.2 in \cite{bhewz} proves that the horizontal energy $E_{Hor}$ can be used to bound the total energy of holomorphic maps to $( W^\tau, J^\tau )$. More precisely, there exists a $C>0$ depending only on $W,Z,\lambda$ and not on $\tau$ such that $E(u) < CE_{Hor}(u)$ for all holomorphic $u : S \to (W^\tau,J^\tau)$. Later, this lets us use $E_{Hor}$ bounds to compactify moduli of maps to neck-stretched manifold.  
+\end{remark}
+
+\begin{figure}[ht]
+    \centering
+    \incfig{1}{breaking}
+    \caption{Breaking of $W$}
+    \label{fig:breaking}
+\end{figure}
+
+\subsubsection{Broken manifold and broken discs}\label{subsub:brokenstuff}
+
+The geometric objects that are obtained as a result of neck stretching can be intuitively imagined to be broken manifolds, which we explain in detail below. As before, assume $(W,\omega,J,L)$ be a symplectic manifold with a contact type hypersurface, $Z$ such that $J,L$ are cylindrical near the hypersurface $Z$. Conceptually as $\tau \to \infty$, the neck of the manifold gets longer and longer and one can view the `limit' to be given by adding positive and negative symplectization of $Z$ to the two boundaries in $W\setminus Z$. If we further assume that the hypersurface $Z$ divides the manifold $W$ into two connected components $\bar{W}_{in}$, $\bar{W}_{out}$ with contact type boundaries, a  broken manifold $\mathbb{W}[k]$ with $k$ necks is given by the collection  $$\widehat{W_{in}}, \underbrace{ \R\times Z,\R\times Z,\R\times Z,\dots  }_{\text {k times}} , \widehat{W_{out}},$$
+where $\widehat{X}$ denotes symplectization of the contact type boundary of the manifold $X$ and $W_i$ refers to either the $i\th$ neck piece or the corresponding symplectizations. When we want to refer to a broken manifold without specifying the number of necks, we use the notation $\mathbb{W}$.
+
+Similar to a broken symplectic manifold, one has a notion of broken Lagrangian submanifold in a broken symplectic manifold. We can construct $\mathbb{L}$ from a Lagrangian $L$ if we  assume that $L$ is cylindrical near the hypersurface $Z$. We define the broken Lagrangian $\mathbb{L}[k]$ with $k-$ necks to be the collection
+
+$$\widehat{L_{in}}, \underbrace{ \R\times \Lambda,\R\times \Lambda,\R\times \Lambda,\dots  }_{\text {$k$ times}} , \widehat{L_{out}},$$
+where $L_{in}$ and $L_{out}$ denote the intersection of $L$ with $W_{in},W_{out}$ respectively and the hat $\widehat\_$ denotes the extension to the symplectization by the cylinder of the Legendrian $\Lambda$ and
+$L_i$ refers to the $i\th$ neck piece.
+
+ \begin{defn}[Broken disc]\label{def:brokdisc}
+ 
+ A broken disc with $k-$necks $(\mathfrak{u,D})$ is a map from a  nodal disk with marked points $\mathfrak{D}$ to a broken manifold with $k$ necks with the following properties. 
+ \begin{itemize}
+     \item $\mathfrak{D}$ is a nodal disc with labels $l\in \{\text{in}=0,1,2,\dots,k,\text{out}=k+1\}$ such that neighboring discs have labels differing at most by 1. We designate some nodes to be ``puncture nodes" that are the nodes in the disc  between two components with different labels.We write the nodal disks as  $ \mathfrak{D} = (\D_{in},\D_1,\dots,\D_{out})$ where $\D$ refers to a collection of discs.
+     \item  $ \mathfrak{u} = (u_{in},u_1,\dots,u_{out})$ is a map from $\mathfrak{D}$ to $\mathbb{W}[k]$ such that  $u_i$ is a map from $\D_i$ to $W_i$ with boundary on $L_i$ and near the puncture nodes of $\mathfrak{D}$ between components of differing label $u_i$ and $u_{i+1}$ asymptote to the same Reeb chord or Reeb orbit.
+     \item (\textit{Stability}) for all $i \in [1,\dots,k]$, at least one of the component in each neck $\D_i$ has to be a non-trivial strip, or have enough markings to make it stable.
+ \end{itemize}
+  \end{defn}
+\begin{figure}
+    \centering
+    \incfig{1.5}{brokendisc}
+    \caption{Broken disc in $\mathbb{W}[1]$}
+    \label{fig:my_label}
+\end{figure} 
+
+\begin{remark}
+The labels in and out are chosen to refer to the ``inside" and ``outside" where inside means where we do a local mutation and outside means where we don't make any changes.
+\end{remark}
+
+Now that we have defined broken discs, we will proceed to define the notion of convergence of broken discs.
+We say a sequence of discs $u_n : \D^2 \to (W^n,J^n,L^n)$ converge to a broken disc $(\mathfrak{u,D})$ with $k-$necks if the following holds: \begin{itemize}
+    \item there is a sequence of maps $\phi_n:\mathfrak{D_n} \to \mathfrak{D} $ such that they are biholomorphic diffeomorphisms except away from a certain circle or line that might get mapped to a node in $\mathfrak{D}$
+    \item there is a sequence $t^{n}_i \in \R$ such that $u^n_i \of \phi_n\inv+t^n_i$ converges in $C^{\infty}$ to $u_i$ on every compact subset. Here $+t$ refers to translation in the $\R$ direction by $t$ 
+\end{itemize}
+
+\noindent Similarly, we say a sequence of broken disks  $(\mathfrak{u^n,D_n})$ with $k$ necks converges to a broken disk $(\mathfrak{u,D})$ with $k'>k$ necks if the following hold:
+\begin{itemize}
+    \item There is a sequence of maps $\phi_n:\mathfrak{D_n} \to \mathfrak{D} $ such that they are biholomorphic diffeomorphisms, except away from certain circles or lines that might get mapped to a node in $\mathfrak{D}$.
+    \item There is a sequence $t^{n}_i \in \R$ such that $u^n_i \of \phi_n\inv+t^n_i$ converges in $C^{\infty}$ to $u_i$ on every compact subset. Here $+t$ refers to translation in the $\R$ direction by $t$ .
+  
+\end{itemize}
+
+\subsection{Asymptotic convergence to Reeb chords}
+
+In this subsection, we show that we can obtain asymptotic data near the puncture nodes if the broken disc has finite Hofer energy. To that end, we prove a version of asymptotic convergence of pseudoholomorphic strips in $\R \times Z$ with finite Hofer energy  with boundary on $\Lambda$.
+
+We start with recalling the assumptions on the contact hyper surface and the complex structures. $(Z,\lambda)$ is a closed contact manifold  with contact form $\lambda$ such that there is a free $S^1$ action on $Z$ that generates the Reeb field\footnote{In literature such contact spaces are also called pre-quantum bundles} i.e.\ the quotient $Y=Z/S^1$ has an natural symplectic form induced from $d\lambda$. Let $\Lambda$ be a Legendrian in the contact manifold $Z$ that is closed under action of  $-1$ from the $S^1$ action (i.e. $-\Lambda = \Lambda$). Also assume that the Legendrian $\Lambda$ projects to an embedded Lagrangian $L_Y$ in $Y$ and the projection map is a finite cover. Clearly, the Reeb dynamics of the contact form $\lambda$ is Morse-Bott in the sense of \cite{bourg}.
+
+
+We make the following assumptions on the complex structure.  $J$ is an almost complex structure on $\R \times Z$ such that $J$ is translation invariant and is adjusted to the contact form $\lambda$. Thus, the almost complex structure $J$ descends to a compatible almost complex structure on $(Y,d\lambda)$ that makes the projection $ \pi_Y : R\times Z \to Y$ a holomorphic map. The complex structure $J$ induces a cylindrical metric on $\R \times Z$, call that metric $g_{cyl}$.
+
+Now, we explain our goal of this subsection in details. We begin by explaining the strips that model the asymptotics of a holomorphic strip with finite Hofer energy. We define the map $u_\gamma$ on a  strip as follows 
+$$u_\gamma(s,t) = (ms,\gamma(mt)),$$ where $ \gamma $ is a Reeb chord with end points on $\Lambda$ and $m>0$ is the length of the Reeb chord $\gamma$. From the definition, we see that $u_\gamma$ is invariant of the $\R$ action on the target $\R \times Z$. We call such translation invariant strips over Reeb chords \textit{trivial strips}.
+
+
+We can use classical removal of singularity and exponential convergence results of $J$ holomorphic strips to conclude exponential convergence of strips in the compact manifold  $Y$.  Since $L_Y$ is a compact embedded Lagrangian in  the symplectic manifold $Y$, we have that there is a number $\delta_Y>0$ such that any finite-energy pseudoholomorphic half-strip $ v : \halfstrip \to Y $ with boundary on $L_Y$, the strip $v$ converges to a point in the Lagrangian $L_Y$ exponentially fast with speed $O(e^{-\delta_Y s})$ where $(s,t)$ is the standard coordinate on $\halfstrip$. Rigorously, there is a $C>0$ and $p \in L_Y$ such that $d(v(s,t),p) < Ce^{-\delta_Y s}$.  Let $i_\Lambda = \inf  \,(\, \{ \delta_Y\} \cup \{ \theta \in (0,2\pi)| \, \, \exists p\in \Lambda \, \, \text {such that }  e^{i\theta}.p \in \Lambda \})$. Clearly $i_\Lambda > 0$ since $\Lambda$ is a finite cover of $L_Y$ and $L_Y$ is compact.
+
+\begin{Theorem}[Exponential Convergence] \label{thm:exponential conv}
+For any $\delta \in (0,i_\Lambda) $ and holomorphic strip $u:[0,\infty) \times \interval \to \R \times Z$ , that satisfies the following,
+\begin{itemize}
+    \item $E_H(u)<\infty$ ,
+    \item $u$ satisfies the boundary condition  $u\, ( \,[0,\infty) \times \{0,1\}) \sub\R \times \Lambda$,
+    \item the projection on $\R$ , $\pi_\R (u)$ is unbounded;
+\end{itemize}  there is an $s_0 > 0$, a trivial strip $u_\gamma$ over a Reeb chord $\gamma$ and a $C>0$ such that
+
+\begin{equation}
+\label{expConv}
+     d_{cyl}(u(s,t),u_\gamma(s,t)) < Ce^{-\delta s} \quad \forall s\geq s_0.
+\end{equation} 
+
+\end{Theorem}
+
+
+\noindent We will break the proof of the theorem in the following steps.
+\begin{itemize}
+    \item Step 1 : Compactify $\R \times Z$ to a symplectic manifold $N$ with compatible almost complex structure such that $\R \times \Lambda$ compactifies to a cleanly self intersecting Lagrangian $L$ in $N$.
+    \item Step 2 : Show that $\pi_\R (u)$ diverges to $\pm \infty$ where $\pi_\R$ is the projection of $\R \times Z$ to $\R$.
+    \item Step 3 : Extend $u$ to a map  $\bar{u}$ to $N$ with boundary on $L$.
+    \item Step 4 : Use analysis done in \cite{schm} to conclude convergence in $N$.
+    \item Step 5 : Get convergence in cylindrical metric from convergence in $N$.
+\end{itemize}
+
+\begin{proof}
+
+\begin{figure}[ht]
+    \centering
+    \incfig{1.2}{cylfib}
+    \caption{$\R \times Z$ as a $\C^*$ fibration}
+    \label{fig:cylfib}
+\end{figure}
+
+\textbf{Step 1 : Compactification of target} 
+
+We will compactify our target manifold by adding two copies of the symplectic manifold $Y$. Since $Z$ is a principal circle bundle over $Y$, the cylinder $\R \times Z$ is a $\R \times S^1 $ bundle on $Y$. The transition functions  between trivializations of $\R \times Z$ over the base $Y$ is given by rotation action of $S^1$, thus the cylinder $\R \times Z$ can be viewed as a $\C^*$ bundle over $Y$. Moreover, we can extend this bundle to a $\C\P^1$ bundle over $Y$ by compactifying each fiber to a $\C\P^1$ and using the induced transition functions, call this compactification $N$. Thus, $N$ is a $\C\P^1$ bundle over the base $Y$. Clearly $N$ is compact as $Y$ is compact. Denote the zero section of $Y$  by $Y_0$ and the infinity section ($y\mapsto (y,\infty)$ in each trivialization) by $Y_\infty$.  The complex structure $J$ extends naturally to a complex structure $J_N$ on $N$ that restricts to the standard complex structure on the $\CP^1$ fibers. We can define a symplectic form $\omega_N$ that is compatible with $J_N$ by defining it in each trivialization $\C\P^1 \times U$ for $U$ open set in $Y$ as following, 
+$$\omega_N =  \left( \begin{matrix} \omega_{FS} && 0 \\ 0 && d\lambda  \end{matrix} \right) ,$$
+where $\omega_{FS}$ is the Fubini-Study form. The form $\omega_N$ is a well-defined symplectic form on $N$ as the transition functions of $N$ seen as a  $\CP^1$ fibration are given by the rotation action of the $S^1$ on $\C\P^1$. One can check from the construction of $\omega_N$ and $J_N$ that they are compatible from a direct computation.
+
+\begin{figure}[ht]
+    \centering
+    \incfig{1.2}{compcyl}
+    \caption{Compactification of $\R \times Z$ to $N$}
+    \label{fig:compcyl}
+\end{figure}
+
+
+We describe the closure of the cylindrical Lagrangian in the compactified symplectic manifold. Denote the closure of the cylindrical Lagrangian $  \bar {\R \times Z}$ in $N$ by $L$. We can check that $L$ is obtained by adding $L_Y$ in the 0 and infinity divisor of the $\CP^1$ fibration to $\R \times \Lambda$. Indeed, a trivialization $\CP^1 \times  U$ of $N$ over some open $U$ in $Y$ such that $U\cap L_Y$ is nonempty, we see that $$L \cap ( \CP^1 \times  U) = \{0,\infty\}\times (U\cap L_Y)  \cup ( ( \CP^1 \times U) \cap ({\R \times \Lambda})).  $$  
+This directly shows adding two copies of the Lagrangian $L_Y$ to the cylinder $\R\times Z$ produces the closure $L$. Since the Legendrian $\Lambda$ is closed under the action of $-1$, we see that $L$ cleanly self intersects at $L_Y$ in the 0 and infinity divisor. Call the intersection loci $L_{Y_0}$, $L_{Y_\infty}$ respectively.
+
+\textbf{Step 2 : Divergence of $\pi_\R (u)$}
+
+We now show that near the ends of the strip, the image escapes to infinity.  We will prove that in the limit as $s \to \infty$ ,  $u$ diverges to either $\infty$ or $-\infty$. The proof employs a version of monotonicity lemma (Proposition 2.69 \cite{Abbasbook}) and gradient-boundedness of finite Hofer energy maps. 
+
+We state the monotonicity lemma without proof.
+\begin{lemma}[Proposition 2.69 \cite{Abbasbook}]\label{lemm:gromMon}
+    Let $(W,\omega)$ be a compact symplectic manifold, $E_0 >0$, let $J$ be an $\omega$-compatible almost complex structure and let $L \sub W$ be a Lagrangian submanifold. Let $\mathbb D = \big\{ z \in \C \big| |z| < 1 \big\}, N \in \N $ and $I_k = \{ e^{it} | \frac{2\pi}{N}(k-1) \leq t \leq \frac{2\pi}{N}k \} \sub \del \mathbb D $ for $k= 1,\dots N.$ Then there are constants $\delta_0,c_0 > 0 $ such that the following holds: 
+    
+    Let $u:\ol \D \to W$ be a $J$-holomorphic disk with $E(u)\leq E_0 $ so that $u(I_k)\sub L$ for $k$ even. Let $z_0 \in \D \setminus \cup_{k} I_{2k+1}$ and $0< r < \delta_0$ so that $u(\cup_k I_{2k+1}) \sub W\setminus \ol{B_r(u(z_0))}.$ Then $$\int_{u(\ol D) \cap B_r(u(z_0))} \omega \geq c_0 r^2.$$
+\end{lemma}
+
+Another ingredient in the proof of divergence of $\pi_\R$ is a slight modification of Proposition 2 in \cite{erkaoAsymp}.  Define the norm $\| \|_{L^\infty}$ for a map $u:\mathbb H \to \R\times Z$ as follows $$\| \nabla u \|_{L^\infty} := \sup_{(s,t)\in \mathbb H} | \nabla u (s,t)|,$$ where the norm $|\cdot| $ is taken with respect to the standard Euclidean metric on $\mathbb H$ and cylindrical metric on $\R \times Z$. 
+
+\begin{lemma}\label{lemm:prop1erk}
+    If $v: \mathbb H \to \R \times Z$  is a holomorphic map with boundary on $\R \times \Lambda$ with zero horizontal energy, $E_\omega (v) = 0$, and bounded derivative, $\| v\|_{L^{\infty}} < \infty$, then $v$ is a constant map.
+\end{lemma}
+
+\begin{proof}
+    Since $E_\omega(v)=0$, we have that $\pi_Y (v)$ is a constant map. Thus, the map $v$ lies in a fiber $\R \times S^1$. The map $v$ maps the boundary $\R \sub \mathbb H$ to $\R \times \{ * \}$ for some $* \in S^1$ . Since $\mathbb H$ is simply connected, $v$ factors as follows $v = e^{h}$ where $h: \mathbb H \to \C$ is a holomorphic map. The map $h$ sends the boundary $\R \sub \mathbb H $ to $\R + iy$ for some $y\in \R$.  We can use a doubling trick using Schwarz reflection to extend $h$ to $\C$, thus we can extend $v$ to a map from $\C$. The rest of the proof follows from Proposition 1 in \cite{erkaoAsymp}.
+\end{proof}
+
+
+\begin{lemma}[Proposition 2 \cite{erkaoAsymp}] \label{lemm:gradbound}
+    Let $u : \R\times \interval \to (\R_+ \times Z, \R_+ \times \Lambda)$ be a holomorphic map with finite Hofer energy, $E_H(u) < \infty$, then we have $\|\nabla u \|_{L^\infty} < \infty $. 
+\end{lemma}
+\begin{proof}
+    The proof is the same as the proof of Proposition 2 in \cite{erkaoAsymp}. The only change one needs to do is to use Lemma \ref{lemm:prop1erk} in place of Proposition 1 when the rescaled maps converge to a map on $\mathbb H$. 
+\end{proof}
+
+
+% \begin{lemma}
+% \label{lemm:gromMon}
+%  (Gromov's monotonicity lemma) Suppose $(W,\omega)$ is a compact symplectic manifold (possibly with boundary), $J$ is an $\omega$-tame almost complex structure, and $B_r(p)\sub W$ denotes the open ball of radius $r > 0$ about $p \in W$ with respect to the Riemannian metric $g(X,Y ) := \frac{1}{2}(\omega(X,JY) + \omega(Y,JX))$. Then there exist constants $c,R > 0$ such that for all $r \in (0,R)$ and $p \in W$ with $B_r(p) \sub W$, every proper non-constant J-holomorphic curve $u : (\Sigma,j) \to (B_r(p),J)$ passing through $p$ satisfies $$\int u^*\omega \geq  cr^2.$$
+
+% \end{lemma}
+
+The idea behind the proof of  divergence is that if a semi-infinite strip $u$ does not diverge to infinity, it needs to keep coming back to some compact subset of $\R \times Z$. The monotonicity lemma states that every time the strip comes back into such a compact set, there is a `cost of energy', hence a strip with finite energy can't keep coming back to any compact subset. We now state and prove the required divergence.
+
+
+
+\begin{lemma}
+\label{lemm:div2inf}
+$\lim_{s\to \infty} |\pi_\R (u(s,t)) | = \infty$
+\end{lemma}
+
+\begin{proof}
+
+
+Assume the contrary, that there exists $M > 0$ such that there is a sequence $(s_n,t_n)$ that satisfies $|\pi_\R (u(s_n,t_n)) | < M$ and $s_n \to \infty$. Since $\pi_\R$ is unbounded, there is also a sequence $(s'_n,t'_n)$ such that $s'_n \to \infty$ and $\pi_\R \of u (s'_n,t'_n) \to \infty$. 
+% Choose the sequence $(s_n,t_n)$ so that $t_n \in (0,1)$. We can ensure $t_n$ lies in the open interval $(0,1)$ from continuity of $a$. 
+In addition, we can assume $s_{n+1} > s'_n > s_n$ by taking subsequences.
+
+From Lemma \ref{lemm:gradbound} we know that $|\nabla u | < C$ for some $C > 0$.
+Set $W=[-M-C,M+C] \times Z$ and select a symplectic structure $\omega_f$ on $W$  of the form $d(e^{f(r)}\lambda)$ where the function $f:\R \to (0,1)$ is a diffeomorphism such that $f$ is linear on $[-M-1,M+1]$. Now use  monotonicity lemma \ref{lemm:gromMon} on the symplectic manifold with boundary $(W,\omega_f)$ with $N=4$ to get $c,R$. Choose $r_0 < \min \{ R,\frac{1}{2}\}$. Let $\Sigma_n  $ be sub-strips of the format $[\alpha_n,\beta_n] \times \interval$ where $s'_{n-1}<\alpha_n < s_n < \beta_n < s'_n$ such that $u(\alpha_n, \cdot)$ and $u(\beta_n, \cdot)$ lies in $[M+ 10C , \infty) \times Z$.  We can now apply the monotonicity lemma to each $\Sigma_n$. We have, for all $n$, \begin{equation}\label{eq:bla}
+    \int_{\Sigma_n} u^*\omega_\phi \geq {c}{r_0^2}.
+\end{equation} 
+Then from summing over $n$ in equation (\ref{eq:bla}), we get $E_{\omega_{\phi}}(u) > \sum_1^\infty {c}{r_0^2}=\infty$ which contradicts that Hofer energy is finite since $E_H \geq E_{\omega_{\phi}}$. Thus, we have $\lim_{s\to \infty} |\pi_\R (u(s,t)) | = \infty$.
+
+
+
+\end{proof}
+
+\noindent Without loss of generality, we will assume from now on wards that the $\pi_\R(u)$ goes to $\infty$ as $s$ goes to $\infty$, ie. $\pi_\R (u) \to \infty $ as $s \to \infty$. The case of $\pi_\R(u) \to -\infty$ would follow by similar arguments.
+
+\textbf{Step 3 : Extending $u$ in $N$} \label{comptarg} 
+
+We will now show that the map $u$, when considered as a holomorphic map to $N$, can be extended over the punctures. Under the biholomorphism $z \mapsto e^{-\pi z}$, the half strip $[0,\infty) \times \interval  $ is mapped to the punctured half disc $D^+_0$ where half disc $D^+$ denotes $D\cap \mathbb{H}$ for a disc $D $ centered at $0$.  From this step on wards we view the domain as a punctured half disc using the identification $z \mapsto e^{-\pi z}$. We will show that the map $u$ can be extended by removing the boundary singularity at $0$. As of now, $u$ can be viewed as a map of the half strip to $N$ with boundary on the cleanly self-intersecting Lagrangian $L$. Note that $\pi_Y(u)$ is a holomorphic map from the half strip, such that the boundary of the strip lies on the Lagrangian $L_Y$. As the Hofer energy $E_H(u)$ is finite, we have that the horizontal energy $E_{Hor}(u)= E_{d\lambda} (\pi_Y (u))$ is finite, thus from classical removal of singularities with Lagrangian boundary in compact symplectic manifold, we have $\pi_Y(u)$ can be extended over the singularity at $0$, denote the point $\pi_Y(u(0)) \in L_Y$ as $q$. Assuming that $\pi_\R (u) \to \infty$ as $s\to \infty$, we can extend $u$ to $\D^+$ by defining $u(0) = q_\infty$ where $q_\infty$ is the image of $q$ in $Y_\infty$. This can be checked by taking a trivialization of $N$ over some neighborhood $U$ of $q$, then $u|_{[R,\infty)}$ for large $R>0$ is a map to $\CP^1 \times U$ as $\pi_Y(u)|_{[R,\infty)}$ lies in $U$. Since $\pi_\R (u(z)) \to \infty$ as $z\to 0$, we have that $u(z) \to (\infty,q)$ as $z \to 0$. Thus we have shown that $u$ can be extended. This gives us the following lemma.
+
+\begin{lemma}
+If $u:[0,\infty) \times [0,1] \to \R \times Z$ with boundary on $\R \times \Lambda$, has finite Hofer energy $E_H(u) < \infty$, then $u$ has a limit as $s \to \infty$  in the compactification $N$ of $\R \times Z$ and also finite energy $E_{\omega_N} (u) < \infty$ with respect to the symplectic form $\omega_N$.
+\end{lemma}
+
+\textbf{Step 4 : Exponential convergence to a point in $N$}
+
+We will use results from \cite{schm} to show the exponential convergence of $u$ to Reeb chords. In \textbf{Theorem} \textbf{3.1 } and \textbf{3.2} the exponential convergence of finite energy strips with boundary on clean intersecting Lagrangians is proved. 
+
+To use Schm\"aschke's result, we first need to ensure that the map $u$ on the boundary of the strip lies on at most two Lagrangians that cleanly intersect. Since $\pi_Y \of u $ converges to $q$, there is a small neighborhood $V$ around $q_\infty$ in $N$ such that $L \cap V$ is diffeomorphic to cleanly intersecting Lagrangians and $u$ has boundary lying on at-most two of them, denote these Lagrangians as $L_0,L_1$ that cleanly intersect at $L_{Y_\infty} \cap V$.
+
+Now, Schm\"aschke's\textbf{ Theorem 3.2} gives us an exponential convergence in terms of eigenvalue of an asymptotic operator. We have that $u(s,t) = \exp _{q_\infty}(e^{-\alpha s}\zeta(t) + w(s,t)) $ where  $\zeta (t)$ is an eigenfunction with eigenvalue $\alpha$ of the operator 
+$$A_{q_\infty}:T_{q_\infty}\mathcal{P}(L_0,L_1) \to L^2([0,1],T_{q_\infty} N), \text{      } \xi \mapsto J_N\del_t\xi,$$
+where $T_{q_\infty}\mathcal{P}(L_0,L_1) = W^{1,2}(T_{q_\infty}N,T_{q_\infty}L_0,T_{q_\infty}L_1)$, the Sobolev space of paths from $\interval$ with boundary on $T_{q_\infty}L_0,T_{q_\infty}L_1$. As $\Lambda$ is a finite cover of $L_Y$, we can arrange a trivialization $U\times \CP^1$ of $N$ over a neighborhood $U$ of $q$ such that $L_0,L_1$ are determined by two sections of $Z$ over $L_Y$. Call those sections $s_1,s_2 : L_Y \cap U \to S^1$. From definition of $i_\Lambda$ we see that $d(s_1,s_2) > i_\Lambda$ under the standard $S^1$ metric induced from $[0,2\pi]$. As  $J_N$ splits into a direct sum of $J_Y$ and $J_0$ in each trivialization, we obtain the eigenvalues and eigenvectors separately from the $Y$ and $\CP^1$ component in the trivialization $U \times \CP^1$. In the $\CP^1$ component we see that the eigenvalues of $A_{q_\infty}$ is determined by the difference in angle between $s_1(q)$ and $s_2(q)$ that is at most $i_\Lambda$. Denote the angle difference $s_1(q)/s_2(q)$ by $\theta_q$, then the eigenvalues are given by $2k\pi + \theta_q $ for all integers $k$. Since $J_N$ restricts  to the standard complex structure $J_0$ on $\CP^1$ a direct computation shows that the eigenfunctions are $e^{it(2k\pi+\theta_q)}v$ for $v \in T_{q_\infty}L_0$.
+
+\begin{figure}[ht]
+    \centering
+    \incfig{1.8}{lagangle}
+    \caption{Angles between the Lagrangians $L_0$,$L_1$ at $q_\infty.$}
+    \label{fig:lagangle}
+\end{figure}
+
+
+
+We can now collect the results of the previous paragraph to obtain the required exponential convergence. When $\theta_q \neq \pi$, $v$ lies in the vertical component $T_{\infty}\CP^1$ of $T_{q_\infty}N = T_{\infty}\CP^1 \oplus T_{q}U$ in the trivialization $\CP^1\times U $ as the only eigenvalues in the horizontal part are $k\pi$. When $\theta_q = \pi$, the boundary of $u$ lies on a single Lagrangian branch. Thus, we can do a doubling trick to obtain a holomorphic cylinder in a neighborhood of $q_\infty$, then the exponential convergence  follows from \cite{bourg} since the Reeb dynamics in our case is Morse-Bott. From now we assume $\theta_q \neq \pi$, thus from Theorem 3.2 in \cite{schm} we get, for some vertical $v\in T_{\infty}\CP^1 \hookrightarrow T_{q_\infty}N  $ , $s_0>0$  and any $\delta \in (0,i_\Lambda)$,
+
+ \begin{equation}
+\label{Nconv}     
+u(s,t) = \exp _{q_\infty}(e^{-(2k\pi + \theta_q) (s+it)}v + w(s,t)) , \,\|w\|_{C^l} = O (e^{- (\delta + 2k\pi + \theta_q)s})  \, \forall l\in \mathbb{N}, s\geq s_0.
+ \end{equation}
+ \blfootnote{Here  $ O(e^{- (\delta + 2k\pi + \theta_q)s})$ means that there is a $c_l >0$ such that $\| w\|_{C^l([s,\infty))} < C_le^{- (\delta + 2k\pi + \theta_q)s}$. We keep using the big-$0$ notation from now on to avoid notational clutter.}
+
+
+
+
+\textbf{Step 5: Convergence to a strip in cylindrical metric}
+
+So far, we have proved exponential convergence of a $J-$holomorphic strip in a compact manifold. In this step, we will prove exponential convergence in the cylindrical manifold $\R \times Z $ with respect to a cylindrical metric. We will use the convergence in the compact manifold $N$ to obtain exponential convergence in the cylindrical manifold $\R \times Z$. 
+
+The choice of metric  in $N$ in (\ref{Nconv}) to define the exponentiation is not vital, since exponentiation is an analytic local diffeomorphism and derivative at $0$ is identity. From a Taylor-series computation, we see that changing the metric doesn't change the leading order decaying term in the equation (\ref{Nconv}). Let $\wt {\exp}_{q_\infty}$ denote exponentiation at $q_\infty$ with a different metric. The Taylor-series of $\wt \exp_{q_\infty} \inv \of  \exp_{q_\infty} $ is as follows,
+
+\begin{align}\label{eqn:exptaylor}
+    \wt \exp_{q_\infty} \inv \of  \exp_{q_\infty} (\wt v) &= d(\wt \exp_{q_\infty} \inv \of  \exp_{q_\infty})_0 (\wt v) + O(|\wt {v}| ^2) \nonumber \\
+    &= {d{{\wt{\exp}_{q_\infty}\inv}}}_0 \of d{\exp_{q_\infty}}_0 (\wt v) + O(|\wt {v}| ^2) \nonumber \\
+    &= \operatorname{Id} \of \operatorname{Id} (\wt v) +  O(|\wt {v}| ^2)
+\end{align}
+Thus, from equations (\ref{Nconv}) and (\ref{eqn:exptaylor}) we get that $u$ converges exponentially to the strip $\wt{\exp} _{q_\infty}(e^{-(2k\pi + \theta_q) (s+it)}v)$.
+
+We choose a metric on the compactified manifold $N$ that lets us easily obtain trivial strips from geodesic exponentiation. Choose a metric in $g$ for $N$ such that in the trivialization $U\times \CP^1$ in a neighborhood $U$ of $q$, $g = g_1 \oplus g_2$ where $g_1$ is the restriction of some metric on $Y$ and $g_2$ is a metric on $\CP^1$ for which an open disc $B_\infty$ centered at $\infty$ is isometric to a disc $B_0$ in $\C$ with standard Euclidean metric. Since $v$ in (\ref{Nconv}) lies in the vertical component, we have that $$\exp_{q_\infty}((e^{-(2k\pi + \theta_q) (s+it)}v)$$ is a trivial strip $u_\gamma$ over a Reeb chord $\gamma$ given by $$\gamma(t)= e^{it\theta_q}.s_1(q).$$ Thus, from the exponential convergence in (\ref{Nconv}) we get the following estimate with respect to the metric $g$:
+\begin{equation}
+    d_g (u(s,t) , u_\gamma(s,t)) < C e^{- (\delta + 2k\pi + \theta_q)s}\quad \forall s>s_0.
+\end{equation}
+
+
+We now show that the exponential convergence with respect to $g$ in the compact manifold $N$ would imply our required exponential convergence in cylindrical metric, as proposed in (\ref{expConv}). Choose a trivialization $U\times \CP^1$ of $N$.  We claim that we can arrange $g$, such that it agrees with $g_{cyl}$ on the contact distribution  $\ker \lambda$. Indeed, since $\pi_Y$ induces an isomorphism of $T_{\pi_Y(p)}Y$ with the hyperplane $(\ker \lambda)|_p\hookrightarrow T_pZ$, we can assume $g$ agrees with $g_{cyl}$. From our choices of $g,g_{cyl}$ we have that in the trivialization $U \times \CP^1$,  $\pi_U \of u$ converges exponentially fast to $\pi_U \of u_\gamma$ in $O(e^{-\delta s})$. It remains to check is the convergence of $\pi_{\CP^1} (u)$ to  $\pi_{\CP^1}(u_\gamma)$ in $O(e^{-\delta s})$.
+
+We fix parameterization, which we use in the upcoming estimates. We use the radial parametrization $[1,\infty) \times S^1 \to \C^* $ , $(r,\theta) \mapsto (re^{i\theta})$. In this parametrization, the restrictions of the metric to $[R,\infty) \times S^1$ for  large $R>0$ direction are given as follows : \begin{align*}
+g_{cyl}|_{\C^*} &=  \frac{1}{r^2} dr^2 + d\theta^2\\g|_{\CP^1} &=  \frac{1}{r^4} dr^2 +\frac{1}{r^2} d\theta^2.    
+\end{align*} The $\frac{1}{r^2}$ coefficient shows up in the formula of $g_{cyl}$ since the radial to cylindrical parameterization is given by $(r,\theta) \mapsto (\log r , \theta)$. Also note that the metric $g|_{\CP^1}$ is isomorphic to the Euclidean metric on the punctured  disc via the map $(r,\theta) \mapsto (\frac{1}{r},\theta)$. Denote the metric induced from these by $d_g$,$d_{cyl}$.
+
+\begin{lemma} There exists $s_0,C >0$ such that
+$$d_{cyl} (\pi_{\CP^1} (u(s,t)),\pi_{\CP^1}(u_\gamma(s,t))) < Ce^{-\delta s} \quad  \forall s>s_0.$$
+\end{lemma}
+
+\begin{proof}
+In the proof, we drop the arguments $(s,t)$ from the maps to avoid notational clutter. Denote $\pi_{\CP^1} \of u$  and $\pi_{\CP^1} \of u_\gamma$ in radial coordinates for $ \C^*$ by  $(u^r,u^\theta)$ , $(u^r_\gamma,u^\theta_\gamma)$ respectively. From $d_{g} (u,u_y)=O(e^{- (\delta + 2k\pi + \theta_q)s})$ we get for $r\in [R,\infty)$, $$d_g((u^r,u^\theta),(u^r_\gamma,u^\theta_\gamma)) = d^{\D^2}_{polar}((\frac{1}{u^r},u^\theta),(\frac{1}{u_\gamma^r},u_\gamma^\theta)) = O(e^{- (\delta + 2k\pi + \theta_q)s}) .$$
+In the last equation $d^{\D^2}_{polar}$ is the Euclidean distance between two points in polar coordinates.  We now  prove the estimate in $\R$ direction in $\R \times S^1$.
+\begin{align*}
+    &|\frac{1}{u^r} - \frac{1}{u^r_\gamma}| = O(e^{- (\delta + 2k\pi + \theta_q)s})\\
+     \implies &| \frac{u_\gamma^r}{u^r} - 1|= O(e^{- \delta s})\\
+     \implies & |\log u^r  - \log u^r_\gamma |=| \log \frac{u_\gamma^r}{u^r} | = O(e^{- \delta s})
+\end{align*}
+Here, the first equality follows from $|r_1-r_2| \leq d^{\D^2}_{polar}((r_1,\theta_1),(r_2,\theta_2))$ and the last equality follows from the Taylor expansion of $\log(1+x)$ and the preceding line. 
+
+Now we prove the estimate in the $S^1$ direction. We have that $2r_1r_2(1-\cos (\theta_1 - \theta_2)) \leq (d^{\D^2}_{polar}((r_1,\theta_1),(r_2,\theta_2)))^2$. Thus, we see that, 
+\begin{align*}
+    & 2\frac{1}{u^ru^r_\gamma}(1-\cos (u^\theta - u^\theta_\gamma)) = O(e^{- 2(\delta + 2k\pi + \theta_q)s})\\
+    \implies & 1-\cos (u^\theta - u^\theta_\gamma)= O(e^{- 2\delta s})\\
+    \implies & |u^\theta - u^\theta_\gamma|=O(e^{- \delta s}).
+\end{align*}
+In the above equations, we use that $|\log\frac{u^r}{u^r_\gamma}| =  O(e^{- \delta s})  $ implies that $u^r(s,t)= O(e^{(2k\pi + \theta_q)s})$ and that the Taylor series of $\cos x $.
+
+\noindent Recall that the radial-to-cylindrical parametrization is given by $(r,\theta) \mapsto (\log r , \theta)$. We see that,
+$$(|\log u^r -\log u^r_\gamma|^2 + |u^\theta- u^\theta_\gamma)|^2)^{\frac{1}{2}}=  d_{cyl}((u^r,u^\theta),(u^r_\gamma,u^\theta_\gamma)) = O(e^{- \delta s}).$$
+
+\noindent Thus, we have $$d_{cyl} (\pi_{\CP^1} (u(s,t)),\pi_{\CP^1}(u_\gamma(s,t))) < Ce^{-\delta s} \quad  \forall s>s_0.$$
+
+
+
+\end{proof}
+
+\noindent Combining the exponential convergence of $\pi_{\CP^1} \of u$ and $\pi_Y \of u$ we get our required exponential convergence, $$d_{cyl}(u(s,t),u_\gamma(s,t)) < Ce^{-\delta s} \quad \forall s\geq s_0.$$
+
+
+\end{proof}
+
+\begin{remark}
+\label{remark:asymptoticLagrangian}
+We can prove an exponential convergence for strips with boundary on $L_a$ in $\R \times Z$ where $L_a$ projects to the Lagrangian $L_Y$ in $Y$ and $L_a$ is asymptotically close to the cylindrical Lagrangian $\R \times \Lambda$ so that closure of $L_a$ in $N$ is a Lagrangian with clean self intersection. We encounter such a boundary condition in the case of $T_{\R + i\e}$.  Steps 1,2,3  and 5 follow verbatim for this case. From a direct computation of eigenvalues and eigenfunctions of $A_{q_\infty}$ in this case we get the necessary counterpart of equation (\ref{Nconv}) of Step 4.  
+\end{remark}
+
+\subsection{The SFT compactness theorem}
+
+We state the version of SFT compactness for discs in our case of neck-stretching here. We avoid adding marked points and perturbation of domain just for sake of notational clarity, the theorem still holds true with them.
+
+\begin{Theorem} 
+\label{theorem:SFTCompactness}
+If $u_n : \D^2 \to (W^n,J^n,L^n) $ is a sequence of $J^n$ holomorphic disc to the $n-$stretched manifolds, with boundary on $L^n$, and with bounded energy, i.e. $E(u) < E< \infty$, then there is a subsequence of $u_n$ that converges to a stable broken disc.
+\end{Theorem}
+
+This theorem is mentioned in Section 11.3 in \cite{bhewz} for the case of non-degenerate Reeb chords. Our case is a Morse-Bott version for Reeb chords. The proof in this case is the same as the usual SFT compactness theorem apart from some analytic changes in the lemmas in section 5 in \cite{bhewz}. We prove the necessary counterparts of the analysis in section 5 in the following lemmas.
+
+\begin{lemma}[Bubbling]\label{lemma:bubbling}
+There exists a $\hbar>0$ such that the following is true. Let $F_n =(a_n,f_n):\D_+^2 \to (\R \times  Z, \R \times \Lambda)$ be a sequence of holomorphic maps from the upper half disc with Lagrangian boundary such that $E(F_n) < C$ for some constant $C$ and $a_n(0) = 0 $. Then there is a sequence of points $y_n \in \D^2_+$ converging to 0 and  sequences of real numbers $R_n,c_n$ such that the rescaled maps $F^0_n(z)=(y_n + \frac{z}{R_n})$ are functions on the half-disk of radius $R_n$ and have a convergent subsequence to $F^0$ in $C^\infty_{loc}$ such that $E_{Hor}>\hbar$
+\end{lemma} 
+
+\begin{proof}
+If $|\nabla F_n(0)| \to \infty$ as $n \to \infty$.  As usual with bubbling analysis, we apply Hofer's lemma to obtain $y_n \in \D^2_+ $ and $\e_n \in \R$ such that $y_n\to 0$, $\sup |\nabla F_n (z) | \leq 2 | \nabla F_n(y) | $ where the supremum is taken on $|z-y_n| \leq \e_n$ and $|\nabla F_n(y_n)|\e_n \to \infty$. Now consider the rescaled maps $F^0_n(z) = F_n(y_n + \frac{z}{|\nabla F_n(y_n)|})$. This rescaled map is defined for $|z| \leq \e_n|\nabla F_n(y_n)|$ and has upper bound on the gradient by 2, thus by Arzela-Ascoli we get a convergent subsequence that converges to a non-constant function $F^0$ on the upper half plane $\mathbb{H}$ or the complex plane $\C$ depending whether $y_n$ was on the boundary or in the interior. Clearly we have $E(F^0) \leq C$. If the image of $F^0$ is bounded, $F^0$  maps to a holomorphic sphere or a disc with Lagrangian boundary and from standard energy quantization result we have $E_{Hor}(F^0) > \hbar > 0$ where $\hbar$ depends on $Z$. for some fixed  or else it maps asymptotically to a Reeb chord or Reeb orbit. If $F^0$ has unbounded image, from Lemma \ref{lemma:asym},  it has Reeb-orbit/chord asymptotes . Since we are in the contact case, we can directly compute $E_{Hor}$ and see that it is bounded below by the smallest length of the Reeb chord, thus $\pi/n$ for our case. Thus choosing a smaller $\hbar$ we can ensure that $E_{Hor}(F^0) > \hbar$ where $\hbar$ depends only on $Z$.
+\end{proof}
+
+ 
+\begin{lemma}[Asymptotics of strips]\label{lemma:asym}
+Let F=(a,f) : $\R_+ \times \interval \to (\R \times Z, \R \times \Lambda)$ be a $J$ holomorphic map of finite energy $E_H(u)< \infty$, assume that image of F is unbounded, then there is a number $T$ and a Reeb chord $\gamma$  of length $T$ such that $$\lim_{s\to \infty } f(s,t) = \gamma (tT) \quad and \quad \lim_{s\to\infty} \frac{a(s,t)}{s} = T \quad in \quad C^{\infty}\interval.$$
+\end{lemma}
+
+\noindent This lemma is a direct consequence of our asymptotic convergence proved in Theorem \ref{thm:exponential conv}.
+
+\begin{lemma}[Strip with long neck and small energy]\label{lemma:energytodistance}
+Given $E_0,\e>0$ there exists constants $\sigma,c>0$ such that for every $R>c$ and for every $J$ holomorphic function $F=(a,f) : [-R,R] \times \interval \to (\R \times Z, \R \times \Lambda)$ satisfying the inequalities, 
+$$E_{Hor} (F) \leq \sigma \quad and \quad E(F)\leq E_0,$$ 
+we have 
+$$f(s,t) \in B_\e(f(0,t))$$ for all $s\in [-R+c,R-c] , t\in \interval.$
+
+\end{lemma}
+
+\begin{proof}
+Assume the contrary, so we have an $\e_0$ and $R_n>c_n$ such that $c_n \to \infty$ and $s_n \in [-k_n,k_n]$ where $k_n=R_n - c_n$ such that $E_{Hor} < \frac{1}{n}$ and $d(f_n(s_n,t),f_n(0)) > \e_0$. If we select $\sigma$ small enough such that any holomorphic disc $v$ in $Y = Z/S^1 $ with boundary in the Lagrangian $L = \Lambda/S^1$  has $E_{Y}(v) > \sigma$ then  for $n$ large, we see that $ E_{Hor} (F_n) = E_{Y} (\pi_{Y} \of F_n) \leq  \frac{1}{n}$ .  From  the bubbling quantization lemma \ref{lemma:bubbling} we know that there must be a uniform gradient bound or else $E_{Hor}$ has to be at least $\hbar$. Thus, by Arzela-Ascoli we can take a convergent subsequence $F_n \to F^0$ in $C^\infty_{loc} (\R\times \interval)$. Clearly from considering the horizontal energy we see that $F^0$ is a strip whose image lies in a trivial cylinder over a point $p \in L$ with the same Reeb chord as its positive and negative asymptote. Thus, we can consider $F^0$ to be a map to $\C^*$ with boundary on $\R^+$ and $e^{k\alpha}\R^+$. From exponential convergence to Reeb orbits at the asymptotes we see that $F^0$ has to be a trivial Reeb strip i.e. $f^0(s,t) = \gamma (t)$ where $\gamma$ is the Reeb chord at the asymptote. From convergence on compact sets, we have that $f_n(0,t) \to \gamma(t)$. Now consider the sequence of translated maps $\bar{F}_n(s,t) = F_n(s-s_n,t_n)$, possibly taking a further subsequence we get a $C^\infty_{loc}$ convergent subsequence to $\bar{F}^0$. Potentially $\bar{F}^0$ can be a trivial strip over a different Reeb strip. It is classically known (see Lemma A.6 in \cite{FraunThes} and Lemma 3.8 (ii) in \cite{schm}) that long strips of small energy have diameter bounded by the energy. Thus, from the horizontal energy bound  we get,    $\pi_{Y} \of F_n \to p$ as $n \to \infty$ since $\pi_{Y} \of F_n(0,t) \to p$, thus $\bar{F}^0 = F^0$, thus $\bar{f}_n(0,t)=f_n(s_n,t) \to \gamma (t)$. One way to see this is to apply Lemma 3.8 (ii), since $|s_n| < k_n$, $|s_n| <  R_n - \frac{c_n}{2}$. As $c_n \to \infty$, we have for large n, $d(\pi_{Y} \of F_n(s_n,t), \pi_{Y} \of F_n(0,t)) < ce^{\mu \frac{c_n}{2}}$.   Thus $d(f_n(s_n,t),f_n(0,t))$ tends  to $ 0 $ in  limit, which contradicts our assumption. 
+
+\end{proof}
+
+
+Once one has the last three Lemmas we proved above, the proof for SFT compactness from \cite{bhewz} works in our setting. We give a sketch of the proof in \cite{bhewz} for continuity.
+
+
+\begin{sketch}{\ref{theorem:SFTCompactness}}
+The proof is broken into four steps.
+\begin{itemize}
+    \item Step 1: Gradient Bound
+    \item Step 2: Convergence from gradient bound away from nodes
+    \item Step 3: Convergence near the nodes aka `thin-part'
+    \item Step 4: Labelling of the components in the nodal disk
+\end{itemize}
+
+\vskip 3pt
+\textbf{Step 1: Gradient Bound}
+
+The first step in showing SFT Compactness is to pick a subsequence so that the domain converges, for sake of clarity lets assume that our domain is constant for all $n$ and have no marked points. Then Lemma 10.7 in \cite{bhewz} and Proposition 3.7 in \cite{Abbasbook} prove that after removing a finite number of points from, $\D^2$ we get a uniform gradient bound for all $n$. 
+
+\begin{lemma}[Gradient lemma]
+There is a natural number $K(E)$ and a sequence $M_n$ of $2K(E)$ marked points on the disc such that after removing these marked points from $\D^2$, we have a uniform bound as follows $$|\nabla u_{i_n}(z)| \leq \frac{C}{\rho(z)} \quad \forall z\in \D^2_n,$$where $\D^2_n = \D^2 \setminus M_n$ and $\rho$ is the radius of injectivity with respect to the standard hyperbolic metric on $\D^2_n$ and $u_{i_n}$ is a subsequence of $u_n$. 
+\end{lemma}
+
+\begin{prooflemma*}
+Assume $x_n \in \D^2$ such that $|\rho(x_n) \nabla u_n | \to \infty$. We can assume after taking a subsequence (and still indexing it by n) that either of the following conditions hold :
+\begin{enumerate}
+   
+    \item $u_n(x_n) \in W^n \setminus ( (-n,n)\times Z) $,
+    \item $u_n(x_n) \in  (-n/2,n/2) \times Z$.
+\end{enumerate}
+
+For case 1, after rescaling our domains and using usual the bubbling lemma we can add two marked points $x_n,y_n$, $d(x_n,y_n) \to 0$ such that the bubble captures horizontal energy at least $\hbar$.  For case 2, after translating to ensure $u_n(x_n) \in \{0\}\times Z$ and rescaling the domain and lemma \ref{lemma:bubbling}, we see that there is a bubbling of a possibly punctured holomorphic disk or sphere which captures at least $\hbar$ horizontal energy.  Thus, in either can choose  $x_n,y_n$ , $d(x_n,y_n) \to 0$ such that the $E_{Hor}(u_n) < E - \hbar$ on $D^2\setminus\{x_n,y_n\}$. From positivity of horizontal energy, we see that if we inductively keep adding marked points, our process will end in at most $\frac{E}{\hbar}$ steps. 
+
+\end{prooflemma*}
+
+
+\vskip 3pt
+\textbf{Step 2: Convergence from gradient bound away from nodes}
+
+After putting in the marked points to get gradient bounds, take a further subsequence of $u_n$ such that the domain with the marked points $M_n$ converge to a nodal disk with marked points. From the bubbling lemma (Lemma \ref{lemma:bubbling}), we have that $u_n$ converges on the components containing the markings $M_n$.  The gradient bound on the components not containing $M_n$ lets us use Arzela-Ascoli to get a convergent subsequence of $u_n$ that converges on every piece of the nodal disc.
+\vskip 3pt
+\textbf{Step 3: Convergence near the nodes aka `thin-part'}
+
+
+Near the nodes in components with marked points $M_n$, we know that the maps $\mathfrak{u}$ are asymptotic to Reeb chords or points. It might happen that the asymptotic limit at the nodes might not match. Let's fix a node and pick a sequence of  parameterization on a neighborhood of  $\D^2$ which degenerate to that node, call the neighborhoods $V_n$. We can arrange the parameterization such that 
+
+\begin{itemize}
+    \item $V_n$ becomes a strip or a cylinder as $n \to \infty$ ,
+    \item $u_n|_{V_n}$ has bounded gradient, thus bubbling can't occur ,
+    \item $u_n (s,t)  \to $ Reeb chords/strips $\gamma^{\pm}$ as $s\to \pm\infty$  .
+\end{itemize}
+
+
+
+There are two cases, either $E_{hor}(u_n|_{V_n}) \to 0$ or $E_{hor}(u_n|_{V_n}) > \delta > 0$ for a fixed lower bound $\delta$. For the first case,  from Lemma \ref{lemma:energytodistance} we obtain that if there is no concentration of energy near the node, the asymptotes match i.e. $\gamma^+ = \gamma^-$. Thus, the only case left is if there is some energy concentrating near the nodes. in such a case one adds more marked points which results in formation of a new spherical/disc component which captures at least $\hbar$ horizontal energy, and the new nodes which are formed are treated inductively. The new nodes will eventually have no energy concentration. Thus, finally, we get a nodal disc with matching conditions on the nodes. The limit we obtain finally is denoted by $(\mathfrak{u,D})$
+
+
+\vskip 3pt
+\textbf{Step 4: Labelling of the components in the nodal disk}
+Pick points $x_n^C$ for every component $C$ of $\mathfrak{ D}$. Label the components $C$ such that if  $u_n(x_n)\in W^n\setminus(-n,n)\times Z $ then label it $in$ or $out$ based on which component it lies in. If $u_n(x_n) \in (-n,n)\times Z $, order the components such that $C_i \leq C_j$ if $\text{limsup } (pr_\R (u_n(x^j_n)) - pr_\R (u_n(x^i_n))) \to \infty $. Set $C_i \sim C_j$ if $C_i\leq C_j$ and $C_j\leq C_i$.  Label the collection of the minimal components as $\D_1$, then remove them and label the collection of the new minimal components as $\D_2$ and keep going. In the case of such labeling, it might happen that across a node, the label just by more than 1, in such a case add trivial sphere/discs between and label them such that the difference across nodes is at most 1.
+
+
+\end{sketch}
+
+\subsection{ Compactness for strips bounding pair of Lagrangians under stretching}
+    
+We now return to our specific situation where we want to apply the neck stretching construction. Since the differential in the Floer complex $CF(L,K)$ is based on the count of  holomorphic strips, we will need a version  SFT compactness of strips under neck stretching.  Recall that a holomorphic strip in $M$ bounding $L,K$ from $x_+$ to $x_-$ is a holomorphic map $u : \R \times \interval \to M$ with boundary conditions $u(\R \times \{1\}) \sub L$ and $u(\R \times \{ 0\}) \sub K$ and asymptotic conditions $\lim_{s\to \pm \infty} u(s,t) = x_\pm $ where $x_\pm \in L \cap K$.  If $L$ is a locally mutable Lagrangian and $K$ is another Lagrangian that intersects $L$ transversally and lies outside the mutation neighborhood $B$  ie. $K \sub M \setminus B$, we can do a neck stretch of $M$ along the contact hypersurface $Z= \del B$ since near a tubular neighborhood of $Z$, the Lagrangian $L$ is of the form $(-\e ,\e) \times T_\pm$ (see Equation ( \ref{def:tplusminus}) for definition of $T_\pm$). Since $K$ is outside the mutation neighborhood, after neck stretching, $K$ naturally lies in the outside piece $\widehat{M}_{out}$ of the broken manifold $\mathbb{M}$. The analog of a broken disc in the setting of a strip is called a \textit{broken strip}. 
+
+\begin{defn}[Broken strip]
+A broken strip $\mathfrak({u,D})$ from $x_+$ to $x_-$ is a broken disc where one of the components of $\mathbb{D}_{out}$ is a strip $\R \times \interval$ with puncture nodes $P$ on the boundary $\R \times \{1\}$ and $u_{out}$ satisfies the boundary condition $u_{out}(\R \times \{1\} \setminus P) \sub \widehat{L}_{out}$ and $u_{out}(\R \times \{0\}) \sub K$ and asymptotic conditions $\lim_{s\to \pm \infty}u_{out}(s,t) = x_\pm$.
+\end{defn}
+
+We can use an exactly similar technique as in the proof of Theorem \ref{theorem:SFTCompactness} to get the following compactness result about holomorphic strips. 
+\begin{Theorem}[SFT compactness for strips]
+If $u_n : \R \times \interval \to (M^n,J^n,L^n,K) $ is a sequence of $J^n$ holomorphic strips from $x_+$ to $x_-$ in the $n-$stretched manifolds, with boundary condition on $L^n$ and $K$, and with bounded energy, i.e. $E(u) < E< \infty$, then there is a subsequence of $u_n$ that converges to a broken strip.
+\end{Theorem}
+
+
+
+
+
+
+

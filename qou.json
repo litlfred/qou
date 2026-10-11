@@ -90,11 +90,16 @@
     {
       "id": "fsh-guts",
       "path": "fsh-guts/",
+      "source": {
+        "kind": "branch",
+        "branch": "cat/cat-harness/fsh-guts",
+        "keyedBy": "tip"
+      },
       "graphTypologies": [
         "fsh-guts"
       ],
-      "description": "Deprecated and retired material, kept and addressable, deliberately absent from the rendered site (platform kind `fsh-guts`, holds: context). Holds the parked renderers and workflows from the migration (bean qou-6u3n) and older scratch. A file is a graph node only if it declares `$schema: folio-fsh-guts/v1`; the rest is kept bytes, which this declaration makes discoverable rather than claiming they are nodes.",
-      "_comment": "Declared 2026-10-04, story TOOLS T2 (bean qou-4r5m), fsh-guts half. A plain path declaration, not the platform's `source: {kind: branch}` form: qou's trashcan lives in the tree today, and moving it onto a branch is its own owner decision. The computations-witness half of T2 waits on T1 (the platform witness kind, qou-qb6t)."
+      "description": "Deprecated and retired material, kept and addressable, deliberately absent from the rendered site (platform kind `fsh-guts`, holds: context). Kept on its own branch, `cat/cat-harness/fsh-guts`, not on main: `bun run state:mount` (from folio-assistant/) puts it at `fsh-guts/`, and `state:push` splices edits back. Holds the parked renderers and workflows from the migration (bean qou-6u3n) and older scratch. A file is a graph node only if it declares `$schema: folio-fsh-guts/v1`; the rest is kept bytes, which this declaration makes discoverable rather than claiming they are nodes. Also holds the three former `_deprecated/` trees under `fsh-guts/deprecated/` (computations, docs/audits, qou-mass data).",
+      "_comment": "Declared 2026-10-04, story TOOLS T2 (bean qou-4r5m), as a plain path. Moved to the platform's `source: {kind: branch}` form 2026-10-10 on owner instruction (\"_deprecated is now branch cat/cat-harness/fsh-guts ... migrate if not\", then option 2, full cut-over), bean qou-6u3n. Same shape as the platform's own fsh-guts declaration in folio-assistant.json."
     }
   ],
   "_platform_scope_comment": "LOAD-BEARING since 2026-10-04: the pin moved to 26c5d37b9 (platform main), which reads this file through readDeclaration. The 2026-09-26 note that it was inert applied to the old pin df28d02."

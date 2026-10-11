@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1105.1998v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1105.1998v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1105.1998v3/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1105.1998&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1105.1998v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1105.1998v3",
+    "content_type": "application/gzip",
+    "sha256": "4c03b565b26f4d839d9dbad3d98180bf3392697fba8ef99a6b0da7c46c07f4f4",
+    "bytes": 10984,
+    "fetched": "2026-10-10T15:04:47+00:00",
+    "files": [
+      {
+        "path": "source/files/sigma.cls",
+        "role": "cls",
+        "sha256": "af0f1cc5f3cb906b3ff12a1bfb380fd6e0ec9a503e589fb4bbe5bc7f7a2a987a",
+        "bytes": 7046
+      },
+      {
+        "path": "source/files/sigma11-115.tex",
+        "role": "tex",
+        "sha256": "b07d8ff049de5041d19b086d25d5221e57893f754ed5993237f2f06c5dbd6fe2",
+        "bytes": 32006
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

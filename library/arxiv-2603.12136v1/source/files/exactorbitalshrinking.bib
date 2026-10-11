@@ -1,0 +1,1166 @@
+@ARTICLE{AchterbergBGRW20,
+  author = {Achterberg, Tobias and Bixby, Robert E. and Gu, Zonghao and Rothberg,
+	Edward and Weninger, Dieter},
+  title = {Presolve Reductions in Mixed Integer Programming},
+  journal = {INFORMS Journal on Computing},
+  year = {2020},
+  volume = {32},
+  pages = {473-506},
+  number = {2},
+  abstract = {Mixed integer programming has become a very powerful tool for modeling
+	and solving real-world planning and scheduling problems, with the
+	breadth of applications appearing to be almost unlimited. A critical
+	component in the solution of these mixed integer programs is a set
+	of routines commonly referred to as presolve. Presolve can be viewed
+	as a collection of preprocessing techniques that reduce the size
+	of and, more importantly, improve the “strength” of the given model
+	formulation, that is, the degree to which the constraints of the
+	formulation accurately describe the underlying polyhedron of integer-feasible
+	solutions. As our computational results will show, presolve is a
+	key factor in the speed with which we can solve mixed integer programs
+	and is often the difference between a model being intractable and
+	solvable, in some cases easily solvable. In this paper we describe
+	the presolve functionality in the Gurobi commercial mixed integer
+	programming code. This includes an overview, or taxonomy of the different
+	methods that are employed, as well as more-detailed descriptions
+	of several of the techniques, with some of them appearing, to our
+	knowledge, for the first time in the literature.},
+  doi = {10.1287/ijoc.2018.0857},
+  file = {AchterbergBGRW20.pdf:files/AchterbergBGRW20.pdf:PDF}
+}
+
+@book{ConfortiCZ14,
+address = {Cham},
+author = {Conforti, Michele and Cornu{\'{e}}jols, G{\'{e}}rard and Zambelli, Giacomo},
+doi = {10.1007/978-3-319-11008-0},
+edition = {1},
+publisher = {Springer International Publishing},
+series = {Graduate Texts in Mathematics},
+title = {Integer Programming},
+volume = {271},
+year = {2014}
+}
+
+@InCollection{HoffmanK56,
+  author    = {Hoffman, Alan J. and Kruskal, Joseph B.},
+  booktitle = {Linear Inequalities and Related Systems},
+  title     = {Integral Boundary Points of Convex Polyhedra},
+  doi       = {10.1515/9781400881987-014},
+  pages     = {223--246},
+  publisher = {Princeton University Press},
+  volume    = {38},
+  comment   = {cite for integrality of polyhedra due to total unimodularity},
+  file      = {HoffmanK56.pdf:files/HoffmanK56.pdf:PDF},
+  year      = {1956},
+  address = {Princeton, New Jersey}
+}
+
+
+
+@BOOK{Schneider13,
+  title = {Convex bodies: the Brunn--Minkowski theory},
+  publisher = {Cambridge University Press},
+  year = {2013},
+  author = {Schneider, Rolf},
+  number = {151},
+  file = {Schneider13.pdf:files/Schneider13.pdf:PDF}
+}
+@BOOK{Schrijver86,
+  title = {Theory of Linear and Integer Programming},
+  publisher = {John Wiley \& Sons, Inc.},
+  year = {1986},
+  author = {Schrijver, Alexander},
+  address = {New York, NY, USA},
+}
+
+@ARTICLE{Meyer74,
+  author = {Meyer, Robert R.},
+  title = {On the existence of optimal solutions to integer and mixed-integer
+	programming problems},
+  journal = {Mathematical Programming},
+  year = {1974},
+  volume = {7},
+  pages = {223--235},
+  abstract = {The purpose of this paper is to present sufficient conditions for
+	the existence of optimal solutions to integer and mixed-integer programming
+	problems in the absence of upper bounds on the integer variables.
+	It is shown that (in addition to feasibility and boundedness of the
+	objective function) (1) in the pure integer case a sufficient condition
+	is that all of the constraints (other than non-negativity and integrality
+	of the variables) beequalities, and (2) that in the mixed-integer
+	caserationality of the constraint coefficients is sufficient. Some
+	computational implications of these results are also given.},
+  day = {01},
+  doi = {10.1007/BF01585518},
+  file = {Meyer74.pdf:files/Meyer74.pdf:PDF},
+  issn = {1436-4646}
+}
+
+@ARTICLE{VeinottD68,
+  author = {Veinott, Jr., Arthur F. and Dantzig, George B.},
+  title = {Integral Extreme Points},
+  journal = {SIAM Review},
+  year = {1968},
+  volume = {10},
+  pages = {371-372},
+  number = {3},
+  doi = {10.1137/1010063}
+}
+@article{Lewis1980,
+author = {Lewis, John M. and Yannakakis, Mihalis},
+doi = {10.1016/0022-0000(80)90060-4},
+issn = {00220000},
+journal = {Journal of Computer and System Sciences},
+number = {2},
+pages = {219--230},
+title = {The node-deletion problem for hereditary properties is NP-complete},
+volume = {20},
+year = {1980}
+}
+@phdthesis{Achterberg2008,
+abstract = {This thesis introduces the novel paradigm of constraint integer programming (CIP), which integrates constraint programming (CP) andmixed integer programming (MIP) modeling and solving techniques. It is supplemented by the software SCIP, which is a solver and framework for constraint integer programming that also features SAT solving techniques. SCIP is freely available in source code for academic and non-commercial purposes. Our constraint integer programming approach is a generalization of MIP that allows for the inclusion of arbitrary constraints, as long as they turn into linear constraints on the continuous variables after all integer variables have been fixed. The constraints,may they be linear ormore complex, are treated by any combination of CP and MIP techniques: the propagation of the domains by constraint specific algorithms, the generation of a linear relaxation and its solving by LP methods, and the strengthening of the LP by cutting plane separation. The current version of SCIP comes with all of the necessary components to solve mixed integer programs. In the thesis, we cover most of these ingredients and present extensive computational results to compare different variants for the individual building blocks of a MIP solver. We focus on the algorithms and their impact on the overall performance of the solver. In addition to mixed integer programming, the thesis deals with chip design verification, which is an important topic of electronic design automation. Chip manufacturers have to make sure that the logic design of a circuit conforms to the specification of the chip. Otherwise, the chip would show an erroneous behavior that may cause failures in the device where it is employed. An important subproblem of chip design verification is the property checking problem, which is to verify whether a circuit satisfies a specified property. We show how this problem can be modeled as constraint integer program and provide a number of problem-specific algorithms that exploit the structure of the individual constraints and the circuit as a whole. Another set of extensive computational benchmarks compares our CIP approach to the current state-of-the-art SAT methodology and documents the success of our method.},
+author = {Achterberg, Tobias},
+doi = {10.14279/depositonce-1634},
+isbn = {3899638921},
+pages = {246},
+school = {TU Berlin},
+title = {Constraint Integer Programming},
+year = {2008}
+}
+
+@article{Ding2008,
+abstract = {Let A be a 0 - 1 matrix with precisely two 1's in each column and let 1 be the all-one vector. We show that the problems of deciding whether the linear system Ax ≥ 1,x ≥ 0 (1) defines an integral polyhedron, (2) is totally dual integral (TDI), and (3) box-totally dual integral (box-TDI) are all co-NP-complete, thereby confirming the conjecture on NP-hardness of recognizing TDI systems made by Edmonds and Giles in 1984. {\textcopyright} 2007 Springer-Verlag.},
+author = {Ding, Guoli and Feng, Li and Zang, Wenan},
+doi = {10.1007/s10107-007-0103-y},
+issn = {00255610},
+journal = {Mathematical Programming},
+keywords = {Linear system,NP-hardness,Polyhedron,Total dual integrality},
+number = {2},
+pages = {321--334},
+title = {The complexity of recognizing linear systems with certain integrality properties},
+volume = {114},
+year = {2008}
+}
+@article{Gleixner2021,
+abstract = {We report on the selection process leading to the sixth version of the Mixed Integer Programming Library, MIPLIB 2017. Selected from an initial pool of 5721 instances, the new MIPLIB 2017 collection consists of 1065 instances. A subset of 240 instances was specially selected for benchmarking solver performance. For the first time, these sets were compiled using a data-driven selection process supported by the solution of a sequence of mixed integer optimization problems, which encode requirements on diversity and balancedness with respect to instance features and performance data.},
+author = {Gleixner, Ambros and et al.},
+doi = {10.1007/s12532-020-00194-3},
+issn = {1867-2949},
+journal = {Mathematical Programming Computation},
+number = {3},
+pages = {443--490},
+title = {MIPLIB 2017: data-driven compilation of the 6th mixed-integer programming library},
+volume = {13},
+year = {2021}
+}
+@Article{Papadimitriou1990,
+  author   = {Papadimitriou, Christos H. and Yannakakis, Mihalis},
+  title    = {On recognizing integer polyhedra},
+  doi      = {10.1007/BF02122701},
+  issn     = {1439-6912},
+  number   = {1},
+  pages    = {107--109},
+  volume   = {10},
+  abstract = {We give a simple proof that, determining whether a convex polytope has a fractional vertex, is NP-complete.},
+  day      = {01},
+  journal  = {Combinatorica},
+  year     = {1990},
+}
+
+@misc{bolusani2024scipoptimizationsuite90,
+      title={The SCIP Optimization Suite 9.0}, 
+      author={Suresh Bolusani and et al.},
+      year={2024},
+      eprint={2402.17702},
+      archivePrefix={arXiv},
+      primaryClass={math.OC},
+}
+@article{BixbyWagner1988,
+author = {Bixby, Robert E. and Wagner, Donald K.},
+journal = {Mathematics of Operations research},
+keywords = {afosr82-0004 at northwestern university,ecs-8307796 and afosr grant,grants mcs81-052327,graph realization,network structure,planarity testing,the national science foundation,tthe report was prepared,with partial support from},
+mendeley-groups = {Network Matrices},
+number = {1},
+title = {An almost linear-time algorithm for graph realization},
+volume = {13},
+year = {1988},
+doi = {10.1287/moor.13.1.99}
+}
+
+@Article{LuebbeckeW18,
+  author   = {Lübbecke, Marco E. and Witt, Jonas T.},
+  journal  = {Discrete Optimization},
+  title    = {The strength of Dantzig–Wolfe reformulations for the stable set and related problems},
+  year     = {2018},
+  issn     = {1572-5286},
+  pages    = {168--187},
+  volume   = {30},
+  abstract = {Dantzig–Wolfe reformulation of an integer program convexifies a subset of the constraints, which yields an extended formulation with a potentially stronger linear programming (LP) relaxation. We would like to better understand the strength of such reformulations in general. As a first step we investigate the classical edge formulation for the stable set problem. We characterize weakest possible Dantzig–Wolfe reformulations (with LP relaxations not stronger than the edge formulation) and strongest possible reformulations (yielding the integer hull). We (partially) extend our findings to related problems such as the matching problem and the set packing problem. These are the first non-trivial general results about the strength of relaxations obtained from decomposition methods, after Geoffrion’s seminal 1974 paper about Lagrangian relaxation.},
+  doi      = {10.1016/j.disopt.2018.07.001},
+  keywords = {Dantzig–Wolfe reformulation, Strength of reformulations, Stable set problem, Lagrangian relaxation, Partial convexification},
+}
+
+
+@article{Bixby1980,
+abstract = {We describe an algorithm which converts a linear program min{cx ∣ Ax = b, x ≥ 0} to a network flow problem, using elementary row operations and nonzero variable-scaling, or shows that such a conversion is impossible. If A is in standard form, the computational effort required is bounded by O(rn), where r is the number of rows and n is the number of nonzero entries of A. A method for determining whether a “binary matroid” is “graphic” plays an important role in the algorithm.},
+author = {Bixby, Robert E. and Cunningham, William H.},
+doi = {10.1287/moor.5.3.321},
+issn = {0364-765X},
+journal = {Mathematics of Operations Research},
+number = {3},
+pages = {321--357},
+title = {Converting Linear Programs to Network Problems},
+volume = {5},
+year = {1980}
+}
+@article{Walter2013,
+author = {Walter, Matthias and Truemper, Klaus},
+doi = {10.1007/s12532-012-0048-x},
+journal = {Mathematical Programming Computation},
+keywords = {05-04 combinatorics - explicit,machine,mathematics subject classification,polynomial test,total unimodularity,unimodularity},
+number = {1},
+pages = {57--73},
+title = {Implementation of a unimodularity test},
+volume = {5},
+year = {2013}
+}
+
+@phdthesis{Camion1963,
+author = {Camion, Paul},
+school = {Universit{\'{e}} Libre de Bruxelles},
+title = {Matrices Totalement Unimodulaires et Problemes Combinatoires},
+type = {PhD Thesis},
+year = {1963}
+}
+@article{Truemper1990,
+author = {Truemper, Klaus},
+doi = {10.1016/0095-8956(90)90030-4},
+issn = {00958956},
+journal = {Journal of Combinatorial Theory, Series B},
+number = {2},
+pages = {241--281},
+title = {A decomposition theory for matroids. V. Testing of matrix total unimodularity},
+volume = {49},
+year = {1990}
+}
+@article{Appa2004,
+abstract = {In this paper we examine two possible generalisations of total unimodularity, viz., total k-modularity and k-regularity. Total k-modularity extends the permitted values for the subdeterminants of an integral matrix to the powers of k, while k-regularity sets requirements on the inverses of non-singular submatrices of a rational matrix. It is shown that the advantageous properties of totally unimodular matrices with respect to integral polyhedra can be carried over to rational k-regular matrices, namely we prove that a matrix A is k-regular if and only if the polyhedron P(A, b) = {x : x ≥ 0, Ax ≤ b} is integral for all integral vectors b the components of which have a common divisor k. Furthermore, we show that the k-regularity of an integral matrix A is equivalent to the fact that for any integral vector b all the rank-1 Chv{\'{a}}tal-Gomory cuts for P(A, b) are dominated by mod-k cuts. We present some results on totally k-modular and k-regular matrices, as well as give non-trivial examples of 1- and 2-regular matrices. In particular, we define binet matrices, a generalisation of network matrices for bidirected graphs. {\textcopyright} 2003 Elsevier B.V. All rights reserved.},
+author = {Appa, Gautam and Kotnyek, Bal{\'{a}}zs},
+doi = {10.1016/S0012-365X(03)00095-5},
+issn = {0012365X},
+journal = {Discrete Mathematics},
+keywords = {Chv{\'{a}}tal-Gomory cuts,Integral polyhedron,Network matrices,Total unimodularity},
+number = {1-3},
+pages = {1--15},
+title = {Rational and integral k-regular matrices},
+volume = {275},
+year = {2004}
+}
+@article{Hirsch68,
+author = {Hirsch, Warren M. and Dantzig, George B.},
+title = {The fixed charge problem},
+journal = {Naval Research Logistics Quarterly},
+volume = {15},
+number = {3},
+pages = {413-424},
+doi = {10.1002/nav.3800150306},
+abstract = {Abstract A fundamental unsolved problem in the programming area is one in which various activities have fixed charges (e.g., set-up time charges) if operating at a positive level. Properties of a general solution to this type problem are discussed in this paper. Under special circumstances it is shown that a fixed charge problem can be reduced to an ordinary linear programming problem.},
+year = {1968}
+}
+
+@article{Land1960,
+address = {Berlin, Heidelberg},
+author = {Land, Ailsa H. and Doig, Alison G.},
+doi = {10.2307/1910129},
+isbn = {0305624042000},
+issn = {00129682},
+journal = {Econometrica},
+number = {3},
+pages = {497},
+publisher = {Springer Berlin Heidelberg},
+title = {An Automatic Method of Solving Discrete Programming Problems},
+volume = {28},
+year = {1960}
+}
+
+
+
+@Article{HuangfuH17,
+  author  = {Huangfu, Qi and Hall, Julian A.J.},
+  journal = {Mathematical Programming Computation},
+  title   = {Parallelizing the dual revised simplex method},
+  year    = {2017},
+  number  = {10},
+  pages   = {119--142},
+  volume  = {1},
+}
+
+
+@article{Fortet1960,
+author = {Fortet, Robert},
+doi = {10.1007/BF03006558},
+issn = {0490-219X},
+journal = {Trabajos de Estadistica},
+number = {2},
+pages = {111--118},
+title = {L'algebre de Boole et ses applications en recherche operationnelle},
+volume = {11},
+year = {1960}
+}
+@TechReport{Gomory60,
+  author      = {Gomory, Ralph E.},
+  institution = {RAND Corporation},
+  title       = {An algorithm for the mixed-integer problem},
+  number      = {RM-2597},
+  comment     = {cite for Gomory mixed-integer cuts},
+  timestamp   = {2018.06.08},
+  year        = {1960},
+}
+
+@book{Ziegler01,
+  title = {Lectures on Polytopes (Graduate Texts in Mathematics)},
+  publisher = {Springer},
+  year = {2001},
+  author = {G{\"u}nter M. Ziegler},
+  address = {New York}
+}
+
+@article{Balas1993,
+author = {Balas, Egon and Ceria, Sebasti{\'{a}}n and Cornu{\'{e}}jols, G{\'{e}}rard},
+doi = {10.1007/BF01581273},
+issn = {00255610},
+journal = {Mathematical Programming},
+keywords = {Cutting planes,disjunctive programming,mixed 0-1 programming,projection},
+number = {1-3},
+pages = {295--324},
+title = {A lift-and-project cutting plane algorithm for mixed 0-1 programs},
+volume = {58},
+year = {1993}
+}
+
+@Article{Caratheodory11,
+  author  = {Carath{\'e}odory, Constantin},
+  journal = {Rendiconti del Circolo Matematico di Palermo (1884--1940)},
+  title   = {{\"U}ber den Variabilit{\"a}tsbereich der Fourier'schen Konstanten von positiven harmonischen Funktionen},
+  year    = {1911},
+  issn    = {0009-725X},
+  number  = {1},
+  pages   = {193--217},
+  volume  = {32},
+  day     = {01},
+  doi     = {10.1007/BF03014795},
+}
+
+
+@Article{BilleraS92,
+  author    = {Billera, Louis J. and Sturmfels, Bernd},
+  journal   = {Annals of Mathematics},
+  title     = {Fiber Polytopes},
+  year      = {1992},
+  issn      = {0003486X, 19398980},
+  number    = {3},
+  pages     = {527--549},
+  volume    = {135},
+  doi       = {10.2307/2946575},
+  file      = {:files/BilleraS92.pdf:PDF},
+  publisher = {[Annals of Mathematics, Trustees of Princeton University on Behalf of the Annals of Mathematics, Mathematics Department, Princeton University]},
+}
+
+
+
+
+@article{BaderHWZ18,
+abstract = {We study the reformulation of integer linear programs by means of a mixed integer linear program with fewer integer variables. Such reformulations can be solved efficiently with mixed integer linear programming techniques. We exhibit examples that demonstrate how integer programs can be reformulated using far fewer integer variables. To this end, we introduce a generalization of total unimodularity called the affine TU-dimension of a matrix and study related theory and algorithms for determining the affine TU-dimension of a matrix. We also present bounds on the number of integer variables needed to represent certain integer hulls.},
+author = {Bader, J{\"{o}}rg and Hildebrand, Robert and Weismantel, Robert and Zenklusen, Rico},
+doi = {10.1007/s10107-017-1147-2},
+eprint = {1508.02940},
+file = {:home/rolf/phd/literature/papers/s10107-017-1147-2-2.pdf:pdf},
+isbn = {1010701711},
+issn = {14364646},
+journal = {Mathematical Programming},
+keywords = {Integer programming,Master knapsack problem,Total unimodularity},
+number = {2},
+pages = {565--584},
+publisher = {Springer Berlin Heidelberg},
+title = {Mixed integer reformulations of integer programs and the affine TU-dimension of a matrix},
+volume = {169},
+year = {2018}
+}
+@article{Paat2022,
+abstract = {We introduce the integrality number of an integer program (IP). Roughly speaking, the integrality number is the smallest number of integer constraints needed to solve an IP via a mixed integer (MIP) relaxation. One notable property of this number is its invariance under unimodular transformations of the constraint matrix. Considering the largest minor $\Delta$ of the constraint matrix, our analysis allows us to make statements of the following form: there exists a number $\tau$($\Delta$) such that an IP with n many variables and n+n/$\tau$($\Delta$) many inequality constraints can be solved via a MIP relaxation with fewer than n integer constraints. From our results it follows that IPs defined by only n constraints can be solved via a MIP relaxation with O($\Delta$) many integer constraints.},
+archivePrefix = {arXiv},
+arxivId = {1904.06874},
+author = {Paat, Joseph and Schl{\"{o}}ter, Miriam and Weismantel, Robert},
+doi = {10.1007/s10107-021-01651-0},
+eprint = {1904.06874},
+file = {:home/rolf/phd/literature/papers/s10107-021-01651-0.pdf:pdf},
+issn = {0025-5610},
+journal = {Mathematical Programming},
+keywords = {90C10,90C11},
+number = {1-2},
+pages = {271--291},
+publisher = {Springer Berlin Heidelberg},
+title = {The integrality number of an integer program},
+volume = {192},
+year = {2022}
+}
+@phdthesis{Hupp2017,
+author = {Hupp, Lena M.},
+file = {:home/rolf/phd/literature/papers/9626_DissertationLenaHupp.pdf:pdf},
+school = {Friedrich-Alexander-Universit{\"{a}}t Erlangen-N{\"{u}}rnberg},
+title = {Integer and Mixed-Integer Reformulations of Stochastic, Resource-Constrained, and Quadratic Matching Problems},
+year = {2017}
+}
+@ARTICLE{Berge72,
+  author = {Berge, Claude},
+  title = {Balanced matrices},
+  journal = {Mathematical Programming},
+  year = {1972},
+  volume = {2},
+  pages = {19--31},
+  number = {1},
+  doi = {10.1007/BF01584535},
+  file = {Berge72.pdf:files/Berge72.pdf:PDF},
+  publisher = {Springer}
+}
+
+@book{Garey1979,
+address = {New York},
+author = {Garey, Michael. R. and Johnson, David S.},
+file = {:home/rolf/phd/literature/papers/Garey-Johnson79.pdf:pdf},
+publisher = {W.H. Freeman and Company},
+title = {Computers and Intractability A guide to the Theory of NP-completeness},
+year = {1979}
+}
+
+@article{Balas1985,
+author = {Balas, Egon},
+file = {:home/rolf/phd/literature/papers/ADA136983.pdf:pdf},
+journal = {Mathematical Programming Study},
+pages = {179--218},
+title = {On the facial structure of scheduling polyhedra},
+volume = {24},
+year = {1985}
+}
+
+@incollection{Karp1972,
+address = {Boston, MA},
+author = {Karp, Richard M.},
+booktitle = {Complexity of Computer Computations},
+doi = {10.1007/978-1-4684-2001-2\_9},
+isbn = {9783540682745},
+pages = {85--103},
+publisher = {Springer US},
+title = {Reducibility among Combinatorial Problems},
+year = {1972}
+}
+
+@article{Ghouila-Houri1962,
+author = {Ghouila-Houri, Alain},
+journal = {Comptes Rendus Hebdomadaires des S{\'{e}}ances de l'Acad{\'{e}}mie des Science (Paris)},
+number = {254},
+pages = {1192--1194},
+title = {Caract{\'{e}}risation des matrices totalement unimodulaires},
+year = {1962}
+}
+
+@article{Aguilera2002,
+author = {Aguilera, N{\'{e}}stor E. and Escalante, Mariana S. and Nasini, Graciela L.},
+doi = {10.1287/moor.27.3.460.309},
+issn = {0364-765X},
+journal = {Mathematics of Operations Research},
+keywords = {Antiblocker duality,Clique relaxation,Disjunctive procedure,Perfect graphs},
+month = {aug},
+number = {3},
+pages = {460--469},
+title = {A Generalization of the Perfect Graph Theorem Under the Disjunctive Index},
+volume = {27},
+year = {2002}
+}
+@article{Andersen1995,
+author = {Andersen, Erling D. and Andersen, Knud D.},
+doi = {10.1007/BF01586000},
+issn = {14364646},
+journal = {Mathematical Programming},
+keywords = {Interior-point methods,Linear programming,Presolving},
+number = {2},
+pages = {221--245},
+title = {Presolving in linear programming},
+volume = {71},
+year = {1995}
+}
+@article{Brearley1975,
+author = {Brearley, A. L. and Mitra, G. and Williams, H. P.},
+doi = {10.1007/BF01580428},
+issn = {0025-5610},
+journal = {Mathematical Programming},
+month = {dec},
+number = {1},
+pages = {54--83},
+title = {Analysis of mathematical programming problems prior to applying the simplex algorithm},
+volume = {8},
+year = {1975}
+}
+
+@article{Koppe2004,
+author = {K{\"{o}}ppe, Matthias and Weismantel, Robert},
+doi = {10.1016/j.orl.2003.08.003},
+issn = {01676377},
+journal = {Operations Research Letters},
+keywords = {Cutting planes,Lattice bases,Mixed-integer linear programming},
+number = {3},
+pages = {207--211},
+title = {Cutting planes from a mixed integer Farkas lemma},
+volume = {32},
+year = {2004}
+}
+
+@book{Siegel1989,
+address = {Berlin, Heidelberg},
+author = {Siegel, Carl Ludwig and Chandrasekharan, Komaravolu},
+doi = {10.1007/978-3-662-08287-4},
+isbn = {978-3-642-08076-0},
+publisher = {Springer Berlin Heidelberg},
+title = {Lectures on the Geometry of Numbers},
+url = {http://link.springer.com/10.1007/978-3-662-08287-4},
+year = {1989}
+}
+
+@techreport{Achterberg2016,
+address = {Berlin},
+author = {Achterberg, Tobias and Bixby, Robert E. and Gu, Zonghao and Rothberg, Edward and Weninger, Dieter},
+institution = {Zuse Institute Berlin},
+title = {Presolve Reductions in Mixed Integer Programming},
+year = {2016}
+}
+@phdthesis{DeKruijff2019,
+author = {{De Kruijff}, Joost T.},
+isbn = {9789038648156},
+school = {Technical University of Eindhoven},
+title = {High-tech low-volume production planning},
+year = {2019}
+}
+
+@incollection{Fulkerson1974,
+author = {Fulkerson, D. R. and Hoffman, A. J. and Oppenheim, Rosa},
+booktitle = {Selected Papers of Alan J Hoffman},
+doi = {10.1007/BFb0121244},
+month = {aug},
+number = {February},
+pages = {120--132},
+publisher = {WORLD SCIENTIFIC},
+title = {On balanced matrices},
+year = {1974}
+}
+
+@article{Grohe2014,
+abstract = {Colour refinement is a basic algorithmic routine for graph isomorphism testing, appearing as a subroutine in almost all practical isomorphism solvers. It partitions the vertices of a graph into "colour classes" in such a way that all vertices in the same colour class have the same number of neighbours in every colour class. There is a tight correspondence between colour refinement and fractional isomorphisms of graphs, which are solutions to the LP relaxation of a natural ILP formulation of graph isomorphism. We introduce a version of colour refinement for matrices and extend existing quasilinear algorithms for computing the colour classes. Then we generalise the correspondence between colour refinement and fractional automorphisms and develop a theory of fractional automorphisms and isomorphisms of matrices. We apply our results to reduce the dimensions of systems of linear equations and linear programs. Specifically, we show that any given LP L can efficiently be transformed into a (potentially) smaller LP L whose number of variables and constraints is the number of colour classes of the colour refinement algorithm, applied to a matrix associated with the LP. The transformation is such that we can easily (by a linear mapping) map both feasible and optimal solutions back and forth between the two LPs. We demonstrate empirically that colour refinement can indeed greatly reduce the cost of solving linear programs. {\textcopyright} 2014 Springer-Verlag Berlin Heidelberg.},
+archivePrefix = {arXiv},
+arxivId = {1307.5697},
+author = {Grohe, Martin and Kersting, Kristian and Mladenov, Martin and Selman, Erkal},
+doi = {10.1007/978-3-662-44777-2\_42},
+eprint = {1307.5697},
+file = {:home/rolf/phd/literature/papers/1307.5697v2.pdf:pdf;:home/rolf/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Grohe et al. - 2014 - Dimension reduction via colour refinement.pdf:pdf},
+isbn = {9783662447765},
+issn = {16113349},
+journal = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+pages = {505--516},
+title = {Dimension reduction via colour refinement},
+volume = {8737 LNCS},
+year = {2014}
+}
+@misc{Berthold2018,
+author = {Berthold, Timo},
+title = {How to Fold a linear programming Problem},
+url = {https://community.fico.com/s/blog-post/a5Q80000000Drp2EAC/fico1299},
+urldate = {13 October 2025},
+year = {2018}
+}
+@misc{GurobiOptimization2020,
+author = {Gurobi Optimization},
+title = {What's new in the Gurobi Optimizer 9.1?},
+url = {https://www.youtube.com/watch?v=EwuEPu-nBmg},
+urldate = {2025-10-13},
+year = {2020}
+}
+@article{Khachiyan1980,
+abstract = {New effective iterative algorithms are proposed for linear programming. A theoretical b bound on the running time is derived for the solution of the linear programming problem. {\textcopyright} 1989 Plenum Publishing Corporation.},
+author = {Khachiyan, L.G.},
+doi = {10.1016/0041-5553(80)90061-0},
+file = {:home/rolf/phd/literature/papers/1-s2.0-0041555380900610-main.pdf:pdf},
+issn = {00415553},
+journal = {USSR Computational Mathematics and Mathematical Physics},
+month = {jan},
+number = {1},
+pages = {53--72},
+title = {Polynomial algorithms in linear programming},
+volume = {20},
+year = {1980}
+}
+@article{Grotschel1981,
+author = {Gr{\"{o}}tschel, M. and Lov{\'{a}}sz, L. and Schrijver, A.},
+doi = {10.1007/BF02579273},
+file = {:home/rolf/phd/literature/papers/BF02579273.pdf:pdf},
+issn = {0209-9683},
+journal = {Combinatorica},
+month = {jun},
+number = {2},
+pages = {169--197},
+title = {The ellipsoid method and its consequences in combinatorial optimization},
+volume = {1},
+year = {1981}
+}
+@article{Bland1981,
+author = {Bland, Robert G and Goldfarb, Donald and Todd, Michael J},
+doi = {10.1287/opre.29.6.1039},
+file = {:home/rolf/phd/literature/papers/Bland-EllipsoidMethodSurvey-1981.pdf:pdf},
+journal = {Operations Research},
+number = {6},
+pages = {1039--1091},
+title = {The Ellipsoid Method: A Survey},
+volume = {29},
+year = {1981}
+}
+
+@article{Picard1977,
+abstract = {Given a graph with weights on vertices, the vertex packing problem consists of finding a vertex packing (i.e. a set of vertices, no two of them being adjacent) of maximum weight. A linear relaxation of one binary programming formulation of this problem has these two well-known properties: (i) every basic solution is (0, 1/2, 1)-valued, (ii) in an optimum linear solution, an integer-valued variable keeps the same value in an optimum binary solution. As an answer to an open problem from Nemhauser and Trotter, it is shown that there is a unique maximal set of variables which are integral in optimal (VLP) solutions. {\textcopyright} 1977 The Mathematical Programming Society.},
+author = {Picard, Jean Claude and Queyranne, Maurice},
+doi = {10.1007/BF01593772},
+file = {:home/rolf/phd/literature/papers/BF01593772.pdf:pdf},
+issn = {00255610},
+journal = {Mathematical Programming},
+number = {1},
+pages = {97--101},
+title = {On the integer-valued variables in the linear vertex packing problem},
+volume = {12},
+year = {1977}
+}
+
+@article{Hochbaum1993,
+author = {Hochbaum, Dorit S. and Megiddo, Nimrod and Naor, Joseph (Seffi) and Tamir, Arie},
+doi = {10.1007/BF01585160},
+file = {:home/rolf/phd/literature/papers/HMNT_93.pdf:pdf},
+issn = {0025-5610},
+journal = {Mathematical Programming},
+month = {feb},
+number = {1-3},
+pages = {69--83},
+title = {Tight bounds and 2-approximation algorithms for integer programs with two variables per inequality},
+url = {http://link.springer.com/10.1007/BF01585160},
+volume = {62},
+year = {1993}
+}
+@ARTICLE{Hojny2025-si,
+  title     = "Detecting and handling reflection symmetries in mixed-integer
+               (nonlinear) programming and beyond",
+  author    = "Hojny, Christopher",
+  journal   = "Mathematical Programming Computation",
+  publisher = "Springer Science and Business Media LLC",
+  month     =  jul,
+  year      =  2025,
+  copyright = "https://creativecommons.org/licenses/by/4.0",
+  language  = "en",
+  doi = {10.1007/s12532-025-00289-9}
+}
+@article{Bolusani2024,
+abstract = {The SCIP Optimization Suite provides a collection of software packages for mathematical optimization, centered around the constraint integer programming (CIP) framework SCIP. This report discusses the enhancements and extensions included in the SCIP Optimization Suite 9.0. The updates in SCIP 9.0 include improved symmetry handling, additions and improvements of nonlinear handlers and primal heuristics, a new cut generator and two new cut selection schemes, a new branching rule, a new LP interface, and several bug fixes. The SCIP Optimization Suite 9.0 also features new Rust and C++ interfaces for SCIP, new Python interface for SoPlex, along with enhancements to existing interfaces. The SCIP Optimization Suite 9.0 also includes new and improved features in the LP solver SoPlex, the presolving library PaPILO, the parallel framework UG, the decomposition framework GCG, and the SCIP extension SCIP-SDP. These additions and enhancements have resulted in an overall performance improvement of SCIP in terms of solving time, number of nodes in the branch-and-bound tree, as well as the reliability of the solver.},
+archivePrefix = {arXiv},
+arxivId = {2402.17702},
+author = {Bolusani, Suresh and Besan{\c{c}}on, Mathieu and Bestuzheva, Ksenia and Chmiela, Antonia and Dion{\'{i}}sio, Jo{\~{a}}o and Donkiewicz, Tim and van Doornmalen, Jasper and Eifler, Leon and Ghannam, Mohammed and Gleixner, Ambros and Graczyk, Christoph and Halbig, Katrin and Hedtke, Ivo and Hoen, Alexander and Hojny, Christopher and van der Hulst, Rolf and Kamp, Dominik and Koch, Thorsten and Kofler, Kevin and Lentz, Jurgen and Manns, Julian and Mexi, Gioni and M{\"{u}}hmer, Erik and Pfetsch, Marc E. and Schl{\"{o}}sser, Franziska and Serrano, Felipe and Shinano, Yuji and Turner, Mark and Vigerske, Stefan and Weninger, Dieter and Xu, Lixing},
+eprint = {2402.17702},
+file = {:home/rolf/phd/literature/papers/2402.17702v2.pdf:pdf},
+keywords = {branch-and-,branch-and-price,column generation,constraint integer programming,cut,linear programming,mixed-integer linear,mixed-integer nonlinear programming,mixed-integer semidefinite,optimization solver,parallelization,programming},
+number = {05},
+pages = {1--36},
+title = {The SCIP Optimization Suite 9.0},
+year = {2024}
+}
+@article{Bodi2013,
+abstract = {This paper deals with exploiting symmetry for solving linear and integer programming problems. Basic properties of linear representations of finite groups can be used to reduce symmetric linear programming to solving linear programs of lower dimension. Combining this approach with knowledge of the geometry of feasible integer solutions yields an algorithm for solving highly symmetric integer linear programs which only takes time which is linear in the number of constraints and quadratic in the dimension. {\textcopyright} 2011 Springer and Mathematical Optimization Society.},
+archivePrefix = {arXiv},
+arxivId = {1012.4941},
+author = {B{\"{o}}di, Richard and Herr, Katrin and Joswig, Michael},
+doi = {10.1007/s10107-011-0487-6},
+eprint = {1012.4941},
+file = {:home/rolf/phd/literature/papers/s10107-011-0487-6.pdf:pdf},
+isbn = {1010701104876},
+issn = {0025-5610},
+journal = {Mathematical Programming},
+keywords = {Integer programming,Linear programming,Permutation group,Symmetry},
+month = {feb},
+number = {1-2},
+pages = {65--90},
+title = {Algorithms for highly symmetric linear and integer programs},
+url = {http://link.springer.com/10.1007/s10107-011-0487-6},
+volume = {137},
+year = {2013}
+}
+@book{Gatermann2004,
+abstract = {We investigate the representation of multivariate symmetric polynomials as sum of squares, as well as the effective computation of this decomposition. Since this task is solved using semidefinite programming tools we explore the geometric, algebraic, and computational implications of the presence of discrete symmetries in semidefinite programs. It is shown that symmetry exploitation allows a significant reduction in both matrix size and number of decision variables. The results, reinterpreted from an invariant-theoretic viewpoint, provide a novel representation of a class of nonnegative symmetric polynomials. For this, we introduce a common generalization of sum of squares polynomials and positive semidefinite matrices, termed "sum of squares matrices." The main theorem states that an invariant sum of squares polynomial is a sum of inner products of pairs of matrices, whose entries are invariant polynomials. In these pairs, one of the matrices is computed based on the real irreducible representations of the group, and the other is a sum of squares matrix. The reduction techniques enable the numerical solution of large-scale instances, otherwise computationally infeasible to solve. {\textcopyright} 2003 Elsevier B.V. All rights reserved.},
+archivePrefix = {arXiv},
+arxivId = {math/0211450},
+author = {Gatermann, Karin and Parrilo, Pablo A.},
+booktitle = {Journal of Pure and Applied Algebra},
+doi = {10.1016/j.jpaa.2003.12.011},
+eprint = {0211450},
+file = {:home/rolf/phd/literature/papers/1-s2.0-S0022404904000131-main.pdf:pdf},
+isbn = {4930841852},
+issn = {00224049},
+number = {1-3},
+pages = {95--128},
+primaryClass = {math},
+title = {Symmetry groups, semidefinite programs, and sums of squares},
+volume = {192},
+year = {2004}
+}
+@incollection{Fischetti2012,
+abstract = {Symmetry plays an important role in optimization. The usual approach to cope with symmetry in discrete optimization is to try to eliminate it by introducing artificial symmetry-breaking conditions into the problem, and/or by using an ad-hoc search strategy. In this paper we argue that symmetry is instead a beneficial feature that we should preserve and exploit as much as possible, breaking it only as a last resort. To this end, we outline a new approach, that we call orbital shrinking, where additional integer variables expressing variable sums within each symmetry orbit are introduces and used to "encapsulate" model symmetry. This leads to a discrete relaxation of the original problem, whose solution yields a bound on its optimal value. Encouraging preliminary computational experiments on the tightness and solution speed of this relaxation are presented. {\textcopyright} 2012 Springer-Verlag.},
+author = {Fischetti, Matteo and Liberti, Leo},
+booktitle = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+doi = {10.1007/978-3-642-32147-4\_6},
+file = {:home/rolf/phd/literature/papers/orbshrink.pdf:pdf},
+isbn = {9783642321467},
+issn = {03029743},
+keywords = {MILP,Mathematical programming,algebra,convex MINLP,discrete optimization,relaxation,symmetry},
+pages = {48--58},
+publisher = {Springer},
+title = {Orbital Shrinking},
+volume = {7422 LNCS},
+year = {2012},
+address = {Berlin, Heidelberg}
+}
+@article{Fischetti2017,
+abstract = {We present a method, based on formulation symmetry, for generating Mixed-Integer Linear Programming (MILP) relaxations with fewer variables than the original symmetric MILP. Our technique also extends to convex MINLP, and some nonconvex MINLP with a special structure. We showcase the effectiveness of our relaxation when embedded in a decomposition method applied to two important applications (multi-activity shift scheduling and multiple knapsack problem), showing that it can improve CPU times by several orders of magnitude compared to pure MIP or CP approaches.},
+author = {Fischetti, Matteo and Liberti, Leo and Salvagnin, Domenico and Walsh, Toby},
+doi = {10.1016/j.dam.2017.01.015},
+file = {:home/rolf/phd/literature/papers/1-s2.0-S0166218X17300483-main.pdf:pdf},
+issn = {0166218X},
+journal = {Discrete Applied Mathematics},
+keywords = {Constraint programming,Discrete optimization,MINLP,Mathematical programming,Relaxation,Symmetry},
+month = {may},
+pages = {109--123},
+publisher = {Elsevier B.V.},
+title = {Orbital shrinking: Theory and applications},
+volume = {222},
+year = {2017}
+}
+@inproceedings{Salvagnin2012,
+abstract = {We propose a hybrid MIP/CP approach for solving multi-activity shift scheduling problems, based on regular languages that partially describe the set of feasible shifts. We use an aggregated MIP relaxation to capture the optimization part of the problem and to get rid of symmetry. Whenever the MIP solver generates a integer solution, we use a CP solver to check whether it can be turned into a feasible solution of the original problem. A MIP-based heuristic is also developed. Computational results are reported, showing that the proposed method is a promising alternative compared to the state-of-the-art. {\textcopyright} 2012 Springer-Verlag.},
+author = {Salvagnin, Domenico and Walsh, Toby},
+booktitle = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+doi = {10.1007/978-3-642-33558-7\_46},
+file = {:home/rolf/phd/literature/papers/978-3-642-33558-7_46.pdf:pdf},
+isbn = {9783642335570},
+issn = {03029743},
+pages = {633--646},
+title = {A hybrid MIP/CP approach for multi-activity shift scheduling},
+volume = {7514 LNCS},
+year = {2012}
+}
+@incollection{Salvagnin2013,
+abstract = {Orbital shrinking is a newly developed technique in the MIP community to deal with symmetry issues, which is based on aggregation rather than on symmetry breaking. In a recent work, a hybrid MIP/CP scheme based on orbital shrinking was developed for the multi-activity shift scheduling problem, showing significant improvements over previous pure MIP approaches. In the present paper we show that the scheme above can be extended to a general framework for solving arbitrary symmetric MIP instances. This framework naturally provides a new way for devising hybrid MIP/CP decompositions. Finally, we specialize the above framework to the multiple knapsack problem. Computational results show that the resulting method can be orders of magnitude faster than pure MIP approaches on hard symmetric instances. {\textcopyright} Springer-Verlag 2013.},
+author = {Salvagnin, Domenico},
+booktitle = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+doi = {10.1007/978-3-642-38171-3\_14},
+file = {:home/rolf/phd/literature/papers/mkp.pdf:pdf},
+isbn = {9783642381706},
+issn = {03029743},
+pages = {204--215},
+title = {Orbital Shrinking: A New Tool for Hybrid MIP/CP Methods},
+volume = {7874 LNCS},
+year = {2013}
+}
+@article{Pfetsch2019,
+abstract = {Symmetry is often exploited in physics and chemistry to derive fundamental principles, reduce computational workloads or obtain physical insights and information without the need for elaborate calculations. Also in the quantum chemical study of luminescent systems and their spectroscopy, group theory, which is the mathematical framework that enables one to exploit symmetries, is ubiquitous and indispensable to keep calculations feasible. While no expert knowledge is required, a selection of basic ingredients from group and representation theory and symmetry aspects from crystal or ligand field theory are reviewed here that are useful in drafting program input and to correctly interpret and process intermediate and final program output. These concepts are applied to generate the input and analyze the output needed to obtain the potential energy curves of cubic Pr3 + defects in BaF2 from multiconfigurational ab initio calculations. The latter section serves as a support for the symmetry handling in the tutorial of Chap. 5.},
+author = {Pfetsch, Marc E. and Rehn, Thomas},
+doi = {10.1007/s12532-018-0140-y},
+file = {:home/rolf/phd/literature/papers/5209.pdf:pdf},
+issn = {1867-2949},
+journal = {Mathematical Programming Computation},
+keywords = {and phrases,branch-and-cut,ismorphism prun-,mixed-integer program,symmetry},
+month = {mar},
+number = {1},
+pages = {37--93},
+title = {A computational comparison of symmetry handling methods for mixed integer programs},
+volume = {11},
+year = {2019}
+}
+@unpublished{Christophel2014,
+abstract = {We present two novel applications of symmetries for mixed-integer linear programming. First we propose two variants of a new heuristic to improve the objective value of a feasible solution using symmetries. These heuristics can use either the actual permutations or the orbits of the variables to find better feasible solutions. Then we introduce a new class of symmetries for binary MILP problems. Besides the usual permutation of variables, these symmetries can also take the complement of the binary variables. This is useful in situations when two opposite decisions are actually symmetric to each other. We discuss the theory of these symmetries and present a computational method to compute them. Examples are presented to illustrate the usefulness of these techniques.},
+archivePrefix = {arXiv},
+arxivId = {1408.4017},
+author = {Christophel, Philipp M and G{\"{u}}zelsoy, Menal and P{\'{o}}lik, Imre},
+eprint = {1408.4017},
+file = {:home/rolf/phd/literature/papers/1408.4017v1.pdf:pdf},
+month = {aug},
+title = {New symmetries in mixed-integer linear optimization: Symmetry heuristics and complement-based symmetries},
+year = {2014}
+}
+@article{Liberti2014,
+abstract = {Mathematical programs whose formulation is symmetric often take a long time to solve using Branch-and-Bound type algorithms, because of the several symmetric optima. A simple technique used in these cases is to adjoin symmetry breaking constraints to the formulation before solving the problem. These constraints: (a) aim to guarantee that at least one optimum is feasible, whilst making some of the symmetric optima infeasible; and (b) are usually associated to the different orbits of the action of the formulation group on the set of variable indices. In general, one cannot adjoin symmetry breaking constraints from more than one orbit. In Liberti (Math Program A 131:273–304, doi:10.1007/s10107-010-0351-0, 2012), some (restrictive) sufficient conditions are presented which make it possible to adjoin such constraints from several orbits at the same time. In this paper we present a new, less restrictive method for the same task, and show it performs better computationally.},
+author = {Liberti, Leo and Ostrowski, James},
+doi = {10.1007/s10898-013-0106-6},
+file = {:home/rolf/phd/literature/papers/sbstab.pdf:pdf},
+issn = {0925-5001},
+journal = {Journal of Global Optimization},
+keywords = {MILP,MINLP,Mathematical programming,Static symmetry breaking},
+month = {oct},
+number = {2},
+pages = {183--194},
+title = {Stabilizer-based symmetry breaking constraints for mathematical programs},
+volume = {60},
+year = {2014}
+}
+@article{Liberti2012,
+abstract = {If a mathematical program has many symmetric optima, solving it via Branch-and-Bound techniques often yields search trees of disproportionate sizes; thus, finding and exploiting symmetries is an important task. We propose a method for automatically finding the formulation group of any given Mixed-Integer Nonlinear Program, and for reformulating the problem by means of static symmetry breaking constraints. The reformulated problem-which is likely to have fewer symmetric optima-can then be solved via standard Branch-and-Bound codes such as CPLEX (for linear programs) and Couenne (for nonlinear programs). Our computational results include formulation group tables for the MIPLib3, MIPLib2003, GlobalLib and MINLPLib instance libraries and solution tables for some instances in the aforementioned libraries. {\textcopyright} 2010 Springer and Mathematical Programming Society.},
+author = {Liberti, Leo},
+doi = {10.1007/s10107-010-0351-0},
+file = {:home/rolf/phd/literature/papers/s10107-010-0351-0.pdf:pdf},
+issn = {0025-5610},
+journal = {Mathematical Programming},
+keywords = {Branch and bound,Group,Mixed integer nonlinear programming,Symmetry},
+month = {feb},
+number = {1-2},
+pages = {273--304},
+title = {Reformulations in mathematical programming: automatic symmetry detection and exploitation},
+volume = {131},
+year = {2012}
+}
+@article{Margot2003,
+abstract = {This paper describes components of a branch-and-cut algorithm for solving integer linear programs having a large symmetry group. It describes an isomorphism pruning algorithm and variable setting procedures using orbits of the symmetry group. Pruning and orbit computations are performed by backtracking procedures using a Schreier-Sims table for representing the symmetry group. Applications to hard set covering problems, generation of covering designs and error correcting codes are given. {\textcopyright} 2003 Springer-Verlag.},
+author = {Margot, Fran{\c{c}}ois},
+doi = {10.1007/s10107-003-0394-6},
+file = {:home/rolf/phd/literature/papers/s10107-003-0394-6.pdf:pdf},
+issn = {0025-5610},
+journal = {Mathematical Programming},
+keywords = {Branch-and-cut,Isomorphism pruning,Symmetry},
+month = {sep},
+number = {1-3},
+pages = {3--21},
+title = {Exploiting orbits in symmetric ILP},
+volume = {98},
+year = {2003}
+}
+@article{Margot2001, title={Pruning by isomorphism in branch-and-cut}, volume={94}, ISSN={1436-4646}, url={http://dx.doi.org/10.1007/s10107-002-0358-2}, DOI={10.1007/s10107-002-0358-2}, number={1}, journal={Mathematical Programming}, publisher={Springer Science and Business Media LLC}, author={Margot, Fran�ois}, year={2002}, month=dec, pages={71–90} }
+@article{Ostrowski2011,
+abstract = {We introduce orbital branching, an effective branching method for integer programs containing a great deal of symmetry. The method is based on computing groups of variables that are equivalent with respect to the symmetry remaining in the problem after branching, including symmetry that is not present at the root node. These groups of equivalent variables, called orbits, are used to create a valid partitioning of the feasible region that significantly reduces the effects of symmetry while still allowing a flexible branching rule. We also show how to exploit the symmetries present in the problem to fix variables throughout the branch-and-bound tree. Orbital branching can easily be incorporated into standard integer programming software. Through an empirical study on a test suite of symmetric integer programs, the question as to the most effective orbit on which to base the branching decision is investigated. The resulting method is shown to be quite competitive with a similar method known as isomorphism pruning and significantly better than a state-of-the-art commercial solver on symmetric integer programs. {\textcopyright} 2009 Springer and Mathematical Programming Society.},
+author = {Ostrowski, James and Linderoth, Jeff and Rossi, Fabrizio and Smriglio, Stefano},
+doi = {10.1007/s10107-009-0273-x},
+file = {:home/rolf/phd/literature/papers/s10107-009-0273-x.pdf:pdf},
+issn = {0025-5610},
+journal = {Mathematical Programming},
+keywords = {Branch-and-bound algorithms,Integer programming,Symmetry},
+month = {jan},
+number = {1},
+pages = {147--178},
+title = {Orbital branching},
+volume = {126},
+year = {2011}
+}
+@incollection{Ostrowski2008,
+abstract = {Orbital branching is a method for branching on variables in integer programming that reduces the likelihood of evaluating redundant, isomorphic nodes in the branch-and-bound procedure. In this work, the orbital branching methodology is extended so that the branching disjunction can be based on an arbitrary constraint. Many important families of integer programs are structured such that small instances from the family are embedded in larger instances. This structural information can be exploited to define a group of strong constraints on which to base the orbital branching disjunction. The symmetric nature of the problems is further exploited by enumerating non-isomorphic solutions to instances of the small family and using these solutions to create a collection of typically easy-to-solve integer programs. The solution of each integer program in the collection is equivalent to solving the original large instance. The effectiveness of this methodology is demonstrated by computing the optimal incidence width of Steiner Triple Systems and minimum cardinality covering designs. {\textcopyright} 2008 Springer-Verlag Berlin Heidelberg.},
+address = {Berlin, Heidelberg},
+author = {Ostrowski, James and Linderoth, Jeff and Rossi, Fabrizio and Smriglio, Stefano},
+booktitle = {Integer Programming and Combinatorial Optimization},
+doi = {10.1007/978-3-540-68891-4\_16},
+file = {:home/rolf/phd/literature/papers/978-3-540-68891-4_16.pdf:pdf},
+isbn = {3540688862},
+issn = {03029743},
+pages = {225--239},
+publisher = {Springer Berlin Heidelberg},
+title = {Constraint Orbital Branching},
+volume = {5035 LNCS},
+year = {2008}
+}
+@inbook{Margot2010,
+abstract = {An integer linear program (ILP) is symmetric if its variables can be permuted without changing the structure of the problem. Areas where symmetric ILPs arise range from applied settings (scheduling on identical machines), to combinatorics (code construction), and to statistics (statistical designs construction). Relatively small symmetric ILPs are extremely difficult to solve using branch-and-cut codes oblivious to the symmetry in the problem. This paper reviews techniques developed to take advantage of the symmetry in an ILP during its solution. It also surveys related topics, such as symmetry detection, polyhedral studies of symmetric ILPs, and enumeration of all non isomorphic optimal solutions.},
+address = {Berlin, Heidelberg},
+author = {Margot, Fran{\c{c}}ois},
+booktitle = {50 Years of Integer Programming 1958-2008: From the Early Years to the State-of-the-Art},
+doi = {10.1007/978-3-540-68279-0\_17},
+editor = {J{\"{u}}nger, Michael and Liebling, Thomas M and Naddef, Denis and Nemhauser, George L and Pulleyblank, William R and Reinelt, Gerhard and Rinaldi, Giovanni and Wolsey, Laurence A},
+isbn = {978-3-540-68279-0},
+pages = {647--686},
+publisher = {Springer Berlin Heidelberg},
+title = {Symmetry in Integer Linear Programming},
+url = {https://doi.org/10.1007/978-3-540-68279-0\_17},
+year = {2010}
+}
+@article{Read1977,
+abstract = {The graph isomorphism problem—to devise a good algorithm for determining if two graphs are isomorphic—is of considerable practical importance, and is also of theoretical interest due to its relationship to the concept of NP‐completeness. No efficient (i.e., polynomial‐bound) algorithm for graph isomorphism is known, and it has been conjectured that no such algorithm can exist. Many papers on the subject have appeared, but progress has been slight; in fact, the intractable nature of the problem and the way that many graph theorists have been led to devote much time to it, recall those aspects of the four‐color conjecture which prompted Harary to rechristen it the “four‐color disease.” This paper surveys the present state of the art of isomorphism testing, discusses its relationship to NP‐completeness, and indicates some of the difficulties inherent in this particularly elusive and challenging problem. A comprehensive bibliography of papers relating to the graph isomorphism problem is given.},
+author = {Read, Ronald C. and Corneil, Derek G.},
+doi = {10.1002/jgt.3190010410},
+file = {:home/rolf/phd/literature/papers/read1977.pdf:pdf},
+issn = {0364-9024},
+journal = {Journal of Graph Theory},
+month = {dec},
+number = {4},
+pages = {339--363},
+title = {The graph isomorphism disease},
+volume = {1},
+year = {1977}
+}
+@misc{Darga,
+author = {Darga, Paul T. and Katebi, Hadi and Liffiton, Mark and Markov, Igor L. and Sakallah, Karem},
+title = {Saucy3: Fast Symmetry Discovery in Graphs},
+url = {http://vlsicad.eecs.umich.edu/BK/SAUCY/},
+urldate = {6 November 2025}
+}
+@misc{Junttila,
+author = {Junttila, Tommi and Kaski, Petteri},
+title = {bliss: A Tool for Computing Automorphism Groups and Canonical Labelings of Graphs},
+url = {http://www.tcs.hut.fi/Software/bliss/},
+urldate = {6 November 2025}
+}
+@misc{McKay2025,
+author = {McKay, Brendan D and Piperno, Adolfo},
+title = {Nauty User's Guide (version 2.7)},
+url = {https://users.cecs.anu.edu.au/$\sim$bdm/nauty/},
+urldate = {6 November 2025},
+year = {2025}
+}
+@incollection{Hopcroft1971,
+author = {Hopcroft, John},
+booktitle = {Theory of Machines and Computations},
+doi = {10.1016/B978-0-12-417750-5.50022-1},
+file = {:home/rolf/phd/literature/papers/CS-TR-71-190.pdf:pdf},
+number = {1},
+pages = {189--196},
+publisher = {Elsevier},
+title = {An n log n algorithm for minimizing states in a finite automaton},
+year = {1971},
+volume = {7874 LNCS},
+address = {Haifa, Israel}
+}
+
+@article{Paige1987,
+abstract = {We present improved partition refinement algorithms for three problems: lexicographic sorting, relational coarsest partition, and double lexical ordering. Our double lexical ordering algorithm uses a new, efficient method for unmerging two sorted sets.},
+author = {Paige, Robert and Tarjan, Robert E.},
+doi = {10.1137/0216062},
+file = {:home/rolf/phd/literature/papers/Three Partition Refinement Algorithms.pdf:pdf},
+issn = {0097-5397},
+journal = {SIAM Journal on Computing},
+keywords = {1,68p05,68p10,68q25,68r05,ams,as an algorithmic,coarsest partition,data structure,double lexical ordering,introduction,lexicographic sorting,mos,paper is partition refinement,partition,refinement,sorted set,subject classifications,the theme of this,unmerging},
+month = {dec},
+number = {6},
+pages = {973--989},
+title = {Three Partition Refinement Algorithms},
+volume = {16},
+year = {1987}
+}
+@article{Geyer2019,
+abstract = {For a given linear program (LP) a permutation of its variables that sends feasible points to feasible points and preserves the objective function value of each of its feasible points is a symmetry of the LP. The set of all symmetries of an LP, denoted by G LP , is the symmetry group of the LP. Margot (2010) described a method for computing a subgroup of the symmetry group G LP of an LP. This method computes G LP when the LP has only non-redundant inequalities and its feasible set satisfies no equality constraints. However, when the feasible set of the LP satisfies equality constraints this method finds only a subgroup of G LP and can miss symmetries. We develop a method for finding the symmetry group of a feasible LP whose feasible set satisfies equality constraints. We apply this method to find and exploit the previously unexploited symmetries of an orthogonal array defining integer linear program (ILP) within the branch-and-bound (B&B) with isomorphism pruning algorithm (Margot, 2007). Our method reduced the running time for finding all OD-equivalence classes of OA (160,8,2,4) and OA (176,8,2,4) by factors of 1∕(2.16) and 1∕(1.36) compared to the fastest known method (Bulutoglu and Ryan, 2018). These were the two bottleneck cases that could not have been solved until the B&B with isomorphism pruning algorithm was applied. Another key finding of this paper is that converting inequalities to equalities by introducing slack variables and exploiting the symmetry group of the resulting ILP's LP relaxation within the B&B with isomorphism pruning algorithm can reduce the computation time by several orders of magnitude when enumerating a set of all non-isomorphic solutions of an ILP.},
+author = {Geyer, Andrew J. and Bulutoglu, Dursun A. and Ryan, Kenneth J.},
+doi = {10.1016/j.disopt.2019.01.001},
+file = {:home/rolf/phd/literature/papers/1-s2.0-S1572528617302177-main.pdf:pdf},
+issn = {15725286},
+journal = {Discrete Optimization},
+keywords = {Formulation symmetry group,LP relaxation symmetry group,OD-equivalence,Orthogonal projection matrix,Vertex colored, edge colored graph},
+pages = {93--119},
+publisher = {Elsevier B.V.},
+title = {Finding the symmetry group of an LP with equality constraints and its application to classifying orthogonal arrays},
+url = {https://doi.org/10.1016/j.disopt.2019.01.001},
+volume = {32},
+year = {2019}
+}
+@incollection{Bachoc2012,
+archivePrefix = {arXiv},
+arxivId = {1007.2905},
+author = {Bachoc, Christine and Gijswijt, Dion C. and Schrijver, Alexander and Vallentin, Frank},
+booktitle = {Handbook of Semidefinite, Conic and polynomial Optimization},
+doi = {10.1007/978-1-4614-0769-0\_9},
+eprint = {1007.2905},
+file = {:home/rolf/phd/literature/papers/1007.2905v2.pdf:pdf},
+issn = {08848289},
+pages = {219-270},
+title = {Invariant Semidefinite Programs},
+publisher= {Springer},
+volume = {166},
+year = {2012},
+address = {New York}
+}
+@article{Permenter2020,
+abstract = {We propose a new method for simplifying semidefinite programs (SDP) inspired by symmetry reduction. Specifically, we show if an orthogonal projection map satisfies certain invariance conditions, restricting to its range yields an equivalent primal–dual pair over a lower-dimensional symmetric cone—namely, the cone-of-squares of a Jordan subalgebra of symmetric matrices. We present a simple algorithm for minimizing the rank of this projection and hence the dimension of this subalgebra. We also show that minimizing rank optimizes the direct-sum decomposition of the algebra into simple ideals, yielding an optimal “block-diagonalization” of the SDP. Finally, we give combinatorial versions of our algorithm that execute at reduced computational cost and illustrate effectiveness of an implementation on examples. Through the theory of Jordan algebras, the proposed method easily extends to linear and second-order-cone programming and, more generally, symmetric cone optimization.},
+archivePrefix = {arXiv},
+arxivId = {1608.02090},
+author = {Permenter, Frank and Parrilo, Pablo A.},
+doi = {10.1007/s10107-019-01372-5},
+eprint = {1608.02090},
+file = {:home/rolf/phd/literature/papers/1608.02090v2.pdf:pdf},
+issn = {0025-5610},
+journal = {Mathematical Programming},
+month = {may},
+number = {1},
+pages = {51--84},
+title = {Dimension reduction for semidefinite programs via Jordan algebras},
+volume = {181},
+year = {2020}
+}
+@article{Gemander2020,
+author = {Gemander, Patrick and Chen, Wei-Kun and Weninger, Dieter and Gottwald, Leona and Gleixner, Ambros and Martin, Alexander},
+doi = {10.1007/s13675-020-00129-6},
+file = {:home/rolf/phd/literature/papers/1-s2.0-S2192440621001283-main.pdf:pdf},
+isbn = {1367502000129},
+issn = {21924406},
+journal = {EURO Journal on Computational Optimization},
+keywords = {Linear programming,Mixed-integer linear programming,Optimization solver,Presolve,linear programming,mixed-integer linear programming,optimization},
+month = {oct},
+number = {3-4},
+pages = {205--240},
+publisher = {Elsevier},
+title = {Two-row and two-column mixed-integer presolve using hashing-based pairing methods},
+volume = {8},
+year = {2020}
+}
+@article{Herr2013,
+abstract = {We consider convex programming problems with integrality constraints that are invariant under a linear symmetry group. To decompose such problems, we introduce the new concept of core points, i.e., integral points whose orbit polytopes are lattice-free. For symmetric integer linear programs, we describe two algorithms based on this decomposition. Using a characterization of core points for direct products of symmetric groups, we show that prototype implementations can compete with state-of-the-art commercial solvers, and solve an open MIPLIB problem. {\textcopyright} 2013 Elsevier B.V. All rights reserved.},
+archivePrefix = {arXiv},
+arxivId = {1202.0435},
+author = {Herr, Katrin and Rehn, Thomas and Sch{\"{u}}rmann, Achill},
+doi = {10.1016/j.orl.2013.02.007},
+eprint = {1202.0435},
+file = {:home/rolf/phd/literature/papers/1202.0435v3.pdf:pdf;:home/rolf/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Herr, Rehn, Sch{\"{u}}rmann - 2013 - Exploiting symmetry in integer convex optimization using core points.pdf:pdf},
+issn = {01676377},
+journal = {Operations Research Letters},
+keywords = {Core point,Core set,Integer convex optimization,Integer linear programs,Symmetry},
+number = {3},
+pages = {298--304},
+title = {Exploiting symmetry in integer convex optimization using core points},
+volume = {41},
+year = {2013}
+}
+@inproceedings{VanDerHulst2025,
+abstract = {Implied-integer detection is a well-known presolving technique that is used by many Mixed-Integer Linear Programming solvers. Informally, a variable is said to be implied integer if its integrality is enforced implicitly by integrality of other variables and the constraints of a problem. In this paper we formalize the definition of implied integrality by taking a polyhedral perspective. Our main result characterizes implied integrality as occurring when a subset of integer variables is fixed to integer values and the polyhedron on the remaining variables is integral. While integral polyhedra are well-understood theoretically, existing detection methods infer implied integrality only for one variable at a time. We introduce new detection methods based on the detection of integral polyhedra, extending existing techniques to multiple variables. Additionally, we discuss the computational complexity of recognizing implied integers. We conduct experiments using a new detection method that uses totally unimodular submatrices to identify implied integrality. For the MIPLIB 2017 collection dataset our results indicate that, on average, 18.8{\%} of the variables are classified as implied integer after presolving, compared to just 3.3{\%} identified by state-of-the-art techniques. We are able to reduce the average percentage of variables whose integrality needs to be enforced after presolving from 70.2{\%} to 59.0{\%}.},
+address = {Cham},
+author = {{van der Hulst}, Rolf and Walter, Matthias},
+booktitle = {Integer Programming and Combinatorial Optimization},
+isbn = {978-3-031-93112-3},
+pages = {452--465},
+publisher = {Springer},
+title = {Implied Integrality in Mixed-Integer Optimization},
+year = {2025},
+doi ={10.1007/978-3-031-93112-3\_33}
+}
+@article{Megiddo1991,
+abstract = {We show that if there exists a strongly polynomial time algorithm that finds a basis which is optimal for both the primal and the dual problems, given an optimal solution for one of the problems, then there exists a strongly polynomial algorithm for the general linear programming problem. On the other hand, we give a strongly polynomial time algorithm that finds such a basis, given any pair of optimal solutions (not necessarily basic) for the primal and the dual problems. Such an algorithm is needed when one is using an interior point method and is interested in finding a basis which is both primal- and dual-optimal.},
+author = {Megiddo, Nimrod},
+doi = {10.1287/ijoc.3.1.63},
+file = {:home/rolf/phd/literature/papers/bases.pdf:pdf},
+issn = {0899-1499},
+journal = {ORSA Journal on Computing},
+month = {feb},
+number = {1},
+pages = {63--65},
+title = {On Finding Primal- and Dual-Optimal Bases},
+volume = {3},
+year = {1991}
+}
+@article{Ge2025,
+abstract = {Identifying optimal basic feasible solutions to linear programming problems is a critical task for mixed integer programming and other applications. The crossover method, which aims at deriving an optimal extreme point from a suboptimal solution (the output of a starting method such as interior-point methods or first-order methods), is crucial in this process. This method, compared with the starting method, frequently represents the primary computational bottleneck in practical applications. We propose approaches to overcome this bottleneck by exploiting problem characteristics and implementing customized strategies. For problems arising from network applications and exhibiting network structures, we take advantage of the graph structure of the problem and the tree structure of the optimal solutions. Based on these structures, we propose a tree-based crossover method, aiming to recovering basic solutions by identifying nearby spanning tree structures. For general linear programs, we propose recovering an optimal basic solution by identifying the optimal face and employing controlled perturbations based on the suboptimal solution provided by interior-point methods. We prove that an optimal solution for the perturbed problem is an extreme point, and its objective value is at least as good as that of the initial interior-point solution. Computational experiments show significant speed-ups achieved by our methods compared with state-of-the-art commercial solvers on classical linear programming problem benchmarks, network flow problem benchmarks, and optimal transport problems.},
+archivePrefix = {arXiv},
+arxivId = {2102.09420},
+author = {Ge, Dongdong and Wang, Chengwenjian and Xiong, Zikai and Ye, Yinyu},
+doi = {10.1287/ijoc.2022.0291},
+eprint = {2102.09420},
+file = {:home/rolf/phd/literature/papers/ge-et-al-2025-from-an-interior-point-to-a-corner-point-smart-crossover.pdf:pdf},
+issn = {1091-9856},
+journal = {INFORMS Journal on Computing},
+keywords = {"Keywords: linear programming,crossover,first-order method,interior-point method",network flow problem,optimal transport},
+month = {mar},
+number = {December},
+publisher = {http://pubsonline.informs.org/journal/ijoc},
+title = {From an Interior Point to a Corner Point: Smart Crossover},
+year = {2025}
+}
+@article{RowNetworkMatrixPaper,
+abstract = {Given a $\{0,1\}$-matrix $M$, the graph realization problem for $M$ asks if there exists a spanning forest such that the columns of $M$ are incidence vectors of paths in the forest. The problem is closely related to the recognition of network matrices, which are a large subclass of totally unimodular matrices and have many applications in mixed-integer programming. Existing efficient algorithms for graph realization grow a submatrix in a column-wise fashion whilst maintaining a graphic realization. In the context of mixed-integer linear programming, this limits the set of submatrices of the constraint matrix that can efficiently be determined to be network matrices to network submatrices that span all rows and a subset of the columns. This paper complements the existing work by providing an algorithm that works in a row-wise fashion and uses similar data structures, and enables the detection of arbitrary graphic submatrices. The main challenge in designing efficient algorithms for the graph realization problem is ambiguity as there may exist many graphs realizing $M$. The key insight for designing an efficient row-wise algorithm is that a graphic matrix is uniquely represented by an SPQR-tree, a graph decomposition that stores all graphs with the same set of cycles. The developed row-wise algorithm uses data structures that are compatible with the column-wise algorithm and can be combined with the latter to detect maximal graphic submatrices.},
+archivePrefix = {arXiv},
+arxivId = {2408.12869},
+author = {{van der Hulst}, Rolf and Walter, Matthias},
+eprint = {2408.12869},
+file = {:home/rolf/phd/literature/papers/2408.12869v2.pdf:pdf},
+keywords = {graph realization,graphic matrix,graphic matroid,network matrix,recognition algo-},
+month = {jun},
+pages = {1--44},
+title = {A Row-wise Algorithm for Graph Realization},
+url = {http://arxiv.org/abs/2408.12869},
+volume = {1},
+year = {2025}
+}
+@article{Berkholz2017,
+abstract = {An assignment of colours to the vertices of a graph is stable if any two vertices of the same colour have identically coloured neighbourhoods. The goal of colour refinement is to find a stable colouring that uses a minimum number of colours. This is a widely used subroutine for graph isomorphism testing algorithms, since any automorphism needs to be colour preserving. We give an O((m + n)log n) algorithm for finding a canonical version of such a stable colouring, on graphs with n vertices and m edges. We show that no faster algorithm is possible, under some modest assumptions about the type of algorithm, which captures all known colour refinement algorithms.},
+archivePrefix = {arXiv},
+arxivId = {1509.08251},
+author = {Berkholz, Christoph and Bonsma, Paul and Grohe, Martin},
+doi = {10.1007/s00224-016-9686-0},
+eprint = {1509.08251},
+file = {:home/rolf/phd/literature/papers/978-3-642-40450-4_13.pdf:pdf},
+issn = {14330490},
+journal = {Theory of Computing Systems},
+keywords = {Canonical labelling,Colour refinement,Graph isomorphism,Partition refinement},
+number = {4},
+pages = {581--614},
+title = {Tight Lower and Upper Bounds for the Complexity of Canonical Colour Refinement},
+volume = {60},
+year = {2017}
+}
+@misc{hojny2025scipoptimizationsuite100,
+      title={The SCIP Optimization Suite 10.0}, 
+      author={Christopher Hojny and Mathieu Besançon and Ksenia Bestuzheva and Sander Borst and João Dionísio and Johannes Ehls and Leon Eifler and Mohammed Ghannam and Ambros Gleixner and Adrian Göß and Alexander Hoen and Jacob von Holly-Ponientzietz and Rolf {van der Hulst} and Dominik Kamp and Thorsten Koch and Kevin Kofler and Jurgen Lentz and Marco Lübbecke and Stephen J. Maher and Paul Matti Meinhold and Gioni Mexi and Til Mohr and Erik Mühmer and Krunal Kishor Patel and Marc E. Pfetsch and Sebastian Pokutta and Chantal Reinartz Groba and Felipe Serrano and Yuji Shinano and Mark Turner and Stefan Vigerske and Matthias Walter and Dieter Weninger and Liding Xu},
+      year={2025},
+      eprint={2511.18580},
+      archivePrefix={arXiv},
+      primaryClass={math.OC},
+      url={https://arxiv.org/abs/2511.18580}, 
+}
+@article{GGHpapilo,
+author    = {Ambros Gleixner and Leona Gottwald and Alexander Hoen},
+publisher = {INFORMS Journal on Computing},
+title     = {{PaPILO}: A Parallel Presolving Library for Integer and Linear Programming with Multiprecision Support},
+year      = {2023},
+journal   = {INFORMS Journal on Computing},
+doi       = {10.1287/ijoc.2022.0171.cd},
+url =       {https://github.com/INFORMSJoC/2022.0171},
+}
+
+@article{Berthold2013,
+title = {Measuring the impact of primal heuristics},
+journal = {Operations Research Letters},
+volume = {41},
+number = {6},
+pages = {611-614},
+year = {2013},
+issn = {0167-6377},
+doi = {https://doi.org/10.1016/j.orl.2013.08.007},
+author = {Timo Berthold},
+keywords = {Mixed integer programming, Primal heuristic, Performance measure, Primal integral},
+abstract = {In modern MIP solvers, primal heuristics play a key role in finding high-quality solutions. However, classical performance measures reflect the impact of primal heuristics on the overall solving process badly. In this article, we introduce a new performance measure, the “primal integral”, which depends on the quality of solutions and on the time when they are found. We compare five state-of-the-art MIP solvers w.r.t. the newly proposed measure, and show that heuristics improve their performance by up to 80%.}
+}
+
+@unpublished{Deakins2022,
+author = {Deakins, Ethan and Knueven, Bernard and Ostrowski, Jim},
+file = {:home/rolf/phd/literature/papers/Orbital_Crossover_IPCO_main.pdf:pdf},
+keywords = {crossover,linear programming,symmetry},
+title = {Orbital Crossover},
+year = {2022},
+url = {https://optimization-online.org/2022/12/orbital-crossover/}
+}
+
+@misc{VanDerHulstMatrec,
+  author = {{van der Hulst}, Rolf},
+  title = {MATREC: Matrix recognition algorithms},
+  year = {2024},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/rolfvdhulst/matrec}},
+  url = {https://github.com/rolfvdhulst/matrec}
+}
+@misc{VanDerHulstFolding,
+  author = {{van der Hulst}, Rolf},
+  title = {Folding Mixed-Integer Linear Programs and Reflection Symmetries},
+  year = {2026},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/rolfvdhulst/folding}},
+  url = {https://github.com/rolfvdhulst/folding}
+}

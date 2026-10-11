@@ -8,74 +8,113 @@ pages: 5-7
 source_pdf: 0411505v2.pdf
 source_sha256: a38cec365e0a227e
 doc_brief: "A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION — The colored Jones function of a knot is a sequence of Laurent p olynomials that encodes the Jones polynomial of a knot and its parallels."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Given a knot projection K, we deﬁne the arc-graph GK as follows:
-• The vertices of GK are in 1-1 correspondence with the arcs of K.
-• The edges of GK are in 1-1 correspondence with transitions ofK, when we walk along K and we
-either go under a crossing (blue edges), or jump up at a crossing (r ed edges) according to Figure 1.
-ia
-ja
-i+1aia
-ja
-i+1a
-Figure 1. From a planar projection to the arc-graph. Transitions in th e planar projection are indicated by
-dashed paths, and the corresponding edges in the arc-graph a re blue (depicted with a small circle on them) or
-red
-More formally, GK is a weighted digraph deﬁned as follows.
-5
-Deﬁnition 3.1. The arc-graph GK has r + 1 vertices 1 , . . . , r+ 1, r + 1 blue directed edges (v, v + 1) (v taken
-modulo r + 1) and r + 1 red directed edges (u, v), where at the crossing u the arc that crosses over is labeled
-by av.
-The vertices of GK are equipped with a sign, where sign( v) is the sign of the corresponding crossing v of
-K, and the edges of GK are equipped with a weight. The edge-weights are speciﬁed by matrix WK = ( βij)
-where
-βe =
-{
-t−sign(v) if e = (v, v + 1)
-1− t−sign(v) if e = (v, u)
-Here t is a variable. Let WK denote the matrix obtained from WK by deleting the last row and column.
-Notice that WK is formally stochastic (i.e., the sum of the rows of I− WK is zero), but WK is not.
-Let (GK , WK) denote the weighted digraph obtained by deleting the r + 1 vertex from GK, together with
-all edges to and from it. We let VK and EK denote the set of vertices and edges of GK.
-It is clear from the deﬁnition that from every vertex of GK, the blue outdegree is 1, the red outdegree is
-1, and the blue indegree is 1. It is also clear that GK has a Hamiltonian cycle that consists of all the blue
-edges. We denote by eb
-i (er
-i ) the blue (red) edge leaving vertex i.
-Example 3.2. For the ﬁgure 8 knot we have:
-a 2
-+2
-−1 −3
-+4
-a 4 a 1 a 3
-*
-Its arc-graph GK with the ordering and signs of its vertices and GK = GK−{ 4} are given by
-GK =
-+2
-−1+4
-−3
-GK = +2
-−3
-−1
-where the blue edges are the ones with circles on them. Moreover,
-WK =
-
-
-
-
-0 t 0 1 − t
-1− ¯t 0 ¯t 0
-0 1 − t 0 t
-¯t 0 1 − ¯t 0
-
-
-
- .
-Deﬁnition 3.3. LetK be a knot projection. The writhe ofK, ω(K), is the sum of the signs of the crossings
-ofK, and rot( K) is the rotation number of K, deﬁned as follows: smoothen all crossings of K, and consider
-the oriented circles that appear; one of them is special, marked by ⋆. The number of circles diﬀerent from
-the special one whose orientation agrees with the special one, minu s the number of circles whose orientation
-is opposite to the special one is deﬁned to be rot( K). We further let δ(K, n) = 1 /2(n2ω(K) + nrot(K)), and
-δ(K) = δ(K, 1).
-We remark that we deﬁne rot( e) for each edge e of GK in Deﬁnition B.6.
-6
+\lbl{sec.arcgraph}
+
+Given a knot projection $K$, we define the arc-graph $G_{\K}$ as follows:
+\begin{itemize}
+\item
+The vertices of $G_{\K}$ are in 1-1 correspondence with the arcs of $\K$.
+\item
+The edges of $G_{\K}$ are in 1-1 correspondence with {\em transitions}
+of $\K$, when we walk along $\K$ and we either go under a crossing 
+(blue edges), 
+or jump up at a crossing (red edges) according to Figure \ref{planarG2K}.
+\end{itemize}
+
+\begin{figure}[htpb]
+$$ 
+\psdraw{planar2GK}{3in}
+$$
+\caption{From a planar projection to the arc-graph. Transitions in 
+the planar projection are indicated by dashed paths, and the corresponding 
+edges in the arc-graph are blue (depicted with a small circle on them)
+or red}\lbl{planarG2K}
+\end{figure}
+
+More formally, $G_{\K}$ is a weighted digraph defined as follows.
+
+\begin{definition}
+\lbl{def.arcgraph}
+The {\em arc-graph} $G_{\K}$ has $r+1$ vertices $1,\dots, r+1$, $r+1$ {\em blue
+directed edges} $(v,v+1)$ ($v$ taken modulo $r+1$) and $r+1$ {\em red 
+directed edges} $(u,v)$, where at the crossing $u$ the arc that crosses over 
+is labeled by $a_v$.
+
+The vertices of $G_{\K}$ are equipped with a sign, where $\sign(v)$ is the
+sign of the corresponding crossing $v$ of $\K$, and the edges of $G_{\K}$ are
+equipped with a weight. The edge-weights are specified by matrix 
+$W_{\K}= (\b_{ij})$
+where 
+$$
+\b_{e}=
+\begin{cases}
+t^{-\sign(v)} & \text{if} \quad e=(v,v+1) \\
+1-t^{-\sign(v)} & \text{if} \quad e=(v,u)
+\end{cases}
+$$
+Here $t$ is a variable. Let $W_K$ denote the matrix obtained from $W_{\K}$
+by deleting the last row and column.
+Notice that $W_{\K}$ is formally stochastic
+(i.e., the sum of the rows of $I-W_{\K}$ is zero), but $W_K$ is not.
+
+Let $(G_K,W_K)$ denote the weighted digraph obtained by deleting the $r+1$ 
+vertex
+from $G_{\K}$, together with all edges to and from it. We let $V_K$ and $E_K$
+denote the set of vertices and edges of $G_K$.
+\end{definition}
+
+It is clear from the definition that from every vertex of $G_{\K}$, the blue
+outdegree is $1$, the red outdegree is $1$, and the blue indegree is $1$.
+It is also clear that $G_{\K}$ has a Hamiltonian cycle that consists of all
+the blue edges. We denote by $e_i^b$ ($e_i^r$) the blue (red) edge {\em leaving
+vertex} $i$.
+
+\begin{example}
+\lbl{ex.1}
+For the figure 8 knot we have:
+$$
+\psdraw{figure8}{1.5in}
+$$
+Its arc-graph $G_{\K}$ with the ordering and signs
+of its vertices and  $G_K=G_{\K}-\{4\}$ are given by 
+$$
+\hspace{-1cm}
+G_{\K}=
+\psdraw{arc-graph2}{1.3in} \qquad G_K=
+\psdraw{arc-graph-broken2}{0.3in}
+$$  
+where the blue edges are the ones with circles on them. Moreover, 
+$$
+W_{\K}=
+\left[
+\begin{matrix}
+ 0 & t & 0   & 1-t \\
+ 1-\bt & 0     & \bt & 0   \\
+ 0 & 1-t   & 0   & t \\
+ \bt & 0   & 1-\bt   & 0   
+\end{matrix}
+\right] .
+$$
+
+\end{example}
+
+\begin{definition}
+\lbl{def.jj}
+Let $\K$ be a knot projection. The {\em writhe} of $\K$, $\w(\K)$, is the 
+sum of the signs of the
+crossings of $\K$, and $\rot(K)$ is the {\em rotation number} of $K$, 
+defined as follows: {\em smoothen} all crossings of $\K$, and consider the 
+oriented circles that appear; one of them is special, marked by $\star$. 
+The number of 
+circles different from the special one whose orientation agrees with the 
+special one, minus the number of circles whose orientation is opposite to the
+special one is defined to be $\rot(K)$. 
+We further let $\d(K,n)= 1/2 (n^2\w(\K)+n\rot(K))$, and $\d(K)= \d(K,1)$.
+\end{definition}
+
+We remark that we define $\rot(e)$ for each edge $e$ of $G_{\K}$ in 
+Definition \ref{def.jjj}.

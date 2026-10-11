@@ -99,7 +99,7 @@ parameter manifold:
    evaluation.
 3. **Do not conflate with the named elliptic curves.** The modular
    $\tau$ here is **not** the period $\tau$ of the Descartes/color curve
-   $\mathcal{E}_q$ ([`prop:descartes-elliptic-curve`](../predicted-spectra/elliptic-stability-locus.md)):
+   $\mathcal{E}_q$ ([`prop:descartes-elliptic-curve`](../brings-surface/descartes-elliptic-curve.md)):
    the modular nome is $q_0^{-1} \approx 0.90$ (near the cusp) while
    $\mathcal{E}_q$'s period nome is $\approx 0.0029$ (deep in the
    fundamental domain) — a $\sim\!312\times$ mismatch.

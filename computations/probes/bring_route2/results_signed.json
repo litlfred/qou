@@ -1,0 +1,448 @@
+{
+ "proton_terms": {
+  "proton term s0^+1 s1^+1": {
+   "word": [
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s0^+1",
+    "s1^+1",
+    "s0^+1",
+    "s0^+1"
+   ],
+   "sl2z": [
+    [
+     -21,
+     -8
+    ],
+    [
+     -13,
+     -5
+    ]
+   ],
+   "trace": -26,
+   "p1f2_fixed": [
+    "0"
+   ],
+   "status": "loop",
+   "L": "9.206366619015833319948345"
+  },
+  "proton term s0^+1 s1^-1": {
+   "word": [
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s0^+1"
+   ],
+   "sl2z": [
+    [
+     47,
+     128
+    ],
+    [
+     29,
+     79
+    ]
+   ],
+   "trace": 126,
+   "p1f2_fixed": [
+    "0"
+   ],
+   "status": "loop",
+   "L": "15.94310614376239537061373"
+  },
+  "proton term s0^-1 s1^+1": {
+   "word": [
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s0^-1",
+    "s1^+1",
+    "s0^+1",
+    "s0^+1"
+   ],
+   "sl2z": [
+    [
+     5,
+     18
+    ],
+    [
+     3,
+     11
+    ]
+   ],
+   "trace": 16,
+   "p1f2_fixed": [
+    "0"
+   ],
+   "status": "loop",
+   "L": "6.367650371430213912198113"
+  },
+  "proton term s0^-1 s1^-1": {
+   "word": [
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s0^-1",
+    "s1^-1",
+    "s0^+1",
+    "s0^+1"
+   ],
+   "sl2z": [
+    [
+     21,
+     50
+    ],
+    [
+     13,
+     31
+    ]
+   ],
+   "trace": 52,
+   "p1f2_fixed": [
+    "0"
+   ],
+   "status": "loop",
+   "L": "20.44416022260005416268225"
+  },
+  "neutron term s0^+1 s0^+1": {
+   "word": [
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s0^+1"
+   ],
+   "sl2z": [
+    [
+     47,
+     128
+    ],
+    [
+     29,
+     79
+    ]
+   ],
+   "trace": 126,
+   "p1f2_fixed": [
+    "0"
+   ],
+   "status": "loop",
+   "L": "15.94310614376239537061373"
+  },
+  "neutron term s0^+1 s0^-1": {
+   "word": [
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s0^-1",
+    "s1^-1",
+    "s0^+1",
+    "s0^+1"
+   ],
+   "sl2z": [
+    [
+     21,
+     50
+    ],
+    [
+     13,
+     31
+    ]
+   ],
+   "trace": 52,
+   "p1f2_fixed": [
+    "0"
+   ],
+   "status": "loop",
+   "L": "20.44416022260005416268225"
+  },
+  "neutron term s0^-1 s0^+1": {
+   "word": [
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s0^+1"
+   ],
+   "sl2z": [
+    [
+     21,
+     50
+    ],
+    [
+     13,
+     31
+    ]
+   ],
+   "trace": 52,
+   "p1f2_fixed": [
+    "0"
+   ],
+   "status": "loop",
+   "L": "20.44416022260005416268225"
+  },
+  "neutron term s0^-1 s0^-1": {
+   "word": [
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^-1",
+    "s0^-1",
+    "s1^-1",
+    "s0^+1",
+    "s0^+1"
+   ],
+   "sl2z": [
+    [
+     -5,
+     -28
+    ],
+    [
+     -3,
+     -17
+    ]
+   ],
+   "trace": -22,
+   "p1f2_fixed": [
+    "0"
+   ],
+   "status": "no loop: elliptic or parabolic in Delta(2,4,5)"
+  }
+ },
+ "sign_erased_nuc11_used_by_route2": {
+  "word": [
+   "s0^+1",
+   "s1^+1",
+   "s0^+1",
+   "s1^+1",
+   "s0^+1",
+   "s1^+1",
+   "s0^+1",
+   "s0^+1",
+   "s1^+1",
+   "s0^+1",
+   "s0^+1"
+  ],
+  "sl2z": [
+   [
+    1,
+    0
+   ],
+   [
+    1,
+    1
+   ]
+  ],
+  "trace": 2,
+  "p1f2_fixed": [
+   "0"
+  ],
+  "status": "no loop: elliptic or parabolic in Delta(2,4,5)"
+ },
+ "gamma_gamma_words": {
+  "(s0 s1^-1)^1": {
+   "word": [
+    "s0^+1",
+    "s1^-1"
+   ],
+   "sl2z": [
+    [
+     2,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "trace": 3,
+   "p1f2_fixed": [],
+   "status": "no loop: permutation does not fix exactly one point (route 2 rule)"
+  },
+  "(s0 s1^-1)^2": {
+   "word": [
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1"
+   ],
+   "sl2z": [
+    [
+     5,
+     3
+    ],
+    [
+     3,
+     2
+    ]
+   ],
+   "trace": 7,
+   "p1f2_fixed": [],
+   "status": "no loop: permutation does not fix exactly one point (route 2 rule)"
+  },
+  "(s0 s1^-1)^3": {
+   "word": [
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1"
+   ],
+   "sl2z": [
+    [
+     13,
+     8
+    ],
+    [
+     8,
+     5
+    ]
+   ],
+   "trace": 18,
+   "p1f2_fixed": [
+    "inf",
+    "0",
+    "1"
+   ],
+   "status": "no loop: permutation does not fix exactly one point (route 2 rule)"
+  },
+  "(s0 s1^-1)^4": {
+   "word": [
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1"
+   ],
+   "sl2z": [
+    [
+     34,
+     21
+    ],
+    [
+     21,
+     13
+    ]
+   ],
+   "trace": 47,
+   "p1f2_fixed": [],
+   "status": "no loop: permutation does not fix exactly one point (route 2 rule)"
+  },
+  "(s0 s1^-1)^5": {
+   "word": [
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1"
+   ],
+   "sl2z": [
+    [
+     89,
+     55
+    ],
+    [
+     55,
+     34
+    ]
+   ],
+   "trace": 123,
+   "p1f2_fixed": [],
+   "status": "no loop: permutation does not fix exactly one point (route 2 rule)"
+  },
+  "(s0 s1^-1)^6": {
+   "word": [
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1",
+    "s0^+1",
+    "s1^-1"
+   ],
+   "sl2z": [
+    [
+     233,
+     144
+    ],
+    [
+     144,
+     89
+    ]
+   ],
+   "trace": 322,
+   "p1f2_fixed": [
+    "inf",
+    "0",
+    "1"
+   ],
+   "status": "no loop: permutation does not fix exactly one point (route 2 rule)"
+  }
+ },
+ "checks": {
+  "vertex_image_is_[[2,1],[1,1]]": true,
+  "shadow_reproduces_route2_nuc11_image": true,
+  "all_four_proton_terms_have_a_loop": true,
+  "expansion_reproduces_builder_proton": true,
+  "expansion_reproduces_builder_neutron": true,
+  "no_gamma_gamma_word_gets_a_loop_under_route2_rule": true
+ },
+ "builder_max_deviation": {
+  "proton": "1.3364e-51",
+  "neutron": "2.6728e-51"
+ },
+ "neutron_terms_with_a_loop": 3
+}

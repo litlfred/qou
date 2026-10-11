@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/the-period-matrix-of-bring-s-curve-1hik02mwva/sections/sec-001",
   "@type": [
     "doco:Section"
   ],
-  "title": "(l -",
-  "pageStart": 13,
-  "pageEnd": 22,
+  "title": "This means that under an integral change of basis Ω",
+  "pageStart": 4,
+  "pageEnd": 4,
   "contains": [
     "library/the-period-matrix-of-bring-s-curve-1hik02mwva/blocks/prose-sec-001"
   ],
-  "derivedFrom": "library/the-period-matrix-of-bring-s-curve-1hik02mwva/manifest",
-  "sourceDocument": "library/the-period-matrix-of-bring-s-curve-1hik02mwva/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/the-period-matrix-of-bring-s-curve-1hik02mwva/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/the-period-matrix-of-bring-s-curve-1hik02mwva/manifest.jsonld",
   "provenance": "ingested"
 }

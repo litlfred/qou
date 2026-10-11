@@ -1,17 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/bn/sections/sec-006",
   "@type": [
     "doco:Section"
   ],
-  "title": "The complement of the image fq(T ∗",
-  "pageStart": 7,
-  "pageEnd": 8,
+  "title": "The period map",
+  "pageStart": 27,
+  "pageEnd": 32,
   "contains": [
-    "library/bn/blocks/prose-sec-006",
-    "library/bn/blocks/rem-sec-006-01"
+    "library/bn/blocks/prose-sec-006"
   ],
-  "derivedFrom": "library/bn/manifest",
-  "sourceDocument": "library/bn/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bn/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bn/manifest.jsonld",
   "provenance": "ingested"
 }

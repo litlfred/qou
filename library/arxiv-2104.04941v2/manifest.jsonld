@@ -1,0 +1,70 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2104.04941v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Fock–Goncharov Coordinates for Semisimple Lie Groups",
+  "contains": [
+    "library/arxiv-2104.04941v2/sections/sec-000",
+    "library/arxiv-2104.04941v2/sections/sec-001",
+    "library/arxiv-2104.04941v2/sections/sec-002",
+    "library/arxiv-2104.04941v2/sections/sec-003",
+    "library/arxiv-2104.04941v2/sections/sec-004",
+    "library/arxiv-2104.04941v2/sections/sec-005",
+    "library/arxiv-2104.04941v2/sections/sec-006",
+    "library/arxiv-2104.04941v2/sections/sec-007",
+    "library/arxiv-2104.04941v2/sections/sec-008",
+    "library/arxiv-2104.04941v2/sections/sec-009",
+    "library/arxiv-2104.04941v2/sections/sec-010",
+    "library/arxiv-2104.04941v2/sections/sec-011",
+    "library/arxiv-2104.04941v2/sections/sec-012",
+    "library/arxiv-2104.04941v2/sections/sec-013",
+    "library/arxiv-2104.04941v2/sections/sec-014",
+    "library/arxiv-2104.04941v2/sections/sec-015",
+    "library/arxiv-2104.04941v2/sections/sec-016",
+    "library/arxiv-2104.04941v2/sections/sec-017",
+    "library/arxiv-2104.04941v2/sections/sec-018",
+    "library/arxiv-2104.04941v2/sections/sec-019",
+    "library/arxiv-2104.04941v2/sections/sec-020",
+    "library/arxiv-2104.04941v2/sections/sec-021",
+    "library/arxiv-2104.04941v2/sections/sec-022",
+    "library/arxiv-2104.04941v2/sections/sec-023",
+    "library/arxiv-2104.04941v2/sections/sec-024",
+    "library/arxiv-2104.04941v2/sections/sec-025",
+    "library/arxiv-2104.04941v2/sections/sec-026",
+    "library/arxiv-2104.04941v2/sections/sec-027"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2104.04941&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2104.04941v2",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2104.04941v2.pdf",
+    "source_sha256": "84426ed37754aa7887343b5506acf1f63f15468ac5c96155e62f81b461dc307f",
+    "pages": 55,
+    "arxiv": {
+      "id": "2104.04941",
+      "version": "2",
+      "primary_class": "math.GT",
+      "stamp_date": "21 Jan 2022"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

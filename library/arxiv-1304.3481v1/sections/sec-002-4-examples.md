@@ -8,2565 +8,1671 @@ pages: 35-68
 source_pdf: 1304.3481v1.pdf
 source_sha256: d0840f2775c0f761
 doc_brief: "Quadruply-graded colored homology of knots — W e conjecture the existence of four independent gradings in the colored HOMFLY homology."
+text_source: latex
+latex_prose_ratio: 0.93
+latex_coverage_ratio: 0.976
 ---
-In this section we give some examples of the quadruply-graded color ed HOM-
-FLY homology that exhibit all of the structure and satisfy all of the conjectures
-from the previous sections. This gives a highly non-trivial check of t he existence
-36 EUGENE GORSKY, SERGEI GUKOV, AND MARKO STO ˇSI ´C
-and consistency of such large and beautiful structure in the color ed HOMFLY ho-
-mology.
-4.1. T refoil. We start with the trefoil and its S2 and Λ 2 colored homologies.
-The uncolored HOMFLY homology of the trefoil is ([ 21]):
-(4.1) P (31)(a, q, t) = a2q−2 + a2q2t2 + a4t3.
-The uncolored homology is the only one where two t-gradings coincide, i.e.
-P (31)(a, q, tr, tc) =P (31)(a, q, t = trtc).
-From (4.1) we can get the value of the S-invariant of the trefoil (that we denote Σ
-in this paper):
-(4.2) Σ(3 1) = 2 .
-For easier visualization, triply-graded homologies are usually presen ted in a diagram
-form. A generator of ( a, q, t)-degree ( i, j, k) is presented as a dot in the ( q, a)-plane
-at the position ( j, i) and it is labeled by its t-degree k. The triply-graded homology
-of the trefoil is presented in a diagram on the left of the Figure 12 be low.
-0 2 −2
-0 2 −2
-3
-2
-a
-a
-q
-q
-2
-4 2
-0
-−2
-0
-2
-1 0 −1
-−2
-Figure 12. The uncolored homologies of the trefoil (left diagram)
-and ﬁgure-eight knot (right diagram).
-The (reduced) -colored HOMFLY polynomial of the trefoil knot is equal to:
-P (31)(a, q) = a4q−4 + a4q2 + a4q4 + a4q8− a6− a6q2− a6q6− a6q8 + a8q6 .
-The value of the four-variable -colored superpolynomial (the Poincar´ e polynomial
-of the quadruply-graded H (31)) of the trefoil is given by
-P (31)(a, q, tr, tc) = a4(q−4 + q2t2
-rt4
-c + q4t2
-rt6
-c + q8t4
-rt8
-c)+
-(4.3) a6(t3
-rt5
-c + q2t3
-rt7
-c + q6t5
-rt9
-c + q8t5
-rt11
-c ) + a8q6t6
-rt12
-c .
-The triply-graded S2-homology of the trefoil that is computed in [ 42] is obtained
-from (4.1) by setting tc = 1, whereas the homology obtained in [ 2] or [20] is obtained
-after setting tr = 1.
-QUADRUPLY-GRADED COLORED HOMOLOGY OF KNOTS 37
-For the second-symmetric representation the Q-grading is expressed as Q =
-q + tr− tc. Then the tilde-version, i.e. the quadruply-graded -homology in
-(a, Q, tr, tc)-gradings is given by:
-~P (31)(a, Q, tr, tc) = a4(Q−4 + t2
-rt4
-c + t2
-rt6
-c + Q4t4
-rt8
-c)+
-(4.4) a6(Q−2t3
-rt5
-c + Q−2t3
-rt7
-c + Q2t5
-rt9
-c + Q2t5
-rt11
-c ) + a8t6
-rt12
-c .
-We note that all generators have the same δ-grading equal to +2. Moreover, the
-last homology is self-symmetric: in terms of the Poincar´ e polynomial this amounts
-to:
-~P
-(31)(a, Q−1t−1
-r t−2
-c , tr, tc) = ~P (31)(a, Q, tr, tc).
-The quadruply-graded homologies we represent in the form of a diag ram in the
-following way: for each generator we place a dot in the ( q, a)-plane. If ( q, a)-degree
-of a generator x is ( i, j) then we put a dot at a point with coordinates ( i, j). The
-two t-degrees are drawn as labels near the dot: the tr-grading is written above the
-dot (and colored light green), while the tc-grading of a generator is written below
-the corresponding dot. In such a way, the homology H (31) is presented in Figure
-13.
-0
-a
-q
-−4 −2 2 4 6 8 −6
-4
-6
-8
-0
-0
-5 7
-12
-9 11
-8 6 4
-5
-6
-5
-4 2
-3 3
-2
-Figure 13. The S2-colored homology of the trefoil knot.
-We can see all ﬁve non-trivial colored diﬀerentials on this diagram: Th ere are
-two canceling ones dcol
-1|0 and dcol
-0|2, represented by blue and red arrows, respectively,
-both leaving a single generator. Furthermore the two sl(n|m) colored diﬀerentials
-dcol
-1|1 (dash-and-dot arrows) and dcol
-0|3 (dashed arrows), both leaving the homology
-isomorphic to H
-(31). And ﬁnally the universal one d← (magenta arrows), also
-leaving the homology isomorphic to H (31). We note that the re-gradings are
-exactly as predicted in Sections 3.5 and 3.7.
-The diagram for the tilde-version of the homology H (31) is shown in Figure
-14. The reﬁned exponential growth is indeed satisﬁed:
-~P (31)(a, Q = q, tr = t, tc = 1) =
-(
-P (31)(a, q, t)
-) 2
-.
-38 EUGENE GORSKY, SERGEI GUKOV, AND MARKO STO ˇSI ´C
-4
-6
-8
-−6 −4 −2 0 2 4 6 0
-0
-0
-5
-3
-7
-3
-4
-2
-6
-2
-12
-6
-9
-5
-11
-5
-8
-4
-a
-Q
-Figure 14. The tilde-version of the S2-colored homology of the
-trefoil knot ( Q = q + tr− tc).
-As for the second antisymmetric representation, we have that th e Λ 2-colored HOM-
-FLY polynomial of the trefoil is given by
-(4.5) P
-(31)(a, q) = a4(q−8 + q−4 + q−2 + q4)− a6(q−8 + q−6 + q−2 + 1) + a8q−6
-The Poincar´ e polynomial of the quadruply-graded homologyH (31) equals
-P (31)(a, q, tr, tc) = a4(q−8 + q−4t6
-rt2
-c + q−2t4
-rt2
-c + q4t8
-rt4
-c)+
-(4.6) a6(q−8t7
-rt3
-c + q−6t5
-rt3
-c + q−2t11
-r t5
-c + t9
-rt5
-c) + a8q−6t12
-r t6
-c.
-The corresponding diagram, together with the colored diﬀerentials , is presented in
-Figure 15. By comparing Figures 13 and 15 one can immediately see the mirror
-5
-9
-5
-11
-2
-4
-2
-6
-6
-12
-4
-8
-0
-0
-3
-7
-3
-5
-a
-q
-−10 −8 −6 −4 −2 0 2 4
-4
-6
-8
-Figure 15. The Λ 2-colored homology of the trefoil knot.
-QUADRUPLY-GRADED COLORED HOMOLOGY OF KNOTS 39
-symmetry (3.11). This symmetry sends q↦→−q, and commutes with the action
-of the colored diﬀerentials, as can be seen from the diagrams. We re mark that all
-re-gradings from the isomorphisms induced by colored diﬀerentials a re exactly as
-predicted in Sections 3.5 and 3.7.
-Mirror symmetry is even better seen on the tilde-version of the hom ology. For
-the second-antisymmetric representation , the Q-grading is obtained by Q = (q +
-tr− tc)/2, and so we get:
-~P (31)(a, Q, tr, tc) = a4(Q−4 + t6
-rt2
-c + t4
-rt2
-c + Q4t8
-rt4
-c)+
-(4.7) a6(Q−2t7
-rt3
-c + Q−2t5
-rt3
-c + Q2t11
-r t5
-c + Q2t9
-rt5
-c) + a8t12
-r t6
-c .
-Its diagram is given in Figure 16. Comparison of Figures 14 and 16 show s that the
-4
-6
-8
-−6 −4 −2 0 2 4 6 0
-6
-12
-0
-0
-4
-8
-2
-4
-2
-6
-3
-5
-3
-7
-5
-9
-5
-11
-a
-Q
-Figure 16. The tilde-version of the Λ 2-colored homology of the
-trefoil knot ( Q = q+tr−tc
-2 ).
-two are related by a simple exchange of tr and tc gradings, as predicted by mirror
-symmetry (3.10). Also, one can easily check that the explicit form of the other
-mirror symmetry (3.11) is satisﬁed, too.
-Before passing to further examples, we note that with the explicit m irror sym-
-metries, whenever we know the quadruply-graded λ-colored homology of a knot K,
-then we automatically have λt-colored homology of K, as well:
-~P λt
-(K)(a, Q, tr, tc) = ~P λ(K)(a, Q, tc, tr).
-Therefore, in the remaining examples we present the results only fo r one diagram
-of each pair, λ and λt.
-4.2. Figure-eight knot. We emphasize that our conjectures and predicted
-structures are for all knots, and not just torus knots. In part icular, all homologies
-computed in [ 42] (that includes S2-colored homologies of all prime knots with up
-to 6 crossings) can be extended to quadruply-graded homologies w hich have all of
-the wanted properties. Here we present the explicit expressions f or the S2-colored
-40 EUGENE GORSKY, SERGEI GUKOV, AND MARKO STO ˇSI ´C
-homology of the ﬁgure-eight knot. The uncolored homology of the ﬁ gure-eight knot
+\label{sec:examples}
+
+In this section we give some examples of the quadruply-graded colored HOMFLY homology that exhibit all of the structure and satisfy all of the conjectures from the previous sections. This gives a highly non-trivial check of the existence and consistency of such large and beautiful structure in the colored HOMFLY homology.
+
+
+
+\subsection{Trefoil}
+\label{sec:trefoil}
+
+We start with the trefoil and its $S^2$ and $\Lambda^2$ colored homologies.
+The uncolored HOMFLY homology of the trefoil is (\cite{DGR}):
+\be\label{fund31}
+\CP^{\tableau1}(3_1)(a,q,t)=a^2q^{-2}+a^2q^2t^2+a^4t^3.
+\ee
+The uncolored homology is the only one where two $t$-gradings coincide, i.e.
+\[
+\CP^{\tableau1}(3_1)(a,q,t_r,t_c)=\CP^{\tableau1}(3_1)(a,q,t=t_rt_c).
+\]
+From (\ref{fund31}) we can get the value of the $S$-invariant
+of the trefoil (that we denote $\Sigma$ in this paper):
+\be
+\Sigma(3_1)=2.
+\ee
+For easier visualization, triply-graded homologies are usually presented in a diagram form. A generator of $(a,q,t)$-degree $(i,j,k)$
+is presented as a dot in the $(q,a)$-plane at the position $(j,i)$ and it
+is labeled by its $t$-degree $k$. The triply-graded homology of the
+trefoil is presented in a diagram on the left of the Figure \ref{fig:colored3141} below.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=4.5in]{colored3141}
+\caption{The uncolored homologies of the trefoil (left diagram) and figure-eight knot (right diagram).}
+\label{fig:colored3141}
+\end{figure}
+
+The (reduced) $\tableau2$-colored HOMFLY polynomial of the trefoil knot is equal to:
+\[
+P^{\tableau2}(3_1)(a,q) = a^{4}q^{-4} + a^4q^2 + a^4q^4 + a^4q^8 - a^6 - a^6q^2 - a^6 q^6 - a^6 q^8 + a^8q^6 \,.
+\]
+The value of the four-variable $\tableau2$-colored superpolynomial (the Poincar\'e polynomial of the quadruply-graded $\CH^{\tableau2}(3_1)$) of the trefoil is given by
+\be\label{quad31}
+\CP^{\tableau2}(3_1)(a,q,t_r,t_c)= a^4(q^{-4} +q^2t_r^2t_c^4+q^4t_r^2t_c^6 +q^8t_r^4t_c^8) + $$ $$ a^6 (t_r^3t_c^5+q^2t_r^3t_c^7 + q^6t_r^5t_c^9+q^8t_r^5t_c^{11}) +a^8q^6t_r^6t_c^{12}.
+\ee
+The triply-graded $S^2$-homology of the trefoil that is computed in \cite{GS} is obtained from (\ref{quad31}) by setting $t_c=1$, whereas the homology obtained in \cite{AShakirov} or \cite{DMMSS} is obtained after setting $t_r=1$.
+
+For the second-symmetric representation the $Q$-grading is expressed as $Q=q+t_r-t_c$. Then the tilde-version, i.e. the quadruply-graded $\tableau2$-homology in $(a,Q,t_r,t_c)$-gradings
 is given by:
-P (41)(a, q, t) = a2t2 + (q−2t−1 + 1 + q2t) + a−2t−2,
-and its is S-invariant is Σ(4 1) = 0. The triply-graded homology of the ﬁgure-
-eight knot is presented in a diagram on the right of the Figure 12. The -colored
-HOMFLY polynomial of the ﬁgure-eight knot equals to:
-P (41)(a, q) = a4q4 + a2(−q−2 + q2− q4− q6) + (q−6− q−4 + 3− q4 + q6)+
-a−2(−q−6− q−4 + q−2− q2) + a−4q−4.
-The quadruply-graded -colored HOMFLY homology of the ﬁgure-eight knot that
-we computed is given by:
-P
-(41)(a, q, tr, tc) = a4q4t4
-rt8
-c + a2(q−2trtc + trt3
-c + t2
-rt2
-c + q2t2
-rt4
-c + q4t3
-rt5
-c + q6t3
-rt7
-c )+
-+(q−6t−2
-r t−4
-c +q−4t−1
-r t−3
-c +q−2t−1
-r t−1
-c +q−2t−2
-c +3+ q2t2
-c +q2trtc +q4trt3
-c +q6t2
-rt4
-c )+
-+a−2(q−6t−3
-r t−7
-c +q−4t−3
-r t−5
-c +q−2t−2
-r t−4
-c +t−2
-r t−2
-c +t−1
-r t−3
-c +q2t−1
-r t−1
-c )+a−4q−4t−4
-r t−8
-c .
-It is presented in a diagram form in Figure 17. All generators have th e same δ-
-0
-0
-0
-0
-0
-0
-2
-0
-1
-1
-3
-1
-4
-2
-1
-1
-3
-1
-2
-2
-4
-2
-5
-3
-7
-3
-8
-4
-−1
-−1
-−2
-−2
-0
-2
-4
-a
-−6 −4 −2 0 2 4 6
-q−4
-−2
-0
-−8
-−4
-−7
-−3
-−5
-−3
-−4
-−2
-−3
-−1
-−1
-−1
-−4
-−2
-−3
-−1
-−2
-Figure 17. The S2-colored homology of the ﬁgure-eight knot.
-degree 0, in accordance with the fact that 4 1 is a thin knot. The homology H (41)
-has ﬁve colored diﬀerentials: two canceling ones dcol
-1|0 and dcol
-0|2, further two colored
-sl(m|n) diﬀerentials dcol
-1|1 and dcol
-0|3 both leaving homology isomorphic to H
-(41) and
-the universal one d← also leaving homology isomorphic to H (41). All re-gradings
-are as given in Sections 3.5 and 3.7.
-The Q-grading is given by Q = q +tr−tc. So, the tilde-version of the -colored
-HOMFLY homology of the ﬁgure-eight knot becomes:
-~P (41)(a, Q, tr, tc) = a4t4
-rt8
-c +a2(Q−2trtc+Q−2trt3
-c +t2
-rt2
-c +t2
-rt4
-c +Q2t3
-rt5
-c +Q2t3
-rt7
-c )+
-QUADRUPLY-GRADED COLORED HOMOLOGY OF KNOTS 41
-(Q−4t−2
-r t−4
-c + Q−2t−1
-r t−3
-c + Q−2t−1
-r t−1
-c + t−2
-c + 3 + t2
-c + Q2trtc + Q2trt3
-c + Q4t2
-rt4
-c )+
-a−2(Q−2t−3
-r t−7
-c +Q−2t−3
-r t−5
-c +t−2
-r t−4
-c +t−2
-r t−2
-c +Q2t−1
-r t−3
-c +Q2t−1
-r t−1
-c )+ a−4t−4
-r t−8
-c .
-The tilde-version is presented in Figure 18 in ( a, Q, tr, tc)-gradings. It indeed sat-
-4
-2
-3
-1
-1
-1
-5
-3
-7
-3
-0
-0
-0
-0
-0
-0 0
-−2 2
-0
-1
-1
-3
-1
-8
-4
-2
-2
-4
-2
-−7
-−3
-−5
-−3
-−3
-−1
-−1
-−1
-−4
-−2
-−2
-−2
-−8
-−4
-−4
-−2
-−3
-−1
-−1
-−1
-0
-2
-4
-a
-−6 −4 −2
-−4
-−2
-2 4
-Q
-0
-Figure 18. The tilde-version of S2-colored homology of the ﬁgure-
-eight knot.
-isﬁes self-symmetry (3.8) and reﬁned exponential growth (3.36).
-4.3. (3,4)-torus knot. In this section we describe the quadruply-graded S2
-colored homology of the (3,4)-torus knot T3,4 (i.e. 8 19 knot) and show that it
-satisﬁes all of the desired properties. This knot is a thick knot, and has nontrivial
-diﬀerential d1|1 (i.e. d0) on the uncolored homology, which makes this a highly-
-nontrivial consistency check of all predicted properties. The unc olored homology
-of T3,4 is given by [ 21]:
-P (T3,4)(a, q, t) = a6q−6 + a8q−4t3 + a6q−2t2 + a8t5 + a6q2t4 + a8q4t7 + a6q6t6+
-+a10t8 + a8q−2t5 + a8q2t7 + a6t4.
-Its S-invariant is Σ( T3,4) = 6. There is a non-trivial diﬀerential d0 (or d1|1) on
-H (T3,4) of ( a, q, t)-degree (−2, 0,−3) leaving 5-dimensional homology isomorphic
-to the knot Floer homology of T3,4:
-(4.8) ( H (T3,4), d1|1) = a6q−6 + a8q−4t3 + a6t4 + a8q4t7 + a6q6t6.
-42 EUGENE GORSKY, SERGEI GUKOV, AND MARKO STO ˇSI ´C
-The quadruply-graded -colored homology of T3,4 that we have computed has 121
-generators. Its Poincar´ e polynomial is given by:
-~P (T3,4)(a, Q, tr, tc) = a12(Q−12 + Q−8t2
-r(t4
-c + t6
-c) + Q−6t4
-r(t8
-c + t10
-c )+
-Q−4t4
-r(t8
-c +t10
-c +t12
-c )+Q−2t6
-r(t12
-c +t14
-c )+t6
-r(t12
-c +t14
-c +t16
-c +t18
-c )+t8
-rt16
-c +Q2t8
-r(t16
-c +t18
-c )+
-Q4t8
-r(t16
-c + t18
-c + t20
-c ) + Q6t10
-r (t20
-c + t22
-c ) + Q8t10
-r (t20
-c + t22
-c ) + Q12t12
-r t24
-c )+
-a14(Q−10t3
-r(t5
-c + t7
-c) + Q−8t5
-r(t9
-c + t11
-c ) + Q−6t5
-r(t9
-c + 2t11
-c + t13
-c )+
-Q−4t7
-r(2t13
-c + 3t15
-c + t17
-c ) + Q−2t7
-r(t13
-c + 2t15
-c + 2t17
-c + t19
-c )+
-Q−2t9
-r(t17
-c +t19
-c )+t9
-r(2t17
-c +3t19
-c +t21
-c )+Q2t9
-r(t17
-c +2t19
-c +2t21
-c +t23
-c )+Q2t11
-r (t21
-c +t23
-c )+
-Q4t11
-r (2t21
-c +3t23
-c +t25
-c )+Q6t11
-r (t21
-c +2t23
-c +t25
-c )+Q8t13
-r (t25
-c +t27
-c )+Q10t13
-r (t25
-c +t27
-c ))+
-+ a16(Q−8t6
-rt12
-c + Q−6t8
-r(t14
-c + 2t16
-c + t18
-c ) + Q−4t8
-r(t16
-c + t18
-c ) + Q−4t10
-r t20
-c +
-Q−2t10
-r (t18
-c + 3t20
-c + 2t22
-c ) + t10
-r (t20
-c + t22
-c + t24
-c ) + t12
-r (t22
-c + 2t24
-c + t26
-c )+
-Q2t12
-r (t22
-c +3t24
-c +2t26
-c )+Q4t12
-r (t24
-c +t26
-c )+Q4t14
-r t28
-c +q6t14
-r (t26
-c +2t28
-c +t30
-c )+q8t14
-r t28
-c )+
-+ a18(Q−4t11
-r (t21
-c + t23
-c )+ Q−2t13
-r (t25
-c + t27
-c ) + t13
-r (t25
-c + t27
-c ) + Q2t15
-r (t29
-c + t31
-c )+
-+ Q4t15
-r (t29
-c + t31
-c )) + a20t16
-r t32
-c .
-The Poincar´ e polynomial in (a, q, tr, tc)-gradings can be obtained from the above
-expression by:
-P
-(T3,4)(a, q, tr, tc) = ~P (T3,4)(a, Q = q, tr = trq−1, tc = tcq).
-This homology satisﬁes all of the expected properties: there are f our colored sl(m|n)
-diﬀerentials dcol
-1|0, dcol
-0|2, dcol
-1|1 and dcol
-0|3, with the properties and re-gradings exactly
-matching the predicted behaviour from Section 3.5. Moreover, the re exists a univer-
-sal colored diﬀerential d← as predicted in Section 3.7. Furthermore, the homology
-~H
-(T3,4) satisﬁes the self-symmetry property:
-~P (T3,4)(a, Q−1t−1
-r t−2
-c , tr, tc) = ~P (T3,4)(a, Q, tr, tc).
-It also satisﬁes the reﬁned exponential growth property:
-~P (T3,4)(a, Q = q, tr = t, tc = 1) =
-(
-P (T3,4)(a, q, t)
-) 2
-.
-Moreover, since HFK diﬀerential d0 onH (T3,4) is nontrivial, this time the HFK-
-like exponential growth property (3.44) is giving a new relation on the homolo-
-gies. Indeed, there exists a diﬀerential d1|2 on ~H (T3,4) of ( a, Q, tr, tc)-degree
-(−2, 0,−3,−5), so that the homology H∗(~H (T3,4), d1|2) is 25-dimensional with
-the following Poincar´ e polynomial:
-(~H (T3,4), d1|2)(a, Q, tr, tc) = a12(Q−12 + Q−6t4
-r(t8
-c + t10
-c ) +t6
-r(t16
-c + t18
-c ) +t8
-rt16
-c +
-Q6t10
-r (t20
-c + t22
-c ) + Q12t12
-r t24
-c ) + a14(Q−10t3
-r(t5
-c + t7
-c) + Q−4t7
-r(t13
-c + t15
-c )+
-Q−2t7
-r(t17
-c + t19
-c ) + Q2t9
-r(t21
-c + t23
-c ) + Q4t11
-r (t21
-c + t23
-c ) + Q10t13
-r (t25
-c + t27
-c ))+
-+ a16(Q−8t6
-rt12
-c + t10
-r (t22
-c + t24
-c ) + Q8t14
-r t28
-c ).
+\be\label{tilquad31}
+\tilde{\CP}^{\tableau2}(3_1)(a,Q,t_r,t_c)= a^4(Q^{-4} +t_r^2t_c^4+t_r^2t_c^6 +Q^4t_r^4t_c^8) +$$ $$ a^6 (Q^{-2}t_r^3t_c^5+Q^{-2}t_r^3t_c^7 + Q^2t_r^5t_c^9+Q^2t_r^5t_c^{11}) +a^8t_r^6t_c^{12}.
+\ee
+We note that all generators have the same $\delta$-grading equal to  $+2$. Moreover, the last homology is self-symmetric: in terms of the Poincar\'e polynomial this amounts to:
+\[
+\tilde{\CP}^{\tableau2}(3_1)(a,Q^{-1}t_r^{-1}t_c^{-2},t_r,t_c)=\tilde{\CP}^{\tableau2}(3_1)(a,Q,t_r,t_c).
+\]
+The quadruply-graded homologies we represent in the form of a diagram in the following way: for each generator we place a dot in the $(q,a)$-plane. If $(q,a)$-degree of a generator $x$ is $(i,j)$ then
+we put a dot at a point with coordinates $(i,j)$. The two $t$-degrees are drawn as labels near the dot: the $t_r$-grading is written above the dot (and colored light green), while the $t_c$-grading of a generator is written below the corresponding dot. In such a way, the homology $\CH^{\tableau2}(3_1)$ is presented in Figure \ref{fig:colored31}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=4.5in]{colored314}
+\caption{The $S^2$-colored homology of the trefoil knot.}
+\label{fig:colored31}
+\end{figure}
+
+We can see all five non-trivial colored differentials on this diagram:
+There are two canceling ones $d^{col}_{1|0}$ and  $d^{col}_{0|2}$, represented by blue and red arrows, respectively, both leaving a single generator.  Furthermore the two $sl(n|m)$ colored differentials $d^{col}_{1|1}$ (dash-and-dot arrows) and $d^{col}_{0|3}$ (dashed arrows), both leaving the homology isomorphic to $\CH^{\tableau1}(3_1)$. And finally the universal one $d^{\leftarrow}$ (magenta arrows), also leaving the homology isomorphic to $\CH^{\tableau1}(3_1)$.
+We note that the re-gradings are exactly as predicted in Sections \ref{coldif} and \ref{unicolor}.
+
+The diagram for the tilde-version of the homology $\CH^{\tableau2}(3_1)$ is shown in Figure \ref{fig:colored315}.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=4.5in]{colored315}
+\caption{The tilde-version of the $S^2$-colored homology of the trefoil knot  ($Q=q+t_r-t_c$).}
+\label{fig:colored315}
+\end{figure}
+The refined exponential growth is indeed satisfied:
+\[
+\tilde{\CP}^{\tableau2}(3_1)(a,Q=q,t_r=t,t_c=1)=\left(\CP^{\tableau1}(3_1)(a,q,t)\right)^2.
+\]
+As for the second antisymmetric representation, we have that
+the $\Lambda^2$-colored HOMFLY polynomial of the trefoil is given by
+\be
+P^{\tableau{1 1}} (3_1)(a,q) \; = \;
+a^4 (q^{-8} + q^{-4} + q^{-2} + q^4)
+- a^6 (q^{-8} + q^{-6} + q^{-2} + 1)
++ a^8 q^{-6}
+\ee
+The Poincar\'e polynomial of the quadruply-graded homology $\CH^{\tableau{1 1}}(3_1)$ equals
+\be
+\CP^{\tableau{1 1}} (3_1) (a,q,t_r,t_c)\; = \;
+a^4 (q^{-8} + q^{-4} t_r^6t_c^2 + q^{-2} t_r^4t_c^2 + q^4 t_r^8t_c^4)
++$$ $$ a^6 (q^{-8} t_r^7t_c^3 + q^{-6} t_r^5 t_c^3 + q^{-2} t_r^{11}t_c^5 + t_r^9 t_c^5)
++ a^8 q^{-6} t_r^{12}t_c^6.
+\ee
+The corresponding diagram, together with the colored differentials, is presented in Figure \ref{fig:colored31A2}.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=4.5in]{colored314A2}
+\caption{The $\Lambda^2$-colored homology of the trefoil knot.}
+\label{fig:colored31A2}
+\end{figure}
+By comparing Figures \ref{fig:colored31} and \ref{fig:colored31A2}
+one can immediately see the mirror symmetry \eqref{mirsymnew}. This symmetry sends $q\mapsto -q$, and commutes with the action of the colored differentials, as can be seen from the diagrams. We remark that all re-gradings from the isomorphisms induced by colored differentials are exactly as predicted in Sections \ref{coldif} and \ref{unicolor}.
+
+Mirror symmetry is even better seen on the tilde-version of the homology. For the second-antisymmetric representation $\tableau{1 1}$, the $Q$-grading is obtained by $Q=(q+t_r-t_c)/2$, and so we get:
+\be
+\tilde{\CP}^{\tableau{1 1}} (3_1) (a,Q,t_r,t_c)\; = \;
+a^4 (Q^{-4} +  t_r^6t_c^2 + t_r^4t_c^2 + Q^4 t_r^8t_c^4)
++ $$ $$a^6 (Q^{-2} t_r^7t_c^3 + Q^{-2} t_r^5 t_c^3 + Q^{2} t_r^{11}t_c^5 + Q^2t_r^9 t_c^5)
++ a^8  t_r^{12}t_c^6.
+\ee
+Its diagram is given in Figure \ref{fig:colored315A2}.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=4.5in]{colored315A2}
+\caption{The tilde-version of the $\Lambda^2$-colored homology of the trefoil knot  ($Q=\frac{q+t_r-t_c}{2}$).}
+\label{fig:colored315A2}
+\end{figure}
+Comparison of Figures \ref{fig:colored315} and \ref{fig:colored315A2} shows that the two are related by a simple exchange of $t_r$ and $t_c$ gradings, as predicted by mirror symmetry (\ref{mirsym}). Also, one can easily check that the explicit
+form of the other mirror symmetry (\ref{mirsymnew}) is satisfied, too.
+
+
+
+Before passing to further examples, we note that with the explicit mirror symmetries, whenever we know the quadruply-graded $\lambda$-colored homology of a knot $K$, then we automatically have $\lambda^t$-colored homology of $K$, as well:
+\[
+\tilde{\CP}^{\lambda^t}(K)(a,Q,t_r,t_c)=\tilde{\CP}^{\lambda}(K)(a,Q,t_c,t_r).
+\]
+Therefore, in the remaining examples we present the results only for one diagram of each pair, $\lambda$ and $\lambda^t$.
+
+
+\subsection{Figure-eight knot}
+We emphasize that our conjectures and predicted structures are for all knots, and not just torus knots. In particular, all homologies computed in \cite{GS} (that includes $S^2$-colored homologies of all prime knots with up to 6 crossings) can be extended to quadruply-graded homologies which have all of the wanted properties. Here we present the explicit expressions for the $S^2$-colored homology of the figure-eight knot.
+The uncolored homology of the figure-eight knot is given by:
+\[
+\CP^{\tableau1}(4_1)(\a,q,t)=\a^2t^2+(q^{-2}t^{-1} + 1 + q^2 t) + \a^{-2}t^{-2},
+\]
+and its is $S$-invariant is $\Sigma(4_1)=0$.  The triply-graded homology of the figure-eight knot is presented in a diagram on the right of the Figure \ref{fig:colored3141}.
+The $\tableau2$-colored HOMFLY polynomial of the figure-eight knot equals to:
+$$
+P^{\tableau2}(4_1)(\a,q)=\a^4q^4 +\a^2 (-q^{-2} +q^2-  q^4- q^6) +(q^{-6}-q^{-4}+3-q^4+q^6)+$$ $$
+\a^{-2}(-q^{-6}-q^{-4}+q^{-2}-q^2) +\a^{-4}q^{-4}.
+$$
+The quadruply-graded $\tableau2$-colored HOMFLY homology of the figure-eight knot that we computed is given by:
+$$
+\CP^{\tableau2}(4_1)(\a,q,t_r,t_c)= \a^4q^4t_r^4t_c^8+\a^2 (q^{-2}t_rt_c+t_rt_c^3 +t_r^2t_c^2+ q^2t_r^2t_c^4 +  q^4t_r^3t_c^5+ q^6t_r^3t_c^7) +$$ $$
++(q^{-6}t_r^{-2}t_c^{-4} +q^{-4}t_r^{-1}t_c^{-3}+q^{-2}t_r^{-1}t_c^{-1} + q^{-2}t_c^{-2}+3+q^2t_c^2 + q^2t_rt_c+q^4t_rt_c^3+q^6t_r^2t_c^4)+$$ $$
++\a^{-2}(q^{-6}t_r^{-3}t_c^{-7}+q^{-4}t_r^{-3}t_c^{-5}+q^{-2}t_r^{-2}t_c^{-4}+t_r^{-2}t_c^{-2}+t_r^{-1}t_c^{-3}+q^2t_r^{-1}t_c^{-1}) + \a^{-4}q^{-4}t_r^{-4}t_c^{-8}.
+$$
+
+It is presented in a diagram form in Figure \ref{fig:colored41S2}.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=4.5in]{colored41}
+\caption{The $S^2$-colored homology of the figure-eight knot.}
+\label{fig:colored41S2}
+\end{figure}
+All generators have the same $\delta$-degree 0, in accordance with the fact that $4_1$ is a thin knot.
+The homology $\CH^{\tableau2}(4_1)$ has five colored differentials: two canceling ones $d^{col}_{1|0}$ and $d^{col}_{0|2}$, further two colored $sl(m|n)$ differentials $d^{col}_{1|1}$ and $d^{col}_{0|3}$ both leaving homology isomorphic to $\CH^{\tableau1}(4_1)$ and the universal one $d^{\leftarrow}$ also leaving  homology isomorphic to $\CH^{\tableau1}(4_1)$. All re-gradings are as given in Sections \ref{coldif} and \ref{unicolor}.
+
+The $Q$-grading is given by $Q=q+t_r-t_c$.
+So, the tilde-version of the $\tableau2$-colored HOMFLY homology of the figure-eight knot becomes:
+$$
+\tilde{\CP}^{\tableau2}(4_1)(\a,Q,t_r,t_c)=\a^4t_r^4t_c^8+\a^2 (Q^{-2}t_rt_c+Q^{-2}t_rt_c^3 +t_r^2t_c^2+ t_r^2t_c^4 +  Q^2t_r^3t_c^5+ Q^2t_r^3t_c^7) +$$ $$
+(Q^{-4}t_r^{-2}t_c^{-4} +Q^{-2}t_r^{-1}t_c^{-3}+Q^{-2}t_r^{-1}t_c^{-1} + t_c^{-2}+3+t_c^2 + Q^2t_rt_c+Q^2t_rt_c^3+Q^4t_r^2t_c^4)+$$ $$
+\a^{-2}(Q^{-2}t_r^{-3}t_c^{-7}+Q^{-2}t_r^{-3}t_c^{-5}+t_r^{-2}t_c^{-4}+t_r^{-2}t_c^{-2}+Q^2t_r^{-1}t_c^{-3}+Q^2t_r^{-1}t_c^{-1}) +\a^{-4}t_r^{-4}t_c^{-8}.
+$$
+The tilde-version is presented in Figure \ref{fig:colored41t2} in $(a,Q,t_r,t_c)$-gradings.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=4.5in]{colored41t}
+\caption{The tilde-version of $S^2$-colored homology of the figure-eight knot.}
+\label{fig:colored41t2}
+\end{figure}
+It indeed satisfies self-symmetry (\ref{selfsym}) and refined exponential growth (\ref{reduced refined exp growth for S}).
+
+
+\subsection{(3,4)-torus knot}
+In this section we describe the quadruply-graded $S^2$ colored homology of the (3,4)-torus knot $T_{3,4}$ (i.e. $8_{19}$ knot) and show that it satisfies all of the desired properties. This knot is a thick knot, and has nontrivial differential $d_{1|1}$ (i.e. $d_0$) on the uncolored homology, which makes this a highly-nontrivial consistency check of all predicted properties.
+The uncolored homology of $T_{3,4}$ is given by \cite{DGR}:
+$$
+\CP^{\tableau1}(T_{3,4})(\a,q,t)=\a^6q^{-6}+\a^8q^{-4}t^3+\a^6q^{-2}t^2+\a^8t^5+\a^6q^2t^4+\a^8q^{4}t^7+\a^6q^{6}t^6+ $$ $$
++\a^{10}t^8+\a^8q^{-2}t^5+\a^8q^{2}t^7+\a^6t^4.
+$$
+Its $S$-invariant is $\Sigma(T_{3,4})=6$.
+There is a non-trivial differential $d_0$ (or $d_{1|1}$) on $\CH^{\tableau1}(T_{3,4})$ of $(a,q,t)$-degree $(-2,0,-3)$ leaving 5-dimensional homology isomorphic to the knot Floer homology of $T_{3,4}$:
+
+\be
+(\CH^{\tableau1}(T_{3,4}),d_{1|1})=\a^6q^{-6}+\a^8q^{-4}t^3+\a^6t^4+\a^8q^{4}t^7+\a^6q^{6}t^6.
+\ee
+The quadruply-graded $\tableau2$-colored homology of $T_{3,4}$ that we have computed has 121 generators. Its Poincar\'e polynomial is given by:
+\begin{multline*}
+\tilde{\CP}^{\tableau2}(T_{3,4})(\a,Q,t_r,t_c)=a^{12}(Q^{-12}+Q^{-8}t_r^2(t_c^4+t_c^6)+Q^{-6}t_r^4(t_c^8+t_c^{10})+\\ Q^{-4}t_r^4(t_c^8+t_c^{10}+t_c^{12})+
+Q^{-2}t_r^6(t_c^{12}+t_c^{14})+t_r^6(t_c^{12}+t_c^{14}+t_c^{16}+t_c^{18})+t_r^8t_c^{16}+Q^2t_r^8(t_c^{16}+t_c^{18})+\\ Q^4t_r^8(t_c^{16}+t_c^{18}+t_c^{20})+Q^6t_r^{10}(t_c^{20}+t_c^{22})+Q^8t_r^{10}(t_c^{20}+t_c^{22})+Q^{12}t_r^{12}t_c^{24})+\\
+\a^{14}(Q^{-10}t_r^{3}(t_c^{5}+t_c^{7})+Q^{-8}t_r^{5}(t_c^{9}+t_c^{11})+Q^{-6}t_r^{5}(t_c^{9}+2t_c^{11}+t_c^{13})+\\ Q^{-4}t_r^{7}(2t_c^{13}+3t_c^{15}+t_c^{17})
++Q^{-2}t_r^{7}(t_c^{13}+2t_c^{15}+2t_c^{17}+t_c^{19})+\\
+Q^{-2}t_r^{9}(t_c^{17}+t_c^{19})+t_r^9(2t_c^{17}+3t_c^{19}+t_c^{21})
++ Q^2t_r^{9}(t_c^{17}+2t_c^{19}+2t_c^{21}+t_c^{23})+
+ Q^2t_r^{11}(t_c^{21}+t_c^{23})+\\
+ Q^4t_r^{11}(2t_c^{21}+3t_c^{23}+t_c^{25})+
+Q^6t_r^{11}(t_c^{21}+2t_c^{23}+t_c^{25})+Q^8t_r^{13}(t_c^{25}+t_c^{27})+Q^{10}t_r^{13}(t_c^{25}+t_c^{27}))+\\
++\a^{16}(Q^{-8}t_r^{6}t_c^{12}+Q^{-6}t_r^{8}(t_c^{14}+2t_c^{16}+t_c^{18})+Q^{-4}t_r^{8}(t_c^{16}+t_c^{18})+Q^{-4}t_r^{10}t_c^{20}+\\
+Q^{-2}t_r^{10}(t_c^{18}+3t_c^{20}+2t_c^{22})+t_r^{10}(t_c^{20}+t_c^{22}+t_c^{24})+ t_r^{12}(t_c^{22}+2t_c^{24}+t_c^{26}) + \\
+ Q^2t_r^{12}(t_c^{22}+3t_c^{24}+2t_c^{26}) + Q^4t_r^{12}(t_c^{24}+t_c^{26}) +Q^4t_r^{14}t_c^{28}+q^6t_r^{14}(t_c^{26}+2t_c^{28}+t_c^{30})+q^8t_r^{14}t_c^{28})+\\
++\a^{18}(Q^{-4}t_r^{11}(t_c^{21}+t_c^{23})\!+\!Q^{-2}t_r^{13}(t_c^{25}+t_c^{27})+t_r^{13}(t_c^{25}+t_c^{27})+Q^{2}t_r^{15}(t_c^{29}+t_c^{31})+\\
++Q^{4}t_r^{15}(t_c^{29}+t_c^{31}))
++\a^{20}t_r^{16}t_c^{32}.
+\end{multline*}
+The Poincar\'e polynomial in $(a,q,t_r,t_c)$-gradings can be obtained from the above expression by:
+\[
+\CP^{\tableau2}(T_{3,4})(a,q,t_r,t_c)=\tilde{\CP}^{\tableau2}(T_{3,4})(a,Q=q,t_r=t_r q^{-1},t_c=t_c q).
+\]
+This homology satisfies all of the expected properties: there are four colored $sl(m|n)$ differentials $d^{col}_{1|0}$, $d^{col}_{0|2}$, $d^{col}_{1|1}$ and $d^{col}_{0|3}$, with the properties and re-gradings exactly matching the predicted behaviour from Section \ref{coldif}. Moreover, there exists a universal colored differential $d^{\leftarrow}$ as predicted in Section \ref{unicolor}.
+Furthermore, the homology $\tilde{\CH}^{\tableau2}(T_{3,4})$ satisfies the self-symmetry property:
+\[
+\tilde{\CP}^{\tableau2}(T_{3,4})(a,Q^{-1}t_r^{-1}t_c^{-2},t_r,t_c)=\tilde{\CP}^{\tableau2}(T_{3,4})(a,Q,t_r,t_c).
+\]
+It also satisfies the refined exponential growth property:
+\[
+\tilde{\CP}^{\tableau2}(T_{3,4})(a,Q=q,t_r=t,t_c=1)=\left(\CP^{\tableau1}(T_{3,4})(a,q,t)\right)^2.
+\]
+Moreover, since HFK differential $d_0$ on $\CH^{\tableau1}(T_{3,4})$ is nontrivial, this time the HFK-like exponential growth property (\ref{HFKgrowth}) is giving a new relation on the homologies. Indeed, there exists a differential $d_{1|2}$ on $\tilde{\CH}^{\tableau2}(T_{3,4})$ of $(a,Q,t_r,t_c)$-degree $(-2,0,-3,-5)$, so that the homology $H^*(\tilde{\CH}^{\tableau2}(T_{3,4}),d_{1|2})$ is 25-dimensional with the following
+Poincar\'e polynomial:
+\begin{multline*}
+(\tilde{\CH}^{\tableau2}(T_{3,4}),d_{1|2})(\a,Q,t_r,t_c)=\a^{12}(Q^{-12}+Q^{-6}t_r^4(t_c^8+t_c^{10})+t_r^6(t_c^{16}+ t_c^{18})+t_r^8 t_c^{16}+\\ Q^{6} t_r^{10} (t_c^{20}+t_c^{22}) + Q^{12} t_r^{12} t_c^{24})
++ \a^{14} (Q^{-10} t_r^3 (t_c^5+t_c^7) + Q^{-4} t_r^7 (t_c^{13}+t_c^{15}) + \\ Q^{-2} t_r^7 (t_c^{17}+t_c^{19})+Q^{2} t_r^9 (t_c^{21}+t_c^{23})  +Q^{4} t_r^{11} (t_c^{21}+t_c^{23}) + Q^{10} t_r^{13} (t_c^{25}+t_c^{27}) ) +\\
++ \a^{16} (Q^{-8} t_r^6 t_c^{12} + t_r^{10} (t_c^{22} + t_c^{24} ) + Q^8 t_r^{14} t_c^{28}).
+\end{multline*}
 Therefore
-(4.9) ( ~H
-(T3,4), d1|2)(a, Q = q, tr = t, tc = 1) =
-(
-H (T3,4), d1|1)(a, q, t)
-) 2
-.
-QUADRUPLY-GRADED COLORED HOMOLOGY OF KNOTS 43
-4.4. (2, 2) representation. In this section we describe the -colored HOM-
-FLY homology of the trefoil knot. It should categorify the reduce d -colored
-HOMFLY polynomial of the trefoil:
-P (31)(a, q) = a16 + a14(−q−6− 2q−4− q−2− q2− 2q4− q6)
-+ a12(4 + 2q−10 + 2q−8 + 2q−6 + q−4 + 3q−2 + 3q2 + q4 + 2q6 + 2q8 + 2q10)
-+ a10(−2− q−14− 2q−12− q−10− q−8− 3q−6
-− 4q−4− 3q−2− 3q2− 4q4− 3q6− q8− q10− 2q12− q14)
-+ a8(2 + q−16 + q−10 + 2q−8 + q−6 + q−4 + q−2 + q2 + q4 + q6 + 2q8 + q10 + q16)
-The -colored HOMFLY homology of the trefoil knot that we computed, h as 81
-generators. Its four-variable Poincar´ e polynomial is given by:
-P (31)(a, q, tr, tc) = a16t24
-r t24
-c + a14(q−6t19
-r t17
-c + q−4(t17
-r t17
-c + t19
-r t19
-c )+
-q−2t17
-r t19
-c + q2t23
-r t21
-c + q4(t21
-r t21
-c + t23
-r t23
-c ) + q6t21
-r t23
-c )+
-+ a12(q−10(t12
-r t10
-c + t14
-r t12
-c ) + 2q−8t12
-r t12
-c + q−6(t10
-r t12
-c + t12
-r t14
-c ) + q−4t18
-r t14
-c +
-+ q−2(t16
-r t14
-c + 2t14
-r t16
-c ) + (3t16
-r t16
-c + t18
-r t18
-c ) + q2(t14
-r t16
-c + 2t16
-r t18
-c )+
-+ q4t14
-r t18
-c + q6(t20
-r t18
-c + t22
-r t20
-c ) + 2q8t20
-r t20
-c + q10(t18
-r t20
-c + t20
-r t22
-c ))+
-+ a10(q−14t7
-rt5
-c + q−12(t5
-rt5
-c + t7
-rt7
-c) + q−10t5
-rt7
-c + q−8t13
-r t9
-c + q−6(2t11
-r t9
-c + t13
-r t11
-c )+
-+ q−4(t9
-rt9
-c + 3t11
-r t11
-c ) + q−2(2t9
-rt11
-c + t11
-r t13
-c ) + (t9
-rt13
-c + t17
-r t13
-r )+
-+ q2(2t15
-r t13
-c + t17
-r t15
-c ) + q4(t13
-r t13
-c + 3t15
-r t15
-c ) + q6(2t13
-r t15
-c + t15
-r t17
-c )+
-+ q8t13
-r t17
-c + q10t19
-r t17
-c + q12(t17
-r t17
-c + t19
-r t19
-c ) + q14t17
-r t19
-c )+
-+ a8(q−16 + q−10t6
-rt4
-c + q−8(t4
-rt4
-c + t6
-rt6
-c) + q−6t4
-rt6
-c + q−4t12
-r t8
-c + q−2t10
-r t8
-c+
-(t8
-rt8
-c+t10
-r t10
-c )+q2t8
-rt10
-c +q4t8
-rt12
-c +q6t14
-r t12
-c +q8(t12
-r t12
-c +t14
-r t14
-c )+q10t12
-r t14
-c +q16t16
-r t16
-c ).
-Let us list various diﬀerentials and their ( a, q, tr, tc)-degrees. Everywhere in this
-section λ =
-.
-1. Categoriﬁcation:
-P λ(31)(a, q, tr =−1, tc = 1) = P λ(31)(a, q) =P λ(31)(a, q, tr = 1, tc =−1).
-2. Canceling diﬀerentials: There exist diﬀerentials dcol
-2|0 and dcol
-0|2, with degrees
-(−2, 4,−1,−1) and (−2,−4,−5,−5), respectively. Remaining generators have de-
-grees (8 ,−16, 0, 0) and (8 , 16, 16, 16), respectively.
-3. Row-removing diﬀerentials: There exist diﬀerentials dcol
-3|0 and dcol
-1|2 of degrees
-(−2, 6,−3,−1) and (−2,−2,−7,−5), respectively, such that
-H∗
-(
-Hλ(31), dcol
-3|0
-)
-∼
-= H
-(31),
-H∗
-(
-Hλ(31), dcol
-1|2
-)
-∼
-= H
-(31).
-4. Column-removing diﬀerentials: There exist diﬀerentials dcol
-0|3 and dcol
-2|1 of degrees
-(−2,−6,−5,−7) and (−2, 2,−1,−3), respectively, such that
-H∗
-(
-Hλ(31), dcol
-0|3
-)
-∼
-= H
-(31),
-H∗
-(
-Hλ(31), dcol
-2|1
-)
-∼
-= H
-(31).
-44 EUGENE GORSKY, SERGEI GUKOV, AND MARKO STO ˇSI ´C
-5. Universal colored diﬀerentials: There exist diﬀerentials d↑ and d← of degrees
-(0, 2,−2, 0) and (0 , 2, 0, 2), respectively, such that
-H∗(
-Hλ(31), d↑) ∼
-= H
-(31),
-H∗(
-Hλ(31), d←) ∼
-= H
-(31).
-The remaining properties are best seen in the ( a, Q, tr, tc)-gradings. Recall that in
-this case the Q-grading can be expressed via the other ones by the equation
-Q = (q + tr− tc)/2.
-We denote the λ-colored homology in these four gradings by ~Hλ(31) and the cor-
-responding four-variable Poincar´ e polynomial by ~P λ(31)(a, Q, tr, tc). In terms of
-P λ(31), we have
-~P λ(31)(a, Q, tr, tc) =P λ(31)(a, Q1/2, trQ1/2, tcQ−1/2).
-6. Self-symmetry:
-~Hλ
-i,j,k,l(31)∼
-= ~Hλ
-i,−j,k−2j,l−2j (31).
-7. Mirror symmetry: Since
-t = , the mirror symmetry in this case is an
-another, diﬀerent symmetry on ~Hλ(31):
-~Hλ
-i,j,k,l(31)∼
-= ~Hλ
-i,j,l,k(31).
-8. Reﬁned exponential growth:
-~P λ(31)(a, Q, tr, tc = 1) =
-(
-~P
-(31)(a, Q, tr, tc = 1)
-) 2
-.
-4.5. (2, 2, 2) representation. In this section we give the result for the -
-colored homology of the trefoil. Although this homology is very large ( 729-dimensional)
-it contains all colored diﬀerentials predicted in Section 3.5. Due to its s ize, and in
-order to simplify the presentation, we give the homology and the diﬀe rentials in
-(a, q, tc)-gradings, and simply denote tc by t. In ( a, q, tc)-gradings the Poincar´ e
-polynomialP λ(31) is given by:
-P (31)=a12(q−36+q−30t4+q−28(t4+t6)+q−26(t4+t6)+q−24(t6+t8)+q−22t8
-+q−20(2t8+t10)+q−18(t8+2t10)+q−16(t8+2t10+t12)+q−14(t10+2t12)
-+q−12(3t12+t14)+q−10(2t12+2t14)+q−8(t12+3t14)+q−6(t12+2t14+t16)+q−4(t14+2t16)
-+2q−2t16+q0(2t16+2t18)+q2(t16+2t18)+
-q4(t16+2t18+t20)+q6(t18+t20)++q8t20+q10t20+q12(t20+t22)+q14(t20+t22)+q16t22+q24t24)
-+a14(q−36t5+q−34(t5+t7)+q−32(t5+t7)+q−30(t7+t9)+q−28(2t9+t11)+q−26(3t9+3t11)
-+q−24(2t9+5t11+t13)+q−22(t9+4t11+3t13)+q−20(2t11+5t13+t15)+q−18(5t13+4t15)
-+q−16(4t13+7t15+t17)+q−14(2t13+8t15+3t17)+q−12(t13+5t15+6t17)+q−10(2t15+7t17+2t19)
-+q−8(6t17+5t19)+q−6(4t17+8t19+t21)+q−4(2t17+8t19+3t21)+q−2(t17+5t19+5t21)
-+q0(2t19+5t21+t23)+q2(4t21+2t23)+q4(3t21+4t23)+q6(2t21+5t23+t25)
-+q8(t21+4t23+2t25)+q10(2t23+2t25)+q12t25+q14t25+q16(t25+t27)+q18(t25+t27)+q20t27)+
-+a16(q−34(t10+t12)+q−32(t10+2t12)+q−30(t10+3t12+t14)+q−28(2t12+2t14)
-+q−26(t12+3t14+2t16)+q−24(3t14+5t16+t18)+q−22(2t14+8t16+3t18)
-q−20(t14+7t16+6t18)+q−18(4t16+8t18+2t20)
-QUADRUPLY-GRADED COLORED HOMOLOGY OF KNOTS 45
-+q−16(t16+7t18+5t20)+q−14(5t18+10t20+2t22)+q−12(2t18+11t20+5t22)+
-q−10(t18+9t20+9t22+t24)+q−8(4t20+9t22+2t24)+q−6(t20+7t22+5t24)
-q−4(4t22+7t24+t26)+q−2(2t22+9t24+3t26)+
-+q0(t22+7t24+6t26)+q2(4t24+6t26+t28)+q4(t24+4t26+t28)+q6(2t26+2t28)+
-+q8(t26+2t28)+q10(t26+3t28+t30)+q12(2t28+t30)+q14(t28+t30)+
-+a18(q−32t17+q−30(t15+2t17+t19)+q−28(3t17+2t19)+q−26(2t17+3t19)+q−24(t17+3t19+2t21)+
-+q−22(2t19+4t21+t23)+q−20(t19+6t21+4t23)+q−18(6t21+7t23+t25)+q−16(3t21+8t23+2t25)+
-+q−14(t21+6t23+4t25)+q−12(3t23+6t25+t27)+q−10(t23+7t25+4t27)+q−8(6t25+7t27+t29)+
-+q−6(3t25+8t27+2t29)+q−4(t25+5t27+3t29)+q−2(2t27+3t29)+q0(t27+3t29+t31)+
-+q2(3t29+2t31)+q4(2t29+3t31)+q6(t29+2t31+t33)+q8t31)+
-+a20(q−28(t22+t24)+q−26(t22+2t24)+q−24(t22+3t24+t26)+q−22(2t24+t26)+q−20(t24+2t26)
-+q−18(2t26+2t28)+q−16(2t26+4t28+t30)+q−14(t26+5t28+2t30)+q−12(3t28+3t30)+
-+q−10(t28+2t30)+q−8(2t30+t32)+q−6(t30+2t32)+q−4(t30+3t32+t34)+q−2(2t32+t34)+
-q0(t32+t34))+a22(q−24t29+q−22(t29+t31)+q−20(t29+t31)+q−18t31+q−14t33+q−12(t33+t35)+
-q−10(t33+t35)+q−8t35)+ +a24q−18t36.
-On such a big homology Hλ(31) categorifying the reduced λ-colored HOMFLY
-polynomial of the trefoil knot, there exist all of the predicted colo red diﬀerentials:
-1. Canceling diﬀerential dcol
-3|0 of ( a, q, tc)-degree (−2, 6,−1) such that the homol-
-ogy H∗(Hλ(31), dcol
-3|0) is one-dimensional, and the remaining generator has ( a, q, tc)-
-degree (12 ,−36, 0).
-2. Canceling diﬀerential dcol
-0|2 of degree ( −2,−4,−5), such that the homology
-H∗(Hλ(31), dcol
-0|2) is one-dimensional, and the remaining generator has ( a, q, tc)-
-degree (12 , 24, 24).
-3. Positive row-removing diﬀerential dcol
-4|0 of degree (−2, 8,−1), such that
-H∗(Hλ(31), dcol
-4|0)∼
-=H
-(31).
-4. Negative row-removing diﬀerential dcol
-1|2 of degree (−2,−2,−5), such that
-H∗(Hλ(31), dcol
-1|2)∼
-=H
-(31).
-5. Positive row-removing diﬀerential dcol
-5|0 of degree (−2, 10,−1), such that
-H∗(Hλ(31), dcol
-5|0)∼
-=H
-(31).
-6. Negative row-removing diﬀerential dcol
-2|2 of degree (−2, 0,−5), such that
-H∗(Hλ(31), dcol
-2|2)∼
-=H
-(31).
-7. Negative column-removing diﬀerential dcol
-0|3 of degree (−2,−6,−7), such that
-H∗(Hλ(31), dcol
-0|3)∼
-=H
-(31).
-8. Positive column-removing diﬀerential dcol
-3|1 of degree (−2,−4,−3), such that
-H∗(Hλ(31), dcol
-3|1)∼
-=H
-(31).
-46 EUGENE GORSKY, SERGEI GUKOV, AND MARKO STO ˇSI ´C
-9. Universal colored diﬀerential d← of degree (0 , 2, 2), such that
-H∗(Hλ(31), d←)∼
-=H
-(31).
-4.6. (2, 1) “hook” representation. The -colored HOMFLY polynomial of
-the trefoil is given by
-P (31)(a, q) = − a12 + a10(q−6 + q−4 + q−2 + q2 + q4 + q6)
-+ a8(−q−10− 2q−6− 3q−2− 3q2− 2q6− q10)
-+ a6(q−10 + 2q−6− q−4 + 2q−2 + 2q2− q4 + 2q6 + q10).
-This polynomial has 31 terms, and therefore any homology theory c ategorifying
-it, should have at least 31 generators. This already indicates distinc tion between
-rectangular and hook diagrams: this time, already for the trefoil, t he exponential
-growth property cannot be satisﬁed (the uncolored homology of t he trefoil is 3-
-dimensional and 31 > 33). However, some of the structural properties still exist in
-the colored HOMFLY homology theories for the hook-shaped Young diagrams.
-As a sl(n|m) representation, λ = has three nice isomorphisms for particular
-values of n and m. Namely we have that ∼
-=
-as sl(2|0), as sl(1|1) and as sl(0|2)
-representations. Therefore, we expect three colored diﬀerent ials, dcol
-2|0, dcol
-1|1 and dcol
-0|2
-onH
-(K), such that
-H∗(H (K), dcol
-2|0) ∼
-= H
-(K),(4.10)
-H∗(H (K), dcol
-1|1) ∼
-= H
-(K),(4.11)
-H∗(H (K), dcol
-0|2) ∼
-= H
-(K).(4.12)
-The ( a, q, t)-degrees of these three diﬀerentials are:
-(4.13)
-deg dcol
-2|0 = (−2, 4,−1), deg dcol
-1|1 = (−2, 0,−3), deg dcol
-0|2 = (−2,−4,−5).
-The requirement that H
-(31) should categorify P (31)(a, q), together with the
-existence of the colored diﬀerentials dcol
-2|0, dcol
-1|1 and dcol
-0|2 essentially determine the
--colored homology of the trefoil knot. It has 41 generators and it s Poincar´ e
-polynomial is given by:
-(4.14) P
-(31)(a, q, t) = a12t13 + a10(q−6t8 + q−4t8 + q−2t10 + t10 + t11
-+ q2t12 + q4t12 + q6t14)+ a8(q−10t3 + 2q−6t5 + q−4t5 + q−4t6 + 3q−2t7 + t7 + t8 + 3q2t9
-+ q4t9 + q4t10 + 2q6t11 + q10t13) + a6(q−10 + 2q−6t2 + q−4t3 + 2q−2t4 + t4 + t5
-+ 2q2t6 + q4t7 + 2q6t8 + q10t10).
-Additional nice properties that this homology satisﬁes, and which als o exist in the
-rectangular case, is the mirror symmetry. Since t = this becomes a symmetry
-onH (31):
-(4.15) M :Hi,j,k(31)→H i,−j,k−j (31),
-QUADRUPLY-GRADED COLORED HOMOLOGY OF KNOTS 47
+\be\label{HFKgrowtht34}
+(\tilde{\CH}^{\tableau2}(T_{3,4}),d_{1|2})(a,Q=q,t_r=t,t_c=1)=\left(\CH^{\tableau 1}(T_{3,4}),d_{1|1})(a,q,t)\right)^2.
+\ee
+
+
+\subsection{$(2,2)$ representation}
+\label{sec:22}
+In this section we describe the $\tableau{2 2}$-colored HOMFLY homology of the trefoil knot.
+It should categorify the reduced $\tableau{2 2}$-colored HOMFLY polynomial of the trefoil:
+\begin{multline*}
+P^{\tableau{2 2}} (3_1)(\a,q) =
+\a^{16}
+ + \a^{14} (-q^{-6} - 2q^{-4} - q^{-2} - q^2 - 2 q^4 - q^6)\\
++ \a^{12} (4 + 2q^{-10} + 2q^{-8} + 2 q^{-6} + q^{-4} + 3 q^{-2} + 3 q^2 + q^4 + 2 q^6 + 2 q^8 + 2 q^{10})\\
++ \a^{10} (-2 - q^{-14} - 2 q^{-12} - q^{-10} - q^{-8} - 3 q^{-6}\\ - 4 q^{-4} - 3 q^{-2} - 3 q^2 - 4 q^4 - 3 q^6 - q^8 - q^{10} - 2 q^{12} - q^{14})\\
++ \a^{8} (2 + q^{-16} + q^{-10} + 2 q^{-8} + q^{-6} + q^{-4} + q^{-2} + q^2 + q^4 + q^6 + 2 q^8 + q^{10} + q^{16})
+\end{multline*}
+ The  $\tableau{2 2}$-colored HOMFLY homology of the trefoil knot that we computed, has 81 generators. Its four-variable Poincar\'e polynomial is given by:
+\begin{multline*}
+\CP^{\tableau{2 2}} (3_1) (\a,q,t_r,t_c) =
+\a^{16} t_r^{24}  t_c^{24}+ \a^{14} (q^{-6}{t_r^{19}t_c^{17}} + q^{-4}({t_r^{17}t_c^{17}} +{t_r^{19}t_c^{19}})+\\ q^{-2}{t_r^{17}t_c^{19}}+ q^2 t_r^{23}t_c^{21} + q^4 (t_r^{21}t_c^{21} + t_r^{23}t_c^{23}) + q^6 t_r^{21}t_c^{23})+  \\
+ + \a^{12} (q^{-10}({t_r^{12}t_c^{10}} + {t_r^{14}t_c^{12}}) + 2q^{-8}{t_r^{12} t_c^{12}} + q^{-6}(t_r^{10}{t_c^{12}} +  t_r^{12}{t_c^{14}}) +q^{-4}t_r^{18}{t_c^{14}} +\\
++ q^{-2}({t_r^{16}t_c^{14}}  + 2t_r^{14}{t_c^{16}})+ (3t_r^{16} t_c^{16}+t_r^{18}t_c^{18}) + q^2 (t_r^{14}t_c^{16} + 2  t_r^{16}t_c^{18}) + \\
++ q^4 t_r^{14}t_c^{18} + q^6 (t_r^{20}t_c^{18} + t_r^{22}t_c^{20}) + 2 q^8 t_r^{20}t_c^{20} +  q^{10} (t_r^{18}t_c^{20} + t_r^{20} t_c^{22}))+ \\
+ + \a^{10} (q^{-14}t_r^{7}{t_c^5} + q^{-12}({t_r^{5}t_c^5} + t_r^{7}{t_c^7}) + q^{-10}t_r^{5}{t_c^7} + q^{-8}t_r^{13}{t_c^9} +  q^{-6} (2t_r^{11}{t_c^9}  +t_r^{13}{t_c^{11}})+\\
+ + q^{-4}(t_r^{9}{t_c^9} + 3t_r^{11}{t_c^{11}}) + q^{-2}(2t_r^{9}{t_c^{11}}+t_r^{11}{t_c^{13}})+ (t_r^{9} t_c^{13} +t_r^{17}t_r^{13})+\\
+ +  q^2 (2t_r^{15}t_c^{13} +t_r^{17}t_c^{15}) + q^4 (t_r^{13}t_c^{13} +3t_r^{15}t_c^{15})
++ q^6 (2 t_r^{13}t_c^{15} +  t_r^{15}t_c^{17}) + \\
++ q^8 t_r^{13} t_c^{17} + q^{10} t_r^{19}t_c^{17} + q^{12} (t_r^{17}t_c^{17} +t_r^{19}t_c^{19}) + q^{14} t_r^{17}t_c^{19}) +\\
+ + \a^{8} (q^{-16} + q^{-10}t_r^{6}{t_c^4} + q^{-8}(t_r^{4}{t_c^4} + t_r^{6}{t_c^6}) + q^{-6}t_r^{4}{t_c^6}
++ q^{-4}t_r^{12}{t_c^8} + q^{-2}t_r^{10}{t_c^8}+\\
+ (t_r^{8}t_c^8 + t_r^{10}t_c^{10}) + q^2 t_r^{8}t_c^{10} + q^4 t_r^{8}t_c^{12}  + q^6 t_r^{14}t_c^{12} + q^8(t_r^{12}t_c^{12} + t_r^{14} t_c^{14}) + q^{10} t_r^{12}t_c^{14} + q^{16} t_r^{16}t_c^{16}).
+\end{multline*}
+Let us list various differentials and their $(\a,q,t_r,t_c)$-degrees. Everywhere in this section $\lambda=\tableau{2 2}$.
+
+\noindent
+1. {Categorification:}
+$$
+\CP^{\lambda} (3_1) (\a,q,t_r=-1,t_c=1)= P^{\lambda} (3_1)(\a,q) = \CP^{\lambda} (3_1) (\a,q,t_r=1,t_c=-1).
+$$
+2. { Canceling differentials:} There exist differentials $d^{col}_{2|0}$ and $d^{col}_{0|2}$, with  degrees $(-2,4,-1,-1)$ and $(-2,-4,-5,-5)$, respectively. Remaining generators have degrees $(8,-16,0,0)$ and $(8,16,16,16)$, respectively.
+
+\noindent
+3. { Row-removing differentials:} There exist differentials $d^{col}_{3|0}$ and $d^{col}_{1|2}$ of degrees $(-2,6,-3,-1)$ and $(-2,-2,-7,-5)$, respectively, such that
+
+\[
+H^*\left( \CH^{\lambda}(3_1), d^{col}_{3|0} \right) \; \cong \; \CH^{\tableau{2}}(3_1),
+\]
+\[
+H^*\left( \CH^{\lambda}(3_1), d^{col}_{1|2} \right) \; \cong \; \CH^{\tableau{2}}(3_1).
+\]
+
+4. { Column-removing differentials:} There exist differentials $d^{col}_{0|3}$ and $d^{col}_{2|1}$ of degrees  $(-2,-6,-5,-7)$ and $(-2,2,-1,-3)$, respectively, such that
+
+\[
+H^*\left( \CH^{\lambda}(3_1), d^{col}_{0|3} \right) \; \cong \; \CH^{\tableau{1 1}}(3_1),
+\]
+\[
+H^*\left( \CH^{\lambda}(3_1), d^{col}_{2|1} \right) \; \cong \; \CH^{\tableau{1 1}}(3_1).
+\]
+5. { Universal colored differentials:} There exist differentials $d^{\uparrow}$ and $d^{\leftarrow}$ of  degrees $(0,2,-2,0)$ and $(0,2,0,2)$, respectively, such that
+
+
+
+
+
+
+\[
+H^*\left( \CH^{\lambda}(3_1), d^{\uparrow} \right) \; \cong \; \CH^{\tableau{2}}(3_1),
+\]
+\[
+H^*\left( \CH^{\lambda}(3_1), d^{\leftarrow} \right) \; \cong \; \CH^{\tableau{1 1}}(3_1).
+\]
+The remaining properties are best seen in the $(\a,Q,t_r,t_c)$-gradings. Recall that in this case the $Q$-grading can be expressed via the other ones by the equation $$Q=(q+t_r-t_c)/2.$$ We denote the $\lambda$-colored homology in these four gradings by $\tilde{\CH}^{\lambda}(3_1)$ and the corresponding four-variable Poincar\'e polynomial by $\tilde{\CP}^{\lambda}(3_1)(\a,Q,t_r,t_c)$. In terms of $\CP^{\lambda}(3_1)$, we have
+\[
+\tilde{\CP}^{\lambda}(3_1)(\a,Q,t_r,t_c)={\CP}^{\lambda}(3_1)(\a,Q^{1/2},t_rQ^{1/2},t_cQ^{-1/2}).
+\]
+6. { Self-symmetry:}
+\[
+ \tilde{\CH}^{\lambda}_{i,j,k,l}(3_1) \cong \tilde{\CH}^{\lambda}_{i,-j,k-2j,l-2j}(3_1).
+\]
+7. { Mirror symmetry:}
+Since $\tableau{2 2}^t = \tableau{2 2}$, the mirror symmetry in this case is an another, different symmetry on $\tilde{\CH}^{\lambda}(3_1)$:
+\[
+ \tilde{\CH}^{\lambda}_{i,j,k,l}(3_1) \cong \tilde{\CH}^{\lambda}_{i,j,l,k}(3_1).
+\]
+8. { Refined exponential growth:}
+\[
+\tilde{\CP}^{\lambda}(3_1)(\a,Q,t_r,t_c=1)=\left(\tilde{\CP}^{\tableau{1 1}}(3_1)(\a,Q,t_r,t_c=1)\right)^2.
+\]
+
+
+
+
+
+\subsection{$(2,2,2)$ representation}
+\label{sec:222}
+
+In this section we give the result for the $\tableau{2 2 2}$-colored homology of the trefoil. Although this homology is very large (729-dimensional) it
+contains all colored differentials predicted in Section \ref{coldif}.
+Due to its size, and in order to simplify the presentation, we give the homology and the differentials in $(\a,q,t_c)$-gradings, and simply denote $t_c$ by $t$.
+In $(\a,q,t_c)$-gradings the Poincar\'e polynomial $\CP^{\lambda}(3_1)$  is given by:
+
+$$
+{\scriptstyle{
+\CP^{\tableau{2 2 2}}(3_1)=\a^{12}(q^{-36}+q^{-30}t^4+q^{-28}(t^4+t^6)+q^{-26}(t^4+t^6)+q^{-24}(t^6+t^8)+q^{-22}t^8 }} $$ $$
+{\scriptstyle{+q^{-20}(2t^8+t^{10})+q^{-18}(t^8+2t^{10})+q^{-16}(t^8+2t^{10}+t^{12})+q^{-14}(t^{10}+2t^{12}) }} $$ $$
+{\scriptstyle{+q^{-12}(3t^{12}+t^{14})+q^{-10}(2t^{12}+2t^{14})+q^{-8}(t^{12}+3t^{14})+q^{-6}(t^{12}+2t^{14}+t^{16})+q^{-4}(t^{14}+2t^{16}) }} $$ $$
+{\scriptstyle{+2q^{-2}t^{16}+q^{0}(2t^{16}+2t^{18})+q^{2}(t^{16}+2t^{18})+}} $$ $$ {\scriptstyle{q^{4}(t^{16}+2t^{18}+t^{20})+q^{6}(t^{18}+t^{20})+}}
+{\scriptstyle{+q^{8}t^{20}+q^{10}t^{20}+q^{12}(t^{20}+t^{22})+q^{14}(t^{20}+t^{22})+q^{16}t^{22}+q^{24}t^{24}) }} $$ $$
+{\scriptstyle{+\a^{14}(q^{-36}t^5+q^{-34}(t^5+t^7)+q^{-32}(t^5+t^7)
++q^{-30}(t^7+t^9)+q^{-28}(2t^9+t^{11})+q^{-26}(3t^9+3t^{11}) }} $$ $$
+{\scriptstyle{+q^{-24}(2t^9+5t^{11}+t^{13})+q^{-22}(t^9+4t^{11}+3t^{13})+q^{-20}(2t^{11}+5t^{13}+t^{15})+q^{-18}(5t^{13}+4t^{15}) }} $$ $$
+{\scriptstyle{+q^{-16}(4t^{13}+7t^{15}+t^{17})+q^{-14}(2t^{13}+8t^{15}+3t^{17})+ q^{-12}(t^{13}+5t^{15}+6t^{17})+q^{-10}(2t^{15}+7t^{17}+2t^{19}) }} $$ $$
+{\scriptstyle{+q^{-8}(6t^{17}+5t^{19})+q^{-6}(4t^{17}+8t^{19}+t^{21})+q^{-4}(2t^{17}+8t^{19}+3t^{21})+ q^{-2}(t^{17}+5t^{19}+5t^{21}) }} $$ $$
+{\scriptstyle{+q^{0}(2t^{19}+5t^{21}+t^{23})+q^{2}(4t^{21}+2t^{23})+q^{4}(3t^{21}+4t^{23})+q^{6}(2t^{21}+5t^{23}+t^{25}) }} $$ $$
+{\scriptstyle{+q^{8}(t^{21}+4t^{23}+2t^{25})+q^{10}(2t^{23}+2t^{25})+q^{12}t^{25}+q^{14}t^{25}+q^{16}(t^{25}+t^{27})+q^{18}(t^{25}+t^{27})+q^{20}t^{27})+}} $$ $$
+{\scriptstyle{+\a^{16}(q^{-34}(t^{10}+t^{12})+q^{-32}(t^{10}+2t^{12})
++q^{-30}(t^{10}+3t^{12}+t^{14})+q^{-28}(2t^{12}+2t^{14})}}  $$ $${\scriptstyle{+q^{-26}(t^{12}+3t^{14}+2t^{16})+q^{-24}(3t^{14}+5t^{16}+t^{18})+q^{-22}(2t^{14}+8t^{16}+3t^{18})}}$$ $${\scriptstyle{q^{-20}(t^{14}+7t^{16}+6t^{18})+q^{-18}(4t^{16}+8t^{18}+2t^{20}) }} $$ $$
+{\scriptstyle{+q^{-16}(t^{16}+7t^{18}+5t^{20})+q^{-14}(5t^{18}+10t^{20}+2t^{22})+ q^{-12}(2t^{18}+11t^{20}+5t^{22})+}} $$ $${\scriptstyle{q^{-10}(t^{18}+9t^{20}+9t^{22}+t^{24})+
+q^{-8}(4t^{20}+9t^{22}+2t^{24})+q^{-6}(t^{20}+7t^{22}+5t^{24})}}  $$ $${\scriptstyle{q^{-4}(4t^{22}+7t^{24}+t^{26})+ q^{-2}(2t^{22}+9t^{24}+3t^{26})+}} $$ $$
+{\scriptstyle{\quad+q^{0}(t^{22}+7t^{24}+6t^{26})+q^{2}(4t^{24}+6t^{26}+t^{28})+q^{4}(t^{24}+4t^{26}+t^{28})+q^{6}(2t^{26}+2t^{28})+}} $$ $$
+{\scriptstyle{\quad+q^{8}(t^{26}+2t^{28})+q^{10}(t^{26}+3t^{28}+t^{30})+q^{12}(2t^{28}+t^{30})+q^{14}(t^{28}+t^{30})+}} $$ $$
+{\scriptstyle{\!\!\!\!+\a^{18}(q^{-32}t^{17}
++q^{-30}(t^{15}+2t^{17}+t^{19})+q^{-28}(3t^{17}+2t^{19})+q^{-26}(2t^{17}+3t^{19})+q^{-24}(t^{17}+3t^{19}+2t^{21})+}} $$ $$
+{\scriptstyle{\quad+q^{-22}(2t^{19}+4t^{21}+t^{23})+q^{-20}(t^{19}+6t^{21}+4t^{23})+q^{-18}(6t^{21}+7t^{23}+t^{25})+q^{-16}(3t^{21}+8t^{23}+2t^{25})+}} $$ $$
+{\scriptstyle{\quad+q^{-14}(t^{21}+6t^{23}+4t^{25})+ q^{-12}(3t^{23}+6t^{25}+t^{27})+q^{-10}(t^{23}+7t^{25}+4t^{27})+q^{-8}(6t^{25}+7t^{27}+t^{29})+}} $$ $$
+{\scriptstyle{\quad+q^{-6}(3t^{25}+8t^{27}+2t^{29})+q^{-4}(t^{25}+5t^{27}+3t^{29})+ q^{-2}(2t^{27}+3t^{29})+q^{0}(t^{27}+3t^{29}+t^{31})+}} $$ $$
+{\scriptstyle{\quad+q^{2}(3t^{29}+2t^{31})+q^{4}(2t^{29}+3t^{31})+q^{6}(t^{29}+2t^{31}+t^{33})+q^{8}t^{31})+}} $$ $$
+{\scriptstyle{
+\!\!\!\!+\a^{20}(q^{-28}(t^{22}+t^{24})+q^{-26}(t^{22}+2t^{24})+q^{-24}(t^{22}+3t^{24}+t^{26})+q^{-22}(2t^{24}+t^{26})+q^{-20}
+(t^{24}+2t^{26})}} $$ $$
+{\scriptstyle{\quad+q^{-18}(2t^{26}+2t^{28})+q^{-16}(2t^{26}+4t^{28}+t^{30})+q^{-14}(t^{26}+5t^{28}+2t^
+{30})+ q^{-12}(3t^{28}+3t^{30})+}} $$ $$
+{\scriptstyle{\quad+q^{-10}(t^{28}+2t^{30})+q^{-8}(2t^{30}+t^{32})+q^{-6}(t^{30}+2t^{32})+q^{-4}(t^{30}+3t^{32}+t^{34})+
+q^{-2}(2t^{32}+t^{34})+}} $$ $$
+{\scriptstyle{q^{0}(t^{32}+t^{34}))+\a^{22}(q^{-24}t^{29}+q^{-22}(t^{29}+t^{31})+q^{-20}
+(t^{29}+t^{31})+q^{-18}t^{31} +q^{-14}t^{33}+ q^{-12}(t^{33}+t^{35})+}} $$ $$
+{\scriptstyle{q^{-10}(t^{33}+t^{35})+q^{-8}t^{35}) +}}
+{\scriptstyle{\!\!\!\!+ \a^{24}q^{-18}t^{36}.
+}}
+$$
+On such a big homology $\CH^{\lambda}(3_1)$ categorifying the reduced $\lambda$-colored HOMFLY polynomial of the trefoil knot, there exist all of the predicted colored differentials:
+
+\noindent
+1. Canceling differential $d^{col}_{3|0}$ of $(\a,q,t_c)$-degree $(-2,6,-1)$ such that the homology $H^*(\CH^{\lambda}(3_1),d^{col}_{3|0})$ is one-dimensional, and the remaining generator has $(\a,q,t_c)$-degree $(12,-36,0)$.
+
+\noindent
+2. Canceling differential $d^{col}_{0|2}$ of degree $(-2,-4,-5)$, such that the homology $H^*(\CH^{\lambda}(3_1),d^{col}_{0|2})$ is one-dimensional, and the remaining generator has $(\a,q,t_c)$-degree $(12,24,24)$.
+
+\noindent
+3. Positive row-removing differential $d^{col}_{4|0}$ of  degree $(-2,8,-1)$, such that
+\[
+H^*(\CH^{\lambda}(3_1),d^{col}_{4|0}) \cong \CH^{\tableau2}(3_1).
+\]
+4. Negative row-removing differential $d^{col}_{1|2}$ of  degree $(-2,-2,-5)$, such that
+\[
+H^*(\CH^{\lambda}(3_1),d^{col}_{1|2}) \cong \CH^{\tableau2}(3_1).
+\]
+5. Positive row-removing differential $d^{col}_{5|0}$ of  degree $(-2,10,-1)$, such that
+\[
+H^*(\CH^{\lambda}(3_1),d^{col}_{5|0}) \cong \CH^{\tableau{2 2}}(3_1).
+\]
+6.  Negative row-removing differential $d^{col}_{2|2}$ of  degree $(-2,0,-5)$, such that
+\[
+H^*(\CH^{\lambda}(3_1),d^{col}_{2|2}) \cong \CH^{\tableau{2 2}}(3_1).
+\]
+7.   Negative column-removing differential $d^{col}_{0|3}$ of  degree $(-2,-6,-7)$, such that
+\[
+H^*(\CH^{\lambda}(3_1),d^{col}_{0|3}) \cong \CH^{\tableau{1 1 1}}(3_1).
+\]
+8. Positive column-removing differential $d^{col}_{3|1}$ of  degree $(-2,-4,-3)$, such that
+\[
+H^*(\CH^{\lambda}(3_1),d^{col}_{3|1}) \cong \CH^{\tableau{1 1 1}}(3_1).
+\]
+9.  Universal colored differential $d^{\leftarrow}$ of  degree $(0,2,2)$, such that
+\[
+H^*(\CH^{\lambda}(3_1),d^{\leftarrow}) \cong \CH^{\tableau{1 1 1}}(3_1).
+\]
+
+
+
+\subsection{$(2,1)$ ``hook'' representation}
+
+The $\tableau{2 1}$-colored HOMFLY polynomial of the trefoil is given by
+\begin{align}
+P^{\tableau{2 1}} (3_1)(a,q) \; = \;
+& -a^{12} + a^{10} (q^{-6} + q^{-4} + q^{-2} + q^2 + q^4 + q^6) \notag \\
+& + a^{8} (-q^{-10} - 2 q^{-6} - 3 q^{-2} - 3 q^2 - 2 q^6 - q^{10}) \notag \\
+& + a^{6} (q^{-10} + 2 q^{-6} - q^{-4} + 2 q^{-2} + 2 q^2 - q^4 + 2 q^6 + q^{10}). \notag
+\end{align}
+This polynomial has 31 terms, and therefore any homology theory categorifying it, should have at least 31 generators. This already indicates distinction between rectangular and hook diagrams: this time, already for the trefoil, the exponential growth property  cannot be satisfied (the uncolored homology of the trefoil is 3-dimensional and $31>3^3$). However, some of the structural properties still exist in the colored HOMFLY homology theories for the hook-shaped Young diagrams.
+
+As a $sl(n|m)$ representation, $\lambda = \tableau{2 1}$ has three nice isomorphisms for particular values of $n$ and $m$. Namely we have that $\tableau{2 1}\cong \tableau1$ as $sl(2|0)$, as $sl(1|1)$ and as $sl(0|2)$ representations. Therefore, we expect three colored differentials, $d^{col}_{2|0}$, $d^{col}_{1|1}$ and $d^{col}_{0|2}$ on $\CH^{\tableau{2 1}}(K)$, such that
+
+\begin{eqnarray}
+H^*(\CH^{\tableau{2 1}}(K),d^{col}_{2|0})&\cong& \CH^{\tableau{1}}(K)\label{ht1},\\
+H^*(\CH^{\tableau{2 1}}(K),d^{col}_{1|1})&\cong&\CH^{\tableau{1}}(K) \label{ht2},\\
+H^*(\CH^{\tableau{2 1}}(K),d^{col}_{0|2})&\cong& \CH^{\tableau{1}}(K).\label{ht3}
+\end{eqnarray}
+The $(a,q,t)$-degrees of these three differentials are:
+\be
+\deg d^{col}_{2|0} = (-2,4,-1), \quad\quad \deg d^{col}_{1|1} = (-2,0,-3), \quad\quad \deg d^{col}_{0|2} = (-2,-4,-5).
+\ee
+The requirement that $\CH^{\tableau{2 1}}(3_1)$ should categorify $P^{\tableau{2 1}} (3_1)(a,q)$, together with the existence of the colored differentials $d^{col}_{2|0}$, $d^{col}_{1|1}$ and $d^{col}_{0|2}$
+essentially determine the $\tableau{2 1}$-colored homology of the trefoil knot. It has 41 generators and its Poincar\'e polynomial is given by:
+\begin{multline}
+\label{barebones}
+\CP^{\tableau{2 1}} (3_1)(a,q,t)=
+a^{12} t^{13} + a^{10} (q^{-6} t^8 + q^{-4} t^8 + q^{-2} t^{10} + t^{10}+t^{11}\\ + q^2 t^{12} + q^4 t^{12} + q^6 t^{14})
++ a^{8} (q^{-10} t^3 + 2 q^{-6} t^5 + q^{-4} t^5 + q^{-4} t^6+3 q^{-2} t^7 + t^7 + t^8 + 3 q^2 t^9 \\ + q^4 t^9 + q^4 t^{10} + 2 q^6 t^{11} + q^{10} t^{13})
++ a^{6} (q^{-10} + 2 q^{-6} t^2 + q^{-4} t^3 + 2 q^{-2} t^4 + t^4+t^5\\+ 2 q^2 t^6 + q^4 t^7 + 2 q^6 t^8 + q^{10} t^{10}).
+\end{multline}
+Additional nice properties that this homology satisfies, and which also exist in the rectangular case, is the mirror symmetry. Since ${\tableau{2 1}}^t={\tableau{2 1}}$ this becomes a symmetry on $\CH^{{\tableau{2 1}}}(3_1)$:
+
+\be
+M_{\tableau{2 1}} : \CH^{\tableau{2 1}}_{i,j,k}(3_1) \to \CH^{\tableau{2 1}}_{i,-j,k-j}(3_1),
+\ee
 with the property that
-(4.16) M
-dn|m = dm|nM .
-There are some properties that we predict in the case of rectangu lar representa-
-tions and which do not exist for the hook diagram. First of all, already for the trefoil
-the exponential growth property is not satisﬁed. The homology is 4 1-dimensional,
-and the -colored HOMFLY polynomial already has 31 terms.
-Second, this time the isomorphisms (4.10)-(4.12) are valid only after appropri-
-ate collapse of tri-grading, i.e. after setting a = qn−m in the case of the diﬀerential
-dn|m. Additionally, there is no explicit re-grading in these isomorphisms, an d we
-could not ﬁnd the second t-grading. Therefore the theory that we propose is triply-
-graded.
-Finally, we note that there exists the SL(2) Lefschetz-like action on homology
-(4.14) with raising operator of degree (0 , 4, 2). According to the “dictionary” (2.4),
-this raising operator corresponds to forming a bound state with a B PS state of
-D0-brane charge n = 4.
-5. Colored HOMFL Y homology for torus knots
-In this part we describe various algebraic and geometric approache s to the
-colored homology of torus knots.
-5.1. Stable HOMFL Y homology of torus knots. We will be interested
-in the stable limit of the colored HOMFLY polynomials of ( n, m) torus knots at
-m→∞ . Using e.g. [ 79, eq. (5.4)], one can prove the following result.
-Proposition 5.1. Let κ(µ) =∑
-(i,j)∈µ(i− j). Deﬁne
-P λ
-st(T (m, n)) := q−mnκ(λ)+ m
-n κ(nλ)a− m(n−1)|λ |
-2 P λ(T (m, n)).
+\be
+M_{\tableau{2 1}} d_{n|m} \; = \; d_{m|n} M_{\tableau{2 1}}.
+\ee
+
+There are some properties that we predict in the case of rectangular representations and which do not exist for the hook diagram. First of all, already for the trefoil the exponential growth property is not satisfied. The homology is 41-dimensional, and the ${\tableau{2 1}}$-colored HOMFLY polynomial already has 31 terms.
+
+Second, this time the isomorphisms (\ref{ht1})-(\ref{ht3}) are valid only after
+appropriate collapse of tri-grading, i.e. after setting $a=q^{n-m}$ in the case of the differential $d_{n|m}$.
+Additionally, there is no explicit re-grading in these isomorphisms, and we could not find the second $t$-grading. Therefore the theory that we propose is triply-graded.
+
+Finally, we note that there exists the $SL(2)$ Lefschetz-like action on homology \eqref{barebones} with raising operator of degree $(0,4,2)$.
+According to the ``dictionary'' \eqref{aqtgradings}, this raising operator corresponds to forming a bound state with a BPS state of D0-brane charge $n=4$.
+
+
+
+
+\section{Colored HOMFLY homology for torus knots}
+\label{sec:algmodel}
+
+In this part we describe various algebraic and geometric approaches to the colored homology of
+torus knots.
+
+
+\subsection{Stable HOMFLY homology of torus knots}
+\label{sec:torus}
+
+
+We will be interested in the stable limit of the colored HOMFLY polynomials of $(n,m)$ torus knots at $m\to\infty$.
+Using e.g. \cite[eq. (5.4)]{stevan}, one can prove the following result.
+
+\begin{proposition}
+Let $\kappa(\mu)=\sum_{(i,j)\in \mu}(i-j).$
+Define
+$$P_{st}^{\lambda}(T({m,n})) := q^{-mn\kappa(\lambda)+\frac{m}{n}\kappa(n\lambda)}a^{-\frac{m(n-1)|\lambda|}{2}}P^{\lambda}(T({m,n})).$$
 Then
-(5.1) lim
-m→∞
-P λ
-st(T (m, n)) = P nλ(a, q).
-As a corollary, one can compute the stable colored invariants of tor us knots
-using the hook formula (2.12). One can easily check that the unredu ced stable
-polynomial P λ(T (n,∞)) = P nλ(
-; a, q) is a series in (−a) and q with nonnegative
-coeﬃcients.
-Let us compute the stable polynomial of the (2 ,∞) torus knot colored by the
-Young diagram λ = (2, 1). By (5.1) it is the same as the polynomial of the unknot
-colored by the Young diagram 2 λ = (4 , 2). The hook formula (2.12) gives the
-following answer (up to an overall scaling):
-P 2λ( ) = (1− aq−1)(1− a)2(1− aq)(1− aq2)(1− aq3)
-(1− q)2(1− q2)2(1− q4)(1− q5) .
+\begin{equation}
+\label{stable poly}
+\lim_{m\to\infty}P_{st}^{\lambda}(T({m,n}))=P^{n\lambda}(a,q).
+\end{equation}
+\end{proposition}
+As a corollary, one can compute the stable colored invariants of torus knots using the hook formula (\ref{plambda}).
+One can easily check that the unreduced stable polynomial $P^{\lambda}(T(n,\infty))=P^{n\lambda}(\unknot ; a,q)$ is
+a series in $(-a)$ and $q$ with nonnegative coefficients.
+
+
+Let us compute the stable polynomial of the $(2,\infty)$ torus knot colored by the Young diagram $\lambda=(2,1)$.
+By (\ref{stable poly}) it is the same as the polynomial of the unknot colored by the Young diagram $2\lambda=(4,2)$.
+The hook formula (\ref{plambda}) gives the following answer (up to an overall scaling):
+$$P^{2\lambda}(\unknot)=\frac{(1-aq^{-1})(1-a)^2(1-aq)(1-aq^2)(1-aq^{3})}{(1-q)^2(1-q^2)^2(1-q^4)(1-q^5)}.$$
 Note that
-P λ( ) = (1− aq−1)(1− a)(1− aq)
-(1− q)2(1− q3) .
-The reduced polynomial P red
-λ (T (2,∞)) = P λ (T (2,∞))
-P λ (a,q) has positive and negative
-terms in the q-expansion of the coeﬃcient at a0:
-(1− q3)
-(1− q2)2(1− q4)(1− q5) = 1+2 q2−q3 +4q4−q5 +6q6−2q7 +8q8−2q9 +11q10 +. . .
-48 EUGENE GORSKY, SERGEI GUKOV, AND MARKO STO ˇSI ´C
-•i
-j
-(n− 1)S
-Figure 19. Generators u(n)
-ij
-•i
-j
-(n− 1)S
-Figure 20. Generators ξ(n)
-ij
-We would like to use the equation (5.1) as a deﬁnition of the stable color ed
-homology of ( n,∞) torus knot. More precisely, we conjecture that as a vector
-spaceHλ(n,∞) is isomorphic to Hnλ( ), moreover, the a, q, tc gradings on these
-spaces match. This suggests that Hλ(n,∞) is a free supercommutative algebra
-with bosonic and fermionic generators labelled by the boxes of nλ.
-Let λ be an R× S rectangular Young diagram, and let K = T (p, q) be a ( p, q)-
-torus knot. We assume that Hλ(K) is a quotient of Hλ(T (p,∞)), the latter space
-being ( a, q, tc)-graded isomorphic to the pλ-colored homology of the unknot. Under
-this assumption, the multiplicative generators of Hλ(K) coincide with the ones of
-Hλ(T (p,∞)), while some additional relations are imposed. Let us determine the
-gradings of these generators. The diagram pλ is a R× pS rectangle, which can be
-naturally divided into p diﬀerent R× S rectangles. Let us denote by u(n)
-ij a bosonic
-generator in n-th rectangle from the right at box ( i, j), and by ξ(n)
-ij a fermionic
-generator in n-th rectangle from the left at box ( i, j), as in Figures 19 and 20 .
+$$P^{\lambda}(\unknot)=\frac{(1-aq^{-1})(1-a)(1-aq)}{(1-q)^2(1-q^3)}.$$
+The reduced polynomial
+$P^{red}_{\lambda}(T(2,\infty))=\frac{P^{\lambda}(T(2,\infty))}{P^{\lambda}(a,q)}$ has positive and negative terms
+in the $q$-expansion of the coefficient at $a^{0}$:
+$$\frac{(1-q^3)}{(1-q^2)^2(1-q^4)(1-q^5)}=1 + 2 q^2 - q^3 + 4 q^4 - q^5 + 6 q^6 - 2 q^7 + 8 q^8 - 2 q^9 +
+ 11 q^{10}+\dots$$
+
+
+
+
+We would like to use the equation (\ref{stable poly}) as a definition of the stable colored homology of $(n,\infty)$ torus knot.
+More precisely, we conjecture that as a vector space $\CH^{\lambda}(n,\infty)$ is isomorphic to $\CH^{n\lambda}(\unknot)$, moreover, the $a,q,t_{c}$ gradings on these spaces match. This suggests that $\CH^{\lambda}(n,\infty)$
+is a free supercommutative algebra with bosonic and fermionic generators labelled by the boxes of $n\lambda$.
+
+
+Let $\lambda$ be an $R \times S$ rectangular Young diagram, and let $K=T(p,q)$ be a $(p,q)$-torus knot.
+We assume that  $\CH^{\lambda}(K)$ is a quotient of $\CH^{\lambda}(T(p,\infty))$, the latter space being
+$(a,q,t_{c})$-graded isomorphic to the $p\lambda$-colored homology of the unknot. Under this assumption,
+the multiplicative generators of $\CH^{\lambda}(K)$ coincide with the ones of $\CH^{\lambda}(T(p,\infty))$,
+while some additional relations are imposed.  Let us determine the gradings of these generators.
+The diagram $p\lambda$ is a $R\times pS$ rectangle, which can be naturally divided into $p$ different $R\times S$ rectangles.
+Let us denote by $u_{ij}^{(n)}$ a bosonic generator in $n$-th rectangle {\em from the right} at box $(i,j)$,
+and by   $\xi_{ij}^{(n)}$ a fermionic generator in $n$-th rectangle {\em from the left} at box $(i,j)$, as in Figures \ref{nrect1} and \ref{nrect2} .
+\begin{figure}
+\begin{tikzpicture}
+\draw (0,0)--(0,3)--(12,3)--(12,0)--(0,0);
+\draw (4,0)--(4,3);
+\draw (8,0)--(8,3);
+\draw (2,1) node {$\bullet$};
+\draw [<->,>=stealth] (0,1)--(1.9,1);
+\draw [<->,>=stealth] (2,0)--(2,0.9);
+\draw [<->,>=stealth] (4,-0.2)--(12,-0.2);
+\draw (1,1.2) node {$i$};
+\draw (2.2,0.5) node {$j$};
+\draw (8,-0.5) node {$(n-1)S$};
+\end{tikzpicture}
+\caption{Generators $u_{ij}^{(n)}$}
+\label{nrect1}
+\end{figure}
+\begin{figure}
+\begin{tikzpicture}
+\draw (0,0)--(0,3)--(12,3)--(12,0)--(0,0);
+\draw (4,0)--(4,3);
+\draw (8,0)--(8,3);
+\draw (10,1) node {$\bullet$};
+\draw [<->,>=stealth] (8,1)--(9.9,1);
+\draw [<->,>=stealth] (10,0)--(10,0.9);
+\draw [<->,>=stealth] (0,-0.2)--(8,-0.2);
+\draw (9,1.2) node {$i$};
+\draw (10.2,0.5) node {$j$};
+\draw (4,-0.5) node {$(n-1)S$};
+\end{tikzpicture}
+\caption{Generators $\xi_{ij}^{(n)}$}
+\label{nrect2}
+\end{figure}
 Their gradings are given by the following equations:
-(a, q)
-[
-u(n)
-ij
-]
-= (0, 2(nS− i + R− j + 1)),
-(tc, tr)
-[
-u(n)
-ij
-]
-= 2(nS− i), 2((n− 1)R + j− 1)),
-(a, q)
-[
-ξ(n)
-ij
-]
-= (2, 2((n− 1)S + i− j)),
-(tc, tr)
-[
-ξ(n)
-ij
-]
-= (2((n− 1)S + i)− 1, 2((n− 1)R + j)− 1).
-QUADRUPLY-GRADED COLORED HOMOLOGY OF KNOTS 49
-Note that tr is constant in rows and tc is constant in columns. This explains the
-notations tr and tc. Using the equation Q = q+tr−tc
-R , we get
-Q
-[
-u(n)
-ij
-]
-= 2n, Q
-[
-ξ(n)
-ij
-]
-= 2n− 2.
-It is important to note that these elements generate unreducedstable homology.
-To work with the reduced homology, one should consider u(n)
-ij , ξ(n)
-ij for n≥ 2 since
-the subalgebra generated by u(1)
-ij , ξ(1)
-ij coincides with the unreduced homology of
-the unknot.
-There exists a map Mλ :Hλ(T (p,∞))→H λt
-(T (p,∞)) such that for any w we
-have
-(5.2) ( Q, tc, tr)[Mλ(w)] = ( Q, tr, tc)[w].
-The map Mλ is deﬁned by the equations
-Mλ
-(
-u(n)
-ij
-)
-:= u(n)
-R−j+1,S−i+1, M λ
-(
-ξ(n)
-ij
-)
-:= ξ(n)
-ji .
-One can check that it satisﬁes (5.2). The reﬁned exponential grow th conjecture
-also holds for the stable homology Hλ(T (p,∞)) :
-(5.3) P R×S(T (p,∞), a, Q, tr) =
-(
-P Λ R
-(T (p,∞), a, Q, tr)
-) S
-.
-The exponential growth conjecture follows from the fact that tr is constant in
-rows: if we consider generators in ( a, Q, tr) gradings, then we get S copies of
-HΛ R
-(T (p,∞)) in the same gradings, which in turn implies (5.3).
-Let us recall that in (3.9) we conjectured that the self-duality map Φ can be
-obtained as follows: there exists a “D0-brane” operator Lλ :Hλ(K)→H λ(K) such
-that
-(5.4) ( a, q, Q, tr, tc)[Lλ] = (0 , R + S, 2, R, S), Φ λ(x) = L−Q(x)
-λ .
-We conjecture that for torus knots colored by λ = R× S rectangular diagrams such
-operator Lλ coincides with the multiplication operator by u(2)
-S,1. One can check that
-it has the prescribed degrees. Moreover, the mirror map Mλ is chosen in such a way
-that Mλ(u(2)
-S,1) = u(2)
-R,1, and so for the rectangular diagrams we have an equation
-Mλ◦ Lλ = Lλt◦ Mλ,
+\begin{eqnarray*}
+(a,q)\left[u_{ij}^{(n)}\right]=(0,2(nS-i+R-j+1)),\\
+(t_c,t_r)\left[u_{ij}^{(n)}\right]=2(nS-i),2((n-1)R+j-1)),\\
+(a,q)\left[\xi_{ij}^{(n)}\right]=(2,2((n-1)S+i-j)),\\
+(t_c,t_r)\left[\xi_{ij}^{(n)}\right]=(2((n-1)S+i)-1,2((n-1)R+j)-1).
+\end{eqnarray*}
+Note that $t_{r}$ is constant in rows and $t_{c}$ is constant in columns. This explains the notations
+$t_{r}$ and $t_{c}$. Using the equation $Q=\frac{q+t_r-t_c}{R}$, we get
+$$Q\left[u_{ij}^{(n)}\right]=2n,\quad Q\left[\xi_{ij}^{(n)}\right]=2n-2.$$
+
+It is important to note that these elements generate {\em unreduced} stable homology. To work with the reduced homology,
+one should consider $u_{ij}^{(n)},\xi_{ij}^{(n)}$ for $n\ge 2$ since the subalgebra generated by  $u_{ij}^{(1)},\xi_{ij}^{(1)}$
+coincides with the unreduced homology of the unknot.
+
+There exists a map $M_{\lambda} :\CH^{\lambda}(T(p,\infty))\to \CH^{\lambda^t}(T(p,\infty))$
+such that for any $w$ we have
+\begin{equation}
+\label{gradings of M}
+(Q,t_{c},t_{r})[M_{\lambda} (w)]=(Q,t_{r},t_{c})[w].
+\end{equation}
+The  map $M_{\lambda}$ is defined by the equations
+$$M_{\lambda} \left(u_{ij}^{(n)}\right):=u_{R-j+1,S-i+1}^{(n)},\quad M_{\lambda} \left(\xi_{ij}^{(n)}\right):=\xi_{ji}^{(n)}.$$
+One can check that it satisfies (\ref{gradings of M}).
+The refined exponential growth conjecture also holds for the stable homology $\CH^{\lambda}(T(p,\infty)):$
+\be
+\label{stable exp growth}
+\CP^{R\times S}(T(p,\infty),a,Q,t_{r})=\left(\CP^{\Lambda^R}(T(p,\infty),a,Q,t_{r})\right)^{S}.
+\ee
+The exponential growth conjecture follows from the fact that $t_{r}$ is constant in rows:
+if we consider generators in $(a,Q,t_{r})$ gradings, then we get $S$ copies of $\CH^{\Lambda^R}(T(p,\infty))$ in the same gradings, which in turn implies (\ref{stable exp growth}).
+
+Let us recall that in (\ref{Llambda}) we conjectured that the self-duality map $\Phi$ can be obtained as follows:
+there exists a ``D0-brane'' operator $L_{\lambda}:\CH^{\lambda}(K)\to\CH^{\lambda}(K)$
+such that
+\begin{equation}
+(a,q,Q,t_r,t_c)[L_{\lambda}]=(0,R+S,2,R,S),\quad \Phi_{\lambda}(x)=L_{\lambda}^{-Q(x)}.
+\end{equation}
+We conjecture that for torus knots colored by $\lambda=R\times S$ rectangular diagrams
+such operator $L_{\lambda}$ coincides with the multiplication operator by $u_{S,1}^{(2)}.$ One can check that it has
+the prescribed degrees. Moreover, the mirror map $M_{\lambda}$ is chosen in such a way that $M_{\lambda} (u_{S,1}^{(2)})=u_{R,1}^{(2)}$,
+and so for the rectangular diagrams we have an equation
+$$M_{\lambda} \circ L_{\lambda}=L_{\lambda^t}\circ M_{\lambda}, $$
 and therefore
-Mλ◦ Φ λ = Φ λt◦ Mλ.
-This is indeed the required compatibility relation between M and Φ.
-Now let us describe the action of colored diﬀerentials in this algebraic m odel.
-The positive row-removing diﬀerentials are given by the equation
-d+
-R×S→k×S
-(
-ξ(n)
-i,j
-)
-= u(n)
-S+1−i,j−k, j > k.
-The positive column-removing diﬀerentials are given by the equation
-d+
-R×S→R×l
-(
-ξ(n)
-i,j
-)
-= u(n)
-S+l+1−i,j, i > l.
-The negative row-removing diﬀerentials are given by the equation
-d−
-R×S→k×S
-(
-ξ(2)
-1,k+1
-)
-= 1.
-50 EUGENE GORSKY, SERGEI GUKOV, AND MARKO STO ˇSI ´C
-The negative column-removing diﬀerentials are given by the equation
-d−
-R×S→R×l
-(
-ξ(2)
-l+1,1
-)
-= 1.
-The diﬀerentials vanish on all other generators of the colored HOMF LY homology.
-One can check that the degrees of these diﬀerentials agree with th e expected ones.
-The duality between positive and negative diﬀerentials is party explain ed by
-the identities
-d+
-R×S→k×S (ξ(2)
-1,k+1) = u(2)
-S,1, d−
-R×S→k×S (ξ(2)
-1,k+1) = 1 ,
-d+
-R×S→R×l(ξ(2)
-l+1,1) = u(2)
-S,1, d−
-R×S→R×l(ξ(2)
-l+1,1) = 1 .
-Finally, we describe the action of the universal diﬀerentials. As a mod el example,
-consider the unreduced S2 homology of the unknot. It has two even generators
-u1, u2 and two odd generators ξ1, ξ2. We deﬁne the universal diﬀerential on the
-bottom row by the formula
-d(f (u1, u2)) = u2
-f (u1, u2)− f (−u1, u2)
-u1
-.
+$$M_{\lambda} \circ \Phi_{\lambda} = \Phi_{\lambda^t}\circ M_{\lambda} .$$
+This is indeed the required compatibility relation between $M$ and $\Phi$.
+
+
+Now let us describe the action of colored differentials
+in this algebraic model.
+The positive row-removing differentials are given by the equation
+$$d^{+}_{R\times S\to k\times S}\left(\xi_{i,j}^{(n)}\right)=u_{S+1-i,j-k}^{(n)}, j>k.$$
+The positive column-removing differentials are given by the equation
+$$d^{+}_{R\times S\to R\times l}\left(\xi_{i,j}^{(n)}\right)=u_{S+l+1-i,j}^{(n)}, i>l.$$
+The negative row-removing differentials are given by the equation
+$$d^{-}_{R\times S\to k\times S}\left(\xi_{1,k+1}^{(2)}\right)=1.$$
+The negative column-removing differentials are given by the equation
+$$d^{-}_{R\times S\to R\times l}\left(\xi_{l+1,1}^{(2)}\right)=1.$$
+The differentials vanish on all other generators of the colored HOMFLY homology.
+One can check that the degrees of these differentials agree with the expected ones.
+
+The duality between positive and negative differentials is party explained by the identities
+$$d^{+}_{R\times S\to k\times S}(\xi_{1,k+1}^{(2)})=u_{S,1}^{(2)},\ d^{-}_{R\times S\to k\times S}(\xi_{1,k+1}^{(2)})=1,$$
+$$d^{+}_{R\times S\to R\times l}(\xi_{l+1,1}^{(2)})=u_{S,1}^{(2)},\ d^{-}_{R\times S\to R\times l}(\xi_{l+1,1}^{(2)})=1.$$
+Finally, we describe the action of the universal differentials. As a model example, consider the unreduced $S^2$ homology of the unknot. It has two even generators $u_1,u_2$ and two odd generators $\xi_1,\xi_2$.
+We define the universal differential on the bottom row by the formula
+$$d(f(u_1,u_2))=u_2\frac{f(u_1,u_2)-f(-u_1,u_2)}{u_1}.$$
 In other words,
-d(ua
-1ub
-2) =
-{
-2ua−1
-1 ub+1
-2 , if a is odd ,
-0, if a is even .
-It is clear that d2 = 0 and the homology of d is isomorphic to C[u2
-1], as predicted
-by the grading restrictions in Section 3. Similarly, on higher levels we de ﬁne the
-diﬀerential by the equation d(ξ1) = ξ2, so d(ξ1∧ ξ2) = 0. The total homology is a
-free algebra generated by u2
-1 and ξ1ξ2.
-In general, we can always split variables into pairs, deﬁne a universal diﬀerential
-in each pair as above and extend it to the whole algebra by the Leibnitz rule. For
-example, in stable S2 homology of the (2,∞) torus knot we have two even generators
-u3, u4 and two odd generators ξ3, ξ4. As in the above example, one can deﬁne a
-universal diﬀerential by the equations
-d(ua
-3ub
-4) =
-{
-2ua−1
-3 ub+1
-4 , if a is odd ,
-0, if a is even , d(ξ3) = ξ4.
-It clearly agrees with the description of the universal diﬀerential f or the trefoil in
-Section 4.1.
-5.2. Diﬀerential forms.
-Definition 5.2. The unreduced moduli space
-Mp,q(r) is deﬁned in the aﬃne
-space with the coordinates u1, . . . , urp; v1, . . . , vrq by the equation
-(5.5) (1 + u1z + u2z2 + . . . + urpzrp)q = (1 + v1z + v2z2 + . . . + vrq zrq)p.
-which should hold at every coeﬃcient of its expansion in powers of z.
-The spaceMp,q(r) can be also deﬁned in the aﬃne space with the coordinates
-u1, . . . , urp by the coeﬃcients in the z-expansion of the equation
-(1 + u1z + u2z2 + . . . + urpzrp)q/p,
-starting from ( qr + 1)-st. Indeed, one can rewrite the equation (5.5) as
-(1 + u1z + u2z2 + . . . + uprzpr)q/p = (1 + v1z + v2z2 + . . . + vqr zqr).
-QUADRUPLY-GRADED COLORED HOMOLOGY OF KNOTS 51
-This will express vi through uj. The dimension of Mp,q(r) equals to r. Indeed, let
-us forget the scheme structure and study the underlying subset of the aﬃne space.
-One has U (z)q = V (z)p for coprime p and q iﬀ there exists a polynomial F (z) such
-that U (z) = F (z)p, V (z) = F (z)q. Since F (z) starts from 1 and has degree r, we
-have r parameters at our disposal.
-Conjecture 5.3. The unreduced Sr homology of the ( p, q) torus knot is the
-space of diﬀerential forms on Mp,q(r):
-(5.6) H
-Sr
-(T (p, q)) = Ω •(Mp,q(r)) .
-As an illustration of this conjecture, let us consider an example of th e unknot.
-We can choose p = q = 1, so (5.5) takes the form
-1 + u1z + u2z2 + . . . + urzr = 1 + v1z + v2z2 + . . . + vrzr
-ThereforeMp,q(r) = Spec C[u1, . . . , ur], and
-Ω•(Mp,q(r)) = C[u1, . . . , ur, du1, . . . , dur].
-This agrees with the above description of the unreduced Sr-colored triply graded
-homology of the unknot.
-For a more interesting example, consider the S2-colored trefoil knot. The gen-
-erators are u2, u3, u4, and the deﬁning equations are
-(5.7) − 3
-16 u3(u2
-2− 4u4) = 3
-128 (u4
-2− 8u2u2
-3− 8u2
-2u4 + 16u2
-4) = 0 ,
-− 1
-32 u3(−3u3
-2 + 2u2
-3 + 12u2u4) = 0 .
-Definition 5.4. The reduced moduli space Mp,q(r) is deﬁned in the aﬃne
-space with the coordinates ur+1, . . . , upr; vr+1, . . . , vqr by all coeﬃcients in the z-
-expansion of the equation
-(5.8) (1 + ur+1zr+1 + ur+2zr+2 + . . .+ uprzpr)q = (1 +vr+1z + v2z2 + . . .+ vqr zqr)p
-One can check that Mp,q(r) deﬁnes a single point 0, so it is zero-dimensional.
+$$d(u_1^{a}u_2^{b})=\begin{cases}
+2u_1^{a-1}u_2^{b+1},& {\rm if}\ a\ {\rm is\ odd},\\
+0,& {\rm if}\ a\ {\rm is\ even}.\\
+\end{cases}$$
+It is clear that $d^2=0$ and the homology of $d$ is isomorphic to $\mathbb{C}[u_1^2]$, as predicted by the grading restrictions in Section \ref{sec:gradings}. Similarly, on higher levels we define the differential by the equation
+$d(\xi_1)=\xi_2$, so $d(\xi_1\wedge \xi_2)=0$. The total homology is a free algebra generated by $u_1^2$ and $\xi_1\xi_2$.
+
+In general, we can always split variables into pairs, define a universal differential in each pair as above and extend it to the whole algebra by the Leibnitz rule. For example, in stable $S^2$ homology of the $(2,\infty)$ torus knot we have two even generators $u_3,u_4$ and two odd generators $\xi_3,\xi_4$. As in the above example, one can define a universal differential by the equations
+$$d(u_3^{a}u_4^{b})=\begin{cases}
+2u_3^{a-1}u_4^{b+1},& {\rm if}\ a\ {\rm is\ odd},\\
+0,& {\rm if}\ a\ {\rm is\ even},\\
+\end{cases}
+\quad d(\xi_3)=\xi_4.
+$$
+It clearly agrees with the description of the universal differential for the trefoil in Section \ref{sec:trefoil}.
+
+
+\subsection{Differential forms}
+\label{sec:symtorusforms}
+
+\begin{definition}
+The {\em unreduced} moduli space $\overline{\CM}_{p,q}(r)$ is defined in the affine space
+with the coordinates $u_1, \ldots, u_{rp}; v_1,\ldots,v_{rq}$ by the equation
+\begin{equation}
+\label{equv}
+(1+u_1z+u_2z^2+\ldots+u_{rp}z^{rp})^{q}=(1+v_1z+v_2z^2+\ldots+v_{rq}z^{rq})^{p}.
+\end{equation}
+which should hold at every coefficient of its expansion in powers of  $z$.
+\end{definition}
+
+The space $\overline{\CM}_{p,q}(r)$ can be also defined in the affine space
+with the coordinates $u_1,\ldots,u_{rp}$ by the coefficients in the $z$-expansion of the equation
+$$(1+u_1z+u_2z^2+\ldots+u_{rp}z^{rp})^{q/p},$$
+starting from $(qr+1)$-st. Indeed, one can rewrite the equation (\ref{equv}) as
+$$(1+u_1z+u_2z^2+\ldots+u_{pr}z^{pr})^{q/p}=(1+v_1z+v_2z^2+\ldots+v_{qr}z^{qr}).$$
+This will express $v_i$ through $u_j$. The dimension of $\overline{\CM}_{p,q}(r)$ equals to $r$.
+Indeed, let us forget the scheme structure and study the underlying subset of the affine space.
+One has $U(z)^{q}=V(z)^{p}$ for coprime $p$ and $q$ iff there exists a polynomial $F(z)$ such that
+$U(z)=F(z)^{p}, V(z)=F(z)^{q}$. Since $F(z)$ starts from 1 and has degree $r$, we have $r$ parameters at our disposal.
+
+\begin{conjecture}
+\label{symmetric torus unreduced}
+The {\em unreduced} $S^r$ homology of the $(p,q)$ torus knot is the space of differential forms on $\overline{\CM}_{p,q}(r)$:
+\begin{equation}
+\overline{\CH}^{S^r} (T(p,q)) \; = \; \Omega^{\bullet}(\overline{\CM}_{p,q}(r)) \,.
+\label{HMunreduced}
+\end{equation}
+\end{conjecture}
+
+As an illustration of this conjecture, let us consider an example of the unknot. We can choose $p=q=1$, so (\ref{equv}) takes the form
+$$1+u_1z+u_2z^2+\ldots+u_{r}z^r=1+v_1z+v_2z^2+\ldots+v_{r}z^r$$
+Therefore $\overline{\CM}_{p,q}(r)=\Spec\C[u_1,\ldots,u_r],$
+and $$\Omega^{\bullet}(\overline{\CM}_{p,q}(r))=\C[u_1,\ldots,u_r,du_1,\ldots,du_r].$$
+This agrees with the above description of the unreduced $S^r$-colored triply graded homology of the unknot.
+
+For a more interesting example, consider the $S^2$-colored trefoil knot.
+The  generators are $u_2$, $u_3$, $u_4$, and the defining equations are
+\be
+\label{s2 colored trefoil}
+-\frac{3}{16} u_3 (u_2^2 - 4 u_4)=\frac{3}{128} (u_2^4 - 8 u_2 u_3^2 - 8 u_2^2 u_4 + 16 u_4^2)=0,
+\ee
+$$-\frac{1}{32} u_3 (-3 u_2^3 + 2 u_3^2 + 12 u_2 u_4)=0.$$
+
+\begin{definition}
+The {\em reduced} moduli space $\CM_{p,q}(r)$ is defined in the affine space
+with the coordinates $u_{r+1},\ldots,u_{pr}; v_{r+1},\ldots,v_{qr}$ by all coefficients in the $z$-expansion of the equation
+\begin{equation}
+\label{equvred}
+(1+u_{r+1}z^{r+1}+u_{r+2}z^{r+2}+\ldots+u_{pr}z^{pr})^{q}=(1+v_{r+1}z+v_2z^2+\ldots+v_{qr}z^{qr})^{p}
+\end{equation}
+\end{definition}
+
+One can check that $\CM_{p,q}(r)$ defines a single point 0, so it is zero-dimensional.
 We propose the following
-Conjecture 5.5. The reducedSr homology of the ( p, q) torus knot is the space
-of diﬀerential forms on Mp,q(r):
-(5.9) HSr
-(T (p, q)) = Ω •(Mp,q(r)) .
-For r = 1 this conjecture is equivalent to the main conjecture of [ 37], since
-by the results of [ 35] the right hand side of (5.9) can be identiﬁed with a certain
-isotypic component of the ﬁnite-dimensional representation of ra tional Cherednik
-algebra with parameter p/q. Moreover, it follows from [ 37] for r = 1 and from [ 23]
-for general r that the ( a, q)-character of Ω ∗(
-Mp,q(r)) is equal to the unreduced Sr-
-colored HOMFLY polynomial of the (p, q) torus knot. One can also check ([ 23]) that
-the ( a, q)-character of Ω ∗(Mp,q(r)) is equal to the reduced Sr-colored HOMFLY
-polynomial of the same knot.
-Let us describe the gradings on the space Ω ∗(Mp,q(r)). The a-grading is deﬁned
-by the degree of a diﬀerential form, so that a(ui) = 0 , a (dui) = 2 . Furthermore, we
-deﬁne the ( q, tr, tc) gradings by the formula
-(5.10) ( q, tc, tr)[ui] =
-(
-2i, 2i− 2, 2
-⌊ i− 1
-r
-⌋)
-,
-52 EUGENE GORSKY, SERGEI GUKOV, AND MARKO STO ˇSI ´C
-1 u3 u4 u2
-3
-du3 du4 u3du3 u3du4
-du3∧ du4
-0 2 4 6 8 10 12 q
-Figure 21. Algebraic model for the S2 homology of the trefoil.
-(q, tr, tc)[dui] =
-(
-2i− 2, 2i− 1, 2
-⌊ i− 1
-r
-⌋
-+ 1
-)
-.
-It is easy to check that the deﬁning equations of Mp,q(r) are homogeneous in
-q-grading and not homogeneous in t-gradings. Therefore, strictly speaking, on
-Ω∗(Mp,q(r)) we get ( a, q) bigrading and a pair of ﬁltrations ( tr, tc).
-For example, in the uncolored case the reduced homology of the tre foil knot
-has only one bosonic generator u2, and the deﬁning equation for M2,3(1) reads as
-(5.11) u2
-2 = 0
-Similarly, for the (3 , 4) torus knot the reduced uncolored homology has two bosonic
-generators u2 and u3, with the following deﬁning equations for M3,4(1):
-(5.12) u2u3 = 0, 2u3
-2
-9 = u2
-3.
-Finally, the reduced S2-colored homology of the trefoil knot has two even generators
-u3 and u4 and the deﬁning equations can be obtained from (5.7) by setting u2 = 0:
-u3u4 = u2
-4 = u3
-3 = 0.
-Their diﬀerentials have the form
-u3du4 + u4du3 = 2u4du4 = 3u2
-3du3 = 0.
-Therefore one can check that the monomial basis in Ω ∗(M2,3(2)) is given by
-(5.13) 1 , u 3, u 4, u 2
-3, du 3, du 4, u 3du3, u 3du4, du 3∧ du4.
-We illustrate this homology with the Figure 21 (compare with the Figure s in Section
-4.1).
-For example, by computing the gradings of the basic elements (5.13) one ﬁnds
-the Poincar´ e polynomial of the S2-colored trefoil knot (in the ( a, q, tr) grading):
-(5.14)P S2
-(31) = 1+ q6t2+q8t2+q12t4+a2q4t3+a2q6t3+a2q10t5+a2q12t5+a4q10t6.
-More generally, for the Sr-colored reduced homology of the trefoil knot the ( a, q, tr)
-gradings of the generators are given by the equations:
-(a, q, tr)[ui] = (0 , 2i, 2), (a, q, tr)[dui] = (2 , 2i− 2, 3).
-QUADRUPLY-GRADED COLORED HOMOLOGY OF KNOTS 53
-In particular, the monomial ui
-r+1· dur+1∧ dur+2∧ dur+j has grading
-i(0, 2r + 2, 2) +
-j∑
-l=1
-(2, 2r + 2l− 2, 3) = (2 j, 2(r + 1)i + 2jr + j(j− 1), 2i + 3j)
-and contributes the term a2jq2(r+1)i+2rj+j(j−1)t2i+3j
-r in the Poincar´ e polynomial
-(5.15) P Sr
-(31) = a2rq−r ∑
-i+j≤r
-a2jq2(r+1)i+2rj+j(j−1)t2i+3j
-r
-[r]!
-[i]![j]![r− i− j]! ,
-obtained from the categoriﬁcation of the Volume Conjecture and t he super- A-
-polynomial [ 26, 27, 28 ]. Here [ N ]! is the unbalanced quantum factorial:
-[N ]! = [ N ]· [N− 1]· . . . [2]· [1]′,
-[N ]′ = qN− 1
-q− 1 = 1 + q + . . . + qN−1.
-and one can easily verify that (5.15) satisﬁes the reﬁned exponent ial growth con-
-jecture as well as the rest of the structural properties of sect ion 3.
-Finally, let us match the gradings (5.10) with those in the constructio n of
-Section 2.4. We have R = 1 , S = r, so there are generators u(n)
-i,1 , ξ(n)
-i,1 , 1≤ i≤ r
-with gradings
-(a, q, tc, tr)[u(n)
-i,1 ] = (0 , 2 + 2rn− 2i, 2rn− 2i, 2n− 2),
-(a, q, tc, tr)[ξ(n)
-i,1 ] = (2 , 2r(n− 1) + 2i− 2, 2r(n− 1) + 2i− 1, 2n− 1).
-Indeed, these gradings agree with (5.10) if one identiﬁes
-u(n)
-i,1 = urn+1−i, ξ (n)
-i,1 = dur(n−1)+i.
-5.3. Diﬀerentials for supergroups. It has been conjectured in [ 34, Conj.
-3.22] that the diﬀerentials d0, d±n belong to a bigger algebra. In particular, for the
-uncolored homology of (4 , 5) torus knot the following operators were introduced: α2
-of (a, q, t) degree (−2,−2,−5), α1 of (a, q, t) degree (−2, 2,−3). Their introduction
-was motivated by the observation that the “usual” diﬀerentials dN applied to the
-(unique) generator with top a-degree 6 do not generate uncolored triply graded
-homology: there are 7 nontrivial diﬀerentials d0, d±n, while there are 9 generators
-with a-degree 4. The extra diﬀerentials solve this problem. We can now iden tify
-these operators with the supergroup diﬀerentials:
-α2 = d1|2, α 1 = d2|1.
-In total, for the uncolored (4,5) knot we have 9 nontrivial diﬀerent ials:
-d1 = d1|0, d −1 = d0|1,
-d2 = d2|0, d 0 = d1|1, d −2 = d0|2,
-d3 = d3|0, α 1 = d2|1, α 2 = d1|2, d −3 = d0|3.
-For a general ( n, m) torus knot ( m > n ) we will have all diﬀerentials da|b with
-a + b < n , of total number
-2 + 3 + 4 + ... + n = n(n + 1)
-2 − 1 = (n + 2)(n− 1)
-2 .
-It has been explained in [ 37] that the diﬀerentials are tightly related to the (conjec-
-tural) action of the rational Cherednik algebra Hc on the triply graded homology
-54 EUGENE GORSKY, SERGEI GUKOV, AND MARKO STO ˇSI ´C
-of torus knots. More precisely, [ 37, Deﬁnitions 7.2-7.3] assign a diﬀerential to every
-Sn-equivariant copy of the standard ( n− 1)-dimensional irreducible representation
-Vn inside Hc. These diﬀerentials satisfy some nice properties: for example, if th e
-two copies α and β are pure, then by [ 37, Lemma 7.7] the corresponding diﬀerentials
-dα and dβ anticommute.
-The new supergroup diﬀerentials can be naturally embedded in this fr amework.
-Namely, recall that Hc has generators xi, yj. We deﬁne α(m|k) to be a copy of Vn
-spanned by xm
-i yk
-i , and
-dm|k = dα(m|k).
-Since this copy is pure in the sense of [ 37], the corresponding diﬀerentials anticom-
-mute. Moreover, one can check that α(m|k) span HomSn (Vn, Hc), so the supergroup
-diﬀerentials form a complete collection of diﬀerentials for the uncolor ed torus knot
-homology. The grading conventions of [ 37] assure that dm|n have the prescribed
-gradings.
-5.4. Examples. We have compared the results of 4.1 with the algebraic model
-in (5.13). Let us make the similar comparisons for other torus knots in Section 4.
-The stable reduced
--colored homology of (2 ,∞) torus knot have 4 even and 4
-odd generators u(2)
-ij and ξ(2)
-ij (see Section 5.1). They have the following ( a, q, tc, tr)-
-degrees:
-deg[u(2)
-11 ] = (0 , 10, 6, 4), deg[u(2)
-12 ] = (0 , 8, 6, 6),
-deg[u(2)
-21 ] = (0 , 8, 4, 4), deg[u(2)
-22 ] = (0 , 6, 4, 6),
-deg[ξ(2)
-11 ] = (2 , 4, 5, 5), deg[ξ(2)
-12 ] = (2 , 2, 5, 7),
-deg[ξ(2)
-21 ] = (2 , 6, 7, 5), deg[ξ(2)
-22 ] = (2 , 4, 7, 7).
-As explained in Section 5.1, Q
-[
-u(2)
-ij
-]
-= 4 and Q
-[
-ξ(2)
-ij
-]
-= 2. For example, the
-“bottom row” of the homology (with appropriate shift of gradings) is 16-dimensional
-and has monomial basis
-1, u (2)
-21 ,
-(
-u(2)
-21
-) 2
-,
-(
-u(2)
-21
-) 3
-,
-(
-u(2)
-21
-) 4
-,
-u(2)
-11 , u (2)
-11 u(2)
-21 , u (2)
-11
-(
-u(2)
-21
-) 2
-,
-u(2)
-12 , u (2)
-12 u(2)
-21 , u (2)
-12
-(
-u(2)
-21
-) 2
-,
-u(2)
-22 , u (2)
-22 u(2)
-21 , u (2)
-22
-(
-u(2)
-21
-) 2
-,
-(
-u(2)
-22
-) 2
-,
-(
-u(2)
-11
-) 2
-.
-The self-symmetry map Φ reﬂects ﬁrst four sets of monomials in the vertical axis,
-and preserved two remaining monomials.
-The stable reduced
--colored homology of (2 ,∞) torus knot have 6 even and
-6 odd generators. They have the following ( a, q, tc, tr)-degrees:
-deg[u(2)
-11 ] = (0 , 12, 6, 6), deg[u(2)
-12 ] = (0 , 10, 6, 8),
-deg[u(2)
-13 ] = (0 , 8, 6, 10), deg[u(2)
-21 ] = (0 , 10, 4, 6),
-deg[u(2)
-22 ] = (0 , 8, 4, 8), deg[u(2)
-23 ] = (0 , 6, 4, 10),
-deg[ξ(2)
-11 ] = (2 , 4, 5, 7), deg[ξ(2)
-12 ] = (2 , 2, 5, 9),
-QUADRUPLY-GRADED COLORED HOMOLOGY OF KNOTS 55
-deg[ξ(2)
-13 ] = (2 , 0, 5, 11), deg[ξ(2)
-21 ] = (2 , 6, 7, 7).
-deg[ξ(2)
-22 ] = (2 , 4, 7, 9), deg[ξ(2)
-23 ] = (2 , 2, 7, 11).
-Indeed, Q
-[
-u(2)
-ij
-]
-= 4 and Q
-[
-ξ(2)
-ij
-]
-= 2.
-Finally, consider the S2-colored (3 , 4) torus knot. In the notations of Section
-5.2, we have 4 generators u3, u4, u5, u6 of ( a, q, tc, tr) gradings
-deg u3 = (0, 6, 4, 2), deg u4 = (0, 8, 6, 2),
-deg u5 = (0, 10, 8, 4), deg u6 = (0, 12, 10, 4).
-Note that in the notations of Section 5.1, one would have
-u3 = u(2)
-21 , u 4 = u(2)
-11 , u 5 = u(3)
-21 , u 6 = u(3)
-11 ,
-and the grading conventions agree. The deﬁning relations have the form
-u3
-3− 9u4u5− 9u3u6 = 2u2
-3u4− 3(u2
-5 + 2u4u6) = u3u2
-4 + u2
-3u5− 3u5u6 = 0,
-5u4
-3− 12u3
-4− 72u3u4u5− 36u2
-3u6 + 54u2
-6 = 5u3
-3u4− 9u2
-4u5− 9u3(u2
-5 + 2u4u6) = 0 .
-One can check that the monomial basis on the “bottom row” is given b y the fol-
-lowing 25 monomials:
-1, u 3, u 2
-3, u 3
-3, u 4
-3, u 5
-3, u 6
-3,
-u4, u 4u3, u 4u2
-3, u 4u3
-3, u 4u4
-3,
-u5, u 5u3, u 5u2
-3, u 5u3
-3,
-u6, u 6u3, u 6u2
-3, u 6u3
-3,
-u2
-4 u2
-4u3, u 2
-4u2
-3,
-u2
-5, u3
-4.
-The self-symmetry map Φ reﬂects ﬁrst ﬁve sets of monomials in the v ertical axis,
-and preserved two remaining monomials.
-6. HOMFL Y homology from A-model and B-model
-In this section, we wish to look for geometric and physical models for colored
-HOMFLY homology, eventually formulating it in the language of symplec tic geom-
-etry or the so-called A-model.
-Indeed, in mirror symmetry, the so-called B-model is famous for its formulation
-in the language of complex (algebraic) geometry, while the A-model s ide involves
-symplectic invariants, Fukaya category, and quantum cohomology [58]. Clearly,
-the algebraic model described in the previous section is closer to the B-model, and
-therefore it will be our natural starting point here. Then, we will re late it to various
-problems — that are interesting in their own right — in mirror symmetry and in
-symplectic geometry. We will give several reformulations, in terms o f A-model and
-B-model, open and closed ( i.e. with and without D-branes), in all of which colored
-HOMFLY homology will be realized as cohomology of a suitable BRST oper ator
-Q, such that Q2 = 0:
-(6.1) Hλ(K) = Q-cohomology .
-In physics literature, Q is often called “supercharge” and its cohomology is often
-called the space of BPS states since its elements are the so-called BPS states (=
-supersymmetric conﬁgurations). Even though precisely this inter pretation of knot
-homology was proposed in [ 41] and studied from various vantage points in [ 2, 19,
-39, 50, 87 ], the A-model and B-model reformulations discussed here appear to be
-56 EUGENE GORSKY, SERGEI GUKOV, AND MARKO STO ˇSI ´C
-completely new and do not make direct contact with any of the existe nt geometric
-/ physical models of knot homologies. Therefore, by pursuing some of these new
-geometric descriptions further one is likely to learn a lot about colore d HOMFLY
-homology and, possibly, even about homological mirror symmetry.
-6.1. B-model on a supermanifold. With this goal in mind, we start by
-reformulating the Conjectures 5.3 and 5.5 in terms of B-model on a s uper-manifold
-Cd|d with a certain Landau-Ginzburg potential Wsuper(K; λ), such that
-(6.2) Hλ(K) ∼
-= J ac(Wsuper(K; λ))
-Note, that Cd|d is a super-Calabi-Yau manifold (see [ 3, 77, 88 ]).
-Speciﬁcally, consider the potential W (T (p, q); Sr) on the u-space given by the
-formula
-(6.3) W (T (p, q); Sr) = Coef (p+q)r+1(1 + u1z + . . . + uprzpr)
-q+p
-p .
-Let us rename dui by ξi and introduce a potential Wsuper(T (p, q); Sr) on the su-
-perspace Cpr|pr with coordinates ui, ξi by the formula
-(6.4) Wsuper(T (p, q); Sr) :=
-∑
-i
-∂W
-∂ui
-ξi .
-The space of diﬀerential forms Ω •(
-Mp,q(r)
-)
-is isomorphic to the Jacobi ring of
-Wsuper(T (p, q); Sr):
-(6.5) Ω
-[
-Mp,q(r)
-]
-= C[u1, . . . , upr, ξ1, . . . , ξpr]/
-(∂Wsuper
-∂ui
-, ∂Wsuper
-∂ξi
-)
-.
-According to the Conjecture 5.3, both spaces represent the unr educed Sr-colored
-homology of the ( p, q) torus knot. Indeed, the partial derivatives of W (T (p, q); Sr)
-are equal to
-∂W (T (p, q); Sr)
-∂ui
-= Coef (p+q)r+1
-∂
-∂ui
-(1 + u1z + . . . + uprzpr)
-q+p
-p =
-q + p
-p Coef (p+q)r
-[
-zi(1 + u1z + . . . + uprzpr)
-q
-p
-]
-=
-q + p
-p Coef (p+q)r+1−i(1 + u1z + . . . + uprzpr)
-q
-p , i = 1 . . . pr.
-Therefore the ring of functions on Mp,q(r) coincides with the Jacobi ring of W :
-(6.6) C
-[
-Mp,q(r)
-]
-= C[u1, . . . , upr]/
-(∂W
-∂ui
-)
-.
-The full space of diﬀerential forms Ω •(
-Mp,q(r)
-)
-is a quotient of the space of
-all diﬀerential forms on Cpr by the equations
-(6.7) ∂W
-∂ui
-= 0,
-∑
-j
-∂2W
-∂ui∂uj
-· duj = 0.
-The Jacobi ring of Wsuper is deﬁned by the following equations:
-∂Wsuper
-∂ξi
-= ∂W
-∂ui
-= 0
-∂Wsuper
-∂ui
-=
-∑
-j
-∂2W
-∂uj∂ui
-ξj = 0.
-QUADRUPLY-GRADED COLORED HOMOLOGY OF KNOTS 57
-Since these equations coincide with (6.7), we get the relation (6.5).
-In the mirror symmetry literature [ 77, 78, 3, 31 ], the setup we just described
-is called a Landau-Ginzburg B-model with target space Cd|d and superpotential
-Wsuper(K; λ). The function Wsuper(K; λ) is called superpotential even when the
-target space is an ordinary (bosonic) manifold, e.g. W (ui) in our discussion might
-be called superpotential of a Landau-Ginzburg model on Cpr. As a ﬁnal clariﬁcation
-of terminology, we should mention that a model is called Landau-Ginzburg model
-when the superpotential is non-zero, and is referred to as the sigma-model (on a
-certain target manifold) when W = 0.
-In our case, the colored HOMFLY homology (of torus knots) is realiz ed as the
-Jacobi ring 7 (6.2) - (6.5) of a Landau-Ginzburg model on Cpr|pr with the superpo-
-tential Wsuper(T (p, q); Sr). There are several aspects of this B-model that make it
-rather special and interesting, the main of which is undoubtedly the fact that the
-target space Cpr|pr is a supermanifold.
-It is instructive, though, to start with a more familiar and conventio nal B-
-model with a target space X. Then, we will extend it to a Landau-Ginzburg model
-with a superpotential W and will see why (6.2) - (6.5) can be interpreted as a ring
-of observables with and without D-branes (called B-branes in the co ntext of the
-B-model). In general, we shall use X for the target space of the B-model and Y for
-the target space of the A-model, so that X and Y are mirror manifolds in most of
-our applications.
-First, as a warm-up and a lightning review of the relevant facts abou t B-model,
-let us consider a B-model with target space X. The space of observables — or, to
-be more precise, the space of closed (string) observables — in such model is then
-identiﬁed with the ∂-cohomology of X with values in ⋀ p TX:
-(6.8) H q
-(
-X,
-p⋀
-T 1,0
-X
-)
-Indeed, every (0 , q)-form on X with values in ⋀ p TX
-(6.9) A = dzk1 . . . dzkq Aj1...jp
-k1...kq
-∂
-∂zj1
-. . . ∂
-∂zjp
-in the topological B-model deﬁnes an observable:
-(6.10) OA = η
-k1 . . . ηkq Aj1...jp
-k1...kq
-θj1 . . . θjp
-Contracting this “(−p, q)-form” with the holomorphic ( n, 0)-form Ω on X we ob-
-tain an isomorphism between this space and ( n− p, q)-forms, where n is the total
-(complex) dimension of X. Moreover, {Q,OA} =−O∂A, so that observables in
-the B-model are Dolbeault cohomology of forms valued in exterior po wers of the
-holomorphic tangent bundle, i.e. elements of (6.8).
-Incorporating a superpotential W⁄= 0 leads to a Landau-Ginzburg model where
-the Q-operator acts as a diﬀerential Q = ∂ + Qbdry, such that
-(6.11) Q2 = W· id
-As a result, the space of closed string states in the Landau-Ginzbu rg model can be
-described as a Hochschild homology or, equivalently, as a hypercoho mology:
-(6.12) HH∗(M F(X, W ))∼
-= H∗(Λ∗Ω X , dW∧)
-7also known as the “chiral ring” or “ring of observables,” see below
-58 EUGENE GORSKY, SERGEI GUKOV, AND MARKO STO ˇSI ´C
-where Λ ∗Ω X denotes the exterior powers of the sheaf of diﬀerential forms. T he
-dual cohomology theory is
-(6.13) HH∗(M F(X, W ))∼
-= H∗(Λ∗TX , [W,−])
-where Λ∗TX denotes exterior powers of the tangent sheaf and [ W,−] denotes the
-Lie bracket with W . In particular, if f1, . . . , fn are sections of line bundles Ei on a
-smooth variety V , then they deﬁne a function W : Tot(⊕E∗
-i )→ C and we have the
-following equivalence of categories 8
-(6.14) M F(Tot(⊕E∗
-i ), W )∼
-= QCoh({fi = 0})
-that allows to describe B-branes in a Landau-Ginzburg theory with t he superpo-
-tential W (i.e. objects in the category of matrix factorizations of W ) in terms of
-the category of coherent sheaves on the critical variety of W .
-Theorem 6.1 ([ 72]).
-(6.15) H 0(M F(W ))∼
-=Db
-sing(W−1(0))
-Note, this brings us very close to our applications (5.6) and (5.9), wh ere the
-moduli spaces
-Mp,q(r) andMp,q(r) are deﬁned by polynomial equations fi(uj) = 0
-in the space X = Cpr of u’s. In situations like this, when the equations fi(uj) = 0
-integrate to a superpotential W (uj) the chiral ring (also known as the ( c, c) ring)
-of the Landau-Ginzburg model on X = Cn is isomorphic to the quotient of the ring
-of polynomial functions C[u1, ..., un] by dW ,
-(6.16) Rclosed(Cn, W ) = C[ui]/(dW )
-When W is quasihomogeneous, this ring is graded by the R-charge symmetry U (1)R.
-In order to interpret the colored HOMFLY homology, though, in the Landau-
-Ginzburg model we need not only to ﬁnd a natural home for the modu li spaces
-Mp,q(r) and Mp,q(r) but also to describe the corresponding spaces of diﬀerential
-forms (5.6) and (5.9) in the B-model language. One way to do this is to replace the
-target space Cn by the supermanifold X = Cn|n and to replace the superpotential
-W (ui) by Wsuper(ui, ξi) deﬁned in (6.4). This gives then
-(6.17) Rclosed(Cn|n, Wsuper) = Ω ∗(M)
-whereM ={u∈ C|fi(u)≡ ∂iW (u) = 0 }. Speciﬁcally, for the superpotential
-Wsuper deﬁned by (6.3) and (6.4) we get a B-model realization of the Sr-colored
-HOMFLY homology of torus knots. For instance, from (5.7), (5.11) , and (5.12) we
-ﬁnd the following potentials in simple examples considered earlier:
-W (31; ) = u3
-2,
-Wsuper(31;
-) = 3 u2
-2ξ2,
-W (819;
-) =− 7u4
-2
-243 + 14u2u2
-3
-27 ,
-Wsuper(819; ) =
-(
-− 28u3
-2
-243 + 14u2
-3
-27
-)
-ξ2 + 28u2u3
-27 ξ3,
-8The analogous statement for the topological A-model is:
-F uk(Y, W) ∼
-= F uk(Sing (W )) .
-QUADRUPLY-GRADED COLORED HOMOLOGY OF KNOTS 59
-W (31; ) = 5
-256 u3(3u4
-2− 8u2u2
-3− 24u2
-2u4 + 48u2
-4).
-Although conceptually this Landau-Ginzburg model should be the eﬀ ective two-
-dimensionalN = 2 theory on D in the brane construction (2.2) studied in [ 19, 27,
-28], the setup appears to be surprisingly diﬀerent. Yet, in both cases , the Poincar´ e
-polynomial of the colored HOMFLY homology is realized as a supersymm etric
-index (character) of the two-dimensional N = 2 theory on D. One important
-diﬀerence is that here we have a diﬀerent 2d N = 2 theory for each particular
-value of the color, whereas in loc. cit. a single 2d N = 2 theory determines Sr-
-colored superpolynomials for all values of r. It would be interesting to understand
-better how the new Landau-Ginzburg realization of the colored HOM FLY homology
-discussed here relates to the 2d N = 2 theory on D studied in [ 19, 27, 28 ].
-6.2. B-branes and open B-model. There is another way, however, to de-
-scribe the space of diﬀerential forms that is familiar to practitioner s of mirror
-symmetry. This will require introducing one more ingredient in our sto ry, namely
-D-branes, and considering the space of open string states, i.e. the states of open
-strings stretched between branes. In the context of topologica l B-model branes are
-usually called B-branes. Mathematically, B-branes are objects of t he derived cate-
-gory of coherent sheaves Db(X) in the case of the sigma-model (when W = 0), or
-the category of matrix factorizations M F(X, W ) in the case of Landau-Ginzburg
-model with the target space X and superpotential W . We already saw both of these
-categories in our previous discussion and now we will spend more time d iscussing
-their objects, or B-branes.
-Note that both the derived category of coherent sheaves and th e category of
-matrix factorizations are also familiar to practitioners of knot homo logy: these
-categories play a key role in the constructions of e.g. [13, 55, 56, 84, 89, 91 ].
-Now, let us describe the “open” analogue of (6.8) and (6.16), i.e. the space
-of states of open strings ending on a brane B in the B-model, starting with the
-sigma-model on X (with W = 0), as we did in our previous discussion, and then
-extend it to branes in more general Landau-Ginzburg models. In bo th cases, the
-conclusion will be that open strings ending on B form an algebra, which is the Ext
-algebra9
-(6.18) Ropen(B) = Ext ∗(B,B) .
-In order to see how it comes about, let us ﬁrst consider two diﬀeren t branes, B1
-andB2, represented by shaves E andF supported on S⊂ X. Then, states of open
-strings stretched between B1 andB2 are elements of
-(6.19) H q
-(
-S,E∨⊗F⊗
-p⋀
-NS/X
-)
-There is a spectral sequence with (6.19) as the second page that c onverges to [ 76]:
-(6.20) Ext p+q
-X (E,F )
+
+\begin{conjecture}
+\label{symmetric torus reduced}
+The {\em reduced} $S^r$ homology of the $(p,q)$ torus knot is the space of differential forms on $\CM_{p,q}(r)$:
+\begin{equation}
+\CH^{S^r} (T(p,q)) \; = \; \Omega^{\bullet}(\CM_{p,q}(r)) \,.
+\label{HMreduced}
+\end{equation}
+\end{conjecture}
+
+For $r=1$ this conjecture is equivalent to the main conjecture of \cite{GORS}, since by the results of \cite{Gdaha} the right hand side of (\ref{HMreduced}) can be identified with a certain isotypic component of the finite-dimensional representation of rational Cherednik algebra with parameter $p/q$.
+Moreover, it follows from \cite{GORS} for $r=1$ and from \cite{EGL} for general $r$ that the $(a,q)$-character
+of $\Omega^{*}(\overline{\CM}_{p,q}(r))$ is equal to the unreduced $S^r$-colored HOMFLY polynomial of the $(p,q)$ torus knot.
+One can also check (\cite{EGL}) that the $(a,q)$-character of $\Omega^{*}(\CM_{p,q}(r))$ is equal to the reduced $S^r$-colored HOMFLY polynomial
+of the same knot. 
+
+Let us describe the gradings on the space $\Omega^{*}(\CM_{p,q}(r))$.
+The $a$-grading is defined by the degree of a differential form, so that $a(u_i)=0,\ a(du_i)=2.$ Furthermore, we define the $(q,t_r,t_c)$ gradings by the formula
+\be
+\label{deg ui for symmetric}
+(q,t_c,t_r)[u_i]=\left(2i,2i-2,2\left\lfloor\frac{i-1}{r}\right\rfloor\right),
+\ee
+$$(q,t_r,t_c)[du_i]=\left(2i-2,2i-1,2\left\lfloor\frac{i-1}{r}\right\rfloor+1\right).$$
+It is easy to check that the defining equations of $\CM_{p,q}(r)$ are homogeneous in $q$-grading and not homogeneous in $t$-gradings. Therefore, strictly speaking, on $\Omega^{*}(\CM_{p,q}(r))$ we get  $(a,q)$ bigrading and a pair of filtrations $(t_r,t_c)$.
+
+For example, in the uncolored case the reduced homology of the trefoil knot has only one bosonic generator $u_2$,
+and the defining equation for $\CM_{2,3} (1)$ reads as
+\be
+u_2^2=0
+\label{tref3876}
+\ee
+Similarly, for the $(3,4)$ torus knot the reduced uncolored homology has two bosonic generators $u_2$ and $u_3$,
+with the following defining equations for $\CM_{3,4} (1)$:
+\be
+u_2u_3=0,\ \frac{2 u_2^3}{9} = u_3^2.
+\label{knot34829054}
+\ee
+Finally, the reduced $S^2$-colored homology of the trefoil knot
+has two even generators $u_3$ and $u_4$ and the defining equations can be obtained from (\ref{s2 colored trefoil}) by setting $u_2=0$:
+$$u_3u_4=u_4^2=u_3^3=0.$$
+Their differentials have the form
+$$u_3du_4+u_4du_3=2u_4du_4=3u_3^2du_3=0.$$
+Therefore one can check that the monomial basis in $\Omega^{*}(\CM_{2,3} (2))$ is given by
+\be
+1,~ u_3,~ u_4,~ u_3^2,~ du_3,~ du_4,~ u_3du_3,~ u_3du_4,~ du_3\wedge du_4.
+\label{tref456}
+\ee
+We illustrate this homology with the Figure \ref{s2tref} (compare with the Figures in Section \ref{sec:trefoil}).
+
+\begin{figure}
+\begin{tikzpicture}
+\draw (0,0) node {$1$};
+\draw (6,0) node {$u_3$};
+\draw (8,0) node {$u_4$};
+\draw (12,0) node {$u_3^2$};
+\draw (4,1) node {$du_3$};
+\draw (6,1) node {$du_4$};
+\draw (10,1) node {$u_3du_3$};
+\draw (11.7,1) node {$u_3du_4$};
+\draw (10,2) node {$du_3\wedge du_4$};
+\draw (0,-1)--(12,-1);
+\draw (0,-1.1)--(0,-0.9);
+\draw (2,-1.1)--(2,-0.9);
+\draw (4,-1.1)--(4,-0.9);
+\draw (6,-1.1)--(6,-0.9);
+\draw (8,-1.1)--(8,-0.9);
+\draw (10,-1.1)--(10,-0.9);
+\draw (12,-1.1)--(12,-0.9);
+\draw (0,-1.3) node {0};
+\draw (2,-1.3) node {2};
+\draw (4,-1.3) node {4};
+\draw (6,-1.3) node {6};
+\draw (8,-1.3) node {8};
+\draw (10,-1.3) node {10};
+\draw (12,-1.3) node {12};
+\draw (11,-1.5) node {$q$};
+
+
+
+
+
+
+
+
+\end{tikzpicture}
+\caption{Algebraic model for the $S^2$ homology of the trefoil.}
+\label{s2tref}
+\end{figure}
+
+For example, by computing the gradings of the basic elements \eqref{tref456} one finds
+the Poincar\'e polynomial of the $S^2$-colored trefoil knot (in the $(a,q,t_r)$ grading):
+\be
+\CP^{S^2}(3_1)=1+q^6t^2+q^8t^2+q^{12}t^4+a^2q^4t^3+a^2q^6t^3+a^2q^{10}t^5+a^2q^{12}t^5+a^4q^{10}t^6.
+\ee
+More generally, for the $S^r$-colored reduced homology of the trefoil knot
+the $(a,q,t_r)$ gradings of the generators are given by the equations:
+$$(a,q,t_r)[u_i]=(0,2i,2),\  (a,q,t_r)[du_i]=(2,2i-2,3).$$
+In particular, the monomial $u_{r+1}^{i}\cdot du_{r+1}\wedge du_{r+2}\wedge du_{r+j}$
+has grading
+$$i(0,2r+2,2)+\sum_{l=1}^{j}(2,2r+2l-2,3)=(2j,2(r+1)i+2jr+j(j-1),2i+3j)$$
+and contributes the term
+$a^{2j} q^{2(r+1)i+2rj+j(j-1)}t_r^{2i+3j}$ in the Poincar\'e polynomial
+\begin{equation}\label{f1}
+\CP^{S^r}(3_1)= a^{2r}q^{-r} \sum_{i+j\le r} { a^{2j} q^{2(r+1)i+2rj+j(j-1)}t_r^{2i+3j} \frac{ [r]!}{[i]![j]![r-i-j]!}, }
+\end{equation}
+obtained from the categorification of the Volume Conjecture and the super-$A$-polynomial \cite{FGS1,FGS2,FGSS}.
+Here $[N]!$ is the unbalanced quantum factorial:
+\[
+[N]!=[N]\cdot [N-1]\cdot \ldots[2]\cdot[1]',
+\]
+\[
+[N]'=\frac{q^N-1}{q-1}=1+q+\ldots +q^{N-1}.
+\]
+and one can easily verify that (\ref{f1}) satisfies the refined exponential growth conjecture
+as well as the rest of the structural properties of section \ref{sec:gradings}.
+
+Finally, let us match the gradings \eqref{deg ui for symmetric} with those in the construction of Section \ref{sec:alggrad}.
+We have $R=1, S=r$, so there are  generators $u_{i,1}^{(n)},\xi_{i,1}^{(n)},\ 1\le i\le r$ with gradings
+$$(a,q,t_c,t_r)[u_{i,1}^{(n)}]=(0,2+2rn-2i,2rn-2i,2n-2),\ $$
+$$(a,q,t_c,t_r)[\xi_{i,1}^{(n)}]=(2,2r(n-1)+2i-2,2r(n-1)+2i-1,2n-1).$$
+Indeed, these gradings agree with (\ref{deg ui for symmetric}) if one identifies
+$$u_{i,1}^{(n)}=u_{rn+1-i},\ \xi_{i,1}^{(n)}=du_{r(n-1)+i}.$$
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Differentials for supergroups}
+
+It has been conjectured in \cite[Conj. 3.22]{G} that the differentials $d_{0},d_{\pm n}$ belong to a bigger algebra.
+In particular, for the uncolored homology of $(4,5)$ torus knot the following operators were introduced:
+$\alpha_2$ of $(a,q,t)$ degree $(-2,-2,-5)$, $\alpha_1$ of $(a,q,t)$ degree $(-2,2,-3)$.
+Their introduction was motivated by the observation that the ``usual'' differentials $d_N$ applied to the (unique)
+generator with top $a$-degree 6 do not generate uncolored triply graded homology: there are 7 nontrivial differentials
+$d_{0},d_{\pm n}$, while there are 9 generators with $a$-degree 4. The extra differentials solve this problem.
+We can now identify these operators with the supergroup differentials:
+$$\alpha_2=d_{1|2}, \quad \alpha_1=d_{2|1}.$$
+In total, for the uncolored (4,5) knot we have 9 nontrivial differentials:
+$$d_1=d_{1|0},\ \quad d_{-1}=d_{0|1},$$
+$$d_2=d_{2|0},\ \quad d_0=d_{1|1},\ \quad d_{-2}=d_{0|2},$$
+$$d_{3}=d_{3|0},\ \quad \alpha_1 =d_{2|1},\ \quad \alpha_2=d_{1|2},\ \quad d_{-3}=d_{0|3}.$$
+For a general $(n,m)$ torus knot $(m>n)$ we will have all differentials $d_{a|b}$ with $a+b<n$,  of total number
+$$2+3+4+...+n=\frac{n(n+1)}{2}-1=\frac{(n+2)(n-1)}{2}.$$
+It has been explained in \cite{GORS} that the differentials are tightly related to the
+(conjectural) action of the rational Cherednik algebra $H_{c}$ on the triply graded homology of torus knots.
+More precisely, \cite[Definitions 7.2-7.3]{GORS} assign a differential to every $S_n$-equivariant copy
+of the standard $(n-1)$-dimensional irreducible representation $V_{n}$ inside $H_c$. These differentials satisfy some nice
+properties: for example, if the two copies $\alpha$ and $\beta$ are {\em pure}, then by \cite[Lemma 7.7]{GORS} the corresponding differentials
+$d_{\alpha}$ and $d_{\beta}$ anticommute.
+
+The new supergroup differentials can be naturally embedded in this framework.
+Namely, recall that $H_{c}$ has generators $x_i, y_j$.
+We define $\alpha(m|k)$ to be a copy of  $V_{n}$ spanned by $x_{i}^{m}y_{i}^{k}$,
+and
+$$d_{m|k}=d_{\alpha(m|k)}.$$
+Since this copy is pure in the sense of \cite{GORS}, the corresponding differentials anticommute.
+Moreover, one can check that $\alpha(m|k)$ span $\Hom_{S_{n}}(V_{n},H_{c})$, so the supergroup differentials
+form a complete collection of differentials for the uncolored torus knot homology. The grading conventions of \cite{GORS}
+assure that $d_{m|n}$ have the prescribed gradings.
+
+
+\subsection{Examples}
+
+We have compared the results of \ref{sec:trefoil} with the algebraic model in (\ref{tref456}). Let us make the similar comparisons for other torus knots in Section \ref{sec:examples}.
+
+The stable reduced $\tableau{2 2}$-colored homology
+of $(2,\infty)$ torus knot have 4 even and 4 odd generators
+$u_{ij}^{(2)}$ and $\xi_{ij}^{(2)}$ (see Section \ref{sec:torus}). They have the following $(a,q,t_c,t_r)$-degrees:
+$$\deg[u_{11}^{(2)}]=(0,10,6,4),\ \deg[u_{12}^{(2)}]=(0,8,6,6),$$
+$$\deg[u_{21}^{(2)}]=(0,8,4,4),\ \deg[u_{22}^{(2)}]=(0,6,4,6),$$
+$$\deg[\xi_{11}^{(2)}]=(2,4,5,5),\ \deg[\xi_{12}^{(2)}]=(2,2,5,7),$$
+$$\deg[\xi_{21}^{(2)}]=(2,6,7,5),\ \deg[\xi_{22}^{(2)}]=(2,4,7,7).$$
+As explained in Section \ref{sec:torus},  $Q\left[u_{ij}^{(2)}\right]=4$ and $Q\left[\xi_{ij}^{(2)}\right]=2$.
+For example, the ``bottom row'' of the homology (with appropriate shift of gradings) is 16-dimensional and has monomial basis
+$$1,~u_{21}^{(2)},~\left(u_{21}^{(2)}\right)^2,~\left(u_{21}^{(2)}\right)^3,~\left(u_{21}^{(2)}\right)^4,$$
+$$u_{11}^{(2)},~u_{11}^{(2)}u_{21}^{(2)},~u_{11}^{(2)}~\left(u_{21}^{(2)}\right)^2,$$
+$$u_{12}^{(2)},~u_{12}^{(2)}u_{21}^{(2)},~u_{12}^{(2)}~\left(u_{21}^{(2)}\right)^2,$$
+$$u_{22}^{(2)},~u_{22}^{(2)}u_{21}^{(2)},~u_{22}^{(2)}~\left(u_{21}^{(2)}\right)^2,$$
+$$\left(u_{22}^{(2)}\right)^2,\left(u_{11}^{(2)}\right)^2.$$
+The self-symmetry map $\Phi$ reflects first four sets of monomials in the vertical axis, and preserved two remaining monomials.
+
+The stable reduced $\tableau{2 2 2}$-colored homology
+of $(2,\infty)$ torus knot have 6 even and 6 odd generators. They have the following $(a,q,t_c,t_r)$-degrees:
+$$\deg[u_{11}^{(2)}]=(0,12,6,6),\ \deg[u_{12}^{(2)}]=(0,10,6,8),$$
+$$\deg[u_{13}^{(2)}]=(0,8,6,10),\ \deg[u_{21}^{(2)}]=(0,10,4,6),$$
+$$\deg[u_{22}^{(2)}]=(0,8,4,8),\ \deg[u_{23}^{(2)}]=(0,6,4,10),$$
+$$\deg[\xi_{11}^{(2)}]=(2,4,5,7),\ \deg[\xi_{12}^{(2)}]=(2,2,5,9),$$
+$$\deg[\xi_{13}^{(2)}]=(2,0,5,11),\ \deg[\xi_{21}^{(2)}]=(2,6,7,7).$$
+$$\deg[\xi_{22}^{(2)}]=(2,4,7,9),\ \deg[\xi_{23}^{(2)}]=(2,2,7,11).$$
+Indeed,  $Q\left[u_{ij}^{(2)}\right]=4$ and $Q\left[\xi_{ij}^{(2)}\right]=2$.
+
+Finally, consider the $S^2$-colored $(3,4)$ torus knot.
+In the notations of Section \ref{sec:symtorusforms}, we have
+4 generators $u_3,u_4,u_5,u_6$ of $(a,q,t_c,t_r)$ gradings
+$$\deg u_3=(0,6,4,2),\ \deg u_4=(0,8,6,2),$$
+$$\deg u_5=(0,10,8,4),\ \deg u_6=(0,12,10,4).$$
+Note that in the notations of Section \ref{sec:torus},
+one would have
+$$u_3=u_{21}^{(2)},\ u_4=u_{11}^{(2)},\ u_5=u_{21}^{(3)},\ u_6=u_{11}^{(3)},$$
+and the grading conventions agree.
+The defining relations have the form
+$$u_3^3 - 9 u_4 u_5 - 9 u_3 u_6=2 u_3^2 u_4 - 3 (u_5^2 + 2 u_4 u_6)=u_3 u_4^2 + u_3^2 u_5 - 3 u_5 u_6=0,$$ $$5 u_3^4 - 12 u_4^3 - 72 u_3 u_4 u_5 - 36 u_3^2 u_6 + 54 u_6^2=5 u_3^3 u_4 - 9 u_4^2 u_5 - 9 u_3 (u_5^2 + 2 u_4 u_6) =0.$$
+One can check that the monomial basis on the ``bottom row'' is given by the following 25 monomials:
+$$1,\ u_3,\ u_3^2,\ u_3^3,\ u_3^4,\ u_3^5,\ u_3^6,$$
+$$u_4,\ u_4u_3,\ u_4u_3^2,\ u_4u_3^3,\ u_4u_3^4,$$
+$$u_5,\ u_5u_3,\ u_5u_3^2,\ u_5u_3^3,$$
+$$u_6,\ u_6u_3,\ u_6u_3^2,\ u_6u_3^3,$$
+$$u_4^2\, u_4^2u_3,\ u_4^2u_3^2,$$
+$$u_5^2, u_4^3.$$
+The self-symmetry map $\Phi$ reflects first five sets of monomials in the vertical axis, and preserved two remaining monomials.
+
+
+
+
+\section{HOMFLY homology from A-model and B-model}
+\label{sec:mirror}
+
+In this section, we wish to look for geometric and physical models for colored HOMFLY homology,
+eventually formulating it in the language of symplectic geometry or the so-called A-model.
+
+Indeed, in mirror symmetry, the so-called B-model is famous for its formulation in the language of
+complex (algebraic) geometry, while the A-model side involves symplectic invariants, Fukaya category, and quantum cohomology \cite{KontsevichHMS}.
+Clearly, the algebraic model described in the previous section is closer to the B-model, and therefore
+it will be our natural starting point here.
+Then, we will relate it to various problems --- that are interesting in their own right --- in mirror symmetry and in symplectic geometry.
+We will give several reformulations, in terms of A-model and B-model, open and closed ({\it i.e.} with and without D-branes),
+in all of which colored HOMFLY homology will be realized as cohomology of a suitable BRST operator $Q$, such that $Q^2 = 0$:
+\be
+\CH^{\lambda} (K) \quad = \quad  Q\text{-cohomology} \,.
+\ee
+In physics literature, $Q$ is often called ``supercharge'' and
+its cohomology is often called the {\it space of BPS states} since its elements
+are the so-called BPS states (= supersymmetric configurations).
+Even though precisely this interpretation of knot homology was proposed in \cite{GSV} and studied from various
+vantage points in \cite{AShakirov,DGH,GukovRTN,IK,fiveknots}, the A-model and B-model reformulations discussed here
+appear to be completely new and do not make direct contact with any of the existent geometric / physical models of knot homologies.
+Therefore, by pursuing some of these new geometric descriptions further one is likely to learn a lot about colored HOMFLY homology and, possibly, even about homological mirror symmetry.
+
+
+
+
+\subsection{B-model on a supermanifold}
+\label{sec:Bmodel}
+
+With this goal in mind, we start by reformulating the Conjectures \ref{symmetric torus unreduced} and \ref{symmetric torus reduced}
+in terms of B-model on a super-manifold $\C^{d|d}$ with a certain Landau-Ginzburg potential $W_{super} (K; \lambda)$, such that
+\be
+\CH^{\lambda} (K) \; \cong \; Jac (W_{super} (K;\lambda))
+\label{HasJac}
+\ee
+Note, that $\C^{d|d}$ is a super-Calabi-Yau manifold (see \cite{AVsuper,Schwarz,Wtwistor}).
+
+Specifically, consider the potential $W (T(p,q); S^r)$ on the $u$-space given by the formula
+\be
+W (T(p,q); S^r) =\Coef_{(p+q)r+1}(1+u_1z+\ldots+u_{pr}z^{pr})^{\frac{q+p}{p}}.
+\label{WTpqr}
+\ee
+Let us rename $du_i$ by $\xi_i$ and introduce a potential $W_{super} (T(p,q); S^r)$ on the superspace $\C^{pr|pr}$
+with coordinates $u_i,\xi_i$ by the formula
+\be
+W_{super} (T(p,q); S^r) :=\sum_{i}\frac{\partial W}{\partial u_{i}}\xi_{i} \,.
+\label{WsuperTpqr}
+\ee
+The space of differential forms $\Omega^{\bullet}\left(\overline{\CM}_{p,q}(r)\right)$ is isomorphic to the Jacobi ring of $W_{super} (T(p,q); S^r)$:
+\begin{equation}
+\label{W super}
+\Omega\left[\overline{\CM}_{p,q}(r)\right]=\C[u_1,\ldots,u_{pr},\xi_1,\ldots,\xi_{pr}]/\left(\frac{\partial W_{super}}{\partial u_{i}},\frac{\partial W_{super}}{\partial \xi_{i}}\right).
+\end{equation}
+According to the Conjecture \ref{symmetric torus unreduced}, both spaces represent the unreduced $S^r$-colored homology of the $(p,q)$ torus knot. Indeed, the partial derivatives of $W (T(p,q); S^r)$ are equal to
+$$\frac{\partial W (T(p,q); S^r)}{\partial u_{i}}
+=\Coef_{(p+q)r+1}\frac{\partial}{\partial u_{i}}(1+u_1z+\ldots+u_{pr}z^{pr})^{\frac{q+p}{p}}=$$
+$$\frac{q+p}{p}\Coef_{(p+q)r}\left[z^{i}(1+u_1z+\ldots+u_{pr}z^{pr})^{\frac{q}{p}}\right]=$$
+$$\frac{q+p}{p}\Coef_{(p+q)r+1-i}(1+u_1z+\ldots+u_{pr}z^{pr})^{\frac{q}{p}},\ i=1\ldots pr.$$
+Therefore the ring of functions on $\overline{\CM}_{p,q}(r)$ coincides with the Jacobi ring of $W$:
+\begin{equation}
+\C\left[\overline{\CM}_{p,q}(r)\right]=\C[u_1,\ldots,u_{pr}]/\left(\frac{\partial W}{\partial u_{i}}\right).
+\end{equation}
+
+The full space of differential forms $\Omega^{\bullet}\left(\overline{\CM}_{p,q}(r)\right)$ is a quotient of the space 
+of all differential forms on $\C^{pr}$ by the equations
+\begin{equation}
+\label{forms eq}
+\frac{\partial W}{\partial u_{i}}=0,\quad \sum_{j}\frac{\partial^2 W}{\partial u_{i}\partial u_j}\cdot du_{j}=0.
+\end{equation}
+The Jacobi ring of $W_{super}$ is defined by the following equations:
+$$\frac{\partial W_{super}}{\partial \xi_{i}}=\frac{\partial W}{\partial u_{i}}=0$$
+$$\frac{\partial W_{super}}{\partial u_{i}}=\sum_{j}\frac{\partial^2 W}{\partial u_{j}\partial u_{i}}\xi_{j}=0.$$
+Since these equations coincide with (\ref{forms eq}), we get the relation (\ref{W super}).
+
+In the mirror symmetry literature \cite{Schwarz,Sethi,AVsuper,Katzarkov},
+the setup we just described is called a Landau-Ginzburg B-model with target space $\C^{d|d}$
+and superpotential $W_{super} (K;\lambda)$. The function $W_{super} (K;\lambda)$ is called
+{\it superpotential} even when the target space is an ordinary (bosonic) manifold,
+{\it e.g.} $W(u_i)$ in our discussion might be called superpotential of a Landau-Ginzburg model on $\C^{pr}$.
+As a final clarification of terminology, we should mention that a model is called {\it Landau-Ginzburg model}
+when the superpotential is non-zero, and is referred to as the {\it sigma-model} (on a certain target manifold) when $W=0$.
+
+In our case, the colored HOMFLY homology (of torus knots) is realized as the Jacobi ring\footnote{also known as
+the ``chiral ring'' or ``ring of observables,'' see below} \eqref{HasJac} - \eqref{W super}
+of a Landau-Ginzburg model on $\C^{pr|pr}$ with the superpotential $W_{super} (T(p,q); S^r)$.
+There are several aspects of this B-model that make it rather special and interesting,
+the main of which is undoubtedly the fact that the target space $\C^{pr|pr}$ is a supermanifold.
+
+It is instructive, though, to start with a more familiar and conventional B-model with a target space $X$.
+Then, we will extend it to a Landau-Ginzburg model with a superpotential $W$ and will see
+why \eqref{HasJac} - \eqref{W super} can be interpreted as a ring of observables with and without D-branes
+(called B-branes in the context of the B-model).
+In general, we shall use $X$ for the target space of the B-model and $Y$ for the target space of the $A$-model,
+so that $X$ and $Y$ are mirror manifolds in most of our applications.
+
+First, as a warm-up and a lightning review of the relevant facts about B-model, let us consider
+a B-model with target space $X$.
+The space of observables --- or, to be more precise, the space of {\it closed (string) observables} ---
+in such model is then identified with the $\bar \p$-cohomology of $X$ with values in $\bigwedge^p T_{X}$:
+\be
+\label{hom of polyvectors}
+H^q \left( X, \bigwedge^p T^{1,0}_{X} \right)
+\ee
+Indeed, every $(0,q)$-form on $X$ with values in $\bigwedge^p T_{X}$
+\be
+A = d \bar z^{\bar k_1} \ldots d \bar z^{\bar k_q}
+A^{j_1 \ldots j_p}_{\bar k_1 \ldots \bar k_q} \frac{\p}{\p z_{j_1}} \ldots \frac{\p}{\p z_{j_p}}
+\ee
+in the topological B-model defines an observable:
+\be
+\CO_A = \eta^{\bar k_1} \ldots \eta^{\bar k_q} A^{j_1 \ldots j_p}_{\bar k_1 \ldots \bar k_q} \theta_{j_1} \ldots \theta_{j_p}
+\ee
+Contracting this ``$(-p,q)$-form'' with the holomorphic $(n,0)$-form $\Omega$ on $X$ we obtain an isomorphism
+between this space and $(n-p,q)$-forms, where $n$ is the total (complex) dimension of $X$.
+Moreover, $\{ Q, \CO_A \} = - \CO_{\bar \p A}$, so that observables in the B-model are Dolbeault cohomology
+of forms valued in exterior powers of the holomorphic tangent bundle, {\it i.e.} elements of \eqref{hom of polyvectors}.
+
+Incorporating a superpotential $W \ne 0$ leads to a Landau-Ginzburg model where
+the $Q$-operator acts as a differential $Q = \bar \p + Q_{\text{bdry}}$, such that
+\be
+Q^2 = W \cdot \text{id}
+\ee
+As a result, the space of closed string states in the Landau-Ginzburg model can be described
+as a Hochschild homology or, equivalently, as a hypercohomology:
+\be
+HH_* (MF (X, W)) \cong \mathbb{H}^* (\Lambda^* \Omega_{X}, dW \wedge)
+\ee
+where $\Lambda^* \Omega_{X}$ denotes the exterior powers of the sheaf of differential forms.
+The dual cohomology theory is
+\be
+HH^* (MF (X, W)) \cong \mathbb{H}^* (\Lambda^* T_{X}, [W, - ])
+\ee
+where $\Lambda^* T_{X}$ denotes exterior powers of the tangent sheaf and $[W, - ]$ denotes the Lie bracket with $W$.
+In particular, if $f_1, \ldots, f_n$ are sections of line bundles $\CE_i$ on a smooth variety $V$,
+then they define a function $W: \text{Tot} (\oplus \CE_i^*) \to \C$ and we have the following equivalence
+of categories\footnote{The analogous statement for the topological A-model is:
+$$
+Fuk (Y,W) \cong Fuk (Sing (W)) \,.
+$$}
+\be
+MF (\text{Tot} (\oplus \CE_i^*), W) \cong QCoh ( \{ f_i = 0 \} )
+\ee
+that allows to describe B-branes in a Landau-Ginzburg theory with the superpotential $W$
+({\it i.e.} objects in the category of matrix factorizations of $W$)
+in terms of the category of coherent sheaves on the critical variety of $W$.
+
+\begin{theorem}[\cite{Orlov}]
+\be
+H^0 (MF (W)) \cong \CD^b_{sing} (W^{-1} (0))
+\ee
+\end{theorem}
+
+Note, this brings us very close to our applications \eqref{HMunreduced} and \eqref{HMreduced},
+where the moduli spaces $\overline{\CM}_{p,q}(r)$ and $\CM_{p,q}(r)$
+are defined by polynomial equations $f_i (u_j) = 0$ in the space $X = \C^{pr}$ of $u$'s.
+In situations like this, when the equations $f_i (u_j) = 0$ integrate to a superpotential $W (u_j)$
+the chiral ring (also known as the $(c,c)$ ring) of the Landau-Ginzburg model on $X = \C^n$
+is isomorphic to the quotient of the ring of polynomial functions $\C[u_1, ... , u_n]$ by $dW$,
+\be
+\CR_{\text{closed}} (\C^n, W) \; = \; \C [u_i] / (dW)
+\label{Rclosed}
+\ee
+When $W$ is quasihomogeneous, this ring is graded by the R-charge symmetry $U(1)_R$.
+
+In order to interpret the colored HOMFLY homology, though,
+in the Landau-Ginzburg model we need not only to find a natural home for the moduli spaces
+$\overline{\CM}_{p,q}(r)$ and $\CM_{p,q}(r)$
+but also to describe the corresponding spaces of differential forms \eqref{HMunreduced} and \eqref{HMreduced} in the B-model language.
+One way to do this is to replace the target space $\C^n$ by the supermanifold $X = \C^{n|n}$
+and to replace the superpotential $W(u_i)$ by $W_{super} (u_i, \xi_i)$ defined in \eqref{WsuperTpqr}.
+This gives then
+\be
+\CR_{\text{closed}} (\C^{n|n}, W_{super}) \; = \; \Omega^* (\CM)
+\ee
+where $\CM = \{ u \in \C \vert f_i (u) \equiv \p_i W (u) = 0 \}$.
+Specifically, for the superpotential $W_{super}$ defined by \eqref{WTpqr} and \eqref{WsuperTpqr}
+we get a B-model realization of the $S^r$-colored HOMFLY homology of torus knots.
+For instance, from \eqref{s2 colored trefoil}, \eqref{tref3876}, and \eqref{knot34829054}
+we find the following potentials in simple examples considered earlier:
+$$W (3_1; \tableau1)=u_2^3,$$
+$$W_{super} (3_1; \tableau1)=3u_2^2\xi_2,$$
+$$W (8_{19}; \tableau1)=-\frac{7 u_2^4}{243} + \frac{14 u_2 u_3^2}{27},$$
+$$W_{super} (8_{19}; \tableau1) = \left(-\frac{28 u_2^3}{243} + \frac{14 u_3^2}{27}\right) \xi_2+\frac{28 u_2 u_3}{27} \xi_3,$$
+$$W (3_1; \tableau2)=\frac{5}{256}u_3 (3 u_2^4 - 8 u_2 u_3^2 - 24 u_2^2 u_4 + 48 u_4^2).$$
+
+
+\vskip 0.25cm
+
+
+Although conceptually this Landau-Ginzburg model should be the effective two-dimensional $\CN=2$ theory
+on $D$ in the brane construction \eqref{theoryB} studied in \cite{DGH,FGS2,FGSS},
+the setup appears to be surprisingly different.
+Yet, in both cases, the Poincar\'e polynomial of the colored HOMFLY homology is realized as
+a supersymmetric index (character) of the two-dimensional $\CN=2$ theory on $D$.
+One important difference is that here we have a different 2d $\CN=2$ theory for each particular value of the color,
+whereas in loc. cit. a single 2d $\CN=2$ theory determines $S^r$-colored superpolynomials for all values of $r$.
+It would be interesting to understand better how the new Landau-Ginzburg realization of the colored HOMFLY homology
+discussed here relates to the 2d $\CN=2$ theory on $D$ studied in \cite{DGH,FGS2,FGSS}.
+
+
+\subsection{B-branes and open B-model}
+
+There is another way, however, to describe the space of differential forms that is familiar to practitioners of mirror symmetry.
+This will require introducing one more ingredient in our story, namely D-branes, and considering the space of open string states,
+{\it i.e.} the states of open strings stretched between branes.
+In the context of topological B-model branes are usually called B-branes.
+Mathematically, B-branes are objects of the derived category of coherent sheaves $\CD^b (X)$ in the case of the sigma-model (when $W=0$),
+or the category of matrix factorizations $MF (X, W)$ in the case of Landau-Ginzburg model with the target space $X$ and superpotential $W$.
+We already saw both of these categories in our previous discussion and now we will spend more time discussing their objects, or B-branes.
+
+Note that both the derived category of coherent sheaves and the category of matrix factorizations
+are also familiar to practitioners of knot homology: these categories play a key role
+in the constructions of {\it e.g.} \cite{CKamnitzer,KRa,KRb,Webster,Wu,Yonezawa}.
+
+Now, let us describe the ``open'' analogue of \eqref{hom of polyvectors} and \eqref{Rclosed},
+{\it i.e.} the space of states of open strings ending on a brane $\CB$ in the B-model,
+starting with the sigma-model on $X$ (with $W=0$), as we did in our previous discussion,
+and then extend it to branes in more general Landau-Ginzburg models.
+In both cases, the conclusion will be that open strings ending on $\CB$ form an algebra, which is the Ext algebra\footnote{The algebra structure comes from the Yoneda product on the self-Ext groups.}
+\be
+\CR_{\text{open}} (\CB) \; = \; \Ext^* (\CB,\CB) \,.
+\label{Ropen}
+\ee
+In order to see how it comes about, let us first consider two different branes, $\CB_1$ and $\CB_2$,
+represented by shaves $\CE$ and $\CF$ supported on $S \subset X$.
+Then, states of open strings stretched between $\CB_1$ and $\CB_2$ are elements of
+\be
+\label{homs of tensor prod}
+H^q \left( S , \CE^{\vee} \otimes \CF \otimes \bigwedge^p \CN_{S/ X} \right)
+\ee
+There is a spectral sequence with \eqref{homs of tensor prod} as the second page that converges to \cite{Sharpe}:
+\be
+\Ext^{p+q}_{X} (\CE, \CF)
+\ee
 and in many cases one has
-(6.21) Ext n
-X (E,F ) ∼
-=
-⨁
-p+q=n
-H q
-(
-S,E∨⊗F⊗
-p⋀
-NS/X
-)
-9The algebra structure comes from the Yoneda product on the se lf-Ext groups.
-60 EUGENE GORSKY, SERGEI GUKOV, AND MARKO STO ˇSI ´C
-because the spectral sequence degenerates at E2.
-Now let us see how the boundary chiral ring (6.18) can help us to prod uce yet
-another interpretation of (5.6) and (5.9) in open B-model. The simplest example
-is the unknot colored by λ = Sr, whose HOMFLY homology H
-Sr
-( ) is realized
-as the space of diﬀerential forms on V = Spec C[u1, . . . , ur]. The corresponding
-choice of B-brane is closely related to SYZ brane [ 80] that plays an important
-role in mirror symmetry. Namely, it is well known that for a “zero-bra ne” ( i.e.
-a skyscraper sheaf Op) supported at a smooth point on a manifold X of complex
-dimension r the open string algebra (6.18) is the exterior algebra
-(6.22) Ext ∗(Op,Op) ∼
-= Λ∗(V )
-where V = TpX∼
-= Λ∗Cr. In order to upgrade Λ ∗(V ) to the space of diﬀerential
-forms Ω ∗(V ) = C[V ]⊗ Λ( V∨), one simply needs to replace X∼
-= Cr by its com-
-plexiﬁcation XC∼
-= X× X, and consider a B-brane B =O∆ , where ∆ ∼
-= Cr is the
-diagonal in X× X∼
-= Cr× Cr. Note, the new target space X× X∼
-= C2r can be
-viewed as a SYZ torus ﬁbration with a singular ﬁber at the origin. To fa cilitate a
-discussion of the mirror A-model that will follow next, it is convenient to replace
-X = Cr by X = ( C∗)r. Then, the target space X× X ∼
-= (C∗)2r is also a T 2r
-ﬁbration, but without singular ﬁbers and one has
-(6.23) Ropen(B) = Ext ∗(O∆ ,O∆ ) ∼
-= C[u±1
-i , dui]
-Before we proceed to the mirror A-model, let us brieﬂy discuss anot her interesting
-feature of this example.
-Note that (6.23) can be identiﬁed with HH∗(Db(X)) ∼
-= C[u±1
-i , dui] which,
-according to our previous discussion, describes closed string states, not open. This
-is an illustration of a more general phenomenon: open string states (6.18) of a
-B-brane supported on the diagonal ∆ ⊂ X× X can be identiﬁed with the closed
-string states (6.8) of a B-model on X. The mathematical content of this statement
-is summarized in the following:
-Theorem 6.2 (Hochschild-Kostant-Rosenberg isomorphism [ 48]).
-(6.24) Ext n
-X×X (O∆ ,O∆ ) ∼
-=
-⨁
-p+q=n
-H q
-(
-X,
-p⋀
-TX
-)
-where ∆ is the diagonal in X× X.
-Moreover, Yekutieli [90] shows that there is an isomorphism from the hyperco-
-homology to self-Ext:
-(6.25) Hn(X, Dpoly(X)) = Ext n
-X×X (OX ,OX )
-which is compatible with the cup product on the left and the Yoneda pr oduct on
-the right. And using the isomorphism between the Hochschild cohomo logy and the
-polyvector ﬁeld cohomology [ 30], one has
-(6.26) HH∗(Db(X)) ∼
-= Ext∗
-X×X (O∆ ,O∆ ) ∼
-= H∗(X, Λ∗TX )
-6.3. HOMFL Y homology from symplectic geometry. Now, let us see
-what kind of A-models one gets by applying mirror symmetry to the op en and
-closed B-models in the above discussion.
-QUADRUPLY-GRADED COLORED HOMOLOGY OF KNOTS 61
-In general, we denote by Y the mirror of X. The simplest example is X = (C∗)r
-viewed as a (trivial) T r ﬁbration over Rr. Then, mirror symmetry is simply a T-
-duality (a “Fourier transform”) along the ﬁbers, and the mirror ma nifold is Y ∼
-=
-T∗T r. The mirror of the statement HH∗(Db(X))∼
-= C[u±1
-i , dui] is the statement
-about the Hochschild cohomology of the Fukaya category F (Y ),
-(6.27) HH∗ (F (T∗T r)) ∼
-= C[u±1
-i , dui]
-which, by analogy with (6.26), can be also realized as the boundary OP E algebra
-in the A-model of Y×
-Y , where Y denotes the space Y with the symplectic form
-−ω. Indeed, in general, when a symplectic manifold Y has “enough” Lagrangians,
-the Hochschild cohomology its Fukaya category F (Y ) is expected [ 1, 58, 17 ] to be
-isomorphic to the Lagrangian Floer cohomology of the (anti-)diagon al ∆ Y֒→Y×Y ,
-(6.28) HH∗ (F (Y )) ∼
-= HF∗(∆ Y , ∆ Y )
-Thus, in our basic example of (6.23) and (6.27) mirror symmetry maps a B-brane
-B = O∆ X to a Lagrangian A-brane supported on the conormal bundle T∨
-∆ to
-T∆ ⊂ T n× T n in Y× Y = T∗T r× T∗T r, so that
-(6.29) HF∗(T∨
-∆ , T∨
-∆ ) ∼
-= C[u±1
-i , dui]
-This is an open A-model version of (6.27) and a concrete illustration o f (6.28).
-In general, this leads us to the following picture, where the (colored ) HOMFLY
-homology is realized either in terms of closed A-model of a symplectic m anifold Y
-(6.30) HSr
-(K) = HH∗ (F (Y ))
-or in terms of open A-model (Floer homology) of a certain Lagrangia n submanifold
-L,
-(6.31) HSr
-(K) = HF∗(L, L)
-(In our previous discussion, L was the (anti-)diagonal ∆ Y֒→Y×
-Y , but we al-
-low more general Lagrangian submanifolds and more general symple ctic manifolds
-here.) For torus knots, the closed A-model version can be obtaine d by applying the
-supermanifold version of mirror symmetry [ 3, 31, 78 ] to the B-model in section
-6.1. We plan to return to a systematic study of this mirror symmetry elsewhere.
-Here, let us simply point out that even for non-torus knots one migh t hope to
-ﬁnd a realization of the form (6.31). For example, for the ﬁgure-eig ht knot K = 4 1
-and r = 1 a natural guess is
-(6.32) L = S2 with 3 punctures
-embedded in some symplectic manifold Y , such that HF∗(L, L)∼
-= H∗(L).
-7. “Bottom row” of the colored HOMFL Y homology
-In this part we wish to study the “bottom row” of the colored super polynomial,
-deﬁned as
-(7.1) P λ
-bottom(q, t) := lim
-a→0
-a#P λ(a, q, t) ,
-where a# denotes the appropriate power of a, such that the product a#P λ(a, q, t)
-contains only non-negative a-degrees starting from zero.
-62 EUGENE GORSKY, SERGEI GUKOV, AND MARKO STO ˇSI ´C
-7.1. Combinatorial interpretation for torus knots. First, let us recall
-the conjectural combinatorial description of the uncolored triply graded homology
-for a ( p, q) torus knot [ 34, 36, 69 ]. Consider a p× q rectangle and a N W− SE
-diagonal in it.
-Proposition 7.1. ([34]) The dimension of the “bottom row” of the reduced
-uncolored homology equals to the number of lattice paths in this rect angle strictly
-below the diagonal:
-dimHbottom(T (p, q)) = cp,q = (p + q− 1)!
-p!q! .
-For example, if q = p + 1, this dimension equals to the p-th Catalan number.
-Proposition 7.2. ([34]) The dimension of the “ k-th row” of the reduced un-
-colored homology equals to the number of lattice paths below the diag onal with k
-marked corners:
-dimHa=k(T (p, q)) = (p + q− k− 1)!
-p· q· k!· (p− k− 1)!(q− k− 1)! .
-A q-analogue of this formula was discussed in [ 11, eq. (3.46)]. Both of these
-propositions motivate the following combinatorial construction, co mpleted in [ 69]
-where it was matched to the algebro-geometric constructions of [ 70].
-The basis inHp,q is enumerated by the lattice paths in the p× q rectangle with
-marked corners. To every such path we assign three gradings, wh ere a-grading
-corresponds to the number of marked corners. Let us describe q− and t− grad-
-ings. For simplicity, we will focus on the bottom row, considered in det ails in [ 36].
-Corrections for the higher rows can be found in [ 69].
-Let us interpret a lattice path as a Young diagram D. Consider the C∗× C∗
-action on the Hilbert scheme of N points on C2, and let us restrict it to a one-
-parameter subgroup ( tp, tq). One can check (see e.g. [67]) that the action of this
-subgroup has isolated ﬁxed points parametrized by the Young diagr ams with N
-boxes. Therefore the corresponding moment map is a Morse funct ion on Hilb N (C2),
-and its gradient ﬂow induces the Bialynicki-Birula cell decomposition of the Hilbert
-scheme [67, 22 ]. We are interested in the dimension of the cell CD labelled by the
-ﬁxed point D, which is given by the following formula:
-dim CD =|D| + h+
-p/q(D),
+\be
+\Ext^{n}_{X} (\CE, \CF) \; \cong \;
+\bigoplus_{p+q=n} H^q \left( S , \CE^{\vee} \otimes \CF \otimes \bigwedge^p \CN_{S/ X} \right)
+\ee
+because the spectral sequence degenerates at $E_2$.
+
+
+
+Now let us see how the boundary chiral ring \eqref{Ropen} can help us to produce
+yet another interpretation of \eqref{HMunreduced} and \eqref{HMreduced} in {\it open} B-model.
+The simplest example is the unknot colored by $\lambda = S^r$, whose HOMFLY homology
+$\overline{\CH}^{S^r} (\unknot)$ is realized as the space of differential forms on
+$V = \Spec\C[u_1,\ldots,u_r]$.
+The corresponding choice of B-brane is closely related to SYZ brane \cite{SYZ} that plays an important role in mirror symmetry.
+Namely, it is well known that for a ``zero-brane'' ({\it i.e.} a skyscraper sheaf $\CO_p$)
+supported at a smooth point on a manifold $X$ of complex dimension $r$ the open string algebra \eqref{Ropen}
+is the exterior algebra
+\be
+\Ext^* (\CO_p , \CO_p) \; \cong \; \Lambda^* (V)
+\ee
+where $V = T_p X  \cong  \Lambda^* \C^r$.
+In order to upgrade $\Lambda^* (V)$ to the space of differential forms
+$\Omega^* (V) = \C [V] \otimes \Lambda (V^{\vee})$,
+one simply needs to replace $X \cong \C^r$ by its complexification $X_{\C} \cong X \times X$,
+and consider a B-brane $\CB = \CO_{\Delta}$, where $\Delta \cong \C^r$
+is the diagonal in $X \times X \cong \C^r \times \C^r$.
+Note, the new target space $X \times X \cong \C^{2r}$
+can be viewed as a SYZ torus fibration with a singular fiber at the origin.
+To facilitate a discussion of the mirror A-model that will follow next,
+it is convenient to replace $X = \C^r$ by $X = (\C^*)^r$.
+Then, the target space $X \times X \cong (\C^*)^{2r}$ is also a $T^{2r}$
+fibration, but without singular fibers and one has
+\be
+\CR_{\text{open}} (\CB) \; = \; \Ext^* (\CO_\Delta,\CO_\Delta) \; \cong \; \C [u_i^{\pm 1} , du_i]
+\label{openDD}
+\ee
+Before we proceed to the mirror A-model, let us briefly discuss another interesting feature of this example.
+
+
+
+Note that \eqref{openDD} can be identified with $HH^* (\CD^b (X)) \cong \C [u_i^{\pm 1} , du_i]$
+which, according to our previous discussion, describes {\it closed} string states, not {\it open}.
+This is an illustration of a more general phenomenon:
+open string states \eqref{Ropen} of a B-brane supported on the diagonal $\Delta \subset X \times X$
+can be identified with the closed string states \eqref{hom of polyvectors} of a B-model on $X$.
+The mathematical content of this statement is summarized in the following:
+
+\begin{theorem}[Hochschild-Kostant-Rosenberg isomorphism \cite{HKR}]
+\be
+\Ext^{n}_{X \times X} (\CO_{\Delta}, \CO_{\Delta}) \; \cong \;
+\bigoplus_{p+q=n} H^q \left( X , \bigwedge^p T_{X} \right)
+\ee
+where $\Delta$ is the diagonal in $X \times X$.
+\end{theorem}
+
+Moreover, Yekutieli \cite{Yekutieli} shows that there is an isomorphism from the hypercohomology to self-Ext:
+\be
+\mathbb{H}^n (X, D_{poly} (X)) = \Ext^n_{X \times X} (\CO_X, \CO_X)
+\ee
+which is compatible with the cup product on the left and the Yoneda product on the right.
+And using the isomorphism between the Hochschild cohomology and the polyvector field cohomology \cite{GSchack}, one has
+\be
+HH^* (\CD^b (X)) \; \cong \; \Ext^*_{X \times X} (\CO_\Delta,\CO_\Delta) \; \cong \; H^* (X, \Lambda^* T_X )
+\label{HHExtDD}
+\ee
+
+
+
+
+\subsection{HOMFLY homology from symplectic geometry}
+\label{sec:Amodel}
+
+Now, let us see what kind of A-models one gets by applying mirror symmetry to the open and closed B-models in the above discussion.
+
+In general, we denote by $Y$ the mirror of $X$.
+The simplest example is $X = (\C^*)^r$ viewed as a (trivial) $T^r$ fibration over $\R^r$.
+Then, mirror symmetry is simply a T-duality (a ``Fourier transform'') along the fibers,
+and the mirror manifold is $Y \cong T^* T^r$.
+The mirror of the statement $HH^* (\CD^b (X)) \cong \C [u_i^{\pm 1} , du_i]$
+is the statement about the Hochschild cohomology of the Fukaya category $\CF (Y)$,
+\be
+HH^* \left( \CF (T^* T^r) \right) \; \cong \; \C [u_i^{\pm 1} , du_i]
+\label{HHTTex}
+\ee
+which, by analogy with \eqref{HHExtDD}, can be also realized as the boundary OPE algebra
+in the A-model of $Y \times \bar Y$, where $\bar Y$ denotes the space $Y$ with the symplectic form $- \omega$.
+Indeed, in general, when a symplectic manifold $Y$ has ``enough'' Lagrangians,
+the Hochschild cohomology its Fukaya category $\CF (Y)$ is expected \cite{Abouzaid,KontsevichHMS,Costello}
+to be isomorphic to the Lagrangian Floer cohomology of the (anti-)diagonal $\Delta_Y \hookrightarrow Y \times \bar Y$,
+\be
+HH^* \left( \CF (Y) \right) \; \cong \; HF^* (\Delta_Y , \Delta_Y)
+\label{HHHFdiag}
+\ee
+Thus, in our basic example of \eqref{openDD} and \eqref{HHTTex} mirror symmetry maps a B-brane $\CB = \CO_{\Delta_X}$
+to a Lagrangian A-brane supported on the conormal bundle $T_{\Delta}^{\vee}$ to $T_{\Delta} \subset T^n \times T^n$
+in $Y \times Y = T^* T^r \times T^* T^r$, so that
+\be
+HF^* (T_{\Delta}^{\vee},T_{\Delta}^{\vee}) \; \cong \; \C [u_i^{\pm 1} , du_i]
+\ee
+This is an open A-model version of \eqref{HHTTex} and a concrete illustration of \eqref{HHHFdiag}.
+
+In general, this leads us to the following picture, where the (colored) HOMFLY homology is realized
+either in terms of closed A-model of a symplectic manifold $Y$
+\be
+\CH^{S^r} (K) \; = \; HH^* \left( \CF (Y) \right)
+\ee
+or in terms of open A-model (Floer homology) of a certain Lagrangian submanifold $L$,
+\be
+\CH^{S^r} (K) \; = \; HF^* (L,L)
+\label{HKLL}
+\ee
+(In our previous discussion, $L$ was the (anti-)diagonal $\Delta_Y \hookrightarrow Y \times \bar Y$,
+but we allow more general Lagrangian submanifolds and more general symplectic manifolds here.)
+For torus knots, the closed A-model version can be obtained by applying
+the supermanifold version of mirror symmetry \cite{AVsuper,Katzarkov,Sethi}
+to the B-model in section \ref{sec:Bmodel}.
+We plan to return to a systematic study of this mirror symmetry elsewhere.
+
+Here, let us simply point out that even for non-torus knots one might hope to find a realization of the form \eqref{HKLL}.
+For example, for the figure-eight knot $K=4_1$ and $r=1$ a natural guess is
+\be
+L = {\bf S}^2 \text{~with 3 punctures}
+\ee
+embedded in some symplectic manifold $Y$, such that $HF^* (L,L) \cong H^* (L)$.
+
+
+
+
+
+
+\section{``Bottom row'' of the colored HOMFLY homology}
+\label{sec:bottom}
+
+In this part we wish to study the ``bottom row'' of the colored superpolynomial, defined as
+\be
+\CP^{\lambda}_{\text{bottom}} (q,t) \; : = \; \lim_{\a \to 0} \, \a^{\#} \, \CP^{\lambda} (\a,q,t) \,,
+\label{bottomrow}
+\ee
+where $\a^{\#}$ denotes the appropriate power of $a$, such that the product $\a^{\#} \, \CP^{\lambda} (\a,q,t)$
+contains only non-negative $a$-degrees starting from zero.
+
+
+\subsection{Combinatorial interpretation for torus knots}
+\label{sec:combbot}
+
+First, let us recall the conjectural combinatorial description of the uncolored triply graded homology
+for a $(p,q)$ torus knot \cite{G,GM,ORS}. Consider a $p\times q$ rectangle and a $NW-SE$ diagonal in it.
+
+\begin{proposition}(\cite{G})
+\label{prop:bottom1}
+The dimension of the ``bottom row'' of the reduced uncolored homology equals to the number of lattice paths
+in this rectangle strictly below the diagonal:
+$$\dim \CH_{\text{bottom}} (T(p,q)) \; = \; c_{p,q}=\frac{(p+q-1)!}{p!q!}.$$
+\end{proposition}
+
+For example, if $q=p+1$, this dimension equals to the $p$-th Catalan number.
+
+\begin{proposition}(\cite{G})
+The dimension of the ``$k$-th row'' of the reduced uncolored homology equals to the number of lattice paths
+below the diagonal with $k$ marked corners:
+$$\dim \CH_{a=k} (T(p,q)) \; = \; \frac{(p+q-k-1)!}{ p\cdot q\cdot k!\cdot (p-k-1)!(q-k-1)!}.$$
+\end{proposition}
+
+A $q$-analogue of this formula was discussed in \cite[eq. (3.46)]{BEM}.
+Both of these propositions motivate the following combinatorial construction,
+completed in \cite{ORS} where it was matched to the algebro-geometric constructions of \cite{os}.
+
+The basis in $\CH_{p,q}$ is enumerated by the lattice paths in the $p\times q$ rectangle with marked corners. To every such path we assign three gradings, where $a$-grading corresponds to the number of marked corners. Let us describe $q-$ and $t-$ gradings.
+For simplicity, we will focus on the bottom row, considered in details in \cite{GM}. Corrections for the higher rows can be found in \cite{ORS}.
+
+Let us interpret a lattice path as a Young diagram $D$. Consider the $\C^{*}\times \C^{*}$ action on the Hilbert scheme of
+$N$ points on $\C^2$, and let us restrict it to a one-parameter subgroup $(t^p,t^q)$. One can check (see {\it e.g.} \cite{Nakajima})
+that the action of this subgroup has isolated fixed points parametrized by the Young diagrams with $N$ boxes. Therefore the corresponding moment map is a Morse function on $\Hilb^{N}(\C^2)$, and its gradient flow induces the Bialynicki-Birula cell decomposition of the Hilbert scheme \cite{Nakajima,Elstro}. We are interested in the dimension of the cell $C_{D}$ labelled by the fixed point $D$, which is given by the following formula:
+$$\dim C_{D}=|D|+h^{+}_{p/q}(D),$$
 where
-(7.2) h+
-p/q(D) = ♯
-{
-c∈ D
-a(c)
-l(c) + 1≤ p
-q < a(c) + 1
-l(c)
-}
-.
-Here a(c) and l(c) denote the arm and the leg of a cell c in a diagram D:
-QUADRUPLY-GRADED COLORED HOMOLOGY OF KNOTS 63
-a(c)
-l(c)
-p
-q
-The statistics h+
-p/q(D) was introduced in [ 62] in connection with some combi-
-natorial models of the bigraded Catalan numbers.
-Proposition 7.3. The gradings of Dyck paths are given by the following equa-
-tions:
-(1) The q-grading assigned to D equals to 2
-[
-|D| + 2h+
-p/q(D)
-]
-.
-(2) The t-grading assigned to D equals to 2|D|.
-Motivated the reﬁned exponential growth conjecture, we assum e that the di-
-mension of the Sr-colored homology is equal to the r-th power of the uncolored
-homology, i.e. the r-th power of the generalized Catalan number cp,q. Therefore it
-is natural to assume that one can ﬁnd a basis in the Sr-colored homology labelled
-by all possible r-tuples of Young diagrams in p× q rectangle below the diagonal.
-Conjecture 7.4. The bottom row of the Sr colored homology of the ( p, q)
-torus knot has a basis labeled by the r-tuples ( D1, . . . , Dr) of the Dyck paths in
-p× q rectangle. The ( Q, tr) gradings of Dyck paths are given by the following
-equations:
-(1) The Q-grading assigned to D equals to 2 ∑ r
-i=1
-[
-|Di| + 2h+
-p/q(Di)
-]
-.
-(2) The tr-grading assigned to D equals to 2 ∑ r
-i=1|Di|.
-The q-grading (and, therefore, the tc-grading) has yet to be constructed. We
-expect it to be related to the combinatorial constructions of [ 8] and [ 46].
-7.2. Coupled instanton-vortex counting. The “bottom row” (7.1) has a
-simple and beautiful interpretation in terms of instanton / vortex c ounting. As
-a warm-up, let us start with a simple vortex counting problem that is e asy to do
-“by hand” and that has all the essential features. Then, we shall upgrade it to the
-equivariant instanton counting relevant to arbitrary knots and link s.
-LetVm be the moduli space of m abelian vortices on a two-dimensional plane,
-D = R2. In other words, Vm is the moduli space of solutions to the PDEs
-(7.3) ∗FA = i|φ|2− it
-∂Aφ = 0
-where A is a connection on a U (1) bundle of ﬁrst Chern class m, and t is a parameter.
-These equations describe supersymmetric conﬁgurations (BPS st ates) in a two-
-dimensional theory on D withN = (2, 2) supersymmetry:
-(7.4) Tvortex : U (1) gauge theory with a single charged ﬁeld φ
-64 EUGENE GORSKY, SERGEI GUKOV, AND MARKO STO ˇSI ´C
-It is well known that Vm is a K¨ ahler manifold of (real) dimension 2 m. Namely,
-(7.5) Vm = Sym m(C) ≡ Cm/Sm ,
-where one can think of coordinates on Vm as vortex positions on D = R2∼
-= C.
-Since D admits a circle action, one can consider the equivariant character,
-Ch q(Vm), with respect to the rotation group U (1)q acting on D. Indeed, U (1)q acts
-onVm in a natural way, by equal phase rotations on all factors in the sym metric
-product (7.5). Moreover, identifying the vortex moduli space Vm = Sym m(C) with
-the space of monic polynomials of degree m,
-(7.6) f (x) =
-m∏
-j=1
-(x− xj ) = xm + a1xm−1 + . . . + am ,
-we immediately deduce the isomorphism Vm∼
-= Cm = ({a1, . . . , am}) and also learn
-that U (1)q acts on the space Vm with weights (1 , 2, . . . , m). Therefore, the U (1)q-
-equivariant character ofVm is
-(7.7) Ch q(Vm) = 1
-(1− q)(1− q2) . . . (1− qm) ,
-in which a careful reader will recognize the “bottom row” of the unnormalized
-Sm-colored HOMFLY polynomial of the unknot.
-This is not an accident, of course, and the physics setup (2.2) pred icts that the
-“bottom row” of any λ-colored HOMFLY homology of any knot K has a similar
-interpretation in terms of equivariant vortex counting on D = R2. In order to
-explain this relation, we need to generalize our warm-up example in two important
-ways: ﬁrst, we need to introduce the homological t-grading, and secondly we need
-a generalization to arbitrary knots. Both of these problems can be achieved by
-embedding D = R2 into a larger space M4 = R4, and realizing our vortex counting
-problem on D as a special case of counting solutions to coupled instanton-vortex
-equations or, equivalently, via equivariant instanton counting on the 4-manifo ld M4
-in the presence of ramiﬁcation along D⊂ M4.
-However, before we proceed to generalizations, let us stay a bit lon ger in the
-world of vortex equations and explore the picture which seems to em erge:
-(7.8) knot K ↝ 2d vortex theory Tvortex(K) ↝ Vm(K)
-so that a suitable version Ch q,t(Vm) of the equivariant character computes the
-bottom row of the colored superpolynomial (7.1) with λ = Sm,
-(7.9) Ch q,t(Vm) = P Sm
-bottom(q, t) .
-Already at this stage the reader might suspect that incorporating the t-grading and
-passing to knot homologies can be addressed by considering equivar iant cohomology
-or K-theory of the vortex moduli space,
-(7.10) H∗
-U(1)q (Vm(K)) ,
-where t-grading is identiﬁed with the homological grading. Although this idea is a
-little too naive, it is actually on the right track, and it is instructive to p ursue it a
-little further.
-Therefore, as the natural next step let us consider a non-abelian generalization
-of (7.3) that describes supersymmetric solutions in the 2d theory:
-(7.11) Tvortex : U (p + 1) gauge theory with p + 1 fundamental ﬁelds φi
-QUADRUPLY-GRADED COLORED HOMOLOGY OF KNOTS 65
+\begin{equation}
+\label{hplus}
+h^{+}_{p/q}(D)=\sharp\left\{c\in D~~ \vline~~ \frac{a(c)}{l(c)+1}\le \frac{p}{q}< \frac{a(c)+1}{l(c)}\right\}.
+\end{equation}
+Here $a(c)$ and $l(c)$ denote the arm and the leg of a cell $c$ in a diagram $D$:
+
+\begin{tikzpicture}
+\draw  (0,0)--(0,4)--(5,0)--(0,0);
+\draw  (1.5,0.5)--(1.5,0.7)--(1.7,0.7)--(1.7,0.5)--(1.5,0.5);
+\draw [thick] (0,3)--(0.5,3) -- (0.5,2) -- (2.3,2)--(2.3,1.3)--(3,1.3)--(3,0.5)--(4,0.5)--(4,0)--(0,0)--(0,3);
+\draw [<->,>=stealth] (1.7,0.6) -- (3,0.6);
+\draw [<->,>=stealth] (1.6,0.7) -- (1.6,2);
+\draw (2.3,0.4) node {${a(c)}$};
+\draw (1.3,1.3) node {${l(c)}$};
+\draw (2.5,-0.2) node {$p$};
+\draw (-0.2,2) node {$q$};
+\draw [->,>=stealth] (2.6,-0.15) -- (5,-0.15);
+\draw [->,>=stealth] (2.4,-0.15) -- (0,-0.15);
+\draw [->,>=stealth] (-0.15,1.8) -- (-0.15,0);
+\draw [->,>=stealth] (-0.15,2.2) -- (-0.15,4);
+\end{tikzpicture}
+
+The statistics $h^{+}_{p/q}(D)$ was introduced in \cite{LW} in connection with some combinatorial models of the bigraded Catalan numbers.
+
+\begin{proposition}
+\label{prop:bottom3}
+The gradings of Dyck paths are given by the following equations:
+\begin{enumerate}
+
+\item{The $q$-grading assigned to $D$ equals to $2\left[|D|+2h^{+}_{p/q}(D)\right]$.}
+
+\item{The $t$-grading assigned to $D$ equals to $2|D|$.}
+\end{enumerate}
+\end{proposition}
+
+
+Motivated the refined exponential growth conjecture, we assume that the dimension of the $S^r$-colored homology is equal to the $r$-th power of the uncolored homology, {\it i.e.} the $r$-th power of the generalized Catalan number $c_{p,q}$.
+Therefore it is natural to assume that one can find a basis in the $S^r$-colored homology labelled by all possible $r$-tuples of Young diagrams in $p\times q$ rectangle below the diagonal.
+
+\begin{conjecture}
+\label{prop:bottom4}
+The bottom row of the $S^r$ colored homology of the $(p,q)$ torus knot has a basis labeled by the $r$-tuples $(D_1,\ldots,D_r)$ of the Dyck paths in $p\times q$ rectangle. The $(Q,t_r)$ gradings of Dyck paths are given by the following equations:
+\begin{enumerate}
+
+\item{The $Q$-grading assigned to $D$ equals to $2\sum_{i=1}^{r}\left[|D_i|+2h^{+}_{p/q}(D_i)\right]$.}
+
+\item{The $t_r$-grading assigned to $D$ equals to $2\sum_{i=1}^{r}|D_i|$.}
+\end{enumerate}
+\end{conjecture}
+
+The $q$-grading (and, therefore, the $t_c$-grading) has yet to be constructed. We expect it to be related to the combinatorial constructions of \cite{BDZ} and \cite{HMZ}.
+
+
+
+
+\subsection{Coupled instanton-vortex counting}
+\label{sec:inst-surf}
+
+The ``bottom row'' \eqref{bottomrow} has a simple and beautiful interpretation in terms of instanton / vortex counting.
+As a warm-up, let us start with a simple vortex counting problem that is easy to do ``by hand''
+and that has all the essential features. Then, we shall upgrade it to the equivariant instanton counting relevant to arbitrary knots and links.
+
+Let $\CV_m$ be the moduli space of $m$ abelian vortices on a two-dimensional plane, $D = \R^2$.
+In other words, $\CV_m$ is the moduli space of solutions to the PDEs
+\be
+\begin{array}{rl}
+* F_A & =~ i |\phi|^2 - it \\
+\bar \partial_A \phi & =~ 0
+\end{array}
+\label{abelianvorteq}
+\ee
+where $A$ is a connection on a $U(1)$ bundle of first Chern class $m$, and $t$ is a parameter.
+These equations describe supersymmetric configurations (BPS states) in a two-dimensional theory
+on $D$ with $\CN=(2,2)$ supersymmetry:
+\be
+\CT_{\text{vortex}}~:~ U(1)~\text{gauge theory with a single charged field}~\phi
+\ee
+
+It is well known that $\CV_m$ is a K\"ahler manifold of (real) dimension $2m$. Namely,
+\be
+\CV_m \; = \; \Sym^m (\C) \; \equiv \; \C^m / S_m \,,
+\label{vortsymm}
+\ee
+where one can think of coordinates on $\CV_m$ as vortex positions on $D = \R^2 \cong \C$.
+
+Since $D$ admits a circle action, one can consider the equivariant character, $Ch_q (\CV_m)$,
+with respect to the rotation group $U(1)_q$ acting on $D$.
+Indeed, $U(1)_q$ acts on $\CV_m$ in a natural way, by equal phase rotations on all factors in the symmetric product \eqref{vortsymm}.
+Moreover, identifying the vortex moduli space $\CV_m = \Sym^m (\C)$
+with the space of monic polynomials of degree $m$,
+\be
+f (x) \; = \; \prod_{j=1}^m (x - x_j) = x^m + a_1 x^{m-1} + \ldots + a_m \,,
+\ee
+we immediately deduce the isomorphism $\CV_m \cong \C^m = (\{ a_1, \ldots, a_m \})$
+and also learn that $U(1)_q$ acts on the space $\CV_m$ with weights $(1, 2, \ldots, m)$.
+Therefore, the $U(1)_q$-equivariant character of $\CV_m$ is
+\be
+Ch_q (\CV_m) \; = \; \frac{1}{(1-q)(1-q^2) \ldots (1-q^m)} \,,
+\label{unknotvortchar}
+\ee
+in which a careful reader will recognize the ``bottom row'' of the \textsl{unnormalized} $S^m$-colored HOMFLY polynomial of the unknot.
+
+This is not an accident, of course, and the physics setup \eqref{theoryB} predicts that the ``bottom row''
+of any $\lambda$-colored HOMFLY homology of any knot $K$ has a similar interpretation in terms
+of equivariant vortex counting on $D = \R^2$.
+In order to explain this relation, we need to generalize our warm-up example in two important ways:
+first, we need to introduce the homological $t$-grading, and secondly we need a generalization to arbitrary knots.
+Both of these problems can be achieved by embedding $D = \R^2$ into a larger space $M_4 = \R^4$,
+and realizing our vortex counting problem on $D$ as a special case of counting solutions
+to coupled \textsl{instanton-vortex equations} or, equivalently, via equivariant instanton
+counting on the 4-manifold $M_4$ in the presence of ramification along $D \subset M_4$.
+
+However, before we proceed to generalizations, let us stay a bit longer in the world of vortex equations
+and explore the picture which seems to emerge:
+\be
+\text{knot}~K \quad \leadsto \quad \text{2d vortex theory}~\CT_{\text{vortex}} (K) \quad \leadsto \quad \CV_m (K)
+\ee
+so that a suitable version $Ch_{q,t} (\CV_m)$ of the equivariant character computes the bottom row of
+the colored superpolynomial \eqref{bottomrow} with $\lambda = S^m$,
+\be
+Ch_{q,t} (\CV_m) \; = \; \CP^{S^m}_{\text{bottom}} (q,t) \,.
+\label{naiveVmP}
+\ee
+Already at this stage the reader might suspect that incorporating the $t$-grading and passing to knot homologies
+can be addressed by considering equivariant cohomology or K-theory of the vortex moduli space,
+\be
+H^*_{U(1)_q} (\CV_m (K)) \,,
+\label{naiveHvort}
+\ee
+where $t$-grading is identified with the homological grading.
+Although this idea is a little too naive, it is actually on the right track, and it is instructive to pursue it a little further.
+
+Therefore, as the natural next step let us consider a non-abelian generalization of \eqref{abelianvorteq}
+that describes supersymmetric solutions in the 2d theory:
+\be
+\CT_{\text{vortex}}~:~ U(p+1)~\text{gauge theory with}~p+1~\text{fundamental fields}~\phi_i
+\ee
 The corresponding vortex equations
-(7.12) ∗FA = i∑ p+1
-i=1 φiφ†
-i− it
-∂Aφi = 0
-involve a U (p + 1) gauge connection and p + 1 Higgs ﬁelds φi in the fundamental
-representation of the gauge group. Again, the m-vortex moduli space is a K¨ ahler
-manifold of real dimension
-(7.13) dim V U(p+1)
-m = 2m(p + 1) ,
-In particular, the single-vortex moduli space is well known to be a (2 p + 2)-
-dimensional space
-(7.14) V U(p+1)
-1 ∼
-= C× CPp
-where the factor C parametrized by the “center-of-mass” position, while CPp en-
-codes the “internal degrees of freedom” of a single non-abelian vo rtex. The rotation
-symmetry U (1)q acts on C with weight 1, so we expect that it contributes to the
-equivariant character a factor 1
-1−q . However, unlike our ﬁrst example (related to the
-unknot), now the moduli space V U(p+1)
-1 has non-trivial topology and, therefore, if
-t-grading is simply the homological grading on (7.10) the suitable gener alization of
-the equivariant character should be a product of 1
-1−q and the Poincar´ e polynomial
-of CPp,
-(7.15) 1
-1− q
-p∑
-i=0
-t2i
-This turns out to be the correct answer for the bottom row of the HOMFLY ho-
-mology of the (2 , 2p + 1) torus knot.
-Now let us explain why all these examples are “working” and where the con-
-nection with vortex equations come from. The reason, in fact, is alr eady contained
-in section 2.1 where we reviewed the interpretation (2.1) of homologic al knot invari-
-ants in terms of supersymmetric conﬁgurations (BPS states) in th e string theory
-setup (2.2). What this interpretation tells us is that specializing to th e bottom
-row (7.1), i.e. taking the limit a→ 0, means the “large volume limit.” Indeed,
-according to the identiﬁcation of the parameters (2.3), in this limit th e interesting
-geometry (and topology) of the Calabi-Yau space X is replaced by the simplest
-Calabi-Yau 3-fold, namely a ﬂat space:
-(7.16) X
-a→0
-↝ C3 .
-In other words, the bottom row of the colored HOMFLY homology is d escribed
-by a much simpler “toy model” of (2.2) in which the pair ( X, LK) is replaced by
-(C3, LK). (Not much happens to the Lagrangian submanifold LK in this limit.)
-The next step is to look at this system from the vantage point of the 4-manifold
-M4∼
-= R4 and the defect (called the “surface operator” [ 44]) supported on D∼
-=
-R2. Before we took the limit a→ 0, the compactiﬁcation on X produces abelian
-gauge theory on M4 with gauge group U (1) [ 53]. Incorporating an extra brane
-in this setup means including the so-called surface operator suppor ted on D or,
-mathematically speaking, ramiﬁcation in the gauge theory on M4.
-LetMk,m be the moduli space of abelian instantons on M4 = R4 with rami-
-ﬁcation along D⊂ M4. In other words, Mk,m is the moduli space of solutions to
-66 EUGENE GORSKY, SERGEI GUKOV, AND MARKO STO ˇSI ´C
-the self-duality equation on M4\ D,
-(7.17) F +
-A = 0
-with the second Chern class k, with the monopole number m = 1
-2π
-∫
-D FA, and
-with the prescribed behavior along D. The latter is what we call the ramiﬁcation
-data; e.g. a simple example of the so-called tame ramiﬁcation can be obtained by
-introducing a δ-function source in the self-duality equation (7.17) on M4:
-(7.18) F +
-A = 2 πα(δD)+ .
-The gauge connections which solve this equation have a ﬁrst-order pole at D. More
-generally, one can study solutions to self-duality equations with sing ularities of
-arbitrarily high order,
-(7.19) A = dz
-(α1
-z + α2
-z2 + . . .
-)
-+ dz (. . .) .
-This is called wild ramiﬁcation and is precisely how the dependence on the knot K
-will enter, via the choice of the ramiﬁcation data. 10 Let us denote the corresponding
-moduli space by Mk,m(K).
-Much like the vortex moduli space Vm enjoyed an action of the rotation group
-U (1)q, the moduli space of “ramiﬁed instantons” on M4\ D∼
-= C× C∗ has an action
-of the rotation group U (1)q× U (1)t, where U (1)q acts by rotations of D = C and
-U (1)t acts by rotations of its normal bundle, C∗.
-Then, in the limit (7.16) the physical interpretation (2.1) of the color ed HOM-
-FLY homology predicts
-(7.20) Ch q,t(M0,m(K)) =
-P
-Sm
-bottom(K; q, t)
-which is very close to (7.9) and, in fact, is exactly the sought-after proper gener-
-alization of it. The connection with vortex equations is now easy to se e. At least
-for some knots the moduli space Mk,m(K) can be equivalently described as the
-moduli space of solutions to the coupled instanton-vortex equations :
-F +
-A = 2 πφ⊗ φ† (δD)+
-∗DFB = iφ†⊗ φ− it1E(7.21)
-∂A,Bφ = 0
-where A is a unitary connection on the line bundle L over M4, B is a unitary
-connection on the bundle E over D⊂ M4, φ is an element φ∈ H 0(Hom(E,L|D)),
-and φ† is its adjoint.
-As far as we know the instanton-vortex equations (7.21) are new a nd have not
-appeared in the literature previously. Their closest cousin is a set of the so-called
-coupled vortex equations studied e.g. in [ 9, 10 ], where both E andL are bundles
-over D. In other words, our equations (7.21) can be viewed as analogs of t he coupled
-vortex equations where one of the bundles is extended over M4. For instance, for a
-(2, 2p + 1) torus knot T 2,2p+1 one takes E to be a unitary bundle of rank p + 1.
-Then, as before, to get the “bottom row” of the unreduced Sm-colored HOM-
-FLY homology we need to consider the equivariant character of M0,m(K) with
-instanton number k = 0 and vortex number m. In situations where Mk,m(K)
-can be identiﬁed with the moduli space of solutions to (7.21) this boils d own
-10For instance, it was conjectured [ 19] that (2 ,2p + 1) torus knots correspond to wild rami-
-ﬁcation of order p.
-QUADRUPLY-GRADED COLORED HOMOLOGY OF KNOTS 67
-to studying non-abelian vortex equations on D. Thus, for 2 p + 1 torus knots
-we end up with U (p + 1) vortex equations, so that the equivariant character of
-M0,m(T 2,2p+1)∼
-=V U(p+1)
-m essentially consists of p + 1 copies of the abelian vortex
-character that we discussed earlier, cf. (7.7).
-Our prediction is that the equivariant character of the m-vortex moduli space
-V U(p+1)
-m is the “bottom row” of the Sm-colored HOMFLY homology of the (2 , 2p+1)
-torus knot, i.e.
-Ch q,t(V U(p+1)
-m ) = q−pm
-(q; q)m
-∑
-0≤kp≤...≤k2≤k1≤m
-[ m
-k1
-][ k1
-k2
-]
-···
-[ kp−1
-kp
-]
-×
-× q(2m+1)(k1+k2+...+kp)−∑ p
-i=1 ki−1ki t2(k1+k2+...+kp),
-with the convention k0 := m. For example, when m = 2 and p = 1, i.e. for the
-(2, 3) torus knot (= trefoil knot 3 1) colored by λ =
-we have
-(7.22) Ch q,t(V U(2)
-2 ) = q−2 1 + q3t2 + q4t2 + q6t4
-(1− q)(1− q2)
-which can be veriﬁed using equivariant U (2) action onV U(2)
-2 , see e.g. [19] and [ 81].
-It would be interesting to understand better the relation between vortex moduli
-spaces and the combinatorics of the Bialynicki-Birula cell decomposit ion discussed
-in Section 7.1 that also determines the bottom row of the colored HOM FLY homol-
-ogy. Thus, in the above example (7.22) of the S2-colored trefoil, the corresponding
-moduli space of two U (2) vorticesV U(2)
-2 has been studied in the literature [ 47, 4, 5 ]
-and is known to have two strata, which correspond to separated v ortices and co-
-incident vortices. The ﬁrst stratum — of complex dimension 4 — is simply the
-product of two single-vortex moduli spaces V U(2)
-1 , modulo the permutation of the
-two vortices,
-(7.23) U1(V U(2)
-2 ) ∼
-= C× C× CP1× CP1
-Z2
-with the “diagonal” removed. The second stratum — of complex dimen sion 3 — is
-known to be the space of Hecke modiﬁcations (times the center of m ass position),
-(7.24) U2(V U(2)
-2 ) ∼
-= C× WCP2
-(1,1,2) .
-See [ 42] for color graphics illustrating the bottom row of the S2-colored HOMFLY
-homology and the role of WCP2
-(1,1,2) in its construction. In this, and more general
-examples, it would be interesting to match the geometry of these st rata with the
-Bialynicki-Birula cell decomposition discussed in Section 7.1.
-Another direction for future work, already mentioned in Section 6.1 , is the
-relation between theory Tvortex(K) and the surface operator theory considered in
-[27, 28 ]. Indeed, here, in Section 6.1, and in [ 27, 28 ] the Poincar´ e polynomial
-of the colored HOMFLY homology (a.k.a. the superpolynomial) is realize d as a
-certain index (or, character) of a two-dimensional N = 2 theory that describes
-the physics on D in the brane construction (2.2). Yet, the key diﬀerence is that
-here and in Section 6.1 there is a diﬀerent N = 2 theory for each choice of “color”
-λ; the index of such theories determines colored superpolynomials an d a priori all
-such theories are unrelated. In [ 27, 28 ], on the other hand, a single N = 2 theory
-68 EUGENE GORSKY, SERGEI GUKOV, AND MARKO STO ˇSI ´C
-TK (that depends only on the knot K) determines the entire tower of Sm-colored
-homological invariants, via specializations of its supersymmetric inde x:
-(7.25) P
-Sm
-K (a, q, t) = ITK (x = qm; a, q, t) .
-Moreover, recursion relations found in [ 27, 68, 28 ], which have a natural mean-
-ing11 in theN = 2 theory TK, relate equivariant characters Ch q,t(M0,m(K)) with
-diﬀerent values of the “vortex number” m = 1
-2π
-∫
-D F . Similarly, from the vantage
-point of Section 6.1, the recursion relations of [ 27, 68, 28 ] relate B-models with
-target manifolds of diﬀerent (super-)dimension in a way reminiscent of the notions
-of “endoscopy” and “transfer” in the geometric Langlands corre spondence [ 24].
+\be
+\begin{array}{rl}
+* F_A & =~ i\sum_{i=1}^{p+1} \phi_i \phi_i^{\dagger} - i t \\
+\bar \partial_A \phi_i & =~ 0
+\end{array}
+\label{vortexeq}
+\ee
+involve a $U(p+1)$ gauge connection and $p+1$ Higgs fields $\phi_i$ in the fundamental
+representation of the gauge group. Again, the $m$-vortex moduli space is a K\"ahler manifold
+of real dimension
+\be
+\dim~ \CV_m^{U(p+1)} = 2 m (p+1) \,,
+\label{mmndimension}
+\ee
+In particular, the single-vortex moduli space is well known to be a $(2p+2)$-dimensional space
+\be
+\CV_1^{U(p+1)} \; \cong \; \C \times \cp^p
+\ee
+where the factor $\C$ parametrized by the ``center-of-mass'' position,
+while $\cp^p$ encodes the ``internal degrees of freedom'' of a single non-abelian vortex.
+The rotation symmetry $U(1)_q$ acts on $\C$ with weight 1,
+so we expect that it contributes to the equivariant character a factor $\frac{1}{1-q}$.
+However, unlike our first example (related to the unknot), now the moduli space $\CV_1^{U(p+1)}$
+has non-trivial topology and, therefore, if $t$-grading is simply the homological grading on \eqref{naiveHvort}
+the suitable generalization of the equivariant character should be a product of $\frac{1}{1-q}$
+and the Poincar\'e polynomial of $\cp^p$,
+\be
+\frac{1}{1-q} \sum_{i=0}^p t^{2i}
+\ee
+This turns out to be the correct answer for the bottom row of the HOMFLY homology of the $(2,2p+1)$ torus knot.
+
+
+Now let us explain why all these examples are ``working'' and where the connection with vortex equations come from.
+The reason, in fact, is already contained in section~\ref{sec:geomphys}
+where we reviewed the interpretation~\eqref{HHBPS} of homological knot invariants
+in terms of supersymmetric configurations (BPS states) in the string theory setup~\eqref{theoryB}.
+What this interpretation tells us is that specializing to the bottom row \eqref{bottomrow},
+{\it i.e.} taking the limit $\a \to 0$, means the ``large volume limit.''
+Indeed, according to the identification of the parameters \eqref{NvolCP1},
+in this limit the interesting geometry (and topology) of the Calabi-Yau space $X$
+is replaced by the simplest Calabi-Yau 3-fold, namely a flat space:
+\be
+X \;\overset{\a \to 0}{\leadsto}\; \C^3 \,.
+\label{Xatozero}
+\ee
+
+In other words, the bottom row of the colored HOMFLY homology is described by
+a much simpler ``toy model'' of \eqref{theoryB} in which the pair $(X,L_K)$ is replaced by $(\C^3, L_K)$.
+(Not much happens to the Lagrangian submanifold $L_K$ in this limit.)
+
+The next step is to look at this system from the vantage point of the 4-manifold $M_4 \cong \R^4$
+and the defect (called the ``surface operator'' \cite{Ramified}) supported on $D \cong \R^2$.
+Before we took the limit $\a \to 0$, the compactification on $X$ produces abelian gauge theory
+on $M_4$ with gauge group $U(1)$ \cite{KKV}.
+Incorporating an extra brane in this setup means including the so-called surface operator supported on $D$
+or, mathematically speaking, ramification in the gauge theory on $M_4$.
+
+Let $\CM_{k,m}$ be the moduli space of abelian instantons on $M_4 = \R^4$ with ramification along $D \subset M_4$.
+In other words, $\CM_{k,m}$ is the moduli space of solutions to the self-duality equation on $M_4 \setminus D$,
+\be
+F_A^+ \; = \; 0
+\label{sdeq}
+\ee
+with the second Chern class $k$, with the monopole number $m = \frac{1}{2\pi} \int_D F_A$,
+and with the prescribed behavior along $D$.
+The latter is what we call the ramification data;
+{\it e.g.} a simple example of the so-called \textsl{tame} ramification
+can be obtained by introducing a $\delta$-function source
+in the self-duality equation \eqref{sdeq} on $M_4$:
+\be
+F_A^+ \; = \; 2\pi \alpha (\delta_D)^+ \,.
+\ee
+The gauge connections which solve this equation have a first-order pole at $D$.
+More generally, one can study solutions to self-duality equations with singularities of arbitrarily high order,
+\be
+A = dz  \left( \frac{\alpha_1}{z} + \frac{\alpha_2}{z^2} + \ldots \right) + d \bar z \left( \ldots \right) \,.
+\ee
+This is called \textsl{wild} ramification and is precisely how the dependence on the knot $K$ will enter,
+via the choice of the ramification data.\footnote{For instance, it was conjectured~\cite{DGH} that $(2,2p+1)$ torus knots
+correspond to wild ramification of order $p$.}
+Let us denote the corresponding moduli space by $\CM_{k,m} (K)$.
+
+Much like the vortex moduli space $\CV_m$ enjoyed an action of the rotation group $U(1)_q$,
+the moduli space of ``ramified instantons'' on $M_4 \setminus D \cong \C \times \C^*$
+has an action of the rotation group $U(1)_q \times U(1)_t$,
+where $U(1)_q$ acts by rotations of $D = \C$ and $U(1)_t$ acts by rotations of its normal bundle, $\C^*$.
+
+Then, in the limit \eqref{Xatozero} the physical interpretation \eqref{HHBPS} of the colored HOMFLY homology predicts
+\be
+Ch_{q,t} (\CM_{0,m} (K)) \; = \; \bar \CP^{S^m}_{\text{bottom}} (K; q,t)
+\ee
+which is very close to \eqref{naiveVmP} and, in fact, is exactly the sought-after proper generalization of it.
+
+
+
+
+
+
+
+
+
+
+
+The connection with vortex equations is now easy to see. At least for some knots
+the moduli space $\CM_{k,m} (K)$ can be equivalently described as the moduli space of solutions
+to the coupled \textsl{instanton-vortex equations}:
+\begin{eqnarray}
+F_A^+ & = & 2\pi \phi \otimes \phi^{\dagger} \; (\delta_D)^+  \nonumber \\
+*_{D} F_B & = & i \phi^{\dagger} \otimes \phi - i t {\bf 1}_E \label{coupledvort} \\
+\bar \partial_{A,B} \phi & = & 0 \nonumber
+\end{eqnarray}
+where $A$ is a unitary connection on the line bundle $\CL$ over $M_4$,
+$B$ is a unitary connection on the bundle $E$ over $D \subset M_4$,
+$\phi$ is an element $\phi \in H^0 (\Hom (E,\CL \vert_D ))$, and $\phi^{\dagger}$ is its adjoint.
+
+
+As far as we know the instanton-vortex equations \eqref{coupledvort} are new and have not appeared in the literature previously.
+Their closest cousin is a set of the so-called coupled vortex equations studied {\it e.g.} in~\cite{BGP1,BGP2},
+where both $E$ and $\CL$ are bundles over $D$. In other words, our equations \eqref{coupledvort} can be viewed
+as analogs of the coupled vortex equations where one of the bundles is extended over $M_4$.
+For instance, for a $(2,2p+1)$ torus knot $T^{2,2p+1}$ one takes $E$ to be a unitary bundle of rank $p+1$.
+
+Then, as before, to get the ``bottom row'' of the \textsl{unreduced} $S^m$-colored HOMFLY homology we need to consider
+the equivariant character of $\CM_{0,m} (K)$ with instanton number $k=0$ and vortex number $m$.
+In situations where $\CM_{k,m} (K)$ can be identified with the moduli space of solutions to \eqref{coupledvort}
+this boils down to studying non-abelian vortex equations on $D$.
+Thus, for $2p+1$ torus knots we end up with $U(p+1)$ vortex equations,
+so that the equivariant character of $\CM_{0,m} (T^{2,2p+1}) \cong \CV_m^{U(p+1)}$
+essentially consists of $p+1$ copies of the abelian vortex character that we discussed earlier, {\it cf.} \eqref{unknotvortchar}.
+
+Our prediction is that the equivariant character of the $m$-vortex moduli space $\CV_m^{U(p+1)}$
+is the ``bottom row'' of the $S^m$-colored HOMFLY homology of the $(2,2p+1)$ torus knot, {\it i.e.}
+\begin{eqnarray}\nonumber
+\!\!\!\!\!\!\!\!Ch_{q,t} (\CV_m^{U(p+1)})  &=& \frac{q^{-pm}}{(q;q)_m}  \sum_{0\le k_p \le \ldots \le k_2 \le k_1 \le m}
+\left[\!\begin{array}{c} m \\k_1 \end{array}\!\right]\left[\!\begin{array}{c} k_1\\k_2 \end{array}
+\!\right]\cdots\left[\!\begin{array}{c} k_{p-1}\\k_p \end{array}\!\right]  \times\\
+& & \nonumber \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \times \,\,\, q^{(2m+1)(k_1+k_2+\ldots+k_p)-\sum_{i=1}^p k_{i-1}k_i}
+t^{2(k_1+k_2+\ldots+k_p)} ,
+\end{eqnarray}
+with the convention $k_0:=m$.
+For example, when $m=2$ and $p=1$, {\it i.e.} for the $(2,3)$ torus knot (= trefoil knot $3_1$) colored by $\lambda = \tableau{2}$ we have
+\be
+Ch_{q,t} (\CV_2^{U(2)}) \; = \; q^{-2} \frac{1 + q^3 t^2 + q^4 t^2 + q^6 t^4}{(1-q)(1-q^2)}
+\label{S2chtref}
+\ee
+which can be verified using equivariant $U(2)$ action on $\CV_2^{U(2)}$, see {\it e.g.} \cite{DGH} and \cite{Taipale}.
+
+It would be interesting to understand better the relation between vortex moduli spaces
+and the combinatorics of the Bialynicki-Birula cell decomposition discussed in Section \ref{sec:combbot}
+that also determines the bottom row of the colored HOMFLY homology.
+Thus, in the above example \eqref{S2chtref} of the $S^2$-colored trefoil, the corresponding
+moduli space of two $U(2)$ vortices $\CV_2^{U(2)}$ has been studied in the literature \cite{Tong,Shifman,Baptista}
+and is known to have two strata, which correspond to separated vortices and coincident vortices.
+The first stratum --- of complex dimension 4 --- is simply the product of two single-vortex moduli spaces $\CV_1^{U(2)}$,
+modulo the permutation of the two vortices,
+\be
+\CU_1 ( \CV_2^{U(2)} ) \; \cong \; \C \times \frac{\C \times \cp^1 \times \cp^1}{\Z_2}
+\ee
+with the ``diagonal'' removed.
+The second stratum --- of complex dimension 3 ---  is known to be the space of Hecke modifications
+(times the center of mass position),
+\be
+\CU_2 ( \CV_2^{U(2)} ) \; \cong \;  \C \times \mathbb{W} \cp^2_{(1,1,2)} \,.
+\ee
+See \cite{GS} for color graphics illustrating the bottom row of the $S^2$-colored HOMFLY homology
+and the role of $\mathbb{W} \cp^2_{(1,1,2)}$ in its construction.
+In this, and more general examples, it would be interesting to match the geometry of these strata
+with the Bialynicki-Birula cell decomposition discussed in Section \ref{sec:combbot}.
+
+Another direction for future work, already mentioned in Section \ref{sec:Bmodel},
+is the relation between theory $\CT_{\text{vortex}} (K)$ and the surface operator theory considered in \cite{FGS2,FGSS}.
+Indeed, here, in Section \ref{sec:Bmodel}, and in \cite{FGS2,FGSS} the Poincar\'e polynomial
+of the colored HOMFLY homology (a.k.a. the superpolynomial) is realized as a certain index (or, character)
+of a two-dimensional $\CN=2$ theory that describes the physics on $D$ in the brane construction \eqref{theoryB}.
+Yet, the key difference is that here and in Section \ref{sec:Bmodel} there is a different $\CN=2$ theory
+for each choice of ``color'' $\lambda$; the index of such theories determines colored superpolynomials
+and {\it a priori} all such theories are unrelated.
+In \cite{FGS2,FGSS}, on the other hand, a single $\CN=2$ theory $\CT_K$ (that depends only on the knot $K$)
+determines the entire tower of $S^m$-colored homological invariants, via specializations of its supersymmetric index:
+\be
+\bar \CP^{S^m}_K (a,q,t) \; = \; \CI_{\CT_K} (x = q^m; a,q,t) \,.
+\ee
+Moreover, recursion relations found in \cite{FGS2,Nawata,FGSS}, which have a natural meaning\footnote{{\it e.g.} the characteristic
+variety of the corresponding $q$-difference equations has a nice interpretation as the moduli space of SUSY parameters, {\it etc.}}
+in the $\CN=2$ theory $\CT_K$, relate equivariant characters $Ch_{q,t} (\CM_{0,m} (K))$
+with different values of the ``vortex number'' $m = \frac{1}{2 \pi} \int_D F$.
+Similarly, from the vantage point of Section \ref{sec:Bmodel}, the recursion relations of \cite{FGS2,Nawata,FGSS}
+relate B-models with target manifolds of different (super-)dimension
+in a way reminiscent of the notions of ``endoscopy'' and ``transfer'' in the geometric Langlands correspondence \cite{FW}.
 Thus, in the case of the trefoil knot we have:
-P Sm+2
-bottom− (q−1− t2qm + (1 + q)q2mt2)P Sm+1
-bottom(7.26)
-+t4q3m−1(qm− 1)P Sm
-bottom = 0
+\begin{align}
+\CP^{S^{m+2}}_{\text{bottom}}
+- (q^{-1} - t^2 q^m + (1+q) q^{2m} t^2) \CP^{S^{m+1}}_{\text{bottom}}
+& \\
++ t^4 q^{3m-1} (q^m - 1) \CP^{S^{m}}_{\text{bottom}} & = 0 \notag
+\end{align}
+
+
+
+\begin{appendix}

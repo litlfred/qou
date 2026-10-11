@@ -8,227 +8,79 @@ pages: 62-65
 source_pdf: 1112.5179v1.pdf
 source_sha256: b58af08336c40994
 doc_brief: "3-Manifolds and 3d Indices — We identify a large classR of three-dimensionalN = 2 superconformal ﬁeld the- ories."
+text_source: latex
+latex_prose_ratio: 0.958
+latex_coverage_ratio: 0.933
 ---
-We would like to deﬁne an aﬃne symplectic action on the Hilbert spaceH≡H 0,s (or products
-thereof) that intertwines an obvious symplectic action in the algebra of operators (6.20). This
-was already done in Section 2 for the index, but we want to rediscover it here from the point
-of view of Chern-Simons theory and geometric quantization.
-Fortunately, a holomorphic version of the desired symplectic action was deﬁned in [31].
-There, the relevant tetrahedron (say) phase space was viewed as a complexiﬁcation of
-(
-PR, i
-2ℏΩR
-)
-,
-wherePR is the slice of P with X, P∈ R, and Ω R is the corresponding real restriction
-of the holomorphic symplectic form (6.11). Quantization then produced a Hilbert space
-HSL(2)≃ L2(R) containing functions f(X; ℏ). Actual Chern-Simons wavefunctions had the
-additional property that they were locally analytic inX and ℏ. Such analytic “SL(2)” wave-
-functions were identiﬁed with ellipsoid partition functions of theories TM in [9, 19, 27]. We
-recall from [31] that the symplectic groupSp(2, Z) acted on wavefunctionsf(Z; ℏ) in the Weil
-33The same technicalities involving convergence and univalent edges from Section 4 appear in Chern-Simons
-theory too. We mean a non-rigorous, physical “proof.”
-– 61 –
-representation [77, 78]. In particular, the generators T and S were implemented as
-T : f(X; ℏ) ↦→ (T◦f)(X′; ℏ) =e
-1
-2ℏX′2
-f(X; ℏ), (6.25a)
-S : f(X; ℏ) ↦→ (S◦f)(X′; ℏ) = 1√
-2πiℏ
-∫
-R
-dXe
-1
-ℏXX′
-f(X; ℏ). (6.25b)
-These generate a projective representation of Sp(2, Z) on L2(R) — projective because the
-group relations (ST )3 =id and S2 =C only hold up to a phase.
-In the present case of SL(2, C) Chern-Simons at k = 0, the complex phase space
-(P,ω 0,s) can roughly 34 be considered a product of holomorphic and antiholomorphic copies
-of
-(
-PR,± i
-2ℏΩR
-)
-. This is easy to see from the expression (6.15) for ω0,s. We can then guess
-what the appropriate symplectic action on (P,ω 0,s) should be by combining holomorphic and
-antiholomorphic copies of (6.25).
-For example, let us work in representation (b) of the Hilbert space H, so that wavefunc-
-tions f (b)(x,x;q) depend non-holomorphically on x = exp(X). The natural guess for the T
-action is
-T : f(x,x;q) ↦→ (T◦f)(x′,x′;q) =e
-1
-2ℏX′2− 1
-2ℏX′2
-f(x′,x′;q), (6.26)
-withX′ = logx′. It is important to check that the right-hand side of (6.26) is still an element
-ofH, namely that it is periodic as X′→ X′ + 2πi, and that Re X′∈ ℏ
-2 Z is quantized. The
-latter condition is automatic, sincef(x,x;q) was only initially deﬁned for ReX = log|x|∈ ℏ
-2 Z;
-so let us set Re X′ =m′ ℏ
-2. Then the exponential in (6.26) becomes
-e
-1
-2ℏX′2− 1
-2ℏX′2
-=eim′ ImX′
-, (6.27)
-enforcing the required periodicity in Im X′.
-Similarly, a ﬁrst guess for the S transformation would be
-S : f(x,x;q) ?↦→ (S◦f)(x′,x′;q) =
-∫
-dXdXe
-1
-ℏXX′− 1
-ℏXX′
-f(x,x;q), (6.28)
-with some appropriate normalization. Now, setting Re X = m ℏ
-2 and Re X′ = m′ ℏ
-2, the
-exponent becomes 1
-ℏXX′− 1
-ℏXX
-′
-= im′ ImZ +im ImX′ . Therefore, quantization of Re X
-ensures periodicity in ImX′, while requiring quantization of ReX′ makes the entire integrand
-in (6.28) periodic in Im X. This is almost as desired, except that the integration measure∫
-dXdX does not quite make sense. The correct interpretation of
-∫
-dXdX is as an integration
-over a fundamental domain where f(x,x;q) is deﬁned, i.e.
-∫
-dXdX → ∑
-m∈Z
-∫ 2π
-0 d ImX . If
-we use the notation x =q
-m
-2ζ, x′ =q
-m′
-2 ζ′, then the proper transformation becomes
-S : f(m,ζ ;q) ↦→ (S◦f)(m′,ζ′;q) =
-∑
-m∈Z
-∫ dζ
-2πiζ ζm′
-ζ′mf(m,ζ ;q), (6.29)
-34A precise statement is that the analytic continuation of ( P,ω 0,s), with independent complex coordinates
-X,P and X,P , is isomorphic to ( P, i
-2ℏΩ)× (P,− i
-2ℏΩ). We do not want to analytically continue anything
-here, though.
-– 62 –
-with integration done over the unit circle. The normalizations in (6.26) and (6.29) are just
-right to ensure that T andS generate a true representation of Sp(2, Z) acting on our Hilbert
-spaceH.
-It should now be clear that the transformations (6.26)–(6.29) coincide with the Sp(2, Z)
-action on the index, described in [17] and in Section 2.1 above. To make the correspondence
-even clearer, we could use a “charge basis” for wavefunctions in H, option (d) of Table 1.
-Using Fourier transform to relate polarizations (b) and (d), we then recover the more familiar
-symplectic action
-T : f(m,e ;q) ↦→ f(m′−e′,e′;q), S : f(m,e ;q) ↦→ f(e′,−m′;q), (6.30)
+[]{#sec:CSsymp label="sec:CSsymp"}
+
+We would like to define an affine symplectic action on the Hilbert space $\mathcal{H}\equiv \mathcal{H}_{0,s}$ (or products thereof) that intertwines an obvious symplectic action in the algebra of operators [\[CSops\]](#CSops){reference-type="eqref" reference="CSops"}. This was already done in Section [\[sec:actions\]](#sec:actions){reference-type="ref" reference="sec:actions"} for the index, but we want to rediscover it here from the point of view of Chern-Simons theory and geometric quantization.
+
+Fortunately, a holomorphic version of the desired symplectic action was defined in [@Dimofte-QRS]. There, the relevant tetrahedron (say) phase space was viewed as a complexification of $\big(\mathcal{P}_{\mathbb R},\tfrac{i}{2\hbar}\Omega_{\mathbb R}\big)$, where $\mathcal{P}_{\mathbb R}$ is the slice of $\mathcal{P}$ with $X,\,P\in {\mathbb R}$, and $\Omega_{\mathbb R}$ is the corresponding real restriction of the holomorphic symplectic form [\[Omega\]](#Omega){reference-type="eqref" reference="Omega"}. Quantization then produced a Hilbert space $\mathcal{H}^{SL(2)}\simeq L^2({\mathbb R})$ containing functions $f(X;\hbar)$. Actual Chern-Simons wavefunctions had the additional property that they were locally *analytic* in $X$ and $\hbar$. Such analytic "$SL(2)$" wavefunctions were identified with ellipsoid partition functions of theories $T_M$ in [@Yamazaki-3d; @DG-Sdual; @DGG].
+
+We recall from [@Dimofte-QRS] that the symplectic group $Sp(2,{\mathbb Z})$ acted on wavefunctions $f(Z;\hbar)$ in the Weil representation [@Shale-rep; @Weil-rep]. In particular, the generators $T$ and $S$ were implemented as
+
+$$\label{SpSL}
+\begin{align} T\;&:\quad f(X;\hbar)\;\mapsto\; (T\circ f)(X';\hbar)= e^{\frac{1}{2\hbar}X'^2}f(X;\hbar)\,, \\
+S\;&:\quad f(X;\hbar)\;\mapsto\; (S\circ f)(X';\hbar)= \frac{1}{\sqrt{2\pi i\hbar}}\int_{\mathbb R}dX\, e^{\frac{1}{\hbar}XX'} f(X;\hbar)\,.
+\end{align}$$
+
+These generate a projective representation of $Sp(2,{\mathbb Z})$ on $L^2({\mathbb R})$ --- projective because the group relations $(ST)^3=id$ and $S^2=C$ only hold up to a phase.
+
+In the present case of $SL(2,{\mathbb C})$ Chern-Simons at $k=0$, the complex phase space $(\mathcal{P},\omega_{0,s})$ can roughly
+
+[^1]
+
+be considered a product of holomorphic and antiholomorphic copies of $\big(\mathcal{P}_{\mathbb R},\pm\tfrac{i}{2\hbar}\Omega_{\mathbb R}\big)$. This is easy to see from the expression [\[ws1\]](#ws1){reference-type="eqref" reference="ws1"} for $\omega_{0,s}$. We can then guess what the appropriate symplectic action on $(\mathcal{P},\omega_{0,s})$ should be by combining holomorphic and antiholomorphic copies of [\[SpSL\]](#SpSL){reference-type="eqref" reference="SpSL"}.
+
+For example, let us work in representation $(b)$ of the Hilbert space $\mathcal{H}$, so that wavefunctions $f^{(b)}(x,\overline x;q)$ depend non-holomorphically on $x=\exp(X)$. The natural guess for the $T$ action is
+
+$$T\;:\quad f(x,\overline x;q)\;\mapsto\; (T\circ f)(x',\overline x';q) = e^{\frac{1}{2\hbar}X'^2-\frac{1}{2\hbar}\overline X'^2}f(x',\overline x';q)\,, \label{Ts}$$
+
+with $X'=\log x'$. It is important to check that the right-hand side of [\[Ts\]](#Ts){reference-type="eqref" reference="Ts"} is still an element of $\mathcal{H}$, namely that it is periodic as $X'\to X'+2\pi i$, and that ${\rm Re}\,X' \in \tfrac\hbar2{\mathbb Z}$ is quantized. The latter condition is automatic, since $f(x,\overline x;q)$ was only initially defined for ${\rm Re}\,X = \log |x| \in \tfrac\hbar2{\mathbb Z}$; so let us set ${\rm Re}\,X' = m'\tfrac\hbar 2$. Then the exponential in [\[Ts\]](#Ts){reference-type="eqref" reference="Ts"} becomes
+
+$$e^{\frac{1}{2\hbar}X'^2-\frac{1}{2\hbar}\overline X'^2} = e^{im'\,{\rm Im}\,X'}\,,$$
+
+enforcing the required periodicity in ${\rm Im}\, X'$.
+
+Similarly, a first guess for the $S$ transformation would be
+
+$$S\;:\quad f(x,\overline x;q)\;\overset{?}{\mapsto}\; (S\circ f)(x',\overline x';q)=\int dX\,d\overline X\,e^{\frac1\hbar XX'-\frac1\hbar \overline X\overline X'}f(x,\overline x;q)\,, \label{Ss1}$$
+
+with some appropriate normalization. Now, setting ${\rm Re}\,X = m\tfrac\hbar2$ and ${\rm Re}\,X'=m'\tfrac\hbar2$, the exponent becomes $\tfrac1\hbar XX'-\tfrac1\hbar \overline X\overline X'=im'\,{\rm Im}\,Z+im\,{\rm Im}\,X'$ . Therefore, quantization of ${\rm Re}\,X$ ensures periodicity in ${\rm Im}\,X'$, while requiring quantization of ${\rm Re}\,X'$ makes the entire integrand in [\[Ss1\]](#Ss1){reference-type="eqref" reference="Ss1"} periodic in ${\rm Im}\,X$. This is almost as desired, except that the integration measure $\int dX\,d\overline X$ does not quite make sense. The correct interpretation of $\int dX\,d\overline X$ is as an integration over a fundamental domain where $f(x,\overline x;q)$ is defined, *i.e.* $\int dX\,d\overline X \,\to\, \sum_{m\in {\mathbb Z}}\int_0^{2\pi} d\,{\rm Im}X$ . If we use the notation $x = q^{\frac m2}\zeta,\,\overline x'=q^{\frac {m'}2}\zeta'$, then the proper transformation becomes
+
+$$S\;:\quad f(m,\zeta;q)\;\mapsto\; (S\circ f)(m',\zeta';q) = \sum_{m\in {\mathbb Z}} \int \frac{d\zeta}{2\pi i\zeta}\,\zeta^{m'}{\zeta'}^mf(m,\zeta;q)\,, \label{Ss2}$$
+
+with integration done over the unit circle. The normalizations in [\[Ts\]](#Ts){reference-type="eqref" reference="Ts"} and [\[Ss2\]](#Ss2){reference-type="eqref" reference="Ss2"} are just right to ensure that $T$ and $S$ generate a true representation of $Sp(2,{\mathbb Z})$ acting on our Hilbert space $\mathcal{H}$.
+
+It should now be clear that the transformations [\[Ts\]](#Ts){reference-type="eqref" reference="Ts"}--[\[Ss2\]](#Ss2){reference-type="eqref" reference="Ss2"} coincide with the $Sp(2,{\mathbb Z})$ action on the index, described in [@KW-index] and in Section [\[sec:Sp\]](#sec:Sp){reference-type="ref" reference="sec:Sp"} above. To make the correspondence even clearer, we could use a "charge basis" for wavefunctions in $\mathcal{H}$, option $(d)$ of Table [\[tab:pol\]](#tab:pol){reference-type="ref" reference="tab:pol"}. Using Fourier transform to relate polarizations $(b)$ and $(d)$, we then recover the more familiar symplectic action
+
+$$T\;:\; f(m,e;q)\;\mapsto\; f(m'-e',e';q)\,, \qquad S\;:\; f(m,e;q)\;\mapsto\; f(e',-m';q)\,,$$
+
 or more generally,
-g : f(m,e ;q) ↦→ f
-(
-g−1·
-(me
-)
-;q), (6.31)
-cf. (2.7). This last expression generalizes nicely to an Sp(2N, Z) action on products of Hilbert
-spacesH.
-Note that both the options ( a−d) in Table 1 and the present Sp(2, Z) action can be
-understood as choices of basis in H, or of polarization for P. More precisely, it is a choice
-of element g∈ Sp(2, Z) together with a choice ( a−d) from Table 1 that fully determines
-a polarization. The two choices are largely independent. The element g ∈ Sp(2, Z) acts
-holomorphically on the phase space P, viewed as C∗× C∗, and makes a rough selection of
-“position” (X′) and “momentum” (P′) coordinates, with
-(X′
-P′
-)
-= g
-(X
-P
-)
-. The choice ( a−d)
-then splits the real and imaginary parts of X′ and P′ to provide a speciﬁc real polarization
-for (P,ω 0,s). In terms of an index, the former comes from an Sp(2, Z) action on 3d SCFT’s,
-while the latter is a choice of fugacity-vs-charge basis for writing the index. The one relation
-between the two choices is that switching (b)↔ (c) is equivalent to applying S∈Sp(2, Z).
-In addition to a symplectic action, both Chern-Simons theory and the index require an
-action of aﬃne shifts. In the holomorphic version of Chern-Simons theory discussed in [31],
-such shifts in position or momentum always came in multiples of iπ + ℏ
-2, with iπ the classical
-shift and ℏ/2 a quantum correction. Now, for full SL(2, C) Chern-Simons theory, we would
-expect a shift σX in position X to act as
-σX : f(x,x;q) ↦→ f(−q− 1
-2x,−q
-1
-2x;q), or σX : f(m,ζ ;q) ↦→ f(m,−q− 1
-2ζ;q), (6.32)
-intertwining the operator algebra transformation
-( ˆX, ˆX
-)
-↦→
-( ˆX +iπ + ℏ
-2, ˆX−iπ− ℏ
-2
-)
-. Note
-that the quantum correction has a diﬀerent sign for the holomorphic and antiholomorphic
-coordinates, due to the opposite signs appearing in the symplectic structure ω0,s (6.15).
-Similarly, a shift by iπ + ℏ
-2 in momentum P acts as
-σP : f(x,x;q) ↦→ e
-1
-ℏX(iπ+ ℏ
-2 )− 1
-ℏX(−iπ− ℏ
-2 )f(x,x;q) =
-(
-−q
-1
-2
-)mf(x,x;q). (6.33)
-Again, these transformations are consistent with the combined fermion number and R-charge
-shifts of the index deﬁned in Section 2.2.
-– 63 –
-In contrast to analytically continued Chern-Simons theory, where the representation of
-the aﬃne symplectic group on wavefunctions is only projective, and leads to normalization
-ambiguities for wavefunctions of 3-manifolds, the present actions in SL(2, C) Chern-Simons
-theory at k = 0 deﬁne a true, faithful representation of Sp(2, Z) ⋉
-[(
-iπ + ℏ
-2
-)
-Z
-]2 onH. It is
-straightforward to check that group relations such as (2.20) hold on the nose. More generally,
-we have a true representation ofSp(2N, Z)⋉
-[(
-iπ+ ℏ
-2
-)
-Z
-]2N onH⊗N. Therefore, wavefunctions
-obtained via a symplectic gluing procedure — the procedure outlined in Section 4.1 — should
-be unambiguously deﬁned. As already mentioned above, invariance of gluing under 2-3 moves
-completely ﬁxes the normalization of the basic building block for any triangulated 3-manifold,
-the wavefunction of tetrahedron.
-The ﬁnal step in constructing wavefunctions for a triangulated 3-manifold is a “symplectic
-reduction,” the quantum equivalent to setting internal edge coordinates CI→ 2πi. We ﬁnish
-this discussion by commenting brieﬂy on it. In the analytically continued Chern-Simons
-theory, the reduction is implemented by transforming a wavefunction to a (holomorphic)
-polarization such thatCI is a position coordinate, and simply settingCI→ 2πi+ℏ, where the
-‘+ℏ’ is the usual quantum correction. For the non-holomorphic SL(2, C) wavefunction, this
-translates to setting CI→ 2πi + ℏ≃ ℏ andCI→− 2πi− ℏ≃− ℏ; or, with xI =eCI =q
-mI
-2 ζI,
-setting mI→ 0 and ζI→q. In a charge basis, this means
-reduction : Z(mI,m,e I,e ;q) ↦→
-∑
-eI∈Z
-qeIZ(0,m,e I,e ;q), (6.34)
-just as in (4.6), the last step of the index gluing rules. This completes the argument that the
-Chern-Simons wavefunction at k = 0 is fully equivalent to the index.
+
+$$g\;:\; f(m,e;q)\;\mapsto\; f\big( g^{-1}\!\cdot\! \big(\begin{smallmatrix} m\\e\end{smallmatrix}\big);q)\,,$$
+
+*cf.* [\[Spem\]](#Spem){reference-type="eqref" reference="Spem"}. This last expression generalizes nicely to an $Sp(2N,{\mathbb Z})$ action on products of Hilbert spaces $\mathcal{H}$.
+
+Note that both the options $(a\!-\!d)$ in Table [\[tab:pol\]](#tab:pol){reference-type="ref" reference="tab:pol"} and the present $Sp(2,{\mathbb Z})$ action can be understood as choices of basis in $\mathcal{H}$, or of polarization for $\mathcal{P}$. More precisely, it is a choice of element $g\in Sp(2,{\mathbb Z})$ together with a choice $(a\!-\!d)$ from Table [\[tab:pol\]](#tab:pol){reference-type="ref" reference="tab:pol"} that fully determines a polarization. The two choices are largely independent. The element $g\in Sp(2,{\mathbb Z})$ acts *holomorphically* on the phase space $\mathcal{P}$, viewed as ${\mathbb C}^*\times {\mathbb C}^*$, and makes a rough selection of "position" ($X'$) and "momentum" ($P'$) coordinates, with $\left(\begin{smallmatrix} X'\\ P'\end{smallmatrix}\right) = g\left(\begin{smallmatrix} X\\ P\end{smallmatrix}\right)$. The choice $(a\!-\!d)$ then splits the real and imaginary parts of $X'$ and $P'$ to provide a specific real polarization for $(\mathcal{P},\omega_{0,s})$. In terms of an index, the former comes from an $Sp(2,{\mathbb Z})$ action on 3d SCFT's, while the latter is a choice of fugacity-vs-charge basis for writing the index. The one relation between the two choices is that switching $(b)\leftrightarrow(c)$ is equivalent to applying $S\in Sp(2,{\mathbb Z})$.
+
+In addition to a symplectic action, both Chern-Simons theory and the index require an action of affine shifts. In the holomorphic version of Chern-Simons theory discussed in [@Dimofte-QRS], such shifts in position or momentum always came in multiples of $i\pi+\tfrac\hbar2$, with $i\pi$ the classical shift and $\hbar/2$ a quantum correction. Now, for full $SL(2,{\mathbb C})$ Chern-Simons theory, we would expect a shift $\sigma_X$ in position $X$ to act as
+
+$$\sigma_X\,:\,f(x,\overline x;q)\;\mapsto\; f(-q^{-\frac12}x,-q^{\frac12}\overline x;q)\,,\quad\text{or}\quad  \sigma_X\,:\,f(m,\zeta;q)\;\mapsto\; f(m,-q^{-\frac12}\zeta;q)\,,$$
+
+intertwining the operator algebra transformation $\big(\hat X,\hat{\overline X}\big)\mapsto \big(\hat X+i\pi+\tfrac\hbar2,\hat {\overline X}-i\pi-\tfrac\hbar2\big)$. Note that the quantum correction has a different sign for the holomorphic and antiholomorphic coordinates, due to the opposite signs appearing in the symplectic structure $\omega_{0,s}$ [\[ws1\]](#ws1){reference-type="eqref" reference="ws1"}. Similarly, a shift by $i\pi +\tfrac\hbar2$ in momentum $P$ acts as
+
+$$\sigma_P\,:\,f(x,\overline x;q)\;\mapsto\; e^{\frac1\hbar X(i\pi+\frac\hbar 2)-\frac1\hbar X(-i\pi-\frac\hbar 2)}f(x,\overline x;q) = \big(-q^{\frac12}\big)^mf(x,\overline x;q)\,.$$
+
+Again, these transformations are consistent with the combined fermion number and R-charge shifts of the index defined in Section [\[sec:aff\]](#sec:aff){reference-type="ref" reference="sec:aff"}.
+
+In contrast to analytically continued Chern-Simons theory, where the representation of the affine symplectic group on wavefunctions is only projective, and leads to normalization ambiguities for wavefunctions of 3-manifolds, the present actions in $SL(2,{\mathbb C})$ Chern-Simons theory at $k=0$ define a true, faithful representation of $Sp(2,{\mathbb Z})\ltimes \big[\big(i\pi+\tfrac\hbar2\big){\mathbb Z}\big]^2$ on $\mathcal{H}$. It is straightforward to check that group relations such as [\[affrels\]](#affrels){reference-type="eqref" reference="affrels"} hold on the nose. More generally, we have a true representation of $Sp(2N,{\mathbb Z})\ltimes \big[\big(i\pi+\tfrac\hbar2\big){\mathbb Z}\big]^{2N}$ on $\mathcal{H}^{\otimes N}$. Therefore, wavefunctions obtained via a symplectic gluing procedure --- the procedure outlined in Section [\[sec:rules\]](#sec:rules){reference-type="ref" reference="sec:rules"} --- should be unambiguously defined. As already mentioned above, invariance of gluing under 2-3 moves completely fixes the normalization of the basic building block for any triangulated 3-manifold, the wavefunction of tetrahedron.
+
+The final step in constructing wavefunctions for a triangulated 3-manifold is a "symplectic reduction," the quantum equivalent to setting internal edge coordinates $C_I\to 2\pi i$. We finish this discussion by commenting briefly on it. In the analytically continued Chern-Simons theory, the reduction is implemented by transforming a wavefunction to a (holomorphic) polarization such that $C_I$ is a position coordinate, and simply setting $C_I \to 2\pi i +\hbar$, where the '$+\hbar$' is the usual quantum correction. For the non-holomorphic $SL(2,{\mathbb C})$ wavefunction, this translates to setting $C_I\to 2\pi i+\hbar \simeq \hbar$ and $\overline C_I \to -2\pi i-\hbar\simeq -\hbar$; or, with $x_I = e^{C_I} = q^{\frac{m_I}{2}}\zeta_I$, setting $m_I\to 0$ and $\zeta_I \to q$. In a charge basis, this means
+
+$$\text{reduction\,:}\qquad \mathcal{Z}(m_I,m,e_I,e;q)\;\mapsto\; \sum_{e_I\in {\mathbb Z}} q^{e_I}\mathcal{Z}(0,m,e_I,e;q)\,,\qquad$$
+
+just as in [\[indsum\]](#indsum){reference-type="eqref" reference="indsum"}, the last step of the index gluing rules. This completes the argument that the Chern-Simons wavefunction at $k=0$ is fully equivalent to the index.
+
+[^1]: A precise statement is that the analytic continuation of $(\mathcal{P},\omega_{0,s})$, with independent complex coordinates $X,P$ and $\overline X,\overline P$, is isomorphic to $(\mathcal{P},\tfrac{i}{2\hbar}\Omega)\times(\mathcal{P},-\tfrac{i}{2\hbar}\Omega)$. We do *not* want to analytically continue anything here, though.

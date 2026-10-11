@@ -1,13 +1,14 @@
 ---
 # qou-8p1g
 title: 'qou-8p1x/g: tetraplectic reaches SU(2), not SU(3) — and that SU(2) is already spent'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - 8f-colour
 created_at: 2026-08-07T12:40:00Z
-updated_at: 2026-10-04T15:13:37Z
+updated_at: 2026-10-10T14:48:42Z
 parent: qou-8lxd
 ---
 
@@ -231,3 +232,27 @@ Re-close it when the work its body names is actually done.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-10-10: re-closed under the 2026-09-08 note's own condition
+
+The 2026-09-08 reopen says *"Re-close it when the work its body names is actually
+done."* It is done, and was done before the reopen. The sweep matched the "NOT closing"
+paragraph of the first 2026-08-24 section ("the open question is unchanged … go to
+`m >= 2`"). The section immediately after it, headed **"the open question is CLOSED:
+the S_3 does not yield SU(3)"**, answers exactly that question with a scope-(b)
+exclusion. It cites the invariant (`su(3)` is simple, and SU(3) has no real
+representation below dimension 6) and a witness:
+`computations/quaternionic-flag-su3-exclusion.witness.json`, 23 of 23 assertions,
+`allPassed: true`, re-read 2026-10-10.
+
+So the body no longer asserts its own openness. The "self-contradiction" the sweep
+detected was between `status` and a superseded paragraph, not the current one. Rule 13a
+is respected: what this bean leaves open is listed as **other routes** ("not excluded:
+quaternionic geometry generally; SU(3) by reducing an Sp(3) isotropy factor; every
+route not through the line decomposition"), and those live on `qou-8p1x` and
+`qou-ni4b`, which stay open. The one remaining item is optional authoring: whether to
+put the exclusion in the paper as a `remark`. That is an owner call and does not need
+this bean open.
+
+Note for `qou-7sin`: this is a false positive of its discriminator. The sweep reads the
+body's openness claims without checking whether a later section supersedes them.

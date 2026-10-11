@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s10955-022-02992-6/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Cluster Expansions: Necessary and Sufficient Convergence Conditions Sabine Jansen 1,2 · Leonid Kolesnikov 1 © The Author(s) 2022",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10955-022-02992-6/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Cluster Expansions: Necessary and Sufficient Convergence Conditions",
   "contains": [
     "library/s10955-022-02992-6/sections/sec-000",
     "library/s10955-022-02992-6/sections/sec-001",
@@ -23,8 +28,11 @@
     "library/s10955-022-02992-6/sections/sec-014"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "s10955-022-02992-6",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "s10955-022-02992-6.pdf",
     "source_sha256": "aa73d797a89eaf06bc67198fc6ad8cdbbd066b2d652140c96137dffe253469cc",
     "pages": 47,

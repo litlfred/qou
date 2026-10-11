@@ -6,7 +6,8 @@
   "sha256": "7ecd0cff7d6c2ec4ca969bc68728e9d29769c57dfa49b482addae9a11ff89cc0",
   "bytes": 490032,
   "pages": 35,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -344,6 +345,121 @@
   "likely_scanned": false,
   "toc_entries": 20,
   "sections": 16,
-  "chars_total": 88479
+  "chars_total": 88479,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 11,
+   "overlaid": 7,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-extended-abstract",
+     "title": "Extended abstract",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.943,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-12-set-up",
+     "title": "Set-up",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-14-motivation-for-exact-solutions",
+     "title": "Motivation for exact solutions",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-15-outline-for-the-remainder-of-the-paper",
+     "title": "Outline for the remainder of the paper",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-3-the-diagonal-contour-integral-method",
+     "title": "The diagonal (contour integral) method",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-4-main-result",
+     "title": "Main result",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-5-summary-and-outlook",
+     "title": "Summary and outlook",
+     "prose_ratio": 0.938,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-a-bonferroni-inequalities-and-bell-polynomials",
+     "title": "A Bonferroni inequalities and Bell polynomials",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-b1-mathematical-physics-and-probability-developm",
+     "title": "B.1 Mathematical physics and probability developments",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-c-roots-of-a-class-of-quadratic-equations",
+     "title": "C Roots of a class of quadratic equations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-d-contour-integral-alternative-derivation-of-lem",
+     "title": "D Contour integral alternative derivation of Lemma 2.2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-f-elementary-proofs-from-the-quadratic-formula",
+     "title": "F Elementary proofs from the quadratic formula",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-g-elementary-proofs-from-contour-deformations",
+     "title": "G Elementary proofs from contour deformations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-h-proof-of-lemmas-related-to-the-residue-theorem",
+     "title": "H Proof of lemmas related to the residue theorem",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-i-elliptic-integrals-and-linear-fractional-trans",
+     "title": "I Elliptic integrals and linear fractional transformations",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

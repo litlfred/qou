@@ -8,23 +8,45 @@ pages: 7-8
 source_pdf: 1502.06472v1.pdf
 source_sha256: 381cd869fcc06f08
 doc_brief: "Gröbner-Shirshov bases and PBW theorems — We review some applications of Gr¨ obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for groups and"
+text_source: latex
+latex_prose_ratio: 0.976
+latex_coverage_ratio: 1.0
 ---
-–Bases of free Lie algebras
+--Bases of free Lie algebras
+
 M. Hall and A.I. Shirshov use constructions and check axioms.
-One may use anti-commutative Gr¨ obner-Shirshov bases for a fre e Lie algebra.
-Hall basis (Bokut-Chen-Li [19]): Lie(X) = AC(X|S1), S1 is a anti-commutative GS
-basis, Irr (S1) =Hall basis in X.
-Lyndon-Shirshov basis (Bokut-Chen-Li [21]): Lie(X) = AC(X|S2), S2 is a anti-commutative
-GS basis, Irr (S2) =Lyndon-Shirshov basis in X.
-–Loday basis of a free dialgebra
-D(X) = L(X|S), L-identity: ( a ⊢ b) ⊣ c = a ⊢ (b ⊣ c), S an L-GS basis (GS basis as
-L-algebra), Irr (S) =Loday basis in X (Bokut-Chen-Huang [17]).
-–Bases of a free dentriform algebra
-Den(X) = L(X|S), Irr (S)=a linear basis of Den(X) (Bokut-Chen-Huang [17]).
-–Bases of a free Rota-Baxter algebra (Rota, Cartier)
-Via GS method for Ω-algebras (Bokut-Chen-Qiu [25]).
-–Free inverse semigroup (Polyakova-Schain)
-An associative GS basis is given by (Bokut-Chen-Zhao [28]), Irr (S) is a normal form
-of free inverse semigroup.
-–Free idempotent semigroup (Chen-Yang [53]).
-7
+
+One may use anti-commutative Gröbner-Shirshov bases for a free Lie algebra.
+
+Hall basis (Bokut-Chen-Li [@{[BCLi09]}]): $Lie(X)=AC(X|S_1)$, $S_1$ is a anti-commutative GS basis, $Irr(S_1)=$Hall basis in $X$.
+
+Lyndon-Shirshov basis (Bokut-Chen-Li [@{[BCLi13]}]): $Lie(X)=AC(X|S_2)$, $S_2$ is a anti-commutative GS basis, $Irr(S_2)=$Lyndon-Shirshov basis in $X$.
+
+  
+
+--Loday basis of a free dialgebra
+
+$D(X)=L(X|S)$, $L$-identity: $(a\vdash b)\dashv c=a\vdash (b\dashv
+c)$, $S$ an $L$-GS basis (GS basis as $L$-algebra), $Irr(S)=$Loday basis in $X$ (Bokut-Chen-Huang [@{[BCH13]}]).
+
+  
+
+--Bases of a free dentriform algebra
+
+$Den(X)=L(X|S)$, $Irr(S)$=a linear basis of $Den(X)$ (Bokut-Chen-Huang [@{[BCH13]}]).
+
+  
+
+--Bases of a free Rota-Baxter algebra (Rota, Cartier)
+
+Via GS method for $\Omega$-algebras (Bokut-Chen-Qiu [@BoChQiu-CD-Omega]).
+
+  
+
+--Free inverse semigroup (Polyakova-Schain)
+
+An associative GS basis is given by (Bokut-Chen-Zhao [@{[BCZh09]}]), $Irr(S)$ is a normal form of free inverse semigroup.
+
+  
+
+--Free idempotent semigroup (Chen-Yang [@Chen-Yang]).

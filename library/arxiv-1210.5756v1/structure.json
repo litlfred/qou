@@ -6,7 +6,8 @@
   "sha256": "c7546a79a85b8dd532a665a41fe51c62cfa4fd9681c6f23d05efbccc962cee34",
   "bytes": 4069500,
   "pages": 19,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -261,6 +262,96 @@
   "likely_scanned": false,
   "toc_entries": 13,
   "sections": 13,
-  "chars_total": 49831
+  "chars_total": 49831,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Contact_Graphs_Revisited.tex",
+   "tex_sections": 13,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.565,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-2-proof-of-i-in-theorem-1",
+     "title": "Proof of (i) in Theorem 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-3-upper-bounds-for-lattice-packings",
+     "title": "Upper bounds for Lattice Packings",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-31-proof-of-ii-in-theorem-1",
+     "title": "Proof of (ii) in Theorem 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-32-proof-of-ii-in-theorem-2",
+     "title": "Proof of (ii) in Theorem 2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-4-proof-of-i-in-theorem-2-using-theorem-3",
+     "title": "Proof of (i) in Theorem 2 using Theorem 3",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-5-the-polygon-lemmas-on-s2-for-theorem-3",
+     "title": "The Polygon Lemmas on S2 for Theorem 3",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-6-proof-of-theorem-3",
+     "title": "Proof of Theorem 3",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-61-an-upper-bound-on-touching-triplets-on-s2",
+     "title": "An upper bound on touching triplets on S2",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-62-an-upper-bound-on-touching-pairs-on-s2",
+     "title": "An upper bound on touching pairs on S2",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-7-explicit-constructions",
+     "title": "Explicit Constructions",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-71-the-octahedral-construction",
+     "title": "The Octahedral Construction",
+     "prose_ratio": 0.752,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-72-tightness-of-the-estimates-in-problem-2",
+     "title": "Tightness of the estimates in Problem 2",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

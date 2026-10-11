@@ -5,7 +5,12 @@
   "file": "9805023v1.pdf",
   "sha256": "ea8758b2a2bf9d8504d6715dba6f905440e513e5c0e0118ae3a60485457d3411",
   "bytes": 230934,
-  "pages": 20
+  "pages": 20,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:24Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -15,200 +20,403 @@
    "stamp_date": "6 May 1998"
   },
   "doi": null,
-  "title": "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations",
+  "title": "arXiv:math/9805023v1 [math.CA] 6 May 1998",
   "authors_raw": "FUNCTIONS AND THEIR ORTHOGONALITY RELATIONS",
-  "abstract": "The q-Laguerre polynomials correspond to an indetermined moment probl em. For explicit discrete non-N-extremal measures corresponding to Ramanujan’s1ψ1-summation we complement the orthogonal q-Laguerre polynomials into an explicit orthogonal basis for the corresponding L2-space. The dual orthogonal system consists of so-called big q-Bessel functions, which can be obtained as a rigorous limit of the ortho gonal system of big q-Jacobi polynomials. Interpretations on the SU (1, 1) and E(2) quantum groups are discussed.",
-  "docinfo": {
-   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20180818184546-04'00'",
-   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:math/9805023v1  [math.CA]  6 May 1998"
-  },
-  "title_prev": "q-LAGUERRE POLYNOMIALS AND BIG q-BESSEL",
   "title_lines": [
    "q-LAGUERRE POLYNOMIALS AND BIG q-BESSEL"
-  ]
+  ],
+  "abstract": "The q-Laguerre polynomials correspond to an indetermined moment problem. For explicit discrete non-N-extremal measures corresponding to Ramanujan\u2019s 1\u03c81-summation we complement the orthogonal q-Laguerre polynomials into an explicit orthogonal basis for the corresponding L2-space. The dual orthogonal system consists of so-called big q-Bessel functions, which can be obtained as a rigorous limit of the orthogonal system of big q-Jacobi polynomials. Interpretations on the SU(1, 1) and E(2) quantum groups are discussed.",
+  "docinfo": {
+   "Title": "arXiv:math/9805023v1  [math.CA]  6 May 1998",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20180818184546-04'00'"
+  },
+  "title_raw": "q-LAGUERRE POLYNOMIALS AND BIG q-BESSEL",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math/9805023v1 [math.CA] 6 May 1998",
+   "heading": "q -LAGUERRE POLYNOMIALS AND BIG q -BESSEL FUNCTIONS AND THEIR ORTHOGONALITY RELATIONS Nicola Ciccoli, Erik Koelink and Tom H. Koornwinder April 24, 1998 1. Introduction. This paper answers two seemingly di\ufb00erent questions, which both originated from quantum groups. First, consider the system of Moak",
+   "text": "q-LAGUERRE POLYNOMIALS AND BIG q-BESSEL",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
    "level": 1,
-   "title": "(k+1)√",
+   "title": "Introduction.",
+   "page": 1,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1"
+  },
+  {
+   "level": 1,
+   "title": "Solutions to a symmetric operator.",
    "page": 3,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "3"
   },
   {
    "level": 1,
-   "title": "(k− α )(q; q)∞ J (2)",
-   "page": 5,
+   "title": "Spectral resolution.",
+   "page": 6,
    "source": "inferred",
-   "number": "2"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "6"
   },
   {
    "level": 1,
-   "title": "It follows from Moak [21, §7] and (2.8) that V t− 1",
-   "page": 7,
+   "title": "Basis for L2-space.",
+   "page": 9,
    "source": "inferred",
-   "number": "L"
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "9"
   },
   {
    "level": 1,
-   "title": "Un(ηp)V t− 1",
-   "page": 7,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(α +1)(k+l)(−1)k+l",
+   "title": "Direct proof of the orthogonality relations of Theorem 4.1.",
    "page": 11,
    "source": "inferred",
-   "number": "2"
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "11"
   },
   {
    "level": 1,
-   "title": "(k+l)(−1)k+lc− α − 1",
-   "page": 11,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(−c, −q/c; q)∞",
-   "page": 11,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(k+l)− 1)",
-   "page": 11,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 2,
-   "title": "This then gives, together with the analytic proofs of th e previous section a complete",
+   "title": "Proof of the dual orthogonality relations.",
    "page": 13,
    "source": "inferred",
-   "number": "4.3"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 19,
-   "source": "inferred",
-   "number": null
+   "number": "6",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "13"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-2-k1",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 724,
+   "n_words": 97,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction.",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 7911,
+   "n_words": 1233,
+   "label_start": "1",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-001-2-solutions-to-a-symmetric-operator",
    "number": "2",
-   "title": "(k+1)√",
+   "title": "Solutions to a symmetric operator.",
    "level": 1,
    "page_start": 3,
-   "page_end": 5,
-   "n_chars": 4772,
-   "n_words": 1169
+   "page_end": 6,
+   "n_chars": 6061,
+   "n_words": 1296,
+   "label_start": "3",
+   "label_end": "6"
   },
   {
-   "id": "sec-001-2-k-α-q-q-j-2",
-   "number": "2",
-   "title": "(k− α )(q; q)∞ J (2)",
+   "id": "sec-002-3-spectral-resolution",
+   "number": "3",
+   "title": "Spectral resolution.",
    "level": 1,
-   "page_start": 5,
-   "page_end": 7,
-   "n_chars": 3022,
-   "n_words": 765
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 4533,
+   "n_words": 941,
+   "label_start": "6",
+   "label_end": "9"
   },
   {
-   "id": "sec-002-l-it-follows-from-moak-21-7-and-28-that-v-t-1",
-   "number": "L",
-   "title": "It follows from Moak [21, §7] and (2.8) that V t− 1",
+   "id": "sec-003-4-basis-for-l2-space",
+   "number": "4",
+   "title": "Basis for L2-space.",
    "level": 1,
-   "page_start": 7,
-   "page_end": 7,
-   "n_chars": 659,
-   "n_words": 163
-  },
-  {
-   "id": "sec-003-2-unηpv-t-1",
-   "number": "2",
-   "title": "Un(ηp)V t− 1",
-   "level": 1,
-   "page_start": 7,
-   "page_end": 10,
-   "n_chars": 5027,
-   "n_words": 1193
-  },
-  {
-   "id": "sec-004-2-c-qc-q",
-   "number": "2",
-   "title": "(−c, −q/c; q)∞",
-   "level": 1,
-   "page_start": 10,
+   "page_start": 9,
    "page_end": 11,
-   "n_chars": 1632,
-   "n_words": 368
+   "n_chars": 5383,
+   "n_words": 1059,
+   "label_start": "9",
+   "label_end": "11"
   },
   {
-   "id": "sec-005-2-α-1kl1kl",
-   "number": "2",
-   "title": "(α +1)(k+l)(−1)k+l",
-   "level": 1,
-   "page_start": 11,
-   "page_end": 11,
-   "n_chars": 140,
-   "n_words": 38
-  },
-  {
-   "id": "sec-006-2-kl1klc-α-1",
-   "number": "2",
-   "title": "(k+l)(−1)k+lc− α − 1",
-   "level": 1,
-   "page_start": 11,
-   "page_end": 11,
-   "n_chars": 579,
-   "n_words": 152
-  },
-  {
-   "id": "sec-007-2-kl-1",
-   "number": "2",
-   "title": "(k+l)− 1)",
+   "id": "sec-004-5-direct-proof-of-the-orthogonality-relations-of",
+   "number": "5",
+   "title": "Direct proof of the orthogonality relations of Theorem 4.1.",
    "level": 1,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 5831,
-   "n_words": 1221
+   "n_chars": 4629,
+   "n_words": 927,
+   "label_start": "11",
+   "label_end": "13"
   },
   {
-   "id": "sec-008-43-this-then-gives-together-with-the-analytic-pr",
-   "number": "4.3",
-   "title": "This then gives, together with the analytic proofs of th e previous section a complete",
-   "level": 2,
-   "page_start": 13,
-   "page_end": 19,
-   "n_chars": 9640,
-   "n_words": 2300
-  },
-  {
-   "id": "sec-009-references",
-   "number": null,
-   "title": "References",
+   "id": "sec-005-6-proof-of-the-dual-orthogonality-relations",
+   "number": "6",
+   "title": "Proof of the dual orthogonality relations.",
    "level": 1,
-   "page_start": 19,
+   "page_start": 13,
    "page_end": 20,
-   "n_chars": 3600,
-   "n_words": 567
+   "n_chars": 13178,
+   "n_words": 2424,
+   "label_start": "13",
+   "label_end": "20"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 10,
-  "sections": 10,
-  "chars_total": 34902
+  "toc_entries": 6,
+  "toc_inferred_entries": 6,
+  "toc_inferred_mean_confidence": 0.75,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 42419
  }
 }

@@ -8,30 +8,33 @@ pages: 5-6
 source_pdf: 2311.14221v2.pdf
 source_sha256: 5aa4126bbb6df6eb
 doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B → C is an exact"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Throughout this paper, k will denote an arbitrary ﬁeld. We shall denote
-by vect k the category of ﬁnite dimensional k-vector spaces.
-A ﬁnite category [10] is an abelian k-linear category such that it has only a
-ﬁnite number of isomorphism classes of simple objects, Hom s paces are ﬁnite-
-dimensional k-vector spaces, all objects have ﬁnite lenght and every simp le
-object has a projective cover. All these conditions are equi valent to requir-
-ing that, the category is equivalent to the category of ﬁnite -dimensional
-representations of a ﬁnite-dimensional k-algebra.
-IfM,N are categories, and F :M→N is a functor, we shall denote
-by F ra,F la : N → Mits right and left adjoint, respectively. We shall
-denote byMop the opposite category. If f :M→N is a morphism in M,
-sometimes we shall denote by f op :N→M the same map but understood
-as a morphism in Mop.
-Any abelian k-linear category M has a canonical action of the category
-of ﬁnite dimensional k-vector spaces
-(1.1) • : vect k×M→M .
-See for example [ 22, Lemma 2.2.2]. Any additive k-linear functor F :M→
-N between abelian k-linear categories respects the action of vect k, that is,
-6 LENTNER AND MOMBELLI
-there are natural isomorphisms
-dV,M :F (V•M )→V•F (M ),
-V∈ vect k, M∈M , satisfying certain axioms.
-From now on, all categories will be assumed to be ﬁnite abelian k-linear
-categories, and all functors will be additive k-linear. Here k is an arbitrary
-ﬁeld. All our proofs work in the presence of an associator, bu t for simplicity
-we assume in the presentation that the categories are strict .
+Throughout this paper, $\ku$ will denote an arbitrary field. 
+ We shall denote by $\vect_\ku$ the category of finite dimensional $\ku$-vector spaces. 
+ 
+ A \emph{finite  category}  \cite{EO} is an abelian $\ku$-linear category such that it has only a finite number of isomorphism
+classes of simple objects, Hom spaces are finite-dimensional
+$\ku$-vector spaces, all objects have finite lenght and every simple object has a projective cover. All these conditions are equivalent to requiring that, the category is equivalent to the category of finite-dimensional representations of a finite-dimensional $\ku$-algebra.
+
+ \medbreak
+ 
+ If $\Mo, \No$ are categories, and $F:\Mo\to \No$ is a functor, we shall denote by $F^{\ra}, F^{\la}:\No\to \Mo$ its right and left adjoint, respectively. We shall denote by $\Mo^{\op}$ the opposite category. If $f:M\to N$ is a morphism in $\Mo$, sometimes we shall denote by $f^{\op}:N\to M$ the same map but understood as a morphism in  $\Mo^{\op}$.
+
+
+
+
+Any abelian $\ku$-linear category $\Mo$ has a canonical action of the category of finite dimensional $\ku$-vector spaces
+\begin{equation}\label{vect-action}
+ \bullet: \vect_\ku \times \Mo\to \Mo.
+\end{equation}
+See for example \cite[Lemma 2.2.2]{PS}. Any additive $\ku$-linear functor $F:\Mo\to \No$ between abelian $\ku$-linear categories respects the action of $\vect_\ku$, that is, there are natural isomorphisms
+$$d_{V,M}:F(V \bullet M)\to V \bullet F(M),$$
+$V\in \vect_\ku$, $M\in \Mo$, satisfying certain axioms.
+\medbreak
+
+\medbreak
+
+ From now on, \emph{all categories} will be assumed to be finite  abelian $\ku$-linear categories, and all functors will be additive $\ku$-linear. Here $\ku$ is an arbitrary field. All our proofs work in the presence of an associator, but for simplicity we assume in the presentation that the categories are strict.

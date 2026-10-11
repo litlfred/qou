@@ -111,7 +111,7 @@ def _producer_index() -> dict:
     idx = {}
     for p in pathlib.Path(".").rglob("*.py"):
         s = str(p)
-        if ".git" in s or "_deprecated" in s:
+        if ".git" in s or ("_deprecated" in s or "fsh-guts" in s):
             continue
         idx.setdefault(p.name, p)
     return idx
@@ -242,7 +242,7 @@ def main() -> int:
     bucket = collections.Counter()
     bucket_files = collections.defaultdict(collections.Counter)
     for p in glob.glob("computations/**/*.witness.json", recursive=True):
-        if "_deprecated" in p:
+        if ("_deprecated" in p or "fsh-guts" in p):
             continue
         try:
             d = json.load(open(p))

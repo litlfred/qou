@@ -6,7 +6,8 @@
   "sha256": "57ae12327da7b9a10608fe57ddb8ac5c02bff552aee0fd71dd66b04b04a7dc7c",
   "bytes": 718004,
   "pages": 31,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -245,6 +246,93 @@
   "likely_scanned": false,
   "toc_entries": 15,
   "sections": 10,
-  "chars_total": 55489
+  "chars_total": 55489,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Qdeformed_Plancherel_note.tex",
+   "tex_sections": 10,
+   "overlaid": 7,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-q-deformed-plancherel-growth",
+     "title": "q-deformed Plancherel growth",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-a-unitary-matrix-model-for-q-deformed-plancher",
+     "title": "A unitary matrix model for q-deformed Plancherel growth",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-31-solution-class-1-no-gap-solution",
+     "title": "Solution class 1: No-gap solution",
+     "prose_ratio": 0.554,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-32-q-deformed-automodel-class",
+     "title": "q-deformed automodel class",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-33-the-unitary-matrix-model-from-the-droplet-pic",
+     "title": "The unitary matrix model from the droplet picture",
+     "prose_ratio": 0.894,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-4-asymptotic-analysis-of-q-deformed-plancherel-g",
+     "title": "Asymptotic analysis of q-deformed Plancherel growth of second kind",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-5-the-hilbert-space",
+     "title": "The Hilbert space",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.739,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-51-moments-of-young-diagrams-and-conserved-charg",
+     "title": "Moments of Young diagrams and conserved charges",
+     "prose_ratio": 0.928,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-6-conclusion",
+     "title": "Conclusion",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.273,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

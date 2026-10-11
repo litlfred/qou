@@ -9,64 +9,103 @@ source_pdf: 2203.17029v1.pdf
 source_sha256: 5557f7f272cb8a43
 doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
 duplicate_of: "modularqholonomicmodules"
+text_source: latex
+latex_prose_ratio: 0.844
+latex_coverage_ratio: 0.988
 ---
-equations with a small parameter are typically factorially divergent s eries, which lead to
-MODULAR q-HOLONOMIC MODULES 13
-analytic solutions to the diﬀerence equation after applying the proc ess of a Borel transfor-
-mation, followed by a Laplace transformation. This subject is classic al and well-studied, see
-for example [ 6, 11, 46, 47].
-A corresponding theory for linear q-diﬀerence equations was developed recently by di Vizio,
-Sauloy, Ramis and others [ 16, 38, 58], with particular emphasis given on the arithmetic
-and the Galois theoretic aspects of the theory. A q-holonomic module has two canonical
-ﬁltrations, one from t = 0 and another from t = ∞. These ﬁltrations can be computed
-concretely choosing a cyclic vector which converts the q-holonomic module into a linear
-q-diﬀerence equation.
-To explain the solutions of linear q-diﬀerence equations, let us recall the Jacobi theta
-function which is given by a one dimensional lattice sum, and by an inﬁnit e product (known
-as the Jacobi triple product identity) by
-θ(t; q) =
-∑
-k∈/CI
-(−1)kqk(k+1)/2tk = (qt; q)∞(t−1; q)∞(q; q)∞ . (46)
-From the above representation, it is easy to see that it satisﬁes th e functional equations
-θ(t−1; q) = θ(q−1t; q) = −tθ(t; q) (47)
+\label{sub.prelim}
+
+It is well-known that formal power series solutions to linear difference equations
+with a small parameter are typically factorially divergent series,
+which lead to analytic solutions to the difference equation after applying the
+process of a Borel transformation, followed by a Laplace transformation. This
+subject is classical and well-studied, see for example~\cite{Bender,
+  Costin:asymptotics,Miller:applied,Sauzin:divergent}.
+
+A corresponding theory for linear $q$-difference equations was developed recently
+by di Vizio, Sauloy, Ramis and others~\cite{Dreyfus:building,Hardouin,Ramis},
+with particular emphasis given on the arithmetic and the Galois theoretic aspects
+of the theory. A $q$-holonomic module has two canonical filtrations, one from $t=0$
+and another from $t=\infty$. These filtrations can be computed concretely choosing
+a cyclic vector which converts the $q$-holonomic module into a linear
+$q$-difference equation.
+
+To explain the solutions of linear $q$-difference equations, let us recall
+ the Jacobi theta function which is given by a one dimensional
+lattice sum, and by an infinite product (known as the Jacobi triple product identity)
+by
+\be
+\label{theta}
+\theta(t;q)
+=
+\sum_{k\in\BZ}(-1)^{k}q^{k(k+1)/2}t^{k}
+=
+(qt;q)_{\infty}(t^{-1};q)_{\infty}(q;q)_{\infty} \,.
+\ee
+From the above representation, it is easy to see that it satisfies the functional
+equations
+\be
+\label{theta.fun}
+\theta(t^{-1};q)
+=
+
+\theta(q^{-1}t;q)
+=
+-t\theta(t;q)
+\ee
 which imply that
-θ(qℓt; q) = ( −1)ℓq−ℓ(ℓ+1)/2t−ℓθ(t; q), (ℓ ∈ /CI ) . (48)
-The Jacobi theta function is modular. Its transformation under t he element S of SL 2( /CI ) is
-given by
-θ(˜t; ˜q) = e(−3/8)e
-( z2
-2τ
-)
-t
-1
-2 ˜t− 1
-2 q
-1
-8 ˜q− 1
-8
-√τ θ (t; q) . (49)
-The derivative of θ with respect to td/dt = 1/(2πi)d/dz,
-θ′(t; q) =
-∑
-k
-(−1)kkq k(k+1)/2tk (50)
-satisﬁes the q-diﬀerence equation
-θ′(qℓt; q)
-θ(qℓt; q) = θ′(t; q)
-θ(t; q) − ℓ . (51)
-It has transformation under the element S of SL 2( /CI ) given by
-θ′(t; q)
-θ(t; q)
-⏐
-⏐
-⏐
-1
-S := 1
-τ
-θ′(˜t; ˜q)
-θ(˜t; ˜q) = θ′(t; q)
-θ(t; q) + z
-τ + 1
-2 − 1
-2τ . (52)
+\be
+\label{theta.fun2}
+\theta(q^{\ell}t;q)
+=
+(-1)^{\ell}q^{-\ell(\ell+1)/2}t^{-\ell}\theta(t;q),
+\qquad (\ell \in \BZ) \,.
+\ee
+The Jacobi theta function is modular. Its transformation under the element
+$S$ of $\SL_2(\BZ)$ is given by
+\be
+\label{thetaS}
+\theta(\tilde{t};\tilde{q})
+= \e(-3/8)
+\e\left(\frac{z^{2}}{2\tau}\right)t^{\frac{1}{2}}
+\tilde{t}^{-\frac{1}{2}}q^{\frac{1}{8}}\tq^{-\frac{1}{8}}\sqrt{\tau} \,
+\theta(t;q)\,.
+\ee
+The derivative of $\theta$ with respect to $t d/dt=1/(2 \pi  i) d/dz$,
+\be
+\theta'(t;q)
+=
+\sum_{k}(-1)^{k}kq^{k(k+1)/2}t^{k}
+\ee
+satisfies the $q$-difference equation
+\be
+\label{thetader}
+\frac{\theta'(q^{\ell}t;q)}{\theta(q^{\ell}t;q)}
+=
+\frac{\theta'(t;q)}{\theta(t;q)}-\ell \,.
+\ee
+
+
+
+
+
+It has transformation under the element $S$ of $\SL_2(\BZ)$ given by
+\be
+\label{S.mod.thd}
+\begin{aligned}
+  \frac{\theta'(t;q)}{\theta(t;q)} \Big|_{1} S
+  :=\frac{1}{\tau}\frac{\theta'(\tilde{t};\tq)}{\theta(\tilde{t};\tq)}
+
+
+
+
+
+
+
+
+
+
+&=
+\frac{\theta'(t;q)}{\theta(t;q)}+\frac{z}{\tau}+\frac{1}{2}-\frac{1}{2\tau}\,.
+\end{aligned}
+\ee

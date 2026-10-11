@@ -1,0 +1,3306 @@
+{
+ "recipe": "preregistration-option1.md",
+ "mp_dps": 30,
+ "summary": {
+  "fresh_classes": 89,
+  "loops": 37,
+  "no_loop": 52,
+  "Lambda_min": "2.518874849922577404841967",
+  "Lambda_minimisers": [
+   "00000100001",
+   "00000111001",
+   "00001010001",
+   "00001101001",
+   "00001110101",
+   "00000100111",
+   "00001000101",
+   "00001001011",
+   "00001001111",
+   "00001010111",
+   "00001101111",
+   "00010001011",
+   "00010010011",
+   "00010010111",
+   "00010100101",
+   "00010110111",
+   "00011001001",
+   "00011010101",
+   "00011011011",
+   "00101001011",
+   "00010001101",
+   "00101001101",
+   "00100110011",
+   "00000000011"
+  ],
+  "Lambda_minimiser_distinct_GL2Z_classes": 2,
+  "Lambda_PASS": false,
+  "Lambda_value_multiplicities": [
+   [
+    "2.518874849922577404841967",
+    24
+   ],
+   [
+    "2.764248904337735719648352",
+    8
+   ]
+  ],
+  "L_min": "4.603183309507916659974173",
+  "L_minimisers": 24,
+  "L_minimiser_distinct_GL2Z_classes": 2,
+  "L_PASS": false,
+  "L_value_multiplicities": [
+   [
+    "4.603183309507916659974173",
+    24
+   ],
+   [
+    "4.795655030616652975799161",
+    8
+   ],
+   [
+    "6.367650371430213912198113",
+    1
+   ],
+   [
+    "6.94638431969059729373808",
+    2
+   ],
+   [
+    "9.206366619015833319948345",
+    1
+   ],
+   [
+    "16.16921667511886513803487",
+    1
+   ]
+  ],
+  "self_crossing": []
+ },
+ "checks": {
+  "class_count_is_94": true,
+  "reproduce_L_gluon_s1_s0": true,
+  "reproduce_L_nuc11_gen_grouped": true,
+  "loop_L_matches_00000100001": true,
+  "radius_certified_00000100001": true,
+  "loop_L_matches_00000111001": true,
+  "radius_certified_00000111001": true,
+  "loop_L_matches_00001010001": true,
+  "radius_certified_00001010001": true,
+  "loop_L_matches_00001101001": true,
+  "radius_certified_00001101001": true,
+  "loop_L_matches_00001110101": true,
+  "radius_certified_00001110101": true,
+  "loop_L_matches_00000100111": true,
+  "radius_certified_00000100111": true,
+  "loop_L_matches_00001000101": true,
+  "radius_certified_00001000101": true,
+  "loop_L_matches_00001001011": true,
+  "radius_certified_00001001011": true,
+  "loop_L_matches_00001001111": true,
+  "radius_certified_00001001111": true,
+  "loop_L_matches_00001010111": true,
+  "radius_certified_00001010111": true,
+  "loop_L_matches_00001101111": true,
+  "radius_certified_00001101111": true,
+  "loop_L_matches_00010001011": true,
+  "radius_certified_00010001011": true,
+  "loop_L_matches_00010010011": true,
+  "radius_certified_00010010011": true,
+  "loop_L_matches_00010010111": true,
+  "radius_certified_00010010111": true,
+  "loop_L_matches_00010100101": true,
+  "radius_certified_00010100101": true,
+  "loop_L_matches_00010110111": true,
+  "radius_certified_00010110111": true,
+  "loop_L_matches_00011001001": true,
+  "radius_certified_00011001001": true,
+  "loop_L_matches_00011010101": true,
+  "radius_certified_00011010101": true,
+  "loop_L_matches_00011011011": true,
+  "radius_certified_00011011011": true,
+  "loop_L_matches_00101001011": true,
+  "radius_certified_00101001011": true,
+  "loop_L_matches_00010001101": true,
+  "radius_certified_00010001101": true,
+  "loop_L_matches_00101001101": true,
+  "radius_certified_00101001101": true,
+  "loop_L_matches_00100110011": true,
+  "radius_certified_00100110011": true,
+  "loop_L_matches_00000000011": true,
+  "radius_certified_00000000011": true,
+  "loop_L_matches_00001000111": true,
+  "radius_certified_00001000111": true,
+  "loop_L_matches_00010100111": true,
+  "radius_certified_00010100111": true,
+  "loop_L_matches_00011001011": true,
+  "radius_certified_00011001011": true,
+  "loop_L_matches_00011010111": true,
+  "radius_certified_00011010111": true,
+  "loop_L_matches_00001000011": true,
+  "radius_certified_00001000011": true,
+  "loop_L_matches_00001110001": true,
+  "radius_certified_00001110001": true,
+  "loop_L_matches_00010100011": true,
+  "radius_certified_00010100011": true,
+  "loop_L_matches_00011010011": true,
+  "radius_certified_00011010011": true
+ },
+ "rows": [
+  {
+   "word": "00000000000",
+   "sl2z": [
+    [
+     1,
+     11
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     11
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000000001",
+   "sl2z": [
+    [
+     -9,
+     10
+    ],
+    [
+     -1,
+     1
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     5
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000000011",
+   "sl2z": [
+    [
+     -17,
+     9
+    ],
+    [
+     -2,
+     1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     8
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00000000101",
+   "sl2z": [
+    [
+     -8,
+     1
+    ],
+    [
+     -1,
+     0
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     3
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000000111",
+   "sl2z": [
+    [
+     -23,
+     8
+    ],
+    [
+     -3,
+     1
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     4
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     3
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000001001",
+   "sl2z": [
+    [
+     -1,
+     -5
+    ],
+    [
+     0,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     5
+    ]
+   ],
+   "r_congruence_H4(5)": 1,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000001011",
+   "sl2z": [
+    [
+     -8,
+     1
+    ],
+    [
+     -1,
+     0
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     3
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000001101",
+   "sl2z": [
+    [
+     -7,
+     -6
+    ],
+    [
+     -1,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     3
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000010001",
+   "sl2z": [
+    [
+     4,
+     -9
+    ],
+    [
+     1,
+     -2
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000010011",
+   "sl2z": [
+    [
+     3,
+     -4
+    ],
+    [
+     1,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000010101",
+   "sl2z": [
+    [
+     -1,
+     -5
+    ],
+    [
+     0,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     5
+    ]
+   ],
+   "r_congruence_H4(5)": 1,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000010111",
+   "sl2z": [
+    [
+     -8,
+     1
+    ],
+    [
+     -1,
+     0
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     3
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000011001",
+   "sl2z": [
+    [
+     5,
+     -16
+    ],
+    [
+     1,
+     -3
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     3
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000011011",
+   "sl2z": [
+    [
+     -1,
+     -5
+    ],
+    [
+     0,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     5
+    ]
+   ],
+   "r_congruence_H4(5)": 1,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000011101",
+   "sl2z": [
+    [
+     -6,
+     -11
+    ],
+    [
+     -1,
+     -2
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000011111",
+   "sl2z": [
+    [
+     -29,
+     6
+    ],
+    [
+     -5,
+     1
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     3
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     5
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000100001",
+   "sl2z": [
+    [
+     7,
+     -11
+    ],
+    [
+     2,
+     -3
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     3
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -2
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00000100011",
+   "sl2z": [
+    [
+     10,
+     -7
+    ],
+    [
+     3,
+     -2
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -3
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000100101",
+   "sl2z": [
+    [
+     3,
+     -4
+    ],
+    [
+     1,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000100111",
+   "sl2z": [
+    [
+     5,
+     -3
+    ],
+    [
+     2,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00000101001",
+   "sl2z": [
+    [
+     4,
+     -9
+    ],
+    [
+     1,
+     -2
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000101011",
+   "sl2z": [
+    [
+     3,
+     -4
+    ],
+    [
+     1,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000101101",
+   "sl2z": [
+    [
+     -1,
+     -5
+    ],
+    [
+     0,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     5
+    ]
+   ],
+   "r_congruence_H4(5)": 1,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000101111",
+   "sl2z": [
+    [
+     -8,
+     1
+    ],
+    [
+     -1,
+     0
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     3
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000110001",
+   "sl2z": [
+    [
+     13,
+     -22
+    ],
+    [
+     3,
+     -5
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000110011",
+   "sl2z": [
+    [
+     17,
+     -13
+    ],
+    [
+     4,
+     -3
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     4
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "6.367650371430213912198113",
+   "Lambda_lower_bound": "3.526247122393967836281951",
+   "Lambda": "not enumerated: lower bound exceeds the computed minimum"
+  },
+  {
+   "word": "00000110101",
+   "sl2z": [
+    [
+     4,
+     -9
+    ],
+    [
+     1,
+     -2
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000110111",
+   "sl2z": [
+    [
+     3,
+     -4
+    ],
+    [
+     1,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000111001",
+   "sl2z": [
+    [
+     9,
+     -23
+    ],
+    [
+     2,
+     -5
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     4
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -3
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00000111011",
+   "sl2z": [
+    [
+     4,
+     -9
+    ],
+    [
+     1,
+     -2
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00000111101",
+   "sl2z": [
+    [
+     -5,
+     -14
+    ],
+    [
+     -1,
+     -3
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00001000011",
+   "sl2z": [
+    [
+     13,
+     -8
+    ],
+    [
+     5,
+     -3
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 2,
+   "status": "loop",
+   "L": "4.795655030616652975799161",
+   "Lambda_lower_bound": "2.308123400092022175961311",
+   "tau": "1.734885387162921060547984",
+   "radius": "8.26542580494249509689513",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105871,
+   "Lambda": "2.764248904337735719648352"
+  },
+  {
+   "word": "00001000101",
+   "sl2z": [
+    [
+     5,
+     -3
+    ],
+    [
+     2,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00001000111",
+   "sl2z": [
+    [
+     12,
+     -5
+    ],
+    [
+     5,
+     -2
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -2
+    ]
+   ],
+   "r_congruence_H4(5)": 2,
+   "status": "loop",
+   "L": "4.795655030616652975799161",
+   "Lambda_lower_bound": "2.308123400092022175961311",
+   "tau": "1.734885387162921060547984",
+   "radius": "8.26542580494249509689513",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105871,
+   "Lambda": "2.764248904337735719648352"
+  },
+  {
+   "word": "00001001001",
+   "sl2z": [
+    [
+     3,
+     -4
+    ],
+    [
+     1,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00001001011",
+   "sl2z": [
+    [
+     5,
+     -3
+    ],
+    [
+     2,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00001001101",
+   "sl2z": [
+    [
+     2,
+     -1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00001001111",
+   "sl2z": [
+    [
+     5,
+     -2
+    ],
+    [
+     3,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     3
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00001010001",
+   "sl2z": [
+    [
+     7,
+     -11
+    ],
+    [
+     2,
+     -3
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     3
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -2
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00001010011",
+   "sl2z": [
+    [
+     10,
+     -7
+    ],
+    [
+     3,
+     -2
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -3
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00001010101",
+   "sl2z": [
+    [
+     3,
+     -4
+    ],
+    [
+     1,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00001010111",
+   "sl2z": [
+    [
+     5,
+     -3
+    ],
+    [
+     2,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00001011001",
+   "sl2z": [
+    [
+     4,
+     -9
+    ],
+    [
+     1,
+     -2
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00001011011",
+   "sl2z": [
+    [
+     3,
+     -4
+    ],
+    [
+     1,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00001011101",
+   "sl2z": [
+    [
+     -1,
+     -5
+    ],
+    [
+     0,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     5
+    ]
+   ],
+   "r_congruence_H4(5)": 1,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00001100011",
+   "sl2z": [
+    [
+     27,
+     -17
+    ],
+    [
+     8,
+     -5
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     3
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "loop",
+   "L": "16.16921667511886513803487",
+   "Lambda_lower_bound": "16.26890371499286541971676",
+   "Lambda": "not enumerated: lower bound exceeds the computed minimum"
+  },
+  {
+   "word": "00001100101",
+   "sl2z": [
+    [
+     10,
+     -7
+    ],
+    [
+     3,
+     -2
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -3
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00001100111",
+   "sl2z": [
+    [
+     23,
+     -10
+    ],
+    [
+     7,
+     -3
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     3
+    ]
+   ],
+   "r_congruence_H4(5)": 2,
+   "status": "loop",
+   "L": "6.94638431969059729373808",
+   "Lambda_lower_bound": "4.029792548257102876976142",
+   "Lambda": "not enumerated: lower bound exceeds the computed minimum"
+  },
+  {
+   "word": "00001101001",
+   "sl2z": [
+    [
+     7,
+     -11
+    ],
+    [
+     2,
+     -3
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     3
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -2
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00001101011",
+   "sl2z": [
+    [
+     10,
+     -7
+    ],
+    [
+     3,
+     -2
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -3
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00001101101",
+   "sl2z": [
+    [
+     3,
+     -4
+    ],
+    [
+     1,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00001101111",
+   "sl2z": [
+    [
+     5,
+     -3
+    ],
+    [
+     2,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00001110001",
+   "sl2z": [
+    [
+     18,
+     -29
+    ],
+    [
+     5,
+     -8
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 2,
+   "status": "loop",
+   "L": "4.795655030616652975799161",
+   "Lambda_lower_bound": "2.308123400092022175961311",
+   "tau": "1.734885387162921060547984",
+   "radius": "8.26542580494249509689513",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105871,
+   "Lambda": "2.764248904337735719648352"
+  },
+  {
+   "word": "00001110011",
+   "sl2z": [
+    [
+     25,
+     -18
+    ],
+    [
+     7,
+     -5
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 2,
+   "status": "loop",
+   "L": "6.94638431969059729373808",
+   "Lambda_lower_bound": "4.029792548257102876976142",
+   "Lambda": "not enumerated: lower bound exceeds the computed minimum"
+  },
+  {
+   "word": "00001110101",
+   "sl2z": [
+    [
+     7,
+     -11
+    ],
+    [
+     2,
+     -3
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     3
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -2
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00001110111",
+   "sl2z": [
+    [
+     10,
+     -7
+    ],
+    [
+     3,
+     -2
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -3
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00010001001",
+   "sl2z": [
+    [
+     2,
+     -1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00010001011",
+   "sl2z": [
+    [
+     5,
+     -2
+    ],
+    [
+     3,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     3
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00010001101",
+   "sl2z": [
+    [
+     3,
+     1
+    ],
+    [
+     2,
+     1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00010010011",
+   "sl2z": [
+    [
+     5,
+     -3
+    ],
+    [
+     2,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00010010101",
+   "sl2z": [
+    [
+     2,
+     -1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00010010111",
+   "sl2z": [
+    [
+     5,
+     -2
+    ],
+    [
+     3,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     3
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00010011001",
+   "sl2z": [
+    [
+     1,
+     -1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00010011011",
+   "sl2z": [
+    [
+     2,
+     -1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00010011101",
+   "sl2z": [
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00010100011",
+   "sl2z": [
+    [
+     13,
+     -8
+    ],
+    [
+     5,
+     -3
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 2,
+   "status": "loop",
+   "L": "4.795655030616652975799161",
+   "Lambda_lower_bound": "2.308123400092022175961311",
+   "tau": "1.734885387162921060547984",
+   "radius": "8.26542580494249509689513",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105871,
+   "Lambda": "2.764248904337735719648352"
+  },
+  {
+   "word": "00010100101",
+   "sl2z": [
+    [
+     5,
+     -3
+    ],
+    [
+     2,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00010100111",
+   "sl2z": [
+    [
+     12,
+     -5
+    ],
+    [
+     5,
+     -2
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -2
+    ]
+   ],
+   "r_congruence_H4(5)": 2,
+   "status": "loop",
+   "L": "4.795655030616652975799161",
+   "Lambda_lower_bound": "2.308123400092022175961311",
+   "tau": "1.734885387162921060547984",
+   "radius": "8.26542580494249509689513",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105871,
+   "Lambda": "2.764248904337735719648352"
+  },
+  {
+   "word": "00010101101",
+   "sl2z": [
+    [
+     2,
+     -1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00010110011",
+   "sl2z": [
+    [
+     10,
+     -7
+    ],
+    [
+     3,
+     -2
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -3
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00010110101",
+   "sl2z": [
+    [
+     3,
+     -4
+    ],
+    [
+     1,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00010110111",
+   "sl2z": [
+    [
+     5,
+     -3
+    ],
+    [
+     2,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00010111001",
+   "sl2z": [
+    [
+     4,
+     -9
+    ],
+    [
+     1,
+     -2
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00011000111",
+   "sl2z": [
+    [
+     31,
+     -12
+    ],
+    [
+     13,
+     -5
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     3
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "9.206366619015833319948345",
+   "Lambda_lower_bound": "6.285686705136965602128946",
+   "Lambda": "not enumerated: lower bound exceeds the computed minimum"
+  },
+  {
+   "word": "00011001001",
+   "sl2z": [
+    [
+     5,
+     -3
+    ],
+    [
+     2,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00011001011",
+   "sl2z": [
+    [
+     12,
+     -5
+    ],
+    [
+     5,
+     -2
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -2
+    ]
+   ],
+   "r_congruence_H4(5)": 2,
+   "status": "loop",
+   "L": "4.795655030616652975799161",
+   "Lambda_lower_bound": "2.308123400092022175961311",
+   "tau": "1.734885387162921060547984",
+   "radius": "8.26542580494249509689513",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105871,
+   "Lambda": "2.764248904337735719648352"
+  },
+  {
+   "word": "00011001101",
+   "sl2z": [
+    [
+     7,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -3
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00011010011",
+   "sl2z": [
+    [
+     13,
+     -8
+    ],
+    [
+     5,
+     -3
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 2,
+   "status": "loop",
+   "L": "4.795655030616652975799161",
+   "Lambda_lower_bound": "2.308123400092022175961311",
+   "tau": "1.734885387162921060547984",
+   "radius": "8.26542580494249509689513",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105871,
+   "Lambda": "2.764248904337735719648352"
+  },
+  {
+   "word": "00011010101",
+   "sl2z": [
+    [
+     5,
+     -3
+    ],
+    [
+     2,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00011010111",
+   "sl2z": [
+    [
+     12,
+     -5
+    ],
+    [
+     5,
+     -2
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -2
+    ]
+   ],
+   "r_congruence_H4(5)": 2,
+   "status": "loop",
+   "L": "4.795655030616652975799161",
+   "Lambda_lower_bound": "2.308123400092022175961311",
+   "tau": "1.734885387162921060547984",
+   "radius": "8.26542580494249509689513",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105871,
+   "Lambda": "2.764248904337735719648352"
+  },
+  {
+   "word": "00011011001",
+   "sl2z": [
+    [
+     3,
+     -4
+    ],
+    [
+     1,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00011011011",
+   "sl2z": [
+    [
+     5,
+     -3
+    ],
+    [
+     2,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00100100101",
+   "sl2z": [
+    [
+     2,
+     -1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00100101011",
+   "sl2z": [
+    [
+     2,
+     -1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00100101101",
+   "sl2z": [
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00100110011",
+   "sl2z": [
+    [
+     3,
+     -2
+    ],
+    [
+     -1,
+     1
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00100110101",
+   "sl2z": [
+    [
+     1,
+     -1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "status": "no loop (elliptic or parabolic in Delta(2,4,5))"
+  },
+  {
+   "word": "00101001011",
+   "sl2z": [
+    [
+     5,
+     -2
+    ],
+    [
+     3,
+     -1
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     3
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  },
+  {
+   "word": "00101001101",
+   "sl2z": [
+    [
+     3,
+     1
+    ],
+    [
+     2,
+     1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "status": "loop",
+   "L": "4.603183309507916659974173",
+   "Lambda_lower_bound": "2.17390223279375648134413",
+   "tau": "1.827475989785441143966464",
+   "radius": "8.258135289078798947907101",
+   "certified": true,
+   "primitive": true,
+   "kernel_elements": 316,
+   "delta_elements": 105071,
+   "Lambda": "2.518874849922577404841967"
+  }
+ ]
+}

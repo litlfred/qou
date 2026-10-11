@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-0001202v2/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-0001202v2/blocks/prose-sec-007",
   "kind": "prose",
-  "title": "From these we can form the 2-primitive products",
-  "pageStart": 9,
-  "pageEnd": 9,
-  "text": "../sections/sec-007-1-from-these-we-can-form-the-2-primitive-product.md",
-  "derivedFrom": "library/arxiv-hep-th-0001202v2/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0001202v2/manifest",
+  "title": "Natural growth by a single node",
+  "pageStart": 13,
+  "pageEnd": 14,
+  "text": "../sections/sec-007-53-natural-growth-by-a-single-node.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0001202v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0001202v2/manifest.jsonld",
   "provenance": "ingested"
 }

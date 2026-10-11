@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/5s032x/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/5s032x/blocks/prose-sec-000",
   "kind": "prose",
   "title": "The Standard Model Symmetry and Qubit Entanglement",
   "pageStart": 1,
   "pageEnd": 1,
   "text": "../sections/sec-000-the-standard-model-symmetry-and-qubit-entangleme.md",
-  "derivedFrom": "library/5s032x/manifest",
-  "sourceDocument": "library/5s032x/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/5s032x/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/5s032x/manifest.jsonld",
   "provenance": "ingested"
 }

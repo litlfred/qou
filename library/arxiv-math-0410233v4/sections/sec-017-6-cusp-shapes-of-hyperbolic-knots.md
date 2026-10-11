@@ -8,13 +8,16 @@ pages: 31-31
 source_pdf: 0410233v4.pdf
 source_sha256: 1f7215c9f21aa2b7
 doc_brief: "Cusp shapes under cone deformation — A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp sh ape."
+text_source: latex
+latex_prose_ratio: 0.935
+latex_coverage_ratio: 1.0
 ---
-We will now apply the results of the previous sections to dete rmine bounds
-on the shapes of cusps of knot complements. In particular, le t K be a
-hyperbolic knot with a prime, twist reduced diagram, where p rime and twist
-reduced are deﬁned in Deﬁnitions 1.6 and 1.7. We will bound th e normalized
-height of the cusp of S3 − K, using Theorem 1.4. We need the following:
-(1) An initial hyperbolic manifold X with n + 1 cusps.
-(2) A cone deformation deforming X to the knot complement S3 − K.
-(3) A lower bound on the tube radius ( R ≥ R1 ≥ 0.56).
-Given these pieces, we will obtain bounds on normalized heig ht.
+We will now apply the results of the previous sections to determine bounds on the shapes of cusps of knot complements. In particular, let $K$ be a hyperbolic knot with a prime, twist reduced diagram, where prime and twist reduced are defined in Definitions [\[def:prime\]](#def:prime){reference-type="ref" reference="def:prime"} and [\[def:twred\]](#def:twred){reference-type="ref" reference="def:twred"}. We will bound the normalized height of the cusp of $S^3-K$, using Theorem [\[thm:main-norm-height\]](#thm:main-norm-height){reference-type="ref" reference="thm:main-norm-height"}. We need the following:
+
+1.  An initial hyperbolic manifold $X$ with $n+1$ cusps.
+
+2.  A cone deformation deforming $X$ to the knot complement $S^3-K$.
+
+3.  A lower bound on the tube radius ($R\geq R_1\geq 0.56$).
+
+Given these pieces, we will obtain bounds on normalized height.

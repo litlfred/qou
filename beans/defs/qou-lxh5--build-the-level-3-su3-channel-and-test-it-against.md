@@ -6,8 +6,9 @@ type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - 8f-colour
 created_at: 2026-08-16T12:55:00Z
-updated_at: 2026-10-04T15:16:46Z
+updated_at: 2026-10-10T17:30:00Z
 parent: qou-8lxd
 ---
 
@@ -47,3 +48,29 @@ value of this test is that z_3 is FORCED by the fibre, with zero freedom.
 Also do not read anything into '2.5995 is near 2.6' or 'near 3': the r in
 (2.5,2.7) band is 0.029 wide in z and the two off-family spellings differ by
 0.002, so that proximity carries no information (PR #5229 §4).
+
+## 2026-10-10 — first measurement (pre-registered; bean stays OPEN)
+
+Pre-registration committed first (`ce171d625e`,
+`docs/audits/2026-10-10-level3-su3-channel-test.md` §0-4), results in §5.
+Producer `computations/eightfold/level3_su3_channel_probe.py`, witness
+`computations/eightfold/level3-su3-channel.witness.json` (`q0Anchor:
+comparison`). Built the level-3 trace from seminormal matrices (relations,
+Markov property, z_3 = q^5/(q^4+q^2+1) all verified; r = 2 control reproduces
+the corpus closed form exactly).
+
+Primary: m_p/m_e from the corpus proton identity with tr^(3)(beta_Bor), at q_0
+from CAL-2 alone. R_3 = 1835.659538490 vs CODATA 1836.152673426,
+residual -0.4931 = 10453 sigma_pred (sigma_pred 4.72e-5), rel 2.69e-4.
+Baseline R_2 = 1836.152225661, 9.49 sigma, rel 2.44e-7. Verdict by the
+pre-registered rule: NEAR-MATCH (inside the 1e-2 band), wired to nothing —
+but level 3 is ~1100x WORSE than level 2, and tr^(3) - tr^(2) = O(h^4) so any
+such substitution lands inside that band; the near-match carries no colour
+evidence. Scope (a): this construction alone, with 2, 12 and [3]_q!/q^3
+carried over unchanged, does not reproduce m_p/m_e. No structural exclusion.
+
+No separate W was needed — but r = 3 is equivalent (Jimbo-Schur-Weyl) to a
+3-dim V with Lambda^3 V != 0, so the colour object is assumed via r, not
+derived. Still open: a colour observable for the l = 3 sector whose map from
+a Markov trace is in the corpus (none of the other 8 candidates in §2 has
+one).

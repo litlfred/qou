@@ -8,36 +8,38 @@ pages: 19-20
 source_pdf: 1507.03238v3.pdf
 source_sha256: 1da6a5498c08a521
 doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety forSL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
+text_source: latex
+latex_prose_ratio: 0.859
+latex_coverage_ratio: 0.64
 ---
-d(E) denote the number of degenerate simplices.
-Lemma 7.16.LetE∈ T(T ) be simplex-degenerate and letT′ be a triangulation obtained from
-T be performing a 2-3 move at a face between a degenerate and a non-degenerate simplex. Then
-E has a unique descendantE′∈ T(T ). Furthermored(E′) =d(E)− 1.
-Proof. Transitivity holds if and only if the new edge is non-zero. Hence, none of the new simplices
-are degenerate (see Figure 14). This proves the result. □
-Corollary 7.17.LetE∈ T(T ) be simplex-degenerate. There exists a triangulationT′ obtained
-fromT by performing 2-3 moves such thatE has a unique descendantE′∈ T(T′), which is face-
-degenerate.
-Proof. Repeatedly perform 2-3 moves at a face between a degenerate and a non-degenerate
-simplex until there are no more degenerate simplices. □
-Deﬁnition 7.18.LetE∈ T(T ) be simplex-degenerate and letE′ andT′ be as in Corollary 7.17.
-Deﬁne
-(7.8) P (T,E ) =P (T′,E′)
-and deﬁnePσ(T,E ) andEP (T,E ) similarly.
-Note that as a subset ofA(V (M)) the deﬁnition is independent of the choice ofT′.
-Theorem 7.19. The one-to-one correspondences(7.2), (7.3), and (7.4) hold for all transitive
-edges setsE that are not totally degenerate.
-Proof. This follows from Theorem 7.15 and Corollary 7.17. □
-20 MATTHIAS GOERNER AND CHRISTIAN K. ZICKERT
-8. The inv ariant Ptolemy v arieties
-For the non-degenerate edge setE, deﬁneP (T,E ) to be the standard Ptolemy variety (Def-
-inition 2.3). The Ptolemy variety for the other types were deﬁned in Deﬁnitions 7.3, 7.14, and
-7.18. We denote the totally degenerate edge set where all edges are zero-edges by0∈ T(T ).
-Deﬁnition 8.1.The invariant Ptolemy varietyP (T ) is deﬁned by
-(8.1) P (T ) =
-⋃
-E∈T(T )\{0}
-P (T,E ),
-where the (disjoint) union is taken insideA(V (M)). We similarly deﬁneP
-σ
-(T ) andEP (T ).
+Given a simplex-degenerate edge set $E\in \mathop{\mathrm{T}}(\mathcal T)$. Let $d(E)$ denote the number of degenerate simplices.
+
+::: lemma
+Let $E\in \mathop{\mathrm{T}}(\mathcal T)$ be simplex-degenerate and let $\mathcal T'$ be a triangulation obtained from $\mathcal T$ be performing a 2-3 move at a face between a degenerate and a non-degenerate simplex. Then $E$ has a unique descendant $E'\in \mathop{\mathrm{T}}(\mathcal T)$. Furthermore $d(E')=d(E)-1$.
+:::
+
+::: proof
+*Proof.* Transitivity holds if and only if the new edge is non-zero. Hence, none of the new simplices are degenerate (see Figure [\[fig:WildDescendant\]](#fig:WildDescendant){reference-type="ref" reference="fig:WildDescendant"}). This proves the result. ◻
+:::
+
+::: corollary
+[]{#cor:RemoveDegeneracy label="cor:RemoveDegeneracy"} Let $E\in \mathop{\mathrm{T}}(\mathcal T)$ be simplex-degenerate. There exists a triangulation $\mathcal T'$ obtained from $\mathcal T$ by performing 2-3 moves such that $E$ has a unique descendant $E'\in \mathop{\mathrm{T}}(\mathcal T')$, which is face-degenerate.
+:::
+
+::: proof
+*Proof.* Repeatedly perform 2-3 moves at a face between a degenerate and a non-degenerate simplex until there are no more degenerate simplices. ◻
+:::
+
+::: definition
+[]{#def:PtolemyWild label="def:PtolemyWild"} Let $E\in \mathop{\mathrm{T}}(\mathcal T)$ be simplex-degenerate and let $E'$ and $\mathcal T'$ be as in Corollary [\[cor:RemoveDegeneracy\]](#cor:RemoveDegeneracy){reference-type="ref" reference="cor:RemoveDegeneracy"}. Define $$P(\mathcal T,E)=P(\mathcal T',E')$$ and define $P^\sigma(\mathcal T,E)$ and $\mathcal EP(\mathcal T,E)$ similarly.
+:::
+
+Note that as a subset of $A(V(M))$ the definition is independent of the choice of $\mathcal T'$.
+
+::: theorem
+[]{#thm:OneOneWild label="thm:OneOneWild"} The one-to-one correspondences [\[eq:OneOneMild\]](#eq:OneOneMild){reference-type="eqref" reference="eq:OneOneMild"}, [\[eq:OneOneMildSigma\]](#eq:OneOneMildSigma){reference-type="eqref" reference="eq:OneOneMildSigma"}, and [\[eq:OneOneMildEnhanced\]](#eq:OneOneMildEnhanced){reference-type="eqref" reference="eq:OneOneMildEnhanced"} hold for all transitive edges sets $E$ that are not totally degenerate.
+:::
+
+::: proof
+*Proof.* This follows from Theorem [\[thm:OneOneModerate\]](#thm:OneOneModerate){reference-type="ref" reference="thm:OneOneModerate"} and Corollary [\[cor:RemoveDegeneracy\]](#cor:RemoveDegeneracy){reference-type="ref" reference="cor:RemoveDegeneracy"}. ◻
+:::

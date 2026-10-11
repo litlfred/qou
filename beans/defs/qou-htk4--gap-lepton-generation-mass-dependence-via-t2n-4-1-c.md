@@ -5,9 +5,10 @@ status: todo
 type: task
 priority: normal
 tags:
+    - 8f-mass
     - reorg-2026-10-04
 created_at: 2026-08-07T17:40:00Z
-updated_at: 2026-10-04T15:20:09Z
+updated_at: 2026-10-10T07:15:55Z
 parent: qou-8lxd
 ---
 

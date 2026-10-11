@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1409.0848v3/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Factorization homology",
+  "pageStart": 17,
+  "pageEnd": 23,
+  "contains": [
+    "library/arxiv-1409.0848v3/blocks/prose-sec-004",
+    "library/arxiv-1409.0848v3/blocks/thm-sec-004-01",
+    "library/arxiv-1409.0848v3/blocks/lem-sec-004-02",
+    "library/arxiv-1409.0848v3/blocks/lem-sec-004-03",
+    "library/arxiv-1409.0848v3/blocks/prop-sec-004-04",
+    "library/arxiv-1409.0848v3/blocks/lem-sec-004-05",
+    "library/arxiv-1409.0848v3/blocks/lem-sec-004-06"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1409.0848v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1409.0848v3/manifest.jsonld",
+  "provenance": "ingested"
+}

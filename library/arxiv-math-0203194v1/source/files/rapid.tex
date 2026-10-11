@@ -1,0 +1,1094 @@
+%#! latex main.tex
+\appendix
+\addtocontents{toc}{\protect\par\vskip10mm}
+
+\chapter{Rapid Course in $p$-adic Analysis.}\label{app:rapid}
+\renewcommand{\thechapter}{\Alph{chapter}}
+\addtocontents{toc}{\protect\par\vskip2mm\hskip80mm by F. Kato \par\vskip5mm}
+
+\vspace{1ex}
+\begin{center}
+By {\sc F.\ Kato}
+\end{center}
+
+%
+\section{Introduction.}
+%
+%Let us first set up the notation; in order to do it, and for the
+%reader's convenience, we recall some terminologies:
+%\begin{ter}
+%A {\it semi-norm} on a commutative and unitary ring $A$ is a 
+%function $\|\cdot\|\colon A\rightarrow\R_{\geq 0}$ which satisfies
+%$\|0\|=0$, $\|1\|=1$, $\|fg\|\leq\|f\|\|g\|$, and $\|f-g\|\leq\|f\|+
+%\|g\|$ for $f,g\in A$.
+%We often write $\Ker\|\cdot\|\colon=\{f\in A\ |\ \|f\|=0\}$.
+%In case $\Ker\|\cdot\|=\{0\}$ we say $\|\cdot\|$ is a {\it norm}.
+%A semi-norm $\|\cdot\|$ on a ring $A$ is said to be {\it non-archimedan}
+%if for $f,g\in A$ $\|f-g\|\leq\mathrm{max}\{\|f\|,\|g\|\}$.
+%A norm $\|\cdot\|$ is said to be a {\it valuation} if for $f,g\in A$
+%$\|fg\|=\|f\|\|g\|$.
+%For example, the function $\|\cdot\|_0$ which sends every non-zero element
+%in $A$ to $1$ is a norm; this norm is called the {\it trivial norm}.
+%\end{ter}
+
+In this appendix, $K$ always denotes a complete field 
+with respect to a non-archimedean valuation $|\cdot|\colon K\rightarrow
+\R_{\geq 0}$.
+The norm $|\cdot|$ is almost always assumed to be non-trivial, unless
+otherwise stated.
+
+Let us assume for a while that $K$ is algebraically closed.
+We view the field $K$ as an affine space, as we do in complex analysis; 
+$K$ is a metrized space with the metric induced from the
+valuation $|\cdot|$.
+We can then follow the lines of classical complex analysis and define
+convergence of power series, Taylor and Laurent
+expansions, etc...
+%to make sense in this situation.
+%Then we easily find that it is quite meaningful for us to {\it ask} 
+%if a given $K$-valued
+%function defined on an open set in $K$ is ``analytic'', i.e.\
+%locally represented by a convergent power series or not.
+%So we are tempted to {\it characterize} those analytic or holomorphic 
+%functions by the last condition, also as we did in complex analysis; but 
+%this is in fact very problematic.
+%
+%To see what happens more clearly, let us test this na\"{\i}ve approach; 
+
+For instance let us define ``holomorphic'' functions to be $K$-valued
+functions which are locally expressed by convergent power
+series\footnote{The reader may wonder whether there is another approach
+by means of Cauchy-Riemann type differential equations.  This is unlikely
+because the differential calculus does not go well, see
+\cite[Chap.\ 4]{pn}.}  (cf.\ \cite[Chap.\ 4]{pn}). 
+This approach drives us however to several
+problems, which come mainly from the fact that $K$ with the
+metric topology is totally disconnected; for example:
+\begin{enumerate}
+ \item for an open set $U\subseteq K$ the ring of all such holomorphic
+       functions on $U$ is huge. So is already the subring of all locally 
+       constant functions.
+ \item It can be shown that the sheaf of germs of such functions satisfies
+       the principle of unique continuation; but not in a satisfactory way.
+       In particular, \lemref{lem-unique-cont} of \chapref{chap-ana-p-period}
+       holds but is of no use,
+       because there is no non-empty connected open subset.
+%\item There is no reasonable path; any continuous map $\gamma\colon
+%[0,1]\rightarrow K$ is constant.
+\end{enumerate}
+
+The trouble becomes more apparent when we think the \emph{local}
+representability by convergent power series in terms of
+\emph{coverings}.  In the complex analytic situation, when we speak of
+the holomorphy of a function $f$ defined over a connected open set $U$,
+we tacitly take a open covering $\{U_i\}_{i\in I}$ of $U$ consisting of
+sufficiently small open neighborhoods such that $f$ restricted on each
+member $U_i$ can be seen as evaluation of a power series convergent in
+$U_i$.  The point is that, since $U$ is connected, members of $\{U_i\}$
+must have overlaps so that the local properties can be transmitted to
+whole $U$.  But, in the non-archimedean situation, such coverings may be
+refined in such a way that there are no overlap.  This is why
+the analytic continuation does not work well.  So, for the sake of a
+reasonable analytic theory, we have to ``limit'' coverings so that we
+cannot take arbitrarily fine refinements.
+
+A first method is due to Krasner.
+He introduced the so-called {\it quasi-connected sets} and, on such
+subsets, defined analytic functions as uniform convergent limits of
+rational functions.
+
+A more modern and systematic treatment was introduced by Tate, 
+with the so-called {\it Rigid Analysis}.
+Let us briefly view the main idea:
+we first set
+%$$
+%K\{t_1,\ldots,t_n\}=\left\{
+%\begin{array}{r|l}
+%\sum_{\nu_1,\ldots,\nu_n\geq 0}
+%a_{\nu_1,\ldots,\nu_n}t_1^{\nu_1}\cdots t_n^{\nu_n}&
+%|a_{\nu_1,\ldots,\nu_n}|\rightarrow 0\ \mathrm{for}\\
+%\in K[[t_1,\ldots,t_n]]
+%&\nu_1+\cdots+\nu_n\rightarrow\infty
+%\end{array}
+%\right\},
+%$$
+\begin{align*}
+   & K\{t_1,\ldots,t_n\}\\
+ = & \Biggl\{
+ \sum_{\nu_1,\ldots,\nu_n\geq 0}
+ a_{\nu_1,\ldots,\nu_n}t_1^{\nu_1}\cdots t_n^{\nu_n}
+  \in K[[t_1,\ldots,t_n]]\,
+ \Bigg|
+ \begin{split}
+  & a_{\nu_1,\ldots,\nu_n}\rightarrow 0\ \mathrm{for}\\
+  & \nu_1+\cdots+\nu_n\rightarrow\infty
+ \end{split} 
+\Biggr\},
+\end{align*}
+which is now called the {\it Tate algebra} over $K$.
+This is the ring of all functions expressed by power series convergent
+on the closed disk $\matheur{D}(0,1^{+})=\{z\in K^n\ |\ |z_i|\leq 1\}$.
+The algebra $K\{t_1,\ldots,t_n\}$ is endowed with the sup-norm 
+$\|\cdot\|$, also called the {\it Gauss norm}.
+We list up some known properties (cf.\ \cite[5.2]{na},
+\cite[II.3]{garea}):
+
+\begin{enumerate}
+\item The ring $K\{t_1,\ldots,t_n\}$ satisfies the Weierstrass
+Preparation Theorem.
+\item The ring $K\{t_1,\ldots,t_n\}$ is Noetherian and factorial.
+\item Every ideal of $K\{t_1,\ldots,t_n\}$ is closed.
+\item For any maximal ideal $\mathfrak{m}$ of $K\{t_1,\ldots,t_n\}$, the
+field $K\{t_1,\ldots,t_n\}/\mathfrak{m}$ is a finite extension of $K$.
+\end{enumerate}
+
+If, moreover, $K$ is algebraically closed, the set of all maximal
+ideals, endowed with the natural topology, coincides with 
+$\matheur{D}(0,1^{+})$.
+So the situation is analogous to classical algebraic geometry; 
+$\matheur{D}(0,1^{+})$ to the affine $n$-space, and $K\{t_1,\ldots,t_n\}$
+to the coordinate ring.
+In fact, quotients $\matheur{A}=K\{t_1,\ldots,t_n\}/I$ by ideals $I$ 
+(called {\it affinoid algebras}), and their associated maximal spectra,
+$\mathrm{Spm}(\matheur{A}$), called {\it affinoids}, forms the 
+fundamental patches from which the non-archimedean function theory will be
+developed.
+Although the natural metric topology on $\mathrm{Spm}(\matheur{A})$ is 
+terrible for the same reason as above, the situation becomes much
+better as far as we deal only with those functions coming from 
+$\matheur{A}$.
+The trick is that, if the algebra $\matheur{A}$ is integral, then we can
+pretend that the space $\mathrm{Spm}(\matheur{A})$ is ``connected''; for
+example, the closed disk $\matheur{D}(0,1^{+})$ is ``connected'' in this
+sense.
+So, basically according to this point of view, we can globalize 
+the situation by gluing affinoid patches to obtain a reasonable
+theory of analytic functions.
+The actual recipe to do it is furnished by the notion of Grothendieck
+topology, which censors the plethora of coverings.
+We will see this a little more precisely in what follows.
+
+\begin{apprem}
+Although the rigid analysis seems to provide the reasonable topological
+and analytical framework, one must not expect it to be as nice as the
+complex case.  Firstly, in classical complex analysis, when we expand
+a holomorphic function centered at a point inside its region of
+convergence, the resulting Taylor expansion may have a different region
+of convergence than the original one. This is a important method of
+analytic continuation.  But in the non-archimedean case,
+this never happens (cf.\ \cite[4.4]{pn}).
+
+Secondly, the topological framework
+given as above is still not powerful enough to handle paths.
+So it is hopeless to treat, for example, fundamental groups and 
+monodromy in an intuitive way as in the classical complex case.
+This difficulty is, in fact, remedied by Berkovich' theory 
+which we shall see later on.
+\end{apprem}
+
+%
+\section{Rigid analytic spaces.}
+%
+
+Let $K$ be as in the previous section; we do not assume in general 
+that $K$ is algebraically closed.
+
+As mentioned above, an {\it affinoid algebra}
+$\matheur{A}$ over $K$ is a quotient $K\{t_1,\ldots,t_n\}/I$ for some
+$n$ by an ideal $I$.  Since $I$ is closed, $\matheur{A}$ has a norm
+$|\cdot |$ induced from the sup-norm $\|\cdot \|$ of
+$K\{t_1,\ldots,t_n\}$ ({\it ``residue norm''}).  With the residue norm,
+$\matheur{A}$ is a Banach $K$-algebra.  The norm $|\cdot |$ itself
+depends on the presentation $\alpha\colon
+K\{t_1,\ldots,t_n\}/I\stackrel{\sim}{\rightarrow}\matheur{A}$, while the
+induced topology does not.  So, strictly speaking, we should write it
+like $|\cdot |_{\alpha}$.  Clearly, $\matheur{A}$ is Noetherian and, for
+any maximal ideal $\mathfrak{m}$ of $\matheur{A}$, the residue field
+$\matheur{A}/\mathfrak{m}$ is a finite extension of $K$, and hence, the
+valuation $|\cdot |$ of $K$ naturally extends to that of it, denoted
+again by $|\cdot |$.
+
+The associated {\it affinoid} $\mathrm{Spm}({\matheur{A}})$ is the set of all
+maximal ideals of $\matheur{A}$.
+For $x\in\mathrm{Spm}(\matheur{A})$ and $f\in\matheur{A}$ the value of $f$ at
+$x$, denoted by $f(x)$, is the class of $f$ in $\matheur{A}/x$.
+The set $\mathrm{Spm}({\matheur{A}})$ has the topology generated
+by the subsets of form $\{x\in\mathrm{Spm}({\matheur{A}})\ |\ |f(x)|
+\leq 1\}$ for $f\in\matheur{A}$.
+But, as we pointed out above, this topology is not very interesting since 
+it makes $\mathrm{Spm}({\matheur{A}})$ totally disconnected.
+So we should specify the reasonable family of ``admissible'' open
+sets (and coverings), on which the function theory will be built.
+
+Let $\matheur{A}$ be an affinoid algebra over $K$, and $f_i$ 
+($i=0,\ldots,n$) a collection of elements in $\matheur{A}$ which have no
+common zeros on $\mathrm{Spm}(\matheur{A})$. 
+The subspace
+\begin{equation*}
+ R=\{x\in\mathrm{Spm}(\matheur{A})\ |\ |f_i(x)|\leq |f_0(x)|,\ i=1,\ldots,n\}
+\end{equation*}
+can be identified with the affinoid $\mathrm{Spm}(\matheur{A}_R)$, where
+\begin{equation*}
+ \matheur{A}_R=\matheur{A}\widehat{\otimes}_KK\{t_1,\ldots,t_n\}/
+ (f_1-t_1f_0,\ldots,f_n-t_nf_0).
+\end{equation*}
+A subset of this form is called a {\it rational subdomain}.
+The identification comes as follows:
+We first note that the morphism of affinoids $\mathrm{Spm}(\matheur{A}_R)
+\rightarrow\mathrm{Spm}(\matheur{A})$ induced by
+$\matheur{A}\rightarrow\matheur{A}_R$ maps $\mathrm{Spm}(\matheur{A}_R)$ to 
+$R$.
+Then $\matheur{A}_R$ is the unique solution of the following 
+universal property (hence, it can be determined up to canonical isomorphism):
+for any morphism of affinoids
+$\phi\colon\mathrm{Spm}(\matheur{B})\rightarrow\mathrm{Spm}(\matheur{A})$ such
+that $\phi(\mathrm{Spm}(\matheur{B}))\subset R$, there exists a unique 
+$K$-homomorphism $\matheur{A}_R\rightarrow\matheur{B}$ such that
+the resulting diagram
+\vspace{1.5ex}
+$$
+\setlength{\unitlength}{1pt}
+\begin{picture}(100,60)(10,0)
+\put(0,45){$\mathrm{Spm}(\matheur{B})$}
+\put(40,48){\vector(1,0){20}}
+\put(46,53){$\scriptstyle{\phi}$}
+\put(66,45){$\mathrm{Spm}(\matheur{A})$}
+\put(29,6){$\mathrm{Spm}(\matheur{A}_R)$}
+%\put(33,38){\vector(1,-2){10}}
+\multiput(33,38)(1.5,-3){6}{\circle*{.3}}\put(42,20){\vector(1,-2){2}}
+\put(57,18){\vector(1,2){10}}
+\end{picture}\vspace{-1ex}
+$$
+is commutative.
+
+\begin{applem}\label{lem-rational-intersection}
+
+$\mathrm{(1)}$
+If $R$ and $S$ are rational subdomains in $\mathrm{Spm}(\matheur{A})$, then 
+so is $R\cap S$.
+
+$\mathrm{(2)}$
+If $R_1$ is a rational subdomain in $\mathrm{Spm}(\matheur{A})$, and $R_2$ 
+is a rational subdomain in $R_1$, then $R_2$ is a rational subdomain 
+in $\mathrm{Spm}(\matheur{A})$.
+\end{applem}
+
+\begin{proof}
+(1)
+If $R=\{|f_i(x)|\leq |f_0(x)|,\ i=1,\ldots,n\}$ and
+$S=\{|g_j(x)|\leq |g_0(x)|,\ j=1,\ldots,m\}$, then
+one sees easily that 
+$R\cap S=\{|f_i(x)g_j(x)|\leq |f_0(x)g_0(x)|,\ i=1,\ldots,n,
+\ j=1,\ldots,m\}$.
+
+(2) Exercise.
+\end{proof}
+
+\begin{appcor}\label{cor-rational-intersection}
+Any subspace of the form
+\begin{equation*}
+ \{|f_i(x)|\leq 1,|g_j(x)|\geq 1,\ i=1,\ldots,n,\ j=1,\ldots,m\}
+\end{equation*}
+is a rational subdomain.
+\end{appcor}
+
+\begin{proof}
+It is the intersection of rational subdomains
+$\{|f_i(x)|\leq 1\}$ for $i=1,\ldots,n$ and
+$\{1\leq |g_j(x)|\}$ for $j=1,\ldots,m$.
+\end{proof}
+
+\begin{appexa}[Rational subdomains of the unit polydisk]
+Let us assume that $K$ is algebraically closed.
+We consider rational subdomains of the unit polydisk
+$\matheur{D}(0,1^{+})=\mathrm{Spm}(K\{t_1,\ldots,t_n\})$.
+
+(1) {\it Closed polydisk}:\  
+$\matheur{D}(0,|\pi|^{+})=\{x\in K^n\ |\ |x_i|\leq |\pi_i|,\ 
+i=1,\ldots,n\}$,
+for $0\neq\pi_i\in K$, $|\pi_i|\leq 1$, is a rational subdomain. 
+The corresponding affinoid algebra is 
+$$
+K\left\{\frac{t_1}{\pi_1},\ldots,\frac{t_n}{\pi_n}\right\}.
+$$
+
+(2) {\it Annulus}:\ 
+$\matheur{C}(0,|\pi^{(1)}|^{+},|\pi^{(2)}|^{+})=
+\{x\in K^n\ |\ |\pi^{(1)}_i|\leq |x_i|\leq
+|\pi^{(2)}_i|,\ i=1,\ldots,n\}$, 
+for $0\neq\pi^{(j)}_i\in K$, $|\pi^{(j)}_i|\leq 1$, is a rational 
+subdomain. The corresponding affinoid algebra is 
+$$
+K\left\{\frac{\pi^{(1)}_1}{t_1},\ldots,\frac{\pi^{(1)}_n}{t_n},
+\frac{t_1}{\pi^{(2)}_1},\ldots,\frac{t_n}{\pi^{(2)}_n}\right\}.
+$$
+\end{appexa}
+
+Let us next review the definition of Grothendieck topology
+(in a narrow sense). Let $X$ be a topological space.
+A {\it Grothendieck topology} (G-topology, in short) on $X$ is a pair 
+$(\mathscr{T},\mathscr{C}\matheur{ov})$ consisting of
+\begin{itemize}
+\item a collection $\mathscr{T}$ of open subsets in $X$,
+\item an assignment $U\mapsto\mathscr{C}\matheur{ov}(U)$ for any $U\in\mathscr{T}$,
+where $\mathscr{C}\matheur{ov}(U)$ is a collection of coverings by elements in
+$\mathscr{T}$,
+\end{itemize}
+
+\noindent
+such that the following conditions are satisfied:
+
+\vspace{1ex}
+(1) $\emptyset\in\mathscr{T}$; $U,V\in\mathscr{T}\ \Rightarrow\ 
+U\cap V\in\mathscr{T}$.
+
+(2) $U\in\mathscr{T}\ \Rightarrow\ \{U\}\in\mathscr{C}\matheur{ov}(U)$.
+
+(3) $\{U_i\}_{i\in I}\in\mathscr{C}\matheur{ov}(U),\ V\subseteq U,\ V\in
+\mathscr{T}\ \Rightarrow\ \{U_i\cap V\}_{i\in I}\in
+\mathscr{C}\matheur{ov}(V)$.
+
+(4) $\{U_i\}_{i\in I}\in\mathscr{C}\matheur{ov}(U),\ \{U_{i,j}\}_{j\in J_i}
+\in\mathscr{C}\matheur{ov}(U_i)\ \Rightarrow\ \{U_{i,j}\}_{i\in I,j\in J}
+\in\mathscr{C}\matheur{ov}(U)$.
+
+\vspace{1ex}
+Elements in $\mathscr{T}$ are called {\it admissible open sets}, and elements
+in $\mathscr{C}\matheur{ov}(U)$ are called {\it admissible coverings} of $U$.
+
+Let $X=\mathrm{Spm}(\matheur{A})$ be an affinoid over $K$.
+We introduce a Grothendieck topology to $X$
+by the following recipe:
+
+\begin{itemize}
+\item An admissible open set is a rational subdomain.
+\item For a rational subdomain, an admissible covering is a finite 
+covering consisting of rational subdomains.
+\end{itemize}
+This is valid, due to Lemma \ref{lem-rational-intersection}.
+
+We define the structure presheaf $\OO_X$, with respect to the Grothendieck
+topology, by assigning for each rational subdomain $R$ the corresponding
+affinoid algebra $\matheur{A}_R$.
+Due to the following weak form of {\it Tate's acyclicity theorem}, the
+presheaf $\OO_X$ is, in fact, a sheaf (a sheaf of local rings).
+
+\begin{appthm}
+Let $U_1,\ldots,U_m$ be rational subdomains of
+$X=\mathrm{Spm}(\matheur{A})$. Set $U=U_1\cup\cdots\cup U_m$.
+Then the sequence
+$$
+0\longrightarrow\OO_X(U)\longrightarrow\prod^m_{i=1}\OO_X(U_i)
+\longrightarrow\prod^m_{i,j=1}\OO_X(U_i\cap U_j)
+$$
+is exact, where the last arrow is the difference of the two possible
+restriction morphisms.
+\end{appthm}
+
+For the proof, see, for example, \cite[8.2]{na} or \cite[III.2.2]{garea}.
+
+\begin{appdfn}[Rigid Analytic Space]
+A {\it rigid analytic space} is a locally ringed space $(X,\OO_X)$, with 
+a Grothendieck topology in the above sense, locally isomorphic to an
+affinoid;
+more precisely, there exists a covering $\{X_i\}_{i\in I}$ 
+(possibly infinite) of $X$ by 
+admissible open sets such that $(X_i,\OO_X|_{X_i})$ is isomorphic to 
+a certain affinoid for each $i$.
+\end{appdfn}
+
+Let us see some examples of rigid analytic spaces:
+
+\begin{appexa}[Projective Space]
+The projective space $\mathbb{P}^n(K)$ has the natural rigid 
+analytic structure.
+Here we limit ourselves to demonstrate it only in the case $n=1$, and 
+leave the general case to the reader.
+Let $(X\colon Y)$ be the homogeneous coordinate in $\mathbb{P}^1(K)$
+and set $z=X/Y$.
+Set 
+$$
+\matheur{U}^{+}=\left\{(X\colon Y)\ |\ |X|\leq |Y|\right\}
+\ \mathrm{and}\ 
+\matheur{U}^{-}=\left\{(X\colon Y)\ |\ |X|\geq |Y|\right\}.
+$$
+Then $\matheur{U}^{+}$ is isomorphic to the closed disk
+$\{z\in K\ |\ |z|\leq 1\}$ (the Southern Hemisphere with the equator)
+, and $\matheur{U}^{-}$ to
+$\{z\in K\cup\{\infty\}\ |\ |z|\geq 1\}$
+(the Northern Hemisphere with the equator).
+The intersection $\matheur{U}^{+}\cap\matheur{U}^{-}$ is thus isomorphic to
+the circle $\{z\in K\ |\ |z|=1\}$.
+Hence $\{\matheur{U}^{+},\matheur{U}^{-}\}$ gives the admissible covering of
+$\mathbb{P}^1(K)$ which induces, in the obvious way, the structure
+of a rigid analytic space.
+\end{appexa}
+
+More generally, an algebraic variety, separated and of finite type
+over $K$, carries the canonical structure of a rigid analytic space.
+%(cf.\ \cite[III.4.6]{garea}).
+
+Any open set (not necessarily admissible) $U$ in a rigid analytic 
+space $X$ will be again a rigid analytic space ({\it ``open subanalytic
+space''}); more precisely, $U$ has the induced analytic structure from 
+that of $X$. The admissible open sets of $U$, for example, are those
+of $X$ contained in $U$.
+
+%
+\section{Relation with Formal Geometry.}
+%
+
+In this section we need to consider the valuation ring 
+$R$ of $K$. Let us denote by $\mathfrak{m}$ the maximal ideal of $R$, and
+fix a topological generator $0\neq\pi\in\mathfrak{m}$.
+The residue field $R/\mathfrak{m}$ is denoted by $k$.
+
+Let $\matheur{A}$ be an affinoid algebra over $K$.
+The {\it spectral semi-norm} on $\matheur{A}$ is the function
+$|\cdot |_{\mathrm{sup}}\colon\matheur{A}\rightarrow\R_{\geq 0}$
+defined, for any $f\in\matheur{A}$, by
+\begin{equation*}
+ |f|_{\mathrm{sup}}=\sup_{x\in\mathrm{Spm}(\matheur{A})}|f(x)|.
+\end{equation*}
+It is known that for any representation 
+$\alpha\colon K\{t_1,\ldots,t_n\}/I\stackrel{\sim}{\rightarrow}\matheur{A}$,
+we have $|f|_{\mathrm{sup}}\leq |f|_{\alpha}$ for every $f\in\matheur{A}$
+(cf.\ \cite[6.2.1]{na}).
+
+\begin{appthm}[Maximal modulus principle]
+For an affinoid algebra 
+$\matheur{A}$ and an element $f\in\matheur{A}$, there exists a point
+$x\in\mathrm{Spm}(\matheur{A})$ such that $|f(x)|=|f|_{\mathrm{sup}}$.
+\end{appthm}
+
+We refer \cite[6.2.1]{na} for the proof.
+
+Given an affinoid algebra $\matheur{A}$ over $K$, we introduce the following
+notation:
+\begin{equation*}
+ \begin{array}{lcl}
+ \matheur{A}^{\circ}&=&\{f\in\matheur{A}\ |\ |f|_{\mathrm{sup}}\leq 1\},\\
+ \matheur{A}^{\circ\circ}&=&\{f\in\matheur{A}\ |\ |f|_{\mathrm{sup}}<1\},\\
+ \ovl{\matheur{A}}&=&\matheur{A}^{\circ}/\matheur{A}^{\circ\circ};
+ \end{array}
+\end{equation*}
+$\matheur{A}^{\circ}$ is a $R$-subalgebra of $\matheur{A}$, and 
+$\matheur{A}^{\circ\circ}$ is an ideal of it.
+For instance, $K^{\circ}=R$, $K^{\circ\circ}=\mathfrak{m}$, and $\ovl{K}=k$.
+
+\begin{appexa}\label{exa-red-tate}
+We can immediately calculate:
+$$
+\begin{array}{lrl}
+{\matheur{T}^n_K}^{\circ}&=&R\{t_1,\ldots,t_n\}\\
+&\colon=&\left\{
+\begin{array}{r|l}
+\sum_{\nu_1,\ldots,\nu_n\geq 0}
+a_{\nu_1,\ldots,\nu_n}t_1^{\nu_1}\cdots t_n^{\nu_n}&
+|a_{\nu_1,\ldots,\nu_n}|\rightarrow 0\ \mathrm{for}\\
+\in R[[t_1,\ldots,t_n]]
+&\nu_1+\cdots+\nu_n\rightarrow\infty
+\end{array}
+\right\}\\
+\ovl{\matheur{T}^n_K}&=&k[t_1,\ldots,t_n].
+\end{array}
+$$
+Note that ${\matheur{T}^n_K}^{\circ}$ is the $(\pi)$-adic completion of
+the polynomial ring $R[t_1,\ldots,t_n]$ over $R$.
+It should be noticed that $\ovl{\matheur{T}^n_K}$ is a 
+{\it polynomial ring} over $k$; indeed, each element in
+$R\{t_1,\ldots,t_n\}$ lies, by the convergence condition, in 
+${\matheur{T}^n_K}^{\circ\circ}$ modulo finitely many terms.
+\end{appexa}
+
+\begin{apppro}
+Let $\matheur{A}$ be an affinoid algebra over $K$. Then,
+\begin{enumerate}
+% \renewcommand{\labelenumi}{\arabic{enumi}.}
+ \item $\matheur{A}^{\circ}$ is a model of $\matheur{A}$$;$
+       i.e.\ $\matheur{A}^{\circ}\otimes_RK\cong\matheur{A}$,
+ \item $\matheur{A}^{\circ}$ is $(\pi)$-adically completed, 
+ \item $\matheur{A}^{\circ}$ is topologically of finite
+       type over $R$$;$ i.e.\
+       $R\{t_1,\ldots,t_n\}/\mathfrak{a}\cong\matheur{A}$ 
+       for some ideal $\mathfrak{a}$ in $R\{t_1,\ldots,t_n\}$,
+ \item $\matheur{A}^{\circ}$ is flat over $R$,
+ \item $\ovl{\matheur{A}}$ is a $k$-algebra of finite type.
+\end{enumerate}
+\end{apppro}
+
+\begin{proof}
+(i) and (ii) are easy to see.
+The flatness of $R$ is now equivalent to the lack of $R$-torsion.
+So (iv) can be seen immediately.
+
+Before proving (iii) and (v), we need some terminology:
+let $\|\cdot\|_{\alpha}$ be a Banach norm of $\matheur{A}$ ($\alpha\colon
+\matheur{T}^n_K\rightarrow\matheur{A}$: surjective).
+We say an element $f$ of $\matheur{A}$ is {\it power-bounded} if 
+$\{\|f^n\|_{\alpha}\ |\ n\in\N\}$ is bounded.
+This does not depend on the choice of the presentation $\alpha$ since
+the equivalence class of the resulting norms do not change.
+An element $f$ of $\matheur{A}$ is said to be {\it topologically nilpotent}
+if $\lim f^n=0$; here the limit is taken with respect to the Banach
+norm $\|\cdot\|_{\alpha}$, and is not dependent of the choice.
+
+Let us prove (iii).
+By \cite[6.2.3]{na}, $\matheur{A}^{\circ}$ is the set of all power-bounded
+elements of $\matheur{A}$, and $\matheur{A}^{\circ\circ}$ is the set of all
+topologically nilpotent elements.
+Hence a choice of a presentation 
+$\alpha\colon\matheur{T}^n_K\rightarrow\matheur{A}$ induces surjections
+$$
+\begin{array}{lcl}
+{\matheur{T}^n_K}^{\circ}&\longrightarrow&\matheur{A}^{\circ}\\
+{\matheur{T}^n_K}^{\circ\circ}&\longrightarrow&\matheur{A}^{\circ\circ}.
+\end{array}
+$$
+(iii) is due to the surjectivity of the first arrow.
+By the surjectivity of these arrows and \ref{exa-red-tate}, we have
+(v).
+\end{proof}
+
+\begin{appdfn}\label{dfn-admissiblealg}
+An $R$-algebra $A$ is said to be {\it admissible} if $A$ is 
+$(\pi)$-adically completed, flat over $R$, and topologically 
+of finite type over $R$.
+\end{appdfn}
+
+\begin{apprem}
+By \cite[1.1\ (c)]{farg1rs}, any admissible $R$-algebra $A$ is 
+topologically of finite presentation, i.e., there exists a finitely
+generated ideal $\mathfrak{a}$ in $R\{t_1,\ldots,t_n\}$ such that
+$R\{t_1,\ldots,t_n\}/\mathfrak{a}\cong\matheur{A}$.
+\end{apprem}
+
+\begin{appdfn}[Formal model and Analytic reduction]
+Let $X=\mathrm{Spm}\matheur{A}$ be an affinoid over $K$.
+Then the formal scheme $\mathscr{X}=\Spf\matheur{A}^{\circ}$ over $R$ is called
+the {\it formal model} of $X$, and the algebraic scheme 
+$\ovl{X}=\Spec\ovl{\matheur{A}}$ over $k$ is called the {\it analytic
+reduction} of $X$.
+\end{appdfn}
+
+We define the so-called {\it reduction map}
+$$
+\mathrm{Red}_X\colon
+X=\mathrm{Spm}\matheur{A}\longrightarrow\ovl{X}=\Spec\ovl{\matheur{A}}
+$$
+by $\mathfrak{a}\mapsto\mathfrak{a}\cap\matheur{A}^{\circ}/\mathfrak{a}\cap
+\matheur{A}^{\circ\circ}$.
+
+\begin{apppro}
+The map $\mathrm{Red}_X$ is continuous with respect to the 
+Zariski topology of $\ovl{X}$ and the G-topology of $X$; 
+it maps $X$ surjectively onto the set of all
+closed points of $\ovl{X}$.
+\end{apppro}
+
+\begin{proof}
+Let us consider the affine open set 
+$U_{\ovl{f}}=\Spec\ovl{\matheur{A}}_{\ovl{f}}$ of $\Spec\ovl{\matheur{A}}$
+relevant to $\ovl{f}\in\ovl{\matheur{A}}$.
+Take $f\in\matheur{A}^{\circ}$ from the residue class $\ovl{f}$.
+The function $f$ takes values less than equal to $1$ on 
+$\mathrm{Spm}\matheur{A}$.
+So $U_f=\{x\in\mathrm{Spm}\matheur{A}\ |\ |f(x)|=1\}$ is a rational
+subdomain whose associated affinoid is $\mathrm{Spm}A\{f,f^{-1}\}$.
+Since the condition $|f(x)|=1$ is equivalent to 
+$\ovl{f}(\mathrm{Red}_X(x))\neq 0$, we have 
+$\mathrm{Red}_X^{-1}(U_{\ovl{f}})=U_f$.
+Then the first assertion follows.
+The last one is almost trivial.
+\end{proof}
+
+\begin{appexa}[Analytic reduction of the unit disk]
+Let us consider the analytic reduction of the unit disk 
+$\matheur{D}^1=\matheur{D}(0,1^{+})=\mathrm{Spm}K\{T\}$
+(here we assume that $K$ is algebraically closed for simplicity).
+The analytic reduction is given by the affine line 
+$\mathbb{A}^1_k=\Spec k[T]$.
+The reduction map $\mathrm{Red}_{\matheur{D}^1}$ maps all ``interior''
+points, i.e.\ those points lying in $\matheur{D}(0,1^{-})$ to the origin
+in $\mathbb{A}^1_k$, and the other points to the non-zero points.
+If we identify $\matheur{D}^1$ and $R$, $\mathbb{A}^1_k$and $k$, then
+this is nothing but the mapping obtained by the reduction modulo
+$\mathfrak{m}$.
+\end{appexa}
+
+It is very important to see how the formal models behave under 
+localization of affinoids.
+Let $X=\mathrm{Spm}\matheur{A}$ be an affinoid over $K$ and $f_0,\ldots,f_n\in
+\matheur{A}$ a sequence of elements which does not have common zeros
+on $\mathrm{Spm}\matheur{A}$.
+We consider the admissible covering $X=\bigcup_iU_i$ consisting of 
+rational subdomains
+$$
+U_i=\{x\in X \mid |f_j(x)|\leq|f_i(x)|\ \mathrm{for}\ j\neq i\};
+$$
+by multiplying a suitable power of $\pi$, we may assume that each
+$f_i$ belongs to $\matheur{A}^{\circ}$.
+For each $i$, 
+\begin{equation*}
+ U_i=\mathrm{Spm}\matheur{A}\left\{\frac{f_0}{f_i},\ldots,
+			     \frac{f_n}{f_i}\right\},
+\end{equation*}
+and then the corresponding formal model is given by 
+\begin{equation*}
+ \mathscr{U}_i=\Spf\matheur{A}^{\circ}
+ \left\{\frac{f_0}{f_i},\ldots,\frac{f_n}{f_i}\right\}/
+ \left((\pi)\mathrm{-torsions}\right).
+\end{equation*}
+These formal schemes glue and the resulting morphism 
+\begin{equation*}
+ \bigcup_{0\leq i\leq n}\mathscr{U}_i\longrightarrow\mathscr{X}
+  =\Spf\matheur{A}^{\circ}
+\end{equation*}
+is the formal blow-up along the ideal 
+$\mathfrak{a}=(f_0,\ldots,f_n)\subset\matheur{A}^{\circ}$.
+We note here that the ideal $\mathfrak{a}$ contains a power of $\pi$, or
+what amounts to the same, $\mathfrak{a}$ is an open ideal, for 
+$\mathfrak{a}\matheur{A}=\matheur{A}$.
+
+This simple observation indicates:
+
+\vspace{1ex}\noindent
+{\bf Slogan (vague)}: {\it Refinements of admissible coverings corresponds
+to formal blow-up's along open coherent ideals.}
+
+\vspace{1ex}
+
+\begin{appexa}
+Let us assume in this example that $K$ is algebraically closed.
+We consider the admissible covering $\matheur{D}^1=U_1\cup U_2$ of the
+unit disk $\matheur{D}^1=\mathrm{Spm}K\{T\}$ given by
+\begin{equation*}
+ \begin{array}{cclcl}
+ U_1&=&\{z\in K\ |\ |z|\leq|\pi|\}&=&\mathrm{Spm}K\left\{\frac{T}{\pi}
+ \right\},\\
+ U_2&=&\{z\in K\ |\ |\pi|\leq |z|\leq 1\}&=&
+ \mathrm{Spm}K\left\{T,\frac{\pi}{T}\right\}.
+ \end{array}
+\end{equation*}
+The corresponding formal models are
+\begin{equation*}
+ \begin{array}{cclcl}
+ \mathscr{U}_1&=&\Spf R\left\{\frac{T}{\pi}\right\}
+ &=&\Spf R\left\{T,U\right\}/(\pi U-T),\\
+ \mathscr{U}_2&=&\Spf R\left\{T,\frac{\pi}{T}\right\}
+ &=&\Spf R\left\{T,V\right\}/(TV-\pi)
+ \end{array}
+\end{equation*}
+respectively. We glue them as $U=V^{-1}$ and get 
+$\mathscr{U}_1\cup\mathscr{U}_2\rightarrow\mathscr{D}^1=\Spf R\{T\}$,
+which is the formal blow-up along the ideal $(\pi,T)$.
+Meanwhile, the analytic reduction is obtained by gluing the following 
+two affine sets:
+\begin{equation*}
+ \begin{array}{ccl}
+ \ovl{U}_1&=&\Spec k\left[T\right],\\
+ \ovl{U}_2&=&\Spec k\left[T,V\right]/(TV),
+ \end{array}
+\end{equation*}
+this is the normal crossing of the affine line with coordinate $T$ and 
+the projective line with the inhomogeneous coordinate $V$.
+\end{appexa}
+
+We are going to state the Raynaud's theorem, which provides a close
+relationship between rigid geometry and formal geometry; we need some
+terminology:
+
+\begin{appdfn}[Admissible formal scheme]
+An $R$-formal scheme\footnote{We follow 
+\cite[\S 10]{ega1} for generalities of formal schemes.}
+$\mathscr{X}$ is said to
+be {\it admissible} if it is Zariski locally isomorphic to admissible
+$\Spf A$ with $A$ admissible in the sense of Definition 
+\ref{dfn-admissiblealg}.
+\end{appdfn}
+
+\begin{appdfn}[Admissible formal blow-up]
+Let $\mathscr{X}$ be an admissible formal scheme.
+An {\it admissible formal blow-up} of $\mathscr{X}$ is the formal blow-up
+along a coherent open ideal $\mathscr{I}\subset\OO_{\mathscr{X}}$, i.e., 
+\begin{equation*}
+ \mathscr{X}'=\lim_{\stackrel{\longrightarrow}{\lambda}}\mathrm{Proj}
+ \bigoplus^{\infty}_{n=0}\left(\mathscr{I}^n\otimes_{\mathscr{O}_{\mathscr{X}}}
+ \OO_{\mathscr{X}}/\pi^{\lambda}\right)\longrightarrow\mathscr{X}.
+\end{equation*}
+\end{appdfn}
+
+We are going to construct the functor from the category of admissible 
+formal schemes to the category of rigid analytic spaces; let us start 
+by observing the affine case.
+From an affine admissible formal scheme $X=\Spf A$, it is easy to
+get the corresponding rigid analytic space: we just set 
+\begin{equation*}
+ A_{\mathrm{rig}}\colon=A\otimes_RK
+\end{equation*}
+which is an affinoid algebra over $K$.
+If $A$ is presented as $A=R\{t_1,\ldots,t_n\}/\mathfrak{a}$, then
+$K\{t_1,\ldots,t_n\}/\mathfrak{a}K\{t_1,\ldots,t_n\}$ gives a presentation
+of $A_{\mathrm{rig}}$.
+
+To globalize, we need to see the compatibility with localization.
+Let us consider the completed localization $A\{f^{-1}\}$ of $A$ with
+respect to $f\in A$.
+The corresponding affinoid algebra is
+\begin{equation*}
+ \begin{array}{ccccl}
+ A\{f^{-1}\}\otimes_RK&=&A\{T\}/(1-Tf)\otimes_RK\\
+ &=&A_{\mathrm{rig}}\{T\}/(1-Tf)&=&A_{\mathrm{rig}}\{f^{-1}\},
+ \end{array}
+\end{equation*}
+and the latter is the affinoid algebra attached to the
+rational subdomain
+\begin{equation*}
+ \{x\in\mathrm{Spm}A_{\mathrm{rig}}\ |\ |f|\geq 1\};
+\end{equation*}
+this means that the completed localization of formal schemes just 
+corresponds to the localization of rigid spaces with respect to the
+G-topology.
+So we globalize the recipe as above to obtain the functor
+\begin{equation*}
+ \mathrm{Rig}\colon\mathscr{X}\mapsto\mathscr{X}_{\mathrm{rig}}
+\end{equation*}
+from admissible formal $R$-schemes to $K$-rigid analytic spaces.
+The rigid analytic space $\mathscr{X}_{\mathrm{rig}}$ is called the
+{\it Raynaud generic fiber} of $\mathscr{X}$.
+
+\begin{apppro}\label{pro-blow-up}
+The functor $\mathrm{Rig}$ maps admissible formal blow-up's of 
+admissible formal schemes to isomorphisms of rigid analytic spaces.
+\end{apppro}
+
+\begin{proof}
+This has already been essentially shown just before the Slogan.
+Indeed, we may limit ourselves to the affine case, for the centers
+of blow-up's are coherent.
+We have seen in this case that the Raynaud generic fiber of 
+admissible formal blow-up's is the decomposition into rational
+subdomains, which does not change the analytic structure.
+\end{proof}
+
+\vspace{1ex}
+Now we state the theorem of Raynaud:
+\begin{appthm}[Raynaud\ 1972]
+The functor gives the equivalence of the following categories,
+\begin{enumerate}
+\item the category of quasi-compact admissible formal $R$-schemes,
+      localized by admissible formal blow-up's,
+\item the category of quasi-compact and quasi-separated rigid analytic
+      spaces over $K$.
+\end{enumerate}
+\end{appthm}
+
+The reader finds a nice comprehensive account of the proof of this
+theorem in \cite{farg1rs}.
+
+
+\section{Topology of Rigid Analytic Space.}
+
+In this section, we assume, for simplicity, that $K$ is algebraically
+closed.
+
+\begin{appdfn}
+ \begin{enumerate}
+  \renewcommand{\labelenumi}{(\arabic{enumi})}
+  \item A rigid analytic space $X$ is said to be {\it quasi-compact} if
+	every admissible covering of $X$ has a finite admissible 
+	refinement.
+  \item A rigid analytic space $X$ is said to be {\it connected} if there
+	is no admissible covering $\{U_i\}_{i\in I}$ of $X$
+	such that 
+	\begin{equation*}
+	 \bigcup_{i\in I_1}U_i\cap\bigcup_{i\in I_2}U_i=\emptyset\ 
+	  \mathrm{and}\ 
+	  \bigcup_{i\in I_1}U_i\neq\emptyset\neq\bigcup_{i\in I_2}U_i
+	\end{equation*}	
+	for some non-empty subsets $I_1,I_2\subseteq I$ with $I=I_1\sqcup I_2$.
+ \end{enumerate}
+\end{appdfn}
+
+Since admissible coverings of affinoids are fixed as finite, 
+every affinoid is quasi-compact.
+So, we see that a rigid analytic space is quasi-compact if and only if it is
+a finite union of affinoids.
+It is easy to see that a rigid analytic space $X$ is connected if 
+and only if the ring $\Gamma(X,\OO_X)$ has no other idempotent than 
+$0$ and $1$.
+
+\begin{appdfn}
+ A morphism $\pi\colon Y\rightarrow X$ of rigid analytic spaces over $K$
+ is said to be an {\it analytic covering} if there exists an admissible
+ covering\footnote{or else a topological covering, referring to the
+ Grothendieck topology; cf. \chapref{chap-ana-p-period},
+ \subsecref{sub-top-cov-et-cov}} $\{X_i\}_{i\in I}$ of $X$ such that for
+ each $i\in I$ $\pi^{-1}(X_i)$ is isomorphic to the disjoint union of
+ copies of $X_i$.  A connect rigid analytic space $X$ is said to be {\it
+ simply connected} if there is no other connected analytic covering over
+ $X$ than the trivial one $\mathrm{id}\colon X\rightarrow X$ (cf.\
+ \cite{anopu}).
+\end{appdfn}
+
+\begin{applem}\label{lem-simply-connected}
+Let $X$ be a connect rigid analytic space $X$.
+
+$\mathrm{(1)}$
+The space $X$ is simply connected if and only if every locally
+constant sheaf of sets, with respect to the Grothendieck topology, 
+is constant.
+
+$\mathrm{(2)}$
+If there exists an admissible covering $\{X_i\}_{i\in\N}$ of $X$
+such that $(a)$ every $X_i$ is simply connected, and $(b)$
+$X_i\subseteq X_{i+1}$ for all $i$, then $X$ is simply connected.
+\end{applem}
+
+\begin{proof}
+Both are straightforward.
+\end{proof}
+
+\begin{appexa}[Topology of the closed disk]\label{para-closed-disk}
+Let $\matheur{D}=\matheur{D}(0,1^{+})$ be the $1$-dimensional closed disk of
+radius $1$.
+A rational subdomain in $\matheur{D}$ of form
+\begin{equation*}
+ \{x\in\matheur{D}\ |\ |x-a|\leq\rho\ \mathrm{and}\ |x-a_i|\geq\rho_i\ 
+ \mathrm{for}\ i=1,\ldots,s\},
+\end{equation*}
+where $\rho,\rho_i\in |K^{\ast}|$ and $a,a_i\in\matheur{D}$, is called a
+{\it standard domain}.
+This is the complement of finite union of open disks.
+The following properties are easy to verify:
+\begin{itemize}
+\item If $S_1$ and $S_2$ are standard domains such that $S_1\cap S_2
+\neq\emptyset$, then so are $S_1\cup S_2$ and $S_1\cap S_2$.
+\item Every finite union of standard domains is uniquely decomposed 
+as a disjoint union of standard domains.
+\end{itemize}
+
+What is more interesting is the following proposition:
+\end{appexa}
+
+\begin{apppro}\label{pro-standart-domain}
+Every rational subdomain in $\matheur{D}$ is a finite union of standard
+domains.
+$($Hence standard domains generate the Grothendieck topology of 
+$\matheur{D}$.$)$
+\end{apppro}
+
+\noindent
+\begin{proof}[Sketch of Proof] (cf.\ \cite[III.1.18]{sgamc}).\ 
+Let $R$ be the rational subdomain given by $|f_i(x)|\leq |f_0(x)|$
+for $i=1,\ldots,n$.
+Deforming those functions slightly, if necessary, we may assume 
+$f_i$ and $f_j$ have no common zero for any $i\neq j$, and thus,
+we may concentrate to the single inequality $|f_1(x)|\leq |f_0(x)|$.
+By Weierstrass Preparation Theorem we may assume $f_0$ and $f_1$ are
+polynomials having all their roots in $\matheur{D}$.
+Then the proposition follows from an easy calculation.
+\end{proof}
+
+\begin{appcor}\label{cor-projective-line}
+The Grothendieck topology of the projective line $\mathbb{P}^{1,\mathrm{an}}_K$
+is generated by standard domains.
+\end{appcor}
+
+\begin{apppro}\label{pro-standard}
+Standard domains are connected.
+Moreover, every connected rational subdomain in
+$\mathbb{P}^{1,\mathrm{an}}_K$ is simply connected.
+\end{apppro}
+
+\begin{proof}
+The first assertion is obvious since the corresponding affinoid algebra
+\begin{equation*}
+ K\{t,t_0,\ldots,t_s\}/((t-a)-t_0\pi,\pi_i-t_i(t-a_i)\ \mathrm{for}\ 
+ i=1,\ldots,s),
+\end{equation*}
+where $a,a_i\in K$ and $\pi,\pi_i\in K$, is integral.
+(Note that $K\{t,t_0,\ldots,t_s\}$ is Noetherian and factorial.)
+The second one is proved by using \ref{lem-simply-connected} (1).
+Let $S$ be a standard domain and $\mathscr{F}$ a constant sheaf of
+sets on $S$.
+We can take an admissible covering $\{S_i\}$ of $S$ which trivializes 
+$\mathscr{F}$.
+The point is that any non-disjoint union of standard domains is 
+standard, and hence, connected.
+So the restriction maps $\mathscr{F}(S_i)\rightarrow
+\mathscr{F}(S_i\cap S_j)$ must be bijective as far as $S_i\cap S_j
+\neq\emptyset$.
+It follows that $\mathscr{F}(S_i\cup S_j)
+\rightarrow\mathscr{F}(S_i)$ are bijective, and repeating this argument,
+we concludes $\mathscr{F}$ is constant.
+\end{proof}
+
+\vspace{1ex}
+The following corollary may seen at first:
+
+\begin{appcor}\label{cor-simply-connected}
+Every connected open subanalytic space\footnote{We refer \cite[9.3.1]{na} 
+for the definition of open subanalytic spaces.} in 
+$\mathbb{P}^{1,\mathrm{an}}_K$ is simply connected.
+\end{appcor}
+
+\begin{proof}
+A connected open subanalytic space $U$ has an admissible covering 
+consisting of standard domains.
+By \cite[III,2.6]{sgamc} and the easy fact that a non-disjoint union of 
+connected sets is again connected, we see that a finite non-disjoint
+union of standard domain is a connected rational subdomain.
+Hence the corollary follows from Lemma \ref{lem-simply-connected} (2)
+and Proposition \ref{pro-standard}.
+\end{proof}
+
+\vspace{1ex}
+Finally we quote, without proof, a theorem by van der Put 
+which indicates a close relation between the topology 
+of a rigid analytic space and that of its analytic reduction:
+
+\begin{appthm}\label{thm-vanderput}
+Let $X$ be a quasi-compact rigid analytic space over $K$ which has 
+the irreducible and smooth analytic reduction. Then $X$ is simply
+connected.
+\end{appthm}
+
+For the proof, see \cite{anopu}.
+\begin{apprem}
+By the corollary, we know, for example, that the space
+$\mathbb{G}^{\mathrm{an}}_K=K^{\times}$ is simply connected.  But, on
+the other hand, it is easy to see that the map $K^{\times} \rightarrow
+K^{\times}$ by $x\mapsto x^n$ is an analytic morphism.  As far as the
+characteristic of $K$ does not divide $n$, we are tempted to think of
+this morphisms also as an analytic covering.  But it is not.  Certainly,
+this morphism induces isomorphisms between stalks of the structure
+sheaf, but there is no {\it admissible} covering which trivializes this
+morphism! 
+This kind of morphisms is said to be {\it \'etale}; analytic coverings
+are \'etale, but not vice versa.  Simply connected analytic spaces
+may have many \'etale coverings.
+\end{apprem}
+
+\section{Berkovich' approach to non-archimedean analysis}
+
+Berkovich' viewpoint provides an innovative approach to topological
+problems of $p$-adic geometry and analysis, which is much closer to the
+familiar intuition derived from the complex context
+\cite{staagonf}\footnote{Already in \cite{coas} the {\it esquisse} of
+Berkovich' idea can be seen.}.  His analysis, in fact, generalizes, or
+properly speaking, ``completes'' the rigid analysis.  This situation is,
+according to what he says in the introduction of his book, somehow
+analogous to that of $\R$ completing $\Q$.  The standard archimedean
+metric space $\Q$ is totally disconnected.  The rigid analytic viewpoint
+corresponds, to some extent, to regarding every rational interval
+$\{r\in\Q\ |\ a\leq r\leq b\}$ as ``connected'', and considering only those
+functions which come from analytic functions on the corresponding real
+interval.  Berkovich' non-archimedean analysis can be compared, in this
+context, to analysis on $\R$ itself. Namely, his presentation of
+analytic spaces complements those of rigid analysis by putting some
+``generic points'', and consequently, simplifies their topology.
+
+Let us be a little more precise about his theory.
+Let $\matheur{A}$ be a Banach ring, i.e., a ring together with a norm 
+$\|\cdot\|$ with respect to which $\matheur{A}$ is complete.
+
+\begin{appdfn}\label{dfn-seminorm}
+
+(1) A semi-norm $|\cdot |$ on $\matheur{A}$ is said to be {\it bounded} 
+if there exists $C>0$ such that $|f|\leq C\|f\|$ for any $f\in\matheur{A}$.
+
+(2) A semi-norm $|\cdot |$ on $\matheur{A}$ is said to be 
+{\it multiplicative} if $|fg|=|f||g|$ for all $f,g\in\matheur{A}$.
+\end{appdfn}
+
+Replacing the maximal spectra $\Spm(\matheur{A})$ of rigid geometry, we have:
+\begin{appdfn}\label{dfn-Berkovich-spectrum}
+The Berkovich' {\it spectrum} $\matheur{M}(\matheur{A})$ for a Banach ring
+$\matheur{A}$ is the set of all bounded multiplicative semi-norms on
+$\matheur{A}$, endowed with the weakest topology so that the real
+valued functions of form $|\cdot |\mapsto |f|$ for $f\in\matheur{A}$
+are continuous.
+\end{appdfn}
+
+In case $\matheur{A}$ is an affinoid algebra (a {\it strict} affinoid
+algebra, in Berkovich' term) over $K$, the affinoid space 
+$\mathrm{Spm}(\matheur{A})$ is naturally viewed as a subspace, with 
+the relative topology, of the Berkovich' spectrum $\matheur{M}(\matheur{A})$.
+This is done by identifying an element $\mathfrak{m}$ in
+$\mathrm{Spm}(\matheur{A})$ with the unique semi-norm $|\cdot |$ on 
+$\matheur{A}$ such that $\mathfrak{m}=\Ker |\cdot |$.
+The space $\mathrm{Spm}(\matheur{A})$ is identified, in terms of this 
+correspondence, with the subspace of $\matheur{M}(\matheur{A})$ consisting of
+semi-norms $|\cdot |$ such that $\dim_K\matheur{A}/\Ker |\cdot |$ is 
+finite (the ``classical points'').
+
+\begin{appexa}
+Let us consider the usual absolute-value norm $|\cdot|_{\infty}$
+on $\Z$. The spectrum
+$\matheur{M}(\Z)$ consists of the following points:
+\begin{enumerate}
+\item $|\cdot|_{\infty,\epsilon}\colon=|\cdot|_{\infty}^{\epsilon}$
+($0<\epsilon\leq 1$).
+\item The $p$-adic norm $|\cdot|_{p,\epsilon}\colon$ with 
+$|p|_{p,\epsilon}=\epsilon$ ($0<\epsilon\leq 1$).
+\item The semi-norm $|\cdot|_p$ induced from the trivial norm on $\Z/p\Z$.
+\item The trivial norm $|\cdot|_0$.
+\end{enumerate}
+As a topological space, $\matheur{M}(\Z)$ is a tree with end points
+$|\cdot|_p$ and $|\cdot|_{\infty}$. Each of these points is connected
+by a single edge with $|\cdot|_0$.
+\end{appexa}
+
+On the Berkovich' spectrum, the {\it affinoid subdomains} (incl.\ {\it 
+rational subdomains}) are defined in the similar way to rigid 
+analysis. 
+Thus one can define the structure sheaves on spectra, which 
+one calls affinoid spaces.
+The local data consisting of Berkovich' affinoids and the structure
+sheaves can glue to locally ringed spaces; thus we obtain {\it analytic
+spaces} in Berkovich' sense.
+
+\begin{appexa}
+(Cf.\ \cite[1.5]{staagonf}.)
+Let $K$ be a non archimedean complete field. An affine space over $K$ is
+defined by
+\begin{equation*}
+ \mathbb{A}^n_K=\{\textrm{multiplicative seminorm}\ |\cdot|\ \textrm{on}\ 
+ K[t_1,\ldots,t_n]\ |\ |\cdot|_{|_K}\ \textrm{is bounded}\}
+\end{equation*}
+together with the weakest topology so that $|\cdot|\mapsto |f|$
+($f\in K[t_1,\ldots,t_n]$) is continuous.
+This has a structure of analytic space so that the analytic functions
+over it is characterized by limits of rational functions.
+When $K=\C$ the space $\mathbb{A}^n_K$ is nothing but the usual affine
+space in the complex analytic sense.
+If $K$ is a non-archimedean field, then $\mathbb{A}^n_K$ is a 
+union of balls; i.e., the spectrum of Tate algebra.
+\end{appexa}
+
+Here are some general properties of Berkovich' analytic spaces:
+\begin{enumerate}
+\item Every connected $K$-analytic space is arcwise connected.
+\item If $X=\matheur{M}(\matheur{A})$ with $\matheur{A}$ an affinoid algebra over
+$K$, then $\textrm{Krull-dim}\matheur{A}=\mathrm{dim}|X|$, where $|X|$
+is the underlying topological space of $X$.
+\item If a $K$-analytic space $X$ is smooth, then it is locally
+contractible.
+\end{enumerate}
+
+Relation between Berkovich' analytic spaces and rigid analytic spaces is
+as follows.
+If a Berkovich' $K$-analytic space $X$ is formed only by spectra of 
+(strict) affinoid algebras, we say $X$ is strict.
+There exists a functor from the category of separated strict 
+$K$-analytic spaces to that of separated rigid analytic spaces over $K$
+by 
+\begin{equation*}
+ X\mapsto X_0=\{x\in X\ |\ [K(x)\colon K]<\infty\},
+\end{equation*}
+where $K(x)$ is the residue field at $x$.
+
+\begin{appthm}
+This functor is fully-faithful, and preserves fiber products.
+\end{appthm}

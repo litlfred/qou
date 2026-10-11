@@ -1,0 +1,943 @@
+
+
+\newpage
+
+%\footline={\hss\folio\hss}
+%\pageno=1
+
+\dspace
+\subhead
+2. Le point de vue tannakien 
+\endsubhead
+
+\subhead
+2.1
+\endsubhead
+Soient $k$ un corps de nombres et $S$ un
+ensemble fini de places finies de $k$.
+Le foncteur $\omega$, d\'eduit du foncteur
+gradu\'e $\omega_*$ de 1.1 par oubli de la graduation,
+est un foncteur fibre de la cat\'egorie \`a
+produit tensoriel $\MT(\scrO_S)$ d\'efinie en
+1.6.
+Cette cat\'egorie est donc tannakienne, et 
+si $G_\omega$ est le sch\'ema en
+groupe des automorphismes du
+$\otimes$-foncteur $\omega$, le foncteur
+$\omega$ induit une \'equivalence de
+$\MT(\scrO_S)$ avec la cat\'egorie des
+repr\'esentations (lin\'eaires, de dimension
+finie) de $G_\omega$.
+
+L'action de $G_\omega$ sur
+$\omega(\dbQ(1))=\dbQ$ d\'efinit un morphisme
+$$
+G_\omega\to \dbG_m.\tag2.1.1
+$$
+Soit $U_\omega$ son noyau.
+Le groupe multiplicatif $\dbG_m$ agit sur le
+$\otimes$-foncteur $\omega$, $\lambda\in\dbG_m$
+agissant sur $\omega_n$ par multiplication par
+$\lambda^n$.
+Cette action est une section $\dbG_m\to
+G_\omega$ de (2.1.1).
+Elle fait de $G_\omega$ un produit semi-direct
+$$
+G_\omega=\dbG_m\ltimes U_\omega.
+\tag2.1.2
+$$
+
+Si cela est n\'ecessaire pour \'eviter une
+ambigu{\umi}t\'e, on \'ecrira
+$G_\omega\left<\MT(\scrO_S)\right>$ et\break
+$U_\omega\left<\MT(\scrO_S)\right>$ au lieu de
+$G_\omega$ et $U_\omega$.
+
+L'action de $G_\omega$ est fonctorielle en $M$.
+Pour tout $M$ dans $\MT(\scrO_S)$, 
+elle respecte donc la 
+filtration par le poids, index\'ee
+par les entiers pairs, de $\omega(M)$ par les
+$$
+\omega(W_{-2n}M)=\oplusop_{m\Ge n}\omega_m(M).
+$$
+
+Le sous-groupe $U_\omega$ agit trivialement
+sur $\omega(Q(1))$,  donc sur les
+$\omega(\dbQ(n))$, ainsi que sur $\Gr^W(\omega(M))
+=\omega(\Gr^W(M))$.
+Il en r\'esulte que le sous-groupe
+alg\'ebrique $U_\omega\left<M\right>$ de
+$\GL(\omega(M))$ image de $U_\omega$ est
+unipotent.
+L'action de $\dbG_m\Subset G_\omega$ sur
+$\omega(M)$ normalise cette image.
+L'alg\`ebre de Lie $\gru_\omega\left<M\right>$
+de $U_\omega\left<M\right>$ est donc une
+sous-alg\`ebre de Lie gradu\'ee de
+$\grgl(\omega(M))$.
+Puisque l'action de $U_\omega\left<M\right>$
+sur $\omega(M)$ respecte la filtration par le
+poids et est l'identit\'e sur le gradu\'e
+associ\'e, l'alg\`ebre de Lie
+$\gru_\omega\left<M\right>$ est \`a
+degr\'es $>0$.
+
+Pour $M$ un motif de Tate mixte, notons
+$\left<M\right>$ la sous-cat\'egorie
+tannakienne de $\MT(\scrO_S)$
+{\it engendr\'ee} par $M$, d'objets les
+sous-quotients de sommes de $M^{\otimes
+p}\otimes (M\upvee)^{\otimes q}$. 
+Si $M'$ est dans $\left<M\right>$,
+$U_\omega\left<M'\right>$ est un quotient de
+$U_\omega\left<M\right>$, et le sch\'ema en
+groupe $U_\omega$ est la limite projective
+des $U_\omega\left<M\right>$ pour
+$\left<M\right>$ de plus en plus grand.
+Le sch\'ema en groupe $U_\omega$ est donc
+pro-unipotent.
+
+Les alg\`ebres de Lie
+$\gru_\omega\left<M\right>$ sont \`a
+degr\'e $>0$ et, par 1.6 et 1.7, les groupes
+$$
+\alignat2
+\Ext^1(\dbQ(0),\dbQ(n)) = &\,0 
+   &\qquad&\text{si $n\Le 0$},\tag2.1.3\\
+&\scrO_S^*\otimes\dbQ &\qquad&\text{si $n=1$},\\
+&K_{2n-1}(k)\otimes\dbQ &\qquad&\text{si $n\Ge 2$}.
+\endalignat
+$$
+sont de dimension finie.
+On est donc dans la situation consid\'er\'ee
+en A.14.
+En chaque degr\'e $n$, le syst\`eme projectif
+des $(\gru_\omega\left<M\right>)_n$ est
+stationnaire et on d\'efinit l'alg\`ebre de
+Lie gradu\'ee $\gru_\omega^{\GR}$ comme
+\'etant la somme sur $n$ des 
+$\lim(\gru_\omega\left<M\right>)_n$.
+L'alg\`ebre de $\Lie\,\gru_\omega$ de
+$U_\omega$ est la limite projective des
+$\gru_\omega\left<M\right>$; c'est le produit
+des $(\gru_\omega^{\GR})_n$.
+Appliquant A.15, on obtient:
+
+\proclaim{Proposition 2.2}\quad
+(i) L'alg\`ebre de Lie gradu\'ee
+$\gru_\omega^{\GR}$ est \`a degr\'es $>0$ et est en
+chaque degr\'e de dimension finie.
+Elle d\'etermine $U_\omega$ par
+$$
+U_\omega
+=\lim\,\exp(\gru_\omega^{\GR}\text{/partie de
+degr\'e $\Ge N$}).
+$$
+
+\noindent
+(ii)
+Le foncteur $\omega$ induit une \'equivalence
+de $\MT(\scrO_S)$ avec la cat\'egorie des
+espaces vectoriels de dimension finie 
+gradu\'es, munis d'une
+action de $\gru_\omega^{\GR}$ compatible aux
+graduations.
+\endproclaim
+
+Que les $\Ext^2(\dbQ(0),\dbQ(n))$ soient nuls
+admet la traduction suivante.
+
+\proclaim{Proposition 2.3}
+L'alg\`ebre de Lie $\gru_\omega^{\GR}$ est libre.
+\endproclaim
+
+On en obtient un syst\`eme g\'en\'erateur
+homog\`ene libre en relevant une base de 
+chaque
+$$
+\left(\gru_\omega^{\GR}\right)_n^{\ab}=
+\text{ dual de (2.1.3)}
+\tag2.3.1
+$$
+dans $(\gru_\omega^{\GR})_n$.
+
+\subhead
+2.4 Mise en garde
+\endsubhead
+On ne dispose pas d'un rel\`evement
+canonique de $(\gru_\omega^{\GR})_n^{\ab}$ dans
+$(\gru_\omega^{\GR})_n$.
+On ne dispose donc pas d'un isomorphisme
+canonique de $\gru_\omega^{\GR}$ avec l'alg\`ebre
+de Lie librement engendr\'ee par l'espace
+vectoriel gradu\'e
+$$
+(\gru_\omega^{\GR})^{\ab}=\oplus(\Ext^1(\dbQ(0),
+\dbQ(n))\upvee\text{ en degr\'e $n$}).
+\tag2.4.2
+$$
+
+\subhead
+2.5
+\endsubhead
+La cat\'egorie tannakienne $\MT(k)$ est la
+r\'eunion filtrante des sous-cat\'egories
+pleines $\MT(\scrO_S)$, pour $S$ de plus en
+plus grand.
+On a donc pour $\MT(k)$
+$$
+\align
+G_\omega\left<\MT(k)\right>:=
+\Aut^\otimes(\omega)
+&=\lim\,G_\omega\left<\MT(\scrO_S)\right>=\\
+&=\dbG_m\ltimes\lim\,U_\omega
+\left<\MT(\scrO_S)\right>.
+\endalign
+$$
+
+\subhead
+2.6
+\endsubhead
+Rappelons quelques d\'efinitions fondant la
+g\'eom\'etrie alg\'ebrique dans une
+cat\'egorie tannakienne $\scrT$.
+
+La cat\'egorie $\Ind\,\scrT$ des $\Ind$-objets
+de $\scrT$ est munie d'un produit tensoriel
+associatif commutatif \`a unit\'e h\'erit\'e
+de $\scrT$.
+Ceci permet de d\'efinir la notion
+d'alg\`ebre commutative \`a unit\'e de $\Ind\,\scrT$:
+c'est un objet $A$ muni d'un produit $A\otimes
+A\to A$ et d'une unit\'e $1\to A$ v\'erifiant
+les axiomes usuels.
+On d\'efinit la cat\'egorie des
+$\scrT$-{\it sch\'emas affines}, aussi
+appel\'es sch\'emas affines en $\scrT$, comme
+\'etant la duale de celle des alg\`ebres
+commutatives \`a unit\'e de $\Ind\,\scrT$.
+On note $\Spec(A)$ le $\scrT$-sch\'ema affine
+correspondant \`a l'alg\`ebre $A$, et on
+appelle $A$ son {\it alg\`ebre affine}.
+
+Un $\scrT$-sch\'ema en groupe affine est un
+objet en groupe de la cat\'egorie des
+$\scrT$-sch\'emas affines, i.e. le spectre
+$G=\Spec(A)$ d'une alg\`ebre de Hopf
+commutative $A$ de $\Ind\,\scrT$.
+Une action de $G$ sur un objet $M$ de $\scrT$
+est une structure de comodule $M\to A\otimes M$.
+
+Pour $M$ un object de $\scrT$, on notera encore
+$M$ le $\scrT$-{\it sch\'ema vectoriel}
+$\Spec(\Sym^*M\upvee)$, o\`u
+$\Sym^*N:=\colim_A\oplusop\limits_{n\Le A}\Sym^n(N)$. 
+Un pro-objet $\lim\,M_i$ de $\scrT$ d\'efinit
+de m\^{e}me le $\scrT$-{\it sch\'ema provectoriel}
+$\Spec(\colim_{i,A}\oplusop_{n\Le A}
+\Sym^n(M_i\upvee))$.
+
+Pour un expos\'e plus d\'etaill\'e, nous
+renvoyons \`a Deligne (1989) \S5.
+Par loc. cit. 5.8, de nombreux \'enonc\'es
+connus en g\'eom\'etrie alg\'ebrique restent
+valables en $\scrT$-g\'eom\'etrie alg\'ebrique.
+Nous les utiliserons librement.
+
+\subhead
+2.7
+\endsubhead
+Rappelons Deligne (1990) qu'on dispose,
+dans toute cat\'egorie tannakienne $\scrT$,
+d'un $\scrT$-sch\'ema en groupe affine
+canonique, le {\it groupe fondamental}
+$\pi(\scrT)$ de $\scrT$.
+Il agit sur tout objet $M$ de $\scrT$, cette
+action est fonctorielle en $M$, et pour tout
+foncteur fibre $F$ elle d\'efinit un
+isomorphisme 
+$$
+F(\pi(\scrT))\simover \Aut^\otimes(F).\tag2.7.1
+$$
+
+\subhead
+2.8
+\endsubhead
+Certaines des constructions 2.1--2.5 sont
+motiviques, i.e. l'image par $\omega$ de
+constructions dans $\MT(\scrO_S)$.
+D'autres d\'ependent de ce que le foncteur
+fibre $\omega$ est gradu\'e.
+
+Notons $G$ le groupe fondamental $\pi(\MT(\scrO_S))$.
+Les constructions suivantes sont motiviques:
+
+\medskip\noindent
+{\sans (a)}\enspace
+le morphisme (2.1.1) de $G_\omega$ dans
+$\dbG_m$.
+C'est l'image par $\omega$ du morphisme
+$$
+G\to\dbG_m
+\tag2.8.1
+$$
+donnant l'action du groupe fondamental $G$ de
+$\MT(\scrO_S)$ sur $\dbQ(1)$.
+Pour donner un sens \`a (2.8.1), observer que
+la cat\'egorie des espace vectoriels de
+dimension finie est une sous-cat\'egorie de
+$\MT(\scrO_S)$, par $V\mapsto V\otimes\dbQ(0)$,
+et qu'un sch\'ema en groupe affine peut donc
+\^{e}tre consid\'er\'e comme un sch\'ema en
+groupe de $\MT(\scrO_S)$.
+
+\medskip\noindent
+{\sans (b)}\enspace
+le groupe $U_\omega$ est motivique: c'est
+l'image par $\omega$ du noyau $U$ de (2.8.1).
+De m\^{e}me pour sa pro-alg\`ebre de Lie
+$\gru$
+
+\medskip\noindent
+{\sans (c)}\enspace
+la formule (2.4.2) se rel\`eve en
+un isomorphisme de pro-objets de
+$\MT(\scrO_S)$
+$$
+\Lie(U^{\ab})=\prod\limits_{n}
+\Ext^1(\dbQ(0),\dbQ(n))\upvee\otimes\dbQ(n).
+\tag2.8.2
+$$
+Dans (2.8.2), la projecton sur le $n^{\ieme}$
+facteur donne l'action de $\Lie\,U$ sur les
+extensions de $\dbQ(0)$ par $\dbQ(n)$.
+
+Par contre, la structure de produit
+semi-direct (2.1.2) et la graduation de
+$\gru_\omega$ (i.e., la d\'ecomposition de ce
+provectoriel en produit des
+$\left(\gru_\omega^{\GR}\right)_n$)
+ne sont pas motiviques.  
+La graduation de $\gru_\omega^{\ab}$ l'est,
+image de (2.8.2) par $\omega$, car
+l'action int\'erieure de $G$ sur $\gru^{\ab}$
+se factorise par le quotient $\dbG_m$ de $G$.
+
+Si cela est n\'ecessaire pour \'eviter une
+ambiguit\'e, on \'ecrira
+$G\left<\MT(\scrO_S)\right>$ et
+$U\left<\MT(\scrO_S)\right>$ au lieu de $G$
+et $U$.
+
+\subhead
+2.9
+\endsubhead
+La r\'ealisation de de Rham $M_{\DR}$ de $M$
+dans $\MT(k)$ est un $k$-espace vectoriel, muni
+d'une filtration par le poids $W$ image de
+celle de $M$, et d'une filtration
+d\'ecroissante $F$, la filtration de Hodge.
+Ces filtrations sont fonctorielles en $M$,
+exactes et compatibles au produit tensoriel.
+
+On a
+$$
+\dbQ(1)_{\DR}=k\text{ en poids $-2$ et
+filtration de Hodge $-1$},
+$$
+et $\dbQ(n)_{\DR}$ est donc $k$ en poids $-2n$
+et filtration de Hodge $-n$.
+Pour $M$ quelconque, les filtrations $W$ et
+$F$ sont donc oppos\'ees, et d\'efinissent une
+graduation de $M_{\DR}$ telle que
+$$
+\align
+W_{-2n}(M_{\DR}) &=\oplusop_{m\Ge n}
+  (M_{\DR})_m\\
+F^{-n}(M_{\DR}) &=\oplusop_{m\Le n}
+  (M_{\DR})_m.
+\endalign
+$$
+On a
+$$
+\align
+(M_{\DR})_n &=\Gr_{-2n}^W(M_{\DR})=
+  (\Gr_{-2n}^W(M))_{\DR}\\
+&=(\omega_n(M)\otimes\dbQ(n))_{\DR}=
+  \omega_n(M)\otimes k.
+\endalign
+$$
+On en d\'eduit la
+
+\proclaim{Proposition 2.10}
+Le foncteur fibre $\DR$ sur $\MT(k)$ est
+canoniquement isomorphe au foncteur d\'eduit
+du foncteur fibre $\omega$ par extension des
+scalaires de $\dbQ$ \`a $k$.
+\endproclaim
+
+\subhead
+2.11
+\endsubhead
+Pour $C$ une cl\^{o}ture alg\'ebrique de $\dbR$
+et $\sigma$ un plongement de $k$ dans $C$, \`a
+la th\'eorie de cohomologie
+$$
+X\text{ sur } k\longmapsto H^*\text{ (espace
+topologique $X(C),\dbQ$)}
+$$
+correspond un foncteur fibre $M\mapsto
+M_\sigma$, fonctoriel en $C$.
+Parler de ``plongement dans $C$'' plut\^{o}t
+que de plongement complexe (i.e. dans $\dbC$)
+a l'avantage que la fonctorialit\'e en $C$
+fournit un isomorphisme
+$M_\sigma\to M_{\bar{\sigma}}$.
+Pour un plongement r\'eel, i.e. pour 
+$\sigma=\bar{\sigma}$, cet isomorphisme est
+une involution de $M_\sigma$, le {\it Frobenius 
+r\'eel}.
+
+Un isomorphisme de comparaison canonique d'un
+foncteur fibre $\alpha$ vers un foncteur
+fibre $\beta$ sera not\'e
+$\comp_{\beta,\alpha}$, et son inverse
+$\comp_{\alpha,\beta}$.
+La relation entre la cohomologie de de Rham
+et la cohomologie singuli\`ere fournit
+$$
+\comp_{\sigma,\DR}\colon\,\,M_{\DR}\otimes_{k,\sigma}
+C\simover M_\sigma\otimes_\dbQ C,
+\tag2.11.1
+$$
+fonctoriel en $C$.
+Il induit
+$$
+\comp_{\sigma,\omega}\colon\,\,
+M_\omega\otimes C\simover
+M_\sigma\otimes C\tag2.11.2
+$$
+et permet de voir $M_\sigma$ comme une
+$\dbQ$-structure sur
+$M_{\DR}\otimes_{k,\sigma}C=M_\omega\otimes
+C$.
+On a
+$$
+\dbQ(1)_\sigma=2\pi i\dbQ\Subset
+C=\dbQ(1)_{\DR}\otimes_{k,\sigma}C
+$$
+et donc $\dbQ(n)_\sigma=(2\pi i)^n\dbQ\Subset
+C$.
+Dans ces formules, le choix de la racine
+carr\'ee $i$ de $-1$ n'importe pas.
+
+On reconstitue la $\dbQ$-structure $M_\omega$
+de l'espace vectoriel gradu\'e $M_{\DR}$ \`a
+partir de $M_\sigma$ et $\comp_{\sigma,\DR}$
+par
+$$
+(M_\omega)_n\Subset(M_{\DR})_n\Subset
+(M_{\DR}\otimes_{k,\sigma} C)_n\quad 
+\est~\frac{1}{(2\pi i)^n}\,\comp_{\DR,\sigma}
+\Gr_{-2n}^W(M_\sigma).
+\tag2.11.3
+$$
+
+Ecrivons $G_\omega=\dbG_m\ltimes U_\omega$
+pour $G_\omega\left<\MT(k)\right>$ et sa
+d\'ecomposition 2.5, et $\tau$ pour
+l'inclusion de $\dbG_m$ dans $G_\omega$.
+
+
+\proclaim{Proposition 2.12}
+Il existe $a_\sigma$ dans $G_\omega(C)$ tel que
+$$
+M_\sigma=\comp_{\sigma,\omega}(a_\sigma
+M_\omega).\tag2.12.1
+$$
+Si $i$ est une racine carr\'ee de $-1$ dans
+$C$, on peut choisir les $a_\sigma$ de la forme
+$$
+a_\sigma=a_\sigma^0\tau(2\pi i)\tag2.12.2
+$$
+avec $a_\sigma^0\in U_\omega(C)$ et
+$a_{\bar{\sigma}}^0=(a_\sigma^0)^-$, d'o\`u
+pour $\sigma$ r\'eel, 
+$$
+a_\sigma^0\in U_\omega(\dbR)\qquad
+\text{(pour $\sigma=\bar{\sigma})$}
+\tag2.12.3
+$$
+\endproclaim
+
+La preuve est la m\^{e}me que celle de
+Deligne (1989) 8.10.
+Noter que (2.12.1) d\'etermine $a_\sigma$ \`a
+multiplication \`a droite pr\`es par un \'el\'ement
+de $G_\omega(\dbQ)$.
+Choisissons $i$ dans $C$.
+La fonctorialit\'e en $C$ montre que si
+$a_\sigma$ v'erifie (2.12.1), alors
+$\abar_\sigma$ v\'erifie (2.12.1) pour
+$\bar{\sigma}$.
+Si on impose \`a $a_\sigma$ d'\^{e}tre de la
+forme (2.12.2), avec $a_\sigma^0$ dans
+$U_\omega(C)$, alors
+$\abar_\sigma=\abar_\sigma^0\tau(-2\pi
+i)=\abar_\sigma^0\tau(2\pi i)\tau(-1)$ et
+$\abar_\sigma^0$ est bien un choix possible
+pour $a_{\bar{\sigma}}$.
+Pour la v\'erification qu'on peut m\^{e}me
+prendre $a_\sigma^0\in U_\omega(\dbR)$ si
+$\sigma=\bar{\sigma}$, on renvoie \`a loc.  cit.
+Si on impose \`a
+$a_\sigma$ d'\^{e}tre de la forme (2.12.2),
+son ind\'etermination est r\'eduite \`a
+$U_\omega(\dbQ)$.
+Si $\sigma$ est r\'eel et qu'on impose
+en outre (2.12.3), elle est r\'eduite \`a
+$$
+\align
+U^+(\dbQ):&=U(\dbQ)\CAP\tau(2\pi i)^{-1}
+  U(\dbR)\tau(2\pi i)\\
+&=\exp\left(\prod \gru_{2n}\right).
+\endalign
+$$
+
+\subhead
+2.13
+\endsubhead
+Appelons ``syst\`eme de r\'ealisations de Hodge
+de Tate mixte'' (sur $k$) la donn\'ee\break
+suivante.
+
+\medskip\noindent
+{\sans (a)}\enspace
+un $k$-espace vectoriel gradu\'e $V_{\DR}$.
+La filtration (croissante et index\'ee par les
+entiers pairs) $W_{-2n}:=\oplusop_{m\Ge
+n}(V_{\DR})_m$ est la {\it filtration par le
+poids} et la filtration d\'ecroissante
+$F^{-n}=\oplusop_{m\Le n}(V_{\DR})_m$ la {\it
+filtration de Hodge}.
+
+\medskip\noindent
+{\sans (b)}\enspace
+pour tout plongement $\sigma$ de $k$ dans une
+cl\^{o}ture alg\'ebrique $C$ de $\dbR$, un
+$\dbQ$-espace vectoriel $V_\sigma$ muni d'une
+filtration croissante $W$ index\'ee par les entiers
+pairs, fonctoriel en $C$.
+
+\medskip\noindent
+{\sans (c)}\enspace
+pour $\sigma$ comme in (b), un isomorphisme de
+comparaison $\comp_{\sigma,\DR}\colon\,
+V_{\DR}\otimes_{k,\sigma}C\simover
+V_\sigma\otimes C$, respectant la filtration
+par le poids et fonctoriel en $C$.
+Son inverse est not\'e $\comp_{\DR,\sigma}$.
+
+On suppose ces donn\'ees telles que le
+sous-espace
+$$
+(V_\omega)_n:=\frac{1}{(2\pi
+i)^n}\,\comp_{\DR,\sigma}(\Gr_{-2n}^W(V_\sigma))
+\Subset (V_{\DR})_n\otimes_{k,\sigma} C
+$$
+soit contenu dans $(V_{\DR})_n$ et
+ind\'ependant de $\sigma$.
+
+La cat\'egorie $\scrR_k^H$, ou simplement
+$\scrR^H$, de ces syst\`emes, munie du produit
+tensoriel \'evident, est une cat\'egorie
+tannakienne, et 2.9 \`a 2.11 fournissent un
+$\otimes$-foncteur $\real^H$ de $\MT(k)$ dans
+$\scrR_k^H$.
+
+La remarque suivante permettra de v\'erifier
+\`a peu de frais le caract\`ere motivique
+d'objets qui nous int\'eressent.
+
+\proclaim{Proposition 2.14}
+Le foncteur $\real^H\colon\, \MT(k)\to
+\scrR_k^H$ est pleinement fid\`ele, d'image
+essentielle stable par sous-objet.
+\endproclaim
+
+Le point essentiel est que le foncteur
+$\real^H$ induit une injection de
+$\Ext^1(\dbQ(0),\dbQ(n))$ dans
+$\Ext^1(\real^H(\dbQ(0)),\real^H(\dbQ(n)))$.
+Pour $n=1$, cette injectivit\'e est celle de 
+$$
+(\log\,\sigma)\colon\, k^*\otimes\dbQ\to
+\prod\limits_{\sigma\colon\, k\to\dbC}
+\dbC/2\pi i\dbQ
+$$
+(et un $\sigma$ suffit \`a l'injectivit\'e).
+Pour $n>1$, elle est une cons\'equence de
+l'injectivit\'e de l'application r\'egulateur
+sur $K_{2n-1}(k)$.
+
+\demo{Preuve}
+Le foncteur fibre $\omega$ identifie la
+cat\'egorie $\scrR_k^H$ \`a celle des
+repr\'esentations d'un groupe alg\'ebrique
+$\dbG_m\ltimes U_\omega^H$, et le foncteur
+$\real^H$ au foncteur
+$\Rep(G_m\ltimes U_\omega)\to\Rep(\dbG_m\ltimes
+U_\omega^H)$ d\'efini par un homomorphisme
+$$
+\dbG_m\ltimes U_\omega^H\to \dbG_m\ltimes U_\omega.
+$$
+L'injectivit\'e sur $\Ext^1$ assure que ce
+morphisme est surjectif, et 2.14 en
+r\'esulte.
+\enddemo
+
+\subhead
+2.15 Variantes
+\endsubhead
+(i) Puisque $\MT(\scrO_S)$ est une
+sous-cat\'egorie pleine de $\MT(k)$ stable par
+sous-objet, 2.14 vaut \'egalement pour le
+foncteur
+$$
+\real^H\colon\, \MT(\scrO_S)\to \scrR_k^H
+\tag2.15.1
+$$
+
+\noindent
+(ii)
+Supposons donn\'ee une factorisation du
+foncteur 2.15.1 par une cat\'egorie
+ab\'elienne $\scrR:$
+$$
+\real^H=F\circ \real^\scrR\colon\,
+\MT(\scrO_S)\to\scrR\to\scrR_k^H,
+$$
+avec $\real^\scrR$ et $F$ exacts et $F$
+fid\`ele.
+Le foncteur $\real^\scrR$ est alors pleinement
+fid\`ele d'image essentielle stable par
+sous-objet.
+``Pleinement fid\`ele'' r\'esulte formellement
+de ``$F$ fid\`ele'' et ``$F\circ\real^\scrR$
+pleinement fid\`ele''.
+Que $F$ soit exact et fid\`ele implique que
+pour $R$ dans $\scrR$, $F$ induit une
+injection
+$$
+\{\text{sous-objets de $R$}\}\longrightarrow
+\{\text{sous-objets de $F(R)$}\}
+$$
+et ``image essentielle stable par
+sous-objet'' r\'esulte formellement de la
+m\^{e}me propri\'et\'e pour
+$F\circ\real^\scrR$.
+
+On peut par exemple prendre pour $\scrR$ la
+cat\'egorie $\scrR^{H+\ell}$ suivante de
+syst\`emes de r\'ealisations: un objet est la
+donn\'ee de (a) (b) (c) comme en 2.13, plus
+les donn\'ees $\ell$-adiques suivantes:
+
+\medskip\noindent
+{\sans (d)}\enspace
+pour $\ell$ un nombre premier et $\kbar$ une
+cl\^{o}ture alg\'ebrique de $k$, un
+$\dbQ_\ell$-espace vectoriel $V_\ell$, muni
+d'une filtration finie croissante $W$ index\'ee par
+les entiers pairs, la filtration par le poids,
+d\'ependant fonctoriellement de $\kbar$.
+La fonctorialit\'e en $\kbar$ doit d\'efinir une
+action continue de $\Gal(\kbar/k)$, et on
+demande que la repr\'esentation
+$\Gr_{-2n}^W(V_\ell)$ de $\Gal(\kbar/k)$ soit
+isomorphe \`a une somme de copies de
+$\dbQ_\ell(n)$.
+
+\medskip\noindent
+{\sans (e)}\enspace
+pour $\sigma$ un plongement de $k$ dans une
+cl\^{o}ture alg\'ebrique $C$ de $\dbR$, et
+pour $\kbar$ la cl\^{o}ture alg\'ebrique de
+$k$ dans $C$, un isomorphisme de comparaison
+$$
+\comp_{\ell,\sigma}\colon\,
+V_\sigma\otimes\dbQ_\ell\simover V_\ell
+$$
+fonctoriel en $C$.
+
+On suppose l'existence d'un syst\`eme de
+r\'eseaux $M_{\sigma,\dbZ}\Subset M_\sigma$
+tels que les
+$$
+\comp_{\ell,\sigma}(M_{\sigma,\dbZ}\otimes \dbZ_l)
+\Subset V_\ell
+$$
+soient stables sous $\Gal(\kbar/k)$ et
+ind\'ependants de $\sigma$.
+
+Tant dans $\scrR^H$ que dans $\scrR^{H+\ell}$,
+les seuls objets simples sont les
+r\'ealisations des $\dbQ(n)$.
+
+\subhead
+2.16
+\endsubhead
+Pour $k'$ une extension finie de $k$, on
+dispose d'un $\otimes$-foncteur ``extension du
+corps de base \`a $k'$'': $M\mapsto M_{(k')}$
+de $\MT(k)$ dans $\MT(k')$.
+L'existence et les propri\'et\'es du morphisme
+``norme'' en $K$-th\'eorie assurent par
+application de (0.4) que 
+$$
+\Ext_{\MT(k)}^1(\dbQ(n),\dbQ(m))\to
+\Ext_{\MT(k')}^1(\dbQ(n),\dbQ(m))
+\tag2.16.1
+$$
+est injectif et que, pour $k'/k$ une extension
+galoisienne, l'image est form\'ee des
+invariants sous Galois:
+$$
+\Ext_{\MT(k)}^1(\dbQ(n),\dbQ(m))\simover
+\Ext_{\MT(k')}^1(\dbQ(n),\dbQ(m))^{\Gal(k'/k)}.
+\tag2.16.2
+$$
+
+Par les arguments de la preuve de 2.14,
+l'injectivit\'e de (2.16.1) implique que le
+foncteur $M\mapsto M_{(k')}$ est pleinement
+fid\`ele, d'image essentielle stable par
+sous-objet.
+En particulier, si un motif de Tate mixte
+$M'$ sur $k'$ provient d'un motif de Tate
+mixte $M$ sur $k$, ce dernier est
+d\'etermin\'e \`a isomorphisme unique pr\`es
+par $M'$.
+Si la place finie $v'$ de $k'$ domine la
+place $v$ de $k$, $M'$ est non ramifi\'e en
+$v'$ si et seulement si $M$ l'est en $v$.
+
+\subhead
+2.17
+\endsubhead
+Par 2.16, les cat\'egories tannakiennes
+$\MT(k)$, pour $k$ variable, forment un
+pr\'echamp sur le site \'etale de
+$\Spec(\dbQ)$.
+On note $\MAT$ le champ associ\'e et on appelle
+$\MAT(k)$ la cat\'egorie des motifs
+d'Artin-Tate mixte sur $k$.
+Explicitons cette d\'efinition.
+
+Soit $k_1$ une extension galoisienne de $k$.
+Notons $\scrC(k_1/k)$ la cat\'egorie des
+extensions finies $k'$ de $k$ dans lesquelles
+peut se plonger $k_1$.
+Soit $\MAT(k_1/k)$ la cat\'egorie des sections
+de $\MT$ au-dessus de $\scrC(k_1/k)$: la
+cat\'egorie des syst\`emes d'objets
+$M_{(k')}\in \MT(k')$ pour $k'\in\scrC(k_1/k)$,
+et d'isomorphismes $M_{(k')(k'')}\simover
+M_{(k'')}$ pour $k'\to k''$ dans
+$\scrC(k_1/k)$, v\'erifiant une
+compatibilit\'e pour $k'\to k''\to k'''$.
+La cat\'egorie $\MAT(k)$ est la limite
+inductive des $\MAT(k_1/k)$, pour
+$\scrC(k_1/k)$ de plus en plus petit.
+
+La filtration par le poids des objets des
+$\MT(k')$ \'etant fonctorielle et compatible
+aux extensions de corps de base, elle fournit
+une filtration par le poids sur chaque objet
+de $\MAT(k_1/k)$, ou de $\MAT(k)$.
+
+La cat\'egorie $\MAT(k)$ h\'erite de $\MT(k')$
+de foncteurs fibre $\omega$, $\DR$, $\sigma$
+et $\ell$, et d'isomor-\break
+phismes de comparaison.
+
+\medskip\noindent
+{\it Foncteur fibre $\omega$}:
+le foncteur $M=(M_{(k')})_{k'\in\scrC(k_1/k)}
+\mapsto M_{(k_1)}$ est une \'equivalence de
+$\MAT(k_1/k)$ avec la cat\'egorie des objets de
+$\MT(k_1)$ munis d'une action semi-lin\'eaire
+de $\Gal(k_1/k)$
+(donn\'ee de descente galoisienne).
+Cette donn\'ee de descente induit une action
+de $\Gal(k_1/k)$ sur
+$\omega(M):=\omega(M_{(k_1)})$ et le groupe de
+Galois motivique $\Aut(\omega)$ de
+$\MAT(k_1/k)$ est le produit semi-direct de
+$\Gal(k_1/k)$ par le groupe de Galois
+motivique de $\MT(k_1)$.
+
+Soit $\kbar$ une cl\^{o}ture alg\'ebrique de
+$k$ et passons \`a la limite sur $k_1\Subset
+\kbar$.
+On d\'efinit
+$$
+\omega(M):=\omega(M_{(k_1)})\qquad
+\text{pour $k_1\Subset \kbar$ assez grand}.
+$$
+Ce $\dbQ$-espace vectoriel gradu\'e est muni
+d'une action continue de $\Gal(\kbar/k)$.
+
+\medskip\noindent
+{\it Foncteur fibre $\DR$}:
+d\'efini par descente galoisienne \`a partir
+des foncteurs fibres $\DR$ des $\MT(k')$.
+Pour $M$ dans $\MAT(k_1/k)$ et
+$k'\in\scrC(k_1/k)$, on a fonctoriellement en
+$k'$
+$$
+M_{\DR}\otimes_k k'\simover (M_{(k')})_{\DR},
+$$
+et l'isomorphisme 2.10 fournit un isomorphisme
+de comparaison 
+$$
+M_{\DR}=(\omega(M_{(k_1)})\otimes
+k_1)^{\Gal(k_1/k)}.
+$$
+
+\medskip\noindent
+{\it Foncteur fibre $\sigma$}:
+pour $\sigma$ un plongement de $k$ dans une
+cl\^{o}ture alg\'ebrique $C$ de $\dbR$.
+C'est
+$$
+M_\sigma:=(M_{(k')})_{\sigma'}
+$$
+pour $\sigma$ le compos\'e $k\Subset k'
+\,{\overset{\smash\sigma'}\to \longhook\,} C$ et $k'$
+assez grand pour que $M_{(k')}$ soit dans
+$\MT_{(k')}$.
+
+\medskip\noindent
+{\it Foncteur fibre $\ell$}:
+il d\'epend du choix d'une cl\^{o}ture
+alg\'ebrique $\kbar$ de $k$, et est d\'efini
+comme \'etant $(M_{(k')})_\ell$ pour
+$k'\Subset\kbar$ assez grand. 
+
+\medskip\noindent
+{\it Cas particulier.}
+Les objets purement de poids $0$ de $\MT(k')$,
+i.e. tels que $\Gr_{-2n}W=0$ pour $n\not=0$,
+sont les sommes de copies de $\dbQ(0)$, et
+$\omega_0$ identifie leur cat\'egorie \`a
+celle des $\dbQ$-espaces vectoriels.
+En cons\'equence, pour $\kbar$ une cl\^{o}ture
+alg\'ebrique de $k$, le foncteur $\omega$
+identifie la cat\'egorie des objets purement
+de poids $0$ de $\MAT(k)$ avec celle des
+$\dbQ$-espaces vectoriels munis d'une action
+continue de $\Gal(\kbar/k)$ (motifs d'Artin).
+
+Soit $k_1$ une extension galoisienne finie de
+$k$.
+Il r\'esulte de 2.16 que le foncteur $\MT(k)\to
+\MAT(k_1/k)$ est pleinement fid\`ele d'image
+essentielle stable par sous-objet.
+L'image essentielle est aussi stable par
+extensions:
+
+\proclaim{Proposition 2.18}
+Pour qu'un objet $M$ de $\MAT(k_1/k)$ soit dans
+$\MT(k)$, il faut et il suffit que l'action de
+$\Gal(k_1/k)$ sur $\omega(M)$ soit triviale.
+\endproclaim
+
+Si $M$ est purement de poids $0$, la
+proposition r\'esulte du ``cas particulier''
+ci-dessus.
+Le cas o\`u $M$ est pur, i.e. purement d'un
+seul poids, en r\'esulte par tensorisation avec
+un $\dbQ(n)$.
+Il reste \`a v\'erifier une stabilit\'e par
+extensions.
+
+\demo{$1^{\text{ere}}$ preuve}
+Une suite spectrale d'Hochschild-Serre
+fournit, pour $M$ et $N$ dans $\MT(k)$, des
+isomorphismes
+$$
+\Ext_{\MAT(k_1/k)}^p(M,N)\simover \Ext^p
+(M_{(k_1)},N_{(k_1)})^{\Gal(k_1/k)}.
+$$
+
+Pour v\'erifier que
+$$
+\Ext_{\MT(k)}^p(M,N)\to\Ext_{\MAT(k'/k)}^p
+(M,N)=\Ext_{\MT(k_1)}^p(M_{(k_1)},
+N_{(k_1)})^{\Gal(k_1/k)}
+$$
+est bijectif pour $p=0,1$ et injectif pour
+$p=2$, il suffit par d\'evissage de le
+v\'erifier pour $M$ et $N$ de la forme
+$\dbQ(m)$ et $\dbQ(n)$.
+Le cas $p=2$ r\'esulte de la nullit\'e des
+$\Ext^2$, le cas $p=0$ r\'esulte de ce que
+$\Hom=0$, sauf pour $m=n$, o\`u
+$\End(\dbQ(n))=\dbQ$, et $p=1$ est 2.16.
+\enddemo
+
+Plutot que de d\'efinir la suite spectrale
+d'Hochschild-Serre requise, on peut la
+paraphraser:
+
+\demo{$2^{\text{\`eme}}$ preuve}
+Si $M$ est une extension de $\dbQ(n)$ par
+$\dbQ(n+r)$, que $M_{(k_1)}$ admette une
+donn\'ee de descente de $k_1$ \`a $k$,
+respectant la structure d'extension de
+$\dbQ(n)$ par $\dbQ(n+r)$, implique que la
+classe de $M_{(k_1)}$ dans
+$\Ext_{\MT(k_1)}^1(\dbQ(n),\dbQ(n+r))$ est fixe
+sous $\Gal(k_1/k)$.
+Elle provient donc de la classe d'une
+extension $\Mtil$ de $\dbQ(n)$ par
+$\dbQ(n+r)$ dans $\MT(k)$.
+On v\'erifie, utilisant que
+$\Hom_{\MT(k_1)}(\dbQ(n),\dbQ(n+r))=0$, que $M$
+est isomorphe \`a l'image de $\Mtil$.
+
+Prouvons par r\'ecurrence sur $r\Ge 0$ que 2.18
+est vrai sous l'hypoth\`ese additionnelle que
+pour un $n$ on ait $M=W_{-2n}M$ et
+$W_{-2(n+r+1)}M=0$.
+
+Le cas o\`u $r=0$ ($M$ pur) a d\'ej\`a \'et\'e
+trait\'e.
+Le cas $r=1$ se r\'eduit \`a celui d'une
+extension de $\dbQ(n)$ par $\dbQ(n+1)$.
+
+Pour $r\Ge 1$, l'hypoth\`ese de r\'ecurrence
+assure que $M'=M/W_{-2(n+r)}M$ et
+$M''=W_{-2(n+1)}M$ proviennent de $\Mtil'$ et
+$\Mtil''$ dans $\MT(k)$.
+Ce sont des extensions de la forme:
+$\Gr_{-2n}^WM$ par $N$ et $N$ par
+$\Gr_{-2(n+r)}^W M$.
+Par nullit\'e des $\Ext^2$ dans $\MT(k)$, il
+existe dans $\MT(k)$ un objet $\Mtil$,
+extension it\'er\'ee de $\Gr_{-2n}^WM$ par $N$
+par $\Gr_{-2(n+r)}^WM$, redonnant $\Mtil'$
+et $\Mtil''$.
+L'image de $\Mtil$ dans $\MAT(k_1/k)$ diff\`ere de
+$M$ par une extension de $\Gr_{-2n}^WM$ par
+$\Gr_{-2(n+r)}^W M$.
+\enddemo
+
+Cette derni\`ere provient d'une extension dans
+$\MT(k)$, par r\'eduction au cas d'une
+extension de $\dbQ(n)$ par $\dbQ(n+r)$, 
+et ceci permet de corriger $\Mtil$ pour que son
+image devienne isomorphe \`a $M$.
+

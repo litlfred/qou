@@ -8,147 +8,89 @@ pages: 13-15
 source_pdf: 2108.09349v2.pdf
 source_sha256: 4c732bfcbf3dfb16
 doc_brief: "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS BARBARA NIMERSHIEM — We construct topological triangulations for complements of ( −2, 3,n )-pretzel knots and links with n≥ 7."
+text_source: latex
+latex_prose_ratio: 0.95
+latex_coverage_ratio: 0.932
 ---
-bolic tetrahedron, T , with dihedral angles θ1, θ2, and θ3 is given by
-V (T ) = L(θ1) + L(θ2) + L(θ3),
-where the Lobachevsky function, L, is deﬁned as
-L(x) =−
-∫ x
-0
-log|2 sint|dt.
-14 BARBARA NIMERSHIEM
-Deﬁnition 3.3. For a point θ∈A (τ), which speciﬁes angles for the n tetrahedra Ti∈ τ and has
-all θi∈ (0,π ), deﬁne the volume associated to θ,V(θ), by
-V(θ) =
-n∑
-i=1
-V (Ti) =
-3n∑
-i=1
-L(θi)
-and note thatV(θ)> 0 for θ∈A (τ).
-As summarized in [5], L is well-deﬁned and continuous on R. Thus, the deﬁnition of V can be
-extended to the closure of A(τ), which may include points with coordinates equal to 0 or π where
-the integral itself is improper. If θ∈A(τ), thenV(θ)≥ 0.
-Straightforward tetrahedra-by-tetrahedra calculations show that for a positive angle structure θ
-and a tangent vector ⃗ v∈TθA(τ),
-∂V
-∂⃗ v=
-3n∑
-i=1
-−vi log sinθi and ∂2V
-∂⃗ v2 < 0. (1)
-See, for example, [5, Lemma 5.3].
-BecauseV is strictly concave down onA(τ), any critical point inA(τ) is unique and an absolute
-maximum. In fact, the ﬁrst and second partials (1) are enough to prove the same for a maximal
-point on the boundary.
-Proposition 3.1. WheneverA(τ)⁄=∅, the point at which the volume functional V :A(τ)→ [0,∞)
-attains its maximum is unique.
-Proof. If there is a critical point α inA(τ), the strict concavity ofV guarantees thatα is unique and
-thatV(α) is the maximum volume. If, on the other hand, there is no critical point on the interior,
-the compactness ofA(τ) ensures that there is a point α∈A(τ)−A(τ) withV(α) maximal. To show
-such an angle structure is unique, we ﬁrst examine its coordinates. Because α /∈A (τ), there is at
-least one tetrahedron in τ with an assigned angle of 0 or π. The maximality of α further constrains
-the angles of such a tetrahedron as noted in the following lemma.
-Lemma 3.2. WhenV(α) is a maximum, any tetrahedron assigned an angle of 0 or π must have
-angles of 0, 0, and π in some order.
-Proof of Lemma 3.2. By Condition (2) of Deﬁnition 3.1, the angles in a tetrahedron must sum to π,
-so this statement is obviously true if one angle in a tetrahedron is assigned π or if two angles are
-assigned 0. We now argue, as also noted in [9, Proposition 7.1] and [10, Proposition 7], that assigning
-exactly one 0 angle contradicts the maximality of α.
-Consider, for example, a tetrahedron, T0∈ τ, with nonnegative angles 0, θ0, and π−θ0. For
-any 0 < λ < 1, deﬁne a family of tetrahedra T (t)|t≥0 with angles θ1 = t, θ2 = θ0−λt, and
-θ3 = π− (t +θ0−λt), so T (0) = T0 and, as t increases, the angles of the tetrahedron change —
-θ1 is increased, while θ2 and θ3 are decreased. The ﬁrst partial in (1) restricted to this family of
-tetrahedra yields
-dV (T (t))
-dt
-⏐⏐⏐
-t=0+
-=
-3∑
-i=1
-−dθi
-dt log sinθi
-⏐⏐⏐
-t=0+
-= +∞.
-In other words, increasing the solitary 0 angle by a small amount would increase T0’s volume (and
-thus the total volumeV) by a much larger amount, violating the maximality ofα. Thus, if a maximal
-angle structure assigns any angles in {0,π} to a tetrahedron, two of its angles are assigned 0 and
-one π, thus proving the lemma. We call a tetrahedron with angles in {0,π} ﬂat and observe that
-its volume is 0. □
-Returning to the proof of Proposition 3.1, we will use the constraints Lemma 3.2 imposes on the
-coordinates of a maximal point α∈A(τ)−A (τ) to prove thatα is unique. Let β be inA(τ)−A (τ)
-withV(β) =V(α) and let µ∈ [0,π ]3n be the point whose coordinates are determined by averaging
-GEOMETRIC TRIANGULATIONS OF A F AMILY OF HYPERBOLIC 3-BRAIDS 15
-those of α and β. Then µ∈A(τ), because the set A(τ) is convex. We will examine the volume of
-each tetrahedron T under the angle structure assigned by µ and will denote this volume byV(µ|T ).
-Case 1: If α and β assign the same angles to a tetrahedron T , then their average µ does as
-well, soV(µ|T ) is equal to V(α|T ) (and alsoV(β|T )).
-Case 2: If α and β assign diﬀerent angles to a tetrahedron T and both α|T and β|T are ﬂat,
-then, because α and β are maximum points, the angles must be 0, 0, and π (in diﬀerent
-orders), and the coordinates of µ|T are 0, π
-2 , and π
-2 in some order. In this case, V(µ|T )
-equals 0 just as V(α|T ) andV(β|T ) do.
-Case 3: Ifα andβ assign diﬀerent angles to a tetrahedron T and at least one of α|T orβ|T is
-not ﬂat, we will argue thatV(µ|T ) is strictly greater than the average ofV(α|T ) andV(β|T ).
-Without loss of generality suppose α|T is not ﬂat. Deﬁne γ(t) to be the line segment joining
-α|T and β|T :
-γ(t) =tα|T + (1−t)β|T for t∈ [0, 1].
-Let V (t) be the volume of the tetrahedron whose angles are given by γ(t). As a restriction
-ofV, the function V is continuous on [0, 1]. Also, because α|T is not ﬂat, γ is in (0,π )3 for
-0<t ≤ 1, so V is diﬀerentiable on (0, 1] and by the second partial in (1), V′′ < 0. Applying
-the Mean Value Theorem to V yields points c1∈
-(
-0, 1
-2
-)
-and c2∈
-( 1
-2, 1
-)
-with
-V′(c1) = 2
-(
-V
-( 1
-2
-)
-−V (0)
-)
-V′(c2) = 2
-(
-V (1)−V
-( 1
-2
-))
-and negative second derivatives, so V′(c1)>V ′(c2), which means
-2V
-( 1
-2
-)
->V (1) +V (0).1
-Because V
-( 1
-2
-)
-= V(µ|T ), V (1) = V(α|T ), and V (0) = V(β|T ), this inequality implies
-V(µ|T )> 1
-2(V(α|T ) +V(β|T )).
-In all cases, the volume of a tetrahedron T computed usingµ, the average of the angle structures,
-is greater than or equal to the average of the volumes of T computed using the angle structures α
-and β, so summing the individual volumes over all tetrahedra in τ yields
-V(µ)≥ 1
-2(V(α) +V(β)) =V(α)
-with equality only when there are no tetrahedra in Case 3. But V(α) is the maximum volume, so
-V(µ)≤V (α), meaning V(µ) =V(α) and there are no Case 3 tetrahedra. The only way α and β
-can assign diﬀerent angles to a tetrahedron T is if α|T and β|T are both ﬂat (Case 2). In this case,
-V(µ) =V(α), so µ is also maximal, but, as we have seen, the coordinates of µ|T are 0, π
-2 , and π
-2 ,
-which is not allowed for maximal angle structures. Therefore, α andβ cannot assign diﬀerent angles
-to any of the tetrahedra and β =α, which is the unique maximum point. □
-Positive angle structures that maximize the total volume play an important role in the Casson-
-Rivin program.
+\label{sec:volume}
+
+Recall (\cite{MilnorHypGeom}, for example) that the volume of an ideal hyperbolic tetrahedron, $T$, with dihedral angles $\theta_1$, $\theta_2$, and $\theta_3$ is given by
+$$
+V(T)=\lob(\theta_1)+\lob(\theta_2)+\lob(\theta_3),
+$$
+where the Lobachevsky function, $\lob$, is defined as
+$$
+\lob(x)=-\int_0^x\log|2\sin t|\,dt.
+$$  
+\begin{defn}\label{def:volume}
+For a point $\theta\in\mathcal A(\tau)$, which specifies angles for the $n$ tetrahedra $T_i\in\tau$ and has all $\theta_i\in(0,\pi)$, define the \emph{volume associated to $\theta$}, $\mathcal{V}(\theta)$, by
+$$
+\mathcal V(\theta) =
+\displaystyle{\sum_{i=1}^{n}V(T_i)}= \displaystyle{\sum_{i=1}^{3n}\lob(\theta_i)} 
+$$
+ and note that $\mathcal{V}(\theta)>0$ for $\theta\in\mathcal A(\tau)$.
+\end{defn}
+
+As summarized in~\cite{AngledtoHyperbolic}, $\lob$ is well-defined and continuous on $\R$.  Thus, the definition of~$\mathcal V$ can be extended to the closure of~$\mathcal A(\tau)$, which may include points with coordinates equal to 0 or $\pi$ where the integral itself is improper. If $\theta\in\overline{\mathcal A(\tau)}$, then $\mathcal{V}(\theta)\ge0$.
+
+Straightforward tetrahedra-by-tetrahedra calculations show that for a positive angle structure $\theta$ and a tangent vector $\vec v\in T_\theta\mathcal{A}(\tau)$,
+\begin{equation}
+    \frac{\partial\mathcal{V}}{\partial \vec v}=\displaystyle{\sum_{i=1}^{3n} -v_i\log \sin \theta_i} \quad\text{ and }\quad\frac{\partial^2\mathcal{V}}{\partial \vec v\, ^2}<0.\label{eq:derivatives}
+\end{equation}
+See, for example, \cite[Lemma 5.3]{AngledtoHyperbolic}.
+
+Because $\mathcal{V}$ is strictly concave down on~$\mathcal A(\tau)$, any critical point in $\mathcal{A}(\tau)$ is unique and an absolute maximum.  In fact, the first and second partials~\eqref{eq:derivatives} are enough to prove the same for a maximal point on the boundary. 
+
+\begin{prop}\label{prop:maxunique}
+Whenever $\mathcal{A}(\tau)\ne\emptyset$, the point at which the volume functional $\mathcal V: \overline{\mathcal A(\tau)}\rightarrow[0,\infty)$ attains its maximum is unique.
+\end{prop}
+
+\begin{proof}
+If there is a critical point $\alpha$ in $\mathcal A(\tau)$, the strict concavity of $\mathcal{V}$ guarantees that $\alpha$ is unique and that $\mathcal{V}(\alpha)$ is the maximum volume.  If, on the other hand, there is no critical point on the interior, the compactness of $\overline{\mathcal A(\tau)}$ ensures that there is a point $\alpha\in\overline{\mathcal A(\tau)}-\mathcal A(\tau)$ with $\mathcal{V}(\alpha)$ maximal.  To show such an angle structure is unique, we first examine its coordinates.  Because $\alpha\notin\mathcal A(\tau)$, there is at least one tetrahedron in $\tau$ with an assigned angle of $0$ or $\pi$.  The maximality of $\alpha$ further constrains the angles of such a tetrahedron as noted in the following lemma.
+
+\begin{lem}\label{lem:00pi}
+When $\mathcal{V}(\alpha)$ is a maximum, any tetrahedron assigned an angle of $0$ or $\pi$ must have angles of $0$, $0$, and $\pi$ in some order. 
+\end{lem}
+
+\begin{proof}[Proof of Lemma~\ref{lem:00pi}]
+By Condition~(2) of Definition~\ref{def:anglestructure}, the angles in a tetrahedron must sum to~$\pi$, so this statement is obviously true if one angle in a tetrahedron is assigned~$\pi$ or if two angles are assigned $0$. We now argue, as also noted in \cite[Proposition~7.1]{GwithF2Bridge} and~\cite[Proposition~7]{DehnFillings}, that  assigning exactly one $0$ angle contradicts the maximality of~$\alpha$. 
+
+Consider, for example, a tetrahedron, $T_0\in\tau$, with nonnegative angles $0$, $\theta_0$, and $\pi-\theta_0$. For any $0<\lambda<1$, define a family of tetrahedra $T(t)|_{t\ge0}$ with angles $\theta_1=t$, $\theta_2=\theta_0-\lambda t$, and $\theta_3=\pi-(t+\theta_0-\lambda t)$, so $T(0)=T_0$ and, as $t$ increases, the angles of the tetrahedron change --- $\theta_1$ is increased, while $\theta_2$ and $\theta_3$ are decreased.  The first partial in~\eqref{eq:derivatives} restricted to this family of tetrahedra yields
+$$
+\frac{dV(T(t))}{dt}\Big|_{t=0^+}=\displaystyle{\sum_{i=1}^{3} -\frac{d\theta_i}{dt} \log \sin \theta_i}\Big|_{t=0^+}=+\infty.
+$$
+In other words, increasing the solitary $0$ angle by a small amount would increase $T_0$'s volume (and thus the total volume $\mathcal{V}$) by a much larger amount, violating the maximality of~$\alpha$.  Thus, if a maximal angle structure assigns any angles in $\{0,\pi\}$ to a tetrahedron, two of its angles are assigned $0$ and one~$\pi$, thus proving the lemma.  We call a tetrahedron with angles in $\{0,\pi\}$ \emph{flat} and observe that its volume is~$0$.
+\end{proof}
+
+Returning to the proof of Proposition~\ref{prop:maxunique}, we will use the constraints Lemma~\ref{lem:00pi} imposes on the coordinates of a maximal point $\alpha\in\overline{\mathcal A(\tau)}-\mathcal A(\tau)$ to prove that $\alpha$ is unique. Let $\beta$ be in $\overline{\mathcal A(\tau)}-\mathcal A(\tau)$ with $\mathcal{V}(\beta)=\mathcal{V}(\alpha)$ and let $\mu\in[0,\pi]^{3n}$ be the point whose coordinates are determined by averaging those of $\alpha$ and~$\beta$. Then $\mu\in\overline{\mathcal A(\tau)}$, because the set $\overline{\mathcal A(\tau)}$ is convex.  We will examine the volume of each tetrahedron $T$ under the angle structure assigned by~$\mu$ and will denote this volume by $\mathcal{V}(\mu|_T)$.
+
+\begin{description}
+    \item [Case 1] If $\alpha$ and $\beta$ assign the same angles to a tetrahedron $T$, then their average $\mu$ does as well, so $\mathcal{V}(\mu|_T)$ is equal to $\mathcal{V}(\alpha|_T)$ (and also $\mathcal{V}(\beta|_T)$).
+    
+    \item[Case 2] If $\alpha$ and $\beta$ assign different angles to a tetrahedron $T$ and both $\alpha|_T$ and $\beta|_T$ are flat, then, because $\alpha$ and $\beta$ are maximum points, the angles must be $0$, $0$, and $\pi$ (in different orders), and the coordinates of $\mu|_T$ are $0$, $\frac\pi2$, and $\frac\pi2$ in some order.  In this case, $\mathcal{V}(\mu|_T)$ equals $0$ just as $\mathcal{V}(\alpha|_T)$ and $\mathcal{V}(\beta|_{T})$ do.
+    
+    \item[Case 3] If $\alpha$ and $\beta$ assign different angles to a tetrahedron~$T$ and at least one of $\alpha|_T$ or $\beta|_T$ is not flat, we will argue that $\mathcal{V}(\mu|_T)$ is strictly greater than the average of $\mathcal{V}(\alpha|_T)$ and $\mathcal{V}(\beta|_T)$.  Without loss of generality suppose $\alpha|_T$ is not flat.  Define $\gamma(t)$ to be the line segment joining $\alpha|_T$ and~$\beta|_T$:
+    $$
+    \gamma(t)=t\alpha|_T + (1-t)\beta|_T \text{ for } t\in[0,1].
+    $$
+    Let $V(t)$ be the volume of the tetrahedron whose angles are given by $\gamma(t)$.  As a restriction of $\mathcal{V}$, the function $V$ is continuous on $[0,1]$.  Also, because $\alpha|_T$ is not flat, $\gamma$ is in $(0,\pi)^3$ for $0<t\le 1$, so $V$ is differentiable on $(0,1]$ and by the second partial in~\eqref{eq:derivatives}, $V^{\prime\prime}<0$.  Applying the Mean Value Theorem to $V$ yields points $c_1\in\left(0,\frac12\right)$ and $c_2\in\left(\frac12,1\right)$ with   
+    \begin{align*}
+        V^\prime(c_1)&=2\left(V\left(\textstyle{\frac12}\right)-V\left(0\right)\right)\\
+        V^\prime(c_2)&=2\left(V\left(1\right)-V\left(\textstyle{\frac12}\right)\right)
+    \end{align*}
+    and negative second derivatives, so $V^\prime(c_1)>V^\prime(c_2)$, which means 
+    \begin{equation*}
+        2V\left(\textstyle{{\frac12}}\right)>V(1)+V(0).\footnote{If neither $\alpha|_T$ nor $\beta|_T$ is flat, this inequality follows immediately from the strict concavity of $V$.  We appeal to the Mean Value Theorem, because, in general, strict concavity does not extend to the boundary of $\mathcal A(\tau)$.}
+    \end{equation*}
+    Because $V\left(\textstyle{\frac12}\right)=\mathcal{V}(\mu|_T)$, $V(1)=\mathcal{V}(\alpha|_T)$, and $V(0)=\mathcal{V}(\beta|_T)$, this inequality implies $\mathcal{V}(\mu|_T)>\frac12(\mathcal{V}(\alpha|_T)+\mathcal{V}(\beta|_T))$.  
+\end{description}
+
+In all cases, the volume of a tetrahedron $T$ computed using $\mu$, the average of the angle structures, is greater than or equal to the average of the volumes of $T$ computed using the angle structures $\alpha$ and $\beta$, so summing the individual volumes over all tetrahedra in $\tau$ yields
+$$
+\mathcal{V}(\mu)\ge\textstyle{\frac12}(\mathcal{V}(\alpha)+\mathcal{V}(\beta))=\mathcal{V}(\alpha)
+$$
+with equality only when there are no tetrahedra in Case~3.  But $\mathcal{V}(\alpha)$ is the maximum volume, so $\mathcal{V}(\mu)\le\mathcal{V}(\alpha)$, meaning $\mathcal{V}(\mu)=\mathcal{V}(\alpha)$ and there are no Case~3 tetrahedra.  The
+only way $\alpha$ and $\beta$ can assign different angles to a tetrahedron~$T$ is if $\alpha|_T$ and $\beta|_T$ are both flat (Case 2).  In this case,  $\mathcal{V}(\mu)=\mathcal{V}(\alpha)$, so $\mu$ is also maximal, but, as we have seen, the coordinates of $\mu|_T$ are $0$, $\frac\pi2$, and $\frac\pi2$, which is not allowed for maximal angle structures.  Therefore, $\alpha$ and $\beta$ cannot assign different angles to any of the tetrahedra and $\beta=\alpha$, which is the unique maximum point.
+\end{proof}
+
+Positive angle structures that maximize the total volume play an important role in the Casson-Rivin program.

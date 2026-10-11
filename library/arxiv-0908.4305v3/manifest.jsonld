@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0908.4305v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0908.4305v3",
+  "contains": [
+    "library/arxiv-0908.4305v3/sections/sec-000",
+    "library/arxiv-0908.4305v3/sections/sec-001",
+    "library/arxiv-0908.4305v3/sections/sec-002",
+    "library/arxiv-0908.4305v3/sections/sec-003",
+    "library/arxiv-0908.4305v3/sections/sec-004",
+    "library/arxiv-0908.4305v3/sections/sec-005",
+    "library/arxiv-0908.4305v3/sections/sec-006",
+    "library/arxiv-0908.4305v3/sections/sec-007",
+    "library/arxiv-0908.4305v3/sections/sec-008",
+    "library/arxiv-0908.4305v3/sections/sec-009",
+    "library/arxiv-0908.4305v3/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0908.4305&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0908.4305v3",
+    "title_source": "slug",
+    "source_file": "0908.4305v3.pdf",
+    "source_sha256": "ab8d2b335b026a36a5df2b3e50e063fcb7e03fe97eab5731deac6a787a95910d",
+    "pages": 67,
+    "arxiv": {
+      "id": "0908.4305",
+      "version": "3",
+      "primary_class": "math.QA",
+      "stamp_date": "21 Oct 2010"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

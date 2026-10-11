@@ -6,7 +6,8 @@
   "sha256": "bf0f91277a5874ffca7c63af3dbfb4a97dde8c977aa4c061cefbca8fddedb301",
   "bytes": 624516,
   "pages": 47,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -355,6 +356,144 @@
   "likely_scanned": false,
   "toc_entries": 22,
   "sections": 16,
-  "chars_total": 128750
+  "chars_total": 128750,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 23,
+   "overlaid": 15,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-a-plethora-of-negative-dependence-properties-a",
+     "title": "A Plethora of Negative Dependence Properties and Conjectures",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-21-negative-dependence-concepts",
+     "title": "Negative Dependence Concepts",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-22-strongly-rayleigh-measures",
+     "title": "Strongly Rayleigh Measures",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-23-symmetric-homogenization",
+     "title": "Symmetric Homogenization",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-3-negative-dependence-in-mathematics-and-physics",
+     "title": "Negative Dependence in Mathematics and Physics",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-32-hadamard-fischer-inequalities-and-gkk-matrice",
+     "title": "Hadamard-Fischer Inequalities and GKK-Matrices",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-33-determinantal-probability-measures",
+     "title": "Determinantal Probability Measures",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-35-interacting-particle-systems-and-exclusion-ev",
+     "title": "Interacting Particle Systems and Exclusion Evolutions",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-4-negative-dependence-theory-for-strongly-raylei",
+     "title": "Negative Dependence Theory for Strongly Rayleigh Measures",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-42-stability-implies-negative-association",
+     "title": "Stability Implies Negative Association",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-44-the-partial-symmetrization-procedure",
+     "title": "The Partial Symmetrization Procedure",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-5-preservation-of-negative-dependence-by-symmetr",
+     "title": "Preservation of Negative Dependence by Symmetric Exclusion Processes",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-6-almost-exchangeable-measures",
+     "title": "Almost Exchangeable Measures",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-7-negative-results-on-negative-dependence",
+     "title": "Negative Results on Negative Dependence",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

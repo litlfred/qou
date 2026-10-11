@@ -6,7 +6,8 @@
   "sha256": "2f2067b7b583e731e0baec27574c5f7cd189c7bcd3493cfbf9533aa0d44e48eb",
   "bytes": 673028,
   "pages": 50,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -304,6 +305,102 @@
   "likely_scanned": false,
   "toc_entries": 22,
   "sections": 11,
-  "chars_total": 136379
+  "chars_total": 136379,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "dia-tiltings.tex",
+   "tex_sections": 24,
+   "overlaid": 9,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-the-framework",
+     "title": "The framework",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.933,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-12-an-outline-of-the-paper",
+     "title": "An outline of the paper",
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-21-quantum-groups-at-roots-of-unity",
+     "title": "Quantum groups at roots of unity",
+     "prose_ratio": 0.825,
+     "coverage_ratio": 0.88,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-22-weyl-modules-dual-weyl-modules-and-simple-mod",
+     "title": "Weyl modules, dual Weyl modules and simple modules",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.906,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-23-tilting-modules-and-the-tilting-category-t",
+     "title": "Tilting modules and the tilting category T",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-24-the-linkage-principle-and-blocks",
+     "title": "The linkage principle and blocks",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-25-translation-functors",
+     "title": "Translation functors",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-35-the-tilting-category-t-and-its-graded-counter",
+     "title": "The tilting category T and its graded counterpart Tgr",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-41-the-basics-diagrammatic-categories-additive-c",
+     "title": "The basics: diagrammatic categories, additive closures and Karoubi envelopes",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

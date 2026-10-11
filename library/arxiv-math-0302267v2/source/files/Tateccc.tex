@@ -1,0 +1,396 @@
+
+
+%%Changes by Pierre begun on
+%%February 10, 2003 
+%% AMS-TeX file
+%% original begun in July, 2000
+%% Final corrections: February 20, 2003
+
+\documentstyle{amsppt}
+\magnification=1200
+\loadeufm
+%\input epsf.tex
+
+\font\dotless=cmr10 %for the roman i or j to be
+                    %used with accents on top.
+                    %(\dotless\char'020=i)
+                    %(\dotless\char'021=j)
+\font\itdotless=cmti10
+\font\mathdotless=cmmi10
+\def\itumi{{\"{\itdotless\char'020}}}
+\def\itumj{{\"{\itdotless\char'021}}}
+\def\umi{{\"{\dotless\char'020}}}
+\def\umj{{\"{\dotless\char'021}}}
+\def\hati{{\^{\dotless\char'020}}}
+\def\Hati{\hbox{$\hat{\imath}$}}
+\def\Hatj{\hbox{$\hat{\jmath}$}}
+%\font\smaller=cmr5
+\font\boldtitlefont=cmssdc10 scaled\magstep2
+\font\authorfont=cmss10 scaled\magstep1
+\font\sectionfont=cmss10 scaled\magstep1
+\font\sans=cmss10
+
+
+\NoRunningHeads
+\pagewidth{6.5 true in}
+\pageheight{8.9 true in}
+\loadeusm
+
+\catcode`\@=11
+\def\logo@{}
+\catcode`\@=13
+
+
+\newif\iffirstul
+
+\def\ullspecial#1{\ifx\empty#1 \let\next=\relax \else
+    \iffirstul\firstulfalse\else%
+    \discretionary{}{}{\hbox{\ }}\fi%
+$\underline{\vphantom{y}%
+  \hbox{#1}}$\let\next=\ullspecial\fi 
+ \next}
+
+\def\ul#1{\firstultrue\ullspecial#1 \empty }
+%
+\def\undertext#1{$\underline{\vphantom{y}\hbox{#1}}$}
+\def\nspace{\lineskip=1pt\baselineskip=12pt%
+     \lineskiplimit=0pt}
+\def\dspace{\lineskip=2pt\baselineskip=18pt%
+     \lineskiplimit=0pt}
+
+%\def\wedgeop{\operatornamewithlimits{\wedge}\limits}
+\def\smbul{{\sssize\bullet}}
+\def\oplusop{\operatornamewithlimits{\oplus}\limits}
+\def\otimesop{\operatornamewithlimits{\otimes}
+     \limits}
+%\def\Piop{\operatornamewithlimits{\Pi}\limits}
+\def\colim{\operatornamewithlimits{\text{\rm colim}}}
+\def\w{{\mathchoice{\,{\scriptstyle\wedge}\,}
+{{\scriptstyle\wedge}}{{\scriptscriptstyle\wedge}}%
+     {{\scriptscriptstyle\wedge}}}}
+\def\Le{{\mathchoice{\,{\scriptstyle\le}\,}
+{\,{\scriptstyle\le}\,}{\,{\scriptscriptstyle\le}\,}%
+{\,{\scriptscriptstyle\le}\,}}}
+\def\Ge{{\mathchoice{\,{\scriptstyle\ge}\,}
+{\,{\scriptstyle\ge}\,}{\,{\scriptscriptstyle\ge}\,}%
+{\,{\scriptscriptstyle\ge}\,}}}
+%\def\doubleheaddownarrow#1{\hbox{$\Big\downarrow%
+%     \kern-5.96pt\lower2pt\hbox{$\downarrow$}$}%
+%     \rlap{$\vcenter{$\kern-18pt\scriptstyle#1$}$}}
+%\def\rmapdown#1{\Big\downarrow\kern-1.0pt\vcenter{
+%     \hbox{$\scriptstyle#1$}}}
+\def\tworightarrows#1#2{\lower2.0pt\hbox{\,\,\vbox{\baselineskip=0pt
+    \hbox{\lower6.0pt\hbox to #1pt{\rightarrowfill}}\kern-6pt
+    \hbox to #2pt{\rightarrowfill}}\,\,}}
+\def\mapright#1{\smash{\mathop{\,\longrightarrow\,}%
+  \limits^{#1}}}
+\def\longmapright#1#2{\,\smash{\mathop
+     {\hbox to #1pt{\rightarrowfill}}\limits^{#2}}\,}
+\def\longmaprightsub#1#2{\,\smash{\mathop
+     {\hbox to #1pt{\rightarrowfill}}\limits_{#2}}\,}
+\def\simover{\smash{\mathop{\,\longrightarrow\,}
+  \limits^{\lower1.5pt\hbox{$\scriptstyle\sim$}}}}
+\def\longhook{\lhook\!\longrightarrow}
+\def\Righthook#1{\scriptscriptstyle%
+  \subset\kern-4.00pt\lower2.85pt
+     \hbox to #1pt{\rightarrowfill}}
+%\Righthook{30}, for instance
+\def\Heading#1#2{\bigskip\par\noindent{\bf#1}
+     \medskip\parindent=#2pt\nspace}
+\def\Ref[#1]{\par\smallskip\hang\indent\llap{\hbox to\parindent
+     {[#1]\hfil\enspace}}\ignorespaces}
+\def\ref#1{\par\smallskip\hang\indent\llap{\hbox to\parindent
+     {#1\hfil\enspace}}\ignorespaces}
+
+%\def\Cech{\hbox{\v{C}ech}}
+%\def\Ccheck{\hbox{\v{C}}}
+%\def\(({(\!(}   \def\[[{[\![}
+%\def\)){)\!)}   \def\]]{]\!]}
+%\def\wdot{\Dot{w}}
+%\def\sdot{\Dot{s}}
+%\def\xdot{\Dot{x}}
+%\def\emptydot{\Dot{\phantom{L}}}
+%\def\righthookdown{\raise8.5pt\hbox{$\ssize\cap$}
+%     \kern-7.80pt \big\downarrow}
+%\def\rhookmapdown#1{\rightcapdownarrow\kern-1.0pt
+%   \vcenter{\hbox{$\scriptstyle#1$}}}
+\def\Item#1{\par\smallskip\hang\indent
+  \llap{\hbox to\parindent{#1\hfill\enspace}}
+     \ignorespaces}
+\def\Amalg{\,\shortparallel\kern-10.15 true pt
+\hbox{\lower.5 true pt\hbox to 4.0 true pt{\hrulefill}}\,\,}
+%\def\circled-one{\text{O}\kern-5.5pt\raise2pt%
+%     \hbox{$\sssize 1$}}
+%\font\smll=cmr5
+%\def\Small-circled-one{\hbox{$\tsize\text{O}$}%
+%     \kern-5.25 pt\raise1.25pt\hbox{\smll 1}}
+%\def\rightcapdownarrow{\raise9pt\hbox{$\ssize\cap$}
+%\kern-7.75pt\Big\downarrow}
+%\def\vrulesub#1{\hbox{\,\vrule height7pt depth5pt\,}_{#1}}
+\def\upvee{^{\sssize\vee}}
+\def\uphat{^{\sssize\wedge}}
+\def\CUP{{\,\ssize \cup\,}}
+\def\CAP{{\,\ssize \cap\,}}
+\def\Coprod{{\ssize\coprod}}
+%\def\restprod{\raise1.5pt\hbox{${\ssize\prod}
+%  \kern-8pt{\ssize\coprod}$}}
+%\def\ThreeArrows{\mathop{\vtop{\ialign{##\crcr
+%\hfil$\sssize\longrightarrow$\hfil\crcr
+%\noalign{\nointerlineskip\vskip.95pt}%
+%  $\sssize\longrightarrow$\crcr
+%\noalign{\nointerlineskip\vskip.95pt}%
+%  $\sssize\longrightarrow$\crcr
+%\noalign{\nointerlineskip}\crcr}}}}
+
+%\def\FourArrows{\mathop{\vtop{\ialign{##\crcr
+%\hfil$\sssize\longrightarrow$\hfil\crcr
+%\noalign{\nointerlineskip\vskip.95pt}
+%$\sssize\longrightarrow$\crcr
+%\noalign{\nointerlineskip\vskip.95pt}
+%$\sssize\longrightarrow$\crcr
+%\noalign{\nointerlineskip\vskip.95pt}
+%$\sssize\longrightarrow$\crcr
+%\noalign{\nointerlineskip}\crcr}}}}
+
+\redefine\Supset{\raise1.75pt
+     \hbox{$\,\,\ssize\supset\,\,$}}
+\redefine\Subset{\raise1.75pt
+     \hbox{$\,\,\ssize\subset\,\,$}}
+\redefine\mod{\,\text{\rm mod\,}}
+\redefine\Cup{\raise.80pt
+     \hbox{$\,\ssize\cup\,$}}
+
+
+
+\def\DR{\text{\rm DR}}
+\def\Gal{\text{\rm Gal}}
+\def\Ext{\text{\rm Ext}}
+\def\End{\text{\rm End}}
+\def\ab{\text{\rm ab}}
+\def\ad{\text{\rm ad}}
+\def\comp{\text{\rm comp}}
+\def\Dec{\text{\rm Dec}}
+\def\distr{\text{\rm distr}}
+\def\est{\text{\rm est}}
+\def\Spec{\text{\rm Spec}}
+\def\Gr{\text{\rm Gr}} 
+\def\GR{\text{\rm gr}}
+\def\Sym{\text{\rm Sym}} 
+\def\GL{\text{\rm GL}} 
+\def\Hom{\text{\rm Hom}} 
+\def\HOM{{\scrH}\text{\rm om}}
+\def\image{\text{\rm image}}
+\def\Ind{\text{\rm Ind}}
+\def\Id{\text{\rm Id}}
+\def\Lie{\text{\rm Lie}}
+\def\Libre{\text{\rm Libre}}
+\def\Lib{\text{\rm Lib}}
+\def\Libhat{\Lib^{\uphat}}
+\def\rang{\text{\rm rang}}
+\def\ieme{\text{\rm i\`eme}}
+\def\iemes{\text{\rm i\`emes}}
+\def\im{\text{\rm Im}}
+\def\ev{\text{\rm ev}}
+\def\et{\text{\rm et}}
+\def\Fil{\text{\rm Fil}}
+\def\real{\text{\rm real}}
+\def\mot{\text{\rm mot}}
+\def\Mot{\text{\rm Mot}}
+\def\MAT{\text{\rm MAT}}
+\def\MTM{\text{\rm MTM}}
+\def\MPTM{\text{\rm MPTM}}
+\def\MT{\text{\rm MT}}
+\def\DM{\text{\rm DM}}
+\def\DMT{\text{\rm DMT}}
+\def\SmCor{\text{\rm SmCor}}
+%\def\Point{\text{\rm Point}}
+\def\Sing{\text{\rm Sing}}
+\def\torsion{\text{\rm torsion}}
+\def\pr{\text{\rm pr}}
+\def\Ker{\text{\rm Ker}}
+\def\kar{\text{\rm kar}}
+\def\Aut{\text{\rm Aut}} 
+\def\Rep{\text{\rm Rep}}
+\def\Pet{\text{\rm Pet}}
+\def\dch{\text{\rm dch}}
+\def\ch{\text{\rm ch}}
+\def\coeff{\text{\rm coeff}}
+
+\def\eps{{\varepsilon}}
+
+\def\abar{\bar{a}} 
+\def\dbar{\bar{d}} 
+\def\gbar{\bar{g}}
+\def\kbar{\bar{k}} 
+\def\Kbar{\bar{K}}
+\def\Xbar{\bar{X}}
+\def\xbar{\bar{x}}
+\def\Ybar{\bar{Y}}
+\def\ybar{\bar{y}} 
+\def\zbar{\bar{z}}
+\def\Zbar{\bar{Z}}
+\def\Gammabar{\bar{\Gamma}}
+\def\sigmabar{\bar{\sigma}}
+\def\zetabar{{\bar{\zeta}}}
+\def\dbQbar{\bar{\dbQ}}
+\def\underbark{\hbox{\b{$k$}}}
+\def\underbart{\hbox{\b{$t$}}}
+
+\def\khat{\Hat{k}}
+\def\xhat{\Hat{x}}
+
+\def\bfs{\bold{s}}
+\def\bfv{\bold{v}}
+\def\bfQ{\bold{Q}}
+
+\def\Etil{\widetilde{E}}
+\def\Mtil{\widetilde{M}}
+%\def\uptilde{^{\raise3pt\hbox{$\sssize\sim$}}}
+\def\uptil{\kern-1pt\tilde{\phantom{a}}}
+\def\upcheck{^{\sssize\vee}}
+\def\Lamuptil{\Lambda\raise1pt\hbox{$\!\uptil$}}
+
+\def\dbA{{\Bbb A}} 
+\def\dbC{{\Bbb C}} 
+\def\dbG{{\Bbb G}} 
+\def\dbH{{\Bbb H}} 
+\def\dbR{{\Bbb R}} 
+\def\dbP{{\Bbb P}}
+\def\dbQ{{\Bbb Q}}
+\def\dbZ{{\Bbb Z}}
+
+\def\scr#1{{\fam\eusmfam\relax#1}}
+
+\def\scrA{{\scr A}} 
+\def\scrC{{\scr C}} 
+\def\scrD{{\scr D}}
+\def\scrE{{\scr E}}
+\def\scrF{{\scr F}}
+\def\scrH{{\scr H}}
+\def\scrK{{\scr K}}
+\def\scrI{{\scr I}}
+\def\scrL{{\scr L}}
+\def\scrM{{\scr M}}
+\def\scrO{{\scr O}}
+\def\scrR{{\scr R}}
+\def\scrS{{\scr S}}
+\def\scrT{{\scr T}}
+\def\scrU{{\scr U}}
+
+\def\gr#1{{\fam\eufmfam\relax#1}}
+
+%Euler Fraktur letters (German)
+\def\gra{{\gr a}}
+\def\gru{{\gr u}} 
+\def\grg{{\gr g}} 
+\def\grl{{\gr l}}
+\def\grs{{\gr s}}
+\def\grQ{{\gr Q}}
+\def\grZ{{\gr Z}}
+\def\grgl{{\grg\grl}}
+
+%\NoBlackBoxes
+\parindent=20pt
+\frenchspacing
+\footline={\hfill}
+
+\topmatter
+\title\nofrills
+{\boldtitlefont Groupes fondamentaux motiviques
+de Tate mixte}
+\endtitle
+\bigskip
+\author
+{\authorfont P. Deligne et A.~B.~Goncharov$^*$}
+\endauthor
+\endtopmatter
+\footnote""{$^*$Research partially supported by NSF
+Grant DMS-0099390}
+
+\NoBlackBoxes
+\document
+
+{\narrower{\narrower{\narrower{
+\bigskip\bigskip\bigskip\noindent
+{\sans R\'esum\'e.}\enspace
+Nous d\'efinissons la cat\'egorie des motifs de
+Tate mixte sur l'anneau des $S$-entiers d'un 
+corps de nombres, et le groupe fondamental
+motivique (rendu unipotent) d'une vari\'et\'e
+unirationnelle sur un corps de nombres.
+Nous consid\'erons plus en d\'etail le groupe
+fondamental motivique de la droite projective
+moins $0$, $\infty$ et les racines $N$-i\`emes
+de l'unit\'e.\bigskip}}}}
+
+\bigskip\bigskip
+{\narrower{\narrower{\narrower{\bigskip\noindent
+{\sans Abstract.}\enspace
+We define the category of mixed Tate motives
+over the ring of $S$-integers of a number
+field.
+We define the motivic fundamental group (made
+unipotent) of a unirational variety over a
+number field.
+We apply this to the study of the motivic
+fundamental group of the projective line
+punctured at zero, infinity and all $N$-th
+roots of unity.\bigskip}}}}
+
+
+\newpage
+\footline={\hss\folio\hss}
+\pageno=-1
+
+\def\leaderfill{\leaders\hbox to 1em{\hss.\hss}\hfill}
+
+\topmatter
+\toc\nofrills{\sectionfont Table of Contents}
+\bigskip\bigskip
+%\openup.5\baselineskip
+\widestnumber\head{2a.}
+\head 0. Introduction\page{1}\endhead
+\bigskip
+\head 1. Motifs de Tate mixte sur l'anneau
+     des $S$-entiers de $k$ \page{3}\endhead
+\bigskip
+\head 2. Le point de vue tannakien \page{13}\endhead
+\bigskip
+\head 3.  Cohomologie et groupe fondamental
+  \page{25}\endhead
+\bigskip
+\head 4. Le groupe fondamental unipotent
+motivique d'une\hfill\break
+vari\'et\'e rationnelle\page{40}\endhead
+\bigskip
+\head 5. Le groupe fondamental motivique du
+compl\'ement,\hfill\break
+      dans $\dbP^1$, de $0$, $\infty$ et
+     $\mu_N$\page{50}\endhead
+\bigskip
+\head 6. Profondeur\page{67}\endhead
+\bigskip
+\specialhead{} Appendice. Rappels sur les
+groupes alg\'ebriques 
+   unipotents \page{76}\endspecialhead
+\bigskip
+\specialhead{} Bibliographie\page{82}\endspecialhead
+\endtoc
+
+\endtopmatter
+
+\input introccc.tex 
+\input Sec1ccc.tex
+\input Sec2ccc.tex
+\input Sec3ccc.tex
+\input Sec4ccc.tex
+\input Sec5ccc.tex
+\input Sec6ccc.tex
+\input Appenccc.tex
+\input Refs.tex
+
+\enddocument
+
+
+
+

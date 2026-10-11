@@ -8,9 +8,8 @@ pages: 39-39
 source_pdf: 0710.4310v2.pdf
 source_sha256: 9a7757f998b7f680
 doc_brief: "On Two-Dimensional Holonomy João Faria Martins Centro de Matemática da Universidade do Porto — We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold ( M, ∗) as the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Let G = (∂ : E →G,⊲ ) be a Lie crossed module, and let G = (∂ : e → g,⊲ ) be
-the associated diﬀerential crossed module. Fix a smooth manifold M and a
-smooth principal G-bundle P →M , with a connection ω ∈ A1(P, g), as well as
-a G-categorical connection ( ω,m ). The aim of this subsection is to deﬁne the
-categorical holonomy of a 2-sphere Σ embedded in M .
+Let ${\Gc=(\d\colon E \to G,\tr)}$ be a Lie crossed module, and let ${\mathfrak{G}=(\d \colon \le \to  \lg,\tr )}$ be the associated differential crossed module. Fix a smooth manifold $M$ and a smooth principal $G$-bundle $P \to M$, with a connection $\w \in \A^1(P,\lg)$, as well as a $\Gc$-categorical connection $(\w,m)$. The aim of this subsection is to define the categorical holonomy of a 2-sphere $\Sigma$ embedded in $M$.

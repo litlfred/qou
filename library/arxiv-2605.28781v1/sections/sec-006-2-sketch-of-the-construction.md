@@ -8,66 +8,30 @@ pages: 5-6
 source_pdf: 2605.28781v1.pdf
 source_sha256: eee6d535af1996ca
 doc_brief: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA⊂R(whose elements are algebraic integers in a number"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.976
 ---
-In this section we give a sketch of the construction which is used to prove The-
-orem 1.2. The construction is a high-dimensional version of the standard Balog–
-Wooley example first introduced in [4]. In its simplest one-dimensional form, one
-takes
-A=GP,
-whereGis a short geometric progression andPis an interval. The multiplicative
-structure ofGgives 1
-|GG|≪|G|,
-while the additive structure ofPkeepsGP+GPinside a relatively short interval.
-This gives examples for which both|A+A|and|AA|are smaller than the trivial
-bound|A| 2, but only by a logarithmic factor in|A|. This example was used by
-Balog and Wooley [4] to show that the natural additive energy variant of the sum-
-product conjecture is false, yet it falls short of being a counterexample to the
-original conjecture since the geometric progression is exponentially sparse, which
-allowsA+Ato still have size≥|A| 2−o(1).
-The point of the present construction is to transform this example, replacing the
-geometric progression with a much denser multiplicatively structured set, and the
-arithmetic progression with a high-dimensional lattice embedded inR. Instead of
-working inZ, we work in the ring of integersO K of a totally real number fieldK
-of large degreed. Thedreal embeddings
-σ1,...,σ d :K ,→R
-allow us to viewO K as a lattice of full rank inR d. We will use two different lattice
-structures inO K: the additive lattice of algebraic integers and the multiplicative
-logarithmic lattice of units.
-The additive part of the construction is a box of algebraic integers. We choose
-a large parameterX, and takeP⊂O K so that every embedding of everyp∈P
-lies in a short interval aroundX, say
-σi(p)∈[X−cX,X+cX] (1≤i≤d)
-for some small constantc>0. The geometry of numbers gives
-|P|≫X d∆−1/2
-K ,
-up to harmless constants. Thus, provided the discriminant ∆ K is bounded above
-byO(1) d,Pbehaves like ad-dimensional additive box of size≫X d.
-The multiplicative part is a box in the unit lattice. By Dirichlet’s unit theorem,
-the logarithms of the absolute values of the embeddings of units form a lattice of
-rankd−1 in the hyperplane defined by the equationx 1 +···+x d = 0. We choose
-G={u∈O ×
-K :|log|σ i(u)||≤Yfor alli}.
-The regulator of the number field controls the covolume of this unit lattice, and
-hence, provided the regulator is at mostO(1) d, there are≫Y d−1 many such units.
-Moreover, sinceGGis contained in the same logarithmic lattice box withYreplaced
-by 2Y, we have a small-doubling estimate of the form
-|GG|≤O(1) d|G|.
-1In this section we will make free use of the Vinogradov notation≪and≫, both of which
-indicate the relevant inequality holds up to some absolute constant.
-6 THOMAS F. BLOOM, WILL SA WIN, CARL SCHILDKRAUT, AND DMITRII ZHELEZOV
-This is the high-dimensional analogue of the fact that a geometric progression has
-small product set.
-We then take
-A=GP={up:u∈G, p∈P}.
-Importantly, providedXandYare chosen suitably, this product is direct in the
-sense that|A|=|G||P|. This is because, ifu 1p1 =u 2p2 withu i∈Gandp i∈P,
-thenp 1/p2 is a unit. Provided the short interval aroundXin the definition ofP
-is sufficiently short, we haveσ i(p1/p2)∈[1−ϵ,1 +ϵ] for all 1≤i≤dand any
-small absolute constantϵ >0. By a result of Schinzel, however, ifu̸= 1 is a unit
-then there exists 1≤i≤dsuch that|σ i(u)−1|> ϵ, whereϵ >0 is an absolute
-constant independent ofKandd. Therefore the only solutions tou 1p1 =u 2p2 are
-those withu 1 =u 2.
-To control the size ofA+A, the key point is that multiplication by units inG
-expands each embedding by at moste Y . Therefore every element ofAlies, in all
-real embeddings, inside a box of side lengthO(Xe Y ). Consequently
-A+A⊆{α∈O K :|σ i(α)|≪Xe Y for alli}.
+In this section we give a sketch of the construction which is used to prove Theorem [\[th-main\]](#th-main){reference-type="ref" reference="th-main"}. The construction is a high-dimensional version of the standard Balog--Wooley example first introduced in [@BalogWooleyLowEnergy]. In its simplest one-dimensional form, one takes $$A=GP,$$ where $G$ is a short geometric progression and $P$ is an interval. The multiplicative structure of $G$ gives[^1] $$\mathopen{}\left| GG\mathclose{}\right|\ll \mathopen{}\left| G\mathclose{}\right|,$$ while the additive structure of $P$ keeps $GP+GP$ inside a relatively short interval. This gives examples for which both $\mathopen{}\left| A+A\mathclose{}\right|$ and $\mathopen{}\left| AA\mathclose{}\right|$ are smaller than the trivial bound $\mathopen{}\left| A\mathclose{}\right|^{2}$, but only by a logarithmic factor in $\mathopen{}\left| A\mathclose{}\right|$. This example was used by Balog and Wooley [@BalogWooleyLowEnergy] to show that the natural additive energy variant of the sum-product conjecture is false, yet it falls short of being a counterexample to the original conjecture since the geometric progression is exponentially sparse, which allows $A+A$ to still have size $\geq \mathopen{}\left| A\mathclose{}\right|^{2-o(1)}$.
+
+The point of the present construction is to transform this example, replacing the geometric progression with a much denser multiplicatively structured set, and the arithmetic progression with a high-dimensional lattice embedded in $\mathbb R$. Instead of working in $\mathbb Z$, we work in the ring of integers $\mathcal O_K$ of a totally real number field $K$ of large degree $d$. The $d$ real embeddings $$\sigma_1,\ldots,\sigma_d\colon K\hookrightarrow \mathbb R$$ allow us to view $\mathcal O_K$ as a lattice of full rank in $\mathbb R^d$. We will use two different lattice structures in $\mathcal O_K$: the additive lattice of algebraic integers and the multiplicative logarithmic lattice of units.
+
+The additive part of the construction is a box of algebraic integers. We choose a large parameter $X$, and take $P\subset \mathcal O_K$ so that every embedding of every $p\in P$ lies in a short interval around $X$, say $$\sigma_i(p)\in [X-cX,X+cX]\qquad(1\leq i\leq d)$$ for some small constant $c>0$. The geometry of numbers gives $$\mathopen{}\left| P\mathclose{}\right|\gg X^d\Delta_K^{-1/2},$$ up to harmless constants. Thus, provided the discriminant $\Delta_K$ is bounded above by $O(1)^d$, $P$ behaves like a $d$-dimensional additive box of size $\gg X^d$.
+
+The multiplicative part is a box in the unit lattice. By Dirichlet's unit theorem, the logarithms of the absolute values of the embeddings of units form a lattice of rank $d-1$ in the hyperplane defined by the equation $x_1+\cdots+x_d=0$. We choose $$G=\{u\in\mathcal O_K^\times:
+        \mathopen{}\left| \log\mathopen{}\left| \sigma_i(u)\mathclose{}\right|\mathclose{}\right|\leq Y\ \text{for all }i\}.$$ The regulator of the number field controls the covolume of this unit lattice, and hence, provided the regulator is at most $O(1)^d$, there are $\gg Y^{d-1}$ many such units. Moreover, since $GG$ is contained in the same logarithmic lattice box with $Y$ replaced by $2Y$, we have a small-doubling estimate of the form $$\mathopen{}\left| GG\mathclose{}\right|\leq O(1)^d\mathopen{}\left| G\mathclose{}\right|.$$ This is the high-dimensional analogue of the fact that a geometric progression has small product set.
+
+We then take $$A=GP=\{up:u\in G,\ p\in P\}.$$ Importantly, provided $X$ and $Y$ are chosen suitably, this product is direct in the sense that $\mathopen{}\left| A\mathclose{}\right|=\mathopen{}\left| G\mathclose{}\right|\mathopen{}\left| P\mathclose{}\right|$. This is because, if $u_1p_1=u_2p_2$ with $u_i\in G$ and $p_i\in P$, then $p_1/p_2$ is a unit. Provided the short interval around $X$ in the definition of $P$ is sufficiently short, we have $\sigma_i(p_1/p_2)\in [1-\epsilon,1+\epsilon]$ for all $1\leq i\leq d$ and any small absolute constant $\epsilon>0$. By a result of Schinzel, however, if $u\neq1$ is a unit then there exists $1\leq i\leq d$ such that $\lvert \sigma_i(u)-1\rvert>\epsilon$, where $\epsilon>0$ is an absolute constant independent of $K$ and $d$. Therefore the only solutions to $u_1p_1=u_2p_2$ are those with $u_1=u_2$.
+
+To control the size of $A+A$, the key point is that multiplication by units in $G$ expands each embedding by at most $e^Y$. Therefore every element of $A$ lies, in all real embeddings, inside a box of side length $O(Xe^Y)$. Consequently $$A+A\subseteq
+        \{\alpha\in\mathcal O_K:
+        \mathopen{}\left| \sigma_i(\alpha)\mathclose{}\right|\ll Xe^Y\ \text{for all }i\}.$$ The additive lattice-counting estimate then gives $$\mathopen{}\left| A+A\mathclose{}\right|\leq O(e^YX)^d\leq O(e^Y)^d\mathopen{}\left| A\mathclose{}\right|,$$ since $\mathopen{}\left| P\mathclose{}\right|\asymp X^d$ and $\mathopen{}\left| A\mathclose{}\right|=\mathopen{}\left| G\mathclose{}\right|\mathopen{}\left| P\mathclose{}\right|$.
+
+On the product side we use $$AA\subseteq GGP P.$$ The set $GG$ has size only $O(1)^d\mathopen{}\left| G\mathclose{}\right|$, while trivially $\mathopen{}\left| PP\mathclose{}\right|\leq \mathopen{}\left| P\mathclose{}\right|^2$, and so $$\mathopen{}\left| AA\mathclose{}\right|
+        \leq O(1)^d \mathopen{}\left| G\mathclose{}\right|\mathopen{}\left| P\mathclose{}\right|^{2}
+        \leq O(1/Y)^{d-1}\mathopen{}\left| A\mathclose{}\right|^2.$$ The saving in the product set is therefore roughly the size of the unit box $G$, which is $\geq (cY)^{d-1}$. Since the saving in $\mathopen{}\left| AA\mathclose{}\right|$ is $O(1/Y)^{d-1}$, if $Y$ is chosen as a sufficiently large absolute constant then $$\mathopen{}\left| AA\mathclose{}\right|\leq 2^{-d}\mathopen{}\left| A\mathclose{}\right|^{2}.$$ On the other hand, once $Y$ is fixed, $X$ may be chosen large enough, depending on a prescribed $\epsilon>0$, so that the factor $O(e^Y)^d$ in the sumset estimate is bounded above by $\mathopen{}\left| A\mathclose{}\right|^{\epsilon}$. This gives $$\mathopen{}\left| A+A\mathclose{}\right|\leq \mathopen{}\left| A\mathclose{}\right|^{1+\epsilon}\quad\textrm{and}\quad
+        \mathopen{}\left| AA\mathclose{}\right|\leq \mathopen{}\left| A\mathclose{}\right|^{2-c\epsilon}$$ for some constant $c>0$.
+
+All that remains is to show that we can perform the above construction for arbitrarily large $A$, which means (since $X$ and $Y$ are constants, so $\mathopen{}\left| A\mathclose{}\right|$ grows like $O(1)^d$) that we need $d\to \infty$. In other words, we need a supply of number fields with degree $d\to\infty$, in which both the discriminant and the regulator (which control the covolume of the additive lattice and multiplicative lattice respectively) grow at most exponentially in $d$. Such bounded-root-discriminant towers go back to Martinet's use of class field towers, and the regulator control follows from standard Brauer--Siegel type bounds in this setting. The regulator control has already found applications outside number theory, being used to construct explicit lattice sphere packings [@TS91 §4].
+
+[^1]: In this section we will make free use of the Vinogradov notation $\ll$ and $\gg$, both of which indicate the relevant inequality holds up to some absolute constant.

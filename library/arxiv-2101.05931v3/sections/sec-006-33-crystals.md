@@ -8,154 +8,169 @@ pages: 7-9
 source_pdf: 2101.05931v3.pdf
 source_sha256: 41eaa81b97ede8e9
 doc_brief: "CATEGORICAL BRAID GROUP ACTIONS — Let g be a semisimple simply-laced Lie algebra of ﬁnite type."
+text_source: latex
+latex_prose_ratio: 0.965
+latex_coverage_ratio: 0.931
 ---
-Deﬁnition 3.3 ([27]). A g-crystal is a ﬁnite set B together with maps:
-rei, rfi : B → B ⊔ {0}, ε i,ϕ i : B → Z, wt : B →X
-for all i ∈I, such that:
-(1) for any b,b ′ ∈ B, rei(b) = b′ if and only if b = rfi(b′) ,
-(2) for all b ∈ B, if rei(b) ∈ B then wt( rei(b)) = wt(b) +αi, and if rfi(b) ∈ B then wt( rfi(b)) =
-wt(b) −αi,
-(3) for all b ∈ B, εi(b) = max {n ∈ Z : ren
-i (b) ⁄= 0}, ϕi(b) = max {n ∈ Z : rf n
-i (b) ⁄= 0},
-(4) for all b ∈ B, ϕi(b) −εi(b) = ⟨wt(b),h i⟩.
-AnyUq(g)-representation V has a corresponding g-crystal B = BV . The underlying set of B is
-in natural bijection with a particular basis of V (the “global crystal basis” or “canonical basis”).
-The maps rei, rfi are related to the raising and lowering Chevalley operators ; vaguely speaking they
-encode information about the leading terms of the Chevalley operators acting on this basis. In
-particular, for an integral dominant weight λ, the canonical basis B(λ) of L(λ) carries a natural
-crystal structure [20].
-The crystal of V naturally arises via categorical representation theory. N amely, as we describe in
-the next proposition, if C is a categoriﬁcation of V , then Irr(C) carries a crystal structure isomorphic
-to BV . This follows from [16, Proposition 5.20] and [32], and is ex plained in detail in [7].
-Proposition 3.4. ([7, Theorem 4.31] ) The set Irr(C) together with:
-• Kashiwara operators deﬁned as rEi(X) = soc Ei(X), rFi(X) = soc Fi(X) for X ∈ Irr(C),
-• wt(X) = µ for X ∈ C µ, and
-• ε(X) = max{n | En
-i (X) ⁄= 0}, and ϕ(X) = max{n | Fn
-i (X) ⁄= 0},
-is a g-crystal isomorphic to the crystal B = BV .
-3.4. Jordan-H¨ older series.A categoriﬁcation of a simple representation (respectivel y an isotypic
-representation) is called a simple categoriﬁcation (respectively an isotypic categoriﬁcation ).
-There is a distinguished categoriﬁcation of L(λ) called the minimal categoriﬁcation and denoted
-L(λ) [16, 26, 28, 41, 50]. It is characterized by the fact that L(λ)λ ∼= L(λ)w0(λ) ∼=
-/CZ −modZ. We let
-/CZ
-low ∈ L(λ)w0(λ), /CZ
-high ∈ L(λ)λ be the generators.
-8 IV A HALACHEV A, ANTHONY LICATA, IV AN LOSEV, AND ODED YACOBI
-The Jordan-H¨ older Theorem for categorical representatio ns will play an important role in our
-work. This was originally developed by Rouquier for additiv e categoriﬁcations [41], and in this
-section we transfer these results to the abelian setting. To set this up, recall that given ﬁnite
-abelian /CZ -linear categories A, B the Deligne tensor product A ⊗
-/CZ
-B is universal for the functor
-assigning to every such abelian category C the category of bilinear bifunctors A × B → C right
-exact in both variables [39, Deﬁnition 1.11.1]. The tensor p roduct is again a ﬁnite abelian /CZ -linear
-category, and there is a bifunctor A × B → A ⊗
-/CZ
-B, (X,Y ) ↦→X ⊗Y . This construction enjoys the
-following properties:
-(1) The tensor product is unique up to unique equivalence,
-(2) for ﬁnite /CZ -algebras A,B we have that (A−mod) ⊗
-/CZ
-(B−mod) ∼= (A ⊗
-/CZ
-B)−mod, and
-(3) Hom A⊗
-/CZ
-B(X1 ⊗Y1,X 2 ⊗Y2) ∼= HomA(X1,Y 1) ⊗ HomB(X2,Y 2).
-Let C be a categorical representation, and let A be a ﬁnite /CZ -linear abelian category. We can
-endow C ⊗
-/CZ
-A with a structure of a categorical representation, by settin g ( C ⊗
-/CZ
-A)µ = Cµ ⊗
-/CZ
-A,
-deﬁning Chevalley functors Ei
-/BD
-µ ⊗ /BD
-A, etc. If C is a simple categoriﬁcation, then clearly C ⊗
-/CZ
-A is
-an isotypic categoriﬁcation. Conversely, we have:
-Lemma 3.5. Let C be an isotypic categoriﬁcation of type λ ∈ X+. Then there exists an abelian
-category A such that C ∼= L(λ) ⊗
-/CZ
-A.
-Proof. Since C is an isotypic categoriﬁcation, so is C−proj. By Rouquier’s Jordan-H¨ older series for
-additive categoriﬁcations [41, Theorem 5.8], there exists an additive /CZ -linear category M such that
-C−proj ∼= (L(λ)−proj ⊗
-/CZ
-M)i.
-Note that no ﬁltration appears here since, in the notation of [41], ( C−proj)lw
-−λ = (C−proj)−λ.
-Let {Pi} (respectively {Qj}) be a complete list of the projective indecomposable object s of L(λ)
-(respectively M). Let P = ⨁
-i,jPi ⊗Qj, and let B = End C(P )op. By Morita theory, B−mod ∼= C.
-On the other hand,
-B ∼= EndL(λ)(
-⨁
-i
-Pi)op ⊗ EndM(
-⨁
-j
-Qj)op.
-Since L(λ) ∼= EndL(λ)(⨁
-iPi)op−mod we have the desired result with A = End M(⨁
-jQj)op−mod.
-□
-Theorem 3.6. Let C be a categorical representation of Uq(g). Then there exists a ﬁltration by
-Serre subcategories
-0 = C0 ⊂ C1 ⊂ · · · ⊂ C n = C, (3.7)
-such that for each i: Ci is a subrepresentation of C, Ci/Ci−1 is a simple categoriﬁcation of type
-λi ∈X+, and the list of highest weights is weakly increasing so that λi ≺λj =⇒i<j .
-Proof. The g-crystal Irr(C) is isomorphic to a ﬁnite direct sum of irreducible crystals B(λ) for
-variousλ, i.e. we have an isomorphism
-Irr(C) ∼=
-⨁
-λ∈X+
-B(λ)⊕mλ,
-where mλ ≥ 0 and only ﬁnitely many are nonzero.
-Deﬁne M = {λ ∈ X+ | mλ ⁄= 0 }, and let λ ∈ M . We claim that there exists a highest weight
-simple object L ∈ C λ. Indeed, otherwise for any simple object L ∈ C λ there exists i ∈I such that
-Ei(X) ⁄= 0. This implies that soc( Ei(X)) ⁄= 0, and by Proposition 3.4 we conclude that Irr(C) has
-no highest weight elements of weight λ, a contradiction.
-CATEGORICAL BRAID GROUP ACTIONS AND CACTUS GROUPS 9
-Now take λ ∈M which is minimal with respect to ≼ , and let L ∈ C λ be a highest weight object.
-Let C1 be the Serre subcategory of C generated by objects
-{Fi1 · · ·Fiℓ(L) |ij ∈I,ℓ ≥ 0}. (3.8)
-By the exactness and bi-adjunction of the Chevalley functor s, C1 is a subrepresentation of C.
-Moreover it categoriﬁes L(λ). Indeed, by our choice of λ there cannot be any highest weight
-objects with weight ≺λ occuring in C1, and by construction the only simple object in ( C1)λ is L.
-Next consider the categorical representation C/C1 and repeat this construction. This produces
-a Serre subcategory C′
-2 ⊂ C/C1 which is again a simple categoriﬁcation. Let π : C → C /C1 be the
-natural quotient functor, and deﬁne C2 =π−1(C′
-2). Clearly, we have that C1 ⊂ C 2, C2 is Serre, it is
-a subrepresentation, and C2/C1 ∼= C′
-2 is a simple categoriﬁcation.
-Iterating this process produces a ﬁltration of C such that each composition factor is a simple
-categoriﬁcation, and the highest weights of the subquotien ts are weakly increasing. □
-Remark 3.9. Note that the construction in the proof of Theorem 3.6 can pro duce also an isotypic
-ﬁltration with similar properties. Namely, if λ1,...,λ N is a list of the distinct isotypic types
-appearing in [ C]C(q), and we choose any ordering of this list so that λi ≺λj =⇒i < j, then there
-is a ﬁltration 0 = C′
-0 ⊂ C ′
-1 ⊂ · · · ⊂ C ′
-N = C such that C′
-k/C′
-k−1 categoriﬁes the isotypic component
-of [ C]C(q) of highest weight λk. To construct this isotypic ﬁltration, consider the Jordan -H¨ older
-ﬁltration from the theorem. From the proof of Theorem 3.6, it ’s easy to see that one can ensure that
-the subquotients which categorify the same simple represen tations appear in sequence. Assuming
-then that our Jordan-H¨ older ﬁltration satisﬁes this property, a coarsening of it is the desired isotypic
-ﬁltration.
-Remark 3.10. Note that one can read oﬀ the isotypic ﬁltration of C from the crystal structure on
-Irr(C). Indeed, suppose that Irr(C) decomposes into components
-Irr(C) = X(λ1) ⊔ · · · ⊔ X(λN ),
-where λ1,...,λ N ∈ X+ are distinct dominant integral weights, and X(λi) is a disjoint union of
-copies of B(λi). Further, we arrange the weights as above so that λi ≺λj =⇒i<j . Let Ci be the
-Serre subcategory of C generated by simple objects L such that [L] ∈ X(λj), where j ≤i. Then it
-follows from Remark 3.9 that {0} ⊂ C 1 ⊂ C 2 ⊂ · · · ⊂ C N is an isotypic ﬁltration of C.
+We recall the definition of a crystal. 
+
+\begin{Definition} [\cite{Kash90}] A \textbf{$\fg$-crystal} is a finite set $\bB$ together with maps:
+	$$\tilde{e}_i,\tilde{f}_i:\bB \rightarrow \bB\sqcup \{0\}, \quad \eps_i,\phi_i : \bB\rightarrow \ZZ, \quad \wt: \bB \rightarrow X$$
+	for all $i \in I$, such that:
+	\begin{enumerate}
+		\item for any $b,b' \in \bB$, $\tilde{e}_i(b)=b'$ if and only if $b=\tilde{f}_i(b')$ ,
+		\item for all $b \in \bB$, if $\tilde{e}_i(b) \in \bB$ then $\wt(\tilde{e}_i(b))=\wt(b)+\alpha_i$, and if $\tilde{f}_i(b) \in \bB$ then $\wt(\tilde{f}_i(b))=\wt(b)-\alpha_i$,
+		\item for all $b \in \bB$, $\eps_i(b)=\max\{n \in \ZZ~:~\tilde{e}^n_i(b) \neq 0\}$, $\phi_i(b)=\max\{n \in \ZZ~:~\tilde{f}^n_i(b)\neq 0\}$,
+		\item for all $b \in \bB$, $\phi_i(b)-\eps_i(b)=\left\langle \wt(b),h_i\right\rangle$.
+	\end{enumerate}
+\end{Definition}
+
+Any $U_q(\fg)$-representation $V$ has a corresponding $\fg$-crystal $\bB=\bB_V$.  The underlying set of $\bB$ is in natural bijection with a particular basis of $V$ (the ``global crystal basis'' or ``canonical basis'').  The maps $\tilde{e}_i,\tilde{f}_i$ are related to the raising and lowering Chevalley operators; vaguely speaking they encode information about the leading terms of the Chevalley operators acting on this basis. In particular, for an integral dominant weight $\la$, the canonical basis $\bB(\la)$ of $L(\la)$ carries a natural crystal structure \cite{GL92}.
+
+The crystal  of $V$ naturally arises via categorical representation theory. Namely, as we describe in the next proposition, if $\cC$ is a categorification of $V$, then $\Irr(\cC)$ carries a crystal structure isomorphic to $\bB_V$. This follows  from \cite[Proposition 5.20]{CR} and \cite{LV}, and is explained in detail in \cite{BDcryst}.  
+
+\begin{Proposition}(\cite[Theorem 4.31]{BDcryst})\label{prop:cryst}
+	The set $\Irr(\cC)$ together with:
+	\begin{itemize}
+	 \item Kashiwara operators defined as $\widetilde{\sE}_i(X)=\operatorname{soc}{\sE_i(X)}$, $\widetilde{\sF}_i(X)=\operatorname{soc}{\sF_i(X)}$ for $X \in \Irr(\cC)$, 
+	 \item $\wt(X) = \mu$ for $X \in \cC_\mu$, and
+	 \item $\varepsilon(X)=max\{ n \;|\; \sE_i^n(X)\neq 0\}$, and $\varphi(X)=max\{ n \;|\; \sF_i^n(X)\neq 0\}$,
+	 \end{itemize}
+	  is a $\fg$-crystal isomorphic to the crystal $\bB=\bB_V$.
+\end{Proposition}
+
+
+
+
+
+
+\subsection{Jordan-H\"older series}
+A categorification of a simple representation (respectively an isotypic representation)  is called  a \textbf{simple categorification} (respectively an \textbf{isotypic categorification}).
+There is a  distinguished  categorification of $L(\lambda)$ called the \textbf{minimal categorification} and denoted $\cL(\lambda)$ \cite{CR,Rou2KM,KLI,Webmerged,KK}. It  is characterized by the fact that $\cL(\lambda)_{\lambda}\cong \cL(\lambda)_{w_0(\lambda)} \cong \kk\mmod_{\ZZ}$.  We let $\kk_{low} \in \cL(\lambda)_{w_0(\lambda)}, \kk_{high}\in \cL(\lambda)_{\lambda}$ be the generators.  
+
+
+
+
+
+
+
+
+The Jordan-H\"older Theorem for categorical representations will play an important role in our work.  
+This was originally developed by Rouquier for additive categorifications \cite{Rou2KM}, and in this section we transfer these results to the abelian setting.
+To set this up, recall that given finite abelian $\kk$-linear categories $\cA,\cB$ the \textbf{Deligne tensor product} $\cA \otimes_\kk \cB$  is universal for the functor assigning to every such abelian category $\cC$ the category of bilinear bifunctors $\cA \times \cB \to \cC$ right exact in both variables \cite[Definition 1.11.1]{EGNO}.  The tensor product is again a finite abelian $\kk$-linear category, and there is a bifunctor $\cA \times \cB \to \cA \otimes_\kk \cB, (X,Y) \mapsto X\otimes Y$.  This construction enjoys the following properties: 
+\begin{enumerate}
+\item The tensor product is unique up to unique equivalence,
+\item for finite $\kk$-algebras $A,B$ we have that $(A\mmod)\otimes_\kk (B\mmod) \cong (A\otimes_\kk B)\mmod$, and
+\item $\Hom_{\cA \otimes_\kk \cB}(X_1\otimes Y_1, X_2\otimes Y_2) \cong \Hom_\cA(X_1,Y_1)\otimes\Hom_\cB(X_2,Y_2)$.
+\end{enumerate}
+
+Let $\cC$ be a categorical representation, and let $\cA$ be a finite $\kk$-linear abelian category.  We can endow $\cC \otimes_\kk\cA$ with a structure of a categorical representation, by setting $(\cC \otimes_\kk\cA)_\mu=\cC_\mu \otimes_\kk\cA$, defining Chevalley functors $\sE_i\bone_\mu \otimes \bone_\cA$, etc.  If $\cC$ is a simple categorification, then clearly  $\cC \otimes_\kk\cA$ is an isotypic categorification.  Conversely, we have:  
+
+\begin{Lemma}\label{lem:isocat}
+Let $\cC$ be an isotypic categorification of type $\lambda \in X_+$.  Then there exists an abelian category $\cA$ such that $\cC \cong \cL(\lambda)\otimes_\kk \cA$.  
+\end{Lemma}
+
+
+\begin{proof}
+Since $\cC$ is an isotypic categorification, so is $\cC\proj$.  By Rouquier's Jordan-H\"older series for additive categorifications \cite[Theorem 5.8]{Rou2KM}, there exists an additive $\kk$-linear category $\cM$ such that 
+\begin{align*}
+\cC\proj\cong (\cL(\lambda)\proj \otimes_\kk \cM)^i.
+\end{align*}
+Note that no filtration appears here since, in the notation of \cite{Rou2KM}, $(\cC\proj)_{-\lambda}^{lw}=(\cC\proj)_{-\lambda}$.
+
+Let $\{P_i\}$ (respectively $\{Q_j\}$) be a complete list of the projective indecomposable objects of $\cL(\lambda)$ (respectively $\cM$).  Let $P=\bigoplus_{i,j}P_i\otimes Q_j$, and let $B=\End_\cC(P)^{op}$.  By Morita theory, $B\mmod\cong \cC$.  On the other hand,
+\begin{align*}
+B\cong \End_{\cL(\lambda)}(\bigoplus_i P_i)^{op} \otimes \End_\cM(\bigoplus_j Q_j)^{op}.
+\end{align*}
+Since $\cL(\lambda)\cong \End_{\cL(\lambda)}(\bigoplus_i P_i)^{op}\mmod$ we have the desired result with $\cA=\End_\cM(\bigoplus_j Q_j)^{op}\mmod$.
+\end{proof}
+
+\begin{Theorem}\label{thm:JH}
+Let $\cC$ be a categorical representation of $U_q(\fg)$.  Then there exists a filtration by Serre subcategories
+\begin{align}\label{eq:JHfiltration}
+0=\cC_0 \subset \cC_1\subset \cdots\subset \cC_n=\cC, 
+\end{align}
+such that for each $i$: $\cC_i$ is a subrepresentation of $\cC$, 
+$\cC_{i}/\cC_{i-1}$ is a simple categorification of type $\lambda_i\in X_+$, and the list of highest weights is weakly increasing so that $\la_i \prec \la_j \Longrightarrow i<j$. 
+\end{Theorem}
+
+\begin{proof}
+The $\fg$-crystal $\Irr(\cC)$ is isomorphic to a finite direct sum of irreducible crystals $\bB(\la)$ for various $\la$, i.e. we have an isomorphism
+$$
+\Irr(\cC) \cong \bigoplus_{\la\in X_+} \bB(\la)^{\oplus m_\la},
+$$
+where $m_\la \geq 0$ and only finitely many are nonzero.
+
+Define $M=\{ \la \in X_+ \;|\; m_\la\neq0\}$, and let $\la \in M$. We claim that there exists a highest weight simple object $L \in \cC_\la$.  Indeed, otherwise for any simple object $L\in \cC_\la$ there exists $i\in I$ such that $\sE_i(X) \neq 0$.  This implies that $\soc(\sE_i(X))\neq 0$, and by Proposition \ref{prop:cryst} we conclude that $\Irr(\cC)$ has no highest weight elements of weight $\la$,  a contradiction.  
+
+Now take $\la \in M$  which is minimal with respect to $\preceq$, and let $L \in \cC_\la$ be a highest weight object.
+ Let $\cC_1$ be the Serre subcategory of $\cC$ generated by objects
+\begin{align}\label{eq:Serregens}
+\{\sF_{i_1}\cdots \sF_{i_\ell}(L)\;|\; i_j\in I, \ell \geq 0\}.
+\end{align}
+By the exactness and bi-adjunction of the Chevalley functors, $\cC_1$ is  a subrepresentation of $\cC$.  Moreover it categorifies $L(\lambda)$.  Indeed, by our choice of $\lambda$ there cannot be any highest weight objects with weight $\prec\lambda$ occuring in $\cC_1$, and by construction the only simple object in  $(\cC_1)_\lambda$ is $L$.  
+
+Next consider the categorical representation $\cC/\cC_1$ and repeat this construction.  This produces a Serre subcategory $\cC_2' \subset \cC/\cC_1$ which is again a simple categorification.  Let $\pi:\cC \to \cC/\cC_1$ be the natural quotient functor, and define $\cC_2=\pi^{-1}(\cC_2')$.  Clearly, we have that $\cC_1\subset \cC_2$, $\cC_2$ is Serre, it is a subrepresentation, and $\cC_2/\cC_1 \cong \cC_2'$ is a simple categorification.  
+
+Iterating this process produces a filtration of $\cC$ such that each composition factor is a simple categorification, and the highest weights of the subquotients are weakly increasing.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{Remark}\label{rem:isofilts}
+Note that the construction in the proof of Theorem \ref{thm:JH} can produce also an isotypic filtration with similar properties.  Namely, if $\la_1,\hdots,\la_N$ is a list of the \textit{distinct} isotypic types appearing in $[\cC]_{\CC(q)}$, and we choose any ordering of this list so that $\lambda_i \prec \lambda_j \Longrightarrow i <j$, then there is a filtration $0=\cC'_0 \subset \cC'_1\subset \cdots\subset \cC'_N=\cC$ such that $\cC'_{k}/\cC'_{k-1}$ categorifies the isotypic component of $[\cC]_{\CC(q)}$ of highest weight $\lambda_k$.  To construct this isotypic filtration, consider the  Jordan-H\"older filtration  from the theorem.  From the proof of Theorem \ref{thm:JH}, it's easy to see that one can ensure that the subquotients which categorify the same simple representations appear in sequence.  Assuming then that our Jordan-H\"older filtration satisfies this property, a coarsening of it is  the desired isotypic filtration.
+\end{Remark}
+
+
+\begin{Remark}\label{rem:JHfromCrystal}
+Note that one can read off the isotypic filtration of $\cC$  from the crystal structure on $\Irr(\cC)$.  Indeed, suppose that $\Irr(\cC)$ decomposes into  components 
+$$
+\Irr(\cC)=\bX(\la_1) \sqcup \cdots \sqcup \bX(\la_N),
+$$
+where $\la_1,\hdots,\la_N \in X_+$ are distinct dominant integral weights, and $\bX(\la_i)$ is a disjoint union of copies of $\bB(\la_i)$.  Further, we arrange the weights  as above so that  $\la_i \prec \la_j \Longrightarrow i < j$.  Let $\cC_i$ be the Serre subcategory of $\cC$ generated by simple objects $L$ such that $[L] \in \bX(\la_j)$, where $j \leq i$.  Then it follows from Remark \ref{rem:isofilts} that $\{0\} \subset \cC_1 \subset \cC_2 \subset \cdots \subset \cC_N$ is an isotypic filtration of $\cC$.
+\end{Remark}

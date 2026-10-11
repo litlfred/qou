@@ -5,7 +5,8 @@
   "file": "2209.06973v1.pdf",
   "sha256": "cc3393a17c48b9dfeb51bc64550d586086665f6a8f72511236bce9b186c70c48",
   "bytes": 2243478,
-  "pages": 66
+  "pages": 66,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "On the geometry of two state models for the colored Jones polynomial",
   "authors_raw": "September 16, 2022",
-  "abstract": "Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of states on the part arc-graph of a link projection and the set of states on a corresponding bichromatic digraph, called arc-graph, as deﬁned by Garoufalidis and Loebl [7]. We use this to give a new and essentially elementary proof for the knot state-sum formula in [7]. We will show that the state-sum contributions of states on the part arc-graph de- ﬁned by the universal R-matrix of Uq(sl(2, C)) correspond, under our bijection of sets of states, to the contributions in [7]. This will show that the two state models are in fact not essentially distinct. Our ap- proach will also extend the formula of Garoufalidis and Loebl to links. This requires some additional non-trivial observations concerning the geometry of states on the part arc-graphs. We will discuss in detail the computation of the arc-graph state-sum, in particular for 3-braid closures.",
+  "abstract": "Using the \ufb02ow property of the R-matrix de\ufb01ning the colored Jones polynomial, we establish a natural bijection between the set of states on the part arc-graph of a link projection and the set of states on a corresponding bichromatic digraph, called arc-graph, as de\ufb01ned by Garoufalidis and Loebl [7]. We use this to give a new and essentially elementary proof for the knot state-sum formula in [7]. We will show that the state-sum contributions of states on the part arc-graph de- \ufb01ned by the universal R-matrix of Uq(sl(2, C)) correspond, under our bijection of sets of states, to the contributions in [7]. This will show that the two state models are in fact not essentially distinct. Our ap- proach will also extend the formula of Garoufalidis and Loebl to links. This requires some additional non-trivial observations concerning the geometry of states on the part arc-graphs. We will discuss in detail the computation of the arc-graph state-sum, in particular for 3-braid closures.",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20220916003619Z",
@@ -217,6 +218,95 @@
   "likely_scanned": false,
   "toc_entries": 11,
   "sections": 10,
-  "chars_total": 104136
+  "chars_total": 104136,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "red-blue_ArXivversion0914.tex",
+   "tex_sections": 11,
+   "overlaid": 7,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.389,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-2-state-models",
+     "title": "State models",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.491,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-002-3-graphs-and-colorings-for-state-sums-of-the-col",
+     "title": "Graphs and colorings for state-sums of the colored Jones polynomial",
+     "prose_ratio": 0.906,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-5-the-r-matrix-state-model",
+     "title": "The R-matrix state model",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-6-proving-the-garoufalidis-loebl-state-sum",
+     "title": "Proving the Garoufalidis-Loebl state-sum",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-7-evaluation-of-the-garoufalidis-loebl-state-sum",
+     "title": "Evaluation of the Garoufalidis-Loebl state-sum",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-8-working-with-cyclic-ordering",
+     "title": "Working with cyclic ordering",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-9-weaving-links",
+     "title": "Weaving links",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-10-vertex-ordering-by-braids",
+     "title": "Vertex ordering by braids",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-11-questions-and-projects",
+     "title": "Questions and projects",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.415,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

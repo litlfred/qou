@@ -6,7 +6,8 @@
   "sha256": "c00b3801060fc3cc8cfd0e3aec3e8e5fad4f8d61c1f2f643aa2bbcdd9f83df55",
   "bytes": 411879,
   "pages": 37,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -245,6 +246,112 @@
   "likely_scanned": false,
   "toc_entries": 12,
   "sections": 12,
-  "chars_total": 89711
+  "chars_total": 89711,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 68,
+   "overlaid": 11,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-k-negligible-morphisms-and-their-tensor-ideals",
+     "title": "k-negligible morphisms and their tensor ideals",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-modified-traces-and-dimensions",
+     "title": "Modified traces and dimensions",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-modified-link-invariants",
+     "title": "Modified link invariants",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-5-tilting-modules-in-the-modular-case",
+     "title": "Tilting modules in the modular case",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-6-tilting-modules-for-quantum-groups",
+     "title": "Tilting modules for quantum groups",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-7-k-negligible-ideals-for-tilting-modules",
+     "title": "k-negligible ideals for tilting modules",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-8-combinatorics-for-tilting-modules",
+     "title": "Combinatorics for tilting modules",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-9-quantum-and-modular-tilting-modules-in-type-a",
+     "title": "Quantum and modular tilting modules in type A",
+     "prose_ratio": 0.998,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-10-questions",
+     "title": "Questions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

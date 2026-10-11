@@ -96,7 +96,7 @@ def importer_count(rel: str) -> int:
          "--include=*.py", "computations", "tools"],
         capture_output=True, text=True, cwd=str(ROOT))
     return len([x for x in r.stdout.splitlines()
-                if x and "_deprecated" not in x and _Path(x).name != _Path(rel).name])
+                if x and ("_deprecated" not in x and "fsh-guts" not in x) and _Path(x).name != _Path(rel).name])
 
 
 def witness_status(rel: str) -> dict:

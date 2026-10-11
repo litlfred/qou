@@ -6,7 +6,8 @@
   "sha256": "1b6580406c3d35b59f8fb18e5fba40460fe574cab85d94edf705c6c4bb2d0cbe",
   "bytes": 303442,
   "pages": 37,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -74,6 +75,35 @@
   "likely_scanned": false,
   "toc_entries": 2,
   "sections": 2,
-  "chars_total": 54346
+  "chars_total": 54346,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "hom1.tex",
+   "tex_sections": 2,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-matrix-factorizations-with-a-parameter",
+     "title": "Matrix factorizations with a parameter",
+     "prose_ratio": 0.998,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-proofs",
+     "title": "Proofs",
+     "prose_ratio": 0.999,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

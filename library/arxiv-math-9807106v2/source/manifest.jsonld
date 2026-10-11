@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9807106v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-9807106v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9807106v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/9807106&metadataPrefix=arXiv), submitted 1998-11-26, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-9807106v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/math/9807106v2",
+    "content_type": "application/gzip",
+    "sha256": "4263d8d34796ac19b8c8e8db9a645eb2e1e991a4ee38e9934be7d123619aed87",
+    "bytes": 39968,
+    "fetched": "2026-10-10T15:30:43+00:00",
+    "files": [
+      {
+        "path": "source/files/adch98.tex",
+        "role": "tex",
+        "sha256": "a9cc8522354291727317297a41c12727944adb34f84c15f4587bd59253992575",
+        "bytes": 104582
+      },
+      {
+        "path": "source/files/ch-pic.tex",
+        "role": "tex",
+        "sha256": "edc18accc2720581319e878b48a9cd06781a90d7e8671e44b95721713b0baa22",
+        "bytes": 19547
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

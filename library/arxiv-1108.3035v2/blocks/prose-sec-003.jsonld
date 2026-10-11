@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1108.3035v2/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1108.3035v2/blocks/prose-sec-003",
   "kind": "prose",
   "title": "The microscopic weakly non-chiral large-N limit",
   "pageStart": 15,
   "pageEnd": 18,
   "text": "../sections/sec-003-5-the-microscopic-weakly-non-chiral-large-n-limi.md",
-  "derivedFrom": "library/arxiv-1108.3035v2/manifest",
-  "sourceDocument": "library/arxiv-1108.3035v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.3035v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.3035v2/manifest.jsonld",
   "provenance": "ingested"
 }

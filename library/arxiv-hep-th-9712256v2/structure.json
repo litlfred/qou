@@ -1,0 +1,209 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-th-9712256v2",
+ "source": {
+  "file": "9712256v2.pdf",
+  "sha256": "9939add0a5823a432fdcd0c6a36e033780365304e4a628d052cbb52e7ade2cfc",
+  "bytes": 297497,
+  "pages": 25,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T18:57:53Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-th/9712256",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "27 Jun 1998"
+  },
+  "doi": null,
+  "title": "On structure constants and fusion rules in the SL(2,C)/SU(2) WZNW model",
+  "authors_raw": "J. Teschner",
+  "title_lines": [
+   "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE"
+  ],
+  "abstract": "A closed formula for the structure constants in the SL(2,C)/SU(2) WZNW model is derived by a method previously used in Liouville theory. With the help of a reﬂection amplitude that follows from the structure constants one obtains a proposal for the fusion rules from canonical quantization. Taken together these pieces of information allow an unambigous deﬁnition of any genus zero n-point function.",
+  "docinfo": {
+   "Title": "arXiv:hep-th/9712256v2  27 Jun 1998",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20181107115603-05'00'"
+  },
+  "title_raw": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-th/9712256v2 27 Jun 1998",
+   "heading": "LPM-97/03 hep-th/9712256 ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL (2 , C ) /SU (2) WZNW MODEL 1. Introduction Little is known about conformal ﬁeld theories that have continuous families of primary ﬁelds if they are not related to free ﬁeld theories in a simple way. As the existence of conti",
+   "text": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_note": "title/authors set by hand from page 1; the automatic title pick read the second title line only. Published Nucl. Phys. B 546 (1999) 390-422 (not checked against the publisher record here)."
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Canonical Quantization, Symmetries",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The bootstrap",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Structure constants",
+   "page": 10,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Fusion rules",
+   "page": 15,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 19,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Appendix",
+   "page": 20,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 25,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 556,
+   "n_words": 83
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 5686,
+   "n_words": 915
+  },
+  {
+   "id": "sec-001-2-canonical-quantization-symmetries",
+   "number": "2",
+   "title": "Canonical Quantization, Symmetries",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 7,
+   "n_chars": 10625,
+   "n_words": 2106
+  },
+  {
+   "id": "sec-002-3-the-bootstrap",
+   "number": "3",
+   "title": "The bootstrap",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 7556,
+   "n_words": 1386
+  },
+  {
+   "id": "sec-003-4-structure-constants",
+   "number": "4",
+   "title": "Structure constants",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 15,
+   "n_chars": 11609,
+   "n_words": 2207
+  },
+  {
+   "id": "sec-004-5-fusion-rules",
+   "number": "5",
+   "title": "Fusion rules",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 19,
+   "n_chars": 12733,
+   "n_words": 2364
+  },
+  {
+   "id": "sec-005-6-conclusions",
+   "number": "6",
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 2775,
+   "n_words": 438
+  },
+  {
+   "id": "sec-006-7-appendix",
+   "number": "7",
+   "title": "Appendix",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 25,
+   "n_chars": 11310,
+   "n_words": 2372
+  },
+  {
+   "id": "sec-007-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 3624,
+   "n_words": 539
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 8,
+  "toc_inferred_entries": 8,
+  "sections": 9,
+  "chars_total": 66474
+ },
+ "structure_note": "Sectioning: split by hand at the paper's numbered section headings (automatic heading inference picked display-math lines)."
+}

@@ -1,0 +1,12 @@
+---
+doc_id: ariasabad2015-revcolmat
+doc_title: "Revista Colombiana de Matemáticas"
+section_id: sec-005-24-pure-braids
+section_title: "Pure Braids"
+section_number: 2.4
+pages: 7-7
+source_pdf: ariasabad2015-revcolmat.pdf
+source_sha256: 822d696773a274e0
+toc_source: inferred
+---
+

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-009",
+  "kind": "prose",
+  "title": "Conclusions and future work",
+  "pageStart": 16,
+  "pageEnd": 20,
+  "text": "../sections/sec-009-7-conclusions-and-future-work.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-astro-ph-0203462v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-astro-ph-0203462v1/manifest.jsonld",
+  "provenance": "ingested"
+}

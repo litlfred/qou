@@ -1,0 +1,284 @@
+\section{Bootstrapping: Proof of Theorem \ref{thm:bootstrapping}}\label{sec:bootstrapping}
+In Theorem \ref{th:reg:1alpha} we have shown, that $\lapv \dsoln \in L^p$ for some $p > 2$. We now work with Bessel-potential / Sobolev spaces $H^{s,q}$, cf. \cite{RS,Tartar2007,Triebel}, and the fact that $\lapv \dsoln \in L^p$ readily implies that $\dsoln \in H^{\frac{3}{2},\tilde{p}}$ for some $\tilde{p} \in (2,p)$. The proof of Theorem~\ref{thm:bootstrapping} relies on the decomposition of the first variation
+\[
+ \delta E^{(2)}(\g,h) =  2\lim_{\varepsilon \searrow 0} \iint_{U_{\varepsilon}}
+\left(
+\frac {\left\langle \g'(u), h'(u) \right\rangle}{|\g(u+w)-\g(u)|^2}
+-\frac {\left\langle \g(u+w)- \g(u), h(u+w)-h(u) \right\rangle}{|\g(u+w)-\g(u)|^4} 
+\right) \d w \d u,
+\]
+$U_{\varepsilon}$ as in~\eqref{eq:Ue}, into 
+\begin{equation*}
+2\br{Q(\g,h) - T_1 (\g, h ) - T_2 (\g,h)}.
+\end{equation*}
+
+For a stationary point of the M\"obius energy we have
+\begin{equation*}
+ Q(\g,h)= T(\g,h):= T_1(\g,h) + T_2(\g,h)
+\end{equation*}
+for all $h \in H^{3/2}(\mathbb R/ \mathbb Z, \mathbb R^n)$. 
+
+Let us bring these terms in a common form. Using
+\begin{multline*}
+ \frac 1 {|\g(u+w) - \g(u)|^\alpha} - \frac 1 {|w|^\alpha} 
+  = \frac {|w|^\alpha}{|\g(u+w)-\g(u)|^\alpha} 
+     \left(\frac {1- \frac {|\g(u+w)-\g(u)|^\alpha}{|w|^\alpha}} {|w|^\alpha} \right) \\
+  = G^\alpha\left(\frac {\g(u+w)-\g(u)}{w}\right) \left(
+     \frac {2-2\frac {|\g(u+w)-\g(u)|^2}{|w|^2}} {|w|^\alpha} \right) \\
+  = \int_{0}^1 \int_{0}^1 G^\alpha\left(\frac {\g(u+w)-\g(u)}{w}\right) \left(
+  \frac {|\g'(u+\tau_1 w) - \g'(u+\tau_2 w)|^2}{|w|^\alpha}  \right) d\tau_1 d \tau_2
+\end{multline*}
+where
+\begin{align*}
+ G^\alpha(z) := \frac 1 {2 |z|^\alpha} \cdot \frac {1- |z|^\alpha}{1 - |z|^2}
+\end{align*}
+is an analytic function away from the origin for $\alpha\ge 2$.
+We hence get
+\begin{align*}
+  T_1(\g,h) &= -\int_0^1 \int_0^1 T^{2}_{0,0,\tau_1, \tau_2}(h) d\tau_1 d\tau_2 \\
+ T_2(\g,h) &= \int_0^1 \int_0^1 \int_0^1 \int_0^1 T^{4}_{s_1,s_2, \tau_1, \tau_2} (h) d\tau_1 d\tau_2 ds_1 ds_2
+\end{align*}
+where
+\begin{multline*}
+ T^{\alpha}_{s_1, s_2, \tau_1, \tau_2}(h) \\:= \int_0^1 \int_{-1/2}^{1/2} G^{\alpha} 
+\left(\frac {\g(u+w) - \g(u)}{w} \right) \frac {|\g'(u+\tau_1 w) -\g'(u+\tau_2 w)|^2}{w^2} 
+\g'(u+s_1 w) h'(u+s_2 w) dw \ du.
+\end{multline*}
+
+In the rest of this section, we will derive some estimates for the linear operators $T^\alpha_{s_1,s_2, \tau_1, \tau_2}$
+that do not depend on $s_1,s_2, \tau_1,$ and $\tau_2$.
+
+For this task, we will work with the Besov spaces $B^{s}_{p,q}$.
+Given $s \in (0,1)$ and $p,q \in [1,\infty)$ one way to define the norm on these spaces 
+is to set
+\begin{equation*}
+ |f|_{B^{s}_{p,q}} := \left(\;\int_{-1/2}^{1/2} 
+  \frac {\left(\int_{\mathbb R / \mathbb Z}|f(u+w)-f(u)|^p du \right)^{q/p}}{|w|^{1+sq}} dw\right)^{1/q} 
+\end{equation*}
+ and to put 
+\begin{equation*}
+ \|f\|_{B^{s}_{p,q}} := \|f\|_{L^p} + |f|_{B^{s}_{p,q}}.
+\end{equation*}
+The Besov space $B^{s}_{p,q}(\R / \Z, \R^\tdim)$ then consists of all functions $f\in L^p$ with
+$|f|_{B^s_{p,q}} < \infty$.
+
+Apart from this definition we just need the Sobolev embedding
+\begin{equation*}
+ H^{\tilde s, \tilde p} \subset B^{s}_{p,q} 
+\end{equation*}
+if $s < \tilde s$ and $s- \frac 1 p < \tilde s - \frac 1 {\tilde p}$ which can be found
+in textbooks like, e.g., \cite{Triebel,RS,Tartar2007}.
+We also refer to~\cite{DiNezza}.
+
+The proof relies furthermore on the following rules for 
+Bessel potential spaces.
+
+\begin{lemma}[Fractional Leibniz rule~\cite{CM}, {\cite[Lem.~5.3.7/1~(i)]{RS}}
+] \label{lem:LeibnizRule}
+Let $f \in H^{s,p}(\mathbb R / \mathbb Z, \mathbb R^n)$, $g \in H^{s,q}(\mathbb R / \mathbb Z, \mathbb R^n)$
+with $s >0$, $p,q,r \in (1,\infty)$ and $1/p + 1/q = 1/r$.
+ 
+Then $fg \in H^{s,r}(\mathbb R / \mathbb Z, \mathbb R^n) $ and
+\begin{equation*}
+ \|fg\|_{H^{s,r}} \leq C \left( \|f\|_{H^{s,p}} \|g\|_{L^q} + \|f\|_{L^p} \|g\|_{H^{s,q}}\right).
+\end{equation*}
+
+\end{lemma}
+
+For the following statement, one mainly has to treat $\norm{(D^k\psi)\circ f}_{\W[\s,p]}$ for $k\in\N\cup\set0$ and $\s\in(0,1)$
+which is e.~g.\@ covered by~\cite[Thm.~5.3.6/1~(i)]{RS}.
+
+\begin{lemma}[Fractional chain rule]\label{lem:chain}
+ Let $f\in\W[s,p](\mathbb R / \mathbb Z, \mathbb R^n)$, $s > 0$, $p \in (1,\infty)$.
+ If $\psi\in C^\infty(\R)$ is globally Lipschitz continuous and $\psi$ and all its derivatives vanish at~$0$ then $\psi\circ f\in\W[s,p]$ and
+ \[ \|\psi \circ f\|_{\W[s,p]} \le C\|\psi\|_{C^{\scriptstyle k}}\|f\|_{\W[s,p]} \]
+ where $k$ is the smallest integer greater than or equal to $s$.
+\end{lemma}
+
+
+The key to the proof of Theorem~\ref{thm:bootstrapping} is the following lemma.
+
+\begin{lemma} \label{lem:basicEstimate}
+Let $\g \in H^{\frac 3 2 + \beta_0,q} (\mathbb R / \mathbb Z, \mathbb R^n)$,
+$\alpha\ge2$,
+and $\beta_0 \ge \beta \ge 0$, $p,q \in (1, \infty)$ be such that 
+$\beta_0 - 1/q > \beta - \frac 1 {2p}$.
+Then for all $\tau_1, \tau_2, s_1\in \mathbb [0,1]$ the function
+\begin{gather*}
+g(u):= \int_{-1/2}^{1/2} G^{\alpha}\left(\frac {\g(u+w) - \g(u)}{w} \right) \frac{|\g'(u+\tau_1 w) - \g'(u+\tau_2 w)|^2}{w^2} \g'(u+s_1 w)
+dw 
+\end{gather*}
+is in $H^{\beta,p}$. Furthermore, there is a constant $C<\infty$ depending on
+$\|\g\|_{H^{3/2 + \beta_0 ,q}}$ and $\alpha$, but not on $\tau_1, \tau_2$, and $s_1$, such that
+\begin{equation*}
+ \|g\|_{H^{\beta,p}} \leq C.
+\end{equation*}
+\end{lemma}
+
+\begin{proof}
+Note that
+\begin{equation*}
+  \|g\|_{H^{\beta , p}} \leq \int_{-1/2}^{1/2} \frac{\|g_w\|_{H^{\beta,p}}}{|w|^2} dw
+\end{equation*}
+where 
+\begin{equation*}
+ g_w(u) := G^{\alpha}\left(\frac {\g(u+w)-\g(u)} {w}\right) \g'(u+s_1 w )  |\g'(u+\tau_1 w)-\g(u+ \tau_2 w)|^2 .
+\end{equation*}
+Choosing some $\tilde p\in(p,p+1)$ which will be determined later on
+and letting $\tilde q := 2\frac{\tilde pp}{\tilde p-p}$ leads to
+\[ \frac1p = \frac1{2\tilde p} + \frac1{2\tilde p} + \frac1{\tilde q}
+   + \frac1{\tilde q}. \]
+
+Using that
+\begin{equation*}
+ \frac {\g(u+w)-\g(u)} {w} = \int_{0}^1 \g'(u+\tau w) d\tau,
+\end{equation*}
+that $\g$ is bi-Lipschitz, and that $G^\alpha$ is analytic away from the origin, 
+we get according to the fractional chain rule (Lemma~\ref{lem:chain})
+\begin{equation*}
+ \left\|G^{\alpha}\left(\frac {\g(\cdot +w)-\g(\cdot)}{w}\right)\right\|_{H^{\beta,\tilde q}}
+ \leq C \|\g\|_{H^{\beta+1,\tilde q}}
+  \leq C.
+\end{equation*}
+
+Using the fractional Leibniz rule (Lemma~\ref{lem:LeibnizRule}), we derive
+\begin{align*}
+ \|g_w\|_{H^{\beta,p}} &\leq C
+\left\|G^{\alpha}\left(\frac {\g(\cdot +w)-\g(\cdot)}{w}\right)\right\|_{H^{\beta,\tilde q}}
+\|\g'\|_{H^{\beta,\tilde q}}
+\|\g'(\cdot + \tau_1 w) - \g'(\cdot + \tau_2 w )\|^2_{H^{\beta,2\tilde p}}
+ \\
+&  \leq C \br{\|\g'(\cdot + \tau_1 w) - \g'(\cdot + \tau_2 w )\|^2_{L^{2\tilde p}} 
++ \|\laps{\beta+1}\g(\cdot + \tau_1 w) - \laps{\beta+1}\g(\cdot + \tau_2 w )\|^2_{L^{2\tilde p}} }.
+\end{align*}
+Hence,
+\begin{align*}
+  \|g\|_{H^{\beta,p}} &\leq C
+    \int_{-1/2}^{1/2} \frac{\|\g'(\cdot + \tau_1 w) - \g'(\cdot + \tau_2 w )\|^2_{L^{2\tilde p}} }{w^2} dw
+  \\
+  & \quad + C
+  \int_{-1/2}^{1/2} 
+    \frac {\|\laps{\beta+1}\g(\cdot + \tau_1 w) - \laps{\beta+1}\g(\cdot + \tau_2 w )\|^2_{L^{2\tilde p}}}
+  {w^2} dw
+\\
+&\leq C
+\int_{-1/2}^{1/2} \frac{\|\g'(\cdot) - \g'(\cdot + (\tau_2 - \tau_1) w )\|^2_{L^{2\tilde p}} }{w^2} dw
+ \\
+& \quad + C
+  \int_{-1/2}^{1/2} \frac {\|\laps{\beta+1}\g(\cdot) - \laps{\beta+1} \g(\cdot + (\tau_2 - \tau_1) w )\|^2_{L^{2\tilde p}} }{w^2} dw
+\\
+&\leq C |\tau_2 - \tau_1|
+\int_{-1}^{1} \frac{\|\g'(\cdot) - \g'(\cdot +  w )\|^2_{L^{2\tilde p}} }{w^2} dw
+ \\
+& \quad + C |\tau_2-\tau_1|
+  \int_{-1}^{1} \frac {\|\laps{\beta+1}\g(\cdot) - \laps{\beta+1} \g(\cdot +  w )\|^2_{L^{2\tilde p}} }{w^2} dw
+\\
+& \leq C \|\g'\|_{B^{1/2}_{2\tilde p,2}}^2 
+ + C \|\laps{\beta+1}\g\|^2_{B^{1/2}_{2\tilde p,2}} \leq C
+\end{align*}
+if $\tilde p\in(p,p+1)$ is chosen so small that
+\begin{equation*}
+  \beta_0 - \frac 1 q > \beta - \frac 1 {2\tilde p} > \beta - \frac 1 {2p}.
+\end{equation*}
+This proves Lemma~\ref{lem:basicEstimate}.
+\end{proof}
+
+We use the last lemma to prove
+\begin{corollary} \label{cor:basicEstimate}
+ Let $\g, \beta_0, \beta$,$p$ and $q$ be as in Lemma~\ref{lem:basicEstimate} and $p'$ 
+ be such that $1/p + 1/p' =1$. Then
+\begin{itemize}
+ \item for all $\alpha\ge2$ there is a constant $C$
+  such that
+  \begin{equation*}
+   | T^{\alpha}_{s_1, s_2 , \tau_1, \tau_2} (h) | \leq C \|h\|_{H^{1-\beta,p'}}
+  \end{equation*}
+  for all $s_1, s_2, \tau_1, \tau_2 \in [0,1]$ and $h \in C^\infty$,
+\item the operator
+ $T(\g,\cdot) = T_1(\g,\cdot) + T_2(\g,\cdot) \in \left(H^{3/2}(\mathbb R / \mathbb Z, \mathbb R^n )\right)^\ast$
+ can be extended to a bounded  operator on $ H^{1 - \beta,p'}$.
+\end{itemize}
+\end{corollary}
+
+\begin{proof}
+ For $h \in C^{\infty}(\mathbb R / \mathbb Z, \mathbb R^n)$ we have
+ \begin{align*}
+  T(\g,h) = - \int_0^1 \int_0^1 T^2_{0,0,t_1,t_2}(h) dt_1 dt_2
++ \int_0^1 \int_0^1 \int_0^1 \int_0^1 T^4_{s_1,s_2,t_1,t_2}(h) ds_1  ds_2 dt_1 dt_2
+ \end{align*}
+ and hence the second part is an immediate consequence of the first one.
+
+ Let $\Lambda^s := (\id-\Delta)^{\frac s 2}$. Using that $\Lambda^\beta$ is self adjoint, we get
+ \begin{align*}
+  T^{\alpha}_{s_1,s_2, \tau_1, \tau_2}(h) &= \int_{-1/2}^{1/2} \int_{\mathbb R / \mathbb Z} 
+  G^{\alpha}\left(\frac {\g(\cdot +w)-\g(\cdot)}{w}\right)
+  \frac {|\g'(u+\tau_1 w ) - \g'(u+\tau_2 w)|^2 }{w^2} 
+  \\
+  & \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad    \g'(u+s_1 w) h'(u+s_2 w)  du dw
+  \\&= \int_{\mathbb R / \mathbb Z}\int_{-1/2}^{1/2}
+  \frac{\left(\Lambda^{\beta}g_w \right)(u)}{w^{2}}
+\left( \Lambda^{-\beta}h'\right)(u+s_2 w) dw du 
+ \end{align*}
+ and hence as in the proof of Lemma~\ref{lem:basicEstimate}
+ \begin{equation*}
+  |T_{s_1,s_2, \tau_1, \tau_2}(h)|
+  \leq C \int_{-1/2}^{1/2}\frac{\norm{g_{w}}_{\W[\beta,p]}}{w^{2}}\d w\norm h_{\W[1-\beta,p']}
+  \le C \norm h_{\W[1-\beta,p']}
+ \end{equation*}
+ where $C<\infty$ as in Lemma~\ref{lem:basicEstimate} does not depend on 
+ on $s_1,s_2,\tau_1$,or $\tau_2$.
+\end{proof}
+
+Using the two statements above, we are led to the following fact from which Theorem~\ref{thm:bootstrapping}
+immediately follows.
+
+\begin{lemma}\label{lem:bootstrappingStep}
+ Let $\g \in H^{3/2 + \beta_0,q}(\mathbb R / \mathbb Z, \mathbb R^n)$, $\beta_0 \geq 0$, $q\in[2,\infty)$ and
+ $\beta_0 - \frac 1 q > -1/2$ 
+  be a stationary point of the M\"obius energy parametrized by
+  arc length. Then,
+\begin{itemize}
+ \item if $\beta_0 =0$, we have $\g \in H^{s}$ for all $s < 3/2 + 2(1/2-1/q)$,
+ \item if $0< \beta_0 < 1/2$, we have $\g \in H^{s}$ for all $s < 3/2 + 2(\beta_0 + 1/2-1/q)$,
+ \item if $\beta_0 \geq 1/2$, we have $\g \in H^{3/2+\beta_0+1/4}$.
+\end{itemize}
+
+\end{lemma}
+
+
+\begin{proof}
+ We set
+\begin{align*}
+  \beta & =0, & \frac 1p &= \frac 2 q + \varepsilon, & & \text { if } \beta_0 =0, \\
+  \beta &=0,& \frac 1 p &= \frac 2 q - 2\beta_0 + \varepsilon,& &\text{ if } 0< \beta_0 < 1/2, \\
+  \beta &= \beta_0 - 1/4,& \frac 1 p&=2/3, & & \text{ if } \beta_0 \geq \frac 1 2
+\end{align*}
+ and see that in each case the exponents satisfy the assumptions for the
+ preceding Corollary~\ref{cor:basicEstimate}
+ for all small enough $\varepsilon >0$, so,
+ for $p'$ with $\frac 1 p + \frac 1 {p'} =1$, the functional
+ $T(\g,\cdot) = T_1(\g,\cdot) + T_2(\g,\cdot)$
+ %$T_\g(h) := T_1(\g,h) - T_2 (\g,h)$
+ can be extended to an operator in 
+ $\left(H^{1-\beta, p'}\right)^{\ast} \subset (H^{3/2-1/{p'}-\beta})^\ast$.
+ 
+From the fact that $\g$ is a stationary point of the M\"obius energy we then deduce that
+ \begin{equation*}
+    Q(\g,\cdot) \in  (H^{3/2-1/{p'}-\beta})^\ast
+ \end{equation*}
+ and a comparison of the Fourier coefficients gives
+ \begin{equation*}
+  \g \in H^{3/2+\beta + \frac 1 {p'}}.
+ \end{equation*}
+Since
+\begin{equation*}
+ 3/2+ \beta + \frac 1 {p'} = 5/2 + \beta - \frac 1 p  = 
+\begin{cases} 
+  3/2 + 2 (1/2-1/q)-\varepsilon &\text{if } \beta_0=0, \\
+  3/2 + 2(\beta_0 + 1/2-1/q)  - \varepsilon &\text{if } 0< \beta_0 < 1 /2, \\
+  3/2 + \beta_0 + 1/4 &\text{else},
+\end{cases}
+\end{equation*}
+this proves Lemma~\ref{lem:bootstrappingStep}.
+\end{proof}
+

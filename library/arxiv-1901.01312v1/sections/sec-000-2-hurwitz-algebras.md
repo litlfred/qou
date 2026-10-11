@@ -7,7 +7,7 @@ section_number: 2
 pages: 1-1
 source_pdf: 1901.01312v1.pdf
 source_sha256: a480da38283622d6
-doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
+toc_source: inferred
 ---
 Niels G Gresnigt
 Xi’an Jiaotong-Liverpool University, Department of Mathematical Sciences. 111 Ren’ai Road,
@@ -22,7 +22,7 @@ the four normed division algebras are B2 and Bc
 3, exactly those required to represent a single
 generation of fermions in terms of simple three strand ribbon braids. These braided fermion
 states can be identiﬁed with the basis states of the minimal left ideals of the Cliﬀord algebra
-C𝓁(6), generated from the nested left actions of the complex octonions C⊗ O on itself. That
+Cℓ(6), generated from the nested left actions of the complex octonions C ⊗O on itself. That
 is, the ribbon spectrum can be related to octonion algebras. Some speculative ideas relating to
 ongoing research that attempts to construct a uniﬁed theory based on braid groups and Hurwitz
 algebras are discussed.

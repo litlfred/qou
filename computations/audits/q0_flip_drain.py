@@ -124,7 +124,7 @@ def main() -> int:
     producers: dict[str, list[str]] = collections.defaultdict(list)
     for r in flips:
         wp = widx.get(os.path.basename(r["witness"]), [])
-        if not wp or "_deprecated" in wp[0]:
+        if not wp or ("_deprecated" in wp or "fsh-guts" in wp)[0]:
             continue
         sf = json.load(open(wp[0])).get("scriptFile")
         if not sf:

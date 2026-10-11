@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/download-1/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/download-1/blocks/prose-sec-000",
   "kind": "prose",
-  "title": "Center of mass of a measure on a CAT(0)-space and observ-",
-  "pageStart": 7,
-  "pageEnd": 23,
-  "text": "../sections/sec-000-23-center-of-mass-of-a-measure-on-a-cat0-space-a.md",
-  "derivedFrom": "library/download-1/manifest",
-  "sourceDocument": "library/download-1/manifest",
+  "title": "Introduction.",
+  "pageStart": 1,
+  "pageEnd": 4,
+  "text": "../sections/sec-000-1-introduction.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download-1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download-1/manifest.jsonld",
   "provenance": "ingested"
 }

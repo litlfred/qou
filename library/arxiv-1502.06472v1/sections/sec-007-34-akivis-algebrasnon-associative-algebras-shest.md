@@ -8,12 +8,17 @@ pages: 5-5
 source_pdf: 1502.06472v1.pdf
 source_sha256: 381cd869fcc06f08
 doc_brief: "Gröbner-Shirshov bases and PBW theorems — We review some applications of Gr¨ obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for groups and"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Any nonassociative algebra is an Akivis algebra relative the commutat or [ x, y ] = xy − yx
-and the associator ( x, y, z ) = ( xy)z − x(yz).
-Akivis identity: [[ x, y ], z ]+[[ y, z ], x ]+[[ z, x ], y ] = ( x, y, z )+( z, x, y )+( y, z, x )−(x, z, y )−
-(y, x, z ) − (z, y, x ).
-A = A(xi, i ∈ I|[xi, x j] = {xi, x j}, (xi, x j, x t) = {xi, x j, x t}, i, j, t ∈ I),
-U(A) = k{X|S(−)},
-S(−) = {[xi, x j] = {xi, x j}, (xi, x j, x t) = {xi, x j, x t}, i, j, t ∈ I}.
-A GS basis of U(A) is given by Chen-Li [46] and then A ⊂ U(A).
+Any nonassociative algebra is an Akivis algebra relative the commutator $[x,y]=xy-yx$ and the associator $(x,y,z)=(xy)z - x(yz)$.
+
+Akivis identity: $[[x,y],z]+[[y,z],x]+[[z,x],y]=(x,y,z)+(z,x,y)+(y,z,x)-(x,z,y)-(y,x,z)-(z,y,x)$. $$\begin{aligned}
+&&A=A(x_i,i\in I|[x_i,x_j]=\{x_i,x_j\},\ (x_i,x_j,x_t)=\{x_i,x_j,x_t\},\ i,j,t\in I),\\
+&&U(A)=k\{X|S^{(-)}\},\\
+&& S^{(-)}=\{[x_i,x_j]=\{x_i,x_j\},\ (x_i,x_j,x_t)=\{x_i,x_j,x_t\},\
+i,j,t\in I\}.
+\end{aligned}$$
+
+A GS basis of $U(A)$ is given by Chen-Li [@CL] and then $A\subset U(A)$.

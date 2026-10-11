@@ -6,7 +6,8 @@
   "sha256": "683d6bd44cea670426e95e11717cb371716d90c20b72a84518ec929c32b1620b",
   "bytes": 359609,
   "pages": 31,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -197,6 +198,83 @@
   "likely_scanned": false,
   "toc_entries": 11,
   "sections": 8,
-  "chars_total": 76593
+  "chars_total": 76593,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 11,
+   "overlaid": 8,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-a-ring-theoretic-point-of-view",
+     "title": "A Ring-Theoretic Point of View",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-a-tannakian-point-of-view",
+     "title": "A Tannakian Point of View",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.802,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-comparison-of-the-galois-groups",
+     "title": "Comparison of the Galois groups",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-a-model-theoretic-point-of-view",
+     "title": "A Model-Theoretic Point of View",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-the-galois-group",
+     "title": "The Galois group",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-more-on-picard-vessiot-rings",
+     "title": "More on Picard-Vessiot rings",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.917,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-concluding-remarks",
+     "title": "Concluding remarks",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.668,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

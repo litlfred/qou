@@ -7,7 +7,8 @@
   "bytes": 1666201,
   "pages": 29,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -360,6 +361,147 @@
   "likely_scanned": false,
   "toc_entries": 21,
   "sections": 17,
-  "chars_total": 59029
+  "chars_total": 59029,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "ms.tex",
+   "tex_sections": 21,
+   "overlaid": 12,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-11-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.59,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-1-iterated-filtering-methods-for-pomp",
+     "title": "Iterated filtering methods for POMP",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-12-likelihood-based-inference",
+     "title": "Likelihood-based inference",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.256,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-003-121-the-likelihood-approach",
+     "title": "The likelihood approach",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-122-practical-challenges",
+     "title": "Practical challenges",
+     "prose_ratio": 0.897,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-131-likelihood-of-a-pomp",
+     "title": "Likelihood of a POMP",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.867,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-132-evaluation-of-the-likelihood",
+     "title": "Evaluation of the likelihood",
+     "prose_ratio": 0.677,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-14-iterated-filtering-methods",
+     "title": "Iterated filtering methods",
+     "prose_ratio": 0.779,
+     "coverage_ratio": 0.376,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-008-141-algorithm",
+     "title": "Algorithm",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.878,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-151-the-problem-of-interest",
+     "title": "The problem of interest",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-152-formulation-of-a-pomp-model",
+     "title": "Formulation of a POMP model",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-153-inference",
+     "title": "Inference",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-154-practical-advice",
+     "title": "Practical advice",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-16-extensions",
+     "title": "Extensions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-17-rotavirus-example",
+     "title": "Rotavirus example",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-18-concluding-comments",
+     "title": "Concluding comments",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.812,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-182-further-reading",
+     "title": "Further reading",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.237,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

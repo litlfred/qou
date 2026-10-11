@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/reshetikhin-turaev/blocks/prose-sec-014",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/reshetikhin-turaev/blocks/prose-sec-014",
   "kind": "prose",
   "title": "Coloured Ribbon Graphs",
   "pageStart": 8,
   "pageEnd": 8,
   "text": "../sections/sec-014-4-coloured-ribbon-graphs.md",
-  "derivedFrom": "library/reshetikhin-turaev/manifest",
-  "sourceDocument": "library/reshetikhin-turaev/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/reshetikhin-turaev/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/reshetikhin-turaev/manifest.jsonld",
   "provenance": "ingested"
 }

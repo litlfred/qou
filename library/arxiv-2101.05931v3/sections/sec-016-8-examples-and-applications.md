@@ -8,108 +8,113 @@ pages: 21-23
 source_pdf: 2101.05931v3.pdf
 source_sha256: 41eaa81b97ede8e9
 doc_brief: "CATEGORICAL BRAID GROUP ACTIONS — Let g be a semisimple simply-laced Lie algebra of ﬁnite type."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.692
 ---
-8.1. Examples. We now examine three examples. The ﬁrst two consider minimal categoriﬁcations
-of the adjoint representation, while the third studies the c ategoriﬁcation of the n-fold tensor product
-of the standard representation of sln. For ease of presentation, we ignore gradings and consider
-non-quantum categorical representations.
-Example 8.1. Let’s consider the ﬁrst non-trivial example of Theorem 6.4: the minimal categori-
-ﬁcation of the adjoint representation of sl2. We can model this as follows:
-/CZ −mod R−mod /CZ −mod
-ind res
-res ind
-where R = /CZ [x]/(x2) [16, Example 5.17]. Here /CZ −mod is the ±2 weight category, and R−mod is
-the zero weight category. The arrows describe the E, F functors (we omit the higher structure).
-Consider the Rickard complex Θ = Θ /BD
-0 : Db(R−mod) → Db(R−mod). For M ∈ R−mod, we
-have:
-Θ(M ) = R ⊗
-/CZ
-M →M,
-where the diﬀerential is given by the action map, and M is in cohomological degree 0. It’s an
-exercise to verify that Θ( M ) is quasi-isomorphic to M ′[1], where M ′ is the twist of M by the
-automorphism of R given by a +bx ↦→a −bx. This shows that Θ[ −1] is the t-exact equivalence
-M ↦→M ′. □
-Example 8.2. More generally, one can consider the minimal categoriﬁcati on of the adjoint repre-
-sentation of a simple simply-laced Lie algebra g. This was studied by Khovanov and Huerfano in
-[23], who used zigzag algebras to model this category.
-For a weight α of the adjoint representation of g, the weight category Cα is taken to be /CZ −mod
-as long as α ⁄= 0. However, the zero weight category is more interesting: C0 :=A−mod, where A
-is the zigzag algebra associated to the Dynkin diagram I of g (cf. [23] for the precise deﬁnition).
-The isomorphism classes of indecomposable projective left A-modules {Pi} and the isomorphism
-classes of indecomposable projective right A-modules {Qi} are both indexed by i ∈ I. Tensoring
-with these modules deﬁnes functors
-Ei : C0 − → Cαi, M ↦→Qi ⊗AM,
-Ei : C−αi − → C0, V ↦→Pi ⊗
-/CZ
-V.
-22 IV A HALACHEV A, ANTHONY LICATA, IV AN LOSEV, AND ODED YACOB I
-The functors Fi are deﬁned analogously and are biadjoint to the Ei.
-The Rickard complex Θ i
-/BD
-0 is given by tensoring with the complex
-Pi ⊗
-/CZ
-Qi →A
-of (A,A )-bimodules, where the diﬀerential is given by the multiplic ation in A, and A sits in coho-
-mological degree zero. These functors are autoequivalence s of the derived category Db(C0).
-By Theorem 6.4 Θ w0
-/BD
-0[−n] is t-exact, where n + 1 is the Coxeter number of g. This auto-
-equivalence can be explicitly described as follows: the aut omorphism of the Dynkin diagram τ :I →
-I induces an automorphism ψ ofA. Then we claim that Θ w0
-/BD
-0[−n] is the abelian autoequivalence
-of A−mod deﬁned by twisting with ψ. Indeed, since Θ w0
-/BD
-0[−n] is an abelian autoequivalence, it
-is determined up to isomorphism by its action on simple objec ts. Moreover, the action on simple
-objects can be read oﬀ from the action of W on the Grothendieck group of A−mod as follows:
-[A−mod]Z is isomorphic to the Cartain subalgebra by mapping [ Li] (Li is the simple head of Pi)
-to the simple root vector Hi. And on the root vectors we have that w0 ·Hi = −Hτ (i) □
-Example 8.3. Let g = sln and consider then-fold tensor power of the standard representation V ⊗n.
-Categoriﬁcations of V ⊗n have been well-studied, and a model C for this categorical representation
-can be constructed using the BGG category O of g [38, 47]. In this model, the principal block
-O0 ⊂ O appears as the zero weight category of C, and the Rickard complexes acting on Db(O0) are
-the well-known shuﬄing functors.
-By Theorem 6.8 Θ w0
-/BD
-0 :Db(O0) →Db(O0) is a perverse equivalence with respect to an isotypic
-ﬁltration. In fact, this recovers the type A case of a theorem of the third named author [33],
-using completely diﬀerent methods (in [33] the perversity of Θ w0 is proved using the theory of
-W-algebras). We can interpret the ﬁltration of O0 arising from our perspective concretely using
-the Robinson-Schensted correspondence .
-Recall that the simple objects in O0 are the irreducible highest weight representations L(w),w ∈
-Sn, where L(w) has highest weight wρ −ρ (ρ is the half-sum of positive roots of sln).
-We view a partition λ ofn simultaneously as a dominant integral weight for sln, and as an index
-for the irreducible Specht module Sλ of the symmetric group Sn. Let SYT( λ) denote the set of
-standard Young tableau of shape λ, and let d(λ) = |SYT(λ)|. Recall that d(λ) = dim Sλ.
-Choose an ordering of the partitions of n, λ1,...,λ r, so that if λi ≺λj in the dominance order,
-then i < j. Note that the dominance order on partitions of n is equivalent to the positive root
-ordering on partitions (thought of as weights for sln). By Remark 3.9 there is an isotypic ﬁltration
-on C, 0 ⊂ C 1 ⊂ · · · ⊂ C N = C, where Ci/Ci−1 is an isotypic categoriﬁcation of type λi. Then Θ w0
-is a perverse equivalence with respect to the ﬁltration O0,i = O0 ∩ Ci and the perversity function
-p(i) = ht(λi).
-We would like now to deﬁne the categories O0,i more explicitly using the Robinson-Schensted
-correspondence, which recall is a bijection [42]:
-RS :Sn − →
-r⨆
-j=1
-SYT(λj) × SYT(λj), w ↦→(P (w),Q (w)).
-We will use a crystal analogue of classical Schur-Weyl duali ty. This is given by a crystal isomor-
-phism:
-B(̟1)⊗n − →
-r⨆
-j=1
-B(λj ) × SYT(λj). (8.4)
-Now, recall that for a partition λ ofn, the underlying set of the crystal B(λ) can be chosen to be
-the set of semistandard Young tableaux of shape λ with entries 1,...,n , and the weight zero subset
-of B(λ) is precisely SYT( λ). The essential point is that the isomorphism (8.4) can be ch osen so
-CATEGORICAL BRAID GROUP ACTIONS AND CACTUS GROUPS 23
-that it restricts to the map RS on the elements of weight zero ([44, Theorem 3.5]). (Note tha t the
-elements of weight zero in B(̟1)⊗n are naturally identiﬁed with permutations of 1 ,...,n .)
-This shows that as an element of the crystal B(̟1)⊗n, [L(w)] is in a connected component whose
-highest weight is the shape of Q(w) (or equivalently P (w)). Therefore, following Remark 3.10, we
-can construct the isotypic ﬁltration be deﬁning O0,i to be the Serre subcategory of O0 generated
-byL(w) such that the shape of Q(w) is among λ1,...,λ i.
-□
+\subsection{Examples}
+We now examine three examples.  The first two consider minimal categorifications of the adjoint representation, while the third studies the categorification of the $n$-fold tensor product of the standard representation of $\fsl_n$.  For ease of presentation, we ignore gradings and consider non-quantum categorical representations.
+
+\begin{example}
+Let's consider the first non-trivial example of Theorem \ref{thm:mincat}: the minimal categorification of the adjoint representation of $\fsl_2$.  We can model this as follows:
+$$
+\begin{tikzcd}
+\kk\mmod \arrow[rr, bend left, "ind"] &  & R\mmod \arrow[rr, bend left,"res"] \arrow[ll, bend left, "res"] &  & \kk\mmod \arrow[ll, bend left, "ind"]
+\end{tikzcd}
+$$
+where $R=\kk[x]/(x^2)$ \cite[Example 5.17]{CR}.  Here $\kk\mmod$ is the $\pm2$ weight category, and $R\mmod$ is the zero weight category.  The arrows describe the $\sE,\sF$ functors (we omit the higher structure). 
+
+Consider the Rickard complex $\Theta=\Theta\bone_0:D^b(R\mmod) \to D^b(R\mmod)$.  For $M\in R\mmod$, we have:
+\begin{align*}
+\Theta(M)=R\otimes_\kk M \to M,
+\end{align*}
+where the differential is given by the action map, and $M$ is in  cohomological degree $0$.  It's an exercise to verify that $\Theta(M)$ is quasi-isomorphic to $M'[1]$, where $M'$ is the twist of $M$ by the automorphism of $R$ given by $a+bx \mapsto a-bx$.  This shows that $\Theta[-1]$ is the t-exact equivalence $M\mapsto M'$.
+\end{example}
+
+\begin{example}
+More generally, one can consider the minimal categorification of the adjoint representation of a simple simply-laced Lie algebra $\fg$.  This was studied by Khovanov and Huerfano in \cite{HuerKh}, who used zigzag algebras to model this category.  
+
+For a weight $\alpha$ of the adjoint representation of $\fg$, the weight  category $\cC_\alpha$ is taken to be $\kk\mmod$ as long as $\alpha\neq 0$.  However, the zero weight  category is more interesting:  $\cC_0 := A \mmod$, where $A$ is the zigzag algebra associated to the Dynkin diagram $I$ of $\fg$ (cf. \cite{HuerKh} for the precise definition).  
+
+The isomorphism classes of indecomposable projective left $A$-modules $\{P_i\}$ and the isomorphism classes of indecomposable projective right $A$-modules $\{Q_{i}\}$ are both indexed by $i \in I$.  Tensoring with these modules defines functors 
+\begin{align*}
+	&\sE_i: \cC_0 \longrightarrow \cC_{\alpha_i}, \quad M \mapsto Q_{i} \otimes_{A} M, \\
+	&\sE_i : \cC_{-\alpha_i} \longrightarrow \cC_0, \quad  V \mapsto  P_i\otimes_\kk V.
+\end{align*}
+The functors $\sF_i$ are defined analogously and are biadjoint to the $\sE_i$.
+
+The Rickard complex
+$\Theta_i \bone_0$ is given by tensoring with the complex
+$$
+	P_i\otimes_\kk Q_i \rightarrow A
+$$
+of $(A,A)$-bimodules, where the differential is given by the multiplication in $A$, and $A$ sits in cohomological degree zero.  These functors are autoequivalences of the derived category $D^b(\cC_0)$.  
+
+By Theorem \ref{thm:mincat}  $\Theta_{w_0}\bone_0[-n]$ is t-exact, where $n+1$ is the Coxeter number of $\fg$.  
+This auto-equivalence can be explicitly described as follows: the automorphism of the Dynkin diagram $\tau:I\to I$ induces an automorphism $\psi$ of $A$.  Then we claim that $\Theta_{w_0}\bone_0[-n]$ is the abelian autoequivalence of $A\mmod$ defined by twisting with $\psi$.  Indeed, since $\Theta_{w_0}\bone_0[-n]$ is an abelian autoequivalence, it is determined up to isomorphism by its action on simple objects.  Moreover, the action on simple objects can be read off from the action of $W$ on the Grothendieck group of $A \mmod$ as follows: $[A \mmod]_\ZZ$ is isomorphic to the Cartain subalgebra by mapping $[L_i]$ ($L_i$ is the simple head of $P_i$) to the simple root vector $H_i$.  And on the root vectors we have that $w_0\cdot H_i = -H_{\tau(i)}$ 
+\end{example}
+
+
+\begin{example}\label{ex:catO}
+Let $\fg=\fsl_n$ and consider the $n$-fold tensor power of the standard representation $V^{\otimes n}$.  Categorifications of $V^{\otimes n}$ have been well-studied, and a model $\cC$ for this categorical representation can be constructed using the BGG category $\cO$ of $\fg$ \cite{Sussan2007, MS09}.  In this model, the principal block $\cO_0 \subset \cO$ appears as the zero weight category of $\cC$, and the Rickard complexes acting on $D^b(\cO_0)$ are the well-known shuffling functors.
+
+By Theorem \ref{thm:perveq} $\Theta_{w_0}\bone_0:D^b(\cO_0)\to D^b(\cO_0)$ is a perverse equivalence with respect to an isotypic filtration.  In fact, this recovers the type A case of a theorem of the third named author \cite{LosCacti}, using completely different methods (in \cite{LosCacti} the perversity of $\Theta_{w_0}$ is proved using the theory of W-algebras).  We can interpret the filtration of $\cO_0$ arising from our perspective concretely using the Robinson-Schensted correspondence .  
+
+Recall that the simple objects in $\cO_0$ are the irreducible highest weight representations $L(w), w \in S_n$, where $L(w)$ has highest weight $w\rho-\rho$ ($\rho$ is the half-sum of positive roots of $\fsl_n$). 
+
+We view a partition $\lambda$ of $n$  simultaneously as a dominant integral weight for $\fsl_n$, and as an index for the irreducible Specht module $S^\lambda$ of the symmetric group $S_n$. Let $\SYT(\lambda)$ denote the set of standard Young tableau of shape $\lambda$, and let $d(\lambda)=|\SYT(\lambda)|$.  Recall that $d(\lambda)=\dim S^\lambda$.  
+
+
+Choose an ordering of the partitions of $n$, $\lambda_1,\hdots,\lambda_r$, so that if $\lambda_i \prec \lambda_j$ in the dominance order, then $i<j$.  Note that the dominance order on partitions of $n$ is equivalent to the positive root ordering on partitions (thought of as weights for $\fsl_n$).
+By Remark \ref{rem:isofilts} there is an isotypic filtration on $\cC$,
+$
+0 \subset \cC_1 \subset \cdots\subset \cC_N=\cC,
+$
+where  $\cC_i/\cC_{i-1}$ is an isotypic categorification of type $\lambda_i$.  Then  $\Theta_{w_0}$ is a perverse equivalence with respect to the filtration $\cO_{0,i} = \cO_0\cap \cC_i$ and the perversity function $p(i)=ht(\lambda_i)$.
+
+
+We would like now to define the categories $\cO_{0,i}$ more explicitly using the Robinson-Schensted correspondence, which recall is a bijection \cite{Sagan}:
+\begin{align*}
+\mathsf{RS}:S_n \longrightarrow \bigsqcup_{j=1}^r\SYT(\lambda_j)\times\SYT(\lambda_j), \; w \mapsto (P(w),Q(w)).
+\end{align*}
+We will use a crystal analogue of classical Schur-Weyl duality.  This is given by a crystal isomorphism: 
+\begin{align}\label{eq:crystalSW}
+\bB(\varpi_1)^{\otimes n} \longrightarrow \bigsqcup_{j=1}^r \bB(\lambda_j)\times\SYT(\lambda_j).
+\end{align}
+
+Now, recall that for a partition $\la$ of $n$, the underlying set of the crystal $\bB(\la)$ can be chosen to be the set of semistandard Young tableaux of shape $\la$ with entries $1,\hdots,n$, and the weight zero subset of $\bB(\la)$ is precisely $\SYT(\la)$.  
+The essential point is that the isomorphism \eqref{eq:crystalSW} can be chosen so that it restricts to the map $\mathsf{RS}$ on the elements of weight zero (\cite[Theorem 3.5]{Shimozono}). (Note that  the elements of weight zero in $\bB(\varpi_1)^{\otimes n}$ are naturally identified with permutations of $1,\hdots,n$.)
+
+This shows that as an element of the crystal $\bB(\varpi_1)^{\otimes n}$, $[L(w)]$ is in a connected component whose highest weight is the shape of $Q(w)$ (or equivalently $P(w)$).   
+Therefore, following Remark \ref{rem:JHfromCrystal}, we can construct the isotypic filtration be defining  $\cO_{0,i}$ to be  the Serre subcategory of $\cO_0$ generated by $L(w)$ such that the shape of $Q(w)$ is among $\la_1,\hdots,\la_i$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{example}

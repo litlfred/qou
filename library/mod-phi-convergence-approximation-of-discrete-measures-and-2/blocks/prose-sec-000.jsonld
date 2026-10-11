@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-000",
   "kind": "prose",
   "title": "Introduction",
   "pageStart": 3,
   "pageEnd": 3,
   "text": "../sections/sec-000-1-introduction.md",
-  "derivedFrom": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/manifest",
-  "sourceDocument": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/mod-phi-convergence-approximation-of-discrete-measures-and-2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/mod-phi-convergence-approximation-of-discrete-measures-and-2/manifest.jsonld",
   "provenance": "ingested"
 }

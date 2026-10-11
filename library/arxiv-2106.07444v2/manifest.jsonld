@@ -1,0 +1,56 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2106.07444v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2106.07444v2",
+  "contains": [
+    "library/arxiv-2106.07444v2/sections/sec-front-matter",
+    "library/arxiv-2106.07444v2/sections/sec-000",
+    "library/arxiv-2106.07444v2/sections/sec-001",
+    "library/arxiv-2106.07444v2/sections/sec-002",
+    "library/arxiv-2106.07444v2/sections/sec-003",
+    "library/arxiv-2106.07444v2/sections/sec-004",
+    "library/arxiv-2106.07444v2/sections/sec-005",
+    "library/arxiv-2106.07444v2/sections/sec-006",
+    "library/arxiv-2106.07444v2/sections/sec-007",
+    "library/arxiv-2106.07444v2/sections/sec-008",
+    "library/arxiv-2106.07444v2/sections/sec-009",
+    "library/arxiv-2106.07444v2/sections/sec-010",
+    "library/arxiv-2106.07444v2/sections/sec-011",
+    "library/arxiv-2106.07444v2/sections/sec-012",
+    "library/arxiv-2106.07444v2/sections/sec-013"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2106.07444&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2106.07444v2",
+    "title_source": "slug",
+    "source_file": "2106.07444v2.pdf",
+    "source_sha256": "5acca39c07bcdddd870a36a840a97c79a675d3c3c309d596ead9ea2f0c902602",
+    "pages": 88,
+    "arxiv": {
+      "id": "2106.07444",
+      "version": "2",
+      "primary_class": "math.RT",
+      "stamp_date": "21 Jun 2021"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

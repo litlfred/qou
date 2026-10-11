@@ -24,7 +24,7 @@ step and made everything else conditional on it: *are `M_{n,q}` and the corpus's
 That audit asserted *"`q-Plancherel` appears nowhere in `computations/`,
 `content/` or `docs/`. This is a genuine gap, not a re-derivation."* Measured
 with `grep -ril "q-plancherel\|q_plancherel"`, excluding this probe's own
-files: **202 live files**, plus 8 under `computations/_deprecated/` and 16
+files: **202 live files**, plus 8 under `fsh-guts/deprecated/computations/` and 16
 beans. The corpus does not merely mention it — it carries content blocks named
 `prop:q-plancherel-asymptotic-skeleton` / `conj:q-plancherel-asymptotic-
 skeleton`, and `computations/deltalambda/` uses a weight it calls *"Ocneanu /

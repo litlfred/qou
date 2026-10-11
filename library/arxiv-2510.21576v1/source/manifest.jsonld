@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2510.21576v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Relativistic corrections for lepton-nucleus scattering in the short-time approximation (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2510.21576v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2510.21576&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2510.21576v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2510.21576v1",
+    "content_type": "application/gzip",
+    "sha256": "71caf3dd3c11520e157e3637e834a3a76f916f4eaa0a2d4a7311e2e1824dceff",
+    "bytes": 1771209,
+    "fetched": "2026-10-10T15:21:55+00:00",
+    "files": [
+      {
+        "path": "source/files/biblio.bib",
+        "role": "bib",
+        "sha256": "d2526e27cac5e87cfd47f6debc5842521247b21aa1618ea2ecbe88af543348fc",
+        "bytes": 24923
+      },
+      {
+        "path": "source/files/main.bbl",
+        "role": "bbl",
+        "sha256": "4c28fe920d4def5e696706475ce0a141a1690178a9dfc8fae0930d2aa4769470",
+        "bytes": 38901
+      },
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "138173089f7bb8a1cd9c0a3796d3e798aff07f60d6a6149e85550792b7a76e93",
+        "bytes": 67882
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

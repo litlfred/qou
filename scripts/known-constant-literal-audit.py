@@ -68,7 +68,7 @@ def _vol_5_2() -> "mp.mpf":
 # a decimal literal with a fractional part; require enough digits to be identifiable
 LIT = re.compile(r"(?<![\w.])(\d+\.\d{6,})(?![\w.])")
 
-SKIP_DIRS = {".git", ".lake", "node_modules", "_deprecated", "beans/defs"}
+SKIP_DIRS = {".git", ".lake", "node_modules", "_deprecated", "fsh-guts", "beans/defs"}
 
 # JSON keys that DECLARE a constant (as opposed to reporting a computed number)
 KEY_NAMES_CONSTANT = re.compile(

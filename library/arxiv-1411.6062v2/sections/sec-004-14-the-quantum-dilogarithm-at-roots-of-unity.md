@@ -8,67 +8,40 @@ pages: 6-7
 source_pdf: 1411.6062v2.pdf
 source_sha256: 5abd328d027de43c
 doc_brief: "EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS — Multi-dimensional state-integrals of products of Faddeev’s quant um diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨ uller t"
+text_source: latex
+latex_prose_ratio: 0.93
+latex_coverage_ratio: 0.898
 ---
-Recall b and s from Equation ( 11). Let Li 2(z) = ∑ ∞
-n=1
-zn
-n2 denote the Euler dilogarithm,
-deﬁned for |z| < 1 and analytically continued as a multivalued function on /BV \{ 0, 1}.
-Theorem 1.9. We have:
-(21) Φ b
-( z
-2πs− cb
-)
-= e
-i
-2π s2 Li2(ez) (1− ez)1+ iz
-2π s2
-DN (ez/N ; q+) DM (ez/M ; q−) .
-It is remarkable that the left-hand side is a meromorphic function of z whereas the right
-hand side is assembled out of multivalued functions of z.
-In particular when M = 1, we obtain that
-(22) Φ b(x− cb) = e− 1
-2π iN Li2(zN )
-DN (z) (1− zN )1+ ix√
-N , z = e2πbx ,
-and when M = N = 1, we obtain that
-(23) Φ 1(x) = exp
-( i
-2π
-(
-Li2(e2πx) + 2πx log(1− e2πx)
-) )
-.
-By using the equality
-(24) Φ b
-( z
-2πs− cb
-)
-Φ b
-( z
-2πs + cb
-) =
-(
-1− ez/N)(
-1− ez/M)
-we also have
-(25) Φ b
-( z
-2πs + cb
-)
-= e
-i
-2π s2 Li2(ez) (1− ez)1+ iz
-2π s2
-/DN (ez/N ; q+) /DM (ez/M ; q−) ,
-Remark 1.10. The cyclic dilogarithm is in a sense a radial limit of the generating series
-M(x, q ) =
-∞∏
-n=1
-1
-(1− xqn)n
-where M(x, q ) is the McMahon generating series of 3-dimensional plane partitions ; see
-[AKMV05] and [ OR V06, Sec.2.1]. The latter appear in M-theory and mirror symmetry.
-It would be interesting and useful to understand a precise relation between the function D N
-and plane partitions.
-EV ALUATION OF STATE INTEGRALS AT RATIONAL POINTS 7
+[]{#sub.evalphi label="sub.evalphi"}
+
+We fix an admissible pair $(M,N)$. Recall $\mathsf{b}$ and $\mathsf{s}$ from Equation [\[eq.bs\]](#eq.bs){reference-type="eqref" reference="eq.bs"}. Let $\mathrm{Li}_2(z)=\sum_{n=1}^\infty \frac{z^n}{n^2}$ denote the Euler dilogarithm, defined for $|z|<1$ and analytically continued as a multivalued function on $\mathbbm C\setminus\{0,1\}$.
+
+::: theorem
+[]{#thm.2 label="thm.2"} We have: $$\label{eq.Phieval}
+\operatorname{\Phi}_{\mathsf{b}}\!\left(\frac{z}{2\pi\mathsf{s}}-c_{\mathsf{b}}\right)=
+\frac{e^{\frac{\mathsf{i}}{2\pi\mathsf{s}^2}\operatorname{Li_2}(e^{z})}
+\left(1-e^z\right)^{1+\frac{\mathsf{i}z}{2\pi\mathsf{s}^2}}}{
+\operatorname{D}_N(e^{z/N};q_+)\operatorname{D}_M(e^{z/M};q_-)} \,.$$
+:::
+
+It is remarkable that the left-hand side is a meromorphic function of $z$ whereas the right hand side is assembled out of multivalued functions of $z$.
+
+In particular when $M=1$, we obtain that $$\label{eq.evalphiN}
+\operatorname{\Phi}_{\mathsf{b}}(x-c_{\mathsf{b}})= \frac{e^{-\frac{1}{2 \pi \mathsf{i}N}\mathrm{Li}_2(z^N)}}{
+\operatorname{D}_N(z)}
+(1-z^N)^{1+ \frac{\mathsf{i}x}{\sqrt{N}}}, \qquad z=e^{2 \pi \mathsf{b} x} \,,$$ and when $M=N=1$, we obtain that $$\label{eq.phi1}
+\operatorname{\Phi}_{1}(x)=\exp\left( \frac{\mathsf{i}}{2 \pi} \left( \mathrm{Li}_2(e^{2 \pi x})+2 \pi x
+\log(1-e^{2 \pi x})\right)\right) \,.$$
+
+By using the equality $$\frac{\operatorname{\Phi}_{\mathsf{b}}\!\left(\frac{z}{2\pi\mathsf{s}}-c_{\mathsf{b}}\right)}
+{\operatorname{\Phi}_{\mathsf{b}}\!\left(\frac{z}{2\pi\mathsf{s}}+c_{\mathsf{b}}\right)}=
+\left(1-e^{z/N}\right)\left(1-e^{z/M}\right)$$ we also have $$\label{eq.Phieval+}
+\operatorname{\Phi}_{\mathsf{b}}\!\left(\frac{z}{2\pi\mathsf{s}}+c_{\mathsf{b}}\right)=
+\frac{e^{\frac{\mathsf{i}}{2\pi\mathsf{s}^2}\operatorname{Li_2}(e^{z})}
+\left(1-e^z\right)^{1+\frac{\mathsf{i}z}{2\pi\mathsf{s}^2}}}{
+\slashed{\operatorname{D}}_N(e^{z/N};q_+)
+\slashed{\operatorname{D}}_M(e^{z/M};q_-)},$$
+
+::: remark
+[]{#rem.ORV label="rem.ORV"} The cyclic dilogarithm is in a sense a radial limit of the generating series $$M(x,q)=\prod_{n=1}^\infty \frac{1}{(1-x q^n)^n}$$ where $M(x,q)$ is the McMahon generating series of 3-dimensional *plane partitions*; see [@top-vertex] and [@ORV Sec.2.1]. The latter appear in M-theory and mirror symmetry. It would be interesting and useful to understand a precise relation between the function $\operatorname{D}_N$ and plane partitions.
+:::

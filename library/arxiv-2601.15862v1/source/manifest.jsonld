@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2601.15862v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Synthetic Differential Jet Bundles are Reduced (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2601.15862v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2601.15862&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2601.15862v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2601.15862v1",
+    "content_type": "application/gzip",
+    "sha256": "06af17e100669790aac6d161a0a68a15a6e053169cbbe425d3739e35d104d915",
+    "bytes": 24355,
+    "fetched": "2026-10-10T15:22:19+00:00",
+    "files": [
+      {
+        "path": "source/files/main.bbl",
+        "role": "bbl",
+        "sha256": "4e7d6ca40cd6b1e99dd0c98b90cbfb8e830439c9de93a4c87249acbadcd5daac",
+        "bytes": 35476
+      },
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "44d92268cb5bd8847181070fcac5e05345b6908e43a8bb1171141fd3d29fb112",
+        "bytes": 69609
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

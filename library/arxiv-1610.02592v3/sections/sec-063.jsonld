@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.02592v3/sections/sec-063",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The solution space",
+  "pageStart": 458,
+  "pageEnd": 469,
+  "contains": [
+    "library/arxiv-1610.02592v3/blocks/prose-sec-063",
+    "library/arxiv-1610.02592v3/blocks/prop-sec-063-01",
+    "library/arxiv-1610.02592v3/blocks/prop-sec-063-02",
+    "library/arxiv-1610.02592v3/blocks/lem-sec-063-03",
+    "library/arxiv-1610.02592v3/blocks/lem-sec-063-04",
+    "library/arxiv-1610.02592v3/blocks/prop-sec-063-05",
+    "library/arxiv-1610.02592v3/blocks/prop-sec-063-06",
+    "library/arxiv-1610.02592v3/blocks/prop-sec-063-07",
+    "library/arxiv-1610.02592v3/blocks/cor-sec-063-08",
+    "library/arxiv-1610.02592v3/blocks/prop-sec-063-09",
+    "library/arxiv-1610.02592v3/blocks/prop-sec-063-10"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.02592v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.02592v3/manifest.jsonld",
+  "provenance": "ingested"
+}

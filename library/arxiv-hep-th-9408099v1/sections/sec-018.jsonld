@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-hep-th-9408099v1/sections/sec-018",
   "@type": [
     "doco:Section"
   ],
-  "title": "Breaking N = 2 to N = 1",
-  "pageStart": 31,
-  "pageEnd": 32,
+  "title": "The Theory Of The Residues",
+  "pageStart": 70,
+  "pageEnd": 71,
   "contains": [
     "library/arxiv-hep-th-9408099v1/blocks/prose-sec-018"
   ],
-  "derivedFrom": "library/arxiv-hep-th-9408099v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-9408099v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9408099v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9408099v1/manifest.jsonld",
   "provenance": "ingested"
 }

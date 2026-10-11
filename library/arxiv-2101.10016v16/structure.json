@@ -1,0 +1,726 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2101.10016v16",
+ "source": {
+  "file": "2101.10016v16.pdf.txt",
+  "sha256": "51d21209730be025e950dbcb999ed081a7be4ba4794117bd8171d163f283b38d",
+  "bytes": 786094,
+  "mtime": "2026-10-10T18:27:27Z",
+  "mimetype_sniffed": "text/plain",
+  "mimetype_source": "unrecognised",
+  "pages": 261
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2101.10016",
+   "version": "16",
+   "primary_class": "math.QA",
+   "stamp_date": "4 Oct 2026"
+  },
+  "doi": null,
+  "title": "Unitary coboundary weak quasi-Hopf algebras in the Kazhdan-Lusztig-Finkelberg theorem",
+  "authors_raw": "Sergio Ciamprone, Marco Valerio Giannone, Claudia Pinzari",
+  "abstract": "We construct, for every complex simple Lie algebra g and every positive integer level k, a unitary modular tensor category structure on the module category of the affine vertex operator algebra Vgk, equivalent to the quantum group fusion category C(g, q, \u2113), within the Doplicher\u2013Roberts quantum group duality program for the Wess\u2013 Zumino\u2013Witten model. The construction reaches positive integer levels that Finkelberg\u2019s argument does not cover, namely E6 and E7 at k = 1 and E8 at k = 2, and it treats simply\u0002laced and non-simply-laced types uniformly, whereas the Kazhdan\u2013Lusztig construction was carried out for the simply-laced case. We establish that a weak quasi-fibre structure on a functor preserving a coboundary symmetry in the sense of Drinfeld extends a symmetric functor under permutation sym\u0002metry. Using Wenzl\u2019s functor associated with the unitary quantum group fusion category, we construct such a structure compatible with the associativity morphisms, yielding uni\u0002tary coboundary weak Hopf C \u2217 -algebras for all Lie types and positive integer levels, a new class axiomatically introduced here. Via a specialized Drinfeld twist for our algebras and the Wenzl de-quantization curve, this structure is transported onto the Zhu algebra, which becomes a unitary coboundary weak quasi-Hopf C \u2217 -algebra with a 3-coboundary associator. Rigidity is obtained from the quantum group side, without the Knizhnik\u2013 Zamolodchikov equations or the Verlinde formula. We further analyze the type A case via classification methods based on Kazhdan\u2013Wenzl theory and our weak Hopf algebra framework, which gives insight into the determination of associativity from the braiding in the general case. Our methods settle several further problems: Galindo\u2019s question on the uniqueness of unitary tensor structures, Kirillov\u2019s conjecture on the positivity of a Hermitian form on the braided tensor category of modules of an affine Lie algebra introduced by Beilinson, Feigin and Mazur, the quantum group structure on the Zhu algebra sought by Frenkel and Zhu, and the Kazhdan\u2013Lusztig\u2013 Finkelberg equivalence for all Lie types and all positive integer levels without passing through the negative shifted levels, as raised by Huang. We also compare our braided tensor structure with that of Huang and Lepowsky.",
+  "docinfo": {},
+  "title_source": "text",
+  "title_verified": true,
+  "source_note": "Ingested from a plain-text extraction of the arXiv PDF (2101.10016v16, 261 pp), uploaded as '2101.10016v16.pdf.txt'. NO PDF IS HELD. Page numbers are recovered from the running heads in the text; display math is flattened by the extraction (super/subscripts split across lines). Sections split at the 39 numbered top-level headings matched against the paper's own Contents list; subsections are not split."
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Main results",
+   "page": 11,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Outline of the paper",
+   "page": 19,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries on tensor categories and their functors, generating object",
+   "page": 23,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Rigidity, weak tensor functors, braided symmetry, ribbon and modular category",
+   "page": 32,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Weak quasi-Hopf algebras",
+   "page": 36,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Tannaka-Krein duality and integral weak dimension functions (wdf)",
+   "page": 43,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Two abstract uniqueness results of braided tensor structures",
+   "page": 52,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Weak Hopf algebras",
+   "page": 74,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Quasitriangular and ribbon structures",
+   "page": 79,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "\u03a9-involution and C*-structure",
+   "page": 86,
+   "source": "inferred",
+   "number": "11"
+  },
+  {
+   "level": 1,
+   "title": "The categories Reph(A) and Rep+(A)",
+   "page": 91,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "Unitary braided symmetry and involutive Tannaka-Krein duality",
+   "page": 96,
+   "source": "inferred",
+   "number": "13"
+  },
+  {
+   "level": 1,
+   "title": "Unitarizability of representations and rigidity",
+   "page": 100,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "Turning C*-categories into tensor C*-categories, I",
+   "page": 109,
+   "source": "inferred",
+   "number": "15"
+  },
+  {
+   "level": 1,
+   "title": "Positive weak dimension and amenability",
+   "page": 114,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "Constructing integral wdf; solution to Galindo\u2019s problem",
+   "page": 117,
+   "source": "inferred",
+   "number": "17"
+  },
+  {
+   "level": 1,
+   "title": "Examples of fusion categories with different natural integral wdf",
+   "page": 119,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 1,
+   "title": "Quantum group Uq(g) at roots of unity, \u2217-involution, classical limit",
+   "page": 121,
+   "source": "inferred",
+   "number": "19"
+  },
+  {
+   "level": 1,
+   "title": "Fusion categories C(g, q, \u2113) and unitary ribbon wqh via integral wdf",
+   "page": 129,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 1,
+   "title": "Kazhdan-Lusztig-Finkelberg theorem for \u00d5_\u2113, unitarity of Kirillov inner product",
+   "page": 131,
+   "source": "inferred",
+   "number": "21"
+  },
+  {
+   "level": 1,
+   "title": "Vertex operator algebras, the linear category Rep(V ) and Zhu algebra A(V )",
+   "page": 133,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 1,
+   "title": "Vertex operator algebras and weak quasi-Hopf algebras, unitarizing Rep(V_g^k)",
+   "page": 138,
+   "source": "inferred",
+   "number": "23"
+  },
+  {
+   "level": 1,
+   "title": "Conformal nets and weak quasi-Hopf algebras",
+   "page": 146,
+   "source": "inferred",
+   "number": "24"
+  },
+  {
+   "level": 1,
+   "title": "Kazhdan-Wenzl theory and equivalence of ribbon slN,q,\u2113-categories",
+   "page": 149,
+   "source": "inferred",
+   "number": "25"
+  },
+  {
+   "level": 1,
+   "title": "Turning C*-categories with tensor structures into tensor C*-categories, II",
+   "page": 163,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "Coboundary categories and Deligne\u2019s theorem",
+   "page": 166,
+   "source": "inferred",
+   "number": "27"
+  },
+  {
+   "level": 1,
+   "title": "Hermitian coboundary wqh and relation with Hermitian ribbon wqh",
+   "page": 173,
+   "source": "inferred",
+   "number": "28"
+  },
+  {
+   "level": 1,
+   "title": "A categorical characterization of discrete Hermitian coboundary wqh",
+   "page": 180,
+   "source": "inferred",
+   "number": "29"
+  },
+  {
+   "level": 1,
+   "title": "Compatible unitary coboundary wqh, an abstract Drinfeld-Kohno",
+   "page": 183,
+   "source": "inferred",
+   "number": "30"
+  },
+  {
+   "level": 1,
+   "title": "Wenzl\u2019s unitary structure of C(g, q, \u2113), square root of the quantum Casimir",
+   "page": 187,
+   "source": "inferred",
+   "number": "31"
+  },
+  {
+   "level": 1,
+   "title": "Compatible unitary coboundary weak Hopf algebras Uq(g) \u2192 AW (g, q, \u2113)",
+   "page": 194,
+   "source": "inferred",
+   "number": "32"
+  },
+  {
+   "level": 1,
+   "title": "From AW(g, q, \u2113) to a compatible unitary coboundary wqh structure on A(V_g^k)",
+   "page": 204,
+   "source": "inferred",
+   "number": "33"
+  },
+  {
+   "level": 1,
+   "title": "Loop groups, primary fields, tensor product theorem for initial terms",
+   "page": 214,
+   "source": "inferred",
+   "number": "34"
+  },
+  {
+   "level": 1,
+   "title": "Knizhnik-Zamolodchikov differential equations, and the braiding",
+   "page": 220,
+   "source": "inferred",
+   "number": "35"
+  },
+  {
+   "level": 1,
+   "title": "Interlude and organization of the next steps",
+   "page": 222,
+   "source": "inferred",
+   "number": "36"
+  },
+  {
+   "level": 1,
+   "title": "Huang and Lepowsky (vertex) tensor category structure",
+   "page": 224,
+   "source": "inferred",
+   "number": "37"
+  },
+  {
+   "level": 1,
+   "title": "Primary fields for affine VOAs, products, iterates, initial terms",
+   "page": 239,
+   "source": "inferred",
+   "number": "38"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 253,
+   "source": "inferred",
+   "number": "39"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 5068,
+   "n_words": 766
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 11,
+   "n_chars": 28239,
+   "n_words": 4301
+  },
+  {
+   "id": "sec-001-2-main-results",
+   "number": "2",
+   "title": "Main results",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 19,
+   "n_chars": 24670,
+   "n_words": 4051
+  },
+  {
+   "id": "sec-002-3-outline-of-the-paper",
+   "number": "3",
+   "title": "Outline of the paper",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 23,
+   "n_chars": 14667,
+   "n_words": 2335
+  },
+  {
+   "id": "sec-003-4-preliminaries-on-tensor-categories-and-their-fun",
+   "number": "4",
+   "title": "Preliminaries on tensor categories and their functors, generating object",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 32,
+   "n_chars": 28487,
+   "n_words": 5421
+  },
+  {
+   "id": "sec-004-5-rigidity-weak-tensor-functors-braided-symmetry-r",
+   "number": "5",
+   "title": "Rigidity, weak tensor functors, braided symmetry, ribbon and modular category",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 36,
+   "n_chars": 10957,
+   "n_words": 2231
+  },
+  {
+   "id": "sec-005-6-weak-quasi-hopf-algebras",
+   "number": "6",
+   "title": "Weak quasi-Hopf algebras",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 43,
+   "n_chars": 17999,
+   "n_words": 3626
+  },
+  {
+   "id": "sec-006-7-tannaka-krein-duality-and-integral-weak-dimensio",
+   "number": "7",
+   "title": "Tannaka-Krein duality and integral weak dimension functions (wdf)",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 52,
+   "n_chars": 28743,
+   "n_words": 5403
+  },
+  {
+   "id": "sec-007-8-two-abstract-uniqueness-results-of-braided-tenso",
+   "number": "8",
+   "title": "Two abstract uniqueness results of braided tensor structures",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 74,
+   "n_chars": 65626,
+   "n_words": 11558
+  },
+  {
+   "id": "sec-008-9-weak-hopf-algebras",
+   "number": "9",
+   "title": "Weak Hopf algebras",
+   "level": 1,
+   "page_start": 74,
+   "page_end": 79,
+   "n_chars": 11314,
+   "n_words": 2261
+  },
+  {
+   "id": "sec-009-10-quasitriangular-and-ribbon-structures",
+   "number": "10",
+   "title": "Quasitriangular and ribbon structures",
+   "level": 1,
+   "page_start": 79,
+   "page_end": 86,
+   "n_chars": 17024,
+   "n_words": 3471
+  },
+  {
+   "id": "sec-010-11-involution-and-c-structure",
+   "number": "11",
+   "title": "\u03a9-involution and C*-structure",
+   "level": 1,
+   "page_start": 86,
+   "page_end": 91,
+   "n_chars": 15934,
+   "n_words": 3020
+  },
+  {
+   "id": "sec-011-12-the-categories-reph-a-and-rep-a",
+   "number": "12",
+   "title": "The categories Reph(A) and Rep+(A)",
+   "level": 1,
+   "page_start": 91,
+   "page_end": 96,
+   "n_chars": 14855,
+   "n_words": 2797
+  },
+  {
+   "id": "sec-012-13-unitary-braided-symmetry-and-involutive-tannaka",
+   "number": "13",
+   "title": "Unitary braided symmetry and involutive Tannaka-Krein duality",
+   "level": 1,
+   "page_start": 96,
+   "page_end": 100,
+   "n_chars": 12558,
+   "n_words": 2317
+  },
+  {
+   "id": "sec-013-14-unitarizability-of-representations-and-rigidity",
+   "number": "14",
+   "title": "Unitarizability of representations and rigidity",
+   "level": 1,
+   "page_start": 100,
+   "page_end": 109,
+   "n_chars": 24424,
+   "n_words": 4508
+  },
+  {
+   "id": "sec-014-15-turning-c-categories-into-tensor-c-categories-i",
+   "number": "15",
+   "title": "Turning C*-categories into tensor C*-categories, I",
+   "level": 1,
+   "page_start": 109,
+   "page_end": 114,
+   "n_chars": 16407,
+   "n_words": 2995
+  },
+  {
+   "id": "sec-015-16-positive-weak-dimension-and-amenability",
+   "number": "16",
+   "title": "Positive weak dimension and amenability",
+   "level": 1,
+   "page_start": 114,
+   "page_end": 117,
+   "n_chars": 10031,
+   "n_words": 1780
+  },
+  {
+   "id": "sec-016-17-constructing-integral-wdf-solution-to-galindo-s",
+   "number": "17",
+   "title": "Constructing integral wdf; solution to Galindo\u2019s problem",
+   "level": 1,
+   "page_start": 117,
+   "page_end": 119,
+   "n_chars": 4135,
+   "n_words": 681
+  },
+  {
+   "id": "sec-017-18-examples-of-fusion-categories-with-different-na",
+   "number": "18",
+   "title": "Examples of fusion categories with different natural integral wdf",
+   "level": 1,
+   "page_start": 119,
+   "page_end": 121,
+   "n_chars": 7730,
+   "n_words": 1483
+  },
+  {
+   "id": "sec-018-19-quantum-group-uq-g-at-roots-of-unity-involution",
+   "number": "19",
+   "title": "Quantum group Uq(g) at roots of unity, \u2217-involution, classical limit",
+   "level": 1,
+   "page_start": 121,
+   "page_end": 129,
+   "n_chars": 24055,
+   "n_words": 4680
+  },
+  {
+   "id": "sec-019-20-fusion-categories-c-g-q-and-unitary-ribbon-wqh",
+   "number": "20",
+   "title": "Fusion categories C(g, q, \u2113) and unitary ribbon wqh via integral wdf",
+   "level": 1,
+   "page_start": 129,
+   "page_end": 131,
+   "n_chars": 5818,
+   "n_words": 1130
+  },
+  {
+   "id": "sec-020-21-kazhdan-lusztig-finkelberg-theorem-for-unitarit",
+   "number": "21",
+   "title": "Kazhdan-Lusztig-Finkelberg theorem for \u00d5_\u2113, unitarity of Kirillov inner product",
+   "level": 1,
+   "page_start": 131,
+   "page_end": 133,
+   "n_chars": 3730,
+   "n_words": 642
+  },
+  {
+   "id": "sec-021-22-vertex-operator-algebras-the-linear-category-re",
+   "number": "22",
+   "title": "Vertex operator algebras, the linear category Rep(V ) and Zhu algebra A(V )",
+   "level": 1,
+   "page_start": 133,
+   "page_end": 138,
+   "n_chars": 13134,
+   "n_words": 2584
+  },
+  {
+   "id": "sec-022-23-vertex-operator-algebras-and-weak-quasi-hopf-al",
+   "number": "23",
+   "title": "Vertex operator algebras and weak quasi-Hopf algebras, unitarizing Rep(V_g^k)",
+   "level": 1,
+   "page_start": 138,
+   "page_end": 146,
+   "n_chars": 25822,
+   "n_words": 4784
+  },
+  {
+   "id": "sec-023-24-conformal-nets-and-weak-quasi-hopf-algebras",
+   "number": "24",
+   "title": "Conformal nets and weak quasi-Hopf algebras",
+   "level": 1,
+   "page_start": 146,
+   "page_end": 149,
+   "n_chars": 6817,
+   "n_words": 1224
+  },
+  {
+   "id": "sec-024-25-kazhdan-wenzl-theory-and-equivalence-of-ribbon",
+   "number": "25",
+   "title": "Kazhdan-Wenzl theory and equivalence of ribbon slN,q,\u2113-categories",
+   "level": 1,
+   "page_start": 149,
+   "page_end": 163,
+   "n_chars": 46870,
+   "n_words": 9094
+  },
+  {
+   "id": "sec-025-26-turning-c-categories-with-tensor-structures-int",
+   "number": "26",
+   "title": "Turning C*-categories with tensor structures into tensor C*-categories, II",
+   "level": 1,
+   "page_start": 163,
+   "page_end": 166,
+   "n_chars": 8631,
+   "n_words": 1695
+  },
+  {
+   "id": "sec-026-27-coboundary-categories-and-deligne-s-theorem",
+   "number": "27",
+   "title": "Coboundary categories and Deligne\u2019s theorem",
+   "level": 1,
+   "page_start": 166,
+   "page_end": 173,
+   "n_chars": 18108,
+   "n_words": 3579
+  },
+  {
+   "id": "sec-027-28-hermitian-coboundary-wqh-and-relation-with-herm",
+   "number": "28",
+   "title": "Hermitian coboundary wqh and relation with Hermitian ribbon wqh",
+   "level": 1,
+   "page_start": 173,
+   "page_end": 180,
+   "n_chars": 20500,
+   "n_words": 3797
+  },
+  {
+   "id": "sec-028-29-a-categorical-characterization-of-discrete-herm",
+   "number": "29",
+   "title": "A categorical characterization of discrete Hermitian coboundary wqh",
+   "level": 1,
+   "page_start": 180,
+   "page_end": 183,
+   "n_chars": 9330,
+   "n_words": 1648
+  },
+  {
+   "id": "sec-029-30-compatible-unitary-coboundary-wqh-an-abstract-d",
+   "number": "30",
+   "title": "Compatible unitary coboundary wqh, an abstract Drinfeld-Kohno",
+   "level": 1,
+   "page_start": 183,
+   "page_end": 187,
+   "n_chars": 9040,
+   "n_words": 1819
+  },
+  {
+   "id": "sec-030-31-wenzl-s-unitary-structure-of-c-g-q-square-root",
+   "number": "31",
+   "title": "Wenzl\u2019s unitary structure of C(g, q, \u2113), square root of the quantum Casimir",
+   "level": 1,
+   "page_start": 187,
+   "page_end": 194,
+   "n_chars": 20902,
+   "n_words": 4025
+  },
+  {
+   "id": "sec-031-32-compatible-unitary-coboundary-weak-hopf-algebra",
+   "number": "32",
+   "title": "Compatible unitary coboundary weak Hopf algebras Uq(g) \u2192 AW (g, q, \u2113)",
+   "level": 1,
+   "page_start": 194,
+   "page_end": 204,
+   "n_chars": 26979,
+   "n_words": 5378
+  },
+  {
+   "id": "sec-032-33-from-aw-g-q-to-a-compatible-unitary-coboundary",
+   "number": "33",
+   "title": "From AW(g, q, \u2113) to a compatible unitary coboundary wqh structure on A(V_g^k)",
+   "level": 1,
+   "page_start": 204,
+   "page_end": 214,
+   "n_chars": 28087,
+   "n_words": 5420
+  },
+  {
+   "id": "sec-033-34-loop-groups-primary-fields-tensor-product-theor",
+   "number": "34",
+   "title": "Loop groups, primary fields, tensor product theorem for initial terms",
+   "level": 1,
+   "page_start": 214,
+   "page_end": 220,
+   "n_chars": 16110,
+   "n_words": 2882
+  },
+  {
+   "id": "sec-034-35-knizhnik-zamolodchikov-differential-equations-a",
+   "number": "35",
+   "title": "Knizhnik-Zamolodchikov differential equations, and the braiding",
+   "level": 1,
+   "page_start": 220,
+   "page_end": 222,
+   "n_chars": 4145,
+   "n_words": 783
+  },
+  {
+   "id": "sec-035-36-interlude-and-organization-of-the-next-steps",
+   "number": "36",
+   "title": "Interlude and organization of the next steps",
+   "level": 1,
+   "page_start": 222,
+   "page_end": 224,
+   "n_chars": 8389,
+   "n_words": 1371
+  },
+  {
+   "id": "sec-036-37-huang-and-lepowsky-vertex-tensor-category-struc",
+   "number": "37",
+   "title": "Huang and Lepowsky (vertex) tensor category structure",
+   "level": 1,
+   "page_start": 224,
+   "page_end": 239,
+   "n_chars": 33247,
+   "n_words": 5970
+  },
+  {
+   "id": "sec-037-38-primary-fields-for-affine-voas-products-iterate",
+   "number": "38",
+   "title": "Primary fields for affine VOAs, products, iterates, initial terms",
+   "level": 1,
+   "page_start": 239,
+   "page_end": 253,
+   "n_chars": 36171,
+   "n_words": 6372
+  },
+  {
+   "id": "sec-038-39-acknowledgments",
+   "number": "39",
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 253,
+   "page_end": 253,
+   "n_chars": 2767,
+   "n_words": 433
+  },
+  {
+   "id": "sec-039-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 253,
+   "page_end": 261,
+   "n_chars": 26030,
+   "n_words": 3846
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 39,
+  "toc_inferred_entries": 39,
+  "sections": 41,
+  "chars_total": 753550
+ },
+ "structure_note": "Text-extract ingest: no PDF held; source.file is the uploaded .txt extraction."
+}

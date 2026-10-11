@@ -8,6 +8,10 @@ pages: 11-11
 source_pdf: 2205.01282v2.pdf
 source_sha256: 00f656afa60db838
 doc_brief: "Witten-Reshetikhin-Turaev invariants and homological blocks for plumbed homology spheres — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed 3-manifolds."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-In this section, we develop an asymptotic formula which we need to calculate radial limits of
-homological blocks.
+[]{#sec:asymp label="sec:asymp"}
+
+In this section, we develop an asymptotic formula which we need to calculate radial limits of homological blocks.

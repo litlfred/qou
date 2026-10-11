@@ -1,0 +1,377 @@
+\section{Computational steps}\label{tools}
+
+Our goal is to obtain the solutions of the system in the cross-ratio coordinates $z_{ij}$ and then
+compute the holonomy representations.  We compute:
+\begin{enumerate}
+\item Solving the constraints on gluing decorated tetrahedra, which reduces to study a constructible set defined implicitly by
+\begin{enumerate}
+\item The consistency relations which define Edge and Face equations (\ref{sec-consistency}),
+\item The holonomy equations (see section \ref{sec-holonomy}),
+\item The cross-ratio equations (see \ref{Cros}),
+\item The restrictions on the coordinate values, precisely $z_{i,j}$ must be different from $0$ and $1$.
+\end{enumerate}
+\item Distinguishing hyperbolic, real flags and CR solutions (see \ref{eq:cr})
+\item Computing the resulting volumes (\ref{sec-volume})
+\item Computing representations of the fundamental group (see section \ref{sec-holonomy}).
+\end{enumerate}
+Each system depends on the $12n$ variables
+$\cZ = \{ z_{ij}(T)\}$, where $T$ denotes a tetrahedron in the triangulation (containing $n$ tetrahedra) and ${ij}$ one of its oriented edges.
+\begin{itemize}
+\item[---] $L_e$ (resp. $L_f$) denotes the set of the $2n$ edge (resp. face) equations;
+\item[---] $L_h$ denotes the set of the polynomials defining the holonomy equations (their number is $4 t$, where $t$ is the number of tori in the boundary and in most cases treated here they correspond to unipotent conditions).
+\item[---] $L_c$ denotes the polynomials defining the cross-ratio relations, say $z_{ik}(T)(1-z_{ij}(T))-1$ and $z_{il}(T)z_{ij}(T)-z_{ij}(T)+1$;
+\item[---] $P_0 = \prod_{z \in \cZ} z(1-z)$ is the polynomial defining the forbidden values for the $z_{ij}(T)$.
+\end{itemize}
+We have to compute an exhaustive and exact description of the constructible set
+$$
+\cS = \{ z \in \cZ \ | \ P(z)=0, P \in L_e \cup L_f \cup L_h \cup L_c, \ P_0(z) \not = 0\}.
+$$
+
+Some preliminary remarks are essential in order to understand the contents of the present section.
+
+For fixed holonomy values (for example unipotent solutions), a
+straightforward approach that would consist in first solving the large
+algebraic system given by the consistency equations, the holonomy
+equations and the cross-ratio relation would certainly fail because of
+the number of variables ($12 n$) and the degree. Moreover it may
+happen that this system is not 0-dimensional even if the holonomies
+are fixed.
+%The major problem in the computations is to deal with a constructible set instead of an algebraic one.
+%In particular, it appears immediately that we could not have a straightforward approach that would consists in first solving a large algebraic system and then restrict the solution set in order to select those that verify the inequations for two simple reasons ; if we do not take into account from the beginning the cross ratio equations (and thus the related inequations) the system to be solved has a high degree and a large number of variables. Moreover, as we will see on some examples, this partial system is not  0-dimensional in general (there are some components of higher dimension above forbidden values of $z_{ij}$).
+
+%A second issue is that we want at this point an exhaustive and exact description of the solutions.  This forces us to certify each step (and forbids numerical approximations in many cases) and consequently forces us to have formal expressions of  solutions.
+
+%results from a computational step are used in the next one for going ahead (using the solutions for computing group representations by means of eigenvalues of some simple matrices), which forces to certify each step (this forbids for example numerical approximations in many cases) and consequently forces to have as most as possible formal expressions of the solutions. Note that this constraint has also a key advantage : one gets an exhaustive description of the solutions that could be used as a proof for some properties.
+
+We chose to perform exclusively exact computation, using elimination techniques.
+We will first simplify the system using specific adapted pre-processing, then we will use general methods essentially based on Gröbner basis computations (see \cite{CLO1997}).
+
+
+When the system we obtain is 0-dimensional, we then make use of
+the Rational Univariate Representation (\cite{Rouillier1999}) to get
+formal parameterizations of the solutions.
+
+
+%Note that in the various examples that illustrate this article, $z^{(k)}$ will often be replaced by a letter among $x,z,u,v,w$ while the index of the edges will sometimes start from $0$ and sometimes from $1$.
+
+
+
+%\subsection{Generating the systems to be solved}
+%As soon as the number of tetrahedra grows, it becomes complicated to generate the systems without any error.
+% We thank  M. Thistlethwaite , who  made his census available and who explained to us how Snappea generated the gluing and holonomy equations in the hyperbolic case and which we used to generate the gluing and holonomy equations in our case.
+
+\subsection{The pre-processing}\label{sec-prepro}
+
+Using the cross-ratio relations at each vertex of a tetrahedron one can reduce the number of variables to $4n$.
+We pick a variable at each vertex and write the equations in terms of these variables.
+For example, such a substitution
+%makes trivial the study of the $3_1$ knot complement and
+reduces the study of the $4_1$ knot complement to the solutions of a 0-dimensional system depending on $8$ variables
+(instead of $24$).
+
+After these simplifications, some new simple affine relations  $A z_{ij}+B$ may appear,
+where $A$ divides some power of $P_0$,  $A$ being a product of $z$ or $(1-z)$ for some $z \in \cZ - \{ z_{ij} \}$. The coordinate $z_{ij}$ may be replaced everywhere by $-{B}/{A}$. We then obtain a simplified system.
+
+This simplification pre-processing reduces the study of the $4_1$ knot complement to a simplified system of two equations in two variables. The other coordinates of the solutions can then be recovered from simple relations.
+
+Note that the degree of the equations in the final simplified system depends strongly on the way these simplifications are performed.
+Blind simplifications may lead to consider systems of equations with very large degrees. The general methods for solving such systems formally have polynomial complexity in the Bézout's bound. Unappropriate choices in the simplifications will generate huge systems that are impossible to solve with {\em state of the art} algorithms. %This occurred for the $5_2$ knot complement for example.
+
+We have implemented some tricky choice functions that minimize the degree of the final simplified system. There is no interest in describing them in detail here, but this straightforward step must be carefully implemented if one wants to succeed in the determination of the solutions.
+
+
+\subsection{Solving the reduced system using Gröbner Basis}
+We now have to solve a system of equations and (simple) inequalities.
+In the case of systems with fixed holonomy values (for example
+unipotent solutions), three cases may occur:%must be considered differently:
+\begin{itemize}
+\item[---]
+The set of equations defines a 0-dimensional variety (finite set of points);
+\item[---]
+The set of equations defines a variety of positive dimension but the
+full constructible set is 0-dimensional (consider for example the
+system $\{X(XY-1)=0,X(X^2+Y^2-1)=0\}$ and the constructible set
+$\{X(XY-1)=0,X(X^2+Y^2-1)=0,X\neq 0\}$).
+%the first one is 1-dimensional while the second one is 0-dimensional).
+\item[---]
+The constructible set has positive dimension.
+\end{itemize}
+In the case of unipotent solutions for problems with 2 or 3
+tetrahedra, the first case happened only for the {\tt m004} variety
+($4_1$ complement), the last case occurs for example for the {\tt m003} variety ($4_1$-sister) and also for the {\tt m006}.
+The second case occurs for example for the {\tt m007} and the {\tt m015} ($5_2$ complement).
+The procedure we follow is divided into the following steps:
+\begin{enumerate}
+\item {\bf Compute a Gr\"obner basis} of the reduced system of equations. % (see section \ref{sec-groebner}).
+\item {\bf Saturate the ideal} by the polynomials defining the inequalities. %(see section \ref{sec-ineqs})
+\item {\bf Compute the dimension} of this ideal. %(see section \ref{sec-hilbert})
+%\item If it is 0-dimensional, compute a rational parametrization of its zeroes (see section \ref{sec-rur})
+\end{enumerate}
+These computations are based on Gröbner Basis computations.
+
+\def\cI{\cal I}
+A Gröbner basis of a polynomial ideal ${\cI}$
+is a set of generators of  ${\cI}$, such that
+there is a natural and unique way (the {\em normal form}) of reducing canonically a polynomial $P \Mod{\cI}$.
+A Gröbner basis is uniquely defined for a given admissible ordering on
+the monomials.
+Given
+$\cI \subset \Q[Y_1,\ldots,Y_k][X_{1},\ldots,X_m]$,
+the use of an {\em elimination ordering}
+such that $Y_i<X_j$ for all $i,j$, allows to deduce
+straightforwardly a Gr\"obner basis of $\cI \cap  \Q[Y_1,\ldots,Y_k]$ and therefore to eliminate $X_1, \ldots, X_m$.
+(see \cite[Ch. 3]{CLO1997}).
+
+We obtain the saturation of the ideal $\cI \subset \Q[X_1,\ldots,X_m]$ by a polynomial $P_0$ by  computing a Gröbner
+basis of $\Bigl ( \cI+\langle TP_0-1\rangle \Bigr ) \cap  \Q[X_1,\ldots,X_m]$, where $T$ is a new
+independent variable. % independent from $X_1,\ldots ,X_m$.
+This is the usual way for computing an ideal whose zeroes set is the Zariski closure of a given
+constructible set (the constructible set itself when it is 0-dimensional).
+
+Even if the basic principles used for computing a Gröbner basis are simple
+(see \cite{CLO1997} for a general description),
+their effective computation is known to be hard.
+The first algorithm due to Buchberger has been a lot
+improved and we use, in practice, the algorithm $F_4$ by J.-C. Faugère (see
+{\cite{Faugere1999}}), implemented in recent versions of {\sc Maple}, and
+known to be currently the fastest variant.
+
+
+Once a Gr\"obner Basis of ${\cI}$ is known, one can compute
+the associated Hilbert polynomial and then deduce the (Hilbert) dimension and
+the (Hilbert) degree of ${\cI}$ (see \cite{CLO1997} Chapter 9 - Section
+3).
+
+\subsection{Prime decompositions}
+In general,
+%In most cases (in fact all cases we have tried)
+the ideal generated by the equations as well as its saturation by the inequalities is
+not prime. When it is of positive dimension, it has components of mixed dimensions.
+A key point at this stage is to be able to compute a prime or at least a primary
+decomposition.
+
+There are several existing strategies for computing such a
+decomposition and it would be too long to enumerate them in the
+present article. One can mention two classes: methods based on
+Gröbner bases with an elimination ordering and factorization (see
+\cite{CLO1997} - chapter 7) and those based on triangular sets (see
+\cite{ALM1999} for example). Note  however that the Maple function we use for
+this operation implements heuristics in order to select a favorable strategy.
+
+%\comm{PVK: je garderai ce paragraphe et la modestie pour la conclusion.
+%A surprising fact is that the Gröbner bases %(see above)
+%we have computed are  often smaller than the reduced systems we used as
+%input. This could show that we miss some geometrical property
+%somewhere, but a consequence is that the decomposition of the ideals into
+%primes is surprizingly not the bottleneck.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%Even if the basic principles used for computing a Gröbner basis are simple
+%%(see \cite{CLO1997} for a general description),
+%%their effective computation is known to be hard.
+%%The first algorithm due to Buchberger has been a lot
+%%improved and we use, in practice, the algorithm $F_4$ by J.-C. Faugère (see
+%%{\cite{Faugere1999}}), implemented in recent versions of {\sc Maple}, and
+%%known to be currently the fastest variant.
+%%
+%%A Gröbner basis of a polynomial ideal ${\cal I}$ is a set of generators of  ${\cal I}$, such that
+%%there is a natural way of reducing canonically a polynomial $P \Mod{\cal I}$.
+%%A Gröbner basis is uniquely defined for a given admissible ordering on
+%%the monomials and equipped with a canonical {\em NormalForm} that gives
+%%a unique expression of the reduction of any polynomial modulo the
+%%considered ideal. Some orderings, call {\em elimination orderings}
+%%allow to eliminate variables. Given $I\subset
+%%\mathbb{Q}[Y_1,..,Y_k][X_{1},..,X_m]$, the use of an elimination
+%%ordering for which $Y_i<X_j;\forall i,j$ allows to deduce
+%%straightforwardly a Gr\"obner basis of $I\cap  \mathbb{Q}[Y_1,..,Y_k]$
+%% (see \cite{CLO1997} Chapter 3).
+%%
+%%Saturating an ideal $I\subset \mathbb{Q}[X_1,..,X_m]$ by a polynomial $f$ just remains to compute a Gröbner
+%%basis of $I+\langle Tf-1\rangle\cap  \mathbb{Q}[X_1,..,X_m]$, where $T$ is a new
+%%variable independent from $X_1,..,X_m$. This is the usual way for
+%%computing an ideal whose zero set is the Zariski closure of a given
+%%constructible set (the constructible set itself when it is 0-dimensional).
+%%
+%%Once a Gr\"obner Basis of an ideal ${\cal I}$ is known, one can compute
+%%the associated Hilbert polynomial and then deduce the (Hilbert) dimension and
+%%(Hilbert) degree of ${\cal I}$ (see \cite{CLO1997} Chapter 9 - Section
+%%3).
+%%\subsection{Prime decompositions}
+%%
+%%In most cases (in fact all cases we have tried) the ideal generated by
+%%the equations as well as its saturation by the inequalities is not
+%%prime and, when it is of positive dimension, it has (always in the
+%%example we ran) components of mixed dimensions. A key point at this
+%%stage is to be able to compute a prime or at least a primary
+%%decomposition.
+%%
+%%There are several existing strategies for computing such a
+%%decomposition and it would be too long to enumerate them in the
+%%present article. One can mention two classes : methods based on
+%%Gröbner bases with an elimination ordering and factorization (see
+%%\cite{CLO1997} - chapter 7) and those based on triangular sets (see
+%%\cite{ALM1999} for example). Note that however, the Maple function we use for
+%%this operation implements heuristics in order to select a favorable strategy.
+%%
+%%A surprising fact is that the Gröbner bases (see above) we have
+%%computed are  often smaller than the reduced systems we used as
+%%input.  This could show that we miss some geometrical property
+%%somewhere, but a consequence is that the decomposition of the ideals into
+%%primes is surprizingly not the bottleneck.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Rational Univariate Representation}\label{sec:rur}
+
+When a system is 0-dimensional, the so called Rational Univariate Representation (see
+\cite{Rouillier1999}) defines a one-to-one correspondence between the solutions and the roots
+of some univariate polynomial $f$, preserving the multiplicities.
+If this systems depends on $m$ variables $X_1, \ldots ,X_m$,
+the Rational Univariate Representation consists in a polynomial $f \in \Q[Y]$ and a set of
+$m+1$ polynomials such that the solutions are
+$$\{ x_i = \Frac{f_{i}(\gamma)}{f_0(\gamma)},\ i= 1, \ldots, m \ |\  f(\gamma)=0\}.$$
+%There exists a linear form $Y = \sum_{i=1}^m \lambda_i X_i$, $\lambda_i \in \Q$,
+%that {\em separates} the zeroes of $\cI$. Then, the polynomial $f$ is the characteristic polynomial of $Y$.
+
+The algorithm is based on the fact that, when $\cI$ is 0-dimensional,
+$V=\Q[X_1,\ldots,X_m]/\cI$ is a finite dimensional $\Q$-algebra %vector space
+generated by the monomials that are irreducible modulo $\cI$. 
+These elements than can be directly obtained
+from a Gröbner basis. %(monomials that are irreducible modulo $I$)
+
+There exists a linear combination $Y = \sum_{i=1}^m \lambda_i X_i \in V$ 
+which {\em separates} the zeroes of $\cI$.   
+Then $f$ is the characteristic polynomial of the map $V\rightarrow V$, $P \mapsto Y \cdot P$.
+% Then, the polynomial $f$ is the characteristic polynomial of this map.
+
+The polynomials $f, f_i, i = 0, \ldots, m$ are then computed by linear algebra.
+
+
+This full parametrization is computed in two steps:
+first compute a suitable set of generators for the ideal (the best being a Gröbner basis),
+then compute a Rational Univariate Representation of the reduced
+0-dimensional system.
+
+Factorization of $f$ leads to consider that the solutions are parameterized by a finite number of algebraic numbers
+$\gamma$, defined by their minimal polynomials $f$ and each coordinate $z$ is a polynomial $f_z (\gamma)$.
+
+Then, we substitute the variables that have been extracted during the
+pre-processing by their expression in $\Q(\gamma) = \Q[Y]/(f)$ using modular computation.
+We obtain a rational  parametrization of the full system.
+Each of these parametrization may be described as
+$$\mathrm{rur}:=\{z=f_{z}(\gamma),\ z \in \cZ \ |\  f(\gamma)=0\}.$$
+Furthermore, $\gamma \in \R$ if an only if $z(\gamma) = f_z(\gamma) \in \R$ for all $z \in \cZ$.
+
+%%This full parametrization is computed in two steps:
+%%first compute a suitable set of generators for the ideal (the best
+%%being a Gröbner basis), then compute a Rational Univariate Representation of the reduced
+%%0-dimensional system. If this systems depends on $m$ variables $z_1, \ldots ,z_m$,
+%%the Rational Univariate Representation consists in a polynomial $f \in \Q[Y]$ and a set of
+%%$m+1$ polynomials such that the solutions are
+%%$\{ z_i = \Frac{f_{z_i}(Y)}{f_0(Y)},\ i= 1, \ldots, m \ |\  f(Y)=0\}$.
+%%
+%%The algorithm is based on the fact that when $I$ is 0-dimensional,
+%%$\frac{\Q[X_1,..,X_m]}{I}$ is a finite dimensional vector space
+%%generated by elements than can be directly obtained from any Gröbner
+%%basis (monomials that are irreducible modulo $I$). The polynomials are
+%%then computed by means of basic linear algebra operations. For
+%%instance, the polynomial $f(Y)$ is the characteristic polynomial of
+%%some come coordinate combination that {\em separates} the roots
+%%(injective function on the zero-set of $I$).
+%%
+%%Factorization of $f$ leads to consider that the solutions are parameterized by a finite number of algebraic numbers
+%%$\gamma$, defined by their minimal polynomials $f$ and each coordinate $z$ is a polynomial $f_z (\gamma)$.
+%%
+%%Then, we substitute the variables that have been extracted during the
+%%pre-processing by their expression in $\Q[Y]/(f)$ using modular computation.
+%%We obtain rational parametrization of the full system.
+%%Each of these parametrization may be described as
+%%$$\mathrm{rur}:=\{z=f_{z}(Y),\ z \in \cZ \ |\  f(Y)=0\}.$$
+%%Furthermore, $\gamma \in \R$ if an only if $z(\gamma) = f_z(\gamma) \in \R$ for all $z \in \cZ$.
+%,$$ $n$ being the number of tetrahedra.
+
+%
+% In most cases we may describe the solutions by means of $12n+1$ polynomials in $\Q[T]$ (that is, we make the denominator to be  1 in the above representation) and express all coordinates in the form:
+%  $$rur:=\{f(T)=0,z={f_{z}(T)}{},z\in \{z_{ij}^{(k)},i,j=1..4,k=1..n\}\}.$$
+%We obviously will not describe here the numerous optimizations that made possible the computations in some extreme cases (the Whitehead example for instance) involving some factorizations.
+%also the reader may not be surprised in the experiments to discover that the solutions are given by more than one (independent) parameterizations (just consider the factorization of the polynomial $f(T)$ in the rational parametrization for example).
+
+\subsection{Sorting the solutions}
+In this section we explain an exact procedure to sort solutions in
+$\SL(3,\bR)$, $\PGL(2,\bC)$ and $\PU(2,1)$ for 0-dimensional components.
+Thanks to the previous computations, the solutions of the initial system are
+expressed by means of rational parameterizations (here $f$ is a prime polynomial)
+$$\mathrm{rur}:=\{z=f_{z}(Y),\ z \in \cZ\ |\ f(Y)=0\}.$$
+\begin{enumerate}
+\item Real solutions are in correspondence with the real zeroes of $f$.   The number of real roots can be determined exactly
+by Sturm algorithms and their approximate values are computed by certified algorithms (see )
+
+\item The hyperbolic solutions are extracted from the global solutions as follows.
+Equation \ref{eq:hyp} becomes
+%$$f_{z_{12}(T)} \equiv f_{z_{21}(T)} \equiv f_{z_{34}(T)} \equiv f_{z_{43}(T)} \Mod{f}.$$
+$${z_{12}} \equiv {z_{21}} \equiv {z_{34}} \equiv {z_{43}} \Mod{f}.$$
+From the Rational Univariate Representation it is just a matter of testing if
+some formal coordinates are equal in a field extension.
+% which reduces to
+%compute the \gcd of two univariate polynomials, namely the \gcd of \ the
+%difference of the numerators defining some coordinates and of the extension
+%defined by the considered parameterizations.
+
+\item For the CR solutions, we consider the $3\times n$ equations \ref{eq:cr}:
+%$$z_{ij}(T) z_{ji}(T) = \overline{z_{kl}}(T) \, \overline{z_{lk}}(T).$$
+$$z_{ij} z_{ji} = \overline{z_{kl}}\, \overline{z_{lk}}.$$
+Let $\gamma = x + iy$ be one of the root of $f$.
+%with $x$ and $y$ real in the Rational Univariate Representation
+%and formally add the additional conjugacy relations and we thus get a set of equations $\tmop{lc}_{a,
+%b}$ depending on $a$ and $b$ with the extraneous relations $i^2 = - 1$ and $a, b \in \mathbbm{R}$.
+We obtain a new 0-dimensional system in $\Q[x,y]$ consisting of the $2$ polynomial equations:
+$\Re f(\gamma)=0, \ \Im f(\gamma)=  0$
+and the $2 \times 3n$ equations:
+%$$\Re  \left [f_{z_{ij}(\gamma)}f_{z_{ji}(\gamma)} \right ] =\Re \left [{f_{z_{kl}(\gamma)}} \, {f_{z_{lk}(\gamma)}}\right ],
+%\Im  \left [f_{z_{ij}(\gamma)}f_{z_{ji}(\gamma)} \right ] = - \Im \left [{f_{z_{kl}(\gamma)}} \, {f_{z_{lk}(\gamma)}}\right ].$$
+$$\Re  \left [{z_{ij}(\gamma)}{z_{ji}(\gamma)} \right ] =\Re \left [{{z_{kl}(\gamma)}} \, {{z_{lk}(\gamma)}}\right ],
+\Im  \left [{z_{ij}(\gamma)}{z_{ji}(\gamma)} \right ] = - \Im \left [{{z_{kl}(\gamma)}} \, {{z_{lk}(\gamma)}}\right ].$$
+This last system may be solved by computing a Rational Univariate Representation.
+There exists an integer $\lambda$ such that
+the algebraic number $\eta = x+ \lambda y$ describes the solutions:
+$$\mathrm{rur}_{\mathrm{CR}}:=\left \{x=\Frac{g_{x}(\eta)}{g_{1}(\eta)},y=\Frac{g_{y}(\eta)}{g_{1}(\eta)}\ | \ g(\eta)=0 \right \}.$$
+Real solutions of the system are in a one-to-one correspondance with the real roots of $g$.
+\end{enumerate}
+\subsection{Computing the rank of the boundary holonomy representation}
+We compute first the meridian and the longitude as upper triangular matrices,
+ say
+$$g_M =
+\left(
+\begin{matrix}
+1 & a & c\\
+0 & 1 & b \\
+0 & 0 & 1
+\end{matrix} \right ), \quad
+g_L =
+\left(
+\begin{matrix}
+1 & a' & c'\\
+0 & 1 & b' \\
+0 & 0 & 1
+\end{matrix} \right )
+.$$
+We easily obtain that $g_M^n =
+\left(
+\begin{matrix}
+1 & n\,a & n\, c + \frac 12 n(n-1)ab\\
+0 & 1 & n\, b \\
+0 & 0 & 1
+\end{matrix} \right )$.
+We thus deduce that $g_M^n = g_L^{n'}$ iff $\Frac{a}{a'} = \Frac{b}{b'} = \Frac{2c - ab}{2c'-a'b'} = \Frac{n'}{n} \in \Q$.
+This can be decided by computing first the reduced row echelon form  of $
+\left ( \begin{matrix}
+a & a' \\
+b & b '\\
+2c-ab &2c'-a'b'
+\end{matrix} \right )
+$
+in the ground field $\Q[Y]/(f(Y))$ where $f$ is the minimal irreducible polynomial parameterizing the solutions.
+If the reduced row echelon form has rank one, we test if $a$ and $a'$ are $\Q$-dependant or not.
+
+\subsection{Certified numerical approximations}
+
+For simplicity, and in order to get a human readable output, we often express the results by means of numerical approximations instead of formal (large) expressions. We assert that all these approximations are certified (in practice, all the digits are correct but the last one). We make use of multi-precision floating point numbers coupled with interval arithmetic or well known results on error control for the evaluation of univariate polynomials  that allows to accurately evaluate the Rational Univariate Representations at the roots of a given univariate polynomial. A fully treated example in the case of systems with two variables  is described in \cite{bouzidi:hal-00802698}.

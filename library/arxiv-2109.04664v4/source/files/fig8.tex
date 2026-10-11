@@ -1,0 +1,100 @@
+\documentclass[a4paper,dvipdfmx]{amsart}
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{intersections,calc,arrows.meta,patterns}
+%\tolerance=10000
+\sloppy
+\theoremstyle{plain}
+  \newtheorem{thm}{Theorem}[section]
+  \newtheorem{lem}[thm]{Lemma}
+  \newtheorem{cor}[thm]{Corollary}
+  \newtheorem{prop}[thm]{Proposition}
+  \newtheorem{conj}[thm]{Conjecture}
+  \newtheorem{claim}[thm]{Claim}
+  \newtheorem{obs}[thm]{Observation}
+  \newtheorem*{obs*}{Observation}
+%
+\theoremstyle{definition}
+  \newtheorem{defn}[thm]{Definition}
+  \newtheorem{ex}[thm]{Example}
+  \newtheorem{prob}[thm]{Problem}
+%
+\theoremstyle{remark}
+  \newtheorem{rem}[thm]{Remark}
+  \newtheorem{com}[thm]{Comment}
+  \newtheorem*{ack}{Acknowledgments}
+%
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\Cl}{\operatorname{Cl}}
+\newcommand{\CS}{\operatorname{CS}}
+\newcommand{\Li}{\operatorname{Li}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\renewcommand{\L}{\mathcal{L}}
+\newcommand{\cs}{\operatorname{cs}}
+\renewcommand{\sl}{\mathfrak{sl}}
+\newcommand{\SL}{\rm{SL}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\Tor}{\mathbb{T}}
+\newcommand{\arccosh}{\operatorname{arccosh}}
+\newcommand{\Res}{\operatorname{Res}}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\pic}[2]{\raisebox{-0.5\height}{\includegraphics[scale=#1]{#2.eps}}}
+%
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\Image}{\operatorname{Image}}
+\newcommand{\Ker}{\operatorname{Ker}}
+%
+\renewcommand{\i}{\sqrt{-1}}
+%
+\numberwithin{equation}{section}
+%
+\hyphenation{Hi-kami Mura-kami Yoko-ta Oh-tsuki}
+%
+\allowdisplaybreaks
+%
+\begin{document}
+\title[The colored Jones polynomial of the figure-eight knot]
+{On the asymptotic behavior of the colored Jones polynomial of the figure-eight knot associated with a real number}
+\author{Hitoshi Murakami}
+\address{
+Graduate School of Information Sciences,
+Tohoku University,
+Aramaki-aza-Aoba 6-3-09, Aoba-ku,
+Sendai 980-8579, Japan}
+\email{hitoshi@tohoku.ac.jp}
+\author{Anh T.~Tran}
+\address{
+Department of Mathematical Sciences, The University of Texas at Dallas, Richardson,
+TX 75080, USA}
+\email{att140830@utdallas.edu}
+\date{\today}
+\dedicatory{Dedicated to the memory of Toshie Takata}
+\begin{abstract}
+We study the asymptotic behavior of the $N$-dimensional colored Jones polynomial evaluated at $\exp(\xi/N)$ for a real number $\xi$ greater than a certain constant.
+We prove that, from the asymptotic behavior, we can extract the $\SL(2;\C)$ Chern--Simons invariant and the Reidemeister torsion twisted by the adjoint action both associated with a representation determined by $\xi$.
+\end{abstract}
+\keywords{colored Jones polynomial, figure-eight knot, volume conjecture, Chern--Simons invariant, Reidemeister torsion}
+\subjclass{Primary 57K16 57K14 57K10}
+\thanks{The first author is supported by JSPS KAKENHI Grant Numbers JP16H03927, JP22H01117, JP20K03601, JP20K03931.
+The second author is supported by grants from the Simons Foundation (\#354595 and \#708778).}
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{introduction.tex}
+\input{preliminaries.tex}
+\input{summation.tex}
+\input{integration.tex}
+\input{CST.tex}
+\input{proofs_lemmas.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliography{mrabbrev,hitoshi}
+\bibliographystyle{amsplain}
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

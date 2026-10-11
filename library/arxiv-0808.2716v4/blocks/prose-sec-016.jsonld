@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0808.2716v4/blocks/prose-sec-016",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0808.2716v4/blocks/prose-sec-016",
   "kind": "prose",
   "title": "Volume estimates for closed 3–braids",
   "pageStart": 27,
   "pageEnd": 27,
   "text": "../sections/sec-016-5-volume-estimates-for-closed-3braids.md",
-  "derivedFrom": "library/arxiv-0808.2716v4/manifest",
-  "sourceDocument": "library/arxiv-0808.2716v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0808.2716v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0808.2716v4/manifest.jsonld",
   "provenance": "ingested"
 }

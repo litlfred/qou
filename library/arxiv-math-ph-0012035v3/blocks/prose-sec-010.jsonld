@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-010",
   "kind": "prose",
-  "title": "Path-integral formalism",
+  "title": "Coherent-state approach",
   "pageStart": 16,
-  "pageEnd": 16,
-  "text": "../sections/sec-010-22-path-integral-formalism.md",
-  "derivedFrom": "library/arxiv-math-ph-0012035v3/manifest",
-  "sourceDocument": "library/arxiv-math-ph-0012035v3/manifest",
+  "pageEnd": 21,
+  "text": "../sections/sec-010-221-coherent-state-approach.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-ph-0012035v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-ph-0012035v3/manifest.jsonld",
   "provenance": "ingested"
 }

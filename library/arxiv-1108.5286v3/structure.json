@@ -5,7 +5,8 @@
   "file": "1108.5286v3.pdf",
   "sha256": "447d90883adce21e407473f9a3ffceb9756dbf6334e15ffd2767657377b8e3a9",
   "bytes": 403602,
-  "pages": 39
+  "pages": 39,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "Hochschild homology of affine Hecke algebras",
   "authors_raw": "Heyendaalseweg 135, 6525AJ Nijmegen, the Netherlands",
-  "abstract": "Let H = H(R,q ) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not roots of unity. We compute the Hochschild and the cyclic homology of H. It turns out that these are independent of q and that they admit an easy description in terms of the extended q uotient of a torus by a Weyl group, both of which are canonically associat ed to the root datum R. For positive q we also prove that the representations of the family of algeb ras H(R,q ǫ), ǫ∈ C come in families which depend analytically on ǫ. Analogous results are obtained for graded Hecke algebras an d for Schwartz completions of aﬃne Hecke algebras. Correction: in 2021 some problems with the construction of families of representations surfaced, these are discussed on pages 16, 18, 19 and 22.",
+  "abstract": "Let H = H(R,q ) be an a\ufb03ne Hecke algebra with complex, possibly unequal parameters q, which are not roots of unity. We compute the Hochschild and the cyclic homology of H. It turns out that these are independent of q and that they admit an easy description in terms of the extended q uotient of a torus by a Weyl group, both of which are canonically associat ed to the root datum R. For positive q we also prove that the representations of the family of algeb ras H(R,q \u01eb), \u01eb\u2208 C come in families which depend analytically on \u01eb. Analogous results are obtained for graded Hecke algebras an d for Schwartz completions of a\ufb03ne Hecke algebras. Correction: in 2021 some problems with the construction of families of representations surfaced, these are discussed on pages 16, 18, 19 and 22.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20220210211105-05'00'",
@@ -274,6 +275,105 @@
   "likely_scanned": false,
   "toc_entries": 16,
   "sections": 12,
-  "chars_total": 80889
+  "chars_total": 80889,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 15,
+   "overlaid": 7,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-1-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-12-graded-hecke-algebras",
+     "title": "Graded Hecke algebras",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-13-parabolic-subalgebras",
+     "title": "Parabolic subalgebras",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-15-schwartz-algebras",
+     "title": "Schwartz algebras",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-2-analytic-families-of-representations",
+     "title": "Analytic families of representations",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-21-positive-parameters",
+     "title": "Positive parameters",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-22-complex-parameters",
+     "title": "Complex parameters",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-3-hochschild-homology",
+     "title": "Hochschild homology",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-31-graded-hecke-algebras",
+     "title": "Graded Hecke algebras",
+     "prose_ratio": 0.662,
+     "coverage_ratio": 0.132,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-010-33-schwartz-algebras",
+     "title": "Schwartz algebras",
+     "prose_ratio": 0.473,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

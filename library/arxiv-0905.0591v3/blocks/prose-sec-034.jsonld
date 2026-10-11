@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0905.0591v3/blocks/prose-sec-034",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0905.0591v3/blocks/prose-sec-034",
   "kind": "prose",
   "title": "Alexander polynomials and representations over non–commutative rings",
   "pageStart": 30,
   "pageEnd": 31,
   "text": "../sections/sec-034-10-alexander-polynomials-and-representations-ove.md",
-  "derivedFrom": "library/arxiv-0905.0591v3/manifest",
-  "sourceDocument": "library/arxiv-0905.0591v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0905.0591v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0905.0591v3/manifest.jsonld",
   "provenance": "ingested"
 }

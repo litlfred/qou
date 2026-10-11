@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1501.01574v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1501.01574v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1501.01574v3/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1501.01574&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1501.01574v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1501.01574v3",
+    "content_type": "application/gzip",
+    "sha256": "e223a545b13aac95c5eabf758500278a98984d040447b4326aea874c329fad03",
+    "bytes": 183835,
+    "fetched": "2026-10-10T15:09:55+00:00",
+    "files": [
+      {
+        "path": "source/files/Papermergedaexiv/papermerged.bbl",
+        "role": "bbl",
+        "sha256": "08614238469b2dbe2bdd7c1a2b5dd96abb143fba1b553ffc77851794e8f71e46",
+        "bytes": 5563
+      },
+      {
+        "path": "source/files/Papermergedaexiv/papermerged.tex",
+        "role": "tex",
+        "sha256": "73a386d3faa5168a25b2ec560f934082c4f46f7a16e0ce8fb33a2f312faca178",
+        "bytes": 92995
+      },
+      {
+        "path": "source/files/papermerged.bbl",
+        "role": "bbl",
+        "sha256": "08614238469b2dbe2bdd7c1a2b5dd96abb143fba1b553ffc77851794e8f71e46",
+        "bytes": 5563
+      },
+      {
+        "path": "source/files/papermerged.tex",
+        "role": "tex",
+        "sha256": "73a386d3faa5168a25b2ec560f934082c4f46f7a16e0ce8fb33a2f312faca178",
+        "bytes": 92995
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

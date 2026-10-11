@@ -5,7 +5,8 @@
   "file": "2410.14661v1.pdf",
   "sha256": "3362fcd5e28eb1f0faeb2ebb04ed6f6380ae0655404d74aca5ae9950d1fb65f9",
   "bytes": 997639,
-  "pages": 62
+  "pages": 62,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "On the asymptotic expansion of various quantum invariants III: the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by integral surgery along the figure-eight knot",
   "authors_raw": null,
-  "abstract": "This is the third article in a series devoted to the study of the asymptotic expansions of various quantum invariants related to the twist knots. In this paper, by us- ing the saddle point method developed by Ohtsuki and Yokota, we obtain an asymptotic expansion formula for the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by doing integral q-surgery along the twist knotsKp at the root of unity e 4π√−1 r (r is odd).",
+  "abstract": "This is the third article in a series devoted to the study of the asymptotic expansions of various quantum invariants related to the twist knots. In this paper, by us- ing the saddle point method developed by Ohtsuki and Yokota, we obtain an asymptotic expansion formula for the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by doing integral q-surgery along the twist knotsKp at the root of unity e 4\u03c0\u221a\u22121 r (r is odd).",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20241021010334Z",
@@ -387,6 +388,161 @@
   "likely_scanned": false,
   "toc_entries": 22,
   "sections": 19,
-  "chars_total": 86581
+  "chars_total": 86581,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "main.tex",
+   "tex_sections": 24,
+   "overlaid": 15,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-defintion-of-the-reshetikhin-turaev-invariant",
+     "title": "Defintion of the Reshetikhin-Turaev invariants",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.893,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-22-dilogarithm-and-lobachevsky-functions",
+     "title": "Dilogarithm and Lobachevsky functions",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.857,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-23-quantum-dilogrithm-functions",
+     "title": "Quantum dilogrithm functions",
+     "prose_ratio": 0.886,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-24-saddle-point-method",
+     "title": "Saddle point method",
+     "prose_ratio": 0.906,
+     "coverage_ratio": 0.892,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-3-computations-of-the-potential-function",
+     "title": "Computations of the potential function",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.909,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-4-poisson-summation-formula",
+     "title": "Poisson summation formula",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.931,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-5-asymptotic-expansions",
+     "title": "Asymptotic expansions",
+     "prose_ratio": 0.8,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-51-preparations",
+     "title": "Preparations",
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.903,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-55-final-proof",
+     "title": "Final proof",
+     "prose_ratio": 0.6,
+     "coverage_ratio": 0.846,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-6-appendices",
+     "title": "Appendices",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-61-geometry-of-the-critical-point",
+     "title": "Geometry of the critical point",
+     "prose_ratio": 0.889,
+     "coverage_ratio": 0.8,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-62-critical-value-gives-the-complex-volume",
+     "title": "Critical value gives the complex volume",
+     "prose_ratio": 0.6,
+     "coverage_ratio": 0.857,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-63-proof-of-proposition-52",
+     "title": "Proof of Proposition 5.2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-64-estimation-of-the-critical-value",
+     "title": "Estimation of the critical value",
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.873,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-65-two-dimensional-saddle-point-method",
+     "title": "Two-dimensional saddle point method",
+     "prose_ratio": 0.882,
+     "coverage_ratio": 0.866,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-66-one-dimensional-saddle-point-method",
+     "title": "One-dimensional saddle point method",
+     "prose_ratio": 0.826,
+     "coverage_ratio": 0.822,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

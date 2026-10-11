@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203060v10/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203060v10/blocks/prose-sec-007",
   "kind": "prose",
   "title": "Proof of Theorem 2.3",
   "pageStart": 10,
   "pageEnd": 10,
   "text": "../sections/sec-007-31-proof-of-theorem-23.md",
-  "derivedFrom": "library/arxiv-math-0203060v10/manifest",
-  "sourceDocument": "library/arxiv-math-0203060v10/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203060v10/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203060v10/manifest.jsonld",
   "provenance": "ingested"
 }

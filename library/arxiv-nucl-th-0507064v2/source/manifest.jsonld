@@ -1,0 +1,45 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-nucl-th-0507064v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The Virial Equation of State of Low-Density Neutron Matter (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-nucl-th-0507064v2/manifest.jsonld",
+  "provenance": "ingested",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:nucl-th/0507064&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-nucl-th-0507064v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/nucl-th/0507064v2",
+    "content_type": "application/gzip",
+    "sha256": "c5d01a6ce2ad2aab009652e83a33287511a757e18e88973854e1d6b59e06876a",
+    "bytes": 276312,
+    "fetched": "2026-10-10T15:32:01+00:00",
+    "files": [
+      {
+        "path": "source/files/virial_neut_rev.tex",
+        "role": "tex",
+        "sha256": "574e36d6a56877af30e3d2430a9b6ab9eaeb5be63eed3e352bf331d4834be902",
+        "bytes": 37880
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

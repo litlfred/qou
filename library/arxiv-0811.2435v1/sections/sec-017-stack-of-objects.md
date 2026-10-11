@@ -8,194 +8,53 @@ pages: 48-53
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
 doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.96
 ---
-In this section we assume that the ground ﬁeld k is perfect, i.e. the
-k is a
-Galois ﬁeld over k. Our goal in this section is to explain how to associate with
-an ind-constructible A∞-categoryC over k an ordinary k-linearA∞-category
-C(k), in such a way that ind-constructible equivalences will in duce the usual
-equivalences. For any ﬁeld extension k′⊃ k (e.g. for k′ = k) one can deﬁne
-A∞-categoryCnaive(k′) to be the small k′-linear category with the set of
-objects given by (Ob(C))(k′) and obvious morphisms and compositions. This
-48
-is not a satisfactory notion because in the deﬁnition of the e quivalence we
-demand only the surjectivity on isomorphism classes of obje cts over k. The
-naive categoryCnaive(k) will be a full subcategory of the “correct” category
-C(k). One should read carefully brackets, as in our notation
-Ob(C(k))⁄= (Ob(C))(k) =: Ob(Cnaive(k)),
-contrary to the case of k where we have
-Ob(C(k)) = (Ob(C))(k).
-We will see also the “set of isomorphism classes of objects” i nC should be
-better understood as an ind-constructible stack 11.
-Let k′ ⊂ k be a ﬁnite Galois extension of k and consider an element
-E′ ∈ (Ob(C))(k′) ⊂ Ob(C(k)) such that σ(E) is isomorphic to E for all
-σ∈ Gal(k′/k). We would like to deﬁne the descent data for such E′, which
-should be data necessary to deﬁne an object in (not yet deﬁned ) k-linear
-categoryC(k) which becomes isomorphic to E′ after the extension of scalars
-from k to k′.
-First, for a ﬁnite non-empty collection of objects ( Ei)i∈I of any A∞-
-categoryC′ linear over a ﬁeld k′ (not necessarily a perfect one) we deﬁne
-an identiﬁcation data for objects of this collection to be an A∞-functor Φ
-from the A∞-categoryCI,k′ describing I copies of the same object:
-Ob(CI) = I, Hom•(i,j ) = Hom 0(i,j )≃ k′
-toC′. In plain terms, to give such a functor is to give a closed morp hism
-of degree 0 for any pair of objects Ei,Ej (representing the identity id Ei in
-H•(C(k)) for i =j), a homotopy for any triple of objects, homotopy between
-homotopies for any quadruple of objects, etc. Thus, we in a se nse identify
-all the objects of the collection ( Ei)i∈I and hence can treat it is a new object
-(canonically isomorphic to all (Ei)i∈I), without choosing any speciﬁc element
-i∈I.
-Returning to the case of E′∈ (Ob(C))(k′), we deﬁne the descent data as
-the identiﬁcation of the collection of objects ( σ(E′))σ∈Gal(k′/k) of the category
-Cnaive(k′) equivariant with respect to the action of Gal( k′/k) acting both on
-the collection and on the coeﬃcients in the identiﬁcation.
-11Even in the case when k = k it is important to keep track on automorphisms groups
-of objects (and not only on the set of isomorphism classes), e .g. for the correct deﬁnition
-of the motivic Hall algebra in 6.1.
-49
-We deﬁne the set Ob(C(k)) of objects ofC(k) to be the inductive limit over
-ﬁnite Galois extensions k′/k of descent data as above. Also one can deﬁne
-morphisms and higher compositions. We leave the following P roposition
-without a proof.
-Proposition 6 There is a natural structure of a k-linear A∞-category on
-C(k) containingCnaive(k) as a full subcategory. Any equivalence Φ : C1→C 2
-in ind-constructible sense induces an equivalence C1(k) → C2(k). If C is
-triangulated in ind-constructible sense then C(k) is also triangulated.
-If E is an object of C(k) then any other object E′ ofC(k) which is iso-
-morphic to E after the extension of scalars to C(
-k) is in fact isomorphic to
-E inC(k) (in other words, there are no non-trivial twisted forms). T he rea-
-son is that (as follows directly from deﬁnitions) the set of s uch “ k-forms” of
-E is classiﬁed by H 1(Gal(k/k),GE), where GE is a simplicial group associ-
-ated with the A∞-algebra End•
-C(k)(E,E ). There is a spectral sequence which
-converges to this set and has the second term E2 = (Epq
-2 ) given by
-H 1(Gal(
-k/k), (Ext0
-C(
-k)(E,E ))×) ,
-H 2(Gal(k/k), Ext−1
-C(k)(E,E )) ,
-H 3(Gal(k/k), Ext−2
-C(k)(E,E )),... .
-We observe that all Galois cohomology groups with coeﬃcient s in Ext<0
-C(k)(E,E )
-are trivial (since Ext i
-C(
-k)(E,E ),i < 0 are just sums of copies of the addi-
-tive group Ga(k)). Also the set H 1(Gal(k/k), (Ext0
-C(
-k)(E,E ))×) is the one-
-element set, because for any ﬁnite-dimensional algebra A over k we have
-H 1(Gal(k/k),A×) = 0 (a version of Hilbert 90 theorem, see also section 2.1
-in [35]). One can deduce from the above spectral sequence an i mportant
-corollary: the set of isomorphism classes of objects of C(k) is in a natural
-bijection with the set of isomorphism classes of the usual de scent data in
-category H•(C(k)) endowed with the strict action of Gal( k/k).
-Finally, we will explain how to associate an ind-constructi ble stack to an
-ind-constructible categoryC over k. First of all, we can always assume that
-C satisﬁes the following axiom
-A4) There exists a decomposition M =⊔i∈IXi into the countable disjoint
-union of constructible sets over k such that any two isomorphic objects of
-H•(C(k)) belong to the same part Xi(k) for some i∈I.
-50
-Indeed, if we choose any decomposition M =⊔i∈IX′
-i into disjoint union
-of constructible sets over k and identify I with the set of natural number
-{1, 2,... }, then we can shrink X′
-i(k) to the subset consisting of objects which
-are not isomorphic to objects from ∪j<iX′
-j(k).
-By axioms A3),A4) we may assume that Ob(C)(k) is decomposed into
-the union of k-points of schemes ( Si)i∈I (as in Axiom A3)) such that any
-isomorphism class ofC(k) belongs only to one of the sets Si(k). Let us call it a
-locally regular subdivision of Ob(C). Moreover, we can assume that all Si are
-smooth and equidimensional, and such that for any i∈I there exists δ(i)∈
-Z/greaterorequalslant0 such that for any E∈Si(k) the subset of objects in Si(k) isomorphic to
-to E has dimension δ(i). This can be achieved by subdividing each Si into
-smaller pieces, and by removing some unnecessary pieces con sisting of objects
-which belong to other pieces. Then taking a generic slice of c odimension
-δ(i) (and thus shrinking C to an equivalent subcategory), and taking further
-subdivisions, one may assume that we have a locally regular s ubdivision of
-Ob(C) such that any isomorphism class of objects in Si(k) is ﬁnite. Moreover,
-we may assume that the cardinality ci of all isomorphism classes in Si(k)
-depend only on i, and also the dimension di of the algebra Ext 0(E,E ) for
-E∈Si(k) also depends only on i.
-For any given i ∈ I let us consider the constructible set Zi over k
-parametrizing isomorphism classes of objects in Si(k). There is a natural
-constructible (over k) bundle of ﬁnite-dimensional unital associative alge-
-brasA, with the ﬁber Ax over any full collection x = (E1,...,E ci) (up to
-permutation) of diﬀerent isomorphic objects equal to
-⊕1≤j1,j2≤ci Ext0(Ej1,Ej2).
-The above algebra is Morita equivalent to Ext 0(Ej,Ej) for every j≤ci, and
-in fact is isomorphic to the matrix algebra
-Ax≃ Mat(ci×ci, Ext0(Ej,Ej)) ∀j≤ci.
-Informally speaking, the “stack” of objects from Si is the stack of projective
-modules M over algebraAx for some x∈ Zi(k) which are isomorphic after
-Morita equivalence to a free module of rank one over Ext 0(Ej,Ej) where Ej
-is some representative of the equivalence class x, i.e. M is isomorphic to the
-standard module (Ext 0(Ej,Ej))⊕ci over the matrix algebra for every j≤ci.
-We see that M has dimension
-Ni :=cidi
-51
-over k. This leads to the following construction. Deﬁne a construc tible set
-Yi over k to be the set of pairs ( x,f ) where x∈ Zi(k) is a point and f
-is a homomorphism of Ax to the algebra of matrices Mat( Ni×Ni, k) such
-that the resulting structure of Ax-module on k
-Ni
-belongs to the isomorphism
-class of projective Ax-modules discussed above. The group GL(Ni, k) acts
-naturally on Yi by changing the basis in the standard coordinate space k
-Ni
-.
-The quotient set is naturally identiﬁed with Zi(k), and the stabilizer of every
-point is isomorphic to Ext 0(Ej,Ej)× in the above notation.
-The essential element of the presented construction is that everything
-is equivariant with respect to the action of Gal( k/k). Hence, we come
-to the conclusion that one associates (making many choices) with an ind-
-constructible categoryC over k a countable collection of varieties ( Yi)i∈I (we
-can assume that Yi are not just constructible sets but varieties after mak-
-ing further subdivisions) endowed with algebraic actions o f aﬃne algebraic
-groupsGL(Ni) such that the groupoid of isomorphism classes of C(k) is nat-
-urally equivalent to the groupoid of the disjoint union of se ts Yi(k) endowed
-with GL(Ni, k)-actions. If we replace C by an equivalent ind-constructible
-category, or make diﬀerent choices in the construction, we o btain an equiv-
-alent in an obvious sense “ind-constructible stack”. We wil l discuss ind-
-constructible stacks later, in Section 4.2.
-Moreover, using the fact that the ﬁrst Galois cohomology wit h coeﬃcients
-in GL(Ni) vanish, one can see that the same is true for C(k) (and replace
-Yi(k), GL(Ni, k)-actions by Yi(k) and GL(Ni, k)-action∀i∈I). In general,
-for any ﬁeld k′, k⊂ k′⊂ k one can deﬁne the descent data for k′ and a
-k′-linearA∞-categoryC(k′) (which is triangulated if C is triangulated in the
-ind-constructible sense). The groupoid of isomorphism cla sses of objects of
-H•(C(k′)) is equivalent to the groupoid of the disjoint union of sets Yi(k′)
-endowed withGL(Ni, k′)-actions. More generally, one can deﬁne the category
-C(k′) for any ﬁeld extension k′⊃ k, not necessarily an algebraic one. In the
-case k′ = k we get a non-fatal crash of notations, because the A∞-category
-C(k) in last sense is equivalent to the previously deﬁned C(k).
-In what follows, we will assume for convenience that Ob(C) for an ind-
-constructible categoryC is described by schemes Yi withGL(Ni)-actions. In
-particular, for any extension k′⊃ k we will have a bijection
-Iso(C(k′))≃⊔ i∈IYi(k′)/GL(Ni, k′)
-between the set of isomorphism classes in C(k′) and the set of orbits.
-52
-Remark 16 In fact, objects of an A∞-category form not a stack but a higher
-stack, i.e. one should speak about isomorphisms between iso morphisms etc.
-Passing to the level of ordinary stacks we make a truncation. Presumably,
-for a proper treatment of ind-constructible categories and problems like non-
-functoriality of cones, one should introduce higher constr uctible stacks. Look-
-ing on the guiding example of identiﬁcation data for ﬁnite no n-empty collec-
-tions, one can guess an appropriate notion of a higher constr uctible stack.
-Namely, it should be a simplicial constructible set X• which satisﬁes a con-
-structible version of the Kan property (i.e. there exists a c onstructible lifting
-from horns to simplices) and such that
-1) for any k /greaterorequalslant2 the constructible map (∂0,...,∂ k) : Xk→ (Xk−1)k+1 is
-a constructible vector bundle over its image (i.e. there exi sts a constructible
-identiﬁcation of non-empty ﬁbers of this map with vector spa ces).
-2)∃k0 such that ∀k /greaterorequalslantk0 the above map is an inclusion.
-The reason for the ﬁrst property is that in the case of identiﬁ cation on each
-step (except ﬁrst two) we have to solve linear equations. The second property
-comes from the property HOMn
-|Xi×Xi = 0 for n≪ 0 in our axiomatics of
-ind-constructible categories.
+In this section we assume that the ground field $\k$ is perfect, i.e. the $\kk$ is a Galois field over $\k$. Our goal in this section is to explain how to associate with an ind-constructible $\A$-category $\CC$ over $\k$ an ordinary $\k$-linear $\A$-category $\CC(\k)$, in such a way that ind-constructible equivalences will induce the usual equivalences. For any field extension $\k'\supset \k$ (e.g. for $\k'=\k$) one can define $\A$-category $\CC^{naive}(\k')$ to be the small $\k'$-linear category with the set of objects given by $(Ob(\CC))(\k')$ and obvious morphisms and compositions. This is not a satisfactory notion because in the definition of the equivalence we demand only the surjectivity on isomorphism classes of objects over $\kk$. The naive category $\CC^{naive}(\k)$ will be a full subcategory of the "correct" category $\CC(\k)$. One should read carefully brackets, as in our notation $$Ob(\CC(\k))\ne (Ob(\CC))(\k)=:Ob(\CC^{naive}(\k))\,,$$ contrary to the case of $\kk$ where we have $$Ob(\CC(\kk))=(Ob(\CC))(\kk)\,.$$ We will see also the "set of isomorphism classes of objects" in $\CC$ should be better understood as an ind-constructible stack[^1].
+
+Let $\k'\subset \kk$ be a finite Galois extension of $\k$ and consider an element $E'\in (Ob(\CC))(\k')\subset Ob(\CC(\kk))$ such that $\sigma(E)$ is isomorphic to $E$ for all $\sigma \in \op{Gal}(\k'/\k)$. We would like to define the descent data for such $E'$, which should be data necessary to define an object in (not yet defined) $\k$-linear category $\CC(\k)$ which becomes isomorphic to $E'$ after the extension of scalars from $\k$ to $\k'$.
+
+First, for a finite non-empty collection of objects $(E_i)_{i\in I}$ of any $\A$-category $\CC'$ linear over a field ${\k}'$ (not necessarily a perfect one) we define an *identification data* for objects of this collection to be an $\A$-functor $\Phi$ from the $\A$-category $\CC_{I,{\k}'}$ describing $I$ copies of the same object: $$Ob(\CC_I)=I, \op{Hom}^\bullet(i,j) =\op{Hom}^0(i,j)\simeq {\k}'$$ to $\CC'$. In plain terms, to give such a functor is to give a closed morphism of degree 0 for any pair of objects $E_i,E_j$ (representing the identity $\op{id}_{E_i}$ in $H^\bullet(\CC(\kk))$ for $i=j$), a homotopy for any triple of objects, homotopy between homotopies for any quadruple of objects, etc. Thus, we in a sense identify all the objects of the collection $(E_i)_{i\in I}$ and hence can treat it is a new object (canonically isomorphic to all $(E_i)_{i\in I}$), without choosing any specific element $i\in I$.
+
+Returning to the case of $E'\in (Ob(\CC))(\k')$, we define the descent data as the identification of the collection of objects $(\sigma(E'))_{\sigma\in \op{Gal}(\k'/\k)}$ of the category $\CC^{naive}(\k')$ equivariant with respect to the action of $\op{Gal}(\k'/\k)$ acting both on the collection and on the coefficients in the identification.
+
+We define the set $Ob(\CC(\k))$ of objects of $\CC(\k)$ to be the inductive limit over finite Galois extensions $\k'/\k$ of descent data as above. Also one can define morphisms and higher compositions. We leave the following Proposition without a proof.
+
+::: prp
+There is a natural structure of a $\k$-linear $\A$-category on $\CC(\k)$ containing $\CC^{naive}(\k)$ as a full subcategory. Any equivalence $\Phi:\CC_1\to \CC_2$ in ind-constructible sense induces an equivalence $\CC_1(\k)\to \CC_2(\k)$. If $\CC$ is triangulated in ind-constructible sense then $\CC(\k)$ is also triangulated.
+:::
+
+If $E$ is an object of $\CC(\k)$ then any other object $E'$ of $\CC(\k)$ which is isomorphic to $E$ after the extension of scalars to $\CC(\kk)$ is in fact isomorphic to $E$ in $\CC(\k)$ (in other words, there are no non-trivial twisted forms). The reason is that (as follows directly from definitions) the set of such "$\k$-forms\" of $E$ is classified by $H^1(\op{Gal}(\overline{\k}/\k),{\cal G}_E)$, where ${\cal G}_E$ is a simplicial group associated with the $\A$-algebra $\op{End}^\bullet_{\CC(\k)}(E,E)$. There is a spectral sequence which converges to this set and has the second term $E_2=(E_2^{pq})$ given by $$\begin{array}{l}
+H^1(\op{Gal}(\overline{\k}/\k),(\op{Ext}_{\CC({\kk})}^0(E,E))^{\times})\,\,,\\ H^2(\op{Gal}(\overline{\k}/\k),\op{Ext}_{\CC({\kk})}^{-1}(E,E))\,\,,\\
+H^3(\op{Gal}(\overline{\k}/\k),\op{Ext}_{\CC({\kk})}^{-2}(E,E)),\dots\,\,.
+\end{array}$$ We observe that all Galois cohomology groups with coefficients in $\op{Ext}_{\CC({\kk})}^{<0}(E,E)$ are trivial (since $\op{Ext}_{\CC({\kk})}^{i}(E,E), i<0$ are just sums of copies of the additive group ${\bf G}_a(\kk)$). Also the set $H^1(\op{Gal}(\overline{\k}/\k),(\op{Ext}_{\CC({\kk})}^0(E,E))^{\times})$ is the one-element set, because for any finite-dimensional algebra $A$ over $\k$ we have $H^1(\op{Gal}(\overline{\k}/\k),A^\times)=0$ (a version of Hilbert 90 theorem, see also section 2.1 in [@Jo4]). One can deduce from the above spectral sequence an important corollary: the set of isomorphism classes of objects of $\CC(\k)$ is in a natural bijection with the set of isomorphism classes of the usual descent data in category $H^{\bullet}({\CC(\kk)})$ endowed with the strict action of $\op{Gal}(\kk/\k)$.
+
+Finally, we will explain how to associate an ind-constructible stack to an ind-constructible category $\CC$ over $\k$. First of all, we can always assume that $\CC$ satisfies the following axiom
+
+*A4) There exists a decomposition ${\cal M}=\sqcup_{i\in I}X_i$ into the countable disjoint union of constructible sets over $\k$ such that any two isomorphic objects of $H^{\bullet}(\CC(\kk))$ belong to the same part $X_i(\kk)$ for some $i\in I$.*
+
+Indeed, if we choose any decomposition ${\cal M}=\sqcup_{i\in I}X'_i$ into disjoint union of constructible sets over $\k$ and identify $I$ with the set of natural number $\{1,2,\dots\}$, then we can shrink $X'_i(\kk)$ to the subset consisting of objects which are not isomorphic to objects from $\cup_{j<i}X'_j(\kk)$.
+
+By axioms A3),A4) we may assume that $Ob(\CC)(\kk)$ is decomposed into the union of $\kk$-points of schemes $(S_i)_{i\in I}$ (as in Axiom A3)) such that any isomorphism class of $\CC(\kk)$ belongs only to one of the sets $S_i(\kk)$. Let us call it a locally regular subdivision of $Ob(\CC)$. Moreover, we can assume that all $S_i$ are smooth and equidimensional, and such that for any $i\in I$ there exists $\delta(i)\in \Z_{\geqslant 0}$ such that for any $E\in S_i(\kk)$ the subset of objects in $S_i(\kk)$ isomorphic to to $E$ has dimension $\delta(i)$. This can be achieved by subdividing each $S_i$ into smaller pieces, and by removing some unnecessary pieces consisting of objects which belong to other pieces. Then taking a generic slice of codimension $\delta(i)$ (and thus shrinking $\CC$ to an equivalent subcategory), and taking further subdivisions, one may assume that we have a locally regular subdivision of $Ob(\CC)$ such that any isomorphism class of objects in $S_i(\kk)$ is finite. Moreover, we may assume that the cardinality $c_i$ of all isomorphism classes in $S_i(\kk)$ depend only on $i$, and also the dimension $d_i$ of the algebra $\op{Ext}^0(E,E)$ for $E\in S_i(\kk)$ also depends only on $i$.
+
+For any given $i\in I$ let us consider the constructible set $Z_i$ over $\k$ parametrizing isomorphism classes of objects in $S_i(\kk)$. There is a natural constructible (over $\k$) bundle of finite-dimensional unital associative algebras $\cal A$, with the fiber ${\cal A}_x$ over any full collection $x=(E_1,\dots, E_{c_i})$ (up to permutation) of different isomorphic objects equal to $$\oplus_{1\le j_1,j_2\le c_i} \op{Ext}^0(E_{j_1},E_{j_2})\,.$$ The above algebra is Morita equivalent to $\op{Ext}^0(E_j,E_j)$ for every $j\le c_i$, and in fact is isomorphic to the matrix algebra $${\cal A}_x\simeq \op{Mat}(c_i\times c_i, \op{Ext}^0(E_j,E_j))\,\,\,\forall j\le c_i\,.$$ Informally speaking, the "stack" of objects from $S_i$ is the stack of projective modules $M$ over algebra ${\cal A}_x$ for some $x\in Z_i(\kk)$ which are isomorphic after Morita equivalence to a free module of rank one over $\op{Ext}^0(E_j,E_j)$ where $E_j$ is some representative of the equivalence class $x$, i.e. $M$ is isomorphic to the standard module $(\op{Ext}^0(E_j,E_j))^{\oplus c_i}$ over the matrix algebra for every $j\le c_i$. We see that $M$ has dimension $$N_i:=c_i d_i$$ over $\kk$. This leads to the following construction. Define a constructible set $Y_i$ over $\k$ to be the set of pairs $(x,f)$ where $x\in Z_i(\kk)$ is a point and $f$ is a homomorphism of $A_x$ to the algebra of matrices $\op{Mat}(N_i\times N_i,\kk)$ such that the resulting structure of ${\cal A}_x$-module on $\kk^{N_i}$ belongs to the isomorphism class of projective ${\cal A}_x$-modules discussed above. The group $GL(N_i,\kk)$ acts naturally on $Y_i$ by changing the basis in the standard coordinate space $\kk^{N_i}$. The quotient set is naturally identified with $Z_i(\kk)$, and the stabilizer of every point is isomorphic to $\op{Ext}^0(E_j,E_j)^\times$ in the above notation.
+
+The essential element of the presented construction is that everything is equivariant with respect to the action of $\op{Gal}(\kk/\k)$. Hence, we come to the conclusion that one associates (making many choices) with an ind-constructible category $\CC$ over $\k$ a countable collection of varieties $(Y_i)_{i\in I}$ (we can assume that $Y_i$ are not just constructible sets but varieties after making further subdivisions) endowed with algebraic actions of affine algebraic groups $GL(N_i)$ such that the groupoid of isomorphism classes of $\CC(\kk)$ is naturally equivalent to the groupoid of the disjoint union of sets $Y_i(\kk)$ endowed with $GL(N_i,\kk)$-actions. If we replace $\CC$ by an equivalent ind-constructible category, or make different choices in the construction, we obtain an equivalent in an obvious sense "ind-constructible stack". We will discuss ind-constructible stacks later, in Section 4.2.
+
+Moreover, using the fact that the first Galois cohomology with coefficients in $GL(N_i)$ vanish, one can see that the same is true for $\CC(\k)$ (and replace $Y_i(\kk)$, $GL(N_i,\kk)$-actions by $Y_i(\k)$ and $GL(N_i,\k)$-action $\forall i\in I$). In general, for any field $\k'$, $\,\k\subset \k'\subset \kk$ one can define the descent data for $\k'$ and a $\k'$-linear $\A$-category $\CC(\k')$ (which is triangulated if $\CC$ is triangulated in the ind-constructible sense). The groupoid of isomorphism classes of objects of $H^\bullet(\CC(\k'))$ is equivalent to the groupoid of the disjoint union of sets $Y_i(\k')$ endowed with $GL(N_i,\k')$-actions. More generally, one can define the category $\CC(\k')$ for *any* field extension $\k'\supset \k$, not necessarily an algebraic one. In the case $\k'=\kk$ we get a non-fatal crash of notations, because the $\A$-category $\CC(\kk)$ in last sense is equivalent to the previously defined $\CC(\kk)$.
+
+In what follows, we will assume for convenience that $Ob(\CC)$ for an ind-constructible category $\CC$ is described by schemes $Y_i$ with $GL(N_i)$-actions. In particular, for any extension $\k'\supset \k$ we will have a bijection $$Iso(\CC(\k'))\simeq \sqcup_{i \in I} Y_i(\k')/GL(N_i,\k')$$ between the set of isomorphism classes in $\CC(\k')$ and the set of orbits.
+
+::: rmk
+In fact, objects of an $\A$-category form not a stack but a higher stack, i.e. one should speak about isomorphisms between isomorphisms etc. Passing to the level of ordinary stacks we make a truncation. Presumably, for a proper treatment of ind-constructible categories and problems like non-functoriality of cones, one should introduce higher constructible stacks. Looking on the guiding example of identification data for finite non-empty collections, one can guess an appropriate notion of a higher constructible stack. Namely, it should be a simplicial constructible set $X_\bullet$ which satisfies a constructible version of the Kan property (i.e. there exists a constructible lifting from horns to simplices) and such that
+
+1\) for any $k\geqslant 2$ the constructible map $(\partial_0,\dots,\partial_k):X_k\to (X_{k-1})^{k+1}$ is a constructible vector bundle over its image (i.e. there exists a constructible identification of non-empty fibers of this map with vector spaces).
+
+2\) $\exists \,k_0$ such that $\forall k\geqslant k_0$ the above map is an inclusion.
+
+The reason for the first property is that in the case of identification on each step (except first two) we have to solve linear equations. The second property comes from the property ${\cal HOM}^n_{|X_i\times X_i}=0$ for $n\ll 0$ in our axiomatics of ind-constructible categories.
+:::
+
+[^1]: Even in the case when $\k=\kk$ it is important to keep track on automorphisms groups of objects (and not only on the set of isomorphism classes), e.g. for the correct definition of the motivic Hall algebra in 6.1.

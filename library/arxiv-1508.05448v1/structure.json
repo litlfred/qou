@@ -6,7 +6,8 @@
   "sha256": "57d2c717d8ec74d053bcaf861cffbb60a826bfea80af7eb89639207e98292c7a",
   "bytes": 839569,
   "pages": 134,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -523,6 +524,173 @@
   "likely_scanned": false,
   "toc_entries": 36,
   "sections": 23,
-  "chars_total": 156510
+  "chars_total": 156510,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "thesis_final_revised.tex",
+   "tex_sections": 32,
+   "overlaid": 12,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-biographical-sketch",
+     "title": "Biographical Sketch",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-acknowledgments",
+     "title": "Acknowledgments",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-contributors-and-funding-sources",
+     "title": "Contributors and Funding Sources",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-list-of-figures",
+     "title": "List of Figures",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-1-introduction",
+     "title": "Introduction",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-24-the-euler-maclaurin-formula",
+     "title": "The Euler-Maclaurin Formula",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-31-background-for-first-result",
+     "title": "Background for First Result",
+     "prose_ratio": 0.538,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-33-main-result",
+     "title": "Main Result",
+     "prose_ratio": 0.585,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-35-an-additional-application-the-length-of-the-l",
+     "title": "An Additional Application: The Length of the Longest Increasing Subsequence of a Random Walk Evolving under the Asymmetric Exclusion Process",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-36-remarks",
+     "title": "Remarks",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-41-mixed-matrix-moments",
+     "title": "Mixed Matrix Moments",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-42-the-expected-overlap-functions",
+     "title": "The Expected Overlap Functions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-43-formulas-for-the-overlap-functions",
+     "title": "Formulas for the Overlap Functions",
+     "prose_ratio": 0.534,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-47-summary-and-outlook",
+     "title": "Summary and Outlook",
+     "prose_ratio": 0.612,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-5-mallows-random-permutations",
+     "title": "Mallows Random Permutations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-52-the-mallows-measure",
+     "title": "The Mallows Measure",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-53-fisher-yates-algorithm",
+     "title": "Fisher-Yates Algorithm",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-54-length-of-the-longest-increasing-subsequence",
+     "title": "Length of the Longest Increasing Subsequence",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-55-patience-sorting",
+     "title": "Patience Sorting",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-56-four-square-problem",
+     "title": "Four Square Problem",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-57-conclusion-and-outlook",
+     "title": "Conclusion and Outlook",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-bibliography",
+     "title": "Bibliography",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

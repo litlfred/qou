@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0209324v1/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0209324v1/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "Preliminaries",
-  "pageStart": 5,
-  "pageEnd": 6,
-  "text": "../sections/sec-003-2-preliminaries.md",
-  "derivedFrom": "library/arxiv-math-0209324v1/manifest",
-  "sourceDocument": "library/arxiv-math-0209324v1/manifest",
+  "title": "Expansions at roots of unity",
+  "pageStart": 10,
+  "pageEnd": 12,
+  "text": "../sections/sec-003-5-expansions-at-roots-of-unity.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0209324v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0209324v1/manifest.jsonld",
   "provenance": "ingested"
 }

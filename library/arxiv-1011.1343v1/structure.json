@@ -5,7 +5,8 @@
   "file": "1011.1343v1.pdf",
   "sha256": "7d50e5e28e695191d428fcf590d6efd7a20aca17255c1eac85ea41aacd4fe8b9",
   "bytes": 284280,
-  "pages": 19
+  "pages": 19,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -27,9 +28,9 @@
   },
   "title_lines": [
    "Chiral symmetry, nuclear forces and all that",
-   "Ulf-G. Meißner"
+   "Ulf-G. Mei\u00dfner"
   ],
-  "title_prev": "Chiral symmetry, nuclear forces and all that Ulf-G. Meißner"
+  "title_prev": "Chiral symmetry, nuclear forces and all that Ulf-G. Mei\u00dfner"
  },
  "toc": [
   {
@@ -191,6 +192,81 @@
   "likely_scanned": false,
   "toc_entries": 10,
   "sections": 8,
-  "chars_total": 42683
+  "chars_total": 42683,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "gebugm.tex",
+   "tex_sections": 11,
+   "overlaid": 7,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-the-early-days-at-stony-brook",
+     "title": "The early days at Stony Brook",
+     "prose_ratio": 0.657,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-3-flashback-the-texas-revolution",
+     "title": "Flashback: The Texas revolution",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-4-the-chiral-theory-of-nuclear-forces-as-a-preci",
+     "title": "The chiral theory of nuclear forces as a precision tool",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-41-the-nucleon-nucleon-interaction",
+     "title": "The nucleon-nucleon interaction",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-42-three-nucleon-interactions",
+     "title": "Three-nucleon interactions",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-43-the-nuclear-matter-problem",
+     "title": "The nuclear matter problem",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-44-back-to-square-one---meson-exchange-currents",
+     "title": "Back to square one - meson-exchange currents",
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.844,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-5-flash-forward-combining-nuclear-eft-with-latti",
+     "title": "Flash forward: Combining nuclear EFT with lattice simulations",
+     "prose_ratio": 0.78,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

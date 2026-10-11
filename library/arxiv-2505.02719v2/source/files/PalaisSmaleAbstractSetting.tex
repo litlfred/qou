@@ -1,0 +1,766 @@
+
+\section{The Palais--Smale condition in an abstract setting}\label{sec:PS-abstract}
+\subsection{Energies on submanifolds of Hilbert spaces}
+\label{sec:energies-hilbert}
+In this section we provide sufficient criteria on the energy and on the underlying
+spaces guaranteeing the validity of the Palais--Smale condition (PS). 
+Throughout this section we use the following notation:
+We let $\HL$ be a Hilbert space and $\BL$ be a Banach space such that there is a compact embedding $\iota_{\BL} \colon \HL \embeds \BL$.
+We suppose that $\EL \colon \OL \to \R$ is an energy functional of class $C^1$
+on an open subset $\OL \subset \HL$.
+Moreover, we suppose that $\ML \subset \OL$ is a $C^1$-submanifold without boundary.
+Summarized, we have the following setup:
+\begin{enumerate}
+	\Item[(E)]\label{condE}
+	{\sc (Embedding)}
+	$\ML\subset \OL\subset \HL \xhookrightarrow{\iota_\BL} \BL$ and $\iota_\BL$ is compact.
+\end{enumerate}
+Since $\ML \subset \HL$ is a $C^1$-submanifold, the tangent bundle $T \ML \subset \ML \times \HL$ is splitting, see \cite[Chapter III]{lang_2002}. More precisely, there is a continuous map $\pr^{\ML} \colon \ML \to \BoundedLinOps(\HL)$ such that for each $x \in \ML$ the operator $\pr^{\ML}_x \ceq \pr^{\ML}(x)$ is a continuous linear projector onto $T_x \ML$. Note that we do \emph{not} mean $\pr^{\ML}_x$ to be the orthonormal projector with respect to the inner product on $\HL$.
+
+Our aim is to find sufficient criteria for the \PaSma-condition of $\widetilde{\EL} \ceq \EL|_{\ML}$.
+To this end, we make further assumptions.
+This will be eased by introducing the following notion:
+We say that a subset $\ControlledSet \subset \ML$ is \emph{\Econtrolled{\EL}} if and only if $\ControlledSet \subset \HL$ is bounded and if $\EL$ is bounded on $\ControlledSet$.
+Here are our assumptions:
+\begin{enumerate}
+	\Item[\rm (P)]\label{condP}
+	{\sc (Projector)}
+	The map $\pr^{\ML}$ is bounded on \Econtrolled{\EL} subsets of $\ML$.
+	\Item[\rm (B)]\label{condB}
+	{\sc (Boundedness)}
+	Every  \PaSma-sequence for $\widetilde{\EL} = \EL|_{\ML}$ is bounded.
+	\Item[\rm (L)]\label{condL}
+	{\sc (Limit in $\ML$)}
+	Every convergent \PaSma-sequence of $\widetilde{\EL}$ has its limit point in $\ML$.
+	\Item[\rm (S)]\label{condS}
+	{\sc (Splitting)}
+	There are 
+	a scalar function $\mu \colon \ML \to \intervaloo{0,\infty}$,
+	a continuous bilinear form $\QL \colon \HL \times \HL \to \R$,
+	and 
+	a map $\RL \colon \ML \to \BL^*$
+	such that the differential $\D\EL$ splits as follows:
+	\[
+		\D\EL_x h = \mu(x) \, \QL(x,h) + \RL_x \, \iota_\BL \, h 
+		\quad 
+		\text{for all $x \in \ML$ and all $h \in\HL$.}
+	\]
+	Moreover, we assume the following:
+	\begin{itemize}
+	\Item[\rm (S1)]\label{condS1}
+	For every \Econtrolled{\EL} subset $\ControlledSet \subset \ML$ there are $0 < m \leq M < \infty$ such that 
+	\[
+		m \leq \mu(x) \leq M \quad \text{for all $x\in\ControlledSet$.}
+	\]
+	
+	\Item[\rm (S2)]\label{condS2}
+		$\QL$ is coercive, i.e., there is $c > 0$ such that 
+	\[
+		\QL(h,h) \ge c \norm{h}_\HL^2
+		\quad 
+		\text{for all $h \in \HL$.}
+	\]
+	
+	\Item[\rm (S3)]\label{condS3}
+	$\RL$ is bounded on \Econtrolled{\EL} subsets of $\ML$.
+	\end{itemize}
+
+	\Item[\rm (D)]\label{condD}
+	{\sc (Differential in non-tangential directions)}
+	There is a map $\SL \colon \ML \to \BL^*$ such that 
+	\[
+		\D{\EL}_x \pars{\Id_\HL-\pr_x^\ML} \, h = \SL_x \, \iota_\BL \, h
+		\quad 
+		\text{for all $x \in \ML$ and all $h \in \HL$}, 
+	\]
+	and $\SL$ is bounded on \Econtrolled{\EL} subsets of $ \ML $.
+\end{enumerate}
+
+Condition \ref{condS3} is an abstract way of saying $\RL_x$ is of ``lower order'' and thus of less importance compared to $\QL(x,\cdot)$.
+Likewise, \ref{condD} states that $\D \EL_x h$ is of ``lower order'' if $h$ is transversal to $T_x \ML$ in the sense that $h$ lies in the range of the $\pars{\Id_\HL-\pr_x^\ML}$.
+
+\begin{theorem}[\PaSma-condition for $\widetilde{\EL}=\EL|_\ML$]
+\label{thm:PS-abstract}
+Under the conditions \ref{condE}, \ref{condP}, \ref{condB}, \ref{condL}, \ref{condS}, and \ref{condD} above, 
+the restricted
+energy $\widetilde{\EL}=\EL|_\ML$ satisfies the \PaSma-condition.
+\end{theorem}
+
+\begin{proof}
+	Let $(x_k)_k\subset\ML$ be a \PaSma-sequence for $\widetilde{\EL}$.
+	By condition \ref{condB}, $\ControlledSet \ceq \braces{x_k}_{k \in \N}$ is a bounded subset of $ \HL $. So,
+	passing over to a subsequence, we may therefore assume that $(x_{k})_{k \in \N}$ is a weakly convergent \PaSma-sequence. 
+	We are going to prove that $(x_{k})_{k \in \N}$ must also be strongly convergent in $\HL$ to a point $x_\infty$;
+	because condition \ref{condL} then implies that $x_\infty$ lies in $\ML$, which proves the theorem.
+
+	To show that $(x_{k})_{k \in \N}$ is strongly convergent, we use an argument inspired by the proof of \cite[Lemma 2.1]{cerami-etal_1984}.
+	Note that $\ControlledSet \ceq \braces{x_k : k \in \N}$ is \Econtrolled{\EL} by definition of a \PaSma-sequence. 
+
+	Let $0 < m \leq M < 0$ be the constants from \ref{condS1}, and let $c > 0$ be the coercivity constant from \ref{condS2}.
+	For $h_k \ceq x_k - x_\infty$ we get
+	\begin{equation}
+		c \, m \norm{h_k}_\HL^2
+		\leq 
+		\mu(x_k) \, Q(h_k,h_k)
+		=
+		\mu(x_k) \, Q(x_k,h_k) - \mu(x_k) \, Q(x_\infty,h_k)
+		.
+		\label{eq:ExploitingCoercivity}
+	\end{equation}
+	From \ref{condS} and \ref{condD}, we obtain
+	\[
+		\mu(x_k) \, Q(x_k,h_k)
+		=
+		\D \EL_{x_k} \pr^\ML_{x_k} h_k
+		+
+		\SL_{x_k} \, \iota_\BL \, h_k
+		-
+		\RL_{x_k} \, \iota_\BL \, h_k
+		.
+	\]
+	The triangle inequality and condition \ref{condS1} lead to
+	\begin{align*}
+		c \, m \norm{h_{k}}_\HL^2
+		&\leq
+		\abs{\D \EL_{x_k} \pr^\ML_{x_k} h_k}
+		+
+		\pars[\big]{
+			\norm{\SL_{x_k}}_{\BL^*}
+			+
+			\norm{\RL_{x_k}}_{\BL^*} 
+		} \norm{\iota_{\BL}h_k}_{\BL}
+		+
+		M \abs{Q(x_\infty,h_k)}
+		.
+	\end{align*}
+	Because $\VL$ is \Econtrolled{\EL},
+	conditions \ref{condD}, and \ref{condS3} imply that 
+	\[
+		C_\SL \ceq \sup_{k \in \N} \norm{\SL_{x_k}}_{\BL^*} < \infty 
+		,
+		\qand 
+		C_\RL \ceq \sup_{k \in \N} \norm{\RL_{x_k}}_{\BL^*} < \infty 
+		.
+	\]
+	Thus, we obtain
+	\begin{equation}
+		\label{eq:StruweTrick1}
+		c \, m \norm{h_{k}}_\HL^2
+		\leq
+		\abs{\D \EL_{x_k} \pr^\ML_{x_k} h_k}
+		+
+		\pars[\big]{ C_\SL + C_\RL }
+		\norm{\iota_\BL \, h_k}_{\BL}
+		+
+		M \abs{Q(x_\infty,h_k)}
+		.
+	\end{equation}
+	The bilinear form $Q$ is continuous, and we have weak convergence $h_k \rightharpoonup 0$ in~$\HL$.
+	Hence, the third summand $M\abs{Q(x_\infty,h_k)}$ in \cref{eq:StruweTrick1} converges to $0$ as $k \to \infty$.
+	The operator $\iota_\BL$ is compact and $h_k$ converges weakly to $0$ in~$\HL$. 
+	Hence, $\iota_\BL \, h_k$ converges strongly to~$0$ in~$\BL$.
+	Thus, also the second summand in \cref{eq:StruweTrick1} converges to~$0$.
+	Finally, we have to discuss the first summand in \cref{eq:StruweTrick1}.
+	By definition of the dual norm and the operator norm $\norm{\pr^\ML_{x_k}}_{\LL(\HL)}$, we have
+	\[
+		\abs{\D \EL_{x_k} \pr^\ML_{x_k} h_k}
+		=
+		\abs{\D \widetilde{\EL}_{x_k} \pr^\ML_{x_k} h_k}
+		\leq
+		\norm{\D \widetilde{\EL}_{x_k}}_{(T_{x_k}\ML)^*}
+		\norm{\pr^\ML_{x_k}}_{\LL(\HL)}
+		\norm{h_k}_{\HL}
+		.
+	\]	
+	Because $(x_k)_{k \in \N}$ is a \PaSma-sequence for $\widetilde{\EL}$, we have $\norm{\D \widetilde{\EL}_{x_k}}_{(T_{x_k} \ML)^*} \to 0$ as $k \to \infty$. 
+	Since $\VL$ is \Econtrolled{\EL} and because of \ref{condP},
+	we have $\sup_{k \in \N} \norm{\pr^\ML_{x_k}}_{\LL(\HL)} < \infty$. In addition, the weakly convergent sequence $ (h_k)_{k} $ is bounded.
+	This shows that also the first summand in \cref{eq:StruweTrick1} converges to $0$. Since $c \, m > 0$, we infer that $h_k \to 0$ strongly in $\HL$, thus $x_k \to x_\infty$ as $k \to \infty$.
+\end{proof}
+
+If $\ML= \OL \subset \HL$,
+then assumptions \ref{condP}, and \ref{condD} are automatically satisfied, and we obtain a result similar in flavor to \cite[Chapter~II, Proposition 2.2]{struwe_2008a}. 
+(Note that the Lax--Milgram theorem implies that coercivity of $\QL$ means that the operator $\HL \to \HL^*$, $x \mapsto \QL(x,\cdot)$ is continuously invertible.)
+
+\begin{corollary}[\PaSma-condition for $\EL$ on $\OL$]
+\label{cor:PS-open-set}
+Let $\ML=\OL \subset \HL$ be an open set and let $\EL\in C^1(\OL)$. 
+Suppose that \ref{condE}, \ref{condB}, \ref{condL},  and  \ref{condS} are satisfied.
+Then $\EL$ satisfies the \PaSma-condition.
+\end{corollary}
+
+In view of applications in geometric knot theory we consider linear 
+combinations of a non-negative energy functional with lower order
+terms. 
+For this, we extend the abstract setting \ref{condE} by another Banach space $\CL$, into which the Hilbert space $\HL$ embeds compactly, i.e., there is a compact linear embedding $\iota_\CL \colon \HL \to \CL$.
+Moreover, we complement condition \ref{condP} on the projection $\pr_x^\ML \colon \HL\to T_x\ML$
+by the following condition:
+
+\begin{enumerate}
+	\Item[\rm (P*)]\label{condP*}
+	There is an operator-valued map $\Pr \colon \ML \to \BoundedLinOps(\CL)$
+	such that 
+	\[
+		\iota_\CL \, \pr^{\ML}_x = \PR_x \, \iota_\CL
+		\quad 
+		\text{for all $x \in \ML$,}
+	\]
+	and the map $\Pr$ is bounded on \Econtrolled{\EL} subsets of $\ML$.
+\end{enumerate}
+
+In addition to the original energy $\EL\in C^1(\OL)$ with its restriction $\widetilde{\EL}=\EL|_\ML$ to the submanifold $\ML\subset\OL\subset\HL \embeds \BL$, 
+we
+consider another functional $\FL \in C^1(\UL)$ on an open subset $\UL\subset\CL$ with $\iota_\CL(\OL)\subset\UL$.
+For some fixed $\theta>0$ we investigate the  \emph{total energy} $\TL \ceq \EL + \theta \pars{\FL \circ \iota_\CL} \in C^1(\OL)$. 
+Note that, in general, a \PaSma-sequence  for the restriction $\widetilde{\TL} \ceq \TL|_\ML$, need not be a \PaSma-sequence for the individual
+functionals $\widetilde{\EL}$ or $\widetilde{\FL} \ceq (\FL \circ \iota_\CL) |_\ML$, even if
+both functionals are non-negative, since their differentials
+may not tend to zero. To formulate a clear-cut result,
+we replace assumptions \ref{condL} and
+\ref{condB} by the following separate  
+assumptions on the energies: 
+\begin{enumerate}
+	\Item[\rm (B*)]\label{condB*}
+	For every $K \in \R$ the sublevel set $\braces[\big]{ x \in \ML : \EL(x) \leq K}$ of $\widetilde{\EL} = \EL_\ML$ is bounded in $\HL$.
+	\Item[\rm (L*)]\label{condL*}
+	Whenever a sequence $(x_k)_k\subset\ML$ is weakly convergent in $\HL$ to some point $x_\infty$ and $ \sup_{k\in\N}\FL(x_k)<\infty $,
+	then $x_\infty \in \ML$.	
+\end{enumerate}
+
+\begin{corollary}[(PS)-condition for the total energy $\widetilde{\TL}=\TL|_\ML$]
+\label{cor:PS-total-energy}
+	Let $\iota_\CL \colon \HL \embeds \CL$ be a compact embedding.
+	Let $\OL \subset \HL$ and $\UL \subset \CL$ be open subsets such that $\iota_\CL(\OL) \subset \UL$, and let $\EL \in C^1(\OL)$ and $\FL \in C^1(\UL)$ be bounded from below on $\ML$.
+	Suppose that conditions \ref{condE},
+	\ref{condP}, \ref{condP*},
+	\ref{condB*}, \ref{condS}, \ref{condD},
+	and \ref{condL*} are satisfied.
+	Then for every $\theta>0$ the restriction  $\widetilde{\TL}=\TL|_\ML$ of the total energy $\TL = \EL + \theta \pars{\FL\circ\iota_\CL}$
+	satisfies the \PaSma-condition.
+\end{corollary}
+
+\begin{proof}
+	By adding suitable constants, we may assume that $\widetilde{\EL} \geq 0$ and $\widetilde{\FL} \geq 0$.
+	Let $(x_k)_k\subset\ML$ be a \PaSma-sequence for $\widetilde{\TL}$.
+	By definition, there is a $K \in \R$ such that $\widetilde{\TL}(x_k) \leq K$ for all $k \in \N$.
+	Now $\widetilde{\FL} \geq 0$ implies
+	\begin{equation}
+		\label{eq:energy-bound}
+		\EL(x_k)
+		=
+		\widetilde{\EL}(x_k)
+		\le
+		\widetilde{\EL}(x_k) + \theta \, \widetilde{\FL}(x_k)=\widetilde{\TL}(x_k)\le K\quad\Foa k\in\N
+		.
+	\end{equation}
+	By \ref{condB*}, $(x_k)_{k \in \N}$ is bounded in $\HL$. Hence, it contains a weakly convergent subsequence with limit point $x_\infty \in \HL$. 
+	As in the proof of \cref{thm:PS-abstract}, we pass over to this subsequence and denote it by $(x_k)_{k \in \N}$. 
+	And as in that proof, we aim to show that the $x_k$ converge strongly to $x_\infty$ in $\HL$.
+	Once this is established, condition \ref{condL*} implies $x_\infty \in \ML$
+	since $(x_{k})_{k \in \N}$ is bounded under~$\FL$;
+	this follows from $\widetilde{\EL} \geq 0$:
+	\begin{equation*}
+		\FL(x_k)
+		=
+		\widetilde{\FL}(x_k)
+		\le
+		\tfrac{1}{\theta}
+		\pars[\big]{ \widetilde{\EL}(x_k) + \theta \, \widetilde{\FL}(x_k)}
+		=
+		\tfrac{1}{\theta} \, \widetilde{\TL}(x_k)
+		\le 
+		\tfrac{K}{\theta}
+		\quad\Foa k\in\N.
+	\end{equation*}
+	To show strong convergence of $(x_k)_{k \in \N}$, we first recall from \cref{eq:energy-bound} that $\ControlledSet \ceq \braces{x_k}_{k \in \N}$  is \Econtrolled{\EL}.
+	Precisely as in the proof of \cref{thm:PS-abstract}, we derive inequality \cref{eq:StruweTrick1} for $h_k \ceq x_k - x_\infty$ and show that the second and third summand in \cref{eq:StruweTrick1} converge to~$0$. Alas, we need a new argument for showing that the first summand $\abs{\D \EL_{x_k} \pr^\ML_{x_k} h_k}$ converges to~$0$ as $ k\to \infty $.
+	This time, we decompose it and use condition \ref{condP*} as follows:
+	\[
+		\D \EL_{x_k} \pr^\ML_{x_k} h_k
+		=
+		\D \TL_{x_k} \pr^\ML_{x_k} h_k
+		-
+		\theta \, \D \FL_{x_k} \, \iota_\CL \, \pr^\ML_{x_k} h_k
+		=
+		\D \widetilde{\TL}_{x_k} \pr^\ML_{x_k} h_k
+		-
+		\theta \, \D \FL_{(\iota_\CL x_k)} \, \PR_{x_k}\, \iota_\CL \,h_k
+		.
+	\]
+	This leads us to
+	\[
+		\abs{\D \EL_{x_k} \pr^\ML_{x_k} h_k}
+		\leq 
+		\norm{\D \widetilde{\TL}_{x_k}}_{(T_{x_k}\ML)^*}
+		\norm{\pr_{x_k}^\ML}_{\LL(\HL)}
+		\norm{h_k}_{\HL}
+		+
+		\theta \norm{\D \FL_{(\iota_\CL x_k)}}_{\CL^*}
+		\norm{\PR_{x_k}}_{\LL(\CL)}
+		\norm{\iota_\CL \,h_k}_{\CL}
+		.
+	\]
+	Since $\iota_\CL$ is compact, we have $\iota_\CL \, x_k \to \iota_\CL \, x_\infty$ as $k \to \infty$. 
+	By condition~\ref{condL*}, we have $x_\infty \in \ML \subset \OL$
+	and $\iota_\CL x_\infty \in \iota_\CL(\OL) \subset \UL$.
+	Since $x \mapsto \D \FL_x$ is continuous on $ \UL $, and by condition~\ref{condP}, and because of $\iota_\CL \, x_k \to \iota_\CL \, x_\infty$, we have
+	\[
+		\smash{\sup_{k \in \N}} \norm{\D \FL_{(\iota_\CL x_k)}} < \infty
+		,
+		\quad 
+		\sup_{k \in \N} \norm{\pr_{x_k}^{\ML}}  < \infty
+		,
+		\qand 
+		\smash{\lim_{k \to \N}} \norm{\iota_\CL \, h_k}_{\CL} = 0
+		.
+	\]
+	The sequence $(x_k)_{k\in\N}$ is a \PaSma-sequence for $\smash{\widetilde{\TL}}$, and because of \ref{condP*}, and $h_k \rightharpoonup 0$, we have 
+	\[
+		\smash{\lim_{k \to \infty}}
+		\norm{\D \widetilde{\TL}_{x_k}}_{(T_{x_k}\ML)^*}
+		=
+		0
+		,
+		\quad 
+		\sup_{k \in \N} \norm{\PR_{x_k}}_{\LL(\CL)}  < \infty
+		,
+		\qand
+		\smash{\sup_{k \in \N}} \norm{h_k}_{\HL}  < \infty
+		.
+	\]
+	All this together implies that $\smash{\abs{\D \widetilde{\EL}_{x_k} \pr^\ML_{x_k} h_k}} \to 0$ as $k \to \infty$, which completes the proof.
+\end{proof}
+
+\subsection{Gradient flows on Riemannian manifolds}
+\label{sec:grad_flows}
+Let $(\ML,g)$ be a Riemannian manifold without boundary 
+of class $C^2$ over a Hilbert 
+space $\HL$ with  Riemannian metric $g$ given fibrewise as 
+$g_x(\cdot,\cdot)$ 
+inducing a norm $\|\cdot\|_{g_x} \ceq \sqrt{g_x(\cdot,\cdot)}$ on 
+the tangent space $T_x\ML$. 
+For two points $x,y$ 
+in the same connected component of $\ML$ we consider
+the  set of connecting $C^1$-paths,
+\begin{equation}\label{eq:path-space}
+	\PS(x,y) 
+	\ceq \braces[\big]{c\in C^1([0,1],\ML) : c(0)=x,c(1)=y},
+\end{equation}
+and define the \emph{path metric} (or \emph{Palais distance})
+\begin{equation}\label{eq:path-metric}
+\dist_{\ML}(x,y) \ceq \inf_{c\,\in\PS(x,y)}\int_0^1
+\|\dot{c}(t)\|_{g_{c(t)}}\d t,
+\end{equation}
+where $\dot{c}(t) \ceq \D c_t(1)\in T_{c(t)}\ML$
+for the differential $\D c_t:T_t[0,1]\simeq\R\to
+T_{c(t)}\ML$ of the $C^1$-map $c:[0,1]\to\ML$ (cf.{} \cite[Sections 6 \& 9]{palais_1963}).
+Equipped with the path metric $\dist_{\ML}$, every connected
+component
+of 
+$\ML$ is a metric space. This metric is consistent with the
+topology of $\ML$ as shown in \cite[Section 9]{palais_1963}
+and in the more general setting of Finsler manifolds in
+\cite[Theorem 3.3]{palais_1966}. Therefore, every connected
+component $\KL$ of $\ML$ is closed with respect to $\dist_{\ML}$;
+see, e.g., \cite[Remark after Theorem 25.2]{munkres_2000}.
+
+On this manifold we consider energy functionals $\EL:\ML\to\R$ 
+of class $C^{1,1}_\loc$ whose gradient $\nabla \EL$ is
+given by $\D\EL_x(h)=g_x(\nabla\EL(x),h)$ for $x\in\ML$ and $h\in
+T_x\ML$. We assume that
+\begin{enumerate}
+	\Item[\rm (e)]\label{lower-bound} 
+	({\sc Energy bounded below})
+	There is a number $e\in\R$ such that
+	$\EL(x)\ge e$ for all $x\in\ML$.
+	\Item[\rm (L**)]\label{condL**} 
+	({\sc limit in $\ML$}) 
+	Every Cauchy sequence
+	$(x_k)_{k \in \N}$ in $\ML$ that is bounded under $\EL$
+	converges to some 
+	$x_\infty\in\ML$ as $k\to\infty$.
+\end{enumerate}
+Long-time existence for the gradient flow
+and subconvergence to critical points can
+now be proved by slightly generalizing a classic argument 
+that can be found, e.g., in \cite[Theorem 9.1.6]{palais-terng_1988} 
+for Riemannian manifolds, in \cite[Theorem 1.1]{browder_1965} 
+for Banach manifolds modelled over a uniformly convex Banach space, or 
+in \cite[Theorem 5.4]{palais_1966} for general Finsler manifolds.
+
+\begin{theorem}[Gradient flow]
+	\label[theorem]{thm:gradflow_subconvergence}
+	Let $\EL\in C^{1,1}_\loc(\ML)$ satisfy the Palais--Smale condition
+	{\rm (PS)} and conditions \ref{lower-bound} and \ref{condL**}.
+	There exists a function $\phi:[0,\infty)\times\ML\to\ML$, such
+	that $\phi(\cdot,x)\in C^1([0,\infty),\ML)$ for every $x\in\ML$,
+	and
+	\begin{equation}\label{eq:gradient-flow}
+	\begin{cases}
+	\frac{\d}{\d t}\phi(t,x)& =-\nabla\EL(\phi(t,x)) \Foa t\in [0,\infty),\\
+		\phi(0,x)&=x.  
+	\end{cases}
+	\end{equation}
+The function $t\mapsto\EL(\phi(t,x))$ is strictly decreasing 
+on $[0,\infty)$ unless
+$x$ is
+	$\EL$-critical.
+For $x\in\ML$ and $t\to\infty$ the solution $\phi(t,x)$ subconverges  
+to a critical point of $\EL$, which lies in the same
+connected component of $\ML$ as the initial point $x$.
+In particular, in each connected component
+of $\ML$ the energy $\EL$ possesses at least one
+critical point. 
+\end{theorem}
+
+\begin{proof}
+	For $x\in\ML$ we obtain
+	the function $\phi$ as the solution to the 
+	initial value problem
+	\begin{equation} 
+		\begin{aligned}
+			\label{eq:cauchy_problem}
+		\textstyle
+		\frac{\d}{\d t}\xi(t) &=-\nabla \EL(\xi(t)), &\hspace{10pt}\xi(0)&=x.
+		\end{aligned}
+	\end{equation}
+	Such a solution exists and is unique on an 
+	interval $(t^-,t^{+})$ containing $t=0$
+	by the Picard--Lindelöf Theorem 
+	(see, e.g., \cite[Chapter IV.2]{lang_2002}). 
+	Here $t^{+}\in (0,\infty]$ 
+	denotes the maximal positive existence time, 
+	and for $t\in (t^-,t^+)$ we compute by means of 
+	\cref{eq:cauchy_problem}
+	\begin{align}
+	\textstyle
+	\frac{\d}{\d t}\EL(\xi(t)) &
+=\D\EL_{\xi(t)}(\dot{\xi}(t))= g_{\xi(t)}\big(\nabla \EL(\xi(t)),
+	\dot{\xi}(t)\big)\label{eq:decreasing-energy}\\
+		&\overset{\cref{eq:cauchy_problem}}{=}  
+- g_{\xi(t)}\big(\nabla \EL(\xi(t)),\nabla \EL(\xi(t))\big)
+=-\|\nabla\EL(\xi(t))\|^2_{g_{\xi(t)}}\le 0.\notag
+	\end{align}
+Hence, $\phi(\cdot,x) \ceq \xi(\cdot)$ 
+solves 
+\cref{eq:gradient-flow} on the positive maximal time interval $[0,t^+)$, 
+and the energy is strictly decreasing along the flow unless $\D\EL_x=0$,
+or equivalently, $\nabla\EL(x)=0$, in which case $\xi(t)=x$ and therefore
+$\EL(\xi(t))=\EL(x)$ for all $t\in
+[0,t^+)$ by uniqeness of the solution to \cref{eq:cauchy_problem}.
+
+To show that $t^+=\infty$ we assume to the contrary that $t^+<\infty$,
+and show below
+that in that case the one-sided limit
+$\xi(t^+) \ceq \lim_{t\nearrow t^+}\xi(t)$ exists, so that 
+we could find a solution of \cref{eq:cauchy_problem} with $x$ replaced
+by $\xi(t^+)$ on an
+open
+ time interval containing $t^+$, which contradicts the 
+maximality of $t^+$ by uniqueness of the solution.
+
+Towards the existence of the limit point
+$\xi(t^+)\in\ML$ for some finite maximal time $t^+\in
+	(0,\infty)$
+consider 
+a strictly increasing
+sequence $(t_k)_k\subset[0,t^+)$ with $t_k\to t^+$ as $k\to\infty$,
+and define 
+the sequence of points
+$x_k=\xi(t_k)\in\ML$. We first show that $x_k$ is a Cauchy 
+sequence in $\ML$, so that by condition
+\ref{condL**} we find $x_\infty\in\ML$ such that $x_k\to x_\infty$ as
+$k\to\infty$, since we know  that
+$\EL(x_k)\le\EL(x)$ for all $k\in\N$ by \cref{eq:decreasing-energy}. Going back
+to an arbitrary sequence $s_m\nearrow t^+$ we will then show that also 
+$y_m \ceq \xi(s_m)\to x_\infty$ as $m\to\infty$, so that $\xi(t^+)$ indeed exists.
+
+We have by \cref{eq:decreasing-energy} 
+\begin{align}
+	\EL(\xi(t))-\EL(\xi(s))\overset{\cref{eq:decreasing-energy}}{=}
+	\textstyle
+	-\int_s^t \norm{ \nabla \EL(\xi(\tau))}^2_{g_{\xi(\tau)}}\d \tau
+	\Fo 0\le s< t<t^+,\label{eq:energy-identity}
+\end{align}
+which yields the following by means of \ref{lower-bound}:
+\begin{align*}
+\textstyle
+\int_{s}^{t} \norm{\nabla \EL(\xi(\tau))}_{g_{\xi(\tau)}}
+\d \tau 
+&\textstyle
+	\le 
+	\pars{t-s}^{1/2} 
+	\pars[\big]{ \int_s^t
+		\norm{\nabla \EL(\xi(\tau))}^2_{g_{\xi(\tau)}}\d \tau 
+	}^{1/2}\\
+&\overset{\ref{lower-bound}}{\le}(t-s)^{\frac{1}{2}}(\EL(x)-e)^{\frac{1}{2}}
+\quad\Foa 0\le s<t<t^+.
+	\end{align*}
+	Hence, by definition \cref{eq:path-metric} of the path metric,
+	and by the differential equation \cref{eq:cauchy_problem},
+	\begin{align}
+		\dist_\ML(x_j,x_k)&\overset{\cref{eq:path-metric}}{\le}
+		\textstyle
+		\int_{t_j}^{t_k}\|\dot{\xi}(\tau)\|_{g_{\xi(\tau)}}\d
+		\tau \overset{\cref{eq:cauchy_problem}}{=}
+		\int_{t_j}^{t_k}\|\nabla \EL(\xi(\tau)) \|_{g_{\xi(\tau)}}
+		\d 
+		\tau\notag\\
+		&\le (t_k-t_j)^{\frac{1}{2}}(\EL(x)-e)
+		\longrightarrow 0 \As j,k\to\infty;\label{eq:cauchy-estimate}
+	\end{align}
+hence $(x_k)_k$ is indeed a Cauchy sequence so that $x_k\to x_\infty$
+for some $x_\infty\in\ML$. For any other sequence $s_m\nearrow t^+$ repeat
+the argument in \cref{eq:cauchy-estimate} with $y_m \ceq \xi(s_m)$ instead of
+$x_j$ to find
+\begin{align*}
+	\dist_\ML(y_m,x_\infty)
+	=
+	\lim_{k\to\infty} \dist_\ML(y_m,x_k)
+	&\le
+	\lim_{k\to\infty} \pars{t_k-s_m}^{1/2} \pars{\EL(x)-e}^{1/2}
+	\\
+	& = 
+	\pars{t^+-s_m}^{1/2} \pars{\EL(x)-e}^{1/2}
+	\to 
+	0
+	\As m\to\infty,
+\end{align*}
+so that the one-sided limit $\xi(t^+)$ indeed exists.
+Therefore, 
+	the solution $\phi(\cdot,x)$ exists on $[0,\infty)$.
+
+Combining the energy identity \cref{eq:energy-identity} for 
+$t \ceq t_k\nearrow\infty$ and 
+$s \ceq 0$ with condition \ref{lower-bound}
+we obtain
+$$
+\textstyle
+\int_0^\infty\|\nabla\EL(\xi(\tau))\|^2_{g_{\xi(\tau)}}\d \tau=
+\lim_{k\to\infty}\int_0^{t_k}\|\nabla\EL(\xi(\tau))\|^2_{g_{\xi(\tau)}}\d \tau
+\le \EL(x)-e.
+$$
+Therefore, there exists a sequence $s_l\nearrow\infty$ such that
+for the points $z_l \ceq \xi(s_l)\in\ML$ one has
+$\|\nabla\EL(z_l)\|_{g_{z_l}}\to 0$ 
+as $l\to\infty$. Together with 
+$\EL(z_l)\le\EL(x)$ for all $l\in\N$ this shows that
+$(z_l)_l\subset\ML$ is a (PS)-sequence, which by means of the (PS)-condition
+implies
+that there is a subsequence $(z_{l_i})_i\subset (z_l)_l$ 
+converging to some point
+$z_\infty\in\ML$ as $i\to\infty$. Since $\EL$ is of class $C^1$ we find
+$$
+\|\D\EL_{z_\infty}\|_{(T_{z_\infty}\ML)^*}=\lim_{i\to\infty}
+\|\D\EL_{z_{l_i}}\|_{(T_{z_{l_i}}\ML)^*}=\lim_{i\to\infty}
+\|\nabla\EL(z_{l_i})\|_{g_{z_{l_i}}}=0,
+$$
+that is, $z_\infty$ is $\EL$-critical. 
+All points $z_{l_i}$ are connected to the initial point $x$ by
+the continuous path $\xi|_{[0,s_{l_i}]}$, so they lie in the same
+connected component $\KL$ of $\ML$ as $x$. Since $\KL$ is closed,
+one also has $z_\infty\in\KL$.
+\end{proof}
+Palais considers in \cite[Section 2]{palais_1979} a group $G$ of
+isometries of a Riemannian manifold and a $G$-invariant energy $\EL:\ML\to
+\R$ to provide an exemplary simple setting where his
+principle of symmetric criticality holds true. It turns out that in this
+situation the gradient flow \cref{eq:cauchy_problem} is symmetry
+preserving.
+\begin{proposition}[Symmetry-preserving gradient flow]
+\label{prop:symmetry-preserving-grad-flow}
+Let $G$ be a group of $C^1$-isometries of the Riemannian manifold $(\ML,g)$. 
+Suppose
+that $\EL\in C^{1,1}_\textnormal{loc}(\ML)$ is invariant under $G$, i.e.,
+$\EL=\EL\circ\G$ for all $\G\in G$, and satisfies the assumptions of
+\Cref{thm:gradflow_subconvergence}. Then the gradient flow 
+\cref{eq:cauchy_problem} preserves the $G$-symmetry, that is,
+for every initial point $x\in\ML$ that satisfies $\G x=x$ for all $\G\in G$, the solution
+$\xi$ of \cref{eq:cauchy_problem}  satisfies $\G \xi(t)=\xi(t)$ for all
+$\G \in G$ and $t\in [0,\infty)$. In addition, $\xi$ subconverges to a 
+$G$-symmetric critical point $x_\infty$, i.e., with $\G x_\infty = x_\infty$
+for all $\G\in G$.
+In particular, in any connected component $\KL$ of $\ML$ that contains
+a $G$-symmetric point $x$ there is a $G$-symmetric $\EL$-critical point.
+\end{proposition}
+\begin{proof}
+Palais showed in \cite[Section 2]{palais_1979} that 
+$\nabla\EL(\G x)=
+\D\G_x(\nabla\EL(x))$ for all $\G\in G$ and $x\in\ML$. 
+This implies for any $G$-symmetric
+initial point $x\in\ML$ and any fixed group element $\G\in G$ that
+the solution $\xi$ of \cref{eq:cauchy_problem}
+generates the
+function $\varXi(t) \ceq \G\xi(t)$, which satisfies $\varXi(0)=\G\xi(0)=
+\G x=x$ and
+$$
+\dot{\varXi}(t)=\D\G_{\xi(t)}(\dot\xi(t))\overset{\cref{eq:cauchy_problem}}{=}
+-\D\G_{\xi(t)}\nabla\EL(\xi(t))=-\nabla\EL\G\xi(t)=-\nabla\EL\varXi(t)
+$$
+for all $t\in [0,\infty)$. 
+In other words, $\varXi$ solves the same initial
+value problem as $\xi$ does, so that $\varXi=\xi$ by uniqueness of the solution.
+Since $\G\in G$ was chosen arbitrarily, we have shown that \cref{eq:cauchy_problem} is 
+symmetry-preserving. If $x_\infty\in\ML$ is an $\EL$-critical limit point of 
+$\xi$ then there is a sequence 
+$t_i\to\infty$ such that 
+$$
+\G x_\infty=\G \lim_{i\to\infty}\xi(t_i)=\lim_{i\to\infty}\G\xi(t_i)=
+\lim_{i\to\infty}\xi(t_i)=x_\infty,
+$$
+so $x_\infty $ is $G$-symmetric as well. Finally, to find a $G$-symmetric
+$\EL$-critical point in a component $\KL$ of $\ML$ containing a $G$-symmetric
+point $x\in\KL$, we simply start the gradient flow \cref{eq:cauchy_problem}
+in that point $x$. This flow subconverges to a 
+$G$-symmetric $\EL$-critical point
+in that same component $\KL$.
+\end{proof}
+\begin{corollary}[Critical points of lower energy]
+{\cite[Corollary 9.1.8]{palais-terng_1988}}
+	\label[corollary]{koro:critpoint_lowerenergy}
+Let $\EL$ satisfy the assumptions of \Cref{thm:gradflow_subconvergence}.
+Then, for any point $x\in\ML$ with $\D\EL_x\not=0$ there
+exists a critical point $x_{\text{c}}$ of $\EL$ in the connected component
+of $\ML$ that contains $x$, such that $\EL(x_{\text{c}})<\EL(x)$.
+If $x$ is $G$-symmetric and $\EL$ is $G$-invariant under a group
+$G$ of $C^1$-isometries of $(\ML,g)$ then $x_c$ is $G$-symmetric as well.
+\end{corollary}
+\begin{proof}
+	Choose $x_{\text{c}}\in\ML$ as any limit point of $\phi(t,x)$
+	as $t\to\infty$, 
+	which is contained in the same connected
+	component $\KL\subset\ML$ as the initial point $x$ according
+	to \Cref{thm:gradflow_subconvergence}. 
+	Since $x$ is not a critical point we have $\EL(x_\text{c})<\EL(x)$
+	because of the strict energy decay along the flow. The last
+	statement follows from \Cref{prop:symmetry-preserving-grad-flow}.
+\end{proof}
+\begin{corollary}[Energy minimizers]{\cite[Theorem 9.1.9]{palais-terng_1988}}
+	\label[corollary]{koro:minimizer_existence}
+	Under the assumptions of \Cref{thm:gradflow_subconvergence}
+	 the energy $\EL$ attains its infimum on $\ML$, and additionally on 
+ every connected component of $\ML$. Moreover, on $\ML$, and also
+ in each of its connected components
+ there exists a minimizing {\rm (PS)}-sequence. 
+ If a connected component
+ $\KL$ of $\ML$ contains a $G$-symmetric point $x$ and $\EL$ is $G$-invariant
+ under a group $G$ of $C^1$-isometries 
+ of $(\ML,g)$, then there is a $G$-symmetric
+ element $x_s\in\KL$ with $\EL(x_s)=\inf\{\EL(y):y\in\KL,\,\textnormal{$y$
+ is $G$-symmetric}\}$, and a corresponding {\rm (PS)}-sequence of
+ $G$-symmetric elements in $\KL$.
+\end{corollary}
+\begin{proof}
+Let $x_k$ be a minimizing sequence for $\EL$ on $\ML$, i.e.,
+$\lim_{k\to\infty}\EL(x_k)=\inf(\EL)$. 
+Without loss of generality we can assume, that each $x_k$ is a critical point, since otherwise we just replace $x_k$ 
+by a critical point of lower energy by \cref{koro:critpoint_lowerenergy}. Then, since $\EL$ satisfies the (PS)-condition, 
+there exists a subsequence $(x_{k_i})_i\subset (x_k)_k$ 
+converging to a critical point 
+$x_{\text{c}}$ as $i\to\infty$, and by continuity of $\EL$ one has
+$
+\EL(x_{\text{c}})=\lim_{i\to\infty}\EL(x_{k_i})=\inf(\EL).
+$
+We can repeat the same argument on each connected component of $\ML$ instead
+of $\ML$, since each such component is closed.
+Finally, if we consider a minimizing sequence of $G$-symmetric
+elements $x_k\in\KL$, then the same reasoning is valid due to the last
+statement of \cref{koro:critpoint_lowerenergy} and because of the fact
+that $G$-symmetry is a closed condition since each $\G\in G$ is a
+continuous mapping from $\ML$ onto $\ML$.
+\end{proof}
+
+
+Even if the energy is only in $C^1$, we can use Ekeland's variational
+principle to obtain energy-minimizing
+Palais--Smale sequences subconverging to
+energy minimizers. 
+
+\begin{corollary}[Minimizers]
+\label{cor:critical+minimizers}
+Let $\EL\in C^1(\ML)$ satisfy the Palais--Smale condition {\rm (PS)} and conditions \ref{lower-bound} and \ref{condL**}.
+Let $\KL$ be a connected component of $\ML$.
+Then there are a minimizing {\rm (PS)}-sequence and a minimizer of $\EL |_{\KL}$.
+
+If  $\KL$ contains a $G$-symmetric element and if
+ $\EL$ is $G$-invariant, then
+there exists a (not necessarily $G$-symmetric) {\rm (PS)}-sequence for $\EL|_\KL$ that converges to
+a $G$-symmetric element in $\KL$ that realizes $\inf\{\EL(y):y\in\KL,\,\textnormal{$y$
+is $G$-symmetric}\}$.
+These statements hold true also for $\KL = \ML$.
+\end{corollary}
+\begin{proof}
+We  choose a minimizing sequence $(x_k)_{k \in \N}$ of $\EL |_{\KL}$ such that $\EL(x_k) \le \inf(\EL|_{\KL}) + 1/k^2$.
+The function $\EL$ is continuous and the set $\KL$ is closed.
+Hence, condition \ref{condL**} implies that the sublevel set 
+$
+	\mathcal{U} \ceq \braces[\big]{x \in \KL : \EL(x) \leq \inf (\EL|_\KL) + 2}
+$ 
+equipped with the restriction of $\dist_\ML$ is a complete metric space.
+Now we apply Ekeland's variational principle (see, e.g., \cite[Chapter~1,Theorem~5.1]{struwe_2008a}) to find $y_k \in \mathcal{U}$
+such that 
+$
+	\EL(y_k) \le \EL(x_k)
+$,
+$
+	\dist_\ML(x_k,y_k) \le 1/k
+$,
+and
+\begin{equation}
+	\label{eq:ekeland-ineq}
+	\EL(y_k) \leq \EL(z) + \tfrac{1}{k} \dist_\ML(y_k,z) \quad \Foa z\in\mathcal{U}
+	.
+\end{equation}
+We have $\EL(y_k) \leq \EL(x_k) \leq \inf(\EL|_{\KL}) + 1 < \inf(\EL|_\KL) + 2$.
+Because $\EL$ is continuous and because $\KL$ is open, $ y_k $ is contained in the interior of $ \UL $.
+So, for every tangent vector $h\in T_{y_k}\ML$ 
+there is a $\sigma > 0$ and a $C^1$-path $c \colon \intervaloo{-\sigma,\sigma} \to \mathcal{U}$ satisfying $c(0)=y_k$ and $\dot c(0) = h$.
+By continuity, we can take $\sigma$ so small that
+\begin{equation}\label{eq:tangent-small}
+	\textstyle
+	\norm{\dot c(t)}_{g_{c(t)}}\le 2\norm{h}_{g_{c(0)}} = 2 \norm{h}_{T_{y_k}\ML}
+\quad\Foa t\in (-\sigma,\sigma).
+\end{equation}
+Applying \cref{eq:ekeland-ineq} to the point
+$z \ceq c(t)$ for any $t\in (0,\sigma)$
+we obtain
+\begin{equation}\label{eq:PS-weg}
+\textstyle
+	\EL(y_k)-\EL(c(t))
+	\overset{\cref{eq:ekeland-ineq}}{\le}
+	\frac1{k}\dist_\ML(y_k,c(t)) \le \frac1{k}\int_0^t
+	\norm{c'(\tau)}_{g_{c(\tau)}}\d \tau\le \frac2{k}\norm{h}_{T_{y_k}\ML}\cdot t
+	.
+\end{equation}
+Dividing by $t>0$ and taking the limit $t\searrow 0$,
+we arrive at
+$\D \EL_{y_k} h \le \frac{2}{k} \norm{h}_{T_{y_k}\ML}$, hence
+\[ 
+	\norm{\D\EL_{y_k}}_{(T_{y_k}\ML)^*} \le \tfrac{2}{k}\to 0
+	\quad  \text{as} \quad  k \to\infty
+	.
+\] 
+Thus, $(y_k)_k$ is a minimizing (PS)-sequence for $\EL|_{\KL}$.
+In particular, it is a (PS)-sequence for $\EL$.
+Because $\EL$ satisfies the (PS)-condition, the sequence subconverges to some $y_\infty \in \ML$: $y_{k_i}\to y_\infty$ as $i\to\infty$.
+Since $\mathcal{U}$ is closed, we have $y_\infty \in \mathcal{U} \subset \KL$, hence
+\[
+	\inf(\EL|_{\KL})
+	\leq 
+	\EL(y_\infty)
+	=
+	\lim_{i\to\infty} \EL(y_{k_i})
+	\le
+	\lim_{i\to\infty} \EL(x_{k_i})
+	=
+	\inf(\EL|_{\KL})
+	. 
+\]
+Thus, $y_\infty$ is the desired minimizer.
+
+If $\EL$ is $G$-invariant,
+we can start with a minimizing sequence $(x_k)_k\subset\KL$ of $G$-symmetric
+elements, and then follow the same line of arguments to show
+that a subsequence $(x_{k_i})_i\subset (x_k)_k$ 
+converges to some $y_\infty\in \KL$ as $i\to\infty$. Because $G$-symmetry is a closed condition, we see that the limit point $y_\infty$ is $G$-symmetric, too. Finally, we notice that the above argument goes through, too, if we replace $\KL$ by $\ML$.
+\end{proof}

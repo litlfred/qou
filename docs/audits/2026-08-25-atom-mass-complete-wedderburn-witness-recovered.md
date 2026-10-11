@@ -148,7 +148,7 @@ the witness's two numbers are **mutually inconsistent as a pair** — for *any*
 reader prefers. The same `β₂` forces `β₃ = 0.0437073`.
 
 **`0.0499` has no construction.** Its one surviving producer,
-`computations/_deprecated/next_partition_levels.py`, hardcodes it as
+`fsh-guts/deprecated/computations/next_partition_levels.py`, hardcodes it as
 `BETA3 = 0.0499` under the comment *"(from Wedderburn weights)"* — while the
 sibling coefficients in the same block, `BETA4` and `BETA5`, are genuinely
 computed from `wedderburn_weight()`. That comment is therefore checkable, and it

@@ -304,7 +304,7 @@ three do not hold up:
 
 | #4851 claim | measured state |
 |---|---|
-| *"Rust `HeckeEngine.ground_state_ordering`"* | **No such function exists.** `grep` over `tools/hecke-engine/src/` finds no `ground_state` symbol. `ordering_cache._compute_ordering_rust` imports `hecke_rust_bridge.compute_nucleus`, which is absent from the live tree (only `computations/_deprecated/` has a `compute_nucleus`). The Rust path returns `None` unconditionally. |
+| *"Rust `HeckeEngine.ground_state_ordering`"* | **No such function exists.** `grep` over `tools/hecke-engine/src/` finds no `ground_state` symbol. `ordering_cache._compute_ordering_rust` imports `hecke_rust_bridge.compute_nucleus`, which is absent from the live tree (only `fsh-guts/deprecated/computations/` has a `compute_nucleus`). The Rust path returns `None` unconditionally. |
 | *"`ordering_cache.get_ordering`"* realises the interleaved rule | Only for the **270** `(Z, N)` already in `ordering-cache.json`. For anything else the fallback is `_compute_ordering_python` = `[1]*Z + [0]*N` — i.e. **sorted**, the *production* convention, not the interleaved one. |
 | the cache realises the proposition's formula | **It does not.** `(2,2) → nppn` (formula: `npnp`); `(3,3) → npnppn` (formula: `npnpnp`); `(6,6) → npnpnpnpnppn` (formula: `npnpnpnpnpnp`). The cache consistently differs from the formula by **swapping the final two strands** — consistent with `Φ` skipping the last strand's own term. And the cache is the `Φ₁` argmin in only **5 / 12** of the swept cases where an entry exists. |
 | `hecke_core_symbolic._ground_state_ordering` | correct as cited — but see §1.1: it is a generator, not a minimiser, and its `(2,1)` value is the item at issue. |

@@ -1,0 +1,14 @@
+\documentclass{standalone}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{tikz-cd}
+
+\newcommand{\lifttoG}[1]{{\mathop{\overline{#1}}}}
+
+\begin{document}
+  \begin{tikzcd}
+    \operatorname{Conf}_{3}^{\ast}(G/N) \ar[d, "\operatorname{cyc}_3"] &[3em] \ar[l, hook] N_{-} \cap \lifttoG{w_0} G_0  \ar[d, "(w_0(h1)h2)\big(\Phi \Psi)^2(\bullet)\big)"] \ar[r,"Y_V"] &[3em] (\mathbb{C}^{\ast})^m \ar[d, "\mu_{\operatorname{rot}}^{\ast}"] \\
+    \operatorname{Conf}_{3}^{\ast}(G/N) & \ar[l, hook] N_{-} \cap \lifttoG{w_0} G_0 \ar[r,"Y_V"] & (\mathbb{C}^{\ast})^m \\
+  \end{tikzcd}
+\end{document}

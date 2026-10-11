@@ -1,0 +1,424 @@
+{
+ "description": "Route 2 (qou-99qc): braid word -> Bring geodesic, lengths only. See preregistration.md.",
+ "mp_dps": 80,
+ "mpmath": "1.3.0",
+ "rows": {
+  "nuc9": {
+   "word": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    1
+   ],
+   "sl2z": [
+    [
+     1,
+     -2
+    ],
+    [
+     1,
+     -1
+    ]
+   ],
+   "trace_sl2z": 0,
+   "p1f2_fixed": [
+    "0"
+   ],
+   "gamma0_2_rep": [
+    [
+     -1,
+     -1
+    ],
+    [
+     2,
+     1
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ]
+   ],
+   "r_congruence_H4(5)": 2,
+   "r_s5_over_all_epimorphisms": [
+    2
+   ],
+   "trace_delta245": "2.108439588646104644869714810254003801542e-81",
+   "trace_abs_delta245": "2.10843958864610464486971481025e-81",
+   "type_delta245": "elliptic or parabolic (no closed geodesic)"
+  },
+  "nuc11_interleaved": {
+   "word": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "sl2z": [
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "trace_sl2z": 2,
+   "p1f2_fixed": [
+    "0"
+   ],
+   "gamma0_2_rep": [
+    [
+     1,
+     -1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "r_s5_over_all_epimorphisms": [
+    5
+   ],
+   "trace_delta245": "1.61803398874989484820458683436563811772",
+   "trace_abs_delta245": "1.61803398874989484820458683437",
+   "type_delta245": "elliptic or parabolic (no closed geodesic)"
+  },
+  "gluon_s0_s1": {
+   "word": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    1
+   ],
+   "sl2z": [
+    [
+     2,
+     -1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "trace_sl2z": 2,
+   "p1f2_fixed": [
+    "1"
+   ],
+   "gamma0_2_rep": [
+    [
+     1,
+     -1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "r_s5_over_all_epimorphisms": [
+    5
+   ],
+   "trace_delta245": "1.61803398874989484820458683436563811772",
+   "trace_abs_delta245": "1.61803398874989484820458683437",
+   "type_delta245": "elliptic or parabolic (no closed geodesic)"
+  },
+  "gluon_s1_s0": {
+   "word": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    1,
+    1,
+    0
+   ],
+   "sl2z": [
+    [
+     3,
+     1
+    ],
+    [
+     2,
+     1
+    ]
+   ],
+   "trace_sl2z": 4,
+   "p1f2_fixed": [
+    "inf"
+   ],
+   "gamma0_2_rep": [
+    [
+     3,
+     1
+    ],
+    [
+     2,
+     1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     -1
+    ],
+    [
+     "S"
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "r_s5_over_all_epimorphisms": [
+    3
+   ],
+   "trace_delta245": "-2.61803398874989484820458683436563811772",
+   "trace_abs_delta245": "2.61803398874989484820458683437",
+   "type_delta245": "hyperbolic",
+   "orbifold_length": "1.534394436502638886658057537039742667253",
+   "bring_length": "4.603183309507916659974172611119228001758"
+  },
+  "gluon_s1_s1": {
+   "word": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1
+   ],
+   "sl2z": [
+    [
+     5,
+     -2
+    ],
+    [
+     3,
+     -1
+    ]
+   ],
+   "trace_sl2z": 4,
+   "p1f2_fixed": [
+    "0"
+   ],
+   "gamma0_2_rep": [
+    [
+     -1,
+     -3
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "h4_word": [
+    [
+     "S"
+    ],
+    [
+     "U",
+     1
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     3
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "r_s5_over_all_epimorphisms": [
+    3
+   ],
+   "trace_delta245": "2.61803398874989484820458683436563811772",
+   "trace_abs_delta245": "2.61803398874989484820458683437",
+   "type_delta245": "hyperbolic",
+   "orbifold_length": "1.534394436502638886658057537039742667253",
+   "bring_length": "4.603183309507916659974172611119228001758"
+  },
+  "gluon_s0_s0": {
+   "word": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "sl2z": [
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "trace_sl2z": 2,
+   "p1f2_fixed": [
+    "0"
+   ],
+   "gamma0_2_rep": [
+    [
+     1,
+     -1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     -1
+    ]
+   ],
+   "r_congruence_H4(5)": 5,
+   "r_s5_over_all_epimorphisms": [
+    5
+   ],
+   "trace_delta245": "1.61803398874989484820458683436563811772",
+   "trace_abs_delta245": "1.61803398874989484820458683437",
+   "type_delta245": "elliptic or parabolic (no closed geodesic)"
+  },
+  "nuc11_gen_grouped": {
+   "word": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1
+   ],
+   "sl2z": [
+    [
+     -27,
+     7
+    ],
+    [
+     -4,
+     1
+    ]
+   ],
+   "trace_sl2z": -26,
+   "p1f2_fixed": [
+    "inf"
+   ],
+   "gamma0_2_rep": [
+    [
+     -27,
+     7
+    ],
+    [
+     -4,
+     1
+    ]
+   ],
+   "h4_word": [
+    [
+     "U",
+     7
+    ],
+    [
+     "S"
+    ],
+    [
+     "U",
+     2
+    ],
+    [
+     "S"
+    ]
+   ],
+   "r_congruence_H4(5)": 3,
+   "r_s5_over_all_epimorphisms": [
+    3
+   ],
+   "trace_delta245": "-3.236067977499789696409173668731276235441",
+   "trace_abs_delta245": "3.23606797749978969640917366873",
+   "type_delta245": "hyperbolic",
+   "orbifold_length": "2.122550123810071304066037832427146971614",
+   "bring_length": "6.367650371430213912198113497281440914841"
+  }
+ },
+ "checks": {
+  "det_u_is_1": true,
+  "tr_u_is_2cos_pi5": true,
+  "tr_su_is_2cos_pi4": true,
+  "s5_epimorphism_exists": true,
+  "conjugate_pair_gluon_s0_s1~gluon_s0_s0": true,
+  "conjugate_pair_gluon_s1_s0~gluon_s1_s1": true,
+  "r_s5_matches_congruence": true
+ }
+}

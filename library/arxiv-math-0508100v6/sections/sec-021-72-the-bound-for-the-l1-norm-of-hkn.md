@@ -8,72 +8,78 @@ pages: 17-18
 source_pdf: 0508100v6.pdf
 source_sha256: 9cc100a86b40c336
 doc_brief: "ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT — To a knot in 3-space, one can associate a sequence of Laurent p olynomials, whose nth term is the nth colored Jones polynomial."
+text_source: latex
+latex_prose_ratio: 0.94
+latex_coverage_ratio: 0.887
 ---
-Theorem 6.3, we see that there is a constant A7 such that
-(29) ||{2n + 2}!HK,n (q)||1 ≤ (A7)n.
+Multiply both sides of \eqref{33}  by $\{2n+2\}!$,
+then use  \eqref{31} and Theorem \ref{95}, we see that there is a constant
+$A_7$ such that
+
+\begin{equation}
+\lbl{eq.L1C} ||\{2n+2\}!H_{K,n}(q)||_1 \leq  (A_7)^n.
+\end{equation}
 The polynomials
-˜HK,n (q) := qA0n2
-HK,n (q) and g(q) := ˜HK,n (q)
-2n+2∏
-j=1
-(1 − qj )
-have only non-negative degrees in q, with deg +( ˜HK,n ) ≤ 2A0n2:
-(30) ˜HK,n (q) =
-2A0n2
-∑
-k=0
-akqk
-Since g(q) is the product of the polynomial on the left hand side of (
-29) and a power of q, we have
-(31) ||g(q)||1 ≤ (A7)n.
-There are estimates of l1-norm using Mahler measure [ Mah60]. However, the estimate ( 31) is weak: the
-inequalities of Mahler imply an exponential upper bound on the Mahler m easure of HK,n (q), and a doubly
-exponential upper bound on the l1-norm of HK,n (q). The following estimate, which does not follow from
-Mahler measure considerations, was communicated to us by D. Boyd . Since
-˜HK,n (q) = g(q) 1∏ 2n+2
-k=j (1 − qj)
-,
+$$
+\tH_{K,n}(q) := q^{A_0n^2} H_{K,n}(q) \qquad
+\text{and} \qquad  g(q):=\tH_{K,n}(q) \prod_{j=1}^{2n+2}(1-q^j)
+$$
+have only non-negative degrees in $q$, with $\maxdeg(\tH_{K,n}) \le
+2A_0n^2$:
+
+\begin{equation}
+\tH_{K,n}(q) = \sum_{k=0}^{2A_0n^2} a_k q^k
+\end{equation}
+ Since $g(q)$ is the product of the polynomial on the left hand
+side of \eqref{eq.L1C} and a power of $q$, we have
+
+\begin{equation}
+ ||g(q)||_1 \leq (A_7)^n.
+\label{41}
+\end{equation}
+There are estimates of $l^1$-norm using Mahler measure \cite{Mahler}.
+However, the estimate \eqref{41} is weak: the  inequalities of Mahler
+imply an exponential upper bound on the Mahler measure of $H_{K,n}(q)$,
+and a doubly exponential upper bound on the $l^1$-norm of $H_{K,n}(q)$. The
+following estimate, which does not follow from Mahler
+measure considerations, was communicated to us by D. Boyd. Since
+
+
+$$
+\tH_{K,n}(q) = g(q) \frac{1}{\prod_{k=j}^{2n+2} (1-q^j)},
+$$
 we have that
-ak =
-k∑
-i=0
-bick−i, where g(q) =
-∑
-k
-bkqk and 1∏ 2n+2
-k=1 (1 − qk)
-=
-∞∑
-k=0
-ckqk.
-Note that ck is the number of partitions of k of length ≤ 2n + 2. Hence 0 ≤ ck−1 ≤ ck, and ck ≤ pk, where
-pk is the number of partitions of k. Using the growth rate of pk (see [
-And98]), we see that there is a constant
-A8 such that
-(32) pk < (A8)
-√
-k.
+$$
+a_k=\sum_{i=0}^k b_i c_{k-i}, \quad \text{where} \quad g(q) =
+\sum_{k} b_k q^k \quad \text{and} \quad \frac{1}{\prod_{k=1}^{2n+2}
+(1-q^k)}=\sum_{k=0}^\infty c_k q^k.
+$$
+Note that $c_k$ is the number of partitions of $k$ of length $\le
+2n+2$. Hence $0\le c_{k-1} \le c_k$, and $c_k\le p_k$, where $p_k$
+is the number of partitions of $k$. Using the growth rate of $p_k$
+(see \cite{An}), we see that there is a constant $A_8$ such that
+\begin{equation}
+p_k < (A_8)^{\sqrt k}.\label{42}
+\end{equation}
 The crucial part of the above inequality is the exponent
-√
-k. Now we can easily obtain the desired upper
-bounds for || ˜HK,n ||1. Since ak =∑ k
-i=0 bick−i we have
-|ak| ≤
-k∑
-i=0
-|bi|ck−i ≤
-( k∑
-i=0
-|bi|
-)
-ck ≤ ||g(q)||1ck
-≤ (A7)n(A8)n√
-2A0 by ( 31), ( 32) and k ≤ 2A0n2
-It follows that, for n ≥ 1,
-|| ˜HK,n ||1 ≤
-2A0n2
-∑
-k=0
-|ak| ≤ 2A0n2(A7)n(A8)n√2A0 ≤ (A1)n,
-for appropriate A1. This completes the proof of Theorem 4.2.
-18 STA VROS GAROUF ALIDIS AND THANG TQ L ˆE
+$\sqrt{k}$. Now we can easily
+obtain the desired upper bounds for $||\tH_{K,n}||_1$.
+Since $ a_k=\sum_{i=0}^k b_i c_{k-i}$  we have
+
+$$
+\begin{aligned}
+|a_k| & \le \sum_{i=0}^k |b_i| c_{k-i} \le \left( \sum_{i=0}^k
+|b_i|\right) c_{k} \le ||g(q)||_1 c_k\\
+&\le (A_7)^n (A_8)^{n \sqrt {2A_0}}  \qquad \text{by \eqref{41},
+\eqref{42}  and $k \le 2A_0 n^2 $}
+\end{aligned}
+$$
+It follows that, for $n \ge 1$,
+
+$$
+||\tH_{K,n}||_1 \le \sum_{k=0}^{2A_0n^2} |a_k|
+\le 2A_0n^2 (A_7)^n (A_8)^{n \sqrt
+{2A_0}} \le (A_1)^n,
+$$
+for appropriate $A_1$. This completes the
+proof of Theorem \ref{thm.boundC}.

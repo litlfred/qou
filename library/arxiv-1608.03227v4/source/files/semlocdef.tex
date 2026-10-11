@@ -1,0 +1,244 @@
+%%%%%%%%  SEMI-LOCAL DEFINITIONS %%%%%%%%%%%%
+
+\def\widevec#1{ \mathop{#1}\limits^{\longrightarrow} }
+
+\def\smvi#1{ \sum_{#1}^\infty }
+\def\snzi{ \smvi{n=0} }
+\def\snoi{ \smvi{n=1} }
+\def\snti{ \smvi{n=2} }
+\def\smoi{ \smvi{m=1} }
+\def\smzi{ \smvi{m=0} }
+\def\smti{ \smvi{m=2} }
+\def\smnzi{ \smvi{m,n=0} }
+\def\smthi{ \smvi{m=3} }
+
+\def\pion{ \prod_{i=1}^n }
+
+\def\hlfv{ {1\over 2} }
+
+
+\def\svldp{ \sum_{\vl\in\Delp} }
+
+\def\prvldp{ \prod_{\vl\in\Delp} }
+
+\def\Delp{ \Delta_+ }
+
+%\def\xmap#1#2#3{ #1\colon #2\to #3 }
+%\def\ximap#1#2#3{ #1\colon #2\hookrightarrow #3 }
+%\def\xmapt#1{ \mathop{{\longmapsto}}^{#1} }
+
+\def\urcc{$U(1)$-RCC }
+\def\unknot{ {\rm unknot} }
+
+\def\hlf{ {1\over 2} }
+
+\def\Invr#1#2{ #1^{#2} }
+\def\Invrs#1#2{ \Invr{(#1)}{#2} }
+\def\Invrss#1#2{ \Invr{\lrbcs{#1}}{#2} }
+
+\def\limv#1#2{ #1 \longrightarrow #2 }
+\def\limone#1{ \limv{#1}{1} }
+\def\limzero#1{ \limv{#1}{0} }
+
+\def\qp#1{ q^{#1} }
+\def\qal{ \qp{\a} }
+\def\qali#1{ \qp{\a_{#1}} }
+
+\def\pdv#1#2{ #1^{#2} - #1^{-#2} }
+\def\pdhv#1#2{ \pdv{#1}{#2/2} }
+\def\pdhq{ \pdv{q}{1} }
+\def\pdhqa{ \pdv{q}{\a} }
+
+\def\pdht{ \pdhv{t}{1} }
+
+\def\ssSt#1{ #1\subset S^3 }
+\def\kst{ \ssSt{\cK} }
+\def\lst{ \ssSt{\cL} }
+\def\stmk{ S^3\setminus \cK }
+
+\def\lst{ \cL\subset S^3 }
+\def\stml{ S^3\setminus \cL }
+
+\def\xJ{ J }
+\def\Jv#1#2#3{ J_{#1}(#2;#3) }
+\def\Jvq#1#2{ \Jv{#1}{#2}{q} }
+\def\JaK{ \Jvq{\a}{\cK} }
+
+\def\AP#1{ \Delta_{\rm A}^{#1} }
+\def\APv#1#2{ \AP{}(#1;#2) }
+%\def\AP{ \Delta_{\rm A} }
+%\def\APv#1#2{ \AP(#1;#2) }
+\def\APKv#1{ \APv{\cK}{#1} }
+\def\APKt{ \APKv{t} }
+\def\APKqa{ \APKv{\qal} }
+
+\def\APpv#1#2#3{ \AP{#1}(#2;#3) }
+\def\APKpv#1#2{ \APpv{#1}{\cK}{#2} }
+\def\APKpqa#1{ \APKpv{#1}{\qal} }
+
+\def\AF#1{ \nabla_{\rm A}^{#1} }
+\def\AFv#1#2{ \AF{}(#1;#2) }
+\def\AFLv#1{ \AFv{\cL}{#1} }
+\def\AFLtN{ \AFLv{\toN} }
+\def\AFLut{ \AFLv{\ut} }
+\def\AFLeua{ \AFLv{e^{\ua}} }
+\def\AFLqaN{ \AFLv{\qaoN} }
+
+\def\tAF#1{ \tilde{\nabla}_{\rm A}^{#1} }
+\def\tAFLv#1{ \tAF{}(\cL;#1) }
+\def\tAFLua{ \tAFLv{\ua} }
+\def\tAFLhue{ \tAFLv{\uhed} }
+
+
+\def\AFpv#1#2#3{ \AF{#1}{(#2;#3)} }
+\def\AFLpv#1#2{ \AFpv{#1}{\cL}{#2} }
+\def\AFLpqaN#1{ \AFLpv{#1}{\qaoN} }
+\def\AFLptN#1{ \AFLpv{#1}{\toN} }
+
+\def\xP{ P }
+\def\Pv#1#2#3{ \xP_{#1}(#2;#3) }
+\def\PnKv#1{ \Pv{n}{\cK}{#1} }
+\def\PnKt{ \PnKv{t} }
+\def\PnKqa{ \PnKv{\qal} }
+
+\def\PnLv#1{ \Pv{n}{\cL}{#1} }
+\def\PnLtN{ \PnLv{\toN} }
+\def\PnLqaN{ \PnLv{\qaNo} }
+
+\def\Zti{ \ZZ[t,t^{-1}] }
+
+\def\ZK{ Z }
+\def\ZKiv#1#2{ \ZK_{#1}(#2) }
+\def\ZKAv#1{ \ZKiv{\cA}{#1} }
+\def\ZKAL{ \ZKAv{\cL} }
+\def\ZKALLp{ \ZKAv{\cL\cup\cLp} }
+\def\ZKALM{ \ZKAv{\cL,M} }
+\def\ZKALp{ \ZKAv{\cLp} }
+\def\ZKALpv#1{ \ZKAv{\cLp;#1} }
+\def\ZKBv#1{ \ZKiv{\cB}{#1} }
+\def\ZKBCv#1{ \ZKiv{\cBC}{#1} }
+\def\ZKBL{ \ZKBv{\cL} }
+\def\ZKBLM{ \ZKBv{\cL,M} }
+\def\ZKBLp{ \ZKBv{\cLp} }
+\def\ZKBLpe{ \ZKBv{\cLp;\DLx,\ubfx} }
+\def\ZKBLx{ \ZKBv{\cL;\ubfx} }
+\def\ZKBLxt{ \ZKBv{\cL;\ubfx;t} }
+\def\ZKBCLv#1{ \ZKBCv{\cL;#1} }
+\def\ZKBCLx{ \ZKBCLv{\ubfx} }
+\def\ZKBCLxt{ \ZKBCLv{\ubfx;t} }
+\def\ZKOBv#1{ \ZK_{\cB}^{\Wh}(#1) }
+\def\ZKOBL{ \ZKOBv{\cL} }
+\def\ZKOBLxt{ \ZKOBv{\cL;\ux;t} }
+\def\ZKOBCv#1{ \ZK_{\cBC}^{\Wh}(#1) }
+\def\ZKOBCLv#1{ \ZKOBCv{\cL;#1} }
+\def\ZKOBCLx{ \ZKOBCLv{\ubfx} }
+
+\def\ZKDCv#1{ \ZKiv{\cDC}{#1} }
+\def\ZKDCLv#1{ \ZKDCv{\cL;#1} }
+\def\ZKDCLx{ \ZKDCLv{\ubfx} }
+\def\ZKDCKx{ \ZKDCv{\cK;X} }
+
+\def\ZKriv#1#2{ \ZK_{#1}\irom(#2) }
+\def\ZKDCrv#1{ \ZKriv{\cDC}{#1} }
+\def\ZKDCrLv#1{ \ZKDCrv{\cL;#1} }
+\def\ZKDCrLx{ \ZKDCrLv{\uxz} }
+\def\ZKDCrLxk{ \atv{\ZKDCrLx}{x_k=0} }
+
+%\def\ZKrivx#1#2{ \ZK_{#1}\iromx(#2) }
+
+\def\ZKOriv#1#2{ \ZK_{#1}\iromW(#2) }
+\def\ZKODCrv#1{ \ZKOriv{\cDC}{#1} }
+\def\ZKODCrLv#1{ \ZKODCrv{\cL;#1} }
+\def\ZKODCrLx{ \ZKODCrLv{\uxz} }
+
+
+\def\xuo{ {\rm r} }
+\def\xuoc{ {\rm c} }
+\def\dxuor{ _\xuo }
+\def\dxuoc{ _\xuoc }
+\def\uo{ ^{\xuo} }
+
+\def\ZKuriv#1#2{ \ZK_{#1}\uo(#2) }
+\def\ZKDCurv#1{ \ZKuriv{\cQDC}{#1} }
+\def\ZKDCurLv#1{ \ZKDCurv{\cL;#1} }
+%\def\ZKDCurLa{ \ZKDCurLv{\ua} }
+\def\ZKDCurLa{ \ZKDCurv{\cL} }
+%\def\ZKDCurKa{ \ZKDCurv{\cK;a} }
+\def\ZKDCurKa{ \ZKDCurv{\cK} }
+\def\ZKBK{ \ZKiv{\cB}{\cK} }
+\def\ZKBKx{ \ZKiv{\cB}{\cK;\bfx} }
+\def\ZKBKa{ \ZKiv{\cB}{\cK;a} }
+
+
+
+\def\ZKOuriv#1#2{ \ZK_{#1}^{\Wh,\xuo}(#2) }
+\def\ZKODCurv#1{ \ZKOuriv{\cQDC}{#1} }
+\def\ZKODCurLv#1{ \ZKODCurv{\cL;#1} }
+%\def\ZKODCurLa{ \ZKODCurLv{\ua} }
+\def\ZKODCurLa{ \ZKODCurv{\cL} }
+
+\def\WKuriv#1#2{ \WK_{#1}\uo(#2) }
+\def\WKDCurLa{ \WKuriv{\cQDC}{\cL} }
+
+\def\WKriv#1#2{ \WK_{#1}\irom(#2) }
+\def\WKDCrv#1{ \WKriv{\cDC}{#1} }
+\def\WKDCrLv#1{ \WKDCrv{\cL;#1} }
+\def\WKDCrLx{ \WKDCrLv{\uxz} }
+
+\def\WKOriv#1#2{ \WK_{#1}\iromW(#2) }
+\def\WKODCrv#1{ \WKOriv{\cDC}{#1} }
+\def\WKODCrLv#1{ \WKODCrv{\cL;#1} }
+\def\WKODCrLx{ \WKODCrLv{\ux} }
+
+\def\WKOuriv#1#2{ \WK\irorW_{#1}(#2) }
+\def\WKODCurLa{ \WKOuriv{\cQDC}{\cL} }
+
+\def\WKDCv#1{ \WKiv{}{\cDC}{#1} }
+\def\WKDCLv#1{ \WKDCv{\cL;#1} }
+\def\WKDCLx{ \WKDCLv{\ubfx} }
+
+\def\WKBCv#1{ \WKiv{}{\cBC}{#1} }
+\def\WKBCLv#1{ \WKBCv{\cL;#1} }
+\def\WKBCLx{ \WKBCLv{\ubfx} }
+
+
+\def\WKFDriv#1#2{ \WK_{#1}\iromFD(#2) }
+\def\WKFDDCrv#1{ \WKFDriv{\cDC}{#1} }
+\def\WKFDDCrLv#1{ \WKFDDCrv{\cL;#1} }
+\def\WKFDDCrLx{ \WKFDDCrLv{\uxz} }
+
+
+
+
+\def\ZKODCv#1{ \ZK_{\cDC}^{\Wh}(#1) }
+\def\ZKODCLv#1{ \ZKODCv{\cL;#1} }
+\def\ZKODCLx{ \ZKODCLv{\ubfx} }
+
+
+\def\WK{ W }
+\def\WKv#1{ \WK(#1) }
+\def\WKL{ \WKv{\cL} }
+\def\WKLX{ \WKv{\cL;\ubfx} }
+\def\WKLstr{ \WK\istr(\cL) }
+\def\WKLx{ \WKv{\cL;\ux} }
+\def\WKLte{ \WKv{\cL;\ubfx;t} }
+\def\WKLpe{ \WKv{\cLp;\DLx;\ubfx} }
+\def\WKOv#1{ \WK^{\Wh}(#1) }
+\def\WKOL{ \WKOv{\cL} }
+\def\WKOLX{ \WKOv{\cL;\ubfx} }
+\def\WKODCLx{ \WKOv{\cL;\ubfx} }
+\def\WKOLstr{ \WK^{\Wh}\istr(\cL) }
+\def\WKiv#1#2#3{ \WK^{#1}_{#2}(#3) }
+\def\WKOiv#1#2{ \WKiv{\Wh}{#1}{#2} }
+\def\WKOLv#1{ \WKOiv{#1}{\cL} }
+\def\WKOLmn{ \WKOLv{m,n} }
+
+\def\WKOBCv#1{ \WK^{\Wh}_{\cBC}(#1) }
+\def\WKOBCLv#1{ \WKOBCv{\cL;#1} }
+
+\def\lstv#1#2{ #1_{1}\ldtc #1_{#2} }
+
+\def\seqn#1#2{ #1_{1},\ldots,#1_{#2} }
+\def\seqnbc#1#2{ (\seqn{#1}{#2}) }
+
+%%%%%%%% END OF SEMI-LOCAL DEFINITIONS %%%%%%%%%%%%

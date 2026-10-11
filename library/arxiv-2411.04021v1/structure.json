@@ -6,7 +6,8 @@
   "sha256": "f5b6980f08d253942633da8703e6c669c2dfcf4f7efaf1b6a643991eefd6ee7b",
   "bytes": 485198,
   "pages": 19,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,12 +18,12 @@
   },
   "doi": null,
   "title": "On the Gram determinants of the Specht modules",
-  "authors_raw": "Lehrstuhl für Algebra und Zahlentheorie, RWTH Aachen University",
+  "authors_raw": "Lehrstuhl f\u00fcr Algebra und Zahlentheorie, RWTH Aachen University",
   "title_lines": [
    "On the Gram determinants of the Specht modules",
-   "Linda Hoyer ∗"
+   "Linda Hoyer \u2217"
   ],
-  "abstract": "For every partitionλ of a positive integern, letSλ be the corresponding Specht module of the symmetric group Sn, and let det(λ)∈ Z denote the Gram determinant of the canonical bilinear form with respect to the standard basis ofSλ. Writing det(λ) = m· 2a(2) λ for integersa(2) λ andm withm odd, we show that if the dimension ofSλ is even, thena(2) λ is also even. This confirms a conjecture posed by Richard Parker in the special case of the symmetric groups.",
+  "abstract": "For every partition\u03bb of a positive integern, letS\u03bb be the corresponding Specht module of the symmetric group Sn, and let det(\u03bb)\u2208 Z denote the Gram determinant of the canonical bilinear form with respect to the standard basis ofS\u03bb. Writing det(\u03bb) = m\u00b7 2a(2) \u03bb for integersa(2) \u03bb andm withm odd, we show that if the dimension ofS\u03bb is even, thena(2) \u03bb is also even. This confirms a conjecture posed by Richard Parker in the special case of the symmetric groups.",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20241107015158Z",
@@ -30,7 +31,7 @@
    "Producer": "pdfTeX-1.40.25",
    "Title": ""
   },
-  "title_prev": "On the Gram determinants of the Specht modules Linda Hoyer ∗"
+  "title_prev": "On the Gram determinants of the Specht modules Linda Hoyer \u2217"
  },
  "toc": [
   {
@@ -93,6 +94,38 @@
   "likely_scanned": false,
   "toc_entries": 3,
   "sections": 3,
-  "chars_total": 31419
+  "chars_total": 31419,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "main.tex",
+   "tex_sections": 3,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.564,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-proof-of-theorem-11",
+     "title": "Proof of Theorem 1.1",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

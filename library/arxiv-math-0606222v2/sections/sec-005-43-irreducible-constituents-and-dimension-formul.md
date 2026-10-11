@@ -8,296 +8,79 @@ pages: 14-16
 source_pdf: 0606222v2.pdf
 source_sha256: 5c2a45596d04dd07
 doc_brief: "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS — We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the"
+text_source: latex
+latex_prose_ratio: 0.948
+latex_coverage_ratio: 0.965
 ---
-case. In this subsection we ﬁx a non-Archimedean local ﬁeld F. Let O denote the ring
-of integers and p the maximal ideal. The Grassmann representation C
-(
-G(n,d ; F)
-)
-was
-studied in [11] and later in [1, 2]. Therein it is shown that the irreducible MF-spherical
-KF-representations are also parameterized by Λ n. We now proceed to recall the explicit
-construction of the irreducibles. The path to the construction of these representations is
-completely diﬀerent compared to the Archimedean case. First of all, there is no (highest)
-weight theory, in particular there is no concrete description of the full unitary dual ˆKF as
-in the Archimedean case. We thus have to resort to a direct constr uction of the spherical
-unitary dual (KF/MF)ˆ and the concrete construction of the corresponding represe ntations,
-which has a combinatorial ﬂavor due to the proﬁnite nature of KF,
-KF ≃ lim
-←−
-GLd(O/pk).
-The latter identiﬁcation is realized by the canonical epimorphisms πk : KF → GLd(O/pk)
-deﬁned by reduction modulo pk (k ∈ Z>0). Denoting Ik for the kernel of πk, one has (cf.
-[2])
-C
-(
-G(n,d ; F)
-)
-≃ lim
-−→
-C
-(
-G(n,d ; F)
-) Ik
-as KF-representations, where C
-(
-G(n,d ; F)
-) Ik
-stands for the KF-module consisting of the
-Ik-ﬁxed vectors in the Grassmann representation. The structure of the Grassmann repre-
-sentation is completely determined by its so-called level k − 1 components C
-(
-G(n,d ; F)
-) Ik
-for k ∈ Z>0. We proceed now to recall the precise structure of these level co mponents.
-The set of partitions Λ n parametrizes the isomorphism classes of the ﬁnite dimensional
-O-modules of rank ≤n. Concretely, the partition λ ∈ Λ n corresponds to the isomorphism
-class of the ﬁnite O-module ⊕n
-i=1O/pλi. The ﬁnite O-modules in the isomorphism class
-labeled by λ ∈ Λ n are called O-modules of type λ. Denote ⊆ for the partial order on
-partitions deﬁned by inclusion of Young diagrams. Fix a module of type kd = (k,...,k ) (d
-entries). For any type λ ⊆kd let G(λ,k d; O) be the Grassmannian of its submodules of type
-λ. Let C
-(
-G(λ,k d; O)
-)
-be the vector space of complex valued functions on G(λ,k d; O). The
-canonical action of KF on G(λ,k d; O) gives rise to a representation of KF on C
-(
-G(λ,k d; O)
-)
-.
-The ﬁnite Grassmann representations relate to the Grassmann re presentation C
-(
-G(n,d ; F)
-)
-by the identiﬁcation
-(4.11) C
-(
-G(n,d ; F)
-) Ik
-≃ C
-(
-G(kn,k d; O)
-)
-as KF-modules, see [2, Lemma 2.1].
-The irreducible constituents of the ﬁnite Grassmann representat ion C
-(
-G(kn,k d; O)
-)
-have
-been explicitly described in [2] in terms of the so-called cellular basis of t he associated
-ﬁnite Hecke algebra End KF
-(
-C
-(
-G(kn,k d; O)
-))
-. It leads to a natural parametrization of the
-irreducible MF-spherical KF-representations by partitions Λ n, as described in the following
-theorem, which is a direct consequence of [2, Theorem 1].
-QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIO NS 15
-Denote Λ k
-n for partitions λ ∈ Λ n satisfying λ ⊆ kn. Furthermore, for an irreducible
-KF-module V we denote ⟨V : C
-(
-G(µ,k d; O)
-)
-⟩ for the multiplicity of V in the KF-module
-C
-(
-G(µ,k d; O)
-)
-.
-Theorem 4.4 ([2]). Forλ ∈ Λ n there exists a unique irreducible MF-spherical KF-repre-
-sentation V F
-λ satisfying, for all k ∈ Z>0 such that λ ∈ Λ k
-n,
-(1) ⟨V F
-λ : C
-(
-G(µ,k d; O)
-)
-⟩ ≥ 1 for µ ∈ Λ k
-n satisfying λ ⊆µ,
-(2) ⟨V F
-λ : C
-(
-G(µ,k d; O)
-)
-⟩ = 0 for µ ∈ Λ k
-n satisfying λ ⁄⊆µ.
-The KF-representations V F
-λ (λ ∈ Λ n) form a complete set of representatives of the irre-
-ducible MF-spherical KF-representations.
-Theorem 4.4 gives the multiplicity free irreducible decomposition
-C
-(
-G(n,d ; F)
-)
-≃
-⨁
-λ∈Λ n
-V F
-λ
-as KF-modules, as well as the identiﬁcations
-(KF/MF)ˆ ≃ Λ n ≃ {isomorphism types of O-modules of rank ≤n}.
-Furthermore, (4.11) and Theorem 4.4 imply
-(4.12) C
-(
-G(kn,k d; O)
-)
-≃
-⨁
-λ∈Λ k
-n
-V F
-λ
-for k ∈ Z>0 as KF-modules, cf. [2, Prop. 2.2]. The following is one of the main results in
-this paper.
-Theorem 4.5. Lett = |O/p|−1. We have
-(4.13) Dim C(V F
-λ ) = t−(d−2n+1)|λ|−2(ρ,λ)
-[ n
-∂λ′
-]
-t
-(td−λ′
-1−λ′
-2+2;t)λ′
-1+λ′
-2
-(tn−λ′
-1+1;t)λ′
-1
-(1 −td−2λ′
-1+1)
-(1 −td+1)
-for λ ∈ Λ n.
-Theorem 4.5 is a direct consequence of the formula
-(4.14) Dim C
-(
-V F
-λ
-)
-=D0
-(
-λ;td−2n+1,t ;t), t = |O/p|−1
-from [23], and the explicit evaluation of D0(λ;a,b ;t) derived in Theorem 7.6. Formula
-(4.14) is obtained in [23] as a consequence of (4.2) and the identiﬁcat ion of the zonal
-spherical function ϕF
-λ with a suitable p-adic (q = 0) degeneration of the multivariable little
-q-Jacobi polynomial P L
-λ .
-Corollary 4.6. Fork ∈ Z>0 we have
-∑
-λ⊆kn
-t−(d−2n+1)|λ|−2(ρ,λ)
-[ n
-∂λ′
-]
-t
-(td−λ′
-1−λ′
-2+2;t)λ′
-1+λ′
-2
-(tn−λ′
-1+1;t)λ′
-1
-(1 −td−2λ′
-1+1)
-(1 −td+1) =t−n(d−n)(k−1)
-(d
-n
-)
-t−1
-.
-16 URI ONN AND JASPER V. STOKMAN
-Proof. Since the desired expression is rational in t, it suﬃces to prove the identity with the
-formal parametert−1 specialized to the cardinality of the residue ﬁeld of a non-Archimedea n
-local ﬁeld F. In this case, the identity immediately follows from (4.12), (4.11), (4 .13) and
-the easily veriﬁed identity (alternatively see e.g. [2, Claim 4.1(1)])
-(4.15) |G(kn,k d; O)| =t−n(d−n)(k−1)
-(d
-n
-)
-t−1
-, t = |O/p|−1.
-□
-Forn = 1, Corollary 4.6 reduces to the trivial geometric sum identity
-1 +t1−d (1 −td−1)
-(1 −t) + (1 −td−1)(1 −td)
-(1 −t)
-k∑
-m=2
-t(1−d)m =t(1−d)k (1 −td)
-(1 −t).
-We end this subsection by discussing the dimension formula (4.13) in tw o cases that
-the dimensions have been computed before by representation the oretic methods. The
-dimension formula (4.13) yields for r = 1,...,n ,
-(4.16) Dim C
-(
-V F
-ωr
-)
-=tr(r−d)
-(
-td−r+2;t
-)
-r(1 −td−2r+1)(
-t;t
-)
-r(1 −td+1) =
-(d
-r
-)
-t−1
-−
-( d
-r − 1
-)
-t−1
-where t = |O/p|−1. Alternatively, by (4.12)
-C
-(
-G(ωr, 1d; O)
-)
-≃ C
-(
-G(ωr−1, 1d; O)
-)
-⊕V F
-ωr,
-which implies (4.16) in view of (4.15). The latter representation theor etic derivation es-
-sentially is the argument from [6].
-A similar analysis applies for the irreducible representations V F
-k (k ∈ Z≥2 ⊂ Λ 1) arising
-in the representation C
-(
-G(1,d ; F)
-)
-associated to the projective space Pd(F) = G(1,d ; F),
-see [9] and [23, §4]. In this case, (4.13) yields
-DimC
-(
-V F
-k
-)
-=t−(d−1)k (1 −td−1)(1 −td)
-(1 −t) =t−(d−1)k (1 −td)
-(1 −t) −t−(d−1)(k−1) (1 −td)
-(1 −t)
-where t = |O/p|−1. This dimension formula can be reconﬁrmed using (4.15) and the
-decomposition
-C
-(
-G(k1,k d; O)
-)
-≃ C
-(
-G((k − 1)1, (k − 1)d; O)
-)
-⊕V F
-k
-as KF-modules, which is a direct consequence of (4.12).
+[]{#repp label="repp"}
+
+In this subsection we fix a non-Archimedean local field $\mathbb{F}$. Let $\mathcal{O}$ denote the ring of integers and $\mathfrak{p}$ the maximal ideal. The Grassmann representation $\mathbb{C}\bigl(\mathcal{G}(n,d;\mathbb{F})\bigr)$ was studied in [@Hill] and later in [@BO1; @BO2]. Therein it is shown that the irreducible $\mathcal{M}_{\mathbb{F}}$-spherical $\mathcal{K}_{\mathbb{F}}$-representations are also parameterized by $\Lambda_n$. We now proceed to recall the explicit construction of the irreducibles. The path to the construction of these representations is completely different compared to the Archimedean case. First of all, there is no (highest) weight theory, in particular there is no concrete description of the full unitary dual $\hat{\mathcal{K}}_{\mathbb{F}}$ as in the Archimedean case. We thus have to resort to a direct construction of the spherical unitary dual $(\mathcal{K}_{\mathbb{F}}/\mathcal{M}_{\mathbb{F}})\hat{~}$ and the concrete construction of the corresponding representations, which has a combinatorial flavor due to the profinite nature of $\mathcal{K}_{\mathbb{F}}$, $$\mathcal{K}_{\mathbb{F}}
+\simeq\underset{\longleftarrow}{\textup{lim}}\,\textup{GL}_d(\mathcal{O}/\mathfrak{p}^k).$$ The latter identification is realized by the canonical epimorphisms $\pi_k: \mathcal{K}_{\mathbb{F}}\rightarrow \textup{GL}_d(\mathcal{O}/\mathfrak{p}^k)$ defined by reduction modulo $\mathfrak{p}^k$ ($k\in\mathbb{Z}_{>0}$). Denoting $I_k$ for the kernel of $\pi_k$, one has (cf. [@BO2]) $$\mathbb{C}\bigl(\mathcal{G}(n,d;\mathbb{F})\bigr)\simeq
+\underset{\longrightarrow}{\textup{lim}}\,\mathbb{C}\bigl(\mathcal{G}(n,d;\mathbb{F})\bigr)^{I_k}$$ as $\mathcal{K}_{\mathbb{F}}$-representations, where $\mathbb{C}\bigl(\mathcal{G}(n,d;\mathbb{F})\bigr)^{I_k}$ stands for the $\mathcal{K}_{\mathbb{F}}$-module consisting of the $I_k$-fixed vectors in the Grassmann representation. The structure of the Grassmann representation is completely determined by its so-called level $k-1$ components $\mathbb{C}\bigl(\mathcal{G}(n,d;\mathbb{F})\bigr)^{I_k}$ for $k\in\mathbb{Z}_{>0}$. We proceed now to recall the precise structure of these level components.
+
+The set of partitions $\Lambda_n$ parametrizes the isomorphism classes of the finite dimensional $\mathcal{O}$-modules of rank $\leq n$. Concretely, the partition $\lambda\in\Lambda_n$ corresponds to the isomorphism class of the finite $\mathcal{O}$-module $\oplus_{i=1}^n
+\mathcal{O}/\mathfrak{p}^{\lambda_i}$. The finite $\mathcal{O}$-modules in the isomorphism class labeled by $\lambda\in\Lambda_n$ are called $\mathcal{O}$-modules of type $\lambda$. Denote $\subseteq$ for the partial order on partitions defined by inclusion of Young diagrams. Fix a module of type $k^d=(k,\ldots,k)$ ($d$ entries). For any type $\lambda \subseteq
+k^d$ let $\mathcal{G}(\lambda,k^d;\mathcal{O})$ be the Grassmannian of its submodules of type $\lambda$. Let $\mathbb{C}\bigl(\mathcal{G}(\lambda,k^d;\mathcal{O})\bigr)$ be the vector space of complex valued functions on $\mathcal{G}(\lambda,k^d;\mathcal{O})$. The canonical action of $\mathcal{K}_{\mathbb{F}}$ on $\mathcal{G}(\lambda,k^d;\mathcal{O})$ gives rise to a representation of $\mathcal{K}_{\mathbb{F}}$ on $\mathbb{C}\bigl(\mathcal{G}(\lambda,k^d;\mathcal{O})\bigr)$. The finite Grassmann representations relate to the Grassmann representation $\mathbb{C}\bigl(\mathcal{G}(n,d;\mathbb{F})\bigr)$ by the identification $$\label{identification}
+\mathbb{C}\bigl(\mathcal{G}(n,d;\mathbb{F})\bigr)^{I_k}\simeq\mathbb{C}\bigl(\mathcal{G}(k^n,k^d;\mathcal{O})\bigr)$$ as $\mathcal{K}_{\mathbb{F}}$-modules, see [@BO2 Lemma 2.1].
+
+The irreducible constituents of the finite Grassmann representation $\mathbb{C}\bigl(\mathcal{G}(k^n,k^d;\mathcal{O})\bigr)$ have been explicitly described in [@BO2] in terms of the so-called cellular basis of the associated finite Hecke algebra $\hbox{End}_{\mathcal{K}_{\mathbb{F}}}\bigl(\mathbb{C}\bigl(\mathcal{G}(k^n,k^d;\mathcal{O})\bigr)\bigr)$. It leads to a natural parametrization of the irreducible $\mathcal{M}_{\mathbb{F}}$-spherical $\mathcal{K}_{\mathbb{F}}$-representations by partitions $\Lambda_n$, as described in the following theorem, which is a direct consequence of [@BO2 Theorem 1].
+
+Denote $\Lambda_n^k$ for partitions $\lambda\in\Lambda_n$ satisfying $\lambda\subseteq k^n$. Furthermore, for an irreducible $\mathcal{K}_{\mathbb{F}}$-module $V$ we denote $\langle V:\mathbb{C}\bigl(\mathcal{G}(\mu,k^d;\mathcal{O})\bigr)\rangle$ for the multiplicity of $V$ in the $\mathcal{K}_{\mathbb{F}}$-module $\mathbb{C}\bigl(\mathcal{G}(\mu,k^d;\mathcal{O})\bigr)$.
+
+::: thm
+[]{#pthm label="pthm"} For $\lambda\in\Lambda_n$ there exists a unique irreducible $\mathcal{M}_{\mathbb{F}}$-spherical $\mathcal{K}_{\mathbb{F}}$-representation $V_\lambda^{\mathbb{F}}$ satisfying, for all $k\in\mathbb{Z}_{>0}$ such that $\lambda\in\Lambda_n^k$,
+
+1.  $\langle V_\lambda^{\mathbb{F}}:\mathbb{C}\bigl(\mathcal{G}(\mu,k^d;\mathcal{O})\bigr)\rangle\geq 1$ for $\mu\in\Lambda_n^k$ satisfying $\lambda\subseteq\mu$,
+
+2.  $\langle V_\lambda^{\mathbb{F}}:\mathbb{C}\bigl(\mathcal{G}(\mu,k^d;\mathcal{O})\bigr)\rangle=0$ for $\mu\in\Lambda_n^k$ satisfying $\lambda\not\subseteq\mu$.
+
+The $\mathcal{K}_{\mathbb{F}}$-representations $V_\lambda^{\mathbb{F}}$ [(]{.upright}$\lambda\in\Lambda_n$[)]{.upright} form a complete set of representatives of the irreducible $\mathcal{M}_{\mathbb{F}}$-spherical $\mathcal{K}_{\mathbb{F}}$-representations.
+:::
+
+Theorem [\[pthm\]](#pthm){reference-type="ref" reference="pthm"} gives the multiplicity free irreducible decomposition $$\mathbb{C}\bigl(\mathcal{G}(n,d;\mathbb{F})\bigr)\simeq\bigoplus_{\lambda \in
+\Lambda_n}V^{\mathbb{F}}_{\lambda}$$ as $\mathcal{K}_{\mathbb{F}}$-modules, as well as the identifications $$(\mathcal{K}_{\mathbb{F}}/\mathcal{M}_{\mathbb{F}})\hat{~}\simeq\Lambda_n\simeq\left\{ \text{isomorphism types of
+$\mathcal{O}$-modules of rank $\le n$}  \right\}.$$ Furthermore, [\[identification\]](#identification){reference-type="eqref" reference="identification"} and Theorem [\[pthm\]](#pthm){reference-type="ref" reference="pthm"} imply $$\label{irrk}
+\mathbb{C}\bigl(\mathcal{G}(k^n, k^d;\mathcal{O})\bigr)\simeq\bigoplus_{\lambda\in\Lambda_n^k}V^{\mathbb{F}}_{\lambda}$$ for $k\in\mathbb{Z}_{>0}$ as $\mathcal{K}_{\mathbb{F}}$-modules, cf. [@BO2 Prop. 2.2]. The following is one of the main results in this paper.
+
+::: thm
+[]{#thm-dim-padic label="thm-dim-padic"} Let $t=|\mathcal{O}/\mathfrak{p}|^{-1}$. We have $$\label{padic-dimension}
+\textup{Dim}_{\mathbb{C}}(V^{\mathbb{F}}_{\lambda})=t^{-(d-2n+1)|\lambda|-2(\rho,\lambda)}\left[
+{n \atop \partial\lambda' }\right]_t
+\frac{(t^{d-\lambda'_1-\lambda'_2+2};t)_{\lambda'_1+\lambda'_2}}{(t^{n-\lambda'_1+1};t)_{\lambda'_1}}
+\frac{(1-t^{d-2\lambda'_1+1})}{(1-t^{d+1})}$$ for $\lambda\in\Lambda_n$.
+:::
+
+Theorem [\[thm-dim-padic\]](#thm-dim-padic){reference-type="ref" reference="thm-dim-padic"} is a direct consequence of the formula $$\label{reldimD0}
+\hbox{Dim}_{\mathbb{C}}\bigl(V_\lambda^{\mathbb{F}}\bigr)=
+D_0\bigl(\lambda;t^{d-2n+1},t;t),\qquad
+t=|\mathcal{O}/\mathfrak{p}|^{-1}$$ from [@OU1], and the explicit evaluation of $D_0(\lambda;a,b;t)$ derived in Theorem [\[padicformula\]](#padicformula){reference-type="ref" reference="padicformula"}. Formula [\[reldimD0\]](#reldimD0){reference-type="eqref" reference="reldimD0"} is obtained in [@OU1] as a consequence of [\[dimforclassical\]](#dimforclassical){reference-type="eqref" reference="dimforclassical"} and the identification of the zonal spherical function $\varphi_\lambda^{\mathbb{F}}$ with a suitable $p$-adic ($q=0$) degeneration of the multivariable little $q$-Jacobi polynomial $P_\lambda^L$.
+
+::: cor
+[]{#identity label="identity"} For $k\in\mathbb{Z}_{>0}$ we have $$\sum_{\lambda \subseteq k^n}
+t^{-(d-2n+1)|\lambda|-2(\rho,\lambda)}\left[ {n \atop
+\partial\lambda' }\right]_t
+\frac{(t^{d-\lambda'_1-\lambda'_2+2};t)_{\lambda'_1+\lambda'_2}}{(t^{n-\lambda'_1+1};t)_{\lambda'_1}}
+\frac{(1-t^{d-2\lambda'_1+1})}{(1-t^{d+1})} =t^{-n(d-n)(k-1)}\left(
+{d \atop n }\right)_{t^{-1}}.$$
+:::
+
+::: proof
+*Proof.* Since the desired expression is rational in $t$, it suffices to prove the identity with the formal parameter $t^{-1}$ specialized to the cardinality of the residue field of a non-Archimedean local field $\mathbb{F}$. In this case, the identity immediately follows from [\[irrk\]](#irrk){reference-type="eqref" reference="irrk"}, [\[identification\]](#identification){reference-type="eqref" reference="identification"}, [\[padic-dimension\]](#padic-dimension){reference-type="eqref" reference="padic-dimension"} and the easily verified identity (alternatively see e.g. [@BO2 Claim 4.1(1)]) $$\label{cardinality}
+|\mathcal{G}(k^n,k^d;\mathcal{O})|=t^{-n(d-n)(k-1)}\left( {d \atop n
+}\right)_{t^{-1}},\qquad t=|\mathcal{O}/\mathfrak{p}|^{-1}.$$ ◻
+:::
+
+For $n=1$, Corollary [\[identity\]](#identity){reference-type="ref" reference="identity"} reduces to the trivial geometric sum identity $$1+t^{1-d}\frac{(1-t^{d-1})}{(1-t)}+\frac{(1-t^{d-1})(1-t^d)}{(1-t)}
+\sum_{m=2}^kt^{(1-d)m}=t^{(1-d)k}\frac{(1-t^d)}{(1-t)}.$$
+
+We end this subsection by discussing the dimension formula [\[padic-dimension\]](#padic-dimension){reference-type="eqref" reference="padic-dimension"} in two cases that the dimensions have been computed before by representation theoretic methods. The dimension formula [\[padic-dimension\]](#padic-dimension){reference-type="eqref" reference="padic-dimension"} yields for $r=1,\ldots,n$, $$\label{padicfundamental}
+\hbox{Dim}_{\mathbb{C}}\bigl(V_{\omega_r}^{\mathbb{F}}\bigr)
+=t^{r(r-d)}\frac{\bigl(t^{d-r+2};t\bigr)_r(1-t^{d-2r+1})}
+{\bigl(t;t\bigr)_r(1-t^{d+1})}=\left( {d \atop r}\right)_{t^{-1}}-\left({d \atop r-1}
+\right)_{t^{-1}}$$ where $t=|\mathcal{O}/\mathfrak{p}|^{-1}$. Alternatively, by [\[irrk\]](#irrk){reference-type="eqref" reference="irrk"} $$\mathbb{C}\bigl(\mathcal{G}(\omega_r,1^d;\mathcal{O})\bigr)\simeq
+\mathbb{C}\bigl(\mathcal{G}(\omega_{r-1},1^d;\mathcal{O})\bigr)\oplus
+V_{\omega_r}^{\mathbb{F}},$$ which implies [\[padicfundamental\]](#padicfundamental){reference-type="eqref" reference="padicfundamental"} in view of [\[cardinality\]](#cardinality){reference-type="eqref" reference="cardinality"}. The latter representation theoretic derivation essentially is the argument from [@D].
+
+A similar analysis applies for the irreducible representations $V_{k}^{\mathbb{F}}$ ($k\in \mathbb{Z}_{\geq 2}\subset \Lambda_1$) arising in the representation $\mathbb{C}\bigl(\mathcal{G}(1,d;\mathbb{F})\bigr)$ associated to the projective space $\mathbb{P}^d(\mathbb{F})=\mathcal{G}(1,d;\mathbb{F})$, see [@Haran] and [@OU1 §4]. In this case, [\[padic-dimension\]](#padic-dimension){reference-type="eqref" reference="padic-dimension"} yields $$\hbox{Dim}_{\mathbb{C}}\bigl(V_{k}^{\mathbb{F}}\bigr)=t^{-(d-1)k}\frac{(1-t^{d-1})(1-t^d)}{(1-t)}
+=t^{-(d-1)k}\frac{(1-t^d)}{(1-t)}-t^{-(d-1)(k-1)}\frac{(1-t^d)}{(1-t)}$$ where $t=|\mathcal{O}/\mathfrak{p}|^{-1}$. This dimension formula can be reconfirmed using [\[cardinality\]](#cardinality){reference-type="eqref" reference="cardinality"} and the decomposition $$\mathbb{C}\bigl(\mathcal{G}(k^1,k^d;\mathcal{O})\bigr)\simeq
+\mathbb{C}\bigl(\mathcal{G}((k-1)^1,(k-1)^d;\mathcal{O})\bigr)\oplus V_{k}^{\mathbb{F}}$$ as $\mathcal{K}_{\mathbb{F}}$-modules, which is a direct consequence of [\[irrk\]](#irrk){reference-type="eqref" reference="irrk"}.

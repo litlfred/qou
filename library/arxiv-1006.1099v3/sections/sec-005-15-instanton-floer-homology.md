@@ -8,70 +8,29 @@ pages: 4-6
 source_pdf: 1006.1099v3.pdf
 source_sha256: 76c1c4173cdee9d8
 doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH — There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
+text_source: latex
+latex_prose_ratio: 0.969
+latex_coverage_ratio: 0.983
 ---
-section, deﬁned by a monodromy map h∈ Γ(Σ g,1) in the mapping class group of a once-marked
-surface f −1(pt). Up to isomorphism there is a unique non-trivial SO(3)-bundle E→ f −1(pt),
-with⟨w2(E),f −1(pt)⟩⁄= 0; the section of Yh→S1 deﬁnes a distinguished extension of E to an
-SO(3) bundle (still denoted) E→Yh. If Yh is a homology S1×S2, this is the unique non-trivial
-SO(3)-bundle over Yh up to isomorphism. Any such E admits no reducible ﬂat connexion, hence
-is “admissible” in the sense of Donaldson [24], so there is an associated Z4-graded instanton Floer
-homology group HF inst(Yh;E) computed from the Chern-Simons functional on connexions in E.
-Nowh acts canonically on M(f −1(pt)) via an element ˆh∈ ˆΓ(f −1(pt)), and the famous theorem
-of Dostoglou and Salamon [25] gives an isomorphism HF inst(Yh;E)∼=HF (ˆρ(ˆh)). Appealing in
-addition to Theorems 1.1 and (the proof of) 1.6 yields:
-Corollary 1.8. Fix a 3-manifold Yh → S1 ﬁbred by genus 2 curves, which in addition is a
-homologyS1×S2, and let E→Yh be the non-trivial SO(3)-bundle. There is an isomorphism of
-Z2-graded C-vector spaces
-HF inst(Yh;E) ∼= C⊕HF (h)⊕ C. (1.1)
-By work of Cotton-Clay [21] the central summand HF (h) on the right side, which is com-
-puted on the curve Σ 2 itself rather than on any associated moduli space, can be algorithm ically
-computed from a presentation of h as a word in positive and negative Dehn twists, or from a
-suitable traintrack. In general, if we make no assumption on the act ion of h on H1(Σ 2; Z), the
-instanton Floer homologies HF inst(Yh;E) of the diﬀerent principal bundles E→ Yh arising as
-mapping tori of h are given by Hochschild cohomologies C⊕HH ∗(hξ)⊕ C, with hξ the various
-FLOER COHOMOLOGY AND PENCILS OF QUADRICS 5
-autoequivalences of F(Σ 2) obtained by combining the action of h and tensoring by some ﬂat
-line bundle ξ∈ H 1(Σ 2; Z2). We should emphasise that it seems to be very hard to compute
-these instanton Floer homology groups by direct computations on Yh, or even to write down the
-underlying chain groups.
-1.6. Witten’s conjecture. We include a brief speculative discussion, which should nonetheless
-set these topological results in a helpful context. The space M(Σ g) is always a simply-connected
-Fano variety, symplectomorphic to the variety of (g−2)-dimensional linear subspaces of Q0∩Q1⊂
-P2g+1, hence there is an evaluation from the total space of a projective bundle
-Pg−2 ~× M(Σ g)−→Q0∩Q1.
-Probably deeper analysis of the birational structure of this map wo uld help relate the Fukaya
-category of the intersection of quadrics to that of the moduli spa ce. Explicitly:
-Conjecture 1.9. There is a C-linear equivalence of Z2-graded triangulated categories
-DπF(Σ g) ≃ DπF(M(Σ g); 4(g− 2)).
-We give a slightly more precise statement in Remark 2.19. Conjecture 1.9 should be seen in
-light of Witten’s conjecture relating Seiberg-Witten and Donaldson in variants in low-dimensional
-topology. The spaces M(Σ g) arise as moduli spaces of instantons on Σ g×S1. The corresponding
-moduli spaces of Seiberg-Witten solutions on Σ g×S1 are given by symmetric products of Σ g. A
-theorem of Munoz [70] implies the spectrum of quantum multiplication b y the ﬁrst Chern class
-on M(Σ g) is given (dropping some factors of i) by
-{−4(g− 1),−4(g− 2),..., −4, 0, 4,..., 4(g− 2), 4(g− 1)}.
-The Fukaya category F(M(Σ g)) breaks into summands indexed by these values. Moreover, the
-summands for±λ should be equivalent. Naively, one would expect the Fukaya categor y summand
-F(M(Σ g); 4(g−k−1)) to be built out of the Fukaya category of the symmetric produc t Symk(Σ g),
-when|k|<g (this is an intentionally vague statement, not least because we have not speciﬁed a
-symplectic form on the symmetric product). In particular, the sum mands corresponding to the
-outermost eigenvalues±4(g−1) are expected to be semisimple (equivalent to the Fukaya categor y
-of a point). Whilst we do not prove this, Theorem 1.6 provides rather strong evidence. More
-precisely, that theorem is proved by showing that the symplectic Flo er cohomology HF (φ) has a
-distinguished rank one summand, given by its generalized eigenspace for the eigenvalue 4(g− 1).
-This should be compared to similar rank one pieces of monopole or Heeg aard Floer homology
-[78, 57], in that context associated to the “top” Spin c-structure. In this vein, Conjecture 1.9
-– or Theorem 1.1, when g = 2 – can be viewed as an instance of the general “Seiberg-Witten
-= Donaldson” philosophy, for invariants of mapping tori coming from the next highest Spin c-
-structure.
-Practically, one might hope – by analogy with derived categories of sh eaves, cf. Section 1.7
-below – that Fukaya categories behave well under both blowing up an d down, and under passing
-to the total space of a projective bundle. Then Thaddeus’ work o n ﬂip diagrams [101], in which
-ﬂips along projective bundles over symmetric products explicitly rela te a projective bundle over
-M(Σ g) to a projective space, would seem to give a cut-and-paste route to assembling F(M(Σ g))
-from the F(Symk(Σ g)). In reality, it seems hard to give a complete argument on these line s using
-current technology. The intermediate spaces in Thaddeus’ work h ave less good monotonicity
-properties than M(Σ g) itself, whilst there is some delicacy in the choice of symplectic form on
-Symk(Σ g). Note that the latter delicacy is absent precisely for the summand s corresponding to
-Symk(Σ g) for k = 0, 1, which are those treated in this paper.
-6 IV AN SMITH
+[]{#Sec:InstFloer label="Sec:InstFloer"}
+
+Let $f: Y_h \rightarrow S^1$ be a fibred 3-manifold with a distinguished section, defined by a monodromy map $h \in \Gamma(\Sigma_{g,1})$ in the mapping class group of a once-marked surface $f^{-1}(pt)$. Up to isomorphism there is a unique non-trivial $SO(3)$-bundle $E\rightarrow f^{-1}(pt)$, with $\langle w_2(E),  f^{-1}(pt)\rangle \neq 0$; the section of $Y_h \rightarrow S^1$ defines a distinguished extension of $E$ to an $SO(3)$ bundle (still denoted) $E\rightarrow Y_h$. If $Y_h$ is a homology $S^1 \times S^2$, this is the unique non-trivial $SO(3)$-bundle over $Y_h$ up to isomorphism. Any such $E$ admits no reducible flat connexion, hence is "admissible\" in the sense of Donaldson [@Donaldson:Floer], so there is an associated ${\mathbb Z}_4$-graded instanton Floer homology group $HF_{inst}(Y_h; E)$ computed from the Chern-Simons functional on connexions in $E$. Now $h$ acts canonically on $\EuScript{M}(f^{-1}(pt))$ via an element $\hat{h} \in \widehat{\Gamma}(f^{-1}(pt))$, and the famous theorem of Dostoglou and Salamon [@DS] gives an isomorphism $HF_{inst}(Y_h; E) \cong HF(\hat{\rho}(\hat{h}))$. Appealing in addition to Theorems [\[Thm:Embed\]](#Thm:Embed){reference-type="ref" reference="Thm:Embed"} and (the proof of) [\[Thm:FixPoint\]](#Thm:FixPoint){reference-type="ref" reference="Thm:FixPoint"} yields:
+
+::: Corollary
+[]{#Cor:AllSummands label="Cor:AllSummands"} Fix a 3-manifold $Y_{h} \rightarrow S^1$ fibred by genus 2 curves, which in addition is a homology $S^1 \times S^2$, and let $E \rightarrow Y_h$ be the non-trivial $SO(3)$-bundle. There is an isomorphism of ${\mathbb Z}_2$-graded ${\mathbb C}$-vector spaces $$\label{Equation:HFinstanton}
+HF_{inst}(Y_{h}; E) \ \cong \ {\mathbb C}\oplus HF(h) \oplus {\mathbb C}.$$
+:::
+
+By work of Cotton-Clay [@Cotton-Clay] the central summand $HF(h)$ on the right side, which is computed on the curve $\Sigma_2$ itself rather than on any associated moduli space, can be algorithmically computed from a presentation of $h$ as a word in positive and negative Dehn twists, or from a suitable traintrack. In general, if we make no assumption on the action of $h$ on $H_1(\Sigma_2; {\mathbb Z})$, the instanton Floer homologies $HF_{inst}(Y_h; E)$ of the different principal bundles $E \rightarrow Y_h$ arising as mapping tori of $h$ are given by Hochschild cohomologies ${\mathbb C}\oplus HH^*(h_{\xi}) \oplus {\mathbb C}$, with $h_{\xi}$ the various autoequivalences of $\EuScript{F}(\Sigma_2)$ obtained by combining the action of $h$ and tensoring by some flat line bundle $\xi \in H^1(\Sigma_2;{\mathbb Z}_2)$. We should emphasise that it seems to be very hard to compute these instanton Floer homology groups by direct computations on $Y_h$, or even to write down the underlying chain groups.
+
+## Witten's conjecture {#Sec:Speculative}
+
+We include a brief speculative discussion, which should nonetheless set these topological results in a helpful context. The space $\EuScript{M}(\Sigma_g)$ is always a simply-connected Fano variety, symplectomorphic to the variety of $(g-2)$-dimensional linear subspaces of $Q_0\cap Q_1 \subset {\mathbb P}^{2g+1}$, hence there is an evaluation from the total space of a projective bundle $${\mathbb P}^{g-2} \, \widetilde{\times} \, \EuScript{M}(\Sigma_g) \longrightarrow Q_0\cap Q_1.$$ Probably deeper analysis of the birational structure of this map would help relate the Fukaya category of the intersection of quadrics to that of the moduli space. Explicitly:
+
+::: Conjecture
+[]{#Conj:SecondHighest label="Conj:SecondHighest"} There is a ${\mathbb C}$-linear equivalence of ${\mathbb Z}_2$-graded triangulated categories $$D^{\pi} \EuScript{F}(\Sigma_g) \ \simeq \ D^{\pi} \EuScript{F}(\EuScript{M}(\Sigma_g); 4(g-2)).$$
+:::
+
+We give a slightly more precise statement in Remark [\[Rmk:PreciseConj\]](#Rmk:PreciseConj){reference-type="ref" reference="Rmk:PreciseConj"}. Conjecture [\[Conj:SecondHighest\]](#Conj:SecondHighest){reference-type="ref" reference="Conj:SecondHighest"} should be seen in light of Witten's conjecture relating Seiberg-Witten and Donaldson invariants in low-dimensional topology. The spaces $\EuScript{M}(\Sigma_g)$ arise as moduli spaces of instantons on $\Sigma_g \times S^1$. The corresponding moduli spaces of Seiberg-Witten solutions on $\Sigma_g \times S^1$ are given by symmetric products of $\Sigma_g$. A theorem of Munoz [@Munoz] implies the spectrum of quantum multiplication by the first Chern class on $\EuScript{M}(\Sigma_g)$ is given (dropping some factors of $i$) by $$\{-4(g-1), -4(g-2), \ldots, -4, 0, 4, \ldots, 4(g-2),  4(g-1)\}.$$ The Fukaya category $\EuScript{F}(\EuScript{M}(\Sigma_g))$ breaks into summands indexed by these values. Moreover, the summands for $\pm \lambda$ should be equivalent. Naively, one would expect the Fukaya category summand $\EuScript{F}(\EuScript{M}(\Sigma_g); 4(g-k-1))$ to be built out of the Fukaya category of the symmetric product $\operatorname{Sym}^k(\Sigma_g)$, when $|k| < g$ (this is an intentionally vague statement, not least because we have not specified a symplectic form on the symmetric product). In particular, the summands corresponding to the outermost eigenvalues $\pm 4(g-1)$ are expected to be semisimple (equivalent to the Fukaya category of a point). Whilst we do not prove this, Theorem [\[Thm:FixPoint\]](#Thm:FixPoint){reference-type="ref" reference="Thm:FixPoint"} provides rather strong evidence. More precisely, that theorem is proved by showing that the symplectic Floer cohomology $HF(\phi)$ has a distinguished rank one summand, given by its generalized eigenspace for the eigenvalue $4(g-1)$. This should be compared to similar rank one pieces of monopole or Heegaard Floer homology [@OzSz; @KronheimerMrowka:Sutured], in that context associated to the "top\" $Spin^c$-structure. In this vein, Conjecture [\[Conj:SecondHighest\]](#Conj:SecondHighest){reference-type="ref" reference="Conj:SecondHighest"} -- or Theorem [\[Thm:Embed\]](#Thm:Embed){reference-type="ref" reference="Thm:Embed"}, when $g=2$ -- can be viewed as an instance of the general "Seiberg-Witten = Donaldson\" philosophy, for invariants of mapping tori coming from the next highest $Spin^c$-structure.
+
+Practically, one might hope -- by analogy with derived categories of sheaves, cf. Section [\[Sec:HMS\]](#Sec:HMS){reference-type="ref" reference="Sec:HMS"} below -- that Fukaya categories behave well under both blowing up and down, and under passing to the total space of a projective bundle. Then Thaddeus' work on flip diagrams [@Thaddeus], in which flips along projective bundles over symmetric products explicitly relate a projective bundle over $\EuScript{M}(\Sigma_g)$ to a projective space, would seem to give a cut-and-paste route to assembling $\EuScript{F}(\EuScript{M}(\Sigma_g))$ from the $\EuScript{F}(\operatorname{Sym}^k(\Sigma_g))$. In reality, it seems hard to give a complete argument on these lines using current technology. The intermediate spaces in Thaddeus' work have less good monotonicity properties than $\EuScript{M}(\Sigma_g)$ itself, whilst there is some delicacy in the choice of symplectic form on $\operatorname{Sym}^k(\Sigma_g)$. Note that the latter delicacy is absent precisely for the summands corresponding to $\operatorname{Sym}^k(\Sigma_g)$ for $k=0,1$, which are those treated in this paper.

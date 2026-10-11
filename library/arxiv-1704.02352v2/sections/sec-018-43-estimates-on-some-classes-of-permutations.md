@@ -8,53 +8,24 @@ pages: 31-32
 source_pdf: 1704.02352v2.pdf
 source_sha256: 9a14dd6ee33248d3
 doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Y oung diagrams which can be regarded as a natural one-parameter deformation of so me classi- cal Y"
+text_source: latex
+latex_prose_ratio: 0.96
+latex_coverage_ratio: 0.95
 ---
-tation π we denote by C(π) the set of its cycles. The length
-‖π‖ := l − |C(π)|
-of a permutation π ∈ S(l) is deﬁned as the minimal number of factors
-necessary to write π as a product of transpositions.
-Lemma 4.3. F or all integersr ≥ 0 and l ≥ 1
-#
-{
-π ∈ S(l) : ‖π‖ = r
-}
-≤ l2r
-r! .
-Proof. We claim that for each permutation π ∈ S(l) such that ‖π‖ = r
-there exist at least r transpositions τ with the property that the permutation
-π′ := πτ fulﬁlls ‖π′‖ = ‖π‖ − 1. Indeed, each such a transposition is of
-the form τ = ( a, b) with a ⁄= b being elements of the same cycle of π; it
-follows that the number of such transpositions is equal to
-∑
-c∈C(π)
-(|c|
-2
-)
-≥
-∑
-c∈C(π)
-(
-|c| − 1
-)
-= ‖π‖.
-By repeating inductively the same argument for the collecti on of permu-
-tations (π′) obtained above, it follows that the permutation π can be written
-in at least r! different ways as a product of r transpositions. Since there are(l
-2
-)
-< l 2 transpositions in S(l), this concludes the proof. □
-32 MACIEJ DOŁ ˛ EGA AND PIOTR ´SNIADY
-We revisit Section 3.8.2. In the following we will need a conv enient way
-of parametrizing the equivalence classes in Xl/ ∼; for this purpose we note
-that in each equivalence class one can choose a representati ve (which is not
-necessarily unique) (σ1, σ2) with the property that the permutation σ2 has a
-particularly simple cycle structure, namely
-σ2 = (1, 2, . . . , i1)(i1 + 1, i1 + 2, . . . , i2) · · ·(iℓ−1 + 1, iℓ−1 + 2, . . . , iℓ)
-for some increasing sequence 1 ≤ i1 < i 2 < · · · < i ℓ = l. Note that for a
-ﬁxed ℓ = |C(σ2)|
-(4.6) the number of permutations σ2 of the above form
-is given by
-( l
-ℓ − 1
-)
-≤ lℓ−1.
+Recall that for a permutation $\pi$ we denote by $C(\pi)$ the set of its cycles. The length $$\|\pi\|:=l - |C(\pi)|$$ of a permutation $\pi\in\mathfrak{S}(l)$ is defined as the minimal number of factors necessary to write $\pi$ as a product of transpositions.
+
+::: lemma
+[]{#lem:not-many-permutations label="lem:not-many-permutations"} For all integers $r\geq 0$ and $l\geq 1$ $$\#\Big\{ \pi\in\mathfrak{S}(l) : \| \pi\| = r \Big\} \leq \frac{l^{2r}}{r!}.$$
+:::
+
+::: proof
+*Proof.* We claim that for each permutation $\pi\in\mathfrak{S}(l)$ such that $\|\pi\|=r$ there exist at least $r$ transpositions $\tau$ with the property that the permutation $\pi':= \pi \tau$ fulfills $\| \pi'\|=\|\pi\|-1$. Indeed, each such a transposition is of the form $\tau=(a,b)$ with $a\neq b$ being elements of the same cycle of $\pi$; it follows that the number of such transpositions is equal to $$\sum_{c\in C(\pi)} \binom{|c|}{2} \geq \sum_{c\in C(\pi)} \big( |c|-1  \big) = \|\pi\|.$$
+
+By repeating inductively the same argument for the collection of permutations $(\pi')$ obtained above, it follows that the permutation $\pi$ can be written in at least $r!$ different ways as a product of $r$ transpositions. Since there are $\binom{l}{2}<l^2$ transpositions in $\mathfrak{S}(l)$, this concludes the proof. ◻
+:::
+
+We revisit [\[sec:top-degree-by-Sniady\]](#sec:top-degree-by-Sniady){reference-type="ref" reference="sec:top-degree-by-Sniady"}. In the following we will need a convenient way of parametrizing the equivalence classes in $\mathcal{X}_l/\sim$; for this purpose we note that in each equivalence class one can choose a representative (which is not necessarily unique) $(\sigma_1,\sigma_2)$ with the property that the permutation $\sigma_2$ has a particularly simple cycle structure, namely $$\sigma_2=(1,2,\dots,i_1)(i_1+1,i_1+2,\dots,i_2) \cdots (i_{\ell-1}+1,i_{\ell-1}+2,\dots,i_\ell)$$ for some increasing sequence $1\leq i_1<i_2<\cdots<i_\ell=l$. Note that for a fixed $\ell=|C(\sigma_2)|$ $$\begin{gathered}
+\label{eq:takietam}
+\text{the number of permutations } \sigma_2 \text{ of the above form}\\
+\text{is given by } \binom{l}{\ell-1} \leq l^{\ell-1}.
+\end{gathered}$$

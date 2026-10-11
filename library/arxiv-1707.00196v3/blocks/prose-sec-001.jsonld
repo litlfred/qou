@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1707.00196v3/blocks/prose-sec-001",
+  "kind": "prose",
+  "title": "R-matrices and characters of S",
+  "pageStart": 5,
+  "pageEnd": 8,
+  "text": "../sections/sec-001-2-r-matrices-and-characters-of-s.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1707.00196v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1707.00196v3/manifest.jsonld",
+  "provenance": "ingested"
+}

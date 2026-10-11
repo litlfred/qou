@@ -8,579 +8,311 @@ pages: 17-22
 source_pdf: 0806.4741v1.pdf
 source_sha256: 5e7ad85a99fb3552
 doc_brief: "The deformation quantizations of the hyperbolic plane — We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order"
+text_source: latex
+latex_prose_ratio: 0.971
+latex_coverage_ratio: 0.928
 ---
-Observe that the change of variables (89) becomes singular when ℏ vanishes, while the equation (86) dege-
-nenrates into
-(−r∂ 2
-r + 2q∂r∂q +r (k−k′q2))F (q,r ) = 0 . (103)
+\label{Norasympt}
+\noindent Observe that the   change of variables (\ref{UVqr}) becomes singular when $\hbar$ vanishes, while the  equation (\ref{BoxFqr}) degenenrates into
+\begin{equation}\label{BoxFqrdeg}
+(-r\,\partial_r^2+2\,q\,\partial_r\partial_q+r\,(k-k'q^2))F(q,r)=0\qquad .
+\end{equation}
 The general solution of this equation can be expressed as a superposition of modes
-F0,σ =C 1√qeiσqr 2
-2 e− i
-2σ(k
-q +k′q) . (104)
-Let us notice that these modes can be obtained from special combinations of modes (95) and a rescaling of
-the wave-numbers intos =σ/ℏ2. This rescaling is dictated by the necessity of maintaining a r dependence
-in the limit ℏ→ 0 of the modes (95):
-s
-√
-1 + ℏ2r2≈s +s ℏ2r2 = σ
-ℏ2 +σr 2 (105)
-while the oscillating factor can be controlled by considering the asymptotic behavior of the Hankel functions
-([41], sec. 8.41)
-H(2)√
-k
-ℏ
-(
-√
-σ2
-ℏ4 + k′
-ℏ2q)≈ ℏ
-√ 2
-πσq e−iσq
-ℏ2ei
-√
-kπ
-2 ℏ e− i
-2σ(k
-q +k′q) . (106)
-Thus by choosing in the coeﬃcients A and B in the linear combination (95) as :
-A =−iB =C 1
-ℏ
-√πσ
-2 e−i
-√
-kπ
-2 ℏ (107)
-we obtain modes whose limit for ℏ = 0 is well deﬁned. This explain the results of our computations below.
-Note that, given an operator U, it is not straightforward to extract the inverse operator U−1 since one has
-to determine how to superpose these diﬀerent modes. In section 3.7 however, we will discuss a particular
-example where the superposition is known.
-The operators U we consider hereafter will correspond to (97), (95) with B = 0. This special choice is
-motivated by the bad behavior of the Y -Bessel function near the origin. We have :
-(Usf)(a,l ) =Cℏ(s)
-∫
-R2×R+
-drdndxJ √
-k
-ℏ
-(
-√
-s2 +k′/ℏ2 x)(1 + ℏ2r2)− 1
-4
-eisx
-√
-1+ℏ2r2
-eirlx e−irn f(a− 1
-2 lnx,n ) . (108)
-A necessary condition for Us to deﬁne a star product is that ( Us1) = 1. This leads to the condition 4
-Cℏ(s) =
-√
-k′
-2π ℏ
-[√
-k′−i ℏs[ℏ]√
-k′ +i ℏs[ℏ]
-]
-√
-k′
-2 ℏ
-. (109)
-Let us notice that we allow a ℏ dependence in s; we don’t assume it a priori to be constant but leave it as a
-free (regular) function of the deformation parameter.
-On the other hand, the requirement
-Usf−→
-ℏ→ 0
-f (110)
+\begin{equation}
+F_{0,\sigma}=C\,\frac 1{\sqrt q}\,e^{i\frac{\sigma\,q\,r^2}2}\,e^{-\frac i{2\,\sigma}\left(\frac k q +k'q\right)}\qquad.
+\end{equation}
+Let us notice that these modes can be obtained from special combinations of modes (\ref{hs}) and a rescaling of the wave-number $s$ into $s=\sigma/\hbar^2$.
+This rescaling is dictated by the necessity of maintaining a $r$ dependence in the limit $\hbar \rightarrow 0$ of the modes (\ref{hs}):
+\begin{equation}
+s\,\sqrt{1+\hbar^2r^2}\approx s + s\,\hbar^2r^2=\frac \sigma{\hbar^2}+\sigma \,r^2
+\end{equation}
+while the oscillating factor can be controlled by considering the asymptotic behavior of the  Hankel functions (\cite{Wa}, sec. {\bf 8.41})
+\begin{equation}
+H^{(2)}_{\frac{\sqrt k}{\hbar}}(\sqrt{\frac{\sigma^2}{\hbar^4}+\frac{k'}{\hbar^2}}q)\approx \hbar \sqrt{\frac 2{\pi\,\sigma\,q}}\,e^{-i\frac{\sigma\,q}{\hbar^2}}
+e^{i\frac{\sqrt k\,\pi}{2\,\hbar}}\,e^{-\frac i{2\,\sigma}\left(\frac k q +k'q\right)}\qquad .
+\end{equation}
+Thus by choosing in the coefficients $A$ and $B$ in the linear combination (\ref{hs}) as :
+\begin{equation}
+A=-i\,B=C\,\frac 1 \hbar\,\sqrt{\frac{\pi\,\sigma}2}\,e^{-i\frac {\sqrt{k}\,\pi}{2\,\hbar}}
+\end{equation}
+we obtain   modes whose limit for $\hbar =0$ is well defined. This explain the results of our computations below.
+ Note that, given an operator $U$, it is not straightforward to extract the inverse operator $U^{-1}$ since one has to determine how to superpose these different modes. In section \ref{Unterberger} however, we will discuss a particular example where the superposition is known.
+
+\noindent The operators $U$ we consider hereafter will correspond  to \re{uGen}, \re{hs} with $B=0$. This special choice is motivated by the bad behavior of the $Y$-Bessel function near the origin. We have :
+\begin{eqnarray}\label{USF}
+ (U_s f)(a,l) =  C_\hbar (s) \int_{\R^2\times\R_+} \, dr \, dn\, dx\, J_{\frac{\sqrt{k}}{\hbar}}(\sqrt{s^2 + k'/\hbar^2}\, \,x) (1+\hbar^2 \,r^2)^{-\frac{1}{4}} \nonumber\\
+  e^{i \,s\, x \sqrt{1+\hbar^2\, r^2}} \, e^{i \,r\, l x} \, e^{-i\, r\, n} \, f(a-\frac{1}{2}\ln x,n)\qquad.
+\end{eqnarray}
+A necessary condition for $U_s$ to define a star product is that $(U_s 1) = 1$. This leads to the condition\footnote{A useful relation in this derivation (see ref.\cite{Wa}, sec. 13.2, eq.[8]) is :
+$
+\int_0^\infty e^{(i\kappa-\epsilon)\zeta}J_\lambda (\beta\,\zeta)\,d\zeta=\frac{\beta^{-\lambda }[\sqrt{\beta^2-\kappa^2}+i\kappa]^{\lambda }}{\sqrt{\beta^2-\kappa^2}}
+$}
+\begin{equation}\label{Cnorm}
+  C_\hbar(s) = \frac{ \sqrt{k'}}{2\,\pi\,\hbar}\left[ \frac{\sqrt{k'} - i \,\hbar\,s[\hbar]}{\sqrt{k'} + i \,\  \hbar\,s[\hbar]} \right]^{\frac{\sqrt{k'}}{2\,\hbar}}.
+\end{equation}
+Let us notice that we allow a $\hbar$ dependence in  $s$; we don't assume it a priori to be constant but  leave it as a free (regular) function of the deformation parameter.
+
+\noindent On the other hand, the requirement 
+\begin{equation}
+   U_s f \underset{\hbar \ra 0}{\lra} f
+\end{equation}
 to get the right classical limit further imposes
-k =k′ . (111)
-4A useful relation in this derivation (see ref.[41], sec. 13.2, eq.[8]) is :
-R∞
-0 e(iκ−ϵ)ζJλ(βζ )dζ = β−λ[
-√
-β2−κ2+iκ]λ
-√
-β2−κ2
-17
-Let us now turn to the asymptotic expansion of the operator (108). To this end we introduce the following
-Fourier-like transforms:
-˜f−(k,p ) = 1
-2π2
-∫
-f(a,l )e−ike−2a
-e−iple−2adadl (112)
-f(a,l ) =
-∫
-˜f−(k,p )eike−2a
-eipldkdp , (113)
+\begin{equation}\label{kmu}
+ k = k' \qquad .
+\end{equation}
+Let us now turn to the asymptotic expansion of the operator  \re{USF}. To this end we introduce the following Fourier-like transforms:
+\begin{eqnarray}
+ \tilde{f}_- (k,p) &=& \frac{1}{2\pi^2} \int f(a,l) e^{-i k e^{-2a}} e^{-ipl} e^{-2a} da\, dl \label{Fouriermoins}\\
+  f(a,l) &=& \phantom{\frac{1}{2\pi^2}}\int \tilde{f}_- (k,p) e^{i k e^{-2a}} e^{i p l} dk dp\qquad ,
+\end{eqnarray}
 from which one obtains
-(Usf)(a,l ) =
-√
-k
-∫ (1 + ℏ2p2)−1/4
-(k + ℏ2 (s2(ℏ)−κ2))1/2
-[√
-k + ℏ2 (s2(ℏ)−κ2) +i ℏκ√
-k +i ℏs(ℏ)
-]
-√
-k
-ℏ
-˜f−(r,p )dpdr (114)
+\begin{eqnarray}\label{UsDev}
+ (U_s f) (a,l) =\sqrt{k}\int \frac{(1+\hbar^2\, p^2)^{-1/4}}{(k + \hbar^2\,(s^2(\hbar) - \kappa^2))^{1/2}} \left[\frac{\sqrt{k + \hbar^2 \,(s^2(\hbar) - \kappa^2)} + i \,\hbar\,\kappa }{\sqrt{k} +  i \, \hbar\, s(\hbar)} \right]^{\frac{\sqrt{k}}{ \hbar}}  \tilde{f}_- (r,p)\,dp\,dr
+\end{eqnarray}
+where 
+\begin{eqnarray}
+ \kappa = r\, e^{-2a} + p\, l  + s(\hbar)\, \sqrt{1+\hbar^2\,r^2}.
+\end{eqnarray}
+Setting $X = r\, e^{-2a} + p\, l$, the integrand can be Taylor expanded around $\hbar = 0$ as 
+\begin{equation}\label{TaylorU}
+ \sqrt{k}  \frac{(1+\hbar^2\, p^2)^{-1/4}}{(k + \hbar^2\,(s^2(\hbar) - \kappa^2))^{1/2}} \left[\frac{\sqrt{k + \hbar^2 \,(s^2(\hbar) - \kappa^2)} + i \,\hbar\,\kappa }{\sqrt{k} +  i \,\hbar\, s(\hbar)} \right]^{\frac{\sqrt{k}}{ \hbar}}= {\rm e}^{i X} P(X,p^2)
+\end{equation}
+where \re{TaylorU} defines the $\hbar$ power series  $P(X,p^2)$,  which, at first (non-trivial) order\footnote{If we assume $s$ to be constant, instead of a function of $\hbar$, this expansion involves only even power of $\hbar$.}, reads as :
+\begin{equation}\label{P}
+ P(X,p^2) = 1 + \hbar^2 \left(-p^2\frac{ (1-2\,i\, s)}4 + \frac{ s}{k} X +  \frac{(1+ i\, s)}{2\,k} X^2 +  \frac{i}{6\, k}X^3\right) + O(\hbar^4) 
+\end{equation}
+The important point in the previous expression is the structure of the expansion, and in particular the occurrence of the factor $ {\rm e}^{i X}$. Using this result, the expansion of the operator $U$ follows:
+\begin{eqnarray}
+ (U_s f)(a,l) &\approx& \int P(X,p^2) e^{i X} \tilde{f}_- (r,p)\,dp\,dr \nonumber \\
+              &=& \int   P[-i \p_\sigma,-\p^2_\alpha]\, e^{i \sigma X} e^{i\alpha p}\left . \tilde{f} (k,p)_- \right \vert_{\sigma=1, \alpha=0} \,dp\,dr  \nonumber \\
+              &=& P[-i \p_\sigma,-\p^2_\alpha]\left. f(a-\frac{1}{2} \ln \sigma, \sigma l + \alpha)\right\vert_{\sigma=1, \alpha=0}\quad .
+\end{eqnarray}
+It therefore appears appears that the product so-defined deforms the pointwise product on the hyperbolic plane in the direction of the $\SL$-invariant Poisson bracket.
+
+\noindent A similar computation can be performed starting from the inverse operator. One has (with $x= e^{2(b-a)}$)
+\begin{eqnarray}
+ (V_s f)(a,l) 
+  =\frac{D_\hbar (s)}{2}\int_{\R^2\times\R_+} \, dr \, dn\, dx\, J_{\frac{\sqrt{k}}{\hbar}}(\sqrt{s^2 + k'/\hbar^2} \,x) (1+\hbar^2 \,r^2)^{-\frac{1}{4}} \nonumber\\
+  e^{i \,s\, x \sqrt{1+\hbar^2\, r^2}} \, e^{ i r ({n\,x} -l)} \,   f(a+\frac{1}{2}\ln x,n)\qquad.\label{Vsf}
+\end{eqnarray}
+The requirement $V_s 1 = 1$, imposes
+\begin{equation}\label{Dnorm}
+ D_\hbar (s)=\frac{\sqrt{k}}{ \pi\,\hbar}\left(\frac{\sqrt{k'}-i\,\hbar\,s(\hbar)}{\sqrt{k'}+i\,\hbar\,s(\hbar)}\right)^\frac {\sqrt{k}} {2\,\hbar} 
+ \end{equation}
+while the right classical limit implies \footnote{A useful relation in that case is (see ref.\cite{Wa}, sec. 13.2, eq.(7)) : $
+\int_0^\infty \frac{e^{(i\kappa-\epsilon)\zeta}} \zeta J_\lambda (\beta\,\zeta)\,d\zeta=\frac{[\sqrt{\beta^2-\kappa^2}+i\kappa]^{\lambda }}{\lambda \,\beta^{\lambda }}$}
+\begin{equation}\label{kmu2}
+  k =  k',
+\end{equation}
+in accordance with eq. \re{kmu}. 
+
+\noindent Using again the expression of the Fourier transform of the Bessel function but   the Fourier transform
+\begin{eqnarray}
+ \tilde{f}_+ (k,p) &=& \frac{1}{2\pi^2} \int f(a,l) e^{-i k e^{2a}} e^{-ipl} e^{2a} da\, dl \label{Fourierplus}\\
+  f(a,l) &=& \phantom{\frac{1}{2\pi^2}}\int \tilde{f}_+ (k,p) e^{i k e^{+2a}} e^{i p l} dk dp.
+\end{eqnarray}
+ one is led to
+\begin{eqnarray}\label{VsDev}
+ (V_s f)(a,l)  =\frac{\sqrt{k}}{2\,\pi}\int \frac{(1+\hbar^2\, p^2)^{-1/4}\,e^{i p l}\, e^{i \,q\, n}}{(k +   \hbar^2\,(s^2(\hbar) - \rho^2))^{1/2}} \left[\frac{\sqrt{k +  \hbar^2 \,(s^2(\hbar) - \rho^2)} + i  \,\hbar\,\rho }{\sqrt{k} +  i \, \hbar\, s(\hbar)} \right]^{\frac{\sqrt{k}}{ \hbar}}  \tilde{f}_+ (r,q)\,dp\,dr\,dn\,dq
+\end{eqnarray}
 where
-κ =re−2a +pl +s(ℏ)
-√
-1 + ℏ2r2. (115)
-Setting X =re−2a +pl , the integrand can be Taylor expanded around ℏ = 0 as
-√
-k (1 + ℏ2p2)−1/4
-(k + ℏ2 (s2(ℏ)−κ2))1/2
-[√
-k + ℏ2 (s2(ℏ)−κ2) +i ℏκ√
-k +i ℏs(ℏ)
-]
-√
-k
-ℏ
-= eiXP (X,p 2) (116)
-where (116) deﬁnes the ℏ power series P (X,p 2), which, at ﬁrst (non-trivial) order 5, reads as :
-P (X,p 2) = 1 + ℏ2
-(
-−p2 (1− 2is )
-4 + s
-kX + (1 +is )
-2k X2 + i
-6kX3
-)
-+O(ℏ4) (117)
-The important point in the previous expression is the structure of the expansion, and in particular the
-occurrence of the factor eiX. Using this result, the expansion of the operator U follows:
-(Usf)(a,l ) ≈
-∫
-P (X,p 2)eiX ˜f−(r,p )dpdr
-=
-∫
-P [−i∂σ,−∂2
-α]eiσXeiαp ˜f(k,p )−
-⏐⏐⏐
-σ=1,α=0
-dpdr
-= P [−i∂σ,−∂2
-α]f(a− 1
-2 lnσ,σl +α)
-⏐⏐⏐⏐
-σ=1,α=0
-. (118)
-It therefore appears appears that the product so-deﬁned deforms the pointwise product on the hyperbolic
-plane in the direction of the SL(2 , R)-invariant Poisson bracket.
-A similar computation can be performed starting from the inverse operator. One has (with x =e2(b−a))
-(Vsf)(a,l ) = Dℏ(s)
-2
-∫
-R2×R+
-drdndxJ √
-k
-ℏ
-(
-√
-s2 +k′/ℏ2x)(1 + ℏ2r2)− 1
-4
-eisx
-√
-1+ℏ2r2
-eir(nx−l)f(a + 1
-2 lnx,n ) . (119)
-The requirement Vs1 = 1, imposes
-Dℏ(s) =
-√
-k
-π ℏ
-(√
-k′−i ℏs(ℏ)√
-k′ +i ℏs(ℏ)
-)
-√
-k
-2 ℏ
-(120)
-while the right classical limit implies 6
-k =k′, (121)
-5If we assume s to be constant, instead of a function of ℏ, this expansion involves only even power of ℏ.
-6A useful relation in that case is (see ref.[41], sec. 13.2, eq.(7)) :
-R∞
-0
-e(iκ−ϵ)ζ
-ζ Jλ(βζ )dζ = [
-√
-β2−κ2+iκ]λ
-λβλ
-18
-in accordance with eq. (111).
-Using again the expression of the Fourier transform of the Bessel function but the Fourier transform
-˜f+(k,p ) = 1
-2π2
-∫
-f(a,l )e−ike2a
-e−iple2adadl (122)
-f(a,l ) =
-∫
-˜f+(k,p )eike+2a
-eipldkdp. (123)
-one is led to
-(Vsf)(a,l ) =
-√
-k
-2π
-∫ (1 + ℏ2p2)−1/4eipleiqn
-(k + ℏ2 (s2(ℏ)−ρ2))1/2
-[√
-k + ℏ2 (s2(ℏ)−ρ2) +i ℏρ√
-k +i ℏs(ℏ)
-]
-√
-k
-ℏ
-˜f+(r,q )dpdrdndq (124)
-where
-ρ =re 2a−pn +s(ℏ)
-√
-1 + ℏ2p2 . (125)
-Setting Y =re 2a−pn , we may write
-√
-k (1 + ℏ2p2)−1/4
-(k + ℏ2 (s2(ℏ)−ρ2))1/2
-[√
-k + ℏ2 (s2(ℏ)−ρ2) +i ℏρ√
-k +i ℏs(ℏ)
-]
-√
-k
-ℏ
-=eiYP (Y,p 2), (126)
-whereP has the same expression as in (116) (Let us remark that this holds only because we use the strongly
-closed S-invariant star product). One successively gets
-(Vsf)(a,l ) = 1
-2π
-∫
-dpdrdndqe ipl eiqn P (Y,p 2)eiY ˜f+(r,q )
-= 1
-2π
-∫
-dpdrdndqP [−i∂σ,−∂2
-l ]eiσY eipl eiqn ˜f+(k,q )
-⏐⏐⏐
-σ=1
-= 1
-2π
-∫
-dpdnP [−i∂σ,−∂2
-l ]f(a + 1
-2 lnσ,n )eip (l−nσ )
-⏐⏐⏐⏐
-σ=1
-= P [−i∂σ,−∂2
-l ] 1
-σ f(a + 1
-2 lnσ, l
-σ )
-⏐⏐⏐⏐
-σ=1
-. (127)
-3.6 The case k = ℏ2
-4 and Zagier type deformations
-We now consider the case of our closed star product ⋆ := T closed(⋆0
-ℏ) together with a particular derivation
-Dℏ∈ Der(⋆) deﬁned as setting k = ℏ2
-4 in the expression (51) and then intertwining by T closed following (59).
-We then proceed as in the subsection 3.4, but use the following variables rather than (89):
-ξ =q
-1
-2
-2
-ℏ sinh( ℏ
-2ζ) , η =q
-1
-2 cosh( ℏ
-2ζ) (128)
-Note that in contrast with the coordinates (89), the above one are not singular in the limit ℏ→ 0. Indeed,
-they become ξ0 =q
-1
-2ζ and η0 =q
-1
-2 in the limit.
-Within these normalisations, the equation (91) then becomes:
-∂ξ∂ηG = 4k′ηξG ; (129)
+\begin{equation}
+ \rho =  {r\, e^{2a} - p\, n}  + s(\hbar)\, \sqrt{1+\hbar^2 \,p^2}\qquad.
+\end{equation}
+Setting $Y = r\, e^{2a} - p\, n$, we may write
+\begin{equation}
+\sqrt{k} \frac{(1+\hbar^2\, p^2)^{-1/4} }{(k +  \hbar^2\,(s^2(\hbar) - \rho^2))^{1/2}} \left[\frac{\sqrt{k +  \hbar^2 \,(s^2(\hbar) - \rho^2)} + i \, \hbar\,\rho }{\sqrt{k} +  i \,\hbar\, s(\hbar)} \right]^{\frac{\sqrt{k}}{ \hbar}} = e^{i Y} P(Y,p^2),
+\end{equation}
+where $P$ has the same expression as in \re{TaylorU} (Let us remark that this holds only  because we use the strongly closed $\SS$-invariant star product).
+One successively gets
+\begin{eqnarray}
+ (V_s f)(a,l)  &=& \frac{1}{2\pi} \int dp \, dr\, dn \,dq \, e^{i \,p\, l} \,e^{i\,q\,n} P(Y,p^2) e^{iY} \tilde{f} _+(r,q) \nonumber \\
+               &=&   \frac{1}{2\pi} \int dp \, dr\, dn \,dq \,  P[-i \p_\sigma,-\p^2_l] e^{i \sigma Y} \, e^{i \,p\, l} \,e^{i\,q\,n}\left . \tilde{f}_+ (k,q)\right\vert_{\sigma=1} \nonumber\\
+               &=& \frac{1}{2\pi} \int dp \,dn \;  P[-i \p_\sigma,-\p^2_l]\left. f(a+\frac{1}{2} \ln\sigma,n) e^{i\,p\,(l-n\,\sigma)} \right\vert_{\sigma=1}\nonumber\\
+               &=& P[-i \p_\sigma,-\p^2_l] \frac{1}{\sigma}\left. f(a+\frac{1}{2} \ln\sigma,\frac{l}{\sigma})\right\vert_{\sigma=1} \qquad .
+\end{eqnarray}
+
+\subsection{The case $k\;=\;\frac{\hbar^2}{4}$ and Zagier type deformations}
+We now consider the case of our closed star product $\star:=T^{\mbox{\tiny{\rm closed}}}(\star^0_\hbar)$
+together with a particular derivation $D_\hbar\in\mathfrak{Der}(\star)$ defined as setting $k=\frac{\hbar^2}{4}$ in the
+expression (\ref{lambdaF}) and then intertwining by $T^{\mbox{\tiny{\rm closed}}}$ following (\ref{DERIV}).
+We then proceed as in the subsection \ref{SectSL}, but use the following variables rather than (\ref{UVqr}):
+\begin{equation}\label{UVqrbis}
+\xi = q^{\frac{1}{2}}\frac{2}{\hbar}\sinh(\frac{\hbar}{2}\zeta) \quad, \quad \eta =
+q^{\frac{1}{2}}\cosh(\frac{\hbar}{2}\zeta)  \quad
+\end{equation}
+Note that in contrast with the coordinates (\ref{UVqr}), the above one are not singular in the limit $\hbar\to 0$. Indeed, they become $\xi_0=q^{\frac{1}{2}}\zeta$ and $\eta_0=q^{\frac{1}{2}}$ in the limit.
+
+\noindent Within these normalisations, the equation (\ref{wave})  then becomes:
+\begin{equation}\label{wave-bis}
+\partial_\xi\partial_\eta G\;=\;4k'\,\eta\xi\,G\;;
+\end{equation}
 with, as before,
-G(q,r ) =q1/2(1 +r2ℏ2)1/4F (q,r ). (130)
-Note that from (84), the classical limit ℏ→ 0 of the latter is prescribed to equal
-Fcl := δ0(a)⊗ 1r . (131)
-19
-One way to achieve this requirement is to allow k′ to depend on ℏ in such a way that the condition (111)
-remains satisﬁed
-lim
-ℏ→0
-k′(ℏ) = 0 . (132)
-More naturally, this corresponds to considering the ℏ-independent wave equation in the case k′ = 0:
-∂ξ∂ηG = 0 , (133)
-which trivially admits the ξ-independent solution:
-G = G(η) = G
-(
-ea
-√
-2
-2
-(
-1 +
-√
-1 + ℏ2r2
-) 1
-2
-)
-; (134)
+\begin{equation}
+G(q,r)  = q^{1/2} (1+ r^2\hbar^2)^{1/4}\,F(q,r)\;.
+\end{equation}
+Note that from (\ref{uF}), the classical  limit $\hbar\to0$ of the latter is prescribed to equal
+\begin{equation}
+F_{\mbox{\rm cl}}\;:=\;\delta_0(a)\otimes{\bf 1}_r\;.
+\end{equation}
+One way to achieve this requirement is to allow $k'$ to depend on $\hbar$ in such a way that the condition (\ref{kmu}) remains satisfied
+\begin{equation}
+\lim_{\hbar\to0}k'(\hbar)\;=\;0\;.
+\end{equation}
+More naturally, this corresponds to considering the $\hbar$-independent wave equation in the case $k'=0$:
+\begin{equation}\label{wave-ter}
+\partial_\xi\partial_\eta G\;=\;0\;,
+\end{equation}
+which trivially admits the $\xi$-independent solution:
+\begin{equation}
+G\;=\;G(\eta)\;=\:G\left(e^a\frac{\sqrt2}{2}\left(1+\sqrt{1+\hbar^2r^2}\right)^{\frac{1}{2}}\right)\;;
+\end{equation}
 with
-G(ea) := eaδ0(a). (135)
+\begin{equation}
+G(e^a)\;:=\;e^{a}\,\delta_0(a)\;.
+\end{equation}
 The above discussion leads us to the particular solution:
-uℏ(a,𝓁 ) :=
-√
-2e2a
-4π
-∫ ∞
-−∞
-eir𝓁e2a
-(
-1 +
-√
-1 + ℏ2r2
-√
-1 + ℏ2r2
-) 1
-2
-δ0
-(
-a + 1
-2 log(1
-2(1 +
-√
-1 + ℏ2r2) )
-)
-dr ; (136)
+\begin{equation}
+u_\hbar(a,\ell)\;:=\;\frac{\sqrt2e^{2a}}{4\pi}\int_{-\infty}^\infty\,e^{ir\ell e^{2a}}\left(\frac{1+\sqrt{1+\hbar^2r^2}}{\sqrt{1+\hbar^2r^2}}\right)^{\frac{1}{2}}\,\delta_0\left(\,a\,+\,\frac{1}{2}\log
+(\frac{1}{2}(1+\sqrt{1+\hbar^2r^2})\,)\right)\,{\rm d}r\;;
+\end{equation}
 that admits the correct limit:
-u0(a,𝓁 ) = δe(a,𝓁 ). (137)
-The associated convolution operator U produces a deformation quantization that is invariant under the
-inﬁnitesimal action of sl2(R) on an open S-orbit in R2 (the group S acting by special linear transformations).
-The corresponding underlying geometry here being ﬂat ( k′ = 0). In particular, this class of solutions
-reproduces star products of the same type as the one considered by Connes and Moscovici in [42], primarily
-constructed by Zagier as a (sl)2(R)-invariant deformation of the algebra of modular forms [43].
-3.7 Unterberger type solutions and Weinstein’s asymptotics
-In [31, 32] an associative SL(2, R) invariant composition law, though not a star product, has been derived in
-a totally diﬀerent context by A. and J. Unterberger, for the composition of symbols in the so-called Bessel
-calculus. We are going to show that a slight modiﬁcation of their formula yields one of the simplest products
-in the family we have found.
-As a prealable, let us notice, that in their works, these authors also make use of an interwiner operator linking
-an SL(2, R)- invariant composition law with an AN-invariant star product, but not the strongly closed one
-we have adopted. Instead of this one, the star product they use may be expressed in our framework as the
-one obtained from (56) with special weight function P(ℏξ) = cosh(ℏξ), as proven in [44].
-The convolution kernel of an intertwiner between an SL(2 , R)-invariant star product # and a general AN -
-invariant product, itself built from the Moyal star product twisted by an operator TP is obtained from the
-operator U we constructed in section 3.4 by:
-UP =U◦ (T
-closed
-)−1◦TP . (138)
-In particular, if TP is of the form of eq. (56), the kernel of UP is then given as a superposition of modes,
-uP(a,l ) =
-∫
-φ(s′)uP
-ℏ,s′(a,l )ds′ , (139)
-with
-uP
-ℏ,s(a,l ) =e2ahs(e2a)
-∫
-(1 + ℏ2r2)− 1
-2P(arcsinh(ℏr))eis
-√
-1+ℏ2r2e2a
-eirle2a
-dr , (140)
-where hs(x)∝J√
-k/ℏ[
-√
-s2 +k/ℏ2 x].
-20
-An analog computation yields the kernel of the inverse operatorU−1
-P again as a superposition of modes, each
-of them being given by
-vP
-ℏ,s(a,l ) =e−2ahs(e−2a)
-∫
-P−1(arcsinh(ℏr))eis
-√
-1+ℏ2r2e−2a
-e−irldr . (141)
-Let us plug B = 0 in (95), and normalize the modes accordingly to eqs (109, 120) with k =k′ (see eqs (111,
-121). The operator U considered in [31, 32] then corresponds to the value s = 0 in (97). This obviously
-amounts to pick up φ(s′) = δ(s′) in eq. (139). By taking P(ℏξ) = cosh( ℏξ), and denoting by UU the
-corresponding operator, one ﬁnds
-(UUf)(a,l ) =
-√
-k
-ℏ
-∫
-dxJ √
-k
-ℏ
-(
-√
-kx/ ℏ)f(a− 1
-2 lnx,lx ). (142)
-The inverse operator, U−1
-U corresponds to the kernel resulting from the superposition
-vℏ,s(a,l ) =
-∫
-ψ(s)ΨU
-ℏ,s(a,l )ds (143)
+\begin{equation}
+u_0(a,\ell)\;=\;\delta_{e}(a,\ell)\;.
+\end{equation}
+The associated convolution operator $U$ produces a deformation
+quantization that is invariant under the infinitesimal action of ${\mathfrak{sl}}_2(\R)$ on an open $\SS$-orbit
+in $\R^2$ (the group $\SS$ acting by special linear transformations). The corresponding underlying geometry 
+here being flat ($k'=0$). In particular, this class of solutions reproduces star products of the same type as the one considered by Connes and Moscovici in \cite{CM}, primarily constructed by Zagier as a $\mathfrak(sl)_2(\R)$-invariant deformation of the algebra of modular forms \cite{Za}.
+
+
+\subsection{Unterberger type solutions and Weinstein's asymptotics}\label{Unterberger}
+In \cite{Unt,Unt2} an associative $\SL$ invariant composition law, though not a star product, has been derived  in a totally different context by A.
+and J. Unterberger, for the composition of symbols in the so-called Bessel calculus. We are going to show that a slight modification of their formula yields one of the simplest products in the family we have found.
+
+\noindent As a prealable, let us notice, that in their works, these authors also make use of an interwiner operator linking an $\SL$- invariant composition law with an $AN$-invariant star product, but not the strongly closed one we have adopted. Instead of this one, the star product they use may be expressed in our framework as the one  obtained from (\ref{OpT}) with special weight function  ${\cal P}(\hbar \xi)=\cosh (\hbar \xi)$, as proven in \cite{BielMassar2}. 
+\par\noindent The
+convolution kernel of an intertwiner between an $\SL$-invariant star product $\#$ and a general
+$AN\,$-invariant product, itself built from the Moyal star product twisted by an operator $T_{\cal P}$ is obtained from the operator $U$ we constructed in section \ref{SectSL} by:
+\begin{equation}\label{fromone}
+ U_{\cal P} = U  \circ (T^{{\mbox{\tiny{\rm closed}}}})^{-1} \circ T_{\cal P} \quad .
+ \end{equation}
+In particular, if $T_{\cal P}$ is of the form of eq. (\ref{OpT}), the kernel of $U_{\cal P}$ is then given as a superposition of modes,
+\begin{equation}\label{ugenkernel}
+ u_{\cal P} (a,l) = \int \, \phi(s') u^{\cal P}_{\hbar,s'}(a,l) \, ds' \quad , 
+\end{equation}
+with 
+ \begin{equation}\label{uGenP}
+u^{\cal P}_{\hbar,s}(a,l) =  e^{2a} \, h_s( e^{2a})\, \int \,
+(1+\hbar^2 r^2)^{-\frac{1}{2}}\,{\cal P}({\rm arcsinh}(\hbar r))\, e^{ i s \sqrt{1+
+\hbar^2 r^2} e^{2a}} \, e^{i r l e^{2a}} \, dr \quad,
+\end{equation}
+where $h_s(x)\propto  J_{
+{\sqrt{k}}/{\hbar}}[\sqrt{s^2+ {k} /{\hbar^2}}\,\,
+x] $.
+ 
+\noindent An analog computation yields the kernel of the inverse operator $U^{-1}_{\cal P}$ 
+again as a superposition of modes, each of them being given by 
+\begin{equation} 
+v^{\cal P}_{\hbar,s}(a,l) = e^{-2a} \, h_s( e^{-2a})\, \int
+\, {\cal P}^{-1}({\rm arcsinh}(\hbar\,r)) e^{ i s \sqrt{1+\hbar^2
+r^2} e^{-2a}} \, e^{-i r l} \, dr \quad .
+\end{equation}
+
+\noindent Let us plug  $B=0$ in \re{hs}, and normalize the modes accordingly to eqs (\ref{Cnorm}, \ref{Dnorm}) with $k=k'$ (see eqs (\ref{kmu}, \ref{kmu2}). The operator $U$ considered in  \cite{Unt,Unt2} then  corresponds to the value $s=0$  in \re{uGen}. This obviously amounts to pick up $\phi(s') = \delta (s')$ in eq. (\ref{ugenkernel}). By taking ${\cal P}(\hbar\,\xi)=\cosh (\hbar\,\xi)$, and denoting by $U_U$ the corresponding operator, one finds
+\begin{equation}
+ (U_{U} f) (a,l) = \frac{\sqrt{k}}{ \hbar} \int dx \; J_{\frac{\sqrt{k}}{\hbar}} ( {\sqrt{k}}\,x/\hbar) \, f(a-\frac{1}{2} \ln x,l\,x ).
+\end{equation}
+The inverse operator, $U^{-1}_U$ corresponds to the kernel resulting from the superposition
+\begin{equation}
+  v_{\hbar,s} (a,l) = \int \psi(s) \Psi_{\hbar,s}^{U}(a,l) ds
+\end{equation}
 of modes
-ΨU
-ℏ,s(a,l ) =
-√
-k
-2π ℏ
-(√
-k′−i ℏs(ℏ)√
-k′ +i ℏs(ℏ)
-)
-√
-k
-2 ℏ
-J√
-k
-ℏ
-(
-√
-s2 +k′/ℏ2x)
-∫ eisx
-√
-1+ℏ2r2
-e−irl
-√
-(1 + ℏ2r2)
-dr (144)
-that is obtained by using
-ψ(s) = (i−s)δ′(s) (145)
-in the superposition of modes like those appearing in eq. (119), normalized according to eq. (120). Explicitly,
-one gets
-(U−1
-U f)(a,l ) =
-√
-k
-ℏ
-∫
-dxJ √
-k
-ℏ
-(
-√
-kx/ ℏ)f(a + 1
-2 lnx, l
-x). (146)
-Apart from the ℏ-dependent pre-factors, these operators are exactly the ones found in [31], see equations
-(4.16) and (4.7).
-Of course, the asymptotic expansions allows to buildU−1 perturbatively, as an expansion inℏ. For illustrative
-purpose let us mention, that for a ﬁxed value of s we obtain at fourth order:
-U−1
-s =
-(
-Vr− i
-4π
-[
-1−i ℏ2r (1
-4 +ir )
-]
-∂rVr
-)
-r=−s
-+O(ℏ5)
-=
-∫ [
-(1 + ℏ2
-16π +i ℏ2
-2 r)δ[r +s] + i
-4π (1−i ℏ2
-4 r +π ℏ2r2)δ′(r +s)
-]
-Vrdr +O(ℏ5)
-(147)
-By a long but straightforward computation, the above explicit expressions of UU and U−1
-U yield (for k = 1)
-the following integral formula for the invariant star product on the hyperbolic plane D:
-u♯ ℏv (x) = 1
-16π3ℏ4
-∫
-D×D
-Kℏ (Scan(x,y,z )) u(y)v(z) dy dz ;
-where dy denotes the Liouville measure on D and where
-Kℏ(ϖ) :=
-∫ ∞
-0
-s2J 1
-ℏ
-(s/ℏ)e
-i
-ℏsϖ ds. (148)
-Using tabulated Laplace transforms, one ﬁrst computes
-Fµ(p) =
-∫ ∞
-0
-e−ptJµ(t)dt = 1
-pµ+1
-[1 + (1 + 1
-p2 )1/2]−µ
-√
-1 + 1
-p2
-, (149)
-21
-with p =ε−iϖ, ε≪ being a small real part necessary to ensure convergence. Using the following relations
-1 + 1
-p2 =
-{
-1−ϖ−2 if ϖ2 > 1,
-(ϖ−2− 1)ei sign(ϖ)π if ϖ2 < 1, (150)
-and
-1 +
-√
-1 + 1
-p2 =
-{
-1 + (1−ϖ−2)1/2∈ R if ϖ2 > 1,
-1 + (ϖ−2− 1)1/2ei sign(ϖ)π/2 if ϖ2 < 1, (151)
-one ﬁnally gets
-Fµ(−iϖ) =
-{
-1√
-1−ϖ2 ei µ
-2fW (ϖ) if ϖ2 < 1,
-|ϖ|−(µ+2)(ϖ2− 1)−1/2[1 + (1−ϖ−2)1/2]−µei π
-2 (µ+1)sign(ϖ) if ϖ2 > 1 ; (152)
-wherefW is the odd function (40) deﬁned by fW (Scan) :=SW . Note that, when ϖ2 < 1, the phase ofFµ is
-precisely given by fW (ϖ), while when ϖ2 > 1, it is pure phase. The kernel Kµ is now simply described by
-Kµ(ϖ) =− d2
-dϖ2Fµ(−iϖ). (153)
-The phase Sµ of the kernel Kµ can then be determined from (153). For ϖ2 < 1, one gets
-Sµ(ϖ) =µfW (ϖ)
-2 − arctan[ 3µ sinfW (ϖ)
-µ2− 4 + (µ2 + 2) cosfW (ϖ)] . (154)
-In other words, for ϖ2 < 1, which corresponds to triples of points in D for which Weinstein’s SW is well
-deﬁned, the above kernel Kℏ can be expressed under the WKB oscillatory form. The expression of the
-corresponding phase is then the following:
-S = SW
-2 − ℏ arctan[ 3ℏ sinSW
-1− 4ℏ2 + (1 + 2ℏ2) cosSW
-] . (155)
+\begin{equation}
+ \Psi_{\hbar,s}^{U}(a,l) =\frac{\sqrt{k}}{ 2\,\pi\,\hbar}\left(\frac{\sqrt{k'}-i\,\hbar\,s(\hbar)}{\sqrt{k'}+i\,\hbar\,s(\hbar)}\right)^\frac {\sqrt{k}} {2\,\hbar}\, J_{\frac{\sqrt{k}}{\hbar}}(\sqrt{s^2 + k'/\hbar^2} \,x) \int    
+ \frac{ e^{i \,s\, x \sqrt{1+\hbar^2\, r^2}} \, e^{- i r l}}{\sqrt{ (1+\hbar^2 \,r^2)}}\, dr 
+ \end{equation}
+that is obtained by using 
+\begin{equation}
+\psi(s)=(i-s)\,\delta'(s)
+\end{equation}
+in the superposition of modes like those appearing in eq. (\ref{Vsf}), normalized according to eq. (\ref{Dnorm}).
+Explicitly,   one gets
+\begin{equation}
+ (U^{-1}_U f)(a,l) = \frac{\sqrt{k}}{ \hbar} \int dx \; J_{\frac{\sqrt{k}}{\hbar}} ({\sqrt{k}}\,x/\hbar) \, f(a+\frac{1}{2} \ln x ,\frac{  l}{x}).
+\end{equation}
+Apart from the $\hbar$-dependent pre-factors, these operators are exactly the ones found in \cite{Unt}, see equations (4.16) and (4.7).
+
+\noindent Of course, the asymptotic expansions allows to build $U^{-1}$ perturbatively, as an expansion in $\hbar$. For illustrative purpose let us mention, that for a fixed value of $s$ we obtain at fourth order: 
+\begin{eqnarray}
+U^{-1}_s&=&\left(V_r -\frac i{4\,\pi}\,\left[1- i\,\hbar^2 r\,(\frac14+ i\,r)\right]\,\partial_r\,V_r\right)_{r=-s}+ O(\hbar^5)\nonumber \\
+&=&\int \left[(1+\frac {\hbar^2}{16\,\pi}+i\frac{\hbar^2}2\,r) \delta[r+s]+\frac i{4\,\pi}(1-i\,\frac{\hbar^2}4\,r+ \pi\,\hbar^2\,r^2)\delta'(r+s)\right]\,V_r\, dr + O(\hbar^5)\nonumber\\
+&&
+\end{eqnarray}
+\noindent By a long but straightforward computation, the above explicit expressions of $U_U$ and $U_U^{-1}$ yield
+(for $k=1$) the following integral formula for the invariant star product on the hyperbolic plane $\DD$:
+\begin{equation*}
+u\,\sharp_\hbar \,v\,(x)\;=\;\frac{1}{16 \pi^3 \hbar^4}\, \int_{\DD\times\DD}\,K_\hbar\left(S_{\mbox{\rm can}}(x,y,z)\right)\,u(y)\,v(z)\,{\rm d}y\,{\rm d}z\;;
+\end{equation*}
+where ${\rm d}y$ denotes the Liouville measure on $\DD$ and where 
+\begin{equation}\label{noyauK}
+K_\hbar (\varpi)\;:=\; \int_0^\infty \, s^2 J_{\frac{1}{\hbar}} (s/\hbar)\,
+ e^{\frac{i}{\hbar} s \varpi} \,{\rm d}s\;.
+\end{equation}
+
+
+\noindent Using tabulated Laplace transforms, one first computes
+\begin{equation}
+{\mathcal F}_\m(p)=\int_0^\infty \, e^{-pt} J_\mu (t) dt =
+\frac{1}{p^{\mu +1}}
+\frac{[1+(1+\frac{1}{p^2})^{1/2}]^{-\mu}}{\sqrt{1+\frac{1}{p^2}}}
+\quad ,
+\end{equation}
+with $p=\varepsilon - i \varpi$, $\varepsilon \ll$ being a small
+real part necessary to ensure convergence.
+Using the following relations
+\begin{equation} 1 + \frac{1}{p^2}  = \left\{ \bearlll
+  1- \varpi^{-2} &\;& {\rm if}\ \varpi^2 >1 ,  \\[.3em]
+  (\varpi^{-2} -1) \,{e}^{i \,\rm{sign}(\varpi)\pi} &\;& {\rm if}\ \varpi^2 < 1 ,  \eear\right .
+\end{equation}
+and 
+\begin{equation} 1 + \sqrt{1 + \frac{1}{p^2}}  = \left\{ \bearlll
+ 1+ (1- \varpi^{-2})^{1/2} \in \R &\;& {\rm if}\ \varpi^2 >1 ,  \\[.3em]
+ 1+  (\varpi^{-2} -1)^{1/2} \,{e}^{i \,\rm{sign}(\varpi)\pi/2} &\;& {\rm if}\ \varpi^2 < 1 \;,  \eear\right .
+\end{equation}
+one finally gets
+\begin{equation}
+ {\mathcal F}_\m(-i \varpi)  = \left\{ \bearlll
+ \frac{1}{\sqrt{1-\varpi^2}}\,\, e^{i \, \frac{\mu}{2}
+f_W(\varpi)} &\;& {\rm if}\ \varpi^2 < 1 ,  \\[.3em]
+  |\varpi|^{-(\m+2)} (\varpi^2 - 1)^{-1/2} [1+ (1- \varpi^{-2})^{1/2}]^{-\m} \,{e}^{i\, \frac{\pi}{2} (\m + 1) \rm{sign}(\varpi)} &\;& {\rm if}\ \varpi^2 > 1 \;;  \eear\right .
+\end{equation}
+where $f_W$ is the odd function  (\ref{fW}) defined by $f_W(S_{\mbox{\rm can}}):=S_W$.
+Note that, when $\varpi^2 < 1$, the phase of ${\mathcal F}_\m$ is precisely given by $f_W(\varpi)$, while when $\varpi^2 > 1$, it is pure phase. The kernel $K_\mu$ is now simply described  by
+\beq \label{KMU}
+  K_\mu (\varpi) = -\frac{d^2}{d\varpi^2}{\mathcal F}_\m(-i \varpi).
+\eeq
+\noindent The phase $S_\mu$ of the kernel $K_\m$ can then be determined from \re{KMU}. For $\varpi^2 <1$, one gets
+\begin{equation}\label{PhaseK}
+S_\mu(\varpi) = \mu \frac{f_W(\varpi)}{2} - \arctan [\frac{ 3
+ \mu \sin f_W(\varpi)}{\mu^2 -4 + (\mu^2+2) \cos
+ f_W(\varpi)}] \quad .
+\end{equation}
+\noindent In other words, for $\varpi^2 <1$, which corresponds to triples of points in $\DD$ for which Weinstein's $S_W$
+is well defined,  the above kernel $K_\hbar$ can be expressed under the WKB oscillatory form. The expression
+of the corresponding phase is then the following:
+\begin{equation}
+S\;= \; \frac{S_W}{2} - \hbar\arctan [\frac{ 3
+\hbar\sin S_W}{ 1 -4\hbar^2 + (1+2\hbar^2) \cos
+S_W}] \quad .
+\end{equation}
 In particular, one has the following asymptotics:
-S ∼ SW
-2 ,
-agreeing with A. Weinstein’s picture in [33].
-Acknowledgments
-P.B. and Ph.S. acknowledge partial support from the IISN-Belgium (convention 4.4511.06). P.B. acknowl-
-edges partial support from the IAP grant ‘NOSY’ delivered by the Belgian Federal Government. S.D. and
-Ph.S. warmly thank the IHES for its hospitality and the exceptional working conditions provided to its
-guests.
+\begin{equation*}
+S\;\sim\;\frac{S_W}{2} \;,
+\end{equation*}
+agreeing with  A. Weinstein's picture in \cite{WeinsteinTr}.
+
+
+\section{Acknowledgments}
+P.B. and Ph.S. acknowledge partial support from the IISN-Belgium (convention 4.4511.06). 
+ P.B. acknowledges partial support from the IAP grant `NOSY' delivered by the Belgian Federal Government. S.D. and Ph.S.  warmly thank the IHES for its hospitality and the exceptional working conditions provided to its guests.

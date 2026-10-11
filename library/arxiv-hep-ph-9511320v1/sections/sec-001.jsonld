@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-hep-ph-9511320v1/sections/sec-001",
   "@type": [
     "doco:Section"
   ],
-  "title": "Introduction",
-  "pageStart": 1,
-  "pageEnd": 2,
+  "title": "Electromagnetic Form Factors for the Baryon Octet",
+  "pageStart": 12,
+  "pageEnd": 13,
   "contains": [
     "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-001"
   ],
-  "derivedFrom": "library/arxiv-hep-ph-9511320v1/manifest",
-  "sourceDocument": "library/arxiv-hep-ph-9511320v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9511320v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9511320v1/manifest.jsonld",
   "provenance": "ingested"
 }

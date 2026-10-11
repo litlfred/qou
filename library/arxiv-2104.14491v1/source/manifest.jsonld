@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2104.14491v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2104.14491v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2104.14491v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2104.14491&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2104.14491v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2104.14491v1",
+    "content_type": "application/gzip",
+    "sha256": "92d731d5e30bdc9ed0e97cefc0e1f55ded6154083c1fb95576b5dcb9b4263922",
+    "bytes": 84795,
+    "fetched": "2026-10-10T15:16:24+00:00",
+    "files": [
+      {
+        "path": "source/files/KhCab_Text.bbl",
+        "role": "bbl",
+        "sha256": "b188efe9e89130c642c853e63c570f04f374e974caf398279ddccd2a7a17d69c",
+        "bytes": 13871
+      },
+      {
+        "path": "source/files/KhCab_Text.tex",
+        "role": "tex",
+        "sha256": "73df70ade9b02bc901ad2bb41590af337a6c16a795d8cfabc3d0b4956b597b2b",
+        "bytes": 67003
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

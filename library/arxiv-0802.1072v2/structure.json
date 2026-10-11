@@ -6,7 +6,8 @@
   "sha256": "6f4d93f0b7ba5cd72c25ce3f0f068d6c4baa1173c29794007b654ddfc9963b1b",
   "bytes": 197974,
   "pages": 14,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -159,6 +160,75 @@
   "likely_scanned": false,
   "toc_entries": 7,
   "sections": 7,
-  "chars_total": 36250
+  "chars_total": 36250,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "3-braids-v07.tex",
+   "tex_sections": 7,
+   "overlaid": 7,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-three-basic-theorems",
+     "title": "Three basic theorems",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-solving-the-conjugacy-problem-in-b3",
+     "title": "Solving the conjugacy problem in B3",
+     "prose_ratio": 0.86,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-the-band-presentation",
+     "title": "The band presentation",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.737,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-the-word-problem",
+     "title": "The word problem:",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-the-conjugacy-problem-for-3-braids",
+     "title": "The conjugacy problem for 3-braids",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-using-theorems-12-and-3",
+     "title": "Using Theorems 1,2, and 3",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-some-open-questions-and-a-survey-of-known-result",
+     "title": "Some open questions and a survey of known results about links of braid index 3",
+     "prose_ratio": 0.998,
+     "coverage_ratio": 0.998,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

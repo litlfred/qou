@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/cspaper/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/cspaper/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "Q2n:",
-  "pageStart": 2,
-  "pageEnd": 3,
-  "text": "../sections/sec-001-2-q2n.md",
-  "derivedFrom": "library/cspaper/manifest",
-  "sourceDocument": "library/cspaper/manifest",
+  "title": "Consistency and cusp conditions, and the conditions on c",
+  "pageStart": 4,
+  "pageEnd": 8,
+  "text": "../sections/sec-001-2-consistency-and-cusp-conditions-and-the-condit.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cspaper/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cspaper/manifest.jsonld",
   "provenance": "ingested"
 }

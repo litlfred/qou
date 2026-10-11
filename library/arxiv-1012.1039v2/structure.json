@@ -5,7 +5,8 @@
   "file": "1012.1039v2.pdf",
   "sha256": "acb2575050db419d1240392a1be451b27a093aec31d6ef767e62698d265b5fe1",
   "bytes": 305110,
-  "pages": 22
+  "pages": 22,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS",
   "authors_raw": "KOJI FUJIW ARA AND JASON FOX MANNING",
-  "abstract": "Let M be a hyperbolic n–manifold whose cusps have torus cross- sections. In [FM10], the authors constructed a variety of no npositively and negatively curved spaces as “2 π –ﬁllings” of M by replacing the cusps of M with compact “partial cones” of their boundaries. These 2 π –ﬁllings are closed pseudomanifolds, and so have a fundamental class. W e show th at the simplicial volume of any such 2 π –ﬁlling is positive, and bounded above by Vol(M ) vn , where vn is the volume of a regular ideal hyperbolic n–simplex. This result gener- alizes the fact that hyperbolic Dehn ﬁlling of a 3–manifold d oes not increase hyperbolic volume. In particular, we obtain information about the simplicial v olumes of some 4–dimensional homology spheres described by Ratcliﬀe and T schantz, answer- ing a question of Belegradek and establishing the existence of 4–dimensional homology spheres with positive simplicial volume.",
+  "abstract": "Let M be a hyperbolic n\u2013manifold whose cusps have torus cross- sections. In [FM10], the authors constructed a variety of no npositively and negatively curved spaces as \u201c2 \u03c0 \u2013\ufb01llings\u201d of M by replacing the cusps of M with compact \u201cpartial cones\u201d of their boundaries. These 2 \u03c0 \u2013\ufb01llings are closed pseudomanifolds, and so have a fundamental class. W e show th at the simplicial volume of any such 2 \u03c0 \u2013\ufb01lling is positive, and bounded above by Vol(M ) vn , where vn is the volume of a regular ideal hyperbolic n\u2013simplex. This result gener- alizes the fact that hyperbolic Dehn \ufb01lling of a 3\u2013manifold d oes not increase hyperbolic volume. In particular, we obtain information about the simplicial v olumes of some 4\u2013dimensional homology spheres described by Ratcli\ufb00e and T schantz, answer- ing a question of Belegradek and establishing the existence of 4\u2013dimensional homology spheres with positive simplicial volume.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20181030164753-04'00'",
@@ -25,7 +26,7 @@
    "Title": "",
    "Author": ""
   },
-  "title_prev": "where vn is the volume of a regular ideal hyperbolic n–simplex. This result gener- alizes the fact that hyperbolic Dehn filling of a 3–manifold d oes not increase hyperbolic volume",
+  "title_prev": "where vn is the volume of a regular ideal hyperbolic n\u2013simplex. This result gener- alizes the fact that hyperbolic Dehn filling of a 3\u2013manifold d oes not increase hyperbolic volume",
   "title_lines": [
    "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC",
    "MANIFOLDS"
@@ -211,6 +212,87 @@
   "likely_scanned": false,
   "toc_entries": 10,
   "sections": 10,
-  "chars_total": 54493
+  "chars_total": 54493,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 6,
+   "overlaid": 6,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-11-outline",
+     "title": "Outline",
+     "prose_ratio": 0.919,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-2-simplicial-volume-and-duality",
+     "title": "Simplicial volume and duality",
+     "prose_ratio": 0.909,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-21-gromov-norms",
+     "title": "Gromov norms",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-22-symmetrization",
+     "title": "Symmetrization",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-3-main-result",
+     "title": "Main result",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-appendix-a-a-proportionality-theorem",
+     "title": "Appendix A. A proportionality theorem",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-appendix-b-antisymmetrization-of-chains",
+     "title": "Appendix B. (Anti)Symmetrization of chains",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-acknowledgments",
+     "title": "Acknowledgments",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

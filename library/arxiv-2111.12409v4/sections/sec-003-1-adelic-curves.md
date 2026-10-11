@@ -8,328 +8,178 @@ pages: 3-7
 source_pdf: 2111.12409v4.pdf
 source_sha256: 3f0b94ee06fe79bf
 doc_brief: "On the generalisation of Roth’s theorem Paolo Dolce Francesco Zucconi 0 Introduction 1 0.1 History . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 — We"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-this product formula are called proper. The ﬁelds with a product formula of [ Cor97] are trivially
-proper adelic curves when the set of places is endowed with th e counting measure. Moreover in
-[Voj21, Section 3] it is shown that arithmetic function ﬁelds can be endowed with a structure of
-proper adelic curve.
-In this paper we prove two generalisations of Roth’s theorem for proper adelic curves. The main
-results will be stated in terms of some inequalities involvi ng the integral of the measurable functions
-ω ↦→log− |β −αi|ω where α1, . . . , αn ∈ K are the elements we want to approximate by an approximant
-β ∈ K. Unfortunately, the bare deﬁnition of proper adelic curves is too general to give any meaningful
-result in the direction of Roth’s approximation theorem, si nce the functions log − |β − αi| can be in
-principle very “wild”. Therefore, we have to impose some ana lytic conditions on such functions in
-order to get the desired Roth’s theorems. We will see that the se assumptions are not too artiﬁcial,
-in fact we recover Theorems 0.2 and 0.3 as special cases.
-The ﬁrst condition we impose on our adelic curves is the strong µ-equicontinuity (see deﬁnition
-4.1): roughly speaking it means that for any set of ﬁnite measure S ⊂ Ω one requires for the functions
-ω ↦→log |β|ω, to be “equicontinuous” almost everywhere on S. Under such hypothesis we prove the
-following theorem:
-Theorem (A). Let X = ( K, Ω , φ) be a proper adelic curve satisfying the strong µ-equicontinuity
-condition. Let S = S1 ⊔ S2 ⊔ . . . ⊔ Sn ⊆ Ω be the disjoint union of subsets of ﬁnite measure. Fix some
-distinct elements α1, . . . , αn ∈ K, then for any ε > 0 there exists a real constant C > 0 (depending
-on the ﬁxed data) such that for any β ∈ K with hX(β) > C it holds that:
-n∑
-i=1
-∫
-Si
-log− |β − αi|ωdµ(ω) > −(2 + ε)hX(β) . (2)
-We will show that Theorem 0.2 is a consequence of Theorem (A), but on the other hand Vojta’s
-inequality is stronger and moreover it doesn’t depend on the ﬁxed partition of S. Nevertheless, we
-get a generalisation of Theorem 0.3 under the following hypotheses:
-• We slightly relax the strong µ-equicontinuity condition and we allow the existence of arb itrary
-small sets where the equicontinuity fails (see Deﬁnition 5.1).
-• We assume that the functions ω → log− |β|ω are uniformly integrable while β varies (see deﬁni-
-tion 5.2)
-Our second main theorem is then the following:
-Theorem (B). Let X = ( K, Ω , φ) be a proper adelic curve satisfying the µ-equicontinuity condition
-and the uniform integrability condition. Fix some distinct elements α1, . . . , αn ∈ K. Let S be a
-measurable subset of Ω of ﬁnite measure. Then for any ε > 0 and any c ∈ R there exists a real
-constant C > 0 (depending on the ﬁxed data) such that for any β ∈ K with hX(β) > C it holds that:
-∫
-S
-min
-1≤i≤n
-(
-log− |β − αi|ω
-)
-dµ(ω) > −(2 + ε)hX(β) + c (3)
-Finally, in Example 5.4 we show that the µ-equicontinuity condition doesn’t hold for all proper
-adelic curves; in our example we consider Q endowed with a natural structure of adelic curve naturally
-inherited from Q.
-Our strategy consists in weaving together the ideas of Corva ja and Vojta to get rather elementary
-proofs which are independent from Arakelov geometry. On the other hand we don’t have, at the
-moment, any examples of interesting proper adelic curve diﬀ erent from the ones already known. It is
-a much harder problem to ﬁnd new concrete cases in which Roth’ s theorem holds. After all, a highly
-nontrivial achievement of Vojta’s work consists in showing that the µ-equicontinuity and the uniform
-integrability hold for arithmetic function ﬁelds. He does t his by using the geometry of complex ﬁbres
-at inﬁnity appearing in Arakelov geometry.
-The very coarse overview of the proofs is the following: Roth ’s theorem is about the simultaneous
-approximation of some distinct elements α1, . . . , αn that by simplicity (in fact it will be enough
-to consider this case) can be ﬁxed in K, with an element β ∈ K. The existence of a very special
-“interpolating polynomial” δ for such elements (section 2) allows us to write some integral estimates
-for measurable functions on Ω satisfying some technical pro perties related to the heights of the
-αi’s and β (section 3). Then, assuming that Roth’s theorem is false leads to the co nstruction of
-a measurable function θ : S → R≥0 that gives the desired contradiction on the integral estima tes
-previously found. The crucial point of the proof consists in the construction of θ, and this is exactly
-where we need the additional technical conditions on the ade lic curve.
-We ﬁnally mention that section 1 is a brief review of the theory of adelic curves introduced in
-[CM20], and moreover that Appendix A sketches the construction of the interpolating polynomial
-employed in [ Cor97].
-3
-Acknowledgements. Both the authors want to express their gratitude to Pietro Corvaja for
-introducing them to the subject and for his enlightening exp lanations. They also want to thank
-Lorenzo Freddi and Huyai Chen for replying to several questions.
-A special mention goes to the anonymous referee for their inc redible peer-reviewing work with
-this article. Their deep understanding of the topic and thei r compelling comments were extremely
-useful to ﬁx some mistakes.
-The ﬁrst author was partially supported by the EPSRC grant EP /M024830/1 “Symmetries and
-correspondences: intra-disciplinary developments and ap plications”, partially by the research grant
-“Higher Arakelov geometry, Cryptography and Isogenies of E lliptic Curves” conferred by the Univer-
-sity of Udine, and partially by the Ben-Gurion university of the Negev.
-The second author wants to thank his wife Elena.
-1 Adelic curves
-We will use the following notations throughout the whole pap er:
-log+ x := max{0, log x} , log− x := min{0, log x} ; ∀x ∈ R>0
-In this section we closely follow [ CM20, Chapter 3]. For simplicity we restrict to the characterist ic
-0 case, but all the deﬁnitions work also in positive characte ristic.
-Deﬁnition 1.1. Let K be a ﬁeld of characteristic 0, let MK be the set of all absolute values of K and
-let Ω = (Ω , A, µ) be a measure space endowed with a map
-φ : Ω → MK
-ω ↦→ | · | ω := φ(ω) .
-such that for any a ∈ K×, the real valued function ω ↦→log |a|ω lies in L1(Ω , µ). The triple
-X = ( K, Ω , φ) is called an adelic curve ; Ω and φ are respectively the parameter space and the
-parametrization. We denote with Ω ∞ the subset of Ω made of all elements ω such that | · | ω is
-archimedean. We set Ω 0 := Ω \ Ω ∞.
-Remark 1.2. We also recall that a more general notion of adelic curve, wit h the requirement that
-| · |ω is an absolute value only almost everywhere for ω ∈ Ω, had been already given in [ Gub97] under
-the name of M -ﬁeld.
-It is easy to show that the set Ω ∞ is always measurable [ CM20, Proposition 3.1.1].
-Deﬁnition 1.3. An adelic curve X = (K, Ω , φ) is said to be proper if for any a ∈ K×:
-∫
-Ω
-log |a|ω dµ(ω) = 0 . (4)
-Let’s see examples of adelic curves:
-Example 1.4. Any ﬁeld ( k, Vk) satisfying the product formula in the sense of [ Cor97] is a proper
-adelic curve. In fact in this case Ω = Vk, φ is the identity and µ is the counting measure.
-Example 1.5. An arithmetic function ﬁeld K with a big polarisation is a proper adelic curve. A
-quick description of this has been already given in section 0.1. For details see [ Voj21, Section 3].
-Example 1.6. A polarised algebraic function ﬁeld (in d ≥ 1 variables) over a ﬁeld of characteristic
-0 can be endowed with a structure of proper adelic curve. For d etails see [ CM20, 3.2.4].
-In the remaining part of this section we study the behaviour o f adelic curves with respect to ﬁeld
-extensions. In particular let’s ﬁx an adelic curve X = (K, Ω K, φK), and let L be a ﬁnite extension of K,
-our goal is to endow it with a canonical structure of adelic cu rve “coming from K”. In other words,
-we have to deﬁne a parameter space Ω L and a parametrization φL in a canonical way by starting from
-Ω K and φK. For any ω ∈ Ω K we denote with ML,ω the set of absolute values of L extending | · | ω, so
-we put:
-Ω L :=
-⨆
-ω∈Ω K
-ML,ω
-and we have a natural projection map πL|K : Ω L → Ω K whose ﬁbres are ML,ω, for any ω. The inclusion
-ML,ω ⊂ ML clearly induces a parametrization φL : Ω L → ML and for any ν ∈ Ω L we put | · |ν := φL(ν).
-We obtain the following commutative diagram:
-Ω L Ω K
-ML MK
-πL|K
-φL φK (5)
-4
-where the bottom map is the restriction function. Note that Ω L can be abstractly deﬁned as the
-ﬁbered product in the category of sets. Now on Ω L we put the σ-algebra B generated by πL|K and
-all the real maps Ω L ∋ ν ↦→ |a|ν , for any a ∈ L× (on R we put the standard Lebesgue measure). We
-want to deﬁne a suitable measure η on the measurable space (Ω L, B). This requires a bit of work,
-since in general there is no straightforward deﬁnition of pu llback measure through a measurable map.
-Nevertheless, in the case of our πL|K we explain how it is possible to deﬁne the pullback η = π∗
-L|Kµ
-(actually this is a construction from measure theory which w orks in full generality any time we have
-a measure ﬁberwise). Consider a ﬁber ML,ω ⊂ Ω L, then for any ν ∈ ML,ω we can put
-Pω(ν) := [Lν : Kω]
-[L : K] (6)
-where Lν and Kω denote the completions with respect to | · | ν and | · | ω respectively. Thanks to the
-well known equality ∑
-ν∈ML,ω
-[Lν : Kω] = [ L : K] (See [ Neu99, Ch. II, Corollary 8.4]), we conclude
-that equation ( 6) induces a probability measure on the ﬁbre ML,ω, with respect to the power set.
-Now, for any function f : Ω L → R, by using the ﬁberwise integral along each probabilised ﬁbe r ML,ω,
-we deﬁne the map IL|K(f ) : Ω K → R as:
-IL|K(f ) : ω ↦→
-∫
-ML,ω
-f dP ω =
-∑
-ν∈ML,ω
-Pω(ν)f (ν)
-Proposition 1.7. The linear operator IL|K sends B-measurable functions to A-measurable functions.
-Proof. See [ CM20, Theorem 3.3.4].
-At this point we are ready to deﬁne the measure η. For any E ∈ B we put:
-η(E) :=
-∫
-Ω K
-IL|K(χE) dµ (7)
-where χE is the characteristic function of E. Note that the integral of equation ( 7) makes sense
-because of Proposition 1.7.
-Theorem 1.8. The following statements hold:
-(1) The map η deﬁned above is a measure on (Ω L, B) such that for any B-measurable function f we
-have ∫
-Ω L
-f d η =
-∫
-Ω K
-IL|K(f ) dµ .
-(2) f ∈ L1(η) if and only if IL|K(|f |) ∈ L1(µ).
-(3) The pushforward measure of η through πL|K is µ.
-(4) With the above constructions the triple Y = ( L, Ω L, φL) is an adelic curve. Moreover for any
-b ∈ L×
-[L : K]
-∫
-Ω L
-log |b|ν dη(ν) =
-∫
-Ω K
-log |NL|K(b)|ωdµ(ω) (8)
-and in particular if X is proper, then also Y is proper.
-Proof. See [ CM20, Theorem 3.3.7].
-At this point we study algebraic extensions of adelic curves. Let’s ﬁx the adelic curve X =
-(K, Ω K , φK) and let L an algebraic extension of K. We denote with FL|K the family of ﬁnite ﬁeld
-extensions on K contained in L. Clearly FL|K is a directed set with respect to the inclusion, and for
-any K′, K′′ ∈ F L|K such that K′ ⊆ K′′ we have a morphism of measurable spaces
-πK′′|K′ : (Ω K′′ , B′′) → (Ω K′ , B′)
-and an operator IK′′|K′ sending integrable functions to integrable functions as de scribed above in the
-case of ﬁnite extensions. In other words we obtain an inverse system of measure spaces, and we
-would like to deﬁne the adelic structure on L as “a projective limit”. Unfortunately, in the category
-of measure spaces we don’t have a straightforward notion of p rojective limit, therefore we need again
-a bit of extra work. We can deﬁne respectively ML,ω, Ω L and φL : Ω L → ML exactly as we did before
-in the case of ﬁnite extensions, but we need to construct an ad equate structure of measure space on
-Ω L. For any K ′ ∈ F L|K we have a map πL|K′ : Ω L → Ω K′ and a square diagram like ( 5). It turns out
-that πL|K′ is surjective [ CM20, Proposition 3.4.5]. We endow Ω L with the σ-algebra Σ generated by
-the maps {πL|K′ }K′∈FL|K , and it can be shown that (Ω L, Σ) is the projective limit of the inverse system
-{(Ω K′ , B′)}K′∈FL|K in the category of measurable spaces. It remains the issue of putting a canonical
-5
-measure λ on (Ω L, Σ). This process is quite technical, but similarly to the cas e of ﬁnite extensions, it
-can be done by using a ﬁberwise integration on each ML,ω; all the details are given in [ CM20, 3.4.2].
-What we really need is the fact that we can construct an adelic curve ( L, Ω L, λ) which is proper if X
-is proper and such that for any f ∈ L1(µ) we have that f ◦ πL|K ∈ L1(λ) with
-∫
-Ω L
-(f ◦ πL|K)dλ =
-∫
-Ω K
-f dµ . (9)
+\label{introad}
+We will use the following notations throughout the whole paper:
+
+$$\log^+ x := \max\{0, \log x\}\,,\quad \log^- x := \min\{0, \log x\}\,;\quad\forall x\in \mathbb R_{>0}$$
+
+In this section we closely follow \cite[Chapter 3]{Ch-Mo}. For simplicity we restrict to the characteristic $0$ case, but all the definitions work also in positive characteristic.
+\begin{defn}\label{AdCu}
+ Let $\mathbb K$ be a field of characteristic $0$,  let $M_{\mathbb K}$ be the set of all absolute values of $\mathbb K$ and let $\Omega=(\Omega,\mathcal A, \mu)$ be a  measure space endowed with  a map 
+\begin{eqnarray*}
+\phi\colon \Omega&\to& M_{\mathbb K}\\
+\omega &\mapsto & |\cdot|_\omega:=\phi(\omega)\,.
+\end{eqnarray*} 
+ such that for any $a\in \mathbb K^\times$, the real valued function $\omega\mapsto \log |a|_\omega$ lies in  $L^1(\Omega,\mu)$.  The triple $\mathbb X=(\mathbb K,\Omega,\phi)$ is called an \emph{adelic curve}; $\Omega$ and $\phi$ are respectively the \emph{parameter space} and the  \emph{parametrization}.  We denote with $\Omega_{\infty}$ the subset of $\Omega$ made  of all elements $\omega$ such that $|\cdot|_{\omega}$ is archimedean. We set  $\Omega_0:=\Omega\setminus \Omega_{\infty}$.
+\end{defn}
+\begin{rem}
+We also recall that a more general notion of adelic curve, with the requirement that $|\cdot|_\omega$ is an absolute value only almost everywhere for $\omega\in\Omega$, had been already given in  \cite{gu}  under the name of $M$-field. 
+\end{rem}
+
+
+
+It is easy to show that the set $\Omega_{\infty}$ is always measurable \cite[Proposition 3.1.1]{Ch-Mo}.
+
+\begin{defn}
+An adelic curve $\mathbb X=(\mathbb K,\Omega,\phi)$ is said to be \emph{proper}  if for any $a\in \mathbb K^\times$:
+
+\begin{equation}\label{pr_for}
+\int_{\Omega} \log |a|_\omega\, d\mu(\omega)=0\,.
+\end{equation}
+\end{defn}
+
+
+Let's see  examples of adelic curves:
+
+\begin{expl}\label{counting}
+Any field $(k,\mathcal V_k)$ satisfying the product formula in the sense of \cite{C} is a proper adelic curve. In fact in this case $\Omega=\mathcal V_k$, $\phi$ is the identity and  $\mu$ is the counting measure.
+\end{expl}
+
+\begin{expl}
+An arithmetic function field  $K$ with a big polarisation is a proper  adelic curve. A quick description of this has been already given in section \ref{hi}. For details see \cite[Section 3]{vo}. 
+\end{expl}
+\begin{expl} 
+A polarised algebraic function field (in $d\ge 1$ variables) over a field of characteristic $0$ can be endowed with a structure of proper adelic curve. For details see  \cite[3.2.4]{Ch-Mo}. 
+\end{expl}
+In the remaining part of this section we study the behaviour of adelic curves with respect to field extensions. In particular  let's  fix an adelic curve $\mathbb X=(\mathbb K,\Omega_{\mathbb K},\phi_{\mathbb K})$, and let $\mathbb L$ be a \emph{finite} extension of $\mathbb K$, our goal is to endow it with a canonical structure of adelic curve  ``coming from $\mathbb K$''. In other words, we have to define a parameter space $\Omega_{\mathbb L}$ and a parametrization $\phi_{\mathbb L}$ in a canonical way by starting from $\Omega_{\mathbb K}$ and $\phi_{\mathbb K}$. For any $\omega\in\Omega_{\mathbb K}$ we denote with $M_{\mathbb L,\omega}$ the set of absolute values of $\mathbb L$ extending $|\cdot|_{\omega}$, so we put:
+$$\Omega_{\mathbb L}:=\bigsqcup_{\omega\in\Omega_{\mathbb K}}M_{\mathbb L,\omega}$$
+and we have a natural projection map $\pi_{\mathbb L|\mathbb K}:\Omega_{\mathbb L}\to \Omega_{\mathbb K}$ whose fibres are $M_{\mathbb L,\omega}$, for any $\omega$. The inclusion $M_{\mathbb L,\omega}\subset M_{\mathbb L}$ clearly induces a parametrization $\phi_{\mathbb L}\colon\Omega_{\mathbb L}\to M_{\mathbb L}$ and for any $\nu\in\Omega_{\mathbb L}$ we put $|\cdot|_\nu:=\phi_{\mathbb L}(\nu)$. We obtain the following commutative diagram:
+
+\begin{equation}\label{sqdiag}
+\begin{tikzcd}
+ \Omega_{\mathbb L}\arrow[r,"\pi_{\mathbb L|\mathbb K}"] \arrow[d,"\phi_{\mathbb L}"] & \Omega_{\mathbb K}\arrow[d,"\phi_{\mathbb K}"]\\
+M_{\mathbb L}\arrow[r] & M_{\mathbb K}
+\end{tikzcd}
+\end{equation}
+where the bottom map is the restriction function. Note that $\Omega_{\mathbb L}$ can be abstractly defined as the fibered product in the category of sets. Now on $\Omega_{\mathbb L}$ we put the $\sigma$-algebra $\mathcal B$ generated by $\pi_{\mathbb L|\mathbb K}$ and all the real maps $\Omega_{\mathbb L}\ni\nu\mapsto|a|_{\nu}$, for any $a\in\mathbb L^\times$ (on $\mathbb R$ we put the standard Lebesgue measure). We want to define a suitable measure $\eta$ on the measurable space $(\Omega_{\mathbb L},\mathcal B)$. This requires a bit of work, since in general there is no straightforward definition of pullback measure through a measurable map. Nevertheless, in the  case of our $\pi_{\mathbb L|\mathbb K}$ we explain how it is possible to define the pullback $\eta=\pi^\ast_{\mathbb L|\mathbb K}\mu$ (actually this is a  construction from measure theory which works in full generality any time we have a measure fiberwise).  Consider a fiber $M_{\mathbb L,\omega}\subset\Omega_{\mathbb L}$, then for any $\nu\in M_{\mathbb L,\omega}$ we can put
+\begin{equation}\label{prob}
+P_\omega(\nu):=\frac{[\mathbb L_\nu:\mathbb K_\omega]}{[\mathbb L:\mathbb K]}
+\end{equation}
+where $\mathbb L_\nu$ and $\mathbb K_\omega$ denote the completions with respect to $|\cdot|_\nu$ and $|\cdot|_\omega$ respectively. Thanks to the well known equality $\sum_{\nu\in M_{\mathbb L,\omega}}[\mathbb L_\nu:\mathbb K_\omega]=[\mathbb L:\mathbb K]$ (See \cite[Ch. II, Corollary 8.4]{Neu}), we conclude that equation (\ref{prob}) induces a probability measure on the fibre $M_{\mathbb L,\omega}$, with respect to the power set. Now, for any function $f:\Omega_{\mathbb L}\to\mathbb R$, by using the fiberwise integral along each probabilised fiber $M_{\mathbb L,\omega}$, we define the map $I_{\mathbb L|\mathbb K}(f):\Omega_\mathbb K\to\mathbb R$ as:
+$$I_{\mathbb L|\mathbb K}(f):\omega\mapsto \int_{M_{\mathbb L,\omega}} \!\!f\,dP_\omega=\!\sum_{\nu\in M_{\mathbb L,\omega}}\!P_\omega(\nu)f(\nu)$$
+\begin{prop}\label{fiber_int}
+The linear operator $I_{\mathbb L|\mathbb K}$ sends $\mathcal B$-measurable functions to $\mathcal A$-measurable functions.
+\end{prop}
+\proof
+See \cite[Theorem 3.3.4]{Ch-Mo}.
+\endproof
+At this point we are ready to define the measure $\eta$. For any $E\in\mathcal B$ we put:
+\begin{equation}\label{pullback_int}
+\eta(E):=\int_{\Omega_\mathbb K} I_{\mathbb L|\mathbb K}(\chi_{E})\, d\mu
+\end{equation}
+where $\chi_{E}$ is the characteristic function of $E$. Note that the integral of equation (\ref{pullback_int}) makes sense because of Proposition \ref{fiber_int}. 
+
+\begin{thm}\label{pullback_mea}
+The following statements hold:
+\begin{itemize}
+\item[$(1)$] The map $\eta$ defined above is a measure on $(\Omega_{\mathbb L},\mathcal B)$ such that for any $\mathcal B$-measurable function $f$ we have
+$$\int_{\Omega_\mathbb L}fd\,\eta=\int_{\Omega_\mathbb K}I_{\mathbb L|\mathbb K}(f)\, d\mu\,.$$
+\item[$(2)$] $f\in L^1(\eta)$ if and only if $I_{\mathbb L|\mathbb K}(|f|)\in L^1(\mu)$.
+\item[$(3)$] The pushforward measure of $\eta$ through $\pi_{\mathbb L|\mathbb K}$ is $\mu$.
+\item[$(4)$] With the above constructions the triple $\mathbb Y=(\mathbb L,\Omega_{\mathbb L},\phi_{\mathbb L})$ is an adelic curve. Moreover for any $b\in\mathbb L^\times$
+\begin{equation}\label{extproper}
+[\mathbb L:\mathbb K]\int_{\Omega_\mathbb L}\log|b|_\nu d\eta(\nu)=\int_{\Omega_\mathbb K}\log|N_{\mathbb L|\mathbb K}(b)|_\omega d\mu(\omega)
+\end{equation}
+and in particular if $\mathbb X$ is proper, then also $\mathbb Y$ is proper.
+
+\end{itemize}
+\end{thm}
+\proof
+See \cite[Theorem 3.3.7]{Ch-Mo}.
+\endproof
+At this point we study  \emph{algebraic} extensions of adelic curves. Let's fix the adelic curve $\mathbb X=(\mathbb K,\Omega_K,\phi_K)$ and let $\mathbb L$ an algebraic extension of $\mathbb K$. We denote with $\mathcal F_{\mathbb L|\mathbb K}$ the family of finite field extensions on $\mathbb K$ contained in $\mathbb L$. Clearly $\mathcal F_{\mathbb L|\mathbb K}$ is a directed set with respect to the inclusion, and for any $\mathbb K',\mathbb K''\in\mathcal F_{\mathbb L|\mathbb K}$  such that  $\mathbb K'\subseteq\mathbb K''$ we have a morphism of measurable spaces 
+$$\pi_{\mathbb K''|\mathbb K'}\colon (\Omega_{\mathbb K''}, \mathcal B'')\to (\Omega_{\mathbb K'}, \mathcal B')$$
+and an operator $I_{\mathbb K''|\mathbb K'}$ sending integrable functions to integrable functions as described above in the case of finite extensions. In other words we obtain an inverse system of measure spaces, and we would like to define the adelic structure on $\mathbb L$ as ``a projective limit''. Unfortunately, in the category of measure spaces we don't have a straightforward notion of projective limit, therefore we need again a bit of extra work.  We can define respectively $M_{\mathbb L,\omega}$, $\Omega_{\mathbb L}$ and $\phi_{\mathbb L}\colon \Omega_{\mathbb L}\to M_{\mathbb L}$ exactly as we did before in the case of finite extensions, but we need to construct an adequate structure of measure space on $\Omega_{\mathbb L}$. For any $K'\in\mathcal F_{\mathbb L|\mathbb K}$ we have  a map $\pi_{\mathbb L|\mathbb K'}:\Omega_{\mathbb L}\to \Omega_{\mathbb K'}$ and a square diagram like (\ref{sqdiag}).  It turns out that $\pi_{\mathbb L|\mathbb K'}$ is surjective \cite[Proposition 3.4.5]{Ch-Mo}. We endow $\Omega_{\mathbb L}$ with the $\sigma$-algebra $\Sigma$ generated by the maps $\{\pi_{\mathbb L|\mathbb K'}\}_{\mathbb K'\in \mathcal F_{\mathbb L|\mathbb K}}$, and it can be shown that $(\Omega_{\mathbb L},\Sigma)$ is the projective limit of the inverse system $\{(\Omega_{\mathbb K'},\mathcal B')\}_{\mathbb K'\in \mathcal F_{\mathbb L|\mathbb K}}$ in the category of measurable spaces. It remains the issue of putting a canonical measure $\lambda$ on $(\Omega_{\mathbb L},\Sigma)$. This process is quite technical, but similarly to the case of finite extensions, it can be done by using a fiberwise integration on each $M_{L,\omega}$; all the details are given in \cite[3.4.2]{Ch-Mo}. What we really need is the fact that we can construct an adelic curve $(\mathbb L,\Omega_{\mathbb L},\lambda)$ which is proper if $\mathbb X$ is proper and such that for any $f\in L^1(\mu)$ we have that $f\circ \pi_{\mathbb L|\mathbb K}\in L^1(\lambda)$ with
+\begin{equation}\label{int_ext}
+\int_{\Omega_{\mathbb L}}(f\circ \pi_{\mathbb L|\mathbb K})d\lambda=\int_{\Omega_{\mathbb K}} fd\mu\,.
+\end{equation}
 Below we give the notion of height for proper adelic curves:
-Deﬁnition 1.9. Let X = ( K, Ω , φ) be a proper adelic curve and let K be an algebraic closure of K.
-Then we have a proper adelic curve X = ( K, Ω , φ) and the (naive) height of an element a ∈ K
-×
-is
-deﬁned as:
-hX(a) :=
-∫
-Ω
-log+ |a|ν dχ(ν) .
-where ν denotes a generic element of Ω and χ is the measure on Ω. Moreover we set HX := ehX .
-From now on we always assume that for an adelic curve X = ( K, Ω , φ) we have ﬁxed algebraic
-closure of K, therefore also X is ﬁxed and we use the same notations of Deﬁnition 1.9. If for ν ∈ Ω,
-| · |ν is an archimedean absolute value, then by Ostrowski’s theor em we know that there exists a real
-number ε(ν) ∈ ]0, 1] such that | · | ν = | · | ε(ν) where on the right we mean the standard euclidean
-absolute value on R or C. Thus we have a map ε : Ω ∞ →]0, 1] which can be extended to ε : Ω → [0, 1]
-by putting ε|Ω 0 := 0. For instance, for an archimedean | · | ν we have log |2|ν = ε(ν) log 2, therefore
-we obtain the explicit expression of the function ε on the whole Ω:
-ε(ν) = log+ |2|ν
-log 2 .
-Clearly ε(ν) is a measurable function. We can always take a scaling µ′ of the measure µ on Ω so that
-get a new height h′
-X that satisﬁes h′
-X(2) ≤ log 2. Notice that if X is proper, then it remains proper
-after any scaling of the measure µ. From now on, when we are given an adelic curve X = ( K, Ω , φ),
-we can always assume that we have performed the above mention ed scaling of the measure µ on Ω
-so that hX(2) ≤ log 2.
-Deﬁnition 1.10. Let P (X1, · · · , XN ) be a polynomial over K, α ∈ K
-N
-and i = ( i1, · · · , iN ) ∈ NN .
-We set:
-∆ iP (α ) := 1
-i1!i2! · · · iN !
-∂i1+i2+...+iN P
-∂X i1
-1 ∂X i2
-2 . . . ∂XiN
-N
-(α ).
-We can deﬁne the local height of P at ν ∈ Ω in the following way:
-hν (P ) := log
-(
-max
-i∈NN
-{⏐⏐⏐∆ iP (0, . . . ,0)
-⏐⏐⏐
-ν
-})
-and then we have also the notion of global height of P :
-hX(P ) :=
-∫
-Ω
-hν (P )dχ(ν)
-We put HX(P ) := ehX(P ).
-The following estimates of log |∆ iP (α)|ω in terms of the local height of P will be very useful later:
-Lemma 1.11. Let (K, |·| ω) be a ﬁeld with an absolute value. Let P ∈ K[X1, . . . XN ] such that N ≥ 1.
-Then for every α ∈ KN
-log|∆ iP (α )|ω ≤ hω(P ) + log +
-⏐⏐⏐⏐
-N∏
-j=1
-(
-1 + deg Xj P
-)⏐⏐⏐⏐
-ω
-+
-N∑
-j=1
-(log+ |2|ω + log+|α(j)|ω)degXj P
-Proof. See [ Cor97, Lemme, page 166].
-We conclude the section with some rather straightforward re sults about heights. First of all when
-we want to calculate the heights of elements lying in K×, we don’t need to involve the algebraic
-closure K in the integrals:
-Proposition 1.12. Let X = (K, Ω , φ) be an adelic curve. If a ∈ K×, then:
-hX(a) =
-∫
-Ω K
-log+ |a|ωdµ(ω) .
-Moreover, the same result holds for the heights of polynomia ls in K[X1, . . . , XN ].
-6
-Proof. It is an immediate consequence of equation ( 9).
-In order to simplify the notations, we often omit the subscri pt X attached to the heights when
-the adelic curve is ﬁxed and there is no confusion.
-Proposition 1.13. The height function of a proper adelic curve (X, Ω , φ) satisﬁes the following
-properties for any a, b, a1, . . . , am ∈ K and any measurable set S ⊆ Ω
-(1) h(a) = h(a−1)
-(2) −h(a) ≤
-∫
-S log |a|ωdµ(ω) ≤ h(a)
-(3)
-∫
-S log− |a|ωdµ(ω) ≥ −h(a)
-(4) h(a1 + . . . + am) ≤ h(m) + h(a1) + . . . + h(am)
-(5)
-∫
-S log |a − b|ωdµ(ω) ≥ − log 2 − h(a) − h(b)
-(6)
-∫
-S log− |a − b|ωdµ(ω) ≥ − log 2 − h(a) − h(b)
-Proof. (1) It follows from the product formula and from the fact that log |a|ω = log + |a|ω − log+ | 1
-a |ω.
-(2) By deﬁnition
-∫
-S log |a|ωdµ(ω) ≤ h(a), so for the other inequality it is enough to use (1).
-(3) We use the equality log − |a|ω = − log+ |a−1|ω and we obtain:
-∫
-S
-log− |a|ωdµ(ω) = −
-∫
-S
-log+ |a−1|ωdµ(ω) ≥ −h(a−1) = −h(a)
-(4) It follows from |a1 + . . . + am|ω ≤ m maxi |ai|ω.
-(5) and (6) are direct consequences of (2)-(4) and the fact th at h(2) ≤ log(2).
-Here we stress that the entries (5)-(6) of Proposition 1.13 replace the classical Liouville inequality
-for heights. Finally we recall an important property of heig hts:
-Deﬁnition 1.14. A proper adelic curve X = ( K, Ω , µ) satisﬁes the Northcott property if for any
-C ∈ R the set {α ∈ K : hX(a)} ≤ C is ﬁnite.
-Arithmetic function ﬁelds satisfy Northcott properties th anks to [ Mor00, Theorem 4.3].
+\begin{defn}\label{height}
+Let $\mathbb X=(\mathbb K, \Omega,\phi)$ be a proper adelic curve and let $\overline {\mathbb K}$ be an algebraic closure of $\mathbb K$. Then we have  a proper adelic curve $\overline{\mathbb X}=(\overline {\mathbb K},\overline{\Omega},\overline\phi)$ and the \emph{(naive) height} of an element $a\in\overline {\mathbb K}^\times$ is defined as:
+$$
+h_{\mathbb X}(a):=\int_{\overline{\Omega}} \log^+|a|_{\nu}\, d\chi(\nu)\,.
+$$
+where $\nu$ denotes a generic element of $\overline \Omega$ and $\chi$ is the measure on $\overline \Omega$. Moreover we set $H_{\mathbb X}:=e^{h_{\mathbb X}}$. 
+\end{defn}
+From now on we always assume that for an adelic curve $\mathbb X=(\mathbb K, \Omega,\phi)$ we have fixed algebraic closure of $\mathbb K$, therefore also $\overline{\mathbb X}$ is fixed and we use the same notations of Definition \ref{height}.
+If for $\nu\in\overline\Omega$, $\vert\cdot\vert_\nu$ is an archimedean absolute value, then by Ostrowski's theorem we know that there exists a real number $\varepsilon(\nu)\in\,]0,1]$ such that $\vert\cdot\vert_\nu=\vert\cdot\vert^{\varepsilon(\nu)}$ where on the right we mean the standard euclidean absolute value on $\mathbb R$ or $\mathbb C$. Thus we have a map $\varepsilon:\overline\Omega_{\infty}\to ]0,1]$ which can be extended to  $\varepsilon:\overline\Omega\to [0,1]$ by putting $\varepsilon_{|\overline\Omega_0}:=0$. For instance,  for an archimedean $\vert\cdot\vert_\nu$ we have $\log \vert 2\vert_\nu=\varepsilon(\nu)\log 2$, therefore we obtain the explicit expression of the function  $\varepsilon$ on the whole $\overline\Omega$:
+$$\varepsilon(\nu)=\frac{\log^+\vert2\vert_\nu}{\log 2}\,.$$
+Clearly $\varepsilon(\nu)$ is a measurable function. We can always take a  scaling  $\mu'$ of the measure $\mu$ on $\Omega$
+so that  get a new height $h'_{\mathbb X}$ that  satisfies $h'_{\mathbb X}(2)\le\log 2$.  Notice that if $\mathbb X$ is proper, then it remains proper after any scaling of the measure $\mu$.  From now on, when we are given an adelic curve $\mathbb X=(\mathbb K, \Omega,\phi)$, we can always assume that we have performed the above mentioned scaling  of the measure $\mu$ on $\Omega$ so that $h_{\mathbb X}(2)\le \log 2$.
+\begin{defn}
+Let $P(X_1,\cdots ,X_N)$ be a polynomial over $\overline{\mathbb K}$, $\bm{\alpha}\in \overline{\mathbb K}^N$ and $\bm i=(i_1,\cdots ,i_N)\in \mathbb N^N$. We set:
+$$
+\Delta^{\bm i}P(\bm{\alpha}):=\frac{1}{i_1!i_2!\cdots i_N!}\,\frac{\partial^{i_1+i_2+\ldots+i_N}P}{\partial X^{i_1}_1 \partial X^{i_2}_2\ldots \partial X^{i_N}_N}(\bm{\alpha}).
+$$
+We can define the \emph{local height of $P$ at $\nu\in\overline\Omega$} in the following way:
+$$h_{\nu}(P):=\log\left(\max_{\bm i\in\mathbb N^N}\left\{\left |\Delta^{\bm i} P(0,\ldots,0)\right|_{\nu}\right\}\right)$$
+and then we have also the notion of \emph{global height} of $P$:
+$$h_{\mathbb X}(P):=\int_{\overline\Omega} h_{\nu}(P) d\chi(\nu)$$
+We put $H_{\mathbb X}(P):=e^{h_{\mathbb X}(P)}$.
+\end{defn}
+
+The following  estimates of $\log\vert\Delta^{\bm i}P(\alpha)\vert_\omega$ in terms of the local height of $P$ will be very useful later:
+
+\begin{lem}\label{corvajalemmepag166} Let $(\mathbb K, \vert\cdot\vert_\omega)$ be a field with an absolute value. Let $P\in\mathbb K[X_1,\dots X_N]$ such that $N\geq 1$. Then for every $\bm{\alpha}\in\mathbb K^N$
+$${\log}\vert \Delta^{{\bm i}}P(\bm{\alpha})\vert_\omega\leq 
+h_\omega(P)+\log^+\bigg\lvert\prod^N_{j=1}\left(1+\deg_{X_j} P\right)\bigg\rvert_\omega+\sum_{j=1}^{N}(\log^+\vert 2\vert_\omega+{\log}^+\vert\alpha^{(j)} \vert_\omega){\deg}_{X_j}P
+$$
+\end{lem}
+\begin{proof} See  \cite[Lemme, page 166]{C}.
+\end{proof}
+
+We conclude the section with some rather straightforward results about heights. First  of all when we want to calculate the heights of elements lying in $\mathbb K^\times$, we don't need to involve the algebraic closure $\overline{\mathbb K}$ in the integrals:
+\begin{prop} Let $\mathbb X=(\mathbb K, \Omega,\phi)$ be an adelic curve. If $a\in\mathbb K^\times$, then:
+$$h_{\mathbb X}(a)=\int_{\Omega_\mathbb{K}} \log^+|a|_{\omega} d\mu(\omega)\,.$$
+Moreover, the same result holds for the heights of polynomials in $\mathbb K[X_1,\ldots, X_N]$.
+\end{prop} 
+\proof
+It is an immediate consequence of equation (\ref{int_ext}).
+\endproof
+In order to simplify the notations, we often omit the subscript $\mathbb X$ attached to the heights when the adelic curve is fixed and there is no confusion.
+\begin{prop}\label{properties}
+The height function of a proper adelic curve $(\mathbb X, \Omega,\phi)$ satisfies the following properties for any $a,b,a_1,\ldots,a_m\in\mathbb K$ and  any measurable set $S\subseteq\Omega$
+\begin{itemize}
+\item[$(1)$] $h(a)=h(a^{-1})$
+\item[$(2)$]  $-h(a)\le\int_S\log\vert a\vert_\omega d\mu(\omega)\le h(a)$
+\item[$(3)$] $\int_S\log^-\vert a\vert_\omega d\mu(\omega)\ge -h(a)$
+\item[$(4)$]  $h(a_1+\ldots +a_m)\le h(m)+h(a_1)+\ldots+h(a_m)$
+\item[$(5)$]  $\int_S\log \vert a-b\vert_\omega d\mu(\omega)\ge -\log 2- h(a)-h(b)$
+\item[$(6)$]$\int_S\log^- \vert a-b\vert_\omega d\mu(\omega)\ge -\log 2- h(a)-h(b)$
+\end{itemize}
+\end{prop}
+\proof $(1)$ It follows from the product formula and from the fact that $\log\vert a\vert_\omega=\log^+\vert a\vert_\omega-\log^+\vert \frac{1}{a}\vert_\omega$.
+
+ $(2)$ By definition $\int_S\log\vert a\vert_\omega d\mu(\omega)\le h(a)$, so for the other inequality it is enough to use $(1)$.
+ 
+ $(3)$ We use the equality $\log^-\vert a\vert_\omega=-\log^+\vert a^{-1}\vert_\omega$ and we obtain:
+\[
+\int_S\log^-\vert a\vert_\omega d\mu(\omega)=-\int_S\log^+\vert a^{-1}\vert_\omega d\mu(\omega) \ge -h(a^{-1})=-h(a)
+\]
+
+$(4)$ It follows from $\vert a_1+\ldots+a_m \vert_{\omega}\le m \max_i \vert a_i\vert_{\omega}$.
+ 
+ $(5)$ and $(6)$ are  direct consequences of $(2)$-$(4)$ and the fact that $h(2)\le\log(2)$.
+\endproof
+
+Here we stress  that the entries $(5)$-$(6)$ of Proposition \ref{properties} replace the classical Liouville inequality  for heights. Finally we recall an important property of heights: 
+
+\begin{defn}
+A proper adelic curve $\mathbb X=(\mathbb K,\Omega, \mu)$ satisfies the \emph{Northcott property} if for any $C\in\mathbb R$ the set $\{\alpha\in\mathbb K\colon h_{\mathbb X}(a)\}\le C$ is finite.
+\end{defn}
+
+Arithmetic function fields satisfy Northcott properties thanks to \cite[Theorem 4.3]{Mor}.

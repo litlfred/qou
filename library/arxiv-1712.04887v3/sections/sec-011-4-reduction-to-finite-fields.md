@@ -8,9 +8,10 @@ pages: 21-21
 source_pdf: 1712.04887v3.pdf
 source_sha256: 024317c20a1d8b66
 doc_brief: "Bloch groups, algebraic K-theory, units, and Nahm's conjecture — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F"
+text_source: latex
+latex_prose_ratio: 0.968
+latex_coverage_ratio: 1.0
 ---
-As we will see in Section 5, the comparison of the maps cζ and Rζ and the proof of
-Theorem 1.6 require a reduction of both maps to the case of ﬁnite ﬁelds. In this section,
-we review the local Chern classes and the Bloch groups of ﬁnite ﬁelds, and introduce local
-(ﬁnite ﬁeld) versions of the maps cζ and Rζ. We will be considering the case that n is a
-prime power pm, and will denote by ζ a primitive nth root of unity.
+[]{#sec.ff label="sec.ff"}
+
+As we will see in Section [\[sec.cRcompare\]](#sec.cRcompare){reference-type="ref" reference="sec.cRcompare"}, the comparison of the maps $c_{\zeta}$ and $R_{\zeta}$ and the proof of Theorem [\[thm.cR\]](#thm.cR){reference-type="ref" reference="thm.cR"} require a reduction of both maps to the case of finite fields. In this section, we review the local Chern classes and the Bloch groups of finite fields, and introduce local (finite field) versions of the maps $c_\zeta$ and $R_\zeta$. We will be considering the case that $n$ is a prime power $p^m$, and will denote by $\zeta$ a primitive $n$th root of unity.
