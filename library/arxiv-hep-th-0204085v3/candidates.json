@@ -1,0 +1,44 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-hep-th-0204085v3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "e0df7d49c43273c42228e09cb920f1444ea093760d8ff307d6c7698db03dba4a",
+  "file": "0204085v3.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:hep-th/0204085v3 12 Nov 2002",
+  "authors": "SL(2, C)/SU(2) WZNW model",
+  "arxiv": {
+   "id": "hep-th/0204085",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "12 Nov 2002"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "claim",
+   "number": "1",
+   "name": null,
+   "statement": "The spin jm,n that labels the degenerate representation of \u02c6sl(2) Pjn,m are",
+   "section_file": "sections/sec-038-acknowledgments.md",
+   "section_title": "Acknowledgments",
+   "pages": "18-24",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

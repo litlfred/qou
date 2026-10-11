@@ -1,0 +1,788 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-th-0204085v3",
+ "source": {
+  "file": "0204085v3.pdf",
+  "sha256": "e0df7d49c43273c42228e09cb920f1444ea093760d8ff307d6c7698db03dba4a",
+  "bytes": 250710,
+  "pages": 27,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-11T06:00:38Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-th/0204085",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "12 Nov 2002"
+  },
+  "doi": null,
+  "title": "arXiv:hep-th/0204085v3 12 Nov 2002",
+  "authors_raw": "SL(2, C)/SU(2) WZNW model",
+  "title_lines": [
+   "AEI 2002-029",
+   "Monodromy of solutions of the",
+   "Knizhnik-Zamolodchikov equation:"
+  ],
+  "abstract": "Three explicit and equivalent representations for the monodromy of the confor- mal blocks in the SL(2, C)/SU(2) WZNW model are proposed in terms of the same quantity computed in Liouville \ufb01eld theory. We show that there are two possible fusion matrices in this model. This is due to the fact that the conformal blocks, being solutions to the Knizhnik-Zamolodchikov equation, have a singularity when the SL(2, C) isospin coordinate x equals the worldsheet variable z. We study the asymptotic behaviour of the conformal block when x goes to z. The obtained rela- tion inserted into a four point correlation function in the SL(2, C)/SU(2) WZNW model gives some expression in terms of two correlation functions in Liouville \ufb01eld theory.",
+  "docinfo": {
+   "Title": "arXiv:hep-th/0204085v3  12 Nov 2002",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20210617145351-04'00'"
+  },
+  "title_raw": "AEI 2002-029 Monodromy of solutions of the Knizhnik-Zamolodchikov equation:",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-th/0204085v3 12 Nov 2002",
+   "heading": "Monodromy of solutions of the Knizhnik-Zamolodchikov equation: SL (2 , C ) /SU (2) WZNW model B\u00b4en\u00b4edicte Ponsot 1 Introduction",
+   "text": "AEI 2002-029 Monodromy of solutions of the Knizhnik-Zamolodchikov equation",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "WZNW model the techniques",
+   "page": 2,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "WZNW model, it was proposed in [12] as a quantum group struc-",
+   "page": 2,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "WZNW model some",
+   "page": 2,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "WZNW model [13], as a consequence from a similar property of a 5",
+   "page": 2,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "WZNW model (i.e. the fusion matrix,",
+   "page": 2,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "WZNW model. In section two we will propose three explicit formulas for the",
+   "page": 3,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "WZNW, constructed in terms of two Liou-",
+   "page": 3,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "WZNW fusion matrix. Finally, in appendix C we present a way to \ufb01nd degenerate",
+   "page": 3,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "WZNW model) is",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(j3, j2, j1) = (\u03bd(b)b\u22122b2)1+j1+j2+j3",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(j4, j3, j21)CH+",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(j21, j2, j1)|Gs",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "WZNW model (for an explanation",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "WZNW",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "WZNW fusion matrix,",
+   "page": 8,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "WZNW model",
+   "page": 9,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "WZNW fusion matrix follows (see Appendix for this special value",
+   "page": 9,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "One might wonder why on the \ufb01rst picture we did not also consider the case where",
+   "page": 11,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The case when one of the external spins corresponds to a \u02c6sl(2) degenerate repre-",
+   "page": 11,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The SU(2) WZNW model is obtained by substituting b by ib and by giving the",
+   "page": 11,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "It is straightforward to check the following symmetry properties",
+   "page": 12,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Using the invariance of the LFT fusion matrix w.r.t. conformal weights, one can",
+   "page": 12,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "If Re(ji), i = 1 . . . 4 are close enough to \u22121",
+   "page": 12,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Hexagonal equation:",
+   "page": 12,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Pentagonal equation:",
+   "page": 13,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Let us introduce for short \u03b4 = j1 + j2 + j3 + j4 + 2 + b\u22122, and let us consider for",
+   "page": 13,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "(j3, \u02dcj2, \u02dcj1) = (\u03bd(b))\u2212b\u22122B(j2)B(j1)CH+",
+   "page": 14,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(j3, j2, j1)",
+   "page": 14,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(\u02dcj4, \u02dcj3, j21)CH+",
+   "page": 14,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(j21, \u02dcj2, \u02dcj1)|Gs",
+   "page": 14,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "WZNW is related to the 4 point conformal block",
+   "page": 14,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "It is straightforward to check the property",
+   "page": 15,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Let us consider again the case of the SU(2) WZNW model: for the same reason we",
+   "page": 16,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Degenerate representations and fusion rules for \u02c6sl(2) are well known [21]; in appendix",
+   "page": 16,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "It is instructive to use relation (42) to express the behavior when x \u2192z of a",
+   "page": 16,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "If we make the same analysis as above studying this time the behavior when x \u21921",
+   "page": 17,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 18,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 24,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "WZNW model\u201d, Phys. Lett. B 521, 127",
+   "page": 25,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "S. Dotsenko and V. A. Fateev, \u201cFour point correlations functions and the operator",
+   "page": 26,
+   "source": "inferred",
+   "number": "V"
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 269,
+   "n_words": 31
+  },
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 732,
+   "n_words": 119
+  },
+  {
+   "id": "sec-001-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 650,
+   "n_words": 110
+  },
+  {
+   "id": "sec-002-3-wznw-model-the-techniques",
+   "number": "3",
+   "title": "WZNW model the techniques",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 910,
+   "n_words": 143
+  },
+  {
+   "id": "sec-003-3-wznw-model-it-was-proposed-in-12-as-a-quantum",
+   "number": "3",
+   "title": "WZNW model, it was proposed in [12] as a quantum group struc-",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 248,
+   "n_words": 47
+  },
+  {
+   "id": "sec-004-3-wznw-model-some",
+   "number": "3",
+   "title": "WZNW model some",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 448,
+   "n_words": 74
+  },
+  {
+   "id": "sec-005-3-wznw-model-13-as-a-consequence-from-a-similar",
+   "number": "3",
+   "title": "WZNW model [13], as a consequence from a similar property of a 5",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 137,
+   "n_words": 22
+  },
+  {
+   "id": "sec-006-3-wznw-model-ie-the-fusion-matrix",
+   "number": "3",
+   "title": "WZNW model (i.e. the fusion matrix,",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1466,
+   "n_words": 240
+  },
+  {
+   "id": "sec-007-3-wznw-model-in-section-two-we-will-propose-thre",
+   "number": "3",
+   "title": "WZNW model. In section two we will propose three explicit formulas for the",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 39,
+   "n_words": 7
+  },
+  {
+   "id": "sec-008-3-wznw-constructed-in-terms-of-two-liou",
+   "number": "3",
+   "title": "WZNW, constructed in terms of two Liou-",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1597,
+   "n_words": 277
+  },
+  {
+   "id": "sec-009-3-wznw-fusion-matrix-finally-in-appendix-c-we-pr",
+   "number": "3",
+   "title": "WZNW fusion matrix. Finally, in appendix C we present a way to \ufb01nd degenerate",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 4375,
+   "n_words": 889
+  },
+  {
+   "id": "sec-010-3-wznw",
+   "number": "3",
+   "title": "WZNW",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1426,
+   "n_words": 275
+  },
+  {
+   "id": "sec-011-3-wznw-model-is",
+   "number": "3",
+   "title": "WZNW model) is",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 242,
+   "n_words": 55
+  },
+  {
+   "id": "sec-012-3-j3-j2-j1-\u03bdbb2b21j1j2j3",
+   "number": "3",
+   "title": "(j3, j2, j1) = (\u03bd(b)b\u22122b2)1+j1+j2+j3",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 303,
+   "n_words": 53
+  },
+  {
+   "id": "sec-013-3-j4-j3-j21ch",
+   "number": "3",
+   "title": "(j4, j3, j21)CH+",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-014-3-j21-j2-j1gs",
+   "number": "3",
+   "title": "(j21, j2, j1)|Gs",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 354,
+   "n_words": 63
+  },
+  {
+   "id": "sec-015-3-wznw-model-for-an-explanation",
+   "number": "3",
+   "title": "WZNW model (for an explanation",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1133,
+   "n_words": 235
+  },
+  {
+   "id": "sec-016-3-wznw-fusion-matrix",
+   "number": "3",
+   "title": "WZNW fusion matrix,",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1547,
+   "n_words": 354
+  },
+  {
+   "id": "sec-017-3-wznw-model",
+   "number": "3",
+   "title": "WZNW model",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 22,
+   "n_words": 5
+  },
+  {
+   "id": "sec-018-3-wznw-fusion-matrix-follows-see-appendix-for-th",
+   "number": "3",
+   "title": "WZNW fusion matrix follows (see Appendix for this special value",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 2537,
+   "n_words": 610
+  },
+  {
+   "id": "sec-019-1-one-might-wonder-why-on-the-\ufb01rst-picture-we-di",
+   "number": "1",
+   "title": "One might wonder why on the \ufb01rst picture we did not also consider the case where",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 465,
+   "n_words": 99
+  },
+  {
+   "id": "sec-020-2-the-case-when-one-of-the-external-spins-corres",
+   "number": "2",
+   "title": "The case when one of the external spins corresponds to a \u02c6sl(2) degenerate repre-",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 470,
+   "n_words": 83
+  },
+  {
+   "id": "sec-021-3-the-su2-wznw-model-is-obtained-by-substituting",
+   "number": "3",
+   "title": "The SU(2) WZNW model is obtained by substituting b by ib and by giving the",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 849,
+   "n_words": 196
+  },
+  {
+   "id": "sec-022-4-it-is-straightforward-to-check-the-following-s",
+   "number": "4",
+   "title": "It is straightforward to check the following symmetry properties",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 182,
+   "n_words": 48
+  },
+  {
+   "id": "sec-023-5-using-the-invariance-of-the-lft-fusion-matrix",
+   "number": "5",
+   "title": "Using the invariance of the LFT fusion matrix w.r.t. conformal weights, one can",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 619,
+   "n_words": 137
+  },
+  {
+   "id": "sec-024-6-if-reji-i-1-4-are-close-enough-to-1",
+   "number": "6",
+   "title": "If Re(ji), i = 1 . . . 4 are close enough to \u22121",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 126,
+   "n_words": 21
+  },
+  {
+   "id": "sec-025-7-hexagonal-equation",
+   "number": "7",
+   "title": "Hexagonal equation:",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1486,
+   "n_words": 318
+  },
+  {
+   "id": "sec-026-8-pentagonal-equation",
+   "number": "8",
+   "title": "Pentagonal equation:",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 131,
+   "n_words": 29
+  },
+  {
+   "id": "sec-027-9-let-us-introduce-for-short-\u03b4-j1-j2-j3-j4-2-b2",
+   "number": "9",
+   "title": "Let us introduce for short \u03b4 = j1 + j2 + j3 + j4 + 2 + b\u22122, and let us consider for",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 542,
+   "n_words": 97
+  },
+  {
+   "id": "sec-028-3-j3-j2-j1-\u03bdbb2bj2bj1ch",
+   "number": "3",
+   "title": "(j3, \u02dcj2, \u02dcj1) = (\u03bd(b))\u2212b\u22122B(j2)B(j1)CH+",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-029-3-j3-j2-j1",
+   "number": "3",
+   "title": "(j3, j2, j1)",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 248,
+   "n_words": 37
+  },
+  {
+   "id": "sec-030-3-j4-j3-j21ch",
+   "number": "3",
+   "title": "(\u02dcj4, \u02dcj3, j21)CH+",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-031-3-j21-j2-j1gs",
+   "number": "3",
+   "title": "(j21, \u02dcj2, \u02dcj1)|Gs",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 891,
+   "n_words": 155
+  },
+  {
+   "id": "sec-032-3-wznw-is-related-to-the-4-point-conformal-block",
+   "number": "3",
+   "title": "WZNW is related to the 4 point conformal block",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 1252,
+   "n_words": 271
+  },
+  {
+   "id": "sec-033-1-it-is-straightforward-to-check-the-property",
+   "number": "1",
+   "title": "It is straightforward to check the property",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 187,
+   "n_words": 32
+  },
+  {
+   "id": "sec-034-2-let-us-consider-again-the-case-of-the-su2-wznw",
+   "number": "2",
+   "title": "Let us consider again the case of the SU(2) WZNW model: for the same reason we",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 308,
+   "n_words": 53
+  },
+  {
+   "id": "sec-035-3-degenerate-representations-and-fusion-rules-fo",
+   "number": "3",
+   "title": "Degenerate representations and fusion rules for \u02c6sl(2) are well known [21]; in appendix",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 55,
+   "n_words": 11
+  },
+  {
+   "id": "sec-036-4-it-is-instructive-to-use-relation-42-to-expres",
+   "number": "4",
+   "title": "It is instructive to use relation (42) to express the behavior when x \u2192z of a",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2455,
+   "n_words": 434
+  },
+  {
+   "id": "sec-037-5-if-we-make-the-same-analysis-as-above-studying",
+   "number": "5",
+   "title": "If we make the same analysis as above studying this time the behavior when x \u21921",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1733,
+   "n_words": 302
+  },
+  {
+   "id": "sec-038-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 24,
+   "n_chars": 9847,
+   "n_words": 2067
+  },
+  {
+   "id": "sec-039-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 1796,
+   "n_words": 266
+  },
+  {
+   "id": "sec-040-3-wznw-model-phys-lett-b-521-127",
+   "number": "3",
+   "title": "WZNW model\u201d, Phys. Lett. B 521, 127",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 1170,
+   "n_words": 170
+  },
+  {
+   "id": "sec-041-v-s-dotsenko-and-v-a-fateev-four-point-correlati",
+   "number": "V",
+   "title": "S. Dotsenko and V. A. Fateev, \u201cFour point correlations functions and the operator",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 2242,
+   "n_words": 346
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 42,
+  "toc_inferred_entries": 42,
+  "sections": 43,
+  "chars_total": 45489
+ }
+}
