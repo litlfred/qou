@@ -1,0 +1,522 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2401.00636v2",
+ "source": {
+  "file": "2401.00636v2.pdf",
+  "sha256": "35e372d04cedf234bd9a239140e4321326a79ad73f8fc8e6931b52f0a6d90abd",
+  "bytes": 418889,
+  "pages": 29,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-11T06:00:38Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2401.00636",
+   "version": "2",
+   "primary_class": "math.AG",
+   "stamp_date": "4 May 2024"
+  },
+  "doi": null,
+  "title": "PERIODIC AND QUASI-MOTIVIC PENCILS OF FLAT CONNECTIONS",
+  "authors_raw": "PAVEL ETINGOF AND ALEXANDER VARCHENKO",
+  "title_lines": [
+   "PERIODIC AND QUASI-MOTIVIC PENCILS OF FLAT CONNECTIONS"
+  ],
+  "abstract": "We introduce a new notion of a periodic pencil of \ufb02at connections on a smooth algebraic variety X. This is a family \u2207(s1, ..., sn) of \ufb02at connections on a trivial vector bundle on X depending linearly on parameters s1, ..., sn and generically invariant, up to isomorphism, under the shifts si 7\u2192si + 1 for all i. If in addition \u2207has regular singularities, we call it a quasi-motivic pencil. We use tools from complex analysis to establish various remarkable properties of such pencils over C. For example, we show that the monodromy of a quasi-motivic pencil is de\ufb01ned over the \ufb01eld of algebraic functions in e2\u03c0isj, and that its singularities are constrained to an arrangement of hyperplanes with integer normal vectors. Then we show that many important examples of families of \ufb02at connections, such as Knizhnik-Zamolodchikov, Dunkl, and Casimir connections, are quasi- motivic and thus periodic pencils. Besides being interesting in its own right, the periodic property of a pencil of \ufb02at con- nections turns out to be very useful in computing the eigenvalues of the p-curvature of its reduction to positive characteristic. This is done in the follow-up paper [EV2].",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20240506202321-04'00'"
+  },
+  "title_raw": "PERIODIC AND QUASI-MOTIVIC PENCILS OF FLAT CONNECTIONS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "PERIODIC AND QUASI-MOTIVIC PENCILS OF FLAT CONNECTIONS To the memory of Igor Krichever Contents Introduction Preliminaries Galois-stability Exponentially bounded holomorphic functions Generically periodic holomorphic maps up to G -action Algebraic independence of exponentials Geometric local systems",
+   "outline": "1. Introduction",
+   "text": "PERIODIC AND QUASI-MOTIVIC PENCILS OF FLAT CONNECTIONS",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Galois-stability",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Exponentially bounded holomorphic functions",
+   "page": 4,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Generically periodic holomorphic maps up to G-action",
+   "page": 4,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Algebraic independence of exponentials",
+   "page": 5,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Geometric local systems",
+   "page": 5,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 1,
+   "title": "Periodic families and pencils of flat connections",
+   "page": 6,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Polynomial families and pencils of flat connections",
+   "page": 6,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Jumping loci of families of flat connections",
+   "page": 7,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Periodic families and pencils of flat connections",
+   "page": 8,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Families and pencils with periodic monodromy",
+   "page": 8,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Quantum connections",
+   "page": 9,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "Quasi-motivic families and pencils of flat connections",
+   "page": 10,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Quasi-motivic families",
+   "page": 10,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Jumping loci of quasi-motivic pencils",
+   "page": 11,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Poles of shift operators for quasi-motivic pencils",
+   "page": 11,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Endomorphism algebras of quasi-motivic pencils",
+   "page": 12,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "Semisimplicity loci of quasi-motivic pencils",
+   "page": 12,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 2,
+   "title": "Motivic families",
+   "page": 13,
+   "source": "outline",
+   "number": "4.6"
+  },
+  {
+   "level": 2,
+   "title": "A speculative digression: quasi-geometric connections",
+   "page": 14,
+   "source": "outline",
+   "number": "4.7"
+  },
+  {
+   "level": 2,
+   "title": "Pseudo-pencils",
+   "page": 17,
+   "source": "outline",
+   "number": "4.8"
+  },
+  {
+   "level": 1,
+   "title": "Examples of periodic pencils",
+   "page": 18,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "KZ connections",
+   "page": 18,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Dunkl connections",
+   "page": 22,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Casimir connections",
+   "page": 25,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "Irreducibility",
+   "page": 27,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 2,
+   "title": "Unitarity and generic semisimplicity",
+   "page": 27,
+   "source": "outline",
+   "number": "5.5"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1357,
+   "n_words": 218
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2892,
+   "n_words": 445
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2674,
+   "n_words": 425
+  },
+  {
+   "id": "sec-002-21-galois-stability",
+   "number": "2.1",
+   "title": "Galois-stability",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1779,
+   "n_words": 343
+  },
+  {
+   "id": "sec-003-22-exponentially-bounded-holomorphic-functions",
+   "number": "2.2",
+   "title": "Exponentially bounded holomorphic functions",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1166,
+   "n_words": 227
+  },
+  {
+   "id": "sec-004-23-generically-periodic-holomorphic-maps-up-to-g",
+   "number": "2.3",
+   "title": "Generically periodic holomorphic maps up to G-action",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2742,
+   "n_words": 540
+  },
+  {
+   "id": "sec-005-24-algebraic-independence-of-exponentials",
+   "number": "2.4",
+   "title": "Algebraic independence of exponentials",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1125,
+   "n_words": 202
+  },
+  {
+   "id": "sec-006-25-geometric-local-systems",
+   "number": "2.5",
+   "title": "Geometric local systems",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2832,
+   "n_words": 486
+  },
+  {
+   "id": "sec-007-3-periodic-families-and-pencils-of-flat-connecti",
+   "number": "3",
+   "title": "Periodic families and pencils of flat connections",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 5115,
+   "n_words": 1017
+  },
+  {
+   "id": "sec-008-34-families-and-pencils-with-periodic-monodromy",
+   "number": "3.4",
+   "title": "Families and pencils with periodic monodromy",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2669,
+   "n_words": 501
+  },
+  {
+   "id": "sec-009-35-quantum-connections",
+   "number": "3.5",
+   "title": "Quantum connections",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1275,
+   "n_words": 207
+  },
+  {
+   "id": "sec-010-4-quasi-motivic-families-and-pencils-of-flat-con",
+   "number": "4",
+   "title": "Quasi-motivic families and pencils of flat connections",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2952,
+   "n_words": 530
+  },
+  {
+   "id": "sec-011-42-jumping-loci-of-quasi-motivic-pencils",
+   "number": "4.2",
+   "title": "Jumping loci of quasi-motivic pencils",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1457,
+   "n_words": 257
+  },
+  {
+   "id": "sec-012-43-poles-of-shift-operators-for-quasi-motivic-pe",
+   "number": "4.3",
+   "title": "Poles of shift operators for quasi-motivic pencils",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1515,
+   "n_words": 267
+  },
+  {
+   "id": "sec-013-44-endomorphism-algebras-of-quasi-motivic-pencil",
+   "number": "4.4",
+   "title": "Endomorphism algebras of quasi-motivic pencils",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 2683,
+   "n_words": 496
+  },
+  {
+   "id": "sec-014-45-semisimplicity-loci-of-quasi-motivic-pencils",
+   "number": "4.5",
+   "title": "Semisimplicity loci of quasi-motivic pencils",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1121,
+   "n_words": 187
+  },
+  {
+   "id": "sec-015-46-motivic-families",
+   "number": "4.6",
+   "title": "Motivic families",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 2702,
+   "n_words": 477
+  },
+  {
+   "id": "sec-016-47-a-speculative-digression-quasi-geometric-conn",
+   "number": "4.7",
+   "title": "A speculative digression: quasi-geometric connections",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 17,
+   "n_chars": 10131,
+   "n_words": 1642
+  },
+  {
+   "id": "sec-017-48-pseudo-pencils",
+   "number": "4.8",
+   "title": "Pseudo-pencils",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 3082,
+   "n_words": 528
+  },
+  {
+   "id": "sec-018-5-examples-of-periodic-pencils",
+   "number": "5",
+   "title": "Examples of periodic pencils",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 310,
+   "n_words": 51
+  },
+  {
+   "id": "sec-019-51-kz-connections",
+   "number": "5.1",
+   "title": "KZ connections",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 22,
+   "n_chars": 12302,
+   "n_words": 2330
+  },
+  {
+   "id": "sec-020-52-dunkl-connections",
+   "number": "5.2",
+   "title": "Dunkl connections",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 25,
+   "n_chars": 6471,
+   "n_words": 1248
+  },
+  {
+   "id": "sec-021-53-casimir-connections",
+   "number": "5.3",
+   "title": "Casimir connections",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 5205,
+   "n_words": 931
+  },
+  {
+   "id": "sec-022-54-irreducibility",
+   "number": "5.4",
+   "title": "Irreducibility",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 502,
+   "n_words": 86
+  },
+  {
+   "id": "sec-023-55-unitarity-and-generic-semisimplicity",
+   "number": "5.5",
+   "title": "Unitarity and generic semisimplicity",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 1848,
+   "n_words": 303
+  },
+  {
+   "id": "sec-024-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 7745,
+   "n_words": 1049
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 29,
+  "toc_inferred_entries": 0,
+  "sections": 26,
+  "chars_total": 85652
+ }
+}
