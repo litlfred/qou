@@ -140,11 +140,11 @@ Owner instruction: no citation-only steps; everything to be proved in Lean on Ma
 | `dim H_n(q) = n!`; Wedderburn `H ≃ ∏_λ M_{f^λ}` for `q` not a root of unity | `finrank_hecke_eq_factorial`, `heckeWedderburn`, `isSemisimpleRing_hecke_generic` | done |
 | two-row `f^λ = C(n,k) − C(n,k−1)`; `Σ (f^λ)² = C_n` | `numSYT_twoRow_eq_ballot`, `ballot_sq_sum_catalan` | done |
 | Markov trace on blocks: zero on ≥ 3 rows, nonzero on two rows | `ocneanuWeight_eq_zero_of_three_rows`, `…_ne_zero_of_two_rows` | done (generic field) |
-| `H/rad ≅ ∏_{two-row} M_{f^λ}`, dimension `C_n` | `traceQuotEquiv`, `finrank_traceQuot_eq_catalan` | done, but stated for `q : ℝ` |
-| `H_n → TL_n` onto | `heckeToTL_surjective`, `heckeTLEquiv` | done; `dim TL_n = C_n` only for `n ≤ 6` |
-| Jimbo `Ř`: quadratic, Yang–Baxter, action on `V^{⊗n}` | `RMatrixSl2`, `heckeActionN` | done; image/kernel of `heckeActionN` open |
-| `U_q(𝔰𝔩₂)`, `q`-Schur–Weyl | — | missing (large) |
-| KZ on `n` points as a `B_n` representation | 2 strands (`KohnoTwoPoint`); flatness algebra for all `n` (`kz_isFlat`) | missing (very large): configuration space, holonomy, `π₁(Conf_n/S_n) = B_n` |
+| `H/rad ≅ ∏_{two-row} M_{f^λ}`, dimension `C_n` | `SchurWeyl/TraceQuotGeneric`: `traceQuotEquiv`, `finrank_traceQuot_eq_catalan`, `…_complex` | done over any char-0 field, `q ≠ 0` not a root of unity (that hypothesis implies the old `hgen` and `q²+1 ≠ 0`) |
+| `H_n → TL_n` onto; `dim TL_n` | `heckeToTL_surjective`, `heckeTLEquiv`; `MathlibExt/TemperleyLiebNormalIdxCatalan` (normal words ≃ Dyck words), `…NormalFormSpanning.finrank_le_catalan` | onto: done. `dim TL_n ≤ C_n`: done for all `n`, any commutative ring. `≥`: in progress |
+| Jimbo `Ř`: quadratic, Yang–Baxter, action on `V^{⊗n}` | `RMatrixSl2`, `heckeActionN`; `SchurWeyl/JimboActionKernel` | done. Kernel = trace radical and image dimension `C_n`: done over ordered fields (`ker_jimbo_eq_traceRadicalIdeal`, `finrank_range_jimbo_eq_catalan`); over `ℂ` open |
+| `U_q(𝔰𝔩₂)`, `q`-Schur–Weyl | `Mass/QuantumSl2Fundamental`: representation data `E,F,K^±`, coproduct, `V^{⊗n}`; every adjacent `Ř` commutes with `Δ^{(n)}` | partial. The algebra as a quotient ring and the double commutant are missing; the rigidity route below does not need them |
+| KZ on `n` points as a `B_n` representation | 2 strands (`KohnoTwoPoint.kzExchange_quad`); PR #7719 (`Mass/KZHolonomy/`): flatness of the KZ form on `Conf_n(ℂ)` (`kzForm_isFlatOn`), endpoint-only transport on star-shaped sets (`flat_transport_eq`), `kzBraidRep : B_n →* Aˣ` with braid relations, equal to the permutation action at coupling 0 | mostly done on PR #7719; continuity in the coupling still open |
 | Drinfeld associator; skein-category universal property | — | missing (very large each); Mathlib has neither |
 
 **Proposed full-Lean route (judgement, not a finding): bypass Drinfeld and the skein category.**
