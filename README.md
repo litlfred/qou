@@ -17,3 +17,4 @@ Owner, 2026-10-10: "_deprecated is now branch cat/cat-harness/fsh-guts (or shoul
 ## Later additions
 
 - `fsh-guts/deprecated/library-orphan-blocks/library/<id>/blocks/` (2026-10-11): 25,449 files (14,645 `.jsonld` + 10,804 `.md`) that qou#7692's graph regeneration left referenced by no section, mostly block ids the generator has since renamed (`lemma-sec-…` → `lem-sec-…`). Byte-identical to qou `main` 996ea12332. Owner, 2026-10-11: "1 -> fsh-guts".
+- `fsh-guts/deprecated/library-orphan-blocks/library/<id>/blocks/` (2026-10-11, second batch): 840 files (420 `.jsonld` + 420 `.md`) from 15 papers whose sections were re-cut when outline headings started matching through accents (cat-harness-tools pdf-structure accent fix). Byte-identical to qou `main` c1ce42d616. Same owner ruling as above.
