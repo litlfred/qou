@@ -66,7 +66,7 @@ need to be built (and is that a fit risk)?
   likely **inherits the #2417 divergence** unless the functional specifically
   tames the growth. The functional with correct A-scaling is the **log** one
   (`B_sym`). The operator route does **not** automatically fix this.
-- **α-cluster fallback:** all in `computations/_deprecated/` — needs
+- **α-cluster fallback:** all in `fsh-guts/deprecated/computations/` — needs
   reconstruction.
 
 **Verdict.** Both sanctioned directions (operator-magnitude *construction*;

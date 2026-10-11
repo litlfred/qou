@@ -79,7 +79,7 @@ import os
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SKIP_DIRS = {"_deprecated", "__pycache__", "data", "node_modules"}
+SKIP_DIRS = {"_deprecated", "fsh-guts", "__pycache__", "data", "node_modules"}
 
 #: IEEE-754 double machine epsilon. The RELATIVE resolution; multiply by the
 #: compared magnitude to get the absolute cancellation floor at that scale.

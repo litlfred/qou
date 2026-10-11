@@ -1,0 +1,20 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/cherednik1991-kz-dunkl/blocks/lem-sec-002-14",
+  "@type": [
+    "folio-assistant-core:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 7,
+  "pageEnd": 14,
+  "text": "lem-sec-002-14.md",
+  "derivedFrom": "library/cherednik1991-kz-dunkl/sections/sec-002",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cherednik1991-kz-dunkl/manifest.jsonld",
+  "provenance": "ingested"
+}

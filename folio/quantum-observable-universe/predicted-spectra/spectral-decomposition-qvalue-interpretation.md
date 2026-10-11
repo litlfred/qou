@@ -77,6 +77,21 @@ $$
 
 where $[\cdot]$ is the Iverson bracket. Until 2026-10-10 this paragraph quoted the combined proportion $F_{\mathrm{deg2}} \times F_{\mathrm{Pauli}} = 0.5904 \times 0.6382 \approx 0.377$, a convention-C figure. Under convention D no combined proportion is available: $F_{\mathrm{deg2}} \approx 3.6844$ and the Markov-trace Pauli factor is $0$. The formula was intended for magic-number nuclei in heavy shells (e.g. ${}^{137}\mathrm{Cs}$ with $N = 82$).
 
+### Convention-D $Q$-values
+
+The bare term and the combined formula, evaluated at the proton pin $q_0$ with $z = q^3/(q^2+1)$, the normalisation $|\log_q(P_{\mathrm{dau}}/P_{\mathrm{par}})|\cdot\hbar_q\cdot m_e/3$ of the corollary, and nucleons ordered protons first. $F_{\mathrm{deg2}} \approx 3.6844$ is applied for converting-neutron shells $\geq 5$; for ${}^{137}\mathrm{Cs}$ ($N = 82$, a filled shell $\geq 5$) the Pauli factor is $0$ under convention D. ${}^{3}\mathrm{H}$ ($N = 2$) and ${}^{14}\mathrm{C}$ ($N = 8$) also fill a shell, but lie in shells $1$–$4$, where $F = 1$; read literally, part (iii) of the corollary would give $Q = 0$ for them as well.
+
+| Decay | $N$ | Shell | $\mathcal{Q}_{\mathrm{bare}}$ (MeV) | Error | Combined $Q$ (MeV) | Error | $Q_{\mathrm{exp}}$ (MeV) |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| ${}^{3}\mathrm{H}$ | $2$ | $1$ | $\approx 0.03675$ | $+97.5\%$ | $\approx 0.03675$ | $+97.5\%$ | $0.01861$ |
+| ${}^{14}\mathrm{C}$ | $8$ | $2$ | $\approx 0.14379$ | $-8.1\%$ | $\approx 0.14379$ | $-8.1\%$ | $0.15648$ |
+| ${}^{60}\mathrm{Co}$ | $33$ | $5$ | $\approx 0.08553$ | $-73.1\%$ | $\approx 0.31514$ | $-1.0\%$ | $0.31817$ |
+| ${}^{90}\mathrm{Sr}$ | $52$ | $6$ | $\approx 0.05482$ | $-90.0\%$ | $\approx 0.20198$ | $-63.0\%$ | $0.54590$ |
+| ${}^{137}\mathrm{Cs}$ | $82$ | $6$ | $\approx 0.15314$ | $-70.2\%$ | $0$ | $-100\%$ | $0.51400$ |
+| ${}^{210}\mathrm{Bi}$ | $127$ | $8$ | $\approx 0.52314$ | $-55.0\%$ | $\approx 1.92747$ | $+65.8\%$ | $1.16270$ |
+
+The bare term misses by $8$–$98\%$ and the combined formula by $1$–$100\%$. The single close entry (${}^{60}\mathrm{Co}$) sits among misses of tens of percent on both sides and is not evidence for the formula. Values are from the producer `computations/spectral_decomposition_qvalue_d.py` and its witness `spectral-decomposition-qvalue-d.witness.json`, which also reproduce Table 1 and the values of $J$ and $F_{\mathrm{deg2}}$ above.
+
 ### Error structure
 
-Let $\varepsilon = \delta q / q \approx 1.2 \times 10^{-8}$ (CODATA). The parametric error is $O(\varepsilon)$, which is negligible. The structural errors ($2$–$10\%$) are $O(1)$ relative to $\varepsilon$; that range was measured under the excised convention C and has not been re-measured under convention D. These arise from nucleon ordering in $\mathcal{Q}_{\mathrm{bare}}$, degree-$2$ Rosso--Jones weighting over two knots, and the degree tower truncation. These errors do not stem from missing spectral components; the decomposition is strictly complete.
+Let $\varepsilon = \delta q / q \approx 1.2 \times 10^{-8}$ (CODATA). The parametric error is $O(\varepsilon)$, which is negligible. The structural errors are $O(1)$ relative to $\varepsilon$: under convention D they are $8$–$98\%$ for $\mathcal{Q}_{\mathrm{bare}}$ and $1$–$100\%$ for the combined formula (table above). Until 2026-10-10 this paragraph quoted $2$–$10\%$; that range was measured under the excised convention C, and no producer of it was located. These errors arise from nucleon ordering in $\mathcal{Q}_{\mathrm{bare}}$, degree-$2$ Rosso--Jones weighting over two knots, the degree tower truncation, and, for filled shells, the vanishing of the Pauli branch under convention D. Whether the decomposition is complete is a separate claim; these residuals do not test it.

@@ -7,8 +7,9 @@ priority: normal
 tags:
     - sm-26
     - reorg-2026-10-04
+    - 8f-mass
 created_at: 2026-09-03T08:31:51Z
-updated_at: 2026-10-04T15:20:11Z
+updated_at: 2026-10-10T07:15:53Z
 parent: qou-8lxd
 ---
 

@@ -23,7 +23,7 @@ thread was already resolved and superseded. Its own commits (`d848b514`, PRs
 
 | stage | object | status |
 |---|---|---|
-| 1. raw spectral probe | `max|μ(ρ_λ(β))|` → `[3,3]`; `|y_λ·χ_λ|` → `[6]` | **refuted** — neither is the empirical `[2,2,1,1]`; probes in [`computations/_deprecated/explore_items_1_and_2.py`](https://github.com/litlfred/qou/blob/main/computations/_deprecated/explore_items_1_and_2.py), `brane-tower-per-channel-phi-q-probe.witness.json` |
+| 1. raw spectral probe | `max|μ(ρ_λ(β))|` → `[3,3]`; `|y_λ·χ_λ|` → `[6]` | **refuted** — neither is the empirical `[2,2,1,1]`; probes in [`fsh-guts/deprecated/computations/explore_items_1_and_2.py`](https://github.com/litlfred/qou/blob/cat/cat-harness/fsh-guts/fsh-guts/deprecated/computations/explore_items_1_and_2.py), `brane-tower-per-channel-phi-q-probe.witness.json` |
 | 2. selection rule | `lw(c) = (1/(c+1))·Σ_{λ⊢c+1} dim_q` (mean quantum dimension) | **production** — `linking_weight_family_a`, ~5 live importers |
 | 3. binding kernel | `R = x² − τx + 1`, `det = 1`, `a_D^(n) = lw(n−1)`, `τ = tr B ≈ 2.6424` | **derived** (no fit), `τ` closed form `3(3[2]_q²+2)/(4([2]_q+2))` (PR #2722) |
 | 4. formalization | `λ₊ > 1` (extensive); **q-robust** `0<q ⇒ λ₊(τ([2]_q))>1` (PR #2757) | **Lean, sorry-free** — [`BindingRecurrenceSpectral.lean`](https://github.com/litlfred/qou/blob/claude/happy-edison-b2petg/content/quantum-observable-universe/lean/QOU/Mass/BindingRecurrenceSpectral.lean) |

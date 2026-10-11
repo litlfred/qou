@@ -18,7 +18,7 @@ def fails(w):
 
 rows = []
 for p in sorted(pathlib.Path("computations").rglob("*.witness.json")):
-    if "_deprecated" in str(p): continue
+    if ("_deprecated" in str(p) or "fsh-guts" in str(p)): continue
     try: now = json.loads(p.read_text())
     except Exception: continue
     if now.get("allPassed") is not False: continue

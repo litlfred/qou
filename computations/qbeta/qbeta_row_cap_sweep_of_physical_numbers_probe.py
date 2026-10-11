@@ -175,7 +175,7 @@ def main() -> int:
 
     files = sorted(set(COMP.glob("*.witness.json")) | set(COMP.glob("**/*.witness.json")))
     # `_deprecated/` is retired work; a defect there is already withdrawn.
-    files = [f for f in files if "_deprecated" not in f.parts]
+    files = [f for f in files if ("_deprecated" not in f.parts and "fsh-guts" not in f.parts)]
     n_scanned = 0
     with_tall = []          # has some partition with >2 rows
     for p in files:
@@ -397,7 +397,7 @@ def main() -> int:
     for p in sorted(list((ROOT / "folio").rglob("*.md"))
                     + list((ROOT / "docs").rglob("*.md"))):
         sp = str(p.relative_to(ROOT))
-        if "_deprecated" in sp or sp.startswith("docs/audits/"):
+        if ("_deprecated" in sp or "fsh-guts" in sp) or sp.startswith("docs/audits/"):
             continue
         try:
             txt = p.read_text()

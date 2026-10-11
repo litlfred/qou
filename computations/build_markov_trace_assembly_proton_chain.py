@@ -10,7 +10,7 @@ WHY THIS FILE EXISTS AT ALL
 `markov-trace-assembly-proton.derivation.json` was an ORPHAN: consumed by live
 code (`applied_uniqueness_mass_table.py`, `braid_encoding_audit.py`,
 `markov/assembly_chain_11_letter_recompute_probe.py`) while its only builder sat
-in `computations/_deprecated/`. Its neutron and deuteron siblings both had live
+in `fsh-guts/deprecated/computations/`. Its neutron and deuteron siblings both had live
 builders and were regenerated canonical on 2026-09-13, so the cluster went
 mixed-frame: proton grouped at 1.14575969…, the other two canonical. An 82 %
 disagreement inside one table, gated red in `applied_uniqueness_mass_table`.

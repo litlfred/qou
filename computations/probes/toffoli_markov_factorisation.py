@@ -1,7 +1,7 @@
 """RETRACTION probe: the recorded "product of traced volumes" IS the trace of
 the element.  The hazard raised in bean qou-ahu3 is refuted.
 
-WHAT WAS FLAGGED.  computations/_deprecated/toffoli-braid.py computes
+WHAT WAS FLAGGED.  fsh-guts/deprecated/computations/toffoli-braid.py computes
 
     markov_trace(ordering) = prod_i Vhat_i ,   Vhat_i = z a_i + b_i
 

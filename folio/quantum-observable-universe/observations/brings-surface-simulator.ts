@@ -9,7 +9,7 @@ import { simulator } from "../../schema/builders";
 export default simulator({
   label: "sim:brings-surface",
   title: "Bring's Surface Simulator",
-  html: "fsh-guts/deprecated/simulators/brings_surface.html",
+  html: "simulators/brings_surface.html",
   uses: ["def:quaternionic-spectral-resolvents"],
   tags: ["brings-surface", "spectral-resolvent", "3d", "simulation"],
   defaultView: {

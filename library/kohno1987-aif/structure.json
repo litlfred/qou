@@ -1,0 +1,187 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "kohno1987-aif",
+ "source": {
+  "file": "kohno1987-aif.pdf",
+  "sha256": "88c5119985dfe878f41c40936d3df957ea2f48e9afb04c1f3f0712e2baa78d6a",
+  "bytes": 1707347,
+  "pages": 23,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T18:16:17Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Monodromy representations of braid groups and Yang-Baxter equations",
+  "authors_raw": "TOSHITAKE KOHNO",
+  "title_lines": [
+   "ANNALES DE L\u2019INSTITUT FOURIER"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Title": "Monodromy representations of braid groups and Yang-Baxter equations",
+   "Author": "Toshitake Kohno",
+   "Producer": "pdfTeX-1.40.16",
+   "Creator": "NUMDAM",
+   "CreationDate": "D:20260116154822+01'00'"
+  },
+  "title_raw": "ANNALES DE L\u2019INSTITUT FOURIER",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Monodromy representations of braid groups and Yang-Baxter equations",
+   "heading": "A NNALES DE L \u2019 INSTITUT F OURIER",
+   "text": "ANNALES DE L\u2019INSTITUT FOURIER",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "MONODROMY OF INTEGRABLE CONNECTIONS ARISING",
+   "page": 4,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Description of the monodromy by means",
+   "page": 6,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 1,
+   "title": "(y) = 1 +",
+   "page": 10,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "MONODROMY OF /i-POINT FUNCTIONS",
+   "page": 13,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Monodromy associated with higher representations",
+   "page": 18,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "Bibliography",
+   "page": 22,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 938,
+   "n_words": 117
+  },
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 3849,
+   "n_words": 647
+  },
+  {
+   "id": "sec-001-1-monodromy-of-integrable-connections-arising",
+   "number": "1",
+   "title": "MONODROMY OF INTEGRABLE CONNECTIONS ARISING",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 3314,
+   "n_words": 581
+  },
+  {
+   "id": "sec-002-12-description-of-the-monodromy-by-means",
+   "number": "1.2",
+   "title": "Description of the monodromy by means",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 10,
+   "n_chars": 5969,
+   "n_words": 1098
+  },
+  {
+   "id": "sec-003-9-y-1",
+   "number": "9",
+   "title": "(y) = 1 +",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 5935,
+   "n_words": 1097
+  },
+  {
+   "id": "sec-004-2-monodromy-of-i-point-functions",
+   "number": "2",
+   "title": "MONODROMY OF /i-POINT FUNCTIONS",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 18,
+   "n_chars": 6363,
+   "n_words": 1159
+  },
+  {
+   "id": "sec-005-22-monodromy-associated-with-higher-representati",
+   "number": "2.2",
+   "title": "Monodromy associated with higher representations",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 22,
+   "n_chars": 6595,
+   "n_words": 1239
+  },
+  {
+   "id": "sec-006-bibliography",
+   "number": null,
+   "title": "Bibliography",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 2822,
+   "n_words": 440
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "toc_inferred_entries": 7,
+  "sections": 8,
+  "chars_total": 35785
+ }
+}

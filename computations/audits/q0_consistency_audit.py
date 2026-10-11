@@ -137,7 +137,7 @@ def main() -> int:
         if not root.exists():
             continue
         for p in sorted(root.rglob("*.py")):
-            if "_deprecated" in p.parts or p.name == "q0_consistency_audit.py":
+            if ("_deprecated" in p.parts or "fsh-guts" in p.parts) or p.name == "q0_consistency_audit.py":
                 continue
             all_hits.extend(scan_file(p))
 

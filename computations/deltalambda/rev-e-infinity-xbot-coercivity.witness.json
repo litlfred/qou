@@ -1,0 +1,97 @@
+{
+  "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
+  "computedAt": "2026-09-15T08:17:07.944310+00:00",
+  "computation": {
+    "script": "computations/deltalambda/rev_e_infinity_xbot_coercivity_probe.py"
+  },
+  "bean": "qou-hok7",
+  "anchor": "physical_proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "description": "G1 (Xbot(s) <= Xblock(s)) is the last conditionality on e_inf, and no enumeration can settle it: a capped maximum is a LOWER bound on its own supremum and a lower bound can only refute an inequality.  What is needed is an UPPER bound on Xbot, of the kind #7349 built for Xblock -- and it would also BYPASS G1, since the join needs a certified cut rather than a pointwise inequality.  This probe asks whether #7349's per-row linearisation transfers to the bottom edge's own evaluator.  It is not a formality: staircase_beta is TWO environments glued at a wall (gap 2 above, gap 1 below) and the bottom block straddles them, delta_excess carries a one-body term that ap_value lacks entirely (F is saturated at the top edge, not at the wall), and it pays an extra linear cost lin = sum_{i>k}(i-k)u_i worth ln(q0)*lin and reaching 0.7304 at the maximisers.  The bound under test is rebuilt from the frame's own distances using the DISCRETE step delta(m) = eps(m) - eps(m+1) -- the object SearchCoercivity.sub_le_mul_of_antitone_step is stated over -- so a clean result is licensed by a sorry-free lemma rather than by a derivative argument.  Ghat_bot is a DIFFERENCE, not a sum: rows below a displaced row are a gain and rows above are a loss, and deep in the staircase there are ~k rows above, which is the substantive question.",
+  "constants": {
+    "k": 320,
+    "pe_max": 8,
+    "BMAX": 10,
+    "BUMAX": 3,
+    "eps_cut": 445,
+    "worst_lin_at_maximisers": 10,
+    "lin_handicap": "1.04340720319519512315906279973",
+    "tested_pairs": 17534,
+    "violations": 0,
+    "tightest_slack": "0.401226184756942855268292763897",
+    "per_row_cap_uniform": "20.7757901371823185353141726514",
+    "per_row_cap_worst_pe": 6,
+    "per_row_cap_by_frame": {
+      "0": "13.038401039237457883",
+      "1": "16.892243250847619625",
+      "2": "18.757073225639517914",
+      "3": "19.762970287729033749",
+      "4": "20.339097080406610053",
+      "5": "20.648476529451584349",
+      "6": "20.775790137182318535",
+      "7": "20.696592870010159724",
+      "8": "20.202140400340780302"
+    },
+    "_cap_note": "the uniform cap is the MAX over pe of one frame's per-row sum; summing ACROSS frames is wrong (a block occupies one frame) and inflates it ~3.9x",
+    "enumerated_max_Xbot": "2.1598023761182859616035303726"
+  },
+  "lin_at_maximisers": {
+    "1": 0,
+    "2": 1,
+    "3": 1,
+    "4": 1,
+    "5": 3,
+    "6": 3,
+    "7": 3,
+    "8": 3,
+    "9": 3,
+    "10": 6,
+    "11": 7,
+    "12": 7,
+    "13": 7,
+    "14": 7,
+    "15": 7,
+    "16": 7,
+    "17": 9,
+    "18": 9,
+    "19": 9,
+    "20": 9,
+    "21": 9,
+    "22": 10,
+    "23": 10,
+    "24": 10,
+    "25": 7,
+    "26": 7,
+    "27": 9
+  },
+  "violations": [],
+  "open_gaps": {
+    "G1_status": "UNTOUCHED \u2014 this probe measures a tool, not the inequality",
+    "what_a_clean_result_buys": "an explicit uniform upper bound on Xbot, hence the same concave-relaxation + supergradient-certificate route #7349 used on the top edge, hence a certified cut that removes G1 from the argument instead of proving it",
+    "what_remains_either_way": "the tightening (#7349's B_sharp was 1.82x before the concave relaxation took it to 1.04x) and then an honest enumeration of the bottom class inside the resulting cut",
+    "headline": "still the upper bound on M_n, which none of this touches"
+  },
+  "checks": [
+    {
+      "name": "X1 the staircase really is gap-2 above the wall and gap-1 below it",
+      "ok": true,
+      "detail": "every gap among rows i < k is 2 and every gap among rows i > k is 1, so the bottom block straddles two different environments.  That is why the top edge's `Ghat(m) = sum_{d>=m} |eps'(2d)|` \u2014 which assumes a pure gap-2 ladder \u2014 cannot simply be reused, and why the bound below is rebuilt from the frame's own distances"
+    },
+    {
+      "name": "X2 both extra terms are LARGE, not perturbative",
+      "ok": true,
+      "detail": "the linear cost reaches ln(q0)*10 = 1.043407203 at the bottom maximisers \u2014 against an Xbot whose whole value is ~2.1 \u2014 and the one-body term, identically zero for the top edge because `beta ~ 2k` saturates F there, is worth up to eps(1) = 1.669473278 per unit of displacement at the wall.  Neither is a correction to the top edge's argument; they are structure it does not have"
+    },
+    {
+      "name": "X3 the per-row linearisation bounds the bottom edge's excess",
+      "ok": true,
+      "detail": "over 17,534 (profile, pe) pairs the bound `sum_a u_a Ghat_bot(a) - ln(q0) lin - (ln q0/2) sum u^2` holds with 0 violations; the tightest slack is 0.401226184757 at [1].  The bound is assembled from the frame's own distances via the DISCRETE step `delta(m) = eps(m) - eps(m+1)` \u2014 the object `SearchCoercivity.sub_le_mul_of_antitone_step` is stated over \u2014 so a clean result here is licensed by a sorry-free lemma rather than by a derivative argument"
+    },
+    {
+      "name": "X4 the per-row cap is finite and exceeds the enumerated maximum",
+      "ok": true,
+      "detail": "summing the per-row caps `max_{v>=1} [v Ghat_bot(r) - (ln q0/2) v^2]` over the rows of ONE frame and taking the max over pe gives 20.7757901372 (at pe = 6), against an enumerated maximum of 2.15980237612 \u2014 a finite uniform bound, but 9.6193x the enumerated value.  **That is far too loose to be used.** #7349's top-edge analogue `B_sharp` was 1.82x and even that gave an unenumerable cut of 90; this is an order of magnitude worse, so the route is LIVE but the bound as assembled is not yet a tool.  The looseness has the same shape as `B_sharp`'s did \u2014 a per-row tangent with no cap, while a single row's real gain saturates \u2014 so the concave relaxation that took the top edge 1.82x -> 1.04x is the next step rather than a new idea"
+    }
+  ],
+  "verdict": "Measures whether #7349's per-row coercivity reaches the bottom edge, across a frame that is two glued environments rather than one AP, with a one-body term and an extra linear cost the top edge does not have.  Closes nothing and refutes nothing; it establishes whether the one already-formalised tool applies, which is the gate on the whole G1-bypass route."
+}

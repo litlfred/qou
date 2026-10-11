@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1211.1525v2/blocks/thm-sec-013-01",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "Banica, Nechita",
+  "pageStart": 21,
+  "pageEnd": 23,
+  "text": "thm-sec-013-01.md",
+  "derivedFrom": "library/arxiv-1211.1525v2/sections/sec-013",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1211.1525v2/manifest.jsonld",
+  "provenance": "ingested"
+}

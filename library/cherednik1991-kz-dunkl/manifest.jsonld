@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cherednik1991-kz-dunkl/manifest.jsonld",
+  "@type": [
+    "folio-assistant-core:SourceDocument"
+  ],
+  "title": "cherednik1991-kz-dunkl",
+  "contains": [
+    "library/cherednik1991-kz-dunkl/sections/sec-front-matter",
+    "library/cherednik1991-kz-dunkl/sections/sec-000",
+    "library/cherednik1991-kz-dunkl/sections/sec-001",
+    "library/cherednik1991-kz-dunkl/sections/sec-002",
+    "library/cherednik1991-kz-dunkl/sections/sec-003",
+    "library/cherednik1991-kz-dunkl/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "cherednik1991-kz-dunkl",
+    "title_source": "slug",
+    "source_file": "cherednik1991-kz-dunkl.pdf",
+    "source_sha256": "cae9cf747bb98a46442420931d357237c5adfd86ac6f4073e2a417bf5d0f4e30",
+    "pages": 21,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

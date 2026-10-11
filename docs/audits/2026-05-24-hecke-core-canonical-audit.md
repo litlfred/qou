@@ -219,7 +219,7 @@ EXPLORATORY or UTILITY-of-EXPLORATORY.
 
 Move the following 29 top-level symbols (and the 4 caches / private
 helpers that serve only them) into a new sibling file
-`computations/_deprecated/hecke_core_legacy.py`.  The
+`fsh-guts/deprecated/computations/hecke_core_legacy.py`.  The
 surviving `hecke_core.py` keeps the 19 CANONICAL functions plus the
 24 utilities they need.
 
@@ -403,4 +403,4 @@ Compared to the workplan's "strong EXPLORATORY candidates" list:
 - [`computations/lp_dual_solver.py`](../../computations/lp_dual_solver.py) — canonical LP/SDP entry (per AGENTS.md `## LP / SDP duals`)
 - [`computations/hecke/hecke_characters.py`](../../computations/hecke/hecke_characters.py) — where `chi_lambda_braid` lives (line 280)
 - [`computations/binding_canonical.py`](../../computations/binding_canonical.py) — canonical binding entry referenced by deprecated `binding_from_frobenius_pairing`
-- [`computations/_deprecated/`](../../computations/_deprecated/) — destination directory for the recommended split
+- [`fsh-guts/deprecated/computations/`](../../fsh-guts/deprecated/computations/) — destination directory for the recommended split

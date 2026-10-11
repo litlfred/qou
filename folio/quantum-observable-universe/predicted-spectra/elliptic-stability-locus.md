@@ -79,15 +79,13 @@ Under the substitution $t = \alpha X + \beta$ with $\alpha = -2cp$ and $\beta = 
 | $X^2$ | $z + 1$ | $-2cp$ | $z = -(2cp + 1)$ |
 | $X^0$ | $z^3 + z^2 + z + 1$ | $-2p$ | $(z+1)(z^2+1) = -2p$ |
 
-Eliminating $z$ via $(-2cp)(4c^2p^2 + 1) = -2p$ gives:
+Eliminating $z$: since $z + 1 = -2cp$ and $z^2 + 1 = (2cp + 1)^2 + 1 = 4c^2p^2 + 4cp + 2$, the $X^0$ condition reads $(-2cp)(4c^2p^2 + 4cp + 2) = -2p$, that is,
 
 $$
-  4c^3 p^2 + c = 1,
-  \qquad\text{i.e.,}\qquad
-  p^2 = \frac{1 - c}{4c^3}.
+  4c^3 p^2 + 4c^2 p + 2c = 1.
 $$
 
-At $c = a_C/(2a_A) \approx 0.01497$, this yields $p \approx 67.8$, corresponding to $A \approx 170$. This lies in the neighborhood of **erbium** ($Z = 68$), occupying the rare-earth region where shell effects peak and even-odd staggering is most pronounced — precisely where the degeneracy locus would intersect the stability curve.
+At $c = \lambda_C/(2a_{\mathrm{asym}}) \approx 0.0145158337$ (the asymmetry constant of [neutron prediction comparison](#prop:neutron-prediction-comparison)), the positive root is $p \approx 249.4$; at the earlier value $c = 0.01497$ it is $p \approx 237.5$. Both lie far beyond the heaviest known element ($Z = 118$), so this coefficient match does not single out any observed nucleus.
 
 **Physical interpretation.**
 

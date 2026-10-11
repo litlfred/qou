@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/schechtman-varchenko1991-arrangements/blocks/prose-sec-002",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Flag complex",
+  "pageStart": 10,
+  "pageEnd": 13,
+  "text": "../sections/sec-002-2-flag-complex.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/schechtman-varchenko1991-arrangements/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/schechtman-varchenko1991-arrangements/manifest.jsonld",
+  "provenance": "ingested"
+}

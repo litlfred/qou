@@ -20,23 +20,27 @@ By
 ([descended term is the unknot-core holonomy](#lem:topological-mass-holonomy)),
 the first summand equals
 $\lVert \mathrm{Hol}_{\nabla_A}(\varrho_0; \mathfrak{G}) \rVert$.  By
-([transient terms localise to exceptional divisors](#lem:topological-mass-transient-localisation)),
-the second summand decomposes as
+([transient terms are bounded by exceptional-divisor contributions](#lem:topological-mass-transient-localisation)),
+the second summand is at most
 $\sum_{i=1}^{N} \lVert \mathrm{MI}\!\!\int_{E_i} (\nabla_A q, L \wedge F^+) \rVert$.
 Combining these yields
 
 $$
   \mathfrak{m}(\varrho)
-  =
+  \le
   \bigl\lVert \mathrm{Hol}_{\nabla_A}(\varrho_0; \mathfrak{G}) \bigr\rVert
   +
   \sum_{i=1}^{N}
   \bigl\lVert \mathrm{MI}\!\!\int_{E_i} (\nabla_A q, L \wedge F^+) \bigr\rVert,
 $$
 
-which is the claimed decomposition
-[eq:topological-mass-decomp](#eq:topological-mass-decomp).  Each
+an upper bound for the claimed decomposition
+[eq:topological-mass-decomp](#eq:topological-mass-decomp).  This route
+gives equality, and hence the decomposition itself, only conditionally on
+equality in the transient bound, which is open (it is not forced by the
+disc splitting and support hypotheses).  Each
 exceptional-divisor summand equals the quantum dilogarithm
 $\Phi_q(z_i)$ by
 ([quantum dilogarithm evaluation](#lem:topological-mass-dilogarithm)),
-completing the proof.  $\square$
+so the bound reads
+$\mathfrak{m}(\varrho) \le \lVert \mathrm{Hol}_{\nabla_A}(\varrho_0; \mathfrak{G}) \rVert + \sum_{i=1}^{N} \Phi_q(z_i)$.  $\square$

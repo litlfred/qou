@@ -1,0 +1,153 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "cherednik1991-kz-dunkl",
+ "source": {
+  "file": "cherednik1991-kz-dunkl.pdf",
+  "sha256": "cae9cf747bb98a46442420931d357237c5adfd86ac6f4073e2a417bf5d0f4e30",
+  "bytes": 2093662,
+  "pages": 21,
+  "text_source": "ocr",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T19:16:49Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras",
+  "authors_raw": "Ivan Cherednik",
+  "title_lines": [
+   "Invent. math. 106, 411-431 (1991)",
+   "Inventiones",
+   "mathematicae",
+   "Springer-Verlag 1991",
+   "A unification of Knizhnik-Zamolodchikov",
+   "and Dunkl operators via affine Hecke algebras"
+  ],
+  "abstract": null,
+  "docinfo": {},
+  "title_raw": "Invent. math. 106, 411-431 (1991) Inventiones mathematicae Springer-Verlag 1991 A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "text": "Invent. math. 106, 411-431 (1991) Inventiones mathematicae Springer-Verlag 1991 A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_note": "title/authors set by hand from the article's first page. Invent. Math. 106 (1991), pp. 411-431; cut from PDF pp. 418-438 of the 673-page GDZ volume scan (first and last page checked visually by OCR of the journal header/page number; the next article starts on the following PDF page). PDF page n here = journal page 410 + n. Journal p. 432 (volume PDF p. 439) is blank and is not included.",
+  "rights_note": "Cut from the Göttingen State and University Library (SUB/GDZ) digitisation of Inventiones Mathematicae vol. 106 (1991), WerkId PPN356556735_0106. The GDZ Terms and Conditions on page 1 of that volume file state that access is provided 'strictly for noncommercial educational, research and private purposes', that 'each copy of any part of this document must contain these Terms and Conditions', and that 'Reproductions of material on the web site may not be made for or donated to other repositories, nor may be further reproduced without written permission from the Goettingen State- and University Library.' The volume file itself is NOT held in this repository; this per-article cut does not carry the GDZ cover page. Owner decision whether to keep this copy.",
+  "journal_ref": "Invent. Math. 106 (1991) 411-431",
+  "volume_pdf_pages": "418-438",
+  "journal_page_offset": 410
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "Affine Hecke algebras and the intertwiners",
+   "page": 3,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The Lusztig-Lascoux-Schützenberger operators",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The unification, some examples",
+   "page": 14,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 20,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 905,
+   "n_words": 116
+  },
+  {
+   "id": "sec-000-0-introduction",
+   "number": "0",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 7437,
+   "n_words": 1181
+  },
+  {
+   "id": "sec-001-1-affine-hecke-algebras-and-the-intertwiners",
+   "number": "1",
+   "title": "Affine Hecke algebras and the intertwiners",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 7,
+   "n_chars": 9110,
+   "n_words": 1836
+  },
+  {
+   "id": "sec-002-2-the-lusztig-lascoux-sch-tzenberger-operato",
+   "number": "2",
+   "title": "The Lusztig-Lascoux-Schützenberger operators",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 14,
+   "n_chars": 17879,
+   "n_words": 3590
+  },
+  {
+   "id": "sec-003-3-the-unification-some-examples",
+   "number": "3",
+   "title": "The unification, some examples",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 20,
+   "n_chars": 12188,
+   "n_words": 2447
+  },
+  {
+   "id": "sec-004-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 3001,
+   "n_words": 436
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": true,
+  "toc_entries": 5,
+  "toc_inferred_entries": 5,
+  "sections": 6,
+  "chars_total": 50520
+ },
+ "structure_note": "Sectioning: split by hand at the OCR'd numbered section headings (journal pages from the printed contents / running heads)."
+}

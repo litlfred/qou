@@ -35,5 +35,13 @@
     "note": "Chen, Chen & Zhong, 'Composition-Diamond Lemma for Modules'. The arXiv preprint (arxiv-0804.0917v1, 6 sections) and the published version (Czechoslovak Math. J. 60 (2010), czechmathj-60-2010-1-4, 9 sections) are ONE WORK: identical three-author list (Yuqun Chen, Yongshan Chen, Chanyan Zhong) and identical title, verifiable by opening the two structure.json files. IDENTIFICATION is mechanical; the CHOICE of which to prefer is a judgement, recorded here rather than left implicit: the published version is preferred because it is the citable venue AND is measurably more complete -- it carries a section the preprint's sectioning lacks, 'Composition-Diamond lemma for double-free modules', plus 'Verma modules over the coefficient algebra'. So the extra sections are NOT a re-sectioning artifact. library-find-duplicates.py scores the pair 0.474, which on its own is not a verdict (AGENTS.md: its same-work and different-work ranges overlap); the author+title match is what decides it. Blast radius measured before enacting: ONE reference outside library/ (.beans/qou-gmfz, a path not an index lookup), and no references.ts entry. The preprint's text stays on disk and greppable; it loses only its INDEX.md row.",
     "recorded": "2026-09-13",
     "adjudicated_by": "agent"
+  },
+  {
+    "doc_id": "arxiv-1404.0724v1",
+    "prefer": "ariasabad2015-revcolmat",
+    "duplicate_of": "ariasabad2015-revcolmat",
+    "note": "Camilo Arias Abad, 'Introduction to representations of braid groups'. The arXiv preprint (arxiv-1404.0724v1, 2 Apr 2014, 32 pp, 13 sections) and the published version (Rev. Colombiana Mat. 49(1) (2015) 1-38, ariasabad2015-revcolmat, 19 sections) were uploaded together on 2026-10-10 and are ONE WORK: same single author, same title, same chapter sequence (braid groups, homological representations, KZ connection, Yang-Baxter / Drinfeld-Kohno). Identification is by author+title, checkable in the two structure.json files. The choice is a judgement, following the czechmathj-60-2010-1-4 precedent: the published version is preferred because it is the citable venue and its sectioning is finer (it carries 2.1 Artin's presentation, 2.2 Configuration spaces and 4.1 Cohomology of configuration spaces as separate sections, which the preprint's inferred TOC folds). Theorem numbering may differ between the two; cite the published copy. The preprint's text stays on disk and greppable; it gets no INDEX.md row.",
+    "recorded": "2026-10-10",
+    "adjudicated_by": "ingest"
   }
 ]

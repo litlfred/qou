@@ -50,7 +50,7 @@ principles**: produce `χ_λ(𝓑_n − 𝓑_p)` at λ ⊢ 6, 9 by embedding the
 proton/neutron braids `𝓑_p`, `𝓑_n` at brane-tower levels 6, 9 (Path B-adjacent), then
 `bar_odd_coeffs` + `physical_W` + `single_x_residual` below apply UNCHANGED. There is
 no such braid (nor proved closed form) in the corpus today — the typed-braid character
-infra is in `computations/_deprecated/`. So n=3 is the furthest the gate advances
+infra is in `fsh-guts/deprecated/computations/`. So n=3 is the furthest the gate advances
 without the first-principles higher-tower braids, and this script pins exactly what
 unblocks the rest.
 

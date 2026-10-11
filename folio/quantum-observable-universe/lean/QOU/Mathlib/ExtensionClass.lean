@@ -10,7 +10,7 @@ Beans `qou-fngs`, `qou-zut2`. The corpus reaches its topological integer **two**
 ways, neither of them homotopy theory. A third candidate was on the books; this
 file supplies the algebra that removes it.
 
-* **Residue.** `thm:topological-charge-quantization` gives
+* **Residue.** `conj:topological-charge-quantization` gives
   `Res_q(ω, 1) = Φ(Res_ξ(ω)) = 1`, called there "the algebraic counterpart of
   the Gauss–Bonnet theorem". Its `lean.ref` is a `stub` and resolves to no
   declaration.

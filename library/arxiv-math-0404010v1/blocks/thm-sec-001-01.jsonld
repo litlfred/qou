@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0404010v1/blocks/thm-sec-001-01",
+  "@type": [
+    "folio-assistant-core:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "Turaev [12]",
+  "pageStart": 3,
+  "pageEnd": 6,
+  "text": "thm-sec-001-01.md",
+  "derivedFrom": "library/arxiv-math-0404010v1/sections/sec-001",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0404010v1/manifest.jsonld",
+  "provenance": "ingested"
+}

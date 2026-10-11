@@ -46,7 +46,7 @@ witnesses" is a narrower phrase than it sounds.
 
 ## 215 of the 268 are archived, not stale
 
-**B-population 268 = 215 under `computations/_deprecated/` + 53 live.**
+**B-population 268 = 215 under `fsh-guts/deprecated/computations/` + 53 live.**
 
 That directory's `README.md` states the deprecation criteria: no content block
 consumes them, no audit doc cites them, the body carries no assertions. The

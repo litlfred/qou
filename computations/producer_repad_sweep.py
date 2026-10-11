@@ -178,7 +178,7 @@ def main() -> int:
             src = comp / prod
         if src is None:
             hits = sorted(p for p in comp.rglob(prod)
-                          if "_deprecated" not in p.parts)
+                          if ("_deprecated" not in p.parts and "fsh-guts" not in p.parts))
             if len(hits) > 1:
                 rels = [p.relative_to(wt).as_posix() for p in hits]
                 print(f"[{i:3}/{len(producers)}] {prod:<58} AMBIGUOUS — "

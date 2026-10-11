@@ -171,7 +171,7 @@ def revert(paths) -> None:
 def producers() -> list[Path]:
     out = []
     for p in sorted((ROOT / "computations").rglob("*.py")):
-        if "_deprecated" in p.parts:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue
         try:
             src = p.read_text(encoding="utf-8")

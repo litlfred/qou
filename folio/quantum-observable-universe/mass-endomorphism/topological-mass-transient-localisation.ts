@@ -5,7 +5,7 @@ export default lemma({
   lean: { ref: "qou:QOU.LiftingDescent.tm_transient_localisation",
     validation: "not_checked",
   },
-  title: "Transient terms localise to exceptional divisors",
+  title: "Transient terms are bounded by exceptional-divisor contributions",
   tags: ["transient", "exceptional-divisor", "blow-up", "central-extension"],
   uses: [
     "def:brane-boundary",
@@ -14,15 +14,17 @@ export default lemma({
   proofs: ["prf:topological-mass-transient-localisation"],
   authorNotes: [
     {
-      kind: "note",
-      date: "2026-08-08",
+      kind: "refined-framing",
+      date: "2026-10-10",
       body:
-        "**§7c base-ring note (archimedean specialisation).** " +
-        "The Lean module `lean/QOU/LiftingDescent/tm_transient_localisation.lean` " +
-        "carries the transient mass-index components `transientMI*` as physical quantities. " +
-        "The `ℝ` is therefore forced by the statement itself rather than " +
-        "chosen, so the block sits on the archimedean side of the §7c wall " +
-        "by construction.",
+        "**Restated as an inequality (owner ruling 2026-10-10, bean `tmvac`).** The block " +
+        "previously stated `‖MI∫_Σ‖ = Σ_i ‖MI∫_{E_i}‖`. The Lean module " +
+        "`lean/QOU/LiftingDescent/tm_transient_localisation.lean` derives only the " +
+        "inequality `≤` from the disc split and support hypotheses (triangle inequality of " +
+        "a group seminorm), and `norm_additivity_not_forced` gives data in `Multiplicative ℝ` " +
+        "satisfying both hypotheses with strict inequality. The statement now matches what " +
+        "is derived. The equality is open and recorded as the conjecture class " +
+        "`TransientLocalisationNormEquality`, with no instance. The label is unchanged.",
     },
   ],
 

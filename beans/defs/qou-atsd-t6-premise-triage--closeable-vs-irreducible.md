@@ -5,9 +5,10 @@ status: todo
 type: task
 priority: normal
 tags:
+    - 8f-atomicity
     - reorg-2026-10-04
 created_at: 2026-07-26T20:55:00Z
-updated_at: 2026-10-04T15:14:06Z
+updated_at: 2026-10-10T07:16:15Z
 parent: qou-8lxd
 ---
 

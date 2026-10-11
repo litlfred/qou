@@ -52,7 +52,7 @@ the injected file stays under 200 lines. Newest first.
   docstrings differ — harmless only because chapter-dir `.lean` sit outside the
   `srcDir="."` + `globs=["QOU","QOU.+"]` library and are never imported together;
   and `Checks.refCodata` has no consumer and its literal is absent from the
-  witness its docstring names (present only under `computations/_deprecated/`),
+  witness its docstring names (present only under `fsh-guts/deprecated/computations/`),
   though the residuals it would imply reproduce to ~8 sig figs. All 6 chapter-dir
   sidecars FRESH (`source_hashes.lean` == `sha256(file)[:12]`). New TRAP recorded:
   docstring prose reads as code to line-oriented matchers (`grep -cw sorry`

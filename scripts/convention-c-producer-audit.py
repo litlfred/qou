@@ -372,7 +372,7 @@ def _file_of_module(repo: pathlib.Path, mod: str):
     """Best-effort module dotted-path -> repo-relative file."""
     tail = mod.replace(".", "/") + ".py"
     for cand in repo.rglob("*/" + tail):
-        if "_deprecated" not in str(cand) and "node_modules" not in str(cand):
+        if ("_deprecated" not in str(cand) and "fsh-guts" not in str(cand)) and "node_modules" not in str(cand):
             return str(cand.relative_to(repo))
     return None
 
@@ -634,7 +634,7 @@ def scan_closed_forms(roots=ROOTS, c_files=()):
             continue
         for p in sorted(base.rglob("*.py")):
             sp_ = str(p)
-            if "_deprecated" in sp_ or "/from_scratch/" in sp_:
+            if ("_deprecated" in sp_ or "fsh-guts" in sp_) or "/from_scratch/" in sp_:
                 continue
             try:
                 src = p.read_text()
@@ -858,7 +858,7 @@ def scan_reexports(roots=ROOTS, repo: pathlib.Path = None):
                 continue
             for p in sorted(base.rglob("*.py")):
                 sp = str(p)
-                if "_deprecated" in sp or sp.startswith(BLOCKED_BY_DESIGN):
+                if ("_deprecated" in sp or "fsh-guts" in sp) or sp.startswith(BLOCKED_BY_DESIGN):
                     continue
                 try:
                     tree = ast.parse(p.read_text())
@@ -883,7 +883,7 @@ def scan_reexports(roots=ROOTS, repo: pathlib.Path = None):
             continue
         for p in sorted(base.rglob("*.py")):
             sp = str(p)
-            if "_deprecated" in sp or sp.startswith(BLOCKED_BY_DESIGN):
+            if ("_deprecated" in sp or "fsh-guts" in sp) or sp.startswith(BLOCKED_BY_DESIGN):
                 continue
             if pathlib.Path(sp).stem in direct:
                 continue
@@ -1028,7 +1028,7 @@ def scan(roots=ROOTS, blocked_files=(), declared_files=(), rederivation_files=()
             continue
         for p in sorted(base.rglob("*.py")):
             sp = str(p)
-            if "_deprecated" in sp:
+            if ("_deprecated" in sp or "fsh-guts" in sp):
                 continue
             try:
                 tree = ast.parse(p.read_text())

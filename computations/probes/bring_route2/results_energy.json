@@ -1,0 +1,88 @@
+{
+ "description": "Route 2 Bring loop energy; see preregistration-energy.md",
+ "mp_dps": 30,
+ "mpmath": "1.3.0",
+ "rows": {
+  "gluon_s1_s0": {
+   "L": "4.603183309507916659974173",
+   "r": 3,
+   "kernel_elements_within_1.5L": 83,
+   "delta_elements_enumerated": 27031,
+   "slack_1_vs_2_same_kernel_set": true,
+   "axis_stabiliser_translation_lengths": [
+    "0.0",
+    "4.60318330950791666"
+   ],
+   "self_crossing_elements": 0,
+   "dist_midpoint_to_cone_point": "1.560149147e-30",
+   "primitive": true,
+   "E_flat_by_N": {
+    "120": "0.0",
+    "240": "0.0",
+    "480": "0.0"
+   },
+   "E_sinh_by_N": {
+    "120": "0.0",
+    "240": "0.0",
+    "480": "0.0"
+   }
+  },
+  "gluon_s1_s1": {
+   "L": "4.603183309507916659974173",
+   "r": 3,
+   "kernel_elements_within_1.5L": 84,
+   "delta_elements_enumerated": 27031,
+   "slack_1_vs_2_same_kernel_set": true,
+   "axis_stabiliser_translation_lengths": [
+    "0.0",
+    "4.60318330950791666"
+   ],
+   "self_crossing_elements": 0,
+   "dist_midpoint_to_cone_point": "8.072378167e-32",
+   "primitive": true,
+   "E_flat_by_N": {
+    "120": "0.0",
+    "240": "0.0",
+    "480": "0.0"
+   },
+   "E_sinh_by_N": {
+    "120": "0.0",
+    "240": "0.0",
+    "480": "0.0"
+   }
+  },
+  "nuc11_gen_grouped": {
+   "L": "6.367650371430213912198113",
+   "r": 3,
+   "kernel_elements_within_1.5L": 1208,
+   "delta_elements_enumerated": 381939,
+   "slack_1_vs_2_same_kernel_set": true,
+   "axis_stabiliser_translation_lengths": [
+    "0.0",
+    "6.3676503714302139122"
+   ],
+   "self_crossing_elements": 0,
+   "dist_midpoint_to_cone_point": "7.420505545e-31",
+   "primitive": true,
+   "E_flat_by_N": {
+    "120": "9.370875130791415646e-33",
+    "240": "2.3427187826978539115e-33",
+    "480": "5.8567969567446347788e-34"
+   },
+   "E_sinh_by_N": {
+    "120": "7.3231653799888470419e-33",
+    "240": "1.8307913449972117605e-33",
+    "480": "4.5769783624930294012e-34"
+   }
+  }
+ },
+ "checks": {
+  "gluon_s1_s0_slack_stable": true,
+  "gluon_s1_s0_loop_translation_in_kernel": true,
+  "gluon_s1_s1_slack_stable": true,
+  "gluon_s1_s1_loop_translation_in_kernel": true,
+  "nuc11_gen_grouped_slack_stable": true,
+  "nuc11_gen_grouped_loop_translation_in_kernel": true,
+  "conjugate_pair_same_E": true
+ }
+}

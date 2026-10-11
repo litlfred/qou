@@ -1,0 +1,177 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2502.06229v5",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "3499c40ea150a6175b7748fd163ef5cd92923f0156e8574646292df9d4aed8e9",
+  "file": "2502.06229v5.pdf"
+ },
+ "provenance": {
+  "title": "Constructing equivalences between fusion categories of quantum groups and of vertex operator algebras via quantum gauge groups",
+  "authors": "CLAUDIA PINZARI",
+  "arxiv": {
+   "id": "2502.06229",
+   "version": "5",
+   "primary_class": "math.OA",
+   "stamp_date": "14 Apr 2026"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 11,
+  "by_kind": {
+   "theorem": 7,
+   "definition": 2,
+   "proposition": 1,
+   "remark": 1
+  },
+  "formalization_candidates": 10
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.1",
+   "name": null,
+   "statement": "Let g be a complex simple Lie algebra and k a positive integer, the level. Let",
+   "section_file": "sections/sec-005-16-main-theorem.md",
+   "section_title": "Main theorem",
+   "pages": "8-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.6",
+   "name": null,
+   "statement": "\u2013and we have derived algebraic and analytic properties that were overlooked",
+   "section_file": "sections/sec-006-2-unitary-coboundary-weak-hopf-algebras-awg-q.md",
+   "section_title": "Unitary coboundary weak Hopf algebras AW(g, q)",
+   "pages": "10-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "definition",
+   "source_kind": "definition",
+   "number": "2.1",
+   "name": null,
+   "statement": "Let A be a semisimple unital complex algebra endowed with a coproduct",
+   "section_file": "sections/sec-006-2-unitary-coboundary-weak-hopf-algebras-awg-q.md",
+   "section_title": "Unitary coboundary weak Hopf algebras AW(g, q)",
+   "pages": "10-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.2",
+   "name": null,
+   "statement": "A semisimple weak quasi-bialgebra A is a weak bialgebra if and only if",
+   "section_file": "sections/sec-006-2-unitary-coboundary-weak-hopf-algebras-awg-q.md",
+   "section_title": "Unitary coboundary weak Hopf algebras AW(g, q)",
+   "pages": "10-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "definition",
+   "source_kind": "definition",
+   "number": "2.3",
+   "name": null,
+   "statement": "A (compatible) unitary coboundary weak quasi-Hopf algebra A is defined",
+   "section_file": "sections/sec-006-2-unitary-coboundary-weak-hopf-algebras-awg-q.md",
+   "section_title": "Unitary coboundary weak Hopf algebras AW(g, q)",
+   "pages": "10-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.4",
+   "name": null,
+   "statement": "The semisimple \u2217-algebra AW(g, q) := Nat(W) of natural transformations",
+   "section_file": "sections/sec-006-2-unitary-coboundary-weak-hopf-algebras-awg-q.md",
+   "section_title": "Unitary coboundary weak Hopf algebras AW(g, q)",
+   "pages": "10-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.1",
+   "name": null,
+   "statement": "are the main subject of Section 9.",
+   "section_file": "sections/sec-008-4-the-general-plan-of-our-proof.md",
+   "section_title": "The general plan of our proof",
+   "pages": "14-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.1",
+   "name": null,
+   "statement": "These are the main new abstract results to obtain the complete braided",
+   "section_file": "sections/sec-008-4-the-general-plan-of-our-proof.md",
+   "section_title": "The general plan of our proof",
+   "pages": "14-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.1",
+   "name": null,
+   "statement": "in the following sections.",
+   "section_file": "sections/sec-010-6-main-tools-to-prove-a-how-to-make-repavgk-into.md",
+   "section_title": "Main tools to prove (a): How to make Rep(A(Vgk)) into a braided tensor category with Huang-Lepowsky structure.",
+   "pages": "17-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "8.13",
+   "name": null,
+   "statement": "and Theorem 8.19 show uniqueness of the associativity morphisms (and also",
+   "section_file": "sections/sec-014-10-main-tools-to-prove-d-cohomological-reduction.md",
+   "section_title": "Main tools to prove (d): cohomological reduction of a braided tensor structure of a category with a generating object V to braid group duality of V",
+   "pages": "23-24",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "ably, Huang and Lepowsky introduced and developed a rigorous direct construc-",
+   "section_file": "sections/sec-018-appendix-a-historical-remarks-on-rigidity-in-aff.md",
+   "section_title": "Appendix A. Historical remarks on rigidity in affine Lie algebra and vertex operator algebra categories",
+   "pages": "29-31",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

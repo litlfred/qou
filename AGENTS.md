@@ -3253,17 +3253,30 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **fifty-one** rows (re-counted 2026-10-10, after PR #7318's two
->   rows merged in at 50-51 behind main's 46-49; 46 landed 2026-09-14 in
->   `81a8ac98b9` after this line last said forty-five, then 47 and 48 landed,
->   and 49 is PR #7401's — which arrived numbered 46 and had to be renumbered on
->   merge, so **re-count before citing any number here, including this one**).
+>   catalogues **fifty-six** rows (re-counted 2026-10-10, twice in one day as `main` appended a row each time; 46 landed 2026-09-14
+>   in `81a8ac98b9` after this line last said forty-five, then 47 and 48 landed,
+>   49 is PR #7401's — which arrived numbered 46 and had to be renumbered on
+>   merge — then PR #7318's two merged in at 50-51, main took 52-54, and **55 is
+>   PR #7553's**, the prediction path that does no arithmetic, which arrived
+>   numbered 50 and had to be renumbered on merge for the same reason #7401 did.
+>   So **re-count before citing any number here, including this one.**
 >   **Measure it with `grep -cE '^\| [0-9]+ \|'`, anchored.** A naive
->   `^\| [0-9]` reads **53**, because it also matches a second table's two rows
+>   `^\| [0-9]` reads **57**, because it also matches a second table's two rows
 >   — and the trap is sharper than a two-row overcount: on `main` before this
->   merge the naive regex read **51**, which is exactly the true count *after*
->   it, so the wrong command and the right one have each been correct at
->   different moments and neither can be checked against this sentence. And the
+>   merge the naive regex read 51, which was exactly the true count at an
+>   earlier moment, so the wrong command and the right one have each been
+>   correct at different times and neither can be checked against this sentence.
+>   🛑 **And main's own version of this line read "fifty-one" against a table
+>   that already held 54** — measured at the merge, anchored: main 54, resolved
+>   55. A count line stating the lesson about count lines was itself three
+>   behind, which is the fourth time this sentence has gone stale while warning
+>   you not to quote it. 🛑 **Then it went stale AGAIN the same day, on the same
+>   branch, for the same reason** — `main` appended a 55th row while the branch
+>   held a 55th of its own, so the branch row became 56: measured at that merge,
+>   anchored main 55 / resolved 56 (naive 57 / 58), and `main`'s own tail line in
+>   `docs/audits/2026-08-15-detector-blindness-taxonomy.md` read **49**. Twice in
+>   one day is the signal: this is not a number that goes stale occasionally, it
+>   is a number that is stale by default. And the
 >   groups
 >   below split the FIRST THIRTY-FOUR seven ways — only the first group is
 >   about conventions at all. **Rows 35-51 are NOT in this list**, and the

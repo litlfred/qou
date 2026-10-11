@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0006183v1/manifest.jsonld",
+  "@type": [
+    "folio-assistant-core:SourceDocument"
+  ],
+  "title": "Fine-tuning and the Wilson renormalization group",
+  "contains": [
+    "library/arxiv-hep-th-0006183v1/sections/sec-front-matter",
+    "library/arxiv-hep-th-0006183v1/sections/sec-000",
+    "library/arxiv-hep-th-0006183v1/sections/sec-001",
+    "library/arxiv-hep-th-0006183v1/sections/sec-002",
+    "library/arxiv-hep-th-0006183v1/sections/sec-003",
+    "library/arxiv-hep-th-0006183v1/sections/sec-004",
+    "library/arxiv-hep-th-0006183v1/sections/sec-005",
+    "library/arxiv-hep-th-0006183v1/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-hep-th-0006183v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0006183v1.pdf",
+    "source_sha256": "2c9c4d97ce4f71a3a81787ba64e8b40b6fadab8d118259340a5932e8262751ae",
+    "pages": 22,
+    "arxiv": {
+      "id": "hep-th/0006183",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "23 Jun 2000"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

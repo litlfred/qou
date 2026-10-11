@@ -6,8 +6,9 @@ type: task
 priority: medium
 tags:
     - reorg-2026-10-04
+    - 8f-decide
 created_at: 2026-08-30T08:20:00Z
-updated_at: 2026-10-04T15:26:08Z
+updated_at: 2026-10-10T07:40:12Z
 parent: qou-8lxd
 ---
 
@@ -163,3 +164,26 @@ formalised", so the file no longer reads as stronger than it is.
 
 **No cascade from this change**: the block stays a `proposition`, so nothing
 propagates. Its `lean.ref` (`qou:QOU.Torsion.skein_generation`) is unchanged.
+
+
+## Re-filed `8f-lean` -> `8f-decide` 2026-10-10
+
+The 2026-10-10 front tagging put this in `8f-lean` (mechanical Lean work) on the
+strength of its title — "self-assuming projection" reads like a defect to repair.
+**Reading the body corrects that.** This bean states, in its own words, that
+picking among its three dispositions *"is a judgement about what the proposition
+is meant to assert, which is the author's call, not a mechanical repair"*, and it
+already carries the three routes plus a recommendation.
+
+So it is owner-gated, and it was making `8f-lean` look one item larger than it
+is. Nothing about the diagnosis changes; only where it sits.
+
+**Not actioned, deliberately.** I did not pick among (1) demote to
+`conj:skein-generation`, (2) make the class carry genuine sub-hypotheses per
+§3b-cond item 5, or (3) restate at the narrative's actual strength
+(hadron-restricted, finite, `Z[q^{+-1}]` coefficients). The prior agent's
+recommendation — (1) now, (3) later — stands as the thing to approve or overrule.
+
+Also still live from the body: **do not delete `QOU/scratch_skein.lean` before
+this resolves.** It is debris in every other respect (`qou-scrx`) but it is the
+corpus's only hadron-restricted statement of the claim.

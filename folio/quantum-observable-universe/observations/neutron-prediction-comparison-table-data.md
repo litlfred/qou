@@ -1,8 +1,8 @@
 | Discrepancy $\lvert\Delta n\rvert$ | Elements | Count |
 |:------------------------:|:---------|------:|
-| $0$ | He, C, F, Na, Ti, V, Mn, As, Rb, Ru, In, Sb, Eu, Lu, Ta, W, Re, Pt, ... | 18 |
-| $1$ | H, Li, Be, B, N, O, Ne, Al, P, Ar, Sc, Co, ... | 42 |
-| $2$ | Mg, Si, Cl, K, Fe, Cu, Kr, Zr, ... | 24 |
-| $3$ | S, Zn, Xe, Dy, Np, Am, Bk, ... | 10 |
-| $4$ | Ca, Ba, Po, Cf, Fm | 5 |
-| $5$--$8$ | Ni, At, Te, Es, Md, No, Lr | 4 |
+| $0$ | He, C, F, Na, Ti, V, Mn, Br, Y, Ru, In, Pr, Er, Tm, Au, Cm | 16 |
+| $1$ | H, Li, Be, B, N, O, Ne, Al, P, Ar, Sc, Cr, Co, Ga, As, Rb, Sr, Nb, Mo, Rh, Pd, Sb, Ce, Eu, Tb, Lu, Ta, W, Pt, Bi, Ac, Pa, Np, Am | 34 |
+| $2$ | Mg, Si, S, Cl, K, Fe, Cu, Ge, Kr, Zr, Tc, Cd, I, Cs, Nd, Pm, Ho, Re, Ir, Hg, Tl, Po, Cf, Fm, Lr | 25 |
+| $3$ | Zn, Se, Ag, Sn, La, Sm, Gd, Yb, Hf, Pb, Fr, Ra, Th, U, Pu, Bk | 16 |
+| $4$ | Ca, Ni, Xe, Dy, Os, At, Es, Md | 8 |
+| $5$--$7$ | Te, Ba, Rn, No | 4 |

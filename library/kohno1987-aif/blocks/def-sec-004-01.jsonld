@@ -1,0 +1,20 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/kohno1987-aif/blocks/def-sec-004-01",
+  "@type": [
+    "folio-assistant-core:Definition",
+    "doco:Section"
+  ],
+  "kind": "definition",
+  "pageStart": 13,
+  "pageEnd": 18,
+  "text": "def-sec-004-01.md",
+  "derivedFrom": "library/kohno1987-aif/sections/sec-004",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kohno1987-aif/manifest.jsonld",
+  "provenance": "ingested"
+}

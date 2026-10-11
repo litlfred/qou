@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ram1991-frobenius-formula/manifest.jsonld",
+  "@type": [
+    "folio-assistant-core:SourceDocument"
+  ],
+  "title": "ram1991-frobenius-formula",
+  "contains": [
+    "library/ram1991-frobenius-formula/sections/sec-front-matter",
+    "library/ram1991-frobenius-formula/sections/sec-000",
+    "library/ram1991-frobenius-formula/sections/sec-001",
+    "library/ram1991-frobenius-formula/sections/sec-002",
+    "library/ram1991-frobenius-formula/sections/sec-003",
+    "library/ram1991-frobenius-formula/sections/sec-004",
+    "library/ram1991-frobenius-formula/sections/sec-005",
+    "library/ram1991-frobenius-formula/sections/sec-006",
+    "library/ram1991-frobenius-formula/sections/sec-007",
+    "library/ram1991-frobenius-formula/sections/sec-008",
+    "library/ram1991-frobenius-formula/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "ram1991-frobenius-formula",
+    "title_source": "slug",
+    "source_file": "ram1991-frobenius-formula.pdf",
+    "source_sha256": "26b2fc85338d915051bd4ad75ccf390a0182f148ed7364c870b6964c5bc5f5a6",
+    "pages": 28,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}
