@@ -294,3 +294,4 @@ folio/*/lean/blocks-shadow/
 # would be a second, diverging copy. `/**`, not `/fsh-guts/`, matching the
 # platform's rule so branch-store still sees the mount's files.
 /fsh-guts/**
+ingest-staging/
