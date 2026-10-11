@@ -1,13 +1,13 @@
 ---
 # qou-7zob
-title: 'NN sector: open the ell/space index -- a flavour-only interface CANNOT split 3S1 from 1S0, proved degenerate'
+title: 'NN sector: space index gives only ell mod 2 -- parked; 3S1/1S0 split now via spin-only twist (qou-ulj0), sign defect via qou-ales'
 status: todo
 type: task
-priority: normal
+priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T03:11:32Z
-updated_at: 2026-10-10T19:40:00Z
+updated_at: 2026-10-11T05:45:00Z
 parent: qou-10v9
 ---
 
@@ -104,3 +104,12 @@ Lean: `QOU/Hecke/OrbitalIndexCarrier.lean` (generic CommRing, sorry-free, exit 0
 So a space index cannot fix the NN sign defect, which now sits with qou-ales (gamma-gamma word selection). Its only remaining use would be 3S1-3D1 mixing, and the corpus has no target for that: "quadrupole moment" has zero hits in docs, folio, computations and beans.
 
 Suggested re-scope (owner decision, NOT enacted): "only ell mod 2 is derivable from interface letters; a space index cannot address the sign defect"; reopen when a deuteron D-state or quadrupole target exists. Next object if built: a second Schur–Weyl factor carrying spatial SU(2). Not recommended, because nothing in the corpus forces it.
+
+## 2026-10-11 — RE-SCOPE ENACTED (owner ofri, thread "full-tower mass weight": "Re-scope bean qou-7zob, as offered above")
+
+- Interface letters can derive only ell mod 2 (exchange acts as (-1)^ell; QOU/Hecke/OrbitalIndexCarrier.lean, PR #7612). A space index cannot fix the NN sign defect (nn > pn > pp).
+- The tensor door is closed: TensorCouplingCannotUnbindSinglet (S12 annihilates the singlet). The P± isospin grading already separates the channels (audit 2026-08-16 §5).
+- The sign defect is owned by qou-ales (gamma-gamma word selection + confinement SDP).
+- The 3S1/1S0 split is now pursued in qou-ulj0. A spin-only ribbon twist gives D/S = q0^2 (TwistedChannelSplitting.lean), conditional on theta_iso = 1. Its derivation and the sign of the split are being worked on PR #7612.
+- Reopen trigger: a deuteron D-state or quadrupole target, or a corpus structure that forces a spatial SU(2) Schur–Weyl factor.
+Status stays todo (priority lowered): the question is parked, not answered.
