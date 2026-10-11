@@ -93,3 +93,89 @@ skills sweep is also still waiting on the owner"*. Both halves were wrong. The
 skills — the skills surface is **16**. And it is not waiting on the owner; it is
 in a PR. The stale figure came from reading AGENTS.md's note rather than
 measuring, which is the failure this whole bean is about.
+
+## 2026-10-11 — owner authorised "sweep the 76". DONE, and the 76 were not what this bean said
+
+The sweep is applied, and reading each path changed the shape of the problem
+twice. Neither change is in the framing above.
+
+### Change 1: the dead paths are NOT mostly in bean bodies — they are in the WATCHER QUEUES
+
+My rewrite over `beans/defs/*.md` retargeted **2** occurrences. The other 36
+distinct paths live in `beans/defs/*-watcher-queue.json` — the integration
+watchers' work queues, which are **machine-consumed data**, not prose, and which
+the `beans ≠ sidecars` rule says are not beans at all despite sitting in
+`beans/defs/`. A `.md`-only glob cannot see them, which is how I measured "544
+beans" and then retargeted two files.
+
+### Change 2: the right discriminator is the entry's STATUS, not the path
+
+    queue                                     dead-path entries   status
+    canonical-watcher-queue.json                      1           wontfix
+    compute-integration-watcher-queue.json           30           wontfix
+    detangler-integration-watcher-queue.json         21           wontfix
+    proof-integration-watcher-queue.json             43           resolved
+    devils-advocate-watcher-queue.json               40           needs-author
+
+**95 of 135 are CLOSED** — `wontfix` or `resolved`. Those are records of what
+was audited at the time, and rewriting their paths would falsify the record.
+**Left untouched**, same call as the `4.66e6` drain precedent.
+
+**All 46 entries of `devils-advocate-watcher-queue.json` are `needs-author`** —
+open items awaiting the author, citing files that do not exist. *That* is where
+the dead path is a live defect, and it is a sharper finding than this bean's
+original framing: not "544 beans have stale citations" but **46 open work items
+pointing at nothing**, in a queue AGENTS.md §4 lists as idle-backlog priority 3.
+
+### Applied
+
+Of the **71** distinct paths those 46 entries cite, **65 resolved to a unique
+file** and were retargeted; **6** were left, for a reason below. Verified after:
+all five queues still parse, `items` counts unchanged, **every entry's `status`
+unchanged**, and all 65 new paths exist on disk (0 missing).
+
+**The moves are two-stage, which is why a prefix rewrite would have failed.**
+The dominant pattern is not `content/` → `folio/` alone but the old
+`particle-interactions/` chapter splitting into `nuclear-interactions/` (28) and
+`knots-particles-confinement/` (9), plus `mass-endomorphism.ts` moving into its
+own directory. A blind `s|content/|folio/|` fixes **none** of those — it would
+produce `folio/…/particle-interactions/…`, a path that has never existed. This
+is the 9 % residue the framing above warned about, and it turned out to be the
+*majority* of the 76.
+
+### The 6 left, and they are NOT defects
+
+All six name a **`.lean` sibling** of a block that exists. Resolved properly —
+my first attempt was wrong, see below — every one of the six has a `lean.ref`
+that resolves to a **library** declaration:
+
+    b1-figure-8-row-theorem            -> QOU/AppendixSurreals/B1Figure8RowTheorem.lean   b1_figure_8_row
+    depth-2-identification-bloch-suslin-> QOU/AppendixSurreals/Depth2IdentificationBlochSuslin.lean
+    knot-factor-frobenius-pairing      -> QOU/BraidKnot/KnotFactorFrobeniusPairing.lean
+    flavor-split-substrate             -> QOU/HadronicMass.lean                           flavor_split_substrate
+    cyclotomic-l-value-decomposition   -> QOU/BraidKnot/CyclotomicLValueDecomposition.lean
+    confinement-topological            -> QOU/Interactions/GramIndefinite.lean:201        gram_indefinite_witness
+
+So the **absent sibling is CORRECT** — AGENTS.md §0a's "no shadowing stubs" rule
+forbids creating one when the library declaration exists. Rewriting these to a
+`folio/…/<block>.lean` would invent a path that must not exist. Left as-is
+deliberately.
+
+🛑 **Two of my own resolution errors, caught by checking rather than by review.**
+First, I built the library path by `tr '.' '/'` on the whole `lean.ref`, which
+turns the *declaration name* into a path segment — that reported 5 of 6 as
+"library file ABSENT too", pure artifact. Fixed by trying each dotted **prefix**
+as the module. Second, even then `confinement-topological` read as missing,
+because the prefix search found the `QOU/Interactions.lean` aggregator and
+stopped; the declaration is in `QOU/Interactions/GramIndefinite.lean`. One grep
+settled it. Had I reported either, I would have filed a dangling-`lean.ref`
+defect against a corpus that is correct.
+
+### What is left, and the recommendation above is now obsolete
+
+The framing above recommended *"the 76 first and the 789 never"*. The 76 are
+done. The **789** are unchanged, and the case for leaving them is now stronger
+than when I wrote it: the 95 closed queue entries are records that *should* keep
+their historical paths, and most of the rest are prose in bean bodies that no
+tool reads. **Status: `todo`**, holding only the 789 question, which nothing
+depends on.
