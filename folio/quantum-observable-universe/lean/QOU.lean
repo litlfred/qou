@@ -455,6 +455,12 @@ import QOU.OrientedSkein.HeckeCrossing
 import QOU.OrientedSkein.SkeinDatum
 import QOU.OrientedSkein.MarkovClosure
 import QOU.OrientedSkein.BraidedClosure
+import QOU.OrientedSkein.OS.Syntax
+import QOU.OrientedSkein.OS.Category
+import QOU.OrientedSkein.OS.Monoidal
+import QOU.OrientedSkein.OS.Datum
+import QOU.OrientedSkein.OS.Interpret
+import QOU.OrientedSkein.OS.Universal
 import QOU.SchurWeyl.HeckeCoset
 import QOU.SchurWeyl.HeckeDim3
 import QOU.SchurWeyl.HeckeDim3Dim
