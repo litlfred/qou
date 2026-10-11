@@ -251,7 +251,6 @@ def run_checks():
     for n in range(3, 7):
         ys = y_lambda_symbolic(n)
         for lam, ex in ys.items():
-            mine = y_lambda(lam) if len(lam) <= 2 or (len(lam) == 2) else 0
             if len([x for x in lam if x > 0]) > 2:
                 mine = 0
             else:
