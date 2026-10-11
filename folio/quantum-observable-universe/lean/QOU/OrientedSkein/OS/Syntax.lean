@@ -45,8 +45,8 @@ Brundan's relations, in the form of `QOU.OrientedSkein.OrientedSkeinDatum`, with
 * `zigE`, `zigF` — the two zigzag (snake) relations for the cup `C` and cap `D`;
 * `TS`, `ST` — `T` is inverse to the sideways crossing `(C ▷ E F) (F ◁ S ▷ F) (F E ◁ D)`;
 * `dim` — `t · C T D = δ · 1` on the empty word;
-* `ichg g g'` — the interchange law for two generators side by side, which is what makes the
-  free *category* on layers into the free *monoidal* category.
+* `ichg g g' m` — the interchange law for two generators with the strands `m` between them,
+  which is what makes the free *category* on layers into the free *monoidal* category.
 
 Sorry-free.
 
@@ -278,8 +278,8 @@ inductive Rel
   | ST
   /-- `t · C T D = δ · 1_𝟙`. -/
   | dim
-  /-- The interchange law for the generators `g` and `g'` side by side. -/
-  | ichg (g g' : Gen)
+  /-- The interchange law for the generators `g` and `g'`, with the strands `m` between them. -/
+  | ichg (g g' : Gen) (m : Word)
 
 namespace Rel
 
@@ -292,7 +292,7 @@ def src : Rel → Word
   | TS => [false, true]
   | ST => [true, false]
   | dim => []
-  | ichg g g' => g.src ++ g'.src
+  | ichg g g' m => g.src ++ (m ++ g'.src)
 
 /-- The target word of a relation. -/
 def tgt : Rel → Word
@@ -303,7 +303,7 @@ def tgt : Rel → Word
   | TS => [false, true]
   | ST => [true, false]
   | dim => []
-  | ichg g g' => g.tgt ++ g'.tgt
+  | ichg g g' m => g.tgt ++ (m ++ g'.tgt)
 
 variable (q qi t δ : R)
 
@@ -316,7 +316,7 @@ noncomputable def lhs : Rel → PA R
   | TS => pth (⟨[], .T, []⟩ :: sidewaysPath)
   | ST => pth (sidewaysPath ++ [⟨[], .T, []⟩])
   | dim => t • pth [⟨[], .C, []⟩, ⟨[], .T, []⟩, ⟨[], .D, []⟩]
-  | ichg g g' => pth [⟨[], g, g'.src⟩, ⟨g.tgt, g', []⟩]
+  | ichg g g' m => pth [⟨[], g, m ++ g'.src⟩, ⟨g.tgt ++ m, g', []⟩]
 
 /-- The right-hand side of a relation. -/
 noncomputable def rhs : Rel → PA R
@@ -327,7 +327,7 @@ noncomputable def rhs : Rel → PA R
   | TS => pth []
   | ST => pth []
   | dim => δ • pth []
-  | ichg g g' => pth [⟨g.src, g', []⟩, ⟨[], g, g'.tgt⟩]
+  | ichg g g' m => pth [⟨g.src ++ m, g', []⟩, ⟨[], g, m ++ g'.tgt⟩]
 
 /-- The relator `lhs - rhs`. -/
 noncomputable def rel (ρ : Rel) : PA R := ρ.lhs t - ρ.rhs q qi δ
