@@ -203,3 +203,12 @@ which **is** the disjoint-block form of the connected-sum multiplicativity step 
 **Third point, independent agreement:** #7418's C9 (*"the corpus's bond-product grounding cites a theorem whose hypothesis the production word fails"*) is §6b's finding from the other side — `ProductionChainBondProduct`'s strand-window hypotheses are sufficient-not-necessary. Two arcs, two methods, same conclusion about the same citation.
 
 Recorded as §7b of the step-11 audit; §7 reason 3 re-scoped from "not formalised" to "conditionally formalised on an open PR". Coordination comment posted on #7418.
+
+## 2026-10-11 — nn and pn under the same selection (commit 9fff77c6ecc, PR #7612; owner pick "2y")
+- Bond-alone reading 3 is content-blind by construction: nn, pn and np select G^3 like pp, at all four placements V1..V4 (feasible m ≤ 10 = {0,3,6,9}).
+- V1 (canonical) with G^3: B_pp = B_np = −4.469 keV, B_nn = B_pn = −2.583 keV. All unbound; charge independence fails (pp − nn = −1.886 keV); pn equals one like pair.
+- Whole-element reading 3 (2026-09-13 scope B): content-blind at V1 and V2 (measured, m ≤ 10); at V3 and V4 content-dependent (V3 m=1 all; V4 m=1 for pp, pn and m=2 for nn, np). In every cell B_pn equals one like-pair value.
+- Lean QOU/Mass/OneBodyBondOrdering.lean (sorry-free, generic linear order): for a one-body pair functional, pn ∈ {pp, nn} (pn_eq_like), pn can never be strictly the max/min/between, and pp = nn forces all equal. The deuteron-most-bound ordering is excluded whatever the signs; a two-body witness shows the premise is needed.
+- pn T=0 vs T=1 cannot be separated: the words carry no spin/isospin label.
+Scope (a): the one-body premise is from step 11 (conditional on connected-sum multiplicativity); placement is underived.
+Consequence: the gamma-gamma selection alone cannot produce the nuclear ordering; something two-body (in the nucleon pair) or a T label is needed.
