@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1003.4485v2",
+  "title": "An Invitation to Higher Gauge Theory",
   "contains": [
+    "library/arxiv-1003.4485v2/sections/sec-front-matter",
     "library/arxiv-1003.4485v2/sections/sec-000",
     "library/arxiv-1003.4485v2/sections/sec-001",
     "library/arxiv-1003.4485v2/sections/sec-002",
@@ -25,7 +26,8 @@
     "library/arxiv-1003.4485v2/sections/sec-011",
     "library/arxiv-1003.4485v2/sections/sec-012",
     "library/arxiv-1003.4485v2/sections/sec-013",
-    "library/arxiv-1003.4485v2/sections/sec-014"
+    "library/arxiv-1003.4485v2/sections/sec-014",
+    "library/arxiv-1003.4485v2/sections/sec-015"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -38,7 +40,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1003.4485v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1003.4485v2.pdf",
     "source_sha256": "714d73873cecd73a2d14ff1661b6ab778124421222b1ec3990acc3f0448a67f0",
     "pages": 60,
