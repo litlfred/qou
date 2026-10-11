@@ -224,6 +224,7 @@ import QOU.HeckeAlgebra.WedderburnUnconditional
 -- on a classical value the corpus had not written down (bean qou-v7ms).
 import QOU.HeckeAlgebra.SeminormalDimSmall
 import QOU.Glossary
+import QOU.KZ.AssociatorKZ
 import QOU.KZ.FuchsianAnalytic
 import QOU.KZ.FuchsianConvergence
 import QOU.KZ.FuchsianFormal
