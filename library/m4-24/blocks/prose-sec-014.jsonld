@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/m4-24/blocks/prose-sec-014",
+  "kind": "prose",
+  "title": "Vassiliev invariants and crossing numbers",
+  "pageStart": 31,
+  "pageEnd": 33,
+  "text": "../sections/sec-014-24-vassiliev-invariants-and-crossing-numbers.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./m4-24/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./m4-24/manifest.jsonld",
+  "provenance": "ingested"
+}

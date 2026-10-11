@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/18/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/18/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "These",
+  "title": "Conformal simplices",
   "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-001-3-these.md",
-  "derivedFrom": "library/18/manifest",
-  "sourceDocument": "library/18/manifest",
+  "pageEnd": 4,
+  "text": "../sections/sec-001-1-conformal-simplices.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./18/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./18/manifest.jsonld",
   "provenance": "ingested"
 }

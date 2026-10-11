@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/equations-aux-q-differences/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Équations aux q-différences",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./equations-aux-q-differences/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "equations-aux-q-differences",
   "contains": [
+    "library/equations-aux-q-differences/sections/sec-front-matter",
     "library/equations-aux-q-differences/sections/sec-000",
     "library/equations-aux-q-differences/sections/sec-001",
     "library/equations-aux-q-differences/sections/sec-002",
@@ -17,27 +23,13 @@
     "library/equations-aux-q-differences/sections/sec-008",
     "library/equations-aux-q-differences/sections/sec-009",
     "library/equations-aux-q-differences/sections/sec-010",
-    "library/equations-aux-q-differences/sections/sec-011",
-    "library/equations-aux-q-differences/sections/sec-012",
-    "library/equations-aux-q-differences/sections/sec-013",
-    "library/equations-aux-q-differences/sections/sec-014",
-    "library/equations-aux-q-differences/sections/sec-015",
-    "library/equations-aux-q-differences/sections/sec-016",
-    "library/equations-aux-q-differences/sections/sec-017",
-    "library/equations-aux-q-differences/sections/sec-018",
-    "library/equations-aux-q-differences/sections/sec-019",
-    "library/equations-aux-q-differences/sections/sec-020",
-    "library/equations-aux-q-differences/sections/sec-021",
-    "library/equations-aux-q-differences/sections/sec-022",
-    "library/equations-aux-q-differences/sections/sec-023",
-    "library/equations-aux-q-differences/sections/sec-024",
-    "library/equations-aux-q-differences/sections/sec-025",
-    "library/equations-aux-q-differences/sections/sec-026",
-    "library/equations-aux-q-differences/sections/sec-027"
+    "library/equations-aux-q-differences/sections/sec-011"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "equations-aux-q-differences",
+    "title_source": "slug",
     "source_file": "Equations_aux_q-differences.pdf",
     "source_sha256": "357d4e0b546b27e6a316a7177e9240d5d8ea3b6d8a06bd57a3b2679a31eeb094",
     "pages": 30,

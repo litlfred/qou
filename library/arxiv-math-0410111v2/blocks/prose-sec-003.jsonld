@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0410111v2/blocks/prose-sec-003",
+  "kind": "prose",
+  "title": "An extension to the mixed integer case",
+  "pageStart": 6,
+  "pageEnd": 7,
+  "text": "../sections/sec-003-4-an-extension-to-the-mixed-integer-case.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0410111v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0410111v2/manifest.jsonld",
+  "provenance": "ingested"
+}

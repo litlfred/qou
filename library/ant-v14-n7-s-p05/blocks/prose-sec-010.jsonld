@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s-p05/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s-p05/blocks/prose-sec-010",
   "kind": "prose",
-  "title": "Comparison isomorphisms",
-  "pageStart": 31,
-  "pageEnd": 36,
-  "text": "../sections/sec-010-7-comparison-isomorphisms.md",
-  "derivedFrom": "library/ant-v14-n7-s-p05/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p05/manifest",
+  "title": "References",
+  "pageStart": 50,
+  "pageEnd": 52,
+  "text": "../sections/sec-010-references.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ant-v14-n7-s-p05/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ant-v14-n7-s-p05/manifest.jsonld",
   "provenance": "ingested"
 }

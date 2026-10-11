@@ -1,16 +1,18 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/kmj-48-2-255/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/kmj-48-2-255/blocks/prose-sec-000",
+  "@type": [],
   "kind": "prose",
   "title": "Introduction",
   "pageStart": 1,
   "pageEnd": 3,
   "text": "../sections/sec-000-1-introduction.md",
-  "derivedFrom": "library/kmj-48-2-255/manifest",
-  "sourceDocument": "library/kmj-48-2-255/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kmj-48-2-255/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kmj-48-2-255/manifest.jsonld",
   "provenance": "ingested"
 }

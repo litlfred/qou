@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ki52/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ki52/blocks/prose-sec-007",
   "kind": "prose",
-  "title": "Re 1",
-  "pageStart": 19,
-  "pageEnd": 28,
-  "text": "../sections/sec-007-2-re-1.md",
-  "derivedFrom": "library/ki52/manifest",
-  "sourceDocument": "library/ki52/manifest",
+  "title": "Verifying the assumption of the saddle point method",
+  "pageStart": 36,
+  "pageEnd": 39,
+  "text": "../sections/sec-007-53-verifying-the-assumption-of-the-saddle-point.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ki52/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ki52/manifest.jsonld",
   "provenance": "ingested"
 }

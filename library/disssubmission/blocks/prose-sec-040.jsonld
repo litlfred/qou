@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/disssubmission/blocks/prose-sec-040",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/disssubmission/blocks/prose-sec-040",
   "kind": "prose",
-  "title": "The thick subcategory of negligible objects 47",
-  "pageStart": 55,
-  "pageEnd": 57,
-  "text": "../sections/sec-040-33-the-thick-subcategory-of-negligible-objects-4.md",
-  "derivedFrom": "library/disssubmission/manifest",
-  "sourceDocument": "library/disssubmission/manifest",
+  "title": "The generic rank of Brill-Noether sheaves",
+  "pageStart": 143,
+  "pageEnd": 145,
+  "text": "../sections/sec-040-6-the-generic-rank-of-brill-noether-sheaves.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./disssubmission/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./disssubmission/manifest.jsonld",
   "provenance": "ingested"
 }

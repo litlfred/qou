@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9212088v1
-doc_title: "Random matrix theory and spectral sum rules for the Dirac operator in QCD1"
+doc_title: "arXiv:hep-th/9212088v1 14 Dec 1992"
 section_id: sec-001-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 2-3
 source_pdf: 9212088v1.pdf
 source_sha256: ecb2c02ec6fe11bd
-doc_brief: "Random matrix theory and spectral sum rules for the Dirac operator in QCD1 — We construct a random matrix model that, in the large N limit, reduces to the low energy limit of the QCD partition"
+toc_source: inferred
 ---
 Since our main understanding of nonperturbative phenomena in QCD comes from
 numerical simulations analytical results in this direction are most welcome [1, 2].

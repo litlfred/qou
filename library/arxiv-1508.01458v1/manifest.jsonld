@@ -9,7 +9,7 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1508.01458v1",
+  "title": "Knotty inﬂation and the dimensionality of spacetime",
   "contains": [
     "library/arxiv-1508.01458v1/sections/sec-front-matter",
     "library/arxiv-1508.01458v1/sections/sec-000"
@@ -25,7 +25,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1508.01458v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1508.01458v1.pdf",
     "source_sha256": "37cfb89f419c9eabb74ffe86ea7bc6c7580478946dbc71472634ddf4c4a40aa4",
     "pages": 5,

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/gn2/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/gn2/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-001-2-razvan-gelca-and-fumikazu-nagasato.md",
-  "derivedFrom": "library/gn2/manifest",
-  "sourceDocument": "library/gn2/manifest",
+  "title": "The “minimal relation” in the KBSM of the twist knot exterior. There",
+  "pageStart": 3,
+  "pageEnd": 11,
+  "text": "../sections/sec-001-21-the-minimal-relation-in-the-kbsm-of-the-twist.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./gn2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./gn2/manifest.jsonld",
   "provenance": "ingested"
 }

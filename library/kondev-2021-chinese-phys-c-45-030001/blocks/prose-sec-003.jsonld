@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "Max-Planck-Institut f¨ur Kernphysik, Saupfercheckweg 1, 69117 Heidelberg, Germany",
-  "pageStart": 2,
-  "pageEnd": 2,
-  "text": "../sections/sec-003-5-max-planck-institut-fur-kernphysik-saupferchec.md",
-  "derivedFrom": "library/kondev-2021-chinese-phys-c-45-030001/manifest",
-  "sourceDocument": "library/kondev-2021-chinese-phys-c-45-030001/manifest",
+  "title": "Half-life",
+  "pageStart": 5,
+  "pageEnd": 8,
+  "text": "../sections/sec-003-23-half-life.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./kondev-2021-chinese-phys-c-45-030001/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./kondev-2021-chinese-phys-c-45-030001/manifest.jsonld",
   "provenance": "ingested"
 }

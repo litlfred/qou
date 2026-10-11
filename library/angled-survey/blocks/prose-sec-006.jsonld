@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/angled-survey/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/angled-survey/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-  "pageStart": 4,
-  "pageEnd": 4,
-  "text": "../sections/sec-006-4-david-futer-and-francoisgu-eritaud.md",
-  "derivedFrom": "library/angled-survey/manifest",
-  "sourceDocument": "library/angled-survey/manifest",
+  "title": "References",
+  "pageStart": 23,
+  "pageEnd": 24,
+  "text": "../sections/sec-006-references.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./angled-survey/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./angled-survey/manifest.jsonld",
   "provenance": "ingested"
 }

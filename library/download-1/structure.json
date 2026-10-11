@@ -6,70 +6,632 @@
   "sha256": "bbb001c909958e8a2c281846eeab29e5bb49e1d1f4645f51221afb88ac641e3f",
   "bytes": 198627,
   "pages": 24,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:25Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.2969/jmsj/06120483",
-  "title": "Central and Lp-concentration of 1-Lipschitz maps into R-trees",
+  "title": "Central and L p -concentration of 1-Lipschitz maps into R -trees",
   "authors_raw": "By Kei FUNANO",
   "title_lines": [
    "Central and Lp-concentration of 1-Lipschitz maps",
    "into R-trees"
   ],
-  "abstract": "In this paper, we study the Le \u00b4vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees. Our main theorems assert that the concentration to R-trees is equivalent to the concentration to the real line.",
+  "abstract": "In this paper, we study the Le\u00b4vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees. Our main theorems assert that the concentration to R-trees is equivalent to the concentration to the real line.",
   "docinfo": {
-   "CreationDate": "D:20090420233152Z",
-   "Producer": "Acrobat Distiller 5.0.5 (Windows)",
-   "Author": "Kei Funano",
    "Title": "Central and L^{p}-concentration of 1-Lipschitz maps into \\mbi{R}-trees",
-   "Creator": "Arbortext Advanced Print Publisher 9.1.422/W"
+   "Author": "Kei Funano",
+   "Producer": "Acrobat Distiller 5.0.5 (Windows)",
+   "Creator": "Arbortext Advanced Print Publisher 9.1.422/W",
+   "CreationDate": "D:20090420233152Z"
+  },
+  "title_raw": "Central and Lp-concentration of 1-Lipschitz maps into R-trees",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Central and L^{p}-concentration of 1-Lipschitz maps into \\mbi{R}-trees",
+   "heading": "Central and L p -concentration of 1-Lipschitz maps into R -trees",
+   "text": "Central and Lp-concentration of 1-Lipschitz maps into R-trees",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
+   "level": 1,
+   "title": "Introduction.",
+   "page": 1,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "483"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries.",
+   "page": 4,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "486"
+  },
+  {
    "level": 2,
-   "title": "Center of mass of a measure on a CAT(0)-space and observ-",
+   "title": "Basics of the concentration and the Lp-concentration.",
+   "page": 4,
+   "source": "inferred",
+   "number": "2.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "486"
+  },
+  {
+   "level": 3,
+   "title": "Observable diameter and separation distance.",
+   "page": 4,
+   "source": "inferred",
+   "number": "2.1.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "486"
+  },
+  {
+   "level": 3,
+   "title": "Observable Lp-variation.",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.1.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "487"
+  },
+  {
+   "level": 2,
+   "title": "Basics of R-trees.",
+   "page": 6,
+   "source": "inferred",
+   "number": "2.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "488"
+  },
+  {
+   "level": 2,
+   "title": "Center of mass of a measure on a CAT(0)-space and observable central radius.",
    "page": 7,
    "source": "inferred",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "489"
+  },
+  {
+   "level": 3,
+   "title": "Basics of the center of mass of a measure on a CAT(0)-space.",
+   "page": 7,
+   "source": "inferred",
+   "number": "2.3.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "489"
+  },
+  {
+   "level": 3,
+   "title": "Observable central radius.",
+   "page": 9,
+   "source": "inferred",
+   "number": "2.3.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "491"
+  },
+  {
+   "level": 1,
+   "title": "Existence of a median in an R-tree.",
+   "page": 11,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "493"
+  },
+  {
+   "level": 1,
+   "title": "The necessity in Proposition 2.12 for R-trees.",
+   "page": 13,
+   "source": "inferred",
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "495"
+  },
+  {
+   "level": 1,
+   "title": "Proof of the main theorems.",
+   "page": 16,
+   "source": "inferred",
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "498"
   },
   {
    "level": 1,
    "title": "References",
    "page": 23,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "505"
   }
  ],
  "toc_source": "inferred",
- "sections": [
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
   {
-   "id": "sec-000-23-center-of-mass-of-a-measure-on-a-cat0-space-a",
-   "number": "2.3",
-   "title": "Center of mass of a measure on a CAT(0)-space and observ-",
-   "level": 2,
-   "page_start": 7,
-   "page_end": 23,
-   "n_chars": 28717,
-   "n_words": 5833
+   "physical": 1,
+   "label": "483",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
   },
   {
-   "id": "sec-001-references",
+   "physical": 2,
+   "label": "484",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "485",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "486",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "487",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "488",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "489",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "490",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "491",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "492",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "493",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "494",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "495",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "496",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "497",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "498",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "499",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "500",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "501",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "502",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "503",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "504",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "505",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "506",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 388,
+   "n_words": 57,
+   "label_start": "483",
+   "label_end": "483"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction.",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 5978,
+   "n_words": 1034,
+   "label_start": "483",
+   "label_end": "486"
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries.",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 4,
+   "n_words": 1,
+   "label_start": "486",
+   "label_end": "486"
+  },
+  {
+   "id": "sec-002-21-basics-of-the-concentration-and-the-lp-concen",
+   "number": "2.1",
+   "title": "Basics of the concentration and the Lp-concentration.",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 5,
+   "n_words": 1,
+   "label_start": "486",
+   "label_end": "486"
+  },
+  {
+   "id": "sec-003-211-observable-diameter-and-separation-distance",
+   "number": "2.1.1",
+   "title": "Observable diameter and separation distance.",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1888,
+   "n_words": 402,
+   "label_start": "486",
+   "label_end": "487"
+  },
+  {
+   "id": "sec-004-212-observable-lp-variation",
+   "number": "2.1.2",
+   "title": "Observable Lp-variation.",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1085,
+   "n_words": 222,
+   "label_start": "487",
+   "label_end": "488"
+  },
+  {
+   "id": "sec-005-22-basics-of-r-trees",
+   "number": "2.2",
+   "title": "Basics of R-trees.",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2544,
+   "n_words": 548,
+   "label_start": "488",
+   "label_end": "489"
+  },
+  {
+   "id": "sec-006-23-center-of-mass-of-a-measure-on-a-cat0-space-a",
+   "number": "2.3",
+   "title": "Center of mass of a measure on a CAT(0)-space and observable central radius.",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 26,
+   "n_words": 4,
+   "label_start": "489",
+   "label_end": "489"
+  },
+  {
+   "id": "sec-007-231-basics-of-the-center-of-mass-of-a-measure-on",
+   "number": "2.3.1",
+   "title": "Basics of the center of mass of a measure on a CAT(0)-space.",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 2941,
+   "n_words": 628,
+   "label_start": "489",
+   "label_end": "491"
+  },
+  {
+   "id": "sec-008-232-observable-central-radius",
+   "number": "2.3.2",
+   "title": "Observable central radius.",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 3006,
+   "n_words": 644,
+   "label_start": "491",
+   "label_end": "493"
+  },
+  {
+   "id": "sec-009-3-existence-of-a-median-in-an-r-tree",
+   "number": "3",
+   "title": "Existence of a median in an R-tree.",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 5784,
+   "n_words": 1189,
+   "label_start": "493",
+   "label_end": "495"
+  },
+  {
+   "id": "sec-010-4-the-necessity-in-proposition-212-for-r-trees",
+   "number": "4",
+   "title": "The necessity in Proposition 2.12 for R-trees.",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 3383,
+   "n_words": 734,
+   "label_start": "495",
+   "label_end": "498"
+  },
+  {
+   "id": "sec-011-5-proof-of-the-main-theorems",
+   "number": "5",
+   "title": "Proof of the main theorems.",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 23,
+   "n_chars": 9466,
+   "n_words": 2033,
+   "label_start": "498",
+   "label_end": "505"
+  },
+  {
+   "id": "sec-012-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 3175,
-   "n_words": 531
+   "n_chars": 3081,
+   "n_words": 442,
+   "label_start": "505",
+   "label_end": "506"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 2,
-  "sections": 2,
-  "chars_total": 31892
+  "toc_entries": 13,
+  "toc_inferred_entries": 13,
+  "toc_inferred_mean_confidence": 0.742,
+  "toc_inferred_empty_share": 0.231,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 14,
+  "chars_total": 39579
  }
 }

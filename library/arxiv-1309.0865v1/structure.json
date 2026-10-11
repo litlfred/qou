@@ -7,7 +7,11 @@
   "bytes": 827058,
   "pages": 83,
   "text_source": "embedded",
-  "math_source": "text-layer"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:19Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -22,1033 +26,1929 @@
   "title_lines": [
    "SOERGEL CALCULUS"
   ],
-  "abstract": "The monoidal category of Soergel bimodules is an incarnati on of the Hecke category , a fundamental object in representation the ory . W e present this cat- egory by generators and relations, using the language of pla nar diagrammatics. W e show that Libedinsky\u2019s light leaves give a basis for morphis m spaces and give a new proof of Soergel\u2019s classi\ufb01cation of the indecomposable Soe rgel bimodules. 1. I NTRODUCTION Let us recall the history of the Hecke algebra from the perspe ctives of algebraiza- tion and categori\ufb01cation. 1.1. The Hecke algebra by generators and relations. LetG be a split \ufb01nite reductive group over a \ufb01nite \ufb01eld Fq, and letB \u2282G be a Borel subgroup. A fundamental object in representation theory is the Hecke algebra FunB\u00d7B(G, C) ofB-biinvariant complex valued functions on G, with multiplication given by con- volution. This algebra \ufb01rst emerged when studying the irred ucible complex char- acters of G, but has gone on to play an essential role in many (at times une xpected) branches of representation theory . Iwahori [Iwa64] made the crucial observation that the Hecke algebra admits a description which is \u201cindependent\u201d of the size q of the base \ufb01eld and only depends on the Weyl group. Fix a maximal split torus T \u2282 B and let (W,S ) denote the Weyl group and its simple re\ufb02ections. Using the Bruhat decomposi tion G = \u2a06 w\u2208W BwB it follows that the Hecke algebra has a basis given by indicat or functions of the sub- setsBwB \u2282G. Now let H be the free Z[v\u00b11]-module with basis {Tw |w \u2208W }. There is a unique algebra structure on H determined by TwTs = { Tws ifws>w , (v\u22122 \u2212 1)Tw +v\u22122Tws ifws<w. 1",
+  "abstract": "The monoidal category of Soergel bimodules is an incarnation of the Hecke category, a fundamental object in representation theory. We present this cat- egory by generators and relations, using the language of planar diagrammatics. We show that Libedinsky\u2019s light leaves give a basis for morphism spaces and give a new proof of Soergel\u2019s classi\ufb01cation of the indecomposable Soergel bimodules.",
   "docinfo": {
+   "Title": "arXiv:1309.0865v1  [math.QA]  3 Sep 2013",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.08",
-   "CreationDate": "D:20130904201808-04'00'",
    "Creator": "dvips(k) 5.991 Copyright 2011 Radical Eye Software",
-   "Title": "arXiv:1309.0865v1  [math.QA]  3 Sep 2013"
+   "CreationDate": "D:20130904201808-04'00'"
+  },
+  "title_raw": "SOERGEL CALCULUS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "arXiv:1309.0865v1 [math.QA] 3 Sep 2013",
+   "heading": "SOERGEL CALCULUS To Mikhail Khovanov and Rapha\u00a8el Rouquier, who taught us generators and relations. 1. I NTRODUCTION Let us recall the history of the Hecke algebra from the perspectives of algebraization and categori\ufb01cation. 1.1. The Hecke algebra by generators and relations. Let G be a split \ufb01nite",
+   "text": "SOERGEL CALCULUS",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "I NTRODUCTION",
+   "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "1"
   },
   {
    "level": 2,
-   "title": "The Hecke algebra by generators and relations. LetG be a split \ufb01nite reductive",
+   "title": "The Hecke algebra by generators and relations",
    "page": 1,
    "source": "inferred",
-   "number": "1.1"
-  },
-  {
-   "level": 1,
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 2,
-   "title": "The Hecke category. Beginning with the seminal work [KL79] of Kazhdan and",
-   "page": 2,
-   "source": "inferred",
-   "number": "1.2"
+   "number": "1.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "1"
   },
   {
    "level": 2,
-   "title": "Soergel bimodules. Just as Iwahori gave an intrinsic construction of the Hecke",
+   "title": "The Hecke category",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
+  },
+  {
+   "level": 2,
+   "title": "Soergel bimodules",
    "page": 3,
    "source": "inferred",
-   "number": "1.3"
-  },
-  {
-   "level": 1,
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "page": 4,
-   "source": "inferred",
-   "number": "4"
+   "number": "1.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "3"
   },
   {
    "level": 2,
-   "title": "Soergel bimodules by generators and relations. A Bott-Samelson bimodule is a",
+   "title": "Soergel bimodules by generators and relations",
    "page": 4,
    "source": "inferred",
-   "number": "1.4"
-  },
-  {
-   "level": 1,
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "page": 6,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 3,
-   "title": "One color relations: It was pointed out in [EK] that most of the one color rela-",
-   "page": 6,
-   "source": "inferred",
-   "number": "1.4.1"
+   "number": "1.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "4"
   },
   {
    "level": 3,
-   "title": "Two color relations: Two color graphs and Soergel bimodules for the dihedral",
+   "title": "One color relations:",
+   "page": 6,
+   "source": "inferred",
+   "number": "1.4.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "6"
+  },
+  {
+   "level": 3,
+   "title": "Two color relations:",
    "page": 7,
    "source": "inferred",
-   "number": "1.4.2"
-  },
-  {
-   "level": 1,
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "page": 8,
-   "source": "inferred",
-   "number": "8"
+   "number": "1.4.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "7"
   },
   {
    "level": 3,
-   "title": "Three color or \u201cZamolodchikov\u201d relations: There is one relation for each \ufb01nite par-",
+   "title": "Three color or ``Zamolodchikov'' relations:",
    "page": 8,
    "source": "inferred",
-   "number": "1.4.3"
-  },
-  {
-   "level": 1,
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "page": 10,
-   "source": "inferred",
-   "number": "10"
+   "number": "1.4.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "8"
   },
   {
    "level": 2,
-   "title": "Consequences for the structure of Soergel bimodules. Let D denote the di-",
+   "title": "Consequences for the structure of Soergel bimodules",
    "page": 11,
    "source": "inferred",
-   "number": "1.5"
-  },
-  {
-   "level": 1,
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "page": 12,
-   "source": "inferred",
-   "number": "12"
-  },
-  {
-   "level": 2,
-   "title": "Acknowledgements. Both authors would like to thank Mikhail Khovanov for",
-   "page": 13,
-   "source": "inferred",
-   "number": "1.7"
-  },
-  {
-   "level": 1,
-   "title": "T HE HECKE ALGEBRA",
-   "page": 13,
-   "source": "inferred",
-   "number": "2"
+   "number": "1.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "11"
   },
   {
    "level": 2,
-   "title": "Basic de\ufb01nitions. Let (W,S ) be a Coxeter system and let e \u2208 W denote the",
+   "title": "Organization of the paper",
    "page": 13,
    "source": "inferred",
-   "number": "2.1"
+   "number": "1.6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "13"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 13,
+   "source": "inferred",
+   "number": "1.7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "13"
   },
   {
    "level": 1,
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+   "title": "The Hecke Algebra",
+   "page": 13,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "13"
+  },
+  {
+   "level": 2,
+   "title": "Basic definitions",
+   "page": 13,
+   "source": "inferred",
+   "number": "2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "13"
+  },
+  {
+   "level": 2,
+   "title": "The Kazhdan-Lusztig basis",
    "page": 14,
    "source": "inferred",
-   "number": "14"
+   "number": "2.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "14"
   },
   {
    "level": 2,
-   "title": "The Kazhdan-Lusztig basis. The Hecke algebra is equipped with a /CI -linear bar",
-   "page": 14,
-   "source": "inferred",
-   "number": "2.2"
-  },
-  {
-   "level": 2,
-   "title": "The presentation in the Kazhdan-Lusztig generators. As the elementsHs gen-",
+   "title": "The presentation in the Kazhdan-Lusztig generators",
    "page": 15,
    "source": "inferred",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "15"
   },
   {
-   "level": 1,
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+   "level": 2,
+   "title": "The standard trace and the defect formula",
    "page": 16,
    "source": "inferred",
-   "number": "16"
+   "number": "2.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "16"
+  },
+  {
+   "level": 1,
+   "title": "Soergel Bimodules",
+   "page": 18,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "18"
   },
   {
    "level": 2,
-   "title": "The standard trace and the defect formula. A trace on H is a Z[v\u00b11]-linear map",
-   "page": 16,
-   "source": "inferred",
-   "number": "2.4"
-  },
-  {
-   "level": 1,
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+   "title": "Realizations of Coxeter systems",
    "page": 18,
    "source": "inferred",
-   "number": "18"
-  },
-  {
-   "level": 1,
-   "title": "S OERGEL BIMODULES",
-   "page": 18,
-   "source": "inferred",
-   "number": "3"
+   "number": "3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "18"
   },
   {
    "level": 2,
-   "title": "Realizations of Coxeter systems. For both Soergel\u2019s construction of Soergel bi-",
-   "page": 18,
-   "source": "inferred",
-   "number": "3.1"
-  },
-  {
-   "level": 1,
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "page": 20,
-   "source": "inferred",
-   "number": "20"
-  },
-  {
-   "level": 1,
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+   "title": "Technicalities",
    "page": 22,
    "source": "inferred",
-   "number": "22"
+   "number": "3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "22"
   },
   {
    "level": 2,
-   "title": "T echnicalities. It is important to remember the key dichotomy in this paper: we",
-   "page": 22,
-   "source": "inferred",
-   "number": "3.2"
-  },
-  {
-   "level": 2,
-   "title": "Demazure operators. Fixs \u2208 S. We will extend the map \u27e8\u03b1\u2228",
+   "title": "Demazure operators",
    "page": 23,
    "source": "inferred",
-   "number": "3.3"
-  },
-  {
-   "level": 1,
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "page": 24,
-   "source": "inferred",
-   "number": "24"
-  },
-  {
-   "level": 2,
-   "title": "Soergel bimodules and standard bimodules. In this section we give an intro-",
-   "page": 24,
-   "source": "inferred",
-   "number": "3.4"
-  },
-  {
-   "level": 1,
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "page": 26,
-   "source": "inferred",
-   "number": "26"
+   "number": "3.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "23"
   },
   {
    "level": 2,
-   "title": "Categori\ufb01cation. We denote the split Grothendieck group of an additive cate-",
+   "title": "Soergel bimodules and standard bimodules",
+   "page": 24,
+   "source": "inferred",
+   "number": "3.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "24"
+  },
+  {
+   "level": 2,
+   "title": "Categorification",
    "page": 27,
    "source": "inferred",
-   "number": "3.5"
-  },
-  {
-   "level": 1,
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "page": 28,
-   "source": "inferred",
-   "number": "28"
+   "number": "3.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "27"
   },
   {
    "level": 2,
-   "title": "Localization. As k is a domain, so is R. Let Q denote the fraction \ufb01eld of R,",
+   "title": "Localization",
    "page": 29,
    "source": "inferred",
-   "number": "3.6"
+   "number": "3.6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "29"
   },
   {
    "level": 1,
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "page": 30,
-   "source": "inferred",
-   "number": "30"
-  },
-  {
-   "level": 1,
-   "title": "D IAGRAMMATICS FOR STANDARD BIMODULES",
+   "title": "Diagrammatics for Standard Bimodules",
    "page": 31,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "31"
   },
   {
    "level": 2,
-   "title": "Diagrammatic de\ufb01nition. We assume that the reader is familiar with diagram-",
+   "title": "Diagrammatic definition",
    "page": 31,
    "source": "inferred",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "31"
   },
   {
    "level": 2,
-   "title": "Rex moves and rex graphs. The terminology of this section is ad hoc, and non-",
+   "title": "Rex moves and rex graphs",
    "page": 34,
    "source": "inferred",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "34"
   },
   {
    "level": 1,
-   "title": "D IAGRAMMATICS FOR SOERGEL BIMODULES",
+   "title": "Diagrammatics for Soergel Bimodules",
    "page": 37,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "37"
   },
   {
    "level": 2,
-   "title": "Jones-Wenzl morphisms. Presenting the Bott-Samelson category in rank 2 is",
+   "title": "Generators and relations",
+   "page": 37,
+   "source": "inferred",
+   "number": "5.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "37"
+  },
+  {
+   "level": 2,
+   "title": "Jones-Wenzl morphisms",
    "page": 42,
    "source": "inferred",
-   "number": "5.2"
-  },
-  {
-   "level": 1,
-   "title": "(at genericq), for any 0 \u2264k <m. The direct sum decomposition",
-   "page": 45,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 2,
-   "title": "The functor to bimodules. We now \ufb01x a realization where Demazure Surjec-",
-   "page": 45,
-   "source": "inferred",
-   "number": "5.3"
+   "number": "5.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "42"
   },
   {
    "level": 2,
-   "title": "Computation using localization. Each object Bx in D splits in Kar (DQ) as the",
+   "title": "The functor to bimodules",
+   "page": 45,
+   "source": "inferred",
+   "number": "5.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "45"
+  },
+  {
+   "level": 2,
+   "title": "Localization",
+   "page": 46,
+   "source": "inferred",
+   "number": "5.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "46"
+  },
+  {
+   "level": 2,
+   "title": "Computation using localization",
    "page": 53,
    "source": "inferred",
-   "number": "5.5"
+   "number": "5.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "53"
   },
   {
    "level": 2,
-   "title": "Unbalanced realizations. Now we discuss the diagrammatic alterations which",
+   "title": "Unbalanced realizations",
    "page": 55,
    "source": "inferred",
-   "number": "5.6"
+   "number": "5.6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "55"
   },
   {
    "level": 1,
-   "title": "L IBEDINSKY \u2019S LIGHT LEAVES",
+   "title": "Libedinsky's Light Leaves",
    "page": 57,
    "source": "inferred",
-   "number": "6"
+   "number": "6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "57"
   },
   {
    "level": 2,
-   "title": "Diagrammatics for light leaves. Fix a rex w. We want to \ufb01nd a basis of dia-",
+   "title": "Diagrammatics for light leaves",
    "page": 57,
    "source": "inferred",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "57"
   },
   {
    "level": 2,
-   "title": "Localizing light leaves. Let us \ufb01x a light leaves map LLx,e, with e expressing",
+   "title": "Localizing light leaves",
    "page": 60,
    "source": "inferred",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "60"
   },
   {
    "level": 2,
-   "title": "Double leaves. The previous section was essentially a discussion of mapsBw \u2192",
+   "title": "Double leaves",
    "page": 62,
    "source": "inferred",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "62"
   },
   {
    "level": 2,
-   "title": "Cellularity. We assume Theorem 6.11, so that Hom spaces are free leftR-modules",
+   "title": "Cellularity",
    "page": 64,
    "source": "inferred",
-   "number": "6.4"
+   "number": "6.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "64"
   },
   {
    "level": 2,
-   "title": "The diagrammatic character. Recall that for any ideal I \u2282 W in the Bruhat",
+   "title": "The diagrammatic character",
    "page": 65,
    "source": "inferred",
-   "number": "6.5"
+   "number": "6.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "65"
   },
   {
    "level": 2,
-   "title": "Soergel\u2019s theorem. We present here another proof of Soergel\u2019s Categori\ufb01cation",
+   "title": "Soergel's theorem",
    "page": 66,
    "source": "inferred",
-   "number": "6.6"
+   "number": "6.6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "66"
   },
   {
    "level": 2,
-   "title": "The equivalence to bimodules. In this section we assume that h is a Soergel",
+   "title": "The equivalence to bimodules",
    "page": 69,
    "source": "inferred",
-   "number": "6.7"
+   "number": "6.7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "69"
   },
   {
    "level": 1,
-   "title": "D OUBLE LEAVES SPAN",
+   "title": "Double Leaves Span",
    "page": 69,
    "source": "inferred",
-   "number": "7"
+   "number": "7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "69"
   },
   {
    "level": 2,
-   "title": "Negative-positive decompositions. For the rest of this chapter we will be in-",
+   "title": "Negative-positive decompositions",
    "page": 70,
    "source": "inferred",
-   "number": "7.1"
-  },
-  {
-   "level": 1,
-   "title": "This is suf\ufb01cient to prove the base case where w = e \u2208 W , since it is clear that",
-   "page": 73,
-   "source": "inferred",
-   "number": "LL"
+   "number": "7.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "70"
   },
   {
    "level": 2,
-   "title": "The grand induction. Now comes the crux of the argument, a giant induction",
-   "page": 73,
+   "title": "Modulo lower terms",
+   "page": 72,
    "source": "inferred",
-   "number": "7.4"
+   "number": "7.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "72"
   },
   {
-   "level": 1,
-   "title": "References",
-   "page": 82,
+   "level": 2,
+   "title": "Reduction to working modulo lower terms",
+   "page": 73,
    "source": "inferred",
-   "number": null
+   "number": "7.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "73"
+  },
+  {
+   "level": 2,
+   "title": "The grand induction",
+   "page": 73,
+   "source": "inferred",
+   "number": "7.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "73"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The vertices in a Soergel graph",
+   "page": 38,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "38"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The Four Maps",
+   "page": 58,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "58"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Calculating pe",
+   "page": 61,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "61"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "72",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "73",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "74",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "75",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "76",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "77",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "78",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "79",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "80",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "81",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "82",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "83",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-2-ben-elias-and-geordie-williamson",
-   "number": "2",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 496,
-   "n_words": 84
+   "n_chars": 575,
+   "n_words": 84,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-001-1-i-ntroduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
-   "title": "I NTRODUCTION",
+   "title": "Introduction",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 110,
-   "n_words": 18
+   "n_chars": 109,
+   "n_words": 17,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-002-11-the-hecke-algebra-by-generators-and-relations",
+   "id": "sec-001-11-the-hecke-algebra-by-generators-and-relations",
    "number": "1.1",
-   "title": "The Hecke algebra by generators and relations. LetG be a split \ufb01nite reductive",
+   "title": "The Hecke algebra by generators and relations",
    "level": 2,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2140,
-   "n_words": 367
+   "n_chars": 2019,
+   "n_words": 378,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
-   "id": "sec-003-12-the-hecke-category-beginning-with-the-seminal",
+   "id": "sec-002-12-the-hecke-category",
    "number": "1.2",
-   "title": "The Hecke category. Beginning with the seminal work [KL79] of Kazhdan and",
+   "title": "The Hecke category",
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 1384,
-   "n_words": 232
+   "n_chars": 1376,
+   "n_words": 224,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
-   "id": "sec-004-13-soergel-bimodules-just-as-iwahori-gave-an-int",
+   "id": "sec-003-13-soergel-bimodules",
    "number": "1.3",
-   "title": "Soergel bimodules. Just as Iwahori gave an intrinsic construction of the Hecke",
+   "title": "Soergel bimodules",
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 2423,
-   "n_words": 433
+   "n_chars": 3884,
+   "n_words": 649,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
-   "id": "sec-005-4-ben-elias-and-geordie-williamson",
-   "number": "4",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 1453,
-   "n_words": 238
-  },
-  {
-   "id": "sec-006-14-soergel-bimodules-by-generators-and-relations",
+   "id": "sec-004-14-soergel-bimodules-by-generators-and-relations",
    "number": "1.4",
-   "title": "Soergel bimodules by generators and relations. A Bott-Samelson bimodule is a",
+   "title": "Soergel bimodules by generators and relations",
    "level": 2,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 3366,
-   "n_words": 595
+   "n_chars": 4612,
+   "n_words": 839,
+   "label_start": "4",
+   "label_end": "6"
   },
   {
-   "id": "sec-007-6-ben-elias-and-geordie-williamson",
-   "number": "6",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 1351,
-   "n_words": 243
-  },
-  {
-   "id": "sec-008-141-one-color-relations-it-was-pointed-out-in-ek",
+   "id": "sec-005-141-one-color-relations",
    "number": "1.4.1",
-   "title": "One color relations: It was pointed out in [EK] that most of the one color rela-",
+   "title": "One color relations:",
    "level": 3,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 728,
-   "n_words": 123
+   "n_chars": 722,
+   "n_words": 117,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-009-142-two-color-relations-two-color-graphs-and-soe",
+   "id": "sec-006-142-two-color-relations",
    "number": "1.4.2",
-   "title": "Two color relations: Two color graphs and Soergel bimodules for the dihedral",
+   "title": "Two color relations:",
    "level": 3,
    "page_start": 7,
-   "page_end": 8,
-   "n_chars": 1122,
-   "n_words": 198
-  },
-  {
-   "id": "sec-010-8-ben-elias-and-geordie-williamson",
-   "number": "8",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 531,
-   "n_words": 101
-  },
-  {
-   "id": "sec-011-143-three-color-or-zamolodchikov-relations-there",
-   "number": "1.4.3",
-   "title": "Three color or \u201cZamolodchikov\u201d relations: There is one relation for each \ufb01nite par-",
-   "level": 3,
-   "page_start": 8,
-   "page_end": 10,
-   "n_chars": 3522,
-   "n_words": 581
-  },
-  {
-   "id": "sec-012-10-ben-elias-and-geordie-williamson",
-   "number": "10",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "level": 1,
-   "page_start": 10,
    "page_end": 11,
-   "n_chars": 2678,
-   "n_words": 476
+   "n_chars": 7996,
+   "n_words": 1360,
+   "label_start": "7",
+   "label_end": "11"
   },
   {
-   "id": "sec-013-15-consequences-for-the-structure-of-soergel-bim",
+   "id": "sec-007-15-consequences-for-the-structure-of-soergel-bim",
    "number": "1.5",
-   "title": "Consequences for the structure of Soergel bimodules. Let D denote the di-",
+   "title": "Consequences for the structure of Soergel bimodules",
    "level": 2,
    "page_start": 11,
-   "page_end": 12,
-   "n_chars": 1092,
-   "n_words": 192
-  },
-  {
-   "id": "sec-014-12-ben-elias-and-geordie-williamson",
-   "number": "12",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "level": 1,
-   "page_start": 12,
    "page_end": 13,
-   "n_chars": 3107,
-   "n_words": 524
+   "n_chars": 3238,
+   "n_words": 553,
+   "label_start": "11",
+   "label_end": "13"
   },
   {
-   "id": "sec-015-17-acknowledgements-both-authors-would-like-to-t",
-   "number": "1.7",
-   "title": "Acknowledgements. Both authors would like to thank Mikhail Khovanov for",
+   "id": "sec-008-16-organization-of-the-paper",
+   "number": "1.6",
+   "title": "Organization of the paper",
    "level": 2,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 301,
-   "n_words": 46
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
-   "id": "sec-016-2-t-he-hecke-algebra",
+   "id": "sec-009-2-the-hecke-algebra",
    "number": "2",
-   "title": "T HE HECKE ALGEBRA",
+   "title": "The Hecke Algebra",
    "level": 1,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 51,
-   "n_words": 9
+   "n_chars": 836,
+   "n_words": 128,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
-   "id": "sec-017-21-basic-de\ufb01nitions-let-ws-be-a-coxeter-system-a",
-   "number": "2.1",
-   "title": "Basic de\ufb01nitions. Let (W,S ) be a Coxeter system and let e \u2208 W denote the",
+   "id": "sec-010-17-acknowledgements",
+   "number": "1.7",
+   "title": "Acknowledgements",
    "level": 2,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 567,
-   "n_words": 88
+   "n_chars": 3004,
+   "n_words": 624,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
-   "id": "sec-018-14-ben-elias-and-geordie-williamson",
-   "number": "14",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 2271,
-   "n_words": 383
-  },
-  {
-   "id": "sec-019-22-the-kazhdan-lusztig-basis-the-hecke-algebra-i",
+   "id": "sec-011-22-the-kazhdan-lusztig-basis",
    "number": "2.2",
-   "title": "The Kazhdan-Lusztig basis. The Hecke algebra is equipped with a /CI -linear bar",
+   "title": "The Kazhdan-Lusztig basis",
    "level": 2,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 2104,
-   "n_words": 349
+   "n_chars": 2118,
+   "n_words": 352,
+   "label_start": "14",
+   "label_end": "15"
   },
   {
-   "id": "sec-020-23-the-presentation-in-the-kazhdan-lusztig-gener",
+   "id": "sec-012-23-the-presentation-in-the-kazhdan-lusztig-gener",
    "number": "2.3",
-   "title": "The presentation in the Kazhdan-Lusztig generators. As the elementsHs gen-",
+   "title": "The presentation in the Kazhdan-Lusztig generators",
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 492,
-   "n_words": 66
+   "n_chars": 1326,
+   "n_words": 272,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-021-16-ben-elias-and-geordie-williamson",
-   "number": "16",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "level": 1,
-   "page_start": 16,
-   "page_end": 16,
-   "n_chars": 1080,
-   "n_words": 219
-  },
-  {
-   "id": "sec-022-24-the-standard-trace-and-the-defect-formula-a-t",
+   "id": "sec-013-24-the-standard-trace-and-the-defect-formula",
    "number": "2.4",
-   "title": "The standard trace and the defect formula. A trace on H is a Z[v\u00b11]-linear map",
+   "title": "The standard trace and the defect formula",
    "level": 2,
    "page_start": 16,
    "page_end": 18,
-   "n_chars": 3793,
-   "n_words": 758
+   "n_chars": 4555,
+   "n_words": 928,
+   "label_start": "16",
+   "label_end": "18"
   },
   {
-   "id": "sec-023-18-ben-elias-and-geordie-williamson",
-   "number": "18",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "level": 1,
-   "page_start": 18,
-   "page_end": 18,
-   "n_chars": 698,
-   "n_words": 135
-  },
-  {
-   "id": "sec-024-3-s-oergel-bimodules",
+   "id": "sec-014-3-soergel-bimodules",
    "number": "3",
-   "title": "S OERGEL BIMODULES",
+   "title": "Soergel Bimodules",
    "level": 1,
    "page_start": 18,
    "page_end": 18,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "18",
+   "label_end": "18"
   },
   {
-   "id": "sec-025-31-realizations-of-coxeter-systems-for-both-soer",
+   "id": "sec-015-31-realizations-of-coxeter-systems",
    "number": "3.1",
-   "title": "Realizations of Coxeter systems. For both Soergel\u2019s construction of Soergel bi-",
+   "title": "Realizations of Coxeter systems",
    "level": 2,
    "page_start": 18,
-   "page_end": 20,
-   "n_chars": 4022,
-   "n_words": 822
+   "page_end": 21,
+   "n_chars": 8362,
+   "n_words": 1633,
+   "label_start": "18",
+   "label_end": "21"
   },
   {
-   "id": "sec-026-20-ben-elias-and-geordie-williamson",
-   "number": "20",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "level": 1,
-   "page_start": 20,
-   "page_end": 22,
-   "n_chars": 5186,
-   "n_words": 1010
-  },
-  {
-   "id": "sec-027-22-ben-elias-and-geordie-williamson",
-   "number": "22",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 22,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-028-32-t-echnicalities-it-is-important-to-remember-t",
+   "id": "sec-016-32-technicalities",
    "number": "3.2",
-   "title": "T echnicalities. It is important to remember the key dichotomy in this paper: we",
+   "title": "Technicalities",
    "level": 2,
-   "page_start": 22,
+   "page_start": 21,
    "page_end": 23,
-   "n_chars": 5324,
-   "n_words": 939
+   "n_chars": 6158,
+   "n_words": 1067,
+   "label_start": "21",
+   "label_end": "23"
   },
   {
-   "id": "sec-029-33-demazure-operators-fixs-s-we-will-extend-the",
+   "id": "sec-017-33-demazure-operators",
    "number": "3.3",
-   "title": "Demazure operators. Fixs \u2208 S. We will extend the map \u27e8\u03b1\u2228",
+   "title": "Demazure operators",
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 563,
-   "n_words": 110
+   "n_chars": 2914,
+   "n_words": 575,
+   "label_start": "23",
+   "label_end": "24"
   },
   {
-   "id": "sec-030-24-ben-elias-and-geordie-williamson",
-   "number": "24",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "level": 1,
-   "page_start": 24,
-   "page_end": 24,
-   "n_chars": 2304,
-   "n_words": 449
-  },
-  {
-   "id": "sec-031-34-soergel-bimodules-and-standard-bimodules-in-t",
+   "id": "sec-018-34-soergel-bimodules-and-standard-bimodules",
    "number": "3.4",
-   "title": "Soergel bimodules and standard bimodules. In this section we give an intro-",
+   "title": "Soergel bimodules and standard bimodules",
    "level": 2,
    "page_start": 24,
-   "page_end": 26,
-   "n_chars": 3633,
-   "n_words": 641
-  },
-  {
-   "id": "sec-032-26-ben-elias-and-geordie-williamson",
-   "number": "26",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "level": 1,
-   "page_start": 26,
-   "page_end": 27,
-   "n_chars": 5190,
-   "n_words": 918
-  },
-  {
-   "id": "sec-033-35-categori\ufb01cation-we-denote-the-split-grothendi",
-   "number": "3.5",
-   "title": "Categori\ufb01cation. We denote the split Grothendieck group of an additive cate-",
-   "level": 2,
-   "page_start": 27,
-   "page_end": 28,
-   "n_chars": 461,
-   "n_words": 91
-  },
-  {
-   "id": "sec-034-28-ben-elias-and-geordie-williamson",
-   "number": "28",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "level": 1,
-   "page_start": 28,
    "page_end": 29,
-   "n_chars": 4848,
-   "n_words": 865
+   "n_chars": 14230,
+   "n_words": 2480,
+   "label_start": "24",
+   "label_end": "29"
   },
   {
-   "id": "sec-035-36-localization-as-k-is-a-domain-so-is-r-let-q-d",
+   "id": "sec-019-36-localization",
    "number": "3.6",
-   "title": "Localization. As k is a domain, so is R. Let Q denote the fraction \ufb01eld of R,",
+   "title": "Localization",
    "level": 2,
    "page_start": 29,
-   "page_end": 30,
-   "n_chars": 519,
-   "n_words": 97
-  },
-  {
-   "id": "sec-036-30-ben-elias-and-geordie-williamson",
-   "number": "30",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "level": 1,
-   "page_start": 30,
    "page_end": 31,
-   "n_chars": 3005,
-   "n_words": 533
+   "n_chars": 3572,
+   "n_words": 646,
+   "label_start": "29",
+   "label_end": "31"
   },
   {
-   "id": "sec-037-4-d-iagrammatics-for-standard-bimodules",
+   "id": "sec-020-4-diagrammatics-for-standard-bimodules",
    "number": "4",
-   "title": "D IAGRAMMATICS FOR STANDARD BIMODULES",
+   "title": "Diagrammatics for Standard Bimodules",
    "level": 1,
-   "page_start": 31,
-   "page_end": 31,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-038-41-diagrammatic-de\ufb01nition-we-assume-that-the-rea",
-   "number": "4.1",
-   "title": "Diagrammatic de\ufb01nition. We assume that the reader is familiar with diagram-",
-   "level": 2,
    "page_start": 31,
    "page_end": 34,
-   "n_chars": 6970,
-   "n_words": 1248
+   "n_chars": 6903,
+   "n_words": 1254,
+   "label_start": "31",
+   "label_end": "34"
   },
   {
-   "id": "sec-039-42-rex-moves-and-rex-graphs-the-terminology-of-t",
+   "id": "sec-021-42-rex-moves-and-rex-graphs",
    "number": "4.2",
-   "title": "Rex moves and rex graphs. The terminology of this section is ad hoc, and non-",
+   "title": "Rex moves and rex graphs",
    "level": 2,
    "page_start": 34,
    "page_end": 37,
-   "n_chars": 5476,
-   "n_words": 999
+   "n_chars": 5326,
+   "n_words": 981,
+   "label_start": "34",
+   "label_end": "37"
   },
   {
-   "id": "sec-040-5-d-iagrammatics-for-soergel-bimodules",
+   "id": "sec-022-5-diagrammatics-for-soergel-bimodules",
    "number": "5",
-   "title": "D IAGRAMMATICS FOR SOERGEL BIMODULES",
+   "title": "Diagrammatics for Soergel Bimodules",
    "level": 1,
    "page_start": 37,
-   "page_end": 42,
-   "n_chars": 8548,
-   "n_words": 1573
+   "page_end": 37,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "37",
+   "label_end": "37"
   },
   {
-   "id": "sec-041-52-jones-wenzl-morphisms-presenting-the-bott-sam",
+   "id": "sec-023-51-generators-and-relations",
+   "number": "5.1",
+   "title": "Generators and relations",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 42,
+   "n_chars": 8454,
+   "n_words": 1550,
+   "label_start": "37",
+   "label_end": "42"
+  },
+  {
+   "id": "sec-024-52-jones-wenzl-morphisms",
    "number": "5.2",
-   "title": "Jones-Wenzl morphisms. Presenting the Bott-Samelson category in rank 2 is",
+   "title": "Jones-Wenzl morphisms",
    "level": 2,
    "page_start": 42,
    "page_end": 45,
-   "n_chars": 6982,
-   "n_words": 1282
+   "n_chars": 7769,
+   "n_words": 1392,
+   "label_start": "42",
+   "label_end": "45"
   },
   {
-   "id": "sec-042-1-at-genericq-for-any-0-k-m-the-direct-sum-decom",
-   "number": "1",
-   "title": "(at genericq), for any 0 \u2264k <m. The direct sum decomposition",
-   "level": 1,
-   "page_start": 45,
-   "page_end": 45,
-   "n_chars": 759,
-   "n_words": 134
-  },
-  {
-   "id": "sec-043-53-the-functor-to-bimodules-we-now-\ufb01x-a-realizat",
+   "id": "sec-025-53-the-functor-to-bimodules",
    "number": "5.3",
-   "title": "The functor to bimodules. We now \ufb01x a realization where Demazure Surjec-",
+   "title": "The functor to bimodules",
    "level": 2,
    "page_start": 45,
-   "page_end": 53,
-   "n_chars": 17518,
-   "n_words": 3217
+   "page_end": 46,
+   "n_chars": 1452,
+   "n_words": 267,
+   "label_start": "45",
+   "label_end": "46"
   },
   {
-   "id": "sec-044-55-computation-using-localization-each-object-bx",
+   "id": "sec-026-54-localization",
+   "number": "5.4",
+   "title": "Localization",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 53,
+   "n_chars": 15890,
+   "n_words": 2854,
+   "label_start": "46",
+   "label_end": "53"
+  },
+  {
+   "id": "sec-027-55-computation-using-localization",
    "number": "5.5",
-   "title": "Computation using localization. Each object Bx in D splits in Kar (DQ) as the",
+   "title": "Computation using localization",
    "level": 2,
    "page_start": 53,
    "page_end": 55,
-   "n_chars": 4908,
-   "n_words": 897
+   "n_chars": 4884,
+   "n_words": 875,
+   "label_start": "53",
+   "label_end": "55"
   },
   {
-   "id": "sec-045-56-unbalanced-realizations-now-we-discuss-the-di",
+   "id": "sec-028-56-unbalanced-realizations",
    "number": "5.6",
-   "title": "Unbalanced realizations. Now we discuss the diagrammatic alterations which",
+   "title": "Unbalanced realizations",
    "level": 2,
    "page_start": 55,
    "page_end": 57,
-   "n_chars": 4755,
-   "n_words": 840
+   "n_chars": 4953,
+   "n_words": 836,
+   "label_start": "55",
+   "label_end": "57"
   },
   {
-   "id": "sec-046-6-l-ibedinsky-s-light-leaves",
-   "number": "6",
-   "title": "L IBEDINSKY \u2019S LIGHT LEAVES",
-   "level": 1,
-   "page_start": 57,
-   "page_end": 57,
-   "n_chars": 209,
-   "n_words": 33
-  },
-  {
-   "id": "sec-047-61-diagrammatics-for-light-leaves-fix-a-rex-w-we",
+   "id": "sec-029-61-diagrammatics-for-light-leaves",
    "number": "6.1",
-   "title": "Diagrammatics for light leaves. Fix a rex w. We want to \ufb01nd a basis of dia-",
+   "title": "Diagrammatics for light leaves",
    "level": 2,
    "page_start": 57,
    "page_end": 60,
-   "n_chars": 6368,
-   "n_words": 1278
+   "n_chars": 6355,
+   "n_words": 1279,
+   "label_start": "57",
+   "label_end": "60"
   },
   {
-   "id": "sec-048-62-localizing-light-leaves-let-us-\ufb01x-a-light-lea",
+   "id": "sec-030-62-localizing-light-leaves",
    "number": "6.2",
-   "title": "Localizing light leaves. Let us \ufb01x a light leaves map LLx,e, with e expressing",
+   "title": "Localizing light leaves",
    "level": 2,
    "page_start": 60,
    "page_end": 62,
-   "n_chars": 4641,
-   "n_words": 916
+   "n_chars": 4621,
+   "n_words": 900,
+   "label_start": "60",
+   "label_end": "62"
   },
   {
-   "id": "sec-049-63-double-leaves-the-previous-section-was-essent",
+   "id": "sec-031-63-double-leaves",
    "number": "6.3",
-   "title": "Double leaves. The previous section was essentially a discussion of mapsBw \u2192",
+   "title": "Double leaves",
    "level": 2,
    "page_start": 62,
    "page_end": 64,
-   "n_chars": 4401,
-   "n_words": 831
+   "n_chars": 4383,
+   "n_words": 815,
+   "label_start": "62",
+   "label_end": "64"
   },
   {
-   "id": "sec-050-64-cellularity-we-assume-theorem-611-so-that-hom",
+   "id": "sec-032-64-cellularity",
    "number": "6.4",
-   "title": "Cellularity. We assume Theorem 6.11, so that Hom spaces are free leftR-modules",
+   "title": "Cellularity",
    "level": 2,
    "page_start": 64,
    "page_end": 65,
-   "n_chars": 4029,
-   "n_words": 768
+   "n_chars": 4013,
+   "n_words": 752,
+   "label_start": "64",
+   "label_end": "65"
   },
   {
-   "id": "sec-051-65-the-diagrammatic-character-recall-that-for-an",
+   "id": "sec-033-65-the-diagrammatic-character",
    "number": "6.5",
-   "title": "The diagrammatic character. Recall that for any ideal I \u2282 W in the Bruhat",
+   "title": "The diagrammatic character",
    "level": 2,
    "page_start": 65,
-   "page_end": 66,
-   "n_chars": 2080,
-   "n_words": 392
-  },
-  {
-   "id": "sec-052-66-soergels-theorem-we-present-here-another-proo",
-   "number": "6.6",
-   "title": "Soergel\u2019s theorem. We present here another proof of Soergel\u2019s Categori\ufb01cation",
-   "level": 2,
-   "page_start": 66,
    "page_end": 69,
-   "n_chars": 5319,
-   "n_words": 1000
+   "n_chars": 7456,
+   "n_words": 1378,
+   "label_start": "65",
+   "label_end": "69"
   },
   {
-   "id": "sec-053-67-the-equivalence-to-bimodules-in-this-section",
+   "id": "sec-034-67-the-equivalence-to-bimodules",
    "number": "6.7",
-   "title": "The equivalence to bimodules. In this section we assume that h is a Soergel",
+   "title": "The equivalence to bimodules",
    "level": 2,
    "page_start": 69,
    "page_end": 69,
-   "n_chars": 2645,
-   "n_words": 473
+   "n_chars": 2631,
+   "n_words": 459,
+   "label_start": "69",
+   "label_end": "69"
   },
   {
-   "id": "sec-054-7-d-ouble-leaves-span",
+   "id": "sec-035-7-double-leaves-span",
    "number": "7",
-   "title": "D OUBLE LEAVES SPAN",
+   "title": "Double Leaves Span",
    "level": 1,
    "page_start": 69,
    "page_end": 70,
-   "n_chars": 247,
-   "n_words": 43
+   "n_chars": 245,
+   "n_words": 41,
+   "label_start": "69",
+   "label_end": "70"
   },
   {
-   "id": "sec-055-71-negative-positive-decompositions-for-the-rest",
+   "id": "sec-036-71-negative-positive-decompositions",
    "number": "7.1",
-   "title": "Negative-positive decompositions. For the rest of this chapter we will be in-",
+   "title": "Negative-positive decompositions",
    "level": 2,
    "page_start": 70,
-   "page_end": 73,
-   "n_chars": 10698,
-   "n_words": 1865
+   "page_end": 72,
+   "n_chars": 6361,
+   "n_words": 1086,
+   "label_start": "70",
+   "label_end": "72"
   },
   {
-   "id": "sec-056-ll-this-is-suf\ufb01cient-to-prove-the-base-case-wher",
-   "number": "LL",
-   "title": "This is suf\ufb01cient to prove the base case where w = e \u2208 W , since it is clear that",
-   "level": 1,
-   "page_start": 73,
+   "id": "sec-037-72-modulo-lower-terms",
+   "number": "7.2",
+   "title": "Modulo lower terms",
+   "level": 2,
+   "page_start": 72,
    "page_end": 73,
-   "n_chars": 724,
-   "n_words": 143
+   "n_chars": 3097,
+   "n_words": 553,
+   "label_start": "72",
+   "label_end": "73"
   },
   {
-   "id": "sec-057-74-the-grand-induction-now-comes-the-crux-of-the",
-   "number": "7.4",
-   "title": "The grand induction. Now comes the crux of the argument, a giant induction",
+   "id": "sec-038-73-reduction-to-working-modulo-lower-terms",
+   "number": "7.3",
+   "title": "Reduction to working modulo lower terms",
    "level": 2,
    "page_start": 73,
-   "page_end": 82,
-   "n_chars": 19029,
-   "n_words": 3843
+   "page_end": 73,
+   "n_chars": 1773,
+   "n_words": 355,
+   "label_start": "73",
+   "label_end": "73"
   },
   {
-   "id": "sec-058-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 82,
+   "id": "sec-039-74-the-grand-induction",
+   "number": "7.4",
+   "title": "The grand induction",
+   "level": 2,
+   "page_start": 73,
    "page_end": 83,
-   "n_chars": 3576,
-   "n_words": 533
+   "n_chars": 22517,
+   "n_words": 4277,
+   "label_start": "73",
+   "label_end": "83"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 59,
-  "sections": 59,
-  "chars_total": 191797,
+  "toc_entries": 46,
+  "toc_inferred_entries": 46,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.075,
+  "toc_inferred_method": "latex",
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 41,
+  "chars_total": 190689,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "GR4allSB.tex",
    "tex_sections": 46,
-   "overlaid": 0,
+   "overlaid": 33,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1056,306 +1956,316 @@
    },
    "sections": [
     {
-     "id": "sec-000-2-ben-elias-and-geordie-williamson",
-     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+     "id": "sec-front-matter",
+     "title": "Front matter",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-001-1-i-ntroduction",
-     "title": "I NTRODUCTION",
-     "prose_ratio": 0.044,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.889,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-002-11-the-hecke-algebra-by-generators-and-relations",
-     "title": "The Hecke algebra by generators and relations. LetG be a split \ufb01nite reductive",
-     "result": "no matching \\section"
+     "id": "sec-001-11-the-hecke-algebra-by-generators-and-relations",
+     "title": "The Hecke algebra by generators and relations",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.945,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-003-12-the-hecke-category-beginning-with-the-seminal",
-     "title": "The Hecke category. Beginning with the seminal work [KL79] of Kazhdan and",
-     "result": "no matching \\section"
+     "id": "sec-002-12-the-hecke-category",
+     "title": "The Hecke category",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-004-13-soergel-bimodules-just-as-iwahori-gave-an-int",
-     "title": "Soergel bimodules. Just as Iwahori gave an intrinsic construction of the Hecke",
-     "result": "no matching \\section"
+     "id": "sec-003-13-soergel-bimodules",
+     "title": "Soergel bimodules",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-005-4-ben-elias-and-geordie-williamson",
-     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-     "result": "no matching \\section"
+     "id": "sec-004-14-soergel-bimodules-by-generators-and-relations",
+     "title": "Soergel bimodules by generators and relations",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-006-14-soergel-bimodules-by-generators-and-relations",
-     "title": "Soergel bimodules by generators and relations. A Bott-Samelson bimodule is a",
-     "result": "no matching \\section"
+     "id": "sec-005-141-one-color-relations",
+     "title": "One color relations:",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-007-6-ben-elias-and-geordie-williamson",
-     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-     "result": "no matching \\section"
+     "id": "sec-006-142-two-color-relations",
+     "title": "Two color relations:",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.934,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-008-141-one-color-relations-it-was-pointed-out-in-ek",
-     "title": "One color relations: It was pointed out in [EK] that most of the one color rela-",
-     "result": "no matching \\section"
+     "id": "sec-007-15-consequences-for-the-structure-of-soergel-bim",
+     "title": "Consequences for the structure of Soergel bimodules",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-009-142-two-color-relations-two-color-graphs-and-soe",
-     "title": "Two color relations: Two color graphs and Soergel bimodules for the dihedral",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-010-8-ben-elias-and-geordie-williamson",
-     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-011-143-three-color-or-zamolodchikov-relations-there",
-     "title": "Three color or \u201cZamolodchikov\u201d relations: There is one relation for each \ufb01nite par-",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-012-10-ben-elias-and-geordie-williamson",
-     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-013-15-consequences-for-the-structure-of-soergel-bim",
-     "title": "Consequences for the structure of Soergel bimodules. Let D denote the di-",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-014-12-ben-elias-and-geordie-williamson",
-     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-015-17-acknowledgements-both-authors-would-like-to-t",
-     "title": "Acknowledgements. Both authors would like to thank Mikhail Khovanov for",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-016-2-t-he-hecke-algebra",
-     "title": "T HE HECKE ALGEBRA",
-     "prose_ratio": 0.004,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-017-21-basic-de\ufb01nitions-let-ws-be-a-coxeter-system-a",
-     "title": "Basic de\ufb01nitions. Let (W,S ) be a Coxeter system and let e \u2208 W denote the",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-018-14-ben-elias-and-geordie-williamson",
-     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-019-22-the-kazhdan-lusztig-basis-the-hecke-algebra-i",
-     "title": "The Kazhdan-Lusztig basis. The Hecke algebra is equipped with a /CI -linear bar",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-020-23-the-presentation-in-the-kazhdan-lusztig-gener",
-     "title": "The presentation in the Kazhdan-Lusztig generators. As the elementsHs gen-",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-021-16-ben-elias-and-geordie-williamson",
-     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-022-24-the-standard-trace-and-the-defect-formula-a-t",
-     "title": "The standard trace and the defect formula. A trace on H is a Z[v\u00b11]-linear map",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-023-18-ben-elias-and-geordie-williamson",
-     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-024-3-s-oergel-bimodules",
-     "title": "S OERGEL BIMODULES",
+     "id": "sec-008-16-organization-of-the-paper",
+     "title": "Organization of the paper",
      "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-025-31-realizations-of-coxeter-systems-for-both-soer",
-     "title": "Realizations of Coxeter systems. For both Soergel\u2019s construction of Soergel bi-",
-     "result": "no matching \\section"
+     "id": "sec-009-2-the-hecke-algebra",
+     "title": "The Hecke Algebra",
+     "prose_ratio": 0.092,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-026-20-ben-elias-and-geordie-williamson",
-     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-     "result": "no matching \\section"
+     "id": "sec-010-17-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 0.871,
+     "coverage_ratio": 0.2,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-027-22-ben-elias-and-geordie-williamson",
-     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-     "result": "no matching \\section"
+     "id": "sec-011-22-the-kazhdan-lusztig-basis",
+     "title": "The Kazhdan-Lusztig basis",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-028-32-t-echnicalities-it-is-important-to-remember-t",
-     "title": "T echnicalities. It is important to remember the key dichotomy in this paper: we",
-     "result": "no matching \\section"
+     "id": "sec-012-23-the-presentation-in-the-kazhdan-lusztig-gener",
+     "title": "The presentation in the Kazhdan-Lusztig generators",
+     "prose_ratio": 0.913,
+     "coverage_ratio": 0.812,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-029-33-demazure-operators-fixs-s-we-will-extend-the",
-     "title": "Demazure operators. Fixs \u2208 S. We will extend the map \u27e8\u03b1\u2228",
-     "result": "no matching \\section"
+     "id": "sec-013-24-the-standard-trace-and-the-defect-formula",
+     "title": "The standard trace and the defect formula",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.937,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-030-24-ben-elias-and-geordie-williamson",
-     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-031-34-soergel-bimodules-and-standard-bimodules-in-t",
-     "title": "Soergel bimodules and standard bimodules. In this section we give an intro-",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-032-26-ben-elias-and-geordie-williamson",
-     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-033-35-categori\ufb01cation-we-denote-the-split-grothendi",
-     "title": "Categori\ufb01cation. We denote the split Grothendieck group of an additive cate-",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-034-28-ben-elias-and-geordie-williamson",
-     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-035-36-localization-as-k-is-a-domain-so-is-r-let-q-d",
-     "title": "Localization. As k is a domain, so is R. Let Q denote the fraction \ufb01eld of R,",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-036-30-ben-elias-and-geordie-williamson",
-     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-037-4-d-iagrammatics-for-standard-bimodules",
-     "title": "D IAGRAMMATICS FOR STANDARD BIMODULES",
+     "id": "sec-014-3-soergel-bimodules",
+     "title": "Soergel Bimodules",
      "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-038-41-diagrammatic-de\ufb01nition-we-assume-that-the-rea",
-     "title": "Diagrammatic de\ufb01nition. We assume that the reader is familiar with diagram-",
-     "result": "no matching \\section"
+     "id": "sec-015-31-realizations-of-coxeter-systems",
+     "title": "Realizations of Coxeter systems",
+     "prose_ratio": 0.912,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-039-42-rex-moves-and-rex-graphs-the-terminology-of-t",
-     "title": "Rex moves and rex graphs. The terminology of this section is ad hoc, and non-",
-     "result": "no matching \\section"
+     "id": "sec-016-32-technicalities",
+     "title": "Technicalities",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.913,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-040-5-d-iagrammatics-for-soergel-bimodules",
-     "title": "D IAGRAMMATICS FOR SOERGEL BIMODULES",
-     "prose_ratio": 0.395,
+     "id": "sec-017-33-demazure-operators",
+     "title": "Demazure operators",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-34-soergel-bimodules-and-standard-bimodules",
+     "title": "Soergel bimodules and standard bimodules",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-36-localization",
+     "title": "Localization",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-4-diagrammatics-for-standard-bimodules",
+     "title": "Diagrammatics for Standard Bimodules",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-021-42-rex-moves-and-rex-graphs",
+     "title": "Rex moves and rex graphs",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.825,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-022-5-diagrammatics-for-soergel-bimodules",
+     "title": "Diagrammatics for Soergel Bimodules",
+     "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-041-52-jones-wenzl-morphisms-presenting-the-bott-sam",
-     "title": "Jones-Wenzl morphisms. Presenting the Bott-Samelson category in rank 2 is",
-     "result": "no matching \\section"
+     "id": "sec-023-51-generators-and-relations",
+     "title": "Generators and relations",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.923,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-042-1-at-genericq-for-any-0-k-m-the-direct-sum-decom",
-     "title": "(at genericq), for any 0 \u2264k <m. The direct sum decomposition",
-     "result": "no matching \\section"
+     "id": "sec-024-52-jones-wenzl-morphisms",
+     "title": "Jones-Wenzl morphisms",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-043-53-the-functor-to-bimodules-we-now-\ufb01x-a-realizat",
-     "title": "The functor to bimodules. We now \ufb01x a realization where Demazure Surjec-",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-044-55-computation-using-localization-each-object-bx",
-     "title": "Computation using localization. Each object Bx in D splits in Kar (DQ) as the",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-045-56-unbalanced-realizations-now-we-discuss-the-di",
-     "title": "Unbalanced realizations. Now we discuss the diagrammatic alterations which",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-046-6-l-ibedinsky-s-light-leaves",
-     "title": "L IBEDINSKY \u2019S LIGHT LEAVES",
-     "prose_ratio": 0.035,
+     "id": "sec-025-53-the-functor-to-bimodules",
+     "title": "The functor to bimodules",
+     "prose_ratio": 0.179,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-047-61-diagrammatics-for-light-leaves-fix-a-rex-w-we",
-     "title": "Diagrammatics for light leaves. Fix a rex w. We want to \ufb01nd a basis of dia-",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-048-62-localizing-light-leaves-let-us-\ufb01x-a-light-lea",
-     "title": "Localizing light leaves. Let us \ufb01x a light leaves map LLx,e, with e expressing",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-049-63-double-leaves-the-previous-section-was-essent",
-     "title": "Double leaves. The previous section was essentially a discussion of mapsBw \u2192",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-050-64-cellularity-we-assume-theorem-611-so-that-hom",
-     "title": "Cellularity. We assume Theorem 6.11, so that Hom spaces are free leftR-modules",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-051-65-the-diagrammatic-character-recall-that-for-an",
-     "title": "The diagrammatic character. Recall that for any ideal I \u2282 W in the Bruhat",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-052-66-soergels-theorem-we-present-here-another-proo",
-     "title": "Soergel\u2019s theorem. We present here another proof of Soergel\u2019s Categori\ufb01cation",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-053-67-the-equivalence-to-bimodules-in-this-section",
-     "title": "The equivalence to bimodules. In this section we assume that h is a Soergel",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-054-7-d-ouble-leaves-span",
-     "title": "D OUBLE LEAVES SPAN",
-     "prose_ratio": 0.039,
+     "id": "sec-026-54-localization",
+     "title": "Localization",
+     "prose_ratio": 0.582,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-055-71-negative-positive-decompositions-for-the-rest",
-     "title": "Negative-positive decompositions. For the rest of this chapter we will be in-",
-     "result": "no matching \\section"
+     "id": "sec-027-55-computation-using-localization",
+     "title": "Computation using localization",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-056-ll-this-is-suf\ufb01cient-to-prove-the-base-case-wher",
-     "title": "This is suf\ufb01cient to prove the base case where w = e \u2208 W , since it is clear that",
-     "result": "no matching \\section"
+     "id": "sec-028-56-unbalanced-realizations",
+     "title": "Unbalanced realizations",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-057-74-the-grand-induction-now-comes-the-crux-of-the",
-     "title": "The grand induction. Now comes the crux of the argument, a giant induction",
-     "result": "no matching \\section"
+     "id": "sec-029-61-diagrammatics-for-light-leaves",
+     "title": "Diagrammatics for light leaves",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-058-references",
-     "title": "References",
-     "result": "no matching \\section"
+     "id": "sec-030-62-localizing-light-leaves",
+     "title": "Localizing light leaves",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-031-63-double-leaves",
+     "title": "Double leaves",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-032-64-cellularity",
+     "title": "Cellularity",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-033-65-the-diagrammatic-character",
+     "title": "The diagrammatic character",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-034-67-the-equivalence-to-bimodules",
+     "title": "The equivalence to bimodules",
+     "prose_ratio": 0.956,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-035-7-double-leaves-span",
+     "title": "Double Leaves Span",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.864,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-036-71-negative-positive-decompositions",
+     "title": "Negative-positive decompositions",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-037-72-modulo-lower-terms",
+     "title": "Modulo lower terms",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-038-73-reduction-to-working-modulo-lower-terms",
+     "title": "Reduction to working modulo lower terms",
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-039-74-the-grand-induction",
+     "title": "The grand induction",
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.773,
+     "result": "overlaid",
+     "converter": "latex"
     }
    ]
   }

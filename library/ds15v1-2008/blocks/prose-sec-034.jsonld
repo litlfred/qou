@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ds15v1-2008/blocks/prose-sec-034",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ds15v1-2008/blocks/prose-sec-034",
   "kind": "prose",
-  "title": "Triple Products",
-  "pageStart": 25,
-  "pageEnd": 26,
-  "text": "../sections/sec-034-2361-triple-products.md",
-  "derivedFrom": "library/ds15v1-2008/manifest",
-  "sourceDocument": "library/ds15v1-2008/manifest",
+  "title": "False Theta Series Identities of Order 18",
+  "pageStart": 39,
+  "pageEnd": 40,
+  "text": "../sections/sec-034-518-false-theta-series-identities-of-order-18.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ds15v1-2008/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ds15v1-2008/manifest.jsonld",
   "provenance": "ingested"
 }

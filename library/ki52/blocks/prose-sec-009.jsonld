@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ki52/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ki52/blocks/prose-sec-009",
   "kind": "prose",
-  "title": "(Poisson summation formula) (see also Remark 4.8 and Appendix B), this sum is",
-  "pageStart": 28,
-  "pageEnd": 30,
-  "text": "../sections/sec-009-46-poisson-summation-formula-see-also-remark-48.md",
-  "derivedFrom": "library/ki52/manifest",
-  "sourceDocument": "library/ki52/manifest",
+  "title": "Proof of Lemma 2.1",
+  "pageStart": 48,
+  "pageEnd": 49,
+  "text": "../sections/sec-009-d-proof-of-lemma-21.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ki52/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ki52/manifest.jsonld",
   "provenance": "ingested"
 }

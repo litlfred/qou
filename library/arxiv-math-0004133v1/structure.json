@@ -7,6 +7,10 @@
   "bytes": 239725,
   "pages": 30,
   "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -17,205 +21,421 @@
    "stamp_date": "20 Apr 2000"
   },
   "doi": null,
-  "title": "From Finite Sets to Feynman Diagrams",
+  "title": "arXiv:math/0004133v1 [math.QA] 20 Apr 2000",
   "authors_raw": "John C. Baez and James Dolan",
   "title_lines": [
    "From Finite Sets to Feynman Diagrams"
   ],
-  "abstract": "\u2018Categori\ufb01cation\u2019 is the process of replacing equations by isomor- phisms. We describe some of the ways a thoroughgoing emphasi s on categori\ufb01cation can simplify and unify mathematics. We beg in with elementary arithmetic, where the category of \ufb01nite sets ser ves as a categori\ufb01ed version of the set of natural numbers, with disj oint union and Cartesian product playing the role of addition and multi plication. We sketch how categorifying the integers leads naturally to the in\ufb01- nite loop space \u2126 \u221eS\u221e, and how categorifying the positive rationals leads naturally to a notion of the \u2018homotopy cardinality\u2019 of a tame space. Then we show how categorifying formal power series le ads to Joyal\u2019s esp` eces des structures, or \u2018structure types\u2019. We also describe a useful generalization of structure types called \u2018stu\ufb00 typ es\u2019. There is an inner product of stu\ufb00 types that makes the category of stu\ufb00 types into a categori\ufb01ed version of the Hilbert space of the quanti zed har- monic oscillator. We conclude by sketching how this idea giv es a nice explanation of the combinatorics of Feynman diagrams.",
+  "abstract": "\u2018Categori\ufb01cation\u2019 is the process of replacing equations by isomor- phisms. We describe some of the ways a thoroughgoing emphasis on categori\ufb01cation can simplify and unify mathematics. We begin with elementary arithmetic, where the category of \ufb01nite sets serves as a categori\ufb01ed version of the set of natural numbers, with disjoint union and Cartesian product playing the role of addition and multiplication. We sketch how categorifying the integers leads naturally to the in\ufb01- nite loop space \u2126\u221eS\u221e, and how categorifying the positive rationals leads naturally to a notion of the \u2018homotopy cardinality\u2019 of a tame space. Then we show how categorifying formal power series leads to Joyal\u2019s esp`eces des structures, or \u2018structure types\u2019. We also describe a useful generalization of structure types called \u2018stu\ufb00types\u2019. There is an inner product of stu\ufb00types that makes the category of stu\ufb00types into a categori\ufb01ed version of the Hilbert space of the quantized har- monic oscillator. We conclude by sketching how this idea gives a nice explanation of the combinatorics of Feynman diagrams.",
   "docinfo": {
+   "Title": "arXiv:math/0004133v1  [math.QA]  20 Apr 2000",
    "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20241126160923-05'00'",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:math/0004133v1  [math.QA]  20 Apr 2000"
+   "CreationDate": "D:20241126160923-05'00'"
+  },
+  "title_raw": "From Finite Sets to Feynman Diagrams",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math/0004133v1 [math.QA] 20 Apr 2000",
+   "heading": "Introduction",
+   "text": "From Finite Sets to Feynman Diagrams",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Equality and Isomorphism",
    "page": 3,
    "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Note that \u03a0 1(X) is far more informative than \u03a0 0(X), because it records",
-   "page": 5,
-   "source": "inferred",
-   "number": "X"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Natural Numbers and Finite Sets",
    "page": 7,
    "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "In general,",
-   "page": 14,
-   "source": "inferred",
-   "number": "2"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Power Series and Structure Types",
    "page": 17,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "Feynman Diagrams and Stu\ufb00 Operators",
+   "title": "Feynman Diagrams and Stuff Operators",
    "page": 22,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
-   "level": 1,
+   "level": 2,
    "title": "Acknowledgements",
    "page": 28,
    "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 28,
-   "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1097,
-   "n_words": 181
+   "n_chars": 1445,
+   "n_words": 217,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 3432,
-   "n_words": 589
+   "n_chars": 3399,
+   "n_words": 555,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-2-equality-and-isomorphism",
+   "id": "sec-001-2-equality-and-isomorphism",
    "number": "2",
    "title": "Equality and Isomorphism",
    "level": 1,
    "page_start": 3,
-   "page_end": 5,
-   "n_chars": 6451,
-   "n_words": 1140
-  },
-  {
-   "id": "sec-003-x-note-that-\u03c0-1x-is-far-more-informative-than-\u03c0",
-   "number": "X",
-   "title": "Note that \u03a0 1(X) is far more informative than \u03a0 0(X), because it records",
-   "level": 1,
-   "page_start": 5,
    "page_end": 7,
-   "n_chars": 3013,
-   "n_words": 547
+   "n_chars": 9424,
+   "n_words": 1600,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-3-natural-numbers-and-finite-sets",
+   "id": "sec-002-3-natural-numbers-and-finite-sets",
    "number": "3",
    "title": "Natural Numbers and Finite Sets",
    "level": 1,
    "page_start": 7,
-   "page_end": 14,
-   "n_chars": 14143,
-   "n_words": 2742
-  },
-  {
-   "id": "sec-005-2-in-general",
-   "number": "2",
-   "title": "In general,",
-   "level": 1,
-   "page_start": 14,
    "page_end": 17,
-   "n_chars": 4649,
-   "n_words": 893
+   "n_chars": 18503,
+   "n_words": 3406,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-4-power-series-and-structure-types",
+   "id": "sec-003-4-power-series-and-structure-types",
    "number": "4",
    "title": "Power Series and Structure Types",
    "level": 1,
    "page_start": 17,
-   "page_end": 22,
-   "n_chars": 9265,
-   "n_words": 1829
-  },
-  {
-   "id": "sec-007-5-feynman-diagrams-and-stu\ufb00-operators",
-   "number": "5",
-   "title": "Feynman Diagrams and Stu\ufb00 Operators",
-   "level": 1,
-   "page_start": 22,
    "page_end": 28,
-   "n_chars": 11245,
-   "n_words": 2210
+   "n_chars": 20141,
+   "n_words": 3745,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-acknowledgements",
+   "id": "sec-004-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
-   "level": 1,
-   "page_start": 28,
-   "page_end": 28,
-   "n_chars": 59,
-   "n_words": 10
-  },
-  {
-   "id": "sec-009-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
+   "level": 2,
    "page_start": 28,
    "page_end": 30,
-   "n_chars": 3930,
-   "n_words": 607
+   "n_chars": 3965,
+   "n_words": 582,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 10,
-  "sections": 10,
-  "chars_total": 57284,
+  "toc_entries": 6,
+  "toc_inferred_entries": 6,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 56877,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "2000.tex",
    "tex_sections": 6,
-   "overlaid": 6,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -223,12 +443,12 @@
    },
    "sections": [
     {
-     "id": "sec-000-abstract",
-     "title": "Abstract",
+     "id": "sec-front-matter",
+     "title": "Front matter",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-001-1-introduction",
+     "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -236,59 +456,35 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-2-equality-and-isomorphism",
+     "id": "sec-001-2-equality-and-isomorphism",
      "title": "Equality and Isomorphism",
-     "prose_ratio": 0.813,
+     "prose_ratio": 0.985,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-x-note-that-\u03c0-1x-is-far-more-informative-than-\u03c0",
-     "title": "Note that \u03a0 1(X) is far more informative than \u03a0 0(X), because it records",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-004-3-natural-numbers-and-finite-sets",
+     "id": "sec-002-3-natural-numbers-and-finite-sets",
      "title": "Natural Numbers and Finite Sets",
-     "prose_ratio": 0.864,
+     "prose_ratio": 0.993,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-2-in-general",
-     "title": "In general,",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-006-4-power-series-and-structure-types",
+     "id": "sec-003-4-power-series-and-structure-types",
      "title": "Power Series and Structure Types",
-     "prose_ratio": 0.991,
+     "prose_ratio": 0.995,
      "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-5-feynman-diagrams-and-stu\ufb00-operators",
-     "title": "Feynman Diagrams and Stu\ufb00 Operators",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-008-acknowledgements",
+     "id": "sec-004-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-009-references",
-     "title": "References",
-     "result": "no matching \\section"
+     "coverage_ratio": 0.04,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     }
    ]
   }

@@ -7,7 +7,10 @@
   "bytes": 603291,
   "pages": 21,
   "text_source": "embedded",
-  "extractor": "pypdf",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -18,17 +21,29 @@
    "stamp_date": "3 Aug 2000"
   },
   "doi": null,
-  "title": "KASHAEV\u2019S INVARIANT AND THE VOLUME OF A",
+  "title": "arXiv:math/0008027v1 [math.GT] 3 Aug 2000",
   "authors_raw": "HYPERBOLIC KNOT AFTER Y. YOKOTA",
   "title_lines": [
    "KASHAEV\u2019S INVARIANT AND THE VOLUME OF A"
   ],
-  "abstract": "I follow Y. Yokota to explain how to obtain a tetrahedron de- composition of the complement of a hyperbolic knot and compa re it with the asymptotic behavior of Kashaev\u2019s link invariant using the \ufb01 gure-eight knot as an example.",
+  "abstract": "I follow Y. Yokota to explain how to obtain a tetrahedron de- composition of the complement of a hyperbolic knot and compare it with the asymptotic behavior of Kashaev\u2019s link invariant using the \ufb01gure-eight knot as an example.",
   "docinfo": {
+   "Title": "arXiv:math/0008027v1  [math.GT]  3 Aug 2000",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181030132936-04'00'",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:math/0008027v1  [math.GT]  3 Aug 2000"
+   "CreationDate": "D:20181030132936-04'00'"
+  },
+  "title_raw": "KASHAEV\u2019S INVARIANT AND THE VOLUME OF A",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math/0008027v1 [math.GT] 3 Aug 2000",
+   "heading": "KASHAEV\u2019S INVARIANT AND THE VOLUME OF A HYPERBOLIC KNOT AFTER Y. YOKOTA 1. Introduction In [1] R. Kashaev introduced a link invariant by using the quantum dilogarithm and after some concrete calculations for the knots 4 1 , 5 2 , and 6 1 , he conjectured in [2] the asymptotic behavior of his invaria",
+   "text": "KASHAEV\u2019S INVARIANT AND THE VOLUME OF A",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -37,356 +52,589 @@
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "HITOSHI MURAKAMI",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Algebra",
    "page": 2,
    "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "HITOSHI MURAKAMI",
-   "page": 4,
-   "source": "inferred",
-   "number": "4"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Geometry",
    "page": 4,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Ideal tetrahedron decomposition of S3 \\ (K \u222a two points ). We will de-",
+   "title": "Ideal tetrahedron decomposition of $S^3\\setminus({K\\cup\\text{two points}})$",
    "page": 4,
    "source": "inferred",
-   "number": "3.1"
-  },
-  {
-   "level": 1,
-   "title": "HITOSHI MURAKAMI",
-   "page": 6,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 2,
-   "title": "Ideal tetrahedron decomposition of S3 \\ K. We will deform the ideal",
-   "page": 6,
-   "source": "inferred",
-   "number": "3.2"
-  },
-  {
-   "level": 1,
-   "title": "HITOSHI MURAKAMI",
-   "page": 8,
-   "source": "inferred",
-   "number": "8"
+   "number": "3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Hyperbolicity condition. Now we have a topological ideal tetrahedron de-",
-   "page": 8,
+   "title": "Ideal tetrahedron decomposition of $S^3\\setminus{K}$",
+   "page": 4,
    "source": "inferred",
-   "number": "3.3"
+   "number": "3.2",
+   "confidence": 0.5,
+   "evidence": [
+    "latex"
+   ],
+   "page_label": null
   },
   {
-   "level": 1,
-   "title": "Consistency condition: at each vertex in the cusp torus, the pr oduct of the",
+   "level": 2,
+   "title": "Hyperbolicity condition",
    "page": 8,
    "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Cusp condition: the products of the parameters along the latitu de and the",
-   "page": 8,
-   "source": "inferred",
-   "number": "2"
+   "number": "3.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Analysis, and Harmony",
    "page": 9,
    "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 9,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "HITOSHI MURAKAMI",
-   "page": 10,
-   "source": "inferred",
-   "number": "10"
-  },
-  {
-   "level": 1,
-   "title": "HITOSHI MURAKAMI",
-   "page": 12,
-   "source": "inferred",
-   "number": "12"
-  },
-  {
-   "level": 1,
-   "title": "HITOSHI MURAKAMI",
-   "page": 14,
-   "source": "inferred",
-   "number": "14"
-  },
-  {
-   "level": 1,
-   "title": "HITOSHI MURAKAMI",
-   "page": 16,
-   "source": "inferred",
-   "number": "16"
-  },
-  {
-   "level": 1,
-   "title": "HITOSHI MURAKAMI",
-   "page": 18,
-   "source": "inferred",
-   "number": "18"
-  },
-  {
-   "level": 1,
-   "title": "HITOSHI MURAKAMI",
-   "page": 20,
-   "source": "inferred",
-   "number": "20"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "2.1",
+   "title": "Figure-eight knot with a labeling. the Kashaev invariant \u27e841\u27e9N is",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.1",
+   "title": "Put octahedra at crossings",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.2",
+   "title": "Decompose an octahedron into four tetrahedra",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.3",
+   "title": "Pull the pairs of vertices to \u00b1\u221e. C1B1, which is contained in Leaf \u03b21. Therefore the fourth octahedron is collapsed to the tetrahedron F4E4D4A4 as in Figure 3.12. Here the tetrahedron F4E4B4C4 is collapsed to the triangle F4E4B4, which is identi\ufb01ed with the triangle F4E4B4. Then the tetrahedron F4E4",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.4",
+   "title": "Twisted tetrahedra",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.5",
+   "title": "A twisted octahedron and its four leaves",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.6",
+   "title": "A twisted octahedron and a crossing",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.7",
+   "title": "Figure-eight knot with twisted octahedra",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.8",
+   "title": "Boundary of the regular neighborhood of G. (The wavy lines, the dotted lines, and the sidelines are identi\ufb01ed respectively.)",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.9",
+   "title": "Boundaries of the regular neighborhoods of A1 = C1, A2 = C2, B3 = D3, and B4 = D4 together with knot diagram before thickening the twisted octahedra viewed from the top (left)",
+   "page": 14,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.11",
+   "title": "The \ufb01rst octahedron is collapsed to the triangle F1E1D1. (The shaded triangles and the wavy lines are collapsed.)",
+   "page": 15,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.12",
+   "title": "The fourth octahedron is collapsed to the tetrahedron F4E4D4A4. (The wavy lines are collapsed.)",
+   "page": 15,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.13",
+   "title": "The regular neighborhood of Leaf \u03b21 (= Leaf \u03b43) in the \ufb01rst octahedron",
+   "page": 16,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.14",
+   "title": "The regular neighborhood of Leaf \u03b21 (= Leaf \u03b43) in the fourth octahedron",
+   "page": 16,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.15",
+   "title": "The intersections of the regular neighborhood of Leaf \u03b21 and the boundary of the bigger regular neighborhoods of G and \u00b1\u221eare indicated by the shaded regions",
+   "page": 17,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.16",
+   "title": "Remove the shaded regions in Figure 3.15 and deform the resulting pictures",
+   "page": 18,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.17",
+   "title": "The boundary of the regular neighborhood of \u03b21",
+   "page": 19,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.18",
+   "title": "The boundary of the regular neighborhood of \u03b21 after it is collapsed to a point. The edges with same numbers are identi\ufb01ed and the shaded regions will survive",
+   "page": 20,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.19",
+   "title": "The cusp torus of S3 \\ K with the latitude \u03bb and",
+   "page": 21,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.20",
+   "title": "Similar triangles parameterized by di\ufb00erent complex numbers",
+   "page": 21,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-2-hitoshi-murakami",
-   "number": "2",
-   "title": "HITOSHI MURAKAMI",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 238,
-   "n_words": 41
+   "n_chars": 369,
+   "n_words": 58,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2563,
-   "n_words": 428
+   "n_chars": 2537,
+   "n_words": 402,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-2-algebra",
+   "id": "sec-001-2-algebra",
    "number": "2",
    "title": "Algebra",
    "level": 1,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 3968,
-   "n_words": 981
+   "n_chars": 4659,
+   "n_words": 910,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-4-hitoshi-murakami",
-   "number": "4",
-   "title": "HITOSHI MURAKAMI",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 998,
-   "n_words": 253
-  },
-  {
-   "id": "sec-004-3-geometry",
+   "id": "sec-002-3-geometry",
    "number": "3",
    "title": "Geometry",
    "level": 1,
    "page_start": 4,
-   "page_end": 4,
-   "n_chars": 433,
-   "n_words": 78
-  },
-  {
-   "id": "sec-005-31-ideal-tetrahedron-decomposition-of-s3-k-two-p",
-   "number": "3.1",
-   "title": "Ideal tetrahedron decomposition of S3 \\ (K \u222a two points ). We will de-",
-   "level": 2,
-   "page_start": 4,
-   "page_end": 6,
-   "n_chars": 2871,
-   "n_words": 575
-  },
-  {
-   "id": "sec-006-6-hitoshi-murakami",
-   "number": "6",
-   "title": "HITOSHI MURAKAMI",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 57,
-   "n_words": 8
-  },
-  {
-   "id": "sec-007-32-ideal-tetrahedron-decomposition-of-s3-k-we-wi",
-   "number": "3.2",
-   "title": "Ideal tetrahedron decomposition of S3 \\ K. We will deform the ideal",
-   "level": 2,
-   "page_start": 6,
    "page_end": 8,
-   "n_chars": 3304,
-   "n_words": 673
+   "n_chars": 6971,
+   "n_words": 1290,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-8-hitoshi-murakami",
-   "number": "8",
-   "title": "HITOSHI MURAKAMI",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 238,
-   "n_words": 45
-  },
-  {
-   "id": "sec-009-33-hyperbolicity-condition-now-we-have-a-topolog",
+   "id": "sec-003-33-hyperbolicity-condition",
    "number": "3.3",
-   "title": "Hyperbolicity condition. Now we have a topological ideal tetrahedron de-",
+   "title": "Hyperbolicity condition",
    "level": 2,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 1416,
-   "n_words": 257
-  },
-  {
-   "id": "sec-010-1-consistency-condition-at-each-vertex-in-the-cu",
-   "number": "1",
-   "title": "Consistency condition: at each vertex in the cusp torus, the pr oduct of the",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 37,
-   "n_words": 7
-  },
-  {
-   "id": "sec-011-2-cusp-condition-the-products-of-the-parameters",
-   "number": "2",
-   "title": "Cusp condition: the products of the parameters along the latitu de and the",
-   "level": 1,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 1214,
-   "n_words": 314
+   "n_chars": 2784,
+   "n_words": 564,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-4-analysis-and-harmony",
+   "id": "sec-004-4-analysis-and-harmony",
    "number": "4",
    "title": "Analysis, and Harmony",
    "level": 1,
    "page_start": 9,
-   "page_end": 9,
-   "n_chars": 1947,
-   "n_words": 388
-  },
-  {
-   "id": "sec-013-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 9,
-   "page_end": 10,
-   "n_chars": 860,
-   "n_words": 136
-  },
-  {
-   "id": "sec-014-10-hitoshi-murakami",
-   "number": "10",
-   "title": "HITOSHI MURAKAMI",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 12,
-   "n_chars": 1012,
-   "n_words": 165
-  },
-  {
-   "id": "sec-015-12-hitoshi-murakami",
-   "number": "12",
-   "title": "HITOSHI MURAKAMI",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 14,
-   "n_chars": 355,
-   "n_words": 57
-  },
-  {
-   "id": "sec-016-14-hitoshi-murakami",
-   "number": "14",
-   "title": "HITOSHI MURAKAMI",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 16,
-   "n_chars": 802,
-   "n_words": 151
-  },
-  {
-   "id": "sec-017-16-hitoshi-murakami",
-   "number": "16",
-   "title": "HITOSHI MURAKAMI",
-   "level": 1,
-   "page_start": 16,
-   "page_end": 18,
-   "n_chars": 403,
-   "n_words": 70
-  },
-  {
-   "id": "sec-018-18-hitoshi-murakami",
-   "number": "18",
-   "title": "HITOSHI MURAKAMI",
-   "level": 1,
-   "page_start": 18,
-   "page_end": 20,
-   "n_chars": 211,
-   "n_words": 36
-  },
-  {
-   "id": "sec-019-20-hitoshi-murakami",
-   "number": "20",
-   "title": "HITOSHI MURAKAMI",
-   "level": 1,
-   "page_start": 20,
    "page_end": 21,
-   "n_chars": 387,
-   "n_words": 69
+   "n_chars": 6026,
+   "n_words": 1002,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 20,
-  "sections": 20,
-  "chars_total": 23314,
+  "toc_entries": 7,
+  "toc_inferred_entries": 7,
+  "toc_inferred_mean_confidence": 0.929,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 20,
+  "figure_sequence_gaps": [
+   "figure 3.10"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 23346,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "nagoya99.tex",
    "tex_sections": 7,
-   "overlaid": 3,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -394,114 +642,48 @@
    },
    "sections": [
     {
-     "id": "sec-000-2-hitoshi-murakami",
-     "title": "HITOSHI MURAKAMI",
+     "id": "sec-front-matter",
+     "title": "Front matter",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-001-1-introduction",
+     "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.993,
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.889,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-2-algebra",
+     "id": "sec-001-2-algebra",
      "title": "Algebra",
-     "prose_ratio": 0.979,
-     "coverage_ratio": 0.956,
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-4-hitoshi-murakami",
-     "title": "HITOSHI MURAKAMI",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-004-3-geometry",
+     "id": "sec-002-3-geometry",
      "title": "Geometry",
-     "prose_ratio": 0.145,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-005-31-ideal-tetrahedron-decomposition-of-s3-k-two-p",
-     "title": "Ideal tetrahedron decomposition of S3 \\ (K \u222a two points ). We will de-",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-006-6-hitoshi-murakami",
-     "title": "HITOSHI MURAKAMI",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-007-32-ideal-tetrahedron-decomposition-of-s3-k-we-wi",
-     "title": "Ideal tetrahedron decomposition of S3 \\ K. We will deform the ideal",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-008-8-hitoshi-murakami",
-     "title": "HITOSHI MURAKAMI",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-009-33-hyperbolicity-condition-now-we-have-a-topolog",
-     "title": "Hyperbolicity condition. Now we have a topological ideal tetrahedron de-",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-010-1-consistency-condition-at-each-vertex-in-the-cu",
-     "title": "Consistency condition: at each vertex in the cusp torus, the pr oduct of the",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-011-2-cusp-condition-the-products-of-the-parameters",
-     "title": "Cusp condition: the products of the parameters along the latitu de and the",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-012-4-analysis-and-harmony",
-     "title": "Analysis, and Harmony",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.983,
+     "prose_ratio": 0.898,
+     "coverage_ratio": 0.918,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-references",
-     "title": "References",
-     "result": "no matching \\section"
+     "id": "sec-003-33-hyperbolicity-condition",
+     "title": "Hyperbolicity condition",
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-014-10-hitoshi-murakami",
-     "title": "HITOSHI MURAKAMI",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-015-12-hitoshi-murakami",
-     "title": "HITOSHI MURAKAMI",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-016-14-hitoshi-murakami",
-     "title": "HITOSHI MURAKAMI",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-017-16-hitoshi-murakami",
-     "title": "HITOSHI MURAKAMI",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-018-18-hitoshi-murakami",
-     "title": "HITOSHI MURAKAMI",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-019-20-hitoshi-murakami",
-     "title": "HITOSHI MURAKAMI",
-     "result": "no matching \\section"
+     "id": "sec-004-4-analysis-and-harmony",
+     "title": "Analysis, and Harmony",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.496,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     }
    ]
   }

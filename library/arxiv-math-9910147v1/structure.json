@@ -7,6 +7,10 @@
   "bytes": 423095,
   "pages": 34,
   "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:24Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -17,1265 +21,709 @@
    "stamp_date": "27 Oct 1999"
   },
   "doi": null,
-  "title": "Tensor Products of Principal Unitary Representations of Quantum Lorentz Group and Askey-Wilson Polynomials E. Buffenoir \u2217",
+  "title": "arXiv:math/9910147v1 [math.QA] 27 Oct 1999",
   "authors_raw": "Laboratoire de Physique Math\u00e9matique et Th\u00e9orique\u2020",
   "title_lines": [
    "Tensor Products of Principal Unitary Representations of",
    "Quantum Lorentz Group and Askey-Wilson Polynomials",
-   "E. Buffenoir \u2217"
+   "E. Buffenoir\u2217"
   ],
-  "abstract": "We study the tensor product of principal unitary representa tions of the quantum Lorentz Group, prove a decomposition theorem and compute the associ ated intertwiners. We show that these intertwiners can be expressed in terms of complex continuations of 6 j symbols of Uq(su(2)). These intertwiners are expressed in terms of q-Racah polyno mials and Askey- Wilson polynomials. The orthogonality of these intertwine rs imply some relation mixing these two families of polynomials. The simplest of these rel ations is the orthogonality of Askey-Wilson Polynomials. Work supported by CNRS. \u2217 e-mail:bu\ufb00enoi@lpm.univ-montp2.fr \u2020 Laboratoire du CNRS UMR 5825 \u2021 e-mail:roche@math.mit.edu \u00a7 Laboratoire Propre du CNRS UPR 14 1",
+  "abstract": "We study the tensor product of principal unitary representations of the quantum Lorentz Group, prove a decomposition theorem and compute the associated intertwiners. We show that these intertwiners can be expressed in terms of complex continuations of 6j symbols of Uq(su(2)). These intertwiners are expressed in terms of q-Racah polynomials and Askey- Wilson polynomials. The orthogonality of these intertwiners imply some relation mixing these two families of polynomials. The simplest of these relations is the orthogonality of Askey-Wilson Polynomials. Work supported by CNRS. \u2217e-mail:bu\ufb00enoi@lpm.univ-montp2.fr \u2020Laboratoire du CNRS UMR 5825 \u2021e-mail:roche@math.mit.edu \u00a7Laboratoire Propre du CNRS UPR 14 1",
   "docinfo": {
+   "Title": "arXiv:math/9910147v1  [math.QA]  27 Oct 1999",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20180919091742-04'00'",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:math/9910147v1  [math.QA]  27 Oct 1999"
+   "CreationDate": "D:20180919091742-04'00'"
+  },
+  "title_raw": "Tensor Products of Principal Unitary Representations of Quantum Lorentz Group and Askey-Wilson Polynomials E. Buffenoir\u2217",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math/9910147v1 [math.QA] 27 Oct 1999",
+   "heading": "Tensor Products of Principal Unitary Representations of Quantum Lorentz Group and Askey-Wilson Polynomials",
+   "text": "Tensor Products of Principal Unitary Representations of Quantum Lorentz Group and Askey-Wilson Polynomials E. Buffenoir\u2217",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
    "title": "Introduction",
    "page": 2,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
-   "title": "Z \u00d7 R} the set of principal",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(m2 +\u03c12)d\u03c1 where",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z,m +m\u2032 +m\u2032\u2032 \u2208 Z}. The aim of the present article is to prove the",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z\u00d7] \u2212 \u03c0",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "De\ufb01nition and properties of various continuations of 6j",
+   "title": "Definition and properties of various continuations of 6j symbols of ${\\mathfrak U}_q(su(2))$",
    "page": 3,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "3"
   },
   {
    "level": 2,
-   "title": "Intertwiners and 6j(0) of Uq(su(2))",
+   "title": "Intertwiners and 6j(0) of ${\\mathfrak U}_q(su(2))$",
    "page": 3,
    "source": "inferred",
-   "number": "2.1"
-  },
-  {
-   "level": 1,
-   "title": "Z+, \u2200m \u2208 1",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z we de\ufb01ne",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
+   "number": "2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "3"
   },
   {
    "level": 2,
-   "title": "De\ufb01nitions and properties of continuation of quantum 6j symbols",
+   "title": "Definitions and properties of continuation of quantum $6j$ symbols",
    "page": 5,
    "source": "inferred",
-   "number": "2.2"
-  },
-  {
-   "level": 1,
-   "title": "Z+, and for a su\ufb03ciently large half-integer K we",
-   "page": 7,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z+,X 1,X 2,Y 1,Y 2,Z 1 \u2208 C \u2212 1",
-   "page": 8,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z+,X 1 \u2212X2 \u2208 1",
-   "page": 8,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z,Y 1 \u2212Y2 \u2208 1",
-   "page": 8,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z and de\ufb01ned by",
-   "page": 8,
-   "source": "inferred",
-   "number": "2"
+   "number": "2.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
   },
   {
    "level": 2,
-   "title": "Quantum Lorentz group, Principal Unitary Representati ons and",
+   "title": "Quantum Lorentz group, Principal Unitary Representations and Harmonic Analysis",
    "page": 10,
    "source": "inferred",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "10"
   },
   {
    "level": 1,
-   "title": "Z+ the elements",
-   "page": 10,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z+ span the",
-   "page": 10,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z,\u03c1 \u2208]\u2212 \u03c0",
-   "page": 11,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z+End(CdI )",
-   "page": 12,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z, \u2200\u03c1 \u2208] \u2212 \u03c0",
+   "title": "Intertwiners associated to unitary representations of the quantum Lorentz group",
    "page": 13,
    "source": "inferred",
-   "number": "2"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "13"
   },
   {
    "level": 1,
-   "title": "Z,f (m,. ) is a L2 function on ] \u2212 \u03c0",
-   "page": 13,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "N, \u2200m, |m|>m 0,f (m,. ) = 0,",
-   "page": 13,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z+ \u2229 [|m0|, +\u221e[, \u2200B,C \u2208 1",
-   "page": 13,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z+,",
-   "page": 13,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Intertwiners associated to unitary representations of th e",
-   "page": 13,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Z+,Y (0)",
-   "page": 13,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "This system is therefore",
-   "page": 14,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "A+\u03bd",
-   "page": 14,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "B+\u01eb",
-   "page": 14,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "B +\u01eb+\u00b5",
-   "page": 14,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "C+\u03c3",
-   "page": 14,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z+)2,Y (0)",
-   "page": 14,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z+)2,A \u2212 mX \u2208 N},Q =",
-   "page": 14,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(Z+)2,B \u2212mY \u2208 N}. \u2206 \u2229P \u2229Q is the intersection of a lattice with a convex set",
-   "page": 14,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Alternative Construction of Intertwiners in terms of the",
+   "title": "Alternative Construction of Intertwiners in terms of the Quantum Haar Measure",
    "page": 17,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "17"
   },
   {
    "level": 1,
-   "title": "Z, there exist Q,Q \u2032 \u2208 R, such that \u2200\u03c1X,\u03c1 Y,\u03c1 Z \u2208] \u2212 \u03c0",
-   "page": 19,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "X 2",
-   "page": 21,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z0 (1)\u221e\u03bd\u221e(2Y1+1)\u03bd\u221e(2Y0 +1)",
-   "page": 21,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z1\u03bd\u221e(2X0 +1)\u03bd\u221e(\u22122X0)\u03bd\u221e(Z0 +Z1 + 1)\u03bd\u221e(\u2212Z0 \u2212Z1)",
-   "page": 21,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(X0X1)\u039b BB",
-   "page": 21,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(Y0Y1)\u039b BB",
-   "page": 21,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(Z0Z1). (76)",
-   "page": 21,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(X0X0) = [(2X0+1)(2B+1)]",
-   "page": 21,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "Decomposition Theorem of the Tensor Product of Prin-",
+   "title": "Decomposition Theorem of the Tensor Product of Principal Representations and Askey-Wilson Polynomials",
    "page": 22,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "22"
   },
   {
    "level": 2,
-   "title": "Decomposition Theorem of the Tensor Product of Principa l Rep-",
+   "title": "Decomposition Theorem of the Tensor Product of Principal Representations",
    "page": 22,
    "source": "inferred",
-   "number": "5.1"
-  },
-  {
-   "level": 1,
-   "title": "Z+, \u2200k = \u2212C,..,C",
-   "page": 23,
-   "source": "inferred",
-   "number": "2"
+   "number": "5.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "22"
   },
   {
    "level": 2,
-   "title": "R-matrix in the Tensor Product of In\ufb01nite dimensional Re presen-",
+   "title": "R-matrix in the Tensor Product of Infinite dimensional Representations",
    "page": 24,
    "source": "inferred",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "24"
+  },
+  {
+   "level": 2,
+   "title": "Connection with Askey-Wilson Polynomials.",
+   "page": 25,
+   "source": "inferred",
+   "number": "5.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "25"
   },
   {
    "level": 1,
    "title": "Conclusion",
    "page": 26,
    "source": "inferred",
-   "number": "6"
+   "number": "6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "26"
   },
   {
    "level": 1,
    "title": "Appendix",
    "page": 26,
    "source": "inferred",
-   "number": "7"
+   "number": "7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "26"
   },
   {
-   "level": 1,
-   "title": "Z \u2192 C, de\ufb01ned by:",
-   "page": 27,
+   "level": 2,
+   "title": "Formulae on Basic Hypergeometric Functions.",
+   "page": 26,
    "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z. (93)",
-   "page": 27,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z (94)",
-   "page": 27,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z, (n \u2212p) \u2208 Z, (95)",
-   "page": 27,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(q2z +q\u22122z)",
-   "page": 28,
-   "source": "inferred",
-   "number": "2"
+   "number": "7.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Asymptotics of Intertwiners",
    "page": 28,
    "source": "inferred",
-   "number": "7.2"
-  },
-  {
-   "level": 1,
-   "title": "(P \u22123X2\u2212X1\u22121)(P +X2\u2212X1)\u03bd\u221e(2P + 1)\u03bd\u221e(1)",
-   "page": 28,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z0 (1)\u221e\u03bd\u221e(2Y1 +1)\u03bd\u221e(2Y0 +1)",
-   "page": 29,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z1\u03bd\u221e(2X0+1)\u03bd\u221e(\u22122X0)\u03bd\u221e(Z0 +Z1 + 1)\u03bd\u221e(\u2212Z0 \u2212Z1)",
-   "page": 29,
-   "source": "inferred",
-   "number": "2"
+   "number": "7.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "28"
   },
   {
    "level": 2,
-   "title": "Formulae on coe\ufb03cients \u039b BC",
+   "title": "Formulae on coefficients $\\Lambda^{BC}_{AD}(X_0X_1)$",
    "page": 29,
    "source": "inferred",
-   "number": "7.3"
-  },
-  {
-   "level": 1,
-   "title": "Z+, \u2200R \u2208 1",
-   "page": 31,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z, \u2200m \u2208 1",
-   "page": 31,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z, \u2203 C, B > 0, \u2200\u03c1 \u2208 R, \u2200B >B, |\u039b B B +R",
-   "page": 31,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "D+1",
-   "page": 31,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "B +R",
-   "page": 31,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "From the asymptotics property (112) when B goes to + \u221e, and the induction hy-",
-   "page": 31,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "D+ 1",
-   "page": 31,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Z,B \u00b1R \u2208 N, \u2200(X0X1) \u2208 S, \u2203C \u2208 R",
-   "page": 32,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(X0X1) = \u210f[dP ]\u03b4mX ,P",
-   "page": 32,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(X0X1) is non zero only when mX = 0 . The",
-   "page": 32,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(X0X1) is in this case very simple to compute because \u039b KK",
-   "page": 32,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(X0X1) =",
-   "page": 32,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 33,
-   "source": "inferred",
-   "number": null
+   "number": "7.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "29"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 719,
-   "n_words": 107
+   "n_chars": 1162,
+   "n_words": 157,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
-   "page_end": 2,
-   "n_chars": 561,
-   "n_words": 102
-  },
-  {
-   "id": "sec-002-2-z-r-the-set-of-principal",
-   "number": "2",
-   "title": "Z \u00d7 R} the set of principal",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 76,
-   "n_words": 14
-  },
-  {
-   "id": "sec-003-2-m2-\u03c12d\u03c1-where",
-   "number": "2",
-   "title": "(m2 +\u03c12)d\u03c1 where",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 185,
-   "n_words": 47
-  },
-  {
-   "id": "sec-004-2-zm-m-m-z-the-aim-of-the-present-article-is-to",
-   "number": "2",
-   "title": "Z,m +m\u2032 +m\u2032\u2032 \u2208 Z}. The aim of the present article is to prove the",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 163,
-   "n_words": 29
-  },
-  {
-   "id": "sec-005-2-z-\u03c0",
-   "number": "2",
-   "title": "Z\u00d7] \u2212 \u03c0",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 3,
-   "n_chars": 3167,
-   "n_words": 575
-  },
-  {
-   "id": "sec-006-2-de\ufb01nition-and-properties-of-various-continuati",
-   "number": "2",
-   "title": "De\ufb01nition and properties of various continuations of 6j",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 259,
-   "n_words": 44
-  },
-  {
-   "id": "sec-007-21-intertwiners-and-6j0-of-uqsu2",
-   "number": "2.1",
-   "title": "Intertwiners and 6j(0) of Uq(su(2))",
-   "level": 2,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 1233,
-   "n_words": 239
-  },
-  {
-   "id": "sec-008-2-z-m-1",
-   "number": "2",
-   "title": "Z+, \u2200m \u2208 1",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-009-2-z-we-de\ufb01ne",
-   "number": "2",
-   "title": "Z we de\ufb01ne",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 5,
-   "n_chars": 3032,
-   "n_words": 825
-  },
-  {
-   "id": "sec-010-22-de\ufb01nitions-and-properties-of-continuation-of",
-   "number": "2.2",
-   "title": "De\ufb01nitions and properties of continuation of quantum 6j symbols",
-   "level": 2,
-   "page_start": 5,
-   "page_end": 7,
-   "n_chars": 4350,
-   "n_words": 983
-  },
-  {
-   "id": "sec-011-2-z-and-for-a-su\ufb03ciently-large-half-integer-k-we",
-   "number": "2",
-   "title": "Z+, and for a su\ufb03ciently large half-integer K we",
-   "level": 1,
-   "page_start": 7,
-   "page_end": 8,
-   "n_chars": 2690,
-   "n_words": 700
-  },
-  {
-   "id": "sec-012-2-zx-1x-2y-1y-2z-1-c-1",
-   "number": "2",
-   "title": "Z+,X 1,X 2,Y 1,Y 2,Z 1 \u2208 C \u2212 1",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-013-2-zx-1-x2-1",
-   "number": "2",
-   "title": "Z+,X 1 \u2212X2 \u2208 1",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-014-2-zy-1-y2-1",
-   "number": "2",
-   "title": "Z,Y 1 \u2212Y2 \u2208 1",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-015-2-z-and-de\ufb01ned-by",
-   "number": "2",
-   "title": "Z and de\ufb01ned by",
-   "level": 1,
-   "page_start": 8,
    "page_end": 10,
-   "n_chars": 4165,
-   "n_words": 943
+   "n_chars": 20158,
+   "n_words": 4415,
+   "label_start": "2",
+   "label_end": "10"
   },
   {
-   "id": "sec-016-23-quantum-lorentz-group-principal-unitary-repre",
+   "id": "sec-001-23-quantum-lorentz-group-principal-unitary-repre",
    "number": "2.3",
-   "title": "Quantum Lorentz group, Principal Unitary Representati ons and",
+   "title": "Quantum Lorentz group, Principal Unitary Representations and Harmonic Analysis",
    "level": 2,
    "page_start": 10,
-   "page_end": 10,
-   "n_chars": 958,
-   "n_words": 164
-  },
-  {
-   "id": "sec-017-2-z-the-elements",
-   "number": "2",
-   "title": "Z+ the elements",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 116,
-   "n_words": 26
-  },
-  {
-   "id": "sec-018-2-z-span-the",
-   "number": "2",
-   "title": "Z+ span the",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 11,
-   "n_chars": 935,
-   "n_words": 260
-  },
-  {
-   "id": "sec-019-2-z\u03c1-\u03c0",
-   "number": "2",
-   "title": "Z,\u03c1 \u2208]\u2212 \u03c0",
-   "level": 1,
-   "page_start": 11,
-   "page_end": 12,
-   "n_chars": 1626,
-   "n_words": 372
-  },
-  {
-   "id": "sec-020-2-z",
-   "number": "2",
-   "title": "Z+,",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 12,
-   "n_chars": 469,
-   "n_words": 87
-  },
-  {
-   "id": "sec-021-2-zendcdi",
-   "number": "2",
-   "title": "Z+End(CdI )",
-   "level": 1,
-   "page_start": 12,
    "page_end": 13,
-   "n_chars": 2990,
-   "n_words": 686
+   "n_chars": 7318,
+   "n_words": 1576,
+   "label_start": "10",
+   "label_end": "13"
   },
   {
-   "id": "sec-022-2-z-\u03c1-\u03c0",
-   "number": "2",
-   "title": "Z, \u2200\u03c1 \u2208] \u2212 \u03c0",
-   "level": 1,
-   "page_start": 13,
-   "page_end": 13,
-   "n_chars": 40,
-   "n_words": 13
-  },
-  {
-   "id": "sec-023-2-zf-m-is-a-l2-function-on-\u03c0",
-   "number": "2",
-   "title": "Z,f (m,. ) is a L2 function on ] \u2212 \u03c0",
-   "level": 1,
-   "page_start": 13,
-   "page_end": 13,
-   "n_chars": 19,
-   "n_words": 7
-  },
-  {
-   "id": "sec-024-2-n-m-mm-0f-m-0",
-   "number": "2",
-   "title": "N, \u2200m, |m|>m 0,f (m,. ) = 0,",
-   "level": 1,
-   "page_start": 13,
-   "page_end": 13,
-   "n_chars": 11,
-   "n_words": 4
-  },
-  {
-   "id": "sec-025-2-z-m0-bc-1",
-   "number": "2",
-   "title": "Z+ \u2229 [|m0|, +\u221e[, \u2200B,C \u2208 1",
-   "level": 1,
-   "page_start": 13,
-   "page_end": 13,
-   "n_chars": 65,
-   "n_words": 15
-  },
-  {
-   "id": "sec-026-3-intertwiners-associated-to-unitary-representat",
+   "id": "sec-002-3-intertwiners-associated-to-unitary-representat",
    "number": "3",
-   "title": "Intertwiners associated to unitary representations of th e",
+   "title": "Intertwiners associated to unitary representations of the quantum Lorentz group",
    "level": 1,
    "page_start": 13,
-   "page_end": 13,
-   "n_chars": 728,
-   "n_words": 155
-  },
-  {
-   "id": "sec-027-2-zy-0",
-   "number": "2",
-   "title": "Z+,Y (0)",
-   "level": 1,
-   "page_start": 13,
-   "page_end": 14,
-   "n_chars": 1974,
-   "n_words": 433
-  },
-  {
-   "id": "sec-028-2-this-system-is-therefore",
-   "number": "2",
-   "title": "This system is therefore",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 93,
-   "n_words": 26
-  },
-  {
-   "id": "sec-029-2-a\u03bd",
-   "number": "2",
-   "title": "A+\u03bd",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-030-2-c\u03c3",
-   "number": "2",
-   "title": "C+\u03c3",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 63,
-   "n_words": 19
-  },
-  {
-   "id": "sec-031-2-b-\u01eb\u00b5",
-   "number": "2",
-   "title": "B +\u01eb+\u00b5",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 592,
-   "n_words": 151
-  },
-  {
-   "id": "sec-032-2-z2y-0",
-   "number": "2",
-   "title": "Z+)2,Y (0)",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 33,
-   "n_words": 11
-  },
-  {
-   "id": "sec-033-2-z2a-mx-nq",
-   "number": "2",
-   "title": "Z+)2,A \u2212 mX \u2208 N},Q =",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 11,
-   "n_words": 4
-  },
-  {
-   "id": "sec-034-2-z2b-my-n-p-q-is-the-intersection-of-a-lattice",
-   "number": "2",
-   "title": "(Z+)2,B \u2212mY \u2208 N}. \u2206 \u2229P \u2229Q is the intersection of a lattice with a convex set",
-   "level": 1,
-   "page_start": 14,
    "page_end": 17,
-   "n_chars": 6603,
-   "n_words": 1650
+   "n_chars": 10177,
+   "n_words": 2382,
+   "label_start": "13",
+   "label_end": "17"
   },
   {
-   "id": "sec-035-4-alternative-construction-of-intertwiners-in-te",
+   "id": "sec-003-4-alternative-construction-of-intertwiners-in-te",
    "number": "4",
-   "title": "Alternative Construction of Intertwiners in terms of the",
+   "title": "Alternative Construction of Intertwiners in terms of the Quantum Haar Measure",
    "level": 1,
    "page_start": 17,
-   "page_end": 19,
-   "n_chars": 4039,
-   "n_words": 1087
-  },
-  {
-   "id": "sec-036-2-z-there-exist-qq-r-such-that-\u03c1x\u03c1-y\u03c1-z-\u03c0",
-   "number": "2",
-   "title": "Z, there exist Q,Q \u2032 \u2208 R, such that \u2200\u03c1X,\u03c1 Y,\u03c1 Z \u2208] \u2212 \u03c0",
-   "level": 1,
-   "page_start": 19,
-   "page_end": 21,
-   "n_chars": 5612,
-   "n_words": 1251
-  },
-  {
-   "id": "sec-037-2-x-2",
-   "number": "2",
-   "title": "X 2",
-   "level": 1,
-   "page_start": 21,
-   "page_end": 21,
-   "n_chars": 24,
-   "n_words": 11
-  },
-  {
-   "id": "sec-038-2-z0-1\u03bd2y11\u03bd2y0-1",
-   "number": "2",
-   "title": "Z0 (1)\u221e\u03bd\u221e(2Y1+1)\u03bd\u221e(2Y0 +1)",
-   "level": 1,
-   "page_start": 21,
-   "page_end": 21,
-   "n_chars": 98,
-   "n_words": 23
-  },
-  {
-   "id": "sec-039-2-z1\u03bd2x0-1\u03bd2x0\u03bdz0-z1-1\u03bdz0-z1",
-   "number": "2",
-   "title": "Z1\u03bd\u221e(2X0 +1)\u03bd\u221e(\u22122X0)\u03bd\u221e(Z0 +Z1 + 1)\u03bd\u221e(\u2212Z0 \u2212Z1)",
-   "level": 1,
-   "page_start": 21,
-   "page_end": 21,
-   "n_chars": 634,
-   "n_words": 136
-  },
-  {
-   "id": "sec-040-0-x0x1\u03bb-bb",
-   "number": "0",
-   "title": "(X0X1)\u039b BB",
-   "level": 1,
-   "page_start": 21,
-   "page_end": 21,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-041-0-y0y1\u03bb-bb",
-   "number": "0",
-   "title": "(Y0Y1)\u039b BB",
-   "level": 1,
-   "page_start": 21,
-   "page_end": 21,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-042-0-z0z1-76",
-   "number": "0",
-   "title": "(Z0Z1). (76)",
-   "level": 1,
-   "page_start": 21,
-   "page_end": 21,
-   "n_chars": 23,
-   "n_words": 5
-  },
-  {
-   "id": "sec-043-0-x0x0-2x012b1",
-   "number": "0",
-   "title": "(X0X0) = [(2X0+1)(2B+1)]",
-   "level": 1,
-   "page_start": 21,
    "page_end": 22,
-   "n_chars": 1633,
-   "n_words": 299
+   "n_chars": 11900,
+   "n_words": 2489,
+   "label_start": "17",
+   "label_end": "22"
   },
   {
-   "id": "sec-044-5-decomposition-theorem-of-the-tensor-product-of",
+   "id": "sec-004-5-decomposition-theorem-of-the-tensor-product-of",
    "number": "5",
-   "title": "Decomposition Theorem of the Tensor Product of Prin-",
+   "title": "Decomposition Theorem of the Tensor Product of Principal Representations and Askey-Wilson Polynomials",
    "level": 1,
    "page_start": 22,
-   "page_end": 23,
-   "n_chars": 2700,
-   "n_words": 558
+   "page_end": 25,
+   "n_chars": 5482,
+   "n_words": 1082,
+   "label_start": "22",
+   "label_end": "25"
   },
   {
-   "id": "sec-045-2-z-k-cc",
-   "number": "2",
-   "title": "Z+, \u2200k = \u2212C,..,C",
-   "level": 1,
-   "page_start": 23,
-   "page_end": 24,
-   "n_chars": 660,
-   "n_words": 148
-  },
-  {
-   "id": "sec-046-52-r-matrix-in-the-tensor-product-of-in\ufb01nite-dim",
-   "number": "5.2",
-   "title": "R-matrix in the Tensor Product of In\ufb01nite dimensional Re presen-",
+   "id": "sec-005-53-connection-with-askey-wilson-polynomials",
+   "number": "5.3",
+   "title": "Connection with Askey-Wilson Polynomials.",
    "level": 2,
-   "page_start": 24,
+   "page_start": 25,
    "page_end": 26,
-   "n_chars": 4813,
-   "n_words": 996
+   "n_chars": 2636,
+   "n_words": 529,
+   "label_start": "25",
+   "label_end": "26"
   },
   {
-   "id": "sec-047-6-conclusion",
+   "id": "sec-006-6-conclusion",
    "number": "6",
    "title": "Conclusion",
    "level": 1,
    "page_start": 26,
    "page_end": 26,
-   "n_chars": 1421,
-   "n_words": 222
+   "n_chars": 1411,
+   "n_words": 211,
+   "label_start": "26",
+   "label_end": "26"
   },
   {
-   "id": "sec-048-7-appendix",
+   "id": "sec-007-7-appendix",
    "number": "7",
    "title": "Appendix",
    "level": 1,
    "page_start": 26,
-   "page_end": 27,
-   "n_chars": 1036,
-   "n_words": 226
+   "page_end": 26,
+   "n_chars": 3,
+   "n_words": 1,
+   "label_start": "26",
+   "label_end": "26"
   },
   {
-   "id": "sec-049-2-z-c-de\ufb01ned-by",
-   "number": "2",
-   "title": "Z \u2192 C, de\ufb01ned by:",
-   "level": 1,
-   "page_start": 27,
-   "page_end": 27,
-   "n_chars": 79,
-   "n_words": 21
-  },
-  {
-   "id": "sec-050-2-z-93",
-   "number": "2",
-   "title": "Z. (93)",
-   "level": 1,
-   "page_start": 27,
-   "page_end": 27,
-   "n_chars": 96,
-   "n_words": 16
-  },
-  {
-   "id": "sec-051-2-z-94",
-   "number": "2",
-   "title": "Z (94)",
-   "level": 1,
-   "page_start": 27,
-   "page_end": 27,
-   "n_chars": 45,
-   "n_words": 12
-  },
-  {
-   "id": "sec-052-2-z-n-p-z-95",
-   "number": "2",
-   "title": "Z, (n \u2212p) \u2208 Z, (95)",
-   "level": 1,
-   "page_start": 27,
+   "id": "sec-008-71-formulae-on-basic-hypergeometric-functions",
+   "number": "7.1",
+   "title": "Formulae on Basic Hypergeometric Functions.",
+   "level": 2,
+   "page_start": 26,
    "page_end": 28,
-   "n_chars": 2081,
-   "n_words": 429
+   "n_chars": 3653,
+   "n_words": 744,
+   "label_start": "26",
+   "label_end": "28"
   },
   {
-   "id": "sec-053-2-q2z-q2z",
-   "number": "2",
-   "title": "(q2z +q\u22122z)",
-   "level": 1,
-   "page_start": 28,
-   "page_end": 28,
-   "n_chars": 334,
-   "n_words": 77
-  },
-  {
-   "id": "sec-054-72-asymptotics-of-intertwiners",
+   "id": "sec-009-72-asymptotics-of-intertwiners",
    "number": "7.2",
    "title": "Asymptotics of Intertwiners",
    "level": 2,
    "page_start": 28,
-   "page_end": 28,
-   "n_chars": 478,
-   "n_words": 106
-  },
-  {
-   "id": "sec-055-2-p-3x2x11p-x2x1\u03bd2p-1\u03bd1",
-   "number": "2",
-   "title": "(P \u22123X2\u2212X1\u22121)(P +X2\u2212X1)\u03bd\u221e(2P + 1)\u03bd\u221e(1)",
-   "level": 1,
-   "page_start": 28,
-   "page_end": 29,
-   "n_chars": 1615,
-   "n_words": 333
-  },
-  {
-   "id": "sec-056-2-z0-1\u03bd2y1-1\u03bd2y0-1",
-   "number": "2",
-   "title": "Z0 (1)\u221e\u03bd\u221e(2Y1 +1)\u03bd\u221e(2Y0 +1)",
-   "level": 1,
-   "page_start": 29,
-   "page_end": 29,
-   "n_chars": 98,
-   "n_words": 23
-  },
-  {
-   "id": "sec-057-2-z1\u03bd2x01\u03bd2x0\u03bdz0-z1-1\u03bdz0-z1",
-   "number": "2",
-   "title": "Z1\u03bd\u221e(2X0+1)\u03bd\u221e(\u22122X0)\u03bd\u221e(Z0 +Z1 + 1)\u03bd\u221e(\u2212Z0 \u2212Z1)",
-   "level": 1,
-   "page_start": 29,
-   "page_end": 29,
-   "n_chars": 269,
-   "n_words": 56
-  },
-  {
-   "id": "sec-058-73-formulae-on-coe\ufb03cients-\u03bb-bc",
-   "number": "7.3",
-   "title": "Formulae on coe\ufb03cients \u039b BC",
-   "level": 2,
-   "page_start": 29,
-   "page_end": 31,
-   "n_chars": 3212,
-   "n_words": 683
-  },
-  {
-   "id": "sec-059-2-z-r-1",
-   "number": "2",
-   "title": "Z+, \u2200R \u2208 1",
-   "level": 1,
-   "page_start": 31,
-   "page_end": 31,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-060-2-z-m-1",
-   "number": "2",
-   "title": "Z, \u2200m \u2208 1",
-   "level": 1,
-   "page_start": 31,
-   "page_end": 31,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-061-2-z-c-b-0-\u03c1-r-b-b-\u03bb-b-b-r",
-   "number": "2",
-   "title": "Z, \u2203 C, B > 0, \u2200\u03c1 \u2208 R, \u2200B >B, |\u039b B B +R",
-   "level": 1,
-   "page_start": 31,
-   "page_end": 31,
-   "n_chars": 1290,
-   "n_words": 254
-  },
-  {
-   "id": "sec-062-2-d-1",
-   "number": "2",
-   "title": "D+ 1",
-   "level": 1,
-   "page_start": 31,
-   "page_end": 31,
-   "n_chars": 1,
-   "n_words": 1
-  },
-  {
-   "id": "sec-063-2-d1",
-   "number": "2",
-   "title": "D+1",
-   "level": 1,
-   "page_start": 31,
-   "page_end": 31,
-   "n_chars": 261,
-   "n_words": 83
-  },
-  {
-   "id": "sec-064-2-from-the-asymptotics-property-112-when-b-goes",
-   "number": "2",
-   "title": "From the asymptotics property (112) when B goes to + \u221e, and the induction hy-",
-   "level": 1,
-   "page_start": 31,
-   "page_end": 32,
-   "n_chars": 498,
-   "n_words": 113
-  },
-  {
-   "id": "sec-065-2-zb-r-n-x0x1-s-c-r",
-   "number": "2",
-   "title": "Z,B \u00b1R \u2208 N, \u2200(X0X1) \u2208 S, \u2203C \u2208 R",
-   "level": 1,
-   "page_start": 32,
-   "page_end": 32,
-   "n_chars": 580,
-   "n_words": 126
-  },
-  {
-   "id": "sec-066-0-x0x1",
-   "number": "0",
-   "title": "(X0X1) =",
-   "level": 1,
-   "page_start": 32,
-   "page_end": 32,
-   "n_chars": 56,
-   "n_words": 14
-  },
-  {
-   "id": "sec-067-0-x0x1-\u210fdp-\u03b4mx-p",
-   "number": "0",
-   "title": "(X0X1) = \u210f[dP ]\u03b4mX ,P",
-   "level": 1,
-   "page_start": 32,
-   "page_end": 32,
-   "n_chars": 63,
-   "n_words": 14
-  },
-  {
-   "id": "sec-068-0-x0x1-is-non-zero-only-when-mx-0-the",
-   "number": "0",
-   "title": "(X0X1) is non zero only when mX = 0 . The",
-   "level": 1,
-   "page_start": 32,
-   "page_end": 32,
-   "n_chars": 18,
-   "n_words": 4
-  },
-  {
-   "id": "sec-069-0-x0x1-is-in-this-case-very-simple-to-compute-be",
-   "number": "0",
-   "title": "(X0X1) is in this case very simple to compute because \u039b KK",
-   "level": 1,
-   "page_start": 32,
-   "page_end": 33,
-   "n_chars": 1871,
-   "n_words": 495
-  },
-  {
-   "id": "sec-070-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 33,
    "page_end": 34,
-   "n_chars": 3505,
-   "n_words": 453
+   "n_chars": 14089,
+   "n_words": 2616,
+   "label_start": "28",
+   "label_end": "34"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 74,
-  "sections": 71,
-  "chars_total": 77069,
+  "toc_entries": 16,
+  "toc_inferred_entries": 16,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.1,
+  "toc_inferred_method": "latex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 77989,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 16,
-   "overlaid": 5,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1283,379 +731,87 @@
    },
    "sections": [
     {
-     "id": "sec-000-abstract",
-     "title": "Abstract",
+     "id": "sec-front-matter",
+     "title": "Front matter",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-001-1-introduction",
+     "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.25,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-2-z-r-the-set-of-principal",
-     "title": "Z \u00d7 R} the set of principal",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-003-2-m2-\u03c12d\u03c1-where",
-     "title": "(m2 +\u03c12)d\u03c1 where",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-004-2-zm-m-m-z-the-aim-of-the-present-article-is-to",
-     "title": "Z,m +m\u2032 +m\u2032\u2032 \u2208 Z}. The aim of the present article is to prove the",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-005-2-z-\u03c0",
-     "title": "Z\u00d7] \u2212 \u03c0",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-006-2-de\ufb01nition-and-properties-of-various-continuati",
-     "title": "De\ufb01nition and properties of various continuations of 6j",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.958,
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-21-intertwiners-and-6j0-of-uqsu2",
-     "title": "Intertwiners and 6j(0) of Uq(su(2))",
-     "prose_ratio": 0.529,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-001-23-quantum-lorentz-group-principal-unitary-repre",
+     "title": "Quantum Lorentz group, Principal Unitary Representations and Harmonic Analysis",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-008-2-z-m-1",
-     "title": "Z+, \u2200m \u2208 1",
-     "result": "no matching \\section"
+     "id": "sec-002-3-intertwiners-associated-to-unitary-representat",
+     "title": "Intertwiners associated to unitary representations of the quantum Lorentz group",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-009-2-z-we-de\ufb01ne",
-     "title": "Z we de\ufb01ne",
-     "result": "no matching \\section"
+     "id": "sec-003-4-alternative-construction-of-intertwiners-in-te",
+     "title": "Alternative Construction of Intertwiners in terms of the Quantum Haar Measure",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-010-22-de\ufb01nitions-and-properties-of-continuation-of",
-     "title": "De\ufb01nitions and properties of continuation of quantum 6j symbols",
-     "prose_ratio": 0.661,
+     "id": "sec-004-5-decomposition-theorem-of-the-tensor-product-of",
+     "title": "Decomposition Theorem of the Tensor Product of Principal Representations and Askey-Wilson Polynomials",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-53-connection-with-askey-wilson-polynomials",
+     "title": "Connection with Askey-Wilson Polynomials.",
+     "prose_ratio": 0.929,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-2-z-and-for-a-su\ufb03ciently-large-half-integer-k-we",
-     "title": "Z+, and for a su\ufb03ciently large half-integer K we",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-012-2-zx-1x-2y-1y-2z-1-c-1",
-     "title": "Z+,X 1,X 2,Y 1,Y 2,Z 1 \u2208 C \u2212 1",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-013-2-zx-1-x2-1",
-     "title": "Z+,X 1 \u2212X2 \u2208 1",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-014-2-zy-1-y2-1",
-     "title": "Z,Y 1 \u2212Y2 \u2208 1",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-015-2-z-and-de\ufb01ned-by",
-     "title": "Z and de\ufb01ned by",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-016-23-quantum-lorentz-group-principal-unitary-repre",
-     "title": "Quantum Lorentz group, Principal Unitary Representati ons and",
-     "prose_ratio": 0.127,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-017-2-z-the-elements",
-     "title": "Z+ the elements",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-018-2-z-span-the",
-     "title": "Z+ span the",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-019-2-z\u03c1-\u03c0",
-     "title": "Z,\u03c1 \u2208]\u2212 \u03c0",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-020-2-z",
-     "title": "Z+,",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-021-2-zendcdi",
-     "title": "Z+End(CdI )",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-022-2-z-\u03c1-\u03c0",
-     "title": "Z, \u2200\u03c1 \u2208] \u2212 \u03c0",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-023-2-zf-m-is-a-l2-function-on-\u03c0",
-     "title": "Z,f (m,. ) is a L2 function on ] \u2212 \u03c0",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-024-2-n-m-mm-0f-m-0",
-     "title": "N, \u2200m, |m|>m 0,f (m,. ) = 0,",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-025-2-z-m0-bc-1",
-     "title": "Z+ \u2229 [|m0|, +\u221e[, \u2200B,C \u2208 1",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-026-3-intertwiners-associated-to-unitary-representat",
-     "title": "Intertwiners associated to unitary representations of th e",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-027-2-zy-0",
-     "title": "Z+,Y (0)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-028-2-this-system-is-therefore",
-     "title": "This system is therefore",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-029-2-a\u03bd",
-     "title": "A+\u03bd",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-030-2-c\u03c3",
-     "title": "C+\u03c3",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-031-2-b-\u01eb\u00b5",
-     "title": "B +\u01eb+\u00b5",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-032-2-z2y-0",
-     "title": "Z+)2,Y (0)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-033-2-z2a-mx-nq",
-     "title": "Z+)2,A \u2212 mX \u2208 N},Q =",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-034-2-z2b-my-n-p-q-is-the-intersection-of-a-lattice",
-     "title": "(Z+)2,B \u2212mY \u2208 N}. \u2206 \u2229P \u2229Q is the intersection of a lattice with a convex set",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-035-4-alternative-construction-of-intertwiners-in-te",
-     "title": "Alternative Construction of Intertwiners in terms of the",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-036-2-z-there-exist-qq-r-such-that-\u03c1x\u03c1-y\u03c1-z-\u03c0",
-     "title": "Z, there exist Q,Q \u2032 \u2208 R, such that \u2200\u03c1X,\u03c1 Y,\u03c1 Z \u2208] \u2212 \u03c0",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-037-2-x-2",
-     "title": "X 2",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-038-2-z0-1\u03bd2y11\u03bd2y0-1",
-     "title": "Z0 (1)\u221e\u03bd\u221e(2Y1+1)\u03bd\u221e(2Y0 +1)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-039-2-z1\u03bd2x0-1\u03bd2x0\u03bdz0-z1-1\u03bdz0-z1",
-     "title": "Z1\u03bd\u221e(2X0 +1)\u03bd\u221e(\u22122X0)\u03bd\u221e(Z0 +Z1 + 1)\u03bd\u221e(\u2212Z0 \u2212Z1)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-040-0-x0x1\u03bb-bb",
-     "title": "(X0X1)\u039b BB",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-041-0-y0y1\u03bb-bb",
-     "title": "(Y0Y1)\u039b BB",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-042-0-z0z1-76",
-     "title": "(Z0Z1). (76)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-043-0-x0x0-2x012b1",
-     "title": "(X0X0) = [(2X0+1)(2B+1)]",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-044-5-decomposition-theorem-of-the-tensor-product-of",
-     "title": "Decomposition Theorem of the Tensor Product of Prin-",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-045-2-z-k-cc",
-     "title": "Z+, \u2200k = \u2212C,..,C",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-046-52-r-matrix-in-the-tensor-product-of-in\ufb01nite-dim",
-     "title": "R-matrix in the Tensor Product of In\ufb01nite dimensional Re presen-",
-     "prose_ratio": 0.96,
-     "coverage_ratio": 0.987,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-047-6-conclusion",
+     "id": "sec-006-6-conclusion",
      "title": "Conclusion",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.978,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-048-7-appendix",
-     "title": "Appendix",
-     "prose_ratio": 0.443,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-049-2-z-c-de\ufb01ned-by",
-     "title": "Z \u2192 C, de\ufb01ned by:",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-050-2-z-93",
-     "title": "Z. (93)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-051-2-z-94",
-     "title": "Z (94)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-052-2-z-n-p-z-95",
-     "title": "Z, (n \u2212p) \u2208 Z, (95)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-053-2-q2z-q2z",
-     "title": "(q2z +q\u22122z)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-054-72-asymptotics-of-intertwiners",
-     "title": "Asymptotics of Intertwiners",
-     "prose_ratio": 0.377,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-055-2-p-3x2x11p-x2x1\u03bd2p-1\u03bd1",
-     "title": "(P \u22123X2\u2212X1\u22121)(P +X2\u2212X1)\u03bd\u221e(2P + 1)\u03bd\u221e(1)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-056-2-z0-1\u03bd2y1-1\u03bd2y0-1",
-     "title": "Z0 (1)\u221e\u03bd\u221e(2Y1 +1)\u03bd\u221e(2Y0 +1)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-057-2-z1\u03bd2x01\u03bd2x0\u03bdz0-z1-1\u03bdz0-z1",
-     "title": "Z1\u03bd\u221e(2X0+1)\u03bd\u221e(\u22122X0)\u03bd\u221e(Z0 +Z1 + 1)\u03bd\u221e(\u2212Z0 \u2212Z1)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-058-73-formulae-on-coe\ufb03cients-\u03bb-bc",
-     "title": "Formulae on coe\ufb03cients \u039b BC",
-     "prose_ratio": 0.613,
+     "prose_ratio": 0.989,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-059-2-z-r-1",
-     "title": "Z+, \u2200R \u2208 1",
-     "result": "no matching \\section"
+     "id": "sec-007-7-appendix",
+     "title": "Appendix",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-060-2-z-m-1",
-     "title": "Z, \u2200m \u2208 1",
-     "result": "no matching \\section"
+     "id": "sec-008-71-formulae-on-basic-hypergeometric-functions",
+     "title": "Formulae on Basic Hypergeometric Functions.",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-061-2-z-c-b-0-\u03c1-r-b-b-\u03bb-b-b-r",
-     "title": "Z, \u2203 C, B > 0, \u2200\u03c1 \u2208 R, \u2200B >B, |\u039b B B +R",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-062-2-d-1",
-     "title": "D+ 1",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-063-2-d1",
-     "title": "D+1",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-064-2-from-the-asymptotics-property-112-when-b-goes",
-     "title": "From the asymptotics property (112) when B goes to + \u221e, and the induction hy-",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-065-2-zb-r-n-x0x1-s-c-r",
-     "title": "Z,B \u00b1R \u2208 N, \u2200(X0X1) \u2208 S, \u2203C \u2208 R",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-066-0-x0x1",
-     "title": "(X0X1) =",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-067-0-x0x1-\u210fdp-\u03b4mx-p",
-     "title": "(X0X1) = \u210f[dP ]\u03b4mX ,P",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-068-0-x0x1-is-non-zero-only-when-mx-0-the",
-     "title": "(X0X1) is non zero only when mX = 0 . The",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-069-0-x0x1-is-in-this-case-very-simple-to-compute-be",
-     "title": "(X0X1) is in this case very simple to compute because \u039b KK",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-070-references",
-     "title": "References",
-     "result": "no matching \\section"
+     "id": "sec-009-72-asymptotics-of-intertwiners",
+     "title": "Asymptotics of Intertwiners",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.628,
+     "result": "overlaid",
+     "converter": "pandoc"
     }
    ]
   }

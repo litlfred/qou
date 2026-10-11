@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ds15v1-2008/blocks/prose-sec-042",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ds15v1-2008/blocks/prose-sec-042",
   "kind": "prose",
-  "title": "Mod 21 Identities",
-  "pageStart": 28,
-  "pageEnd": 28,
-  "text": "../sections/sec-042-321-mod-21-identities.md",
-  "derivedFrom": "library/ds15v1-2008/manifest",
-  "sourceDocument": "library/ds15v1-2008/manifest",
+  "title": "Slater’s Bailey Pairs with their respective duals",
+  "pageStart": 53,
+  "pageEnd": 55,
+  "text": "../sections/sec-042-slaters-bailey-pairs-with-their-respective-duals.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ds15v1-2008/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ds15v1-2008/manifest.jsonld",
   "provenance": "ingested"
 }

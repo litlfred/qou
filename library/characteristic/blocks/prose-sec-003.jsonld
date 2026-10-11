@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/characteristic/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/characteristic/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "The A-polynomial of a knot. Recall the de",
-  "pageStart": 4,
-  "pageEnd": 4,
-  "text": "../sections/sec-003-21-the-a-polynomial-of-a-knot-recall-the-de.md",
-  "derivedFrom": "library/characteristic/manifest",
-  "sourceDocument": "library/characteristic/manifest",
+  "title": "The deformation variety of a knot",
+  "pageStart": 1,
+  "pageEnd": 3,
+  "text": "../sections/sec-003-13-the-deformation-variety-of-a-knot.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./characteristic/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./characteristic/manifest.jsonld",
   "provenance": "ingested"
 }

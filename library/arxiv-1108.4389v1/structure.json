@@ -6,6 +6,11 @@
   "sha256": "d3ac77510654d8285c0fd4e71d628421bf703cd739d76d8f6e14053b58aad8f9",
   "bytes": 1580851,
   "pages": 58,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:19Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -17,782 +22,1542 @@
   },
   "doi": null,
   "title": "Gauge Theories Labelled by Three-Manifolds",
-  "authors_raw": "Tudor Dimofte1 and Davide Gaiotto 1 and Sergei Gukov 2,3",
-  "abstract": "We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories. Under this duality, standard operations on triangulated 3-manifolds and various invariants thereof (classical as well as quantum) \ufb01nd a natural interpretation in \ufb01eld theory. For example, independence of the SL(2) Chern-Simons partition function on the choice of triangulation translates to a statement that S3 b partition functions of two mirror 3d N = 2 gauge theories are equal. Three-dimensional N = 2 \ufb01eld theories associated to 3-manifolds can be thought of as theories that describe boundary conditions and duality walls in four-dimensional N = 2 SCFTs, thus making the whole construction functorial with respect to cobordisms and gluing. CALT-68-2847 arXiv:1108.4389v1 [hep-th] 22 Aug 2011",
-  "docinfo": {
-   "CreationDate": "D:20241127002354Z",
-   "Creator": "TeX",
-   "Producer": "pdfTeX-1.40.10"
-  },
-  "title_prev": "b partition functions of two mirror 3d N = 2 gauge theories are equal. Three-dimensional N = 2 field theories associated to 3-manifolds can be thought of as theories that describe boundary conditions and duality walls in four-dimensional N = 2 SCFTs, thus making the",
+  "authors_raw": "Tudor Dimofte1 and Davide Gaiotto1 and Sergei Gukov2,3",
   "title_lines": [
    "Gauge Theories Labelled by Three-Manifolds"
-  ]
+  ],
+  "abstract": "We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories. Under this duality, standard operations on triangulated 3-manifolds and various invariants thereof (classical as well as quantum) \ufb01nd a natural interpretation in \ufb01eld theory. For example, independence of the SL(2) Chern-Simons partition function on the choice of triangulation translates to a statement that S3 b partition functions of two mirror 3d N = 2 gauge theories are equal. Three-dimensional N = 2 \ufb01eld theories associated to 3-manifolds can be thought of as theories that describe boundary conditions and duality walls in four-dimensional N = 2 SCFTs, thus making the whole construction functorial with respect to cobordisms and gluing. CALT-68-2847 arXiv:1108.4389v1 [hep-th] 22 Aug 2011",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.10",
+   "Creator": "TeX",
+   "CreationDate": "D:20241127002354Z"
+  },
+  "title_raw": "Gauge Theories Labelled by Three-Manifolds",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Gauge Theories Labelled by Three-Manifolds",
+   "text": "Gauge Theories Labelled by Three-Manifolds",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
-  {
-   "level": 1,
-   "title": "Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "California Institute of Technology, Pasadena, CA 91125, USA",
-   "page": 1,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Max-Planck-Institut f\u00a8 ur Mathematik, Vivatsgasse 7, D-53111 Bonn, Germany",
-   "page": 1,
-   "source": "inferred",
-   "number": "3"
-  },
   {
    "level": 1,
    "title": "Introduction",
    "page": 3,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Geometry of 3-manifolds",
    "page": 8,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Building blocks",
    "page": 9,
    "source": "inferred",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Gluing",
    "page": 11,
    "source": "inferred",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Geodesic boundaries",
    "page": 13,
    "source": "inferred",
-   "number": "2.3"
-  },
-  {
-   "level": 1,
-   "title": "Its boundary is a 5-punctures sphere C. Here, we form the bipyramid from three ideal",
-   "page": 15,
-   "source": "inferred",
-   "number": "11"
+   "number": "2.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Torus cusps",
    "page": 17,
    "source": "inferred",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Changing the triangulation",
    "page": 19,
    "source": "inferred",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "18"
   },
   {
    "level": 1,
    "title": "Operations on 3d abelian theories",
    "page": 20,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "19"
   },
   {
    "level": 2,
-   "title": "An Sp(2N, Z) action on 3d CFTs with U(1)N \ufb02avor symmetry",
+   "title": "An $Sp(2N,{\\mathbb Z})$ action on 3d CFTs with $U(1)^N$ flavor symmetry",
    "page": 21,
    "source": "inferred",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "20"
   },
   {
    "level": 3,
    "title": "Generalities",
    "page": 21,
    "source": "inferred",
-   "number": "3.1.1"
-  },
-  {
-   "level": 1,
-   "title": "U\u22121t",
-   "page": 23,
-   "source": "inferred",
-   "number": "0"
+   "number": "3.1.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "20"
   },
   {
    "level": 3,
    "title": "Adding supersymmetry",
    "page": 23,
    "source": "inferred",
-   "number": "3.1.2"
+   "number": "3.1.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "22"
   },
   {
    "level": 2,
-   "title": "A Z2 action on 3d N = 2 theories with a chiral operator",
+   "title": "A ${\\mathbb Z}_2$ action on 3d $\\mathcal{N}=2$ theories with a chiral operator",
    "page": 24,
    "source": "inferred",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "23"
   },
   {
    "level": 2,
-   "title": "Useful N = 2 mirror symmetries",
+   "title": "Useful $\\mathcal{N}=2$ mirror symmetries",
    "page": 25,
    "source": "inferred",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "24"
   },
   {
    "level": 1,
-   "title": "We want to show that ST\u25e6T 1",
-   "page": 27,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Chern-Simons interaction",
-   "page": 29,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "The chain of equivalences ( 3.26)",
-   "page": 29,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Construction of TM",
+   "title": "Construction of $T_M$",
    "page": 30,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "29"
   },
   {
    "level": 2,
-   "title": "De\ufb01nition",
+   "title": "Definition",
    "page": 30,
    "source": "inferred",
-   "number": "4.1"
-  },
-  {
-   "level": 1,
-   "title": "Chern-Simons term turned on. We will say from now on",
-   "page": 30,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "This de\ufb01nition",
-   "page": 31,
-   "source": "inferred",
-   "number": "2"
+   "number": "4.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "29"
   },
   {
    "level": 2,
-   "title": "The bipyramid and the 2\u20133 move",
+   "title": "The bipyramid and the 2--3 move",
    "page": 33,
    "source": "inferred",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "32"
   },
   {
    "level": 2,
-   "title": "The \ufb02ip",
+   "title": "The flip",
    "page": 36,
    "source": "inferred",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "35"
   },
   {
    "level": 2,
-   "title": "TM as a boundary condition",
+   "title": "$T_M$ as a boundary condition",
    "page": 37,
    "source": "inferred",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "36"
   },
   {
    "level": 2,
    "title": "The octahedron",
    "page": 37,
    "source": "inferred",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "36"
   },
   {
    "level": 2,
    "title": "Figure-eight knot",
    "page": 39,
    "source": "inferred",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "38"
   },
   {
    "level": 1,
-   "title": "Moduli space on R2\u00d7 S1",
+   "title": "Moduli space on ${\\mathbb R}^2\\times S^1$",
    "page": 41,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "40"
   },
   {
    "level": 2,
    "title": "The tetrahedron",
    "page": 42,
    "source": "inferred",
-   "number": "5.1"
-  },
-  {
-   "level": 1,
-   "title": "On a circle of \ufb01nite radius \u03b2, this theory has the e\ufb00ective twisted superpotential",
-   "page": 42,
-   "source": "inferred",
-   "number": "2"
+   "number": "5.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "41"
   },
   {
    "level": 2,
    "title": "The bipyramid",
    "page": 44,
    "source": "inferred",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "43"
   },
   {
    "level": 1,
-   "title": "RO, with",
-   "page": 46,
+   "title": "$S^3_b$ partition functions",
+   "page": 45,
    "source": "inferred",
-   "number": "2"
+   "number": "6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "44"
   },
   {
    "level": 2,
    "title": "Chirals and tetrahedra",
    "page": 47,
    "source": "inferred",
-   "number": "6.1"
-  },
-  {
-   "level": 1,
-   "title": "RZ, and \ufb01nd a partition function 18 [5]",
-   "page": 47,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Chern-Simons",
-   "page": 48,
-   "source": "inferred",
-   "number": "2"
+   "number": "6.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "46"
   },
   {
    "level": 2,
    "title": "Gluing and bipyramids",
    "page": 48,
    "source": "inferred",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "47"
   },
   {
    "level": 2,
    "title": "Figure-eight knot",
    "page": 50,
    "source": "inferred",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "49"
   },
   {
    "level": 2,
-   "title": "Relation to moduli spaces on R2\u00d7S1",
+   "title": "Relation to moduli spaces on ${\\mathbb R}^2\\times S^1$",
    "page": 51,
    "source": "inferred",
-   "number": "6.4"
+   "number": "6.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "50"
   },
   {
    "level": 1,
-   "title": "Line operators and q\u2013di\ufb00erence equations",
+   "title": "Line operators and $q$--difference equations",
    "page": 52,
    "source": "inferred",
-   "number": "7"
-  },
-  {
-   "level": 1,
-   "title": "Acknowledgments",
-   "page": 55,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 55,
-   "source": "inferred",
-   "number": null
+   "number": "7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "51"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "(a) A cobordism M between C and C\u2032 gives rise to a domain wall (b) between 4d N = 2",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "(a) A 3-manifold M stretched along a \u2018neck\u2019 R \u00d7 C becomes a 4d N = 2 superconformal",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "The dictionary between geometry and physics",
+   "page": 6,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Types of boundaries for M",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "An ideal hyperbolic tetrahedron in H3, with vertices",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "A truncated ideal tetrahedron",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Natural polarizations for a tetrahedron, with the thickened pairs of opposite edges corresponding to the \u201cposition\u201d coordinate",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Triangulations by Euclidean vertex triangles of (a) an annular cusp attached to a geodesic boundary, and (b) a torus cusp",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Illustration of gluing at an internal edge, with CI = Z1 + Z\u2032",
+   "page": 12,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Poisson bracket for external edges. Here {XE, XE\u2032}",
+   "page": 14,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "\u2202\u2206as a fourpunctured sphere",
+   "page": 14,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "Forming a bipyramid from three tetrahedra",
+   "page": 15,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "Two polarizations for the bipyramid",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "15"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "Holonomy eigenvalues on a torus boundary",
+   "page": 17,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "Gluing two tetrahedra, as indicated by calligraphic letters on the faces, to form the \ufb01gureeight knot complement. On the right is a map of the resulting torus cusp boundary, triangulated by Euclidean vertex triangles",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "The 2\u20133 Pachner move",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "18"
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "Flipping an external edge by attaching a tetrahedron",
+   "page": 20,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "The action of duality domain walls on boundary conditions. A duality transformation g \u2208Sp(2N, Z) maps a generalized Neumann boundary condition de\ufb01ned by coupling to a 3d theory",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "21"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Correspondence of symmetries in Nf = 1 SQED and the XYZ model. The designations \u201caxial\u201d and \u201ctopological\u201d in the XYZ model are only introduced for comparison to SQED",
+   "page": 26,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "25"
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "The quantum moduli space of N = 2 SQED is identical to the moduli space of vacua in",
+   "page": 27,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "26"
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "Decompositions of the bipyramid, with labelled edge coordinates (Figure 15)",
+   "page": 34,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "33"
+  },
+  {
+   "kind": "figure",
+   "number": "20",
+   "title": "The octahedron from four tetrahedra",
+   "page": 38,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "37"
+  },
+  {
+   "kind": "figure",
+   "number": "21",
+   "title": "The octahedron from \ufb01ve tetrahedra, two ways. Positions of the polarization \u03a0\u00d7 are",
+   "page": 39,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "38"
+  },
+  {
+   "kind": "figure",
+   "number": "22",
+   "title": "The torus cusp for the \ufb01gure-eight knot complement, triangulated into six tetrahedra. The cyclic order of edge parameters (z, z\u2032, z\u2032\u2032), etc., is always the same, so we only indicate one parameter per vertex triangle",
+   "page": 40,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "39"
+  },
+  {
+   "kind": "figure",
+   "number": "23",
+   "title": "Line operators in 4d becoming identi\ufb01ed in the boundary theory TM",
+   "page": 53,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "52"
+  },
+  {
+   "kind": "figure",
+   "number": "24",
+   "title": "Line operators in both M and TM",
+   "page": 54,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "53"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-1-institute-for-advanced-study-einstein-dr-princ",
-   "number": "1",
-   "title": "Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-001-2-california-institute-of-technology-pasadena-ca",
-   "number": "2",
-   "title": "California Institute of Technology, Pasadena, CA 91125, USA",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-002-3-max-planck-institut-f-ur-mathematik-vivatsgass",
-   "number": "3",
-   "title": "Max-Planck-Institut f\u00a8 ur Mathematik, Vivatsgasse 7, D-53111 Bonn, Germany",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 842,
-   "n_words": 124
+   "n_chars": 1199,
+   "n_words": 175,
+   "label_start": null,
+   "label_end": "1"
   },
   {
-   "id": "sec-003-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
    "page_end": 8,
-   "n_chars": 14319,
-   "n_words": 2482
+   "n_chars": 14334,
+   "n_words": 2495,
+   "label_start": "1",
+   "label_end": "7"
   },
   {
-   "id": "sec-004-2-geometry-of-3-manifolds",
+   "id": "sec-001-2-geometry-of-3-manifolds",
    "number": "2",
    "title": "Geometry of 3-manifolds",
    "level": 1,
    "page_start": 8,
    "page_end": 8,
    "n_chars": 91,
-   "n_words": 14
+   "n_words": 14,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-005-21-building-blocks",
+   "id": "sec-002-21-building-blocks",
    "number": "2.1",
    "title": "Building blocks",
    "level": 2,
    "page_start": 8,
    "page_end": 11,
-   "n_chars": 8685,
-   "n_words": 1522
+   "n_chars": 8702,
+   "n_words": 1530,
+   "label_start": "7",
+   "label_end": "10"
   },
   {
-   "id": "sec-006-22-gluing",
+   "id": "sec-003-22-gluing",
    "number": "2.2",
    "title": "Gluing",
    "level": 2,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 3354,
-   "n_words": 584
+   "n_chars": 3372,
+   "n_words": 602,
+   "label_start": "10",
+   "label_end": "12"
   },
   {
-   "id": "sec-007-23-geodesic-boundaries",
+   "id": "sec-004-23-geodesic-boundaries",
    "number": "2.3",
    "title": "Geodesic boundaries",
    "level": 2,
    "page_start": 13,
-   "page_end": 15,
-   "n_chars": 4554,
-   "n_words": 810
-  },
-  {
-   "id": "sec-008-11-its-boundary-is-a-5-punctures-sphere-c-here-w",
-   "number": "11",
-   "title": "Its boundary is a 5-punctures sphere C. Here, we form the bipyramid from three ideal",
-   "level": 1,
-   "page_start": 15,
    "page_end": 17,
-   "n_chars": 4576,
-   "n_words": 819
+   "n_chars": 9350,
+   "n_words": 1775,
+   "label_start": "12",
+   "label_end": "16"
   },
   {
-   "id": "sec-009-24-torus-cusps",
+   "id": "sec-005-24-torus-cusps",
    "number": "2.4",
    "title": "Torus cusps",
    "level": 2,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 4615,
-   "n_words": 868
+   "n_chars": 4654,
+   "n_words": 907,
+   "label_start": "16",
+   "label_end": "18"
   },
   {
-   "id": "sec-010-25-changing-the-triangulation",
+   "id": "sec-006-25-changing-the-triangulation",
    "number": "2.5",
    "title": "Changing the triangulation",
    "level": 2,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 4005,
-   "n_words": 716
+   "n_chars": 4025,
+   "n_words": 736,
+   "label_start": "18",
+   "label_end": "19"
   },
   {
-   "id": "sec-011-3-operations-on-3d-abelian-theories",
+   "id": "sec-007-3-operations-on-3d-abelian-theories",
    "number": "3",
    "title": "Operations on 3d abelian theories",
    "level": 1,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 382,
-   "n_words": 68
+   "n_chars": 443,
+   "n_words": 80,
+   "label_start": "19",
+   "label_end": "20"
   },
   {
-   "id": "sec-012-31-an-sp2n-z-action-on-3d-cfts-with-u1n-\ufb02avor-sy",
-   "number": "3.1",
-   "title": "An Sp(2N, Z) action on 3d CFTs with U(1)N \ufb02avor symmetry",
-   "level": 2,
-   "page_start": 21,
-   "page_end": 21,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-013-311-generalities",
+   "id": "sec-008-311-generalities",
    "number": "3.1.1",
    "title": "Generalities",
    "level": 3,
    "page_start": 21,
    "page_end": 23,
-   "n_chars": 5491,
-   "n_words": 983
+   "n_chars": 5668,
+   "n_words": 1026,
+   "label_start": "20",
+   "label_end": "22"
   },
   {
-   "id": "sec-014-0-u1t",
-   "number": "0",
-   "title": "U\u22121t",
-   "level": 1,
-   "page_start": 23,
-   "page_end": 23,
-   "n_chars": 147,
-   "n_words": 22
-  },
-  {
-   "id": "sec-015-312-adding-supersymmetry",
+   "id": "sec-009-312-adding-supersymmetry",
    "number": "3.1.2",
    "title": "Adding supersymmetry",
    "level": 3,
    "page_start": 23,
-   "page_end": 24,
-   "n_chars": 2885,
-   "n_words": 527
-  },
-  {
-   "id": "sec-016-32-a-z2-action-on-3d-n-2-theories-with-a-chiral",
-   "number": "3.2",
-   "title": "A Z2 action on 3d N = 2 theories with a chiral operator",
-   "level": 2,
-   "page_start": 24,
-   "page_end": 25,
-   "n_chars": 3140,
-   "n_words": 553
-  },
-  {
-   "id": "sec-017-33-useful-n-2-mirror-symmetries",
-   "number": "3.3",
-   "title": "Useful N = 2 mirror symmetries",
-   "level": 2,
-   "page_start": 25,
-   "page_end": 27,
-   "n_chars": 3466,
-   "n_words": 653
-  },
-  {
-   "id": "sec-018-2-we-want-to-show-that-stt-1",
-   "number": "2",
-   "title": "We want to show that ST\u25e6T 1",
-   "level": 1,
-   "page_start": 27,
-   "page_end": 29,
-   "n_chars": 4556,
-   "n_words": 851
-  },
-  {
-   "id": "sec-019-2-chern-simons-interaction",
-   "number": "2",
-   "title": "Chern-Simons interaction",
-   "level": 1,
-   "page_start": 29,
-   "page_end": 29,
-   "n_chars": 1334,
-   "n_words": 240
-  },
-  {
-   "id": "sec-020-2-the-chain-of-equivalences-326",
-   "number": "2",
-   "title": "The chain of equivalences ( 3.26)",
-   "level": 1,
-   "page_start": 29,
-   "page_end": 30,
-   "n_chars": 1913,
-   "n_words": 358
-  },
-  {
-   "id": "sec-021-4-construction-of-tm",
-   "number": "4",
-   "title": "Construction of TM",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 30,
-   "n_chars": 508,
-   "n_words": 93
-  },
-  {
-   "id": "sec-022-41-de\ufb01nition",
-   "number": "4.1",
-   "title": "De\ufb01nition",
-   "level": 2,
-   "page_start": 30,
-   "page_end": 30,
-   "n_chars": 297,
-   "n_words": 57
-  },
-  {
-   "id": "sec-023-2-chern-simons-term-turned-on-we-will-say-from-n",
-   "number": "2",
-   "title": "Chern-Simons term turned on. We will say from now on",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 31,
-   "n_chars": 711,
-   "n_words": 137
-  },
-  {
-   "id": "sec-024-2-this-de\ufb01nition",
-   "number": "2",
-   "title": "This de\ufb01nition",
-   "level": 1,
-   "page_start": 31,
-   "page_end": 33,
-   "n_chars": 6840,
-   "n_words": 1204
-  },
-  {
-   "id": "sec-025-42-the-bipyramid-and-the-23-move",
-   "number": "4.2",
-   "title": "The bipyramid and the 2\u20133 move",
-   "level": 2,
-   "page_start": 33,
-   "page_end": 36,
-   "n_chars": 6708,
-   "n_words": 1267
-  },
-  {
-   "id": "sec-026-43-the-\ufb02ip",
-   "number": "4.3",
-   "title": "The \ufb02ip",
-   "level": 2,
-   "page_start": 36,
    "page_end": 37,
-   "n_chars": 1223,
-   "n_words": 208
+   "n_chars": 37026,
+   "n_words": 7024,
+   "label_start": "22",
+   "label_end": "36"
   },
   {
-   "id": "sec-027-44-tm-as-a-boundary-condition",
-   "number": "4.4",
-   "title": "TM as a boundary condition",
-   "level": 2,
-   "page_start": 37,
-   "page_end": 37,
-   "n_chars": 2713,
-   "n_words": 448
-  },
-  {
-   "id": "sec-028-45-the-octahedron",
+   "id": "sec-010-45-the-octahedron",
    "number": "4.5",
    "title": "The octahedron",
    "level": 2,
    "page_start": 37,
    "page_end": 39,
-   "n_chars": 3780,
-   "n_words": 678
+   "n_chars": 3831,
+   "n_words": 729,
+   "label_start": "36",
+   "label_end": "38"
   },
   {
-   "id": "sec-029-46-figure-eight-knot",
+   "id": "sec-011-46-figure-eight-knot",
    "number": "4.6",
    "title": "Figure-eight knot",
    "level": 2,
    "page_start": 39,
-   "page_end": 41,
-   "n_chars": 2653,
-   "n_words": 490
-  },
-  {
-   "id": "sec-030-5-moduli-space-on-r2-s1",
-   "number": "5",
-   "title": "Moduli space on R2\u00d7 S1",
-   "level": 1,
-   "page_start": 41,
    "page_end": 42,
-   "n_chars": 5014,
-   "n_words": 862
+   "n_chars": 7773,
+   "n_words": 1437,
+   "label_start": "38",
+   "label_end": "41"
   },
   {
-   "id": "sec-031-51-the-tetrahedron",
+   "id": "sec-012-51-the-tetrahedron",
    "number": "5.1",
    "title": "The tetrahedron",
    "level": 2,
    "page_start": 42,
-   "page_end": 42,
-   "n_chars": 287,
-   "n_words": 47
-  },
-  {
-   "id": "sec-032-2-on-a-circle-of-\ufb01nite-radius-\u03b2-this-theory-has",
-   "number": "2",
-   "title": "On a circle of \ufb01nite radius \u03b2, this theory has the e\ufb00ective twisted superpotential",
-   "level": 1,
-   "page_start": 42,
    "page_end": 44,
-   "n_chars": 3450,
-   "n_words": 651
+   "n_chars": 3856,
+   "n_words": 739,
+   "label_start": "41",
+   "label_end": "43"
   },
   {
-   "id": "sec-033-52-the-bipyramid",
+   "id": "sec-013-52-the-bipyramid",
    "number": "5.2",
    "title": "The bipyramid",
    "level": 2,
    "page_start": 44,
-   "page_end": 46,
-   "n_chars": 4839,
-   "n_words": 892
-  },
-  {
-   "id": "sec-034-2-ro-with",
-   "number": "2",
-   "title": "RO, with",
-   "level": 1,
-   "page_start": 46,
    "page_end": 47,
-   "n_chars": 1273,
-   "n_words": 216
+   "n_chars": 6141,
+   "n_words": 1128,
+   "label_start": "43",
+   "label_end": "46"
   },
   {
-   "id": "sec-035-61-chirals-and-tetrahedra",
+   "id": "sec-014-61-chirals-and-tetrahedra",
    "number": "6.1",
    "title": "Chirals and tetrahedra",
    "level": 2,
    "page_start": 47,
-   "page_end": 47,
-   "n_chars": 213,
-   "n_words": 38
-  },
-  {
-   "id": "sec-036-2-rz-and-\ufb01nd-a-partition-function-18-5",
-   "number": "2",
-   "title": "RZ, and \ufb01nd a partition function 18 [5]",
-   "level": 1,
-   "page_start": 47,
-   "page_end": 47,
-   "n_chars": 834,
-   "n_words": 156
-  },
-  {
-   "id": "sec-037-2-chern-simons",
-   "number": "2",
-   "title": "Chern-Simons",
-   "level": 1,
-   "page_start": 47,
    "page_end": 48,
-   "n_chars": 2769,
-   "n_words": 503
+   "n_chars": 3962,
+   "n_words": 734,
+   "label_start": "46",
+   "label_end": "47"
   },
   {
-   "id": "sec-038-62-gluing-and-bipyramids",
+   "id": "sec-015-62-gluing-and-bipyramids",
    "number": "6.2",
    "title": "Gluing and bipyramids",
    "level": 2,
    "page_start": 48,
    "page_end": 50,
-   "n_chars": 4881,
-   "n_words": 872
+   "n_chars": 4920,
+   "n_words": 913,
+   "label_start": "47",
+   "label_end": "49"
   },
   {
-   "id": "sec-039-63-figure-eight-knot",
+   "id": "sec-016-63-figure-eight-knot",
    "number": "6.3",
    "title": "Figure-eight knot",
    "level": 2,
    "page_start": 50,
-   "page_end": 51,
-   "n_chars": 984,
-   "n_words": 176
-  },
-  {
-   "id": "sec-040-64-relation-to-moduli-spaces-on-r2s1",
-   "number": "6.4",
-   "title": "Relation to moduli spaces on R2\u00d7S1",
-   "level": 2,
-   "page_start": 51,
-   "page_end": 52,
-   "n_chars": 1517,
-   "n_words": 266
-  },
-  {
-   "id": "sec-041-7-line-operators-and-qdi\ufb00erence-equations",
-   "number": "7",
-   "title": "Line operators and q\u2013di\ufb00erence equations",
-   "level": 1,
-   "page_start": 52,
-   "page_end": 55,
-   "n_chars": 7728,
-   "n_words": 1400
-  },
-  {
-   "id": "sec-042-acknowledgments",
-   "number": null,
-   "title": "Acknowledgments",
-   "level": 1,
-   "page_start": 55,
-   "page_end": 55,
-   "n_chars": 959,
-   "n_words": 163
-  },
-  {
-   "id": "sec-043-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 55,
    "page_end": 58,
-   "n_chars": 8423,
-   "n_words": 1276
+   "n_chars": 19677,
+   "n_words": 3248,
+   "label_start": "49",
+   "label_end": "57"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 44,
-  "sections": 44,
-  "chars_total": 136959,
+  "toc_entries": 29,
+  "toc_inferred_entries": 29,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 26,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "S3 b partition functions"
+    ]
+   },
+   "found_not_listed": {
+    "count": 2,
+    "items": [
+     "3.2 A Z2 action on 3d N = 2 theories with a chiral operator",
+     "3.3 Useful N = 2 mirror symmetries"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 18,
+  "chars_total": 139024,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "toolbox.tex",
    "tex_sections": 29,
-   "overlaid": 19,
+   "overlaid": 14,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -800,289 +1565,139 @@
    },
    "sections": [
     {
-     "id": "sec-000-1-institute-for-advanced-study-einstein-dr-princ",
-     "title": "Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA",
+     "id": "sec-front-matter",
+     "title": "Front matter",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-001-2-california-institute-of-technology-pasadena-ca",
-     "title": "California Institute of Technology, Pasadena, CA 91125, USA",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-002-3-max-planck-institut-f-ur-mathematik-vivatsgass",
-     "title": "Max-Planck-Institut f\u00a8 ur Mathematik, Vivatsgasse 7, D-53111 Bonn, Germany",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-003-1-introduction",
+     "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.981,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-004-2-geometry-of-3-manifolds",
-     "title": "Geometry of 3-manifolds",
-     "prose_ratio": 0.06,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-005-21-building-blocks",
-     "title": "Building blocks",
-     "prose_ratio": 0.946,
-     "coverage_ratio": 0.622,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-006-22-gluing",
-     "title": "Gluing",
-     "prose_ratio": 0.965,
-     "coverage_ratio": 0.982,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-007-23-geodesic-boundaries",
-     "title": "Geodesic boundaries",
-     "prose_ratio": 0.616,
-     "coverage_ratio": 0.991,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-008-11-its-boundary-is-a-5-punctures-sphere-c-here-w",
-     "title": "Its boundary is a 5-punctures sphere C. Here, we form the bipyramid from three ideal",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-009-24-torus-cusps",
-     "title": "Torus cusps",
-     "prose_ratio": 0.954,
-     "coverage_ratio": 0.964,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-010-25-changing-the-triangulation",
-     "title": "Changing the triangulation",
-     "prose_ratio": 0.892,
+     "prose_ratio": 0.99,
      "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-3-operations-on-3d-abelian-theories",
+     "id": "sec-001-2-geometry-of-3-manifolds",
+     "title": "Geometry of 3-manifolds",
+     "prose_ratio": 0.06,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-building-blocks",
+     "title": "Building blocks",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.641,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-22-gluing",
+     "title": "Gluing",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-23-geodesic-boundaries",
+     "title": "Geodesic boundaries",
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-24-torus-cusps",
+     "title": "Torus cusps",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-25-changing-the-triangulation",
+     "title": "Changing the triangulation",
+     "prose_ratio": 0.892,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-3-operations-on-3d-abelian-theories",
      "title": "Operations on 3d abelian theories",
-     "prose_ratio": 0.92,
-     "coverage_ratio": 0.793,
+     "prose_ratio": 0.9,
+     "coverage_ratio": 0.818,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-31-an-sp2n-z-action-on-3d-cfts-with-u1n-\ufb02avor-sy",
-     "title": "An Sp(2N, Z) action on 3d CFTs with U(1)N \ufb02avor symmetry",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-013-311-generalities",
+     "id": "sec-008-311-generalities",
      "title": "Generalities",
-     "prose_ratio": 0.942,
-     "coverage_ratio": 0.978,
+     "prose_ratio": 0.964,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-0-u1t",
-     "title": "U\u22121t",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-015-312-adding-supersymmetry",
+     "id": "sec-009-312-adding-supersymmetry",
      "title": "Adding supersymmetry",
-     "prose_ratio": 0.959,
-     "coverage_ratio": 0.96,
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-32-a-z2-action-on-3d-n-2-theories-with-a-chiral",
-     "title": "A Z2 action on 3d N = 2 theories with a chiral operator",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.938,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-017-33-useful-n-2-mirror-symmetries",
-     "title": "Useful N = 2 mirror symmetries",
-     "prose_ratio": 0.417,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-018-2-we-want-to-show-that-stt-1",
-     "title": "We want to show that ST\u25e6T 1",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-019-2-chern-simons-interaction",
-     "title": "Chern-Simons interaction",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-020-2-the-chain-of-equivalences-326",
-     "title": "The chain of equivalences ( 3.26)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-021-4-construction-of-tm",
-     "title": "Construction of TM",
-     "prose_ratio": 0.951,
-     "coverage_ratio": 0.974,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-022-41-de\ufb01nition",
-     "title": "De\ufb01nition",
-     "prose_ratio": 0.085,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-023-2-chern-simons-term-turned-on-we-will-say-from-n",
-     "title": "Chern-Simons term turned on. We will say from now on",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-024-2-this-de\ufb01nition",
-     "title": "This de\ufb01nition",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-025-42-the-bipyramid-and-the-23-move",
-     "title": "The bipyramid and the 2\u20133 move",
-     "prose_ratio": 0.884,
-     "coverage_ratio": 0.915,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-026-43-the-\ufb02ip",
-     "title": "The \ufb02ip",
-     "prose_ratio": 0.966,
-     "coverage_ratio": 0.722,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-027-44-tm-as-a-boundary-condition",
-     "title": "TM as a boundary condition",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 0.977,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-028-45-the-octahedron",
+     "id": "sec-010-45-the-octahedron",
      "title": "The octahedron",
      "prose_ratio": 0.979,
-     "coverage_ratio": 0.984,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-029-46-figure-eight-knot",
+     "id": "sec-011-46-figure-eight-knot",
      "title": "Figure-eight knot",
-     "prose_ratio": 0.403,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-030-5-moduli-space-on-r2-s1",
-     "title": "Moduli space on R2\u00d7 S1",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-031-51-the-tetrahedron",
+     "id": "sec-012-51-the-tetrahedron",
      "title": "The tetrahedron",
-     "prose_ratio": 0.136,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.942,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-032-2-on-a-circle-of-\ufb01nite-radius-\u03b2-this-theory-has",
-     "title": "On a circle of \ufb01nite radius \u03b2, this theory has the e\ufb00ective twisted superpotential",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-033-52-the-bipyramid",
+     "id": "sec-013-52-the-bipyramid",
      "title": "The bipyramid",
-     "prose_ratio": 0.758,
-     "coverage_ratio": 0.973,
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-034-2-ro-with",
-     "title": "RO, with",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-035-61-chirals-and-tetrahedra",
+     "id": "sec-014-61-chirals-and-tetrahedra",
      "title": "Chirals and tetrahedra",
-     "prose_ratio": 0.083,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.941,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-036-2-rz-and-\ufb01nd-a-partition-function-18-5",
-     "title": "RZ, and \ufb01nd a partition function 18 [5]",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-037-2-chern-simons",
-     "title": "Chern-Simons",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-038-62-gluing-and-bipyramids",
+     "id": "sec-015-62-gluing-and-bipyramids",
      "title": "Gluing and bipyramids",
-     "prose_ratio": 0.819,
-     "coverage_ratio": 0.956,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-039-63-figure-eight-knot",
-     "title": "Figure-eight knot",
-     "prose_ratio": 0.133,
+     "prose_ratio": 0.394,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-040-64-relation-to-moduli-spaces-on-r2s1",
-     "title": "Relation to moduli spaces on R2\u00d7S1",
-     "prose_ratio": 0.94,
-     "coverage_ratio": 0.965,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-041-7-line-operators-and-qdi\ufb00erence-equations",
-     "title": "Line operators and q\u2013di\ufb00erence equations",
-     "prose_ratio": 0.869,
-     "coverage_ratio": 0.971,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-042-acknowledgments",
-     "title": "Acknowledgments",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-043-references",
-     "title": "References",
-     "result": "no matching \\section"
+     "id": "sec-016-63-figure-eight-knot",
+     "title": "Figure-eight knot",
+     "prose_ratio": 0.545,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     }
    ]
   }

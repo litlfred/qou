@@ -7,7 +7,10 @@
   "bytes": 547063,
   "pages": 43,
   "text_source": "embedded",
-  "extractor": "pypdf",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:24Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -18,18 +21,30 @@
    "stamp_date": "6 Mar 2001"
   },
   "doi": null,
-  "title": "Quantum Monte Carlo Calculations of Light Nuclei",
+  "title": "arXiv:nucl-th/0103005v2 6 Mar 2001",
   "authors_raw": "Steven C. Pieper and R. B. Wiringa",
   "title_lines": [
    "Quantum Monte Carlo Calculations of Light",
    "Nuclei"
   ],
-  "abstract": "Accurate quantum Monte Carlo calculations of ground and low-lying excited states of light p-shell nuclei are now possible for realistic nuclear Hamiltonians that \ufb01t nucleon-nucleon scattering data. At present, results for more than 30 di\ufb00erent ( J \u03c0 ; T ) states, plus isobaric analogs, in A \u2264 8 nuclei have been obtained with an excellent reproduction of the exp erimental energy spectrum. These microscopic calculations show that nuclear structure, including both single-particle and clustering aspects, can be explained starting from elementary two- and three-nucleon interactions. Various density and momentum distributions, electromagnetic formfactors, and spectroscopic factors have also been computed, as well as electroweak capture reaction s of astrophysical interest. With permission from the Annual Review of Nuclear and Partic le Science. Final version of this material is scheduled to appear in the Annual Review of Nucle ar and Particle Science Vol. 51, to be published in December 2001 by Annual Reviews, http://Ann ualReviews.org.",
+  "abstract": "Accurate quantum Monte Carlo calculations of ground and low-lying excited states of light p-shell nuclei are now possible for realistic nuclear Hamiltonians that \ufb01t nucleon-nucleon scattering data. At present, results for more than 30 di\ufb00erent (J\u03c0; T ) states, plus isobaric analogs, in A \u22648 nuclei have been obtained with an excellent reproduction of the experimental energy spectrum. These microscopic calculations show that nuclear structure, including both single-particle and clustering aspects, can be explained starting from elementary two- and three-nucleon interactions. Various density and momentum distributions, electromagnetic form factors, and spectroscopic factors have also been computed, as well as electroweak capture reactions of astrophysical interest. With permission from the Annual Review of Nuclear and Particle Science. Final version of this material is scheduled to appear in the Annual Review of Nuclear and Particle Science Vol. 51, to be published in December 2001 by Annual Reviews, http://AnnualReviews.org.",
   "docinfo": {
+   "Title": "arXiv:nucl-th/0103005v2  6 Mar 2001",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181025093741-04'00'",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:nucl-th/0103005v2  6 Mar 2001"
+   "CreationDate": "D:20181025093741-04'00'"
+  },
+  "title_raw": "Quantum Monte Carlo Calculations of Light Nuclei",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:nucl-th/0103005v2 6 Mar 2001",
+   "heading": "Quantum Monte Carlo Calculations of Light Nuclei",
+   "text": "Quantum Monte Carlo Calculations of Light Nuclei",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -38,206 +53,813 @@
    "title": "INTRODUCTION",
    "page": 2,
    "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "page": 4,
-   "source": "inferred",
-   "number": "4"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "HAMILTONIAN AND CURRENTS",
    "page": 4,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "4"
   },
   {
    "level": 1,
-   "title": "( 1",
-   "page": 5,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "page": 6,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "(\u03c4 i \u00b7 \u03c4 j + \u03c4 j \u00b7 \u03c4 k + \u03c4 k \u00b7 \u03c4 i) = 4PT =3/2 . (17)",
-   "page": 7,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Steven C. Pieper and R. B. Wiringa",
+   "title": "VARIATIONAL MONTE CARLO",
    "page": 8,
    "source": "inferred",
-   "number": "8"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "8"
   },
   {
    "level": 1,
-   "title": "V ARIATIONAL MONTE CARLO",
-   "page": 8,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "page": 10,
-   "source": "inferred",
-   "number": "10"
-  },
-  {
-   "level": 1,
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "page": 14,
-   "source": "inferred",
-   "number": "14"
-  },
-  {
-   "level": 1,
-   "title": "GREEN\u2019S FUNCTION MONTE CARLO",
+   "title": "GREEN'S FUNCTION MONTE CARLO",
    "page": 15,
    "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "page": 16,
-   "source": "inferred",
-   "number": "16"
-  },
-  {
-   "level": 1,
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "page": 18,
-   "source": "inferred",
-   "number": "18"
-  },
-  {
-   "level": 2,
-   "title": "MeV below these. The GFMC very rapidly makes a large impro vement on",
-   "page": 19,
-   "source": "inferred",
-   "number": "1.5"
-  },
-  {
-   "level": 1,
-   "title": "MeV. This rapid improvement corresponds to the removal of s mall admixtures of",
-   "page": 19,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "page": 20,
-   "source": "inferred",
-   "number": "20"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "ENERGY RESULTS",
    "page": 20,
    "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "page": 22,
-   "source": "inferred",
-   "number": "22"
-  },
-  {
-   "level": 1,
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "page": 24,
-   "source": "inferred",
-   "number": "24"
-  },
-  {
-   "level": 1,
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "page": 26,
-   "source": "inferred",
-   "number": "26"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "DENSITY AND MOMENTUM DISTRIBUTIONS",
    "page": 27,
    "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "page": 28,
-   "source": "inferred",
-   "number": "28"
-  },
-  {
-   "level": 1,
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "page": 30,
-   "source": "inferred",
-   "number": "30"
+   "number": "6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "27"
   },
   {
    "level": 1,
    "title": "LOW-ENERGY NUCLEON-NUCLEUS SCATTERING",
    "page": 35,
    "source": "inferred",
-   "number": "7"
+   "number": "7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "35"
   },
   {
    "level": 1,
    "title": "ASTROPHYSICAL ELECTROWEAK REACTIONS",
    "page": 36,
    "source": "inferred",
-   "number": "8"
+   "number": "8",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "36"
   },
   {
    "level": 1,
    "title": "NEUTRON DROPS",
    "page": 39,
    "source": "inferred",
-   "number": "9"
+   "number": "9",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "39"
   },
   {
    "level": 1,
    "title": "CONCLUSIONS AND OUTLOOK",
    "page": 39,
    "source": "inferred",
-   "number": "10"
+   "number": "10",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "39"
   },
   {
    "level": 1,
    "title": "Acknowledgments",
    "page": 40,
    "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "Nollett KM. nucl-th/0102022, submitted to Phys. Rev. C",
-   "page": 41,
-   "source": "inferred",
-   "number": "16"
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "40"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Three-body force Feynman diagrams: a is the Fujita-Miyazawa or twopion P-wave, b is two-pion S-wave, c and d are three-pion rings with one \u2206in intermediate states",
+   "page": 6,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Correlation functions in light nuclei: the central pair correlation, fc, and tensor-isospin correlation, ut\u03c4, for s-shell nuclei are shown with solid lines",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Permutation symmetry terms for LS-coupling in A = 6 \u22128 nuclei and corresponding spin states",
+   "page": 12,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Approximate scaling of VMC and GFMC calculations with system size. The number of pairs is P, the state-vector size is the product of the number of spin states and number of isospin states, I(A, T); as is discussed in the text, these numbers may be halved for even-A nuclei. The last column is the rel",
+   "page": 15,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "15"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "GFMC E(\u03c4) using AV18/UIX for various states of 8Be. Averages with their standard errors are shown by the solid and dashed lines",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "Energies of 3H and 4He in MeV, computed by VMC and GFMC compared to momentum-space Faddeev (48), con\ufb01guration-space Faddeev (47) and various hyperspherical harmonics methods (52). The HH column values are PHH for 3H; HH for 4He, AV18; and CHH for 4He, AV18/UIX Hamiltonian",
+   "page": 21,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "21"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "VMC and GFMC energies using AV18/UIX compared to experiment. Black dashed lines show the indicated breakup thresholds for each method. The Monte Carlo statistical errors are shown by the light blue and yellow bands",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "GFMC energies using AV18 and AV18/IL2 compared to experiment",
+   "page": 23,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "table",
+   "number": "4",
+   "title": "GFMC and experimental energies of A=3\u20138 ground states in MeV. Energies of arti\ufb01cially con\ufb01ned 7and 8-neutron drops are also shown. The experimental values are from Refs. (53,54,55)",
+   "page": 23,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "table",
+   "number": "5",
+   "title": "GFMC and experimental (55,57) splittings of states with the same L and S but di\ufb00erent J, in MeV",
+   "page": 24,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "table",
+   "number": "6",
+   "title": "Kinetic, K, and potential energy contributions in MeV. Shown are the",
+   "page": 25,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "25"
+  },
+  {
+   "kind": "table",
+   "number": "7",
+   "title": "GFMC isovector and isotensor energy coe\ufb03cients, an(A, T), [Eq. (52)] computed using AV18/IL2, in keV. The contributions shown are kinetic energy, KCSB; Coulomb potential, vC1(pp); other electromagnetic, v\u03b3,R; and nuclear po-",
+   "page": 25,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "25"
+  },
+  {
+   "kind": "table",
+   "number": "8",
+   "title": "VMC isospin-mixing matrix elements for 8Be in keV computed using AV18/UIX. Experimental values are from Ref. (60) J\u03c0",
+   "page": 26,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "26"
+  },
+  {
+   "kind": "table",
+   "number": "9",
+   "title": "GFMC values for point proton rms radii (in fm) and quadrupole moments (in fm2) in impulse approximation, computed with AV18/IL2. Experimental values are from Refs. (61,62,57,63) \u27e8r2",
+   "page": 27,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "table",
+   "number": "10",
+   "title": "GFMC values for isoscalar and isovector magnetic moments (in \u00b5N) in impulse approximation using AV18/IL2. Experimental values are from Refs. (53, 54,55,63) T Isoscalar",
+   "page": 28,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "28"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Proton and matter densities in 4He, 6He, and 8He. Analyses of 6,8Heproton scattering are shown by the dashed (Ref. (66)) and dot-dashed (Ref. (67)) curves",
+   "page": 29,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "29"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Proton-proton distribution functions in helium isotopes",
+   "page": 30,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "30"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Calculated and experimental elastic and transition form factors in 6Li. Experimental data are from Refs. (69,70,71,72,73,74,75)",
+   "page": 31,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "31"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Di\ufb00erential cross sections for 7Li(\u03c0, \u03c0\u2032) scattering at E\u03c0 = 164 MeV. Data are from Ref. (77)",
+   "page": 32,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "32"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Experimental (13) momentum distributions for the transitions to the ground state (circles) and \ufb01rst excited state (squares) in the reaction 7Li(e, e\u2032p)6He, compared to CDWIA calculations with the VMC wave functions (solid lines) for AV18/UIX",
+   "page": 33,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "33"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "Calculated density contours of 8Be in the lab frame (left) and the intrinsic frame (right), labeled with densities in fm\u22123",
+   "page": 34,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "34"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "The total S-factor for \u03b1+d radiative capture calculated for two different optical potentials with the AV18/UIX nuclear wave functions, compared to experimental data (91,92,93)",
+   "page": 38,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "38"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -246,8 +868,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1364,
-   "n_words": 195
+   "n_chars": 1354,
+   "n_words": 185,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-000-1-introduction",
@@ -256,301 +880,141 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 6972,
-   "n_words": 1296
+   "n_chars": 9779,
+   "n_words": 1694,
+   "label_start": "1",
+   "label_end": "4"
   },
   {
-   "id": "sec-001-4-steven-c-pieper-and-r-b-wiringa",
-   "number": "4",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 2849,
-   "n_words": 472
-  },
-  {
-   "id": "sec-002-2-hamiltonian-and-currents",
+   "id": "sec-001-2-hamiltonian-and-currents",
    "number": "2",
    "title": "HAMILTONIAN AND CURRENTS",
    "level": 1,
    "page_start": 4,
-   "page_end": 5,
-   "n_chars": 477,
-   "n_words": 91
-  },
-  {
-   "id": "sec-003-4-1",
-   "number": "4",
-   "title": "( 1",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 6,
-   "n_chars": 1338,
-   "n_words": 289
-  },
-  {
-   "id": "sec-004-6-steven-c-pieper-and-r-b-wiringa",
-   "number": "6",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 7,
-   "n_chars": 4434,
-   "n_words": 878
-  },
-  {
-   "id": "sec-005-3-\u03c4-i-\u03c4-j-\u03c4-j-\u03c4-k-\u03c4-k-\u03c4-i-4pt-32-17",
-   "number": "3",
-   "title": "(\u03c4 i \u00b7 \u03c4 j + \u03c4 j \u00b7 \u03c4 k + \u03c4 k \u00b7 \u03c4 i) = 4PT =3/2 . (17)",
-   "level": 1,
-   "page_start": 7,
    "page_end": 8,
-   "n_chars": 166,
-   "n_words": 31
+   "n_chars": 8805,
+   "n_words": 1704,
+   "label_start": "4",
+   "label_end": "8"
   },
   {
-   "id": "sec-006-8-steven-c-pieper-and-r-b-wiringa",
-   "number": "8",
-   "title": "Steven C. Pieper and R. B. Wiringa",
+   "id": "sec-002-3-variational-monte-carlo",
+   "number": "3",
+   "title": "VARIATIONAL MONTE CARLO",
    "level": 1,
    "page_start": 8,
-   "page_end": 8,
-   "n_chars": 2322,
-   "n_words": 446
-  },
-  {
-   "id": "sec-007-3-v-ariational-monte-carlo",
-   "number": "3",
-   "title": "V ARIATIONAL MONTE CARLO",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 10,
-   "n_chars": 2218,
-   "n_words": 449
-  },
-  {
-   "id": "sec-008-10-steven-c-pieper-and-r-b-wiringa",
-   "number": "10",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 14,
-   "n_chars": 8944,
-   "n_words": 1715
-  },
-  {
-   "id": "sec-009-14-steven-c-pieper-and-r-b-wiringa",
-   "number": "14",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 15,
-   "n_chars": 4233,
-   "n_words": 784
-  },
-  {
-   "id": "sec-010-4-greens-function-monte-carlo",
-   "number": "4",
-   "title": "GREEN\u2019S FUNCTION MONTE CARLO",
-   "level": 1,
-   "page_start": 15,
-   "page_end": 16,
-   "n_chars": 1053,
-   "n_words": 224
-  },
-  {
-   "id": "sec-011-16-steven-c-pieper-and-r-b-wiringa",
-   "number": "16",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "level": 1,
-   "page_start": 16,
-   "page_end": 18,
-   "n_chars": 4472,
-   "n_words": 851
-  },
-  {
-   "id": "sec-012-18-steven-c-pieper-and-r-b-wiringa",
-   "number": "18",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "level": 1,
-   "page_start": 18,
-   "page_end": 19,
-   "n_chars": 3750,
-   "n_words": 677
-  },
-  {
-   "id": "sec-013-15-mev-below-these-the-gfmc-very-rapidly-makes-a",
-   "number": "1.5",
-   "title": "MeV below these. The GFMC very rapidly makes a large impro vement on",
-   "level": 2,
-   "page_start": 19,
-   "page_end": 19,
-   "n_chars": 80,
-   "n_words": 18
-  },
-  {
-   "id": "sec-014-8-mev-this-rapid-improvement-corresponds-to-the",
-   "number": "8",
-   "title": "MeV. This rapid improvement corresponds to the removal of s mall admixtures of",
-   "level": 1,
-   "page_start": 19,
    "page_end": 20,
-   "n_chars": 991,
-   "n_words": 183
+   "n_chars": 27294,
+   "n_words": 4814,
+   "label_start": "8",
+   "label_end": "20"
   },
   {
-   "id": "sec-015-20-steven-c-pieper-and-r-b-wiringa",
-   "number": "20",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "level": 1,
-   "page_start": 20,
-   "page_end": 20,
-   "n_chars": 1617,
-   "n_words": 288
-  },
-  {
-   "id": "sec-016-5-energy-results",
+   "id": "sec-003-5-energy-results",
    "number": "5",
    "title": "ENERGY RESULTS",
    "level": 1,
    "page_start": 20,
-   "page_end": 22,
-   "n_chars": 4626,
-   "n_words": 790
-  },
-  {
-   "id": "sec-017-22-steven-c-pieper-and-r-b-wiringa",
-   "number": "22",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 24,
-   "n_chars": 2760,
-   "n_words": 496
-  },
-  {
-   "id": "sec-018-24-steven-c-pieper-and-r-b-wiringa",
-   "number": "24",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "level": 1,
-   "page_start": 24,
-   "page_end": 26,
-   "n_chars": 4835,
-   "n_words": 888
-  },
-  {
-   "id": "sec-019-26-steven-c-pieper-and-r-b-wiringa",
-   "number": "26",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "level": 1,
-   "page_start": 26,
    "page_end": 27,
-   "n_chars": 2924,
-   "n_words": 508
+   "n_chars": 15082,
+   "n_words": 2525,
+   "label_start": "20",
+   "label_end": "27"
   },
   {
-   "id": "sec-020-6-density-and-momentum-distributions",
+   "id": "sec-004-6-density-and-momentum-distributions",
    "number": "6",
    "title": "DENSITY AND MOMENTUM DISTRIBUTIONS",
    "level": 1,
    "page_start": 27,
-   "page_end": 28,
-   "n_chars": 1790,
-   "n_words": 298
-  },
-  {
-   "id": "sec-021-28-steven-c-pieper-and-r-b-wiringa",
-   "number": "28",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "level": 1,
-   "page_start": 28,
-   "page_end": 30,
-   "n_chars": 4344,
-   "n_words": 757
-  },
-  {
-   "id": "sec-022-30-steven-c-pieper-and-r-b-wiringa",
-   "number": "30",
-   "title": "Steven C. Pieper and R. B. Wiringa",
-   "level": 1,
-   "page_start": 30,
    "page_end": 35,
-   "n_chars": 9680,
-   "n_words": 1825
+   "n_chars": 15732,
+   "n_words": 2740,
+   "label_start": "27",
+   "label_end": "35"
   },
   {
-   "id": "sec-023-7-low-energy-nucleon-nucleus-scattering",
+   "id": "sec-005-7-low-energy-nucleon-nucleus-scattering",
    "number": "7",
    "title": "LOW-ENERGY NUCLEON-NUCLEUS SCATTERING",
    "level": 1,
    "page_start": 35,
    "page_end": 36,
-   "n_chars": 2828,
-   "n_words": 482
+   "n_chars": 2808,
+   "n_words": 461,
+   "label_start": "35",
+   "label_end": "36"
   },
   {
-   "id": "sec-024-8-astrophysical-electroweak-reactions",
+   "id": "sec-006-8-astrophysical-electroweak-reactions",
    "number": "8",
    "title": "ASTROPHYSICAL ELECTROWEAK REACTIONS",
    "level": 1,
    "page_start": 36,
    "page_end": 39,
-   "n_chars": 5712,
-   "n_words": 986
+   "n_chars": 5663,
+   "n_words": 936,
+   "label_start": "36",
+   "label_end": "39"
   },
   {
-   "id": "sec-025-9-neutron-drops",
+   "id": "sec-007-9-neutron-drops",
    "number": "9",
    "title": "NEUTRON DROPS",
    "level": 1,
    "page_start": 39,
    "page_end": 39,
-   "n_chars": 1962,
-   "n_words": 329
+   "n_chars": 1947,
+   "n_words": 312,
+   "label_start": "39",
+   "label_end": "39"
   },
   {
-   "id": "sec-026-10-conclusions-and-outlook",
+   "id": "sec-008-10-conclusions-and-outlook",
    "number": "10",
    "title": "CONCLUSIONS AND OUTLOOK",
    "level": 1,
    "page_start": 39,
    "page_end": 40,
-   "n_chars": 3757,
-   "n_words": 611
+   "n_chars": 3729,
+   "n_words": 583,
+   "label_start": "39",
+   "label_end": "40"
   },
   {
-   "id": "sec-027-acknowledgments",
+   "id": "sec-009-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 1,
    "page_start": 40,
-   "page_end": 41,
-   "n_chars": 1270,
-   "n_words": 214
-  },
-  {
-   "id": "sec-028-16-nollett-km-nucl-th0102022-submitted-to-phys-r",
-   "number": "16",
-   "title": "Nollett KM. nucl-th/0102022, submitted to Phys. Rev. C",
-   "level": 1,
-   "page_start": 41,
    "page_end": 43,
-   "n_chars": 5458,
-   "n_words": 943
+   "n_chars": 6771,
+   "n_words": 1158,
+   "label_start": "40",
+   "label_end": "43"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 29,
-  "sections": 30,
-  "chars_total": 99226,
+  "toc_entries": 11,
+  "toc_inferred_entries": 11,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 22,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 98964,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "review-posted.tex",
    "tex_sections": 11,
-   "overlaid": 5,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -565,144 +1029,61 @@
     {
      "id": "sec-000-1-introduction",
      "title": "INTRODUCTION",
-     "prose_ratio": 0.773,
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-hamiltonian-and-currents",
+     "title": "HAMILTONIAN AND CURRENTS",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-variational-monte-carlo",
+     "title": "VARIATIONAL MONTE CARLO",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-5-energy-results",
+     "title": "ENERGY RESULTS",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-6-density-and-momentum-distributions",
+     "title": "DENSITY AND MOMENTUM DISTRIBUTIONS",
+     "prose_ratio": 0.981,
      "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-4-steven-c-pieper-and-r-b-wiringa",
-     "title": "Steven C. Pieper and R. B. Wiringa",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-002-2-hamiltonian-and-currents",
-     "title": "HAMILTONIAN AND CURRENTS",
-     "prose_ratio": 0.103,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-003-4-1",
-     "title": "( 1",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-004-6-steven-c-pieper-and-r-b-wiringa",
-     "title": "Steven C. Pieper and R. B. Wiringa",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-005-3-\u03c4-i-\u03c4-j-\u03c4-j-\u03c4-k-\u03c4-k-\u03c4-i-4pt-32-17",
-     "title": "(\u03c4 i \u00b7 \u03c4 j + \u03c4 j \u00b7 \u03c4 k + \u03c4 k \u00b7 \u03c4 i) = 4PT =3/2 . (17)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-006-8-steven-c-pieper-and-r-b-wiringa",
-     "title": "Steven C. Pieper and R. B. Wiringa",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-007-3-v-ariational-monte-carlo",
-     "title": "V ARIATIONAL MONTE CARLO",
-     "prose_ratio": 0.243,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-008-10-steven-c-pieper-and-r-b-wiringa",
-     "title": "Steven C. Pieper and R. B. Wiringa",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-009-14-steven-c-pieper-and-r-b-wiringa",
-     "title": "Steven C. Pieper and R. B. Wiringa",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-010-4-greens-function-monte-carlo",
-     "title": "GREEN\u2019S FUNCTION MONTE CARLO",
-     "prose_ratio": 0.144,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-011-16-steven-c-pieper-and-r-b-wiringa",
-     "title": "Steven C. Pieper and R. B. Wiringa",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-012-18-steven-c-pieper-and-r-b-wiringa",
-     "title": "Steven C. Pieper and R. B. Wiringa",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-013-15-mev-below-these-the-gfmc-very-rapidly-makes-a",
-     "title": "MeV below these. The GFMC very rapidly makes a large impro vement on",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-014-8-mev-this-rapid-improvement-corresponds-to-the",
-     "title": "MeV. This rapid improvement corresponds to the removal of s mall admixtures of",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-015-20-steven-c-pieper-and-r-b-wiringa",
-     "title": "Steven C. Pieper and R. B. Wiringa",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-016-5-energy-results",
-     "title": "ENERGY RESULTS",
-     "prose_ratio": 0.528,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-017-22-steven-c-pieper-and-r-b-wiringa",
-     "title": "Steven C. Pieper and R. B. Wiringa",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-018-24-steven-c-pieper-and-r-b-wiringa",
-     "title": "Steven C. Pieper and R. B. Wiringa",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-019-26-steven-c-pieper-and-r-b-wiringa",
-     "title": "Steven C. Pieper and R. B. Wiringa",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-020-6-density-and-momentum-distributions",
-     "title": "DENSITY AND MOMENTUM DISTRIBUTIONS",
-     "prose_ratio": 0.259,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-021-28-steven-c-pieper-and-r-b-wiringa",
-     "title": "Steven C. Pieper and R. B. Wiringa",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-022-30-steven-c-pieper-and-r-b-wiringa",
-     "title": "Steven C. Pieper and R. B. Wiringa",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-023-7-low-energy-nucleon-nucleus-scattering",
+     "id": "sec-005-7-low-energy-nucleon-nucleus-scattering",
      "title": "LOW-ENERGY NUCLEON-NUCLEUS SCATTERING",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.968,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-024-8-astrophysical-electroweak-reactions",
+     "id": "sec-006-8-astrophysical-electroweak-reactions",
      "title": "ASTROPHYSICAL ELECTROWEAK REACTIONS",
      "prose_ratio": 0.982,
-     "coverage_ratio": 0.964,
+     "coverage_ratio": 0.965,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-025-9-neutron-drops",
+     "id": "sec-007-9-neutron-drops",
      "title": "NEUTRON DROPS",
      "prose_ratio": 0.975,
      "coverage_ratio": 0.992,
@@ -710,24 +1091,19 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-026-10-conclusions-and-outlook",
+     "id": "sec-008-10-conclusions-and-outlook",
      "title": "CONCLUSIONS AND OUTLOOK",
      "prose_ratio": 0.996,
-     "coverage_ratio": 0.988,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-027-acknowledgments",
+     "id": "sec-009-acknowledgments",
      "title": "Acknowledgments",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.453,
+     "coverage_ratio": 0.142,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
-    },
-    {
-     "id": "sec-028-16-nollett-km-nucl-th0102022-submitted-to-phys-r",
-     "title": "Nollett KM. nucl-th/0102022, submitted to Phys. Rev. C",
-     "result": "no matching \\section"
     }
    ]
   }

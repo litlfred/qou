@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/characteristic/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/characteristic/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "The conjecture. Recall that every a\u000ene subvariety V in \u0001",
-  "pageStart": 3,
-  "pageEnd": 4,
-  "text": "../sections/sec-001-14-the-conjecture-recall-that-every-ane-subvarie.md",
-  "derivedFrom": "library/characteristic/manifest",
-  "sourceDocument": "library/characteristic/manifest",
+  "title": "The characteristic variety of a knot",
+  "pageStart": 1,
+  "pageEnd": 1,
+  "text": "../sections/sec-001-12-the-characteristic-variety-of-a-knot.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./characteristic/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./characteristic/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/afst-2007-6-16-3-665-0/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Galois theory of q-difference equations",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/afst-2007-6-16-3-665-0/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "afst-2007-6-16-3-665-0",
   "contains": [
+    "library/afst-2007-6-16-3-665-0/sections/sec-front-matter",
     "library/afst-2007-6-16-3-665-0/sections/sec-000",
     "library/afst-2007-6-16-3-665-0/sections/sec-001",
     "library/afst-2007-6-16-3-665-0/sections/sec-002",
@@ -25,22 +31,14 @@
     "library/afst-2007-6-16-3-665-0/sections/sec-016",
     "library/afst-2007-6-16-3-665-0/sections/sec-017",
     "library/afst-2007-6-16-3-665-0/sections/sec-018",
-    "library/afst-2007-6-16-3-665-0/sections/sec-019",
-    "library/afst-2007-6-16-3-665-0/sections/sec-020",
-    "library/afst-2007-6-16-3-665-0/sections/sec-021",
-    "library/afst-2007-6-16-3-665-0/sections/sec-022",
-    "library/afst-2007-6-16-3-665-0/sections/sec-023"
+    "library/afst-2007-6-16-3-665-0/sections/sec-019"
   ],
   "provenance": "ingested",
   "meta": {
     "doc_id": "afst-2007-6-16-3-665-0",
     "source_file": "AFST_2007_6_16_3_665_0.pdf",
     "source_sha256": "402b61574e561f861d1d2a5437da11d1f9327b0979317d5b25ca23101be95430",
-    "pages": 55,
-    "arxiv": null,
-    "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "granularity": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

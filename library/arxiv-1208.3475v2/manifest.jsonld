@@ -9,17 +9,16 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1208.3475v2",
+  "title": "Poisson - Random Matrix transition in the QCD Dirac spectrum",
   "contains": [
+    "library/arxiv-1208.3475v2/sections/sec-front-matter",
     "library/arxiv-1208.3475v2/sections/sec-000",
     "library/arxiv-1208.3475v2/sections/sec-001",
     "library/arxiv-1208.3475v2/sections/sec-002",
     "library/arxiv-1208.3475v2/sections/sec-003",
     "library/arxiv-1208.3475v2/sections/sec-004",
     "library/arxiv-1208.3475v2/sections/sec-005",
-    "library/arxiv-1208.3475v2/sections/sec-006",
-    "library/arxiv-1208.3475v2/sections/sec-007",
-    "library/arxiv-1208.3475v2/sections/sec-008"
+    "library/arxiv-1208.3475v2/sections/sec-006"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -32,7 +31,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1208.3475v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1208.3475v2.pdf",
     "source_sha256": "d53fc4eefa070ba38b1651b3d2bc999133159ceb12fd79de25d4fed3e8fe55eb",
     "pages": 10,

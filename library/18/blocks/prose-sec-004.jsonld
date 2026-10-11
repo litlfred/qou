@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/18/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/18/blocks/prose-sec-004",
   "kind": "prose",
-  "title": "Denote the vertices of T by v1,...,v 4, and",
-  "pageStart": 1,
-  "pageEnd": 4,
-  "text": "../sections/sec-004-3-denote-the-vertices-of-t-by-v1v-4-and.md",
-  "derivedFrom": "library/18/manifest",
-  "sourceDocument": "library/18/manifest",
+  "title": "The space of conformal simplices",
+  "pageStart": 5,
+  "pageEnd": 7,
+  "text": "../sections/sec-004-4-the-space-of-conformal-simplices.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./18/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./18/manifest.jsonld",
   "provenance": "ingested"
 }

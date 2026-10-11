@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/022201-1-online/sections/sec-007",
   "@type": [
     "doco:Section"
   ],
-  "title": "References",
-  "pageStart": 8,
-  "pageEnd": 8,
+  "title": "ACKNOWLEDGMENTS",
+  "pageStart": 5,
+  "pageEnd": 5,
   "contains": [
     "library/022201-1-online/blocks/prose-sec-007"
   ],
-  "derivedFrom": "library/022201-1-online/manifest",
-  "sourceDocument": "library/022201-1-online/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./022201-1-online/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./022201-1-online/manifest.jsonld",
   "provenance": "ingested"
 }

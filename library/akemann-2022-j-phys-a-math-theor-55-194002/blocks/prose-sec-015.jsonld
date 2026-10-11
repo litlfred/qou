@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-015",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-015",
   "kind": "prose",
-  "title": "Comparison to the bulk spacing distribution",
-  "pageStart": 24,
-  "pageEnd": 27,
-  "text": "../sections/sec-015-52-comparison-to-the-bulk-spacing-distribution.md",
-  "derivedFrom": "library/akemann-2022-j-phys-a-math-theor-55-194002/manifest",
-  "sourceDocument": "library/akemann-2022-j-phys-a-math-theor-55-194002/manifest",
+  "title": "Appendix A. The spacing distribution in the bulk",
+  "pageStart": 33,
+  "pageEnd": 34,
+  "text": "../sections/sec-015-appendix-a-the-spacing-distribution-in-the-bulk.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./akemann-2022-j-phys-a-math-theor-55-194002/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./akemann-2022-j-phys-a-math-theor-55-194002/manifest.jsonld",
   "provenance": "ingested"
 }

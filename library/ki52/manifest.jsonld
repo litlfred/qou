@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ki52/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "On the asymptotic expansion of the Kashaev invariant of the 5 2 knot Tomotada Ohtsuki",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ki52/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On the asymptotic expansion of the Kashaev invariant of the 5 2 knot Tomotada Ohtsuki Introduction",
   "contains": [
+    "library/ki52/sections/sec-front-matter",
     "library/ki52/sections/sec-000",
     "library/ki52/sections/sec-001",
     "library/ki52/sections/sec-002",
@@ -16,18 +22,15 @@
     "library/ki52/sections/sec-007",
     "library/ki52/sections/sec-008",
     "library/ki52/sections/sec-009",
-    "library/ki52/sections/sec-010",
-    "library/ki52/sections/sec-011",
-    "library/ki52/sections/sec-012",
-    "library/ki52/sections/sec-013",
-    "library/ki52/sections/sec-014",
-    "library/ki52/sections/sec-015",
-    "library/ki52/sections/sec-016",
-    "library/ki52/sections/sec-017"
+    "library/ki52/sections/sec-010"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "ki52",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "ki52.pdf",
     "source_sha256": "35ad4ee5a00d4a188ebc77f281ff2aa8048aa30b07d1b926a34761150cc7527b",
     "pages": 52,

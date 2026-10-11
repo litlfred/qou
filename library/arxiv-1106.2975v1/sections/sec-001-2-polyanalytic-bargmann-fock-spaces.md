@@ -4,13 +4,13 @@ doc_title: "The Polyanalytic Ginibre Ensembles"
 section_id: sec-001-2-polyanalytic-bargmann-fock-spaces
 section_title: "Polyanalytic Bargmann-Fock spaces"
 section_number: 2
-pages: 8-12
+pages: 8-14
 source_pdf: 1106.2975v1.pdf
 source_sha256: 7e966c7392b70ae0
-doc_brief: "The Polyanalytic Ginibre Ensembles — For integers n, q = 1, 2, 3, . . ., let Poln,q denote the C-linear space of polynomials in z and ¯z, of degree ≤n −1 in z and of degree ≤q −1 in ¯z."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.994
-latex_coverage_ratio: 0.988
+latex_prose_ratio: 0.961
+latex_coverage_ratio: 0.983
 ---
 []{#sec-polybargmann label="sec-polybargmann"}
 

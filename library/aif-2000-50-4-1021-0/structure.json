@@ -5,158 +5,1630 @@
   "file": "AIF_2000__50_4_1021_0.pdf",
   "sha256": "a7ca398590a266d8753d1b7ccbcb80c47bb38d937e3a86113aade5f13342e4dc",
   "bytes": 3816870,
-  "pages": 52
+  "pages": 52,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:18Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Systèmes aux q-différences singuliers réguliers : classification, matrice de connexion et monodromie",
-  "authors_raw": "Annales de l’institut Fourier, tome 50, n o 4 (2000), p. 1021-1071",
+  "title": "Syst\u00e8mes aux q-diff\u00e9rences singuliers r\u00e9guliers : classification, matrice de connexion et monodromie",
+  "authors_raw": "JACQUES SAULOY",
+  "title_lines": [
+   "ANNALES DE L\u2019INSTITUT FOURIER"
+  ],
   "abstract": null,
   "docinfo": {
+   "Title": "Syst\u00e8mes aux q-diff\u00e9rences singuliers r\u00e9guliers : classification, matrice de connexion et monodromie",
    "Author": "Jacques Sauloy",
-   "CreationDate": "D:20210205085455+01'00'",
-   "Creator": "NUMDAM",
    "Producer": "pdfTeX-1.40.16",
-   "Title": "Systèmes aux q-différences singuliers réguliers : classification, matrice de connexion et monodromie"
+   "Creator": "NUMDAM",
+   "CreationDate": "D:20210205085455+01'00'"
   },
-  "title_lines": [
-   "ANNALES DE L ’ INSTITUT FOURIER",
-   "JACQUES SAULOY",
-   "Systèmes aux q-différences singuliers réguliers :",
-   "classification, matrice de connexion et monodromie"
-  ],
-  "title_prev": "ANNALES DE L ’ INSTITUT FOURIER JACQUES SAULOY Systèmes aux q-différences singuliers réguliers : classification, matrice de connexion et monodromie"
+  "title_raw": "ANNALES DE L\u2019INSTITUT FOURIER",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Syst\u00e8mes aux q-diff\u00e9rences singuliers r\u00e9guliers : classification, matrice de connexion et monodromie",
+   "heading": "A NNALES DE L \u2019 INSTITUT F OURIER",
+   "text": "ANNALES DE L\u2019INSTITUT FOURIER",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
-   "level": 4,
-   "title": "Cas d'une matrice unipotente. — Soit U = In 4- N où",
-   "page": 11,
+   "level": 1,
+   "title": "Comportement de la matrice de connexion lorsque q \u2022\u2014>",
+   "page": null,
    "source": "inferred",
-   "number": "1.1.2.1"
+   "number": "4",
+   "confidence": 0.95,
+   "evidence": [
+    "contents",
+    "body",
+    "style",
+    "number"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 6,
+   "title": "a^ - Xc\u00efq^ + ^ =",
+   "page": null,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.5,
+   "evidence": [
+    "contents"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "Notation",
-   "page": 11,
+   "title": "Introduction et notations",
+   "page": 3,
    "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 4,
-   "title": "Cas d'une matrice semi-simple. — Pour une matrice diagonale",
-   "page": 12,
-   "source": "inferred",
-   "number": "1.1.2.2"
-  },
-  {
-   "level": 4,
-   "title": "Cas général. — Soit A = D + 7V la décomposition de Dunford",
-   "page": 13,
-   "source": "inferred",
-   "number": "1.1.2.3"
+   "number": "0",
+   "confidence": 0.55,
+   "evidence": [
+    "contents",
+    "number"
+   ],
+   "page_label": "1022"
   },
   {
    "level": 2,
-   "title": "Caractérisation des systèmes singuliers réguliers par la",
+   "title": "R\u00e9solution locale",
+   "page": 4,
+   "source": "inferred",
+   "number": "0.1",
+   "confidence": 0.95,
+   "evidence": [
+    "contents",
+    "body",
+    "style",
+    "number"
+   ],
+   "page_label": "1023"
+  },
+  {
+   "level": 2,
+   "title": "Classification",
+   "page": 7,
+   "source": "inferred",
+   "number": "0.2",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "1026"
+  },
+  {
+   "level": 2,
+   "title": "Confluence des solutions",
+   "page": 7,
+   "source": "inferred",
+   "number": "0.3",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "1026"
+  },
+  {
+   "level": 2,
+   "title": "Confluence et monodromie",
+   "page": 8,
+   "source": "inferred",
+   "number": "0.4",
+   "confidence": 0.95,
+   "evidence": [
+    "contents",
+    "body",
+    "style",
+    "number"
+   ],
+   "page_label": "1027"
+  },
+  {
+   "level": 2,
+   "title": "Solutions fondamentales en 0",
+   "page": 9,
+   "source": "inferred",
+   "number": "1.1",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "1028"
+  },
+  {
+   "level": 3,
+   "title": "On se ram\u00e8ne au cas fuchsien non r\u00e9sonnant",
+   "page": 9,
+   "source": "inferred",
+   "number": "1.1.1",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "1028"
+  },
+  {
+   "level": 3,
+   "title": "Cas d'un syst\u00e8me \u00e0 coefficients constants",
+   "page": 11,
+   "source": "inferred",
+   "number": "1.1.2",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "1030"
+  },
+  {
+   "level": 3,
+   "title": "Cas d'un syst\u00e8me fuchsien non r\u00e9sonnant",
+   "page": 14,
+   "source": "inferred",
+   "number": "1.1.3",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "1033"
+  },
+  {
+   "level": 3,
+   "title": "Synth\u00e8se",
+   "page": 15,
+   "source": "inferred",
+   "number": "1.1.4",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "1034"
+  },
+  {
+   "level": 2,
+   "title": "Non-unicit\u00e9 des solutions canoniques",
+   "page": 17,
+   "source": "inferred",
+   "number": "1.2",
+   "confidence": 0.95,
+   "evidence": [
+    "contents",
+    "body",
+    "style",
+    "number"
+   ],
+   "page_label": "1036"
+  },
+  {
+   "level": 2,
+   "title": "Caract\u00e9risation des syst\u00e8mes singuliers r\u00e9guliers par la forme des solutions",
    "page": 18,
    "source": "inferred",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "1037"
+  },
+  {
+   "level": 3,
+   "title": "Un algorithme de r\u00e9duction",
+   "page": 18,
+   "source": "inferred",
+   "number": "1.3.1",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "1037"
+  },
+  {
+   "level": 3,
+   "title": "Caract\u00e9risation des syst\u00e8mes singuliers r\u00e9guliers",
+   "page": 20,
+   "source": "inferred",
+   "number": "1.3.2",
+   "confidence": 0.95,
+   "evidence": [
+    "contents",
+    "body",
+    "style",
+    "number"
+   ],
+   "page_label": "1039"
   },
   {
    "level": 1,
-   "title": "Comportement de la matrice de connexion",
+   "title": "Matrice de connexion et classification",
+   "page": 20,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.95,
+   "evidence": [
+    "contents",
+    "body",
+    "style",
+    "number"
+   ],
+   "page_label": "1039"
+  },
+  {
+   "level": 2,
+   "title": "Caract\u00e9risation globale des syst\u00e8mes singuliers r\u00e9guliers",
+   "page": 21,
+   "source": "inferred",
+   "number": "2.1",
+   "confidence": 0.95,
+   "evidence": [
+    "contents",
+    "body",
+    "style",
+    "number"
+   ],
+   "page_label": "1040"
+  },
+  {
+   "level": 2,
+   "title": "Classification des syst\u00e8mes singuliers r\u00e9guliers sur \u00a7",
+   "page": 21,
+   "source": "inferred",
+   "number": "2.2",
+   "confidence": 0.95,
+   "evidence": [
+    "contents",
+    "body",
+    "style",
+    "number"
+   ],
+   "page_label": "1040"
+  },
+  {
+   "level": 2,
+   "title": "Pr\u00e9cisions diverses",
+   "page": 23,
+   "source": "inferred",
+   "number": "2.3",
+   "confidence": 0.95,
+   "evidence": [
+    "contents",
+    "body",
+    "style",
+    "number"
+   ],
+   "page_label": "1042"
+  },
+  {
+   "level": 3,
+   "title": "Polarit\u00e9",
+   "page": 23,
+   "source": "inferred",
+   "number": "2.3.1",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "1042"
+  },
+  {
+   "level": 3,
+   "title": "Interpr\u00e9tation cat\u00e9gorique",
+   "page": 24,
+   "source": "inferred",
+   "number": "2.3.2",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "1043"
+  },
+  {
+   "level": 1,
+   "title": "Comportement des solutions lorsque q \u2014\u00bb 1",
+   "page": 24,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "1043"
+  },
+  {
+   "level": 2,
+   "title": "Estimation asymptotique de eq^c et de iq",
+   "page": 25,
+   "source": "inferred",
+   "number": "3.1",
+   "confidence": 0.55,
+   "evidence": [
+    "contents",
+    "number"
+   ],
+   "page_label": "1044"
+  },
+  {
+   "level": 2,
+   "title": "Comportement des solutions canoniques",
+   "page": 28,
+   "source": "inferred",
+   "number": "3.2",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "1047"
+  },
+  {
+   "level": 2,
+   "title": "Comportement des solutions \u00e0 valeur initiale fixe",
+   "page": 29,
+   "source": "inferred",
+   "number": "3.3",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "1048"
+  },
+  {
+   "level": 3,
+   "title": "\u00c9tude locale",
+   "page": 31,
+   "source": "inferred",
+   "number": "3.3.1",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "1050"
+  },
+  {
+   "level": 3,
+   "title": "\u00c9tude globale",
+   "page": 31,
+   "source": "inferred",
+   "number": "3.3.2",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "1050"
+  },
+  {
+   "level": 4,
+   "title": "et monodromie",
    "page": 33,
    "source": "inferred",
-   "number": "4"
+   "number": null,
+   "confidence": 0.5,
+   "evidence": [
+    "contents"
+   ],
+   "page_label": "1052"
   },
   {
    "level": 1,
-   "title": "Q(^o)",
+   "title": "Trois exemples",
+   "page": 36,
+   "source": "inferred",
+   "number": "5",
+   "confidence": 0.95,
+   "evidence": [
+    "contents",
+    "body",
+    "style",
+    "number"
+   ],
+   "page_label": "1055"
+  },
+  {
+   "level": 2,
+   "title": "D\u00e9formation de la fonction hyperg\u00e9om\u00e9trique",
+   "page": 36,
+   "source": "inferred",
+   "number": "5.1",
+   "confidence": 0.95,
+   "evidence": [
+    "contents",
+    "body",
+    "style",
+    "number"
+   ],
+   "page_label": "1055"
+  },
+  {
+   "level": 2,
+   "title": "D\u00e9formation de log(l \u2014 z / z o )",
+   "page": 39,
+   "source": "inferred",
+   "number": "5.2",
+   "confidence": 0.55,
+   "evidence": [
+    "contents",
+    "number"
+   ],
+   "page_label": "1058"
+  },
+  {
+   "level": 2,
+   "title": "Un exemple irr\u00e9gulier",
+   "page": 40,
+   "source": "inferred",
+   "number": "5.3",
+   "confidence": 0.95,
+   "evidence": [
+    "contents",
+    "body",
+    "style",
+    "number"
+   ],
+   "page_label": "1059"
+  },
+  {
+   "level": 3,
+   "title": "Calculs explicites en dimension 1",
+   "page": 41,
+   "source": "inferred",
+   "number": "5.3.1",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "1060"
+  },
+  {
+   "level": 3,
+   "title": "Am\u00e9lioration des estimations de \u00f4",
+   "page": 42,
+   "source": "inferred",
+   "number": "5.3.2",
+   "confidence": 0.55,
+   "evidence": [
+    "contents",
+    "number"
+   ],
+   "page_label": "1061"
+  },
+  {
+   "level": 3,
+   "title": "Application \u00e0 l'exemple",
    "page": 43,
    "source": "inferred",
-   "number": "11"
+   "number": "5.3.3",
+   "confidence": 0.55,
+   "evidence": [
+    "contents",
+    "number"
+   ],
+   "page_label": "1062"
+  },
+  {
+   "level": 4,
+   "title": "Annexe A. Relations alg\u00e9briques dans les corps de solutions",
+   "page": 45,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "body"
+   ],
+   "page_label": "1064"
+  },
+  {
+   "level": 4,
+   "title": "Annexe B. Equations et syt\u00e8mes",
+   "page": 48,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "body"
+   ],
+   "page_label": "1067"
+  },
+  {
+   "level": 4,
+   "title": "B.l. Passage des \u00e9quations aux syst\u00e8mes",
+   "page": 48,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "body"
+   ],
+   "page_label": "1067"
+  },
+  {
+   "level": 2,
+   "title": "Passage des syst\u00e8mes aux \u00e9quations",
+   "page": 49,
+   "source": "inferred",
+   "number": "B.2",
+   "confidence": 0.95,
+   "evidence": [
+    "contents",
+    "body",
+    "style",
+    "number"
+   ],
+   "page_label": "1068"
+  },
+  {
+   "level": 2,
+   "title": "Equations singuli\u00e8res r\u00e9guli\u00e8res",
+   "page": 49,
+   "source": "inferred",
+   "number": "B.3",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "1068"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Singularit\u00e9s de X^ (\u00e0 gauche) et de X^ (\u00e0 droite) Pour interpr\u00e9ter ses valeurs sur les composantes connexes de \u00fb, on va supposer que les coupures ne se superposent pas, autrement dit, que les (r + 1) spirales zjcj^ (0 <, j < r) sont deux \u00e0 deux disjointes. C'est le cas pour un choix g\u00e9n\u00e9rique de \u00e7o-",
+   "page": 34,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1053"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Domaine de d\u00e9finition de de X^ (\u00e0 gauche) et de X^ (\u00e0 droite)",
+   "page": 34,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1053"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Domaine de d\u00e9finition de P",
+   "page": 35,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1054"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": "1022",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "1023",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "1024",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "1025",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "1026",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "1027",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "1028",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "1029",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "1030",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "1031",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "1032",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "1033",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "1034",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "1035",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "1036",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "1037",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "1038",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "1039",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "1040",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "1041",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "1042",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "1043",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "1044",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "1045",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "1046",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "1047",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "1048",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "1049",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "1050",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "1051",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "1052",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "1053",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "1054",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "1055",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "1056",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "1057",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "1058",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "1059",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "1060",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "1061",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "1062",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "1063",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "1064",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "1065",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "1066",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "1067",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "1068",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "1069",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "1070",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "1071",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-1121-cas-dune-matrice-unipotente-soit-u-in-4--n",
-   "number": "1.1.2.1",
-   "title": "Cas d'une matrice unipotente. — Soit U = In 4- N où",
-   "level": 4,
-   "page_start": 11,
-   "page_end": 11,
-   "n_chars": 74,
-   "n_words": 13
-  },
-  {
-   "id": "sec-001-notation",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Notation",
+   "title": "Front matter",
    "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1026,
+   "n_words": 128,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-0-introduction-et-notations",
+   "number": "0",
+   "title": "Introduction et notations",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2529,
+   "n_words": 792,
+   "label_start": null,
+   "label_end": "1022"
+  },
+  {
+   "id": "sec-001-4-comportement-de-la-matrice-de-connexion-lorsqu",
+   "number": "4",
+   "title": "Comportement de la matrice de connexion lorsque q \u2022\u2014>",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1553,
+   "n_words": 454,
+   "label_start": "1022",
+   "label_end": "1022"
+  },
+  {
+   "id": "sec-002-a---xc\u00efq",
+   "number": null,
+   "title": "a^ - Xc\u00efq^ + ^ =",
+   "level": 6,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 946,
+   "n_words": 153,
+   "label_start": "1022",
+   "label_end": "1023"
+  },
+  {
+   "id": "sec-003-01-r\u00e9solution-locale",
+   "number": "0.1",
+   "title": "R\u00e9solution locale",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 5563,
+   "n_words": 944,
+   "label_start": "1023",
+   "label_end": "1026"
+  },
+  {
+   "id": "sec-004-02-classification",
+   "number": "0.2",
+   "title": "Classification",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1541,
+   "n_words": 257,
+   "label_start": "1026",
+   "label_end": "1026"
+  },
+  {
+   "id": "sec-005-03-confluence-des-solutions",
+   "number": "0.3",
+   "title": "Confluence des solutions",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1767,
+   "n_words": 306,
+   "label_start": "1026",
+   "label_end": "1027"
+  },
+  {
+   "id": "sec-006-04-confluence-et-monodromie",
+   "number": "0.4",
+   "title": "Confluence et monodromie",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1127,
+   "n_words": 199,
+   "label_start": "1027",
+   "label_end": "1028"
+  },
+  {
+   "id": "sec-007-11-solutions-fondamentales-en-0",
+   "number": "1.1",
+   "title": "Solutions fondamentales en 0",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 430,
+   "n_words": 72,
+   "label_start": "1028",
+   "label_end": "1028"
+  },
+  {
+   "id": "sec-008-111-on-se-ram\u00e8ne-au-cas-fuchsien-non-r\u00e9sonnant",
+   "number": "1.1.1",
+   "title": "On se ram\u00e8ne au cas fuchsien non r\u00e9sonnant",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 2805,
+   "n_words": 548,
+   "label_start": "1028",
+   "label_end": "1030"
+  },
+  {
+   "id": "sec-009-112-cas-dun-syst\u00e8me-\u00e0-coefficients-constants",
+   "number": "1.1.2",
+   "title": "Cas d'un syst\u00e8me \u00e0 coefficients constants",
+   "level": 3,
    "page_start": 11,
-   "page_end": 12,
-   "n_chars": 1376,
-   "n_words": 269
+   "page_end": 14,
+   "n_chars": 3709,
+   "n_words": 699,
+   "label_start": "1030",
+   "label_end": "1033"
   },
   {
-   "id": "sec-002-1122-cas-dune-matrice-semi-simple-pour-une-matri",
-   "number": "1.1.2.2",
-   "title": "Cas d'une matrice semi-simple. — Pour une matrice diagonale",
-   "level": 4,
-   "page_start": 12,
-   "page_end": 13,
-   "n_chars": 711,
-   "n_words": 131
+   "id": "sec-010-113-cas-dun-syst\u00e8me-fuchsien-non-r\u00e9sonnant",
+   "number": "1.1.3",
+   "title": "Cas d'un syst\u00e8me fuchsien non r\u00e9sonnant",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 3003,
+   "n_words": 542,
+   "label_start": "1033",
+   "label_end": "1034"
   },
   {
-   "id": "sec-003-1123-cas-général-soit-a-d-7v-la-décomposition-de",
-   "number": "1.1.2.3",
-   "title": "Cas général. — Soit A = D + 7V la décomposition de Dunford",
-   "level": 4,
-   "page_start": 13,
+   "id": "sec-011-114-synth\u00e8se",
+   "number": "1.1.4",
+   "title": "Synth\u00e8se",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 2297,
+   "n_words": 412,
+   "label_start": "1034",
+   "label_end": "1036"
+  },
+  {
+   "id": "sec-012-12-non-unicit\u00e9-des-solutions-canoniques",
+   "number": "1.2",
+   "title": "Non-unicit\u00e9 des solutions canoniques",
+   "level": 2,
+   "page_start": 17,
    "page_end": 18,
-   "n_chars": 8970,
-   "n_words": 1612
+   "n_chars": 2587,
+   "n_words": 479,
+   "label_start": "1036",
+   "label_end": "1037"
   },
   {
-   "id": "sec-004-13-caractérisation-des-systèmes-singuliers-régul",
+   "id": "sec-013-13-caract\u00e9risation-des-syst\u00e8mes-singuliers-r\u00e9gul",
    "number": "1.3",
-   "title": "Caractérisation des systèmes singuliers réguliers par la",
+   "title": "Caract\u00e9risation des syst\u00e8mes singuliers r\u00e9guliers par la forme des solutions",
    "level": 2,
    "page_start": 18,
+   "page_end": 18,
+   "n_chars": 83,
+   "n_words": 14,
+   "label_start": "1037",
+   "label_end": "1037"
+  },
+  {
+   "id": "sec-014-131-un-algorithme-de-r\u00e9duction",
+   "number": "1.3.1",
+   "title": "Un algorithme de r\u00e9duction",
+   "level": 3,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 3006,
+   "n_words": 599,
+   "label_start": "1037",
+   "label_end": "1039"
+  },
+  {
+   "id": "sec-015-132-caract\u00e9risation-des-syst\u00e8mes-singuliers-r\u00e9gu",
+   "number": "1.3.2",
+   "title": "Caract\u00e9risation des syst\u00e8mes singuliers r\u00e9guliers",
+   "level": 3,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 850,
+   "n_words": 145,
+   "label_start": "1039",
+   "label_end": "1039"
+  },
+  {
+   "id": "sec-016-2-matrice-de-connexion-et-classification",
+   "number": "2",
+   "title": "Matrice de connexion et classification",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 422,
+   "n_words": 72,
+   "label_start": "1039",
+   "label_end": "1040"
+  },
+  {
+   "id": "sec-017-21-caract\u00e9risation-globale-des-syst\u00e8mes-singulie",
+   "number": "2.1",
+   "title": "Caract\u00e9risation globale des syst\u00e8mes singuliers r\u00e9guliers",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 544,
+   "n_words": 103,
+   "label_start": "1040",
+   "label_end": "1040"
+  },
+  {
+   "id": "sec-018-22-classification-des-syst\u00e8mes-singuliers-r\u00e9guli",
+   "number": "2.2",
+   "title": "Classification des syst\u00e8mes singuliers r\u00e9guliers sur \u00a7",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 4100,
+   "n_words": 729,
+   "label_start": "1040",
+   "label_end": "1042"
+  },
+  {
+   "id": "sec-019-23-pr\u00e9cisions-diverses",
+   "number": "2.3",
+   "title": "Pr\u00e9cisions diverses",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "1042",
+   "label_end": "1042"
+  },
+  {
+   "id": "sec-020-231-polarit\u00e9",
+   "number": "2.3.1",
+   "title": "Polarit\u00e9",
+   "level": 3,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 2000,
+   "n_words": 358,
+   "label_start": "1042",
+   "label_end": "1043"
+  },
+  {
+   "id": "sec-021-232-interpr\u00e9tation-cat\u00e9gorique",
+   "number": "2.3.2",
+   "title": "Interpr\u00e9tation cat\u00e9gorique",
+   "level": 3,
+   "page_start": 24,
+   "page_end": 28,
+   "n_chars": 5811,
+   "n_words": 1106,
+   "label_start": "1043",
+   "label_end": "1047"
+  },
+  {
+   "id": "sec-022-32-comportement-des-solutions-canoniques",
+   "number": "3.2",
+   "title": "Comportement des solutions canoniques",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 3519,
+   "n_words": 660,
+   "label_start": "1047",
+   "label_end": "1048"
+  },
+  {
+   "id": "sec-023-33-comportement-des-solutions-\u00e0-valeur-initiale",
+   "number": "3.3",
+   "title": "Comportement des solutions \u00e0 valeur initiale fixe",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 2186,
+   "n_words": 386,
+   "label_start": "1048",
+   "label_end": "1050"
+  },
+  {
+   "id": "sec-024-331-\u00e9tude-locale",
+   "number": "3.3.1",
+   "title": "\u00c9tude locale",
+   "level": 3,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 1084,
+   "n_words": 229,
+   "label_start": "1050",
+   "label_end": "1050"
+  },
+  {
+   "id": "sec-025-332-\u00e9tude-globale",
+   "number": "3.3.2",
+   "title": "\u00c9tude globale",
+   "level": 3,
+   "page_start": 31,
    "page_end": 33,
-   "n_chars": 27087,
-   "n_words": 4977
+   "n_chars": 3227,
+   "n_words": 621,
+   "label_start": "1050",
+   "label_end": "1052"
   },
   {
-   "id": "sec-005-4-comportement-de-la-matrice-de-connexion",
-   "number": "4",
-   "title": "Comportement de la matrice de connexion",
-   "level": 1,
+   "id": "sec-026-et-monodromie",
+   "number": null,
+   "title": "et monodromie",
+   "level": 4,
    "page_start": 33,
-   "page_end": 43,
-   "n_chars": 15430,
-   "n_words": 2755
+   "page_end": 36,
+   "n_chars": 4683,
+   "n_words": 847,
+   "label_start": "1052",
+   "label_end": "1055"
   },
   {
-   "id": "sec-006-11-qo",
-   "number": "11",
-   "title": "Q(^o)",
+   "id": "sec-027-5-trois-exemples",
+   "number": "5",
+   "title": "Trois exemples",
    "level": 1,
-   "page_start": 43,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 66,
+   "n_words": 8,
+   "label_start": "1055",
+   "label_end": "1055"
+  },
+  {
+   "id": "sec-028-51-d\u00e9formation-de-la-fonction-hyperg\u00e9om\u00e9trique",
+   "number": "5.1",
+   "title": "D\u00e9formation de la fonction hyperg\u00e9om\u00e9trique",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 40,
+   "n_chars": 5879,
+   "n_words": 1128,
+   "label_start": "1055",
+   "label_end": "1059"
+  },
+  {
+   "id": "sec-029-53-un-exemple-irr\u00e9gulier",
+   "number": "5.3",
+   "title": "Un exemple irr\u00e9gulier",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 2040,
+   "n_words": 330,
+   "label_start": "1059",
+   "label_end": "1060"
+  },
+  {
+   "id": "sec-030-531-calculs-explicites-en-dimension-1",
+   "number": "5.3.1",
+   "title": "Calculs explicites en dimension 1",
+   "level": 3,
+   "page_start": 41,
+   "page_end": 45,
+   "n_chars": 4489,
+   "n_words": 885,
+   "label_start": "1060",
+   "label_end": "1064"
+  },
+  {
+   "id": "sec-031-annexe-a-relations-alg\u00e9briques-dans-les-corps-de",
+   "number": null,
+   "title": "Annexe A. Relations alg\u00e9briques dans les corps de solutions",
+   "level": 4,
+   "page_start": 45,
+   "page_end": 48,
+   "n_chars": 5373,
+   "n_words": 1039,
+   "label_start": "1064",
+   "label_end": "1067"
+  },
+  {
+   "id": "sec-032-annexe-b-equations-et-syt\u00e8mes",
+   "number": null,
+   "title": "Annexe B. Equations et syt\u00e8mes",
+   "level": 4,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 669,
+   "n_words": 116,
+   "label_start": "1067",
+   "label_end": "1067"
+  },
+  {
+   "id": "sec-033-bl-passage-des-\u00e9quations-aux-syst\u00e8mes",
+   "number": null,
+   "title": "B.l. Passage des \u00e9quations aux syst\u00e8mes",
+   "level": 4,
+   "page_start": 48,
+   "page_end": 49,
+   "n_chars": 822,
+   "n_words": 168,
+   "label_start": "1067",
+   "label_end": "1068"
+  },
+  {
+   "id": "sec-034-b2-passage-des-syst\u00e8mes-aux-\u00e9quations",
+   "number": "B.2",
+   "title": "Passage des syst\u00e8mes aux \u00e9quations",
+   "level": 2,
+   "page_start": 49,
+   "page_end": 49,
+   "n_chars": 1511,
+   "n_words": 255,
+   "label_start": "1068",
+   "label_end": "1068"
+  },
+  {
+   "id": "sec-035-b3-equations-singuli\u00e8res-r\u00e9guli\u00e8res",
+   "number": "B.3",
+   "title": "Equations singuli\u00e8res r\u00e9guli\u00e8res",
+   "level": 2,
+   "page_start": 49,
    "page_end": 52,
-   "n_chars": 16608,
-   "n_words": 2920
+   "n_chars": 6526,
+   "n_words": 1023,
+   "label_start": "1068",
+   "label_end": "1071"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 7,
-  "sections": 7,
-  "chars_total": 70256
+  "toc_entries": 41,
+  "toc_inferred_entries": 41,
+  "toc_inferred_mean_confidence": 0.799,
+  "toc_inferred_empty_share": 0.028,
+  "toc_inferred_method": "contents",
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 7,
+    "items": [
+     "Introduction et notations",
+     "Estimation asymptotique de eq^c et de iq",
+     "et monodromie",
+     "D\u00e9formation de log(l \u2014 z / z o )",
+     "Am\u00e9lioration des estimations de \u00f4",
+     "Application \u00e0 l'exemple",
+     "a^ - Xc\u00efq^ + ^ ="
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 37,
+  "chars_total": 89773
  }
 }

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-026",
+  "kind": "prose",
+  "title": "et monodromie",
+  "pageStart": 33,
+  "pageEnd": 36,
+  "text": "../sections/sec-026-et-monodromie.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./aif-2000-50-4-1021-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./aif-2000-50-4-1021-0/manifest.jsonld",
+  "provenance": "ingested"
+}

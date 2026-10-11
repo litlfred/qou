@@ -9,7 +9,7 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-nucl-th-0507064v2",
+  "title": "The Virial Equation of State of Low-Density Neutron Matter",
   "contains": [
     "library/arxiv-nucl-th-0507064v2/sections/sec-front-matter",
     "library/arxiv-nucl-th-0507064v2/sections/sec-000",
@@ -37,7 +37,9 @@
   },
   "meta": {
     "doc_id": "arxiv-nucl-th-0507064v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0507064v2.pdf",
     "source_sha256": "dcfad7240ba81bf5d5d4042c59c28269c9cee5bccfd89280d4eba1411105cbf0",
     "pages": 8,

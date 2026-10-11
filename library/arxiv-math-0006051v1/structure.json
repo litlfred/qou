@@ -6,6 +6,11 @@
   "sha256": "10483e75bd3655eaef5e621e7c4090525ffd11939c2e0f0fd711740e72419769",
   "bytes": 111644,
   "pages": 8,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -16,23 +21,30 @@
    "stamp_date": "7 Jun 2000"
   },
   "doi": null,
-  "title": "Finite and p-adic polylogarithms",
-  "authors_raw": null,
+  "title": "arXiv:math/0006051v1 [math.NT] 7 Jun 2000",
+  "authors_raw": "AMNON BESSER",
+  "title_lines": [
+   "FINITE AND p-ADIC POLYLOGARITHMS"
+  ],
   "abstract": null,
   "docinfo": {
+   "Title": "arXiv:math/0006051v1  [math.NT]  7 Jun 2000",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181105222032-05'00'",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:math/0006051v1  [math.NT]  7 Jun 2000"
+   "CreationDate": "D:20181105222032-05'00'"
   },
-  "title_prev": "FINITE AND p-ADIC POLYLOGARITHMS AMNON BESSER 1. Introduction The finite logarithm was introduced by Kontsevich (under the name \u201c The 1 1 logarithm\u201d) in [Kon]. The finite logarithm is the case n = 1 of the n-th poly-",
-  "title_lines": [
-   "FINITE AND p-ADIC POLYLOGARITHMS",
-   "AMNON BESSER",
-   "1. Introduction",
-   "The finite logarithm was introduced by Kontsevich (under the name \u201c The 1 1",
-   "logarithm\u201d) in [Kon]. The finite logarithm is the case n = 1 of the n-th poly-"
-  ]
+  "title_raw": "FINITE AND p-ADIC POLYLOGARITHMS",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math/0006051v1 [math.NT] 7 Jun 2000",
+   "heading": "FINITE AND p -ADIC POLYLOGARITHMS 1. Introduction The \ufb01nite logarithm was introduced by Kontsevich (under the name \u201cThe 1 1 logarithm\u201d) in [Kon]. The \ufb01nite logarithm is the case n = 1 of the n -th polylogarithm li n \u2208 Z /p [ z ] de\ufb01ned by li n ( z ) = P p \u2212 1 k =1 z k /k n . In loc. cit. Kontsevich",
+   "text": "FINITE AND p-ADIC POLYLOGARITHMS",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -40,152 +52,173 @@
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "AMNON BESSER",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The proof",
    "page": 2,
    "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "AMNON BESSER",
-   "page": 4,
-   "source": "inferred",
-   "number": "4"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Another proof of the main result",
    "page": 5,
    "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "AMNON BESSER",
-   "page": 6,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "AMNON BESSER",
-   "page": 8,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 8,
-   "source": "inferred",
-   "number": null
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-2-amnon-besser",
-   "number": "2",
-   "title": "AMNON BESSER",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 89,
+   "n_words": 11,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3015,
-   "n_words": 570
+   "n_chars": 2976,
+   "n_words": 531,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-2-the-proof",
+   "id": "sec-001-2-the-proof",
    "number": "2",
    "title": "The proof",
    "level": 1,
    "page_start": 2,
-   "page_end": 4,
-   "n_chars": 2778,
-   "n_words": 708
-  },
-  {
-   "id": "sec-003-4-amnon-besser",
-   "number": "4",
-   "title": "AMNON BESSER",
-   "level": 1,
-   "page_start": 4,
    "page_end": 5,
-   "n_chars": 3246,
-   "n_words": 767
+   "n_chars": 5794,
+   "n_words": 1232,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-3-another-proof-of-the-main-result",
+   "id": "sec-002-3-another-proof-of-the-main-result",
    "number": "3",
    "title": "Another proof of the main result",
    "level": 1,
    "page_start": 5,
-   "page_end": 6,
-   "n_chars": 745,
-   "n_words": 137
-  },
-  {
-   "id": "sec-005-6-amnon-besser",
-   "number": "6",
-   "title": "AMNON BESSER",
-   "level": 1,
-   "page_start": 6,
    "page_end": 8,
-   "n_chars": 3363,
-   "n_words": 777
-  },
-  {
-   "id": "sec-006-8-amnon-besser",
-   "number": "8",
-   "title": "AMNON BESSER",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 163,
-   "n_words": 45
-  },
-  {
-   "id": "sec-007-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 488,
-   "n_words": 73
+   "n_chars": 4679,
+   "n_words": 915,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 8,
-  "sections": 8,
-  "chars_total": 13798,
+  "toc_entries": 3,
+  "toc_inferred_entries": 3,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 4,
+  "chars_total": 13538,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 3,
-   "overlaid": 1,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -193,49 +226,33 @@
    },
    "sections": [
     {
-     "id": "sec-000-2-amnon-besser",
-     "title": "AMNON BESSER",
+     "id": "sec-front-matter",
+     "title": "Front matter",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-001-1-introduction",
+     "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.987,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-2-the-proof",
+     "id": "sec-001-2-the-proof",
      "title": "The proof",
-     "prose_ratio": 0.566,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.935,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-003-4-amnon-besser",
-     "title": "AMNON BESSER",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-004-3-another-proof-of-the-main-result",
+     "id": "sec-002-3-another-proof-of-the-main-result",
      "title": "Another proof of the main result",
-     "prose_ratio": 0.349,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-005-6-amnon-besser",
-     "title": "AMNON BESSER",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-006-8-amnon-besser",
-     "title": "AMNON BESSER",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-007-references",
-     "title": "References",
-     "result": "no matching \\section"
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.849,
+     "result": "overlaid",
+     "converter": "pandoc"
     }
    ]
   }

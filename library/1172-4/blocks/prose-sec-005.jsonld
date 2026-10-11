@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/1172-4/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/1172-4/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "Asymptotic Behavior",
-  "pageStart": 11,
-  "pageEnd": 13,
-  "text": "../sections/sec-005-52-asymptotic-behavior.md",
-  "derivedFrom": "library/1172-4/manifest",
-  "sourceDocument": "library/1172-4/manifest",
+  "title": "Acknowledgement",
+  "pageStart": 22,
+  "pageEnd": 22,
+  "text": "../sections/sec-005-acknowledgement.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./1172-4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./1172-4/manifest.jsonld",
   "provenance": "ingested"
 }

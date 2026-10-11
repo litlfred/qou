@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ising/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ising/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "JEHANNE DOUSSE AND VALENTIN F ´ERAY",
-  "pageStart": 4,
-  "pageEnd": 6,
-  "text": "../sections/sec-003-4-jehanne-dousse-and-valentin-f-eray.md",
-  "derivedFrom": "library/ising/manifest",
-  "sourceDocument": "library/ising/manifest",
+  "title": "Central limit theorem for occurrences of given patterns.",
+  "pageStart": 19,
+  "pageEnd": 24,
+  "text": "../sections/sec-003-42-central-limit-theorem-for-occurrences-of-give.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ising/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ising/manifest.jsonld",
   "provenance": "ingested"
 }

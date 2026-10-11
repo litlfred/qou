@@ -5,7 +5,12 @@
   "file": "9408045v1.pdf",
   "sha256": "a9786c0f44a4e659f489f2928f53c5ba3f1cf53f057f9b018ed14697c32c74ce",
   "bytes": 105041,
-  "pages": 15
+  "pages": 15,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -15,19 +20,31 @@
    "stamp_date": "8 Aug 1994"
   },
   "doi": null,
-  "title": "Constrained analysis of topologically massive gravity",
-  "authors_raw": "J. Barcelos-Neto ∗ and T.G. Dargam",
-  "abstract": "We quantize the Einstein gravity in the formalism of weak gra vitational ﬁelds by using the constrained Hamiltonian method. Special emphasis is gi ven to the 2+1 spacetime dimensional case where a (topological) Chern-Simons term i s added to the Lagrangian. PACS: 03.70.+k; 04.20.Fy; 11.30.-j (∗) Electronic mails: ift03001 @ ufrj and barcelos @ vms1.nce. ufrj.br 1",
-  "docinfo": {
-   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20220608175607-04'00'",
-   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:hep-th/9408045v1  8 Aug 1994"
-  },
+  "title": "arXiv:hep-th/9408045v1 8 Aug 1994",
+  "authors_raw": "J. Barcelos-Neto \u2217and T.G. Dargam",
   "title_lines": [
    "Constrained analysis",
    "of topologically massive gravity"
-  ]
+  ],
+  "abstract": "We quantize the Einstein gravity in the formalism of weak gravitational \ufb01elds by using the constrained Hamiltonian method. Special emphasis is given to the 2+1 spacetime dimensional case where a (topological) Chern-Simons term is added to the Lagrangian. PACS: 03.70.+k; 04.20.Fy; 11.30.-j (\u2217) Electronic mails: ift03001 @ ufrj and barcelos @ vms1.nce.ufrj.br 1",
+  "docinfo": {
+   "Title": "arXiv:hep-th/9408045v1  8 Aug 1994",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20220608175607-04'00'"
+  },
+  "title_raw": "Constrained analysis of topologically massive gravity",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-th/9408045v1 8 Aug 1994",
+   "heading": "Constrained analysis of topologically massive gravity",
+   "text": "Constrained analysis of topologically massive gravity",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -35,46 +52,255 @@
    "title": "Abstract",
    "page": 1,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Introduction",
    "page": 2,
    "source": "inferred",
-   "number": "I"
+   "number": "I",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
-   "title": "Hilbert-Einstein theory in a weak gravitational ﬁeld",
+   "title": "Hilbert-Einstein theory in a weak gravitational \ufb01eld",
    "page": 3,
    "source": "inferred",
-   "number": "II"
+   "number": "II",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Topologically massive gravitation",
    "page": 7,
    "source": "inferred",
-   "number": "III"
+   "number": "III",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Conclusion",
    "page": 14,
    "source": "inferred",
-   "number": "IV"
+   "number": "IV",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "14"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgment",
+   "page": 14,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "References",
    "page": 15,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "15"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 239,
+   "n_words": 33,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-abstract",
    "number": null,
@@ -82,8 +308,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 365,
-   "n_words": 57
+   "n_chars": 361,
+   "n_words": 53,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-001-i-introduction",
@@ -92,18 +320,22 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 2361,
-   "n_words": 403
+   "n_chars": 2341,
+   "n_words": 383,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-002-ii-hilbert-einstein-theory-in-a-weak-gravitation",
    "number": "II",
-   "title": "Hilbert-Einstein theory in a weak gravitational ﬁeld",
+   "title": "Hilbert-Einstein theory in a weak gravitational \ufb01eld",
    "level": 1,
    "page_start": 3,
    "page_end": 7,
-   "n_chars": 5225,
-   "n_words": 1190
+   "n_chars": 5081,
+   "n_words": 1041,
+   "label_start": "3",
+   "label_end": "7"
   },
   {
    "id": "sec-003-iii-topologically-massive-gravitation",
@@ -112,8 +344,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 14,
-   "n_chars": 7447,
-   "n_words": 1903
+   "n_chars": 7160,
+   "n_words": 1616,
+   "label_start": "7",
+   "label_end": "14"
   },
   {
    "id": "sec-004-iv-conclusion",
@@ -121,26 +355,52 @@
    "title": "Conclusion",
    "level": 1,
    "page_start": 14,
-   "page_end": 15,
-   "n_chars": 662,
-   "n_words": 113
+   "page_end": 14,
+   "n_chars": 499,
+   "n_words": 82,
+   "label_start": "14",
+   "label_end": "14"
   },
   {
-   "id": "sec-005-references",
+   "id": "sec-005-acknowledgment",
+   "number": null,
+   "title": "Acknowledgment",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 138,
+   "n_words": 21,
+   "label_start": "14",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-006-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 15,
    "page_end": 15,
-   "n_chars": 1540,
-   "n_words": 249
+   "n_chars": 1532,
+   "n_words": 241,
+   "label_start": "15",
+   "label_end": "15"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 6,
-  "sections": 6,
-  "chars_total": 17600
+  "toc_entries": 7,
+  "toc_inferred_entries": 7,
+  "toc_inferred_mean_confidence": 0.736,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 17351
  }
 }

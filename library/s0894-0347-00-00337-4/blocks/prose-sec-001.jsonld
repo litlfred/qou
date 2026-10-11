@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s0894-0347-00-00337-4/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/s0894-0347-00-00337-4/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "Plancherel measures. Given a ﬁnite group G, by the corresponding Plan-",
+  "title": "Introduction",
   "pageStart": 1,
   "pageEnd": 3,
-  "text": "../sections/sec-001-11-plancherel-measures-given-a-ﬁnite-group-g-by.md",
-  "derivedFrom": "library/s0894-0347-00-00337-4/manifest",
-  "sourceDocument": "library/s0894-0347-00-00337-4/manifest",
+  "text": "../sections/sec-001-1-introduction.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./s0894-0347-00-00337-4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./s0894-0347-00-00337-4/manifest.jsonld",
   "provenance": "ingested"
 }

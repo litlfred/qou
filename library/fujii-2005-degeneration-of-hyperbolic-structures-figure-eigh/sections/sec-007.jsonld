@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-007",
   "@type": [
     "doco:Section"
   ],
-  "title": "Points of ﬁnite order on E and Sol manifolds",
-  "pageStart": 8,
-  "pageEnd": 8,
+  "title": "Theorem",
+  "pageStart": 9,
+  "pageEnd": 10,
   "contains": [
     "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/blocks/prose-sec-007"
   ],
-  "derivedFrom": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/manifest",
-  "sourceDocument": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/manifest.jsonld",
   "provenance": "ingested"
 }

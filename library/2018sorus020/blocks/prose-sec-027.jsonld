@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/2018sorus020/blocks/prose-sec-027",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/2018sorus020/blocks/prose-sec-027",
   "kind": "prose",
-  "title": "For each componentΣi of Σ, the homomorphismπ1(Σi)→ π1(M) induced",
-  "pageStart": 36,
-  "pageEnd": 37,
-  "text": "../sections/sec-027-2-for-each-componentσi-of-σ-the-homomorphismπ1σi.md",
-  "derivedFrom": "library/2018sorus020/manifest",
-  "sourceDocument": "library/2018sorus020/manifest",
+  "title": "Tangent space, diﬀerential forms and twisted cohomology",
+  "pageStart": 48,
+  "pageEnd": 50,
+  "text": "../sections/sec-027-211-tangent-space-diﬀerential-forms-and-twisted.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./2018sorus020/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./2018sorus020/manifest.jsonld",
   "provenance": "ingested"
 }

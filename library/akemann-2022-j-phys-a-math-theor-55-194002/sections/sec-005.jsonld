@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/akemann-2022-j-phys-a-math-theor-55-194002/sections/sec-005",
   "@type": [
     "doco:Section"
   ],
-  "title": "(2ν + 1)",
-  "pageStart": 6,
-  "pageEnd": 8,
+  "title": "Orthogonal polynomials and partition function",
+  "pageStart": 14,
+  "pageEnd": 16,
   "contains": [
     "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-005"
   ],
-  "derivedFrom": "library/akemann-2022-j-phys-a-math-theor-55-194002/manifest",
-  "sourceDocument": "library/akemann-2022-j-phys-a-math-theor-55-194002/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./akemann-2022-j-phys-a-math-theor-55-194002/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./akemann-2022-j-phys-a-math-theor-55-194002/manifest.jsonld",
   "provenance": "ingested"
 }

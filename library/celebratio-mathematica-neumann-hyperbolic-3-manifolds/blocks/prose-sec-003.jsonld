@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/blocks/prose-sec-003",
   "kind": "prose",
   "title": "Symplectic properties",
   "pageStart": 12,
-  "pageEnd": 13,
+  "pageEnd": 12,
   "text": "../sections/sec-003-4-symplectic-properties.md",
-  "derivedFrom": "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/manifest",
-  "sourceDocument": "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./celebratio-mathematica-neumann-hyperbolic-3-manifolds/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./celebratio-mathematica-neumann-hyperbolic-3-manifolds/manifest.jsonld",
   "provenance": "ingested"
 }

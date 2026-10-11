@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/1172-2/blocks/prose-sec-004",
+  "kind": "prose",
+  "title": "$L^{2}$-torsion の計算例",
+  "pageStart": 8,
+  "pageEnd": 13,
+  "text": "../sections/sec-004-23-l2-torsion-の計算例.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./1172-2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./1172-2/manifest.jsonld",
+  "provenance": "ingested"
+}

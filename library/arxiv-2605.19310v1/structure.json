@@ -7,7 +7,11 @@
   "bytes": 293981,
   "pages": 10,
   "text_source": "embedded",
-  "math_source": "text-layer"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,139 +21,332 @@
    "stamp_date": "19 May 2026"
   },
   "doi": null,
-  "title": "A FOURIER-FREE DENSITY-INCREMENT PROOF OF ROTH\u2019S THEOREM MARK LEWKO",
-  "authors_raw": null,
+  "title": "A Fourier-Free Density-Increment Proof of Roth's Theorem",
+  "authors_raw": "ROTH\u2019S THEOREM",
   "title_lines": [
-   "A FOURIER-FREE DENSITY-INCREMENT PROOF OF",
-   "ROTH\u2019S THEOREM",
-   "MARK LEWKO"
+   "A FOURIER-FREE DENSITY-INCREMENT PROOF OF"
   ],
-  "abstract": "We give an elementary, Fourier-free proof of Roth\u2019s theorem. The proof follows Roth\u2019s original density-increment strategy, but replaces the usual Fourier-analytic step with a direct combinatorial argument involving averages over sub-progressions. 1.Introduction In 1953, Roth proved that every subset of the integers of positive upper density contains a nontrivial three-term arithmetic progression. This can be stated in the following finite form. Theorem 1(Roth [ 8]).For every \u03b1> 0, if N is sufficiently large, then every set A\u2282{ 0, 1,...,N\u2212 1} with|A|\u2265\u03b1N contains a three-term arithmetic progressionx, x+r, x+ 2rwithr\u0338= 0. Roth\u2019s theorem is a foundational result in density Ramsey theory; its extension to longer arithmetic progressions is a celebrated theorem of Sze- mer\u00b4 edi [9]. Proofs of Roth\u2019s theorem have been given using quite different methods: Roth\u2019s original proof is Fourier analytic [ 8]; Furstenberg proved Szemer\u00b4 edi\u2019s theorem in full using ergodic-theoretic methods [2]; and graph- theoretic proofs of Roth\u2019s theorem follow from the triangle removal lemma of Ruzsa and Szemer\u00b4 edi [7]. More combinatorial proofs have also been given using Szemer\u00b4 edi\u2019s cube lemma [4] as well as using ideas related to the more general Hales\u2013Jewett theorem [1]. There is also a rich history of quantitative improvements, which we do not attempt to summarize here; see [ 5, 6] for recent surveys. Roth\u2019s original proof uses a density-increment argument. Starting with a set A\u2282 [N] with no nontrivial three-term progressions, one proves that A has increased density on a long subprogression. Passing to that progression and rescaling, one repeats the argument. If the original interval is sufficiently long, the density would eventually have to exceed 1, providing a contradiction. The purpose of this note is to give a proof with the same density-increment structure, but without using Fourier analysis. Instead of detecting a large Fourier coefficient, we estimate certain averages over subprogr",
+  "abstract": "We give an elementary, Fourier-free proof of Roth\u2019s theorem. The proof follows Roth\u2019s original density-increment strategy, but replaces the usual Fourier-analytic step with a direct combinatorial argument involving averages over sub-progressions.",
   "docinfo": {
+   "Title": "A Fourier-Free Density-Increment Proof of Roth's Theorem",
    "Author": "Mark Lewko",
-   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
    "Producer": "pikepdf 8.15.1",
-   "Title": "A Fourier-Free Density-Increment Proof of Roth's Theorem"
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)"
+  },
+  "title_raw": "A FOURIER-FREE DENSITY-INCREMENT PROOF OF",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "A Fourier-Free Density-Increment Proof of Roth's Theorem",
+   "heading": "A FOURIER-FREE DENSITY-INCREMENT PROOF OF ROTH\u2019S THEOREM 1. Introduction In 1953, Roth proved that every subset of the integers of positive upper density contains a nontrivial three-term arithmetic progression. This can be stated in the following finite form. Theorem 1 (Roth [ 8 ]) . For every \u03b1 > 0",
+   "text": "A FOURIER-FREE DENSITY-INCREMENT PROOF OF",
+   "corroborated_by": [
+    "text",
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "MARK LEWKO",
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Notation",
    "page": 2,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "MARK LEWKO",
+   "title": "Preliminaries",
+   "page": 2,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "No progressions imply large energy",
+   "page": 3,
+   "source": "inferred",
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Large energy implies a modular density increment",
    "page": 4,
    "source": "inferred",
-   "number": "4"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "MARK LEWKO",
+   "title": "Finding a genuine integer progression",
    "page": 6,
    "source": "inferred",
-   "number": "6"
+   "number": "6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "MARK LEWKO",
+   "title": "Proof of Roth's theorem and the quantitative bound",
    "page": 8,
    "source": "inferred",
-   "number": "8"
+   "number": "7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "References",
+   "title": "Further remarks",
    "page": 9,
    "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "MARK LEWKO",
-   "page": 10,
-   "source": "inferred",
-   "number": "10"
+   "number": "8",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
- "sections": [
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
   {
-   "id": "sec-000-2-mark-lewko",
-   "number": "2",
-   "title": "MARK LEWKO",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 4,
-   "n_chars": 5122,
-   "n_words": 862
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "id": "sec-001-4-mark-lewko",
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 324,
+   "n_words": 41,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2268,
+   "n_words": 366,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-2-notation",
+   "number": "2",
+   "title": "Notation",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 216,
+   "n_words": 50,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-3-preliminaries",
+   "number": "3",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1147,
+   "n_words": 256,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-4-no-progressions-imply-large-energy",
    "number": "4",
-   "title": "MARK LEWKO",
+   "title": "No progressions imply large energy",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2463,
+   "n_words": 504,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-5-large-energy-implies-a-modular-density-increme",
+   "number": "5",
+   "title": "Large energy implies a modular density increment",
    "level": 1,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 3122,
-   "n_words": 570
+   "n_chars": 2725,
+   "n_words": 573,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-6-mark-lewko",
+   "id": "sec-005-6-finding-a-genuine-integer-progression",
    "number": "6",
-   "title": "MARK LEWKO",
+   "title": "Finding a genuine integer progression",
    "level": 1,
    "page_start": 6,
-   "page_end": 8,
-   "n_chars": 3606,
-   "n_words": 637
-  },
-  {
-   "id": "sec-003-8-mark-lewko",
-   "number": "8",
-   "title": "MARK LEWKO",
-   "level": 1,
-   "page_start": 8,
    "page_end": 9,
-   "n_chars": 3274,
-   "n_words": 544
+   "n_chars": 5177,
+   "n_words": 978,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-references",
-   "number": null,
-   "title": "References",
+   "id": "sec-006-8-further-remarks",
+   "number": "8",
+   "title": "Further remarks",
    "level": 1,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 1035,
-   "n_words": 157
-  },
-  {
-   "id": "sec-005-10-mark-lewko",
-   "number": "10",
-   "title": "MARK LEWKO",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 119,
-   "n_words": 16
+   "n_chars": 2261,
+   "n_words": 379,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 6,
-  "sections": 6,
-  "chars_total": 16278,
+  "toc_entries": 8,
+  "toc_inferred_entries": 8,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 16581,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main_3.tex",
    "tex_sections": 8,
-   "overlaid": 0,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -157,34 +354,65 @@
    },
    "sections": [
     {
-     "id": "sec-000-2-mark-lewko",
-     "title": "MARK LEWKO",
+     "id": "sec-front-matter",
+     "title": "Front matter",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-001-4-mark-lewko",
-     "title": "MARK LEWKO",
-     "result": "no matching \\section"
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-002-6-mark-lewko",
-     "title": "MARK LEWKO",
-     "result": "no matching \\section"
+     "id": "sec-001-2-notation",
+     "title": "Notation",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-003-8-mark-lewko",
-     "title": "MARK LEWKO",
-     "result": "no matching \\section"
+     "id": "sec-002-3-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.898,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-004-references",
-     "title": "References",
-     "result": "no matching \\section"
+     "id": "sec-003-4-no-progressions-imply-large-energy",
+     "title": "No progressions imply large energy",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-005-10-mark-lewko",
-     "title": "MARK LEWKO",
-     "result": "no matching \\section"
+     "id": "sec-004-5-large-energy-implies-a-modular-density-increme",
+     "title": "Large energy implies a modular density increment",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.927,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-6-finding-a-genuine-integer-progression",
+     "title": "Finding a genuine integer progression",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-8-further-remarks",
+     "title": "Further remarks",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.573,
+     "result": "overlaid",
+     "converter": "pandoc"
     }
    ]
   }

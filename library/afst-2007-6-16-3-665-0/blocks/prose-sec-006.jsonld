@@ -1,16 +1,18 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-006",
+  "@type": [],
   "kind": "prose",
-  "title": "The ﬁrst",
-  "pageStart": 8,
-  "pageEnd": 10,
-  "text": "../sections/sec-006-2-the-ﬁrst.md",
-  "derivedFrom": "library/afst-2007-6-16-3-665-0/manifest",
-  "sourceDocument": "library/afst-2007-6-16-3-665-0/manifest",
+  "title": "Pure diﬀerence modules over K∞with descent data",
+  "pageStart": 11,
+  "pageEnd": 13,
+  "text": "../sections/sec-006-141-pure-diﬀerence-modules-over-kwith-descent-da.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/afst-2007-6-16-3-665-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/afst-2007-6-16-3-665-0/manifest.jsonld",
   "provenance": "ingested"
 }

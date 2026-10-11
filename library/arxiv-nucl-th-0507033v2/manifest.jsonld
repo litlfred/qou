@@ -9,7 +9,7 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-nucl-th-0507033v2",
+  "title": "Cluster Formation and The Virial Equation of State of Low-Density Nuclear Matter",
   "contains": [
     "library/arxiv-nucl-th-0507033v2/sections/sec-front-matter",
     "library/arxiv-nucl-th-0507033v2/sections/sec-000",
@@ -23,13 +23,7 @@
     "library/arxiv-nucl-th-0507033v2/sections/sec-008",
     "library/arxiv-nucl-th-0507033v2/sections/sec-009",
     "library/arxiv-nucl-th-0507033v2/sections/sec-010",
-    "library/arxiv-nucl-th-0507033v2/sections/sec-011",
-    "library/arxiv-nucl-th-0507033v2/sections/sec-012",
-    "library/arxiv-nucl-th-0507033v2/sections/sec-013",
-    "library/arxiv-nucl-th-0507033v2/sections/sec-014",
-    "library/arxiv-nucl-th-0507033v2/sections/sec-015",
-    "library/arxiv-nucl-th-0507033v2/sections/sec-016",
-    "library/arxiv-nucl-th-0507033v2/sections/sec-017"
+    "library/arxiv-nucl-th-0507033v2/sections/sec-011"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -47,7 +41,9 @@
   },
   "meta": {
     "doc_id": "arxiv-nucl-th-0507033v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0507033v2.pdf",
     "source_sha256": "57509b3ce5f9f8cc998b7bac4748e8f123d849da9ecfe6d1723d8e2b80ba47e9",
     "pages": 15,

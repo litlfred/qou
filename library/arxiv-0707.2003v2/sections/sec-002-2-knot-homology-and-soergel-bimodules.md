@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-0707.2003v2
-doc_title: "A geometric model for Hochschild homology of Soergel bimodules BEN WEBSTER GEORDIE WILLIAMSON School of Mathematics Mathematisches Institut Institute for Advanced Study der Univers"
+doc_title: "A geometric model for Hochschild homology of Soergel bimodules Introduction"
 section_id: sec-002-2-knot-homology-and-soergel-bimodules
 section_title: "Knot homology and Soergel bimodules"
 section_number: 2
 pages: 5-7
 source_pdf: 0707.2003v2.pdf
 source_sha256: 0b8fe37aabeee412
-doc_brief: "A geometric model for Hochschild homology of Soergel bimodules BEN WEBSTER GEORDIE WILLIAMSON School of Mathematics Mathematisches Institut Institute for Advanced Study der Universität Freiburg — An"
+toc_source: inferred
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.988
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 1.0
 ---
 []{#sec:knot-homol-soerg label="sec:knot-homol-soerg"}
 

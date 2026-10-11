@@ -1,22 +1,35 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/manifest.jsonld",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "The non-Riemannian nature of perceptual color space",
   "contains": [
+    "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/sections/sec-front-matter",
     "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/sections/sec-000",
-    "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/sections/sec-001"
+    "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/sections/sec-001",
+    "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/sections/sec-002",
+    "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/sections/sec-003",
+    "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/sections/sec-004",
+    "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/sections/sec-005"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-color-space.pdf",
     "source_sha256": "2bc66a26d3901a2979d0591dc4e85fb46bc78e8defecc123002d4d2222195c89",
     "pages": 10,
     "arxiv": null,
-    "doi": "10.1073/pnas.2119753119",
+    "doi": null,
     "document_class": "math",
     "extractor_validated": true,
     "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"

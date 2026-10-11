@@ -7,6 +7,10 @@
   "bytes": 1110969,
   "pages": 69,
   "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:24Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -17,654 +21,1279 @@
    "stamp_date": "9 Jun 2000"
   },
   "doi": null,
-  "title": "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)",
-  "authors_raw": "Department of Physics, University of Idaho, Moscow, Idaho 8 3844, U. S. A",
+  "title": "arXiv:nucl-th/0006014v1 9 Jun 2000",
+  "authors_raw": "Department of Physics, University of Idaho, Moscow, Idaho 83844, U. S. A",
   "title_lines": [
-   "The high-precision, charge-dependent Bonn nucleon-nucle on",
+   "The high-precision, charge-dependent Bonn nucleon-nucleon",
    "potential (CD-Bonn)",
    "R. Machleidt \u2217"
   ],
   "abstract": null,
   "docinfo": {
+   "Title": "arXiv:nucl-th/0006014v1  9 Jun 2000",
    "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20241126160947-05'00'",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:nucl-th/0006014v1  9 Jun 2000"
+   "CreationDate": "D:20241126160947-05'00'"
   },
-  "title_prev": "The high-precision, charge-dependent Bonn nucleon-nucle on potential (CD-Bonn) R. Machleidt \u2217"
+  "title_raw": "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) R. Machleidt \u2217",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:nucl-th/0006014v1 9 Jun 2000",
+   "heading": "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)",
+   "text": "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) R. Machleidt \u2217",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Scattering equation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "R-matrix and partial wave decomposition . . . . . . . . . . . . . . . . . . 18",
-   "page": 1,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Phase shifts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21",
-   "page": 1,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "E\ufb00ective range expansion . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 4",
-   "page": 1,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "OBE amplitudes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Partial wave decomposition . . . . . . . . . . . . . . . . . . . . . . . . . . 26",
-   "page": 1,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Final potential expressions . . . . . . . . . . . . . . . . . . . . . . . . . . 28",
-   "page": 1,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Abstract",
-   "page": 2,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "INTRODUCTION",
+   "title": "Introduction",
    "page": 3,
    "source": "inferred",
-   "number": "I"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "3"
   },
   {
    "level": 1,
-   "title": "THE MODEL",
+   "title": "The model",
    "page": 4,
    "source": "inferred",
-   "number": "II"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "4"
   },
   {
    "level": 1,
-   "title": "CHARGE DEPENDENCE",
+   "title": "Charge dependence",
    "page": 7,
    "source": "inferred",
-   "number": "III"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "7"
+  },
+  {
+   "level": 2,
+   "title": "Charge symmetry breaking",
+   "page": 8,
+   "source": "inferred",
+   "number": "3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "8"
+  },
+  {
+   "level": 2,
+   "title": "Charge independence breaking",
+   "page": 9,
+   "source": "inferred",
+   "number": "3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "9"
   },
   {
    "level": 1,
-   "title": "NUCLEON-NUCLEON SCA TTERING",
+   "title": "Nucleon-nucleon scattering",
    "page": 10,
    "source": "inferred",
-   "number": "IV"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "10"
   },
   {
    "level": 1,
-   "title": "THE DEUTERON",
+   "title": "The deuteron",
    "page": 13,
    "source": "inferred",
-   "number": "V"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "13"
   },
   {
    "level": 1,
-   "title": "CONCLUSIONS",
+   "title": "Conclusions",
    "page": 14,
    "source": "inferred",
-   "number": "VI"
+   "number": "6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "14"
   },
   {
    "level": 1,
-   "title": "Acknowledgments",
+   "title": "Two-nucleon scattering in momentum space",
    "page": 15,
    "source": "inferred",
-   "number": null
+   "number": "A",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "15"
   },
   {
-   "level": 1,
+   "level": 2,
    "title": "Scattering equation",
    "page": 15,
    "source": "inferred",
-   "number": "1"
+   "number": "A.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "15"
   },
   {
-   "level": 1,
+   "level": 2,
    "title": "R-matrix and partial wave decomposition",
    "page": 18,
    "source": "inferred",
-   "number": "2"
+   "number": "A.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "18"
   },
   {
-   "level": 1,
-   "title": "(q\u2032,q ) \u2261 \u27e8+ + |RJ(q\u2032,q )| + +\u27e9",
-   "page": 19,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(q\u2032,q ) \u2261 \u27e8+ + |RJ(q\u2032,q )| \u2212 \u2212\u27e9",
-   "page": 19,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(q\u2032,q ) \u2261 \u27e8+ \u2212 |RJ (q\u2032,q )| + \u2212\u27e9",
-   "page": 19,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(q\u2032,q ) \u2261 \u27e8+ \u2212 |RJ (q\u2032,q )| \u2212 +\u27e9 (A22)",
-   "page": 19,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "(q\u2032,q ) \u2261 \u27e8+ + |RJ(q\u2032,q )| + \u2212\u27e9",
-   "page": 19,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "(q\u2032,q ) \u2261 \u27e8+ \u2212 |RJ (q\u2032,q )| + +\u27e9",
-   "page": 19,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "(q\u2032,q ) = RJ",
-   "page": 19,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "(q,q \u2032). (A23)",
-   "page": 19,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
+   "level": 2,
    "title": "Phase shifts",
    "page": 21,
    "source": "inferred",
-   "number": "3"
+   "number": "A.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "21"
   },
   {
-   "level": 1,
-   "title": "The asymptotic wave function associated with VS and \u03b4S",
-   "page": 23,
-   "source": "inferred",
-   "number": "L"
-  },
-  {
-   "level": 1,
-   "title": "E\ufb00ective range expansion",
+   "level": 2,
+   "title": "Effective range expansion",
    "page": 24,
    "source": "inferred",
-   "number": "4"
+   "number": "A.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "24"
   },
   {
    "level": 1,
-   "title": "(\u03b7\u2032)q cot(\u03b4C",
-   "page": 24,
+   "title": "One-boson exchange potential",
+   "page": 25,
    "source": "inferred",
-   "number": "0"
+   "number": "B",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "25"
   },
   {
-   "level": 1,
-   "title": "(\u03b7\u2032) = 2\u03c0\u03b7 \u2032",
-   "page": 24,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
+   "level": 2,
    "title": "OBE amplitudes",
    "page": 25,
    "source": "inferred",
-   "number": "1"
+   "number": "B.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "25"
   },
   {
-   "level": 1,
+   "level": 2,
    "title": "Partial wave decomposition",
    "page": 26,
    "source": "inferred",
-   "number": "2"
+   "number": "B.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "26"
   },
   {
-   "level": 1,
+   "level": 2,
    "title": "Final potential expressions",
    "page": 28,
    "source": "inferred",
-   "number": "3"
+   "number": "B.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "28"
   },
   {
    "level": 1,
-   "title": "(\u02c6k) +\u03c82(k)Y 1M",
+   "title": "Potential parameters",
+   "page": 32,
+   "source": "inferred",
+   "number": "C",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "32"
+  },
+  {
+   "level": 1,
+   "title": "Deuteron calculations",
    "page": 33,
    "source": "inferred",
-   "number": "01"
-  },
-  {
-   "level": 1,
-   "title": "(\u02c6k)",
-   "page": 33,
-   "source": "inferred",
-   "number": "21"
-  },
-  {
-   "level": 1,
-   "title": "(q) = (2/\u03c0)1/ 2",
-   "page": 35,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(q) = (2/\u03c0)1/ 2",
-   "page": 35,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 37,
-   "source": "inferred",
-   "number": null
+   "number": "D",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "33"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Numerical values of our deuteron waves and a convenient parametrization are given in Appendix D which also contains an account of how to conduct deuteron calculations in momentum space",
+   "page": 14,
+   "confidence": 0.7,
+   "evidence": [
+    "referenced"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Di\ufb00erences \u03b4nn\u2212\u03b4pp due to the impact of nucleon mass splitting on kinematics (dotted",
+   "page": 60,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "60"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Di\ufb00erences \u03b4np \u2212\u03b4pp as produced by various CIB mechanisms. Shown are the contri-",
+   "page": 61,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "61"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The di\ufb00erence \u03b4np \u2212\u03b4pp due to the charge-dependence of the strong force (dashed",
+   "page": 62,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "62"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "pp phase parameters in partial waves with J \u22644",
+   "page": 63,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "63"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "np phase parameters in partial waves with J \u22644",
+   "page": 65,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "65"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Deuteron wave functions. The family of large curves are u(r) and the family of small curves are w(r). The solid lines represent the wave functions generated from the CD-Bonn potential, while the dashed and dotted lines are from the Nijmegen-I [31] and Argonne V18 [32] potentials, respectively",
+   "page": 69,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "69"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-1-scattering-equation-15",
-   "number": "1",
-   "title": "Scattering equation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-001-2-r-matrix-and-partial-wave-decomposition-18",
-   "number": "2",
-   "title": "R-matrix and partial wave decomposition . . . . . . . . . . . . . . . . . . 18",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-002-3-phase-shifts-21",
-   "number": "3",
-   "title": "Phase shifts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-003-4-e\ufb00ective-range-expansion-2-4",
-   "number": "4",
-   "title": "E\ufb00ective range expansion . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 4",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 33,
-   "n_words": 5
-  },
-  {
-   "id": "sec-004-1-obe-amplitudes-25",
-   "number": "1",
-   "title": "OBE amplitudes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 83,
-   "n_words": 31
-  },
-  {
-   "id": "sec-005-3-final-potential-expressions-28",
-   "number": "3",
-   "title": "Final potential expressions . . . . . . . . . . . . . . . . . . . . . . . . . . 28",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 2,
-   "n_chars": 91,
-   "n_words": 12
-  },
-  {
-   "id": "sec-006-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
-   "page_start": 2,
+   "page_start": 1,
    "page_end": 3,
-   "n_chars": 1072,
-   "n_words": 178
+   "n_chars": 2361,
+   "n_words": 529,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
-   "id": "sec-007-i-introduction",
-   "number": "I",
-   "title": "INTRODUCTION",
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 1392,
-   "n_words": 222
+   "n_chars": 1378,
+   "n_words": 208,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
-   "id": "sec-008-ii-the-model",
-   "number": "II",
-   "title": "THE MODEL",
+   "id": "sec-001-2-the-model",
+   "number": "2",
+   "title": "The model",
    "level": 1,
    "page_start": 3,
    "page_end": 7,
-   "n_chars": 12512,
-   "n_words": 2206
+   "n_chars": 12360,
+   "n_words": 2054,
+   "label_start": "3",
+   "label_end": "7"
   },
   {
-   "id": "sec-009-iii-charge-dependence",
-   "number": "III",
-   "title": "CHARGE DEPENDENCE",
+   "id": "sec-002-3-charge-dependence",
+   "number": "3",
+   "title": "Charge dependence",
    "level": 1,
    "page_start": 7,
-   "page_end": 10,
-   "n_chars": 10578,
-   "n_words": 1907
+   "page_end": 7,
+   "n_chars": 359,
+   "n_words": 55,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-010-iv-nucleon-nucleon-sca-ttering",
-   "number": "IV",
-   "title": "NUCLEON-NUCLEON SCA TTERING",
+   "id": "sec-003-31-charge-symmetry-breaking",
+   "number": "3.1",
+   "title": "Charge symmetry breaking",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 6846,
+   "n_words": 1169,
+   "label_start": "7",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-004-32-charge-independence-breaking",
+   "number": "3.2",
+   "title": "Charge independence breaking",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 3168,
+   "n_words": 582,
+   "label_start": "9",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-005-4-nucleon-nucleon-scattering",
+   "number": "4",
+   "title": "Nucleon-nucleon scattering",
    "level": 1,
    "page_start": 10,
    "page_end": 13,
-   "n_chars": 9128,
-   "n_words": 1635
+   "n_chars": 9076,
+   "n_words": 1583,
+   "label_start": "10",
+   "label_end": "13"
   },
   {
-   "id": "sec-011-v-the-deuteron",
-   "number": "V",
-   "title": "THE DEUTERON",
+   "id": "sec-006-5-the-deuteron",
+   "number": "5",
+   "title": "The deuteron",
    "level": 1,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 2737,
-   "n_words": 471
+   "n_chars": 2714,
+   "n_words": 448,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
-   "id": "sec-012-vi-conclusions",
-   "number": "VI",
-   "title": "CONCLUSIONS",
+   "id": "sec-007-6-conclusions",
+   "number": "6",
+   "title": "Conclusions",
    "level": 1,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 5214,
-   "n_words": 835
+   "n_chars": 5380,
+   "n_words": 828,
+   "label_start": "14",
+   "label_end": "15"
   },
   {
-   "id": "sec-013-acknowledgments",
-   "number": null,
-   "title": "Acknowledgments",
+   "id": "sec-008-a-two-nucleon-scattering-in-momentum-space",
+   "number": "A",
+   "title": "Two-nucleon scattering in momentum space",
    "level": 1,
    "page_start": 15,
    "page_end": 15,
-   "n_chars": 246,
-   "n_words": 43
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "15",
+   "label_end": "15"
   },
   {
-   "id": "sec-014-1-scattering-equation",
-   "number": "1",
+   "id": "sec-009-a1-scattering-equation",
+   "number": "A.1",
    "title": "Scattering equation",
-   "level": 1,
+   "level": 2,
    "page_start": 15,
    "page_end": 18,
-   "n_chars": 5285,
-   "n_words": 1056
+   "n_chars": 5243,
+   "n_words": 1014,
+   "label_start": "15",
+   "label_end": "18"
   },
   {
-   "id": "sec-015-2-r-matrix-and-partial-wave-decomposition",
-   "number": "2",
+   "id": "sec-010-a2-r-matrix-and-partial-wave-decomposition",
+   "number": "A.2",
    "title": "R-matrix and partial wave decomposition",
-   "level": 1,
+   "level": 2,
    "page_start": 18,
-   "page_end": 19,
-   "n_chars": 1935,
-   "n_words": 358
-  },
-  {
-   "id": "sec-016-1-qq-rjqq",
-   "number": "1",
-   "title": "(q\u2032,q ) \u2261 \u27e8+ + |RJ(q\u2032,q )| + +\u27e9",
-   "level": 1,
-   "page_start": 19,
-   "page_end": 19,
-   "n_chars": 2,
-   "n_words": 1
-  },
-  {
-   "id": "sec-017-2-qq-rjqq",
-   "number": "2",
-   "title": "(q\u2032,q ) \u2261 \u27e8+ + |RJ(q\u2032,q )| \u2212 \u2212\u27e9",
-   "level": 1,
-   "page_start": 19,
-   "page_end": 19,
-   "n_chars": 2,
-   "n_words": 1
-  },
-  {
-   "id": "sec-018-3-qq-rj-qq",
-   "number": "3",
-   "title": "(q\u2032,q ) \u2261 \u27e8+ \u2212 |RJ (q\u2032,q )| + \u2212\u27e9",
-   "level": 1,
-   "page_start": 19,
-   "page_end": 19,
-   "n_chars": 2,
-   "n_words": 1
-  },
-  {
-   "id": "sec-019-4-qq-rj-qq-a22",
-   "number": "4",
-   "title": "(q\u2032,q ) \u2261 \u27e8+ \u2212 |RJ (q\u2032,q )| \u2212 +\u27e9 (A22)",
-   "level": 1,
-   "page_start": 19,
-   "page_end": 19,
-   "n_chars": 2,
-   "n_words": 1
-  },
-  {
-   "id": "sec-020-5-qq-rjqq",
-   "number": "5",
-   "title": "(q\u2032,q ) \u2261 \u27e8+ + |RJ(q\u2032,q )| + \u2212\u27e9",
-   "level": 1,
-   "page_start": 19,
-   "page_end": 19,
-   "n_chars": 2,
-   "n_words": 1
-  },
-  {
-   "id": "sec-021-6-qq-rj-qq",
-   "number": "6",
-   "title": "(q\u2032,q ) \u2261 \u27e8+ \u2212 |RJ (q\u2032,q )| + +\u27e9",
-   "level": 1,
-   "page_start": 19,
-   "page_end": 19,
-   "n_chars": 41,
-   "n_words": 11
-  },
-  {
-   "id": "sec-022-5-qq-rj",
-   "number": "5",
-   "title": "(q\u2032,q ) = RJ",
-   "level": 1,
-   "page_start": 19,
-   "page_end": 19,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-023-6-qq-a23",
-   "number": "6",
-   "title": "(q,q \u2032). (A23)",
-   "level": 1,
-   "page_start": 19,
    "page_end": 21,
-   "n_chars": 3151,
-   "n_words": 738
+   "n_chars": 5287,
+   "n_words": 1083,
+   "label_start": "18",
+   "label_end": "21"
   },
   {
-   "id": "sec-024-3-phase-shifts",
-   "number": "3",
+   "id": "sec-011-a3-phase-shifts",
+   "number": "A.3",
    "title": "Phase shifts",
-   "level": 1,
+   "level": 2,
    "page_start": 21,
-   "page_end": 23,
-   "n_chars": 4411,
-   "n_words": 809
-  },
-  {
-   "id": "sec-025-l-the-asymptotic-wave-function-associated-with-v",
-   "number": "L",
-   "title": "The asymptotic wave function associated with VS and \u03b4S",
-   "level": 1,
-   "page_start": 23,
-   "page_end": 24,
-   "n_chars": 1126,
-   "n_words": 199
-  },
-  {
-   "id": "sec-026-4-e\ufb00ective-range-expansion",
-   "number": "4",
-   "title": "E\ufb00ective range expansion",
-   "level": 1,
-   "page_start": 24,
-   "page_end": 24,
-   "n_chars": 442,
-   "n_words": 87
-  },
-  {
-   "id": "sec-027-0-\u03b7q-cot\u03b4c",
-   "number": "0",
-   "title": "(\u03b7\u2032)q cot(\u03b4C",
-   "level": 1,
-   "page_start": 24,
-   "page_end": 24,
-   "n_chars": 181,
-   "n_words": 42
-  },
-  {
-   "id": "sec-028-0-\u03b7-2\u03c0\u03b7",
-   "number": "0",
-   "title": "(\u03b7\u2032) = 2\u03c0\u03b7 \u2032",
-   "level": 1,
-   "page_start": 24,
    "page_end": 25,
-   "n_chars": 1119,
-   "n_words": 180
+   "n_chars": 7344,
+   "n_words": 1320,
+   "label_start": "21",
+   "label_end": "25"
   },
   {
-   "id": "sec-029-1-obe-amplitudes",
-   "number": "1",
-   "title": "OBE amplitudes",
+   "id": "sec-012-b-one-boson-exchange-potential",
+   "number": "B",
+   "title": "One-boson exchange potential",
    "level": 1,
    "page_start": 25,
-   "page_end": 26,
-   "n_chars": 2359,
-   "n_words": 488
+   "page_end": 25,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "25",
+   "label_end": "25"
   },
   {
-   "id": "sec-030-2-partial-wave-decomposition",
-   "number": "2",
+   "id": "sec-013-b1-obe-amplitudes",
+   "number": "B.1",
+   "title": "OBE amplitudes",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 2320,
+   "n_words": 447,
+   "label_start": "25",
+   "label_end": "26"
+  },
+  {
+   "id": "sec-014-b2-partial-wave-decomposition",
+   "number": "B.2",
    "title": "Partial wave decomposition",
-   "level": 1,
+   "level": 2,
    "page_start": 26,
    "page_end": 28,
-   "n_chars": 2676,
-   "n_words": 700
+   "n_chars": 2560,
+   "n_words": 584,
+   "label_start": "26",
+   "label_end": "28"
   },
   {
-   "id": "sec-031-3-final-potential-expressions",
-   "number": "3",
+   "id": "sec-015-b3-final-potential-expressions",
+   "number": "B.3",
    "title": "Final potential expressions",
-   "level": 1,
+   "level": 2,
    "page_start": 28,
-   "page_end": 33,
-   "n_chars": 8241,
-   "n_words": 1901
+   "page_end": 32,
+   "n_chars": 5512,
+   "n_words": 1344,
+   "label_start": "28",
+   "label_end": "32"
   },
   {
-   "id": "sec-032-01-\u02c6k-\u03c82ky-1m",
-   "number": "01",
-   "title": "(\u02c6k) +\u03c82(k)Y 1M",
+   "id": "sec-016-c-potential-parameters",
+   "number": "C",
+   "title": "Potential parameters",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 2524,
+   "n_words": 476,
+   "label_start": "32",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-017-d-deuteron-calculations",
+   "number": "D",
+   "title": "Deuteron calculations",
    "level": 1,
    "page_start": 33,
-   "page_end": 35,
-   "n_chars": 4017,
-   "n_words": 836
-  },
-  {
-   "id": "sec-033-0-q-2\u03c01-2",
-   "number": "0",
-   "title": "(q) = (2/\u03c0)1/ 2",
-   "level": 1,
-   "page_start": 35,
-   "page_end": 37,
-   "n_chars": 1090,
-   "n_words": 237
-  },
-  {
-   "id": "sec-034-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 37,
    "page_end": 69,
-   "n_chars": 39098,
-   "n_words": 7604
+   "n_chars": 43767,
+   "n_words": 8164,
+   "label_start": "33",
+   "label_end": "69"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 38,
-  "sections": 35,
-  "chars_total": 118268,
+  "toc_entries": 19,
+  "toc_inferred_entries": 19,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.111,
+  "toc_inferred_method": "latex",
+  "figure_entries": 7,
+  "figure_sequence_gaps": [
+   "figure 1",
+   "figure 2"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "APPENDIXES"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 19,
+  "chars_total": 118199,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "bonn.tex",
    "tex_sections": 8,
-   "overlaid": 5,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -672,194 +1301,118 @@
    },
    "sections": [
     {
-     "id": "sec-000-1-scattering-equation-15",
-     "title": "Scattering equation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15",
+     "id": "sec-front-matter",
+     "title": "Front matter",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-001-2-r-matrix-and-partial-wave-decomposition-18",
-     "title": "R-matrix and partial wave decomposition . . . . . . . . . . . . . . . . . . 18",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-002-3-phase-shifts-21",
-     "title": "Phase shifts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-003-4-e\ufb00ective-range-expansion-2-4",
-     "title": "E\ufb00ective range expansion . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 4",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-004-1-obe-amplitudes-25",
-     "title": "OBE amplitudes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-005-3-final-potential-expressions-28",
-     "title": "Final potential expressions . . . . . . . . . . . . . . . . . . . . . . . . . . 28",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-006-abstract",
-     "title": "Abstract",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-007-i-introduction",
-     "title": "INTRODUCTION",
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
      "prose_ratio": 0.316,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-008-ii-the-model",
-     "title": "THE MODEL",
+     "id": "sec-001-2-the-model",
+     "title": "The model",
      "prose_ratio": 0.987,
-     "coverage_ratio": 0.694,
+     "coverage_ratio": 0.682,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-iii-charge-dependence",
-     "title": "CHARGE DEPENDENCE",
+     "id": "sec-002-3-charge-dependence",
+     "title": "Charge dependence",
+     "prose_ratio": 0.198,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-31-charge-symmetry-breaking",
+     "title": "Charge symmetry breaking",
      "prose_ratio": 0.992,
-     "coverage_ratio": 0.987,
+     "coverage_ratio": 0.849,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-iv-nucleon-nucleon-sca-ttering",
-     "title": "NUCLEON-NUCLEON SCA TTERING",
+     "id": "sec-004-32-charge-independence-breaking",
+     "title": "Charge independence breaking",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-4-nucleon-nucleon-scattering",
+     "title": "Nucleon-nucleon scattering",
      "prose_ratio": 0.992,
-     "coverage_ratio": 0.982,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-v-the-deuteron",
-     "title": "THE DEUTERON",
+     "id": "sec-006-5-the-deuteron",
+     "title": "The deuteron",
      "prose_ratio": 0.994,
-     "coverage_ratio": 0.994,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-012-vi-conclusions",
-     "title": "CONCLUSIONS",
-     "prose_ratio": 0.938,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-acknowledgments",
-     "title": "Acknowledgments",
+     "id": "sec-007-6-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-a-two-nucleon-scattering-in-momentum-space",
+     "title": "Two-nucleon scattering in momentum space",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-014-1-scattering-equation",
+     "id": "sec-009-a1-scattering-equation",
      "title": "Scattering equation",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-015-2-r-matrix-and-partial-wave-decomposition",
+     "id": "sec-010-a2-r-matrix-and-partial-wave-decomposition",
      "title": "R-matrix and partial wave decomposition",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-016-1-qq-rjqq",
-     "title": "(q\u2032,q ) \u2261 \u27e8+ + |RJ(q\u2032,q )| + +\u27e9",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-017-2-qq-rjqq",
-     "title": "(q\u2032,q ) \u2261 \u27e8+ + |RJ(q\u2032,q )| \u2212 \u2212\u27e9",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-018-3-qq-rj-qq",
-     "title": "(q\u2032,q ) \u2261 \u27e8+ \u2212 |RJ (q\u2032,q )| + \u2212\u27e9",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-019-4-qq-rj-qq-a22",
-     "title": "(q\u2032,q ) \u2261 \u27e8+ \u2212 |RJ (q\u2032,q )| \u2212 +\u27e9 (A22)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-020-5-qq-rjqq",
-     "title": "(q\u2032,q ) \u2261 \u27e8+ + |RJ(q\u2032,q )| + \u2212\u27e9",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-021-6-qq-rj-qq",
-     "title": "(q\u2032,q ) \u2261 \u27e8+ \u2212 |RJ (q\u2032,q )| + +\u27e9",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-022-5-qq-rj",
-     "title": "(q\u2032,q ) = RJ",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-023-6-qq-a23",
-     "title": "(q,q \u2032). (A23)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-024-3-phase-shifts",
+     "id": "sec-011-a3-phase-shifts",
      "title": "Phase shifts",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-025-l-the-asymptotic-wave-function-associated-with-v",
-     "title": "The asymptotic wave function associated with VS and \u03b4S",
+     "id": "sec-012-b-one-boson-exchange-potential",
+     "title": "One-boson exchange potential",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-026-4-e\ufb00ective-range-expansion",
-     "title": "E\ufb00ective range expansion",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-027-0-\u03b7q-cot\u03b4c",
-     "title": "(\u03b7\u2032)q cot(\u03b4C",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-028-0-\u03b7-2\u03c0\u03b7",
-     "title": "(\u03b7\u2032) = 2\u03c0\u03b7 \u2032",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-029-1-obe-amplitudes",
+     "id": "sec-013-b1-obe-amplitudes",
      "title": "OBE amplitudes",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-030-2-partial-wave-decomposition",
+     "id": "sec-014-b2-partial-wave-decomposition",
      "title": "Partial wave decomposition",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-031-3-final-potential-expressions",
+     "id": "sec-015-b3-final-potential-expressions",
      "title": "Final potential expressions",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-032-01-\u02c6k-\u03c82ky-1m",
-     "title": "(\u02c6k) +\u03c82(k)Y 1M",
+     "id": "sec-016-c-potential-parameters",
+     "title": "Potential parameters",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-033-0-q-2\u03c01-2",
-     "title": "(q) = (2/\u03c0)1/ 2",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-034-references",
-     "title": "References",
+     "id": "sec-017-d-deuteron-calculations",
+     "title": "Deuteron calculations",
      "result": "no matching \\section"
     }
    ]

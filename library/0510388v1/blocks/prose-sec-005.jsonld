@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/0510388v1/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/0510388v1/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "Geodesics in S",
-  "pageStart": 36,
-  "pageEnd": 38,
-  "text": "../sections/sec-005-14-geodesics-in-s.md",
-  "derivedFrom": "library/0510388v1/manifest",
-  "sourceDocument": "library/0510388v1/manifest",
+  "title": "Left-invariant vector fields on S3 .",
+  "pageStart": 12,
+  "pageEnd": 15,
+  "text": "../sections/sec-005-4-left-invariant-vector-fields-on-s3.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./0510388v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./0510388v1/manifest.jsonld",
   "provenance": "ingested"
 }

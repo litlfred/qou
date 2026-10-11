@@ -6,472 +6,595 @@
   "sha256": "8e37e11b8c8953c817210bf7f975bdf3d98860b8d102cfa8463e40914f1f38ec",
   "bytes": 306502,
   "pages": 35,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:17Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "ACTA MATHEMATICA VIETNAMICA 219 AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS",
+  "title": "ACTA MATHEMATICA VIETNAMICA AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS",
   "authors_raw": "HITOSHI MURAKAMI",
   "title_lines": [
-   "ACTA MATHEMATICA VIETNAMICA 219",
+   "ACTA MATHEMATICA VIETNAMICA",
    "AN INTRODUCTION TO THE VOLUME CONJECTURE",
    "AND ITS GENERALIZATIONS"
   ],
-  "abstract": "In this paper we give an introduction to the volume conjectur e and its generalizations. Especially we discuss relations o f the asymptotic be- haviors of the colored Jones polynomials of a knot with di\ufb00er ent parameters to representations of the fundamental group of the knot comp lement at the special linear group over complex numbers by taking the \ufb01gur e-eight knot and torus knots as examples. After V. Jones\u2019 discovery of his celebrated polynomial inva riant V (K; t) in 1985 [22], Quantum Topology has been attracting many resear chers; not only mathematicians but also physicists. The Jones polynomial w as generalized to two kinds of two-variable polynomials, the HOMFLYpt polynomia l [10, 52] and the Kau\ufb00man polynomial [27] (see also [21, 3] for another one-va riable specialization). It turned out that these polynomial invariants are related t o quantum groups introduced by V. Drinfel \u2032d and M. Jimbo (see for example [26, 55]) and their representations. For example the Jones polynomial comes fr om the quantum group Uq(sl2(C)) and its two-dimensional representation. We can also de\ufb01n e the quantum invariant associated with a quantum group and its re presentation. If we replace the quantum parameter q of a quantum invariant ( t in V (K; t)) with eh we obtain a formal power series in the formal parameter h. Fixing a degree d of the parameter h, all the degree d coe\ufb03cients of quantum invariants share a \ufb01niteness property. By using this property, one can d e\ufb01ne a notion of \ufb01nite type invariant [2, 1]. (See [57] for V. Vassiliev\u2019s ori ginal idea.) Via the Kontsevich integral [35] (see also [36]) we can recov er a quantum invariant from the corresponding \u2018classical\u2019 data. (Note t hat a quantum group is a deformation of a \u2018classical\u2019 Lie algebra.) So for exampl e one only needs to know the Lie algebra sl2(C) (easy!) and its fundamental two-dimensional representation (very easy!) to de\ufb01ne the Jones polynomial, provided that one knows the Kontsevich integral (unfortunately, t",
+  "abstract": "In this paper we give an introduction to the volume conjecture and its generalizations. Especially we discuss relations of the asymptotic be- haviors of the colored Jones polynomials of a knot with di\ufb00erent parameters to representations of the fundamental group of the knot complement at the special linear group over complex numbers by taking the \ufb01gure-eight knot and torus knots as examples. After V. Jones\u2019 discovery of his celebrated polynomial invariant V (K; t) in 1985 [22], Quantum Topology has been attracting many researchers; not only mathematicians but also physicists. The Jones polynomial was generalized to two kinds of two-variable polynomials, the HOMFLYpt polynomial [10, 52] and the Kau\ufb00man polynomial [27] (see also [21, 3] for another one-variable specialization). It turned out that these polynomial invariants are related to quantum groups introduced by V. Drinfel\u2032d and M. Jimbo (see for example [26, 55]) and their representations. For example the Jones polynomial comes from the quantum group Uq(sl2(C)) and its two-dimensional representation. We can also de\ufb01ne the quantum invariant associated with a quantum group and its representation. If we replace the quantum parameter q of a quantum invariant (t in V (K; t)) with eh we obtain a formal power series in the formal parameter h. Fixing a degree d of the parameter h, all the degree d coe\ufb03cients of quantum invariants share a \ufb01niteness property. By using this property, one can de\ufb01ne a notion of \ufb01nite type invariant [2, 1]. (See [57] for V. Vassiliev\u2019s original idea.) Via the Kontsevich integral [35] (see also [36]) we can recover a quantum invariant from the corresponding \u2018classical\u2019 data. (Note that a quantum group is a deformation of a \u2018classical\u2019 Lie algebra.) So for example one only needs to know the Lie algebra sl2(C) (easy!) and its fundamental two-dimensional representation (very easy!) to de\ufb01ne the Jones polynomial, provided that one knows the Kontsevich integral (unfortunately, this is very di\ufb03cult).",
   "docinfo": {
+   "Title": "Bai2_Murakami.dvi",
    "Producer": "MiKTeX GPL Ghostscript 8.60",
-   "CreationDate": "D:20090109081046Z",
    "Creator": "dvips(k) 5.96dev Copyright 2007 Radical Eye Software",
-   "Title": "Bai2_Murakami.dvi"
+   "CreationDate": "D:20090109081046Z"
+  },
+  "title_raw": "ACTA MATHEMATICA VIETNAMICA AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "Bai2_Murakami.dvi",
+   "heading": "AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS After V. Jones\u2019 discovery of his celebrated polynomial invariant V ( K ; t ) in 1985 [22], Quantum Topology has been attracting many researchers; not only mathematicians but also physicists. The Jones polynomial was generalized to two",
+   "text": "ACTA MATHEMATICA VIETNAMICA AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Preliminaries",
-   "page": 2,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 2,
-   "title": "Colored Jones polynomial. Let K be an oriented knot in the three-sphere",
-   "page": 2,
-   "source": "inferred",
-   "number": "1.1"
-  },
-  {
-   "level": 2,
-   "title": "SL(2; C)-Character variety of a knot group. For a knot in S3, let us",
-   "page": 4,
-   "source": "inferred",
-   "number": "1.2"
-  },
-  {
-   "level": 2,
-   "title": "V olume and the Chern\u2013Simons invariant of a representation. For",
+   "title": "Volume and the Chern\u2013Simons invariant of a representation. For",
    "page": 6,
    "source": "inferred",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "A \u2227 A \u2227 A",
-   "page": 6,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Im(uv(u)),(1.5)",
-   "page": 10,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "Im(r u + s v(u)) (mod \u03c0 2Z).(1.6)",
-   "page": 10,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Volume conjecture and its generalizations",
-   "page": 10,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Im",
-   "page": 12,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "Re(u) Im",
-   "page": 12,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Example 1 \u2013 figure-eight knot",
-   "page": 12,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 2,
-   "title": "Representations of the fundamental group. Here we follow R. Riley",
-   "page": 13,
-   "source": "inferred",
-   "number": "3.1"
-  },
-  {
-   "level": 2,
-   "title": "Asymptotic behavior of the colored Jones polynomial. Now we con-",
-   "page": 15,
-   "source": "inferred",
-   "number": "3.2"
-  },
-  {
-   "level": 2,
-   "title": "Relation of the function H to a representation. Now we want to relate",
-   "page": 17,
-   "source": "inferred",
-   "number": "3.3"
-  },
-  {
-   "level": 2,
-   "title": "V olume and the Chern\u2013Simons invariant. Now we know that u de-",
-   "page": 20,
-   "source": "inferred",
-   "number": "3.4"
-  },
-  {
-   "level": 1,
-   "title": "Example 2 \u2013 Torus knots",
-   "page": 23,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 2,
-   "title": "Representations of the fundamental group of the trefoil kno t. We",
+   "title": "Representations of the fundamental group of the trefoil knot. We",
    "page": 24,
    "source": "inferred",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "(m1/ 2 \u2212 m\u22121/ 2) 1 \u00b1",
-   "page": 27,
+   "title": "Representations of the fundamental group of the cinquefoil knot.",
+   "page": 26,
    "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(m \u2212 1 + m\u22121) + 1 \u2212 1 \u00b1",
-   "page": 27,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(m1/ 2 \u2212 m\u22121/ 2)",
-   "page": 27,
-   "source": "inferred",
-   "number": "2"
+   "number": "4.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Asymptotic behavior of the colored Jones polynomial. First of all,",
-   "page": 28,
+   "title": "Volume and the Chern\u2013Simons invariant of a representation \u2013 trefoil knot.",
+   "page": 31,
    "source": "inferred",
-   "number": "4.3"
+   "number": "4.5.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Relation of the function H to a representation. If |\u03b8 |is small (Theo-",
-   "page": 29,
-   "source": "inferred",
-   "number": "4.4"
-  },
-  {
-   "level": 3,
-   "title": "Relation of the function H to a representation \u2013 trefoil knot. Put m :=",
-   "page": 30,
-   "source": "inferred",
-   "number": "4.4.1"
-  },
-  {
-   "level": 3,
-   "title": "Relation of the function H to a representation \u2013 cinquefoil knot. Similarly",
-   "page": 30,
-   "source": "inferred",
-   "number": "4.4.2"
-  },
-  {
-   "level": 2,
-   "title": "V olume and the Chern\u2013Simons invariant. The Chern\u2013Simons function",
-   "page": 30,
-   "source": "inferred",
-   "number": "4.5"
-  },
-  {
-   "level": 3,
    "title": "Volume and the Chern\u2013Simons invariant of a representation \u2013 cinquefoil",
    "page": 31,
    "source": "inferred",
-   "number": "4.5.2"
+   "number": "4.5.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
-   "level": 3,
+   "level": 2,
    "title": "Volume and the Chern\u2013Simons invariant of a representation \u2013 general",
    "page": 32,
    "source": "inferred",
-   "number": "4.5.3"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 32,
-   "source": "inferred",
-   "number": null
+   "number": "4.5.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "A crossing of a knot diagram We call these double points with over/under data crossings",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "A positive crossing (left) and a negative crossing (right)",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Trefoil",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Figure-eight knot",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The two generators of \u03c01(S3 \\ E)",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The other elements of \u03c01(S3 \\ E)",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Graph of Im H(u) for \u2212arccosh(3/2) \u2a7du \u2a7darccosh(3/2)",
+   "page": 21,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Graph of the CS(Mu)/(2\u03c02) for \u2a7darccosh(3/2) < u < 10",
+   "page": 22,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "The two generators of \u03c01(S3 \\ T) element z (see Figure 11) can be expressed in terms of x and y as follows: (4.1)",
+   "page": 24,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "The other element of \u03c01(S3 \\ T) yzx\u22121z\u22121 = 1, yzy\u22121z\u22121 = 1",
+   "page": 24,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "Cinquefoil knot and elements of \u03c01(S3 \\ C) of x and y: z = xyx\u22121, w = zxz\u22121 = xyxy\u22121x\u22121, v = wzw\u22121 = xyxyx\u22121y\u22121x\u22121",
+   "page": 26,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-1-preliminaries",
-   "number": "1",
-   "title": "Preliminaries",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 144,
-   "n_words": 24
-  },
-  {
-   "id": "sec-001-11-colored-jones-polynomial-let-k-be-an-oriented",
-   "number": "1.1",
-   "title": "Colored Jones polynomial. Let K be an oriented knot in the three-sphere",
-   "level": 2,
-   "page_start": 2,
-   "page_end": 4,
-   "n_chars": 2846,
-   "n_words": 615
-  },
-  {
-   "id": "sec-002-12-sl2-c-character-variety-of-a-knot-group-for-a",
-   "number": "1.2",
-   "title": "SL(2; C)-Character variety of a knot group. For a knot in S3, let us",
-   "level": 2,
-   "page_start": 4,
-   "page_end": 6,
-   "n_chars": 3051,
-   "n_words": 648
-  },
-  {
-   "id": "sec-003-13-v-olume-and-the-chernsimons-invariant-of-a-re",
-   "number": "1.3",
-   "title": "V olume and the Chern\u2013Simons invariant of a representation. For",
-   "level": 2,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 489,
-   "n_words": 111
-  },
-  {
-   "id": "sec-004-3-a-a-a",
-   "number": "3",
-   "title": "A \u2227 A \u2227 A",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 9,
-   "n_chars": 3759,
-   "n_words": 967
-  },
-  {
-   "id": "sec-005-2-volume-conjecture-and-its-generalizations",
-   "number": "2",
-   "title": "Volume conjecture and its generalizations",
-   "level": 1,
-   "page_start": 9,
-   "page_end": 10,
-   "n_chars": 4013,
-   "n_words": 885
-  },
-  {
-   "id": "sec-006-4-imuvu15",
-   "number": "4",
-   "title": "Im(uv(u)),(1.5)",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 31,
-   "n_words": 10
-  },
-  {
-   "id": "sec-007-2-imr-u-s-vu-mod-\u03c0-2z16",
-   "number": "2",
-   "title": "Im(r u + s v(u)) (mod \u03c0 2Z).(1.6)",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 11,
-   "n_chars": 849,
-   "n_words": 143
-  },
-  {
-   "id": "sec-008-4-im",
-   "number": "4",
-   "title": "Im",
-   "level": 1,
-   "page_start": 11,
-   "page_end": 12,
-   "n_chars": 3130,
-   "n_words": 663
-  },
-  {
-   "id": "sec-009-2-reu-im",
-   "number": "2",
-   "title": "Re(u) Im",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 12,
-   "n_chars": 352,
-   "n_words": 64
-  },
-  {
-   "id": "sec-010-3-example-1-figure-eight-knot",
-   "number": "3",
-   "title": "Example 1 \u2013 figure-eight knot",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 13,
-   "n_chars": 441,
-   "n_words": 76
-  },
-  {
-   "id": "sec-011-31-representations-of-the-fundamental-group-here",
-   "number": "3.1",
-   "title": "Representations of the fundamental group. Here we follow R. Riley",
-   "level": 2,
-   "page_start": 13,
-   "page_end": 15,
-   "n_chars": 2757,
-   "n_words": 689
-  },
-  {
-   "id": "sec-012-32-asymptotic-behavior-of-the-colored-jones-poly",
-   "number": "3.2",
-   "title": "Asymptotic behavior of the colored Jones polynomial. Now we con-",
-   "level": 2,
-   "page_start": 15,
-   "page_end": 17,
-   "n_chars": 2993,
-   "n_words": 697
-  },
-  {
-   "id": "sec-013-33-relation-of-the-function-h-to-a-representatio",
-   "number": "3.3",
-   "title": "Relation of the function H to a representation. Now we want to relate",
-   "level": 2,
-   "page_start": 17,
-   "page_end": 20,
-   "n_chars": 3342,
-   "n_words": 845
-  },
-  {
-   "id": "sec-014-34-v-olume-and-the-chernsimons-invariant-now-we",
-   "number": "3.4",
-   "title": "V olume and the Chern\u2013Simons invariant. Now we know that u de-",
-   "level": 2,
-   "page_start": 20,
-   "page_end": 23,
-   "n_chars": 5821,
-   "n_words": 1299
-  },
-  {
-   "id": "sec-015-4-example-2-torus-knots",
-   "number": "4",
-   "title": "Example 2 \u2013 Torus knots",
-   "level": 1,
-   "page_start": 23,
-   "page_end": 24,
-   "n_chars": 501,
-   "n_words": 102
-  },
-  {
-   "id": "sec-016-41-representations-of-the-fundamental-group-of-t",
-   "number": "4.1",
-   "title": "Representations of the fundamental group of the trefoil kno t. We",
-   "level": 2,
-   "page_start": 24,
-   "page_end": 27,
-   "n_chars": 3494,
-   "n_words": 890
-  },
-  {
-   "id": "sec-017-2-m1-2-m1-2-1",
-   "number": "2",
-   "title": "(m1/ 2 \u2212 m\u22121/ 2) 1 \u00b1",
-   "level": 1,
-   "page_start": 27,
-   "page_end": 27,
-   "n_chars": 15,
-   "n_words": 8
-  },
-  {
-   "id": "sec-018-2-m-1-m1-1-1",
-   "number": "2",
-   "title": "(m \u2212 1 + m\u22121) + 1 \u2212 1 \u00b1",
-   "level": 1,
-   "page_start": 27,
-   "page_end": 28,
-   "n_chars": 340,
-   "n_words": 100
-  },
-  {
-   "id": "sec-019-43-asymptotic-behavior-of-the-colored-jones-poly",
-   "number": "4.3",
-   "title": "Asymptotic behavior of the colored Jones polynomial. First of all,",
-   "level": 2,
-   "page_start": 28,
-   "page_end": 29,
-   "n_chars": 2286,
-   "n_words": 614
-  },
-  {
-   "id": "sec-020-44-relation-of-the-function-h-to-a-representatio",
-   "number": "4.4",
-   "title": "Relation of the function H to a representation. If |\u03b8 |is small (Theo-",
-   "level": 2,
-   "page_start": 29,
-   "page_end": 30,
-   "n_chars": 1594,
-   "n_words": 355
-  },
-  {
-   "id": "sec-021-45-v-olume-and-the-chernsimons-invariant-the-che",
-   "number": "4.5",
-   "title": "V olume and the Chern\u2013Simons invariant. The Chern\u2013Simons function",
-   "level": 2,
-   "page_start": 30,
-   "page_end": 31,
-   "n_chars": 1244,
-   "n_words": 315
-  },
-  {
-   "id": "sec-022-452-volume-and-the-chernsimons-invariant-of-a-re",
-   "number": "4.5.2",
-   "title": "Volume and the Chern\u2013Simons invariant of a representation \u2013 cinquefoil",
-   "level": 3,
-   "page_start": 31,
-   "page_end": 32,
-   "n_chars": 2029,
-   "n_words": 534
-  },
-  {
-   "id": "sec-023-references",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "References",
+   "title": "Front matter",
    "level": 1,
-   "page_start": 32,
+   "page_start": 1,
+   "page_end": 6,
+   "n_chars": 9847,
+   "n_words": 1765,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-13-volume-and-the-chernsimons-invariant-of-a-rep",
+   "number": "1.3",
+   "title": "Volume and the Chern\u2013Simons invariant of a representation. For",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 24,
+   "n_chars": 27748,
+   "n_words": 5507,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-41-representations-of-the-fundamental-group-of-t",
+   "number": "4.1",
+   "title": "Representations of the fundamental group of the trefoil knot. We",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 1888,
+   "n_words": 415,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-42-representations-of-the-fundamental-group-of-t",
+   "number": "4.2",
+   "title": "Representations of the fundamental group of the cinquefoil knot.",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 31,
+   "n_chars": 6841,
+   "n_words": 1465,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-451-volume-and-the-chernsimons-invariant-of-a-re",
+   "number": "4.5.1",
+   "title": "Volume and the Chern\u2013Simons invariant of a representation \u2013 trefoil knot.",
+   "level": 2,
+   "page_start": 31,
    "page_end": 35,
-   "n_chars": 8244,
-   "n_words": 1313
+   "n_chars": 10113,
+   "n_words": 1676,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 28,
-  "sections": 24,
-  "chars_total": 53765
+  "toc_entries": 6,
+  "toc_inferred_entries": 6,
+  "toc_inferred_mean_confidence": 0.75,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 11,
+  "figure_sequence_gaps": [
+   "figure 8"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 56437
  }
 }

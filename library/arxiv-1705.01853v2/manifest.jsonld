@@ -9,23 +9,16 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1705.01853v2",
+  "title": "Line Operators in the Standard Model",
   "contains": [
+    "library/arxiv-1705.01853v2/sections/sec-front-matter",
     "library/arxiv-1705.01853v2/sections/sec-000",
     "library/arxiv-1705.01853v2/sections/sec-001",
     "library/arxiv-1705.01853v2/sections/sec-002",
     "library/arxiv-1705.01853v2/sections/sec-003",
     "library/arxiv-1705.01853v2/sections/sec-004",
     "library/arxiv-1705.01853v2/sections/sec-005",
-    "library/arxiv-1705.01853v2/sections/sec-006",
-    "library/arxiv-1705.01853v2/sections/sec-007",
-    "library/arxiv-1705.01853v2/sections/sec-008",
-    "library/arxiv-1705.01853v2/sections/sec-009",
-    "library/arxiv-1705.01853v2/sections/sec-010",
-    "library/arxiv-1705.01853v2/sections/sec-011",
-    "library/arxiv-1705.01853v2/sections/sec-012",
-    "library/arxiv-1705.01853v2/sections/sec-013",
-    "library/arxiv-1705.01853v2/sections/sec-014"
+    "library/arxiv-1705.01853v2/sections/sec-006"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -38,7 +31,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1705.01853v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1705.01853v2.pdf",
     "source_sha256": "895e0b22c93bca1b83d0a42b4735c2bdd923720cc50dea2ecf3fa50b5a07a5b8",
     "pages": 18,

@@ -7,7 +7,11 @@
   "bytes": 523717,
   "pages": 15,
   "text_source": "embedded",
-  "math_source": "latex"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:21Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -17,189 +21,465 @@
    "stamp_date": "11 Sep 2021"
   },
   "doi": null,
-  "title": "Braided matter interactions in quantum gravity via 1-handle attachment",
-  "authors_raw": "Niels Gresnigt, 1,\u2217 Antonino Marcian\u00f2,2, 3,\u2020 and Emanuele Zappala 4,\u2021",
+  "title": "Braided matter interactions in quantum gravity via 1 -handle attachment",
+  "authors_raw": "Niels Gresnigt,1, \u2217Antonino Marcian\u00f2,2, 3, \u2020 and Emanuele Zappala4, \u2021",
   "title_lines": [
    "Braided matter interactions in quantum gravity via 1-handle attachment"
   ],
   "abstract": null,
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20211028051145Z",
-   "Creator": "LaTeX with hyperref",
    "Producer": "pdfTeX-1.40.21",
-   "Title": ""
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20211028051145Z"
+  },
+  "title_raw": "Braided matter interactions in quantum gravity via 1-handle attachment",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Braided matter interactions in quantum gravity via 1 -handle attachment",
+   "outline": "I Introduction",
+   "text": "Braided matter interactions in quantum gravity via 1-handle attachment",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "INTRODUCTION",
+   "title": "I Introduction",
    "page": 1,
-   "source": "inferred",
-   "number": "I"
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "(for C\ud835\udcc1(6)) and B3 (for C\ud835\udcc1(4)). In such a construction, the",
+   "title": "II A topological model of composite preons",
    "page": 3,
-   "source": "inferred",
-   "number": "3"
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
-   "title": "THEORIES ON RIBBON GRAPHS",
+   "title": "III Theories on ribbon graphs",
    "page": 4,
-   "source": "inferred",
-   "number": "III"
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "A The evolution algebra",
+   "page": 4,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
-   "title": "LEPTONS AND QUARKS AS TOPOLOGICAL EXCIT A TIONS",
+   "title": "IV Leptons and quarks as topological excitations",
    "page": 5,
-   "source": "inferred",
-   "number": "IV"
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
+  },
+  {
+   "level": 2,
+   "title": "A The trivalent scheme",
+   "page": 5,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
+  },
+  {
+   "level": 2,
+   "title": "B The tetravalent scheme",
+   "page": 5,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
-   "title": "RIBBON NETWORKS EMBEDDED INTO 3-MANIFOLDS",
+   "title": "V Ribbon networks embedded into 3-manifolds",
    "page": 6,
-   "source": "inferred",
-   "number": "V"
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  },
+  {
+   "level": 2,
+   "title": "A Surgery on 3-manifolds",
+   "page": 8,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 2,
+   "title": "B Braid dynamics via surgery",
+   "page": 9,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
-   "title": "Using the de\ufb01nition of braided network, a framed link L is",
-   "page": 7,
-   "source": "inferred",
-   "number": "L"
-  },
-  {
-   "level": 1,
-   "title": "ISOTOPY INV ARIANTS OF BRAIDED NETWORKS",
+   "title": "VI Isotopy invariants of braided networks",
    "page": 10,
-   "source": "inferred",
-   "number": "VI"
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
+  },
+  {
+   "level": 2,
+   "title": "A Examples and Computations",
+   "page": 11,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
-   "title": "POSSIBLE PRE-GEOMETRIC UNIFICA TION OF MA TTER AND GRA VITY",
+   "title": "VII Possible pre-geometric unification of matter and gravity",
    "page": 13,
-   "source": "inferred",
-   "number": "VII"
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
-   "title": "DISCUSSION",
+   "title": "VIII Discussion",
    "page": 14,
-   "source": "inferred",
-   "number": "VIII"
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgement",
+   "page": 15,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 15,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   }
  ],
- "toc_source": "inferred",
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "In the braid model, leptons and quarks are represented as braids of three (possibly twisted) ribbons. Charged fermions come in two handedness states whereas the neutrino and antineutrino come in only one handedness state. Source [1]",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Weak interactions are represented topologically via braid composition. Source [1]",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Electroweak bosons are assumed to correspond to triplets of ribbons that are not braided. Source [1]",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Example of ribbon graph. The top ribbons and bottom ribbons have one side connected to the central rectangular coupon, homeomorphic to a disk",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "A positive crossing of two ribbons, oriented downward",
+   "page": 6,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Fragment of trivalent ribbon network embedded in a 3-manifold",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "A trivalent vertex is represented by a trinion",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-i-introduction",
-   "number": "I",
-   "title": "INTRODUCTION",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 3,
-   "n_chars": 11248,
-   "n_words": 1721
-  },
-  {
-   "id": "sec-001-3-for-c\ud835\udcc16-and-b3-for-c\ud835\udcc14-in-such-a-construction",
-   "number": "3",
-   "title": "(for C\ud835\udcc1(6)) and B3 (for C\ud835\udcc1(4)). In such a construction, the",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 4,
-   "n_chars": 358,
-   "n_words": 55
-  },
-  {
-   "id": "sec-002-iii-theories-on-ribbon-graphs",
-   "number": "III",
-   "title": "THEORIES ON RIBBON GRAPHS",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 5,
-   "n_chars": 3035,
-   "n_words": 529
-  },
-  {
-   "id": "sec-003-iv-leptons-and-quarks-as-topological-excit-a-tio",
-   "number": "IV",
-   "title": "LEPTONS AND QUARKS AS TOPOLOGICAL EXCIT A TIONS",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 6,
-   "n_chars": 3616,
-   "n_words": 567
-  },
-  {
-   "id": "sec-004-v-ribbon-networks-embedded-into-3-manifolds",
-   "number": "V",
-   "title": "RIBBON NETWORKS EMBEDDED INTO 3-MANIFOLDS",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 7,
-   "n_chars": 5392,
-   "n_words": 874
-  },
-  {
-   "id": "sec-005-l-using-the-de\ufb01nition-of-braided-network-a-frame",
-   "number": "L",
-   "title": "Using the de\ufb01nition of braided network, a framed link L is",
-   "level": 1,
-   "page_start": 7,
-   "page_end": 10,
-   "n_chars": 10061,
-   "n_words": 1694
-  },
-  {
-   "id": "sec-006-vi-isotopy-inv-ariants-of-braided-networks",
-   "number": "VI",
-   "title": "ISOTOPY INV ARIANTS OF BRAIDED NETWORKS",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 13,
-   "n_chars": 16689,
-   "n_words": 2776
-  },
-  {
-   "id": "sec-007-vii-possible-pre-geometric-unifica-tion-of-ma-tt",
-   "number": "VII",
-   "title": "POSSIBLE PRE-GEOMETRIC UNIFICA TION OF MA TTER AND GRA VITY",
-   "level": 1,
-   "page_start": 13,
-   "page_end": 14,
-   "n_chars": 6179,
-   "n_words": 929
-  },
-  {
-   "id": "sec-008-viii-discussion",
-   "number": "VIII",
-   "title": "DISCUSSION",
-   "level": 1,
-   "page_start": 14,
    "page_end": 15,
-   "n_chars": 7072,
-   "n_words": 1034
+   "n_chars": 61831,
+   "n_words": 10068,
+   "label_start": null,
+   "label_end": "15"
+  },
+  {
+   "id": "sec-000-acknowledgement",
+   "number": null,
+   "title": "Acknowledgement",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 4403,
+   "n_words": 631,
+   "label_start": "15",
+   "label_end": "15"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 9,
-  "sections": 9,
-  "chars_total": 63650,
+  "toc_entries": 16,
+  "toc_inferred_entries": 0,
+  "figure_entries": 7,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 2,
+  "chars_total": 66234,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Braided_matter_final.tex",
    "tex_sections": 15,
-   "overlaid": 6,
+   "overlaid": 0,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -207,68 +487,16 @@
    },
    "sections": [
     {
-     "id": "sec-000-i-introduction",
-     "title": "INTRODUCTION",
-     "prose_ratio": 0.797,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-001-3-for-c\ud835\udcc16-and-b3-for-c\ud835\udcc14-in-such-a-construction",
-     "title": "(for C\ud835\udcc1(6)) and B3 (for C\ud835\udcc1(4)). In such a construction, the",
+     "id": "sec-front-matter",
+     "title": "Front matter",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-002-iii-theories-on-ribbon-graphs",
-     "title": "THEORIES ON RIBBON GRAPHS",
+     "id": "sec-000-acknowledgement",
+     "title": "Acknowledgement",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-003-iv-leptons-and-quarks-as-topological-excit-a-tio",
-     "title": "LEPTONS AND QUARKS AS TOPOLOGICAL EXCIT A TIONS",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-004-v-ribbon-networks-embedded-into-3-manifolds",
-     "title": "RIBBON NETWORKS EMBEDDED INTO 3-MANIFOLDS",
-     "prose_ratio": 0.584,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-005-l-using-the-de\ufb01nition-of-braided-network-a-frame",
-     "title": "Using the de\ufb01nition of braided network, a framed link L is",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-006-vi-isotopy-inv-ariants-of-braided-networks",
-     "title": "ISOTOPY INV ARIANTS OF BRAIDED NETWORKS",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-007-vii-possible-pre-geometric-unifica-tion-of-ma-tt",
-     "title": "POSSIBLE PRE-GEOMETRIC UNIFICA TION OF MA TTER AND GRA VITY",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-008-viii-discussion",
-     "title": "DISCUSSION",
-     "prose_ratio": 0.851,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "latex"
+     "coverage_ratio": 0.161,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     }
    ]
   }

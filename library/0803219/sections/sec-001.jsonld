@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/0803219/sections/sec-001",
   "@type": [
     "doco:Section"
   ],
-  "title": "Colored Jones polynomial. Let K be an oriented knot in the three-sphere",
-  "pageStart": 2,
-  "pageEnd": 4,
+  "title": "Representations of the fundamental group of the trefoil knot. We",
+  "pageStart": 24,
+  "pageEnd": 26,
   "contains": [
     "library/0803219/blocks/prose-sec-001"
   ],
-  "derivedFrom": "library/0803219/manifest",
-  "sourceDocument": "library/0803219/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./0803219/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./0803219/manifest.jsonld",
   "provenance": "ingested"
 }

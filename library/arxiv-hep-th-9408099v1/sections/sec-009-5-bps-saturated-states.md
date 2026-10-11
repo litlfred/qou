@@ -1,0 +1,117 @@
+---
+doc_id: arxiv-hep-th-9408099v1
+doc_title: "arXiv:hep-th/9408099v1 17 Aug 1994"
+section_id: sec-009-5-bps-saturated-states
+section_title: "BPS-saturated states"
+section_number: 5
+pages: 17-20
+source_pdf: 9408099v1.pdf
+source_sha256: b534faddd2e3aa71
+toc_source: inferred
+---
+As we explained in our discussion of QED, a special role is played by the BPS-saturated
+states which are in “small” representations of the N = 2 algebra and are frequently the
+only stable states in the spectrum.
+Since on the Higgs branches the gauge group is completely broken, there are no electric
+and magnetic charges that can appear as central charges in the N = 2 algebra. The only
+16
+central charge could be a U(1) charge of a hypermultiplet. A Higgs branch exists only when
+there are at least two degenerate hypermultiplets (not necessarily with zero bare mass).
+Then, if there is an abelian symmetry acting on these hypermultiplets, the massless ﬁelds
+carry the corresponding charge, and it cannot appear in the central extension. Therefore, a
+contribution to the central extension exists only when there is also another hypermultiplet,
+which is not degenerate with the others (its bare mass might be zero). We do not know of
+striking physical phenomena associated with these states, mainly because in the absence
+of electric and magnetic charge there do not appear to be monodromies.
+On the Coulomb branch, the simplest BPS-saturated states are the elementary quarks
+whose mass (if the bare masses of the hypermultiplets are set to zero, as we do until further
+notice) is M =
+√
+2|a|. They are in the vector representation of SO(2Nf).
+Since the SU(2) gauge symmetry is spontaneously broken to U(1) along the Coulomb
+branch, there are also magnetic monopoles in the spectrum. For Nf̸ = 0, the quark ﬁelds
+have fermion zero modes in the background of the monopoles [20-22].
+To be precise,
+each SU(2) doublet of fermions has a single zero mode. With Nf hypermultiplets and
+therefore 2Nf doublets, there are 2Nf zero modes transforming in the vector representation
+of SO(2Nf). Rather as in the quantization of the Ramond sector of superstrings, the
+quantization of these fermions zero modes turns the monopoles into spinors of SO(2Nf).
+The states of deﬁnite charge furnish a representation of SO(2Nf), not of O(2Nf), for a
+reason noted at the end of the last section. Note that the occurrence of spinors (in addition
+to the hypermultiplets, which are vectors) means that at the quantum level the symmetry
+group is really the universal cover of SO(2Nf).
+There is, however, an important subtlety here. Monopoles can carry electric charge
+because the classical monopole solution is not invariant under electric charge rotations.
+There is a collective coordinate associated with electric charge rotations, and quantizing
+it gives a spectrum of states of various electric charge.
+A 2π rotation by the electric
+charge operator does not give the identity; in a state of nm = 1, it gives a topologically
+non-trivial gauge transformation, whose eigenvalue is eiθ(−1)H; here θ is the usual theta
+angle and (−1)H is the center of the SU(2) gauge group (it acts as −1 on the elementary
+hypermultiplets and 1 on the vector multiplet). This is the eﬀect described in [23] (where
+17
+the pure gauge theory was considered, so (−1)H was equivalent to 1). If the electric charge
+operator, which we will temporarily call Q0, is normalized so that a W boson has unit
+charge, the operator statement is
+e2πiQ0 = einmθ(−1)H.
+(5.1)
+In the present context, we want to normalize the charge operator so that the eigenvalues
+for the hypermultiplets are ±1 (so W bosons have charge ±2). The normalized charge
+operator is thus Q = 2Q0, and formula (5.1) becomes
+eiπQ = einmθ(−1)H.
+(5.2)
+It has the following signiﬁcance: if we write the charge as Q = ne + nmθ/π with ne ∈Z,
+then the states of even ne have (−1)H even, and the states of odd ne have (−1)H odd.
+(−1)H is the “chirality” operator in the spinor representation of SO(2Nf), so the
+above statement means that the monopoles of even ne are in one spinor representation,
+and the monopoles of odd ne are in the other spinor representation. This result ensures
+the following: if M is a monopole with ne = q and M ′ is a monopole with ne = q + 1,
+then the state of (nm = 0, ne = 1) produced in M ′M annihilation has (−1)H = −1 and
+can be formed from the elementary ﬁelds. If there were no correlation between electric
+charge and SO(2Nf) chirality, then monopole-antimonopole annihilation would produce
+states that do not in fact exist.
+For Nf = 1, 3, the internal “parity” ensures that a dyon transforming as a positive
+chirality spinor representation of SO(2Nf) is degenerate with a particle with opposite
+electric and magnetic charge and opposite SO(2Nf) chirality. There is no such relation
+for Nf = 2, 4 where the internal parity is simply spontaneously broken.
+As in [18], the spectrum may also include states with magnetic charge nm ≥2. Certain
+general restrictions on the quantum numbers of these states (some of which can be deduced
+from (5.2)) ensure that they can be interpreted as bound states of already known particles
+and that particle-antiparticle annihilation gives consistent results.
+For Nf ≥2, these
+restrictions are conveniently stated in terms of the quantum numbers of the states under the
+center of the universal cover of SO(2Nf). For Nf = 2, the universal cover is SU(2)×SU(2)
+18
+and the center is Z2×Z2. We write a representation of Z2×Z2 as (ǫ, ǫ′), where ǫ = 0 for the
+trivial representation of Z2 and ǫ = 1 for the non-trivial representation. Then for Nf = 2,
+states of arbitrary (nm, ne) transform under the center as ((ne + nm) mod 2, ne mod 2).
+For Nf = 3, the universal cover of SO(6) is SU(4), and its center is Z4.
+Z4 acts by
+exp( iπ
+2 (nm + 2ne)). For Nf = 4, the universal cover is Spin(8), with center Z2 × Z2. The
+four representations of Z2 ×Z2 are conveniently labeled by representations of Spin(8) that
+realize them; we will call them o (associated with the trivial representation of Spin(8)), v
+(associated with the vector), and s and c (the two spinors). Spin(8) has a “triality” group
+of outer automorphisms which is isomorphic to the permutation group S3 of the three
+objects v, s, and c. The quantum numbers of all particles under the center of Spin(8) are
+determined by (nm mod 2, ne mod 2): (0, 1) corresponds to v, e.g. the elementary quark;
+(1, 0) corresponds to s, e.g. the fundamental neutral monopole; (1, 1) corresponds to c, e.g.
+the ﬁrst excited dyon with magnetic charge 1; (0, 0) corresponds to o, e.g. the elementary
+gauge ﬁelds.
+We now turn on an N = 2 invariant mass term, mNf , for one of the quarks. The global
+SO(2Nf) symmetry is explicitly broken to SO(2Nf−2)×SO(2). Since the global symmetry
+includes an abelian continuous symmetry, it can contribute to the central extension in
+the algebra. As in QED (see section 2), the mass of BPS-saturated states is given by
+M =
+√
+2|Z| with
+Z = nea + nmaD + S mNf
+√
+2
+(5.3)
+where S is the SO(2) charge. Just as in QED, the appearance of the extra term can be
+deduced from the fact that the hypermultiplets are in “small” representations. It follows
+from (5.3) that for a = ±mNf /
+√
+2 one of the elementary quarks is massless. This fact can
+be easily veriﬁed using the classical Lagrangian.
