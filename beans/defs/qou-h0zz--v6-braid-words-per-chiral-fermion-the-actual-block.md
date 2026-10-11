@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - 8f-open
 created_at: 2026-08-10T18:34:14Z
-updated_at: 2026-10-11T07:38:38Z
+updated_at: 2026-10-11T07:45:37Z
 parent: qou-8lxd
 ---
 
@@ -349,3 +349,36 @@ word-grep gate reads 0, rather than leaving a permanent false positive for
 whoever runs one next. Re-verified after the reword: the edit is inside a
 module docstring and cannot change elaboration, but it was re-run rather than
 assumed.
+
+
+---
+
+## 🛑 CORRECTION to this bean's own open-set list: "chirality is untouched" is WRONG (2026-10-11)
+
+The appends above list, among what stays open:
+
+> **Chirality is untouched** (`qou-wqto`): no braid word separates `u_L` from
+> `u_R`, and nothing above addresses it.
+
+That is `qou-wqto`'s **title**, which is stale against `qou-wqto`'s **body**.
+Measured: the grading is **constructed** (V10, 2026-08-16,
+`ChiralityGradingConstruction.lean`, `rc=0`, 16 declarations) and reproduces the
+corpus's own chirality bit pointwise on all eight gen-1 states; Type-B folding
+is **excluded** from supplying the involution (V11,
+`TypeBFoldingChiralityObstruction.lean`, `rc=0`), because V10 needs the
+involution fixed-point free while the folding conjecture fixes stable matter by
+construction.
+
+What is actually open on `qou-wqto` is narrower: **the geometric identification
+of the Reeb involution on the physical state space** (CR geometry), whose only
+corpus statement is a one-paragraph content block that asserts it.
+
+**This is the same error as the `htw2` correction above, one bean over** — and I
+made it in the same append that recorded the `htw2` lesson. The common cause is
+reading a title out of a bean **listing**, where no body is visible; it is not
+about `scrapped` status, since `htw2` is scrapped and `wqto` is `todo` and both
+failed identically. Full record on `qou-wqto`.
+
+Nothing else in this bean's open set changes: the total is still pinned by
+`T = 3Q`, `hrange` is still an input, the `1/3` normalisation is still the helon
+precedent, and `conj:sm-hypercharge-invariant` stays open.
