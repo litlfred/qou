@@ -117,8 +117,8 @@ theorem kzΩ_rho (X Y : R) {v : ℂ} (hv0 : v ≠ 0) (hv1 : v ≠ 1) :
   simp only [kzΩ, smul_add, smul_smul, e1, e2, smul_sub, add_smul, neg_smul, smul_neg]
   abel
 
-/-- Pull-back of a KZ solution along `ρ`: `KZ(X,Y)` becomes `KZ(−X−Y, X)`. -/
 omit [CompleteSpace R] in
+/-- Pull-back of a KZ solution along `ρ`: `KZ(X,Y)` becomes `KZ(−X−Y, X)`. -/
 theorem hasDerivAt_comp_rho {X Y : R} {G : ℂ → R} {v : ℂ} (hv0 : v ≠ 0) (hv1 : v ≠ 1)
     (h : HasDerivAt G (kzΩ X Y (rho v) * G (rho v)) (rho v)) :
     HasDerivAt (fun u => G (rho u)) (kzΩ (-X - Y) X v * G (rho v)) v := by
