@@ -196,6 +196,19 @@ if [ -f "$CLONE_DIR/.gitmodules" ]; then
     || warn "submodule init failed — imports into bootstrap/ and bootstrap-tools/ will not resolve"
 fi
 
+# Platform main (from 2026-10-09) carries NO layer in-tree: cat-harness,
+# cat-harness-tools, folio-assistant-core, folio-assistant-sci, bootstrap, ...
+# are remote mounts recorded in `index.lock.json`, each pinned to a commit and
+# verified against a tree digest. A clone at such a pin has none of them until
+# they are laid down, and every `folio-assistant/cat-harness/...` import fails.
+# The platform's own entry point does it with nothing but bun + git; it is
+# idempotent (an intact mount is reported `current`).
+if [ -f "$CLONE_DIR/index.lock.json" ] && [ -f "$CLONE_DIR/.github/mount-from-lock.sh" ]; then
+  info "mounting platform layers from index.lock.json"
+  (cd "$CLONE_DIR" && bash .github/mount-from-lock.sh --root .) >&2 \
+    || warn "mount-from-lock failed — platform layers (cat-harness, folio-assistant-sci, …) may be absent"
+fi
+
 # absolute, normalized path to the clone
 CLONE_ABS="$(cd "$CLONE_DIR" && pwd)" || die "cannot resolve $CLONE_DIR"
 
