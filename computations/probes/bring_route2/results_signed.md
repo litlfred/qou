@@ -1,5 +1,7 @@
 # Route 2 correction: the seen candidates were analysed without their signs
 
+> **Update 2026-10-11 (`results_pure.md`):** §3 below describes the old route 2 rule. Under the pre-registered pure-braid rule, every γγ word gets a well-defined Bring loop (the core: L = 16.1692), because all three placements agree.
+
 Producer: `signed_candidates_probe.py`. 5/5 checks pass. SL(2,ℤ) arithmetic is exact (integers); Bring lengths use mpmath. No Q_β, CODATA or mass input.
 
 This is a correction measurement, not a selection: nothing here is ranked.
