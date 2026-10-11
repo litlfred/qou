@@ -12,5 +12,15 @@ export default remark({
     "codata",
     "plot",
   ],
-  uses: ["rem:diophantine-valley"],
+  uses: [
+    "rem:diophantine-valley",
+    "prop:beta-stability",
+    "prop:neutron-prediction-comparison",
+  ],
+  computation: {
+    engine: "python",
+    script: "computations/observations/stability_cubic_table_from_probe.py",
+    witness: "computations/observations/neutron_prediction_comparison_probe.witness.json",
+    status: "verified",
+  },
 });
