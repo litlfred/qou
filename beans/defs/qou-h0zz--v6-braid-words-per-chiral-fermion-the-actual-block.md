@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - 8f-open
 created_at: 2026-08-10T18:34:14Z
-updated_at: 2026-10-11T07:33:41Z
+updated_at: 2026-10-11T07:38:38Z
 parent: qou-8lxd
 ---
 
@@ -279,3 +279,73 @@ Two reusable lessons, the second more expensive than the first:
    raised it, rewrote a correct proof, and spent a second four-minute
    verification confirming nothing. Lean reports the first error only, so a
    later declaration's status was never in evidence either way.
+
+
+---
+
+## Lean GREEN on the fourth run — three declarations, one dropped (2026-10-11)
+
+`folio/quantum-observable-universe/lean/QOU/StandardModel/SignCoherentTwist.lean`,
+`lean -DautoImplicit=false -s 65536`, exit status captured directly:
+
+    rc=0   0 diagnostic lines   0 sorry   0 axiom   0 native_decide   0 ': True'
+
+| decl | hypotheses | gives |
+|---|---|---|
+| `u_multiset_forced` | `hrange`, `hsum = 2` — **no `SignCoherent`** | `u = {0,1,1}` in one of three orderings |
+| `no_mixed_sign_at_total_two` | `hrange`, `hsum = 2` | `0 ≤ t 0 ∧ 0 ≤ t 1 ∧ 0 ≤ t 2` |
+| `no_negative_of_positive_total` | `hsum > 0`, `hcoh` | mirror of `no_positive_of_negative_total`, general positive case |
+
+Contrast the existing `d_multiset_forced`, which **does** take `SignCoherent`
+and provably needs it (`d_mixed_sign_not_coherent`).
+
+### `coherent_of_total_two` — DROPPED, and why that is the honest disposition
+
+`SignCoherent t` at total `2` is **true** and follows from
+`no_mixed_sign_at_total_two`. Stating it needs `0 ≤ t j` at the existential's
+**arbitrary** index, i.e. the `∀ i, 0 ≤ t i` form, and that form is not cheaply
+available: `fin_cases i` leaves goals mentioning `t ((fun i => i) ⟨0, ⋯⟩)`, a
+beta-redex `omega` will not identify with the `t 0` of `hrange 0`. The proof
+fails on `Fin` normalisation, not on mathematics.
+
+Per the three honest dispositions (prove / state-with-`sorry`+`-- Ref:` / drop),
+**drop** was correct here because nothing consumes it and the finding does not
+rest on it. A docstring in its place records the obstruction so the next agent
+does not rediscover it.
+
+### Four rounds, three of them my own error — the reusable part
+
+| run | result | what I believed | what was true |
+|---|---|---|---|
+| 1 | `rc=1`, 1 error `:300` | the error was in `coherent_of_total_two` | **wrong declaration** — `:300` is the closing `omega` of `no_mixed_sign_at_total_two` (begins `:293`); `coherent_of_total_two` begins `:303` |
+| 2 | `rc=1`, **identical** | fixed by rewriting that proof | confirmed nothing; four minutes spent rewriting a proof that was never the problem |
+| 3 | `rc=1`, 2 errors `:301` | real bug: `∀ i` over an arbitrary index supplied with only `hrange 0/1/2` | correct, and the fix exposed a *second* layer — the `fin_cases` beta-redex |
+| 4 | `rc=0` | — | restated concretely + dropped the corollary |
+
+Three lessons, in order of how much they cost:
+
+1. **Check the error's line number against the declaration boundaries before
+   theorising.** Lean reports the **first** error only, so a later
+   declaration's status is not in evidence either way — I read silence about
+   `coherent_of_total_two` as information about it.
+2. **A `∀ i` conclusion over `Fin n` needs case analysis, not three `have`s.**
+   The sufficient-for-concrete-indices pattern (`d_multiset_forced`) looks
+   identical and is not. I copied it across that boundary.
+3. **`fin_cases` is not the end of it.** It discharges the quantifier and
+   leaves terms `omega` cannot match. On `Fin 3`, prefer stating the concrete
+   conjunction, which is what every consumer wants anyway.
+
+### A grep gate this file would have failed forever
+
+After the drop, `grep -c '\bsorry\b'` on this file returned **1** — matching my
+own docstring sentence *"Dropped rather than left as a `sorry`"*. No real
+`sorry` existed: the match sat inside a `/-! … -/` block, and `rc=0` with
+**zero** diagnostic lines is independent proof, since Lean warns
+`declaration uses 'sorry'` for every real one.
+
+This is the trap the corpus already records elsewhere — *"every `sorry` match
+in them is a docstring saying 'no `sorry`'"*. Reworded to *"left unproved"* so a
+word-grep gate reads 0, rather than leaving a permanent false positive for
+whoever runs one next. Re-verified after the reword: the edit is inside a
+module docstring and cannot change elaboration, but it was re-run rather than
+assumed.
