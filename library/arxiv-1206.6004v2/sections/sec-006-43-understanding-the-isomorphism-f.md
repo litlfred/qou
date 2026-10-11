@@ -1,17 +1,16 @@
 ---
 doc_id: arxiv-1206.6004v2
-doc_title: ""
+doc_title: "Symmetry, Integrability and Geometry: Methods and Applications"
 section_id: sec-006-43-understanding-the-isomorphism-f
 section_title: "Understanding the isomorphism f"
 section_number: 4.3
 pages: 9-15
 source_pdf: 1206.6004v2.pdf
 source_sha256: b490672c8c3557dd
-doc_brief: "Bring’s Curve: its Period Matrix and the Vector of Riemann Constants ⋆ — Bring’s curve is the genus 4 Riemann surface with automorphism group of maximal size, S5."
-duplicate_of: "sigma12-065"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
-latex_coverage_ratio: 0.946
+latex_coverage_ratio: 0.953
 ---
 []{#section4.3 label="section4.3"}
 

@@ -1,15 +1,15 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-014-33-tessellations
 section_title: "Tessellations"
 section_number: 3.3
 pages: 90-97
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
+latex_prose_ratio: 0.825
 latex_coverage_ratio: 1.0
 ---
 A tessellation is a nice paving of $\matH^n$ made of polyhedra. Not only tessellations are beautiful objects, but they are also tightly connected with discrete groups of $\Iso(\matH^n)$ and hence with hyperbolic manifolds.

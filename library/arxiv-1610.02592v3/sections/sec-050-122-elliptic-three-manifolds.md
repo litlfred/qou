@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-050-122-elliptic-three-manifolds
 section_title: "Elliptic three-manifolds"
 section_number: 12.2
 pages: 378-388
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.981
+latex_coverage_ratio: 0.995
 ---
 We start our journey by investigating elliptic 3-manifolds, that is manifolds modelled on $S^3$. We want to prove the following.
 

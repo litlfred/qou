@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2008.09788v2
-doc_title: "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETR Y"
+doc_title: "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETRY"
 section_id: sec-002-21-algebraic-geometry-over-algebraic-systems
 section_title: "Algebraic geometry over algebraic systems"
 section_number: 2.1
 pages: 5-13
 source_pdf: 2008.09788v2.pdf
 source_sha256: 460f4f5432cb1f0c
-doc_brief: "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETRY — This paper surveys results related to well-known works of B. Plotkin and V."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.968
-latex_coverage_ratio: 0.965
+latex_coverage_ratio: 0.96
 ---
 \label{Pl}
 

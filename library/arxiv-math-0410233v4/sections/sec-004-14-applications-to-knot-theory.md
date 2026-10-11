@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-math-0410233v4
-doc_title: "Cusp shapes under cone deformation"
+doc_title: "CUSP SHAPES UNDER CONE DEFORMATION"
 section_id: sec-004-14-applications-to-knot-theory
 section_title: "Applications to knot theory"
 section_number: 1.4
 pages: 5-7
 source_pdf: 0410233v4.pdf
 source_sha256: 1f7215c9f21aa2b7
-doc_brief: "Cusp shapes under cone deformation — A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp sh ape."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.948
-latex_coverage_ratio: 0.98
+latex_coverage_ratio: 0.979
 ---
 In the last part of this paper we give specific applications of Theorem [\[thm:main-norm-height\]](#thm:main-norm-height){reference-type="ref" reference="thm:main-norm-height"}. We determine bounds on the cusp shape of a knot based solely on a diagram of that knot.
 

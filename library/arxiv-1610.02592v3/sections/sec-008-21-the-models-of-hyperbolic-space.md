@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-008-21-the-models-of-hyperbolic-space
 section_title: "The models of hyperbolic space"
 section_number: 2.1
-pages: 53-67
+pages: 53-66
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.958
+latex_coverage_ratio: 0.989
 ---
 In contrast with $S^n$ and $\matR^n$, the hyperbolic space $\matH^n$ may be described in various different ways, no-one of which is prevalent in the literature. Each description is a \emph{model} for $\matH^n$. We first introduce the hyperboloid model, which has a more algebraic flavour, and then we turn to the disc and half-space models that are somehow more geometric (and easier to visualise in dimensions $n=2$ and $3$).
 

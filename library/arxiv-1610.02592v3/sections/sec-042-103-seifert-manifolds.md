@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-042-103-seifert-manifolds
 section_title: "Seifert manifolds"
 section_number: 10.3
 pages: 320-339
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.963
+latex_coverage_ratio: 0.919
 ---
 We now enlarge the class of circle bundles over surfaces by admitting some kind of singular fibres. We introduce the \emph{Seifert fibrations}, whose total spaces are called \emph{Seifert manifolds}. These manifolds were introduced by Herbert Seifert in 1933 and fit perfectly in the much more recent geometrisation perspective: in the next chapter we will introduce the eight three-dimensional geometries, and prove that six of them are realised precisely by the Seifert manifolds.
 

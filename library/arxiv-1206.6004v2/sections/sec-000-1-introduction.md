@@ -1,17 +1,16 @@
 ---
 doc_id: arxiv-1206.6004v2
-doc_title: ""
+doc_title: "Symmetry, Integrability and Geometry: Methods and Applications"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-2
 source_pdf: 1206.6004v2.pdf
 source_sha256: b490672c8c3557dd
-doc_brief: "Bring’s Curve: its Period Matrix and the Vector of Riemann Constants ⋆ — Bring’s curve is the genus 4 Riemann surface with automorphism group of maximal size, S5."
-duplicate_of: "sigma12-065"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.995
-latex_coverage_ratio: 0.98
+latex_prose_ratio: 0.947
+latex_coverage_ratio: 0.903
 ---
 Bring's curve is the genus 4 Riemann surface with the automorphism group of maximal size, $S_5$ [@breuer; @edge78; @edge81; @weber05]. It may be expressed as the complete intersection in $\mathbb{P}^4$ given by $$\begin{gathered}
   x_1 + x_2 + x_3 + x_4 + x_5  = 0, \\

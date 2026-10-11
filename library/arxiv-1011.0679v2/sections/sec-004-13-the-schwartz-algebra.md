@@ -7,10 +7,10 @@ section_number: 1.3
 pages: 9-11
 source_pdf: 1011.0679v2.pdf
 source_sha256: 6fa4bbcf4e908373
-doc_brief: "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS — Let π, π ′ be tempered representations of an aﬃne Hecke algebra with positive parameters."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.965
-latex_coverage_ratio: 0.953
+latex_coverage_ratio: 0.957
 ---
 We recall how to complete an affine Hecke algebra to a topological algebra called the
 Schwartz algebra. As a vector space $\mc S$ will consist of rapidly decreasing functions

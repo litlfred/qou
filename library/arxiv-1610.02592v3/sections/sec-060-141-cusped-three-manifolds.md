@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-060-141-cusped-three-manifolds
 section_title: "Cusped three-manifolds"
 section_number: 14.1
 pages: 429-441
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.963
+latex_coverage_ratio: 0.998
 ---
 \label{cusped:section}
 We know that every cusped finite-volume complete hyperbolic surface is constructed by gluing isometrically finitely many ideal triangles along their edges (see Proposition \ref{straightens:prop}). Likewise, we now construct plenty of cusped hyperbolic three-manifolds by gluing isometrically finitely many ideal tetrahedra along their faces.

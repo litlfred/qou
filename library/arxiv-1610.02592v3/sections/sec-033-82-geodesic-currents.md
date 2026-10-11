@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-033-82-geodesic-currents
 section_title: "Geodesic currents"
 section_number: 8.2
 pages: 230-246
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.968
+latex_coverage_ratio: 0.959
 ---
 We will prove Thurston's compactification Theorem \ref{compattificazione:teo} using a slightly different perspective. We are guided by the analogy with the hyperbolic space: when we embed (actually, define) the space $\matH^n$ in $\matR^{n+1}$, we make an essential use of the lorentzian form $\langle,\rangle$ in $\matR^{n+1}$, so that $\matH^n$ consists of some points $v$ with $\langle v,v \rangle = -1$, and $\partial \matH^n$ may be identified with the light cone rays, that is the rays spanned by vectors $v$ with $\langle v , v \rangle = 0$.
 

@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-054-127-sol-geometry
 section_title: "Sol geometry"
 section_number: 12.7
 pages: 404-408
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.803
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.996
 ---
 The $\Sol$ geometry is the least symmetric one among the eight. It has a bundle structure, but with a one-dimensional basis: it is a $\matR^2$-bundle over $\matR$. Again, the geometry is fully governed by a Lie group $\Sol$.\index{$\Sol$ geometry}
 
