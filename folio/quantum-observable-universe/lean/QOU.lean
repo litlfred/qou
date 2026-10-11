@@ -230,8 +230,10 @@ import QOU.KZ.FuchsianAnalytic
 import QOU.KZ.FuchsianConvergence
 import QOU.KZ.FuchsianFormal
 import QOU.KZ.FuchsianParam
+import QOU.KZ.KZ4
 import QOU.KZ.KZComplex
 import QOU.KZ.KZCorner
+import QOU.KZ.KZEdge
 import QOU.KZ.KZHalfMonodromy
 import QOU.KZ.KZHexagon
 import QOU.Knot.CuspShapeBarParity
