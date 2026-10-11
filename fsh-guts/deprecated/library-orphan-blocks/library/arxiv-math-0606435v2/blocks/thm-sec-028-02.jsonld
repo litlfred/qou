@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0606435v2/blocks/thm-sec-028-02",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "[K4]",
+  "pageStart": 20,
+  "pageEnd": 21,
+  "text": "thm-sec-028-02.md",
+  "derivedFrom": "library/arxiv-math-0606435v2/sections/sec-028",
+  "sourceDocument": "library/arxiv-math-0606435v2/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-155",
+  "kind": "prose",
+  "title": "Remarque. On pourrait aussi utiliser le raisonnement de la d´ emonstration",
+  "pageStart": 53,
+  "pageEnd": 53,
+  "text": "../sections/sec-155-9115-remarque-on-pourrait-aussi-utiliser-le-rais.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203273v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203273v3/manifest.jsonld",
+  "provenance": "ingested"
+}

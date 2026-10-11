@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0903.0853v3/blocks/prose-sec-125",
+  "kind": "prose",
+  "title": "We say that f has q-exponential decay of order (at least) k at inﬁnity",
+  "pageStart": 78,
+  "pageEnd": 79,
+  "text": "../sections/sec-125-2-we-say-that-f-has-q-exponential-decay-of-order.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0903.0853v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0903.0853v3/manifest.jsonld",
+  "provenance": "ingested"
+}

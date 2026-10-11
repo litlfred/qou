@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0605314v1/blocks/prose-sec-070",
+  "kind": "prose",
+  "title": "Proof of Theorem 11.1. First consider the case r = 1, ζ = 1. We have",
+  "pageStart": 37,
+  "pageEnd": 38,
+  "text": "../sections/sec-070-113-proof-of-theorem-111-first-consider-the-case.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0605314v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0605314v1/manifest.jsonld",
+  "provenance": "ingested"
+}

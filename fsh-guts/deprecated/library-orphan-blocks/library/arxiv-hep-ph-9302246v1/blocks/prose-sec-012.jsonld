@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-ph-9302246v1/blocks/prose-sec-012",
+  "kind": "prose",
+  "title": "(1 ± γ5) Ψ. The couplings GS and GV are",
+  "pageStart": 8,
+  "pageEnd": 9,
+  "text": "../sections/sec-012-2-1-γ5-ψ-the-couplings-gs-and-gv-are.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-ph-9302246v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-ph-9302246v1/manifest.jsonld",
+  "provenance": "ingested"
+}

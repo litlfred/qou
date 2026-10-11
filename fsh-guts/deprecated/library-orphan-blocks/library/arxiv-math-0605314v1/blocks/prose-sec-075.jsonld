@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0605314v1/blocks/prose-sec-075",
+  "kind": "prose",
+  "title": "Derivatives and power series expansions. Like polynomials and analytic",
+  "pageStart": 41,
+  "pageEnd": 41,
+  "text": "../sections/sec-075-1231-derivatives-and-power-series-expansions-lik.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0605314v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0605314v1/manifest.jsonld",
+  "provenance": "ingested"
+}

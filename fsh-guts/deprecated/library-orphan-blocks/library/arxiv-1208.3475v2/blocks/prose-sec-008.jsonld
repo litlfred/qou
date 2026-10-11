@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1208.3475v2/blocks/prose-sec-008",
+  "kind": "prose",
+  "title": "Jung, O. Kaczmarek, F. Karsch and E. Laermann",
+  "pageStart": 10,
+  "pageEnd": 10,
+  "text": "../sections/sec-008-c-jung-o-kaczmarek-f-karsch-and-e-laermann.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1208.3475v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1208.3475v2/manifest.jsonld",
+  "provenance": "ingested"
+}

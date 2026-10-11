@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203194v1/blocks/theorem-sec-558-03",
+  "kind": "theorem",
+  "title": "Maximal modulus principle",
+  "pageStart": 215,
+  "pageEnd": 217,
+  "text": "theorem-sec-558-03.md",
+  "derivedFrom": "library/arxiv-math-0203194v1/sections/sec-558",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203194v1/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0903.2472v1/blocks/prose-sec-042",
+  "kind": "prose",
+  "title": "(u) = V (p(α)(u),u ) (3.47)",
+  "pageStart": 40,
+  "pageEnd": 42,
+  "text": "../sections/sec-042-0-u-v-pαuu-347.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0903.2472v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0903.2472v1/manifest.jsonld",
+  "provenance": "ingested"
+}

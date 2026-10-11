@@ -1,0 +1,16 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0601458v1/blocks/theorem-sec-007-05",
+  "kind": "theorem",
+  "pageStart": 30,
+  "pageEnd": 56,
+  "text": "theorem-sec-007-05.md",
+  "derivedFrom": "library/arxiv-math-0601458v1/sections/sec-007",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0601458v1/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0605314v1/blocks/prose-sec-079",
+  "kind": "prose",
+  "title": "Applications to the Ohtsuki series. Here we apply Propositions 12.14 and",
+  "pageStart": 45,
+  "pageEnd": 47,
+  "text": "../sections/sec-079-1243-applications-to-the-ohtsuki-series-here-we.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0605314v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0605314v1/manifest.jsonld",
+  "provenance": "ingested"
+}

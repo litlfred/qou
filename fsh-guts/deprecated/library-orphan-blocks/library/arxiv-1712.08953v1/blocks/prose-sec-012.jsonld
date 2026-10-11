@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1712.08953v1/blocks/prose-sec-012",
+  "kind": "prose",
+  "title": "Suppose either that q is not a root of unity and e = 0, or q2 is a primitive eth",
+  "pageStart": 8,
+  "pageEnd": 9,
+  "text": "../sections/sec-012-18-suppose-either-that-q-is-not-a-root-of-unity.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1712.08953v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1712.08953v1/manifest.jsonld",
+  "provenance": "ingested"
+}

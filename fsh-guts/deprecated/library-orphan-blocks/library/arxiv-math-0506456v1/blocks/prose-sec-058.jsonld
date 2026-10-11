@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0506456v1/blocks/prose-sec-058",
+  "kind": "prose",
+  "title": "(θ) = 4πθ",
+  "pageStart": 66,
+  "pageEnd": 67,
+  "text": "../sections/sec-058-2-θ-4πθ.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0506456v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0506456v1/manifest.jsonld",
+  "provenance": "ingested"
+}

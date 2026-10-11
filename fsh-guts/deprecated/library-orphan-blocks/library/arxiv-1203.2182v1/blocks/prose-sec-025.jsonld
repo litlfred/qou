@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1203.2182v1/blocks/prose-sec-025",
+  "kind": "prose",
+  "title": "(K;a,q,t )",
+  "pageStart": 28,
+  "pageEnd": 31,
+  "text": "../sections/sec-025-1-kaqt.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1203.2182v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1203.2182v1/manifest.jsonld",
+  "provenance": "ingested"
+}

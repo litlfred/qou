@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-ph-0601023v3/blocks/prose-sec-091",
+  "kind": "prose",
+  "title": "Wetterich, “Fermion Mass Predictions From Higher Dimens ions,”",
+  "pageStart": 217,
+  "pageEnd": 224,
+  "text": "../sections/sec-091-c-wetterich-fermion-mass-predictions-from-higher.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-ph-0601023v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-ph-0601023v3/manifest.jsonld",
+  "provenance": "ingested"
+}

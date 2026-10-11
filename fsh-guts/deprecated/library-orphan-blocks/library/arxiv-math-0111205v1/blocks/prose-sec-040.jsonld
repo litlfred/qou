@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0111205v1/blocks/prose-sec-040",
+  "kind": "prose",
+  "title": "The quantum double of a braided category",
+  "pageStart": 44,
+  "pageEnd": 48,
+  "text": "../sections/sec-040-7-the-quantum-double-of-a-braided-category.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0111205v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0111205v1/manifest.jsonld",
+  "provenance": "ingested"
+}

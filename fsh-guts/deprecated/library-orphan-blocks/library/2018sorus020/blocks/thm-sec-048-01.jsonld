@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/2018sorus020/blocks/thm-sec-048-01",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "Theorem 2.0.2",
+  "pageStart": 65,
+  "pageEnd": 66,
+  "text": "thm-sec-048-01.md",
+  "derivedFrom": "library/2018sorus020/sections/sec-048",
+  "sourceDocument": "library/2018sorus020/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203194v1/blocks/prose-sec-222",
+  "kind": "prose",
+  "title": "It is known that X +(N ) has good reduction at any prime p which",
+  "pageStart": 104,
+  "pageEnd": 105,
+  "text": "../sections/sec-222-743-it-is-known-that-x-n-has-good-reduction-at-a.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203194v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203194v1/manifest.jsonld",
+  "provenance": "ingested"
+}

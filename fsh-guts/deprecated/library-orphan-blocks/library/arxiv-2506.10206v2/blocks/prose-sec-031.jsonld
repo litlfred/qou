@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2506.10206v2/blocks/prose-sec-031",
+  "kind": "prose",
+  "title": "(u4− 3u3 + 4u2− 2u + 1)",
+  "pageStart": 24,
+  "pageEnd": 26,
+  "text": "../sections/sec-031-2-u4-3u3-4u2-2u-1.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2506.10206v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2506.10206v2/manifest.jsonld",
+  "provenance": "ingested"
+}

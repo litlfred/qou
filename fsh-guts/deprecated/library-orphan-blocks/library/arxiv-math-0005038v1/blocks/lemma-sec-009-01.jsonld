@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0005038v1/blocks/lemma-sec-009-01",
+  "kind": "lemma",
+  "title": "The Key Lemma",
+  "pageStart": 6,
+  "pageEnd": 6,
+  "text": "lemma-sec-009-01.md",
+  "derivedFrom": "library/arxiv-math-0005038v1/sections/sec-009",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0005038v1/manifest.jsonld",
+  "provenance": "ingested"
+}

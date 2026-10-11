@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0707.2003v2/blocks/theorem-sec-002-01",
+  "kind": "theorem",
+  "title": "Khovanov , [Kh]",
+  "pageStart": 5,
+  "pageEnd": 7,
+  "text": "theorem-sec-002-01.md",
+  "derivedFrom": "library/arxiv-0707.2003v2/sections/sec-002",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0707.2003v2/manifest.jsonld",
+  "provenance": "ingested"
+}

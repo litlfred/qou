@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2002.04901v5/blocks/theorem-sec-001-23",
+  "kind": "theorem",
+  "title": "[Ye2, Theorem 1.3]",
+  "pageStart": 5,
+  "pageEnd": 20,
+  "text": "theorem-sec-001-23.md",
+  "derivedFrom": "library/arxiv-2002.04901v5/sections/sec-001",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2002.04901v5/manifest.jsonld",
+  "provenance": "ingested"
+}

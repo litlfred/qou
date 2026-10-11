@@ -1,0 +1,16 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2302.04022v1/blocks/conjecture-sec-001-36",
+  "kind": "conjecture",
+  "pageStart": 3,
+  "pageEnd": 27,
+  "text": "conjecture-sec-001-36.md",
+  "derivedFrom": "library/arxiv-2302.04022v1/sections/sec-001",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2302.04022v1/manifest.jsonld",
+  "provenance": "ingested"
+}

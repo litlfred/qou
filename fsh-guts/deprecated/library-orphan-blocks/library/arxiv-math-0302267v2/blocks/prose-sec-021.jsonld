@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0302267v2/blocks/prose-sec-021",
+  "kind": "prose",
+  "title": "La suite spectrale pour RΓ( X, ) et Fil donne donc",
+  "pageStart": 32,
+  "pageEnd": 33,
+  "text": "../sections/sec-021-0-la-suite-spectrale-pour-rγ-x-et-fil-donne-donc.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0302267v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0302267v2/manifest.jsonld",
+  "provenance": "ingested"
+}

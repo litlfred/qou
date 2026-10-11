@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2604.16077v1/blocks/prose-sec-077",
+  "kind": "prose",
+  "title": "References",
+  "pageStart": 64,
+  "pageEnd": 66,
+  "text": "../sections/sec-077-references.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2604.16077v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2604.16077v1/manifest.jsonld",
+  "provenance": "ingested"
+}

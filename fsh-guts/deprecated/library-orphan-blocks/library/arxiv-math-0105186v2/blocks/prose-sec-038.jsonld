@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0105186v2/blocks/prose-sec-038",
+  "kind": "prose",
+  "title": "The second map",
+  "pageStart": 60,
+  "pageEnd": 63,
+  "text": "../sections/sec-038-33-the-second-map.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0105186v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0105186v2/manifest.jsonld",
+  "provenance": "ingested"
+}

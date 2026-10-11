@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1701.06567v2/blocks/prose-sec-018",
+  "kind": "prose",
+  "title": "The t =qβ reduction from BPS spectral sequence",
+  "pageStart": 30,
+  "pageEnd": 32,
+  "text": "../sections/sec-018-312-the-t-qβ-reduction-from-bps-spectral-sequenc.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1701.06567v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1701.06567v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/blocks/theorem-sec-086-12",
+  "kind": "theorem",
+  "title": "Rickard-Keller",
+  "pageStart": 308,
+  "pageEnd": 314,
+  "text": "theorem-sec-086-12.md",
+  "derivedFrom": "library/arxiv-1610.09640v4/sections/sec-086",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

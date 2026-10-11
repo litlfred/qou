@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0605314v1/blocks/prose-sec-051",
+  "kind": "prose",
+  "title": "For ζ∈Z with r = ord(ζ), by (7.2), we have",
+  "pageStart": 25,
+  "pageEnd": 26,
+  "text": "../sections/sec-051-2-for-ζz-with-r-ordζ-by-72-we-have.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0605314v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0605314v1/manifest.jsonld",
+  "provenance": "ingested"
+}

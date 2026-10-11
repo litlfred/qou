@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9906120v3/blocks/prose-sec-011",
+  "kind": "prose",
+  "title": "We will give another proof. Set si = µi + N + 1 −i, 1 ≤i ≤N and",
+  "pageStart": 31,
+  "pageEnd": 37,
+  "text": "../sections/sec-011-31-we-will-give-another-proof-set-si-µi-n-1-i-1.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9906120v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9906120v3/manifest.jsonld",
+  "provenance": "ingested"
+}

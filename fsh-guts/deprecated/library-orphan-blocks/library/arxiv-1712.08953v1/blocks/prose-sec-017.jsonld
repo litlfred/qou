@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1712.08953v1/blocks/prose-sec-017",
+  "kind": "prose",
+  "title": "Generators and relations",
+  "pageStart": 12,
+  "pageEnd": 14,
+  "text": "../sections/sec-017-2-generators-and-relations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1712.08953v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1712.08953v1/manifest.jsonld",
+  "provenance": "ingested"
+}

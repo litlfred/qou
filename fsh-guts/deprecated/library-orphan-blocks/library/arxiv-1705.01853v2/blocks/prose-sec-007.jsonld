@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1705.01853v2/blocks/prose-sec-007",
+  "kind": "prose",
+  "title": "Line Operators in the Standard Model",
+  "pageStart": 8,
+  "pageEnd": 8,
+  "text": "../sections/sec-007-3-line-operators-in-the-standard-model.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1705.01853v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1705.01853v2/manifest.jsonld",
+  "provenance": "ingested"
+}

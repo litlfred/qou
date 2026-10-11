@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2008.09788v2/blocks/theorem-sec-002-14",
+  "kind": "theorem",
+  "title": "see [86], [43], [59], [93]",
+  "pageStart": 5,
+  "pageEnd": 13,
+  "text": "theorem-sec-002-14.md",
+  "derivedFrom": "library/arxiv-2008.09788v2/sections/sec-002",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2008.09788v2/manifest.jsonld",
+  "provenance": "ingested"
+}

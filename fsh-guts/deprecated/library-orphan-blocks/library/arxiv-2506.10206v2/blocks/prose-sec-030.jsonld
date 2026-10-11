@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2506.10206v2/blocks/prose-sec-030",
+  "kind": "prose",
+  "title": "Li2(u) + 3 Li2((u− 1)2)",
+  "pageStart": 23,
+  "pageEnd": 24,
+  "text": "../sections/sec-030-3-li2u-3-li2u-12.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2506.10206v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2506.10206v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9810105v2/blocks/prose-sec-009",
+  "kind": "prose",
+  "title": "This gives us F ′(φ) =",
+  "pageStart": 19,
+  "pageEnd": 20,
+  "text": "../sections/sec-009-2-this-gives-us-f-φ.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9810105v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9810105v2/manifest.jsonld",
+  "provenance": "ingested"
+}

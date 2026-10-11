@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9810105v2/blocks/prose-sec-008",
+  "kind": "prose",
+  "title": "(z+z−1) on the unit circle (see [Sz1],",
+  "pageStart": 18,
+  "pageEnd": 19,
+  "text": "../sections/sec-008-2-zz1-on-the-unit-circle-see-sz1.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9810105v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9810105v2/manifest.jsonld",
+  "provenance": "ingested"
+}

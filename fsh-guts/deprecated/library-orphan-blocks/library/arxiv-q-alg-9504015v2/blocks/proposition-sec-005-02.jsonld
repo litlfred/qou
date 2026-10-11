@@ -1,0 +1,16 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-q-alg-9504015v2/blocks/proposition-sec-005-02",
+  "kind": "proposition",
+  "pageStart": 5,
+  "pageEnd": 8,
+  "text": "proposition-sec-005-02.md",
+  "derivedFrom": "library/arxiv-q-alg-9504015v2/sections/sec-005",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-q-alg-9504015v2/manifest.jsonld",
+  "provenance": "ingested"
+}

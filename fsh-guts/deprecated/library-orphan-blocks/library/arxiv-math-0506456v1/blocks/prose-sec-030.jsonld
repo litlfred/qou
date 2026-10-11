@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0506456v1/blocks/prose-sec-030",
+  "kind": "prose",
+  "title": "Classical Chern–Simons theory on Mp/q",
+  "pageStart": 29,
+  "pageEnd": 30,
+  "text": "../sections/sec-030-5-classical-chernsimons-theory-on-mpq.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0506456v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0506456v1/manifest.jsonld",
+  "provenance": "ingested"
+}

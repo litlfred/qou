@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203194v1/blocks/prose-sec-197",
+  "kind": "prose",
+  "title": "The argument in the proof of 6.1.3 shows a little more. Recall from",
+  "pageStart": 95,
+  "pageEnd": 95,
+  "text": "../sections/sec-197-624-the-argument-in-the-proof-of-613-shows-a-lit.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203194v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203194v1/manifest.jsonld",
+  "provenance": "ingested"
+}

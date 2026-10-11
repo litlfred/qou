@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0111205v1/blocks/prose-sec-018",
+  "kind": "prose",
+  "title": "Weak Morita equivalence of Z1(C) and C ⊠ C op",
+  "pageStart": 16,
+  "pageEnd": 17,
+  "text": "../sections/sec-018-4-weak-morita-equivalence-of-z1c-and-c-c-op.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0111205v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0111205v1/manifest.jsonld",
+  "provenance": "ingested"
+}

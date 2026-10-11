@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/blocks/theorem-sec-023-05",
+  "kind": "theorem",
+  "title": "Baer Criterion",
+  "pageStart": 47,
+  "pageEnd": 51,
+  "text": "theorem-sec-023-05.md",
+  "derivedFrom": "library/arxiv-1610.09640v4/sections/sec-023",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

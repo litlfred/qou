@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2604.16077v1/blocks/prose-sec-056",
+  "kind": "prose",
+  "title": "(Log(2)+1+Log(N )−Log(π)−Log(α)) = Constant",
+  "pageStart": 39,
+  "pageEnd": 39,
+  "text": "../sections/sec-056-2-log21logn-logπlogα-constant.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2604.16077v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2604.16077v1/manifest.jsonld",
+  "provenance": "ingested"
+}

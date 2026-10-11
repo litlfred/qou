@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0111205v1/blocks/prose-sec-019",
+  "kind": "prose",
+  "title": "A Frobenius Algebra in C ⊠ C op",
+  "pageStart": 17,
+  "pageEnd": 18,
+  "text": "../sections/sec-019-41-a-frobenius-algebra-in-c-c-op.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0111205v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0111205v1/manifest.jsonld",
+  "provenance": "ingested"
+}

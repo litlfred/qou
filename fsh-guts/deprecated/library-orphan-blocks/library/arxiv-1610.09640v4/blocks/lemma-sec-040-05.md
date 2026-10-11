@@ -1,0 +1,1 @@
+Consider a standard triangleL

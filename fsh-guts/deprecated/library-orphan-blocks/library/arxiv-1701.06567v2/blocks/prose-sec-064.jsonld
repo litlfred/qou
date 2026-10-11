@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1701.06567v2/blocks/prose-sec-064",
+  "kind": "prose",
+  "title": "We have",
+  "pageStart": 53,
+  "pageEnd": 55,
+  "text": "../sections/sec-064-6-we-have.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1701.06567v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1701.06567v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0111205v1/blocks/prose-sec-046",
+  "kind": "prose",
+  "title": "(1 ⊗ b)R−1",
+  "pageStart": 56,
+  "pageEnd": 57,
+  "text": "../sections/sec-046-12-1-br1.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0111205v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0111205v1/manifest.jsonld",
+  "provenance": "ingested"
+}

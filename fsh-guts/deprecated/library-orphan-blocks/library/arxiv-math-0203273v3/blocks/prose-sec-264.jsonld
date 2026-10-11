@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-264",
+  "kind": "prose",
+  "title": "Lemme. Soient f,g ∈ Hom(G,H ), o `u G et H sont deux K-groupes",
+  "pageStart": 103,
+  "pageEnd": 103,
+  "text": "../sections/sec-264-1828-lemme-soient-fg-homgh-o-u-g-et-h-sont-deux.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203273v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203273v3/manifest.jsonld",
+  "provenance": "ingested"
+}

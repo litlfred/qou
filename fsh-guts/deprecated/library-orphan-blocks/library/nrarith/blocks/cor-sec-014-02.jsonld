@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/nrarith/blocks/cor-sec-014-02",
+  "@type": [
+    "folio:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 10,
+  "pageEnd": 11,
+  "text": "cor-sec-014-02.md",
+  "derivedFrom": "library/nrarith/sections/sec-014",
+  "sourceDocument": "library/nrarith/manifest",
+  "provenance": "ingested"
+}

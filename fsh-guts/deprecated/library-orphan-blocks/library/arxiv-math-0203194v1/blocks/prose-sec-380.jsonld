@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203194v1/blocks/prose-sec-380",
+  "kind": "prose",
+  "title": "In I.2.4.3, we have reviewed Katz’ functor from representat ions of",
+  "pageStart": 151,
+  "pageEnd": 152,
+  "text": "../sections/sec-380-332-in-i243-we-have-reviewed-katz-functor-from-r.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203194v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203194v1/manifest.jsonld",
+  "provenance": "ingested"
+}

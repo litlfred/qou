@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2109.04664v4/blocks/prose-sec-025",
+  "kind": "prose",
+  "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+  "pageStart": 24,
+  "pageEnd": 26,
+  "text": "../sections/sec-025-24-hitoshi-murakami-and-anh-t-tran.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2109.04664v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2109.04664v4/manifest.jsonld",
+  "provenance": "ingested"
+}

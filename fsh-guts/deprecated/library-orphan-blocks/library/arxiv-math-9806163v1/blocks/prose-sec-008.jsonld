@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9806163v1/blocks/prose-sec-008",
+  "kind": "prose",
+  "title": "The Braid Group",
+  "pageStart": 6,
+  "pageEnd": 7,
+  "text": "../sections/sec-008-13-the-braid-group.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9806163v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9806163v1/manifest.jsonld",
+  "provenance": "ingested"
+}

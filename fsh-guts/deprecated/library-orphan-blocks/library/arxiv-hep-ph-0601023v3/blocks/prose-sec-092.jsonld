@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-ph-0601023v3/blocks/prose-sec-092",
+  "kind": "prose",
+  "title": "D. Carone, “Electroweak constraints on extended models w ith extra",
+  "pageStart": 224,
+  "pageEnd": 230,
+  "text": "../sections/sec-092-c-d-carone-electroweak-constraints-on-extended-m.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-ph-0601023v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-ph-0601023v3/manifest.jsonld",
+  "provenance": "ingested"
+}

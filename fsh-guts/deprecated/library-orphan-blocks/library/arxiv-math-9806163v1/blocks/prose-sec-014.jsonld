@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9806163v1/blocks/prose-sec-014",
+  "kind": "prose",
+  "title": "A Homomorphism of Hn(q, −qr1+m) onto a reduced algebra of",
+  "pageStart": 10,
+  "pageEnd": 12,
+  "text": "../sections/sec-014-32-a-homomorphism-of-hnq-qr1m-onto-a-reduced-alg.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9806163v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9806163v1/manifest.jsonld",
+  "provenance": "ingested"
+}

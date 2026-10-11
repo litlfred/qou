@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1204.5807v1/blocks/prose-sec-033",
+  "kind": "prose",
+  "title": "ANDRUSKIEWITSCH, ANGIONO, GARCÍA IGLESIAS, TORRECILLA S, V AY",
+  "pageStart": 18,
+  "pageEnd": 19,
+  "text": "../sections/sec-033-18-andruskiewitsch-angiono-garcía-iglesias-torre.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1204.5807v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1204.5807v1/manifest.jsonld",
+  "provenance": "ingested"
+}

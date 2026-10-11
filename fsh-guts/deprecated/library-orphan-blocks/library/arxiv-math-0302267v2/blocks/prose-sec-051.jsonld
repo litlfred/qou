@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0302267v2/blocks/prose-sec-051",
+  "kind": "prose",
+  "title": "(X ∩ D, x) → πreal",
+  "pageStart": 48,
+  "pageEnd": 48,
+  "text": "../sections/sec-051-1-x-d-x-πreal.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0302267v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0302267v2/manifest.jsonld",
+  "provenance": "ingested"
+}

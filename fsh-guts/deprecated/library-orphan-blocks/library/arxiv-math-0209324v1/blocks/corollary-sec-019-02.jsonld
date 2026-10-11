@@ -1,0 +1,16 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0209324v1/blocks/corollary-sec-019-02",
+  "kind": "corollary",
+  "pageStart": 16,
+  "pageEnd": 16,
+  "text": "corollary-sec-019-02.md",
+  "derivedFrom": "library/arxiv-math-0209324v1/sections/sec-019",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0209324v1/manifest.jsonld",
+  "provenance": "ingested"
+}

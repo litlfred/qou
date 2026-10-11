@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-ph-0103325v4/blocks/prose-sec-024",
+  "kind": "prose",
+  "title": "A.P. Isaev and Z. Popowicz, Phys. Lett. B",
+  "pageStart": 8,
+  "pageEnd": 8,
+  "text": "../sections/sec-024-20-ap-isaev-and-z-popowicz-phys-lett-b.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-ph-0103325v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-ph-0103325v4/manifest.jsonld",
+  "provenance": "ingested"
+}

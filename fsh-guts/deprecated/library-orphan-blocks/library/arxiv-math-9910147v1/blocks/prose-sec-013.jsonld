@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9910147v1/blocks/prose-sec-013",
+  "kind": "prose",
+  "title": "Z+,X 1 −X2 ∈ 1",
+  "pageStart": 8,
+  "pageEnd": 8,
+  "text": "../sections/sec-013-2-zx-1-x2-1.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9910147v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9910147v1/manifest.jsonld",
+  "provenance": "ingested"
+}

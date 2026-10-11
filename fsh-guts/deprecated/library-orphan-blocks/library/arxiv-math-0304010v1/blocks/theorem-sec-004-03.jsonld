@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0304010v1/blocks/theorem-sec-004-03",
+  "kind": "theorem",
+  "title": " [Bi1, Th. 1.3] ",
+  "pageStart": 40,
+  "pageEnd": 49,
+  "text": "theorem-sec-004-03.md",
+  "derivedFrom": "library/arxiv-math-0304010v1/sections/sec-004",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0304010v1/manifest.jsonld",
+  "provenance": "ingested"
+}

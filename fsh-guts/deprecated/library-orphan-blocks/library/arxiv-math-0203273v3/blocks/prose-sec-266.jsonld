@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-266",
+  "kind": "prose",
+  "title": "Scolie. Avec les notations de 10.2, on a",
+  "pageStart": 103,
+  "pageEnd": 104,
+  "text": "../sections/sec-266-18210-scolie-avec-les-notations-de-102-on-a.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203273v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203273v3/manifest.jsonld",
+  "provenance": "ingested"
+}

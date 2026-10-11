@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-040",
+  "kind": "prose",
+  "title": "Proposition. SoitA une petite cat´egorie ab´elienne semi-simple, o`uK est un",
+  "pageStart": 16,
+  "pageEnd": 17,
+  "text": "../sections/sec-040-216-proposition-soita-une-petite-categorie-abeli.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203273v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203273v3/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-cond-mat-0112325v6/blocks/prose-sec-013",
+  "kind": "prose",
+  "title": "(ρ2 − ρ2",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "text": "../sections/sec-013-8-ρ2-ρ2.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-cond-mat-0112325v6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-cond-mat-0112325v6/manifest.jsonld",
+  "provenance": "ingested"
+}

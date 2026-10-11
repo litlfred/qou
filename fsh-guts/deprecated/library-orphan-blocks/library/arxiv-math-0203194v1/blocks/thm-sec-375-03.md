@@ -1,0 +1,1 @@
+NP∞ has integral vertices.

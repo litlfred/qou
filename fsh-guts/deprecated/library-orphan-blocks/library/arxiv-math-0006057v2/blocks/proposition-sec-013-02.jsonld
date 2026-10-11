@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0006057v2/blocks/proposition-sec-013-02",
+  "kind": "proposition",
+  "title": "[BNSz], 3.2",
+  "pageStart": 10,
+  "pageEnd": 11,
+  "text": "proposition-sec-013-02.md",
+  "derivedFrom": "library/arxiv-math-0006057v2/sections/sec-013",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0006057v2/manifest.jsonld",
+  "provenance": "ingested"
+}

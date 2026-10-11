@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1203.2182v1/blocks/prose-sec-066",
+  "kind": "prose",
+  "title": "(−x +z0)(1 +txz0)",
+  "pageStart": 73,
+  "pageEnd": 74,
+  "text": "../sections/sec-066-0-x-z01-txz0.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1203.2182v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1203.2182v1/manifest.jsonld",
+  "provenance": "ingested"
+}

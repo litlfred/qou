@@ -1,0 +1,20 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/ariasabad2015-revcolmat/blocks/prop-sec-016-03",
+  "@type": [
+    "folio-assistant-core:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 31,
+  "pageEnd": 37,
+  "text": "prop-sec-016-03.md",
+  "derivedFrom": "library/ariasabad2015-revcolmat/sections/sec-016",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ariasabad2015-revcolmat/manifest.jsonld",
+  "provenance": "ingested"
+}

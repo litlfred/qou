@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1108.4389v1/blocks/prose-sec-034",
+  "kind": "prose",
+  "title": "RO, with",
+  "pageStart": 46,
+  "pageEnd": 47,
+  "text": "../sections/sec-034-2-ro-with.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1108.4389v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1108.4389v1/manifest.jsonld",
+  "provenance": "ingested"
+}

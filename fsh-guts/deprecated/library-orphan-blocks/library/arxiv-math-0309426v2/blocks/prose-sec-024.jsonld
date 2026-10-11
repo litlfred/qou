@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0309426v2/blocks/prose-sec-024",
+  "kind": "prose",
+  "title": "Corollary . Suppose that λ = (n −k, 1k). Then [k]!",
+  "pageStart": 11,
+  "pageEnd": 11,
+  "text": "../sections/sec-024-62-corollary-suppose-that-λ-n-k-1k-then-k.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0309426v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0309426v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0903.2472v1/blocks/prose-sec-020",
+  "kind": "prose",
+  "title": "(u) = S(α)",
+  "pageStart": 24,
+  "pageEnd": 24,
+  "text": "../sections/sec-020-0-u-sα.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0903.2472v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0903.2472v1/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1704.01735v4/blocks/theorem-sec-005-05",
+  "kind": "theorem",
+  "title": "A diﬀerent construction of Bring’s curve and Fricke’s\noctavic curve: from X(13",
+  "pageStart": 1,
+  "pageEnd": 8,
+  "text": "theorem-sec-005-05.md",
+  "derivedFrom": "library/arxiv-1704.01735v4/sections/sec-005",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1704.01735v4/manifest.jsonld",
+  "provenance": "ingested"
+}

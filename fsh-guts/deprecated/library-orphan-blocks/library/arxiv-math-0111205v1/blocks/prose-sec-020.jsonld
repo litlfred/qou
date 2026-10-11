@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0111205v1/blocks/prose-sec-020",
+  "kind": "prose",
+  "title": "A fully faithful tensor functor F : Z1(C) → B",
+  "pageStart": 18,
+  "pageEnd": 25,
+  "text": "../sections/sec-020-42-a-fully-faithful-tensor-functor-f-z1c-b.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0111205v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0111205v1/manifest.jsonld",
+  "provenance": "ingested"
+}

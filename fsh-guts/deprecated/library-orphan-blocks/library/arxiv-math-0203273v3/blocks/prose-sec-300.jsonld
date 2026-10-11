@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-300",
+  "kind": "prose",
+  "title": "Th´eor`eme. Les conditions suivantes sont ´equivalentes :",
+  "pageStart": 117,
+  "pageEnd": 132,
+  "text": "../sections/sec-300-2023-theoreme-les-conditions-suivantes-sont-equi.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203273v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203273v3/manifest.jsonld",
+  "provenance": "ingested"
+}

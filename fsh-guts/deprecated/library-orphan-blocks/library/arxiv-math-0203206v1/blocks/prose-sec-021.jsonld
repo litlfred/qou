@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203206v1/blocks/prose-sec-021",
+  "kind": "prose",
+  "title": "Conjugates for Representations and Corepresentations",
+  "pageStart": 17,
+  "pageEnd": 19,
+  "text": "../sections/sec-021-33-conjugates-for-representations-and-corepresen.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203206v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203206v1/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-051",
+  "kind": "prose",
+  "title": "Proposition. a) SiA est semi-primaire, il en est de m ˆeme deA/I pour tout",
+  "pageStart": 19,
+  "pageEnd": 20,
+  "text": "../sections/sec-051-234-proposition-a-sia-est-semi-primaire-il-en-es.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203273v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203273v3/manifest.jsonld",
+  "provenance": "ingested"
+}

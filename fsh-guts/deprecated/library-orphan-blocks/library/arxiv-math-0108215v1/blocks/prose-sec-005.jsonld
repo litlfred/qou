@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0108215v1/blocks/prose-sec-005",
+  "kind": "prose",
+  "title": "Each element of Rlow is < each element of Rhigh. Thus,",
+  "pageStart": 7,
+  "pageEnd": 7,
+  "text": "../sections/sec-005-1-each-element-of-rlow-is-each-element-of-rhigh.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0108215v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0108215v1/manifest.jsonld",
+  "provenance": "ingested"
+}

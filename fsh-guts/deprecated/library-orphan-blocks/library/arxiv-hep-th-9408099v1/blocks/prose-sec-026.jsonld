@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-th-9408099v1/blocks/prose-sec-026",
+  "kind": "prose",
+  "title": "Nf = 0",
+  "pageStart": 38,
+  "pageEnd": 39,
+  "text": "../sections/sec-026-111-nf-0.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-9408099v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-9408099v1/manifest.jsonld",
+  "provenance": "ingested"
+}

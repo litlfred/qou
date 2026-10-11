@@ -1,0 +1,16 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0409565v2/blocks/proposition-sec-000-04",
+  "kind": "proposition",
+  "pageStart": 1,
+  "pageEnd": 10,
+  "text": "proposition-sec-000-04.md",
+  "derivedFrom": "library/arxiv-math-0409565v2/sections/sec-000",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0409565v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1705.10485v2/blocks/prose-sec-042",
+  "kind": "prose",
+  "title": "Cumulants, zone of control and Kolmogorov bound",
+  "pageStart": 28,
+  "pageEnd": 30,
+  "text": "../sections/sec-042-41-cumulants-zone-of-control-and-kolmogorov-boun.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1705.10485v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1705.10485v2/manifest.jsonld",
+  "provenance": "ingested"
+}

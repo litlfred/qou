@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0111205v1/blocks/prose-sec-047",
+  "kind": "prose",
+  "title": "For a ribbon algebra H it is trivial that T maps Z(H) into itself, since θ ∈ Z(H). ✷",
+  "pageStart": 57,
+  "pageEnd": 59,
+  "text": "../sections/sec-047-2-for-a-ribbon-algebra-h-it-is-trivial-that-t-ma.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0111205v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0111205v1/manifest.jsonld",
+  "provenance": "ingested"
+}

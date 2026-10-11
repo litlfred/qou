@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0405508v1/blocks/thm-sec-024-01",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "cf. [7], Theorem 3.",
+  "pageStart": 20,
+  "pageEnd": 22,
+  "text": "thm-sec-024-01.md",
+  "derivedFrom": "library/arxiv-math-0405508v1/sections/sec-024",
+  "sourceDocument": "library/arxiv-math-0405508v1/manifest",
+  "provenance": "ingested"
+}

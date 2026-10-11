@@ -13,3 +13,7 @@ The kept trashcan of `qou`: deprecated or relocated material that is never rende
 - **Writes:** spliced onto the tip and never force-pushed. This branch is never merged into `main`.
 
 Owner, 2026-10-10: "_deprecated is now branch cat/cat-harness/fsh-guts (or should be. migrate if not)".
+
+## Later additions
+
+- `fsh-guts/deprecated/library-orphan-blocks/library/<id>/blocks/` (2026-10-11): 25,449 files (14,645 `.jsonld` + 10,804 `.md`) that qou#7692's graph regeneration left referenced by no section, mostly block ids the generator has since renamed (`lemma-sec-…` → `lem-sec-…`). Byte-identical to qou `main` 996ea12332. Owner, 2026-10-11: "1 -> fsh-guts".

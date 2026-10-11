@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1203.2182v1/blocks/prose-sec-060",
+  "kind": "prose",
+  "title": "(logy)2 + (logy)(log(1 −yq1)) + Li2(yq1). (4.33)",
+  "pageStart": 62,
+  "pageEnd": 63,
+  "text": "../sections/sec-060-2-logy2-logylog1-yq1-li2yq1-433.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1203.2182v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1203.2182v1/manifest.jsonld",
+  "provenance": "ingested"
+}

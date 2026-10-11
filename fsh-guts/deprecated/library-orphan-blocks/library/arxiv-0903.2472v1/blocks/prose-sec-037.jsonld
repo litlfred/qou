@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0903.2472v1/blocks/prose-sec-037",
+  "kind": "prose",
+  "title": "From (3.30) we also ﬁnd the Taylor expansion of I(z;τ ) at z = 0,",
+  "pageStart": 37,
+  "pageEnd": 38,
+  "text": "../sections/sec-037-5-from-330-we-also-ﬁnd-the-taylor-expansion-of-i.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0903.2472v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0903.2472v1/manifest.jsonld",
+  "provenance": "ingested"
+}

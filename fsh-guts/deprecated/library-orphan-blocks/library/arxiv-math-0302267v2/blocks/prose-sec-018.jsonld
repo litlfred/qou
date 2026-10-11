@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0302267v2/blocks/prose-sec-018",
+  "kind": "prose",
+  "title": "Soit X un espace topologique s´ epar´ e et connexe. On notebPa l’ensemble des classes",
+  "pageStart": 28,
+  "pageEnd": 28,
+  "text": "../sections/sec-018-31-soit-x-un-espace-topologique-s-epar-e-et-conn.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0302267v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0302267v2/manifest.jsonld",
+  "provenance": "ingested"
+}

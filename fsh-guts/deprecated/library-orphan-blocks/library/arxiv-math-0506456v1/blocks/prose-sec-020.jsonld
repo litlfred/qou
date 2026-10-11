@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0506456v1/blocks/prose-sec-020",
+  "kind": "prose",
+  "title": "The large r asymptotics of τr(Mp/q)",
+  "pageStart": 19,
+  "pageEnd": 21,
+  "text": "../sections/sec-020-43-the-large-r-asymptotics-of-τrmpq.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0506456v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0506456v1/manifest.jsonld",
+  "provenance": "ingested"
+}

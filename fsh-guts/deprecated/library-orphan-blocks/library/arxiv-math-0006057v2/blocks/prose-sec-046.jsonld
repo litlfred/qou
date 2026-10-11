@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0006057v2/blocks/prose-sec-046",
+  "kind": "prose",
+  "title": "C∗-quantum groupoids and subfactors : the finite depth case",
+  "pageStart": 36,
+  "pageEnd": 37,
+  "text": "../sections/sec-046-9-c-quantum-groupoids-and-subfactors-the-finite.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0006057v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0006057v2/manifest.jsonld",
+  "provenance": "ingested"
+}

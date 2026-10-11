@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-024",
+  "kind": "prose",
+  "title": "C−1",
+  "pageStart": 31,
+  "pageEnd": 33,
+  "text": "../sections/sec-024-13-c1.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-ph-0012035v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-ph-0012035v3/manifest.jsonld",
+  "provenance": "ingested"
+}

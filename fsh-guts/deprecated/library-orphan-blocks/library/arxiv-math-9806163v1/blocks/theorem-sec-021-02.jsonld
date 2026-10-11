@@ -1,0 +1,16 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9806163v1/blocks/theorem-sec-021-02",
+  "kind": "theorem",
+  "pageStart": 20,
+  "pageEnd": 21,
+  "text": "theorem-sec-021-02.md",
+  "derivedFrom": "library/arxiv-math-9806163v1/sections/sec-021",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9806163v1/manifest.jsonld",
+  "provenance": "ingested"
+}
