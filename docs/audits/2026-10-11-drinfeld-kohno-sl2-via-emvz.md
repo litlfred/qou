@@ -5,11 +5,13 @@ Date: 2026-10-11. Goal milestone `qou-ywyq`; bean `qou-d0qq`. Requested by the o
 
 **Status: an argument assembled here, not a published theorem and not refereed.**
 Etingof–Motorin–Varchenko–Zhu prove the Deligne-category case only. The adaptation
-below is ours, and every step that is not ours is cited. Nothing here is in Lean.
+below is ours, and every step that is not ours is cited. The Hecke-algebra half of Step 4 is in
+Lean (§5); the analytic and categorical steps are not.
 
 ## 1. What Etingof–Motorin–Varchenko–Zhu prove, and why it does not cover 𝔰𝔩₂ directly
 
-Source: arXiv 2504.02266v3 (library `arxiv-2504.02266v3`, §6, Theorem 6.1).
+Source: arXiv 2504.02266v3, §6, Theorem 6.1. Ingested as `library/arxiv-2504.02266v3` on branch
+`claude/library-ingest-kz-batch-2026-10-11`, **not yet on `main`**.
 
 * **Setting.** `t ∈ ℂ ∖ ℤ`; `Rep(GL_t)` is Deligne's interpolation category; `ℏ ∉ ℚ`;
   `q = e^{πiℏ}`; `a = q^t`; and `q, a` multiplicatively independent.
@@ -79,7 +81,8 @@ relative to EMVZ.
   **Lean (sorry-free):** the count `Σ_{k ≤ n/2} (C(n,k) − C(n,k−1))² = C_n` is
   `QOU.Mass.TwoRowCatalan.twoRow_sum_sq_eq_catalan`, and `[m]_q ≠ 0` for `m ≥ 1` with `q` not a
   root of unity is `QOU.Mass.TwoRowCatalan.qint_ne_zero`. The identification of `C(n,k) − C(n,k−1)`
-  with `f^λ` for `λ = (n−k, k)` (hook formula) is standard and not formalised.
+  with `f^λ` for `λ = (n−k, k)` is `QOU.SchurWeyl.TwoRowSYTBallot.numSYT_twoRow_eq_ballot`, and
+  the count itself was first proved as `QOU.Mathlib.ballot_sq_sum_catalan`; both sorry-free.
 * So `F : H_n(q) → End_{D_ℏ}(V^{⊗n})` is surjective. Its kernel is exactly the blocks with
   three or more rows, and it induces an isomorphism from the Temperley–Lieb algebra `TL_n(q)`.
 * Consequently, for each simple `Y = V_j` the KZ monodromy representation on `Hom(V_j, V^{⊗n})`
@@ -111,9 +114,9 @@ to what Kohno's Remark 1.3.14 already gives (PR #7673, probe
   * It says nothing about whether the framework's own substrate connection **is** this KZ
     connection. That is still open (bean `qou-d0qq`; verdict of 2026-10-11: as the corpus
     stands, it is not).
-* **Lean.** The counting core of Step 4 is formalised (`QOU/Mass/TwoRowCatalan.lean`). Steps 1, 3, 5 and the block theory of Step 4 are not. Formalising them would need Drinfeld's
-  associator, the skein category's universal property and Hecke-algebra block theory. That is
-  far more than the two-strand file (`QOU/Mass/KohnoTwoPoint.lean`) and the flatness file
+* **Lean.** The Hecke side of Step 4 is formalised (§5). Steps 1, 3, 5 and the KZ side of Step 4
+  are not. Formalising Steps 1 and 3 would need Drinfeld's associator and the skein category's
+  universal property; §5 proposes a route that avoids both. That is far more than the two-strand file (`QOU/Mass/KohnoTwoPoint.lean`) and the flatness file
   (`mass-endomorphism/kz-connection-sl2.lean`).
 
 ## 4. Checks still owed
@@ -125,3 +128,42 @@ to what Kohno's Remark 1.3.14 already gives (PR #7673, probe
    *Representations of the oriented skein category* before relying on it.
 3. Step 1 at complex `ℏ`. EMVZ use it for `GL_t`; for `𝔤𝔩₂` cite
    Etingof–Frenkel–Kirillov, *Lectures on representation theory and KZ equations*.
+
+## 5. Lean status of each step, and a route to a full Lean proof (2026-10-11)
+
+Owner instruction: no citation-only steps; everything to be proved in Lean on Mathlib. Survey of
+`folio/quantum-observable-universe/lean/QOU/` (source scan for `sorry` / `axiom`, not a build):
+
+| ingredient | Lean | status |
+|---|---|---|
+| `H_n(q)`: quadratic, braid, far commutation | `SchurWeyl/HeckeAlgebra` | done |
+| `dim H_n(q) = n!`; Wedderburn `H ≃ ∏_λ M_{f^λ}` for `q` not a root of unity | `finrank_hecke_eq_factorial`, `heckeWedderburn`, `isSemisimpleRing_hecke_generic` | done |
+| two-row `f^λ = C(n,k) − C(n,k−1)`; `Σ (f^λ)² = C_n` | `numSYT_twoRow_eq_ballot`, `ballot_sq_sum_catalan` | done |
+| Markov trace on blocks: zero on ≥ 3 rows, nonzero on two rows | `ocneanuWeight_eq_zero_of_three_rows`, `…_ne_zero_of_two_rows` | done (generic field) |
+| `H/rad ≅ ∏_{two-row} M_{f^λ}`, dimension `C_n` | `traceQuotEquiv`, `finrank_traceQuot_eq_catalan` | done, but stated for `q : ℝ` |
+| `H_n → TL_n` onto | `heckeToTL_surjective`, `heckeTLEquiv` | done; `dim TL_n = C_n` only for `n ≤ 6` |
+| Jimbo `Ř`: quadratic, Yang–Baxter, action on `V^{⊗n}` | `RMatrixSl2`, `heckeActionN` | done; image/kernel of `heckeActionN` open |
+| `U_q(𝔰𝔩₂)`, `q`-Schur–Weyl | — | missing (large) |
+| KZ on `n` points as a `B_n` representation | 2 strands (`KohnoTwoPoint`); flatness algebra for all `n` (`kz_isFlat`) | missing (very large): configuration space, holonomy, `π₁(Conf_n/S_n) = B_n` |
+| Drinfeld associator; skein-category universal property | — | missing (very large each); Mathlib has neither |
+
+**Proposed full-Lean route (judgement, not a finding): bypass Drinfeld and the skein category.**
+Kohno's own proof is a rigidity argument, and in Lean it needs strictly less than Steps 1 and 3.
+
+1. **KZ holonomy is a `B_n` representation** `θ_λ : B_n → GL(V^{⊗n})` for every complex `λ`,
+   continuous in `λ`. Needs the KZ system on `Conf_n(ℂ)`, local existence and uniqueness
+   (Mathlib `PicardLindelof`, `Gronwall`), homotopy invariance of transport for a flat connection
+   (flatness is `kz_isFlat`), and the braid relations from loops in `Conf_n/S_n`. This is the large
+   item (bean `qou-9634`).
+2. **It factors through `H_n(q)`**, `q = e^{iπλ}`: each `θ_λ(σ_i)` is conjugate to the two-point
+   exchange, so the Hecke quadratic follows from `KohnoTwoPoint.kzExchange_quad`.
+3. **Rigidity.** For `q` off the roots of unity `H_n(q)` is semisimple (`heckeWedderburn`), so a
+   module is determined by its character. Along a continuous family the character is continuous
+   and the block multiplicities are integers, hence locally constant. At `λ = 0` the KZ monodromy
+   is the permutation action; the Jimbo action `heckeActionN` is also a continuous family that is
+   the permutation action at `q = 1`. So the two have equal multiplicities on the connected
+   admissible set and are isomorphic there. That set contains the purely imaginary coupling of the
+   real pin.
+4. The weight-preserving intertwiner (#7632) transports the weighted trace.
+
+This needs neither `U_q(𝔰𝔩₂)`, nor Drinfeld's associator, nor the skein category.
