@@ -25,23 +25,23 @@ Both are cubics in one variable parametrized by another. The color cubic (C) car
 
 The stability cubic (S) is rational. Solving for $p$ yields $p = t^3 / (2 + ct^2)$, confirming genus $0$. The color cubic (C) has genus $1$ for generic $z$ (it defines an elliptic curve whose $j$-invariant varies as a rational function of $z$).
 
-The physical stability problem incorporates the pairing energy $\pm \lambda_P / t^{3/2}$, distinguishing even-even, even-odd, odd-even, and odd-odd nuclei. The **degeneracy locus** — the set of $(p, t)$ where the even-even and odd-odd binding energies coincide — satisfies:
+The physical stability problem incorporates the pairing energy $\pm \lambda_P / t^{3/2}$, distinguishing even-even, even-odd, odd-even, and odd-odd nuclei. The **degeneracy locus** is the set of $(p, t)$ at which an even-even nucleus $(p, A)$ and the odd-odd nucleus $(p+1, A)$ have equal energy. With the $p$-dependent energy $a_C p^2/A^{1/3} + a_A (A-2p)^2/A$ of [integer stability](#prop:integer-stability) and pairing $-\lambda_P/A^{1/2}$ (even-even) and $+\lambda_P/A^{1/2}$ (odd-odd), the condition $E(p+1) - E(p) = -2\lambda_P/A^{1/2}$, multiplied by $A/(4a_A)$ and written in $t$ and $\bar p = p + \tfrac12$, is:
 
 $$
-  t^3 - cpt^2 - 2p
-  =  \frac{2\lambda_P}{a_A} \cdot t^{3/2}.
+  t^3 - c\bar p\,t^2 - 2\bar p
+  =  \frac{\lambda_P}{2a_A} \cdot t^{3/2}.
   \tag{D}
 $$
 
 Squaring to clear the half-integer exponent and substituting $u = t^{1/2}$ (so $t = u^2$, $t^{3/2} = u^3$, $t^3 = u^6$) gives:
 
 $$
-  \bigl(u^6 - cpu^4 - 2p\bigr)^2
-  =  \frac{4\lambda_P^2}{a_A^2} \cdot u^6.
+  \bigl(u^6 - c\bar p\,u^4 - 2\bar p\bigr)^2
+  =  \frac{\lambda_P^2}{4a_A^2} \cdot u^6.
   \tag{D$'$}
 $$
 
-This defines a degree-12 curve in $(p, u)$. Factoring out the genus-$0$ component (the pairing-free stability curve) leaves a degree-6 residual curve in $(p, u)$, generically of genus $1$.
+This defines a degree-12 curve in $(\bar p, u)$. Factoring out the genus-$0$ component (the pairing-free stability curve) leaves a degree-6 residual curve in $(p, u)$, generically of genus $1$.
 
 **Conjecture.**
 *Let $\mathcal{D} \subset \mathbb{A}^2$ be the degeneracy locus (D$'$) reduced by the pairing-free stability curve (S). Then:*
