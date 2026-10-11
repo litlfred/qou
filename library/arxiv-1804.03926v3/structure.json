@@ -7,10 +7,11 @@
   "bytes": 405672,
   "pages": 34,
   "text_source": "embedded",
-  "math_source": "text-layer",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:21Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -26,13 +27,21 @@
    "Weighted Poincar\u00e9 inequalities, concentration inequalities and tail",
    "bounds related to Stein kernels in dimension one"
   ],
-  "abstract": "We investigate links between the so-called Stein\u2019s density approach indimension one and some functional and concentration inequalities. We show that measures having a \ufb01nite \ufb01rst moment and a density with connected support satisfy a weighted Poincar\u00b4 einequality with the weight being the Stein kernel, that indeed exists and is unique in this case. Furthe rmore, we prove weighted log-Sobolev and asymmetric Brascamp-Lieb type inequalities related to Stein kernels. We also show that existence of a uniformly bounded Stein kernel is su\ufb03cient to ensure a positive Cheeger isoperimetric constant. Then we derive new concentration inequalit ies. In particular, we prove generalized Mills\u2019 type inequalities when a Stein kernel is uniformly boun ded and sub-gamma concentration for Lipschitz functions of a variable with a sub-linear Stein kernel. When some exponential moments are \ufb01nite, a general concentration inequalit y is then expressed in terms of Legendre-Fenchel transform of the Laplace transform of the Stein kernel. Along the way, we prove a general lemma for bounding the Laplace transform of a random variable, that should be useful in many other contexts when deriving concentration inequalities. Finally, we provide density and tail formulas as well as tail bounds, generalizing previous results that w here obtained in the context of Malliavin calculus.",
+  "abstract": "We investigate links between the so-called Stein\u2019s density approach in dimension one and some functional and concentration inequalities. We show that measures having a \ufb01nite \ufb01rst moment and a density with connected support satisfy a weighted Poincar\u00b4e inequality with the weight being the Stein kernel, that indeed exists and is unique in this case. Furthermore, we prove weighted log-Sobolev and asymmetric Brascamp-Lieb type inequalities related to Stein kernels. We also show that existence of a uniformly bounded Stein kernel is su\ufb03cient to ensure a positive Cheeger isoperimetric constant. Then we derive new concentration inequalities. In particular, we prove generalized Mills\u2019 type inequalities when a Stein kernel is uniformly bounded and sub-gamma concentration for Lipschitz functions of a variable with a sub-linear Stein kernel. When some exponential moments are \ufb01nite, a general concentration inequality is then expressed in terms of Legendre-Fenchel transform of the Laplace transform of the Stein kernel. Along the way, we prove a general lemma for bounding the Laplace transform of a random variable, that should be useful in many other contexts when deriving concentration inequalities. Finally, we provide density and tail formulas as well as tail bounds, generalizing previous results that where obtained in the context of Malliavin calculus.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181125210852-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181125210852-05'00'"
+  },
+  "title_raw": "Weighted Poincar\u00e9 inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Weighted Poincar\u00b4e inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one",
+   "outline": "1 Introduction",
+   "text": "Weighted Poincar\u00e9 inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,67 +50,416 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "On covariance identities and the Stein kernel",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Some weighted functional inequalities",
    "page": 8,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Weighted Poincar\u00e9-type inequality",
    "page": 9,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Links with Muckenhoupt-type criteria",
    "page": 14,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Asymmetric Brascamp-Lieb-type inequalities",
    "page": 18,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Isoperimetric constant",
    "page": 20,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "Concentration inequalities",
    "page": 21,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 1,
    "title": "Tail bounds",
    "page": 28,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1607,
+   "n_words": 233,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -109,8 +467,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 7679,
-   "n_words": 1284
+   "n_chars": 7620,
+   "n_words": 1224,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-2-on-covariance-identities-and-the-stein-kernel",
@@ -119,8 +479,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 8,
-   "n_chars": 12450,
-   "n_words": 2613
+   "n_chars": 12433,
+   "n_words": 2597,
+   "label_start": "3",
+   "label_end": "8"
   },
   {
    "id": "sec-002-3-some-weighted-functional-inequalities",
@@ -128,67 +490,98 @@
    "title": "Some weighted functional inequalities",
    "level": 1,
    "page_start": 8,
-   "page_end": 14,
-   "n_chars": 18029,
-   "n_words": 3441
+   "page_end": 9,
+   "n_chars": 2031,
+   "n_words": 290,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-003-32-links-with-muckenhoupt-type-criteria",
+   "id": "sec-003-31-weighted-poincar\u00e9-type-inequality",
+   "number": "3.1",
+   "title": "Weighted Poincar\u00e9-type inequality",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 14,
+   "n_chars": 15799,
+   "n_words": 3020,
+   "label_start": "9",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-004-32-links-with-muckenhoupt-type-criteria",
    "number": "3.2",
    "title": "Links with Muckenhoupt-type criteria",
    "level": 2,
    "page_start": 14,
    "page_end": 18,
-   "n_chars": 10944,
-   "n_words": 2467
+   "n_chars": 10835,
+   "n_words": 2483,
+   "label_start": "14",
+   "label_end": "18"
   },
   {
-   "id": "sec-004-33-asymmetric-brascamp-lieb-type-inequalities",
+   "id": "sec-005-33-asymmetric-brascamp-lieb-type-inequalities",
    "number": "3.3",
    "title": "Asymmetric Brascamp-Lieb-type inequalities",
    "level": 2,
    "page_start": 18,
    "page_end": 20,
-   "n_chars": 2199,
-   "n_words": 487
+   "n_chars": 2115,
+   "n_words": 473,
+   "label_start": "18",
+   "label_end": "20"
   },
   {
-   "id": "sec-005-34-isoperimetric-constant",
+   "id": "sec-006-34-isoperimetric-constant",
    "number": "3.4",
    "title": "Isoperimetric constant",
    "level": 2,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 4045,
-   "n_words": 816
+   "n_chars": 4047,
+   "n_words": 816,
+   "label_start": "20",
+   "label_end": "21"
   },
   {
-   "id": "sec-006-4-concentration-inequalities",
+   "id": "sec-007-4-concentration-inequalities",
    "number": "4",
    "title": "Concentration inequalities",
    "level": 1,
    "page_start": 21,
    "page_end": 28,
-   "n_chars": 14308,
-   "n_words": 3108
+   "n_chars": 14137,
+   "n_words": 2961,
+   "label_start": "21",
+   "label_end": "28"
   },
   {
-   "id": "sec-007-5-tail-bounds",
+   "id": "sec-008-5-tail-bounds",
    "number": "5",
    "title": "Tail bounds",
    "level": 1,
    "page_start": 28,
    "page_end": 34,
-   "n_chars": 15461,
-   "n_words": 2696
+   "n_chars": 15348,
+   "n_words": 2600,
+   "label_start": "28",
+   "label_end": "34"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 9,
-  "sections": 8,
-  "chars_total": 85115,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 85972,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "SteinDimOne_rev1.tex",
@@ -201,9 +594,14 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.437,
+     "prose_ratio": 0.425,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -217,27 +615,32 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-003-32-links-with-muckenhoupt-type-criteria",
+     "id": "sec-003-31-weighted-poincar\u00e9-type-inequality",
+     "title": "Weighted Poincar\u00e9-type inequality",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-32-links-with-muckenhoupt-type-criteria",
      "title": "Links with Muckenhoupt-type criteria",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-004-33-asymmetric-brascamp-lieb-type-inequalities",
+     "id": "sec-005-33-asymmetric-brascamp-lieb-type-inequalities",
      "title": "Asymmetric Brascamp-Lieb-type inequalities",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-005-34-isoperimetric-constant",
+     "id": "sec-006-34-isoperimetric-constant",
      "title": "Isoperimetric constant",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-006-4-concentration-inequalities",
+     "id": "sec-007-4-concentration-inequalities",
      "title": "Concentration inequalities",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-007-5-tail-bounds",
+     "id": "sec-008-5-tail-bounds",
      "title": "Tail bounds",
      "result": "no matching \\section"
     }

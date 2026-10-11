@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-010-23-isometry-groups-in-dimensions-two-and-three
 section_title: "Isometry groups in dimensions two and three"
 section_number: 2.3
 pages: 72-76
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.979
+latex_coverage_ratio: 0.99
 ---
 \label{isometry:2:3:section}
 With the hyperboloid model the isometry group $\Iso(\matH^n)$ is the matrix group $O^+(n,1)$. We now see that in dimensions $n=2$ and $3$ the group $\Iso^+(\matH^n)$ is also isomorphic to some familiar groups of $2\times 2$ matrices. 

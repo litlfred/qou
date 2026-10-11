@@ -6,10 +6,12 @@
   "sha256": "714d73873cecd73a2d14ff1661b6ab778124421222b1ec3990acc3f0448a67f0",
   "bytes": 674346,
   "pages": 60,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:18Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,18 +23,27 @@
   "doi": null,
   "title": "An Invitation to Higher Gauge Theory",
   "authors_raw": "John C. Baez and John Huerta",
-  "abstract": "In this easy introduction to higher gauge theory, we describ e parallel trans- port for particles and strings in terms of 2-connections on 2 -bundles. Just as ordinary gauge theory involves a gauge group, this genera lization in- volves a gauge \u20182-group\u2019. We focus on 6 examples. First, ever y abelian Lie group gives a Lie 2-group; the case of U(1) yields the theo ry of U(1) gerbes, which play an important role in string theory and mul tisymplec- tic geometry. Second, every group representation gives a Li e 2-group; the representation of the Lorentz group on 4d Minkowski spaceti me gives the Poincar\u00b4 e 2-group, which leads to a spin foam model for Minko wski space- time. Third, taking the adjoint representation of any Lie gr oup on its own Lie algebra gives a \u2018tangent 2-group\u2019, which serves as a gaug e 2-group in 4d BF theory, which has topological gravity as a special case. Fou rth, every Lie group has an \u2018inner automorphism 2-group\u2019, which s erves as the gauge group in 4d BF theory with cosmological constant term. Fifth, ev- ery Lie group has an \u2018automorphism 2-group\u2019, which plays an i mportant role in the theory of nonabelian gerbes. And sixth, every com pact simple Lie group gives a \u2018string 2-group\u2019. We also touch upon higher structures such as the \u2018gravity 3-group\u2019, and the Lie 3-superalgebra th at governs 11-dimensional supergravity.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
-   "CreationDate": "D:20150218202134-05'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
   "title_lines": [
    "An Invitation to Higher Gauge Theory"
   ],
-  "title_prev": "email: baez@math.ucr.edu huerta@math.ucr.edu"
+  "abstract": "In this easy introduction to higher gauge theory, we describe parallel trans- port for particles and strings in terms of 2-connections on 2-bundles. Just as ordinary gauge theory involves a gauge group, this generalization in- volves a gauge \u20182-group\u2019. We focus on 6 examples. First, every abelian Lie group gives a Lie 2-group; the case of U(1) yields the theory of U(1) gerbes, which play an important role in string theory and multisymplec- tic geometry. Second, every group representation gives a Lie 2-group; the representation of the Lorentz group on 4d Minkowski spacetime gives the Poincar\u00b4e 2-group, which leads to a spin foam model for Minkowski space- time. Third, taking the adjoint representation of any Lie group on its own Lie algebra gives a \u2018tangent 2-group\u2019, which serves as a gauge 2-group in 4d BF theory, which has topological gravity as a special case. Fourth, every Lie group has an \u2018inner automorphism 2-group\u2019, which serves as the gauge group in 4d BF theory with cosmological constant term. Fifth, ev- ery Lie group has an \u2018automorphism 2-group\u2019, which plays an important role in the theory of nonabelian gerbes. And sixth, every compact simple Lie group gives a \u2018string 2-group\u2019. We also touch upon higher structures such as the \u2018gravity 3-group\u2019, and the Lie 3-superalgebra that governs 11-dimensional supergravity.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20150218202134-05'00'"
+  },
+  "title_raw": "An Invitation to Higher Gauge Theory",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "An Invitation to Higher Gauge Theory",
+   "outline": "1 Introduction",
+   "text": "An Invitation to Higher Gauge Theory",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -40,130 +51,620 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Categories and Connections",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "2-Categories and 2-Connections",
    "page": 11,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "2-Categories",
    "page": 12,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Path 2-Groupoids",
    "page": 14,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "2-Groups",
    "page": 15,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "2-Connections",
    "page": 21,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Examples and Applications",
    "page": 27,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Shifted Abelian Groups",
    "page": 27,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The Poincar\u00e9 2-Group",
    "page": 32,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Tangent 2-Groups",
    "page": 33,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Inner Automorphism 2-Groups",
    "page": 37,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Automorphism 2-Groups",
    "page": 38,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "String 2-Groups",
    "page": 40,
    "source": "outline",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Further Topics",
    "page": 44,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Gauge Transformations",
    "page": 44,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Curvature",
    "page": 46,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Nontrivial 2-Bundles",
    "page": 47,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 54,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 55,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 56,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 57,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 58,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 59,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 60,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 259,
+   "n_words": 34,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -171,8 +672,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 4609,
-   "n_words": 767
+   "n_chars": 4568,
+   "n_words": 725,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-categories-and-connections",
@@ -181,8 +684,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 11,
-   "n_chars": 15965,
-   "n_words": 3217
+   "n_chars": 15623,
+   "n_words": 3008,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-3-2-categories-and-2-connections",
@@ -191,8 +696,10 @@
    "level": 1,
    "page_start": 11,
    "page_end": 14,
-   "n_chars": 4327,
-   "n_words": 806
+   "n_chars": 3946,
+   "n_words": 766,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-32-path-2-groupoids",
@@ -201,8 +708,10 @@
    "level": 2,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 3133,
-   "n_words": 659
+   "n_chars": 3084,
+   "n_words": 610,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-33-2-groups",
@@ -211,8 +720,10 @@
    "level": 2,
    "page_start": 15,
    "page_end": 21,
-   "n_chars": 9160,
-   "n_words": 1744
+   "n_chars": 7925,
+   "n_words": 1701,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-34-2-connections",
@@ -221,8 +732,10 @@
    "level": 2,
    "page_start": 21,
    "page_end": 27,
-   "n_chars": 10544,
-   "n_words": 2059
+   "n_chars": 9600,
+   "n_words": 1967,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-4-examples-and-applications",
@@ -231,8 +744,10 @@
    "level": 1,
    "page_start": 27,
    "page_end": 27,
-   "n_chars": 258,
-   "n_words": 48
+   "n_chars": 259,
+   "n_words": 46,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-41-shifted-abelian-groups",
@@ -240,92 +755,127 @@
    "title": "Shifted Abelian Groups",
    "level": 2,
    "page_start": 27,
-   "page_end": 33,
-   "n_chars": 12838,
-   "n_words": 2406
+   "page_end": 32,
+   "n_chars": 8936,
+   "n_words": 1694,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-43-tangent-2-groups",
+   "id": "sec-008-42-the-poincar\u00e9-2-group",
+   "number": "4.2",
+   "title": "The Poincar\u00e9 2-Group",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 3521,
+   "n_words": 616,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-43-tangent-2-groups",
    "number": "4.3",
    "title": "Tangent 2-Groups",
    "level": 2,
    "page_start": 33,
    "page_end": 37,
-   "n_chars": 8728,
-   "n_words": 1685
+   "n_chars": 8659,
+   "n_words": 1613,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-44-inner-automorphism-2-groups",
+   "id": "sec-010-44-inner-automorphism-2-groups",
    "number": "4.4",
    "title": "Inner Automorphism 2-Groups",
    "level": 2,
    "page_start": 37,
    "page_end": 40,
-   "n_chars": 7163,
-   "n_words": 1379
+   "n_chars": 7084,
+   "n_words": 1297,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-46-string-2-groups",
+   "id": "sec-011-46-string-2-groups",
    "number": "4.6",
    "title": "String 2-Groups",
    "level": 2,
    "page_start": 40,
    "page_end": 44,
-   "n_chars": 10913,
-   "n_words": 1976
+   "n_chars": 10800,
+   "n_words": 1862,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-5-further-topics",
+   "id": "sec-012-5-further-topics",
    "number": "5",
    "title": "Further Topics",
    "level": 1,
    "page_start": 44,
    "page_end": 44,
-   "n_chars": 80,
-   "n_words": 14
+   "n_chars": 79,
+   "n_words": 13,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-51-gauge-transformations",
+   "id": "sec-013-51-gauge-transformations",
    "number": "5.1",
    "title": "Gauge Transformations",
    "level": 2,
    "page_start": 44,
    "page_end": 46,
-   "n_chars": 3935,
-   "n_words": 768
+   "n_chars": 3891,
+   "n_words": 721,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-013-52-curvature",
+   "id": "sec-014-52-curvature",
    "number": "5.2",
    "title": "Curvature",
    "level": 2,
    "page_start": 46,
    "page_end": 47,
-   "n_chars": 2566,
-   "n_words": 509
+   "n_chars": 2528,
+   "n_words": 468,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-014-53-nontrivial-2-bundles",
+   "id": "sec-015-53-nontrivial-2-bundles",
    "number": "5.3",
    "title": "Nontrivial 2-Bundles",
    "level": 2,
    "page_start": 47,
    "page_end": 60,
-   "n_chars": 27728,
-   "n_words": 4688
+   "n_chars": 27272,
+   "n_words": 4455,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 18,
-  "sections": 15,
-  "chars_total": 121947,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 17,
+  "chars_total": 118034,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 19,
-   "overlaid": 14,
+   "overlaid": 15,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -333,18 +883,23 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.881,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-categories-and-connections",
      "title": "Categories and Connections",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.998,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -368,7 +923,7 @@
      "id": "sec-004-33-2-groups",
      "title": "2-Groups",
      "prose_ratio": 0.969,
-     "coverage_ratio": 0.983,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -391,13 +946,21 @@
     {
      "id": "sec-007-41-shifted-abelian-groups",
      "title": "Shifted Abelian Groups",
-     "prose_ratio": 0.958,
-     "coverage_ratio": 0.996,
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-008-43-tangent-2-groups",
+     "id": "sec-008-42-the-poincar\u00e9-2-group",
+     "title": "The Poincar\u00e9 2-Group",
+     "prose_ratio": 0.926,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-43-tangent-2-groups",
      "title": "Tangent 2-Groups",
      "prose_ratio": 0.977,
      "coverage_ratio": 0.997,
@@ -405,7 +968,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-009-44-inner-automorphism-2-groups",
+     "id": "sec-010-44-inner-automorphism-2-groups",
      "title": "Inner Automorphism 2-Groups",
      "prose_ratio": 0.977,
      "coverage_ratio": 1.0,
@@ -413,7 +976,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-010-46-string-2-groups",
+     "id": "sec-011-46-string-2-groups",
      "title": "String 2-Groups",
      "prose_ratio": 0.965,
      "coverage_ratio": 0.996,
@@ -421,32 +984,32 @@
      "converter": "latex"
     },
     {
-     "id": "sec-011-5-further-topics",
+     "id": "sec-012-5-further-topics",
      "title": "Further Topics",
      "prose_ratio": 0.304,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-012-51-gauge-transformations",
+     "id": "sec-013-51-gauge-transformations",
      "title": "Gauge Transformations",
      "prose_ratio": 0.876,
-     "coverage_ratio": 0.976,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-013-52-curvature",
+     "id": "sec-014-52-curvature",
      "title": "Curvature",
      "prose_ratio": 0.957,
-     "coverage_ratio": 0.826,
+     "coverage_ratio": 0.82,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-014-53-nontrivial-2-bundles",
+     "id": "sec-015-53-nontrivial-2-bundles",
      "title": "Nontrivial 2-Bundles",
      "prose_ratio": 0.985,
-     "coverage_ratio": 0.553,
+     "coverage_ratio": 0.538,
      "result": "overlaid",
      "converter": "latex"
     }

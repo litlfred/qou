@@ -7,10 +7,11 @@
   "bytes": 1370675,
   "pages": 55,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:21Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,19 +21,32 @@
    "stamp_date": "21 Jan 2022"
   },
   "doi": null,
-  "title": "FOCK\u2013GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES",
-  "authors_raw": null,
+  "title": "Fock\u2013Goncharov Coordinates for Semisimple Lie Groups",
+  "authors_raw": "S. GILLES",
   "title_lines": [
-   "FOCK\u2013GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS",
-   "S. GILLES"
+   "FOCK\u2013GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS"
   ],
-  "abstract": "Fock and Goncharov [FG06b] introduced cluster ensembles, p roviding a framework for coordi- nates on varieties of surface representations into Lie grou ps, as well as a complete construction for groups of type An. Later, Zickert [Zic19], Le [Le16b], [Le16a], and Ip [Ip18] described, using di\ufb00ering methods, how to apply this framework for other Lie group types. Zicker t also showed that this framework applies to triangulated 3-manifolds. W e present a complete, general construction, b ased on work of Fomin and Zelevinsky. In particular, we complete the picture for the r emaining cases: Lie groups of types F4, E6, E7, and E8.",
+  "abstract": "Fock and Goncharov [FG06b] introduced cluster ensembles, providing a framework for coordi- nates on varieties of surface representations into Lie groups, as well as a complete construction for groups of type An. Later, Zickert [Zic19], Le [Le16b], [Le16a], and Ip [Ip18] described, using di\ufb00ering methods, how to apply this framework for other Lie group types. Zickert also showed that this framework applies to triangulated 3-manifolds. We present a complete, general construction, based on work of Fomin and Zelevinsky. In particular, we complete the picture for the remaining cases: Lie groups of types F4, E6, E7, and E8.",
   "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20220124212347-05'00'",
-   "Creator": "LaTeX with hyperref",
    "Title": "Fock\u2013Goncharov Coordinates for Semisimple Lie Groups",
-   "Author": "S. Gilles"
+   "Author": "S. Gilles",
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20220124212347-05'00'"
+  },
+  "title_raw": "FOCK\u2013GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Fock\u2013Goncharov Coordinates for Semisimple Lie Groups",
+   "heading": "FOCK\u2013GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS Contents Acknowledgements Introduction Classical Teichm\u00fcller space Cluster ensemble structures Higher Teichm\u00fcller spaces Results Historical context Ingredients Root spaces and Weyl groups Unipotent subgroups Coxeter elements Generalized minors Fac",
+   "outline": "Acknowledgements",
+   "text": "FOCK\u2013GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS",
+   "corroborated_by": [
+    "text",
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,347 +55,1564 @@
    "title": "Acknowledgements",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Classical Teichm\u00fcller space",
    "page": 3,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Cluster ensemble structures",
    "page": 4,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Higher Teichm\u00fcller spaces",
    "page": 5,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Results",
    "page": 6,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Historical context",
    "page": 7,
    "source": "outline",
-   "number": "1.5"
+   "number": "1.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Ingredients",
    "page": 8,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Root spaces and Weyl groups",
    "page": 8,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Unipotent subgroups",
    "page": 9,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Coxeter elements",
    "page": 9,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Generalized minors",
    "page": 9,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Factorization coordinates",
    "page": 11,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Quivers",
    "page": 11,
    "source": "outline",
-   "number": "2.6"
+   "number": "2.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Cluster ensembles",
    "page": 12,
    "source": "outline",
-   "number": "2.7"
+   "number": "2.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "Key identities",
    "page": 13,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Actions of sigma_G",
    "page": 13,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Grid exchange relations",
    "page": 14,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "Coordinates on generically-decorated representations",
    "page": 15,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Configurations and gluings",
    "page": 16,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Triangular quivers and Fock\u2013Goncharov coordinate structures",
    "page": 17,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "From coordinates to representations",
    "page": 21,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Regarding 3-manifolds",
    "page": 23,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 1,
    "title": "Main Result: Fock\u2013Goncharov coordinate structures for non-A_n",
    "page": 23,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Overview",
    "page": 23,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Building the rectangle Q0",
    "page": 24,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 2,
    "title": "Construction of mu_{rot}",
    "page": 25,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 2,
    "title": "The A. edge",
    "page": 26,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Construction of mu_{flip}",
    "page": 27,
    "source": "outline",
-   "number": "5.5"
+   "number": "5.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 2,
    "title": "The map M",
    "page": 29,
    "source": "outline",
-   "number": "5.6"
+   "number": "5.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 2,
    "title": "The significance of the ``twisting'' mutations",
    "page": 31,
    "source": "outline",
-   "number": "5.7"
+   "number": "5.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 1,
    "title": "Construction for A_n",
    "page": 32,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 1,
    "title": "Proof of thm:fgcs-exists for simple G",
    "page": 33,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "Overview",
    "page": 33,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "Ordering mutations",
    "page": 34,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "34"
   },
   {
    "level": 2,
    "title": "Rotation mutations",
    "page": 36,
    "source": "outline",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 2,
    "title": "Flip mutations",
    "page": 40,
    "source": "outline",
-   "number": "7.4"
+   "number": "7.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 1,
    "title": "Proof of thm:fgcs-exists for semisimple G",
    "page": 43,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 1,
    "title": "Examples",
    "page": 44,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "44"
   },
   {
    "level": 2,
    "title": "A_5",
    "page": 44,
    "source": "outline",
-   "number": "9.1"
+   "number": "9.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "44"
   },
   {
    "level": 2,
    "title": "B_3",
    "page": 45,
    "source": "outline",
-   "number": "9.2"
+   "number": "9.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 2,
    "title": "D_5",
    "page": 46,
    "source": "outline",
-   "number": "9.3"
+   "number": "9.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   },
   {
    "level": 2,
    "title": "G_2",
    "page": 47,
    "source": "outline",
-   "number": "9.4"
+   "number": "9.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "47"
   },
   {
    "level": 2,
    "title": "E_6",
    "page": 48,
    "source": "outline",
-   "number": "9.5"
+   "number": "9.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
   },
   {
    "level": 2,
    "title": "E_7",
    "page": 50,
    "source": "outline",
-   "number": "9.6"
+   "number": "9.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "50"
   },
   {
    "level": 2,
    "title": "E_8",
    "page": 51,
    "source": "outline",
-   "number": "9.7"
+   "number": "9.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "51"
   },
   {
    "level": 2,
    "title": "D_2 = A_1 x A_1",
    "page": 51,
    "source": "outline",
-   "number": "9.8"
+   "number": "9.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "51"
   },
   {
    "level": 2,
    "title": "A_3 x C_2",
    "page": 51,
    "source": "outline",
-   "number": "9.9"
+   "number": "9.9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "51"
   },
   {
    "level": 1,
    "title": "References",
    "page": 53,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "53"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Putting a hyperbolic structure on \u03a3",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Representations of \u03a3 by cosets",
+   "page": 3,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Coordinates by N+-cosets under reordering and retriangulation",
+   "page": 4,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Ptolemy\u2019s theorem: ac + bd = ef",
+   "page": 4,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "4b",
+   "title": "For our example, taking identi\ufb01cations into account, ef = a2 + b2",
+   "page": 4,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Quiver for type A1. The A-coordinate at vk is ak. The relation on A-coordinates",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Retriangulation and reordering (for a group over R)",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "A quiver",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Mutating the quiver of Figure 7 at v11",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "After applying \u00b5 { v11, v21, v31, v41, v12 } to QC4. The next mutation in \u00b5rot is at v22",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "15"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "A non-well-rooted quiver (left) and a well-rooted quiver (right) for E6",
+   "page": 18,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "18"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "A triangular quiver (this one is associated to a Lie group of type C2)",
+   "page": 18,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "18"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "Amalgamating triangular quivers",
+   "page": 19,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "Quiver for type C2, illustrating \u00b5\u2217",
+   "page": 20,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "20"
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "Quiver for type C2, illustrating \u00b5\u2217",
+   "page": 20,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "20"
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "Truncations of T",
+   "page": 21,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "21"
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "Two tetrahedra with a face identi\ufb01cation. The quivers QC2 on the front two",
+   "page": 23,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "In-progress Q0 for F4 after 0, 1, and 6 letters of w0",
+   "page": 25,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "25"
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "Completed Q0 for F4. Example 5.6. The Dynkin-type quiver for G = F4 in Example 5.2, with c = { 1, 2, 3, 4} and \u2113= 6 gives w0 = { 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4}",
+   "page": 25,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "25"
+  },
+  {
+   "kind": "figure",
+   "number": "21",
+   "title": "Q for F4. Remark 5.11. It is not yet obvious that \u00b5rot actually does rotate by a third. The proof of Lemma 7.4, however, will show that \u00b5rot acts with order 3 on the seed torus for Q0, and therefore on the quiver. There is no circular dependency here, as that lemma does not depend on the existence o",
+   "page": 27,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "figure",
+   "number": "22",
+   "title": "Vertex naming for Q0\u20132 (with L = 2\u2113+1), agreeing with Figure 13a and labeled to induce a mutable rectangle in e\u00b5P(Q0\u20132)",
+   "page": 28,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "28"
+  },
+  {
+   "kind": "figure",
+   "number": "23",
+   "title": "e\u00b5P(Q0\u20132) for F4. We apologize for the hexadecimal notation; rows have > 9",
+   "page": 29,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "29"
+  },
+  {
+   "kind": "figure",
+   "number": "24",
+   "title": "The \ufb02ip for F4",
+   "page": 30,
+   "confidence": 0.7,
+   "evidence": [
+    "referenced"
+   ],
+   "page_label": "30"
+  },
+  {
+   "kind": "figure",
+   "number": "25",
+   "title": "For type F4, \u2206wk\u03c9i,wk\u03c9i(A) for abstract A = Qr",
+   "page": 31,
+   "confidence": 0.7,
+   "evidence": [
+    "referenced"
+   ],
+   "page_label": "31"
+  },
+  {
+   "kind": "figure",
+   "number": "26",
+   "title": "M(\u03b1) for type F4",
+   "page": 31,
+   "confidence": 0.7,
+   "evidence": [
+    "referenced"
+   ],
+   "page_label": "31"
+  },
+  {
+   "kind": "figure",
+   "number": "27",
+   "title": "The pentagon recurrence",
+   "page": 32,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "32"
+  },
+  {
+   "kind": "figure",
+   "number": "28",
+   "title": "Quivers for type A3, also showing naming convention for Q0\u20132",
+   "page": 33,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "33"
+  },
+  {
+   "kind": "figure",
+   "number": "29",
+   "title": "QAlt on the left, QLin on the right, both quivers of Dynkin type A\u2113. We also introduce one more piece of notation",
+   "page": 34,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "34"
+  },
+  {
+   "kind": "figure",
+   "number": "30",
+   "title": "Maps \u03a6 and \u03a8 by Proposition 4.5, YV by De\ufb01nition 5.18",
+   "page": 36,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "36"
+  },
+  {
+   "kind": "figure",
+   "number": "31",
+   "title": "QDn before any mutation",
+   "page": 39,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "39"
+  },
+  {
+   "kind": "figure",
+   "number": "32",
+   "title": "QDn after e\u00b5Col(1)",
+   "page": 39,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "39"
+  },
+  {
+   "kind": "figure",
+   "number": "33",
+   "title": "QDn after Q\u2113",
+   "page": 40,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "40"
+  },
+  {
+   "kind": "figure",
+   "number": "34",
+   "title": "Coordinates from \u03b1120 and \u03b1302",
+   "page": 42,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "42"
+  },
+  {
+   "kind": "figure",
+   "number": "35",
+   "title": "Coordinates from \u03b1120 and \u03b1230, labeled by (n, m)",
+   "page": 43,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "43"
+  },
+  {
+   "kind": "figure",
+   "number": "36",
+   "title": "Coordinates after applying e\u00b5Flipcore, labeled by (n, m)",
+   "page": 43,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "43"
+  },
+  {
+   "kind": "figure",
+   "number": "37",
+   "title": "Coordinates after applying e\u00b5Flipcore",
+   "page": 43,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "43"
+  },
+  {
+   "kind": "figure",
+   "number": "38",
+   "title": "Q for A5",
+   "page": 45,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "45"
+  },
+  {
+   "kind": "figure",
+   "number": "39",
+   "title": "Q for B3",
+   "page": 46,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "46"
+  },
+  {
+   "kind": "figure",
+   "number": "40",
+   "title": "Q for D5",
+   "page": 46,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "46"
+  },
+  {
+   "kind": "figure",
+   "number": "41",
+   "title": "Q for G2",
+   "page": 48,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "48"
+  },
+  {
+   "kind": "figure",
+   "number": "42",
+   "title": "Q for E6",
+   "page": 48,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "48"
+  },
+  {
+   "kind": "figure",
+   "number": "43",
+   "title": "Q for E7",
+   "page": 51,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "51"
+  },
+  {
+   "kind": "figure",
+   "number": "44",
+   "title": "Q for E8",
+   "page": 52,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "52"
+  },
+  {
+   "kind": "figure",
+   "number": "45",
+   "title": "Q for D2 = A1 \u00d7 A1",
+   "page": 53,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "53"
+  },
+  {
+   "kind": "figure",
+   "number": "46",
+   "title": "Q for A3 \u00d7 C2",
+   "page": 53,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "53"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 750,
+   "n_words": 112,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-acknowledgements",
    "number": null,
@@ -389,8 +1620,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 4,
+   "n_words": 2,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-1-introduction",
@@ -398,288 +1631,426 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 4,
-   "n_chars": 7953,
-   "n_words": 1401
+   "page_end": 3,
+   "n_chars": 2846,
+   "n_words": 489,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
-   "id": "sec-002-12-cluster-ensemble-structures",
+   "id": "sec-002-11-classical-teichm\u00fcller-space",
+   "number": "1.1",
+   "title": "Classical Teichm\u00fcller space",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 4964,
+   "n_words": 854,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-12-cluster-ensemble-structures",
    "number": "1.2",
    "title": "Cluster ensemble structures",
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 1122,
-   "n_words": 199
+   "n_chars": 1118,
+   "n_words": 195,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
-   "id": "sec-003-13-higher-teichm\u00fcller-spaces",
+   "id": "sec-004-13-higher-teichm\u00fcller-spaces",
    "number": "1.3",
    "title": "Higher Teichm\u00fcller spaces",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 5257,
-   "n_words": 878
+   "n_chars": 5230,
+   "n_words": 851,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
-   "id": "sec-004-14-results",
+   "id": "sec-005-14-results",
    "number": "1.4",
    "title": "Results",
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 2263,
-   "n_words": 367
+   "n_chars": 2249,
+   "n_words": 353,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-005-15-historical-context",
+   "id": "sec-006-15-historical-context",
    "number": "1.5",
    "title": "Historical context",
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 2664,
-   "n_words": 431
+   "n_chars": 2651,
+   "n_words": 418,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
-   "id": "sec-006-23-coxeter-elements",
+   "id": "sec-007-23-coxeter-elements",
    "number": "2.3",
    "title": "Coxeter elements",
    "level": 2,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 207,
-   "n_words": 38
+   "n_chars": 204,
+   "n_words": 35,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
-   "id": "sec-007-2-ingredients",
+   "id": "sec-008-2-ingredients",
    "number": "2",
    "title": "Ingredients",
    "level": 1,
    "page_start": 8,
    "page_end": 8,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
-   "id": "sec-008-24-generalized-minors",
+   "id": "sec-009-24-generalized-minors",
    "number": "2.4",
    "title": "Generalized minors",
    "level": 2,
    "page_start": 8,
    "page_end": 8,
    "n_chars": 78,
-   "n_words": 12
+   "n_words": 12,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
-   "id": "sec-009-21-root-spaces-and-weyl-groups",
+   "id": "sec-010-21-root-spaces-and-weyl-groups",
    "number": "2.1",
    "title": "Root spaces and Weyl groups",
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 2808,
-   "n_words": 573
+   "n_chars": 2786,
+   "n_words": 551,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-010-22-unipotent-subgroups",
+   "id": "sec-011-22-unipotent-subgroups",
    "number": "2.2",
    "title": "Unipotent subgroups",
    "level": 2,
    "page_start": 9,
    "page_end": 11,
-   "n_chars": 5480,
-   "n_words": 1014
+   "n_chars": 5186,
+   "n_words": 1050,
+   "label_start": "9",
+   "label_end": "11"
   },
   {
-   "id": "sec-011-25-factorization-coordinates",
+   "id": "sec-012-25-factorization-coordinates",
    "number": "2.5",
    "title": "Factorization coordinates",
    "level": 2,
    "page_start": 11,
    "page_end": 11,
-   "n_chars": 1049,
-   "n_words": 218
+   "n_chars": 1050,
+   "n_words": 219,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
-   "id": "sec-012-26-quivers",
+   "id": "sec-013-26-quivers",
    "number": "2.6",
    "title": "Quivers",
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 2837,
-   "n_words": 551
+   "n_chars": 2913,
+   "n_words": 566,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
-   "id": "sec-013-27-cluster-ensembles",
+   "id": "sec-014-27-cluster-ensembles",
    "number": "2.7",
    "title": "Cluster ensembles",
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 2246,
-   "n_words": 458
+   "n_chars": 2263,
+   "n_words": 463,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-014-3-key-identities",
+   "id": "sec-015-3-key-identities",
    "number": "3",
    "title": "Key identities",
    "level": 1,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 3102,
-   "n_words": 553
+   "n_chars": 3017,
+   "n_words": 534,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
-   "id": "sec-015-32-grid-exchange-relations",
+   "id": "sec-016-32-grid-exchange-relations",
    "number": "3.2",
    "title": "Grid exchange relations",
    "level": 2,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 2985,
-   "n_words": 569
+   "n_chars": 2961,
+   "n_words": 545,
+   "label_start": "14",
+   "label_end": "15"
   },
   {
-   "id": "sec-016-4-coordinates-on-generically-decorated-represent",
+   "id": "sec-017-4-coordinates-on-generically-decorated-represent",
    "number": "4",
    "title": "Coordinates on generically-decorated representations",
    "level": 1,
    "page_start": 15,
-   "page_end": 23,
-   "n_chars": 18787,
-   "n_words": 3517
+   "page_end": 16,
+   "n_chars": 578,
+   "n_words": 85,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-017-44-regarding-3-manifolds",
+   "id": "sec-018-41-configurations-and-gluings",
+   "number": "4.1",
+   "title": "Configurations and gluings",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 4185,
+   "n_words": 748,
+   "label_start": "16",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-019-42-triangular-quivers-and-fockgoncharov-coordina",
+   "number": "4.2",
+   "title": "Triangular quivers and Fock\u2013Goncharov coordinate structures",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 21,
+   "n_chars": 7257,
+   "n_words": 1388,
+   "label_start": "17",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-020-43-from-coordinates-to-representations",
+   "number": "4.3",
+   "title": "From coordinates to representations",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 6402,
+   "n_words": 1124,
+   "label_start": "21",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-021-44-regarding-3-manifolds",
    "number": "4.4",
    "title": "Regarding 3-manifolds",
    "level": 2,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 1380,
-   "n_words": 242
+   "n_chars": 1367,
+   "n_words": 229,
+   "label_start": "23",
+   "label_end": "23"
   },
   {
-   "id": "sec-018-5-main-result-fockgoncharov-coordinate-structure",
+   "id": "sec-022-5-main-result-fockgoncharov-coordinate-structure",
    "number": "5",
    "title": "Main Result: Fock\u2013Goncharov coordinate structures for non-A_n",
    "level": 1,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 583,
-   "n_words": 105
+   "n_chars": 579,
+   "n_words": 101,
+   "label_start": "23",
+   "label_end": "23"
   },
   {
-   "id": "sec-019-51-overview",
+   "id": "sec-023-51-overview",
    "number": "5.1",
    "title": "Overview",
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 3483,
-   "n_words": 626
+   "n_chars": 3410,
+   "n_words": 619,
+   "label_start": "23",
+   "label_end": "24"
   },
   {
-   "id": "sec-020-52-building-the-rectangle-q0",
+   "id": "sec-024-52-building-the-rectangle-q0",
    "number": "5.2",
    "title": "Building the rectangle Q0",
    "level": 2,
    "page_start": 24,
    "page_end": 29,
-   "n_chars": 10476,
-   "n_words": 1994
+   "n_chars": 10501,
+   "n_words": 2019,
+   "label_start": "24",
+   "label_end": "29"
   },
   {
-   "id": "sec-021-56-the-map-m",
+   "id": "sec-025-56-the-map-m",
    "number": "5.6",
    "title": "The map M",
    "level": 2,
    "page_start": 29,
    "page_end": 33,
-   "n_chars": 11649,
-   "n_words": 1851
+   "n_chars": 11826,
+   "n_words": 2297,
+   "label_start": "29",
+   "label_end": "33"
   },
   {
-   "id": "sec-022-71-overview",
+   "id": "sec-026-71-overview",
    "number": "7.1",
    "title": "Overview",
    "level": 2,
    "page_start": 33,
    "page_end": 34,
-   "n_chars": 1298,
-   "n_words": 259
+   "n_chars": 1292,
+   "n_words": 253,
+   "label_start": "33",
+   "label_end": "34"
   },
   {
-   "id": "sec-023-72-ordering-mutations",
+   "id": "sec-027-72-ordering-mutations",
    "number": "7.2",
    "title": "Ordering mutations",
    "level": 2,
    "page_start": 34,
    "page_end": 36,
-   "n_chars": 6656,
-   "n_words": 1279
+   "n_chars": 6599,
+   "n_words": 1220,
+   "label_start": "34",
+   "label_end": "36"
   },
   {
-   "id": "sec-024-73-rotation-mutations",
+   "id": "sec-028-73-rotation-mutations",
    "number": "7.3",
    "title": "Rotation mutations",
    "level": 2,
    "page_start": 36,
    "page_end": 40,
-   "n_chars": 9795,
-   "n_words": 1896
+   "n_chars": 9504,
+   "n_words": 1869,
+   "label_start": "36",
+   "label_end": "40"
   },
   {
-   "id": "sec-025-74-flip-mutations",
+   "id": "sec-029-74-flip-mutations",
    "number": "7.4",
    "title": "Flip mutations",
    "level": 2,
    "page_start": 40,
    "page_end": 44,
-   "n_chars": 8036,
-   "n_words": 1548
+   "n_chars": 7902,
+   "n_words": 1414,
+   "label_start": "40",
+   "label_end": "44"
   },
   {
-   "id": "sec-026-9-examples",
+   "id": "sec-030-9-examples",
    "number": "9",
    "title": "Examples",
    "level": 1,
    "page_start": 44,
    "page_end": 53,
-   "n_chars": 23061,
-   "n_words": 4869
+   "n_chars": 23180,
+   "n_words": 4974,
+   "label_start": "44",
+   "label_end": "53"
   },
   {
-   "id": "sec-027-references",
+   "id": "sec-031-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 53,
    "page_end": 55,
-   "n_chars": 6382,
-   "n_words": 850
+   "n_chars": 6318,
+   "n_words": 807,
+   "label_start": "53",
+   "label_end": "55"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 49,
-  "sections": 28,
-  "chars_total": 141637,
+  "toc_inferred_entries": 0,
+  "figure_entries": 45,
+  "figure_sequence_gaps": [
+   "figure 10",
+   "figure 20"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 4,
+    "items": [
+     "Results",
+     "Quivers",
+     "The A\u2022 edge",
+     "The map M"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 1,
+    "items": [
+     "Overview: listed p23, found p2"
+    ]
+   }
+  },
+  "sections": 33,
+  "chars_total": 141170,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "ms.tex",
    "tex_sections": 48,
-   "overlaid": 21,
+   "overlaid": 24,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
     "coverage": 0.5
    },
    "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
     {
      "id": "sec-000-acknowledgements",
      "title": "Acknowledgements",
@@ -689,63 +2060,70 @@
     {
      "id": "sec-001-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.955,
-     "coverage_ratio": 0.728,
+     "prose_ratio": 0.914,
+     "coverage_ratio": 0.344,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-002-11-classical-teichm\u00fcller-space",
+     "title": "Classical Teichm\u00fcller space",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-12-cluster-ensemble-structures",
+     "id": "sec-003-12-cluster-ensemble-structures",
      "title": "Cluster ensemble structures",
      "prose_ratio": 0.918,
-     "coverage_ratio": 0.972,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-13-higher-teichm\u00fcller-spaces",
+     "id": "sec-004-13-higher-teichm\u00fcller-spaces",
      "title": "Higher Teichm\u00fcller spaces",
      "prose_ratio": 0.951,
-     "coverage_ratio": 0.979,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-004-14-results",
+     "id": "sec-005-14-results",
      "title": "Results",
      "prose_ratio": 0.948,
-     "coverage_ratio": 0.978,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-005-15-historical-context",
+     "id": "sec-006-15-historical-context",
      "title": "Historical context",
      "prose_ratio": 0.891,
-     "coverage_ratio": 0.988,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-23-coxeter-elements",
+     "id": "sec-007-23-coxeter-elements",
      "title": "Coxeter elements",
      "prose_ratio": 0.097,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-007-2-ingredients",
+     "id": "sec-008-2-ingredients",
      "title": "Ingredients",
      "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-008-24-generalized-minors",
+     "id": "sec-009-24-generalized-minors",
      "title": "Generalized minors",
      "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-009-21-root-spaces-and-weyl-groups",
+     "id": "sec-010-21-root-spaces-and-weyl-groups",
      "title": "Root spaces and Weyl groups",
      "prose_ratio": 0.927,
      "coverage_ratio": 1.0,
@@ -753,62 +2131,86 @@
      "converter": "latex"
     },
     {
-     "id": "sec-010-22-unipotent-subgroups",
+     "id": "sec-011-22-unipotent-subgroups",
      "title": "Unipotent subgroups",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.188,
+     "coverage_ratio": 0.195,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-011-25-factorization-coordinates",
+     "id": "sec-012-25-factorization-coordinates",
      "title": "Factorization coordinates",
      "prose_ratio": 0.792,
-     "coverage_ratio": 0.95,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-012-26-quivers",
-     "title": "Quivers",
-     "prose_ratio": 0.918,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-013-27-cluster-ensembles",
+     "id": "sec-013-26-quivers",
+     "title": "Quivers",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-27-cluster-ensembles",
      "title": "Cluster ensembles",
-     "prose_ratio": 0.919,
-     "coverage_ratio": 0.955,
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-014-3-key-identities",
+     "id": "sec-015-3-key-identities",
      "title": "Key identities",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.678,
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-015-32-grid-exchange-relations",
+     "id": "sec-016-32-grid-exchange-relations",
      "title": "Grid exchange relations",
      "prose_ratio": 0.89,
-     "coverage_ratio": 0.971,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-016-4-coordinates-on-generically-decorated-represent",
+     "id": "sec-017-4-coordinates-on-generically-decorated-represent",
      "title": "Coordinates on generically-decorated representations",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.945,
+     "prose_ratio": 0.872,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-017-44-regarding-3-manifolds",
+     "id": "sec-018-41-configurations-and-gluings",
+     "title": "Configurations and gluings",
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-42-triangular-quivers-and-fockgoncharov-coordina",
+     "title": "Triangular quivers and Fock\u2013Goncharov coordinate structures",
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-43-from-coordinates-to-representations",
+     "title": "From coordinates to representations",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-021-44-regarding-3-manifolds",
      "title": "Regarding 3-manifolds",
      "prose_ratio": 0.872,
      "coverage_ratio": 0.988,
@@ -816,7 +2218,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-018-5-main-result-fockgoncharov-coordinate-structure",
+     "id": "sec-022-5-main-result-fockgoncharov-coordinate-structure",
      "title": "Main Result: Fock\u2013Goncharov coordinate structures for non-A_n",
      "prose_ratio": 0.904,
      "coverage_ratio": 0.957,
@@ -824,69 +2226,69 @@
      "converter": "latex"
     },
     {
-     "id": "sec-019-51-overview",
+     "id": "sec-023-51-overview",
      "title": "Overview",
      "prose_ratio": 0.949,
-     "coverage_ratio": 0.972,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-020-52-building-the-rectangle-q0",
-     "title": "Building the rectangle Q0",
-     "prose_ratio": 0.941,
-     "coverage_ratio": 0.982,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-021-56-the-map-m",
-     "title": "The map M",
-     "prose_ratio": 0.759,
-     "coverage_ratio": 0.95,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-022-71-overview",
-     "title": "Overview",
-     "prose_ratio": 0.223,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-023-72-ordering-mutations",
-     "title": "Ordering mutations",
-     "prose_ratio": 0.907,
-     "coverage_ratio": 0.947,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-024-73-rotation-mutations",
-     "title": "Rotation mutations",
-     "prose_ratio": 0.92,
-     "coverage_ratio": 0.958,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-025-74-flip-mutations",
-     "title": "Flip mutations",
-     "prose_ratio": 0.891,
-     "coverage_ratio": 0.969,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-026-9-examples",
-     "title": "Examples",
-     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-027-references",
+     "id": "sec-024-52-building-the-rectangle-q0",
+     "title": "Building the rectangle Q0",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-025-56-the-map-m",
+     "title": "The map M",
+     "prose_ratio": 0.759,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-026-71-overview",
+     "title": "Overview",
+     "prose_ratio": 0.223,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-027-72-ordering-mutations",
+     "title": "Ordering mutations",
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-028-73-rotation-mutations",
+     "title": "Rotation mutations",
+     "prose_ratio": 0.92,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-029-74-flip-mutations",
+     "title": "Flip mutations",
+     "prose_ratio": 0.891,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-030-9-examples",
+     "title": "Examples",
+     "prose_ratio": 0.863,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-031-references",
      "title": "References",
      "result": "no matching \\section"
     }

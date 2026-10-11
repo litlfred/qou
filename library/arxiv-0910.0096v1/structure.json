@@ -6,10 +6,12 @@
   "sha256": "805a75c337599adc06d940638ec33ea7184ec733a6a13a372a1c4c4653625132",
   "bytes": 210649,
   "pages": 21,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:18Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,18 +23,25 @@
   "doi": null,
   "title": "Gr\u00f6bner-Shirshov bases for Coxeter groups I\u2217",
   "authors_raw": "Yuqun Chen and Cihua Liu",
-  "abstract": "A conjecture of Gr\u00a8 obner-Shirshov basis of any Coxeter group h as proposed by L.A. Bokut and L.-S. Shiao [4]. In this paper, we give an example to s how that the conjecture is not true in general. We list all possible nontrivial inclusio n compositions when we deal with the general cases of the Coxeter groups. We giv e a Gr\u00a8 obner-Shirshov basis of a Coxeter group which is without nontrivial inclusion composit ions mentioned the above.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20211127173816-05'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
-  "title_prev": "Gr\u00a8 obner-Shirshov bases for Coxeter groups I\u2217",
   "title_lines": [
    "Gr\u00f6bner-Shirshov bases for Coxeter groups I\u2217"
-  ]
+  ],
+  "abstract": "A conjecture of Gr\u00a8obner-Shirshov basis of any Coxeter group has proposed by L.A. Bokut and L.-S. Shiao [4]. In this paper, we give an example to show that the conjecture is not true in general. We list all possible nontrivial inclusion compositions when we deal with the general cases of the Coxeter groups. We give a Gr\u00a8obner-Shirshov basis of a Coxeter group which is without nontrivial inclusion compositions mentioned the above.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20211127173816-05'00'"
+  },
+  "title_raw": "Gr\u00f6bner-Shirshov bases for Coxeter groups I\u2217",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Gr\u00a8obner-Shirshov bases for Coxeter groups I \u2217",
+   "outline": "Introduction",
+   "text": "Gr\u00f6bner-Shirshov bases for Coxeter groups I\u2217",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -40,25 +49,239 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Gr\u00f6bner-Shirshov bases of Coxeter groups",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 839,
+   "n_words": 121,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -66,8 +289,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1012,
-   "n_words": 198
+   "n_chars": 998,
+   "n_words": 183,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-preliminaries",
@@ -75,22 +300,43 @@
    "title": "Preliminaries",
    "level": 1,
    "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4673,
+   "n_words": 932,
+   "label_start": "1",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-gr\u00f6bner-shirshov-bases-of-coxeter-groups",
+   "number": null,
+   "title": "Gr\u00f6bner-Shirshov bases of Coxeter groups",
+   "level": 1,
+   "page_start": 3,
    "page_end": 21,
-   "n_chars": 44719,
-   "n_words": 11719
+   "n_chars": 38221,
+   "n_words": 9000,
+   "label_start": "3",
+   "label_end": "21"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 3,
-  "sections": 2,
-  "chars_total": 45731,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 4,
+  "chars_total": 44731,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 3,
-   "overlaid": 2,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -98,18 +344,31 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.749,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.915,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-gr\u00f6bner-shirshov-bases-of-coxeter-groups",
+     "title": "Gr\u00f6bner-Shirshov bases of Coxeter groups",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.665,
      "result": "overlaid",
      "converter": "pandoc"
     }

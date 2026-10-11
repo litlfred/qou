@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-035-84-surface-diffeomorphisms
 section_title: "Surface diffeomorphisms"
 section_number: 8.4
 pages: 266-277
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.96
+latex_coverage_ratio: 0.957
 ---
 \label{surface:diffeomorphisms:section}
 We have discovered that Thurston's compactification $\overline{\Teich(S_g)}$ of the Teichm\"uller space is homeomorphic to a closed disc. The mapping class group $\MCG(S_g)$ acts on it naturally. We can now apply Brouwer's fixed point theorem to every element $\varphi \in \MCG(S_g)$, and characterise $\varphi$ according to the position of its fixed points, much similarly as we did for the isometries of $\matH^n$.

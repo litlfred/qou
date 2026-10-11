@@ -7,11 +7,11 @@
   "bytes": 412070,
   "pages": 31,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:24Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -28,13 +28,21 @@
    "TWISTED HOCHSCHILD (CO)HOMOLOGY FOR",
    "NOETHERIAN HOPF ALGEBRAS"
   ],
-  "abstract": "W e show that many noetherian Hopf algebras A have a rigid du- alising complex R with R \u223c= \u03bd A1[d]. Here, d is the injective dimension of the algebra and \u03bd is a certain k-algebra automorphism of A, unique up to an inner automorphism. In honour of the \ufb01nite dimensional theory whi ch is hereby gen- eralised we call \u03bd the Nakayama automorphism of A. W e prove that \u03bd = S2\u03be, where S is the antipode of A and \u03be is the left winding automorphism of A de- termined by the left integral of A. The Hochschild homology and cohomology groups with coe\ufb03cients in a suitably twisted free bimodule a re shown to be non-zero in the top dimension d, when A is an Artin-Schelter regular noether- ian Hopf algebra of global dimension d. (Twisted) Poincar\u00b4 e duality holds in this setting, as is deduced from a theorem of Van den Bergh. Ca lculating \u03bd for A using also the opposite coalgebra structure, we determine a formula for S4 generalising a 1976 formula of Radford for A \ufb01nite dimensional. Applications of the results to the cases where A is PI, an enveloping algebra, a quantum group, a quantised function algebra and a group algebra are o utlined. 0. Introduction 0.1. The starting point for the work described in this paper was the o bserva- tion by Had\ufb01eld and Kr\u00a8 ahmer [HK1] that, when calculating the Hochs child co- homology of the quantised function algebra Oq(SL(2)), twisting the coe\ufb03cient bimodule Oq(SL(2)) by a suitable algebra automorphism \u03bd, and so calculating H \u2217(Oq(SL(2)), \u03bdOq(SL(2))1), avoids the \u201cdimension drop\u201d which occurs if one works with untwisted coe\ufb03cients. Our initial aim was to understand w hy this happens, and to extend their result to other quantised function a lgebras and then to other classes of Hopf algebra A. 0.2. Rigid dualising complexes. It transpires that twisting enters the theory at the level of the rigid dualising complex R of A, de\ufb01ned in paragraph (4.2). Let A be a noetherian Hopf algebra over the base \ufb01eld k. (We will assume except where stated otherwise th",
+  "abstract": "We show that many noetherian Hopf algebras A have a rigid du- alising complex R with R \u223c = \u03bdA1[d]. Here, d is the injective dimension of the algebra and \u03bd is a certain k-algebra automorphism of A, unique up to an inner automorphism. In honour of the \ufb01nite dimensional theory which is hereby gen- eralised we call \u03bd the Nakayama automorphism of A. We prove that \u03bd = S2\u03be, where S is the antipode of A and \u03be is the left winding automorphism of A de- termined by the left integral of A. The Hochschild homology and cohomology groups with coe\ufb03cients in a suitably twisted free bimodule are shown to be non-zero in the top dimension d, when A is an Artin-Schelter regular noether- ian Hopf algebra of global dimension d. (Twisted) Poincar\u00b4e duality holds in this setting, as is deduced from a theorem of Van den Bergh. Calculating \u03bd for A using also the opposite coalgebra structure, we determine a formula for S4 generalising a 1976 formula of Radford for A \ufb01nite dimensional. Applications of the results to the cases where A is PI, an enveloping algebra, a quantum group, a quantised function algebra and a group algebra are outlined. 0. Introduction 0.1. The starting point for the work described in this paper was the observa- tion by Had\ufb01eld and Kr\u00a8ahmer [HK1] that, when calculating the Hochschild co- homology of the quantised function algebra Oq(SL(2)), twisting the coe\ufb03cient bimodule Oq(SL(2)) by a suitable algebra automorphism \u03bd, and so calculating H\u2217(Oq(SL(2)), \u03bdOq(SL(2))1), avoids the \u201cdimension drop\u201d which occurs if one works with untwisted coe\ufb03cients. Our initial aim was to understand why this happens, and to extend their result to other quantised function algebras and then to other classes of Hopf algebra A. 0.2. Rigid dualising complexes. It transpires that twisting enters the theory at the level of the rigid dualising complex R of A, de\ufb01ned in paragraph (4.2). Let A be a noetherian Hopf algebra over the base \ufb01eld k. (We will assume except where stated otherwise that k is algeb",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20210714001327-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20210714001327-04'00'"
+  },
+  "title_raw": "DUALISING COMPLEXES AND TWISTED HOCHSCHILD (CO)HOMOLOGY FOR NOETHERIAN HOPF ALGEBRAS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "DUALISING COMPLEXES AND TWISTED HOCHSCHILD (CO)HOMOLOGY FOR NOETHERIAN HOPF ALGEBRAS 0. Introduction The starting point for the work described in this paper was the observation by Had\ufb01eld and Kr\u00a8ahmer [HK1] that, when calculating the Hochschild cohomology of the quantised function algebra O q ( SL (",
+   "outline": "0. Introduction",
+   "text": "DUALISING COMPLEXES AND TWISTED HOCHSCHILD (CO)HOMOLOGY FOR NOETHERIAN HOPF ALGEBRAS",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -43,325 +51,684 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "0"
+   "number": "0",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "0.1.",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Rigid dualising complexes",
    "page": 1,
    "source": "outline",
-   "number": "0.2"
+   "number": "0.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Nakayama automorphisms",
    "page": 2,
    "source": "outline",
-   "number": "0.3"
+   "number": "0.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Twisted Hochschild groups",
    "page": 2,
    "source": "outline",
-   "number": "0.4"
+   "number": "0.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Classes of examples",
    "page": 3,
    "source": "outline",
-   "number": "0.5"
+   "number": "0.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The antipode",
    "page": 3,
    "source": "outline",
-   "number": "0.6"
+   "number": "0.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "0.7.",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "General preparations",
    "page": 4,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Standard notation",
    "page": 4,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Artin-Schelter Gorenstein algebras",
    "page": 4,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Homological integrals",
    "page": 5,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Hopf algebra Preparations",
    "page": 5,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Restriction via",
    "page": 5,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The left adjoint action",
    "page": 6,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Twisted (bi)modules",
    "page": 6,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Homological properties of the adjoint action",
    "page": 8,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Representations and winding automorphisms",
    "page": 8,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The right adjoint action",
    "page": 9,
    "source": "outline",
-   "number": "2.6"
+   "number": "2.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Twisted Hochschild homology",
    "page": 10,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Definition",
    "page": 10,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Ischebeck's spectral sequence",
    "page": 11,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The link with integrals",
    "page": 11,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Theorem 0.4(a)",
    "page": 12,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Remarks",
    "page": 13,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "AS-Gorenstein algebras and dualising complexes",
    "page": 13,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Dualising Complexes",
    "page": 13,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Rigid dualising complexes",
    "page": 13,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Van den Bergh condition",
    "page": 14,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Rigid Gorenstein algebras and Nakayama automorphisms",
    "page": 14,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "AS-Gorenstein Hopf algebras are rigid Gorenstein",
    "page": 15,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The antipode",
    "page": 16,
    "source": "outline",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Twisted Hochschild cohomology",
    "page": 18,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Cohomology and duality",
    "page": 18,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Poincar\u00e9 duality for Hopf algebras",
    "page": 19,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Theorem ??(b)",
    "page": 20,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Examples",
    "page": 21,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Some general properties",
    "page": 21,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Noetherian PI Hopf algebras",
    "page": 21,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Enveloping algebras",
    "page": 23,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Quantised enveloping algebras",
    "page": 23,
    "source": "outline",
-   "number": "6.4"
+   "number": "6.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Quantised function algebras",
    "page": 24,
    "source": "outline",
-   "number": "6.5"
+   "number": "6.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The special linear group",
    "page": 24,
    "source": "outline",
-   "number": "6.6"
+   "number": "6.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Noetherian group algebras",
    "page": 26,
    "source": "outline",
-   "number": "6.7"
+   "number": "6.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Acknowledgments",
    "page": 29,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 29,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -370,8 +737,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1302,
-   "n_words": 230
+   "n_chars": 1295,
+   "n_words": 223,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-000-0-introduction",
@@ -381,7 +750,9 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-01",
@@ -390,8 +761,10 @@
    "level": 2,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 504,
-   "n_words": 80
+   "n_chars": 572,
+   "n_words": 88,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-02-rigid-dualising-complexes",
@@ -400,8 +773,10 @@
    "level": 2,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 1225,
-   "n_words": 195
+   "n_chars": 1223,
+   "n_words": 193,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-03-nakayama-automorphisms",
@@ -410,8 +785,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 335,
-   "n_words": 72
+   "n_chars": 332,
+   "n_words": 69,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-06-the-antipode",
@@ -421,7 +798,9 @@
    "page_start": 2,
    "page_end": 2,
    "n_chars": 107,
-   "n_words": 21
+   "n_words": 21,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-04-twisted-hochschild-groups",
@@ -430,8 +809,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 1595,
-   "n_words": 300
+   "n_chars": 1577,
+   "n_words": 282,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-05-classes-of-examples",
@@ -440,8 +821,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 2446,
-   "n_words": 437
+   "n_chars": 2428,
+   "n_words": 419,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-07",
@@ -450,8 +833,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 300,
-   "n_words": 50
+   "n_chars": 375,
+   "n_words": 63,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-008-1-general-preparations",
@@ -461,7 +846,9 @@
    "page_start": 4,
    "page_end": 4,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-009-11-standard-notation",
@@ -470,8 +857,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 1432,
-   "n_words": 262
+   "n_chars": 1425,
+   "n_words": 255,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-010-12-artin-schelter-gorenstein-algebras",
@@ -480,8 +869,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 1780,
-   "n_words": 325
+   "n_chars": 1767,
+   "n_words": 312,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-011-13-homological-integrals",
@@ -490,8 +881,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 897,
-   "n_words": 170
+   "n_chars": 891,
+   "n_words": 164,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-012-2-hopf-algebra-preparations",
@@ -501,7 +894,9 @@
    "page_start": 5,
    "page_end": 5,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-013-21-restriction-via",
@@ -510,8 +905,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 1640,
-   "n_words": 351
+   "n_chars": 1596,
+   "n_words": 307,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-014-22-the-left-adjoint-action",
@@ -520,8 +917,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 731,
-   "n_words": 158
+   "n_chars": 720,
+   "n_words": 147,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-015-23-twisted-bimodules",
@@ -530,8 +929,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 8,
-   "n_chars": 2433,
-   "n_words": 554
+   "n_chars": 2373,
+   "n_words": 494,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-016-24-homological-properties-of-the-adjoint-action",
@@ -540,8 +941,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 1274,
-   "n_words": 266
+   "n_chars": 1254,
+   "n_words": 246,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-017-25-representations-and-winding-automorphisms",
@@ -550,8 +953,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 1744,
-   "n_words": 366
+   "n_chars": 1701,
+   "n_words": 323,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-018-26-the-right-adjoint-action",
@@ -559,242 +964,319 @@
    "title": "The right adjoint action",
    "level": 2,
    "page_start": 9,
-   "page_end": 10,
-   "n_chars": 2282,
-   "n_words": 488
+   "page_end": 9,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-019-3-twisted-hochschild-homology",
+   "id": "sec-019-31-definition",
+   "number": "3.1",
+   "title": "Definition",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 2149,
+   "n_words": 419,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-020-3-twisted-hochschild-homology",
    "number": "3",
    "title": "Twisted Hochschild homology",
    "level": 1,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 3438,
-   "n_words": 652
+   "n_chars": 3402,
+   "n_words": 616,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-020-33-the-link-with-integrals",
+   "id": "sec-021-33-the-link-with-integrals",
    "number": "3.3",
    "title": "The link with integrals",
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 1781,
-   "n_words": 334
+   "n_chars": 1762,
+   "n_words": 315,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-021-34-proof-of-theorem-04a",
+   "id": "sec-022-34-proof-of-theorem-04a",
    "number": "3.4",
    "title": "Proof of Theorem 0.4(a)",
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 878,
-   "n_words": 186
+   "n_chars": 859,
+   "n_words": 167,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-022-35-remarks",
+   "id": "sec-023-35-remarks",
    "number": "3.5",
    "title": "Remarks",
    "level": 2,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 944,
-   "n_words": 161
+   "n_chars": 937,
+   "n_words": 154,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-023-4-as-gorenstein-algebras-and-dualising-complexes",
+   "id": "sec-024-4-as-gorenstein-algebras-and-dualising-complexes",
    "number": "4",
    "title": "AS-Gorenstein algebras and dualising complexes",
    "level": 1,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 1072,
-   "n_words": 188
+   "n_chars": 1064,
+   "n_words": 180,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-024-42-rigid-dualising-complexes",
+   "id": "sec-025-42-rigid-dualising-complexes",
    "number": "4.2",
    "title": "Rigid dualising complexes",
    "level": 2,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 1385,
-   "n_words": 260
+   "n_chars": 1263,
+   "n_words": 229,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-025-43-van-den-bergh-condition",
+   "id": "sec-026-43-van-den-bergh-condition",
    "number": "4.3",
    "title": "Van den Bergh condition",
    "level": 2,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 557,
-   "n_words": 109
+   "n_chars": 659,
+   "n_words": 123,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-026-44-rigid-gorenstein-algebras-and-nakayama-automo",
+   "id": "sec-027-44-rigid-gorenstein-algebras-and-nakayama-automo",
    "number": "4.4",
    "title": "Rigid Gorenstein algebras and Nakayama automorphisms",
    "level": 2,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 1105,
-   "n_words": 201
+   "n_chars": 1099,
+   "n_words": 195,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-027-45-as-gorenstein-hopf-algebras-are-rigid-gorenst",
+   "id": "sec-028-45-as-gorenstein-hopf-algebras-are-rigid-gorenst",
    "number": "4.5",
    "title": "AS-Gorenstein Hopf algebras are rigid Gorenstein",
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 3890,
-   "n_words": 857
+   "n_chars": 3777,
+   "n_words": 744,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-028-46-the-antipode",
+   "id": "sec-029-46-the-antipode",
    "number": "4.6",
    "title": "The antipode",
    "level": 2,
    "page_start": 16,
    "page_end": 18,
-   "n_chars": 4122,
-   "n_words": 796
+   "n_chars": 4096,
+   "n_words": 770,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-029-5-twisted-hochschild-cohomology",
+   "id": "sec-030-5-twisted-hochschild-cohomology",
    "number": "5",
    "title": "Twisted Hochschild cohomology",
    "level": 1,
    "page_start": 18,
    "page_end": 18,
    "n_chars": 61,
-   "n_words": 11
+   "n_words": 11,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-030-51-cohomology-and-duality",
+   "id": "sec-031-51-cohomology-and-duality",
    "number": "5.1",
    "title": "Cohomology and duality",
    "level": 2,
    "page_start": 18,
-   "page_end": 21,
-   "n_chars": 6389,
-   "n_words": 1238
+   "page_end": 19,
+   "n_chars": 2842,
+   "n_words": 539,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-031-6-examples",
+   "id": "sec-032-52-poincar\u00e9-duality-for-hopf-algebras",
+   "number": "5.2",
+   "title": "Poincar\u00e9 duality for Hopf algebras",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 3398,
+   "n_words": 616,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-033-6-examples",
    "number": "6",
    "title": "Examples",
    "level": 1,
    "page_start": 21,
    "page_end": 21,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-032-61-some-general-properties",
+   "id": "sec-034-61-some-general-properties",
    "number": "6.1",
    "title": "Some general properties",
    "level": 2,
    "page_start": 21,
    "page_end": 21,
-   "n_chars": 1602,
-   "n_words": 286
+   "n_chars": 1591,
+   "n_words": 275,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-033-62-noetherian-pi-hopf-algebras",
+   "id": "sec-035-62-noetherian-pi-hopf-algebras",
    "number": "6.2",
    "title": "Noetherian PI Hopf algebras",
    "level": 2,
    "page_start": 21,
    "page_end": 23,
-   "n_chars": 4612,
-   "n_words": 872
+   "n_chars": 4576,
+   "n_words": 836,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-034-63-enveloping-algebras",
+   "id": "sec-036-63-enveloping-algebras",
    "number": "6.3",
    "title": "Enveloping algebras",
    "level": 2,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 1541,
-   "n_words": 312
+   "n_chars": 1521,
+   "n_words": 292,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-035-64-quantised-enveloping-algebras",
+   "id": "sec-037-64-quantised-enveloping-algebras",
    "number": "6.4",
    "title": "Quantised enveloping algebras",
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 1393,
-   "n_words": 275
+   "n_chars": 1387,
+   "n_words": 269,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-036-65-quantised-function-algebras",
+   "id": "sec-038-65-quantised-function-algebras",
    "number": "6.5",
    "title": "Quantised function algebras",
    "level": 2,
    "page_start": 24,
    "page_end": 24,
-   "n_chars": 1055,
-   "n_words": 201
+   "n_chars": 1051,
+   "n_words": 197,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-037-66-the-special-linear-group",
+   "id": "sec-039-66-the-special-linear-group",
    "number": "6.6",
    "title": "The special linear group",
    "level": 2,
    "page_start": 24,
    "page_end": 26,
-   "n_chars": 5228,
-   "n_words": 1044
+   "n_chars": 5184,
+   "n_words": 1000,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-038-67-noetherian-group-algebras",
+   "id": "sec-040-67-noetherian-group-algebras",
    "number": "6.7",
    "title": "Noetherian group algebras",
    "level": 2,
    "page_start": 26,
    "page_end": 29,
-   "n_chars": 6127,
-   "n_words": 1191
+   "n_chars": 6052,
+   "n_words": 1116,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-039-acknowledgments",
+   "id": "sec-041-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 1,
    "page_start": 29,
    "page_end": 29,
-   "n_chars": 616,
-   "n_words": 99
+   "n_chars": 609,
+   "n_words": 92,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-040-references",
+   "id": "sec-042-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 29,
    "page_end": 31,
-   "n_chars": 7086,
-   "n_words": 1111
+   "n_chars": 7010,
+   "n_words": 1035,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 46,
-  "sections": 42,
-  "chars_total": 76909,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 44,
+  "chars_total": 75985,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 45,
-   "overlaid": 30,
+   "overlaid": 29,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -829,7 +1311,7 @@
      "id": "sec-003-03-nakayama-automorphisms",
      "title": "Nakayama automorphisms",
      "prose_ratio": 0.655,
-     "coverage_ratio": 0.95,
+     "coverage_ratio": 0.905,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -851,7 +1333,7 @@
      "id": "sec-006-05-classes-of-examples",
      "title": "Classes of examples",
      "prose_ratio": 0.951,
-     "coverage_ratio": 0.675,
+     "coverage_ratio": 0.672,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -878,7 +1360,7 @@
      "id": "sec-010-12-artin-schelter-gorenstein-algebras",
      "title": "Artin-Schelter Gorenstein algebras",
      "prose_ratio": 0.96,
-     "coverage_ratio": 0.99,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -908,7 +1390,7 @@
      "id": "sec-014-22-the-left-adjoint-action",
      "title": "The left adjoint action",
      "prose_ratio": 0.906,
-     "coverage_ratio": 0.967,
+     "coverage_ratio": 0.935,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -916,7 +1398,7 @@
      "id": "sec-015-23-twisted-bimodules",
      "title": "Twisted (bi)modules",
      "prose_ratio": 0.924,
-     "coverage_ratio": 0.955,
+     "coverage_ratio": 0.934,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -924,7 +1406,7 @@
      "id": "sec-016-24-homological-properties-of-the-adjoint-action",
      "title": "Homological properties of the adjoint action",
      "prose_ratio": 0.944,
-     "coverage_ratio": 0.947,
+     "coverage_ratio": 0.946,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -939,37 +1421,39 @@
     {
      "id": "sec-018-26-the-right-adjoint-action",
      "title": "The right adjoint action",
-     "prose_ratio": 0.977,
-     "coverage_ratio": 0.957,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-019-3-twisted-hochschild-homology",
+     "id": "sec-019-31-definition",
+     "title": "Definition",
+     "prose_ratio": 0.254,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-020-3-twisted-hochschild-homology",
      "title": "Twisted Hochschild homology",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 0.971,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-020-33-the-link-with-integrals",
+     "id": "sec-021-33-the-link-with-integrals",
      "title": "The link with integrals",
      "prose_ratio": 0.944,
-     "coverage_ratio": 0.948,
+     "coverage_ratio": 0.946,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-021-34-proof-of-theorem-04a",
+     "id": "sec-022-34-proof-of-theorem-04a",
      "title": "Proof of Theorem 0.4(a)",
      "prose_ratio": 0.838,
-     "coverage_ratio": 0.943,
+     "coverage_ratio": 0.917,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-022-35-remarks",
+     "id": "sec-023-35-remarks",
      "title": "Remarks",
      "prose_ratio": 0.938,
      "coverage_ratio": 1.0,
@@ -977,7 +1461,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-023-4-as-gorenstein-algebras-and-dualising-complexes",
+     "id": "sec-024-4-as-gorenstein-algebras-and-dualising-complexes",
      "title": "AS-Gorenstein algebras and dualising complexes",
      "prose_ratio": 0.649,
      "coverage_ratio": 0.969,
@@ -985,21 +1469,21 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-024-42-rigid-dualising-complexes",
+     "id": "sec-025-42-rigid-dualising-complexes",
      "title": "Rigid dualising complexes",
-     "prose_ratio": 0.308,
+     "prose_ratio": 0.262,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-025-43-van-den-bergh-condition",
+     "id": "sec-026-43-van-den-bergh-condition",
      "title": "Van den Bergh condition",
-     "prose_ratio": 0.816,
-     "coverage_ratio": 0.969,
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-026-44-rigid-gorenstein-algebras-and-nakayama-automo",
+     "id": "sec-027-44-rigid-gorenstein-algebras-and-nakayama-automo",
      "title": "Rigid Gorenstein algebras and Nakayama automorphisms",
      "prose_ratio": 0.962,
      "coverage_ratio": 0.945,
@@ -1007,19 +1491,19 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-027-45-as-gorenstein-hopf-algebras-are-rigid-gorenst",
+     "id": "sec-028-45-as-gorenstein-hopf-algebras-are-rigid-gorenst",
      "title": "AS-Gorenstein Hopf algebras are rigid Gorenstein",
      "prose_ratio": 0.556,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-028-46-the-antipode",
+     "id": "sec-029-46-the-antipode",
      "title": "The antipode",
      "prose_ratio": 0.587,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-029-5-twisted-hochschild-cohomology",
+     "id": "sec-030-5-twisted-hochschild-cohomology",
      "title": "Twisted Hochschild cohomology",
      "prose_ratio": 0.857,
      "coverage_ratio": 1.0,
@@ -1027,37 +1511,45 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-030-51-cohomology-and-duality",
+     "id": "sec-031-51-cohomology-and-duality",
      "title": "Cohomology and duality",
-     "prose_ratio": 0.972,
-     "coverage_ratio": 0.968,
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.949,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-031-6-examples",
+     "id": "sec-032-52-poincar\u00e9-duality-for-hopf-algebras",
+     "title": "Poincar\u00e9 duality for Hopf algebras",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.94,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-033-6-examples",
      "title": "Examples",
      "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-032-61-some-general-properties",
+     "id": "sec-034-61-some-general-properties",
      "title": "Some general properties",
      "prose_ratio": 0.956,
-     "coverage_ratio": 0.989,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-033-62-noetherian-pi-hopf-algebras",
+     "id": "sec-035-62-noetherian-pi-hopf-algebras",
      "title": "Noetherian PI Hopf algebras",
      "prose_ratio": 0.988,
-     "coverage_ratio": 0.984,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-034-63-enveloping-algebras",
+     "id": "sec-036-63-enveloping-algebras",
      "title": "Enveloping algebras",
      "prose_ratio": 0.93,
      "coverage_ratio": 0.972,
@@ -1065,7 +1557,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-035-64-quantised-enveloping-algebras",
+     "id": "sec-037-64-quantised-enveloping-algebras",
      "title": "Quantised enveloping algebras",
      "prose_ratio": 0.957,
      "coverage_ratio": 0.958,
@@ -1073,15 +1565,15 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-036-65-quantised-function-algebras",
+     "id": "sec-038-65-quantised-function-algebras",
      "title": "Quantised function algebras",
      "prose_ratio": 0.925,
-     "coverage_ratio": 0.982,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-037-66-the-special-linear-group",
+     "id": "sec-039-66-the-special-linear-group",
      "title": "The special linear group",
      "prose_ratio": 0.989,
      "coverage_ratio": 0.921,
@@ -1089,15 +1581,15 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-038-67-noetherian-group-algebras",
+     "id": "sec-040-67-noetherian-group-algebras",
      "title": "Noetherian group algebras",
      "prose_ratio": 0.99,
-     "coverage_ratio": 0.973,
+     "coverage_ratio": 0.968,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-039-acknowledgments",
+     "id": "sec-041-acknowledgments",
      "title": "Acknowledgments",
      "prose_ratio": 0.943,
      "coverage_ratio": 1.0,
@@ -1105,7 +1597,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-040-references",
+     "id": "sec-042-references",
      "title": "References",
      "result": "no matching \\section"
     }

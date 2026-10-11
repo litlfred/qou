@@ -7,10 +7,11 @@
   "bytes": 502092,
   "pages": 37,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:19Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -25,13 +26,21 @@
   "title_lines": [
    "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS"
   ],
-  "abstract": "Factorization homology theories of topological manifolds , after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds whose coe\ufb03cient systems are n-disk algebras or n-disk stacks. In this work we prove a precise formulation of t his idea, giving an axiomatic characterization of factorization homology wit h coe\ufb03cients in n-disk algebras in terms of a generalization of the Eilenberg\u2013Steenrod axioms for si ngular homology. Each such theory gives rise to a kind of topological quantum \ufb01eld theory, for w hich observables can be de\ufb01ned on general n-manifolds and not only closed n-manifolds. For n-disk algebra coe\ufb03cients, these \ufb01eld theories are characterized by the condition that globa l observables are determined by local observables in a strong sense. Our axiomatic point of view ha s a number of applications. In particular, we give a concise proof of the nonabelian Poinca r\u00b4 e duality of Salvatore, Segal, and Lurie. W e present some essential classes of calculations of factorization homology, such as for free n-disk algebras and enveloping algebras of Lie algebras, sev eral of which have a conceptual meaning in terms of Koszul duality.",
+  "abstract": "Factorization homology theories of topological manifolds, after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds whose coe\ufb03cient systems are n-disk algebras or n-disk stacks. In this work we prove a precise formulation of this idea, giving an axiomatic characterization of factorization homology with coe\ufb03cients in n-disk algebras in terms of a generalization of the Eilenberg\u2013Steenrod axioms for singular homology. Each such theory gives rise to a kind of topological quantum \ufb01eld theory, for which observables can be de\ufb01ned on general n-manifolds and not only closed n-manifolds. For n-disk algebra coe\ufb03cients, these \ufb01eld theories are characterized by the condition that global observables are determined by local observables in a strong sense. Our axiomatic point of view has a number of applications. In particular, we give a concise proof of the nonabelian Poincar\u00b4e duality of Salvatore, Segal, and Lurie. We present some essential classes of calculations of factorization homology, such as for free n-disk algebras and enveloping algebras of Lie algebras, several of which have a conceptual meaning in terms of Koszul duality.",
   "docinfo": {
    "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20240624205233-04'00'",
    "Creator": "LaTeX with hyperref",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20240624205233-04'00'"
+  },
+  "title_raw": "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS Contents Introduction B -framed disks and manifolds B -framings Disks Manifolds with boundary Localizing with respect to isotopy equivalences Homology theories for topological manifolds Disk algebras Factorization homology over oriented 1-manifolds wit",
+   "outline": "1. Introduction",
+   "text": "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,130 +49,546 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "B-framed disks and manifolds",
    "page": 6,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "B-framings",
    "page": 6,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Disks",
    "page": 9,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Manifolds with boundary",
    "page": 11,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Localizing with respect to isotopy equivalences",
    "page": 12,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "Homology theories for topological manifolds",
    "page": 14,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Disk algebras",
    "page": 14,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Factorization homology over oriented 1-manifolds with boundary",
    "page": 17,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Homology theories",
    "page": 18,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Pushforward",
    "page": 19,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "Homology theories",
    "page": 23,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 1,
    "title": "Nonabelian Poincar\u00e9 duality",
    "page": 26,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 1,
    "title": "Commutative algebras, free algebras, and Lie algebras",
    "page": 28,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 2,
    "title": "Factorization homology with coefficients in commutative algebras",
    "page": 28,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 2,
    "title": "Factorization homology with coefficients in free n-disk algebras",
    "page": 31,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 2,
    "title": "Factorization homology from Lie algebras",
    "page": 35,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 1,
    "title": "References",
    "page": 36,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1309,
+   "n_words": 191,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -171,8 +596,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 6,
-   "n_chars": 20222,
-   "n_words": 3305
+   "n_chars": 20043,
+   "n_words": 3166,
+   "label_start": "1",
+   "label_end": "6"
   },
   {
    "id": "sec-001-2-b-framed-disks-and-manifolds",
@@ -182,7 +609,9 @@
    "page_start": 6,
    "page_end": 6,
    "n_chars": 70,
-   "n_words": 12
+   "n_words": 12,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
    "id": "sec-002-21-b-framings",
@@ -191,8 +620,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 9,
-   "n_chars": 6715,
-   "n_words": 1107
+   "n_chars": 6560,
+   "n_words": 1085,
+   "label_start": "6",
+   "label_end": "9"
   },
   {
    "id": "sec-003-22-disks",
@@ -201,8 +632,10 @@
    "level": 2,
    "page_start": 9,
    "page_end": 11,
-   "n_chars": 6565,
-   "n_words": 1171
+   "n_chars": 6488,
+   "n_words": 1129,
+   "label_start": "9",
+   "label_end": "11"
   },
   {
    "id": "sec-004-23-manifolds-with-boundary",
@@ -211,8 +644,10 @@
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 1812,
-   "n_words": 328
+   "n_chars": 1817,
+   "n_words": 332,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
    "id": "sec-005-24-localizing-with-respect-to-isotopy-equivalenc",
@@ -221,8 +656,10 @@
    "level": 2,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 6586,
-   "n_words": 1183
+   "n_chars": 6420,
+   "n_words": 1124,
+   "label_start": "12",
+   "label_end": "14"
   },
   {
    "id": "sec-006-3-homology-theories-for-topological-manifolds",
@@ -232,7 +669,9 @@
    "page_start": 14,
    "page_end": 14,
    "n_chars": 363,
-   "n_words": 59
+   "n_words": 59,
+   "label_start": "14",
+   "label_end": "14"
   },
   {
    "id": "sec-007-31-disk-algebras",
@@ -240,72 +679,169 @@
    "title": "Disk algebras",
    "level": 2,
    "page_start": 14,
-   "page_end": 18,
-   "n_chars": 9316,
-   "n_words": 1659
+   "page_end": 17,
+   "n_chars": 6447,
+   "n_words": 1167,
+   "label_start": "14",
+   "label_end": "17"
   },
   {
-   "id": "sec-008-33-homology-theories",
+   "id": "sec-008-32-factorization-homology-over-oriented-1-manifo",
+   "number": "3.2",
+   "title": "Factorization homology over oriented 1-manifolds with boundary",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 2593,
+   "n_words": 429,
+   "label_start": "17",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-009-33-homology-theories",
    "number": "3.3",
    "title": "Homology theories",
    "level": 2,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 3278,
-   "n_words": 600
+   "n_chars": 3272,
+   "n_words": 594,
+   "label_start": "18",
+   "label_end": "19"
   },
   {
-   "id": "sec-009-34-pushforward",
+   "id": "sec-010-34-pushforward",
    "number": "3.4",
    "title": "Pushforward",
    "level": 2,
    "page_start": 19,
    "page_end": 23,
-   "n_chars": 9633,
-   "n_words": 1789
+   "n_chars": 9485,
+   "n_words": 1761,
+   "label_start": "19",
+   "label_end": "23"
   },
   {
-   "id": "sec-010-35-homology-theories",
+   "id": "sec-011-35-homology-theories",
    "number": "3.5",
    "title": "Homology theories",
    "level": 2,
    "page_start": 23,
-   "page_end": 28,
-   "n_chars": 17878,
-   "n_words": 3210
+   "page_end": 26,
+   "n_chars": 10440,
+   "n_words": 1836,
+   "label_start": "23",
+   "label_end": "26"
   },
   {
-   "id": "sec-011-5-commutative-algebras-free-algebras-and-lie-alg",
+   "id": "sec-012-4-nonabelian-poincar\u00e9-duality",
+   "number": "4",
+   "title": "Nonabelian Poincar\u00e9 duality",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 28,
+   "n_chars": 7030,
+   "n_words": 1268,
+   "label_start": "26",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-013-5-commutative-algebras-free-algebras-and-lie-alg",
    "number": "5",
    "title": "Commutative algebras, free algebras, and Lie algebras",
    "level": 1,
    "page_start": 28,
-   "page_end": 36,
-   "n_chars": 22812,
-   "n_words": 4190
+   "page_end": 28,
+   "n_chars": 762,
+   "n_words": 118,
+   "label_start": "28",
+   "label_end": "28"
   },
   {
-   "id": "sec-012-references",
+   "id": "sec-014-51-factorization-homology-with-coefficients-in-c",
+   "number": "5.1",
+   "title": "Factorization homology with coefficients in commutative algebras",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 31,
+   "n_chars": 7049,
+   "n_words": 1221,
+   "label_start": "28",
+   "label_end": "31"
+  },
+  {
+   "id": "sec-015-52-factorization-homology-with-coefficients-in-f",
+   "number": "5.2",
+   "title": "Factorization homology with coefficients in free n-disk algebras",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 35,
+   "n_chars": 11725,
+   "n_words": 2030,
+   "label_start": "31",
+   "label_end": "35"
+  },
+  {
+   "id": "sec-016-53-factorization-homology-from-lie-algebras",
+   "number": "5.3",
+   "title": "Factorization homology from Lie algebras",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 2525,
+   "n_words": 435,
+   "label_start": "35",
+   "label_end": "36"
+  },
+  {
+   "id": "sec-017-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 36,
    "page_end": 37,
-   "n_chars": 7610,
-   "n_words": 1077
+   "n_chars": 7535,
+   "n_words": 1002,
+   "label_start": "36",
+   "label_end": "37"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 18,
-  "sections": 13,
-  "chars_total": 112860,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 3,
+    "items": [
+     "B-framings",
+     "Disks",
+     "Pushforward"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 19,
+  "chars_total": 111933,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 19,
-   "overlaid": 10,
+   "overlaid": 15,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -313,10 +849,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.936,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -340,7 +881,7 @@
      "id": "sec-003-22-disks",
      "title": "Disks",
      "prose_ratio": 0.978,
-     "coverage_ratio": 0.95,
+     "coverage_ratio": 0.948,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -356,7 +897,7 @@
      "id": "sec-005-24-localizing-with-respect-to-isotopy-equivalenc",
      "title": "Localizing with respect to isotopy equivalences",
      "prose_ratio": 0.97,
-     "coverage_ratio": 0.968,
+     "coverage_ratio": 0.97,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -371,13 +912,21 @@
     {
      "id": "sec-007-31-disk-algebras",
      "title": "Disk algebras",
-     "prose_ratio": 0.987,
-     "coverage_ratio": 0.967,
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-33-homology-theories",
+     "id": "sec-008-32-factorization-homology-over-oriented-1-manifo",
+     "title": "Factorization homology over oriented 1-manifolds with boundary",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-33-homology-theories",
      "title": "Homology theories",
      "prose_ratio": 0.986,
      "coverage_ratio": 0.966,
@@ -385,28 +934,59 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-34-pushforward",
+     "id": "sec-010-34-pushforward",
      "title": "Pushforward",
-     "prose_ratio": 0.46,
+     "prose_ratio": 0.548,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-010-35-homology-theories",
+     "id": "sec-011-35-homology-theories",
      "title": "Homology theories",
-     "prose_ratio": 0.69,
-     "coverage_ratio": 0.237,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.577,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-011-5-commutative-algebras-free-algebras-and-lie-alg",
-     "title": "Commutative algebras, free algebras, and Lie algebras",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.986,
+     "id": "sec-012-4-nonabelian-poincar\u00e9-duality",
+     "title": "Nonabelian Poincar\u00e9 duality",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-references",
+     "id": "sec-013-5-commutative-algebras-free-algebras-and-lie-alg",
+     "title": "Commutative algebras, free algebras, and Lie algebras",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-51-factorization-homology-with-coefficients-in-c",
+     "title": "Factorization homology with coefficients in commutative algebras",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-52-factorization-homology-with-coefficients-in-f",
+     "title": "Factorization homology with coefficients in free n-disk algebras",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-53-factorization-homology-from-lie-algebras",
+     "title": "Factorization homology from Lie algebras",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-references",
      "title": "References",
      "result": "no matching \\section"
     }

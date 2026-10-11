@@ -7,11 +7,11 @@
   "bytes": 345333,
   "pages": 24,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:21Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -27,13 +27,23 @@
    "On the regularity of critical points for O\u2019Hara\u2019s knot",
    "energies: From smoothness to analyticity"
   ],
-  "abstract": "W e prove the analyticity of smooth critical points for O\u2019Har a\u2019s knot energies E \u03b1,p , with p = 1 and 2 < \u03b1 < 3, subject to a \ufb01xed length constraint. This implies, together with the main result in [ BR13], that bounded energy critical points of E \u03b1, 1 subject to a \ufb01xed length constraint are not only C\u221e but also analytic. Our approach is based on Cauchy\u2019s method o f majorants and a decomposition of the gradient that was adapted from the M\u00f6bius energy case E 2, 1 in [ BV19].",
+  "abstract": "We prove the analyticity of smooth critical points for O\u2019Hara\u2019s knot energies E\u03b1,p, with p = 1 and 2 < \u03b1 < 3, subject to a \ufb01xed length constraint. This implies, together with the main result in [BR13], that bounded energy critical points of E\u03b1,1 subject to a \ufb01xed length constraint are not only C\u221ebut also analytic. Our approach is based on Cauchy\u2019s method of majorants and a decomposition of the gradient that was adapted from the M\u00f6bius energy case E2,1 in [BV19].",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20211110104056-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20211110104056-05'00'"
+  },
+  "title_raw": "On the regularity of critical points for O\u2019Hara\u2019s knot energies: From smoothness to analyticity",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "On the regularity of critical points for O\u2019Hara\u2019s knot energies: From smoothness to analyticity",
+   "outline": "1. Introduction",
+   "text": "On the regularity of critical points for O\u2019Hara\u2019s knot energies: From smoothness to analyticity",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -42,80 +52,285 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Fractional Sobolev spaces",
    "page": 3,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Properties of analytic functions",
    "page": 4,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Fa\u00e0 di Bruno's formula",
    "page": 5,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Decomposition of the first variation of E",
    "page": 6,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "An estimate for the Q term",
    "page": 7,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "A fractional leibniz rule and the form of PT Q",
    "page": 9,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The form of the lower order remainder terms R1 and R2",
    "page": 14,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Proof of the main theorem by Cauchy's method of majorants",
    "page": 17,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -124,8 +339,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 651,
-   "n_words": 117
+   "n_chars": 639,
+   "n_words": 105,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-000-1-introduction",
@@ -134,8 +351,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 7503,
-   "n_words": 1375
+   "n_chars": 7423,
+   "n_words": 1295,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-preliminaries",
@@ -143,52 +362,91 @@
    "title": "Preliminaries",
    "level": 1,
    "page_start": 3,
-   "page_end": 4,
-   "n_chars": 2630,
-   "n_words": 518
+   "page_end": 3,
+   "n_chars": 1057,
+   "n_words": 182,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-22-properties-of-analytic-functions",
+   "id": "sec-002-21-fractional-sobolev-spaces",
+   "number": "2.1",
+   "title": "Fractional Sobolev spaces",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1455,
+   "n_words": 280,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-22-properties-of-analytic-functions",
    "number": "2.2",
    "title": "Properties of analytic functions",
    "level": 2,
    "page_start": 4,
-   "page_end": 14,
-   "n_chars": 19945,
-   "n_words": 4074
+   "page_end": 6,
+   "n_chars": 3036,
+   "n_words": 552,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-6-the-form-of-the-lower-order-remainder-terms-r1",
+   "id": "sec-004-3-decomposition-of-the-first-variation-of-e",
+   "number": "3",
+   "title": "Decomposition of the first variation of E",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 14,
+   "n_chars": 16615,
+   "n_words": 3298,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-6-the-form-of-the-lower-order-remainder-terms-r1",
    "number": "6",
    "title": "The form of the lower order remainder terms R1 and R2",
    "level": 1,
    "page_start": 14,
    "page_end": 23,
-   "n_chars": 16064,
-   "n_words": 3395
+   "n_chars": 16101,
+   "n_words": 3440,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-references",
+   "id": "sec-006-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 3680,
-   "n_words": 585
+   "n_chars": 3646,
+   "n_words": 551,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 11,
-  "sections": 6,
-  "chars_total": 50473,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 49972,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 11,
-   "overlaid": 4,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -203,8 +461,8 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.888,
+     "coverage_ratio": 0.957,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -212,28 +470,43 @@
      "id": "sec-001-2-preliminaries",
      "title": "Preliminaries",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.541,
+     "coverage_ratio": 0.016,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-002-21-fractional-sobolev-spaces",
+     "title": "Fractional Sobolev spaces",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.868,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-22-properties-of-analytic-functions",
+     "id": "sec-003-22-properties-of-analytic-functions",
      "title": "Properties of analytic functions",
-     "prose_ratio": 0.949,
-     "coverage_ratio": 0.96,
+     "prose_ratio": 0.939,
+     "coverage_ratio": 0.932,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-6-the-form-of-the-lower-order-remainder-terms-r1",
+     "id": "sec-004-3-decomposition-of-the-first-variation-of-e",
+     "title": "Decomposition of the first variation of E",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-6-the-form-of-the-lower-order-remainder-terms-r1",
      "title": "The form of the lower order remainder terms R1 and R2",
      "prose_ratio": 0.948,
-     "coverage_ratio": 0.961,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-references",
+     "id": "sec-006-references",
      "title": "References",
      "result": "no matching \\section"
     }

@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-019-42-the-margulis-lemma
 section_title: "The Margulis Lemma"
 section_number: 4.2
 pages: 123-131
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.951
+latex_coverage_ratio: 0.995
 ---
 We state and prove the \emph{Margulis Lemma}, that concerns arbitrary discrete groups in Lie groups and more specifically in $\Iso(\matH^n)$. The lemma implies that there is a constant $\varepsilon>0$, which depends only on the dimension $n$, such that the $\varepsilon$-thin part of any complete hyperbolic $n$-manifold consists of truncated cusps and tubes only. The $\varepsilon$-thin part is by definition the set of all the points with injectivity radius smaller than $\varepsilon$.
 

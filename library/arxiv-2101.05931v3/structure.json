@@ -7,11 +7,11 @@
   "bytes": 392199,
   "pages": 26,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:21Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -26,13 +26,21 @@
   "title_lines": [
    "CATEGORICAL BRAID GROUP ACTIONS"
   ],
-  "abstract": "Let g be a semisimple simply-laced Lie algebra of \ufb01nite type. Let C be an abelian categorical representation of the quantum group Uq(g) categorifying an integrable representation V . The Artin braid group B of g acts on Db(C) by Rickard complexes, providing a triangulated equivalence \u0398 w0 : Db(C\u00b5) \u2192 Db(Cw0(\u00b5)) where \u00b5 is a weight of V , and \u0398 w0 is a positive lift of the longest element of the Weyl group. We prove that this equivalence is t-exact up to shift when V is isotypic, generalising a funda- mental result of Chuang and Rouquier in the case g = sl2. For general V , we prove that \u0398 w0 is a perverse equivalence with respect to a Jordan-H\u00a8 older \ufb01ltr ation of C. Using these results we construct, from the action of B on V , an action of the cactus group on the crystal of V . This recovers the cactus group action on V de\ufb01ned via generalised Sch\u00a8 utzenberger involutions, and provides a new connection between categor ical representation theory and crystal bases. We also use these results to give new proofs of theorem s of Berenstein-Zelevinsky, Rhoades, and Stembridge regarding the action of symmetric group on th e Kazhdan-Lusztig basis of its Specht modules.",
+  "abstract": "Let g be a semisimple simply-laced Lie algebra of \ufb01nite type. Let C be an abelian categorical representation of the quantum group Uq(g) categorifying an integrable representation V . The Artin braid group B of g acts on Db(C) by Rickard complexes, providing a triangulated equivalence \u0398w0 : Db(C\u00b5) \u2192Db(Cw0(\u00b5)) where \u00b5 is a weight of V , and \u0398w0 is a positive lift of the longest element of the Weyl group. We prove that this equivalence is t-exact up to shift when V is isotypic, generalising a funda- mental result of Chuang and Rouquier in the case g = sl2. For general V , we prove that \u0398w0 is a perverse equivalence with respect to a Jordan-H\u00a8older \ufb01ltration of C. Using these results we construct, from the action of B on V , an action of the cactus group on the crystal of V . This recovers the cactus group action on V de\ufb01ned via generalised Sch\u00a8utzenberger involutions, and provides a new connection between categorical representation theory and crystal bases. We also use these results to give new proofs of theorems of Berenstein-Zelevinsky, Rhoades, and Stembridge regarding the action of symmetric group on the Kazhdan-Lusztig basis of its Specht modules.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20230615210625-04'00'",
    "Creator": "LaTeX with hyperref",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20230615210625-04'00'"
+  },
+  "title_raw": "CATEGORICAL BRAID GROUP ACTIONS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "CATEGORICAL BRAID GROUP ACTIONS AND CACTUS GROUPS 1. Introduction In their seminal work, Chuang and Rouquier introduced sl 2 categori\ufb01cations on abelian categories [16]. Their de\ufb01nition mirrors the notion of an sl 2 representation on a vector space: weight spaces are replaced by weight categories, C",
+   "outline": "1. Introduction",
+   "text": "CATEGORICAL BRAID GROUP ACTIONS",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,206 +49,531 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Acknowledgement",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Background on quantum groups",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "The quantum group",
    "page": 4,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Braid group actions on integrable representations of U_q(g).",
    "page": 5,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Categorical representations of U_q(g)",
    "page": 5,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Notation",
    "page": 5,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Definition",
    "page": 6,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Crystals",
    "page": 7,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Jordan-H\u00f6lder series",
    "page": 7,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "The categorical braid group action",
    "page": 9,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "Perverse equivalences",
    "page": 10,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "General definition",
    "page": 10,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Derived categories of graded abelian categories",
    "page": 11,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Some commutation relations",
    "page": 12,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Cautis' relations",
    "page": 12,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Marked words",
    "page": 13,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "The relation between _w_0 and Chevalley functors",
    "page": 14,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "On t-exactness and perversity of _w_0",
    "page": 15,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "_w_0 on isotypic categorifications",
    "page": 15,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "_w_0 on general categorical representations",
    "page": 17,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 1,
    "title": "Crystalising the braid group action",
    "page": 17,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Cactus groups",
    "page": 17,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "The cactus group action arising from Rickard complexes",
    "page": 18,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Reconciling the two cactus group actions",
    "page": 20,
    "source": "outline",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "Examples and Applications",
    "page": 21,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Examples",
    "page": 21,
    "source": "outline",
-   "number": "8.1"
+   "number": "8.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Type A combinatorics",
    "page": 23,
    "source": "outline",
-   "number": "8.2"
+   "number": "8.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 1,
    "title": "References",
    "page": 24,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -249,8 +582,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1343,
-   "n_words": 237
+   "n_chars": 1329,
+   "n_words": 223,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-000-1-introduction",
@@ -259,8 +594,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 7468,
-   "n_words": 1278
+   "n_chars": 7386,
+   "n_words": 1208,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-21-the-quantum-group",
@@ -269,8 +606,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 2782,
-   "n_words": 504
+   "n_chars": 2761,
+   "n_words": 483,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-002-acknowledgement",
@@ -279,8 +618,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 427,
-   "n_words": 65
+   "n_chars": 423,
+   "n_words": 61,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
    "id": "sec-003-2-background-on-quantum-groups",
@@ -289,8 +630,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 1636,
-   "n_words": 356
+   "n_chars": 1633,
+   "n_words": 353,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-004-22-braid-group-actions-on-integrable-representat",
@@ -299,8 +642,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 1603,
-   "n_words": 334
+   "n_chars": 1605,
+   "n_words": 336,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
    "id": "sec-005-31-notation",
@@ -308,152 +653,223 @@
    "title": "Notation",
    "level": 2,
    "page_start": 5,
-   "page_end": 7,
-   "n_chars": 6350,
-   "n_words": 1145
+   "page_end": 5,
+   "n_chars": 546,
+   "n_words": 99,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
-   "id": "sec-006-33-crystals",
+   "id": "sec-006-32-definition",
+   "number": "3.2",
+   "title": "Definition",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 5629,
+   "n_words": 954,
+   "label_start": "5",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-007-33-crystals",
    "number": "3.3",
    "title": "Crystals",
    "level": 2,
    "page_start": 7,
-   "page_end": 9,
-   "n_chars": 7551,
-   "n_words": 1452
+   "page_end": 7,
+   "n_chars": 1559,
+   "n_words": 310,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-007-35-the-categorical-braid-group-action",
+   "id": "sec-008-34-jordan-h\u00f6lder-series",
+   "number": "3.4",
+   "title": "Jordan-H\u00f6lder series",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 5757,
+   "n_words": 1037,
+   "label_start": "7",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-009-35-the-categorical-braid-group-action",
    "number": "3.5",
    "title": "The categorical braid group action",
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 2172,
-   "n_words": 457
+   "n_chars": 2046,
+   "n_words": 383,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
-   "id": "sec-008-4-perverse-equivalences",
+   "id": "sec-010-4-perverse-equivalences",
    "number": "4",
    "title": "Perverse equivalences",
    "level": 1,
    "page_start": 10,
-   "page_end": 11,
-   "n_chars": 4532,
-   "n_words": 982
+   "page_end": 10,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
-   "id": "sec-009-42-derived-categories-of-graded-abelian-categori",
+   "id": "sec-011-41-general-definition",
+   "number": "4.1",
+   "title": "General definition",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 4372,
+   "n_words": 896,
+   "label_start": "10",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-012-42-derived-categories-of-graded-abelian-categori",
    "number": "4.2",
    "title": "Derived categories of graded abelian categories",
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 1873,
-   "n_words": 373
+   "n_chars": 1849,
+   "n_words": 349,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
-   "id": "sec-010-5-some-commutation-relations",
+   "id": "sec-013-5-some-commutation-relations",
    "number": "5",
    "title": "Some commutation relations",
    "level": 1,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 2478,
-   "n_words": 494
+   "n_chars": 2390,
+   "n_words": 442,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-011-52-marked-words",
+   "id": "sec-014-52-marked-words",
    "number": "5.2",
    "title": "Marked words",
    "level": 2,
    "page_start": 13,
    "page_end": 17,
-   "n_chars": 10389,
-   "n_words": 2161
+   "n_chars": 10099,
+   "n_words": 2023,
+   "label_start": "13",
+   "label_end": "17"
   },
   {
-   "id": "sec-012-71-cactus-groups",
+   "id": "sec-015-71-cactus-groups",
    "number": "7.1",
    "title": "Cactus groups",
    "level": 2,
    "page_start": 17,
    "page_end": 17,
-   "n_chars": 1684,
-   "n_words": 336
+   "n_chars": 1639,
+   "n_words": 301,
+   "label_start": "17",
+   "label_end": "17"
   },
   {
-   "id": "sec-013-7-crystalising-the-braid-group-action",
+   "id": "sec-016-7-crystalising-the-braid-group-action",
    "number": "7",
    "title": "Crystalising the braid group action",
    "level": 1,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 3668,
-   "n_words": 662
+   "n_chars": 3640,
+   "n_words": 634,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
-   "id": "sec-014-72-the-cactus-group-action-arising-from-rickard",
+   "id": "sec-017-72-the-cactus-group-action-arising-from-rickard",
    "number": "7.2",
    "title": "The cactus group action arising from Rickard complexes",
    "level": 2,
    "page_start": 18,
    "page_end": 20,
-   "n_chars": 5071,
-   "n_words": 998
+   "n_chars": 4962,
+   "n_words": 921,
+   "label_start": "18",
+   "label_end": "20"
   },
   {
-   "id": "sec-015-73-reconciling-the-two-cactus-group-actions",
+   "id": "sec-018-73-reconciling-the-two-cactus-group-actions",
    "number": "7.3",
    "title": "Reconciling the two cactus group actions",
    "level": 2,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 2037,
-   "n_words": 384
+   "n_chars": 1968,
+   "n_words": 343,
+   "label_start": "20",
+   "label_end": "21"
   },
   {
-   "id": "sec-016-8-examples-and-applications",
+   "id": "sec-019-8-examples-and-applications",
    "number": "8",
    "title": "Examples and Applications",
    "level": 1,
    "page_start": 21,
    "page_end": 23,
-   "n_chars": 6189,
-   "n_words": 1135
+   "n_chars": 6130,
+   "n_words": 1104,
+   "label_start": "21",
+   "label_end": "23"
   },
   {
-   "id": "sec-017-82-type-a-combinatorics",
+   "id": "sec-020-82-type-a-combinatorics",
    "number": "8.2",
    "title": "Type A combinatorics",
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 5375,
-   "n_words": 992
+   "n_chars": 5339,
+   "n_words": 956,
+   "label_start": "23",
+   "label_end": "24"
   },
   {
-   "id": "sec-018-references",
+   "id": "sec-021-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 24,
    "page_end": 26,
-   "n_chars": 7114,
-   "n_words": 1077
+   "n_chars": 7047,
+   "n_words": 1010,
+   "label_start": "24",
+   "label_end": "26"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 29,
-  "sections": 20,
-  "chars_total": 81742,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 23,
+  "chars_total": 80109,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "HLLY-June-2023.tex",
    "tex_sections": 28,
-   "overlaid": 14,
+   "overlaid": 15,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -468,8 +884,8 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.776,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -504,106 +920,126 @@
     {
      "id": "sec-005-31-notation",
      "title": "Notation",
+     "prose_ratio": 0.36,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-32-definition",
+     "title": "Definition",
      "prose_ratio": 0.967,
-     "coverage_ratio": 0.909,
+     "coverage_ratio": 0.878,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-33-crystals",
+     "id": "sec-007-33-crystals",
      "title": "Crystals",
-     "prose_ratio": 0.965,
-     "coverage_ratio": 0.931,
+     "prose_ratio": 0.937,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-007-35-the-categorical-braid-group-action",
-     "title": "The categorical braid group action",
-     "prose_ratio": 0.965,
-     "coverage_ratio": 0.937,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-008-4-perverse-equivalences",
-     "title": "Perverse equivalences",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.82,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-009-42-derived-categories-of-graded-abelian-categori",
-     "title": "Derived categories of graded abelian categories",
-     "prose_ratio": 0.959,
-     "coverage_ratio": 0.911,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-010-5-some-commutation-relations",
-     "title": "Some commutation relations",
-     "prose_ratio": 0.974,
+     "id": "sec-008-34-jordan-h\u00f6lder-series",
+     "title": "Jordan-H\u00f6lder series",
+     "prose_ratio": 0.97,
      "coverage_ratio": 0.905,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-011-52-marked-words",
-     "title": "Marked words",
-     "prose_ratio": 0.87,
-     "coverage_ratio": 0.954,
+     "id": "sec-009-35-the-categorical-braid-group-action",
+     "title": "The categorical braid group action",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.923,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-012-71-cactus-groups",
+     "id": "sec-010-4-perverse-equivalences",
+     "title": "Perverse equivalences",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-41-general-definition",
+     "title": "General definition",
+     "prose_ratio": 0.93,
+     "coverage_ratio": 0.93,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-42-derived-categories-of-graded-abelian-categori",
+     "title": "Derived categories of graded abelian categories",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.909,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-5-some-commutation-relations",
+     "title": "Some commutation relations",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.91,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-52-marked-words",
+     "title": "Marked words",
+     "prose_ratio": 0.87,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-71-cactus-groups",
      "title": "Cactus groups",
      "prose_ratio": 0.102,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-013-7-crystalising-the-braid-group-action",
+     "id": "sec-016-7-crystalising-the-braid-group-action",
      "title": "Crystalising the braid group action",
      "prose_ratio": 0.957,
-     "coverage_ratio": 0.285,
+     "coverage_ratio": 0.272,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-014-72-the-cactus-group-action-arising-from-rickard",
+     "id": "sec-017-72-the-cactus-group-action-arising-from-rickard",
      "title": "The cactus group action arising from Rickard complexes",
      "prose_ratio": 0.944,
-     "coverage_ratio": 0.949,
+     "coverage_ratio": 0.938,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-015-73-reconciling-the-two-cactus-group-actions",
+     "id": "sec-018-73-reconciling-the-two-cactus-group-actions",
      "title": "Reconciling the two cactus group actions",
      "prose_ratio": 0.932,
-     "coverage_ratio": 0.965,
+     "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-016-8-examples-and-applications",
+     "id": "sec-019-8-examples-and-applications",
      "title": "Examples and Applications",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.692,
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.957,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-017-82-type-a-combinatorics",
+     "id": "sec-020-82-type-a-combinatorics",
      "title": "Type A combinatorics",
      "prose_ratio": 0.935,
-     "coverage_ratio": 0.959,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-018-references",
+     "id": "sec-021-references",
      "title": "References",
      "result": "no matching \\section"
     }

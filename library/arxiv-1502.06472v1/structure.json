@@ -6,10 +6,12 @@
   "sha256": "381cd869fcc06f084feb8ceecefc2f389526978d5094c131331dcfbe9744c492",
   "bytes": 156049,
   "pages": 13,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:20Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,21 +21,28 @@
    "stamp_date": "8 Nov 2014"
   },
   "doi": null,
-  "title": "Gr\u00f6bner-Shirshov bases and PBW theorems",
-  "authors_raw": "School of Mathematical Sciences, South China Normal Univer sity",
-  "abstract": "We review some applications of Gr\u00a8 obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for groups and semigroups, extensions of groups and algebras, embedding of algebras.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20220303131533-05'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
-  "title_prev": "Gr\u00f6bner-Shirshov bases and PBW theorems\u2217 L. A. Bokut \u2020",
+  "title": "Gr\u00f6bner-Shirshov bases and PBW theorems\u2217 L. A. Bokut\u2020",
+  "authors_raw": "School of Mathematical Sciences, South China Normal University",
   "title_lines": [
    "Gr\u00f6bner-Shirshov bases and PBW theorems\u2217",
-   "L. A. Bokut \u2020"
-  ]
+   "L. A. Bokut\u2020"
+  ],
+  "abstract": "We review some applications of Gr\u00a8obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for groups and semigroups, extensions of groups and algebras, embedding of algebras.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20220303131533-05'00'"
+  },
+  "title_raw": "Gr\u00f6bner-Shirshov bases and PBW theorems\u2217 L. A. Bokut\u2020",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Gr\u00a8obner-Shirshov bases and PBW theorems \u2217",
+   "outline": "1 Introduction",
+   "text": "Gr\u00f6bner-Shirshov bases and PBW theorems\u2217 L. A. Bokut\u2020",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -41,123 +50,307 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Gr\u00f6bner-Shirshov bases for associative algebras and Lie algebras",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Composition-Diamond lemma for associative algebras",
    "page": 3,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Composition-Diamond lemma for Lie algebras over a field",
    "page": 4,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "PBW theorems",
    "page": 4,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Lie algebras\u2013associative algebras (Shirshov)",
    "page": 4,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Lie algebras\u2013pre-Lie algebras (Segal)",
    "page": 5,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Leibniz algebras\u2013dialgebras (Aymon, Grivel)",
    "page": 5,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Akivis algebras\u2013non-associative algebras (Shestekov)",
    "page": 5,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Sabinin algebras\u2013modules (Perez-Izquierdo)",
    "page": 5,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Dendriform algebras\u2013Rota-Baxter algebras (Chen-Mo, Kolesnikov)",
    "page": 6,
    "source": "outline",
-   "number": "3.6"
+   "number": "3.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Shirshov's, Cartier's, Cohn's counter examples to PBW for Lie algebras over commutative algebra",
    "page": 6,
    "source": "outline",
-   "number": "3.7"
+   "number": "3.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "``1/2 PBW theorem\" (Bokut-Fong-Ke)",
    "page": 6,
    "source": "outline",
-   "number": "3.8"
+   "number": "3.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Linear bases of free universal algebras",
    "page": 7,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Normal forms for groups and semigroups",
    "page": 8,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Schreier extensions of groups and algebras",
    "page": 8,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Embedding of algebras",
    "page": 8,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 837,
+   "n_words": 109,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -165,8 +358,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 5398,
-   "n_words": 955
+   "n_chars": 5309,
+   "n_words": 866,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-3-pbw-theorems",
@@ -175,141 +370,186 @@
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 488,
-   "n_words": 81
+   "n_chars": 93,
+   "n_words": 16,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
-   "id": "sec-002-21-composition-diamond-lemma-for-associative-alg",
+   "id": "sec-002-2-gr\u00f6bner-shirshov-bases-for-associative-algebra",
+   "number": "2",
+   "title": "Gr\u00f6bner-Shirshov bases for associative algebras and Lie algebras",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 339,
+   "n_words": 54,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-003-21-composition-diamond-lemma-for-associative-alg",
    "number": "2.1",
    "title": "Composition-Diamond lemma for associative algebras",
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 971,
-   "n_words": 257
+   "n_chars": 922,
+   "n_words": 205,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
-   "id": "sec-003-22-composition-diamond-lemma-for-lie-algebras-ov",
+   "id": "sec-004-22-composition-diamond-lemma-for-lie-algebras-ov",
    "number": "2.2",
    "title": "Composition-Diamond lemma for Lie algebras over a field",
    "level": 2,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 862,
-   "n_words": 169
+   "n_chars": 838,
+   "n_words": 142,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
-   "id": "sec-004-31-lie-algebrasassociative-algebras-shirshov",
+   "id": "sec-005-31-lie-algebrasassociative-algebras-shirshov",
    "number": "3.1",
    "title": "Lie algebras\u2013associative algebras (Shirshov)",
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 447,
-   "n_words": 107
+   "n_chars": 432,
+   "n_words": 89,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
-   "id": "sec-005-32-lie-algebraspre-lie-algebras-segal",
+   "id": "sec-006-32-lie-algebraspre-lie-algebras-segal",
    "number": "3.2",
    "title": "Lie algebras\u2013pre-Lie algebras (Segal)",
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 596,
-   "n_words": 130
+   "n_chars": 580,
+   "n_words": 111,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
-   "id": "sec-006-33-leibniz-algebrasdialgebras-aymon-grivel",
+   "id": "sec-007-33-leibniz-algebrasdialgebras-aymon-grivel",
    "number": "3.3",
    "title": "Leibniz algebras\u2013dialgebras (Aymon, Grivel)",
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 461,
-   "n_words": 120
+   "n_chars": 432,
+   "n_words": 88,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
-   "id": "sec-007-34-akivis-algebrasnon-associative-algebras-shest",
+   "id": "sec-008-34-akivis-algebrasnon-associative-algebras-shest",
    "number": "3.4",
    "title": "Akivis algebras\u2013non-associative algebras (Shestekov)",
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 522,
-   "n_words": 147
+   "n_chars": 483,
+   "n_words": 105,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
-   "id": "sec-008-35-sabinin-algebrasmodules-perez-izquierdo",
+   "id": "sec-009-35-sabinin-algebrasmodules-perez-izquierdo",
    "number": "3.5",
    "title": "Sabinin algebras\u2013modules (Perez-Izquierdo)",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 328,
-   "n_words": 82
+   "n_chars": 318,
+   "n_words": 69,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
-   "id": "sec-009-36-dendriform-algebrasrota-baxter-algebras-chen",
+   "id": "sec-010-36-dendriform-algebrasrota-baxter-algebras-chen",
    "number": "3.6",
    "title": "Dendriform algebras\u2013Rota-Baxter algebras (Chen-Mo, Kolesnikov)",
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 2425,
-   "n_words": 518
+   "n_chars": 2344,
+   "n_words": 436,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-010-4-linear-bases-of-free-universal-algebras",
+   "id": "sec-011-4-linear-bases-of-free-universal-algebras",
    "number": "4",
    "title": "Linear bases of free universal algebras",
    "level": 1,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 1016,
-   "n_words": 165
+   "n_chars": 1006,
+   "n_words": 154,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
-   "id": "sec-011-5-normal-forms-for-groups-and-semigroups",
+   "id": "sec-012-5-normal-forms-for-groups-and-semigroups",
    "number": "5",
    "title": "Normal forms for groups and semigroups",
    "level": 1,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 1111,
-   "n_words": 178
+   "n_chars": 1101,
+   "n_words": 167,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
-   "id": "sec-012-6-schreier-extensions-of-groups-and-algebras",
+   "id": "sec-013-6-schreier-extensions-of-groups-and-algebras",
    "number": "6",
    "title": "Schreier extensions of groups and algebras",
    "level": 1,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 478,
-   "n_words": 91
+   "n_chars": 474,
+   "n_words": 86,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
-   "id": "sec-013-7-embedding-of-algebras",
+   "id": "sec-014-7-embedding-of-algebras",
    "number": "7",
    "title": "Embedding of algebras",
    "level": 1,
    "page_start": 8,
    "page_end": 13,
-   "n_chars": 9644,
-   "n_words": 1482
+   "n_chars": 9535,
+   "n_words": 1373,
+   "label_start": "8",
+   "label_end": "13"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 17,
-  "sections": 14,
-  "chars_total": 24747,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 16,
+  "chars_total": 25043,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 17,
-   "overlaid": 12,
+   "overlaid": 13,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -317,10 +557,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.969,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.847,
+     "coverage_ratio": 0.864,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -331,23 +576,31 @@
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-002-21-composition-diamond-lemma-for-associative-alg",
+     "id": "sec-002-2-gr\u00f6bner-shirshov-bases-for-associative-algebra",
+     "title": "Gr\u00f6bner-Shirshov bases for associative algebras and Lie algebras",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-21-composition-diamond-lemma-for-associative-alg",
      "title": "Composition-Diamond lemma for associative algebras",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.909,
+     "coverage_ratio": 0.938,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-22-composition-diamond-lemma-for-lie-algebras-ov",
+     "id": "sec-004-22-composition-diamond-lemma-for-lie-algebras-ov",
      "title": "Composition-Diamond lemma for Lie algebras over a field",
      "prose_ratio": 0.972,
-     "coverage_ratio": 0.783,
+     "coverage_ratio": 0.771,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-31-lie-algebrasassociative-algebras-shirshov",
+     "id": "sec-005-31-lie-algebrasassociative-algebras-shirshov",
      "title": "Lie algebras\u2013associative algebras (Shirshov)",
      "prose_ratio": 0.947,
      "coverage_ratio": 0.952,
@@ -355,7 +608,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-32-lie-algebraspre-lie-algebras-segal",
+     "id": "sec-006-32-lie-algebraspre-lie-algebras-segal",
      "title": "Lie algebras\u2013pre-Lie algebras (Segal)",
      "prose_ratio": 0.9,
      "coverage_ratio": 0.9,
@@ -363,7 +616,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-33-leibniz-algebrasdialgebras-aymon-grivel",
+     "id": "sec-007-33-leibniz-algebrasdialgebras-aymon-grivel",
      "title": "Leibniz algebras\u2013dialgebras (Aymon, Grivel)",
      "prose_ratio": 0.944,
      "coverage_ratio": 0.944,
@@ -371,7 +624,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-34-akivis-algebrasnon-associative-algebras-shest",
+     "id": "sec-008-34-akivis-algebrasnon-associative-algebras-shest",
      "title": "Akivis algebras\u2013non-associative algebras (Shestekov)",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -379,7 +632,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-35-sabinin-algebrasmodules-perez-izquierdo",
+     "id": "sec-009-35-sabinin-algebrasmodules-perez-izquierdo",
      "title": "Sabinin algebras\u2013modules (Perez-Izquierdo)",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -387,7 +640,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-36-dendriform-algebrasrota-baxter-algebras-chen",
+     "id": "sec-010-36-dendriform-algebrasrota-baxter-algebras-chen",
      "title": "Dendriform algebras\u2013Rota-Baxter algebras (Chen-Mo, Kolesnikov)",
      "prose_ratio": 0.964,
      "coverage_ratio": 0.952,
@@ -395,23 +648,23 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-4-linear-bases-of-free-universal-algebras",
+     "id": "sec-011-4-linear-bases-of-free-universal-algebras",
      "title": "Linear bases of free universal algebras",
-     "prose_ratio": 0.976,
+     "prose_ratio": 0.902,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-5-normal-forms-for-groups-and-semigroups",
+     "id": "sec-012-5-normal-forms-for-groups-and-semigroups",
      "title": "Normal forms for groups and semigroups",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-6-schreier-extensions-of-groups-and-algebras",
+     "id": "sec-013-6-schreier-extensions-of-groups-and-algebras",
      "title": "Schreier extensions of groups and algebras",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -419,10 +672,10 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-7-embedding-of-algebras",
+     "id": "sec-014-7-embedding-of-algebras",
      "title": "Embedding of algebras",
      "prose_ratio": 0.98,
-     "coverage_ratio": 0.23,
+     "coverage_ratio": 0.208,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     }
    ]

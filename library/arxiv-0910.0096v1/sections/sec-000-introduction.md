@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-0910.0096v1
-doc_title: "Gr¨ obner-Shirshov bases for Coxeter groups I∗"
+doc_title: "Gröbner-Shirshov bases for Coxeter groups I∗"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
 pages: 1-1
 source_pdf: 0910.0096v1.pdf
 source_sha256: 805a75c337599adc
-doc_brief: "Gröbner-Shirshov bases for Coxeter groups I∗ — A conjecture of Gr¨ obner-Shirshov basis of any Coxeter group h as proposed by L.A. Bokut and L.-S. Shiao [4]."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.964
 ---
 Let $M=\|m_{ij}\|_{n\times n}$ be a symmetric $n\times n$ matrix such that $m_{ii}=1,\ 2\leq m_{ij}\leq\infty$. The Coxeter group $W=W(M)$ is defined by the generators $s_1,\cdots, s_n$ and the defining relations $(s_is_j)^{m_{ij}}=1$.
 

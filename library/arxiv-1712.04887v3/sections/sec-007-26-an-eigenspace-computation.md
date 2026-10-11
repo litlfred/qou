@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1712.04887v3
-doc_title: "Bloch groups, algebraic K-theory, units, and Nahm's conjecture"
+doc_title: "BLOCH GROUPS, ALGEBRAIC K -THEORY, UNITS, AND NAHM’S CONJECTURE"
 section_id: sec-007-26-an-eigenspace-computation
 section_title: "An eigenspace computation"
 section_number: 2.6
 pages: 16-17
 source_pdf: 1712.04887v3.pdf
 source_sha256: 024317c20a1d8b66
-doc_brief: "Bloch groups, algebraic K-theory, units, and Nahm's conjecture — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.923
-latex_coverage_ratio: 0.885
+latex_coverage_ratio: 0.912
 ---
 []{#sub.eigenspace label="sub.eigenspace"}
 

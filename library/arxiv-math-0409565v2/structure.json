@@ -6,10 +6,12 @@
   "sha256": "236704063f12c05e34426a59d228f8be807d7804dee54123f6de36eaeea93928",
   "bytes": 148906,
   "pages": 10,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:24Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -19,21 +21,28 @@
    "stamp_date": "14 Oct 2004"
   },
   "doi": null,
-  "title": "Unital Gr\u00f6bner Bases over Arbitrary Commutative Ground Rings",
-  "authors_raw": "Frederick Leitner, Robert Pawloski \u2217",
-  "abstract": "Let R be a commutative ring with unity and a let A be a not necessarily commutative R-algebra which is free as an R-module. If I is an ideal in A, one can ask when A/I is also free as an R-module. We show that if A has an admissible system and I has a unital Gr\u00a8 obner basisthen A/I is free as an R-module. We prove a version of Buchberger\u2019s theorem over R and, as a corollary, we obtain a Gr\u00a8 obner basis proof of the Poincare-Birkho\ufb00-Witt Theorem over a commutative ground ring.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20211109141747-05'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
-  "title_prev": "Unital Gr\u00f6bner Bases over Aribtrary Commutative Ground Rings",
+  "title": "Unital Gr\u00f6bner Bases over Aribtrary Commutative Ground Rings",
+  "authors_raw": "Frederick Leitner, Robert Pawloski\u2217",
   "title_lines": [
    "Unital Gr\u00f6bner Bases over Aribtrary",
    "Commutative Ground Rings"
-  ]
+  ],
+  "abstract": "Let R be a commutative ring with unity and a let A be a not necessarily commutative R-algebra which is free as an R-module. If I is an ideal in A, one can ask when A/I is also free as an R-module. We show that if A has an admissible system and I has a unital Gr\u00a8obner basis then A/I is free as an R-module. We prove a version of Buchberger\u2019s theorem over R and, as a corollary, we obtain a Gr\u00a8obner basis proof of the Poincare-Birkho\ufb00-Witt Theorem over a commutative ground ring.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20211109141747-05'00'"
+  },
+  "title_raw": "Unital Gr\u00f6bner Bases over Aribtrary Commutative Ground Rings",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Unital Gr\u00a8obner Bases over Aribtrary Commutative Ground Rings",
+   "outline": "Introduction",
+   "text": "Unital Gr\u00f6bner Bases over Aribtrary Commutative Ground Rings",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -41,40 +50,153 @@
    "title": "Introduction.",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Unital Gr\u00f6bner Bases.",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 663,
+   "n_words": 117,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
    "title": "Introduction.",
    "level": 1,
    "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3158,
+   "n_words": 600,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-unital-gr\u00f6bner-bases",
+   "number": null,
+   "title": "Unital Gr\u00f6bner Bases.",
+   "level": 1,
+   "page_start": 2,
    "page_end": 10,
-   "n_chars": 16046,
-   "n_words": 3702
+   "n_chars": 12596,
+   "n_words": 2830,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 2,
-  "sections": 1,
-  "chars_total": 16046,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 3,
+  "chars_total": 16417,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 2,
-   "overlaid": 1,
+   "overlaid": 0,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -82,12 +204,20 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction.",
-     "prose_ratio": 0.971,
-     "coverage_ratio": 0.893,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.516,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-unital-gr\u00f6bner-bases",
+     "title": "Unital Gr\u00f6bner Bases.",
+     "result": "no matching \\section"
     }
    ]
   }

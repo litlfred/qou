@@ -7,10 +7,11 @@
   "bytes": 459991,
   "pages": 46,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:18Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,28 @@
    "stamp_date": "20 Jul 2008"
   },
   "doi": null,
-  "title": "On Two-Dimensional Holonomy Jo\u00e3o Faria Martins Centro de Matem\u00e1tica da Universidade do Porto",
-  "authors_raw": "Rua do Campo Alegre, 687, 4169-007 Porto, Portugal",
+  "title": "On Two-Dimensional Holonomy",
+  "authors_raw": "Jo\u00e3o Faria Martins",
   "title_lines": [
-   "On Two-Dimensional Holonomy",
-   "Jo\u00e3o Faria Martins",
-   "Centro de Matem\u00e1tica da Universidade do Porto"
+   "On Two-Dimensional Holonomy"
   ],
-  "abstract": "We de\ufb01ne the thin fundamental categorical group P2(M, \u2217) of a based smooth manifold ( M, \u2217) as the categorical group whose objects are rank-1 homotopy classes of based loops on M , and whose morphisms are rank- 2 homotopy classes of homotopies between based loops on M . Here two maps are rank- n homotopic, when the rank of the di\ufb00erential of the homo- topy between them equals n. Let C(G) be a Lie categorical group coming from a Lie crossed module G = (\u2202 : E \u2192 G, \u22b2). We construct categorical holonomies, de\ufb01ned to be smooth morphisms P2(M, \u2217) \u2192 C (G), by using a notion of categorical connections, being a pair ( \u03c9, m), where \u03c9 is a con- nection 1-form on P , a principal G bundle over M , and m is a 2-form on P with values in the Lie algebra of E, with the pair ( \u03c9, m) satisfying suit- able conditions. As a further result, we are able to de\ufb01ne Wil son spheres in this context.",
+  "abstract": "We de\ufb01ne the thin fundamental categorical group P2(M, \u2217) of a based smooth manifold (M, \u2217) as the categorical group whose objects are rank-1 homotopy classes of based loops on M, and whose morphisms are rank- 2 homotopy classes of homotopies between based loops on M. Here two maps are rank-n homotopic, when the rank of the di\ufb00erential of the homo- topy between them equals n. Let C(G) be a Lie categorical group coming from a Lie crossed module G = (\u2202: E \u2192G, \u22b2). We construct categorical holonomies, de\ufb01ned to be smooth morphisms P2(M, \u2217) \u2192C(G), by using a notion of categorical connections, being a pair (\u03c9, m), where \u03c9 is a con- nection 1-form on P, a principal G bundle over M, and m is a 2-form on P with values in the Lie algebra of E, with the pair (\u03c9, m) satisfying suit- able conditions. As a further result, we are able to de\ufb01ne Wilson spheres in this context.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181113224203-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181113224203-05'00'"
+  },
+  "title_raw": "On Two-Dimensional Holonomy",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "On Two-Dimensional Holonomy",
+   "outline": "Preliminaries",
+   "text": "On Two-Dimensional Holonomy",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -42,565 +51,1227 @@
    "title": "Preliminaries",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Resum\u00e9 of results and notation from the theory of principal fibre bundles",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 3,
    "title": "Connections on principal fibre bundles",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 3,
    "title": "Curvature",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 3,
    "title": "Parallel transport",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 3,
    "title": "The dependence of the parallel transport on a smooth family of curves - the Ambrose-Singer theorem",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Crossed modules",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 3,
    "title": "Crossed modules and categorical groups",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "The thin fundamental categorical group of a manifold",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 3,
    "title": "1-Tracks",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 3,
    "title": "2-Tracks",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 3,
    "title": "Horizontal and vertical compositions of 2-tracks",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 3,
    "title": "Definition of the thin fundamental categorical group of a smooth manifold",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 3,
    "title": "The thin fundamental crossed module of a smooth manifold",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 3,
    "title": "Two exact sequences",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "Two-dimensional holonomies",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Categorical connections",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "The 2-curvature 3-form of a G-categorical connection",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 3,
    "title": "Algebraic preliminaries",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 3,
    "title": "The 2-structure equation",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 3,
    "title": "The 2-Bianchi identity",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 3,
    "title": "Local form of a categorical connection",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "Categorical holonomy",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 3,
    "title": "Definition of a holonomy.",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 3,
    "title": "Definition of a categorical holonomy",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Categorical connections and categorical connection holonomies",
    "page": 25,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Defining a categorical holonomy from a categorical connection",
    "page": 25,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "A well-known lemma",
    "page": 27,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 3,
    "title": "The dependence of the surface holonomy on a smooth family of surfaces",
    "page": 27,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 3,
    "title": "Re-scaling",
    "page": 33,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 3,
    "title": "Verification of the axioms for a categorical holonomy",
    "page": 34,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "34"
   },
   {
    "level": 3,
    "title": "2-Bundles",
    "page": 37,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 2,
    "title": "Wilson Spheres",
    "page": 39,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 3,
    "title": "The dependence of a categorical connection holonomy on the elements of the fibre",
    "page": 39,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 3,
    "title": "The dependence of a categorical connection holonomy on the point in the principal bundle",
    "page": 40,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 3,
    "title": "Associating 2-holonomies to embedded spheres",
    "page": 41,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   },
   {
    "level": 1,
    "title": "Appendix: Technical Lemmas",
    "page": 43,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 9358,
+   "n_words": 1954,
+   "label_start": null,
+   "label_end": "4"
+  },
   {
    "id": "sec-000-preliminaries",
    "number": null,
    "title": "Preliminaries",
    "level": 1,
    "page_start": 4,
-   "page_end": 5,
-   "n_chars": 2095,
-   "n_words": 480
+   "page_end": 4,
+   "n_chars": 3,
+   "n_words": 1,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
-   "id": "sec-001-curvature",
+   "id": "sec-001-resum\u00e9-of-results-and-notation-from-the-theory-o",
+   "number": null,
+   "title": "Resum\u00e9 of results and notation from the theory of principal fibre bundles",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 28,
+   "n_words": 4,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-002-connections-on-principal-fibre-bundles",
+   "number": null,
+   "title": "Connections on principal fibre bundles",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1951,
+   "n_words": 434,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-003-curvature",
    "number": null,
    "title": "Curvature",
    "level": 3,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 992,
-   "n_words": 190
+   "n_chars": 937,
+   "n_words": 196,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
-   "id": "sec-002-parallel-transport",
+   "id": "sec-004-parallel-transport",
    "number": null,
    "title": "Parallel transport",
    "level": 3,
    "page_start": 6,
    "page_end": 6,
    "n_chars": 667,
-   "n_words": 143
+   "n_words": 138,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
-   "id": "sec-003-the-dependence-of-the-parallel-transport-on-a-sm",
+   "id": "sec-005-the-dependence-of-the-parallel-transport-on-a-sm",
    "number": null,
    "title": "The dependence of the parallel transport on a smooth family of curves - the Ambrose-Singer theorem",
    "level": 3,
    "page_start": 6,
    "page_end": 9,
-   "n_chars": 3959,
-   "n_words": 917
+   "n_chars": 3931,
+   "n_words": 881,
+   "label_start": "6",
+   "label_end": "9"
   },
   {
-   "id": "sec-004-crossed-modules",
+   "id": "sec-006-crossed-modules",
    "number": null,
    "title": "Crossed modules",
    "level": 2,
    "page_start": 9,
    "page_end": 11,
-   "n_chars": 4408,
-   "n_words": 980
+   "n_chars": 4372,
+   "n_words": 939,
+   "label_start": "9",
+   "label_end": "11"
   },
   {
-   "id": "sec-005-crossed-modules-and-categorical-groups",
+   "id": "sec-007-crossed-modules-and-categorical-groups",
    "number": null,
    "title": "Crossed modules and categorical groups",
    "level": 3,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 1975,
-   "n_words": 403
+   "n_chars": 1949,
+   "n_words": 374,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
-   "id": "sec-006-the-thin-fundamental-categorical-group-of-a-mani",
+   "id": "sec-008-the-thin-fundamental-categorical-group-of-a-mani",
    "number": null,
    "title": "The thin fundamental categorical group of a manifold",
    "level": 2,
    "page_start": 12,
-   "page_end": 13,
-   "n_chars": 3021,
-   "n_words": 687
+   "page_end": 12,
+   "n_chars": 33,
+   "n_words": 7,
+   "label_start": "12",
+   "label_end": "12"
   },
   {
-   "id": "sec-007-1-tracks",
+   "id": "sec-009-1-tracks",
    "number": null,
    "title": "1-Tracks",
    "level": 3,
-   "page_start": 13,
+   "page_start": 12,
    "page_end": 14,
-   "n_chars": 1420,
-   "n_words": 314
+   "n_chars": 3424,
+   "n_words": 719,
+   "label_start": "12",
+   "label_end": "14"
   },
   {
-   "id": "sec-008-2-tracks",
+   "id": "sec-010-2-tracks",
    "number": null,
    "title": "2-Tracks",
    "level": 3,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 82,
-   "n_words": 18
+   "n_chars": 1129,
+   "n_words": 238,
+   "label_start": "14",
+   "label_end": "14"
   },
   {
-   "id": "sec-009-horizontal-and-vertical-compositions-of-2-tracks",
+   "id": "sec-011-horizontal-and-vertical-compositions-of-2-tracks",
    "number": null,
    "title": "Horizontal and vertical compositions of 2-tracks",
    "level": 3,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 2463,
-   "n_words": 467
+   "n_chars": 1441,
+   "n_words": 248,
+   "label_start": "14",
+   "label_end": "15"
   },
   {
-   "id": "sec-010-the-thin-fundamental-crossed-module-of-a-smooth",
+   "id": "sec-012-definition-of-the-thin-fundamental-categorical-g",
+   "number": null,
+   "title": "Definition of the thin fundamental categorical group of a smooth manifold",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 929,
+   "n_words": 176,
+   "label_start": "15",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-013-the-thin-fundamental-crossed-module-of-a-smooth",
    "number": null,
    "title": "The thin fundamental crossed module of a smooth manifold",
    "level": 3,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 1309,
-   "n_words": 279
+   "n_chars": 1293,
+   "n_words": 258,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-011-two-exact-sequences",
+   "id": "sec-014-two-exact-sequences",
    "number": null,
    "title": "Two exact sequences",
    "level": 3,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 2428,
-   "n_words": 517
+   "n_chars": 2380,
+   "n_words": 468,
+   "label_start": "16",
+   "label_end": "17"
   },
   {
-   "id": "sec-012-two-dimensional-holonomies",
+   "id": "sec-015-two-dimensional-holonomies",
    "number": null,
    "title": "Two-dimensional holonomies",
    "level": 1,
    "page_start": 17,
    "page_end": 17,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 3,
+   "n_words": 1,
+   "label_start": "17",
+   "label_end": "17"
   },
   {
-   "id": "sec-013-categorical-connections",
+   "id": "sec-016-categorical-connections",
    "number": null,
    "title": "Categorical connections",
    "level": 2,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 1567,
-   "n_words": 345
+   "n_chars": 1557,
+   "n_words": 332,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
-   "id": "sec-014-the-2-curvature-3-form-of-a-g-categorical-connec",
+   "id": "sec-017-the-2-curvature-3-form-of-a-g-categorical-connec",
    "number": null,
    "title": "The 2-curvature 3-form of a G-categorical connection",
    "level": 2,
    "page_start": 18,
    "page_end": 18,
-   "n_chars": 437,
-   "n_words": 88
+   "n_chars": 444,
+   "n_words": 90,
+   "label_start": "18",
+   "label_end": "18"
   },
   {
-   "id": "sec-015-algebraic-preliminaries",
+   "id": "sec-018-algebraic-preliminaries",
    "number": null,
    "title": "Algebraic preliminaries",
    "level": 3,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 1297,
-   "n_words": 276
+   "n_chars": 1304,
+   "n_words": 278,
+   "label_start": "18",
+   "label_end": "19"
   },
   {
-   "id": "sec-016-the-2-structure-equation",
+   "id": "sec-019-the-2-structure-equation",
    "number": null,
    "title": "The 2-structure equation",
    "level": 3,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 1323,
-   "n_words": 272
+   "n_chars": 1337,
+   "n_words": 281,
+   "label_start": "19",
+   "label_end": "20"
   },
   {
-   "id": "sec-017-the-2-bianchi-identity",
+   "id": "sec-020-the-2-bianchi-identity",
    "number": null,
    "title": "The 2-Bianchi identity",
    "level": 3,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 1098,
-   "n_words": 248
+   "n_chars": 1095,
+   "n_words": 240,
+   "label_start": "20",
+   "label_end": "20"
   },
   {
-   "id": "sec-018-local-form-of-a-categorical-connection",
+   "id": "sec-021-local-form-of-a-categorical-connection",
    "number": null,
    "title": "Local form of a categorical connection",
    "level": 3,
    "page_start": 20,
    "page_end": 22,
    "n_chars": 4655,
-   "n_words": 961
+   "n_words": 958,
+   "label_start": "20",
+   "label_end": "22"
   },
   {
-   "id": "sec-019-categorical-holonomy",
+   "id": "sec-022-categorical-holonomy",
    "number": null,
    "title": "Categorical holonomy",
    "level": 2,
    "page_start": 22,
-   "page_end": 25,
-   "n_chars": 4848,
-   "n_words": 1009
+   "page_end": 22,
+   "n_chars": 5,
+   "n_words": 1,
+   "label_start": "22",
+   "label_end": "22"
   },
   {
-   "id": "sec-020-categorical-connections-and-categorical-connecti",
+   "id": "sec-023-definition-of-a-holonomy",
+   "number": null,
+   "title": "Definition of a holonomy.",
+   "level": 3,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 1701,
+   "n_words": 368,
+   "label_start": "22",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-024-definition-of-a-categorical-holonomy",
+   "number": null,
+   "title": "Definition of a categorical holonomy",
+   "level": 3,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 3024,
+   "n_words": 573,
+   "label_start": "23",
+   "label_end": null
+  },
+  {
+   "id": "sec-025-categorical-connections-and-categorical-connecti",
    "number": null,
    "title": "Categorical connections and categorical connection holonomies",
    "level": 2,
    "page_start": 25,
-   "page_end": 27,
-   "n_chars": 4133,
-   "n_words": 870
+   "page_end": 25,
+   "n_chars": 771,
+   "n_words": 151,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-021-a-well-known-lemma",
+   "id": "sec-026-defining-a-categorical-holonomy-from-a-categoric",
+   "number": null,
+   "title": "Defining a categorical holonomy from a categorical connection",
+   "level": 3,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 3264,
+   "n_words": 668,
+   "label_start": null,
+   "label_end": "27"
+  },
+  {
+   "id": "sec-027-a-well-known-lemma",
    "number": null,
    "title": "A well-known lemma",
    "level": 3,
    "page_start": 27,
    "page_end": 27,
-   "n_chars": 994,
-   "n_words": 245
+   "n_chars": 1004,
+   "n_words": 250,
+   "label_start": "27",
+   "label_end": "27"
   },
   {
-   "id": "sec-022-the-dependence-of-the-surface-holonomy-on-a-smoo",
+   "id": "sec-028-the-dependence-of-the-surface-holonomy-on-a-smoo",
    "number": null,
    "title": "The dependence of the surface holonomy on a smooth family of surfaces",
    "level": 3,
    "page_start": 27,
    "page_end": 33,
-   "n_chars": 9022,
-   "n_words": 2225
+   "n_chars": 9047,
+   "n_words": 2235,
+   "label_start": "27",
+   "label_end": "33"
   },
   {
-   "id": "sec-023-re-scaling",
+   "id": "sec-029-re-scaling",
    "number": null,
    "title": "Re-scaling",
    "level": 3,
    "page_start": 33,
-   "page_end": 37,
-   "n_chars": 6268,
-   "n_words": 1557
+   "page_end": 34,
+   "n_chars": 1054,
+   "n_words": 237,
+   "label_start": "33",
+   "label_end": "34"
   },
   {
-   "id": "sec-024-2-bundles",
+   "id": "sec-030-verification-of-the-axioms-for-a-categorical-hol",
+   "number": null,
+   "title": "Verification of the axioms for a categorical holonomy",
+   "level": 3,
+   "page_start": 34,
+   "page_end": 37,
+   "n_chars": 4990,
+   "n_words": 1126,
+   "label_start": "34",
+   "label_end": "37"
+  },
+  {
+   "id": "sec-031-2-bundles",
    "number": null,
    "title": "2-Bundles",
    "level": 3,
    "page_start": 37,
    "page_end": 39,
-   "n_chars": 4555,
-   "n_words": 868
+   "n_chars": 4554,
+   "n_words": 862,
+   "label_start": "37",
+   "label_end": "39"
   },
   {
-   "id": "sec-025-wilson-spheres",
+   "id": "sec-032-wilson-spheres",
    "number": null,
    "title": "Wilson Spheres",
    "level": 2,
    "page_start": 39,
    "page_end": 39,
-   "n_chars": 357,
-   "n_words": 77
+   "n_chars": 356,
+   "n_words": 71,
+   "label_start": "39",
+   "label_end": "39"
   },
   {
-   "id": "sec-026-the-dependence-of-a-categorical-connection-holon",
+   "id": "sec-033-the-dependence-of-a-categorical-connection-holon",
    "number": null,
    "title": "The dependence of a categorical connection holonomy on the elements of the fibre",
    "level": 3,
    "page_start": 39,
    "page_end": 41,
-   "n_chars": 3486,
-   "n_words": 792
+   "n_chars": 3454,
+   "n_words": 749,
+   "label_start": "39",
+   "label_end": "41"
   },
   {
-   "id": "sec-027-associating-2-holonomies-to-embedded-spheres",
+   "id": "sec-034-associating-2-holonomies-to-embedded-spheres",
    "number": null,
    "title": "Associating 2-holonomies to embedded spheres",
    "level": 3,
    "page_start": 41,
    "page_end": 43,
-   "n_chars": 3806,
-   "n_words": 782
+   "n_chars": 3775,
+   "n_words": 746,
+   "label_start": "41",
+   "label_end": null
   },
   {
-   "id": "sec-028-appendix-technical-lemmas",
+   "id": "sec-035-appendix-technical-lemmas",
    "number": null,
    "title": "Appendix: Technical Lemmas",
    "level": 1,
    "page_start": 43,
    "page_end": 46,
-   "n_chars": 9364,
-   "n_words": 1891
+   "n_chars": 9214,
+   "n_words": 1741,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 37,
-  "sections": 29,
-  "chars_total": 82029,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 2,
+    "items": [
+     "De\ufb01ning a categorical holonomy from a categorical con- nection",
+     "A well-known lemma"
+    ]
+   },
+   "found_not_listed": {
+    "count": 2,
+    "items": [
+     "1 The 2-form m is G-equivariant. In other words we have R\u2217",
+     "2.4 Categorical connections and categorical connection holonomies"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 37,
+  "chars_total": 90433,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 38,
-   "overlaid": 24,
+   "overlaid": 31,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -608,23 +1279,40 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.988,
-     "coverage_ratio": 0.93,
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-resum\u00e9-of-results-and-notation-from-the-theory-o",
+     "title": "Resum\u00e9 of results and notation from the theory of principal fibre bundles",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-connections-on-principal-fibre-bundles",
+     "title": "Connections on principal fibre bundles",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-curvature",
+     "id": "sec-003-curvature",
      "title": "Curvature",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.825,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-parallel-transport",
+     "id": "sec-004-parallel-transport",
      "title": "Parallel transport",
      "prose_ratio": 0.97,
      "coverage_ratio": 1.0,
@@ -632,23 +1320,23 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-the-dependence-of-the-parallel-transport-on-a-sm",
+     "id": "sec-005-the-dependence-of-the-parallel-transport-on-a-sm",
      "title": "The dependence of the parallel transport on a smooth family of curves - the Ambrose-Singer theorem",
      "prose_ratio": 0.991,
-     "coverage_ratio": 0.947,
+     "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-crossed-modules",
+     "id": "sec-006-crossed-modules",
      "title": "Crossed modules",
      "prose_ratio": 0.983,
-     "coverage_ratio": 0.968,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-crossed-modules-and-categorical-groups",
+     "id": "sec-007-crossed-modules-and-categorical-groups",
      "title": "Crossed modules and categorical groups",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -656,34 +1344,47 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-the-thin-fundamental-categorical-group-of-a-mani",
+     "id": "sec-008-the-thin-fundamental-categorical-group-of-a-mani",
      "title": "The thin fundamental categorical group of a manifold",
      "prose_ratio": 0.667,
-     "coverage_ratio": 0.032,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
-    },
-    {
-     "id": "sec-007-1-tracks",
-     "title": "1-Tracks",
-     "prose_ratio": 0.472,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-008-2-tracks",
-     "title": "2-Tracks",
-     "prose_ratio": 0.133,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-009-horizontal-and-vertical-compositions-of-2-tracks",
-     "title": "Horizontal and vertical compositions of 2-tracks",
-     "prose_ratio": 0.99,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-the-thin-fundamental-crossed-module-of-a-smooth",
+     "id": "sec-009-1-tracks",
+     "title": "1-Tracks",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-2-tracks",
+     "title": "2-Tracks",
+     "prose_ratio": 0.956,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-horizontal-and-vertical-compositions-of-2-tracks",
+     "title": "Horizontal and vertical compositions of 2-tracks",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-definition-of-the-thin-fundamental-categorical-g",
+     "title": "Definition of the thin fundamental categorical group of a smooth manifold",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-the-thin-fundamental-crossed-module-of-a-smooth",
      "title": "The thin fundamental crossed module of a smooth manifold",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -691,7 +1392,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-two-exact-sequences",
+     "id": "sec-014-two-exact-sequences",
      "title": "Two exact sequences",
      "prose_ratio": 0.989,
      "coverage_ratio": 1.0,
@@ -699,37 +1400,37 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-two-dimensional-holonomies",
+     "id": "sec-015-two-dimensional-holonomies",
      "title": "Two-dimensional holonomies",
      "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-013-categorical-connections",
+     "id": "sec-016-categorical-connections",
      "title": "Categorical connections",
      "prose_ratio": 0.969,
-     "coverage_ratio": 0.985,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-the-2-curvature-3-form-of-a-g-categorical-connec",
+     "id": "sec-017-the-2-curvature-3-form-of-a-g-categorical-connec",
      "title": "The 2-curvature 3-form of a G-categorical connection",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.947,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-algebraic-preliminaries",
+     "id": "sec-018-algebraic-preliminaries",
      "title": "Algebraic preliminaries",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.966,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-the-2-structure-equation",
+     "id": "sec-019-the-2-structure-equation",
      "title": "The 2-structure equation",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -737,7 +1438,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-the-2-bianchi-identity",
+     "id": "sec-020-the-2-bianchi-identity",
      "title": "The 2-Bianchi identity",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -745,31 +1446,53 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-local-form-of-a-categorical-connection",
+     "id": "sec-021-local-form-of-a-categorical-connection",
      "title": "Local form of a categorical connection",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.977,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-categorical-holonomy",
+     "id": "sec-022-categorical-holonomy",
      "title": "Categorical holonomy",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 0.97,
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-023-definition-of-a-holonomy",
+     "title": "Definition of a holonomy.",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-020-categorical-connections-and-categorical-connecti",
+     "id": "sec-024-definition-of-a-categorical-holonomy",
+     "title": "Definition of a categorical holonomy",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-025-categorical-connections-and-categorical-connecti",
      "title": "Categorical connections and categorical connection holonomies",
-     "prose_ratio": 0.977,
-     "coverage_ratio": 0.963,
+     "prose_ratio": 0.971,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-021-a-well-known-lemma",
+     "id": "sec-026-defining-a-categorical-holonomy-from-a-categoric",
+     "title": "Defining a categorical holonomy from a categorical connection",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-027-a-well-known-lemma",
      "title": "A well-known lemma",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -777,31 +1500,39 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-022-the-dependence-of-the-surface-holonomy-on-a-smoo",
+     "id": "sec-028-the-dependence-of-the-surface-holonomy-on-a-smoo",
      "title": "The dependence of the surface holonomy on a smooth family of surfaces",
      "prose_ratio": 0.966,
-     "coverage_ratio": 0.973,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-023-re-scaling",
+     "id": "sec-029-re-scaling",
      "title": "Re-scaling",
-     "prose_ratio": 0.982,
-     "coverage_ratio": 0.957,
+     "prose_ratio": 0.946,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-024-2-bundles",
+     "id": "sec-030-verification-of-the-axioms-for-a-categorical-hol",
+     "title": "Verification of the axioms for a categorical holonomy",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-031-2-bundles",
      "title": "2-Bundles",
      "prose_ratio": 0.988,
-     "coverage_ratio": 0.913,
+     "coverage_ratio": 0.937,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-025-wilson-spheres",
+     "id": "sec-032-wilson-spheres",
      "title": "Wilson Spheres",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -809,26 +1540,26 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-026-the-dependence-of-a-categorical-connection-holon",
+     "id": "sec-033-the-dependence-of-a-categorical-connection-holon",
      "title": "The dependence of a categorical connection holonomy on the elements of the fibre",
      "prose_ratio": 0.988,
-     "coverage_ratio": 0.955,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-027-associating-2-holonomies-to-embedded-spheres",
+     "id": "sec-034-associating-2-holonomies-to-embedded-spheres",
      "title": "Associating 2-holonomies to embedded spheres",
      "prose_ratio": 0.992,
-     "coverage_ratio": 0.992,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-028-appendix-technical-lemmas",
+     "id": "sec-035-appendix-technical-lemmas",
      "title": "Appendix: Technical Lemmas",
      "prose_ratio": 0.992,
-     "coverage_ratio": 0.458,
+     "coverage_ratio": 0.471,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     }
    ]
