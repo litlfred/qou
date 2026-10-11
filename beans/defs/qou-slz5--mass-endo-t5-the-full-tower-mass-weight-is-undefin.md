@@ -5,7 +5,7 @@ status: todo
 type: epic
 priority: normal
 created_at: 2026-10-10T06:48:53Z
-updated_at: 2026-10-10T14:26:29Z
+updated_at: 2026-10-11T07:23:25Z
 ---
 
 Thread (session https://claude.ai/code/session_01ST9RpvTF7JHNdUNafrjf9J). OWNER DECISION gating this thread: D7 (docs/coordination/2026-09-05-owner-gated-bean-triage.md, 2026-09-07) puts mass/binding on the full tower, but production tr_M_via_wenzl_bridge still applies D's two-row cap (keeps 0.0434% of H_12 at 4He). No full-tower mass weight is defined. Candidates: Molien (ruled only for Phi_k), C y_λ (excised), Ocneanu N≠2 (changes the trace).
@@ -61,3 +61,7 @@ QOU/SchurWeyl/FullTowerTraceWindow.lean (sorry-free; axioms are standard only):
 - T1 qPlancherel_not_coherent and T3 ocneanuWeight_pos_of_le duplicate #7612 (PlancherelRestrictionIncoherent, and OcneanuWeightPositiveWindow, which is the stronger iff). They are independent second proofs; #7612 is the reference for those two.
 - Not proved here: the z=q−q⁻¹ endpoint trace; the window converse (done in #7612).
 **Derivation status:** coherent Markov trace on H_∞ + positive + faithful on every λ ⟺ z∈[0,h], with Molien (z=0, the literature's Hecke Plancherel measure) at one end. The point is still not selected. Note from #7612 TauBondLetter: Molien gives tr exactly 0 at ³He/⁴He, so B_log is undefined there.
+
+
+## 2026-10-11 OWNER DECISION (session_01ST9RpvTF7JHNdUNafrjf9J)
+Owner chose (3) derive the selector and (4) re-examine the binding functional, and asked to reconcile qou-za3q. NOT chosen: adopting z=0 (Molien) or z=h/2 now. No production change.
