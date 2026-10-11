@@ -9,7 +9,7 @@ tags:
     - 8f-gen
     - 8f-open
 created_at: 2026-08-10T18:57:48Z
-updated_at: 2026-10-10T12:24:01Z
+updated_at: 2026-10-11T07:45:12Z
 parent: qou-8lxd
 ---
 
@@ -186,3 +186,97 @@ derives it). Nothing here is wired to compute and no observable is predicted.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+---
+
+## 🛑 THIS BEAN'S TITLE IS STALE AGAINST ITS OWN BODY — and I repeated it four times before reading it (2026-10-11)
+
+The title says *"no braid word distinguishes them"*. That is **V9's framing from
+2026-08-10**. The body already records V10 (2026-08-16) **constructing** the
+grading and V11 **excluding** Type-B folding from that role. I propagated the
+title into four artifacts without opening the body:
+
+- the `qou-h0zz` append of 2026-10-10 ("chirality is untouched");
+- issue **#7711**, §"What stays open";
+- PR **#7712** body, §"What this does NOT change";
+- three chat reports naming `wqto` as the next item in those terms.
+
+**This is the second instance in two days of one pattern**, and that makes it a
+pattern rather than a slip. The first was `htw2`, whose correction is appended
+to `qou-h0zz` and whose lesson I wrote into the epic `qou-8lxd` — *"read the
+beans a bean cites AND the beans that cite it"* — and then did not apply here.
+
+**The sharper diagnosis, which the `htw2` note did not reach.** Both failures
+came from reading a bean's **title out of a listing**, where the body is not
+visible. `beans list` and the session-start sweep print title + status and
+nothing else, so a front's "open items" read as their titles by default. The
+`htw2` note blamed its `scrapped` status; that was only half of it — `wqto` is
+`todo` and failed identically. **The common cause is the listing, not the
+status.** Treat any claim about a bean sourced from a listing as unverified
+until its body is read.
+
+### Verification of what the body claims (measured, not carried)
+
+All three carriers, `lean -DautoImplicit=false -s 65536`, exit status captured
+directly:
+
+    ChiralityIndependentOfCrossing.lean    rc=0  0 diagnostics  228 lines  11 decls
+    ChiralityGradingConstruction.lean      rc=0  0 diagnostics  295 lines  16 decls
+    TypeBFoldingChiralityObstruction.lean  rc=0  0 diagnostics  135 lines   5 decls
+
+0 `axiom`, 0 `native_decide` in all three. Six key declarations resolve by
+name: `chirOf`, `free_of_reeb_odd_grading`,
+`gen1_chirality_is_the_constructed_grading`,
+`reeb_odd_grading_unique_up_to_flip`,
+`stable_matter_and_global_chirality_incompatible`,
+`folding_inducing_gen1_chirality_is_free`.
+
+**One apparent discrepancy, resolved.** `grep -c '\bsorry\b'` on
+`ChiralityIndependentOfCrossing.lean` returns **1**, against this bean's claim
+that it is sorry-free. The match is the module docstring heading
+`## What is proved (all sorry-free)` — the word inside prose asserting the
+opposite. The bean is right and the grep is not.
+
+That is the **third** instance of this false positive in one session and the
+**second in a corpus file** (the other being a docstring I had just written
+myself). So: **`grep -c '\bsorry\b'` is not a usable gate in this tree.** The
+honest signals are `rc=0` with no `declaration uses 'sorry'` warning — Lean
+emits one for every real `sorry` — or a grep that excludes comment and
+docstring regions.
+
+### The open item, scoped correctly
+
+Not the title's question. What remains is **the geometric identification of the
+Reeb involution on the physical state space** — CR geometry. Its only corpus
+statement is
+[`brings-surface/archimedean-chirality.md`](../folio/quantum-observable-universe/brings-surface/archimedean-chirality.md),
+which is a **single paragraph, one line of file**: the Reeb field `ξ` carries a
+natural orientation, `Θ(ξ) = 1` picks a direction, and *"chirality is encoded in
+the ±-eigenspaces of the Reeb involution `ξ ↦ −ξ`"*. It **asserts** the
+involution; nothing derives it, and the whole V10/V11 tower is conditional on
+`ι` being whatever that involution induces.
+
+V11's constraint narrows the search and should be carried by anyone resuming:
+`ι` must be **fixed-point free on the physical states**, so it is **not** the
+Type-B folding's matter/antimatter involution (which fixes stable matter by
+construction). Look for a free involution on the folded object, or an
+orbit-level map.
+
+### A point I checked and am NOT claiming as new
+
+The obvious next thought is that the grading's domain must **exclude bosons** —
+`archimedean-chirality` says bosons are purely horizontal hence chirality-blind,
+i.e. Reeb-fixed, and V10 needs `ι` free, so the domain on which `ι` must be free
+is the fermionic sector. **The corpus already has this.**
+`ChiralityIndependentOfCrossing.no_chirality_on_reeb_fixed_state:209` states
+exactly it — an odd chirality admits no fixed state — and its own docstring
+names the boson clause as the physical reading. V10's
+`free_of_reeb_odd_grading` is the global form. Recorded as checked-and-not-new
+rather than offered as a finding.
+
+### Nothing closed, nothing wired
+
+No conjecture closes, no observable is predicted, no witness or dashboard row
+moves. The SM labels still enter as the target to be reproduced. Per rule 13a
+this bean stays `todo`.

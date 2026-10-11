@@ -7,7 +7,7 @@ priority: high
 tags:
     - 8f-index
 created_at: 2026-08-03T23:27:15Z
-updated_at: 2026-10-10T14:47:44Z
+updated_at: 2026-10-11T07:45:38Z
 parent: qou-0uga
 ---
 
@@ -469,3 +469,28 @@ corpus-grep checklist was added for.
 **Do not read this as the arc being further along than it is.** Nothing here
 closes a conjecture, nothing is wired, and per rule 13a no bean was closed. One
 stale recommendation of mine is withdrawn and one open set is stated correctly.
+
+
+---
+
+## The title-trap diagnosis was HALF RIGHT — it is the LISTING, not the status (2026-10-11)
+
+The append above sharpened the rule to *"a `scrapped` bean is the highest-risk
+read"*, after recommending `htw2` four times on its title. **That diagnosis is
+incomplete, and I proved it incomplete within the hour** by doing the identical
+thing to `qou-wqto` — which is `todo`.
+
+`qou-wqto`'s title is *"no braid word distinguishes them"* (V9, 2026-08-10); its
+body records the grading **constructed** (V10) and Type-B folding **excluded**
+(V11), both sorry-free and both re-verified `rc=0` today. I propagated the title
+into the `qou-h0zz` open-set list, issue #7711, PR #7712 and three chat reports
+before opening it.
+
+**Common cause: the title came from a LISTING.** `beans list` and the
+session-start coord sweep print `id`, `status`, `title` — and no body. So every
+front's "open items" read as their titles by default, whatever their status.
+`scrapped` was a red herring; `todo` failed the same way.
+
+**The rule, restated to cover both cases:** a claim about a bean that came from
+a listing is **unverified** until its body is read. That applies to this epic's
+own front tables, which are listings too.
