@@ -1,7 +1,7 @@
 ---
 # qou-as81
 title: 'A1 (live): certify an UPPER bound on Xbot so the e_inf join needs no G1'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -962,3 +962,72 @@ maximum of `Xblock(s_t) + xrun(s_t + s_b) + Xbot(s_b)` is **2.439296455120784027
 **Single external input:** Murota (2003), Ch. 7, which says the best ±χ_S move of an L♮-concave
 function is a min cut (`murota2003`). Everything else is computed at mp.dps 25/30 at the proton q0.
 Not Lean-formalised; that is a possible follow-up, not this bean's goal.
+
+## 2026-10-11 (post-close) — the arc closed on a theorem the corpus cannot check
+
+Appended **after** this bean was completed by `0bed489eb33`, and deliberately **not** reopening
+it: the close is correct. `e_inf` is certified without G1, the join probe is 4/4, and the L♮
+route's M1-M9 are 10/10 with the cut at 25. The mathematics is settled *in the literature*.
+What follows is about what the corpus can and cannot verify of it, plus two of its sampled
+checks that are now theorems.
+
+🛑 **My branch very nearly reopened this bean by accident.** Rebasing onto main, the
+bean-append merge took main's frontmatter *at the conflicting commit*, which predated the close,
+so my branch carried `status: in-progress` against main's `completed` — a silent reopen through
+a merge artifact rather than a decision. `scripts/bean-append-merge.py` warns about exactly this
+(*"took main's; the branch's own value for status is overwritten"*) and the warning is easy to
+read as benign. **Check `status` against main after every bean-append resolution**, not just the
+body.
+
+### The one remaining citation dependency, and it is load-bearing
+
+`rev_e_infinity_xbot_lnatural_probe.py` rests on two results from Murota, *Discrete Convex
+Analysis* (SIAM 2003), cited by section:
+
+1. **§7.1 — the sufficient condition**: separable concave plus concave functions of pairwise
+   differences is L♮-concave.
+2. **Ch. 7 — the optimality criterion**: for L♮-concave `g`, a domain point is a global
+   maximiser iff no `±χ_S` move improves it.
+
+**Result 1 no longer needs the citation.**
+[`QOU/BraidKnot/LNaturalConcaveForm.lean`](folio/quantum-observable-universe/lean/QOU/BraidKnot/LNaturalConcaveForm.lean)
+(8 theorems, sorry-free, `lean`-direct exit 0 — re-verified after rebasing onto main at 335
+commits) proves it: `concave_exchange_inward` for the separable part and `parity_spread` for the
+differences, where the one configuration that would break it — `(d_p, d_q) = (1, −1)` against
+`(d_x, d_y) = (0, 0)`, demanding `ψ(0) + ψ(0) ≤ ψ(1) + ψ(−1)` — is excluded **by parity**.
+
+**Result 2 still does, and nothing in the corpus proves it.** It is what turns the probe's M5
+steepest-ascent fixed point into *the* integer maximum, so it is load-bearing for the cut of 25,
+for `e_inf` certified without G1, and for this bean's close. Re-measured on current `main`:
+**Murota is absent from the library** — 0 hits for *Murota* / *discrete convex analysis* in
+`library/INDEX.md`, across **60,059** library files, after the 335 commits that landed since I
+first checked. Tracked as its own item rather than left implicit here.
+
+### Two of the probe's checks are now theorems rather than samples
+
+- **M3** (*"every `phi_j` and `psi_{jj'}` is concave at the integers the ascent can visit"* — its
+  own check message says *"over the sampled pieces"*) samples `pe` in steps of 4, `j < 12`,
+  `x ∈ 1..7`, `d ∈ −6..6`. It is now **proved for every `x`, `d`, `j`, `pe`**: with `t = q₀²`
+  and `L = ln t > 0`, each piece is *minus a non-negative combination of* `e^{−rLx}` — `epsx` by
+  Mercator, `R` as the code's own `_ER[r]·z**r`, `W` as `epsx + (D_r−1)/r` — and
+  `neg_exp_series_concave` proves such a combination concave, over a `Finset`, hence **uniform in
+  the truncation order `RSER`**.
+- **The premise that proof consumes** (every coefficient strictly positive) is checked
+  **exhaustively**: all **62,946** `W` coefficients over `pe = 0..8`, `T = 1..26`, `r = 1..269`
+  plus all 269 `R` coefficients, `min(D_r − 1) = 1.743778818e-49`,
+  `min t^{−r}/(1−t^{−r}) = 4.17585777776e-25`. The minimum sits **at the truncation edge
+  `r = RSER`** — exactly where a sample would miss it.
+
+Independent of the probe, 1876 non-trivial admissible integer pairs satisfy discrete midpoint
+concavity directly, tightest slack `+0.00709354725729`.
+
+### Why the relaxation route could not be rescued — kept because it justifies the pivot
+
+The L♮ route replaced the concave relaxation. The relaxation's failure is recorded above but the
+*exclusion* is worth restating next to the close, so a later reader does not re-attempt it:
+every bound the objective-penalty family can certify is at least `2.858510202 = 1.3235×` the
+enumerated maximum, against `1.1873×` required (`PenaltyFamilyCeiling.lean`, 12 theorems,
+sorry-free), and that floor is **charge-free** — it binds with the padded box charge set to
+zero, so the padding lead (worth 12.31 %) cannot rescue it either. The curvature budget that
+would reopen it was measured at `1.2343× ln q₀/2` against the `2.1018×` needed. **Do not
+re-attempt a penalty on this objective.**
