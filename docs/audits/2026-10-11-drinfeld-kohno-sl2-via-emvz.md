@@ -76,6 +76,10 @@ relative to EMVZ.
 * The two-row blocks alone have total dimension `Σ_{λ ≤ 2 rows} (f^λ)² = C_n`, the Catalan
   number. The target `End_{D_ℏ}(V^{⊗n})` has the same underlying vector space as
   `End_{𝔤𝔩₂}(V^{⊗n})`, which also has dimension `C_n`.
+  **Lean (sorry-free):** the count `Σ_{k ≤ n/2} (C(n,k) − C(n,k−1))² = C_n` is
+  `QOU.Mass.TwoRowCatalan.twoRow_sum_sq_eq_catalan`, and `[m]_q ≠ 0` for `m ≥ 1` with `q` not a
+  root of unity is `QOU.Mass.TwoRowCatalan.qint_ne_zero`. The identification of `C(n,k) − C(n,k−1)`
+  with `f^λ` for `λ = (n−k, k)` (hook formula) is standard and not formalised.
 * So `F : H_n(q) → End_{D_ℏ}(V^{⊗n})` is surjective. Its kernel is exactly the blocks with
   three or more rows, and it induces an isomorphism from the Temperley–Lieb algebra `TL_n(q)`.
 * Consequently, for each simple `Y = V_j` the KZ monodromy representation on `Hom(V_j, V^{⊗n})`
@@ -107,7 +111,7 @@ to what Kohno's Remark 1.3.14 already gives (PR #7673, probe
   * It says nothing about whether the framework's own substrate connection **is** this KZ
     connection. That is still open (bean `qou-d0qq`; verdict of 2026-10-11: as the corpus
     stands, it is not).
-* **Lean.** None of Steps 1, 3, 4 or 5 is formalised. Formalising them would need Drinfeld's
+* **Lean.** The counting core of Step 4 is formalised (`QOU/Mass/TwoRowCatalan.lean`). Steps 1, 3, 5 and the block theory of Step 4 are not. Formalising them would need Drinfeld's
   associator, the skein category's universal property and Hecke-algebra block theory. That is
   far more than the two-strand file (`QOU/Mass/KohnoTwoPoint.lean`) and the flatness file
   (`mass-endomorphism/kz-connection-sl2.lean`).
