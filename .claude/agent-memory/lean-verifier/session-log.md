@@ -384,3 +384,9 @@ Start state: **10 oleans total** (cache genuinely unrestored), and a SessionStar
   nothing to the FQN. Read the namespace, never infer it from the path.
 - Residual hazard reported, not fixed: the bg-build guard cannot fire on this
   trace-paired restore, so a compaction re-fires `lake build`.
+
+## 2026-10-11 — MobiusRegulator.lean (qou-uh5f), worktree /home/claude/qou-r3
+- Rebased onto origin/main 6e6d992da2 with no conflicts; new tip 656a7af6e6, pushed.
+- The file imports Mathlib only, so there is no QOU cone: a bare lean-direct run against root `.lake/packages/*/.lake/build/lib/lean` (mathlib 3480, cache already present) is sufficient. exit 0, 3m53s wall / 8.4 s user, so the time was COLD PAGE CACHE.
+- TRAP: `--force-with-lease` in a worktree was rejected as "(stale info)" because the local tracking ref was never fetched. `git ls-remote` showed that the remote tip equalled the pre-rebase sha, so I pushed with an explicit `--force-with-lease=<branch>:<that sha>`, which is safe.
+- Also: a `cmd | tail` inside a retry loop always "succeeds", so the loop breaks on the first failure. Check PIPESTATUS.

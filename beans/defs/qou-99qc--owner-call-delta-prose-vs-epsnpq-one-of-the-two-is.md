@@ -3343,3 +3343,17 @@ Full entry on `qou-pzsi`; probe `computations/probes/ohara_link_energy/`.
 - **Flowed link Möbius energy (upper bounds, multi-start).** It ranks `nuc9` (234.2) well below both dressing classes (≈291), which sit well below `gen_grouped` (>311). It does **not** separate the two dressing classes: the gap is 1.1 against a combined error of 1.2.
 - **So the owner's 2026-09-14 direction is confirmed as the right class.** The energy is order-sensitive where letter-sums are not. But on this candidate set it **cannot pick among the gluon dressings**, and it cannot see the letter decoration at all.
 - The gluon dressing stays unselected. No dashboard row was re-scored.
+
+## 2026-10-11 route 2 status
+
+- The gluon tail is ALLOWED (owner ruling, 2026-10-11).
+- The q-deformed recipe uses t = −q₀ (owner ruling). PR #7647 merged; it gives no ranking.
+- Option 1, ropelength on fresh 11-letter words, FAILED its pre-registered test (24-way tie). PR #7651 merged.
+- Option 1b pre-registers a same-loop-up-to-symmetry rule on fresh 13-letter words (branch claude/bring-route2-sameloop-2026-10-11).
+- No word is selected by route 2.
+
+**2026-10-11 (route 2, options 1b/1c, PRs #7672 merged, #7679).** On fresh 13-letter words: 316 classes = 33 braids; the shortest Bring loop carries 3 braids (88 spellings of one), so Bring-loop energies select loops, not words. The owner-ruled q-length at t = -q0 separates braids: alone it picks sigma0*Delta^4 (length ln q0, no Bring loop); Bring-loop-first picks a different braid. Contaminated read-across to the seen candidates: rule A -> nuc11_interleaved (the scored element), rule B -> class A. The two rules disagree; which (if either) is the selection principle is an OPEN owner decision. Nothing selected. Bean stays open.
+
+## 2026-10-11 — option 1d (11-letter, all 94 classes; PR #7679, 007720dbbf)
+
+Pre-registered rules on all 94 positive 11-letter word classes (16 braids). Rule A (q-length at t=−q₀ alone) picks the braid of nuc11_interleaved (parabolic, E_q = ln q₀, no Bring loop). Rule B (shortest Bring loop, L = 4.6031833095, then q-length) picks the braid of class A (gluon_s1_s0/s1_s1, E_q = 2.6496). Both decided, they disagree; contaminated (seen q-lengths known beforehand). The selection rule remains an OPEN owner decision — this bean stays open.
