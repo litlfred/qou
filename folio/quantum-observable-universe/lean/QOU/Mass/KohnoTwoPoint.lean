@@ -2,6 +2,7 @@ import Mathlib.Analysis.ODE.Gronwall
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Analysis.Complex.RealDeriv
 import Mathlib.LinearAlgebra.Matrix.Trace
+import Mathlib.Tactic.Module
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Topology.Algebra.Module.FiniteDimension
@@ -180,6 +181,21 @@ theorem trace_weight_classicalExchange_pow {q : R} (hq0 : q ≠ 0) (hq : q ^ 2 +
     rw [← Matrix.mul_assoc, ← Matrix.mul_assoc, hcomm']; simp only [Matrix.mul_assoc]
   rw [hre, Matrix.trace_mul_comm, ← Matrix.mul_assoc, conj_mul_conjInv hq0 hq, Matrix.one_mul]
 
+/-- **The Hecke quadratic of the classical exchange.** `q P_sym − q⁻¹ P_anti` has the two
+eigenvalues `q` and `−q⁻¹`, so `(β − q)(β + q⁻¹) = 0`. This is the relation the corpus
+calls the "curvature" `F(σ) = σ² − (q − q⁻¹)σ − 1`; here it is an eigenvalue relation. -/
+theorem classicalExchange_hecke {q : R} (hq : q ≠ 0) :
+    (classicalExchange q - q • (1 : Matrix (Fin 4) (Fin 4) R)) *
+      (classicalExchange q + q⁻¹ • 1) = 0 := by
+  have h1 : classicalExchange q - q • (1 : Matrix (Fin 4) (Fin 4) R) =
+      -(q + q⁻¹) • antiProj := by
+    unfold classicalExchange; module
+  have h2 : classicalExchange q + q⁻¹ • (1 : Matrix (Fin 4) (Fin 4) R) =
+      (q + q⁻¹) • (1 - antiProj) := by
+    unfold classicalExchange; module
+  rw [h1, h2, smul_mul_smul_comm, Matrix.mul_sub, Matrix.mul_one, antiProj_mul_self,
+    sub_self, smul_zero]
+
 end Algebra
 
 /-! ## Analytic part, over ℂ: the KZ transport along the half-turn -/
@@ -324,6 +340,19 @@ lemma real_q_admissible (q : ℝ) (hq : 1 < q) :
   have : ((q : ℂ) ^ 2 + 1) = ((q ^ 2 + 1 : ℝ) : ℂ) := by push_cast; ring
   rw [this, Complex.ofReal_ne_zero]
   positivity
+
+/-- **The KZ exchange satisfies the Hecke quadratic** — derived from the flat connection,
+not assumed. With `q = e^c` (`c = iπλ`), `β = e^{c/2} · P · Hol` obeys
+`(β − q)(β + q⁻¹) = 0`, equivalently `β² = (q − q⁻¹)β + 1`. -/
+theorem exchange_hecke (c : ℂ) :
+    (Complex.exp (c / 2) • (flip * halfMonodromy c) - Complex.exp c • 1) *
+      (Complex.exp (c / 2) • (flip * halfMonodromy c) + (Complex.exp c)⁻¹ • 1) = 0 := by
+  have hβ : Complex.exp (c / 2) • (flip * halfMonodromy c) = classicalExchange (Complex.exp c) := by
+    rw [exchange_eq_classical, smul_smul, ← Complex.exp_add]
+    have : c / 2 + -c / 2 = 0 := by ring
+    rw [this, Complex.exp_zero, one_smul]
+  rw [hβ]
+  exact classicalExchange_hecke (Complex.exp_ne_zero c)
 
 end Analysis
 
