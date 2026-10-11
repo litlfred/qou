@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T08:58:07Z
-updated_at: 2026-10-10T19:53:12Z
+updated_at: 2026-10-11T06:18:36Z
 parent: qou-d8c7
 ---
 
@@ -71,3 +71,15 @@ STILL OPEN (general r): the general-r model. That means the TL standard modules 
 **Verified (lean-direct, -DautoImplicit=false -s 65536, shadow over the restored cache):** JonesNormalForm, Hecke/MarkovTrace, Shared/MarkovTraceClaim, Hecke/MarkovTraceOnH4A, Hecke/MarkovTraceClassNotUnique (built with -o); direct importers hecke_mass_trace, tmli_constituent_composite_agreement, Hecke.lean, MarkovTraceH2, MarkovTraceOnH3A, Hecke/Wedderburn, MarkovBondFactor, ClosedFormInterfaceFactors, plus comment-edited rj_canonical_inner_product, BorromeanCanonicalTraceDerivation, JonesNormalFormQuot: all exit 0.
 
 **Still open.** No instance in the tree is yet proved to satisfy IsMarkov (markovTraceH2 / H3A / H4A would be the first); until one is, markov_trace_unique has no proved application. Dated audit docs citing the axiom were left as historical records.
+
+
+## 2026-10-11 — general-r infrastructure (branch claude/tl-standard-modules-2026-10-11, head 2842f35b43)
+
+Route taken: the V^{(x)r} Jimbo R-matrix model (V = R^2), uniformly in r, rather than explicit link-state W_{r,j}. All sorry-free, lean-direct exit 0 with -DautoImplicit=false, axioms propext/Classical.choice/Quot.sound. Generic [Field R], convention D z_D = q^3/(q^2+1).
+
+- QOU/IwahoriHecke/TensorMarkovModel.lean: strand_heckeFamily (HeckeFamily N (q-q^-1) 1 at every N); trace_markov (CROSS-LEVEL Markov: tr(W (X S_k)) = z_D tr(W X) for X in adjoin(S_0..S_{k-1}), every k<N); tau / presTrace normalised+cyclic+Markov (Ocneanu existence on Pres N for every N); markov_cox_eq_quantumTrace' (every normalised cyclic Markov trace with z_D on any Hecke-family algebra equals the quantum trace at n+1 sites on (s_0..s_{n-1})^p).
+- QOU/IwahoriHecke/TensorTemperleyLieb.lean: tlRep : TLFin R (q+q^-1) N ->a End(V^{(x)(N+1)}), tlRep(e_a) = q - sigma_a (S_eq_q_sub_tlRep). The adjacency relation is the 8x8 identity F12F/F21F (needs dim V = 2), transported by embedTriple.
+- QOU/Archimedean/RossoJonesGeneral.lean: extremal weight spaces proved (T_0 = T_r = q^{s(r-1)}); markov_rossoJones_of_middle: under the NAMED hypothesis MiddleWeightTraces q n p, q^{2p}(q^2+1)^{n+1} t(gamma^p) = (sum_{m=0}^{n+1} q^{2m}) q^{p(n+2)} - (sum_{m=1}^{n} q^{2m}) q^{pn}, i.e. [2]^r tr(gamma^s) = [r+1] q^{s(r-1)} - [r-1] q^{s(r-3)}.
+- computations/probes/rj_weight_space_trace_probe.py (exact sympy): MiddleWeightTraces (q^{2s} T_m = q^{s(r+1)} - q^{s(r-1)}, 0<m<r) holds for every coprime (r,s), r=2..5, s<=2r+1, and FAILS for every non-coprime case tested.
+
+STILL OPEN (not proved): (1) MiddleWeightTraces for general coprime (r,s) — the coprime vanishing is now isolated to this single weight-space statement; (2) explicit standard modules W_{r,j} as separate objects; (3) quantum Schur-Weyl identification tr_q = sum_j [j+1] tr_{W_{r,j}} / [2]^r. The task's piece 3 (traces on each W_{r,j}) is therefore not done in its stated form.
