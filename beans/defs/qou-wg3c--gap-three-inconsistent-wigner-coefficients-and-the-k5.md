@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-11T07:35:00Z
-updated_at: 2026-10-11T08:45:00Z
+updated_at: 2026-10-11T09:05:00Z
 parent: qou-8lxd
 ---
 
@@ -123,3 +123,32 @@ Caveat authorNotes added to `prop:wigner-np-pairing`, `prop:wigner-coefficient-d
 `prop:wigner-2-coefficient`, `prop:mass-coefficient-shadow-price` and
 `prop:unified-iterative-correction`. No values, statements or Lean changed. Validate: valid
 (11 pre-existing warnings). Stays todo: which definition of C_lambda is meant is open.
+
+
+---
+
+# 2026-10-11 — Can a shadow price that depends on (Z, N) give the Wigner term? (owner option 2)
+
+A program whose data carry the nucleus exists: `aK_via_lp_dual_full.py`,
+`min sum_lambda x_lambda t_lambda`, `t_lambda = w_lambda chi^lambda(W_atom)`,
+`sum x = 1`, `x >= 0`, at `n = 3A` strands. Its dual is
+`u_0* = min t`, `u_lambda* = t_lambda - u_0*`, which does depend on the atom.
+
+It cannot carry the Wigner term, for a structural reason and a measured one.
+
+1. **Structural (scope b, Lean, sorry-free, lean-direct exit 0).** New in
+   `QOU/Hecke/IsospinClassSingleton.lean`: `contentDoubled_eq_zero_iff` — the
+   content-zero two-row shapes are exactly `∅, (1), (2,1), (2,2)` — and
+   `no_contentZero_two_row_at_nuclear_level`: at `n = 3A` with `A >= 2` no
+   two-row block has content sum zero. So the isospin-type class is empty at
+   every nuclear level past the nucleon, and `(2,2)` (n = 4) is never a block
+   of the atomic program. Every content-zero block there has >= 3 rows and
+   zero convention-D weight (measured: y ~ 1e-74 in the witness).
+2. **Measured.** In `a-K-via-lp-dual-full.witness.json` each atom's
+   `u_lambda*` takes only two values (`1` and one other: 536.98 at 2H,
+   46.27 at 3H, 88.93 at 3He, 6.33 at 4He), so the dual has no
+   per-partition structure to read a Wigner price from.
+
+So the (2,2) price can only arise in a program posed at level 4 (the UIC's
+per-step k), whose data is not a nuclear word. Scope-(a) negative for this
+route; the question of which C_lambda definition is meant stays open.
