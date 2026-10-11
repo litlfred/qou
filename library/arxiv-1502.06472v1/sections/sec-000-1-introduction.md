@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1502.06472v1
-doc_title: "Gröbner-Shirshov bases and PBW theorems"
+doc_title: "Gröbner-Shirshov bases and PBW theorems∗ L. A. Bokut†"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-3
 source_pdf: 1502.06472v1.pdf
 source_sha256: 381cd869fcc06f08
-doc_brief: "Gröbner-Shirshov bases and PBW theorems — We review some applications of Gr¨ obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for groups and"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.969
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.847
+latex_coverage_ratio: 0.864
 ---
 Combinatorial algebra seminar at South China Normal University was organized by the authors in March 2006. Since then, there were some 30 Master Theses and 4 PhD Theses, about 40 published papers in JA, IJAC, PAMS, JPAA, Comm. Algebra, Algebra Coll., Siberian Math. J., Science in China and other Journals and Proceedings. There were organized 2 International Conferences (2007, 2009) with E. Zelmanov as Chairman of the Program Committee and several Workshops. We are going to review some of the papers.
 
@@ -61,7 +61,3 @@ Recently some new Composition-Diamond lemmas are given: for free algebra $k\lang
 By using the above and the known Composition-Diamond lemmas, some applications are obtained: for embeddings of algebras [@{[BCMo10]}; @ChShaoShum], for free inverse semigroups [@{[BCZh09]}], for conformal algebras [@BFKK00], for relative Gröbner-Shirshov bases of algebras and groups [@BokutShum], for extensions of groups and algebras [@{[Chen08]}; @{[Chen09]}], for some word problems [@BokutChainikov08; @ChChLuo], for some Lie algebras [@ChenLiTang], for partially commutative Lie algebras [@{[ChMo-Partialcomm]}; @{[Po]}], for braid groups [@{[Bok08]}; @{[Bok09]}; @{[Bo-Ch-Shum]}; @ChMo-GSB-Braid-Artin; @{[CZhong13]}], for PBW theorems [@{[BCC11]}; @BoChLi-GSB-rightsym; @{[BCLiu10]}; @BoMa99; @CCZ; @CL; @ChenMo-AMS], etc.
 
 For development of Gröbner-Shirshov bases, one may refer to surveys: [@survey08; @BCS; @BK03; @BK05; @{[BoMa97]}].
-
-# Gröbner-Shirshov bases for associative algebras and Lie algebras
-
-Gröbner-Shirshov bases for Lie algebras is established by Shirshov [@{[Sh62]}; @{[Sh09]}] for the free Lie algebras (with deg-lex order) in 1962 (see also Bokut [@b72]). In 1976, Bokut [@{[Bok76]}] specialized the approach of Shirshov to associative algebras (see also Bergman [@b]). For commutative polynomials, this is due to Buchberger [@bu65; @bu70].

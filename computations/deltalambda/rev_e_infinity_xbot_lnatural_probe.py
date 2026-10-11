@@ -45,14 +45,49 @@ max-flow computations at the optimum.
       `pe = 0..PEMAX` at `N` rows: the exact integer maximum for that `(pe, N)`
   M6  with that maximum as `B_bot`, the G1-free cut is enumerable (<= 32) — what R6 asks
 
-## What it does NOT settle
+  M7  the tail lemma (every block length `T`), M7b a direct min-cut check at `T = N + 4, N + 12`
+  M8  the shift identity `G_{pe+1}(0, u) = G_pe(u)`
+  M9  the wall inequality that makes frames beyond `PEMAX` add nothing
 
-M5 certifies `pe <= PEMAX` and `T <= N`.  Two lemmas are still open, and until both land the
-cut in M6 is conditional on them and must not be quoted as the unconditional bound:
+## The two lemmas
 
-  1. tail (all T): rows above the support never help, so `T > N` cannot exceed the `N`-row max;
-  2. all pe: frames beyond `PEMAX` add nothing, because frame `pe + 1` with `u_0 = 0` is frame
-     `pe` shifted and deep wall rows pay `ln q0 (pe - j)` each.
+M5 alone certifies `pe <= PEMAX` and `T <= N`.  The cut in M6 needs every `T` and every `pe`.
+Write the program on the whole infinite frame (rows above the block are undisplaced, which M2
+shows is the same function), so a block is a finitely supported `u >= 0`.
+
+**Tail lemma (M7).**  Let `w` be the certified `N`-row optimum, padded with zeros.  By the
+L-natural criterion it suffices that no `+chi_S` move improves `w` for any finite `S` (a `-chi_S`
+move touching a zero row leaves the domain).  Split `S = L u H` with `L` below row `N` and
+`H != {}` at or above it (`N >= pe`, so `H` lies on the gap-2 lattice).  With
+`p-(g) = eps(g - 1) - eps(g)` and `p+(g) = eps(g) - eps(g + 1) <= p-(g)` (convexity of `eps`):
+
+    gain(S) = gain(L) + sum_{j in H} [eps(b_j + 1) - (ln q0)/2]
+              + sum_{j in H, x < j, x not in H} (p+ or p-)(gap_xj)  -  sum_{j in H, y > j, y not in H} p-(gap_jy)
+
+(a pair with one end in `L` and one in `H` is counted `-p-` in `gain(L)` and `0` in `gain(S)`,
+hence the `p-` option below).  On the bi-infinite gap-2 lattice with `w = 0`, the two cross sums
+are equal: `sum_{j in H} sum_{x not in H} sgn(j - x) P(|j - x|)` vanishes, since summed over all
+`x` it is zero for each `j` and the `x in H` part is antisymmetric.  What is left is the
+difference between this frame's rows below `N` and the lattice's: the gap-1 wall rows and the
+rows `w` displaces, each contributing at most `p-(gap - w_x)`.  Every term decreases with `j`, so
+
+    gain(S) <= gain(L) + |H| [eps(b_N + 1) + cbar_N - (ln q0)/2] ,
+
+and M7 measures the bracket negative at every frame (`gain(L) <= 0` is M5).  If `gain(L)` is
+`-inf`, the offending pair lies below `N` and makes `gain(S)` `-inf` too.
+
+**All-pe lemma (M8, M9).**  Rows `j >= 1` of frame `pe + 1` sit one position above rows `j - 1`
+of frame `pe`, with the same gaps and wall weights `pe + 1 - j`.  The bottom row's pair term
+`eps(b) - eps(b + x)` plus the shifted one-body sum `sum_{k=1..x} eps(b + k)` is exactly the
+unshifted one-body sum `sum_{k=0..x-1} eps(b + k)`, so `G_{pe+1}(0, u) = G_pe(u)` (M8).  Raising
+the bottom row by `x >= 1` gains at most `x eps(1)` in its one-body term, pays `ln q0 (pe + 1) x`
+on the wall, and only loses on its pairs (they close).  When `eps(1) < ln q0 (pe + 1)`, zeroing
+it never lowers `G`, so `sup` over frame `pe + 1` equals `sup` over frame `pe`.  M9 checks this
+at `pe + 1 = PEMAX + 1`; it holds for every larger `pe` too.  (`eps(1) / ln q0 = 16.0002`, so
+the inequality first holds at `pe + 1 = 17`.)
+
+Both lemmas use only that `eps` is decreasing and convex, the L-natural criterion, and the
+certified `N`-row optima.  With them the cut in M6 holds for every frame and block length.
 
 -- Ref: [murota2003] Discrete Convex Analysis, SIAM, 2003, Ch. 7 (L-natural optimality criterion)
 """
@@ -393,6 +428,91 @@ check("M5 every frame reaches a point no +-chi_S move improves",
       + (f"; the BMAX = 10 enumeration recorded {mp.nstr(INT_SUP_ENUM, 22)}"
          if INT_SUP_ENUM is not None else ""))
 
+print("M7  tail lemma: rows above N never help (every block length T)")
+
+
+def pminus(g) -> mp.mpf:
+    """`eps(g - 1) - eps(g)`: what a pair at gap `g` loses when it closes by one.  `eps` is convex
+    and decreasing, so this is positive, decreasing in `g`, and at least the matching gain
+    `eps(g) - eps(g + 1)` of the pair opening by one."""
+    return epsx(mp.mpf(g - 1)) - epsx(mp.mpf(g))
+
+
+def tail_bound(pe: int, w, n: int) -> mp.mpf:
+    """`eps(b_n + 1) + cbar_n`, the bound on what one row `j >= n` adds to any move.
+
+    Argument (written out in the module docstring, section "The two lemmas").  Pad the certified
+    point `w` with zeros; take any move `S = L u H`, `L` below row `n`, `H` at or above it.  The
+    move's gain is the gain of `L` alone plus, for each `j` in `H`, its one-body change
+    `eps(b_j + 1) - (ln q0)/2` and its cross pairs.  Against the bi-infinite gap-2 lattice the
+    cross pairs cancel EXACTLY (the sum over pairs with one end in `H` is antisymmetric), so what
+    survives is the difference between this frame's rows below `n` and the lattice's: the wall
+    rows (gap 1, not on the lattice) and the rows `w` displaces.  Each costs at most
+    `pminus(gap - w_x)`, and every term decreases with `j`, so row `n` is the worst case."""
+    bn = b0_of(pe, n)
+    tot = epsx(mp.mpf(bn + 1))
+    for x in range(n):
+        wx = w[x] if x < len(w) else 0
+        if x < pe or wx > 0:
+            tot += pminus(bn - b0_of(pe, x) - wx)
+    return tot
+
+
+_m7 = []
+for r in _m5:
+    _w = list(r["argmax_bottom_up"])
+    _tb = tail_bound(r["pe"], _w, NROWS)
+    _m7.append((r["pe"], _tb))
+_m7worst = max(t for _, t in _m7)
+check("M7 the tail lemma holds at every certified frame",
+      all(r["pe"] <= NROWS for r in _m5) and _m7worst < LNQ_HALF,
+      f"per-row bound eps(b_N + 1) + cbar_N <= {mp.nstr(_m7worst, 8)} against (ln q0)/2 = "
+      f"{mp.nstr(LNQ_HALF, 8)} at N = {NROWS}, pe = 0..{PEMAX}.  So any move touching a row >= N "
+      f"gains strictly less than the same move without those rows, which M5 already showed is "
+      f"<= 0: the N-row maximum is the maximum over EVERY block length")
+
+# Direct cross-check on longer blocks: the padded optimum is still certified by min cut.
+_m7b = mp.mpf("-inf")
+for _pe in (0, 3, PEMAX):
+    _w = list(_m5[_pe]["argmax_bottom_up"])
+    for _extra in (4, 12):
+        _n = NROWS + _extra
+        _u = _w + [0] * (_n - len(_w))
+        for _sg in (+1, -1):
+            _m7b = max(_m7b, best_move(_u, _pe, _sg)[0])
+check("M7b longer blocks agree: no move improves the padded optimum at T = N + 4, N + 12",
+      _m7b <= GAIN_TOL,
+      f"best +-chi_S gain at pe in (0, 3, {PEMAX}), T in (N + 4, N + 12): {mp.nstr(_m7b, 6)}")
+
+print("M8  frame pe + 1 with an undisplaced bottom row IS frame pe")
+_m8 = mp.mpf(0)
+_m8n = 0
+for _ in range(40):
+    _pe = random.randint(0, 12)
+    _n = random.randint(2, 8)
+    _u = _random_feasible(_pe, _n)
+    _a = G_split(_u, _pe)
+    if _a == NEG_INF:
+        continue
+    _m8 = max(_m8, abs(G_split([0] + _u, _pe + 1) - _a))
+    _m8n += 1
+check("M8 G_{pe+1}(0, u) = G_pe(u)", _m8n >= 20 and _m8 < TOL,
+      f"{_m8n} random points, pe 0..12: max difference {mp.nstr(_m8, 4)}.  Rows j >= 1 of frame "
+      f"pe + 1 sit one position above rows j - 1 of frame pe with the same gaps and wall weights, "
+      f"and the bottom row's pair term eps(b) - eps(b + x) plus the one-body sum over b + 1..b + x "
+      f"is exactly the one-body sum over b..b + x - 1")
+
+print("M9  all-pe lemma: displacing the bottom row of a deep wall never pays")
+_eps1 = epsx(mp.mpf(1))
+_wall = LNQ * (PEMAX + 1)
+check("M9 eps(1) < ln q0 * (PEMAX + 1)", _eps1 < _wall,
+      f"eps(1) = {mp.nstr(_eps1, 10)} < ln q0 * {PEMAX + 1} = {mp.nstr(_wall, 10)}.  In frame "
+      f"pe + 1 >= {PEMAX + 1}, raising the bottom row by x >= 1 gains at most x eps(1) in its "
+      f"one-body term, pays ln q0 (pe + 1) x on the wall, and only loses on its pairs (they close).  "
+      f"So zeroing it never lowers G, and with M8 sup(frame pe + 1) = sup(frame pe) for every "
+      f"pe >= {PEMAX}: the frames beyond PEMAX add nothing")
+LEMMAS_OK = all(o for n, o, _ in CHECKS if n.startswith(("M7", "M8", "M9")))
+
 print("M6  the G1-free cut with the certified integer maximum")
 _XR: dict[int, mp.mpf] = {}
 
@@ -412,9 +532,10 @@ CUT = cut_for(B_TOP_CERT, B_INT)
 _th = E_INF_7335 - B_TOP_CERT - B_INT
 print(f"    B_bot = {mp.nstr(B_INT, 22)}  threshold {mp.nstr(_th, 8)}  "
       f"xrun({CUT}) = {mp.nstr(xrun(CUT), 8)}  xrun({CUT + 1}) = {mp.nstr(xrun(CUT + 1), 8)}")
-check("M6 the G1-free cut is enumerable for pe <= PEMAX, T <= N", CUT <= ENUM_LIMIT,
-      f"cut {CUT} against the limit {ENUM_LIMIT} (the relaxation bound gives 48).  CONDITIONAL "
-      f"on the tail lemma (T > {NROWS}) and the all-pe lemma (pe > {PEMAX}); both open")
+check("M6 the G1-free cut is enumerable for every frame and block length",
+      CUT <= ENUM_LIMIT and LEMMAS_OK,
+      f"cut {CUT} against the limit {ENUM_LIMIT} (the relaxation bound gives 48).  Unconditional "
+      f"in T and pe: M7 covers T > {NROWS}, M8 + M9 cover pe > {PEMAX}")
 
 _wit = {
     "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
@@ -434,10 +555,13 @@ _wit = {
     "B_bot_integer": mp.nstr(B_INT, 22),
     "cut_M6": {"cut": CUT, "limit": ENUM_LIMIT, "threshold": mp.nstr(_th, 22),
                "relaxation_cut": 48},
-    "open_gaps": [
-        f"tail lemma: blocks longer than N = {NROWS} rows never exceed the N-row maximum",
-        f"all-pe lemma: frames pe > {PEMAX} add nothing over pe <= {PEMAX}",
-    ],
+    "lemmas": {
+        "tail_M7": {"per_row_bound_worst": mp.nstr(_m7worst, 12), "against": mp.nstr(LNQ_HALF, 12),
+                    "per_frame": [{"pe": a, "bound": mp.nstr(b, 10)} for a, b in _m7]},
+        "all_pe_M8_M9": {"eps1": mp.nstr(_eps1, 12), "wall_cost": mp.nstr(_wall, 12),
+                         "shift_identity_max_err": mp.nstr(_m8, 4)},
+    },
+    "open_gaps": [] if LEMMAS_OK else ["tail lemma or all-pe lemma check failed; see checks"],
     "checks": [{"name": n, "ok": o, "detail": d} for n, o, d in CHECKS],
 }
 _out = os.path.join(_HERE, "rev-e-infinity-xbot-lnatural.witness.json")

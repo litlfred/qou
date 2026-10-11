@@ -6,6 +6,11 @@
   "sha256": "460f4f5432cb1f0cb5f0a9426749b9426fc8b40abe17a5f46841c877800184b2",
   "bytes": 438993,
   "pages": 31,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:21Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -18,20 +23,27 @@
   "doi": null,
   "title": "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETRY",
   "authors_raw": "ALEXEI KANEL-BELOV, ALEXEI CHILIKOV, ILYA IVANOV-POGODAEV, SERGEY MALEV",
-  "abstract": "This paper surveys results related to well-known works of B. Plotkin and V. Remeslennikov on the edge of algebra, logic and geomet ry. We start from a brief review of the paper and motivations. The \ufb01rst section s deal with model theory. In Section 2.1 we describe the geometric equivalenc e, the elementary equiv- alence, and the isotypicity of algebras. We look at these not ions from the positions of universal algebraic geometry and make emphasis on the cas es of the \ufb01rst order rigidity. In this setting Plotkin\u2019s problem on the structur e of automorphisms of (auto)endomorphisms of free objects, and auto-equivalenc e of categories is pretty natural and important. Section 2.2 is dedicated to particul ar cases of Plotkin\u2019s problem. Section 2.3 is devoted to Plotkin\u2019s problem for aut omorphisms of the group of polynomial symplectomorphisms. This setting has a pplications to math- ematical physics through the use of model theory (non-stand ard analysis) in the studying of homomorphisms between groups of symplectomorp hisms and automor- phisms of the Weyl algebra. The last two sections deal with al gorithmic problems for noncommutative and commutative algebraic geometry. Se ction 3.1 is devoted to the Gr\u00a8 obner basis in non-commutative situation. Despit e the existence of an algorithm for checking equalities, the zero divisors and ni lpotency problems are al- gorithmically unsolvable. Section 3.2 is connected with th e problem of embedding of algebraic varieties; a sketch of the proof of its algorith mic undecidability over a \ufb01eld of characteristic zero is given. Dedicated to the 70-th anniversary of A.L. Semenov and to the 95-th anniversary of B.I. Plotkin.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20200924211841-04'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
-  "title_prev": "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETR Y",
   "title_lines": [
    "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND",
    "SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC",
    "GEOMETRY"
-  ]
+  ],
+  "abstract": "This paper surveys results related to well-known works of B. Plotkin and V. Remeslennikov on the edge of algebra, logic and geometry. We start from a brief review of the paper and motivations. The \ufb01rst sections deal with model theory. In Section 2.1 we describe the geometric equivalence, the elementary equiv- alence, and the isotypicity of algebras. We look at these notions from the positions of universal algebraic geometry and make emphasis on the cases of the \ufb01rst order rigidity. In this setting Plotkin\u2019s problem on the structure of automorphisms of (auto)endomorphisms of free objects, and auto-equivalence of categories is pretty natural and important. Section 2.2 is dedicated to particular cases of Plotkin\u2019s problem. Section 2.3 is devoted to Plotkin\u2019s problem for automorphisms of the group of polynomial symplectomorphisms. This setting has applications to math- ematical physics through the use of model theory (non-standard analysis) in the studying of homomorphisms between groups of symplectomorphisms and automor- phisms of the Weyl algebra. The last two sections deal with algorithmic problems for noncommutative and commutative algebraic geometry. Section 3.1 is devoted to the Gr\u00a8obner basis in non-commutative situation. Despite the existence of an algorithm for checking equalities, the zero divisors and nilpotency problems are al- gorithmically unsolvable. Section 3.2 is connected with the problem of embedding of algebraic varieties; a sketch of the proof of its algorithmic undecidability over a \ufb01eld of characteristic zero is given. Dedicated to the 70-th anniversary of A.L. Semenov and to the 95-th anniversary of B.I. Plotkin.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20200924211841-04'00'"
+  },
+  "title_raw": "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETRY",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETRY Dedicated to the 70-th anniversary of A.L. Semenov and to the 95-th anniversary of B.I. Plotkin. Contents Introduction Model-theoretical aspects Algebraic geometry over algebraic systems Pl",
+   "outline": "1. Introduction",
+   "text": "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETRY",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -39,67 +51,327 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Model-theoretical aspects",
    "page": 5,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Algebraic geometry over algebraic systems",
    "page": 5,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Plotkin's problem: automorphisms of endomorphism semigroups and groups of polynomial automorphisms",
    "page": 13,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "On the independence of the B-KK isomorphism of infinite prime and Plotkin conjecture for symplectomorphisms",
    "page": 13,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Algorithmic aspects of algebraic geometry",
    "page": 23,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Finite Gr\u00f6bner basis algebras with unsolvable nilpotency problem and zero divisors problem",
    "page": 23,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "On the algorithmic undecidability of the embeddability problem for algebraic varieties over a field of characteristic zero",
    "page": 25,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 28,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1955,
+   "n_words": 285,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -107,8 +379,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 15250,
-   "n_words": 2571
+   "n_chars": 15055,
+   "n_words": 2375,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-model-theoretical-aspects",
@@ -118,7 +392,9 @@
    "page_start": 5,
    "page_end": 5,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-21-algebraic-geometry-over-algebraic-systems",
@@ -127,8 +403,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 13,
-   "n_chars": 28875,
-   "n_words": 5241
+   "n_chars": 28482,
+   "n_words": 4924,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-23-on-the-independence-of-the-b-kk-isomorphism-o",
@@ -137,8 +415,10 @@
    "level": 2,
    "page_start": 13,
    "page_end": 23,
-   "n_chars": 27348,
-   "n_words": 5384
+   "n_chars": 26843,
+   "n_words": 4878,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-3-algorithmic-aspects-of-algebraic-geometry",
@@ -146,42 +426,67 @@
    "title": "Algorithmic aspects of algebraic geometry",
    "level": 1,
    "page_start": 23,
-   "page_end": 25,
-   "n_chars": 7038,
-   "n_words": 1532
+   "page_end": 23,
+   "n_chars": 179,
+   "n_words": 26,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-32-on-the-algorithmic-undecidability-of-the-embe",
+   "id": "sec-005-31-finite-gr\u00f6bner-basis-algebras-with-unsolvable",
+   "number": "3.1",
+   "title": "Finite Gr\u00f6bner basis algebras with unsolvable nilpotency problem and zero divisors problem",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 6536,
+   "n_words": 1249,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-32-on-the-algorithmic-undecidability-of-the-embe",
    "number": "3.2",
    "title": "On the algorithmic undecidability of the embeddability problem for algebraic varieties over a field of characteristic zero",
    "level": 2,
    "page_start": 25,
    "page_end": 28,
-   "n_chars": 8595,
-   "n_words": 1866
+   "n_chars": 8438,
+   "n_words": 1709,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-references",
+   "id": "sec-007-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 28,
    "page_end": 31,
-   "n_chars": 17845,
-   "n_words": 2725
+   "n_chars": 17678,
+   "n_words": 2558,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 9,
-  "sections": 7,
-  "chars_total": 104951,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 9,
+  "chars_total": 105166,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 29,
-   "overlaid": 5,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -189,10 +494,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.932,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -206,7 +516,7 @@
      "id": "sec-002-21-algebraic-geometry-over-algebraic-systems",
      "title": "Algebraic geometry over algebraic systems",
      "prose_ratio": 0.968,
-     "coverage_ratio": 0.965,
+     "coverage_ratio": 0.96,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -214,28 +524,36 @@
      "id": "sec-003-23-on-the-independence-of-the-b-kk-isomorphism-o",
      "title": "On the independence of the B-KK isomorphism of infinite prime and Plotkin conjecture for symplectomorphisms",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.981,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-3-algorithmic-aspects-of-algebraic-geometry",
      "title": "Algorithmic aspects of algebraic geometry",
-     "prose_ratio": 0.994,
-     "coverage_ratio": 0.802,
+     "prose_ratio": 0.933,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-005-32-on-the-algorithmic-undecidability-of-the-embe",
+     "id": "sec-005-31-finite-gr\u00f6bner-basis-algebras-with-unsolvable",
+     "title": "Finite Gr\u00f6bner basis algebras with unsolvable nilpotency problem and zero divisors problem",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.767,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-32-on-the-algorithmic-undecidability-of-the-embe",
      "title": "On the algorithmic undecidability of the embeddability problem for algebraic varieties over a field of characteristic zero",
      "prose_ratio": 0.995,
-     "coverage_ratio": 0.949,
+     "coverage_ratio": 0.947,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-references",
+     "id": "sec-007-references",
      "title": "References",
      "result": "no matching \\section"
     }

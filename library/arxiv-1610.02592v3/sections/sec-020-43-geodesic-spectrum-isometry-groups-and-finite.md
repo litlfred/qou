@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-020-43-geodesic-spectrum-isometry-groups-and-finite
 section_title: "Geodesic spectrum, isometry groups, and finite covers"
 section_number: 4.3
 pages: 131-136
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.991
+latex_coverage_ratio: 0.956
 ---
 \label{geodesic:spectrum:section}
 We now study the geodesic spectrum and the isometry group of hyperbolic manifolds. The geodesic spectrum of $M$ is the set of the lengths of all the closed geodesics in $M$. We prove that a finite-volume $M$ has a discrete geodesic spectrum (with finite multiplicities) and a finite isometry group.\index{geodesic spectrum}

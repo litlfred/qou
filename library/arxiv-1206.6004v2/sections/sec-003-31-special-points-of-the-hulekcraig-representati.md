@@ -1,17 +1,16 @@
 ---
 doc_id: arxiv-1206.6004v2
-doc_title: ""
+doc_title: "Symmetry, Integrability and Geometry: Methods and Applications"
 section_id: sec-003-31-special-points-of-the-hulekcraig-representati
 section_title: "Special points of the Hulek–Craig representation and desingularisation"
 section_number: 3.1
 pages: 4-4
 source_pdf: 1206.6004v2.pdf
 source_sha256: b490672c8c3557dd
-doc_brief: "Bring’s Curve: its Period Matrix and the Vector of Riemann Constants ⋆ — Bring’s curve is the genus 4 Riemann surface with automorphism group of maximal size, S5."
-duplicate_of: "sigma12-065"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
-latex_coverage_ratio: 0.947
+latex_coverage_ratio: 0.956
 ---
 []{#section3.1 label="section3.1"}
 

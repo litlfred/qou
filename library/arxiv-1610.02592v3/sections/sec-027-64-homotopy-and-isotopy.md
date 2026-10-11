@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-027-64-homotopy-and-isotopy
 section_title: "Homotopy and isotopy"
 section_number: 6.4
 pages: 189-193
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.845
+latex_coverage_ratio: 0.964
 ---
 We have proved that ``homotopy implies isotopy'' for non-trivial simple closed curves in $S_g$, and now we want to prove an analogous result for diffeomorphisms of $S_g$.
 A crucial ingredient is the following theorem proved by Smale in the 1950s, which considers the self-diffeomorphisms of the disc $D^2$.

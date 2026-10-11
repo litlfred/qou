@@ -4,13 +4,13 @@ doc_title: "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
-pages: 1-6
+pages: 1-5
 source_pdf: 1409.0848v3.pdf
 source_sha256: 5af73ef812ccee40
-doc_brief: "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES — This work forms a foundational study of factorization homol ogy, or topological chiral homology, at the generality of stratiﬁed spaces with tangen tial"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.899
+latex_coverage_ratio: 0.933
 ---
 The present work forms an initial step in a formalism for topological quantum field theory using stratified spaces. This larger program proposes to understand locality in topological quantum field theory by a fusion of the algebra of factorization homology and the geometry of stratifications. Before delineating this step and, briefly, this future program, we first review the subject of factorization homology.
 
