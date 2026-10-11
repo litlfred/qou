@@ -97,12 +97,105 @@ nothing**; the three producers now label it a fit in place. The third witness,
 **different object** — a jet-prolongation order, per that producer's own
 docstring — so the name is a collision, not a third consumer of this rule.
 
+#### 🛑 CORRECTION (2026-10-11) — the May towers rest on HARDCODED inputs, and my own table above used |tower|
+
+Three separate defects, in increasing order of how much they matter. The first
+is mine.
+
+**(i) My table reported `abs(total_tower)`, which hides a sign.** The witness's
+signed `total_tower` for tritium is **−1.9370**, not `1.9370`, against an AME
+binding of **+8.4818**. A negative tower against a positive binding is not a
+"77.2 % shortfall" — it is the **wrong sign**, which is a different and worse
+statement. Deuteron (+0.8764) and ³He (+1.0659) are positive; only T flips.
+
+**(ii) The May probe's inputs are partly INVENTED, verbatim in its source.**
+`DOMINANT_PARTITION` is a hand-written literal dict, and three of its nine
+entries were never computed:
+
+```python
+DOMINANT_PARTITION = {
+    "deuteron": {"lambda": [2, 2, 1, 1], "dim": 9,
+                 "contrib_k1": 0.0,      # negligible
+                 "contrib_k2": -6.2203,
+                 "contrib_k3": -65.0},   # approximate (eigenvalue spectrum recomputed)
+    "tritium":  {"lambda": [6, 3], "dim": 48,
+                 "contrib_k1": 0.05,
+                 "contrib_k2": -3.0006,
+                 "contrib_k3": -27.0},   # approximate
+    # ... he3 omitted; its three k entries are all computed
+}
+```
+
+**For deuteron this voids the result entirely.** The rule sets `k_λ = 1` on the
+cut block, so the tower is `non_dominant_sum + contrib_k1(cut)` — and the
+witness records exactly `0.87640 + 0.00000 = 0.8764`. **The rule's whole effect
+on deuteron was a literal `0.0` annotated "negligible".** The deuteron
+"closure" is the non-dominant sum alone; it never measured the rule.
+
+**(iii) Recomputed at 60 dps, the towers move — relayed, not measured here.**
+From a sibling session (two independent routes agreeing to 2e-58, rebuilt from
+the braid word at `e2204a4a5d55` with Hoefsmit σ and Wenzl `y_λ`), under the
+May setup (convention C, muon CODATA-2018): **D 0.2550**, **T −1.9719**,
+**³He 1.0656**, with D's real `contrib_k1` = **−0.62148** rather than 0. That
+also reports the PR #638 witness's `y_λ` wrong by up to **1.15e-4** relative at
+`n = 9`, and the uncomputed `k=3` entries as **D −32.94** (hardcoded −65) and
+**T −23.50** (hardcoded −27).
+
+I did **not** recompute these. What I can check is that they are arithmetically
+consistent with the committed witness: `0.87640 + (−0.62148) = 0.25492`, against
+the relayed `0.2550`. Treat the 60-dps figures as relayed-and-consistent, and
+the hardcoding in (ii) as verified from source.
+
+**So the corrected comparison is:**
+
+| atom | cut block | rows | May tower (signed) | provenance of that number | AME `B` (MeV) |
+|---|---|---:|---:|---|---:|
+| deuteron | `[2,2,1,1]` | **4** | +0.8764 | **cut block's `k=1` term hardcoded `0.0`** — non-dominant sum alone; relayed 60-dps value 0.2550 | 2.2246 |
+| tritium | `[6,3]` | 2 | **−1.9370** | `k=3` hardcoded `−27.0 # approximate`; relayed −1.9719 | 8.4818 |
+| ³He | `[5,4]` | 2 | +1.0659 | the only atom whose three `k` entries are all its own data; relayed 1.0656 | 7.7181 |
+
+The conclusion is unchanged and **strengthened**: no atom's tower approaches its
+binding, T has the wrong sign, and the `|tower| < 2` criterion is still
+satisfied by driving the tower toward zero. What changes is that for deuteron
+there was never a computation to be anti-correlated with.
+
+**(iv) Under convention D the criterion itself fails — and for deuteron the cut
+is provably a NO-OP.** Relayed, at the proton pin: towers **0.2222 / 2.8116 /
+−0.0098**, so **tritium fails `|tower| < 2`** under the canonical convention.
+Independently of any compute, verifiable from the corpus: deuteron's cut block
+`[2,2,1,1]` has **four rows**, and
+`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows` (sorry-free,
+general `n`) gives `y_λ = 0` for every shape with a third row. **So under
+convention D the block the rule flips for deuteron carries zero Ocneanu weight,
+and changing its truncation order cannot change the tower at all.** T `[6,3]`
+and ³He `[5,4]` are two-row and survive. That is a structural statement and does
+not depend on the 60-dps numbers.
+
+**(v) "max-|μ|" is more broadly wrong than stated above.** The entry above cites
+the probe's docstring sentence placing T's `max|μ| = 8.23` at `[4,3,1,1]`.
+Relayed from the float64 data itself, `argmax|μ|` differs from the cut block for
+**all three** atoms — D `[3,3]`, T `[3,3,3]`, ³He `[3,3,3]` — so the mislabel is
+not a one-atom discrepancy. The rule was max-|contrib| throughout.
+
 **What would replace it:** a *derived* structural selector `λ ↦ k_λ`, or a
 proof that none exists. Bean `qou-9f4h`, which stays open per §13a (the
-question is part of an open conjecture). The one route the May ledger left
-unexplored is the **full off-diagonal-Gram SDP**, still recorded `UNTESTED`
-there; the diagonal-Gram simplification is already refuted (1/3). Whatever
-replaces it may **not** be selected against AME.
+question is part of an open conjecture). 🛑 **The route the May ledger left unexplored is now itself
+excluded in the block basis** (relayed 2026-10-11, scope **(b)**, invariant
+named): the `e_λ` are *central orthogonal idempotents*, so
+`tr_M(e_λ e_μ) = δ_λμ · tr_M(e_λ)` and the Gram is **diagonal by
+construction** — measured max off-diagonal `1.7e-52`. The LP therefore
+degenerates to "pick the cheapest block" and agrees with the fitted rule
+**0 / 3**. So the "full off-diagonal-Gram SDP" that the ledger still records as
+`UNTESTED | next probe` has no off-diagonal structure to find.
+
+**Scope that exclusion carefully.** It is stated *in the block basis*. The
+ledger's own phrasing is `tr_M(b_i · b_j)` over **braid-word** elements
+`b_i`, which are not idempotents and whose Gram need not be diagonal — so what
+is excluded is the idempotent/block-basis reading, not every reading of that
+sentence. Both surviving routes in the ledger (this, and the Hoefsmit
+hook-content asymptotic along a reduced braid word) should be re-stated in the
+basis they are meant in before either is called dead. Whatever replaces the rule
+may **not** be selected against AME.
 
 ### Refuted `n⋆` families split out of `conj:brane-tower-z-habiro`
 

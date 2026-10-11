@@ -458,7 +458,7 @@ no overlap with my files; no rebase required.
 | LP cost argmax | refuted (1/3) | PR #639 cycle 6 |
 | **SDP with diagonal Gram** | refuted (1/3) | **PR #639 cycle 6** |
 | Per-partition k_λ (selects the max-\|contrib\| block; **FITTED**) | **fitted — see note below** | PR #639 cycle 5b |
-| SDP with full off-diagonal Gram | UNTESTED | next probe |
+| SDP with full off-diagonal Gram | **excluded in the BLOCK basis** (scope (b), 2026-10-11) — see note | PR #639 cycle 6 / relay |
 
 ### Open structural question (sharpened)
 
@@ -485,16 +485,42 @@ no overlap with my files; no rebase required.
 > It records `ame_MeV` beside each atom and does not test against it. Recomputed
 > from its committed witness:
 >
-> | atom | flipped block | tower (fitted) | AME `B` | miss |
-> |---|---|---:|---:|---:|
-> | deuteron | `[2,2,1,1]` | 0.8764 | 2.2246 | **−60.6 %** |
-> | tritium | `[6,3]` | 1.9370 | 8.4818 | **−77.2 %** |
-> | ³He | `[5,4]` | 1.0659 | 7.7181 | **−86.2 %** |
+> | atom | cut block | rows | tower (signed) | AME `B` | provenance of the tower |
+> |---|---|---:|---:|---:|---|
+> | deuteron | `[2,2,1,1]` | **4** | +0.8764 | 2.2246 | cut block's `k=1` term is a **hardcoded `0.0`** |
+> | tritium | `[6,3]` | 2 | **−1.9370** | 8.4818 | **wrong sign**; `k=3` hardcoded |
+> | ³He | `[5,4]` | 2 | +1.0659 | 7.7181 | the only fully computed row |
 >
 > The criterion is satisfied by driving the tower *toward zero* while the AME
 > bindings are 2.22 / 8.48 / 7.72 — it is **anti-correlated** with the data it was
-> taken to close. Deriving a real selector, or proving none exists, is bean
-> `qou-9f4h`; the question remains the open part of `conj:brane-tower-z-habiro`.
+> taken to close.
+>
+> **🛑 CORRECTED 2026-10-11, twice, and the first is mine.** This table first
+> reported `|tower|`, so tritium appeared as `1.9370` with a "−77.2 % miss"; the
+> signed value is **−1.9370** against a binding of **+8.4818**, i.e. the **wrong
+> sign**, which is a different and worse statement. And **three of the probe's
+> nine dominant-block entries were never computed** — `DOMINANT_PARTITION` is a
+> hand-written literal dict carrying `"contrib_k1": 0.0,  # negligible` for
+> deuteron. For deuteron that **voids the result**: the rule sets `k=1` on the cut
+> block, so the tower *is* `non_dominant_sum + contrib_k1(cut)` =
+> `0.87640 + 0.00000`. The rule's whole effect on that atom was the literal zero.
+>
+> Relayed (60 dps, two routes agreeing to 2e-58; **not** recomputed here): D's
+> real `k=1` term is **−0.62148**, giving **0.2550 / −1.9719 / 1.0656** under the
+> May setup and **0.2222 / 2.8116 / −0.0098** under convention D at the proton
+> pin — where **tritium fails `|tower| < 2`**, so the closure criterion itself
+> fails under the canonical convention. Checkable here:
+> `0.87640 + (−0.62148) = 0.25492`, consistent with the relayed `0.2550`.
+>
+> **Under convention D the deuteron cut is a provable no-op**, needing no
+> compute: `[2,2,1,1]` has **four** rows, and
+> `QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows` (sorry-free,
+> general `n`) gives `y_λ = 0` for any shape with a third row — so the block the
+> rule flips carries zero Ocneanu weight and its truncation order cannot move the
+> tower.
+>
+> Deriving a real selector, or proving none exists, is bean `qou-9f4h`; the
+> question remains the open part of `conj:brane-tower-z-habiro`.
 
 The closed-form **substrate-derivable** identification of that
 selector is the remaining open piece. Two routes remain:
@@ -503,6 +529,23 @@ selector is the remaining open piece. Two routes remain:
    $\mathrm{tr}_M(b_i \cdot b_j)$ across distinct Wedderburn blocks
    via Hoefsmit matrix products. The diagonal simplification is
    shown insufficient.
+
+   > **🛑 EXCLUDED IN THE BLOCK BASIS — scope (b), invariant named (relayed
+   > 2026-10-11).** If the $b_i$ are taken to be the Wedderburn idempotents
+   > $e_\lambda$, there is no off-diagonal structure to find: the $e_\lambda$ are
+   > **central orthogonal idempotents**, so
+   > $\mathrm{tr}_M(e_\lambda e_\mu) = \delta_{\lambda\mu}\,\mathrm{tr}_M(e_\lambda)$
+   > and the Gram is **diagonal by construction** — measured max off-diagonal
+   > $1.7\times 10^{-52}$. The LP then degenerates to "pick the cheapest block"
+   > and agrees with the fitted rule **0 / 3**.
+   >
+   > **Scope it carefully.** The sentence above says $b_i$, i.e. **braid-word**
+   > elements, which are *not* idempotents and whose Gram need not be diagonal.
+   > So what is excluded is the idempotent/block-basis reading, **not** every
+   > reading of this route. Per AGENTS.md §"Before declaring refuted" this is a
+   > legitimate (b) for the stated basis and not a (b) for the route as worded
+   > here. Re-state the basis before calling it dead — and the same applies to
+   > route 2 below. Bean `qou-9f4h`.
 2. **Hoefsmit hook-content asymptotic along a reduced braid word**
    ($(q, \beta)$-aware, per `rem:per-partition-k-lambda-rule`'s
    open question section).

@@ -67,15 +67,44 @@ y_λ(0), the SDP shadow price y_λ⋆, and a `tier` provenance flag.
     It records `ame_MeV` alongside and does not test against it. Recomputed from
     its committed witness:
 
-        atom      flipped blk    tower(fitted)    AME B     miss
-        deuteron  [2,2,1,1]            0.8764    2.2246   -60.6%
-        tritium   [6,3]                1.9370    8.4818   -77.2%
-        he3       [5,4]                1.0659    7.7181   -86.2%
+        atom      cut blk    rows   tower(signed)   AME B   provenance of the tower
+        deuteron  [2,2,1,1]     4         +0.8764  2.2246   cut block's k=1 term is
+                                                            a HARDCODED 0.0
+        tritium   [6,3]         2         -1.9370  8.4818   WRONG SIGN; k=3 hardcoded
+        he3       [5,4]         2         +1.0659  7.7181   the only fully computed row
 
-    So the criterion is satisfied by driving the tower TOWARD ZERO while the AME
-    bindings are 2.22 / 8.48 / 7.72 -- it is anti-correlated with the data it was
-    taken to close. "Closes all 3 atoms" is a magnitude threshold, not an
-    agreement.
+    🛑 CORRECTED 2026-10-11, twice over, and the first correction is mine.
+
+    (i) THIS TABLE FIRST REPORTED |tower|, so tritium appeared as 1.9370 with a
+    "-77.2% miss". The signed value is -1.9370 against a binding of +8.4818:
+    that is the WRONG SIGN, a different and worse statement than a shortfall.
+
+    (ii) THREE OF THE PROBE'S NINE DOMINANT-BLOCK ENTRIES WERE NEVER COMPUTED.
+    `DOMINANT_PARTITION` is a hand-written literal dict carrying
+    `"contrib_k1": 0.0,  # negligible` for deuteron and `# approximate` k=3
+    values for deuteron and tritium. For DEUTERON THIS VOIDS THE RESULT: the
+    rule sets k=1 on the cut block, so the tower IS
+    `non_dominant_sum + contrib_k1(cut)` = 0.87640 + 0.00000. The rule's whole
+    effect on deuteron was that literal zero.
+
+    Relayed from a sibling session (60 dps, two routes agreeing to 2e-58; NOT
+    recomputed here): D's real k=1 term is -0.62148, giving towers D 0.2550 /
+    T -1.9719 / 3He 1.0656 under the May setup, and 0.2222 / 2.8116 / -0.0098
+    under convention D at the proton pin -- where TRITIUM FAILS |tower| < 2, so
+    the closure criterion itself fails under the canonical convention. Checkable
+    here: 0.87640 + (-0.62148) = 0.25492, consistent with the relayed 0.2550.
+
+    AND UNDER CONVENTION D THE DEUTERON CUT IS A PROVABLE NO-OP, needing no
+    compute: [2,2,1,1] has FOUR rows, and
+    `QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows` (sorry-free,
+    general n) gives y_lambda = 0 for any shape with a third row. The block the
+    rule flips carries zero Ocneanu weight, so its truncation order cannot move
+    the tower.
+
+    The conclusion is unchanged and STRENGTHENED. No tower approaches its
+    binding, T has the wrong sign, the |tower| < 2 criterion is still met by
+    driving the tower toward zero -- and for deuteron there was never a
+    computation for it to be anti-correlated with.
 
     THE VALUE IS UNCHANGED BY THIS NOTE. `k_lambda` is emitted as before, and
     nothing reads it numerically; what changes is that it is now labelled a fit
@@ -191,7 +220,7 @@ class KnotPartitionAtomCell:
     # continuous parameter tuned. The "max-|μ|" label this comment carried is
     # additionally wrong: for tritium the flipped block is [6,3] while max|μ| sits
     # at [4,3,1,1]. See the module docstring's `k_λ` note for the probe quote, the
-    # per-atom AME misses (-60.6% / -77.2% / -86.2%), and
+    # per-atom AME comparison (and the hardcoded inputs behind it), and
     # docs/audits/2026-06-17-refuted-ansatz-lemmas.md. Deriving a real selector is
     # bean qou-9f4h.
     k_lambda: int

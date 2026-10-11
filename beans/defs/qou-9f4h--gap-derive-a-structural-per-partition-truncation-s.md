@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-10T18:19:11Z
-updated_at: 2026-10-10T18:22:21Z
+updated_at: 2026-10-11T05:42:03Z
 parent: b9cj
 ---
 
@@ -128,3 +128,98 @@ that published "closes" / "max-|μ|" are corrected (PR #7586).
 whose subject is an open conjecture"* — recording that the current rule is a fit
 is not deriving a selector. This closes only when a structural `λ ↦ k_λ` is
 derived, or its non-existence is proved.
+
+---
+
+## 2026-10-11 — the May towers rest on HARDCODED inputs; the off-diagonal-Gram route is excluded in the block basis; my own table used |tower|
+
+Findings relayed from a sibling session at ofri's request. **Separated below
+into what I verified from the repo and what I am carrying on relay**, because
+three of them bear on numbers this bean and PR #7586 already published.
+
+### VERIFIED HERE, from the primary source
+
+**1. My own table used `abs(total_tower)`, hiding a sign.** The witness's
+signed `total_tower` for tritium is **−1.9370**, against an AME binding of
+**+8.4818**. That is the **wrong sign**, not a "77.2 % shortfall" — a different
+and worse statement. D (+0.8764) and ³He (+1.0659) are positive; only T flips.
+This was my error, in the figures written into three producers and two docs.
+
+**2. Three of the May probe's nine dominant-block entries were never
+computed.** `DOMINANT_PARTITION` is a hand-written literal dict:
+
+    "deuteron": {"lambda": [2,2,1,1], "contrib_k1": 0.0,    # negligible
+                                      "contrib_k3": -65.0,  # approximate
+    "tritium":  {"lambda": [6,3],     "contrib_k3": -27.0,  # approximate
+
+**For deuteron this voids the result.** The rule sets `k_λ = 1` on the cut
+block, so the tower is `non_dominant_sum + contrib_k1(cut)`, and the witness
+records exactly `0.87640 + 0.00000 = 0.8764`. **The rule's entire effect on
+deuteron was a literal `0.0` annotated "negligible".** The deuteron "closure"
+is the non-dominant sum alone — it never measured the rule at all.
+
+**3. Under convention D, deuteron's cut is provably a NO-OP** — and this needs
+no compute. `[2,2,1,1]` has **four rows**, and
+`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows` (sorry-free,
+general `n`) gives `y_λ = 0` for every shape with a third row. So under the
+canonical convention the block the rule flips for deuteron carries **zero
+Ocneanu weight**, and changing its truncation order cannot move the tower. T
+`[6,3]` and ³He `[5,4]` are two-row and survive. Structural, and independent of
+every number below.
+
+### RELAYED, arithmetically consistent, NOT recomputed here
+
+Sibling session, 60 dps, two independent routes agreeing to 2e-58, rebuilt from
+the braid word at `e2204a4a5d55` with Hoefsmit σ and Wenzl `y_λ`. Full report
+cited as `/mnt/project-files/mass-endomorphism/klambda/recheck-tower-precision.md`
+(not readable from this container).
+
+- **May setup** (convention C, muon CODATA-2018): **D 0.2550**, **T −1.9719**,
+  **³He 1.0656**; D's real `contrib_k1` = **−0.62148**, not 0.
+- The uncomputed `k=3` entries: **D −32.94** (hardcoded −65), **T −23.50**
+  (hardcoded −27).
+- The PR #638 witness's `y_λ` are wrong by up to **1.15e-4** relative at `n = 9`.
+- **Convention D at the proton pin**: **0.2222 / 2.8116 / −0.0098** — so
+  **tritium fails `|tower| < 2`**, i.e. the closure criterion itself fails under
+  the canonical convention.
+- `argmax|μ|` differs from the cut block for **all three** atoms — D `[3,3]`,
+  T `[3,3,3]`, ³He `[3,3,3]`. So the "max-|μ|" mislabel is broader than the
+  one-atom discrepancy recorded above; the rule was max-|contrib| throughout.
+
+**The one consistency check available to me without recomputing:**
+`0.87640 + (−0.62148) = 0.25492` against the relayed `0.2550`. ✓
+
+### 🛑 The route this bean named as the last untested one is now EXCLUDED — scope (b), in the block basis
+
+This bean's §"The one route the May ledger never tested" named the **full
+off-diagonal-Gram SDP**. Relayed exclusion, with its invariant named: the `e_λ`
+are **central orthogonal idempotents**, so `tr_M(e_λ e_μ) = δ_λμ · tr_M(e_λ)`
+and the Gram is **diagonal by construction** — measured max off-diagonal
+`1.7e-52`. The LP then degenerates to "pick the cheapest block" and agrees with
+the fitted rule **0 / 3**.
+
+**But scope it, and do not over-read it.** That is an exclusion *in the block
+basis*. The ledger's own phrasing is `tr_M(b_i · b_j)` over **braid-word**
+elements `b_i`, which are not idempotents and whose Gram need not be diagonal.
+So what is excluded is the idempotent/block-basis reading of that sentence, not
+every reading of it. Per AGENTS.md §"Before declaring refuted", this is a
+legitimate **(b)** for the stated basis and **not** a (b) for the route as the
+ledger words it. Before calling the route dead, re-state it — and the sibling
+route (Hoefsmit hook-content asymptotic along a reduced braid word) — in the
+basis each is meant in.
+
+### What this leaves
+
+The ten refuted candidates stand. The seventh (the live fitted rule) is now
+known to rest on invented inputs as well as on selection against the target, and
+to be a no-op for deuteron under the canonical convention. The block-basis SDP
+is excluded. **No derived selector exists, and the search space is smaller than
+this bean recorded yesterday.**
+
+The sibling session reports it is now (a) re-running on the current braid word
+under convention D and (b) **pre-registering q-only truncation rules before
+scoring them** — which is the right shape under §NO FITTING, since
+pre-registration is what makes a rule a prediction rather than a selection.
+
+**Still `todo`.** Nothing here derives a selector; most of it narrows the space
+and corrects the record.

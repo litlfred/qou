@@ -307,8 +307,12 @@ def derive_h3_knot(
             # The "max-|μ|" label is separately wrong: for tritium the
             # flipped block is [6,3] while max|μ| sits at [4,3,1,1].
             # Its "closes" verdict meant |tower| < 2 and was never
-            # compared to AME; when compared, the misses are -60.6% /
-            # -77.2% / -86.2%. Note mu_eigenvalues is ["?", "?"] here, so
+            # compared to AME, and three of its nine dominant-block
+            # entries were hardcoded rather than computed -- including
+            # deuteron's k=1 term, as a literal 0.0 "# negligible", which
+            # is the whole effect the rule has on that atom. See the
+            # corrected table in derived_chi_catalogue.py.
+            # Note mu_eigenvalues is ["?", "?"] here, so
             # a max-|μ| rule could not have been evaluated at this site
             # at all. Value unchanged; nothing reads it numerically.
             # Deriving a real selector is bean qou-9f4h.
