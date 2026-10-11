@@ -1,7 +1,7 @@
 ---
 # qou-opjb
 title: 'GAP: neutron-prediction-comparison displays p*(A) while naming n_pred(p), and its c = 0.01497 traces to an SEMF ratio, not to a definition in the corpus'
-status: completed
+status: in-progress
 type: task
 priority: high
 tags:
@@ -244,6 +244,7 @@ quote the `a_asym = 23.50663` MeV vs SEMF `a_A = 23.69` MeV agreement (0.77 %)
 as evidence for the framework — `a_asym` is a chosen monomial in q-integers, so
 that is a postdiction of an empirical constant by an assignment, which is
 exactly the comparison §NO FITTING says to rank below a derivation.
+- 2026-10-11 (after #7652 merged): measured the source of `tbl:stability-cubic-plot-table-data`. Tried p = A/(2 + k·c·A^{2/3}) for k ∈ {1/2, 1, 2, 4} at both c (mpmath, 30 dps). Best is k = 1 (the probe's inversion), total |ΔN| over the 14 rows = 24 (old c) / 26 (new c). No variant gives N = 20 for Ca (all give 22–38), while the table's N_pred column equals its N_obs column in 10 of 14 rows. So N_pred is not produced by this c under any of these normalisations, and the block's "ΔN is zero up to iron, at most 2 everywhere" is not reproducible. Owner decision pending.
 
 
 ## 2026-10-10 — owner decision 1b ENACTED: `c = λ_C/(2·a_asym) ≈ 0.01452` published, labelled "assigned, not derived"
