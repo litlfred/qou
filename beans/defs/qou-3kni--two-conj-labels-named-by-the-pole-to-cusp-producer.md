@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-14T19:57:29Z
-updated_at: 2026-10-10T14:32:58Z
+updated_at: 2026-10-11T07:39:45Z
 parent: b9cj
 ---
 
@@ -453,3 +453,91 @@ another.
 the open `A_ω → S` identification, and the per-label disposition of the 26 is
 still the owner's call — the ratchet makes the surface *drainable*, it does not
 decide how.
+
+---
+
+## 2026-10-11 — THE SURFACE IS DRAINED: 26 → 0, and the threshold was never the thing to change
+
+All three groups retired. `26 → 0` dead labels, `58 → 0` citations; the gate
+runs at `--max 0` and now blocks any NEW dead citation from zero.
+
+### 🛑 This corrects my own reasoning from yesterday
+
+I argued — in the audit's header, the gate entry, this bean and two PR comments
+— that **0 is unreachable** "while any producer explains a retired label in
+prose", and built a draining ratchet around that premise. **The premise held
+only because the explanations were written in LABEL SYNTAX.**
+
+Drop the `prop:`/`conj:` prefix — write *"the retired
+`constit-factor-tau-M-proton-identity` proposition"* and point at the record
+doc — and the prose keeps every pointer a reader needs while the detector stops
+counting it. The audit scans `computations/**/*.py` docstrings only, so a record
+doc in `docs/` is outside its scan by construction.
+
+So **the ratchet was the right mechanism for a surface that could not drain; it
+turned out this one could.** The ratchet stays (it is what blocks a regression),
+but at 0 rather than 26.
+
+### What a reader gains, not loses
+
+| before | after |
+|---|---|
+| a bare `prop:X` in a docstring, resolving to nothing | the stem (still greppable through history) + [`docs/audits/2026-10-11-retired-label-records.md`](../../docs/audits/2026-10-11-retired-label-records.md), carrying per label what it **stated**, the commit that **retired** it, and the exact command to **recover** the content |
+
+Group A's paths are **commit-pinned** at `0763606e4f^`, since `_deprecated/`
+left `main` on 2026-10-10.
+
+### The three groups, drained per label and not per group
+
+| group | labels | citations | remedy |
+|---|---:|---:|---|
+| C — never existed | 7 | 8 occ / 6 files | named in words, no prefix; nothing to point at |
+| B — deleted outright | 9 | 17 occ / 11 files | de-prefixed + the deleting commit |
+| A — demoted to `_deprecated/` | 10 | 45 occ / 39 files | de-prefixed + record doc §A |
+
+**Read per label, not per group.** `prop:per-partition-k-lambda-rule` is in C
+("never existed") but its **content** existed under the `rem:` spelling in B,
+so its citation is **redirected** to `2026-06-17-refuted-ansatz-lemmas.md`, not
+removed — a blanket "C → delete" would have thrown away a live pointer.
+
+### Two things deliberately NOT done
+
+- **`channel_product_mass.py`'s witness field** still carries a retired label
+  verbatim (`w.set_content_block(…)` with the `rem:`-prefixed string). That
+  writes a **committed witness**, so correcting it is a witness regeneration,
+  not a docstring edit. Flagged in the docstring and left.
+- **No content block restored.** The owner's ruling was record-in-an-audit-doc,
+  explicitly *not* restore.
+
+### Verification, and one check that was load-bearing
+
+**No code changed in any of the 39 group-A files** — verified by comparing each
+file's AST **with docstrings stripped**: 39/39 identical. That check is not
+ceremonial: **two of the original 58 sites were CODE, not docstrings**, and one
+of them writes a witness. A grep-driven sweep would have hit both.
+
+**The selftest was asserting the defect.** Draining the surface broke it three
+ways at once — *"not captured"*, *"not even cited"* ×2 — on a tree where the
+detector worked perfectly, because two assertions required the corpus to **still
+cite** a retired label. A calibration keyed on corpus state goes stale exactly
+when the corpus is fixed. Both are now **synthetic**: assertion 1 runs `LABEL`
+over a fixture string, assertion 2 tests carrier lookup, which is independent of
+citation state.
+
+**Mutation-tested 4/4 CAUGHT**: buggy regex tail (reports the truncated fragment
+verbatim — the original defect), `has_carrier` always `True`, always `False`,
+cwd-scoped git layer. A fifth attempt **did not apply at all** and printed
+`SELFTEST PASS` — that was the *unmutated* file passing, not a mutant escaping.
+Recorded because reading it as a result is taxonomy row 45 exactly: **a mutation
+that misses is evidence about the mutation, not the detector.**
+
+One self-inflicted finding: my own group-B fix for `channel_product_mass.py`
+quoted the retired label **verbatim** inside the warning note it added, so the
+fix re-created the very false positive it was fixing, one level down.
+
+### Status
+
+Item 3 of this bean is **done**: the population was unmeasured, is now measured
+(489 labels / 862 files, 26 dead / 58 citations), disposed of, and gated at
+zero. **The bean stays `todo`** — items 1 and 2 are untouched, and item 2 turns
+on the `A_ω → S` identification, which is an open conjecture.
