@@ -4,7 +4,7 @@
       "id": "525753cd282f",
       "block_or_script": "conj:borromean-baryon-mass-formula",
       "paths": {
-        "md": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.md"
+        "md": "folio/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.md"
       },
       "finding": "da-overclaim",
       "severity": "critical",
@@ -26,7 +26,7 @@
       "id": "9a39ef184454",
       "block_or_script": "conj:borromean-baryon-mass-formula",
       "paths": {
-        "lean": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.lean"
+        "lean": "folio/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.lean"
       },
       "finding": "da-lean-narrative-divergence",
       "severity": "major",
@@ -48,8 +48,8 @@
       "id": "a0ff03bed7f1",
       "block_or_script": "def:three-calibration-discipline",
       "paths": {
-        "md": "content/quantum-observable-universe/observations/three-calibration-discipline.md",
-        "lean": "content/quantum-observable-universe/observations/three-calibration-discipline.lean"
+        "md": "folio/quantum-observable-universe/observations/three-calibration-discipline.md",
+        "lean": "folio/quantum-observable-universe/observations/three-calibration-discipline.lean"
       },
       "finding": "da-lean-narrative-divergence",
       "severity": "major",
@@ -71,7 +71,7 @@
       "id": "bcf1e8b28123",
       "block_or_script": "prop:qbeta-ck-truncation-canonical",
       "paths": {
-        "md": "content/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.md"
+        "md": "folio/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.md"
       },
       "finding": "da-reproducibility",
       "severity": "major",
@@ -93,7 +93,7 @@
       "id": "c011b28f6643",
       "block_or_script": "conj:knot-factor-frobenius-pairing",
       "paths": {
-        "ts": "content/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.ts",
+        "ts": "folio/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.ts",
         "lean": "content/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.lean"
       },
       "finding": "da-false-claim+da-lean-narrative-divergence",
@@ -116,8 +116,8 @@
       "id": "658ee7659a1e",
       "block_or_script": "prop:magic-A-binding-formula",
       "paths": {
-        "ts": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.ts",
-        "md": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.md"
+        "ts": "folio/quantum-observable-universe/mass-theory/magic-A-binding-formula.ts",
+        "md": "folio/quantum-observable-universe/mass-theory/magic-A-binding-formula.md"
       },
       "finding": "da-overclaim",
       "severity": "major",
@@ -139,8 +139,8 @@
       "id": "17a71d0e5d8c",
       "block_or_script": "prop:confinement-sdp",
       "paths": {
-        "ts": "content/quantum-observable-universe/mass-theory/confinement-sdp.ts",
-        "md": "content/quantum-observable-universe/mass-theory/confinement-sdp.md"
+        "ts": "folio/quantum-observable-universe/mass-theory/confinement-sdp.ts",
+        "md": "folio/quantum-observable-universe/mass-theory/confinement-sdp.md"
       },
       "finding": "da-lean-narrative-divergence+da-reproducibility",
       "severity": "major",
@@ -162,7 +162,7 @@
       "id": "3edcc8a7c4fe",
       "block_or_script": "prop:operator-selection-lp",
       "paths": {
-        "md": "content/quantum-observable-universe/mass-theory/operator-selection-lp.md",
+        "md": "folio/quantum-observable-universe/mass-theory/operator-selection-lp.md",
         "py": "computations/confinement-operator-selection.witness.json"
       },
       "finding": "da-reproducibility",
@@ -185,7 +185,7 @@
       "id": "5fd5e5d875b0",
       "block_or_script": "alg:mba-step05-wedderburn",
       "paths": {
-        "md": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step05-wedderburn.md"
+        "md": "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step05-wedderburn.md"
       },
       "finding": "da-false-claim+da-reproducibility",
       "severity": "major",
@@ -207,8 +207,8 @@
       "id": "c5de26a6fd8b",
       "block_or_script": "prop:archimedean-functor-uniqueness",
       "paths": {
-        "md": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.md",
-        "lean": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.lean"
+        "md": "folio/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.md",
+        "lean": "folio/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.lean"
       },
       "finding": "da-lean-narrative-divergence+da-overclaim",
       "severity": "major",
@@ -314,7 +314,7 @@
       "id": "483c7ccffa40",
       "block_or_script": "prop:alpha-shift-torus-knot",
       "paths": {
-        "lean": "content/quantum-observable-universe/mass-theory/alpha-shift-torus-knot.lean"
+        "lean": "folio/quantum-observable-universe/mass-theory/alpha-shift-torus-knot.lean"
       },
       "finding": "da-vacuous+da-circular+da-lean-narrative-divergence",
       "severity": "major",
@@ -336,7 +336,7 @@
       "id": "9aff52a75a4c",
       "block_or_script": "prop:neutron-qvalue-symbolic",
       "paths": {
-        "ts": "content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts"
+        "ts": "folio/quantum-observable-universe/nuclear-interactions/neutron-qvalue-symbolic.ts"
       },
       "finding": "da-reproducibility",
       "severity": "major",
@@ -358,7 +358,7 @@
       "id": "218eada3409e",
       "block_or_script": "rem:dressed-quark-numerology-at-q0",
       "paths": {
-        "lean": "content/quantum-observable-universe/.../HadronicMass.lean"
+        "lean": "folio/quantum-observable-universe/lean/QOU/HadronicMass.lean"
       },
       "finding": "da-lean-narrative-divergence",
       "severity": "major",
@@ -380,8 +380,8 @@
       "id": "497ee9f57a2c",
       "block_or_script": "prop:calibration-cohomology-alignment",
       "paths": {
-        "lean": "content/quantum-observable-universe/mass-theory/calibration-cohomology-alignment.lean",
-        "ts": "content/quantum-observable-universe/mass-theory/calibration-cohomology-alignment.ts"
+        "lean": "folio/quantum-observable-universe/mass-theory/calibration-cohomology-alignment.lean",
+        "ts": "folio/quantum-observable-universe/mass-theory/calibration-cohomology-alignment.ts"
       },
       "finding": "da-vacuous (self-assuming projection)",
       "severity": "major",
@@ -403,8 +403,8 @@
       "id": "9a22ba8e015c",
       "block_or_script": "thm:knot-mass-formula-unified",
       "paths": {
-        "lean": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean",
-        "md": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.md"
+        "lean": "folio/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean",
+        "md": "folio/quantum-observable-universe/mass-theory/knot-mass-formula-unified.md"
       },
       "finding": "da-vacuous+da-reproducibility",
       "severity": "major",
@@ -426,7 +426,7 @@
       "id": "dd50b53d0b8d",
       "block_or_script": "prop:wedderburn-weight-canonical",
       "paths": {
-        "md": "content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.md"
+        "md": "folio/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.md"
       },
       "finding": "da-definitional-ambiguity+da-reproducibility",
       "severity": "major",
@@ -470,8 +470,8 @@
       "id": "caad12d1b885",
       "block_or_script": "prop:markov-trace-axiomatic-closed-form",
       "paths": {
-        "lean": "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean",
-        "ts": "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.ts"
+        "lean": "folio/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean",
+        "ts": "folio/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.ts"
       },
       "finding": "da-vacuous+da-overclaim",
       "severity": "critical",
@@ -494,7 +494,7 @@
       "block_or_script": "prop:depth-2-identification-bloch-suslin",
       "paths": {
         "lean": "content/quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin.lean",
-        "md": "content/quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin.md"
+        "md": "folio/quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin.md"
       },
       "finding": "da-vacuous+da-circular+da-overclaim+da-lean-narrative-divergence",
       "severity": "critical",
@@ -516,8 +516,8 @@
       "id": "c01a7c371d18",
       "block_or_script": "prop:crystal-r-matrix-sub-lemma",
       "paths": {
-        "lean": "content/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.lean",
-        "md": "content/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.md"
+        "lean": "folio/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.lean",
+        "md": "folio/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.md"
       },
       "finding": "da-lean-narrative-divergence+da-vacuous",
       "severity": "major",
@@ -539,9 +539,9 @@
       "id": "4af5866ca6a6",
       "block_or_script": "prop:hecke-1d-irrep-closed-form-character",
       "paths": {
-        "md": "content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.md",
-        "ts": "content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.ts",
-        "lean": "content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.lean"
+        "md": "folio/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.md",
+        "ts": "folio/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.ts",
+        "lean": "folio/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.lean"
       },
       "finding": "da-lean-narrative-divergence+da-overclaim",
       "severity": "minor",
@@ -563,8 +563,8 @@
       "id": "0298d3307f27",
       "block_or_script": "prop:wenzl-bridge-applicability-qou",
       "paths": {
-        "lean": "content/quantum-observable-universe/mass-theory/wenzl-bridge-applicability-qou.lean",
-        "md": "content/quantum-observable-universe/mass-theory/wenzl-bridge-applicability-qou.md"
+        "lean": "folio/quantum-observable-universe/mass-theory/wenzl-bridge-applicability-qou.lean",
+        "md": "folio/quantum-observable-universe/mass-theory/wenzl-bridge-applicability-qou.md"
       },
       "finding": "da-vacuous+da-non-sequitur+da-overclaim+da-lean-narrative-divergence",
       "severity": "critical",
@@ -587,7 +587,7 @@
       "block_or_script": "prop:confinement-topological",
       "paths": {
         "lean": "content/quantum-observable-universe/particle-interactions/confinement-topological.lean",
-        "md": "content/quantum-observable-universe/particle-interactions/confinement-topological.md"
+        "md": "folio/quantum-observable-universe/nuclear-interactions/confinement-topological.md"
       },
       "finding": "da-vacuous+da-lean-narrative-divergence+da-non-sequitur+da-overclaim",
       "severity": "critical",
@@ -610,7 +610,7 @@
       "block_or_script": "prop:flavor-split-substrate",
       "paths": {
         "lean": "content/quantum-observable-universe/observations/flavor-split-substrate.lean",
-        "md": "content/quantum-observable-universe/observations/flavor-split-substrate.md"
+        "md": "folio/quantum-observable-universe/observations/flavor-split-substrate.md"
       },
       "finding": "da-hidden-dof+da-overclaim+da-citation-misuse+da-lean-narrative-divergence",
       "severity": "critical",
@@ -632,8 +632,8 @@
       "id": "af4866c7a311",
       "block_or_script": "prop:y-lambda-closed-form-wenzl-bridge",
       "paths": {
-        "lean": "content/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.lean",
-        "md": "content/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.md"
+        "lean": "folio/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.lean",
+        "md": "folio/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.md"
       },
       "finding": "da-lean-narrative-divergence+da-vacuous",
       "severity": "critical",
@@ -655,8 +655,8 @@
       "id": "e2b690462d53",
       "block_or_script": "prop:q-beta-cos-resummation",
       "paths": {
-        "lean": "content/quantum-observable-universe/particle-interactions/q-beta-cos-resummation.lean",
-        "ts": "content/quantum-observable-universe/particle-interactions/q-beta-cos-resummation.ts"
+        "lean": "folio/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation.lean",
+        "ts": "folio/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation.ts"
       },
       "finding": "da-reproducibility+da-citation-misuse+da-vacuous",
       "severity": "major",
@@ -678,8 +678,8 @@
       "id": "4cd1e93a43b7",
       "block_or_script": "prop:b1-hyperbolic-rows-theorem",
       "paths": {
-        "lean": "content/quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.lean",
-        "md": "content/quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.md"
+        "lean": "folio/quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.lean",
+        "md": "folio/quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.md"
       },
       "finding": "da-vacuous+da-circular+da-lean-narrative-divergence",
       "severity": "critical",
@@ -701,8 +701,8 @@
       "id": "aa4e01f7a882",
       "block_or_script": "prop:collatz-contact-boundary",
       "paths": {
-        "lean": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/collatz_contact_boundary.lean",
-        "md": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.md"
+        "lean": "folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/collatz_contact_boundary.lean",
+        "md": "folio/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.md"
       },
       "finding": "da-lean-narrative-divergence+da-overclaim+da-vacuous",
       "severity": "critical",
@@ -724,8 +724,8 @@
       "id": "d175e78c90a1",
       "block_or_script": "prop:q-heat-kernel-peter-weyl",
       "paths": {
-        "lean": "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean",
-        "md": "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.md"
+        "lean": "folio/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean",
+        "md": "folio/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.md"
       },
       "finding": "da-vacuous+da-empirical-fragility+da-overclaim",
       "severity": "critical",
@@ -748,7 +748,7 @@
       "block_or_script": "prop:cyclotomic-l-value-decomposition",
       "paths": {
         "lean": "content/quantum-observable-universe/q-geometric-langlands/cyclotomic-l-value-decomposition.lean",
-        "md": "content/quantum-observable-universe/q-geometric-langlands/cyclotomic-l-value-decomposition.md"
+        "md": "folio/quantum-observable-universe/q-geometric-langlands/cyclotomic-l-value-decomposition.md"
       },
       "finding": "da-lean-narrative-divergence+da-overclaim+da-false-claim",
       "severity": "major",
@@ -770,8 +770,8 @@
       "id": "afe6de90cfb4",
       "block_or_script": "prop:markov-trace-frobenius-selection",
       "paths": {
-        "md": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md",
-        "lean": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.lean"
+        "md": "folio/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md",
+        "lean": "folio/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.lean"
       },
       "finding": "da-overclaim+da-definitional-ambiguity",
       "severity": "minor",
@@ -815,8 +815,8 @@
       "id": "ac353887fd91",
       "block_or_script": "prop:crystal-basis-resolves-mass-tower-open-problems",
       "paths": {
-        "lean": "content/quantum-observable-universe/mass-theory/crystal-basis-resolves-mass-tower-open-problems.lean",
-        "md": "content/quantum-observable-universe/mass-theory/crystal-basis-resolves-mass-tower-open-problems.md"
+        "lean": "folio/quantum-observable-universe/mass-theory/crystal-basis-resolves-mass-tower-open-problems.lean",
+        "md": "folio/quantum-observable-universe/mass-theory/crystal-basis-resolves-mass-tower-open-problems.md"
       },
       "finding": "da-false-claim+da-vacuous+da-non-sequitur",
       "severity": "critical",
@@ -838,8 +838,8 @@
       "id": "f5feb5b54235",
       "block_or_script": "prop:lr-coefficient-hecke",
       "paths": {
-        "lean": "content/quantum-observable-universe/mass-theory/lr-coefficient-hecke.lean",
-        "md": "content/quantum-observable-universe/mass-theory/lr-coefficient-hecke.md"
+        "lean": "folio/quantum-observable-universe/mass-theory/lr-coefficient-hecke.lean",
+        "md": "folio/quantum-observable-universe/mass-theory/lr-coefficient-hecke.md"
       },
       "finding": "da-vacuous+da-citation-misuse",
       "severity": "major",
@@ -861,8 +861,8 @@
       "id": "106b880d5d8a",
       "block_or_script": "prop:meson-color-tube-uniqueness",
       "paths": {
-        "lean": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean",
-        "md": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.md"
+        "lean": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean",
+        "md": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.md"
       },
       "finding": "da-overclaim+da-empirical-fragility",
       "severity": "major",
@@ -884,8 +884,8 @@
       "id": "edd945decff2",
       "block_or_script": "prop:borromean-h4-categorical-derivation",
       "paths": {
-        "lean": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.lean",
-        "ts": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts"
+        "lean": "folio/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.lean",
+        "ts": "folio/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts"
       },
       "finding": "da-lean-narrative-divergence",
       "severity": "minor",
@@ -927,8 +927,8 @@
       "id": "5d218e0928d8",
       "block_or_script": "prop:binding-alpha-shift-extension",
       "paths": {
-        "lean": "content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.lean",
-        "md": "content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.md"
+        "lean": "folio/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.lean",
+        "md": "folio/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.md"
       },
       "finding": "da-false-claim+da-lean-narrative-divergence+da-vacuous+da-overclaim",
       "severity": "critical",
@@ -950,8 +950,8 @@
       "id": "09cbbff97d24",
       "block_or_script": "prop:bring-residue-resolvent",
       "paths": {
-        "lean": "content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean",
-        "md": "content/quantum-observable-universe/mass-theory/bring-residue-resolvent.md"
+        "lean": "folio/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean",
+        "md": "folio/quantum-observable-universe/mass-theory/bring-residue-resolvent.md"
       },
       "finding": "da-false-claim+da-lean-narrative-divergence+da-reproducibility",
       "severity": "critical",
@@ -973,8 +973,8 @@
       "id": "305407955af7",
       "block_or_script": "prop:qbeta-per-block-chi-closed-forms",
       "paths": {
-        "lean": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean",
-        "md": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.md"
+        "lean": "folio/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean",
+        "md": "folio/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.md"
       },
       "finding": "da-lean-narrative-divergence+da-false-claim",
       "severity": "major",
@@ -996,8 +996,8 @@
       "id": "e9c56d474493",
       "block_or_script": "conj:binding-qbeta-complex-volume",
       "paths": {
-        "md": "content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.md",
-        "ts": "content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.ts"
+        "md": "folio/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.md",
+        "ts": "folio/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.ts"
       },
       "finding": "da-empirical-fragility",
       "severity": "minor",
@@ -1019,8 +1019,8 @@
       "id": "a507065e75bb",
       "block_or_script": "conj:inter-nucleon-channel-color-tube",
       "paths": {
-        "md": "content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.md",
-        "ts": "content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.ts"
+        "md": "folio/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.md",
+        "ts": "folio/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.ts"
       },
       "finding": "da-reproducibility+da-citation-misuse",
       "severity": "major",

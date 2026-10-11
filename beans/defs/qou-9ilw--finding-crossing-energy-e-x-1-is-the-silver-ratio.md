@@ -145,7 +145,7 @@ baseline of 10 failing axes, i.e. **my change adds no new QA failure**.
 ### A third finding: 10 QA axes are failing on a deleted file
 
 All 10 baseline failures on this block say a variant of "the Lean sibling
-`content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean`
+`folio/quantum-observable-universe/nuclear-interactions/silver-ratio-beta-decay-null.lean`
 fails compilation / contains sorry". **That file does not exist.** Only two
 copies remain — `nuclear-interactions/…` and the lake-built
 `lean/QOU/ParticleInteractions/…` — and **both are sorry-free**. The block's
