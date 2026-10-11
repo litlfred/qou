@@ -33,6 +33,10 @@ We prove that there is a **unique** `Φ` with `G₀(t) = G₁(t) Φ` for every `
   `G₁ = G₁ Φ Ψ`; cancelling the units `G₀(s*)`, `G₁(t*)` gives `ΨΦ = ΦΨ = 1`. No derivative of the
   inverse is needed.
 
+* **Inversion** `Φ(B, A) Φ(A, B) = Φ(A, B) Φ(B, A) = 1` (`phiKZ_swap_mul`, Drinfeld (2.12)):
+  `G₁` for `(A, B)` is literally `G₀` for `(B, A)` evaluated at `1 − t`, so the two connection
+  matrices compose to the identity after cancelling one unit value.
+
 ## Not here
 
 The asymptotic `Φ_KZ = lim_{ε→0} ε^{-B} G(1−ε)…` normalisation is not restated (it is built into
@@ -207,5 +211,43 @@ theorem kz_associator (A B : R) (H₀ H₁ : ℕ → R) (h₀ : H₀ 0 = 1)
 noncomputable def phiKZ (A B : R) (H₀ H₁ : ℕ → R) (h₀ : H₀ 0 = 1)
     (hH₀ : IsFormalGauge (kzM0 A B) H₀) (h₁ : H₁ 0 = 1) (hH₁ : IsFormalGauge (kzM0 B A) H₁) : R :=
   (kz_associator A B H₀ H₁ h₀ hH₀ h₁ hH₁).exists.choose
+
+
+theorem phiKZ_spec (A B : R) (H₀ H₁ : ℕ → R) (h₀ : H₀ 0 = 1)
+    (hH₀ : IsFormalGauge (kzM0 A B) H₀) (h₁ : H₁ 0 = 1) (hH₁ : IsFormalGauge (kzM0 B A) H₁) :
+    IsUnit (phiKZ A B H₀ H₁ h₀ hH₀ h₁ hH₁) ∧
+      ∀ t ∈ Ioo (0 : ℝ) 1, G₀ A H₀ t = G₁ B H₁ t * phiKZ A B H₀ H₁ h₀ hH₀ h₁ hH₁ :=
+  (kz_associator A B H₀ H₁ h₀ hH₀ h₁ hH₁).exists.choose_spec
+
+omit [CompleteSpace R] in
+theorem G₁_eq_G₀ (B : R) (H : ℕ → R) (t : ℝ) : G₁ B H t = G₀ B H (1 - t) := rfl
+
+/-- **Inversion**: `Φ(B, A) · Φ(A, B) = 1` (Drinfeld (2.12), `Φ(B,A) = Φ(A,B)⁻¹`). The solution
+normalised at `1` for `(A, B)` is the solution normalised at `0` for `(B, A)` read in `1 − t`. -/
+theorem phiKZ_swap_mul (A B : R) (H₀ H₁ : ℕ → R) (h₀ : H₀ 0 = 1)
+    (hH₀ : IsFormalGauge (kzM0 A B) H₀) (h₁ : H₁ 0 = 1) (hH₁ : IsFormalGauge (kzM0 B A) H₁) :
+    phiKZ B A H₁ H₀ h₁ hH₁ h₀ hH₀ * phiKZ A B H₀ H₁ h₀ hH₀ h₁ hH₁ = 1 ∧
+      phiKZ A B H₀ H₁ h₀ hH₀ h₁ hH₁ * phiKZ B A H₁ H₀ h₁ hH₁ h₀ hH₀ = 1 := by
+  obtain ⟨hu, hΦ⟩ := phiKZ_spec A B H₀ H₁ h₀ hH₀ h₁ hH₁
+  obtain ⟨-, hΦ'⟩ := phiKZ_spec B A H₁ H₀ h₁ hH₁ h₀ hH₀
+  set Φ := phiKZ A B H₀ H₁ h₀ hH₀ h₁ hH₁
+  set Φ' := phiKZ B A H₁ H₀ h₁ hH₁ h₀ hH₀
+  obtain ⟨δ, hδ, hδ1, hu₁⟩ := exists_isUnit_series (boundedOn_kz_solution B A H₁ h₁ hH₁) h₁
+  set t := 1 - δ / 2
+  have ht : t ∈ Ioo (0 : ℝ) 1 := ⟨by simp only [t]; linarith, by simp only [t]; linarith⟩
+  have hU : IsUnit (G₁ B H₁ t) :=
+    (hu₁ (1 - t) ⟨by simp only [t]; linarith, by simp only [t]; linarith⟩).mul
+      (isUnit_tpow B (1 - t))
+  have e1 : G₀ A H₀ t = G₁ B H₁ t * Φ := hΦ t ht
+  have e2 : G₀ B H₁ (1 - t) = G₁ A H₀ (1 - t) * Φ' :=
+    hΦ' (1 - t) ⟨by linarith [ht.2], by linarith [ht.1]⟩
+  have e3 : G₁ A H₀ (1 - t) = G₀ A H₀ t := by rw [G₁_eq_G₀, sub_sub_cancel]
+  rw [← G₁_eq_G₀, e3, e1, mul_assoc] at e2
+  have hΦΦ' : Φ * Φ' = 1 := (hU.mul_left_cancel ((mul_one _).trans e2)).symm
+  refine ⟨?_, hΦΦ'⟩
+  obtain ⟨u, hu⟩ := hu
+  rw [← hu] at hΦΦ' ⊢
+  calc Φ' * ↑u = (↑u⁻¹ * (↑u * Φ')) * ↑u := by rw [← mul_assoc, Units.inv_mul, one_mul]
+    _ = 1 := by rw [hΦΦ', mul_one, Units.inv_mul]
 
 end QOU.KZ.AssociatorKZ
