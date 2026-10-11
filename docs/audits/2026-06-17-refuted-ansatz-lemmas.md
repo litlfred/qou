@@ -226,10 +226,21 @@ latter is real, since at the proton pin `q⁴ = 1.517953` against D `(4,2)`'s
 at `computations/mass_at_3A_proper.py:456` takes `intra_order` and
 `pn_convention`): the `intra_order` change **grouped → borromean alone** produces
 all 7 near-poles; the colour-weighted p-n letter alone shifts distances `≤ 8 %`.
-**That change is the owner-ruled correctness fix of 2026-09-05** (`qou-hu1f`) —
-the grouped word was not `β_Bor`, the alternating one is, matched to `5e-60`
-against the Lean closed form. The near-poles are a side effect of a change that
-was right for an independent reason, and are **not** evidence against it.
+🛑 **Why that change is not a fit — and the owner ruling is NOT the reason.**
+This entry first cited the 2026-09-05 ruling (`qou-hu1f`); a ruling is not
+evidence, and that argument is withdrawn. Verified verbatim in the *preceding*
+commit `82860c4f317`: the borromean word makes agreement **worse** — *"2H
+**+254.53 %**, 3H +74.49 %, 3He +53.87 %, 4He −33.60 %. It does not work, and is
+worse than the grouped word below A = 4 … the grouped column's **+4.07 %** at 2H
+is agreement produced by a word that is **not β_Bor**."* **The change was
+adopted while the measurement said it made the numbers worse** — a fit would
+have kept the +4.07 %. That sentence is itself an anti-fit statement: it rejects
+the better-agreeing word because the agreement came from the wrong object.
+
+**What this does not establish:** the `5e-60` Lean match shows only that the
+code equals the Lean *definition* of `β_Bor`, not that `β_Bor` is the right
+nucleon word; and whether *"nucleon = `(σ₀σ₁⁻¹)³`"* is derived or chosen is
+**UNVERIFIED — open, not settled**.
 
 **(ix) Seven PRE-REGISTERED q-only rules, all failing.** `PREREGISTRATION.md`
 sha256 `3d3f628a2318b0c4790bedc785d4fea3f74e33d73b211f581db01c69d9cbd832`, frozen

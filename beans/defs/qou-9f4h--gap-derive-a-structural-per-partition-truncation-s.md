@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-10T18:19:11Z
-updated_at: 2026-10-11T06:43:56Z
+updated_at: 2026-10-11T07:01:23Z
 parent: b9cj
 ---
 
@@ -334,13 +334,34 @@ producer's own switches, not a reconstruction. Relayed: May = `grouped` +
 spectra and all 7 near-poles.** The colour-weighted p-n letter alone shifts pole
 distances by **≤ 8 %**.
 
-🔎 **And that change is the owner-ruled fix of 2026-09-05** (bean `qou-hu1f`),
-per the producer's own docstring: the grouped word *"is a different element of
-`H₃(q)` from the alternating word the comment names, and only the alternating
-one is `β_Bor`"* — matched to `5e-60` against the Lean closed form. **So the
-pole proliferation arrived as a side effect of a change that was right for an
-entirely independent reason.** Worth stating plainly: the near-poles are not
-evidence against the 2026-09-05 ruling.
+🛑 **WHY IT IS NOT A FIT — and "the owner ruled it" is NOT the reason.** My
+earlier wording here cited the 2026-09-05 owner ruling (`qou-hu1f`) as the
+reason the change was not selection against data. **That is not evidence**, and
+it is withdrawn as the argument. The actual evidence is a measurement in the
+*preceding* commit, and it is far stronger.
+
+🔎 **Verified verbatim in `82860c4f317` (2026-09-05).** That commit measured the
+borromean word and found it makes agreement **WORSE**:
+
+> *"the two-level character ratio telescopes to `tr_M(W_atom)`, giving **2H
+> +254.53 %**, 3H +74.49 %, 3He +53.87 %, 4He −33.60 %. It does not work, and is
+> **worse than the grouped word** below A = 4. Recorded as the answer, not
+> repaired — **the grouped column's +4.07 % at 2H is agreement produced by a
+> word that is not β_Bor.**"*
+
+**The change was adopted while the measurement said it made the numbers worse,
+and the commit says so in those words.** A fit would have gone the other way —
+it would have kept the +4.07 %. That sentence is itself a textbook anti-fit
+statement: it rejects the better-agreeing word *because the agreement came from
+the wrong object*. **That** is why `7db032fb48` is not a fit.
+
+**Two things this does NOT establish, and they were conflated in my earlier
+wording.** The `5e-60` Lean match shows only that the code now equals the Lean
+**definition** of `β_Bor`; it does **not** show that `β_Bor` is the right
+nucleon word. And whether *"nucleon = Borromean word `(σ₀σ₁⁻¹)³`"* is itself
+**derived or chosen is UNVERIFIED** — record it as open, not settled. The
+ordering of events was: measurement (`82860c4f317`), then the ruling, then the
+change (`7db032fb48`), with the commit noting the edit touched 685 call sites.
 
 ### ACCIDENTAL, NOT STRUCTURAL — this retracts the hypothesis I recorded above
 
@@ -433,3 +454,10 @@ rule now known to rest on invented inputs, a block-basis SDP exclusion, and
 seven pre-registered q-only rules all failing. What this arc has produced is a
 well-documented negative and one structural reason to expect it (Finding 1). It
 has not produced a selector.
+
+### Cross-reference (2026-10-11)
+
+The two **statement** defects — the undefined cyclotomic projection and the
+unspecified dimensionless → MeV map — are split out to **`qou-f1wk`**, since
+they are defects in `conj:brane-tower-z-habiro` rather than in any candidate
+rule. The content block is **not** edited; both are owner decisions.
