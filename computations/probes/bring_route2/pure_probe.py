@@ -97,14 +97,10 @@ def main():
     checks["A3_cube_equals_direct_3k"] = cons
     # check 1: regression on the 8 nucleon terms
     stored = json.loads((HERE / "results_signed.json").read_text())["proton_terms"]
-    core = [(0, 1), (1, -1)] * 3
     reg = True
     nuc = {}
-    for a in (1, -1):
-        for b in (1, -1):
-            for kind, uu in (("proton", (0, 1)), ("neutron", (0, -1))):
-                key = f"{kind} term s0^{a:+d} s1^{b:+d}"
-                r = assess(SC.image(core + [uu, (0, a), (1, b), (0, 1), (0, 1)]))
+    for key, w in {**SC.proton_terms(), **SC.neutron_terms()}.items():
+                r = assess(SC.image(w))
                 nuc[key] = r
                 st = stored[key]
                 reg &= (r["verdict"] == "loop") == (st["status"] == "loop")
