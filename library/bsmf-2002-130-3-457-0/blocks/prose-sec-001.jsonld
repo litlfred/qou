@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/bsmf-2002-130-3-457-0/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/bsmf-2002-130-3-457-0/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "Necessary conditions",
-  "pageStart": 8,
-  "pageEnd": 10,
-  "text": "../sections/sec-001-2-necessary-conditions.md",
-  "derivedFrom": "library/bsmf-2002-130-3-457-0/manifest",
-  "sourceDocument": "library/bsmf-2002-130-3-457-0/manifest",
+  "title": "Proj is located on the sphere at inﬁnity ∂∞H3 if and only if equality holds in",
+  "pageStart": 4,
+  "pageEnd": 4,
+  "text": "../sections/sec-001-p-proj-is-located-on-the-sphere-at-inﬁnity-h3-if.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./bsmf-2002-130-3-457-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./bsmf-2002-130-3-457-0/manifest.jsonld",
   "provenance": "ingested"
 }

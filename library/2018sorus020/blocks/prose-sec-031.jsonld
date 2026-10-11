@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/2018sorus020/blocks/prose-sec-031",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/2018sorus020/blocks/prose-sec-031",
   "kind": "prose",
-  "title": "For the ﬁgure-eight knot, the component of irreducible type and the com-",
-  "pageStart": 43,
-  "pageEnd": 43,
-  "text": "../sections/sec-031-2-for-the-ﬁgure-eight-knot-the-component-of-irre.md",
-  "derivedFrom": "library/2018sorus020/manifest",
-  "sourceDocument": "library/2018sorus020/manifest",
+  "title": "The Reidemeister torsion form",
+  "pageStart": 51,
+  "pageEnd": 51,
+  "text": "../sections/sec-031-222-the-reidemeister-torsion-form.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./2018sorus020/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./2018sorus020/manifest.jsonld",
   "provenance": "ingested"
 }

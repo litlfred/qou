@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/disssubmission/blocks/prose-sec-016",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/disssubmission/blocks/prose-sec-016",
   "kind": "prose",
-  "title": "Chapter 1 – Vanishing theorems on abelian varieties",
-  "pageStart": 28,
-  "pageEnd": 29,
-  "text": "../sections/sec-016-20-chapter-1-vanishing-theorems-on-abelian-varie.md",
-  "derivedFrom": "library/disssubmission/manifest",
-  "sourceDocument": "library/disssubmission/manifest",
+  "title": "Perverse sheaves on semiabelian varieties",
+  "pageStart": 49,
+  "pageEnd": 50,
+  "text": "../sections/sec-016-3-perverse-sheaves-on-semiabelian-varieties.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./disssubmission/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./disssubmission/manifest.jsonld",
   "provenance": "ingested"
 }

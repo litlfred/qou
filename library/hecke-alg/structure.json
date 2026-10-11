@@ -6,45 +6,1554 @@
   "sha256": "4ac08dfd165fb366a669c54b438755590ddb074934082b97a83cdeb7f2258889",
   "bytes": 706588,
   "pages": 78,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:25Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Hecke algebras and Schur algebras of the symmetric group",
-  "authors_raw": "School of Ma thema tics F/0/7/, University of Sydney/, Sydney NSW",
+  "title": "symmetric group Andrew Mathas Author address: School thema University Sydney, Sydney \u000200\u0006. ustralia",
+  "authors_raw": null,
   "title_lines": [
-   "Hec k e algebras and Sc h ur algebras of the",
-   "symmetric group",
-   "Andrew Mathas",
-   "Author address/:"
+   "symmetric",
+   "group",
+   "Andrew",
+   "Mathas",
+   "Author",
+   "address:",
+   "School",
+   "thema",
+   "University",
+   "Sydney",
+   "Sydney",
+   "\u000200\u0006",
+   "ustralia"
   ],
   "abstract": null,
   "docinfo": {
    "Producer": "ESP Ghostscript 815.02",
    "CreationDate": "D:20071109023218"
   },
-  "title_prev": "Hec k e algebras and Sc h ur algebras of the symmetric group Andrew Mathas Author address/:"
+  "title_raw": "symmetric group Andrew Mathas Author address: School thema University Sydney, Sydney \u000200\u0006. ustralia",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Hec algebras and Sc ur algebras of the symmetric group Andrew Mathas Author address: School of Ma thema tics University of Sydney, Sydney NSW ustralia E-mail addr ess mathas@maths.usyd.e du.au",
+   "text": "symmetric group Andrew Mathas Author address: School thema University Sydney, Sydney \u000200\u0006. ustralia",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [],
- "toc_source": "none",
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "5 inferred entries with mean confidence 0.00, below the 0.6 floor \u2014 too little evidence agreed",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (5 inferred entries with mean confidence 0.00, below the 0.6 floor \u2014 too little evidence agreed): one section per page.",
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 54,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 55,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 56,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 57,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 58,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 59,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 60,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 61,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 62,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 63,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 64,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 65,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 66,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 67,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 68,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 69,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 70,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 71,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 72,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 73,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 74,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 75,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 76,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 77,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 78,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-document",
+   "id": "page-001",
    "number": null,
-   "title": "Document",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
+   "page_end": 1,
+   "n_chars": 213,
+   "n_words": 37,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 801,
+   "n_words": 165,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 976,
+   "n_words": 216,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 3265,
+   "n_words": 678,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 2972,
+   "n_words": 621,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 2428,
+   "n_words": 733,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 2882,
+   "n_words": 918,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 3649,
+   "n_words": 1239,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 3242,
+   "n_words": 941,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 2699,
+   "n_words": 743,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 2897,
+   "n_words": 758,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 3167,
+   "n_words": 808,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 362,
+   "n_words": 78,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-014",
+   "number": null,
+   "title": "Page 14",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 2145,
+   "n_words": 565,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-015",
+   "number": null,
+   "title": "Page 15",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 2551,
+   "n_words": 745,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-016",
+   "number": null,
+   "title": "Page 16",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 2850,
+   "n_words": 857,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-017",
+   "number": null,
+   "title": "Page 17",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 2883,
+   "n_words": 776,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-018",
+   "number": null,
+   "title": "Page 18",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 3166,
+   "n_words": 854,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-019",
+   "number": null,
+   "title": "Page 19",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 2527,
+   "n_words": 673,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-020",
+   "number": null,
+   "title": "Page 20",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 3353,
+   "n_words": 892,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-021",
+   "number": null,
+   "title": "Page 21",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 2136,
+   "n_words": 541,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-022",
+   "number": null,
+   "title": "Page 22",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 2815,
+   "n_words": 775,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-023",
+   "number": null,
+   "title": "Page 23",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 2903,
+   "n_words": 889,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-024",
+   "number": null,
+   "title": "Page 24",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 2746,
+   "n_words": 819,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-025",
+   "number": null,
+   "title": "Page 25",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 3352,
+   "n_words": 920,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-026",
+   "number": null,
+   "title": "Page 26",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 2788,
+   "n_words": 827,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-027",
+   "number": null,
+   "title": "Page 27",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 2522,
+   "n_words": 728,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-028",
+   "number": null,
+   "title": "Page 28",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 3212,
+   "n_words": 859,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-029",
+   "number": null,
+   "title": "Page 29",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 3023,
+   "n_words": 861,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-030",
+   "number": null,
+   "title": "Page 30",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 2561,
+   "n_words": 700,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-031",
+   "number": null,
+   "title": "Page 31",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 3001,
+   "n_words": 856,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-032",
+   "number": null,
+   "title": "Page 32",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 2472,
+   "n_words": 737,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-033",
+   "number": null,
+   "title": "Page 33",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 3090,
+   "n_words": 939,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-034",
+   "number": null,
+   "title": "Page 34",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 2657,
+   "n_words": 789,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-035",
+   "number": null,
+   "title": "Page 35",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 2975,
+   "n_words": 959,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-036",
+   "number": null,
+   "title": "Page 36",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 3050,
+   "n_words": 893,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-037",
+   "number": null,
+   "title": "Page 37",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 3536,
+   "n_words": 1007,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-038",
+   "number": null,
+   "title": "Page 38",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 3284,
+   "n_words": 1036,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-039",
+   "number": null,
+   "title": "Page 39",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 2976,
+   "n_words": 737,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-040",
+   "number": null,
+   "title": "Page 40",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 40,
+   "n_chars": 2024,
+   "n_words": 520,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-041",
+   "number": null,
+   "title": "Page 41",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 2590,
+   "n_words": 672,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-042",
+   "number": null,
+   "title": "Page 42",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 3349,
+   "n_words": 942,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-043",
+   "number": null,
+   "title": "Page 43",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 2801,
+   "n_words": 838,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-044",
+   "number": null,
+   "title": "Page 44",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 2652,
+   "n_words": 744,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-045",
+   "number": null,
+   "title": "Page 45",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 2686,
+   "n_words": 785,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-046",
+   "number": null,
+   "title": "Page 46",
+   "level": 1,
+   "page_start": 46,
+   "page_end": 46,
+   "n_chars": 2791,
+   "n_words": 850,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-047",
+   "number": null,
+   "title": "Page 47",
+   "level": 1,
+   "page_start": 47,
+   "page_end": 47,
+   "n_chars": 3080,
+   "n_words": 931,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-048",
+   "number": null,
+   "title": "Page 48",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 3302,
+   "n_words": 957,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-049",
+   "number": null,
+   "title": "Page 49",
+   "level": 1,
+   "page_start": 49,
+   "page_end": 49,
+   "n_chars": 2766,
+   "n_words": 713,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-050",
+   "number": null,
+   "title": "Page 50",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 1612,
+   "n_words": 354,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-051",
+   "number": null,
+   "title": "Page 51",
+   "level": 1,
+   "page_start": 51,
+   "page_end": 51,
+   "n_chars": 2349,
+   "n_words": 674,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-052",
+   "number": null,
+   "title": "Page 52",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 52,
+   "n_chars": 2392,
+   "n_words": 724,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-053",
+   "number": null,
+   "title": "Page 53",
+   "level": 1,
+   "page_start": 53,
+   "page_end": 53,
+   "n_chars": 2458,
+   "n_words": 773,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-054",
+   "number": null,
+   "title": "Page 54",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 2232,
+   "n_words": 699,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-055",
+   "number": null,
+   "title": "Page 55",
+   "level": 1,
+   "page_start": 55,
+   "page_end": 55,
+   "n_chars": 3010,
+   "n_words": 925,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-056",
+   "number": null,
+   "title": "Page 56",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 56,
+   "n_chars": 2698,
+   "n_words": 834,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-057",
+   "number": null,
+   "title": "Page 57",
+   "level": 1,
+   "page_start": 57,
+   "page_end": 57,
+   "n_chars": 3243,
+   "n_words": 959,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-058",
+   "number": null,
+   "title": "Page 58",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 58,
+   "n_chars": 1900,
+   "n_words": 594,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-059",
+   "number": null,
+   "title": "Page 59",
+   "level": 1,
+   "page_start": 59,
+   "page_end": 59,
+   "n_chars": 2104,
+   "n_words": 648,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-060",
+   "number": null,
+   "title": "Page 60",
+   "level": 1,
+   "page_start": 60,
+   "page_end": 60,
+   "n_chars": 2210,
+   "n_words": 688,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-061",
+   "number": null,
+   "title": "Page 61",
+   "level": 1,
+   "page_start": 61,
+   "page_end": 61,
+   "n_chars": 2834,
+   "n_words": 866,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-062",
+   "number": null,
+   "title": "Page 62",
+   "level": 1,
+   "page_start": 62,
+   "page_end": 62,
+   "n_chars": 2786,
+   "n_words": 774,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-063",
+   "number": null,
+   "title": "Page 63",
+   "level": 1,
+   "page_start": 63,
+   "page_end": 63,
+   "n_chars": 2627,
+   "n_words": 829,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-064",
+   "number": null,
+   "title": "Page 64",
+   "level": 1,
+   "page_start": 64,
+   "page_end": 64,
+   "n_chars": 2530,
+   "n_words": 776,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-065",
+   "number": null,
+   "title": "Page 65",
+   "level": 1,
+   "page_start": 65,
+   "page_end": 65,
+   "n_chars": 2850,
+   "n_words": 792,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-066",
+   "number": null,
+   "title": "Page 66",
+   "level": 1,
+   "page_start": 66,
+   "page_end": 66,
+   "n_chars": 2767,
+   "n_words": 751,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-067",
+   "number": null,
+   "title": "Page 67",
+   "level": 1,
+   "page_start": 67,
+   "page_end": 67,
+   "n_chars": 3506,
+   "n_words": 1004,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-068",
+   "number": null,
+   "title": "Page 68",
+   "level": 1,
+   "page_start": 68,
+   "page_end": 68,
+   "n_chars": 2879,
+   "n_words": 789,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-069",
+   "number": null,
+   "title": "Page 69",
+   "level": 1,
+   "page_start": 69,
+   "page_end": 69,
+   "n_chars": 3262,
+   "n_words": 1018,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-070",
+   "number": null,
+   "title": "Page 70",
+   "level": 1,
+   "page_start": 70,
+   "page_end": 70,
+   "n_chars": 3080,
+   "n_words": 872,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-071",
+   "number": null,
+   "title": "Page 71",
+   "level": 1,
+   "page_start": 71,
+   "page_end": 71,
+   "n_chars": 2137,
+   "n_words": 482,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-072",
+   "number": null,
+   "title": "Page 72",
+   "level": 1,
+   "page_start": 72,
+   "page_end": 72,
+   "n_chars": 1231,
+   "n_words": 353,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-073",
+   "number": null,
+   "title": "Page 73",
+   "level": 1,
+   "page_start": 73,
+   "page_end": 73,
+   "n_chars": 1804,
+   "n_words": 504,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-074",
+   "number": null,
+   "title": "Page 74",
+   "level": 1,
+   "page_start": 74,
+   "page_end": 74,
+   "n_chars": 1448,
+   "n_words": 456,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-075",
+   "number": null,
+   "title": "Page 75",
+   "level": 1,
+   "page_start": 75,
+   "page_end": 75,
+   "n_chars": 171,
+   "n_words": 44,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-076",
+   "number": null,
+   "title": "Page 76",
+   "level": 1,
+   "page_start": 76,
+   "page_end": 76,
+   "n_chars": 3289,
+   "n_words": 739,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-077",
+   "number": null,
+   "title": "Page 77",
+   "level": 1,
+   "page_start": 77,
+   "page_end": 77,
+   "n_chars": 3681,
+   "n_words": 804,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-078",
+   "number": null,
+   "title": "Page 78",
+   "level": 1,
+   "page_start": 78,
    "page_end": 78,
-   "n_chars": 238192,
-   "n_words": 63880
+   "n_chars": 1584,
+   "n_words": 323,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 0,
-  "sections": 1,
-  "chars_total": 238192
+  "toc_inferred_entries": 5,
+  "toc_inferred_mean_confidence": 0.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "regex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 78,
+  "chars_total": 202842
  }
 }

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-017",
   "@type": [
     "doco:Section"
   ],
-  "title": "A veraging procedure and uncertainties",
-  "pageStart": 13,
-  "pageEnd": 14,
+  "title": "AHW",
+  "pageStart": 34,
+  "pageEnd": 37,
   "contains": [
     "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-017"
   ],
-  "derivedFrom": "library/kondev-2021-chinese-phys-c-45-030001/manifest",
-  "sourceDocument": "library/kondev-2021-chinese-phys-c-45-030001/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./kondev-2021-chinese-phys-c-45-030001/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./kondev-2021-chinese-phys-c-45-030001/manifest.jsonld",
   "provenance": "ingested"
 }

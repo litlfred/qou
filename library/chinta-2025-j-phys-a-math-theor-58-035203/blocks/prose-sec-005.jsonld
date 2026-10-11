@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "Introduction",
-  "pageStart": 3,
-  "pageEnd": 7,
-  "text": "../sections/sec-005-1-introduction.md",
-  "derivedFrom": "library/chinta-2025-j-phys-a-math-theor-58-035203/manifest",
-  "sourceDocument": "library/chinta-2025-j-phys-a-math-theor-58-035203/manifest",
+  "title": "Application 2: finite trigonometric sums",
+  "pageStart": 14,
+  "pageEnd": 15,
+  "text": "../sections/sec-005-5-application-2-finite-trigonometric-sums.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./chinta-2025-j-phys-a-math-theor-58-035203/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./chinta-2025-j-phys-a-math-theor-58-035203/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-039",
+  "kind": "prose",
+  "title": "Non-Hermitian Models with Disorder",
+  "pageStart": 52,
+  "pageEnd": 53,
+  "text": "../sections/sec-039-74-non-hermitian-models-with-disorder.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-ph-0003017v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-ph-0003017v2/manifest.jsonld",
+  "provenance": "ingested"
+}

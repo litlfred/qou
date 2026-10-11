@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/symmetry-04-00039-v3/blocks/prose-sec-034",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/symmetry-04-00039-v3/blocks/prose-sec-034",
   "kind": "prose",
-  "title": "BB* 0 (A, B, C)",
-  "pageStart": 73,
-  "pageEnd": 76,
-  "text": "../sections/sec-034-0-bb-0-a-b-c.md",
-  "derivedFrom": "library/symmetry-04-00039-v3/manifest",
-  "sourceDocument": "library/symmetry-04-00039-v3/manifest",
+  "title": "Available Junctions",
+  "pageStart": 63,
+  "pageEnd": 64,
+  "text": "../sections/sec-034-available-junctions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./symmetry-04-00039-v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./symmetry-04-00039-v3/manifest.jsonld",
   "provenance": "ingested"
 }

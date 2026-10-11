@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/disssubmission/sections/sec-032",
   "@type": [
     "doco:Section"
   ],
-  "title": "Perverse multiplier",
-  "pageStart": 44,
-  "pageEnd": 45,
+  "title": "Variations of Hodge structures",
+  "pageStart": 110,
+  "pageEnd": 114,
   "contains": [
     "library/disssubmission/blocks/prose-sec-032"
   ],
-  "derivedFrom": "library/disssubmission/manifest",
-  "sourceDocument": "library/disssubmission/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./disssubmission/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./disssubmission/manifest.jsonld",
   "provenance": "ingested"
 }

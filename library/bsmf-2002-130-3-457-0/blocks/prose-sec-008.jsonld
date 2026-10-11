@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/bsmf-2002-130-3-457-0/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/bsmf-2002-130-3-457-0/blocks/prose-sec-008",
   "kind": "prose",
-  "title": "Proof of Theorems 1 and 2",
-  "pageStart": 34,
+  "title": "Realizing large angles",
+  "pageStart": 32,
   "pageEnd": 34,
-  "text": "../sections/sec-008-7-proof-of-theorems-1-and-2.md",
-  "derivedFrom": "library/bsmf-2002-130-3-457-0/manifest",
-  "sourceDocument": "library/bsmf-2002-130-3-457-0/manifest",
+  "text": "../sections/sec-008-6-realizing-large-angles.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./bsmf-2002-130-3-457-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./bsmf-2002-130-3-457-0/manifest.jsonld",
   "provenance": "ingested"
 }

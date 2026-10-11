@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-002",
   "kind": "prose",
-  "title": "Advanced Energy Science and Technology Guangdong Laboratory, Huizhou 516003, China",
-  "pageStart": 2,
-  "pageEnd": 2,
-  "text": "../sections/sec-002-4-advanced-energy-science-and-technology-guangdo.md",
-  "derivedFrom": "library/kondev-2021-chinese-phys-c-45-030001/manifest",
-  "sourceDocument": "library/kondev-2021-chinese-phys-c-45-030001/manifest",
+  "title": "Mass excess",
+  "pageStart": 3,
+  "pageEnd": 5,
+  "text": "../sections/sec-002-21-mass-excess.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./kondev-2021-chinese-phys-c-45-030001/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./kondev-2021-chinese-phys-c-45-030001/manifest.jsonld",
   "provenance": "ingested"
 }

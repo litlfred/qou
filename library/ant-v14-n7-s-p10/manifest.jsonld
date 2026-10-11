@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s-p10/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Abelian extensions in dynamical Galois theory",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p10/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "ant-v14-n7-s-p10",
   "contains": [
+    "library/ant-v14-n7-s-p10/sections/sec-front-matter",
     "library/ant-v14-n7-s-p10/sections/sec-000",
     "library/ant-v14-n7-s-p10/sections/sec-001",
     "library/ant-v14-n7-s-p10/sections/sec-002",
@@ -15,19 +21,14 @@
     "library/ant-v14-n7-s-p10/sections/sec-006",
     "library/ant-v14-n7-s-p10/sections/sec-007",
     "library/ant-v14-n7-s-p10/sections/sec-008",
-    "library/ant-v14-n7-s-p10/sections/sec-009",
-    "library/ant-v14-n7-s-p10/sections/sec-010"
+    "library/ant-v14-n7-s-p10/sections/sec-009"
   ],
   "provenance": "ingested",
   "meta": {
     "doc_id": "ant-v14-n7-s-p10",
     "source_file": "ant-v14-n7-s-p10.pdf",
     "source_sha256": "8d3e47aa779ad9c7da260d4410cc8df7dc8097a351435a075b7508ded40ec1f7",
-    "pages": 22,
-    "arxiv": null,
-    "doi": "10.2140/ant.2020.14.1981",
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "granularity": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

@@ -1,0 +1,57 @@
+---
+doc_id: characteristic
+doc_title: "ON THE CHARACTERISTIC AND DEFORMATION VARIETIES OF A KNOT"
+section_id: sec-004-14-the-conjecture
+section_title: "The conjecture"
+section_number: 1.4
+pages: 3-3
+source_pdf: characteristic.pdf
+source_sha256: 42bd31da2754488f
+toc_source: inferred
+---
+
+2 is the disjoint union V0 ⊔V1 ⊔V2 where
+Vi is a subvariety of V of pure dimension i.
+We say that two algebraic subvarieties V and V ′ of
+
+2 are essentially equal iﬀV1 is equal to V ′
+1 union
+some y-lines, where a y-line in
+
+2 = {(x, y) |x, y ∈
+ } is a line y = a for some a.
+Conjecture 1. (The Characteristic equals Deformation Variety Conjecture) For every knot in S3, the
+characteristic and deformation varieties are essentially equal.
+Questions similar to the above conjecture and its polynomial version (Conjecture 2 below) were also raised
+by Frohman and Gelca who studied the colored Jones function of a knot via Kauﬀman bracket skein theory,
+[Ge]. Our approach to recursion relations in [GL] and here is via statistical mechanics sums and holonomic
+functions.
+A modest corollary of the above conjecture is the following:
+Corollary 1.3. If a knot has nontrivial deformation variety (eg. the knot is hyperbolic), then it has nontrivial
+colored Jones function.
+Remark 1.4. Despite our improved understanding of the geometry of 3-manifolds, it is unknown at present
+whether the deformation variety of a knot complement is positive dimensional. If a knot is hyperbolic or
+torus, then it is, by above mentioned work of Thurston and Cooper et al. If a knot is a satellite, then it is
+not known, due to the presence of forbidden representations, explained by Cooper-Long in [CL, Sec.9].
+As evidence for the conjecture, we will show by a direct calculation, that:
+Proposition 1.5. Conjectures 1 and 2 are true for the trefoil and Figure 8 knots.
+Let us end this section with three comments:
+Remark 1.6. Conjecture 1 may be translated as an equality of two polynomials with two commuting variables
+and integer coeﬃcients; see Conjecture 2 below. Since these polynomials are computable by elimination,
+it follows that Conjecture 1 is in principle a decidable question.
+This is in contrast to the Hyperbolic
+Volume Conjecture (due to Kashaev-Murakami-Murakami; see [Ka, MM]) which involves the existence and
+identiﬁcation of a limit of complex numbers.
+Remark 1.7. Both Conjecture 1 and the Hyperbolic Volume Conjecture state a relationship between the
+colored Jones function of a knot and hyperbolic geometry. Combining both conjectures, it follows that the
+colored Jones function of a hyperbolic knot determines the volume of the hyperbolic 3-manifolds obtained
+by Dehn surgery on the knot. Indeed, the variation of the volume function depends on the restriction of a
+path of SL2(
+ ) representations to the boundary of the knot complement. Furthermore, the polynomial that
+deﬁnes the deformation variety can compute the variation of the volume function; see Cooper et all [CCGLS,
+Sec.4.5] and also Yoshida [Y] and Neumann-Zagier [NZ, eqn (47)].
+Remark 1.8. Conjecture 1 reveals a close relation between the colored Jones function of a knot and its
+deformation variety. It does not explain though why we ought to look at characters of SL2(
+ ) representations.
+There is a generalization to higher rank groups, which we present in Section 4. We warn the reader that
+there is no evidence for this generalization.

@@ -6,16 +6,12 @@
     }
   ],
   "@id": "library/arxiv-hep-th-0006183v1/blocks/prose-sec-004",
-  "@type": [
-    "folio-assistant-core:Prose",
-    "doco:Section"
-  ],
   "kind": "prose",
-  "title": "Conclusions",
-  "pageStart": 15,
-  "pageEnd": 16,
-  "text": "../sections/sec-004-5-conclusions.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0006183v1/manifest.jsonld",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0006183v1/manifest.jsonld",
+  "title": "One-loop computations",
+  "pageStart": 5,
+  "pageEnd": 15,
+  "text": "../sections/sec-004-4-one-loop-computations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-0006183v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-0006183v1/manifest.jsonld",
   "provenance": "ingested"
 }

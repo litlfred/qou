@@ -5,7 +5,12 @@
   "file": "9306069v2.pdf",
   "sha256": "a140d10424f732333b390701057b3dbc73d34eb7871ea46d85ee4f7c50285d3a",
   "bytes": 358267,
-  "pages": 48
+  "pages": 48,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -15,215 +20,709 @@
    "stamp_date": "28 Jun 1993"
   },
   "doi": null,
-  "title": "The stretched horizon and black hole complementarity",
-  "authors_raw": "The Stretched Horizon and Black Hole Complementarity",
-  "abstract": "Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for thermodyn amics are introduced as a foundation for the study of black hole evolution. We explain how these po stulates may be implemented in a “stretched horizon” or membrane description of the blac k hole, appropriate to a distant observer. The technical analysis is illustrated in the simp liﬁed context of 1+1 dimensional dilaton gravity. Our postulates imply that the dissipative properties of the stretched horizon arise from a course graining of microphysical degrees of fre edom that the horizon must possess. A principle of black hole complementarity is advoc ated. The overall viewpoint is similar to that pioneered by ’t Hooft but the detailed implem entation is diﬀerent. PACS categories: 04.60.+n, 12.25.+e, 97.60.Lf ⋆ susskind@dormouse.stanford.edu † larus@dormouse.stanford.edu ‡ john@dormouse.stanford.edu 1",
-  "docinfo": {
-   "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20241126154029-05'00'",
-   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:hep-th/9306069v2  28 Jun 1993"
-  },
+  "title": "arXiv:hep-th/9306069v2 28 Jun 1993",
+  "authors_raw": "Leonard Susskind",
   "title_lines": [
-   "June 1993"
+   "June 1993",
+   "The Stretched Horizon and Black Hole Complementarity"
   ],
-  "title_prev": "Department of Physics"
+  "abstract": "Three postulates asserting the validity of conventional quantum theory, semi-classical general relativity and the statistical basis for thermodynamics are introduced as a foundation for the study of black hole evolution. We explain how these postulates may be implemented in a \u201cstretched horizon\u201d or membrane description of the black hole, appropriate to a distant observer. The technical analysis is illustrated in the simpli\ufb01ed context of 1+1 dimensional dilaton gravity. Our postulates imply that the dissipative properties of the stretched horizon arise from a course graining of microphysical degrees of freedom that the horizon must possess. A principle of black hole complementarity is advocated. The overall viewpoint is similar to that pioneered by \u2019t Hooft but the detailed implementation is di\ufb00erent. PACS categories: 04.60.+n, 12.25.+e, 97.60.Lf \u22c6susskind@dormouse.stanford.edu \u2020 larus@dormouse.stanford.edu \u2021 john@dormouse.stanford.edu 1",
+  "docinfo": {
+   "Title": "arXiv:hep-th/9306069v2  28 Jun 1993",
+   "Producer": "GPL Ghostscript 10.01.2",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20241126154029-05'00'"
+  },
+  "title_raw": "June 1993 The Stretched Horizon and Black Hole Complementarity",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-th/9306069v2 28 Jun 1993",
+   "heading": "The Stretched Horizon and Black Hole Complementarity ABSTRACT",
+   "text": "June 1993 The Stretched Horizon and Black Hole Complementarity",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Abstract",
+   "title": "ABSTRACT",
    "page": 1,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Introduction",
    "page": 2,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Two-dimensional dilaton gravity",
    "page": 8,
    "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 2,
-   "title": "Classical theory",
-   "page": 8,
-   "source": "inferred",
-   "number": "2.1"
-  },
-  {
-   "level": 1,
-   "title": "(σ + −σ −) ≡ −σ, (2. 14)",
-   "page": 10,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 2,
-   "title": "Classical black holes",
-   "page": 10,
-   "source": "inferred",
-   "number": "2.2"
-  },
-  {
-   "level": 2,
-   "title": "Semi-classical theory",
-   "page": 13,
-   "source": "inferred",
-   "number": "2.3"
-  },
-  {
-   "level": 1,
-   "title": "(1 − log κ",
-   "page": 15,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 2,
-   "title": "Semi-classical solutions",
-   "page": 16,
-   "source": "inferred",
-   "number": "2.4"
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "The stretched horizon",
    "page": 18,
    "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 2,
-   "title": "Definition and properties of the classical stretched ho rizon",
-   "page": 18,
-   "source": "inferred",
-   "number": "3.1"
-  },
-  {
-   "level": 2,
-   "title": "The semi-classical stretched horizon",
-   "page": 22,
-   "source": "inferred",
-   "number": "3.2"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "18"
   },
   {
    "level": 1,
-   "title": "(1 − log(κ",
-   "page": 25,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 2,
-   "title": "Incident flux below the black hole threshold",
-   "page": 27,
-   "source": "inferred",
-   "number": "3.3"
-  },
-  {
-   "level": 1,
-   "title": "(tf −t∗), (3. 36)",
-   "page": 29,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 2,
-   "title": "A causal description of the stretched horizon",
-   "page": 30,
-   "source": "inferred",
-   "number": "3.4"
-  },
-  {
-   "level": 1,
-   "title": "Brownian motion of the horizon ⋆",
+   "title": "Brownian motion of the horizon\u22c6",
    "page": 34,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "34"
   },
   {
    "level": 1,
    "title": "Consequences of the postulates",
    "page": 37,
    "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 2,
-   "title": "Microstructure of the stretched horizon",
-   "page": 37,
-   "source": "inferred",
-   "number": "5.1"
-  },
-  {
-   "level": 2,
-   "title": "Thermal entropy vs. entropy of entanglement",
-   "page": 40,
-   "source": "inferred",
-   "number": "5.2"
-  },
-  {
-   "level": 2,
-   "title": "Discussion",
-   "page": 44,
-   "source": "inferred",
-   "number": "5.3"
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "37"
   },
   {
    "level": 1,
-   "title": "References",
+   "title": "REFERENCES",
    "page": 47,
    "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "For an early critique of Hawking’s proposal, see D. N. Page , Phys. Rev. Lett. 44",
-   "page": 47,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "E. Verlinde and H. Verlinde, A Unitary S-matrix for 2D Black Hole Formation and",
-   "page": 47,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "K. S. Thorne, R. H. Price, and D. A. MacDonald, P Black Holes: The Membrane",
-   "page": 47,
-   "source": "inferred",
-   "number": "9"
-  },
-  {
-   "level": 1,
-   "title": "D. N. Page, Black Hole Information, University of Alberta preprint, Alberta-Thy-23-",
-   "page": 48,
-   "source": "inferred",
-   "number": "27"
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "47"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Foliate the spacetime with a family of space-like Cauchy surfaces, as shown. Some of the Cauchy surfaces will lie partly within the black hole. Consider the surface \u03a3P which contains the point P where the global event horizon intersects the curvature singularity. P partitions \u03a3P into two disjoint su",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Penrose diagram for the eternal black hole solution",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Penrose diagram for the infall solution",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Semi-classical black hole formation and evaporation in Kruskal coordinates",
+   "page": 17,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "",
+   "page": 18,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "18"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Black hole evolution in tortoise coordinates",
+   "page": 24,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Sub-critical \ufb02ux of incident matter",
+   "page": 27,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Thermal entropy of stretched horizon and radiation \ufb01eld as a function of time",
+   "page": 42,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "42"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Entanglement entropy of radiation and stretched horizon. The dashed curves indicate the thermal entropies of Figure 8",
+   "page": 43,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "43"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 250,
+   "n_words": 32,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-abstract",
    "number": null,
-   "title": "Abstract",
+   "title": "ABSTRACT",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 959,
-   "n_words": 139
+   "n_chars": 950,
+   "n_words": 130,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-001-1-introduction",
@@ -231,256 +730,88 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
-   "page_end": 7,
-   "n_chars": 12416,
-   "n_words": 2107
-  },
-  {
-   "id": "sec-002-21-classical-theory",
-   "number": "2.1",
-   "title": "Classical theory",
-   "level": 2,
-   "page_start": 7,
    "page_end": 8,
-   "n_chars": 1600,
-   "n_words": 263
+   "n_chars": 13953,
+   "n_words": 2228,
+   "label_start": "2",
+   "label_end": "8"
   },
   {
-   "id": "sec-003-2-two-dimensional-dilaton-gravity",
+   "id": "sec-002-2-two-dimensional-dilaton-gravity",
    "number": "2",
    "title": "Two-dimensional dilaton gravity",
    "level": 1,
    "page_start": 8,
-   "page_end": 10,
-   "n_chars": 3130,
-   "n_words": 586
-  },
-  {
-   "id": "sec-004-2-σ-σ-σ-2-14",
-   "number": "2",
-   "title": "(σ + −σ −) ≡ −σ, (2. 14)",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 59,
-   "n_words": 10
-  },
-  {
-   "id": "sec-005-22-classical-black-holes",
-   "number": "2.2",
-   "title": "Classical black holes",
-   "level": 2,
-   "page_start": 10,
-   "page_end": 13,
-   "n_chars": 3908,
-   "n_words": 738
-  },
-  {
-   "id": "sec-006-23-semi-classical-theory",
-   "number": "2.3",
-   "title": "Semi-classical theory",
-   "level": 2,
-   "page_start": 13,
-   "page_end": 15,
-   "n_chars": 4384,
-   "n_words": 843
-  },
-  {
-   "id": "sec-007-4-1-log-κ",
-   "number": "4",
-   "title": "(1 − log κ",
-   "level": 1,
-   "page_start": 15,
-   "page_end": 16,
-   "n_chars": 579,
-   "n_words": 122
-  },
-  {
-   "id": "sec-008-24-semi-classical-solutions",
-   "number": "2.4",
-   "title": "Semi-classical solutions",
-   "level": 2,
-   "page_start": 16,
    "page_end": 18,
-   "n_chars": 3424,
-   "n_words": 640
+   "n_chars": 15392,
+   "n_words": 2741,
+   "label_start": "8",
+   "label_end": "18"
   },
   {
-   "id": "sec-009-3-the-stretched-horizon",
+   "id": "sec-003-3-the-stretched-horizon",
    "number": "3",
    "title": "The stretched horizon",
    "level": 1,
    "page_start": 18,
-   "page_end": 18,
-   "n_chars": 481,
-   "n_words": 89
-  },
-  {
-   "id": "sec-010-31-definition-and-properties-of-the-classical-st",
-   "number": "3.1",
-   "title": "Definition and properties of the classical stretched ho rizon",
-   "level": 2,
-   "page_start": 18,
-   "page_end": 22,
-   "n_chars": 6767,
-   "n_words": 1232
-  },
-  {
-   "id": "sec-011-32-the-semi-classical-stretched-horizon",
-   "number": "3.2",
-   "title": "The semi-classical stretched horizon",
-   "level": 2,
-   "page_start": 22,
-   "page_end": 25,
-   "n_chars": 4091,
-   "n_words": 795
-  },
-  {
-   "id": "sec-012-4-1-logκ",
-   "number": "4",
-   "title": "(1 − log(κ",
-   "level": 1,
-   "page_start": 25,
-   "page_end": 27,
-   "n_chars": 2421,
-   "n_words": 447
-  },
-  {
-   "id": "sec-013-33-incident-flux-below-the-black-hole-threshold",
-   "number": "3.3",
-   "title": "Incident flux below the black hole threshold",
-   "level": 2,
-   "page_start": 27,
-   "page_end": 29,
-   "n_chars": 4130,
-   "n_words": 807
-  },
-  {
-   "id": "sec-014-4-tf-t-3-36",
-   "number": "4",
-   "title": "(tf −t∗), (3. 36)",
-   "level": 1,
-   "page_start": 29,
-   "page_end": 30,
-   "n_chars": 1521,
-   "n_words": 282
-  },
-  {
-   "id": "sec-015-34-a-causal-description-of-the-stretched-horizon",
-   "number": "3.4",
-   "title": "A causal description of the stretched horizon",
-   "level": 2,
-   "page_start": 30,
    "page_end": 34,
-   "n_chars": 6461,
-   "n_words": 1277
+   "n_chars": 25753,
+   "n_words": 4601,
+   "label_start": "18",
+   "label_end": "34"
   },
   {
-   "id": "sec-016-4-brownian-motion-of-the-horizon",
+   "id": "sec-004-4-brownian-motion-of-the-horizon",
    "number": "4",
-   "title": "Brownian motion of the horizon ⋆",
+   "title": "Brownian motion of the horizon\u22c6",
    "level": 1,
    "page_start": 34,
    "page_end": 37,
-   "n_chars": 5862,
-   "n_words": 1052
+   "n_chars": 5781,
+   "n_words": 972,
+   "label_start": "34",
+   "label_end": "37"
   },
   {
-   "id": "sec-017-5-consequences-of-the-postulates",
+   "id": "sec-005-5-consequences-of-the-postulates",
    "number": "5",
    "title": "Consequences of the postulates",
    "level": 1,
    "page_start": 37,
-   "page_end": 37,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-018-51-microstructure-of-the-stretched-horizon",
-   "number": "5.1",
-   "title": "Microstructure of the stretched horizon",
-   "level": 2,
-   "page_start": 37,
-   "page_end": 40,
-   "n_chars": 6314,
-   "n_words": 1145
-  },
-  {
-   "id": "sec-019-52-thermal-entropy-vs-entropy-of-entanglement",
-   "number": "5.2",
-   "title": "Thermal entropy vs. entropy of entanglement",
-   "level": 2,
-   "page_start": 40,
-   "page_end": 44,
-   "n_chars": 6548,
-   "n_words": 1189
-  },
-  {
-   "id": "sec-020-53-discussion",
-   "number": "5.3",
-   "title": "Discussion",
-   "level": 2,
-   "page_start": 44,
    "page_end": 47,
-   "n_chars": 6675,
-   "n_words": 1142
+   "n_chars": 19447,
+   "n_words": 3289,
+   "label_start": "37",
+   "label_end": "47"
   },
   {
-   "id": "sec-021-references",
+   "id": "sec-006-references",
    "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 47,
-   "page_end": 47,
-   "n_chars": 80,
-   "n_words": 15
-  },
-  {
-   "id": "sec-022-2-for-an-early-critique-of-hawkings-proposal-see",
-   "number": "2",
-   "title": "For an early critique of Hawking’s proposal, see D. N. Page , Phys. Rev. Lett. 44",
-   "level": 1,
-   "page_start": 47,
-   "page_end": 47,
-   "n_chars": 82,
-   "n_words": 14
-  },
-  {
-   "id": "sec-023-4-e-verlinde-and-h-verlinde-a-unitary-s-matrix-f",
-   "number": "4",
-   "title": "E. Verlinde and H. Verlinde, A Unitary S-matrix for 2D Black Hole Formation and",
-   "level": 1,
-   "page_start": 47,
-   "page_end": 47,
-   "n_chars": 1041,
-   "n_words": 162
-  },
-  {
-   "id": "sec-024-9-k-s-thorne-r-h-price-and-d-a-macdonald-p-black",
-   "number": "9",
-   "title": "K. S. Thorne, R. H. Price, and D. A. MacDonald, P Black Holes: The Membrane",
+   "title": "REFERENCES",
    "level": 1,
    "page_start": 47,
    "page_end": 48,
-   "n_chars": 1583,
-   "n_words": 274
-  },
-  {
-   "id": "sec-025-27-d-n-page-black-hole-information-university-of",
-   "number": "27",
-   "title": "D. N. Page, Black Hole Information, University of Alberta preprint, Alberta-Thy-23-",
-   "level": 1,
-   "page_start": 48,
-   "page_end": 48,
-   "n_chars": 227,
-   "n_words": 37
+   "n_chars": 3344,
+   "n_words": 554,
+   "label_start": "47",
+   "label_end": "48"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 26,
-  "sections": 26,
-  "chars_total": 84743
+  "toc_entries": 7,
+  "toc_inferred_entries": 7,
+  "toc_inferred_mean_confidence": 0.707,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 9,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 84870
  }
 }

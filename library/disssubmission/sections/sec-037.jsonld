@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/disssubmission/sections/sec-037",
   "@type": [
     "doco:Section"
   ],
-  "title": "Vanishing theorems revisited 43",
-  "pageStart": 51,
-  "pageEnd": 53,
+  "title": "Jacobian varieties",
+  "pageStart": 131,
+  "pageEnd": 135,
   "contains": [
     "library/disssubmission/blocks/prose-sec-037"
   ],
-  "derivedFrom": "library/disssubmission/manifest",
-  "sourceDocument": "library/disssubmission/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./disssubmission/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./disssubmission/manifest.jsonld",
   "provenance": "ingested"
 }

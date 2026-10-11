@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/black-samson-phd2010sp/sections/sec-001",
   "@type": [
     "doco:Section"
   ],
-  "title": "INTRODUCTION 1",
-  "pageStart": 7,
-  "pageEnd": 7,
+  "title": "SCHUR-WEYL DUALITY AND QUOTIENTS OF THE HECKE ALGEBRA",
+  "pageStart": 29,
+  "pageEnd": 42,
   "contains": [
     "library/black-samson-phd2010sp/blocks/prose-sec-001"
   ],
-  "derivedFrom": "library/black-samson-phd2010sp/manifest",
-  "sourceDocument": "library/black-samson-phd2010sp/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./black-samson-phd2010sp/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./black-samson-phd2010sp/manifest.jsonld",
   "provenance": "ingested"
 }

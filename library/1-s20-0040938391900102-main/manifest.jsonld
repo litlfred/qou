@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./1-s20-0040938391900102-main/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "PII: 0040-9383(91)90010-2",
+  "contains": [
+    "library/1-s20-0040938391900102-main/sections/page-001",
+    "library/1-s20-0040938391900102-main/sections/page-002",
+    "library/1-s20-0040938391900102-main/sections/page-003",
+    "library/1-s20-0040938391900102-main/sections/page-004",
+    "library/1-s20-0040938391900102-main/sections/page-005",
+    "library/1-s20-0040938391900102-main/sections/page-006",
+    "library/1-s20-0040938391900102-main/sections/page-007"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "meta": {
+    "doc_id": "1-s20-0040938391900102-main",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "1-s2.0-0040938391900102-main.pdf",
+    "source_sha256": "8b4169e83aeeff396d9ec40a8ebcf7bb36bd29e8f5405e7fe636e2e6b8be675f",
+    "pages": 7,
+    "arxiv": null,
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

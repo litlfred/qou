@@ -6,176 +6,446 @@
   "sha256": "50331bf18a2bd4d5e3b3dcbbde4da73c4884a60d94e266b3a9fc2ab62ccd716e",
   "bytes": 4338175,
   "pages": 8,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:17Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.1063/5.0013689",
-  "title": "Online Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann\ue923 ; Tyler Helmuth",
+  "title": "Online \ue92d Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann \ue923 ; Tyler Helmuth",
   "authors_raw": "J. Math. Phys. 62, 022201 (2021)",
   "title_lines": [
-   "Online",
+   "Online \ue92d",
    "Export",
    "Citation",
    "RESEARCH ARTICLE | FEBRUARY 01 2021",
    "Efficient algorithms for approximating quantum partition",
    "functions",
-   "Ryan L. Mann\ue923",
+   "Ryan L. Mann \ue923",
    "; Tyler Helmuth"
   ],
   "abstract": null,
   "docinfo": {
+   "Producer": "pdfTeX; modified using iTextSharp.LGPLv2.Core 3.7.4.0",
    "Creator": "LaTeX with hyperref package",
-   "CreationDate": "D:20211122152148+05'30'",
-   "Producer": "pdfTeX; modified using iTextSharp.LGPLv2.Core 3.7.4.0"
+   "CreationDate": "D:20211122152148+05'30'"
+  },
+  "title_raw": "Online \ue92d Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann \ue923 ; Tyler Helmuth",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Online \ue92d",
+   "text": "Online \ue92d Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann \ue923 ; Tyler Helmuth",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Abstract",
+   "title": "AFFILIATIONS",
    "page": 2,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "ABSTRACT",
+   "page": 2,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "INTRODUCTION",
    "page": 2,
    "source": "inferred",
-   "number": "I"
+   "number": "I",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "THE ABSTRACT CLUSTER EXPANSION",
    "page": 3,
    "source": "inferred",
-   "number": "II"
+   "number": "II",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "THE QUANTUM CLUSTER EXPANSION",
    "page": 3,
    "source": "inferred",
-   "number": "III"
+   "number": "III",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "APPROXIMATION ALGORITHM",
    "page": 4,
    "source": "inferred",
-   "number": "IV"
+   "number": "IV",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "CONCLUSION & OUTLOOK",
    "page": 5,
    "source": "inferred",
-   "number": "V"
+   "number": "V",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "Acknowledgments",
+   "title": "ACKNOWLEDGMENTS",
    "page": 5,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "References",
+   "title": "PROOF OF LEMMA 2",
+   "page": 5,
+   "source": "inferred",
+   "number": "A",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "PROOF OF LEMMA 4 AND LEMMA 7",
+   "page": 6,
+   "source": "inferred",
+   "number": "B",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "DATA AVAILABILITY",
    "page": 8,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "REFERENCES",
+   "page": 8,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 998,
+   "n_words": 142,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-affiliations",
+   "number": null,
+   "title": "AFFILIATIONS",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 260,
+   "n_words": 26,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-abstract",
+   "number": null,
+   "title": "ABSTRACT",
    "level": 1,
    "page_start": 2,
    "page_end": 2,
    "n_chars": 708,
-   "n_words": 94
+   "n_words": 94,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-i-introduction",
+   "id": "sec-002-i-introduction",
    "number": "I",
    "title": "INTRODUCTION",
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 4338,
-   "n_words": 700
+   "n_chars": 4334,
+   "n_words": 696,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-ii-the-abstract-cluster-expansion",
+   "id": "sec-003-ii-the-abstract-cluster-expansion",
    "number": "II",
    "title": "THE ABSTRACT CLUSTER EXPANSION",
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 2041,
-   "n_words": 346
+   "n_chars": 2043,
+   "n_words": 348,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-iii-the-quantum-cluster-expansion",
+   "id": "sec-004-iii-the-quantum-cluster-expansion",
    "number": "III",
    "title": "THE QUANTUM CLUSTER EXPANSION",
    "level": 1,
    "page_start": 3,
    "page_end": 4,
    "n_chars": 2064,
-   "n_words": 343
+   "n_words": 343,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-iv-approximation-algorithm",
+   "id": "sec-005-iv-approximation-algorithm",
    "number": "IV",
    "title": "APPROXIMATION ALGORITHM",
    "level": 1,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 2890,
-   "n_words": 506
+   "n_chars": 2891,
+   "n_words": 507,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-v-conclusion-outlook",
+   "id": "sec-006-v-conclusion-outlook",
    "number": "V",
    "title": "CONCLUSION & OUTLOOK",
    "level": 1,
    "page_start": 5,
    "page_end": 5,
    "n_chars": 896,
-   "n_words": 140
+   "n_words": 140,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-acknowledgments",
+   "id": "sec-007-acknowledgments",
    "number": null,
-   "title": "Acknowledgments",
+   "title": "ACKNOWLEDGMENTS",
    "level": 1,
    "page_start": 5,
-   "page_end": 8,
-   "n_chars": 6845,
-   "n_words": 1173
+   "page_end": 5,
+   "n_chars": 364,
+   "n_words": 50,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-008-a-proof-of-lemma-2",
+   "number": "A",
+   "title": "PROOF OF LEMMA 2",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2767,
+   "n_words": 505,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-b-proof-of-lemma-4-and-lemma-7",
+   "number": "B",
+   "title": "PROOF OF LEMMA 4 AND LEMMA 7",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 3187,
+   "n_words": 596,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-data-availability",
    "number": null,
-   "title": "References",
+   "title": "DATA AVAILABILITY",
    "level": 1,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 3833,
-   "n_words": 545
+   "n_chars": 43,
+   "n_words": 8,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-references",
+   "number": null,
+   "title": "REFERENCES",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 3834,
+   "n_words": 546,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 8,
-  "sections": 8,
-  "chars_total": 23615
+  "toc_entries": 12,
+  "toc_inferred_entries": 12,
+  "toc_inferred_mean_confidence": 0.7,
+  "toc_inferred_empty_share": 0.083,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 13,
+  "chars_total": 24389
  }
 }

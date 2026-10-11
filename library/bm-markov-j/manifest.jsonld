@@ -1,16 +1,38 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/bm-markov-j/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "On Markov's Theorem",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./bm-markov-j/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "bm-markov-j",
   "contains": [
-    "library/bm-markov-j/sections/sec-000"
+    "library/bm-markov-j/sections/page-001",
+    "library/bm-markov-j/sections/page-002",
+    "library/bm-markov-j/sections/page-003",
+    "library/bm-markov-j/sections/page-004",
+    "library/bm-markov-j/sections/page-005",
+    "library/bm-markov-j/sections/page-006",
+    "library/bm-markov-j/sections/page-007",
+    "library/bm-markov-j/sections/page-008",
+    "library/bm-markov-j/sections/page-009",
+    "library/bm-markov-j/sections/page-010",
+    "library/bm-markov-j/sections/page-011",
+    "library/bm-markov-j/sections/page-012",
+    "library/bm-markov-j/sections/page-013",
+    "library/bm-markov-j/sections/page-014",
+    "library/bm-markov-j/sections/page-015",
+    "library/bm-markov-j/sections/page-016"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "bm-markov-j",
+    "title_source": "slug",
     "source_file": "bm-markov-j.pdf",
     "source_sha256": "ffc46b9daf7dc8587b80f368ce98844401d688e77a32759c4d18a6446ca6079a",
     "pages": 16,

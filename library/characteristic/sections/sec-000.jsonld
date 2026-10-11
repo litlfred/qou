@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/characteristic/sections/sec-000",
   "@type": [
     "doco:Section"
   ],
-  "title": "For those pro",
-  "pageStart": 2,
-  "pageEnd": 3,
+  "title": "The colored Jones function of a knot",
+  "pageStart": 1,
+  "pageEnd": 1,
   "contains": [
     "library/characteristic/blocks/prose-sec-000"
   ],
-  "derivedFrom": "library/characteristic/manifest",
-  "sourceDocument": "library/characteristic/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./characteristic/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./characteristic/manifest.jsonld",
   "provenance": "ingested"
 }

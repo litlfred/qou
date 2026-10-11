@@ -5,187 +5,573 @@
   "file": "characteristic.pdf",
   "sha256": "42bd31da2754488ff0cf30260bd1af7524dad89655d910d1cdd33c4f54968806",
   "bytes": 174639,
-  "pages": 13
+  "pages": 13,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:24Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "On the characteristic and deformation varieties of a knot",
-  "authors_raw": "We also propose a geometric relation between the peripheral subgroup of the knot group, and basic",
-  "abstract": "The colored Jones function of a knot is a sequence of Laurent polynomials in one variable, whose nth term is the Jones polynomial of the knot colored with the n-dimensional irreducible representation of sl2. It was recently shown by TTQ Le and the author that the colored Jones function of a knot is q-holonomic, i.e., that it satis es a nontrivial linear recursion relation with appropriate coe\u000ecients. Using holonomicity, we introduce a geometric invariant of a knot: the characteristic variety, an a\u000ene 1-dimensional variety in \u0000 2. We then compare it with the character variety of SL2( \u0000 ) representations, viewed from the boundary. The comparison is stated as a conjecture which we verify (by a direct computation) in the case of the trefoil and gure eight knots. We also propose a geometric relation between the peripheral subgroup of the knot group, and basic operators that act on the colored Jones function. We also de ne a noncommutative version (the so-called noncommutative A-polynomial) of the characteristic variety of a knot. Holonomicity works well for higher rank groups and goes beyond hyperbolic geometry, as we explain in the last chapter.",
+  "title": "ON THE CHARACTERISTIC AND DEFORMATION VARIETIES OF A KNOT",
+  "authors_raw": "STAVROS GAROUFALIDIS",
+  "title_lines": [
+   "ON THE CHARACTERISTIC AND DEFORMATION VARIETIES OF A KNOT"
+  ],
+  "abstract": "The colored Jones function of a knot is a sequence of Laurent polynomials in one variable, whose nth term is the Jones polynomial of the knot colored with the n-dimensional irreducible representation of sl2. It was recently shown by TTQ Le and the author that the colored Jones function of a knot is q-holonomic, i.e., that it satis\ufb01es a nontrivial linear recursion relation with appropriate coe\ufb03cients. Using holonomicity, we introduce a geometric invariant of a knot: the characteristic variety, an a\ufb03ne 1-dimensional variety in \u00002. We then compare it with the character variety of SL2( \u0000 ) representations, viewed from the boundary. The comparison is stated as a conjecture which we verify (by a direct computation) in the case of the trefoil and \ufb01gure eight knots. We also propose a geometric relation between the peripheral subgroup of the knot group, and basic operators that act on the colored Jones function. We also de\ufb01ne a noncommutative version (the so-called noncommutative A-polynomial) of the characteristic variety of a knot. Holonomicity works well for higher rank groups and goes beyond hyperbolic geometry, as we explain in the last chapter.",
   "docinfo": {
    "Producer": "GNU Ghostscript 7.07"
   },
-  "title_lines": [
-   "ON THE CHARACTERISTIC AND DEFORMATION VARIETIES OF A KNOT",
-   "STAVROS GAROUFALIDIS",
-   "Dedicated to A. Casson on the occasion of his 60th birthday"
-  ],
-  "title_prev": "ON THE CHARACTERISTIC AND DEFORMATION VARIETIES OF A KNOT STAVROS GAROUFALIDIS Dedicated to A. Casson on the occasion of his 60th birthday"
+  "title_raw": "ON THE CHARACTERISTIC AND DEFORMATION VARIETIES OF A KNOT",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "ON THE CHARACTERISTIC AND DEFORMATION VARIETIES OF A KNOT Contents Introduction The colored Jones function of a knot The characteristic variety of a knot The deformation variety of a knot The conjecture Acknowledgement A polynomial version of Conjecture 1 The A -polynomial of a knot A noncommutative",
+   "text": "ON THE CHARACTERISTIC AND DEFORMATION VARIETIES OF A KNOT",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
    "level": 1,
-   "title": "For those pro",
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.55,
+   "evidence": [
+    "contents",
+    "number"
+   ],
+   "page_label": "1"
+  },
+  {
+   "level": 2,
+   "title": "The colored Jones function of a knot",
+   "page": 1,
+   "source": "inferred",
+   "number": "1.1",
+   "confidence": 0.55,
+   "evidence": [
+    "contents",
+    "number"
+   ],
+   "page_label": "1"
+  },
+  {
+   "level": 2,
+   "title": "The characteristic variety of a knot",
    "page": 2,
    "source": "inferred",
-   "number": "2"
+   "number": "1.2",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "2"
   },
   {
    "level": 2,
-   "title": "The conjecture. Recall that every a\u000ene subvariety V in \u0001",
+   "title": "The deformation variety of a knot",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.3",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "2"
+  },
+  {
+   "level": 2,
+   "title": "The conjecture",
    "page": 3,
    "source": "inferred",
-   "number": "1.4"
-  },
-  {
-   "level": 1,
-   "title": "A polynomial version of Conjecture 1",
-   "page": 4,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 2,
-   "title": "The A-polynomial of a knot. Recall the de",
-   "page": 4,
-   "source": "inferred",
-   "number": "2.1"
+   "number": "1.4",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "3"
   },
   {
    "level": 2,
-   "title": "A noncommutative version of the A-polynomial. In this section we de",
-   "page": 4,
+   "title": "Acknowledgement",
+   "page": 3,
    "source": "inferred",
-   "number": "2.2"
+   "number": "1.5",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "3"
   },
   {
    "level": 2,
-   "title": "Computing the Aq polynomial of a knot. Section 2 de",
+   "title": "The A-polynomial of a knot",
+   "page": 4,
+   "source": "inferred",
+   "number": "2.1",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "A noncommutative version of the A-polynomial",
+   "page": 4,
+   "source": "inferred",
+   "number": "2.2",
+   "confidence": 0.55,
+   "evidence": [
+    "contents",
+    "number"
+   ],
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "Computing the Aq polynomial of a knot",
    "page": 5,
    "source": "inferred",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Proof of the conjecture for the Trefoil and Figure 8 knots",
    "page": 6,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "6"
+  },
+  {
+   "level": 2,
+   "title": "The colored Jones function and the A-polynomial of the 31 and 41 knots",
+   "page": 6,
+   "source": "inferred",
+   "number": "3.1",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "6"
+  },
+  {
+   "level": 2,
+   "title": "Computer calculations",
+   "page": 6,
+   "source": "inferred",
+   "number": "3.2",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Higher rank groups",
    "page": 11,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "References",
    "page": 12,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "body"
+   ],
+   "page_label": "12"
   }
  ],
  "toc_source": "inferred",
- "sections": [
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
   {
-   "id": "sec-000-2-for-those-pro",
-   "number": "2",
-   "title": "For those pro",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 3,
-   "n_chars": 1440,
-   "n_words": 257
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "id": "sec-001-14-the-conjecture-recall-that-every-ane-subvarie",
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 138,
+   "n_words": 22,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-11-the-colored-jones-function-of-a-knot",
+   "number": "1.1",
+   "title": "The colored Jones function of a knot",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 873,
+   "n_words": 141,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-001-12-the-characteristic-variety-of-a-knot",
+   "number": "1.2",
+   "title": "The characteristic variety of a knot",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 130,
+   "n_words": 21,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 94,
+   "n_words": 19,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-003-13-the-deformation-variety-of-a-knot",
+   "number": "1.3",
+   "title": "The deformation variety of a knot",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4788,
+   "n_words": 866,
+   "label_start": "1",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-004-14-the-conjecture",
    "number": "1.4",
-   "title": "The conjecture. Recall that every a\u000ene subvariety V in \u0001",
+   "title": "The conjecture",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 3113,
+   "n_words": 521,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-005-15-acknowledgement",
+   "number": "1.5",
+   "title": "Acknowledgement",
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 3528,
-   "n_words": 593
+   "n_chars": 350,
+   "n_words": 58,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
-   "id": "sec-002-2-a-polynomial-version-of-conjecture-1",
-   "number": "2",
-   "title": "A polynomial version of Conjecture 1",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-003-21-the-a-polynomial-of-a-knot-recall-the-de",
+   "id": "sec-006-21-the-a-polynomial-of-a-knot",
    "number": "2.1",
-   "title": "The A-polynomial of a knot. Recall the de",
+   "title": "The A-polynomial of a knot",
    "level": 2,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 550,
-   "n_words": 98
+   "n_chars": 493,
+   "n_words": 87,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
-   "id": "sec-004-22-a-noncommutative-version-of-the-a-polynomial",
+   "id": "sec-007-22-a-noncommutative-version-of-the-a-polynomial",
    "number": "2.2",
-   "title": "A noncommutative version of the A-polynomial. In this section we de",
+   "title": "A noncommutative version of the A-polynomial",
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 4739,
-   "n_words": 905
+   "n_chars": 4234,
+   "n_words": 803,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
-   "id": "sec-005-23-computing-the-aq-polynomial-of-a-knot-section",
+   "id": "sec-008-31-the-colored-jones-function-and-the-a-polynomi",
+   "number": "3.1",
+   "title": "The colored Jones function and the A-polynomial of the 31 and 41 knots",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 364,
+   "n_words": 60,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-009-23-computing-the-aq-polynomial-of-a-knot",
    "number": "2.3",
-   "title": "Computing the Aq polynomial of a knot. Section 2 de",
+   "title": "Computing the Aq polynomial of a knot",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 2489,
-   "n_words": 459
+   "n_chars": 2446,
+   "n_words": 446,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
-   "id": "sec-006-3-proof-of-the-conjecture-for-the-trefoil-and-fi",
+   "id": "sec-010-3-proof-of-the-conjecture-for-the-trefoil-and-fi",
    "number": "3",
    "title": "Proof of the conjecture for the Trefoil and Figure 8 knots",
    "level": 1,
    "page_start": 6,
-   "page_end": 11,
-   "n_chars": 10389,
-   "n_words": 2456
+   "page_end": 6,
+   "n_chars": 1311,
+   "n_words": 259,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
-   "id": "sec-007-4-higher-rank-groups",
+   "id": "sec-011-32-computer-calculations",
+   "number": "3.2",
+   "title": "Computer calculations",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 11,
+   "n_chars": 8960,
+   "n_words": 2159,
+   "label_start": "6",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-012-4-higher-rank-groups",
    "number": "4",
    "title": "Higher rank groups",
    "level": 1,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 4733,
-   "n_words": 967
+   "n_chars": 4715,
+   "n_words": 931,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
-   "id": "sec-008-references",
+   "id": "sec-013-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 12,
    "page_end": 13,
    "n_chars": 3523,
-   "n_words": 505
+   "n_words": 501,
+   "label_start": "12",
+   "label_end": "13"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 9,
-  "sections": 9,
-  "chars_total": 31391
+  "toc_entries": 14,
+  "toc_inferred_entries": 14,
+  "toc_inferred_mean_confidence": 0.743,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "contents",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 3,
+    "items": [
+     "Introduction",
+     "The colored Jones function of a knot",
+     "A noncommutative version of the A-polynomial"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 15,
+  "chars_total": 35532
  }
 }

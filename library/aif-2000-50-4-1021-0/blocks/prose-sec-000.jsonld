@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-000",
   "kind": "prose",
-  "title": "Cas d'une matrice unipotente. — Soit U = In 4- N où",
-  "pageStart": 11,
-  "pageEnd": 11,
-  "text": "../sections/sec-000-1121-cas-dune-matrice-unipotente-soit-u-in-4--n.md",
-  "derivedFrom": "library/aif-2000-50-4-1021-0/manifest",
-  "sourceDocument": "library/aif-2000-50-4-1021-0/manifest",
+  "title": "Introduction et notations",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "text": "../sections/sec-000-0-introduction-et-notations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./aif-2000-50-4-1021-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./aif-2000-50-4-1021-0/manifest.jsonld",
   "provenance": "ingested"
 }

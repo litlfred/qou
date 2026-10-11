@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/disssubmission/sections/sec-022",
   "@type": [
     "doco:Section"
   ],
-  "title": "Character twists and convolution",
-  "pageStart": 34,
-  "pageEnd": 35,
+  "title": "Specialization of characters",
+  "pageStart": 66,
+  "pageEnd": 69,
   "contains": [
     "library/disssubmission/blocks/prose-sec-022"
   ],
-  "derivedFrom": "library/disssubmission/manifest",
-  "sourceDocument": "library/disssubmission/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./disssubmission/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./disssubmission/manifest.jsonld",
   "provenance": "ingested"
 }

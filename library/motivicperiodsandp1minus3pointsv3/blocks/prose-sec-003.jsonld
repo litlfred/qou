@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/motivicperiodsandp1minus3pointsv3/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/motivicperiodsandp1minus3pointsv3/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "There exists an abstract Tannakian category MT (Z) of mixed Tate motives",
-  "pageStart": 2,
-  "pageEnd": 2,
-  "text": "../sections/sec-003-1-there-exists-an-abstract-tannakian-category-mt.md",
-  "derivedFrom": "library/motivicperiodsandp1minus3pointsv3/manifest",
-  "sourceDocument": "library/motivicperiodsandp1minus3pointsv3/manifest",
+  "title": "Roots of unity",
+  "pageStart": 16,
+  "pageEnd": 17,
+  "text": "../sections/sec-003-4-roots-of-unity.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./motivicperiodsandp1minus3pointsv3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./motivicperiodsandp1minus3pointsv3/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-hep-th-9811173v1
-doc_title: "b vol(M) = (−D)3/ 2 (2π)2n− 4 ζK(2) 2ζ(2) for a manifold M whose invariant trace ﬁeldK has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The larg"
+doc_title: "arXiv:hep-th/9811173v1 19 Nov 1998"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 2-3
 source_pdf: 9811173v1.pdf
 source_sha256: 986bf57947746523
-doc_brief: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links — We identify 998 closed hyperbolic 3-manifolds whose volumes are ratio nally related to"
+toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.973
-latex_coverage_ratio: 0.996
+latex_coverage_ratio: 1.0
 ---
 This paper began with a study of hyperbolic links whose complementary volumes result from evaluations of Feynman diagrams [@9806174]. For each of these volumes we found, by empirical means, a *closed--form* evaluation in terms of a few Clausen functions, evaluated at rational multiples of $\pi$. Then, thanks to generous advice from Don Zagier, we came to appreciate that these results form part of a much larger scaffold, whose unifying feature is the existence of rational relations between hyperbolic volumes and Dedekind zeta values. While the existence of such relations is understood [@DZ:Invent; @DZ:JMPS; @DZ:Texel], their precise forms appear to be unpredictable, thus far, by deductive mathematics. They are therefore ripe for the application of experimental mathematics. The work reported herein has involved a -- to the authors -- quite intoxicating mix of tools, allowing conjectures to be tested against known data and rapidly confirmed or rejected as the research progressed. We will return to these methodological issues in the conclusion.
 

@@ -1,19 +1,27 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/0110001v3/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "A geometric interpretation of Milnor's triple linking numbers",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./0110001v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "agt-3-18.dvi",
   "contains": [
+    "library/0110001v3/sections/sec-front-matter",
     "library/0110001v3/sections/sec-000",
     "library/0110001v3/sections/sec-001",
-    "library/0110001v3/sections/sec-002",
-    "library/0110001v3/sections/sec-003"
+    "library/0110001v3/sections/sec-002"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "0110001v3",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "0110001v3.pdf",
     "source_sha256": "f30f603ac1c555e0aba08f07e4d55e1a23e8b6d08ce93e89f4963849d6f19050",
     "pages": 12,

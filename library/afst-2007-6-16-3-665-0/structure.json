@@ -5,28 +5,42 @@
   "file": "AFST_2007_6_16_3_665_0.pdf",
   "sha256": "402b61574e561f861d1d2a5437da11d1f9327b0979317d5b25ca23101be95430",
   "bytes": 552756,
-  "pages": 55
+  "pages": 55,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:17Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
   "title": "Galois theory of q-difference equations",
-  "authors_raw": "MARIUS VAN DER PUT, MARC REVERSAT",
-  "abstract": null,
-  "docinfo": {
-   "Author": "Marius van der Put,  Marc Reversat",
-   "Title": "Galois theory of q-difference equations",
-   "Creator": "NUMDAM",
-   "Producer": "pdfeTeX-1.305",
-   "CreationDate": "D:20080206105545+01'00'"
-  },
+  "authors_raw": "DES SCIENCES",
   "title_lines": [
    "ANNALES",
-   "DE LA FACULTÉ",
-   "DES SCIENCES",
-   "Mathématiques"
+   "DE LA FACULT\u00c9"
   ],
-  "title_prev": "ANNALES DE LA FACULTÉ DES SCIENCES Mathématiques"
+  "abstract": null,
+  "docinfo": {
+   "Title": "Galois theory of q-difference equations",
+   "Author": "Marius van der Put,  Marc Reversat",
+   "Producer": "pdfeTeX-1.305",
+   "Creator": "NUMDAM",
+   "CreationDate": "D:20080206105545+01'00'"
+  },
+  "title_raw": "ANNALES DE LA FACULT\u00c9",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Galois theory of q-difference equations",
+   "heading": "ANNALES Math\u00e9matiques",
+   "text": "ANNALES DE LA FACULT\u00c9",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -34,172 +48,849 @@
    "title": "Introduction",
    "page": 3,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "666"
   },
   {
    "level": 1,
-   "title": "Classiﬁcation of q-diﬀerence equations",
+   "title": "Classi\ufb01cation of q-di\ufb00erence equations",
    "page": 4,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "667"
   },
   {
    "level": 2,
    "title": "Some notation and formulas",
    "page": 4,
    "source": "inferred",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "667"
   },
   {
    "level": 2,
-   "title": "Regular singular diﬀerence modules",
+   "title": "Regular singular di\ufb00erence modules",
    "page": 5,
    "source": "inferred",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "668"
   },
   {
    "level": 2,
-   "title": "The slope ﬁltration",
+   "title": "The slope \ufb01ltration",
    "page": 6,
    "source": "inferred",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "669"
   },
   {
    "level": 2,
-   "title": "Classiﬁcation of pure modules over ˆK and K",
+   "title": "Classi\ufb01cation of pure modules over \u0003K and K",
    "page": 7,
    "source": "inferred",
-   "number": "1.4"
-  },
-  {
-   "level": 1,
-   "title": "The ﬁrst",
-   "page": 8,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "It follows thatM has a unique ﬁnite dimensionalC-linear subspaceW,",
-   "page": 10,
-   "source": "inferred",
-   "number": "0"
+   "number": "1.4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "670"
   },
   {
    "level": 3,
-   "title": "Pure diﬀerence modules overK∞ with descent data",
+   "title": "Pure di\ufb00erence modules over K\u221ewith descent data",
    "page": 11,
    "source": "inferred",
-   "number": "1.4.1"
+   "number": "1.4.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "674"
   },
   {
    "level": 1,
-   "title": "Vector bundles andq-diﬀerence modules",
+   "title": "Vector bundles and q-di\ufb00erence modules",
    "page": 13,
    "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 2,
-   "title": "(Canonical representatives forcoker(Φ −1,M",
-   "page": 20,
-   "source": "inferred",
-   "number": "2.6"
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "676"
   },
   {
    "level": 1,
-   "title": "Moduli spaces for q-diﬀerence equations",
+   "title": "Moduli spaces for q-di\ufb00erence equations",
    "page": 21,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "684"
   },
   {
    "level": 1,
-   "title": "It will turn out that the scheme representingF is in factAN",
-   "page": 22,
-   "source": "inferred",
-   "number": "C"
-  },
-  {
-   "level": 1,
-   "title": "Global diﬀerence modules",
+   "title": "Global di\ufb00erence modules",
    "page": 25,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "688"
   },
   {
    "level": 1,
-   "title": "The Galois group of aq-diﬀerence module",
+   "title": "The Galois group of a q-di\ufb00erence module",
    "page": 30,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "693"
   },
   {
    "level": 2,
    "title": "Universal Picard-Vessiot extensions",
    "page": 30,
    "source": "inferred",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "693"
   },
   {
    "level": 2,
-   "title": "Galois groups for split modules overK",
+   "title": "Galois groups for split modules over K",
    "page": 33,
    "source": "inferred",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "696"
   },
   {
    "level": 2,
-   "title": "Galois groups for modules overK with two slopes",
+   "title": "Galois groups for modules over K with two slopes",
    "page": 35,
    "source": "inferred",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "698"
   },
   {
    "level": 2,
    "title": "Modules over K with more slopes",
    "page": 38,
    "source": "inferred",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "701"
   },
   {
    "level": 1,
-   "title": "Realizing q-diﬀerence modules overK as connections",
+   "title": "Realizing q-di\ufb00erence modules over K as connections",
    "page": 39,
    "source": "inferred",
-   "number": "6"
+   "number": "6",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "702"
   },
   {
    "level": 1,
    "title": "Positive characteristic",
    "page": 47,
    "source": "inferred",
-   "number": "7"
+   "number": "7",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "710"
   },
   {
    "level": 2,
    "title": "Picard-Vessiot theory and examples",
    "page": 49,
    "source": "inferred",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "712"
   },
   {
    "level": 2,
-   "title": "The universal diﬀerence ring over ˆK",
+   "title": "The universal di\ufb00erence ring over \u0003K",
    "page": 53,
    "source": "inferred",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "716"
   },
   {
-   "level": 1,
+   "level": 2,
    "title": "Bibliography",
    "page": 54,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "717"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "664",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "665",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "666",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "667",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "668",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "669",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "670",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "671",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "672",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "673",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "674",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "675",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "676",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "677",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "678",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "679",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "680",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "681",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "682",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "683",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "684",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "685",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "686",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "687",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "688",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "689",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "690",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "691",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "692",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "693",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "694",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "695",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "696",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "697",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "698",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "699",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "700",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "701",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "702",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "703",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "704",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "705",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "706",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "707",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "708",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "709",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "710",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "711",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "712",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "713",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "714",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "715",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "716",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "717",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "718",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 3000,
+   "n_words": 462,
+   "label_start": "664",
+   "label_end": "666"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -207,18 +898,22 @@
    "level": 1,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 2222,
-   "n_words": 329
+   "n_chars": 2269,
+   "n_words": 376,
+   "label_start": "666",
+   "label_end": "667"
   },
   {
-   "id": "sec-001-1-classiﬁcation-of-q-diﬀerence-equations",
+   "id": "sec-001-1-classi\ufb01cation-of-q-di\ufb00erence-equations",
    "number": "1",
-   "title": "Classiﬁcation of q-diﬀerence equations",
+   "title": "Classi\ufb01cation of q-di\ufb00erence equations",
    "level": 1,
    "page_start": 4,
    "page_end": 4,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "667",
+   "label_end": "667"
   },
   {
    "id": "sec-002-11-some-notation-and-formulas",
@@ -227,225 +922,231 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 2120,
-   "n_words": 366
+   "n_chars": 2173,
+   "n_words": 438,
+   "label_start": "667",
+   "label_end": "668"
   },
   {
-   "id": "sec-003-12-regular-singular-diﬀerence-modules",
+   "id": "sec-003-12-regular-singular-di\ufb00erence-modules",
    "number": "1.2",
-   "title": "Regular singular diﬀerence modules",
+   "title": "Regular singular di\ufb00erence modules",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 2466,
-   "n_words": 419
+   "n_chars": 2535,
+   "n_words": 507,
+   "label_start": "668",
+   "label_end": "669"
   },
   {
-   "id": "sec-004-13-the-slope-ﬁltration",
+   "id": "sec-004-13-the-slope-\ufb01ltration",
    "number": "1.3",
-   "title": "The slope ﬁltration",
+   "title": "The slope \ufb01ltration",
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 2104,
-   "n_words": 367
+   "n_chars": 2184,
+   "n_words": 447,
+   "label_start": "669",
+   "label_end": "670"
   },
   {
-   "id": "sec-005-14-classiﬁcation-of-pure-modules-over-ˆk-and-k",
+   "id": "sec-005-14-classi\ufb01cation-of-pure-modules-over-k-and-k",
    "number": "1.4",
-   "title": "Classiﬁcation of pure modules over ˆK and K",
+   "title": "Classi\ufb01cation of pure modules over \u0003K and K",
    "level": 2,
    "page_start": 7,
-   "page_end": 8,
-   "n_chars": 2832,
-   "n_words": 466
-  },
-  {
-   "id": "sec-006-2-the-ﬁrst",
-   "number": "2",
-   "title": "The ﬁrst",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 10,
-   "n_chars": 4724,
-   "n_words": 811
-  },
-  {
-   "id": "sec-007-0-it-follows-thatm-has-a-unique-ﬁnite-dimensiona",
-   "number": "0",
-   "title": "It follows thatM has a unique ﬁnite dimensionalC-linear subspaceW,",
-   "level": 1,
-   "page_start": 10,
    "page_end": 11,
-   "n_chars": 2554,
-   "n_words": 397
+   "n_chars": 10348,
+   "n_words": 2050,
+   "label_start": "670",
+   "label_end": "674"
   },
   {
-   "id": "sec-008-141-pure-diﬀerence-modules-overk-with-descent-da",
+   "id": "sec-006-141-pure-di\ufb00erence-modules-over-kwith-descent-da",
    "number": "1.4.1",
-   "title": "Pure diﬀerence modules overK∞ with descent data",
+   "title": "Pure di\ufb00erence modules over K\u221ewith descent data",
    "level": 3,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 4483,
-   "n_words": 776
+   "n_chars": 4650,
+   "n_words": 943,
+   "label_start": "674",
+   "label_end": "676"
   },
   {
-   "id": "sec-009-2-vector-bundles-andq-diﬀerence-modules",
+   "id": "sec-007-2-vector-bundles-and-q-di\ufb00erence-modules",
    "number": "2",
-   "title": "Vector bundles andq-diﬀerence modules",
+   "title": "Vector bundles and q-di\ufb00erence modules",
    "level": 1,
    "page_start": 13,
-   "page_end": 20,
-   "n_chars": 15408,
-   "n_words": 2527
-  },
-  {
-   "id": "sec-010-26-canonical-representatives-forcokerφ-1m",
-   "number": "2.6",
-   "title": "(Canonical representatives forcoker(Φ −1,M",
-   "level": 2,
-   "page_start": 20,
    "page_end": 21,
-   "n_chars": 2567,
-   "n_words": 376
+   "n_chars": 18572,
+   "n_words": 3590,
+   "label_start": "676",
+   "label_end": "684"
   },
   {
-   "id": "sec-011-3-moduli-spaces-for-q-diﬀerence-equations",
+   "id": "sec-008-3-moduli-spaces-for-q-di\ufb00erence-equations",
    "number": "3",
-   "title": "Moduli spaces for q-diﬀerence equations",
+   "title": "Moduli spaces for q-di\ufb00erence equations",
    "level": 1,
    "page_start": 21,
-   "page_end": 22,
-   "n_chars": 2564,
-   "n_words": 462
-  },
-  {
-   "id": "sec-012-c-it-will-turn-out-that-the-scheme-representingf",
-   "number": "C",
-   "title": "It will turn out that the scheme representingF is in factAN",
-   "level": 1,
-   "page_start": 22,
    "page_end": 25,
-   "n_chars": 6269,
-   "n_words": 1067
+   "n_chars": 9144,
+   "n_words": 1822,
+   "label_start": "684",
+   "label_end": "688"
   },
   {
-   "id": "sec-013-4-global-diﬀerence-modules",
+   "id": "sec-009-4-global-di\ufb00erence-modules",
    "number": "4",
-   "title": "Global diﬀerence modules",
+   "title": "Global di\ufb00erence modules",
    "level": 1,
    "page_start": 25,
    "page_end": 30,
-   "n_chars": 9830,
-   "n_words": 1716
+   "n_chars": 10003,
+   "n_words": 2021,
+   "label_start": "688",
+   "label_end": "693"
   },
   {
-   "id": "sec-014-5-the-galois-group-of-aq-diﬀerence-module",
+   "id": "sec-010-5-the-galois-group-of-a-q-di\ufb00erence-module",
    "number": "5",
-   "title": "The Galois group of aq-diﬀerence module",
+   "title": "The Galois group of a q-di\ufb00erence module",
    "level": 1,
    "page_start": 30,
    "page_end": 30,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "693",
+   "label_end": "693"
   },
   {
-   "id": "sec-015-51-universal-picard-vessiot-extensions",
+   "id": "sec-011-51-universal-picard-vessiot-extensions",
    "number": "5.1",
    "title": "Universal Picard-Vessiot extensions",
    "level": 2,
    "page_start": 30,
    "page_end": 33,
-   "n_chars": 7669,
-   "n_words": 1290
+   "n_chars": 7898,
+   "n_words": 1577,
+   "label_start": "693",
+   "label_end": "696"
   },
   {
-   "id": "sec-016-52-galois-groups-for-split-modules-overk",
+   "id": "sec-012-52-galois-groups-for-split-modules-over-k",
    "number": "5.2",
-   "title": "Galois groups for split modules overK",
+   "title": "Galois groups for split modules over K",
    "level": 2,
    "page_start": 33,
    "page_end": 35,
-   "n_chars": 3518,
-   "n_words": 629
+   "n_chars": 3639,
+   "n_words": 750,
+   "label_start": "696",
+   "label_end": "698"
   },
   {
-   "id": "sec-017-53-galois-groups-for-modules-overk-with-two-slop",
+   "id": "sec-013-53-galois-groups-for-modules-over-k-with-two-slo",
    "number": "5.3",
-   "title": "Galois groups for modules overK with two slopes",
+   "title": "Galois groups for modules over K with two slopes",
    "level": 2,
    "page_start": 35,
    "page_end": 38,
-   "n_chars": 6655,
-   "n_words": 1146
+   "n_chars": 6833,
+   "n_words": 1343,
+   "label_start": "698",
+   "label_end": "701"
   },
   {
-   "id": "sec-018-54-modules-over-k-with-more-slopes",
+   "id": "sec-014-54-modules-over-k-with-more-slopes",
    "number": "5.4",
    "title": "Modules over K with more slopes",
    "level": 2,
    "page_start": 38,
    "page_end": 39,
-   "n_chars": 1954,
-   "n_words": 334
+   "n_chars": 2029,
+   "n_words": 407,
+   "label_start": "701",
+   "label_end": "702"
   },
   {
-   "id": "sec-019-6-realizing-q-diﬀerence-modules-overk-as-connect",
+   "id": "sec-015-6-realizing-q-di\ufb00erence-modules-over-k-as-connec",
    "number": "6",
-   "title": "Realizing q-diﬀerence modules overK as connections",
+   "title": "Realizing q-di\ufb00erence modules over K as connections",
    "level": 1,
    "page_start": 39,
    "page_end": 47,
-   "n_chars": 17405,
-   "n_words": 3036
+   "n_chars": 17996,
+   "n_words": 3646,
+   "label_start": "702",
+   "label_end": "710"
   },
   {
-   "id": "sec-020-7-positive-characteristic",
+   "id": "sec-016-7-positive-characteristic",
    "number": "7",
    "title": "Positive characteristic",
    "level": 1,
    "page_start": 47,
    "page_end": 49,
-   "n_chars": 4489,
-   "n_words": 743
+   "n_chars": 4551,
+   "n_words": 881,
+   "label_start": "710",
+   "label_end": "712"
   },
   {
-   "id": "sec-021-71-picard-vessiot-theory-and-examples",
+   "id": "sec-017-71-picard-vessiot-theory-and-examples",
    "number": "7.1",
    "title": "Picard-Vessiot theory and examples",
    "level": 2,
    "page_start": 49,
    "page_end": 53,
-   "n_chars": 8845,
-   "n_words": 1504
+   "n_chars": 9107,
+   "n_words": 1838,
+   "label_start": "712",
+   "label_end": "716"
   },
   {
-   "id": "sec-022-72-the-universal-diﬀerence-ring-over-ˆk",
+   "id": "sec-018-72-the-universal-di\ufb00erence-ring-over-k",
    "number": "7.2",
-   "title": "The universal diﬀerence ring over ˆK",
+   "title": "The universal di\ufb00erence ring over \u0003K",
    "level": 2,
    "page_start": 53,
    "page_end": 54,
-   "n_chars": 3008,
-   "n_words": 456
+   "n_chars": 2888,
+   "n_words": 526,
+   "label_start": "716",
+   "label_end": "717"
   },
   {
-   "id": "sec-023-bibliography",
+   "id": "sec-019-bibliography",
    "number": null,
    "title": "Bibliography",
-   "level": 1,
+   "level": 2,
    "page_start": 54,
    "page_end": 55,
-   "n_chars": 1620,
-   "n_words": 221
+   "n_chars": 1640,
+   "n_words": 241,
+   "label_start": "717",
+   "label_end": "718"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 24,
-  "sections": 24,
-  "chars_total": 115306
+  "toc_entries": 20,
+  "toc_inferred_entries": 20,
+  "toc_inferred_mean_confidence": 0.74,
+  "toc_inferred_empty_share": 0.1,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 21,
+  "chars_total": 121459
  }
 }

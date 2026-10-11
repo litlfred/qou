@@ -1,20 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/nrarith/sections/sec-003",
   "@type": [
     "doco:Section"
   ],
-  "title": "Let \u0000 be a Kleinian group of ﬁnite covolume. It is well known, and follows from",
-  "pageStart": 4,
-  "pageEnd": 5,
+  "title": "Short geodesics in arithmetic orbifolds",
+  "pageStart": 9,
+  "pageEnd": 15,
   "contains": [
-    "library/nrarith/blocks/prose-sec-003",
-    "library/nrarith/blocks/thm-sec-003-01",
-    "library/nrarith/blocks/thm-sec-003-02",
-    "library/nrarith/blocks/thm-sec-003-03",
-    "library/nrarith/blocks/cor-sec-003-04"
+    "library/nrarith/blocks/prose-sec-003"
   ],
-  "derivedFrom": "library/nrarith/manifest",
-  "sourceDocument": "library/nrarith/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./nrarith/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./nrarith/manifest.jsonld",
   "provenance": "ingested"
 }

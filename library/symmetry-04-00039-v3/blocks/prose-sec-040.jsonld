@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/symmetry-04-00039-v3/blocks/prose-sec-040",
+  "kind": "prose",
+  "title": "Taxonomical Implications",
+  "pageStart": 71,
+  "pageEnd": 72,
+  "text": "../sections/sec-040-e3-taxonomical-implications.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./symmetry-04-00039-v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./symmetry-04-00039-v3/manifest.jsonld",
+  "provenance": "ingested"
+}

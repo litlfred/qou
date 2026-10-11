@@ -8,6 +8,9 @@
   "pages": 34,
   "text_source": "embedded",
   "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -18,7 +21,7 @@
    "stamp_date": "1 Dec 1992"
   },
   "doi": null,
-  "title": "ITD 92/93\u20139",
+  "title": "arXiv:hep-th/9211141v1 1 Dec 1992",
   "authors_raw": "Level-Spacing Distributions and the Airy Kernel",
   "title_lines": [
    "ITD 92/93\u20139"
@@ -29,6 +32,18 @@
    "Producer": "GPL Ghostscript 10.01.2",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20241126153501-05'00'"
+  },
+  "title_raw": "ITD 92/93\u20139",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-th/9211141v1 1 Dec 1992",
+   "heading": "Level-Spacing Distributions and the Airy Kernel",
+   "text": "ITD 92/93\u20139",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -37,237 +52,654 @@
    "title": "INTRODUCTION AND SUMMARY OF RESULTS",
    "page": 2,
    "source": "inferred",
-   "number": "I"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
-   "level": 1,
-   "title": "The Ordinary Di\ufb00erential Equations",
+   "level": 2,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
+  },
+  {
+   "level": 2,
+   "title": "The System of Partial Differential Equations",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "The Ordinary Differential Equations",
    "page": 5,
    "source": "inferred",
-   "number": "C"
+   "number": "1.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotics and the Commuting Differential Operator",
+   "page": 6,
+   "source": "inferred",
+   "number": "1.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "6"
+  },
+  {
+   "level": 2,
+   "title": "Probability Density for the $n^{th}$ Largest Eigenvalue",
+   "page": 8,
+   "source": "inferred",
+   "number": "1.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "THE SYSTEM OF PARTIAL DIFFERENTIAL EQUATIONS",
    "page": 9,
    "source": "inferred",
-   "number": "II"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "9"
+  },
+  {
+   "level": 2,
+   "title": "Derivation of the Equations",
+   "page": 9,
+   "source": "inferred",
+   "number": "2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "9"
+  },
+  {
+   "level": 2,
+   "title": "Hamiltonian Structure",
+   "page": 14,
+   "source": "inferred",
+   "number": "2.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "THE ORDINARY DIFFERENTIAL EQUATIONS",
    "page": 16,
    "source": "inferred",
-   "number": "III"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "ASYMPTOTICS",
    "page": 17,
    "source": "inferred",
-   "number": "IV"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "17"
   },
   {
-   "level": 1,
-   "title": "The region x << t\u22121/2",
+   "level": 2,
+   "title": "Asymptotics via Painlev'e",
+   "page": 17,
+   "source": "inferred",
+   "number": "4.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "17"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotics via the Commuting Differential Operator",
+   "page": 19,
+   "source": "inferred",
+   "number": "4.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "19"
+  },
+  {
+   "level": 3,
+   "title": "The region $x<<t^{-1/2}$",
    "page": 21,
    "source": "inferred",
-   "number": "1"
+   "number": "4.2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "21"
   },
   {
-   "level": 1,
-   "title": "The region x \u2212t >> t1/4",
+   "level": 3,
+   "title": "The region $x>>t^{-2}$, $t-x>>t^{1/4}$",
+   "page": 22,
+   "source": "inferred",
+   "number": "4.2.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "22"
+  },
+  {
+   "level": 3,
+   "title": "The region $x-t>>t^{1/4}$",
    "page": 23,
    "source": "inferred",
-   "number": "3"
+   "number": "4.2.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "23"
   },
   {
-   "level": 1,
-   "title": "The region |x \u2212t| << t",
+   "level": 3,
+   "title": "The region $\\vert x-t \\vert <<t$",
    "page": 24,
    "source": "inferred",
-   "number": "4"
+   "number": "4.2.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "24"
   },
   {
-   "level": 1,
-   "title": "The asymptotics of \u03bbi",
+   "level": 3,
+   "title": "The asymptotics of $\\lambda_i$",
    "page": 25,
    "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "(x) = \u2212A\u2032(x \u22122t) + A(x \u22122t)f \u2032",
-   "page": 26,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(x)f2(x) dx = \u2212\u03bdf \u2032",
-   "page": 27,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Acknowledgments",
-   "page": 30,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 31,
-   "source": "inferred",
-   "number": null
+   "number": "4.2.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "25"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-i-introduction-and-summary-of-results",
-   "number": "I",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1259,
+   "n_words": 194,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-000-1-introduction-and-summary-of-results",
+   "number": "1",
    "title": "INTRODUCTION AND SUMMARY OF RESULTS",
    "level": 1,
    "page_start": 2,
-   "page_end": 5,
-   "n_chars": 4805,
-   "n_words": 923
-  },
-  {
-   "id": "sec-001-c-the-ordinary-di\ufb00erential-equations",
-   "number": "C",
-   "title": "The Ordinary Di\ufb00erential Equations",
-   "level": 1,
-   "page_start": 5,
    "page_end": 9,
-   "n_chars": 4985,
-   "n_words": 976
+   "n_chars": 9829,
+   "n_words": 1904,
+   "label_start": "2",
+   "label_end": "9"
   },
   {
-   "id": "sec-002-ii-the-system-of-partial-differential-equations",
-   "number": "II",
+   "id": "sec-001-2-the-system-of-partial-differential-equations",
+   "number": "2",
    "title": "THE SYSTEM OF PARTIAL DIFFERENTIAL EQUATIONS",
    "level": 1,
    "page_start": 9,
-   "page_end": 16,
-   "n_chars": 8522,
-   "n_words": 1774
+   "page_end": 9,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
-   "id": "sec-003-iii-the-ordinary-differential-equations",
-   "number": "III",
+   "id": "sec-002-21-derivation-of-the-equations",
+   "number": "2.1",
+   "title": "Derivation of the Equations",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 14,
+   "n_chars": 6472,
+   "n_words": 1402,
+   "label_start": "9",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-003-22-hamiltonian-structure",
+   "number": "2.2",
+   "title": "Hamiltonian Structure",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 1993,
+   "n_words": 364,
+   "label_start": "14",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-004-3-the-ordinary-differential-equations",
+   "number": "3",
    "title": "THE ORDINARY DIFFERENTIAL EQUATIONS",
    "level": 1,
    "page_start": 16,
    "page_end": 17,
    "n_chars": 1118,
-   "n_words": 240
+   "n_words": 240,
+   "label_start": "16",
+   "label_end": "17"
   },
   {
-   "id": "sec-004-iv-asymptotics",
-   "number": "IV",
+   "id": "sec-005-4-asymptotics",
+   "number": "4",
    "title": "ASYMPTOTICS",
    "level": 1,
    "page_start": 17,
-   "page_end": 21,
-   "n_chars": 6193,
-   "n_words": 1240
-  },
-  {
-   "id": "sec-005-1-the-region-x-t12",
-   "number": "1",
-   "title": "The region x << t\u22121/2",
-   "level": 1,
-   "page_start": 21,
-   "page_end": 23,
-   "n_chars": 2318,
-   "n_words": 537
-  },
-  {
-   "id": "sec-006-3-the-region-x-t-t14",
-   "number": "3",
-   "title": "The region x \u2212t >> t1/4",
-   "level": 1,
-   "page_start": 23,
-   "page_end": 24,
-   "n_chars": 813,
-   "n_words": 186
-  },
-  {
-   "id": "sec-007-4-the-region-x-t-t",
-   "number": "4",
-   "title": "The region |x \u2212t| << t",
-   "level": 1,
-   "page_start": 24,
-   "page_end": 25,
-   "n_chars": 1168,
-   "n_words": 248
-  },
-  {
-   "id": "sec-008-5-the-asymptotics-of-\u03bbi",
-   "number": "5",
-   "title": "The asymptotics of \u03bbi",
-   "level": 1,
-   "page_start": 25,
-   "page_end": 26,
-   "n_chars": 1851,
-   "n_words": 365
-  },
-  {
-   "id": "sec-009-1-x-ax-2t-ax-2tf",
-   "number": "1",
-   "title": "(x) = \u2212A\u2032(x \u22122t) + A(x \u22122t)f \u2032",
-   "level": 1,
-   "page_start": 26,
-   "page_end": 27,
-   "n_chars": 173,
-   "n_words": 42
-  },
-  {
-   "id": "sec-010-1-xf2x-dx-\u03bdf",
-   "number": "1",
-   "title": "(x)f2(x) dx = \u2212\u03bdf \u2032",
-   "level": 1,
-   "page_start": 27,
-   "page_end": 30,
-   "n_chars": 4229,
-   "n_words": 897
-  },
-  {
-   "id": "sec-011-acknowledgments",
-   "number": null,
-   "title": "Acknowledgments",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 31,
-   "n_chars": 243,
-   "n_words": 40
-  },
-  {
-   "id": "sec-012-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 31,
    "page_end": 34,
-   "n_chars": 4408,
-   "n_words": 707
+   "n_chars": 21589,
+   "n_words": 4304,
+   "label_start": "17",
+   "label_end": "34"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 13,
-  "sections": 13,
-  "chars_total": 40826,
+  "toc_entries": 18,
+  "toc_inferred_entries": 18,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.167,
+  "toc_inferred_method": "latex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 42260,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 18,
-   "overlaid": 2,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -275,79 +707,53 @@
    },
    "sections": [
     {
-     "id": "sec-000-i-introduction-and-summary-of-results",
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction-and-summary-of-results",
      "title": "INTRODUCTION AND SUMMARY OF RESULTS",
      "prose_ratio": 0.944,
-     "coverage_ratio": 0.862,
+     "coverage_ratio": 0.578,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-c-the-ordinary-di\ufb00erential-equations",
-     "title": "The Ordinary Di\ufb00erential Equations",
-     "prose_ratio": 0.487,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-ii-the-system-of-partial-differential-equations",
+     "id": "sec-001-2-the-system-of-partial-differential-equations",
      "title": "THE SYSTEM OF PARTIAL DIFFERENTIAL EQUATIONS",
-     "prose_ratio": 0.581,
+     "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-003-iii-the-ordinary-differential-equations",
-     "title": "THE ORDINARY DIFFERENTIAL EQUATIONS",
-     "prose_ratio": 0.168,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-002-21-derivation-of-the-equations",
+     "title": "Derivation of the Equations",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-004-iv-asymptotics",
-     "title": "ASYMPTOTICS",
-     "prose_ratio": 0.781,
-     "coverage_ratio": 1.0,
+     "id": "sec-003-22-hamiltonian-structure",
+     "title": "Hamiltonian Structure",
+     "prose_ratio": 0.686,
+     "coverage_ratio": 0.948,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-1-the-region-x-t12",
-     "title": "The region x << t\u22121/2",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-006-3-the-region-x-t-t14",
-     "title": "The region x \u2212t >> t1/4",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-007-4-the-region-x-t-t",
-     "title": "The region |x \u2212t| << t",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-008-5-the-asymptotics-of-\u03bbi",
-     "title": "The asymptotics of \u03bbi",
-     "prose_ratio": 0.221,
+     "id": "sec-004-3-the-ordinary-differential-equations",
+     "title": "THE ORDINARY DIFFERENTIAL EQUATIONS",
+     "prose_ratio": 0.177,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-009-1-x-ax-2t-ax-2tf",
-     "title": "(x) = \u2212A\u2032(x \u22122t) + A(x \u22122t)f \u2032",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-010-1-xf2x-dx-\u03bdf",
-     "title": "(x)f2(x) dx = \u2212\u03bdf \u2032",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-011-acknowledgments",
-     "title": "Acknowledgments",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-012-references",
-     "title": "References",
-     "result": "no matching \\section"
+     "id": "sec-005-4-asymptotics",
+     "title": "ASYMPTOTICS",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
     }
    ]
   }

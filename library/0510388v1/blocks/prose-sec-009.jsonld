@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/0510388v1/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/0510388v1/blocks/prose-sec-009",
   "kind": "prose",
-  "title": "References",
-  "pageStart": 107,
-  "pageEnd": 108,
-  "text": "../sections/sec-009-references.md",
-  "derivedFrom": "library/0510388v1/manifest",
-  "sourceDocument": "library/0510388v1/manifest",
+  "title": "PROOFS ON S3 IN LEFT-TRANSLATION FORMAT",
+  "pageStart": 22,
+  "pageEnd": 22,
+  "text": "../sections/sec-009-b-proofs-on-s3-in-left-translation-format.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./0510388v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./0510388v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -7,7 +7,10 @@
   "bytes": 269173,
   "pages": 25,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:21Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -22,52 +25,487 @@
   "title_lines": [
    "Springer correspondence for symmetric spaces"
   ],
-  "abstract": "This is a survey on the Springer correspondence for symmetric spa ces. We discuss various generalization of the theory of the Springer cor respondence for reductive groups to symmetric spaces and exotic symmetric space s associated to classical groups. \u00a71. Introduction The Springer correspondence is the canonical correspondence b etween the unipo- tent classes of a connected reductive group G and irreducible representations of the Weyl group W of G, established by Springer [Sp] in 1976. In 1981, Lusztig [L2] found a way to reformulate the Springer\u2019s theory by means of the t heory of per- verse sheaves. In the same paper, he gave a geometric interpret ation of Koskta polynomials in terms of the intersection cohomology associated to un ipotent classes of GLn. The theory of Springer correspondence was generalized by Lusz tig [L3] in 1984 to the theory of generalized Springer correspondence, whic h became a basis of his theory of character sheaves [L4]. It is an interesting problem to extend the theory of character she aves to a more general setting, such as a variety on which G acts. Already in 1989, Ginzburg [Gi] introduced the character sheaves on the symmetric space G/H, and Grojnowski [Gr] and Henderson [H] studied the case where G/H =GL2n/Sp2n extensively. Recently, by Achar-Henderson [AH], Finkelberg-Ginzburg-Travkin [FGT], Kato [K1], Shoji- Sorlin [SS], Shoji [S3], di\ufb00erent types of examples, such as the enhan ced variety and the exotic symmetric spaces associated to symplectic groups, are found. Those ex- amples enjoy the satis\ufb01ed theory of the Springer correspondenc e, as an analogue of the Springer correspondence for GLn. In turn, in Chen-Vilonen-Xue [CVX], Shoji- Yang [SY], the case of the symmetric spaces associated to orthogo nal groups were studied. In this case, an analogue of the generalized Springer corr espondence ap- pears, rather than the Springer correspondence. We note that the theory of perverse sheaves associated to (Lie algebra version of) the ",
+  "abstract": "This is a survey on the Springer correspondence for symmetric spaces. We discuss various generalization of the theory of the Springer correspondence for reductive groups to symmetric spaces and exotic symmetric spaces associated to classical groups. \u00a71. Introduction The Springer correspondence is the canonical correspondence between the unipo- tent classes of a connected reductive group G and irreducible representations of the Weyl group W of G, established by Springer [Sp] in 1976. In 1981, Lusztig [L2] found a way to reformulate the Springer\u2019s theory by means of the theory of per- verse sheaves. In the same paper, he gave a geometric interpretation of Koskta polynomials in terms of the intersection cohomology associated to unipotent classes of GLn. The theory of Springer correspondence was generalized by Lusztig [L3] in 1984 to the theory of generalized Springer correspondence, which became a basis of his theory of character sheaves [L4]. It is an interesting problem to extend the theory of character sheaves to a more general setting, such as a variety on which G acts. Already in 1989, Ginzburg [Gi] introduced the character sheaves on the symmetric space G/H, and Grojnowski [Gr] and Henderson [H] studied the case where G/H = GL2n/Sp2n extensively. Recently, by Achar-Henderson [AH], Finkelberg-Ginzburg-Travkin [FGT], Kato [K1], Shoji- Sorlin [SS], Shoji [S3], di\ufb00erent types of examples, such as the enhanced variety and the exotic symmetric spaces associated to symplectic groups, are found. Those ex- amples enjoy the satis\ufb01ed theory of the Springer correspondence, as an analogue of the Springer correspondence for GLn. In turn, in Chen-Vilonen-Xue [CVX], Shoji- Yang [SY], the case of the symmetric spaces associated to orthogonal groups were studied. In this case, an analogue of the generalized Springer correspondence ap- pears, rather than the Springer correspondence. We note that the theory of perverse sheaves associated to (Lie algebra version of) the symmetric spa",
   "docinfo": {
+   "Title": "arXiv:1909.06744v1  [math.RT]  15 Sep 2019",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20190916210623-04'00'",
    "Creator": "dvips(k) 5.996 Copyright 2016 Radical Eye Software",
-   "Title": "arXiv:1909.06744v1  [math.RT]  15 Sep 2019"
+   "CreationDate": "D:20190916210623-04'00'"
+  },
+  "title_raw": "Springer correspondence for symmetric spaces",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "arXiv:1909.06744v1 [math.RT] 15 Sep 2019",
+   "heading": "Springer correspondence for symmetric spaces Toshiaki Shoji \u00a7 1. Introduction The Springer correspondence is the canonical correspondence between the unipotent classes of a connected reductive group G and irreducible representations of the Weyl group W of G , established by Springer [Sp] in 1976. In",
+   "text": "Springer correspondence for symmetric spaces",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
   {
-   "level": 2,
-   "title": "First we will give a combinatorial description of NG\u03b9\u03b8 . Let \u03bb =",
-   "page": 18,
+   "level": 1,
+   "title": "\u00a71. Introduction",
+   "page": 1,
    "source": "inferred",
-   "number": "16.1"
-  },
-  {
-   "level": 2,
-   "title": "Lusztig\u2019s theory of the generalized Springer correspondence for reductive",
-   "page": 18,
-   "source": "inferred",
-   "number": "16.2"
-  },
-  {
-   "level": 2,
-   "title": "We give here some example of cuspidal pairs. It would be interesting t o",
-   "page": 19,
-   "source": "inferred",
-   "number": "16.5"
-  },
-  {
-   "level": 2,
-   "title": "We prepare some notations for formulating the generalized Springe r cor-",
-   "page": 19,
-   "source": "inferred",
-   "number": "16.7"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "1"
   },
   {
    "level": 1,
-   "title": "References",
-   "page": 24,
+   "title": "Contents",
+   "page": 1,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "1"
+  },
+  {
+   "level": 1,
+   "title": "\u00a72. Springer correspondence for GLn",
+   "page": 2,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "2"
+  },
+  {
+   "level": 1,
+   "title": "\u00a73. Springer correspondence for reductive groups",
+   "page": 3,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "3"
+  },
+  {
+   "level": 1,
+   "title": "\u00a74. The interpretation via perverse sheaves",
+   "page": 4,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "4"
+  },
+  {
+   "level": 1,
+   "title": "\u00a75. The generalized Springer correspondence",
+   "page": 5,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "5"
+  },
+  {
+   "level": 1,
+   "title": "\u00a76. Geometric realization of Kostka polynomials",
+   "page": 7,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "7"
+  },
+  {
+   "level": 1,
+   "title": "\u00a78. Springer correspondence for the enhanced variety",
+   "page": 9,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "9"
+  },
+  {
+   "level": 1,
+   "title": "\u00a79. Double Kostka polynomials",
+   "page": 10,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "10"
+  },
+  {
+   "level": 1,
+   "title": "\u00a710. Symmetric spaces in algebraic setting",
+   "page": 11,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "11"
+  },
+  {
+   "level": 1,
+   "title": "\u00a711. Symmetric spaces associated to classical groups",
+   "page": 12,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "12"
+  },
+  {
+   "level": 1,
+   "title": "\u00a713. Exotic symmetric space associated to symplectic groups",
+   "page": 14,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "14"
+  },
+  {
+   "level": 1,
+   "title": "\u00a714. Springer correspondence for G\u03b9\u03b8",
+   "page": 16,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "16"
+  },
+  {
+   "level": 1,
+   "title": "\u00a715. Springer correspondence for G\u03b9\u03b8",
+   "page": 17,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "17"
+  },
+  {
+   "level": 1,
+   "title": "\u00a716. Generalized Springer correspondence for G\u03b9\u03b8",
+   "page": 18,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "18"
+  },
+  {
+   "level": 2,
+   "title": "K\u03be is a semisimple per-",
+   "page": 20,
+   "source": "inferred",
+   "number": "P",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "20"
+  },
+  {
+   "level": 1,
+   "title": "(generalized Springer correspondence)",
+   "page": 20,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "20"
+  },
+  {
+   "level": 1,
+   "title": "\u00a717. Exotic symmetric spaces of higher level, the case H = SpN",
+   "page": 20,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "20"
+  },
+  {
+   "level": 1,
+   "title": "\u00a719. Symmetric spaces in characteristic 2",
+   "page": 23,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "23"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -75,66 +513,256 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 18,
-   "n_chars": 37891,
-   "n_words": 7280
+   "page_end": 1,
+   "n_chars": 362,
+   "n_words": 49,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-000-161-first-we-will-give-a-combinatorial-descripti",
-   "number": "16.1",
-   "title": "First we will give a combinatorial description of NG\u03b9\u03b8 . Let \u03bb =",
-   "level": 2,
-   "page_start": 18,
-   "page_end": 18,
-   "n_chars": 738,
-   "n_words": 166
-  },
-  {
-   "id": "sec-001-162-lusztigs-theory-of-the-generalized-springer",
-   "number": "16.2",
-   "title": "Lusztig\u2019s theory of the generalized Springer correspondence for reductive",
-   "level": 2,
-   "page_start": 18,
-   "page_end": 19,
-   "n_chars": 773,
-   "n_words": 145
-  },
-  {
-   "id": "sec-002-165-we-give-here-some-example-of-cuspidal-pairs",
-   "number": "16.5",
-   "title": "We give here some example of cuspidal pairs. It would be interesting t o",
-   "level": 2,
-   "page_start": 19,
-   "page_end": 19,
-   "n_chars": 526,
-   "n_words": 118
-  },
-  {
-   "id": "sec-003-167-we-prepare-some-notations-for-formulating-th",
-   "number": "16.7",
-   "title": "We prepare some notations for formulating the generalized Springe r cor-",
-   "level": 2,
-   "page_start": 19,
-   "page_end": 24,
-   "n_chars": 10061,
-   "n_words": 2005
-  },
-  {
-   "id": "sec-004-references",
+   "id": "sec-000-1-introduction",
    "number": null,
-   "title": "References",
+   "title": "\u00a71. Introduction",
    "level": 1,
-   "page_start": 24,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 2073,
+   "n_words": 323,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-001-contents",
+   "number": null,
+   "title": "Contents",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 907,
+   "n_words": 142,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-002-2-springer-correspondence-for-gln",
+   "number": null,
+   "title": "\u00a72. Springer correspondence for GLn",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2850,
+   "n_words": 540,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-003-3-springer-correspondence-for-reductive-groups",
+   "number": null,
+   "title": "\u00a73. Springer correspondence for reductive groups",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2409,
+   "n_words": 463,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-004-4-the-interpretation-via-perverse-sheaves",
+   "number": null,
+   "title": "\u00a74. The interpretation via perverse sheaves",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1926,
+   "n_words": 355,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-005-5-the-generalized-springer-correspondence",
+   "number": null,
+   "title": "\u00a75. The generalized Springer correspondence",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 3481,
+   "n_words": 761,
+   "label_start": "5",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-006-6-geometric-realization-of-kostka-polynomials",
+   "number": null,
+   "title": "\u00a76. Geometric realization of Kostka polynomials",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 4826,
+   "n_words": 951,
+   "label_start": "7",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-007-8-springer-correspondence-for-the-enhanced-varie",
+   "number": null,
+   "title": "\u00a78. Springer correspondence for the enhanced variety",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 946,
+   "n_words": 211,
+   "label_start": "9",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-008-9-double-kostka-polynomials",
+   "number": null,
+   "title": "\u00a79. Double Kostka polynomials",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1956,
+   "n_words": 376,
+   "label_start": "10",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-009-10-symmetric-spaces-in-algebraic-setting",
+   "number": null,
+   "title": "\u00a710. Symmetric spaces in algebraic setting",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2584,
+   "n_words": 512,
+   "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-010-11-symmetric-spaces-associated-to-classical-grou",
+   "number": null,
+   "title": "\u00a711. Symmetric spaces associated to classical groups",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 5356,
+   "n_words": 1139,
+   "label_start": "12",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-011-13-exotic-symmetric-space-associated-to-symplect",
+   "number": null,
+   "title": "\u00a713. Exotic symmetric space associated to symplectic groups",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 3286,
+   "n_words": 661,
+   "label_start": "14",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-012-14-springer-correspondence-for-g\u03b9\u03b8",
+   "number": null,
+   "title": "\u00a714. Springer correspondence for G\u03b9\u03b8",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2649,
+   "n_words": 528,
+   "label_start": "16",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-013-15-springer-correspondence-for-g\u03b9\u03b8",
+   "number": null,
+   "title": "\u00a715. Springer correspondence for G\u03b9\u03b8",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1704,
+   "n_words": 343,
+   "label_start": "17",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-014-16-generalized-springer-correspondence-for-g\u03b9\u03b8",
+   "number": null,
+   "title": "\u00a716. Generalized Springer correspondence for G\u03b9\u03b8",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 3428,
+   "n_words": 734,
+   "label_start": "18",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-015-p-k\u03be-is-a-semisimple-per",
+   "number": "P",
+   "title": "K\u03be is a semisimple per-",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 381,
+   "n_words": 82,
+   "label_start": "20",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-016-generalized-springer-correspondence",
+   "number": null,
+   "title": "(generalized Springer correspondence)",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "20",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-017-17-exotic-symmetric-spaces-of-higher-level-the-c",
+   "number": null,
+   "title": "\u00a717. Exotic symmetric spaces of higher level, the case H = SpN",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 5262,
+   "n_words": 1123,
+   "label_start": "20",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-018-19-symmetric-spaces-in-characteristic-2",
+   "number": null,
+   "title": "\u00a719. Symmetric spaces in characteristic 2",
+   "level": 1,
+   "page_start": 23,
    "page_end": 25,
-   "n_chars": 3670,
-   "n_words": 559
+   "n_chars": 7087,
+   "n_words": 1211,
+   "label_start": "23",
+   "label_end": "25"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 5,
-  "sections": 6,
-  "chars_total": 53659
+  "toc_entries": 19,
+  "toc_inferred_entries": 19,
+  "toc_inferred_mean_confidence": 0.621,
+  "toc_inferred_empty_share": 0.053,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 20,
+  "chars_total": 53473
  }
 }

@@ -1,36 +1,27 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ising/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ising/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "ising",
   "contains": [
+    "library/ising/sections/sec-front-matter",
     "library/ising/sections/sec-000",
     "library/ising/sections/sec-001",
     "library/ising/sections/sec-002",
-    "library/ising/sections/sec-003",
-    "library/ising/sections/sec-004",
-    "library/ising/sections/sec-005",
-    "library/ising/sections/sec-006",
-    "library/ising/sections/sec-007",
-    "library/ising/sections/sec-008",
-    "library/ising/sections/sec-009",
-    "library/ising/sections/sec-010",
-    "library/ising/sections/sec-011",
-    "library/ising/sections/sec-012",
-    "library/ising/sections/sec-013",
-    "library/ising/sections/sec-014",
-    "library/ising/sections/sec-015",
-    "library/ising/sections/sec-016",
-    "library/ising/sections/sec-017",
-    "library/ising/sections/sec-018",
-    "library/ising/sections/sec-019",
-    "library/ising/sections/sec-020"
+    "library/ising/sections/sec-003"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "ising",
+    "title_source": "slug",
     "source_file": "ising.pdf",
     "source_sha256": "9f84d7209731d299042c7ec2e84a2d7de7729f9e5537bd05596e8540c6254661",
     "pages": 24,

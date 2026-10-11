@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1312.3086v1",
+  "title": "Quantum repeater with Rydberg blocked atomic ensembles in ﬁber-coupled cavities",
   "contains": [
+    "library/arxiv-1312.3086v1/sections/sec-front-matter",
     "library/arxiv-1312.3086v1/sections/sec-000",
     "library/arxiv-1312.3086v1/sections/sec-001",
     "library/arxiv-1312.3086v1/sections/sec-002",
@@ -30,7 +31,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1312.3086v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1312.3086v1.pdf",
     "source_sha256": "ff328e7c7cbdc70c7f95dfdf726276f9afbb82b13af28c795e2cd43db608734e",
     "pages": 10,

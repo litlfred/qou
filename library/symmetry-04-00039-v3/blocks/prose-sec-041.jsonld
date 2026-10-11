@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/symmetry-04-00039-v3/blocks/prose-sec-041",
+  "kind": "prose",
+  "title": "AB* AC*",
+  "pageStart": 72,
+  "pageEnd": 74,
+  "text": "../sections/sec-041-0-ab-ac.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./symmetry-04-00039-v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./symmetry-04-00039-v3/manifest.jsonld",
+  "provenance": "ingested"
+}

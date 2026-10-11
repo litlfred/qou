@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/sections/sec-004",
   "@type": [
     "doco:Section"
   ],
   "title": "Quantization",
-  "pageStart": 13,
+  "pageStart": 12,
   "pageEnd": 16,
   "contains": [
     "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/blocks/prose-sec-004"
   ],
-  "derivedFrom": "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/manifest",
-  "sourceDocument": "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./celebratio-mathematica-neumann-hyperbolic-3-manifolds/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./celebratio-mathematica-neumann-hyperbolic-3-manifolds/manifest.jsonld",
   "provenance": "ingested"
 }

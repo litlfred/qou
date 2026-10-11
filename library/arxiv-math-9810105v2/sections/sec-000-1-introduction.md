@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-math-9810105v2
-doc_title: "ON THE DISTRIBUTION OF THE LENGTH OF THE LONGEST INCREASING SUBSEQUENCE OF RANDOM PERMUTATIONS"
+doc_title: "arXiv:math/9810105v2 [math.CO] 26 Mar 1999"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-8
 source_pdf: 9810105v2.pdf
 source_sha256: 0a432946234949c1
-doc_brief: "ON THE DISTRIBUTION OF THE LENGTH OF THE LONGEST INCREASING SUBSEQUENCE OF RANDOM PERMUTATIONS — The authors consider the length, lN, of the length of the longest increasing subsequence of a random"
+toc_source: inferred
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 0.944
 ---
 \label{s-intro}
 

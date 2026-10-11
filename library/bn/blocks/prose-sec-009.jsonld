@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/bn/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/bn/blocks/prose-sec-009",
   "kind": "prose",
-  "title": "(z −bi). There is a unique homomor-",
-  "pageStart": 11,
-  "pageEnd": 14,
-  "text": "../sections/sec-009-1-z-bi-there-is-a-unique-homomor.md",
-  "derivedFrom": "library/bn/manifest",
-  "sourceDocument": "library/bn/manifest",
+  "title": "Deﬁnite integrals",
+  "pageStart": 40,
+  "pageEnd": 45,
+  "text": "../sections/sec-009-9-deﬁnite-integrals.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./bn/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./bn/manifest.jsonld",
   "provenance": "ingested"
 }

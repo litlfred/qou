@@ -6,6 +6,11 @@
   "sha256": "8c9231d0832df3b6f9fa790e80c2caeb63a3b6c75d187d76ada0f42769ec4372",
   "bytes": 168851,
   "pages": 13,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:19Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -18,13 +23,27 @@
   "doi": null,
   "title": "LU TP 13-03 Januray 2013",
   "authors_raw": "Chiral Perturbation Theory and Mesons",
+  "title_lines": [
+   "LU TP 13-03",
+   "Januray 2013"
+  ],
   "abstract": null,
   "docinfo": {
-   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "Fri Nov 26 15:50:14 2010",
-   "Creator": "gnuplot 4.2 patchlevel 5 ",
    "Title": "temp.ps",
-   "Author": ",,,"
+   "Author": ",,,",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "gnuplot 4.2 patchlevel 5 ",
+   "CreationDate": "Fri Nov 26 15:50:14 2010"
+  },
+  "title_raw": "LU TP 13-03 Januray 2013",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "temp.ps",
+   "heading": "Chiral Perturbation Theory and Mesons",
+   "text": "LU TP 13-03 Januray 2013",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -33,88 +52,302 @@
    "title": "Introduction",
    "page": 2,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Chiral Perturbation Theory",
    "page": 2,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Determining low-energy-constants in the continuum",
    "page": 5,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Hard pion ChPT",
    "page": 7,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Beyond QCD",
    "page": 8,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Leading logarithms",
    "page": 10,
    "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "L + F1",
-   "page": 10,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "L2 + F2",
-   "page": 10,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "L + F2",
-   "page": 10,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "L3 + \u00b7 \u00b7 \u00b7 (6.1)",
-   "page": 10,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Acknowledgments",
-   "page": 11,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 11,
-   "source": "inferred",
-   "number": null
+   "number": "6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "10"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "We need to pick",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "An example of the power-counting, on the left the rules for",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "The number of terms at LO [19], NLO [14, 15]and NNLO [17] for standard mesonic ChPT",
+   "page": 4,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The quality of the relations found in [31]. Shown are the NLO and NNLO predictions for",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "The main new \ufb01t of the Lr",
+   "page": 7,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The left plot shows the form-factor f+ in D \u2192\u03c0e\u03bd and D \u2192Ke\u03bd decays from CLEO [46]. In the",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "The coef\ufb01cients appearing the corrections to the vacuum-expectation-value for the three generic",
+   "page": 10,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "10"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 65,
+   "n_words": 10,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-2-chiral-perturbation-theory",
    "number": "2",
@@ -123,7 +356,9 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 144,
-   "n_words": 18
+   "n_words": 18,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-1-introduction",
@@ -132,8 +367,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 10246,
-   "n_words": 1873
+   "n_chars": 10164,
+   "n_words": 1791,
+   "label_start": null,
+   "label_end": "5"
   },
   {
    "id": "sec-002-3-determining-low-energy-constants-in-the-contin",
@@ -142,8 +379,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 5584,
-   "n_words": 1099
+   "n_chars": 5493,
+   "n_words": 1008,
+   "label_start": "5",
+   "label_end": "7"
   },
   {
    "id": "sec-003-4-hard-pion-chpt",
@@ -152,8 +391,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 4117,
-   "n_words": 744
+   "n_chars": 4080,
+   "n_words": 707,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
    "id": "sec-004-5-beyond-qcd",
@@ -162,8 +403,10 @@
    "level": 1,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 3733,
-   "n_words": 848
+   "n_chars": 3605,
+   "n_words": 717,
+   "label_start": "8",
+   "label_end": "10"
   },
   {
    "id": "sec-005-6-leading-logarithms",
@@ -171,88 +414,45 @@
    "title": "Leading logarithms",
    "level": 1,
    "page_start": 10,
-   "page_end": 10,
-   "n_chars": 379,
-   "n_words": 69
-  },
-  {
-   "id": "sec-006-1-l-f1",
-   "number": "1",
-   "title": "L + F1",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 6,
-   "n_words": 3
-  },
-  {
-   "id": "sec-007-2-l2-f2",
-   "number": "2",
-   "title": "L2 + F2",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-008-1-l-f2",
-   "number": "1",
-   "title": "L + F2",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 6,
-   "n_words": 3
-  },
-  {
-   "id": "sec-009-3-l3-61",
-   "number": "3",
-   "title": "L3 + \u00b7 \u00b7 \u00b7 (6.1)",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 11,
-   "n_chars": 2000,
-   "n_words": 343
-  },
-  {
-   "id": "sec-010-acknowledgments",
-   "number": null,
-   "title": "Acknowledgments",
-   "level": 1,
-   "page_start": 11,
-   "page_end": 11,
-   "n_chars": 352,
-   "n_words": 50
-  },
-  {
-   "id": "sec-011-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 11,
    "page_end": 13,
-   "n_chars": 7012,
-   "n_words": 1070
+   "n_chars": 9803,
+   "n_words": 1528,
+   "label_start": "10",
+   "label_end": "13"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 12,
-  "sections": 12,
-  "chars_total": 33579,
+  "toc_entries": 6,
+  "toc_inferred_entries": 6,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 7,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 33354,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "jlab12PoS.tex",
    "tex_sections": 6,
-   "overlaid": 3,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
     "coverage": 0.5
    },
    "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
     {
      "id": "sec-000-2-chiral-perturbation-theory",
      "title": "Chiral Perturbation Theory",
@@ -263,68 +463,40 @@
      "id": "sec-001-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.948,
-     "coverage_ratio": 0.295,
+     "coverage_ratio": 0.291,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-002-3-determining-low-energy-constants-in-the-contin",
      "title": "Determining low-energy-constants in the continuum",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-4-hard-pion-chpt",
      "title": "Hard pion ChPT",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-5-beyond-qcd",
      "title": "Beyond QCD",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.865,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-6-leading-logarithms",
      "title": "Leading logarithms",
-     "prose_ratio": 0.176,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-006-1-l-f1",
-     "title": "L + F1",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-007-2-l2-f2",
-     "title": "L2 + F2",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-008-1-l-f2",
-     "title": "L + F2",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-009-3-l3-61",
-     "title": "L3 + \u00b7 \u00b7 \u00b7 (6.1)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-010-acknowledgments",
-     "title": "Acknowledgments",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-011-references",
-     "title": "References",
-     "result": "no matching \\section"
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.585,
+     "result": "overlaid",
+     "converter": "latex"
     }
    ]
   }

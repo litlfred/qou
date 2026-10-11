@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/equations-aux-q-differences/sections/sec-004",
   "@type": [
     "doco:Section"
   ],
-  "title": "Br´eviaire",
-  "pageStart": 5,
-  "pageEnd": 6,
+  "title": "Classiﬁcation globale",
+  "pageStart": 13,
+  "pageEnd": 16,
   "contains": [
     "library/equations-aux-q-differences/blocks/prose-sec-004"
   ],
-  "derivedFrom": "library/equations-aux-q-differences/manifest",
-  "sourceDocument": "library/equations-aux-q-differences/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./equations-aux-q-differences/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./equations-aux-q-differences/manifest.jsonld",
   "provenance": "ingested"
 }

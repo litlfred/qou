@@ -6,6 +6,11 @@
   "sha256": "789faa122dd322901b603935e0158e20c01b4f975eea8cf4923174f013385947",
   "bytes": 404643,
   "pages": 23,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -17,234 +22,493 @@
   },
   "doi": null,
   "title": "The Aldous property for normal Cayley graphs on symmetric groups",
-  "authors_raw": "Chenhui Lv\u22171 and Sanming Zhou 2",
-  "abstract": "Aldous\u2019 spectral gap conjecture states that the random walk and the interchange process on any connected graph have the same spectral gap, or, equivalently, the second largest eigenvalue of any connected Cayley graph on the symmetric groupS n with respect to a set of transpositions is achieved by the standard representation ofS n. This celebrated conjecture, proved in its general form in 2010, has inspired much interest in searching for other Cayley graphs onS n possessing this property, now known as the Aldous property. In this paper, we first prove that forn\u22655 at most one of a normal Cayley graph onSn and its complement can possess the Aldous property except when these two graphs are 2K n!/2 andK n!/2,n!/2 respectively. We then determine, for sufficiently largen, all normal Cayley graphs Cay(Sn, S) that have the Aldous property, except for the case whenScontains a permutation with support size in{2,3, . . . , n\u22122} and a permutation with support size in{n\u22121, n}, but not all permutations with support sizenare contained inS. In particular, we show that a non-complete normal Cayley graph Cay(Sn, S) does not have the Aldous property if all permutations inShave support sizen\u22121 orn, or all permutations with support sizenare contained inS, thereby solving an open problem posed by Li, Xia and Zhou in 2023. Along the way we determine all normal Cayley graphs onS n that are line graphs, and classify all normal Cayley graphs onS n with the strictly second largest eigenvalue at most 1.",
-  "docinfo": {
-   "Author": "Chenhui Lv; Sanming Zhou",
-   "Creator": "arXiv GenPDF (tex2pdf:8def8d8)",
-   "Producer": "pikepdf 8.15.1",
-   "Title": "The Aldous property for normal Cayley graphs on symmetric groups"
-  },
+  "authors_raw": "Chenhui Lv\u22171 and Sanming Zhou2",
   "title_lines": [
    "The Aldous property for normal Cayley graphs on",
    "symmetric groups"
-  ]
+  ],
+  "abstract": "Aldous\u2019 spectral gap conjecture states that the random walk and the interchange process on any connected graph have the same spectral gap, or, equivalently, the second largest eigenvalue of any connected Cayley graph on the symmetric group Sn with respect to a set of transpositions is achieved by the standard representation of Sn. This celebrated conjecture, proved in its general form in 2010, has inspired much interest in searching for other Cayley graphs on Sn possessing this property, now known as the Aldous property. In this paper, we first prove that for n \u22655 at most one of a normal Cayley graph on Sn and its complement can possess the Aldous property except when these two graphs are 2Kn!/2 and Kn!/2,n!/2 respectively. We then determine, for sufficiently large n, all normal Cayley graphs Cay(Sn, S) that have the Aldous property, except for the case when S contains a permutation with support size in {2, 3, . . . , n\u22122} and a permutation with support size in {n\u22121, n}, but not all permutations with support size n are contained in S. In particular, we show that a non-complete normal Cayley graph Cay(Sn, S) does not have the Aldous property if all permutations in S have support size n \u22121 or n, or all permutations with support size n are contained in S, thereby solving an open problem posed by Li, Xia and Zhou in 2023. Along the way we determine all normal Cayley graphs on Sn that are line graphs, and classify all normal Cayley graphs on Sn with the strictly second largest eigenvalue at most 1.",
+  "docinfo": {
+   "Title": "The Aldous property for normal Cayley graphs on symmetric groups",
+   "Author": "Chenhui Lv; Sanming Zhou",
+   "Producer": "pikepdf 8.15.1",
+   "Creator": "arXiv GenPDF (tex2pdf:8def8d8)"
+  },
+  "title_raw": "The Aldous property for normal Cayley graphs on symmetric groups",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "The Aldous property for normal Cayley graphs on symmetric groups",
+   "heading": "The Aldous property for normal Cayley graphs on symmetric groups",
+   "text": "The Aldous property for normal Cayley graphs on symmetric groups",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
-  {
-   "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
   {
    "level": 1,
    "title": "Introduction",
    "page": 2,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
    "level": 2,
-   "title": "Aldous\u2019 spectral gap conjecture",
+   "title": "Aldous' spectral gap conjecture",
    "page": 2,
    "source": "inferred",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Main results",
    "page": 5,
    "source": "inferred",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 7,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "7"
   },
   {
    "level": 1,
-   "title": "Proof of Theorem 1.2",
+   "title": "Proof of Theorem",
    "page": 8,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "8"
   },
   {
    "level": 1,
-   "title": "Proofs of Theorem 1.3 and Corollary 1.5",
+   "title": "Proofs of Theorem and Corollary",
    "page": 11,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "11"
   },
   {
    "level": 1,
-   "title": "Normal Cayley graphs on symmetric groups with",
+   "title": "Normal Cayley graphs on symmetric groups with strictly second largest eigenvalue at most 1",
    "page": 12,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "12"
   },
   {
    "level": 2,
-   "title": "Normal Cayley graphs onS n that are line graphs",
+   "title": "Normal Cayley graphs on $S_n$ that are line graphs",
    "page": 12,
    "source": "inferred",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "12"
   },
   {
    "level": 2,
-   "title": "Normal Cayley graphs onS n with strictly second largest eigen-",
+   "title": "Normal Cayley graphs on $S_n$ with strictly second largest eigenvalue at most $1$",
    "page": 17,
    "source": "inferred",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "17"
   },
   {
    "level": 1,
-   "title": "Proofs of Theorem 1.6 and Corollary 1.7",
+   "title": "Proofs of Theorem and Corollary",
    "page": 19,
    "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 21,
-   "source": "inferred",
-   "number": null
+   "number": "6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "19"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Dimensions and characters of some irreducible representations of Sn The following lemma will play a crucial role in our proof of Theorem 1.3",
+   "page": 8,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Two forbidden subgraphs for line graphs",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-001-11-aldous-spectral-gap-conjecture",
-   "number": "1.1",
-   "title": "Aldous\u2019 spectral gap conjecture",
-   "level": 2,
-   "page_start": 1,
    "page_end": 2,
-   "n_chars": 1755,
-   "n_words": 271
+   "n_chars": 2199,
+   "n_words": 354,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
-   "id": "sec-002-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 7505,
-   "n_words": 1191
+   "n_chars": 7800,
+   "n_words": 1486,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
-   "id": "sec-003-12-main-results",
+   "id": "sec-001-12-main-results",
    "number": "1.2",
    "title": "Main results",
    "level": 2,
    "page_start": 4,
    "page_end": 7,
-   "n_chars": 5804,
-   "n_words": 904
+   "n_chars": 6099,
+   "n_words": 1199,
+   "label_start": "4",
+   "label_end": "7"
   },
   {
-   "id": "sec-004-2-preliminaries",
+   "id": "sec-002-2-preliminaries",
    "number": "2",
    "title": "Preliminaries",
    "level": 1,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 3375,
-   "n_words": 570
+   "n_chars": 3206,
+   "n_words": 612,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
-   "id": "sec-005-3-proof-of-theorem-12",
+   "id": "sec-003-3-proof-of-theorem",
    "number": "3",
-   "title": "Proof of Theorem 1.2",
+   "title": "Proof of Theorem",
    "level": 1,
    "page_start": 8,
-   "page_end": 11,
-   "n_chars": 5225,
-   "n_words": 776
-  },
-  {
-   "id": "sec-006-4-proofs-of-theorem-13-and-corollary-15",
-   "number": "4",
-   "title": "Proofs of Theorem 1.3 and Corollary 1.5",
-   "level": 1,
-   "page_start": 11,
    "page_end": 12,
-   "n_chars": 3336,
-   "n_words": 534
+   "n_chars": 9080,
+   "n_words": 1624,
+   "label_start": "8",
+   "label_end": "12"
   },
   {
-   "id": "sec-007-5-normal-cayley-graphs-on-symmetric-groups-with",
+   "id": "sec-004-5-normal-cayley-graphs-on-symmetric-groups-with",
    "number": "5",
-   "title": "Normal Cayley graphs on symmetric groups with",
+   "title": "Normal Cayley graphs on symmetric groups with strictly second largest eigenvalue at most 1",
    "level": 1,
    "page_start": 12,
-   "page_end": 12,
-   "n_chars": 242,
-   "n_words": 44
-  },
-  {
-   "id": "sec-008-51-normal-cayley-graphs-ons-n-that-are-line-grap",
-   "number": "5.1",
-   "title": "Normal Cayley graphs onS n that are line graphs",
-   "level": 2,
-   "page_start": 12,
-   "page_end": 17,
-   "n_chars": 11807,
-   "n_words": 2152
-  },
-  {
-   "id": "sec-009-52-normal-cayley-graphs-ons-n-with-strictly-seco",
-   "number": "5.2",
-   "title": "Normal Cayley graphs onS n with strictly second largest eigen-",
-   "level": 2,
-   "page_start": 17,
-   "page_end": 19,
-   "n_chars": 4205,
-   "n_words": 707
-  },
-  {
-   "id": "sec-010-6-proofs-of-theorem-16-and-corollary-17",
-   "number": "6",
-   "title": "Proofs of Theorem 1.6 and Corollary 1.7",
-   "level": 1,
-   "page_start": 19,
-   "page_end": 21,
-   "n_chars": 3941,
-   "n_words": 629
-  },
-  {
-   "id": "sec-011-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 21,
    "page_end": 23,
-   "n_chars": 4415,
-   "n_words": 643
+   "n_chars": 25649,
+   "n_words": 5068,
+   "label_start": "12",
+   "label_end": "23"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 12,
-  "sections": 12,
-  "chars_total": 51610,
+  "toc_entries": 10,
+  "toc_inferred_entries": 10,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 2,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 54033,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Aldous_property_for_normal_Cayley_graphs_on_symmetric_groups_v1.tex",
@@ -257,77 +521,44 @@
    },
    "sections": [
     {
-     "id": "sec-000-abstract",
-     "title": "Abstract",
+     "id": "sec-front-matter",
+     "title": "Front matter",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-001-11-aldous-spectral-gap-conjecture",
-     "title": "Aldous\u2019 spectral gap conjecture",
-     "prose_ratio": 0.252,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-1-introduction",
+     "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.253,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.862,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-003-12-main-results",
+     "id": "sec-001-12-main-results",
      "title": "Main results",
      "prose_ratio": 0.899,
-     "coverage_ratio": 0.665,
+     "coverage_ratio": 0.806,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-2-preliminaries",
+     "id": "sec-002-2-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.52,
+     "prose_ratio": 0.537,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-005-3-proof-of-theorem-12",
-     "title": "Proof of Theorem 1.2",
+     "id": "sec-003-3-proof-of-theorem",
+     "title": "Proof of Theorem",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-006-4-proofs-of-theorem-13-and-corollary-15",
-     "title": "Proofs of Theorem 1.3 and Corollary 1.5",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-007-5-normal-cayley-graphs-on-symmetric-groups-with",
-     "title": "Normal Cayley graphs on symmetric groups with",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-008-51-normal-cayley-graphs-ons-n-that-are-line-grap",
-     "title": "Normal Cayley graphs onS n that are line graphs",
-     "prose_ratio": 0.904,
-     "coverage_ratio": 0.854,
+     "id": "sec-004-5-normal-cayley-graphs-on-symmetric-groups-with",
+     "title": "Normal Cayley graphs on symmetric groups with strictly second largest eigenvalue at most 1",
+     "prose_ratio": 0.939,
+     "coverage_ratio": 0.686,
      "result": "overlaid",
      "converter": "pandoc"
-    },
-    {
-     "id": "sec-009-52-normal-cayley-graphs-ons-n-with-strictly-seco",
-     "title": "Normal Cayley graphs onS n with strictly second largest eigen-",
-     "prose_ratio": 0.652,
-     "coverage_ratio": 0.867,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-010-6-proofs-of-theorem-16-and-corollary-17",
-     "title": "Proofs of Theorem 1.6 and Corollary 1.7",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-011-references",
-     "title": "References",
-     "result": "no matching \\section"
     }
    ]
   }

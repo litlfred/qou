@@ -6,6 +6,11 @@
   "sha256": "4336112cecabdfdf835e5e26f22ab66d867fe2620f16d1bcbd11a53b53848aaa",
   "bytes": 222468,
   "pages": 26,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -16,707 +21,594 @@
    "stamp_date": "15 Nov 1995"
   },
   "doi": null,
-  "title": "TK 95 31 CHIRAL LAGRANGIANS FOR BARYONS COUPLED TO MASSIVE SPIN\u20131 FIELDS \u22c6",
+  "title": "arXiv:hep-ph/9511320v1 15 Nov 1995",
   "authors_raw": "B. Borasoy a 1 , Ulf-G. Mei\u00dfner a 2",
-  "abstract": "We analyze the e\ufb00ective low\u2013energy \ufb01eld theory of Goldstone b osons and baryons chirally coupled to massive spin\u20131 \ufb01elds. We use the electro magnetic baryon form factors to demonstrate the formal equivalence between the v ector and the tensor \ufb01eld formulation for the spin\u20131 \ufb01elds. We also discuss the origin of the so\u2013called Weinberg term in pion\u2013nucleon scattering and the role of \u03c1\u2013meson exchange. Chirally coupled vector mesons do not give rise to this two\u2013pion nucleon seagu ll interaction but rather to higher order corrections. Some problems of the for mal equivalence arising in higher orders and related to loops are touched upon.",
+  "title_lines": [
+   "TK 95 31",
+   "CHIRAL LAGRANGIANS FOR BARYONS",
+   "COUPLED TO MASSIVE SPIN\u20131 FIELDS \u22c6"
+  ],
+  "abstract": "We analyze the e\ufb00ective low\u2013energy \ufb01eld theory of Goldstone bosons and baryons chirally coupled to massive spin\u20131 \ufb01elds. We use the electromagnetic baryon form factors to demonstrate the formal equivalence between the vector and the tensor \ufb01eld formulation for the spin\u20131 \ufb01elds. We also discuss the origin of the so\u2013called Weinberg term in pion\u2013nucleon scattering and the role of \u03c1\u2013meson exchange. Chirally coupled vector mesons do not give rise to this two\u2013pion nucleon seagull interaction but rather to higher order corrections. Some problems of the formal equivalence arising in higher orders and related to loops are touched upon.",
   "docinfo": {
+   "Title": "arXiv:hep-ph/9511320v1  15 Nov 1995",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20220615114921-04'00'",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:hep-ph/9511320v1  15 Nov 1995"
+   "CreationDate": "D:20220615114921-04'00'"
+  },
+  "title_raw": "TK 95 31 CHIRAL LAGRANGIANS FOR BARYONS COUPLED TO MASSIVE SPIN\u20131 FIELDS \u22c6",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-ph/9511320v1 15 Nov 1995",
+   "heading": "CHIRAL LAGRANGIANS FOR BARYONS COUPLED TO MASSIVE SPIN\u20131 FIELDS \u22c6",
+   "text": "TK 95 31 CHIRAL LAGRANGIANS FOR BARYONS COUPLED TO MASSIVE SPIN\u20131 FIELDS \u22c6",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "We are not considering the decuplet states as dynamical degr ees of freedom in",
-   "page": 2,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "We are grateful to Harry Lee for reminding us of this problem. Of course, it",
-   "page": 4,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "E\ufb00ective Lagrangian of Goldstones, Baryons and Spin\u20131 Fie lds",
+   "title": "Effective Lagrangian of Goldstones, Baryons and Spin--1 Fields",
    "page": 5,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
   },
   {
    "level": 2,
-   "title": "Addition of Spin\u20131 Fields: Tensor Field Formulation",
+   "title": "Addition of Spin--1 Fields: Tensor Field Formulation",
    "page": 6,
    "source": "inferred",
-   "number": "2.1"
-  },
-  {
-   "level": 1,
-   "title": "M 2",
-   "page": 6,
-   "source": "inferred",
-   "number": "4"
+   "number": "2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "6"
   },
   {
    "level": 2,
-   "title": "Addition of Spin\u20131 Fields: Vector Field Formulation",
+   "title": "Addition of Spin--1 Fields: Vector Field Formulation",
    "page": 8,
    "source": "inferred",
-   "number": "2.2"
-  },
-  {
-   "level": 1,
-   "title": "Tr",
-   "page": 9,
-   "source": "inferred",
-   "number": "4"
+   "number": "2.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "8"
   },
   {
    "level": 2,
-   "title": "Equivalence for Spin\u20131 Pole Contributions",
+   "title": "Equivalence for Spin--1 Pole Contributions",
    "page": 11,
    "source": "inferred",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Electromagnetic Form Factors for the Baryon Octet",
    "page": 12,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "12"
   },
   {
    "level": 2,
-   "title": "Basic De\ufb01nitions",
+   "title": "Basic Definitions",
    "page": 12,
    "source": "inferred",
-   "number": "3.1"
-  },
-  {
-   "level": 1,
-   "title": "FV f \u00b5\u03bd",
-   "page": 12,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "FV Q (\u2202\u00b5 A\u03bd \u2212 \u2202\u03bd A\u00b5 ) , (40)",
-   "page": 12,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(t) + i \u03c3\u00b5\u03bd k\u03bd",
-   "page": 12,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(t)]{\u03bba, u(p)}",
-   "page": 12,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(t)][\u03bba, u(p)]",
-   "page": 13,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(t) = F \u2212",
-   "page": 13,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(t) + (1/3)F +",
-   "page": 13,
-   "source": "inferred",
-   "number": "2"
+   "number": "3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "12"
   },
   {
    "level": 2,
-   "title": "Vector Meson Contribution to the Electromagnetic Form F actors",
+   "title": "Vector Meson Contribution to the Electromagnetic Form Factors",
    "page": 13,
    "source": "inferred",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "13"
   },
   {
    "level": 1,
-   "title": "(t) = FV",
-   "page": 13,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "FV TD",
-   "page": 13,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(t) = FV 4",
-   "page": 13,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(t) = 1 + FV",
-   "page": 13,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "FV TF",
-   "page": 13,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(0) = 0 and F \u00b1",
-   "page": 13,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(0) \u2044= 0. This in particular",
-   "page": 13,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Throughout, we do not di\ufb00erentiate between the physical (ave rage) octet baryon",
-   "page": 13,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "(t) = \u2212",
-   "page": 14,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(t) = \u22124",
-   "page": 14,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(t) = 1 \u2212",
-   "page": 14,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(0) = 0. This would imply that there is no vector meson induced con-",
-   "page": 14,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Vector Meson Contribution to Pion\u2013Nucleon Scattering",
+   "title": "Vector Meson Contribution to Pion--Nucleon Scattering",
    "page": 15,
    "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "(q /+ q /\u2032) [SD + SF ] + t",
-   "page": 15,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(q /+ q /\u2032) [TD + TF ]",
-   "page": 15,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "(q /+ q /\u2032) [GD + GF ] + m",
-   "page": 16,
-   "source": "inferred",
-   "number": "2"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "Loops with massive particles",
    "page": 16,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "Short Summary",
    "page": 18,
    "source": "inferred",
-   "number": "6"
+   "number": "6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "18"
   },
   {
    "level": 1,
-   "title": "The sign in the exponential is derived from Z[u\u00b5 , f +",
-   "page": 23,
+   "title": "Construction Principles",
+   "page": 19,
    "source": "inferred",
-   "number": "7"
+   "number": "A",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "19"
   },
   {
    "level": 1,
-   "title": "References",
-   "page": 25,
+   "title": "On the Equivalence from Dual Transformations",
+   "page": 22,
    "source": "inferred",
-   "number": null
+   "number": "B",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "22"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The two\u2013pion nucleon seagull (Weinberg term). (a) shows the fundamental Feynman diagram (from the chiral covariant derivative) and (b) represents its generation via t\u2013channel \u03c1\u2013meson exchange. Solid and dashed lines denote the octet baryons and Goldstones, respectively",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The shaded areas denote the whole class of multi\u2013loop diagrams. To be precise, these are Goldstone boson loops. The blob on the right side does only contain Goldstones and external sources and thus there is a consistent power counting, i.e the n\u2013loop insertions on that vertex are obviously suppresse",
+   "page": 16,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Momentum \ufb02ow in the V \u03c6\u03c6\u2013vertex",
+   "page": 17,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 639,
-   "n_words": 103
+   "n_chars": 888,
+   "n_words": 137,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 4123,
-   "n_words": 685
-  },
-  {
-   "id": "sec-002-3-we-are-not-considering-the-decuplet-states-as",
-   "number": "3",
-   "title": "We are not considering the decuplet states as dynamical degr ees of freedom in",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 4,
-   "n_chars": 4124,
-   "n_words": 764
-  },
-  {
-   "id": "sec-003-4-we-are-grateful-to-harry-lee-for-reminding-us",
-   "number": "4",
-   "title": "We are grateful to Harry Lee for reminding us of this problem. Of course, it",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 5,
-   "n_chars": 149,
-   "n_words": 29
-  },
-  {
-   "id": "sec-004-2-e\ufb00ective-lagrangian-of-goldstones-baryons-and",
-   "number": "2",
-   "title": "E\ufb00ective Lagrangian of Goldstones, Baryons and Spin\u20131 Fie lds",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 6,
-   "n_chars": 2667,
-   "n_words": 524
-  },
-  {
-   "id": "sec-005-21-addition-of-spin1-fields-tensor-field-formula",
-   "number": "2.1",
-   "title": "Addition of Spin\u20131 Fields: Tensor Field Formulation",
-   "level": 2,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 829,
-   "n_words": 153
-  },
-  {
-   "id": "sec-006-4-m-2",
-   "number": "4",
-   "title": "M 2",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 8,
-   "n_chars": 2183,
-   "n_words": 476
-  },
-  {
-   "id": "sec-007-4-tr",
-   "number": "4",
-   "title": "Tr",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 1605,
-   "n_words": 337
-  },
-  {
-   "id": "sec-008-22-addition-of-spin1-fields-vector-field-formula",
-   "number": "2.2",
-   "title": "Addition of Spin\u20131 Fields: Vector Field Formulation",
-   "level": 2,
-   "page_start": 8,
-   "page_end": 11,
-   "n_chars": 3694,
-   "n_words": 806
-  },
-  {
-   "id": "sec-009-23-equivalence-for-spin1-pole-contributions",
-   "number": "2.3",
-   "title": "Equivalence for Spin\u20131 Pole Contributions",
-   "level": 2,
-   "page_start": 11,
    "page_end": 12,
-   "n_chars": 1846,
-   "n_words": 359
+   "n_chars": 21333,
+   "n_words": 3856,
+   "label_start": null,
+   "label_end": "12"
   },
   {
-   "id": "sec-010-3-electromagnetic-form-factors-for-the-baryon-oc",
+   "id": "sec-001-3-electromagnetic-form-factors-for-the-baryon-oc",
    "number": "3",
    "title": "Electromagnetic Form Factors for the Baryon Octet",
    "level": 1,
    "page_start": 12,
-   "page_end": 12,
-   "n_chars": 312,
-   "n_words": 53
-  },
-  {
-   "id": "sec-011-31-basic-de\ufb01nitions",
-   "number": "3.1",
-   "title": "Basic De\ufb01nitions",
-   "level": 2,
-   "page_start": 12,
-   "page_end": 12,
-   "n_chars": 353,
-   "n_words": 71
-  },
-  {
-   "id": "sec-012-2-fv-f-\u00b5\u03bd",
-   "number": "2",
-   "title": "FV f \u00b5\u03bd",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 12,
-   "n_chars": 8,
-   "n_words": 4
-  },
-  {
-   "id": "sec-013-2-fv-q-\u00b5-a\u03bd-\u03bd-a\u00b5-40",
-   "number": "2",
-   "title": "FV Q (\u2202\u00b5 A\u03bd \u2212 \u2202\u03bd A\u00b5 ) , (40)",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 12,
-   "n_chars": 446,
-   "n_words": 94
-  },
-  {
-   "id": "sec-014-1-t-i-\u03c3\u00b5\u03bd-k\u03bd",
-   "number": "1",
-   "title": "(t) + i \u03c3\u00b5\u03bd k\u03bd",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 12,
-   "n_chars": 6,
-   "n_words": 3
-  },
-  {
-   "id": "sec-015-2-t\u03bba-up",
-   "number": "2",
-   "title": "(t)]{\u03bba, u(p)}",
-   "level": 1,
-   "page_start": 12,
    "page_end": 13,
-   "n_chars": 50,
-   "n_words": 18
+   "n_chars": 1674,
+   "n_words": 331,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-016-2-t\u03bba-up",
-   "number": "2",
-   "title": "(t)][\u03bba, u(p)]",
-   "level": 1,
-   "page_start": 13,
-   "page_end": 13,
-   "n_chars": 338,
-   "n_words": 71
-  },
-  {
-   "id": "sec-017-2-t-f",
-   "number": "2",
-   "title": "(t) = F \u2212",
-   "level": 1,
-   "page_start": 13,
-   "page_end": 13,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-018-2-t-13f",
-   "number": "2",
-   "title": "(t) + (1/3)F +",
-   "level": 1,
-   "page_start": 13,
-   "page_end": 13,
-   "n_chars": 6,
-   "n_words": 2
-  },
-  {
-   "id": "sec-019-32-vector-meson-contribution-to-the-electromagne",
+   "id": "sec-002-32-vector-meson-contribution-to-the-electromagne",
    "number": "3.2",
-   "title": "Vector Meson Contribution to the Electromagnetic Form F actors",
+   "title": "Vector Meson Contribution to the Electromagnetic Form Factors",
    "level": 2,
    "page_start": 13,
-   "page_end": 13,
-   "n_chars": 541,
-   "n_words": 96
-  },
-  {
-   "id": "sec-020-1-t-fv",
-   "number": "1",
-   "title": "(t) = FV",
-   "level": 1,
-   "page_start": 13,
-   "page_end": 13,
-   "n_chars": 41,
-   "n_words": 19
-  },
-  {
-   "id": "sec-021-2-fv-td",
-   "number": "2",
-   "title": "FV TD",
-   "level": 1,
-   "page_start": 13,
-   "page_end": 13,
-   "n_chars": 18,
-   "n_words": 9
-  },
-  {
-   "id": "sec-022-2-t-fv-4",
-   "number": "2",
-   "title": "(t) = FV 4",
-   "level": 1,
-   "page_start": 13,
-   "page_end": 13,
-   "n_chars": 26,
-   "n_words": 13
-  },
-  {
-   "id": "sec-023-1-t-1-fv",
-   "number": "1",
-   "title": "(t) = 1 + FV",
-   "level": 1,
-   "page_start": 13,
-   "page_end": 13,
-   "n_chars": 41,
-   "n_words": 19
-  },
-  {
-   "id": "sec-024-2-fv-tf",
-   "number": "2",
-   "title": "FV TF",
-   "level": 1,
-   "page_start": 13,
-   "page_end": 13,
-   "n_chars": 246,
-   "n_words": 62
-  },
-  {
-   "id": "sec-025-1-0-0-and-f",
-   "number": "1",
-   "title": "(0) = 0 and F \u00b1",
-   "level": 1,
-   "page_start": 13,
-   "page_end": 13,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-026-2-0-0-this-in-particular",
-   "number": "2",
-   "title": "(0) \u2044= 0. This in particular",
-   "level": 1,
-   "page_start": 13,
-   "page_end": 13,
-   "n_chars": 418,
-   "n_words": 70
-  },
-  {
-   "id": "sec-027-5-throughout-we-do-not-di\ufb00erentiate-between-the",
-   "number": "5",
-   "title": "Throughout, we do not di\ufb00erentiate between the physical (ave rage) octet baryon",
-   "level": 1,
-   "page_start": 13,
-   "page_end": 14,
-   "n_chars": 39,
-   "n_words": 9
-  },
-  {
-   "id": "sec-028-1-t",
-   "number": "1",
-   "title": "(t) = \u2212",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 62,
-   "n_words": 28
-  },
-  {
-   "id": "sec-029-2-t-4",
-   "number": "2",
-   "title": "(t) = \u22124",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 56,
-   "n_words": 26
-  },
-  {
-   "id": "sec-030-1-t-1",
-   "number": "1",
-   "title": "(t) = 1 \u2212",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 210,
-   "n_words": 72
-  },
-  {
-   "id": "sec-031-2-0-0-this-would-imply-that-there-is-no-vector-m",
-   "number": "2",
-   "title": "(0) = 0. This would imply that there is no vector meson induced con-",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 15,
-   "n_chars": 1681,
-   "n_words": 304
-  },
-  {
-   "id": "sec-032-4-vector-meson-contribution-to-pionnucleon-scatt",
-   "number": "4",
-   "title": "Vector Meson Contribution to Pion\u2013Nucleon Scattering",
-   "level": 1,
-   "page_start": 15,
-   "page_end": 15,
-   "n_chars": 882,
-   "n_words": 197
-  },
-  {
-   "id": "sec-033-2-q-q-sd-sf-t",
-   "number": "2",
-   "title": "(q /+ q /\u2032) [SD + SF ] + t",
-   "level": 1,
-   "page_start": 15,
-   "page_end": 15,
-   "n_chars": 30,
-   "n_words": 11
-  },
-  {
-   "id": "sec-034-8-q-q-td-tf",
-   "number": "8",
-   "title": "(q /+ q /\u2032) [TD + TF ]",
-   "level": 1,
-   "page_start": 15,
    "page_end": 16,
-   "n_chars": 474,
-   "n_words": 118
+   "n_chars": 6456,
+   "n_words": 1304,
+   "label_start": "13",
+   "label_end": "16"
   },
   {
-   "id": "sec-035-2-q-q-gd-gf-m",
-   "number": "2",
-   "title": "(q /+ q /\u2032) [GD + GF ] + m",
-   "level": 1,
-   "page_start": 16,
-   "page_end": 16,
-   "n_chars": 1360,
-   "n_words": 250
-  },
-  {
-   "id": "sec-036-5-loops-with-massive-particles",
+   "id": "sec-003-5-loops-with-massive-particles",
    "number": "5",
    "title": "Loops with massive particles",
    "level": 1,
    "page_start": 16,
    "page_end": 18,
-   "n_chars": 3049,
-   "n_words": 554
+   "n_chars": 3016,
+   "n_words": 520,
+   "label_start": "16",
+   "label_end": "18"
   },
   {
-   "id": "sec-037-6-short-summary",
+   "id": "sec-004-6-short-summary",
    "number": "6",
    "title": "Short Summary",
    "level": 1,
    "page_start": 18,
-   "page_end": 23,
-   "n_chars": 10599,
-   "n_words": 2164
+   "page_end": 19,
+   "n_chars": 2167,
+   "n_words": 340,
+   "label_start": "18",
+   "label_end": "19"
   },
   {
-   "id": "sec-038-7-the-sign-in-the-exponential-is-derived-from-zu",
-   "number": "7",
-   "title": "The sign in the exponential is derived from Z[u\u00b5 , f +",
+   "id": "sec-005-a-construction-principles",
+   "number": "A",
+   "title": "Construction Principles",
    "level": 1,
-   "page_start": 23,
-   "page_end": 25,
-   "n_chars": 2340,
-   "n_words": 462
+   "page_start": 19,
+   "page_end": 22,
+   "n_chars": 5087,
+   "n_words": 968,
+   "label_start": "19",
+   "label_end": "22"
   },
   {
-   "id": "sec-039-references",
-   "number": null,
-   "title": "References",
+   "id": "sec-006-b-on-the-equivalence-from-dual-transformations",
+   "number": "B",
+   "title": "On the Equivalence from Dual Transformations",
    "level": 1,
-   "page_start": 25,
+   "page_start": 22,
    "page_end": 26,
-   "n_chars": 2055,
-   "n_words": 359
+   "n_chars": 7454,
+   "n_words": 1404,
+   "label_start": "22",
+   "label_end": "26"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 40,
-  "sections": 40,
-  "chars_total": 47546,
+  "toc_entries": 13,
+  "toc_inferred_entries": 13,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 48075,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "9511320.tex",
@@ -729,204 +621,36 @@
    },
    "sections": [
     {
-     "id": "sec-000-abstract",
-     "title": "Abstract",
+     "id": "sec-front-matter",
+     "title": "Front matter",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-001-1-introduction",
+     "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.598,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-3-we-are-not-considering-the-decuplet-states-as",
-     "title": "We are not considering the decuplet states as dynamical degr ees of freedom in",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-003-4-we-are-grateful-to-harry-lee-for-reminding-us",
-     "title": "We are grateful to Harry Lee for reminding us of this problem. Of course, it",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-004-2-e\ufb00ective-lagrangian-of-goldstones-baryons-and",
-     "title": "E\ufb00ective Lagrangian of Goldstones, Baryons and Spin\u20131 Fie lds",
-     "prose_ratio": 0.986,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-21-addition-of-spin1-fields-tensor-field-formula",
-     "title": "Addition of Spin\u20131 Fields: Tensor Field Formulation",
-     "prose_ratio": 0.295,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-006-4-m-2",
-     "title": "M 2",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-007-4-tr",
-     "title": "Tr",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-008-22-addition-of-spin1-fields-vector-field-formula",
-     "title": "Addition of Spin\u20131 Fields: Vector Field Formulation",
-     "prose_ratio": 0.979,
-     "coverage_ratio": 0.993,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-009-23-equivalence-for-spin1-pole-contributions",
-     "title": "Equivalence for Spin\u20131 Pole Contributions",
-     "prose_ratio": 0.979,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-010-3-electromagnetic-form-factors-for-the-baryon-oc",
+     "id": "sec-001-3-electromagnetic-form-factors-for-the-baryon-oc",
      "title": "Electromagnetic Form Factors for the Baryon Octet",
-     "prose_ratio": 0.871,
+     "prose_ratio": 0.988,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-31-basic-de\ufb01nitions",
-     "title": "Basic De\ufb01nitions",
-     "prose_ratio": 0.403,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-002-32-vector-meson-contribution-to-the-electromagne",
+     "title": "Vector Meson Contribution to the Electromagnetic Form Factors",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-012-2-fv-f-\u00b5\u03bd",
-     "title": "FV f \u00b5\u03bd",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-013-2-fv-q-\u00b5-a\u03bd-\u03bd-a\u00b5-40",
-     "title": "FV Q (\u2202\u00b5 A\u03bd \u2212 \u2202\u03bd A\u00b5 ) , (40)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-014-1-t-i-\u03c3\u00b5\u03bd-k\u03bd",
-     "title": "(t) + i \u03c3\u00b5\u03bd k\u03bd",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-015-2-t\u03bba-up",
-     "title": "(t)]{\u03bba, u(p)}",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-016-2-t\u03bba-up",
-     "title": "(t)][\u03bba, u(p)]",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-017-2-t-f",
-     "title": "(t) = F \u2212",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-018-2-t-13f",
-     "title": "(t) + (1/3)F +",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-019-32-vector-meson-contribution-to-the-electromagne",
-     "title": "Vector Meson Contribution to the Electromagnetic Form F actors",
-     "prose_ratio": 0.253,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-020-1-t-fv",
-     "title": "(t) = FV",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-021-2-fv-td",
-     "title": "FV TD",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-022-2-t-fv-4",
-     "title": "(t) = FV 4",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-023-1-t-1-fv",
-     "title": "(t) = 1 + FV",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-024-2-fv-tf",
-     "title": "FV TF",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-025-1-0-0-and-f",
-     "title": "(0) = 0 and F \u00b1",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-026-2-0-0-this-in-particular",
-     "title": "(0) \u2044= 0. This in particular",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-027-5-throughout-we-do-not-di\ufb00erentiate-between-the",
-     "title": "Throughout, we do not di\ufb00erentiate between the physical (ave rage) octet baryon",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-028-1-t",
-     "title": "(t) = \u2212",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-029-2-t-4",
-     "title": "(t) = \u22124",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-030-1-t-1",
-     "title": "(t) = 1 \u2212",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-031-2-0-0-this-would-imply-that-there-is-no-vector-m",
-     "title": "(0) = 0. This would imply that there is no vector meson induced con-",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-032-4-vector-meson-contribution-to-pionnucleon-scatt",
-     "title": "Vector Meson Contribution to Pion\u2013Nucleon Scattering",
-     "prose_ratio": 0.322,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-033-2-q-q-sd-sf-t",
-     "title": "(q /+ q /\u2032) [SD + SF ] + t",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-034-8-q-q-td-tf",
-     "title": "(q /+ q /\u2032) [TD + TF ]",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-035-2-q-q-gd-gf-m",
-     "title": "(q /+ q /\u2032) [GD + GF ] + m",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-036-5-loops-with-massive-particles",
+     "id": "sec-003-5-loops-with-massive-particles",
      "title": "Loops with massive particles",
      "prose_ratio": 0.994,
      "coverage_ratio": 1.0,
@@ -934,20 +658,21 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-037-6-short-summary",
+     "id": "sec-004-6-short-summary",
      "title": "Short Summary",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.46,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-038-7-the-sign-in-the-exponential-is-derived-from-zu",
-     "title": "The sign in the exponential is derived from Z[u\u00b5 , f +",
+     "id": "sec-005-a-construction-principles",
+     "title": "Construction Principles",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-039-references",
-     "title": "References",
+     "id": "sec-006-b-on-the-equivalence-from-dual-transformations",
+     "title": "On the Equivalence from Dual Transformations",
      "result": "no matching \\section"
     }
    ]

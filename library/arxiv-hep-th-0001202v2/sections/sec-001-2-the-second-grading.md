@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-hep-th-0001202v2
-doc_title: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees"
+doc_title: "arXiv:hep-th/0001202v2 29 Jan 2000"
 section_id: sec-001-2-the-second-grading
 section_title: "The second grading"
 section_number: 2
 pages: 3-4
 source_pdf: 0001202v2.pdf
 source_sha256: b2e3e22ea3d51c0b
-doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
+toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.967
+latex_coverage_ratio: 0.993
 ---
 The weight $n$ of a rooted tree $t$ is the number of its nodes. The weight of a forest $F=\prod_j t_j$ is the sum of the weights of the trees $t_j$ in the product. This is the first grading.
 

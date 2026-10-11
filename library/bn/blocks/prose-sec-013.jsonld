@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/bn/blocks/prose-sec-013",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/bn/blocks/prose-sec-013",
   "kind": "prose",
-  "title": "(ei) = −T ∗(ei) = −qei",
-  "pageStart": 20,
-  "pageEnd": 20,
-  "text": "../sections/sec-013-1-ei-t-ei-qei.md",
-  "derivedFrom": "library/bn/manifest",
-  "sourceDocument": "library/bn/manifest",
+  "title": "Polygons and Teichm¨uller curves",
+  "pageStart": 55,
+  "pageEnd": 64,
+  "text": "../sections/sec-013-13-polygons-and-teichmuller-curves.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./bn/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./bn/manifest.jsonld",
   "provenance": "ingested"
 }

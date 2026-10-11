@@ -1,16 +1,18 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s-p06/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s-p06/blocks/prose-sec-009",
+  "@type": [],
   "kind": "prose",
-  "title": "V(u,v, m)",
-  "pageStart": 21,
-  "pageEnd": 22,
-  "text": "../sections/sec-009-2-vuv-m.md",
-  "derivedFrom": "library/ant-v14-n7-s-p06/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p06/manifest",
+  "title": "Proof of Theorem 1.5",
+  "pageStart": 36,
+  "pageEnd": 37,
+  "text": "../sections/sec-009-9-proof-of-theorem-15.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p06/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p06/manifest.jsonld",
   "provenance": "ingested"
 }

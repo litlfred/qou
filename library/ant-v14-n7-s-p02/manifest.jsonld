@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s-p02/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ant-v14-n7-s-p02/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "ant-v14-n7-s-p02",
   "contains": [
+    "library/ant-v14-n7-s-p02/sections/sec-front-matter",
     "library/ant-v14-n7-s-p02/sections/sec-000",
     "library/ant-v14-n7-s-p02/sections/sec-001",
     "library/ant-v14-n7-s-p02/sections/sec-002",
@@ -14,35 +20,13 @@
     "library/ant-v14-n7-s-p02/sections/sec-005",
     "library/ant-v14-n7-s-p02/sections/sec-006",
     "library/ant-v14-n7-s-p02/sections/sec-007",
-    "library/ant-v14-n7-s-p02/sections/sec-008",
-    "library/ant-v14-n7-s-p02/sections/sec-009",
-    "library/ant-v14-n7-s-p02/sections/sec-010",
-    "library/ant-v14-n7-s-p02/sections/sec-011",
-    "library/ant-v14-n7-s-p02/sections/sec-012",
-    "library/ant-v14-n7-s-p02/sections/sec-013",
-    "library/ant-v14-n7-s-p02/sections/sec-014",
-    "library/ant-v14-n7-s-p02/sections/sec-015",
-    "library/ant-v14-n7-s-p02/sections/sec-016",
-    "library/ant-v14-n7-s-p02/sections/sec-017",
-    "library/ant-v14-n7-s-p02/sections/sec-018",
-    "library/ant-v14-n7-s-p02/sections/sec-019",
-    "library/ant-v14-n7-s-p02/sections/sec-020",
-    "library/ant-v14-n7-s-p02/sections/sec-021",
-    "library/ant-v14-n7-s-p02/sections/sec-022",
-    "library/ant-v14-n7-s-p02/sections/sec-023",
-    "library/ant-v14-n7-s-p02/sections/sec-024",
-    "library/ant-v14-n7-s-p02/sections/sec-025",
-    "library/ant-v14-n7-s-p02/sections/sec-026",
-    "library/ant-v14-n7-s-p02/sections/sec-027",
-    "library/ant-v14-n7-s-p02/sections/sec-028",
-    "library/ant-v14-n7-s-p02/sections/sec-029",
-    "library/ant-v14-n7-s-p02/sections/sec-030",
-    "library/ant-v14-n7-s-p02/sections/sec-031",
-    "library/ant-v14-n7-s-p02/sections/sec-032"
+    "library/ant-v14-n7-s-p02/sections/sec-008"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "ant-v14-n7-s-p02",
+    "title_source": "slug",
     "source_file": "ant-v14-n7-s-p02.pdf",
     "source_sha256": "fd2121feb180b282799f1a1431a615f74282d18722ead65c105dfa197fcd9a82",
     "pages": 36,

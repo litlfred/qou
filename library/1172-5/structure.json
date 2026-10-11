@@ -5,122 +5,268 @@
   "file": "1172-5.pdf",
   "sha256": "21b7a0e13bd208fc92dc60f6fb750eb76d6d9ccb369136a05300cf3d5ce50175",
   "bytes": 855942,
-  "pages": 10
+  "pages": 10,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:17Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Optimistic calculations about the Witten-Reshetikhin-Turaev invariants of closed three-manifolds obtained from the figure-eight knot by integral Dehn surgeries",
+  "title": "OPTIMISTIC CALCULATIONS ABOUT $\\mathrm{W}\\mathrm{I}\\mathrm{T}\\mathrm{T}\\mathrm{E}\\mathrm{N}-\\mathrm{R}\\mathrm{E}\\mathrm{s}\\mathrm{H}\\mathrm{E}\\mathrm{T}\\mathrm{I}\\mathrm{K}\\mathrm{H}\\mathrm{I}\\mathrm{N}$-TURAEV INVARIANTS OF",
   "authors_raw": null,
-  "abstract": "I calculate optimisticallyasymptoticbehaviorsof the WRT$SU(2)$ invariantsfor the three-manifoldsobtained from the ﬁgure-eight knot by p- surgeries with $p=0,1,2,$$\\ldots,$$10$, from which one can extract volumesand the Chern-Simonsinvariantsof these closed manifolds. I conjecturethat this also holds for general closed three-manifolds.",
-  "docinfo": {
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": "",
-   "Producer": "dvipdfm 0.13.2c-j-p1d, Copyright © 1998, by Mark A. Wicks",
-   "CreationDate": "D:20080313235957+09'00'"
-  },
-  "title_prev": "OPTIMISTIC CALCULATIONS ABOUT THE $\\mathrm{W}\\mathrm{I}\\mathrm{T}\\mathrm{T}\\mathrm{E}\\mathrm{N}-\\mathrm{R}\\mathrm{E}\\mathrm{s}\\mathrm{H}\\mathrm{E}\\mathrm{T}\\mathrm{I}\\mathrm{K}\\mathrm{H}\\mathrm{I}\\mathrm{N}$-TURAEV INVARIANTS OF",
   "title_lines": [
    "OPTIMISTIC CALCULATIONS ABOUT",
-   "THE $\\mathrm{W}\\mathrm{I}\\mathrm{T}\\mathrm{T}\\mathrm{E}\\mathrm{N}-\\mathrm{R}\\mathrm{E}\\mathrm{s}\\mathrm{H}\\mathrm{E}\\mathrm{T}\\mathrm{I}\\mathrm{K}\\mathrm{H}\\mathrm{I}\\mathrm{N}$-TURAEV INVARIANTS OF"
-  ]
+   "$\\mathrm{W}\\mathrm{I}\\mathrm{T}\\mathrm{T}\\mathrm{E}\\mathrm{N}-\\mathrm{R}\\mathrm{E}\\mathrm{s}\\mathrm{H}\\mathrm{E}\\mathrm{T}\\mathrm{I}\\mathrm{K}\\mathrm{H}\\mathrm{I}\\mathrm{N}$-TURAEV INVARIANTS OF"
+  ],
+  "abstract": "I calculate optimistically asymptotic behaviors of the WRT $SU(2)$ invariants for the three-manifolds obtained from the \ufb01gure-eight knot by p- surgeries with $p=0,1,2,$ $\\ldots,$ $10$ , from which one can extract volumes and the Chern-Simons invariants of these closed manifolds. I conjecture that this also holds for general closed three-manifolds.",
+  "docinfo": {
+   "Producer": "dvipdfm 0.13.2c-j-p1d, Copyright \u00a9 1998, by Mark A. Wicks",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20080313235957+09'00'"
+  },
+  "title_raw": "OPTIMISTIC CALCULATIONS ABOUT $\\mathrm{W}\\mathrm{I}\\mathrm{T}\\mathrm{T}\\mathrm{E}\\mathrm{N}-\\mathrm{R}\\mathrm{E}\\mathrm{s}\\mathrm{H}\\mathrm{E}\\mathrm{T}\\mathrm{I}\\mathrm{K}\\mathrm{H}\\mathrm{I}\\mathrm{N}$-TURAEV INVARIANTS OF",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "polynomial of a knot $ ||K||$ is the Gromov norm (or the simplicial volume) of the complement of $v _{3}$ is the hyperbolic volume of the regular ideal tetrahedron",
+   "text": "OPTIMISTIC CALCULATIONS ABOUT $\\mathrm{W}\\mathrm{I}\\mathrm{T}\\mathrm{T}\\mathrm{E}\\mathrm{N}-\\mathrm{R}\\mathrm{E}\\mathrm{s}\\mathrm{H}\\mathrm{E}\\mathrm{T}\\mathrm{I}\\mathrm{K}\\mathrm{H}\\mathrm{I}\\mathrm{N}$-TURAEV INVARIANTS OF",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
    "level": 1,
-   "title": "INTRODUCTION",
-   "page": 1,
+   "title": "THE",
+   "page": 2,
    "source": "inferred",
-   "number": "1"
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "71"
   },
   {
    "level": 1,
-   "title": "AN OPTIMISTICLIMIT",
+   "title": "AN OPTIMISTIC LIMIT",
    "page": 3,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "72"
   },
   {
    "level": 1,
-   "title": "DEHN SURGERYALONGTHE FIGURE-EIGHTKNOT",
+   "title": "DEHN SURGERY ALONG THE FIGURE-EIGHT KNOT",
    "page": 4,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "73"
   },
   {
    "level": 1,
-   "title": "VOLUME CONJECTUREFOR CLOSEDTHREE-MANIFOLDS",
+   "title": "VOLUME CONJECTURE FOR CLOSED THREE-MANIFOLDS",
    "page": 8,
    "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 9,
-   "source": "inferred",
-   "number": null
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "77"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "72",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "73",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "74",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "75",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "76",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "77",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "78",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "79",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "number": "1",
-   "title": "INTRODUCTION",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 29,
+   "n_words": 3,
+   "label_start": "70",
+   "label_end": "70"
+  },
+  {
+   "id": "sec-000-2-the",
+   "number": "2",
+   "title": "THE",
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 5987,
-   "n_words": 646
+   "n_chars": 6710,
+   "n_words": 756,
+   "label_start": "70",
+   "label_end": "72"
   },
   {
-   "id": "sec-001-3-an-optimisticlimit",
+   "id": "sec-001-3-an-optimistic-limit",
    "number": "3",
-   "title": "AN OPTIMISTICLIMIT",
+   "title": "AN OPTIMISTIC LIMIT",
    "level": 1,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 4018,
-   "n_words": 414
+   "n_chars": 4088,
+   "n_words": 484,
+   "label_start": "72",
+   "label_end": "73"
   },
   {
-   "id": "sec-002-4-dehn-surgeryalongthe-figure-eightknot",
+   "id": "sec-002-4-dehn-surgery-along-the-figure-eight-knot",
    "number": "4",
-   "title": "DEHN SURGERYALONGTHE FIGURE-EIGHTKNOT",
+   "title": "DEHN SURGERY ALONG THE FIGURE-EIGHT KNOT",
    "level": 1,
    "page_start": 4,
    "page_end": 8,
-   "n_chars": 10204,
-   "n_words": 797
+   "n_chars": 10345,
+   "n_words": 938,
+   "label_start": "73",
+   "label_end": "77"
   },
   {
-   "id": "sec-003-5-volume-conjecturefor-closedthree-manifolds",
+   "id": "sec-003-5-volume-conjecture-for-closed-three-manifolds",
    "number": "5",
-   "title": "VOLUME CONJECTUREFOR CLOSEDTHREE-MANIFOLDS",
+   "title": "VOLUME CONJECTURE FOR CLOSED THREE-MANIFOLDS",
    "level": 1,
    "page_start": 8,
-   "page_end": 9,
-   "n_chars": 1933,
-   "n_words": 194
-  },
-  {
-   "id": "sec-004-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 9,
    "page_end": 10,
-   "n_chars": 2637,
-   "n_words": 249
+   "n_chars": 4690,
+   "n_words": 552,
+   "label_start": "77",
+   "label_end": "79"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 5,
+  "toc_entries": 4,
+  "toc_inferred_entries": 4,
+  "toc_inferred_mean_confidence": 0.75,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
   "sections": 5,
-  "chars_total": 24779
+  "chars_total": 25862
  }
 }

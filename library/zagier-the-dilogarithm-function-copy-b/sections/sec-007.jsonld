@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/zagier-the-dilogarithm-function-copy-b/sections/sec-007",
   "@type": [
     "doco:Section"
   ],
-  "title": "Special values",
-  "pageStart": 4,
-  "pageEnd": 5,
+  "title": "Variants of the dilogarithm function",
+  "pageStart": 20,
+  "pageEnd": 31,
   "contains": [
     "library/zagier-the-dilogarithm-function-copy-b/blocks/prose-sec-007"
   ],
-  "derivedFrom": "library/zagier-the-dilogarithm-function-copy-b/manifest",
-  "sourceDocument": "library/zagier-the-dilogarithm-function-copy-b/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./zagier-the-dilogarithm-function-copy-b/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./zagier-the-dilogarithm-function-copy-b/manifest.jsonld",
   "provenance": "ingested"
 }

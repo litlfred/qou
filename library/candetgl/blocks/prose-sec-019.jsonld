@@ -1,0 +1,18 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/candetgl/blocks/prose-sec-019",
+  "@type": [],
+  "kind": "prose",
+  "title": "PROOF OF THEOREM C",
+  "pageStart": 21,
+  "pageEnd": 21,
+  "text": "../sections/sec-019-vi-proof-of-theorem-c.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/candetgl/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/candetgl/manifest.jsonld",
+  "provenance": "ingested"
+}

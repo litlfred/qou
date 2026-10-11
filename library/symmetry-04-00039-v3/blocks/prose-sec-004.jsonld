@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/symmetry-04-00039-v3/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/symmetry-04-00039-v3/blocks/prose-sec-004",
   "kind": "prose",
   "title": "Fusion",
   "pageStart": 17,
   "pageEnd": 17,
   "text": "../sections/sec-004-3-fusion.md",
-  "derivedFrom": "library/symmetry-04-00039-v3/manifest",
-  "sourceDocument": "library/symmetry-04-00039-v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./symmetry-04-00039-v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./symmetry-04-00039-v3/manifest.jsonld",
   "provenance": "ingested"
 }

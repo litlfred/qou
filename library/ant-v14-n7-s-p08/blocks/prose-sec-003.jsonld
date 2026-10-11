@@ -1,16 +1,18 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s-p08/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s-p08/blocks/prose-sec-003",
+  "@type": [],
   "kind": "prose",
-  "title": "Fa2",
-  "pageStart": 11,
-  "pageEnd": 15,
-  "text": "../sections/sec-003-1-fa2.md",
-  "derivedFrom": "library/ant-v14-n7-s-p08/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p08/manifest",
+  "title": "The stratiﬁcation of complete character sums",
+  "pageStart": 15,
+  "pageEnd": 21,
+  "text": "../sections/sec-003-4-the-stratiﬁcation-of-complete-character-sums.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p08/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p08/manifest.jsonld",
   "provenance": "ingested"
 }

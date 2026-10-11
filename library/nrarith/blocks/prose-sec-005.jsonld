@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/nrarith/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/nrarith/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "PSL2k\u0001:",
-  "pageStart": 6,
-  "pageEnd": 7,
-  "text": "../sections/sec-005-2-psl2k.md",
-  "derivedFrom": "library/nrarith/manifest",
-  "sourceDocument": "library/nrarith/manifest",
+  "title": "Surgery on one component of the Whitehead link complement",
+  "pageStart": 19,
+  "pageEnd": 29,
+  "text": "../sections/sec-005-6-surgery-on-one-component-of-the-whitehead-link.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./nrarith/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./nrarith/manifest.jsonld",
   "provenance": "ingested"
 }

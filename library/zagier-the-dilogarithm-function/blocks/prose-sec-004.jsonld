@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/zagier-the-dilogarithm-function/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/zagier-the-dilogarithm-function/blocks/prose-sec-004",
   "kind": "prose",
-  "title": "Further aspects of the dilogarithm ....................... 2 2",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-004-ii-further-aspects-of-the-dilogarithm-2-2.md",
-  "derivedFrom": "library/zagier-the-dilogarithm-function/manifest",
-  "sourceDocument": "library/zagier-the-dilogarithm-function/manifest",
+  "title": "References",
+  "pageStart": 18,
+  "pageEnd": 19,
+  "text": "../sections/sec-004-references.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./zagier-the-dilogarithm-function/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./zagier-the-dilogarithm-function/manifest.jsonld",
   "provenance": "ingested"
 }

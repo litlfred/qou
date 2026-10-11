@@ -8,6 +8,9 @@
   "pages": 37,
   "text_source": "embedded",
   "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -18,7 +21,7 @@
    "stamp_date": "10 Nov 1998"
   },
   "doi": null,
-  "title": "Correlations for the orthogonal-unitary and symplectic-unitary transitions at the hard and soft edges",
+  "title": "arXiv:cond-mat/9811142v1 [cond-mat.mes-hall] 10 Nov 1998",
   "authors_raw": "P.J. Forrester\u2020, T. Nagao\u2217and G. Honner\u2020",
   "title_lines": [
    "Correlations for the orthogonal-unitary",
@@ -31,177 +34,1005 @@
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20220326030719-04'00'"
+  },
+  "title_raw": "Correlations for the orthogonal-unitary and symplectic-unitary transitions at the hard and soft edges",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:cond-mat/9811142v1 [cond-mat.mes-hall] 10 Nov 1998",
+   "heading": "Correlations for the orthogonal-unitary and symplectic-unitary transitions at the hard and soft edges Introduction",
+   "text": "Correlations for the orthogonal-unitary and symplectic-unitary transitions at the hard and soft edges",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": null
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "1"
   },
   {
    "level": 1,
-   "title": "(x(1)",
+   "title": "Revision of the formalism",
+   "page": 4,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "Alternative formulas and inter-relationships",
    "page": 7,
    "source": "inferred",
-   "number": "2"
+   "number": "2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "7"
   },
   {
    "level": 1,
-   "title": "(x, y; \u03c4x, \u03c4y) :=",
-   "page": 7,
+   "title": "The Laguerre ensemble",
+   "page": 8,
    "source": "inferred",
-   "number": "2"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "8"
+  },
+  {
+   "level": 2,
+   "title": "$\\beta = 1$ initial conditions",
+   "page": 9,
+   "source": "inferred",
+   "number": "3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "9"
+  },
+  {
+   "level": 3,
+   "title": "The thermodynamic limit",
+   "page": 10,
+   "source": "inferred",
+   "number": "3.1.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "10"
+  },
+  {
+   "level": 3,
+   "title": "Asymptotics of $S(x, y; \\tau_{x}, \\tau_{y})$",
+   "page": 11,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "11"
+  },
+  {
+   "level": 3,
+   "title": "Asymptotics of $\\tilde{I} (x, y; \\tau_{x}, \\tau_{y})$",
+   "page": 13,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "13"
+  },
+  {
+   "level": 3,
+   "title": "Asymptotics of $g(x, y; \\tau)$",
+   "page": 13,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "13"
+  },
+  {
+   "level": 3,
+   "title": "Asymptotics of $D(x, y; \\tau_{x}, \\tau_{y})$",
+   "page": 14,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "14"
+  },
+  {
+   "level": 2,
+   "title": "$\\beta = 4$ initial conditions",
+   "page": 14,
+   "source": "inferred",
+   "number": "3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "14"
+  },
+  {
+   "level": 3,
+   "title": "The thermodynamic limit",
+   "page": 15,
+   "source": "inferred",
+   "number": "3.2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "15"
+  },
+  {
+   "level": 3,
+   "title": "Asymptotics of $S(x, y; \\tau_{x}, \\tau_{y})$",
+   "page": 16,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "16"
+  },
+  {
+   "level": 3,
+   "title": "Asymptotics of $\\tilde{S}(x, y; \\tau_{x}, \\tau_{y})$",
+   "page": 17,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "17"
+  },
+  {
+   "level": 3,
+   "title": "Asymptotics of $\\tilde{I}(x, y; \\tau_{x}, \\tau_{y})$",
+   "page": 17,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "17"
+  },
+  {
+   "level": 3,
+   "title": "Asymptotics of $D(x, y; \\tau_{x}, \\tau_{y})$",
+   "page": 17,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "17"
   },
   {
    "level": 1,
-   "title": "Ja",
-   "page": 12,
+   "title": "Gaussian ensemble",
+   "page": 18,
    "source": "inferred",
-   "number": "0"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "18"
   },
   {
-   "level": 1,
-   "title": "Ja(",
-   "page": 12,
+   "level": 2,
+   "title": "$\\beta = 1$ initial conditions",
+   "page": 19,
    "source": "inferred",
-   "number": "0"
+   "number": "4.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "19"
+  },
+  {
+   "level": 3,
+   "title": "Asymptotics of $\\tilde{I}(x, y; \\tau_{x}, \\tau_{y})$",
+   "page": 21,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "21"
+  },
+  {
+   "level": 3,
+   "title": "Asymptotics of $D(x, y; \\tau_{x}, \\tau_{y})$",
+   "page": 21,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "21"
+  },
+  {
+   "level": 3,
+   "title": "Asymptotics of $g(x, y; \\tau_{y} - \\tau_{x})$",
+   "page": 22,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "22"
+  },
+  {
+   "level": 2,
+   "title": "$\\beta = 4$ initial conditions",
+   "page": 22,
+   "source": "inferred",
+   "number": "4.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "22"
+  },
+  {
+   "level": 3,
+   "title": "Asymptotics of $\\tilde{I}(x, y; \\tau_{x}, \\tau_{y})$",
+   "page": 24,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "24"
+  },
+  {
+   "level": 3,
+   "title": "Asymptotics of $D(x, y; \\tau_{x}, \\tau_{y})$",
+   "page": 24,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "24"
   },
   {
    "level": 1,
    "title": "Discussion",
    "page": 25,
    "source": "inferred",
-   "number": null
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "25"
+  },
+  {
+   "level": 2,
+   "title": "Connection with $\\beta = 2$ initial conditions",
+   "page": 25,
+   "source": "inferred",
+   "number": "5.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "25"
+  },
+  {
+   "level": 2,
+   "title": "Connection between the soft and hard edges",
+   "page": 26,
+   "source": "inferred",
+   "number": "5.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "26"
+  },
+  {
+   "level": 2,
+   "title": "Connection with the bulk",
+   "page": 27,
+   "source": "inferred",
+   "number": "5.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "27"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotic form of $\\rho_{(1+1)}^{T}(X, Y; t)$",
+   "page": 27,
+   "source": "inferred",
+   "number": "5.4",
+   "confidence": 0.5,
+   "evidence": [
+    "latex"
+   ],
+   "page_label": "27"
+  },
+  {
+   "level": 2,
+   "title": "Empirical density of eigenvalues at the soft edge",
+   "page": 32,
+   "source": "inferred",
+   "number": "5.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "32"
+  },
+  {
+   "level": 2,
+   "title": "Distribution functions in the initial state",
+   "page": 33,
+   "source": "inferred",
+   "number": "5.6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "33"
   },
   {
    "level": 1,
-   "title": "(4XY ) \u03c1T hard",
-   "page": 30,
+   "title": "Acknowledgement",
+   "page": 34,
    "source": "inferred",
-   "number": "0"
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "34"
   },
   {
    "level": 1,
-   "title": "References",
-   "page": 36,
+   "title": "Appendix A",
+   "page": 34,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "34"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Empirical histogram of the scaled soft edge density for 500 parameter dependent random matrices of the form (5.39) with \u03c4 = .05 and N = 100, compared against the in\ufb01nite dimension form (5.38)",
+   "page": 33,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "33"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 709,
-   "n_words": 103
+   "n_chars": 1098,
+   "n_words": 150,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-001-introduction",
-   "number": null,
+   "id": "sec-000-1-introduction",
+   "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 6,
-   "n_chars": 10988,
-   "n_words": 2163
+   "page_end": 4,
+   "n_chars": 6182,
+   "n_words": 1155,
+   "label_start": "1",
+   "label_end": "4"
   },
   {
-   "id": "sec-002-2-x-y-\u03c4x-\u03c4y",
+   "id": "sec-001-2-revision-of-the-formalism",
    "number": "2",
-   "title": "(x, y; \u03c4x, \u03c4y) :=",
+   "title": "Revision of the formalism",
    "level": 1,
-   "page_start": 6,
+   "page_start": 4,
    "page_end": 7,
-   "n_chars": 472,
-   "n_words": 88
+   "n_chars": 6177,
+   "n_words": 1319,
+   "label_start": "4",
+   "label_end": "7"
   },
   {
-   "id": "sec-003-2-x1",
-   "number": "2",
-   "title": "(x(1)",
-   "level": 1,
+   "id": "sec-002-21-alternative-formulas-and-inter-relationships",
+   "number": "2.1",
+   "title": "Alternative formulas and inter-relationships",
+   "level": 2,
    "page_start": 7,
-   "page_end": 11,
-   "n_chars": 7020,
-   "n_words": 1543
+   "page_end": 8,
+   "n_chars": 1274,
+   "n_words": 286,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
-   "id": "sec-004-0-ja",
-   "number": "0",
-   "title": "Ja",
+   "id": "sec-003-3-the-laguerre-ensemble",
+   "number": "3",
+   "title": "The Laguerre ensemble",
    "level": 1,
-   "page_start": 11,
-   "page_end": 11,
-   "n_chars": 15,
-   "n_words": 4
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 2410,
+   "n_words": 505,
+   "label_start": "8",
+   "label_end": "10"
   },
   {
-   "id": "sec-005-0-ja",
-   "number": "0",
-   "title": "Ja(",
+   "id": "sec-004-311-the-thermodynamic-limit",
+   "number": "3.1.1",
+   "title": "The thermodynamic limit",
+   "level": 3,
+   "page_start": 10,
+   "page_end": 15,
+   "n_chars": 9542,
+   "n_words": 2045,
+   "label_start": "10",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-005-321-the-thermodynamic-limit",
+   "number": "3.2.1",
+   "title": "The thermodynamic limit",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 4376,
+   "n_words": 927,
+   "label_start": "15",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-006-4-gaussian-ensemble",
+   "number": "4",
+   "title": "Gaussian ensemble",
    "level": 1,
-   "page_start": 11,
+   "page_start": 18,
    "page_end": 25,
-   "n_chars": 22280,
-   "n_words": 4490
+   "n_chars": 10747,
+   "n_words": 2048,
+   "label_start": "18",
+   "label_end": "25"
   },
   {
-   "id": "sec-006-discussion",
-   "number": null,
+   "id": "sec-007-5-discussion",
+   "number": "5",
    "title": "Discussion",
    "level": 1,
    "page_start": 25,
-   "page_end": 30,
-   "n_chars": 9727,
-   "n_words": 1987
+   "page_end": 26,
+   "n_chars": 2180,
+   "n_words": 505,
+   "label_start": "25",
+   "label_end": "26"
   },
   {
-   "id": "sec-007-0-4xy-\u03c1t-hard",
-   "number": "0",
-   "title": "(4XY ) \u03c1T hard",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 36,
-   "n_chars": 11982,
-   "n_words": 2428
+   "id": "sec-008-52-connection-between-the-soft-and-hard-edges",
+   "number": "5.2",
+   "title": "Connection between the soft and hard edges",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 2793,
+   "n_words": 517,
+   "label_start": "26",
+   "label_end": "27"
   },
   {
-   "id": "sec-008-references",
+   "id": "sec-009-53-connection-with-the-bulk",
+   "number": "5.3",
+   "title": "Connection with the bulk",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 32,
+   "n_chars": 8064,
+   "n_words": 1698,
+   "label_start": "27",
+   "label_end": "32"
+  },
+  {
+   "id": "sec-010-55-empirical-density-of-eigenvalues-at-the-soft",
+   "number": "5.5",
+   "title": "Empirical density of eigenvalues at the soft edge",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 3053,
+   "n_words": 551,
+   "label_start": "32",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-011-56-distribution-functions-in-the-initial-state",
+   "number": "5.6",
+   "title": "Distribution functions in the initial state",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 2932,
+   "n_words": 614,
+   "label_start": "33",
+   "label_end": "34"
+  },
+  {
+   "id": "sec-012-acknowledgement",
    "number": null,
-   "title": "References",
+   "title": "Acknowledgement",
    "level": 1,
-   "page_start": 36,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 48,
+   "n_words": 8,
+   "label_start": "34",
+   "label_end": "34"
+  },
+  {
+   "id": "sec-013-appendix-a",
+   "number": null,
+   "title": "Appendix A",
+   "level": 1,
+   "page_start": 34,
    "page_end": 37,
-   "n_chars": 1679,
-   "n_words": 283
+   "n_chars": 4153,
+   "n_words": 783,
+   "label_start": "34",
+   "label_end": "37"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 9,
-  "sections": 9,
-  "chars_total": 64872,
+  "toc_entries": 33,
+  "toc_inferred_entries": 33,
+  "toc_inferred_mean_confidence": 0.985,
+  "toc_inferred_empty_share": 0.071,
+  "toc_inferred_method": "latex",
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 15,
+  "chars_total": 65029,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "peter3.tex",
    "tex_sections": 33,
-   "overlaid": 1,
+   "overlaid": 12,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -209,53 +1040,118 @@
    },
    "sections": [
     {
-     "id": "sec-000-abstract",
-     "title": "Abstract",
+     "id": "sec-front-matter",
+     "title": "Front matter",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-001-introduction",
+     "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.64,
-     "coverage_ratio": 0.993,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-2-x-y-\u03c4x-\u03c4y",
-     "title": "(x, y; \u03c4x, \u03c4y) :=",
-     "result": "no matching \\section"
+     "id": "sec-001-2-revision-of-the-formalism",
+     "title": "Revision of the formalism",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-003-2-x1",
-     "title": "(x(1)",
-     "result": "no matching \\section"
+     "id": "sec-002-21-alternative-formulas-and-inter-relationships",
+     "title": "Alternative formulas and inter-relationships",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-004-0-ja",
-     "title": "Ja",
-     "result": "no matching \\section"
+     "id": "sec-003-3-the-laguerre-ensemble",
+     "title": "The Laguerre ensemble",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-005-0-ja",
-     "title": "Ja(",
-     "result": "no matching \\section"
+     "id": "sec-004-311-the-thermodynamic-limit",
+     "title": "The thermodynamic limit",
+     "prose_ratio": 0.847,
+     "coverage_ratio": 0.948,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-006-discussion",
-     "title": "Discussion",
-     "prose_ratio": 0.515,
+     "id": "sec-005-321-the-thermodynamic-limit",
+     "title": "The thermodynamic limit",
+     "prose_ratio": 0.424,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-007-0-4xy-\u03c1t-hard",
-     "title": "(4XY ) \u03c1T hard",
-     "result": "no matching \\section"
+     "id": "sec-006-4-gaussian-ensemble",
+     "title": "Gaussian ensemble",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-008-references",
-     "title": "References",
-     "result": "no matching \\section"
+     "id": "sec-007-5-discussion",
+     "title": "Discussion",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.932,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-52-connection-between-the-soft-and-hard-edges",
+     "title": "Connection between the soft and hard edges",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.943,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-53-connection-with-the-bulk",
+     "title": "Connection with the bulk",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-55-empirical-density-of-eigenvalues-at-the-soft",
+     "title": "Empirical density of eigenvalues at the soft edge",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-56-distribution-functions-in-the-initial-state",
+     "title": "Distribution functions in the initial state",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-acknowledgement",
+     "title": "Acknowledgement",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-appendix-a",
+     "title": "Appendix A",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.48,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     }
    ]
   }

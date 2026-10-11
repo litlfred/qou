@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/sections/sec-002",
   "@type": [
     "doco:Section"
   ],
-  "title": "A deformation space of the hyperbolic structure on the 3-manifold",
-  "pageStart": 5,
-  "pageEnd": 8,
+  "title": "KAPOVICH,",
+  "pageStart": 13,
+  "pageEnd": 13,
   "contains": [
     "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/blocks/prose-sec-002"
   ],
-  "derivedFrom": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/manifest",
-  "sourceDocument": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/manifest.jsonld",
   "provenance": "ingested"
 }

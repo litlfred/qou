@@ -1,18 +1,45 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/kirbycal/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "A Calculus for Framed Links in S^3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./kirbycal/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A calculus for framed links in <Emphasis Type=\"Italic\">S </Emphasis> <Superscript>3 </Superscript>",
   "contains": [
-    "library/kirbycal/sections/sec-000",
-    "library/kirbycal/sections/sec-001",
-    "library/kirbycal/sections/sec-002"
+    "library/kirbycal/sections/page-001",
+    "library/kirbycal/sections/page-002",
+    "library/kirbycal/sections/page-003",
+    "library/kirbycal/sections/page-004",
+    "library/kirbycal/sections/page-005",
+    "library/kirbycal/sections/page-006",
+    "library/kirbycal/sections/page-007",
+    "library/kirbycal/sections/page-008",
+    "library/kirbycal/sections/page-009",
+    "library/kirbycal/sections/page-010",
+    "library/kirbycal/sections/page-011",
+    "library/kirbycal/sections/page-012",
+    "library/kirbycal/sections/page-013",
+    "library/kirbycal/sections/page-014",
+    "library/kirbycal/sections/page-015",
+    "library/kirbycal/sections/page-016",
+    "library/kirbycal/sections/page-017",
+    "library/kirbycal/sections/page-018",
+    "library/kirbycal/sections/page-019",
+    "library/kirbycal/sections/page-020",
+    "library/kirbycal/sections/page-021",
+    "library/kirbycal/sections/page-022"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "kirbycal",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "kirbycal.pdf",
     "source_sha256": "8dae9487ed32a3bdbfb8cb00b72b0a6e4f38b301089b45c8fdd32eb45a12311b",
     "pages": 22,

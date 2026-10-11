@@ -8,6 +8,9 @@
   "pages": 60,
   "text_source": "embedded",
   "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:24Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -18,7 +21,7 @@
    "stamp_date": "26 Mar 1999"
   },
   "doi": null,
-  "title": "ON THE DISTRIBUTION OF THE LENGTH OF THE LONGEST INCREASING SUBSEQUENCE OF RANDOM PERMUTATIONS",
+  "title": "arXiv:math/9810105v2 [math.CO] 26 Mar 1999",
   "authors_raw": "JINHO BAIK, PERCY DEIFT, AND KURT JOHANSSON",
   "title_lines": [
    "ON THE DISTRIBUTION OF THE LENGTH OF THE LONGEST",
@@ -30,6 +33,18 @@
    "Producer": "GPL Ghostscript 10.01.2",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20241126160622-05'00'"
+  },
+  "title_raw": "ON THE DISTRIBUTION OF THE LENGTH OF THE LONGEST INCREASING SUBSEQUENCE OF RANDOM PERMUTATIONS",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math/9810105v2 [math.CO] 26 Mar 1999",
+   "heading": "ON THE DISTRIBUTION OF THE LENGTH OF THE LONGEST INCREASING SUBSEQUENCE OF RANDOM PERMUTATIONS 1. Introduction Let S N be the group of permutations of 1 , 2 , . . ., N . If \u03c0 \u2208 S N , we say that \u03c0 ( i 1 ) , \u00b7 \u00b7 \u00b7 , \u03c0 ( i k ) is an increasing subsequence in \u03c0 if i 1 < i 2 < \u00b7 \u00b7 \u00b7 < i k and \u03c0 ( i 1 )",
+   "text": "ON THE DISTRIBUTION OF THE LENGTH OF THE LONGEST INCREASING SUBSEQUENCE OF RANDOM PERMUTATIONS",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -38,410 +53,737 @@
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Riemann-Hilbert Theory",
    "page": 8,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "(the dashed lines), and a contour \u03a3P II,2 consisting of a pair of curved solid",
-   "page": 13,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "Connection to the Toda Lattice and the Painlev\u00b4e III Equation",
+   "title": "Connection to the Toda Lattice and the Painlev'e III Equation",
    "page": 16,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "(z\u2212z\u22121)ad\u03c33z\u2212q",
-   "page": 16,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(0; q) which are related to",
+   "title": "Equilibrium Measure and $g$-function",
    "page": 17,
    "source": "inferred",
-   "number": "11"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "Equilibrium Measure and g-function",
-   "page": 17,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "(z+z\u22121)",
-   "page": 18,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(z+z\u22121) on the unit circle (see [Sz1],",
-   "page": 18,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "This gives us F \u2032(\u03c6) =",
-   "page": 19,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(z + z\u22121) on the unit circle is de\ufb01ned by the following",
-   "page": 20,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(0)eqleqg(0) = \u2212(\u22121)qm(1)",
-   "page": 20,
-   "source": "inferred",
-   "number": "21"
-  },
-  {
-   "level": 1,
-   "title": "(0)eql,",
-   "page": 20,
-   "source": "inferred",
-   "number": "21"
-  },
-  {
-   "level": 1,
-   "title": "If 0 \u2264\u03b3 \u22641, then",
-   "page": 21,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "If \u03b3 > 1, then",
-   "page": 21,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(s + s\u22121))ds",
-   "page": 21,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(z + z\u22121) = 0",
-   "page": 22,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(1 \u2212z\u22122) + \u03b3",
-   "page": 22,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "(z + z\u22121) + \u03b3",
-   "page": 22,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "(z + z\u22121) + \u03b3 + g+(1) + g\u2212(1)",
-   "page": 22,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(z + z\u22121) + g+(1) + g\u2212(1)",
-   "page": 23,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(z\u2212z\u22121)",
-   "page": 24,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(z \u2212z\u22121) + log z",
-   "page": 24,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u03c1 \u2212\u03c1\u22121) cos \u03b8 + log \u03c1,",
-   "page": 24,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(1 \u2212\u03b3)3/2",
+   "title": "$\\mathbf{ 0\\leq \\gamma \\le 1}$",
    "page": 26,
    "source": "inferred",
-   "number": "3"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "(0) = 1 +",
+   "title": "$\\mathbf{\\gamma > 1}$",
    "page": 26,
    "source": "inferred",
-   "number": "22"
+   "number": "6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "(z\u2212z\u22121)||dz| = (1) + (2)",
-   "page": 27,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(z\u2212z\u22121)| \u2264eq",
-   "page": 27,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(z\u2212z\u22121)| \u2264e\u22122",
-   "page": 27,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(1+\u03b3 cos \u03b8)3/2",
-   "page": 29,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Since",
-   "page": 30,
-   "source": "inferred",
-   "number": "C"
-  },
-  {
-   "level": 1,
-   "title": "If 0 \u2264\u03b3 \u22641 \u2212\u03b41, then, for some constants C, c which may depend on \u03b41,",
-   "page": 31,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "If 1",
-   "page": 31,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "If 1 \u2212",
-   "page": 31,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(0)eql = \u2212(\u22121)qeq(\u2212\u03b3+log \u03b3+1)m(1)",
-   "page": 32,
-   "source": "inferred",
-   "number": "21"
-  },
-  {
-   "level": 1,
-   "title": "(-x/2)",
-   "page": 34,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(u2 \u2212u2",
-   "page": 35,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "(u2\u2212u2",
-   "page": 36,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "(0) = R22(0)",
-   "page": 37,
-   "source": "inferred",
-   "number": "22"
-  },
-  {
-   "level": 1,
-   "title": "(0). Noting the factorization v(4) =",
-   "page": 38,
-   "source": "inferred",
-   "number": "21"
-  },
-  {
-   "level": 1,
-   "title": "(0) = eR22(0)m(5,\u221e)",
-   "page": 42,
-   "source": "inferred",
-   "number": "21"
-  },
-  {
-   "level": 1,
-   "title": "(0) = eq(\u2212\u03b3+log \u03b3+1) 1",
-   "page": 42,
-   "source": "inferred",
-   "number": "21"
-  },
-  {
-   "level": 1,
-   "title": "If 1 + \u03b43 \u2264\u03b3,",
+   "title": "Asymptotics of $\\mathbf{\\phi_n(\\lambda)}$ as $\\mathbf{ n\\to\\infty}$",
    "page": 43,
    "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "If 1 +",
-   "page": 43,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "If 1 < \u03b3 \u22641 +",
-   "page": 43,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Asymptotics of \u03c6n(\u03bb) as n \u2192\u221e",
-   "page": 43,
-   "source": "inferred",
-   "number": "7"
-  },
-  {
-   "level": 1,
-   "title": "(n+1)(1\u22122",
-   "page": 44,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Therefore, from Lemma 5.1 (i), we have",
-   "page": 45,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(k + 1)",
-   "page": 45,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(n+1)\u2212",
-   "page": 47,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "( M6",
-   "page": 47,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(n + 1",
-   "page": 48,
-   "source": "inferred",
-   "number": "24"
-  },
-  {
-   "level": 1,
-   "title": "If 0 \u22642",
-   "page": 49,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "If 1\u2212",
-   "page": 49,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "If 1 +",
-   "page": 50,
-   "source": "inferred",
-   "number": "4"
+   "number": "7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "De-Poissonization Lemmas",
    "page": 50,
    "source": "inferred",
-   "number": "8"
+   "number": "8",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Proofs of main Theorems",
    "page": 51,
    "source": "inferred",
-   "number": "9"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 57,
-   "source": "inferred",
-   "number": null
+   "number": "9",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "vention, the (+)-side (resp., (\u2212)-side) of an arc in \u03a3 lies to the left (resp., right)",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "smooth map from \u03a30 \u2192Gl(n, C), for some n. If \u03a3 is unbounded, we require that",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "vP II and \u03a3P II",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "p = \u2212q = 1, r = 0 case ; \u03a3P II,1",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "\u03a3P II,2 and vP II,2 For the \ufb01rst of the two equivalent RHP\u2019s advertised above, we consider Figure 5,",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "\u03a3P II,3 The second of the equivalent RHP\u2019s is restricted to the case x < 0, and we",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "branch cut of log(z \u2212ei\u03b8)",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "\u03a3(3) and \u2126(3) Introduce \u03a3(3) = \u03a3(3)(\u03b3) = \u03a3(3)",
+   "page": 24,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "small (in fact, any number 0 < \u01eb < 1 would do.) so that z \u2192u(z) is a bijection",
+   "page": 28,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "\u03a3 and \u03a3(3)",
+   "page": 31,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "We consider case (iii). Set \u03b3 = 1 +",
+   "page": 34,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "\u0012 0",
+   "page": 38,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "\u03a3\u2032\u2032 and v\u03a8",
+   "page": 39,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "\u01eb\u2032\u2032 su\ufb03ciently small so that z \u2192\u03bb(z) is a bijection from O\u03be onto an open neighborhood",
+   "page": 40,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 54,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 55,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 56,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 57,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 58,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 59,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 60,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 909,
+   "n_words": 141,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -450,7 +792,9 @@
    "page_start": 1,
    "page_end": 8,
    "n_chars": 19076,
-   "n_words": 3585
+   "n_words": 3585,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-riemann-hilbert-theory",
@@ -458,572 +802,70 @@
    "title": "Riemann-Hilbert Theory",
    "level": 1,
    "page_start": 8,
-   "page_end": 13,
-   "n_chars": 9141,
-   "n_words": 1933
-  },
-  {
-   "id": "sec-002-0-the-dashed-lines-and-a-contour-\u03c3p-ii2-consisti",
-   "number": "0",
-   "title": "(the dashed lines), and a contour \u03a3P II,2 consisting of a pair of curved solid",
-   "level": 1,
-   "page_start": 13,
    "page_end": 16,
-   "n_chars": 3982,
-   "n_words": 954
+   "n_chars": 13205,
+   "n_words": 2903,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-3-connection-to-the-toda-lattice-and-the-painlev",
+   "id": "sec-002-3-connection-to-the-toda-lattice-and-the-painlev",
    "number": "3",
-   "title": "Connection to the Toda Lattice and the Painlev\u00b4e III Equation",
+   "title": "Connection to the Toda Lattice and the Painlev'e III Equation",
    "level": 1,
    "page_start": 16,
-   "page_end": 16,
-   "n_chars": 1768,
-   "n_words": 395
-  },
-  {
-   "id": "sec-004-2-zz1ad\u03c33zq",
-   "number": "2",
-   "title": "(z\u2212z\u22121)ad\u03c33z\u2212q",
-   "level": 1,
-   "page_start": 16,
-   "page_end": 17,
-   "n_chars": 606,
-   "n_words": 141
-  },
-  {
-   "id": "sec-005-11-0-q-which-are-related-to",
-   "number": "11",
-   "title": "(0; q) which are related to",
-   "level": 1,
-   "page_start": 17,
-   "page_end": 17,
-   "n_chars": 1126,
-   "n_words": 214
-  },
-  {
-   "id": "sec-006-4-equilibrium-measure-and-g-function",
-   "number": "4",
-   "title": "Equilibrium Measure and g-function",
-   "level": 1,
-   "page_start": 17,
-   "page_end": 18,
-   "n_chars": 2175,
-   "n_words": 453
-  },
-  {
-   "id": "sec-007-2-zz1",
-   "number": "2",
-   "title": "(z+z\u22121)",
-   "level": 1,
-   "page_start": 18,
-   "page_end": 18,
-   "n_chars": 176,
-   "n_words": 43
-  },
-  {
-   "id": "sec-008-2-zz1-on-the-unit-circle-see-sz1",
-   "number": "2",
-   "title": "(z+z\u22121) on the unit circle (see [Sz1],",
-   "level": 1,
-   "page_start": 18,
-   "page_end": 19,
-   "n_chars": 1830,
-   "n_words": 410
-  },
-  {
-   "id": "sec-009-2-this-gives-us-f-\u03c6",
-   "number": "2",
-   "title": "This gives us F \u2032(\u03c6) =",
-   "level": 1,
-   "page_start": 19,
-   "page_end": 20,
-   "n_chars": 324,
-   "n_words": 57
-  },
-  {
-   "id": "sec-010-2-z-z1-on-the-unit-circle-is-de\ufb01ned-by-the-follo",
-   "number": "2",
-   "title": "(z + z\u22121) on the unit circle is de\ufb01ned by the following",
-   "level": 1,
-   "page_start": 20,
-   "page_end": 20,
-   "n_chars": 983,
-   "n_words": 203
-  },
-  {
-   "id": "sec-011-21-0eqleqg0-1qm1",
-   "number": "21",
-   "title": "(0)eqleqg(0) = \u2212(\u22121)qm(1)",
-   "level": 1,
-   "page_start": 20,
-   "page_end": 20,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-012-21-0eql",
-   "number": "21",
-   "title": "(0)eql,",
-   "level": 1,
-   "page_start": 20,
-   "page_end": 21,
-   "n_chars": 1135,
-   "n_words": 244
-  },
-  {
-   "id": "sec-013-1-if-0-\u03b3-1-then",
-   "number": "1",
-   "title": "If 0 \u2264\u03b3 \u22641, then",
-   "level": 1,
-   "page_start": 21,
-   "page_end": 21,
-   "n_chars": 48,
-   "n_words": 15
-  },
-  {
-   "id": "sec-014-2-if-\u03b3-1-then",
-   "number": "2",
-   "title": "If \u03b3 > 1, then",
-   "level": 1,
-   "page_start": 21,
-   "page_end": 21,
-   "n_chars": 402,
-   "n_words": 96
-  },
-  {
-   "id": "sec-015-2-s-s1ds",
-   "number": "2",
-   "title": "(s + s\u22121))ds",
-   "level": 1,
-   "page_start": 21,
-   "page_end": 22,
-   "n_chars": 386,
-   "n_words": 102
-  },
-  {
-   "id": "sec-016-2-z-z1-0",
-   "number": "2",
-   "title": "(z + z\u22121) = 0",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 22,
-   "n_chars": 464,
-   "n_words": 115
-  },
-  {
-   "id": "sec-017-4-1-z2-\u03b3",
-   "number": "4",
-   "title": "(1 \u2212z\u22122) + \u03b3",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 22,
-   "n_chars": 95,
-   "n_words": 26
-  },
-  {
-   "id": "sec-018-4-z-z1-\u03b3",
-   "number": "4",
-   "title": "(z + z\u22121) + \u03b3",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 22,
-   "n_chars": 324,
-   "n_words": 87
-  },
-  {
-   "id": "sec-019-2-z-z1-\u03b3-g1-g1",
-   "number": "2",
-   "title": "(z + z\u22121) + \u03b3 + g+(1) + g\u2212(1)",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 23,
-   "n_chars": 904,
-   "n_words": 257
-  },
-  {
-   "id": "sec-020-2-z-z1-g1-g1",
-   "number": "2",
-   "title": "(z + z\u22121) + g+(1) + g\u2212(1)",
-   "level": 1,
-   "page_start": 23,
-   "page_end": 24,
-   "n_chars": 762,
-   "n_words": 192
-  },
-  {
-   "id": "sec-021-2-zz1",
-   "number": "2",
-   "title": "(z\u2212z\u22121)",
-   "level": 1,
-   "page_start": 24,
-   "page_end": 24,
-   "n_chars": 726,
-   "n_words": 196
-  },
-  {
-   "id": "sec-022-2-z-z1-log-z",
-   "number": "2",
-   "title": "(z \u2212z\u22121) + log z",
-   "level": 1,
-   "page_start": 24,
-   "page_end": 24,
-   "n_chars": 5,
-   "n_words": 3
-  },
-  {
-   "id": "sec-023-2-\u03c1-\u03c11-cos-\u03b8-log-\u03c1",
-   "number": "2",
-   "title": "(\u03c1 \u2212\u03c1\u22121) cos \u03b8 + log \u03c1,",
-   "level": 1,
-   "page_start": 24,
-   "page_end": 26,
-   "n_chars": 2085,
-   "n_words": 472
-  },
-  {
-   "id": "sec-024-3-1-\u03b332",
-   "number": "3",
-   "title": "(1 \u2212\u03b3)3/2",
-   "level": 1,
-   "page_start": 26,
-   "page_end": 26,
-   "n_chars": 370,
-   "n_words": 72
-  },
-  {
-   "id": "sec-025-22-0-1",
-   "number": "22",
-   "title": "(0) = 1 +",
-   "level": 1,
-   "page_start": 26,
-   "page_end": 27,
-   "n_chars": 1666,
-   "n_words": 321
-  },
-  {
-   "id": "sec-026-2-zz1dz-1-2",
-   "number": "2",
-   "title": "(z\u2212z\u22121)||dz| = (1) + (2)",
-   "level": 1,
-   "page_start": 27,
-   "page_end": 27,
-   "n_chars": 178,
-   "n_words": 35
-  },
-  {
-   "id": "sec-027-2-zz1-eq",
-   "number": "2",
-   "title": "(z\u2212z\u22121)| \u2264eq",
-   "level": 1,
-   "page_start": 27,
-   "page_end": 27,
-   "n_chars": 127,
-   "n_words": 28
-  },
-  {
-   "id": "sec-028-2-zz1-e2",
-   "number": "2",
-   "title": "(z\u2212z\u22121)| \u2264e\u22122",
-   "level": 1,
-   "page_start": 27,
-   "page_end": 29,
-   "n_chars": 3291,
-   "n_words": 706
-  },
-  {
-   "id": "sec-029-2-1\u03b3-cos-\u03b832",
-   "number": "2",
-   "title": "(1+\u03b3 cos \u03b8)3/2",
-   "level": 1,
-   "page_start": 29,
-   "page_end": 30,
-   "n_chars": 832,
-   "n_words": 173
-  },
-  {
-   "id": "sec-030-c-since",
-   "number": "C",
-   "title": "Since",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 31,
-   "n_chars": 1842,
-   "n_words": 420
-  },
-  {
-   "id": "sec-031-1-if-0-\u03b3-1-\u03b41-then-for-some-constants-c-c-which",
-   "number": "1",
-   "title": "If 0 \u2264\u03b3 \u22641 \u2212\u03b41, then, for some constants C, c which may depend on \u03b41,",
-   "level": 1,
-   "page_start": 31,
-   "page_end": 31,
-   "n_chars": 19,
-   "n_words": 4
-  },
-  {
-   "id": "sec-032-2-if-1",
-   "number": "2",
-   "title": "If 1",
-   "level": 1,
-   "page_start": 31,
-   "page_end": 31,
-   "n_chars": 137,
-   "n_words": 30
-  },
-  {
-   "id": "sec-033-3-if-1",
-   "number": "3",
-   "title": "If 1 \u2212",
-   "level": 1,
-   "page_start": 31,
-   "page_end": 32,
-   "n_chars": 1970,
-   "n_words": 504
-  },
-  {
-   "id": "sec-034-21-0eql-1qeq\u03b3log-\u03b31m1",
-   "number": "21",
-   "title": "(0)eql = \u2212(\u22121)qeq(\u2212\u03b3+log \u03b3+1)m(1)",
-   "level": 1,
-   "page_start": 32,
-   "page_end": 34,
-   "n_chars": 3348,
-   "n_words": 777
-  },
-  {
-   "id": "sec-035-0--x2",
-   "number": "0",
-   "title": "(-x/2)",
-   "level": 1,
-   "page_start": 34,
-   "page_end": 35,
-   "n_chars": 1549,
-   "n_words": 381
-  },
-  {
-   "id": "sec-036-6-u2-u2",
-   "number": "6",
-   "title": "(u2 \u2212u2",
-   "level": 1,
-   "page_start": 35,
-   "page_end": 36,
-   "n_chars": 1790,
-   "n_words": 376
-  },
-  {
-   "id": "sec-037-6-u2u2",
-   "number": "6",
-   "title": "(u2\u2212u2",
-   "level": 1,
-   "page_start": 36,
-   "page_end": 37,
-   "n_chars": 1454,
-   "n_words": 294
-  },
-  {
-   "id": "sec-038-22-0-r220",
-   "number": "22",
-   "title": "(0) = R22(0)",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 38,
-   "n_chars": 1460,
-   "n_words": 346
-  },
-  {
-   "id": "sec-039-21-0-noting-the-factorization-v4",
-   "number": "21",
-   "title": "(0). Noting the factorization v(4) =",
-   "level": 1,
-   "page_start": 38,
-   "page_end": 42,
-   "n_chars": 6637,
-   "n_words": 1453
-  },
-  {
-   "id": "sec-040-21-0-er220m5",
-   "number": "21",
-   "title": "(0) = eR22(0)m(5,\u221e)",
-   "level": 1,
-   "page_start": 42,
-   "page_end": 42,
-   "n_chars": 69,
-   "n_words": 13
-  },
-  {
-   "id": "sec-041-21-0-eq\u03b3log-\u03b31-1",
-   "number": "21",
-   "title": "(0) = eq(\u2212\u03b3+log \u03b3+1) 1",
-   "level": 1,
-   "page_start": 42,
-   "page_end": 43,
-   "n_chars": 425,
-   "n_words": 82
-  },
-  {
-   "id": "sec-042-1-if-1-\u03b43-\u03b3",
-   "number": "1",
-   "title": "If 1 + \u03b43 \u2264\u03b3,",
-   "level": 1,
-   "page_start": 43,
-   "page_end": 43,
-   "n_chars": 239,
-   "n_words": 66
-  },
-  {
-   "id": "sec-043-3-if-1-\u03b3-1",
-   "number": "3",
-   "title": "If 1 < \u03b3 \u22641 +",
-   "level": 1,
-   "page_start": 43,
-   "page_end": 43,
-   "n_chars": 574,
-   "n_words": 127
-  },
-  {
-   "id": "sec-044-7-asymptotics-of-\u03c6n\u03bb-as-n",
-   "number": "7",
-   "title": "Asymptotics of \u03c6n(\u03bb) as n \u2192\u221e",
-   "level": 1,
-   "page_start": 43,
-   "page_end": 44,
-   "n_chars": 1217,
-   "n_words": 281
-  },
-  {
-   "id": "sec-045-3-k-1",
-   "number": "3",
-   "title": "(k + 1)",
-   "level": 1,
-   "page_start": 44,
-   "page_end": 44,
-   "n_chars": 273,
-   "n_words": 74
-  },
-  {
-   "id": "sec-046-2-n112",
-   "number": "2",
-   "title": "(n+1)(1\u22122",
-   "level": 1,
-   "page_start": 44,
-   "page_end": 45,
-   "n_chars": 637,
-   "n_words": 165
-  },
-  {
-   "id": "sec-047-2-therefore-from-lemma-51-i-we-have",
-   "number": "2",
-   "title": "Therefore, from Lemma 5.1 (i), we have",
-   "level": 1,
-   "page_start": 45,
-   "page_end": 47,
-   "n_chars": 2638,
-   "n_words": 666
-  },
-  {
-   "id": "sec-048-2-n1",
-   "number": "2",
-   "title": "(n+1)\u2212",
-   "level": 1,
-   "page_start": 47,
-   "page_end": 47,
-   "n_chars": 73,
-   "n_words": 17
-  },
-  {
-   "id": "sec-049-2-m6",
-   "number": "2",
-   "title": "( M6",
-   "level": 1,
-   "page_start": 47,
-   "page_end": 47,
-   "n_chars": 511,
-   "n_words": 131
-  },
-  {
-   "id": "sec-050-24-n-1",
-   "number": "24",
-   "title": "(n + 1",
-   "level": 1,
-   "page_start": 47,
-   "page_end": 49,
-   "n_chars": 4086,
-   "n_words": 1012
-  },
-  {
-   "id": "sec-051-1-if-0-2",
-   "number": "1",
-   "title": "If 0 \u22642",
-   "level": 1,
-   "page_start": 49,
-   "page_end": 49,
-   "n_chars": 199,
-   "n_words": 42
-  },
-  {
-   "id": "sec-052-3-if-1",
-   "number": "3",
-   "title": "If 1\u2212",
-   "level": 1,
-   "page_start": 49,
    "page_end": 50,
-   "n_chars": 286,
-   "n_words": 60
+   "n_chars": 55635,
+   "n_words": 12695,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-053-4-if-1",
-   "number": "4",
-   "title": "If 1 +",
-   "level": 1,
-   "page_start": 50,
-   "page_end": 50,
-   "n_chars": 290,
-   "n_words": 61
-  },
-  {
-   "id": "sec-054-8-de-poissonization-lemmas",
+   "id": "sec-003-8-de-poissonization-lemmas",
    "number": "8",
    "title": "De-Poissonization Lemmas",
    "level": 1,
    "page_start": 50,
    "page_end": 51,
    "n_chars": 2220,
-   "n_words": 514
+   "n_words": 514,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-055-9-proofs-of-main-theorems",
+   "id": "sec-004-9-proofs-of-main-theorems",
    "number": "9",
    "title": "Proofs of main Theorems",
    "level": 1,
    "page_start": 51,
-   "page_end": 57,
-   "n_chars": 10036,
-   "n_words": 2236
-  },
-  {
-   "id": "sec-056-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 57,
    "page_end": 60,
-   "n_chars": 9448,
-   "n_words": 1275
+   "n_chars": 19496,
+   "n_words": 3512,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 58,
-  "sections": 57,
-  "chars_total": 108414,
+  "toc_entries": 9,
+  "toc_inferred_entries": 9,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 14,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 110541,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "draft2.tex",
    "tex_sections": 9,
-   "overlaid": 3,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1031,303 +873,48 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.944,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-riemann-hilbert-theory",
      "title": "Riemann-Hilbert Theory",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.96,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-0-the-dashed-lines-and-a-contour-\u03c3p-ii2-consisti",
-     "title": "(the dashed lines), and a contour \u03a3P II,2 consisting of a pair of curved solid",
-     "result": "no matching \\section"
+     "id": "sec-002-3-connection-to-the-toda-lattice-and-the-painlev",
+     "title": "Connection to the Toda Lattice and the Painlev'e III Equation",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-003-3-connection-to-the-toda-lattice-and-the-painlev",
-     "title": "Connection to the Toda Lattice and the Painlev\u00b4e III Equation",
-     "prose_ratio": 0.534,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-004-2-zz1ad\u03c33zq",
-     "title": "(z\u2212z\u22121)ad\u03c33z\u2212q",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-005-11-0-q-which-are-related-to",
-     "title": "(0; q) which are related to",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-006-4-equilibrium-measure-and-g-function",
-     "title": "Equilibrium Measure and g-function",
-     "prose_ratio": 0.23,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-007-2-zz1",
-     "title": "(z+z\u22121)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-008-2-zz1-on-the-unit-circle-see-sz1",
-     "title": "(z+z\u22121) on the unit circle (see [Sz1],",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-009-2-this-gives-us-f-\u03c6",
-     "title": "This gives us F \u2032(\u03c6) =",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-010-2-z-z1-on-the-unit-circle-is-de\ufb01ned-by-the-follo",
-     "title": "(z + z\u22121) on the unit circle is de\ufb01ned by the following",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-011-21-0eqleqg0-1qm1",
-     "title": "(0)eqleqg(0) = \u2212(\u22121)qm(1)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-012-21-0eql",
-     "title": "(0)eql,",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-013-1-if-0-\u03b3-1-then",
-     "title": "If 0 \u2264\u03b3 \u22641, then",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-014-2-if-\u03b3-1-then",
-     "title": "If \u03b3 > 1, then",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-015-2-s-s1ds",
-     "title": "(s + s\u22121))ds",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-016-2-z-z1-0",
-     "title": "(z + z\u22121) = 0",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-017-4-1-z2-\u03b3",
-     "title": "(1 \u2212z\u22122) + \u03b3",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-018-4-z-z1-\u03b3",
-     "title": "(z + z\u22121) + \u03b3",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-019-2-z-z1-\u03b3-g1-g1",
-     "title": "(z + z\u22121) + \u03b3 + g+(1) + g\u2212(1)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-020-2-z-z1-g1-g1",
-     "title": "(z + z\u22121) + g+(1) + g\u2212(1)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-021-2-zz1",
-     "title": "(z\u2212z\u22121)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-022-2-z-z1-log-z",
-     "title": "(z \u2212z\u22121) + log z",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-023-2-\u03c1-\u03c11-cos-\u03b8-log-\u03c1",
-     "title": "(\u03c1 \u2212\u03c1\u22121) cos \u03b8 + log \u03c1,",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-024-3-1-\u03b332",
-     "title": "(1 \u2212\u03b3)3/2",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-025-22-0-1",
-     "title": "(0) = 1 +",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-026-2-zz1dz-1-2",
-     "title": "(z\u2212z\u22121)||dz| = (1) + (2)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-027-2-zz1-eq",
-     "title": "(z\u2212z\u22121)| \u2264eq",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-028-2-zz1-e2",
-     "title": "(z\u2212z\u22121)| \u2264e\u22122",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-029-2-1\u03b3-cos-\u03b832",
-     "title": "(1+\u03b3 cos \u03b8)3/2",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-030-c-since",
-     "title": "Since",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-031-1-if-0-\u03b3-1-\u03b41-then-for-some-constants-c-c-which",
-     "title": "If 0 \u2264\u03b3 \u22641 \u2212\u03b41, then, for some constants C, c which may depend on \u03b41,",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-032-2-if-1",
-     "title": "If 1",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-033-3-if-1",
-     "title": "If 1 \u2212",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-034-21-0eql-1qeq\u03b3log-\u03b31m1",
-     "title": "(0)eql = \u2212(\u22121)qeq(\u2212\u03b3+log \u03b3+1)m(1)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-035-0--x2",
-     "title": "(-x/2)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-036-6-u2-u2",
-     "title": "(u2 \u2212u2",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-037-6-u2u2",
-     "title": "(u2\u2212u2",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-038-22-0-r220",
-     "title": "(0) = R22(0)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-039-21-0-noting-the-factorization-v4",
-     "title": "(0). Noting the factorization v(4) =",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-040-21-0-er220m5",
-     "title": "(0) = eR22(0)m(5,\u221e)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-041-21-0-eq\u03b3log-\u03b31-1",
-     "title": "(0) = eq(\u2212\u03b3+log \u03b3+1) 1",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-042-1-if-1-\u03b43-\u03b3",
-     "title": "If 1 + \u03b43 \u2264\u03b3,",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-043-3-if-1-\u03b3-1",
-     "title": "If 1 < \u03b3 \u22641 +",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-044-7-asymptotics-of-\u03c6n\u03bb-as-n",
-     "title": "Asymptotics of \u03c6n(\u03bb) as n \u2192\u221e",
-     "prose_ratio": 0.302,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-045-3-k-1",
-     "title": "(k + 1)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-046-2-n112",
-     "title": "(n+1)(1\u22122",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-047-2-therefore-from-lemma-51-i-we-have",
-     "title": "Therefore, from Lemma 5.1 (i), we have",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-048-2-n1",
-     "title": "(n+1)\u2212",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-049-2-m6",
-     "title": "( M6",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-050-24-n-1",
-     "title": "(n + 1",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-051-1-if-0-2",
-     "title": "If 0 \u22642",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-052-3-if-1",
-     "title": "If 1\u2212",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-053-4-if-1",
-     "title": "If 1 +",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-054-8-de-poissonization-lemmas",
+     "id": "sec-003-8-de-poissonization-lemmas",
      "title": "De-Poissonization Lemmas",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.957,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-055-9-proofs-of-main-theorems",
+     "id": "sec-004-9-proofs-of-main-theorems",
      "title": "Proofs of main Theorems",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.373,
+     "coverage_ratio": 0.149,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
-    },
-    {
-     "id": "sec-056-references",
-     "title": "References",
-     "result": "no matching \\section"
     }
    ]
   }

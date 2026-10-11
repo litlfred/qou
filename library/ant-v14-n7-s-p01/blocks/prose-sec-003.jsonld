@@ -1,16 +1,18 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s-p01/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s-p01/blocks/prose-sec-003",
+  "@type": [],
   "kind": "prose",
-  "title": "(YQ,1(m2N), Z), H2(YF,1(m2n), Z)∼= HBM",
-  "pageStart": 17,
-  "pageEnd": 17,
-  "text": "../sections/sec-003-1-yq1m2n-z-h2yf1m2n-z-hbm.md",
-  "derivedFrom": "library/ant-v14-n7-s-p01/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p01/manifest",
+  "title": "Proving the norm relations (Theorem 3.13)",
+  "pageStart": 19,
+  "pageEnd": 24,
+  "text": "../sections/sec-003-4-proving-the-norm-relations-theorem-313.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p01/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p01/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-math-0105186v2
-doc_title: "Along exact sequence for symplectic Floer cohomology Paul Seidel"
+doc_title: "arXiv:math/0105186v2 [math.SG] 20 Jul 2002"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
 pages: 1-4
 source_pdf: 0105186v2.pdf
 source_sha256: e1552ceb6c82c27c
-doc_brief: "Along exact sequence for symplectic Floer cohomology Paul Seidel — 45 sections: Introduction; Dehn twists, and all that; Exact symplectic geometry and ﬁbra"
+toc_source: inferred
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.998
+latex_prose_ratio: 0.962
+latex_coverage_ratio: 0.993
 ---
 Let $(M^{2n},\o,\alpha)$ be a compact symplectic manifold with contact type boundary: $\alpha$ is a contact one-form on $\partial M$ which satisfies $d\alpha = \o|\partial M$ and makes $\partial M$ convex. Assume in addition that $[\o,\alpha] \in H^2(M,\partial M;\R)$ is zero, so that $\alpha$ can be extended to a one-form $\theta$ on $M$ satisfying $d\theta = \o$. After fixing such a $\theta$ once and for all, one can talk about exact Lagrangian submanifolds in $M$. The Floer cohomology of two such submanifolds is comparatively easy to define, since the corresponding action functional has no periods, so that bubbling is impossible. The aim of this paper is to prove the following result, which was announced in [@seidel00] (with an additional assumption on $c_1(M)$ that has been removed in the meantime).
 

@@ -6,44 +6,288 @@
   "sha256": "6f100e931a1e5f2241cb428f007fe82abbe99f2f30047cc0d769ef0d6ad1389e",
   "bytes": 311868,
   "pages": 12,
-  "text_source": "ocr"
+  "text_source": "ocr",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:17Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "A Hierarchy of Linking Integrals",
-  "authors_raw": "Department of Applied Mathematics and Theoretical Physics",
-  "abstract": "Since the days of Maxwell and Tait, it has been known that the Gauss linking integral fails to detect entanglements with equal numbers of oppositely signed crossings, such as the Borromean rings. As the helicity or Gauss integral is quadratic in the fluxes or vortex strengths, it measures second order linking. It is the lowest member of a hierarchy of linking integrals. A third order linking integral (based on the Massey product) describes the subtle interlocking of the Borromean rings. An entanglement of four rings - any pair or triple of which is unlinked — is presented, together with a fourth order linking integral which distinguishes the delicate tangling from four unlinked rings. Links are close relatives of braids and the hierarchy of linking integrals now becomes a hierarchy of winding numbers. Detailed examples are given for n = 3 and 4 and the extension to n orders is sketched in the conclusions.",
-  "docinfo": {
-   "CreationDate": "D:20160204121333Z00'00'",
-   "Creator": "Xerox ColorQube 9301",
-   "Producer": "Xerox ColorQube 9301"
-  },
+  "title": "A HIERARCHY OF LINKING INTEGRALS",
+  "authors_raw": "N.W. EVANS",
   "title_lines": [
-   "A HIERARCHY OF LINKING INTEGRALS",
-   "N.W. EVANS"
+   "A HIERARCHY OF LINKING INTEGRALS"
   ],
-  "title_prev": "A HIERARCHY OF LINKING INTEGRALS N.W. EVANS"
+  "abstract": "Since the days of Maxwell and Tait, it has been known that the Gauss linking integral fails to detect entanglements with equal numbers of oppositely signed crossings, such as the Borromean rings. As the helicity or Gauss integral is quadratic in the fluxes or vortex strengths, it measures second order linking. It is the lowest member of a hierarchy of linking integrals. A third order linking integral (based on the Massey product) describes the subtle interlocking of the Borromean rings. An entanglement of four rings - any pair or triple of which is unlinked \u2014 is presented, together with a fourth order linking integral which distinguishes the delicate tangling from four unlinked rings. Links are close relatives of braids and the hierarchy of linking integrals now becomes a hierarchy of winding numbers. Detailed examples are given for n = 3 and 4 and the extension to n orders is sketched in the conclusions.",
+  "docinfo": {
+   "Producer": "Xerox ColorQube 9301",
+   "Creator": "Xerox ColorQube 9301",
+   "CreationDate": "D:20160204121333Z00'00'"
+  },
+  "title_raw": "A HIERARCHY OF LINKING INTEGRALS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "text": "A HIERARCHY OF LINKING INTEGRALS",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [],
- "toc_source": "none",
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "6 inferred entries with mean confidence 0.00, below the 0.6 floor \u2014 too little evidence agreed",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (6 inferred entries with mean confidence 0.00, below the 0.6 floor \u2014 too little evidence agreed): one section per page.",
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-document",
+   "id": "page-001",
    "number": null,
-   "title": "Document",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1710,
+   "n_words": 286,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 2147,
+   "n_words": 382,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 2238,
+   "n_words": 387,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 91,
+   "n_words": 16,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1528,
+   "n_words": 304,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1839,
+   "n_words": 362,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1733,
+   "n_words": 347,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 103,
+   "n_words": 24,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1537,
+   "n_words": 313,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 2028,
+   "n_words": 403,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 2466,
+   "n_words": 434,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
    "page_end": 12,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 2717,
+   "n_words": 417,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
-  "pages_without_text": 12,
-  "likely_scanned": true,
+  "pages_without_text": 0,
+  "likely_scanned": false,
   "toc_entries": 0,
-  "sections": 1,
-  "chars_total": 0
+  "toc_inferred_entries": 6,
+  "toc_inferred_mean_confidence": 0.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "regex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 12,
+  "chars_total": 20137
  }
 }

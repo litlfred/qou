@@ -1,17 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/nrarith/sections/sec-006",
   "@type": [
     "doco:Section"
   ],
-  "title": "A horospherical section of a cusp of a hyperbolic manifold M is a ﬂat torus. This",
-  "pageStart": 7,
-  "pageEnd": 7,
+  "title": "Arithmeticity of chain links",
+  "pageStart": 29,
+  "pageEnd": 30,
   "contains": [
-    "library/nrarith/blocks/prose-sec-006",
-    "library/nrarith/blocks/prop-sec-006-01"
+    "library/nrarith/blocks/prose-sec-006"
   ],
-  "derivedFrom": "library/nrarith/manifest",
-  "sourceDocument": "library/nrarith/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./nrarith/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./nrarith/manifest.jsonld",
   "provenance": "ingested"
 }

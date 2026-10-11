@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-010",
   "kind": "prose",
-  "title": "Orthogonal polynomials and partition function",
-  "pageStart": 14,
-  "pageEnd": 16,
-  "text": "../sections/sec-010-41-orthogonal-polynomials-and-partition-function.md",
-  "derivedFrom": "library/akemann-2022-j-phys-a-math-theor-55-194002/manifest",
-  "sourceDocument": "library/akemann-2022-j-phys-a-math-theor-55-194002/manifest",
+  "title": "Asymptotics to the Airy statistics",
+  "pageStart": 27,
+  "pageEnd": 30,
+  "text": "../sections/sec-010-53-asymptotics-to-the-airy-statistics.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./akemann-2022-j-phys-a-math-theor-55-194002/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./akemann-2022-j-phys-a-math-theor-55-194002/manifest.jsonld",
   "provenance": "ingested"
 }

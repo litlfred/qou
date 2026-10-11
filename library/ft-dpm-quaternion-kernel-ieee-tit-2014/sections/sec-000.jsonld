@@ -1,20 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-000",
   "@type": [
     "doco:Section"
   ],
-  "title": "Quaternion Kernels",
-  "pageStart": 5,
-  "pageEnd": 7,
+  "title": "INTRODUCTION",
+  "pageStart": 1,
+  "pageEnd": 1,
   "contains": [
-    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/prose-sec-000",
-    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/lem-sec-000-01",
-    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/thm-sec-000-02",
-    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/rem-sec-000-03",
-    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/thm-sec-000-04"
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/prose-sec-000"
   ],
-  "derivedFrom": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/manifest",
-  "sourceDocument": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ft-dpm-quaternion-kernel-ieee-tit-2014/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ft-dpm-quaternion-kernel-ieee-tit-2014/manifest.jsonld",
   "provenance": "ingested"
 }
