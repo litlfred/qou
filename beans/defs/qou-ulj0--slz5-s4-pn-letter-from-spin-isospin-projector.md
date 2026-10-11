@@ -54,3 +54,11 @@ Lean QOU/Hecke/IsospinTwistFromBalancing.lean (exit 0; axioms propext/Classical.
 - The spin-only form follows iff isospin is transparent (Müger centre), which under Hecke braiding is iff t^2 = 1 (classical). No corpus structure makes isospin classical. That would need C_spin ⊠ Rep(SU(2)), which also breaks the shared-trace Pauli lock.
 - Convention correction: with Delta^2 = theta^2 (fullTwist_eq_theta_sq) the balancing ratio is q^4, so spin-only D/S = q0^4 = 1.517953. The earlier q0^2 used theta = q^c, half the balancing twist. TwistedChannelSplitting must say which twist it means.
 Verdict: the spin/isospin split is NOT derivable from the present structure. Status stays todo.
+
+## 2026-10-11 — sign of the split: NOT fixed by the corpus (commit c7c36cf576b, PR #7612)
+
+sign(D − S) = sign(s − s') (block traces positive at z_D). Two unfixed signs multiply:
+- Twist orientation: Delta^2 = (sigma_1…sigma_5)^6 acts by q^{+2c} (fixed), but whether a spin-only insertion is Delta^2 or Delta^-2 is free; strand-twist-datum's framing t ∈ Z is a free label.
+- Trace→energy map: all working forms (−alpha ln mu, B_sym, m ∝ |tr_M|) are antitone and POSITED (dashboard tag: "no block licenses alpha ln(ratio) as an energy"). m_e Σ y chi Delta_lambda is not monotone here (Delta_(4,2) = +9, Delta_(3,3) = −5).
+Four cells proved conditional in Lean (TwistSplitSignDictionary.lean). Log form: B_D − B_S = −2·orient·k·alpha·ln q0 = ∓0.8735 MeV (ribbon) / ∓1.7471 MeV (full twist). Nature agrees with (θ^-1, antitone) or (θ, monotone): labelled comparison only, not a selection.
+Moot while theta_iso = 1 is underivable (entry above).
