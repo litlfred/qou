@@ -354,6 +354,49 @@ theorem exchange_hecke (c : ℂ) :
   rw [hβ]
   exact classicalExchange_hecke (Complex.exp_ne_zero c)
 
+
+/-- The normalised KZ exchange `β = e^{c/2} · P · Hol` on `V ⊗ V`. -/
+noncomputable def kzExchange (c : ℂ) : Matrix (Fin 4) (Fin 4) ℂ :=
+  Complex.exp (c / 2) • (flip * halfMonodromy c)
+
+/-- **The Hecke quadratic, expanded, as the monodromy relation of the KZ exchange.**
+`β² = (q − q⁻¹) β + 1` with `q = e^c`. This is the form of the field
+`QOU.Mass.HeckeMonodromy.quad`, here *derived* from the flat connection on two points. -/
+theorem kzExchange_quad (c : ℂ) :
+    kzExchange c * kzExchange c =
+      (Complex.exp c - (Complex.exp c)⁻¹) • kzExchange c + 1 := by
+  have h := exchange_hecke c
+  rw [← kzExchange] at h
+  have hq : Complex.exp c * (Complex.exp c)⁻¹ = 1 := mul_inv_cancel₀ (Complex.exp_ne_zero c)
+  have e : (kzExchange c - Complex.exp c • 1) * (kzExchange c + (Complex.exp c)⁻¹ • 1) =
+      kzExchange c * kzExchange c - (Complex.exp c - (Complex.exp c)⁻¹) • kzExchange c
+        - (Complex.exp c * (Complex.exp c)⁻¹) • (1 : Matrix (Fin 4) (Fin 4) ℂ) := by
+    simp only [sub_mul, mul_add, Matrix.smul_mul, Matrix.mul_smul, Matrix.one_mul,
+      Matrix.mul_one, smul_smul, sub_smul]
+    rw [mul_comm (Complex.exp c)⁻¹ (Complex.exp c)]
+    abel
+  rw [e, hq, one_smul, sub_eq_zero] at h
+  rw [← h]
+  abel
+
+/-- **The classical shadow is the flip, an involution.** At `c = 0` (`q = 1`, no deformation)
+the KZ exchange is the transposition of the two points: the shadow field
+`QOU.Mass.HeckeMonodromy.shadow_involution`, derived. -/
+theorem kzExchange_zero : kzExchange 0 = flip := by
+  simp [kzExchange, halfMonodromy]
+
+theorem flip_mul_flip : (flip : Matrix (Fin 4) (Fin 4) ℂ) * flip = 1 := by
+  rw [flip_eq]
+  have h := (antiProj_mul_self : (antiProj : Matrix (Fin 4) (Fin 4) ℂ) * antiProj = antiProj)
+  simp only [sub_mul, mul_sub, Matrix.one_mul, Matrix.mul_one, Matrix.smul_mul,
+    Matrix.mul_smul, smul_smul, h]
+  module
+
+/-- The shadow field of `QOU.Mass.HeckeMonodromy` for the two-point KZ exchange:
+at `q = 1` the exchange squares to the identity. -/
+theorem kzExchange_shadow_involution : kzExchange 0 * kzExchange 0 = 1 := by
+  rw [kzExchange_zero, flip_mul_flip]
+
 end Analysis
 
 end QOU.Mass.KohnoTwoPoint

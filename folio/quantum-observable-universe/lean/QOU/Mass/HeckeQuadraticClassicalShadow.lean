@@ -6,8 +6,10 @@ import Mathlib.Tactic
 # The classical shadow of the Hecke quadratic is a reflection
 
 Step-2 option **B** of
-`docs/audits/2026-09-06-step-2-plan-hecke-monodromy.md` (cheat-sheet §2a: the curvature 2-form
-`F(σ) = σ² − (q − q⁻¹)σ − 1` is *stipulated*, not computed).
+`docs/audits/2026-09-06-step-2-plan-hecke-monodromy.md` (cheat-sheet §2a: the monodromy quadratic
+`F(σ) = σ² − (q − q⁻¹)σ − 1`, historically called a curvature 2-form, is *stipulated* for the
+substrate connection, not computed; for the 𝔰𝔩₂ KZ connection on two points it is derived in
+`QOU.Mass.KohnoTwoPoint.kzExchange_quad`).
 
 **B — the order-zero shadow is derived.** The probe
 `computations/probes/colour_cubic_branch_monodromy_probe.py` continues the three roots of the
