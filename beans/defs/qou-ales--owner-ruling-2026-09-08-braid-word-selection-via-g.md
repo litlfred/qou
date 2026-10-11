@@ -237,3 +237,9 @@ Consequence (CORRECTED same day): an ADDITIVELY SEPARABLE, exchange-symmetric pa
 - The only corpus law outside the class is m_e Σ y chi Delta_lambda (law POSITED; its witness says "NOT a binding energy"). It splits channels (C0 at H6: T=1 unbound, T=0 bound for every species), but its reading is unfixed (direct vs difference flips the signs), and pn ≠ np because Phi is not a Markov trace. Adopting it for its C0 signs would be selection against the target.
 - E0·Δtr (conjecture) reverses the template order to pp > pn > nn; not a function of mu.
 Owner decision fed: (a) keep the law, change ratios (composition/letters); (b) a law outside the class (Delta_lambda; reading + pn≠np unresolved); (c) leave the trace→energy direction as the open item.
+
+## 2026-10-11 — P/G composition rule (commit e3b8f4c52bc, PR #7612; owner "explore all", item 1)
+Not derived (scope a). Nothing in the corpus fixes the order, the normalisation (over W vs W·P), or a symmetric form; P_T is central in H2 but not in H6, and [P, G] ≠ 0 (exact entry −(q²−1)²(q⁴+1)/q⁵).
+Structural (Lean IsospinBondCompositionOrientation.lean, sorry-free): reversing every word swaps the order, C5(W,G) = C4(ιW, ιG). Picking C5 = reading every word backwards.
+14 rules computed (V1, keV). Physical signs: C5, K4 (G⁻¹PG/WP) and K6 (symmetrised conjugation/WP), all normalised over W·P and all 2–3 orders below the deuteron. The reversal-invariant rules disagree on sign (C6 and S2 inverted, K6 physical). pp ≠ nn whenever G is present.
+Item 1/2/3 summary: no composition rule, no selected two-body bond, and no F(mu) law fixes the NN ordering with charge independence. Bean stays in-progress.
