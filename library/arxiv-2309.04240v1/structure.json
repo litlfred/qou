@@ -1,0 +1,196 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2309.04240v1",
+ "source": {
+  "file": "2309.04240v1.pdf",
+  "sha256": "792154a0d6a57e34131050a66bca21f6ddbf53e8ff8dc99a6038f7b36b8dd4a9",
+  "bytes": 205007,
+  "pages": 10,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-11T06:00:38Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2309.04240",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "8 Sep 2023"
+  },
+  "doi": null,
+  "title": "BURAU REPRESENTATION OF BRAID GROUPS AND q-RATIONALS",
+  "authors_raw": "SOPHIE MORIER-GENOUD, VALENTIN OVSIENKO, AND ALEXANDER VESELOV",
+  "title_lines": [
+   "BURAU REPRESENTATION OF BRAID GROUPS AND",
+   "q-RATIONALS"
+  ],
+  "abstract": "We establish a link between the new theory of q-deformed ratio- nal numbers and the classical Burau representation of the braid group B3. We apply this link to the open problem of classi\ufb01cation of faithful complex spe- cializations of this representation. As a result we provide an answer to this problem in terms of the singular set of the q-rationals and prove the faithful- ness of the Burau representation specialized at complex t \u2208C\u2217outside the annulus 3 \u22122 \u221a 2 \u2264|t| \u22643 + 2 \u221a 2.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20230910203959-04'00'"
+  },
+  "title_raw": "BURAU REPRESENTATION OF BRAID GROUPS AND q-RATIONALS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "BURAU REPRESENTATION OF BRAID GROUPS AND q -RATIONALS 1. Introduction The braid groups are the most remarkable groups from topological point of view naturally appearing in the theory of knots, mapping class groups and con\ufb01guration spaces, see [8]. They were explicitly introduced by Emil Artin in 192",
+   "outline": "1. Introduction",
+   "text": "BURAU REPRESENTATION OF BRAID GROUPS AND q-RATIONALS",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "q-rationals and q-deformed modular group",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The main definition",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Matrices of continued fractions",
+   "page": 4,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Some properties of the polynomials R and S",
+   "page": 5,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Proof of the main theorems",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Discussion",
+   "page": 7,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 651,
+   "n_words": 106
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 5777,
+   "n_words": 1061
+  },
+  {
+   "id": "sec-001-2-q-rationals-and-q-deformed-modular-group",
+   "number": "2",
+   "title": "q-rationals and q-deformed modular group",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2740,
+   "n_words": 518
+  },
+  {
+   "id": "sec-002-22-matrices-of-continued-fractions",
+   "number": "2.2",
+   "title": "Matrices of continued fractions",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1276,
+   "n_words": 319
+  },
+  {
+   "id": "sec-003-23-some-properties-of-the-polynomials-r-and-s",
+   "number": "2.3",
+   "title": "Some properties of the polynomials R and S",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1059,
+   "n_words": 211
+  },
+  {
+   "id": "sec-004-3-proof-of-the-main-theorems",
+   "number": "3",
+   "title": "Proof of the main theorems",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 4543,
+   "n_words": 914
+  },
+  {
+   "id": "sec-005-4-discussion",
+   "number": "4",
+   "title": "Discussion",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 5962,
+   "n_words": 1089
+  },
+  {
+   "id": "sec-006-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 5120,
+   "n_words": 793
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 8,
+  "toc_inferred_entries": 0,
+  "sections": 8,
+  "chars_total": 27128
+ }
+}
