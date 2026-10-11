@@ -94,3 +94,13 @@ Route taken: the V^{(x)r} Jimbo R-matrix model (V = R^2), uniformly in r, rather
 - computations/probes/rj_weight_space_trace_probe.py (exact sympy): MiddleWeightTraces (q^{2s} T_m = q^{s(r+1)} - q^{s(r-1)}, 0<m<r) holds for every coprime (r,s), r=2..5, s<=2r+1, and FAILS for every non-coprime case tested.
 
 STILL OPEN (not proved): (1) MiddleWeightTraces for general coprime (r,s) — the coprime vanishing is now isolated to this single weight-space statement; (2) explicit standard modules W_{r,j} as separate objects; (3) quantum Schur-Weyl identification tr_q = sum_j [j+1] tr_{W_{r,j}} / [2]^r. The task's piece 3 (traces on each W_{r,j}) is therefore not done in its stated form.
+
+
+## 2026-10-11 — MiddleWeightTraces proved for every coprime (r, s) (branch claude/rj-middle-weight-2026-10-11)
+
+New QOU/Archimedean/RossoJonesMiddle.lean. It is sorry-free and works over a generic [Field R]. Checked lean-direct with -DautoImplicit=false -s 65536: exit 0, against a private shadow in which the RossoJonesGeneral cone was rebuilt. #print axioms gives propext, Classical.choice, Quot.sound only.
+- middleWeightTraces_of_coprime (hq : q ≠ 0) (hcop : Nat.Coprime (n+1) p) : MiddleWeightTraces q n p.
+- rossoJones_of_coprime: unconditional Rosso–Jones on V^{(x)(n+1)} for gcd(n+1, p) = 1.
+- markov_rossoJones: the same, for every normalised cyclic Markov trace with z_D on any Hecke family, for coprime (r, s). Open item (1) of the previous entry is therefore CLOSED for coprime (r, s).
+- How it works. gam_eq_G gives an explicit matrix for γ. Three identities hold: γ = ρ + E K, ρ E = E ρ', K E = γ − ρ'. Here E is the U_q(sl2) raising operator and ρ, ρ' are weighted cyclic rotations. pow_decomp turns them into a telescoping identity. That gives T_{m+1}(γ^p) = T_{m+1}(ρ^p) + T_m(γ^p) − T_m(ρ'^p). Under gcd(n+1, p) = 1, rot^p fixes only the constant states, so the middle traces of ρ^p and ρ'^p vanish. Then T_m(γ^p) = q^{np} − (q^{n} q^{-2})^p for every 0 < m < n+1.
+STILL OPEN: the non-coprime case (torus links). The probe shows MiddleWeightTraces FAILS there, so a different statement is needed. Items (2) and (3) of the previous entry are untouched: explicit W_{r,j}, and quantum Schur–Weyl tr_q = Σ_j [j+1] tr_{W_{r,j}} / [2]^r. This bean stays open.
