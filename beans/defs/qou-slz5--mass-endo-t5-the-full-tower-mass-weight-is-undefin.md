@@ -5,7 +5,7 @@ status: todo
 type: epic
 priority: normal
 created_at: 2026-10-10T06:48:53Z
-updated_at: 2026-10-11T07:23:25Z
+updated_at: 2026-10-11T07:39:15Z
 ---
 
 Thread (session https://claude.ai/code/session_01ST9RpvTF7JHNdUNafrjf9J). OWNER DECISION gating this thread: D7 (docs/coordination/2026-09-05-owner-gated-bean-triage.md, 2026-09-07) puts mass/binding on the full tower, but production tr_M_via_wenzl_bridge still applies D's two-row cap (keeps 0.0434% of H_12 at 4He). No full-tower mass weight is defined. Candidates: Molien (ruled only for Phi_k), C y_λ (excised), Ocneanu N≠2 (changes the trace).
@@ -91,3 +91,13 @@ Reading (judgement): every functional tried so far reproduces the letters' sign 
 
 ## 2026-10-11 OWNER DECISION (session_01ST9RpvTF7JHNdUNafrjf9J)
 Owner chose (3) derive the selector and (4) re-examine the binding functional, and asked to reconcile qou-za3q. NOT chosen: adopting z=0 (Molien) or z=h/2 now. No production change.
+
+
+## 2026-10-11 — option 4: the binding functional across the window (session_01ST9RpvTF7JHNdUNafrjf9J)
+Probe `computations/deltalambda/binding_functional_window_probe.py` (+witness, 29/29). Trace at Markov parameter z = Σ_λ ocneanuWeight(q,z)·χ^λ carried as an explicit polynomial in z; borromean words; all p(3A) partitions; proton q0; mpmath 70/50 dps plus exact sympy for the nucleon part. No AME comparison. No selection by symmetry (that is qou-wktw).
+- **Structure (measured, coefficient dev ≤ 1e-50, NOT proved):** tr_z(W_atom) = Π_bonds(z + d_k) · P_p(z)^Z · P_n(z)^N and tr_z(W_free) = P_p^Z · P_n^N. P_p and P_n are EXACT quadratics in z over Q(q) (sympy, the cubic term vanishes; matches the 50-dps polynomials to 1.9e-70). P_n = K(1 − z²) + Bz is anti-palindromic, so its roots pair z ↔ −1/z. Split-braid multiplicativity is the general-z bond formula of qou-5zl1; this probe measures it at A = 2, 3, 4 and does not prove it.
+- **Roots in [0, h]:** pp bond z = 0; pn bond z_pn = h(1/2 − δ/4) = 0.499656 h; nn bond z = h; proton P_p at 0.432695 h; neutron P_n at 0.910019 h. Nothing else.
+- **B_log = −E_0 Σ_bonds log(z + d_k).** The nucleon polynomials cancel identically, so at every z the log functional depends only on the bond letters and z, never on the nucleon words. Signed reading: D and ³He need z > z_pn, T and ⁴He need z < z_pn. **No z in [0, h] makes the signed B_log real for all four atoms.** Scope (a): this holds for these letters (pp = σ, nn = σ⁻¹ assumed per qou-v47j; pn colour-weighted) and rests on the measured factorisation. It becomes (b), with the signs of z, z − z_pn, z − h on the window as the invariant, once qou-5zl1 proves the bond formula. Abs reading (what the live code does): finite on (0, h) except at z_pn, where it diverges for every atom (all four contain a pn bond); it also diverges at z = 0 (³He, ⁴He) and at z = h (T, ⁴He). Since |z + d_k| < 1 it is positive wherever it is finite. It is defined on an open dense set, so it selects nothing.
+- **h/2:** the colour-blind pn letter σ − h/2 = (σ + σ⁻¹)/2 has trace exactly z − h/2, which is 0 at the sign-twist fixed point. With colour weighting the D factor at h/2 is hδ/4 = 7.19e-5, and B_log(D) = 39.9 MeV there. So the colour weight δ is the only thing that keeps B_log finite at h/2. This is an observation for qou-wktw, not a selection.
+- **B_lin = Q_β P_p^Z P_n^N (1 − Π(z + d_k)).** It is defined everywhere and keeps the nucleon structure. Its sign is sign(P_p^Z P_n^N). It is > 0 for all four atoms exactly on z ∈ (z_n, h], where z_n = 0.910019 h is the in-window root of P_n (closed form in the witness). That interval is a candidate selector, but it is CHOSEN, not derived: it needs the empirical sign "D, T, ³He, ⁴He are bound", which is a comparison-boundary input. B_lin is the corpus's refuted intensive law (binding_canonical banner), and positivity says nothing about magnitude.
+- **Derived vs chosen:** derived, conditional on the factorisation: (i) the log-ratio functional is blind to the nucleon words; (ii) the signed log-ratio has no real point on the window for A = 2..4. Not derived: any z. The only interval this probe finds, (z_n, h], is a sign-of-data selection under the linear law.

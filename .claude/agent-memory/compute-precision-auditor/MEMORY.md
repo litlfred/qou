@@ -551,3 +551,11 @@ TRAPs.
     witness was a stale consumer (allPassed False; HEAD-inputs arm = new). Two-arm first.
   * `chi_at_q0_via_hoefsmit_mpfr` resumes cached partitions verbatim (incl. y) — needs
     `--fresh` to pick up a new y table; chi then reproduces byte-identically via native.
+- 2026-10-11 (qou-slz5 option 4, binding functional across z in [0,h]). Gates: `--changed` EXIT 1,
+  all reds pre-existing; my files in 0 of 571 log lines; reverted 11 audit witnesses BY NAME. Two notes:
+  * **Carry a Markov trace as a POLYNOMIAL in z** — every Ocneanu cell factor is linear in z, so
+    tr_z(x) = Σ w_λ(z)χ^λ has degree ≤ n; roots come from polyroots, not a grid. **polyroots
+    splits a k-fold root by ~eps^(1/k)** (4He had double roots reported as 2-3 nearby values) — cluster.
+  * Atom traces factor as Π_bonds(z+d_k)·P_p^Z·P_n^N (measured 1e-50..1e-70), P_p/P_n exact
+    quadratics over Q(q) via the unique 2-dim H_3 rep σ2 = [[-1/(q(q²+1)),1],[(q²-q+1)(q²+q+1)/(q²+1)², h+1/(q(q²+1))]].
+    So log-ratio functionals never see the nucleon words. MEMORY.md was 553 lines this session, not 237.
