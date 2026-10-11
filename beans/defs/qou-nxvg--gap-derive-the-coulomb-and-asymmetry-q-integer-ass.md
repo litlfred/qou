@@ -8,7 +8,7 @@ tags:
     - 8f-decide
     - no-fitting
 created_at: 2026-10-11T06:45:00Z
-updated_at: 2026-10-11T07:20:00Z
+updated_at: 2026-10-11T07:30:00Z
 parent: qou-8lxd
 ---
 
@@ -120,3 +120,30 @@ excluded.** Recorded as a scope-(a) negative for this construction alone.
    assessed further here.
 
 Stays todo: lambda_C and a_asym remain stated, not derived.
+
+
+---
+
+# 2026-10-11 (later) — The Wigner lead does not derive a_asym (owner option 1)
+
+The corpus carries **three inequivalent Wigner coefficients**, at proton q0
+(mp.dps 30):
+
+    prop:wigner-np-pairing        Delta_(2,2) = m_e [3]_q [2]_q^2     6.2893 MeV
+    prop:wigner-coefficient-deriv [5]_q! m_e                          67.1008 MeV
+    prop:wigner-2-coefficient     C_(2,2) = w h/2, w = dim_q^2/[4]_q! 0.017357 (dimensionless)
+
+with `dim_q(2,2) = 2.04371`, `w_(2,2) = 0.166049`. Against
+`a_asym = 3[2]_q[7]_q m_e = 23.5066` and `a_asym/4 = 5.8767`, **none
+matches**, and the q-forms differ (`[3][2]^2`, `[5]!`, versus `[2][7]`).
+Closeness of 6.29 to 5.88 is not evidence (no-fitting rule).
+
+Shape: `T(T+1)/A = (N-Z)^2/(4A) + |N-Z|/(2A)`, so a Wigner term contains the
+seven-term asymmetry shape plus a linear cusp. But the seven-term formula keeps
+asymmetry (term 4) and Wigner (term 9) as separate terms, so identifying them
+would double-count. The lead does not settle the normalisation conflict.
+
+Side finding, not acted on: the `[5]_q!` block puts the Wigner scale at level
+k = 5, where (qou-a5jk / qou-w06d, sorry-free) no self-conjugate shape has
+l <= 2, so under convention D a level-5 self-conjugate shadow price is zero.
+Its proof asserts the k = 5 scale and cites agreement with a fitted 68.9 MeV.
