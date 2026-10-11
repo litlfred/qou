@@ -43,6 +43,7 @@ open QOU.MathlibExt.Braid
 
 variable {m : ℕ} {A : Type*} [NormedRing A] [NormedAlgebra ℂ A] [CompleteSpace A]
 
+omit [CompleteSpace A] in
 lemma IsFlatOn.mono {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {ω : E → E →L[ℝ] A} {ω' : E → E →L[ℝ] E →L[ℝ] A} {D D' : Set E}
     (h : IsFlatOn ω ω' D) (hD : D' ⊆ D) : IsFlatOn ω ω' D' :=
@@ -53,18 +54,20 @@ def adjSwap (j : Fin m) : Equiv.Perm (Fin (m + 1)) := Equiv.swap j.castSucc j.su
 
 variable (ρ : Equiv.Perm (Fin (m + 1)) →* A) (κ c : ℂ)
 
+omit [CompleteSpace A] in
 lemma kz_isFlatOn_region :
     IsFlatOn (kzForm ρ κ c) (kzForm' ρ κ c) (kzRegion (m + 1)) :=
   (kzForm_isFlatOn ρ κ c).mono (kzRegion_subset_injective _)
 
 lemma genPath_mem (j : Fin m) {t : ℝ} (ht : t ∈ Icc (0:ℝ) 1) :
     genPath j t ∈ kzRegion (m + 1) := by
-  simpa using genPath_comp_mem j 1 (by simpa using Fin.castSucc_lt_succ j) ht
+  simpa using genPath_comp_mem j 1 (by simp) ht
 
+omit [CompleteSpace A] in
 lemma continuousOn_genCoeff (j : Fin m) :
     ContinuousOn (fun t => kzForm ρ κ c (genPath j t) (genPath' j t)) (Icc 0 1) :=
   continuousOn_transportCoeff
-    (fun t ht => ((kz_isFlatOn_region ρ κ c).hasFDerivAt _ (genPath_mem j ht)).continuousAt)
+    (fun _ ht => ((kz_isFlatOn_region ρ κ c).hasFDerivAt _ (genPath_mem j ht)).continuousAt)
     (fun t _ => (hasDerivAt_genPath j t).continuousAt.continuousWithinAt)
     (continuous_genPath' j).continuousOn
 
@@ -83,6 +86,7 @@ noncomputable def genImage (j : Fin m) : A := ρ (adjSwap j) * genFund ρ κ c j
 noncomputable def psi (σ : Equiv.Perm (Fin (m + 1))) : A :=
   ρ σ * radialTransport (kzForm ρ κ c) (kzCenter (m + 1)) (basePt σ)
 
+omit [NormedAlgebra ℂ A] [CompleteSpace A] in
 lemma rho_mul_inv (σ : Equiv.Perm (Fin (m + 1))) : ρ σ * ρ σ⁻¹ = 1 := by
   rw [← map_mul, mul_inv_cancel, map_one]
 
@@ -97,16 +101,20 @@ theorem gen_mul_psi (j : Fin m) (σ : Equiv.Perm (Fin (m + 1)))
     (continuous_genPath'_comp j σ).continuousOn hV
   simp only [genPath_zero, genPath_one, basePt_comp, one_mul] at key
   unfold genImage psi
-  rw [map_mul, ← key, adjSwap]
+  rw [map_mul, adjSwap, ← key]
   calc ρ (Equiv.swap j.castSucc j.succ) * genFund ρ κ c j 1 *
         (ρ σ * radialTransport (kzForm ρ κ c) (kzCenter (m + 1)) (basePt σ))
-      = ρ (Equiv.swap j.castSucc j.succ) * (ρ σ * ρ σ⁻¹) * genFund ρ κ c j 1 * ρ σ *
-          radialTransport (kzForm ρ κ c) (kzCenter (m + 1)) (basePt σ) := by
-        rw [rho_mul_inv, mul_one]; simp only [mul_assoc]
+      = ρ (Equiv.swap j.castSucc j.succ) * (ρ σ * ρ σ⁻¹) * genFund ρ κ c j 1 *
+          (ρ σ * radialTransport (kzForm ρ κ c) (kzCenter (m + 1)) (basePt σ)) := by
+        rw [rho_mul_inv, mul_one]
     _ = _ := by simp only [mul_assoc]
 
+omit [NormedAlgebra ℂ A] [CompleteSpace A] in
 lemma isUnit_rho_adjSwap (j : Fin m) : IsUnit (ρ (adjSwap j)) :=
-  isUnit_of_mul_eq_one _ _ (by rw [← map_mul, adjSwap, Equiv.swap_mul_self, map_one])
+  by
+  have h : ρ (adjSwap j) * ρ (adjSwap j) = 1 := by
+    rw [← map_mul, adjSwap, Equiv.swap_mul_self, map_one]
+  exact ⟨⟨_, _, h, h⟩, rfl⟩
 
 lemma isUnit_genImage (j : Fin m) : IsUnit (genImage ρ κ c j) :=
   (isUnit_rho_adjSwap ρ j).mul
@@ -188,25 +196,25 @@ lemma gen_braid (i k : Fin m) (hk : (k : ℕ) = i + 1) :
   have hsi : ((i.succ : Fin (m + 1)) : ℕ) = i + 1 := rfl
   have hck : ((k.castSucc : Fin (m + 1)) : ℕ) = k := rfl
   have hsk : ((k.succ : Fin (m + 1)) : ℕ) = k + 1 := rfl
-  have L1 := gen_mul_psi ρ κ c i 1 (by simpa using Fin.castSucc_lt_succ i)
+  have L1 := gen_mul_psi ρ κ c i 1 (by simp)
   have L2 := gen_mul_psi ρ κ c k (adjSwap i * 1) (by
     apply order_of_val
-    simp only [mul_one, adjSwap_inv, adjSwap_val, hci, hsi, hck, hsk]
+    simp only [mul_one, adjSwap_inv, adjSwap_val, hck, hsk]
     split_ifs <;> omega)
   have L3 := gen_mul_psi ρ κ c i (adjSwap k * (adjSwap i * 1)) (by
     apply order_of_val
     simp only [mul_one, mul_inv_rev, adjSwap_inv, Equiv.Perm.coe_mul, Function.comp_apply,
-      adjSwap_val, hci, hsi, hck, hsk]
+      adjSwap_val, hci, hsi]
     split_ifs <;> omega)
-  have R1 := gen_mul_psi ρ κ c k 1 (by simpa using Fin.castSucc_lt_succ k)
+  have R1 := gen_mul_psi ρ κ c k 1 (by simp)
   have R2 := gen_mul_psi ρ κ c i (adjSwap k * 1) (by
     apply order_of_val
-    simp only [mul_one, adjSwap_inv, adjSwap_val, hci, hsi, hck, hsk]
+    simp only [mul_one, adjSwap_inv, adjSwap_val, hci, hsi]
     split_ifs <;> omega)
   have R3 := gen_mul_psi ρ κ c k (adjSwap i * (adjSwap k * 1)) (by
     apply order_of_val
     simp only [mul_one, mul_inv_rev, adjSwap_inv, Equiv.Perm.coe_mul, Function.comp_apply,
-      adjSwap_val, hci, hsi, hck, hsk]
+      adjSwap_val, hck, hsk]
     split_ifs <;> omega)
   calc genImage ρ κ c i * genImage ρ κ c k * genImage ρ κ c i * psi ρ κ c 1
       = genImage ρ κ c i * (genImage ρ κ c k * (genImage ρ κ c i * psi ρ κ c 1)) := by
@@ -225,15 +233,15 @@ lemma gen_comm (i j : Fin m) (h : (i : ℕ) + 2 ≤ j) :
   have hsi : ((i.succ : Fin (m + 1)) : ℕ) = i + 1 := rfl
   have hcj : ((j.castSucc : Fin (m + 1)) : ℕ) = j := rfl
   have hsj : ((j.succ : Fin (m + 1)) : ℕ) = j + 1 := rfl
-  have L1 := gen_mul_psi ρ κ c j 1 (by simpa using Fin.castSucc_lt_succ j)
+  have L1 := gen_mul_psi ρ κ c j 1 (by simp)
   have L2 := gen_mul_psi ρ κ c i (adjSwap j * 1) (by
     apply order_of_val
-    simp only [mul_one, adjSwap_inv, adjSwap_val, hci, hsi, hcj, hsj]
+    simp only [mul_one, adjSwap_inv, adjSwap_val, hci, hsi]
     split_ifs <;> omega)
-  have R1 := gen_mul_psi ρ κ c i 1 (by simpa using Fin.castSucc_lt_succ i)
+  have R1 := gen_mul_psi ρ κ c i 1 (by simp)
   have R2 := gen_mul_psi ρ κ c j (adjSwap i * 1) (by
     apply order_of_val
-    simp only [mul_one, adjSwap_inv, adjSwap_val, hci, hsi, hcj, hsj]
+    simp only [mul_one, adjSwap_inv, adjSwap_val, hcj, hsj]
     split_ifs <;> omega)
   calc genImage ρ κ c i * genImage ρ κ c j * psi ρ κ c 1
       = genImage ρ κ c i * (genImage ρ κ c j * psi ρ κ c 1) := mul_assoc _ _ _
@@ -268,9 +276,7 @@ noncomputable def kzBraidRep : BraidGroup m →* Aˣ :=
 
 @[simp] theorem kzBraidRep_σ (j : Fin m) :
     (kzBraidRep ρ κ c (σ j) : A) = ρ (adjSwap j) * genFund ρ κ c j 1 := by
-  unfold kzBraidRep σ
-  rw [PresentedGroup.toGroup.of]
-  rfl
+  exact congrArg Units.val (PresentedGroup.toGroup.of (lift_genUnit_relators ρ κ c) (x := j))
 
 /-- At `κ = 0` the connection vanishes, so the holonomy representation is the
 symmetric-group representation `ρ` pulled back along `σ_j ↦ s_j`. -/
