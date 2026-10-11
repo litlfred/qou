@@ -243,3 +243,10 @@ Not derived (scope a). Nothing in the corpus fixes the order, the normalisation 
 Structural (Lean IsospinBondCompositionOrientation.lean, sorry-free): reversing every word swaps the order, C5(W,G) = C4(ιW, ιG). Picking C5 = reading every word backwards.
 14 rules computed (V1, keV). Physical signs: C5, K4 (G⁻¹PG/WP) and K6 (symmetrised conjugation/WP), all normalised over W·P and all 2–3 orders below the deuteron. The reversal-invariant rules disagree on sign (C6 and S2 inverted, K6 physical). pp ≠ nn whenever G is present.
 Item 1/2/3 summary: no composition rule, no selected two-body bond, and no F(mu) law fixes the NN ordering with charge independence. Bean stays in-progress.
+
+## 2026-10-11 — Delta_lambda law: reading and pn ≠ np (commit 0217fa155e3, PR #7612; owner pick "2")
+- Reading FIXED by the corpus: direct, mass-defect sign, B = −m_e Phi(B_K), Phi = Σ y chi Delta_lambda (recomputed-low-isotope-mass-table.md:14-15; rho-k-h3a-refinement.md:3-13). The difference form exists only for tr_M (a conjecture). With that sign, direct and difference agree on every measured sign: C0 at H6 gives T=1 unbound (−0.09…−0.16 MeV) and T=0 bound (+0.03…+0.11 MeV, direct) for every species. Complement identity Phi(w) − Phi(wP+) = Phi(wP−) proved for all n.
+- Caveat: with the proved K-independent Delta_lambda, a free pair gets a nonzero value (−0.054…−0.064 MeV); identifying the proved value with the corpus's K-dependent residual Delta_lambda(K) is not licensed.
+- pn ≠ np is STRUCTURAL, not a bug: Phi is cyclic and conjugation-invariant (Lean), and Phi(W_pn) = Phi(W_np), but with the interface letter the half twist gives Phi(W_pn s2) = Phi(W̃_np s2), W̃ = mirrored nucleon words. tr_M Markov-factorises (tr(Ws2) = z tr W), so it is order-blind; Phi does not factorise. No derived symmetrisation (bar involution moves q0); averaging the two orders is a choice.
+- Not charge-independent (pp ≠ nn). Magnitudes ~0.1 MeV vs deuteron 2.22 (labelled comparison only).
+Lean QOU/Mass/DeltaLambdaReadingAndExchange.lean (9 decls, sorry-free). Bean stays in-progress.
