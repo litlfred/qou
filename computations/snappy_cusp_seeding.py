@@ -14,7 +14,7 @@ rings L6a4), this script:
    nearest distance in ℂ and records the pairing distances.
 
 The output is a witness for `conj:shared-denominator-cusp-holonomy`
-(it also once named `conj:pl-jsj-mass-integration-equivalence`, which
+(it also once named `pl-jsj-mass-integration-equivalence`, which
 has no carrier): it measures how far
 the bare algebraic seeds sit from SnapPy's actual hyperbolic
 shape parameters, bounding the conjecture's strong "literal numerical
@@ -25,13 +25,13 @@ SnapPea kernel and is left to a future witness.
 
 Manuscript references:
   - conj:shared-denominator-cusp-holonomy
-  - conj:pl-jsj-mass-integration-equivalence      [REMOVED -- see below]
+  - `pl-jsj-mass-integration-equivalence`          [REMOVED -- see below]
   - conj:denominator-zeros-as-sw-critical-points  [no carrier]
   (The two labels marked [no carrier] were blocks in the removed
    `descartes-universe/` chapter; no file in the tree defines them.
    See bean qou-3kni.)
 
-Removal record for `conj:pl-jsj-mass-integration-equivalence` (owner ruling
+Removal record for `pl-jsj-mass-integration-equivalence` (owner ruling
 "a1", relayed 2026-10-10: the carrier stays REMOVED and citations point at the
 record). Deleted in f86ea9d7ac, 2026-05-18, "content(thimble): demote
 def:picard-lefschetz-thimble + delete redundant bridges" -- Phase C of the

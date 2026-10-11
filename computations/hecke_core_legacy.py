@@ -3024,7 +3024,8 @@ def atom_markov_trace(Z, N, k_cap=None, include_inter=True):
     NOT the canonical Jones–Markov trace specified in
     prop:categorical-mass-markov (which gives tr_M(σ_0) = z ≈ 0.499).
     The Plancherel form gives ≈ 0.104 at q_0 — see the validity
-    audit (rem:mass-endomorphism-tower-adjacency-audit).
+    audit (`mass-endomorphism-tower-adjacency-audit` -- RETIRED, never existed
+    as a block; record in docs/audits/2026-10-11-retired-label-records.md §C).
 
     Use markov_trace_canonical.tr_M_element for the canonical
     axiomatic Markov trace that matches the prop's explicit table.

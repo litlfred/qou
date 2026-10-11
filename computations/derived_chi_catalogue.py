@@ -24,8 +24,10 @@ y_λ(0), the SDP shadow price y_λ⋆, and a `tier` provenance flag.
 
 ## The `k_λ` rule is a FIT (established 2026-10-10)
 
-    `prop:per-partition-k-lambda-rule` NO LONGER EXISTS, and the block it named
-    established no rule. It was `rem:per-partition-k-lambda-rule`, a remark whose
+    The `prop:`-prefixed `per-partition-k-lambda-rule` NEVER EXISTED, and the
+    `rem:`-prefixed block it was presumably meant to name
+    established no rule. It was the `rem:`-prefixed `per-partition-k-lambda-rule`,
+    a remark whose
     body was a table of SIX candidate per-partition `k_lambda` selection ansaetze,
     ALL EMPIRICALLY REFUTED, removed in 690458d6b0 (2026-06-17) under the owner
     principle "refuted-ansatz lemmas -> audit doc only". Its record is preserved in

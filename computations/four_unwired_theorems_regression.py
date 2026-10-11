@@ -27,7 +27,8 @@ All assertions use VIOLATION variables (|computed − expected|) so the
 ≤ 1e-40 tolerance actually binds — direct value comparison can lose
 precision through `float(...)` cast in the WitnessBuilder.
 
-Bound to the umbrella `prop:proven-unwired-regression-2026-05-25`
+Bound to the umbrella `proven-unwired-regression-2026-05-25` (RETIRED,
+never existed as a block; record in docs/audits/2026-10-11-retired-label-records.md §C)
 content-block stand-in (no formal block exists yet; per the
 PR #1260 review, audit-only is the primary wiring).
 

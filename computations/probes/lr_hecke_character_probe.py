@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """lr_hecke_character_probe.py — Littlewood-Richardson disjoint-product
-character probe for prop:free-config-chi-lr-equivalence.
+character probe for the retired `free-config-chi-lr-equivalence`.
 
 Tests the iterated-LR identity for A=1, 2, 3 nucleon blocks:
 
@@ -23,7 +23,7 @@ The STRUCTURAL (per-partition) identity is proved in the proposition's
 proof sketch and is q-independent in its LR coefficients; the numerical
 probe here validates the Markov-trace corollary that follows from it.
 
-🛑 `prop:free-config-chi-lr-equivalence` IS REMOVED -- as a TRUE DUPLICATE, at
+🛑 `free-config-chi-lr-equivalence` IS REMOVED -- as a TRUE DUPLICATE, at
 the author's own request. Owner ruling "a1", relayed 2026-10-10: the carrier
 stays removed and citations point at the record. Deleted in 44abba3fc8,
 2026-05-30, "consolidate(props): demote lr-tensor-character-bridge -> corollary,
@@ -42,7 +42,7 @@ to a corollary in the same commit). Do NOT restore the duplicate.
 
 References:
   prop:hecke-branching-trace-decomposition — the general parent (live)
-  prop:free-config-chi-lr-equivalence — REMOVED duplicate; see the note above
+  free-config-chi-lr-equivalence — REMOVED duplicate; see the note above
   conj:block-multiplicativity-v-free  — downstream conjecture
   [macdonald1995] I.7 — classical (q=1) LR identity
 """

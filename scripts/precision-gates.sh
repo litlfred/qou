@@ -321,15 +321,21 @@ GATES=(
   # number while a human running it beside the files it scans read the wrong
   # one. A gate whose count depends on its cwd has no threshold at all.
   #
-  # Most of the 26 name blocks in the removed descartes-universe/ chapter, and
-  # whether each becomes a restored carrier, a retired citation, or a scoped
-  # one is a content decision per label, not a sweep. --selftest asserts no
+  # BOUND LOWERED 26 -> 10 on 2026-10-11, in the commit that drained it, per the
+  # ratchet's own instruction. Groups B (deleted outright, 9 labels) and C (never
+  # existed, 7 labels) are fully drained: their citations now name the block
+  # WITHOUT the `prop:`/`conj:` prefix and point at
+  # docs/audits/2026-10-11-retired-label-records.md, which carries the full
+  # record. That is what makes the surface drainable at all -- the audit scans
+  # computations/ docstrings only, so moving the label STRINGS into docs/ keeps
+  # every pointer a reader needs while the count falls. The remaining 10 are
+  # group A (demoted to _deprecated/, 40 citations). --selftest asserts no
   # truncation plus two known-live and two known-dead labels; mutation-tested
   # four ways. The truncation assertion is not decoration: the first version
   # used [a-z0-9-] for the stem and silently clipped
   # prop:constit-factor-tau-M-proton-identity at the uppercase M, then reported
   # the fragment as dead -- the label's own character class was the blind spot.
-  "docstring label carriers|computations/audits/docstring_label_carrier_audit.py|--max 26|yes|yes"
+  "docstring label carriers|computations/audits/docstring_label_carrier_audit.py|--max 10|yes|yes"
   # BLOCKING as of 2026-08-19, and green on arrival. Bean qou-irzg.
   #
   # It ran ADVISORY because the ratchet had no MEMORY for this tree, not

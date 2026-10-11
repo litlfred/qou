@@ -11,7 +11,7 @@ Manuscript references:
   - def:q-pochhammer-partial-product
   - conj:shared-denominator-cusp-holonomy
   - conj:denominator-zeros-as-sw-critical-points  [no carrier]
-  - conj:pl-jsj-mass-integration-equivalence      [REMOVED -- see below]
+  - `pl-jsj-mass-integration-equivalence`          [REMOVED -- see below]
   (The two labels marked [no carrier] were blocks in the removed
    `descartes-universe/` chapter; no file in the tree defines them.
    See bean qou-3kni.)
@@ -101,7 +101,7 @@ exists, and the reason it is worth its extra twenty lines.
 — written from the historical loop's output before the deep pass had been run.
 Corrected the same hour, by running the measurement it was added to make.)
 
-Removal record for `conj:pl-jsj-mass-integration-equivalence` (owner ruling
+Removal record for `pl-jsj-mass-integration-equivalence` (owner ruling
 "a1", relayed 2026-10-10: the carrier stays REMOVED and citations point at the
 record). Deleted in f86ea9d7ac, 2026-05-18, "content(thimble): demote
 def:picard-lefschetz-thimble + delete redundant bridges" -- Phase C of the
