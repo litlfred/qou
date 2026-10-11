@@ -559,3 +559,8 @@ TRAPs.
   * Atom traces factor as Π_bonds(z+d_k)·P_p^Z·P_n^N (measured 1e-50..1e-70), P_p/P_n exact
     quadratics over Q(q) via the unique 2-dim H_3 rep σ2 = [[-1/(q(q²+1)),1],[(q²-q+1)(q²+q+1)/(q²+1)², h+1/(q(q²+1))]].
     So log-ratio functionals never see the nucleon words. MEMORY.md was 553 lines this session, not 237.
+- 2026-10-11 (qou-uir6, window scan): re-weighting committed per-λ traces with `ocneanuWeight q z`
+  makes P(z) an EXACT polynomial in z of degree n−1 (diagonal cells have zero z-slope) — build
+  coefficients, don't sample. Reproduce the committed z_D arm first (matched ≤5e-59). The Ω₂ traces
+  are central-FD (EPS 1e-50 @70 dps) ⇒ ~1e-20 rel despite 60 printed digits: record the
+  cancellation margin |P|/Σw|tr| beside every sign. Gates: EXIT 1, all reds pre-existing, 0 hits.
