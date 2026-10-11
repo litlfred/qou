@@ -51,3 +51,20 @@ Values at the proton q0 (mp.dps 30): [2] = 2.0108969, [6] = 6.3880866,
   the factor (q - 1/q) in lambda_C, from the corpus's own constructions.
 - Whether `DERIVATION-STATUS.md` rows 3-4 should say "stated" instead of "DERIVED"
   (owner decision; not edited).
+
+## 2026-10-11 — derivation attempt (owner: "can we derive?") and a normalisation conflict
+
+No derivation of the prefactor 3 or of (q - 1/q)[6]_q was found beyond the search above.
+`DERIVATION-STATUS.md` rows 3-4 now say STATED (owner pick 1).
+
+Found while trying: the corpus uses TWO normalisations of the asymmetry term with the same
+a_asym = 3[2]_q[7]_q m_e.
+- Seven-term formula: `binding_energy_bw` in `QOU/Interactions/QIntegerMassFormula.lean`
+  (line 108), `bw_chirality_isotopes.py` (line 108), `unified_low_isotope_predictor.py`
+  (line 242) and DERIVATION-STATUS row 4 all use - a_asym (N-Z)^2/(4A).
+- `prop:beta-stability` and the blocks reconciled to it on 2026-10-11 use a_A (A-2p)^2/A
+  = a_A (N-Z)^2/A, which gives c = lambda_C/(2 a_asym) = 0.0145158.
+Minimising lambda_C Z^2/A^{1/3} + a_asym (A-2Z)^2/(4A) instead gives Z* = A/(2 + c' A^{2/3})
+with c' = lambda_C/a_asym = 0.0290317, i.e. twice c. Diagnostic only (accuracy does not decide
+this): Z* at A = 56, 120, 208, 238 is 25.3, 51.0, 82.9, 93.1 with c and 23.1, 44.3, 68.9, 76.4
+with c', against 26, 50, 82, 92. Owner decision on which normalisation is canonical.
