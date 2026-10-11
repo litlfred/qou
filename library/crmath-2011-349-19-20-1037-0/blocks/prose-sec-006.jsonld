@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/crmath-2011-349-19-20-1037-0/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/crmath-2011-349-19-20-1037-0/blocks/prose-sec-006",
   "kind": "prose",
   "title": "Références",
   "pageStart": 3,
   "pageEnd": 3,
   "text": "../sections/sec-006-références.md",
-  "derivedFrom": "library/crmath-2011-349-19-20-1037-0/manifest",
-  "sourceDocument": "library/crmath-2011-349-19-20-1037-0/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/crmath-2011-349-19-20-1037-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/crmath-2011-349-19-20-1037-0/manifest.jsonld",
   "provenance": "ingested"
 }

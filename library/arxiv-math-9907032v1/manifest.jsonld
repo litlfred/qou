@@ -26,6 +26,7 @@
     "library/arxiv-math-9907032v1/sections/sec-011"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -35,9 +36,19 @@
   },
   "meta": {
     "doc_id": "arxiv-math-9907032v1",
+    "title_source": "slug",
     "source_file": "9907032v1.pdf",
     "source_sha256": "1850f32a2375c8ce79d0d0e501d9be3969799ca3e836937f4661d4cd8e028ee8",
-    "granularity": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "pages": 27,
+    "arxiv": {
+      "id": "math/9907032",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "6 Jul 1999"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

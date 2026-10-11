@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/0310279v5/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Stabilization in the braid groups I: MTWS",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0310279v5/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "0310279v5",
   "contains": [
     "library/0310279v5/sections/sec-000",
     "library/0310279v5/sections/sec-001",
@@ -38,8 +43,10 @@
     "library/0310279v5/sections/sec-029"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "0310279v5",
+    "title_source": "slug",
     "source_file": "0310279v5.pdf",
     "source_sha256": "a1d472d37291a3331a74fb16e387bbfdbf13a41e7a8120582c1e38ad01728c9b",
     "pages": 128,

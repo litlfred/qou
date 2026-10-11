@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/topologicalinvariance3dindex/sections/sec-002",
   "@type": [
     "doco:Section"
@@ -12,12 +17,12 @@
     "library/topologicalinvariance3dindex/blocks/thm-sec-002-01",
     "library/topologicalinvariance3dindex/blocks/thm-sec-002-02",
     "library/topologicalinvariance3dindex/blocks/thm-sec-002-03",
-    "library/topologicalinvariance3dindex/blocks/rem-sec-002-04",
-    "library/topologicalinvariance3dindex/blocks/rem-sec-002-05",
-    "library/topologicalinvariance3dindex/blocks/rem-sec-002-06",
-    "library/topologicalinvariance3dindex/blocks/rem-sec-002-07"
+    "library/topologicalinvariance3dindex/blocks/remark-sec-002-04",
+    "library/topologicalinvariance3dindex/blocks/remark-sec-002-05",
+    "library/topologicalinvariance3dindex/blocks/remark-sec-002-06",
+    "library/topologicalinvariance3dindex/blocks/remark-sec-002-07"
   ],
-  "derivedFrom": "library/topologicalinvariance3dindex/manifest",
-  "sourceDocument": "library/topologicalinvariance3dindex/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/topologicalinvariance3dindex/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/topologicalinvariance3dindex/manifest.jsonld",
   "provenance": "ingested"
 }

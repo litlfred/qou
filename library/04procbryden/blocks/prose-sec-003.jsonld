@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/04procbryden/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/04procbryden/blocks/prose-sec-003",
   "kind": "prose",
   "title": "Calculation of ZK",
   "pageStart": 5,
   "pageEnd": 8,
   "text": "../sections/sec-003-22-calculation-of-zk.md",
-  "derivedFrom": "library/04procbryden/manifest",
-  "sourceDocument": "library/04procbryden/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/04procbryden/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/04procbryden/manifest.jsonld",
   "provenance": "ingested"
 }

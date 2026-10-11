@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/pjm-v161-n1-p02-p/sections/sec-007",
   "@type": [
     "doco:Section"
@@ -12,7 +17,7 @@
     "library/pjm-v161-n1-p02-p/blocks/lem-sec-007-01",
     "library/pjm-v161-n1-p02-p/blocks/lem-sec-007-02"
   ],
-  "derivedFrom": "library/pjm-v161-n1-p02-p/manifest",
-  "sourceDocument": "library/pjm-v161-n1-p02-p/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/pjm-v161-n1-p02-p/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/pjm-v161-n1-p02-p/manifest.jsonld",
   "provenance": "ingested"
 }

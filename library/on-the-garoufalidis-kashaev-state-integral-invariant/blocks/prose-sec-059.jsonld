@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-059",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-059",
   "kind": "prose",
   "title": "Conceptual Summary",
   "pageStart": 58,
   "pageEnd": 59,
   "text": "../sections/sec-059-conceptual-summary.md",
-  "derivedFrom": "library/on-the-garoufalidis-kashaev-state-integral-invariant/manifest",
-  "sourceDocument": "library/on-the-garoufalidis-kashaev-state-integral-invariant/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/on-the-garoufalidis-kashaev-state-integral-invariant/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/on-the-garoufalidis-kashaev-state-integral-invariant/manifest.jsonld",
   "provenance": "ingested"
 }

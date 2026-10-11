@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/gt-v10-n3-p07-p/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The MTWS and transversal isotopies",
+  "pageStart": 4,
+  "pageEnd": 4,
+  "contains": [
+    "library/gt-v10-n3-p07-p/blocks/prose-sec-001",
+    "library/gt-v10-n3-p07-p/blocks/thm-sec-001-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gt-v10-n3-p07-p/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gt-v10-n3-p07-p/manifest.jsonld",
+  "provenance": "ingested"
+}

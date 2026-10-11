@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/kmj-48-2-255/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Results for a twist knot",
+  "pageStart": 19,
+  "pageEnd": 26,
+  "contains": [
+    "library/kmj-48-2-255/blocks/prose-sec-002"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kmj-48-2-255/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kmj-48-2-255/manifest.jsonld",
+  "provenance": "ingested"
+}

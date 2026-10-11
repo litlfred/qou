@@ -1,8 +1,13 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/deligne-mostow-1986/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "Monodromy of hypergeometric functions and non-lattice integral monodromy",
   "contains": [
@@ -35,8 +40,11 @@
     "library/deligne-mostow-1986/sections/sec-026"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "deligne-mostow-1986",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "deligne-mostow-1986.pdf",
     "source_sha256": "d9850f70ab2fecbd5f7294497ccaeb89c8f1dfe641be8ed762a2c2118ceadd3b",
     "pages": 86,

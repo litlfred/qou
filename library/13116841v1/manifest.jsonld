@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/13116841v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Observables in Loop Quantum Gravity with a cosmological constant",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/13116841v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "13116841v1",
   "contains": [
     "library/13116841v1/sections/sec-000",
     "library/13116841v1/sections/sec-001",
@@ -13,8 +18,10 @@
     "library/13116841v1/sections/sec-004"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "13116841v1",
+    "title_source": "slug",
     "source_file": "1311.6841v1.pdf",
     "source_sha256": "ca65879d80b1e1c3f89fa6f19c62cc925fce5c8d24692c7e311726c817617977",
     "pages": 29,

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s10955-022-02992-6/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/s10955-022-02992-6/blocks/prose-sec-003",
   "kind": "prose",
   "title": "(Locally) Stable Pair Potentials",
   "pageStart": 4,
   "pageEnd": 8,
   "text": "../sections/sec-003-21-locally-stable-pair-potentials.md",
-  "derivedFrom": "library/s10955-022-02992-6/manifest",
-  "sourceDocument": "library/s10955-022-02992-6/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10955-022-02992-6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10955-022-02992-6/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/0603022v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Quantum gravity and the standard model",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0603022v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "(braidrevisionfinal-cqg)",
   "contains": [
     "library/0603022v2/sections/sec-000",
     "library/0603022v2/sections/sec-001",
@@ -17,8 +22,11 @@
     "library/0603022v2/sections/sec-008"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "0603022v2",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "0603022v2.pdf",
     "source_sha256": "46e24c0289f61d4400005c3a8775d9d7d01e75b52a3880b2399517c7c914a6ba",
     "pages": 12,

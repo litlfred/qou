@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/deligne-mostow-1986/sections/sec-006",
   "@type": [
     "doco:Section"
@@ -9,11 +14,11 @@
   "pageEnd": 17,
   "contains": [
     "library/deligne-mostow-1986/blocks/prose-sec-006",
-    "library/deligne-mostow-1986/blocks/ex-sec-006-01",
+    "library/deligne-mostow-1986/blocks/example-sec-006-01",
     "library/deligne-mostow-1986/blocks/prop-sec-006-02",
     "library/deligne-mostow-1986/blocks/prop-sec-006-03"
   ],
-  "derivedFrom": "library/deligne-mostow-1986/manifest",
-  "sourceDocument": "library/deligne-mostow-1986/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
   "provenance": "ingested"
 }

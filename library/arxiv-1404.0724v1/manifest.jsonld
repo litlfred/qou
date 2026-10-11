@@ -7,7 +7,7 @@
   ],
   "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1404.0724v1/manifest.jsonld",
   "@type": [
-    "folio-assistant-core:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "Introduction to representations of braid groups",
   "contains": [
@@ -26,6 +26,7 @@
     "library/arxiv-1404.0724v1/sections/sec-012"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "arxiv-1404.0724v1",
     "title_source": "corroborated",

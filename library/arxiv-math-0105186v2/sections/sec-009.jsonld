@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0105186v2/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Horizontality and relative invariants",
+  "pageStart": 45,
+  "pageEnd": 51,
+  "contains": [
+    "library/arxiv-math-0105186v2/blocks/prose-sec-009"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0105186v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0105186v2/manifest.jsonld",
+  "provenance": "ingested"
+}

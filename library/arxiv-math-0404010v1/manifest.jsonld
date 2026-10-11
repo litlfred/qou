@@ -7,7 +7,7 @@
   ],
   "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0404010v1/manifest.jsonld",
   "@type": [
-    "folio-assistant-core:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "arxiv-math-0404010v1",
   "contains": [
@@ -20,6 +20,7 @@
     "library/arxiv-math-0404010v1/sections/sec-005"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "arxiv-math-0404010v1",
     "title_source": "slug",

@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/1-s2-0-0097316595900136-main/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "A q-Rational Murnaghan-Nakayama Rule",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s2-0-0097316595900136-main/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "1-s2-0-0097316595900136-main",
   "contains": [
     "library/1-s2-0-0097316595900136-main/sections/sec-000",
     "library/1-s2-0-0097316595900136-main/sections/sec-001",
@@ -13,8 +18,10 @@
     "library/1-s2-0-0097316595900136-main/sections/sec-004"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "1-s2-0-0097316595900136-main",
+    "title_source": "slug",
     "source_file": "1-s2.0-0097316595900136-main.pdf",
     "source_sha256": "c92d3e85b3dec20a86b4452420a09811900ce6edf67cddec7478b59edae98316",
     "pages": 18,

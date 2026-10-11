@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/qt2pf5d0mn/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Introduction",
+  "pageStart": 9,
+  "pageEnd": 15,
+  "contains": [
+    "library/qt2pf5d0mn/blocks/prose-sec-001"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/qt2pf5d0mn/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/qt2pf5d0mn/manifest.jsonld",
+  "provenance": "ingested"
+}

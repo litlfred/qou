@@ -9,7 +9,7 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "zhao-standard-2010",
+  "title": "Standard Relations of Multiple Polylogarithm Values at Roots of Unity",
   "contains": [
     "library/zhao-standard-2010/sections/sec-front-matter",
     "library/zhao-standard-2010/sections/sec-000",
@@ -31,11 +31,19 @@
     "library/zhao-standard-2010/sections/sec-016"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "zhao-standard-2010",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "Zhao_standard_2010.pdf",
     "source_sha256": "94a70847c2937ba77a039745b05b2ce0be0407d62deb9c71152db06917696fa8",
-    "granularity": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "pages": 34,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

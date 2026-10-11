@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s40687-023-00400-3/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "S. Garoufalidis, S. Yoon Res Math Sci (2023) 10:37 RESEARCH Twisted Neumann–Zagier matrices StavrosGaroufalidis1,2* andSeokbeomYoon 1 *Correspondence: stavros@mpim-bonn.mpg.de; bonn.mpg.de/stavros",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s40687-023-00400-3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Twisted Neumann–Zagier matrices",
   "contains": [
     "library/s40687-023-00400-3/sections/sec-000",
     "library/s40687-023-00400-3/sections/sec-001",
@@ -21,8 +26,11 @@
     "library/s40687-023-00400-3/sections/sec-012"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "s40687-023-00400-3",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "s40687-023-00400-3.pdf",
     "source_sha256": "fd7638a8cf512a9986d02292f111bbbd92ca6c46dddfedef6ece56fc145ca4ee",
     "pages": 23,

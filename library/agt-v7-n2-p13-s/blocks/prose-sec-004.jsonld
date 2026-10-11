@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/agt-v7-n2-p13-s/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/agt-v7-n2-p13-s/blocks/prose-sec-004",
   "kind": "prose",
   "title": "QHG universal functor",
   "pageStart": 16,
   "pageEnd": 18,
   "text": "../sections/sec-004-23-qhg-universal-functor.md",
-  "derivedFrom": "library/agt-v7-n2-p13-s/manifest",
-  "sourceDocument": "library/agt-v7-n2-p13-s/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v7-n2-p13-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v7-n2-p13-s/manifest.jsonld",
   "provenance": "ingested"
 }

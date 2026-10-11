@@ -18,11 +18,17 @@
     "library/ojm27-03-04/sections/sec-003"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "ojm27-03-04",
+    "title_source": "slug",
     "source_file": "ojm27_03_04.pdf",
     "source_sha256": "b357cc8378dae3fdb81346201aac1ad1895fea5de9d204b9e885950eae2e2c96",
-    "granularity": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "pages": 17,
+    "arxiv": null,
+    "doi": "10.18910/11468",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

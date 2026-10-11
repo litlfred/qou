@@ -1,16 +1,25 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/1-s20-0040938387900097-main/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "State models and the Jones polynomial",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-0040938387900097-main/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "PII: 0040-9383(87)90009-7",
   "contains": [
+    "library/1-s20-0040938387900097-main/sections/sec-front-matter",
     "library/1-s20-0040938387900097-main/sections/sec-000"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "1-s20-0040938387900097-main",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "1-s2.0-0040938387900097-main.pdf",
     "source_sha256": "dae76f3434834382d426c0bfd0b0e4f78255a837e2bf3193888a2ab054701a2e",
     "pages": 13,

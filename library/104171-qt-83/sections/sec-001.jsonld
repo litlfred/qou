@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/104171-qt-83/sections/sec-001",
   "@type": [
     "doco:Section"
@@ -11,14 +16,14 @@
     "library/104171-qt-83/blocks/prose-sec-001",
     "library/104171-qt-83/blocks/prop-sec-001-01",
     "library/104171-qt-83/blocks/prop-sec-001-02",
-    "library/104171-qt-83/blocks/rem-sec-001-03",
+    "library/104171-qt-83/blocks/remark-sec-001-03",
     "library/104171-qt-83/blocks/prop-sec-001-04",
     "library/104171-qt-83/blocks/prop-sec-001-05",
     "library/104171-qt-83/blocks/prop-sec-001-06",
     "library/104171-qt-83/blocks/prop-sec-001-07",
-    "library/104171-qt-83/blocks/rem-sec-001-08"
+    "library/104171-qt-83/blocks/remark-sec-001-08"
   ],
-  "derivedFrom": "library/104171-qt-83/manifest",
-  "sourceDocument": "library/104171-qt-83/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-qt-83/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-qt-83/manifest.jsonld",
   "provenance": "ingested"
 }

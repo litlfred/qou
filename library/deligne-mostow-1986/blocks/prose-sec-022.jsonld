@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/deligne-mostow-1986/blocks/prose-sec-022",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/deligne-mostow-1986/blocks/prose-sec-022",
   "kind": "prose",
   "title": "Elliptic and Euclidean Cases",
   "pageStart": 76,
   "pageEnd": 78,
   "text": "../sections/sec-022-13-elliptic-and-euclidean-cases.md",
-  "derivedFrom": "library/deligne-mostow-1986/manifest",
-  "sourceDocument": "library/deligne-mostow-1986/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
   "provenance": "ingested"
 }

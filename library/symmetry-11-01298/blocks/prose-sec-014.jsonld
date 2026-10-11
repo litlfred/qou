@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/symmetry-11-01298/blocks/prose-sec-014",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/symmetry-11-01298/blocks/prose-sec-014",
   "kind": "prose",
   "title": "Electric Charge as Dehn Twist of the Boundary",
   "pageStart": 17,
   "pageEnd": 18,
   "text": "../sections/sec-014-electric-charge-as-dehn-twist-of-the-boundary.md",
-  "derivedFrom": "library/symmetry-11-01298/manifest",
-  "sourceDocument": "library/symmetry-11-01298/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-11-01298/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-11-01298/manifest.jsonld",
   "provenance": "ingested"
 }

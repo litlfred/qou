@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Algebra & Number Theory Volume 14 No. 7 msp",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Algebra & Number Theory vol. 14 (2020), no. 7",
   "contains": [
     "library/ant-v14-n7-s/sections/sec-000",
     "library/ant-v14-n7-s/sections/sec-001",
@@ -178,8 +183,11 @@
     "library/ant-v14-n7-s/sections/sec-169"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "ant-v14-n7-s",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "ant-v14-n7-s.pdf",
     "source_sha256": "ab695eddd565addf3210fd18d3d5b29acc1e05059ab588d06b3f0a832da81678",
     "pages": 336,

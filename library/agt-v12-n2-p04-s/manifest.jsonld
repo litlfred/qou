@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/agt-v12-n2-p04-s/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "The twisted Alexander polynomial for finite abelian covers over three manifolds",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v12-n2-p04-s/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The twisted Alexander polynomial for finite abelian covers over three manifolds with boundary",
   "contains": [
     "library/agt-v12-n2-p04-s/sections/sec-000",
     "library/agt-v12-n2-p04-s/sections/sec-001",
@@ -13,8 +18,11 @@
     "library/agt-v12-n2-p04-s/sections/sec-004"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "agt-v12-n2-p04-s",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "agt-v12-n2-p04-s.pdf",
     "source_sha256": "bcbb460bc75f5612b86fd92444d81181f869078cf91e1040351e535174ac6b06",
     "pages": 14,

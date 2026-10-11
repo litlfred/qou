@@ -20,11 +20,17 @@
     "library/ant-v14-n7-s-p04/sections/sec-005"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "ant-v14-n7-s-p04",
+    "title_source": "slug",
     "source_file": "ant-v14-n7-s-p04.pdf",
     "source_sha256": "6abd838a4c933311f3ffd0d14c21b1ba88152e7572278b09d33671b0ae949a9d",
-    "granularity": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "pages": 10,
+    "arxiv": null,
+    "doi": "10.2140/ant.2020.14.1791",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }
