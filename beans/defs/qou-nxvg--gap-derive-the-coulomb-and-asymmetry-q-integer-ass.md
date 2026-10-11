@@ -68,3 +68,16 @@ Minimising lambda_C Z^2/A^{1/3} + a_asym (A-2Z)^2/(4A) instead gives Z* = A/(2 +
 with c' = lambda_C/a_asym = 0.0290317, i.e. twice c. Diagnostic only (accuracy does not decide
 this): Z* at A = 56, 120, 208, 238 is 25.3, 51.0, 82.9, 93.1 with c and 23.1, 44.3, 68.9, 76.4
 with c', against 26, 50, 82, 92. Owner decision on which normalisation is canonical.
+
+## 2026-10-11 — owner pick 3 (leave both, record); derivation check via the channel product
+
+Owner kept both normalisations recorded. Checked whether `prop:eigenvalue-product-expansion`
+(sorry-free) fixes one. It gives ln|Lambda_sym| = l (n_pp - n_nn) + l2 n_pn with n_pn = ZN =
+A^2/4 - T^2, T = (Z-N)/2 (re-verified with sympy). This scales as A^2, so it is not an energy
+until it is normalised, and no block in the corpus maps ln|Lambda_sym| to a binding energy
+(its only consumer is its own proof block). IF it is divided by A (a choice, not derived):
+ln|Lambda_sym|/A = l2 A/4 - l2 (N-Z)^2/(4A) + l T (A-1)/A.
+That has exactly the seven-term shape (N-Z)^2/(4A), but with asymmetry/volume ratio
+l2 / (l2/4) = 4, against the stated a_asym/lambda_V = 3/2, and it carries a term l T odd in
+Z - N that the seven-term formula lacks. So: shape suggested under an unjustified normalisation,
+coefficient not reproduced. Still open.
