@@ -284,3 +284,7 @@ Ruling (ofri): option (b). Done on branch `claude/opjb-neutron-constant-2026-10-
 ## 2026-10-11 — conjecture restated at z(p) = -(cp+1) (owner pick 1, PR #7675)
 
 Under X = t only the X^2 coefficient agrees; the X^1 coefficient c^2p^2+cp+1 never agrees for real cp; X^0 agrees only at p ~ 736.8 (checked with sympy). Upstream: item 2 now cites the color elliptic cubic (C), not the color-tube cubic; the Descartes discriminant -18.95 became -303.17 (standard -16(4a^3+27b^2), recomputed at the proton q0; j = 129.86 unchanged; see qou-3nva); the "shares algebraic origin (exact)" bullet was replaced. Downstream: the modular-s-transform-q-q-tilde link for prop:descartes-elliptic-curve now points at the right file; two Lean docstrings cited a conj: label and now cite rem:. The conjecture itself stays open.
+
+## 2026-10-11 — affine obstruction proved (owner picks 2+1, PR #7675)
+
+J = 4P^3/(4P^3+27Q^2) of the depressed cubic is invariant under X -> aX+b. J_C > 0 for every real z (P_C = (2z^2+z+2)/3 > 0); J_S < 0 for real p != 0, c > 0 (P_S = -c^2p^2/3, 4P^3+27Q^2 = 4p^2(54c^3p^2+729)/27). So no affine substitution carries (S) to (C) at real z. Lean: QOU.EllipticStabilityLocus.no_affine_match, sorry-free, lean-direct exit 0. Block drops the vacuous "up to Möbius"; item 2 rests on the isogeny alone. Conjecture remains open.

@@ -37,5 +37,10 @@ export default remark({
       date: "2026-10-11",
       body: "(D) is now derived, not stated: equal energy of the even-even nucleus $(p, A)$ and the odd-odd nucleus $(p+1, A)$, from the `prop:integer-stability` energy and pairing $\\mp\\lambda_P/A^{1/2}$. It gives the stability cubic in $\\bar p = p + 1/2$ with right-hand coefficient $\\lambda_P/(2a_A)$; the previous $2\\lambda_P/a_A$ was 4 times too large, the same $a_A$-for-$4a_A$ slip. Checked with sympy (bean `qou-opjb`).",
     },
+    {
+      kind: "note",
+      date: "2026-10-11",
+      body: "Affine obstruction added (owner picks 2+1). The invariant $J = 4P^3/(4P^3+27Q^2)$ of the depressed cubic is unchanged by $X \\mapsto \\alpha X + \\beta$; it is positive for (C) at every real $z$ and negative for (S) at every real $p \\neq 0$, $c > 0$. Lean: `QOU.EllipticStabilityLocus.no_affine_match` (sorry-free, axioms propext/Classical.choice/Quot.sound). The 'up to Möbius' wording was dropped as vacuous; the conjecture's item 2 now rests on the isogeny alone, and the conjecture stays open (bean `qou-opjb`).",
+    },
   ],
 });

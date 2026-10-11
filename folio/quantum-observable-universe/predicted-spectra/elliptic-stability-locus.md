@@ -78,7 +78,29 @@ Identifying $X = t$, the coefficients compare as follows:
 | $X^1$ | $c^2p^2 + cp + 1$ | $0$ | never for real $cp$ (discriminant $-3$) |
 | $X^0$ | $-cp(c^2p^2 + 2cp + 2)$ | $-2p$ | only on $c^3p^2 + 2c^2p + 2c = 2$ |
 
-The constant-term condition $c^3p^2 + 2c^2p + 2c = 2$ has, at $c = \lambda_C/(2a_{\mathrm{asym}}) \approx 0.0145158337$ (the asymmetry constant of [neutron prediction comparison](#prop:neutron-prediction-comparison)), the positive root $p \approx 736.8$, far beyond the heaviest known element ($Z = 118$). The linear coefficient never agrees. So under $X = t$ the two cubics share only their quadratic coefficient; whether a Möbius change of variable makes them projectively equivalent is part of the conjecture and is not shown here.
+The constant-term condition $c^3p^2 + 2c^2p + 2c = 2$ has, at $c = \lambda_C/(2a_{\mathrm{asym}}) \approx 0.0145158337$ (the asymmetry constant of [neutron prediction comparison](#prop:neutron-prediction-comparison)), the positive root $p \approx 736.8$, far beyond the heaviest known element ($Z = 118$). The linear coefficient never agrees. So under $X = t$ the two cubics share only their quadratic coefficient.
+
+**Affine obstruction.** No other identification does better. Removing the quadratic term writes a monic cubic as $Y^3 + PY + Q$, and a change of variable $X \mapsto \alpha X + \beta$ with $\alpha, \beta \in \mathbb{C}$, $\alpha \neq 0$, sends $(P, Q) \mapsto (\alpha^2 P, \alpha^3 Q)$. Hence
+
+$$
+  J = \frac{4P^3}{4P^3 + 27Q^2}
+$$
+
+is unchanged, and two cubics related by such a substitution have equal $J$. For (C),
+
+$$
+  P_C = \frac{2z^2 + z + 2}{3}, \qquad
+  Q_C = \frac{5(z+1)(4z^2 - z + 4)}{27},
+$$
+
+and $2z^2 + z + 2 > 0$ for real $z$, so $P_C > 0$ and $4P_C^3 + 27Q_C^2 > 0$, giving $J_C > 0$. For (S),
+
+$$
+  P_S = -\frac{c^2p^2}{3}, \qquad
+  4P_S^3 + 27Q_S^2 = \frac{4p^2(54c^3p^2 + 729)}{27},
+$$
+
+so $J_S < 0$ whenever $c > 0$ and $p \neq 0$. Therefore no substitution $X \mapsto \alpha X + \beta$ carries (S) to (C) at any real $z$; equality of $J$ requires complex $z$. Matching "up to a Möbius transformation" would add nothing, since any three distinct points of $\mathbb{P}^1$ map to any other three. The isogeny in item 2 is therefore the whole content of that item. The obstruction is proved sorry-free in the Lean sibling (`no_affine_match`).
 
 **Physical interpretation.**
 
@@ -120,6 +142,7 @@ The genus-$0$ stability cubic accounts for all stable nuclei via lattice-point e
 - The stable nuclei represent lattice points on the stability cubic (exact, from the Skein binding Lagrangian).
 - The Descartes elliptic curve $\mathcal{E}_q$ exists and carries the stated invariants (exact, from the color fibration).
 - Under $X = t$ at $z = -(cp+1)$, the color cubic and the stability cubic share their quadratic coefficient; their linear coefficients never agree (exact, by the table above).
+- No substitution $X \mapsto \alpha X + \beta$ carries (S) to (C) at real $z$, since $J_C > 0 > J_S$ (proved in Lean, `no_affine_match`).
 - The golden ratio degeneration at $q = 1/\varphi^2$ holds (exact, from the $(s^2 + s - 1)$ factor).
 
 **Witness data**: See `computations/elliptic-stability.json` for the full numerical computation at 100-digit precision.
