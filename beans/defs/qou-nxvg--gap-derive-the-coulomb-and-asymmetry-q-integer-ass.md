@@ -30,7 +30,7 @@ by `ring`. `qou-orjl` (completed) showed neither is a q-hook product.
    computations/ or beans/ carries a derivation under either label: the string
    "h¹ Casimir" occurs only in that table row. The label disagrees with the block
    (which calls the assignments stated) and with `qou-orjl`.
-2. `prop:eigenvalue-product-expansion` (sorry status per its own block) gives the
+2. `prop:eigenvalue-product-expansion` (Lean `QOU.BraidKnot.eigenvalue_product_expansion`, no `sorry` in the file) gives the
    only derived isospin-quadratic term in the corpus:
    ln|Lambda_sym| = l2 A^2/4 + l T A - l T - l2 T^2, with l = ln q, l2 = ln([2]_q/2),
    T = |Z-N|/2. Its T^2 term is -l2 (Z-N)^2/4: no 1/A, and l2 = 0.0054336 at the
