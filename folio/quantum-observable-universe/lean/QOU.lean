@@ -230,6 +230,7 @@ import QOU.KZ.FuchsianConvergence
 import QOU.KZ.FuchsianFormal
 import QOU.KZ.KZComplex
 import QOU.KZ.KZHalfMonodromy
+import QOU.KZ.KZHexagon
 import QOU.Knot.CuspShapeBarParity
 import QOU.Knot.FigureEightDeformedMeridianWinding
 import QOU.Knot.RademacherReversible
