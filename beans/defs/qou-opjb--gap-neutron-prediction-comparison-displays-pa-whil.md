@@ -1,7 +1,7 @@
 ---
 # qou-opjb
 title: 'GAP: neutron-prediction-comparison displays p*(A) while naming n_pred(p), and its c = 0.01497 traces to an SEMF ratio, not to a definition in the corpus'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - split-from-6766
     - 8f-decide
 created_at: 2026-10-10T08:12:47Z
-updated_at: 2026-10-10T12:00:00Z
+updated_at: 2026-10-11T06:45:00Z
 parent: qou-8lxd
 ---
 
@@ -288,3 +288,11 @@ Under X = t only the X^2 coefficient agrees; the X^1 coefficient c^2p^2+cp+1 nev
 ## 2026-10-11 — affine obstruction proved (owner picks 2+1, PR #7675)
 
 J = 4P^3/(4P^3+27Q^2) of the depressed cubic is invariant under X -> aX+b. J_C > 0 for every real z (P_C = (2z^2+z+2)/3 > 0); J_S < 0 for real p != 0, c > 0 (P_S = -c^2p^2/3, 4P^3+27Q^2 = 4p^2(54c^3p^2+729)/27). So no affine substitution carries (S) to (C) at real z. Lean: QOU.EllipticStabilityLocus.no_affine_match, sorry-free, lean-direct exit 0. Block drops the vacuous "up to Möbius"; item 2 rests on the isogeny alone. Conjecture remains open.
+
+## 2026-10-11 — closed (owner pick 1)
+
+Both defects in the title are fixed: the block displays p*(A) and derives
+n_pred(p) from the fixed point of A* = p(2 + c A*^{2/3}); c is now
+lambda_C/(2 a_asym) ~= 0.0145158337, not the SEMF ratio 0.01497. The remaining
+question, deriving the [6]_q and 3[2]_q[7]_q assignments, is a separate gap and
+moves to `qou-nxvg`.
