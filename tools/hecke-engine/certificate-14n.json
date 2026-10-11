@@ -1,17 +1,30 @@
 {
-  "elapsed_seconds": 185.379385966,
+  "elapsed_seconds": 95.416896611,
   "engine": {
     "name": "hecke-modular",
     "version": "0.11.0"
   },
-  "f_pauli_f64": 0.1897518107661926,
+  "f_pauli_f64": 0.04912167213396631,
+  "generation": {
+    "argv": [
+      "hecke-modular",
+      "7",
+      "7"
+    ],
+    "binary": "hecke-modular",
+    "commit": "33d54fd71b",
+    "engine_version": "0.8.0",
+    "q0": 1.1099785827513808,
+    "q0_pin": "proton",
+    "reproduce": "cargo run --release --bin hecke-modular -- 7 7"
+  },
   "isotope": {
     "a": 14,
     "n": 7,
     "symbol": "n",
-    "z": 7,
-    "name": "14N"
+    "z": 7
   },
-  "net_f64": -2.136697864189699e-06,
-  "tr_alt_f64": 4.0544228879025167e-07
+  "l1_norm_f64": 0.000226824516863654,
+  "net_f64": -1.2667738613172181e-6,
+  "tr_alt_f64": 6.22260502835029e-8
 }
