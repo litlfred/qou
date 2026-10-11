@@ -1,0 +1,1906 @@
+{
+  "$schema": "folio-image-verdicts/v1",
+  "_comment": "qou library image inspection, as data. Each verdict was produced by an agent opening the image (and, where the crop was not interpretable alone, a render of its page). `saw` is the reason for the role; `draft` is the description. Applied by cat-harness-tools scripts/apply-image-verdicts.ts, which leaves every narrative in `draft`: only a person confirms one. First entries 2026-10-11, owner-approved (PR #7608, bean qou-v9av): the 12 documents ingested from uploads/ and the three math-PDF methodology papers, 374 images. 18 images first classed `furniture` by the inspector were re-labelled `decorative` before application: the schema assigns `furniture` only on a caller-supplied threshold basis (bean ay3x), and each is a drop shadow, blurred text-shadow copy or blank sliver carrying no information.",
+  "inspected_by": {
+    "kind": "agent",
+    "id": "claude",
+    "model": "claude-opus-5-5"
+  },
+  "inspected_at": "2026-10-11",
+  "verdicts": {
+    "250906388v1": {
+      "img-p007-1": {
+        "role": "figure",
+        "saw": "Three-level box-and-line hierarchy diagram; Figure 8.1.",
+        "draft": "Figure 8.1: AHP decision hierarchy. A top box 'Goal: Rank m alternatives considering n criteria' connects by lines to Criterion 1, 2, 3, ..., n, and every criterion connects to every one of Alternative 1, 2, ..., m."
+      },
+      "img-p017-1": {
+        "role": "figure",
+        "saw": "Software screenshot of a three-cluster model; Figure 8.2(a).",
+        "draft": "Figure 8.2(a): SuperDecisions main window (AHP.sdmod) showing three cluster windows linked top to bottom by arrows: L1-Goal (Goal_Node), L2-Criteria (C1, C2, C3) and L3-Alternatives (A1, A2, A3, A4)."
+      },
+      "img-p017-2": {
+        "role": "figure",
+        "saw": "Software screenshot of a numeric matrix with red highlight boxes; Figure 8.2(b).",
+        "draft": "Figure 8.2(b): SuperDecisions 'Unweighted Super Matrix' for AHP.sdmod. Red boxes mark the criteria weights under Goal_Node (C1 0.626696, C2 0.279688, C3 0.093616) and the local priorities of A1-A4 under C1, C2, C3 (e.g. A1: 0.529640, 0.267456, 0.040746); all other entries are 0.000000."
+      },
+      "img-p018-1": {
+        "role": "figure",
+        "saw": "Software screenshot of a priorities table with bars; Figure 8.2(c).",
+        "draft": "Figure 8.2(c): SuperDecisions 'Here are the priorities' table of global priorities normalized by cluster: A1 0.41054, A2 0.19511, A3 0.17608, A4 0.21827, each with a small blue bar."
+      },
+      "img-p020-1": {
+        "role": "figure",
+        "saw": "Network diagram with solid and dash-dotted double arrows; Figure 8.3.",
+        "draft": "Figure 8.3: ANP network. The Goal box points to Criterion 1, 2 and 3; dash-dotted two-headed arrows link the criteria to each other; solid arrows link the criteria and Alternative 1 and 2, some one-way from Criterion 1 and others two-headed."
+      },
+      "img-p025-1": {
+        "role": "figure",
+        "saw": "Software screenshot of a supermatrix; Figure 8.4(a).",
+        "draft": "Figure 8.4(a): SuperDecisions weighted supermatrix W for Chapter_8_ANP.sdmod, with rows and columns Goal_Node, C1-C3, A1-A2. For example, the Goal_Node column has C1 0.25, C2 0.25, C3 0.5, and the C1 column has C2 0.083333, C3 0.166667, A1 0.5625, A2 0.1875."
+      },
+      "img-p025-2": {
+        "role": "figure",
+        "saw": "Software screenshot of a supermatrix with identical columns; Figure 8.4(b).",
+        "draft": "Figure 8.4(b): SuperDecisions limit supermatrix W∞. Every column is identical: Goal_Node 0, C1 0.079748, C2 0.199064, C3 0.292616, A1 0.240932, A2 0.187639."
+      },
+      "img-p026-1": {
+        "role": "figure",
+        "saw": "Software screenshot of a priorities table with red box; Figure 8.4(c).",
+        "draft": "Figure 8.4(c): SuperDecisions normalized global priority scores: Goal_Node 0.00000, C1 0.13956, C2 0.34836, C3 0.51208, A1 0.56218, A2 0.43782, with the two alternatives boxed in red."
+      }
+    },
+    "arxiv-2003.08005v1": {
+      "img-p001-1": {
+        "role": "figure",
+        "saw": "Scanned excerpt of a math article (Theorem 1 on a BVP, conditions f0/f-infinity, equation (1.1)* u''+f(t,u)=0); it is the image used in Fig. 1 on page 1, where coloured formula boxes are overlaid in the rendered page.",
+        "draft": "Fig. 1 base image: scanned text containing 'Theorem 1. Assume (A.1)-(A.3) hold...' with cases (i) superlinear and (ii) sublinear, and the displayed equation (1.1)* u'' + f(t,u) = 0. In the paper the embedded formulas are marked blue and the displayed one red; those overlays are not part of this extracted image."
+      },
+      "img-p004-2": {
+        "role": "figure",
+        "saw": "Small square crop of a scanned page (header 'POSITIVE SOLUTIONS OF ORDINARY DIFFERENTIAL...', 'Green's function for the BVP', equations u''=0 and the boundary conditions), plain with no boxes; one of the stacked sliding-window sub-images in Fig. 2.",
+        "draft": "Fig. 2 sliding-window sub-image: an unannotated crop of the scanned page showing the BVP text and equations u'' = 0, alpha u(0) - beta u'(0) = 0, gamma u(1) + delta u'(1) = 0 (window offsets differ between the stacked crops)."
+      },
+      "img-p004-4": {
+        "role": "figure",
+        "saw": "Small square crop of a scanned page (header 'POSITIVE SOLUTIONS OF ORDINARY DIFFERENTIAL...', 'Green's function for the BVP', equations u''=0 and the boundary conditions), plain with no boxes; one of the stacked sliding-window sub-images in Fig. 2.",
+        "draft": "Fig. 2 sliding-window sub-image: an unannotated crop of the scanned page showing the BVP text and equations u'' = 0, alpha u(0) - beta u'(0) = 0, gamma u(1) + delta u'(1) = 0 (window offsets differ between the stacked crops)."
+      },
+      "img-p004-8": {
+        "role": "figure",
+        "saw": "Small square crop of a scanned page (header 'POSITIVE SOLUTIONS OF ORDINARY DIFFERENTIAL...', 'Green's function for the BVP', equations u''=0 and the boundary conditions), plain with no boxes; one of the stacked sliding-window sub-images in Fig. 2.",
+        "draft": "Fig. 2 sliding-window sub-image: an unannotated crop of the scanned page showing the BVP text and equations u'' = 0, alpha u(0) - beta u'(0) = 0, gamma u(1) + delta u'(1) = 0 (window offsets differ between the stacked crops)."
+      },
+      "img-p004-1": {
+        "role": "figure",
+        "saw": "Same kind of window crop but tinted grey-mauve with formulas highlighted by red/yellow tint and green boxes; one of the SSD-output heatmap windows in Fig. 2.",
+        "draft": "Fig. 2 SSD output window: a page crop overlaid with a detection-confidence heatmap (greyish background, reddish/yellowish highlights) and green boxes around formulas such as u'' = 0 and the boundary conditions; in img-p004-5 the box encloses k(t, s)."
+      },
+      "img-p004-5": {
+        "role": "figure",
+        "saw": "Same kind of window crop but tinted grey-mauve with formulas highlighted by red/yellow tint and green boxes; one of the SSD-output heatmap windows in Fig. 2.",
+        "draft": "Fig. 2 SSD output window: a page crop overlaid with a detection-confidence heatmap (greyish background, reddish/yellowish highlights) and green boxes around formulas such as u'' = 0 and the boundary conditions; in img-p004-5 the box encloses k(t, s)."
+      },
+      "img-p004-9": {
+        "role": "figure",
+        "saw": "Same kind of window crop but tinted grey-mauve with formulas highlighted by red/yellow tint and green boxes; one of the SSD-output heatmap windows in Fig. 2.",
+        "draft": "Fig. 2 SSD output window: a page crop overlaid with a detection-confidence heatmap (greyish background, reddish/yellowish highlights) and green boxes around formulas such as u'' = 0 and the boundary conditions; in img-p004-5 the box encloses k(t, s)."
+      },
+      "img-p004-3": {
+        "role": "figure",
+        "saw": "Whole scanned page 745 of the ODE article (Green's function k(t,s), equations (2.1)-(2.8)) without overlays; the 'Input Page' at the left of Fig. 2.",
+        "draft": "Fig. 2 input page: unannotated scan of a journal page headed 'POSITIVE SOLUTIONS OF ORDINARY DIFFERENTIAL EQUATIONS 745', with numbered equations (2.1)-(2.8) defining k(t,s), the cone K and the operator A."
+      },
+      "img-p004-6": {
+        "role": "figure",
+        "saw": "Thumbnail of the same page with a grey background and pink/white/yellow heatmap patches over formulas; the stitched heatmap page in Fig. 2.",
+        "draft": "Fig. 2 stitched-heatmap page: page 745 thumbnail with greyed background and heatmap highlights (white, pink, yellow) over formula regions, after stitching window-level detections."
+      },
+      "img-p004-7": {
+        "role": "figure",
+        "saw": "Thumbnail of the same page with many overlapping magenta/purple boxes over formulas; the 'Stitch Patches' stage of Fig. 2.",
+        "draft": "Fig. 2 stitched-patches page: page 745 thumbnail covered with dense overlapping purple bounding boxes from window-level detections, before pooling."
+      },
+      "img-p004-10": {
+        "role": "figure",
+        "saw": "Page 745 scan with single green bounding boxes around each formula; the 'Detected Formulas' output at the right of Fig. 2.",
+        "draft": "Fig. 2 output: page 745 with one green bounding box per detected formula (inline items such as k(t,s), [0,1] and displayed equations (2.1)-(2.8)) after pooling."
+      },
+      "img-p004-11": {
+        "role": "figure",
+        "saw": "Page crop overlaid with a regular grid of blue star markers and red, green and yellow rectangles around a pink-highlighted u''=0; this is Fig. 3.",
+        "draft": "Fig. 3: default boxes for a 512x512 window. A grid of blue star box centres covers a page crop; six rectangles (red, green, yellow) of different sizes and aspect ratios surround the pink-highlighted formula u'' = 0."
+      },
+      "img-p005-1": {
+        "role": "figure",
+        "saw": "Bar chart, x-axis 'Aspect ratio' 1-38, y-axis 'Count' 0-10000; Fig. 4.",
+        "draft": "Fig. 4: histogram of formula aspect ratios. Y-axis 'Count' with ticks 0, 2500, 5000, 7500, 10000; x-axis 'Aspect ratio' 1 to 38. Bars peak at ratio 2 (about 9000) and 1 (about 8400), then fall steadily (about 5000 at 3, 4500 at 4, 2900 at 5) to near zero beyond about 20."
+      },
+      "img-p005-2": {
+        "role": "figure",
+        "saw": "Scan crop with header, 'Here k(t, s) denotes the Green's function for the BVP' and equations (2.1),(2.2); used as panel (a) 'Initial detection' of Fig. 5, where the blue box is a vector overlay.",
+        "draft": "Fig. 5(a) base image: scanned excerpt with equations (2.1) u'' = 0 and (2.2) the two boundary conditions. In the rendered figure a blue detection box sits on the first boundary condition; that box is not in this extracted image."
+      },
+      "img-p005-3": {
+        "role": "figure",
+        "saw": "Visually identical scan crop to img-p005-2, checked separately; used as panel (b) 'After cropping' of Fig. 5.",
+        "draft": "Fig. 5(b) base image: the same scanned excerpt (equations (2.1), (2.2)) used for the 'After cropping' panel; the cropped blue box shown in the paper is not part of this extracted image."
+      },
+      "img-p006-1": {
+        "role": "figure",
+        "saw": "Scanned page 744 (L. H. Erbe and Haiyan Wang), Theorem 1, Corollary 1, Theorem 2, with blue boxes around formulas; fourth panel of Fig. 6 detection results.",
+        "draft": "Fig. 6 panel 4: detection results on page 744 of Erbe and Wang ('2. Existence results', Theorem 1, Corollary 1, Theorem 2 of Krasnoselskii), with blue bounding boxes around inline and displayed formulas."
+      },
+      "img-p006-2": {
+        "role": "figure",
+        "saw": "Typeset page with sums over partitions, equations (3.3)-(3.5) involving I^V_{0,n,beta}, enclosed in blue boxes; first panel of Fig. 6.",
+        "draft": "Fig. 6 panel 1: detection results on a page about quadratic relations among codimension-zero classes (equations (3.3)-(3.5)), each formula enclosed in a blue bounding box, wide multi-line sums boxed line by line."
+      },
+      "img-p006-3": {
+        "role": "figure",
+        "saw": "Typeset page (5.23), sections 5.2.6, 5.3, 5.4 with a matrix equation, formulas in blue boxes; second panel of Fig. 6.",
+        "draft": "Fig. 6 panel 2: detection results on a page containing (5.23), 'Nonsingular rational curves', 'Quantum multiplication in H*(P^n)', (5.24) and a matrix D-module equation, with blue bounding boxes around formulas."
+      },
+      "img-p006-4": {
+        "role": "figure",
+        "saw": "Scanned page 745 (Green's function, (2.1)-(2.8)) with blue boxes around formulas; third panel of Fig. 6.",
+        "draft": "Fig. 6 panel 3: detection results on page 745 of the ODE article (equations (2.1)-(2.8)), with blue bounding boxes; per the caption, split formulas are highlighted in pink in this panel, which is not clearly visible in the extracted image."
+      },
+      "img-p007-1": {
+        "role": "figure",
+        "saw": "Grouped bar chart, y-axis 'f-score' 0.5-0.9, x-axis 'Filename' with 10 documents, legend IOU >= 0.5 (blue) and IOU >= 0.75 (red); Fig. 7.",
+        "draft": "Fig. 7: document-level f-scores for 10 test documents (Lorentz48, Jones83, Lusztig89, Kontsevich94, Erbe94, Gidas79, Kazhdan79, Li75, Emden76, Katz99). Blue bars IOU >= 0.5 range 0.6816 (Emden76) to 0.8787 (Erbe94); red bars IOU >= 0.75 range 0.5898 (Emden76) to 0.8518 (Erbe94); y-axis 0.5 to 0.9."
+      }
+    },
+    "arxiv-2402.02172v5": {
+      "img-p001-1": {
+        "role": "logo",
+        "saw": "Cartoon mascot printed inline before the paper title \"CodeAgent\" on page 1; acts as the project mark.",
+        "draft": "CodeAgent project mascot: colourful cartoon of a person seated at a desk typing at a computer, placed before the paper title."
+      },
+      "img-p003-1": {
+        "role": "figure",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "draft": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figure 1 (role data cards and conversations)."
+      },
+      "img-p003-3": {
+        "role": "figure",
+        "saw": "File icon with '</>' and a yellow 'PY' band; used as the 'original file' symbol in the diagram.",
+        "draft": "Document icon with a code tag '</>' and a yellow band reading 'PY', used as the 'original file' symbol in Figure 1 (role data cards and conversations)."
+      },
+      "img-p003-5": {
+        "role": "figure",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "draft": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figure 1 (role data cards and conversations)."
+      },
+      "img-p003-7": {
+        "role": "figure",
+        "saw": "Plain yellow right-pointing arrow used as a flow arrow inside the diagram.",
+        "draft": "Yellow arrow pointing right, a flow connector in Figure 1 (role data cards and conversations)."
+      },
+      "img-p003-37": {
+        "role": "figure",
+        "saw": "Same CodeAgent mascot cartoon, placed above the user request at the top of Figure 1 with the label \"CodeAgent\".",
+        "draft": "CodeAgent mascot (cartoon person typing at a computer) at the top of Figure 1, marking the CodeAgent system that receives the user request."
+      },
+      "img-p003-38": {
+        "role": "figure",
+        "saw": "Green laptop with \"</>\" glyph; legend item \"code\" in Figure 1.",
+        "draft": "Green laptop icon with a \"</>\" code symbol, the \"code\" legend symbol in Figure 1."
+      },
+      "img-p003-42": {
+        "role": "figure",
+        "saw": "Folder with documents and a green check mark; \"document\" output symbol in Figure 1.",
+        "draft": "Icon of a yellow folder holding papers with a green check-mark badge, used as the \"document\" output symbol in Figure 1."
+      },
+      "img-p003-44": {
+        "role": "figure",
+        "saw": "Black line glyph of a branched antenna-like symbol; shown next to \"modality\" in the Output rows of Figure 1.",
+        "draft": "Black line icon resembling a branching/antenna symbol, shown beside the word \"modality\" in the output rows of Figure 1."
+      },
+      "img-p003-59": {
+        "role": "figure",
+        "saw": "Globe with speech bubbles containing letters in different scripts; shown beside \"Language\" in Figure 1.",
+        "draft": "Globe icon with three speech bubbles (Latin \"A\", Chinese character, Devanagari character), the \"Language\" symbol in Figure 1 output rows."
+      },
+      "img-p003-61": {
+        "role": "figure",
+        "saw": "Light-blue curved arrow pointing left; connector between panels in the diagram.",
+        "draft": "Light-blue curved arrow bending up and pointing left, a connector in Figure 1 (role data cards and conversations)."
+      },
+      "img-p003-62": {
+        "role": "figure",
+        "saw": "Screenshot of a dark-theme code/text block embedded in the Reviewer card of Figure 1.",
+        "draft": "Dark-background text block from Figure 1 with headings \"Semantic Consistency Analysis\", \"Security Analysis\", \"Format Analysis\" and \"Code Alignment/Revision Suggestions\", each followed by short review text, then a Java method protected boolean assertEquals(String message, Object expected, Object actual) that compares expected and actual and returns handleAssert(...)."
+      },
+      "img-p003-63": {
+        "role": "figure",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "draft": "Cartoon role avatar: girl with white cap, large headphones and black glasses, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 1 (role data cards and conversations)."
+      },
+      "img-p003-65": {
+        "role": "figure",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "draft": "Cartoon role avatar: man with round glasses in a white lab coat, arms crossed, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 1 (role data cards and conversations)."
+      },
+      "img-p003-69": {
+        "role": "figure",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "draft": "Cartoon role avatar: woman with long blonde hair and glasses holding a phone, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 1 (role data cards and conversations)."
+      },
+      "img-p003-76": {
+        "role": "figure",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "draft": "Cartoon role avatar: man with dark hair, glasses, white shirt and blue tie, thumbs up, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 1 (role data cards and conversations)."
+      },
+      "img-p003-82": {
+        "role": "figure",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "draft": "Cartoon role avatar: girl with long silver-white hair, white top, dark shorts and shoulder bag, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 1 (role data cards and conversations)."
+      },
+      "img-p003-88": {
+        "role": "figure",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "draft": "Cartoon role avatar: girl with long auburn hair, white cap, blue vest and tool belt, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 1 (role data cards and conversations)."
+      },
+      "img-p003-97": {
+        "role": "figure",
+        "saw": "Dark-theme snippet in Figure 1's Coder card ('Revised codes').",
+        "draft": "Dark-background snippet from Figure 1: \"code revision suggestion: Please modify the `assertEquals` method as follows:\" followed by a revised assertEquals using java.util.Objects.equals(expected, actual) and returning handleAssert(result, message, stringFor(expected), stringFor(actual))."
+      },
+      "img-p003-98": {
+        "role": "figure",
+        "saw": "Blue \"LOG\" file icon; listed under \"##Files\" in the Coder card of Figure 1.",
+        "draft": "Blue file icon with a band reading \"LOG\", shown as the Log file under \"##Files\" in Figure 1."
+      },
+      "img-p003-99": {
+        "role": "figure",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "draft": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figure 1 (role data cards and conversations)."
+      },
+      "img-p004-1": {
+        "role": "figure",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "draft": "Cartoon role avatar: woman with long blonde hair and glasses holding a phone, on a purple disc. It is one of the six CodeAgent role characters shown in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture)."
+      },
+      "img-p004-5": {
+        "role": "figure",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "draft": "Cartoon role avatar: man with round glasses in a white lab coat, arms crossed, on a purple disc. It is one of the six CodeAgent role characters shown in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture)."
+      },
+      "img-p004-7": {
+        "role": "figure",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "draft": "Cartoon role avatar: girl with long auburn hair, white cap, blue vest and tool belt, on a purple disc. It is one of the six CodeAgent role characters shown in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture)."
+      },
+      "img-p004-19": {
+        "role": "figure",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "draft": "Cartoon role avatar: girl with long silver-white hair, white top, dark shorts and shoulder bag, on a purple disc. It is one of the six CodeAgent role characters shown in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture)."
+      },
+      "img-p004-29": {
+        "role": "figure",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "draft": "Cartoon role avatar: man with dark hair, glasses, white shirt and blue tie, thumbs up, on a purple disc. It is one of the six CodeAgent role characters shown in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture)."
+      },
+      "img-p004-32": {
+        "role": "figure",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "draft": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture)."
+      },
+      "img-p004-34": {
+        "role": "figure",
+        "saw": "File icon with '</>' and a yellow 'PY' band; used as the 'original file' symbol in the diagram.",
+        "draft": "Document icon with a code tag '</>' and a yellow band reading 'PY', used as the 'original file' symbol in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture)."
+      },
+      "img-p004-36": {
+        "role": "figure",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "draft": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture)."
+      },
+      "img-p004-38": {
+        "role": "figure",
+        "saw": "Green laptop with \"</>\" glyph; legend item \"code\" in Figure 2.",
+        "draft": "Green laptop icon with a \"</>\" code symbol, the \"code\" legend symbol in Figure 2."
+      },
+      "img-p004-40": {
+        "role": "figure",
+        "saw": "Blue document icon at the \"Reviews\" output of Figure 2.",
+        "draft": "Blue document icon with horizontal text lines, part of the \"Reviews\" output at the right end of Figure 2."
+      },
+      "img-p004-41": {
+        "role": "figure",
+        "saw": "Dark circle with green binary digits beside the Reviews document in Figure 2.",
+        "draft": "Dark navy circle filled with green binary digits (0/1), part of the \"Reviews\" output graphic in Figure 2."
+      },
+      "img-p004-42": {
+        "role": "figure",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "draft": "Cartoon role avatar: girl with white cap, large headphones and black glasses, on a purple disc. It is one of the six CodeAgent role characters shown in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture)."
+      },
+      "img-p004-43": {
+        "role": "figure",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "draft": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture)."
+      },
+      "img-p004-58": {
+        "role": "figure",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "draft": "Cartoon role avatar: girl with long auburn hair, white cap, blue vest and tool belt, on a purple disc. It is one of the six CodeAgent role characters shown in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture)."
+      },
+      "img-p004-70": {
+        "role": "figure",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "draft": "Cartoon role avatar: girl with long silver-white hair, white top, dark shorts and shoulder bag, on a purple disc. It is one of the six CodeAgent role characters shown in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture)."
+      },
+      "img-p004-80": {
+        "role": "figure",
+        "saw": "\"FINISH\" banner icon; appears at the top of the QA-checker diagram (Figure 3) and at the end node.",
+        "draft": "Finish-line banner icon (red \"FINISH\" sign with chequered strip between two yellow posts) used in Figure 3 to mark termination."
+      },
+      "img-p004-83": {
+        "role": "figure",
+        "saw": "Green check and red X boxes labelled \"YES NO\"; decision symbol above each QA checker in Figure 3.",
+        "draft": "Icon of a green tick box and a red cross box above the words \"YES NO\", the QA-checker decision symbol in Figure 3."
+      },
+      "img-p004-86": {
+        "role": "figure",
+        "saw": "Blue circle with white plus; legend item \"influence\" in Figure 3.",
+        "draft": "Blue circular plus-sign icon, the \"influence\" legend symbol in Figure 3."
+      },
+      "img-p004-90": {
+        "role": "figure",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "draft": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture)."
+      },
+      "img-p004-105": {
+        "role": "figure",
+        "saw": "Plain yellow right-pointing arrow used as a flow arrow inside the diagram.",
+        "draft": "Yellow arrow pointing right, a flow connector in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture)."
+      },
+      "img-p016-1": {
+        "role": "figure",
+        "saw": "Robot head avatar heading the QA-Checker self-description box on page 16.",
+        "draft": "Cartoon white robot with blue eyes and antennae, the avatar of the QA-Checker agent shown in the text box beside Figure 5."
+      },
+      "img-p016-2": {
+        "role": "figure",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram; Figure 5 labels it 'CTO'.",
+        "draft": "Cartoon role avatar: man with dark hair, glasses, white shirt and blue tie, thumbs up, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 5 and the QA-Checker text box; Figure 5 labels it 'CTO'."
+      },
+      "img-p016-3": {
+        "role": "figure",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram; Figure 5 labels it 'CPO'.",
+        "draft": "Cartoon role avatar: man with round glasses in a white lab coat, arms crossed, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 5 and the QA-Checker text box; Figure 5 labels it 'CPO'."
+      },
+      "img-p016-4": {
+        "role": "figure",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram; Figure 5 labels it 'Reviewer'.",
+        "draft": "Cartoon role avatar: girl with long silver-white hair, white top, dark shorts and shoulder bag, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 5 and the QA-Checker text box; Figure 5 labels it 'Reviewer'."
+      },
+      "img-p016-5": {
+        "role": "figure",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram; Figure 5 labels it 'Coder'.",
+        "draft": "Cartoon role avatar: girl with long auburn hair, white cap, blue vest and tool belt, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 5 and the QA-Checker text box; Figure 5 labels it 'Coder'."
+      },
+      "img-p016-6": {
+        "role": "figure",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram; Figure 5 labels it 'User'.",
+        "draft": "Cartoon role avatar: girl with white cap, large headphones and black glasses, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 5 and the QA-Checker text box; Figure 5 labels it 'User'."
+      },
+      "img-p016-7": {
+        "role": "figure",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram; Figure 5 labels it 'CEO'.",
+        "draft": "Cartoon role avatar: woman with long blonde hair and glasses holding a phone, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 5 and the QA-Checker text box; Figure 5 labels it 'CEO'."
+      },
+      "img-p025-1": {
+        "role": "figure",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "draft": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figure 13 (Python example)."
+      },
+      "img-p025-4": {
+        "role": "figure",
+        "saw": "Plain yellow right-pointing arrow used as a flow arrow inside the diagram.",
+        "draft": "Yellow arrow pointing right, a flow connector in Figure 13 (Python example)."
+      },
+      "img-p025-7": {
+        "role": "figure",
+        "saw": "Yellow circle with white plus sign, joining inputs in the flow row of the diagram.",
+        "draft": "Yellow circular plus-sign icon, used to combine inputs (commit + message + file) in Figure 13 (Python example)."
+      },
+      "img-p025-9": {
+        "role": "figure",
+        "saw": "Cartoon of a person with orange hair typing at a computer, the CodeAgent mascot; on the page it is a labelled node of the diagram.",
+        "draft": "Colourful cartoon icon of a person seated at a desk typing on a computer, used as the CodeAgent mascot/node in Figure 13 (Python example)."
+      },
+      "img-p025-10": {
+        "role": "figure",
+        "saw": "Document with magnifier and bar chart; labelled 'Summary' in the flow row of the diagram.",
+        "draft": "Icon of a document, a checklist panel, a small bar chart and a magnifying glass, labelled 'Summary' as the output node in Figure 13 (Python example)."
+      },
+      "img-p025-11": {
+        "role": "figure",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "draft": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figure 13 (Python example)."
+      },
+      "img-p025-14": {
+        "role": "figure",
+        "saw": "Python programming-language logo placed in the header box of the example figure, labelling the language.",
+        "draft": "Logo of the Python language (blue-and-yellow two-snake Python logo), shown next to the language name in the header of Figure 13 (Python example)."
+      },
+      "img-p025-15": {
+        "role": "figure",
+        "saw": "Light-blue curved arrow pointing left; connector between panels in the diagram.",
+        "draft": "Light-blue curved arrow bending up and pointing left, a connector in Figure 13 (Python example)."
+      },
+      "img-p025-18": {
+        "role": "figure",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "draft": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figure 13 (Python example)."
+      },
+      "img-p025-21": {
+        "role": "figure",
+        "saw": "File icon with '</>' and a yellow 'PY' band; used as the 'original file' symbol in the diagram.",
+        "draft": "Document icon with a code tag '</>' and a yellow band reading 'PY', used as the 'original file' symbol in Figure 13 (Python example)."
+      },
+      "img-p026-1": {
+        "role": "figure",
+        "saw": "Plain yellow right-pointing arrow used as a flow arrow inside the diagram.",
+        "draft": "Yellow arrow pointing right, a flow connector in Figure 14 (Java example)."
+      },
+      "img-p026-4": {
+        "role": "figure",
+        "saw": "Yellow circle with white plus sign, joining inputs in the flow row of the diagram.",
+        "draft": "Yellow circular plus-sign icon, used to combine inputs (commit + message + file) in Figure 14 (Java example)."
+      },
+      "img-p026-6": {
+        "role": "figure",
+        "saw": "Cartoon of a person with orange hair typing at a computer, the CodeAgent mascot; on the page it is a labelled node of the diagram.",
+        "draft": "Colourful cartoon icon of a person seated at a desk typing on a computer, used as the CodeAgent mascot/node in Figure 14 (Java example)."
+      },
+      "img-p026-7": {
+        "role": "figure",
+        "saw": "Document with magnifier and bar chart; labelled 'Summary' in the flow row of the diagram.",
+        "draft": "Icon of a document, a checklist panel, a small bar chart and a magnifying glass, labelled 'Summary' as the output node in Figure 14 (Java example)."
+      },
+      "img-p026-8": {
+        "role": "figure",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "draft": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figure 14 (Java example)."
+      },
+      "img-p026-11": {
+        "role": "figure",
+        "saw": "Java programming-language logo placed in the header box of the example figure, labelling the language.",
+        "draft": "Logo of the Java language (steaming coffee cup Java logo (red steam, blue cup lines)), shown next to the language name in the header of Figure 14 (Java example)."
+      },
+      "img-p026-12": {
+        "role": "figure",
+        "saw": "Light-blue curved arrow pointing left; connector between panels in the diagram.",
+        "draft": "Light-blue curved arrow bending up and pointing left, a connector in Figure 14 (Java example)."
+      },
+      "img-p026-15": {
+        "role": "figure",
+        "saw": "File icon with '</>' and a yellow 'PY' band; used as the 'original file' symbol in the diagram.",
+        "draft": "Document icon with a code tag '</>' and a yellow band reading 'PY', used as the 'original file' symbol in Figure 14 (Java example)."
+      },
+      "img-p026-18": {
+        "role": "figure",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "draft": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figure 14 (Java example)."
+      },
+      "img-p026-21": {
+        "role": "figure",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "draft": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figure 14 (Java example)."
+      },
+      "img-p027-1": {
+        "role": "figure",
+        "saw": "Plain yellow right-pointing arrow used as a flow arrow inside the diagram.",
+        "draft": "Yellow arrow pointing right, a flow connector in Figure 15 (Go example)."
+      },
+      "img-p027-4": {
+        "role": "figure",
+        "saw": "Yellow circle with white plus sign, joining inputs in the flow row of the diagram.",
+        "draft": "Yellow circular plus-sign icon, used to combine inputs (commit + message + file) in Figure 15 (Go example)."
+      },
+      "img-p027-6": {
+        "role": "figure",
+        "saw": "Cartoon of a person with orange hair typing at a computer, the CodeAgent mascot; on the page it is a labelled node of the diagram.",
+        "draft": "Colourful cartoon icon of a person seated at a desk typing on a computer, used as the CodeAgent mascot/node in Figure 15 (Go example)."
+      },
+      "img-p027-7": {
+        "role": "figure",
+        "saw": "Document with magnifier and bar chart; labelled 'Summary' in the flow row of the diagram.",
+        "draft": "Icon of a document, a checklist panel, a small bar chart and a magnifying glass, labelled 'Summary' as the output node in Figure 15 (Go example)."
+      },
+      "img-p027-8": {
+        "role": "figure",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "draft": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figure 15 (Go example)."
+      },
+      "img-p027-11": {
+        "role": "figure",
+        "saw": "Light-blue curved arrow pointing left; connector between panels in the diagram.",
+        "draft": "Light-blue curved arrow bending up and pointing left, a connector in Figure 15 (Go example)."
+      },
+      "img-p027-14": {
+        "role": "figure",
+        "saw": "File icon with '</>' and a yellow 'PY' band; used as the 'original file' symbol in the diagram.",
+        "draft": "Document icon with a code tag '</>' and a yellow band reading 'PY', used as the 'original file' symbol in Figure 15 (Go example)."
+      },
+      "img-p027-17": {
+        "role": "figure",
+        "saw": "Go programming-language logo placed in the header box of the example figure, labelling the language.",
+        "draft": "Logo of the Go language (white 'GO' wordmark with speed lines on a teal background), shown next to the language name in the header of Figure 15 (Go example)."
+      },
+      "img-p027-18": {
+        "role": "figure",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "draft": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figure 15 (Go example)."
+      },
+      "img-p027-21": {
+        "role": "figure",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "draft": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figure 15 (Go example)."
+      },
+      "img-p028-1": {
+        "role": "figure",
+        "saw": "Plain yellow right-pointing arrow used as a flow arrow inside the diagram.",
+        "draft": "Yellow arrow pointing right, a flow connector in Figure 16 (C++ example)."
+      },
+      "img-p028-4": {
+        "role": "figure",
+        "saw": "Yellow circle with white plus sign, joining inputs in the flow row of the diagram.",
+        "draft": "Yellow circular plus-sign icon, used to combine inputs (commit + message + file) in Figure 16 (C++ example)."
+      },
+      "img-p028-6": {
+        "role": "figure",
+        "saw": "Cartoon of a person with orange hair typing at a computer, the CodeAgent mascot; on the page it is a labelled node of the diagram.",
+        "draft": "Colourful cartoon icon of a person seated at a desk typing on a computer, used as the CodeAgent mascot/node in Figure 16 (C++ example)."
+      },
+      "img-p028-7": {
+        "role": "figure",
+        "saw": "Document with magnifier and bar chart; labelled 'Summary' in the flow row of the diagram.",
+        "draft": "Icon of a document, a checklist panel, a small bar chart and a magnifying glass, labelled 'Summary' as the output node in Figure 16 (C++ example)."
+      },
+      "img-p028-8": {
+        "role": "figure",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "draft": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figure 16 (C++ example)."
+      },
+      "img-p028-12": {
+        "role": "figure",
+        "saw": "Light-blue curved arrow pointing left; connector between panels in the diagram.",
+        "draft": "Light-blue curved arrow bending up and pointing left, a connector in Figure 16 (C++ example)."
+      },
+      "img-p028-15": {
+        "role": "figure",
+        "saw": "C++ programming-language logo placed in the header box of the example figure, labelling the language.",
+        "draft": "Logo of the C++ language (white 'C++' on a black rounded square), shown next to the language name in the header of Figure 16 (C++ example)."
+      },
+      "img-p028-19": {
+        "role": "figure",
+        "saw": "File icon with '</>' and a yellow 'PY' band; used as the 'original file' symbol in the diagram.",
+        "draft": "Document icon with a code tag '</>' and a yellow band reading 'PY', used as the 'original file' symbol in Figure 16 (C++ example)."
+      },
+      "img-p028-22": {
+        "role": "figure",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "draft": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figure 16 (C++ example)."
+      },
+      "img-p028-25": {
+        "role": "figure",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "draft": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figure 16 (C++ example)."
+      },
+      "img-p029-1": {
+        "role": "figure",
+        "saw": "Plain yellow right-pointing arrow used as a flow arrow inside the diagram.",
+        "draft": "Yellow arrow pointing right, a flow connector in Figure 17 (JavaScript example)."
+      },
+      "img-p029-4": {
+        "role": "figure",
+        "saw": "Yellow circle with white plus sign, joining inputs in the flow row of the diagram.",
+        "draft": "Yellow circular plus-sign icon, used to combine inputs (commit + message + file) in Figure 17 (JavaScript example)."
+      },
+      "img-p029-6": {
+        "role": "figure",
+        "saw": "Cartoon of a person with orange hair typing at a computer, the CodeAgent mascot; on the page it is a labelled node of the diagram.",
+        "draft": "Colourful cartoon icon of a person seated at a desk typing on a computer, used as the CodeAgent mascot/node in Figure 17 (JavaScript example)."
+      },
+      "img-p029-7": {
+        "role": "figure",
+        "saw": "Document with magnifier and bar chart; labelled 'Summary' in the flow row of the diagram.",
+        "draft": "Icon of a document, a checklist panel, a small bar chart and a magnifying glass, labelled 'Summary' as the output node in Figure 17 (JavaScript example)."
+      },
+      "img-p029-8": {
+        "role": "figure",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "draft": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figure 17 (JavaScript example)."
+      },
+      "img-p029-11": {
+        "role": "figure",
+        "saw": "Light-blue curved arrow pointing left; connector between panels in the diagram.",
+        "draft": "Light-blue curved arrow bending up and pointing left, a connector in Figure 17 (JavaScript example)."
+      },
+      "img-p029-14": {
+        "role": "figure",
+        "saw": "JavaScript programming-language logo placed in the header box of the example figure, labelling the language.",
+        "draft": "Logo of the JavaScript language (black 'JS' on a yellow shield), shown next to the language name in the header of Figure 17 (JavaScript example)."
+      },
+      "img-p029-15": {
+        "role": "figure",
+        "saw": "File icon with '</>' and a yellow 'JS' band; 'original file' symbol in the JavaScript example.",
+        "draft": "Document icon with a code tag '</>' and a yellow band reading 'JS', used as the 'original file' symbol in Figure 17 (JavaScript example)."
+      },
+      "img-p029-18": {
+        "role": "figure",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "draft": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figure 17 (JavaScript example)."
+      },
+      "img-p029-21": {
+        "role": "figure",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "draft": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figure 17 (JavaScript example)."
+      },
+      "img-p030-1": {
+        "role": "figure",
+        "saw": "Plain yellow right-pointing arrow used as a flow arrow inside the diagram.",
+        "draft": "Yellow arrow pointing right, a flow connector in Figure 18 (C example)."
+      },
+      "img-p030-4": {
+        "role": "figure",
+        "saw": "Yellow circle with white plus sign, joining inputs in the flow row of the diagram.",
+        "draft": "Yellow circular plus-sign icon, used to combine inputs (commit + message + file) in Figure 18 (C example)."
+      },
+      "img-p030-6": {
+        "role": "figure",
+        "saw": "Cartoon of a person with orange hair typing at a computer, the CodeAgent mascot; on the page it is a labelled node of the diagram.",
+        "draft": "Colourful cartoon icon of a person seated at a desk typing on a computer, used as the CodeAgent mascot/node in Figure 18 (C example)."
+      },
+      "img-p030-7": {
+        "role": "figure",
+        "saw": "Document with magnifier and bar chart; labelled 'Summary' in the flow row of the diagram.",
+        "draft": "Icon of a document, a checklist panel, a small bar chart and a magnifying glass, labelled 'Summary' as the output node in Figure 18 (C example)."
+      },
+      "img-p030-8": {
+        "role": "figure",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "draft": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figure 18 (C example)."
+      },
+      "img-p030-11": {
+        "role": "figure",
+        "saw": "Light-blue curved arrow pointing left; connector between panels in the diagram.",
+        "draft": "Light-blue curved arrow bending up and pointing left, a connector in Figure 18 (C example)."
+      },
+      "img-p030-14": {
+        "role": "figure",
+        "saw": "C programming-language logo placed in the header box of the example figure, labelling the language.",
+        "draft": "Logo of the C language (white 'C' on a light-blue circle with a long dark-blue shadow), shown next to the language name in the header of Figure 18 (C example)."
+      },
+      "img-p030-15": {
+        "role": "figure",
+        "saw": "File icon with '</>' and a yellow 'PY' band; used as the 'original file' symbol in the diagram.",
+        "draft": "Document icon with a code tag '</>' and a yellow band reading 'PY', used as the 'original file' symbol in Figure 18 (C example)."
+      },
+      "img-p030-18": {
+        "role": "figure",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "draft": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figure 18 (C example)."
+      },
+      "img-p030-21": {
+        "role": "figure",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "draft": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figure 18 (C example)."
+      },
+      "img-p031-1": {
+        "role": "figure",
+        "saw": "Plain yellow right-pointing arrow used as a flow arrow inside the diagram.",
+        "draft": "Yellow arrow pointing right, a flow connector in Figure 19 (C# example)."
+      },
+      "img-p031-4": {
+        "role": "figure",
+        "saw": "Yellow circle with white plus sign, joining inputs in the flow row of the diagram.",
+        "draft": "Yellow circular plus-sign icon, used to combine inputs (commit + message + file) in Figure 19 (C# example)."
+      },
+      "img-p031-6": {
+        "role": "figure",
+        "saw": "Cartoon of a person with orange hair typing at a computer, the CodeAgent mascot; on the page it is a labelled node of the diagram.",
+        "draft": "Colourful cartoon icon of a person seated at a desk typing on a computer, used as the CodeAgent mascot/node in Figure 19 (C# example)."
+      },
+      "img-p031-7": {
+        "role": "figure",
+        "saw": "Document with magnifier and bar chart; labelled 'Summary' in the flow row of the diagram.",
+        "draft": "Icon of a document, a checklist panel, a small bar chart and a magnifying glass, labelled 'Summary' as the output node in Figure 19 (C# example)."
+      },
+      "img-p031-8": {
+        "role": "figure",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "draft": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figure 19 (C# example)."
+      },
+      "img-p031-11": {
+        "role": "figure",
+        "saw": "Light-blue curved arrow pointing left; connector between panels in the diagram.",
+        "draft": "Light-blue curved arrow bending up and pointing left, a connector in Figure 19 (C# example)."
+      },
+      "img-p031-14": {
+        "role": "figure",
+        "saw": "File icon with '</>' and a yellow 'PY' band; used as the 'original file' symbol in the diagram.",
+        "draft": "Document icon with a code tag '</>' and a yellow band reading 'PY', used as the 'original file' symbol in Figure 19 (C# example)."
+      },
+      "img-p031-17": {
+        "role": "figure",
+        "saw": "C# programming-language logo placed in the header box of the example figure, labelling the language.",
+        "draft": "Logo of the C# language ('C#' in a browser-window frame with a yellow title bar), shown next to the language name in the header of Figure 19 (C# example)."
+      },
+      "img-p031-18": {
+        "role": "figure",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "draft": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figure 19 (C# example)."
+      },
+      "img-p031-21": {
+        "role": "figure",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "draft": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figure 19 (C# example)."
+      },
+      "img-p032-1": {
+        "role": "figure",
+        "saw": "Plain yellow right-pointing arrow used as a flow arrow inside the diagram.",
+        "draft": "Yellow arrow pointing right, a flow connector in Figure 20 (PHP example)."
+      },
+      "img-p032-4": {
+        "role": "figure",
+        "saw": "Yellow circle with white plus sign, joining inputs in the flow row of the diagram.",
+        "draft": "Yellow circular plus-sign icon, used to combine inputs (commit + message + file) in Figure 20 (PHP example)."
+      },
+      "img-p032-6": {
+        "role": "figure",
+        "saw": "Cartoon of a person with orange hair typing at a computer, the CodeAgent mascot; on the page it is a labelled node of the diagram.",
+        "draft": "Colourful cartoon icon of a person seated at a desk typing on a computer, used as the CodeAgent mascot/node in Figure 20 (PHP example)."
+      },
+      "img-p032-7": {
+        "role": "figure",
+        "saw": "Document with magnifier and bar chart; labelled 'Summary' in the flow row of the diagram.",
+        "draft": "Icon of a document, a checklist panel, a small bar chart and a magnifying glass, labelled 'Summary' as the output node in Figure 20 (PHP example)."
+      },
+      "img-p032-8": {
+        "role": "figure",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "draft": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figure 20 (PHP example)."
+      },
+      "img-p032-11": {
+        "role": "figure",
+        "saw": "Light-blue curved arrow pointing left; connector between panels in the diagram.",
+        "draft": "Light-blue curved arrow bending up and pointing left, a connector in Figure 20 (PHP example)."
+      },
+      "img-p032-14": {
+        "role": "figure",
+        "saw": "File icon with '</>' and a yellow 'PY' band; used as the 'original file' symbol in the diagram.",
+        "draft": "Document icon with a code tag '</>' and a yellow band reading 'PY', used as the 'original file' symbol in Figure 20 (PHP example)."
+      },
+      "img-p032-17": {
+        "role": "figure",
+        "saw": "PHP programming-language logo placed in the header box of the example figure, labelling the language.",
+        "draft": "Logo of the PHP language (black 'php' on a purple oval), shown next to the language name in the header of Figure 20 (PHP example)."
+      },
+      "img-p032-18": {
+        "role": "figure",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "draft": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figure 20 (PHP example)."
+      },
+      "img-p032-21": {
+        "role": "figure",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "draft": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figure 20 (PHP example)."
+      },
+      "img-p034-1": {
+        "role": "figure",
+        "saw": "Java programming-language logo placed in the header box of the example figure, labelling the language.",
+        "draft": "Logo of the Java language (steaming coffee cup Java logo (red steam, blue cup lines)), shown next to the language name in the header of Figure 22 (CodeAgent-3.5 vs CodeAgent-4.0, Java example)."
+      },
+      "img-p034-2": {
+        "role": "figure",
+        "saw": "Light-blue curved arrow pointing left; connector between panels in the diagram.",
+        "draft": "Light-blue curved arrow bending up and pointing left, a connector in Figure 22 (CodeAgent-3.5 vs CodeAgent-4.0, Java example)."
+      },
+      "img-p034-5": {
+        "role": "figure",
+        "saw": "File icon with '</>' and a yellow 'PY' band; used as the 'original file' symbol in the diagram.",
+        "draft": "Document icon with a code tag '</>' and a yellow band reading 'PY', used as the 'original file' symbol in Figure 22 (CodeAgent-3.5 vs CodeAgent-4.0, Java example)."
+      },
+      "img-p034-7": {
+        "role": "figure",
+        "saw": "Cartoon of a person with orange hair typing at a computer, the CodeAgent mascot; on the page it is a labelled node of the diagram.",
+        "draft": "Colourful cartoon icon of a person seated at a desk typing on a computer, used as the CodeAgent mascot/node in Figure 22 (CodeAgent-3.5 vs CodeAgent-4.0, Java example)."
+      },
+      "img-p034-10": {
+        "role": "figure",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "draft": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figure 22 (CodeAgent-3.5 vs CodeAgent-4.0, Java example)."
+      },
+      "img-p034-12": {
+        "role": "figure",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "draft": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figure 22 (CodeAgent-3.5 vs CodeAgent-4.0, Java example)."
+      },
+      "img-p035-1": {
+        "role": "figure",
+        "saw": "Large screenshot of a web page; page-35 caption is Figure 23 \"website of CodeAgent\".",
+        "draft": "Figure 23: screenshot of the CodeAgent website (dark theme) with menu items \"Our Expertise\", \"Language Support\", \"Demos\", \"FAQs\" and a \"Test CodeAgent Now!\" button, the heading \"Revolutionizing Code Quality with AI Precision.\", three feature cards, and a \"Code Review\" section beside an editor screenshot showing a JavaScript file auth.js."
+      }
+    },
+    "arxiv-2404.04834v4": {
+      "img-p009-1": {
+        "role": "decorative",
+        "saw": "Uniform blurred dark-grey rounded rectangle with no text or marks; a drop-shadow layer behind one of the phase boxes of Fig. 1 (no information content; schema reserves `furniture` for a threshold basis, so the inspected role is decorative)",
+        "draft": "Blurred grey rounded-rectangle drop-shadow layer from the Fig. 1 diagram; carries no content."
+      },
+      "img-p009-12": {
+        "role": "decorative",
+        "saw": "Uniform blurred dark-grey rounded rectangle with no text or marks; a drop-shadow layer behind one of the phase boxes of Fig. 1 (no information content; schema reserves `furniture` for a threshold basis, so the inspected role is decorative)",
+        "draft": "Blurred grey rounded-rectangle drop-shadow layer from the Fig. 1 diagram; carries no content."
+      },
+      "img-p009-15": {
+        "role": "decorative",
+        "saw": "Uniform blurred dark-grey rounded rectangle with no text or marks; a drop-shadow layer behind one of the phase boxes of Fig. 1 (no information content; schema reserves `furniture` for a threshold basis, so the inspected role is decorative)",
+        "draft": "Blurred grey rounded-rectangle drop-shadow layer from the Fig. 1 diagram; carries no content."
+      },
+      "img-p009-23": {
+        "role": "decorative",
+        "saw": "Uniform blurred dark-grey rounded rectangle with no text or marks; a drop-shadow layer behind one of the phase boxes of Fig. 1 (no information content; schema reserves `furniture` for a threshold basis, so the inspected role is decorative)",
+        "draft": "Blurred grey rounded-rectangle drop-shadow layer from the Fig. 1 diagram; carries no content."
+      },
+      "img-p009-32": {
+        "role": "decorative",
+        "saw": "Uniform blurred dark-grey rounded rectangle with no text or marks; a drop-shadow layer behind one of the phase boxes of Fig. 1 (no information content; schema reserves `furniture` for a threshold basis, so the inspected role is decorative)",
+        "draft": "Blurred grey rounded-rectangle drop-shadow layer from the Fig. 1 diagram; carries no content."
+      },
+      "img-p009-39": {
+        "role": "decorative",
+        "saw": "Uniform blurred dark-grey rounded rectangle with no text or marks; a drop-shadow layer behind one of the phase boxes of Fig. 1 (no information content; schema reserves `furniture` for a threshold basis, so the inspected role is decorative)",
+        "draft": "Blurred grey rounded-rectangle drop-shadow layer from the Fig. 1 diagram; carries no content."
+      },
+      "img-p009-47": {
+        "role": "decorative",
+        "saw": "Uniform blurred dark-grey rounded rectangle with no text or marks; a drop-shadow layer behind one of the phase boxes of Fig. 1 (no information content; schema reserves `furniture` for a threshold basis, so the inspected role is decorative)",
+        "draft": "Blurred grey rounded-rectangle drop-shadow layer from the Fig. 1 diagram; carries no content."
+      },
+      "img-p009-8": {
+        "role": "figure",
+        "saw": "Dark-blue line icon of a robot head (antenna, two round eyes, side ears, base bar); matches the agent icons placed beside the phase boxes in Fig. 1 on the rendered page.",
+        "draft": "Robot-head icon in dark blue, one of the agent symbols in Fig. 1 (multi-agent Waterfall vs. Agile diagram)."
+      },
+      "img-p009-9": {
+        "role": "figure",
+        "saw": "Dark-blue line icon of a robot head (antenna, two round eyes, side ears, base bar); matches the agent icons placed beside the phase boxes in Fig. 1 on the rendered page.",
+        "draft": "Robot-head icon in dark blue, one of the agent symbols in Fig. 1 (multi-agent Waterfall vs. Agile diagram)."
+      },
+      "img-p009-10": {
+        "role": "figure",
+        "saw": "Dark-blue line icon of a robot head (antenna, two round eyes, side ears, base bar); matches the agent icons placed beside the phase boxes in Fig. 1 on the rendered page.",
+        "draft": "Robot-head icon in dark blue, one of the agent symbols in Fig. 1 (multi-agent Waterfall vs. Agile diagram)."
+      },
+      "img-p009-11": {
+        "role": "figure",
+        "saw": "Dark-blue line icon of a robot head (antenna, two round eyes, side ears, base bar); matches the agent icons placed beside the phase boxes in Fig. 1 on the rendered page.",
+        "draft": "Robot-head icon in dark blue, one of the agent symbols in Fig. 1 (multi-agent Waterfall vs. Agile diagram)."
+      },
+      "img-p009-35": {
+        "role": "figure",
+        "saw": "Dark-blue line icon of a robot head (antenna, two round eyes, side ears, base bar); matches the agent icons placed beside the phase boxes in Fig. 1 on the rendered page.",
+        "draft": "Robot-head icon in dark blue, one of the agent symbols in Fig. 1 (multi-agent Waterfall vs. Agile diagram)."
+      },
+      "img-p009-36": {
+        "role": "figure",
+        "saw": "Dark-blue line icon of a robot head (antenna, two round eyes, side ears, base bar); matches the agent icons placed beside the phase boxes in Fig. 1 on the rendered page.",
+        "draft": "Robot-head icon in dark blue, one of the agent symbols in Fig. 1 (multi-agent Waterfall vs. Agile diagram)."
+      },
+      "img-p009-37": {
+        "role": "figure",
+        "saw": "Dark-blue line icon of a robot head (antenna, two round eyes, side ears, base bar); matches the agent icons placed beside the phase boxes in Fig. 1 on the rendered page.",
+        "draft": "Robot-head icon in dark blue, one of the agent symbols in Fig. 1 (multi-agent Waterfall vs. Agile diagram)."
+      },
+      "img-p009-57": {
+        "role": "figure",
+        "saw": "Dark-blue line icon of a robot head (antenna, two round eyes, side ears, base bar); matches the agent icons placed beside the phase boxes in Fig. 1 on the rendered page.",
+        "draft": "Robot-head icon in dark blue, one of the agent symbols in Fig. 1 (multi-agent Waterfall vs. Agile diagram)."
+      },
+      "img-p009-14": {
+        "role": "decorative",
+        "saw": "Heavily blurred grey copy of the word 'Development'; a text-shadow layer duplicating a box label that appears crisply in the rendered Fig. 1 (no information content; schema reserves `furniture` for a threshold basis, so the inspected role is decorative)",
+        "draft": "Blurred text-shadow layer of the label 'Development' from Fig. 1; duplicates text present in the figure."
+      },
+      "img-p009-22": {
+        "role": "decorative",
+        "saw": "Heavily blurred grey copy of the word 'Planning'; a text-shadow layer duplicating a box label that appears crisply in the rendered Fig. 1 (no information content; schema reserves `furniture` for a threshold basis, so the inspected role is decorative)",
+        "draft": "Blurred text-shadow layer of the label 'Planning' from Fig. 1; duplicates text present in the figure."
+      },
+      "img-p009-30": {
+        "role": "decorative",
+        "saw": "Heavily blurred grey copy of the word 'Testing'; a text-shadow layer duplicating a box label that appears crisply in the rendered Fig. 1 (no information content; schema reserves `furniture` for a threshold basis, so the inspected role is decorative)",
+        "draft": "Blurred text-shadow layer of the label 'Testing' from Fig. 1; duplicates text present in the figure."
+      },
+      "img-p009-31": {
+        "role": "decorative",
+        "saw": "Heavily blurred grey copy of the word 'Requirements'; a text-shadow layer duplicating a box label that appears crisply in the rendered Fig. 1 (no information content; schema reserves `furniture` for a threshold basis, so the inspected role is decorative)",
+        "draft": "Blurred text-shadow layer of the label 'Requirements' from Fig. 1; duplicates text present in the figure."
+      },
+      "img-p009-34": {
+        "role": "decorative",
+        "saw": "Heavily blurred grey copy of the word 'Review'; a text-shadow layer duplicating a box label that appears crisply in the rendered Fig. 1 (no information content; schema reserves `furniture` for a threshold basis, so the inspected role is decorative)",
+        "draft": "Blurred text-shadow layer of the label 'Review' from Fig. 1; duplicates text present in the figure."
+      },
+      "img-p009-46": {
+        "role": "decorative",
+        "saw": "Heavily blurred grey copy of the word 'Design'; a text-shadow layer duplicating a box label that appears crisply in the rendered Fig. 1 (no information content; schema reserves `furniture` for a threshold basis, so the inspected role is decorative)",
+        "draft": "Blurred text-shadow layer of the label 'Design' from Fig. 1; duplicates text present in the figure."
+      },
+      "img-p009-54": {
+        "role": "decorative",
+        "saw": "Heavily blurred grey copy of the word 'Maintenance'; a text-shadow layer duplicating a box label that appears crisply in the rendered Fig. 1 (no information content; schema reserves `furniture` for a threshold basis, so the inspected role is decorative)",
+        "draft": "Blurred text-shadow layer of the label 'Maintenance' from Fig. 1; duplicates text present in the figure."
+      },
+      "img-p009-55": {
+        "role": "decorative",
+        "saw": "Heavily blurred grey copy of the word 'Development'; a text-shadow layer duplicating a box label that appears crisply in the rendered Fig. 1 (no information content; schema reserves `furniture` for a threshold basis, so the inspected role is decorative)",
+        "draft": "Blurred text-shadow layer of the label 'Development' from Fig. 1; duplicates text present in the figure."
+      },
+      "img-p009-56": {
+        "role": "decorative",
+        "saw": "Heavily blurred grey copy of the word 'Testing'; a text-shadow layer duplicating a box label that appears crisply in the rendered Fig. 1 (no information content; schema reserves `furniture` for a threshold basis, so the inspected role is decorative)",
+        "draft": "Blurred text-shadow layer of the label 'Testing' from Fig. 1; duplicates text present in the figure."
+      },
+      "img-p009-38": {
+        "role": "figure",
+        "saw": "Coloured icon: three list cards (blue, yellow, red) with arrows to grey boxes, the top one checked; appears next to 'Sprint Backlog' in the Agile half of Fig. 1.",
+        "draft": "Sprint-backlog icon from Fig. 1: three coloured task cards (blue, yellow, red) with arrows pointing to three grey checkboxes, the top checkbox ticked."
+      },
+      "img-p011-1": {
+        "role": "figure",
+        "saw": "Screenshot of a black game window with 'Score: 0', one green square and one red square; first panel of Fig. 2 (Snake Game generated by ChatDev).",
+        "draft": "Fig. 2 panel 1: Snake game screenshot at start, black field with 'Score: 0' at top-left, a single green square (snake) and a red square near the bottom-right."
+      },
+      "img-p011-2": {
+        "role": "figure",
+        "saw": "Screenshot of the same game window showing 'Score: 3', a longer green bar at the bottom and a red square at top-left; second panel of Fig. 2.",
+        "draft": "Fig. 2 panel 2: Snake game in progress, 'Score: 3' at top-left, the green snake now a horizontal bar several squares long at the bottom, red square near top-left."
+      },
+      "img-p011-3": {
+        "role": "figure",
+        "saw": "Black game window with centred white text 'Game Over! Score: 3'; third panel of Fig. 2.",
+        "draft": "Fig. 2 panel 3: Snake game end screen, black background with the centred text 'Game Over! Score: 3'."
+      },
+      "img-p012-1": {
+        "role": "figure",
+        "saw": "Tall black Tetris playfield with a yellow 2x2 block at top and an orange S/Z-shaped piece at bottom; first panel of Fig. 3 (Tetris Game generated by ChatDev).",
+        "draft": "Fig. 3 panel 1: Tetris screenshot at start, black playfield with a falling yellow square tetromino at the top and one orange skew piece at the bottom."
+      },
+      "img-p012-2": {
+        "role": "figure",
+        "saw": "Tetris playfield with a stack of green, orange, yellow and cyan blocks in the lower part; second panel of Fig. 3.",
+        "draft": "Fig. 3 panel 2: Tetris in progress, a stack of coloured tetrominoes (green, orange, yellow, cyan) in the lower third of the black playfield."
+      },
+      "img-p012-3": {
+        "role": "figure",
+        "saw": "Tetris playfield with a yellow square piece mid-air and a low, mostly filled base of green, orange, yellow and red blocks; third panel of Fig. 3.",
+        "draft": "Fig. 3 panel 3: Tetris screenshot with a yellow square tetromino falling and a flat base three to four rows high of green, orange, yellow and red blocks."
+      },
+      "img-p012-4": {
+        "role": "figure",
+        "saw": "Tetris playfield filled nearly to the top with multicoloured blocks and white text 'Game Over' overlaid; fourth panel of Fig. 3.",
+        "draft": "Fig. 3 panel 4: Tetris end state, the playfield stacked to the top with green, yellow, cyan, purple, orange and blue blocks and 'Game Over' written across the middle."
+      }
+    },
+    "arxiv-2405.14766v2": {
+      "img-p001-1": {
+        "role": "figure",
+        "saw": "Three-circle Venn diagram with labelled sectors; left panel of Figure 1.",
+        "draft": "Figure 1 (left): Venn diagram of three overlapping circles around the centre text 'Public Health LLM Evaluations': Burden (Diseases, Symptoms, Injuries) [5], Risk Factors (Environment, Behaviour, Biology) [5], and Interventions (Non-Pharmaceutical, Pharmaceutical) [6]."
+      },
+      "img-p001-2": {
+        "role": "figure",
+        "saw": "Radar chart with radial scale 0-1 and model legend; right panel of Figure 1.",
+        "draft": "Figure 1 (right): radar chart of micro-F1 scores (radial axis 0 to 1) on 16 tasks prefixed B- (burden), RF- (risk factors) and I- (interventions), for seven models: Command-R-0824-32B, Flan-T5-xxl, Gemma-2-27B-It, Llama-3.3-70B-Instruct, Mistral-7B-Instruct-v0.2, Mistral-Large-AWQ4Bit, Stable-Beluga-2. Most models score near 0.8-0.95 on B-News Headline and B-GI Classification and lower on I-Causal Relations and I-BioDex Drugs Extraction."
+      },
+      "img-p003-1": {
+        "role": "figure",
+        "saw": "Three coloured header boxes with numbered task lists; Figure 2.",
+        "draft": "Figure 2: evaluation tasks by public health area, in three columns. Burden: NCBI Disease Extract., Gastro. Illness Class., Gastro. Illness Symptom Extract., ICD-10 Description Class., News Headline Class. Risk Factors: Contact Type Class., Country Disambiguation, Food Extract., MMLU Genetics, MMLU Nutrition. Interventions: Guidance Topic Class., Guidance Recommendation Class., Health Advice Class., Health Causal Claims Class., BioDex Drugs Extract., PubMedQA Reasoning."
+      },
+      "img-p012-1": {
+        "role": "figure",
+        "saw": "Grouped bar chart with axes and legend; Figure 3.",
+        "draft": "Figure 3, 'Contact Classification with Zero and Few Shot Prompting': micro F1-score (0 to ~0.8) for 11 models, A-Zero-Shot (blue) vs B-Few-Shot (orange). Few-shot exceeds zero-shot for every model except Llama-3.1 8B (about 0.26 vs 0.14); Stable Beluga-2 has the highest few-shot score, about 0.79."
+      },
+      "img-p013-1": {
+        "role": "figure",
+        "saw": "Grouped bar chart with axes and legend; Figure 4.",
+        "draft": "Figure 4, 'Causal Relations Classification with Zero and Few Shot Prompting': micro F1-score (0 to ~0.7) for 11 models, zero-shot (blue) vs few-shot (orange). Few-shot is higher for all models except Flan-T5 xxl (about 0.50 vs 0.48); Llama-3.3 70B is highest, about 0.62 zero-shot and 0.69 few-shot."
+      },
+      "img-p027-1": {
+        "role": "figure",
+        "saw": "Three-circle chain diagram with a spectrum line; Figure 5.",
+        "draft": "Figure 5, LLM evaluation spectrum: three chained circles, General Evaluations (e.g. Languages, Reasoning, Maths), Domain Evaluations (e.g. Medicine, Law, Finance) and Task Specific Evaluations (e.g. Classify x, Extract y, Summarise z), with the domain-task overlap marked by an asterisk. A line beneath runs from 'Foundation Model' to 'Production Deployment'."
+      },
+      "img-p030-1": {
+        "role": "figure",
+        "saw": "Grid diagram with row/column header boxes and a colour legend; Figure 6.",
+        "draft": "Figure 6, overview of evaluations: a grid with columns Automated, Human and LLM-as-a-Judge Evaluations and rows General, Domain Specific and Task Specific Evaluations. The General row is greyed 'Out of Scope'; the automated domain and task cells are green ('This Paper'); the remaining cells are peach ('Future Public Health AI Research')."
+      },
+      "img-p035-1": {
+        "role": "figure",
+        "saw": "Extracted PNG is uniformly black in RGB with its content only in the alpha mask, so it shows as a black rectangle; the page render shows it is the Figure 7 prompt box.",
+        "draft": "Figure 7: example 7-shot prompt for Health Causal Claims Classification in the Stable-Beluga-2 template: a System block defining four labels (no relationship, correlational, conditional causal, direct causal), seven example CONTEXT/QUESTION/Answer triples, then the query and an '### Assistant:' line. (Read from the page render; the extracted file itself displays as solid black.)"
+      },
+      "img-p036-1": {
+        "role": "figure",
+        "saw": "Boxed prompt text; Figure 8.",
+        "draft": "Figure 8: example zero-shot prompt for NCBI Disease Extraction, with '### System:' (asks to act as a doctor extracting disease information), '### User:' (Text: {context}, a request to extract all diseases verbatim as a comma-separated list, 'Answer:') and '### Assistant:'."
+      }
+    },
+    "arxiv-2505.06046v4": {
+      "img-p001-1": {
+        "role": "figure",
+        "saw": "Grouped bar chart with error bars, y 'Accuracy (pct)' 0-100, x 'Model Name' with ~24 LLMs, legend PubHealthBench-Full (light blue) and -Reviewed (red), dotted lines 'Est. Upper Bound' and 'Human Average'; left panel of Fig. 1.",
+        "draft": "Fig. 1 (left): MCQA accuracy per model on PubHealthBench-Full (light blue) and PubHealthBench-Reviewed (red), with error bars. Models run from Gemma-3-1B (about 46-48%) up to GPT-4.5 (about 92%); most models sit around 72-88%. Two dotted horizontal lines mark 'Est. Upper Bound' (about 97%) and 'Human Average' (about 88%)."
+      },
+      "img-p001-2": {
+        "role": "figure",
+        "saw": "Bar chart with error bars and percentage labels, y 'Accuracy (pct)' 0-100, single series PubHealthBench-FreeForm; right panel of Fig. 1.",
+        "draft": "Fig. 1 (right): free-form accuracy per model on PubHealthBench-FreeForm, ascending from Gemma-3-1B (18%) through e.g. GPT-4o (61%), o3-Mini (70%), GPT-4.1 (71%) to o1 (74%), with error bars."
+      },
+      "img-p003-1": {
+        "role": "figure",
+        "saw": "Three rounded panels each with a multiple-choice question and options A-G, one option outlined in green; panel labels Clinical, Professional, Public Guidance; Fig. 2.",
+        "draft": "Fig. 2: three example PubHealthBench MCQA questions, one each for Clinical Guidance (NOx exposure observation duration, answer A '24 to 36 hours'), Professional Guidance (nitric acid spill emergency action code, answer E '2R') and Public Guidance (Zika travel advice timing, answer G 'At least 4 to 6 weeks before they travel'); correct options boxed in green."
+      },
+      "img-p003-2": {
+        "role": "figure",
+        "saw": "Pipeline diagram: GOV.UK documents -> chunks -> LLM boxes -> Question/Options -> LLM filter -> green check or red cross -> Join with Chunk/Doc/Metadata, with stage captions; Fig. 3.",
+        "draft": "Fig. 3: MCQA generation pipeline. Stages left to right: extract UKHSA guidance free text; split into section chunks with headers; LLM filter to chunks with public-health information (one chunk rejected in red); LLM generates question and options grounded in a chunk; automated LLM filtering using source text (one question passes with a green check, one fails with a red cross); join into the full benchmark with chunk, document and metadata."
+      },
+      "img-p005-1": {
+        "role": "figure",
+        "saw": "Donut chart of topic areas with percentage labels; left panel of Fig. 4.",
+        "draft": "Fig. 4 (left): questions by guidance topic area: VPDs & Immunisation 23.7%, Chemicals & Toxicology 17.1%, Tuberculosis/Travel/Zoonotic/Emerging infections 16.4%, Health Protection in Inclusion Health Settings 14.3%, HCAI/Fungal/AMR/Antimicrobial Use & Sepsis 5.7%, Blood Safety/Hepatitis/STIs and HIV 5.6%, Gastro & Food Safety 5.3%, Climate and Health 4.8%, Radiation 3.6%, Other 3.6%."
+      },
+      "img-p005-2": {
+        "role": "figure",
+        "saw": "Donut chart of audiences with percentage labels; right panel of Fig. 4.",
+        "draft": "Fig. 4 (right): questions by guidance audience: Professional Guidance 46.1%, Clinical Guidance 21.0%, Unclassified 12.5%, Public Guidance 12.2%, Multiple Audiences 8.1%."
+      },
+      "img-p005-3": {
+        "role": "figure",
+        "saw": "Three-step workflow diagram in blue, orange and green dashed panels with reviewer icons, review protocol boxes, check/cross/question marks and chart icons; Fig. 5.",
+        "draft": "Fig. 5: benchmark review steps. Step 1: initial double human review of 150 MCQA samples, then compare annotations and align. Step 2: single human review of the remaining 650 samples to estimate the benchmark error rate. Step 3: humans answer 600 questions with a search engine to estimate a human baseline."
+      },
+      "img-p008-1": {
+        "role": "figure",
+        "saw": "Bar chart titled 'Mean Difference from Average Accuracy by Guidance Topic Area', y in percentage points, green positive and red negative bars with value labels; left panel of Fig. 6.",
+        "draft": "Fig. 6 (left): mean deviation from overall model accuracy by topic area, in percentage points: Climate and Health +8.7, Health Protection in Inclusion Health Settings +4.0, Other +3.4, HCAI/Fungal/AMR +2.7, Blood Safety/Hepatitis/STIs/HIV -0.4, Radiation -1.4, VPDs & Immunisation -1.4, Gastro & Food Safety -1.7, Tuberculosis/Travel/Zoonotic -2.2, Chemicals & Toxicology -2.4."
+      },
+      "img-p008-2": {
+        "role": "figure",
+        "saw": "Bar chart titled 'Mean Difference from Average Accuracy by Guidance Audience', y -4 to 5 percentage points, value labels; right panel of Fig. 6.",
+        "draft": "Fig. 6 (right): mean deviation from overall accuracy by audience: Public Guidance +4.7, Multiple Audiences +2.1, Unclassified +0.5, Professional Guidance 0.0, Clinical Guidance -3.8 percentage points."
+      },
+      "img-p015-1": {
+        "role": "figure",
+        "saw": "2x2 confusion matrix, axes True label / Predicted label (Not Valid, Valid), viridis colour bar ~2-26, annotations circled; Fig. 7.",
+        "draft": "Fig. 7: confusion matrix for LLM MCQA error detection. True Not Valid: 6 predicted Not Valid, 2 predicted Valid (annotated '2 invalid questions not filtered'); True Valid: 16 predicted Not Valid (annotated 'Accept large number of false positives'), 26 predicted Valid. Colour bar ticks 5 to 25."
+      },
+      "img-p016-1": {
+        "role": "figure",
+        "saw": "Bar chart, x 'Guidance Last Revision' years 2002-2024, y 'Number of Questions' 0-2500, bars labelled with percentages; Fig. 8.",
+        "draft": "Fig. 8: PubHealthBench-Full questions by source guidance last revision year. Counts are small before 2011 (0-1%), rise to 9% in 2019, 10% in 2022, 17% in 2023 and 31% (about 2480 questions) in 2024."
+      },
+      "img-p016-2": {
+        "role": "figure",
+        "saw": "Two-segment donut chart labelled PDF 51.8% and HTML 48.2%; left panel of Fig. 9.",
+        "draft": "Fig. 9 (left): samples by source document type: PDF 51.8%, HTML 48.2%."
+      },
+      "img-p016-3": {
+        "role": "figure",
+        "saw": "Three-segment donut chart labelled 1. Good 83.1%, 2. Acceptable 11.4%, 3. Invalid 5.5%; right panel of Fig. 9.",
+        "draft": "Fig. 9 (right): MCQA quality ratings from human review: Good 83.1%, Acceptable 11.4%, Invalid 5.5%."
+      },
+      "img-p022-1": {
+        "role": "figure",
+        "saw": "Dot plot, y 'Accuracy (%)' 0-100, x 'Model', coloured dots per LLM judge (GPT-4o-Mini, Llama-3.3-70B*, MedGemma-27B, Phi-4-14B) with black mean bars and percent labels; Fig. 10.",
+        "draft": "Fig. 10: PubHealthBench-FreeForm accuracy per model as scored by four LLM judges. Mean values rise from 16% (Gemma-3-1B) to 72% (o1); Llama-3.3-70B* judge points generally sit lowest, the other three judges cluster together."
+      },
+      "img-p024-1": {
+        "role": "figure",
+        "saw": "100% stacked bar chart per model, y 'Proportion (%)', three result categories with percentage labels; Fig. 11.",
+        "draft": "Fig. 11: free-form error types per model (classified by Llama-3.3-70bn): 1. Extraneous Information (teal, about 5-19%), 2. Omitted Information (yellow, about 9-29%), 3. Contradiction or Misstatement (orange, 57% for GPT-4o rising to 81% for Gemma-3-1B)."
+      },
+      "img-p024-2": {
+        "role": "figure",
+        "saw": "Text panel with grey question, red 'LLM Response (o1)' and green 'UKHSA Guidance' boxes, footer 'Problematic: Encourages Starting Intervention Earlier Than Recommended'; Fig. 12.",
+        "draft": "Fig. 12: example problematic o1 response about surgery for a drum still perforated after blast injury: o1 says about six weeks, the UKHSA guidance says 3 months post-injury. Labelled 'Encourages Starting Intervention Earlier Than Recommended'."
+      },
+      "img-p025-1": {
+        "role": "figure",
+        "saw": "Same panel layout; question on MenACWY after MenC, footer 'Encourages Starting Intervention Later Than Recommended'; Fig. 13.",
+        "draft": "Fig. 13: example problematic o1 response on MenACWY vaccine timing after MenC at age 10+: o1 says at least 12 months later (4 weeks minimum if at risk); guidance says it can be given at any interval. Labelled 'Encourages Starting Intervention Later Than Recommended'."
+      },
+      "img-p025-2": {
+        "role": "figure",
+        "saw": "Same panel layout; question on scabies outbreak surveillance, footer 'Suggests Ending Intervention Earlier Than Recommended'; Fig. 14.",
+        "draft": "Fig. 14: example problematic o1 response on heightened surveillance after a scabies outbreak: o1 says four weeks; guidance says 12 weeks after symptom onset in the last known case. Labelled 'Suggests Ending Intervention Earlier Than Recommended'."
+      },
+      "img-p025-3": {
+        "role": "figure",
+        "saw": "Same panel layout; question on suspected zanamivir resistance, footer 'Suggests Additional Intervention'; Fig. 15.",
+        "draft": "Fig. 15: example problematic o1 response on suspected zanamivir resistance: o1 says stop zanamivir and switch antivirals; guidance says continue zanamivir and arrange urgent resistance testing. Labelled 'Suggests Additional Intervention'."
+      }
+    },
+    "arxiv-2507.23348v1": {
+      "img-p003-4": {
+        "role": "figure",
+        "saw": "blue folder icon",
+        "draft": "Blue folder glyph used as a directory node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-10": {
+        "role": "figure",
+        "saw": "blue folder icon",
+        "draft": "Blue folder glyph used as a directory node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-35": {
+        "role": "figure",
+        "saw": "blue folder icon",
+        "draft": "Blue folder glyph used as a directory node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-5": {
+        "role": "figure",
+        "saw": "blue code-file icon",
+        "draft": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-11": {
+        "role": "figure",
+        "saw": "blue code-file icon",
+        "draft": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-36": {
+        "role": "figure",
+        "saw": "blue code-file icon",
+        "draft": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-38": {
+        "role": "figure",
+        "saw": "blue code-file icon",
+        "draft": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-6": {
+        "role": "figure",
+        "saw": "blue three-gear icon",
+        "draft": "Blue cluster of three gears marking a class node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-12": {
+        "role": "figure",
+        "saw": "blue three-gear icon",
+        "draft": "Blue cluster of three gears marking a class node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-37": {
+        "role": "figure",
+        "saw": "blue three-gear icon",
+        "draft": "Blue cluster of three gears marking a class node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-39": {
+        "role": "figure",
+        "saw": "blue three-gear icon",
+        "draft": "Blue cluster of three gears marking a class node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-7": {
+        "role": "figure",
+        "saw": "blue single-gear icon",
+        "draft": "Blue single gear marking a function/method node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-14": {
+        "role": "figure",
+        "saw": "blue single-gear icon",
+        "draft": "Blue single gear marking a function/method node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-40": {
+        "role": "figure",
+        "saw": "blue single-gear icon",
+        "draft": "Blue single gear marking a function/method node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-41": {
+        "role": "figure",
+        "saw": "blue single-gear icon",
+        "draft": "Blue single gear marking a function/method node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-45": {
+        "role": "figure",
+        "saw": "blue single-gear icon",
+        "draft": "Blue single gear marking a function/method node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-8": {
+        "role": "figure",
+        "saw": "black chain-link icon",
+        "draft": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-15": {
+        "role": "figure",
+        "saw": "black chain-link icon",
+        "draft": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-25": {
+        "role": "figure",
+        "saw": "black chain-link icon",
+        "draft": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-59": {
+        "role": "figure",
+        "saw": "black chain-link icon",
+        "draft": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-61": {
+        "role": "figure",
+        "saw": "black chain-link icon",
+        "draft": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-71": {
+        "role": "figure",
+        "saw": "black chain-link icon",
+        "draft": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-81": {
+        "role": "figure",
+        "saw": "black chain-link icon",
+        "draft": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-91": {
+        "role": "figure",
+        "saw": "black chain-link icon",
+        "draft": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-101": {
+        "role": "figure",
+        "saw": "black chain-link icon",
+        "draft": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-42": {
+        "role": "figure",
+        "saw": "black group with speech bubbles",
+        "draft": "Black icon of three people with two speech bubbles, representing a group of debating agents in Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-48": {
+        "role": "figure",
+        "saw": "black group with speech bubbles",
+        "draft": "Black icon of three people with two speech bubbles, representing a group of debating agents in Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-51": {
+        "role": "figure",
+        "saw": "black group with speech bubbles",
+        "draft": "Black icon of three people with two speech bubbles, representing a group of debating agents in Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-54": {
+        "role": "figure",
+        "saw": "black beetle/bug icon",
+        "draft": "Black bug icon labelling the GitHub issue (django-11999) panel in Figure 1 (motivating example of multi-agent debate)."
+      },
+      "img-p003-1": {
+        "role": "figure",
+        "saw": "red circle with white X",
+        "draft": "Red circular X badge marking the individual-exploration plan as \"Wrong place!\" in Figure 1."
+      },
+      "img-p003-13": {
+        "role": "figure",
+        "saw": "green circle with white check",
+        "draft": "Green circular check badge marking the competitive-debate plan as \"Correct place!\" in Figure 1."
+      },
+      "img-p003-2": {
+        "role": "figure",
+        "saw": "tree diagram with file/class/function nodes and dashed arrows",
+        "draft": "File-tree localization diagram from Figure 1: django -> db/models -> fields -> __init__.py -> Field -> contribute_to_class, plus options.py -> add_field and contrib/contenttypes -> fields.py -> GenericForeignKey -> contribute_to_class, with dashed blue arrows linking the nodes into a propagation chain."
+      },
+      "img-p003-56": {
+        "role": "figure",
+        "saw": "short tree diagram with dashed arrows",
+        "draft": "File-tree localization chain from Figure 1 (individual exploration): django/db/models -> base.py -> Model -> _get_FIELD_display, linked by dashed blue arrows."
+      },
+      "img-p003-3": {
+        "role": "figure",
+        "saw": "three horizontal light-blue dots",
+        "draft": "Three horizontal light-blue dots indicating elided localization chains between debating agents in Figure 1."
+      },
+      "img-p003-46": {
+        "role": "figure",
+        "saw": "black single-person silhouette",
+        "draft": "Black single-person icon representing the individual-exploration agent in Figure 1."
+      },
+      "img-p003-47": {
+        "role": "figure",
+        "saw": "black people around a table",
+        "draft": "Black icon of three people at a table, labelled \"Debate\" in Figure 1."
+      },
+      "img-p003-57": {
+        "role": "figure",
+        "saw": "black git pull-request icon",
+        "draft": "Black pull-request/merge glyph labelling the \"Golden Patch\" panel in Figure 1."
+      },
+      "img-p004-2": {
+        "role": "figure",
+        "saw": "pencil-on-lines icon",
+        "draft": "Black pencil-writing glyph marking an agent writing an argument/proposal in the modification-plan debate rounds of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-5": {
+        "role": "figure",
+        "saw": "pencil-on-lines icon",
+        "draft": "Black pencil-writing glyph marking an agent writing an argument/proposal in the modification-plan debate rounds of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-9": {
+        "role": "figure",
+        "saw": "pencil-on-lines icon",
+        "draft": "Black pencil-writing glyph marking an agent writing an argument/proposal in the modification-plan debate rounds of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-10": {
+        "role": "figure",
+        "saw": "pencil-on-lines icon",
+        "draft": "Black pencil-writing glyph marking an agent writing an argument/proposal in the modification-plan debate rounds of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-125": {
+        "role": "figure",
+        "saw": "pencil-on-lines icon",
+        "draft": "Black pencil-writing glyph marking an agent writing an argument/proposal in the modification-plan debate rounds of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-137": {
+        "role": "figure",
+        "saw": "pencil-on-lines icon",
+        "draft": "Black pencil-writing glyph marking an agent writing an argument/proposal in the modification-plan debate rounds of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-8": {
+        "role": "figure",
+        "saw": "thin blue left arrow in a tall transparent strip",
+        "draft": "Small blue left-pointing flow arrow linking stages in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-134": {
+        "role": "figure",
+        "saw": "thin blue left arrow in a tall transparent strip",
+        "draft": "Small blue left-pointing flow arrow linking stages in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-139": {
+        "role": "figure",
+        "saw": "thin blue left arrow in a tall transparent strip",
+        "draft": "Small blue left-pointing flow arrow linking stages in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-14": {
+        "role": "decorative",
+        "saw": "blurred gray arrow, a drop-shadow mask",
+        "draft": "Blurred gray left-pointing arrow silhouette; a soft drop shadow behind a blue flow arrow in Figure 2 (overview of the SWE-Debate framework), no information of its own."
+      },
+      "img-p004-110": {
+        "role": "decorative",
+        "saw": "blurred gray arrow, a drop-shadow mask",
+        "draft": "Blurred gray left-pointing arrow silhouette; a soft drop shadow behind a blue flow arrow in Figure 2 (overview of the SWE-Debate framework), no information of its own."
+      },
+      "img-p004-69": {
+        "role": "decorative",
+        "saw": "blurred gray arrow, a drop-shadow mask",
+        "draft": "Blurred gray right-pointing arrow silhouette; a soft drop shadow behind a blue flow arrow in Figure 2 (overview of the SWE-Debate framework), no information of its own."
+      },
+      "img-p004-17": {
+        "role": "figure",
+        "saw": "black chain-link icon",
+        "draft": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-25": {
+        "role": "figure",
+        "saw": "black chain-link icon",
+        "draft": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-42": {
+        "role": "figure",
+        "saw": "black chain-link icon",
+        "draft": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-50": {
+        "role": "figure",
+        "saw": "black chain-link icon",
+        "draft": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-58": {
+        "role": "figure",
+        "saw": "black chain-link icon",
+        "draft": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-61": {
+        "role": "figure",
+        "saw": "black chain-link icon",
+        "draft": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-71": {
+        "role": "figure",
+        "saw": "black chain-link icon",
+        "draft": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-74": {
+        "role": "figure",
+        "saw": "black chain-link icon",
+        "draft": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-77": {
+        "role": "figure",
+        "saw": "black chain-link icon",
+        "draft": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-85": {
+        "role": "figure",
+        "saw": "black chain-link icon",
+        "draft": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-33": {
+        "role": "figure",
+        "saw": "light-blue robot-head icon",
+        "draft": "Light-blue robot-head glyph representing an LLM agent in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-34": {
+        "role": "figure",
+        "saw": "light-blue robot-head icon",
+        "draft": "Light-blue robot-head glyph representing an LLM agent in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-35": {
+        "role": "figure",
+        "saw": "light-blue robot-head icon",
+        "draft": "Light-blue robot-head glyph representing an LLM agent in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-36": {
+        "role": "figure",
+        "saw": "light-blue robot-head icon",
+        "draft": "Light-blue robot-head glyph representing an LLM agent in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-37": {
+        "role": "figure",
+        "saw": "light-blue robot-head icon",
+        "draft": "Light-blue robot-head glyph representing an LLM agent in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-38": {
+        "role": "figure",
+        "saw": "light-blue robot-head icon",
+        "draft": "Light-blue robot-head glyph representing an LLM agent in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-39": {
+        "role": "figure",
+        "saw": "light-blue robot-head icon",
+        "draft": "Light-blue robot-head glyph representing an LLM agent in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-122": {
+        "role": "figure",
+        "saw": "light-blue robot-head icon",
+        "draft": "Light-blue robot-head glyph representing an LLM agent in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-127": {
+        "role": "figure",
+        "saw": "light-blue robot-head icon",
+        "draft": "Light-blue robot-head glyph representing an LLM agent in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-128": {
+        "role": "figure",
+        "saw": "light-blue robot-head icon",
+        "draft": "Light-blue robot-head glyph representing an LLM agent in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-1": {
+        "role": "figure",
+        "saw": "three vertical blue dots",
+        "draft": "Three vertically stacked blue dots indicating elided items (more chains/entities) in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-99": {
+        "role": "figure",
+        "saw": "three vertical blue dots",
+        "draft": "Three vertically stacked blue dots indicating elided items (more chains/entities) in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-132": {
+        "role": "figure",
+        "saw": "three horizontal blue dots",
+        "draft": "Three horizontal blue dots indicating elided items in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-93": {
+        "role": "figure",
+        "saw": "gray/yellow hands holding X and check signs",
+        "draft": "Two hands holding a gray X sign and a yellow check-mark sign, representing the debate/judging step in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-131": {
+        "role": "figure",
+        "saw": "gray/yellow hands holding X and check signs",
+        "draft": "Two hands holding a gray X sign and a yellow check-mark sign, representing the debate/judging step in Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-96": {
+        "role": "figure",
+        "saw": "blue folder icon",
+        "draft": "Blue folder glyph used as a directory node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-102": {
+        "role": "figure",
+        "saw": "blue folder icon",
+        "draft": "Blue folder glyph used as a directory node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-105": {
+        "role": "figure",
+        "saw": "blue folder icon",
+        "draft": "Blue folder glyph used as a directory node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-109": {
+        "role": "figure",
+        "saw": "blue folder icon",
+        "draft": "Blue folder glyph used as a directory node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-121": {
+        "role": "figure",
+        "saw": "blue folder icon",
+        "draft": "Blue folder glyph used as a directory node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-97": {
+        "role": "figure",
+        "saw": "blue code-file icon",
+        "draft": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-100": {
+        "role": "figure",
+        "saw": "blue code-file icon",
+        "draft": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-103": {
+        "role": "figure",
+        "saw": "blue code-file icon",
+        "draft": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-106": {
+        "role": "figure",
+        "saw": "blue code-file icon",
+        "draft": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-107": {
+        "role": "figure",
+        "saw": "blue code-file icon",
+        "draft": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-108": {
+        "role": "figure",
+        "saw": "blue code-file icon",
+        "draft": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-117": {
+        "role": "figure",
+        "saw": "blue code-file icon",
+        "draft": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-98": {
+        "role": "figure",
+        "saw": "blue three-gear icon",
+        "draft": "Blue cluster of three gears marking a class node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-118": {
+        "role": "figure",
+        "saw": "blue three-gear icon",
+        "draft": "Blue cluster of three gears marking a class node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-119": {
+        "role": "figure",
+        "saw": "blue three-gear icon",
+        "draft": "Blue cluster of three gears marking a class node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-120": {
+        "role": "figure",
+        "saw": "blue three-gear icon",
+        "draft": "Blue cluster of three gears marking a class node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-104": {
+        "role": "figure",
+        "saw": "blue single-gear icon",
+        "draft": "Blue single gear marking a function/method node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-113": {
+        "role": "figure",
+        "saw": "blue single-gear icon",
+        "draft": "Blue single gear marking a function/method node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-114": {
+        "role": "figure",
+        "saw": "blue single-gear icon",
+        "draft": "Blue single gear marking a function/method node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-115": {
+        "role": "figure",
+        "saw": "blue single-gear icon",
+        "draft": "Blue single gear marking a function/method node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-116": {
+        "role": "figure",
+        "saw": "blue single-gear icon",
+        "draft": "Blue single gear marking a function/method node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework)."
+      },
+      "img-p004-129": {
+        "role": "figure",
+        "saw": "black beetle/bug icon",
+        "draft": "Black bug icon labelling the GitHub issue (django-11999) panel in Figure 2."
+      },
+      "img-p004-13": {
+        "role": "figure",
+        "saw": "lavender rounded square with plus sign",
+        "draft": "Lavender rounded square with a purple plus sign, part of the robot/graph-construction step in the fault-propagation panel of Figure 2."
+      },
+      "img-p004-40": {
+        "role": "figure",
+        "saw": "colour cartoon robot at a laptop",
+        "draft": "Colour illustration of a blue robot working at a laptop, representing the debating/judging agent in Figure 2."
+      },
+      "img-p004-94": {
+        "role": "figure",
+        "saw": "colour robot figure",
+        "draft": "Blue/purple robot illustration labelled \"Editor\" in the patch-generation stage of Figure 2."
+      },
+      "img-p004-95": {
+        "role": "figure",
+        "saw": "window with wrench and code-tag badge",
+        "draft": "Blue icon of a window with a wrench and a \"</>\" badge, labelled \"Patch\" (output) in Figure 2."
+      },
+      "img-p004-101": {
+        "role": "figure",
+        "saw": "gray diamond git logo",
+        "draft": "Gray Git logo glyph inside the \"Environment\" box of Figure 2, used as a diagram element."
+      },
+      "img-p004-130": {
+        "role": "figure",
+        "saw": "short tree diagram with dashed arrows",
+        "draft": "Localization chain diagram under \"Best Chain\" in Figure 2: django/db/models/fields -> __init__.py -> contribute_to_class, linked by dashed blue arrows."
+      },
+      "img-p006-1": {
+        "role": "figure",
+        "saw": "padlock emoji next to model names in Table 1",
+        "draft": "Padlock emoji used as a row marker in Table 1 beside GPT-4o and Claude-3.5 Sonnet entries (closed models); the paper text does not define it."
+      },
+      "img-p006-8": {
+        "role": "figure",
+        "saw": "cowboy-hat emoji next to model names in Table 1",
+        "draft": "Cowboy-hat smiley emoji used as a row marker in Table 1 beside DeepSeek-V3-0324 and Lingma SWE-GPT 72B entries; the paper text does not define it."
+      },
+      "img-p009-1": {
+        "role": "figure",
+        "saw": "outline document icon",
+        "draft": "Outline document/page icon marking the issue text box (\"Evaluating powers of TensorProduct\") in Figure 4."
+      },
+      "img-p009-7": {
+        "role": "figure",
+        "saw": "tiny black bug glyph",
+        "draft": "Tiny black bug glyph overlaid on the issue document icon at the top of Figure 4."
+      },
+      "img-p009-2": {
+        "role": "decorative",
+        "saw": "blurred gray arrow, a drop-shadow mask",
+        "draft": "Blurred gray downward arrow-like silhouette; a soft drop shadow behind a blue flow arrow in Figure 4 (case study on instance sympy-13974), no information of its own."
+      },
+      "img-p009-4": {
+        "role": "decorative",
+        "saw": "blurred gray arrow, a drop-shadow mask",
+        "draft": "Blurred gray downward arrow-like silhouette; a soft drop shadow behind a blue flow arrow in Figure 4 (case study on instance sympy-13974), no information of its own."
+      },
+      "img-p009-10": {
+        "role": "decorative",
+        "saw": "blurred gray arrow, a drop-shadow mask",
+        "draft": "Blurred gray downward arrow-like silhouette; a soft drop shadow behind a blue flow arrow in Figure 4 (case study on instance sympy-13974), no information of its own."
+      },
+      "img-p009-16": {
+        "role": "decorative",
+        "saw": "blurred gray arrow, a drop-shadow mask",
+        "draft": "Blurred gray downward arrow-like silhouette; a soft drop shadow behind a blue flow arrow in Figure 4 (case study on instance sympy-13974), no information of its own."
+      },
+      "img-p009-8": {
+        "role": "figure",
+        "saw": "light-blue robot-head icon",
+        "draft": "Light-blue robot-head glyph representing an LLM agent in Figure 4 (case study on instance sympy-13974)."
+      },
+      "img-p009-9": {
+        "role": "figure",
+        "saw": "light-blue robot-head icon",
+        "draft": "Light-blue robot-head glyph representing an LLM agent in Figure 4 (case study on instance sympy-13974)."
+      },
+      "img-p009-13": {
+        "role": "figure",
+        "saw": "black judges-panel icon",
+        "draft": "Black icon of three judges with scales behind a bench facing a person, labelled \"Debate\" in Figure 4."
+      },
+      "img-p009-14": {
+        "role": "figure",
+        "saw": "gold trophy with star",
+        "draft": "Gold trophy icon marking Chain4 as the selected (winning) localization chain in Figure 4."
+      },
+      "img-p009-15": {
+        "role": "figure",
+        "saw": "green circle with white check",
+        "draft": "Green circular check badge at the bottom of the patch panel in Figure 4, marking the patch as correct."
+      }
+    },
+    "arxiv-2512.09874v3": {
+      "img-p005-1": {
+        "role": "figure",
+        "saw": "Flowchart panel headed '3. Evaluation Pipeline'; lower part of Figure 1 (continues from img-p005-2).",
+        "draft": "Figure 1, part 3 'Evaluation Pipeline': a PDF-Parser produces Parsed Text (TXT); together with Ground Truth (JSON list of text, inline-formula and display-formula items) it feeds 'LLM-Based Matching (+ Rule-Based Post-Verification)', which outputs Formula Pairs (JSON of gt_formula/parsed_formula, e.g. $a+1$ vs $a+I$) and then 'Evaluation for all formula pairs'."
+      },
+      "img-p005-2": {
+        "role": "figure",
+        "saw": "Flowchart panels '1. Formula Dataset' and '2. Benchmark Dataset'; upper part of Figure 1.",
+        "draft": "Figure 1, parts 1-2: Formula Dataset (Wikipedia → Formula Extraction → Filtering + Deduplication → wikipedia-latex-formulas-319k, with a Hugging Face emoji logo), then Benchmark Dataset: randomized building blocks (Display Formulas, Text Segments, Text + Inline Formulas Mixed) form a Ground Truth JSON, combined with a randomized Layout/Style LaTeX template into an assembled TEX file, compiled by pdflatex into the PDF to be parsed."
+      },
+      "img-p008-1": {
+        "role": "figure",
+        "saw": "Two CDM symbol-matching comparisons with score tables (illustrating rater disagreement).",
+        "draft": "Two formula comparisons rendered by the CDM tool (green boxes = matched symbols, red = errors), each with a score table. Left: 778320/2598960 vs 778120/2598960 (one digit red): LLM-Judge 3, CDM 0.929, human scores 1, 3, 9. Right: (1 + r/n)^n vs (1 + r/a)^n (denominator red): LLM-Judge 2, CDM 0.875, human scores 1, 4, 7."
+      },
+      "img-p010-1": {
+        "role": "figure",
+        "saw": "Four CDM comparison panels with all-green boxes; illustrates CDM false positives (text p.10).",
+        "draft": "Four ground-truth/parsed formula pairs separated by a blue line, all symbols boxed green: 7^2 vs 72, 10^{-1} vs 10 − 1, x_{(i−1)} vs x(i − 1), and blackboard ℕ ⊂ ℝ vs italic N ⊂ R. These are the examples of CDM giving matches despite positional or symbol differences."
+      },
+      "img-p010-2": {
+        "role": "figure",
+        "saw": "Four CDM comparison panels with red-boxed operator symbols; illustrates CDM false negatives.",
+        "draft": "Four formula pairs that look equivalent but where CDM boxes the middle symbol in red: A ∧ B, A \\ B = 0, x → y, and x ≠ y, each shown above and below a blue line with the operands boxed green."
+      }
+    },
+    "arxiv-2601.04544v1": {
+      "img-p001-1": {
+        "role": "logo",
+        "saw": "Wordmark of the paper's system name with a coloured funnel icon, on the title page; carries no figure content.",
+        "draft": "Logo: an inverted funnel of four coloured bars (blue, green, orange, red) beside the italic wordmark 'TCAndon'."
+      },
+      "img-p002-2": {
+        "role": "figure",
+        "saw": "Two-panel routing diagram with (a)/(b) labels; Figure 1.",
+        "draft": "Figure 1: (a) a query box ('How to improve the power output of an EUV light source') feeds a 'performance Router' that branches to five model logos (OpenAI, DeepSeek, Gemini, Qwen, Claude-style icons); (b) that query and a second one ('How to monitor the metrics of CDN') feed a 'Task Router' that routes them to an 'EUV Agent' and a 'CDN Agent' respectively, among other unnamed agent boxes."
+      },
+      "img-p005-2": {
+        "role": "figure",
+        "saw": "Two-panel pipeline diagram with icons and arrows; Figure 2.",
+        "draft": "Figure 2: (a) Solo Agent: User sends a Query to a Router, which passes it to one Solver Agent that returns an Answer; (b) the Router sends the query to Solver Agents A, B and C, whose Answers A, B, C go to a Refining Agent that produces the Final Answer."
+      }
+    },
+    "arxiv-2604.00554v1": {
+      "img-p002-1": {
+        "role": "figure",
+        "saw": "Scanned review page shown as an illustrative figure with coloured annotation boxes (not page furniture of this paper). Left half of Figure 1.",
+        "draft": "Figure 1 (left): scan of zbMATH review page 120 (German), with a blue box around the end of a preceding review and red boxes around complete reviews (Mordell, Oppenheim, Wenkow). Illustrates where documents start and end on a page."
+      },
+      "img-p002-2": {
+        "role": "figure",
+        "saw": "Scanned review page shown as an illustrative figure with coloured annotation boxes (not page furniture of this paper). Right half of Figure 1.",
+        "draft": "Figure 1 (right): scan of zbMATH review page 121, with a red box around the end of a review and the review of Jones (genus of ternary quadratic forms), and a green box around the start of the Uspensky review that continues past the page."
+      },
+      "img-p005-1": {
+        "role": "figure",
+        "saw": "Scanned review page shown as an illustrative figure with coloured annotation boxes (not page furniture of this paper). Matches Figure 2 caption (red = titles/sources, blue = text to extract).",
+        "draft": "Figure 2: scan of review page 8 with red boxes around the title/source lines of the Artin and Herbrand entries and a blue box around the Artin review body, illustrating the regular-expression extraction approach."
+      },
+      "img-p005-2": {
+        "role": "figure",
+        "saw": "Screenshot of prompt and model-output text boxes; Figure 3.",
+        "draft": "Figure 3: two monospaced text boxes. The upper shows the prompt asking the model to extract the review between a given title and the following title from a LaTeX text chunk; the lower shows the model output, a German review text containing LaTeX-escaped mathematics."
+      },
+      "img-p006-1": {
+        "role": "figure",
+        "saw": "Log-scale line plot with legend; part of Figure 4 (validation losses).",
+        "draft": "Figure 4 panel 'CalmExperiment 7B slerp': validation loss (log scale, ~10^-2 to 10^1) against epoch (0-10) for lr = 0.00005 (blue), 0.005 (green), 0.0005 (red). Green stays near 10; blue decreases from about 0.45 to about 0.019; red decreases from about 0.09 to about 0.01."
+      },
+      "img-p006-2": {
+        "role": "figure",
+        "saw": "Log-scale line plot with legend; part of Figure 4.",
+        "draft": "Figure 4 panel 'Maxine 7B 0401 stock': validation loss (log scale) against epoch (0-10) for three learning rates. lr = 0.005 stays near 8-10; lr = 0.00005 decreases from about 0.45 to about 0.018; lr = 0.0005 decreases from about 0.09 to about 0.011."
+      },
+      "img-p006-3": {
+        "role": "figure",
+        "saw": "Log-scale line plot with legend; part of Figure 4.",
+        "draft": "Figure 4 panel 'Mistral Passthrough 8L 10B': validation loss (log scale) against epoch (0-10). lr = 0.005 stays near 8-10; lr = 0.00005 decreases from about 0.19 to about 0.014; lr = 0.0005 decreases from about 0.065 to about 0.0098."
+      },
+      "img-p007-1": {
+        "role": "figure",
+        "saw": "Log-scale line plot of training losses with legend; Figure 5.",
+        "draft": "Figure 5, 'Logarithmic Plot of Training Losses over Time': training loss (log scale, ~5e-4 to 0.2) against epoch (0-5) for CalmExperiment-7B-slerp (red), Maxine-7B-0401-stock (blue), Mistral-Passthrough-8L-10B (green). All three are noisy and trend downward from about 0.17 (green near 0.04) to about 10^-3."
+      },
+      "img-p007-2": {
+        "role": "figure",
+        "saw": "Scanned review page with a red highlight box and a small 'title' tag; Figure 6 CV model output.",
+        "draft": "Figure 6: scan of review page 35 where the computer-vision model has drawn one red box (labelled 'title') around the Fröhlich and Shepherdson title line; the other two titles on the page (Yoshida, Auslander and Buchsbaum) are not boxed."
+      }
+    },
+    "arxiv-2607.00053v1": {
+      "img-p002-1": {
+        "role": "decorative",
+        "saw": "Plain blurred grey rounded rectangle with no text; page render shows it is the drop shadow behind the 'Weaker, cheaper LLM m1' box in Figure 1 (no information content; schema reserves `furniture` for a threshold basis, so the inspected role is decorative)",
+        "draft": "Blank grey shadow rectangle behind a box of the Figure 1 diagram; no content."
+      },
+      "img-p002-2": {
+        "role": "decorative",
+        "saw": "Plain blurred grey rounded rectangle with no text; page render shows it is the drop shadow behind the 'Stronger, expensive LLM m2' box in Figure 1 (no information content; schema reserves `furniture` for a threshold basis, so the inspected role is decorative)",
+        "draft": "Blank grey shadow rectangle behind a box of the Figure 1 diagram; no content."
+      }
+    },
+    "arxiv-2607.20636v1": {
+      "img-p045-1": {
+        "role": "figure",
+        "saw": "Line plot embedded as a thumbnail inside Figure 4.1's phase-1 panel (page render confirms).",
+        "draft": "Thumbnail line plot from Figure 4.1 (phase 1): five coloured curves rising from 0 and plateauing over x = 0 to 50; y-axis 0 to 1.0, with plateaus near 0.97, 0.63, 0.61, 0.46 and 0.33. No axis labels."
+      },
+      "img-p045-2": {
+        "role": "figure",
+        "saw": "Second line-plot thumbnail inside Figure 4.1 (page render confirms).",
+        "draft": "Thumbnail line plot from Figure 4.1: five curves rising from 0 and plateauing over x = 0 to 50; y-axis 0 to 1.0, plateaus near 0.75 (red), 0.51 (orange), 0.47 (green), 0.44 (purple) and 0.26 (blue). No axis labels."
+      },
+      "img-p045-4": {
+        "role": "figure",
+        "saw": "Third line-plot thumbnail used in Figure 4.1 (page render confirms).",
+        "draft": "Thumbnail line plot from Figure 4.1: five curves over x = 0 to 50, y-axis 0 to 1.0; blue plateaus near 0.91, green near 0.71, orange near 0.2, while red and purple rise more slowly to about 0.41-0.43. No axis labels."
+      },
+      "img-p052-1": {
+        "role": "figure",
+        "saw": "Matplotlib plot with title, labelled axes and legend; matches Figure 4.4 caption.",
+        "draft": "Figure 4.4, 'α sweeps for selected datasets': normalized cumulative reward (ALG/OPT) on y (0.66-1.02) against α on x (0.1-1.0) for datasets ds 19, 46, 16, 67, 58, 55, each with a shaded confidence band. ds 55 is flat near 0.996; ds 19 and ds 46 decrease with α (about 0.79 to 0.72 and 0.735 to 0.70); the others are nearly flat between 0.84 and 0.95."
+      },
+      "img-p053-1": {
+        "role": "figure",
+        "saw": "Three-panel line plot with titles and axis labels; matches Figure 4.5 caption.",
+        "draft": "Figure 4.5: three panels of mean reward curves, y = reward = 1 - error_rate (0 to 1.0) against pull count (anchor index, 0 to ~44), one curve per arm. Panel titles: Dataset 19 (best α on grid = 0.1), Dataset 16 (best α on grid = 0.7), Dataset 67 (best α on grid = 1.0)."
+      },
+      "img-p090-1": {
+        "role": "figure",
+        "saw": "Line plot with error bars, title, axis labels and legend; Figure 6.1.",
+        "draft": "Figure 6.1, 'Impact of Financial Supplement on Finding Correct Cascade, 100 agents': proportion of correct cascades (0-1.0) against signal strength (0.51-0.99). 'our subsidy' (orange) starts near 0.89 and reaches about 1.0 by 0.6; 'no subsidy' (blue) rises from about 0.51 to 1.0, with error bars."
+      },
+      "img-p090-2": {
+        "role": "figure",
+        "saw": "Line plot with error bars and legend; Figure 6.2.",
+        "draft": "Figure 6.2, 'Impact of No Financial Supplement on Finding Correct Cascade': proportion of correct cascades against signal strength (0.51-0.99) for 10, 100 and 1000 agents; all three curves rise from about 0.5 to 1.0 and nearly coincide, with error bars."
+      },
+      "img-p091-1": {
+        "role": "figure",
+        "saw": "Line plot with error bars and six-entry legend; Figure 6.3.",
+        "draft": "Figure 6.3, 'Average Subsidy Progression' (100 agents): subsidy (0 to ~0.07) against agent index (0-100) for signal strengths 0.51, 0.6, 0.7, 0.8, 0.9, 0.99. Higher signal strengths spike early and fall to 0; 0.6 peaks near 0.065 and decays to about 0.003; 0.51 rises to a plateau near 0.022; 0.99 stays at 0."
+      },
+      "img-p100-1": {
+        "role": "figure",
+        "saw": "Coloured table image with formula entries; Figure 7.1 (reward table).",
+        "draft": "Figure 7.1: a green-shaded table with columns Agent A, Agent B, Agent C and rows θ < s_A, s_A ≤ θ < s_B, s_B ≤ θ < s_C, s_C ≤ θ. Cells contain either (α/2)(T−θ)² or a square root of 2T over a tilde-marked α for that agent (α̃_A, α̃_B, α̃_C), the latter appearing below the diagonal."
+      },
+      "img-p107-1": {
+        "role": "figure",
+        "saw": "Line plot with title, x label and legend; Figure 7.2.",
+        "draft": "Figure 7.2, 'Gaussian -- switch vs standard deviation for fixed mean=25': y from 0 to 100 against prior standard deviation (0-100). 'switches' (blue) rises from 25 in steps, concave, to about 82; 'μ' (orange) is a horizontal line at 25."
+      },
+      "img-p150-1": {
+        "role": "figure",
+        "saw": "Appendix alpha-sweep plot with legend (datasets 0-25).",
+        "draft": "'Alpha sweeps with 95% t-intervals (datasets 0–25)': normalized cumulative reward (ALG/OPT), 0.66-1.02, against alpha (0.1-1.0) for ds 0, 9, 12, 16, 17, 18, 19, 20, 25 with shaded bands. Most curves are nearly flat between about 0.84 and 0.94; ds 19 decreases from about 0.79 to 0.72."
+      },
+      "img-p150-2": {
+        "role": "figure",
+        "saw": "Appendix alpha-sweep plot with legend (datasets 28-50).",
+        "draft": "'Alpha sweeps with 95% t-intervals (datasets 28–50)': ALG/OPT against alpha for ds 28, 30, 32, 33, 41, 42, 46, 49, 50. ds 42 flat near 0.955; most others between about 0.86 and 0.92; ds 46 decreases from about 0.735 to 0.70."
+      },
+      "img-p150-3": {
+        "role": "figure",
+        "saw": "Appendix alpha-sweep plot with legend (datasets 51-71).",
+        "draft": "'Alpha sweeps with 95% t-intervals (datasets 51–71)': ALG/OPT against alpha for ds 51, 55, 57, 58, 59, 63, 64, 67, 71. ds 55 flat near 0.996; the others lie between about 0.885 and 0.96 with small trends (ds 67 rising slightly, ds 58 and ds 71 falling slightly)."
+      },
+      "img-p177-1": {
+        "role": "figure",
+        "saw": "Line plot with error bars and legend; 10-agent variant of the subsidy comparison.",
+        "draft": "'Impact of Financial Supplement on Finding Correct Cascade, 10 agents': proportion of correct cascades against signal strength (0.51-0.99). 'our subsidy' (orange) lies slightly above 'no subsidy' (blue); both rise from about 0.5 to 1.0, with error bars."
+      },
+      "img-p177-2": {
+        "role": "figure",
+        "saw": "Line plot with error bars and legend; 1000-agent variant.",
+        "draft": "'Impact of Financial Supplement on Finding Correct Cascade, 1000 agents': 'our subsidy' (orange) starts near 0.97 and stays near 1.0; 'no subsidy' (blue) rises from about 0.53 to 1.0 over signal strengths 0.51-0.99."
+      },
+      "img-p178-1": {
+        "role": "figure",
+        "saw": "Line plot with error bars; subsidy progression for 10 agents (x 0-9).",
+        "draft": "'Average Subsidy Progression' over agents 0-9: subsidy (0 to ~0.09) for signal strengths 0.51-0.99. 0.7 (red) peaks near 0.083 at agent 4; 0.6 (green) fluctuates around 0.04-0.054; 0.8 and 0.9 peak at agent 2 then fall toward 0; 0.51 stays near 0.004-0.012; 0.99 is 0."
+      },
+      "img-p178-2": {
+        "role": "figure",
+        "saw": "Line plot with dense error bars; subsidy progression for 1000 agents (x 0-1000).",
+        "draft": "'Average Subsidy Progression' over agents 0-1000: high signal strengths spike near the start (up to ~0.08) and drop to 0 within the first ~130 agents (0.6 green lasts longest); 0.51 (blue) rises to about 0.022 near agent 100 and slowly declines to about 0.011 by agent 1000; 0.99 stays at 0."
+      }
+    }
+  }
+}

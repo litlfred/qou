@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
+    }
+  ],
+  "@id": "library/arxiv-2405.14766v2/blocks/figure-img-p001-2",
+  "@type": [
+    "folio-assistant-core:Figure",
+    "doco:Figure"
+  ],
+  "kind": "figure",
+  "file": "../images/img-p001-2.png",
+  "pageStart": 1,
+  "pageEnd": 1,
+  "narrative": {
+    "text": "Figure 1 (right): radar chart of micro-F1 scores (radial axis 0 to 1) on 16 tasks prefixed B- (burden), RF- (risk factors) and I- (interventions), for seven models: Command-R-0824-32B, Flan-T5-xxl, Gemma-2-27B-It, Llama-3.3-70B-Instruct, Mistral-7B-Instruct-v0.2, Mistral-Large-AWQ4Bit, Stable-Beluga-2. Most models score near 0.8-0.95 on B-News Headline and B-GI Classification and lower on I-Causal Relations and I-BioDex Drugs Extraction.",
+    "state": "draft",
+    "drafted_by": {
+      "kind": "agent",
+      "id": "claude",
+      "model": "claude-opus-5-5"
+    },
+    "drafted_at": "2026-10-11"
+  },
+  "derivedFrom": "library/arxiv-2405.14766v2/sections/sec-front-matter",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2405.14766v2/manifest.jsonld",
+  "provenance": "ingested"
+}

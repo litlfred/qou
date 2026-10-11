@@ -1,0 +1,135 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2404.04834v4",
+ "source_sha256": "df742fea7776a7c0",
+ "brief": "LLM-Based Multi-Agent Systems for Software Engineering: Literature Review, Vision and the Road Ahead — 23 sections: Front matter; Introduction; Autonomous Agent",
+ "extended": "**LLM-Based Multi-Agent Systems for Software Engineering: Literature Review, Vision and the Road Ahead**\n\n*Literature Review, Vision and the Road Ahead*\n\n30 pp, 23 sections.\n\n**Outline.** Front matter; 1 Introduction; 2.1 Autonomous Agent; 2.3 LLM-Based Multi-Agent Systems; 3 Literature Review; 2 Preliminary; 2.2 LLM-based Autonomous Agent; 3.1 Requirements Engineering; 3.2 Code Generation; 3.3 Software Quality Assurance; 3.4 Software Maintenance; 3.5 End-to-end Software Development; 4 Case Study; 4.1 Snake Game; 4.2 Tetris Game; 5 Research Agenda; 5.1 Phase 1: Enhancing Individual Agent Capabi; 5.2 Phase Two: Optimizing Agent Synergy",
+ "tokens": {
+  "brief": 40,
+  "extended": 160
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-21-autonomous-agent",
+   "title": "Autonomous Agent",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-23-llm-based-multi-agent-systems",
+   "title": "LLM-Based Multi-Agent Systems",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-003-3-literature-review",
+   "title": "Literature Review",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-004-2-preliminary",
+   "title": "Preliminary",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-005-22-llm-based-autonomous-agent",
+   "title": "LLM-based Autonomous Agent",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-006-31-requirements-engineering",
+   "title": "Requirements Engineering",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-007-32-code-generation",
+   "title": "Code Generation",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-008-33-software-quality-assurance",
+   "title": "Software Quality Assurance",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-009-34-software-maintenance",
+   "title": "Software Maintenance",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-010-35-end-to-end-software-development",
+   "title": "End-to-end Software Development",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-011-4-case-study",
+   "title": "Case Study",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-012-41-snake-game",
+   "title": "Snake Game",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-013-42-tetris-game",
+   "title": "Tetris Game",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-014-5-research-agenda",
+   "title": "Research Agenda",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-015-51-phase-1-enhancing-individual-agent-capabiliti",
+   "title": "Phase 1: Enhancing Individual Agent Capabilities",
+   "pages": "12-17"
+  },
+  {
+   "id": "sec-016-52-phase-two-optimizing-agent-synergy",
+   "title": "Phase Two: Optimizing Agent Synergy",
+   "pages": "17-22"
+  },
+  {
+   "id": "sec-017-6-discussion",
+   "title": "Discussion",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-018-61-a-comparison-with-the-mixture-of-experts-para",
+   "title": "A Comparison with the Mixture of Experts Paradigm",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-019-62-threat-to-validity",
+   "title": "Threat to Validity",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-020-7-conclusion-and-future-work",
+   "title": "Conclusion and Future Work",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-021-references",
+   "title": "References",
+   "pages": "23-30"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

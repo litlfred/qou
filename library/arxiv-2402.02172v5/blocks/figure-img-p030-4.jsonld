@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
+    }
+  ],
+  "@id": "library/arxiv-2402.02172v5/blocks/figure-img-p030-4",
+  "@type": [
+    "folio-assistant-core:Figure",
+    "doco:Figure"
+  ],
+  "kind": "figure",
+  "file": "../images/img-p030-4.png",
+  "pageStart": 30,
+  "pageEnd": 30,
+  "narrative": {
+    "text": "Yellow circular plus-sign icon, used to combine inputs (commit + message + file) in Figure 18 (C example).",
+    "state": "draft",
+    "drafted_by": {
+      "kind": "agent",
+      "id": "claude",
+      "model": "claude-opus-5-5"
+    },
+    "drafted_at": "2026-10-11"
+  },
+  "derivedFrom": "library/arxiv-2402.02172v5/sections/sec-030",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2402.02172v5/manifest.jsonld",
+  "provenance": "ingested"
+}

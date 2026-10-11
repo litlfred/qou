@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
+    }
+  ],
+  "@id": "library/arxiv-2607.20636v1/blocks/figure-img-p052-1",
+  "@type": [
+    "folio-assistant-core:Figure",
+    "doco:Figure"
+  ],
+  "kind": "figure",
+  "file": "../images/img-p052-1.png",
+  "pageStart": 52,
+  "pageEnd": 52,
+  "narrative": {
+    "text": "Figure 4.4, 'α sweeps for selected datasets': normalized cumulative reward (ALG/OPT) on y (0.66-1.02) against α on x (0.1-1.0) for datasets ds 19, 46, 16, 67, 58, 55, each with a shaded confidence band. ds 55 is flat near 0.996; ds 19 and ds 46 decrease with α (about 0.79 to 0.72 and 0.735 to 0.70); the others are nearly flat between 0.84 and 0.95.",
+    "state": "draft",
+    "drafted_by": {
+      "kind": "agent",
+      "id": "claude",
+      "model": "claude-opus-5-5"
+    },
+    "drafted_at": "2026-10-11"
+  },
+  "derivedFrom": "library/arxiv-2607.20636v1/sections/sec-029",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2607.20636v1/manifest.jsonld",
+  "provenance": "ingested"
+}

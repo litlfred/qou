@@ -1,0 +1,13 @@
+---
+doc_id: arxiv-2404.04834v4
+doc_title: "LLM-Based Multi-Agent Systems for Software Engineering: Literature Review, Vision and the Road Ahead"
+section_id: sec-017-6-discussion
+section_title: "Discussion"
+section_number: 6
+pages: 22-22
+source_pdf: 2404.04834v4.pdf
+source_sha256: df742fea7776a7c0
+toc_source: outline
+doc_brief: "LLM-Based Multi-Agent Systems for Software Engineering: Literature Review, Vision and the Road Ahead — 23 sections: Front matter; Introduction; Autonomous Agent"
+---
+6.1

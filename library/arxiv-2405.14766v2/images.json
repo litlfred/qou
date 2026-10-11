@@ -1,0 +1,240 @@
+{
+  "$schema": "folio-document-images/v1",
+  "doc_id": "arxiv-2405.14766v2",
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Three-circle Venn diagram with labelled sectors; left panel of Figure 1.",
+        "page": 1
+      },
+      "narrative": {
+        "text": "Figure 1 (left): Venn diagram of three overlapping circles around the centre text 'Public Health LLM Evaluations': Burden (Diseases, Symptoms, Injuries) [5], Risk Factors (Environment, Behaviour, Biology) [5], and Interventions (Non-Pharmaceutical, Pharmaceutical) [6].",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Radar chart with radial scale 0-1 and model legend; right panel of Figure 1.",
+        "page": 1
+      },
+      "narrative": {
+        "text": "Figure 1 (right): radar chart of micro-F1 scores (radial axis 0 to 1) on 16 tasks prefixed B- (burden), RF- (risk factors) and I- (interventions), for seven models: Command-R-0824-32B, Flan-T5-xxl, Gemma-2-27B-It, Llama-3.3-70B-Instruct, Mistral-7B-Instruct-v0.2, Mistral-Large-AWQ4Bit, Stable-Beluga-2. Most models score near 0.8-0.95 on B-News Headline and B-GI Classification and lower on I-Causal Relations and I-BioDex Drugs Extraction.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Three coloured header boxes with numbered task lists; Figure 2.",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Figure 2: evaluation tasks by public health area, in three columns. Burden: NCBI Disease Extract., Gastro. Illness Class., Gastro. Illness Symptom Extract., ICD-10 Description Class., News Headline Class. Risk Factors: Contact Type Class., Country Disambiguation, Food Extract., MMLU Genetics, MMLU Nutrition. Interventions: Guidance Topic Class., Guidance Recommendation Class., Health Advice Class., Health Causal Claims Class., BioDex Drugs Extract., PubMedQA Reasoning.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p012-1",
+      "file": "images/img-p012-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Grouped bar chart with axes and legend; Figure 3.",
+        "page": 12
+      },
+      "narrative": {
+        "text": "Figure 3, 'Contact Classification with Zero and Few Shot Prompting': micro F1-score (0 to ~0.8) for 11 models, A-Zero-Shot (blue) vs B-Few-Shot (orange). Few-shot exceeds zero-shot for every model except Llama-3.1 8B (about 0.26 vs 0.14); Stable Beluga-2 has the highest few-shot score, about 0.79.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p013-1",
+      "file": "images/img-p013-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Grouped bar chart with axes and legend; Figure 4.",
+        "page": 13
+      },
+      "narrative": {
+        "text": "Figure 4, 'Causal Relations Classification with Zero and Few Shot Prompting': micro F1-score (0 to ~0.7) for 11 models, zero-shot (blue) vs few-shot (orange). Few-shot is higher for all models except Flan-T5 xxl (about 0.50 vs 0.48); Llama-3.3 70B is highest, about 0.62 zero-shot and 0.69 few-shot.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p027-1",
+      "file": "images/img-p027-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Three-circle chain diagram with a spectrum line; Figure 5.",
+        "page": 27
+      },
+      "narrative": {
+        "text": "Figure 5, LLM evaluation spectrum: three chained circles, General Evaluations (e.g. Languages, Reasoning, Maths), Domain Evaluations (e.g. Medicine, Law, Finance) and Task Specific Evaluations (e.g. Classify x, Extract y, Summarise z), with the domain-task overlap marked by an asterisk. A line beneath runs from 'Foundation Model' to 'Production Deployment'.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p030-1",
+      "file": "images/img-p030-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Grid diagram with row/column header boxes and a colour legend; Figure 6.",
+        "page": 30
+      },
+      "narrative": {
+        "text": "Figure 6, overview of evaluations: a grid with columns Automated, Human and LLM-as-a-Judge Evaluations and rows General, Domain Specific and Task Specific Evaluations. The General row is greyed 'Out of Scope'; the automated domain and task cells are green ('This Paper'); the remaining cells are peach ('Future Public Health AI Research').",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p035-1",
+      "file": "images/img-p035-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Extracted PNG is uniformly black in RGB with its content only in the alpha mask, so it shows as a black rectangle; the page render shows it is the Figure 7 prompt box.",
+        "page": 35
+      },
+      "narrative": {
+        "text": "Figure 7: example 7-shot prompt for Health Causal Claims Classification in the Stable-Beluga-2 template: a System block defining four labels (no relationship, correlational, conditional causal, direct causal), seven example CONTEXT/QUESTION/Answer triples, then the query and an '### Assistant:' line. (Read from the page render; the extracted file itself displays as solid black.)",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p036-1",
+      "file": "images/img-p036-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Boxed prompt text; Figure 8.",
+        "page": 36
+      },
+      "narrative": {
+        "text": "Figure 8: example zero-shot prompt for NCBI Disease Extraction, with '### System:' (asks to act as a doctor extracting disease information), '### User:' (Text: {context}, a request to extract all diseases verbatim as a comma-separated list, 'Answer:') and '### Assistant:'.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    }
+  ]
+}

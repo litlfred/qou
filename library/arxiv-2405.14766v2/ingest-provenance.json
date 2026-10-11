@@ -1,0 +1,11 @@
+{
+  "$schema": "qou-ingest-provenance/v1",
+  "source": "2405.14766v2.pdf",
+  "rung": "pdf-structure",
+  "why": "33 of 33 embedded outline entries can carry a chapter — the structure is READ, not inferred",
+  "tools": {
+    "repository": "litlfred/cat-harness-tools",
+    "commit": "b7351dfb05ff9880602cd552800b4c703a77a347"
+  },
+  "driver": "scripts/library-ingest.ts"
+}

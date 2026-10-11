@@ -1,0 +1,91 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "250906388v1",
+ "source_sha256": "48123c8812890b17",
+ "brief": "Preliminary Draft Manuscript Chapter 8 — This chapter describes selected aggregation-type multi-criteria decision-making (MCDM) methods that convert an alternatives-criteria matrix (ACM) into a",
+ "extended": "**Preliminary Draft Manuscript Chapter 8**\n\n*Multi-Criteria Decision-Making: Aggregation-Type Methods*\n\n39 pp, 14 sections.\n\n**Abstract.** This chapter describes selected aggregation-type multi-criteria decision-making (MCDM) methods that convert an alternatives-criteria matrix (ACM) into a single performance score per alternative through additive, multiplicative or hybrid manipulations, for ranking the alternatives. The 8 methods are: Simple Additive Weighting (SAW), Multiplicative Exponent Weighting (MEW), Analytic Hierarchy Process (AHP), Analytic Network Process (ANP), Complex Proportional Assessment (COPRAS), Multi-Objective Optimization on the basis of Ratio Analysis (MOORA), Faire Un Choix Adéquat (FUCA) and Weighted Aggregated Sum Product Assessment (WASPAS). This chapter details the algorithm of each method step-by-step, illustrating every procedure with a common ACM example and full numerical calculations. Practical strengths and weaknesses of every method are outlined.\n\n**Outline.** Front matter; Abstract; 8.1 Overview; 8.2 Simple Additive Weighting (SAW); 8.3 Multiplicative Exponent Weighting (MEW); 8.4 Analytic Hierarchy Process (AHP); 8.5 Analytic Network Process (ANP); 8.6 Complex Proportional Assessment (COPRAS); 8.7 Multi-Objective Optimization on the basis ; 8.8 Faire Un Choix Adéquat (FUCA); 8.9 Weighted Aggregated Sum Product Assessment; 8.11 Summary; 8.12 References; 8.13 Exercises",
+ "tokens": {
+  "brief": 48,
+  "extended": 356
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-81-overview",
+   "title": "Overview",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-82-simple-additive-weighting-saw",
+   "title": "Simple Additive Weighting (SAW)",
+   "pages": "2-5"
+  },
+  {
+   "id": "sec-003-83-multiplicative-exponent-weighting-mew",
+   "title": "Multiplicative Exponent Weighting (MEW)",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-004-84-analytic-hierarchy-process-ahp",
+   "title": "Analytic Hierarchy Process (AHP)",
+   "pages": "6-19"
+  },
+  {
+   "id": "sec-005-85-analytic-network-process-anp",
+   "title": "Analytic Network Process (ANP)",
+   "pages": "19-26"
+  },
+  {
+   "id": "sec-006-86-complex-proportional-assessment-copras",
+   "title": "Complex Proportional Assessment (COPRAS)",
+   "pages": "26-29"
+  },
+  {
+   "id": "sec-007-87-multi-objective-optimization-on-the-basis-of",
+   "title": "Multi-Objective Optimization on the basis of Ratio Analysis (MOORA)",
+   "pages": "29-31"
+  },
+  {
+   "id": "sec-008-88-faire-un-choix-adéquat-fuca",
+   "title": "Faire Un Choix Adéquat (FUCA)",
+   "pages": "31-33"
+  },
+  {
+   "id": "sec-009-89-weighted-aggregated-sum-product-assessment-wa",
+   "title": "Weighted Aggregated Sum Product Assessment (WASPAS)",
+   "pages": "33-34"
+  },
+  {
+   "id": "sec-010-811-summary",
+   "title": "Summary",
+   "pages": "34-35"
+  },
+  {
+   "id": "sec-011-812-references",
+   "title": "References",
+   "pages": "35-38"
+  },
+  {
+   "id": "sec-012-813-exercises",
+   "title": "Exercises",
+   "pages": "38-39"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

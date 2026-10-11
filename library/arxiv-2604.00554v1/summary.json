@@ -1,0 +1,176 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2604.00554v1",
+ "source_sha256": "cabfd76a9acea030",
+ "brief": "LLM-supported document separation for printed reviews from zbMATH Open — This paper presents a specialized methodology for digitizing and segmenting mathematical documents from zbMATH Open, a com",
+ "extended": "**LLM-supported document separation for printed reviews from zbMATH Open**\n\n*Ivan Pluzhnikov*\n\n10 pp, 31 sections.\n\n**Abstract.** This paper presents a specialized methodology for digitizing and segmenting mathematical documents from zbMATH Open, a com- prehensive database of mathematical literature, to enhance ma- chine processing capabilities. Currently, approximately 831,000 documents exist only in scanned volumes, which makes them not machine-processable. Furthermore, these scans often span multi- ple pages or share pages with other documents and incorporate diverse typesetting techniques, posing challenges for automated processing. To address these issues, we evaluate various Optical Charac- ter Recognition (OCR) tools and document separation techniques, proposing an optimized pipeline that outperforms existing ap- proaches. Our study identifies Mathpix as the most effective OCR tool for LaTeX conversion, demonstrating superior performance based on BLEU and Edit Distance metrics.\n\n**Outline.** Front matter; Abstract; 1 Introduction; 4 Document Splitting; 3.3 Metrics; 2 Related Work; 4.3 OCR errors; 3 Datasets and metrics; 3.1 zbMATH Open dataset; 3.2 OCR evaluation dataset; 5.3 Challenges; 4.1 OCR comparison; 4.2 Conversion and challenges; 5 Regular expressions approach; 5.1 Methodology; 5.4 Results; 5.2 Exclusion of documents from consideration; 6 LLM-voting based document splitting",
+ "tokens": {
+  "brief": 48,
+  "extended": 352
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-4-document-splitting",
+   "title": "Document Splitting",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-003-33-metrics",
+   "title": "Metrics",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-004-2-related-work",
+   "title": "Related Work",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-005-43-ocr-errors",
+   "title": "OCR errors",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-006-3-datasets-and-metrics",
+   "title": "Datasets and metrics",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-007-31-zbmath-open-dataset",
+   "title": "zbMATH Open dataset",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-008-32-ocr-evaluation-dataset",
+   "title": "OCR evaluation dataset",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-009-53-challenges",
+   "title": "Challenges",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-010-41-ocr-comparison",
+   "title": "OCR comparison",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-011-42-conversion-and-challenges",
+   "title": "Conversion and challenges",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-012-5-regular-expressions-approach",
+   "title": "Regular expressions approach",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-013-51-methodology",
+   "title": "Methodology",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-014-54-results",
+   "title": "Results",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-015-52-exclusion-of-documents-from-consideration",
+   "title": "Exclusion of documents from consideration",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-016-6-llm-voting-based-document-splitting",
+   "title": "LLM-voting based document splitting",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-017-62-base-models",
+   "title": "Base models",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-018-63-fine-tuning",
+   "title": "Fine-tuning",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-019-64-majority-voting-approach",
+   "title": "Majority Voting approach",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-020-65-llm-baseline",
+   "title": "LLM baseline",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-021-7-computer-vision-based-baseline",
+   "title": "Computer vision-based baseline",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-022-8-evaluation-and-all-data-processing",
+   "title": "Evaluation and all data processing.",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-023-81-evaluation-of-base-models",
+   "title": "Evaluation of \"base\" models",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-024-82-evaluation-results",
+   "title": "Evaluation results",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-025-83-errors-analysis",
+   "title": "Errors analysis",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-026-84-error-detection-hypotheses",
+   "title": "Error detection hypotheses",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-027-86-all-data-processing",
+   "title": "All data processing",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-028-9-conclusion",
+   "title": "Conclusion",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-029-references",
+   "title": "References",
+   "pages": "9-10"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2402.02172v5/sections/sec-019",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Role Definition",
+  "pageStart": 15,
+  "pageEnd": 16,
+  "contains": [
+    "library/arxiv-2402.02172v5/blocks/prose-sec-019",
+    "library/arxiv-2402.02172v5/blocks/figure-img-p016-1",
+    "library/arxiv-2402.02172v5/blocks/figure-img-p016-2",
+    "library/arxiv-2402.02172v5/blocks/figure-img-p016-3",
+    "library/arxiv-2402.02172v5/blocks/figure-img-p016-4",
+    "library/arxiv-2402.02172v5/blocks/figure-img-p016-5",
+    "library/arxiv-2402.02172v5/blocks/figure-img-p016-6",
+    "library/arxiv-2402.02172v5/blocks/figure-img-p016-7"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2402.02172v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2402.02172v5/manifest.jsonld",
+  "provenance": "ingested"
+}

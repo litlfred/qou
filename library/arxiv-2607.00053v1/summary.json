@@ -1,0 +1,141 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2607.00053v1",
+ "source_sha256": "f55db25135d0d28c",
+ "brief": "SWE-Router: Routing in Multi-turn Agentic Software Engineering Tasks — Large language models (LLMs) embedded in multi-turn agentic harnesses are reshaping soft- ware engineering (SWE), but routing",
+ "extended": "**SWE-Router: Routing in Multi-turn Agentic Software Engineering Tasks**\n\n10 pp, 24 sections.\n\n**Abstract.** Large language models (LLMs) embedded in multi-turn agentic harnesses are reshaping soft- ware engineering (SWE), but routing every task to a frontier model is wasteful when many issues admit cheap fixes. Existing LLM routers operate on the task description alone, which inherits an information-theoretic Bayes-error floor in agentic settings: a similar issue can hide either a localized typo or a multi-module refactor, and the prompt does not separate the two. We introduce SWE- Router, a value-based temporal approach that lets a cheap model run for a few exploratory turns and reads the resulting partial trajectory before de- ciding whether to continue cheaply or to escalate to an expensive model. We provide a Bayes- optimality theorem showing that conditioning on the partial trajectory never harms routing and is strictly better whenever exploration is informative.\n\n**Outline.** Front matter; Abstract; 1 Introduction; 2.2 LLM Routing; 3 Value-Based Temporal Routing; Conventional LLM Routing; SWE-ROUTER (proposed); 2 Preliminary; 2.1 Multi-turn Trajectories in Agentic Tasks; 5 Experiments; 4 Theoretical Results; 5.1 Evaluation Metrics; 5.2 Experiment Setting; Does conditioning on the partial trajectory im; 6 Related Work; 7 Conclusion; Impact Statement; References",
+ "tokens": {
+  "brief": 49,
+  "extended": 347
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-22-llm-routing",
+   "title": "LLM Routing",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-003-3-value-based-temporal-routing",
+   "title": "Value-Based Temporal Routing",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-004-conventional-llm-routing",
+   "title": "Conventional LLM Routing",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-005-swe-router-proposed",
+   "title": "SWE-ROUTER (proposed)",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-006-2-preliminary",
+   "title": "Preliminary",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-007-21-multi-turn-trajectories-in-agentic-tasks",
+   "title": "Multi-turn Trajectories in Agentic Tasks",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-008-5-experiments",
+   "title": "Experiments",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-009-4-theoretical-results",
+   "title": "Theoretical Results",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-010-51-evaluation-metrics",
+   "title": "Evaluation Metrics",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-011-52-experiment-setting",
+   "title": "Experiment Setting",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-012-does-conditioning-on-the-partial-trajectory-impr",
+   "title": "Does conditioning on the partial trajectory improve over prompt-only baselines?",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-013-6-related-work",
+   "title": "Related Work",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-014-7-conclusion",
+   "title": "Conclusion",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-015-impact-statement",
+   "title": "Impact Statement",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-016-references",
+   "title": "References",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-017-a-additional-experimental-settings",
+   "title": "Additional Experimental Settings",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-018-a1-data-collection",
+   "title": "Data Collection",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-019-a2-experiment-designs",
+   "title": "Experiment Designs",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-020-b-additional-experiment-results",
+   "title": "Additional Experiment Results",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-021-c-proof-of-theorem-41",
+   "title": "Proof of Theorem 4.1",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-022-d-additional-related-work",
+   "title": "Additional Related Work",
+   "pages": "10-10"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

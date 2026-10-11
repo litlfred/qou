@@ -1,0 +1,5830 @@
+{
+  "$schema": "folio-document-images/v1",
+  "doc_id": "arxiv-2402.02172v5",
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "role": "logo",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Cartoon mascot printed inline before the paper title \"CodeAgent\" on page 1; acts as the project mark.",
+        "page": 1
+      },
+      "narrative": {
+        "text": "CodeAgent project mascot: colourful cartoon of a person seated at a desk typing at a computer, placed before the paper title.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figure 1 (role data cards and conversations).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000135,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000135,
+          "imagesOnPage": 113
+        }
+      ]
+    },
+    {
+      "id": "img-p003-3",
+      "file": "images/img-p003-3.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "File icon with '</>' and a yellow 'PY' band; used as the 'original file' symbol in the diagram.",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Document icon with a code tag '</>' and a yellow band reading 'PY', used as the 'original file' symbol in Figure 1 (role data cards and conversations).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        }
+      ]
+    },
+    {
+      "id": "img-p003-5",
+      "file": "images/img-p003-5.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figure 1 (role data cards and conversations).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        }
+      ]
+    },
+    {
+      "id": "img-p003-7",
+      "file": "images/img-p003-7.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Plain yellow right-pointing arrow used as a flow arrow inside the diagram.",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Yellow arrow pointing right, a flow connector in Figure 1 (role data cards and conversations).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.00153,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.00032,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        }
+      ]
+    },
+    {
+      "id": "img-p003-37",
+      "file": "images/img-p003-37.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Same CodeAgent mascot cartoon, placed above the user request at the top of Figure 1 with the label \"CodeAgent\".",
+        "page": 3
+      },
+      "narrative": {
+        "text": "CodeAgent mascot (cartoon person typing at a computer) at the top of Figure 1, marking the CodeAgent system that receives the user request.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-38",
+      "file": "images/img-p003-38.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Green laptop with \"</>\" glyph; legend item \"code\" in Figure 1.",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Green laptop icon with a \"</>\" code symbol, the \"code\" legend symbol in Figure 1.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        }
+      ]
+    },
+    {
+      "id": "img-p003-42",
+      "file": "images/img-p003-42.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Folder with documents and a green check mark; \"document\" output symbol in Figure 1.",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Icon of a yellow folder holding papers with a green check-mark badge, used as the \"document\" output symbol in Figure 1.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        }
+      ]
+    },
+    {
+      "id": "img-p003-44",
+      "file": "images/img-p003-44.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Black line glyph of a branched antenna-like symbol; shown next to \"modality\" in the Output rows of Figure 1.",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Black line icon resembling a branching/antenna symbol, shown beside the word \"modality\" in the output rows of Figure 1.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        }
+      ]
+    },
+    {
+      "id": "img-p003-59",
+      "file": "images/img-p003-59.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Globe with speech bubbles containing letters in different scripts; shown beside \"Language\" in Figure 1.",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Globe icon with three speech bubbles (Latin \"A\", Chinese character, Devanagari character), the \"Language\" symbol in Figure 1 output rows.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        }
+      ]
+    },
+    {
+      "id": "img-p003-61",
+      "file": "images/img-p003-61.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Light-blue curved arrow pointing left; connector between panels in the diagram.",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Light-blue curved arrow bending up and pointing left, a connector in Figure 1 (role data cards and conversations).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-62",
+      "file": "images/img-p003-62.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Screenshot of a dark-theme code/text block embedded in the Reviewer card of Figure 1.",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Dark-background text block from Figure 1 with headings \"Semantic Consistency Analysis\", \"Security Analysis\", \"Format Analysis\" and \"Code Alignment/Revision Suggestions\", each followed by short review text, then a Java method protected boolean assertEquals(String message, Object expected, Object actual) that compares expected and actual and returns handleAssert(...).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-63",
+      "file": "images/img-p003-63.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Cartoon role avatar: girl with white cap, large headphones and black glasses, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 1 (role data cards and conversations).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.00153,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.00153,
+          "imagesOnPage": 113
+        }
+      ]
+    },
+    {
+      "id": "img-p003-65",
+      "file": "images/img-p003-65.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Cartoon role avatar: man with round glasses in a white lab coat, arms crossed, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 1 (role data cards and conversations).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.00153,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.00153,
+          "imagesOnPage": 113
+        }
+      ]
+    },
+    {
+      "id": "img-p003-69",
+      "file": "images/img-p003-69.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Cartoon role avatar: woman with long blonde hair and glasses holding a phone, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 1 (role data cards and conversations).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.00153,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.00153,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        }
+      ]
+    },
+    {
+      "id": "img-p003-76",
+      "file": "images/img-p003-76.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Cartoon role avatar: man with dark hair, glasses, white shirt and blue tie, thumbs up, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 1 (role data cards and conversations).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.00153,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.00153,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        }
+      ]
+    },
+    {
+      "id": "img-p003-82",
+      "file": "images/img-p003-82.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Cartoon role avatar: girl with long silver-white hair, white top, dark shorts and shoulder bag, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 1 (role data cards and conversations).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.00153,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.00153,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        }
+      ]
+    },
+    {
+      "id": "img-p003-88",
+      "file": "images/img-p003-88.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Cartoon role avatar: girl with long auburn hair, white cap, blue vest and tool belt, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 1 (role data cards and conversations).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.00153,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.00153,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000383,
+          "imagesOnPage": 113
+        }
+      ]
+    },
+    {
+      "id": "img-p003-97",
+      "file": "images/img-p003-97.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Dark-theme snippet in Figure 1's Coder card ('Revised codes').",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Dark-background snippet from Figure 1: \"code revision suggestion: Please modify the `assertEquals` method as follows:\" followed by a revised assertEquals using java.util.Objects.equals(expected, actual) and returning handleAssert(result, message, stringFor(expected), stringFor(actual)).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-98",
+      "file": "images/img-p003-98.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Blue \"LOG\" file icon; listed under \"##Files\" in the Coder card of Figure 1.",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Blue file icon with a band reading \"LOG\", shown as the Log file under \"##Files\" in Figure 1.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-99",
+      "file": "images/img-p003-99.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figure 1 (role data cards and conversations).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000096,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        },
+        {
+          "page": 3,
+          "coverage": 0.000215,
+          "imagesOnPage": 113
+        }
+      ]
+    },
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Cartoon role avatar: woman with long blonde hair and glasses holding a phone, on a purple disc. It is one of the six CodeAgent role characters shown in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        }
+      ]
+    },
+    {
+      "id": "img-p004-5",
+      "file": "images/img-p004-5.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Cartoon role avatar: man with round glasses in a white lab coat, arms crossed, on a purple disc. It is one of the six CodeAgent role characters shown in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        }
+      ]
+    },
+    {
+      "id": "img-p004-7",
+      "file": "images/img-p004-7.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Cartoon role avatar: girl with long auburn hair, white cap, blue vest and tool belt, on a purple disc. It is one of the six CodeAgent role characters shown in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000605,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000605,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000605,
+          "imagesOnPage": 116
+        }
+      ]
+    },
+    {
+      "id": "img-p004-19",
+      "file": "images/img-p004-19.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Cartoon role avatar: girl with long silver-white hair, white top, dark shorts and shoulder bag, on a purple disc. It is one of the six CodeAgent role characters shown in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000605,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000605,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000605,
+          "imagesOnPage": 116
+        }
+      ]
+    },
+    {
+      "id": "img-p004-29",
+      "file": "images/img-p004-29.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Cartoon role avatar: man with dark hair, glasses, white shirt and blue tie, thumbs up, on a purple disc. It is one of the six CodeAgent role characters shown in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        }
+      ]
+    },
+    {
+      "id": "img-p004-32",
+      "file": "images/img-p004-32.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000132,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000132,
+          "imagesOnPage": 116
+        }
+      ]
+    },
+    {
+      "id": "img-p004-34",
+      "file": "images/img-p004-34.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "File icon with '</>' and a yellow 'PY' band; used as the 'original file' symbol in the diagram.",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Document icon with a code tag '</>' and a yellow band reading 'PY', used as the 'original file' symbol in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000094,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000094,
+          "imagesOnPage": 116
+        }
+      ]
+    },
+    {
+      "id": "img-p004-36",
+      "file": "images/img-p004-36.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000094,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000094,
+          "imagesOnPage": 116
+        }
+      ]
+    },
+    {
+      "id": "img-p004-38",
+      "file": "images/img-p004-38.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Green laptop with \"</>\" glyph; legend item \"code\" in Figure 2.",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Green laptop icon with a \"</>\" code symbol, the \"code\" legend symbol in Figure 2.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000094,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000094,
+          "imagesOnPage": 116
+        }
+      ]
+    },
+    {
+      "id": "img-p004-40",
+      "file": "images/img-p004-40.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Blue document icon at the \"Reviews\" output of Figure 2.",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue document icon with horizontal text lines, part of the \"Reviews\" output at the right end of Figure 2.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-41",
+      "file": "images/img-p004-41.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Dark circle with green binary digits beside the Reviews document in Figure 2.",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Dark navy circle filled with green binary digits (0/1), part of the \"Reviews\" output graphic in Figure 2.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-42",
+      "file": "images/img-p004-42.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Cartoon role avatar: girl with white cap, large headphones and black glasses, on a purple disc. It is one of the six CodeAgent role characters shown in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-43",
+      "file": "images/img-p004-43.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000094,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000151,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000151,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000151,
+          "imagesOnPage": 116
+        }
+      ]
+    },
+    {
+      "id": "img-p004-58",
+      "file": "images/img-p004-58.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Cartoon role avatar: girl with long auburn hair, white cap, blue vest and tool belt, on a purple disc. It is one of the six CodeAgent role characters shown in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000605,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000605,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000605,
+          "imagesOnPage": 116
+        }
+      ]
+    },
+    {
+      "id": "img-p004-70",
+      "file": "images/img-p004-70.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram.",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Cartoon role avatar: girl with long silver-white hair, white top, dark shorts and shoulder bag, on a purple disc. It is one of the six CodeAgent role characters shown in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.001499,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000605,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000605,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000605,
+          "imagesOnPage": 116
+        }
+      ]
+    },
+    {
+      "id": "img-p004-80",
+      "file": "images/img-p004-80.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "\"FINISH\" banner icon; appears at the top of the QA-checker diagram (Figure 3) and at the end node.",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Finish-line banner icon (red \"FINISH\" sign with chequered strip between two yellow posts) used in Figure 3 to mark termination.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000387,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000387,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000387,
+          "imagesOnPage": 116
+        }
+      ]
+    },
+    {
+      "id": "img-p004-83",
+      "file": "images/img-p004-83.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Green check and red X boxes labelled \"YES NO\"; decision symbol above each QA checker in Figure 3.",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Icon of a green tick box and a red cross box above the words \"YES NO\", the QA-checker decision symbol in Figure 3.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000387,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000387,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000387,
+          "imagesOnPage": 116
+        }
+      ]
+    },
+    {
+      "id": "img-p004-86",
+      "file": "images/img-p004-86.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Blue circle with white plus; legend item \"influence\" in Figure 3.",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue circular plus-sign icon, the \"influence\" legend symbol in Figure 3.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000024,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000024,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000024,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000024,
+          "imagesOnPage": 116
+        }
+      ]
+    },
+    {
+      "id": "img-p004-90",
+      "file": "images/img-p004-90.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000211,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000094,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000151,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000151,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000151,
+          "imagesOnPage": 116
+        }
+      ]
+    },
+    {
+      "id": "img-p004-105",
+      "file": "images/img-p004-105.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Plain yellow right-pointing arrow used as a flow arrow inside the diagram.",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Yellow arrow pointing right, a flow connector in Figures 2-3 (CodeAgent pipeline / QA-Checker architecture).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000097,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000097,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000097,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000097,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000097,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000097,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000097,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000097,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000097,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000097,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000097,
+          "imagesOnPage": 116
+        },
+        {
+          "page": 4,
+          "coverage": 0.000097,
+          "imagesOnPage": 116
+        }
+      ]
+    },
+    {
+      "id": "img-p016-1",
+      "file": "images/img-p016-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Robot head avatar heading the QA-Checker self-description box on page 16.",
+        "page": 16
+      },
+      "narrative": {
+        "text": "Cartoon white robot with blue eyes and antennae, the avatar of the QA-Checker agent shown in the text box beside Figure 5.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p016-2",
+      "file": "images/img-p016-2.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram; Figure 5 labels it 'CTO'.",
+        "page": 16
+      },
+      "narrative": {
+        "text": "Cartoon role avatar: man with dark hair, glasses, white shirt and blue tie, thumbs up, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 5 and the QA-Checker text box; Figure 5 labels it 'CTO'.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p016-3",
+      "file": "images/img-p016-3.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram; Figure 5 labels it 'CPO'.",
+        "page": 16
+      },
+      "narrative": {
+        "text": "Cartoon role avatar: man with round glasses in a white lab coat, arms crossed, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 5 and the QA-Checker text box; Figure 5 labels it 'CPO'.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p016-4",
+      "file": "images/img-p016-4.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram; Figure 5 labels it 'Reviewer'.",
+        "page": 16
+      },
+      "narrative": {
+        "text": "Cartoon role avatar: girl with long silver-white hair, white top, dark shorts and shoulder bag, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 5 and the QA-Checker text box; Figure 5 labels it 'Reviewer'.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p016-5",
+      "file": "images/img-p016-5.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram; Figure 5 labels it 'Coder'.",
+        "page": 16
+      },
+      "narrative": {
+        "text": "Cartoon role avatar: girl with long auburn hair, white cap, blue vest and tool belt, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 5 and the QA-Checker text box; Figure 5 labels it 'Coder'.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p016-6",
+      "file": "images/img-p016-6.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram; Figure 5 labels it 'User'.",
+        "page": 16
+      },
+      "narrative": {
+        "text": "Cartoon role avatar: girl with white cap, large headphones and black glasses, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 5 and the QA-Checker text box; Figure 5 labels it 'User'.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p016-7",
+      "file": "images/img-p016-7.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Rendered 3D cartoon avatar on a purple circle; one of the six role characters drawn in the diagram; Figure 5 labels it 'CEO'.",
+        "page": 16
+      },
+      "narrative": {
+        "text": "Cartoon role avatar: woman with long blonde hair and glasses holding a phone, on a purple disc. It is one of the six CodeAgent role characters shown in Figure 5 and the QA-Checker text box; Figure 5 labels it 'CEO'.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p025-1",
+      "file": "images/img-p025-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "page": 25
+      },
+      "narrative": {
+        "text": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figure 13 (Python example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 25,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 25,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 25,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p025-4",
+      "file": "images/img-p025-4.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Plain yellow right-pointing arrow used as a flow arrow inside the diagram.",
+        "page": 25
+      },
+      "narrative": {
+        "text": "Yellow arrow pointing right, a flow connector in Figure 13 (Python example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 25,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 25,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 25,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p025-7",
+      "file": "images/img-p025-7.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Yellow circle with white plus sign, joining inputs in the flow row of the diagram.",
+        "page": 25
+      },
+      "narrative": {
+        "text": "Yellow circular plus-sign icon, used to combine inputs (commit + message + file) in Figure 13 (Python example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 25,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 25,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p025-9",
+      "file": "images/img-p025-9.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Cartoon of a person with orange hair typing at a computer, the CodeAgent mascot; on the page it is a labelled node of the diagram.",
+        "page": 25
+      },
+      "narrative": {
+        "text": "Colourful cartoon icon of a person seated at a desk typing on a computer, used as the CodeAgent mascot/node in Figure 13 (Python example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p025-10",
+      "file": "images/img-p025-10.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Document with magnifier and bar chart; labelled 'Summary' in the flow row of the diagram.",
+        "page": 25
+      },
+      "narrative": {
+        "text": "Icon of a document, a checklist panel, a small bar chart and a magnifying glass, labelled 'Summary' as the output node in Figure 13 (Python example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p025-11",
+      "file": "images/img-p025-11.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "page": 25
+      },
+      "narrative": {
+        "text": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figure 13 (Python example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 25,
+          "coverage": 0.000362,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 25,
+          "coverage": 0.000362,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 25,
+          "coverage": 0.000362,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p025-14",
+      "file": "images/img-p025-14.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Python programming-language logo placed in the header box of the example figure, labelling the language.",
+        "page": 25
+      },
+      "narrative": {
+        "text": "Logo of the Python language (blue-and-yellow two-snake Python logo), shown next to the language name in the header of Figure 13 (Python example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p025-15",
+      "file": "images/img-p025-15.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Light-blue curved arrow pointing left; connector between panels in the diagram.",
+        "page": 25
+      },
+      "narrative": {
+        "text": "Light-blue curved arrow bending up and pointing left, a connector in Figure 13 (Python example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 25,
+          "coverage": 0.000189,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 25,
+          "coverage": 0.000194,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 25,
+          "coverage": 0.000241,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p025-18",
+      "file": "images/img-p025-18.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "page": 25
+      },
+      "narrative": {
+        "text": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figure 13 (Python example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 25,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 25,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 25,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p025-21",
+      "file": "images/img-p025-21.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "File icon with '</>' and a yellow 'PY' band; used as the 'original file' symbol in the diagram.",
+        "page": 25
+      },
+      "narrative": {
+        "text": "Document icon with a code tag '</>' and a yellow band reading 'PY', used as the 'original file' symbol in Figure 13 (Python example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 25,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 25,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 25,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p026-1",
+      "file": "images/img-p026-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Plain yellow right-pointing arrow used as a flow arrow inside the diagram.",
+        "page": 26
+      },
+      "narrative": {
+        "text": "Yellow arrow pointing right, a flow connector in Figure 14 (Java example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 26,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 26,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 26,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p026-4",
+      "file": "images/img-p026-4.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Yellow circle with white plus sign, joining inputs in the flow row of the diagram.",
+        "page": 26
+      },
+      "narrative": {
+        "text": "Yellow circular plus-sign icon, used to combine inputs (commit + message + file) in Figure 14 (Java example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 26,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 26,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p026-6",
+      "file": "images/img-p026-6.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Cartoon of a person with orange hair typing at a computer, the CodeAgent mascot; on the page it is a labelled node of the diagram.",
+        "page": 26
+      },
+      "narrative": {
+        "text": "Colourful cartoon icon of a person seated at a desk typing on a computer, used as the CodeAgent mascot/node in Figure 14 (Java example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p026-7",
+      "file": "images/img-p026-7.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Document with magnifier and bar chart; labelled 'Summary' in the flow row of the diagram.",
+        "page": 26
+      },
+      "narrative": {
+        "text": "Icon of a document, a checklist panel, a small bar chart and a magnifying glass, labelled 'Summary' as the output node in Figure 14 (Java example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p026-8",
+      "file": "images/img-p026-8.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "page": 26
+      },
+      "narrative": {
+        "text": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figure 14 (Java example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 26,
+          "coverage": 0.000353,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 26,
+          "coverage": 0.000353,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 26,
+          "coverage": 0.000353,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p026-11",
+      "file": "images/img-p026-11.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Java programming-language logo placed in the header box of the example figure, labelling the language.",
+        "page": 26
+      },
+      "narrative": {
+        "text": "Logo of the Java language (steaming coffee cup Java logo (red steam, blue cup lines)), shown next to the language name in the header of Figure 14 (Java example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p026-12",
+      "file": "images/img-p026-12.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Light-blue curved arrow pointing left; connector between panels in the diagram.",
+        "page": 26
+      },
+      "narrative": {
+        "text": "Light-blue curved arrow bending up and pointing left, a connector in Figure 14 (Java example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 26,
+          "coverage": 0.000184,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 26,
+          "coverage": 0.00019,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 26,
+          "coverage": 0.000235,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p026-15",
+      "file": "images/img-p026-15.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "File icon with '</>' and a yellow 'PY' band; used as the 'original file' symbol in the diagram.",
+        "page": 26
+      },
+      "narrative": {
+        "text": "Document icon with a code tag '</>' and a yellow band reading 'PY', used as the 'original file' symbol in Figure 14 (Java example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 26,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 26,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 26,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p026-18",
+      "file": "images/img-p026-18.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "page": 26
+      },
+      "narrative": {
+        "text": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figure 14 (Java example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 26,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 26,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 26,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p026-21",
+      "file": "images/img-p026-21.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "page": 26
+      },
+      "narrative": {
+        "text": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figure 14 (Java example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 26,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 26,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 26,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p027-1",
+      "file": "images/img-p027-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Plain yellow right-pointing arrow used as a flow arrow inside the diagram.",
+        "page": 27
+      },
+      "narrative": {
+        "text": "Yellow arrow pointing right, a flow connector in Figure 15 (Go example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 27,
+          "coverage": 0.000629,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 27,
+          "coverage": 0.000629,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 27,
+          "coverage": 0.000629,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p027-4",
+      "file": "images/img-p027-4.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Yellow circle with white plus sign, joining inputs in the flow row of the diagram.",
+        "page": 27
+      },
+      "narrative": {
+        "text": "Yellow circular plus-sign icon, used to combine inputs (commit + message + file) in Figure 15 (Go example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 27,
+          "coverage": 0.000629,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 27,
+          "coverage": 0.000629,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p027-6",
+      "file": "images/img-p027-6.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Cartoon of a person with orange hair typing at a computer, the CodeAgent mascot; on the page it is a labelled node of the diagram.",
+        "page": 27
+      },
+      "narrative": {
+        "text": "Colourful cartoon icon of a person seated at a desk typing on a computer, used as the CodeAgent mascot/node in Figure 15 (Go example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p027-7",
+      "file": "images/img-p027-7.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Document with magnifier and bar chart; labelled 'Summary' in the flow row of the diagram.",
+        "page": 27
+      },
+      "narrative": {
+        "text": "Icon of a document, a checklist panel, a small bar chart and a magnifying glass, labelled 'Summary' as the output node in Figure 15 (Go example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p027-8",
+      "file": "images/img-p027-8.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "page": 27
+      },
+      "narrative": {
+        "text": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figure 15 (Go example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 27,
+          "coverage": 0.000354,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 27,
+          "coverage": 0.000354,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 27,
+          "coverage": 0.000354,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p027-11",
+      "file": "images/img-p027-11.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Light-blue curved arrow pointing left; connector between panels in the diagram.",
+        "page": 27
+      },
+      "narrative": {
+        "text": "Light-blue curved arrow bending up and pointing left, a connector in Figure 15 (Go example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 27,
+          "coverage": 0.000185,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 27,
+          "coverage": 0.00019,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 27,
+          "coverage": 0.000236,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p027-14",
+      "file": "images/img-p027-14.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "File icon with '</>' and a yellow 'PY' band; used as the 'original file' symbol in the diagram.",
+        "page": 27
+      },
+      "narrative": {
+        "text": "Document icon with a code tag '</>' and a yellow band reading 'PY', used as the 'original file' symbol in Figure 15 (Go example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 27,
+          "coverage": 0.000629,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 27,
+          "coverage": 0.000629,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 27,
+          "coverage": 0.000629,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p027-17",
+      "file": "images/img-p027-17.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Go programming-language logo placed in the header box of the example figure, labelling the language.",
+        "page": 27
+      },
+      "narrative": {
+        "text": "Logo of the Go language (white 'GO' wordmark with speed lines on a teal background), shown next to the language name in the header of Figure 15 (Go example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p027-18",
+      "file": "images/img-p027-18.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "page": 27
+      },
+      "narrative": {
+        "text": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figure 15 (Go example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 27,
+          "coverage": 0.000629,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 27,
+          "coverage": 0.000629,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 27,
+          "coverage": 0.000629,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p027-21",
+      "file": "images/img-p027-21.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "page": 27
+      },
+      "narrative": {
+        "text": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figure 15 (Go example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 27,
+          "coverage": 0.000629,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 27,
+          "coverage": 0.000629,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 27,
+          "coverage": 0.000629,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p028-1",
+      "file": "images/img-p028-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Plain yellow right-pointing arrow used as a flow arrow inside the diagram.",
+        "page": 28
+      },
+      "narrative": {
+        "text": "Yellow arrow pointing right, a flow connector in Figure 16 (C++ example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 28,
+          "coverage": 0.00064,
+          "imagesOnPage": 27
+        },
+        {
+          "page": 28,
+          "coverage": 0.00064,
+          "imagesOnPage": 27
+        },
+        {
+          "page": 28,
+          "coverage": 0.00064,
+          "imagesOnPage": 27
+        }
+      ]
+    },
+    {
+      "id": "img-p028-4",
+      "file": "images/img-p028-4.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Yellow circle with white plus sign, joining inputs in the flow row of the diagram.",
+        "page": 28
+      },
+      "narrative": {
+        "text": "Yellow circular plus-sign icon, used to combine inputs (commit + message + file) in Figure 16 (C++ example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 28,
+          "coverage": 0.00064,
+          "imagesOnPage": 27
+        },
+        {
+          "page": 28,
+          "coverage": 0.00064,
+          "imagesOnPage": 27
+        }
+      ]
+    },
+    {
+      "id": "img-p028-6",
+      "file": "images/img-p028-6.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Cartoon of a person with orange hair typing at a computer, the CodeAgent mascot; on the page it is a labelled node of the diagram.",
+        "page": 28
+      },
+      "narrative": {
+        "text": "Colourful cartoon icon of a person seated at a desk typing on a computer, used as the CodeAgent mascot/node in Figure 16 (C++ example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p028-7",
+      "file": "images/img-p028-7.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Document with magnifier and bar chart; labelled 'Summary' in the flow row of the diagram.",
+        "page": 28
+      },
+      "narrative": {
+        "text": "Icon of a document, a checklist panel, a small bar chart and a magnifying glass, labelled 'Summary' as the output node in Figure 16 (C++ example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p028-8",
+      "file": "images/img-p028-8.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "page": 28
+      },
+      "narrative": {
+        "text": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figure 16 (C++ example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 28,
+          "coverage": 0.00036,
+          "imagesOnPage": 27
+        },
+        {
+          "page": 28,
+          "coverage": 0.00036,
+          "imagesOnPage": 27
+        },
+        {
+          "page": 28,
+          "coverage": 0.00036,
+          "imagesOnPage": 27
+        },
+        {
+          "page": 28,
+          "coverage": 0.00036,
+          "imagesOnPage": 27
+        }
+      ]
+    },
+    {
+      "id": "img-p028-12",
+      "file": "images/img-p028-12.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Light-blue curved arrow pointing left; connector between panels in the diagram.",
+        "page": 28
+      },
+      "narrative": {
+        "text": "Light-blue curved arrow bending up and pointing left, a connector in Figure 16 (C++ example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 28,
+          "coverage": 0.000188,
+          "imagesOnPage": 27
+        },
+        {
+          "page": 28,
+          "coverage": 0.000193,
+          "imagesOnPage": 27
+        },
+        {
+          "page": 28,
+          "coverage": 0.00024,
+          "imagesOnPage": 27
+        }
+      ]
+    },
+    {
+      "id": "img-p028-15",
+      "file": "images/img-p028-15.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "C++ programming-language logo placed in the header box of the example figure, labelling the language.",
+        "page": 28
+      },
+      "narrative": {
+        "text": "Logo of the C++ language (white 'C++' on a black rounded square), shown next to the language name in the header of Figure 16 (C++ example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 28,
+          "coverage": 0.00036,
+          "imagesOnPage": 27
+        },
+        {
+          "page": 28,
+          "coverage": 0.00036,
+          "imagesOnPage": 27
+        },
+        {
+          "page": 28,
+          "coverage": 0.00036,
+          "imagesOnPage": 27
+        },
+        {
+          "page": 28,
+          "coverage": 0.00036,
+          "imagesOnPage": 27
+        }
+      ]
+    },
+    {
+      "id": "img-p028-19",
+      "file": "images/img-p028-19.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "File icon with '</>' and a yellow 'PY' band; used as the 'original file' symbol in the diagram.",
+        "page": 28
+      },
+      "narrative": {
+        "text": "Document icon with a code tag '</>' and a yellow band reading 'PY', used as the 'original file' symbol in Figure 16 (C++ example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 28,
+          "coverage": 0.00064,
+          "imagesOnPage": 27
+        },
+        {
+          "page": 28,
+          "coverage": 0.00064,
+          "imagesOnPage": 27
+        },
+        {
+          "page": 28,
+          "coverage": 0.00064,
+          "imagesOnPage": 27
+        }
+      ]
+    },
+    {
+      "id": "img-p028-22",
+      "file": "images/img-p028-22.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "page": 28
+      },
+      "narrative": {
+        "text": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figure 16 (C++ example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 28,
+          "coverage": 0.00064,
+          "imagesOnPage": 27
+        },
+        {
+          "page": 28,
+          "coverage": 0.00064,
+          "imagesOnPage": 27
+        },
+        {
+          "page": 28,
+          "coverage": 0.00064,
+          "imagesOnPage": 27
+        }
+      ]
+    },
+    {
+      "id": "img-p028-25",
+      "file": "images/img-p028-25.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "page": 28
+      },
+      "narrative": {
+        "text": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figure 16 (C++ example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 28,
+          "coverage": 0.00064,
+          "imagesOnPage": 27
+        },
+        {
+          "page": 28,
+          "coverage": 0.00064,
+          "imagesOnPage": 27
+        },
+        {
+          "page": 28,
+          "coverage": 0.00064,
+          "imagesOnPage": 27
+        }
+      ]
+    },
+    {
+      "id": "img-p029-1",
+      "file": "images/img-p029-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Plain yellow right-pointing arrow used as a flow arrow inside the diagram.",
+        "page": 29
+      },
+      "narrative": {
+        "text": "Yellow arrow pointing right, a flow connector in Figure 17 (JavaScript example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 29,
+          "coverage": 0.000632,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 29,
+          "coverage": 0.000632,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 29,
+          "coverage": 0.000632,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p029-4",
+      "file": "images/img-p029-4.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Yellow circle with white plus sign, joining inputs in the flow row of the diagram.",
+        "page": 29
+      },
+      "narrative": {
+        "text": "Yellow circular plus-sign icon, used to combine inputs (commit + message + file) in Figure 17 (JavaScript example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 29,
+          "coverage": 0.000632,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 29,
+          "coverage": 0.000632,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p029-6",
+      "file": "images/img-p029-6.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Cartoon of a person with orange hair typing at a computer, the CodeAgent mascot; on the page it is a labelled node of the diagram.",
+        "page": 29
+      },
+      "narrative": {
+        "text": "Colourful cartoon icon of a person seated at a desk typing on a computer, used as the CodeAgent mascot/node in Figure 17 (JavaScript example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p029-7",
+      "file": "images/img-p029-7.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Document with magnifier and bar chart; labelled 'Summary' in the flow row of the diagram.",
+        "page": 29
+      },
+      "narrative": {
+        "text": "Icon of a document, a checklist panel, a small bar chart and a magnifying glass, labelled 'Summary' as the output node in Figure 17 (JavaScript example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p029-8",
+      "file": "images/img-p029-8.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "page": 29
+      },
+      "narrative": {
+        "text": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figure 17 (JavaScript example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 29,
+          "coverage": 0.000355,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 29,
+          "coverage": 0.000355,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 29,
+          "coverage": 0.000355,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p029-11",
+      "file": "images/img-p029-11.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Light-blue curved arrow pointing left; connector between panels in the diagram.",
+        "page": 29
+      },
+      "narrative": {
+        "text": "Light-blue curved arrow bending up and pointing left, a connector in Figure 17 (JavaScript example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 29,
+          "coverage": 0.000185,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 29,
+          "coverage": 0.000191,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 29,
+          "coverage": 0.000237,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p029-14",
+      "file": "images/img-p029-14.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "JavaScript programming-language logo placed in the header box of the example figure, labelling the language.",
+        "page": 29
+      },
+      "narrative": {
+        "text": "Logo of the JavaScript language (black 'JS' on a yellow shield), shown next to the language name in the header of Figure 17 (JavaScript example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p029-15",
+      "file": "images/img-p029-15.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "File icon with '</>' and a yellow 'JS' band; 'original file' symbol in the JavaScript example.",
+        "page": 29
+      },
+      "narrative": {
+        "text": "Document icon with a code tag '</>' and a yellow band reading 'JS', used as the 'original file' symbol in Figure 17 (JavaScript example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 29,
+          "coverage": 0.000632,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 29,
+          "coverage": 0.000632,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 29,
+          "coverage": 0.000632,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p029-18",
+      "file": "images/img-p029-18.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "page": 29
+      },
+      "narrative": {
+        "text": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figure 17 (JavaScript example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 29,
+          "coverage": 0.000632,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 29,
+          "coverage": 0.000632,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 29,
+          "coverage": 0.000632,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p029-21",
+      "file": "images/img-p029-21.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "page": 29
+      },
+      "narrative": {
+        "text": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figure 17 (JavaScript example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 29,
+          "coverage": 0.000632,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 29,
+          "coverage": 0.000632,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 29,
+          "coverage": 0.000632,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p030-1",
+      "file": "images/img-p030-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Plain yellow right-pointing arrow used as a flow arrow inside the diagram.",
+        "page": 30
+      },
+      "narrative": {
+        "text": "Yellow arrow pointing right, a flow connector in Figure 18 (C example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 30,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 30,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 30,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p030-4",
+      "file": "images/img-p030-4.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Yellow circle with white plus sign, joining inputs in the flow row of the diagram.",
+        "page": 30
+      },
+      "narrative": {
+        "text": "Yellow circular plus-sign icon, used to combine inputs (commit + message + file) in Figure 18 (C example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 30,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 30,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p030-6",
+      "file": "images/img-p030-6.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Cartoon of a person with orange hair typing at a computer, the CodeAgent mascot; on the page it is a labelled node of the diagram.",
+        "page": 30
+      },
+      "narrative": {
+        "text": "Colourful cartoon icon of a person seated at a desk typing on a computer, used as the CodeAgent mascot/node in Figure 18 (C example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p030-7",
+      "file": "images/img-p030-7.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Document with magnifier and bar chart; labelled 'Summary' in the flow row of the diagram.",
+        "page": 30
+      },
+      "narrative": {
+        "text": "Icon of a document, a checklist panel, a small bar chart and a magnifying glass, labelled 'Summary' as the output node in Figure 18 (C example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p030-8",
+      "file": "images/img-p030-8.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "page": 30
+      },
+      "narrative": {
+        "text": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figure 18 (C example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 30,
+          "coverage": 0.000362,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 30,
+          "coverage": 0.000362,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 30,
+          "coverage": 0.000362,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p030-11",
+      "file": "images/img-p030-11.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Light-blue curved arrow pointing left; connector between panels in the diagram.",
+        "page": 30
+      },
+      "narrative": {
+        "text": "Light-blue curved arrow bending up and pointing left, a connector in Figure 18 (C example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 30,
+          "coverage": 0.000189,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 30,
+          "coverage": 0.000194,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 30,
+          "coverage": 0.000241,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p030-14",
+      "file": "images/img-p030-14.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "C programming-language logo placed in the header box of the example figure, labelling the language.",
+        "page": 30
+      },
+      "narrative": {
+        "text": "Logo of the C language (white 'C' on a light-blue circle with a long dark-blue shadow), shown next to the language name in the header of Figure 18 (C example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p030-15",
+      "file": "images/img-p030-15.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "File icon with '</>' and a yellow 'PY' band; used as the 'original file' symbol in the diagram.",
+        "page": 30
+      },
+      "narrative": {
+        "text": "Document icon with a code tag '</>' and a yellow band reading 'PY', used as the 'original file' symbol in Figure 18 (C example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 30,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 30,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 30,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p030-18",
+      "file": "images/img-p030-18.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "page": 30
+      },
+      "narrative": {
+        "text": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figure 18 (C example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 30,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 30,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 30,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p030-21",
+      "file": "images/img-p030-21.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "page": 30
+      },
+      "narrative": {
+        "text": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figure 18 (C example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 30,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 30,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 30,
+          "coverage": 0.000643,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p031-1",
+      "file": "images/img-p031-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Plain yellow right-pointing arrow used as a flow arrow inside the diagram.",
+        "page": 31
+      },
+      "narrative": {
+        "text": "Yellow arrow pointing right, a flow connector in Figure 19 (C# example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 31,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 31,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 31,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p031-4",
+      "file": "images/img-p031-4.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Yellow circle with white plus sign, joining inputs in the flow row of the diagram.",
+        "page": 31
+      },
+      "narrative": {
+        "text": "Yellow circular plus-sign icon, used to combine inputs (commit + message + file) in Figure 19 (C# example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 31,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 31,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p031-6",
+      "file": "images/img-p031-6.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Cartoon of a person with orange hair typing at a computer, the CodeAgent mascot; on the page it is a labelled node of the diagram.",
+        "page": 31
+      },
+      "narrative": {
+        "text": "Colourful cartoon icon of a person seated at a desk typing on a computer, used as the CodeAgent mascot/node in Figure 19 (C# example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p031-7",
+      "file": "images/img-p031-7.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Document with magnifier and bar chart; labelled 'Summary' in the flow row of the diagram.",
+        "page": 31
+      },
+      "narrative": {
+        "text": "Icon of a document, a checklist panel, a small bar chart and a magnifying glass, labelled 'Summary' as the output node in Figure 19 (C# example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p031-8",
+      "file": "images/img-p031-8.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "page": 31
+      },
+      "narrative": {
+        "text": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figure 19 (C# example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 31,
+          "coverage": 0.000353,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 31,
+          "coverage": 0.000353,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 31,
+          "coverage": 0.000353,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p031-11",
+      "file": "images/img-p031-11.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Light-blue curved arrow pointing left; connector between panels in the diagram.",
+        "page": 31
+      },
+      "narrative": {
+        "text": "Light-blue curved arrow bending up and pointing left, a connector in Figure 19 (C# example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 31,
+          "coverage": 0.000184,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 31,
+          "coverage": 0.00019,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 31,
+          "coverage": 0.000235,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p031-14",
+      "file": "images/img-p031-14.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "File icon with '</>' and a yellow 'PY' band; used as the 'original file' symbol in the diagram.",
+        "page": 31
+      },
+      "narrative": {
+        "text": "Document icon with a code tag '</>' and a yellow band reading 'PY', used as the 'original file' symbol in Figure 19 (C# example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 31,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 31,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 31,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p031-17",
+      "file": "images/img-p031-17.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "C# programming-language logo placed in the header box of the example figure, labelling the language.",
+        "page": 31
+      },
+      "narrative": {
+        "text": "Logo of the C# language ('C#' in a browser-window frame with a yellow title bar), shown next to the language name in the header of Figure 19 (C# example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p031-18",
+      "file": "images/img-p031-18.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "page": 31
+      },
+      "narrative": {
+        "text": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figure 19 (C# example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 31,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 31,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 31,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p031-21",
+      "file": "images/img-p031-21.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "page": 31
+      },
+      "narrative": {
+        "text": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figure 19 (C# example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 31,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 31,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 31,
+          "coverage": 0.000628,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p032-1",
+      "file": "images/img-p032-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Plain yellow right-pointing arrow used as a flow arrow inside the diagram.",
+        "page": 32
+      },
+      "narrative": {
+        "text": "Yellow arrow pointing right, a flow connector in Figure 20 (PHP example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 32,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 32,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 32,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p032-4",
+      "file": "images/img-p032-4.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Yellow circle with white plus sign, joining inputs in the flow row of the diagram.",
+        "page": 32
+      },
+      "narrative": {
+        "text": "Yellow circular plus-sign icon, used to combine inputs (commit + message + file) in Figure 20 (PHP example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 32,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 32,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p032-6",
+      "file": "images/img-p032-6.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Cartoon of a person with orange hair typing at a computer, the CodeAgent mascot; on the page it is a labelled node of the diagram.",
+        "page": 32
+      },
+      "narrative": {
+        "text": "Colourful cartoon icon of a person seated at a desk typing on a computer, used as the CodeAgent mascot/node in Figure 20 (PHP example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 32,
+          "coverage": 0.001966,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.001966,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p032-7",
+      "file": "images/img-p032-7.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Document with magnifier and bar chart; labelled 'Summary' in the flow row of the diagram.",
+        "page": 32
+      },
+      "narrative": {
+        "text": "Icon of a document, a checklist panel, a small bar chart and a magnifying glass, labelled 'Summary' as the output node in Figure 20 (PHP example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 32,
+          "coverage": 0.001439,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.001439,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p032-8",
+      "file": "images/img-p032-8.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Black pair of opposed curved arrows; 'conversation'/'looped conversation' symbol in the diagram.",
+        "page": 32
+      },
+      "narrative": {
+        "text": "Black icon of two curved arrows forming a loop (right-pointing on top, left-pointing below), the conversation/loop symbol in Figure 20 (PHP example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 32,
+          "coverage": 0.00036,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 32,
+          "coverage": 0.00036,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 32,
+          "coverage": 0.00036,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.00036,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.00036,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.00036,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p032-11",
+      "file": "images/img-p032-11.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Light-blue curved arrow pointing left; connector between panels in the diagram.",
+        "page": 32
+      },
+      "narrative": {
+        "text": "Light-blue curved arrow bending up and pointing left, a connector in Figure 20 (PHP example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 32,
+          "coverage": 0.000188,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 32,
+          "coverage": 0.000193,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 32,
+          "coverage": 0.00024,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.000188,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.000193,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.00024,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p032-14",
+      "file": "images/img-p032-14.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "File icon with '</>' and a yellow 'PY' band; used as the 'original file' symbol in the diagram.",
+        "page": 32
+      },
+      "narrative": {
+        "text": "Document icon with a code tag '</>' and a yellow band reading 'PY', used as the 'original file' symbol in Figure 20 (PHP example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 32,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 32,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 32,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p032-17",
+      "file": "images/img-p032-17.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "PHP programming-language logo placed in the header box of the example figure, labelling the language.",
+        "page": 32
+      },
+      "narrative": {
+        "text": "Logo of the PHP language (black 'php' on a purple oval), shown next to the language name in the header of Figure 20 (PHP example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 32,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p032-18",
+      "file": "images/img-p032-18.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "page": 32
+      },
+      "narrative": {
+        "text": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figure 20 (PHP example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 32,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 32,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 32,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p032-21",
+      "file": "images/img-p032-21.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "page": 32
+      },
+      "narrative": {
+        "text": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figure 20 (PHP example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 32,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 32,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 32,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        },
+        {
+          "page": 33,
+          "coverage": 0.00064,
+          "imagesOnPage": 23
+        }
+      ]
+    },
+    {
+      "id": "img-p034-1",
+      "file": "images/img-p034-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Java programming-language logo placed in the header box of the example figure, labelling the language.",
+        "page": 34
+      },
+      "narrative": {
+        "text": "Logo of the Java language (steaming coffee cup Java logo (red steam, blue cup lines)), shown next to the language name in the header of Figure 22 (CodeAgent-3.5 vs CodeAgent-4.0, Java example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p034-2",
+      "file": "images/img-p034-2.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Light-blue curved arrow pointing left; connector between panels in the diagram.",
+        "page": 34
+      },
+      "narrative": {
+        "text": "Light-blue curved arrow bending up and pointing left, a connector in Figure 22 (CodeAgent-3.5 vs CodeAgent-4.0, Java example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 34,
+          "coverage": 0.000142,
+          "imagesOnPage": 13
+        },
+        {
+          "page": 34,
+          "coverage": 0.000146,
+          "imagesOnPage": 13
+        },
+        {
+          "page": 34,
+          "coverage": 0.000182,
+          "imagesOnPage": 13
+        }
+      ]
+    },
+    {
+      "id": "img-p034-5",
+      "file": "images/img-p034-5.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "File icon with '</>' and a yellow 'PY' band; used as the 'original file' symbol in the diagram.",
+        "page": 34
+      },
+      "narrative": {
+        "text": "Document icon with a code tag '</>' and a yellow band reading 'PY', used as the 'original file' symbol in Figure 22 (CodeAgent-3.5 vs CodeAgent-4.0, Java example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 34,
+          "coverage": 0.000484,
+          "imagesOnPage": 13
+        },
+        {
+          "page": 34,
+          "coverage": 0.000484,
+          "imagesOnPage": 13
+        }
+      ]
+    },
+    {
+      "id": "img-p034-7",
+      "file": "images/img-p034-7.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Cartoon of a person with orange hair typing at a computer, the CodeAgent mascot; on the page it is a labelled node of the diagram.",
+        "page": 34
+      },
+      "narrative": {
+        "text": "Colourful cartoon icon of a person seated at a desk typing on a computer, used as the CodeAgent mascot/node in Figure 22 (CodeAgent-3.5 vs CodeAgent-4.0, Java example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 34,
+          "coverage": 0.001488,
+          "imagesOnPage": 13
+        },
+        {
+          "page": 34,
+          "coverage": 0.001488,
+          "imagesOnPage": 13
+        },
+        {
+          "page": 34,
+          "coverage": 0.001488,
+          "imagesOnPage": 13
+        }
+      ]
+    },
+    {
+      "id": "img-p034-10",
+      "file": "images/img-p034-10.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Speech bubble with a red '1' notification badge; 'Commit Message' symbol in the diagram.",
+        "page": 34
+      },
+      "narrative": {
+        "text": "Yellow speech-bubble icon with a red circular badge showing '1', the 'Commit Message' symbol in Figure 22 (CodeAgent-3.5 vs CodeAgent-4.0, Java example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 34,
+          "coverage": 0.000484,
+          "imagesOnPage": 13
+        },
+        {
+          "page": 34,
+          "coverage": 0.000484,
+          "imagesOnPage": 13
+        }
+      ]
+    },
+    {
+      "id": "img-p034-12",
+      "file": "images/img-p034-12.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Orange-red pull-request glyph (two nodes, curved arrow back); legend item 'Pull Request' / 'Commit' header icon on the page.",
+        "page": 34
+      },
+      "narrative": {
+        "text": "Orange-to-yellow pull-request icon (vertical line between two circles, plus a curved arrow from a third circle back to the top one), the 'Pull Request'/'Commit' symbol in Figure 22 (CodeAgent-3.5 vs CodeAgent-4.0, Java example).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 34,
+          "coverage": 0.000484,
+          "imagesOnPage": 13
+        },
+        {
+          "page": 34,
+          "coverage": 0.000484,
+          "imagesOnPage": 13
+        }
+      ]
+    },
+    {
+      "id": "img-p035-1",
+      "file": "images/img-p035-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "Large screenshot of a web page; page-35 caption is Figure 23 \"website of CodeAgent\".",
+        "page": 35
+      },
+      "narrative": {
+        "text": "Figure 23: screenshot of the CodeAgent website (dark theme) with menu items \"Our Expertise\", \"Language Support\", \"Demos\", \"FAQs\" and a \"Test CodeAgent Now!\" button, the heading \"Revolutionizing Code Quality with AI Precision.\", three feature cards, and a \"Code Review\" section beside an editor screenshot showing a JavaScript file auth.js.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    }
+  ]
+}

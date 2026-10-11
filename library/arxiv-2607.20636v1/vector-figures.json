@@ -1,0 +1,1006 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-2607.20636v1",
+  "figures": [
+    {
+      "id": "vfig-p045",
+      "file": "figures/vfig-p045.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 45
+      },
+      "page": 45,
+      "rotation": 0,
+      "captionLabels": [
+        "4.1"
+      ],
+      "region": [
+        123.17,
+        101.2,
+        505.84,
+        244.71
+      ],
+      "assembly": {
+        "drawings": 10,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              123.17,
+              101.2,
+              505.84,
+              244.71
+            ],
+            "drawings": 10,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "(Parametrized)",
+              "Family of",
+              "algorithms",
+              "Receive iid instances offline, find best parameter p",
+              "1",
+              "Run Algp on new instance online",
+              "2",
+              "~ D ,"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              254.36,
+              135.36,
+              319.83,
+              196
+            ],
+            "parent": "b1",
+            "labels": [
+              "(Parametrized)",
+              "Family of",
+              "algorithms"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              138.8,
+              121.38,
+              327.69,
+              224.53
+            ],
+            "parent": null,
+            "labels": [
+              "Receive iid instances offline, find best parameter p",
+              "1",
+              "~ D ,"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              335.05,
+              121.71,
+              488.23,
+              224.86
+            ],
+            "parent": null,
+            "labels": [
+              "Run Algp on new instance online",
+              "2"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 5,
+        "connectors": [],
+        "between": [],
+        "outside": 32
+      }
+    },
+    {
+      "id": "vfig-p048",
+      "file": "figures/vfig-p048.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 48
+      },
+      "page": 48,
+      "rotation": 0,
+      "captionLabels": [
+        "4.2"
+      ],
+      "region": [
+        121.35,
+        101.21,
+        488.52,
+        230.36
+      ],
+      "assembly": {
+        "drawings": 51,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              121.35,
+              101.21,
+              293.55,
+              230.36
+            ],
+            "drawings": 24,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "number of pulls",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "reward",
+              "algorithm for",
+              "= 1",
+              "threshold",
+              "arm 1",
+              "arm 2",
+              "arm 3"
+            ]
+          },
+          {
+            "bbox": [
+              316.32,
+              101.21,
+              488.52,
+              230.36
+            ],
+            "drawings": 23,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "number of pulls",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "reward",
+              "algorithm for",
+              "= 0.5",
+              "threshold",
+              "arm 1",
+              "arm 2",
+              "arm 3"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              121.35,
+              101.21,
+              293.55,
+              230.36
+            ],
+            "parent": null,
+            "labels": [
+              "number of pulls",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "reward",
+              "algorithm for",
+              "= 1"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              226.96,
+              178.76,
+              273.53,
+              213.35
+            ],
+            "parent": "b0",
+            "labels": [
+              "threshold",
+              "arm 1",
+              "arm 2",
+              "arm 3"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              316.32,
+              101.21,
+              488.52,
+              230.36
+            ],
+            "parent": null,
+            "labels": [
+              "number of pulls",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "reward",
+              "algorithm for",
+              "= 0.5"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              421.93,
+              178.76,
+              468.5,
+              213.35
+            ],
+            "parent": "b2",
+            "labels": [
+              "threshold",
+              "arm 1",
+              "arm 2",
+              "arm 3"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 16,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              301.63,
+              472.91,
+              309.52,
+              472.91
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              383.55,
+              599.84,
+              389.58,
+              599.84
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              123.86,
+              649.45,
+              129.89,
+              649.45
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              401.45,
+              690.1,
+              407.47,
+              690.1
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 45
+      }
+    },
+    {
+      "id": "vfig-p049",
+      "file": "figures/vfig-p049.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 49
+      },
+      "page": 49,
+      "rotation": 0,
+      "captionLabels": [
+        "4.3"
+      ],
+      "region": [
+        121.35,
+        101.21,
+        488.52,
+        230.36
+      ],
+      "assembly": {
+        "drawings": 46,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              121.35,
+              101.21,
+              293.55,
+              230.36
+            ],
+            "drawings": 18,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "number of pulls",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "reward",
+              "Lower bound instance,",
+              "= 1",
+              "f *",
+              "fi (k-1 copies)"
+            ]
+          },
+          {
+            "bbox": [
+              316.32,
+              101.21,
+              488.52,
+              230.36
+            ],
+            "drawings": 18,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "number of pulls",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "reward",
+              "Lower bound instance,",
+              "= 0.5",
+              "f *",
+              "fi (k-1 copies)"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              121.35,
+              101.21,
+              293.55,
+              230.36
+            ],
+            "parent": null,
+            "labels": [
+              "number of pulls",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "reward",
+              "Lower bound instance,",
+              "= 1"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              145.68,
+              119.51,
+              203.97,
+              138.2
+            ],
+            "parent": "b0",
+            "labels": [
+              "f *",
+              "fi (k-1 copies)"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              316.32,
+              101.21,
+              488.52,
+              230.36
+            ],
+            "parent": null,
+            "labels": [
+              "number of pulls",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "reward",
+              "Lower bound instance,",
+              "= 0.5"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              340.65,
+              119.51,
+              398.95,
+              138.2
+            ],
+            "parent": "b2",
+            "labels": [
+              "f *",
+              "fi (k-1 copies)"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 16,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              242.51,
+              253.84,
+              248.53,
+              253.84
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              385.71,
+              363.32,
+              391.82,
+              363.32
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              317.55,
+              393.87,
+              374.05,
+              393.87
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              384.32,
+              393.87,
+              434.56,
+              393.87
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              418.81,
+              399.24,
+              432.86,
+              399.24
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              516.84,
+              421.7,
+              522.86,
+              421.7
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              519.39,
+              595.41,
+              519.39,
+              602.77
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              519.59,
+              595.61,
+              526.13,
+              595.61
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              519.59,
+              602.57,
+              526.13,
+              602.57
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              526.33,
+              595.41,
+              526.33,
+              602.77
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 43
+      }
+    },
+    {
+      "id": "vfig-p054",
+      "file": "figures/vfig-p054.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 54
+      },
+      "page": 54,
+      "rotation": 0,
+      "captionLabels": [
+        "4.6"
+      ],
+      "region": [
+        125.69,
+        101.58,
+        507.79,
+        251.74
+      ],
+      "assembly": {
+        "drawings": 20,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              125.69,
+              101.58,
+              292.59,
+              251.74
+            ],
+            "drawings": 7,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "optimal arm i∗",
+              "all other arms"
+            ]
+          },
+          {
+            "bbox": [
+              340.88,
+              101.58,
+              507.79,
+              251.74
+            ],
+            "drawings": 7,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "optimal arm i∗",
+              "all other arms"
+            ]
+          }
+        ],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              129.18,
+              249.53,
+              291.25,
+              249.53
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              285.24,
+              247.32,
+              292.59,
+              251.74
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              127.85,
+              102.93,
+              129.18,
+              249.53
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              125.69,
+              101.58,
+              130.11,
+              108.95
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              128.51,
+              127.81,
+              261.66,
+              127.81
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              129.18,
+              188.33,
+              189.03,
+              249.53
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              189.03,
+              188.33,
+              262.33,
+              188.33
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              344.37,
+              249.53,
+              506.44,
+              249.53
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              500.44,
+              247.32,
+              507.79,
+              251.74
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              343.04,
+              102.93,
+              344.37,
+              249.53
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              340.88,
+              101.58,
+              345.31,
+              108.95
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              344.37,
+              126.46,
+              469.45,
+              248.86
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              344.37,
+              216.58,
+              378,
+              249.53
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              378,
+              216.58,
+              472.14,
+              216.58
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              122.08,
+              178.19,
+              125.73,
+              178.19
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              336.6,
+              210.47,
+              340.67,
+              210.47
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              327.68,
+              291.16,
+              333.71,
+              291.16
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              216.23,
+              546.74,
+              222.34,
+              546.74
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              229.58,
+              546.74,
+              233.81,
+              546.74
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              313.13,
+              600.94,
+              317.75,
+              600.94
+            ]
+          }
+        ],
+        "between": [
+          "reward",
+          "1",
+          "1",
+          "k"
+        ],
+        "outside": 49
+      }
+    },
+    {
+      "id": "vfig-p089",
+      "file": null,
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 89
+      },
+      "page": 89,
+      "rotation": 0,
+      "captionLabels": [
+        "6.1"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 4,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              157.35,
+              109.83,
+              192.01,
+              109.83
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              176.2,
+              117.33,
+              179.86,
+              117.33
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              279.82,
+              433.88,
+              290.73,
+              433.88
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              325.15,
+              447.43,
+              341.51,
+              447.43
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      }
+    },
+    {
+      "id": "vfig-p100",
+      "file": null,
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 100
+      },
+      "page": 100,
+      "rotation": 0,
+      "captionLabels": [
+        "7.1"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 6,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              459.82,
+              115.94,
+              473.67,
+              115.94
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              461.01,
+              125.62,
+              472.47,
+              125.62
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              181.77,
+              137.01,
+              195.92,
+              137.01
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              182.97,
+              146.69,
+              194.73,
+              146.69
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              321.08,
+              146.69,
+              326.52,
+              146.69
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              101.9,
+              675.43,
+              271.98,
+              675.43
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      }
+    }
+  ]
+}

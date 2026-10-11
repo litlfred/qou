@@ -1,0 +1,121 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2601.04544v1",
+ "source_sha256": "5472dcd690fe1c89",
+ "brief": "TCAndon-Router: Adaptive Reasoning Router for Multi-Agent Collaboration — Multi-Agent Systems(MAS) have become a powerful paradigm for building high performance intelli- gent applications.",
+ "extended": "**TCAndon-Router: Adaptive Reasoning Router for Multi-Agent Collaboration**\n\n*Multi-Agent Collaboration*\n\n16 pp, 20 sections.\n\n**Abstract.** Multi-Agent Systems(MAS) have become a powerful paradigm for building high performance intelli- gent applications. Within these systems, the router responsible for determining which expert agents should handle a given query plays a crucial role in overall performance. Existing routing strategies generally fall into two categories: performance routing, which balances latency and cost across mod- els of different sizes, and task routing, which assigns queries to domain-specific experts to improve accuracy.\n\n**Outline.** Front matter; Introduction; Related Work; Method; Problem Formulation; Dynamic Agent Addition; Multi-Agent Conflicts; Training TCAR; Experiments; Experimental Setup; Main Results; Ablation Studies; Conclusion; Analysis; Limitations; Error Analysis; Multi-Agent Collaboration Analysis; Efficiency and Cost Analysis",
+ "tokens": {
+  "brief": 47,
+  "extended": 244
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-related-work",
+   "title": "Related Work",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-method",
+   "title": "Method",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-003-problem-formulation",
+   "title": "Problem Formulation",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-004-dynamic-agent-addition",
+   "title": "Dynamic Agent Addition",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-005-multi-agent-conflicts",
+   "title": "Multi-Agent Conflicts",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-006-training-tcar",
+   "title": "Training TCAR",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-007-experiments",
+   "title": "Experiments",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-008-experimental-setup",
+   "title": "Experimental Setup",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-009-main-results",
+   "title": "Main Results",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-010-ablation-studies",
+   "title": "Ablation Studies",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-011-conclusion",
+   "title": "Conclusion",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-012-analysis",
+   "title": "Analysis",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-013-limitations",
+   "title": "Limitations",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-014-error-analysis",
+   "title": "Error Analysis",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-015-multi-agent-collaboration-analysis",
+   "title": "Multi-Agent Collaboration Analysis",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-016-efficiency-and-cost-analysis",
+   "title": "Efficiency and Cost Analysis",
+   "pages": "10-15"
+  },
+  {
+   "id": "sec-017-prompt",
+   "title": "prompt",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-018-badcase",
+   "title": "Badcase",
+   "pages": "15-16"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

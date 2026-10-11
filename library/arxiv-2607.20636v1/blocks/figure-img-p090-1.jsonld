@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
+    }
+  ],
+  "@id": "library/arxiv-2607.20636v1/blocks/figure-img-p090-1",
+  "@type": [
+    "folio-assistant-core:Figure",
+    "doco:Figure"
+  ],
+  "kind": "figure",
+  "file": "../images/img-p090-1.png",
+  "pageStart": 90,
+  "pageEnd": 90,
+  "narrative": {
+    "text": "Figure 6.1, 'Impact of Financial Supplement on Finding Correct Cascade, 100 agents': proportion of correct cascades (0-1.0) against signal strength (0.51-0.99). 'our subsidy' (orange) starts near 0.89 and reaches about 1.0 by 0.6; 'no subsidy' (blue) rises from about 0.51 to 1.0, with error bars.",
+    "state": "draft",
+    "drafted_by": {
+      "kind": "agent",
+      "id": "claude",
+      "model": "claude-opus-5-5"
+    },
+    "drafted_at": "2026-10-11"
+  },
+  "derivedFrom": "library/arxiv-2607.20636v1/sections/sec-058",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2607.20636v1/manifest.jsonld",
+  "provenance": "ingested"
+}

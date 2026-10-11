@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2404.04834v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "LLM-Based Multi-Agent Systems for Software Engineering: Literature Review, Vision and the Road Ahead",
+  "contains": [
+    "library/arxiv-2404.04834v4/sections/sec-front-matter",
+    "library/arxiv-2404.04834v4/sections/sec-000",
+    "library/arxiv-2404.04834v4/sections/sec-001",
+    "library/arxiv-2404.04834v4/sections/sec-002",
+    "library/arxiv-2404.04834v4/sections/sec-003",
+    "library/arxiv-2404.04834v4/sections/sec-004",
+    "library/arxiv-2404.04834v4/sections/sec-005",
+    "library/arxiv-2404.04834v4/sections/sec-006",
+    "library/arxiv-2404.04834v4/sections/sec-007",
+    "library/arxiv-2404.04834v4/sections/sec-008",
+    "library/arxiv-2404.04834v4/sections/sec-009",
+    "library/arxiv-2404.04834v4/sections/sec-010",
+    "library/arxiv-2404.04834v4/sections/sec-011",
+    "library/arxiv-2404.04834v4/sections/sec-012",
+    "library/arxiv-2404.04834v4/sections/sec-013",
+    "library/arxiv-2404.04834v4/sections/sec-014",
+    "library/arxiv-2404.04834v4/sections/sec-015",
+    "library/arxiv-2404.04834v4/sections/sec-016",
+    "library/arxiv-2404.04834v4/sections/sec-017",
+    "library/arxiv-2404.04834v4/sections/sec-018",
+    "library/arxiv-2404.04834v4/sections/sec-019",
+    "library/arxiv-2404.04834v4/sections/sec-020",
+    "library/arxiv-2404.04834v4/sections/sec-021"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "meta": {
+    "doc_id": "arxiv-2404.04834v4",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2404.04834v4.pdf",
+    "source_sha256": "df742fea7776a7c0449897488c87a2429cef9d349946311ee73c130707b9ef62",
+    "pages": 30,
+    "arxiv": {
+      "id": "2404.04834",
+      "version": "4",
+      "primary_class": "cs.SE",
+      "stamp_date": "18 Jul 2025"
+    },
+    "doi": "10.1145/nnnnnnn",
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

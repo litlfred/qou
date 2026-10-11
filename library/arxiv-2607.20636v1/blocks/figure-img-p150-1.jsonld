@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
+    }
+  ],
+  "@id": "library/arxiv-2607.20636v1/blocks/figure-img-p150-1",
+  "@type": [
+    "folio-assistant-core:Figure",
+    "doco:Figure"
+  ],
+  "kind": "figure",
+  "file": "../images/img-p150-1.png",
+  "pageStart": 150,
+  "pageEnd": 150,
+  "narrative": {
+    "text": "'Alpha sweeps with 95% t-intervals (datasets 0–25)': normalized cumulative reward (ALG/OPT), 0.66-1.02, against alpha (0.1-1.0) for ds 0, 9, 12, 16, 17, 18, 19, 20, 25 with shaded bands. Most curves are nearly flat between about 0.84 and 0.94; ds 19 decreases from about 0.79 to 0.72.",
+    "state": "draft",
+    "drafted_by": {
+      "kind": "agent",
+      "id": "claude",
+      "model": "claude-opus-5-5"
+    },
+    "drafted_at": "2026-10-11"
+  },
+  "derivedFrom": "library/arxiv-2607.20636v1/sections/sec-107",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2607.20636v1/manifest.jsonld",
+  "provenance": "ingested"
+}

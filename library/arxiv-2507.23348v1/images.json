@@ -1,0 +1,4197 @@
+{
+  "$schema": "folio-document-images/v1",
+  "doc_id": "arxiv-2507.23348v1",
+  "images": [
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "red circle with white X",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Red circular X badge marking the individual-exploration plan as \"Wrong place!\" in Figure 1.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-2",
+      "file": "images/img-p003-2.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "tree diagram with file/class/function nodes and dashed arrows",
+        "page": 3
+      },
+      "narrative": {
+        "text": "File-tree localization diagram from Figure 1: django -> db/models -> fields -> __init__.py -> Field -> contribute_to_class, plus options.py -> add_field and contrib/contenttypes -> fields.py -> GenericForeignKey -> contribute_to_class, with dashed blue arrows linking the nodes into a propagation chain.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-3",
+      "file": "images/img-p003-3.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "three horizontal light-blue dots",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Three horizontal light-blue dots indicating elided localization chains between debating agents in Figure 1.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-4",
+      "file": "images/img-p003-4.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue folder icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Blue folder glyph used as a directory node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-5",
+      "file": "images/img-p003-5.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue code-file icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-6",
+      "file": "images/img-p003-6.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue three-gear icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Blue cluster of three gears marking a class node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-7",
+      "file": "images/img-p003-7.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue single-gear icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Blue single gear marking a function/method node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-8",
+      "file": "images/img-p003-8.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black chain-link icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000467,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000467,
+          "imagesOnPage": 110
+        }
+      ]
+    },
+    {
+      "id": "img-p003-10",
+      "file": "images/img-p003-10.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue folder icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Blue folder glyph used as a directory node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-11",
+      "file": "images/img-p003-11.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue code-file icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-12",
+      "file": "images/img-p003-12.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue three-gear icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Blue cluster of three gears marking a class node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-13",
+      "file": "images/img-p003-13.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "green circle with white check",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Green circular check badge marking the competitive-debate plan as \"Correct place!\" in Figure 1.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-14",
+      "file": "images/img-p003-14.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue single-gear icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Blue single gear marking a function/method node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-15",
+      "file": "images/img-p003-15.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black chain-link icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        }
+      ]
+    },
+    {
+      "id": "img-p003-25",
+      "file": "images/img-p003-25.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black chain-link icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        }
+      ]
+    },
+    {
+      "id": "img-p003-35",
+      "file": "images/img-p003-35.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue folder icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Blue folder glyph used as a directory node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-36",
+      "file": "images/img-p003-36.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue code-file icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-37",
+      "file": "images/img-p003-37.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue three-gear icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Blue cluster of three gears marking a class node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-38",
+      "file": "images/img-p003-38.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue code-file icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-39",
+      "file": "images/img-p003-39.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue three-gear icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Blue cluster of three gears marking a class node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-40",
+      "file": "images/img-p003-40.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue single-gear icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Blue single gear marking a function/method node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-41",
+      "file": "images/img-p003-41.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue single-gear icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Blue single gear marking a function/method node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-42",
+      "file": "images/img-p003-42.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black group with speech bubbles",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Black icon of three people with two speech bubbles, representing a group of debating agents in Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000362,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000362,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000362,
+          "imagesOnPage": 110
+        }
+      ]
+    },
+    {
+      "id": "img-p003-45",
+      "file": "images/img-p003-45.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue single-gear icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Blue single gear marking a function/method node in the localization-chain / file-tree diagram of Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-46",
+      "file": "images/img-p003-46.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black single-person silhouette",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Black single-person icon representing the individual-exploration agent in Figure 1.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-47",
+      "file": "images/img-p003-47.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black people around a table",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Black icon of three people at a table, labelled \"Debate\" in Figure 1.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-48",
+      "file": "images/img-p003-48.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black group with speech bubbles",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Black icon of three people with two speech bubbles, representing a group of debating agents in Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000362,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000362,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000362,
+          "imagesOnPage": 110
+        }
+      ]
+    },
+    {
+      "id": "img-p003-51",
+      "file": "images/img-p003-51.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black group with speech bubbles",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Black icon of three people with two speech bubbles, representing a group of debating agents in Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000362,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000362,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000362,
+          "imagesOnPage": 110
+        }
+      ]
+    },
+    {
+      "id": "img-p003-54",
+      "file": "images/img-p003-54.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black beetle/bug icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Black bug icon labelling the GitHub issue (django-11999) panel in Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000422,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000325,
+          "imagesOnPage": 110
+        }
+      ]
+    },
+    {
+      "id": "img-p003-56",
+      "file": "images/img-p003-56.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "short tree diagram with dashed arrows",
+        "page": 3
+      },
+      "narrative": {
+        "text": "File-tree localization chain from Figure 1 (individual exploration): django/db/models -> base.py -> Model -> _get_FIELD_display, linked by dashed blue arrows.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p003-57",
+      "file": "images/img-p003-57.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black git pull-request icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Black pull-request/merge glyph labelling the \"Golden Patch\" panel in Figure 1.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000422,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000325,
+          "imagesOnPage": 110
+        }
+      ]
+    },
+    {
+      "id": "img-p003-59",
+      "file": "images/img-p003-59.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black chain-link icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000467,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000467,
+          "imagesOnPage": 110
+        }
+      ]
+    },
+    {
+      "id": "img-p003-61",
+      "file": "images/img-p003-61.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black chain-link icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        }
+      ]
+    },
+    {
+      "id": "img-p003-71",
+      "file": "images/img-p003-71.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black chain-link icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        }
+      ]
+    },
+    {
+      "id": "img-p003-81",
+      "file": "images/img-p003-81.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black chain-link icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        }
+      ]
+    },
+    {
+      "id": "img-p003-91",
+      "file": "images/img-p003-91.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black chain-link icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        }
+      ]
+    },
+    {
+      "id": "img-p003-101",
+      "file": "images/img-p003-101.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black chain-link icon",
+        "page": 3
+      },
+      "narrative": {
+        "text": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 1 (motivating example of multi-agent debate).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        },
+        {
+          "page": 3,
+          "coverage": 0.000471,
+          "imagesOnPage": 110
+        }
+      ]
+    },
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "three vertical blue dots",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Three vertically stacked blue dots indicating elided items (more chains/entities) in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-2",
+      "file": "images/img-p004-2.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "pencil-on-lines icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Black pencil-writing glyph marking an agent writing an argument/proposal in the modification-plan debate rounds of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000363,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000363,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000363,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-5",
+      "file": "images/img-p004-5.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "pencil-on-lines icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Black pencil-writing glyph marking an agent writing an argument/proposal in the modification-plan debate rounds of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000363,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000363,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000363,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-8",
+      "file": "images/img-p004-8.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "thin blue left arrow in a tall transparent strip",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Small blue left-pointing flow arrow linking stages in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-9",
+      "file": "images/img-p004-9.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "pencil-on-lines icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Black pencil-writing glyph marking an agent writing an argument/proposal in the modification-plan debate rounds of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-10",
+      "file": "images/img-p004-10.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "pencil-on-lines icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Black pencil-writing glyph marking an agent writing an argument/proposal in the modification-plan debate rounds of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000363,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000363,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000363,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-13",
+      "file": "images/img-p004-13.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "lavender rounded square with plus sign",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Lavender rounded square with a purple plus sign, part of the robot/graph-construction step in the fault-propagation panel of Figure 2.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-14",
+      "file": "images/img-p004-14.png",
+      "role": "decorative",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blurred gray arrow, a drop-shadow mask",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blurred gray left-pointing arrow silhouette; a soft drop shadow behind a blue flow arrow in Figure 2 (overview of the SWE-Debate framework), no information of its own.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000865,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000865,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000865,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-17",
+      "file": "images/img-p004-17.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black chain-link icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-25",
+      "file": "images/img-p004-25.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black chain-link icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-33",
+      "file": "images/img-p004-33.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "light-blue robot-head icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Light-blue robot-head glyph representing an LLM agent in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-34",
+      "file": "images/img-p004-34.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "light-blue robot-head icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Light-blue robot-head glyph representing an LLM agent in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-35",
+      "file": "images/img-p004-35.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "light-blue robot-head icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Light-blue robot-head glyph representing an LLM agent in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-36",
+      "file": "images/img-p004-36.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "light-blue robot-head icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Light-blue robot-head glyph representing an LLM agent in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-37",
+      "file": "images/img-p004-37.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "light-blue robot-head icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Light-blue robot-head glyph representing an LLM agent in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-38",
+      "file": "images/img-p004-38.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "light-blue robot-head icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Light-blue robot-head glyph representing an LLM agent in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-39",
+      "file": "images/img-p004-39.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "light-blue robot-head icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Light-blue robot-head glyph representing an LLM agent in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-40",
+      "file": "images/img-p004-40.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "colour cartoon robot at a laptop",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Colour illustration of a blue robot working at a laptop, representing the debating/judging agent in Figure 2.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.001085,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.001079,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-42",
+      "file": "images/img-p004-42.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black chain-link icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-50",
+      "file": "images/img-p004-50.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black chain-link icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-58",
+      "file": "images/img-p004-58.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black chain-link icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000492,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000492,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000492,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-61",
+      "file": "images/img-p004-61.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black chain-link icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-69",
+      "file": "images/img-p004-69.png",
+      "role": "decorative",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blurred gray arrow, a drop-shadow mask",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blurred gray right-pointing arrow silhouette; a soft drop shadow behind a blue flow arrow in Figure 2 (overview of the SWE-Debate framework), no information of its own.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000871,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000871,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-71",
+      "file": "images/img-p004-71.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black chain-link icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000492,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000492,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000492,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-74",
+      "file": "images/img-p004-74.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black chain-link icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000492,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000492,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000492,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-77",
+      "file": "images/img-p004-77.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black chain-link icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-85",
+      "file": "images/img-p004-85.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black chain-link icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Black chain-link glyph connecting consecutive entities in a localization chain in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000496,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-93",
+      "file": "images/img-p004-93.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "gray/yellow hands holding X and check signs",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Two hands holding a gray X sign and a yellow check-mark sign, representing the debate/judging step in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-94",
+      "file": "images/img-p004-94.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "colour robot figure",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue/purple robot illustration labelled \"Editor\" in the patch-generation stage of Figure 2.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-95",
+      "file": "images/img-p004-95.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "window with wrench and code-tag badge",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue icon of a window with a wrench and a \"</>\" badge, labelled \"Patch\" (output) in Figure 2.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-96",
+      "file": "images/img-p004-96.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue folder icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue folder glyph used as a directory node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-97",
+      "file": "images/img-p004-97.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue code-file icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-98",
+      "file": "images/img-p004-98.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue three-gear icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue cluster of three gears marking a class node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-99",
+      "file": "images/img-p004-99.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "three vertical blue dots",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Three vertically stacked blue dots indicating elided items (more chains/entities) in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-100",
+      "file": "images/img-p004-100.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue code-file icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-101",
+      "file": "images/img-p004-101.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "gray diamond git logo",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Gray Git logo glyph inside the \"Environment\" box of Figure 2, used as a diagram element.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-102",
+      "file": "images/img-p004-102.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue folder icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue folder glyph used as a directory node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-103",
+      "file": "images/img-p004-103.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue code-file icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-104",
+      "file": "images/img-p004-104.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue single-gear icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue single gear marking a function/method node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-105",
+      "file": "images/img-p004-105.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue folder icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue folder glyph used as a directory node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-106",
+      "file": "images/img-p004-106.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue code-file icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-107",
+      "file": "images/img-p004-107.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue code-file icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-108",
+      "file": "images/img-p004-108.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue code-file icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-109",
+      "file": "images/img-p004-109.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue folder icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue folder glyph used as a directory node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-110",
+      "file": "images/img-p004-110.png",
+      "role": "decorative",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blurred gray arrow, a drop-shadow mask",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blurred gray left-pointing arrow silhouette; a soft drop shadow behind a blue flow arrow in Figure 2 (overview of the SWE-Debate framework), no information of its own.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000865,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000865,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000865,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-113",
+      "file": "images/img-p004-113.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue single-gear icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue single gear marking a function/method node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-114",
+      "file": "images/img-p004-114.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue single-gear icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue single gear marking a function/method node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-115",
+      "file": "images/img-p004-115.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue single-gear icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue single gear marking a function/method node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-116",
+      "file": "images/img-p004-116.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue single-gear icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue single gear marking a function/method node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-117",
+      "file": "images/img-p004-117.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue code-file icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue document glyph with \"<>\" marking a source-file node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-118",
+      "file": "images/img-p004-118.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue three-gear icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue cluster of three gears marking a class node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-119",
+      "file": "images/img-p004-119.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue three-gear icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue cluster of three gears marking a class node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-120",
+      "file": "images/img-p004-120.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue three-gear icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue cluster of three gears marking a class node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-121",
+      "file": "images/img-p004-121.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blue folder icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Blue folder glyph used as a directory node in the localization-chain / file-tree diagram of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-122",
+      "file": "images/img-p004-122.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "light-blue robot-head icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Light-blue robot-head glyph representing an LLM agent in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000248,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000248,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000248,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-125",
+      "file": "images/img-p004-125.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "pencil-on-lines icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Black pencil-writing glyph marking an agent writing an argument/proposal in the modification-plan debate rounds of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000356,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000356,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-127",
+      "file": "images/img-p004-127.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "light-blue robot-head icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Light-blue robot-head glyph representing an LLM agent in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-128",
+      "file": "images/img-p004-128.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "light-blue robot-head icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Light-blue robot-head glyph representing an LLM agent in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-129",
+      "file": "images/img-p004-129.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black beetle/bug icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Black bug icon labelling the GitHub issue (django-11999) panel in Figure 2.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-130",
+      "file": "images/img-p004-130.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "short tree diagram with dashed arrows",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Localization chain diagram under \"Best Chain\" in Figure 2: django/db/models/fields -> __init__.py -> contribute_to_class, linked by dashed blue arrows.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-131",
+      "file": "images/img-p004-131.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "gray/yellow hands holding X and check signs",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Two hands holding a gray X sign and a yellow check-mark sign, representing the debate/judging step in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p004-132",
+      "file": "images/img-p004-132.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "three horizontal blue dots",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Three horizontal blue dots indicating elided items in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000306,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000306,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-134",
+      "file": "images/img-p004-134.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "thin blue left arrow in a tall transparent strip",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Small blue left-pointing flow arrow linking stages in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000373,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000373,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000373,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-137",
+      "file": "images/img-p004-137.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "pencil-on-lines icon",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Black pencil-writing glyph marking an agent writing an argument/proposal in the modification-plan debate rounds of Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000356,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000356,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p004-139",
+      "file": "images/img-p004-139.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "thin blue left arrow in a tall transparent strip",
+        "page": 4
+      },
+      "narrative": {
+        "text": "Small blue left-pointing flow arrow linking stages in Figure 2 (overview of the SWE-Debate framework).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 4,
+          "coverage": 0.000373,
+          "imagesOnPage": 140
+        },
+        {
+          "page": 4,
+          "coverage": 0.000373,
+          "imagesOnPage": 140
+        }
+      ]
+    },
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "padlock emoji next to model names in Table 1",
+        "page": 6
+      },
+      "narrative": {
+        "text": "Padlock emoji used as a row marker in Table 1 beside GPT-4o and Claude-3.5 Sonnet entries (closed models); the paper text does not define it.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 6,
+          "coverage": 0.000136,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 6,
+          "coverage": 0.000136,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 6,
+          "coverage": 0.000136,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 6,
+          "coverage": 0.000136,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 6,
+          "coverage": 0.000136,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 6,
+          "coverage": 0.000136,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 6,
+          "coverage": 0.000136,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 7,
+          "coverage": 0.000136,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 7,
+          "coverage": 0.000136,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 7,
+          "coverage": 0.000136,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 7,
+          "coverage": 0.000136,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 7,
+          "coverage": 0.000136,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 7,
+          "coverage": 0.000136,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 7,
+          "coverage": 0.000136,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 7,
+          "coverage": 0.000136,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 7,
+          "coverage": 0.000136,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 7,
+          "coverage": 0.000136,
+          "imagesOnPage": 14
+        }
+      ]
+    },
+    {
+      "id": "img-p006-8",
+      "file": "images/img-p006-8.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "cowboy-hat emoji next to model names in Table 1",
+        "page": 6
+      },
+      "narrative": {
+        "text": "Cowboy-hat smiley emoji used as a row marker in Table 1 beside DeepSeek-V3-0324 and Lingma SWE-GPT 72B entries; the paper text does not define it.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 6,
+          "coverage": 0.000165,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 6,
+          "coverage": 0.000165,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 6,
+          "coverage": 0.000165,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 6,
+          "coverage": 0.000165,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 6,
+          "coverage": 0.000165,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 6,
+          "coverage": 0.000165,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 6,
+          "coverage": 0.000165,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 7,
+          "coverage": 0.000165,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 7,
+          "coverage": 0.000165,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 7,
+          "coverage": 0.000165,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 7,
+          "coverage": 0.000165,
+          "imagesOnPage": 14
+        }
+      ]
+    },
+    {
+      "id": "img-p009-1",
+      "file": "images/img-p009-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "outline document icon",
+        "page": 9
+      },
+      "narrative": {
+        "text": "Outline document/page icon marking the issue text box (\"Evaluating powers of TensorProduct\") in Figure 4.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p009-2",
+      "file": "images/img-p009-2.png",
+      "role": "decorative",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blurred gray arrow, a drop-shadow mask",
+        "page": 9
+      },
+      "narrative": {
+        "text": "Blurred gray downward arrow-like silhouette; a soft drop shadow behind a blue flow arrow in Figure 4 (case study on instance sympy-13974), no information of its own.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 9,
+          "coverage": 0.000411,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 9,
+          "coverage": 0.000411,
+          "imagesOnPage": 17
+        }
+      ]
+    },
+    {
+      "id": "img-p009-4",
+      "file": "images/img-p009-4.png",
+      "role": "decorative",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blurred gray arrow, a drop-shadow mask",
+        "page": 9
+      },
+      "narrative": {
+        "text": "Blurred gray downward arrow-like silhouette; a soft drop shadow behind a blue flow arrow in Figure 4 (case study on instance sympy-13974), no information of its own.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 9,
+          "coverage": 0.000407,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 9,
+          "coverage": 0.000407,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 9,
+          "coverage": 0.000407,
+          "imagesOnPage": 17
+        }
+      ]
+    },
+    {
+      "id": "img-p009-7",
+      "file": "images/img-p009-7.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "tiny black bug glyph",
+        "page": 9
+      },
+      "narrative": {
+        "text": "Tiny black bug glyph overlaid on the issue document icon at the top of Figure 4.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p009-8",
+      "file": "images/img-p009-8.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "light-blue robot-head icon",
+        "page": 9
+      },
+      "narrative": {
+        "text": "Light-blue robot-head glyph representing an LLM agent in Figure 4 (case study on instance sympy-13974).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p009-9",
+      "file": "images/img-p009-9.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "light-blue robot-head icon",
+        "page": 9
+      },
+      "narrative": {
+        "text": "Light-blue robot-head glyph representing an LLM agent in Figure 4 (case study on instance sympy-13974).",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p009-10",
+      "file": "images/img-p009-10.png",
+      "role": "decorative",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blurred gray arrow, a drop-shadow mask",
+        "page": 9
+      },
+      "narrative": {
+        "text": "Blurred gray downward arrow-like silhouette; a soft drop shadow behind a blue flow arrow in Figure 4 (case study on instance sympy-13974), no information of its own.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 9,
+          "coverage": 0.000407,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 9,
+          "coverage": 0.000407,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 9,
+          "coverage": 0.000407,
+          "imagesOnPage": 17
+        }
+      ]
+    },
+    {
+      "id": "img-p009-13",
+      "file": "images/img-p009-13.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "black judges-panel icon",
+        "page": 9
+      },
+      "narrative": {
+        "text": "Black icon of three judges with scales behind a bench facing a person, labelled \"Debate\" in Figure 4.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p009-14",
+      "file": "images/img-p009-14.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "gold trophy with star",
+        "page": 9
+      },
+      "narrative": {
+        "text": "Gold trophy icon marking Chain4 as the selected (winning) localization chain in Figure 4.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p009-15",
+      "file": "images/img-p009-15.png",
+      "role": "figure",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "green circle with white check",
+        "page": 9
+      },
+      "narrative": {
+        "text": "Green circular check badge at the bottom of the patch panel in Figure 4, marking the patch as correct.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      }
+    },
+    {
+      "id": "img-p009-16",
+      "file": "images/img-p009-16.png",
+      "role": "decorative",
+      "basis": {
+        "method": "inspection",
+        "by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "at": "2026-10-11",
+        "saw": "blurred gray arrow, a drop-shadow mask",
+        "page": 9
+      },
+      "narrative": {
+        "text": "Blurred gray downward arrow-like silhouette; a soft drop shadow behind a blue flow arrow in Figure 4 (case study on instance sympy-13974), no information of its own.",
+        "state": "draft",
+        "drafted_by": {
+          "kind": "agent",
+          "id": "claude",
+          "model": "claude-opus-5-5"
+        },
+        "drafted_at": "2026-10-11"
+      },
+      "placements": [
+        {
+          "page": 9,
+          "coverage": 0.000411,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 9,
+          "coverage": 0.000411,
+          "imagesOnPage": 17
+        }
+      ]
+    }
+  ]
+}

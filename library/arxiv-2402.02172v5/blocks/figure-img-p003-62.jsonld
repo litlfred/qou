@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
+    }
+  ],
+  "@id": "library/arxiv-2402.02172v5/blocks/figure-img-p003-62",
+  "@type": [
+    "folio-assistant-core:Figure",
+    "doco:Figure"
+  ],
+  "kind": "figure",
+  "file": "../images/img-p003-62.png",
+  "pageStart": 3,
+  "pageEnd": 3,
+  "narrative": {
+    "text": "Dark-background text block from Figure 1 with headings \"Semantic Consistency Analysis\", \"Security Analysis\", \"Format Analysis\" and \"Code Alignment/Revision Suggestions\", each followed by short review text, then a Java method protected boolean assertEquals(String message, Object expected, Object actual) that compares expected and actual and returns handleAssert(...).",
+    "state": "draft",
+    "drafted_by": {
+      "kind": "agent",
+      "id": "claude",
+      "model": "claude-opus-5-5"
+    },
+    "drafted_at": "2026-10-11"
+  },
+  "derivedFrom": "library/arxiv-2402.02172v5/sections/sec-003",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2402.02172v5/manifest.jsonld",
+  "provenance": "ingested"
+}

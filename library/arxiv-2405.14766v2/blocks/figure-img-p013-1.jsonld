@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
+    }
+  ],
+  "@id": "library/arxiv-2405.14766v2/blocks/figure-img-p013-1",
+  "@type": [
+    "folio-assistant-core:Figure",
+    "doco:Figure"
+  ],
+  "kind": "figure",
+  "file": "../images/img-p013-1.png",
+  "pageStart": 13,
+  "pageEnd": 13,
+  "narrative": {
+    "text": "Figure 4, 'Causal Relations Classification with Zero and Few Shot Prompting': micro F1-score (0 to ~0.7) for 11 models, zero-shot (blue) vs few-shot (orange). Few-shot is higher for all models except Flan-T5 xxl (about 0.50 vs 0.48); Llama-3.3 70B is highest, about 0.62 zero-shot and 0.69 few-shot.",
+    "state": "draft",
+    "drafted_by": {
+      "kind": "agent",
+      "id": "claude",
+      "model": "claude-opus-5-5"
+    },
+    "drafted_at": "2026-10-11"
+  },
+  "derivedFrom": "library/arxiv-2405.14766v2/sections/sec-016",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2405.14766v2/manifest.jsonld",
+  "provenance": "ingested"
+}

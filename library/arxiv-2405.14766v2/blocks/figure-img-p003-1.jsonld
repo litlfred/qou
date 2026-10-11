@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
+    }
+  ],
+  "@id": "library/arxiv-2405.14766v2/blocks/figure-img-p003-1",
+  "@type": [
+    "folio-assistant-core:Figure",
+    "doco:Figure"
+  ],
+  "kind": "figure",
+  "file": "../images/img-p003-1.png",
+  "pageStart": 3,
+  "pageEnd": 3,
+  "narrative": {
+    "text": "Figure 2: evaluation tasks by public health area, in three columns. Burden: NCBI Disease Extract., Gastro. Illness Class., Gastro. Illness Symptom Extract., ICD-10 Description Class., News Headline Class. Risk Factors: Contact Type Class., Country Disambiguation, Food Extract., MMLU Genetics, MMLU Nutrition. Interventions: Guidance Topic Class., Guidance Recommendation Class., Health Advice Class., Health Causal Claims Class., BioDex Drugs Extract., PubMedQA Reasoning.",
+    "state": "draft",
+    "drafted_by": {
+      "kind": "agent",
+      "id": "claude",
+      "model": "claude-opus-5-5"
+    },
+    "drafted_at": "2026-10-11"
+  },
+  "derivedFrom": "library/arxiv-2405.14766v2/sections/sec-001",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2405.14766v2/manifest.jsonld",
+  "provenance": "ingested"
+}

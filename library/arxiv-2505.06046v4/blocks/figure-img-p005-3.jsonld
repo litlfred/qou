@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
+    }
+  ],
+  "@id": "library/arxiv-2505.06046v4/blocks/figure-img-p005-3",
+  "@type": [
+    "folio-assistant-core:Figure",
+    "doco:Figure"
+  ],
+  "kind": "figure",
+  "file": "../images/img-p005-3.png",
+  "pageStart": 5,
+  "pageEnd": 5,
+  "narrative": {
+    "text": "Fig. 5: benchmark review steps. Step 1: initial double human review of 150 MCQA samples, then compare annotations and align. Step 2: single human review of the remaining 650 samples to estimate the benchmark error rate. Step 3: humans answer 600 questions with a search engine to estimate a human baseline.",
+    "state": "draft",
+    "drafted_by": {
+      "kind": "agent",
+      "id": "claude",
+      "model": "claude-opus-5-5"
+    },
+    "drafted_at": "2026-10-11"
+  },
+  "derivedFrom": "library/arxiv-2505.06046v4/sections/sec-009",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2505.06046v4/manifest.jsonld",
+  "provenance": "ingested"
+}

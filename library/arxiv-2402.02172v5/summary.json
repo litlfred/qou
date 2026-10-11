@@ -1,0 +1,181 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2402.02172v5",
+ "source_sha256": "aedb2b60076ad951",
+ "brief": "CodeAgent : Autonomous Communicative Agents for Code Review — Code review, which aims at ensuring the over- all quality and reliability of software, is a cor- nerstone of software development.",
+ "extended": "**CodeAgent : Autonomous Communicative Agents for Code Review**\n\n*Xunzhu Tang1, Kisub Kim2, Yewei Song1, Cedric Lothritz3, Bei Li4, Saad Ezzini5*\n\n35 pp, 32 sections.\n\n**Abstract.** Code review, which aims at ensuring the over- all quality and reliability of software, is a cor- nerstone of software development. Unfortu- nately, while crucial, Code review is a labor- intensive process that the research community is looking to automate. Existing automated methods rely on single input-output generative models and thus generally struggle to emulate the collaborative nature of code review. This work introduces CodeAgent, a novel multi- agent Large Language Model (LLM) system for code review automation. CodeAgent in- corporates a supervisory agent, QA-Checker, to ensure that all the agents’ contributions ad- dress the initial review question.\n\n**Outline.** CodeAgent; Tasks; Introduction; Pipeline; Role Card Definition; Self-Improving CoT with QA Checker; Experimental Setup; Metrics; Datasets; State-of-the-Art Tools and Models; Experimental Result Analysis; Vulnerability Analysis; Consistency and Format Detection; Code Revision; Related Work; Conclusion; Details of QA-Checker Algorithm; Complete Related Work",
+ "tokens": {
+  "brief": 48,
+  "extended": 305
+ },
+ "sections": [
+  {
+   "id": "sec-000-codeagent",
+   "title": "CodeAgent",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-tasks",
+   "title": "Tasks",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-003-pipeline",
+   "title": "Pipeline",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-004-role-card-definition",
+   "title": "Role Card Definition",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-005-self-improving-cot-with-qa-checker",
+   "title": "Self-Improving CoT with QA Checker",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-006-experimental-setup",
+   "title": "Experimental Setup",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-007-metrics",
+   "title": "Metrics",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-008-datasets",
+   "title": "Datasets",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-009-state-of-the-art-tools-and-models",
+   "title": "State-of-the-Art Tools and Models",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-010-experimental-result-analysis",
+   "title": "Experimental Result Analysis",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-011-vulnerability-analysis",
+   "title": "Vulnerability Analysis",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-012-consistency-and-format-detection",
+   "title": "Consistency and Format Detection",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-013-code-revision",
+   "title": "Code Revision",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-014-related-work",
+   "title": "Related Work",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-015-conclusion",
+   "title": "Conclusion",
+   "pages": "8-13"
+  },
+  {
+   "id": "sec-016-details-of-qa-checker-algorithm",
+   "title": "Details of QA-Checker Algorithm",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-017-complete-related-work",
+   "title": "Complete Related Work",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-018-experimental-details",
+   "title": "Experimental Details",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-019-role-definition",
+   "title": "Role Definition",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-020-execute-time-across-languages",
+   "title": "Execute Time Across Languages",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-021-comparison-table",
+   "title": "Comparison Table",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-022-differences-and-implications",
+   "title": "Differences and Implications",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-023-conclusion",
+   "title": "Conclusion",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-024-dataset",
+   "title": "Dataset",
+   "pages": "17-19"
+  },
+  {
+   "id": "sec-025-key-factors-leading-to-vulnerabilities",
+   "title": "Key Factors Leading to Vulnerabilities",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-026-data-leakage-statement",
+   "title": "Data Leakage Statement",
+   "pages": "19-21"
+  },
+  {
+   "id": "sec-027-case-study",
+   "title": "Case Study",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-028-performance-on-9-languages",
+   "title": "Performance on 9 languages",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-029-ablation-study",
+   "title": "Ablation study",
+   "pages": "21-24"
+  },
+  {
+   "id": "sec-030-cost-statement",
+   "title": "Cost statement",
+   "pages": "24-35"
+  },
+  {
+   "id": "sec-031-tool",
+   "title": "Tool",
+   "pages": "35-35"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}
