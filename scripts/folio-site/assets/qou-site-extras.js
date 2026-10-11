@@ -19,7 +19,7 @@
   const ref = "main";
 
   // The publish root (gh-pages root): the part of the path before STAGING/<slug>/ if
-  // present, else before the route. The Lean docs live at <publish root>/lean/docs/.
+  // present, else before the route. The Lean docs live at <publish root>/lean/ (doc-gen4 render; index lean/index.html, modules lean/QOU.html, lean/QOU/...).
   const publishRoot = () => {
     const p = location.pathname;
     const s = p.indexOf("/STAGING/");
@@ -156,7 +156,7 @@
   // ── "Lean" group in the harness navbar (or under the contents without the harness) ──
   const addNav = async () => {
     const cfg = await cfgP;
-    const docs = publishRoot() + (cfg.leanDocs || "lean/docs/");
+    const docs = publishRoot() + (cfg.leanDocs || "lean/");
     const links = [
       ["Lean API documentation", docs + "QOU.html"],
       ["Lean library sources", `https://github.com/${repo}/tree/${ref}/folio/quantum-observable-universe/lean/QOU`],
@@ -184,7 +184,7 @@
     else {
       const toc = document.getElementById("toc");
       if (toc && !toc.querySelector(".qou-lean-nav")) cfgP.then((cfg) => {
-        const p = el("p", { class: "qou-lean-nav" }); p.append(el("a", { href: publishRoot() + (cfg.leanDocs || "lean/docs/") + "QOU.html" }, "∀ Lean API documentation")); toc.append(p);
+        const p = el("p", { class: "qou-lean-nav" }); p.append(el("a", { href: publishRoot() + (cfg.leanDocs || "lean/") + "QOU.html" }, "∀ Lean API documentation")); toc.append(p);
       });
     }
   });
