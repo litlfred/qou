@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-08T07:40:02Z
-updated_at: 2026-10-04T15:11:03Z
+updated_at: 2026-10-11T08:00:00Z
 parent: qou-v2om
 ---
 
@@ -203,3 +203,9 @@ which **is** the disjoint-block form of the connected-sum multiplicativity step 
 **Third point, independent agreement:** #7418's C9 (*"the corpus's bond-product grounding cites a theorem whose hypothesis the production word fails"*) is §6b's finding from the other side — `ProductionChainBondProduct`'s strand-window hypotheses are sufficient-not-necessary. Two arcs, two methods, same conclusion about the same citation.
 
 Recorded as §7b of the step-11 audit; §7 reason 3 re-scoped from "not formalised" to "conditionally formalised on an open PR". Coordination comment posted on #7418.
+
+**2026-10-11 — H_9: reading 3 tracked up the tower (issue #7701, PR #7702).** Pre-registered (`computations/probes/ales_h9/preregistration.md`, committed before any H_9 number), then computed at 60 dps, proton pin, convention D; H_6 diproton ratio reproduced to 4.7e-60 before H_9 was trusted. Blocks at H_9: (9),(8,1),(7,2),(6,3),(5,4), dims 1/8/27/48/42; `y_λ = 0` exactly on every ≥3-row shape at n = 3, 6, 9.
+
+**Finding (scope (a), this candidate set only):** the tower REJECTS nothing and ADMITS everything H_3 rejected. All 19 homogeneous words (core, 16 k = 0 words, both live elements) are reading-3-feasible at H_6 and H_9 with no bond and with `G³` on every interface; the 10 H_3-rejected ones (incl. LIVE_p, LIVE_n) are admitted. Compositions: pp/pn/nn 16 YY + 65 admitted of 81; ³He (p|p|n) and ³H (p|n|n) 64 YY + 665 admitted of 729; 0 rejected anywhere. Mechanism (hypothesis H1′, SU(2) Clebsch–Gordan branching of the two-row blocks, (3) = spin 3/2, (2,1) = spin ½; verified on 8433 free characters to 5e-25, NOT Lean-proved): homogeneous feasibility is `x = χ_(2,1)/χ_(3) ≥ 0 / −1/2 / −0.389489` at H_3 / H_6 / H_9 (binding blocks (2,1) / (5,1) / (5,4)); candidates span x ∈ [−0.3315, 1.994]. Thresholds are NOT monotone in A (m = 1…8: 0, −0.5, −0.389, −0.634, −0.552, −0.707, −0.643, −0.754; odd A tighter), so the tower is not a one-way filter in general.
+
+**Owner decision raised, not taken:** which algebra "reading 3 on the whole element" (2026-09-13) means — nucleon in H_3 (status quo; live element stays excluded), nucleus in H_{3A} (admits everything here; live element re-admitted), or every level (coincides with H_3 on this family). Default: H_3, nothing changes. Framed in `computations/probes/ales_h9/results.md`. Status stays in-progress (rule 13a).
