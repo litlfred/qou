@@ -22,12 +22,15 @@ export default remark({
     "prop:integer-stability",
     "def:color-tube-fibers",
     "prop:neutron-prediction-comparison",
+    "prop:beta-stability",
+    "prop:color-elliptic",
+    "prop:descartes-elliptic-curve",
   ],
   authorNotes: [
     {
       kind: "caveat",
       date: "2026-10-11",
-      body: "Normalisation reconciled 2026-10-11 (owner picks 1+2, bean `qou-opjb`). Minimising $a_C p^2/A^{1/3} + a_A(A-2p)^2/A$ in $p$ gives $p^* = A/(2 + cA^{2/3})$ with $c = a_C/(2a_A)$, the form of `prop:beta-stability`. Three blocks had disagreed: `prop:integer-stability` wrote the quadratic with $a_A$ where $4a_A$ belongs (so $p^* = A/(2 + 4cA^{2/3})$) and $a_C = (q-q^{-1})\\lambda_C$, which applies $(q-q^{-1})$ twice; `rem:diophantine-valley` wrote $t^3 = 2p(1 + ct^2)$, i.e. $2c$ in place of $c$; and `rem:elliptic-stability-locus` inherited the doubled form. All three now follow `prop:beta-stability`. In this block every $2c$ became $c$, and the coefficient match now lands at $p \\approx 736.8$. Still not derived here: the conjecture's $z(p) = -1/(cp)$ differs from the match condition $z = -(cp+1)$; and the Möbius substitution $t = \\alpha X + \\beta$ is stated but not used in the matching.",
+      body: "Normalisation reconciled 2026-10-11 (owner picks 1+2, bean `qou-opjb`). Minimising $a_C p^2/A^{1/3} + a_A(A-2p)^2/A$ in $p$ gives $p^* = A/(2 + cA^{2/3})$ with $c = a_C/(2a_A)$, the form of `prop:beta-stability`. Three blocks had disagreed: `prop:integer-stability` wrote the quadratic with $a_A$ where $4a_A$ belongs (so $p^* = A/(2 + 4cA^{2/3})$) and $a_C = (q-q^{-1})\\lambda_C$, which applies $(q-q^{-1})$ twice; `rem:diophantine-valley` wrote $t^3 = 2p(1 + ct^2)$, i.e. $2c$ in place of $c$; and `rem:elliptic-stability-locus` inherited the doubled form. All three now follow `prop:beta-stability`. In this block every $2c$ became $c$, and the coefficient match now lands at $p \\approx 736.8$. Owner pick 2026-10-11: the conjecture now states $z(p) = -(cp+1)$, the value the coefficient match actually gives (the former $-1/(cp)$ had no derivation). The unused Möbius substitution $t = \\alpha X + \\beta$ was removed; the table now records that under $X = t$ only the quadratic coefficient agrees, the linear one never does, and the constant term agrees only at $p \\approx 736.8$. Upstream fixes in the same pass: item 2 cited the color-tube cubic, but the matching uses the color elliptic cubic (C), so it now cites (C); the Descartes curve discriminant was printed as $-(4a^3+27b^2) \\approx -18.95$, 16 times small, and is now the standard $-16(4a^3+27b^2) \\approx -303.17$ (recomputed at the proton $q_0$; $j \\approx 129.86$ unchanged, bean `qou-3nva`). The 'shares its algebraic origin (exact)' bullet contradicted the 'unproven' paragraph and was replaced by the measured coefficient statement.",
     },
     {
       kind: "note",

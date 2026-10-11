@@ -47,45 +47,38 @@ This defines a degree-12 curve in $(\bar p, u)$. Factoring out the genus-$0$ com
 *Let $\mathcal{D} \subset \mathbb{A}^2$ be the degeneracy locus (D$'$) reduced by the pairing-free stability curve (S). Then:*
 
 1. *The smooth model of $\mathcal{D}$ forms an elliptic curve $\mathcal{E}_p$ over $\mathbb{Q}(q)$.*
-2. *There exists an isogeny $\varphi \colon E_Q \to E_{z(p)}$ to the color fiber of the Bring's surface, where $z(p)$ is the spacetime ratio at which the color-tube cubic ([color tube cubic](#rem:color-tube-cubic)) specialises to the stability cubic:*
+2. *There exists an isogeny $\varphi \colon \mathcal{E}_p \to \mathcal{E}_{z(p)}$ to the color fiber of the Bring's surface, where $z(p)$ is the spacetime ratio at which the quadratic coefficient of the color elliptic cubic (C) equals that of the stability cubic (S) under $X = t$:*
 
 $$
-  z(p) =  -\frac{1}{cp}
+  z(p) =  -(cp + 1).
 $$
 
-   *so that the coefficients of (C) at $z = z(p)$ match those of (S) up to a Möbius transformation.*
-3. *The integer points $(p, A) \in E_Q(\mathbb{Z})$ correspond to the stability pairs: the mass numbers $A$ at which the even-even/odd-odd degeneracy falls exactly on an integer lattice point.*
+3. *The integer points $(p, A) \in \mathcal{E}_p(\mathbb{Z})$ correspond to the stability pairs: the mass numbers $A$ at which the even-even/odd-odd degeneracy falls exactly on an integer lattice point.*
 
 **Coefficient matching.**
 
-The color cubic at $z = -1/(cp)$ is:
-
-$$
-  X^3 + \left(1 - \frac{1}{cp}\right) X^2
-  + \left(\frac{1}{c^2p^2} - \frac{1}{cp} + 1\right) X
-  + \cdots = 0.
-$$
-
-We rewrite the stability cubic as a monic cubic in $t$ with parameter $p$:
+The stability cubic, written as a monic cubic in $t$ with parameter $p$, is
 
 $$
   t^3 - cp \cdot t^2 + 0 \cdot t - 2p = 0.
 $$
 
-Under the substitution $t = \alpha X + \beta$ with $\alpha = -cp$ and $\beta = cp \cdot z$, the leading coefficients match:
-
-| Coefficient | Chiral (C) | Stability (S) | Match condition |
-|-------------|-----------|---------------|-----------------|
-| $X^2$ | $z + 1$ | $-cp$ | $z = -(cp + 1)$ |
-| $X^0$ | $z^3 + z^2 + z + 1$ | $-2p$ | $(z+1)(z^2+1) = -2p$ |
-
-Eliminating $z$: since $z + 1 = -cp$ and $z^2 + 1 = (cp + 1)^2 + 1 = c^2p^2 + 2cp + 2$, the $X^0$ condition reads $(-cp)(c^2p^2 + 2cp + 2) = -2p$, that is,
+At $z = -(cp+1)$ the color cubic (C) becomes, with $z + 1 = -cp$, $z^2 + z + 1 = c^2p^2 + cp + 1$ and $z^3 + z^2 + z + 1 = (z+1)(z^2+1)$:
 
 $$
-  c^3 p^2 + 2c^2 p + 2c = 2.
+  X^3 - cp\,X^2 + \bigl(c^2p^2 + cp + 1\bigr) X
+  - cp\bigl(c^2p^2 + 2cp + 2\bigr) = 0.
 $$
 
-At $c = \lambda_C/(2a_{\mathrm{asym}}) \approx 0.0145158337$ (the asymmetry constant of [neutron prediction comparison](#prop:neutron-prediction-comparison)), the positive root is $p \approx 736.8$. Both lie far beyond the heaviest known element ($Z = 118$), so this coefficient match does not single out any observed nucleus.
+Identifying $X = t$, the coefficients compare as follows:
+
+| Coefficient | Color (C) at $z = -(cp+1)$ | Stability (S) | Agreement |
+|-------------|----------------------------|---------------|-----------|
+| $X^2$ | $-cp$ | $-cp$ | for every $p$ (defines $z(p)$) |
+| $X^1$ | $c^2p^2 + cp + 1$ | $0$ | never for real $cp$ (discriminant $-3$) |
+| $X^0$ | $-cp(c^2p^2 + 2cp + 2)$ | $-2p$ | only on $c^3p^2 + 2c^2p + 2c = 2$ |
+
+The constant-term condition $c^3p^2 + 2c^2p + 2c = 2$ has, at $c = \lambda_C/(2a_{\mathrm{asym}}) \approx 0.0145158337$ (the asymmetry constant of [neutron prediction comparison](#prop:neutron-prediction-comparison)), the positive root $p \approx 736.8$, far beyond the heaviest known element ($Z = 118$). The linear coefficient never agrees. So under $X = t$ the two cubics share only their quadratic coefficient; whether a Möbius change of variable makes them projectively equivalent is part of the conjecture and is not shown here.
 
 **Physical interpretation.**
 
@@ -94,18 +87,18 @@ If the conjecture holds:
 - The **three color tubes** $(r, g, b)$ of the color fibration correspond to the **three sectors** of nuclear binding: volume (strong), Coulomb (electromagnetic), and Pauli (exclusion).
 - The **elliptic fiber** $\mathcal{E}_z$ at spacetime $z$ encodes the allowed baryon configurations at that point; the **stability elliptic curve** $\mathcal{E}_p$ at proton number $p$ encodes the allowed nuclear configurations at that proton count.
 - The **isogeny** $\varphi$ connects them, representing the passage from single-baryon color structure to multi-baryon nuclear structure — the same passage that takes the proton ([proton](#def:categorical-proton)) from a color-linked triple to a nucleus ([stable nucleus](#def:stable-nucleus)).
-- The **stability pairs** act as the integer points of $\mathcal{E}_p$ — the $(p, A) \in E_Q(\mathbb{Z})$ where the even-even/odd-odd degeneracy falls on a lattice point.
+- The **stability pairs** act as the integer points of $\mathcal{E}_p$ — the $(p, A) \in \mathcal{E}_p(\mathbb{Z})$ where the even-even/odd-odd degeneracy falls on a lattice point.
 
 **Computational evidence.**
 
-The color elliptic curve ([Descartes elliptic curve](#prop:descartes-elliptic-curve)) at the substrate parameter $q$ is:
+The color elliptic curve ([Descartes elliptic curve](#prop:descartes-elliptic-curve)) at the substrate parameter $q_0$ is:
 
 $$
   \mathcal{E}_q  :  y^2 = x^3 + 0.7087x + 0.8056,
-  \qquad \Delta = -18.95, \quad j = 129.9.
+  \qquad \Delta = -16(4a^3 + 27b^2) \approx -303.17, \quad j \approx 129.86,
 $$
 
-Since $\Delta < 0$, the real locus $\mathcal{E}_q(\mathbb{R})$ possesses a single connected component.
+with $a \approx 0.7087$ and $b \approx 0.8056$ its Weierstrass coefficients. Since $\Delta < 0$, the real locus $\mathcal{E}_q(\mathbb{R})$ possesses a single connected component.
 
 **Stable hadrons as lattice points on the stability cubic.**
 
@@ -120,13 +113,13 @@ This curve is rational: $p = t^3/(2 + ct^2)$. For each mass number $A \in \mathb
 
 **Pairing lift to genus $1$ (open).**
 
-The genus-$0$ stability cubic accounts for all stable nuclei via lattice-point enumeration. Whether the pairing energy lifts this curve to the genus-$1$ elliptic curve $\mathcal{E}_q$ — and whether the stability pairs $\{2, 8, 20, 28, 50, 82, 126\}$ then acquire an interpretation as integer points of $\mathcal{E}_p$ — remains an open question. The structural parallel between the stability cubic and the color cubic (identical algebraic origin in the Bring's surface) is unproven, and the coefficient matching above lands at $p \approx 736.8$, outside the nuclear chart.
+The genus-$0$ stability cubic accounts for all stable nuclei via lattice-point enumeration. Whether the pairing energy lifts this curve to the genus-$1$ elliptic curve $\mathcal{E}_q$ — and whether the stability pairs $\{2, 8, 20, 28, 50, 82, 126\}$ then acquire an interpretation as integer points of $\mathcal{E}_p$ — remains an open question. The structural parallel between the stability cubic and the color cubic (identical algebraic origin in the Bring's surface) is unproven, and the coefficient matching above agrees in the quadratic coefficient only, with the constant term agreeing at $p \approx 736.8$, outside the nuclear chart.
 
 **Established results:**
 
 - The stable nuclei represent lattice points on the stability cubic (exact, from the Skein binding Lagrangian).
 - The Descartes elliptic curve $\mathcal{E}_q$ exists and carries the stated invariants (exact, from the color fibration).
-- The stability cubic and the color cubic share their algebraic origin in the Bring's surface (exact, by construction).
+- Under $X = t$ at $z = -(cp+1)$, the color cubic and the stability cubic share their quadratic coefficient; their linear coefficients never agree (exact, by the table above).
 - The golden ratio degeneration at $q = 1/\varphi^2$ holds (exact, from the $(s^2 + s - 1)$ factor).
 
 **Witness data**: See `computations/elliptic-stability.json` for the full numerical computation at 100-digit precision.

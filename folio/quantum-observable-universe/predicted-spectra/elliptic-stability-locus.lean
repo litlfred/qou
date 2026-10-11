@@ -1,7 +1,7 @@
 /-!
 # Elliptic stability locus (conjectural)
 
-Class-axiomatized stub for `conj:elliptic-stability-locus`: the
+Class-axiomatized stub for `rem:elliptic-stability-locus`: the
 nuclear degeneracy locus (valley of stability in (Z, N) integer
 lattice) is the integer-point set of an elliptic curve over
 Bring's surface. The Coulomb and pairing terms in the
@@ -16,7 +16,7 @@ Archimedean tier (per gemini review on #721).
 
 ## References
 
-- `[manuscript]` `conj:elliptic-stability-locus`
+- `[manuscript]` `rem:elliptic-stability-locus`
 - `[manuscript]` `prop:integer-stability`
 - `[manuscript]` `def:color-tube-fibers`
 -/
