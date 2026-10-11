@@ -25,7 +25,7 @@ upstream into build-folio-site.ts unchanged in substance.
 
     python3 scripts/folio-site/qou-site-extras.py --site <site-dir> \
         [--route cat-harness/folio] [--lean-status lean-status.json] \
-        [--lean-docs lean/docs/]
+        [--lean-docs lean/]
 """
 from __future__ import annotations
 
@@ -204,7 +204,7 @@ def main() -> int:
     ap.add_argument("--site", required=True)
     ap.add_argument("--route", default="cat-harness/folio")
     ap.add_argument("--lean-status", help="qou-lean-status/v1 JSON from a lean-direct sweep")
-    ap.add_argument("--lean-docs", default="lean/docs/",
+    ap.add_argument("--lean-docs", default="lean/",
                     help="Lean documentation path, relative to the publish root (gh-pages root)")
     a = ap.parse_args()
 
