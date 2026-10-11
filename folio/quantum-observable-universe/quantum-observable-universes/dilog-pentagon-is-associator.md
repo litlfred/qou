@@ -12,13 +12,13 @@ This is the precise sense in which the $q$-dilogarithm is **forced by the rigid-
 
 The same Mac Lane coherence has already appeared above in two formalized guises, which this proposition records as one law:
 
-- **Cochain / 3-cocycle guise.** The additive twist associator $\alpha = dF$ satisfies the pentagon automatically because $d^2 = 0$ (`QOU.BringsSurface.PentagonTwist.assoc_pentagon`, sorry-free).
+- **Cochain / 3-cocycle guise.** The additive twist associator $\alpha = dF$ satisfies the pentagon automatically because $d^2 = 0$ (`QOU.BringsSurface.PentagonTwist.assoc_pentagon`).
 - **Dilogarithm five-term guise.** The `pentagon` field of the $q$-dilogarithm datum, whose operator form is the Faddeev–Kashaev pentagon $\Phi(\mathsf P)\Phi(\mathsf Q) = \Phi(\mathsf Q)\Phi(\mathsf P+\mathsf Q)\Phi(\mathsf P)$ ([`rem:q-dilogarithm-pentagon-associator`](q-dilogarithm-pentagon-associator.md)).
 
 ## Lean structure
 
-[`QOU.QuantumObservableUniverses.DilogPentagonAssociator.pentagon_iff_isDilog`](../lean/QOU/QuantumObservableUniverses/DilogPentagonAssociator.lean) proves the biconditional over a generic carrier (`[Add H]`; categorical content, no archimedean construct), **sorry-free and axiom-free** (`#print axioms` reports no dependency). The forward direction packages the witness; the reverse reads the datum's five-term field — a genuine equivalence, not a self-assuming projection.
+[`QOU.QuantumObservableUniverses.DilogPentagonAssociator.pentagon_iff_isDilog`](../lean/QOU/QuantumObservableUniverses/DilogPentagonAssociator.lean) proves the biconditional over a generic carrier (`[Add H]`). The forward direction packages the witness; the reverse reads the datum's five-term field.
 
 ## Scope boundary
 
-What is proved is the *structural* equivalence at the level of the scalar pentagon potential. Two things remain genuinely open and are **not** discharged here: the *categorical → scalar* descent (that the morphism-level Mac Lane pentagon on $\alpha_{X,Y,Z}$ reduces to this scalar five-term equation) is the classical shuffle–associator identification of Faddeev–Kashaev, pending shuffle-Hopf infrastructure absent from Mathlib; and the analytic $q \neq 1$ dilogarithm five-term remains the honest conjecture class `QRogersAnalyticContinuation`.
+The equivalence is at the level of the scalar pentagon potential. The *categorical $\to$ scalar* descent (that the morphism-level Mac Lane pentagon on $\alpha_{X,Y,Z}$ reduces to this scalar five-term equation) is the classical shuffle–associator identification of Faddeev–Kashaev; the analytic five-term relation at $q \neq 1$ remains conjectural.
