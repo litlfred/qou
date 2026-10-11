@@ -8,7 +8,7 @@ pages: 9-11
 source_pdf: 0204085v3.pdf
 source_sha256: e0df7d49c43273c4
 toc_source: inferred
-doc_brief: "arXiv:hep-th/0204085v3 12 Nov 2002 — Three explicit and equivalent representations for the monodromy of the confor- mal blocks in the SL(2, C)/SU(2) WZNW model are proposed in terms of the same"
+doc_brief: "Monodromy of solutions of the Knizhnik-Zamolodchikov equation: SL(2,C)/SU(2) WZNW model — Three explicit and equivalent representations for the monodromy of the confor- mal blocks in the SL(2"
 ---
 of the Liouville fusion coeﬃcient when one of the αi, i = 1 . . . 4 is equal to −b−1/2):
 F
