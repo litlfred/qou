@@ -1,1 +1,0 @@
-The reduced QH invariantsHred

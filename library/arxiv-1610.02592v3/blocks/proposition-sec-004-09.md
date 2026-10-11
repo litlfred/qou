@@ -1,1 +1,0 @@
-Compact, abelian,orsimpleLiegroupsareunimodular.
