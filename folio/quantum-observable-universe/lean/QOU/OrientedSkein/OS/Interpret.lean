@@ -323,7 +323,7 @@ theorem interp_one (x : Word) : interp D x x 1 = 𝟙 _ := by
   rw [← pth_nil, interp_pth D (valid_refl x)]; simp
 
 /-- Induction principle for `supp R x y`. -/
-theorem supp_induction {x y : Word} {P : PA R → Prop} (h0 : P 0)
+theorem supp_induction_single {x y : Word} {P : PA R → Prop} (h0 : P 0)
     (hadd : ∀ f g, P f → P g → P (f + g))
     (hs : ∀ m r, Valid x (FreeMonoid.toList m) y → P (Finsupp.single m r))
     {f : PA R} (hf : f ∈ supp R x y) : P f := by
@@ -335,10 +335,10 @@ theorem supp_induction {x y : Word} {P : PA R → Prop} (h0 : P 0)
 /-- `interp` preserves composition on the hom-modules `supp R x y`. -/
 theorem interp_mul {x y z : Word} {f g : PA R} (hf : f ∈ supp R x y) (hg : g ∈ supp R y z) :
     interp D x z (f * g) = interp D x y f ≫ interp D y z g := by
-  refine supp_induction (P := fun f => interp D x z (f * g) = interp D x y f ≫ interp D y z g)
+  refine supp_induction_single (P := fun f => interp D x z (f * g) = interp D x y f ≫ interp D y z g)
     (by simp) (fun f f' h h' => by simp [add_mul, h, h', Preadditive.add_comp]) ?_ hf
   intro m r hm
-  refine supp_induction (P := fun g => interp D x z (MonoidAlgebra.single m r * g) =
+  refine supp_induction_single (P := fun g => interp D x z (MonoidAlgebra.single m r * g) =
       interp D x y (MonoidAlgebra.single m r) ≫ interp D y z g)
     (by simp) (fun g g' h h' => by simp [mul_add, h, h', Preadditive.comp_add]) ?_ hg
   intro m' r' hm'
@@ -376,7 +376,7 @@ theorem interp_whiskA {x y : Word} (a b : Word) {f : PA R} (hf : f ∈ supp R x 
     interp D (a ++ (x ++ b)) (a ++ (y ++ b)) (whiskA a b f) =
       (μ E F a (x ++ b)).hom ≫ (obj E F a ◁ ((μ E F x b).hom ≫ (interp D x y f ▷ obj E F b) ≫
         (μ E F y b).inv)) ≫ (μ E F a (y ++ b)).inv := by
-  refine supp_induction (P := fun f => interp D (a ++ (x ++ b)) (a ++ (y ++ b)) (whiskA a b f) =
+  refine supp_induction_single (P := fun f => interp D (a ++ (x ++ b)) (a ++ (y ++ b)) (whiskA a b f) =
       (μ E F a (x ++ b)).hom ≫ (obj E F a ◁ ((μ E F x b).hom ≫ (interp D x y f ▷ obj E F b) ≫
         (μ E F y b).inv)) ≫ (μ E F a (y ++ b)).inv) ?_ ?_ ?_ hf
   · simp
