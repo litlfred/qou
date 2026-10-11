@@ -449,3 +449,24 @@ Not computed: 12B (T_w-basis product exceeded container memory); every
 A > 12 certificate and v9's own 10B/10Be/12B runs strip mid-construction,
 so the stored object is not a product. No certificate data changed; what to
 do with the corpus is put to the owner.
+
+## 2026-10-11 (3) — the other 16 certificates, and the trace past A = 8
+
+- `hecke-modular` (v11) evaluated at a local literal `1.10998` while recording
+  `gram::Q_0`. Fixed, and all 15 hecke-crt / hecke-modular certificates are
+  regenerated at the proton pin (`4he-crt` carries residues only). Issue #7717.
+- **Finding:** for builds that strip words mid-construction, `f_pauli`
+  depends on the strip threshold, not only on the nucleus. Measured on 11B:
+  0.31 / 0.89 / 2.92 / 2.80 / 9.25 / 31.9 / 81.4 at thresholds
+  1e3 / 5e3 / 1e4 / 2e4 / 5e4 / 1e5 / 2e5. The old 11B/12C/14N/16O
+  certificates recorded no argv, so their threshold cannot be recovered.
+- **Trace for A ≥ 9:** `computations/probes/markov_trace_two_row_tower_probe.py`.
+  Under convention D only two-row shapes carry weight,
+  `y_(n-k,k) = [n-2k+1]_q / [2]_q^n`, so the trace is a sum of two-row
+  seminormal characters built up the Hecke tower (Gelfand–Tsetlin basis,
+  each level embedded block-diagonally into the next). It agrees with v9's
+  `tr_markov_d` to all 60 printed digits on all 12 nuclei v9 could do. 63
+  isotopes computed (Z = 1…8, A ≤ 16), covering every certificate nucleus
+  with 9 ≤ A ≤ 16. Cost grows like Catalan(A): A = 14 takes about 3 min,
+  A = 16 about 48 min, in Python. 19F, 20Ne, 40Ar, 40Ca and 60Co are still
+  out of reach.
