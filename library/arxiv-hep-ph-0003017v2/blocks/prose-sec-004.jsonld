@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-004",
   "kind": "prose",
-  "title": "Tr Ω(σ) ,",
-  "pageStart": 47,
-  "pageEnd": 54,
-  "text": "../sections/sec-004-2-tr-ωσ.md",
-  "derivedFrom": "library/arxiv-hep-ph-0003017v2/manifest",
-  "sourceDocument": "library/arxiv-hep-ph-0003017v2/manifest",
+  "title": "CHIRAL RANDOM MATRIX THEORY",
+  "pageStart": 15,
+  "pageEnd": 15,
+  "text": "../sections/sec-004-3-chiral-random-matrix-theory.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0003017v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0003017v2/manifest.jsonld",
   "provenance": "ingested"
 }

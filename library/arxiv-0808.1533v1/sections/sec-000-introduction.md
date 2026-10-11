@@ -9,1167 +9,450 @@ source_pdf: 0808.1533v1.pdf
 source_sha256: 85bb9732afdd70ea
 doc_brief: "On the third order helicity of magnetic fields on invariant domains in S³ — We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld B, which leads us to a"
 duplicate_of: "arxiv-0808.1533v3"
+text_source: latex
+latex_prose_ratio: 0.969
+latex_coverage_ratio: 0.986
 ---
-A purpose of this paper is to develop a particular formula for the thir d order helicity on
-certain invariant sets of a volume preserving vector ﬁeld X. The third order helicity, [3],
-is an invariant of X under the action of volumorphisms isotopic to the identity (denoted
-here by Diﬀ vol
-0 (M)). Importance of such invariants stems from the basic fact that e.g. the
-evolution of the vorticity in the ideal hydrodynamics or the magnetic ﬁeld B0 in the ideal
-magnetohydrodynamics (MHD), occurs along a path t − →g(t) ∈ Diﬀ vol
-0 (M), [3, p. 176].
-Namely, B(t) = g∗(t)B0 which is a direct consequence of Euler’s equations:
-d
-dt B + [v, B] = 0 , d
-dt g(t) = v. (1)
-One often says that the magnetic ﬁeld B is frozen in the velocity ﬁeld v of plasma, the
-action by Diﬀ vol
-0 (M) is often referred to as frozen-in-ﬁeld deformations. The fundamental
-example of such invariant deﬁned for a general class in Vect vol(M) is the helicity H12(X1, X2)
-deﬁned for a pair of vector ﬁelds X1 and X2 on M = S3 or a homology sphere. Helicity has
-∗ Department of Mathematics, University of Pennsylvania; e-mail: rako@math.upenn.edu. This project is
-supported by DARPA, #F A9550-08-1-0386.
-1
-been ﬁrst introduced by Woltjer, in the context of magnetic ﬁelds, and is a measure of how
-orbits of X1, and X2 link with each other. This topological interpretation of helicity has
-been made precise by Arnold, who introduced (in [2]) the concept of t he average asymptotic
-linking number of orbits for a pair volume preserving vector ﬁelds on M and proved that
-it is equal to their helicity. The subject has been further developed in [5, 1, 28, 20] (see [3]
-for additional references), where authors approach higher helicities via the Massey products
-under various assumptions about the vector ﬁelds or their domains (work in [16, 29] con-
-cerns other approaches to the problem). In this paper we presen t an alternative to these
-approaches, which is a natural extension the notion of the linking nu mber as a degree of a
-map, and exploits relations to the homotopy theory of certain maps associated to the link.
-The paper has two parts:
-In the ﬁrst part we show how the Milnor ¯ µ123-invariant: ¯µ123(L) of a parametrized bor-
-romean link L in S3 can be obtained as a Hopf degree of an associated map to the conﬁg u-
-ration space of three points in S3. The presented approach to link-homotopy invariants of
-3-component links has been proposed in [18] for n-component links in R3, and conveniently
-simpliﬁed for 3-component links in S3 in the joint work [13], where the full correspondence
-between ¯µ123(L) and the Pontryagin-Hopf degree is proved. In Section 2 we prese nt the orig-
-inal proof of this correspondence in the borromean case, which is s uﬃcient for our purposes.
-The second part of the paper is concerned with a new deﬁnition of th e third order helicity
-denoted here by H123(X; T ), where X is a volume preserving vector ﬁeld having an invariant
-unlinked domain T ⊂ S3. The simplest of such domains are three invariant handlebodies
-in S3 which have pairwise unlinked cycles in the ﬁrst homology. This includes t he case of
-borromean ﬂux tubes already investigated in e.g. [5, 20]. In Section 5 we develop an ergodic
-formulation of H123(X; T ) as an average asymptotic ¯ µ123-invariant in the spirit of Arnold’s
-asymptotic linking number, which allows us to extend the deﬁnition of t he invariant to
-topologically more complicated unlinked domains. We also indicate that H123(X; T ) provides
-a lower bound for the L2-energy of X.
-Acknowledgements: My inspiration for the presented approach to the link-homotopy inv ari-
-ants comes from the Toshitake Kohno paper, [18], whom I am grate ful for the valuable
-e-mail correspondence. I have enjoyed conversations with many colleagues at the University
-of Pennsylvania, who have inﬂuenced this work. I wish to thank Herm an Gluck for weekly
-meetings and his interest in this project, Frederic Cohen, Dennis De Turck, Charlie Epstein,
-Paul Melvin, Tristan Rivi` ere, Clay Shonkwiler, Jim Stasheﬀ, David Sh ea Vick for the valu-
-able input. I am also grateful to my advisor Robert Ghrist who introd uced me to the subject
-long time ago.
-The author acknowledges ﬁnancial support from DARPA, #F A9550 -08-1-0386.
-2 The Milnor ¯µ123-invariant and the Hopf degree.
-The ¯µ-invariants of n-component links in S3 have been introduced by Milnor in [23, 24]
-as invariants of links up to link-homotopy, recall that the link homotopy is a deformation
-2
-of a link in S3 which allows each component of the link to pass through itself but not
-through a diﬀerent component. Clearly, this is a weaker equivalence than the equivalence
-of links up to isotopy where components are not allowed to pass through themselves at a ll.
-The fundamental example of a ¯ µ-invariant is the linking number (denoted by ¯ µ12) which
-is a complete invariant of the 2-component links up to link homotopy. I n the realm of
-3-component links the relevant invariants are the pairwise linking num bers ¯µ12, ¯µ23, ¯µ32,
-and the third invariant ¯µ123 in Zgcd(¯µ12,¯µ23,¯µ32), which is a well deﬁned integer if and only if
-¯µ12 = ¯µ23 = ¯µ32 = 0. In the second part of the paper we will interpret this statemen t as a
-topological condition on the invariant set of a vector ﬁeld. A precise deﬁnition of ¯µ-invariants
-is algebraic and involves the Magnus expansion of the lower central s eries of the fundamental
-group: π1(S3 − L) of the link complement. We refer the interested reader to the wor ks in
-[23, 24]. In the remaining part of this section we will prove that ¯ µ123(L) is a Hopf degree for
-an appropriate map associated to the link L, provided that the link is borromean, i.e. the
-pairwise linking numbers are zero (note that the borromean links are more general then so
-called Brunnian links, [23]).
-Let us review basic facts about the Hopf degree H (f ) of a map f : S3 − →S2, (see e.g.
-[6]). The well known property of the Hopf degree is that H : f − →H (f ) provides an
-isomorphism between π3(S2) and Z. Recall that, up to a constant multiple, we may express
-H (f ) as ( M = S3)
-H (f ) =
-∫
-M
-α ∧ f ∗ν =
-∫
-M
-α ∧ ω =
-∫
-M
-α ∧ dα, (2)
-where ν is the area 2-form on S2, and α satisﬁes ω = f ∗ν = dα. Notice that f ∗ν is always
-exact since the cohomology of S3 in dimension 2 vanishes (i.e. H 2(S3) = 0). We may also
-interpret H (f ) as an intersection number, [6, 25]. Namely, consider two regular va lues p1
-and p2 ∈ S2 of the map f , then l1 = f −1(p1) and l2 = f −1(p2) form a link in S3, and the
-integral formula (2) can be interpreted, as the intersection numb er of l1 with the Seifert
-surface spanning l2:
-H (f ) = lk( l1, l2) . (3)
-If we replace S3 with an arbitrary closed compact orientable 3-dimensional manifold M, we
-may still obtain an invariant of f : M − →S2 this way, provided that the condition f ∗ω = dα
-holds.
-Proposition 2.1. Let M be a closed Riemannian manifold, and ν ∈ Ω 2(S2) the area form
-on S2. The formula (2) provides a homotopy invariant for a map f : M − →S2, if the 2-form
-f ∗ν is exact. Up to a constant multiple this invariant can be calc ulated as an intersection
-number deﬁned in (3), where l1 = f −1(p1) and l2 = f −1(p2) form a link in M, where both l1
-and l2 are null-homologous.
-Proof. Given a homotopy F : I × M ↦→S2, f1 = F (1, · ), f0 = F (0, · ), we deﬁne ˆω = F ∗ν.
-3
-We have
-ˆω = F ∗ν = d ˆα,
-ω1 = f ∗
-1 ν = i∗
-1 F ∗ν = d α1,
-ω0 = f ∗
-0 ν = i∗
-0 F ∗ν = d α0,
-where i0 :֒→ M × I, i0(x) = ( x, 0), i1 :֒→ M × I, i1(x) = ( x, 1) are appropriate
-inclusions. The “potentials”: ˆα
-⏐
-⏐
-{0}×M , α0, and ˆα
-⏐
-⏐
-{1}×M , α1 diﬀer by a closed form
-ˆα
-⏐
-⏐
-{0}×M −α0 = β0, ˆα
-⏐
-⏐
-{1}×M −α1 = β1, dβ 0 = dβ1 = 0,
-therefore the Stokes Theorem immediately implies that Formula (2) is independent of the
-choice of the potential. For the proof of invariance we repeat the s tandard argument in [6,
-p. 228]
-0 =
-∫
-F (M ×I)
-ν ∧ ν =
-∫
-M ×I
-ˆω ∧ ˆω =
-∫
-M ×I
-ˆω ∧ d ˆα
-=
-∫
-M ×I
-d(ˆω ∧ ˆα) =
-∫
-∂(M ×I)
-ˆω ∧ ˆα .
-Thus,
-0 =
-∫
-∂(M ×I)
-ˆω ∧ ˆα =
-∫
-M
-ω1 ∧ α1 −
-∫
-M
-ω0 ∧ α0
-=
-∫
-M
-dα1 ∧ α1 −
-∫
-M
-dα0 ∧ α0 = H (f1) − H (f0).
-The interpretation of H (f ) as the intersection number (3) is the same as in [6, p. 230].
-Given a 3-component parametrized link L = {L1, L2, L3} in S3 we wish to associate a certain
-map FL : S1 × S1 × S1 ↦→S2 to it, and interpret its Hopf degree as the Milnor ¯ µ123-invariant.
-Recall, the deﬁnition of the conﬁguration space of k points in M:
-Conf(M, k) := {(x1, x2, . . . , xk) ∈ (M)k | xi ⁄= xj, for i ⁄= j}.
-As an introduction to the method we review the Gauss formula for th e linking number
-of a 2-component link L = {L1, L2} in R3. Denote parameterizations of components by
-L1 = {x(s)}, L2 = {y(t)} and consider the map
-FL : S1 × S1 L
-− →Conf(R3, 2)
-r
-− →S2, L (s, t) = ( x(s), y(t)) .
-where r(x, y) = x−y
-‖x−y‖ is a retraction of Conf( R3, 2) onto S2. It yields the classical Gauss
-linking number formula, up to a constant multiple:
-lk(L1, L2) = deg( FL), deg(FL) =
-∫
-S1×S1
-F ∗
-L(ν),
-4
-where ν ∈ Ω 2(S2) is the area form on S2. Consequently, the linking number lk( L1, L2), also
-known as the Milnor ¯ µ12-invariant, can be obtained as the homotopy invariant of the map
-FL associated to L. Notice that homotopy classes [ S1 × S1, S2] are isomorphic to Z and
-deg : F → deg(F ) provides the isomorphism. In [18], Kohno proposed a natural ext ension
-of this approach to n-component parametrized links L in R3 by considering maps FL : S1 ×
-. . . × S1 − →Conf(R3, n) and their homotopy classes. More speciﬁcally, he proposed speciﬁ c
-cohomology classes of the based loop space of Conf( R3, n) as candidates for appropriate link-
-homotopy invariants of L. In [13], it has been observed that, in the 3-component case it is
-beneﬁcial to consider Conf( S3, 3), and L ⊂ S3, since the topology of Conf( S3, 3) simpliﬁes
-dramatically (in comparison to Conf( R3, 3)). We review this simpliﬁcation in the following
-paragraph as it is essential for the proof of the next theorem.
-Consider a 3-component link L = {L1, L2, L3} in S3 parametrized by {x(s), y(t), z(u)}
-and the following map
-FL : S1 × S1 × S1 L
-− →Conf(S3, 3)
-H
-− →S2, L (s, t, u) = ( x(s), y(t), z(u)) . (4)
-In order to explain the map H : Conf( S3, 3) − →S2, one must notice that Conf( S3, 3) ⊂
-S3 × S3 × S3 is diﬀeomorphic to S3 × Conf(R3, 2) = S3 × R3 × (R3 \ {0}), and consequently
-deformation retracts onto S3 × S2. Denote by H : S3 × R3 × (R3 \ {0}) ↦→S2 the projection
-on S2 factor. Considering S3 as unit quaternions, the map H can be expressed explicitly by
-the formula, [13]:
-Conf(S3, 3) ∋ (x, y, z)
-H
-− → pr(x−1 · y) − pr(x−1 · z)
-‖pr(x−1 · y) − pr(x−1 · z)‖ ∈ S2, (5)
-where · stands for the quaternionic multiplication, −1 is the quaternionic inverse, and pr :
-S3 − →R3 the stereographic projection from 1. As a result one has the follow ing particular
-expression for FL:
-FL(s, t, u) = pr(x(s)−1 · z(u)) − pr(x(s)−1 · y(t))
-‖pr(x(s)−1 · z(u)) − pr(x(s)−1 · y(t))‖.
-At this point we note that one has a freedom in choosing the deforma tion retraction H in (5)
-but this particular formula makes the proof of the main theorem of t his section possible. By
-the borromean rings we understand any 3-component link with ¯ µ123 = ±1 link homotopic
-to a link with diagram presented on Figure 4 (where the sign can be det ermined from the
-orientation of components).
-Theorem 2.2. Let LBor = {L1, L2, L3} be a 3-component link in S3 link homotopic to the
-Borromean rings, and consider the associated map FLBor : S1 × S1 × S1 − →S2 deﬁned in
-(4). Then the Hopf degree of the map FLBor satisﬁes
-H (FLBor) = ±2, (6)
-where the sign depends on the choice of orientations.
-5
-Proof. According to Proposition 2.1, H (FL) is well deﬁned for a link L ⊂ S3 provided
-F ∗
-Lν ∈ Ω 2(T) is trivial in H 2(T), T = S1 × S1 × S1. This fact will follow from the proof,
-but we will show in Corollary 2.5, that it holds if and only if the pairwise linkin g numbers
-of L are zero. The method relies on a direct calculation of H (FLBor), for a carefully chosen
-parametrization of LBor in S3. This calculation is achieved by visualization of the link
-lS,N = lS ∪ lN in T, and application of Formula (3), where
-lS := F −1
-LBor(S), l N := F −1
-LBor(N)
-are preimages of the North pole N = (0 , 0, 1) and South pole S = (0 , 0, −1) in S2. Notice
-that [ F ∗
-Lν] = 0 in H 2(T) if and only if [ lS] = 0 and [ lN ] = 0 in H1(T).
-We identify S3 with the set of unit quaternions in R4 with standard coordinates:
-(w, x, y, z) = w + x i + y j + z k,
-and choose a speciﬁc parametrization of the Borromean rings LBor in S3, as follows: deﬁne
-the L1 component of LBor to be the great circle through 1 in S3, parametrized as
-x(s) = cos( s) + sin(s) k,
-(
-x(s)−1 = cos(s) − sin(s) k
-)
-.
-Notice that pr( x(s)) parameterizes the z-axis in R3. Because
-x(s)−1 · (w, x, y, z) =
-(
-cos(s)w + sin(s)z, cos(s)x + sin(s)y,
-cos(s)y − sin(s)x, cos(s)z − sin(s)w
-)
-,
-we observe that multiplication by x(s)−1 is a rotation by angle s in ( w, z)-plane and ( x, y)-
-plane of R4 , and the ﬂow deﬁned by this S1-action is tangent to the great circles of S3.
-Consequently, the projected ﬂow on R3 via the stereographic projection pr : S3 ⊂ R4 − →R3
-presents the standard picture of the Hopf ﬁbration, and the S1-action “pushes” points in R3
-along Hopf circles.
-Let us call a Hopf torus in R3 the r-torus if and only if it contains a circle of radius r
-in the ( x, y)-plane and is invariant under the S1-action. Figure 1 shows how to deﬁne the
-second and the third component {L2, L3} of the Borromean rings LBorr in the stereographic
-projection. L2 will be the annuli with a rounded wedge removed, i.e. an arc A1 of the
-circle of radius 1 and A2 arc belongs to the circle of radius rǫ = (1 + ǫ) in the ( x, y)-plane.
-The component L3 is chosen to be a vertical ellipse linking with L2, which belongs to the
-rǫ/2-torus, and projects on the ( x, y)-plane as a segment. Recall that every point on an
-r-torus traces a (1 , 1)-curve under the S1-action. This motion, for suﬃciently small ǫ, can
-be regarded as a composition of the rotation by angle s in both the direction of the meridian
-and the longitude of an r-torus. Therefore for diﬀerent values of s the S1-action “rotates”
-the components L2 and L3, by sliding along the Hopf tori by angle s in the meridian and
-the longitudinal direction, we denote links obtained this way by
-Ls
-2(t) = pr( x−1(s) · y(t)), and Ls
-3(u) = pr( x−1(s) · z(u)).
-Let us collect useful information below
-6
-L1
-L2
-L3
-A2
-A1
-Figure 1: The model of LBorr parametrized by {L1 = pr(x(s)), L2 = pr(y(t)), L3 = pr(z(u))}.
-Arc A1 is a part of the unit circle on xy-plane, A2 is a part of circle of radius 1 + ǫ.
-(i) The z-axis stays invariant under the S1-action.
-(ii) A2 slides, under the S1-action, on the rǫ-torus, A1 simply rotates around the z-axis in
-the ( x, y)-plane.
-(iii) We can disregard the longitudinal rotation (i.e. pretend that the o bserver sits on the
-unit circle) the motion of arcs: Ls
-3, As
-2 together with the connecting segments is simply
-a full rotation around the unit circle on the ( x, y)-plane (which can be thought of as
-the “axis of rotation”). Stages of this motion are pictured on the lo wer part of Figure
-2.
-We seek to visualize the projection of lS,N = lS ∪ lN on the su-face and st-face of the
-domain T = S1 × S1 × S1 of FLBor parameterized by ( s, t, u) ∈ T, (it is convenient to think
-about T as a cube in ( s, t, u)-coordinates, see Figure 3).
-For example when s = 0, ( x(0) = 1), a point (0 , t0, u0) belongs to lN , if and only if
-the vector v0 = pr( y(t0)) − pr(z(u0)) “points North”, i.e. in the direction of N = (0 , 0, 1),
-analogous condition holds for S = (0, 0, −1), and lS. Thus in order to determine a diagram
-of lS,N , we must keep track of the “head” and “tail” of the vector vs = Ls
-2(t) − Ls
-3(u), for
-various values of s and record values of t and u for which vs points “North” and “South”
-(Figure 2). We have the following condition
-(s, t, u) ∈ lS,N if and only if , vs ‖ S or N. (7)
-An alternative way to view this condition is the following: for a given valu e of s the coor-
-dinates u and t of points in lS,N can be identiﬁed with points on Ls
-2 and Ls
-3, which come
-from the intersection points in π(Ls
-3 ∪ Ls
-2), under the projection π(x, y, z) = ( x, y), onto the
-(x, y)-plane (see the bottom part of Figure 2). These intersection poin ts are simply crossings
-in the diagram of the link {Ls
-2, Ls
-3} on the ( x, y)-plane. Points N and S can be assumed
-7
-to be regular values of FLBorr because π(Ls
-2(t)) and π(Ls
-3(u)) always intersect transversely
-(bottom of Figure 2), which is persistent under small perturbation s of the parametrization
-of LBorr.
-The main task ahead is to visualize lN and lS. For a ﬁxed s = s0 we draw arrows:
-N and S (Figure 2) which lie directly above the crossings of the diagram of {Ls0
-2 , Ls0
-3 } on
-the ( x, y)-plane. Next, we trace each component Ls0
-2 and Ls0
-3 and record values of t and u
-parameter for which the condition (7) holds, without loss of genera lity we assume that Ls
-2
-is parametrized by the unit t-interval, and Ls
-3 is parametrized by the unit u-interval. This
-process is elucidated below for s = 0 , π
-2 , π, 3π
-2 , which is suﬃcient to draw projections of lS
-and lN (each position is pictured on Figure 1) on st and tu-faces of T. We describe each case
-separately,
-(s = 0): This is the initial position, where L0
-3 is vertical. We mark the initial point L0
-3(0) on
-the top of L0
-3 and orient L0
-3 counter-clockwise, the initial point L0
-2(0) on L0
-2 is chosen
-in the middle of the left segment connecting A1 and A2, and the middle point L0
-2( 1
-2) is
-located the middle of the left segment connecting A1 and A2. Points in lS are marked
-by × and points in lN , are marked by •. In this conﬁguration there are four vertical
-arrows, two pointing North and two South, this gives us four points along the t-interval
-ordered as N SSN , ( | − • − × − × − • − |) and four points along the u-interval ordered
-(| − (×•) − −(•×) − |), where ( ×•) indicates the “collision” i.e. common value of u
-for both lS and lN .
-The remaining cases are self-explanatory, see Figure 1,
-(s = π
-2 ): Ls
-3 is horizontal, and t-coordinates of lS,N are colliding ( | − (•×) − (×•) − |). Ls
-2 is
-vertical and u-coordinates of lS,N are ordered as ( N N SS), ( | − • − × − × − • − | ).
-(s = π): Ls
-3 is vertical again, and t-coordinates of lS,N are ordered : SN N S, (|−×−•−•−×−| ).
-Ls
-2 is horizontal and u-coordinates of lS,N are colliding, ( | − (•×) − −(×•) − |).
-(s = 3π
-2 ): Ls
-3 is horizontal, and t-coordinates of lS,N are colliding ( | − (×•) − (•×) − |). Ls
-2 is
-vertical and u-coordinates of lS,N are ordered as ( N N SS), ( | − × − × − • − • − | ).
-Collecting this information, we may draw the projection of the link lS,N on the su-face of T,
-which is represented by square (A) in Figure 3. Analogously, the pro jection of lS,N on the
-st-face of T, is represented by square (B). The dashed line indicates the lN component of
-lS,N and the solid line indicates lS. In order to obtain the diagram of lS,N we will resolve the
-double points on Diagram (A) into crossings, ((B) can be resolved an alogously). For example
-let us resolve the “circled” double point on (A), which occurs for s = π
-2 , of the left two stands
-of lS,N . It suﬃces to determine the value of the t-coordinate at this point. Diagram (B) tells
-us that lS is below lN because T is oriented so that the t-axis points above the su-face (see
-top of Figure 3). Resolving the remaining crossings in a similar fashion le ads to a diagrams
-of lS,N presented in squares (C) and (D). Diagram (C) is easier to use for t he calculation of
-H (FLBor) = lk( lS, lN ) as an intersection number of e.g. lS with a Seifert surface spanning
-8
-s = 3π
-2
-s = π
-s = π
-2
-s = 0
-Figure 2: Four positions corresponding to angles: s = 0, π
-2 , π, 3π
-2 , small arrows next to N and
-S indicate a motion as s ր. Several phases of the rotation by s are pictured on the bottom
-four drawings. 9
-s
-s
-s
-s
-π
-2
-π
-2
-u (D)(C) t
-u(A) t(B)
-Figure 3: Projection of lS,N on the su-face and st-face of T. The strands lS and lN are
-oppositely oriented since lS,N is null homologous in T.
-10
-lN . Observe that strands in lS and lN are oppositely oriented, which follows from the fact
-that they are null-homologous in H 1(T), there are an obvious annuli bounding lS and lN on
-Diagram (C). Clearly, the linking number of lS and lN is equal to ±2, since the intersection
-number of e.g. lS with the obvious annulus on Diagram (C) is ±2. This proves (6).
-}n
-Figure 4: left: ¯ µ123 = ±1 and right: ¯µ123 = ±n.
-Corollary 2.3. If L = {L1, L2, L3} is a 3-component link with vanishing pairwise linking
-numbers then
-H (FL) = ±2 ¯µ123
-Proof. Clearly, if L and L′ are link-homotopic then FL and FL′ are homotopic maps. By the
-Milnor classiﬁcation of 3-component links up to link homotopy (see [23 ]), every 3-component
-link L with zero pairwise linking numbers and ¯µ123 = ±n is represented by the right diagram
-on Figure 4. Consequently, up to homotopy, the associated map FL can be obtained from
-FLBorr by covering one of the S1 factors in T, n-times.
-Lemma 2.4 ([11]). We have the following isomorphisms
-π2(Conf(R3, 3)) ∼= Z ⊕ Z ⊕ Z, π 2(Conf(S3, 3)) ∼= Z,
-and the induced homomorphism i∗ : π2(Conf(R3, 3)) ↦→π2(Conf(S3, 3)), from i : R3 ↦→
-R3 ∪ {∞} ∼= S2, maps the generators Aij, 1 ≤ i ≤ j ≤ 3, to ± α, where α is the single
-generator of π2(Conf(S3, 3)).
-Proof. The Hurewicz Theorem tells us that H2(Conf(R3, 3)) ∼= π2(Conf(R3, 3)). The 2-
-skeleton of Conf( R3, 3) has a homotopy type of S2 ∨ S2 ∨ S2 and H2(Conf(R3, 3)) is generated
-by Aij : S2 ↦→Conf(R3, 3), 1 ≤ i < j ≤ 3 representing each 2-sphere in the 2-skeleton (c.f.
-[12]). The group of permutations S3 acts on Conf( R3, 3) by permuting coordinates. As a
-consequence of this we obtain the action on generators of H2(Conf(R3, 3)) by permutation.
-We have seen that Conf( S3, 3) has the homotopy type of S3 × S2 thus π2(Conf(S3, 3)) = Z,
-and let us denote the generator by α. Now, i∗Aij = k α, k ∈ Z, notice that i∗A23 = α since
-i ◦ A23 = id S2, using the action by permutations we obtain i∗Aij = α.
-11
-Corollary 2.5. Denote by F kl
-L = FL
-⏐
-⏐
-S1
-k×S1
-l
-restriction of FL deﬁned in (4) to the kl-torus
-k, l ∈ {s, t, u}, k ⁄= l. Then
-deg(F kl
-L ) = lk(Lk, Ll), (8)
-where lk (Lk, Ll) is the linking number between the components parameterized by k, and l.
-Proof. By deﬁnition
-deg(S1
-i × S1
-j
-Lij
-− →Conf(R3, 3)
-πij
-− →Conf(R3, 2) ∼= S2) = lk( Li, Lj),
-thus on the cohomology level lk( Li, Lj) = L∗
-ij[Aij] = ( F ij
-L )∗(α).
-Results of Theorem 2.2 and Proposition 2.1 combined with Formula (2) a llow us to express
-¯µ123(L) of a borromean link L as
-¯µ123(L) =
-∫
-T
-F ∗
-Lν ∧ α =
-∫
-T
-L∗ω ∧ α, (9)
-for F ∗
-Lν = dα, ω = H ∗ν ∈ Ω 2(Conf(S3, 3)),
-where ν is the area form on S2, and H : Conf( S3, 3) − →S2 is the deformation retraction
-(as e.g. in (5)). Alternatively, we may view ω as a 2-form on ( S3)3 which is singular along
-the diagonals ∆ ⊂ (S3)3, and the singularity is of order O(r2), where r is a distance to ∆ .
-Consequently, ω is integrable but not square integrable on ( S3)3. We also point out that the
-2-form ω can be replaced with any other cohomologus 2-form in Conf( S3, 3).
-Remark 2.6. Notice that the integral formula (9) is antisymmetric in the following s ense
-¯µ123(L1, L2, L3) =
-∫
-S1s
-∫
-S1
-t
-∫
-S1u
-ω ∧ α(˙x(s), ˙y(t), ˙z(u)) ds ∧ dt ∧ du
-=
-∫
-S1s
-∫
-S1
-t
-∫
-S1u
-−ω ∧ (−α)(˙y(t), ˙x(s), ˙z(u)) ds ∧ dt ∧ du
-=
-∫
-S1
-t
-∫
-S1s
-∫
-S1u
-ω ∧ α(˙y(t), ˙x(s), ˙z(u))(− dt ∧ ds ∧ du) = −¯µ123(L2, L1, L3)
-where in the second identity the potential changes sign because th e domain changes orien-
-tation.
-3 Invariants of volume preserving ﬂows. Helicity.
-Given ﬁnitely many volume preserving vector ﬁelds X1, X2, . . . Xk ∈ Vectvol(M) on M = S3
-or a homology 3-sphere one seeks quantities I(X1, X2, . . . , Xk) invariant under the action of
-volumorphisms isotopic to the identity g ∈ Diﬀ vol
-0 (M), commonly known as higher-helicities:
-I(X1, X2, . . . , Xk) = I(g∗X1, g∗X2, . . . , g∗Xk), for all g ∈ Diﬀ vol
-0 (M), (10)
-12
-where g∗ is a push-forward by a diﬀeomorphism g. To distinguish the case of a single vector
-ﬁeld X (i.e. X = X1 = . . . = Xk) we often refer to I(X) = I(X1, X2, . . . , Xk) as self-helicity.
-We elucidated in the introduction a fundamental example of such inva riant is the ordinary
-helicity H(X1, X2) of a pair of vector ﬁelds. In the the remaining part of this section w e
-review well known formulations of the helicity, which will later help us to point out analogies
-to the proposed formulation of the 3rd order helicity. Let T = T1 ∪T 2 represent two invariant
-subdomains (not necessarily disjoint) under ﬂows of X1 and X2 in S3 and let
-T = T1 × T2 ⊂ Conf(M, 2) ⊂ M × M.
-Recall that the formula for H(X1, X2), from [17, 30], specialized to invariant subdomains
-T = T1 ∪ T2 may be expressed as
-H12(X1, X2) =
-∫
-T1×T2
-ω ∧ ιX1µ ∧ ιX2µ, (11)
-where ω is so called linking form on M × M. When T = M × M this formula is equivalent
-to a more commonly known expression: H(X1, X2) =
-∫
-M ιX1µ ∧ d−1(ιX2µ) (because ω also
-represents the integral kernel of d−1).
-Philosophically, H(X1, X2) can be derived (c.f. [2]) from the linking number of a pair of
-closed curves, which is expressed by Arnold’s Helicity Theorem. For o rbits {O 1(x), O 2(y)}
-of X1 and X2 through x, y ∈ M, we introduce the following notation for the long pieces of
-closed up orbits
-O i
-T (x) = {Φ i
-t(x) | 0 ≤ t ≤ T } ⊂ O i(x), i = X, Y, (12)
-¯O i
-T (x) := O i
-T (x) ∪ σ(x, Φ i(x, T )). (13)
-where σ(x, y) denotes a short path, [30], connecting x and y in M (see Section 5).
-Theorem 3.1 (Arnold’s Helicity Theorem, [2]) . Given X1, X2 ∈ Vectvol(M), The following
-limit exists almost everywhere on M × M:
-¯mX1X2(x, y) = lim
-T →∞
-1
-T 2 lk( ¯O 1
-T (x) × ¯O 2
-T (y)) . (14)
-Moreover, ¯mX1X2 is in L1(M × M), and
-H12(X1, X2) =
-∫
-M ×M
-¯mX1X2(x, y) µ(x) ∧ µ(y) . (15)
-The function ¯mX1X2 represents an asymptotic linking number of orbits {O 1(x), O 2(y)}, and
-the identity (15) tells us that the helicity H12(X1, X2) is equal to the average asymptotic
-linking number. We will demonstrate, in coming paragraphs, how this p hilosophy is applied
-to obtain the asymptotic ¯µ123-invariant for 3-component links and the third order helicity.
-13
-4 Deﬁnition of “ ¯µ123-helicity” on invariant unlinked han-
-dlebodies.
-In this section we apply the formulation of the ¯ µ123-invariant for the 3-component links in
-S3, obtained in Section 2, to deﬁne the third order helicity of a volume pr eserving vector ﬁeld
-X on certain invariant domains T in S3. As a “warm-up” to a more general case presented
-in Section 5, in the following paragraphs we consider the case of thre e disjoint unlinked
-handlebodies: T = T1 ∪ T2 ∪ T3 each of genus g(Ti) in S3. When T represents three unlinked
-tubes (so called ﬂux tubes , [3]) in R3, the third order helicity has been developed by several
-authors [5, 22, 20] via the Massey product formula for the ¯ µ123-invariant, we compare our
-approach to these known works in Section 7.
-We consider Ti to have smooth boundary and the vector ﬁeld X to be tangent to ∂Ti, set
-Xi := X
-⏐
-⏐
-Ti
-, i = 1, 2, 3,
-denote the ﬂow of X on S3 by Φ, and ﬂows of restrictions Xi by Φ i. Clearly, T is an invariant
-set of X. Given for any domain T with three connected components {Ti} we may always
-associate a product domain in Conf( S3, 3) as follows
-T := T1 × T2 × T3 ⊂ Conf(S3, 3) ⊂ S3 × S3 × S3 . (16)
-Notice that T is a domain with corners in Conf( S3, 3), and we use the same notation for the
-product of Ti as for the union in S3. Wherever needed we also assume that ( S3)3 is equipped
-with a product Riemannian metric. A domain T deﬁned in (16), where Ti ∩ Tj = Ø, i ⁄= j
-and each Ti is a handlebody in S3 is called unlinked handlebody if and only if the 2-form
-ω ∈ Ω 2(Conf(S3, 3)) deﬁned in Equation (9) is exact on T , i.e. ω has a local potential
-αω ∈ Ω 1(T ):
-ω = dαω . (17)
-Denote a volume preserving vector ﬁeld and an unlinked handlebody T as ( X; T ).
-Remark 4.1. Notice that since ω is a dual cohomology class to the S2 factor of Conf(S3, 3) ∼
-=
-S3 × S2, thus ω does not admit a global potential.
-Because each handlebody Ti has a homotopy type of a bouquet of circles H1(Ti) is generated
-by cycles {Lk
-i }k=1,...,g(∂Ti) corresponding to the circles, which we call basic cycles . We have
-the following practical characterization of unlinked handlebodies:
-Lemma 4.2. T is an unlinked handlebody if and only if
-lk(Lk
-i , Lr
-j) = 0 , ∀ i, j, i ⁄= j (18)
-Proof. The standard pairing, [6], H 2(T ) × H2(T ) − →R implies that a closed k-form is exact
-if and only if it evaluates to zero on all k-cycles of the domain. By the K¨ unneth formula
-H2(T ) = H2(T1 × T2 × T3) is generated by Lk
-i ⊗ Lr
-j. Corollary 2.5 implies (for i ⁄= j) that
-lk(Lk
-i , Lr
-j) =
-∫
-Lk
-i ×Lr
-j
-ω .
-14
-Therefore the condition (18) is necessary and suﬃcient for ω to be exact on T .
-Figure 5: The simplest unlinked handlebody: ﬂux tubes T Borr modeled on the borromean
-rings.
-Let X be a volume preserving vector ﬁeld on S3 which admits an unlinked domain T which
-is invariant under its ﬂow. We deﬁne the ¯ µ123-helicity of ( X; T ) denoted by H123(X; T ) or
-H123(X1, X2, X3) as follows:
-H123(X; T ) = H123(X1, X2, X3)
-def.
-=
-∫
-T
-(
-αω ∧ dαω
-)
-∧ ιX1µ1 ∧ ιX2µ2 ∧ ιX3µ3, (19)
-where µi denotes the pull-back of the volume form µ on S3 under the projection
-πi : S3 × S3 × S3 − →S3, π i(x1, x2, x3) = xi, (20)
-and ιXi is a contraction by a vector ﬁeld Xi, our notational convention is to denote by ιXiµi
-both the forms on the base of πi and the pullbacks: π∗
-i
-(
-ιXiµi
-)
-. Notice that µ = µ1 ∧ µ2 ∧ µ3
-is a natural volume form on the product: S3 × S3 × S3.
-There are obvious analogies between the formula above, the formu la for the helicity
-H12(X; T ) and the integral formula for the ¯ µ123-invariant (9). Clearly, the 3-form
-γω := αω ∧ dαω = αω ∧ ω,
-plays a role of the linking form as ω in the formula (11) for H12(X; T ). The main motivation
-behind this deﬁnition is the ergodic interpretation of H123(X; T ) as an average asymptotic
-15
-¯µ123-invariant of orbits of X, and will become apparent in Section 5. Formula (19) can be
-also regarded as the third order helicity of three distinct vector ﬁe lds Xi, supported on the
-handlebodies Ti. In Section 6 we indicate how to construct the potential αω from the basic
-elliptic theory of diﬀerential forms.
-Theorem 4.3 (Helicity Invariance Theorem). On every unlinked invariant handlebody T in
-S3, H123(X; T ) is
-(i) independent of a choice of the potential αω.
-(ii) invariant under the action of Diﬀ vol
-0 (S3), i.e. for every g ∈ Diﬀ vol
-0 (S3):
-H123(X; T ) = H123(g∗X; g(T )) . (21)
-Proof. To prove ( i) observe for every other potential α′
-ω of ω, the diﬀerence β = αω − α′
-ω is
-a closed 1-form on T (since ω = dαω = dα′
-ω). Therefore
-H123(X; T ) − H′
-123(X; T ) =
-∫
-T
-(β ∧ ω) ∧ ιX1µ1 ∧ ιX2µ2 ∧ ιX3µ3
-(1)
-=
-∫
-T
-d
-(
-β ∧ αω ∧ ιX1µ1 ∧ ιX2µ2 ∧ ιX3µ3
-)
-=
-∫
-∂T
-β ∧ αω ∧ ιX1µ1 ∧ ιX2µ2 ∧ ιX3µ3
-(2)
-= 0 ,
-where in (1) we applied d(ιXiµi) = 0 (since Xi’s are divergence free), and in (2):
-ιXiµi
-⏐
-⏐
-∂Ti
-= 0,
-(because each vector ﬁeld Xi is tangent to the boundary ∂Ti), and
-∂T =
-(
-∂T1 × T2 × T3
-)
-∪
-(
-T1 × ∂T2 × T3
-)
-∪
-(
-T1 × T2 × ∂T3
-)
-.
-Next we show ( ii), the proof is in the style of [5, 22], but adapted to our setting. For any
-given g ∈ Diﬀ vol(S3), there exists a path t − →g(t) ∈ Diﬀ vol
-0 (S3), such that
-g(0) = id S3, g (1) = g .
-Denote by V the divergence free vector ﬁeld on S3, given by V (x) = d
-dt g(t, x)|t=0, i.e. g(t) is
-a ﬂow of V , and push-forward ﬁelds Xi by
-X t
-i := g(t)∗Xi .
-It is well known (see Appendix B, or [15, p. 224]) that 2-forms: ιX t
-i
-µ are frozen in the ﬂow
-of V , i.e.
-d
-dt
-(
-g(t)∗ιX t
-i
-µ
-)
-= (∂t + LV )ιX t
-i
-µ = 0. (22)
-16
-We also have a path ˆ g(t) = ( g(t), g(t), g(t)) in Diﬀ vol
-0 (S3 × S3 × S3). Analogously for the
-volume preserving ﬂow ˆg(t) we obtain the vector ﬁeld ˆV = ( V, V, V ) (recall that a tangent
-bundle T (S3)3 has a natural product structure). Equation (22) implies
-(∂t + L ˆV )
-(
-π∗
-i ιX t
-i
-µ
-)
-= (∂t + L ˆV )ιX t
-i
-µi = 0 . (23)
-(in the second equation we merely revoke our notational conventio ns: ιX t
-i
-µi ≡ π∗
-i
-(
-ιg(t)∗Xiµ
-)
-).
-Let T (t) = ˆg(t)(T (0)) ⊂ Conf(S3, 3) we must show d
-dt H123(X t
-1, Xt
-2, Xt
-3) = 0 at every t = t0.
-Notice that for small enough ǫ and t ∈ (t0 − ǫ, t0 + ǫ) we can assume, by ( i), that αω is a
-time independent potential obtained from slightly bigger domain ~T which satisﬁes
-T (t) ⊂ ~T , ∀t ∈ (t0 − ǫ, t0 + ǫ),
-and is a deformation retraction of T (t0). Without loss of generality we assume t0 = 0,
-ˆg(0) = id (S3)3, and calculate at t0:
-d
-dt
-(
-H123(g(t)∗X1, g(t)∗X2, g(t)∗X3)
-)
-= d
-dt
-∫
-T (t)
-αω ∧ dαω ∧ ιX t
-1
-µ1 ∧ ιX t
-2
-µ2 ∧ ιX t
-3
-µ3
-=
-∫
-T (0)
-d
-dt ˆg(t)∗(
-αω ∧ dαω ∧ ιX t
-1
-µ1 ∧ ιX t
-2
-µ2 ∧ ιX t
-3
-µ3
-)
-=
-∫
-T (0)
-(
-L∂t+ ˆV (αω ∧ dαω)
-)
-∧ ιX t
-1
-µ1 ∧ ιX t
-2
-µ2 ∧ ιX t
-3
-µ3,
-where in the last identity we applied (23) and the product rule for the Lie derivative. Now
-because ω ∧ αω is time independent (for t ∈ (t0 − ǫ, t0 + ǫ)) by the Cartan magic formula we
-obtain
-L∂t+ ˆV (αω ∧ dαω) = L ˆV (αω ∧ dαω) = ι ˆV d(αω ∧ dαω) + d(ι ˆV (αω ∧ dαω))
-= d(ι ˆV (αω ∧ dαω)),
-since d(αω ∧ dαω) = ω ∧ ω = 0. Now, the same argument as in the proof of ( i) shows that
-the right hand side of the previous equation is zero, because X t
-i are tangent to the boundary
-of Ti(t).
-Remark 4.4. Notice that the above argument shows that if we replace αω ∧dαω by virtually
-any closed 3-form η on Conf( S3, 3) (or ( S3)3) we obtain some invariant under frozen-in-
-ﬁeld deformations. Clearly, if η is exact we obtain trivial invariants, therefore the only
-candidates are cohomology classes of Conf( S3, 3) ∼= S3 × S2. In dimension 3, the only
-candidate cohomology class of Conf( S3, 3) is a dual of S3. Based on the considerations in
-Section 2 one may argue that an invariant obtained this way is trivial. I ndeed the cohomology
-class η evaluated on any 3-torus obtained from a 3-component link in S3 via the map L in
-(4) is zero. Therefore one could apply the approach via the Ergodic Theorem (as in Section
-5) to show that
-∫
-η ∧ ιX µ1 ∧ ιXµ2 ∧ ιX µ3 deﬁnes a trivial invariant. The crucial obstacle in
-extending the formula in (19) to encompass the whole S3 is the fact that the potential αω
-cannot be globally deﬁned on Conf( S3, 3).
-17
-5 The ergodic interpretation of H123(X; T )
-The following statement is often seen in literature [8, 9]:
-Helicity measures the extend to which vector ﬁelds twist and coil around each
-other.
-A beauty of Arnold’s ergodic approach to the helicity H12(X) is that it makes this statement
-precise, by interpreting H12(X) as an average asymptotic linking number of orbits of X. But
-it also has a practical application as it allows us to extend our approac h to certain invariant
-sets of X. In this section we apply this philosophy to our newly deﬁned invariant H123(X; T ),
-and interpret it as the average asymptotic ¯µ123-invariant of orbits of X. Moreover this ergodic
-interpretation leads us to an alternative, more intuitive proof of He licity Invariance Theorem
-4.3.
-We begin by observing that given a volume preserving vector ﬁeld X on M and its ﬂow
-Φ t, we may regard X as three vector ﬁelds on ( M)3. Therefore (Φ , Φ , Φ) induces a natural
-R3 action deﬁned as
-Φ : R3 × (M)3 − →(M)3 :
-(
-(s, t, u), x, y, z
-) Φ
-− →(Φ( s, x), Φ( t, y), Φ( u, z)). (24)
-Observe that Φ is a volume preserving action on ( M)3. Our analysis is rooted in techniques
-developed in [2, 19, 20], the main tool is the the following
-Theorem 5.1 (Multi-parameter Ergodic Theorem, [4]) . For any real valued L1-function F
-on (M)3, the time averages under the action in (24):
-¯F (x, y, z) = lim
-T →∞
-1
-T 3
-∫ T
-0
-∫ T
-0
-∫ T
-0
-F (Φ( x, s), Φ( y, t), Φ( z, u)) ds dt du
-converge almost everywhere. Moreover, the limit function ¯F satisﬁes
-(i) ‖ ¯F ‖L1((M )3) ≤ ‖F ‖L1((M )3),
-(ii) ¯F is invariant under the Φ -action,
-(iii) if (M)3 is of ﬁnite volume then
-∫
-(M )3
-¯F =
-∫
-(M )3
-F . (25)
-We may now deﬁne invariant unlinked domain T of X as an arbitrary Φ -invariant set, with
-topological closure T which belongs to a larger product of open sets ~T = ~T1 × ~T2 × ~T3 in
-Conf(S3, 3), satisfying the following
-(A) ~T admits a short path system S,
-18
-(B) Equation (17) holds on ~T .
-By a system of short paths on ~T , [30, 3], we understand a collection of curves S = {σ(x, y)}
-on each open set ~Ti such that
-(a) for every pair of points x, y ∈ ~Ti there is a curve σ(x, y) : I ↦→~Ti in S, such that
-σ(0) = x and σ(1) = y,
-(b) the lengths of paths in S are uniformly bounded above by a common constant.
-Topologically, every Φ -invariant set is a union of products of orbits of X in ( S3)3, it is
-often convenient to think of the orbits Φ -action as a foliation of ( S3)3, then Φ -invariant sets
-are just union of leaves of such foliation. A fundamental example of an invariant unlinked
-domain is the case of Φ -invariant set T contained in the product ~T = ~T1 ×~T2 ×~T3 of disjoint
-open unlinked handlebodies ~Ti. Notice that we do not require X to be tangent to ∂~Ti in this
-case, and ~T always admits a short path system as we describe in the following
-Remark 5.2. In [30], Vogel shows that on a closed manifold M, geodesics always provide
-a short path system. When T is contained in the product of unlinked handlebodies ~T we
-may easily construct such system on ~T . Because Ti are proper subsets of S3 we generally do
-not want to use ambient geodesics from S3 as they may not lie entirely in Ti. To obtain S
-one may always put an artiﬁcial Riemannian metric on each ~Ti which makes it a complete
-Riemannian manifold (e.g. by making ∂~Ti totally geodesic) and choose S to be geodesics
-on such Riemannian manifold. We also observe that one may apply a diﬀe omorphism g ∈
-Diﬀ(~T ) to S which results in the new system gS on g(~T ).
-Next theorem shows that the deﬁnition of H123(X; T ) in Equation (11) is valid for invariant
-unlinked domains of X and is an analog of Arnold’s Helicity Theorem in our setting
-Theorem 5.3 (Ergodic interpretation of H123(X; T )). Given (X; T ), the following limit
-(asymptotic ¯µ123-invariant of orbits) exists for almost all (x, y, z) ∈ T :
-¯mX (x, y, z) = lim
-T →∞
-1
-T 3 ¯µ123
-(¯O X1
-T (x), ¯O X2
-T (y), ¯O X3
-T (y)
-)
-. (26)
-Moreover,
-H123(X; T ) =
-∫
-T
-¯mX(x, y, z) µ(x) ∧ µ(y) ∧ µ(z) . (27)
-Proof. The proof is similar to the one in e.g. [30]. Before we start we must poin t out the
-following identity (valid for any 3-form γ on M × M × M and vector ﬁelds X1, X2, X3 on M)
-(ιX1ιX2ιX3γ) ∧ µ ∧ µ ∧ µ = γ(X1, X2, X3) µ ∧ µ ∧ µ = γ ∧ ιX1µ ∧ ιX2µ ∧ ιX3µ .
-The ﬁrst equation follows from the deﬁnition, the second equation is a consequence of the
-fact that ιX is an antiderivation i.e.
-ιX (α ∧ β) = ( ιX α) ∧ β + (−1)|α|α ∧ (ιX β), (28)
-19
-and ιXiµj ≡ 0 for i ⁄= j. As a result
-H123(X1, X2, X3) =
-∫
-T
-(
-αω ∧ dαω
-)
-∧ ιX1µ1 ∧ ιX2µ2 ∧ ιX3µ3
-=
-∫
-T
-(
-ιX1ιX2ιX3
-(
-αω ∧ dαω
-))
-µ1 ∧ µ2 ∧ µ3
-=
-∫
-T
-mX1,X2,X3(x, y, z) µ1 ∧ µ2 ∧ µ3,
-where mX1,X2,X3 := αω ∧ dαω(X1, X2, X3). For convenience let (see (12))
-¯O(x, y, z; T ) := ¯O X1
-T (x) × ¯O X2
-T (y) × ¯O X3
-T (y) .
-Clearly, every link ¯O(x, y, z; T ) is borromean and by Formula (9) we obtain
-¯µ123
-(¯O X1
-T (x), ¯O X2
-T (y), ¯O X3
-T (y)
-)
-=
-∫
-¯O(x,y,z;T )
-αω ∧ dαω
-=
-∫
-O(x,y,z;T )
-αω ∧ dαω + (I)
-where the term ( I) involves integrals over short paths in S, (see Appendix B). Next, notice
-that for every ( x, y, z) : DΦ (x,y,z)[∂i] = Xi, i = s, t, u we obtain
-Φ ∗
-(x,y,z)(αω ∧ dαω) = ( αω ∧ dαω(X1, X2, X3)(Φ 1(x, s), Φ 2(y, t), Φ 3(z, u)) ds ∧ dt ∧ du
-= mX1,X2,X3(Φ 1(x, s), Φ 2(y, t), Φ 3(z, u)) ds ∧ dt ∧ du .
-Thus
-∫
-O(x,y,z;T )
-αω ∧ dαω =
-∫ T
-0
-∫ T
-0
-∫ T
-0
-mX1,X2,X3(Φ 1(x, s), Φ 2(y, t), Φ 3(z, u)) ds ∧ dt ∧ du .
-Function mX1,X2,X3 is smooth on T and therefore L1. Because short paths do not contribute
-to the time average i.e.
-lim
-T →∞
-1
-T 3 (I) = 0
-(see Appendix B), Theorem 5.1 applied to the function mX1,X2,X3 yields almost everywhere
-existence of the limit (26) and the invariant L1-function ¯mX := ¯mX1,X2,X3 on T . The identity
-(27) follows from ( iii) of Theorem 5.1.
-Theorem 5.4 (Helicity Invariance Theorem-ergodic version) . On every unlinked domain T
-in S3, (i) and (ii) of Theorem 4.3 hold for H123(X; T ).
-Proof. The proof of ( i) immediately follows from independence of the limit (26) on the choice
-of the potential αω. For the proof of ( ii) we must show the following
-∫
-T
-mX1,X2,X3 µ1 ∧ µ2 ∧ µ3 =
-∫
-g(T )
-mg∗X1,g∗X2,g∗X3 µ1 ∧ µ2 ∧ µ3 .
-20
-Theorem 5.1, tells us that mX1,X2,X3 and mg∗X1,g∗X2,g∗X3 admit L1-averages ¯mX1,X2,X3 and
-¯mg∗X1,g∗X2,g∗X3, under actions of Xi and g∗Xi respectively. If the following holds:
-¯mX1,X2,X3(x, y, z) = ¯mg∗X1,g∗X2,g∗X3(g(x), g(y), g(z)), a.e., (29)
-then (21) is an immediate consequence of (25), change of variables for integrals, and the fact
-that g preserves the volume, i.e. µi = g∗µi. Borrowing notation from the previous theorem
-we set
-g ¯O(x, y, z; T ) := g( ¯O X1
-T (x)) × g( ¯O X2
-T (y)) × g( ¯O X3
-T (z))
-= ¯O g∗X1
-T (g(x)) × ¯O g∗X2
-T (g(y)) × ¯O g∗X3
-T (g(z)),
-where the second identity is a consequence of the fact that the ﬂo w of g∗Xi is obtained as
-a composition of g and the ﬂow of Xi. Since g is isotopic to the identity, ¯O(x, y, z; T ) and
-¯O(x, y, z; T ) are isotopic borromean links in S3, and for every T :
-¯µ123( ¯O(x, y, z; T )) = ¯µ123(g ¯O(x, y, z; T )).
-As a result of the above identity and (26) we derive a.e.
-¯mX1,X2,X3(x, y, z) = lim
-T →∞
-1
-T 3 ¯µ123( ¯O(x, y, z; T ))
-= lim
-T →∞
-1
-T 3 ¯µ123(g ¯O(x, y, z; T )) = ¯mg∗X1,g∗X2,g∗X3(g(x), g(y), g(z)).
-Notice that in the last equation we used in the “pushed forward” sho rt paths system: gS.
-But since lengths of paths in gS are bounded as well, they do not contribute to the limit.
-This proves the identity (29), and consequently (21).
-Notice that the above argument does not require the Stokes Theo rem, and thus may lead
-to further generalizations. Clearly, for H123(X; T ) to be nontrivial T must be of nonzero
-measure.
-The following formula is a well known property of the ordinary helicity H12(X; T ) of the
-ﬂux tubes T modeled on a 2-component link L = {L1, L2} (see e.g. [19, 7])
-H12(X; T ) = H12(X1, X2) = lk( L1, L2) Flux(X1) Flux(X2). (30)
-Next we show that an analogous property holds H123(X; T ), for invariant unlinked handle-
-bodies T investigated in the previous section.
-Proposition 5.5. H123(X1, X2, X3) on invariant unlinked handlebodies T satisﬁes the fol-
-lowing formula
-H123(X1, X2, X3) =
-∑
-i⁄=j⁄=k
-¯µ123(Li
-1, Lj
-2, Lk
-3) FluxΣ i(X1) FluxΣ j (X2) FluxΣ k(X3) . (31)
-where {Li
-1 ⊗ Lj
-2 ⊗ Lk
-3} is a basis of basic cycles of H1(T1) ⊗ H1(T2) ⊗ H1(T3), Flux (Xi) stands
-for the ﬂux of Xi through a cross sectional surface Σ k of Ti, which represents a homology
-Poincar´ edual of Lk
-i in H2(Ti, ∂Ti).
-21
-Proof. Recall that a ﬂux Flux Σ k(Xi) of a vector ﬁeld Xi though a cross-sectional surface Σ k
-is given by:
-FluxΣ k(Xi) =
-∫
-Σ k
-ιXiµ =
-∫
-Ti
-hk ∧ ιXiµ
-=
-∫
-Ti
-ιXihk ∧ µ =
-∫
-Ti
-hk(Xi),
-where 1-forms hk represent cohomology Poincar´ e duals of Σ k and we applied (28) in the
-third equation. Clearly, hi ∈ Ω 1(Ti) satisfy
-∫
-γ
-hk = #(γ, Σ k) = deg( γ, Lk),
-where deg( γ, Lj
-k) measures how many times γ “wraps around” in the cycle Lj
-k.
-For simplicity we ﬁrst assume that T is modeled on a borromean link L = {L1, L2, L3}
-(see Figure 5). Then h = h1 ∧ h2 ∧ h3 ∈ Ω 3(T ) is a cohomology class dual of the cycle
-L = L1 × L2 × L3 in T . We set
-H := ιX1ιX2ιX3h = h(X1, X2, X3),
-which is a smooth function, and let ¯H be the time average of H as in Theorem 5.1. It suﬃces
-to show
-¯mX1,X2,X3 = ¯µ123(L) ¯H, a.e. (32)
-Analogously as in Theorem 4.3, Equation (32) immediately implies Formula (31). Assume
-the notation of Theorem 4.3, for given T consider ¯O(x, y, z; T ). By the fundamental property
-of the ¯µ123-invariant (see Corollary 2.3) we have
-¯µ123( ¯O(x, y, z; T )) = ¯ µ123(L)
-(
-deg( ¯O X1
-T (x), L1) deg( ¯O X2
-T (y), L2) deg( ¯O X3
-T (x), L3)
-)
-= ¯ µ123(L)
-∫
-¯O(x,y,z;T )
-h .
-Thus we obtain
-¯mX1,X2,X3(x, y, z) = lim
-T →∞
-1
-T 3 ¯µ123( ¯O(x, y, z; T ))
-= ¯ µ123(L) lim
-T →∞
-1
-T 3
-∫
-¯O(x,y,z;T )
-H
-= ¯ µ123(L) ¯H(x, y, z),
-where the last equality is again the consequence of short paths not contributing to the limit.
-Now, from the product structure and ( iii) of Theorem 5.1 we have
-∫
-T
-¯H =
-∫
-T
-H =
-(∫
-T1
-h1(X1)
-)(∫
-T2
-h2(X2)
-)(∫
-T3
-h3(X3)
-)
-.
-The proof in the case of a general handlebody is analogous, once we show the following
-22
-Lemma 5.6. Let O = {O1, O2, O3} be a 3-component link in S3 such that Oi ⊂ T i for each
-i. Then O is borromean and
-¯µ123(O) =
-∑
-i⁄=j⁄=k
-¯µ123(Li
-1, Lj
-2, Lk
-3) deg(O1, Li
-1) deg(O2, Lj
-2) deg(O3, Lk
-1) . (33)
-Proof. Notice that thanks to our new interpretation, the ¯ µ123-invariant is not only a link
-homotopy invariant but a homotopy invariant of the associated map FO deﬁned in (4).
-Observe that each component Oi can be homotopied inside of its handlebody Ti to be come
-a bouquet of circles ˆOi ∼= S1 ∨ S1 ∨ . . . ∨ S1. Such that each factor in ˆOi is a basic cycle in
-H1(Ti). As a result we obtain the associated map F bO, and
-¯µ123(O) = 1
-2 H (F bO).
-Interpreting, H (F bO) as the intersection number and summing up intersection numbers w e
-conclude (33).
-In the case of borromean ﬂux tubes modeled on L, (30) reduces to
-H123(X1, X2, X3) = ¯µ123(L) FluxΣ 1(X1)FluxΣ 2(X2)FluxΣ 3(X3), (34)
-where Σ i denotes homology Poincar´ e duals to Li in H2(Ti, ∂Ti).
-Since the ﬂuxes are invariant under frozen-in-ﬁeld deformations F ormula (30) is yet an-
-other proof of Theorem 4.3 in the setting of invariant unlinked handle bodies. In [20] the
-authors develop the same formula for the borromean ﬂux tubes. T his clearly must be the
-case as we deal with the same topological invariants of links via a diﬀer ent approach. Ad-
-ditional advantage of our formulation is that we do not have to sepa rately deal with null
-points of vector ﬁelds as in [20]. We also note that in [20] the authors prove the helicity
-invariance only via Formula (34).
+A purpose of this paper is to develop a particular formula for the third order helicity on certain invariant sets of a volume preserving vector field $X$. The third order helicity, [@Khesin98], is an invariant of $X$ under the action of volumorphisms isotopic to the identity (denoted here by $\text{Diff}^\text{vol}_0(M)$). Importance of such invariants stems from the basic fact that e.g. the evolution of the vorticity in the ideal hydrodynamics or the magnetic field $\mathbf{B}_0$ in the ideal magnetohydrodynamics (MHD), occurs along a path $t\longrightarrow g(t)\in \text{Diff}^\text{vol}_0(M)$, [@Khesin98 p. 176]. Namely, $\mathbf{B}(t)=g_\ast(t)\mathbf{B}_0$ which is a direct consequence of Euler's equations: $$\label{eq:Eulers-eq}
+\frac{d}{dt} \mathbf{B}+[\mathbf{v},\mathbf{B}]=0,\qquad \frac{d}{dt} g(t)=\mathbf{v} .$$ One often says that the magnetic field $\mathbf{B}$ is *frozen in* the velocity field $\mathbf{v}$ of plasma, the action by $\text{Diff}^\text{vol}_0(M)$ is often referred to as *frozen-in-field* deformations. The fundamental example of such invariant defined for a general class in $\text{Vect}^\text{vol}(M)$ is the *helicity* $\mathsf{H}_{12}(X_1,X_2)$ defined for a pair of vector fields $X_1$ and $X_2$ on $M=S^3$ or a homology sphere. Helicity has been first introduced by Woltjer, in the context of magnetic fields, and is a measure of how orbits of $X_1$, and $X_2$ link with each other. This topological interpretation of helicity has been made precise by Arnold, who introduced (in [@Arnold86]) the concept of the average asymptotic linking number of orbits for a pair volume preserving vector fields on $M$ and proved that it is equal to their helicity. The subject has been further developed in [@Berger90; @Akhmetiev05; @Hornig04; @Laurence-Stredulinsky00b] (see [@Khesin98] for additional references), where authors approach *higher helicities* via the Massey products under various assumptions about the vector fields or their domains (work in [@Gambaudo-Ghys97; @Verjovsky94] concerns other approaches to the problem). In this paper we present an alternative to these approaches, which is a natural extension the notion of the linking number as a degree of a map, and exploits relations to the homotopy theory of certain maps associated to the link. The paper has two parts:
+
+In the first part we show how the Milnor $\bar{\mu}_{123}$-invariant: $\bar{\mu}_{123}(L)$ of a parametrized borromean link $L$ in $S^3$ can be obtained as a Hopf degree of an associated map to the configuration space of three points in $S^3$. The presented approach to link-homotopy invariants of 3-component links has been proposed in [@Kohno02] for $n$-component links in $\mbox{\bbb R}^3$, and conveniently simplified for 3-component links in $S^3$ in the joint work [@Deturck-Gluck-Melvin-Shonkwiler08], where the full correspondence between $\bar{\mu}_{123}(L)$ and the Pontryagin-Hopf degree is proved. In Section [1](#sec:mu-and-hopf){reference-type="ref" reference="sec:mu-and-hopf"} we present the original proof of this correspondence in the borromean case, which is sufficient for our purposes.
+
+The second part of the paper is concerned with a new definition of the third order helicity denoted here by $\mathsf{H}_{123}(X;\mathcal{T})$, where $X$ is a volume preserving vector field having an invariant unlinked domain $\mathcal{T}\subset S^3$. The simplest of such domains are three invariant handlebodies in $S^3$ which have pairwise unlinked cycles in the first homology. This includes the case of borromean flux tubes already investigated in e.g. [@Berger90; @Laurence-Stredulinsky00b]. In Section [4](#sec:ergodic){reference-type="ref" reference="sec:ergodic"} we develop an ergodic formulation of $\mathsf{H}_{123}(X;\mathcal{T})$ as an average asymptotic $\bar{\mu}_{123}$-invariant in the spirit of Arnold's asymptotic linking number, which allows us to extend the definition of the invariant to topologically more complicated unlinked domains. We also indicate that $\mathsf{H}_{123}(X;\mathcal{T})$ provides a lower bound for the $L^2$-energy of $X$.
+
+*Acknowledgements:* My inspiration for the presented approach to the link-homotopy invariants comes from the Toshitake Kohno paper, [@Kohno02], whom I am grateful for the valuable e-mail correspondence. I have enjoyed conversations with many colleagues at the University of Pennsylvania, who have influenced this work. I wish to thank Herman Gluck for weekly meetings and his interest in this project, Frederic Cohen, Dennis DeTurck, Charlie Epstein, Paul Melvin, Tristan Rivi$\grave{\rm e}$re, Clay Shonkwiler, Jim Stasheff, David Shea Vick for the valuable input. I am also grateful to my advisor Robert Ghrist who introduced me to the subject long time ago.
+
+The author acknowledges financial support from DARPA, #FA9550-08-1-0386.
+
+# The Milnor $\bar{\mu}_{123}$-invariant and the Hopf degree. {#sec:mu-and-hopf}
+
+The $\bar{\mu}$-invariants of $n$-component links in $S^3$ have been introduced by Milnor in [@Milnor54; @Milnor57] as invariants of links up to *link-homotopy*, recall that the link homotopy is a deformation of a link in $S^3$ which allows each component of the link to pass through itself but not through a different component. Clearly, this is a weaker equivalence than the equivalence of links up to *isotopy* where components are not allowed to pass through themselves at all. The fundamental example of a $\bar{\mu}$-invariant is the linking number (denoted by $\bar{\mu}_{12}$) which is a complete invariant of the 2-component links up to link homotopy. In the realm of 3-component links the relevant invariants are the pairwise linking numbers $\bar{\mu}_{12}$, $\bar{\mu}_{23}$, $\bar{\mu}_{32}$, and the third invariant $\bar{\mu}_{123}$ in $\mathbb{Z}_{\text{gcd}(\bar{\mu}_{12}, \bar{\mu}_{23}, \bar{\mu}_{32})}$, which is a well defined integer if and only if $\bar{\mu}_{12}=\bar{\mu}_{23}=\bar{\mu}_{32}=0$. In the second part of the paper we will interpret this statement as a topological condition on the invariant set of a vector field. A precise definition of $\bar{\mu}$-invariants is algebraic and involves the Magnus expansion of the lower central series of the fundamental group: $\pi_1(S^3-L)$ of the link complement. We refer the interested reader to the works in [@Milnor54; @Milnor57]. In the remaining part of this section we will prove that $\bar{\mu}_{123}(L)$ is a Hopf degree for an appropriate map associated to the link $L$, provided that the link is *borromean*, i.e. the pairwise linking numbers are zero (note that the borromean links are more general then so called Brunnian links, [@Milnor54]).
+
+Let us review basic facts about the Hopf degree $\mathscr{H}(f)$ of a map $f:S^3\longrightarrow S^2$, (see e.g. [@Bott82]). The well known property of the Hopf degree is that $\mathscr{H}: f\longrightarrow \mathscr{H}(f)$ provides an isomorphism between $\pi_3(S^2)$ and $\mbox{\bbb Z}$. Recall that, up to a constant multiple, we may express $\mathscr{H}(f)$ as ($M=S^3$) $$\begin{gathered}
+\label{eq:hopf-integral}
+\mathscr{H}(f)= \int_{M} \alpha\wedge f^\ast\nu=\int_{M} \alpha\wedge \omega=\int_{M} \alpha\wedge d\alpha,
+\end{gathered}$$ where $\nu$ is the area 2-form on $S^2$, and $\alpha$ satisfies $\omega=f^\ast\nu=d\alpha$. Notice that $f^\ast\nu$ is always exact since the cohomology of $S^3$ in dimension $2$ vanishes (i.e. $H^2(S^3)=0$). We may also interpret $\mathscr{H}(f)$ as an intersection number, [@Bott82; @Milnor97]. Namely, consider two regular values $p_1$ and $p_2\in S^2$ of the map $f$, then $l_1=f^{-1}(p_1)$ and $l_2=f^{-1}(p_2)$ form a link in $S^3$, and the integral formula [\[eq:hopf-integral\]](#eq:hopf-integral){reference-type="eqref" reference="eq:hopf-integral"} can be interpreted, as the intersection number of $l_1$ with the Seifert surface spanning $l_2$: $$\begin{gathered}
+\label{eq:hopf-intersection}
+\mathscr{H}(f)=\text{lk}(l_1,l_2)\ .
+\end{gathered}$$ If we replace $S^3$ with an arbitrary closed compact orientable 3-dimensional manifold $M$, we may still obtain an invariant of $f:M\longrightarrow S^2$ this way, provided that the condition $f^\ast\omega=d\alpha$ holds.
+
+::: proposition
+[]{#th:hopf-degree-general label="th:hopf-degree-general"} Let $M$ be a closed Riemannian manifold, and $\nu\in \Omega^2(S^2)$ the area form on $S^2$. The formula [\[eq:hopf-integral\]](#eq:hopf-integral){reference-type="eqref" reference="eq:hopf-integral"} provides a homotopy invariant for a map $f:M\longrightarrow S^2$, if the 2-form $f^\ast\nu$ is exact. Up to a constant multiple this invariant can be calculated as an intersection number defined in [\[eq:hopf-intersection\]](#eq:hopf-intersection){reference-type="eqref" reference="eq:hopf-intersection"}, where $l_1=f^{-1}(p_1)$ and $l_2=f^{-1}(p_2)$ form a link in $M$, where both $l_1$ and $l_2$ are null-homologous.
+:::
+
+::: proof
+*Proof.* Given a homotopy $F:I\times M\mapsto
+S^2$, $f_1=F(1,\,\cdot\,)$, $f_0=F(0,\,\cdot\,)$, we define $\hat{\omega}=F^\ast\nu$. We have $$\begin{aligned}
+\hat{\omega} & = & F^\ast\nu=d\,\hat{\alpha},\\
+\omega_1 & = & f_1^\ast\nu=i^\ast_1\,F^\ast\nu=d\,\alpha_1,\\
+\omega_0 & = & f_0^\ast\nu=i^\ast_0\,F^\ast\nu=d\,\alpha_0,
+\end{aligned}$$ where $i_0:M\hookrightarrow M\times I$, $i_0(x)=(x,0)$, $i_1:M\hookrightarrow M\times I$, $i_1(x)=(x,1)$ are appropriate inclusions. The "potentials": $\hat{\alpha}\bigl|_{\{0\}\times M}$, $\alpha_0$, and $\hat{\alpha}\bigl|_{\{1\}\times M}$, $\alpha_1$ differ by a closed form $$\hat{\alpha}\bigl|_{\{0\}\times M}-\alpha_0=\beta_0,\quad \hat{\alpha}\bigl|_{\{1\}\times M}-\alpha_1=\beta_1,\quad d\beta_0=d\beta_1=0,$$ therefore the Stokes Theorem immediately implies that Formula [\[eq:hopf-integral\]](#eq:hopf-integral){reference-type="eqref" reference="eq:hopf-integral"} is independent of the choice of the potential. For the proof of invariance we repeat the standard argument in [@Bott82 p. 228] $$\begin{aligned}
+ 0 & = & \int_{F(M\times I)} \nu\wedge\nu
+ =\int_{M\times I} \hat{\omega}\wedge \hat{\omega} =  \int_{M\times I} \hat{\omega}\wedge d\,\hat{\alpha}\\
+ & = &\int_{M\times I} d(\hat{\omega}\wedge \hat{\alpha}) = \int_{\partial(M\times I)} \hat{\omega}\wedge \hat{\alpha}\ .
+\end{aligned}$$ Thus, $$\begin{aligned}
+0 & = & \int_{\partial(M\times I)} \hat{\omega}\wedge
+\hat{\alpha}  =  \int_{M} \omega_1\wedge \alpha_1- \int_{M}
+\omega_0\wedge \alpha_0\\
+& = & \int_{M} d\alpha_1 \wedge \alpha_1-\int_{M}
+d\alpha_0\wedge \alpha_0 =  \mathscr{H}(f_1)-\mathscr{H}(f_0).
+\end{aligned}$$ The interpretation of $\mathscr{H}(f)$ as the intersection number [\[eq:hopf-intersection\]](#eq:hopf-intersection){reference-type="eqref" reference="eq:hopf-intersection"} is the same as in [@Bott82 p. 230]. ◻
+:::
+
+Given a 3-component parametrized link $L=\{L_1,L_2,L_3\}$ in $S^3$ we wish to associate a certain map $F_L:S^1\times S^1\times S^1\mapsto S^2$ to it, and interpret its Hopf degree as the Milnor $\bar{\mu}_{123}$-invariant. Recall, the definition of the configuration space of $k$ points in $M$: $$\begin{gathered}
+ \text{Conf}(M,k):=\{(x_1,x_2,\ldots, x_k)\in (M)^k\,|\,x_i\neq x_j,\text{for}\ i\neq j\}.
+\end{gathered}$$ As an introduction to the method we review the Gauss formula for the linking number of a 2-component link $L=\{L_1, L_2\}$ in $\mbox{\bbb R}^3$. Denote parameterizations of components by $L_1=\{\mathsf{x}(s)\}$, $L_2=\{\mathsf{y}(t)\}$ and consider the map $$\begin{gathered}
+ F_L:S^1\times S^1\stackrel{L}{\longrightarrow} \text{Conf}(\mbox{\bbb R}^3,2) \stackrel{r}{\longrightarrow} S^2,\qquad L(s,t)=(\mathsf{x}(s), \mathsf{y}(t))\ .
+\end{gathered}$$ where $r(x,y)=\frac{x-y}{\|x-y\|}$ is a retraction of $\text{Conf}(\mbox{\bbb R}^3,2)$ onto $S^2$. It yields the classical Gauss linking number formula, up to a constant multiple: $$\begin{gathered}
+ \text{lk}(L_1,L_2)=\text{deg}(F_L),\qquad\quad \text{deg}(F_L)=\int_{S^1\times S^1} F^\ast_L(\nu),
+\end{gathered}$$ where $\nu\in \Omega^2(S^2)$ is the area form on $S^2$. Consequently, the linking number $\text{lk}(L_1,L_2)$, also known as the Milnor $\bar{\mu}_{12}$-invariant, can be obtained as the homotopy invariant of the map $F_L$ associated to $L$. Notice that homotopy classes $[S^1\times S^1,S^2]$ are isomorphic to $\mbox{\bbb Z}$ and $\text{deg}:F\rightarrow \text{deg}(F)$ provides the isomorphism. In [@Kohno02], Kohno proposed a natural extension of this approach to $n$-component parametrized links $L$ in $\mbox{\bbb R}^3$ by considering maps $F_L:S^1\times\ldots\times S^1\longrightarrow \text{Conf}(\mbox{\bbb R}^3,n)$ and their homotopy classes. More specifically, he proposed specific cohomology classes of the based loop space of $\text{Conf}(\mbox{\bbb R}^3,n)$ as candidates for appropriate link-homotopy invariants of $L$. In [@Deturck-Gluck-Melvin-Shonkwiler08], it has been observed that, in the $3$-component case it is beneficial to consider $\text{Conf}(S^3,3)$, and $L\subset S^3$, since the topology of $\text{Conf}(S^3,3)$ simplifies dramatically (in comparison to $\text{Conf}(\mbox{\bbb R}^3,3)$). We review this simplification in the following paragraph as it is essential for the proof of the next theorem.
+
+Consider a 3-component link $L=\{L_1, L_2, L_3\}$ in $S^3$ parametrized by $\{\mathsf{x}(s),\mathsf{y}(t),\mathsf{z}(u)\}$ and the following map $$\begin{gathered}
+\label{eq:F}
+ F_L:S^1\times S^1\times S^1\stackrel{L}{\longrightarrow} \text{Conf}(S^3,3)\stackrel{H}{\longrightarrow} S^2,\qquad L(s,t,u)=(\mathsf{x}(s), \mathsf{y}(t), \mathsf{z}(u))\ .
+\end{gathered}$$ In order to explain the map $H:\text{Conf}(S^3,3)\longrightarrow S^2$, one must notice that $\text{Conf}(S^3,3)\subset S^3\times S^3\times S^3$ is diffeomorphic to $S^3\times \text{Conf}(\mbox{\bbb R}^3,2)=S^3\times
+\mbox{\bbb R}^3\times (\mbox{\bbb R}^3\setminus\{0\})$, and consequently deformation retracts onto $S^3\times S^2$. Denote by $H:S^3\times \mbox{\bbb R}^3\times (\mbox{\bbb R}^3\setminus\{0\})\mapsto S^2$ the projection on $S^2$ factor. Considering $S^3$ as unit quaternions, the map $H$ can be expressed explicitly by the formula, [@Deturck-Gluck-Melvin-Shonkwiler08]: $$\begin{gathered}
+\label{eq:hermans-map}
+ \text{Conf}(S^3,3) \ni (x,y,z) \stackrel{H}{\longrightarrow}
+ \frac{\text{pr}(x^{-1}\cdot y)-\text{pr}(x^{-1}\cdot z)}{\|\text{pr}(x^{-1}\cdot y)-\text{pr}(x^{-1}\cdot z)\|}\in S^2,
+\end{gathered}$$ where $\cdot$ stands for the quaternionic multiplication, $\ ^{-1}$ is the quaternionic inverse, and $\text{pr}:S^3\longrightarrow \mbox{\bbb R}^3$ the stereographic projection from $1$. As a result one has the following particular expression for $F_L$: $$\begin{gathered}
+\label{eq:F_L}
+\notag F_L(s,t,u)=\frac{\text{pr}(\mathsf{x}(s)^{-1}\cdot \mathsf{z}(u))-\text{pr}(\mathsf{x}(s)^{-1}\cdot \mathsf{y}(t))}{\|\text{pr}(\mathsf{x}(s)^{-1}\cdot \mathsf{z}(u))-\text{pr}(\mathsf{x}(s)^{-1}\cdot
+ \mathsf{y}(t))\|}.
+\end{gathered}$$
+
+At this point we note that one has a freedom in choosing the deformation retraction $H$ in [\[eq:hermans-map\]](#eq:hermans-map){reference-type="eqref" reference="eq:hermans-map"} but this particular formula makes the proof of the main theorem of this section possible. By the *borromean rings* we understand any $3$-component link with $\bar{\mu}_{123}=\pm 1$ link homotopic to a link with diagram presented on Figure [4](#fig:n-borromean){reference-type="ref" reference="fig:n-borromean"} (where the sign can be determined from the orientation of components).
+
+::: theorem
+[]{#th:milnor-hopf label="th:milnor-hopf"} Let $L^\text{Bor}=\{L_1,L_2,L_3\}$ be a 3-component link in $S^3$ link homotopic to the Borromean rings, and consider the associated map $F_{L^\text{Bor}}:S^1\times S^1\times S^1\longrightarrow S^2$ defined in [\[eq:F\]](#eq:F){reference-type="eqref" reference="eq:F"}. Then the Hopf degree of the map $F_{L^\text{Bor}}$ satisfies $$\begin{gathered}
+\label{eq:hopf=2}
+   \mathscr{H}(F_{L^\text{Bor}})=\pm 2,
+ 
+\end{gathered}$$ where the sign depends on the choice of orientations.
+:::
+
+::: proof
+*Proof.* According to Proposition [\[th:hopf-degree-general\]](#th:hopf-degree-general){reference-type="ref" reference="th:hopf-degree-general"}, $\mathscr{H}(F_L)$ is well defined for a link $L\subset S^3$ provided $F_L^\ast\nu\in \Omega^2(\mathbb{T})$ is trivial in $H^2(\mathbb{T})$, $\mathbb{T}=S^1\times S^1\times S^1$. This fact will follow from the proof, but we will show in Corollary [\[th:pairwise-linking\]](#th:pairwise-linking){reference-type="ref" reference="th:pairwise-linking"}, that it holds if and only if the pairwise linking numbers of $L$ are zero. The method relies on a direct calculation of $\mathscr{H}(F_{L^\text{Bor}})$, for a carefully chosen parametrization of $L^\text{Bor}$ in $S^3$. This calculation is achieved by visualization of the link $l_{S,N}=l_S\cup l_N$ in $\mathbb{T}$, and application of Formula [\[eq:hopf-intersection\]](#eq:hopf-intersection){reference-type="eqref" reference="eq:hopf-intersection"}, where $$l_S:=F^{-1}_{L^\text{Bor}}(S),\qquad l_N:=F^{-1}_{L^\text{Bor}}(N)$$ are preimages of the North pole $N=(0,0,1)$ and South pole $S=(0,0,-1)$ in $S^2$. Notice that $[F_L^\ast\nu]=0$ in $H^2(\mathbb{T})$ if and only if $[l_S]=0$ and $[l_N]=0$ in $H_1(\mathbb{T})$.
+
+We identify $S^3$ with the set of unit quaternions in $\mbox{\bbb R}^4$ with standard coordinates: $$(w,x,y,z)=w+x\,\mathbf{i}+y\,\mathbf{j}+z\,\mathbf{k},$$ and choose a specific parametrization of the Borromean rings $L^\text{Bor}$ in $S^3$, as follows: define the $L_1$ component of $L^\text{Bor}$ to be the great circle through $1$ in $S^3$, parametrized as $$\mathsf{x}(s)=\cos(s)+\sin(s)\,\mathbf{k},\quad
+\bigl(\,\mathsf{x}(s)^{-1}=\cos(s)-\sin(s)\,\mathbf{k}\,\bigr).$$ Notice that $\text{pr}(\mathsf{x}(s))$ parameterizes the $z$-axis in $\mbox{\bbb R}^3$. Because $$\begin{aligned}
+\mathsf{x}(s)^{-1}\cdot(w,x,y,z) & = & \bigl(\cos(s) w+\sin(s) z, \cos(s) x +\sin(s) y,\\
+& & \ \cos(s) y-\sin(s) x, \cos(s) z-\sin(s) w\bigr),
+\end{aligned}$$ we observe that multiplication by $x(s)^{-1}$ is a rotation by angle $s$ in $(w,z)$-plane and $(x,y)$-plane of $\mbox{\bbb R}^4$ , and the flow defined by this $S^1$-action is tangent to the great circles of $S^3$. Consequently, the projected flow on $\mbox{\bbb R}^3$ via the stereographic projection $\text{pr}:S^3\subset \mbox{\bbb R}^4\longrightarrow \mbox{\bbb R}^3$ presents the standard picture of the Hopf fibration, and the $S^1$-action "pushes" points in $\mbox{\bbb R}^3$ along Hopf circles.
+
+<figure id="fig:conf1">
+<div class="center">
+<div class="picture">
+<p>(414,160) (15,0)<span><img src="borromean3" alt="image" /></span> (80,120)<span><span class="math inline"><em>L</em><sub>1</sub></span></span> (35,70)<span><span class="math inline"><em>L</em><sub>2</sub></span></span></p>
+<p>(60,5)<span><span class="math inline"><em>L</em><sub>3</sub></span></span> (315,80)<span><span class="math inline"><em>A</em><sub>2</sub></span></span> (240,60)<span><span class="math inline"><em>A</em><sub>1</sub></span></span></p>
+</div>
+</div>
+<figcaption>The model of <span class="math inline"><em>L</em><sub>Borr</sub></span> parametrized by <span class="math inline">{<em>L</em><sub>1</sub> = pr(x(<em>s</em>)), <em>L</em><sub>2</sub> = pr(y(<em>t</em>)), <em>L</em><sub>3</sub> = pr(z(<em>u</em>))}</span>. Arc <span class="math inline"><em>A</em><sub>1</sub></span> is a part of the unit circle on <span class="math inline"><em>x</em><em>y</em></span>-plane, <span class="math inline"><em>A</em><sub>2</sub></span> is a part of circle of radius <span class="math inline">1 + <em>ϵ</em></span>.</figcaption>
+</figure>
+
+Let us call a Hopf torus in $\mbox{\bbb R}^3$ the $r$-torus if and only if it contains a circle of radius $r$ in the $(x,y)$-plane and is invariant under the $S^1$-action. Figure [1](#fig:conf1){reference-type="ref" reference="fig:conf1"} shows how to define the second and the third component $\{L_2, L_3\}$ of the Borromean rings $L_\text{Borr}$ in the stereographic projection. $L_2$ will be the annuli with a rounded wedge removed, i.e. an arc $A_1$ of the circle of radius $1$ and $A_2$ arc belongs to the circle of radius $r_\epsilon=(1+\epsilon)$ in the $(x,y)$-plane.
+
+The component $L_3$ is chosen to be a vertical ellipse linking with $L_2$, which belongs to the $r_{\epsilon/2}$-torus, and projects on the $(x,y)$-plane as a segment. Recall that every point on an $r$-torus traces a $(1,1)$-curve under the $S^1$-action. This motion, for sufficiently small $\epsilon$, can be regarded as a composition of the rotation by angle $s$ in both the direction of the meridian and the longitude of an $r$-torus. Therefore for different values of $s$ the $S^1$-action "rotates" the components $L_2$ and $L_3$, by sliding along the Hopf tori by angle $s$ in the meridian and the longitudinal direction, we denote links obtained this way by $$L^s_2(t)=\text{pr}(\mathsf{x}^{-1}(s)\cdot\mathsf{y}(t)),\qquad \text{and}\qquad  L^s_3(u)=\text{pr}(\mathsf{x}^{-1}(s)\cdot\mathsf{z}(u)).$$ Let us collect useful information below
+
+-   The $z$-axis stays invariant under the $S^1$-action.
+
+-   $A_2$ slides, under the $S^1$-action, on the $r_\epsilon$-torus, $A_1$ simply rotates around the $z$-axis in the $(x,y)$-plane.
+
+-   We can disregard the longitudinal rotation (i.e. pretend that the observer sits on the unit circle) the motion of arcs: $L^s_3$, $A^s_2$ together with the connecting segments is simply a full rotation around the unit circle on the $(x,y)$-plane (which can be thought of as the "axis of rotation"). Stages of this motion are pictured on the lower part of Figure [2](#fig:4-pos){reference-type="ref" reference="fig:4-pos"}.
+
+We seek to visualize the projection of $l_{S,N}=l_S\cup l_N$ on the $su$-face and $st$-face of the domain $\mathbb{T}=S^1\times
+S^1\times S^1$ of $F_{L^\text{Bor}}$ parameterized by $(s,t,u)\in \mathbb{T}$, (it is convenient to think about $\mathbb{T}$ as a cube in $(s,t,u)$-coordinates, see Figure [3](#fig:framed-link){reference-type="ref" reference="fig:framed-link"}).
+
+For example when $s=0$, ($\mathsf{x}(0)=1$), a point $(0,t_0,u_0)$ belongs to $l_N$, if and only if the vector $\mathsf{v}_0=\text{pr}(\mathsf{y}(t_0))-\text{pr}(\mathsf{z}(u_0))$ "points North", i.e. in the direction of $N=(0,0,1)$, analogous condition holds for $S=(0,0,-1)$, and $l_S$. Thus in order to determine a diagram of $l_{S,N}$, we must keep track of the "head" and "tail" of the vector $\mathsf{v}_s=L^s_2(t)-L^s_3(u)$, for various values of $s$ and record values of $t$ and $u$ for which $\mathsf{v}_s$ points "North" and "South" (Figure [2](#fig:4-pos){reference-type="ref" reference="fig:4-pos"}). We have the following condition $$\label{eq:arrow-eq}
+  (s,t,u)\in l_{S,N}\qquad\text{if and only if},\qquad \mathsf{v}_s \parallel S\ \text{or}\ N.$$ An alternative way to view this condition is the following: for a given value of $s$ the coordinates $u$ and $t$ of points in $l_{S,N}$ can be identified with points on $L^s_2$ and $L^s_3$, which come from the intersection points in $\pi(L^s_3\cup L^s_2)$, under the projection $\pi(x,y,z)=(x,y)$, onto the $(x,y)$-plane (see the bottom part of Figure [2](#fig:4-pos){reference-type="ref" reference="fig:4-pos"}). These intersection points are simply crossings in the diagram of the link $\{L^s_2,L^s_3\}$ on the $(x,y)$-plane. Points $N$ and $S$ can be assumed to be regular values of $F_{L_\text{Borr}}$ because $\pi(L^s_2(t))$ and $\pi(L^s_3(u))$ always intersect transversely (bottom of Figure [2](#fig:4-pos){reference-type="ref" reference="fig:4-pos"}), which is persistent under small perturbations of the parametrization of $L_\text{Borr}$.
+
+The main task ahead is to visualize $l_N$ and $l_S$. For a fixed $s=s_0$ we draw arrows: $N$ and $S$ (Figure [2](#fig:4-pos){reference-type="ref" reference="fig:4-pos"}) which lie directly above the crossings of the diagram of $\{L^{s_0}_2,L^{s_0}_3\}$ on the $(x,y)$-plane. Next, we trace each component $L^{s_0}_2$ and $L^{s_0}_3$ and record values of $t$ and $u$ parameter for which the condition [\[eq:arrow-eq\]](#eq:arrow-eq){reference-type="eqref" reference="eq:arrow-eq"} holds, without loss of generality we assume that $L^{s}_2$ is parametrized by the unit $t$-interval, and $L^{s}_3$ is parametrized by the unit $u$-interval.
+
+<figure id="fig:4-pos">
+<div class="center">
+<div class="picture">
+<p>(498, 590) (30,20)<span><img src="4-pos" alt="image" /></span> (30,260)<span><span class="math inline">$s=\frac{3\pi}{2}$</span></span> (30,360)<span><span class="math inline"><em>s</em> = <em>π</em></span></span> (30,460)<span><span class="math inline">$s=\frac{\pi}{2}$</span></span> (30,550)<span><span class="math inline"><em>s</em> = 0</span></span></p>
+</div>
+</div>
+<figcaption>Four positions corresponding to angles: <span class="math inline">$s=0,\frac{\pi}{2}, \pi, \frac{3\pi}{2}$</span>, small arrows next to <span class="math inline"><em>N</em></span> and <span class="math inline"><em>S</em></span> indicate a motion as <span class="math inline"><em>s</em>↗</span>. Several phases of the rotation by <span class="math inline"><em>s</em></span> are pictured on the bottom four drawings.</figcaption>
+</figure>
+
+This process is elucidated below for $s=0, \frac{\pi}{2}, \pi,
+\frac{3\pi}{2}$, which is sufficient to draw projections of $l_S$ and $l_N$ (each position is pictured on Figure [1](#fig:conf1){reference-type="ref" reference="fig:conf1"}) on $st$ and $tu$-faces of $\mathbb{T}$. We describe each case separately,
+
+-   This is the initial position, where $L^0_3$ is vertical. We mark the initial point $L^0_3(0)$ on the top of $L^0_3$ and orient $L^0_3$ counter-clockwise, the initial point $L^0_2(0)$ on $L^0_2$ is chosen in the middle of the left segment connecting $A_1$ and $A_2$, and the middle point $L^0_2(\frac{1}{2})$ is located the middle of the left segment connecting $A_1$ and $A_2$. Points in $l_S$ are marked by $\times$ and points in $l_N$, are marked by $\bullet$. In this configuration there are four vertical arrows, two pointing North and two South, this gives us four points along the $t$-interval ordered as $NSSN$, ($|-\bullet-\times-\times-\bullet-|$) and four points along the $u$-interval ordered ($|-(\times\bullet)--(\bullet\times)-|$), where $(\times\bullet)$ indicates the "collision" i.e. common value of $u$ for both $l_S$ and $l_N$.
+
+The remaining cases are self-explanatory, see Figure [1](#fig:conf1){reference-type="ref" reference="fig:conf1"},
+
+-   $L^s_3$ is horizontal, and $t$-coordinates of $l_{S,N}$ are colliding ($|-(\bullet\times)-(\times\bullet)-|$). $L^s_2$ is vertical and $u$-coordinates of $l_{S,N}$ are ordered as $(NNSS)$, ($|-\bullet-\times-\times-\bullet-|$).
+
+-   $L^s_3$ is vertical again, and $t$-coordinates of $l_{S,N}$ are ordered : $SNNS$, ($|-\times-\bullet-\bullet-\times-|$). $L^s_2$ is horizontal and $u$-coordinates of $l_{S,N}$ are colliding, ($|-(\bullet\times)--(\times\bullet)-|$).
+
+-   $L^s_3$ is horizontal, and $t$-coordinates of $l_{S,N}$ are colliding ($|-(\times\bullet)-(\bullet\times)-|$). $L^s_2$ is vertical and $u$-coordinates of $l_{S,N}$ are ordered as $(NNSS)$, ($|-\times-\times-\bullet-\bullet-|$).
+
+<figure id="fig:framed-link">
+<div class="center">
+<div class="picture">
+<p>(480, 580) (140,420)<span><img src="cube2-dashed" style="width:3in" alt="image" /></span> (40,20)<span><img src="proj-red-green-dashed" style="width:5in" alt="image" /></span> (30,180)<span><span class="math inline"><em>s</em></span></span> (30,390)<span><span class="math inline"><em>s</em></span></span> (227,180)<span><span class="math inline"><em>s</em></span></span> (227,390)<span><span class="math inline"><em>s</em></span></span> (30,270)<span><span class="math inline">$\frac{\pi}{2}$</span></span> (227,270)<span><span class="math inline">$\frac{\pi}{2}$</span></span> (200,10)<span><span class="math inline"><em>u</em></span></span> (313,8)<span>(D)</span> (115,8)<span>(C)</span> (400,10)<span><span class="math inline"><em>t</em></span></span> (200,220)<span><span class="math inline"><em>u</em></span></span> (115,215)<span>(A)</span> (400,220)<span><span class="math inline"><em>t</em></span></span> (313,215)<span>(B)</span></p>
+</div>
+</div>
+<figcaption>Projection of <span class="math inline"><em>l</em><sub><em>S</em>, <em>N</em></sub></span> on the <span class="math inline"><em>s</em><em>u</em></span>-face and <span class="math inline"><em>s</em><em>t</em></span>-face of <span class="math inline">𝕋</span>. The strands <span class="math inline"><em>l</em><sub><em>S</em></sub></span> and <span class="math inline"><em>l</em><sub><em>N</em></sub></span> are oppositely oriented since <span class="math inline"><em>l</em><sub><em>S</em>, <em>N</em></sub></span> is null homologous in <span class="math inline">𝕋</span>.</figcaption>
+</figure>
+
+Collecting this information, we may draw the projection of the link $l_{S,N}$ on the $su$-face of $\mathbb{T}$, which is represented by square (A) in Figure [3](#fig:framed-link){reference-type="ref" reference="fig:framed-link"}. Analogously, the projection of $l_{S,N}$ on the $st$-face of $\mathbb{T}$, is represented by square (B). The dashed line indicates the $l_N$ component of $l_{S,N}$ and the solid line indicates $l_S$. In order to obtain the diagram of $l_{S,N}$ we will resolve the double points on Diagram (A) into crossings, ((B) can be resolved analogously). For example let us resolve the "circled" double point on (A), which occurs for $s=\frac{\pi}{2}$, of the *left* two stands of $l_{S,N}$. It suffices to determine the value of the $t$-coordinate at this point. Diagram (B) tells us that $l_S$ is below $l_N$ because $\mathbb{T}$ is oriented so that the $t$-axis points above the $su$-face (see top of Figure [3](#fig:framed-link){reference-type="ref" reference="fig:framed-link"}). Resolving the remaining crossings in a similar fashion leads to a diagrams of $l_{S,N}$ presented in squares (C) and (D). Diagram (C) is easier to use for the calculation of $\mathscr{H}(F_{L_{\text{Bor}}})=\text{lk}(l_S, l_N)$ as an intersection number of e.g. $l_S$ with a Seifert surface spanning $l_N$. Observe that strands in $l_S$ and $l_N$ are oppositely oriented, which follows from the fact that they are null-homologous in $H^1(\mathbb{T})$, there are an obvious annuli bounding $l_S$ and $l_N$ on Diagram (C). Clearly, the linking number of $l_S$ and $l_N$ is equal to $\pm 2$, since the intersection number of e.g. $l_S$ with the obvious annulus on Diagram (C) is $\pm 2$. This proves [\[eq:hopf=2\]](#eq:hopf=2){reference-type="eqref" reference="eq:hopf=2"}. ◻
+:::
+
+<figure id="fig:n-borromean">
+<div class="picture">
+<p>(380, 150) (0,0)<span><img src="borr" style="width:5.2in" alt="image" /></span> (280,7)<span><span class="math inline">$\mathbf{\Bigl\}}$</span></span> (285,22)<span><span class="math inline"><em>n</em></span></span></p>
+</div>
+<figcaption>left: <span class="math inline"><em>μ̄</em><sub>123</sub> =  ± 1</span> and right: <span class="math inline"><em>μ̄</em><sub>123</sub> =  ± <em>n</em></span>.</figcaption>
+</figure>
+
+::: corollary
+[]{#th:general-mu_123 label="th:general-mu_123"} If $L=\{L_1,L_2,L_3\}$ is a 3-component link with vanishing pairwise linking numbers then $$\begin{gathered}
+  \mathscr{H}(F_L)=\pm 2\,\bar{\mu}_{123}
+ 
+\end{gathered}$$
+:::
+
+::: proof
+*Proof.* Clearly, if $L$ and $L'$ are link-homotopic then $F_{L}$ and $F_{L'}$ are homotopic maps. By the Milnor classification of 3-component links up to link homotopy (see [@Milnor54]), every 3-component link $L$ with zero pairwise linking numbers and $\bar{\mu}_{123}=\pm n$ is represented by the right diagram on Figure [4](#fig:n-borromean){reference-type="ref" reference="fig:n-borromean"}. Consequently, up to homotopy, the associated map $F_L$ can be obtained from $F_{L_\text{Borr}}$ by covering one of the $S^1$ factors in $\mathbb{T}$, $n$-times. ◻
+:::
+
+::: lemma
+We have the following isomorphisms $$\begin{gathered}
+\pi_2 (\text{Conf}(\mbox{\bbb R}^3,3))\cong \mbox{\bbb Z}\oplus \mbox{\bbb Z}\oplus \mbox{\bbb Z},\qquad \pi_2
+(\text{Conf}(S^3,3))\cong \mbox{\bbb Z},
+\end{gathered}$$ and the induced homomorphism $i^\ast:\pi_2 (\text{Conf}(\mbox{\bbb R}^3,3))\mapsto
+\pi_2(\text{Conf}(S^3,3))$, from $i:\mbox{\bbb R}^3\mapsto \mbox{\bbb R}^3\cup \{\infty\}\cong S^2$, maps the generators $A_{ij}$, $1\leq i\leq
+j\leq 3$, to $\pm\,\alpha$, where $\alpha$ is the single generator of $\pi_2(\text{Conf}(S^3,3))$.
+:::
+
+::: proof
+*Proof.* The Hurewicz Theorem tells us that $H_2(\text{Conf}(\mbox{\bbb R}^3,3))\cong
+\pi_2(\text{Conf}(\mbox{\bbb R}^3,3))$. The 2-skeleton of $\text{Conf}(\mbox{\bbb R}^3,3)$ has a homotopy type of $S^2\vee S^2\vee S^2$ and $H_2(\text{Conf}(\mbox{\bbb R}^3,3))$ is generated by $A_{ij}: S^2\mapsto \text{Conf}(\mbox{\bbb R}^3,3)$, $1\leq i<j\leq 3$ representing each 2-sphere in the 2-skeleton (c.f. [@Cohen02]). The group of permutations $\mathbb{S}_3$ acts on $\text{Conf}(\mbox{\bbb R}^3,3)$ by permuting coordinates. As a consequence of this we obtain the action on generators of $H_2(\text{Conf}(\mbox{\bbb R}^3,3))$ by permutation. We have seen that $\text{Conf}(S^3,3)$ has the homotopy type of $S^3\times S^2$ thus $\pi_2(\text{Conf}(S^3,3))=\mbox{\bbb Z}$, and let us denote the generator by $\alpha$. Now, $i^\ast{A_{ij}}=k\,\alpha$, $k\in \mbox{\bbb Z}$, notice that $i^\ast{A_{23}}=\alpha$ since $i\circ A_{23}=\text{id}_{S^2}$, using the action by permutations we obtain $i^\ast{A_{ij}}=\alpha$. ◻
+:::
+
+::: corollary
+[]{#th:pairwise-linking label="th:pairwise-linking"} Denote by $F^{kl}_L=F_L\bigl|_{S^1_k\times S^1_l}$ restriction of $F_L$ defined in [\[eq:F\]](#eq:F){reference-type="eqref" reference="eq:F"} to the $kl$-torus $k,l\in\{s,t,u\}$, $k\neq l$. Then $$\begin{gathered}
+ \text{deg}(F^{kl}_L)=\text{lk}(L_k,L_l),
+\end{gathered}$$ where $\text{lk}(L_k,L_l)$ is the linking number between the components parameterized by $k$, and $l$.
+:::
+
+::: proof
+*Proof.* By definition $$\text{deg}(S_i^1\times S_j^1\stackrel{L_{ij}}{\longrightarrow} \text{Conf}(\mbox{\bbb R}^3,3)\stackrel{\pi_{ij}}{\longrightarrow} \text{Conf}(\mbox{\bbb R}^3,2)\cong S^2)=\text{lk}(L_i,L_j),$$ thus on the cohomology level $\text{lk}(L_i,L_j)=L^\ast_{ij}[A_{ij}]=(F^{ij}_L)^\ast(\alpha)$. ◻
+:::
+
+Results of Theorem [\[th:milnor-hopf\]](#th:milnor-hopf){reference-type="ref" reference="th:milnor-hopf"} and Proposition [\[th:hopf-degree-general\]](#th:hopf-degree-general){reference-type="ref" reference="th:hopf-degree-general"} combined with Formula [\[eq:hopf-integral\]](#eq:hopf-integral){reference-type="eqref" reference="eq:hopf-integral"} allow us to express $\bar{\mu}_{123}(L)$ of a borromean link $L$ as $$\begin{aligned}
+\label{eq:mu-formula}
+  \bar{\mu}_{123}(L) & = & \int_{\mathbb{T}} F^\ast_L\nu\wedge \alpha=\int_{\mathbb{T}} L^\ast\omega\wedge \alpha,\\
+  \notag & \text{for} &  \quad F^\ast_L\nu=d\alpha,\quad \omega=H^\ast\nu\in \Omega^2(\text{Conf}(S^3,3)),
+ 
+\end{aligned}$$ where $\nu$ is the area form on $S^2$, and $H:\text{Conf}(S^3,3)\longrightarrow S^2$ is the deformation retraction (as e.g. in [\[eq:hermans-map\]](#eq:hermans-map){reference-type="eqref" reference="eq:hermans-map"}). Alternatively, we may view $\omega$ as a 2-form on $(S^3)^3$ which is singular along the diagonals $\mathbf{\Delta}\subset (S^3)^3$, and the singularity is of order $O(r^2)$, where $r$ is a distance to $\mathbf{\Delta}$. Consequently, $\omega$ is integrable but not square integrable on $(S^3)^3$. We also point out that the 2-form $\omega$ can be replaced with any other cohomologus 2-form in $\text{Conf}(S^3,3)$.
+
+::: remark
+[]{#rem:anti-symmetry label="rem:anti-symmetry"} Notice that the integral formula [\[eq:mu-formula\]](#eq:mu-formula){reference-type="eqref" reference="eq:mu-formula"} is antisymmetric in the following sense $$\begin{aligned}
+   \bar{\mu}_{123}(L_1,L_2,L_3) & = & \int_{S^1_s}\int_{S^1_t}\int_{S^1_u} \omega\wedge\alpha(\dot{\mathsf{x}}(s),\dot{\mathsf{y}}(t),\dot{\mathsf{z}}(u))\,ds\wedge
+   dt\wedge du\\
+   & = & \int_{S^1_s}\int_{S^1_t}\int_{S^1_u} -\omega\wedge(-\alpha)(\dot{\mathsf{y}}(t),\dot{\mathsf{x}}(s),\dot{\mathsf{z}}(u))\,ds\wedge dt\wedge du\\
+   & = & \int_{S^1_t}\int_{S^1_s}\int_{S^1_u} \omega\wedge\alpha(\dot{\mathsf{y}}(t),\dot{\mathsf{x}}(s),\dot{\mathsf{z}}(u))(-\,dt\wedge ds \wedge du)=-\bar{\mu}_{123}(L_2,L_1,L_3)
+  
+\end{aligned}$$ where in the second identity the potential changes sign because the domain changes orientation.
+:::
+
+# Invariants of volume preserving flows. Helicity. {#sec:invariants-flows}
+
+Given finitely many volume preserving vector fields $X_1$, $X_2$, $\ldots X_k\in \text{Vect}^\text{vol}(M)$ on $M=S^3$ or a homology 3-sphere one seeks quantities $\mathsf{I}(X_1,X_2,\ldots,X_k)$ invariant under the action of volumorphisms isotopic to the identity $g\in \text{Diff}^\text{vol}_0(M)$, commonly known as *higher-helicities*: $$\begin{gathered}
+\label{eq:invariants}
+ \mathsf{I}(X_1,X_2,\ldots,X_k)=\mathsf{I}(g_\ast X_1,g_\ast X_2,\ldots,g_\ast X_k),\qquad\quad \text{for all }g\in \text{Diff}^\text{vol}_0(M), 
+\end{gathered}$$ where $g_\ast$ is a push-forward by a diffeomorphism $g$. To distinguish the case of a single vector field $X$ (i.e. $X=X_1=\ldots=X_k$) we often refer to $\mathsf{I}(X)=\mathsf{I}(X_1,X_2,\ldots,X_k)$ as *self-helicity*. We elucidated in the introduction a fundamental example of such invariant is the ordinary helicity $\mathsf{H}(X_1,X_2)$ of a pair of vector fields. In the the remaining part of this section we review well known formulations of the helicity, which will later help us to point out analogies to the proposed formulation of the 3rd order helicity. Let $\mathcal{T}=\mathcal{T}_1\cup \mathcal{T}_2$ represent two invariant subdomains (not necessarily disjoint) under flows of $X_1$ and $X_2$ in $S^3$ and let $$\mathcal{T}=\mathcal{T}_1\times\mathcal{T}_2\subset \text{Conf}(M,2)\subset M\times M.$$ Recall that the formula for $\mathsf{H}(X_1,X_2)$, from [@Khesin05; @Vogel03], specialized to invariant subdomains $\mathcal{T}=\mathcal{T}_1\cup \mathcal{T}_2$ may be expressed as $$\label{eq:helicity}
+ \mathsf{H}_{12}(X_1,X_2)=\int_{\mathcal{T}_1\times\mathcal{T}_2} \omega\wedge\iota_{X_1}\mu\wedge\iota_{X_2}\mu,$$ where $\omega$ is so called linking form on $M\times M$. When $\mathcal{T}=M\times M$ this formula is equivalent to a more commonly known expression: $\mathsf{H}(X_1,X_2)=\int_M \iota_{X_1}\mu\wedge d^{-1}(\iota_{X_2}\mu)$ (because $\omega$ also represents the integral kernel of $d^{-1}$).
+
+Philosophically, $\mathsf{H}(X_1,X_2)$ can be derived (c.f. [@Arnold86]) from the linking number of a pair of closed curves, which is expressed by Arnold's Helicity Theorem. For orbits $\{\mathscr{O}^1(x),\mathscr{O}^2(y)\}$ of $X_1$ and $X_2$ through $x, y\in M$, we introduce the following notation for the long pieces of closed up orbits
+
+$$\begin{aligned}
+\label{eq:orbits}
+ \mathscr{O}^i_T(x) & = & \{\Phi^i_t(x)\ |\ 0\leq t\leq T\}\subset \mathscr{O}^i(x),\qquad i=X, Y,\\
+ \bar{\mathscr{O}}^i_T(x) & := & \mathscr{O}^i_T(x)\cup \sigma(x,\Phi^i(x,T)).
+\end{aligned}$$ where $\sigma(x,y)$ denotes a short path, [@Vogel03], connecting $x$ and $y$ in $M$ (see Section [4](#sec:ergodic){reference-type="ref" reference="sec:ergodic"}).
+
+::: theorem
+Given $X_1, X_2\in\text{Vect}^\text{vol}(M)$, The following limit exists almost everywhere on $M\times M$: $$\begin{gathered}
+\label{eq:linking-function}
+  \bar{m}_{X_1 X_2}(x,y)=\lim_{T\to \infty} \frac{1}{T^2}\, \text{lk}(\bar{\mathscr{O}}^1_T(x)\times\bar{\mathscr{O}}^2_T(y))\ .
+ 
+\end{gathered}$$ Moreover, $\bar{m}_{X_1 X_2}$ is in $L^1(M\times M)$, and $$\label{eq:helicity-asymp}
+ \mathsf{H}_{12}(X_1,X_2)=\int_{M\times M} \bar{m}_{X_1 X_2}(x,y)\, \mu(x)\wedge\mu(y)\ .$$
+:::
+
+The function $\bar{m}_{X_1 X_2}$ represents an asymptotic linking number of orbits $\{\mathscr{O}^1(x),\mathscr{O}^2(y)\}$, and the identity [\[eq:helicity-asymp\]](#eq:helicity-asymp){reference-type="eqref" reference="eq:helicity-asymp"} tells us that the helicity $\mathsf{H}_{12}(X_1,X_2)$ is equal to the average asymptotic linking number. We will demonstrate, in coming paragraphs, how this philosophy is applied to obtain the asymptotic $\bar{\mu}_{123}$-invariant for 3-component links and the third order helicity.
+
+# Definition of "$\bar{\mu}_{123}$-helicity" on invariant unlinked handlebodies. {#sec:handlebody}
+
+In this section we apply the formulation of the $\bar{\mu}_{123}$-invariant for the 3-component links in $S^3$, obtained in Section [1](#sec:mu-and-hopf){reference-type="ref" reference="sec:mu-and-hopf"}, to define the third order helicity of a volume preserving vector field $X$ on certain invariant domains $\mathcal{T}$ in $S^3$. As a "warm-up" to a more general case presented in Section [4](#sec:ergodic){reference-type="ref" reference="sec:ergodic"}, in the following paragraphs we consider the case of three disjoint unlinked handlebodies: $\mathcal{T}=\mathcal{T}_1\cup    \mathcal{T}_2\cup \mathcal{T}_3$ each of genus $g(\mathcal{T}_i)$ in $S^3$. When $\mathcal{T}$ represents three unlinked tubes (so called *flux tubes*, [@Khesin98]) in $\mbox{\bbb R}^3$, the third order helicity has been developed by several authors [@Berger90; @Mayer03; @Laurence-Stredulinsky00b] via the Massey product formula for the $\bar{\mu}_{123}$-invariant, we compare our approach to these known works in Section [\[sec:massey\]](#sec:massey){reference-type="ref" reference="sec:massey"}.
+
+We consider $\mathcal{T}_i$ to have smooth boundary and the vector field $X$ to be tangent to $\partial \mathcal{T}_i$, set $$X_i:=X\bigl|_{\mathcal{T}_i},\qquad i=1,2,3,$$ denote the flow of $X$ on $S^3$ by $\Phi$, and flows of restrictions $X_i$ by $\Phi^i$. Clearly, $\mathcal{T}$ is an invariant set of $X$. Given for any domain $\mathcal{T}$ with three connected components $\{\mathcal{T}_i\}$ we may always associate a product domain in $\text{Conf}(S^3,3)$ as follows $$\label{eq:admissible-domain}
+ \mathcal{T}:=\mathcal{T}_1\times \mathcal{T}_2\times \mathcal{T}_3\subset \text{Conf}(S^3,3)\subset S^3\times S^3\times S^3\ .$$ Notice that $\mathcal{T}$ is a domain with corners in $\text{Conf}(S^3,3)$, and we use the same notation for the product of $\mathcal{T}_i$ as for the union in $S^3$. Wherever needed we also assume that $(S^3)^3$ is equipped with a product Riemannian metric. A domain $\mathcal{T}$ defined in [\[eq:admissible-domain\]](#eq:admissible-domain){reference-type="eqref" reference="eq:admissible-domain"}, where $\mathcal{T}_i\cap \mathcal{T}_j=\O$, $i\neq j$ and each $\mathcal{T}_i$ is a handlebody in $S^3$ is called *unlinked handlebody* if and only if the 2-form $\omega\in\Omega^2(\text{Conf}(S^3,3))$ defined in Equation [\[eq:mu-formula\]](#eq:mu-formula){reference-type="eqref" reference="eq:mu-formula"} is exact on $\mathcal{T}$, i.e. $\omega$ has a local *potential* $\alpha_\omega\in \Omega^1(\mathcal{T})$: $$\label{eq:omega-exact}
+ \omega=d\alpha_\omega\ .$$ Denote a volume preserving vector field and an unlinked handlebody $\mathcal{T}$ as $(X;\mathcal{T})$.
+
+::: remark
+Notice that since $\omega$ is a dual cohomology class to the $S^2$ factor of $\text{Conf}(S^3,3)\cong S^3\times S^2$, thus $\omega$ does not admit a global potential.
+:::
+
+Because each handlebody $\mathcal{T}_i$ has a homotopy type of a bouquet of circles $H_1(\mathcal{T}_i)$ is generated by cycles $\{L^k_i\}_{k=1,\ldots,g(\partial\mathcal{T}_i)}$ corresponding to the circles, which we call *basic cycles*. We have the following practical characterization of unlinked handlebodies:
+
+::: lemma
+$\mathcal{T}$ is an unlinked handlebody if and only if $$\label{eq:admissible-condition}
+  \text{lk}(L^k_i,L^r_j)  = 0,\qquad \forall\, i,j,\qquad i\neq j$$
+:::
+
+::: proof
+*Proof.* The standard pairing, [@Bott82], $H^2(\mathcal{T})\times H_2(\mathcal{T})\longrightarrow \mbox{\bbb R}$ implies that a closed $k$-form is exact if and only if it evaluates to zero on all $k$-cycles of the domain. By the K$\ddot{\rm u}$nneth formula $H_2(\mathcal{T})=H_2(\mathcal{T}_1\times \mathcal{T}_2\times \mathcal{T}_3)$ is generated by $L^k_i\otimes L^r_j$. Corollary [\[th:pairwise-linking\]](#th:pairwise-linking){reference-type="ref" reference="th:pairwise-linking"} implies (for $i\neq j$) that $$\text{lk}(L^k_i,L^r_j) = \int_{L^k_i\times L^r_j} \omega\ .$$ Therefore the condition [\[eq:admissible-condition\]](#eq:admissible-condition){reference-type="eqref" reference="eq:admissible-condition"} is necessary and sufficient for $\omega$ to be exact on $\mathcal{T}$. ◻
+:::
+
+![The simplest unlinked handlebody: flux tubes $\mathcal{T}^\text{Borr}$ modeled on the borromean rings.](borromean-tube2){#fig:invariant-sets width="\\textwidth"}
+
+Let $X$ be a volume preserving vector field on $S^3$ which admits an unlinked domain $\mathcal{T}$ which is invariant under its flow. We define the $\bar{\mu}_{123}$-helicity of $(X;\mathcal{T})$ denoted by $\mathsf{H}_{123}(X;\mathcal{T})$ or $\mathsf{H}_{123}(X_1,X_2,X_3)$ as follows: $$\label{eq:mu_123-helicity}
+\boxed{\mathsf{H}_{123}(X;\mathcal{T})=\mathsf{H}_{123}(X_1,X_2,X_3)\stackrel{\text{def.}}{=}\int_{\mathcal{T}} \bigl(\alpha_\omega\wedge d\alpha_\omega\bigr)\wedge \iota_{X_1}\mu_1\wedge \iota_{X_2}\mu_2\wedge \iota_{X_3}\mu_3, }$$ where $\mu_i$ denotes the pull-back of the volume form $\mu$ on $S^3$ under the projection $$\label{eq:projection-i}
+\pi_i:S^3\times S^3\times S^3\longrightarrow S^3,\qquad \pi_i(x_1,x_2,x_3)=x_i,$$ and $\iota_{X_i}$ is a contraction by a vector field $X_i$, our notational convention is to denote by $\iota_{X_i}\mu_i$ both the forms on the base of $\pi_i$ and the pullbacks: $\pi^\ast_i\bigl(\iota_{X_i}\mu_i\bigr)$. Notice that $\mu=\mu_1\wedge\mu_2\wedge\mu_3$ is a natural volume form on the product: $S^3\times S^3\times S^3$.
+
+There are obvious analogies between the formula above, the formula for the helicity $\mathsf{H}_{12}(X;\mathcal{T})$ and the integral formula for the $\bar{\mu}_{123}$-invariant [\[eq:mu-formula\]](#eq:mu-formula){reference-type="eqref" reference="eq:mu-formula"}. Clearly, the 3-form $$\gamma_\omega:=\alpha_\omega\wedge d\alpha_\omega=\alpha_\omega\wedge \omega,$$ plays a role of the linking form as $\omega$ in the formula [\[eq:helicity\]](#eq:helicity){reference-type="eqref" reference="eq:helicity"} for $\mathsf{H}_{12}(X;\mathcal{T})$. The main motivation behind this definition is the ergodic interpretation of $\mathsf{H}_{123}(X;\mathcal{T})$ as an average asymptotic $\bar{\mu}_{123}$-invariant of orbits of $X$, and will become apparent in Section [4](#sec:ergodic){reference-type="ref" reference="sec:ergodic"}. Formula [\[eq:mu_123-helicity\]](#eq:mu_123-helicity){reference-type="eqref" reference="eq:mu_123-helicity"} can be also regarded as the third order helicity of three distinct vector fields $X_i$, supported on the handlebodies $\mathcal{T}_i$. In Section [\[sec:energy\]](#sec:energy){reference-type="ref" reference="sec:energy"} we indicate how to construct the potential $\alpha_\omega$ from the basic elliptic theory of differential forms.
+
+::: theorem
+[]{#th:invariance-th label="th:invariance-th"} On every unlinked invariant handlebody $\mathcal{T}$ in $S^3$, $\mathsf{H}_{123}(X;\mathcal{T})$ is
+
+-   independent of a choice of the potential $\alpha_\omega$.
+
+-   invariant under the action of $\text{Diff}^\text{vol}_0(S^3)$, i.e. for every $g\in \text{Diff}^\text{vol}_0(S^3)$: $$\begin{gathered}
+    \label{eq:invariance}
+     \mathsf{H}_{123}(X;\mathcal{T})=\mathsf{H}_{123}(g_\ast X;g(\mathcal{T}))\ .
+    \end{gathered}$$
+:::
+
+::: proof
+*Proof.* To prove $(i)$ observe for every other potential $\alpha'_\omega$ of $\omega$, the difference $\beta=\alpha_\omega-\alpha'_\omega$ is a closed $1$-form on $\mathcal{T}$ (since $\omega=d\alpha_\omega=d\alpha'_\omega$). Therefore $$\begin{aligned}
+ \mathsf{H}_{123}(X;\mathcal{T})-\mathsf{H}_{123}'(X;\mathcal{T}) & = & \int_{\mathcal{T}} (\beta\wedge\omega)\wedge\iota_{X_1}\mu_1\wedge \iota_{X_2}\mu_2\wedge \iota_{X_3}\mu_3\\
+ & \stackrel{(1)}{=} & \int_{\mathcal{T}} d\bigl(\beta\wedge \alpha_\omega\wedge\iota_{X_1}\mu_1\wedge \iota_{X_2}\mu_2\wedge \iota_{X_3}\mu_3\bigr)\\
+ & = & \int_{\partial\mathcal{T}} \beta\wedge \alpha_\omega\wedge\iota_{X_1}\mu_1\wedge \iota_{X_2}\mu_2\wedge \iota_{X_3}\mu_3 \stackrel{(2)}{=} 0,
+\end{aligned}$$ where in (1) we applied $d(\iota_{X_i}\mu_i)=0$ (since $X_i$'s are divergence free), and in (2): $$\iota_{X_i}\mu_i\bigl|_{\partial\mathcal{T}_i}=0,$$ (because each vector field $X_i$ is tangent to the boundary $\partial \mathcal{T}_i$), and $$\partial \mathcal{T}=\bigl(\partial \mathcal{T}_1\times \mathcal{T}_2\times \mathcal{T}_3\bigr)\cup \bigl(\mathcal{T}_1\times \partial\mathcal{T}_2\times \mathcal{T}_3\bigr)\cup \bigl(\mathcal{T}_1\times \mathcal{T}_2\times \partial\mathcal{T}_3\bigr).$$
+
+Next we show $(ii)$, the proof is in the style of [@Berger90; @Mayer03], but adapted to our setting. For any given $g\in \text{Diff}^\text{vol}(S^3)$, there exists a path $t\longrightarrow g(t)\in \text{Diff}^\text{vol}_0(S^3)$, such that $$g(0)=\text{id}_{S^3},\qquad g(1)=g\ .$$ Denote by $V$ the divergence free vector field on $S^3$, given by $V(x)=\frac{d}{dt} g(t,x)|_{t=0}$, i.e. $g(t)$ is a flow of $V$, and push-forward fields $X_i$ by $$X^t_i:=g(t)_\ast X_i\ .$$ It is well known (see Appendix B, or [@Freedman91-2 p. 224]) that 2-forms: $\iota_{X^t_i}\mu$ are frozen in the flow of $V$, i.e. $$\label{eq:forms-frozen-in}
+ \frac{d}{dt}\bigl(g(t)^\ast\iota_{X^t_i}\mu\bigr) =(\partial_t+\mathcal{L}_V) \iota_{X^t_i}\mu = 0.$$ We also have a path $\hat{g}(t)=(g(t),g(t),g(t))$ in $\text{Diff}^\text{vol}_0(S^3\times S^3\times S^3)$. Analogously for the volume preserving flow $\hat{g}(t)$ we obtain the vector field $\hat{V}=(V,V,V)$ (recall that a tangent bundle $T(S^3)^3$ has a natural product structure). Equation [\[eq:forms-frozen-in\]](#eq:forms-frozen-in){reference-type="eqref" reference="eq:forms-frozen-in"} implies $$\label{eq:forms-frozen-in2}
+(\partial_t+\mathcal{L}_{\hat{V}}) \bigl(\pi^\ast_i\iota_{X^t_i}\mu\bigr)=(\partial_t+\mathcal{L}_{\hat{V}}) \iota_{X^t_i}\mu_i= 0\ .$$ (in the second equation we merely revoke our notational conventions: $\iota_{X^t_i}\mu_i\equiv\pi^\ast_i\bigl(\iota_{g(t)^\ast X_i}\mu\bigr)$).
+
+Let $\mathcal{T}(t)=\hat{g}(t)(\mathcal{T}(0))\subset \text{Conf}(S^3,3)$ we must show $\frac{d}{dt} 
+\mathsf{H}_{123}(X^t_1,X^t_2,X^t_3)=0$ at every $t=t_0$. Notice that for small enough $\epsilon$ and $t\in (t_0-\epsilon,t_0+\epsilon)$ we can assume, by $(i)$, that $\alpha_\omega$ is a time independent potential obtained from slightly bigger domain $\widetilde{\mathcal{T}}$ which satisfies $$\mathcal{T}(t)\subset\widetilde{\mathcal{T}},\qquad \forall t\in (t_0-\epsilon,t_0+\epsilon),$$ and is a deformation retraction of $\mathcal{T}(t_0)$. Without loss of generality we assume $t_0=0$, $\hat{g}(0)=\text{id}_{(S^3)^3}$, and calculate at $t_0$: $$\begin{aligned}
+ \frac{d}{dt} 
+ \Bigl(\mathsf{H}_{123}(g(t)^\ast X_1,g(t)^\ast X_2,g(t)^\ast X_3)\Bigr) & = &
+ \frac{d}{dt} \int_{\mathcal{T}(t)} \alpha_\omega\wedge d\alpha_\omega\wedge \iota_{X^t_1}\mu_1\wedge \iota_{X^t_2}\mu_2\wedge \iota_{X^t_3}\mu_3\\
+ & = & \int_{\mathcal{T}(0)} \frac{d}{dt} \hat{g}(t)^\ast\bigl(\alpha_\omega\wedge d\alpha_\omega\wedge \iota_{X^t_1}\mu_1\wedge \iota_{X^t_2}\mu_2\wedge \iota_{X^t_3}\mu_3\bigr)\\
+ & = & \int_{\mathcal{T}(0)} \bigl(\mathcal{L}_{\partial_t+\hat{V}}(\alpha_\omega\wedge d\alpha_\omega)\bigr)\wedge \iota_{X^t_1}\mu_1\wedge \iota_{X^t_2}\mu_2\wedge \iota_{X^t_3}\mu_3,
+\end{aligned}$$ where in the last identity we applied [\[eq:forms-frozen-in2\]](#eq:forms-frozen-in2){reference-type="eqref" reference="eq:forms-frozen-in2"} and the product rule for the Lie derivative. Now because $\omega\wedge\alpha_\omega$ is time independent (for $t\in (t_0-\epsilon,t_0+\epsilon)$) by the Cartan magic formula we obtain $$\begin{aligned}
+ \mathcal{L}_{\partial_t+\hat{V}}(\alpha_\omega\wedge d\alpha_\omega) & = & \mathcal{L}_{\hat{V}}(\alpha_\omega\wedge d\alpha_\omega) = \iota_{\hat{V}} d(\alpha_\omega\wedge d\alpha_\omega)+ d(\iota_{\hat{V}} (\alpha_\omega\wedge d\alpha_\omega))\\
+ & =  & d(\iota_{\hat{V}} (\alpha_\omega\wedge d\alpha_\omega)),
+\end{aligned}$$ since $d(\alpha_\omega\wedge d\alpha_\omega)=\omega\wedge\omega=0$. Now, the same argument as in the proof of $(i)$ shows that the right hand side of the previous equation is zero, because $X^t_i$ are tangent to the boundary of $\mathcal{T}_i(t)$. ◻
+:::
+
+::: remark
+Notice that the above argument shows that if we replace $\alpha_{\omega}\wedge d\alpha_\omega$ by virtually any closed 3-form $\eta$ on $\text{Conf}(S^3,3)$ (or $(S^3)^3$) we obtain some invariant under frozen-in-field deformations. Clearly, if $\eta$ is exact we obtain trivial invariants, therefore the only candidates are cohomology classes of $\text{Conf}(S^3,3)\cong S^3\times S^2$. In dimension $3$, the only candidate cohomology class of $\text{Conf}(S^3,3)$ is a dual of $S^3$. Based on the considerations in Section [1](#sec:mu-and-hopf){reference-type="ref" reference="sec:mu-and-hopf"} one may argue that an invariant obtained this way is trivial. Indeed the cohomology class $\eta$ evaluated on any 3-torus obtained from a 3-component link in $S^3$ via the map $L$ in [\[eq:F\]](#eq:F){reference-type="eqref" reference="eq:F"} is zero. Therefore one could apply the approach via the Ergodic Theorem (as in Section [4](#sec:ergodic){reference-type="ref" reference="sec:ergodic"}) to show that $\int \eta\wedge\iota_{X}\mu_1\wedge \iota_{X}\mu_2\wedge \iota_{X}\mu_3$ defines a trivial invariant. The crucial obstacle in extending the formula in [\[eq:mu_123-helicity\]](#eq:mu_123-helicity){reference-type="eqref" reference="eq:mu_123-helicity"} to encompass the whole $S^3$ is the fact that the potential $\alpha_\omega$ cannot be globally defined on $\text{Conf}(S^3,3)$.
+:::
+
+# The ergodic interpretation of $\mathsf{H}_{123}(X;\mathcal{T})$ {#sec:ergodic}
+
+The following statement is often seen in literature [@Cantarella-DeTurck-Gluck01; @Cantarella-DeTurck-Gluck-Teytel00]:
+
+> *Helicity measures the extend to which vector fields twist and coil around each other.*
+
+A beauty of Arnold's ergodic approach to the helicity $\mathsf{H}_{12}(X)$ is that it makes this statement precise, by interpreting $\mathsf{H}_{12}(X)$ as an average asymptotic linking number of orbits of $X$. But it also has a practical application as it allows us to extend our approach to certain invariant sets of $X$. In this section we apply this philosophy to our newly defined invariant $\mathsf{H}_{123}(X;\mathcal{T})$, and interpret it as the average asymptotic $\bar{\mu}_{123}$-invariant of orbits of $X$. Moreover this ergodic interpretation leads us to an alternative, more intuitive proof of Helicity Invariance Theorem [\[th:invariance-th\]](#th:invariance-th){reference-type="ref" reference="th:invariance-th"}.
+
+We begin by observing that given a volume preserving vector field $X$ on $M$ and its flow $\Phi_t$, we may regard $X$ as three vector fields on $(M)^3$. Therefore $(\Phi,\Phi,\Phi)$ induces a natural $\mbox{\bbb R}^3$ action defined as $$\label{eq:R3-action}
+ \mathbf{\Phi}:\mbox{\bbb R}^3\times (M)^3\longrightarrow (M)^3:\qquad \bigl((s,t,u),x,y,z\bigr)\stackrel{\mathbf{\Phi}}{\longrightarrow} (\Phi(s,x),\Phi(t,y), \Phi(u,z)).$$ Observe that $\mathbf{\Phi}$ is a volume preserving action on $(M)^3$. Our analysis is rooted in techniques developed in [@Arnold86; @Laurence-Avellaneda93; @Laurence-Stredulinsky00b], the main tool is the the following
+
+::: theorem
+[]{#th:multi-ergodic label="th:multi-ergodic"} For any real valued $L^1$-function $F$ on $(M)^3$, the time averages under the action in [\[eq:R3-action\]](#eq:R3-action){reference-type="eqref" reference="eq:R3-action"}: $$\begin{gathered}
+\bar{F}(x,y,z)=\lim_{T\to \infty}\frac{1}{T^3}\int^T_0\int^T_0\int^T_0
+ F(\Phi(x,s),\Phi(y,t),\Phi(z,u))\,d s\,d t\,d u
+\end{gathered}$$ converge almost everywhere. Moreover, the limit function $\bar{F}$ satisfies
+
+-   $\|\bar{F}\|_{L^1((M)^3)}\leq \|F\|_{L^1((M)^3)}$,
+
+-   $\bar{F}$ is invariant under the $\mathbf{\Phi}$-action,
+
+-   if $(M)^3$ is of finite volume then $$\begin{gathered}
+    \label{eq:ergodic-integrals-equal}
+     \int_{(M)^3}\bar{F} =\int_{(M)^3} F\ .
+    \end{gathered}$$
+:::
+
+We may now define *invariant unlinked domain* $\mathcal{T}$ of $X$ as an arbitrary $\mathbf{\Phi}$-invariant set, with topological closure $\overline{\mathcal{T}}$ which belongs to a larger product of open sets $\widetilde{\mathcal{T}}=\widetilde{\mathcal{T}}_1\times \widetilde{\mathcal{T}}_2\times \widetilde{\mathcal{T}}_3$ in $\text{Conf}(S^3,3)$, satisfying the following
+
+-   $\widetilde{\mathcal{T}}$ admits a *short path system* $\mathcal{S}$,
+
+-   Equation [\[eq:omega-exact\]](#eq:omega-exact){reference-type="eqref" reference="eq:omega-exact"} holds on $\widetilde{\mathcal{T}}$.
+
+By a system of short paths on $\widetilde{\mathcal{T}}$, [@Vogel03; @Khesin98], we understand a collection of curves $\mathcal{S}=\{\sigma(x,y)\}$ on each open set $\widetilde{\mathcal{T}}_i$ such that
+
+-   for every pair of points $x,y \in \widetilde{\mathcal{T}}_i$ there is a curve $\sigma(x,y):I\mapsto \widetilde{\mathcal{T}}_i$ in $\mathcal{S}$, such that $\sigma(0)=x$ and $\sigma(1)=y$,
+
+-   the lengths of paths in $\mathcal{S}$ are uniformly bounded above by a common constant.
+
+Topologically, every $\mathbf{\Phi}$-invariant set is a union of products of orbits of $X$ in $(S^3)^3$, it is often convenient to think of the orbits $\mathbf{\Phi}$-action as a foliation of $(S^3)^3$, then $\mathbf{\Phi}$-invariant sets are just union of leaves of such foliation. A fundamental example of an invariant unlinked domain is the case of $\mathbf{\Phi}$-invariant set $\mathcal{T}$ contained in the product $\widetilde{\mathcal{T}}=\widetilde{\mathcal{T}}_1\times \widetilde{\mathcal{T}}_2\times \widetilde{\mathcal{T}}_3$ of disjoint open unlinked handlebodies $\widetilde{\mathcal{T}}_i$. Notice that we do not require $X$ to be tangent to $\partial\widetilde{\mathcal{T}}_i$ in this case, and $\widetilde{\mathcal{T}}$ always admits a short path system as we describe in the following
+
+::: remark
+In [@Vogel03], Vogel shows that on a closed manifold $M$, geodesics always provide a short path system. When $\mathcal{T}$ is contained in the product of unlinked handlebodies $\widetilde{\mathcal{T}}$ we may easily construct such system on $\widetilde{\mathcal{T}}$. Because $\mathcal{\mathcal{T}}_i$ are proper subsets of $S^3$ we generally do not want to use ambient geodesics from $S^3$ as they may not lie entirely in $\mathcal{T}_i$. To obtain $\mathcal{S}$ one may always put an artificial Riemannian metric on each $\widetilde{\mathcal{T}}_i$ which makes it a complete Riemannian manifold (e.g. by making $\partial\widetilde{\mathcal{T}}_i$ totally geodesic) and choose $\mathcal{S}$ to be geodesics on such Riemannian manifold. We also observe that one may apply a diffeomorphism $g\in \text{Diff}(\widetilde{\mathcal{T}})$ to $\mathcal{S}$ which results in the new system $g\mathcal{S}$ on $g(\widetilde{\mathcal{T}})$.
+:::
+
+Next theorem shows that the definition of $\mathsf{H}_{123}(X;\mathcal{T})$ in Equation [\[eq:helicity\]](#eq:helicity){reference-type="eqref" reference="eq:helicity"} is valid for invariant unlinked domains of $X$ and is an analog of Arnold's Helicity Theorem in our setting
+
+::: theorem
+[]{#th:ergodic-mu label="th:ergodic-mu"} Given $(X;\mathcal{T})$, the following limit (asymptotic $\bar{\mu}_{123}$-invariant of orbits) exists for almost all $(x,y,z)\in \mathcal{T}$: $$\label{eq:bar-m_X}
+ \bar{m}_X(x,y,z)=\lim_{T\to\infty} \frac{1}{T^3}\bar{\mu}_{123}\bigl(\bar{\mathscr{O}}^{X_1}_T(x),\bar{\mathscr{O}}^{X_2}_T(y),\bar{\mathscr{O}}^{X_3}_T(y)\bigr).$$ Moreover, $$\label{eq:H_123-ergodic}
+ \mathsf{H}_{123}(X;\mathcal{T})=\int_{\mathcal{T}} \bar{m}_X(x,y,z)\,\mu(x)\wedge\mu(y)\wedge\mu(z)\ .$$
+:::
+
+::: proof
+*Proof.* The proof is similar to the one in e.g. [@Vogel03]. Before we start we must point out the following identity (valid for any 3-form $\gamma$ on $M\times M\times M$ and vector fields $X_1,X_2,X_3$ on $M$) $$(\iota_{X_1}\iota_{X_2}\iota_{X_3}\gamma)\wedge\mu\wedge\mu\wedge\mu=
+\gamma(X_1,X_2,X_3)\,\mu\wedge\mu\wedge\mu=\gamma\wedge\iota_{X_1}\mu\wedge\iota_{X_2}\mu\wedge\iota_{X_3}\mu\ .$$ The first equation follows from the definition, the second equation is a consequence of the fact that $\iota_X$ is an antiderivation i.e. $$\label{eq:iota-antiderivation}
+  \iota_X(\alpha\wedge\beta)=(\iota_X\alpha)\wedge\beta+(-1)^{|\alpha|}\alpha\wedge(\iota_X\beta),$$ and $\iota_{X_i}\mu_j\equiv 0$ for $i\neq j$. As a result $$\begin{aligned}
+\notag  \mathsf{H}_{123}(X_1,X_2,X_3) & = & \int_{\mathcal{T}} \bigl(\alpha_\omega\wedge d\alpha_\omega\bigr)\wedge \iota_{X_1}\mu_1\wedge \iota_{X_2}\mu_2\wedge \iota_{X_3}\mu_3\\
+& = & \int_\mathcal{T} \bigl(\iota_{X_1}\iota_{X_2}\iota_{X_3}\bigl(\alpha_\omega\wedge d\alpha_\omega\bigr)\bigr)\,\mu_1\wedge\mu_2\wedge\mu_3\\
+\label{eq:m-function}  & = & \int_\mathcal{T} m_{X_1,X_2,X_3}(x,y,z)\,\mu_1\wedge \mu_2\wedge \mu_3,
+\end{aligned}$$ where $m_{X_1,X_2,X_3}:=\alpha_\omega\wedge d\alpha_\omega(X_1,X_2,X_3)$. For convenience let (see [\[eq:orbits\]](#eq:orbits){reference-type="eqref" reference="eq:orbits"}) $$\bar{\mathscr{O}}(x,y,z;T):=\bar{\mathscr{O}}^{X_1}_T(x)\times \bar{\mathscr{O}}^{X_2}_T(y)\times\bar{\mathscr{O}}^{X_3}_T(y)\ .$$ Clearly, every link $\bar{\mathscr{O}}(x,y,z;T)$ is borromean and by Formula [\[eq:mu-formula\]](#eq:mu-formula){reference-type="eqref" reference="eq:mu-formula"} we obtain $$\begin{aligned}
+\bar{\mu}_{123}\bigl(\bar{\mathscr{O}}^{X_1}_T(x),\bar{\mathscr{O}}^{X_2}_T(y),\bar{\mathscr{O}}^{X_3}_T(y)\big)
+& = & \int_{\bar{\mathscr{O}}(x,y,z;T)}
+\alpha_\omega\wedge d\alpha_\omega\\
+& = & \int_{\mathscr{O}(x,y,z;T)}
+\alpha_\omega\wedge d\alpha_\omega+(I)
+\end{aligned}$$ where the term $(I)$ involves integrals over short paths in $\mathcal{S}$, (see Appendix B). Next, notice that for every $(x,y,z)$ : $D\mathbf{\Phi}_{(x,y,z)}[\partial_i]=X_i$, $i=s,t,u$ we obtain $$\begin{aligned}
+ \mathbf{\Phi}^\ast_{(x,y,z)}(\alpha_\omega\wedge d\alpha_\omega) & = & (\alpha_\omega\wedge d\alpha_\omega(X_1,X_2,X_3)(\Phi^1(x,s),\Phi^2(y,t),\Phi^3(z,u))\,ds\wedge dt\wedge du\\
+ & = & m_{X_1,X_2,X_3}(\Phi^1(x,s),\Phi^2(y,t),\Phi^3(z,u))\,ds\wedge dt\wedge du\ .
+\end{aligned}$$ Thus $$\int_{\mathscr{O}(x,y,z;T)}
+\alpha_\omega\wedge d\alpha_\omega=\int^T_0\int^T_0\int^T_0 m_{X_1,X_2,X_3}(\Phi^1(x,s),\Phi^2(y,t),\Phi^3(z,u))\,ds\wedge dt\wedge du\ .$$ Function $m_{X_1,X_2,X_3}$ is smooth on $\mathcal{T}$ and therefore $L^1$. Because short paths do not contribute to the time average i.e. $$\lim_{T\to\infty} \frac{1}{T^3}(I)=0$$ (see Appendix B), Theorem [\[th:multi-ergodic\]](#th:multi-ergodic){reference-type="ref" reference="th:multi-ergodic"} applied to the function $m_{X_1,X_2,X_3}$ yields almost everywhere existence of the limit [\[eq:bar-m_X\]](#eq:bar-m_X){reference-type="eqref" reference="eq:bar-m_X"} and the invariant $L^1$-function $\bar{m}_X:=\bar{m}_{X_1,X_2,X_3}$ on $\mathcal{T}$. The identity [\[eq:H_123-ergodic\]](#eq:H_123-ergodic){reference-type="eqref" reference="eq:H_123-ergodic"} follows from $(iii)$ of Theorem [\[th:multi-ergodic\]](#th:multi-ergodic){reference-type="ref" reference="th:multi-ergodic"}. ◻
+:::
+
+::: theorem
+[]{#th:invariance-th-ergodic label="th:invariance-th-ergodic"} On every unlinked domain $\mathcal{T}$ in $S^3$, (i) and (ii) of Theorem [\[th:invariance-th\]](#th:invariance-th){reference-type="ref" reference="th:invariance-th"} hold for $\mathsf{H}_{123}(X;\mathcal{T})$.
+:::
+
+::: proof
+*Proof.* The proof of $(i)$ immediately follows from independence of the limit [\[eq:bar-m_X\]](#eq:bar-m_X){reference-type="eqref" reference="eq:bar-m_X"} on the choice of the potential $\alpha_\omega$. For the proof of $(ii)$ we must show the following $$\int_\mathcal{T} m_{X_1,X_2,X_3}\,\mu_1\wedge \mu_2\wedge \mu_3=\int_{g(\mathcal{T})} m_{g_\ast X_1,g_\ast X_2, g_\ast X_3}\,\mu_1\wedge \mu_2\wedge \mu_3\ .$$ Theorem [\[th:multi-ergodic\]](#th:multi-ergodic){reference-type="ref" reference="th:multi-ergodic"}, tells us that $m_{X_1,X_2,X_3}$ and $m_{g_\ast X_1,g_\ast X_2, g_\ast X_3}$ admit $L^1$-averages $\bar{m}_{X_1,X_2,X_3}$ and $\bar{m}_{g_\ast X_1,g_\ast X_2, g_\ast X_3}$, under actions of $X_i$ and $g_\ast X_i$ respectively. If the following holds: $$\label{eq:m=gm}
+ \bar{m}_{X_1,X_2,X_3}(x,y,z)=\bar{m}_{g_\ast X_1,g_\ast X_2, g_\ast X_3}(g(x),g(y),g(z)),\qquad \text{a.e.},$$ then [\[eq:invariance\]](#eq:invariance){reference-type="eqref" reference="eq:invariance"} is an immediate consequence of [\[eq:ergodic-integrals-equal\]](#eq:ergodic-integrals-equal){reference-type="eqref" reference="eq:ergodic-integrals-equal"}, change of variables for integrals, and the fact that $g$ preserves the volume, i.e. $\mu_i=g^\ast\mu_i$. Borrowing notation from the previous theorem we set $$\begin{aligned}
+ g\bar{\mathscr{O}}(x,y,z;T) & := & g(\bar{\mathscr{O}}^{X_1}_T(x))\times g(\bar{\mathscr{O}}^{X_2}_T(y))\times g(\bar{\mathscr{O}}^{X_3}_T(z))\\
+ & = & \bar{\mathscr{O}}^{g_\ast X_1}_T(g(x))\times \bar{\mathscr{O}}^{g_\ast X_2}_T(g(y))\times \bar{\mathscr{O}}^{g_\ast X_3}_T(g(z)),
+\end{aligned}$$ where the second identity is a consequence of the fact that the flow of $g_\ast X_i$ is obtained as a composition of $g$ and the flow of $X_i$. Since $g$ is isotopic to the identity, $\bar{\mathscr{O}}(x,y,z;T)$ and $\bar{\mathscr{O}}(x,y,z;T)$ are isotopic borromean links in $S^3$, and for every $T$: $$\bar{\mu}_{123}(\bar{\mathscr{O}}(x,y,z;T))=\bar{\mu}_{123}(g\bar{\mathscr{O}}(x,y,z;T)).$$ As a result of the above identity and [\[eq:bar-m_X\]](#eq:bar-m_X){reference-type="eqref" reference="eq:bar-m_X"} we derive a.e. $$\begin{aligned}
+  \bar{m}_{X_1,X_2,X_3}(x,y,z) & = & \lim_{T\to\infty}\frac{1}{T^3}\bar{\mu}_{123}(\bar{\mathscr{O}}(x,y,z;T))\\
+   & = & \lim_{T\to\infty}\frac{1}{T^3}\bar{\mu}_{123}(g\bar{\mathscr{O}}(x,y,z;T))=\bar{m}_{g_\ast X_1,g_\ast X_2, g_\ast X_3}(g(x),g(y),g(z)).
+\end{aligned}$$ Notice that in the last equation we used in the "pushed forward" short paths system: $g\mathcal{S}$. But since lengths of paths in $g\mathcal{S}$ are bounded as well, they do not contribute to the limit. This proves the identity [\[eq:m=gm\]](#eq:m=gm){reference-type="eqref" reference="eq:m=gm"}, and consequently [\[eq:invariance\]](#eq:invariance){reference-type="eqref" reference="eq:invariance"}. ◻
+:::
+
+Notice that the above argument does not require the Stokes Theorem, and thus may lead to further generalizations. Clearly, for $\mathsf{H}_{123}(X;\mathcal{T})$ to be nontrivial $\mathcal{T}$ must be of nonzero measure.
+
+The following formula is a well known property of the ordinary helicity $\mathsf{H}_{12}(X;\mathcal{T})$ of the flux tubes $\mathcal{T}$ modeled on a 2-component link $L=\{L_1,L_2\}$ (see e.g. [@Laurence-Avellaneda93; @Cantarella00])
+
+$$\label{eq:helicity12-flux-tubes}
+\mathsf{H}_{12}(X;\mathcal{T})=\mathsf{H}_{12}(X_1,X_2)=\text{lk}(L_1,L_2)\,\text{Flux}(X_1)\,\text{Flux}(X_2).$$ Next we show that an analogous property holds $\mathsf{H}_{123}(X;\mathcal{T})$, for invariant unlinked handlebodies $\mathcal{T}$ investigated in the previous section.
+
+::: proposition
+$\mathsf{H}_{123}(X_1,X_2,X_3)$ on invariant unlinked handlebodies $\mathcal{T}$ satisfies the following formula $$\label{eq:helicity-fluxes}
+ \mathsf{H}_{123}(X_1,X_2,X_3)=\sum_{i\neq j\neq k} \bar{\mu}_{123}(L^i_1, L^j_2, L^k_3)\,\text{Flux}_{\Sigma_i}(X_1)\,\text{Flux}_{\Sigma_j}(X_2)\,\text{Flux}_{\Sigma_k}(X_3)\ .$$ where $\{L^i_1\otimes L^j_2\otimes L^k_3\}$ is a basis of basic cycles of $H_1(\mathcal{T}_1)\otimes H_1(\mathcal{T}_2)\otimes H_1(\mathcal{T}_3)$, $\text{Flux}(X_i)$ stands for the flux of $X_i$ through a cross sectional surface $\Sigma_k$ of $\mathcal{T}_i$, which represents a homology Poincar$\acute{\rm e}$ dual of $L^k_i$ in $H_2(\mathcal{T}_i,\partial\mathcal{T}_i)$.
+:::
+
+::: proof
+*Proof.* Recall that a flux $\text{Flux}_{\Sigma_k}(X_i)$ of a vector field $X_i$ though a cross-sectional surface $\Sigma_k$ is given by: $$\begin{aligned}
+  \text{Flux}_{\Sigma_k}(X_i) & = & \int_{\Sigma_k} \iota_{X_i}\mu=\int_{\mathcal{T}_i} h_k\wedge\iota_{X_i}\mu\\
+  & = & \int_{\mathcal{T}_i} \iota_{X_i}h_k\wedge\mu =\int_{\mathcal{T}_i} h_k(X_i),
+ 
+\end{aligned}$$ where 1-forms $h_k$ represent cohomology Poincar$\acute{\rm e}$ duals of $\Sigma_k$ and we applied [\[eq:iota-antiderivation\]](#eq:iota-antiderivation){reference-type="eqref" reference="eq:iota-antiderivation"} in the third equation. Clearly, $h_i\in \Omega^1(\mathcal{T}_i)$ satisfy $$\int_{\gamma} h_k=\#(\gamma,\Sigma_k)=\text{deg}(\gamma, L_k),$$ where $\text{deg}(\gamma, L^j_k)$ measures how many times $\gamma$ "wraps around" in the cycle $L^j_k$.
+
+For simplicity we first assume that $\mathcal{T}$ is modeled on a borromean link $L=\{L_1,L_2,L_3\}$ (see Figure [5](#fig:invariant-sets){reference-type="ref" reference="fig:invariant-sets"}). Then $h=h_1\wedge h_2\wedge h_3\in \Omega^3(\mathcal{T})$ is a cohomology class dual of the cycle $L=L_1\times L_2\times L_3$ in $\mathcal{T}$. We set $$H:=\iota_{X_1}\iota_{X_2}\iota_{X_3} h=h(X_1,X_2,X_3),$$ which is a smooth function, and let $\bar{H}$ be the time average of $H$ as in Theorem [\[th:multi-ergodic\]](#th:multi-ergodic){reference-type="ref" reference="th:multi-ergodic"}. It suffices to show $$\label{eq:H-equation}
+   \bar{m}_{X_1,X_2,X_3}=\bar{\mu}_{123}(L)\,\bar{H},\qquad \text{a.e.}$$ Analogously as in Theorem [\[th:invariance-th\]](#th:invariance-th){reference-type="ref" reference="th:invariance-th"}, Equation [\[eq:H-equation\]](#eq:H-equation){reference-type="eqref" reference="eq:H-equation"} immediately implies Formula [\[eq:helicity-fluxes\]](#eq:helicity-fluxes){reference-type="eqref" reference="eq:helicity-fluxes"}. Assume the notation of Theorem [\[th:invariance-th\]](#th:invariance-th){reference-type="ref" reference="th:invariance-th"}, for given $T$ consider $\bar{\mathscr{O}}(x,y,z;T)$. By the fundamental property of the $\bar{\mu}_{123}$-invariant (see Corollary [\[th:general-mu_123\]](#th:general-mu_123){reference-type="ref" reference="th:general-mu_123"}) we have $$\begin{aligned}
+  \bar{\mu}_{123}(\bar{\mathscr{O}}(x,y,z;T)) & = & \bar{\mu}_{123}(L)\,\bigl(\text{deg}(\bar{\mathscr{O}}^{X_1}_T(x),L_1)\,\text{deg}(\bar{\mathscr{O}}^{X_2}_T(y),L_2)\,\text{deg}(\bar{\mathscr{O}}^{X_3}_T(x),L_3)\bigr)\\
+  & = & \bar{\mu}_{123}(L)\int_{\bar{\mathscr{O}}(x,y,z;T)} h\ .
+ 
+\end{aligned}$$ Thus we obtain $$\begin{aligned}
+  \bar{m}_{X_1,X_2, X_3}(x,y,z) & = & \lim_{T\to \infty} \frac{1}{T^3}\bar{\mu}_{123}(\bar{\mathscr{O}}(x,y,z;T))\\
+  & = & \bar{\mu}_{123}(L)\lim_{T\to \infty} \frac{1}{T^3}\int_{\bar{\mathscr{O}}(x,y,z;T)} H\\
+  & =  &\bar{\mu}_{123}(L) \bar{H}(x,y,z),
+ 
+\end{aligned}$$ where the last equality is again the consequence of short paths not contributing to the limit.
+
+Now, from the product structure and $(iii)$ of Theorem [\[th:multi-ergodic\]](#th:multi-ergodic){reference-type="ref" reference="th:multi-ergodic"} we have $$\int_\mathcal{T} \bar{H} =\int_\mathcal{T} H=\bigl(\int_{\mathcal{T}_1} h_1(X_1) \bigr)\bigl(\int_{\mathcal{T}_2} h_2(X_2) \bigr)\bigl(\int_{\mathcal{T}_3} h_3(X_3) \bigr).$$ The proof in the case of a general handlebody is analogous, once we show the following
+
+::: lemma
+Let $\mathcal{O}=\{\mathcal{O}_1,\mathcal{O}_2, \mathcal{O}_3\}$ be a 3-component link in $S^3$ such that $\mathcal{O}_i\subset \mathcal{T}_i$ for each $i$. Then $\mathcal{O}$ is borromean and $$\label{eq:mu-in-T}
+ \bar{\mu}_{123}(\mathcal{O})=\sum_{i\neq j\neq k} \bar{\mu}_{123}(L^i_1, L^j_2, L^k_3)\,\text{deg}(\mathcal{O}_1, L^i_1)\,\text{deg}(\mathcal{O}_2, L^j_2)\,\text{deg}(\mathcal{O}_3, L^k_1)\ .$$
+:::
+
+::: proof
+*Proof.* Notice that thanks to our new interpretation, the $\bar{\mu}_{123}$-invariant is not only a link homotopy invariant but a homotopy invariant of the associated map $F_{\mathcal{O}}$ defined in [\[eq:F\]](#eq:F){reference-type="eqref" reference="eq:F"}. Observe that each component $\mathcal{O}_i$ can be homotopied inside of its handlebody $\mathcal{T}_i$ to be come a bouquet of circles $\widehat{\mathcal{O}}_i\cong S^1\vee S^1\vee\ldots\vee S^1$. Such that each factor in $\widehat{\mathcal{O}}_i$ is a basic cycle in $H_1(\mathcal{T}_i)$. As a result we obtain the associated map $F_{\widehat{\mathcal{O}}}$, and $$\bar{\mu}_{123}(\mathcal{O})=\frac{1}{2}\mathscr{H}(F_{\widehat{\mathcal{O}}}).$$ Interpreting, $\mathscr{H}(F_{\widehat{\mathcal{O}}})$ as the intersection number and summing up intersection numbers we conclude [\[eq:mu-in-T\]](#eq:mu-in-T){reference-type="eqref" reference="eq:mu-in-T"}. ◻
+:::
+
+ ◻
+:::
+
+In the case of borromean flux tubes modeled on $L$, [\[eq:helicity12-flux-tubes\]](#eq:helicity12-flux-tubes){reference-type="eqref" reference="eq:helicity12-flux-tubes"} reduces to $$\label{eq:helicity12-borro-flux-tubes}
+\mathsf{H}_{123}(X_1,X_2,X_3)=\bar{\mu}_{123}(L)\,\text{Flux}_{\Sigma_1}(X_1)
+\text{Flux}_{\Sigma_2}(X_2)\text{Flux}_{\Sigma_3}(X_3),$$ where $\Sigma_i$ denotes homology Poincar$\acute{\rm e}$ duals to $L_i$ in $H_2(\mathcal{T}_i,\partial\mathcal{T}_i)$.
+
+Since the fluxes are invariant under frozen-in-field deformations Formula [\[eq:helicity12-flux-tubes\]](#eq:helicity12-flux-tubes){reference-type="eqref" reference="eq:helicity12-flux-tubes"} is yet another proof of Theorem [\[th:invariance-th\]](#th:invariance-th){reference-type="ref" reference="th:invariance-th"} in the setting of invariant unlinked handlebodies. In [@Laurence-Stredulinsky00b] the authors develop the same formula for the borromean flux tubes. This clearly must be the case as we deal with the same topological invariants of links via a different approach. Additional advantage of our formulation is that we do not have to separately deal with null points of vector fields as in [@Laurence-Stredulinsky00b]. We also note that in [@Laurence-Stredulinsky00b] the authors prove the helicity invariance only via Formula [\[eq:helicity12-borro-flux-tubes\]](#eq:helicity12-borro-flux-tubes){reference-type="eqref" reference="eq:helicity12-borro-flux-tubes"}.

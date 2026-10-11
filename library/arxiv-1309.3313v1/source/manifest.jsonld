@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1309.3313v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1309.3313v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1309.3313v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1309.3313&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1309.3313v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1309.3313v1",
+    "content_type": "application/gzip",
+    "sha256": "2cf7e61fcad50a3fc22186bebe68f2c8d6b49d24911b0fb14017a249132203d5",
+    "bytes": 4199770,
+    "fetched": "2026-10-10T15:08:46+00:00",
+    "files": [
+      {
+        "path": "source/files/HS13-Aleksejevs-Barkanova.tex",
+        "role": "tex",
+        "sha256": "82d5eb12ccdaecb4cf7e9b9e41d6b419616ae90cd2b5771b148ac8cad0e2b16e",
+        "bytes": 41223
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

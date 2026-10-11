@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1712.08953v1/sections/sec-006",
   "@type": [
     "doco:Section"
   ],
-  "title": "Let Hr be the Iwahori-Hecke algebra of the symmetric group Sr with quadratic",
-  "pageStart": 4,
-  "pageEnd": 4,
+  "title": "Modifications in the degenerate case",
+  "pageStart": 54,
+  "pageEnd": 57,
   "contains": [
     "library/arxiv-1712.08953v1/blocks/prose-sec-006"
   ],
-  "derivedFrom": "library/arxiv-1712.08953v1/manifest",
-  "sourceDocument": "library/arxiv-1712.08953v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1712.08953v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1712.08953v1/manifest.jsonld",
   "provenance": "ingested"
 }

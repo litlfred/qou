@@ -6,15 +6,11 @@
     }
   ],
   "@id": "library/arxiv-hep-th-0006183v1/blocks/prose-sec-001",
-  "@type": [
-    "folio-assistant-core:Prose",
-    "doco:Section"
-  ],
   "kind": "prose",
-  "title": "Renormalization group flow",
-  "pageStart": 3,
-  "pageEnd": 4,
-  "text": "../sections/sec-001-2-renormalization-group-flow.md",
+  "title": "Introduction",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "text": "../sections/sec-001-1-introduction.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0006183v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0006183v1/manifest.jsonld",
   "provenance": "ingested"

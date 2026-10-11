@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1507.03238v3/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1507.03238v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1507.03238v3",
   "contains": [
     "library/arxiv-1507.03238v3/sections/sec-000",
     "library/arxiv-1507.03238v3/sections/sec-001",
@@ -36,8 +41,17 @@
     "library/arxiv-1507.03238v3/sections/sec-027"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1507.03238&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1507.03238v3",
+    "title_source": "slug",
     "source_file": "1507.03238v3.pdf",
     "source_sha256": "1da6a5498c08a521d6f91a617336e0fd9a5aaea0fbcf8d5c0452b2c4d6f52b91",
     "pages": 26,

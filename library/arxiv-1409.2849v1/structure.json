@@ -6,7 +6,8 @@
   "sha256": "7bf9646716fbb2477ff2bc89359ed41e854b9ba1f9c8fae9fd22d277223d0e92",
   "bytes": 1334322,
   "pages": 49,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -324,6 +325,134 @@
   "likely_scanned": false,
   "toc_entries": 19,
   "sections": 15,
-  "chars_total": 84270
+  "chars_total": 84270,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "ising_arxiv.tex",
+   "tex_sections": 25,
+   "overlaid": 13,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.169,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-complex-convergence-and-interpretation-of-the",
+     "title": "Complex convergence and interpretation of the residue",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.942,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-12-the-method-of-joint-cumulants",
+     "title": "The method of joint cumulants",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-13-basic-models",
+     "title": "Basic models",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-31-ellis-newman-lemma-and-deconvolution-of-a-lar",
+     "title": "Ellis-Newman lemma and deconvolution of a large Gaussian noise",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.889,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-32-the-residue-of-mod-gaussian-convergence-as-a",
+     "title": "The residue of mod-Gaussian convergence as a limiting law",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.922,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-33-application-to-the-curie-weiss-model",
+     "title": "Application to the Curie-Weiss model",
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-34-mixed-curie-weiss-ising-model",
+     "title": "Mixed Curie-Weiss-Ising model",
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.889,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-35-sub-critical-changes-of-measures",
+     "title": "Sub-critical changes of measures",
+     "prose_ratio": 0.913,
+     "coverage_ratio": 0.918,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-36-random-walks-changed-in-measure",
+     "title": "Random walks changed in measure",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-41-speed-of-convergence",
+     "title": "Speed of convergence",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-42-local-limit-theorem",
+     "title": "Local limit theorem",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.934,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-51-joint-cumulants-of-the-spins",
+     "title": "Joint cumulants of the spins",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-52-bounds-on-the-cumulants-of-the-magnetization",
+     "title": "Bounds on the cumulants of the magnetization",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

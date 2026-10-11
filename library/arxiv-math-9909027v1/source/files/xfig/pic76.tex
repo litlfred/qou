@@ -1,0 +1,42 @@
+\begin{picture}(0,0)%
+\epsfig{file=ps/pic76.ps}%
+\end{picture}%
+\setlength{\unitlength}{0.00041700in}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined
+% extract first six characters in \fmtname
+\def\x#1#2#3#4#5#6#7\relax{\def\x{#1#2#3#4#5#6}}%
+\expandafter\x\fmtname xxxxxx\relax \def\y{splain}%
+\ifx\x\y   % LaTeX or SliTeX?
+\gdef\SetFigFont#1#2#3{%
+  \ifnum #1<17\tiny\else \ifnum #1<20\small\else
+  \ifnum #1<24\normalsize\else \ifnum #1<29\large\else
+  \ifnum #1<34\Large\else \ifnum #1<41\LARGE\else
+     \huge\fi\fi\fi\fi\fi\fi
+  \csname #3\endcsname}%
+\else
+\gdef\SetFigFont#1#2#3{\begingroup
+  \count@#1\relax \ifnum 25<\count@\count@25\fi
+  \def\x{\endgroup\@setsize\SetFigFont{#2pt}}%
+  \expandafter\x
+    \csname \romannumeral\the\count@ pt\expandafter\endcsname
+    \csname @\romannumeral\the\count@ pt\endcsname
+  \csname #3\endcsname}%
+\fi
+\fi\endgroup
+\begin{picture}(10828,4309)(1179,-4648)
+\put(2392,-4576){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}The tangle $T$.}}}
+\put(8377,-4561){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}The tangle ${\tilde T}$.}}}
+\put(2790,-2210){\makebox(0,0)[lb]{\smash{\special{ps:gsave currentpoint currentpoint translate
+-315.0 rotate neg exch neg exch translate}\SetFigFont{12}{14.4}{rm}$*$\special{ps:currentpoint grestore moveto}}}}
+\put(4105,-2939){\makebox(0,0)[lb]{\smash{\special{ps:gsave currentpoint currentpoint translate
+-15.0 rotate neg exch neg exch translate}\SetFigFont{12}{14.4}{rm}$*$\special{ps:currentpoint grestore moveto}}}}
+\put(4790,-1555){\makebox(0,0)[lb]{\smash{\special{ps:gsave currentpoint currentpoint translate
+-30.0 rotate neg exch neg exch translate}\SetFigFont{12}{14.4}{rm}$*$\special{ps:currentpoint grestore moveto}}}}
+\put(10119,-2985){\makebox(0,0)[lb]{\smash{\special{ps:gsave currentpoint currentpoint translate
+-15.0 rotate neg exch neg exch translate}\SetFigFont{12}{14.4}{rm}$*$\special{ps:currentpoint grestore moveto}}}}
+\put(8819,-2286){\makebox(0,0)[lb]{\smash{\special{ps:gsave currentpoint currentpoint translate
+-315.0 rotate neg exch neg exch translate}\SetFigFont{12}{14.4}{rm}$*$\special{ps:currentpoint grestore moveto}}}}
+\put(10801,-1561){\makebox(0,0)[lb]{\smash{\special{ps:gsave currentpoint currentpoint translate
+-30.0 rotate neg exch neg exch translate}\SetFigFont{12}{14.4}{rm}$*$\special{ps:currentpoint grestore moveto}}}}
+\end{picture}

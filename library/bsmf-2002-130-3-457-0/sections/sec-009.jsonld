@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/bsmf-2002-130-3-457-0/sections/sec-009",
   "@type": [
     "doco:Section"
   ],
-  "title": "Bibliography",
+  "title": "Proof of Theorems 1 and 2",
   "pageStart": 34,
   "pageEnd": 35,
   "contains": [
     "library/bsmf-2002-130-3-457-0/blocks/prose-sec-009"
   ],
-  "derivedFrom": "library/bsmf-2002-130-3-457-0/manifest",
-  "sourceDocument": "library/bsmf-2002-130-3-457-0/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bsmf-2002-130-3-457-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bsmf-2002-130-3-457-0/manifest.jsonld",
   "provenance": "ingested"
 }

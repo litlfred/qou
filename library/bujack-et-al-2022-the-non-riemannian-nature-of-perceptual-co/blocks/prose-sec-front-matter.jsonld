@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-front-matter",
+  "kind": "prose",
+  "title": "Front matter",
+  "pageStart": 1,
+  "pageEnd": 2,
+  "text": "../sections/sec-front-matter.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/manifest.jsonld",
+  "provenance": "ingested"
+}

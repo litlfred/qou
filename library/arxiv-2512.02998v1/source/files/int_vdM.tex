@@ -1,0 +1,451 @@
+\section{Introduction}
+
+
+\subsection{Motivation}
+The notion of \emph{ambient isotopy} is used in classical knot theory
+to distinguish between different knot classes. It follows from a result
+of Fisher \cite[Theorem~15]{fisher_1960} that 
+two knots $\g_1,\g_2\in C^0(\R/\Z,\R^3)$
+are ambiently isotopic if there exists an orientation preserving
+homeomorphism $h:\R^3\to\R^3$ such that $h\circ\g_1=\g_2$. In concrete applications
+it might be hard to come up with such a homeomorphism, but in the smooth category one
+has the following useful stability theorem which to the best of our knowledge
+has first been explicitly stated and proven by Diao et al.\@ who give also credit
+to Ken Millet.
+\begin{externaltheorem}[$C^1$-isotopy stability {\cite[Lemma 3$\cdot$2]{diao-etal_1999},
+\cite{reiter_2005}, \cite[Proposition 3.1]{denne-sullivan_2008}}]
+\label{thm:C1-stability}
+For any immersed embedded curve $\g\in C^1(\R/\Z,\R^3)$ there is some number
+$\epsilon_\g>0$ such that all curves $\eta\in C^1(\R/\Z,\R^3)$ with 
+$\|\g-\eta\|_{C^1} < \epsilon_\g$ are embedded and ambiently isotopic to $\g$.
+\end{externaltheorem}
+This result also follows from the fact that any $C^1$-isotopy can be extended
+to an ambient isotopy in arbitrary dimensions and co-dimensions which was proven\footnote{
+For a proof in the simpler setting of the $C^2$-category see 
+\cite[Chapter 8]{hirsch_1994}.}
+by the first author in \cite{blatt_2009a}. The $C^1$-stability of isotopy is used
+quite frequently in \emph{geometric knot theory} where one produces and investigates
+specific knot representatives as minimizers or critical points of so-called
+knot energies, 
+to obtain more information about their knot classes; see, e.g., the
+surveys 
+\cite{strzelecki-vdm_2013a,strzelecki-etal_2013a,strzelecki-vdm_2014,blatt-reiter_2014,strzelecki-vdm_2018}  
+and the many references therein. 
+However, for the most interesting and mathematically more challenging
+scale-invariant knot energies such as the M\"obius energy\footnote{In addition to 
+scale-invariance the M\"obius energy is also invariant under M\"obius transformations
+of the ambient Euclidean space \cite[Theorem~2.1]{freedman-etal_1994}, which lent
+this energy that name.}
+introduced by O'Hara \cite{ohara_1991a}
+the underlying energy spaces do \emph{not} embed into $C^1$. Therefore,
+one cannot expect, e.g., that minimizing sequences for these energies subconverge
+in $C^1$, so that it is a priori not clear if the limit curves still belong to the
+prescribed knot class. One of our goals in the present paper is therefore
+to develop criteria
+for stability of knot classes at low regularity.
+
+For that we consider the slightly weaker notion
+of \emph{knot equivalence} instead of ambient isotopy. Two knots $\g_1,\g_2\in
+C^0(\R/\Z,\R^3)$ are said to be \emph{equivalent}, denoted by $\g_1\sim\g_2$, if and
+only if there is a homeomorphism $h:\R^3\to\R^3$ such that $h(\g_1(\R/\Z))=\g_2(\R/\Z)$;
+cf.\@ \cite[p. 4]{crowell-fox_1977}. It is known, e.g., that the trefoil knot is not
+ambiently isotopic to its mirror image; see \cite[Theorem~3.39 (b)]{burde-zieschang_2014}. The corresponding reflection, however,
+is an orientation reversing homeomorphism of $\R^3$ mapping the image of the trefoil
+knot onto its mirror image, so that the two knots are equivalent.  So, there are
+more (ambient) isotopy types than knot equivalence classes in knot space. On the other
+hand, if two tame
+arclength parametrized knots are equivalent, then one
+can show that they are either ambiently
+isotopic, or one is ambiently isotopic to the other one's mirror image. 
+
+Gordon and Luecke studied in \cite{gordon-luecke_1989}
+the fundamental groups of the knots' complements, also 
+called \emph{knot groups}, and their peripheral subgroups. Combining their work
+with results of Waldhausen \cite{waldhausen_1968} yields the following sufficient
+criteria for knot equivalence.
+\begin{externaltheorem}[Knot equivalence via knot complements
+{\cite{waldhausen_1968,gordon-luecke_1989}}]\label{thm:gordon-luecke}
+Let  $\g_1,\g_2\in C^0(\R/\Z,\R^3)$ be two tame knots.
+\begin{enumerate}
+\item[\rm (i)] If their complements $\R^3\setminus\g_i(\R/\Z)$, $i=1,2$, are homeomorphic,
+then $\g_1\sim\g_2$.
+\item[\rm (ii)] If $\g_1,\g_2$ are prime and their knot groups 
+$\pi_1(\R^3\setminus\g_i(\R/\Z))$, $i=1,2,$ are isomorphic,  then $\g_1\sim\g_2$. 
+\item[\rm (iii)] If the knot groups $\pi_1(\R^3\setminus\g_i(\R/\Z))$, $i=1,2,$ 
+are isomorphic and if this isomorphism induces isomorphic peripheral subgroups $P_{\g_i}$, $i=1,2,$
+then $\g_1\sim\g_2$ even if the $\g_i$ are composite knots.
+\end{enumerate}
+\end{externaltheorem}
+
+
+Recall that for a set $M\subset\R^n$ with path-connected complement $\R^n\setminus M$
+two closed loops $c_1,c_2\in C^0(\R/\Z,\R^n\setminus M)$ are equivalent if they are
+homotopic, and that the fundamental group $\pi_1(\R^n\setminus M)$ consists of
+the  respective equivalence classes. The group  structure is induced by concatenation
+of closed loops containing a fixed base point in $\R^n\setminus M$. The peripheral
+subgroup $P_M\subset\pi_1(\R^n\setminus M)$ then consists of all equivalence classes that
+possess representative loops arbitrarily close to $M$.
+
+
+\subsection{Isomorphic fundamental groups via localized distortion}
+In order to apply the results on knot equivalence, i.e., Theorem~\ref{thm:gordon-luecke},
+under low regularity assumptions
+we are going to use a localized version of Gromov's distortion \cite{gromov_1978}. 
+For a closed, path-connected set $M\subset\R^n$ its \emph{distortion} is defined as
+the quantity
+\begin{equation}\label{eq:distortion}
+\delta(M):=\sup_{x,y\in M\atop x\not= y}\frac{d_M(x,y)}{|x-y|}
+\qquad\ge 1,
+\end{equation}
+where $d_M(x,y)$ denotes the  
+\emph{intrinsic distance} between the points $x,y$, i.e.,
+the length of the shortest curve  in $M$ connecting $x$ with $y$. It is well-known that
+the circle $c_{2\pi}$ satisfies $\delta(c_{2\pi})=\frac{\pi}2$ uniquely minimizing 
+the distortion among all closed curves (see \cite[Proposition 2.1]{kusner-sullivan_1997} 
+for a nice and short proof of that fact).  
+Moreover, any non-trivial tame
+knot $\g\in C^0(\R/\Z,\R^3)$ has distortion at least
+$\frac{5\pi}3$, which was shown by Denne and Sullivan in \cite{denne-sullivan_2009}.
+So, distortion detects knottedness, but it is not useful to distinguish between different
+knots. For example, distortion cannot prevent the pull-tight phenomenon 
+where knotted subarcs of a curve 
+can be scaled down to vanish in the limit without any effect
+on the curve's distortion \cite{mullikin_2007}. In addition, O'Hara constructed infinitely many
+different prime knots with a uniform upper bound on their distortion 
+\cite[Theorem~3.5]{ohara_1992a}.
+On the other hand, Gromov asked if there is a universal bound on the distortion 
+under which \emph{every}
+knot type can be represented.
+This was answered to the negative by Pardon in
+\cite[Theorems 1.1 \& 1.2]{pardon_2011}
+who also points out~\cite[p.~638]{pardon_2011} that there are 
+even wild knots with finite distortion such as \cite[Figure~5]{crowell-fox_1977}.
+
+Nevertheless, a universal bound on a
+localized version of distortion
+together with a comparable $L^\infty$-distance guarantees knot equivalence as
+we will see in Corollary \ref{cor:equiv-knots} below.
+\begin{definition}\label{def:local-distortion}
+For a nonempty closed, path-connected set $M\subset\R^n$ and $r>0$ we define
+the \emph{local distortion of $M$ at scale $r$} as
+\begin{equation}\label{eq:local-distortion}
+\delta(M,r):=\sup_{x,y\in M\atop 0<|x-y|\le 2r}\frac{d_M(x,y)}{|x-y|}.
+\end{equation}
+We say that \emph{$M$ has local distortion strictly below $\varepsilon>0$}
+if there is some $r_M>0$ such that $\delta(M,r_M)<\varepsilon$,
+and we call any such $r_M>0$ an \emph{admissible scale}.
+%The set
+%$M$ is said to have \emph{sub-quarter-circular distortion (SQC)} if \phso{there exists a scale $r_M>0$
+%such that $\delta(M,r_M)<$} \philipp{has local distortion strictly below $\varepsilon = \frac{\pi}{\sqrt{8}}$}.
+\end{definition}
+
+Our first result on fundamental groups is stated for general 
+subsets of $\R^n$ and might therefore
+be of independent interest. Its formulation uses the
+dimension-dependent constant
+\begin{equation}\label{eq:dekster-jung}
+g_n:=\sqrt{\frac{2n-2}n}\arcsin\sqrt{\frac{n}{2n-2}}
+\quad\Fo n\ge 3,
+\end{equation}
+converging in a strictly decreasing manner
+to $g_\infty:=\frac{\pi}{\sqrt{8}}$ as $n\to\infty$. Notice 
+that
+$g_3= \frac2{\sqrt{3}}\arcsin\frac{\sqrt{3}}2
+= \frac{\sqrt{32}}{\sqrt{27}}g_\infty$ equals the
+distortion of one third of a circle, whereas $g_\infty$
+is the distortion of a quarter circle.
+\begin{theorem}[Isomorphic fundamental groups]\label{thm:isomorphic}
+Let $n\ge 3$.
+If two nonempty closed, path-connected sets $M_i\subset\R^n$ 
+with path-connected complements
+$\R^n\setminus M_i$ have local distortion strictly
+below $g_n$
+at scales $r_{M_i}>0$ for $i=1,2$, and satisfy
+\begin{equation}\label{eq:hausdorff}
+\dist_\HH(M_1,M_2)<\frac14 \min\{r_{M_1},r_{M_2}\},
+\end{equation}
+then there exists an isomorphism $J:\pi_1(\R^n\setminus M_1)\to
+\pi_1(\R^n\setminus M_2)$ such that its restriction to the peripheral
+subgroup $P_{M_1}\subset \pi_1(\R^n\setminus M_1)$ maps $P_{M_1}$ isomorphically onto 
+$P_{M_2}\subset \pi_1(\R^n\setminus M_2)$.
+\end{theorem}
+
+
+\subsection{Stability of knot equivalence}
+As an immediate consequence of Theorem~\ref{thm:isomorphic} in combination with
+part (iii) of Theorem~\ref{thm:gordon-luecke} we obtain a simple
+sufficient geometric criterion for knot equivalence.
+\begin{corollary}[Knot equivalence via local distortion]
+\label{cor:equiv-knots}
+Two tame knots $\g_i\in C^0(\R/\Z,\R^3)$ with local 
+distortion 
+ $\delta(\g_i(\R/\Z),r_{\g_i})<g_3$
+at scales $r_{\g_i}>0$
+for $i=1,2$, and
+$\dist_{\HH}(\g_1(\R/\Z),\g_2(\R/\Z))$
+$<\frac 14 \min\{r_{\g_1},r_{\g_2}\}$, are equivalent.
+\end{corollary}
+
+Notice that a small Hausdorff-distance, even an arbitrarily
+small $L^\infty$-distance $\|\g_1-\g_2\|_{L^\infty}$
+\emph{alone} does not guarantee knot equivalence:
+One can insert small knotted arcs at any scale to produce highly complex
+knots arbitrarily close to the round circle. Essential 
+is the combination of controlled local
+distortion at some scales and  
+the Hausdorff-distance bounded in terms of these scales.
+With Corollary \ref{cor:equiv-knots} we can prove 
+the following stability of knot equivalence in the 
+Lipschitz category.
+
+
+\begin{corollary}[Lipschitz stability of knot equivalence]\label{cor:lipschitz-stability}
+Let $\g:\R/\Z\to\R^3$ be an arclength parametrized tame 
+knot with 
+local distortion $\delta(\g(\R/\Z),r_\g)< g_3$
+at scale $r_\g>0$. Then for all $h\in C^{0,1}(\R/\Z,\R^3)$
+there exists $\epsilon_{\g,h}>0$ such that $\g_\epsilon:=\g+\epsilon h$ is
+an immersed knot equivalent to $\g$ for all $|\epsilon| \le \epsilon_{\g,h}$.
+\end{corollary}
+Note that Lipschitz continuous curves are differentiable a.e., and we call such curves
+\emph{immersed} if $v_\g:=\essinf_{u\in\R/\Z}|\g'(u)|>0$.
+
+For $C^1$-knots $\g$ one has, of course, $\delta(\g(\R/\Z),r)\to 1 $ as $r\to 0$, so that
+one finds a scale $r_\g$ sufficiently small so that $\g$ has 
+local distortion strictly below $g_3$.
+In fact, this observation implies a weaker version of Theorem~\ref{thm:C1-stability} where ambient isotopy is replaced by knot equivalence.
+But we will prove here
+that a fractional Sobolev regularity (below $C^1$) suffices, 
+which leads to the following fractional stability result for knot equivalence.
+\begin{corollary}[Fractional stability of knot equivalence]
+\label{cor:fractional-stability}
+For any arclength parametrized knot $\g\in W^{\frac32,2}(\R/\Z,\R^3)$ there exists
+$\epsilon_\g>0$ such that every arclength parametrized
+curve $\eta\in B_{\epsilon_\g}(\g)\subset
+W^{\frac32,2}(\R/\Z,\R^3)$ is a knot equivalent to $\g$.
+\end{corollary}
+The preceding statement can be shown to hold true also
+if $\g$ and
+$\eta$ are only immersed and not necessarily arclength
+parametrized, but we will not discuss the details here.
+Open at this point, however, is if the bound on local 
+distortion in Corollaries \ref{cor:equiv-knots} and 
+\ref{cor:lipschitz-stability} already
+implies tameness of the knots, or some improved regularity. 
+
+
+\subsection{Symmetric critical points for scale-invariant knot energies}
+The fractional Sobolev space $W^{\frac32, 2}(\R/\Z,\R^3)$ is the natural
+energy space for  the 
+\emph{M\"obius energy}
+\begin{equation}\label{eq:emob}
+E_\textnormal{M\"ob}(\g):=\int_{\R/\Z}\int_{\R/\Z}\left(
+\frac1{|\g(s)-\g(t)|^2}-
+\frac{1}{d_\g(\g(s),\g(t))^2}\right)|\g'(s)||\g'(t)|\,dsdt.
+\end{equation}
+Indeed, an arclength parametrized
+curve $\g:\R/\Z\to\R^3$ has finite M\"obius energy  
+%$\emob$ or $\TP_2$ 
+if and only if 
+$\g$ is embedded and of
+class $W^{\frac32,2}(\R/\Z,\R^3)$ as shown in \cite{blatt_2012a} 
+(see 
+\cite[Theorem~3.2 (i)]{gilsbach-vdm_2018} for an explicit a priori bound
+on the fractional seminorm in terms of  the energy). 
+Freedman et al.\@ managed to
+use the M\"obius invariance of $\emob$ to find minimizing knots in any given prime
+knot class \cite[Theorem~4.3]{freedman-etal_1994}.
+Critical points of the M\"obius energy were
+shown to be smooth and even real-analytic 
+\cite{blatt-etal_2016,blatt-vorderobermeier_2019} 
+without using the invariance of $\emob$ under 
+M\"obius transformations. 
+But how can we find critical knots  possibly different from the absolute minimizers? 
+One option is to use symmetry as carried out in \cite{gilsbach-vdm_2018} for 
+O'Hara's
+energies above scale-invariance whose energy spaces \emph{do} 
+embed into $C^1$.
+
+As in that 
+paper we consider here for the M\"obius energy a discrete rotational symmetry. To be
+more precise, for $p\in\N$, $p\ge 2$, we call a 
+curve $\g\in C^0(\R/\Z,\R^3)$
+\emph{($p$-rotationally) symmetric} if and only if
+\begin{equation}
+\label{eq:rot-symm}
+\textstyle
+\Rot_{\frac{2\pi}p}\circ\g(s -\frac1{p})=\g(s)\quad\Foa s\in\R/\Z, 
+\end{equation}
+where $\Rot_{\beta}\in SO(3)$ denotes the rotation about a fixed axis, say,
+the $e_3$-coordinate axis, with rotation angle $\beta$.
+Define for a given knot equivalence class $\mathcal{K}$ the 
+\emph{($p$-rotationally) symmetric
+subset}
+\begin{equation}\label{eq:symmetric-subset}
+\Sigma_p(\mathcal{K}):=\{\eta\in C^{0,1}(\R/\Z,\R^3):|\eta'|>0
+\,\,\textnormal{a.e.},\, [\eta]=\mathcal{K},\,
+\eta\,\,\textnormal{satisfies}\,\eqref{eq:rot-symm}\}.
+\end{equation}
+\begin{theorem}[Symmetric critical prime knots]
+\label{thm:symm-crit-prime}
+If the symmetric subset $\Sigma_p(\mathcal{K})$
+of a prime knot equivalence class $\mathcal{K}$ contains a knot with
+finite M\"obius energy or, equivalently, a 
+$W^{3/2,2}$-knot,
+then
+there exists an arclength parametrized knot $\g\in C^\omega(\R/\Z,\R^3)
+\cap\Sigma_p(\mathcal{K})$
+such that
+\begin{equation}\label{eq:minimizing}
+\emob(\g)=\inf_{\Sigma_p(\mathcal{K})}\emob(\cdot),
+\end{equation}
+and  $\g$ is a critical knot, i.e., $d\emob (\g)[h]=0$ for all
+$h\in W^{\frac32,2}(\R/\Z,\R^3)$. Moreover,
+all torus knot classes $\mathcal{T}(a,b)$ for co-prime $a,b\in\Z\setminus\{0,\pm 1\}$
+contain at least two different critical knots for the M\"obius energy.
+\end{theorem}
+
+One may prove a similar result for other scale-invariant knot energies
+with energy spaces $W^{1+1/p,p}$
+such as those from O'Hara's family; cf.\@ \cite{ohara_1992a,
+blatt-etal_2022b}.
+
+It might be easier to check the symmetries for polygonal
+curves, so instead of a knot with finite M\"obius energy
+we might require in Theorem \ref{thm:symm-crit-prime} that
+$\Sigma_p(\mathcal{K})$ contains a polygonal knot.
+Indeed, 
+smoothing the corners such that the symmetry is preserved 
+yields an immersed embedded smooth
+curve in $\Sigma_p(\mathcal{K})$
+which has finite Möbius energy due 
+to~\cite{blatt_2012a} and the energy's invariance under reparametrization. We do not know, on the other hand, if it suffices
+to assume in Theorem \ref{thm:symm-crit-prime} only
+that $\mathcal{K}$ is tame and that
+$\Sigma_p(\mathcal{K})$ is nonempty.
+
+
+
+We mentioned before that two equivalent arclength parametrized tame
+knots $\g_1,\g_2:\R/\Z\to\R^3$ are either already ambiently isotopic, or
+$\g_1$ is ambiently isotopic to the mirror image $\g_2^*$ of $\g_2$.
+The $O(3)$-invariance of the M\"obius energy therefore
+allows us to 
+strengthen Theorem~\ref{thm:symm-crit-prime} to ambient isotopy
+classes.
+\begin{corollary}[Symmetric critical prime knots in ambient isotopy
+classes] \label{cor:symm-crit-prime}
+Let $\mathcal{K}$ be an ambient isotopy class of prime knots and $\Sigma_p(\mathcal{K})$ be the class of $p$-rotationally symmetric regular Lipschitz
+curves whose ambient isotopy class equals $\mathcal{K}$. If
+$\Sigma_p(\mathcal{K})$ contains a knot of
+finite M\"obius energy, then there is an arclength parametrized
+minimizing real analytic knot in $\Sigma_p(\mathcal{K})$ such that
+\eqref{eq:minimizing} holds, and this knot is $\emob$-critical. If,
+more specifically,
+$\mathcal{K}$ equals the ambient isotopy class of torus knots,
+$\mathcal{T}(a,b)$ for co-prime $a,b\in\Z\setminus\{0,\pm 1\}$, then there
+are at least two such $\emob$-critical knots.
+\end{corollary}
+Kim and Kusner use in \cite{kim-kusner_1993}
+symmetric criticality to construct $\emob$-critical torus 
+knots (even with explicit formulas for their energy values). 
+Their numerical experiments suggest, that
+for (co-prime) parameters $a,b$ with $|a|,|b|>2$ 
+these critical
+points seize to be stable. Analytically, this remains an
+open question. 
+
+
+
+
+\subsection{Strategy and outline of the paper}\label{sec:strategy}
+In Section~\ref{sec:distortion} we analyze the effects
+of the smallness
+condition on local distortion  on general
+closed, path-connected subsets $M\subset\R^n$. For 
+each $x$ near (but not in) $M$ we find
+a direction that ``points away from $M$''. These
+directions are glued together in Section~\ref{sec:pseudo}
+with a partition of unity to construct a kind of
+pseudo-gradient vector field for the distance function $\dist(\cdot,M)$.  We solve
+uniquely and globally two different flow equations with respect
+to this vector field to define homotopies in the complement
+$\R^n\setminus M$ of $M$. These mappings are then used in Section~\ref{sec:iso} 
+for $M:=M_1$ and $M_2$ in combination with the sets' 
+controlled local distortion
+to construct  an
+isomorphism between the fundamental groups
+$\pi_1(\R^n\setminus M_1)$ and $\pi_1(\R^n\setminus M_2)$ as stated in 
+Theorem~\ref{thm:isomorphic}. 
+
+We use in Section~\ref{sec:stability} the immediate Corollary
+\ref{cor:equiv-knots} to prove the Lipschitz stability and fractional stability
+of knot equivalence, i.e., Corollaries \ref{cor:lipschitz-stability} and
+\ref{cor:fractional-stability}. The first one relies on the fact that for curves the smallness condition on local 
+distortion  
+is stable with respect to Lipschitz perturbations. 
+For
+the fractional stability we recall in Corollary \ref{cor:seminorm-bilip}
+that a small local fractional semi-norm of the
+tangent implies a local bilipschitz estimate, which can be turned into a local
+distortion bound for embeddings.
+
+More analytical work is required for the existence
+of symmetric $\emob$-critical prime knots as stated in
+Theorem~\ref{thm:symm-crit-prime}. Since minimizing sequences converge only
+weakly in $W^{\frac32,2}$ to a 
+limit curve, we can \emph{not} relie on the (strong) 
+$W^{\frac32,2}$-stability of Corollary \ref{cor:fractional-stability} to
+guarantee the prescribed knot equivalence class in the limit. Nevertheless, 
+the limiting
+curve $\g$ has finite M\"obius energy because of the energy's lower-semicontinuity, 
+so that we have
+an arclength parametrized tame
+$W^{\frac32,2}$-knot $\g$ as a limit. Exactly as in the proof of
+Corollary \ref{cor:fractional-stability} we therefore find a scale  at which
+$\g$ has its local distortion strictly
+below the universal constant
+$g_3$. The same holds true for all members of
+the minimizing sequence, because each of them is an arclength parametrized
+$W^{\frac32,2}$-knot as well. But the $L^\infty$-convergence of that sequence
+towards $\g$ might be too slow to satisfy the assumptions of Corollary \ref{cor:equiv-knots}
+for any sequence member.
+In other words, the scales at which 
+the members of the minimizing sequence have local 
+distortion below $g_3$
+might decay to zero much faster than their $L^\infty$-distance to $\g$. 
+The analytic reason for that behaviour lies in the fact that we do \emph{not}
+have uniform absolute continuity of the integrals defining the fractional
+semi-norms of the tangents of the minimizing sequence. So, we are led to 
+study possible concentrations in these semi-norms to cut them out, and replace
+the corresponding subarcs of the curves by straight segments. Since such a substitution
+generally destroys the $W^{\frac32,2}$-regularity\footnote{\label{foot:harmonic-substitution}For arclength parametrized embedded curves, $W^{\frac32,2}$-regularity is equivalent to finite Möbius energy according to~\cite{blatt_2012a}.
+Due to~\cite[Corollary~1.3]{freedman-etal_1994}, such a curve has a local bilipschitz constant (cf.\@ Footnote~\ref{foot:bilip}), arbitrarily close to~$1$.
+However, replacing a subarc of a curve 
+by a line is likely to produce sharp corners at its endpoints
+which results in a bilipschitz constant strictly larger 
+than~$1$.},
+a careful analytic
+investigation of that
+procedure based on some subtle BMO-type estimates
+is required in order to keep the local
+distortion of these modified curves under control. This analysis is carried out
+in Section~\ref{sec:harmonic}.
+
+In Section~\ref{sec:compactness} we interpret
+the fractional semi-norms of sequences of $W^{\frac32,2}$-knots as Radon measures
+on $\R/\Z\times\R/\Z$ to pass to a weak limiting  Radon measure in order to analyze
+its set of concentration points.  At  a carefully chosen scale around these 
+concentration points we apply the cutting procedure of 
+Section~\ref{sec:harmonic}
+to members of the minimizing sequence with sufficiently large
+index. The result
+is a weak fractional compactness theorem in the set of symmetric, arclength 
+parametrized $W^{\frac32,2}$-knots (see Theorem~
+\ref{thm:fractional-compactness}), which
+might be of independent interest. This is the main tool in the existence proof
+for symmetric $\emob$-minimizing knots in Section~\ref{sec:symm-critical}. A simple
+symmetrization argument which  uses the invariance of the M\"obius energy under rotations
+then leads to the fact that these minimizing knots are also critical points for
+$\emob$, and therefore are real analytic. This
+finalizes the proof of Theorem~\ref{thm:symm-crit-prime}.

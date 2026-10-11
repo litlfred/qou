@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/roth-lemma/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Chapter 5 ROTH'S LEMMA 1. Introduction Roth bases the proof of his theorem on a general property of polynomials which is to be proved in this chapter. This property is roughly as follows",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/roth-lemma/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "roth-lemma",
   "contains": [
     "library/roth-lemma/sections/sec-000",
     "library/roth-lemma/sections/sec-001",
@@ -12,8 +17,10 @@
     "library/roth-lemma/sections/sec-003"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "roth-lemma",
+    "title_source": "slug",
     "source_file": "roth_lemma.pdf",
     "source_sha256": "c2f2b49f25f359198ca2d549af9a94117bc0de4f8398c85b2352004c5d967c4b",
     "pages": 21,

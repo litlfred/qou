@@ -1,1 +1,0 @@
-The closed-form evaluation

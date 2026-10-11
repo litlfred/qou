@@ -8,159 +8,226 @@ pages: 18-20
 source_pdf: 1908.07065v3.pdf
 source_sha256: c43e413aed71aef1
 doc_brief: "Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN = 2, SU (2) super Yang–Mills"
+text_source: latex
+latex_prose_ratio: 0.947
+latex_coverage_ratio: 1.0
 ---
-As we have argued, Borel sums of quantum periods are solutions to the TBA equations (3.30),(3.55).
-In principle the resummed quantum periods can be computed from these TBA equations by using
-the dictionaries (3.39) and (3.63). In practice, however, these equations are diﬃcult to use. First
-of all, one needs information on the boundary conditions at strong coupling in order to solve the
-equations. In addition, the standard tools to solve these equations numerically converge very
-slowly.
-Let us ﬁrst consider the simplest example at u = 0, where the TBA system collapses to a
-single equation (3.38), which we reproduce here (we have absorbed the factor ξ in (3.38) in the
-angle θ)
-ϵ(θ) =πeθ−
-∫
-R
-log(1 + e−ϵ(θ′))
-π cosh(θ−θ′) dθ′. (3.69)
-The solution can be identiﬁed with the quantum dyon period through the dictionary
-ϵ(θ) = 1
-ℏs(ΠD)(u = 0, ℏ) , ℏ = Π(0)
-D π−1e−θ = 16√π
-Γ
-( 1
-4
-)2 e−θ . (3.70)
-– 17 –
-Furthermore, the asymptotic behavior of the solution ϵ(θ) as θ→∞ is of the form
-ϵ(θ)∼πeθ +
-∑
-n≥1
-ϵ(n)e(1−2n)θ, (3.71)
-whose coeﬃcients are identiﬁed with the quantum corrections to the dyon period
-ϵ(n) = 1
-π2n−1 (Π(0)
-D )2n−1Π(n)
-D . (3.72)
-It turns out that the equation (3.69) admits many possible boundary conditions at θ→−∞ .
-This is in stark contrast to the TBA equations for polynomial potentials studied in [7, 8], where
-the equations themselves ﬁx the behavior of the solutions at θ → −∞. One possibility for
-the boundary conditions at θ→−∞ is the linear behavior (5.28). This type of behavior was
-considered by Zamolodchikov in [19] but in a slightly diﬀerent context, as we will discuss in Sec.
-5 (see also Appendix B). However, it can be seen that this is not well suited for the quantum
-periods we are studying 2. One quick way to see this is that the linear boundary condition with
-P⁄= 0 implies ϵ(1)<−1/3 (c.f. (B.29)), while from the quantum Matone relation (2.27) we ﬁnd
-ϵ(1) = 1
-π Π(0)
-D Π(1)
-D = 1
-2πi
-(
-Π(0)
-A Π(1)
-B − Π(0)
-B Π(1)
-A
-)
-=−1
-3. (3.73)
-It turns out that the appropriate boundary condition in this case is given by
-ϵ(θ) =−2 log
-(
-−2θ
-π
-)
-+··· , θ →−∞ . (3.74)
-This boundary condition for the TBA equation (3.69) was also studied by Zamolodchikov in
-[43]3. One can use a small modiﬁcation of the “dilogarithm trick” of [44] to show that, with the
-boundary condition (3.74), one has indeed (3.73) (in the context of [43], this calculation gives
-the central charge c = 1 for the corresponding sinh-Gordon theory).
-To implement numerically the boundary condition (3.74), we borrow a trick from [19]. We
-deﬁne a continuous function
-f1(θ) =−2 log
-(
-1 + 2
-π log(1 + e−θ)
-)
-, (3.75)
-which has the same boundary behavior as (3.74) and is exponentially suppressed when θ→ +∞.
-We then look for a function F1(θ) which satisﬁes
-f1(θ) =
-∫
-R
-K(θ−θ′)F1(θ′)dθ′ , K (θ) = 1
-π cosh(θ) . (3.76)
-The generic solution to this linear integral equation is
-F1(θ) = 1
-2
-(
-f1
-(
-θ + iπ
-2
-)
-+f1
-(
-θ− iπ
-2
-))
-. (3.77)
-2In [7] it was also pointed out that (3.69) admits many boundary conditions at θ → −∞. However, it is
-claimed there that the correct boundary condition for the quantum period is precisely of the type (B.14), namely,
-ϵ(θ)∼θ/2 +... for θ→−∞ , which is not quite correct for the reasons explained here.
-3Alternatively we can justify this boundary condition by using the results in section 5, see equation (5.40).
-– 18 –
-ℏ = 1 ℏ = 1/2
-TBA 6.62781 13.47880
-Borel sum 6.62781917 ... 13.47880936...
-Table 5: Quantum dyon period at u = 0.
-ℏ = 1 ℏ = 1/2
-TBA 9 .16476 18 .61486
-Borel sum 9 .16476545... 18.61486738...
-Table 6: Quantum dyon period at u = 1/3.
-For our particular f1(θ), we thus have
-F1(θ) =− log
-(
-1 + 2
-π log(1 + ie−θ)
-)
-− log
-(
-1 + 2
-π log(1− ie−θ)
-)
-. (3.78)
-This is a real function for θ∈ R. The TBA equation (3.69) can then be written as
-ϵ(θ) =πeθ +f1(θ)−
-∫
-R
-dθ′ 1
-π cosh(θ−θ′)
-(
-log(1 + e−ϵ(θ′)) +F1(θ′)
-)
-, (3.79)
-where both boundary conditions at ±∞ are explicitly spelt out.
-The numerical solution to the TBA equation (3.69) converges rather slowly, and we managed
-to obtain 6 stabilised digits for ℏ = 1 and 7 stabilised digits for ℏ = 1/2. These results, on the
-other hand, do agree with the Borel resummation of the quantum dyon period. See Table 5.
-Let us now move away from the point u = 0 but remain in the strong coupling region with
-u∈ (−1, 0)∪ (0, 1). The TBA system (3.33) has two integral equations coupled to each other.
-Nevertheless, at θ → −∞the ﬁrst terms ∝ eθ on the r.h.s. of both equations in (3.33) are
-negligible, and the TBA system also collapses to the single equation (3.69) (with the ﬁrst term
-on the r.h.s. suppressed). Therefore both ϵd(θ),ϵm(θ) should have the same boundary condition
-as (3.74), in other words
-ϵd(θ)∼ϵm(θ)∼− 2 log
-(
-−2θ
-π
-)
-+... , θ →−∞ . (3.80)
-This is corroborated by the fact that the Matone relation (3.73) can be reproduced with this
-boundary behavior by using again a slight modiﬁcation of the “dilogarithm trick” [44]. We use
-again the trick of inserting the pair of f1(θ),F 1(θ′) functions, and we ﬁnd that the numerical
-solution to the TBA system (3.33) has roughly the same speed of convergence as the solution
-to (3.69) for u = 0. We tabulate the results for u = 1/3 in Tables 6,7 and they also agree with
-the Borel sum of the quantum periods. Note that the TBA system is solved with θ∈ R, which
-in light of (3.39) corresponds to real ℏ for the quantum dyon period and to imaginary ℏ for the
-quantum monopole period.
+\label{tbau0}
+
+As we have argued, Borel sums of quantum periods are solutions to the TBA
+equations \eqref{eq:cTBA-1},\eqref{eq:cTBA-2}. In principle the
+resummed quantum periods can be computed from these TBA equations
+by using the dictionaries \eqref{eq:TBA-dict-1} and
+\eqref{eq:TBA-dict-2}. In practice, however, these equations are
+difficult to use. First of all, one needs information on the boundary
+conditions at strong coupling in order to solve the equations. In
+addition, the standard tools to solve these equations numerically
+converge very slowly.
+
+Let us first consider the simplest example at $u=0$, where the TBA
+system collapses to a single equation \eqref{u0TBA}, which we
+reproduce here (we have absorbed the factor $\xi$ in \eqref{u0TBA} in
+the angle $\theta$)
+
+\begin{equation}\label{eq:cTBA-0}
+  \epsilon(\theta) = \pi\re^{\theta} -
+  \int_{\IR}\frac{\log(1+\re^{-\epsilon(\theta')})}
+  {\pi\cosh(\theta-\theta')} 
+  \rd \theta' \, .
+\end{equation}
+
+The solution can be identified with the quantum dyon period through
+the dictionary
+
+\begin{equation}
+  \epsilon(\theta) = \frac{1}{\hbar}s(\Pi_D)(u=0,\hbar) \ ,\quad \hbar =
+  \Pi^{(0)}_D \pi^{-1} \re^{-\theta}={16 \sqrt{\pi} \over \Gamma
+    \left({1\over 4}\right)^2}\re^{-\theta} \ .
+\end{equation}
+
+Furthermore, the asymptotic behavior of the solution
+$\epsilon(\theta)$ as $\theta \rightarrow \infty$ is of the form
+
+\begin{equation}
+  \epsilon(\theta)\sim  \pi \re^{\theta} + \sum_{n \ge 1} \epsilon^{(n)} \re^{(1-2n)\theta}, 
+\end{equation}
+
+whose coefficients are identified with the quantum corrections to the
+dyon period
+
+\begin{equation}
+  \epsilon^{(n)} = \frac{1}{\pi^{2n-1}}(\Pi^{(0)}_D)^{2n-1} \Pi_D^{(n)}
+  \ .
+\end{equation}
+ 
+It turns out that the equation \eqref{eq:cTBA-0} admits many possible
+boundary conditions at $\theta \rightarrow -\infty$. This is in stark
+contrast to the TBA equations for polynomial potentials studied in
+\cite{oper, ims}, where the equations themselves fix the behavior of
+the solutions at $\theta \rightarrow -\infty$. One possibility for the
+boundary conditions at $\theta \rightarrow -\infty$ is the linear
+behavior \eqref{zamobc}. This type of behavior was considered by
+Zamolodchikov in \cite{post-zamo} but in a slightly different context,
+as we will discuss in Sec. \ref{tssst} (see also
+Appendix~\ref{appendixzamo}).  However, it can be seen that this is
+not well suited for the quantum periods we are studying\footnote{In
+  \cite{oper} it was also pointed out that \eqref{eq:cTBA-0} admits
+  many boundary conditions at $\theta \rightarrow -\infty$.  However,
+  it is claimed there that the correct boundary condition for the
+  quantum period is precisely of the type \eqref{bcP}, namely,
+  $\epsilon(\theta)\sim \theta/2+\ldots$ for $\theta\to-\infty$, which
+  is not quite correct for the reasons explained here.}. One quick way
+to see this is that the linear boundary condition with $P \not=0$
+implies $\epsilon^{(1)}<-1/3$ (c.f. \eqref{fqc}), while from the
+quantum Matone relation \eqref{eq:qMatone} we find
+
+\begin{equation}
+\label{matone-u0}
+  \epsilon^{(1)} = \frac{1}{\pi}\Pi_D^{(0)}\Pi_D^{(1)} =
+  \frac{1}{2\pi\ri}\(\Pi_A^{(0)}\Pi_B^{(1)} - \Pi_B^{(0)}\Pi_A^{(1)}\)
+  = -\frac{1}{3}.
+\end{equation}
+
+It turns out that the appropriate boundary condition in this case is
+given by
+
+\begin{equation}\label{eq:bdy-cor}
+  \epsilon(\theta)=-2 \log\left( -{2 \theta \over \pi} \right)
+  +\cdots, \qquad \theta \to -\infty \ .
+\end{equation}
+
+This boundary condition for the TBA equation \eqref{eq:cTBA-0} was
+also studied by Zamolodchikov in
+\cite{zamo-reso}\footnote{Alternatively we can justify this boundary
+  condition by using the results in section~\ref{tssst}, see equation
+  \eqref{eps0}.}.  One can use a small modification of the
+``dilogarithm trick" of \cite{zamo-TBA} to show that, with the
+boundary condition (\ref{eq:bdy-cor}), one has indeed
+(\ref{matone-u0}) (in the context of \cite{zamo-reso}, this
+calculation gives the central charge $c=1$ for the corresponding
+sinh-Gordon theory).
+
+To implement numerically the boundary condition (\ref{eq:bdy-cor}), we
+borrow a trick from \cite{post-zamo}. We define a continuous function
+
+\begin{equation}
+  f_1(\theta) = -2\log\left(1+\frac{2}{\pi}\log(1+\re^{-\theta})\right),
+\end{equation}
+
+ which has the same boundary behavior as
+\eqref{eq:bdy-cor} and is exponentially suppressed when
+$\theta \to +\infty$. We then look for a function $F_1(\theta)$ which
+satisfies
+\begin{equation}
+  f_1(\theta) = \int_{\IR} K(\theta-\theta') F_1(\theta')\rd \theta' \
+  ,\quad K(\theta) = \frac{1}{\pi\cosh(\theta)}\ .
+\end{equation}
+The generic solution to this linear integral equation  is
+
+\begin{equation}
+  F_1(\theta) = \frac{1}{2}\left(f_1\left(\theta+\ri\frac{\pi}{2}\right) +
+  f_1 \left(\theta-\ri\frac{\pi}{2}\right)\right) \ .
+\end{equation}
+
+For our particular $f_1(\theta)$, we thus have
+
+\begin{equation}
+  F_1(\theta) =
+  -\log\left(1+\frac{2}{\pi}\log(1+\ri\re^{-\theta})\right)
+  -\log\left(1+\frac{2}{\pi}\log(1-\ri\re^{-\theta})\right)
+  \ .
+\end{equation}
+
+This is a real function for $\theta\in\IR$. The TBA equation
+\eqref{eq:cTBA-0} can then be written as
+\begin{equation}\label{eq:TBA-SW2}
+  \epsilon(\theta) = \pi \re^{\theta} + f_1(\theta) -
+  \int_{\IR}\rd \theta'
+  \frac{1}{\pi\cosh(\theta-\theta')}
+  \(\log(1+\re^{-\epsilon(\theta')})+F_1(\theta')\) 
+  \ ,
+\end{equation}
+
+where both boundary conditions at $\pm \infty$ are explicitly
+spelt out.
+
+
+
+
+The numerical solution to the
+TBA equation \eqref{eq:cTBA-0} converges rather slowly, and we managed
+to obtain 6 stabilised digits for $\hbar = 1$ and 7 stabilised digits
+for $\hbar = 1/2$. These results, on the other hand, do agree with the
+Borel resummation of the quantum dyon period. See Table~\ref{tb:TBA}.
+
+\begin{table}
+  \centering
+  \begin{tabular}{cll}\toprule
+    &$\hbar = 1$ & $\hbar = 1/2 $\\\midrule
+    TBA & 6.62781 & 13.47880 \\    
+    Borel sum & 6.62781917$\ldots$ & 13.47880936$\ldots$\\
+    \bottomrule
+  \end{tabular}
+  \caption{Quantum dyon period at $u=0$.}\label{tb:TBA}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+Let us now move away from the point $u=0$ but remain in
+the strong coupling region with $u\in (-1,0)\cup(0,1)$. The TBA system
+\eqref{eq:cTBA-1R} has two integral equations coupled to each
+other. Nevertheless, at $\theta \to -\infty$ the first terms
+$\propto \re^{\theta}$ on the r.h.s.\ of both equations in
+\eqref{eq:cTBA-1R} are negligible, and the TBA system also collapses
+to the single equation \eqref{eq:cTBA-0} (with the first term on the
+r.h.s.\ suppressed). Therefore both
+$\epsilon_d(\theta),\epsilon_m(\theta)$ should have the same boundary
+condition as \eqref{eq:bdy-cor}, in other words
+\begin{equation}
+  \epsilon_d(\theta) \sim \epsilon_m(\theta) \sim
+  -2\log\(-\frac{2\theta}{\pi}\) 
+  +\ldots\ ,\quad \theta \to -\infty \ . 
+\end{equation}
+This is corroborated by the fact that the Matone relation
+\eqref{matone-u0} can be reproduced with this boundary behavior by
+using again a slight modification of the ``dilogarithm trick''
+\cite{zamo-TBA}. We use again the trick of inserting the pair of
+$f_1(\theta), F_1(\theta')$ functions, and we find that the numerical
+solution to the TBA system \eqref{eq:cTBA-1R} has roughly the same
+speed of convergence as the solution to \eqref{eq:cTBA-0} for
+$u=0$. We tabulate the results for $u=1/3$ in
+Tables~\ref{tb:dynu1o3},\ref{tb:monu1o3} and they also agree with the
+Borel sum of the quantum periods. Note that the TBA system is solved
+with $\theta \in \IR$, which in light of \eqref{eq:TBA-dict-1}
+corresponds to real $\hbar$ for the quantum dyon period and to
+imaginary $\hbar$ for the quantum monopole period.
+
+\begin{table}
+  \centering
+  \begin{tabular}{c *{2}{>{$}l<{$}}}\toprule
+    & \hbar = 1 & \hbar = 1/2 \\\midrule
+    TBA & 9.16476 & 18.61486 \\
+    Borel sum & 9.16476545\ldots & 18.61486738\ldots \\\bottomrule
+  \end{tabular}
+  \caption{Quantum dyon period at $u=1/3$.}
+  \label{tb:dynu1o3}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{c *{2}{>{$}l<{$}}}\toprule
+    & \hbar = -\ri & \hbar = -\ri/2 \\\midrule
+    TBA & 4.26480 & 8.716486 \\
+    Borel sum & 4.26480153\ldots & 8.716486917\ldots \\\bottomrule
+  \end{tabular}
+  \caption{Quantum monopole period at $u=1/3$.}
+  \label{tb:monu1o3}
+\end{table}

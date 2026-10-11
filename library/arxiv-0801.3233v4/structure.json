@@ -6,7 +6,8 @@
   "sha256": "d98f9d4a9ecb4c5eebb0c99d11ef316dd6431f979744dc8962358df14097cfed",
   "bytes": 741487,
   "pages": 19,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -237,6 +238,95 @@
   "likely_scanned": false,
   "toc_entries": 12,
   "sections": 11,
-  "chars_total": 42133
+  "chars_total": 42133,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "paper.tex",
+   "tex_sections": 7,
+   "overlaid": 7,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-0-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-1-some-background-on-deformation-quantization",
+     "title": "Some background on Deformation Quantization",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-2-poisson-deformations-of-algebraic-varieties",
+     "title": "Poisson Deformations of Algebraic Varieties",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-3-associative-deformations-of-algebraic-varietie",
+     "title": "Associative Deformations of Algebraic Varieties",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-4-deformation-quantization",
+     "title": "Deformation Quantization",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-5-twisted-deformations-of-algebraic-varieties",
+     "title": "Twisted Deformations of Algebraic Varieties",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-6-twisted-deformation-quantization",
+     "title": "Twisted Deformation Quantization",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-appendix-a-dg-lie-algebras-and-deformations",
+     "title": "Appendix A. DG Lie Algebras and Deformations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-appendix-b-the-universal-quantization-map",
+     "title": "Appendix B. The Universal Quantization Map",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-appendix-d-twisted-deformations-and-their-gauge",
+     "title": "Appendix D. Twisted Deformations and their Gauge Gerbes",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

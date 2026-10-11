@@ -5,7 +5,8 @@
   "file": "1411.6062v2.pdf",
   "sha256": "5abd328d027de43ccd396626dcde4f50d0937558a2c639b98cb5b35688f6b8d6",
   "bytes": 247341,
-  "pages": 18
+  "pages": 18,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS",
   "authors_raw": "STA VROS GAROUF ALIDIS AND RINAT KASHAEV",
-  "abstract": "Multi-dimensional state-integrals of products of Faddeev’s quant um diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨ uller t heory and complex Chern–Simons theory. Using the quasi-periodicity property of the quantum dilogarithm, we evaluate 1-dimensional state-integrals at rational points and exp ress the answer in terms of the Rogers dilogarithm, the cyclic (quantum) dilogarithm and ﬁnite st ate-sums at roots of unity. We illustrate our results with the evaluation of the state-inte grals of the 4 1, 5 2 and (−2,3,7) pretzel knots at rational points.",
+  "abstract": "Multi-dimensional state-integrals of products of Faddeev\u2019s quant um diloga- rithms arise frequently in Quantum Topology, quantum Teichm\u00a8 uller t heory and complex Chern\u2013Simons theory. Using the quasi-periodicity property of the quantum dilogarithm, we evaluate 1-dimensional state-integrals at rational points and exp ress the answer in terms of the Rogers dilogarithm, the cyclic (quantum) dilogarithm and \ufb01nite st ate-sums at roots of unity. We illustrate our results with the evaluation of the state-inte grals of the 4 1, 5 2 and (\u22122,3,7) pretzel knots at rational points.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20180908214606-04'00'",
@@ -251,6 +252,105 @@
   "likely_scanned": false,
   "toc_entries": 13,
   "sections": 12,
-  "chars_total": 30023
+  "chars_total": 30023,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "text11.tex",
+   "tex_sections": 11,
+   "overlaid": 8,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-state-integrals-and-their-q-series",
+     "title": "State-integrals and their q-series",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.858,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-12-the-rogers-and-the-cyclic-dilogarithms",
+     "title": "The Rogers and the cyclic dilogarithms",
+     "prose_ratio": 0.829,
+     "coverage_ratio": 0.871,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-13-evaluation-of-state-integrals",
+     "title": "Evaluation of state-integrals",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-14-the-quantum-dilogarithm-at-roots-of-unity",
+     "title": "The quantum dilogarithm at roots of unity",
+     "prose_ratio": 0.93,
+     "coverage_ratio": 0.898,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 0.9,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-2-integrals-of-quasi-periodic-functions",
+     "title": "Integrals of quasi-periodic functions",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-21-some-lemmas-from-complex-analysis",
+     "title": "Some lemmas from complex analysis",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.907,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-22-applications-to-1-dimensional-state-integrals",
+     "title": "Applications to 1-dimensional state-integrals: proof of Theorem 1.1",
+     "prose_ratio": 0.932,
+     "coverage_ratio": 0.918,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-3-proof-of-theorem-19",
+     "title": "Proof of Theorem 1.9",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-appendix-a-some-useful-properties-of-the-quantum",
+     "title": "Appendix A. Some useful properties of the quantum dilogarithm",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1006.1099v3/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1006.1099v3/blocks/prose-sec-005",
   "kind": "prose",
   "title": "Instanton Floer homology",
   "pageStart": 4,
   "pageEnd": 6,
   "text": "../sections/sec-005-15-instanton-floer-homology.md",
-  "derivedFrom": "library/arxiv-1006.1099v3/manifest",
-  "sourceDocument": "library/arxiv-1006.1099v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1006.1099v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1006.1099v3/manifest.jsonld",
   "provenance": "ingested"
 }

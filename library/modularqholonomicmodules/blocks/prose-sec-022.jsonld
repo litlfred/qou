@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/modularqholonomicmodules/blocks/prose-sec-022",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/modularqholonomicmodules/blocks/prose-sec-022",
   "kind": "prose",
   "title": "Residues",
   "pageStart": 43,
   "pageEnd": 45,
   "text": "../sections/sec-022-53-residues.md",
-  "derivedFrom": "library/modularqholonomicmodules/manifest",
-  "sourceDocument": "library/modularqholonomicmodules/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
   "provenance": "ingested"
 }

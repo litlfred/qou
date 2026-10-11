@@ -8,8 +8,8 @@ tags:
     - 8f-ew
     - reorg-2026-10-04
 created_at: 2026-08-02T18:14:05Z
-updated_at: 2026-10-10T07:16:01Z
-parent: qou-8lxd
+updated_at: 2026-10-10T18:10:00Z
+parent: qou-20sx
 ---
 
 ## Question (owner, 2026-08-02)
@@ -122,3 +122,7 @@ fell into).
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-02 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-10-10 — reparented under qou-20sx
+
+Owner decision 7b (ofri, 2026-10-10): the electroweak (`8f-ew`) beans are grouped under `qou-20sx`, the electroweak front's node, instead of directly under the epic `qou-8lxd`. Only the parent changed. Status, scope and body are untouched.

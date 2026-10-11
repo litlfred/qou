@@ -5,7 +5,8 @@
   "file": "1112.0030v2.pdf",
   "sha256": "745f143c2df4734b84589187ebafae38f8df4c1fc71fddee4a5d5a88b30f834a",
   "bytes": 608631,
-  "pages": 46
+  "pages": 46,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,8 +17,8 @@
   },
   "doi": null,
   "title": "Homological algebra of knots and BPS states",
-  "authors_raw": "Sergei Gukov and Marko Stoˇ sić",
-  "abstract": "It is known that knot homologies admit a physical descriptio n as spaces of open BPS states. W e study operators and algebras acting on these spaces. This leads to a very rich story, which involves wall crossing phenomena, algebras of closed BPS states acting on spaces of open BPS states, and deformations of Landau-Ginzburg models. One important application to knot homologies is the existen ce of “colored diﬀerentials” that relate homological invariants of knots colored by diﬀerent representations. Based on this structure, we formulate a li st of properties of the colored HOMFLY homology that categoriﬁes the colored HOMFLY polynomial. By calculating the colored HOMFLY homology for symmetric and anti-symmetric representations, we ﬁnd a remarkable “m irror symmetry” between these triply-graded theories.",
+  "authors_raw": "Sergei Gukov and Marko Sto\u02c7 si\u0107",
+  "abstract": "It is known that knot homologies admit a physical descriptio n as spaces of open BPS states. W e study operators and algebras acting on these spaces. This leads to a very rich story, which involves wall crossing phenomena, algebras of closed BPS states acting on spaces of open BPS states, and deformations of Landau-Ginzburg models. One important application to knot homologies is the existen ce of \u201ccolored di\ufb00erentials\u201d that relate homological invariants of knots colored by di\ufb00erent representations. Based on this structure, we formulate a li st of properties of the colored HOMFLY homology that categori\ufb01es the colored HOMFLY polynomial. By calculating the colored HOMFLY homology for symmetric and anti-symmetric representations, we \ufb01nd a remarkable \u201cm irror symmetry\u201d between these triply-graded theories.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20181022064014-04'00'",
@@ -186,6 +187,64 @@
   "likely_scanned": false,
   "toc_entries": 11,
   "sections": 7,
-  "chars_total": 112049
+  "chars_total": 112049,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "colored_v2.tex",
+   "tex_sections": 24,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-setting-the-stage",
+     "title": "Setting the stage",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-algebra-of-bps-states-and-its-representations",
+     "title": "Algebra of BPS states and its representations",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-b-model-and-matrix-factorizations",
+     "title": "B-model and matrix factorizations",
+     "prose_ratio": 0.619,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-5-mirror-symmetry-for-knots",
+     "title": "Mirror symmetry for knots",
+     "prose_ratio": 0.492,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-appendix-a-notations",
+     "title": "Appendix A. Notations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-appendix-d-computation-of-the-unreduced-homology",
+     "title": "Appendix D. Computation of the unreduced homology of the unknot",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

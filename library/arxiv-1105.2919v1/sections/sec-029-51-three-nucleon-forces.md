@@ -8,12 +8,20 @@ pages: 51-51
 source_pdf: 1105.2919v1.pdf
 source_sha256: 6d94496f2093ddd0
 doc_brief: "Chiral effective field theory and nuclear forces — We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Nuclear three-body forces in ChPT were initially discussed by Weinberg [52] and the 3NF at NNLO was
-ﬁrst derived by van Kolck [70].
-For a 3NF, we have A = 3 and C = 1 and, thus, Eq. (3.4) implies
-ν = 2 + 2L +
-∑
-i
-∆i. (5.1)
-We will use this equation to analyze 3NF contributions order by order.
+Nuclear three-body forces in ChPT were initially discussed
+by Weinberg~\cite{Wei92} and
+the 3NF at NNLO was first derived by van Kolck~\cite{Kol94}.
+
+For a 3NF, we have $A=3$ and $C=1$ and, thus, Eq.~(\ref{eq_nu})
+implies
+\begin{equation}
+\nu = 2 + 2L + 
+\sum_i \Delta_i \,.
+\label{eq_nu3nf}
+\end{equation}
+We will use this equation to analyze 3NF contributions
+order by order.

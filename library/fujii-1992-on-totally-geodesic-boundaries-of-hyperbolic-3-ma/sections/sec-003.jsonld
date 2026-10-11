@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/sections/sec-003",
   "@type": [
     "doco:Section"
   ],
-  "title": "Deformations of the flat structure of the cusp torus of the hyperbolic",
-  "pageStart": 8,
-  "pageEnd": 13,
+  "title": "B.A. EPSTEIN AND R.C. PENNER,",
+  "pageStart": 13,
+  "pageEnd": 14,
   "contains": [
     "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/blocks/prose-sec-003"
   ],
-  "derivedFrom": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/manifest",
-  "sourceDocument": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -8,157 +8,59 @@ pages: 17-19
 source_pdf: 0908.3425v1.pdf
 source_sha256: 5e88d45bbc1c1b9b
 doc_brief: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer — We provide an introduction to the basic concepts of chiral pe rturbation theory and discuss some"
+text_source: latex
+latex_prose_ratio: 0.963
+latex_coverage_ratio: 0.907
 ---
-symmetry breaking happens in QCD. Secondly, we will show tha t a non-vanishing singlet scalar quark
-condensate is a suﬃcient condition for a spontaneous symmet ry breaking in QCD.
-2.2.2 The hadron spectrum
-We saw in Section 2.1.3 that the QCD Lagrangian possesses an S U(3)L × SU(3)R × U(1)V symmetry
-in the chiral limit in which the light quark masses vanish. Fr om symmetry considerations involving the
-HamiltonianH 0
-QCD only, one would naively expect that hadrons organize themse lves into approximately
-degenerate multiplets ﬁtting the dimensionalities of irre ducible representations of the group SU(3) L ×
-SU(3)R×U(1)V . The U(1) V symmetry results in baryon number conservation and leads to a classiﬁcation
-of hadrons into mesons ( B = 0) and baryons ( B = 1). The linear combinations QaV =QaR +QaL and
-QaA = QaR −QaL of the left- and right-handed charge operators commute with H 0
-QCD, have opposite
-parity, and thus for states of positive parity one would expe ct the existence of degenerate states of
-negative parity (parity doubling) which can be seen as follo ws.
-Let |α, +⟩denote an eigenstate of H 0
-QCD and parity with eigenvalues Eα and +1, respectively,
-H 0
-QCD|α, +⟩ = Eα|α, +⟩,
-P |α, +⟩ = |α, +⟩,
-such as, e.g., a member of the ground-state baryon octet (in t he chiral limit). Deﬁning |φaα⟩ =
-QaA|α, +⟩, because of [ H 0
-QCD,Q aA] = 0, we have
-H 0
-QCD|φaα⟩ = H 0
-QCDQaA|α, +⟩=QaAH 0
-QCD|α, +⟩=EαQaA|α, +⟩=Eα|φaα⟩,
-P |φaα⟩ = PQ aAP −1P |α, +⟩= −QaA(+|α, +⟩) = −|φaα⟩.
-The state |φaα⟩can be expanded in terms of the members of a multiplet with neg ative parity,
-|φaα⟩=QaA|α, +⟩= |β, −⟩⟨β, −|QaA|α, +⟩=taβα|β, −⟩.
-However, the low-energy spectrum of baryons does not contai n a degenerate baryon octet of negative
-parity. Naturally the question arises whether the above cha in of arguments is incomplete. Indeed, we
-have tacitly assumed that the ground state of QCD is annihila ted by the generators QaA. Let b†
-α+
-denote an operator creating quanta with the quantum numbers of the state |α, +⟩. Similarly, let b†
-α−
-create degenerate quanta of opposite parity. Expanding
-[QaA,b †
-α+] = b†
-β−taβα,
-the usual chain of arguments then works as
-QaA|α, +⟩=QaAb†
-α+|0⟩=
-(
-[QaA,b †
-α+] +b†
-α+QaA/bracehtipupleft
-/bracehtipdownright/bracehtipdownleft/bracehtipupright
-֒→0
-)
-|0⟩=taβαb†
-β−|0⟩. (63)
-17
-✲
-I3
-✻
-S
-✉
-K −(494)
-✉
-¯K 0(498)
-✉
-π−(140)
-✉ ❥
-π0(135)
-η(549)
-✉
-π+(140)
-✉
-K 0(498)
-✉
-K +(494)
-r-1
-r0
-r1
-r
--1
-r
--1/2
-r
-0
-r
-1/2
-r
-1
-Figure 1: Pseudoscalar meson octet in an ( I3,S ) diagram. Baryon number B = 0. Masses in MeV.
-However, if the ground state is not annihilated byQaA, the reasoning of Eq. (63) does no longer apply. In
-that case the ground state is not invariant under the full sym metry group of the Lagrangian resulting
-in a spontaneous symmetry breaking. In other words, the non- existence of degenerate multiplets of
-opposite parity points to the fact that SU(3) V instead of SU(3) L × SU(3)R is approximately realized as
-a symmetry of the hadrons. Furthermore, the octet of the pseu doscalar mesons is special in the sense
-that the masses of its members are small in comparison with th e corresponding 1 − vector mesons. They
-are the candidates for the Goldstone bosons of a spontaneous symmetry breaking.
-According to the Coleman theorem [Coleman, 1966], the symme try of the ground state determines
-the symmetry of the spectrum, i.e.
-QaV |0⟩=QV |0⟩= 0 (64)
-implies SU(3) V multiplets which can be classiﬁed according to their baryon number. In the reverse
-conclusion, the symmetry of the ground state can be inferred from the symmetry of the spectrum.
-Figures 1 and 2 show the octets of the lowest-lying pseudosca lar-meson states and the lowest-lying
-baryon states of spin-parity 1
-2
-+
-, respectively.
-The axial charges satisfy the commutation relations
-[QaA,Q bA] = ifabcQcV, (65)
-[QaV,Q bA] = ifabcQcA. (66)
-Since the parity doubling is not observed for the low-lying s tates, one assumes that the QaA do not
-annihilate the ground state,
-QaA|0⟩ ⁄= 0, (67)
-i.e., the ground state of QCD is not invariant under “axial” t ransformations. In the present case,
-G = SU(3) L × SU(3)R with nG = 16 and H = SU(3) V with nH = 8 and we expect eight Goldstone
-bosons. According to the Goldstone theorem [Goldstone, 196 1], [Goldstone et al., 1962], to each axial
-generator QaA, which does not annihilate the ground state, corresponds a m assless Goldstone boson
-ﬁeld φa(x) with spin 0, whose symmetry properties are tightly connect ed to the generator in question.
-The Goldstone bosons have the same transformation behavior under parity,
-φa(t,⃗ x) P↦→ −φa(t, −⃗ x), (68)
-18
-✲
-I3
-✻
-S
-✉
-n(940)
-✉
-p(938)
-✉
-Σ −(1197)
-✉ ❥
-Σ 0(1193)
-Λ(1116)
-✉
-Σ +(1189)
-✉
-Ξ −(1321)
-✉
-Ξ 0(1315)
-r0
-r-1
-r-2
-r
--1
-r
--1/2
-r
-0
-r
-1/2
-r
-1
-Figure 2: Baryon octet ( J = 1
-2 ) in an ( I3,S ) diagram. Masses in MeV. Baryon number B = 1.
-i.e., they are pseudoscalars, and transform under the subgr oup H = SU(3) V , which leaves the vacuum
-invariant, as an octet [see Eq. (66)]:
-[QaV,φ b(x)] = ifabcφc(x). (69)
+[]{#subsec_hs label="subsec_hs"} We saw in Section [\[subsubsec_agsl\]](#subsubsec_agsl){reference-type="ref" reference="subsubsec_agsl"} that the QCD Lagrangian possesses an $\mbox{SU(3)}_L\times\mbox{SU(3)}_R\times \mbox{U(1)}_V$ symmetry in the chiral limit in which the light quark masses vanish. From symmetry considerations involving the Hamiltonian $H^0_{\rm QCD}$ only, one would naively expect that hadrons organize themselves into approximately degenerate multiplets fitting the dimensionalities of irreducible representations of the group $\mbox{SU(3)}_L\times\mbox{SU(3)}_R\times\mbox{U(1)}_V$. The $\mbox{U(1)}_V$ symmetry results in baryon number conservation and leads to a classification of hadrons into mesons ($B=0$) and baryons ($B=1$). The linear combinations $Q_{aV}=Q_{aR}+Q_{aL}$ and $Q_{aA}=Q_{aR}-Q_{aL}$ of the left- and right-handed charge operators commute with $H^0_{\rm QCD}$, have opposite parity, and thus for states of positive parity one would expect the existence of degenerate states of negative parity (parity doubling) which can be seen as follows.
+
+Let $|\alpha,+\rangle$ denote an eigenstate of $H^0_{\rm QCD}$ and parity with eigenvalues $E_\alpha$ and $+1$, respectively, $$\begin{aligned}
+H^0_{\rm QCD}|\alpha,+\rangle&=&E_\alpha|\alpha,+\rangle,\\
+P|\alpha,+\rangle&=&|\alpha,+\rangle,
+\end{aligned}$$ such as, e.g., a member of the ground-state baryon octet (in the chiral limit). Defining $|\phi_{a\alpha}\rangle= Q_{aA}|\alpha,+\rangle$, because of $[H^0_{\rm QCD},Q_{aA}]=0$, we have $$\begin{aligned}
+H^0_{\rm QCD}|\phi_{a\alpha}\rangle
+&=&H^0_{\rm QCD} Q_{aA}|\alpha,+\rangle
+= Q_{aA} H^0_{\rm QCD}|\alpha,+\rangle
+= E_\alpha Q_{aA}|\alpha,+\rangle
+= E_\alpha |\phi_{a\alpha}\rangle,\\
+P|\phi_{a\alpha}\rangle&=& PQ_{aA} P^{-1} P|\alpha,+\rangle=-Q_{aA}(+|\alpha,+\rangle)
+=-|\phi_{a\alpha}\rangle.
+\end{aligned}$$ The state $|\phi_{a\alpha}\rangle$ can be expanded in terms of the members of a multiplet with negative parity, $$|\phi_{a\alpha}\rangle=Q_{aA}|\alpha,+\rangle=|\beta,-\rangle\langle\beta,-|
+Q_{aA}|\alpha,+\rangle={t_a}_{\beta\alpha}|\beta,-\rangle.$$ However, the low-energy spectrum of baryons does not contain a degenerate baryon octet of negative parity. Naturally the question arises whether the above chain of arguments is incomplete. Indeed, we have tacitly assumed that the ground state of QCD is annihilated by the generators $Q_{aA}$. Let $b^\dagger_{\alpha+}$ denote an operator creating quanta with the quantum numbers of the state $|\alpha,+\rangle$. Similarly, let $b^\dagger_{\alpha-}$ create degenerate quanta of opposite parity. Expanding $$[Q_{aA},b^\dagger_{\alpha+}]= b^\dagger_{\beta-}{t_a}_{\beta\alpha},$$ the usual chain of arguments then works as $$\begin{aligned}
+\label{2:2:2:pardoub}
+Q_{aA}|\alpha,+\rangle=Q_{aA} b^\dagger_{\alpha+}|0\rangle
+=\Big([Q_{aA},b^\dagger_{\alpha+}]+b_{\alpha+}^\dagger
+\underbrace{Q_{aA}}_{
+\mbox{$\hookrightarrow 0$}}\Big)|0\rangle
+= {t_a}_{\beta\alpha} b_{\beta-}^\dagger |0\rangle.
+\end{aligned}$$ However, if the ground state is *not* annihilated by $Q_{aA}$, the reasoning of Eq. ([\[2:2:2:pardoub\]](#2:2:2:pardoub){reference-type="ref" reference="2:2:2:pardoub"}) does no longer apply. In that case the ground state is not invariant under the full symmetry group of the Lagrangian resulting in a spontaneous symmetry breaking. In other words, the non-existence of degenerate multiplets of opposite parity points to the fact that $\mbox{SU(3)}_V$ instead of $\mbox{SU(3)}_L\times\mbox{SU(3)}_R$ is approximately realized as a symmetry of the hadrons. Furthermore, the octet of the pseudoscalar mesons is special in the sense that the masses of its members are small in comparison with the corresponding $1^-$ vector mesons. They are the candidates for the Goldstone bosons of a spontaneous symmetry breaking.
+
+According to the Coleman theorem [@Coleman:1966:1:1], the symmetry of the ground state determines the symmetry of the spectrum, i.e. $$Q_{aV}|0\rangle =Q_V|0\rangle =0$$ implies $\mbox{SU(3)}_V$ multiplets which can be classified according to their baryon number. In the reverse conclusion, the symmetry of the ground state can be inferred from the symmetry of the spectrum. Figures [1](#2:2:2:fig:meson_octet){reference-type="ref" reference="2:2:2:fig:meson_octet"} and [2](#2:2:2:fig:baryon_octet){reference-type="ref" reference="2:2:2:fig:baryon_octet"} show the octets of the lowest-lying pseudoscalar-meson states and the lowest-lying baryon states of spin-parity $\frac{1}{2}^+$, respectively.
+
+<figure id="2:2:2:fig:meson_octet">
+<div class="center">
+<div class="picture">
+<p>(10,6) (0,0)<span>(1,0)<span>10</span></span> (10,-1)<span><span class="math inline"><em>I</em><sub>3</sub></span></span> (0,0)<span>(0,1)<span>6</span></span> (-1,6)<span><span class="math inline"><em>S</em></span></span> (3,1) (2.5,0.5)<span><span class="math inline"><em>K</em><sup>−</sup>(494)</span></span> (7,1) (6.5,0.5)<span><span class="math inline"><em>K̄</em><sup>0</sup>(498)</span></span> (1,3) (0.5,3.5)<span><span class="math inline"><em>π</em><sup>−</sup>(140)</span></span> (5,3) (5,3) (4.5,3.5)<span><span class="math inline"><em>π</em><sup>0</sup>(135)</span></span> (4.5,2)<span><span class="math inline"><em>η</em>(549)</span></span> (9,3) (8.5,3.5)<span><span class="math inline"><em>π</em><sup>+</sup>(140)</span></span> (3,5) (2.5,4.5)<span><span class="math inline"><em>K</em><sup>0</sup>(498)</span></span> (7,5) (6.5,4.5)<span><span class="math inline"><em>K</em><sup>+</sup>(494)</span></span> (0,1) (-0.5,1)<span>-1</span> (0,3) (-0.5,3)<span>0</span> (0,5) (-0.5,5)<span>1</span> (1,0) (1,-0.5)<span>-1</span> (3,0) (3,-0.5)<span>-1/2</span> (5,0) (5,-0.5)<span>0</span> (7,0) (7,-0.5)<span>1/2</span> (9,0) (9,-0.5)<span>1</span></p>
+</div>
+</div>
+<figcaption><span id="2:2:2:fig:meson_octet" label="2:2:2:fig:meson_octet"></span> Pseudoscalar meson octet in an <span class="math inline">(<em>I</em><sub>3</sub>,<em>S</em>)</span> diagram. Baryon number <span class="math inline"><em>B</em> = 0</span>. Masses in MeV.</figcaption>
+</figure>
+
+<figure id="2:2:2:fig:baryon_octet">
+<div class="center">
+<div class="picture">
+<p>(10,6) (0,0)<span>(1,0)<span>10</span></span> (10,-1)<span><span class="math inline"><em>I</em><sub>3</sub></span></span> (0,0)<span>(0,1)<span>6</span></span> (-1,6)<span><span class="math inline"><em>S</em></span></span> (3,1) (2.5,0.5)<span><span class="math inline"><em>n</em>(940)</span></span> (7,1) (6.5,0.5)<span><span class="math inline"><em>p</em>(938)</span></span> (1,3) (0.5,3.5)<span><span class="math inline"><em>Σ</em><sup>−</sup>(1197)</span></span> (5,3) (5,3) (4.5,3.5)<span><span class="math inline"><em>Σ</em><sup>0</sup>(1193)</span></span> (4.5,2)<span><span class="math inline"><em>Λ</em>(1116)</span></span> (9,3) (8.5,3.5)<span><span class="math inline"><em>Σ</em><sup>+</sup>(1189)</span></span> (3,5) (2.5,4.5)<span><span class="math inline"><em>Ξ</em><sup>−</sup>(1321)</span></span> (7,5) (6.5,4.5)<span><span class="math inline"><em>Ξ</em><sup>0</sup>(1315)</span></span> (0,1) (-0.5,1)<span>0</span> (0,3) (-0.5,3)<span>-1</span> (0,5) (-0.5,5)<span>-2</span> (1,0) (1,-0.5)<span>-1</span> (3,0) (3,-0.5)<span>-1/2</span> (5,0) (5,-0.5)<span>0</span> (7,0) (7,-0.5)<span>1/2</span> (9,0) (9,-0.5)<span>1</span></p>
+</div>
+</div>
+<figcaption><span id="2:2:2:fig:baryon_octet" label="2:2:2:fig:baryon_octet"></span> Baryon octet (<span class="math inline">$J=\frac{1}{2}$</span>) in an <span class="math inline">(<em>I</em><sub>3</sub>,<em>S</em>)</span> diagram. Masses in MeV. Baryon number <span class="math inline"><em>B</em> = 1</span>.</figcaption>
+</figure>
+
+The axial charges satisfy the commutation relations $$\begin{aligned}
+\label{2:2:2:crqaa}
+[Q_{aA},Q_{bA}]&=&if_{abc}Q_{cV},\\
+\label{2:2:2:crqva}
+{[Q_{aV},Q_{bA}]}&=&if_{abc}Q_{cA}.
+\end{aligned}$$ Since the parity doubling is not observed for the low-lying states, one assumes that the $Q_{aA}$ do *not* annihilate the ground state, $$\label{2:2:2:qav}
+Q_{aA}|0\rangle\neq 0,$$ i.e., the ground state of QCD is not invariant under "axial" transformations. In the present case, $G=\mbox{SU(3)}_L\times\mbox{SU(3)}_R$ with $n_G=16$ and $H=\mbox{SU(3)}_V$ with $n_H=8$ and we expect eight Goldstone bosons. According to the Goldstone theorem [@Goldstone:eq:1:1], [@Goldstone:es:1:1], to each axial generator $Q_{aA}$, which does not annihilate the ground state, corresponds a massless Goldstone boson field $\phi_a(x)$ with spin 0, whose symmetry properties are tightly connected to the generator in question. The Goldstone bosons have the same transformation behavior under parity, $$\label{2:2:2:parityphi}
+\phi_a(t,\vec{x})\stackrel{P}{\mapsto}-\phi_a(t,-\vec{x}),$$ i.e., they are pseudoscalars, and transform under the subgroup $H=\mbox{SU(3)}_V$, which leaves the vacuum invariant, as an octet \[see Eq. ([\[2:2:2:crqva\]](#2:2:2:crqva){reference-type="ref" reference="2:2:2:crqva"})\]: $$\label{2:2:2:transformationphiqv}
+[Q_{aV},\phi_b(x)]=if_{abc}\phi_c(x).$$

@@ -5,7 +5,8 @@
   "file": "2605.28781v1.pdf",
   "sha256": "eee6d535af1996ca3f1592e51bba764df3ae6b01e6f7edfdb79a93abb196c08d",
   "bytes": 524780,
-  "pages": 25
+  "pages": 25,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS",
   "authors_raw": "THOMAS F. BLOOM, WILL SAWIN, CARL SCHILDKRAUT, AND DMITRII ZHELEZOV",
-  "abstract": "We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA⊂R(whose elements are algebraic integers in a number field of degree≍log|A|) such that max(|A+A|,|AA|)≤|A| 2−c wherec >0 is an absolute constant. We also disprove the many sums and products conjecture by constructing, for anyk≥3, arbitrarily largeA⊂Rsuch that max(|kA|,|A (k)|)≤|A| C logk log logk for some constantC >0. We obtain similar constructions forp-adics, finite fields, and function fields in positive characteristic, and also obtain new lower bounds for the number of solutions to linear equations in a multiplicative group, and the number of solutions to the unit equation in sufficiently many variables. 1.Introduction Given any finite setAin some ring we define the sum set and product set ofAas A+A={a+b:a,b∈A}andAA={ab:a,b∈A}. The sum-product conjecture in a given ring is that at least one of these must grow near-maximally; more precisely (1.1) max(|A+A|,|AA|)≥|A| 2−o(1) (where theo(1) term tends 0 as|A|→∞). This is often attributed to Erd˝ os and Szemer´ edi, who proved the first results in this direction [13], but it first appeared in the literature in a paper of Erd˝ os in 1976 [10] (in which he says he first made the conjecture 18 months earlier). This question makes sense over any ring (although there are obvious complications in finite rings or rings with zero divisors). Erd˝ os [10] asked this specifically forZ,R, andC, although his main interest was for A⊂Z. Most proofs in the sum-product literature are geometric and combinatorial, using no number theory, and thus apply to any finiteA⊂R; the best result achieved in this direction so far is max(|A+A|,|AA|)≥|A| 4 3 +c−o(1) forA⊂R for some small constantc >0. This was proved withc= 0 by Solymosi [38] and for somec>0 by Konyagin and Shkredov [25]. The value ofchas been improved a number of times since, with the current record ofc= 10 4407 due to Cushman [8]. In this paper we prove that the sum-product conjecture (1.",
+  "abstract": "We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA\u2282R(whose elements are algebraic integers in a number field of degree\u224dlog|A|) such that max(|A+A|,|AA|)\u2264|A| 2\u2212c wherec >0 is an absolute constant. We also disprove the many sums and products conjecture by constructing, for anyk\u22653, arbitrarily largeA\u2282Rsuch that max(|kA|,|A (k)|)\u2264|A| C logk log logk for some constantC >0. We obtain similar constructions forp-adics, finite fields, and function fields in positive characteristic, and also obtain new lower bounds for the number of solutions to linear equations in a multiplicative group, and the number of solutions to the unit equation in sufficiently many variables. 1.Introduction Given any finite setAin some ring we define the sum set and product set ofAas A+A={a+b:a,b\u2208A}andAA={ab:a,b\u2208A}. The sum-product conjecture in a given ring is that at least one of these must grow near-maximally; more precisely (1.1) max(|A+A|,|AA|)\u2265|A| 2\u2212o(1) (where theo(1) term tends 0 as|A|\u2192\u221e). This is often attributed to Erd\u02dd os and Szemer\u00b4 edi, who proved the first results in this direction [13], but it first appeared in the literature in a paper of Erd\u02dd os in 1976 [10] (in which he says he first made the conjecture 18 months earlier). This question makes sense over any ring (although there are obvious complications in finite rings or rings with zero divisors). Erd\u02dd os [10] asked this specifically forZ,R, andC, although his main interest was for A\u2282Z. Most proofs in the sum-product literature are geometric and combinatorial, using no number theory, and thus apply to any finiteA\u2282R; the best result achieved in this direction so far is max(|A+A|,|AA|)\u2265|A| 4 3 +c\u2212o(1) forA\u2282R for some small constantc >0. This was proved withc= 0 by Solymosi [38] and for somec>0 by Konyagin and Shkredov [25]. The value ofchas been improved a number of times since, with the current record ofc= 10 4407 due to Cushman [8]. In this paper we prove that the sum-product conjecture (1.",
   "docinfo": {
    "Author": "Thomas F Bloom; Will Sawin; Carl Schildkraut; Dmitrii Zhelezov",
    "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
@@ -335,6 +336,142 @@
   "likely_scanned": false,
   "toc_entries": 18,
   "sections": 17,
-  "chars_total": 58913
+  "chars_total": 58913,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "SPArxiv.tex",
+   "tex_sections": 17,
+   "overlaid": 10,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-11-many-sums-and-products",
+     "title": "Many sums and products",
+     "prose_ratio": 0.218,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.683,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-12-linear-equations-in-a-multiplicative-group",
+     "title": "Linear equations in a multiplicative group",
+     "prose_ratio": 0.939,
+     "coverage_ratio": 0.803,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-13-sum-product-in-other-settings",
+     "title": "Sum-product in other settings",
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.833,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-the-role-of-ai-in-this-proof",
+     "title": "The role of AI in this proof",
+     "prose_ratio": 0.905,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 0.891,
+     "coverage_ratio": 0.891,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-2-sketch-of-the-construction",
+     "title": "Sketch of the construction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-31-the-additive-lattice",
+     "title": "The additive lattice",
+     "prose_ratio": 0.299,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-3-algebraic-number-theory",
+     "title": "Algebraic number theory",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.511,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-32-the-unit-lattice",
+     "title": "The unit lattice",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.809,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-4-the-construction",
+     "title": "The construction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.93,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-5-numerical-estimates",
+     "title": "Numerical estimates",
+     "prose_ratio": 0.521,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-6-linear-equations-in-a-multiplicative-group",
+     "title": "Linear equations in a multiplicative group",
+     "prose_ratio": 0.773,
+     "coverage_ratio": 0.27,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-013-7-variants",
+     "title": "Variants",
+     "prose_ratio": 0.209,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-72-finite-fields",
+     "title": "Finite fields",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.494,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-015-73-function-fields",
+     "title": "Function fields",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.756,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

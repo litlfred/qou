@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2211.12836v2/blocks/prose-sec-020",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2211.12836v2/blocks/prose-sec-020",
   "kind": "prose",
   "title": "A.2. the Grassmannian, Schubert variety and intersection",
   "pageStart": 61,
   "pageEnd": 62,
   "text": "../sections/sec-020-a2-the-grassmannian-schubert-variety-and-interse.md",
-  "derivedFrom": "library/arxiv-2211.12836v2/manifest",
-  "sourceDocument": "library/arxiv-2211.12836v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2211.12836v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2211.12836v2/manifest.jsonld",
   "provenance": "ingested"
 }

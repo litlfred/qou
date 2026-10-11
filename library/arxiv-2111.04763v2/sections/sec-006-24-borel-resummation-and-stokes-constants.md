@@ -8,363 +8,218 @@ pages: 12-18
 source_pdf: 2111.04763v2.pdf
 source_sha256: 760a7f9794e8baaa
 doc_brief: "RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION — Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat"
+text_source: latex
+latex_prose_ratio: 0.973
+latex_coverage_ratio: 0.855
 ---
-totic expansion asq= e 2πiτ →1of the vectorG(q)ofq-series and relate it to the vector
-Φ(τ)of the asymptotic series, where
-G(q) =
-
-
-G(2)(q)
-G(1)(q)
-G(0)(q)
-
-,Φ(τ) =
-
-
-Φ(σ0)(τ)
-Φ(σ1)(τ)
-Φ(σ2)(τ)
-
- (30)
-withG (0)(q),G (1)(q)given in (3), and the additional seriesG(2)(q)given in (9).
-The three power seriesΦ(σj )(τ),j= 0,1,2can be resummed by Borel resummation. On
-the other hand, according to the resurgence theory, the value of the Borel resummation of
-an asymptotic power series depends crucially on the argument of the expansion variable. If
-the Borel transform of the power series has a singular point located atι, the values of the
-Borel resummation of the power series whose expansion variable has an argument slightly
-greater and less than the angleθ= argιdiffer by an exponentially small quantity, called
-the Stokes discontinuity. Usually the difference is identical with the Borel resummation of
-another power series in the theory, a phenomenon called the Stokes automorphism.
-In the case of the power seriesΦ(σj )(τ),j= 0,1,2, the singularities of the Borel transforms
-ofΦ (σj )(τ),j= 1,2were already studied in [GGMn21, GGMn], and they are located at
-Λ(σj ) ={ι j,i + 2πik|i= 1,2,i̸=j, k∈Z}∪{2πik|k∈Z ̸=0}, j= 1,2,(31)
-as shown in the middle and the right panels of Fig. 1, while the singularities of the Borel
-transform ofΦ (σ0)(τ)are located at (see also [Gar08a, Conj. 4])
-Λ(σ0) ={ι 0,i + 2πik|i= 1,2, k∈Z},(32)
-RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION 13
-ι1,2
-ϕ(σ1)(τ)
-Λ(σ1)
-ι2,1
-ϕ(σ2)(τ)
-Λ(σ2)
-ι0,2ι0,1
-ϕ(σ0)(τ)
-Λ(σ0)
-Figure 1.Singularities of the Borel transforms ofφ (σj )(τ)forj= 0,1,2of
-the knot4 1.
-as shown in the left panel of Fig. 1, where
-ιj,i = V(σj)−V(σ i)
-2πi , i,j= 0,1,2.(33)
-All the raysρθ (Stokes rays) passing through the singularities in the union
-Λ =∪ j=0,1,2Λ(σj ),(34)
-form a peacock pattern, cf. Fig. 2, and they divide the complex plane of Borel transform
-into infinitely many cones. The Borel resummation of the vectorΦ(τ)is only well-defined
-within one of these cones.
-Recall that the Borel transformbφ(ζ)of a Gevrey-1 power seriesφ(τ)
-φ(τ) =
-∞X
-n=0
-anτn, a n =O(C nn!),(35)
-is defined by
-bφ(ζ) =
-∞X
-n=0
-an
-n!ζn.(36)
-If it analytically continues to anL 1-analytic function along the rayρ θ := e iθR+ where
-θ= argτ, we define the Borel resummation by the Laplace integral
-sθ(φ)(τ) =
-Z ∞
-0
-bφ(τζ)e−ζdζ= 1
-τ
-Z
-ρθ
-bφ(ζ)e−ζ/τ dζ.(37)
-The Borel resummation of the trans-seriesΦ(τ) = e
-V
-2πiτφ(τ)is defined to be
-sθ(Φ)(τ) = e
-V
-2πiτsθ(φ)(τ).(38)
-In the following we will also use the notationsR(Φ)(τ)when the argument ofτis in the cone
-Rand it is a continuous function ofτ.
-14 STAVROS GAROUFALIDIS, JIE GU, MARCOS MARIÑO, AND CAMPBELL WHEELER
-III
-III IV
-Figure 2.Stokes rays and cones in theτ-plane for the 3-vectorΦ(τ)of as-
-ymptotic series of the knot41.
-Coming back to the vector ofq-seriesG(q), we find that the asymptotic expansion ofG(q)
-whenq=e 2πiτ andτ→0in a coneRcan be expressed in terms ofΦ(τ). Moreover, this
-asymptotic expansion can be lifted to an exact identity betweenq-seriesG(j)(q)and linear
-combinations of Borel resummation ofΦ (σj )(τ)multiplied by power series in˜q= e −2πiτ−1
-(thought of as exponentially small corrections) with integer coefficients. This is the content
-of the following conjecture.
-Conjecture 5.For every coneR⊂C\Λand everyτ∈R, we have
-∆′(τ)G(q) =M R(˜q)∆(τ)sR(Φ)(τ),(39)
-where
-∆′(τ) = diag(τ 3/2,τ 1/2,τ−1/2),∆(τ) = diag(τ 3/2,1,1),(40)
-andM R(˜q)is a3×3matrix of˜q(resp.,˜q −1)-series ifImτ >0(resp.,Imτ <0) with integer
-coefficients that depend onR.
-As in [GGMn21, GGMn], we pick out in particular four of these cones, located slightly
-above and below the positive or the negative real axis, labeled in clockwise direction by
-I,II,III,IVas indicated in Fig. 2. We work out the exact matricesM R(˜q)in these four
-cones.
-RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION 15
-Conjecture 6.Equation (39) holds in the conesR=I,II,III,IVwhere the matrices
-MR(˜q)are given in terms ofJ−1(˜q)as follows
-MI(˜q) =J−1(˜q)
-
-
-1 0 0
-0 0−1
-0 1−1
-
-,|˜q|<1,(41a)
-MII (˜q) =
-
-
-1 0 0
-0−1 0
-0 0 1
-
- J−1(˜q)
-
-
-1 0 0
-0 1 0
-0 1−1
-
-,|˜q|<1,(41b)
-MIII (˜q) =
-
-
-1 0 0
-0−1 0
-0 0 1
-
- J−1(˜q)
-
-
-1 1 0
-0−1 0
-0 2 1
-
-,|˜q|>1,(41c)
-MIV (˜q) =J−1(˜q)
-
-
-1 0 1
-0 0−1
-0 1 2
-
-,|˜q|>1.(41d)
-We now discuss the Stokes automorphism. To any singularity in the Borel plane located
-atι (k)
-i,j :=ι i,j + 2πik, we can associate a local Stokes matrix
-Sι(k)
-i,j
-(˜q) =I+S (k)
-i,j ˜qkEi,j,S (k)
-i,j ∈Z,(42)
-whereE i,j is the elementary matrix with(i,j)-entry 1 (i,j= 0,1,2) and all other entries
-zero, andS (k)
-i,j is the Stokes constant. Let us assume thelocalitycondition that no two Borel
-singularities share the same argument, or if there are, their Stokes matrices commute. This
-is indeed the case in our example. Then for any ray of angleθ, the Borel resummations of
-Φ(τ)withτwhose argument is raised slight above (θ +) or lowered sightly below (θ−)θare
-related by the following formula of Stokes automorphism
-∆(τ)sθ+(Φ)(τ) =S θ(˜q)∆(τ)sθ−(Φ)(τ),S θ(˜q) =
-Y
-argι=θ
-Sι(˜q).(43)
-Because of the locality condition, we don’t have to worry about the order of the product of
-local Stokes matrices.
-More generally, consider two raysρθ+ andρ θ− whose arguments satsify0<θ +−θ−≤π,
-we define the global Stokes automorphism
-∆(τ)sθ+(Φ)(τ) =S θ−→θ+(˜q)∆(τ)sθ−(Φ)(τ),(44)
-where both sides are analytically continued smoothly to the same value ofτ. The global
-Stokes matrixSθ−→θ+(˜q)satisfies the factorisation property [GGMn21, GGMn]
-Sθ−→θ+(˜q) =
-←Y
-θ−<θ<θ+
-Sθ(˜q),(45)
-where the ordered product is taken over all the local Stokes matrices whose arguments are
-sandwiched betweenθ−,θ + and they are ordered with rising arguments from right to left.
-16 STAVROS GAROUFALIDIS, JIE GU, MARCOS MARIÑO, AND CAMPBELL WHEELER
-Given (39) with explicit values ofMR(˜q)forR=I,II,III,IV, in general we can calculate
-the global Stokes matrix via
-SR→R′(˜q) =MR′(˜q)−1·MR(˜q).(46)
-Here in the subscript of the global Stokes matrix on the left hand side,Rstands for any ray
-in the cone. For instance, we find that the global Stokes matrix from coneIanti-clockwise
-to coneIIis
-SI→II (˜q) =
-
-
-1 0 0
-0 1 0
-0 1−1
-
- J−1(˜q)−1
-
-
-1 0 0
-0−1 0
-0 0 1
-
- J−1(˜q)
-
-
-1 0 0
-0 0−1
-0 1−1
-
-,|˜q|<1.(47)
-This Stokes matrix has the block upper triangular form
-
-
-1∗ ∗
-0∗ ∗
-0∗ ∗
-
-.(48)
-Let us note that this form implies thatΦ (σj )(τ)(j= 1,2) form a closed subset under
-Stokes automorphisms (this was called in [GMn] a “minimal resurgent structure”). They are
-controled by the2×2submatrix ofS I→II (˜q)in the bottom right and one can verity that it
-is indeed the Stokes matrix in [GGMn21]. In addition we can also extract Stokes constants
-S (k)
-0,j (j= 1,2,k= 1,2,...) responsible for Stokes automorphisms intoΦ (σ0)(τ)from Borel
-singularities in the upper half plane, and collect them in the generating series
-S+
-0,j(˜q) =
-∞X
-k=1
-S (k)
-0,j ˜qk, j= 1,2.(49)
-We find
-S+
-0,1(˜q) =S+
-0,2(˜q) =−G(2)
-0 (˜q)−G(2)
-1 (˜q) +
-
-G(0)
-0 (˜q) +G(0)
-1 (˜q)
-
-G(2)
-0 (˜q)/G(0)
-0 (˜q)
-=−˜q−2˜q2−3˜q3−7˜q4−14˜q5−34˜q6 +....(50)
-Similarly, we find that the global Stokes matrix from coneIIIanti-clockwise to coneIV
-is
-SIII→IV (˜q) =
-
-
-1 0 0
-0−1 1
-0 1 0
-
-·J−1(˜q−1)−1·
-
-
-1 0 0
-0−1 0
-0 0 1
-
-·J−1(˜q−1)·
-
-
-1 0 0
-0 1 0
-0 1 1
-
-,|˜q|>1.
-(51)
-It also has the form as (48), and the2×2submatrix ofS III→IV (˜q)in the bottom right
-is the Stokes matrix given in [GGMn21]. We also extract Stokes constantsS(k)
-0,j (j= 1,2,
-k=−1,−2,...) responsible for Stokes automorphisms intoΦ (σ0)(τ)from Borel singularities
-in the lower half plane, and collect them in the generating series
-S−
-0,j(˜q) =
-−∞X
-k=−1
-S (k)
-0,j ˜qk, j= 1,2.(52)
-RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION 17
-We find
-S−
-0,2(˜q) =−S−
-0,1(˜q) =S+
-0,1(˜q−1).(53)
-We can also use (46) to compute the global Stokes matrixSIV→I (˜q)and we find
-SIV→I =
-
-
-1 0 1
-0 1 3
-0 0 1
-
-.(54)
-Note that this can be identified asS0 associated to the rayρ0 and it can be factorised as
-S0 =S ι0,2Sι1,2,S ι0,2 =
-
-
-1 0 1
-0 1 0
-0 0 1
-
-,S ι1,2 =
-
-
-1 0 0
-0 1 3
-0 0 1
-
-.(55)
-Since the local Stokes matricesSι0,2 andS ι1,2 commute, the locality condition is satisfied.
-We read off the Stoke discontinuity formulas
-disc0Φ(0)(τ) =τ −3/2s(Φ(s2))(τ),
-disc0Φ(1)(τ) = 3s(Φ (s2))(τ),
-(56)
-with
-discθΦ(τ) =s θ+(Φ)(τ)−s θ−(Φ)(τ),(57)
-and the second identity has already appeared in [GH18, GGMn21].
-Finally, in order to compute the global Stokes matrixSII→III (˜q), we need to take into
-account that the odd powers ofτ1/2 on both sides of (39) give rise to additional−1factors
-when one crosses the branch cut at the negative real axis, and (46) should be modified by
-SII→III (˜q) = diag(1,−1,−1)MIII (˜q)−1·MII (˜q),(58)
-and we find
-SII→III =
-
-
-1 1 0
-0 1 0
-0−3 1
-
-.(59)
-Similarly this can be identified asSπ associated to the rayρπ and it can be factorised as
-Sπ =S ι0,1Sι2,1,S ι0,1 =
-
-
-1 1 0
-0 1 0
-0 0 1
-
-,S ι2,1 =
-
-
-1 0 0
-0 1 0
-0−3 1
-
-.(60)
-Note that the local Stokes matricesSι0,1 andS ι2,1 also commute. We read off the Stokes
-discontinuity formulas
-discπΦ(0)(τ) =τ −3/2s(Φ(s1))(τ),
-discπΦ(2)(τ) =−3s(Φ (s1))(τ),
-(61)
-where the second identity has already appeared in [GGMn21].
-18 STAVROS GAROUFALIDIS, JIE GU, MARCOS MARIÑO, AND CAMPBELL WHEELER
+[]{#sub.41borel label="sub.41borel"}
+
+In this section we discuss the asymptotic expansion as $q = {\rm e}^{2\pi{\rm i}\tau}\rightarrow 1$ of the vector $G(q)$ of $q$-series and relate it to the vector $\Phi(\tau)$ of the asymptotic series, where $$G(q) =
+  \begin{pmatrix}
+    G^{(2)}(q) \\
+    G^{(1)}(q) \\
+    G^{(0)}(q)
+  \end{pmatrix}, \qquad
+  \Phi(\tau) =
+  \begin{pmatrix}
+    \Phi^{(\sigma_0)}(\tau)\\
+    \Phi^{(\sigma_1)}(\tau)\\
+    \Phi^{(\sigma_2)}(\tau)
+  \end{pmatrix}
+  \label{eq:Gq}$$ with $G^{(0)}(q), G^{(1)}(q)$ given in [\[G01\]](#G01){reference-type="eqref" reference="G01"}, and the additional series $G^{(2)}(q)$ given in [\[G2\]](#G2){reference-type="eqref" reference="G2"}.
+
+The three power series $\Phi^{(\sigma_j)}(\tau)$, $j=0,1,2$ can be resummed by Borel resummation. On the other hand, according to the resurgence theory, the value of the Borel resummation of an asymptotic power series depends crucially on the argument of the expansion variable. If the Borel transform of the power series has a singular point located at $\iota$, the values of the Borel resummation of the power series whose expansion variable has an argument slightly greater and less than the angle $\theta = \arg \iota$ differ by an exponentially small quantity, called the Stokes discontinuity. Usually the difference is identical with the Borel resummation of another power series in the theory, a phenomenon called the Stokes automorphism.
+
+![Singularities of the Borel transforms of $\varphi^{(\sigma_j)}(\tau)$ for $j=0,1,2$ of the knot $\mathbf{4}_1$.](41_brplane){#fg:41_brplane height="6cm"}
+
+In the case of the power series $\Phi^{(\sigma_j)}(\tau)$, $j=0,1,2$, the singularities of the Borel transforms of $\Phi^{(\sigma_j)}(\tau)$, $j=1,2$ were already studied in [@GGM:resurgent; @GGM:peacock], and they are located at $$\Lambda^{(\sigma_j)} = \{ \iota_{j,i} +2\pi{\rm i}k\;|\; i=1,2,i\neq j,\,
+  k\in\mathbb{Z}\}\cup
+  \{2\pi{\rm i}k\;|\; k\in\mathbb{Z}_{\neq 0}\},\quad j=1,2,
+  \label{eq:Lmb12}$$ as shown in the middle and the right panels of Fig. [1](#fg:41_brplane){reference-type="ref" reference="fg:41_brplane"}, while the singularities of the Borel transform of $\Phi^{(\sigma_0)}(\tau)$ are located at (see also [@Ga:resurgence Conj. 4]) $$\Lambda^{(\sigma_0)} = \{\iota_{0,i} +2\pi{\rm i}k\;|\; i=1,2,\,k\in\mathbb{Z}\},
+  \label{eq:Lmb0}$$ as shown in the left panel of Fig. [1](#fg:41_brplane){reference-type="ref" reference="fg:41_brplane"}, where $$\iota_{j,i} = \frac{V(\sigma_j) - V(\sigma_i)}{2\pi{\rm i}},\quad
+  i,j=0,1,2.$$ All the rays $\rho_\theta$ (Stokes rays) passing through the singularities in the union $$\Lambda = \cup_{j=0,1,2} \Lambda^{(\sigma_j)},
+  \label{eq:Lmb}$$ form a peacock pattern, cf. Fig. [2](#fg:41_rays){reference-type="ref" reference="fg:41_rays"}, and they divide the complex plane of Borel transform into infinitely many cones. The Borel resummation of the vector $\Phi(\tau)$ is only well-defined within one of these cones.
+
+Recall that the Borel transform $\widehat{\varphi}(\zeta)$ of a Gevrey-1 power series $\varphi(\tau)$ $$\varphi(\tau) = \sum_{n=0}^\infty a_n\tau^n,\quad a_n = O(C^n n!),$$ is defined by $$\widehat{\varphi}(\zeta) =\sum_{n=0}^\infty \frac{a_n}{n!}\zeta^n.$$ If it analytically continues to an $L^1$-analytic function along the ray $\rho_\theta:={\rm e}^{{\rm i}\theta}\mathbb{R}_+$ where $\theta = \arg\tau$, we define the Borel resummation by the Laplace integral $$s_\theta(\varphi)(\tau) =
+  \int_0^\infty \widehat{\varphi}(\tau\zeta)
+  {\rm e}^{-\zeta}{\rm d}\zeta =
+  \frac{1}{\tau}\int_{\rho_\theta}
+  \widehat{\varphi}(\zeta){\rm e}^{-\zeta/\tau}{\rm d}
+  \zeta.
+  \label{eq:svarphi}$$ The Borel resummation of the trans-series $\Phi(\tau) =
+{\rm e}^{\frac{V}{2\pi{\rm i}\tau}}\varphi(\tau)$ is defined to be $$s_\theta(\Phi)(\tau) =
+  {\rm e}^{\frac{V}{2\pi{\rm i}\tau}}s_\theta(\varphi)(\tau).
+  \label{eq:sPhi}$$ In the following we will also use the notation $s_R(\Phi)(\tau)$ when the argument of $\tau$ is in the cone $R$ and it is a continuous function of $\tau$.
+
+Coming back to the vector of $q$-series $G(q)$, we find that the asymptotic expansion of $G(q)$ when $q=e^{2\pi{\rm i}\tau}$ and $\tau \to 0$ in a cone $R$ can be expressed in terms of $\Phi(\tau)$. Moreover, this asymptotic expansion can be lifted to an exact identity between $q$-series $G^{(j)}(q)$ and linear combinations of Borel resummation of $\Phi^{(\sigma_j)}(\tau)$ multiplied by power series in $\tilde{q}= {\rm e}^{-2\pi{\rm i}\tau^{-1}}$ (thought of as exponentially small corrections) with integer coefficients. This is the content of the following conjecture.
+
+::: conjecture
+[]{#conj-exact-ra label="conj-exact-ra"} For every cone $R \subset \mathbbm C\setminus \Lambda$ and every $\tau \in R$, we have $$\Delta'(\tau) G(q) = M_R(\tilde{q}) \Delta(\tau)
+    s_R(\Phi)(\tau),
+    \label{eq:GMsPhi}$$ where $$\Delta'(\tau) = \mathrm{diag}(\tau^{3/2},\tau^{1/2},\tau^{-1/2}),\quad
+    \Delta(\tau) = \mathrm{diag}(\tau^{3/2},1,1),$$ and $M_R(\tilde{q})$ is a $3\times 3$ matrix of $\tilde{q}$ (resp., $\tilde{q}^{-1}$)-series if $\mathrm{Im}\tau>0$ (resp., $\mathrm{Im}\tau<0$) with integer coefficients that depend on $R$.
+:::
+
+![Stokes rays and cones in the $\tau$-plane for the 3-vector $\Phi(\tau)$ of asymptotic series of the knot $\mathbf{4}_1$.](41_rays){#fg:41_rays height="8cm"}
+
+As in [@GGM:resurgent; @GGM:peacock], we pick out in particular four of these cones, located slightly above and below the positive or the negative real axis, labeled in clockwise direction by $I,II,III,IV$ as indicated in Fig. [2](#fg:41_rays){reference-type="ref" reference="fg:41_rays"}. We work out the exact matrices $M_R(\tilde{q})$ in these four cones.
+
+::: conjecture
+[]{#conj-exact-regions label="conj-exact-regions"} Equation [\[eq:GMsPhi\]](#eq:GMsPhi){reference-type="eqref" reference="eq:GMsPhi"} holds in the cones $R=I,II,III,IV$ where the matrices $M_R(\tilde{q})$ are given in terms of $\mathbf J_{-1}(\tilde{q})$ as follows $$\begin{align}
+      M_I(\tilde{q}) &=
+      \mathbf J_{-1}(\tilde{q})
+        \begin{pmatrix}
+          1 & 0 & 0\\
+          0 & 0 & -1\\
+          0 & 1 & -1
+        \end{pmatrix}, & |\tilde{q}|<1,
+                  \label{eq:M1}\\
+      M_{II}(\tilde{q}) &=
+      \begin{pmatrix}
+        1 & 0 & 0\\
+        0 & -1& 0\\
+        0 & 0 & 1
+      \end{pmatrix}
+                \mathbf J_{-1}(\tilde{q})
+                \begin{pmatrix}
+                  1&0&0\\
+                  0&1&0\\
+                  0&1&-1
+                \end{pmatrix}, & |\tilde{q}|<1,
+                         \label{eq:M2}\\
+      M_{III}(\tilde{q}) &=
+                     \begin{pmatrix}
+        1 & 0 & 0\\
+        0 & -1& 0\\
+        0 & 0 & 1
+      \end{pmatrix}
+      \mathbf J_{-1}(\tilde{q})
+        \begin{pmatrix}
+          1&1&0\\
+          0&-1&0\\
+          0&2&1
+        \end{pmatrix}, & |\tilde{q}|>1,
+                         \label{eq:M3}\\      
+      M_{IV}(\tilde{q}) &=
+                    \mathbf J_{-1}(\tilde{q})
+    \begin{pmatrix}
+      1&0&1\\
+      0&0&-1\\
+      0&1&2
+    \end{pmatrix}, & |\tilde{q}| >1.
+           \label{eq:M4}
+    \end{align}$$
+:::
+
+We now discuss the Stokes automorphism. To any singularity in the Borel plane located at $\iota_{i,j}^{(k)}:= \iota_{i,j}+2\pi{\rm i}k$, we can associate a local Stokes matrix $$\mathfrak{S}_{\iota_{i,j}^{(k)}}(\tilde{q}) = I + \mathcal{S}_{i,j}^{(k)}\tilde{q}^k
+  E_{i,j},\quad  \mathcal{S}_{i,j}^{(k)}\in\mathbb{Z},$$ where $E_{i,j}$ is the elementary matrix with $(i,j)$-entry 1 ($i,j=0,1,2$) and all other entries zero, and $\mathcal{S}_{i,j}^{(k)}$ is the Stokes constant. Let us assume the *locality* condition that no two Borel singularities share the same argument, or if there are, their Stokes matrices commute. This is indeed the case in our example. Then for any ray of angle $\theta$, the Borel resummations of $\Phi(\tau)$ with $\tau$ whose argument is raised slight above ($\theta_+$) or lowered sightly below ($\theta_-$) $\theta$ are related by the following formula of Stokes automorphism $$\Delta(\tau) s_{\theta_+}(\Phi)(\tau) = \mathfrak{S}_{\theta}(\tilde{q})
+  \Delta(\tau) s_{\theta_-}(\Phi)(\tau),\quad
+  \mathfrak{S}_\theta(\tilde{q}) = \prod_{\arg\iota=\theta}\mathfrak{S}_\iota(\tilde{q}).$$ Because of the locality condition, we don't have to worry about the order of the product of local Stokes matrices.
+
+More generally, consider two rays $\rho_{\theta^+}$ and $\rho_{\theta^-}$ whose arguments satsify $0<\theta^+-\theta^-\leq \pi$, we define the global Stokes automorphism $$\Delta(\tau)s_{\theta^+}(\Phi)(\tau) =
+  \mathfrak{S}_{\theta^-\rightarrow \theta^+}(\tilde{q})
+  \Delta(\tau)s_{\theta^-}(\Phi)(\tau),
+  \label{eq:S-glob}$$ where both sides are analytically continued smoothly to the same value of $\tau$. The global Stokes matrix $\mathfrak{S}_{\theta^-\rightarrow\theta^+}(\tilde{q})$ satisfies the factorisation property [@GGM:resurgent; @GGM:peacock] $$\mathfrak{S}_{\theta^-\rightarrow\theta^+}(\tilde{q}) =
+  \prod_{\theta^-<\theta<\theta^+}^{\leftarrow}
+  \mathfrak{S}_{\theta}(\tilde{q}),
+  \label{eq:S-fac}$$ where the ordered product is taken over all the local Stokes matrices whose arguments are sandwiched between $\theta^-,\theta^+$ and they are ordered with rising arguments from right to left.
+
+Given [\[eq:GMsPhi\]](#eq:GMsPhi){reference-type="eqref" reference="eq:GMsPhi"} with explicit values of $M_R(\tilde{q})$ for $R=I,II,III,IV$, in general we can calculate the global Stokes matrix via $$\mathfrak{S}_{R\rightarrow R'}(\tilde{q}) = M_{R'}(\tilde{q})^{-1}\cdot M_{R}(\tilde{q}).
+  \label{eq:SMM}$$ Here in the subscript of the global Stokes matrix on the left hand side, $R$ stands for any ray in the cone. For instance, we find that the global Stokes matrix from cone $I$ anti-clockwise to cone $II$ is $$\mathfrak{S}_{I\rightarrow II}(\tilde{q}) =
+  \begin{pmatrix}
+    1&0&0\\
+    0&1&0\\
+    0&1&-1
+  \end{pmatrix}
+  \mathbf J_{-1}(\tilde{q})^{-1}
+  \begin{pmatrix}
+    1&0&0\\
+    0&-1&0\\
+    0&0&1
+  \end{pmatrix}
+  \mathbf J_{-1}(\tilde{q})
+  \begin{pmatrix}
+    1&0&0\\
+    0&0&-1\\
+    0&1&-1
+  \end{pmatrix},\quad |\tilde{q}|<1.\label{eq:S12}$$ This Stokes matrix has the block upper triangular form $$\begin{pmatrix}
+    1&*&*\\
+    0&*&*\\
+    0&*&*
+  \end{pmatrix}.\label{eq:1bd}$$ Let us note that this form implies that $\Phi^{(\sigma_j)}(\tau)$ ($j=1,2$) form a closed subset under Stokes automorphisms (this was called in [@GM:top-sting] a "minimal resurgent structure"). They are controled by the $2\times 2$ submatrix of $\mathfrak{S}_{I\rightarrow II}(\tilde{q})$ in the bottom right and one can verity that it is indeed the Stokes matrix in [@GGM:resurgent]. In addition we can also extract Stokes constants $\mathcal{S}_{0,j}^{(k)}$ ($j=1,2$, $k=1,2,\ldots$) responsible for Stokes automorphisms into $\Phi^{(\sigma_0)}(\tau)$ from Borel singularities in the upper half plane, and collect them in the generating series $$\mathsf{S}^+_{0,j}(\tilde{q}) = \sum_{k=1}^\infty
+  \mathcal{S}_{0,j}^{(k)}\tilde{q}^k,\quad j=1,2.$$ We find $$\begin{aligned}
+  \mathsf{S}_{0,1}^+(\tilde{q}) = \mathsf{S}_{0,2}^+(\tilde{q}) =
+  &-G_0^{(2)}(\tilde{q}) - G_1^{(2)}(\tilde{q})
+    +  \left(G_0^{(0)}(\tilde{q})+G_1^{(0)}(\tilde{q})\right)G_0^{(2)}(\tilde{q})
+    /G_0^{(0)}(\tilde{q})\nonumber \\=
+  &-\tilde{q}-2\tilde{q}^2-3\tilde{q}^3-7\tilde{q}^4-14\tilde{q}^5-34\tilde{q}^6+\ldots.
+\end{aligned}$$
+
+Similarly, we find that the global Stokes matrix from cone $III$ anti-clockwise to cone $IV$ is $$\mathfrak{S}_{III\rightarrow IV}(\tilde{q}) =
+  \begin{pmatrix}
+    1&0&0\\
+    0&-1&1\\
+    0&1&0
+  \end{pmatrix}\cdot \mathbf J_{-1}(\tilde{q}^{-1})^{-1}\cdot
+  \begin{pmatrix}
+    1&0&0\\
+    0&-1&0\\
+    0&0&1
+  \end{pmatrix}
+  \cdot \mathbf J_{-1}(\tilde{q}^{-1})\cdot
+  \begin{pmatrix}
+    1&0&0\\
+    0&1&0\\
+    0&1&1
+  \end{pmatrix},\quad |\tilde{q}|>1.\label{eq:S34}$$ It also has the form as [\[eq:1bd\]](#eq:1bd){reference-type="eqref" reference="eq:1bd"}, and the $2\times 2$ submatrix of $\mathfrak{S}_{III\rightarrow IV}(\tilde{q})$ in the bottom right is the Stokes matrix given in [@GGM:resurgent]. We also extract Stokes constants $\mathcal{S}_{0,j}^{(k)}$ ($j=1,2$, $k=-1,-2,\ldots$) responsible for Stokes automorphisms into $\Phi^{(\sigma_0)}(\tau)$ from Borel singularities in the lower half plane, and collect them in the generating series $$\mathsf{S}^-_{0,j}(\tilde{q}) = \sum_{k=-1}^{-\infty}
+  \mathcal{S}_{0,j}^{(k)}\tilde{q}^k,\quad j=1,2.$$ We find $$\begin{aligned}
+  \mathsf{S}_{0,2}^-(\tilde{q}) = -\mathsf{S}_{0,1}^-(\tilde{q}) = \mathsf{S}_{0,1}^+(\tilde{q}^{-1}).
+\end{aligned}$$ We can also use [\[eq:SMM\]](#eq:SMM){reference-type="eqref" reference="eq:SMM"} to compute the global Stokes matrix $\mathfrak{S}_{IV\rightarrow I}(\tilde{q})$ and we find $$\mathfrak{S}_{IV\rightarrow I} = 
+  \begin{pmatrix}
+    1&0&1\\
+    0&1&3\\
+    0&0&1
+  \end{pmatrix}.$$ Note that this can be identified as $\mathfrak{S}_{0}$ associated to the ray $\rho_0$ and it can be factorised as $$\mathfrak{S}_{0} = \mathfrak{S}_{\iota_{0,2}}\mathfrak{S}_{\iota_{1,2}},\quad
+  \mathfrak{S}_{\iota_{0,2}} =
+  \begin{pmatrix}
+    1&0&1\\
+    0&1&0\\
+    0&0&1
+  \end{pmatrix},\quad
+  \mathfrak{S}_{\iota_{1,2}} =
+  \begin{pmatrix}
+    1&0&0\\
+    0&1&3\\
+    0&0&1
+  \end{pmatrix}.$$ Since the local Stokes matrices $\mathfrak{S}_{\iota_{0,2}}$ and $\mathfrak{S}_{\iota_{1,2}}$ commute, the locality condition is satisfied. We read off the Stoke discontinuity formulas
+
+$$\label{disc-pra}
+\begin{aligned}
+  &\text{disc}_0 \Phi^{(0)}(\tau) = \tau^{-3/2}s(\Phi^{(s_2)})(\tau),\\
+  &\text{disc}_0 \Phi^{(1)}(\tau) = 3s(\Phi^{(s_2)})(\tau),
+\end{aligned}$$ with $$\text{disc}_\theta\Phi(\tau) = s_{\theta_+}(\Phi)(\tau) - s_{\theta_-}(\Phi)(\tau),$$ and the second identity has already appeared in [@gh-res; @GGM:resurgent].
+
+Finally, in order to compute the global Stokes matrix $\mathfrak{S}_{II\rightarrow III}(\tilde{q})$, we need to take into account that the odd powers of $\tau^{1/2}$ on both sides of [\[eq:GMsPhi\]](#eq:GMsPhi){reference-type="eqref" reference="eq:GMsPhi"} give rise to additional $-1$ factors when one crosses the branch cut at the negative real axis, and [\[eq:SMM\]](#eq:SMM){reference-type="eqref" reference="eq:SMM"} should be modified by $$\mathfrak{S}_{II\rightarrow III}(\tilde{q}) = \mathrm{diag}(1,-1,-1)
+  M_{III}(\tilde{q})^{-1}\cdot M_{II}(\tilde{q}),$$ and we find $$\mathfrak{S}_{II\rightarrow III} = 
+  \begin{pmatrix}
+    1&1&0\\
+    0&1&0\\
+    0&-3&1
+  \end{pmatrix}.$$ Similarly this can be identified as $\mathfrak{S}_{\pi}$ associated to the ray $\rho_{\pi}$ and it can be factorised as $$\mathfrak{S}_{\pi} = \mathfrak{S}_{\iota_{0,1}}\mathfrak{S}_{\iota_{2,1}},\quad
+  \mathfrak{S}_{\iota_{0,1}} =
+  \begin{pmatrix}
+    1&1&0\\
+    0&1&0\\
+    0&0&1
+  \end{pmatrix},\quad
+  \mathfrak{S}_{\iota_{2,1}} =
+  \begin{pmatrix}
+    1&0&0\\
+    0&1&0\\
+    0&-3&1
+  \end{pmatrix}.$$ Note that the local Stokes matrices $\mathfrak{S}_{\iota_{0,1}}$ and $\mathfrak{S}_{\iota_{2,1}}$ also commute. We read off the Stokes discontinuity formulas $$\label{disc-prb}
+\begin{aligned}
+  &\text{disc}_\pi \Phi^{(0)}(\tau) =
+  \tau^{-3/2}s(\Phi^{(s_1)})(\tau),\\
+  &\text{disc}_\pi \Phi^{(2)}(\tau) = -3s(\Phi^{(s_1)})(\tau),
+\end{aligned}$$ where the second identity has already appeared in [@GGM:resurgent].

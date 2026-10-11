@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1409.0848v3/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Recollections",
+  "pageStart": 6,
+  "pageEnd": 14,
+  "contains": [
+    "library/arxiv-1409.0848v3/blocks/prose-sec-001",
+    "library/arxiv-1409.0848v3/blocks/example-sec-001-01",
+    "library/arxiv-1409.0848v3/blocks/example-sec-001-02",
+    "library/arxiv-1409.0848v3/blocks/remark-sec-001-03",
+    "library/arxiv-1409.0848v3/blocks/example-sec-001-04",
+    "library/arxiv-1409.0848v3/blocks/remark-sec-001-05",
+    "library/arxiv-1409.0848v3/blocks/remark-sec-001-06",
+    "library/arxiv-1409.0848v3/blocks/remark-sec-001-07",
+    "library/arxiv-1409.0848v3/blocks/remark-sec-001-08",
+    "library/arxiv-1409.0848v3/blocks/remark-sec-001-09",
+    "library/arxiv-1409.0848v3/blocks/lem-sec-001-10",
+    "library/arxiv-1409.0848v3/blocks/example-sec-001-11",
+    "library/arxiv-1409.0848v3/blocks/lem-sec-001-12",
+    "library/arxiv-1409.0848v3/blocks/cor-sec-001-13"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1409.0848v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1409.0848v3/manifest.jsonld",
+  "provenance": "ingested"
+}

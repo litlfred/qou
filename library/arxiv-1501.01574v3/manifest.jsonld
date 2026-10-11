@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1501.01574v3/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1501.01574v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1501.01574v3",
   "contains": [
     "library/arxiv-1501.01574v3/sections/sec-000",
     "library/arxiv-1501.01574v3/sections/sec-001",
@@ -28,8 +33,17 @@
     "library/arxiv-1501.01574v3/sections/sec-019"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1501.01574&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1501.01574v3",
+    "title_source": "slug",
     "source_file": "1501.01574v3.pdf",
     "source_sha256": "8af5d6264a0ad5e0fce33b41d7502ba25ad1969ad56e661044f387bdfe537ac3",
     "pages": 31,

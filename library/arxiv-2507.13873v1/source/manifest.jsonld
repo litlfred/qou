@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2507.13873v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Probing the singularity at the holographic screen via $q$-holography (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13873v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2507.13873&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2507.13873v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2507.13873v1",
+    "content_type": "application/gzip",
+    "sha256": "2c931617468f7cde9c9ec2e1e177de919ed6daf0aca566e37caa481d44bd961c",
+    "bytes": 181505,
+    "fetched": "2026-10-10T15:21:29+00:00",
+    "files": [
+      {
+        "path": "source/files/Draftv6.bbl",
+        "role": "bbl",
+        "sha256": "0462c005766fe935637293e48049c08a6a6873a773e820ed9c0ee8dbf45a7cc4",
+        "bytes": 28705
+      },
+      {
+        "path": "source/files/Draftv6.tex",
+        "role": "tex",
+        "sha256": "c686c4827cc96981a26a4527eb8226578019bf1b536b4231447d0c2be1d49e0d",
+        "bytes": 99482
+      },
+      {
+        "path": "source/files/Ramanujan.bib",
+        "role": "bib",
+        "sha256": "d73b1d218cbaa014948791023f62482584030daa05218c8ea9f1b9d28905e8b1",
+        "bytes": 88983
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

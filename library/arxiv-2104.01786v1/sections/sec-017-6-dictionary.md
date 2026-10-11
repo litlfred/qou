@@ -8,7 +8,10 @@ pages: 20-21
 source_pdf: 2104.01786v1.pdf
 source_sha256: 34087d5063ef5507
 doc_brief: "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real"
+text_source: latex
+latex_prose_ratio: 0.9
+latex_coverage_ratio: 1.0
 ---
-We are now ready to provide an explicit dictionary between elementar y particles, organised as
-in (64), and elements of O × ˜O.
-20
+[]{#sec:dictionary label="sec:dictionary"}
+
+We are now ready to provide an explicit dictionary between elementary particles, organised as in ([\[fermions\]](#fermions){reference-type="ref" reference="fermions"}), and elements of ${\mathbb O}\times\tilde{{\mathbb O}}$.

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-hep-th-0006156v1/sections/sec-015",
   "@type": [
     "doco:Section"
   ],
-  "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
-  "pageStart": 6,
-  "pageEnd": 6,
+  "title": "Quantum lattice Liouville equation",
+  "pageStart": 9,
+  "pageEnd": 9,
   "contains": [
     "library/arxiv-hep-th-0006156v1/blocks/prose-sec-015"
   ],
-  "derivedFrom": "library/arxiv-hep-th-0006156v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0006156v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0006156v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0006156v1/manifest.jsonld",
   "provenance": "ingested"
 }

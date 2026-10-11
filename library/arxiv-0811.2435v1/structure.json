@@ -5,7 +5,8 @@
   "file": "0811.2435v1.pdf",
   "sha256": "615b04eca83bcadea694b71a073c1bdb91fa776c2659656e13b2e7b727259bb1",
   "bytes": 1120865,
-  "pages": 148
+  "pages": 148,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -827,6 +828,352 @@
   "likely_scanned": false,
   "toc_entries": 51,
   "sections": 43,
-  "chars_total": 270593
+  "chars_total": 270593,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "DT-22.tex",
+   "tex_sections": 50,
+   "overlaid": 38,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-counting-problems-for-3-dimensional-calabi-yau-v",
+     "title": "Counting problems for 3-dimensional Calabi-Yau varieties",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-non-commutative-varieties-with-polarization",
+     "title": "Non-commutative varieties with polarization",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-donaldson-thomas-invariants-for-non-commutative",
+     "title": "Donaldson-Thomas invariants for non-commutative 3d Calabi-Yau varieties",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-multiplicative-wall-crossing-formula",
+     "title": "Multiplicative wall-crossing formula",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-some-analogies-and-speculations",
+     "title": "Some analogies and speculations",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-about-the-content-of-the-paper",
+     "title": "About the content of the paper",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-stability-conditions-for-graded-lie-algebras",
+     "title": "Stability conditions for graded Lie algebras",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-stability-data",
+     "title": "Stability data",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.937,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-reformulation-of-the-stability-data",
+     "title": "Reformulation of the stability data",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-topology-and-the-wall-crossing-formula",
+     "title": "Topology and the wall-crossing formula",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.948,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-crossing-the-wall-of-second-kind",
+     "title": "Crossing the wall of second kind",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-symplectic-double-torus",
+     "title": "Symplectic double torus",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-complex-integrable-systems-and-stability-data",
+     "title": "Complex integrable systems and stability data",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-relation-with-the-works-of-joyce-and-of-bridgela",
+     "title": "Relation with the works of Joyce, and of Bridgeland and Toledano-Laredo",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-stability-data-on-gln",
+     "title": "Stability data on gl(n)",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-ind-constructible-categories-and-stability-struc",
+     "title": "Ind-constructible categories and stability structures",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-stack-of-objects",
+     "title": "Stack of objects",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-ind-constructible-calabi-yau-categories-and-pote",
+     "title": "Ind-constructible Calabi-Yau categories and potentials",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.935,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-topology-on-the-space-of-stability-structures",
+     "title": "Topology on the space of stability structures",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.937,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-recollection-on-motivic-functions",
+     "title": "Recollection on motivic functions",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-motivic-functions-in-the-equivariant-setting",
+     "title": "Motivic functions in the equivariant setting",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-an-integral-identity",
+     "title": "An integral identity",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-equivalence-relation-on-motivic-functions",
+     "title": "Equivalence relation on motivic functions",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-024-numerical-realization-of-motivic-functions",
+     "title": "Numerical realization of motivic functions",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.932,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-025-orientation-data",
+     "title": "Orientation data",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-026-orientation-data-from-a-splitting-of-bifunctors",
+     "title": "Orientation data from a splitting of bifunctors",
+     "prose_ratio": 0.902,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-027-motivic-donaldson-thomas-invariants",
+     "title": "Motivic Donaldson-Thomas invariants",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-028-motivic-hall-algebra-and-stability-data",
+     "title": "Motivic Hall algebra and stability data",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-029-motivic-weights-and-stability-data-on-motivic-qu",
+     "title": "Motivic weights and stability data on motivic quantum tori",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.942,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-030-from-motivic-hall-algebra-to-motivic-quantum-tor",
+     "title": "From motivic Hall algebra to motivic quantum torus",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-031-examples",
+     "title": "Examples",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.924,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-032-d0-d6-bps-bound-states-an-example-related-to-the",
+     "title": "D0-D6 BPS bound states: an example related to the MacMahon function",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-033-quasi-classical-limit-and-integrality-conjecture",
+     "title": "Quasi-classical limit and integrality conjecture",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-034-quasi-classical-limit-numerical-dt-invariants",
+     "title": "Quasi-classical limit, numerical DT-invariants",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-035-deformation-invariance-and-intermediate-jacobian",
+     "title": "Deformation invariance and intermediate Jacobian",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-036-reduction-to-the-case-of-category-of-modules",
+     "title": "Reduction to the case of category of modules",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-037-evidence-for-the-integrality-conjecture",
+     "title": "Evidence for the integrality conjecture",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-038-spherical-collections-and-mutations",
+     "title": "Spherical collections and mutations",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-039-orientation-data-for-cluster-collections",
+     "title": "Orientation data for cluster collections",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.927,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-040-quantum-dt-invariants-for-quivers",
+     "title": "Quantum DT-invariants for quivers",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.925,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-041-quivers-and-cluster-transformations",
+     "title": "Quivers and cluster transformations",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-042-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

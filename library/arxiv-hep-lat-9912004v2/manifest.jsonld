@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-lat-9912004v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Microscopic Universality and the Chiral Phase Transition in two Flavor QCD F. Farchioni",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-lat-9912004v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-lat-9912004v2",
   "contains": [
+    "library/arxiv-hep-lat-9912004v2/sections/sec-front-matter",
     "library/arxiv-hep-lat-9912004v2/sections/sec-000",
     "library/arxiv-hep-lat-9912004v2/sections/sec-001",
     "library/arxiv-hep-lat-9912004v2/sections/sec-002",
@@ -17,8 +23,17 @@
     "library/arxiv-hep-lat-9912004v2/sections/sec-008"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-lat/9912004&metadataPrefix=arXiv), submitted 2000-03-09, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-hep-lat-9912004v2",
+    "title_source": "slug",
     "source_file": "9912004v2.pdf",
     "source_sha256": "7033719ec7a8a0bc039bb89901312db8d7f59859d85a7c83676bc4228da3da20",
     "pages": 9,

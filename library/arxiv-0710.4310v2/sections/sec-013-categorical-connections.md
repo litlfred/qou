@@ -8,36 +8,28 @@ pages: 17-18
 source_pdf: 0710.4310v2.pdf
 source_sha256: 9a7757f998b7f680
 doc_brief: "On Two-Dimensional Holonomy João Faria Martins Centro de Matemática da Universidade do Porto — We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold ( M, ∗) as the"
+text_source: latex
+latex_prose_ratio: 0.969
+latex_coverage_ratio: 0.985
 ---
-Deﬁnition 26 LetG be a Lie group. Let M be a smooth manifold. Let P →M
-be a smooth principal bundle with structure group G. Denote the right action of
-G onP asg ∈G ↦→Rg ∈ diﬀ(M ). Let also G = (∂ : E →G,⊲ ) be a Lie crossed
-module, where⊲ is a Lie group left action of G onE by automorphisms. Let also
-G = (∂ : e → g,⊲ ) be the associated diﬀerential crossed module. A G-categorical
-connection on P is a pair (ω,m ), where ω is a connection 1-form on P , i.e.
-ω ∈ A1(P, g) is a 1-form on P with values in g such that:
-1. R∗
-g(ω) = g−1ωg, ∀g ∈G,
-2. ω(A#) = A, ∀A ∈ g;
-and m ∈ A2(P, e) is a 2-form on P with values in e, the Lie algebra of E, such
-that:
-1. The 2-form m isG-equivariant. In other words we have R∗
-g(m) = g−1⊲m
-for each g ∈G.
-2. The 2-form m is horizontal, in other words:
-m(X,Y ) = m(XH,Y H ), for each X,Y ∈ X(P ).
-In particular m(Xu,Yu) = 0 if either of the vectors Xu,Yu ∈ TuP is
-vertical, where u ∈ P . Here the map X ∈ X(P ) ↦→XH ∈ X(P ) denotes
-the horizontal projection of vector ﬁelds on P with respect to the connection
-1-form ω.
-17
-Finally we require that
-∂(m) = Ω (9)
-where Ω ∈ A2(P, g) is the curvature 2-form of ω.
-This last condition is of course equivalent to the vanishing of the fake curvature
-of [BS, BrMe]; see 2.2.4.
-Example 27 Let P be any principal G-bundle with a connection 1-form ω.
-Let Ω be the curvature 2-form of ω. If G = (id : G → G,⊲ ), where ⊲ is the
-adjoint action of G onG, then (ω, Ω) is a G-categorical connection on P . More
-generally we can take G to be given by the universal covering map E →G of G;
-see example 9.
+::: Definition
+Let $G$ be a Lie group. Let $M$ be a smooth manifold. Let $P \to M$ be a smooth principal bundle with structure group $G$. Denote the right action of $G$ on $P$ as $g \in G\mapsto {R_g} \in \diff(M)$. Let also ${\Gc=(\d\colon E \to G,\tr)}$ be a Lie crossed module, where $\tr$ is a Lie group left action of $G$ on $E$ by automorphisms. Let also ${\mathfrak{G}=(\d \colon \le \to  \lg,\tr )}$ be the associated differential crossed module. A $\Gc$-categorical connection on $P$ is a pair $(\w,m)$, where $\w$ is a connection 1-form on $P$, i.e. $\w\in \A^1(P,\lg)$ is a $1$-form on $P$ with values in $\lg$ such that:
+
+1.  $R_g^*(\w)=g^{-1}\w g , \forall g \in G,$
+
+2.  $\w(A^\#)=A,\forall A \in \lg$;
+
+and $m\in \A^2(P,\le)$ is a 2-form on $P$ with values in $\le$, the Lie algebra of $E$, such that:
+
+1.  The 2-form $m$ is $G$-equivariant. In other words we have $R_g^*(m)=g^{-1} \tr m$ for each $g \in G$.
+
+2.  The 2-form $m$ is horizontal, in other words: $$m(X,Y)=m(X^H,Y^H), \textrm{ for each } X,Y \in \X(P).$$ In particular $m(X_u,Y_u)=0$ if either of the vectors $X_u,Y_u \in T_u P$ is vertical, where $u \in P$. Here the map $X \in \X(P) \mapsto X^H \in \X(P)$ denotes the horizontal projection of vector fields on $P$ with respect to the connection 1-form $\w$.
+
+Finally we require that $$\d(m)=\W$$ where $\W\in \A^2(P,\lg)$ is the curvature 2-form of $\w$.
+:::
+
+is of course equivalent to the vanishing of the fake curvature of [@BS; @BrMe]; see [\[lform\]](#lform){reference-type="ref" reference="lform"}.
+
+::: Example
+Let $P$ be any principal $G$-bundle with a connection 1-form $\w$. Let $\W$ be the curvature $2$-form of $\w$. If $\Gc=(\id \colon G \to G,\tr)$, where $\tr$ is the adjoint action of $G$ on $G$, then $(\w,\W)$ is a $\Gc$-categorical connection on $P$. More generally we can take $\Gc$ to be given by the universal covering map $E \to G$ of $G$; see example [\[cv\]](#cv){reference-type="ref" reference="cv"}.
+:::

@@ -6,7 +6,8 @@
   "sha256": "4591687132c93973fa7cef71802fea61da8375d3cc6545d0667a8bbeaf20e7bc",
   "bytes": 576529,
   "pages": 41,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -252,6 +253,109 @@
   "likely_scanned": false,
   "toc_entries": 13,
   "sections": 12,
-  "chars_total": 93405
+  "chars_total": 93405,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "revision.tex",
+   "tex_sections": 32,
+   "overlaid": 10,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-1-the-flyspeck-project",
+     "title": "The Flyspeck project",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-2-blueprint-edition-of-the-kepler-conjecture",
+     "title": "Blueprint edition of the Kepler conjecture",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-3-formalizing-the-ordinary-mathematics",
+     "title": "Formalizing the ordinary mathematics",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-4-standard-ml-reimplementation-of-code",
+     "title": "Standard ML reimplementation of code",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-5-proving-nonlinear-inequalities-with-bernstein",
+     "title": "Proving nonlinear inequalities with Bernstein bases",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-6-tame-graph-enumeration",
+     "title": "Tame graph enumeration",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-7-verifying-linear-programs",
+     "title": "Verifying linear programs",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-part-2-addendum-to-and-errata-in-the-original-pr",
+     "title": "Part 2. Addendum to and Errata in the Original Proof",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-8-biconnected-graphs",
+     "title": "Biconnected graphs",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-9-errata-listing",
+     "title": "Errata listing",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

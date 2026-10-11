@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0706.2213v3/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0706.2213v3/blocks/prose-sec-004",
   "kind": "prose",
   "title": "The holonomy representation of a hyperbolic twist knot",
   "pageStart": 5,
   "pageEnd": 6,
   "text": "../sections/sec-004-33-the-holonomy-representation-of-a-hyperbolic-t.md",
-  "derivedFrom": "library/arxiv-0706.2213v3/manifest",
-  "sourceDocument": "library/arxiv-0706.2213v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0706.2213v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0706.2213v3/manifest.jsonld",
   "provenance": "ingested"
 }

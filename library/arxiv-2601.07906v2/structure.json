@@ -6,7 +6,8 @@
   "sha256": "e69b1bf37f2c75b067d792f3b780054879ff55f652bfe2ffdda8738c67a82977",
   "bytes": 1358241,
   "pages": 117,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -581,6 +582,231 @@
   "likely_scanned": false,
   "toc_entries": 33,
   "sections": 31,
-  "chars_total": 265553
+  "chars_total": 265553,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "main.tex",
+   "tex_sections": 22,
+   "overlaid": 19,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-the-statistical-bootstrap",
+     "title": "The statistical bootstrap",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.57,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-kinematic-constraints",
+     "title": "Kinematic constraints",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.9,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-crossing-symmetry-and-modular-invariance",
+     "title": "Crossing symmetry and modular invariance",
+     "prose_ratio": 0.888,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-typicality-and-index-contractions",
+     "title": "Typicality and index contractions",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.912,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-spectral-statistics",
+     "title": "Spectral statistics",
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-summing-over-handlebodies",
+     "title": "Summing over handlebodies",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-the-mapping-class-group",
+     "title": "The mapping class group",
+     "prose_ratio": 0.864,
+     "coverage_ratio": 0.902,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-handlebodies-as-conformal-blocks",
+     "title": "Handlebodies as conformal blocks",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.926,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-the-handlebody-sum-is-crossing-symmetric",
+     "title": "The handlebody sum is crossing symmetric",
+     "prose_ratio": 0.928,
+     "coverage_ratio": 0.923,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-minimal-completion-of-the-handlebody-sum",
+     "title": "Minimal completion of the handlebody sum",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-handlebodies-are-not-sufficient",
+     "title": "Handlebodies are not sufficient",
+     "prose_ratio": 0.903,
+     "coverage_ratio": 0.94,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-the-gravitational-machine",
+     "title": "The gravitational machine",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.915,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-the-gravitational-machine-is-hyperbolic",
+     "title": "The gravitational machine is hyperbolic",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.864,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-what-3-manifolds-are-generated",
+     "title": "What 3-manifolds are generated?",
+     "prose_ratio": 0.911,
+     "coverage_ratio": 0.919,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-the-gravitational-machine-at-work",
+     "title": "The gravitational machine at work",
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-euclidean-wormholes",
+     "title": "Euclidean wormholes",
+     "prose_ratio": 0.883,
+     "coverage_ratio": 0.93,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-handlebody-knots",
+     "title": "Handlebody-knots",
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.94,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-discussion",
+     "title": "Discussion",
+     "prose_ratio": 0.912,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-3-manifold-technology",
+     "title": "3-manifold technology",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-incompressible-surfaces-in-3-manifolds",
+     "title": "(In)compressible surfaces in 3-manifolds",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-wirtinger-presentation-of-fundamental-groups",
+     "title": "Wirtinger presentation of fundamental groups",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-tricolorability-and-handlebodyness",
+     "title": "Tricolorability and handlebodyness",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-the-fundamental-group-of-the-gravitational-machi",
+     "title": "The fundamental group of the gravitational machine",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-what-is-bass-serre-theory",
+     "title": "What is Bass-Serre theory?",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-groups-acting-on-trees",
+     "title": "Groups acting on trees",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-fundamental-theorem-of-bass-serre-theory",
+     "title": "Fundamental theorem of Bass-Serre theory",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-application-to-the-gravitational-machine",
+     "title": "Application to the gravitational machine",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-vtqft-technology",
+     "title": "VTQFT technology",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-virasoro-tqft-identities",
+     "title": "Virasoro TQFT identities",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-kirby-calculus",
+     "title": "Kirby calculus",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

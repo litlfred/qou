@@ -8,265 +8,236 @@ pages: 5-9
 source_pdf: 2205.06874v2.pdf
 source_sha256: 9b41365160c17ab4
 doc_brief: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg — We define a"
+text_source: latex
+latex_prose_ratio: 0.93
+latex_coverage_ratio: 0.652
 ---
-In this section, we summarise background on (bi)module categories, (bi)module functors and (bi)module
-natural transformations from [EGNO, Ch. 7].
-Definition 1.2. LetC,D be multitensor categories with associatorsa :⊗(⊗× id)⇒⊗ (id×⊗ ) and left and
-right unit constraintsl :e⊗ id⇒ id, r : id⊗e⇒ id.
-1. AC-(left) module categoryis a locally finiteC-linear abelian categoryM together with
-• a functor▷ :C×M→M that is C-bilinear on the morphisms and exact in the first variable,
-• natural isomorphismsc :▷(⊗× idM)⇒▷(idC×▷) and γ :e▷−⇒ idM
-such that the following diagrams commute for allx,y,z ∈ ObC and m∈ ObM:
-((x⊗y)⊗z)▷m
-cx⊗y,z,m//
-ax,y,z ▷1m
-
-(x⊗y)▷ (z▷m)
-cx,y,z▷m//x▷ (y▷ (z▷m))
-(x⊗ (y⊗z))▷mcx,y⊗z,m
-//x▷ ((y⊗z)▷m)
-1x▷cy,z,m
-55 (6)
-(x⊗e)▷m
-cx,e,m //
-rX ▷1m
-&&
-x▷ (e▷m)
-1x▷γm
-xx
-x▷m.
-(7)
-2. AD-right module categoryis a locally finiteC-linear abelian categoryM together with
-• a functor◁ :M×D→M that is C-bilinear on the morphisms and exact in the second variable,
-• natural isomorphismsd :◁(◁× idD)⇒◁(idM×⊗ ) and δ :−◁e⇒ idM
-that make the following diagrams commute for allx,y,z ∈ ObD and m∈ ObM
-((m◁x)◁y)◁z
-dm◁x,y,z//
-dm,x,y◁1z
-
-(m◁x)◁ (y⊗z)
-dm,x,y⊗z//m◁ (x⊗ (y⊗z))
-(m◁ (x⊗y))◁zdm,x⊗y,z
-//m◁ ((x⊗y)⊗z)
-1m◁ax,y,z
-55 (8)
-m◁ (e⊗x)
-dm,e,x //
-1m◁lX
-&&
-(m◁e)◁x
-δm◁1x
-xx
-m◁x.
-(9)
-3. A (C,D)-bimodule categoryis a locally finiteC-linear abelian categoryM with
-• aC-left module category structure(▷,c,γ ),
-• aD-right module category structure(◁,d,δ ),
-• a natural isomorphismb :◁(▷× idD)⇒▷(idC×◁)
-such that the following diagrams commute for allx,y∈ ObC, u,v∈ ObD and m∈ ObM
-((x⊗y)▷m)◁u
-bx⊗y,m,u//
-cx,y,m◁1u
-
-(x⊗y)▷ (m◁u)
-cx,y,m◁u//x▷ (y▷ (m◁u))
-(x▷ (y▷m))◁ubx,y▷m,u
-//x▷ ((y▷m)◁u)
-1x▷by,m,u
-55 (10)
-5
-((x▷m)◁u)◁v
-dx▷m,u,v//
-bx,m,u◁1v
-
-(x▷m)◁ (u⊗v)
-bx,m,u⊗v//x▷ (m◁ (u⊗v))
-(x▷ (m◁u))◁vbx,m◁u,v
-//x▷ ((m◁u)◁v).
-1x▷dy,m,u
-55 (11)
-AD-right module category can be defined more succinctly as aDrev-module category and a(C,D)-bimodule
-category as aC⊠Drev-module category, where⊠ is the Deligne product. We expanded the definitions to set
-up notation and introduce the relevant diagrams.
-Remark 1.3. [EGNO, Prop. 7.1.3]
-C-module category structures onM correspond bijectively to monoidal functorsF :C→ End(M). The
-monoidal functor defined by aC-module structure assigns to an objectx inC the endofunctorx▷− :M→M
-and to a morphismα :x→y inC the natural transformationα▷− :x▷−⇒ y▷−. The monoidal structure
-of F is given by the natural isomorphismsγ :e▷−⇒ idM and cx,y,− : (x⊗y)▷−⇒ x▷ (y▷−).
-Example 1.4. Every fusion categoryC is a (C,C)-bimodule category with▷ =◁ =⊗ :C×C→C and
-coherence isomorphismscx,y,z =dx,y,z =bx,y,z =ax,y,z : (x⊗y)⊗z→x⊗ (y⊗z), γx =lx :e⊗x→x and
-δx =rx :x⊗e→x.
-Example 1.5. Any locally finiteC-linear abelian categoryM is a bimodule category over the fusion category
-VectC of finite-dimensional complex vector spaces. ThisVectC-module category structure is unique up to
-bimodule equivalence (cf. Definition 1.8).
-Example 1.6. For any (C,D)-bimodule categoryM over pivotal fusion categoriesC,D the categoryMop is
-a (D,C)-bimodule category with
-◁op =▷(∗× idM)τ :M×C→M ▷op =◁(idM×∗ )τ :D×M→M , (12)
-where∗ :C→C op,rev is the duality functor andτ the flip functor that exchanges the two factors in a cartesian
-product. The coherence isomorphisms are given bycop
-x,y,m =dm,y∗,x∗, dop
-x,y,m =cy∗,x∗,m, bop
-x,m,y =by∗,m,x∗.
-We call it theopposite bimodule categoryM#.
-Example 1.7. [EGNO, Ex. 7.4.10]
-Indecomposable semisimple module categoriesM over the fusion categoryVecG := Vecω≡1
-G , up to equivalence,
-correspond to pairs(X,ψ ) of a finite transitiveG-set X∼=G/L and an elementψ∈H2(L, C×).
-• The objects ofM areX-graded vector spaces.
-• The simple objects ofM are of the formδx for x∈X .
-• The action functor▷ : VecG×M→M is given byδg▷δx =δg▷x on the simple objects.
-• The natural isomorphismc :▷(⊗× id)⇒▷(id×▷) is given byψ∈H2(L, C×).
-Definition 1.8. LetC,D be multitensor categories.
-1. AC-module functorF :M→N betweenC-module categoriesM,N is a C-linear right exact functor
-F :M→N together with a natural isomorphisms :F▷⇒▷(idC×F ) that satisfies the pentagon and
-the triangle axiom: for allx,y∈ ObC and m∈ ObM the following diagrams commute
-F ((x⊗y)▷m)
-F(cx,y,m)
-
-sx⊗y,m// (x⊗y)▷F (m)
-cx,y,F (m)
-//x▷ (y▷F (m))
-F (x▷ (y▷m))sx.y▷m
-//x▷F (y▷m)
-1x▷sy,m
-66 (13)
-F (e▷m)
-F(γm) %%
-se,m //e▷F (m)
-γF(m)
-yy
-F (m).
-(14)
-2. AD-right module functorF :M→N betweenD-right module categoriesM,N is a C-linear right
-exact functorF :M→N together with a natural isomorphismt :◁(F× idD)⇒F◁ that satisfies the
-6
-pentagon and the triangle axiom: for allx,y∈ ObD and m∈ ObM the following diagrams commute
-(F (m)◁x)◁y
-tm,x◁1y
-
-dF(m),x,y
-//F (m)◁ (x⊗y)
-tm,x⊗y//F (m◁ (x⊗y))
-F (m◁x)◁y tm◁x,y
-//F ((m◁x)◁y)
-F(dm,x,y)
-66 (15)
-F (m)◁e
-δF(m) %%
-tm,e //F (m◁e)
-F(δm)yy
-F (m).
-(16)
-3. A (C,D)-bimodule functorbetween (C,D)-bimodule categoriesM,N is a C-linear right exact functor
-F :M→N with aC-module functor structures and aD-right module functor structuret that satisfy
-the hexagon axiom: for allx∈ ObC, y∈ ObD and m∈ ObM the following diagram commutes
-F (x▷m)◁y
-sx,m◁1y
-
-tx▷m,y//F ((x▷m)◁y)
-F(bx,m,y)//F (x▷ (m◁y))
-sx,m◁y
-
-(x▷F (m))◁ybx,F(m),y
-//x▷ (F (m)◁y)1x▷tm,y
-//x▷F (m◁y).
-(17)
-An equivalence of (bi)module categoriesis a (bi)module functor that is an equivalence of categories.
-Definition 1.9. LetC,D be multitensor categories.
-1. AC-module natural transformationν : F ⇒ G forC-module functorsF,G :M→N is a natural
-transformation such that the following diagram commutes for allx∈ ObC and m∈ ObM
-F (x▷m)
-sF
-x,m
-
-νx▷m //G(x▷m)
-sG
-x,m
-
-x▷F (m) 1x▷νm
-//x▷G(m).
-(18)
-2. AD-right module natural transformationν :F⇒G forD-right module functorsF,G :M→N is a
-natural transformation such that the following diagram commutes for allx∈ ObD and m∈ ObM
-F (m)◁x
-tF
-m,x
-
-νm◁1x//G(m)◁x
-tG
-m,x
-
-F (m◁x) νm◁x
-//G(m◁x).
-(19)
-3. A (C,D)-bimodule natural transformationν :F→G between (C,D)-bimodule functorsF,G :M→N
-is a natural transformationν :F⇒G that is aC-module and aD-right module natural transformation.
-ForC-module categoriesM,N we denote byFunC(M,N ) the category ofC-module functorsF :M→N
-andC-module natural transformations between them and writeEndC(M) = FunC(M,M). Analogously,
-for (C,D)-bimodule categoriesM,N, we writeFun(C,D)(M,N ) for the category of(C,D)-bimodule functors
-F :M→N and bimodule natural transformations between them andEnd(C,D)(M) = Fun(C,D)(M,M).
-Composites of (bi)module functors inherit a (bi)module functor structure. IfG :M→N and F :N→P
-are (C,D)-bimodule functors, then the(C,D)-bimodule functor structure forFG :M→P is given by
-sFG =sF (idC×G)◦FsG :FG▷⇒▷(idC×FG ) (20)
-tFG =FtG◦tF (G× idD) :◁(FG× idD)⇒FG◁.
-7
-For all bimodule functorsF,F′ :N→P , G,G′ :M→N and bimodule natural transformationsν :F⇒F′
-and µ : G ⇒ G′ the natural transformations νG : FG ⇒ F′G and Fµ : FG ⇒ FG′ are bimodule
-natural transformations with respect to this bimodule functor structure. As composites of bimodule natural
-transformations are also bimodule natural transformations, it follows that(C,D)-bimodule categories, (C,D)-
-bimodule functors and(C,D)-bimodule natural transformations form a 2-category.
-The following examples show how the data of a (bi)module category can be recovered as coherence data of
-(bi)module functors. They are the categorical counterparts of standard constructions for modules over rings.
-Example 1.10.LetC,D be multitensor categories with (right) centresZ(C),Z(D) andM,N (C,D)-bimodule
-categories.
-1. For anyx∈ ObD the functorF =−◁x :M→M is aC-module functor with coherence isomorphisms
-sc,m =bc,m,x : (c▷m)◁x→c▷ (m◁x). Any morphismα∈ HomD(x,y ) defines aC-module natural
-transformationν =−◁α :−◁x⇒− ◁y. This defines a functorD→ EndC(M).
-2. Ifx∈ ObZ(D) with half-braidingsσd,x :d⊗x→x⊗d, the functorF from 1. becomes a(C,D)-bimodule
-functor withtm,d =d−1
-m,d,x◦(1m◁σ−1
-x,d)◦dm,x,d : (m◁x)◁d→ (m◁d)◁x. Forα∈ HomZ(D)(x,y ) the
-morphismsνm = 1◁α :m◁x→m◁y define a(C,D)-bimodule natural transformationν :−◁x⇒−◁y.
-This defines a functorZ(D)→ End(C,D)(M).
-3. Analogously, forx∈ ObC F =x▷− :M→M with tm,d =bx,m,d : (x▷m)◁d→x▷ (m◁d) is a
-D-right module functor. Any morphismα∈ HomC(x,y ) defines aD-right module natural transformation
-ν =α▷− :x▷−⇒ y▷−. This defines a functorC→ EndDrev(M).
-4. If x∈ ObZ(C) with half-braidings σc,x : c⊗x→ x⊗c, the functor F from 3. becomes a(C,D)-
-bimodule functor withsc,m = cc,x,m◦ (σ−1
-c,x▷ 1m)◦c−1
-x,c,m : x▷ (c▷m)→ c▷ (x▷m). For any
-morphism α∈ HomZ(C)(x,y ) the morphismsνm =α▷ 1m :x▷m→y▷m define aC-module natural
-transformationν :x▷−⇒ y▷−. This defines a functorZ(C)→ End(C,D)(M).
-5. For anyC-module categoryM and m∈ ObM, the functorF =−▷m :C→M is aC-module functor
-with sx,y =cx,y,m : (x⊗y)▷m→x▷ (y▷m). Any morphismα∈ HomM(m,m′) defines aC-module
-natural transformationν =−▷α :−▷m⇒− ▷m′.
-IfM is a (C,D)-bimodule category, this defines a (C,D)-bimodule equivalenceM →FunC(C,M)
-with respect to the(C,D)-bimodule structure on FunC(C,M) given by (c▷F )(x) = F (x⊗c) and
-(F◁d)(x) =F (x)◁d for c,x∈ ObC, d∈ ObD.
-6. For anyD-right module categoryM and m∈ ObM, the functorF =m◁− :D→M is aD-right
-module functor withtx,y = dx,y,m : (m◁x)◁y→ m◁ (x⊗y). Any morphismα∈ HomM(m,m′)
-defines aC-module natural transformationν =α◁− :m◁−⇒ m′◁−.
-IfM is a (C,D)-bimodule category, this defines a(C,D)-bimodule equivalenceM→ FunDrev(D,M)
-with respect to the(C,D)-bimodule structure onFunDrev(D,M) given by (c▷F )(x) = c▷F (x) and
-(F◁d)(x) =F (d⊗x) for c∈ ObC, d,x∈ ObD.
-7. IfC,D are pivotal fusion categories, any (C,D)-bimodule functor F : M → Ndefines a (D,C)-
-bimodule functorF # :M#→N # with coherence isomorphismssF #
-d,m =tF
-m,d∗ and tF #
-m,c =sF
-c∗,m. Any
-(C,D)-bimodule natural transformationν :F⇒G induces a (D,C)-bimodule natural transformation
-ν# :G#⇒F # with ν#
-m =νm.
-8. For any (C,D)-bimodule functorF :M→N , the morphismssc,m : F (c▷m)→ c▷F (m) define
-aD-right module natural isomorphismsc : F (c▷−) ⇒ c▷F (−). Analogously, the morphisms
-tm,d :F (m)◁d→F (m◁d) define aC-module natural transformationtd :F (−)◁d⇒F (−◁d). This
-follows from the hexagon identity(17) for a bimodule functor and the module functor structure(20) for
-a composite functor.
-IfC is a finite multitensor category as a bimodule category over itself, then all bimodule endofunctors ofC
-are naturally isomorphic to functors of the formF =c⊗− :C→C with an objectc∈Z (C), as in Example
-1.10, 4. and all bimodule natural transformations between them are of the formν =f⊗− :c⊗−⇒ c′⊗−
-with a morphismf :c→c′ inZ(C). This identifiesEndC(C) with the centreZ(C).
-Example 1.11. [EGNO, Prop. 7.13.8.] LetC be a finite multitensor category, viewed as a(C,C)-bimodule
-category. Then the monoidal categoryEndC(C) is canonically monoidally isomorphic to the centreZ(C).
-8
+In this section, we summarise background on (bi)module categories, (bi)module functors and (bi)module natural transformations from \cite[Ch.~7]{EGNO}.
+
+\begin{definition}\label{def:modulecat}
+Let $\mac, \mad$ be multitensor categories with associators  $a:\oo(\oo\times\id)\Rightarrow\oo(\id\times\oo)$ 
+and left and right unit constraints  $l: e\oo \id\Rightarrow \id$,  $r:\id \oo e\Rightarrow \id $.
+\begin{compactenum}
+\item  A {\bf $\mac$-(left) module category} is a locally finite $\C$-linear abelian category $\mam$ together with
+\begin{compactitem}
+\item a functor $\rhd:\mac\times\mam\to\mam$ that is $\C$-bilinear on the morphisms and exact in the first variable, 
+\item  natural isomorphisms 
+$c: \rhd(\oo\times\id_\mam)\Rightarrow \rhd(\id_\mac\times\rhd)$ and $\gamma: e\rhd -\Rightarrow \id_\mam$
+\end{compactitem}
+such that  the following diagrams commute for all  $x,y,z\in\Ob \mac$ and $m\in\Ob \mam$:
+\begin{align}\label{eq:pentagoncdef}
+&\xymatrix{
+((x\oo y)\oo z)\rhd m \ar[r]^{c_{x\oo y, z,m}} \ar[d]_{a_{x,y,z}\rhd 1_m}& (x\oo y)\rhd (z\rhd m) \ar[r]^{c_{x,y,z\rhd m}} & x\rhd(y\rhd(z\rhd m))\\
+(x\oo(y\oo z)) \rhd m \ar[r]_{c_{x,y\oo z, m}}& x\rhd ((y\oo z)\rhd m)\ar[ru]_{\quad1_x\rhd c_{y,z,m}}
+}\\
+&\xymatrix{ (x\oo e)\rhd m \ar[rr]^{c_{x,e,m}} \ar[rd]_{r_X\rhd 1_m}  & & x\rhd (e\rhd m) \ar[ld]^{1_x\rhd \gamma_m}\\
+&x\rhd m.
+}\label{eq:trianglec}
+\end{align}
+
+\item A {\bf $\mad$-right module category} is  a  locally finite $\C$-linear abelian category $\mam$ together with 
+\begin{compactitem}
+\item a functor $\lhd:\mam\times \mad\to\mam$ that is $\C$-bilinear on the morphisms and exact in the second variable, 
+\item  natural isomorphisms 
+$d: \lhd(\lhd \times\id_\mad)\Rightarrow \lhd(\id_\mam\times\oo)$ and $\delta: -\lhd e\Rightarrow \id_\mam$
+\end{compactitem}
+that make the following diagrams commute for all  $x,y,z\in\Ob \mad$ and $m\in\Ob \mam$
+\begin{align}\label{eq:pentagonddef}
+&\xymatrix{
+((m\lhd x)\lhd y)\lhd z \ar[r]^{d_{m\lhd x, y,z}} \ar[d]_{d_{m,x,y}\lhd 1_z}& (m\lhd x)\lhd (y\oo z) \ar[r]^{d_{m,x,y\oo z}} & m\lhd(x\oo(y\oo z))\\
+(m\lhd(x\oo y)) \lhd z \ar[r]_{d_{m,x\oo y,z}}& m\lhd ((x\oo y)\oo z)\ar[ru]_{\quad 1_m\lhd a_{x,y,z}}
+}\\
+&\xymatrix{ m\lhd (e\oo x) \ar[rr]^{d_{m,e,x}} \ar[rd]_{1_m\lhd l_X}  & & (m\lhd e)\lhd x \ar[ld]^{\delta_m\lhd 1_x}\\
+&m\lhd x.
+}\label{eq:triangled}
+\end{align}
+
+
+\item A  {\bf $(\mac,\mad)$-bimodule category}  is a   locally finite $\C$-linear abelian  category $\mam$  with
+\begin{compactitem}
+\item a $\mac$-left module category structure $(\rhd,c,\gamma)$, 
+\item a $\mad$-right module category structure $(\lhd, d,\delta)$, 
+\item a natural isomorphism
+ $b: \lhd(\rhd\times\id_\mad)\Rightarrow \rhd(\id_\mac\times\lhd)$
+ \end{compactitem}
+such that  the following diagrams commute for all  $x,y\in\Ob \mac$, $u,v\in\Ob \mad$ and $m\in\Ob \mam$
+\begin{align}\label{eq:pentagonbdef}
+&\xymatrix{
+((x\oo y)\rhd m)\lhd u \ar[r]^{b_{x\oo y, m,u}} \ar[d]_{c_{x,y,m}\lhd 1_u}& (x\oo y)\rhd (m\lhd u) \ar[r]^{c_{x,y,m\lhd u}} & x\rhd(y\rhd(m\lhd u))\\
+ (x\rhd(y\rhd m))\lhd u \ar[r]_{b_{x, y\rhd m, u}}& x\rhd ((y\rhd m)\lhd u)\ar[ru]_{\quad 1_x\rhd b_{y,m,u}}
+}\\
+&\xymatrix{
+((x\rhd m)\lhd u)\lhd v \ar[r]^{d_{x\rhd m,u,v}} \ar[d]_{b_{x,m,u}\lhd 1_v}& (x\rhd m)\lhd (u\oo v) \ar[r]^{b_{x,m,u\oo v}} & x\rhd(m\lhd(u\oo v))\\
+ (x\rhd(m\lhd u))\lhd v \ar[r]_{b_{x, m\lhd u, v}}& x\rhd ((m\lhd u)\lhd v).\ar[ru]_{\quad 1_x\rhd d_{y,m,u}}
+}
+\end{align}
+\end{compactenum}
+\end{definition}
+
+A $\mad$-right module category can be defined more succinctly as a $\mad^{rev}$-module category and a $(\mac,\mad)$-bimodule category as a $\mac\boxtimes \mad^{rev}$-module category, where $\boxtimes$ is the Deligne product.  We expanded the definitions to set up  notation and  introduce the relevant diagrams. 
+
+
+\begin{remark}\label{rem:macmodule} \cite[Prop.~7.1.3]{EGNO}\\
+ $\mac$-module category structures on $\mam$ correspond bijectively to 
+monoidal functors $F:\mac\to \End(\mam)$. The monoidal functor defined by a $\mac$-module structure assigns to an object $x$ in $\mac$ the endofunctor $x\rhd -:\mam\to\mam$ and to a morphism $\alpha:x\to y$ in $\mac$ the natural transformation $\alpha\rhd-:x\rhd-\Rightarrow y\rhd -$.  The monoidal structure of $F$ is given by the natural isomorphisms $\gamma: e\rhd-\Rightarrow\id_\mam$ and $c_{x,y,-}: (x\oo y)\rhd -\Rightarrow x\rhd (y\rhd -)$. 
+ \end{remark}
+
+
+
+
+
+\begin{example}\label{ex:bimodulecategory} 
+ Every  fusion category $\mac$ is a $(\mac,\mac)$-bimodule category with $\rhd=\lhd=\oo:\mac\times\mac\to\mac$ and  coherence isomorphisms $c_{x,y,z}=d_{x,y,z}=b_{x,y,z}=a_{x,y,z}: (x\oo y)\oo z\to x\oo (y\oo z)$, $\gamma_x=l_x: e\oo x\to x$ and $\delta_x=r_x: x\oo e\to x$.
+ \end{example}
+
+\begin{example}\label{ex:vecmodule}
+ Any locally finite $\C$-linear abelian category $\mam$ is a bimodule category over the fusion category $\mathrm{Vect}_\C$ of finite-dimensional complex vector spaces.  This  $\mathrm{Vect}_\C$-module category structure is unique up to bimodule equivalence (cf.~Definition \ref{def:modulefunc}).
+\end{example}
+
+\begin{example}\label{ex:dualcat}
+For  any $(\mac,\mad)$-bimodule category $\mam$ over pivotal fusion categories $\mac,\mad$ the category $\mam^{op}$ is a $(\mad,\mac)$-bimodule category with 
+\begin{align}\label{eq:opcat}
+&\lhd^{op}=\rhd (*\times  \id_\mam)\tau: \mam\times\mac\to\mam & &\rhd^{op}=\lhd (\id_\mam\times *)\tau: \mad\times \mam\to\mam,
+\end{align}
+where $*: \mac\to\mac^{op,rev}$ is the duality functor  and  $\tau$ the flip functor that exchanges the two factors in a cartesian product. 
+The coherence isomorphisms are given by $c^{op}_{x,y,m}=d_{m,y^*,x^*}$, $d^{op}_{x,y,m}=c_{y^*,x^*, m}$, $b^{op}_{x,m,y}=b_{y^*,m,x^*}$.
+We call it the {\bf opposite bimodule category}  $\mam^\#$.
+\end{example}
+
+
+
+
+\begin{example} \label{ex:modvectgomega} \cite[Ex.~7.4.10]{EGNO}\\ Indecomposable semisimple module categories $\mam$  over  the fusion category $\mathrm{Vec}_G:=\mathrm{Vec}_G^{\omega\equiv 1}$, 
+up to equivalence, correspond to pairs $(X, \psi)$ of a  finite transitive $G$-set $X\cong G/L$ and an element $\psi\in H^2(L, \C^{\times})$.
+\begin{compactitem}
+\item The objects of $\mam$ are $X$-graded vector spaces.
+\item The simple objects of $\mam$ are of the form $\delta^x$ for $x\in X$ . 
+
+\item The action functor $\rhd: \mathrm{Vec}_G\times\mam\to\mam$ is given by $\delta^g\rhd \delta^x=\delta^{g\rhd x}$ on the simple objects. 
+
+\item The natural isomorphism $c:\rhd(\oo\times \id)\Rightarrow \rhd(\id\times\rhd)$ is given by $\psi\in H^2(L,\C^\times)$.
+\end{compactitem}
+\end{example}
+
+
+
+
+
+\begin{definition}\label{def:modulefunc}
+Let $\mac,\mad$ be multitensor categories.  
+\begin{compactenum}
+\item  A {\bf $\mac$-module functor} $F:\mam\to\man$ between $\mac$-module categories $\mam,\man$ is a $\C$-linear right exact functor $F:\mam\to\man$ together with a natural isomorphism
+$s: F\rhd \Rightarrow \rhd(\id_\mac\times F)$ that satisfies the pentagon and the triangle axiom: for all $x,y\in\Ob\mac$ and $m\in\Ob\mam$ the following diagrams commute
+\begin{align}\label{eq:pentagoncfunc}
+&\xymatrix{ F((x\oo y)\rhd m) \ar[d]_{F(c_{x,y,m})}\ar[r]^{s_{x\oo y, m}} & (x\oo y)\rhd F(m) \ar[r]^{c_{x,y, F(m)}} & x\rhd (y\rhd F(m))\\
+F(x\rhd(y\rhd m)) \ar[r]_{s_{x. y\rhd m}} & x\rhd F(y\rhd m)\ar[ru]_{\;\; 1_x\rhd s_{y,m}}
+}\\
+&\xymatrix{ F(e\rhd m)\ar[rd]_{F(\gamma_m)} \ar[rr]^{s_{e,m}} & & e\rhd F(m)\ar[ld]^{\gamma_{F(m)}}\\
+& F(m).
+}\label{eq:trianglecfunc}
+\end{align}
+
+\item A {\bf $\mad$-right module functor} $F:\mam\to\man$ between $\mad$-right module categories $\mam,\man$ is a $\C$-linear right exact functor $F:\mam\to\man$ together with a natural isomorphism
+$t: \lhd(F\times\id_\mad)\Rightarrow F\lhd$ that satisfies the pentagon and the triangle axiom: for all $x,y\in\Ob\mad$ and $m\in\Ob\mam$ the following diagrams commute
+\begin{align}\label{eq:pentagondfunc}
+&\xymatrix{ (F(m)\lhd x)\lhd y \ar[d]_{t_{m,x}\lhd 1_y}\ar[r]^{d_{F(m),x, y}} &  F(m)\lhd(x\oo y) \ar[r]^{t_{m, x\oo y}} & F(m\lhd (x\oo y))\\
+F(m\lhd x)\lhd y \ar[r]_{t_{m\lhd x, y}} & F((m\lhd x)\lhd y) \ar[ru]_{\;\; F(d_{m,x,y})}
+}\\
+&\xymatrix{ F(m)\lhd e \ar[rd]_{\delta_{F(m)}} \ar[rr]^{t_{m,e}} & & F(m\lhd e)\ar[ld]^{F(\delta_m)}\\
+& F(m).
+}\label{eq:triangledfunc}
+\end{align}
+
+
+\item A  {\bf $(\mac,\mad)$-bimodule functor}  between $(\mac,\mad)$-bimodule categories $\mam,\man$ is a $\C$-linear right exact functor $F:\mam\to\man$ with a $\mac$-module functor structure $s$ and a $\mad$-right module functor structure $t$ that satisfy the hexagon axiom: for all $x\in\Ob\mac$, $y\in\Ob\mad$ and $m\in\Ob\mam$ the following diagram commutes
+\begin{align}
+\label{eq:hexa}
+\xymatrix{
+F(x\rhd m)\lhd y\ar[d]_{s_{x,m}\lhd 1_y} \ar[r]^{t_{x\rhd m, y}} & F((x\rhd m)\lhd y) \ar[r]^{F(b_{x,m,y})}& F(x\rhd (m\lhd y))\ar[d]^{s_{x, m\lhd y}}\\
+(x\rhd F(m))\lhd y \ar[r]_{\;b_{x, F(m),y}} & x\rhd (F(m)\lhd y)  \ar[r]_{1_x\rhd t_{m,y}} & x\rhd F(m\lhd y).
+}
+\end{align}
+\end{compactenum}
+An {\bf equivalence of (bi)module categories} is a (bi)module functor that is an equivalence of categories.
+\end{definition}
+
+
+\begin{definition}\label{def:modnat} Let $\mac,\mad$ be multitensor categories.
+\begin{compactenum}
+\item A $\mac$-module natural transformation $\nu: F\Rightarrow G$ for $\mac$-module functors $F,G: \mam\to\man$ is a natural transformation  such that the
+following diagram commutes for all $x\in\Ob\mac$ and $m\in\Ob\mam$
+\begin{align}
+\label{eq:cnat}
+\xymatrix{ F(x\rhd m)\ar[d]_{s^F_{x,m}} \ar[r]^{\nu_{x\rhd m}} & G(x\rhd m)\ar[d]^{s^G_{x,m}}\\
+x\rhd F(m) \ar[r]_{1_x\rhd \nu_m} & x\rhd G(m).
+}
+\end{align}
+\item A $\mad$-right module natural transformation $\nu: F\Rightarrow G$ for $\mad$-right module functors $F,G: \mam\to\man$ is a natural transformation  such that the
+following diagram commutes for all $x\in\Ob\mad$ and $m\in\Ob\mam$
+\begin{align}
+\label{eq:dnat}
+\xymatrix{ F(m)\lhd x \ar[d]_{t^F_{m,x}} \ar[r]^{\nu_{m}\lhd 1_x} & G( m)\lhd x\ar[d]^{t^G_{m,x}}\\
+F(m\lhd x) \ar[r]_{\nu_{m\lhd x}} & G(m\lhd x).
+}
+\end{align}
+\item A $(\mac,\mad)$-bimodule natural transformation $\nu: F\rightarrow G$ between $(\mac,\mad)$-bimodule functors $F,G: \mam\to\man$ is a natural transformation $\nu: F\Rightarrow G$  that is a $\mac$-module and a $\mad$-right module natural transformation.
+\end{compactenum}
+\end{definition}
+
+For $\mac$-module categories $\mam,\man$ we denote by $\Fun_\mac(\mam,\man)$ the category of $\mac$-module functors $F:\mam\to\man$ and $\mac$-module natural transformations between them and write $\End_\mac(\mam)=\Fun_\mac(\mam,\mam)$. Analogously, for $(\mac,\mad)$-bimodule categories $\mam,\man$, we write
+$\Fun_{(\mac,\mad)}(\mam,\man)$ for the category of $(\mac,\mad)$-bimodule functors $F:\mam\to\man$ and bimodule natural transformations between them and $\End_{(\mac,\mad)}(\mam)=\Fun_{(\mac,\mad)}(\mam,\mam)$.
+
+Composites of (bi)module functors inherit a  (bi)module functor  structure.  If $G:\mam\to\man$ and $F:\man\to\map$ are $(\mac,\mad)$-bimodule functors, then the  $(\mac,\mad)$-bimodule functor structure for $FG:\mam\to\map$ is given by 
+\begin{align}\label{eq:bimodcomp}
+&s^{FG}=s^F (\id_\mac\times G)\circ Fs^G: FG\rhd \Rightarrow \rhd(\id_\mac\times FG)\\
+& t^{FG}=Ft^G\circ t^F (G\times\id_\mad): \lhd(FG\times\id_\mad)\Rightarrow FG\lhd.\nonumber
+\end{align}
+For all  bimodule functors  $F,F':\man\to\map$, $G,G':\mam\to\man$   and bimodule natural transformations $\nu: F\Rightarrow F'$ and $\mu: G\Rightarrow G'$  the natural transformations $\nu G: FG\Rightarrow F'G$ and $F\mu: FG\Rightarrow FG'$ are bimodule natural transformations with respect to this bimodule functor structure. As composites of bimodule natural transformations are  also bimodule natural transformations, it follows that  $(\mac,\mad)$-bimodule categories, $(\mac,\mad)$-bimodule functors and $(\mac,\mad)$-bimodule natural transformations form a 2-category. 
+
+
+
+
+The following examples show how the data of a (bi)module category can be recovered as coherence data of  (bi)module functors.
+They are the categorical counterparts of standard constructions for modules over rings.
+
+
+
+\begin{example}\label{ex:modulefuncs} Let $\mac,\mad$ be  multitensor categories with (right) centres $\mathcal Z(\mac)$, $\mathcal Z(\mad)$ and $\mam,\man$ $(\mac,\mad)$-bimodule categories. 
+\begin{enumerate}
+\item  For any $x\in\Ob \mad$ the functor
+$F=-\lhd x: \mam\to\mam$  is a $\mac$-module functor with coherence isomorphisms $s_{c,m}=b_{c,m,x}: (c\rhd m)\lhd x\to c\rhd (m\lhd x)$. Any morphism  $\alpha\in \Hom_\mad(x,y)$ defines a $\mac$-module natural transformation $\nu=-\lhd \alpha: -\lhd x\Rightarrow -\lhd y$. This defines a functor $\mad\to \End_\mac(\mam)$.
+
+\item If $x\in \Ob \mathcal Z(\mad)$ with half-braidings $\sigma_{d,x}: d\oo x\to x\oo d$,  the functor $F$ from 1.~becomes  a $(\mac,\mad)$-bimodule functor with $t_{m,d}= d_{m,d,x}^\inv\circ (1_m\lhd \sigma_{x,d}^\inv)\circ d_{m,x,d}: (m\lhd x)\lhd d\to (m\lhd d)\lhd x$.
+For $\alpha\in \Hom_{\mathcal Z(\mad)}(x,y)$ the morphisms $\nu_m=1\lhd \alpha: m\lhd x\to m\lhd y$ define a $(\mac,\mad)$-bimodule natural transformation $\nu: -\lhd x\Rightarrow -\lhd y$. 
+This defines a functor $\mathcal Z(\mad)\to \End_{(\mac,\mad)}(\mam)$.
+
+\item Analogously, for  $x\in \Ob\mac$  $F=x\rhd -: \mam\to\mam$    with $t_{m,d}=b_{x,m,d}: (x\rhd m)\lhd d\to x\rhd (m\lhd d)$ is a $\mad$-right module functor. Any morphism  $\alpha\in \Hom_\mac(x,y)$  defines a $\mad$-right module natural transformation $\nu=\alpha\rhd -: x\rhd -\Rightarrow y\rhd -$. This defines a functor $\mac\to \End_{\mad^{rev}}(\mam)$.  
+ 
+ 
+\item If  $x\in\Ob \mathcal Z(\mac)$ with half-braidings $\sigma_{c,x}: c\oo x\to x\oo c$, the functor $F$ from 3.~becomes a  $(\mac,\mad)$-bimodule functor with $s_{c,m}=c_{c,x,m}\circ (\sigma^\inv_{c,x}\rhd 1_m)\circ c_{x,c,m}^\inv: x\rhd (c\rhd m)\to c\rhd (x\rhd m)$. 
+For any morphism $\alpha\in \Hom_{\mathcal Z(\mac)}(x,y)$ the morphisms $\nu_m=\alpha\rhd 1_m: x\rhd m\to y\rhd m$ define a $\mac$-module natural transformation $\nu: x\rhd-\Rightarrow y\rhd -$. This defines a functor $\mathcal Z(\mac)\to \mathrm{End}_{(\mac,\mad)}(\mam)$. 
+
+\item For any $\mac$-module category $\mam$ and $m\in\Ob \mam$, the functor $F=-\rhd m:\mac\to\mam$ is a $\mac$-module functor with $s_{x,y}=c_{x,y,m}: (x\oo y)\rhd m\to x\rhd (y\rhd m)$. Any morphism $\alpha\in \Hom_\mam(m,m')$ defines a $\mac$-module natural transformation $\nu=-\rhd \alpha: -\rhd m\Rightarrow -\rhd m'$. 
+
+If $\mam$ is a $(\mac,\mad)$-bimodule category, this defines a $(\mac,\mad)$-bimodule equivalence $\mam\to \Fun_\mac(\mac,\mam)$ with respect to the $(\mac,\mad)$-bimodule structure on $\Fun_\mac(\mac,\mam)$  given by $(c\rhd F)(x)=F(x\oo c)$ and $(F\lhd d)(x)=F(x)\lhd d$ for $c,x\in\Ob\mac$, $d\in\Ob\mad$.
+
+
+\item For any $\mad$-right module category $\mam$ and $m\in\Ob \mam$, the functor $F=m\lhd -:\mad\to\mam$ is a $\mad$-right module functor with $t_{x,y}=d_{x,y,m}: (m\lhd x)\lhd y\to m\lhd (x\oo y)$. Any morphism $\alpha\in \Hom_\mam(m,m')$ defines a $\mac$-module natural transformation $\nu= \alpha\lhd -:  m\lhd - \Rightarrow  m'\lhd -$. 
+
+If $\mam$ is a $(\mac,\mad)$-bimodule category, this defines a $(\mac,\mad)$-bimodule equivalence $\mam\to \Fun_{\mad^{rev}}(\mad,\mam)$ with respect to the $(\mac,\mad)$-bimodule structure on $\Fun_{\mad^{rev}}(\mad,\mam)$  given by $(c\rhd F)(x)=c\rhd F(x)$ and $(F\lhd d)(x)=F(d\oo x)$ for $c\in\Ob\mac$, $d,x\in\Ob\mad$.
+
+
+\item If $\mathcal C,\mathcal D$ are pivotal fusion categories,  any $(\mac,\mad)$-bimodule functor $F: \mam\to\man$ defines a $(\mad,\mac)$-bimodule functor $F^\#:\mam^\#\to\man^\#$ with coherence isomorphisms  $s^{F^\#}_{d,m}=t^F_{m,d^*}$ and $t^{F^\#}_{m,c}=s^F_{c^*,m}$. 
+ Any $(\mac,\mad)$-bimodule natural transformation $\nu: F\Rightarrow G$ induces a $(\mad,\mac)$-bimodule natural transformation $\nu^\#: G^\#\Rightarrow F^\#$ with  $\nu^\#_m=\nu_m$.
+
+\item For any $(\mac,\mad)$-bimodule functor $F:\mam\to\man$, the morphisms $s_{c,m}: F(c\rhd m)\to c\rhd F(m)$ define a $\mad$-right module natural isomorphism $s_c: F(c\rhd -)\Rightarrow c\rhd F(-)$. Analogously, the morphisms $t_{m,d}: F(m)\lhd d\to F(m\lhd d)$ define a $\mac$-module natural transformation $t_d: F(-)\lhd d\Rightarrow F(-\lhd d)$. This follows  from the  hexagon identity \eqref{eq:hexa} for a bimodule functor and the  module functor structure  \eqref{eq:bimodcomp} for a composite functor.
+
+\end{enumerate}
+\end{example}
+
+If $\mac$ is a finite multitensor category as a bimodule category over itself, then  all bimodule endofunctors of $\mac$ are naturally isomorphic to functors of the  form $F=c\oo -:\mac\to\mac$ with an object $c\in \mathcal Z(\mac)$, as in Example \ref{ex:modulefuncs}, 4.~and all bimodule natural transformations between them are of the form $\nu=f\oo -: c\oo -\Rightarrow c'\oo -$ with a morphism $f: c\to c'$ in $\mathcal Z(\mac)$. This identifies $\End_\mac(\mac)$ with the  centre $\mathcal Z(\mac)$. 
+
+
+\begin{example}\label{ex:center} \cite[Prop.~7.13.8.]{EGNO} Let $\mac$ be a finite multitensor category, viewed as a $(\mac,\mac)$-bimodule category. 
+Then  the monoidal category $\End_\mac(\mac)$ is canonically monoidally isomorphic to the centre $\mathcal Z(\mac)$.
+\end{example}

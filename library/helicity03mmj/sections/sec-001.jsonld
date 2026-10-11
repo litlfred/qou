@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/helicity03mmj/sections/sec-001",
   "@type": [
     "doco:Section"
@@ -10,12 +15,12 @@
   "contains": [
     "library/helicity03mmj/blocks/prose-sec-001",
     "library/helicity03mmj/blocks/thm-sec-001-01",
-    "library/helicity03mmj/blocks/ex-sec-001-02",
+    "library/helicity03mmj/blocks/example-sec-001-02",
     "library/helicity03mmj/blocks/thm-sec-001-03",
-    "library/helicity03mmj/blocks/rem-sec-001-04",
-    "library/helicity03mmj/blocks/rem-sec-001-05"
+    "library/helicity03mmj/blocks/remark-sec-001-04",
+    "library/helicity03mmj/blocks/remark-sec-001-05"
   ],
-  "derivedFrom": "library/helicity03mmj/manifest",
-  "sourceDocument": "library/helicity03mmj/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/helicity03mmj/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/helicity03mmj/manifest.jsonld",
   "provenance": "ingested"
 }

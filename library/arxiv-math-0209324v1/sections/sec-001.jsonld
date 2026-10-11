@@ -1,17 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0209324v1/sections/sec-001",
   "@type": [
     "doco:Section"
   ],
-  "title": "Introduction",
-  "pageStart": 1,
-  "pageEnd": 4,
+  "title": "Preliminaries",
+  "pageStart": 5,
+  "pageEnd": 6,
   "contains": [
-    "library/arxiv-math-0209324v1/blocks/prose-sec-001",
-    "library/arxiv-math-0209324v1/blocks/thm-sec-001-01"
+    "library/arxiv-math-0209324v1/blocks/prose-sec-001"
   ],
-  "derivedFrom": "library/arxiv-math-0209324v1/manifest",
-  "sourceDocument": "library/arxiv-math-0209324v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0209324v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0209324v1/manifest.jsonld",
   "provenance": "ingested"
 }

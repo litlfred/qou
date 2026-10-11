@@ -8,191 +8,168 @@ pages: 33-36
 source_pdf: 1103.4815v3.pdf
 source_sha256: 28647b02ea1441e3
 doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal"
+text_source: latex
+latex_prose_ratio: 0.871
+latex_coverage_ratio: 0.963
 ---
-The basic idea of a smooth 2-bundle is that it gives for every point x in the base manifold M a
-Lie groupoid Px varying smoothly with x. Numerous diﬀerent versions have appeared so far in the
-literature, e.g [Bar04, BS07, Woc11, SP11]. The main objective of our version of principal 2-bundles
-is to make the deﬁnition of the objects (i.e. the 2-bundles) as simple as possible , while keeping
-their isomorphism classes in bijection with non-abelian cohomology. Th us, our principal 2-bundles
-will be deﬁned using strict actions of Lie 2-groups on Lie groupoids, and not using anafunctors.
-The necessary “weakness” will be pushed into the deﬁnition of 1-mo rphisms.
-6.1 Deﬁnition of Principal 2-Bundles
-As an important prerequisite for principal 2-bundles we have to disc uss actions of Lie 2-groups on
-Lie groupoids, and equivariant anafunctors.
-Deﬁnition 6.1.1. Let P be a Lie groupoid, and let Γ be a Lie 2-group. A smooth right action of Γ
-on P is a smooth functor R : P × Γ /d47/d47 P such that R(p, 1) = p and R(ρ, id1) = ρ for all p ∈ P 0
-and ρ ∈ P 1, and such that the diagram
-P × Γ × Γ
-id ×m /d47/d47
-R ×id
-/d15/d15
-P × Γ
-R
-/d15/d15
-P × Γ m
-/d47/d47 P
+\label{sec:2bundle}
+
+
+
+The basic idea of a smooth 2-bundle is that it gives for every point $x$ in the base manifold $M$ a Lie groupoid $\mathcal{P}_x$ varying smoothly with $x$. Numerous different versions have appeared so far in the literature, e.g  \cite{bartels,baez2,wockel1,pries2}. 
+The main objective of \emph{our} version of principal $2$-bundles is to make the definition of the objects (i.e. the 2-bundles) \emph{as simple as possible}, while keeping their isomorphism classes in bijection with non-abelian cohomology.   Thus, our principal 2-bundles will be defined using \emph{strict} actions of Lie 2-groups on Lie groupoids, and \emph{not} using anafunctors. The necessary \quot{weakness} will be pushed into the definition of 1-morphisms.
+
+
+
+\subsection{Definition of Principal 2-Bundles}
+
+
+\label{sec:definitionzwoabundle}
+
+As an important prerequisite for principal 2-bundles we have to discuss actions of Lie 2-groups on Lie groupoids, and equivariant anafunctors.
+
+\begin{definition}
+\label{def:rightaction}
+Let $\mathcal{P}$ be a Lie groupoid, and let $\Gamma$ be a Lie 2-group. A \emph{smooth right action of $\Gamma$ on $\mathcal{P}$} is a smooth functor
+$R: \mathcal{P} \times \Gamma \to \mathcal{P}$
+such that $R(p,1)=p$ and $R(\rho,\id_1)=\rho$ for all $p\in \mathcal{P}_0$ and $\rho\in \mathcal{P}_1$,  and such that the diagram
+\begin{equation*}
+\alxydim{@=1.3cm}{\mathcal{P} \times \Gamma \times \Gamma \ar[r]^-{\id \times m} \ar[d]_{R \times \id} & \mathcal{P} \times \Gamma  \ar[d]^{R} \\ \mathcal{P} \times \Gamma \ar[r]_{m} & \mathcal{P}}
+\end{equation*}
 of smooth functors is commutative (strictly, on the nose).
-For example, every Lie 2-group acts on itself via multiplication. Note t hat due to strict com-
-mutativity, one has R(R(p,g ),g −1) = p andR(R(ρ,γ ),i (γ)) = ρ for all g ∈ Γ 0,p ∈ P 0,γ ∈ Γ 1 and
-ρ ∈ P 1.
-Remark 6.1.2. This deﬁnition could be weakened in two steps. First, one could allow a n atural
-transformation in the above diagram instead of commutativity. Sec ondly, one could allow R to be
-an anafunctor instead of an ordinary functor. It turns out that for our purposes the above deﬁnition
-is suﬃcient.
-– 33 –
-Deﬁnition 6.1.3. Let X and Y be Lie groupoids with smooth actions (R1,ρ 1), (R2,ρ 2) of a Lie
-2-group Γ . An equivariant structure on an anafunctor F : X /d47/d47 Y is a transformation
-X × Γ
-F ×id
-/d15/d15
-R1 /d47/d47 X
-λ ③③③③③
-③③③③③
-/d120/d0 ③③③③③③③③ F
-/d15/d15
-Y × Γ R2
-/d47/d47 Y
+\end{definition}
+
+
+For example, every Lie 2-group acts on itself via multiplication. Note that due to strict commutativity, one has $R(R(p,g),g^{-1})=p$ and $R(R(\rho,\gamma),i(\gamma))=\rho$ for all $g\in \Gamma_0$, $p\in \mathcal{P}_0$, $\gamma\in \Gamma_1$ and $\rho\in \mathcal{P}_1$. 
+
+\begin{remark}
+This definition could be weakened  in two steps. First, one could allow a natural transformation in the above diagram instead of commutativity. Secondly, one could allow $R$ to be an anafunctor instead of an ordinary functor.  It turns out that for our purposes the above definition is sufficient. 
+\end{remark}
+
+\begin{definition}
+\label{def:equivanafunctor}
+Let $\mathcal{X}$ and $\mathcal{Y}$ be Lie groupoids with smooth actions $(R_1,\rho_1)$, $(R_2,\rho_2)$ of a Lie 2-group $\Gamma$. An \emph{equivariant structure} on an anafunctor $F: \mathcal{X} \to \mathcal{Y}$ is a transformation
+\begin{equation*}
+\alxydim{@=1.3cm}{\mathcal{X} \times \Gamma \ar[d]_{F \times\id} \ar[r]^-{R_1} & \mathcal{X} \ar@{=>}[dl]|*+{\lambda} \ar[d]^{F} \\ \mathcal{Y} \times \Gamma \ar[r]_-{R_2} & \mathcal{Y}}
+\end{equation*}
 satisfying the following condition:
-X × Γ × Γ
-id ×m /d47/d47
-R1 ×id
-❑❑❑
-/d37/d37❑❑
-F ×id ×id
-/d15/d15
-X × Γ
-R1
-/d31/d31❃❃❃❃❃
-X × Γ
-λ ×idssssss
-/d117/d125 ssss
-R1 /d47/d47
-F ×id
-/d15/d15
-X
-λ
-④④④④④④④
-④④④④④④④
-/d121/d1 ④④④④④
-④④④④④ F
-/d15/d15
-Y × Γ × Γ
-R2 ×id /d37/d37❑❑❑❑❑❑❑
-Y × Γ R2
-/d47/d47 Y
-=
-X × Γ × Γ
-id ×m /d47/d47
-F ×id ×id
-/d15/d15
-X × Γ
-F ×id
-/d15/d15
-R1
-/d31/d31❄❄❄❄❄
-X
-λ ⑧⑧⑧⑧⑧⑧
-/d123/d3 ⑧⑧⑧⑧
-F
-/d15/d15
-Y × Γ × Γ
-R2 ×id /d37/d37❑❑❑❑❑❑❑ id ×m /d47/d47 Y × Γ
-R2
-❃❃
-/d31/d31❃❃
-Y × Γ R2
-/d47/d47 Y
-An anafunctor together with a Γ -equivariant structure is called Γ -equivariant anafunctor.
-In Appendix A we translate this abstract (but evidently correct) d eﬁnition of equivariance into
-more concrete terms involving a Γ 1-action on the total space of the anafunctor.
-Deﬁnition 6.1.4. If (F,λ ) : X /d47/d47 Y and (G,γ ) : X /d47/d47 Y are Γ -equivariant anafunctors, a
-transformationη :F /d43/d51 G is called Γ -equivariant, if the following equality of transformation holds:
-X × Γ
-G ×id
-/d31/d31
-F ×id
-/d127/d127
-η ×id/d107/d115
-R1 /d47/d47 X
-λ ssssssss
-ssssssss
-/d117/d125 ssssssss
-F
-/d15/d15
-Y × Γ R2
-/d47/d47 Y
-=
-X × Γ
-G ×id
-/d15/d15
-R1 /d47/d47 X
-γ ✉✉✉✉✉✉✉
-✉✉✉✉✉✉✉
-/d118/d126 ✉✉✉✉✉✉
-✉✉✉✉✉✉ G
-/d31/d31
-F
-/d95/d95
-η/d107/d115
-Y × Γ R2
-/d47/d47 Y
-It follows from abstract nonsense in the bicategory of Lie groupoid s, anafunctors and transfor-
-mations that we have another bicategory with
-• objects: Lie groupoids with smooth right Γ-actions.
-• 1-morphisms: Γ-equivariant anafunctors.
-• 2-morphisms: Γ-equivariant transformations.
-– 34 –
-We need three further notions for the deﬁnition of a principal 2-bu ndle. Let M be a smooth
-manifold, and let P be a Lie groupoid. We say that a smooth functor π : P /d47/d47 Mdis is a surjective
-submersion functor , if π : P0 /d47/d47 M is a surjective submersion. Let π : P /d47/d47 Mdis be a surjective
-submersion functor, and let Q be a Lie groupoid with some smooth functor χ : Q /d47/d47 Mdis. Then,
-the ﬁbre product P × M Q is deﬁned to be the full subcategory of P × Q over the submanifold
-P0 ×M Q0 ⊂ P 0 × Q0.
-Deﬁnition 6.1.5. LetM be a smooth manifold and let Γ be a Lie 2-group.
-(a) A principal Γ -2-bundle over M is a Lie groupoid P, a surjective submersion functor π :
-P /d47/d47 Mdis, and a smooth right action R of Γ on P that preserves π, such that the smooth
-functor
-τ := (pr 1,R ) : P × Γ /d47/d47 P ×M P
+\begin{equation*}
+\alxydim{@R=0.6cm@C=0.2cm}{\mathcal{X} \times \Gamma \times \Gamma \ar[rr]^{\id \times m} \ar[dr]|{R_1 \times \id} \ar[dd]_{F \times \id\times\id} && \mathcal{X} \times \Gamma  \ar[dr]^{R_1} & \\ & \mathcal{X} \times \Gamma \ar@{=>}[dl]|{\lambda \times \id} \ar[rr]|{R_1} \ar[dd]|{F \times \id} && \mathcal{X} \ar@{=>}[ddll]|*+{\lambda} \ar[dd]^{F} \\ \mathcal{Y} \times \Gamma \times \Gamma \ar[dr]_{R_2 \times \id} &&& \\ & \mathcal{Y} \times \Gamma  \ar[rr]_{R_2} && \mathcal{Y}}
+\qquad=\qquad
+\alxydim{@R=0.6cm@C=0.2cm}{\mathcal{X} \times \Gamma \times \Gamma \ar[rr]^{\id \times m} \ar[dd]_{F \times \id \times \id} && \mathcal{X} \times \Gamma  \ar[dd]|{F \times \id} \ar[dr]^{R_1} \\ &&&\mathcal{X}\ar@{=>}[dl]|{\lambda} \ar[dd]^{F} \\ \mathcal{Y} \times \Gamma \times \Gamma \ar[dr]_{R_2 \times \id} \ar[rr]|{\id \times m} && \mathcal{Y} \times \Gamma \ar[dr]|{R_2} & \\ & \mathcal{Y} \times \Gamma \ar[rr]_{R_2} && \mathcal{Y}}
+\end{equation*}
+An anafunctor together with a $\Gamma$-equivariant structure is called \emph{$\Gamma$-equivariant anafunctor}. 
+\end{definition}
+
+In Appendix \ref{sec:equivariantanafunctorsandgroupactions} we translate this abstract (but evidently correct) definition of equivariance into more concrete terms involving a $\Gamma_1$-action on the total space of the anafunctor.  
+
+
+\begin{definition}
+\label{def:equivtransformation}
+If $(F,\lambda):\mathcal{X} \to \mathcal{Y}$ and $(G,\gamma): \mathcal{X} \to \mathcal{Y}$ are $\Gamma$-equivariant anafunctors, a transformation $\eta: F \Rightarrow G$ is called \emph{$\Gamma$-equivariant}, if the following equality of transformation holds:
+\begin{equation*}
+\alxydim{@R=1.3cm@C=2cm}{\mathcal{X} \ar@/_1.5pc/[d]_<<<<<<{G \times \id}="1" \times \Gamma \ar@/^1.5pc/[d]^<<<<<<{F \times\id}="2" \ar@{=>}"2";"1"|{\eta \times \id} \ar[r]^-{R_1} & \mathcal{X} \ar@{=>}[dl]|>>>>>>>>>>*+{\lambda} \ar[d]^{F} \\ \mathcal{Y} \times \Gamma \ar[r]_-{R_2} & \mathcal{Y}}
+\quad=\quad 
+\alxydim{@R=1.5cm@C=2cm}{\mathcal{X} \times \Gamma \ar[d]_{G \times\id} \ar[r]^-{R_1} & \mathcal{X} \ar@{=>}[dl]|*+{\gamma} \ar@/_1.5pc/[d]_{G}="1" \ar@/^1.5pc/[d]^{F}="2" \ar@{=>}"2";"1"|*+{\eta} \\ \mathcal{Y} \times \Gamma \ar[r]_-{R_2} & \mathcal{Y}}
+\end{equation*}
+\end{definition}
+
+It follows from abstract nonsense in the bicategory of Lie groupoids, anafunctors and transformations that we have another bicategory with
+\begin{itemize}
+\item 
+objects: Lie groupoids with smooth right $\Gamma$-actions.
+
+\item
+1-morphisms: $\Gamma$-equivariant anafunctors.
+
+\item
+2-morphisms: $\Gamma$-equivariant transformations.
+\end{itemize}
+
+
+We need three further notions for the definition of a principal 2-bundle. Let $M$ be a smooth manifold, and let
+ $\mathcal{P}$ be a Lie groupoid. We say that a smooth functor $\pi: \mathcal{P} \to \idmorph M$ is a \emph{surjective submersion functor}, if $\pi: \mathcal{P}_0 \to M$ is a surjective submersion. 
+Let $\pi:\mathcal{P} \to \idmorph M$ be a surjective submersion functor, and let $\mathcal{Q}$ be a Lie groupoid with some smooth functor $\chi:\mathcal{Q} \to \idmorph M$. Then, the fibre product $\mathcal{P} \times_M \mathcal{Q}$ is defined to be the full subcategory of $\mathcal{P} \times \mathcal{Q}$ over the submanifold $\mathcal{P}_0 \times_M \mathcal{Q}_0 \subset \mathcal{P}_0 \times \mathcal{Q}_0$. 
+
+
+\begin{definition}
+\label{def:zwoabun}
+Let $M$ be a smooth manifold and let $\Gamma$ be a Lie 2-group.
+\begin{enumerate}[(a)]
+
+\item 
+A \emph{principal $\Gamma$-2-bundle over $M$} is a Lie groupoid $\mathcal{P}$, a surjective submersion  functor $\pi: \mathcal{P} \to \idmorph M$,  and a smooth right action $R$ of $\Gamma$ on $\mathcal{P}$ that preserves  $\pi$,
+such that the smooth functor
+\begin{equation*}
+\tau :=(\mathrm{pr}_1, R) : \mathcal{P} \times \Gamma \to \mathcal{P} \times_M \mathcal{P} \end{equation*}
 is a weak equivalence.
-(b) A 1-morphism between principal Γ -2-bundles is a Γ -equivariant anafunctor
-F : P1 /d47/d47 P2
-that respects the surjective submersion functors to M .
-(c) A 2-morphism between 1-morphisms is a Γ -equivariant transformation between these.
-Remark 6.1.6.
-(a) The condition in (a) that the action R preserves the surjective submersion functor π means
-that the diagram of functors
-P × Γ R /d47/d47
-pr1
-/d15/d15
-P
-π
-/d15/d15
-P π
-/d47/d47Mdis
-is commutative.
-(b) The condition in (b) that the anafunctor F respects the surjective submersion functors means
-in the ﬁrst place that there exists a transformation
-P1
-F /d47/d47
-π 1
-/d30/d30❂❂❂❂❂❂❂❂❂❂❂ P2
-/d113/d121 ❦❦❦❦❦❦❦❦❦❦❦❦❦
-❦❦❦❦❦❦❦❦❦❦❦❦❦
-π 2
-/d0/d0✁✁✁✁✁✁✁✁✁✁✁
-Mdis.
-– 35 –
-However, since the target of the anafunctors π1 and π2 ◦F is the discrete groupoid Mdis, the
-equivalence of Example 2.3.4 applies, and implies that if such a transfor mation exists, it is
-unique. Indeed, it is easy to see that an anafunctor F : P /d47/d47 Q with anchors αl :F /d47/d47 P0
-and αr :F /d47/d47 Q0 respects smooth functors π : P /d47/d47 Mdis and χ : Q /d47/d47 Mdis if and only
-if π ◦αl =χ ◦αr.
-Example 6.1.7. The trivial Γ -2-bundle overM is deﬁned by
-P :=Mdis × Γ , π := pr 1 , R := idM ×m.
-Here, the smooth functor τ even has a smooth inverse functor . In the following we denote the
-trivial Γ-2-bundle by I.
-Remark 6.1.8. The principal Γ-2-bundles of Deﬁnition 6.1.5 are very similar to those o f Bartels
-[Bar04] and Wockel [Woc11], in the sense that their ﬁbres are group oids with a Γ-action. They only
-diﬀer in the strictness assumptions for the action, and in the formu lation of principality. Opposed
-to that, the principal 2-group bundles introduced in [GS] are quite diﬀerent: their ﬁbres are Lie
-2-groupoids equipped with a certain Lie 2-groupoid morphism to BΓ.
+
+\item
+A \emph{1-morphism} between principal $\Gamma$-2-bundles is a  $\Gamma$-equivariant anafunctor 
+\begin{equation*}
+F: \mathcal{P}_1 \to \mathcal{P}_2
+\end{equation*}
+that respects the surjective submersion functors to $M$.
+ 
+\item 
+A \emph{2-morphism} between 1-morphisms is a $\Gamma$-equivariant transformation between these.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}
+\label{rem:preserving}
+\begin{enumerate}[(a)]
+\item 
+\label{rem:preserving:a}
+The condition in (a) that the action $R$ preserves
+the surjective submersion functor $\pi$ means that the diagram of functors
+\begin{equation*}
+\alxydim{@R=1.3cm}{\mathcal{P} \times \Gamma \ar[r]^{R} \ar[d]_{\mathrm{pr}_1} & \mathcal{P} \ar[d]^{\pi} \\ \mathcal{P} \ar[r]_-{\pi} &\idmorph M&}
+\end{equation*} 
+is commutative. 
+
+\item
+\label{rem:preserving:b}
+The condition in (b) that the anafunctor $F$ respects the surjective submersion functors means in the first place
+that there exists a transformation
+\begin{equation*}
+\alxydim{@R=1.3cm}{\mathcal{P}_1 \ar[rr]^{F} \ar[dr]_{\pi_1}="1" && \mathcal{P}_2 \ar@{=>}"1"\ar[dl]^{\pi_2} \\ &\idmorph M\text{.}&}
+\end{equation*} 
+However, since the target of the anafunctors $\pi_1$ and $\pi_2 \circ F$ is the \emph{discrete} groupoid $\idmorph{M}$, the equivalence of Example \ref{anafunctors:c} applies, and implies that if such a transformation exists, it is unique. Indeed, it is easy to see that an  anafunctor $F: \mathcal{P} \to \mathcal{Q}$ with anchors  $\alpha_l: F \to \mathcal{P}_0$ and $\alpha_r: F \to \mathcal{Q}_0$ 
+respects smooth functors $\pi: \mathcal{P} \to \idmorph{M}$ and $\chi: \mathcal{Q} \to \idmorph{M}$ if and only if
+$\pi \circ \alpha_l = \chi \circ \alpha_r$.
+\begin{comment}
+The composite $\chi \circ F$ is an anafunctor with total space a quotient $F'$ of $F$, and with anchors $\alpha_l: F' \to \mathcal{P}_0$ and $\chi \circ \alpha_r: F' \to M$. As discussed in Examples \ref{ex:idmorphbundle} and \ref{anafunctors:c}, the right anchor $\chi \circ \alpha_r$ descends along $\alpha_l$ to a smooth map $f: \mathcal{P}_0 \to M$ and the criterion for the claimed transformation is that $f = \pi$.   
+\end{comment}
+\end{enumerate}
+\end{remark}
+
+
+
+
+\begin{example}
+\label{ex:trivzwoabun}
+The \emph{trivial  $\Gamma$-2-bundle} over $M$ is defined by
+\begin{equation*}
+\mathcal{P} := \idmorph M \times \Gamma
+\quomma
+\pi:= \mathrm{pr}_1 
+\quomma 
+R := \id_M \times  m
+\text{.}
+\end{equation*}
+Here, the smooth functor $\tau$  even has a smooth inverse \emph{functor}. In the following we denote the trivial $\Gamma$-2-bundle by $\mathcal{I}$.
+\end{example}
+
+
+\begin{comment}
+\begin{remark}
+Bartels has shown \cite{bartels} that principal 2-bundles with weaker versions of \emph{Lie 2-groups} actions can be \quot{semi-strictified}. 
+\end{remark}
+\end{comment}
+
+
+\begin{remark}
+\label{rem:ginot}
+The principal $\Gamma$-2-bundles of Definition \ref{def:zwoabun} are very similar to those of Bartels \cite{bartels} and Wockel \cite{wockel1}, in the sense that their fibres are groupoids with a $\Gamma$-action. They only differ in the strictness assumptions for the action, and in the formulation of principality. Opposed to that, the \emph{principal 2-group bundles} introduced in \cite{ginot1} are quite different: their fibres are Lie 2-groupoids equipped with a certain Lie 2-groupoid morphism to $B\Gamma$. 
+\end{remark}

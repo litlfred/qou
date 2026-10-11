@@ -1,39 +1,28 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/0803219/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "ACTA MATHEMATICA VIETNAMICA 219 AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0803219/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Bai2_Murakami.dvi",
   "contains": [
+    "library/0803219/sections/sec-front-matter",
     "library/0803219/sections/sec-000",
     "library/0803219/sections/sec-001",
     "library/0803219/sections/sec-002",
-    "library/0803219/sections/sec-003",
-    "library/0803219/sections/sec-004",
-    "library/0803219/sections/sec-005",
-    "library/0803219/sections/sec-006",
-    "library/0803219/sections/sec-007",
-    "library/0803219/sections/sec-008",
-    "library/0803219/sections/sec-009",
-    "library/0803219/sections/sec-010",
-    "library/0803219/sections/sec-011",
-    "library/0803219/sections/sec-012",
-    "library/0803219/sections/sec-013",
-    "library/0803219/sections/sec-014",
-    "library/0803219/sections/sec-015",
-    "library/0803219/sections/sec-016",
-    "library/0803219/sections/sec-017",
-    "library/0803219/sections/sec-018",
-    "library/0803219/sections/sec-019",
-    "library/0803219/sections/sec-020",
-    "library/0803219/sections/sec-021",
-    "library/0803219/sections/sec-022",
-    "library/0803219/sections/sec-023"
+    "library/0803219/sections/sec-003"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "0803219",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "0803219.pdf",
     "source_sha256": "8e37e11b8c8953c817210bf7f975bdf3d98860b8d102cfa8463e40914f1f38ec",
     "pages": 35,

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1108.4389v1/sections/sec-007",
   "@type": [
     "doco:Section"
   ],
-  "title": "Geodesic boundaries",
-  "pageStart": 13,
-  "pageEnd": 15,
+  "title": "Operations on 3d abelian theories",
+  "pageStart": 20,
+  "pageEnd": 21,
   "contains": [
     "library/arxiv-1108.4389v1/blocks/prose-sec-007"
   ],
-  "derivedFrom": "library/arxiv-1108.4389v1/manifest",
-  "sourceDocument": "library/arxiv-1108.4389v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.4389v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.4389v1/manifest.jsonld",
   "provenance": "ingested"
 }

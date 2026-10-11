@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1406.7337v4/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1406.7337v4/blocks/prose-sec-005",
   "kind": "prose",
   "title": "Diagrammatic volume bounds",
   "pageStart": 9,
   "pageEnd": 11,
   "text": "../sections/sec-005-24-diagrammatic-volume-bounds.md",
-  "derivedFrom": "library/arxiv-1406.7337v4/manifest",
-  "sourceDocument": "library/arxiv-1406.7337v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1406.7337v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1406.7337v4/manifest.jsonld",
   "provenance": "ingested"
 }

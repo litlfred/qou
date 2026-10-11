@@ -7,7 +7,8 @@
   "bytes": 176220,
   "pages": 19,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -109,6 +110,47 @@
   "likely_scanned": false,
   "toc_entries": 4,
   "sections": 4,
-  "chars_total": 35695
+  "chars_total": 35695,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "statpointohara.tex",
+   "tex_sections": 4,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.755,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-3-regularity-of-stationary-points",
+     "title": "Regularity of stationary points",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-a-results-on-fractional-sobolev-spaces",
+     "title": "A Results on fractional Sobolev spaces",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.202,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

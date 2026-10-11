@@ -1,0 +1,866 @@
+\chapter{Constructions of three-manifolds} \label{construction:chapter}
+
+In the previous chapter we have introduced and fully classified an important family of three-manifolds called \emph{Seifert manifolds}, and we now address the following question: how can we construct more three-manifolds?
+
+The most popular techniques employed for the construction and manipulation of three-manifolds are of cut-and-paste type: we build three-manifolds by gluing some blocks altogether, and we try to describe both the blocks and their gluing with some reasonable combinatorial formalism.
+
+The choice of the right blocks is of course fundamental, and different choices lead to quite different environments.
+The first reasonable option may be to use tetrahedra as blocks, and in that case we talk about \emph{triangulations} of three-manifolds: this construction has a strong combinatorial flavour and can be easily carried on by a computer. Other choices involve blocks without ``ridges'', that is manifolds with boundary: by using handlebodies we get \emph{Heegaard splittings}, with knot/link complements and solid tori we get \emph{Dehn surgery}, and with product manifolds $\Sigma \times [-1,1]$ we get \emph{surface bundles}. We introduce here all these topological constructions.
+
+We end this chapter by showing that every prime three-manifold has a canonical decomposition along disjoint embedded tori, called the \emph{geometric decomposition} -- the reason for adopting this name will be evident in the next chapters.
+
+\section{Heegaard splittings}
+A \emph{Heegard splitting} is a decomposition of a closed three-manifold in two manifolds of the simple kinds, the handlebodies. 
+
+\subsection{Definition}
+The following proposition is quite surprising, because it shows that every closed orientable three-manifold decomposes into two pieces of a very simple type. 
+
+\begin{prop}
+Every closed orientable 3-manifold $M$ decomposes into two handlebodies of some genus $g$.
+\end{prop}
+\begin{proof}
+The 3-manifold $M$ has a handle decomposition with 0-, 1-, 2-, and 3-handles. The 0- and 1-handles altogether form a handlebody. The 2- and 3-handles may be turned upside down to form a handle decomposition into 0- and 1-handles, so another handlebody.
+\end{proof}
+
+A decomposition of $M$ into two handlebodies is called a \emph{Heegaard splitting}.\index{Heegaard splitting} The two handlebodies have necessarily the same genus $g$, since their boundaries are glued together and are hence diffeomorphic surfaces.
+
+\begin{defn}
+The \emph{Heegaard genus} $g(M)$ of a closed orientable $M$ is the minimum genus of a Heegaard splitting for $M$.\index{Heegaard genus}
+\end{defn}
+
+\subsection{Examples}
+The manifolds of genus zero and one are perfectly understood.
+
+\begin{prop}
+The 3-sphere has genus zero, lens spaces (except $S^3$) have genus one, and all the other closed orientable three-manifolds have genus at least two.
+\end{prop}
+\begin{proof}
+By gluing two discs we get a 3-sphere, and by definition by gluing two solid tori we get a lens space.
+\end{proof}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 8 cm] {stabilization.pdf}
+\nota{A stabilisation of a Heegaard splitting.}
+\label{stabilization:fig}
+\end{center}
+\end{figure}
+
+Classifying closed manifolds of genus two is a much harder task. We limit ourselves to a class of examples.
+
+\begin{ex}
+Every Seifert manifold $\big(S^2,(p_1,q_1), (p_2,q_2), (p_3,q_3)\big)$ with $p_1,p_2,p_3\geqslant 2$ has genus two.
+\end{ex}
+\begin{proof}[Hint]
+Pick two singular fibres and connect them with a horizontal arc. A regular neighbourhood of this graph is a genus-two handlebody: prove that its complement is also a handlebody.
+\end{proof}
+
+\subsection{Stabilisation}
+The same manifold may have various non isotopic Heegaard splittings: for instance there is a simple move that modifies a Heegaard splitting by increasing its genus in a somehow trivial way.
+
+A \emph{stabilisation} is a move as in Figure \ref{stabilization:fig} that transforms a Heegaard splitting $M=H\cup_S H'$ of genus $g$ into one of genus $g+1$ of the same manifold $M$. We add an unknotted handle to the surface $S=\partial H = \partial H'$, so that both $H$ and $H'$ are transformed into handlebodies of genus $g+1$. 
+
+\begin{example} \label{S3:example}
+The complement of a standardly embedded genus-$g$ handlebody in $S^3$ as in Figure \ref{handlebody:fig} is another handlebody, and together they form a genus-$g$ Heegaard splitting of $S^3$ obtained by stabilising $g$ times the genus-0 Heegaard splitting of $S^3$.
+\end{example}
+
+\subsection{Triangulations}
+Smooth triangulations are somehow related to Heegaard splittings, at least in one direction. 
+
+Every compact manifold admits a smooth triangulation (see Section \ref{triangulations:subsection}) and in dimension three we can luckily prove a converse statement, much as we did in dimension two (in Section \ref{surface:triangulations:subsection}).
+
+Let $X$ be a three-dimensional pure simplicial complex, where: every face is incident to two tetrahedra, every edge is contained in a cycle of adjacent tetrahedra, and the link of every vertex is a sphere.
+
+\begin{prop} \label{X:triangulation:prop}
+The complex $X$ is the smooth triangulation of a closed three-manifold $M$, unique up to diffeomorphism.
+\end{prop}
+\begin{proof}
+By dualising $X$ we get a handle decomposition: tetrahedra, triangles, edges, and vertices determine 0-, 1-, 2-, and 3-handles. This procedure constructs a smooth closed three-manifold $M$ triangulated by $X$. The way handles are attached is determined up to isotopy, and hence $S$ is determined up to diffeomorphism.
+\end{proof}
+
+As we did with surfaces, it is worth noting that this procedure (getting a unique smooth structure from a simplicial complex) does not work in all dimensions (here we used implicitly the non-obvious Proposition \ref{cap:prop}).
+
+Topologists usually prefer to loosen the notion of ``triangulation'' by allowing self- and multiple adjacencies between tetrahedra, see Section \ref{ideal:subsection}. What is important to note here is that, no matter what the definition of ``triangulation'' is, a triangulated three-manifold always has a well-defined smooth structure determined only by the combinatorics of the triangulation. This shows that smooth three-manifolds can be treated combinatorially, for instance by a computer.
+
+A relation between triangulations and Heegaard splittings is the following: a smooth triangulation of a closed manifold with $t$ tetrahedra gives rise to a dual handle decomposition and hence to a Heegaard splitting of genus $t$. A fundamental difference between the two notions is that there is a bounded number of closed three-manifolds triangulated by at most $t$ tetrahedra for every $t$, while there are infinitely many manifolds with Heegaard genus at most $g$ for every $g\geqslant 1$.
+
+\section{Knots and links}
+Knots and links are fundamental and beautiful objects in geometric topology. Knots and links in $S^3$ have a combinatorial and mildly two-dimensional nature because they can be treated as planar diagrams, but they should be considered as intrinsically three-dimensional objects.
+
+\subsection{Definition}
+A \emph{link} in a 3-manifold $M$ is a compact submanifold of dimension one. Being compact, it consists of finitely many circles, and a connected link is called a \emph{knot}. Links and knots are usually considered up to ambient isotopy.\index{link}\index{knot}
+
+\begin{figure}
+\begin{center}
+\includegraphics [width = 4 cm] {Trefoil_knot_left.png}
+\quad
+\includegraphics [width = 4 cm] {\iftoggle{BW}{Blue_Trefoil_Knot-BW}{512px-Blue_Trefoil_Knot}}
+\nota{Every knot may be described via a planar diagram with over/under crossings (left) and its tubular neighbourhood is a knotted solid torus (right).}
+\label{trefoil_knots:fig}
+\end{center}
+\end{figure}
+
+Every link in $S^3$ can be projected to a plane: if the link is generic with respect to the projection, its image is a \emph{diagram} as in Figure \ref{trefoil_knots:fig}-(left). Every link in $S^3$ can be described via a diagram and can be thus treated combinatorially, but it is important to note that the same link can be represented via infinitely many diagrams and it is hard in general to tell whether two given diagrams represent the same link. The \emph{trivial knot} (or \emph{unknot}) $K\subset S^3$ is the one that has a planar diagram without crossings.\index{unknot}
+
+\subsection{Chirality}
+The \emph{mirror image} of a knot or link is obtained by reflecting it with respect to any plane in $S^3$. On a diagram, this operation is realised simply by inverting all crossings simultaneously.
+
+A knot is \emph{chiral} if it is not isotopic to its mirror image, and \emph{achiral} otherwise. For instance, the trivial knot is achiral, but the trefoil knot (shown in Figure \ref{trefoil_knots:fig}) is chiral.\index{knot!trefoil knot}
+As in the rest of this book, we mostly ignore orientation issues and often consider implicitly two mirrored knots or links as equivalent.\index{knot!achiral and chiral knot}
+
+\subsection{Link complement}
+The tubular neighbourhood of a link $L$ in an orientable $M$ consists of solid tori by Proposition \ref{S1:bundle:prop}, and the \emph{link complement} of $L$ is the three-manifold with boundary obtained from $M$ by removing the interiors of these solid tori. If $M$ is compact, the link complement also is.\index{link complement}
+
+\begin{prop}
+Let $K\subset S^3$ be a knot. The complement of $K$ is an irreducible manifold. Moreover, the following facts are equivalent:
+\begin{enumerate}
+\item $K$ is trivial,
+\item $K$ bounds a disc in $S^3$,
+\item the complement of $K$ is a solid torus.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+The complement of $K$ is irreducible by Proposition \ref{connected:boundary:prop}.
+The implication (1)$\Rightarrow$(2) is the smooth Jordan curve theorem, and (2)$\Rightarrow$(1) holds because all discs in a connected three-manifold are isotopic. 
+
+A trivial knot thickens to a standardly embedded solid torus, whose complement is a solid torus: hence (1)$\Rightarrow$(3). Conversely, if the complement of $K$ is a solid torus then $S^3$ decomposes into two solid tori as $S^3=L(1,q)$. The meridian of the complement solid torus extends to a disc with boundary $K$, hence (3)$\Rightarrow$(2).
+\end{proof}
+
+\begin{cor} \label{H:tori:cor}
+All Heegaard tori for $S^3$ are isotopic
+\end{cor}
+\begin{proof}
+A Heegaard torus $T\subset S^3$ is by definition a torus that decomposes $S^3$ into two solid tori. By the proposition the core of one of these solid tori is always isotopic to a trivial knot and hence $T$ is isotopic to a standard torus.
+\end{proof}
+
+A link complement in $S^3$ can be reducible: this holds precisely when there is a sphere $\Sigma \subset S^3$ disjoint from the link $L$ that cut $S^3$ into two balls, each containing some components of $L$. In that case we say that the link is  \emph{split}.\index{link!split link}
+
+\begin{cor}
+Let $L\subset S^3$ be a non-trivial knot or non-split link. The link complement is Haken.
+\end{cor}
+\begin{proof}
+The link complement $M$ is irreducible by assumption; by Proposition \ref{irreducible:solid:torus:prop}, if $M$ contains an essential disc then it is a solid torus and hence $L$ is the trivial knot, which is excluded. Now $M$ is Haken by Corollary \ref{boundary:implies:Haken:cor}.
+\end{proof}
+
+\subsection{Prime knots}
+There is an operation on knots in $S^3$ called \emph{connected sum}, similar to the one on manifolds and described in Figure \ref{sum_of_knots:fig}. 
+A connected sum is \emph{trivial} if one of the two knots is trivial; a non-trivial knot is \emph{prime} if it is not the result of a non-trivial connected sum, and \emph{composite} otherwise.\index{knot!prime and composite knot}
+
+\begin{figure}
+\begin{center}
+\includegraphics [width = 12.5 cm] {\iftoggle{BW}{Sum_of_knots-BW}{Sum_of_knots}}
+\nota{Connected sum of knots: put two knots in disjoint balls and connect them with a band as shown.}
+\label{sum_of_knots:fig}
+\end{center}
+\end{figure}
+
+The \emph{crossing number} of a knot is the minimum number of crossings in a diagram describing it.\index{knot!crossing number} Prime knots with small crossing number have been tabulated since the XIX century: at present all the prime knots with up to 16 crossing have been classified (by Hoste -- Thistlethwaite -- Weeks \cite{HTW} in 1998) and the first 14 numbers of them are listed in Table~\ref{prime:knots:table}. The prime knots with $\leqslant 7$ crossings are shown in Figure \ref{Knot_table:fig}: the first three in the list are the unknot, the \emph{trefoil}, and the \emph{figure-eight knot}.\index{knot!figure-eight knot} 
+
+\begin{table}
+\begin{center}
+\begin{tabular}{c||ccccccccccccccc}
+ $c$       & \phantom{\Big|}\!\! $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$
+ & $9$ & $10$ & $11$ & $12$ & $13$ & $14$ \\
+ \hline \hline
+$n$ & 
+\phantom{\Big|}\!\!
+1 & 0 & 0 & 1 & 1 & 2 & 3 & 7 & 21 & 49 & 165 & 552 & 2176 & 9988 & 46972 
+\end{tabular}
+\vspace{.2 cm}
+\nota{The number $n$ of prime knots with $c$ crossings, for all $c\leqslant 14$.}
+\label{prime:knots:table}
+\end{center}
+\end{table}
+
+\begin{figure}
+\begin{center}
+\includegraphics [width = 10 cm] {Knot_table.pdf}
+\nota{Prime knots in $S^3$ with at most $7$ crossings. The knots $3_1$ and $4_1$ are the \emph{trefoil} and the \emph{figure-eight} knots respectively.}
+\label{Knot_table:fig}
+\end{center}
+\end{figure}
+
+A connected sum gives rise to a sphere which intersects the new knot in two points, see Figure \ref{sum_of_knots3:fig}. The sphere intersects the knot complement into an essential annulus. 
+
+\begin{figure}
+\begin{center}
+\includegraphics [width = 6 cm] {Sum_of_knots3.pdf}
+\nota{A connected sum produces a sphere (dotted in the figure) intersecting the knot in two points.}
+\label{sum_of_knots3:fig}
+\end{center}
+\end{figure}
+
+\subsection{Torus knots}
+We now introduce a simple and natural family of prime knots. 
+Consider the standardly embedded torus $T\subset S^3$ with meridian $m$ and longitude $l$ oriented as in Figure \ref{torus:ml:fig}. A pair $(p,q)$ of coprime integers determines a simple closed curve in $T$ that is homologically $qm + pl$, and such a curve is called a \emph{$(p,q)$-torus knot}. More generally, a pair of integers $(a,b)$ determines a multicurve in $T$ that is homologically $bm+al$, called an \emph{$(a,b)$-torus link}.\index{knot!torus knot}\index{link!torus link}
+
+\begin{figure}
+\begin{center}
+\reflectbox{\includegraphics[width = 5 cm] {\iftoggle{BW}{800px-Toroidal_coord_resized-BW}{800px-Toroidal_coord_resized}}}
+\nota{The meridian $m$ (\iftoggle{BW}{light grey}{red}) and longitude $l$ (\iftoggle{BW}{dark grey}{blue}) of a standard torus are oriented as shown here, like a right-hand screw.}
+\label{torus:ml:fig}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 5 cm] {\iftoggle{BW}{Blue_7_1_Knot-BW}{480px-Blue_7_1_Knot}}
+\includegraphics[width = 5 cm] {\iftoggle{BW}{3D-Link-BW}{3D-Link}}
+\nota{The torus knot $(2,-7)$ and the torus link $(2,-8)$.}
+\label{torus_knot:fig}
+\end{center}
+\end{figure}
+
+For instance, the trefoil knot is a $(2,-3)$-torus knot. More examples are in Figure \ref{torus_knot:fig}. The knots $3_1$, $5_1$, and $7_1$ from Figure \ref{Knot_table:fig} are torus knots.
+
+\begin{ex} \label{trivial:torus:knot:ex}
+If $|p|\leqslant 1$ or $|q|\leqslant 1$ the torus knot is the unknot. The torus knots with parameters $(p,q)$, $(-p,-q)$, and $(q,p)$ are isotopic, the torus knot with parameters $(p,-q)$ is the mirror image of $(p,q)$.
+\end{ex}
+
+The complement of a torus knot is a quite simple kind of Seifert manifold. In the following we suppose that $p,q \geqslant 1$ are coprime. 
+
+\begin{prop} \label{torus:knot:complement:prop}
+The complement of a $(p,q)$-torus knot is a Seifert manifold fibering over the orbifold $(D,p,q)$. More precisely, it is
+$$\big(D, (p,r), (q,s)\big)$$
+where $(r,s)$ is any pair such that $ps+qr = 1$.
+\end{prop}
+\begin{proof}
+Let $K \subset T \subset S^3$ be the $(p,q)$-torus knot. The pair $(r,-s)$ determines another simple closed curve $\alpha \subset T$ that intersects $K$ in one point. The complement of $K$ in a tubular neighbourhood $T\times [-1,1]$ of $T$ is diffeomorphic to $P\times S^1$, where $P$ is a pair of pants. On the tori $T\times \{-1\}$ and $T \times 1$ the curves $\partial P \times \{{\rm pt}\}$ and $\{{\rm pt}\} \times S^1$ are isotopic to $\alpha$ and $K$.
+
+The complement of $T\times [-1,1]$ in $S^3$ consists of two solid tori, with meridians $(1,0)$ and $(0,1)$. Read in the basis $(\alpha, K)$ the meridians are $(q,s)$ and $(p,r)$. The complement of $K$ in $S^3$ is obtained from $P\times S^1$ by filling these curves and hence we get $\big(D, (p,r), (q,s)\big)$.
+\end{proof}
+
+In particular the complement of the trefoil knot is $\big(D,(2,1), (3,1)\big)$. If we suppose $p,q\geqslant 2$, two torus knots with distinct (unordered) parameters have non-diffeomorphic complements and hence are not isotopic.
+Our intuition says that a torus knot is prime, and we can prove this rigorously.
+
+\begin{prop}
+Every torus knot is prime. 
+\end{prop}
+\begin{proof}
+If $K$ is obtained as a non-trivial connected sum, there is an essential annulus in the complement, whose boundary curves are meridians of $K$. There is only one essential annulus in $\big(D, (p,r), (q,s)\big)$ and its boundary curves are not meridians.
+\end{proof}
+
+The $(2,2)$-torus link is called the \emph{Hopf link} and is drawn in Figure \ref{Hopf_link:fig}.\index{link!Hopf link}
+
+\begin{ex} The complement of the Hopf link is $T\times [0,1]$. Any two distinct fibres of the Hopf fibration form a Hopf link.
+\end{ex}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 4 cm] {\iftoggle{BW}{Hopf_Link-BW}{617px-Hopf_Link}}
+\nota{The Hopf link is the $(2,2)$-torus link.}
+\label{Hopf_link:fig}
+\end{center}
+\end{figure}
+
+\subsection{Satellite knots}
+We have discovered that che composite knots contain essential annuli in their complement, and we now look for essential tori. It is convenient to introduce the following definition.
+
+\begin{defn}
+A knot $K\subset S^3$ is a \emph{satellite} if its complement contains an essential torus.\index{knot!satellite knot}
+\end{defn}
+
+We now formulate an equivalent and more inspiring definition of satellite knots which justifies the terminology. A knot in a solid torus $D^2 \times S^1$ is \emph{local} if it is contained in a ball, and a \emph{core} if it is isotopic to $\{x\} \times S^1$. An embedding $\varphi\colon D^2 \times S^1 \hookrightarrow S^3$ is \emph{trivial} (or \emph{unknotted}) if the image of a core is a trivial knot.
+
+\begin{prop}
+A knot $K\subset S^3$ is satellite $\Longleftrightarrow$ it is the image of a knot $K' \subset D^2 \times S^1$ which is neither local nor a core, along a non-trivial embedding $\varphi \colon D^2\times S^1 \hookrightarrow S^3$.
+\end{prop}
+\begin{proof}
+A knot $K=\varphi(K')$ constructed in this way is satellite, because the torus $\varphi (S^1\times S^1)$ is essential in the complement of $K$: it is incompressible (on one side because $\varphi$ is non-trivial, and on the other because $K'$ is not local) and not $\partial$-parallel (because $K'$ is not a core).
+
+Conversely, if $K$ is a satellite knot then its complement contains an essential torus $T\subset S^3$. As every torus in $S^3$, the torus $T$ bounds a solid torus. Since $T$ is essential, the knot $K$ is contained in this solid torus in a non-local and non-core way.
+Moreover the solid torus is knotted, otherwise $T$ would be compressible on the other side.
+\end{proof}
+
+The non-trivial embedding $\varphi$ sends the core curve of $D^2\times S^1$ to some non-trivial knot $H\subset S^3$ called the \emph{companion} of $K$: we should think of $K$ as orbiting as a ``satellite'' around its companion $H$, with orbit path $K'$. When $K'$ is contained in the boundary of the solid torus $D^2\times S^1$ the satellite knot $K$ is called a \emph{cable} knot. Some examples are shown in Figure \ref{satellites:fig}.\index{knot!cable knot}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 5.5 cm] {B_sat1.png}
+\includegraphics[width = 5 cm] {B_sat2.png}
+\nota{Two satellite knots.}
+\label{satellites:fig}
+\end{center}
+\end{figure}
+
+
+
+\subsection{Simple complements}
+Recall from Section \ref{simple:manifold:subsection} that a compact three-manifold is simple if it contains no essential sphere, disc, torus, and annulus. Which knots have a simple complement? To answer to this question, we need a general lemma on three-manifolds that identifies the few cases where there are essential annuli without essential tori.
+
+\begin{lemma} \label{only:annuli:lemma}
+Let $M$ be irreducible and $\partial$-irreducible, with boundary consisting of tori. The manifold $M$ contains no essential tori but contains some essential annuli $\Longleftrightarrow$ it is diffeomorphic to one of the following:
+$$\big(D,(p_1,q_1), (p_2,q_2)\big), \quad \big( A, (p,q) \big), \quad P\times S^1$$
+with $p_1,p_2 \geqslant 2$. Here $P$ is a pair of pants.
+\end{lemma}
+\begin{proof}
+Propositions \ref{v:h:prop} and \ref{incompressible:vertical:prop} imply that the Seifert manifolds listed contain vertical essential annuli, but not essential tori. 
+
+Conversely, let $M$ contain an essential annulus $A$. Suppose that $A$ connects two distinct boundary tori $T,T'$ of $M$. A regular neighbourhood of $T\cup T'\cup A$ is diffeomorphic to $P\times S^1$, and its boundary contains a third torus $T''\subset M$. Since $T''$ cannot be essential, it is either boundary parallel or bounds a solid torus in $M$, and $M$ is diffeomorphic respectively  to $P\times S^1$ or a Dehn filling of it. In the latter case, the Dehn filling is not fibre-parallel because $M$ is $\partial$-reducible (use Corollary \ref{fiber:parallel:cor}), hence we get a Seifert manifold of type $\big(A, (p,q) \big)$.
+
+If $A$ connects one boundary component to itself we conclude similarly and may also get $M = \big(D, (p_1,q_1), (p_2,q_2)\big)$. 
+\end{proof}
+
+We can now state and prove an important trichotomy on knots. 
+
+\begin{prop} \label{trichotomy:knots:prop}
+Every knot $K\subset S^3$ is either a torus knot, a satellite knot, or has a simple complement.
+\end{prop}
+\begin{proof}
+We only need to prove that if the complement $M$ contains an essential annulus and no essential tori then $K$ is a torus knot. The previous lemma gives $M=\big(D,(p_1,q_1),(p_2,q_2)\big)$, and to get $S^3$ back we must have a Dehn filling $S^3 = \big(S^2,(p_1,q_1), (p_2,q_2), (1,n)\big)$. In particular $K$ is isotopic to a fibre and hence contained in a vertical Heegaard torus for $S^3$. Heegaard tori are standard by Corollary \ref{H:tori:cor}, and hence $K$ is a torus knot.
+\end{proof}
+
+The relevance of this proposition will be magnified later, after introducing geometrisation. Note that in particular all the composite knots are satellite knots: where is the essential torus?
+
+\section{Dehn surgery}
+While a Dehn \emph{filling} consists of attaching a solid torus to a boundary component, a Dehn \emph{surgery} is a two-step operation that consists of drilling a tubular neighbourhood of a knot and then re-gluing it via a different map. 
+
+Using this fundamental operation we can describe \emph{every} closed three-manifold via some reasonable and combinatorial drawing on the plane: a link diagram with some rational numbers attached to its components. Such a combinatorial description has a strong four-dimensional flavour and is called a \emph{Kirby diagram}.
+
+In this section we introduce some basic knot theory concepts: longitudes, Seifert surfaces, Dehn surgery, and the Lickorish-Wallace Theorem which asserts that every closed orientable 3-manifold is obtained by surgerying some link in $S^3$.
+
+\subsection{Canonical longitudes} \label{canonical:longitudes:subsection}
+The tubular neighbourhood $N$ of a knot $K\subset S^3$ is a solid torus. As usual with solid tori, a \emph{meridian} is a simple closed curve $m\subset \partial N$ bounding a disc in $N$ and a \emph{longitude} is any other simple closed curve $l$ such that $m$ and $l$ generate $H_1(\partial N,\matZ)$. The meridian $m$ is unique up to sign, but the longitude $l$ is not: if $l$ is a longitude, then $l+km$ also is for any $k\in \matZ$. 
+
+The purpose of this section is to define a canonical longitude.
+
+\begin{prop} Let $L\subset S^3$ be a link with $k$ components and $M$ its complement. We have $H_1(M,\matZ) = \matZ^k$, generated by the $k$ meridians.
+\end{prop}
+\begin{proof}
+Let $N = N_1\sqcup \ldots \sqcup N_k$ be the solid tori neighbourhoods of $L$ and $T_i= \partial N_i$. The Mayer--Vietoris sequence on $S^3 = M\cup N$ gives
+$$0 \longrightarrow H_1(T_1\sqcup \ldots \sqcup T_k) \longrightarrow H_1(M) \oplus H_1(N_1\sqcup \ldots \sqcup N_k) \longrightarrow 0$$
+since $H_2(S^3) = H_1(S^3) = 0$. The equalities $H_1(T_i) = \matZ\times \matZ$ and $H_1(N_i) = \matZ$ imply that $H_1(M) = \matZ^k$.
+The group $H_1(T_i)$ is generated by $(m_i, l_i)$ and $m_i$ goes to zero in $H_1(N_i)$. Therefore the meridians $m_1,\ldots, m_k$ go to generators of $H_1(M)$.
+\end{proof}
+
+\begin{cor} \label{longitude:cor}
+Let $K\subset S^3$ be a knot and $M$ be its complement. A unique (up to sign) longitude $l \subset \partial M$ vanishes in $H_1(M, \matZ)$. 
+\end{cor}
+\begin{proof}
+In the map $\matZ\times \matZ = H_1(\partial M) \to H_1(M)  =\matZ $ the meridian $m$ goes to a generator, hence the kernel is generated by a longitude $l$.
+\end{proof}
+
+We call $l$ the \emph{canonical longitude} of $K$. The torus $T=\partial M$ is hence equipped with a canonical basis $(m,l)$ for $H_1(T,\matZ)$; we orient $m$ and $l$ as shown in Figure \ref{torus:ml:fig}, like a right-hand screw. The pair $(m,l)$ is well-defined up to reversing both their signs. 
+
+\subsection{Seifert surfaces}
+We now show that the canonical longitude has a concrete geometric interpretation.
+
+\begin{figure}
+\begin{center}
+\includegraphics [width = 3 cm] {\iftoggle{BW}{Noeud_de_trefle_et_surface_de_seifert-BW}{500px-Noeud_de_trefle_et_surface_de_seifert}}
+\nota{A Seifert surface for the trefoil knot: it is a punctured torus.}
+\label{Seifert_surface:fig}
+\end{center}
+\end{figure}
+
+\begin{defn} A \emph{Seifert surface} for a knot $K\subset S^3$ is any orientable connected compact surface $S\subset S^3$ with $\partial S = K$.\index{Seifert surface}
+\end{defn}
+
+See an example in Figure \ref{Seifert_surface:fig}. Every Seifert surface $S$ determines a longitude $l$ for $K$: pick a small tubular neighbourhood $N$ of $K$ and set $l=S\cap \partial N$. The same knot $K$ has plenty of non-isotopic Seifert surfaces, but luckily these all induce the same longitude:
+
+\begin{prop}
+Every knot $K$ has a Seifert surface $S$. Every Seifert surface for $K$ induces the canonical longitude $l$.
+\end{prop}
+\begin{proof}
+Let $M$ be the complement of $K$. Let $S$ be a surface representing a generator of $H_2(M,\partial M) = H^1(M) = \matZ$. The long exact sequence
+$$\ldots \longrightarrow H_2(M,\partial M) \longrightarrow H_1(\partial M) \longrightarrow H_1(M) \longrightarrow \ldots$$ 
+implies that $[S]$ is mapped to a non-trivial primitive element $\alpha \in H_1(\partial M)=\matZ\times \matZ$ that is trivial in $H_1(M)$. Therefore $[\partial S]=\alpha = [l]$ and $\partial S$ consists of an odd number of parallel copies of $l$ and some homotopically trivial simple closed curves in $T = \partial M$. The homotopically trivial components may be eliminated by isotoping them inside $M$ and capping them with discs; if the parallel copies are more than 1, since their signed sum is 1, there must be two of them that are close and with opposite signs, that can be canceled by isotoping them inside $M$ and capping them with an annulus. At the end we get $\partial S = K$.
+\end{proof}
+
+The \emph{Seifert genus} of $K$ is the minimum genus of a Seifert surface for $K$.\index{knot!Seifert genus}
+
+\begin{prop} The unknot is the only knot with Seifert genus zero.
+\end{prop}
+\begin{proof}
+A knot has genus zero $\Longleftrightarrow$ it bounds a disc.
+\end{proof}
+
+Figure \ref{Seifert_surface:fig} shows that the trefoil knot has genus one.
+
+\subsection{Dehn surgery}
+Let $L\subset M$ be a link with some $k$ components in an orientable 3-manifold $M$. A \emph{Dehn surgery} on $L$ is a Dehn filling of the complement of $L$. In other words, it is a two-step operation that consists of:\index{Dehn surgery}
+\begin{enumerate}
+\item (\emph{drilling}) the removal of small open tubular neighbourhoods of $L$, that creates new boundary tori $T_1,\ldots, T_k$; 
+\item (\emph{filling}) a Dehn filling of the new boundary tori $T_1,\ldots, T_k$.
+\end{enumerate}
+We remove the tubular neighbourhoods of $L$ and glue them back differently: this explains the use of the word \emph{surgery}.
+The outcome is a new manifold $N$ that has the same boundary of $M$, but $N$ may be not diffeomorphic to $M$.
+
+The surgered manifold $N$ is determined by the slopes in $T_1, \ldots, T_k$ that are killed by the Dehn filling, see Section \ref{Dehn:filling:subsection}. When $M=S^3$, every torus $T_i $ is equipped with a canonical basis $m_i, l_i$, the slope is of the form $\pm(p_im_i + q_il_i)$ and is hence determined by the rational number $\frac {p_i}{q_i}\in\matQ \cup \{\infty\}$. The full surgery on the link is comfortably encoded by assigning the number $\frac {p_i}{q_i}$ to the $i$-th component of $L$, for every $i=1,\ldots,k$.
+
+The result of a Dehn surgery along $L\subset S^3$ is a closed orientable 3-manifold. The slope $\infty = \frac 10$ indicates the meridian $m_i$.
+
+\begin{prop} An $\infty$-surgery on a knot $K$ has no effect.
+\end{prop}
+\begin{proof}
+It consists of removing a solid torus neighbourhood of $K$ and regluing it back with the same map.
+\end{proof}
+
+A \emph{Kirby diagram} is a link diagram on the plane with a rational number $\frac{p_i}{q_i}$ assigned to each component. Such a diagram defines a Dehn surgery and hence a closed orientable three-manifold.\index{Kirby diagram} Some examples are shown in Figure \ref{Kirby:fig}.
+
+\begin{ex} 
+The $\frac pq$-surgery on the unknot yields the lens space $L(p,q)$.
+\end{ex}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 5 cm] {Kirby.pdf}
+\nota{Two Kirby diagrams describing the lens space $L(p,q)$ and the Poincar\'e homology sphere $\Sigma(2,3,5)$.}
+\label{Kirby:fig}
+\end{center}
+\end{figure}
+
+The slope $0$ indicates the canonical longitude $l_i$. More generally, the integer $n_i \in \matZ$ encodes the longitude $n_im_i + l_i$. The surgery is \emph{integral} if the coefficients $\frac {p_i}{q_i}$ are all integers.
+
+\begin{rem} The notion of \emph{integral} Dehn surgery exists for any link $L\subset M$ in any 3-manifold $M$: a Dehn surgery is integral if the killed slopes are longitudes of the previously removed solid tori. However on a generic $M$ there is no rule for choosing a canonical longitude and hence to transform slopes into numbers.
+\end{rem}
+
+Let $N$ be obtained by Dehn surgery on a knot $K\subset S^3$ with coefficient $\frac{p}{q}$.
+
+\begin{prop}
+The surgered manifold $N$ has $H_1(N, \matZ) = \matZ/_{p\matZ}$.
+\end{prop}
+\begin{proof}
+Let $M$ be the complement of $K$. We know that the meridian $m$ generates $H_1(M) = \matZ$ while the longitude $l$ is zero there. The Dehn filling kills the element $pm + ql = pm$.
+\end{proof}
+
+Recall that a \emph{homology sphere} is a closed 3-manifold $M$ having the same integral homology as $S^3$, that is with trivial $H_1(M, \matZ)$.
+
+\begin{cor}
+If the coefficient is $\frac 1{q}$ the surgered manifold $N$ is a homology sphere.
+\end{cor}
+
+We have just found a simple method to construct plenty of homology spheres.
+
+\subsection{Torus knots}
+As a first example, we study the effect of a Dehn surgery on torus knots. We suppose $p,q \geqslant 1$.
+
+\begin{prop}
+The $\frac tu$-Dehn surgery on a $(p,q)$-torus knot gives
+\begin{align} 
+\big(S^2, (p,r), (q,s), (t-pqu,u)\big) & \quad {\rm if}\ \frac {t}u \neq pq, \label{Stu:eqn} \\
+L(p,r) \# L(q,s) & \quad {\rm if}\ \frac tu = pq
+\end{align}
+where $(r,s)$ is any pair with $ps+qr = 1$.
+\end{prop}
+\begin{proof}
+Recall from the proof of Proposition \ref{torus:knot:complement:prop} that the complement of $K$ in $T\times [-1,1]$ is diffeomorphic to $P\times S^1$. The meridian $m$ of $K$ is isotopic to $\partial P \times \{{\rm pt}\}$, so the canonical longitude $l$ of $K$ is isotopic to $l'+km$ for some $k\in \matZ$, where $l'$ is isotopic to $\{{\rm pt}\}\times S^1$, \emph{i.e.}~it is the framing induced by $T$.
+
+By Proposition \ref{torus:knot:complement:prop} the Dehn filling is $\big(S^2, (p,r), (q,s), (t-ku,u)\big)$ and we need to determine $k$. Recall that if $\frac tu = \frac 01$ the manifold has infinite cyclic homology, hence it is a Seifert manifold with $e=\frac 1{pq}-\frac 1k = 0$ by Proposition \ref{Seifert:homology:prop}: we deduce that $k=pq$.
+
+When $t-pqu = 0$ the filling is fiber-parallel and Corollary \ref{fiber:parallel:cor} shows that we actually get $L(p,r) \# L(q,s)$.
+\end{proof}
+Recall from Corollary \ref{sigma:cor} that for every triple $(p,q,n)$ of pairwise coprime natural numbers $p,q,n\geqslant 2$ there is a unique Seifert homology sphere $\Sigma(p,q,n)$ fibering over the orbifold $(S^2,p,q,n)$.
+
+\begin{cor}
+Fix two coprime $p,q \geqslant 2$. The Seifert homology sphere obtained by $\frac 1u$-surgery on the $(p,q)$-torus knot is $\Sigma(p,q,|pqu-1|)$.
+\end{cor}
+In particular the $1$-surgery on the trefoil knot (seen as a $(2,3)$-torus knot) depicted in Figure \ref{Kirby:fig} produces the Poincar\'e homology sphere $\Sigma(2,3,5)$.
+ 
+\begin{ex} Every homology sphere of type $\Sigma(2,3,k)$ may be obtained via a Dehn surgery of the trefoil knot.
+\end{ex}
+
+Note that when $t-pqu = \pm 1$ the Seifert manifold (\ref{Stu:eqn}) has only two singular fibres and is hence a lens space.
+
+\begin{cor}
+Fix two coprime $p,q \geqslant 2$ and $n\geqslant 1$. When $\frac tu = pq \pm \frac 1n$ the $\frac tu$-Dehn surgery on a $(p,q)$-torus knot produces the lens space 
+$$L(t,uq^2) = L(npq \pm 1, nq^2).$$
+\end{cor}
+\begin{proof}
+The Seifert manifold (\ref{Stu:eqn}) is
+\begin{align*}
+\big(S^2, (p,r), (q,s), (1, \pm n) \big) & = \big(S^2, (p,r), (q,s \pm nq) \big) \\
+& = L(p(s\pm nq) +rq, (-q)(s\pm nq) + sq) \\
+& = L(1 \pm npq, \mp nq^2)
+\end{align*}
+using Exercise \ref{two:lens:ex}.
+\end{proof}
+We note that we never get $S^2\times S^1$ or $S^3$ via non-trivial surgeries on non-trivial torus knots. The lens space with smallest fundamental group that we may get is $L(5,1)$, which arises from a $5$-Dehn surgery on the trefoil knot.
+
+
+\subsection{The Lickorish-Wallace theorem}
+We now prove that the Dehn surgery construction is as general as possible.
+
+\begin{teo}[Lickorish-Wallace theorem] \label{LW:teo}
+Every closed orientable 3-manifold can be described via an integral Dehn surgery along a link $L\subset S^3$.
+\end{teo}
+\begin{proof}
+Let $M$ be a closed orientable 3-manifold. Pick a Heegaard splitting $M=H_1 \cup_\psi H_2$ where $H_1$ and $H_2$ are genus-$g$ handlebodies and $\psi\colon \partial H_1\to \partial H_2$ is a diffeomorphism. We fix an identification of both $H_1$ and $H_2$ with a model handlebody $H$, so that $\psi$ can be interpreted as an element of the mapping class group $\MCG(S)$ of the genus-$g$ surface $S=\partial H$. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 6 cm] {\iftoggle{BW}{LW-BW}{LW}}
+\nota{We push $\gamma$ inside a collar for $\partial H_2$ and drill a solid torus neighbourhood, represented here as a \iftoggle{BW}{light grey}{yellow} parallelepiped.}
+\label{LW:fig}
+\end{center}
+\end{figure}
+
+Example \ref{S3:example} shows that the three-sphere also decomposes as $S^3 = H_1\cup_\varphi H_2$ for some $\varphi\in \MCG(S)$. Theorem \ref{twists:generate:teo} says that $\psi\circ \varphi^{-1}$ is a composition of Dehn twists
+$$\psi\circ \varphi ^{-1} = T_{\gamma_k}^{\pm 1} \circ \ldots \circ T_{\gamma_1}^{\pm 1}$$
+along some curves $\gamma_i \subset S$. Set $M_i = H_1\cup_{\psi_{i}} H_2$ with 
+$$\psi_i = T_{\gamma_i}^{\pm 1} \circ \ldots \circ T_{\gamma_1}^{\pm 1}\circ \varphi.$$
+We have $M_0=S^3$ and $M_k=M$. We prove that $M_i$ can be described via an integral Dehn surgery along a $i$-components link in $S^3$ by induction on $i$. To obtain that it suffices to check that $M_{i+1}$ can be obtained from $M_i$ via integral Dehn surgery along a knot. We have 
+$$M_i = H_1\cup_{\psi_i} H_2, \qquad M_{i+1} = H_1\cup_{T_{\gamma_{i+1}}^{\pm 1}\circ \psi_i} H_2.$$
+Now fix a collar of $S=\partial H_2$ in $H_2$ and push $\gamma_{i+1}$ inside the collar as in Figure \ref{LW:fig}. Drill from $H_2$ a solid torus around $\gamma_{i+1}$ (a \iftoggle{BW}{light grey}{yellow} parallelepiped in the figure) to get a submanifold $H_2^{\rm drill} \subset H_2$. We see $T_{\gamma_{i+1}^{\pm 1}}$ as a Dehn twist supported in the annulus $A\subset S$ drawn in the figure. 
+
+The Dehn twist supported on $A$ extends product-wise to the solid torus $A\times [0,1]$ lying between $A$ and the drilled \iftoggle{BW}{light grey}{yellow} parallelepiped, and extends trivially to a self-diffeomorphism $T\colon H_2^{\rm drill} \to H_2^{\rm drill}$ such that $T|_S = T_{\gamma_{i+1}}^{\pm 1}$. We define
+$$M_j^{\rm drill} = H_1 \cup_{\psi_j} H_2^{\rm drill}$$
+for $j=i, i+1$. Since $T|_S = T_{\gamma_{i+1}}^{\pm 1}$ the map $T$ extends to a diffeomorphism
+$$T\colon M_i^{\rm drill} \longrightarrow M_{i+1}^{\rm drill}.$$
+Therefore $M_{i+1}$ is obtained from $M_i$ by Dehn surgery along $\gamma_{i+1}$. The surgery is integral since $T$ sends a meridian of the drilled \iftoggle{BW}{light grey}{yellow} solid torus to a longitude. The proof is complete.
+\end{proof}
+
+The theorem shows that every closed orientable three-manifold can be constructed using Kirby diagrams. As for knots and many other combinatorial descriptions of topological objects, it is important to note that many different Kirby diagrams may describe the same three-manifold, and in general it is hard to tell, given two diagrams, whether they define the same manifold or not.
+
+\subsection{Four-manifolds}
+The theorem of Lickorish and Wallace has a nice four-dimensional interpretation, which shows in particular that every closed orientable three-manifold is the boundary of a simply-connected four-manifold.
+
+Recall from Section \ref{handles:subsection} that in dimension four a two-handle $H=D^2 \times D^2$ is attached to an orientable four-manifold $W$ via an embedding $\psi\colon S^1 \times D^2 \to \partial W$. After attaching the handle $H$ to $W$, the boundary of $W$ changes by substituting the solid torus $\psi(S^1 \times D^2)$ with another solid torus $D^2 \times S^1$: in other words, it changes by Dehn surgery. The Dehn surgery is integral because the meridians of the two solid tori intersect in one points. 
+
+Conversely, every integral Dehn surgery on a knot $K\subset \partial W$ may be interpreted as the effect of attaching some 2-handle: it suffices to interpret the drilled and filled solid tori as horizontal and vertical boundaries of a four-dimensional two-handle.
+
+With such an interpretation, we may consider $S^3$ as the boundary of $D^4$ and see the integral Dehn surgery on a link $L\subset S^3$ as the result of attaching some two-handles to $D^4$. The Lickorish-Wallace theorem implies the following.
+
+\begin{cor}
+Every closed orientable three-manifold is the boundary of a simply-connected compact four-manifold.
+\end{cor}
+\begin{proof}
+Every closed orientable three-manifold is the result of an integral surgery on a link $L\subset S^3$ and is hence the boundary of a four-manifold obtained by attaching some two-handles to $D^4$. Every such manifold is simply-connected by Van Kampen's theorem.
+\end{proof}
+
+This theorem reveals in particular that it is fairly easy to construct plenty of simply connected four-manifolds with boundary. Note that the simply connected four-manifolds constructed in this way are not contractible: indeed the following proposition shows that they have a non-trivial second homology group.
+
+\begin{prop}
+A four-manifold with one 0-handle and k 2-handles is homotopy equivalent to a bouquet of $k$ two-spheres.
+\end{prop}
+\begin{proof}
+We first deformation retract the two-handles over their core discs, and then we shrink the whole 0-handle to a point.
+\end{proof}
+
+To construct contractible four-manifolds, we need to employ 1-handles.
+
+\subsection{Three-manifolds with boundary}
+The Lickorish-Wallace Theorem extends to compact manifolds with boundary, in the appropriate way. 
+
+\begin{prop} \label{LW:bordo:prop}
+Every compact orientable 3-manifold $M$ with boundary is obtained from $S^3$ as follows: pick $L\sqcup C\subset S^3$ where $L$ is a link and $C$ is a 1-complex; remove an open regular neighbourhood of $C$ and perform an integral surgery on $L$.
+\end{prop}
+\begin{proof}
+Cap off the boundary of $M$ by adding handlebodies $H_g$, to get a closed manifold $M'$. Choose a 1-complex $C\subset M'$ whose regular neighbourhood consists of these handlebodies, so that by removing $C$ we get $M$ back. 
+
+Now $M'$ is obtained from $S^3$ via integral surgery along some link $L$, and by general position we may suppose that $C$ is disjoint from the cores of the surgered solid tori, so that we can see both $C$ and $L$ disjointly in $S^3$.
+\end{proof}
+
+If $\partial M$ consists of tori we may suppose that $C$ is also a link. 
+
+\section{Surface bundles}
+Seifert manifolds have base orbifolds of dimension 2 and smooth fibres of dimension 1. We now introduce a complementary construction where the base orbifolds have dimension 1 and the smooth fibres have dimension 2. These are called \emph{surface bundles}.
+
+\subsection{Surface bundles}
+A \emph{surface bundle over $S^1$} is a fibre bundle $M\to S^1$ of a compact orientable 3-manifold $M$ (possibly with boundary) over the circle, whose fibre $\Sigma$ is a connected compact orientable surface. If $M$ has boundary, then $\Sigma$ also has, and $\partial M$ consists of tori fibering over $S^1$.\index{surface bundle over $S^1$}
+
+\begin{prop}
+Every surface bundle over $S^1$ is constructed by taking $\Sigma\times [0,1]$ and glueing $\Sigma\times 0$ to $\Sigma\times 1$ via an orientation-preserving diffeomorphism $\psi$.
+\end{prop}
+\begin{proof}
+One such glueing clearly gives rise to a surface bundle over $S^1$. Conversely, by cutting a surface bundle over $S^1$ along a fibre we get a surface bundle over the interval, which is a product $\Sigma\times [0,1]$.
+\end{proof}
+
+The diffeomorphism $\psi$ is the \emph{monodromy} of the surface bundle $M_\psi$. Since isotopic glueings produce diffeomorphic manifolds, the three-manifold $M_\psi$ depends only of the class of $\psi$ in the mapping class group $\MCG(\Sigma)$ on $\Sigma$. More than that, it actually depends only on its conjugacy class:
+
+\begin{prop}
+If $\psi$ and $\phi$ are conjugate in $\MCG(\Sigma)$, then $M_\psi$ and $M_\phi$ are diffeomorphic.
+\end{prop}
+\begin{proof}
+The diffeomorphism $g\colon \Sigma\to \Sigma$ that conjugates them extends to $\Sigma\times [0,1]$ and gives a diffeomorphism $M_\psi \to M_\phi$.
+\end{proof}
+
+The manifolds $M_\psi$ and $M_{\psi^{-1}}$ are (orientation-reversingly) diffeomorphic.
+
+\subsection{Properties}
+We now start to investigate the topological properties of surface bundles.
+Let $M\to S^1$ be a surface bundle with fibre $\Sigma$.
+
+\begin{ex}
+The maps $\Sigma\to M \to S^1$ induce an exact sequence
+$$0 \longrightarrow \pi_1(\Sigma) \longrightarrow \pi_1(M) \longrightarrow \pi_1(S^1) \longrightarrow 0.$$
+\end{ex}
+
+This implies in particular that $\pi_1(M)$ surjects onto $\matZ$ and therefore:
+
+\begin{cor}
+We have $b_1(M)\geqslant 1$.
+\end{cor}
+
+In other terms, the surface fibre $\Sigma$ is non-separating and hence $[\Sigma]\in H_2(M,\partial M)$ is non-trivial (and has infinite order, since there is no torsion there).
+
+Note that there is an obvious degree-$n$ regular covering $M_{\psi^n} \to M_{\psi}$ for every $n$ and an infinite regular covering $\Sigma\times \matR \to M_{\psi}$ induced by the normal subgroup $\pi_1(\Sigma) \triangleleft \pi_1(M)$. 
+
+\begin{prop}
+The fibre $\Sigma$ is an essential surface.
+If $\chi(\Sigma)>0$ then $M$ is diffeomorphic to $D\times S^1$ or $S^2\times S^1$.
+If $\chi(\Sigma)\leqslant 0$ the universal cover of $\interior M$ is $\matR^3$ and $M$ is Haken.
+\end{prop}
+\begin{proof}
+If $\chi(\Sigma)>0$ then $\MCG(\Sigma)$ is trivial and we are done, so we suppose $\chi(\Sigma)\leqslant 0$. The fibre $\Sigma$ is incompressible because $\pi_1(\Sigma)$ injects, and is also $\partial$-incompressible by a doubling argument (the double $DM$ fibres to $S^1$ with incompressible fibre $D\Sigma$, hence $\Sigma$ is $\partial$-incompressible). The fibre is clearly not $\partial$-parallel, hence it is essential.
+
+The manifold $M$ is covered by $\Sigma \times \matR$, whose interior is covered by $\matR^2 \times \matR = \matR^3$: hence $M$ is irreducible. It is also $\partial$-irreducible because its double also fibres and hence is irreducible. Therefore $M$ is Haken. 
+\end{proof}
+
+\subsection{Semi-bundles}
+The Seifert fibrations are circle bundles over two-dimensional orbifolds, and likewise it is natural to consider surface bundles over 1-orbifolds. The compact 1-orbifolds are $S^1$ and the closed segment with mirrored endpoints. We have already considered the $S^1$ case and we now define some surface bundles over the closed segment, called \emph{semi-bundles}.
+
+Let $\Sigma$ be a non-orientable surface, with orientable double cover $p\colon \tilde \Sigma \to \Sigma$ and deck transformation $\tau$ that gives $\Sigma=\tilde \Sigma/_\tau$. We have 
+$$\Sigma\timtil (-1,1) = \big(\tilde \Sigma \times (-1,1)\big)/_{(\tau, \iota)}$$
+with $\iota(x) = -x$. A \emph{local semi-bundle} is the map $\Sigma\timtil (-1,1) \to [0,1)$ that sends $(p,x)$ to $|x|$. The fibre over $0$ is $\Sigma$, that over $x\in (0,1)$ is $\tilde \Sigma$.
+
+A \emph{semi-bundle} $M \to [-1,1]$ is a map which is a local semi-bundle when restricted to $[-1, 1-\varepsilon)$ and $(\varepsilon, 1]$. The fibre over $\pm 1$ is $\Sigma$ and the fibre of $x\in (-1,1)$ is $\tilde \Sigma$. We should think about this object as a surface bundle over the segment orbifold $[-1,1]$ with mirror points $\pm 1$. 
+
+\begin{ex}
+Every semi-bundle is constructed by gluing two copies of $\Sigma\timtil [-1,1]$ along their boundaries via some diffeomorphism.
+\end{ex}
+
+Set $I = [-1,1]$. Let $M\to I$ be a semi-bundle with fibres $\Sigma$ and $\tilde \Sigma$.
+Note that $I=\matR/_\Gamma$ where $\Gamma<\Iso(\matR)$ is generated by the reflections at the points $\pm 1$. The orbifold fundamental group of $I$ is 
+$$\pi_1(I) = \Gamma = \matZ/_{2\matZ} * \matZ/_{2\matZ}.$$
+
+\begin{ex}
+The maps $\tilde\Sigma\to M \to I$ induce an exact sequence
+$$0 \longrightarrow \pi_1(\tilde \Sigma) \longrightarrow \pi_1(M) \longrightarrow \pi_1(I) \longrightarrow 0.$$
+\end{ex}
+
+\begin{prop}
+If $\chi(\Sigma)>0$ then $M$ is diffeomorphic to $\matRP^2 \timtil S^1$. If $\chi(\Sigma)\leqslant 0$ the orientable fibre $\tilde \Sigma$ is essential, the universal cover of $\interior M$ is $\matR^3$, and $M$ is Haken.
+\end{prop}
+\begin{proof}
+Same proof as in the standard bundle case.
+\end{proof}
+
+\begin{ex} \label{semi:iff:ex}
+An orientable 3-manifold $M$ has a (semi-)bundle structure if and only if there is an orientable $\Sigma \subset M$ that cuts $M$ into interval bundles.
+\end{ex}
+
+Let $M\to I$ be a semi-bundle. We may pull-back the semi-bundle along the orbifold double cover $S^1 \to I$ and get an ordinary surface bundle $\tilde M \to S^1$, so that the following diagram commutes:
+$$
+\xymatrix{ 
+\tilde M\ar@{.>}[r] \ar@{.>}[d] & M \ar[d] \\
+S^1\ar[r] & I
+}
+$$
+Every semi-bundle is thus covered by an ordinary bundle.
+
+\subsection{Seifert manifolds} \label{Seifert:fibers:subsection}
+We now classify the Seifert manifolds that have a surface (semi-)bundle structure.
+
+\begin{prop} \label{Seifert:bundle:prop}
+A Seifert manifold $M$ has a (semi-)bundle structure if and only if one of the following holds: 
+\begin{itemize}
+\item $\partial M \neq 0$, 
+\item $e(M)=0$, 
+\item $M = \big(T,(1,e)\big)$ or $\big(K,(1,e)\big)$,
+\item $M = \big(S^2, (2,1),\! (2,1),\! (2,1),\! (2,2q+1)\big)$ or $\big(\matRP^2, (2,1),\! (2,2q+1)\big)$.
+\end{itemize}
+The manifolds in the last line occur only as semi-bundles.
+\end{prop}
+\begin{proof}
+If $\partial M \neq \emptyset$ or $e(M)=0$ then $M\to S$ has an orientable section $\Sigma$, which cuts $M$ into interval bundles: hence $\Sigma$ is a fibre of a (semi-)bundle (see Exercise \ref{semi:iff:ex}).
+
+Let $S$ be one of the orbifolds
+$$T, \quad K, \quad (S^2,2,2,2,2), \quad (\matRP^2, 2,2).$$
+It contains a circle that splits $S$ into one or two annuli, M\"obius strips, or $(D,2,2)$. 
+Every circle fibering over these pieces is an interval bundle by Proposition \ref{diffeo:fiberings:prop}. Therefore every fibering $M \to S$ contains a vertical torus that splits $M$ into interval bundles and is hence a (semi-)bundle.
+
+Conversely, if $M$ has a (semi-)bundle structure the orientable fibre is essential and is hence either horizontal or vertical: we get one of the types listed.
+\end{proof}
+
+\subsection{Torus bundles}
+A \emph{torus bundle} is of course a surface bundle $M\to S^1$ with fibre a torus $T$. We fix a basis for $\pi_1(T)$, so that $\MCG(T) = \SLZ$. By what said above, every matrix $A\in \SLZ$ defines a torus bundle $M_A$\index{torus bundle} with monodromy $A$. We want to understand when $M_A$ is a Seifert manifold.
+
+\begin{ex} \label{Me:ex}
+For every $e\in\matZ$ there are diffeomorphisms 
+$$M_{\matr 1e01} \isom \big(T,(1,e)\big), \quad M_{\matr {-1}e0{-1}} \isom \big(K,(1,e)\big). $$
+\end{ex}
+
+The classification of torus bundles reduces to linear algebra.
+
+\begin{prop} \label{torus:bundle:classification:prop}
+Two torus bundles $M_A$ and $M_{A'}$ are diffeomorphic if and only if $A'$ is conjugate to $A^{\pm 1}$ in $\SLZ$.
+\end{prop}
+\begin{proof}
+Let $M_A \isom M_{A'}$ be a diffeomorphism. Consider the tori $T$ and $T'$ of the two fibrations both inside $M_A$ and minimise their transverse intersection. 
+
+If $T\cap T' = \emptyset$, by Proposition \ref{line:bundles:prop} the tori are parallel and the two fibrations are isotopic: hence $A'$ is conjugate to $A^{\pm 1}$. Otherwise by the same proposition $T'$ decomposes into fibered annuli in the product line bundle $M_A\setminus T$. One such fibered annulus identifies a circle $\gamma\subset T$ preserved by $A$. Therefore $A$ is conjugate to $\matr 1 e 0 1 $ or $\matr {-1} e 0 {-1}$, and $A'$ is conjugate to $\matr 1 {e'} 0 1 $ or $\matr {-1} {e'} 0 {-1}$ for the same reason. Exercise \ref{Me:ex} implies that $A' = A^{\pm 1}$.
+\end{proof}
+
+\begin{ex} A matrix $A\in \SLZ$ has finite order if and only if $A=\pm I$ or $|\tr A| < 2$. Every finite-order $A$ is conjugate to one of
+$$ 
+\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}, \quad
+\begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix}, \quad
+\begin{pmatrix} -1 & 1 \\ -1 & 0 \end{pmatrix}, \quad
+ \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}, \quad
+\begin{pmatrix} 1 & -1 \\ 1 & 0 \end{pmatrix}.
+$$
+These matrices have order 1, 2, 3, 4, 6.
+\end{ex}
+\begin{proof}[Hint]
+Use Proposition \ref{PSLR:prop}.
+\end{proof}
+
+We can easily determine whether a torus bundle is Seifert by looking at its monodromy $A$.
+
+\begin{prop} \label{torus:bundle:prop}
+Let $M = M_A$ be a torus bundle with monodromy $A\neq \pm I$. The following holds:
+\begin{itemize}
+\item if $|\tr A| < 2$ then $M$ is a Seifert manifold with $e=0$ and $\chi = 0$,
+\item if $|\tr A|=2$ then $M$ is a Seifert manifold with $e\neq 0$ and $\chi = 0$,
+\item if $|\tr A|>2$ then $M$ is not a Seifert manifold.
+\end{itemize}
+\end{prop}
+\begin{proof}
+Consider $T \times [-1,1]$ foliated by lines $\{x\}\times [-1,1]$. The foliation extends to $M_A$. If $A$ has finite order, then $M_A$ is finitely covered by $M_I = T\times S^1$ and hence all fibers are compact. Therefore $M_A$ is Seifert fibered and covered by $T\times S^1$, and we get $e=\chi=0$. 
+
+If $|\tr A|=2$ then $A$ is conjugate to $\matr {\pm 1}e0{\pm 1}$ and we use Exercise \ref{Me:ex}. Proposition \ref{Seifert:bundle:prop} easily shows that all the Seifert manifolds that are torus bundles are realised with $|\tr A| \leqslant 2$, hence if $|\tr A|>2$ the manifold $M$ is not Seifert by Proposition \ref{torus:bundle:classification:prop}.
+\end{proof}
+
+When $|\tr A| > 2$ we say that the monodromy $A$ is \emph{Anosov}.
+
+\subsection{Bundles with $\chi(\Sigma) <0$}
+Proposition \ref{torus:bundle:classification:prop} does not extend to surface bundles with $\chi(\Sigma)<0$; indeed it may happen that non-conjugate monodromies in $\MCG(\Sigma)$ give rise to diffeomorphic manifolds and understanding when this happens is a hard problem.
+
+Proposition \ref{torus:bundle:prop} extends nevertheless and reflects the trichotomy of mapping classes. Let $\Sigma$ be a closed orientable surface with $\chi(\Sigma)<0$.
+Recall from Section \ref{surface:diffeomorphisms:section} that every element $\psi\in\MCG(\Sigma)$ is either finite order, reducible, or pseudo-Anosov.
+
+\begin{prop} \label{trichotomy:prop}
+Let $M_\psi$ be a surface bundle with fibre $\Sigma$ and monodromy $\psi\in\MCG(\Sigma)$. The following holds:
+\begin{itemize}
+\item if $\psi$ has finite order, then $M_\psi$ is Seifert with $\chi <0$ and $e=0$,
+\item if $\psi$ is reducible, then $M_\psi$ contains an essential torus,
+\item if $\psi$ is pseudo-Anosov, then $M_\psi$ is simple and not Seifert.
+\end{itemize}
+\end{prop}
+\begin{proof}
+Same proof as Proposition \ref{torus:bundle:prop}. If $\psi$ has finite order, it is an isometry for some hyperbolic metric on $\Sigma$, and the line fibration of $\Sigma \times [-1,1]$ glues to a Seifert fibration for $M_\psi$. 
+
+If $\psi$ is reducible there are disjoint essential simple closed curves $\gamma_1,\ldots, \gamma_k$ with $\psi(\gamma_i) = \gamma_{i+1}$ cyclically; by gluing the annuli $\gamma_i \times [-1,1]$ we get a torus $T\subset M_\psi$. It is essential because by cutting along it we still get a fibration over $S^1$ with fibers having $\chi \leqslant 0$.
+
+If $\psi$ is pseudo-Anosov there are no essential tori $T\subset M_\psi$, for by minimising $T\cap \Sigma$ then $M_\psi \setminus T$ would consist of essential annuli of type $\gamma \times [-1,1]$ and hence $\psi$ would be reducible.
+The manifold $M_\psi$ is not Seifert because the fibre $\Sigma$ would become a horizontal surface: then $M$ would be covered by $\Sigma \times S^1$ and hence $\psi$ would be of finite order.
+\end{proof}
+
+
+\section{JSJ decomposition}
+In Chapter \ref{Three:topology:chapter} we cut every closed three-manifold along spheres, and it is now time to decompose it further along tori. 
+This two-steps cutting operation is called the \emph{JSJ decomposition} of the manifold, after the names of Jaco, Shalen, and Johansson who discovered it in the mid 1970s.\index{JSJ decomposition}
+
+The core of this decomposition is the existence of a canonical set of disjoint essential tori, unique up to isotopy. 
+
+\subsection{Canonical torus decomposition}
+Let $M$ be an orientable irreducible and $\partial$-irreducible compact 3-manifold with (possibly empty) boundary consisting of tori. How can we define a canonical set of disjoint essential tori in $M$? The answer is not obvious: for instance, if $M$ is a Seifert manifold, it may contain many vertical incompressible tori and there is no canonical way to choose among them.
+
+We will soon see that the Seifert manifolds are in fact the only possible source of ambiguity. Let
+$$S=T_1\sqcup \cdots \sqcup T_k$$ 
+be a set of disjoint essential tori $T_i\subset \interior M$. 
+We say that $S$ is a \emph{torus decomposition} of $M$ if it decomposes $M$ into blocks that are either:\index{torus decomposition} 
+\begin{itemize}
+\item torus (semi-)bundles,
+\item Seifert manifolds, or
+\item simple manifolds.
+\end{itemize}
+
+A torus decomposition is \emph{minimal} if no proper subset of $S$ is a torus decomposition. We prove here the following.
+
+\begin{teo}[JSJ decomposition] \label{JSJ:teo}
+Let  $M$ be an orientable irreducible and $\partial$-irreducible compact 3-manifold with (possibly empty) boundary consisting of tori. A minimal torus decomposition for $M$ exists and is unique up to isotopy.
+\end{teo}
+
+Such a minimal decomposition is called the \emph{canonical torus decomposition} or the \emph{JSJ decomposition} of $M$. The canonical torus decomposition may be empty: this holds precisely when $M$ is itself a torus (semi-)bundle, Seifert, or simple.
+
+\begin{oss}
+Torus (semi-)bundles are closed: therefore if $M$ is not itself a torus (semi-)bundle, the blocks of its canonical decomposition are either Seifert or simple.
+\end{oss}
+
+\subsection{Existence and uniqueness}
+Let  $M$ be an orientable irreducible and $\partial$-irreducible compact 3-manifold with (possibly empty) boundary consisting of tori. We now prove Theorem \ref{JSJ:teo}. Let us start by showing existence.
+\begin{prop}
+The manifold $M$ has a torus decomposition.
+\end{prop}
+\begin{proof}
+Let $T_1,\ldots, T_k$ be a maximal set of disjoint non-parallel essential tori in $M$, which exists by Corollary \ref{incompressible:cor}. We now prove that $S=T_1 \sqcup \cdots \sqcup T_k$ is a torus decomposition.
+
+Suppose it is not: one block $N$ of the decomposition is neither a (semi-)bundle, nor Seifert, nor simple. The block $N$ is irreducible and $\partial$-irreducible since these properties are preserved after cutting along incompressible surfaces. Being not simple, it contains an essential annulus $A$ or an essential torus $T$. 
+
+In the latter case we can add $T$ to the family $T_1,\ldots, T_k$ and get a contradiction since $S$ is maximal. In the former case Lemma \ref{only:annuli:lemma} applies and $N$ is Seifert.
+\end{proof}
+
+Since $M$ has a torus decomposition, it certainly has a minimal one. We now prove that it is unique.
+
+\begin{prop} \label{minimal:torus:unique:prop}
+The manifold $M$ has a unique minimal torus decomposition up to isotopy.
+\end{prop}
+\begin{proof}
+Let $S = T_1\sqcup \cdots \sqcup T_k$ and $S' = T_1' \sqcup \cdots \sqcup T_{k'}'$ be two minimal torus decompositions for $M$. We minimise their transverse intersections, so that $S\cap S'$ consists of essential circles cutting some tori into annuli. 
+
+Let $T_i'$ be decomposed into some annuli. 
+Each such annulus is essential in $M\setminus S$, hence it is contained in some non-simple block, \emph{i.e.}~a Seifert one. It is contained there horizontally or vertically: in the former case, the block is $\big(D, (2,1), (2,1) \big)$, $S_*\timtil S^1$, or $A\times S^1$ with $S_*$ the M\"obius strip. The first two blocks are diffeomorphic, and by swapping the fibration the annulus becomes vertical. The third block $T\times I$ is excluded since $S$ is minimal.
+
+Now all annuli in $T_i'$ are vertical. Two consequent vertical annuli are separated by some torus $T_j$; since the two annuli are fibered, the fibers of the two Seifert blocks incident to $T_j$ are isotopic: hence the two blocks glue to a bigger Seifert block and $T_j$ can be removed, a contradiction since $S$ is minimal.
+
+We have shown that $S\cap S' = \emptyset$. If $T_i$ is parallel to $T_j'$ we superpose the two tori, cut $M$ along $T_i=T_j'$ and proceed by induction. Now we suppose by contradiction that there is no parallelism.
+
+Every $T_i'$ is an essential vertical torus in a Seifert block of $M\setminus S$, and vice versa. This easily implies that all the blocks in $M\setminus S$, $M\setminus S'$, and all their intersections are Seifert! Pick one such intersection. It has a unique Seifert fibration, unless it is $K\timtil I$ which may fiber in two ways. Since $\partial (K\timtil I)$ is connected, one block is $K\timtil I$ itself and we change the fibration on this block if necessary. Now all intersections and all blocks have unique fibrations and they all glue to a Seifert fibration for $M$, a contradiction.
+\end{proof}
+
+The proof of Theorem \ref{JSJ:teo} is complete.
+
+\begin{oss}
+The sphere decomposition of Theorem \ref{prime:teo} and the torus decomposition of Theorem \ref{JSJ:teo} differ in two aspects: (i) the set of decomposing spheres is \emph{not} canonical up to isotopy, while the set of tori is; (ii) on the other hand, after cutting along the spheres and capping off we get a canonical set of prime manifolds, whereas if we cut along the tori we get some canonical manifolds with toric boundaries, but there is no canonical way to cap them off. 
+\end{oss}
+
+\subsection{Geometric decomposition} \label{geometric:decomposition:subsection}
+The \emph{geometric decomposition} is a slight variation of the canonical torus decomposition that is more suited to the geometrisation perspective that we will encounter in the next chapters. It is constructed from the canonical torus decomposition $S$ for $M$ as follows. Whenever a block $N$ of the torus decomposition is diffeomorphic to $K\timtil I$,  
+we substitute the torus $\partial N$ in $S$ with the core Klein bottle $K$ of $K\timtil I$. This substitution has the effect of deleting $N$ from the list of blocks of the decomposition.\index{geometric decomposition}
+
+The geometric decomposition consists of incompressible tori and Klein bottles. One reason for preferring the geometric decomposition to the canonical torus one is that it contains no interval bundles and every Seifert block has a unique fibration up to isotopy (because we have eliminated the $K\timtil I$ blocks). In particular we get the following easy criterion, whose proof is straightforward. 
+\begin{prop} \label{criterion:geometric:prop}
+Let  $M$ be an orientable irreducible and $\partial$-irreducible compact 3-manifold with (possibly empty) boundary consisting of tori. 
+A non-empty torus decomposition of $M$ is the geometric one if and only if:
+\begin{itemize}
+\item every block is simple or Seifert with $\chi<0$,
+\item the fibrations of two adjacent Seifert blocks do not match.
+\end{itemize}
+\end{prop}
+
+Another reason for preferring the geometric decomposition is that every Seifert block can be geometrised with finite volume, whereas $K\timtil I$ needs infinite volume (this will be shown in the next chapter). 
+
+Geometric decompositions also behave well under finite coverings. Let $\tilde M \to M$ be a finite covering between two orientable irreducible and $\partial$-irreducible compact 3-manifolds with (possibly empty) boundary consisting of tori. 
+
+\begin{prop} \label{JSJ:lifts:prop}
+The geometric decomposition of $\tilde M$ is the counterimage of that of $M$.
+\end{prop}
+\begin{proof}
+The criterion of Proposition \ref{criterion:geometric:prop} lifts from $M$ to $\tilde M$.
+\end{proof}
+
+\subsection{Graph manifolds}
+Waldhausen introduced in the 1960s a simple but non-trivial class of three-manifolds using only two blocks. Here $D$ and $P$ are the disc and the pair-of-pants.
+
+\begin{defn}
+A \emph{graph manifold} is any orientable three-manifold that decomposes along disjoint tori into pieces diffeomorphic to $D\times S^1$ or $P\times S^1$.\index{graph manifold}
+\end{defn}
+
+One may describe any such manifold via a graph with vertices of valence 1 and 3 representing the blocks, and some appropriate $2\times 2$-matrices labelling the edges telling the way the two incident blocks are glued. As usual, different graphs may represent the same manifold. 
+
+\begin{ex}
+Let $M$ be an orientable three-manifold. The following are equivalent:
+\begin{enumerate}
+\item $M$ is a graph manifold,
+\item $M=M_1\#\ldots \#M_h$ for some prime manifolds $M_i$ whose geometric decompositions consist of Seifert manifolds or torus (semi-)bundles.
+\end{enumerate} 
+\end{ex}
+\begin{proof}[Hint]
+Use Corollary~\ref{DF:Seifert:cor} and Proposition \ref{criterion:geometric:prop}. 
+\end{proof}
+
+\subsection{References}
+Most of the arguments contained in this chapter are well-known to three-dimensional topologists and can be found in many books. A standard introduction to knots and links is Rolfsen \cite{Ro}, and much more on Dehn surgeries and their four-dimensional interpretations is contained in Gompf -- Stipsicz \cite{GS}. A proof of the JSJ decomposition can be found in Hatcher \cite{H}, the original papers of Jaco -- Shalen and Johannson are \cite{JS} and \cite{Jo}. Fomenko -- Matveev \cite{FM} contains a chapter devoted to graph manifolds; the original paper of Waldhausen is \cite{Wa}.
+

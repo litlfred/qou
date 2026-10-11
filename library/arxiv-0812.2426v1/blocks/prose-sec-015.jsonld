@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0812.2426v1/blocks/prose-sec-015",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0812.2426v1/blocks/prose-sec-015",
   "kind": "prose",
-  "title": "Quantum invariants and Hopf diagrams",
-  "pageStart": 5,
-  "pageEnd": 5,
-  "text": "../sections/sec-015-2-quantum-invariants-and-hopf-diagrams.md",
-  "derivedFrom": "library/arxiv-0812.2426v1/manifest",
-  "sourceDocument": "library/arxiv-0812.2426v1/manifest",
+  "title": "Modules over a monad",
+  "pageStart": 12,
+  "pageEnd": 12,
+  "text": "../sections/sec-015-32-modules-over-a-monad.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0812.2426v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0812.2426v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -8,82 +8,36 @@ pages: 30-31
 source_pdf: 1704.02352v2.pdf
 source_sha256: 9a14dd6ee33248d3
 doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Y oung diagrams which can be regarded as a natural one-parameter deformation of so me classi- cal Y"
+text_source: latex
+latex_prose_ratio: 0.947
+latex_coverage_ratio: 0.837
 ---
-Lemma 4.2. Let (Sl)l≥2 be a sequence of real numbers and let (Rl)l≥2
-given by (3.7) be the corresponding sequence of free cumulants. Assume
-that the sequence of free cumulants fulﬁlls the estimate
-(4.3) |Rl| ≤ C l lml
-for some constants m, C ≥ 0 and all l ≥ 2.
-Then the sequence (Sl) fulﬁlls an analogous estimate
-(4.4) |Sl| ≤ C l lml;
-possibly for another value of the constant C.
-Proof. The expansion (3.6) for Sl in terms of the free cumulants gives im-
-mediately:
-(4.5) |Sl| ≤
-∑
-i≥1
-1
-i! (l − 1)i−1 C l ∑
-k1,...,ki≥2
-k1+···+ki=l
-kmk1
-1 · · · kmki
-i
-≤ C llml
-∑
-i≥1
-1
-i! (l − 1)i−1
-∑
-k1,...,ki≥2
-k1+···+ki=l
-1.
-JACK-DEFORMED RANDOM YOUNG DIAGRAMS 31
-Since
-∑
-k1,...,ki≥2
-k1+···+ki=l
-1 =
-∑
-k1,...,ki≥1
-k1+···+ki=l−i
-1 =
-(l − 1 − i
-i − 1
-)
-,
-we can bound the sum on the right-hand side of (4.5) as follows :
-∑
-i≥1
-1
-i! (l − 1)i−1
-∑
-k1,...,ki≥2
-k1+···+ki=l
-1 ≤
-∑
-i≥1
-(l − 1
-i − 1
-)( l − 1 − i
-i − 1
-)
-≤
-∑
-i≥0
-(l − 1
-i
-) 2
-≤
-
-∑
-i≥0
-(l − 1
-i
-) 
-
-2
-≤ 22l,
-which plugged into (4.5) yields
-|Sl| ≤ (4C)l lml,
-which ﬁnishes the proof. □
+::: lemma
+[]{#lem:small-free label="lem:small-free"} Let $(\mathcal{S}_l)_{l\geq 2}$ be a sequence of real numbers and let $(\mathcal{R}_l)_{l\geq 2}$ given by [\[eq:r-s\]](#eq:r-s){reference-type="eqref" reference="eq:r-s"} be the corresponding sequence of free cumulants. Assume that the sequence of free cumulants fulfills the estimate $$\label{eq:free-are-small}
+    | \mathcal{R}_l | \leq C^l\ l^{ml}$$ for some constants $m,C\geq 0$ and all $l\geq 2$.
+
+Then the sequence $(\mathcal{S}_l)$ fulfills an analogous estimate $$\label{eq:free-are-smallS}
+    | \mathcal{S}_l | \leq C^l\ l^{ml};$$ possibly for another value of the constant $C$.
+:::
+
+::: proof
+*Proof.* The expansion [\[eq:s-r\]](#eq:s-r){reference-type="eqref" reference="eq:s-r"} for $\mathcal{S}_l$ in terms of the free cumulants gives immediately: $$\begin{gathered}
+    \label{eq:ograniczenie}
+    |\mathcal{S}_l| \leq \sum_{i\geq 1} \frac{1}{i!}  (l-1)_{i-1}\  
+    C^l\sum_{\substack{k_1,\dots,k_i\geq 2 \\ k_1+\cdots+k_i=l }} k_1^{m k_1} \cdots
+    k_i^{m k_i} \\
+    \leq C^l l^{ml}\sum_{i\geq 1} \frac{1}{i!}  (l-1)_{i-1}
+    \sum_{\substack{k_1,\dots,k_i\geq 2 \\ k_1+\cdots+k_i=l }}1.
+    
+\end{gathered}$$ Since $$\sum_{\substack{k_1,\dots,k_i\geq 2 \\ k_1+\cdots+k_i=l }}1 =
+    \sum_{\substack{k_1,\dots,k_i\geq 1 \\ k_1+\cdots+k_i=l-i
+    }}1=\binom{l-1-i}{i-1},$$ we can bound the sum on the right-hand side of [\[eq:ograniczenie\]](#eq:ograniczenie){reference-type="eqref" reference="eq:ograniczenie"} as follows: $$\begin{gathered}
+    \sum_{i\geq 1} \frac{1}{i!}  (l-1)_{i-1}
+    \sum_{\substack{k_1,\dots,k_i\geq 2 \\ k_1+\cdots+k_i=l }} 1 \leq
+    \sum_{i\geq 1}\binom{l-1}{i-1}\binom{l-1-i}{i-1} \leq \\
+    \sum_{i\geq
+        0}\binom{l-1}{i}^2 
+    \leq \left(\sum_{i\geq 0}\binom{l-1}{i}\right)^2\leq 2^{2l},
+    
+\end{gathered}$$ which plugged into [\[eq:ograniczenie\]](#eq:ograniczenie){reference-type="eqref" reference="eq:ograniczenie"} yields $$|\mathcal{S}_l| \leq (4C)^l\ l^{ml},$$ which finishes the proof. ◻
+:::

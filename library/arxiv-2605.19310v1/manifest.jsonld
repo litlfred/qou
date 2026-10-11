@@ -1,21 +1,38 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2605.19310v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "A FOURIER-FREE DENSITY-INCREMENT PROOF OF ROTH’S THEOREM MARK LEWKO",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2605.19310v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A Fourier-Free Density-Increment Proof of Roth's Theorem",
   "contains": [
+    "library/arxiv-2605.19310v1/sections/sec-front-matter",
     "library/arxiv-2605.19310v1/sections/sec-000",
     "library/arxiv-2605.19310v1/sections/sec-001",
     "library/arxiv-2605.19310v1/sections/sec-002",
     "library/arxiv-2605.19310v1/sections/sec-003",
     "library/arxiv-2605.19310v1/sections/sec-004",
-    "library/arxiv-2605.19310v1/sections/sec-005"
+    "library/arxiv-2605.19310v1/sections/sec-005",
+    "library/arxiv-2605.19310v1/sections/sec-006"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2605.19310&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2605.19310v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "2605.19310v1.pdf",
     "source_sha256": "047d492babc63d2f5412bcb8a996ad1ac6091f976bbd7d31f8b76d2599811d99",
     "pages": 10,

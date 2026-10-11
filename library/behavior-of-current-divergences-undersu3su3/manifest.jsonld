@@ -1,18 +1,25 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/behavior-of-current-divergences-undersu3su3/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "R. J. OaKeEs",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/behavior-of-current-divergences-undersu3su3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "behavior-of-current-divergences-undersu3su3",
   "contains": [
     "library/behavior-of-current-divergences-undersu3su3/sections/sec-000",
     "library/behavior-of-current-divergences-undersu3su3/sections/sec-001",
     "library/behavior-of-current-divergences-undersu3su3/sections/sec-002"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "behavior-of-current-divergences-undersu3su3",
+    "title_source": "slug",
     "source_file": "Behavior_of_Current_Divergences_underSU3SU3.pdf",
     "source_sha256": "c199da203bf156ecefefa9bfe9753bf395d1cbc24a01b77d3f65cc374ff4fab5",
     "pages": 5,

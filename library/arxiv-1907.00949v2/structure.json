@@ -7,7 +7,8 @@
   "bytes": 597737,
   "pages": 27,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -400,6 +401,152 @@
   "likely_scanned": false,
   "toc_entries": 27,
   "sections": 17,
-  "chars_total": 77160
+  "chars_total": 77160,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "arXiv.tex",
+   "tex_sections": 26,
+   "overlaid": 16,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.933,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-11-flags-in-numerical-analysis",
+     "title": "Flags in numerical analysis",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-12-flags-in-statistics",
+     "title": "Flags in statistics",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.924,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-13-prior-work-and-our-contributions",
+     "title": "Prior work and our contributions",
+     "prose_ratio": 0.915,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-14-outline",
+     "title": "Outline",
+     "prose_ratio": 0.83,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-2-basic-differential-geometry-of-homogeneous-spa",
+     "title": "Basic differential geometry of homogeneous spaces",
+     "prose_ratio": 0.909,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-21-lie-groups-and-lie-algebras",
+     "title": "Lie groups and Lie algebras",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-23-geodesic-orbit-spaces",
+     "title": "Geodesic orbit spaces",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.935,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-24-riemannian-notions",
+     "title": "Riemannian notions",
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-3-basic-differential-geometry-of-flag-manifolds",
+     "title": "Basic differential geometry of flag manifolds",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-4-flag-manifolds-as-matrix-homogeneous-spaces",
+     "title": "Flag manifolds as matrix homogeneous spaces",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-5-flag-manifolds-as-matrix-manifolds",
+     "title": "Flag manifolds as matrix manifolds",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-6-riemannian-gradient-and-hessian-over-the-flag",
+     "title": "Riemannian Gradient and Hessian over the flag manifold",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-7-optimization-algorithms-over-flag-manifolds",
+     "title": "Optimization algorithms over flag manifolds",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-8-numerical-experiments",
+     "title": "Numerical experiments",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.937,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-9-conclusion",
+     "title": "Conclusion",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

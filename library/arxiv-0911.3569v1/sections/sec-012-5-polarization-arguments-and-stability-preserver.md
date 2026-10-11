@@ -8,22 +8,25 @@ pages: 14-14
 source_pdf: 0911.3569v1.pdf
 source_sha256: 4e7c15c9724fb453
 doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.941
 ---
-Forκ∈ Nm and a set S⊆ C[x] of polynomials, let S≤κ be the set of all f∈ S
-such that degi(f)≤κ(i) for all i∈ [m]. Let
-I(κ) ={(i,j ) : i∈ [m] and j∈ [κ(i)]}
-and let u ={uij : ( i,j )∈ I(κ)} be indeterminates. For f∈ C[x]≤κ, Let Pol (i)
-κ(i)f
-denote the κ(i)-th polarization of xi in f: this is the image of f under the linear
-transformation Pol(i)
-κ(i) deﬁned by xj
-i ↦→
-(κ(i)
-j
-)−1
-ej(ui1,...,u iκ(i)) for each 0 ≤ j≤
-κ(i), and linear extension. Finally, the κ-th polarization of f is
-Polκf = Pol(m)
-κ(m)◦···◦ Pol(1)
-κ(1)f.
-This deﬁnes a linear transformation Pol κ : C[x]≤κ→ C[u]MA.
+For $\kappa\in\NN^m$ and a set $\S\subseteq\CC[\x]$ of polynomials,
+let $\S^{\leq\kappa}$ be the set of all $f\in\S$ such that $\deg_i(f)\leq
+\kappa(i)$ for all $i\in[m]$.  Let
+$$
+I(\kappa) = \{(i,j):\ i\in[m]\ \mathrm{and}\ j\in[\kappa(i)]\}
+$$
+and let $\u=\{u_{ij}:\ (i,j)\in I(\kappa)\}$ be indeterminates.
+For $f\in\CC[\x]^{\leq\kappa}$, Let $\Pol_{\kappa(i)}^{(i)} f$ denote
+the \emph{$\kappa(i)$-th polarization of $x_i$ in $f$}:\ this is the image
+of $f$ under the linear transformation $\Pol_{\kappa(i)}^{(i)}$ defined by
+$x_i^j \mapsto \binom{\kappa(i)}{j}^{-1} e_j(u_{i1},...,u_{i\kappa(i)})$
+for each $0\leq j \leq\kappa(i)$, and linear extension.  Finally, the 
+\emph{$\kappa$-th polarization of $f$} is
+$$
+\Pol_\kappa f = \Pol_{\kappa(m)}^{(m)} \circ\cdots\circ\Pol_{\kappa(1)}^{(1)} f.
+$$
+This defines a linear transformation $\Pol_{\kappa}:\CC[\x]^{\leq\kappa}
+\goesto\CC[\u]^{\ma}$.

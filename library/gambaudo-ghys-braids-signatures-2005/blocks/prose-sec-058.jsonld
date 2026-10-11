@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-sec-058",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-sec-058",
   "kind": "prose",
   "title": "The gordian space",
   "pageStart": 34,
   "pageEnd": 34,
   "text": "../sections/sec-058-5-the-gordian-space.md",
-  "derivedFrom": "library/gambaudo-ghys-braids-signatures-2005/manifest",
-  "sourceDocument": "library/gambaudo-ghys-braids-signatures-2005/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gambaudo-ghys-braids-signatures-2005/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gambaudo-ghys-braids-signatures-2005/manifest.jsonld",
   "provenance": "ingested"
 }

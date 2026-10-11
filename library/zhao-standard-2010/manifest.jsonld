@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/zhao-standard-2010/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zhao-standard-2010/manifest.jsonld",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "Standard Relations of Multiple Polylogarithm Values at Roots of Unity",
   "contains": [
+    "library/zhao-standard-2010/sections/sec-front-matter",
     "library/zhao-standard-2010/sections/sec-000",
     "library/zhao-standard-2010/sections/sec-001",
     "library/zhao-standard-2010/sections/sec-002",
@@ -22,26 +28,15 @@
     "library/zhao-standard-2010/sections/sec-013",
     "library/zhao-standard-2010/sections/sec-014",
     "library/zhao-standard-2010/sections/sec-015",
-    "library/zhao-standard-2010/sections/sec-016",
-    "library/zhao-standard-2010/sections/sec-017",
-    "library/zhao-standard-2010/sections/sec-018",
-    "library/zhao-standard-2010/sections/sec-019",
-    "library/zhao-standard-2010/sections/sec-020",
-    "library/zhao-standard-2010/sections/sec-021",
-    "library/zhao-standard-2010/sections/sec-022",
-    "library/zhao-standard-2010/sections/sec-023",
-    "library/zhao-standard-2010/sections/sec-024",
-    "library/zhao-standard-2010/sections/sec-025",
-    "library/zhao-standard-2010/sections/sec-026",
-    "library/zhao-standard-2010/sections/sec-027",
-    "library/zhao-standard-2010/sections/sec-028",
-    "library/zhao-standard-2010/sections/sec-029",
-    "library/zhao-standard-2010/sections/sec-030",
-    "library/zhao-standard-2010/sections/sec-031"
+    "library/zhao-standard-2010/sections/sec-016"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "zhao-standard-2010",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "Zhao_standard_2010.pdf",
     "source_sha256": "94a70847c2937ba77a039745b05b2ce0be0407d62deb9c71152db06917696fa8",
     "pages": 34,

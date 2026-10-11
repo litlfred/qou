@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2105.09342v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A Unitary Matrix Model for q-deformed Plancherel Growth (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2105.09342v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2105.09342&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2105.09342v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2105.09342v1",
+    "content_type": "application/gzip",
+    "sha256": "b927fb50b6afb12c1e2074018e46b626cc48f1e13ae1d7ae892bcece0da9b955",
+    "bytes": 196463,
+    "fetched": "2026-10-10T15:16:27+00:00",
+    "files": [
+      {
+        "path": "source/files/PlancherelNotes.bib",
+        "role": "bib",
+        "sha256": "6440dd72880ac50bdc26bb78470902b5f50bf3893efeba240af5c34cbe933ffb",
+        "bytes": 68176
+      },
+      {
+        "path": "source/files/Qdeformed_Plancherel_note.bbl",
+        "role": "bbl",
+        "sha256": "5ec3ada23c5c6cd0079fa26fc1098c4865b5b2077df0a7cb1881a64c556c65e8",
+        "bytes": 4820
+      },
+      {
+        "path": "source/files/Qdeformed_Plancherel_note.tex",
+        "role": "tex",
+        "sha256": "021a898db1bf27953f71d052af040c8e65d55ace23ccbf31f252b7c754762d1f",
+        "bytes": 98501
+      },
+      {
+        "path": "source/files/gdefn.tex",
+        "role": "tex",
+        "sha256": "54bf11239035d11cbaa970db10946da69e736fad313616837b466c0e6a6ead79",
+        "bytes": 10284
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

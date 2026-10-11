@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-ph-0105039v1/sections/sec-001",
   "@type": [
     "doco:Section"
   ],
-  "title": "Introduction",
+  "title": "Quantum Dilogarithm Function",
   "pageStart": 2,
-  "pageEnd": 2,
+  "pageEnd": 3,
   "contains": [
     "library/arxiv-math-ph-0105039v1/blocks/prose-sec-001"
   ],
-  "derivedFrom": "library/arxiv-math-ph-0105039v1/manifest",
-  "sourceDocument": "library/arxiv-math-ph-0105039v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-ph-0105039v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-ph-0105039v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -8,86 +8,63 @@ pages: 7-8
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
 doc_brief: "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
+text_source: latex
+latex_prose_ratio: 0.947
+latex_coverage_ratio: 0.978
 ---
-Theorem 4.7].
-Proposition 3.1. Let N be a 3–manifold with empty or toroidal boundary and let α :
-π1(N ) → GL(k,R [F ]) a representation where R is a Noetherian UFD and F a free abelian
-group. If ∆ α
-N,i ⁄= 0 for i = 0, 1, 2, then
-τ (N,α ) .=
-2∏
-i=0
-(
-∆ α
-N,i
-) (−1)i+1
-.
-The following is a mild extension of [FK06, Proposition 2.5] , [FK08a, Lemmas 6.2 and 6.3]
-and [FK08a, Theorem 6.7]. Most of the ideas go back to work of T uraev (cf. e.g. [Tu86]
-and [Tu01]). The third statement is proved in [DFJ10].
-Proposition 3.2. Let N be a 3–manifold with empty or toroidal boundary, ψ : π1(N ) →
-F a non–trivial homomorphism to a free abelian group F and γ : π1(N ) → GL(k,R ) a
-representation where R is a Noetherian UFD. Then the following hold:
-(1) ∆ γ⊗ψ
-N,0 ⁄= 0 and ∆ γ⊗ψ
-N,i = 1 for i ≥ 3.
-(2) If rank (Im{π1(N ) →F })> 1, then ∆ γ⊗ψ
-N,0
-.= 1.
-(3) If γ is irreducible and if γ restricted to Ker (ψ) is non-trivial, then ∆ γ⊗ψ
-N,0
-.= 1.
-(4) If ∆ γ⊗ψ
-N,1 ⁄= 0, then ∆ γ⊗ψ
-N,2 ⁄= 0.
-(5) If N has non–empty boundary and if ∆ γ⊗ψ
-N,1 ⁄= 0, then ∆ γ⊗ψ
-N,2
-.= 1.
-(6) If rank (Im{π1(N ) →F })> 1 and if ∆ γ⊗ψ
-N,1 ⁄= 0, then ∆ γ⊗ψ
-N,2
-.= 1.
-(7) We have ∆ γ⊗ψ
-N,1 = 0 if and only if τ (N,γ ⊗ψ) = 0 .
-(8) If ∆ γ⊗ψ
-N,1 ⁄= 0, then
-τ (N,γ ⊗ψ) .=
-2∏
-i=0
-(
-∆ γ⊗ψ
-N,i
-) (−1)i+1
-.
-8 STEF AN FRIEDL AND STEF ANO VIDUSSI
-A few remarks regarding the equalities of Proposition 3.1 an d Proposition 3.2 (8) are in
-order:
-(1) Note that twisted Reidemeister torsion has in general a s maller indeterminacy than
-twisted Alexander polynomials. In particular the equality holds up to the indeter-
-minacy of the twisted Alexander polynomials.
-(2) As pointed out in Section 2.5, the twisted Alexander poly nomials ∆ γ⊗ψ
-N,i can be
-computed from a presentation of the fundamental group, wher eas the computation
-of τ (N,γ ⊗ψ) requires in general an understanding of the CW–structure o f N (cf.
-Section 2.2). In particular the equality of Proposition 3.2 (8) is often a faster method
-for computing τ (N,γ ⊗ψ) (at the price of a higher indeterminacy).
-(3) The twisted Alexander polynomial is only deﬁned for repr esentations over a Noether-
-ian UFD, whereas the twisted Reidemeister torsion is deﬁned for a ﬁnite dimensional
-representation over any commutative ring.
-(4) It is an immediate consequence of Proposition 3.2 that τ (N,γ ⊗ψ) lies in R[F ], i.e.
-is a polynomial, if rank(Im {π1(N ) →F })> 1.
-Remark. (1) Given a link L ⊂S3 and a representation γ :π1(S3 \L) → GL(k,R ) Wada
-[Wa94] introduced an invariant, which in this paragraph we r efer to as W (L,γ ).
-Wada’s invariant is in many papers referred to as the twisted Alexander polynomial
-of a link. Kitano [Ki96] showed that W (L,γ ) agrees with the Reidemeister torsion
-τ (L,γ ) (with the same indeterminacy). This can also be shown using the arguments
-of Section 2.2. In particular, in light of Proposition 3.2 we see that W (L,γ ) .= ∆ γ
-L
-if L has more than one component.
-(2) Lin’s original deﬁnition [Lin01] of the twisted Alexand er polynomial of a knot
-uses ‘regular Seifert surfaces’ and is rather diﬀerent in cha racter to the algebra–
-topological approach taken in the subsequent papers. The re lation between the
-deﬁnitions of twisted Alexander polynomials given by Lin [L in01], Jiang and Wang
-[JW93] and Section 2.4 is explained in [JW93, Proposition 3. 3] and [KL99a, Sec-
-tion 4].
+The following proposition is \cite[Theorem~4.7]{Tu01}.
+
+\begin{proposition}\label{prop:deltataualpha}
+Let $N$ be a 3--manifold with empty or toroidal boundary and let
+$\alpha:\pi_1(N)\to \mbox{GL}(k,R[F])$  a  representation where $R$ is a Noetherian UFD and $F$ a free abelian group. If $\Delta_{N,i}^{\alpha} \ne 0$
+for $i=0,1,2$, then
+\[ \tau(N,{\alpha} )\doteq  \prod_{i=0}^2 \big(\Delta^{{\alpha}}_{N,i}\big)^{(-1)^{i+1}}.\]
+\end{proposition}
+
+The following is a mild extension of \cite[Proposition~2.5]{FK06}, \cite[Lemmas~6.2~and~6.3]{FK08a} and \cite[Theorem~6.7]{FK08a}.
+Most of the ideas go back to work of Turaev (cf. e.g. \cite{Tu86} and \cite{Tu01}). The third statement is proved in \cite{DFJ10}.
+
+\begin{proposition}\label{prop:deltatau}\label{prop:taudelta}
+Let $N$ be a 3--manifold with empty or toroidal boundary,  $\psi:\pi_1(N)\to F$ a non--trivial homomorphism to a free abelian group $F$
+and $\gamma:\pi_1(N)\to \mbox{GL}(k,R)$  a  representation where $R$ is a Noetherian UFD. Then the following hold:
+\begin{enumerate}
+\item $\Delta_{N,0}^{\gamma \otimes \psi} \ne 0$ and $\Delta_{N,i}^{\gamma \otimes \psi}=1$ for $i\geq 3$.
+\item If $\mbox{rank}(\mbox{Im}\{\pi_1(N)\to F\})>1$, then $\Delta^{{\gamma \otimes \psi}}_{N,0} \doteq 1$.
+\item If $\g$ is irreducible and if $\g$ restricted to $\ker(\psi)$ is non-trivial, then $\Delta^{{\gamma \otimes \psi}}_{N,0} \doteq 1$.
+\item If $\Delta_{N,1}^{\gamma \otimes \psi} \ne 0$, then $\Delta_{N,2}^{\gamma \otimes \psi} \ne 0$.
+\item If $N$ has non--empty boundary and if $\Delta_{N,1}^{\gamma \otimes \psi} \ne 0$, then $\Delta^{{\gamma \otimes \psi}}_{N,2} \doteq 1$.
+\item If  $\mbox{rank}(\mbox{Im}\{\pi_1(N)\to F\})>1$ and if $\Delta_{N,1}^{\gamma \otimes \psi} \ne 0$, then $\Delta^{{\gamma \otimes \psi}}_{N,2}\doteq 1$.
+\item We have $\Delta_{N,1}^{\gamma \otimes \psi}= 0$ if and only if
+$ \tau(N,{\gamma \otimes \psi} )=0$.
+\item If $\Delta_{N,1}^{\gamma \otimes \psi} \ne 0$, then
+\[ \tau(N,{\gamma \otimes \psi} )\doteq  \prod_{i=0}^2 \big(\Delta^{{\gamma \otimes \psi}}_{N,i}\big)^{(-1)^{i+1}}.\]
+\end{enumerate}
+\end{proposition}
+
+A few remarks regarding the equalities of Proposition \ref{prop:deltataualpha} and Proposition \ref{prop:deltatau} (8)  are in order:
+\begin{enumerate}
+\item Note that twisted Reidemeister torsion has in general a smaller indeterminacy than twisted Alexander polynomials.
+In particular the equality
+holds up to the indeterminacy of the twisted Alexander polynomials.
+\item As pointed out in Section \ref{section:compdelta}, the twisted Alexander polynomials $\Delta^{\gamma\otimes \psi}_{N,i}$ can be computed from a presentation
+of the fundamental group, whereas the computation of $\tau(N,\gamma \otimes \psi)$
+requires in general an understanding of the CW--structure of $N$ (cf. Section \ref{section:comptau}). In particular
+the equality of  Proposition \ref{prop:deltatau} (8) is often a faster method for computing $\tau(N,\gamma \otimes \psi)$ (at the price of a higher indeterminacy).
+\item The twisted Alexander polynomial is only defined for representations over a Noetherian UFD, whereas the twisted Reidemeister torsion is defined for a finite dimensional representation over any commutative ring.
+\item It is an immediate consequence of Proposition \ref{prop:deltatau} that $\tau(N,{\gamma \otimes \psi} )$ lies in $R[F]$, i.e. is a polynomial,
+if $\mbox{rank}(\mbox{Im}\{\pi_1(N)\to F\})>1$.
+\end{enumerate}
+
+\begin{remark}
+\begin{enumerate}
+\item
+Given a link $L\subset S^3$ and a representation $\gamma:\pi_1(S^3\setminus L)\to \mbox{GL}(k,R)$
+Wada \cite{Wa94} introduced an invariant, which in this paragraph we refer to as $W(L,\gamma)$.
+Wada's invariant is in many papers referred to as the twisted Alexander polynomial of a link.
+Kitano \cite{Ki96} showed that $W(L,\gamma)$
+agrees with the Reidemeister torsion $\tau(L,\gamma)$ (with the same indeterminacy). This can also be shown using the arguments of  Section \ref{section:comptau}.
+In particular, in light of Proposition \ref{prop:deltatau} we see that $W({L,\gamma})\doteq \Delta_{L}^{\gamma}$ if $L$ has more than one component.
+\item Lin's original definition \cite{Lin01} of the twisted Alexander polynomial of a knot uses `regular Seifert surfaces' and is rather different in character to the algebra--topological approach taken in the subsequent papers. The relation between the definitions of twisted Alexander polynomials given by Lin \cite{Lin01}, Jiang and Wang \cite{JW93} and Section \ref{section:twialex}
+    is explained in \cite[Proposition~3.3]{JW93} and \cite[Section~4]{KL99a}.
+\end{enumerate}
+\end{remark}

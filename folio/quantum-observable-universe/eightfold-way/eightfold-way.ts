@@ -81,6 +81,11 @@ export default chapter({
       blocks: [
         "schur-weyl-eightfold",
         "borromean-decuplet-derivation",
+        // The N = 2 Delta quartet with its faithful 2I3 labelling (owner
+        // decision 5b, bean qou-nmib). Not gated on N = 3. Placed after the
+        // decuplet it contrasts with; its one uses[] edge (schur-weyl-eightfold)
+        // runs backward. 5 -> 6 blocks, inside the band.
+        "delta-quartet-isospin-ladder",
         // The equal-spacing / Omega-minus null result. Placed after the
         // decuplet block it interprets, so the edge runs backward. Takes
         // this section from 2 to 3 blocks, into the detangler 3-18 band.

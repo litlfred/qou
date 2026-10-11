@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0501112v3/sections/sec-005",
   "@type": [
     "doco:Section"
   ],
-  "title": "Factorization of characters. Biane [Bia01] proved (under some mild",
-  "pageStart": 3,
+  "title": "Fluctuations of Young diagrams",
+  "pageStart": 4,
   "pageEnd": 4,
   "contains": [
     "library/arxiv-math-0501112v3/blocks/prose-sec-005"
   ],
-  "derivedFrom": "library/arxiv-math-0501112v3/manifest",
-  "sourceDocument": "library/arxiv-math-0501112v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0501112v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0501112v3/manifest.jsonld",
   "provenance": "ingested"
 }

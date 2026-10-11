@@ -6,7 +6,8 @@
   "sha256": "fcf8dee7cd3849b945dd5a85e4ae2cc19f5a36730f236f997c4bb6f545e6d0fe",
   "bytes": 1085919,
   "pages": 50,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -263,6 +264,120 @@
   "likely_scanned": false,
   "toc_entries": 13,
   "sections": 13,
-  "chars_total": 140688
+  "chars_total": 140688,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "paper_rina.tex",
+   "tex_sections": 23,
+   "overlaid": 12,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-0-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-1-background-on-crossed-groupoids-and-stacks",
+     "title": "Background on Crossed Groupoids and Stacks",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-2-deformations-of-sheaves-of-rings",
+     "title": "Deformations of Sheaves of Rings",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-3-dg-lie-algebras-and-deformations-of-affine-var",
+     "title": "DG Lie Algebras and Deformations of Affine Varieties",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-4-twisted-objects-in-a-stack-of-crossed-groupoid",
+     "title": "Twisted Objects in a Stack of Crossed Groupoids",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-5-combinatorial-descent-data",
+     "title": "Combinatorial Descent Data",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-6-geometric-descent-data-and-decomposition",
+     "title": "Geometric Descent Data and Decomposition",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-7-total-trivialization-of-twisted-deformations",
+     "title": "Total Trivialization of Twisted Deformations",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-8-lie-descent-data",
+     "title": "Lie Descent Data",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-9-from-lie-descent-to-geometric-descent",
+     "title": "From Lie Descent to Geometric Descent",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-10-cosimplicial-formality",
+     "title": "Cosimplicial Formality",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-11-twisted-quantization",
+     "title": "Twisted Quantization",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

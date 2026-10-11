@@ -8,302 +8,70 @@ pages: 42-45
 source_pdf: 1608.03227v4.pdf
 source_sha256: c71128e9a6c35343
 doc_brief: "January 30, 2018 — For each braid β ∈ Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗ × C∗ - equivariant sheaves on the non-commutative nested Hilbert scheme Hilb f ree 1,n ."
+text_source: latex
+latex_prose_ratio: 0.948
+latex_coverage_ratio: 0.972
 ---
-ization of the previous corollary which we explain below. The statemen t that we prove in this section allows
-us to use smaller intermediate space for computation of the convolu tion.
-Let us introduce notation Qk...m⊂Gn for subgroup with Lie algebra qk...m spanned by Eij, i≤j, i,j ∈
-[1,n ] and by Eij,i>j ,i,j ∈ [k,m ]. Respectively, we denote by Π k...m
-+ the projection map Lie( Gn)→ qk...m
-and Π k...m
-−− is deﬁned by Id = Π k...m
-+ + Π k...m
-−− . Similarly we deﬁne Π k...m
-++ (X) = Π k...m
-−− (X t)t, where t stands
-for transpose. Let us also denote by Π k...m the projection gn→ gm−k+1 that extracts the block of the matrix
-elements with entries ij,i,j ∈ [k,m ]. We use the same notation for the maps of the corresponding grou ps.
-Let us introduce the space X ◦
-3 (Gn,G k...m) = gn×Gn×Gk−m+1× nn× nk−m+1× nn. Let us also ﬁx an
-embedding ik...m of this space inside X3:
-ik...m(X,g 12,g 23,⃗Y ) = (X,g 12,i k...m(g23),Y 1,i k...m(Y2) + Π k...m
-++ (Adg23 (Y3)),Y 3),
-where ⃗Y = (Y1,Y 2,Y 3), ik...m :Gk−m+1→Gn and ik...m : nk−m+1→ nn are the natural embeddings.
-Respectively we deﬁne maps
-π◦
-12 : X ◦
-3 (Gn,G k...m)→ X2(Gn),
-π◦
-23 : X ◦
-3 (Gn,G k...m)→ X2(Gm−k+1),
-π◦
-13 : X ◦
-3 (Gn,G k...m)→ X2(Gn),
-(8.26) π◦
-12(X,g 12,g 23,Y 1,Y 2,Y 3) = (X,g 12,Y 1,i k...m(Y2) + Π k...m
-++ (Adg23 (Y3)).
-(8.27) π◦
-23(X,g 12,g 23,Y 1,Y 2,Y 3) = (Π k...m(Ad−1
-g12 (X)),g 23,Y 2, Π k...m(Y3)),
-π◦
-13(X,g 12,g 23,Y 1,Y 2,Y 3) = (X,g 12g23,Y 1,Y 3).
-These maps are the restrictions of the corresponding maps from X3 on the embedded subvariety X ◦
-3 (Gn,G k...m).
-Similarly, we deﬁne X ◦
-3 (Gk...m,G n) = gn×Gk...m×Gn× nn× nk−m+1× nn. Let us also ﬁx an embedding
-ik...m of this space inside X3:
-ik...m(X,g 12,g 23,⃗Y ) = (X,i k...m(g12),g 23,Y 1,i k...m(Y2) + Π k...m
-++ (Ad−1
-g12 (Y1)),Y 3),
-⃗Y = (Y1,Y 2,Y 3). The maps π◦
-ij are deﬁned analogously to the previous case: by the restriction fr om ambient
-space.
-The spaces X ◦
-3 (Gn,G k...m) and X ◦
-3 (Gk...m,G n) have unique B3
-n equivariant structure that makes the
-maps π◦
-ij B3
-n-equivariant.
-42
-Lemma 8.1. For any
-F∈ MFsc
-B2
-m−k+1
-(X2(Gm−k+1),W ),G∈ MFsc
-B2n
-(X2(Gn),W )
-we have
-G⋆ Indk...m(F ) = CE n(2)
-m−k+1
-π◦
-13∗(π◦∗
-12 (G)⊗π◦∗
-23 (F ))T (2)
-m−k+1,
-Indk...m(F )⋆G = CE n(2)
-m−k+1
-π◦
-13∗(π◦∗
-12 (F )⊗π◦∗
-23 (G))T (2)
-m−k+1,
-The key observation in the proof is an alternative description of the induction functor Ind k...m. The space
-X •
-2 (Qk...m) := gn×Qk...m× nm−k+1× nn can be mapped into X2(Gn) with the map:
-jk...m(X,g,Y 1,Y 2) = (X,j k...m(g),i k...m(Y1) + Π k...m
-++ (Adg(Y2)),Y 2)
-where jk...m :Qk...m→Gn is the natural embedding.
-There is also a natural projection map Π k...m : X •
-2 (Qk...m)→ X ◦
-2 (Gm−k+1) deﬁned by:
-Π k...m(X,g,Y 1,Y 2) = (Π k...m(X), Π k...m(g), Π k...m(Y1), Π k...m(Y2)).
-Both of these maps are B3
-n-equivariant. In particular, we have a commuting diagram:
-X •
-2 (Qk...m) X ◦
-2 (Pk,m) X ′′
-2,n
-X ′
-2,k× X ′′
-2,m−k+1× X ′
-2,n−m X ′′
-2,k× X ′′
-2,m−k+1× X ′′
-2,n−m
-X ◦
-2 (Gm−k+1)
-i′
-Π ′
-1×Π k...m×Π ′
-3
-pk,m
-ik,m
-i‖ ×1×i‖
-π2
-where X ′
-2,k := gk×Bk× bk× bk = X ◦
-2 (Bk), X ′′
-2,k := gk×Gk× bk× bk = X ◦
-2 (Gk) and the dotted arrow
-maps are:
-i′(X,g,Y 1,Y 2) = (Π k...m
-+ (X),j k...m(g),i k...m(Y1) + Π k...m
-++ (Adg(Y2)),Y 2),
-Π ′
-i(X,g,Y 1,Y 2) = (p(i)
-k,m(X),p (i)
-k,m(g),p (i))
-k,m(Adg(Y2)),p (i)
-k,m(Y2)),
-here p(1)
-k,m, p(3)
-k,m are the compositions of pk,m with the projections on k×k and (n−m)× (n−m) blocks.
-Using the base change in our previous diagram we obtain
-Indk...m =ik,m,∗◦p∗
-k,m◦ (i‖× 1×i‖ )◦π∗
-2 =ik,m,∗◦i′
-∗◦ (Π ′
-1× Π k...m× Π ′
-3)∗◦π∗
-2
-=jk...m,∗◦ Π k...m,∗.
-Proof of proposition 8.1. We prove the ﬁrst formula the second is analogous. We have the follo wing com-
-muting diagram of the maps:
-X ◦
-3 (Gn,Q k...m) X ◦
-3 X ◦
-2
-X ◦
-2 × X •
-2 (Qk...m) X ◦
-2 × X ◦
-2
-X ◦
-2 (Gn)× X ◦
-2 (Gm−k+1)
-ik...m
-π◦
-12×π◦
-23 π◦
-12×π◦
-23
-π◦
-13
-1×jk...m
-1×Π k...m
-where the dotted arrow map π◦
-12×π◦
-23 is given by
-π◦
-12(X,g 12,g 23,Y 1,Y 2,Y 3) = (X,g 12,Y 1,i k...m(Y2) + Π k...m
-++ (Adg23 (Y3)),
-43
-π◦
-23(X,g 12,g 23,Y 1,Y 2,Y 3) = (Ad −1
-g12 (X),g 23,Y 2, Π k...m
-− (Y3)).
-Now we can use the base change formula to simplify G⋆ Indk...m(F ) :
-CEn(2)
-n
-(π◦
-13∗◦ (π◦
-12×π◦
-23)∗◦ (Id×jk...m)∗◦ (Id× Π k...m)∗(G ⊠F )))T (2)
-n =
-CEn(2)
-n
-(π◦
-13∗◦ (ik...m)∗◦ (π◦
-12×π◦
-23)∗◦ (Id× Π k...m)∗(G ⊠F )))T (2)
-n =
-CEn(2)
-n
-(π◦
-13∗◦ (π◦
-12×π◦
-23)∗(G ⊠F )))T (2)
-n ,
-where in the last equation we use π◦
-13◦ik...m =π◦
-13 and Id× Π k...m◦π◦
-12×π◦
-23 =π◦
-12×π◦
-23 where the maps in
-the product π◦
-12×π◦
-23 : X ◦
-3 (Gn,Q k...m)→ X ◦
-2 (Gn)× X ◦
-2 (Gm−k+1) are given by the formulas (8.26), (8.27).
-Let us denote by C the matrix factorization π◦
-13∗◦(π◦
-12×π◦
-23)∗(G ⊠F ) For last step we use Hochschild-Serre
-spectral sequence to compute functor CE n(2)
-n
-:
-CEn(2)
-m−k+1
-(CELie(J ′
-k...m)(C))⇒ CEn(2)
-n
-(C)
-where Jk...m is the kernel of the projection homomorphism Qk...m→ Gm−k+1 and J ′
-k...m is its unipotent
-part. Let us abbreviate the quotient Jk...m/J ′
-k...m byJ/J ′. We have
-(8.28) CE Lie(J ′
-k...m)(C)J/J ′
-=π◦
-13∗(CELie(J ′
-k...m)(π◦
-12×π◦
-23)∗(G ⊠F )).
-On the other hand the formulas for the maps π◦
-12 and π◦
-23 imply that the diﬀerentials of the pull back
-(π◦
-12×π◦
-23)∗(G ⊠F ) are invariant with respect to the action of J ′
-k...m. Hence to complete the computation
-of (8.28) we need to compute
-H∗
-Lie(J ′
-k...m, C[X ◦
-3 (Gn,Q k...m)])J/J ′
-which is a tensor product of C[b×Gn× nm−k+1× nn] and H ∗
-Lie(J ′
-k...m, C[Qk...m])J/J ′
-, and in proposition
-below we show that CE J ′
-k...m
-(C[Qk...m])J ′/J = C[Gm−k+1]. Hence the statement follows since T (2)
-n = (J/J ′)×
-Tm−k+1 where Tm−k+1 is the maximal torus of Gm−k+1⊂Gn.
-✷
-Proposition 8.2. For any k,m , 1≤k <m≤n we have
-CELie(J ′
-k...m)(C[Qk...m]) = C[Gm−k+1]⊗ C[J/J ′].
-Proof. We show slightly more general statement
-CELie(J ′
-k...m)(C[Qk′...m′]) = C[Qk−k′+1...m−k′+1⊂Gm−k+1]⊗ C[(J/J ′)],
-where k≥k′, m′≤m.
-We use induction by m−k and the Hochschild-Serre Spectral sequence ([40], sect 7.5). Sinc e we have
-short exact sequence of groups
-1→J ′
-k+1,...,m−→J ′
-k...n−→ Cm−k+1→ 1,
-the spectra sequence tells us that
-CECm−k+1 (CELie(J ′
-k+1...m)(C[Qκ′...m′ ]))⇒ CEJk...m (C[Qk′...m′ ]).
-By induction we have CE Lie(J ′
-k+1...m)(C[Qk′...m′ ]) = C[Qk−k′+2...m−k′+1⊂Gm−k+2]. After relabeling matrix
-indices our statement is equivalent to the computation of the followin g cohomology H∗
-Lie(Cm−k+1, C[Qk−k′+2...m−k′+1]).
-The ring of polynomial functions on Qk−k′+2...m−k′+1 is generated by the elements E∨
-kl dual to the matrix
-44
-units Ekl of E. The generators ∂i of the commutative algebra Cm−k+1 act on the ring generators by the
-formula:
-∂iE∨
-kl =δk1E∨
-il.
-We can apply invertible linear transformation to our system of diﬀere ntial operators to obtain new system
-of generators:
-˜∂k =
-m−k+2∑
-i=2
-(−1)i+k∆ ik∂k,
-where ∆ ik∈ C[Qk−k′+2...m−k′+1] is the determinant of ( m−k)× (m−k) obtained from E by removing
-columns and rows containing 11 and ik entries. Then we have:
-˜∂iE∨
-kl =δk1δilE∨
-11.
-and by Poincare lemma we obtain
-H∗
-Lie(Cm−k+1, C[Qk−k′+2...m−k′+1]) = C[Qk−k′+2...m−k′+1]/(E∨
-12,...,E ∨
-1,m−k+2)
-and the statement follows. ✷
+In the proof of the braid relations and Markov moves we will use some generalization of the previous corollary which we explain below. The statement that we prove in this section allows us to use smaller intermediate space for computation of the convolution.
+
+Let us introduce notation $\SymbolPrint{Q_{k\dots m}}\subset G_n$ for subgroup with Lie algebra $\SymbolPrint{\frq_{k\dots m}}$ spanned by $E_{ij}$, $i\le j$, $i,j\in [1,n]$ and by $E_{ij}$, $i>j$, $i,j\in [k,m]$. Respectively, we denote by $\SymbolPrint{\Pi_+^{\overline{k\dots m}}}$ the projection map $\Lie(G_n)\to \frq_{k\dots m}$ and $\SymbolPrint{\Pi_{--}^{\overline{k\dots m}}}$ is defined by $\mathrm{Id}=\Pi_+^{\overline{k\dots m}}+\Pi_{--}^{\overline{k\dots m}}$. Similarly we define $\SymbolPrint{\Pi_{++}^{\overline{k\dots m}}}(X)=\Pi_{--}^{\overline{k\dots m}}(X^t)^t$, where $t$ stands for transpose. Let us also denote by $\SymbolPrint{\Pi^{\overline{k\dots m}}}$ the projection $\frg_n\to \frg_{m-k+1}$ that extracts the block of the matrix elements with entries $ij$, $i,j\in [k,m]$. We use the same notation for the maps of the corresponding groups.
+
+Let us introduce the space $\SymbolPrint{\calX^\circ_3(G_n,G_{k\dots m})}=\frg_n\times G_n\times G_{k-m+1}\times \frn_n\times \frn_{k-m+1}\times \frn_n$. Let us also fix an embedding $\SymbolPrint{i_{k\dots m}}$ of this space inside $\calX_3$:
+
+$$i_{k\dots m}(X,g_{12},g_{23},\vec{Y})=(X,g_{12},i_{k\dots m}(g_{23}),Y_1,i_{k\dots m}(Y_2)+\Pi_{++}^{\overline{k\dots m}}(\Ad_{g_{23}}(Y_3)),Y_3),$$ where $\vec{Y}=(Y_1,Y_2,Y_3)$, $i_{k\dots m}:G_{k-m+1}\to G_n$ and $i_{k\dots m}: \frn_{k-m+1}\to \frn_n$ are the natural embeddings.
+
+Respectively we define maps $$\pi_{12}^{\circ}:\calX^\circ_3(G_n,G_{k\dots m})\to \calX_2(G_{n}),$$ $$\pi_{23}^{\circ}:\calX^\circ_3(G_n,G_{k\dots m})\to \calX_2(G_{m-k+1}),$$ $$\pi_{13}^{\circ}:\calX^\circ_3(G_n,G_{k\dots m})\to \calX_2(G_n),$$ $$\label{eq: pi12}
+\pi_{12}^{\circ}(X,g_{12},g_{23},Y_1,Y_2,Y_3)=(X,g_{12},Y_1,i_{k\dots m}(Y_2)+\Pi_{++}^{\overline{k\dots m}}(\Ad_{g_{23}}(Y_3)).$$ $$\label{eq: pi23}
+\pi_{23}^{\circ}(X,g_{12},g_{23},Y_1,Y_2,Y_3)=(\Pi^{\overline{k\dots m}}( \Ad_{g_{12}}^{-1}(X)),g_{23},Y_2,\Pi^{\overline{k\dots m}}(Y_3)),$$ $$\pi_{13}^{\circ}(X,g_{12},g_{23},Y_1,Y_2,Y_3)=(X,g_{12}g_{23},Y_1,Y_3).$$ These maps are the restrictions of the corresponding maps from $\calX_3$ on the embedded subvariety $\calX^\circ_3(G_n,G_{k\dots m})$.
+
+Similarly, we define $\calX^\circ_3(G_{k\dots m},G_n)=\frg_n\times G_{k\dots m}\times G_n\times \frn_n\times \frn_{k-m+1}\times \frn_n$. Let us also fix an embedding $i_{k\dots m}$ of this space inside $\calX_3$: $$i_{k\dots m}(X,g_{12},g_{23},\vec{Y})=(X,i_{k\dots m}(g_{12}),g_{23},Y_1,i_{k\dots m}(Y_2)+\Pi_{++}^{\overline{k\dots m}}(\Ad^{-1}_{g_{12}}(Y_1)),Y_3),$$ $\vec{Y}=(Y_1,Y_2,Y_3)$. The maps $\pi_{ij}^{\circ}$ are defined analogously to the previous case: by the restriction from ambient space.
+
+The spaces $\calX^\circ_3(G_n,G_{k\dots m})$ and $\SymbolPrint{\calX^\circ_3(G_{k\dots m},G_n)}$ have unique $B_n^3$ equivariant structure that makes the maps $\pi_{ij}^\circ$ $B_n^3$-equivariant.
+
+::: lemma
+[]{#prop: small flag label="prop: small flag"} For any $$\calF\in \MF_{B_{m-k+1}^2}(\calX_2(G_{m-k+1}),W),\calG\in \MF_{B_n^2}(\calX_2(G_n),W)$$ we have $$\calG\star\Ind_{k\dots m}(\calF)=\CE_{\frn_{m-k+1}^{(2)}}\pi_{13*}^\circ(\pi_{12}^{\circ*}(\calG)\otimes \pi_{23}^{\circ*}(\calF))^{T^{(2)}_{m-k+1}},$$ $$\Ind_{k\dots m}(\calF)\star \calG=\CE_{\frn_{m-k+1}^{(2)}}\pi_{13*}^\circ(\pi_{12}^{\circ*}(\calF)\otimes \pi_{23}^{\circ*}(\calG))^{T^{(2)}_{m-k+1}},$$
+:::
+
+The key observation in the proof is an alternative description of the induction functor $\Ind_{k\dots m}$. The space $\SymbolPrint{\calX^\bullet_2(Q_{k\dots m})}:=
+\frg_n\times Q_{k\dots m}\times \frn_{m-k+1}\times \frn_n$ can be mapped into $\calX_2(G_n)$ with the map: $$\SymbolPrint{j_{k\dots m}}(X,g,Y_1,Y_2)=(X,j_{k\dots m}(g),i_{k\dots m}(Y_1)+\Pi_{++}^{\overline{k\dots m}}(\Ad_g(Y_2)),Y_2)$$ where $j_{k\dots m}: Q_{k\dots m}\to G_n$ is the natural embedding.
+
+There is also a natural projection map $\Pi^{\overline{k\dots m}}:\calX^\bullet_2(Q_{k\dots m})\to \calX_2^\circ(G_{m-k+1})$ defined by: $$\Pi^{\overline{k\dots m}}(X,g,Y_1,Y_2)=(\Pi^{\overline{k\dots m}}(X),\Pi^{\overline{k\dots m}}(g),\Pi^{\overline{k\dots m}}(Y_1),\Pi^{\overline{k\dots m}}(Y_2)).$$ Both of these maps are $B_n^3$-equivariant. In particular, we have a commuting diagram: $$\begin{tikzcd}
+ \calX_2^{\bullet}(Q_{k\dots m}) \arrow[dotted]{r}{i'}\arrow[dotted]{d}{\Pi'_1\times\Pi^{\overline{k\dots m}}\times\Pi'_3}   & \calX^\circ_2(P_{k,m})\arrow{d}{p_{k,m}}\arrow{r}{i_{k,m}}&\calX''_{2,n}\\
+ \calX'_{2,k}\times \calX''_{2,m-k+1}\times \calX'_{2,n-m} \arrow{r}{i^{\parallel}\times 1\times i^{\parallel}}\arrow{d}{\pi_2} &
+ \calX''_{2,k}\times\calX''_{2,m-k+1}\times \calX''_{2,n-m}&\\
+\calX^\circ_2(G_{m-k+1})&&
+\end{tikzcd}$$ where $\calX'_{2,k}:=\frg_k\times B_k\times \frb_k\times \frb_k=\calX^{\circ}_2(B_k)$, $\calX''_{2,k}:=\frg_k\times G_k\times \frb_k\times\frb_k=\calX^{\circ}_2(G_k)$ and the dotted arrow maps are: $$i'(X,g,Y_1,Y_2)=(\Pi^{\overline{k\dots m}}_+(X),j_{k\dots m}(g),i_{k\dots m}(Y_1)+
+  \Pi^{\overline{k\dots m}}_{++}(\Ad_g(Y_2)),Y_2),$$ $$\Pi'_i(X,g,Y_1,Y_2)=(p_{k,m}^{(i)}(X),p_{k,m}^{(i)}(g),p_{k,m}^{(i))}(\Ad_g(Y_2)),p_{k,m}^{(i)}(Y_2)),$$ here $p_{k,m}^{(1)}$, $p_{k,m}^{(3)}$ are the compositions of $p_{k,m}$ with the projections on $k\times k$ and $(n-m)\times(n-m)$ blocks.
+
+Using the base change in our previous diagram we obtain $$\begin{gathered}
+\Ind_{k\dots m}=i_{k,m,*}\circ p_{k,m}^*\circ (i^{\parallel}\times 1\times i^{\parallel})\circ \pi_2^*=i_{k,m,*}\circ i'_*\circ (\Pi'_1\times\Pi^{\overline{k\dots m}}\times\Pi'_3)^*\circ\pi_2^*\\=
+j_{k\dots m,*}\circ \Pi^{\overline{k\dots m},*}.
+\end{gathered}$$
+
+::: proof
+*Proof of proposition [\[prop: small flag\]](#prop: small flag){reference-type="ref" reference="prop: small flag"}.* We prove the first formula the second is analogous. We have the following commuting diagram of the maps: $$\begin{tikzcd}
+ \calX_3^{\circ}(G_n,Q_{k\dots m}) \arrow[dotted]{r}{i_{k\dots m}}\arrow[dotted]{d}{\pi_{12}^\circ\times\pi_{23}^\circ}   & \calX^\circ_3\arrow{d}{\pi_{12}^\circ\times\pi_{23}^\circ}\arrow{r}{\pi_{13}^{\circ}}&\calX^\circ_2\\
+\calX_2^\circ\times \calX_2^\bullet(Q_{k\dots m}) \arrow{r}{1\times j_{k\dots m}}\arrow{d}{1\times\Pi^{\overline{k\dots m}}} &                                  \calX^\circ_2\times\calX^\circ_2&\\
+\calX^\circ_2(G_n)\times\calX^\circ_2(G_{m-k+1})&&
+ \end{tikzcd}$$ where the dotted arrow map $\pi_{12}^\circ\times\pi_{23}^\circ$ is given by $$\pi_{12}^{\circ}(X,g_{12},g_{23},Y_1,Y_2,Y_3)=(X,g_{12},Y_1,i_{k\dots m}(Y_2)+\Pi_{++}^{\overline{k\dots m}}(\Ad_{g_{23}}(Y_3)),$$ $$\pi_{23}^{\circ}(X,g_{12},g_{23},Y_1,Y_2,Y_3)=(\Ad_{g_{12}}^{-1}(X),g_{23},Y_2,\Pi_{-}^{\overline{k\dots m}}(Y_3)).$$
+
+Now we can use the base change formula to simplify $\calG\star\Ind_{k\dots m}(\calF)$ : $$\begin{gathered}
+\CE_{\frn_n^{(2)}}(\pi^\circ_{13*}\circ (\pi^\circ_{12}\times \pi_{23}^\circ)^*\circ (\mathrm{Id}\times j_{k\dots m})_*\circ (\mathrm{Id}\times\Pi^{\overline{k\dots m}})^*(\calG\boxtimes \calF)))^{T^{(2)}_n}=\\
+ \CE_{\frn_n^{(2)}}(\pi^\circ_{13*} \circ  (i_{k\dots m})_*\circ  (\pi^\circ_{12}\times \pi_{23}^\circ)^* \circ(\mathrm{Id}\times\Pi^{\overline{k\dots m}})^*(\calG\boxtimes \calF)))^{T^{(2)}_n}=\\
+  \CE_{\frn_n^{(2)}}(\pi^\circ_{13*}\circ (\pi^\circ_{12}\times \pi_{23}^\circ)^*(\calG\boxtimes \calF)))^{T^{(2)}_n},
+\end{gathered}$$ where in the last equation we use $\pi^\circ_{13}\circ i_{k\dots m}=\pi_{13}^\circ$ and $\mathrm{Id}\times\Pi^{\overline{k\dots m}}\circ \pi^\circ_{12}\times \pi_{23}^\circ=\pi^\circ_{12}\times \pi_{23}^\circ$ where the maps in the product $\pi^\circ_{12}\times \pi_{23}^\circ: \calX_3^\circ(G_n,Q_{k\dots m})\to \calX^\circ_2(G_n)\times\calX^\circ_2(G_{m-k+1})$ are given by the formulas ([\[eq: pi12\]](#eq: pi12){reference-type="ref" reference="eq: pi12"}), ([\[eq: pi23\]](#eq: pi23){reference-type="ref" reference="eq: pi23"}).
+
+Let us denote by $C$ the matrix factorization $\pi^\circ_{13*}\circ (\pi^\circ_{12}\times \pi_{23}^\circ)^*(\calG\boxtimes \calF)$ For last step we use Hochschild-Serre spectral sequence to compute functor $\CE_{\frn_n^{(2)}}$: $$\CE_{\frn_{m-k+1}^{(2)}}(\CE_{\Lie(J'_{k\dots m})}(C))\Rightarrow \CE_{\frn_n^{(2)}}(C)$$ where $J_{k\dots m}$ is the kernel of the projection homomorphism $Q_{k\dots m}\to G_{m-k+1}$ and $J'_{k\dots m}$ is its unipotent part. Let us abbreviate the quotient $J_{k\dots m}/J'_{k\dots m}$ by $J/J'$. We have $$\label{eq: CE}
+ \CE_{\Lie(J'_{k\dots m})}(C)^{J/J'}=\pi^\circ_{13*}(\CE_{\Lie(J'_{k\dots m})}(\pi^\circ_{12}\times \pi_{23}^\circ)^*(\calG\boxtimes \calF)).$$ On the other hand the formulas for the maps $\pi^\circ_{12}$ and $\pi^\circ_{23}$ imply that the differentials of the pull back $(\pi^\circ_{12}\times \pi_{23}^\circ)^*(\calG\boxtimes \calF)$ are invariant with respect to the action of $J'_{k\dots m}$. Hence to complete the computation of ([\[eq: CE\]](#eq: CE){reference-type="ref" reference="eq: CE"}) we need to compute $$\mathrm{H}_{\Lie}^*(J'_{k\dots m},\CC[\calX^\circ_3(G_n,Q_{k\dots m})])^{J/J'}$$ which is a tensor product of $\CC[\frb\times G_n\times \frn_{m-k+1}\times \frn_n]$ and $\mathrm{H}_{\Lie}^*(J'_{k\dots m},\CC[Q_{k\dots m}])^{J/J'},$ and in proposition below we show that $\CE_{J'_{k\dots m}}(\CC[Q_{k\dots m}])^{J'/J}=\CC[G_{m-k+1}].$ Hence the statement follows since $T^{(2)}_n=(J/J')\times T_{m-k+1}$ where $T_{m-k+1}$ is the maximal torus of $G_{m-k+1}\subset G_n$. ◻
+:::
+
+::: proposition
+[]{#prop: Lie cohs label="prop: Lie cohs"} For any $k,m$, $1\le k<m\le n$ we have $$\CE_{\Lie(J'_{k\dots m})}(\CC[Q_{k\dots m}])=\CC[G_{m-k+1}]\otimes \CC[J/J'].$$
+:::
+
+::: proof
+*Proof.* We show slightly more general statement $$\CE_{\Lie(J'_{k\dots m})}(\CC[Q_{k'\dots m'}])=
+\CC[Q_{k-k'+1\dots m-k'+1}\subset G_{m-k+1}]\otimes \CC[(J/J')],$$ where $k\ge k'$, $m'\le m$.
+
+We use induction by $m-k$ and the Hochschild-Serre Spectral sequence ([@Wei], sect 7.5). Since we have short exact sequence of groups $$1\to J'_{k+1,\dots, m}\longrightarrow J'_{k\dots n}\longrightarrow \CC^{m-k+1}\to 1,$$ the spectra sequence tells us that $$\CE_{\CC^{m-k+1}}(\CE_{\Lie\left(J'_{k+1\dots m}\right)}(\CC[Q_{ \kappa '\dots m'}]))\Rightarrow \CE_{J_{k\dots m}}(\CC[Q_{k'\dots m'}]).$$ By induction we have $\CE_{\Lie(J'_{k+1\dots m})}(\CC[Q_{k'\dots m'}])=\CC[Q_{k-k'+2\dots m-k'+1}\subset G_{m-k+2}]$. After relabeling matrix indices our statement is equivalent to the computation of the following cohomology $\mathrm{H}^*_{\Lie}(\CC^{m-k+1},\CC[Q_{k-k'+2\dots m-k'+1}])$. The ring of polynomial functions on $Q_{k-k'+2\dots m-k'+1}$ is generated by the elements $E_{kl}^\vee$ dual to the matrix units $E_{kl}$ of $E$. The generators $\partial_i$ of the commutative algebra $\CC^{m-k+1}$ act on the ring generators by the formula: $$\partial_i E^\vee_{kl}=\delta_{k1} E_{il}^\vee.$$ We can apply invertible linear transformation to our system of differential operators to obtain new system of generators: $$\tilde{\partial}_k=\sum_{i=2}^{m-k+2} (-1)^{i+k}\Delta_{ik}\partial_k,$$ where $\Delta_{ik}\in \CC[Q_{k-k'+2\dots m-k'+1}]$ is the determinant of $(m-k)\times (m-k)$ obtained from $E$ by removing columns and rows containing $11$ and $ik$ entries. Then we have: $$\tilde{\partial}_i E^\vee_{kl}=\delta_{k1}\delta_{il} E_{11}^\vee.$$ and by Poincare lemma we obtain $$\mathrm{H}^*_{\Lie}(\CC^{m-k+1},\CC[Q_{k-k'+2\dots m-k'+1}])=\CC[Q_{k-k'+2\dots m-k'+1}]/(E_{12}^\vee,\dots,E_{1,m-k+2}^\vee)$$ and the statement follows. ◻
+:::

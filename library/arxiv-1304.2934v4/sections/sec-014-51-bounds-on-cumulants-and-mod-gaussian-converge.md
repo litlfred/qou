@@ -8,105 +8,38 @@ pages: 38-39
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
 doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
+text_source: latex
+latex_prose_ratio: 0.907
+latex_coverage_ratio: 1.0
 ---
-quence of real-valued centered random variables that admit moments of all order, and
-such that
-|κ(r)(Sn)|≤ (Cr)r αn(βn)r (24)
-for all r≥ 2 and for some sequences (αn)n→∞→ +∞ and (βn)n∈N arbitrary. Assume
-moreover that there exists an integer v≥ 3 such that
-(1) κ(r)(Sn) = 0 for all 3≤ r < v and all n∈ N;
-MOD-φ CONVERGENCE, I 39
-(2) we have the following approximations for second and third cumulants:
-κ(2)(Sn) = σ2 αn(βn)2
-(
-1 + o
-(
-(αn)− v−2
-v
-))
-;
-κ(v)(Sn) = L αn(βn)v(
-1 + o(1)
-)
-. (25)
-Set Xn = Sn
-(αn)
-1v βn
-. The cumulant generating series of Xn is
-log ϕn(z) = κ(2)(Sn)
-2 (αn)
-2
-v (βn)2
-z2 + κ(v)(Sn)
-v! αn(βn)v zv +
-∞
-∑
-r=v+1
-κ(r)(Sn)
-r! (αn)
-r
-v (βn)r zr
-= σ2
-2 (αn)
-v−2
-v z2 + L
-v! zv +
-∞
-∑
-r=v+1
-κ(r)(Sn)
-r! (αn)
-r
-v (βn)r zr + o(1),
-where the o(1) is locally uniform. The remaining series is locally uniformly bounded
-in absolute value by
-∞
-∑
-r=v+1
-Cr rr
-r!
-1
-(αn)
-r−v
-v
-Rr≤ αn
-∞
-∑
-r=v+1
-(
-e CR
-(αn)
-1
-v
-)r
-= ( αn)− 1
-v
-(e CR)v+1
-1− e CR (αn)− 1
-v
-→ 0.
-Hence,
-ψn(z) = exp
-(
-−(αn)
-v−2
-v
-σ2z2
-2
-)
-ϕn(z)→ exp
-( L
-v! zv
-)
-locally uniformly on C, so one has again mod-Gaussian convergence, with parameters
-tn = σ2 (αn)
-v−2
-v and limiting function ψ(z) = e
-L
-v! zv
-.
-Remark 5.1. The case of i.i.d. variables — Example 2.2 — ﬁts in this framework, with
-αn = n and βn = 1.However, it includes many more examples than sums of i.i.d. vari-
-ables: in particular, in Section 9, we show that such bounds on cumulants typically
-occur in the framework of dependency graphs. Concrete examples are discussed in
-Sections 10 and 11.
+\label{subsec:modgaussfromcumulants}
+Let $(S_{n})_{n \in \N}$ be a sequence of real-valued centered random variables that admit moments of all order, and such that  
+\begin{equation}
+    |\kappa^{(r)}(S_{n})| \leq (Cr)^{r}\,\alphan (\betan)^r
+    \label{eq:superbound}
+\end{equation}
+for all $r \geq 2$ and for some sequences $(\alphan)_{n \to \infty} \to +\infty$ and $(\beta_n)_{n\in \N}$ arbitrary. Assume moreover that there exists an integer $v \geq 3$ such that \vspace{2mm}
+\begin{enumerate}
+\item $\kappa^{(r)}(S_{n})=0$ for all $3 \leq r < v$ and all $n \in \N$;\vspace{2mm}
+\item we have the following approximations for second and third cumulants:
+    \begin{align}
+        \kappa^{(2)}(S_{n}) &= \sigma^{2}\,\alphan (\betan)^{2}\,\left(1+o\!\left((\alphan)^{-\frac{v-2}{v}}\right)\right); \nonumber \\
+        \kappa^{(v)}(S_{n}) &=L\,\alphan (\betan)^{v}\,\big(1+o(1)\big).
+        \label{eq:cv_sndthrd_cumulants}
+    \end{align}
+\end{enumerate}
+Set $X_{n}=\frac{S_{n}}{(\alphan)^{\frac{1}{v}}\betan}$. The cumulant generating series of $X_{n}$ is
+\begin{align*}
+\log \varphi_{n}(z)&=\frac{\kappa^{(2)}(S_{n})}{2\,(\alphan)^{\frac{2}{v}}\,(\betan)^2}\,z^{2}+\frac{\kappa^{(v)}(S_{n})}{v!\,\alphan (\betan)^{v}}\,z^{v}+\sum_{r=v+1}^{\infty} \frac{\kappa^{(r)}(S_{n})}{r!\,(\alphan)^{\frac{r}{v}}\,(\betan)^r}\,z^{r}\\
+&=\frac{\sigma^{2}}{2}\,(\alphan)^{\frac{v-2}{v}}z^{2}+\frac{L}{v!}\,z^{v}+ \sum_{r=v+1}^{\infty} \frac{\kappa^{(r)}(S_{n})}{r!\,(\alphan)^{\frac{r}{v}}\,(\betan)^r}\,z^{r}+o(1),
+\end{align*}
+where the $o(1)$ is locally uniform. The remaining series is locally uniformly bounded in absolute value by
+$$\sum_{r=v+1}^{\infty} C^{r}\,\frac{r^{r}}{r!}\, \frac{1}{(\alphan)^{\frac{r-v}{v}}}\,R^{r} \leq \alphan \sum_{r=v+1}^{\infty} \left(\frac{\E\, CR}{(\alphan)^{\frac{1}{v}}}\right)^{r}=(\alphan)^{-\frac{1}{v}}\,\frac{(\E\, CR)^{v+1}}{1-\E\, CR\,(\alphan)^{-\frac{1}{v}}} \to 0.$$
+Hence, 
+$$\psi_{n}(z)=\exp\left(-(\alphan)^{\frac{v-2}{v}}\,\frac{\sigma^{2}z^{2}}{2}\right)\,\varphi_{n}(z) \to \exp\left(\frac{L}{v!}\,z^{v}\right)$$
+locally uniformly on $\C$, so one has again mod-Gaussian convergence, with parameters $t_{n}=\sigma^{2}\,(\alphan)^{\frac{v-2}{v}}$ and limiting function $\psi(z)=\E^{\frac{L}{v!}\,z^{v}}$.
+
+\begin{remark}
+The case of i.i.d.~variables --- Example \ref{ex:sumiid} --- fits in this framework, with $\alphan=n$ and $\betan=1$.However, it includes many more examples than sums of i.i.d.~variables: in particular, in Section \ref{sec:depgraph}, we show that such bounds on cumulants typically occur in the framework of dependency graphs. Concrete examples are discussed in Sections \ref{sec:erdosrenyi} and \ref{sec:central}.
+\end{remark}
+\bigskip

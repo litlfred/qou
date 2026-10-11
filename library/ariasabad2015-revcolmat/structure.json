@@ -8,15 +8,15 @@
   "pages": 38,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T18:29:17Z",
+  "mtime": "2026-10-11T05:48:35Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Introduction to Representations of Braid Groups",
-  "authors_raw": "Camilo Arias Abad",
+  "title": "Revista Colombiana de Matem\u00e1ticas",
+  "authors_raw": null,
   "title_lines": [
    "Revista Colombiana de Matem\u00e1ticas"
   ],
@@ -34,9 +34,7 @@
    "text": "Revista Colombiana de Matem\u00e1ticas",
    "corroborated_by": [],
    "browser_print": false
-  },
-  "title_note": "Set by hand at ingest: the automatic pick read the journal running head ('Revista Colombiana de Matem\u00e1ticas'). Published version: Rev. Colombiana Mat. 49(1) (2015) 1-38. Same work as arxiv-1404.0724v1 (preprint), which carries duplicate_of pointing here.",
-  "journal": "Revista Colombiana de Matem\u00e1ticas 49(1) (2015) 1-38"
+  }
  },
  "toc": [
   {
@@ -44,130 +42,579 @@
    "title": "Introduction",
    "page": 2,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Braid Groups",
    "page": 3,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Artin\u2019s Presentation",
    "page": 3,
    "source": "inferred",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Con\ufb01guration Spaces",
    "page": 4,
    "source": "inferred",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Mapping Class Groups",
    "page": 5,
    "source": "inferred",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Pure Braids",
    "page": 7,
    "source": "inferred",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Homological Representations",
    "page": 8,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The Burau Representation",
    "page": 8,
    "source": "inferred",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "There",
+   "page": 8,
+   "source": "inferred",
+   "number": "3.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Homological Interpretation",
    "page": 11,
    "source": "inferred",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Braids, Knots and the Alexander Conway Polynomial",
    "page": 12,
    "source": "inferred",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The Lawrence-Krammer-Bigelow Representation",
    "page": 15,
    "source": "inferred",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The Knizhnik-Zamolodchikov Connection",
    "page": 18,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Cohomology of Con\ufb01guration Spaces and the KZ Connection",
    "page": 18,
    "source": "inferred",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Representations of sl2(C) and Lawrence-Krammer-Bigelow",
    "page": 24,
    "source": "inferred",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The Yang-Baxter Equation and the Drinfeld-Kohno Theorem",
    "page": 26,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The Yang-Baxter Equation and Quasi-Triangular Bialgebras",
    "page": 26,
    "source": "inferred",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "De\ufb01nition",
+   "page": 27,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The Drinfeld-Kohno Theorem",
    "page": 31,
    "source": "inferred",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
-   "level": 1,
+   "level": 2,
    "title": "References",
    "page": 37,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
  "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Examples of braids",
+   "page": 3,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Halftwist of a two pointed disk",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -177,7 +624,9 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 133,
-   "n_words": 26
+   "n_words": 26,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-000-1-introduction",
@@ -187,7 +636,9 @@
    "page_start": 1,
    "page_end": 2,
    "n_chars": 1791,
-   "n_words": 254
+   "n_words": 254,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-braid-groups",
@@ -197,7 +648,9 @@
    "page_start": 2,
    "page_end": 2,
    "n_chars": 307,
-   "n_words": 44
+   "n_words": 44,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-21-artins-presentation",
@@ -207,7 +660,9 @@
    "page_start": 2,
    "page_end": 4,
    "n_chars": 4622,
-   "n_words": 777
+   "n_words": 777,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-22-con\ufb01guration-spaces",
@@ -217,7 +672,9 @@
    "page_start": 4,
    "page_end": 5,
    "n_chars": 1390,
-   "n_words": 262
+   "n_words": 262,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-23-mapping-class-groups",
@@ -227,7 +684,9 @@
    "page_start": 5,
    "page_end": 7,
    "n_chars": 3409,
-   "n_words": 652
+   "n_words": 652,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-24-pure-braids",
@@ -235,138 +694,197 @@
    "title": "Pure Braids",
    "level": 2,
    "page_start": 7,
-   "page_end": 8,
-   "n_chars": 1060,
-   "n_words": 205
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-3-homological-representations",
+   "id": "sec-006-31-there",
+   "number": "3.1",
+   "title": "There",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 988,
+   "n_words": 190,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-3-homological-representations",
    "number": "3",
    "title": "Homological Representations",
    "level": 1,
    "page_start": 8,
    "page_end": 8,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-31-the-burau-representation",
+   "id": "sec-008-31-the-burau-representation",
    "number": "3.1",
    "title": "The Burau Representation",
    "level": 2,
    "page_start": 8,
    "page_end": 11,
    "n_chars": 4718,
-   "n_words": 1094
+   "n_words": 1094,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-32-homological-interpretation",
+   "id": "sec-009-32-homological-interpretation",
    "number": "3.2",
    "title": "Homological Interpretation",
    "level": 2,
    "page_start": 11,
    "page_end": 12,
    "n_chars": 1594,
-   "n_words": 326
+   "n_words": 326,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-33-braids-knots-and-the-alexander-conway-polynom",
+   "id": "sec-010-33-braids-knots-and-the-alexander-conway-polynom",
    "number": "3.3",
    "title": "Braids, Knots and the Alexander Conway Polynomial",
    "level": 2,
    "page_start": 12,
    "page_end": 15,
    "n_chars": 4867,
-   "n_words": 850
+   "n_words": 850,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-34-the-lawrence-krammer-bigelow-representation",
+   "id": "sec-011-34-the-lawrence-krammer-bigelow-representation",
    "number": "3.4",
    "title": "The Lawrence-Krammer-Bigelow Representation",
    "level": 2,
    "page_start": 15,
    "page_end": 18,
    "n_chars": 5889,
-   "n_words": 1210
+   "n_words": 1210,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-4-the-knizhnik-zamolodchikov-connection",
+   "id": "sec-012-4-the-knizhnik-zamolodchikov-connection",
    "number": "4",
    "title": "The Knizhnik-Zamolodchikov Connection",
    "level": 1,
    "page_start": 18,
    "page_end": 18,
    "n_chars": 306,
-   "n_words": 46
+   "n_words": 46,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-41-cohomology-of-con\ufb01guration-spaces-and-the-kz",
+   "id": "sec-013-41-cohomology-of-con\ufb01guration-spaces-and-the-kz",
    "number": "4.1",
    "title": "Cohomology of Con\ufb01guration Spaces and the KZ Connection",
    "level": 2,
    "page_start": 18,
    "page_end": 24,
    "n_chars": 8825,
-   "n_words": 1820
+   "n_words": 1820,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-013-42-representations-of-sl2c-and-lawrence-krammer",
+   "id": "sec-014-42-representations-of-sl2c-and-lawrence-krammer",
    "number": "4.2",
    "title": "Representations of sl2(C) and Lawrence-Krammer-Bigelow",
    "level": 2,
    "page_start": 24,
    "page_end": 26,
    "n_chars": 4032,
-   "n_words": 853
+   "n_words": 853,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-014-5-the-yang-baxter-equation-and-the-drinfeld-kohn",
+   "id": "sec-015-5-the-yang-baxter-equation-and-the-drinfeld-kohn",
    "number": "5",
    "title": "The Yang-Baxter Equation and the Drinfeld-Kohno Theorem",
    "level": 1,
    "page_start": 26,
    "page_end": 26,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-015-51-the-yang-baxter-equation-and-quasi-triangular",
+   "id": "sec-016-51-the-yang-baxter-equation-and-quasi-triangular",
    "number": "5.1",
    "title": "The Yang-Baxter Equation and Quasi-Triangular Bialgebras",
    "level": 2,
    "page_start": 26,
-   "page_end": 31,
-   "n_chars": 8420,
-   "n_words": 1542
+   "page_end": 26,
+   "n_chars": 406,
+   "n_words": 60,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-016-52-the-drinfeld-kohno-theorem",
+   "id": "sec-017-de\ufb01nition",
+   "number": null,
+   "title": "De\ufb01nition",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 31,
+   "n_chars": 7944,
+   "n_words": 1469,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-018-52-the-drinfeld-kohno-theorem",
    "number": "5.2",
    "title": "The Drinfeld-Kohno Theorem",
    "level": 2,
    "page_start": 31,
    "page_end": 37,
    "n_chars": 10996,
-   "n_words": 2045
+   "n_words": 2045,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-017-references",
+   "id": "sec-019-references",
    "number": null,
    "title": "References",
-   "level": 1,
+   "level": 2,
    "page_start": 37,
    "page_end": 38,
    "n_chars": 2443,
-   "n_words": 386
+   "n_words": 386,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 18,
-  "toc_inferred_entries": 18,
-  "sections": 19,
-  "chars_total": 64802
+  "toc_entries": 20,
+  "toc_inferred_entries": 20,
+  "toc_inferred_mean_confidence": 0.74,
+  "toc_inferred_empty_share": 0.15,
+  "toc_inferred_method": "font",
+  "figure_entries": 2,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 21,
+  "chars_total": 64660
  },
  "duplicate_copies": [
   "arxiv-1404.0724v1"

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-alg-geom-9705010v1/sections/sec-010",
   "@type": [
     "doco:Section"
   ],
-  "title": "RON Y. DONAGI",
-  "pageStart": 18,
-  "pageEnd": 20,
+  "title": "Linearity: complexiﬁed Duistermaat-Heckman",
+  "pageStart": 19,
+  "pageEnd": 21,
   "contains": [
     "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-010"
   ],
-  "derivedFrom": "library/arxiv-alg-geom-9705010v1/manifest",
-  "sourceDocument": "library/arxiv-alg-geom-9705010v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-alg-geom-9705010v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-alg-geom-9705010v1/manifest.jsonld",
   "provenance": "ingested"
 }

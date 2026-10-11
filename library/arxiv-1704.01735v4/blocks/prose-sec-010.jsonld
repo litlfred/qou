@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1704.01735v4/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1704.01735v4/blocks/prose-sec-010",
   "kind": "prose",
-  "title": "Modular curve X(13) and invariant theory for",
-  "pageStart": 13,
-  "pageEnd": 21,
-  "text": "../sections/sec-010-3-modular-curve-x13-and-invariant-theory-for.md",
-  "derivedFrom": "library/arxiv-1704.01735v4/manifest",
-  "sourceDocument": "library/arxiv-1704.01735v4/manifest",
+  "title": "An explicit construction of the modular curve X(13)",
+  "pageStart": 35,
+  "pageEnd": 37,
+  "text": "../sections/sec-010-5-an-explicit-construction-of-the-modular-curve.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1704.01735v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1704.01735v4/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/hdr/sections/sec-010",
   "@type": [
     "doco:Section"
@@ -10,10 +15,10 @@
   "contains": [
     "library/hdr/blocks/prose-sec-010",
     "library/hdr/blocks/thm-sec-010-01",
-    "library/hdr/blocks/rem-sec-010-02",
-    "library/hdr/blocks/ex-sec-010-03"
+    "library/hdr/blocks/remark-sec-010-02",
+    "library/hdr/blocks/example-sec-010-03"
   ],
-  "derivedFrom": "library/hdr/manifest",
-  "sourceDocument": "library/hdr/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
   "provenance": "ingested"
 }

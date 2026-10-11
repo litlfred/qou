@@ -8,23 +8,26 @@ pages: 4-5
 source_pdf: 2006.02042v1.pdf
 source_sha256: 9de75ced3a3360bb
 doc_brief: "The Strong AJ Conjecture for the Figure 8 Knot — Motivated by the theory of quantum A-ideals of Frohman-Gelca-Lo Faro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and the AJ"
+text_source: latex
+latex_prose_ratio: 0.826
+latex_coverage_ratio: 0.792
 ---
-p2 and p−2 to be the same as those of the A-polynomial squared. Namely we let
-p2(t, M) = ˜a2(M) = 1 and p−2(t, M) = ˜a−2(M) = 1 .
-We see that this takes care of equation (2.1). Then
-b1(t, M) = 1
-a1(t, t2M) and b−1(t, M) = 1
-a−1(t, t−2M) .
-This implies that
-p1(t, M) = a1(t, M)b0(t, M) + a0(t, t2M)
-a1(t, t2M) ,(2.9)
-p−1(t, M) = a−1(t, M)b0(t, M) + a0(t, t−2M)
-a−1(t, t−2M) ,(2.10)
-p0(t, M) = a0(t, M)b0(t, M) + a1(t, t−2M)
-a−1(t, t−2M) + a−1(t, t2M)
-a1(t, t2M) .(2.11)
-Since a1(t, M) = −a−1(t, M−1) and a0(t, M) = −a0(t, M−1), we see that equations
-p1(t, M) = p−1(t, M−1) and p0(t, M) = p0(t, M−1) are equivalent to a single equation
-(2.12) b0(t, M−1) = −b0(t, M).
-Hence conditions (2.2) and (2.3) become equation (2.12).
-STRONG AJ CONJECTURE FOR THE FIGURE EIGHT KNOT 5
+We first choose the leading coefficients $p_2$ and $p_{-2}$ to be the same as those of the A-polynomial squared. Namely we let
+$$p_2(t,M)= \tilde{a}_2(M)=1 \hspace{4mm}\text{and}\hspace{4mm} p_{-2}(t,M)=\tilde{a}_{-2}(M)=1.$$
+We see that this takes care of equation \eqref{eq: e2}. Then
+$$
+b_1(t,M) = \frac{1}{a_1(t,t^2 M)}  \hspace{4mm}\text{and}\hspace{4mm}
+b_{-1}(t,M) = \frac{1}{a_{-1}(t,t^{-2} M)}. 
+$$
+This implies that 
+\begin{eqnarray}
+p_1(t,M) &=& a_1(t, M) b_0(t, M) + \frac{a_0(t, t^2 M)}{a_1(t, t^2 M)},  \label{eq:q1}\\
+p_{-1}(t,M) &=&  a_{-1}(t, M) b_0(t, M) +  \frac{a_0(t, t^{-2} M) }{a_{-1}(t,t^{-2} M)}, \\
+p_0(t,M) &=& a_0(t, M) b_0(t, M)  + \frac{a_1(t, t^{-2} M) }{a_{-1}(t,t^{-2} M)} +  \frac{a_{-1}(t, t^2 M)}{a_1(t,t^2 M)}. \label{eq:q0}
+\end{eqnarray}
+
+Since $a_1(t,M) = - a_{-1}(t,M^{-1})$ and $a_0(t,M) = - a_0(t,M^{-1})$, we see that equations $p_1(t,M)=p_{-1}(t,M^{-1})$ and $p_0(t,M)=p_0(t,M^{-1})$ are equivalent to a single equation
+\be\label{eq: b0}
+b_0(t,M^{-1})=-b_0(t,M).
+\ee
+Hence conditions \eqref{eq: e1} and \eqref{eq: e0} become equation \eqref{eq: b0}.

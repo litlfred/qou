@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/zagier-the-dilogarithm-function-copy-b/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/zagier-the-dilogarithm-function-copy-b/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "This paper is a revised version of a lecture which was given in Bonn on the",
-  "pageStart": 3,
-  "pageEnd": 4,
-  "text": "../sections/sec-005-1-this-paper-is-a-revised-version-of-a-lecture-w.md",
-  "derivedFrom": "library/zagier-the-dilogarithm-function-copy-b/manifest",
-  "sourceDocument": "library/zagier-the-dilogarithm-function-copy-b/manifest",
+  "title": "Notes on Chapter I",
+  "pageStart": 19,
+  "pageEnd": 20,
+  "text": "../sections/sec-005-notes-on-chapter-i.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zagier-the-dilogarithm-function-copy-b/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zagier-the-dilogarithm-function-copy-b/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -8,133 +8,63 @@ pages: 1-3
 source_pdf: 0405249v5.pdf
 source_sha256: bc699482e5cd7679
 doc_brief: "Twisted homology of quantum SL(2) — We calculate the twisted Hochschild and cyclic homology (in the sense of Kustermans, Murphy and Tuset) of the coordinate algebra o f the quan- tum SL(2) group"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.991
 ---
-Cyclic homology and cohomology were independently discove red by Alain
-Connes [1] and Boris Tsygan [21] in the early 1980’s, and shou ld be
-thought of as extensions of de Rham (co)homology to various c ategories
-of noncommutative algebras. Quantum groups also appeared i n the same
-period, with the ﬁrst example of a “compact quantum group” in the C*-
-algebraic setting being Woronowicz’s “quantum SU (2)” [24].
-The noncommutative diﬀerential geometry (in the sense of Co nnes)
-of quantum SU (2) was thoroughly investigated by Masuda, Nakagami
-∗Supported until 31/12/2003 by the EU Quantum Spaces - Noncom mutative Geometry
-Network (INP-RTN-002) and from 1/1/2004 by an EPSRC postdoc toral fellowship
-1
-and Watanabe [15]. They calculated the Hochschild and cycli c homology
-of the coordinate algebra A(SLq(2)) of quantum SL(2) as well as the
-K-theory and K-homology of the C*-algebra of the compact qua ntum
-SU (2) group. This work was extended by Feng and Tsygan [5], who
-computed the Hochschild and cyclic homology of the standard quantized
-coordinate algebra A(Gq) associated to an arbitrary complex semisimple
-Lie group G. The homologies are roughly speaking those of a classical
-space labelling the symplectic leaves of the Poisson-Lie gr oupG (the semi-
-classical limit ofA(Gq)). In particular, the Hochschild dimension of A(Gq)
-equals the rank of G. This “dimension drop” had already been observed
-for other quantizations of Poisson algebras. Many authors r egarded it as
-an unpleasant feature and asked for generalizations of cycl ic homology
-which detect the quantized parts of quantum groups as well.
-One candidate is twisted Hochschild and cyclic (co)homolog y deﬁned
-by Kustermans, Murphy and Tuset [12], relative to a pair of an algebra
-A and automorphism σ. This reduces to ordinary Hochschild and cyclic
-(co)homology of A on taking σ to be the identity. The standard theory
-is intimately related with the idea of considering tracial f unctionals on
-noncommutative algebras as analogues of integrals, wherea s the twisted
-theory arises naturally from functionals whose tracial pro perties are of
-the form h(ab) = h(σ(b)a). Noncommutative spaces equipped with such
-functionals include duals of nonunimodular groups, type II I von Neumann
-algebras and compact quantum groups. The aim of [12] was to ad apt
-Connes’ constructions relating cyclic cohomology and diﬀe rential calculi
-to covariant diﬀerential calculi in the sense of Woronowicz , since the vol-
-ume forms of such calculi deﬁne in general twisted cocycles r ather than
-usual ones [17]. The possibility of pairing twisted cyclic c ocycles (e.g. over
-quantum homogeneous spaces) with equivariant K-theory was demon-
-strated in [16], and it seems an interesting problem to inves tigate how
-far this original motivation of cyclic cohomology extends t o the twisted
-setting.
-In this paper we compute the twisted Hochschild and cyclic ho molo-
-gies HHσ
-∗ (A), HCσ
-∗ (A) for the coordinate algebra A = A(SLq(2)) of
-the quantum SL(2) group, with generic deformation parameter q. We
-consider all automorphisms σ of the form a,b,c,d ↦→λa,µb,µ −1c,λ −1d,
-wherea,b,c,d are the standard generators, and λ,µ are nonzero elements
-of k. As an overview we collect the dimensions of HHσ
-n (A) as a k-vector
-space, see the main text for explicit formulas for generator s:
-theorem 1.1 We have
-dimHHσ
-n (A) = 0, n> 3,
-dimHHσ
-3 (A) =
-{
-N + 1 λ =q−(N+2),µ = 1,
-0 otherwise ,
-dimHHσ
-2 (A) =
-
-
-
-N + 1 λ =q−(N+2),µ = 1,
-2 λ =q−(N+1),µ =q±(M +1),
-0 otherwise ,
-dimHHσ
-1 (A) =
-
-
-
-0 λ /∈q−N,µ =q±(M +1),
-0 λ⁄= 1,µ /∈qZ,
-4 λ =q−(N+1),µ =q±(M +1),
-∞ otherwise,
-dimHHσ
-0 (A) =
-
-
-
-∞ µ = 1,
-2 λ =q−(N+1),µ =q±(M +1),
-0 otherwise ,
-2
-for M,N ∈ N.
-Strikingly (Theorem 4.12), there exists a family of automor phisms for
-which the twisted Hochschild dimension takes the classical value three
-(note also that the homological dimension of A(SLq(2)) is three [13]) -
-the twisted theory avoids the “dimension drop”. Remarkably , the sim-
-plest such automorphism ( λ = q−2,µ = 1) is the canonical modular au-
-tomorphism associated to the Haar functional on A. Similar results were
-obtained for Podle´ s quantum spheres [7] and quantum hyperp lanes [20].
-In [5], Feng and Tsygan considered formal quantizations, wi thA(Gq)
-a Hopf algebra over C[[ℏ]] with q = eℏ . They showed that for a Hopf
-algebraA over a ﬁeld k, with coproduct ∆, counit ε and antipode S, and
-anA-bimoduleM, there is an isomorphism
-Hn(A,M)≃ TorA
-n (M′,k ) (1)
-Here,M′ isM as a linear space with right action given by
-m ◭a :=
-∑
-S(a(2))ma(1) (2)
-using Sweedler’s notation for the coproduct, and k =A/kerε is the trivial
-leftA-module. Then they computed these Tor-groups using the spec tral
-sequence associated to the ﬁltration induced by ℏ.
-In this paper we compute Tor A
-n (M′,k ) from a Koszul-type free reso-
-lution
-0→A→A 3→A 3→A→ k→ 0 (3)
-ofk. Noncommutative Koszul resolutions were studied by severa l authors,
-in particular Wambst [22], but as far as we know were not appli ed to
-quantum groups. In our opinion this resolution shows very cl early the ge-
-ometric mechanisms behind the computations. We will see tha t the maps
-of the resulting complex computing the twisted Hochschild h omology be-
-come zero for q = 1, so one obtains the Hochschild-Kostant-Rosenberg
-theorem for SL(2) (the algebraic cotangent bundle of SL(2) is trivial).
-However, for q⁄= 1 this does not happen for any twisting automorphism.
-A summary of this paper is as follows. In section 2 we recall ho w the
-twisted theory was discovered [12], then give the deﬁnition s of HHσ
-∗ (A)
-and HCσ
-∗ (A), and the underlying cyclic object. We specialize to Hopf
-algebras and explain the methods adapted from [5]. We then pr esent the
-general scheme of the noncommutative Koszul complexes used here. In
-section 3 we introduce the quantum SL(2) group. In section 4 we present
-our calculations of HHσ
-∗ (A) forA =A(SLq(2)).
+Cyclic homology and cohomology were independently discovered by Alain Connes [@connes0] and Boris Tsygan [@tsygan] in the early 1980's, and should be thought of as extensions of de Rham (co)homology to various categories of noncommutative algebras. Quantum groups also appeared in the same period, with the first example of a "compact quantum group" in the C\*-algebraic setting being Woronowicz's "quantum $SU(2)$" [@wo_suq2].
+
+The noncommutative differential geometry (in the sense of Connes) of quantum $SU(2)$ was thoroughly investigated by Masuda, Nakagami and Watanabe [@mnw]. They calculated the Hochschild and cyclic homology of the coordinate algebra $\mathcal{A}(SL_q(2))$ of quantum $SL(2)$ as well as the K-theory and K-homology of the C\*-algebra of the compact quantum $SU(2)$ group. This work was extended by Feng and Tsygan [@FT], who computed the Hochschild and cyclic homology of the standard quantized coordinate algebra $\mathcal{A}(G_q)$ associated to an arbitrary complex semisimple Lie group $G$. The homologies are roughly speaking those of a classical space labelling the symplectic leaves of the Poisson-Lie group $G$ (the semi-classical limit of $\mathcal{A}(G_q)$). In particular, the Hochschild dimension of $\mathcal{A}(G_q)$ equals the rank of $G$. This "dimension drop\" had already been observed for other quantizations of Poisson algebras. Many authors regarded it as an unpleasant feature and asked for generalizations of cyclic homology which detect the quantized parts of quantum groups as well.
+
+One candidate is twisted Hochschild and cyclic (co)homology defined by Kustermans, Murphy and Tuset [@kmt], relative to a pair of an algebra $\mathcal{A}$ and automorphism $\sigma$. This reduces to ordinary Hochschild and cyclic (co)homology of $\mathcal{A}$ on taking $\sigma$ to be the identity. The standard theory is intimately related with the idea of considering tracial functionals on noncommutative algebras as analogues of integrals, whereas the twisted theory arises naturally from functionals whose tracial properties are of the form $h(ab)=h(\sigma(b)a)$. Noncommutative spaces equipped with such functionals include duals of nonunimodular groups, type III von Neumann algebras and compact quantum groups. The aim of [@kmt] was to adapt Connes' constructions relating cyclic cohomology and differential calculi to covariant differential calculi in the sense of Woronowicz, since the volume forms of such calculi define in general twisted cocycles rather than usual ones [@sw1]. The possibility of pairing twisted cyclic cocycles (e.g. over quantum homogeneous spaces) with equivariant K-theory was demonstrated in [@NT04], and it seems an interesting problem to investigate how far this original motivation of cyclic cohomology extends to the twisted setting.
+
+In this paper we compute the twisted Hochschild and cyclic homologies $HH_\ast^\sigma(\mathcal{A})$, $HC_\ast^\sigma(\mathcal{A})$ for the coordinate algebra $\mathcal{A}=\mathcal{A}(SL_q(2))$ of the quantum $SL(2)$ group, with generic deformation parameter $q$. We consider all automorphisms $\sigma$ of the form $a,b,c,d \mapsto \lambda a, \mu b, \mu^{-1} c, \lambda^{-1} d$, where $a, b, c, d$ are the standard generators, and $\lambda$, $\mu$ are nonzero elements of $k$. As an overview we collect the dimensions of $HH_n^\sigma(\mathcal{A})$ as a $k$-vector space, see the main text for explicit formulas for generators:
+
+::: thm
+[]{#erga label="erga"} We have $$\begin{aligned}
+&& \mathrm{dim}\,HH_n^\sigma(\mathcal{A})=0,\quad n > 3,\nonumber\\   
+&& \mathrm{dim}\,HH_3^\sigma(\mathcal{A})=\left\{
+    \begin{array}{ll}
+    N+1 \quad &\lambda=q^{-(N+2)},\mu=1,\\
+    0 \quad &\mathrm{otherwise},
+    \end{array}\right.\nonumber\\
+&& \mathrm{dim}\,HH_2^\sigma(\mathcal{A})=\left\{
+    \begin{array}{ll}
+    N+1 \quad &
+    \lambda=q^{-(N+2)},\mu=1,\\
+    2 \quad & \lambda=q^{-(N+1)},\mu=q^{\pm(M+1)},\\
+    0 \quad & \mathrm{otherwise},
+    \end{array}\right.\nonumber\\
+&& \mathrm{dim}\,HH_1^\sigma(\mathcal{A})=\left\{
+    \begin{array}{ll}
+    0 \quad & 
+    \lambda \notin q^{-\mathbb{N}},
+    \mu=q^{\pm(M+1)},\\
+    0 \quad & 
+    \lambda \neq 1,\mu \notin q^\mathbb{Z},\\
+    4 \quad &
+    \lambda=q^{-(N+1)},\mu=q^{\pm(M+1)},\\
+    \infty \quad & \mathrm{otherwise},
+    \end{array}\right.\nonumber\\
+&& \mathrm{dim}\,HH_0^\sigma(\mathcal{A})=\left\{
+    \begin{array}{ll}
+    \infty \quad & \mu=1,\\
+    2 \quad & \lambda=q^{-(N+1)},\mu=q^{\pm(M+1)},\\
+    0 \quad & \mathrm{otherwise},
+    \end{array}\right.\nonumber 
+\end{aligned}$$ for $M, N \in \mathbb{N}$.
+:::
+
+Strikingly (Theorem [\[HH_3_for_any_sigma\]](#HH_3_for_any_sigma){reference-type="ref" reference="HH_3_for_any_sigma"}), there exists a family of automorphisms for which the twisted Hochschild dimension takes the classical value three (note also that the homological dimension of $\mathcal{A}(SL_q(2))$ is three [@ls]) - the twisted theory avoids the "dimension drop\". Remarkably, the simplest such automorphism ($\lambda= q^{-2},\mu=1$) is the canonical modular automorphism associated to the Haar functional on $\mathcal{A}$. Similar results were obtained for $\mathrm{Podle{\acute{s}}}$ quantum spheres [@tom] and quantum hyperplanes [@si].
+
+In [@FT], Feng and Tsygan considered formal quantizations, with $\mathcal{A}(G_q)$ a Hopf algebra over $\mathbb{C}[[\hbar]]$ with $q=e^\hbar$. They showed that for a Hopf algebra $\mathcal{A}$ over a field $k$, with coproduct $\Delta$, counit $\varepsilon$ and antipode $S$, and an $\mathcal{A}$-bimodule $\mathcal{M}$, there is an isomorphism $$H_n(\mathcal{A},\mathcal{M}) \simeq 
+\mathrm{Tor}_n^\mathcal{A}(\mathcal{M}',k)$$ Here, $\mathcal{M}'$ is $\mathcal{M}$ as a linear space with right action given by $$m \blacktriangleleft a:= \sum \; S(a_{(2)})ma_{(1)}$$ using Sweedler's notation for the coproduct, and $k=\mathcal{A}/ \mathrm{ker}\,\varepsilon$ is the trivial left $\mathcal{A}$-module. Then they computed these $\mathrm{Tor}$-groups using the spectral sequence associated to the filtration induced by $\hbar$.
+
+In this paper we compute $\mathrm{Tor}_n^\mathcal{A}(\mathcal{M}',k)$ from a Koszul-type free resolution $$0 \rightarrow \mathcal{A}\rightarrow \mathcal{A}^3 \rightarrow \mathcal{A}^3 
+    \rightarrow \mathcal{A}\rightarrow k \rightarrow 0$$ of $k$. Noncommutative Koszul resolutions were studied by several authors, in particular Wambst [@wambst], but as far as we know were not applied to quantum groups. In our opinion this resolution shows very clearly the geometric mechanisms behind the computations. We will see that the maps of the resulting complex computing the twisted Hochschild homology become zero for $q=1$, so one obtains the Hochschild-Kostant-Rosenberg theorem for $SL(2)$ (the algebraic cotangent bundle of $SL(2)$ is trivial). However, for $q \neq 1$ this does not happen for any twisting automorphism.
+
+A summary of this paper is as follows. In section [\[section_thch\]](#section_thch){reference-type="ref" reference="section_thch"} we recall how the twisted theory was discovered [@kmt], then give the definitions of $HH_\ast^\sigma(\mathcal{A})$ and $HC_\ast^\sigma(\mathcal{A})$, and the underlying cyclic object. We specialize to Hopf algebras and explain the methods adapted from [@FT]. We then present the general scheme of the noncommutative Koszul complexes used here. In section [\[section_slq2_suq2\]](#section_slq2_suq2){reference-type="ref" reference="section_slq2_suq2"} we introduce the quantum $SL(2)$ group. In section [\[section_th_slq2\]](#section_th_slq2){reference-type="ref" reference="section_th_slq2"} we present our calculations of $HH_\ast^\sigma(\mathcal{A})$ for $\mathcal{A}=\mathcal{A}(SL_q (2))$.
+
+Twisted cyclic homology is defined as the total homology of Connes' mixed $(b,B)$-bicomplex coming from the underlying cyclic object, as in [@loday]. In section [\[section_tc_slq2\]](#section_tc_slq2){reference-type="ref" reference="section_tc_slq2"} we compute this homology via a spectral sequence.
+
+Finally, in section [\[section_diff_calc_suq2\]](#section_diff_calc_suq2){reference-type="ref" reference="section_diff_calc_suq2"} we discuss the relation of our results to previously known twisted cyclic cocycles coming from the three covariant differential calculi over $\mathcal{A}(SL_q(2))$ discovered by Woronowicz. The twisted cyclic 3-cocycle arising from the three dimensional left covariant calculus was given explicitly in [@kmt] and [@sw1]. We show (Theorem [\[3dcalc_cocycle_is_trivial\]](#3dcalc_cocycle_is_trivial){reference-type="ref" reference="3dcalc_cocycle_is_trivial"}) that this 3-cocycle is a trivial element of twisted cyclic cohomology. Further, the twisted 4-cocycles arising from the two bicovariant four dimensional calculi both correspond to the twisted 0-cocycle coming from the Haar functional (as elements of even periodic twisted cyclic cohomology).

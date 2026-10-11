@@ -7,7 +7,8 @@
   "bytes": 792522,
   "pages": 14,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -201,6 +202,79 @@
   "likely_scanned": false,
   "toc_entries": 10,
   "sections": 9,
-  "chars_total": 41591
+  "chars_total": 41591,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "main.tex",
+   "tex_sections": 8,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-3-energy-minimization",
+     "title": "Energy Minimization",
+     "prose_ratio": 0.135,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-2-problem-formulation",
+     "title": "Problem Formulation",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.346,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-003-32-equicontinuity-at-the-boundary",
+     "title": "Equicontinuity at the Boundary",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.934,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-33-convergence-in-the-interior",
+     "title": "Convergence in the Interior",
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-5-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-appendix-a-estimating-the-negative-contribution",
+     "title": "Appendix A. Estimating the negative contribution",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

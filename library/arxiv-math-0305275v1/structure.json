@@ -5,7 +5,8 @@
   "file": "0305275v1.pdf",
   "sha256": "9b356a9d716a0d3e8e2dfe0c4ba1283a28ed85e5c78d18072484030e71377fbc",
   "bytes": 367310,
-  "pages": 38
+  "pages": 38,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds",
   "authors_raw": "September 14, 2021",
-  "abstract": "Let W be a compact manifold and let ρ be a representation of its fundamental group into PSL(2 , C). Then the volume of ρ is deﬁned by taking any ρ-equivariant map from the universal cover ~W to H3 and then by integrating the pull-back of the hyperbolic volu me form on a fundamental domain. It turns out that such a volume does n ot depend on the choice of the equivariant map. Dunﬁeld extende d this construction to the case of a non-compact (cusped) manifold M , but he did not prove the volume is well-deﬁned in all cases. We prove here that the volume of a representation is always we ll- deﬁned and depends only on the representation. Moreover, we show that this volume can be easily computed by straightening any ideal triangulation of M . We show that the volume of a representation is bounded from above by the relative simplicial volume of M . Finally, we prove a rigidity theorem for representations of the fundamental gr oup of a hyperbolic manifold. Namely, we prove that if M is hyperbolic and vol(ρ) = vol( M ) then ρ is discrete and faithful.",
+  "abstract": "Let W be a compact manifold and let \u03c1 be a representation of its fundamental group into PSL(2 , C). Then the volume of \u03c1 is de\ufb01ned by taking any \u03c1-equivariant map from the universal cover ~W to H3 and then by integrating the pull-back of the hyperbolic volu me form on a fundamental domain. It turns out that such a volume does n ot depend on the choice of the equivariant map. Dun\ufb01eld extende d this construction to the case of a non-compact (cusped) manifold M , but he did not prove the volume is well-de\ufb01ned in all cases. We prove here that the volume of a representation is always we ll- de\ufb01ned and depends only on the representation. Moreover, we show that this volume can be easily computed by straightening any ideal triangulation of M . We show that the volume of a representation is bounded from above by the relative simplicial volume of M . Finally, we prove a rigidity theorem for representations of the fundamental gr oup of a hyperbolic manifold. Namely, we prove that if M is hyperbolic and vol(\u03c1) = vol( M ) then \u03c1 is discrete and faithful.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20210917155636-04'00'",
@@ -151,6 +152,65 @@
   "likely_scanned": false,
   "toc_entries": 7,
   "sections": 6,
-  "chars_total": 68427
+  "chars_total": 68427,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 7,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.549,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-the-straightening",
+     "title": "The straightening",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-volume-of-representations",
+     "title": "Volume of representations",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-comparison-with-simplicial-volume",
+     "title": "Comparison with simplicial volume",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-rigidity-of-representations",
+     "title": "Rigidity of representations",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-corollaries",
+     "title": "Corollaries",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    }
+   ]
+  }
  }
 }

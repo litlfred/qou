@@ -1,20 +1,35 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-0006111v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Distribution of the k-th smallest Dirac operator eigenvalue Poul H. Damgaard",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0006111v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-th-0006111v2",
   "contains": [
-    "library/arxiv-hep-th-0006111v2/sections/sec-000",
-    "library/arxiv-hep-th-0006111v2/sections/sec-001",
-    "library/arxiv-hep-th-0006111v2/sections/sec-002",
-    "library/arxiv-hep-th-0006111v2/sections/sec-003",
-    "library/arxiv-hep-th-0006111v2/sections/sec-004"
+    "library/arxiv-hep-th-0006111v2/sections/page-001",
+    "library/arxiv-hep-th-0006111v2/sections/page-002",
+    "library/arxiv-hep-th-0006111v2/sections/page-003",
+    "library/arxiv-hep-th-0006111v2/sections/page-004",
+    "library/arxiv-hep-th-0006111v2/sections/page-005",
+    "library/arxiv-hep-th-0006111v2/sections/page-006"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/0006111&metadataPrefix=arXiv), submitted 2003-07-14, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-hep-th-0006111v2",
+    "title_source": "slug",
     "source_file": "0006111v2.pdf",
     "source_sha256": "e024febd3d0886a3c757f96ade67e6a3449e5279d573ce577145f23670bc3fc2",
     "pages": 6,

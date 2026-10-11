@@ -1,0 +1,392 @@
+\documentclass[a4paper,12pt,intlimits,ngerman]{amsart}
+%\usepackage[utf8x]{inputenc}
+%\usepackage[varg]{txfonts}
+\usepackage[unicode]{hyperref}
+%\usepackage{amsfonts}
+\usepackage[mathscr]{euscript}
+\usepackage{esint}
+%\usepackage{amssym}%[mathb]{mathabx}
+\usepackage[margin=2cm]{geometry}
+%\usepackage[amsmath,hyperref,framed,thmmarks]{ntheorem}
+%\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{comment}
+%\usepackage{tikz-cd}
+%\usetikzlibrary{calc,patterns,angles,quotes}
+\usepackage[notref,notcite,final]{showkeys}
+%\usepackage{resmes}
+\usepackage{cite}
+
+%\newsymbol\sphericalangle 105E
+
+%%%%%%%%%%%added 18.10.18
+
+\usepackage{relsize}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Line numbering
+
+% \usepackage[left,mathlines,pagewise]{lineno}
+% \newcommand*\patchAmsMathEnvironmentForLineno[1]{%
+% \expandafter\let\csname old#1\expandafter\endcsname\csname #1\endcsname
+% \expandafter\let\csname oldend#1\expandafter\endcsname\csname end#1\endcsname
+% \renewenvironment{#1}%
+% {\linenomath\csname old#1\endcsname}%
+% {\csname oldend#1\endcsname\endlinenomath}}%
+% \newcommand*\patchBothAmsMathEnvironmentsForLineno[1]{%
+% \patchAmsMathEnvironmentForLineno{#1}%
+% \patchAmsMathEnvironmentForLineno{#1*}}%
+% \AtBeginDocument{%
+% \patchBothAmsMathEnvironmentsForLineno{equation}%
+% \patchBothAmsMathEnvironmentsForLineno{align}%
+% \patchBothAmsMathEnvironmentsForLineno{flalign}%
+% \patchBothAmsMathEnvironmentsForLineno{alignat}%
+% \patchBothAmsMathEnvironmentsForLineno{gather}%
+% \patchBothAmsMathEnvironmentsForLineno{multline}%
+% }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theorems
+
+%\setlength{\FrameSep}{.5ex}
+\makeatletter
+\makeatother
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{itheorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{icorollary}[itheorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{claim}[theorem]{Claim}
+%\theorembodyfont{\upshape}
+%\theoremsymbol{$\Diamond$}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{ist}{Isotopy Stability Theorem}
+\newtheorem{externaltheorem}{Theorem}
+\renewcommand*{\theexternaltheorem}{\Alph{externaltheorem}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hyperlinks in blue
+
+\hypersetup{
+breaklinks=true,
+colorlinks=true,
+linkcolor=blue,
+citecolor=blue,
+urlcolor=blue,
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Equation numbers within section
+
+\numberwithin{equation}{section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New math operators
+
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\dive}{div}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\opdiv}{div}
+\DeclareMathOperator{\opim}{im}
+\DeclareMathOperator{\opArea}{Area}
+\DeclareMathOperator{\opVol}{Vol}
+\DeclareMathOperator{\opdiam}{diam}
+\DeclareMathOperator{\simp}{\bigtriangleup}
+\DeclareMathOperator{\graph}{graph}
+\DeclareMathOperator{\lip}{Lip}
+\DeclareMathOperator{\bilip}{biLip}
+\DeclareMathOperator{\spt}{spt}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\trace}{trace}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\essinf}{essinf}
+\DeclareMathOperator{\lin}{span}
+\DeclareMathOperator{\onto}{\twoheadrightarrow}
+\DeclareMathOperator{\without}{\sim}
+\DeclareMathOperator{\image}{image}
+
+\def\rtp{{r_\textnormal{tp}}}
+\def\emob{{E_\textnormal{M\"ob}}}
+\def\Rot{{\textnormal{Rot}}}
+
+\newcommand\ANG{\mathop{\mbox{$<\!\!\!)$}}\nolimits}
+
+%%%%%%%%%%%measure restriction symbol %%%%%%%%%%%%%%%%
+\newcommand{\measurerestr}{%
+ \,\raisebox{-.127ex}{\reflectbox{\rotatebox[origin=br]{-90}{$\lnot$}}}\,%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New commands
+%
+
+
+\newcommand{\xx}{\mbox{\textcolor{red}{$\clubsuit$}}}
+\newcommand{\xxx}[1]{\xx{\textcolor{red}{#1}}\xx}
+%\newcommand{\xx}{\mbox{$\clubsuit$}}
+\newcommand{\colory}{\color[rgb]{0,.6,.4}}
+\newcommand{\yy}{\mbox{\textcolor{blue}{$\spadesuit$}}}
+\newcommand{\yyy}[1]{\yy{\colory\footnotesize#1}\yy}
+\newcommand{\omitted}[1]{}
+
+\definecolor{colorph}{rgb}{0,.4,.6}
+\newcommand{\philipp}[1]{{\color{colorph}\ensuremath{\spadesuit}#1\ensuremath{\spadesuit}}}
+\newcommand{\phtodo}[1]{{\color{colorph}\ensuremath{\spadesuit}TODO: #1\ensuremath{\spadesuit}}}
+\usepackage{soul}
+\newcommand{\phso}[1]{{\setstcolor{colorph}\st{#1}}}
+\setul{1ex}{.2ex}
+
+
+\newcommand\ang{\mathop{\mbox{$<\!\!\!)$}}\nolimits}
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+%\newcommand{\C}{\mathbb{C}}
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Gr}{\mathcal{G}}
+
+\newcommand\Id{{{\rm Id}}}
+
+%\newcommand{\E}{\mathcal{E}}
+\newcommand{\TP}{\textnormal{TP}}
+\newcommand{\F}{\mathcal{F}}
+
+\newcommand{\DC}{\mathcal{K}}
+\newcommand{\Rtp}{R_{\mathrm{tp}}}
+
+\newcommand{\RM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\HL}{\mathscr{L}}
+\newcommand{\HM}{\mathcal{H}} 
+\newcommand{\M}{\mathcal{M}} 
+\newcommand{\HD}{d_{\mathcal{H}}}
+
+\newcommand{\Kugel}{\mathbb{B}}
+\newcommand{\CKugel}{\overline{\mathbb{B}}}
+
+\newcommand{\Ball}[2]{\mathbb{B}(#1,#2)}
+\newcommand{\CBall}[2]{\overline{\mathbb{B}}(#1,#2)}
+
+\newcommand{\Sphere}{\mathbb{S}}
+
+\newcommand{\nbeta}{\beta_m^{\Sigma}}
+\newcommand{\eps}{\varepsilon}
+
+\newcommand{\Cmn}{\mathscr{C}^{1,\alpha}_{m,n}}
+\newcommand{\Lmn}{\mathscr{C}^{0,1}_{m,n}}
+
+\newcommand{\Amn}{\mathcal{A}_{m,n}^{\E}}  
+\newcommand{\tAmn}{\tilde{\mathcal{A}}_{m,n}^{\E}} 
+
+\definecolor{mygreen}{RGB}{30,50,0}
+\newcommand{\RED}[1]{{\color{red} #1}}
+\newcommand{\GR}[1]{{\color{mygreen} #1}}
+\newcommand{\doubt}[1]{\framebox{\RED{$\twoheadrightarrow$}} {\color{blue}\textsf{#1}} \framebox{\RED{$\twoheadleftarrow$}}}
+
+\newcommand{\Fo}{\,\,\,\text{for }\,\,}
+\newcommand{\Foa}{\,\,\,\text{for all }\,\,}
+\newcommand{\FoA}{\,\,\,\text{for any }\,\,}
+\newcommand{\Fae}{\,\,\,\text{for a.e.}\,\,}
+\newcommand{\Ae}{\,\,\,\text{a.e.}\,\,}
+\newcommand{\Aeon}{\,\,\,\text{a.e.\@ on}\,\,}
+\newcommand{\With}{\,\,\,\text{with }\,\,}
+\newcommand{\In}{\,\,\,\text{in }\,\,}
+\newcommand{\If}{\,\,\,\text{if }\,\,}
+\newcommand{\Since}{\,\,\,\text{since }\,\,}
+\newcommand{\AND}{\,\,\,\text{and }\,\,}
+\newcommand{\OR}{\,\,\,\text{or }\,\,}
+\newcommand{\ON}{\,\,\,\text{on }\,\,}
+\newcommand{\Suchthat}{\,\,\,\text{such that }\,\,}
+\newcommand{\ie}{\,\,\,\text{i.e., }\,\,}
+\newcommand{\As}{\,\,\,\text{as }\,\,}
+
+\newcommand{\conc}[1][\varepsilon]{V_{#1}}
+
+\newcommand{\g}{\gamma}
+\newcommand{\G}{\Gamma}
+%%%%%%%%%added 18.10.18
+\newcommand{\rot}{\text{rot}}
+\newcommand{\gross}[1]{\mathlarger{\mathlarger{\mathlarger{#1}}}}
+
+\hyphenation{arc-length}
+
+%\newcommand{\doi}[1]{}%\href{https://dx.doi.org/#1}{doi:#1}}
+\newcommand{\doi}[2]{}%\href{https://dx.doi.org/#1}{doi:#1}}
+
+%%%%%%%%%%%% barred integrals %%%%%%%%%%%%%%%%%%%%%
+\def\mvint_#1{\mathchoice
+          {\mathop{\vrule width 6pt height 3 pt depth -2.5pt
+            \kern -8pt \intop}\nolimits_{\kern -3pt #1}}%
+    %%%% P.S., 01/03/2001
+    % old definition had ...\nolimits_{#1}}
+    % \kern -3pt makes nicer distances between the integral sign
+    % and the domain of integration
+    %%%%
+             {\mathop{\vrule width 5pt height 3 pt depth -2.6pt
+                        \kern -6pt \intop}\nolimits_{#1}}%
+              {\mathop{\vrule width 5pt height 3 pt depth -2.6pt
+                   \kern -6pt \intop}\nolimits_{#1}}%
+              {\mathop{\vrule width 5pt height 3 pt depth -2.6pt
+                      \kern -6pt \intop}\nolimits_{#1}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abbreviations
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title
+
+\title[Stability of knot equivalence and symmetric critical knots]
+{Stability of knot equivalence at low regularity, 
+and symmetric critical knots for the M\"obius energy}
+%Symmetric critical knots for the M\"obius energy}
+\author{
+Simon Blatt}
+\address[Simon Blatt]{Paris London Universit\"at Salzburg, Department of Mathematics, Hellbrunner Strasse~34, 5020~Salzburg, Austria}
+\email[Simon Blatt]{simon.blatt@sbg.ac.at}
+
+\author{Alexandra Gilsbach}
+\address[Alexandra Gilsbach]{%Tokyo Institute of Technology, Department of Mathematics, School of Science, 2-12-1 Ookayama, Meguro-ku, Tokyo 152-8551, Japan}%
+%\email{gilsbach.a.aa@m.titech.ac.jp}%
+RWTH Aachen University,
+Institute for Mathematics,
+Templergraben~55,
+52062~Aachen, Germany}
+\email{gilsbach@instmath.rwth-aachen.de}
+
+\author{Philipp Reiter}
+\address[Philipp Reiter]{Chemnitz University of Technology,
+Faculty of Mathematics, 09107~Chemnitz, Germany}
+\email{reiter@math.tu-chemnitz.de}
+
+\author{Heiko von der Mosel}
+\address[Heiko von der Mosel]{
+RWTH Aachen University,
+Institute for Mathematics,
+Templergraben~55,
+52062~Aachen, Germany}
+\email{heiko@instmath.rwth-aachen.de}
+
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+We present 
+sufficient criteria for the equivalence of tame knots at low regularity.
+To this end, we introduce a localized version of Gromov's distortion
+for any closed path-connected subset of $\R^n$. If two such sets have
+local Gromov distortion
+below a universal dimension-dependent constant $g_n$ at some scale, and if their
+Hausdorff-distance is less than one quarter of that scale, 
+we can show
+that the fundamental groups of their complements are isomorphic. 
+In addition, we construct this
+isomorphism so that it restricts to the corresponding
+peripheral subgroups as an isomorphism as well.
+
+Applied to the images of one-dimensional knots
+it follows that two knots are equivalent if their Hausdorff-distance
+is bounded in terms of the scale under which their local 
+Gromov distortion is controlled. From that we deduce
+novel stability results for knot
+equivalence in the Lipschitz category, and in the setting of fractional
+Sobolev regularity below $C^1$. Moreover,
+we prove a compactness theorem of knot equivalence classes
+with respect to weak $W^{3/2,2}$-convergence.
+
+As an application we show that the M\"obius energy introduced by 
+O'Hara~\cite{ohara_1991a} can be minimized within arbitrary
+prime knot 
+classes under a symmetry constraint, and 
+that these minimizers are in fact critical points and therefore
+smooth and even
+real analytic.  In particular, in every torus knot class there are at
+least two distinct critical knots for the M\"obius energy.
+\end{abstract}
+
+\maketitle
+
+\tableofcontents
+
+
+%\section*{Introduction}
+
+
+
+
+\input{int_vdM}
+\input{local-distortion_vdM}
+\input{pseudo-gradient_vdM}
+\input{isomorphic-fundamental-groups_vdM}
+\input{stability-knot-equivalence_vdM}
+\input{harmonic-substitution_vdM}
+\input{weak-fractional-compactness_vdM}
+\input{symmetric-critical-knots_vdM}
+
+%\section{A Pseudo-gradient Vector Field for the Distance}
+%\section{Pulling Loops Apart: Isotopy Stability}\label{sec:flow}
+%\label{sec:pseudo}
+
+%\input{pseudo}
+
+%\section{Cutting Out Concentrations and the Existence of Symmetric Critical Knots}
+%\label{sec:cut}
+
+%\subsection{%Various
+%Bi-Lipschitz Estimates for Finite Energy Curves}\label{sec:bilip}
+
+%\input{cut_neu}
+
+\subsection*{Acknowledgements}
+
+S.B.\@ was partially funded through FWF grant no. P 29487-N32 ``Gradient flows of curvature energies''.
+A.G.\@ gratefully acknowledges funding through an incoming grant of the University
+of Salzburg, and through the stipend  ``International Research Fellow of JSPS (Postdoctoral Fellowships for Research in Japan)''.
+Ph.R.\@ has been partially supported by the
+German Research Foundation (DFG) through project number 289032105.
+H.v.d.M.\@'s work is partially funded by the Excellence Initiative of the
+German federal and state governments.
+
+While working on an early draft of this paper, A.G.\@ 
+enjoyed the hospitality of the Department of Mathematics at the University of Georgia, Athens, GA.
+
+We are indebted to the students who attended H.v.d.M.'s 
+lectures
+on this topic  in the winter term 2024-2025 at 
+RWTH Aachen University for their valuable comments and
+corrections. 
+
+
+\bibliographystyle{abbrvhref}
+%\bibliography{Master}
+%\bibliographystyle{acm}
+%\bibliography{/home/heiko/bib-files/refs-bookproj}
+\bibliography{Reiter-refs}
+
+%\newpage
+%
+%\appendix
+%
+%\section{Appendix}
+%
+%\input{bilip}
+
+\end{document}

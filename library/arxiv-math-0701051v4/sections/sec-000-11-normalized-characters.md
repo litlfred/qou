@@ -8,10 +8,9 @@ pages: 1-1
 source_pdf: 0701051v4.pdf
 source_sha256: 4592a048c3b84a8d
 doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA — We prove an upper bound for characters of the symmetric groups."
+text_source: latex
+latex_prose_ratio: 0.647
+latex_coverage_ratio: 1.0
 ---
-a permutation π ∈ Sl (where l ≤ n) we deﬁne the normalized character
-(1) Σ λ(π) = ( n)l χλ(π),
-where (n)l = n(n − 1) · · ·(n − l + 1) denotes the falling power and where
-χλ(π) = Trρλ(π)
-Trρλ(e)
-is the character rescaled in such a way that χλ(e) = 1 .
+[]{#subsec:normalized-characters label="subsec:normalized-characters"} For a Young diagram $\lambda$ having $n$ boxes and a permutation $\pi\in S_l$ (where $l\leq n$) we define the *normalized character* $$\label{eq:sigma}
+\Sigma^{\lambda}(\pi)= (n)_{l}\ \chi^{\lambda}(\pi),$$ where $(n)_l=n (n-1) \cdots (n-l+1)$ denotes the falling power and where $$\chi^{\lambda}(\pi) = \frac{\mathop{\mathrm{Tr}}\rho^{\lambda}(\pi)}{\mathop{\mathrm{Tr}}\rho^{\lambda}(e)}$$ is the character rescaled in such a way that $\chi^{\lambda}(e)=1$.

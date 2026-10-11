@@ -8,140 +8,89 @@ pages: 18-21
 source_pdf: 2607.10525v1.pdf
 source_sha256: b893cb4c87ea1d66
 doc_brief: "FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE TENSOR CATEGORIES — LetGbe a finite group acting on a finite tensor categoryC."
+text_source: latex
+latex_prose_ratio: 0.976
+latex_coverage_ratio: 0.728
 ---
-We now apply the classification to gaugings. LetBbe a braided fusion category
-and let
-E=
-M
-g∈G
-Eg
-be a faithfulG-crossed braided fusion category with neutral componentEe =B. We
-denote byρthe crossed action ofGonE. Following the formulation of gauging
-in [CGPW16], based on the extension theory of [ENO10], the gauging determined by
-theG-crossed extensionEis the equivariantization
-EG.
-The crossed braiding makesEG a braided fusion category, but the fiber-functor prob-
-lem below uses only the underlying tensor categoryEtogether with the actionρ.
-Definition 5.1.For a subgroupS⊆G, setE S =L
-s∈SEs. AClifford datumforE
-is a triple(S,N, eN), whereNis an indecomposable semisimpleB-module category
-and eNis an indecomposable semisimpleE S-module category on the same underlying
-finite semisimple category, whose restriction toBis equivalent to the givenB-module
-structure onN. We call eNanE S-extension ofN.
-Given a Clifford datum(S,N, eN), put
-Ind(S, eN) := IndE
-ES(eN)≃E⊠ ES
-eN.
-The result is an indecomposableE-module category. Conversely, by Clifford theory
-for graded fusion categories, every indecomposableE-module category is of this form.
-Letd= (S,N, eN)be a Clifford datum and leth∈G. We define itsh-twist by
-dh = (h−1Sh,N h, eN h),
-where eN h is the same underlying category aseN, regarded as anEh−1Sh-module cat-
-egory by
-X⊗hN:=ρ h(X)⊗N, X∈E h−1Sh, N∈ eN,
-andN h is its restriction toB=E e. Then
-Ind(S, eN)h≃Ind(h−1Sh, eN h)
-asE-module categories.
-FIBER FUNCTORS OF EQUIV ARIANTIZATIONS 19
-Definition 5.2.Letd= (S,N, eN)be a Clifford datum. AnH-equivariant Clifford
-liftofdis a choice, for everyh∈H, of an equivalence of inducedE-module categories
-Φh : Ind(S, eN)
-∼
-− →Ind(h−1Sh, eN h),
-together with coherence isomorphisms making the corresponding functors
-Ind(S, eN)−→Ind(S, eN)h
-anH-equivariant structure in the sense of Section 2.
-Remark5.3.For each fixedh∈H, the equivalence criterion for induced module cat-
-egories over graded fusion categories [MCnM20, Definition 5.10 and Proposition 5.12]
-tests the existence ofΦh by asking for an elementah∈Gsuch that
-S=a h(h−1Sh)a−1
-h
-and, writing
-Eah(h−1Sh) :=
-M
-u∈ah(h−1Sh)
-Eu
-for the corresponding(E S,Eh−1Sh)-bimodule category, an equivalence ofES-module
-categories
-Eah(h−1Sh) ⊠Eh−1Sh
-eN h≃ eN.
-It remains to require these equivalences, ashvaries, to satisfy the equivariant coher-
-ence.
-Theorem 5.4.LetE= L
-g∈GEg be a faithfulG-crossed braided fusion category with
-neutral componentB=E e. Fiber functors onEG correspond to equivalence classes of
-tuples
-(H,S,N, eN,u)
-satisfying:
-(1)HandSare subgroups ofG;
-(2)(S,N, eN)is a Clifford datum forE;
-(3)uis anH-equivariant Clifford lift of(S,N, eN);
-(4)forM= Ind(S, eN), the induced action ofHonIrr(M)is transitive;
-(5)for some, hence every, simple objectX∈M, the stabilizer cocycle
-[αX]∈H 2(StH(X),k×)
-is nondegenerate.
-Two tuples are identified when their associated equivariantE-module categories are
-conjugate in the sense of Definition2.3.
-Proof.Apply Theorem 3.6 to the crossed actionρ:G→Aut ⊗(E). By Clifford the-
-ory for graded fusion categories [Gal12, MCnM20], every indecomposableE-module
-category has the form
-M≃Ind E
-ES(eN)≃E⊠ ES
-eN
-20 C. GALINDO, C. GALLEGO, AND Y. MORALES
-for a Clifford datum(S,N,eN). Transporting theH-equivariant structure onMgives
-u.
-Conversely, such a tuple produces anH-equivariant indecomposable exact semisim-
-pleE-module category. Items (4)–(5) and Theorem 3.6 give a fiber functor. The
-equivalence relation is exactly the conjugacy relation of Theorem 2.4.□
-Corollary 5.5.LetG=C p =⟨τ⟩be cyclic of prime order, and letE= L
-g∈GEg be
-a faithfulG-crossed braided fusion category with neutral componentB. Then the data
-of Theorem 5.4 reduce to the following possibilities.
-(1)H={e},S=G, and eNis a rank-oneE-module category. These fiber functors
-are theG-orbits of fiber functors onEunder the crossed action.
-(2)H=G, andM= Ind(S, eN)carries aG-equivariant Clifford lift whose gen-
-erator acts onIrr(M)as a singlep-cycle. This has two subcases:
-(a)S={e}, eN=N, and
-M=E⊠ BN=
-M
-g∈G
-Mg,M g :=E g ⊠BN,
-where everyM g has rank one and the generator ofGacts on theirp
-simple objects as a singlep-cycle.
-(b)S=G, and eNis anE-module category withpsimple objects, equipped
-with aG-equivariant structure whose generator acts as ap-cycle.
-Proof.The only subgroups ofCp are{e}andG, andH 2(L,k×) = 0for both. Hence
-Corollary 3.7 applies: the stabilizer condition in Theorem 5.4 is equivalent to freeness
-of theH-action onIrr(M).
-IfH={e}, freeness and transitivity mean thatMhas one simple object. If
-S={e}, the restriction ofInd(S, eN)toBhas one nonzero component for each
-element ofG; hence its rank is at leastp. Thus rank one forcesS=G.
-IfH=G, a free transitive action of the cyclic group of orderpis exactly a single
-p-cycle. The two alternatives forSare the only possible ones. ForS={e}, Clifford
-theory gives a decomposition
-M=
-M
-g∈G
-Mg,M g =E g ⊠BN,
-into non-zero indecomposableB-module subcategories; see [Gal12, Proposition 4.1].
-Consequently,
-# Irr(M) =
-X
-g∈G
-# Irr(Mg)≥p,
-and equality holds ifand only ifeveryMg has rankone. In particular, equality implies
-thatN=M e has rank one. This argument does not require an invertibleB-bimodule
-category to preserve rank. The caseS=Gis immediate fromM= eN.□
-Remark5.6.Two layers of data are not visible from the neutral-component module
-category alone. First,Nmust extend fromBtoE S. In the obstruction theory
-FIBER FUNCTORS OF EQUIV ARIANTIZATIONS 21
-of [MM12], ifN≃Mod B(A), this requiresS-stability and a splitting of
-1−→Aut B(N)−→Λ−→S−→1,
-whereΛconsists of invertibleA-A-bimodules supported inE S. After a splitting is
-chosen, anobstructioninH 3(S,k×)governsassociativemultiplicationontheresulting
-graded algebra eA= L
-s∈SAs. Second, the inducedE-module category must be
-equivalent to itsh-twists forh∈H, with compatible coherence. Thus the practical
-inputs are theB-module category, itsES-extension, and the equivariant lift; the rank-
-one test is then supplied by Theorem 5.4.
+[]{#sec:gauging label="sec:gauging"}
+
+We now apply the classification to gaugings. Let $\mathcal{B}$ be a braided fusion category and let $$\mathcal{E}=\bigoplus_{g\in G}\mathcal{E}_g$$ be a faithful $G$-crossed braided fusion category with neutral component $\mathcal{E}_e=\mathcal{B}$. We denote by $\rho$ the crossed action of $G$ on $\mathcal{E}$. Following the formulation of gauging in [@CGPW16], based on the extension theory of [@ENO10], the gauging determined by the $G$-crossed extension $\mathcal{E}$ is the equivariantization $$\mathcal{E}^G.$$ The crossed braiding makes $\mathcal{E}^G$ a braided fusion category, but the fiber-functor problem below uses only the underlying tensor category $\mathcal{E}$ together with the action $\rho$.
+
+::: definition
+For a subgroup $S\subseteq G$, set $\mathcal{E}_S=\bigoplus_{s\in S}\mathcal{E}_s$. A *Clifford datum* for $\mathcal{E}$ is a triple $(S,\mathcal{N},\widetilde{\mathcal{N}})$, where $\mathcal{N}$ is an indecomposable semisimple $\mathcal{B}$-module category and $\widetilde{\mathcal{N}}$ is an indecomposable semisimple $\mathcal{E}_S$-module category on the same underlying finite semisimple category, whose restriction to $\mathcal{B}$ is equivalent to the given $\mathcal{B}$-module structure on $\mathcal{N}$. We call $\widetilde{\mathcal{N}}$ an $\mathcal{E}_S$-extension of $\mathcal{N}$.
+:::
+
+Given a Clifford datum $(S,\mathcal{N},\widetilde{\mathcal{N}})$, put $$\mathop{\mathrm{Ind}}(S,\widetilde{\mathcal{N}})
+:=\mathop{\mathrm{Ind}}_{\mathcal{E}_S}^{\mathcal{E}}(\widetilde{\mathcal{N}})
+\simeq \mathcal{E}\boxtimes_{\mathcal{E}_S}\widetilde{\mathcal{N}}.$$ The result is an indecomposable $\mathcal{E}$-module category. Conversely, by Clifford theory for graded fusion categories, every indecomposable $\mathcal{E}$-module category is of this form.
+
+Let $\mathfrak d=(S,\mathcal{N},\widetilde{\mathcal{N}})$ be a Clifford datum and let $h\in G$. We define its $h$-twist by $$\mathfrak d^h=(h^{-1}Sh,\mathcal{N}^h,\widetilde{\mathcal{N}}^{\,h}),$$ where $\widetilde{\mathcal{N}}^{\,h}$ is the same underlying category as $\widetilde{\mathcal{N}}$, regarded as an $\mathcal{E}_{h^{-1}Sh}$-module category by $$X\overline{\otimes}^{\,h} N:=\rho_h(X)\overline{\otimes}N,
+\qquad X\in \mathcal{E}_{h^{-1}Sh},\; N\in\widetilde{\mathcal{N}},$$ and $\mathcal{N}^h$ is its restriction to $\mathcal{B}=\mathcal{E}_e$. Then $$\mathop{\mathrm{Ind}}(S,\widetilde{\mathcal{N}})^h\simeq
+\mathop{\mathrm{Ind}}(h^{-1}Sh,\widetilde{\mathcal{N}}^{\,h})$$ as $\mathcal{E}$-module categories.
+
+::: definition
+Let $\mathfrak d=(S,\mathcal{N},\widetilde{\mathcal{N}})$ be a Clifford datum. An *$H$-equivariant Clifford lift* of $\mathfrak d$ is a choice, for every $h\in H$, of an equivalence of induced $\mathcal{E}$-module categories $$\Phi_h:\mathop{\mathrm{Ind}}(S,\widetilde{\mathcal{N}})\xrightarrow{\sim}
+\mathop{\mathrm{Ind}}(h^{-1}Sh,\widetilde{\mathcal{N}}^{\,h}),$$ together with coherence isomorphisms making the corresponding functors $$\mathop{\mathrm{Ind}}(S,\widetilde{\mathcal{N}})\longrightarrow
+\mathop{\mathrm{Ind}}(S,\widetilde{\mathcal{N}})^h$$ an $H$-equivariant structure in the sense of Section [\[sec:preliminaries\]](#sec:preliminaries){reference-type="ref" reference="sec:preliminaries"}.
+:::
+
+::: remark
+For each fixed $h\in H$, the equivalence criterion for induced module categories over graded fusion categories [@MM20 Definition 5.10 and Proposition 5.12] tests the existence of $\Phi_h$ by asking for an element $a_h\in G$ such that $$S=a_h(h^{-1}Sh)a_h^{-1}$$ and, writing $$\mathcal{E}_{a_h(h^{-1}Sh)}:=\bigoplus_{u\in a_h(h^{-1}Sh)}\mathcal{E}_u$$ for the corresponding $(\mathcal{E}_S,\mathcal{E}_{h^{-1}Sh})$-bimodule category, an equivalence of $\mathcal{E}_S$-module categories $$\mathcal{E}_{a_h(h^{-1}Sh)}
+\boxtimes_{\mathcal{E}_{h^{-1}Sh}}
+\widetilde{\mathcal{N}}^{\,h}
+\simeq
+\widetilde{\mathcal{N}}.$$ It remains to require these equivalences, as $h$ varies, to satisfy the equivariant coherence.
+:::
+
+::: theorem
+[]{#thm:gauging_clifford_fiber_functors label="thm:gauging_clifford_fiber_functors"} Let $\mathcal{E}=\bigoplus_{g\in G}\mathcal{E}_g$ be a faithful $G$-crossed braided fusion category with neutral component $\mathcal{B}=\mathcal{E}_e$. Fiber functors on $\mathcal{E}^G$ correspond to equivalence classes of tuples $$(H,S,\mathcal{N},\widetilde{\mathcal{N}},\mathbf{u})$$ satisfying:
+
+1.  $H$ and $S$ are subgroups of $G$;
+
+2.  $(S,\mathcal{N},\widetilde{\mathcal{N}})$ is a Clifford datum for $\mathcal{E}$;
+
+3.  $\mathbf{u}$ is an $H$-equivariant Clifford lift of $(S,\mathcal{N},\widetilde{\mathcal{N}})$;
+
+4.  for $\mathcal{M}=\mathop{\mathrm{Ind}}(S,\widetilde{\mathcal{N}})$, the induced action of $H$ on $\operatorname{Irr}(\mathcal{M})$ is transitive;
+
+5.  for some, hence every, simple object $X\in\mathcal{M}$, the stabilizer cocycle $$[\alpha_X]\in H^2(\operatorname{St}_H(X),{\Bbbk}^\times)$$ is nondegenerate.
+
+Two tuples are identified when their associated equivariant $\mathcal{E}$-module categories are conjugate in the sense of Definition [[\[def:conjugate_equivariant_module_categories\]](#def:conjugate_equivariant_module_categories){reference-type="ref" reference="def:conjugate_equivariant_module_categories"}]{.upright}.
+:::
+
+::: proof
+*Proof.* Apply Theorem [\[thm:main_classification\]](#thm:main_classification){reference-type="ref" reference="thm:main_classification"} to the crossed action $\rho:G\to\operatorname{Aut}_{\otimes}(\mathcal{E})$. By Clifford theory for graded fusion categories [@Gal12; @MM20], every indecomposable $\mathcal{E}$-module category has the form $$\mathcal{M}\simeq\mathop{\mathrm{Ind}}_{\mathcal{E}_S}^{\mathcal{E}}(\widetilde{\mathcal{N}})
+\simeq\mathcal{E}\boxtimes_{\mathcal{E}_S}\widetilde{\mathcal{N}}$$ for a Clifford datum $(S,\mathcal{N},\widetilde{\mathcal{N}})$. Transporting the $H$-equivariant structure on $\mathcal{M}$ gives $\mathbf u$.
+
+Conversely, such a tuple produces an $H$-equivariant indecomposable exact semisimple $\mathcal{E}$-module category. Items [(4)--(5)]{.upright} and Theorem [\[thm:main_classification\]](#thm:main_classification){reference-type="ref" reference="thm:main_classification"} give a fiber functor. The equivalence relation is exactly the conjugacy relation of Theorem [\[thm:conjugacy_equivariantization\]](#thm:conjugacy_equivariantization){reference-type="ref" reference="thm:conjugacy_equivariantization"}. ◻
+:::
+
+::: corollary
+[]{#cor:prime_cyclic_gauging label="cor:prime_cyclic_gauging"} Let $G=C_p=\langle \tau\rangle$ be cyclic of prime order, and let $\mathcal{E}=\bigoplus_{g\in G}\mathcal{E}_g$ be a faithful $G$-crossed braided fusion category with neutral component $\mathcal{B}$. Then the data of Theorem [\[thm:gauging_clifford_fiber_functors\]](#thm:gauging_clifford_fiber_functors){reference-type="ref" reference="thm:gauging_clifford_fiber_functors"} reduce to the following possibilities.
+
+1.  $H=\{e\}$, $S=G$, and $\widetilde{\mathcal{N}}$ is a rank-one $\mathcal{E}$-module category. These fiber functors are the $G$-orbits of fiber functors on $\mathcal{E}$ under the crossed action.
+
+2.  $H=G$, and $\mathcal{M}=\mathop{\mathrm{Ind}}(S,\widetilde{\mathcal{N}})$ carries a $G$-equivariant Clifford lift whose generator acts on $\operatorname{Irr}(\mathcal{M})$ as a single $p$-cycle. This has two subcases:
+
+    1.  $S=\{e\}$, $\widetilde{\mathcal{N}}=\mathcal{N}$, and $$\mathcal{M}=\mathcal{E}\boxtimes_{\mathcal{B}}\mathcal{N}
+        =\bigoplus_{g\in G}\mathcal{M}_g,
+        \qquad
+        \mathcal{M}_g:=\mathcal{E}_g\boxtimes_{\mathcal{B}}\mathcal{N},$$ where every $\mathcal{M}_g$ has rank one and the generator of $G$ acts on their $p$ simple objects as a single $p$-cycle.
+
+    2.  $S=G$, and $\widetilde{\mathcal{N}}$ is an $\mathcal{E}$-module category with $p$ simple objects, equipped with a $G$-equivariant structure whose generator acts as a $p$-cycle.
+:::
+
+::: proof
+*Proof.* The only subgroups of $C_p$ are $\{e\}$ and $G$, and $H^2(L,{\Bbbk}^\times)=0$ for both. Hence Corollary [\[cor:cohomologically_trivial\]](#cor:cohomologically_trivial){reference-type="ref" reference="cor:cohomologically_trivial"} applies: the stabilizer condition in Theorem [\[thm:gauging_clifford_fiber_functors\]](#thm:gauging_clifford_fiber_functors){reference-type="ref" reference="thm:gauging_clifford_fiber_functors"} is equivalent to freeness of the $H$-action on $\operatorname{Irr}(\mathcal{M})$.
+
+If $H=\{e\}$, freeness and transitivity mean that $\mathcal{M}$ has one simple object. If $S=\{e\}$, the restriction of $\mathop{\mathrm{Ind}}(S,\widetilde{\mathcal{N}})$ to $\mathcal{B}$ has one nonzero component for each element of $G$; hence its rank is at least $p$. Thus rank one forces $S=G$.
+
+If $H=G$, a free transitive action of the cyclic group of order $p$ is exactly a single $p$-cycle. The two alternatives for $S$ are the only possible ones. For $S=\{e\}$, Clifford theory gives a decomposition $$\mathcal{M}=\bigoplus_{g\in G}\mathcal{M}_g,
+\qquad
+\mathcal{M}_g=\mathcal{E}_g\boxtimes_{\mathcal{B}}\mathcal{N},$$ into non-zero indecomposable $\mathcal{B}$-module subcategories; see [@Gal12 Proposition 4.1]. Consequently, $$\#\operatorname{Irr}(\mathcal{M})=\sum_{g\in G}\#\operatorname{Irr}(\mathcal{M}_g)\ge p,$$ and equality holds if and only if every $\mathcal{M}_g$ has rank one. In particular, equality implies that $\mathcal{N}=\mathcal{M}_e$ has rank one. This argument does not require an invertible $\mathcal{B}$-bimodule category to preserve rank. The case $S=G$ is immediate from $\mathcal{M}=\widetilde{\mathcal{N}}$. ◻
+:::
+
+::: remark
+Two layers of data are not visible from the neutral-component module category alone. First, $\mathcal{N}$ must extend from $\mathcal{B}$ to $\mathcal{E}_S$. In the obstruction theory of [@MeMu12], if $\mathcal{N}\simeq\operatorname{Mod}_{\mathcal{B}}(A)$, this requires $S$-stability and a splitting of $$1\longrightarrow\operatorname{Aut}_{\mathcal{B}}(\mathcal{N})
+\longrightarrow\Lambda\longrightarrow S\longrightarrow1,$$ where $\Lambda$ consists of invertible $A$-$A$-bimodules supported in $\mathcal{E}_S$. After a splitting is chosen, an obstruction in $H^3(S,{\Bbbk}^\times)$ governs associative multiplication on the resulting graded algebra $\widetilde A=\bigoplus_{s\in S}A_s$. Second, the induced $\mathcal{E}$-module category must be equivalent to its $h$-twists for $h\in H$, with compatible coherence. Thus the practical inputs are the $\mathcal{B}$-module category, its $\mathcal{E}_S$-extension, and the equivariant lift; the rank-one test is then supplied by Theorem [\[thm:gauging_clifford_fiber_functors\]](#thm:gauging_clifford_fiber_functors){reference-type="ref" reference="thm:gauging_clifford_fiber_functors"}.
+:::

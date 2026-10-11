@@ -7,7 +7,7 @@
   ],
   "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/drinfeld1991-quasitriangular/manifest.jsonld",
   "@type": [
-    "folio-assistant-core:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "drinfeld1991-quasitriangular",
   "contains": [
@@ -22,6 +22,7 @@
     "library/drinfeld1991-quasitriangular/sections/sec-back-matter"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "drinfeld1991-quasitriangular",
     "title_source": "slug",

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9811173v1/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-9811173v1/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "Cl2(2θ7) + 1",
-  "pageStart": 6,
-  "pageEnd": 6,
-  "text": "../sections/sec-006-2-cl22θ7-1.md",
-  "derivedFrom": "library/arxiv-hep-th-9811173v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-9811173v1/manifest",
+  "title": "Knots and links from Feynman diagrams",
+  "pageStart": 15,
+  "pageEnd": 16,
+  "text": "../sections/sec-006-5-knots-and-links-from-feynman-diagrams.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9811173v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9811173v1/manifest.jsonld",
   "provenance": "ingested"
 }

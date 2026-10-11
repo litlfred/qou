@@ -9,37 +9,92 @@ source_pdf: 1808.05026v1.pdf
 source_sha256: 2781e0b34e7889d6
 doc_brief: "Gröbner-Shirshov bases for Temperley-Lieb algebras — For Temperley-Lieb algebras of type B, we construct their Gröbner-Shirshov bases and the corresponding standard monomials, which give another"
 duplicate_of: "fd58d8e182edda805fed0946606c5ab82f81"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Originally, the Temperley-Lieb algebra appears in the cont ext of statistical mechanics [15],
-and later its structure has been studied in connection with k not theory, where it is known to be
-a quotient of the Hecke algebra of type A [7].
-Our method for understanding the structure of Temperley-Li eb algebras is from the non-
-commutative Gr¨ obner basis theory, called the Gr¨ obner-Shirshov basis theory, which provides a
-powerful tool for understanding the structure of (non)asso ciative algebras and their representa-
-tions, especially in computational aspects. With the ever- growing power of computers, it is now
-viewed as a universal engine behind algebraic or symbolic co mputation.
-The main interest of the notion of Gr¨ obner-Shirshov bases stems from Shirshov’s Composition
-Lemma and his algorithm [11, 12] for Lie algebras and indepen dently from Buchberger’s algo-
-rithm [4] of computing Gr¨ obner bases for commutative algebras. In [2], Bokut applied Shirshov’s
-method to associative algebras, and Bergman mentioned the d iamond lemma for ring theory [1].
-The Gr¨ obner-Shirshov bases for Coxeter groups of classica l and exceptional types were com-
-pletely determined in [3, 9, 10, 14]. The cases for Hecke alge bras and Temperley-Lieb algebras
-of type A were calculated in [8].
-In this paper, we deal with Temperley-Lieb algebras of types B and D, extending the result in
-[8, §6]. By completing the relations coming from a presentation o f the Temperley-Lieb algebra,
-we compute its Gr¨ obner-Shirshov basis to obtain the corres ponding set of standard monomials.
-Our approach gives the following interesting properties :
-1. The number of standard monomials is the dimension of the Te mperley-Lieb algebra,
-computed in the work of Fan and Stembridge [5, 13].
-2. The standard monomials reside themselves inside the Temp erley-Lieb algebra. In this
-sense, the standard monomials could be more interesting tha n the fully commutative elements.
-3. The product of two standard monomials becomes a standard m onomial up to a scalar
-multiple. We give some examples for each type in the followin g sections.
-2010 Mathematics Subject Classiﬁcation. Primary 20F55, Secondary 05E15, 16Z05.
-Key words and phrases. Temperley-Lieb algebra, Gr¨ obner-Shirshov basis.
-1 She is grateful to KIAS for its hospitality during this work.
-2 This research was supported by NRF Grant # 2014R1A1A2054811 and a research grant from Seoul Women’s
-University(2017).
-* Corresponding author.
-1
-2 S. KIM AND D.-I. LEE
+\bigskip
+
+Originally, the Temperley-Lieb algebra appears in the context of statistical mechanics \cite{TemperleyLieb},
+and later its structure has been studied in connection with knot theory,
+where it is known to be a quotient of the Hecke algebra of type $A$ \cite{Jones1987}.
+\smallskip
+
+
+
+
+
+Our method for understanding the structure of 
+Temperley-Lieb algebras is from the noncommutative \G basis theory,
+ called the {\em \GS basis theory}, which provides a powerful tool for understanding
+the structure of (non)associative algebras and their
+representations, especially in computational aspects.
+With the ever-growing power of computers,
+it is now viewed as a universal engine behind algebraic or symbolic computation.
+\smallskip
+
+
+
+The main interest of the notion of \GS bases stems from Shirshov's Composition Lemma and his algorithm \cite{Sh, Shirshov_Selected} for Lie algebras and
+independently from Buchberger's algorithm \cite{B65} of computing \G bases for commutative algebras.
+
+
+
+In \cite{Bo}, Bokut applied Shirshov's method to associative algebras, and
+Bergman mentioned the diamond lemma for ring theory \cite{Be}.
+
+
+\smallskip
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The \GS bases for Coxeter groups of classical and exceptional types
+were completely determined in \cite{BokutShiao, DenisLee, LeeDI5, Svechkarenko}.
+The cases for Hecke algebras and Temperley-Lieb algebras of type $A$
+
+were calculated
+
+in \cite{KLLO
+}.
+
+
+In this paper, we deal with Temperley-Lieb algebras of types $B$ and $D$, extending the result in \cite[\S6]{KLLO}.
+By completing the relations coming from a presentation of the Temperley-Lieb algebra,
+we compute its \GS basis to obtain the corresponding set of standard monomials.
+
+
+
+
+
+\smallskip
+
+Our approach gives the following interesting properties~:
+
+1. The number of standard monomials is the dimension of the Temperley-Lieb algebra, computed in the work
+of Fan and Stembridge \cite{Fan97, 
+Stembridge97}.
+
+2. The standard monomials reside themselves inside the Temperley-Lieb algebra. In this sense, the standard monomials could be more interesting than the fully commutative elements.
+
+3. The product of two
+standard monomials becomes a standard monomial up to a scalar multiple. We give some examples for each type in
+the following sections.

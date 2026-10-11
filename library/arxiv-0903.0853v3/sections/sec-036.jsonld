@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-0903.0853v3/sections/sec-036",
   "@type": [
     "doco:Section"
   ],
-  "title": "Internal Hom . — Let M = (E, Φ) and N = (F, Ψ). The map TΦ ,Ψ :",
-  "pageStart": 18,
-  "pageEnd": 19,
+  "title": "Flat functions with respect to a divisor",
+  "pageStart": 94,
+  "pageEnd": 95,
   "contains": [
     "library/arxiv-0903.0853v3/blocks/prose-sec-036"
   ],
-  "derivedFrom": "library/arxiv-0903.0853v3/manifest",
-  "sourceDocument": "library/arxiv-0903.0853v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.0853v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.0853v3/manifest.jsonld",
   "provenance": "ingested"
 }

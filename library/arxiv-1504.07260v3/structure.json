@@ -5,7 +5,8 @@
   "file": "1504.07260v3.pdf",
   "sha256": "707cb014400a3f051998942233f468bfff970cb8c213a8b1eaf35753fe127330",
   "bytes": 1463224,
-  "pages": 56
+  "pages": 56,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "Fricke S-duality in CHL models",
   "authors_raw": null,
-  "abstract": "We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3×T 2 by aZN symmetry acting (possibly) non-geometrically on K3. We show that most of these models (in particular, for geometric symmetries) are self-dual under a weak-strong duality acting on the heterotic axio-dilaton modulusS by a “Fricke involution”S→− 1/NS. This is a novel symmetry of CHL models that lies outside of the standardSL(2, Z)-symmetry of the parent theory, heterotic strings onT 6. For self-dual models this implies that the lattice of purely electric charges isN-modular, i.e. isometric to its dual up to a rescaling of its quadratic form by N. We verify this prediction by determining the lattices of electric and magnetic charges in all relevant examples. We also calculate certain BPS-saturated couplings and verify that they are invariant under the Fricke S-duality. For CHL models that are not self-dual, the strong coupling limit is dual to type IIA compactiﬁed onT 6/ZN, for some ZN-symmetry preserving half of the spacetime supersymmetries. arXiv:1504.07260v3 [hep-th] 21 Nov 2016",
+  "abstract": "We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3\u00d7T 2 by aZN symmetry acting (possibly) non-geometrically on K3. We show that most of these models (in particular, for geometric symmetries) are self-dual under a weak-strong duality acting on the heterotic axio-dilaton modulusS by a \u201cFricke involution\u201dS\u2192\u2212 1/NS. This is a novel symmetry of CHL models that lies outside of the standardSL(2, Z)-symmetry of the parent theory, heterotic strings onT 6. For self-dual models this implies that the lattice of purely electric charges isN-modular, i.e. isometric to its dual up to a rescaling of its quadratic form by N. We verify this prediction by determining the lattices of electric and magnetic charges in all relevant examples. We also calculate certain BPS-saturated couplings and verify that they are invariant under the Fricke S-duality. For CHL models that are not self-dual, the strong coupling limit is dual to type IIA compacti\ufb01ed onT 6/ZN, for some ZN-symmetry preserving half of the spacetime supersymmetries. arXiv:1504.07260v3 [hep-th] 21 Nov 2016",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20161122013131Z",
@@ -568,6 +569,231 @@
   "likely_scanned": false,
   "toc_entries": 32,
   "sections": 30,
-  "chars_total": 122075
+  "chars_total": 122075,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "CHL_arX4.tex",
+   "tex_sections": 25,
+   "overlaid": 18,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction-and-summary",
+     "title": "Introduction and Summary",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-fricke-s-duality",
+     "title": "Fricke S-duality",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.781,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-12-black-hole-microstate-counting",
+     "title": "Black hole microstate counting",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-13-connection-with-moonshine",
+     "title": "Connection with moonshine",
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-14-outline",
+     "title": "Outline",
+     "prose_ratio": 0.082,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-21-heterotic-type-ii-duality",
+     "title": "Heterotic-type II duality",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-2-non-geometric-chl-models",
+     "title": "Non-geometric CHL models",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.177,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-007-22-generalities-on-chl-models",
+     "title": "Generalities on CHL models",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.909,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-23-consistency-and-level-matching",
+     "title": "Consistency and level matching",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.926,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-31-string-string-duality-and-fricke-s-duality",
+     "title": "String-string duality and Fricke S-duality",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.874,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-32-self-duality-and-the-witten-index",
+     "title": "Self-duality and the Witten index",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.867,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-33-heterotic-t-duality",
+     "title": "Heterotic T-duality",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.918,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-34-atkin-lehner-dualities",
+     "title": "Atkin-Lehner dualities",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.8,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-4-lattice-of-electric-magnetic-charges",
+     "title": "Lattice of electric-magnetic charges",
+     "prose_ratio": 0.072,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-41-purely-electric-charges",
+     "title": "Purely electric charges",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.563,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-42-purely-magnetic-charges",
+     "title": "Purely magnetic charges",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.919,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-43-fricke-s-duality-and-n-modular-lattices",
+     "title": "Fricke S-duality and N-modular lattices",
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.948,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-5-bps-state-counting",
+     "title": "BPS-state counting",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-51-the-type-ii-helicity-supertrace",
+     "title": "The type II helicity supertrace",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.93,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-52-helicity-supertrace-for-type-iia-chl-models",
+     "title": "Helicity supertrace for type IIA CHL models",
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.871,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-53-topological-amplitudes-and-fricke-s-duality",
+     "title": "Topological amplitudes and Fricke S-duality",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.831,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-54-the-heterotic-helicity-supertrace",
+     "title": "The heterotic helicity supertrace",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.85,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-6-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-a-non-geometric-chl-models-general-case",
+     "title": "A Non-geometric CHL models: general case",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-a1-lattice-of-purely-electric-charges",
+     "title": "A.1 Lattice of purely electric charges",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-a2-heterotic-s-duality-and-t-duality",
+     "title": "A.2 Heterotic S-duality and T-duality",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-a3-witten-index-of-the-quantum-symmetry",
+     "title": "A.3 Witten index of the quantum symmetry",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-a4-lattice-of-electric-magnetic-charges",
+     "title": "A.4 Lattice of electric-magnetic charges",
+     "prose_ratio": 0.471,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-028-b-heterotic-t-duality",
+     "title": "B Heterotic T-duality",
+     "prose_ratio": 0.578,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-029-c-symmetries-and-lattices",
+     "title": "C Symmetries and lattices",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -8,313 +8,109 @@ pages: 38-47
 source_pdf: 2209.06973v1.pdf
 source_sha256: cc3393a17c48b9df
 doc_brief: "On the geometry of two state models for the colored Jones polynomial — Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.995
 ---
-Note that the arc-graphs are abstract enhanced graphs representing the data
-necessary to calculate the state-sum (12). For explicit computations it will
-be helpful to present the data in non-geometritc way so that it can easily
-be implemented as an algorithm.
-Suppose thatGK is deﬁned from a Morse projectionK without overcross-
-ing circles. The case including overcrossing circles can easily be described
-but requires to consider vertices corresponding to the circles separately. For
-38
-the moment we will work with non-reduced graphs.
-The enhanced arc-graphGK can be encoded by a graph sextuple G′K :=
-(V,ε,σ,τ, o, r). Here V is the set of vertices of GK and ε is the function
-assigning the crossing sign to each vertex (i. e. overcrossing arc) of GK. At
-each vertex of GK we have a unique outgoing blue edge eb
-v and red edge
-er
-v. Let σ(v) respectively τ(v) be the endpoints of those directed edges in
-GK. This deﬁnes maps σ,τ : V → V , with σ a bijection. We call σ the
-undercrossing map and τ the jump map.
-Remark. τ is a bijection if and only of K is an alternating projection, in
-particular τ−1(v)⁄=∅ for each vertex v in this case, and the inverse map is
-deﬁned.
-Next, o = (ov)v∈V is a total ordering ov on each of the sets τ−1(v) for
-eachv∈V . Note that the order ov also deﬁnes a total ordering on the set of
-all incoming edges of the fat vertexv ofGK with the convention thateb
-σ−1(v)
-precedes er
-w for each w∈τ−1(v). Also note that V =⊔vτ−1(v) is a disjoint
-union. This is the ordering, which is used in the Pochhammer symbol in
-(12). If τ−1(v) =∅ then the overcrossing arc corresponding to v is a part
-arc. But if τ−1(v)⁄=∅ then a choice of element w∈τ−1(v) determines the
-unique part arc on the boundary of the fat vertex v following the edge er
-w,
-and thus a unique part arc of PK.
-Finally, r is given by two functions rσ, rτ :V →{− 1, 0, 1}. These are the
-sums of the rotation numbers of all part-arcs following the transitions σ,τ
-from the vertexv. So for σ this is the rotation number of the overcrossing arc
-σ(v), for τ this is the sum of the rotation numbers of all part arcs following
-v∈τ−1(τ(v)) in the order of τ−1(τ(v)). Consider the left part in Figure 19
-below, with v replaced byτ(v). A non-decorated part arc will have rotation
-number 0. See 3.1.
-Remark. (a) Each part arc-graph or arc-graph determines a quintuple as
-above. But not each such quintuple will determine an arc-graph induced
-from a part arc-graph.
-(b) The unique cycle decomposition of σ will determine the number of com-
-ponents ofK. Let µ be the number of cycles in this decomposition.
-(c) We let eτ−1(v) :={er
-w :τ(w) =v}, and this will be ∅ if τ−1(v) =∅.
-(d) Note that at this point we will not work with any particular order on
-the vertex set V .
-Suppose that the cycle length of the i-th cycle is c(i) for i = 1,...,µ .
-Note that c = ∑µ
-i=1 c(i) is the number of elements in V , and we let V =
-⊔µ
-𝓁=1V𝓁 be with V𝓁 be the set of vertices corresponding to the overcrossing
-39
-arcs of the 𝓁-th component. In order to state the cycle equations from
-G′K we need to identify the overcrossings and undercrossings of the 𝓁-th
-component with all other components. In fact
-⋃
-k⁄=𝓁
-⋃
-v∈V𝓁
-τ−1(v)∩Vk
-will be the set of vertices corresponding to overcrossings of some overcrossing
-arc in V𝓁 with distinct components. Note that these are not vertices in V𝓁.
-Similarly
-{v∈V𝓁 :τ(v) /∈V𝓁}
-corresponds to the set of all crossings at which the component𝓁 undercrosses
-a distinct component.
-We will next describe how to use the data G′K to construct the set of
-contributing states on GK, which we know in natural one-to-one correspon-
-dence with the contributing states onPK by the ﬂow lemma 4.1. Next recall
-that a potential will be an ordering of the components and a choice of vertex
-vi for i = 1,...µ on each cycle of the cycle decomposition of σ, a function
-j : V → n + 1, and values βi∈ n + 1 for i = 1, 2,...,µ . We assume that
-the function j satisﬁes the cycle equations. For a state f of GK we use the
-notation jv := f(er
-v), iv := f(eb
-v), jτ−1(v) :=∑
-w,τ (w)=vf(er
-w). Then Figure
-19 shows the local picture at each vertex:
-Figure 19
-The ﬂow equation using the above notation now is
-iv +jv =iσ−1(v) +jτ−1(v) (13)
-40
-This is a recursion to calculate the state colorings from the potential,
-for each cycle of σ at a time. We show how to use the recursion to ﬁnd the
-function i :V → N0 in the cycle case. Below we will show for a 2-component
-example how to ﬁnd the functioni from the function j with base values (0,β )
-for the two components.
-Now suppose µ = 1 and let c =|V| be the number of crossings of K.
-Then for eachv∈V letkv∈ c be the unique number such thatσ−kv(v) =v1.
-Suppose that iv1 =β1 is given. Then
-iv =iv1 +
-kv−1∑
-k=0
-jτ−1σ−k(v)−jσ−k(v) (14)
-The recursion will start with equation (13):
-iv =iσ−1(v) +jτ−1(v)−jv
-and then substitute the recursion with v replaced by σ−1(v) to substitute
-for iσ−1(v):
-iv =iσ−2(v) + (jτ−1σ−1(v)−jσ−1(v)) + (jτ−1(v)−jv)
-Afterkv steps we have the solution forv. This solution is in fact compatible
-because if we apply to v1 the recursion step c times, recall that σ−c(v) =v
-since σc = id, then we get
-iσ−c(v1) =iv1 +
-c−1∑
-k=0
-jτ−1σ−k(v1)−jσ−k(v1) =iv1
-This follows from
-c−1∑
-k=0
-jτ−1σ−k(v) =
-c−1∑
-k=0
-jσ−k(v) (15)
-because{σ−k(v) : k = 0,..., c− 1} = V and V =⊔τ−1(v) as we observed
-above. Note that formula (14) just formally states how to calculate the part
-arc colors from a potential, just following along a component. In the link
-case, the above discussion has to be done for each cycle of σ separately, not-
-ing that the ﬁnal argument uses the cycle conditions. In fact, in the process
-of computing the part arc color by following a component, overcrossings of
-distinct components are in the left sum while undercrossing a distinct com-
-ponent is in the right hand sum, and those contributions cancel for each
-41
-component. Thus for each v∈V such that σ−kvv =v𝓁 with 𝓁∈{ 1,...,µ }
-we have
-iv =β𝓁 +
-kv−1∑
-k=0
-jτ−1σ−k(v)−jσ−k(v) (16)
-The contributing states are determined by the n-ﬂow conditions 2.3 for
-colorings of GK, and are
-iv,jv≥ 0 and iv +jv≤n
-for all v ∈ V . These conditions are equivalent, see the proof of 4.1 to
-the ﬂows on PK being n-bounded, i. e. all part arc colors take values in
-{0,...,n }, see 2.3. Obviously the equations are satisﬁed if for all v∈V :
-jv≥ 0,iσ−1(v)≥ 0 and iσ−1(v) +jτ−1(v)≤n,
-because the part arc colors along the overcrossing arc v are increasing from
-iσ−1(v) to iσ−1(v) +jτ−1(v), then jump down to iv. The last inequalities are
-equivalent to
-jv,iv≥ 0 and iv≤n−jv
-So, using the recursion (16) we get the system of inequalities for each v∈V
-in terms of the potential, for all v𝓁⁄=v∈V , 𝓁∈{ 1,...,µ } depending on v,
-0≤jv≤β𝓁 +jτ−1(v) +
-kv−1∑
-k=1
-jτ−1σ−k(v)−jσ−k(v)≤n
-0≤jv𝓁,β𝓁 and β𝓁 +jv𝓁≤n for the starting vertex v𝓁
-(17)
-Note that the part arc coloring preceding the base vertex on the 𝓁-th
-component isiσ−1(v𝓁) +jτ−1(v𝓁)≤n becauseiσ−1(v𝓁) +jτ−1(v𝓁)−jv𝓁 =β𝓁 and
-the part arc color following the crossing v𝓁 is just β𝓁.
-Deﬁnition 7.1. A return loop at the self-crossing v∈ V𝓁 is a loop in PK
-starting at vertexv on the overcrossing arc in the direction of the orientation,
-following the link until it returns to v. The number of overcrossing arcs
-except the one at which the loop starts is the number k (modulo c(𝓁)) in
-σkτ(v) = v ⇐⇒v = τ−1σ−k(v). For k = 0 the return loop follows an
-overcrossing arc until its return to v. This is a circle in PK, which could be
-eliminated by isotopy,
+Note that the arc-graphs are *abstract* enhanced graphs representing the data necessary to calculate the state-sum [\[eq=main formula\]](#eq=main formula){reference-type="eqref" reference="eq=main formula"}. For explicit computations it will be helpful to present the data in non-geometritc way so that it can easily be implemented as an algorithm.
+
+Suppose that $G\mathcal{K}$ is defined from a Morse projection $\mathcal{K}$ without overcrossing circles. The case including overcrossing circles can easily be described but requires to consider vertices corresponding to the circles separately. For the moment we will work with non-reduced graphs.
+
+The enhanced arc-graph $G\mathcal{K}$ can be encoded by a *graph sextuple* $G'\mathcal{K}:=(V,\varepsilon ,\sigma ,\tau ,\mathfrak{o}, \mathfrak{r})$. Here $V$ is the set of vertices of $G\mathcal{K}$ and $\varepsilon$ is the function assigning the crossing sign to each vertex (i. e. overcrossing arc) of $G\mathcal{K}$. At each vertex of $G\mathcal{K}$ we have a unique outgoing blue edge $e_v^b$ and red edge $e_v^r$. Let $\sigma (v)$ respectively $\tau (v)$ be the endpoints of those directed edges in $G\mathcal{K}$. This defines maps $\sigma ,\tau : V\rightarrow V$, with $\sigma$ a bijection. We call $\sigma$ the *undercrossing map* and $\tau$ the *jump map*.
+
+::: rem
+$\tau$ is a bijection if and only of $\mathcal{K}$ is an alternating projection, in particular $\tau ^{-1}(v)\neq \emptyset$ for each vertex $v$ in this case, and the inverse map is defined.
+:::
+
+Next, $\mathfrak{o}=(\mathfrak{o}_v)_{v\in V}$ is a total ordering $\mathfrak{o}_v$ on each of the sets $\tau^{-1}(v)$ for each $v\in V$. Note that the order $\mathfrak{o}_v$ also defines a total ordering on the set of all incoming edges of the fat vertex $v$ of $G\mathcal{K}$ with the convention that $e_{\sigma ^{-1}(v)}^b$ precedes $e_w^r$ for each $w\in \tau^{-1}(v)$. Also note that $V=\sqcup_v \tau^{-1}(v)$ is a disjoint union. This is the ordering, which is used in the Pochhammer symbol in [\[eq=main formula\]](#eq=main formula){reference-type="eqref" reference="eq=main formula"}. If $\tau^{-1}(v)=\emptyset$ then the overcrossing arc corresponding to $v$ is a part arc. But if $\tau^{-1}(v)\neq \emptyset$ then a choice of element $w\in \tau^{-1}(v)$ determines the unique part arc on the boundary of the *fat* vertex $v$ following the edge $e_w^r$, and thus a unique part arc of $P\mathcal{K}$.
+
+Finally, $\mathfrak{r}$ is given by two functions $\mathfrak{r}_{\sigma },\mathfrak{r}_{\tau }: V\rightarrow \{-1,0,1\}$. These are the sums of the rotation numbers of all part-arcs following the transitions $\sigma ,\tau$ from the vertex $v$. So for $\sigma$ this is the rotation number of the overcrossing arc $\sigma (v)$, for $\tau$ this is the sum of the rotation numbers of all part arcs following $v\in \tau^{-1}(\tau (v))$ in the order of $\tau^{-1}(\tau (v))$. Consider the left part in Figure 19 below, with $v$ replaced by $\tau (v)$. A non-decorated part arc will have rotation number $0$. See [\[defn:arc-graph\]](#defn:arc-graph){reference-type="ref" reference="defn:arc-graph"}.
+
+::: rem
+\(a\) Each part arc-graph or arc-graph determines a quintuple as above. But not each such quintuple will determine an arc-graph induced from a part arc-graph.
+
+\(b\) The unique cycle decomposition of $\sigma$ will determine the number of components of $\mathcal{K}$. Let $\mu$ be the number of cycles in this decomposition.
+
+\(c\) We let $e_{\tau^{-1}(v)}:=\{e_w^r:\tau (w)=v\}$, and this will be $\emptyset$ if $\tau^{-1}(v)=\emptyset$.
+
+\(d\) Note that at this point we will **not** work with any particular order on the vertex set $V$.
+:::
+
+Suppose that the cycle length of the $i$-th cycle is $\mathfrak{c}(i)$ for $i=1,\ldots ,\mu$. Note that $\mathfrak{c}=\sum_{i=1}^{\mu }\mathfrak{c}(i)$ is the number of elements in $V$, and we let $V=\sqcup_{\ell =1}^{\mu }V_{\ell }$ be with $V_{\ell }$ be the set of vertices corresponding to the overcrossing arcs of the $\ell$-th component. In order to state the cycle equations from $G'\mathcal{K}$ we need to identify the overcrossings and undercrossings of the $\ell$-th component with all other components. In fact $$\bigcup_{k\neq \ell }\bigcup_{v\in V_{\ell }} \tau^{-1}(v)\cap V_k$$ will be the set of vertices corresponding to overcrossings of some overcrossing arc in $V_{\ell }$ with distinct components. Note that these are not vertices in $V_{\ell }$. Similarly $$\{v\in V_{\ell }: \tau (v)\notin V_{\ell }\}$$ corresponds to the set of all crossings at which the component $\ell$ undercrosses a distinct component.
+
+We will next describe how to use the data $G'\mathcal{K}$ to construct the set of contributing states on $G\mathcal{K}$, which we know in natural one-to-one correspondence with the contributing states on $P\mathcal{K}$ by the flow lemma [\[lem: flow lemma\]](#lem: flow lemma){reference-type="ref" reference="lem: flow lemma"}. Next recall that a potential will be an ordering of the components and a choice of vertex $v^i$ for $i=1,\ldots \mu$ on each cycle of the cycle decomposition of $\sigma$, a function $\mathbf{j}: V\rightarrow \underline{n+1}$, and values $\beta_i\in \underline{n+1}$ for $i=1,2,\ldots ,\mu$. We assume that the function $\mathbf{j}$ satisfies the cycle equations. For a state $f$ of $G\mathcal{K}$ we use the notation $j_v:=f(e_v^r)$, $i_v:=f(e_v^b)$, $j_{\tau^{-1}(v)}:=\sum_{w,\tau (w)=v}f(e_w^r)$. Then Figure 19 []{#fig=19 label="fig=19"} shows the local picture at each vertex:
+
+::: center
+![image](Figure19.pdf){width="100%"}
+:::
+
+*Figure 19*
+
+The flow equation using the above notation now is $$\label{eq=local 1}
+i_v+j_v=i_{\sigma ^{-1}(v)}+j_{\tau ^{-1}(v)}$$
+
+This is a recursion to calculate the state colorings from the potential, for each cycle of $\sigma$ at a time. We show how to use the recursion to find the function $\mathbf{i}: V\rightarrow \mathbb{N}_0$ in the cycle case. Below we will show for a $2$-component example how to find the function $\mathbf{i}$ from the function $\mathbf{j}$ with base values $(0,\beta )$ for the two components.
+
+Now suppose $\mu =1$ and let $\mathfrak{c}=|V|$ be the number of crossings of $\mathcal{K}$. Then for each $v\in V$ let $k_v\in \underline{\mathfrak{c}}$ be the unique number such that $\sigma ^{-k_v}(v)=v^1$. Suppose that $i_{v^1}=\beta_1$ is given. Then $$\label{eq=solved recursion}
+i_v=i_{v^1}+\sum_{k=0}^{k_v-1}j_{\tau^{-1}\sigma^{-k}(v)}-j_{\sigma^{-k}(v)}$$ The recursion will start with equation [\[eq=local 1\]](#eq=local 1){reference-type="eqref" reference="eq=local 1"}: $$i_v=i_{\sigma^{-1}(v)}+j_{\tau^{-1}(v)}-j_v$$ and then substitute the recursion with $v$ replaced by $\sigma ^{-1}(v)$ to substitute for $i_{\sigma ^{-1}(v)}$: $$i_v=i_{\sigma^{-2}(v)}+(j_{\tau^{-1}\sigma^{-1}(v)}-j_{\sigma^{-1}(v)})+(j_{\tau^{-1}(v)}-j_v)$$ After $k_v$ steps we have the solution for $v$. This solution is in fact compatible because if we apply to $v^1$ the recursion step $\mathfrak{c}$ times, recall that $\sigma^{-\mathfrak{c}}(v)=v$ since $\sigma^{\mathfrak{c}}=\textrm{id}$, then we get $$i_{\sigma^{-\mathfrak{c}}(v^1)}=i_{v^1}+\sum_{k=0}^{\mathfrak{c}-1}j_{\tau^{-1}\sigma^{-k}(v^1)}-j_{\sigma^{-k}(v^1)}=i_{v^1}$$ This follows from $$\label{eq=cyclic}
+\sum_{k=0}^{\mathfrak{c}-1}j_{\tau^{-1}\sigma^{-k}(v)}=\sum_{k=0}^{\mathfrak{c}-1}j_{\sigma^{-k}(v)}$$ because $\{\sigma^{-k}(v):k=0,\ldots ,\mathfrak{c}-1\}=V$ and $V=\sqcup \tau^{-1}(v)$ as we observed above. Note that formula [\[eq=solved recursion\]](#eq=solved recursion){reference-type="eqref" reference="eq=solved recursion"} just formally states how to calculate the part arc colors from a potential, just following along a component. In the link case, the above discussion has to be done for each cycle of $\sigma$ separately, noting that the final argument uses the cycle conditions. In fact, in the process of computing the part arc color by following a component, overcrossings of distinct components are in the left sum while undercrossing a distinct component is in the right hand sum, and those contributions cancel for each component. Thus for each $v\in V$ such that $\sigma ^{-k_v}v=v^{\ell }$ with $\ell \in \{1,\ldots ,\mu\}$ we have $$\label{eq=solved recursion link}
+i_v=\beta_{\ell }+\sum_{k=0}^{k_v-1}j_{\tau^{-1}\sigma^{-k}(v)}-j_{\sigma^{-k}(v)}$$ The contributing states are determined by the $n$-flow conditions [\[defn:edge coloring\]](#defn:edge coloring){reference-type="ref" reference="defn:edge coloring"} for colorings of $G\mathcal{K}$, and are $$i_v,j_v\geq 0\ \textrm{and} \ i_v+j_v\leq n$$ for all $v\in V$. These conditions are equivalent, see the proof of [\[lem: flow lemma\]](#lem: flow lemma){reference-type="ref" reference="lem: flow lemma"} to the flows on $P\mathcal{K}$ being $n$-bounded, i. e. all part arc colors take values in $\{0,\ldots ,n\}$, see [\[defn:edge coloring\]](#defn:edge coloring){reference-type="ref" reference="defn:edge coloring"}. Obviously the equations are satisfied if for all $v\in V$: $$j_v\geq 0, i_{\sigma ^{-1}(v)}\geq 0 \ \textrm{and}\ i_{\sigma^{-1}(v)}+j_{\tau^{-1}(v)}\leq n,$$ because the part arc colors along the overcrossing arc $v$ are increasing from $i_{\sigma^{-1}(v)}$ to $i_{\sigma^{-1}(v)}+j_{\tau^{-1}(v)}$, then jump down to $i_v$. The last inequalities are equivalent to $$j_v, i_v\geq 0 \ \textrm{and}  \ i_v\leq n-j_v$$ So, using the recursion [\[eq=solved recursion link\]](#eq=solved recursion link){reference-type="eqref" reference="eq=solved recursion link"} we get the system of inequalities for each $v\in V$ in terms of the potential, for all $v^{\ell }\neq v\in V$, $\ell \in \{1,\ldots ,\mu\}$ depending on $v$,
+
+$$\label{eq=contributing}
+\begin{aligned}
+0&\leq j_v\leq \beta_{\ell }+j_{\tau^{-1}(v)}+\sum_{k=1}^{k_v-1}j_{\tau^{-1}\sigma^{-k}(v)}-j_{\sigma^{-k}(v)}\leq n \\
+0&\leq j_{v^{\ell }},\beta_{\ell } \ \textrm{and}\ \beta_{\ell }+j_{v^{\ell }}\leq n \ \textrm{for the starting vertex}\ v^{\ell }
+\end{aligned}$$
+
+Note that the part arc coloring preceding the base vertex on the $\ell$-th component is $i_{\sigma^{-1}(v^{\ell })}+j_{\tau^{-1}(v^{\ell })}\leq n$ because $i_{\sigma^{-1}(v^{\ell })}+j_{\tau^{-1}(v^{\ell })}-j_{v^{\ell }}=\beta _{\ell }$ and the part arc color following the crossing $v^{\ell }$ is just $\beta_{\ell }$.
+
+::: defn
+A *return loop* at the self-crossing $v\in V_{\ell }$ is a loop in $P\mathcal{K}$ starting at vertex $v$ on the overcrossing arc in the direction of the orientation, following the link until it returns to $v$. The number of overcrossing arcs except the one at which the loop starts is the number $k$ (modulo $\mathfrak{c}(\ell )$) in $\sigma^k\tau (v)=v \Longleftrightarrow v=\tau^{-1}\sigma^{-k}(v)$. For $k=0$ the return loop follows an overcrossing arc until its return to $v$. This is a circle in $P\mathcal{K}$, which could be eliminated by isotopy,
+:::
+
 Figure 20 shows three return loops.
-42
-Figure 20
-Note that for k = 0 the inequality
-jv≤av +j1 +... +js≤n
-holds. For k> 0 such an equation is
-jv≤av +j1 +...j s− (j′
-1 +...j ′
-k≤n
-Ofjs =j′
-t can occur (likej2 =j′
-1 in the right ﬁgure of Figure 20). Then there
-will be a shorter return loop contained in the original loop. Aminimal return
-loop is a loop, which does not contain shorter return loops. The system of
-inequalities for contributing states seems to contain geometric information
-about return loops in the part arc graph. The study of the geometry of
-43
-return loops reminds of the purely inductive arguments in [20] proving the
-existence of the Homﬂypt polynomial.
-In order to determine F∗
-nGK in 6.2 for a long component projection,
-note that the part arc color 0 on the part arc corresponding to the long
-half arcs in general does not imply β1 = 0 if we take for the base vertex
-on the ﬁrst component, which we choose to be the long one, but in fact it
-will imply that the vertex preceding this bottom vertex has color 0. This
-follows because overcrossing can only increase the colors. So depending on
-the projection this will imply that the jumps are zero up this part-arc. To
-simplify, and actual be able to work with the reduced graph we assume that
-the ﬁrst crossing of the bottom long arc is an undercrossing and is the base
-vertex of the ﬁrst cycle. This will imply β1 = 0 because at the base crossing
-the value can only decrease. This implies jv1 = 0 and by the ﬂow condition
-of course also that iσ−1(v1) =jτ−1(v1) = 0. Note that jτ−1(v) = 0⇐⇒jw = 0
-for all w∈ τ−1(v). But note that iw ⁄= 0 is possible for w∈ τ−1(v) in
-this case (and thus also iσ−1(w) and jτ−1(w) can be nonzero for w∈ τ−1(v)
-in this case), so these vertices cannot be discarded. If we delete the base
-vertex on the long component including all edges of GK incident to that
-vertex we will not change state contributions because 0-colorings factor in
-as multiplication by 1. While computationally comfortable, some of the
-symmetry is lost because τ is no longer deﬁned for the vertices in τ−1(v1).
-Also σ will no longer be deﬁned on σ−1(v1) if we delete the base vertex v1.
-In all recursively deﬁned formulas we will still include the base vertex v1 so
-that the maps σ,τ are always deﬁned.
-Let V∗ := V \ ({v1}∪ τ−1(v1)) and V′ := V \{v1}. Then we can
-parametrize the set of contributing states as follows:
-F∗
-nGK↔{ j := (jv,β𝓁) :v∈V∗,𝓁 = 2,...µ, (17), cycle relations 3.3} (18)
-In order to write formula 6.2 for the data G′K from a long component pro-
-jection we need to determine the contributions from right oriented extrema.
-For this let v∈V∗ deﬁne
-rot(v, j) = rτ(v)jv + rσ(v)iv (19)
-and
-rot(j) :=
-∑
-v∈V∗
-rot(v, j)
-Remark. In order to see that rot(j) for a state determined byj and Deﬁnition
-(19) determines the contributions resulting from right oriented extrema,
-44
-consider ﬁrst a right oriented extremum on an overcrossing arc σ(v), and
-assume that this is the only right oriented extremum on the overcrossing
-arc. The part arc color of the part arc containing the maximum is given by
-iv +∑jw, where the sum runs through those w∈τ−1(σ(v)) preceding the
-maximum. Recall from above that a choice of element in τ−1(v) determines
-a unique part arc if τ−1(v)⁄=∅, and otherwise there is only one part-arc on
-the given overcrossing arc. The contribution iv = rσ(v)iv, while the jw are
-contributions rτ(w)jw for the w along the overcrossing arc σ(v) preceding
-the maximum. It is not hard to see that the result for the rotation of a
-state persists, even though contributions for individual extrema will show
-up diﬀerently in the formula for rot( j) given above. For example, if right
-oriented maximum is followed by an right oriented minimum, then the part
-arc color before the maximum will count with factor +1 while the part arc
-color before the minimum will contribute with factor−1 in the deﬁnition by
-ribbon functor [17]. In the formula for rot(j) given above this will be counted
-correctly because in this case, if no further right oriented extrema follow on
-the part arc considered, the rotation numbers of part arcs preceding the
-maximum will be 0. In the braid projection case this cannot occur but it
-is possible to have overcrossing arcs rotating through several maxima, in
-which case the above analysis similarly proceeds.
-Finally the last item to be considered is the excess of a state in terms of
-the potential. We will use the following deﬁnition for v∈V :
-˜jv :=
-∑
-w∈τ−1(τ (v))
-w<v
-jw +iσ−1(τ (v)) (20)
-Then
-exc(j) :=
-∑
-v∈V∗
-ε(v)iv˜jv (21)
-Let
-δ(j) :=−(exc(j) + rot(j). (22)
-We can now restate Theorem 6.2 using the graph sextuple G′K. Note
-that this description does not use any ordering of the vertex set V . For a
-long component projection rot(K) let the rotation number ofK be the sum
-of the rotation numbers of all components. This is a sum over the rotation
-numbers of all part arcs and thus is also the sum of the rotation numbers of
-all circle components resulting from smoothing all crossings. Let
-δ′(K,n ) :=−n2
-4 ω(K) +n
-2 rot(K). (23)
-45
-Note that our rotation numbers are positive in clockwise direction.
-Theorem 7.1. LetK be a long component projection of an oriented link K
-with data quintuple G′K and δ′(K,n ) deﬁned in equation (23). Let
-βn(j) =
-∏
-v∈V′
-βn(j,v )
-for j∈F∗
-nGK as deﬁned in (18), and for each v∈V∗
-βn(j,v ) =tnε(v)iv
-(iv +jv
-iv
-)
-t−ε(v)
-{n− ˜jv}jv,tε(v) (24)
-with ˜jv deﬁned in (20). Then
-J′
-n(K) =tδ′(K,n) ∑
-j∈F∗nGK
-tδ(j)βn(j) (25)
-Remark. (a) The appearence of n
-2 rot(K) is a consequence of evaluation maps
-at extrema, see e. g. the deﬁnition of the endomorphism K in [4], p. 1264 or
-Theorem 5.3.2 in [3].
-(b) Note that the representation of the colored Jones polynomial in 7.1
-references only the vertex set of GK, which is identiﬁed with the crossings
-ofK and deﬁned by overcrossing arcs of PK. We did reduce the reference
-to edge colorings to the computation of blue edge colors from the potential.
-(c) Note that the Potts model on a graph is deﬁned from colorings of vertices.
-Even though the
-(d) We have purposefully not introduced any ordering of vertices in this
-section. Given an ordering and basing of the components of a projection
-there is a natural cyclic ordering by running along components starting
-from the basepoint. Also, if the projection is a closed braid projection in
-the plane starting from a given braid word then the crossings are naturally
-ordered by each braid generator corresponding to a crossing. If O is any
-ordering of V then there is a natural K-twisting of this order given by the
-orderings ov for each v∈ V . If O orders the vertices as {v1,...,v c} then
-the ordering is given by the elements in τ−1(vi) ordered by ovi as above
-preceding the elements in τ−1(vi+1) ordered by ovi+1. This could be related
-to Deﬁnition 5.1 in [7].
-(e) IfK is an alternating link projection then, in the non-reduced descrip-
-tion, τ−1(v) consists of a single element and the orderings oi are trivial. In
-particular in the alternating case the ˜jv reduces to ˜jv = iσ−1(τ (v)) so that
-the Pochhammer symbol and also the excess are easier to calculate.
-46
+
+::: center
+![image](Figure20.pdf){width="100%"}
+:::
+
+*Figure 20*
+
+Note that for $k=0$ the inequality $$j_v\leq a_v+j_1+\ldots +j_s\leq n$$ holds. For $k>0$ such an equation is $$j_v\leq a_v+j_1+\ldots j_s-(j_1'+\ldots j'_{k}\leq n$$ Of $j_s=j'_t$ can occur (like $j_2=j_1'$ in the right figure of Figure 20). Then there will be a shorter return loop contained in the original loop. A *minimal return loop* is a loop, which does not contain shorter return loops. The system of inequalities for contributing states seems to contain geometric information about return loops in the part arc graph. The study of the geometry of return loops reminds of the purely inductive arguments in [@LiMi] proving the existence of the Homflypt polynomial.
+
+In order to determine $\mathcal{F}_n^*G\mathcal{K}$ in [\[thm:main\]](#thm:main){reference-type="ref" reference="thm:main"} for a long component projection, note that the part arc color $0$ on the part arc corresponding to the long half arcs in general does not imply $\beta_1=0$ if we take for the base vertex on the first component, which we choose to be the long one, but in fact it will imply that the vertex preceding this bottom vertex has color $0$. This follows because overcrossing can only increase the colors. So depending on the projection this will imply that the jumps are zero up this part-arc. To simplify, and actual be able to work with the reduced graph we assume that the first crossing of the bottom long arc is an undercrossing and is the base vertex of the first cycle. This will imply $\beta_1=0$ because at the base crossing the value can only decrease. This implies $j_{v^1}=0$ and by the flow condition of course also that $i_{\sigma^{-1}(v^1)}=j_{\tau^{-1}(v^1)}=0$. Note that $j_{\tau^{-1}(v)}=0 \Longleftrightarrow j_w=0$ for all $w\in \tau^{-1}(v)$. But note that $i_w\neq 0$ is possible for $w\in \tau^{-1}(v)$ in this case (and thus also $i_{\sigma ^{-1}(w)}$ and $j_{\tau^{-1}(w)}$ can be nonzero for $w\in \tau^{-1}(v)$ in this case), so these vertices cannot be discarded. If we delete the base vertex on the long component including all edges of $G\mathcal{K}$ incident to that vertex we will not change state contributions because $0$-colorings factor in as multiplication by $1$. While computationally comfortable, some of the symmetry is lost because $\tau$ is no longer defined for the vertices in $\tau^{-1}(v^1)$. Also $\sigma$ will no longer be defined on $\sigma ^{-1}(v^1)$ if we delete the base vertex $v^1$. In all recursively defined formulas we will still include the base vertex $v^1$ so that the maps $\sigma ,\tau$ are always defined.
+
+Let $V^*:=V\setminus (\{v^1\}\cup \tau^{-1}(v^1))$ and $V':=V\setminus \{v^1\}$. Then we can parametrize the set of contributing states as follows: $$\label{eq=contributing states}
+\mathcal{F}_n^*G\mathcal{K}\leftrightarrow \{\mathbf{j}:=(j_v,\beta_{\ell }): v\in V^*,\ell =2,\ldots \mu, \eqref{eq=contributing}, \textrm{cycle relations} \ \ref{defn=potential} \}$$ In order to write formula [\[thm:main\]](#thm:main){reference-type="ref" reference="thm:main"} for the data $G'\mathcal{K}$ from a long component projection we need to determine the contributions from right oriented extrema. For this let $v\in V^*$ define $$\label{eq=rot}
+\textrm{rot}(v,\mathbf{j})=\mathfrak{r}_{\tau }(v)j_v+\mathfrak{r}_{\sigma }(v)i_v$$ and $$\textrm{rot}(\mathbf{j}):=\sum_{v\in V^*}\textrm{rot}(v,\mathbf{j})$$
+
+::: rem
+In order to see that $\textrm{rot}(\mathbf{j})$ for a state determined by $\mathbf{j}$ and Definition [\[eq=rot\]](#eq=rot){reference-type="eqref" reference="eq=rot"} determines the contributions resulting from right oriented extrema, consider first a right oriented extremum on an overcrossing arc $\sigma (v)$, and assume that this is the only right oriented extremum on the overcrossing arc. The part arc color of the part arc containing the maximum is given by $i_v+\sum j_w$, where the sum runs through those $w\in \tau^{-1}(\sigma (v))$ preceding the maximum. Recall from above that a choice of element in $\tau^{-1}(v)$ determines a unique part arc if $\tau^{-1}(v)\neq \emptyset$, and otherwise there is only one part-arc on the given overcrossing arc. The contribution $i_v=\mathfrak{r}_{\sigma }(v)i_v$, while the $j_w$ are contributions $\mathfrak{r}_{\tau }(w)j_w$ for the $w$ along the overcrossing arc $\sigma (v)$ preceding the maximum. It is not hard to see that the result for the rotation of a state persists, even though contributions for individual extrema will show up differently in the formula for $\textrm{rot}(\mathbf{j})$ given above. For example, if right oriented maximum is followed by an right oriented minimum, then the part arc color before the maximum will count with factor $+1$ while the part arc color before the minimum will contribute with factor $-1$ in the definition by ribbon functor [@L]. In the formula for $\textrm{rot}(\mathbf{j})$ given above this will be counted correctly because in this case, if no further right oriented extrema follow on the part arc considered, the rotation numbers of part arcs preceding the maximum will be $0$. In the braid projection case this cannot occur but it is possible to have overcrossing arcs rotating through several maxima, in which case the above analysis similarly proceeds.
+:::
+
+Finally the last item to be considered is the excess of a state in terms of the potential. We will use the following definition for $v\in V$: $$\label{eq=tilde}
+\tilde{j}_v:=\sum_{\substack{w\in \tau^{-1}(\tau (v))\\ w<v}}j_w+i_{\sigma^{-1}(\tau(v))}$$ Then $$\label{eq=excess}
+\textrm{exc}(\mathbf{j}):=\sum_{v\in V^*}\varepsilon (v)i_v\tilde{j}_v$$
+
+Let $$\delta (\mathbf{j}):=-(\textrm{exc}(\mathbf{j})+\textrm{rot}(\mathbf{j}).$$
+
+We can now restate Theorem [\[thm:main\]](#thm:main){reference-type="ref" reference="thm:main"} using the graph sextuple $G'\mathcal{K}$. Note that this description does not use any ordering of the vertex set $V$. For a long component projection $\textrm{rot}(\mathcal{K})$ let the *rotation number* of $\mathcal{K}$ be the sum of the rotation numbers of all components. This is a sum over the rotation numbers of all part arcs and thus is also the sum of the rotation numbers of all circle components resulting from smoothing all crossings. Let $$\label{eq=delta'}
+\delta '(\mathcal{K},n):=-\frac{n^2}{4}\omega (\mathcal{K})+\frac{n}{2}\textrm{rot}(\mathcal{K}).$$ Note that our rotation numbers are positive in clockwise direction.
+
+::: thm
+[]{#thm:GL2 label="thm:GL2"} Let $\mathcal{K}$ be a long component projection of an oriented link $K$ with data quintuple $G'\mathcal{K}$ and $\delta '(\mathcal{K},n)$ defined in equation [\[eq=delta\'\]](#eq=delta'){reference-type="eqref" reference="eq=delta'"}. Let $$\beta_n(\mathbf{j})=\prod_{v\in V'}\beta_n(\mathbf{j},v)$$ for $\mathbf{j}\in \mathcal{F}_n^*G\mathcal{K}$ as defined in [\[eq=contributing states\]](#eq=contributing states){reference-type="eqref" reference="eq=contributing states"}, and for each $v\in V^*$ $$\label{eq=vertex contribution}
+\beta_n(\mathbf{j},v)=t^{n\varepsilon (v)i_v}{i_v+j_v \choose i_v}_{t^{-\varepsilon (v)}} \{n-\tilde{j}_v\}_{j_v,t^{\varepsilon (v)}}$$ with $\tilde{j}_v$ defined in [\[eq=tilde\]](#eq=tilde){reference-type="eqref" reference="eq=tilde"}. Then $$\label{eqn=GL2}
+J_n'(K)=t^{\delta '(\mathcal{K},n)}\sum_{\mathbf{j}\in \mathcal{F}_n^*G\mathcal{K}}t^{\delta (\mathbf{j})}\beta_n(\mathbf{j})$$
+:::
+
+::: rem
+\(a\) The appearence of $\frac{n}{2}\textrm{rot}(K)$ is a consequence of evaluation maps at extrema, see e. g. the definition of the endomorphism $K$ in [@G], p. 1264 or Theorem 5.3.2 in [@CP].
+
+\(b\) Note that the representation of the colored Jones polynomial in [\[thm:GL2\]](#thm:GL2){reference-type="ref" reference="thm:GL2"} references only the vertex set of $G\mathcal{K}$, which is identified with the crossings of $\mathcal{K}$ and defined by overcrossing arcs of $P\mathcal{K}$. We did reduce the reference to edge colorings to the computation of blue edge colors from the potential.
+
+\(c\) Note that the Potts model on a graph is defined from colorings of vertices. Even though the
+
+\(d\) We have purposefully not introduced any ordering of vertices in this section. Given an ordering and basing of the components of a projection there is a natural *cyclic ordering* by running along components starting from the basepoint. Also, if the projection is a closed braid projection in the plane starting from a given braid word then the crossings are naturally ordered by each braid generator corresponding to a crossing. If $\mathcal{O}$ is any ordering of $V$ then there is a natural $\mathcal{K}$-*twisting* of this order given by the orderings $\mathfrak{o}_v$ for each $v\in V$. If $\mathcal{O}$ orders the vertices as $\{v_1,\ldots ,v_{\mathfrak{c}}\}$ then the ordering is given by the elements in $\tau^{-1}(v_i)$ ordered by $\mathfrak{o}_{v_i}$ as above preceding the elements in $\tau^{-1}(v_{i+1})$ ordered by $\mathfrak{o}_{v_{i+1}}$. This could be related to Definition 5.1 in [@GL].
+
+\(e\) If $\mathcal{K}$ is an alternating link projection then, in the non-reduced description, $\tau^{-1}(v)$ consists of a single element and the orderings $\mathfrak{o}_i$ are trivial. In particular in the alternating case the $\tilde{j}_v$ reduces to $\tilde{j}_v=i_{\sigma^{-1}(\tau (v))}$ so that the Pochhammer symbol and also the excess are easier to calculate.
+:::

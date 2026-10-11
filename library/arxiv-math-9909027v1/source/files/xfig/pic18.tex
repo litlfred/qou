@@ -1,0 +1,53 @@
+\begin{picture}(0,0)%
+\epsfig{file=ps/pic18.ps}%
+\end{picture}%
+\setlength{\unitlength}{0.00041700in}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined
+% extract first six characters in \fmtname
+\def\x#1#2#3#4#5#6#7\relax{\def\x{#1#2#3#4#5#6}}%
+\expandafter\x\fmtname xxxxxx\relax \def\y{splain}%
+\ifx\x\y   % LaTeX or SliTeX?
+\gdef\SetFigFont#1#2#3{%
+  \ifnum #1<17\tiny\else \ifnum #1<20\small\else
+  \ifnum #1<24\normalsize\else \ifnum #1<29\large\else
+  \ifnum #1<34\Large\else \ifnum #1<41\LARGE\else
+     \huge\fi\fi\fi\fi\fi\fi
+  \csname #3\endcsname}%
+\else
+\gdef\SetFigFont#1#2#3{\begingroup
+  \count@#1\relax \ifnum 25<\count@\count@25\fi
+  \def\x{\endgroup\@setsize\SetFigFont{#2pt}}%
+  \expandafter\x
+    \csname \romannumeral\the\count@ pt\expandafter\endcsname
+    \csname @\romannumeral\the\count@ pt\endcsname
+  \csname #3\endcsname}%
+\fi
+\fi\endgroup
+\begin{picture}(8826,4142)(1779,-3801)
+\put(2402,-3737){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$b$}}}
+\put(3677,-3737){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$b$}}}
+\put(5177,-3737){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$b$}}}
+\put(2027,-3737){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$a$}}}
+\put(3977,-3737){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$a$}}}
+\put(4877,-3737){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$a$}}}
+\put(10053,-3738){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$b$}}}
+\put(9003,-3738){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$b$}}}
+\put(8553,-3738){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$b$}}}
+\put(8253,-3738){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$a$}}}
+\put(9378,-3738){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$a$}}}
+\put(9753,-3738){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$a$}}}
+\put(8252, 88){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$a$}}}
+\put(8552, 88){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$b$}}}
+\put(9002, 88){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$b$}}}
+\put(10052, 88){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$b$}}}
+\put(9752, 88){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$a$}}}
+\put(9377, 88){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$b$}}}
+\put(5926,-1936){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$=a^2b^2$}}}
+\put(5176, 89){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$b$}}}
+\put(4051, 89){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$a$}}}
+\put(4801, 89){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$a$}}}
+\put(3676, 89){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$b$}}}
+\put(2326, 89){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$a$}}}
+\put(2701, 89){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$b$}}}
+\end{picture}

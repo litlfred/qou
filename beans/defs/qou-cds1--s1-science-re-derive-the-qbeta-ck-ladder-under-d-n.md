@@ -8741,3 +8741,7 @@ Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-u
 ## 2026-10-10 — owner decision: convention-D extractor support is tracked here
 
 `qbeta_decay_sdp_full_ck.py` and `qbeta_decay_sdp_extended_ck.py` now **refuse** (exit 2) instead of reading the D-frame N3 witness with C-frame rungs (which produced c_2 = −9.296, c_3 = −974). The owner chose (2026-10-10, PR #7574) to merge the refusal and track D support **in this bean**: the extractors can run again only once the c_k ladder is re-derived under convention D, which is the open research item here, not a code change. The old C-frame bodies are kept as `_main_convention_c_historical()`. Bean stays open.
+
+## 2026-10-11 owner ruling (decision card): gluon tail ALLOWED
+
+Asked: does the 2026-08-30 "no gluon" ruling exclude the 2-letter gluon tail in γγ nucleon words? Owner answer: **allowed** (it does not exclude it). Consequence recorded earlier on this bean: the gluon family stays in the candidate set, so the family straddles the required factor and the selection must come from elsewhere (qou-99qc / O'Hara routes). Thread: Continue fourth session.

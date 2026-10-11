@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2604.16077v1/blocks/prose-sec-012",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2604.16077v1/blocks/prose-sec-012",
   "kind": "prose",
-  "title": "Quantum 3-simplices. (see [7], Section 3) A quantum 3-simplex is a tuple (∆ ,b, w)",
-  "pageStart": 9,
-  "pageEnd": 10,
-  "text": "../sections/sec-012-211-quantum-3-simplices-see-7-section-3-a-quantu.md",
-  "derivedFrom": "library/arxiv-2604.16077v1/manifest",
-  "sourceDocument": "library/arxiv-2604.16077v1/manifest",
+  "title": "The QHI of cusped manifolds",
+  "pageStart": 31,
+  "pageEnd": 33,
+  "text": "../sections/sec-012-33-the-qhi-of-cusped-manifolds.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2604.16077v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2604.16077v1/manifest.jsonld",
   "provenance": "ingested"
 }

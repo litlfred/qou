@@ -6,7 +6,8 @@
   "sha256": "3f87983ce379a8d668e2180183a0cb81624936d26a7698b68df1aeb50cdd8409",
   "bytes": 551240,
   "pages": 34,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -483,6 +484,205 @@
   "likely_scanned": false,
   "toc_entries": 26,
   "sections": 26,
-  "chars_total": 84674
+  "chars_total": 84674,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "main.tex",
+   "tex_sections": 21,
+   "overlaid": 17,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-the-hurwitz-topological-quantum-field-theory",
+     "title": "The Hurwitz Topological Quantum Field Theory",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.167,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-002-the-hurwitz-theory-at-fixed-degree",
+     "title": "The Hurwitz Theory at Fixed Degree",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-the-extended-hurwitz-theory",
+     "title": "The Extended Hurwitz Theory",
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-the-string-dual",
+     "title": "The String Dual",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.948,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-from-two-dimensional-yang-mills-to-hurwitz",
+     "title": "From Two-dimensional Yang-Mills to Hurwitz",
+     "prose_ratio": 0.926,
+     "coverage_ratio": 0.833,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-the-observables-of-two-dimensional-yang-mills-th",
+     "title": "The Observables of Two-dimensional Yang-Mills Theory",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-the-schur-weyl-dictionary",
+     "title": "The Schur-Weyl Dictionary",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-the-gross-taylor-expansion",
+     "title": "The Gross-Taylor Expansion",
+     "prose_ratio": 0.913,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-chiral-yang-mills-theory-as-a-deformed-hurwitz-t",
+     "title": "Chiral Yang-Mills Theory as a Deformed Hurwitz Theory",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.892,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-the-stringy-structure-of-chiral-yang-mills-theor",
+     "title": "The Stringy Structure of Chiral Yang-Mills Theory",
+     "prose_ratio": 0.354,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-a-double-expansion",
+     "title": "A Double Expansion",
+     "prose_ratio": 0.026,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-vertex-operators",
+     "title": "Vertex Operators",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.677,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-a-stringy-deformation",
+     "title": "A Stringy Deformation",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-a-deformed-gromov-witten-theory",
+     "title": "A Deformed Gromov-Witten Theory",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-the-partial-permutation-algebra-of-yang-mills-th",
+     "title": "The Partial Permutation Algebra of Yang-Mills Theory",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-the-duality-map",
+     "title": "The Duality Map",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-the-gromov-witten-formulation",
+     "title": "The Gromov-Witten Formulation",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-the-inverse-map",
+     "title": "The Inverse Map",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-remarks-on-wilson-loops",
+     "title": "Remarks on Wilson Loops",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-useful-identities",
+     "title": "Useful Identities",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-determining-the-dictionary",
+     "title": "Determining the Dictionary",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-phase-transitions",
+     "title": "Phase Transitions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-analytical-phase-transitions",
+     "title": "Analytical Phase Transitions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-numerical-phase-transitions",
+     "title": "Numerical Phase Transitions",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

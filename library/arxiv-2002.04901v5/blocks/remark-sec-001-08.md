@@ -1,0 +1,1 @@
+Thesequentialderivedfunctorsareinsensitivetothering 𝐴,orareuniversal,

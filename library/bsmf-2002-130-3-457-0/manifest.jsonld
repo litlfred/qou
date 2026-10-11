@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/bsmf-2002-130-3-457-0/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Hyperideal polyhedra in hyperbolic 3-space",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bsmf-2002-130-3-457-0/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "smf_bull_130_17.dvi",
   "contains": [
+    "library/bsmf-2002-130-3-457-0/sections/sec-front-matter",
     "library/bsmf-2002-130-3-457-0/sections/sec-000",
     "library/bsmf-2002-130-3-457-0/sections/sec-001",
     "library/bsmf-2002-130-3-457-0/sections/sec-002",
@@ -18,8 +24,11 @@
     "library/bsmf-2002-130-3-457-0/sections/sec-009"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "bsmf-2002-130-3-457-0",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "BSMF_2002__130_3_457_0.pdf",
     "source_sha256": "63f79235d0c13ba886e63c0d61d69185cb979d6a0ddc1aa2cc1430a0534cb741",
     "pages": 35,

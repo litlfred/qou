@@ -5,7 +5,8 @@
   "file": "2304.09377v2.pdf",
   "sha256": "76ae6c6058f4a9f9433feed2ef84207fb352b90102f6a49337e6f8ab95a591f1",
   "bytes": 820230,
-  "pages": 39
+  "pages": 39,
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": "10.3842/SIGMA.2023.082",
   "title": "Knots and Their Related q-Series",
   "authors_raw": "Stavros GAROUFALIDIS a and Don ZAGIER bc",
-  "abstract": "We discuss a matrix of periodic holomorphic functions in the upper and lower half-plane which can be obtained from a factorization of an Andersen–Kashaev state integral of a knot complement with remarkable analytic and asymptotic properties that defines a PSL 2(Z)-cocycle on the space of matrix-valued piecewise analytic functions on the real numbers. We identify the corresponding cocycle with the one coming from the Kashaev invariant of a knot (and its matrix-valued extension) via the refined quantum modularity conjecture of [arXiv:2111.06645] and also relate the matrix-valued invariant with the 3D- index of Dimofte–Gaiotto–Gukov. The cocycle also has an analytic extendability property that leads to the notion of a matrix-valued holomorphic quantum modular form. This is a tale of several independent discoveries, both empirical and theoretical, all illustrated by the three simplest hyperbolic knots.",
+  "abstract": "We discuss a matrix of periodic holomorphic functions in the upper and lower half-plane which can be obtained from a factorization of an Andersen\u2013Kashaev state integral of a knot complement with remarkable analytic and asymptotic properties that defines a PSL 2(Z)-cocycle on the space of matrix-valued piecewise analytic functions on the real numbers. We identify the corresponding cocycle with the one coming from the Kashaev invariant of a knot (and its matrix-valued extension) via the refined quantum modularity conjecture of [arXiv:2111.06645] and also relate the matrix-valued invariant with the 3D- index of Dimofte\u2013Gaiotto\u2013Gukov. The cocycle also has an analytic extendability property that leads to the notion of a matrix-valued holomorphic quantum modular form. This is a tale of several independent discoveries, both empirical and theoretical, all illustrated by the three simplest hyperbolic knots.",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20231102004826Z",
@@ -479,6 +480,136 @@
   "likely_scanned": false,
   "toc_entries": 30,
   "sections": 23,
-  "chars_total": 98755
+  "chars_total": 98755,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "sigma24-055.tex",
+   "tex_sections": 39,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-2-how-the-q-series-arise",
+     "title": "How the q-series arise",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-21-the-quantum-modularity-conjecture",
+     "title": "The quantum modularity conjecture",
+     "prose_ratio": 0.131,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-23-the-index-the-state-integral-and-a-second-q-s",
+     "title": "The index, the state integral and a second q-series G_1(q)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-3-q-series-and-perturbative-series",
+     "title": "q-series and perturbative series",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-31-asymptotics-of-holomorphic-functions-in-secto",
+     "title": "Asymptotics of holomorphic functions in sectors",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-32-from-divergent-to-convergent-power-series",
+     "title": "From divergent to convergent power series",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-34-the-quadratic-relation",
+     "title": "The quadratic relation",
+     "prose_ratio": 0.186,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-35-higher-level-and-weight-spaces",
+     "title": "Higher level and weight spaces",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-4-from-vector-valued-to-matrix-valued-q-series",
+     "title": "From vector-valued to matrix-valued q-series",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-41-descendant-q-series",
+     "title": "Descendant q-series",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-42-the-asymptotics-of-the-descendants",
+     "title": "The asymptotics of the descendants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-5-the-matrix-valued-cocycle-of-a-knot",
+     "title": "The matrix-valued cocycle of a knot",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-51-an-equivariant-state-integral",
+     "title": "An equivariant state integral",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-52-a-matrix-valued-cocycle",
+     "title": "A matrix-valued cocycle",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-53-the-two-cocycles-agree",
+     "title": "The two cocycles agree",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-54-matrix-valued-holomorphic-quantum-modular-for",
+     "title": "Matrix-valued holomorphic quantum modular forms",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-6-final-remarks",
+     "title": "Final remarks",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-a-complements-and-proofs",
+     "title": "A Complements and proofs",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-a1-q-series-identities",
+     "title": "A.1 q-series identities",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-a2-asymptotics-at-roots-of-unity",
+     "title": "A.2 Asymptotics at roots of unity",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-a3-the-two-matrix-valued-cocycles-for-the-4-1-kn",
+     "title": "A.3 The two matrix-valued cocycles for the 4_1 knot agree",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

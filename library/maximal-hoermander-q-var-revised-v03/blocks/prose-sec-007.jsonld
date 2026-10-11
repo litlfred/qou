@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-007",
   "kind": "prose",
   "title": "Pointwise continuity of time paths for abstract Schrödinger and wave equations",
   "pageStart": 28,
   "pageEnd": 35,
   "text": "../sections/sec-007-pointwise-continuity-of-time-paths-for-abstract.md",
-  "derivedFrom": "library/maximal-hoermander-q-var-revised-v03/manifest",
-  "sourceDocument": "library/maximal-hoermander-q-var-revised-v03/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/maximal-hoermander-q-var-revised-v03/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/maximal-hoermander-q-var-revised-v03/manifest.jsonld",
   "provenance": "ingested"
 }

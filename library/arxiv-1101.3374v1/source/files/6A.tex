@@ -1,0 +1,82 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SECTION 7: Proof of Theorem A   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Proof of \thmref{A}}\label{sec:A}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Let $L$ be a three-component link in the $3$-sphere with characteristic map $g_L:\tor\to S^2$.  \thmref{A} asserts that the degrees of $g_L$ on the coordinate $2$-tori of $\tor$ are equal to the pairwise linking numbers $p$, $q$ and $r$ of the components of $L$, and that Pontryagin's absolute $\nu$-invariant of $g_L$ is equal to twice Milnor's triple linking number $\mu(L)$ mod $2\gcd(p,q,r)$.  
+
+The first statement was proved easily at the end of \secref{characteristic}.  We now prove the second statement by an inductive argument, relying heavily on the techniques and results of the last section.  Throughout, we will use the asymmetric characteristic map $h_L:\tor\to S^2$ in place of $g_L$, since these two maps are homotopic.
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+\part{Proof of the base case of \thmref{A}}
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+In \exref{Lpqr} we introduced the  ``base links" $L_{pqr}$ with pairwise linking numbers $p$, $q$ and $r$ and $\mu(L_{pqr}) = 0$.  See \figref{Lpqr}.  We will show that \thmref{A} holds for these links.
+
+To accomplish this, we must show that for each $p$, $q$ and $r$, the associated characteristic map $h_{L_{pqr}}$ is homotopic to the base map $f_{pqr}:\tor\to S^2$ used in \secref{pontryagin} to convert the relative Pontryagin $\nu$-invariant to an absolute $\nu$-invariant.  In other words, we must show that $\nu(h_{L_{pqr}}) = 0$.
+
+First move $L_{pqr}$ by a link homotopy into generic position, and let $L=X\cup Y\cup Z$ be the resulting link.  Then $Z$ coincides with the binding $K$ of the standard open book, while $X$ and $Y$ wind around $Z$ in a generic fashion, $q$ and $p$ times respectively, linking each other $r$ times along the way.  In fact this winding can be made {\it monotonic}, to appear as shown in \figref{genericLpqr} for the case $(p,q,r)=(5,3,-2)$. 
+
+%%% FIGURE 28: Generic Lpqr %%%
+\begin{figure}[h!]
+\includegraphics[height=200pt]{FigLpqrGeneric.pdf}
+\put(-122,42){\small$q$}
+\put(-122,133){\small$p$}
+\put(-25,90){\small$r$}
+\put(-1,20){$X$}
+\put(3,157){$Y$}
+\put(-65,180){$Z$}
+\caption{A generic link $L$ representing $L_{pqr}$}
+\label{fig:genericLpqr}
+\end{figure}
+%%%%%%%%%%%%%%%%%%  
+
+Observe that one need not actually construct a link homotopy carrying $L_{pqr}$ to $L$, but need only check that the pairwise and triple linking numbers of $L_{pqr}$ and $L$ coincide, and then appeal to Milnor's classification.  The verification that $\mu(L)=0$ is completely analogous to the calculation for $\mu(L_{pqr})$, using the obvious stacked disks, joined by half twisted bands, as Seifert surfaces for $X$ and $Y$, and a hemispherical page in the open book on $S^3$ as a Seifert surface for $Z$. 
+
+Now the bicycles in $L$ are easily identified.  There are $d = \gcd(p,q)$ of them, all of longitudinal degree $\ell = \lcm(p,q)$, and all but one of meridional degree $0$, the remaining one being of degree $r$.  The parametrizing icycles are all parallel to a $(p/d,q/d)$ torus knot in the $2$-torus, with vertical winding numbers all equal to zero, except one equal to $r$.   By the bicycle theorem, these icyles form a diagram for the Pontryagin link of $h_L$, with global framing $-(pq+r)$.  This is exactly the situation described in \exref{basecase}, and so  
+$$
+\nu(h_{L_{pqr}}) \ = \ \nu(h_L) \ = \ 0 \ \in \ \bz_{2\gcd(p,q,r)}
+$$
+as asserted. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+\part{Proof of the inductive step of \thmref{A}}
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+First recall from \exref{delta} that any three-component link $L$ with pairwise linking numbers $p$, $q$ and $r$ is link homotopic to a link obtained from $L_{pqr}$ by a sequence of delta moves of the type shown in \textup{\figref{delta}} $($or its inverse$)$, by a result of Murakami and Nakanishi \cite{MurakamiNakanishi}.  It was shown in that example that each such move increases $\mu(L)$ by $1$.  
+
+Now observe that such a delta move $\Delta:L\to\what L$ can be viewed as a double crossing change $\bd$, of the kind shown in \figref{double},
+% on page \pageref{double} 
+composed with an isotopy, as indicated in \figref{deltadouble}.  By \corref{double}, this double crossing change increases $\nu(L)$ by $2$, and so $\Delta$ does the same. 
+
+%%% FIGURE 29: DeltaDouble %%%
+\begin{figure}[h!]
+\includegraphics[height=180pt]{FigDeltaDouble.pdf}
+\put(-55,72){ isotopy}
+\put(-132,142){\small$\bd$}
+\put(-210,68){\small$\Delta$}
+\put(-270,135){$L$}
+\put(-255,107){\small$X$}
+\put(-170,160){\small$Y$}
+\put(12,135){$\what L$}
+\put(-140,5){$\what L$}
+\caption{Another view of the delta move}
+\label{fig:deltadouble}
+\end{figure}
+%%%%%%%%%%%%%%%%%%   
+
+Since this argument applies to an arbitrary delta move, it follows that $\nu(L) = 2\mu(L)$ for {\it all} three component links $L$.  This completes the proof of \thmref{A}. 

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ki6c/blocks/prose-sec-025",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ki6c/blocks/prose-sec-025",
   "kind": "prose",
-  "title": "We note that, when s +u \u0015 1",
-  "pageStart": 43,
-  "pageEnd": 43,
-  "text": "../sections/sec-025-1-we-note-that-when-s-u-1.md",
-  "derivedFrom": "library/ki6c/manifest",
-  "sourceDocument": "library/ki6c/manifest",
+  "title": "References",
+  "pageStart": 70,
+  "pageEnd": 72,
+  "text": "../sections/sec-025-references.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
   "provenance": "ingested"
 }

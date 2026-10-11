@@ -1,8 +1,13 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/pjm-v154-n1-p09-s/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/pjm-v154-n1-p09-s/manifest.jsonld",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "The period matrix of Bring's curve",
   "contains": [
@@ -16,8 +21,11 @@
     "library/pjm-v154-n1-p09-s/sections/sec-007"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "pjm-v154-n1-p09-s",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "pjm-v154-n1-p09-s.pdf",
     "source_sha256": "cbf5c02babe5a61ed34fdd5b67f8af30c4c8b8fcdb8d4a64c33c94fc02860538",
     "pages": 25,

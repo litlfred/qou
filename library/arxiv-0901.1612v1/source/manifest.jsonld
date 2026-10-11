@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0901.1612v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0901.1612v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0901.1612&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0901.1612v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/0901.1612v1",
+    "content_type": "application/gzip",
+    "sha256": "5e12b698a12275e8e89ccd69056b12f3a44ba60f6c662303a83c9067ea61c89a",
+    "bytes": 260353,
+    "fetched": "2026-10-10T15:01:43+00:00",
+    "files": [
+      {
+        "path": "source/files/INDENT.STY",
+        "role": "sty",
+        "sha256": "13143b53d756bee5e222b24cca41e14c45f1ba5c9fe7cfb7f661296f9deb0472",
+        "bytes": 5150
+      },
+      {
+        "path": "source/files/RA8Jan7.tex",
+        "role": "tex",
+        "sha256": "2f265ff7e7780ea397ba3942e9e8b55f51cd603d7d0c02ff74a3862165b6cf27",
+        "bytes": 76919
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

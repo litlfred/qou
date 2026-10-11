@@ -8,182 +8,63 @@ pages: 47-50
 source_pdf: 2207.07246v2.pdf
 source_sha256: 91e70e5fe39e07a5
 doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 58 sections: Front matter; ABSTRACT; LIST OF TABLES"
+text_source: latex
+latex_prose_ratio: 0.873
+latex_coverage_ratio: 0.88
 ---
-We need to recast Eq.(2.11) into a form that is suitable for PIMC calculations. We
-set the total time τ as τ =τ1 +τ2 =N∆τ, and we insert N short-time propagators
-U(∆τ) in Eq.(2.11) as well as inserting corresponding identity operators in Eqs.(2.36)
-at each of them, then Eq.(2.11) with short-time propagator becomes,
-⟨ ˆO(∆τ)⟩=
-Re∑
-S′
-∫
-DR′⟨ΨT|R0S0⟩⟨R0S0|U(∆τ)|R1S1⟩...⟨RISI| ˆO|RI+ 1SI+ 1⟩...⟨RN+ 1SN+ 1|ΨT⟩
-Re∑
-S
-∫
-DR⟨ΨT|R0S0⟩⟨R0S0|U(∆τ)|R1S1⟩...⟨RN−1SN−1|U(∆τ)|RNSN⟩⟨RNSN|ΨT⟩,(2.84)
-where∑
-S′
-and
-∫
-DR′ in the numerator means ∑
-S0,...,SN+1
-and
-∫
-dR0...dRN+1, and∑
-S
-and
-∫
-DR in the denominator means ∑
-S0,...,SN
-and
-∫
-dR0...dRN.
-37
-For any local operator ˆO in Eq.(2.84), we can write down,
-⟨RISI| ˆO|RI+1SI+1⟩ =⟨SI|OI|SI+1⟩⟨RI|RI+1⟩ =⟨SI|OI|SI+1⟩δ(RI−RI+1), (2.85)
-where OI means operator ˆO with spatial conﬁguration RI. Note that Eq.(2.85) allows
-us to remove RI+1 from the integral in the numerator of Eq.(2.84). So the N +
-2 conﬁgurations R0 to RN+1 in the numerator can ﬁnally be reduced to N + 1
-conﬁgurations from R0 to RN after relabeling. So the actual number of beads in the
-numerator is the same as in the denominator.
-For the propagator in Eq.(2.84) we insert ∑
-SI
-|SI⟩⟨SI| = 1 in Eq.(2.35) and we
-can write down,
-∑
-SI
-⟨RI−1SI−1|US(∆τ)|RISI⟩⟨RISI|US(∆τ)|RI+1SI+1⟩
-=
-∑
-SI
-{
-⟨SI−1|⊗⟨ RI−1|e−V†
-2 ∆τGe−T ∆τe−V
-2 ∆τ|RI⟩⊗| SI⟩
-×⟨SI|⊗⟨ RI|e−V†
-2 ∆τGe−T ∆τe−V
-2 ∆τ|RI+1⟩⊗| SI+1⟩
-}
-=⟨SI−1|e−
-V†
-I−1∆τ
-2 Ge−VI∆τ
-2 e−
-V†
-I ∆τ
-2 Ge−
-VI+1∆τ
-2 |SI+1⟩× Gf
-RI−1RIGf
-RIRI+1, (2.86)
-whereVI means the potential operator V with spatial conﬁguration RI, and e−VI∆τ
-2 is
-calculated by Eq.(2.63). The free particle propagator Gf
-RIRJ =⟨RI|e−T ∆τ|RJ⟩ can be
-calculated by Eq.(2.69). By repeatedly using Eq.(2.86) in Eq.(2.84) we can remove
-anySI sandwiched between two short-time propagators U(∆τ). Finally we are left
-with 2 spin-isospin symbols in the trial wave functions to be summed over, we label
-them S0 and SN, where S0 is for the trial wave function on the left ⟨ΨT|R0S0⟩, and
-SN is for the trial wave function on the right ⟨RNSN|ΨT⟩.
-Furthermore, consider the l and r order picked from the trial wave function Ψ T as
-shown in Eqs.(2.51,2.52), the approximated expectation value ⟨ ˆO(∆τ)⟩ in Eq.(2.84)
-38
-for PIMC calculations can ﬁnally be written as a general form,
-⟨ ˆO(∆τ)⟩ =
-=∑
-l
-∑
-r
-∫
-DRRe[g(R)lr]
-z }| {
-Re
-∑
-S0,SN
-∫
-DR⟨ΨT|R0S0⟩⟨R0S0|[U(∆τ)]N1 ˆO[U(∆τ)]N2|RNSN⟩⟨RNSN|ΨT⟩
-Re
-∑
-S0,SN
-∫
-DR⟨ΨT|R0S0⟩⟨R0S0|[U(∆τ)]N|RNSN⟩⟨RNSN|ΨT⟩
-| {z }
-=∑
-l
-∑
-r
-∫
-DRRe[f(R)lr]
-=
-∑
-l
-∑
-r
-∫
-DR
-{
-Re[g(R)lr]
-|Re[f(R)lr]|
-}
-|Re[f(R)lr]|
-∑
-l
-∑
-r
-∫
-DR
-{
-Re[f(R)lr]
-|Re[f(R)lr]|
-}
-|Re[f(R)lr]|
-=
-∑
-l
-∑
-r
-∫
-DRAlr(R)Plr(R)∑
-l
-∑
-r
-∫
-DRBlr(R)Plr(R)
-=⟨Alr(R)⟩
-⟨Blr(R)⟩
-⏐⏐⏐⏐
-{l,r,R}∈Plr(R)
-, (2.87)
-where we use symbolR to denote all the spatial conﬁgurations {R0,R 1,...RN},
-R≡{ R0,R 1,...RN}, (2.88)
-and its integral is the spatial integral over all the conﬁgurations RI,
-∫
-DR≡
-N∏
-I=0
-∫
-dRI. (2.89)
-In Eq.(2.87), Alr(R) and Blr(R) are real functions,
-Alr(R) = Re[g(R)lr]
-|Re[f(R)lr]|, (2.90)
-Blr(R) = Re[f(R)lr]
-|Re[f(R)lr]|, (2.91)
-and we can see that Blr(R) is either 1 or -1.
-In Eq.(2.87), Plr(R) is the probability distribution,
-Plr(R) =|Re[f(R)lr]|
-N , (2.92)
-which is normalized to one in the following way,
-∑
-l
-∑
-r
-∫
-DRPlr(R) = 1, (2.93)
-and its normalization factor is N =∑
-l
-∑
-r
-∫
-DR|Re[f(R)lr]|.
-39
+[]{#Recast label="Recast"}
+
+We need to recast Eq.([\[PIMCopexpdetailshorttime\]](#PIMCopexpdetailshorttime){reference-type="ref" reference="PIMCopexpdetailshorttime"}) into a form that is suitable for PIMC calculations. We set the total time $\tau$ as $\tau=\tau_1+\tau_2=N \Delta \tau$, and we insert $N$ short-time propagators $U(\Delta \tau)$ in Eq.([\[PIMCopexpdetailshorttime\]](#PIMCopexpdetailshorttime){reference-type="ref" reference="PIMCopexpdetailshorttime"}) as well as inserting corresponding identity operators in Eqs.([\[identityRS\]](#identityRS){reference-type="ref" reference="identityRS"}) at each of them, then Eq.([\[PIMCopexpdetailshorttime\]](#PIMCopexpdetailshorttime){reference-type="ref" reference="PIMCopexpdetailshorttime"}) with short-time propagator becomes, $$\begin{aligned}
+\resizebox{.95\hsize}{!}{
+$
+\!\! \langle  \hat{O} (\Delta \tau) \rangle  \!=\!
+\frac{ Re \! \sum\limits_{\mathcal{S}'} \! \int \! \mathcal{D} \mathcal{R}'   \langle \Psi_T| R_0 S_0\rangle
+\langle R_0 S_0 |U(\Delta \tau) | R_1 S_1 \rangle...\langle R_I S_I |\hat{O} | R_{I\!+\!1} S_{I\!+\!1} \rangle ...
+\langle R_{N\!+\!1} S_{N\!+\!1}  | \Psi_T \rangle  }
+{ Re \! \sum\limits_{\mathcal{S}} \! \int \! \mathcal{D} \mathcal{R}  \langle \Psi_T| R_0 S_0\rangle
+\langle R_0 S_0 | U(\Delta \tau) | R_1 S_1 \rangle ... \langle R_{N\!-\!1} S_{N\!-\!1} | U(\Delta \tau) | R_N S_N \rangle
+\langle R_{N} S_{N}  | \Psi_T \rangle }, ~~
+$}
+\label{Oraw}
+\end{aligned}$$ where $\sum\limits_{\mathcal{S}'}$ and $\int \mathcal{D} \mathcal{R}'$ in the numerator means $\sum\limits_{S_0,...,S_{N+1}}$ and $\int d R_0 ... dR_{N+1}$, and $\sum\limits_{\mathcal{S}}$ and $\int \mathcal{D} \mathcal{R}$ in the denominator means $\sum\limits_{S_0,...,S_{N}}$ and $\int d R_0 ... dR_{N}$.
+
+For any local operator $\hat{O}$ in Eq.([\[Oraw\]](#Oraw){reference-type="ref" reference="Oraw"}), we can write down, $$\begin{aligned}
+\langle R_I S_I |\hat{O} | R_{I+1} S_{I+1} \rangle
+= \langle S_I | O_I | S_{I+1} \rangle \langle R_I | R_{I+1} \rangle
+= \langle S_I | O_I | S_{I+1} \rangle \delta (R_I-R_{I+1}) ,
+\label{Orawreduce}
+\end{aligned}$$ where $O_I$ means operator $\hat{O}$ with spatial configuration $R_I$. Note that Eq.([\[Orawreduce\]](#Orawreduce){reference-type="ref" reference="Orawreduce"}) allows us to remove $R_{I+1}$ from the integral in the numerator of Eq.([\[Oraw\]](#Oraw){reference-type="ref" reference="Oraw"}). So the $N+2$ configurations $R_0$ to $R_{N+1}$ in the numerator can finally be reduced to $N+1$ configurations from $R_0$ to $R_{N}$ after relabeling. So the actual number of beads in the numerator is the same as in the denominator.
+
+For the propagator in Eq.([\[Oraw\]](#Oraw){reference-type="ref" reference="Oraw"}) we insert $\sum_{S_I}  |S_I \rangle \langle S_{I} | =1$ in Eq.([\[identityS\]](#identityS){reference-type="ref" reference="identityS"}) and we can write down,
+
+::: flalign
+& \_S_I R\_I-1 S\_I-1 \| U_S() \| R_I S_I R_I S_I \| U_S() \| R\_I+1 S\_I+1\
+& = \_S_I { S\_I-1 \| R\_I-1 \| e\^- e\^-T e\^- \| R_I \| S_I\
+&         S_I \| R_I \| e\^- e\^-T e\^- \| R\_I+1 \| S\_I+1 }\
+&= S\_I-1 \| e\^- e\^- e\^- e\^- \| S\_I+1 G\^f\_R\_I-1 R_I G\^f\_R\_I R\_I+1 , []{#eHrawreduce label="eHrawreduce"}
+:::
+
+where $\mathcal{V}_I$ means the potential operator $\mathcal{V}$ with spatial configuration $R_I$, and $e^{- \frac{\mathcal{V}_{I} \Delta \tau }{2}}$ is calculated by Eq.([\[propagatorv6half\]](#propagatorv6half){reference-type="ref" reference="propagatorv6half"}). The free particle propagator $G^f_{R_I R_J}=\langle R_{I} | e^{-T \Delta \tau} | R_J \rangle$ can be calculated by Eq.([\[propagatorFree\]](#propagatorFree){reference-type="ref" reference="propagatorFree"}). By repeatedly using Eq.([\[eHrawreduce\]](#eHrawreduce){reference-type="ref" reference="eHrawreduce"}) in Eq.([\[Oraw\]](#Oraw){reference-type="ref" reference="Oraw"}) we can remove any $S_I$ sandwiched between two short-time propagators $U(\Delta \tau)$. Finally we are left with 2 spin-isospin symbols in the trial wave functions to be summed over, we label them $S_0$ and $S_N$, where $S_0$ is for the trial wave function on the left $\langle \Psi_T | R_0 S_0 \rangle$, and $S_N$ is for the trial wave function on the right $\langle R_N S_N   | \Psi_T \rangle$.
+
+Furthermore, consider the $l$ and $r$ order picked from the trial wave function $\Psi_T$ as shown in Eqs.([\[lorderdef\]](#lorderdef){reference-type="ref" reference="lorderdef"},[\[rorderdef\]](#rorderdef){reference-type="ref" reference="rorderdef"}), the approximated expectation value $\langle \hat{O}(\Delta \tau) \rangle$ in Eq.([\[Oraw\]](#Oraw){reference-type="ref" reference="Oraw"}) for PIMC calculations can finally be written as a general form,
+
+::: flalign
+()&= \_=\_l_r Re\[f()\_lr\] \
+&= \_l_r { } \|Re\[ f()\_lr\] \| \
+&= \_l_r B\_lr () P\_lr () \
+&= \|\_ {l,r,} P\_lr() , []{#OABP label="OABP"}
+:::
+
+where we use symbol $\mathcal{R}$ to denote all the spatial configurations $\{R_0,R_1,...R_N \}$, $$\mathcal{R} \equiv \{R_0,R_1,...R_N \} ,
+\label{defmathcalR}$$ and its integral is the spatial integral over all the configurations $R_I$, $$\int \mathcal{D} \mathcal{R} \equiv  \prod_{I=0}^N \int d R_I . \label{defmathcalRint}$$
+
+In Eq.([\[OABP\]](#OABP){reference-type="ref" reference="OABP"}), $A_{lr} (\mathcal{R})$ and $B_{lr} (\mathcal{R})$ are real functions, $$\begin{aligned}
+
+A_{lr} (\mathcal{R}) &= \frac{Re[ g(\mathcal{R})_{lr}]}{|Re[ f(\mathcal{R})_{lr}]|  } ,
+\label{Alrform}
+\\
+B_{lr} (\mathcal{R}) &= \frac{Re[ f(\mathcal{R})_{lr}]}{|Re[ f(\mathcal{R})_{lr}]|  } ,
+\label{Blrform}
+\end{aligned}$$ and we can see that $B_{lr} (\mathcal{R})$ is either 1 or -1.
+
+In Eq.([\[OABP\]](#OABP){reference-type="ref" reference="OABP"}), $P_{lr} (\mathcal{R})$ is the probability distribution, $$P_{lr} (\mathcal{R}) = \frac{|Re[ f(\mathcal{R})_{lr}]|}{ \mathcal{N}  },  \label{PlrR}$$ which is normalized to one in the following way, $$\sum_{l}\sum_{r} \int \mathcal{D} \mathcal{R} P_{lr}(\mathcal{R}) =1,$$ and its normalization factor is $\mathcal{N}=\sum_l \sum_r \int \mathcal{D} \mathcal{R} |Re[ f(\mathcal{R})_{lr}]|$.

@@ -1,0 +1,595 @@
+ \section{A resurgence formula for the GPPV invariant }  \label{sec:Zhat}
+  
+  We now turn to the $q$-series invariant $\hat{\z}_0(X,q).$  We follow \cite{GukovCiprian19}. Let $(\Gamma,m)$ be an ordered weighted tree, i.e. $\Gamma$ is a tree together with an ordering of its set of vertices $V$ and $m$ is a map $m:V\rightarrow \Z.$  Set $s=\lvert V \rvert$ and let $M=M(\Gamma,m)$ be the $s\times s$ matrix with entries given by
+  $$M_{i,j}= \begin{cases} m_v & \text{if} \ v_i=v_j=v,
+  \\ 1 & \text{if}  \ v_i \text{ and }  v_j \ \text{are joined by an edge,}
+  \\ 0 & \text{otherwise.} \end{cases}$$
+  We say $M$ is weakly negative definite if $M$ is invertible and $M^{-1}$ is negative definite on the subspace of $\Z^s$ spanned by vertices of degree at most $3.$ Let $Y=Y(\Gamma,m)$ be the oriented three manifold with surgery data $L=L(\Gamma,m)$ constructed as follows. For each vertex $v$ the link $L$ has an unknotted component $L_v$ with framing $m_v,$ and $L_v$ is chained together with $L_w$ if and only if $v$ and $w$ are joined by an edge. We call $Y$ a plumbed manifold with plumbing graph $\Gamma.$
+  
+  We recall that two plumbed three manifolds $Y$ and $Y'$ are diffeomorphic if and only their plumbing graphs are related by Neumann moves. 
+  
+  When $Y$ is a plumbed manifold with weakly negative definite plumbing graph and $Y$ is not necessarily a homology $3$-sphere, the $q$-series invariant $\hat{\z}_a(Y,q)$ depend on a label $a,$ whose precise  meaning is subtle. Originally, these labels where thought to be abelian flat connections, later $\Spin$ structures, and for mapping tori of genus one mapping classes one has include "almost abelian" flat connections (see \cite{2019arXiv191108456C}). As $X=\Sigma(p_1,...,p_n)$ is a homology three sphere, we have $a=0,$ and need not go deeper into this discussion. For the sake of completeness however, we recall the GPPV-formula definition as it is stated in terms of $\Spin$-structures. First we recall how $\Spin$-structures can be described in terms of the adjacency matrix $M.$ This is thorougly explained in \cite{GukovCiprian19}. Let $Y$ be a plumbed three manifold with plumbing graph $\Gamma.$ Let $s=\lvert V \rvert.$ Let $\vec{m} \in \Z^{s}$ be the weight vector, i.e. $m_j=m(v_j).$ Let $\vec{\delta} \in \Z^s,$  be the degree vector i.e. $\delta_j=\text{deg}(v_j).$ We have isomorphisms $$
+  \Spin(Y) \simeq (\Z^s+\vec{m})/ 2M\Z^s \simeq (\Z^s+\vec{\delta})/ 2M\Z^s.$$
+  These isomorphisms  are compatible with Neumann moves as explained in \cite{GukovCiprian19}. We now recall the GPPV-formula \eqref{eq:GPPV}.
+  \begin{definition}[\cite{GukovPeiPutrovVada18}] \label{df:GPPV}
+  	Let $Y$ be a plumbed three manifold with weakly definite plumbing graph $\Gamma.$ Let $\phi$ denote the number of positive eigenvalues of $M$ and let $\sigma$ denote the signature of $M.$ Let $a=[ \vec{a}] \in (\Z^s+\vec{\delta})/ 2M\Z^s \simeq \Spin(Y).$ The $\hat{Z}$-invariant of $(Y,a)$ is given by 
+  	\begin{equation} \label{eq:GPPV}
+  	\hat{\z}_a(Y;q)=(-1)^{\phi}q^{\frac{3\sigma-\sum_v m_v}{4}} \cdot v.p. \oint_{\lvert z_v \rvert=1} \prod_{v\in V} \frac{\dv z_v}{2\pi iz_v}\left(z_v-\frac{1}{z_v}\right)^{2-\text{deg}(v)} \Theta_a^{-M}(\vec{z})
+  	\end{equation}
+  	where $v.p.$ denotes the principal value and
+  	\begin{equation} \Theta_a^{-M}(\vec{z})=\sum_{\vec{l}\in 2M\Z^s+\vec{a}}
+  	q^{-\frac{(\vec{l},M^{-1}\vec{l}))}{4}} \prod_{v \in V} z_v^{l_v}
+  	\end{equation}
+  \end{definition}
+  \begin{remark} The invariance of \eqref{eq:GPPV} under Neumann moves is proved by Gukov and Manulescu in \cite{GukovCiprian19}. \end{remark} We recall that the principal value $v.p.$ is defined such that for every sufficiently small $\epsilon >0$ we have $$v.p. \oint_{\lvert z \rvert =1}= \frac{1}{2}\left(\oint_{\lvert z \rvert =1+\epsilon}+\oint_{\lvert z \rvert =1-\epsilon}\right).$$  
+  
+  \subsection{Proof of Theorem \ref{thm:zedhat}}
+  We now consider $X= \Sigma(p_1,...,p_n)$ in more detail. Choose $q_1,..., q_n \in \N$ such that for each $j=1,...,n$ we have $(p_j,q_j)=1, $ $p_j \leq q_j$ and
+  \begin{equation}
+  p_0:=\frac{-1}{P}-\sum_{j=1} \frac{q_j}{p_j} \in \Z_{<0}.
+  \end{equation}
+  Then $e=-1/P<0$ is the  Seifert Euler number. Choose a continued fraction expansion of $q_j/p_j$ for each $j=1,...,n$
+  $$\frac{q_j}{p_j}=k_{j,1}- \frac{1}{k_{j,2}- \frac{1}{\ddots-k_{j,s_j}}}.$$ As explained in \cite{GukovCiprian19}, $X$ has a negative definite plumbing graph $\Gamma$ defined as follows. The graph $\Gamma$ is star-shaped with $n$ arms and  central vertex $v_0$ with weight $p_0.$ For each $j=1,...,n$ the $j'$th arm has $s_{j}$ vertices. If these are ordered $(v_{j,1},...,v_{j,s_j})$ with $v_{j,1}$ being closest to the central vertex $v_0$, then $v_{i,j}$ have weight $-k_{j,i}.$ This graph is illustrated for $n=3$ in Figure \ref{fig:graph} \begin{figure}[htp]
+  	\centering
+  	\includegraphics[scale=0.8]{Graph.pdf}
+  	\caption{Plumbing graph for $X$ in the case $n=3.$}
+  	\label{fig:graph}
+  \end{figure}
+  
+  
+  Before proving Theorem \ref{thm:zedhat}, we first give a formula for the rational exponent $\Delta \in \mathbb{Q}.$  For each $j=1,...,n$ let $X_j$ be the plumbed manifold whose graph $\Gamma_j$ is identical to $\Gamma$ except that on the $j'$th arm, we delete the terminal vertex $v_{j,s_j}.$  Define $h_j \in \N$  as
+  $$h_j= \lvert \h_1(X_j,\Z) \rvert. $$
+  Observe that the total number of vertices of $\Gamma$ is given by$s=1+\sum_{j=1}^n s_j.$ Define $\Delta \in \mathbb{Q}$ by
+  \begin{equation} \label{def:delta}
+  \Delta=-\frac{1}{4}\left(\sum_{j=1}^n h_j- 3s- p_0+ \sum_{ j=1}^n \left(-\frac{P}{{p_j}^2}+ \sum_{i=1}^{s_j} k_{j,i} \right) \right)
+  \end{equation} 
+  
+  
+  We now prove Theorem \ref{thm:zedhat}.
+  
+  \begin{proof}
+  	Recall that  $q=\exp(2\pi i \tau)$  where $\tau \in \mathfrak{h}$.  For the sake of notational simplicity, we also introduce the paramter $h=2\pi i \tau$ so that $q=\exp(h)$.  We start by proving that
+  	\begin{equation} \label{eq:integralformula}
+  	\I(h)=\Psi(q),
+  	\end{equation}
+  	where $\Psi(q)$ is the series introduced in \eqref{eq:q-series} and $\I(h)$ is the contour integral introduced in \eqref{eq:contourintegral} (with $h=2\pi i \tau)$. Observe that for the purpose of proving \eqref{eq:integralformula} we can and will assume that
+  	$$\tau \in i \R_{>0},$$
+  	because if the identity \eqref{eq:integralformula} holds true on this half-line, it has to hold on the entire upper half-plane $\mathfrak{h}$, since both functions are holomorphic in $\mathfrak{h}$. 
+  
+  	
+  	Set  \begin{equation} \label{def:Bnorm}
+  	\mathcal{B}(\zeta)=\frac{1}{2\sqrt{P}}\mathcal{B}(\z_{0})\left(\frac{\zeta}{2\pi i}\right).
+  	\end{equation}
+  	For all $t\in \C$ with $\sqrt{t} \in \{z \in \C\mid \re(z)<0\}$ the normalized Borel transform $\mathcal{B}$ satisfies by Theorem \ref{2.1}
+  	\begin{equation} \label{eq:twistedBorel} \mathcal{B}(t)= \frac{1}{\sqrt{t}} \sum_{m=m_0}^{\infty} c_m \exp\left(m\sqrt{\frac{t}{P}} \right)= \frac{1}{\sqrt{t}}  G\left(\exp\left(\sqrt{\frac{t}{P}} \right)\right)\end{equation}
+  	where for all $m\in \N$ we have that
+  	$$c_m=(-1)^n\chi_m.$$
+  	For each $m\in \Z_{\geq m_0}$ introduce the polynomial
+  	$$p_m(w)=-\frac{w^2}{h}+\frac{m}{\sqrt{P}}w.$$
+  	This is a Morse function with a unique saddle point at 
+  	$w_m=\frac{h m}{2 \sqrt{P}}$
+  	and we have that
+  	$$p_m(w_m)=h \frac{m^2}{4P}.$$
+  	Let $\Disc(R)$ be the closed ball centered at the origin with radius $R> \lvert m_0 \rvert$. We can deform $i\R$ slightly to a contour $\Delta_m \subset \{z\in \C: \re(z)<0\}\cup \Disc(R),$ which passes through the saddle point $w_m$ and such that the function given by  $$w \mapsto \exp(p_m(w)),$$ have exponential decay along $\Delta_m.$ The orientation of $\Delta_m$ is as depicted in Figure \ref{fig:Delta}. We remark that Figure \ref{fig:Delta} depicts the situation where $m_0\geq 0$. 
+  	\begin{figure}[htp]
+  		\centering
+  		\includegraphics[scale=0.8]{ContourDeltam.pdf}
+  		\caption{The contour $\Delta_m.$}
+  		\label{fig:Delta}
+  	\end{figure}
+ Recall that if $\Gamma$ is a steepest descent contour through the unique saddle point of a degree two polynomial $p(z)=-\alpha z^2+\beta z,$ then we have the following exact formula known as Gaussian integration
+  	$$\int_{\Gamma} \exp(p(z)) \ \dv z= \sqrt{\frac{\pi}{\alpha}}\exp\left(\frac{\beta^2}{4\alpha}\right).$$  Applying Gaussian integration to the polymonials $p_m$ gives us  the following identity
+  	\begin{equation} \label{eq:psipsipsi}
+  	(-1)^n\Psi(q)=\sum_{m=m_0}^\infty c_m q^{\frac{m^2}{4P}}=\sum_{m=m_0}^\infty c_m \frac{1}{\sqrt{\pi h}} \int_{i\R}  \exp\left(p_m(w) \right)\dv w.
+  	\end{equation}
+  	Choose a small postive parameter $\delta>0$ and introduce the contour $$\Delta_0 =e^{i\delta}i\R_+ \cup e^{-i\delta}i\R_{-} \subset \{z \in \C: \re(z)<0\}.$$ 
+  	Let $\Upsilon \subset  \{z\in \C: \Re(z)<0\}$ be the Hankel contour which encloses $\R_{-}$ and satisfies $\sqrt{\Upsilon}=\Delta_0.$ The orientation of these contours are given as in Figure \ref{fig:UpsilonDelta}. \begin{figure}[htp]
+  		\centering
+  		\includegraphics[scale=0.8]{ContourUpsilonDeltaZero}
+  		\caption{The contours $\Upsilon$ and $\Delta_0.$}
+  		\label{fig:UpsilonDelta}
+  	\end{figure}   We let 
+  	$$\Upsilon_\pm = \Upsilon \cap \{z \in \C: \im(z) \in \R_{\mp }\},$$ 
+  	so that $\sqrt{\Upsilon_+}= e^{i\delta}i\R_+ $ and $-\sqrt{\Upsilon_-}= e^{-i\delta}i\R_{-}$ where $\sqrt{\cdot}$ denotes the principal branch of the square root. Introduce the variable $$w^2=v.$$ As $\Delta_0$ is a small deformation of $\Delta_m$ for each $m\in \Z_{\geq m_0},$ we obtain
+  	\begin{align} \begin{split} \label{eq:hammerdammer}
+  	\sum_{m=m_0}^\infty  \frac{c_m}{\sqrt{\pi h}} \int_{i\R} \exp(p_m(w)) \ \dv w &= \sum_{m=m_0}^\infty   \sum_{\epsilon =\pm 1 } \frac{c_m}{\sqrt{\pi h}}  \ \int_{\Upsilon(\epsilon)}  \frac{\exp\left(-\frac{v}{h}+\epsilon \frac{m}{\sqrt{P}}\sqrt{v} \right)}{\epsilon 2\sqrt{v}} \ \dv v
+  	\\ &= \sum_{\epsilon=\pm 1}\frac{1}{2\sqrt{\pi h}}\int_{\epsilon \Upsilon(\epsilon)} \frac{\exp(-\frac{v}{h})}{\sqrt{v}} \sum_{m=m_0}^{\infty} c_m e^{\epsilon \frac{m\sqrt{v}}{\sqrt{P}}} \ \dv v
+  	\\ &= \sum_{\epsilon=\pm 1 } \frac{1}{2\sqrt{\pi h}}\int_{\epsilon \Upsilon(\epsilon)} \exp\left(-\frac{v}{h}\right) \mathcal{B}(v) \ \dv v
+  	\end{split}
+  	\end{align}
+  	In the second equality of \eqref{eq:hammerdammer} we used that $\epsilon \sqrt{v} \in \{z \in \C: \re{z}<0 \}$ for all $v \in \Upsilon(\epsilon),$ and the contour $-\Upsilon(-1)$ denotes $\Upsilon(-1)$ but oriented in the direction from the origin and towards infinity.  In the third equality of \eqref{eq:hammerdammer} we used equation \eqref{eq:twistedBorel} and the identity
+  	\begin{equation}
+  	G(z)=G\left( \frac{1}{z} \right),
+  	\end{equation}
+  	which follows directly from the definition of $G$.
+  	Now introduce the variable
+  	$$\xi=\frac{v}{2\pi i}.$$
+  	This identifies (up to a small deformation) the $v$ contour $\Upsilon_+- \Upsilon_-$  with the $\xi$  contour $\varGamma$ introduced in Figure \ref{fig:ContourGamma}. 
+
+  We have 
+  	\begin{multline} \label{eq:ey}
+  	\sum_{\epsilon=\pm 1 } \frac{1}{2\sqrt{\pi h}}\int_{\epsilon \Upsilon(\epsilon)} \exp\left(-\frac{v}{h}\right) \mathcal{B}(v) \ \dv v
+  	\\= \sum_{\epsilon=\pm 1 } \frac{2\pi i }{2\sqrt{\pi h}}\int_{\exp(\epsilon \frac{\pi i}{4})i\R_+}  \exp\left(-\frac{2\pi i \xi}{h}\right) \mathcal{B}(2 \pi i \xi) \ \dv \xi
+  	\\ = \sum_{\epsilon=\pm 1 } \frac{2\pi i }{2\sqrt{\pi h}} \frac{\sqrt{2\pi i}}{8\kappa} \int_{\exp(\epsilon \frac{\pi i}{4})i\R_+}  \exp\left(-\frac{2\pi i \xi}{h}\right)\mathcal{B}(\z_{0})(\xi) \ \dv \xi.
+  	\end{multline}
+  	In the last equality of  \eqref{eq:ey} we used Equation \eqref{def:Bnorm}, which relates $\mathcal{B}$ and $\mathcal{B}(\z_0).$ Now recall that $\kappa=\sqrt{2\pi i P}$, since $H=1$ and recognize the pre-factor in the last line of \eqref{eq:ey} as
+  	\begin{equation}
+  	\frac{2\pi i }{2\sqrt{\pi h}} \frac{1}{\sqrt{P}2} =(-1)^n\frac{\lambda}{\sqrt{\tau}},
+  	\end{equation}
+  	where $\lambda$ is the scalar introduced in the statement of Theorem \ref{thm:zedhat}. By combining
+  	Equations \eqref{eq:psipsipsi}, \eqref{eq:hammerdammer} and \eqref{eq:ey}, we see that Equation \eqref{eq:integralformula} holds. 
+  	
+  	Write $\hat{\z}_0(X;q) =\hat{\z}_0(q)$. We now  show that 
+  	\begin{equation} \label{eq:numerodos}
+  	\Psi(q)=q^{\Delta}\hat{\z}_0(q),
+  	\end{equation}
+  	where $\Delta \in \mathbb{Q}$ is the scalar introduced in \eqref{def:delta}. This will establish \eqref{eq:zedhat} and thereby finish the proof. We start with $\hat{\z}_0(q).$ By Definition \ref{df:GPPV} and since in this case $\phi =0$, we have that
+  	\begin{equation} \label{eq:G1}
+  	\hat{\z}_0(q)=q^{\frac{3\sigma-\sum_v m_v}{4}}\sum_{\vec{l}\in 2M\Z^s}
+  	q^{-\frac{(\vec{l},M^{-1}\vec(l))}{4}}  \oint_{\lvert z_v \rvert=1} \prod_{v\in V} \frac{\dv z_v}{2\pi iz_v}\left(z_v-\frac{1}{z_v}\right)^{2-\text{deg}(v)} z_v^{l_v}.
+  	\end{equation}
+  	Here it is understood that we have taken the principal value of the integral as explained above. Recall that for a Laurent series $a(z)=\sum_{j \in \Z} a_jz^j$ we have that
+  	$$v.p. \oint_{\lvert z \rvert =1} \frac{\dv z}{2\pi i z} a(z)=a_0.$$
+  	For our star-shaped plumbing graph $\Gamma,$ the  non-zero  contributions to  \eqref{eq:G1} comes from 
+  	$\vec{l}\in 2M\Z^s$ with
+  	$l_w=0$ for all of the entries corresponding to an  internal vertex $w$ of an arm, and $l_v=\pm 1$ if $v$ is a terminal vertex of an arm and then from the central vertex $v_0$, which we will now consider. 
+  	
+  	In comparing $\hat{\z}_0(q)$ with $\Psi(q)$ it is useful to introduce the integer sequence $\{a_j\}_{j=0}^{\infty}$ determined by
+  	\begin{equation} \label{eq:a_j}
+  	\left(t-t^{-1}\right)^{2-n}= \begin{cases} 
+  	\sum_{j=0}^{\infty} a_j t^{2j+n-2}, \ & \text{if} \ \lvert t \rvert <1
+  	\\ 
+  	\\
+  	\sum_{j=0}^{\infty} (-1)^n a_j t^{-2j-n+2}, \ & \text{if} \ \lvert t \rvert >1.
+  	\end{cases}
+  	\end{equation}  
+  The $a_j$'s can be explicitly evaulated: By the formula for the geometric series $(1-t)^{-1}= \sum_{j=0}^{\infty} t^j$ and Cauchy multiplication of power  series, we see that
+  $$\frac{1}{(1-t)^m}= \sum_{j=0}^{\infty} \left( \sum_{ j_1+\cdots+ j_m=j} 1\right) t^j=  \sum_{j=0}^{\infty} {{j+m-1}\choose{j}}  t^j,$$
+  and therefore one sees that
+  $$a_j=(-1)^n {{j+n-3}\choose{j}}.$$
+  However for the comparison of $\hat{\z}_0(q)$ and $\Psi(q)$  given below, we don't need the closed form for $a_j$, but rather the equation \eqref{eq:a_j}.
+  	
+  	Write $z_{v_0}=z$ and $l=l_{v_0}$. We obtain
+  	\begin{equation}
+  	v.p. \oint_{\lvert z \rvert =1} \frac{\dv z}{2\pi i z} \left(z-z^{-1}\right)^{2-n} z^{l}= \begin{cases}
+  	\frac{1}{2}a_{\frac{l-n+2}{2}} \ & \text{if} \ 2-n-l \in 2 {\mathbb Z}_+,
+  	\\
+  	\\ \frac{1}{2}(-1)^na_{\frac{2-n-l}{2}} & \ \text{if} \ l-n+2 \in 2{\mathbb Z}_+,
+  	\\
+  	\\ a_0 \ & \text{if}\  l=0, n= 2.
+  	
+  	\end{cases}
+  	\end{equation}
+  	
+  	
+  	We know that the adjacency matrix $M$ is unimodular, and so $M\Z^s=\Z^s.$ Define a map $\vec{l}:\{\pm 1 \}\times  \N \times \{\pm 1\}^{n} \rightarrow \Z^s$  as follows: For the central vertex $v_0$ we have
+  	\begin{equation}\vec{l}(\varepsilon,j,\epsilon)_{v_0}=\varepsilon(-2j+2-n).
+  	\end{equation}
+  	For $m=1,...,n$ and the terminal vertex $v$ of the $m'$th arm, we have
+  	$$\vec{l}(\varepsilon, j,\epsilon)_{v}=\epsilon_m,$$
+  	and for every internal vertex $w$ of the arms, we have
+  	$$\vec{l}(\varepsilon,j,\epsilon)_{w}=0.$$
+  	With this notation, the above considerations show that
+  	\begin{equation}
+  	\hat{\z}_0(q)=q^{-\frac{3s+\sum_v m_v}{4}} \sum_{\varepsilon=\pm 1} \sum_{r=0}^{\infty} \sum_{\epsilon \in  \{\pm 1\}^{n}} (-1)^{\frac{(1-\varepsilon)(n-2)}{2}} \frac{a_r}{2} \left(\prod_{j=1}^n \epsilon_j \right)
+  	q^{-\frac{\left\langle \vec{l}(\varepsilon ,r,\epsilon),M^{-1} \vec{l}(\varepsilon,r,\epsilon), \right\rangle}{4}}.
+  	\end{equation}
+  	If we apply the symmetry that simultaneously changes the sign of all $\epsilon_j$ and $\varepsilon,$ then we we obtain
+  	\begin{equation}
+  	\hat{\z}_0(q)=(-1)^{n}q^{-\frac{3s+\sum_v m_v}{4}} \sum_{r=0}^{\infty} \sum_{\epsilon \in  \{\pm 1\}^{n}} a_r  \left(\prod_{j=1}^n \epsilon_j \right) q^{-\frac{\left\langle \vec{l}(-1,r,\epsilon),M^{-1} \vec{l}(-1,r,\epsilon), \right\rangle}{4}}.
+  	\end{equation}
+  	The quadratic form $$
+  	\vec{l} \mapsto \langle \vec{l} ,M^{-1}\vec{l}\rangle/4$$ was computed for $n=3$ in \cite{GukovCiprian19} in their proof of Proposition $4.8$. The size of the matrix $M^{-1}$ is irrevelant to their computation, and their formula can be generalized to our case to give the formula \begin{equation}
+  	\hat{\z}_0(q)=(-1)^nq^{-\Delta} \sum_{r=0}^{\infty} \sum_{\epsilon \in  \{\pm 1\}^{n}} a_r \left( \prod_{j=1}^n \epsilon_j \right) q^{\frac{P}{4}\left(2r+(n-2)+\sum_{j=1}^n  \epsilon_j \frac{1}{p_j}\right)^2.}
+  	\end{equation}
+  	We now compute $\Psi(q).$  For $\lvert z \rvert <1$ we have
+  	\begin{align}
+  	G(z)= &\prod_{j=1}^{n-2} \left(z^{\frac{P}{p_j}}-z^{-\frac{P}{p_j}}\right)\left(z^{P}-z^{-P}\right)^{2-n}
+  	\\ =& \sum_{r=0}^{\infty} \sum_{\epsilon \in  \{\pm 1\}^{n}} a_r \left( \prod_{j=1}^n \epsilon_j   \right) z^{2Pr+P(n-2)+\sum_{j=1}^{n}\epsilon_j  \frac{P}{p_j}}.
+  	\end{align}
+  	It follows that 
+  	\begin{equation}
+  	\Psi(q)=(-1)^n \sum_{r=0}^{\infty} \sum_{\epsilon \in  \{\pm 1\}^{n}} a_r  \left( \prod_{j=1}^n \epsilon_j  \right) q^{\frac{\left(2Pr+P(n-2)+\sum_{j=1}^{n}\epsilon_j  \frac{P}{p_j}\right)^2}{4P}}.
+  	\end{equation}
+  	This shows  \eqref{eq:numerodos}. \end{proof}
+  
+  We obtain the following corollary.
+  \begin{corollary}
+  	Let $\z_0 \in x^{-1/2}\C[[x^{-1}]]$ be the normalization of the Ohtsuki series from Theorem \ref{2.1}. We have an asymptotic expansion
+  	\begin{equation}
+  	q^{\Delta} \hat{\z}_0(X;q) \sim_{q\rightarrow 1} \frac{2\lambda}{\sqrt{\tau}} \z_0(1/\tau).
+  	\end{equation}
+  \end{corollary}
+
+
+
+\begin{proof}
+	This is a consequence of the integral formula \eqref{eq:zedhat} from Theorem \ref{thm:zedhat}
+	\begin{align} q^{\Delta}\hat{\z}_0(X;q)&= \frac{\lambda}{\sqrt{\tau}} \int_{\varGamma} \exp(-\zeta / \tau )  \mathcal{B}(\z_0) (\zeta) \ \dv \zeta
+	\\ &= \frac{\lambda}{\sqrt{\tau}} \sum_{\epsilon\in \{\pm1\}} \mathcal{L}_{\varGamma_{\epsilon}} (\mathcal{B}(\z_0))(1/\tau)
+	\end{align}
+	and Borel-Laplace resummation, which is stated as Theorem \ref{thm:BorelLaplaceresummation} below.  
+	\end{proof}
+  
+  
+  Let us now recall previous work on the $q$-series $\Psi.$ We start with the case  $n=3,$ for which more is known. As already mentioned in the introduction, Lawrence and Zagier have shown in \cite{LawrenceZagier} that the quantum invariant $\tau_k(X)$ can be recovered as the radial limit of $\Psi(q),$ as $q$ tends to $\exp(2\pi i/k)$.
+   This was generalized to $n=4$ by Hikami in \cite{Hikami05b} but with corrections terms appearing.  The series $\Psi$ have interesting arithmetic properties; the coefficients $\chi(m)$ are periodic functions of period $2P$ and $\Psi$ is the so-called Eichler integral of a mock modular form with weight $3/2.$ As mentioned in the introduction the connection between quantum invariants and number theory was further pursued by Hikami in a number of articles \cite{Hikami05c, Hikami2004,  Hikami05b,Hikami06q, Hikami11}. For general $n\geq 3$ we mention again the work \cite{Hiroyuki} of Fuji, Iwaki, Murakami and Terashima which was discussed in the introduction.
+  
+  
+  Let us now discuss what was previosly known about the $q$-series invariant $\hat{\z}_0(X).$ In \cite{GukovCiprian19} it was shown that when $X$ is a Briskekorn sphere $\Sigma(p_1,p_2,p_3),$ (i.e. $n=3$) then  $\hat{\z}_0(X)$ is a linear combination of so-called false theta functions.  The $q$-series invariant $\hat{\z}_0$ was also considered for certain Seifert fibered manifolds (with up to $n=4$ singular fibers) in the work \cite{ChungHJ18}, as well as a proposed analog of $\hat{\z}_0$ for higher rank gauge group - see also \cite{2019arXiv190913002P} for further developments in this direction. In this paper we work exclusively with $G=\SU(2)$).
+  
+  In connection with the work \cite{LawrenceZagier}, Zagier invented the notion of a quantum modular form. This notion was generalized by Bringmann et al. in \cite{BKM17}, where they introduce the notion of a higher depth quantum modular form.  For any $n\geq 3,$ it is known, that $\Psi$ is a linear combination of derivatives of quantum modular forms \cite{BMA18,BMA19june}. It is interesting to observe that $\Psi$ is obtained  from the Borel transform through a resummation process reminiscent of the median resummation of \cite{CostinGaroufalidis11}. Moreover as explained in \cite{ChengChunFerrariGukovHarrison18} it is expected that for a general $3$-manifold $M,$ Mock/false modular form duality is related to $\widehat{Z}_a(M;q)$, i.e. there exists an associated pair of a so-called Mock modular form and a so-called false modular form, and these are related by a $q \mapsto q^{-1}$ transformation and have the same transseries expression near $q \rightarrow 1.$ This is quite possibly connected to the conjecture $2$ in \cite{Garoufalidis08} (called the symmetry conjecture).  Let us also mention the work \cite{TudorGaroufalidis15} by Dimofte-Garoufalidis which connects modularity in quantum topology with complex Chern-Simons theory.
+  
+  \section{The asymptotic expansion of the GPPV invariant} \label{sec:radiallimit}
+  
+The invention of $\hat{\z}$ was party motivated by an attempt to generalize the following discovery of Lawrence and Zagier. Set $q_k=\exp(2\pi i/k).$ For $n=3$ they proved in \cite{LawrenceZagier} the identity (for some $\sigma \in \Q)$  $$\tau_k\left(\Sigma(p_1,p_2,p_3)\right)(q_k-1)q_k^{\sigma}= -\frac{1}{2} \lim_{q \rightarrow q_k} \sum_{m=m_0}^{\infty} \chi_mq^{\frac{m^2}{4P}}.$$
+For a closed oriented $3$-manifold $Y$ consider the normalized WRT invariant 
+\begin{equation}
+\z_{\CS}(Y;k)= \frac{\tau_k(Y)}{\tau_k(\Sph^2 \times \Sph^1)}.
+\end{equation} 
+We now state the radial limit conjecture.
+\begin{conjecture}[\cite{GukovCiprian19}]  \label{Conj:radiallimt} Let $Y$ be a closed oriented $3$-manifold with $b_1(Y)=0.$ Set $$T=\Spin(Y)/\Z_2.$$ For every $a\in T,$ there exists invariants
+	$$\Delta_a \in \Q, \ c \in \Z_+, \ \hat{\z}_a(q) \in 2^{-c}q^{\Delta_a}\Z[[q]],$$ with the following properties. The series $\hat{\z}_a(q)$ is convergent inside the unit disc $\{q\mid \  \lvert q \rvert <1\},$ and for infinitely many $k \in \N$ the radial limits $\lim_{q \uparrow \exp(2\pi i/k)} \hat{\z}_a(q)$ exists and we have that
+	\begin{equation}
+	\z_{\CS}(Y;k)=(i\sqrt{2k})^{-1} \sum_{a,b\in T} e^{2\pi i k lk(a,a)} \lvert \mathcal{W}_{b} \rvert^{-1} S_{a,b} \lim_{q\uparrow \exp(2\pi i/k)} \hat{\z}_b(q).
+	\end{equation}
+	Here $$S_{a,b}=\frac{e^{2\pi i kl(a,b)}+e^{-2\pi i kl(a,b)}}{\lvert \mathcal{W}_{a} \rvert \sqrt{\lvert \h_1(Y;Z)\rvert}},$$
+	and $\mathcal{W}_x$ is the $\Z_2$-stabilizer of $x.$
+\end{conjecture}
+\begin{remark} Conjecture \ref{Conj:radiallimt} appeared in slighly different form in \cite{ChengChunFerrariGukovHarrison18, GukovPeiPutrovVada18,GukovMarinoPutrov}.
+	\end{remark}  The level $k$ WRT invariant $\tau_k(M)$ of a closed oriented $3$-manifold $M$ can be seen as a function of the $k$-root of unity  $q_k=\exp(2\pi i/k)$, and as such it is a function of a certain subset of the boundary of the unit disc $\Disc=\{q : \lvert q \rvert <1\}.$ Assume $b_1(M)=0$ and define the $k$-dependent $q$-series
+\begin{equation}
+\hat{\z}_k(M;q)=(i\sqrt{2k})^{-1} \sum_{a,b\in T} e^{2\pi i k\  lk(a,a)} \lvert \mathcal{W}_{b} \rvert^{-1} S_{a,b}\hat{\z}_b(q).
+\end{equation}
+Then $\hat{\z}_k(M;q)$ is convergent for $q \in \Disc$ and the radial limit conjecture states
+$$\lim_{q \uparrow q_k} \hat{\z}_k(M;q)=\tau_k(M).$$ Thus $\hat{\z}_k(M;q)$ can be seen as an analytic extension of $\tau_k(M)$ to the interior of the unit disc as illustrated in Figure \ref{fig:analytic} below
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.4]{UnitDisc.pdf}
+	\caption{Analytic extension of $\tau_k(M)$.}
+	\label{fig:analytic}
+\end{figure}
+
+
+\subsection{Proof  of Theorem \ref{thm:radiallimit}}
+
+To simplify notation, we write $$\hat{\z}_0(X;q)=\hat{\z}(q).$$ 
+Recall the decomposition \eqref{phasedecomp} of the normalized quantum invariant $\tilde{\z}_k(X)$ into an integral part $\z^{\I}$ and a residue part $\z^{R}$.	In Lemma \ref{Lemmaet} we prove the existence of an analogous decomposition for $\hat{\z}_0(q)$ into a Laplace integral part $\mathcal{L}$ and a residue part $R$ 	\begin{equation} \label{eq:sumoftwoparts}
+	q^{\Delta}\hat{\z}_0(q)= \mathcal{L}(\tau)+R(\tau),
+	\end{equation}
+	where we recall that $q = e^{2\pi i \tau}.$
+We present in Proposition \ref{pro:ZagiersProposition} a standard result in complex analysis \cite{LawrenceZagier} which asserts that a $q$-series with periodic coefficients of mean value zero has an asymptotic expansion, as $q$ tends to a root of unity. We then show in Proposition \ref{pro:Fmeanvaluezero} that $R$ satisfy this hypothesis.  Finally, we apply Proposition \ref{pro:ZagiersProposition} to prove Theorem \ref{thm:radiallimit}.
+
+\subsubsection{The decomposition of the GPPV invariant} 
+
+Recall that $q=\exp(2 \pi i \tau)$ with $\tau \in \mathfrak{h}$ where $\mathfrak{h}$ denotes the upper half plane, and recall the definitions of $F \in \mathcal{M}(\C)$ and $g \in \C[x]$ given in \eqref{def:F}. Let $\tilde\Gamma_+ = e^{\frac{\pi i}{4}}$.
+\begin{lemma} \label{Lemmaet}
+Introduce the holomorphic functions $\mathcal{L},R \in \mathcal{O}(\mathfrak{h})$ given by
+	\begin{align}
+	\mathcal{L}(\tau) &= \frac{2\lambda}{\sqrt{\tau}} \int_{\varGamma_+} e^{-x /\tau} \mathcal{B}(\z_0)(x) \ \dv x,
+	\\  R(\tau) &= -\frac{2 \lambda} {\sqrt{\tau} } \sum_{m=0 }^{\infty}  \Res\left( \exp\left( \frac{g(\xi)}{\tau}\right) F(\xi) ,\xi= 2 \pi i m\right).
+	\end{align}
+	Then we have that
+	\begin{equation} \label{eq:sumoftwoparts}
+	q^{\Delta}\hat{\z}_0(q)= \mathcal{L}(\tau)+R(\tau).
+	\end{equation}
+	For $\tau$   in the first quadrant $ \mathfrak{h}_+ = \{z\in \mathfrak{h} \mid \Re(z) >0\}$ we have that
+	\begin{equation} \label{eq:DEDEFORMATION}
+		\mathcal{L}(\tau) = \frac{2\lambda}{\sqrt{\tau}} \int_{0}^{\infty} e^{-x /\tau} \mathcal{B}(\z_0)(x) \ \dv x.
+	\end{equation}
+	
+\end{lemma}
+
+\begin{proof}[Proof of Lemma \ref{Lemmaet}]
+	
+ Recall the contour formula from Theorem \ref{thm:zedhat}
+
+\begin{equation}
+q^{\Delta} \hat{\z}_0(q) =\I(\tau) = \frac{\lambda}{\sqrt{\tau}} \int_{\varGamma} \exp(-x /\tau) \mathcal{B}(\z_0)(x) \ \dv x.
+\end{equation}
+Under the coordinate change
+\begin{equation}
+x=y^2
+\end{equation} the contour $\varGamma$ corresponds to the contour
+\begin{equation} 
+\varPsi= e^{i\pi \frac38}\R_{+}+e^{i\pi \frac18}\R_+
+\end{equation} 
+Therefore we have that
+\begin{equation}
+q^{\Delta} \hat{\z}_0(q)= \frac{\lambda}{\sqrt{\tau}} \int_{\varPsi} \exp(-y^2 /\tau) \mathcal{B}(\z_0)(y^2)2y \ \dv y.
+\end{equation} 
+Introduce the meromorphic function $B \in \mathcal{M}(\C) $ given for all $y \in \C$ by \begin{equation} \label{eq:defB} B(y)=2y\mathcal{B}(\z_0)(y^2).
+\end{equation}  By Theorem \ref{2.1} we have that
+\begin{equation} \label{eq:B}
+B(y)= \frac{2\kappa}{\pi i} G\left( \exp\left(\frac{\kappa y}{P}\right)\right)=\frac{2\kappa}{\pi i} F\left(\frac{\kappa y}{2}\right).
+\end{equation}
+From \eqref{eq:B} we see that $B$ is periodic with period $\kappa$, i.e. for all $m\in \Z$ we have that 
+\begin{equation} \label{eq:periodicity}
+B(y+\kappa m)=B(y).
+\end{equation}
+
+
+
+Let $\mathcal{P}$ be the set of poles of $B$. It follows from Theorem \ref{2.1} that $\mathcal{P}$ is a subset of the axis $e^{\pi i/4}\R$ and that 
+\begin{equation}
+ \{ -\omega^2  \mid  \omega \in \mathcal{P}  \}  = 2\pi i\CS_{\C}(X) + 2\pi i\Z.
+\end{equation}  
+Write $$\varPsi_\pm= e^{i \pi (\frac14 \mp \frac18)}\R_+.$$ We will now  apply Cauchy's residue theorem to move $\varPsi_-$ across $e^{i \pi /4}\R_+$ to $\varPsi_+$  in order to obtain the formula \eqref{eq:sumoftwoparts}. Deform $\varPsi_\pm$ on the complement of a neighbourhood around the origin to two curves $L_\pm$, which are parallel to $e^{i \pi /4}\R_+$ outside this neighbourhood of the origin, as indicated in Figure \ref{fig:ContourL}. Set $$L=L_+ \cup L_-.$$ We first show that 
+\begin{equation}  
+\label{eq:shiftofContour} \int_{\varPsi} \exp(-y^2/\tau) B(y) \ \dv y= \int_{L} \exp(-y^2/\tau) B(y) \ \dv y,   \end{equation}
+and then we show that the right hand side of \eqref{eq:shiftofContour} can be rewritten as a sum of residues. Let $R>0$ be a positive constant, and let $R_\pm$ be the arc segment of the circle of radius $R$, which connects $\varPsi_\pm$ and $L_\pm$.  Because $L_\pm$ is parallel to $\kappa \R_+$ outside a neighbourhood of the origin, there exists a real positive constant $b_0 >0$ such that every $y \in R_\pm$ is of the form
+$$y= \kappa a \pm b, (a,b) \in \R_+ \times [b_0,+\infty)$$
+and therefore exists a positive real constant $A>0$ independent of $R$, which gives an upper bound
+\begin{equation}
+\left\lvert \frac{1}{1-e^{-\kappa y}}\right\rvert <\frac{1}{1-\exp\left(-\Re(\kappa) b_0\right)}:=A>0
+\end{equation}
+for all $y \in R_+$.
+It follows that we obtain a uniform estimate 
+\begin{align} \label{eq:Estimation1} \begin{split} B(y) &= 2^{n-2}\frac{2\kappa}{\pi i}\frac{\prod_{j=1}^n \sinh(\frac{\kappa y}{2p_j})}{\left( e^{\kappa y/2}(1-e^{-y\kappa }) \right)^{n-2}}
+\\&=  O \left( e^{-y\kappa /2}\prod_{j=1}^n \sinh\left(\frac{\kappa y}{2p_j}\right) \right)= O(e^{A_1R}). \end{split}  \end{align}
+for all $y \in R_+$ for a real constant $A_1$.
+For fixed  $\tau$, there exists a positive real constant $A_2>0$ giving a uniform bound on $R_+$
+\begin{equation}  \label{eq:Estimation2}
+e^{-y^2/\tau}=O(e^{-A_2R^2}).
+\end{equation}
+By combining the estimates \eqref{eq:Estimation1} and \eqref{eq:Estimation2}, and using that the arc length of $R_\pm$ is proportional to $R$, we obtain the estimate
+\begin{equation}
+\int_{R_+} \exp(-y^2/\tau) B(y) \ \dv y= O(Re^{-A_2R^2+A_1R}).
+\end{equation}
+By similar reasoning, there exists constants $B_2>0,B_1 \in \R$ giving the estimate
+\begin{equation}
+\int_{R_-} \exp(-y^2/\tau) B(y) \ \dv y= O(Re^{-B_2R^2+B_1R}).
+\end{equation}
+Thus we obtain that
+\begin{equation} \label{eq:LimitZero}
+\lim_{R \rightarrow \infty} \sum_{\epsilon \in \{\pm1\}} \int_{R_\epsilon} \exp(-y^2/\tau) B(y) \ \dv y=0,
+\end{equation}
+which gives the desired identity \eqref{eq:shiftofContour} .
+
+ We now turn to the computation of $\int_{L}  \exp(-y^2/\tau) B(y) \ \dv y$. For each $m\in \N$, let $L_m$ be a small line segment with 
+ $$L_m \cap e^{i\pi/4}\R_+=\{m \kappa\},$$ 
+ and which meets $e^{i\pi/4}\R_+$ in a right angle. We can arrange that $L_m$ is of fixed lenght and that $L_m $ meet $L_\pm$ in a point. Thus we have
+\begin{equation} \label{eq:periodicity2} L_m=L_0+m\kappa
+\end{equation} Let $L^m_\pm$ be the bounded component of $L_\pm \setminus L_m,$ and let $\mathcal{P}_m \subset \mathcal{P}$ be the set of poles of $B$ that lie within the bounded component of the complement of the contour $$\varPsi_m = L^m_+ \cup L_m  \cup L^m_-.$$ See Figure \ref{fig:ContourL}.
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.9]{ContourL}
+	\caption{The contours $L_\pm, L^m_\pm$ and $ \varPsi_\pm$ and the subset of poles $\mathcal{P}_m$ drawn rotated, such that $\kappa \mathbb{R}_+$ points straight up.}
+	\label{fig:ContourL}
+\end{figure}   Equip $\varPsi_m$ with the counter clockwise orientation. An application of Cauchy's residue theorem now gives
+\begin{multline} \label{eq:dabel} \begin{split}
+2\pi i\sum_{\omega \in \mathcal{P}_m} \Res(e^{-y^2/\tau}B(y), y=\omega)  =  \int_{\varPsi_m} \exp(-y^2/\tau) B(y) \ \dv y
+\\ =\int_{L_m} \exp(-y^2/\tau) B(y) \ \dv y +\sum_{\epsilon \in \{\pm1\}} \epsilon  \int_{L^m_\epsilon} \exp(-y^2/\tau) B(y) \ \dv y. \end{split} 
+\end{multline}
+Because $B$ is $\kappa$ periodic as stated in \eqref{eq:periodicity} and $L_{m}=L_0+ m\kappa$, we see that that there exists $C>0$ giving a uniform bound
+\begin{equation}
+C> \sup \{ \lvert B(y) \rvert \ \mid \ y \in \cup_{m\in \N} L_m \}.
+\end{equation}
+Because of this universal bound, it is easy too see that
+\begin{equation}
+\lim_{m \rightarrow \infty} \int_{L_m} \exp(-y^2/\tau) B(y) \ \dv y=0.
+\end{equation}
+It follows that the right hand side of \eqref{eq:dabel} converges to 
+$$\sum_{\epsilon \in \{\pm1\}} \int_{L_\epsilon} \exp(-y^2/ \tau) B(y)  \ \dv y=\sum_{\epsilon \in \{\pm1\}} \epsilon  \int_{\varPsi_\epsilon} \exp(-y^2/ \tau) B(y)  \ \dv y.$$ 
+This also implies that the sum of residues is convergent. 
+
+Let us now recall a simple transformation law for residues. Let $z_0\in \C$ and let $f\in \mathcal{M}_{z_0}(\C)$ be the germ of a meromorphic function with a pole at $z_0.$ Assume $w_0 \in \C$ and that $z \in \mathcal{O}_{w_0}(\C)$ satisfies $z(w_0)=z_0, \dot{z}(w_0)\not=0.$ If either $z_0$ is a simple pole, or $z(w)$ is linear in $w,$ then we have that
+\begin{equation} \label{ResiduePropositionFormula}
+\text{Res}(f(z(w)), w=w_0)= \frac{\text{Res}(f(z),z=z(w_0))}{\dot{z}(w_0)}.
+\end{equation} 
+ Introduce the variable
+\begin{equation} \label{eq:xi}
+\xi= \frac{\kappa y}{2}.
+\end{equation} By using the relation \eqref{eq:B} between $B$ and $F$, the relation \eqref{eq:defB}  between $B$ and $\mathcal{B}(\z_0)$ and the tranformation law \eqref{ResiduePropositionFormula} we obtain
+\begin{align} \begin{split} 
+q^{\Delta} \hat{\z}_0(q)& = \frac{\lambda}{\tau} \int_{\varPsi} \exp\left(-\frac{y^2}{\tau}\right) B(y) \ \dv y
+\\&=\frac{2\lambda}{\tau} \left( \int_{\varPsi_+} \exp\left(-\frac{y^2}{\tau}\right) B(y) \ \dv y -  2\pi i\sum_{\omega \in \mathcal{P}} \Res(e^{-y^2/\tau}B(y), y=\omega)  \right)
+\\ &= \frac{2\lambda}{\tau} \left( \int_{\Gamma_+} \exp\left(-\frac{x}{\tau}\right) \mathcal{B}(\z_0)(x) \ \dv x -  \sum_{m=1}^{\infty} \Res(e^{-g(\xi)/\tau}F(\xi), \xi=2\pi i m) \right)
+\\ &= \mathcal{L}(\tau)+R(\tau). \end{split}
+\end{align}
+Finally, we prove \eqref{eq:DEDEFORMATION} for $\tau \in \mathfrak{h}_+$. First observe that for $x$ and $\tau$ in the upper right half plane we have
+\begin{equation} \label{Positve}
+\Re(x/\tau) >0.
+\end{equation} Push the contour $\tilde{\Gamma}_+$  to $\R_+$. If the integral is invariant under this deformation of the contour, we obtain the desired identity. To see that the  integral is invariant under this deformation of the contour, we apply a limiting argument, together with Cauchy's residue formula. To that end, let $R>0$ be a positive parameter, and let $C_R$ be the  arc segment of the circle of radius $R$, which connects $R$ to $Re^{i\pi \frac{3}{4}}$ and stays in the upper half plane. As we are not moving the contour across any singularities of $\mathcal{B}(\z_0),$ the only difficulty is to show that 
+\begin{equation} \label{eq:LIIMITzero}
+\lim_{R\rightarrow +\infty} \int_{ C_R} e^{-x / \tau} \mathcal{B}(\z_0)(x) \ \dv x=0.
+\end{equation}
+As $C_R$ remain at least a fixed distance away from the axis of poles of $\mathcal{B}(\z_0)(x)$, the limit \eqref{eq:LIIMITzero} follows by \eqref{Positve} together with arguments similar to the arguments giving the limit \eqref{eq:LimitZero} above.  \end{proof}
+
+\subsubsection{Asymptotic expansions of $q$-series with periodic coefficients}
+
+Let $B_m(x)$ denote the $m$-th Bernoulli polynomial, i.e.
+\begin{equation} \label{def:Bernoulli}
+\frac{te^{tx}}{e^t-1}= \sum_{m=0}^{\infty} \frac{B_m(x)}{m!} t^m.
+\end{equation} We recall the following result.
+
+\begin{proposition}[\cite{hikami2003qseries,LawrenceZagier}] \label{pro:ZagiersProposition}
+	Let $C: \Z \rightarrow \C$ be a periodic function with period $M$ and mean value equal to zero
+	\begin{equation}
+	\sum_{m=1}^M C(n)=0.
+	\end{equation}
+	Consider the $L$-series $L(s,C)$, which for $\Re(s)>1$ is defined by 
+	\begin{equation} \label{eq:Lseries}
+	L(s,C)= \sum_{m=1}^{\infty} \frac{C(m)}{m^s}.
+	\end{equation} 
+	This $L$-series admits an analytic extension to all of $\C$ and for $r \in \N$ 
+	\begin{equation} \label{eq:Lseriesr}
+	L(-r,C)= -\frac{M^r}{r+1} \sum_{m=1}^M C(m) B_{r+1}\left(\frac{m}{M}\right).
+	\end{equation}
+	For any polynomial $Q$ of degree $d$
+	$$Q(x)=\sum_{u=0}^d q_{u} x^u \in \C[x]$$ the following asymptotic expansions hold for real and positive $t$
+\end{proposition}
+	
+	\begin{equation} \label{eq:qseriesexpansion}
+	\sum_{m=1}^{\infty} e^{-tm^2} C(m) Q(m) \ \underset{t \rightarrow 0}{\sim}  \sum_{u=0}^d \sum_{r=0}^{\infty} q_u L(-2r-u,C) \frac{(-t)^r}{r!}.
+ 	\end{equation}
+	
+	\begin{proof} 
+		The existence of the analytic extension of the $L$-series of $C$, as well as the explicit evaluation \eqref{eq:Lseriesr} are proven in \cite{LawrenceZagier}.
+		
+		 In \cite{hikami2003qseries,LawrenceZagier} the following asymptotic expansions are proven\begin{align} \begin{split} \label{eq:asymptotixexpansions} 
+		 &	\sum_{m=1}^{\infty} C(m) e^{-tm^2} \ \underset{t \rightarrow 0}{\sim} \  \sum_{r=0}^{\infty} L(-2r,C) \frac{(-t)^r}{r!},\\   &\sum_{m=1}^{\infty} m C(m) e^{-tm^2} \ \underset{t \rightarrow 0}{\sim} \  \sum_{r=0}^{\infty} L(-2r-1,C) \frac{(-t)^r}{r!}. \end{split} 	\end{align}	We have	\begin{equation} \label{eq:difff}	\sum_{m=1}^{\infty} e^{-tm^2}C(m)Q(m)= \sum_{j=0}^{\infty} \frac{\partial^j}{\partial (-t)^j} \sum_{m=0}^{\infty} (q_{2j+1}m+q_{2j})e^{-tm^2},	\end{equation}
+		 where it is understood that $q_l=0$ for $l>d$.	The expansion \eqref{eq:qseriesexpansion} follows formally from differentiating the expansions given in \eqref{eq:asymptotixexpansions}. This differentiation is valid because Poincare asymptotic expansions of analytic functions which are valid on suitable sectors can be termwise differentiated. Clearly $t \mapsto \sum_{m\geq 0} C(m)Q(m)\exp(-tm^2)$ is an analytic function of $t$ in a small tubular neighbourhood of $(0,1]$, and from the proof given in \cite{LawrenceZagier} it is clear that the asymptotic expansions \eqref{eq:asymptotixexpansions} are valid on such a small sector. 
+	\end{proof} 
+
+
+
+Recall the definition of the meromorphic function $F$ given in  \eqref{def:F}. Next we prove that the coefficients of the principal part of $F$ at poles are periodic functions with mean value equal to zero.
+\begin{proposition} \label{pro:Fmeanvaluezero}
+	For $j=1,2,...,n-2$ define $f_j: \Z\rightarrow \C$ as the coeficients of the principal part of $F$ at $2\pi i m$ for $m \in \Z$, e.g. for $y$ near $2\pi im$
+	\begin{equation}
+	F(y) = \sum_{j=1}^{n-2} f_j(m) (y-2\pi i m) ^{-j}+\rm{reg.}.
+	\end{equation}
+	Then each $f_j$ is $2P$-periodic and if $P$ is even, then we have for each even $k \in \Z$ 
+	\begin{equation} \label{eq:MeanValueZero}
+	\sum_{m =1,...,2P } e^{kg(2\pi im)} f_j(m)=0.
+	\end{equation}
+	\end{proposition}
+
+\begin{proof}
+The periodicity of the functions $f_j,j=1,...,n-3$ follow directly from the $4\pi i P$-periodicity of $F$. 
+
+We now prove  \eqref{eq:MeanValueZero} assuming $P$ is even - which is equivalent to exactly one the $p_j$ being even. Using the definition \eqref{def:F} of $F$ we obtain
+\begin{align}
+F(y + 2\pi iP)&=\frac{1}{4} \sinh(y/2 + \pi i P)^{2-n} \prod_{j=1}^{n} \sinh(y/p_j +\pi i P/p_j) 
+\\ &= (-1)^{nP} (-1)^{\sum_{j=1}^n \frac{P}{p_j}} F(y)=-F(y).
+\end{align}
+This implies that for each $j=1,...,n-3$ and $m=1,...,P$ we have
+\begin{equation} f_j(m+P)=-f_j(m). \end{equation}
+On the other hand we have for integral $m$
+\begin{align}
+g(2\pi i(P + m))&=\frac{i(2\pi i(P+ m))^2}{8\pi P}= \frac{-i\pi m^2}{2P}\mp i\pi mP-\frac{i\pi P}{2} 
+\\ &=g(2\pi i(P\mp m)) \mod \pi i \Z.
+\end{align} It follows that for even $k$ we have a pairwise cancellation
+\begin{align}
+&\sum_{m=1}^{2P} e^{kg(2\pi i m)} f_j(m)= \sum_{m=1}^{P} e^{kg(2\pi i m)} f_j(m)+e^{kg(2\pi i (m+P))} f_j(m+P)
+\\&=\sum_{m=1}^{P} e^{kg(2\pi i m)} f_j(m)- e^{kg(2\pi i m)} f_j(m)=0.
+\end{align} This concludes the proof. \end{proof}
+
+\subsubsection{The asymptotic expansion of the GPPV invariant}
+
+Recall the definition the functions $F$ and $g$ given in \eqref{def:F}. Let $m\in \N$. For $y$ close to $2 \pi im$ we use the notation of Propositon \ref{pro:Fmeanvaluezero} and write
+$$F(y)= \sum_{j=1}^{n-2} f_j(m) (y-2\pi im)^{-j}+\rm{reg.},$$
+where each $f_j: \Z\rightarrow \C$ is $2P$-periodic. For each $l\in \N$ there exists a uniquely determined polynomial \begin{equation} \label{def:Taylorcoefficients}
+P_l(x,y) \in Q[\pi i,x,y]
+\end{equation} such that 
+\begin{equation} \label{eq:Taylorcoefficients}
+\frac{1}{l!}\frac{\partial^l e^{g(y)/\tau}}{\partial y^l}(2\pi i m)= e^{g(2\pi im)/\tau} P_l(\tau^{-1},m).
+\end{equation}
+There exists uniquely determined complex coefficients $p_{l,u,v,}$ with
+\begin{equation}
+P_{l}(\tau^{-1},m)= \sum_{u,v} p_{l,u,v} \tau^{-u} m^v.
+\end{equation}
+Recall that $B_m(x)$ denotes the $m$'th Bernoulli polynomial and is defined by \eqref{def:Bernoulli}. Define for each $\theta \in \CS_{\C}(X)$ the following  polynomials with coefficients in power series
+\begin{align} \begin{split}  \label{def:Rtheta}
+R_{\theta}(k,t) &= \sum_{\substack{m=1,...,2P, \\ g(2\pi im) \equiv 2\pi i\theta }} \sum_{j,u,v}  f_j(m) k^up_{j-1,u,v}  \sum_{r=0}^{\infty}  \frac{(2P)^{2r+v}}{2r+v+1}  B_{2r+v+1}\left(\frac{m}{2P}\right) \frac{(-t)^r}{r!},
+\\ \check{\z}_{\theta}(k,t) &= \sum_{\substack{m=1,...,2P, \\ g(2\pi im) \equiv 2\pi i\theta }} \sum_{j,u,v}  f_j(m) k^up_{j-1,u,v}  \sum_{r=1}^{\infty}  \frac{(2P)^{2r+v}}{2r+v+1}  B_{2r+v+1}\left(\frac{m}{2P}\right) \frac{(-t)^r}{r!}
+\end{split} 
+\end{align}
+Observe $$\check{\z}_{\theta}(k,t)=R_{\theta}(k,t)-R_{\theta}(k,0),$$
+i.e. $\check{\z}_{\theta}$ is equal to $R_{\theta}$ minus the constant in the parameter $t$.
+
+We can now prove Theorem \ref{thm:radiallimit}.
+
+\begin{proof}[Proof of Theorem \ref{thm:radiallimit}]
+	
+ Recall the decompsition
+	$$\frac{\sqrt{\tau}}{\lambda}q^{\Delta}\hat{\z}=\mathcal{L}(\tau)+R(\tau)$$ given in Equation \eqref{eq:sumoftwoparts} in Lemma \ref{Lemmaet}. Recall the decomposition of the normalized quantum invariant
+	$$\z_k(X)= \z^{\I}(k)+\z^R(k)$$ given in \eqref{phasedecomp}. This decomposition together with equation \eqref{def:normquant}, which relates the normalized quantum invariant $\tilde{\z}_k(X)$ to the WRT invariant $\tau_k(X)$, shows the radial limit idenity can be proved by proving the following two limits. 
+	\begin{align} & \z^{\I}(k) = \lim_{\tau \uparrow 1/k} \frac{\sqrt{\tau}}{2\lambda} \mathcal{L}(\tau),
+ & \z^R(k) = \lim_{\tau \uparrow 1/k}, \frac{\sqrt{\tau}}{2\lambda}R(\tau).\end{align}  
+ Observe that as $X$ is an integral homology sphere, the only $\Spin$ structure is $a=0$, and therefore the radial limit conjecture  reduces (up to a scalar factor) to equation \eqref{eq:radiallimit}.  We first focus on the integral part $\mathcal{L}(\tau)$. For every $k\in \N^*$ the integral part  $\mathcal{L}(\tau)$ extends continuosly to $\tau=1/k$ and it follows from Equations \eqref{phasedecomp}, \eqref{ComputeBorel} and \eqref{eq:DEDEFORMATION}  that 
+		\begin{equation}
+		(2\lambda \sqrt{k})^{-1} \mathcal{L}(1/k)= \mathcal{L}_{\R_+}(\mathcal{B}(\z_0))(k)=\z^{\I}(k).
+		\end{equation}
+		Now recalling that $\tau_{k,t}=(k-i\frac{2Pt}{\pi})^{-1}$, we see that the non-trivial parts left in order to prove  the asymptotic expansion \eqref{eq:ZedhatExpansion} stated in Theorem \ref{thm:radiallimit} are the asymptotic expansion 
+		\begin{equation} \label{eq:MASTEREXPANSION}
+		\frac{\sqrt{\tau_{k,t}}}{2\lambda} R(\tau_{k,t}) \ \underset{ t \rightarrow 0}{\sim} \ \sum_{\theta \in \CS_{\C}(X)} e^{2\pi ik\theta} R_{\theta}(k,t),
+		\end{equation} 
+		and the identity
+		\begin{equation} \label{eq:FINALIDENTITY} \sum_{\theta \in \CS_{\C}(X)} e^{2\pi ik\theta} R_{\theta}(k,0)= \z^{R}(k).
+		\end{equation}
+We start with the expansion \eqref{eq:MASTEREXPANSION}. To ease notation we set
+\begin{equation}
+g(2\pi im)=\theta_m.
+\end{equation} We have
+\begin{equation}
+\Res(F(y)e^{g(y)/\tau}, 2\pi im)=  e^{\theta_m/\tau} \sum_{j=1}^{n-3} f_j(m) P_{j-1}(\tau^{-1},m).
+\end{equation}
+and accordingly
+\begin{equation}
+\frac{\sqrt{\tau}}{2\lambda}R(\tau)=-\sum_{m =0}^\infty  e^{\theta_m/\tau} \sum_{j=1}^{n-3} f_j(m) P_{j-1}(\tau^{-1},m),
+\end{equation}
+Note that $\tau_{k,t} \in \mathfrak{h}$ for $t\in (0,1)$.
+The function $g$ has the following transformation property\begin{equation}g(y+4\pi i m P)=\frac{i(y+4\pi i mP)^2}{8\pi P}=g(y)-my- 2 \pi i  m^2 P.\end{equation} Because of this, and the $2P$ periodicity of the $f_j$'s, we can write
+\begin{align} \begin{split}  \label{MELLEMREGNING}
+\frac{\sqrt{\tau}}{2\lambda}R(\tau)= &-\sum_{m=0}^{\infty} e^{- t m^2} e^{kg(2\pi i m)} \sum_{j=1}^{n-3} f_j(m) P_{j-1}(\tau^{-1},m)
+\\ = &- \sum_{j=1}^{n-2} \sum_{u,v} \sum_{m=0}^{\infty} e^{- t  m^2} e^{k\theta_m}  f_j(m) p_{j-1,u,v} \tau^{-u}m^v.
+\end{split} 
+\end{align}
+Now for each $j,u=0,...,n-3$ we can apply Proposition \ref{pro:ZagiersProposition} to the $2P$-periodic function of mean value zero given by
+\begin{equation}
+C_j(m)=e^{k\theta_m}  f_j(m)
+\end{equation}
+and the polynomial
+\begin{equation}
+Q_{j,u}(m)= \sum_v p_{j-1,u,v} m^v.
+\end{equation}
+The fact that each $C_j$ is of mean value equal to zero follows from Proposition \ref{pro:Fmeanvaluezero}. The result of applying Proposition \ref{pro:ZagiersProposition} is
+\begin{align}
+\frac{\sqrt{\tau}}{2\lambda}R(\tau) \ & \underset{t \rightarrow 0}{\sim } \ -\sum_{j,u,v} \sum_{r=0}^{\infty}  k^up_{j-1,u,v} L(-2r-v,C_j) \frac{(-t)^r}{r!}
+\\ &= \sum_{j,u,v} \sum_{r=0}^{\infty}  k^up_{j-1,u,v} \frac{(2P)^{2r+v}}{2r+v+1} \sum_{m=1}^{2P} C_j(m) B_{2r+v+1}\left(\frac{m}{2P}\right) \frac{(-t)^r}{r!}
+\\ &= \sum_{m=1}^{2P} \sum_{j,u,v} e^{k\theta_m}  f_j(m) k^up_{j-1,u,v}  \sum_{r=0}^{\infty}  \frac{(2P)^{2r+v}}{2r+v+1}  B_{2r+v+1}\left(\frac{m}{2P}\right) \frac{(-t)^r}{r!}.
+\end{align}
+This establishes the asymptotic expansion \eqref{eq:MASTEREXPANSION}.
+
+We now turn to the identity \eqref{eq:FINALIDENTITY}.  Set
+\begin{align} \begin{split}  \label{eq:MUAHAH}
+R_0(k)&=\sum_{\theta \in \CS_{\C}(X)} e^{2\pi ik\theta} R_{\theta}(k,0)= \sum_{m=1}^{2P} \sum_{j,u,v} e^{k\theta_m}  f_j(m) p_{j-1,u,v} k^u    \frac{(2P)^{v}}{v+1}  B_{v+1}\left(\frac{m}{2P}\right).
+\end{split}
+\end{align}
+Let $x$ be a complex coordinate near $0$ and set $y_m=x+2\pi i m$ for $m=1,2,...,2P$. Recall that
+\begin{equation}
+\z^R(k)=- \sum_{m=1}^{2P-1}  \Res\left(  \frac{F(y)\exp\left(kg(y)\right)}{1-\exp(-ky)} , y=2\pi im \right).
+\end{equation} 
+We have that
+\begin{align} \label{eq:vigtigdel}
+g(y_m)=g(x+ 2\pi im)=\frac{i(x+2\pi i m)^2}{8\pi P}= g(2\pi im)+g(x)-\frac{xm}{2P},
+\end{align}
+and accordingly
+\begin{equation} \label{eq:VIGTIGDEL}
+\exp(kg(y_m) )=\exp\left(k\theta_m+kg(x) \right) \cdot \exp\left(- k\frac{xm}{2P}\right).
+\end{equation}
+Recall that the polynomials $P_l$ defined in \eqref{eq:Taylorcoefficients} as the coefficients of the Taylor series of $e^{kg(y)}$. Therefore it follows from Cauchy's formula for multiplication of power series, the formula for the Taylor expansion of the exponential and the identity \eqref{eq:VIGTIGDEL} that the following  holds for all $k ,m$
+\begin{equation} 
+P_c(k,m)= \sum_{a+b=c} P_a(k,0)\left(\frac{-mk}{2P}\right)^b \frac{1}{b!}.
+\end{equation}
+Writing this out in terms of coefficients gives
+\begin{align}
+\sum_{c,u,v} p_{c,u,v} k^u m^v &= \sum_{a+b=c} \sum_{s} p_{a,s,0} \left( \frac{(-1)}{2P} \right)^b \frac{1}{b!} k^{s+b} m^b.
+\end{align}
+This is equivalent to the identities
+\begin{equation} \label{eq:MAASTERIDENTITY}
+p_{j,u,0} \left( \frac{-1}{2P} \right)^v \frac{1}{v!}= p_{j+v,u+v,v}.
+\end{equation}
+Recall the definition \eqref{def:Bernoulli} of the Bernoulli polynomials $B_m$. Write
+\begin{align}
+&- \frac{F(y_m)\exp\left(kg(y_m)\right)}{1-\exp(-ky_m)} =F(y_m) \exp\left(k(g(x)+\theta_m\right) \frac{\exp\left(\frac{-kxm}{2P} \right)}{\exp(-kx)-1}=
+	\\ &\left(\sum_{j=1}^{n-3} f_j(m)x^{-j}+\rm{reg.}\right)\left(e^{k\theta_m}\sum^{\infty}_{a=0} P_a(k,0)x^a\right)\left(\sum_{b=0}^{\infty} \frac{B_b\left(\frac{m}{2P}\right)}{b!} (-kx)^{b-1} \right).
+\end{align}
+By comparing with Equation \eqref{eq:MUAHAH} and using the facts that $F$ has a multiple order zero at multiples of $4\pi iP$ and that we know that the $k^{-1}$ term cancels in $\z^R(k)$, we obtain the desired identity
+\begin{align}
+&\z^R(k)= \sum_{m=1}^{2P} \sum_{j=1}^{n-2} \sum_{\substack{a+b=j, \\ a\geq 0, b \geq 1}} e^{k\theta_m} f_j(m)P_a(k,0)\frac{B_b\left(\frac{m}{2P}\right)}{b!} (-k)^{b-1}
+\\ &=  \sum_{m=1}^{2P} \sum_{j=1}^{n-2}  \sum_{\substack{a+b=j, \\ a\geq 0, b \geq 1}} e^{k\theta_m} f_j(m)P_a(k,0)\left(\frac{-1}{2P}\right)^{b-1} \frac{k^{b-1}}{(b-1)!}  \frac{\left(2P\right)^{b-1}}{b}B_b\left(\frac{m}{2P}\right)
+\\ &= \sum_{m=1}^{2P} \sum_{j=1}^{n-2}  \sum_{\substack{a+b=j, \\ a\geq 0, b \geq 1}} \sum_{s} e^{k\theta_m} f_j(m)p_{a,s,0}\left(\frac{-1}{2P}\right)^{b-1} \frac{k^{s+b-1}}{(b-1)!}  \frac{\left(2P\right)^{b-1}}{b}B_b\left(\frac{m}{2P}\right)
+\\ \begin{split}  \label{eq:UHAHAHA} &=\sum_{m=1}^{2P} \sum_{j=1}^{n-2}  \sum_{\substack{s,a+b=j, \\ a\geq 0, b \geq 1}} \sum_{s} e^{k\theta_m} f_j(m) p_{a+b-1,s+b-1,b-1}  k^{s+b-1}   \frac{(2P)^{b-1}}{b} B_b\left(\frac{m}{2P}\right) \end{split}
+\\ &= \label{eq:UAA} \sum_{m=1}^{2P} \sum_{j=1}^{n-2}  \sum_{u,v}  e^{k\theta_m} f_j(m) p_{j-1,u,v} k^u \frac{(2P)^{v}}{v+1} B_{v+1}\left(\frac{m}{2P}\right)
+\\&=R_0(k). 
+\end{align}
+In \eqref{eq:UHAHAHA} we used the identity \eqref{eq:MAASTERIDENTITY}, and in \eqref{eq:UAA} we set $u=s+b-1$ and $v=b-1$. This finishes the proof. \end{proof}
+
+
+
+
+  

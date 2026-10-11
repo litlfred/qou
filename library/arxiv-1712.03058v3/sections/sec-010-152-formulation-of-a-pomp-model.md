@@ -8,53 +8,21 @@ pages: 12-14
 source_pdf: 1712.03058v3.pdf
 source_sha256: ba48c5bbb2467374
 doc_brief: "Iterated filtering methods for Markov process epidemic models Theresa Stocks1 1Department of Mathematics, Stockholm University, Sweden This manuscript is a preprint of a Chapter to appear in the Handb"
+text_source: latex
+latex_prose_ratio: 0.991
+latex_coverage_ratio: 0.953
 ---
-We will ﬁrst formulate a Markov transmission model and in a second step
-relate the data to the transmission model via some observation model which
-then gives us fYn|Xn.
-CHAPTER 1. ITERATED FILTERING METHODS FOR POMP
-12
-Transmission model As transmission model we choose a stochastic
-SIR model among a closed population of N individuals where X(t) =
-(S(t), I(t), R(t)) denotes the number of susceptible, infectious and recov-
-ered individuals at time t. Individuals are mixing homogeneously and β is
-the average number of infectious contacts an infectious individual has per
-time unit. Furthermore, we assume that the time an individual is infectious
-is exponentially distributed with mean γ−1. We will now fromulate this in
-a way which makes understanding of the code in Stocks (2017) easier. So
-let {NAB(t) : t ≥0} denote a stochastic process which counts the number
-of individuals which have transitioned from compartment A to compart-
-ment B during the time interval [0, t) with A, B ∈X, where X = {S, I, R}
-contains all model compartments. The inﬁnitesimal increment probabilities
-of a jump between compartments fully specify the continuous-time Markov
-process describing the transmission dynamics.
-With the notation above,
-∆NAB(t) = NAB(t + τ) −NAB(t) counts the number of individuals changing
-compartment in an inﬁnitesimal time interval τ > 0. Thus,
-P[∆NSI(t) = 1|X(t)] = βI(t)S(t)N −1τ + o(τ)
-P[∆NIR(t) = 1|X(t)] = γI(t)τ + o(τ).
-(12)
-Moreover, the state variables and the transition probabilities (12) are related
-in the following way:
-∆S(t) = −∆NSI(t)
-∆I(t) = ∆NSI(t) −∆NIR(t)
-(13)
-∆R(t) = ∆NIR(t).
-Observation model We now relate the transmission model to our obser-
-vations of the weekly number of newly reported cases. With the notation
-above the true number of newly infected individuals accumulated in each
-observation time period (tn−1, tn], n ∈{1, 2, . . . , N} is given as
-H(tn) = NSI(tn) −NSI(tn−1).
-(14)
-To incorporate the count nature of the observations a natural assumption
-is to model the actual reported cases as realizations of a Poisson-distributed
-random variable with a given time-dependent mean. The number of recorded
-cases Yn within a given reporting interval (tn−1, tn], is then
-Yn ∼Pois (H(tn)) .
-(15)
-CHAPTER 1. ITERATED FILTERING METHODS FOR POMP
-13
-This distribution then corresponds to fYn|Xn which is easy to evaluate. One
-interpretation of this choice of observation noise is to account for uncertainty
-in classiﬁcation of cases, including false positives.
-1.5.3
+We will first formulate a Markov transmission model and in a second step relate the data to the transmission model via some observation model which then gives us $f_{\bm{Y}_n|\bm{X}_{n}}$.\
+**Transmission model** As transmission model we choose a stochastic SIR model among a closed population of $\mathcal{N}$ individuals where $\bm{X}(t)=(S(t), I(t), R(t))$ denotes the number of susceptible, infectious and recovered individuals at time $t$. Individuals are mixing homogeneously and $\beta$ is the average number of infectious contacts an infectious individual has per time unit. Furthermore, we assume that the time an individual is infectious is exponentially distributed with mean $\gamma ^{-1}$. We will now fromulate this in a way which makes understanding of the code in [@theresa_git] easier. So let $\{N_{AB}(t): t \geq 0\}$ denote a stochastic process which counts the number of individuals which have transitioned from compartment $A$ to compartment $B$ during the time interval $[0,t)$ with $A, B \in \mathcal{X}$, where $\mathcal{X}=\{S, I, R\}$ contains all model compartments. The infinitesimal increment probabilities of a jump between compartments fully specify the continuous-time Markov process describing the transmission dynamics. With the notation above, $\Delta N_{AB}(t)=N_{AB}(t+\tau)-N_{AB}(t)$ counts the number of individuals changing compartment in an infinitesimal time interval $\tau>0$. Thus, $$\begin{aligned}
+\mathbb{P}[\Delta N_{SI}(t)=1 |\bm{X}(t)]&=  \beta I(t) S(t)\mathcal{N}^{-1}\tau +o(\tau) \quad \nonumber \\
+\mathbb{P}[\Delta N_{IR}(t)=1 |\bm{X}(t)]&= \gamma I(t)\tau  +o(\tau). \quad\label{jump}
+\end{aligned}$$
+
+Moreover, the state variables and the transition probabilities ([\[jump\]](#jump){reference-type="ref" reference="jump"}) are related in the following way: $$\begin{aligned}
+\Delta S(t)&= -\Delta N_{ SI}(t)  \nonumber\\
+\Delta I(t)&= \Delta N_{ SI}(t)-\Delta N_{ IR}(t) \label{states}\\
+\Delta R(t)&= \Delta N_{IR}(t). \nonumber
+\end{aligned}$$ **Observation model** We now relate the transmission model to our observations of the weekly number of newly reported cases. With the notation above the true number of newly infected individuals accumulated in each observation time period $(t_{n-1},t_{n}], n \in \{1,2,\dots,N\}$ is given as $$H(t_n)=N_{SI}(t_{n})-N_{SI}(t_{n-1}).\label{obs_stoc}$$ To incorporate the count nature of the observations a natural assumption is to model the actual reported cases as realizations of a Poisson-distributed random variable with a given time-dependent mean. The number of recorded cases $Y_n$ within a given reporting interval $(t_{n-1},t_{n}],$ is then $$\begin{aligned}
+Y_n &\sim \text{Pois}\left(  H(t_n)\right).
+\label{poisson}
+\end{aligned}$$ This distribution then corresponds to $f_{\bm{Y_n|\bm{X}_n}}$ which is easy to evaluate. One interpretation of this choice of observation noise is to account for uncertainty in classification of cases, including false positives.

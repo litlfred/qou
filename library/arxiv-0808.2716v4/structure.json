@@ -5,7 +5,8 @@
   "file": "0808.2716v4.pdf",
   "sha256": "ea66f7ddcf9e9fe68292d8334dd47fe60f8a1debcb453f00ac35a8dc183165f8",
   "bytes": 525847,
-  "pages": 44
+  "pages": 44,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -469,6 +470,198 @@
   "likely_scanned": false,
   "toc_entries": 29,
   "sections": 23,
-  "chars_total": 132672
+  "chars_total": 132672,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "farey-cusps.tex",
+   "tex_sections": 28,
+   "overlaid": 21,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-11-cusp-shapes-and-areas",
+     "title": "Cusp shapes and areas",
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-12-cusp-area-and-link-diagrams",
+     "title": "Cusp area and link diagrams",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-15-organization",
+     "title": "Organization",
+     "prose_ratio": 0.917,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-16-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-22-oncepunctured-torus-bundles",
+     "title": "Once\u2013punctured torus bundles",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-23-4punctured-sphere-bundles",
+     "title": "4\u2013punctured sphere bundles",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.937,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-24-two-bridge-links",
+     "title": "Two-bridge links",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-3-geometric-estimates-for-ford-domains",
+     "title": "Geometric estimates for Ford domains",
+     "prose_ratio": 0.896,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-31-estimates-for-triangulated-hyperbolic-3manifo",
+     "title": "Estimates for triangulated hyperbolic 3\u2013manifolds",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-33-horosphere-estimate",
+     "title": "Horosphere estimate",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-34-the-length-of-a-meridian",
+     "title": "The length of a meridian",
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-4-cusp-area-estimates",
+     "title": "Cusp area estimates",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-41-puncturedtorus-bundles",
+     "title": "Punctured\u2013torus bundles",
+     "prose_ratio": 0.892,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-42-4punctured-sphere-bundles",
+     "title": "4\u2013punctured sphere bundles",
+     "prose_ratio": 0.383,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-015-43-2bridge-links",
+     "title": "2\u2013bridge links",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-5-volume-estimates-for-closed-3braids",
+     "title": "Volume estimates for closed 3\u2013braids",
+     "prose_ratio": 0.895,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-51-a-normal-form-for-3braids",
+     "title": "A normal form for 3\u2013braids",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-52-hyperbolic-3braids",
+     "title": "Hyperbolic 3\u2013braids",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-6-the-jones-polynomial-and-volume-of-closed-3bra",
+     "title": "The Jones polynomial and volume of closed 3\u2013braids",
+     "prose_ratio": 0.914,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-61-the-jones-polynomials-of-generic-3braids",
+     "title": "The Jones polynomials of generic 3\u2013braids",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-62-connections-to-volume",
+     "title": "Connections to volume",
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.928,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

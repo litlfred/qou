@@ -5,7 +5,8 @@
   "file": "1402.4615v3.pdf",
   "sha256": "b6e7c795cd1a7cd21e9acb848ea35289a5a60b8863bf09d093c47ac18df3597f",
   "bytes": 636055,
-  "pages": 71
+  "pages": 71,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,8 +17,8 @@
   },
   "doi": null,
   "title": "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS",
-  "authors_raw": "MACIEJ DOŁ ˛ EGA AND VALENTIN FÉRAY",
-  "abstract": "In this paper, we consider a deformation of Plancherel meas ure linked to Jack polynomials. Our main result is the descripti on of the ﬁrst and second-order asymptotics of the bulk of a random Young diagram under this dis- tribution, which extends celebrated results of Vershik-Ke rov and Logan-Shepp (for the ﬁrst order asymptotics) and Kerov (for the second or der asymptotics). This gives more evidence of the connection with Gaussian β -ensemble, already suggested by some work of Matsumoto. Our main tool is a polynomiality result for the structure con stant of some quantities that we call Jack characters, recently introduced by Lassalle. We be- lieve that this result is also interested in itself and we give several other applica- tions of it. 1. I NTRODUCTION 1.1. Jack deformation of Plancherel measure and random matrices. Random partitions occur in mathematics and physics in a wide variety of contexts, in partic- ular in the Gromov-Witten and Seiberg-Witten theories, see [Oko03] for an intro- duction to the subject. Another aspect which makes them attractive is the link with random matrices. Namely, some classical models of random matrices have random partition counterparts, which display the same kind of asymptotic behaviour. In this paper, we consider the following probability measure on the set of parti- tions (or equivalently, Young diagrams) of sizen: (1) P(α) n (λ) = αnn! j(α) λ , where j(α) λ is a deformation of the square of the hook products: j(α) λ = ∏ □ ∈λ ( αa(□ ) + ℓ(□ ) + 1 )( αa(□ ) + ℓ(□ ) + α ) . Here, a(□ ) := λj − i and ℓ(□ ) := λ′ i − j are respectively the arm and leg length of the box □ = (i, j) (the same deﬁnitions as in [Mac95, Chapter I]).",
+  "authors_raw": "MACIEJ DO\u0141 \u02db EGA AND VALENTIN F\u00c9RAY",
+  "abstract": "In this paper, we consider a deformation of Plancherel meas ure linked to Jack polynomials. Our main result is the descripti on of the \ufb01rst and second-order asymptotics of the bulk of a random Young diagram under this dis- tribution, which extends celebrated results of Vershik-Ke rov and Logan-Shepp (for the \ufb01rst order asymptotics) and Kerov (for the second or der asymptotics). This gives more evidence of the connection with Gaussian \u03b2 -ensemble, already suggested by some work of Matsumoto. Our main tool is a polynomiality result for the structure con stant of some quantities that we call Jack characters, recently introduced by Lassalle. We be- lieve that this result is also interested in itself and we give several other applica- tions of it. 1. I NTRODUCTION 1.1. Jack deformation of Plancherel measure and random matrices. Random partitions occur in mathematics and physics in a wide variety of contexts, in partic- ular in the Gromov-Witten and Seiberg-Witten theories, see [Oko03] for an intro- duction to the subject. Another aspect which makes them attractive is the link with random matrices. Namely, some classical models of random matrices have random partition counterparts, which display the same kind of asymptotic behaviour. In this paper, we consider the following probability measure on the set of parti- tions (or equivalently, Young diagrams) of sizen: (1) P(\u03b1) n (\u03bb) = \u03b1nn! j(\u03b1) \u03bb , where j(\u03b1) \u03bb is a deformation of the square of the hook products: j(\u03b1) \u03bb = \u220f \u25a1 \u2208\u03bb ( \u03b1a(\u25a1 ) + \u2113(\u25a1 ) + 1 )( \u03b1a(\u25a1 ) + \u2113(\u25a1 ) + \u03b1 ) . Here, a(\u25a1 ) := \u03bbj \u2212 i and \u2113(\u25a1 ) := \u03bb\u2032 i \u2212 j are respectively the arm and leg length of the box \u25a1 = (i, j) (the same de\ufb01nitions as in [Mac95, Chapter I]).",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20180227163830-05'00'",
@@ -795,6 +796,284 @@
   "likely_scanned": false,
   "toc_entries": 55,
   "sections": 37,
-  "chars_total": 143087
+  "chars_total": 143087,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "TopComponent.tex",
+   "tex_sections": 55,
+   "overlaid": 25,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-11-jack-deformation-of-plancherel-measure-and-ra",
+     "title": "Jack deformation of Plancherel measure and random matrices",
+     "prose_ratio": 0.865,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-12-main-result",
+     "title": "Main result",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.907,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-13-jack-polynomials-and-jack-measure",
+     "title": "Jack polynomials and Jack measure",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-14-ingredients-of-the-proof",
+     "title": "Ingredients of the proof",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.189,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-004-15-second-main-result-polynomiality-of-structure",
+     "title": "Second main result: polynomiality of structure constants of Jack characters",
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-17-outline-of-the-paper",
+     "title": "Outline of the paper",
+     "prose_ratio": 0.903,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-21-polynomial-functions-on-the-set-of-young-diag",
+     "title": "Polynomial functions on the set of Young diagrams",
+     "prose_ratio": 0.885,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-22-transition-measure-and-free-cumulants",
+     "title": "Transition measure and free cumulants",
+     "prose_ratio": 0.905,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-23-generalized-young-diagrams",
+     "title": "Generalized Young diagrams",
+     "prose_ratio": 0.858,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-24-continuous-young-diagrams",
+     "title": "Continuous Young diagrams",
+     "prose_ratio": 0.346,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-25--polynomial-functions",
+     "title": "-polynomial functions",
+     "prose_ratio": 0.33,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-31-notations",
+     "title": "Notations",
+     "prose_ratio": 0.878,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-32-how-to-compute-jack-character-polynomials",
+     "title": "How to compute Jack character polynomials?",
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-33-a-triangular-subsystem",
+     "title": "A triangular subsystem",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-35-a-second-bound-on-degrees",
+     "title": "A second bound on degrees",
+     "prose_ratio": 0.931,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-37-yet-another-gradation-and-bound-on-degrees",
+     "title": "Yet another gradation and bound on degrees",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-38-gradations-and-characters",
+     "title": "Gradations and characters",
+     "prose_ratio": 0.9,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-41-structure-constants-are-polynomials-in",
+     "title": "Structure constants are polynomials in",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-42-projection-on-functions-on-young-diagrams-of",
+     "title": "Projection on functions on Young diagrams of size n",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-53-a-technical-lemma-obtained-by-polynomial-inte",
+     "title": "A technical lemma obtained by polynomial interpolation",
+     "prose_ratio": 0.928,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-61-convergence-of-polynomial-functions",
+     "title": "Convergence of polynomial functions",
+     "prose_ratio": 0.897,
+     "coverage_ratio": 0.924,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-62-shape-convergence",
+     "title": "Shape convergence",
+     "prose_ratio": 0.91,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-72-an-exchangeable-pair",
+     "title": "An exchangeable pair",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-73-checking-hypotheses",
+     "title": "Checking hypotheses",
+     "prose_ratio": 0.905,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-024-74-error-term",
+     "title": "Error term",
+     "prose_ratio": 0.895,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-025-75-proof-of-the-central-limit-theorem",
+     "title": "Proof of the central limit theorem",
+     "prose_ratio": 0.796,
+     "coverage_ratio": 0.902,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-026-76-speed-in-convergence",
+     "title": "Speed in convergence",
+     "prose_ratio": 0.888,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-027-77-fluctuations-of-other-polynomial-functions",
+     "title": "Fluctuations of other polynomial functions",
+     "prose_ratio": 0.927,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-028-81-extended-algebra-of-polynomial-functions-and",
+     "title": "Extended algebra of polynomial functions and gradations",
+     "prose_ratio": 0.524,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-029-82-proof-of-theorem-81",
+     "title": "Proof of Theorem 8.1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-83-informal-reformulation-of-theorem-81",
+     "title": "Informal reformulation of Theorem 8.1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-a2-linear-terms-in-kerov-polynomials",
+     "title": "A.2. Linear terms in Kerov polynomials",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-a3-high-degree-terms-of-kerov-polynomials-for-de",
+     "title": "A.3. High degree terms of Kerov polynomials for deg1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-b1-recovering-a-recent-result-of-vassilieva",
+     "title": "B.1. Recovering a recent result of Vassilieva",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-b3-symmetric-functions-of-contents",
+     "title": "B.3. Symmetric functions of contents",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-acknowledgments",
+     "title": "Acknowledgments",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

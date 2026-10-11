@@ -5,7 +5,8 @@
   "file": "1304.2705v1.pdf",
   "sha256": "cb07e66e418e11f235fe5368f3d882048d43a8a19f0fa53c219db88ce78260cb",
   "bytes": 222723,
-  "pages": 16
+  "pages": 16,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "FROM STATE INTEGRALS TO q-SERIES",
   "authors_raw": "STA VROS GAROUF ALIDIS AND RINAT KASHAEV",
-  "abstract": "It is well-known to the experts that multi-dimensional state integra ls of prod- ucts of Faddeev’s quantum dilogarithm which arise in Quantum Topolog y can be written as ﬁnite sums of products of basic hypergeometric series in q = e2πiτ and ˜q = e− 2πi/τ . We illustrate this fact by giving a detailed proof for a family of one-dimens ional integrals which includes state-integral invariants of 4 1 and 5 2 knots.",
+  "abstract": "It is well-known to the experts that multi-dimensional state integra ls of prod- ucts of Faddeev\u2019s quantum dilogarithm which arise in Quantum Topolog y can be written as \ufb01nite sums of products of basic hypergeometric series in q = e2\u03c0i\u03c4 and \u02dcq = e\u2212 2\u03c0i/\u03c4 . We illustrate this fact by giving a detailed proof for a family of one-dimens ional integrals which includes state-integral invariants of 4 1 and 5 2 knots.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20180918081629-04'00'",
@@ -305,7 +306,113 @@
   "likely_scanned": false,
   "toc_entries": 18,
   "sections": 14,
-  "chars_total": 22795
+  "chars_total": 22795,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "text12.tex",
+   "tex_sections": 17,
+   "overlaid": 6,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-state-integrals-and-their-q-series",
+     "title": "State-integrals and their q-series",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.817,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-13-the-case-of-the-41-knot",
+     "title": "The case of the 41 knot",
+     "prose_ratio": 0.771,
+     "coverage_ratio": 0.915,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-14-the-case-of-the-52-knot",
+     "title": "The case of the 52 knot",
+     "prose_ratio": 0.357,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-2-proofs",
+     "title": "Proofs",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-21-a-residue-computation",
+     "title": "A residue computation",
+     "prose_ratio": 0.891,
+     "coverage_ratio": 0.899,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-25-some-auxiliary-power-series",
+     "title": "Some auxiliary power series",
+     "prose_ratio": 0.602,
+     "coverage_ratio": 0.817,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-26-proof-of-proposition-22",
+     "title": "Proof of Proposition 2.2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-27-proof-of-lemma-15",
+     "title": "Proof of Lemma 1.5",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-3-an-application-state-integrals-of-the-41-and-5",
+     "title": "An application: state-integrals of the 41 and 52 knots",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-31-proof-of-corollary-17",
+     "title": "Proof of Corollary 1.7",
+     "prose_ratio": 0.267,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-32-proof-of-corollary-18",
+     "title": "Proof of Corollary 1.8",
+     "prose_ratio": 0.867,
+     "coverage_ratio": 0.875,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 0.706,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  },
  "duplicate_copies": [
   "stateintegralsqseries"

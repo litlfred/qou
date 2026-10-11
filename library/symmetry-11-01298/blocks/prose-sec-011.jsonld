@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/symmetry-11-01298/blocks/prose-sec-011",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/symmetry-11-01298/blocks/prose-sec-011",
   "kind": "prose",
   "title": "Torus Bundle as Gauge Fields",
   "pageStart": 13,
   "pageEnd": 16,
   "text": "../sections/sec-011-torus-bundle-as-gauge-fields.md",
-  "derivedFrom": "library/symmetry-11-01298/manifest",
-  "sourceDocument": "library/symmetry-11-01298/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-11-01298/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-11-01298/manifest.jsonld",
   "provenance": "ingested"
 }

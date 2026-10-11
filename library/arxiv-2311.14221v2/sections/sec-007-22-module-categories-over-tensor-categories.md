@@ -8,87 +8,174 @@ pages: 7-9
 source_pdf: 2311.14221v2.pdf
 source_sha256: 5aa4126bbb6df6eb
 doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B → C is an exact"
+text_source: latex
+latex_prose_ratio: 0.984
+latex_coverage_ratio: 0.835
 ---
-overC is a category M together with a k-bilinear bifunctor ⊲ :C×M→
-M, exact in each variable, endowed with natural associativit y and unit
-isomorphisms
-mX,Y,M : (X⊗Y )⊲M →X⊲ (Y ⊲M ), ℓ M : 1⊲M →M.
-These isomorphisms are subject to the following conditions :
-(2.10)
-(X⊗ (Y⊗Z))⊲M
-((X⊗Y )⊗Z)⊲M (X⊗Y )⊲ (Z⊲M )
-X⊲ (Y ⊲(Z⊲M ))
-X⊲ ((Y⊗Z)⊲M )
-∼
-mX⊗Y,Z,M
-mX,Y,Z⊲M
-mX,Y ⊗Z,M idX ⊲mY,Z,M
-for any X,Y,Z ∈C ,M ∈M , as well as
-(2.11) (id X⊲ℓ M )mX,1,M = id.
-Sometimes we shall also say that M is a C-module category or a represen-
-tation ofC.
-8 LENTNER AND MOMBELLI
-LetM andM′ be a pair of C-module categories. A module functor
-is a pair ( F,c ), where F :M→M ′ is a functor equipped with natural
-isomorphisms
-cX,M :F (X⊲M )→X⊲F (M ),
-for X∈C , M∈M , such that
-(2.12)
-F ((X⊗Y )⊲M )
-F (X⊲ (Y ⊲M )) X⊲F (Y ⊲M )
-X⊲ (Y ⊲F (M ))
-(X⊗Y )⊲F (M )
-F (mX,Y,M )
-cX,Y ⊲M
-idX ⊲cY,M
-cX⊗Y,M mX,Y,F (M )
-for any X,Y ∈C , M∈M , as well as
-ℓF (M )c1,M =F (ℓM ).(2.13)
-Module functors are composable, if M′′ is a C-module category and
-(G,d ) :M′→M ′′ is another module functor then the composition
-(2.14) ( G◦F,e ) :M→M ′′, e X,M =dX,F (M )◦G(cX,M ),
-is also a module functor.
-A natural module transformation , between module functors ( F,c ) and
-(G,d ), is a natural transformation θ :F→G such that
-dX,MθX⊲M = (id X ⊲θ M )cX,M,(2.15)
-for anyX∈C ,M∈M . The vector space of natural module transformations
-will be denoted by Nat m(F,G ). Two module functors F,G are equivalent
-if there exists a natural module isomorphism θ : F → G. We denote by
-FunC(M,M′) the category whose objects are module functors ( F,c ) from
-M toM′ and arrows module natural transformations.
-TwoC-modulesM andM′ are equivalent if there exist module functors
-F :M→M ′, G :M′→M , and natural module isomorphisms Id M′→
-F◦G, Id M→G◦F .
-A module category will be called strict if isomorphisms m andl are iden-
-tities. Any module category is equivalent to a strict one. We will often
-assume that the module category is strict without further me ntion.
-FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS 9
-A right module category overC is a category M equipped with an exact
-bifunctor ⊳ :M×C→M and natural isomorphisms
-~mM,X,Y :M ⊳(X⊗Y )→ (M ⊳X)⊳Y, r M :M ⊳1→M
-such that
-(2.16)
-M ⊳((X⊗Y )⊗Z)
-M ⊳(X⊗ (Y⊗Z)) ( M ⊳X)⊳ (Y⊗Z)
-((M ⊳X)⊳Y )⊳Z )
-(M ⊳(X⊗Y ))⊳Z
-∼
-~mM,X,Y ⊗Z
-~mM ⊳X,Y,Z
-~mM,X ⊗Y,Z ~mM,X,Y ⊳idZ
+A  left \emph{module} category over  
+$\ca$ is a  category $\Mo$ together with a $\ku$-bilinear 
+bifunctor $\rhd: \ca \times \Mo \to \Mo$, exact in each variable,  endowed with 
+ natural associativity
+and unit isomorphisms 
+$$m_{X,Y,M}: (X\otimes Y)\triangleright   M \to X\triangleright  
+(Y\triangleright M), \ \ \ell_M: \uno \triangleright  M\to M.$$ 
+These isomorphisms are subject to the following conditions: 
+
+
+\begin{equation}\label{left-modulecat1}
+\pentagon
+{(X \otimes (Y\otimes Z))\triangleright M }
+{\rotatebox{60}{$\sim$}}
+
+{((X \otimes Y)\otimes Z)\triangleright M}
+{m_{X\otimes Y, Z, M}}
+{(X \otimes Y)\triangleright (Z\triangleright M)}
+{m_{X, Y, Z\triangleright M}}
+{X \triangleright (Y\triangleright (Z\triangleright M))}
+
+{m_{X, Y\otimes Z, M}}
+{X \triangleright ((Y\otimes Z)\triangleright M) }
+{\mathrm{id}_{X}\triangleright m_{Y,Z, M}}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+for any $X, Y, Z\in\C, M\in\Mo$, as well as 
+\begin{equation}\label{left-modulecat2} (\id_{X}\triangleright \ell_M)m_{X,{\bf 1} ,M}=\id.
+\end{equation} 
+Sometimes we shall also say  that $\Mo$ is a $\ca$-\emph{module category} or a representation of $\ca$.
+
+\medbreak
+
+
+Let $\Mo$ and $\Mo'$ be a pair of $\C$-module categories. A \emph{ module functor} is a pair $(F,c)$, where  $F:\Mo\to\Mo'$  is a functor equipped with natural isomorphisms
+$$c_{X,M}: F(X\triangleright M)\to
+X\triangleright F(M),$$ 
+for $X\in  \ca$, $M\in \Mo$, such that
+
+
+
+\begin{equation}\label{modfunctor1}
+\pentagon
+{F((X\otimes Y)\triangleright M)}
+{F(m_{X,Y,M})}
+{F(X\triangleright (Y\triangleright M))}
+{c_{X,Y\triangleright M}}
+{X\triangleright F(Y\triangleright M)}
+{\mathrm{id}_X \triangleright  c_{Y,M}}
+{X\triangleright (Y\triangleright F(M))}
+
+{c_{X\otimes Y,M}}
+{(X\otimes Y)\triangleright F(M)}
+{m_{X,Y,F(M)}}
+\end{equation}
+for any $X, Y\in\ca$, $M\in \Mo$, as well as
+\begin{align}\label{modfunctor2}
+\ell_{F(M)} \,c_{\uno ,M} &=F(\ell_{M}).
+\end{align}
+
+ 
+Module functors are composable, if $\Mo''$ is a $\ca$-module category and
+$(G,d): \Mo' \to \Mo''$ is another module functor then the
+composition
+\begin{equation}\label{modfunctor-comp}
+(G\circ F, e): \Mo \to \Mo'', \qquad  e_{X,M} = d_{X,F(M)}\circ
+G(c_{X,M}),
+\end{equation} is
+also a module functor.
+
+\smallbreak  
+
+A \textit{natural module transformation}, between  module functors $(F,c)$ and $(G,d)$, is a 
+ natural transformation $\theta: F \to G$ such
+that
+\begin{gather}
+\label{modf-nat} d_{X,M}\theta_{X\triangleright M} =
+(\id_{X}\triangleright \theta_{M})c_{X,M},
+\end{gather}
+ for any $X\in \ca$, $M\in \Mo$. The vector space of natural module transformations will be denoted by $\Nat_{\!m}(F,G)$. Two module functors $F, G$ are \emph{equivalent} if there exists a natural module isomorphism
+$\theta:F \to G$. We denote by $\Fun_{\ca}(\Mo, \Mo')$ the category whose
+objects are module functors $(F, c)$ from $\Mo$ to $\Mo'$ and arrows module natural transformations. 
+
+\medbreak
+Two $\C$-modules $\Mo$ and $\Mo'$ are {\em equivalent} if there exist module functors $F:\Mo\to
+\Mo'$, $G:\Mo'\to \Mo$, and natural module isomorphisms
+$\Id_{\Mo'} \to F\circ G$, $\Id_{\Mo} \to G\circ F$.
+
+\medbreak
+
+A module category will be called \textit{strict} if isomorphisms $m$ and $l$ are identities. Any module category is equivalent to a strict one. We will often  assume that the module category is strict without further mention.
+
+\medbreak
+ A \emph{right module category} over $\ca$
+ is a   category $\Mo$ equipped with an exact
+bifunctor $\triangleleft:  \Mo\times  \ca\to \Mo$ and natural   isomorphisms 
+$$\widetilde{m}_{M, X,Y}: M\triangleleft (X\ot Y)\to (M\triangleleft X) \triangleleft Y, \quad r_M:M\triangleleft \uno\to M$$ such that
+
+
+
+\begin{equation}\label{right-modulecat1} 
+\pentagon
+{M\triangleleft((X\otimes Y)\otimes Z)}
+{\rotatebox{60}{$\sim$}}
+
+{M\triangleleft(X\otimes (Y\otimes Z))}
+{\widetilde{m}_{M,X ,Y\ot Z }}
+{(M\triangleleft X)\triangleleft (Y\otimes Z)}
+{\widetilde{m}_{M\triangleleft X, Y ,Z }}
+{((M\triangleleft X)\triangleleft Y)\triangleleft Z)}
+
+{\widetilde{m}_{M,X\ot Y ,Z}}
+{(M\triangleleft(X\otimes Y))\triangleleft Z}
+{\widetilde{m}_{M,X,Y}\triangleleft \mathrm{id}_Z}
+\end{equation}
+as well as 
+\begin{equation}\label{right-modulecat2} (r_M\triangleleft \id_X)  \widetilde{m}_{M,\uno, X}= \id.
+\end{equation}
+
+ 
+
+If $\Mo,  \Mo'$ are right $\ca$-modules, a module functor from $\Mo$ to $  \Mo'$ is a pair $(T, d)$ where
+$T:\Mo \to \Mo'$ is a  functor and $d_{M,X}:T(M\triangleleft X)\to T(M)\triangleleft X$ are natural  isomorphisms
+such that for any $X, Y\in
+\ca$, $M\in \Mo$:
+
+
+
+
+\begin{equation}\label{modfunctor11}
+\pentagon
+{T(M\triangleleft(X\otimes Y))}
+{T(\tilde{m}_{M, X, Y})}
+{T((M\triangleleft X)\triangleleft Y)}
+{d_{M\triangleleft X, Y}}
+{T(M\triangleleft X)\triangleleft Y}
+{d_{M,X}\triangleleft \id_Y}
+{(T(M)\triangleleft X)\triangleleft Y}
+
+{d_{M, X\ot Y}}
+{T(M)\triangleleft(X\otimes Y))}
+{\tilde{m}_{T(M), X,Y}}
+\end{equation}
 as well as
-(2.17) ( rM ⊳ id X) ~mM,1,X = id.
-IfM,M′ are rightC-modules, a module functor from M toM′ is a pair
-(T,d ) where T :M→M ′ is a functor and dM,X :T (M ⊳X)→T (M )⊳X
-are natural isomorphisms such that for any X,Y ∈C , M∈M :
-(2.18)
-T (M ⊳(X⊗Y ))
-T ((M ⊳X)⊳Y ) T (M ⊳X)⊳Y
-(T (M )⊳X )⊳Y
-T (M )⊳ (X⊗Y ))
-T ( ˜mM,X,Y )
-dM ⊳X,Y
-dM,X ⊳id Y
-dM,X ⊗Y ˜mT (M ),X,Y
-as well as
-rT (M )dM,1 =T (rM ).(2.19)
+\begin{align}\label{modfunctor21}
+r_{T(M)} \,d_{ M,\uno} &=T(r_{M}).
+\end{align}

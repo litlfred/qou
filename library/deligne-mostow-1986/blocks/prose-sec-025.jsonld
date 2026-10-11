@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/deligne-mostow-1986/blocks/prose-sec-025",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/deligne-mostow-1986/blocks/prose-sec-025",
   "kind": "prose",
   "title": "I I I I I 00",
   "pageStart": 83,
   "pageEnd": 85,
   "text": "../sections/sec-025-1-i-i-i-i-i-00.md",
-  "derivedFrom": "library/deligne-mostow-1986/manifest",
-  "sourceDocument": "library/deligne-mostow-1986/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
   "provenance": "ingested"
 }

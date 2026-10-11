@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-007",
   "kind": "prose",
-  "title": "Discrete local limit theorem",
-  "pageStart": 8,
-  "pageEnd": 11,
-  "text": "../sections/sec-007-3-discrete-local-limit-theorem.md",
-  "derivedFrom": "library/chinta-2025-j-phys-a-math-theor-58-035203/manifest",
-  "sourceDocument": "library/chinta-2025-j-phys-a-math-theor-58-035203/manifest",
+  "title": "Spectral zeta functions",
+  "pageStart": 16,
+  "pageEnd": 17,
+  "text": "../sections/sec-007-7-spectral-zeta-functions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/chinta-2025-j-phys-a-math-theor-58-035203/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/chinta-2025-j-phys-a-math-theor-58-035203/manifest.jsonld",
   "provenance": "ingested"
 }

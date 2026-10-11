@@ -8,45 +8,17 @@ pages: 22-22
 source_pdf: 1801.04409v4.pdf
 source_sha256: db61d011e3775aca
 doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
+text_source: latex
+latex_prose_ratio: 0.938
+latex_coverage_ratio: 0.987
 ---
-any V ∈ C q, E|V is nilpotent, since E maps eigenvectors of g with
-eigenvalue λ to those with eigenvalue λq. Thus, the indecomposable
-objects of Cq are Vm1,m2, where m1 ≥m2 are integers, namely, Jordan
-blocks for E of size m1 −m2 + 1 containing a nonzero vector v with
-gv =qm1v,Ev = 0. Then dim Vm1,m2 =qm2 +... +qm1, which is never
-zero, so there is no nonzero negligible objects. It is easy to see tha t the
-tensor product of Vm1,m2 obeys the same fusion rules as representations
-of GLq(2) with highest weights ( m1,m 2), where q2 =q. From this we
-obtain
-Proposition 5.1. One has
-Cq ∼= RepGLq(2).
-Proof. Let us construct a tensor functor T : RepGLq(2) → Cq such that
-S ◦T is an equivalence Rep GLq(2) → Cq. For this purpose, consider
-the Hopf algebra Uq(gl2) with generators g1,g 2,e,f such that g1,g 2 are
-commuting grouplike elements and
-g1eg−1
-1 = qe, g1fg −1
-1 = q−1f, g2eg−1
-2 = q−1e, g2fg −1
-2 = qf,
-[e,f ] = g1g−1
-2 −g2g−1
-1
-q − q−1 ,
-∆(e) = e ⊗g1g−1
-2 + 1 ⊗e, ∆(f ) = f ⊗ 1 +g2g−1
-1 ⊗f.
-Let us realize Rep GLq(2) as the category of ﬁnite dimensional repre-
-sentations of Uq(gl2) on which g1,g 2 act semisimply with eigenvalues
-being powers of q. Let J be the twist for Uq(gl2) which acts on v ⊗w by
-q−rs when g1v = qrv and g2w = qsw. Then the conjugated coproduct
-∆ J (a) := J −1∆(a)J of the element e has the form
-∆ J (e) = e ⊗g1 +g−1
-1 ⊗e.
-Thus, setting ¯e :=g1e, we have
-∆ J (¯e) = ¯e ⊗g2
-1 + 1 ⊗ ¯e.
-We therefore have an inclusion of Hopf algebras ψ : Hq֒→Uq(gl2)J
-given by ψ(g) = g2
-1,ψ(E) = ¯e, which deﬁnes the desired tensor functor
-T . □
+First assume that $q$ is not a root of unity. Then for any $V\in \mathcal{C}_q$, $E|_V$ is nilpotent, since $E$ maps eigenvectors of $g$ with eigenvalue $\lambda$ to those with eigenvalue $\lambda q$. Thus, the indecomposable objects of $\mathcal{C}_q$ are $V_{m_1,m_2}$, where $m_1\ge m_2$ are integers, namely, Jordan blocks for $E$ of size $m_1-m_2+1$ containing a nonzero vector $v$ with $gv=q^{m_1}v, Ev=0$. Then $\dim V_{m_1,m_2}=q^{m_2}+...+q^{m_1}$, which is never zero, so there is no nonzero negligible objects. It is easy to see that the tensor product of $V_{m_1,m_2}$ obeys the same fusion rules as representations of $GL_{{\bold q}}(2)$ with highest weights $(m_1,m_2)$, where ${\bold q}^2=q$. From this we obtain
+
+::: proposition
+[]{#quantgl2 label="quantgl2"} One has $\overline{\mathcal{C}_q}\cong \mathop{\mathrm{Rep}}\nolimits GL_{{\bold q}}(2)$.
+:::
+
+::: proof
+*Proof.* Let us construct a tensor functor $T: \mathop{\mathrm{Rep}}\nolimits GL_{{\bold q}}(2)\to \mathcal{C}_q$ such that $\bold S\circ T$ is an equivalence $\mathop{\mathrm{Rep}}\nolimits GL_{{\bold q}}(2)\to \overline{\mathcal{C}_q}$. For this purpose, consider the Hopf algebra $U_{{\bold q}}(\mathfrak{gl}_2)$ with generators $g_1,g_2,e,f$ such that $g_1,g_2$ are commuting grouplike elements and $$g_1eg_1^{-1}={\bold q}e,\ g_1fg_1^{-1}={\bold q}^{-1}f,\ 
+g_2eg_2^{-1}={\bold q}^{-1}e,\ g_2fg_2^{-1}={\bold q}f,\ $$ $$[e,f]=\frac{g_1g_2^{-1}-g_2g_1^{-1}}{{\bold q}-{\bold q}^{-1}},$$ $$\Delta(e)=e\otimes g_1g_2^{-1}+1\otimes e,\ \Delta(f)=f\otimes 1+g_2g_1^{-1}\otimes f.$$ Let us realize $\mathop{\mathrm{Rep}}\nolimits GL_{{\bold q}}(2)$ as the category of finite dimensional representations of $U_{{\bold q}}(\mathfrak{gl}_2)$ on which $g_1,g_2$ act semisimply with eigenvalues being powers of ${\bold q}$. Let $J$ be the twist for $U_{{\bold q}}(\mathfrak{gl}_2)$ which acts on $v\otimes w$ by ${\bold q}^{-rs}$ when $g_1v={\bold q}^rv$ and $g_2w={\bold q}^sw$. Then the conjugated coproduct $\Delta_J(a):=J^{-1}\Delta(a)J$ of the element $e$ has the form $$\Delta_J(e)=e\otimes g_1+g_1^{-1}\otimes e.$$ Thus, setting $\bar e:=g_1e$, we have $$\Delta_J(\bar e)=\bar e\otimes g_1^2+1\otimes \bar e.$$ We therefore have an inclusion of Hopf algebras $\psi: H_q\hookrightarrow U_{{\bold q}}(\mathfrak{gl}_2)^J$ given by $\psi(g)=g_1^2$, $\psi(E)=\bar e$, which defines the desired tensor functor $T$. ◻
+:::

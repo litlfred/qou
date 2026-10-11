@@ -1,0 +1,76 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2202.06733v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Overleaf Example (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2202.06733v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2202.06733&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2202.06733v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2202.06733v1",
+    "content_type": "application/gzip",
+    "sha256": "2a52c2c8d843116e5d2d27484ee3cac416b353f25d1829abb012e0ecf8065a48",
+    "bytes": 191648,
+    "fetched": "2026-10-10T15:17:21+00:00",
+    "files": [
+      {
+        "path": "source/files/NJDnatbib.sty",
+        "role": "sty",
+        "sha256": "4e1f9fb10587d4efb1cd4e9ca099181c3a322a4e662d933bd3c02567fd5a7be5",
+        "bytes": 45772
+      },
+      {
+        "path": "source/files/WileyNJD-v2.cls",
+        "role": "cls",
+        "sha256": "5d8faf972becd3cf1d9b0b28397e9f22b23d583673e58a74bb90cc7af1e94f3e",
+        "bytes": 109242
+      },
+      {
+        "path": "source/files/headers.tex",
+        "role": "tex",
+        "sha256": "29a8cf37800f8be492cec3a534f1293b0e08010da4e8ebccdc9a8ac5c18baebe",
+        "bytes": 4155
+      },
+      {
+        "path": "source/files/main.bbl",
+        "role": "bbl",
+        "sha256": "9a8abcfdad9e75df4c32ae751f40662a8e74246370552e40122ce1633e9c64da",
+        "bytes": 5686
+      },
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "d34a4792211896860843b5e5d846b7e0887df8f64f79dc707dd006c907c09910",
+        "bytes": 94238
+      },
+      {
+        "path": "source/files/newcommands2eams_for_birkjour.tex",
+        "role": "tex",
+        "sha256": "edb15f7ff9ac8d509333f38eda5385477186ca81d56f79957f466bdabfceb9bc",
+        "bytes": 10528
+      },
+      {
+        "path": "source/files/wileyNJD-Doc.tex",
+        "role": "tex",
+        "sha256": "08d46fc689ae5f3428ee6150d7be1c1c5bc3be9f3ef8c87d94614227e1957989",
+        "bytes": 12290
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

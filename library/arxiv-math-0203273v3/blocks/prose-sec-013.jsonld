@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-013",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-013",
   "kind": "prose",
-  "title": "Alg`ebres `a plusieurs objets. Dans cet article, nous adoptons le point de vue",
-  "pageStart": 9,
-  "pageEnd": 9,
-  "text": "../sections/sec-013-13-algebres-a-plusieurs-objets-dans-cet-article.md",
-  "derivedFrom": "library/arxiv-math-0203273v3/manifest",
-  "sourceDocument": "library/arxiv-math-0203273v3/manifest",
+  "title": "Une relation de cocycle, II",
+  "pageStart": 70,
+  "pageEnd": 71,
+  "text": "../sections/sec-013-1363-une-relation-de-cocycle-ii.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203273v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203273v3/manifest.jsonld",
   "provenance": "ingested"
 }

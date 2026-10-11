@@ -1,0 +1,248 @@
+\section{Introductions}
+
+Suppose $M$ is an $n$-dimensional K\"ahler manifold and $L$ is an ample
+line bundle over $M$. Let the K\"ahler form of $M$ be $\omega_g$ and the
+Hermitian metric of $L$ be $H$. We assume that $\omega_g$ is the curvature
+of $H$, that is, $\omega_g=Ric(H)$. 
+The K\"ahler metric of
+$\omega_g$ is called a polarized 
+\ka metric on $M$.
+
+Using $H$ and $\omega_g$,
+for any positive integer $m$,
+ $H^0(M,L^m)$ becomes a Hermitian inner product space. 
+We use the following notations: suppose that $S,T\in H^0(M,L^m)$. Let
+$<S,T>_{H^m}$ be the pointwise inner product and
+\[
+(S,T)=\int_M<S,T>_{H^m}\frac{\omega^n_g}{n!}
+\]
+be the inner product of $H^0(M,L^m)$. Let
+\[
+||S||=\sqrt{<S,S>_{H^m}
+}
+\]
+be the pointwise norm. In particular, $||S||(x)$ denotes the pointwise
+norm at $x\in M$. Let
+\[
+||S||_{L^2}=\sqrt{(S,S)}
+\]
+be the $L^2$-norm of $S$. 
+
+Let $\{S_1,\cdots,S_{d(m)}\}$ be an orthonormal basis of $H^0(M,L^m)$.
+The quantity(see~\cite{T5})
+\begin{equation}\label{quan}
+\sum_{i=1}^{d(m)}||S_i||^2
+\end{equation}
+plays an important rule in K\"ahler-Einstein geometry and stability of
+complex manifolds. 
+If $m$ is sufficiently large, then there is a natural embedding
+$\phi_m: M\rightarrow CP^{d(m)-1}$ by
+$x\mapsto [S_1(x),\cdots,S_{d(m)}(x)]$. 
+This follows from the Kodaira's embedding theorem.
+The metric
+$\frac 1m\phi^*\omega_{FS}$ on $M$ is called the Bergman metric. 
+The following formula is an easy but key observation made by
+Tian~\cite{T5}
+in his proof of the covergence of the Bergman metrics:
+\[
+\frac 1m\pa\bar\pa\log\sum_{i=1}^{d(m)}||S_i||^2=\frac 1m
+\phi^*\omega_{FS}-\omega_g.
+\]
+
+
+A lot of work has been done by several authors 
+~\cite{T5},
+~\cite{ru},~\cite{sz}, ~\cite{cat} and~\cite{Lu10}
+on the estimates
+of~\eqref{quan}. However, these works are concentrated on a
+single manifold. On the other hand, in studying the stability and
+K\"ahler-Einstein
+geometry
+of  manifolds, we need to study the behavior of~\eqref{quan} for
+a
+family of manifolds. Tian's work~\cite{T6} on the Calabi Conjecture shows
+the
+importance and non-triviality of the problem of giving lower bound
+estimate 
+of~\eqref{quan}
+for a family of complex surfaces. 
+In the  $n$-dimensional case, Tian~\cite{T9} proved that
+~\eqref{quan} has
+a positive lower bound depends on the
+dimension $n$, the upper bound of the Betti numbers, the positve upper and
+lower bound of the Ricci curvature and the $L^n$ norm of the Riemannian
+sectional curvature.
+In general, 
+~\eqref{quan}  maybe a useful tool in studying algebraic fiberations over
+a compact K\"ahler manifold.
+The paper of interest to us are~\cite{MR83h:14025}
+and~\cite{MR86j:14032}.
+
+
+In this paper, we shall study the behavior of~\eqref{quan} on
+Riemann surfaces. Even in the case of Riemann surfaces, the problem
+of finding a uniform lower bound of~\eqref{quan} is nontrivial.
+In fact, by
+the counterexample in \S 3, we know that there is no uniform lower
+bound in general.  We proved a partial uniform estimate in \S 4
+which, I believe, is the ``right'' one in the sense that it gives all the
+information on  stability of the Riemann surfaces. 
+
+
+We also consider the coordinate ring of Riemann surfaces. For smooth
+Riemann surfaces $M$ of genus $g\geq 2$, it is well  known that its
+coordinate ring is
+finitely
+generated. That is, there is a positive integer $m_0$, such that
+for any $S\in H^0(M, K_M^m)$ with $m>m_0$, we can find $U_i\in H^0(M,
+K_M^{m_0}), i\in
+I$ and $T_i\in H^0(M, K_M^{m-m_0}), i\in 
+I$
+such that
+\[
+S=\sum_{i\in I} U_iT_i,
+\]
+where $I$ is a finite set. In studying the behavior of 
+Riemann surfaces near the boundary of the Teichm\"uller space, we need
+some uniform estimates. In this paper, we give a uniform estimate
+which will give us the information on  singular Riemann surfaces.  
+
+The above setting is similar to that in the corona problem
+in complex analysis.
+The corona problem on the unit disk was studied by Carleson
+in ~\cite
+{MR25:5186}. Carleson's result
+stimulates many ideas which proved to be useful for other problems.
+An extensive discussion of the Carleson's corona theorem can be found
+in~\cite{JBG}. 
+
+Modifying Wolff's~\cite{WT} proof of Carleson's
+theorem together with the $\bar\pa$-estimate, we give
+a uniform corona estimate in the last section of this paper
+as an application of Theorem~\ref{third}.
+In order to obtain the result, we  take
+ special care
+to the points where the injective radius are small. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The organization of the paper is as follows: in \S 2, we give a lower
+bound of~\eqref{quan} in terms of the genus $g$ and the injective radius
+$\delta$ of $M$. In \S 3, we give a counterexample which shows that the
+lower bound must depend on $\delta$. In \S 4, we give the partial uniform
+estimate. That is, a lower bound of ~\eqref{quan} at $x\in M$ depending
+only on the injective radius $\delta_x$ of $x$. In \S 5, we solve the
+uniform corona problem by the partial uniform estimate.
+
+
+
+
+
+
+The main results of this paper are the following:
+
+\begin{theorem}\label{main}
+Let $M$ be a Riemann surface of the genus $g\geq 2$. Let $K_M$ be the
+canonical line  bundle of $M$ endowed with a Hermitian metric $H$. Let 
+the curvature $\omega_g$ of $H$ be positive. $\omega_g$ gives a \ka
+metric of $M$. Let the curvature $K$ of $\omega_g$ satisfy
+\[
+-K_1\leq K\leq K_2
+\]
+for nonnegative constants $K_1, K_2\geq 0$ and let $\delta'$ be the 
+injective radius of $M$. Let
+\[
+\delta=\min(\delta',\frac{1}{\sqrt{K_1+K_2}}).
+\]
+Then there is an absolute constant $C>0$ such that for $m\geq 2$,
+\[
+\sum_{i=1}^{d(m)}||S_i||^2\geq  e^{-\frac{Cg^3}{\delta^6}},
+\]
+where $\{S_1,\cdots,S_{d(m)}\}$ is an orthnormal basis of $H^0(M,K_M^m)$.
+\end{theorem}
+
+
+\begin{theorem}\label{second}
+For any $\eps>0$ and $m\geq 2$, there is a Riemann surface
+$M$
+ of genus
+$g\geq 2$ with the constant Gauss curvature $(-1)$ such that
+\[
+\inf_{x\in M}\sum_{i=1}^{d(m)}||S_i||^2\leq \eps.
+\]
+\end{theorem}
+
+
+The theorem disproves the conjecture that
+the absolute lower bound exists.
+
+When the injective radius of $M$ goes to zero, the first eigenvalue 
+and the Sobolev constant will also go to zero. In this case, Theorem
+~\ref{main} gives no information. In the following theorem, we proved that
+~\eqref{quan} has a lower bound which depends only on the local
+information and is independent to the injective radius of $M$. 
+For this reason, we call the result partial uniform estimate. 
+
+\begin{theorem}\label{third}
+Let $M$ be a Riemann surface of genus $g\geq 2$ and constant curvature
+$(-1)$. Then there are absolute constants $m_0>0$ and $D>0$ such that for
+any $m>m_0$
+and any $x_0\in M$, there is a section $S\in H^0(M,K_M^m)$ with
+$||S||_{L^2}=1$ such that
+\begin{equation}
+||S||(x_0)\geq\frac{\sqrt m}{D(1+\frac{1}{\sqrt m\delta_{x_0}^2}
+e^{\frac{\pi}{\delta_{x_0}}})},
+\end{equation}
+where $\delta_{x_0}$ is the injective radius of $\delta_{x_0}$.
+\end{theorem}
+
+
+On the coordinate ring $\oplus_{j=0}^{\infty}
+H^0(M, K_M^j)$, we have the following
+
+\begin{theorem}
+Let $M$ be a Riemann surface
+as above.
+Then there is an $m_0>0$ such that for any $m>m_0$ and $S\in
+H^0(M,K_M^m)$,
+there is a decomposition
+\[
+S=\sum_{i=1}^d S_i
+\]
+of $S_i\in H^0(M,K_M^m) (i=1,\cdots, d)$
+such that
+\begin{align}
+\begin{split}
+&||S_i||_{L^2}\leq C(m,m_0,g)||S||_{L^2}\\
+&||S_i||_{L^\infty}\leq C(m,m_0,g)||S||_{L^\infty}
+\end{split}
+\end{align}
+for $i=1,\cdots d$,
+and
+\[
+S_i=T_iU_i
+\]
+for a basis $U_1,\cdots,U_d$ of $H^0(M,K_M^{m_0})$
+and $T_1,\cdots,T_d\in H^0(M,K_M^{m-m_0})$.
+\end{theorem}
+
+
+
+{\bf Acknowledgment.} The author thanks Professor Tian for
+suggesting me this problem and
+ his help during 
+the preparing of this paper. He also thanks Professor Phong for the
+support
+and some suggestions of the work.

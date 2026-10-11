@@ -8,182 +8,103 @@ pages: 82-85
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
 doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R) — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual"
+text_source: latex
+latex_prose_ratio: 0.942
+latex_coverage_ratio: 0.983
 ---
-Now we apply the pairing to the left corepresentation (7.61).
-Theorem 8.11. The representation of Uq(gl(2, R)) is equivalent to
-∫
-R
-∫ ⊕
-R+
-Pλ,s2/2|Sb(Q + 2iλ)|2dλds2⊗L2(R,dt 2),
-where the representation space Pλ,s2/2 =L2(R,ds 1) is deﬁned in Theorem 8.6.
-Proof. Recall that we have to multiply the expression by Gb(Q+iα)Gb(Q+iτ )
-(1−q2)ib−1 (α +τ ) under
-the pairing. Also since the resulting expression is analytic in α,τ on the lower half
-plane, by taking α,τ to 0,−ib we mean the analytic continuation from R to the
-corresponding point, while respecting the contour of σ.
-The pairing of K0 and K is then given by τ = 0,α = 0. The factor
-Gb(−iσ)Gb(−iα +iσ)
-Gb(Q +iτ ) Gb(Q +iα)Gb(Q +iτ )
-becomes δ(σ) which means we also set σ = 0. Hence we obtain
-K0·f (s1,t 1)g(s2,t 2) = f (s1,t 1)g(s2,t 2)e− πb
-2 s2, (8.13)
-K·f (s1,t 1)g(s2,t 2) = f (s1,t 1)g(s2,t 2)eπbs1. (8.14)
-The pairing of E is given by τ =−ib and α = 0, so that again σ = 0 and is
-given by
-E·f (s1,t 1)g(s2,t 2) = −iq1/2f (s1−ib,t 1)g(s2,t 2)e2πbs1+πbs2e−πbs1− πb
-2 s2
-1−q2
-= −iq1/2f (s1−ib,t 1)g(s2,t 2)eπbs1+ πb
-2 s2
-1−q2 ,
+\label{sec:regular:left}
+Now we apply the pairing to the left corepresentation \eqref{leftcorep}.
+
+\begin{Thm} \label{ThmLeft}The representation of $U_q(\gl(2,\R))$ is equivalent to $$\int_\R\int_{\R^+}^\o+\cP_{\l,s_2/2}|S_b(Q+2i\l)|^2d\l ds_2\ox L^2(\R, dt_2),$$ where the representation space $\cP_{\l,s_2/2}=L^2(\R,ds_1)$ is defined in Theorem \ref{fundrep}.
+\end{Thm}
+\begin{proof} Recall that we have to multiply the expression by $\frac{G_b(Q+i\a)G_b(Q+i\t)}{(1-q^2)^{ib\inv (\a+\t)}}$ under the pairing. Also since the resulting expression is analytic in $\a, \t$ on the lower half plane, by taking $\a, \t$ to $0, -ib$ we mean the analytic continuation from $\R$ to the corresponding point, while respecting the contour of $\s$.
+
+The pairing of $K_0$ and $K$ is then given by $\t=0, \a=0$.
+The factor $$\frac{G_b(-i\s)G_b(-i\a+i\s)}{G_b(Q+i\t)} G_b(Q+i\a)G_b(Q+i\t)$$ becomes $\d(\s)$ which means we also set $\s=0$. Hence we obtain
+\Eq{K_0\cdot f(s_1,t_1)g(s_2,t_2)= f(s_1,t_1)g(s_2,t_2)e^{-\frac{\pi b}{2}s_2},}
+\Eq{K\cdot f(s_1,t_1)g(s_2,t_2)= f(s_1,t_1)g(s_2,t_2)e^{\pi bs_1}.}
+
+The pairing of $E$ is given by $\t=-ib$ and $\a=0$, so that again $\s=0$ and is given by
+\begin{eqnarray*}
+E\cdot f(s_1,t_1)g(s_2,t_2)&=&-iq^{1/2} f(s_1-ib,t_1)g(s_2,t_2)\frac{e^{2\pi bs_1+\pi bs_2}e^{-\pi bs_1-\frac{\pi b}{2}s_2}}{1-q^2}\\
+&=&-iq^{1/2}f(s_1-ib,t_1)g(s_2,t_2)\frac{e^{\pi bs_1+\frac{\pi b}{2}s_2}}{1-q^2},
+\end{eqnarray*}
 or simply
-E = i
-q−q−1e
-πb
-2 s2eπbs1+2πbps1. (8.15)
-Finally the pairing of F is given by τ = 0,α =−ib. By Corollary 3.11 we have
-Gb(−iσ)Gb(−iα +iσ)
-Gb(Q +iτ ) Gb(Q +iα)Gb(Q +iτ )
-= e−πiσ2−πQσGb(iσ−b)Gb(Q +b)
-Gb(Q +iσ)
-= −q2δ(σ)−q2δ(σ +ib),
-82
+\Eq{E=\frac{i}{q-q\inv} e^{\frac{\pi b}{2}s_2} e^{\pi bs_1+2\pi bp_{s_1}}.}
+
+Finally the pairing of $F$ is given by $\t=0, \a=-ib$. By Corollary \ref{delta} we have
+\begin{eqnarray*}
+&&\frac{G_b(-i\s)G_b(-i\a+i\s)}{G_b(Q+i\t)} G_b(Q+i\a)G_b(Q+i\t)\\
+&=&e^{-\pi i\s^2-\pi Q\s}\frac{G_b(i\s-b)G_b(Q+b)}{G_b(Q+i\s)}\\
+&=&-q^2\d(\s)-q^2\d(\s+ib),
+\end{eqnarray*}
 so that we obtain
-F·f (s1,t 1)g(s2,t 2) = iq−1/2 −q2
-1−q2eπbs1− πb
-2 s2
-(
-e2πb(t1−s1)f (s1 +ib,t 1 +ib)g(s2,t 2)
-+f (s1 +ib,t 1)g(s2,t 2) Gb( Q
-2 +is1−it1)Gb( Q
-2 +is1 +it1)
-Gb( Q
-2 +is1−it1−b)Gb( Q
-2 +is1 +it1−b)
-)
-.
-Using Gb(ix)
-Gb(ix−b) = (1−e2πib(ix−b)), we expand the expression:
-F = iq1/2e− πb
-2 s2
-q−q−1
-(
-e−πb(s1−2t1)e−2πb(pt1 +ps1 )+
-(1 +q−1e−2πb(s1−t1))(1 +q−1e2πb(−s1−t1))e2πbs1e−2πbps1
-)
-= ie− πb
-2 s2
-q−q−1
-(
-e−πb(2ps1 −s1) +e−πb(2ps1 +3s1) + (e2πbt1 +e−2πbt1 +e−2πb(pt1 −t1))e−πb(2ps1 +s1)
-)
-,
-so that under multiplication by e−πit2
-1 which changes pt1↦→pt1 +t1, we get
-F = ie− πb
-2 s2
-q−q−1
-(
-e−πb(2ps1 −s1) +e−πb(2ps1 +3s1) + Ce−πb(2ps1 +s1)
-)
-, (8.16)
-where C depending only on t1 is the operator deﬁned in the previous section.
-Therefore under the unitary transformation Φ deﬁned previously , the representation
-is equivalent to
-K0 = e
-πb
-2 s2,
-K = eπbs1,
-E = i
-q−q−1e
-πb
-2 s2eπbs1+2πbps1,
-F = ie− πb
-2 s2
-q−q−1
-(
-e−πb(2ps1 −s1) +e−πb(2ps1 +3s1) + (e2πbλ +e−2πbλ)e−πb(2ps1 +s1)
-)
-,
-where the measure dµ(λ) is now |Sb(Q + 2iλ)|2dλ.
-Motivated from the expression of the corepresentation, we multip ly the space by
-Gb( Q
-2 +is1−iλ)−1, and in eﬀect changes the action of e2πbps1 to (1+qe−2πbs1+2πbλ)e2πbps1 .
-The action of E and F then become:
-E = i
-q−q−1e
-πb
-2 s2 (eπbs1+2πbps1 +e−πbs1+2πbλ+2πbps1 ),
-F = i
-q−q−1e− πb
-2 s2 (eπbs1−2πbps1 +e−πbs1−2πbλ−2πbps1 ).
-83
-Now we make the following changes of variables (unitary transforma tions):
-◦s1↦→−s1 : ps1↦→−ps1,
-◦eπis1λ : ps1↦→ps1− λ
-2, p λ− s1
-2,
-◦e− πi
-2 s1s2 : ps1↦→ps1− s2
-4 , p s2↦→ps2− s1
-4.
+\begin{eqnarray*}
+F\cdot f(s_1,t_1)g(s_2,t_2)&=&iq^{-1/2}\frac{-q^2}{1-q^2}e^{\pi bs_1-\frac{\pi b}{2}s_2}\left(e^{2\pi b(t_1-s_1)}f(s_1+ib,t_1+ib)g(s_2,t_2) \right.\\
+&&\left.+ f(s_1+ib,t_1)g(s_2,t_2)\frac{G_b(\frac{Q}{2}+is_1-it_1)G_b(\frac{Q}{2}+is_1+it_1)}{G_b(\frac{Q}{2}+is_1-it_1-b)G_b(\frac{Q}{2}+is_1+it_1-b)}\right).
+\end{eqnarray*}
+Using $\frac{G_b(ix)}{G_b(ix-b)} = (1-e^{2\pi ib(ix-b)})$, we expand the expression:
+\begin{eqnarray*}
+F&=&\frac{iq^{1/2}e^{-\frac{\pi b}{2}s_2}}{q-q\inv}\left(e^{-\pi b(s_1-2t_1)}e^{-2\pi b(p_{t_1}+p_{s_1})}+\right.\\
+&&\left.(1+q\inv e^{-2\pi b(s_1-t_1)})(1+q\inv e^{2\pi b(-s_1-t_1)})e^{2\pi b s_1}e^{-2\pi bp_{s_1}}\right)\\
+&=&\frac{ie^{-\frac{\pi b}{2}s_2}}{q-q\inv}\left(e^{-\pi b(2p_{s_1}-s_1)}+e^{-\pi b(2p_{s_1}+3s_1)}+(e^{2\pi bt_1}+e^{-2\pi bt_1}+e^{-2\pi b(p_{t_1}-t_1)})e^{-\pi b(2p_{s_1}+s_1)}\right),\\
+\end{eqnarray*}
+so that under multiplication by $e^{-\pi it_1^2}$ which changes $p_{t_1}\mapsto p_{t_1}+t_1$, we get
+
+\Eq{F=\frac{ie^{-\frac{\pi b}{2}s_2}}{q-q\inv}\left(e^{-\pi b(2p_{s_1}-s_1)}+e^{-\pi b(2p_{s_1}+3s_1)}+\bC e^{-\pi b(2p_{s_1}+s_1)}\right),}
+where $\bC$ depending only on $t_1$ is the operator defined in the previous section.
+Therefore under the unitary transformation $\Phi$ defined previously, the representation is equivalent to
+\begin{eqnarray*}
+K_0&=&e^{\frac{\pi b}{2}s_2},\\
+K&=&e^{\pi bs_1},\\
+E&=&\frac{i}{q-q\inv} e^{\frac{\pi b}{2}s_2} e^{\pi bs_1+2\pi bp_{s_1}},\\
+F&=&\frac{ie^{-\frac{\pi b}{2}s_2}}{q-q\inv}\left(e^{-\pi b(2p_{s_1}-s_1)}+e^{-\pi b(2p_{s_1}+3s_1)}+(e^{2\pi b\l}+e^{-2\pi b\l})e^{-\pi b(2p_{s_1}+s_1)}\right),
+\end{eqnarray*}
+where the measure $d\mu(\l)$ is now $|S_b(Q+2i\l)|^2d\l$.
+
+Motivated from the expression of the corepresentation, we multiply the space by $G_b(\frac{Q}{2}+is_1-i\l)\inv$, and in effect changes the action of $e^{2\pi bp_{s_1}}$ to $(1+qe^{-2\pi bs_1+2\pi b\l})e^{2\pi bp_{s_1}}$. The action of $E$ and $F$ then become:
+
+$$E=\frac{i}{q-q\inv}e^{\frac{\pi b}{2}s_2}(e^{\pi bs_1+2\pi bp_{s_1}}+e^{-\pi bs_1+2\pi b\l+2\pi bp_{s_1}}),$$
+$$F=\frac{i}{q-q\inv}e^{-\frac{\pi b}{2}s_2}(e^{\pi bs_1-2\pi bp_{s_1}}+e^{-\pi bs_1-2\pi b\l-2\pi bp_{s_1}}).$$
+Now we make the following changes of variables (unitary transformations):
+\begin{eqnarray*}
+\circ s_1\mapsto -s_1 &:& p_{s_1}\mapsto -p_{s_1},\\
+\circ e^{\pi i s_1\l} &:& p_{s_1}\mapsto p_{s_1}-\frac{\l}{2},\tab p_{\l}-\frac{s_1}{2},\\
+\circ e^{-\frac{\pi i}{2}s_1s_2}&:& p_{s_1}\mapsto p_{s_1}-\frac{s_2}{4},\tab p_{s_2}\mapsto p_{s_2}-\frac{s_1}{4}.\\
+\end{eqnarray*}
 In other words, the transformation:
-f (s1,t 1)g(λ,t 2)↦→f (−s1,t 1)g(λ,t 2)e
-πi
-2 s1(2λ−s2).
-Then the representation (denoted by Pλ,t1 ) becomes:
-K0 = e
-πb
-2 s2,
-K = e−πbs1,
-E = i
-q−q−1 (eπb(−2ps1 −s1+λ) +eπb(−2ps1 +s1−λ))
-= i
-q−q−1 (q1/2eπb(s1−λ) +q−1/2e−πb(s1−λ))e−2πbps1
-= [ Q
-2b− i
-b (s1−λ)]qe−2πbps1,
-F = i
-q−q−1 (eπb(2ps1 −s1−λ) +eπb(2ps1 +s1+λ))
-= i
-q−q−1 (q−1/2eπb(s1+λ) +q1/2e−πb(s1+λ))e2πbps1
-= [ Q
-2b + i
-b (s1 +λ)]qe2πbps1.
-Remark 8.12. We note that there is a freedom of choice in multiplication by Gb
-in the above action. In fact this precisely says that
-Pλ,t ≃ P −λ,t (8.17)
-f (x) ↦→ Gb( Q
-2 +iλ−ix)
-Gb( Q
-2−iλ−ix)
-f (x) (8.18)
-as observed in [32].
-Since the pairing is non-degenerate, we obtain the following importan t realiza-
-tion of the multiplicative unitary W:
-84
-Corollary 8.13. As a corepresentation on L2(R), W is equivalent to
-W =
-∫
-R
-∫ ⊕
-R+
-T λ,t/2dµ(λ)dt, (8.19)
-wheredµ(λ) =|Sb(Q + 2iλ)|2dλ.
-This is a generalization of Podle´ s-Woronowicz’s deﬁnition [30] of a multiplicative
-unitary for a compact group
-u =
-∑
-α∈ ˆG
-⊕
-uα, (8.20)
-where ˆG is the set of all (ﬁnite dimensional) irreducible unitary representatio n of
-G, and
-uα :Vα↦→Vα⊗G
-is the irreducible corepresentation on some ﬁnite dimensional vecto r space Vα. In
-particular, this deﬁnes the multiplicative unitary in a coordinate free canonical way.
-Furthermore, by applying the transformations that was done in th e proof of
-Theorem 8.11 to the expression (7.61), and comparing the result wit h the expression
-of T λ,t/2 given in (7.31), we recover the “6-9 relation” of Gb that is ﬁrst observed
-by Volkov [44]. See Section 9 for further details.
+$$f(s_1,t_1)g(\l,t_2)\mapsto f(-s_1,t_1)g(\l,t_2)e^{\frac{\pi i}{2}s_1(2\l-s_2)}.$$
+
+Then the representation (denoted by $\cP_{\l,t_1}$) becomes:
+\begin{eqnarray*}
+K_0 &=& e^{\frac{\pi b}{2}s_2},\\
+K&=& e^{-\pi bs_1},\\
+E&=&\frac{i}{q-q\inv}(e^{\pi b(-2p_{s_1}-s_1+\l)}+e^{\pi b(-2p_{s_1}+s_1-\l)})\\
+&=&\frac{i}{q-q\inv}(q^{1/2}e^{\pi b(s_1-\l)}+q^{-1/2}e^{-\pi b(s_1-\l)})e^{-2\pi bp_{s_1}}\\
+&=&[\frac{Q}{2b}-\frac{i}{b}(s_1-\l)]_q e^{-2\pi bp_{s_1}},\\
+F&=&\frac{i}{q-q\inv}(e^{\pi b(2p_{s_1}-s_1-\l)}+e^{\pi b(2p_{s_1}+s_1+\l)})\\
+&=&\frac{i}{q-q\inv}(q^{-1/2}e^{\pi b(s_1+\l)}+q^{1/2}e^{-\pi b(s_1+\l)})e^{2\pi bp_{s_1}}\\
+&=&[\frac{Q}{2b}+\frac{i}{b}(s_1+\l)]_q e^{2\pi bp_{s_1}}.\\
+\end{eqnarray*}
+\end{proof}
+\begin{Rem} We note that there is a freedom of choice in multiplication by $G_b$ in the above action. In fact this precisely says that
+\begin{eqnarray}
+\cP_{\l,t}&\simeq& \cP_{-\l,t}\\
+f(x)&\mapsto& \frac{G_b(\frac{Q}{2}+i\l-ix)}{G_b(\frac{Q}{2}-i\l-ix)}f(x)
+\end{eqnarray}
+as observed in \cite{PT2}.
+\end{Rem}
+
+Since the pairing is non-degenerate, we obtain the following important realization of the multiplicative unitary $\bW$:
+\begin{Cor}\label{Wdecompose} As a corepresentation on $L^2(\R)$, $\bW$ is equivalent to
+\Eq{\bW=\int_\R\int_{\R_+}^{\o+} T^{\l,t/2} d\mu(\l)dt,}
+where $d\mu(\l)=|S_b(Q+2i\l)|^2 d\l$.
+\end{Cor}
+
+This is a generalization of Podle\'{s}-Woronowicz's definition \cite{PW} of a multiplicative unitary for a compact group
+\Eq{u = {\sum_{\a\in \hat{G}}}^{\o+} u^\a,}
+where $\hat{G}$ is the set of all (finite dimensional) irreducible unitary representation of $G$, and 
+$$u^\a:V_\a\mapsto V_\a\ox G$$
+is the irreducible corepresentation on some finite dimensional vector space $V_\a$. In particular, this defines the multiplicative unitary in a coordinate free canonical way.
+
+Furthermore, by applying the transformations that was done in the proof of Theorem \ref{ThmLeft} to the expression \eqref{leftcorep}, and comparing the result with the expression of $T^{\l,t/2}$ given in \eqref{fundcorep}, we recover the ``6-9 relation" of $G_b$ that is first observed by Volkov \cite{Vo}. See Section \ref{sec:meaning} for further details.

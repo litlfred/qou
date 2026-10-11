@@ -5,7 +5,8 @@
   "file": "0603217v3.pdf",
   "sha256": "d7375d4fee00dd9895ab8bab2ee23a9f69b74698ce303abd84def586a4fd3baf",
   "bytes": 127442,
-  "pages": 5
+  "pages": 5,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "A version of the volume conjecture",
   "authors_raw": "Y. Yokota and the author proved that for the figure-eight knot E and a complex",
-  "abstract": "W e propose a version of the volume conjecture that would rela te a certain limit of the colored Jones polynomials of a knot to th e volume function deﬁned by a representation of the fundamental group of the kn ot complement to the special linear group of degree two over complex number s. W e also conﬁrm the conjecture for the ﬁgure-eight knot and torus kno ts. This version is diﬀerent from S. Gukov’s because of a choice of polarizati on.",
+  "abstract": "W e propose a version of the volume conjecture that would rela te a certain limit of the colored Jones polynomials of a knot to th e volume function de\ufb01ned by a representation of the fundamental group of the kn ot complement to the special linear group of degree two over complex number s. W e also con\ufb01rm the conjecture for the \ufb01gure-eight knot and torus kno ts. This version is di\ufb00erent from S. Gukov\u2019s because of a choice of polarizati on.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20181122094633-05'00'",
@@ -126,6 +127,56 @@
   "likely_scanned": false,
   "toc_entries": 5,
   "sections": 5,
-  "chars_total": 12496
+  "chars_total": 12496,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "pvc.tex",
+   "tex_sections": 4,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-a-conjecture",
+     "title": "A conjecture",
+     "prose_ratio": 0.915,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-proof",
+     "title": "Proof",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-comments",
+     "title": "Comments",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

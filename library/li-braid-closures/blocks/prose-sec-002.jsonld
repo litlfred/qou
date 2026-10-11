@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/li-braid-closures/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/li-braid-closures/blocks/prose-sec-002",
   "kind": "prose",
   "title": "The braid group",
   "pageStart": 2,
   "pageEnd": 3,
   "text": "../sections/sec-002-the-braid-group.md",
-  "derivedFrom": "library/li-braid-closures/manifest",
-  "sourceDocument": "library/li-braid-closures/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/li-braid-closures/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/li-braid-closures/manifest.jsonld",
   "provenance": "ingested"
 }

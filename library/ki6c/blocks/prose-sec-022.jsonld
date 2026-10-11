@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ki6c/blocks/prose-sec-022",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ki6c/blocks/prose-sec-022",
   "kind": "prose",
-  "title": "Arg (1 \u0000y) = Arg",
-  "pageStart": 41,
-  "pageEnd": 41,
-  "text": "../sections/sec-022-2-arg-1-y-arg.md",
-  "derivedFrom": "library/ki6c/manifest",
-  "sourceDocument": "library/ki6c/manifest",
+  "title": "Estimate of a solution of (36)",
+  "pageStart": 56,
+  "pageEnd": 58,
+  "text": "../sections/sec-022-estimate-of-a-solution-of-36.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
   "provenance": "ingested"
 }

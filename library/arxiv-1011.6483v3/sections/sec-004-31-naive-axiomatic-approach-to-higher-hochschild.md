@@ -8,969 +8,259 @@ pages: 10-22
 source_pdf: 1011.6483v3.pdf
 source_sha256: 7a425e51860c37a4
 doc_brief: "DERIVED HIGHER HOCHSCHILD HOMOLOGY — W e study the higher Hochschild chain functor, factorizatio n alge- bras and their relationship with topological chiral homolo gy."
+text_source: latex
+latex_prose_ratio: 0.967
+latex_coverage_ratio: 0.92
 ---
-recall the standard construction of chain complexes computing hig her Hochschild
-homology (also called Hochschild homology over spaces) following [30, 1 3]. The
-higher Hochschild complex is a functor CH :sSet×CDGA→CDGA. This func-
-tor is deﬁned as follows: the tensor products A⊗B of two CDGAs has an natural
-structure of CDGA(in other words, CDGA has a symmetric monoidal structure
-canonically induced by the underlying tensor product of chain comple xes). Fur-
-thermore, the multiplication A⊗A→ A is an algebra homomorphism since A
-is commutative. It follows that a CDGA can be thought of a strict symmetric
-DERIVED HIGHER HOCHSCHILD, TCH, F ACTORIZATION ALGEBRAS 11
-monoidal functor from the category of ﬁnite sets with disjoint unio n to the cate-
-gory of chain complexes (whose value on a ﬁnite set J is given by A⊗J ), which can
-be extended to the category of all sets by taking colimits. Given a sim plicial set
-X•, thought of as a functor ∆ op→ sSet, compose these two functors to obtain a
-simplicial complex X•↦→A⊗X• . The total complex (that is the geometric real-
-ization
-⏐⏐A⊗X•
-⏐⏐) of this simplicial complex is, by deﬁnition, CH •
-X• (A,A ). In more
-details, we get the following explicit deﬁnitions.
-Deﬁnition 2. First let Y• : ∆ op→S ets∗ be a ﬁnite pointed simplicial set, and
-for k ≥ 0, we set yk := Yk−{∗} to be the complement of the base point in
-Yk. Furthermore, let ( A = ⨁
-i∈ZAi,d, •) be a diﬀerential graded, associative,
-commutative algebra, and ( M = ⨁
-i∈ZMi,dM ) a diﬀerential graded module over
-A (viewed as a symmetric bimodule). Then, the Hochschild chain complex of
-A with values in M overY• is deﬁned as 2CH •
-Y•(A,M ) := ⨁
-n∈ZCHn
-Y• (A,M ),
-where
-CHn
-Y•(A,M ) :=
-⨁
-k≥0
-(M⊗A⊗yk )n+k
-is given by a sum of elements of total degree n +k. In order to deﬁne a diﬀerential
-D onCH •
-Y• (A,M ), we deﬁne morphisms di :Yk→Yk−1, for i = 0,...,k as follows.
-First note that for any map f :Yk→Yl of pointed sets, and for m⊗a1⊗···⊗ ayk∈
-M⊗A⊗yk , we denote by f∗ :M⊗A⊗yk→M⊗A⊗yl,
-(1) f∗(m⊗a1⊗···⊗ ayk ) = (−1)ǫn⊗b1⊗···⊗ byl,
-where bj = ∏
-i∈f −1(j)ai (or bj = 1 if f −1(j) = ∅) for j = 0,...,y l, and n =
-m•
-∏
-i∈f −1(basepoint),i⁄=basepointai. The sign ǫ in equation (1) is determined by the
-usual Koszul sign rule of (−1)|x|•|y| wheneverx moves acrossy. In particular, there
-are induced boundaries ( di)∗ : CHk
-Y• (A,M )→ CHk−1
-Y• (A,M ) and degeneracies
-(sj)∗ :CHk
-Y• (A,M )→CHk+1
-Y• (A,M ), which we denote by abuse of notation again
-bydi andsj. Using these, the diﬀerential D :CH •
-Y•(A,A )→CH •
-Y•(A,A ) is deﬁned
-by letting D(a0⊗a1⊗···⊗ ayk ) be equal to
-yk∑
-i=0
-(−1)k+ǫia0⊗···⊗ d(ai)⊗···⊗ ayk +
-k∑
-i=0
-(−1)idi(a0⊗···⊗ ayk ),
-where ǫi is again given by the Koszul sign rule, i.e., (−1)ǫi = (−1)|a0|+···+|ai−1|.
-The simplicial conditions on di imply that D2 = 0.
-If Y• : ∆ op → Sets is a ﬁnite (not necessarily pointed) simplicial set, we
-may still deﬁne CH •
-Y• (A) := ⨁
-n∈ZCHn
-Y• (A,A ) via the same formula as above,
-CHn
-Y•(A,A ) := ⨁
-k≥0(A⊗A⊗yk )n+k. Formula (1) again induces boundaries di and
-degeneracies si, which produce a diﬀerential D of square zero on CH •
-Y• (A,A ) as
-above.
-If Y• is any simplicial set we deﬁne
-CH •
-Y• (A,M ) := lim−→
-K• → Y•,
-K• ﬁnite
-CH •
-K•(A,M )
-2W e recall that we are using a cohomological type grading for o ur diﬀerential graded modules,
-see Convention (7) on page 7, hence the upper index n. Note that, nowhere in this paper will we
-consider Hochschild cochains.
-12 G. GINOT, T. TRADLER, AND M. ZEINALIAN
-as the colimit over all ﬁnite simplicial sets. If Y• is ﬁnite, then this deﬁnition agrees
-with the previous ones thanks to the Yoneda lemma.
-Remark 2. Note that due to our grading convention, if A is non graded, or con-
-centrated in degree 0, then HHY•• (A,A ) is concentrated in non positive degrees. In
-particular, our grading is opposite of the one in [21].
-Note that the equation (1) also makes sense for any map of simplicial pointed sets
-f :Xk→Yk. Since A is graded commutative and M symmetric, (f◦g)∗ =f∗◦g∗,
-henceY•↦→CH •
-Y• (A,M ) is a functor from the category of ﬁnite pointed simplicial
-sets to the category of simplicial k-vector spaces, see [30]. If M = A, CH •
-Y• (A)
-is a functor from the category of ﬁnite simplicial sets to the catego ry of simplicial
-k-algebras.
-Now note that any map g : A→ B of CDGAs and any maps of modules ρ :
-M → N over g : A→ B, i.e. ρ(am) = g(a)ρ(m), induces a map CH •
-Y•(g,ρ ) :
-CH •
-Y•(A,M )→CH •
-Y•(B,N ) of simplicial vector spaces.
-The chain complex
-(
-CH •
-Y• (A),D
-)
-inherits a structure of (diﬀerential graded)
-algebra. This is a formal consequence of the fact that CH •
-Y• (A) is a simplicial
-commutative algebra. Indeed, given two simplicial vector spaces V• and W•, one
-deﬁnes a simplicial structure on the simplicial space ( V×W )k := Vk⊗Wk using
-the boundaries dV
-i ⊗dW
-i and degeneracies sV
-i ⊗sW
-i . The shuﬄe product is (the
-collection of) maps sh :Vp⊗Wq→ (V×W )p+q deﬁned by
-sh(v⊗w) =
-∑
-(µ,ν)
-sgn(µ,ν )(sνq...s ν1 (v)⊗sµp...s µ1 (w)),
-where (µ,ν ) denotes a (p,q )-shuﬄe, i.e. a permutation of{0,...,p +q−1} mapping
-0≤ j≤ p− 1 to µj+1 and p≤ j≤ p +q− 1 to νj−p+1, such that µ1 <··· < µp
-and ν1<··· <ν q.
-SinceCH •
-Y• (A,M ) is a simplicial vector space, we obtain an induced shuﬄe map
-sh :CH •
-Yp (A,M )⊗CH •
-Yq (B,N )→CH •
-Yp+q (A⊗B,M ⊗N ) for any CDGAs A,B
-and modules M,N . Now, since A is a CDGA, the multiplication µ :A⊗A→A is
-an algebra map, and the map ν : M⊗A→ M a map of A-modules. Composing
-these maps with the shuﬄe products we obtain the multiplication
-shY• :CH •
-Y• (A,M )⊗CH •
-Y• (A)
-sh
-→CH •
-Y•(A⊗A,M⊗A)
-CH •
-Y• (µ,ν)
-−→ CH •
-Y•(A,M ).
-Proposition 1. The multiplicationshY• makesCH •
-Y• (A) a diﬀerential graded com-
-mutative algebra and CH •
-Y•(A,M ) a DG-module over CH •
-Y• (A), which are natural
-in A and M .
-Proof. The proof of the algebra structure is given in [13, Proposition 2.4.2] and the
-proof of the module structure is the same. □
-Note that CH •
-pt•(A) is the (chain complex associated to the) constant sim-
-plicial CDGA A. In particular there is a canonical quasi-isomorphism η : A =
-CH •
-pt0
-(A)→ CH •
-pt•(A) splitting the augmentation map CH •
-pt•(A)→ CH •
-pt0
-(A).
-It follows from Proposition 1 above that if X• is a pointed simplicial set, the canon-
-ical map pt•→X• induces a natural A-module structure on CH •
-X• (A,M ) (and an
-A-algebra structure on CH •
-X• (A)). In other words, CH •
-X• (A,M ) is naturally an
-A-module.
+[]{#S:NaiveHH label="S:NaiveHH"}
+
+We first recall the standard construction of chain complexes computing higher Hochschild homology (also called Hochschild homology over spaces) following [@P; @GTZ]. The higher Hochschild complex is a functor $CH: sSet \times CDGA \to CDGA$. This functor is defined as follows: the tensor products $A\otimes B$ of two CDGAs has an natural structure of CDGA(in other words, $CDGA$ has a symmetric monoidal structure canonically induced by the underlying tensor product of chain complexes). Furthermore, the multiplication $A\otimes A\to A$ is an algebra homomorphism since $A$ is commutative. It follows that a $CDGA$ can be thought of a strict symmetric monoidal functor from the category of finite sets with disjoint union to the category of chain complexes (whose value on a finite set $J$ is given by $A^{\otimes J}$), which can be extended to the category of all sets by taking colimits. Given a simplicial set $X_{\scriptstyle\bullet}$, thought of as a functor $\Delta^{op} \to sSet$, compose these two functors to obtain a simplicial complex $X_{\scriptstyle\bullet}\mapsto A^{\otimes X_{\scriptstyle\bullet}}$. The total complex (that is the geometric realization $\big|A^{\otimes X_{\scriptstyle\bullet}}\big|$) of this simplicial complex is, by definition, $CH^{{\scriptstyle\bullet}}_{X_{\scriptstyle\bullet}}(A,A)$. In more details, we get the following explicit definitions.
+
+::: definition
+[]{#D:Hoch label="D:Hoch"} First let $Y_{\scriptstyle\bullet}:\Delta^{op}\to \mathcal Sets_*$ be a finite pointed simplicial set, and for $k\geq 0$, we set $y_k:=Y_k -\{*\}$ to be the complement of the base point in $Y_k$. Furthermore, let $(A=\bigoplus_{i\in \mathbb Z} A^i, d, {\scriptstyle\bullet})$ be a differential graded, associative, commutative algebra, and $(M=\bigoplus_{i\in \mathbb Z}M^i,d_M)$ a differential graded module over $A$ (viewed as a symmetric bimodule). Then, the **Hochschild chain complex of $A$ with values in $M$ over $Y_{\scriptstyle\bullet}$** is defined as[^1] $CH^{{\scriptstyle\bullet}}_{Y_{\scriptstyle\bullet}}(A,M):=\bigoplus_{n\in \mathbb Z} CH^n_{Y_{\scriptstyle\bullet}}(A,M)$, where $$CH^n_{Y_{\scriptstyle\bullet}}(A,M):=\bigoplus_{k\geq 0} (M\otimes A^{\otimes y_k})^{n+k}$$ is given by a sum of elements of total degree $n+k$. In order to define a differential $D$ on $CH_{Y_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A,M)$, we define morphisms $d_i:Y_k\to Y_{k-1}$, for $i=0,\dots,k$ as follows. First note that for any map $f:Y_k\to Y_l$ of pointed sets, and for $m\otimes a_1\otimes \dots\otimes a_{y_k}\in M\otimes A^{\otimes y_k}$, we denote by $f_*:M\otimes A^{\otimes y_k}\to M\otimes A^{\otimes y_l}$, $$\label{f_*}
+ f_*(m\otimes a_1\otimes \dots\otimes a_{y_k})=(-1)^{\epsilon} n\otimes b_1\otimes \dots\otimes b_{y_l},$$ where $b_{j}=\prod_{i\in f^{-1}(j)} a_i$ (or $b_j=1$ if $f^{-1}(j)=\emptyset$) for $j=0,\dots,y_{l}$, and $n=m{\scriptstyle\bullet}\prod_{i\in f^{-1}(\text{basepoint}), i\neq \text{basepoint}}a_i$. The sign $\epsilon$ in equation [\[f\_\*\]](#f_*){reference-type="eqref" reference="f_*"} is determined by the usual Koszul sign rule of $(-1)^{|x|{\scriptstyle\bullet}|y|}$ whenever $x$ moves across $y$. In particular, there are induced boundaries $(d_i)_*:CH^k_{Y_{\scriptstyle\bullet}}(A,M)\to CH^{k-1}_{Y_{\scriptstyle\bullet}}(A,M)$ and degeneracies $(s_j)_*:CH^k_{Y_{\scriptstyle\bullet}}(A,M)\to CH^{k+1}_{Y_{\scriptstyle\bullet}}(A,M)$, which we denote by abuse of notation again by $d_i$ and $s_j$. Using these, the differential $D:CH^{{\scriptstyle\bullet}}_{Y_{\scriptstyle\bullet}}(A,A)\to CH^{{\scriptstyle\bullet}}_{Y_{\scriptstyle\bullet}}(A,A)$ is defined by letting $D(a_0\otimes a_1\otimes \dots\otimes a_{y_k})$ be equal to $$\sum_{i=0}^{y_k} (-1)^{k+\epsilon_i} a_0\otimes \dots\otimes d(a_i)\otimes \dots\otimes a_{y_k}+\sum_{i=0}^k (-1)^i d_i (a_0\otimes \dots\otimes a_{y_k}),$$ where $\epsilon_i$ is again given by the Koszul sign rule, *i.e.*, $(-1)^{\epsilon_i}=(-1)^{|a_0|+\cdots+|a_{i-1}|}$. The simplicial conditions on $d_i$ imply that $D^2=0$.
+
+If $Y_{\scriptstyle\bullet}:\Delta^{op}\to \mathcal Sets$ is a finite (not necessarily pointed) simplicial set, we may still define $CH_{Y_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A):=\bigoplus_{n\in \mathbb Z} CH^n_{Y_{\scriptstyle\bullet}}(A,A)$ via the same formula as above, $CH^n_{Y_{\scriptstyle\bullet}}(A,A):=\bigoplus_{k\geq 0} (A\otimes A^{\otimes y_k})_{n+k}$. Formula [\[f\_\*\]](#f_*){reference-type="eqref" reference="f_*"} again induces boundaries $d_i$ and degeneracies $s_i$, which produce a differential $D$ of square zero on $CH^{{\scriptstyle\bullet}}_{Y_{\scriptstyle\bullet}}(A,A)$ as above.
+
+If $Y_{\scriptstyle\bullet}$ is any simplicial set we define $$CH_{Y_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A,M):=\mathop{\lim\limits_{\textstyle\longrightarrow}}\limits_{\small \begin{array}{l}K_{\scriptstyle\bullet}\to Y_{\scriptstyle\bullet}, \\ K_{\scriptstyle\bullet}\mbox{ finite} \end{array}} CH_{K_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A,M)$$ as the colimit over all finite simplicial sets. If $Y_{\scriptstyle\bullet}$ is finite, then this definition agrees with the previous ones thanks to the Yoneda lemma.
+:::
+
+::: remark
+Note that due to our grading convention, if $A$ is non graded, or concentrated in degree 0, then $HH_{\scriptstyle\bullet}^{Y_{{\scriptstyle\bullet}}}(A,A)$ is concentrated in non positive degrees. In particular, our grading is opposite of the one in [@L].
+:::
+
+Note that the equation [\[f\_\*\]](#f_*){reference-type="eqref" reference="f_*"} also makes sense for any map of simplicial pointed sets $f:X_k\to Y_k$. Since $A$ is graded commutative and $M$ symmetric, $(f\circ g)_* =f_*\circ g_*$, hence $Y_{\scriptstyle\bullet}\mapsto CH^{\scriptstyle\bullet}_{Y_{\scriptstyle\bullet}}(A,M)$ is a functor from the category of finite pointed simplicial sets to the category of simplicial $k$-vector spaces, see [@P]. If $M=A$, $CH^{\scriptstyle\bullet}_{Y_{\scriptstyle\bullet}}(A)$ is a functor from the category of finite simplicial sets to the category of simplicial $k$-algebras.
+
+Now note that any map $g:A\to B$ of CDGAs and any maps of modules $\rho:M\to N$ over $g:A\to B$, *i.e.* $\rho(am)=g(a)\rho(m)$, induces a map $CH_{Y_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(g,\rho): CH_{Y_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A,M)\to CH_{Y_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(B,N)$ of simplicial vector spaces.
+
+The chain complex $\left(CH_{Y_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A), D\right)$ inherits a structure of (differential graded) algebra. This is a formal consequence of the fact that $CH_{Y_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)$ is a simplicial commutative algebra. Indeed, given two simplicial vector spaces $V_{\scriptstyle\bullet}$ and $W_{\scriptstyle\bullet}$, one defines a simplicial structure on the simplicial space $(V\times W)_k:=V_k\otimes W_k$ using the boundaries $d^V_i\otimes d^W_i$ and degeneracies $s^V_i\otimes s^W_i$. The *shuffle product* is (the collection of) maps $sh:V_p\otimes W_q\to (V\times W)_{p+q}$ defined by $$sh(v\otimes w)=\sum_{(\mu,\nu)} sgn(\mu,\nu) (s_{\nu_q}\dots s_{\nu_1}(v)\otimes s_{\mu_p}\dots s_{\mu_1}(w)),$$ where $(\mu,\nu)$ denotes a $(p,q)$-shuffle, *i.e.* a permutation of $\{0,\dots,p+q-1\}$ mapping $0\leq j\leq p-1$ to $\mu_{j+1}$ and $p\leq j\leq p+q-1$ to $\nu_{j-p+1}$, such that $\mu_1<\dots<\mu_p$ and $\nu_1<\dots<\nu_q$.
+
+Since $CH^{{\scriptstyle\bullet}}_{Y_{\scriptstyle\bullet}}(A,M)$ is a simplicial vector space, we obtain an induced shuffle map $sh:CH_{Y_p}^{{\scriptstyle\bullet}}(A,M)\otimes CH^{{\scriptstyle\bullet}}_{Y_q}(B,N) \to CH^{{\scriptstyle\bullet}}_{Y_{p+q}}(A\otimes B, M\otimes N)$ for any CDGAs $A,B$ and modules $M,N$. Now, since $A$ is a CDGA, the multiplication $\mu:A\otimes A\to A$ is an algebra map, and the map $\nu:M\otimes A\to M$ a map of $A$-modules. Composing these maps with the shuffle products we obtain the multiplication $$sh_{Y_{\scriptstyle\bullet}}:CH^{{\scriptstyle\bullet}}_{Y_{\scriptstyle\bullet}}(A,M)\otimes CH^{{\scriptstyle\bullet}}_{Y_{\scriptstyle\bullet}}(A)\stackrel {sh} \to CH^{{\scriptstyle\bullet}}_{Y_{\scriptstyle\bullet}}(A\otimes A,M\otimes A)\stackrel {CH_{Y_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(\mu,\nu)} \longrightarrow  CH^{{\scriptstyle\bullet}}_{Y_{\scriptstyle\bullet}}(A,M).$$
+
+::: proposition
+[]{#P:shuffleinvariance label="P:shuffleinvariance"} The multiplication $sh_{Y_{\scriptstyle\bullet}}$ makes $CH^{{\scriptstyle\bullet}}_{Y_{\scriptstyle\bullet}}(A)$ a differential graded commutative algebra and $CH_{Y_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A,M)$ a DG-module over $CH^{{\scriptstyle\bullet}}_{Y_{\scriptstyle\bullet}}(A)$, which are natural in $A$ and $M$.
+:::
+
+::: proof
+*Proof.* The proof of the algebra structure is given in [@GTZ Proposition 2.4.2] and the proof of the module structure is the same. ◻
+:::
+
+Note that $CH_{\mathop{pt}_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)$ is the (chain complex associated to the) constant simplicial CDGA $A$. In particular there is a canonical quasi-isomorphism $\eta: A=CH_{\mathop{pt}_0}^{{\scriptstyle\bullet}}(A)\to CH_{\mathop{pt}_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)$ splitting the augmentation map $CH_{\mathop{pt}_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)\to CH_{\mathop{pt}_0}^{{\scriptstyle\bullet}}(A)$. It follows from Proposition [\[P:shuffleinvariance\]](#P:shuffleinvariance){reference-type="ref" reference="P:shuffleinvariance"} above that if $X_{\scriptstyle\bullet}$ is a pointed simplicial set, the canonical map $\mathop{pt}_{\scriptstyle\bullet}\to X_{\scriptstyle\bullet}$ induces a natural $A$-module structure on $CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A,M)$ (and an $A$-algebra structure on $CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)$). In other words, $CH_{X_{\scriptstyle\bullet}}^{\scriptstyle\bullet}(A,M)$ is naturally an $A$-module.
+
 Summing up the previous discussion and proposition we obtain:
-DERIVED HIGHER HOCHSCHILD, TCH, F ACTORIZATION ALGEBRAS 13
-Corollary 1. The rule (Y•,A )↦→(CH •
-Y• (A),D,sh Y• ) is a functor CH : sSet×
-CDGA → CDGA. Similarly, the rule (Y•,M ) ↦→(CH •
-Y• (A,M ),D,sh Y•) is a
-functor CH :sSet∗×A-Mod→A-Mod .
-Deﬁnition 3. The Hochschild homology of a CDGA A over a simplicial set X• is
-the cohomology 3 HH •
-X• (A) = H •(CH •
-X• (A),D ) of the CDGA ( CH •
-X• (A),D,sh )
-as a commutative graded algebra.
-Further if X• is pointed and M is an A-module, the Hochschild homology of A
-with value in M overX• is the homology HH •
-X• (A,M ) = H ∗(CH •
-X• (A,M ),D ) as
-a graded module over HH •
-X•(A).
-Now letX be a topological space, we deﬁne the Hochschild homology of a CDGA
-A overX to be HH •
-S•(X)(A) where
-S•(X) = Map (∆ •,X )
-is the singular simplicial set of X. If X is pointed, then S•(X) is a pointed simplicial
-set and we deﬁne the Hochschild homology of a CDGAA with value in anA-module
-M overX to be HH •
-S•(X)(A,M ).
-The Hochschild chain functor satisﬁes the following properties which allows to
-build explicitly and easily these chain complexes out of other simplicial sets and do
-computations (for instance, see [30, 12, 13]).
-Proposition 2 (Tensor Products of CDGAs and disjoint union of simplicial sets) .
-LetA,B be two CDGAs. For any X•∈sSet, there is a canonical isomorphism
-CH •
-X• (A⊗B)∼=CH •
-X• (A)⊗CH •
-X• (B)
-of CDGAs. Further for any simplicial set Y•, one has a natural isomorphism
-CH •
-X•
-∐ Y•(A)∼=CH •
-X• (A)⊗CH •
-Y• (A)
-of CDGAs and a natural isomorphism of modules
-CH •
-X•
-∐ Y• (A,M )∼=CH •
-X• (A,M )⊗CH •
-Y• (A)
-if X• is a pointed simplicial set.
-Proof. It follows from the canonical isomorphisms ( A⊗B)⊗n∼= A⊗n⊗B⊗n and
-A⊗n+m∼=A⊗n⊗A⊗m. □
-Recall that, by functoriality, if f :Y•→X• is a map of simplicial sets, then for
-any CDGA A, we have a map of algebra f∗ :CH •
-Y•(A)→CH •
-X• (A) which exhibits
-the Hochschild complex of A overX• as a module over the Hochschild complex of
-A overY•. Let Z •→X•, Z•→Y• be two maps of simplicial sets and let W• be a
-pushout W•∼=X•
-∐
-Z•Y•.
-Proposition 3. There is a natural map of simplicial modules 4
-CH •
-X• (A,M )⊗CH •
-Z• (A,A)CH •
-Y• (A,A )→CH •
-W• (A,M )
-3Recall that we are using a cohomological type grading for our diﬀerential graded modules, see
-Convention (7) on page 7.
-4The tensor product in Proposition 3 is the tensor product of ( simplicial) modules over the
-simplicial diﬀerential graded commutative algebra CH •
-Z• (A, A). Passing to the Hochschild chain
-complexes, it induces a natural map of CDGAs and modules and y ield a quasi-isomorphism if Z•
-injects into either X• or Y•, see [13, Corollary 2.4.3].
-14 G. GINOT, T. TRADLER, AND M. ZEINALIAN
-which is a map of algebras if M = A (with its natural module structure). If Z•
-injects into either Z•
-f•→X• or Z•
-g•→Y•, then this map is in fact an isomorphism
-of CH •
-W• (A)-modules.
-Proof. The proof [13, Lemma 2.1.6] given in the case M =A applies to any module
-M . □
-Corollary 2. The rule (X•,A )↦→HH •
-X• (A) is a functor HH :sSet×CDGA→
-CGA which satisﬁes the following axioms
-(1) bimonoidal: Hochschild homology is monoidal with respect to the monoida l
-structures given by the disjoint union of simplicial sets an d tensor products
-of algebras. In other words, there are natural isomorphisms :
-HH •
-X•×Y•(A)∼=HH •
-X•(A)⊗HH •
-Y•(A), HH•
-X• (A⊗B)∼=HH •
-X•(A)⊗HH •
-X• (B).
-(2) homotopy invariance : if f : X• → Y• and g : A → B are (weak)
-homotopy equivalences, then HH (f,g ) : HH •
-X• (A)→HH •
-Y• (B) is an iso-
-morphism.
-(3) point There is a natural isomorphism HH •
-pt(A)∼=A
-A similar statement holds with the category of topological s paces instead of simplicial
-sets, and with the pointed analogs of these categories (as in Corollary 1).
-Proof. This follows from Proposition 3, Proposition 2, Corollary 1 and Propos ition 4
-below. □
-The axioms listed in the above proposition are not enough to uniquely deter-
-mine Hochschild homology as a functor. Indeed, we are missing an ana log of the
-Excision/Mayer-Vietoris axioms in the classical Eilenberg-Steenrod axioms for sin-
-gular homology. The analog of this axiom is similar to the locality axiom of a Topo-
-logical Field Theory. In view of Proposition 3, we wish to compute the H ochschild
-homology over an union of two open sets as the tensor product of t he Hochschild
-homology of each open tensored over the Hochschild homology over their intersec-
-tion. This forces us to take derived tensor products. Thus a better framework for
-an axiomatic description of Hochschild chains is given by considering de rived cate-
-gories or (∞, 1)-categories. We deal with this locality axiom in Section 3.2 below.
-This axiom translates into an Eilenberg-Moore spectral sequence f or Hochschild
-homology, see Corollary 3.
-A crucial property of Hochschild chains which allows to pass to homot opy cat-
-egories, is the fact, proved by Pirashvili [30], that the higher Hoch schild chain
-complex is invariant along quasi-isomorphisms in both arguments.
-Proposition 4. [Homotopy and homology invariance] If f :X•→Y• is a map of
-simplicial sets inducing an isomorphism in homology H•(X)
-≃
-→ H•(Y ) , then the
-map CH •
-X• (A,M )→CH •
-Y•(A,M ) is a quasi-isomorphism.
-Further if h :A→B is a quasi-isomorphism of CDGAs, then the induced map
-h• :CH •
-X• (A)→CH •
-X• (B) is a quasi-isomorphism of CDGAs.
-If Z• is a pointed simplicial set and M is a B-module, the induced map h• :
-CH •
-Z•(A,M )→ CH •
-Z• (B,M ) is a quasi-isomorphism of CH •
-Z• (A)-modules and
-if α : M → N is a map of B-modules, the induced map α• : CH •
-Z• (B,M )→
-CH •
-Z•(B,N ) is a quasi-isomorphism of CH •
-Z• (B)-modules.
-DERIVED HIGHER HOCHSCHILD, TCH, F ACTORIZATION ALGEBRAS 15
-Proof. This is essentially due to Pirashvili [30]. Indeed, let Γ be the category o f
-ﬁnite sets, then the Hochschild chain complex CH •
-X• (A) is isomorphic to the tensor
-product
-kX•⊗ΓL(A)
-of the left Γ-module L(A) and the simplicial right Γ-module kX• . Here the left
-Γ-moduleL(A) is deﬁned by n↦→A⊗n+1 and formula (1). The right Γ-module kX•
-is deﬁned by n↦→ lim−→
-K• ﬁnite
-k
-[
-Hom Γ
-(
-[n],K •
-)
-] where [n] is the ﬁnite set {0,...,n },
-see [30]. A quasi-isomorphism of CDGAs induces a quasi-isomorphism of left Γ-
-module and similarly for a quasi-isomorphism of simplicial sets. Since eac h right
-Γ-module kXm (m∈ N) is a projective right Γ-module (see [30]), the tensor product
-kX•⊗ΓL(A) is quasi-isomorphic to the derived tensor product kX•⊗L
-ΓL(A). It
-follows that this complex is invariant along quasi-isomorphisms in both a rguments
-(X• and A). The proof in the case of pointed simplicial sets and modules is the
-same with the category Γ replaced by the category of pointed ﬁnite sets. □
-3.2. Higher Hochschild as an (∞, 1)-functor. In this section we deal with ax-
-ioms for the theory of higher Hochschild chains instead of mere homology. That
-is, we upgrade the previous section, in particular Corollary 2, to the setting of
-derived categories, or more precisely ( ∞, 1)-categories. Said otherwise, we replace
-the category of simplicial sets by its homotopical analogue: the ( ∞, 1)-category of
-simplicial sets denoted sSet∞ and we replace the category of commutative diﬀeren-
-tial algebras by CDGA ∞, the (∞, 1)-category associated to the derived category of
-commutative diﬀerential graded algebras (obtained by inverting qu asi-isomorphisms
-of CDGAs).
-In this settting, we will prove that the axioms determine uniquely the Hochschild
-chain as an (∞, 1)-functor (lifting Hochschild homology). These axioms are not spe-
-ciﬁc to CDGA but rather come from the fact that any presentable ( ∞, 1)-category is
-(homotopically) canonically tensored over simplicial sets according t o [22, Corollary
-4.4.4.9].
-Theorem 1. There is a canonical equivalence CHX• (A)∼= X• ⊠A between the
-Hochschild chains and the tensor of A and X•, i.e. there are natural equivalences
-(in sSet∞)
-(2) MapCDGA ∞
-(
-CHX• (A),B
-) ∼= MapsSet∞
-(
-X•, MapCDGA ∞(A,B )
-)
-.
-In particular, the Hochschild chains lift as a functor of (∞, 1)-categories CH :
-sSet∞×CDGA ∞→CDGA ∞ which satisﬁes the following axioms
-(1) value on a point: there is a natural equivalence CH •
-pt(A)∼=A of CDGAs.
-(2) monoidal: CH is monoidal with respect to both variables. Precisely, ther e
-are natural equivalences
-CH •
-X•
-∐ Y• (A)∼=CH •
-X• (A)⊗CH •
-Y• (A),
-CH •
-X• (A⊗B)∼=CH •
-X• (A)⊗CH •
-X• (B).
-(3) homotopy gluing/pushout: CH sends homotopy pushout in sSet∞ to
-homotopy pushout in CDGA ∞. More precisely, given maps Z•
-f
-→X• and
-Z•
-g
-→ Y• in sSet∞, and W•∼= X•
-⋃ h
-Z•Y• a homotopy pushout, there is a
-16 G. GINOT, T. TRADLER, AND M. ZEINALIAN
-natural equivalence
-CH •
-W• (A)∼=CH •
-X• (A)⊗L
-CH •
-Z• (A)CH •
-Y• (A).
-In particular Theorem 1 implies similar statements involving the homoto py cat-
-egories of simplicial sets and CDGAs instead of their ( ∞, 1)-reﬁnement. Axiom (3)
-is the locality axiom (as for Topological Field Theories) playing the role of the
-excision/Mayer-Vietoris axiom for classical homology.
-Proof. The second equivalence in the monoidal axiom follows from Proposition 2.
-The rest is an immediate consequence of [22, Corollary 4.4.4.9], § 3.1 and the fact
-that the coproduct in CDGA ∞ is given by the tensor product of CDGAs. Note that
-the axioms can also be proved easily and directly using the results of S ection 3.1,
-as we now demonstrate for the interested reader’s convenience ( this incidentally
-yields immediately another proof of the identiﬁcation of derived Hoch schild chains
-with a tensor). We already know that the Hochschild chain complex de ﬁnes a
-bifunctor (X•,A )↦→CH •
-X• (A) from the category sSet×CDGA to CDGA, see
-Proposition 1. The ( ∞, 1)-categories sSet∞ and CDGA ∞ both arise from suit-
-ables localizations of the weak equivalences (see Section 2.3). That is sSet∞ =
-LCSeSp(N•(LH (sSet,WsSet))) and CDGA ∞ =LCSeSp(N•(LH (CDGA,WCDGA )))
-where WsSet and WCDGA are the respective subcategories of weak equivalences in
-sSet andCDGA given in Sections 2.1 and 2.2. Thus, in order to show that the func-
-tor (X•,A )↦→CH •
-X• (A) lifts to the (∞, 1)-associated categories, it suﬃces to show
-that this bifunctor passes to the (hammock) localization of these m odel categories
-along their subcategory of weak equivalences WsSet and WCDGA . By construc-
-tion of the hammock localization functor LH , it suﬃces to prove that the usual
-Hochschild chain complex bifunctor maps weak equivalences (in sSet×CDGA) to
-weak equivalences (in CDGA) which follows from Proposition 4. More precisely,
-the bifunctor CH :sSet∞×CDGA ∞→CDGA ∞ is the bifunctor induced by the
-bifunctor
-LCSeSp
-(
-N•
-(
-(CH •
-−(−))
-))
-:LCSeSp(N•(LH(sSet×CDGA,WsSet×WCDGA )))
-−→ LCSeSp(N•(LH (CDGA,WCDGA )))
-obtained by localizing the Hochschild chains.
-When X• is contractible, Proposition 4 implies that there is an natural equiva-
-lence CH •
-X• (A)∼= CH •
-pt• (A)∼= A of CDGAs where pt• is the standard simplicial
-model of a point, see [13, Example 2.3.4]. This proves the value on a po int axiom.
-The compatibility with the monoidal structures follows from Proposit ion 2 since
-both monoidal functors ∐ : sSet×sSet→ sSet and⊗k : CDGA×CDGA →
-CDGA are Quillen exact, thus passes to the ( ∞, 1)-category induced by the model
-categories structures.
-It remains to prove the homotopy gluing axiom. We let f• :Z•→X• and g• :
-Z•→Y• be simplicial sets maps. Since we already know that the Hochschild cha in
-complex preserves weak equivalences, we can replace W• by the pushout X•
-⋃
-Z•
-ˆY•
-where ˆg• :Z•→ ˆY• is a coﬁbration and p : ˆY
-≃
-→Y is a ﬁbrant replacement of Y .
-By Proposition 3, there is a natural isomorphism
-(3) CH •
-X•
-⋃
-Z•
-ˆY•(A)∼=CH •
-X• (A)⊗CH •
-Z• (A)CH •
-ˆY• (A).
-DERIVED HIGHER HOCHSCHILD, TCH, F ACTORIZATION ALGEBRAS 17
-Since Z•
-ˆg•
-֒→ˆY• is injective, the induced map ˆ g∗ : CH •
-Z• (A)→ CH •
-ˆY•
-(A) of
-CDGAs exhibitsCH •
-ˆY•
-(A) as a semi-free CH •
-Z• (A) algebra, thus the tensor product
-in the quasi-isomorphism (3) can be replaced by a derived tensor pro duct:
-(4) CH •
-X•
-⋃
-Z•
-ˆY•(A)∼=CH •
-X• (A)⊗L
-CH •
-Z• (A)CH •
-ˆY• (A).
-By homotopy invariance, the mapp∗ :CH •
-ˆY•
-(A)∼=CH •
-Y•(A) is a quasi-isomorphism
-and thus the homotopy pushout axiom follows from the quasi-isomor phism (4). □
-Remark 3. As in Corollary 2, the (model) categories of simplicial sets and (com-
-pactly generated) topological spaces being Quillen equivalent, one c an replace
-sSet∞ by its topological counterpart Top ∞ in Theorem 1. This yield the Hochschild
-chain functor over spaces CH :Top ∞×CDGA ∞→CDGA ∞, see§ 4. By deﬁni-
-tion Hochschild chain are functorial in spaces; for instance any con tinuous map f :
-X→Y between topological spaces induces a chain map f• :CH •
-X (A)→CH •
-Y (A)
-which is an equivalence if f is a weak-equivalence. We will get back to and focus
-on this Hochschild functor over topological spaces in Section 4
-The locality axiom (3) in Theorem 1 yields an Eilenberg-Moore type spectral
-sequence for computing higher Hochschild homology.
-Corollary 3. Given an homotopy pushout W• ∼= X•∪h
-Z• Y•, there is a natural
-strongly convergent spectral sequence of cohomological ty pe of the form
-Ep,q
-2 :=Tor
-HH •
-Z• (A)
-p,q
-(
-HH •
-X• (A),HH •
-Y• (A)
-)
-=⇒HHp+q
-W• (A)
-where q is the internal grading. The spectral sequence is furthermore a spectral
-sequence of diﬀerential HH •
-Z•(A)-algebras.
-Recall that we are considering a cohomological grading; in particular the spectral
-sequence is concentrated in the left half-plane with respect to this grading (and p
-is negative).
-Proof. By Theorem 1, we haveCH •
-W• (A)∼=CH •
-X• (A)⊗L
-CH •
-Z• (A)CH •
-Y•(A) as CDGAs.
-Now the spectral sequence follows from standard results on deriv ed tensor prod-
-ucts (of CH •
-Z• (A)-modules) [20, Theorem 4.7]. That the spectral sequence is one
-of algebras comes from the fact, that we can choose a semi-free r esolution of CH •
-X•
-by a CH •
-Z• -algebra. □
-Example 4. (1) It is a well-known fact, that the usual Hochschild complex
-of an associative algebra A CH•(A) = CH •
-S1•
-(A) may be written as a Tor
-over the bimodule Ae = A⊗Aop, see e.g. [21, Proposition 1.1.13]. More
-explicitly,
-HH •(A) = TorAe
-• (A,A ).
-Identifying HHpt•• (A) = A, and HH •
-{pt•,pt−
-• }(A) = A⊗Aop = Ae, where
-pt−
-• denotes the point with opposite orientation, we see that, in this cas e,
-the spectral sequence of Corollary 3 collapses at the E2 level,
-TorHH
-{pt• ,pt−
-• }•• (A) (
-HH •
-pt• (A),HH •
-pt• (A)
-)
-=HH •
-S1
-•(A)
-where we used that S1
-• ∼= pt•∪h
-{pt,pt−}• pt• and further that when A is
-commutative,Aop =A.
-18 G. GINOT, T. TRADLER, AND M. ZEINALIAN
-(2) Let f• :Z•→X• be a map of simplicial spaces. Then, the mapping cone
-(Cf )• is given as the homotopy pushout ( Cf )•∼=X•∪h
-Z• pt•. We obtain a
-spectral sequence computing HH •
-(Cf )•(A),
-Tor
-HH •
-Z• (A)
-p,q
-(
-HH •
-X• (A),A
-)
-=⇒HH •
-(Cf )• (A)
-(3) In a more straightforward way, we may use the gluing property to give
-explicit models for spaces with cubic subdivisions. Our starting point is
-given by models for interval I• and the square I 2
-• via,
-CH •
-I• (A) =
-∑
-k
-A⊗(k+2) and CH •
-I 2
-• (A) =
-∑
-k
-A⊗(k+2)2
-.
-The ith diﬀerential is given in the case of I• by multiplying the ith and
-(i + 1) th tensor factors, and in the case of I 2
-• by multiplying the ith and
-(i + 1)th column of tensor factors and the ith and (i + 1)th rows of tensor
-factors simultaneously. For more detail, see [13, Example 2.3.4]. Then
-we obtain the Hochschild complex for the cylinder C• = I 2
-•∪(I•∪I•)I• by
-gluing I 2
-• and I• along I•∪I• on opposite edges of I 2
-• , and with this the
-torus T• = C•∪(I•∪I•)I• by gluing the remaining sides together. A more
-elaborate version of this is given in [13, Example 2.3.2]. By using similar,
-but more elaborate considerations, one can in fact obtain Hochsch ild models
-over any surface, see [13, Section 3.1].
-Higher Hochschild chain complexes behaves much like cochains of mapping spaces
-(see [13, sections 2.2, 2.4]). Indeed they satisfy a kind of exponent ial law:
-Proposition 5 (Finite Products of simplicial sets) . LetX•, Y• be simplicial sets.
-Then there is a natural equivalence
-CH •
-X•×Y•(A)
-∼
-→CH •
-X•
-(
-CH •
-Y• (A)
-)
-in CDGA ∞.
-Proof. It follows from Corollary 2.4.4 of [13]. □
-The Hochschild chain functor CH :sSet∞×CDGA ∞→CDGA ∞ is essentialy
-(up to equivalences) determined by the homotopy pushout axiom, c oproduct and
-its value on a point. In other words, it is the unique (∞, 1)-functor (up to natural
-equivalences) satisfying the three axioms (value on a point, coprod uct and locality)
-listed below in Theorem 2. This is once again a consequence of the fact that higher
-Hochschild is a tensor. The precise uniqueness statement is :
-Theorem 2 (Derived Uniqueness). Let (X•,A )↦→FX• (A) be a bifunctor sSet∞×
-CDGA ∞→CDGA ∞ which satisﬁes the following three axioms.
-(1) value on a point: There is a natural equivalence of CDGAs Fpt• (A)∼=A.
-(2) coproduct: There are natural equivalences
-F∐
-I
-(Xi)•(A)∼= lim−→
-K ⊂ I
-K ﬁnite
-⨂
-k∈K
-F(Xk)•(A)
-DERIVED HIGHER HOCHSCHILD, TCH, F ACTORIZATION ALGEBRAS 19
-(3) homotopy gluing/pushout: F sends homotopy pushout in sSet∞ to
-homotopy pushout in CDGA ∞. More precisely, given two maps Z•
-f
-→X•
-and Z•
-g
-→ Y• in sSet∞, and W•∼= X•
-⋃ h
-Z•Y• a homotopy pushout, one
-has a natural equivalence
-FW• (A)∼=FX• (A)⊗L
-FZ• (A)FY•(A).
-Then F is naturally equivalent to the higher Hochschild chains bif unctor CH as a
-bifunctor i.e. as an object in Hom (∞,1)−cat(sSet∞×CDGA ∞,CDGA ∞).
-Proof. This is a consequence of the fact that CDGA ∞ (and actually any presentable
-(∞, 1)-category) is uniquely tensored over sSet∞, see [22, Corollay 4.4.4.9].
-Alternatively it can be prove by noticing that any simplicial set X• is a (ho-
-motopy) colimit of its skeletal ﬁltration sknX•, which in turns is obtained by
-taking a homotopy pushout of skn−1X• with coproducts of standard model ∆ n
-•
-of the simplices which are contractible. Then the axioms imply an equiva lence
-FsknX• (A)
-≃
-→CH •
-sknX•(A) which commutes with the inclusions skn−1X•֒→sknX•
-so that it induces an natural equivalence FX• (A)∼=CHX• (A) since the latter sat-
-isﬁes teh axioms by Theorem 1.
-For the interested reader, we now make this sketch more precise. Let (X•,A )↦→
-FX• (A) be a functor satisfying the assumption of Theorem 2. If X• is a ﬁnite
-discrete simplicial set, there are natural equivalences in CDGA ∞
-FX• (A)∼=FX0 (A)∼=F∐
-x∈X0 {x}(A)∼=A⊗X0∼=CH •
-X• (A)
-since both bifunctors F and CH are homotopy invariant, commute with ﬁnite
-coproducts and satisﬁes Axiom (1). If X• is discrete, non-necessarily ﬁnite, then
-Axiom (2) implies that FX• (A)∼= lim−→
-K ﬁnite
-FK (A)∼= lim−→
-K ﬁnite
-A⊗K∼= CH •
-X• (A) by
-deﬁnition of Hochschild chain of simplicial sets (Deﬁnition 2).
-LetsknX• be the nth-skeleton of a simplicial set X• (see [14] for instance), i.e.,
-the sub-simpicial set generated by all non-degenerate simplices of dimension less
-than or equal to n. Note that X• is the ﬁltered colimit X• = ⋃
-n≥0sknX•. Since
-sk0X• is a discrete simplicial set, we have an natural (in A andX•) equivalence of
-algebras Fsk0X•(A)
-≃
-→CH •
-sk0X•(A).
-Now assume n≥ 1 and that we have a natural equivalence (induced by a natural
-zigzag of quasi-isomorphisms) of CDGAs Fskn−1X• (A)
-≃
-→ CH •
-skn−1X• (A) (for any
-simplicial set X•). Let NXn be the subset of non-degenerate simplices in Xn, ∆ n
-•
-be the standard simplicial model ∆ n
-k =Hom ∆ ([k], [n]) of the topologicaln-simplex
-and ∂∆ n
-• its boundary (that is the sub-complex obtained by dropping the only
-non-degenerate simplex of dimension n). Note that ∆ n
-• is contractible and ∂∆ n
-• is
-a simplicial model for the sphere Sn−1. For n≥ 1, one has a pushout diagrams
-(5) ∐
-x∈NX n∂∆ n
-•
-jn /d47/d47/d127 /d95
-in
-/d15/d15
-skn−1X•/d127 /d95
-/d15/d15∐
-x∈NX n ∆ n
-• /d47/d47sknX•
-20 G. GINOT, T. TRADLER, AND M. ZEINALIAN
-which are homotopy pushouts since the vertical arrows are coﬁbr ations of simplicial
-sets. Thus Axiom (3) and Theorem 1 yield natural equivalences
-FsknX• (A)∼=Fskn−1X• (A)⊗L
-F∐
-x∈N Xn ∂∆ n
-• (A)F∐
-x∈N Xn ∆ n
-• (A)
-of F∐
-x∈N Xn ∆ n
-• (A)-algebras as well as a natural equivalence
-CH •
-sknX• (A)∼=CH •
-skn−1X•(A)⊗L
-CH •∐
-x∈N Xn ∂∆ n
-• (A)CH •∐
-x∈N Xn ∆ n
-• (A)
-of CH •∐
-x∈N Xn∂∆ n
-• (A)-algebras. Here the modules structures are the natural ones
-induced by the maps in the pushout diagram (5).
-We now deduce that FsknX• (A) is equivalent to CH •
-sknX•(A). Recall from
-Example 2, that an equivalence A
-∼
-→ B of CDGAs induces an equivalence of
-their (∞, 1)-categories of modules B-Mod ∞
-∼
-→ A-Mod ∞. Note that ∂∆ n
-• has
-no non-degenerate simplices in dimension n and higher. Thus ∂∆ n
-• = skn−1∂∆ n
-•
-and, by our induction assumption, we have a natural equivalence of CDGAs be-
-tweenF∐
-x∈N Xn∂∆ n
-• (A) andCH •∐
-x∈N Xn∂∆ n
-• (A) as well as between Fskn−1X•(A) and
-CH •
-skn−1X• (A). Further, as the modules structures are induced by the simplicial
-set map ∐
-x∈NX n∂∆ n
-•→skn−1X•, it follows that the diagram
-F∐
-x∈N Xn∂∆ n
-• (A)⊗Fskn−1X• (A) ≃ /d47/d47
-µ◦(jn⊗1)
-/d15/d15
-CH •∐
-x∈N Xn∂∆ n
-• (A)⊗CH •
-skn−1X• (A)
-µ◦(jn⊗1)
-/d15/d15
-Fskn−1X• (A) ≃ /d47/d47CH •
-skn−1X• (A)
-is commutative (here µ is the multiplication and jn the top map in diagram (5)).
-HenceCH •
-skn−1X•(A) is equivalent to Fskn−1X• (A) as an F∐
-x∈N Xn∂∆ n
-• (A)-CDGA.
-We are left to prove that F∐
-x∈N Xn ∆ n
-• (A) and CH •∐
-x∈N Xn ∆ n
-• (A) are equivalent
-F∐
-x∈N Xn∂∆ n
-• (A)-CDGAs. By the homotopy invariance and value on a point ax-
-iom, we have a natural equivalence F∐
-x∈N Xn ∆ n
-• (A)
-≃
-→ A⊗#NX n (induced by the
-unique map ∆ n
-•→ pt• for each non-degenerate simplex in NXn) and further the
-F∐
-x∈N Xn∂∆ n
-• (A)-algebra structure on A⊗#NX n is induced by the canonical map∐
-x∈NX n∂∆ n
-• −→ ∐
-x∈NX npt•. The same argument holds for Hochschild chains
-CH instead of F so that we have a commutative diagram
-F∐
-x∈N Xn∂∆ n
-• (A) ≃ /d47/d47
-in
-/d15/d15
-CH •∐
-x∈N Xn∂∆ n
-• (A)
-in
-/d15/d15
-F∐
-x∈N Xn ∆ n
-• (A) ≃ /d47/d47A⊗#NX n CH •∐
-x∈N Xn ∆ n
-• (A)≃/d111/d111
-from which it follows that both CH •∐
-x∈N Xn ∆ n
-• (A) and F∐
-x∈N Xn ∆ n
-• (A) are equiva-
-lent to A⊗#NX n as F∐
-x∈N Xn∂∆ n
-• (A)-CDGAs. Tensoring the previous equivalence
-withA⊗#NX n (overF∐
-x∈N Xn∂∆ n
-• (A)) we obtain a natural equivalenceFsknX• (A)∼=
-CH •
-sknX• (A) in CDGA ∞.
-By induction, we get (for all n’s) natural equivalencesFsknX• (A)
-≃
-→CH •
-sknX• (A)
-which commutes with the inclusions skn−1X•֒→sknX•. Since X• = ⋃
-n≥0sknX•,
-DERIVED HIGHER HOCHSCHILD, TCH, F ACTORIZATION ALGEBRAS 21
-there is a coequalizer in the ( ∞, 1)-category sSet∞:
-∐
-n∈NsknX•
-δ
-/d15/d15
-id /d47/d47 ∐
-n∈NsknX•
-/d15/d15∐
-n∈NsknX• /d47/d47X•
-where δ : ∐
-n∈NsknX•→ ∐
-n∈NsknX• is the map induced by the canonical inclu-
-sionssknX•→skn+1X•. Thus by axiom (3), there is a natural equivalence
-(6) FX• (A)∼=F∐
-n∈NsknX• (A)
-L
-⊗
-F∐
-n∈N skn X• (A)
-F∐
-n∈NsknX• (A)
-and similarly for Hochschild chains by Theorem 1. By axiom (2) applied to the
-bifunctorsF andCH , the natural equivalences FsknX• (A)
-≃
-→CH •
-sknX• (A) for all n
-thus yield a natural equivalence F∐
-n∈NsknX• (A)∼=CH •∐
-n∈NsknX• (A). The natural
-equivalence of CDGAs FX• (A)∼=CH •
-X• (A) now follows from equivalence (6) and
-the analogous equivalence for Hochschild chains. □
-Remark 4. If A is concentrated in non-positive degrees, then CH •
-X• (A) is also
-concentrated in non-positive degrees. This happens for instance if A is the CDGA
-associated to a simplicial (non-graded) commutative algebra. In th at case, it is
-possible to replace CDGA andCDGA ∞ in Theorem 1 and Theorem 2 by CDGA ≤0
-the category of CDGAs concentrated in non-positive degrees and CDGA ≤0
-∞ its
-associated (∞, 1)-categories (the proofs being unchanged).
-Remark 5. Again, one can replace sSet∞ by its topological counterpart Top ∞ in
-Theorem 2, see Proposition 8.
-Remark 6. Note that one can deduce from the coproduct axiom (2) in Theorem 2
-and the natural equivalence (6) that the natural map lim−→FsknX•(A)
-≃
-→FX• (A) is
-an equivalence. This is in particular true for Hochschild chains:
-(7) lim −→
-n≥0
-CHsknX•(A)
-≃
-→CHX• (A).
-Remark 7. If G : CDGA ∞→ CDGA ∞ is a functor, one can replace the value
-on a point axiom by the existence of a natural quasi-isomorphism Fpt(A)∼=G(A).
-The proof of the Theorem 2 shows the following
-Corollary 4. LetG :CDGA ∞→CDGA ∞ be a functor and (X•,A )↦→FX• (A) be
-a bifunctor sSet∞×CDGA ∞→CDGA ∞ which satisﬁes the axioms (2) and (3)
-in Theorem 2 and with axiom (1) replaced by Fpt• (A)∼= G(A). Then FX• (A) is
-naturally equivalent CH •
-X• (G(A)).
-For instance, consider the bifunctor given by ( X•,A )↦→CH •
-X• (A)⊗CH •
-X• (B)
-whose value on a point is the functor A↦→A⊗B. By Corollary 4, this functor is
-isomorphic to (X,A )↦→CH •
-X• (A⊗B) which gives another proof of the fact that the
-Hochschild chains preserve ﬁnite coproduct of CDGAs. The same ar gument shows
-thatCH also commutes with ﬁnite homotopy pushouts of CDGAs, see Corollar y 5
-below.
-22 G. GINOT, T. TRADLER, AND M. ZEINALIAN
-Corollary 5. The Hochschild chain bifunctor CH :sSet∞×CDGA ∞→CDGA ∞
-commutes with ﬁnite colimits in sSet∞ and all colimits in CDGA ∞, that is there
-are natural equivalences
-CH •
-lim−→
-F
-Xi•(A) ∼= lim−→
-F
-CH •
-Xi• (A) ( for a ﬁnite category F ),
-CH •
-X• ( lim−→Ai) ∼= lim−→CH •
-X• (Ai).
-Here the colimits are colimits in sSet∞ or CDGA ∞.
-Proof. Any ﬁnite colimits can be obtained by a composition of coproducts and
-pushouts (or coequalizers). Thus the result for colimits in sSet∞ follows from
-Theorem 1, Axioms (2) and (3). Let lim−→
-i∈I
-Ai be a non-empty colimit of CDGAs
-and let i0 be an object in the indexing category I. By functoriality we can deﬁne
-a functor GI :CDGA ∞→CDGA ∞ by the formula A↦→GI (B) := lim−→
-˜Bi where
-˜Bi∼=Ai if i⁄=i0 and ˜Bi0
-∼=B. In other words we ﬁx all the variables but the one
-indexed by i0. Now applying Corollary 4 to the bifunctor F :sSet∞×CDGA ∞→
-CDGA ∞ deﬁned by FX• (B)∼= lim−→CH •
-X• ( ˜Bi) we get an natural equivalence
-CH •
-X• ( lim−→
-i∈I
-Ai)∼= lim−→
-i∈I
-CH •
-X• (Ai).
-Since the simplicial module n↦→CH •
-Xn (k) is isomorphic to the constant simplicial
-k-algebra n↦→k, the result also follows for empty colimits. □
-Example 5. By Corollary 5, given two maps f :R→A andg :R→B of CDGAs,
-there is a natural equivalence (in CDGA ∞)
-CH •
-X•
-(
-A
-L
-⊗
-R
-B
-)
-∼= CH •
-X• (A)
-L
-⊗
-CH •
-X• (R)
-CH •
-X• (B).
+
+::: corollary
+[]{#C:Hfunctor label="C:Hfunctor"} The rule $(Y_{\scriptstyle\bullet}, A)\mapsto (CH^{{\scriptstyle\bullet}}_{Y_{\scriptstyle\bullet}}(A),D,sh_{Y_{\scriptstyle\bullet}})$ is a functor $CH:sSet\times CDGA\to CDGA$. Similarly, the rule $(Y_{\scriptstyle\bullet}, M)\mapsto (CH^{{\scriptstyle\bullet}}_{Y_{\scriptstyle\bullet}}(A,M),D,sh_{Y_{\scriptstyle\bullet}})$ is a functor $CH:sSet_* \times A\textit{-}Mod \to A\textit{-}Mod$.
+:::
+
+::: definition
+[]{#D:HH label="D:HH"} The Hochschild homology of a CDGA $A$ over a simplicial set $X_{\scriptstyle\bullet}$ is the cohomology[^2] $HH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)=H^\bullet(CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A),D)$ of the CDGA $(CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A),D, sh)$ as a commutative graded algebra.
+
+Further if $X_\bullet$ is pointed and $M$ is an $A$-module, the Hochschild homology of $A$ with value in $M$ over $X_{\scriptstyle\bullet}$ is the homology $HH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A,M)=H^*(CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A,M),D)$ as a graded module over $HH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)$.
+:::
+
+Now let $X$ be a *topological space*, we define the Hochschild homology of a $CDGA$ $A$ over $X$ to be $HH^{\scriptstyle\bullet}_{S_{\scriptstyle\bullet}(X)}(A)$ where $$S_{\scriptstyle\bullet}(X)=\mathop{Map}(\Delta^\bullet, X)$$ is the singular simplicial set of $X$. If $X$ is pointed, then $S_{\scriptstyle\bullet}(X)$ is a pointed simplicial set and we define the Hochschild homology of a $CDGA$ $A$ with value in an $A$-module $M$ over $X$ to be $HH^{\scriptstyle\bullet}_{S_{\scriptstyle\bullet}(X)}(A,M)$.
+
+The Hochschild chain functor satisfies the following properties which allows to build *explicitly and easily* these chain complexes out of other simplicial sets and do computations (for instance, see [@P; @G; @GTZ]).
+
+::: proposition
+[]{#P:tensor label="P:tensor"}Let $A,B$ be two CDGAs. For any $X_{\scriptstyle\bullet}\in sSet$, there is a canonical isomorphism $$CH^{{\scriptstyle\bullet}}_{X_{\scriptstyle\bullet}}(A\otimes B) \cong CH^{{\scriptstyle\bullet}}_{X_{\scriptstyle\bullet}}(A)\otimes CH^{{\scriptstyle\bullet}}_{X_{\scriptstyle\bullet}}(B)$$ of CDGAs. Further for any simplicial set $Y_{\scriptstyle\bullet}$, one has a natural isomorphism $$CH^{{\scriptstyle\bullet}}_{X_{\scriptstyle\bullet}\coprod Y_{\scriptstyle\bullet}}(A) \cong CH^{{\scriptstyle\bullet}}_{X_{\scriptstyle\bullet}}(A)\otimes CH^{{\scriptstyle\bullet}}_{Y_{\scriptstyle\bullet}}(A)$$ of CDGAs and a natural isomorphism of modules $$CH^{{\scriptstyle\bullet}}_{X_{\scriptstyle\bullet}\coprod Y_{\scriptstyle\bullet}}(A,M) \cong CH^{{\scriptstyle\bullet}}_{X_{\scriptstyle\bullet}}(A,M)\otimes CH^{{\scriptstyle\bullet}}_{Y_{\scriptstyle\bullet}}(A)$$ if $X_{\scriptstyle\bullet}$ is a pointed simplicial set.
+:::
+
+::: proof
+*Proof.* It follows from the canonical isomorphisms $(A\otimes B)^{\otimes n}\cong A^{\otimes n} \otimes B^{\otimes n}$ and $A^{\otimes n+m}\cong A^{\otimes n}\otimes A^{\otimes m}$. ◻
+:::
+
+Recall that, by functoriality, if $f:Y_{\scriptstyle\bullet}\to X_{\scriptstyle\bullet}$ is a map of simplicial sets, then for any CDGA $A$, we have a map of algebra $f_*:CH_{Y_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)\to CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)$ which exhibits the Hochschild complex of $A$ over $X_{\scriptstyle\bullet}$ as a module over the Hochschild complex of $A$ over $Y_{\scriptstyle\bullet}$. Let $Z{\scriptstyle\bullet}\to X_{\scriptstyle\bullet}$, $Z_{\scriptstyle\bullet}\to Y_{\scriptstyle\bullet}$ be two maps of simplicial sets and let $W_{\scriptstyle\bullet}$ be a pushout $W_{\scriptstyle\bullet}\cong X_{\scriptstyle\bullet}\coprod_{Z_{\scriptstyle\bullet}} Y_{\scriptstyle\bullet}$.
+
+::: proposition
+[]{#P:pushout label="P:pushout"} There is a natural map of simplicial modules [^3] $$CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A,M)\otimes_{CH_{Z_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A,A)} CH_{Y_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A,A) \to CH_{W_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A,M)$$ which is a map of algebras if $M=A$ (with its natural module structure). If $Z_{\scriptstyle\bullet}$ injects into either $Z_{\scriptstyle\bullet}\stackrel {f_{\scriptstyle\bullet}}\to X_{\scriptstyle\bullet}$ or $Z_{\scriptstyle\bullet}\stackrel{g_{\scriptstyle\bullet}}\to Y_{\scriptstyle\bullet}$, then this map is in fact an isomorphism of $CH_{W_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)$-modules.
+:::
+
+::: proof
+*Proof.* The proof [@GTZ Lemma 2.1.6] given in the case $M=A$ applies to any module $M$. ◻
+:::
+
+::: corollary
+[]{#C:Homologyfunctor label="C:Homologyfunctor"} The rule $(X_{\scriptstyle\bullet},A)\mapsto HH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)$ is a functor $HH:sSet\times CDGA\to CGA$ which satisfies the following axioms
+
+1.  **bimonoidal:** Hochschild homology is monoidal with respect to the monoidal structures given by the disjoint union of simplicial sets and tensor products of algebras. In other words, there are natural isomorphisms: $$HH_{X_{\scriptstyle\bullet}\times Y_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)\cong HH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}\!(A) \otimes HH_{Y_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A), \; HH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A\otimes B) \cong HH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A) \otimes HH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(B).$$
+
+2.  **homotopy invariance :** if $f:X_{\scriptstyle\bullet}\to Y_{\scriptstyle\bullet}$ and $g:A\to B$ are (weak) homotopy equivalences, then $HH(f,g):HH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)\to HH_{Y_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(B)$ is an isomorphism.
+
+3.  **point** There is a natural isomorphism $HH_{pt}^{{\scriptstyle\bullet}}(A)\cong A$
+
+A similar statement holds with the category of topological spaces instead of simplicial sets, and with the pointed analogs of these categories (as in Corollary [\[C:Hfunctor\]](#C:Hfunctor){reference-type="ref" reference="C:Hfunctor"}).
+:::
+
+::: proof
+*Proof.* This follows from Proposition [\[P:pushout\]](#P:pushout){reference-type="ref" reference="P:pushout"}, Proposition [\[P:tensor\]](#P:tensor){reference-type="ref" reference="P:tensor"}, Corollary [\[C:Hfunctor\]](#C:Hfunctor){reference-type="ref" reference="C:Hfunctor"} and Proposition [\[P:homologyinvariance\]](#P:homologyinvariance){reference-type="ref" reference="P:homologyinvariance"} below. ◻
+:::
+
+The axioms listed in the above proposition are *not* enough to uniquely determine Hochschild homology as a functor. Indeed, we are missing an analog of the Excision/Mayer-Vietoris axioms in the classical Eilenberg-Steenrod axioms for singular homology. The analog of this axiom is similar to the *locality axiom* of a Topological Field Theory. In view of Proposition [\[P:pushout\]](#P:pushout){reference-type="ref" reference="P:pushout"}, we wish to compute the Hochschild homology over an union of two open sets as the tensor product of the Hochschild homology of each open tensored over the Hochschild homology over their intersection. This forces us to take *derived* tensor products. Thus a better framework for an axiomatic description of Hochschild chains is given by considering derived categories or $(\infty,1)$-categories. We deal with this *locality* axiom in Section [0.1](#S:inftyfunctor){reference-type="ref" reference="S:inftyfunctor"} below. This axiom translates into an Eilenberg-Moore spectral sequence for Hochschild homology, see Corollary [\[C:HlocalitySpecSeq\]](#C:HlocalitySpecSeq){reference-type="ref" reference="C:HlocalitySpecSeq"}.
+
+A crucial property of Hochschild chains which allows to pass to homotopy categories, is the fact, proved by Pirashvili [@P], that the higher Hochschild chain complex is invariant along *quasi-isomorphisms* in both arguments.
+
+::: proposition
+[]{#P:homologyinvariance label="P:homologyinvariance"}\[Homotopy and homology invariance\] If $f: X_{\scriptstyle\bullet}\to Y_{\scriptstyle\bullet}$ is a map of simplicial sets inducing an isomorphism in homology $H_{\scriptstyle\bullet}(X)\stackrel{\simeq}\to H_{\scriptstyle\bullet}(Y)$ , then the map $CH_{X_{\scriptstyle\bullet}}^{\scriptstyle\bullet}(A, M) \to CH_{Y_{\scriptstyle\bullet}}^{\scriptstyle\bullet}(A, M)$ is a quasi-isomorphism.
+
+Further if $h:A\to B$ is a quasi-isomorphism of CDGAs, then the induced map $h_{\scriptstyle\bullet}: CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)\to CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(B)$ is a quasi-isomorphism of CDGAs.
+
+If $Z_{\scriptstyle\bullet}$ is a pointed simplicial set and $M$ is a $B$-module, the induced map $h_{\scriptstyle\bullet}: CH_{Z_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A,M)\to CH_{Z_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(B,M)$ is a quasi-isomorphism of $CH_{Z_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)$-modules and if $\alpha: M\to N$ is a map of $B$-modules, the induced map $\alpha_{\scriptstyle\bullet}: CH_{Z_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(B,M)\to CH_{Z_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(B,N)$ is a quasi-isomorphism of $CH_{Z_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(B)$-modules.
+:::
+
+::: proof
+*Proof.* This is essentially due to Pirashvili [@P]. Indeed, let $\Gamma$ be the category of finite sets, then the Hochschild chain complex $CH_{X_{\scriptstyle\bullet}}^{\scriptstyle\bullet}(A)$ is isomorphic to the tensor product $$k_{X_{\scriptstyle\bullet}} \otimes_{\Gamma} \mathcal{L}(A)$$ of the left $\Gamma$-module $\mathcal{L}(A)$ and the simplicial right $\Gamma$-module $k_{X_{\scriptstyle\bullet}}$. Here the left $\Gamma$-module $\mathcal{L}(A)$ is defined by $n\mapsto A^{\otimes n+1}$ and formula [\[f\_\*\]](#f_*){reference-type="eqref" reference="f_*"}. The right $\Gamma$-module $k_{X_{\scriptstyle\bullet}}$ is defined by $n\mapsto \mathop{\lim\limits_{\textstyle\longrightarrow}}\limits_{K_{\scriptstyle\bullet}\mbox{ finite}} k\big[Hom_{\Gamma}\big([n], K_{\scriptstyle\bullet}\big)]$ where $[n]$ is the finite set $\{0,\dots,n\}$, see [@P]. A quasi-isomorphism of CDGAs induces a quasi-isomorphism of left $\Gamma$-module and similarly for a quasi-isomorphism of simplicial sets. Since each right $\Gamma$-module $k_{X_m}$ ($m\in \mathbb N$) is a projective right $\Gamma$-module (see [@P]), the tensor product $k_{X_{\scriptstyle\bullet}} \otimes_{\Gamma} \mathcal{L}(A)$ is quasi-isomorphic to the derived tensor product $k_{X_{\scriptstyle\bullet}} \otimes^{\mathbb{L}}_{\Gamma} \mathcal{L}(A)$. It follows that this complex is invariant along quasi-isomorphisms in both arguments ($X_{\scriptstyle\bullet}$ and $A$). The proof in the case of pointed simplicial sets and modules is the same with the category $\Gamma$ replaced by the category of pointed finite sets. ◻
+:::
+
+## Higher Hochschild as an $(\infty, 1)$-functor {#S:inftyfunctor}
+
+In this section we deal with axioms for the theory of higher Hochschild *chains* instead of mere homology. That is, we upgrade the previous section, in particular Corollary [\[C:Homologyfunctor\]](#C:Homologyfunctor){reference-type="ref" reference="C:Homologyfunctor"}, to the setting of derived categories, or more precisely $(\infty,1)$-categories. Said otherwise, we replace the category of simplicial sets by its homotopical analogue: the $(\infty, 1)$-category of simplicial sets denoted $sSet_\infty$ and we replace the category of commutative differential algebras by $CDGA_\infty$, the $(\infty,1)$-category associated to the derived category of commutative differential graded algebras (obtained by inverting quasi-isomorphisms of CDGAs).
+
+In this settting, we will prove that the axioms determine *uniquely* the Hochschild chain as an $(\infty,1)$-functor (lifting Hochschild homology). These axioms are *not* specific to CDGA but rather come from the fact that any presentable $(\infty,1)$-category is (homotopically) canonically tensored over simplicial sets according to [@Lu11 Corollary 4.4.4.9].
+
+::: theorem
+[]{#T:derivedfunctor label="T:derivedfunctor"} There is a canonical equivalence $CH_{X_{\scriptstyle\bullet}}(A)\cong X_{\scriptstyle\bullet}\boxtimes A$ between the Hochschild chains and the tensor of $A$ and $X_{\scriptstyle\bullet}$, *i.e.* there are natural equivalences (in $sSet_\infty$) $$\text{Map}_{CDGA_\infty}\big(CH_{X_{\scriptstyle\bullet}}(A),B\big) \; \cong \; 
+ \text{Map}_{sSet_\infty}\big(X_{\scriptstyle\bullet}, \text{Map}_{CDGA_\infty}(A,B) \big).$$ In particular, the Hochschild chains lift as a functor of $(\infty,1)$-categories $CH: sSet_\infty\times CDGA_\infty\to CDGA_\infty$ which satisfies the following axioms
+
+1.  **value on a point:** there is a natural equivalence $CH^{\scriptstyle\bullet}_{pt}(A)\cong A$ of CDGAs.
+
+2.  **monoidal:** $CH$ is monoidal with respect to both variables. Precisely, there are natural equivalences $$CH_{X_{\scriptstyle\bullet}\coprod Y_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)\cong CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A) \otimes CH_{Y_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A),$$ $$CH_{X_{\scriptstyle\bullet}}^{\scriptstyle\bullet}(A\otimes B)\cong CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A) \otimes  CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(B).$$
+
+3.  **homotopy gluing/pushout:** $CH$ sends homotopy pushout in $sSet_\infty$ to homotopy pushout in $CDGA_\infty$. More precisely, given maps $Z_{\scriptstyle\bullet}\stackrel{f}\to X_{\scriptstyle\bullet}$ and $Z_{\scriptstyle\bullet}\stackrel{g} \to Y_{\scriptstyle\bullet}$ in $sSet_\infty$, and $W_{\scriptstyle\bullet}\cong X_{\scriptstyle\bullet}\bigcup^{h}_{Z_{\scriptstyle\bullet}} Y_{\scriptstyle\bullet}$ a homotopy pushout, there is a natural equivalence $$CH^{{\scriptstyle\bullet}}_{W_{\scriptstyle\bullet}}(A)\cong CH^{{\scriptstyle\bullet}}_{X_{\scriptstyle\bullet}}(A)\otimes_{CH^{{\scriptstyle\bullet}}_{Z_{\scriptstyle\bullet}}(A)}^{\mathbb{L}} CH^{{\scriptstyle\bullet}}_{Y_{\scriptstyle\bullet}}(A).$$
+:::
+
+In particular Theorem [\[T:derivedfunctor\]](#T:derivedfunctor){reference-type="ref" reference="T:derivedfunctor"} implies similar statements involving the homotopy categories of simplicial sets and CDGAs instead of their $(\infty,1)$-refinement. Axiom **(3)** is the *locality* axiom (as for Topological Field Theories) playing the role of the excision/Mayer-Vietoris axiom for classical homology.
+
+::: proof
+*Proof.* The second equivalence in the monoidal axiom follows from Proposition [\[P:tensor\]](#P:tensor){reference-type="ref" reference="P:tensor"}. The rest is an immediate consequence of [@Lu11 Corollary 4.4.4.9], § [\[S:NaiveHH\]](#S:NaiveHH){reference-type="ref" reference="S:NaiveHH"} and the fact that the coproduct in $CDGA_\infty$ is given by the tensor product of CDGAs. Note that the axioms can also be proved easily and directly using the results of Section [\[S:NaiveHH\]](#S:NaiveHH){reference-type="ref" reference="S:NaiveHH"}, as we now demonstrate for the interested reader's convenience (this incidentally yields immediately another proof of the identification of derived Hochschild chains with a tensor).
+
+We already know that the Hochschild chain complex defines a bifunctor $(X_{\scriptstyle\bullet},A)\mapsto CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)$ from the category $sSet\times CDGA$ to $CDGA$, see Proposition [\[P:shuffleinvariance\]](#P:shuffleinvariance){reference-type="ref" reference="P:shuffleinvariance"}. The $(\infty,1)$-categories $sSet_\infty$ and $CDGA_\infty$ both arise from suitables localizations of the weak equivalences (see Section [\[S:DKL\]](#S:DKL){reference-type="ref" reference="S:DKL"}). That is $sSet_\infty=L_{\mathcal{CS}e\mathcal{S}p}(N_\bullet(L^H(sSet,\mathcal{W}_{sSet})))$ and $CDGA_\infty=L_{\mathcal{CS}e\mathcal{S}p}(N_\bullet(L^H(CDGA,\mathcal{W}_{CDGA})))$ where $W_{sSet}$ and $W_{CDGA}$ are the respective subcategories of weak equivalences in $sSet$ and $CDGA$ given in Sections [\[S:Delta\]](#S:Delta){reference-type="ref" reference="S:Delta"} and [\[S:CDGA\]](#S:CDGA){reference-type="ref" reference="S:CDGA"}. Thus, in order to show that the functor $(X_{\scriptstyle\bullet},A)\mapsto CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)$ lifts to the $(\infty,1)$-associated categories, it suffices to show that this bifunctor passes to the (hammock) localization of these model categories along their subcategory of weak equivalences $W_{sSet}$ and $W_{CDGA}$. By construction of the hammock localization functor $L^H$, it suffices to prove that the usual Hochschild chain complex bifunctor maps weak equivalences (in $sSet\times CDGA$) to weak equivalences (in $CDGA$) which follows from Proposition [\[P:homologyinvariance\]](#P:homologyinvariance){reference-type="ref" reference="P:homologyinvariance"}. More precisely, the bifunctor $CH: sSet_\infty\times CDGA_\infty\to CDGA_\infty$ is the bifunctor induced by the bifunctor $$\begin{gathered}
+  L_{\mathcal{CS}e\mathcal{S}p}\big(N_\bullet\big((CH_{-}^{{\scriptstyle\bullet}}(-))\big)\big):L_{\mathcal{CS}e\mathcal{S}p}(N_\bullet(L^H(sSet\times CDGA, W_{sSet}\times W_{CDGA})))\\ \longrightarrow \quad L_{\mathcal{CS}e\mathcal{S}p}(N_\bullet(L^H(CDGA, W_{CDGA})))                                                                                                                   
+\end{gathered}$$ obtained by localizing the Hochschild chains.
+
+When $X_{\scriptstyle\bullet}$ is contractible, Proposition [\[P:homologyinvariance\]](#P:homologyinvariance){reference-type="ref" reference="P:homologyinvariance"} implies that there is an natural equivalence $CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)\cong CH_{pt_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)\cong A$ of CDGAs where $pt_{\scriptstyle\bullet}$ is the standard simplicial model of a point, see [@GTZ Example 2.3.4]. This proves the value on a point axiom.
+
+The compatibility with the monoidal structures follows from Proposition [\[P:tensor\]](#P:tensor){reference-type="ref" reference="P:tensor"} since both monoidal functors $\coprod: sSet\times sSet\to sSet$ and $\otimes_k: CDGA\times CDGA\to CDGA$ are Quillen exact, thus passes to the $(\infty,1)$-category induced by the model categories structures.
+
+It remains to prove the homotopy gluing axiom. We let $f_{\scriptstyle\bullet}: Z_{\scriptstyle\bullet}\to X_{\scriptstyle\bullet}$ and $g_{\scriptstyle\bullet}: Z_{\scriptstyle\bullet}\to Y_{\scriptstyle\bullet}$ be simplicial sets maps. Since we already know that the Hochschild chain complex preserves weak equivalences, we can replace $W_{\scriptstyle\bullet}$ by the pushout $X_{\scriptstyle\bullet}\bigcup_{Z_{\scriptstyle\bullet}} \widehat{Y}_{\scriptstyle\bullet}$ where $\hat{g}_{\scriptstyle\bullet}:  Z_{\scriptstyle\bullet}\to \widehat{Y}_{\scriptstyle\bullet}$ is a cofibration and $p:\widehat{Y}\stackrel{\simeq}\to Y$ is a fibrant replacement of $Y$.
+
+By Proposition [\[P:pushout\]](#P:pushout){reference-type="ref" reference="P:pushout"}, there is a natural isomorphism $$\label{eq:homotopypushout}CH_{X_{\scriptstyle\bullet}\bigcup_{Z_{\scriptstyle\bullet}} \widehat{Y}_{\scriptstyle\bullet}}^{\scriptstyle\bullet}(A)\cong  CH^{{\scriptstyle\bullet}}_{X_{\scriptstyle\bullet}}(A)\otimes_{CH^{{\scriptstyle\bullet}}_{Z_{\scriptstyle\bullet}}(A)} CH^{{\scriptstyle\bullet}}_{\widehat{Y}_{\scriptstyle\bullet}}(A).$$
+
+Since $Z_{\scriptstyle\bullet}\stackrel{\hat{g}_{\scriptstyle\bullet}}\hookrightarrow \widehat{Y}_{\scriptstyle\bullet}$ is injective, the induced map $\hat{g}_*: CH^{{\scriptstyle\bullet}}_{Z_{\scriptstyle\bullet}}(A) \to CH^{{\scriptstyle\bullet}}_{\widehat{Y}_{\scriptstyle\bullet}}(A)$ of CDGAs exhibits $CH^{{\scriptstyle\bullet}}_{\widehat{Y}_{\scriptstyle\bullet}}(A)$ as a semi-free $CH^{{\scriptstyle\bullet}}_{Z_{\scriptstyle\bullet}}(A)$ algebra, thus the tensor product in the quasi-isomorphism [\[eq:homotopypushout\]](#eq:homotopypushout){reference-type="eqref" reference="eq:homotopypushout"} can be replaced by a derived tensor product: $$\label{eq:homotopypushout2}CH_{X_{\scriptstyle\bullet}\bigcup_{Z_{\scriptstyle\bullet}} \widehat{Y}_{\scriptstyle\bullet}}^{\scriptstyle\bullet}(A)\cong  CH^{{\scriptstyle\bullet}}_{X_{\scriptstyle\bullet}}(A)\otimes_{CH^{{\scriptstyle\bullet}}_{Z_{\scriptstyle\bullet}}(A)}^{\mathbb{L}} CH^{{\scriptstyle\bullet}}_{\widehat{Y}_{\scriptstyle\bullet}}(A).$$ By homotopy invariance, the map $p_*:CH^{{\scriptstyle\bullet}}_{\widehat{Y}_{\scriptstyle\bullet}}(A)\cong CH^{{\scriptstyle\bullet}}_{Y_{\scriptstyle\bullet}}(A)$ is a quasi-isomorphism and thus the homotopy pushout axiom follows from the quasi-isomorphism [\[eq:homotopypushout2\]](#eq:homotopypushout2){reference-type="eqref" reference="eq:homotopypushout2"}. ◻
+:::
+
+::: remark
+[]{#R:derivedfunctorTop label="R:derivedfunctorTop"} As in Corollary [\[C:Homologyfunctor\]](#C:Homologyfunctor){reference-type="ref" reference="C:Homologyfunctor"}, the (model) categories of simplicial sets and (compactly generated) topological spaces being Quillen equivalent, one can replace $sSet_\infty$ by its topological counterpart $\hTop$ in Theorem [\[T:derivedfunctor\]](#T:derivedfunctor){reference-type="ref" reference="T:derivedfunctor"}. This yield the Hochschild chain functor over spaces $CH: \hTop \times CDGA_\infty\to CDGA_\infty$, see § [\[S:factor-alg\]](#S:factor-alg){reference-type="ref" reference="S:factor-alg"}. By definition Hochschild chain are functorial in spaces; for instance any continuous map $f: X\to Y$ between topological spaces induces a chain map $f_{\scriptstyle\bullet}:CH_X^{\scriptstyle\bullet}(A) \to CH_Y^{\scriptstyle\bullet}(A)$ which is an equivalence if $f$ is a weak-equivalence. We will get back to and focus on this Hochschild functor over topological spaces in Section [\[S:factor-alg\]](#S:factor-alg){reference-type="ref" reference="S:factor-alg"}
+:::
+
+The locality axiom **(3)** in Theorem [\[T:derivedfunctor\]](#T:derivedfunctor){reference-type="ref" reference="T:derivedfunctor"} yields an Eilenberg-Moore type spectral sequence for computing higher Hochschild homology.
+
+::: corollary
+[]{#C:HlocalitySpecSeq label="C:HlocalitySpecSeq"} Given an homotopy pushout $W_{\scriptstyle\bullet}\cong X_{\scriptstyle\bullet}\cup_{Z_{\scriptstyle\bullet}}^h Y_{\scriptstyle\bullet}$, there is a natural strongly convergent spectral sequence of cohomological type of the form $$E_2^{p,q}:= {Tor}_{p,q}^{HH_{Z_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)}\left(HH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A),HH_{Y_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)\right) \Longrightarrow HH_{W_{\scriptstyle\bullet}}^{p+q}(A)$$ where $q$ is the *internal* grading. The spectral sequence is furthermore a spectral sequence of differential $HH_{Z_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)$-algebras.
+:::
+
+Recall that we are considering a cohomological grading; in particular the spectral sequence is concentrated in the left half-plane with respect to this grading (and $p$ is negative).
+
+::: proof
+*Proof.* By Theorem [\[T:derivedfunctor\]](#T:derivedfunctor){reference-type="ref" reference="T:derivedfunctor"}, we have $CH^{{\scriptstyle\bullet}}_{W_{\scriptstyle\bullet}}(A)\cong CH^{{\scriptstyle\bullet}}_{X_{\scriptstyle\bullet}}(A)\mathop{\otimes}_{CH^{{\scriptstyle\bullet}}_{Z_{\scriptstyle\bullet}}(A)}^{\mathbb{L}} CH^{{\scriptstyle\bullet}}_{Y_{\scriptstyle\bullet}}(A)$ as CDGAs. Now the spectral sequence follows from standard results on derived tensor products (of $CH^{{\scriptstyle\bullet}}_{Z_{\scriptstyle\bullet}}(A)$-modules) [@KM Theorem 4.7]. That the spectral sequence is one of algebras comes from the fact, that we can choose a semi-free resolution of $CH^{{\scriptstyle\bullet}}_{X_{\scriptstyle\bullet}}$ by a $CH^{{\scriptstyle\bullet}}_{Z_{\scriptstyle\bullet}}$-algebra. ◻
+:::
+
+::: example
+1.  It is a well-known fact, that the usual Hochschild complex of an associative algebra $A$ $CH_{{\scriptstyle\bullet}}(A)=CH^{{\scriptstyle\bullet}}_{S^1_\bullet} (A)$ may be written as a $Tor$ over the bimodule $A^e=A\otimes A^{op}$, see *e.g.* [@L Proposition 1.1.13]. More explicitly, $$HH_\bullet(A)=Tor^{A^e}_{{\scriptstyle\bullet}}(A,A).$$ Identifying $HH^{pt_{\scriptstyle\bullet}}_\bullet(A)=A$, and $HH_{\{pt_{\scriptstyle\bullet},pt_{\scriptstyle\bullet}^-\}}^\bullet(A)=A\otimes A^{op}=A^e$, where $pt_{\scriptstyle\bullet}^-$ denotes the point with opposite orientation, we see that, in this case, the spectral sequence of Corollary [\[C:HlocalitySpecSeq\]](#C:HlocalitySpecSeq){reference-type="ref" reference="C:HlocalitySpecSeq"} collapses at the $E_2$ level, $${Tor}^{HH^{\{pt_{\scriptstyle\bullet},pt_{\scriptstyle\bullet}^-\}_{\scriptstyle\bullet}}_{{\scriptstyle\bullet}}(A)}\left(HH_{pt_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A),HH_{pt_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)\right) = HH_{S^1_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)$$ where we used that $S^1_{\scriptstyle\bullet}\cong pt_{\scriptstyle\bullet}\cup_{\{pt,pt^-\}_{\scriptstyle\bullet}}^h pt_{\scriptstyle\bullet}$ and further that when $A$ is commutative, $A^{op}=A$.
+
+2.  Let $f_\bullet:Z_\bullet\to X_\bullet$ be a map of simplicial spaces. Then, the mapping cone $(C_f)_\bullet$ is given as the homotopy pushout $(C_f)_\bullet\cong X_\bullet \cup_{Z_\bullet}^h pt_\bullet$. We obtain a spectral sequence computing $HH^{\scriptstyle\bullet}_{(C_f)_{\scriptstyle\bullet}}(A)$, $${Tor}_{p,q}^{HH_{Z_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)}\left(HH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A),A \right) \Longrightarrow HH_{(C_f)_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)$$
+
+3.  In a more straightforward way, we may use the gluing property to give explicit models for spaces with cubic subdivisions. Our starting point is given by models for interval $I_{\scriptstyle\bullet}$ and the square $I^2_{\scriptstyle\bullet}$ via, $$CH^{\scriptstyle\bullet}_{I_{\scriptstyle\bullet}}(A)=\sum_k A^{\otimes (k+2)}\quad\text{ and }\quad CH^{\scriptstyle\bullet}_{I^2_{\scriptstyle\bullet}}(A)=\sum_k A^{\otimes (k+2)^2}.$$ The $i^{\text{th}}$ differential is given in the case of $I_{\scriptstyle\bullet}$ by multiplying the $i^{\text{th}}$ and $(i+1)^{\text{th}}$ tensor factors, and in the case of $I^2_{\scriptstyle\bullet}$ by multiplying the $i^{\text{th}}$ and $(i+1)^{\text{th}}$ column of tensor factors and the $i^{\text{th}}$ and $(i+1)^{\text{th}}$ rows of tensor factors simultaneously. For more detail, see [@GTZ Example 2.3.4]. Then we obtain the Hochschild complex for the cylinder $C_{\scriptstyle\bullet}=I^2_{\scriptstyle\bullet}\cup_{(I_{\scriptstyle\bullet}\cup I_{\scriptstyle\bullet})}  I_{\scriptstyle\bullet}$ by gluing $I^2_{\scriptstyle\bullet}$ and $I_{\scriptstyle\bullet}$ along $I_{\scriptstyle\bullet}\cup I_{\scriptstyle\bullet}$ on opposite edges of $I^2_{\scriptstyle\bullet}$, and with this the torus $T_{\scriptstyle\bullet}=C_{\scriptstyle\bullet}\cup_{(I_{\scriptstyle\bullet}\cup I_{\scriptstyle\bullet})} I_{\scriptstyle\bullet}$ by gluing the remaining sides together. A more elaborate version of this is given in [@GTZ Example 2.3.2]. By using similar, but more elaborate considerations, one can in fact obtain Hochschild models over any surface, see [@GTZ Section 3.1].
+:::
+
+Higher Hochschild chain complexes behaves much like cochains of mapping spaces (see [@GTZ sections 2.2, 2.4]). Indeed they satisfy a kind of exponential law:
+
+::: proposition
+[]{#P:product label="P:product"} Let $X_{\scriptstyle\bullet}$, $Y_{\scriptstyle\bullet}$ be simplicial sets. Then there is a natural equivalence $$CH_{X_{\scriptstyle\bullet}\times Y_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A) \stackrel{\sim}\to CH_{X_{\scriptstyle\bullet}}^{\scriptstyle\bullet}\left( CH_{Y_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)\right)$$ in $CDGA_\infty$.
+:::
+
+::: proof
+*Proof.* It follows from Corollary 2.4.4 of [@GTZ]. ◻
+:::
+
+The Hochschild chain functor $CH:sSet_\infty\times CDGA_\infty\to CDGA_\infty$ is essentialy (up to equivalences) determined by the homotopy pushout axiom, coproduct and its value on a point. In other words, it is the *unique* $(\infty,1)$-functor (up to natural equivalences) satisfying the three axioms (value on a point, coproduct and locality) listed below in Theorem [\[T:deriveduniqueness\]](#T:deriveduniqueness){reference-type="ref" reference="T:deriveduniqueness"}. This is once again a consequence of the fact that higher Hochschild is a tensor. The precise uniqueness statement is :
+
+::: theorem
+[]{#T:deriveduniqueness label="T:deriveduniqueness"} Let $(X_{\scriptstyle\bullet}, A)\mapsto F_{X_{\scriptstyle\bullet}}(A)$ be a bifunctor $sSet_\infty\times CDGA_\infty\to CDGA_\infty$ which satisfies the following three axioms.
+
+1.  **value on a point:** []{#A:point label="A:point"} There is a natural equivalence of CDGAs $F_{pt_{\scriptstyle\bullet}}(A)\cong A$.
+
+2.  **coproduct:** []{#A:coproduct label="A:coproduct"}There are natural equivalences $$F_{\coprod\limits_{I} (X_i)_{\scriptstyle\bullet}}(A)\cong \mathop{\lim\limits_{\textstyle\longrightarrow}}\limits_{\small \begin{array}{l}K\subset I \\ K \mbox{ finite}\end{array}} \bigotimes_{k\in K} F_{(X_k)_{\scriptstyle\bullet}}(A)$$
+
+3.  **homotopy gluing/pushout:** []{#A:pushout label="A:pushout"} $F$ sends homotopy pushout in $sSet_\infty$ to homotopy pushout in $CDGA_\infty$. More precisely, given two maps $Z_{\scriptstyle\bullet}\stackrel{f}\to X_{\scriptstyle\bullet}$ and $Z_{\scriptstyle\bullet}\stackrel{g}\to Y_{\scriptstyle\bullet}$ in $sSet_\infty$, and $W_{\scriptstyle\bullet}\cong X_{\scriptstyle\bullet}\bigcup^{h}_{Z_{\scriptstyle\bullet}} Y_{\scriptstyle\bullet}$ a homotopy pushout, one has a natural equivalence $$F_{W_{\scriptstyle\bullet}}(A)\cong F_{X_{\scriptstyle\bullet}}(A)\otimes_{F_{Z_{\scriptstyle\bullet}}(A)}^{\mathbb{L}} F_{Y_{\scriptstyle\bullet}}(A).$$
+
+Then $F$ is naturally equivalent to the higher Hochschild chains bifunctor $CH$ as a bifunctor *i.e.* as an object in $Hom_{(\infty,1)-cat}(sSet_\infty\times CDGA_\infty, CDGA_\infty)$.
+:::
+
+::: proof
+*Proof.* This is a consequence of the fact that $CDGA_\infty$ (and actually any presentable $(\infty,1)$-category) is uniquely tensored over $sSet_\infty$, see [@Lu11 Corollay 4.4.4.9].
+
+Alternatively it can be prove by noticing that any simplicial set $X_{\scriptstyle\bullet}$ is a (homotopy) colimit of its skeletal filtration $sk_n X_{\scriptstyle\bullet}$, which in turns is obtained by taking a homotopy pushout of $sk_{n-1} X_{\scriptstyle\bullet}$ with coproducts of standard model $\Delta^n_{\scriptstyle\bullet}$ of the simplices which are contractible. Then the axioms imply an equivalence $F_{sk_n X_{\scriptstyle\bullet}}(A) \stackrel{\simeq}\to CH^{{\scriptstyle\bullet}}_{sk_n X_{\scriptstyle\bullet}}(A)$ which commutes with the inclusions $sk_{n-1}X_{\scriptstyle\bullet}\hookrightarrow sk_n X_{\scriptstyle\bullet}$ so that it induces an natural equivalence $F_{X_{\scriptstyle\bullet}}(A) \cong CH_{X_{\scriptstyle\bullet}}(A)$ since the latter satisfies teh axioms by Theorem [\[T:derivedfunctor\]](#T:derivedfunctor){reference-type="ref" reference="T:derivedfunctor"}.
+
+For the interested reader, we now make this sketch more precise.
+
+Let $(X_{\scriptstyle\bullet},A)\mapsto F_{X_{\scriptstyle\bullet}}(A)$ be a functor satisfying the assumption of Theorem [\[T:deriveduniqueness\]](#T:deriveduniqueness){reference-type="ref" reference="T:deriveduniqueness"}. If $X_{\scriptstyle\bullet}$ is a finite discrete simplicial set, there are natural equivalences in $CDGA_\infty$ $$F_{X_{\scriptstyle\bullet}}(A)\cong F_{X_0}(A)\cong F_{\coprod_{x\in X_0} \{x\}}(A)\cong A^{\otimes X_0}\cong CH^{\scriptstyle\bullet}_{X_{\scriptstyle\bullet}}(A)$$ since both bifunctors $F$ and $CH$ are homotopy invariant, commute with finite coproducts and satisfies Axiom [\[A:point\]](#A:point){reference-type="eqref" reference="A:point"}. If $X_{\scriptstyle\bullet}$ is discrete, non-necessarily finite, then Axiom [\[A:coproduct\]](#A:coproduct){reference-type="eqref" reference="A:coproduct"} implies that $F_{X_{\scriptstyle\bullet}}(A)\cong \mathop{\lim\limits_{\textstyle\longrightarrow}}\limits_{K \mbox{ finite}} F_{K}(A)\cong \mathop{\lim\limits_{\textstyle\longrightarrow}}\limits_{K \mbox{ finite}} A^{\otimes K} \cong CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)$ by definition of Hochschild chain of simplicial sets (Definition [\[D:Hoch\]](#D:Hoch){reference-type="ref" reference="D:Hoch"}).
+
+Let $sk_n X_{\scriptstyle\bullet}$ be the $n^{\mbox{th}}$-skeleton of a simplicial set $X_{\scriptstyle\bullet}$ (see [@GoJa] for instance), *i.e.*, the sub-simpicial set generated by all non-degenerate simplices of dimension less than or equal to $n$. Note that $X_{\scriptstyle\bullet}$ is the filtered colimit $X_{\scriptstyle\bullet}= \bigcup_{n\geq 0} sk_n X_{\scriptstyle\bullet}$. Since $sk_0 X_{\scriptstyle\bullet}$ is a discrete simplicial set, we have an natural (in $A$ and $X_{\scriptstyle\bullet}$) equivalence of algebras $F_{sk_0 X_{\scriptstyle\bullet}}(A) \stackrel{\simeq}\to CH^{{\scriptstyle\bullet}}_{sk_0 X_{\scriptstyle\bullet}}(A)$.
+
+Now assume $n\geq 1$ and that we have a natural equivalence (induced by a natural zigzag of quasi-isomorphisms) of CDGAs $F_{sk_{n-1} X_{\scriptstyle\bullet}}(A) \stackrel{\simeq}\to CH^{{\scriptstyle\bullet}}_{sk_{n-1} X_{\scriptstyle\bullet}}(A)$ (for any simplicial set $X_\bullet$). Let $NX_n$ be the subset of non-degenerate simplices in $X_n$, $\Delta^n_{\scriptstyle\bullet}$ be the standard simplicial model $\Delta^n_{k}=Hom_{\Delta}([k], [n])$ of the *topological* $n$-simplex and $\partial \Delta^n_{\scriptstyle\bullet}$ its boundary (that is the sub-complex obtained by dropping the only non-degenerate simplex of dimension $n$). Note that $\Delta^n_{\scriptstyle\bullet}$ is contractible and $\partial \Delta^n_{\scriptstyle\bullet}$ is a simplicial model for the sphere $S^{n-1}$. For $n\geq 1$, one has a pushout diagrams $$\label{eq:pushoutskn} \xymatrix{ \coprod_{x\in NX_n} \partial \Delta^n_{\scriptstyle\bullet}\ar[r]^{j_n} \ar@{^{(}->}[d]_{i_n} & sk_{n-1}X_{\scriptstyle\bullet}\ar@{^{(}->}[d] \\ \coprod_{x\in NX_n}  \Delta^n_{\scriptstyle\bullet}\ar[r] & sk_n X_{\scriptstyle\bullet}}$$ which are homotopy pushouts since the vertical arrows are cofibrations of simplicial sets. Thus Axiom [\[A:pushout\]](#A:pushout){reference-type="eqref" reference="A:pushout"} and Theorem [\[T:derivedfunctor\]](#T:derivedfunctor){reference-type="ref" reference="T:derivedfunctor"} yield natural equivalences $$F_{sk_n X_{\scriptstyle\bullet}}(A)\cong F_{sk_{n-1}X_{\scriptstyle\bullet}}(A) \otimes_{F_{\coprod_{x\in NX_n} \partial \Delta^n_{\scriptstyle\bullet}}(A)}^{\mathbb{L}}  F_{\coprod_{x\in NX_n}  \Delta^n_{\scriptstyle\bullet}}(A)$$ of $F_{\coprod_{x\in NX_n}  \Delta^n_{\scriptstyle\bullet}}(A)$-algebras as well as a natural equivalence $$CH_{sk_n X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A) \cong CH^{{\scriptstyle\bullet}}_{sk_{n-1}X_{\scriptstyle\bullet}}(A) \otimes_{CH^{{\scriptstyle\bullet}}_{\coprod_{x\in NX_n} \partial \Delta^n_{\scriptstyle\bullet}}(A)}^{\mathbb{L}}  CH^{{\scriptstyle\bullet}}_{\coprod_{x\in NX_n}  \Delta^n_{\scriptstyle\bullet}}(A)$$ of $CH^{{\scriptstyle\bullet}}_{\coprod_{x\in NX_n} \partial \Delta^n_{\scriptstyle\bullet}}(A)$-algebras. Here the modules structures are the natural ones induced by the maps in the pushout diagram [\[eq:pushoutskn\]](#eq:pushoutskn){reference-type="eqref" reference="eq:pushoutskn"}.
+
+We now deduce that $F_{sk_n X_{\scriptstyle\bullet}}(A)$ is equivalent to $CH_{sk_nX_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)$. Recall from Example [\[E:Amod\]](#E:Amod){reference-type="ref" reference="E:Amod"}, that an equivalence $A\stackrel{\sim}\to B$ of CDGAs induces an equivalence of their $(\infty,1)$-categories of modules $B\textit{-}Mod_\infty \stackrel{\sim}\to A\textit{-}Mod_{\infty}$. Note that $\partial \Delta^n_{\scriptstyle\bullet}$ has no non-degenerate simplices in dimension $n$ and higher. Thus $\partial \Delta^n_{\scriptstyle\bullet}=sk_{n-1} \partial \Delta^n_{\scriptstyle\bullet}$ and, by our induction assumption, we have a natural equivalence of CDGAs between $F_{\coprod_{x\in NX_n} \partial \Delta^n_{\scriptstyle\bullet}}(A)$ and $CH^{{\scriptstyle\bullet}}_{\coprod_{x\in NX_n} \partial \Delta^n_{\scriptstyle\bullet}}(A)$ as well as between $F_{sk_{n-1}X_{\scriptstyle\bullet}}(A)$ and $CH^{\scriptstyle\bullet}_{sk_{n-1}X_{\scriptstyle\bullet}}(A)$. Further, as the modules structures are induced by the simplicial set map $\coprod_{x\in NX_n} \partial \Delta^n_{\scriptstyle\bullet}\to sk_{n-1}X_{\scriptstyle\bullet}$, it follows that the diagram $$\xymatrix{ F_{\coprod_{x\in NX_n} \partial \Delta^n_{\scriptstyle\bullet}}(A)\otimes F_{sk_{n-1}X_{\scriptstyle\bullet}}(A) \ar[r]^{\simeq} \ar[d]_{\mu\circ(j_n\otimes 1)} & CH_{\coprod_{x\in NX_n} \partial \Delta^n_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)\otimes CH_{sk_{n-1}X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)\ar[d]^{\mu\circ(j_n\otimes 1)} \\ F_{sk_{n-1}X_{\scriptstyle\bullet}}(A) \ar[r]^{\simeq} & CH_{sk_{n-1} X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)}$$ is commutative (here $\mu$ is the multiplication and $j_n$ the top map in diagram [\[eq:pushoutskn\]](#eq:pushoutskn){reference-type="eqref" reference="eq:pushoutskn"}). Hence $CH_{sk_{n-1} X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)$ is equivalent to $F_{sk_{n-1}X_{\scriptstyle\bullet}}(A)$ as an $F_{\coprod_{x\in NX_n} \partial \Delta^n_{\scriptstyle\bullet}}(A)$-CDGA.
+
+We are left to prove that $F_{\coprod_{x\in NX_n}  \Delta^n_{\scriptstyle\bullet}}(A)$ and $CH^{\scriptstyle\bullet}_{\coprod_{x\in NX_n}  \Delta^n_{\scriptstyle\bullet}}(A)$ are equivalent $F_{\coprod_{x\in NX_n} \partial \Delta^n_{\scriptstyle\bullet}}(A)$-CDGAs. By the homotopy invariance and value on a point axiom, we have a natural equivalence $F_{\coprod_{x\in NX_n}  \Delta^n_{\scriptstyle\bullet}}(A)\stackrel{\simeq}\to A^{\otimes \# NX_n}$ (induced by the unique map $\Delta^n_{\scriptstyle\bullet}\to pt_{\scriptstyle\bullet}$ for each non-degenerate simplex in $NX_n$) and further the $F_{\coprod_{x\in NX_n} \partial \Delta^n_{\scriptstyle\bullet}}(A)$-algebra structure on $A^{\otimes \# NX_n}$ is induced by the canonical map $\coprod_{x\in NX_n} \partial \Delta^n_{\scriptstyle\bullet}\longrightarrow \coprod_{x\in NX_n} pt_{\scriptstyle\bullet}$. The same argument holds for Hochschild chains $CH$ instead of $F$ so that we have a commutative diagram $$\xymatrix{  F_{\coprod_{x\in NX_n} \partial \Delta^n_{\scriptstyle\bullet}}(A) \ar[rr]^{\simeq} \ar[d]_{i_n}&  & CH_{\coprod_{x\in NX_n} \partial \Delta^n_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A) \ar[d]^{i_n}\\ 
+ F_{\coprod_{x\in NX_n}  \Delta^n_{\scriptstyle\bullet}}(A) \ar[r]^{\simeq}  & A^{\otimes \# NX_n} & \ar[l]_{\simeq} CH^{\scriptstyle\bullet}_{\coprod_{x\in NX_n}  \Delta^n_{\scriptstyle\bullet}}(A)
+ }$$ from which it follows that both $CH_{\coprod_{x\in NX_n}  \Delta^n_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)$ and $F_{\coprod_{x\in NX_n}  \Delta^n_{\scriptstyle\bullet}}(A)$ are equivalent to $A^{\otimes \# NX_n}$ as $F_{\coprod_{x\in NX_n} \partial \Delta^n_{\scriptstyle\bullet}}(A)$-CDGAs. Tensoring the previous equivalence with $A^{\otimes \# NX_n}$ (over ${F_{\coprod_{x\in NX_n} \partial \Delta^n_{\scriptstyle\bullet}}(A)}$) we obtain a natural equivalence $F_{sk_{n}X_{\scriptstyle\bullet}}(A) \cong  CH^{{\scriptstyle\bullet}}_{sk_{n}X_{\scriptstyle\bullet}}(A)$ in $CDGA_\infty$.
+
+By induction, we get (for all $n$'s) natural equivalences $F_{sk_n X_{\scriptstyle\bullet}}(A) \stackrel{\simeq}\to CH^{{\scriptstyle\bullet}}_{sk_n X_{\scriptstyle\bullet}}(A)$ which commutes with the inclusions $sk_{n-1}X_{\scriptstyle\bullet}\hookrightarrow sk_n X_{\scriptstyle\bullet}$. Since $X_{\scriptstyle\bullet}=\bigcup_{n\geq 0} sk_n X_{\scriptstyle\bullet}$, there is a coequalizer in the $(\infty,1)$-category $sSet_\infty$: $$\xymatrix{\coprod_{n\in \mathbb N} sk_n X_{\scriptstyle\bullet}\ar[d]^{\delta} \ar[r]^{\rm id} & \coprod_{n\in \mathbb N} sk_n X_{\scriptstyle\bullet}\ar[d] \\ \coprod_{n\in \mathbb N} sk_{n} X_{\scriptstyle\bullet}\ar[r] & X_{\scriptstyle\bullet}}$$ where $\delta:\coprod_{n\in \mathbb N} sk_n X_{\scriptstyle\bullet}\to \coprod_{n\in \mathbb N} sk_{n} X_{\scriptstyle\bullet}$ is the map induced by the canonical inclusions $sk_n X_{\scriptstyle\bullet}\to sk_{n+1} X_{\scriptstyle\bullet}$. Thus by axiom **(3)**, there is a natural equivalence $$\label{eq:uniquenesspushout} F_{X_{\scriptstyle\bullet}}(A) \cong F_{\coprod_{n\in \mathbb N} sk_n X_{\scriptstyle\bullet}}(A) \mathop{\otimes}\limits_{F_{\coprod_{n\in \mathbb N} sk_{n} X_{\scriptstyle\bullet}}(A)}^{\mathbb{L}} F_{\coprod_{n\in \mathbb N} sk_n X_{\scriptstyle\bullet}}(A)$$ and similarly for Hochschild chains by Theorem [\[T:derivedfunctor\]](#T:derivedfunctor){reference-type="ref" reference="T:derivedfunctor"}. By axiom **(2)** applied to the bifunctors $F$ and $CH$, the natural equivalences $F_{sk_n X_{\scriptstyle\bullet}}(A) \stackrel{\simeq}\to CH^{{\scriptstyle\bullet}}_{sk_n X_{\scriptstyle\bullet}}(A)$ for all $n$ thus yield a natural equivalence $F_{\coprod_{n\in \mathbb N} sk_n X_{\scriptstyle\bullet}}(A) \cong CH^{\scriptstyle\bullet}_{\coprod_{n\in \mathbb N} sk_n X_{\scriptstyle\bullet}}(A)$. The natural equivalence of CDGAs $F_{X_{\scriptstyle\bullet}}(A) \cong CH^{{\scriptstyle\bullet}}_{X_{\scriptstyle\bullet}}(A)$ now follows from equivalence [\[eq:uniquenesspushout\]](#eq:uniquenesspushout){reference-type="eqref" reference="eq:uniquenesspushout"} and the analogous equivalence for Hochschild chains. ◻
+:::
+
+::: remark
+[]{#R:cdga- label="R:cdga-"} If $A$ is concentrated in non-positive degrees, then $CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)$ is also concentrated in non-positive degrees. This happens for instance if $A$ is the CDGA associated to a simplicial (non-graded) commutative algebra. In that case, it is possible to replace $CDGA$ and $CDGA_\infty$ in Theorem [\[T:derivedfunctor\]](#T:derivedfunctor){reference-type="ref" reference="T:derivedfunctor"} and Theorem [\[T:deriveduniqueness\]](#T:deriveduniqueness){reference-type="ref" reference="T:deriveduniqueness"} by $CDGA^{\leq 0}$ the category of CDGAs concentrated in non-positive degrees and $CDGA_\infty^{ \leq 0}$ its associated $(\infty,1)$-categories (the proofs being unchanged).
+:::
+
+::: remark
+Again, one can replace $sSet_\infty$ by its topological counterpart $\hTop$ in Theorem [\[T:deriveduniqueness\]](#T:deriveduniqueness){reference-type="ref" reference="T:deriveduniqueness"}, see Proposition [\[P:Topderived\]](#P:Topderived){reference-type="ref" reference="P:Topderived"}.
+:::
+
+::: remark
+[]{#R:limskn label="R:limskn"} Note that one can deduce from the coproduct axiom **(2)** in Theorem [\[T:deriveduniqueness\]](#T:deriveduniqueness){reference-type="ref" reference="T:deriveduniqueness"} and the natural equivalence [\[eq:uniquenesspushout\]](#eq:uniquenesspushout){reference-type="eqref" reference="eq:uniquenesspushout"} that the natural map $\mathop{\lim\limits_{\textstyle\longrightarrow}}\limits F_{sk_n X_{\scriptstyle\bullet}}(A) \stackrel{\simeq}\to F_{X_{\scriptstyle\bullet}}(A)$ is an equivalence. This is in particular true for Hochschild chains: $$\label{eq:limskn} \mathop{\lim\limits_{\textstyle\longrightarrow}}\limits_{n\geq 0} CH_{sk_n X_{\scriptstyle\bullet}}(A) \stackrel{\simeq}\to CH_{X_{\scriptstyle\bullet}}(A).$$
+:::
+
+::: remark
+[]{#R:deriveduniquenessfunctor label="R:deriveduniquenessfunctor"} If $G:CDGA_\infty\to CDGA_\infty$ is a functor, one can replace the value on a point axiom by the existence of a natural quasi-isomorphism $F_{pt}(A)\cong G(A)$. The proof of the Theorem [\[T:deriveduniqueness\]](#T:deriveduniqueness){reference-type="ref" reference="T:deriveduniqueness"} shows the following
+
+::: corollary
+[]{#C:deriveduniquenessfunctor label="C:deriveduniquenessfunctor"} Let $G:CDGA_\infty\to CDGA_\infty$ be a functor and $(X_{\scriptstyle\bullet}, A)\mapsto F_{X_{\scriptstyle\bullet}}(A)$ be a bifunctor $sSet_\infty\times CDGA_\infty\to CDGA_\infty$ which satisfies the axioms **(2)** and **(3)** in Theorem [\[T:deriveduniqueness\]](#T:deriveduniqueness){reference-type="ref" reference="T:deriveduniqueness"} and with axiom **(1)** replaced by $F_{pt_{\scriptstyle\bullet}}(A)\cong G(A)$. Then $F_{X_{\scriptstyle\bullet}}(A)$ is naturally equivalent $CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(G(A))$.
+:::
+
+For instance, consider the bifunctor given by $(X_{\scriptstyle\bullet}, A)\mapsto CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A)\otimes CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(B)$ whose value on a point is the functor $A\mapsto A\otimes B$. By Corollary [\[C:deriveduniquenessfunctor\]](#C:deriveduniquenessfunctor){reference-type="ref" reference="C:deriveduniquenessfunctor"}, this functor is isomorphic to $(X,A)\mapsto CH_{X_{\scriptstyle\bullet}}^{\scriptstyle\bullet}(A\otimes B)$ which gives another proof of the fact that the Hochschild chains preserve finite coproduct of CDGAs. The same argument shows that $CH$ also commutes with finite homotopy pushouts of CDGAs, see Corollary [\[C:hocolim\]](#C:hocolim){reference-type="ref" reference="C:hocolim"} below.
+:::
+
+::: corollary
+[]{#C:hocolim label="C:hocolim"} The Hochschild chain bifunctor $CH:sSet_\infty\times CDGA_\infty\to CDGA_\infty$ commutes with finite colimits in $sSet_\infty$ and all colimits in $CDGA_\infty$, that is there are natural equivalences $$\begin{aligned}
+ CH_{\mathop{\lim\limits_{\textstyle\longrightarrow}}\limits_{\mathcal{F}} {X_i}_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A) & \cong & \mathop{\lim\limits_{\textstyle\longrightarrow}}\limits_{\mathcal{F}} CH_{{X_i}_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A) \quad (\text{for a finite category } \mathcal{F}),\\
+ CH^{\scriptstyle\bullet}_{X_{\scriptstyle\bullet}}(\mathop{\lim\limits_{\textstyle\longrightarrow}}\limits{A_i}) & \cong & \mathop{\lim\limits_{\textstyle\longrightarrow}}\limits CH^{\scriptstyle\bullet}_{X_{\scriptstyle\bullet}}(A_i). 
+\end{aligned}$$
+:::
+
+Here the colimits are colimits in $sSet_\infty$ or $CDGA_\infty$.
+
+::: proof
+*Proof.* Any finite colimits can be obtained by a composition of coproducts and pushouts (or coequalizers). Thus the result for colimits in $sSet_\infty$ follows from Theorem [\[T:derivedfunctor\]](#T:derivedfunctor){reference-type="ref" reference="T:derivedfunctor"}, Axioms **(2)** and **(3)**. Let $\mathop{\lim\limits_{\textstyle\longrightarrow}}\limits_{i\in \mathcal{I}} {A_i}$ be a non-empty colimit of CDGAs and let $i_0$ be an object in the indexing category $\mathcal{I}$. By functoriality we can define a functor $G_{\mathcal{I}}:CDGA_\infty\to CDGA_\infty$ by the formula $A\mapsto G_{\mathcal{I}}(B) :=\mathop{\lim\limits_{\textstyle\longrightarrow}}\limits\tilde{B}_i$ where $\tilde{B}_i\cong A_i$ if $i\neq i_0$ and $\tilde{B}_{i_0}\cong B$. In other words we fix all the variables but the one indexed by $i_0$. Now applying Corollary [\[C:deriveduniquenessfunctor\]](#C:deriveduniquenessfunctor){reference-type="ref" reference="C:deriveduniquenessfunctor"} to the bifunctor $F: sSet_\infty\times CDGA_\infty\to CDGA_\infty$ defined by $F_{X_{\scriptstyle\bullet}}(B)\cong \mathop{\lim\limits_{\textstyle\longrightarrow}}\limits CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(\tilde{B}_i)$ we get an natural equivalence $$CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(\mathop{\lim\limits_{\textstyle\longrightarrow}}\limits_{i\in \mathcal{I}} A_i) \cong \mathop{\lim\limits_{\textstyle\longrightarrow}}\limits_{i\in \mathcal{I}} CH^{\scriptstyle\bullet}_{X_{\scriptstyle\bullet}}(A_i).$$ Since the simplicial module $n\mapsto CH_{X_n}^{{\scriptstyle\bullet}}(k)$ is isomorphic to the constant simplicial $k$-algebra $n\mapsto k$, the result also follows for empty colimits. ◻
+:::
+
+::: example
+[]{#EX:A-pushout label="EX:A-pushout"} By Corollary [\[C:hocolim\]](#C:hocolim){reference-type="ref" reference="C:hocolim"}, given two maps $f:R\to A$ and $g:R\to B$ of CDGAs, there is a natural equivalence (in $CDGA_\infty$) $$CH_{X_{\scriptstyle\bullet}}^{\scriptstyle\bullet}\Big(A\mathop{\otimes}^{\mathbb{L}}_{R} B\Big)\; \cong \; CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A) \mathop{\otimes}^{\mathbb{L}}_{CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(R)}CH_{X_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(B).$$
+:::
+
+[^1]: We recall that we are using a cohomological type grading for our differential graded modules, see Convention (7) on page , hence the upper index $n$. Note that, nowhere in this paper will we consider Hochschild cochains.
+
+[^2]: Recall that we are using a cohomological type grading for our differential graded modules, see Convention (7) on page .
+
+[^3]: The tensor product in Proposition [\[P:pushout\]](#P:pushout){reference-type="ref" reference="P:pushout"} is the tensor product of (simplicial) modules over the simplicial differential graded commutative algebra $CH_{Z_{\scriptstyle\bullet}}^{{\scriptstyle\bullet}}(A,A)$. Passing to the Hochschild chain complexes, it induces a natural map of CDGAs and modules and yield a quasi-isomorphism if $Z_{\scriptstyle\bullet}$ injects into either $X_{\scriptstyle\bullet}$ or $Y_{\scriptstyle\bullet}$, see [@GTZ Corollary 2.4.3].

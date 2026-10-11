@@ -5,7 +5,8 @@
   "file": "1809.08419v1.pdf",
   "sha256": "7ebca632544a6ea437d44a312b81a29b5897af5e6bea76a874d7ccd228945311",
   "bytes": 187282,
-  "pages": 14
+  "pages": 14,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -15,9 +16,9 @@
    "stamp_date": "22 Sep 2018"
   },
   "doi": null,
-  "title": "GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER GROUPS",
-  "authors_raw": "JEONG-YUP LEE AND DONG-IL LEE ∗",
-  "abstract": "For the noncrystallographic Coxeter groups of type H, we construct their Gr¨ obner- Shirshov bases and the corresponding standard monomials.",
+  "title": "GR\u00d6BNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER GROUPS",
+  "authors_raw": "JEONG-YUP LEE AND DONG-IL LEE \u2217",
+  "abstract": "For the noncrystallographic Coxeter groups of type H, we construct their Gr\u00a8 obner- Shirshov bases and the corresponding standard monomials.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20181015044931-04'00'",
@@ -25,9 +26,9 @@
    "Title": "",
    "Author": ""
   },
-  "title_prev": "GRÖBNER-SHIRSHOV BASES FOR NON-CRYST ALLOGRAPHIC COXETER GROUPS",
+  "title_prev": "GR\u00d6BNER-SHIRSHOV BASES FOR NON-CRYST ALLOGRAPHIC COXETER GROUPS",
   "title_lines": [
-   "GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER",
+   "GR\u00d6BNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER",
    "GROUPS"
   ]
  },
@@ -126,6 +127,56 @@
   "likely_scanned": false,
   "toc_entries": 5,
   "sections": 5,
-  "chars_total": 35763
+  "chars_total": 35763,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 4,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-coxeter-groups-of-types-h2-and-h3",
+     "title": "Coxeter groups of types H2 and H3",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-main-results-for-h4",
+     "title": "Main results for H4",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

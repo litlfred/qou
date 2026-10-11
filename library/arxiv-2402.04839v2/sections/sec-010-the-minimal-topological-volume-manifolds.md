@@ -8,8 +8,10 @@ pages: 11-12
 source_pdf: 2402.04839v2.pdf
 source_sha256: daf09811c350a2ad
 doc_brief: "On a volume invariant of 3-manifolds (Kegel, Ray, Spreer, Thompson, Tillmann) — defines topological volume vol_t(M), the smallest volume of a hyperbolic-link complement in M; bounds and a…"
+text_source: latex
+latex_prose_ratio: 0.955
+latex_coverage_ratio: 1.0
 ---
-This section classifies all non-hyperbolic 3–manifolds with topological volume less than 3.07,
-giving their volumes and their volume minimising hyperbolic links. A number of observations
-from this census are subsequently made.
-11
+\label{sec:computations}
+
+This section classifies all non-hyperbolic $3$--manifolds with topological volume less than $3.07$, giving their volumes and their volume minimising hyperbolic links. A number of observations from this census are subsequently made.

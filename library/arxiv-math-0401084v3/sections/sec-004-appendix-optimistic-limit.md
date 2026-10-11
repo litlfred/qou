@@ -8,187 +8,119 @@ pages: 15-16
 source_pdf: 0401084v3.pdf
 source_sha256: f56bbd4cee4f3418
 doc_brief: "Some limits of the colored Jones polynomials of the figure-eight knot — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine"
+text_source: latex
+latex_prose_ratio: 0.987
+latex_coverage_ratio: 0.958
 ---
-In this appendix, we will consider integral surgeries along the ﬁgure -eight knot.
-Let Ep, 1 be the p-surgery along the ﬁgure-eight knot with p ∈ Z. Then our
-parameter u and v satisﬁes pu + v = 2π√−1. From Corollary 2.4 we have
-Vol(Ep, 1) +
-√
-−1 CS(Ep, 1) ≡ H(u)√−1 − πu − uv
-4√−1 − π
-2 λ(γ) mod π2√
-−1Z.
-By [8, (4.6)], we have
-λ(γ) = 2π√−1
-p − v
-p = u.
-(Note that we follow orientation conventions of [16, 24] and so the s ign of v is
-opposite to that in [8].) Therefore
-Vol(Ep, 1) +
-√
-−1 CS(Ep, 1)
-≡ −
-√
-−1 Li2
-(
-y−1 exp(−u)
-)
-+
-√
-−1 Li2 (y exp(−u)) −
-√
-−1u
-{
-log(−y) + π
-√
-−1
-}
-− πu − u
-4√−1 (2π
-√
-−1 − pu) − π
-2 u
-≡ 1√−1
-{
-Li2
-(
-y−1 exp(−u)
-)
-− Li2 (y exp(−u)) + u log(−y) − uπ
-√
-−1 + pu2
-4
-}
-mod π2√
-−1Z
-and so
-− CS(Ep, 1) +
-√
-−1 Vol(Ep, 1)
-≡ Li2
-(
-y−1 exp(−u)
-)
-− Li2 (y exp(−u)) + u log(−y) − uπ
-√
-−1 + pu2
-4 mod π2Z.
-Now we deﬁne
-Vp(ξ, η) := Li 2
-(
-ξ−1η−1)
-− Li2
-(
-ξη −1)
-+ (log(−ξ))(log η) − π
-√
-−1 log η + p
-4 (log η)2
-= H(ξ, η) + p
-4 (log η)2 − 2π
-√
-−1 log η.
-We will calculate ∂ Vp(ξ, η)/∂ξ
-⏐
-⏐
-ξ=y,η =m2 and ∂ Vp(ξ, η)/∂η
-⏐
-⏐
-ξ=y,η =m2. First we have
-from (3.2)
-∂ Vp(ξ, η)
-∂ξ
-⏐
-⏐
-⏐
-⏐
-ξ=y,η =m2
-= ∂ H (ξ, η)
-∂ξ
-⏐
-⏐
-⏐
-⏐
-ξ=y,η =m2
-= 0.
-Next we have
-∂ Vp(ξ, η)
-∂η
-⏐
-⏐
-⏐
-⏐
-ξ=y,η =m2
-= ∂ H (ξ, η)
-∂η
-⏐
-⏐
-⏐
-⏐
-ξ=y,η =m2
-+ p log
-(
-m2)
-2m2 − 2π√−1
-m2 .
-16 HITOSHI MURAKAMI AND YOSHIYUKI YOKOTA
-On the other hand
-v
-2 = d H(u, m2)
-du − π
-√
-−1
-= ∂ H (ξ, η))
-dξ
-⏐
-⏐
-⏐
-⏐
-ξ=y,η =m2
-+ ∂ H (ξ, η)
-dη
-⏐
-⏐
-⏐
-⏐
-ξ=y,η =m2
-× d m2
-du − π
-√
-−1
-= exp u × ∂ H (ξ, η)
-dη
-⏐
-⏐
-⏐
-⏐
-ξ=y,η =m2
-− π
-√
-−1.
-Therefore
-∂ Vp(ξ, η)
-∂η
-⏐
-⏐
-⏐
-⏐
-ξ=y,η =m2
-= v/2 + π√
-−1
-exp u + pu
-2 exp u − 2π√−1
-exp u = 0.
-In [11] the ﬁrst author calculated a ‘fake’ limit of the Witten–Reshetikhin–Turaev
-invariants of the ( p, 1)-Dehn surgery of the ﬁgure-eight knot and obtained the fol-
-lowing observation.
-Observation. Let p be an integer between −100 and 100, and τp the ‘optimistic’
-limit of the Witten–Reshetikhin–Turaev invariant of the (p, 1)-Dehn surgery along
-the ﬁgure-eight knot. Then there exists (ξ0, η0) such that the following equalities
-hold numerically (up to 8 digits):
-(1) ∂ Vp
-∂ξ (ξ0, η0) = ∂ Vp
-∂η (ξ0, η0) = 0 , and
-(2) τp = Vp(ξ0, η0) = CS( Ep, 1) + √−1 Vol(Ep, 1).
-Note that the observation above was conﬁrmed by the second aut hor [22]. Note
-also that the sign of CS is reversed since the orientation convention here is diﬀerent.
+In this appendix, we will consider integral surgeries along the figure-eight knot.
+
+Let $E_{p,1}$ be the $p$-surgery along the figure-eight knot with $p\in\mathbb{Z}$. Then our parameter $u$ and $v$ satisfies $pu+v=2\pi\sqrt{-1}$. From Corollary [\[cor:Vol_CS\]](#cor:Vol_CS){reference-type="ref" reference="cor:Vol_CS"} we have $$\operatorname{Vol}(E_{p,1})+\sqrt{-1}\operatorname{CS}(E_{p,1})
+  \equiv
+  \frac{H(u)}{\sqrt{-1}}-\pi{u}-\frac{uv}{4\sqrt{-1}}
+  -\frac{\pi}{2}\lambda(\gamma)
+  \mod{\pi^2\sqrt{-1}\mathbb{Z}}.$$ By [@Meyerhoff/Neumann:COMMH92 (4.6)], we have $$\lambda(\gamma)
+  =\frac{2\pi\sqrt{-1}}{p}-\frac{v}{p}
+  =u.$$ (Note that we follow orientation conventions of [@Neumann/Zagier:TOPOL85; @Yoshida:INVEM85] and so the sign of $v$ is opposite to that in [@Meyerhoff/Neumann:COMMH92].) Therefore $$\begin{split}
+  &\operatorname{Vol}(E_{p,1})+\sqrt{-1}\operatorname{CS}(E_{p,1})
+  \\
+  &\quad\equiv
+  {}-\sqrt{-1}\operatorname{Li}_2\left(y^{-1}\exp(-u)\right)
+  +\sqrt{-1}\operatorname{Li}_2\left(y\exp(-u)\right)
+  -\sqrt{-1}u\left\{\log(-y)+\pi\sqrt{-1}\right\}
+  \\
+  &\quad\quad
+  -\pi{u}-\frac{u}{4\sqrt{-1}}(2\pi\sqrt{-1}-pu)
+  -\frac{\pi}{2}u
+  \\
+  &\quad\equiv
+  \frac{1}{\sqrt{-1}}
+  \left\{
+    \operatorname{Li}_2\left(y^{-1}\exp(-u)\right)
+    -\operatorname{Li}_2\left(y\exp(-u)\right)
+    +u\log(-y)-u\pi\sqrt{-1}+\frac{pu^2}{4}
+  \right\}
+  \\
+  &\quad\quad\quad\mod{\pi^2\sqrt{-1}\mathbb{Z}}
+\end{split}$$ and so $$\begin{gathered}
+  -\operatorname{CS}(E_{p,1})+\sqrt{-1}\operatorname{Vol}(E_{p,1})
+  \\
+  \equiv
+  \operatorname{Li}_2\left(y^{-1}\exp(-u)\right)
+  -\operatorname{Li}_2\left(y\exp(-u)\right)
+  +u\log(-y)-u\pi\sqrt{-1}+\frac{pu^2}{4}
+  \mod{\pi^2\mathbb{Z}}.
+\end{gathered}$$
+
+Now we define $$\begin{split}
+  V_p(\xi,\eta)
+  &:=
+  \operatorname{Li}_2\left(\xi^{-1}\eta^{-1}\right)
+  -\operatorname{Li}_2\left(\xi\eta^{-1}\right)
+  +(\log(-\xi))(\log{\eta})-\pi\sqrt{-1}\log\eta+\frac{p}{4}(\log{\eta})^2
+  \\
+  &=
+  H(\xi,\eta)+\frac{p}{4}(\log{\eta})^2-2\pi\sqrt{-1}\log\eta.
+\end{split}$$ We will calculate $\partial\,V_p(\xi,\eta)/\partial{\xi}\bigr|_{\xi=y,\eta=m^2}$ and $\partial\,V_p(\xi,\eta)/\partial{\eta}\bigr|_{\xi=y,\eta=m^2}$. First we have from [\[eq:y\]](#eq:y){reference-type="eqref" reference="eq:y"} $$\left.
+    \frac{\partial\,V_p(\xi,\eta)}{\partial{\xi}}
+  \right|_{\xi=y,\eta=m^2}
+  =
+  \left.
+    \frac{\partial\,H(\xi,\eta)}{\partial{\xi}}
+  \right|_{\xi=y,\eta=m^2}
+  =
+  0.$$ Next we have $$\left.
+    \frac{\partial\,V_p(\xi,\eta)}{\partial\eta}
+  \right|_{\xi=y,\eta=m^2}
+  =
+  \left.
+    \frac{\partial\,H(\xi,\eta)}{\partial\eta}
+  \right|_{\xi=y,\eta=m^2}
+  +
+  \frac{p\log\left(m^2\right)}{2m^2}
+  -\frac{2\pi\sqrt{-1}}{m^2}.$$ On the other hand $$\begin{split}
+  \frac{v}{2}
+  &=
+  \frac{d\,H(u,m^2)}{du}
+  -\pi\sqrt{-1}
+  \\
+  &=
+  \left.
+    \frac{\partial\,H(\xi,\eta))}{d\xi}
+  \right|_{\xi=y,\eta=m^2}
+  +
+  \left.
+    \frac{\partial\,H(\xi,\eta)}{d\eta}
+  \right|_{\xi=y,\eta=m^2}
+  \times
+  \frac{d\,m^2}{du}
+  -
+  \pi\sqrt{-1}
+  \\
+  &=
+  \exp{u}\times
+  \left.
+    \frac{\partial\,H(\xi,\eta)}{d\eta}
+  \right|_{\xi=y,\eta=m^2}
+  -
+  \pi\sqrt{-1}.
+\end{split}$$ Therefore $$\left.
+    \frac{\partial\,V_p(\xi,\eta)}{\partial\eta}
+  \right|_{\xi=y,\eta=m^2}
+  =
+  \frac{v/2+\pi\sqrt{-1}}{\exp{u}}
+  +\frac{pu}{2\exp{u}}
+  -\frac{2\pi\sqrt{-1}}{\exp{u}}
+  =0.$$
+
+In [@Murakami:SURIK00] the first author calculated a 'fake' limit of the Witten--Reshetikhin--Turaev invariants of the $(p,1)$-Dehn surgery of the figure-eight knot and obtained the following observation.
+
+::: obs*
+Let $p$ be an integer between $-100$ and $100$, and $\tau_p$ the 'optimistic' limit of the Witten--Reshetikhin--Turaev invariant of the $(p,1)$-Dehn surgery along the figure-eight knot. Then there exists $(\xi_0,\eta_0)$ such that the following equalities hold numerically (up to 8 digits):
+
+1.  $\dfrac{\partial\,V_p}{\partial\xi}(\xi_0,\eta_0)
+      =\dfrac{\partial\,V_p}{\partial\eta}(\xi_0,\eta_0)=0$, and
+
+2.  $\tau_p=V_p(\xi_0,\eta_0)=\operatorname{CS}(E_{p,1})+\sqrt{-1}\operatorname{Vol}(E_{p,1})$.
+:::
+
+Note that the observation above was confirmed by the second author [@Yokota:GTM02]. Note also that the sign of $\operatorname{CS}$ is reversed since the orientation convention here is different.

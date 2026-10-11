@@ -8,172 +8,127 @@ pages: 32-34
 source_pdf: 0508291v1.pdf
 source_sha256: d2d541426aaec742
 doc_brief: "Stein’s Method and Random Character Ratios — Stein’s method is used to prove limit theorems for random character ratios."
+text_source: latex
+latex_prose_ratio: 0.939
+latex_coverage_ratio: 0.986
 ---
-Markov chain on DP (n) to be used in deﬁning an exchangeable pair for the
-proof of Theorem 5.2.
-Motivated by constructions in the group and Gelfand pair cas es, it would
-be natural, for τ a ﬁxed element of DP (n), to deﬁne a “Markov chain” Jτ
-on DP (n) with transition “probabilities”
-Jτ (λ,ρ ) := gρ
-2l(ρ)gλgτ
-∑
-ν∈OP (n)
-2l(ν)X λ
-νX ρ
-νX τ
-ν
-zν
-.
-Using Lemma 5.4, one can see that ∑
-ρJτ (λ,ρ ) = 1 for all λ, and that Jτ
-satisﬁes the reversibility condition
-2n−l(λ )g2
-λ
-n! Jτ (λ,ρ ) = 2n−l(ρ)g2
-ρ
-n! Jτ (ρ,λ )
-for all λ,ρ ∈DP (n). Unfortunately, the quantity Jτ (λ,ρ ) can be negative.
-For instance one can check from Lemma 5.6 that J(2, 1)((2, 1), (2, 1)) = −1.
-To deal with the complication raised in the previous paragra ph, it is
-helpful to introduce a genuine Markov chain L on DP (n), with transition
-probabilities
-L(λ,ρ ) = 2gρ
-ngλ
-∑
-η ∈DP (n−1)
-η րλ,η րρ
-2l(η)−l(ρ).
-Hereη րλ means that η is obtained from λ by decreasing the size of some
-part by exactly one.
-Lemma 5.7 proves that L is a Markov chain which is reversible with
-respect to shifted Plancherel measure. As is mentioned in th e proof, the
-deﬁnition ofL was motivated by the theory of harmonic functions on Brattel i
-diagrams.
-Lemma 5.7. The transition probabilities of L are real and non-negative
-and sum to 1. Moreover the chain L is reversible with respect to shifted
-Plancherel measure.
-Proof. This is a special case of a construction in Section 2 of [F1]. T o see
-this, one takes the underlying Bratteli diagram to be the Sch ur graph, the
-properties of which are discussed in Section 5 of [BO2]. The v ertices of the
-Schur graph are all partitions of all non-negative integers with distinct parts,
-and the edge multiplicity between η ∈ DP (n − 1) and λ ∈ DP (n) is 1 if
-η րλ, and is 0 otherwise. The combinatorial dimension of a shape λ isgλ ,
-and if π denotes shifted Plancherel measure, the function π (λ )
-gλ
-is harmonic
-on the Schur graph. □
-33
-Proposition 5.9 will establish a fundamental relation betw een the Markov
-chainL and the “Markov chain” J(n−1, 1). The argument involves symmetric
-function theory, and ﬁrst a lemma is needed about properties of a certain
-subring Γ of the ring of symmetric functions, deﬁned on page 2 52 of [Mac].
-Recall from page 255 of [Mac] that there is an inner product on Γ which
-satisﬁes the properties
-(1) ⟨pλ,p µ ⟩ = 2 −l(λ )zλδλ,µ if λ,µ ∈OP (n).
-(2) ⟨Pλ,P µ ⟩ = 2 −l(λ )δλ,µ if λ,µ ∈DP (n).
-Here pλ is a power sum symmetric function and Pλ is a Hall-Littlewood
-polynomial with the parameter t = −1. It is also helpful to recall, from
-page 247 of [Mac], that for λ ∈DP (n),
-Pλ = 2 −l(λ ) ∑
-ν∈OP (n)
-2l(ν)
-zν
-X λ
-νpν.
-Lemma 5.8. Letp⊥
-1 be the adjoint in Γ of multiplication by p1.
-(1) ([Mac], page 265) p⊥
-1 = 1
-2
-∂
-∂p 1
-.
-(2) p⊥
-1Pλ =∑
-η ∈DP (n−1)
-η րλ
-2l(η)−l(λ )Pη.
-Proof. Only the second assertion needs to be proved. Consider the co eﬃcient
-of Pη in p⊥
-1Pλ . It is
-⟨p⊥
-1Pλ,P η⟩
-⟨Pη,P η⟩ = ⟨Pλ,p 1Pη⟩
-⟨Pη,P η ⟩ = 2 l(η)⟨Pλ,p 1Pη⟩.
-From Section 3.8 of [Mac],
-p1Pη =
-∑
-λ ∈DP (n)
-η րλ
-Pλ,
-which implies the result. □
-Proposition 5.9 can now be proved.
-Proposition 5.9. Suppose that n ≥ 3, so that (n − 1, 1) is a strict partition.
-Then
-L(λ,ρ ) = n − 2
-n J(n−1, 1)(λ,ρ )
-for λ,ρ ∈DP (n) such that λ ⁄=ρ.
-Proof. By Lemma 5.6,
-J(n−1, 1)(λ,ρ ) = gρ
-2l(ρ)gλ (n − 2)
-∑
-ν∈OP (n)
-2l(ν)X λ
-νX ρ
-ν (m1(ν) − 2)
-zν
-.
-34
-Since λ ⁄=ρ, Lemma 5.3 and part 1 of Lemma 5.8 imply that this is equal
-to
-gρ
-2l(ρ)gλ (n − 2)
-∑
-ν∈OP (n)
-2l(ν)X λ
-νX ρ
-νm1(ν)
-zν
-= gρ
-2l(ρ)gλ (n − 2)
-⟨ ∑
-ν∈OP (n)
-m1(ν) 2l(ν)
-zν
-X λ
-νpν,
-∑
-ν∈OP (n)
-2l(ν)
-zν
-X ρ
-νpν
-⟩
-= 2l(λ )gρ
-gλ (n − 2) ⟨2p1p⊥
-1Pλ,P ρ⟩
-= 2l(λ )+1gρ
-gλ (n − 2) ⟨p⊥
-1Pλ,p ⊥
-1Pρ⟩.
-By part 2 of Lemma 5.8, this is
-2l(λ )+1gρ
-gλ (n − 2)
-⟨ ∑
-η ∈DP (n−1)
-η րλ
-2l(η)−l(λ )Pη,
-∑
-η ∈DP (n−1)
-η րρ
-2l(η)−l(ρ)Pη
-⟩
-= 2gρ
-gλ (n − 2)
-∑
-η ∈DP (n−1)
-η րλ,η րρ
-2l(η)−l(ρ)
-= n
-n − 2L(λ,ρ ).
-□
+\label{exchange}
+
+	This subsection discusses a Markov chain on $DP(n)$ to be used
+	in defining an exchangeable pair for the proof of Theorem
+	\ref{projerror}. 
+
+	Motivated by constructions in the group and Gelfand pair
+	cases, it would be natural, for $\tau$ a fixed element of
+	$DP(n)$, to define a ``Markov chain'' $J_{\tau}$ on $DP(n)$
+	with transition ``probabilities'' \[ J_{\tau}(\lambda,\rho) :=
+	\frac{g_{\rho}}{2^{l(\rho)} g_{\lambda} g_{\tau}} \sum_{\nu
+	\in OP(n)} \frac{2^{l(\nu)} X^{\lambda}_{\nu} X^{\rho}_{\nu}
+	X^{\tau}_{\nu}}{z_{\nu}} .\] Using Lemma \ref{torthog2}, one
+	can see that $\sum_{\rho} J_{\tau}(\lambda,\rho) = 1$ for all
+	$\lambda$, and that $J_{\tau}$ satisfies the reversibility
+	condition \[ \frac{2^{n-l(\lambda)} g_{\lambda}^2}{n!} J_{\tau}(\lambda,\rho) = \frac{2^{n-l(\rho)} g_{\rho}^2}{n!}
+	J_{\tau}(\rho,\lambda) \] for all $\lambda,\rho \in
+	DP(n)$. Unfortunately, the quantity $J_{\tau}(\lambda,\rho)$
+	can be negative. For instance one can check from Lemma
+	\ref{valtwist} that $J_{(2,1)}((2,1),(2,1))=-1$.
+
+	To deal with the complication raised in the previous
+	paragraph, it is helpful to introduce a genuine Markov chain
+	$L$ on $DP(n)$, with transition probabilities \[ L(\lambda,
+	\rho) = \frac{2g_{\rho}}{n g_{\lambda}} \sum_{\eta \in DP(n-1)
+	\atop \eta \nearrow \lambda, \eta \nearrow \rho} 2^{l(\eta)-l(\rho)}.\] Here
+	$\eta \nearrow \lambda$ means that $\eta$ is obtained from
+	$\lambda$ by decreasing the size of some part by exactly one.
+
+	Lemma \ref{ischain} proves that $L$ is a Markov chain which is
+	reversible with respect to shifted Plancherel measure. As is
+	mentioned in the proof, the definition of $L$ was motivated by
+	the theory of harmonic functions on Bratteli diagrams.
+
+\begin{lemma} \label{ischain} The transition
+ probabilities of $L$ are real and non-negative and sum to 1. Moreover
+ the chain $L$ is reversible with respect to shifted Plancherel
+ measure.
+\end{lemma}
+
+\begin{proof}
+ This is a special case of a construction in Section 2 of
+ \cite{F1}. To see this, one takes the underlying Bratteli diagram to
+ be the Schur graph, the properties of which are discussed in Section 5 of
+ \cite{BO2}. The vertices of the Schur graph are all partitions of all
+ non-negative integers with distinct parts, and the edge multiplicity
+ between $\eta \in DP(n-1)$ and $\lambda \in DP(n)$ is 1 if $\eta
+ \nearrow \lambda$, and is 0 otherwise. The combinatorial dimension of
+ a shape $\lambda$ is $g_{\lambda}$, and if $\pi$ denotes shifted
+ Plancherel measure, the function $\frac{\pi(\lambda)}{g_{\lambda}}$
+ is harmonic on the Schur graph. \end{proof}
+
+	Proposition \ref{2chains} will establish a fundamental
+	relation between the Markov chain $L$ and the ``Markov chain''
+	$J_{(n-1,1)}$. The argument involves symmetric function
+	theory, and first a lemma is needed about properties of a
+	certain subring $\Gamma$ of the ring of symmetric functions,
+	defined on page 252 of \cite{Mac}.
+
+	Recall from page 255 of \cite{Mac} that there is an inner
+	product on $\Gamma$ which satisfies the properties \begin{enumerate} \item $\langle p_{\lambda},p_{\mu} \rangle = 2^{-l(\lambda)} z_{\lambda}
+	\delta_{\lambda,\mu}$ if $\lambda,\mu \in OP(n)$.
+\item $\langle P_{\lambda},P_{\mu} \rangle= 2^{-l(\lambda)}
+\delta_{\lambda,\mu}$ if $\lambda,\mu \in DP(n)$. \end{enumerate} Here
+$p_{\lambda}$ is a power sum symmetric function and $P_{\lambda}$ is a
+Hall-Littlewood polynomial with the parameter $t=-1$. It is also
+helpful to recall, from page 247 of \cite{Mac}, that for $\lambda
+\in DP(n)$, \[ P_{\lambda} = 2^{-l(\lambda)} \sum_{\nu \in OP(n)}
+\frac{2^{l(\nu)}}{z_{\nu}} X^{\lambda}_{\nu} p_{\nu}.\]
+
+\begin{lemma} \label{symlem} Let $p_1^{\perp}$ be the adjoint in $\Gamma$ of multiplication by $p_1$.
+\begin{enumerate}
+\item (\cite{Mac}, page 265) $p_1^{\perp} = \frac{1}{2}
+\frac{\partial}{\partial p_1}$.
+\item $p_1^{\perp} P_{\lambda} = \sum_{\eta \in DP(n-1) \atop \eta
+\nearrow \lambda} 2^{l(\eta)-l(\lambda)} P_{\eta}$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof} Only
+ the second assertion needs to be proved. Consider the coefficient of
+ $P_{\eta}$ in $p_1^{\perp} P_{\lambda}$.  It is \[ \frac{ \langle p_1^{\perp}
+ P_{\lambda}, P_{\eta} \rangle}{\langle P_{\eta},P_{\eta} \rangle} = \frac{\langle  P_{\lambda},
+ p_1 P_{\eta} \rangle}{\langle P_{\eta},P_{\eta} \rangle} = 2^{l(\eta)} \langle P_{\lambda}, p_1
+ P_{\eta} \rangle.\] From Section 3.8 of \cite{Mac}, \[ p_1 P_{\eta} =
+ \sum_{\lambda \in DP(n) \atop \eta \nearrow \lambda} P_{\lambda},\]
+ which implies the result. \end{proof}
+
+	Proposition \ref{2chains} can now be proved.
+
+\begin{prop} \label{2chains} Suppose that $n \geq 3$, so that $(n-1,1)$ is a strict partition. Then \[ L(\lambda,\rho) = \frac{n-2}{n} J_{(n-1,1)}(\lambda,\rho)\] for $\lambda,\rho \in DP(n)$ such that $\lambda \neq \rho$. 
+\end{prop}
+
+\begin{proof} By Lemma \ref{valtwist}, \[ J_{(n-1,1)}(\lambda,\rho) = 	\frac{g_{\rho}}{2^{l(\rho)} g_{\lambda} (n-2)} \sum_{\nu
+	\in OP(n)} \frac{2^{l(\nu)} X^{\lambda}_{\nu} X^{\rho}_{\nu}
+	(m_1(\nu)-2)}{z_{\nu}}.\] Since $\lambda \neq \rho$, Lemma
+	\ref{torthog1} and part 1 of Lemma \ref{symlem} imply that
+	this is equal to \begin{eqnarray*} & &
+	\frac{g_{\rho}}{2^{l(\rho)} g_{\lambda} (n-2)} \sum_{\nu \in
+	OP(n)} \frac{2^{l(\nu)} X^{\lambda}_{\nu} X^{\rho}_{\nu}
+	m_1(\nu)}{z_{\nu}}\\ & = & \frac{g_{\rho}}{2^{l(\rho)}
+	g_{\lambda} (n-2)} \left \langle \sum_{\nu \in OP(n)} m_1(\nu)
+	\frac{2^{l(\nu)}}{z_{\nu}} X^{\lambda}_{\nu} p_{\nu},
+	\sum_{\nu \in OP(n)} \frac{2^{l(\nu)}}{z_{\nu}} X^{\rho}_{\nu}
+	p_{\nu} \right \rangle\\ & = & \frac{2^{l(\lambda)}
+	g_{\rho}}{g_{\lambda} (n-2)} \langle 2 p_1 p_1^{\perp}
+	P_{\lambda},P_{\rho} \rangle\\ & = & \frac{2^{l(\lambda)+1}
+	g_{\rho}}{g_{\lambda} (n-2)} \langle p_1^{\perp} P_{\lambda},
+	p_1^{\perp} P_{\rho} \rangle. \end{eqnarray*}
+
+	By part 2 of Lemma \ref{symlem}, this is \begin{eqnarray*} & &
+	\frac{2^{l(\lambda)+1} g_{\rho}}{g_{\lambda} (n-2)} \left
+	\langle \sum_{\eta \in DP(n-1) \atop \eta \nearrow \lambda}
+	2^{l(\eta)-l(\lambda)} P_{\eta} , \sum_{\eta \in DP(n-1) \atop
+	\eta \nearrow \rho} 2^{l(\eta)-l(\rho)} P_{\eta} \right
+	\rangle \\ & = & \frac{2g_{\rho}}{g_{\lambda} (n-2)}
+	\sum_{\eta \in DP(n-1) \atop \eta \nearrow \lambda, \eta
+	\nearrow \rho} 2^{l(\eta)-l(\rho)} \\ & = & \frac{n}{n-2}
+	L(\lambda,\rho). \end{eqnarray*}
+\end{proof}

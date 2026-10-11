@@ -1,0 +1,119 @@
+\newcommand{\nr}{N}
+\newcommand{\set}[1]{\left\{ \def\given{\ \middle| \ }  #1 \right\}  }
+\newcommand{\defeq}{\mathrel{:=}}
+
+%
+%
+\def\leftfun#1{\mathopen{}\left#1}
+\def\rightfun#1{\right#1}
+
+\newcommand{\iso}{\cong}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\op}{op}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\spec}{Spec}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\renewcommand{\hom}{\operatorname{Hom}}
+
+\DeclareMathOperator{\Div}{Div}
+
+%
+\NewDocumentCommand{\Wchar}{}{\mathcal{X}}
+\NewDocumentCommand{\Wcharhat}{}{\widehat{\mathcal{X}}}
+
+%
+\NewDocumentCommand{\mer}{}{\mathfrak{m}}
+\NewDocumentCommand{\lon}{}{\mathfrak{l}}
+
+%
+\NewDocumentCommand{\slg}{}{\operatorname{SL}_2(\mathbb{C})}
+\NewDocumentCommand{\slgd}{}{\operatorname{SL}_2(\mathbb{C})^*}
+\NewDocumentCommand{\sla}{}{\mathfrak{sl}_2}
+
+
+\NewDocumentCommand{\pf}{O{} m }{\varphi_{#1}\leftfun(#2\rightfun)}
+\NewDocumentCommand{\pfname}{O{} }{\varphi_{#1}}
+\NewDocumentCommand{\qlf}{O{} m m}{\Lambda_{#1}\leftfun(#2 \middle| #3 \rightfun)}
+\NewDocumentCommand{\qlfname}{}{\Lambda}
+\NewDocumentCommand{\df}{O{} m}{\mathrm{D}\leftfun(#2 \rightfun)}
+\newcommand{\dil}{\operatorname{Li}_2}
+\newcommand{\dilr}{\mathcal{L}}
+
+%
+\NewDocumentCommand{\modb}{m }{\left\{#1\right\}_{\nr}}
+\NewDocumentCommand{\cutoff}{m }{\theta_{\nr}\leftfun(#1\rightfun)}
+\NewDocumentCommand{\nrdel}{m m}{\overline{\delta}_{#1}^{#2}}
+\NewDocumentCommand{\del}{m m}{\delta_{#1}^{#2}}
+
+\NewDocumentCommand{\qlog}{m m}{w\leftfun(#1 \middle | #2 \rightfun)}
+\NewDocumentCommand{\qlogname}{}{w}
+\NewDocumentCommand{\qp}{m O{\omega} m}{\left(#1 ; #2\right)_{#3}}
+\NewDocumentCommand{\fstack}{m m m}{f\leftfun( \begin{matrix} #1 \\ #2 \end{matrix}\middle| #3 \rightfun)}
+\NewDocumentCommand{\fstacksmall}{m m m}{f\leftfun( \begin{smallmatrix} #1 \\ #2 \end{smallmatrix}\middle| #3 \rightfun)}
+
+%
+\NewDocumentCommand{\braidcatpre}{}{\widetilde{\mathsf{B}}}
+\NewDocumentCommand{\braidcat}{}{\mathsf{B}}
+\NewDocumentCommand{\modcat}{}{\mathsf{C}}
+
+%
+%
+%
+\newcommand{\RI}{\operatorname{R1}}
+\newcommand{\RIfr}{\operatorname{R1}^{\operatorname{fr}}}
+\newcommand{\RII}{\operatorname{R2}}
+\newcommand{\RIII}{\operatorname{R3}}
+\newcommand{\Rmv}{\operatorname{R}}
+\newcommand{\lmv}{\operatorname{L}}
+\newcommand{\lRmv}{\operatorname{LR}}
+\renewcommand{\lg}{\operatorname{L\gamma}}
+\newcommand{\lb}{\operatorname{L\beta}}
+\DeclareMathOperator{\fr}{fr}
+
+\newcommand{\evup}[1]{\operatorname{ev}^\uparrow_{#1}}
+\newcommand{\coevup}[1]{\operatorname{coev}^\uparrow_{#1}}
+\newcommand{\evdown}[1]{\operatorname{ev}^\downarrow_{#1}}
+\newcommand{\coevdown}[1]{\operatorname{coev}^\downarrow_{#1}}
+
+\newcommand{\coevright}[1]{\operatorname{coev}^\rightarrow_{#1}}
+\newcommand{\coevleft}[1]{\operatorname{coev}^\leftarrow_{#1}}
+\newcommand{\evright}[1]{\operatorname{ev}^\rightarrow_{#1}}
+\newcommand{\evleft}[1]{\operatorname{ev}^\leftarrow_{#1}}
+
+%
+\NewDocumentCommand{\rep}{m}{V\leftfun(#1\rightfun)}
+%
+\NewDocumentCommand{\BasisMacro}{m o m}{
+  \IfNoValueTF{#2}{%
+    {#1}_{#3}
+  }{%
+    {#1}(#2)_{#3}
+  }
+}
+\NewDocumentCommand{\vb}{m}{v_{#1}}
+\NewDocumentCommand{\vbh}{m}{\widehat{v}_{#1}}
+
+\NewDocumentCommand{\rmat}{o m m m m}{
+  \IfNoValueTF{#1}{%
+    \widehat{R}_{#2 #3}^{#4 #5}
+  }{%
+    \widehat{R}(#1)_{#2 #3}^{#4 #5}
+  }
+}
+\NewDocumentCommand{\rmatm}{m m m m}{\widehat{\overline{R}}_{#1 #2}^{#3 #4}}
+
+%
+\NewDocumentCommand{\jfunc}{O{\xi}}{\mathcal{J}_{#1}}
+\NewDocumentCommand{\jinv}{O{\xi}}{\operatorname{J}_{#1}}
+
+%
+\NewDocumentCommand{\lN}{}{\mathrm{r}}
+\NewDocumentCommand{\lW}{}{\mathrm{t}}
+\NewDocumentCommand{\lS}{}{\mathrm{l}}
+\NewDocumentCommand{\lE}{}{\mathrm{b}}
+%
+%
+%
+%

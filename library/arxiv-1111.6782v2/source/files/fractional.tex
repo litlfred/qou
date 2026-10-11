@@ -1,0 +1,24 @@
+\section{Results on fractional Sobolev spaces}\label{sect:fractional}
+
+Let us gather two results we used in the article: The product and
+chain rule which go back to Coifman and Meyer~\cite{CM} and Christ and Weinstein~\cite{CW}.
+
+\begin{lemma}[Leibniz Rule, cf.~\cite{CM}]\label{lem:product}
+  Let $p_i,q_i,r \in (1,\infty)$, be such that $\frac 1{p_i} + \frac 1 {q_i} = \frac 1r$, for $i=1,2$ and 
+  $s > 0$. 
+  Then 
+ \begin{equation*}
+  \|f\cdot g\|_{\W[s,r]} \leq C \left(\|f\|_{\Lp[p_1]} \|g\|_{\W[s,q_1]} + \|f\|_{\W[s,p_2]} \|g\|_{\Lp[q_2]} \right).
+ \end{equation*}
+\end{lemma}
+
+We also refer to Runst and Sickel~{\cite[Lem.~5.3.7/1~(i)]{RS}}. ---
+For the following statement, one mainly has to treat $\norm{(D^k\psi)\circ f}_{\W[\s,p]}$ for $k\in\N\cup\set0$ and $\s\in(0,1)$
+which is e.~g.\@ covered by~\cite[Thm.~5.3.6/1~(i)]{RS}.
+
+\begin{lemma}[Chain rule, cf.~\cite{CM}]\label{lem:chain}
+ Let $f\in H^{s,p}(\mathbb R / \mathbb Z, \mathbb R^n)$, $s > 0$, $p \in (1,\infty)$.
+ If $\psi\in C^\infty(\R)$ such that $\psi$ and all its derivatives vanish at~$0$ then $\psi\circ f\in\W[s,p]$ and
+ \[ \|\psi \circ f\|_{\W[s,p]} \le C\|\psi\|_{C^{\scriptstyle k}}\|f\|_{\W[s,p]} \]
+ where $k$ is the smallest integer greater or equal to $s$.
+\end{lemma}

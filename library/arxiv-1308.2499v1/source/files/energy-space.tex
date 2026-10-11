@@ -1,0 +1,684 @@
+% !TEX root = statpointmenger.tex
+\section{\secA}
+
+Before we begin the discussion of the first variation, let us rewrite the integral Menger curvature using
+the symmetry and a suitable covering of the domain of integration $(\R/\Z)^3$ by domains, on which it is 
+easier to estimate the terms that will appear.
+The general idea here is quite similar
+to~\cite{blatt:imcc} and Hermes~\cite{hermes}, but we will 
+show that it is actually enough to integrate over a certain subdomain of $(\mathbb R / \mathbb Z)^3$.
+
+To this end we define the range of integration
+\begin{equation}\label{eq:deco}
+ D:=\sets{(v,w) \in (-\tfrac12,0) \times (0,\tfrac12)}{w\leq 1+2v, v \geq -1 + 2w},
+\end{equation}
+which is depicted in Figure~\ref{fig:domain}.
+
+\begin{figure}[h]
+ \centering
+ \includegraphics{fig-2.pdf}
+  \caption{The range of integration $D$}
+ \label{fig:domain}
+\end{figure}
+
+\begin{lemma}[Domain decomposition]\label{lem:domdec}
+ Let $f\in L^{1}\br{\br{\R/\Z}^{3}}$ be symmetric in all components,
+ i.e.\@ $f=f\circ\s$ for all permutations $\s\in\mathfrak S_{3}$.
+ Then
+ \[ \iiint_{(\R/\Z)^{3}} f(u_{1},u_{2},u_{3})\d u_{1}\d u_{2}\d u_{3} = 6\iiint_{\R/\Z\times D} f(u,u+v,u+w)\d w\d v\d u. \]
+\end{lemma}
+
+\begin{proof}
+ Let $P_{\s}\in\R^{3\times 3}$ denote the permutation matrix corresponding to $\s\in\mathfrak S_{3}$. 
+ We first show that the images
+ $\sets{P_{\s}\br{\R/\Z\times D}}{\s\in\mathfrak S_{3}}$
+ cover $(\R/\Z)^{3}$.
+
+ Consider $(u_{1},u_{2},u_{3})\in\br{\R/\Z}^{3}$. Then after a suitable permutation we can assume that
+ \begin{equation*}
+  d_{\mathbb R / \mathbb Z}(u_1,u_3) = \max\br{d_{\mathbb R / \mathbb Z}(u_1,u_2),d_{\mathbb R / \mathbb Z}(u_2,u_3),
+  d_{\mathbb R / \mathbb Z}(u_1, u_3) }
+ \end{equation*}
+ where $d_{\mathbb R / \mathbb Z}(x,y) = \min\{|x-y-k|: k \in \mathbb Z\}
+ \in[0,\frac12]$ denotes the
+ distance in $\mathbb R / \mathbb Z$.
+ Hence, interchanging $u_{1}$ and $u_{3}$ if necessary,
+ there are $(v,w) \in \bv{-\frac12,0}\times\bv{0,\frac12}$ with
+ $$
+   u_1 = u_2 + v,\qquad u_3 = u_2 + w,
+ $$
+ and 
+ \begin{align*} \max\br{-v,w} &=\max\br{d_{\R/\Z}(u_{1},u_{2}),d_{\R/\Z}(u_{2},u_{3})}
+    \\ &\le d_{\R/\Z}(u_{1},u_{3}) = \min\br{w-v,1-(w-v)}\le1-w+v, \end{align*}
+%  d_{\mathbb R / \mathbb Z}(u_1,u_3) = 1- (w-v) \leq \max\{-v,w\} = \max\{d_{\mathbb R / \mathbb Z}(u_1,u_2),d_{\mathbb R / \mathbb Z}(u_2,u_3),
+%  d_{\mathbb R / \mathbb Z}(u_1, u_3) \},
+ %But this implies that
+ so $(v,w) \in\overline D$.
+ Since furthermore 
+ \begin{equation*}
+\#\mathfrak S_3 \cdot \abs{\R/\Z\times D}=6 \cdot \tfrac16 = \abs{(\mathbb R / \mathbb Z)^3}
+ \end{equation*}
+ the sets $\sets{P_{\s}\br{\R/\Z\times D}}{\s\in\mathfrak S_{3}}$
+ form up to sets of measure zero a disjoint partition of $(\R/\Z)^{3}$.
+\end{proof}
+
+
+Following Lemma~\ref{lem:domdec} we derive using~\eqref{eq:short-notation}
+\begin{equation}\label{eq:intM-sn''}
+ \E(\g)=6\iiint_{\R/\Z\times D}
+ \frac{\abs{\T v0\wedge\T 0w}^{q}}{\br{\abs{\T v0}\abs{\T 0w}\abs{\T vw}}^p}
+ {\abs{\dg(u)}\abs{\dg(u+v)}\abs{\dg(u+w)}}
+ {\d w\d v\d u}.
+\end{equation}
+
+\begin{proof}[Theorem~\ref{thm:energy-space}]
+Recall that any embedded $\Wia[1+s,\rho]$-curve, $s>\tfrac1\rho$, is bi-Lipschitz continuous~\cite[Lemma~2.1]{blatt:bre}.
+We obtain, using $\abs{a\wedge b}=\abs{a\wedge(a\pm b)}\le\abs a\abs{a\pm b}$ for $a,b\in\R^{3}$,
+\begin{align*}
+ \E(\g) &\le C \iiint_{\R/\Z\times D}\frac{\abs{\int_0^1\dg(u+\theta_{1} v)\d\theta_{1}\wedge
+ \int_0^1\dg(u+\theta_{2} w)\d\theta_{2}}^{q}}{\abs v^{p-q}\abs w^{p-q}\abs{v-w}^{p}} \d w\d v\d u\\
+ &\le C \tint\frac{\int_0^1\abs{\dg(u+\theta v)-\dg(u+\theta w)}^{q}\d\theta}{\abs v^{p-q}\abs w^{p-q}\abs{v-w}^{p}} \d w\d v\d u\\
+ &\le C \int_0^1\tint\frac{\abs{\dg(u+\theta (v-w))-\dg(u)}^{q}}{\abs v^{p-q}\abs w^{p-q}\abs{v-w}^{p}} \d w\d v\d u\d\theta
+\end{align*}
+where $C$ depends on $p,q$ and $\g$.
+Substituting
+$\Phi:(v,w)\mapsto (t,\tilde w) := \br{\frac v{v-w},\theta(v-w)}$,
+$\abs{\det D\Phi(v,w)} = \frac\theta{\abs{v-w}}$,
+$\Phi(D)\subset[0,1]\times[-1,0]$,
+we arrive at
+\begin{equation}\label{eq:intM<seminorm}
+\begin{split}
+ &\E(\g) \\
+ &\le C \int_{0}^{1}\theta^{-1}\int_{\R/\Z}\int_{0}^{1}\int_{-1}^{0}
+ \frac{\abs{\dg(u+\tilde w)-\dg(u)}^{q}}{\abs {t\frac{\tilde w}\theta}^{p-q}\abs{(t-1)\frac{\tilde w}\theta}^{p-q}\abs{\frac{\tilde w}\theta}^{p-1}} \d\tilde w\d t\d u\d\theta \\
+ &\le C \int_{0}^{1}{\theta^{3p-2q-2}}\d\theta
+ \int_{0}^{1}\frac{\d t}{\abs{t(1-t)}^{p-q}}
+ \int_{\R/\Z}\int_{-1}^{0}
+ \frac{\abs{\dg(u+\tilde w)-\dg(u)}^{q}}{\abs {\tilde w}^{3p-2q-1}} \d\tilde w\d u \\
+ &\le C\br{\seminorm{\g}_{\W}^{q}+\lnorm[\infty]\dg^{q}}
+ \le C\norm{\g}_{\W}^{q}.
+\end{split}
+\end{equation}
+For the other implication, we first derive for given vectors
+$a,b\in\R^{n}$, $\abs a=\abs b=1$, $\sp{a,b}\ge0$,
+\begin{equation}\label{eq:a-wedge-b}
+ \abs{a\wedge b}^{2} = \abs a^{2}\abs b^{2}-\sp{a,b}^{2}
+   \ge1-\sp{a,b}=\tfrac12\abs{a-b}^{2}.
+\end{equation}
+By uniform continuity of $\dg$
+we may choose $\delta=\delta(\g)\in(0,\tfrac12)$ such that
+\begin{equation}
+ \abs{\dg(u+v)-\dg(u+w)} \le \tfrac1{10}
+ \qquad \text{for all } u\in\R/\Z, \quad v,w\in[-\delta,\delta].
+\end{equation}
+In fact, we may choose $\delta$ to be maximal, i.e.\@ we
+assume that there are $\tilde u\in\R/\Z$, $\tilde v,\tilde w\in[-\delta,\delta]$
+with
+\begin{equation}\label{eq:delta=max}
+ \abs{\dg(\tilde u+\tilde v)-\dg(\tilde u+\tilde w)} = \tfrac1{10}.
+\end{equation}
+We fix $u_{0}\in\R/\Z$. As $\g\in C^{1}\rzd$ we may apply a suitable
+translation and rotation of the ambient space~$\R^{n}$ such that
+$\g(u_{0})=0$ and there is a function $f\in C^{1}(\R,\R^{n-1})$
+with $\lnorm[\infty]f\le1$ and $f(0)=0$ such that
+$\tilde\g(u):=(u,f(u))$ satisfies $\tilde\g(B_{2\delta}(0))\subset \g(\R/\Z)$.
+Then
+\begin{equation}\label{eq:tilde-bilip}
+ \tfrac12\abs{\T[\tilde\g]v0}\le\abs{v}\le\abs{\T[\tilde\g]v0}.
+\end{equation}
+
+Arc-length parametrization of $\g$ gives
+\renewcommand{\T}[3][\tg]{\triangle_{#2,#3}{#1}}
+\begin{equation}\label{eq:tilde-g}
+\begin{split}
+ &\E(\tilde\g) \\
+ &\ge c\int_{u_0-\delta}^{u_0+\delta}\int_{-\delta}^\delta\int_{-\delta}^\delta
+ \frac{\abs{\fracabs{\T v0}\wedge\fracabs{\T 0w}}^{q}}{{\abs{\T v0}^{p-q}\abs{\T 0w}^{p-q}\abs{\T vw}^p}}
+ {\d w\d v\d u} \\
+ &\refeq[\ge]{a-wedge-b} c\int_{u_0-\delta}^{u_0+\delta}\int_{-\delta}^\delta\int_{-\delta}^\delta
+ \frac{\abs{\sign v\fracabs{\T v0}+\sign w\fracabs{\T 0w}}^{q}}{{\abs{\T v0}^{p-q}\abs{\T 0w}^{p-q}\abs{\T vw}^p}}
+ {\d w\d v\d u} \\
+ &\refeq[\ge]{tilde-bilip} c\int_{u_0-\delta}^{u_0+\delta}\int_{-\delta}^\delta\int_{-\delta}^\delta
+ \frac{\abs{\sign v\fracabs{\T v0}+\sign w\fracabs{\T 0w}}^{q}}{{\abs{v}^{p-q}\abs{w}^{p-q}\abs{v-w}^p}}
+ {\d w\d v\d u} \\
+ &\ge c\int_{u_0-\delta}^{u_0+\delta}\int_{-\delta}^\delta\int_{-\delta}^\delta
+ \br{\frac{\abs{\sign v\fracabs{\T v0}+\sign w\fracabs{\T 0w}}^{q}}{{\abs{v}^{p-q}\abs{w}^{p-q}\abs{v-w}^p}}
+ + \frac{\abs{-\sign v\fracabs{\T {-v}0}+\sign w\fracabs{\T 0w}}^{q}}{{\abs{v}^{p-q}\abs{w}^{p-q}\abs{v+w}^p}}}
+ {\d w\d v\d u} \\
+ &\ge c\int_{u_0-\delta}^{u_0+\delta}\int_{-\delta}^{\delta}\int_{-\abs v}^{\abs v}
+ \br{\frac{\abs{\sign v\fracabs{\T v0}+\sign w\fracabs{\T 0w}}^{q}}{{\abs{v}^{p-q}\abs{w}^{p-q}\abs{v+w}^p}}
+ +\frac{\abs{-\sign v\fracabs{\T {-v}0}+\sign w\fracabs{\T 0w}}^{q}}{{\abs{v}^{p-q}\abs{w}^{p-q}\abs{v-w}^p}}}
+ {\d w\d v\d u} \\
+ &\ge c\int_{u_0-\delta}^{u_0+\delta}\int_{-\delta}^{\delta}\int_{-\abs v}^{\abs v}
+ \frac{\abs{\sign v\fracabs{\T v0}+\sign w\fracabs{\T 0w}}^{q}
+ +\abs{-\sign v\fracabs{\T {-v}0}+\sign w\fracabs{\T 0w}}^{q}}{{\abs{v}^{3p-2q}}}
+ {\d w\d v\d u} \\
+ &\ge c\int_{u_0-\delta}^{u_0+\delta}\int_{-\delta}^{\delta}
+ \frac{\abs{\fracabs{\T v0}+{\fracabs{\T {-v}0}}}^{q}}{{\abs{v}^{3p-2q-1}}}
+ {\d v\d u}
+% &\ge c\int_{u_0-\delta}^{u_0+\delta}\int_{-\delta}^{\delta}
+% \frac{\abs{{\T v0}-{{\T {-v}0}}}^{q}}{{\abs{v}^{3p-q-1}}}
+% {\d v\d u}
+% -C\int_{u_0-\delta}^{u_0+\delta}\int_{-\delta}^{\delta}
+% \frac{\abs{\frac1{\abs{\T v0}}-\frac1{\abs{\T {-v}0}}}^{q}}{{\abs{v}^{3p-2q-1}}}
+% {\d v\d u} \\
+% 
+% 
+% &\ge c\int_{u_0-\delta}^{u_0+\delta}\int_{-delta}^0\int_0^\delta
+% \frac{\abs{\fracabs{\T v0}+\fracabs{\T 0w}}^{q}+\abs{\fracabs{\T v0}+\fracabs{\T 0w}}^{q}}{{\abs{v}^{p-q}\abs{w}^{p-q}\abs{v+w}^p}}
+% {\d w\d v\d u} \\
+% &\ge c\int_{u_0-\delta}^{u_0+\delta}\int_{0}^{\delta}\int_{0}^{v/2}
+% \frac{\abs{\frac{\T vw}{\abs{\T v0}}+\T 0w\br{\frac1{\abs{\T v0}}-\frac1{\abs{\T 0w}}}}^{q}}{{{v}^{p-q}{w}^{p-q}\br{v+w}^p}}
+% {\d w\d v\d u} \\
+\end{split}
+\end{equation}
+where $c>0$ only depends on $p$ and $q$.
+The last line in~\eqref{eq:tilde-g} is bounded below by
+\begin{align*}
+ &c\int_{u_0-\delta}^{u_0+\delta}\int_{-\delta}^{\delta}
+ \frac{\abs{{\T v0}+{{\T {-v}0}}}^{q}}{{\abs{v}^{3p-q-1}}}
+ {\d v\d u}
+ -C\int_{u_0-\delta}^{u_0+\delta}\int_{-\delta}^{\delta}
+ \frac{\abs{{\T{-v}0}}^{q}\abs{\frac1{\abs{\T v0}}-\frac1{\abs{\T {-v}0}}}^{q}}{{\abs{v}^{3p-2q-1}}}
+ {\d v\d u} \\
+ &\refeq[\ge]{tilde-bilip} c{
+ \int_{u_{0}-\delta}^{u_{0}+\delta}\int_{-\delta}^{\delta}
+ \frac{\abs{\tg(u+v)-2\tg(u)+\tg(u-v)}^{q}}{\abs v^{3p-q-1}}\d v\d u
+ }
+ -C\int_{u_0-\delta}^{u_0+\delta}\int_{-\delta}^{\delta}
+ \frac{\abs{\frac v{\abs{\T v0}}-\frac{v}{\abs{\T {-v}0}}}^{q}}{{\abs{v}^{3p-2q-1}}}
+ {\d v\d u}.
+\end{align*}
+By
+\[ \abs{\frac v{\abs{\T v0}}-\frac{v}{\abs{\T {-v}0}}}
+   \le \abs{\frac{(v,\T[f]v0)}{\abs{\T v0}}+\frac{(-v,\T[f]{-v}0)}{\abs{\T {-v}0}}}
+   = \abs{\fracabs{\T v0}+\fracabs{\T {-v}0}} \]
+we may use~\eqref{eq:tilde-g} to absorb the last term
+which finally leads to
+\[ \E(\g)\ge c{
+ \int_{u_{0}-\delta}^{u_{0}+\delta}\int_{-\delta}^{\delta}
+ \frac{\abs{\tg(u+v)-2\tg(u)+\tg(u-v)}^{q}}{\abs v^{3p-q-1}}\d v\d u
+ }. \]
+%\renewcommand{\T}[3][\g]{\tilde\triangle_{#2,#3}{#1}}%
+%
+Since reparametrization to arc-length preserves regularity, we arrive at
+\begin{equation}\label{eq:delta-est}
+ \E(\g)\ge c{
+ \int_{u_{0}-\delta}^{u_{0}+\delta}\int_{-\delta}^{\delta}
+ \frac{\abs{\g(u+v)-2\g(u)+\g(u-v)}^{q}}{\abs v^{3p-q-1}}\d v\d u
+ }.
+\end{equation}
+As $u_{0}$ was chosen arbitrarily, we obtain
+\begin{equation}\label{eq:semi-intM}
+ {\seminormv{\g}}_{\W[(3p-2)/q-1,q]}^{q}
+ \le C\br{\E(\g)+\lnorm[\infty]{\dg}^{q}\delta^{-3p+2q+2}}
+\end{equation}
+uniformly on $\R/\Z$.
+Since the exponent $-3p+2q+2$ is negative,
+we have to show that $\delta$ is uniformly
+bounded away from zero in order to finish the proof.
+To this end we will establish the Morrey-type estimate
+ \begin{equation}\label{eq:Campanato}
+  \lnorm[\infty]{\gamma'(\cdot+w) - \gamma'(\cdot)} \leq C \E(\g)^{1/q} |w|^{\alpha}
+  \qquad\text{for all }w\in[-\tfrac12,\tfrac12]
+ \end{equation}
+ where $\alpha = 3(p-1)/q-2>0$.
+ As $\delta$ was chosen to be maximal with respect to~\eqref{eq:delta=max},
+ we arrive at
+ \begin{equation*}
+  \tfrac1{10} \le C \E(\g)^{1/q} \delta^{\alpha}
+ \end{equation*}
+ which, applied to~\eqref{eq:semi-intM}, gives~\eqref{eq:energy-space}.
+
+It remains to prove~\eqref{eq:Campanato} which follows
+by standard arguments due to Campanato~\cite{campanato}.
+Let $\g'_{B_r (x)}$ denote the integral mean 
+ of $\g'$ over $B_r(x)$. We calculate for $x \in \mathbb R / \mathbb Z$
+ and $r \in (0,\delta)$ 
+ \begin{align*}
+  \frac 1 {2r}\int_{B_r(x)} |\gamma'(v)- \g'_{B_r(x)}| \d v
+  &\leq \frac 1 {4r^2} \int_{B_r(x)} \int_{B_r(x)}| \gamma'(v) - \gamma'(u)| \d u \d v
+  \\
+  &\leq  \left(\frac 1 {4r^2} \int_{B_r(x)} \int_{B_r(x)}| \gamma'(v) - \gamma'(u)|^q \d u \d v\right)^{1/q}
+  \\
+  &\leq C r^{\alpha} \left(\int_{B_r(x)} \int_{B_r(x)} \frac{| \gamma'(v) - \gamma'(u)|^q} {|u-v|^{3p-2q-1}}\d u \d v\right)^{1/q} 
+  \\
+  &\refeq[\le]{delta-est} C r^{\alpha} \E(\g)^{1/q}.
+ \end{align*}
+ As~\eqref{eq:Campanato} only involves the domain of $\g$
+ up to a measure zero set, we may restrict to Lebesgue points.
+ We choose two Lebesgue points $u,v \in \mathbb R / \Z$ of $\gamma'$
+ with $r:=|u-v| \in (0,\tfrac\delta2)$. Then
+ \begin{equation*}
+  |\dg(u) - \dg(v)| 
+  \leq \sum_{k=0}^\infty \left| \dg_{B_{2^{1-k}r}(u)} - \dg_{B_{2^{-k}r}(u)} \right|
+  + \left| \dg_{B_{2r}(u)} - \dg_{B_{2r}(v)} \right|
+  + \sum_{k=0}^\infty \left| \dg_{B_{2^{1-k}r}(v)} - \dg_{B_{2^{-k}r}(v)} \right|.
+  \end{equation*}
+  Since
+  \begin{align*}
+   \left| \dg_{B_{2r}(u)} - \dg_{B_{2r}(v)} \right| 
+   &\leq \frac {\int_{B_{2r}(u)} |\dg(x) - \dg_{B_{2r}(u)}| \d x +
+    \int_{B_{2r}(v)} |\dg(x) - \dg_{B_{2r}(v)}| \d x} {|B_{2r} (u) \cap B_{2r}(v)|}
+    \\
+    &\leq C |u-v|^\alpha \E(\g)^{1/q} 
+  \end{align*}
+  as $r=|u-v|$ and, for all $y \in \mathbb R / \mathbb Z$, $R\in(0,\tfrac\delta2)$,
+  \begin{align*}
+   \left| \dg_{B_{2R}(y)} - \dg_{B_{R}(y)} \right| 
+   &\leq \frac {\int_{B_{R}(y)} |\dg(x) - \dg_{B_{2R}(y)}| \d x +
+    \int_{B_{R}(y)} |\dg(x) - \dg_{B_{R}(y)}| \d x} {2R}
+    \\
+    &\leq C R^\alpha \E(\g)^{1/q},
+  \end{align*}
+  we deduce
+%  \begin{align*}
+   $|\dg(u) - \dg(v)| 
+   \leq C \left( \sum_{k=0} ^\infty 2^{-k\alpha} + 1 +  \sum_{k=0} ^\infty 2^{-k\alpha}   \right)
+   |u-v|^\alpha \E(\g)^{1/q}$.
+%  \end{align*}
+  Thus
+%  \begin{equation*}
+   $|\dg(u) - \dg(v)| \leq C |u-v|^\alpha \E(\g)^{1/q}$
+%  \end{equation*}
+ for all Lebesgue points of $\gamma'$ with $|u-v| < \frac\delta2$.
+% Since Lebesgue points are dense and using the triangle inequality this 
+% proves \eqref{eq:Campanato}.
+ The case $|u-v| \geq \frac\delta2$ follows by the triangle inequality.
+\end{proof}
+
+Let us conclude this section by briefly commenting on the other
+ranges in the $(p,q)$-domain, see Figure~\ref{fig:range}.
+
+\begin{remark}[Non-repulsive energies for $p<\frac23q+1$]\label{rem:non-rep}
+ A bi-Lipschitz estimate is not guaranteed for injective curves if $p<\frac23q+1$. We briefly give the following example.
+ Consider the curves $u\mapsto (u,0,0)$ and $u\mapsto (0,u,\delta)$ for $u\in[-1,1]$, $\delta\in[0,1]$.
+ The interaction of these strands leads to the $\E$-value
+ \begin{align*}
+  &C\iiint_{[-1,1]^3} \frac{\br{\delta^{2}+u^{2}}^{q/2}}{\abs{v-w}^{p-q}{{\br{\delta^{2}+u^2+v^{2}}^{p/2}\br{\delta^{2}+u^2+w^{2}}^{p/2}}}}\d w\d v\d u \\
+  &\le C\iiint_{[-1,1]^3} \frac{\br{\delta^{2}+u^{2}}^{(q-p)/2}}{\abs{v-w}^{p-q}{{\br{\delta^{2}+u^2+v^{2}+w^{2}}^{p/2}}}}\d w\d v\d u.
+ \end{align*}
+ Introducing polar coordinates $u=r\cos\th$, $v=r\sin\th\cos\varphi$,
+ $w=r\sin\th\sin\varphi$, the former quantity is bounded by
+ \begin{align*}
+  & C\int_0^{\sqrt3}\int_0^{\pi}
+  \frac{\br{\delta^{2}+r^{2}\cos^{2}\th}^{(q-p)/2}r^2\sin\th}
+  {r^{p-q}\sin^{p-q}\th\br{\delta^{2}+r^{2}}^{p/2}}
+  \d\th\d r
+  \underbrace{\int_{0}^{2\pi}\frac{\d\varphi}{\abs{\cos\varphi-\sin\varphi}^{p-q}}}_{{\le C}} \\
+  & \le C\int\limits_0^{\sqrt3}\br{\int\limits_{[0,\frac\pi4]\cup[\frac{3\pi}4,\pi]}
+  \frac{\br{\delta^{2}+r^{2}}^{(q-p)/2}\d\th}
+  {r^{p-q-2}\underbrace{\sin^{p-q-1}\th}_{\ge1}\br{\delta^{2}+r^{2}}^{p/2}}
+  +\int\limits_{\frac\pi4}^{\frac{3\pi}4}
+  \frac{\br{\delta^{2}+r^{2}\cos^{2}\th}^{(q-p)/2}r\sin\th}
+  {r^{p-q-1}\sin^{p-q}\th\br{\delta^{2}+r^{2}}^{p/2}}
+  \d\th
+  }\d r \\
+  & \le C\int_0^{\sqrt3}\br{
+  \br{\delta+r}^{-3p+2q+2}
+  +r^{-p+q+1}\br{\delta+r}^{-p}
+  \int_{0}^{r}\br{\delta^{2}+\sigma^{2}}^{(q-p)/2}\d\sigma
+   }\d r \\
+  &\le C\br{1-\delta^{-3p+2q+3}}\le C.
+% \label{eq:non-rep}
+ \end{align*}
+ Using Theorem~\ref{thm:energy-space}
+ and the monotonicity of $\E[\cdot,q]$ for fixed $q$, it is easy to
+ produce a family of knots uniformly converging to a non-embedded curve
+ without an energy blow-up as $\delta\searrow0$,
+ so these energies are not self-repulsive.
+\end{remark}
+
+\begin{remark}[Singular energies for $p\ge q+\tfrac23$, $q>1$]\label{rem:singular}
+ For $p\ge q+\tfrac23$, $q>1$, and an absolutely continuous $\g:\R/\Z\to\R$ we have
+ $\E(\g)\equiv\infty$ for all $C^{1}$-curves~$\g$.
+ To see this, note that we assumed $p<\frac23q+1$ in Theorem~\ref{thm:energy-space} mainly
+because neither~\eqref{eq:Wsemi} nor~\eqref{eq:Wsemi'} is not defined for $s\ge1$.
+For general $p\ge \frac23q+1$ we nevertheless still have
+\begin{equation*}
+ \int_{\R/\Z}\int_{-1/2}^{1/2} \frac{\abs{\dg(u+w)-\dg(u)}^q}{\abs{w}^{3p-2q-1}}\d w\d u
+ \le C\br{\E(\g)+\E(\g)^{\beta}}.
+\end{equation*}
+ Applying Brezis~\cite[Prop.~2]{brezis}, the function $\dg$ is constant,
+ hence $\g$ lies on a straight line. Therefore, $\g$ cannot be a closed
+ $C^{1}$-curve.
+\end{remark}
+
+
+\begin{remark}[Strange energies for $p\in[q+\tfrac23,\tfrac23q+1)$]\label{rem:strange}
+ On $p\in[q+\tfrac23,\tfrac23q+1)$, $p,q>0$, see the hatched area in Figure~\ref{fig:range},
+ we find the strange behavior that there are no
+ closed finite-energy $C^{3}$-curves
+ while self-intersections, and in particular corners, are not penalized.
+ So piecewise linear curves (polygonals) have finite energy.
+ 
+ The latter can be seen by adapting the calculation
+ in Remark~\ref{rem:non-rep}.
+ For the former we recall that a closed
+ arc-length parametrized $C^2$-curve must have
+ positive curvature $\abs{\g''}$ at some point $u_{0}$ and by continuity
+ there are $c,\delta>0$ with
+ $\abs{\g''}\ge c>0$ on $[u_{0}-\delta,u_{0}+\delta]$.
+ As $\g''\perp\dg$ we obtain $\abs{\g''\wedge\dg}=\abs{\g''}\ge c$.
+ So $\E(\g)$ is bounded below by
+ \begin{align*}
+  &\int\limits_{u_{0}-\delta}^{u_{0}+\delta}
+  \int\limits_{-\delta}^{\delta}
+  \int\limits_{\frac13\abs v}^{\frac23\abs v}
+  \abs v^{-3p+2q}\abs{\frac{\T v0}v\wedge\frac{\T 0w}w}^{q} \d w\d v\d u \\
+  &=\int\limits_{u_{0}-\delta}^{u_{0}+\delta}
+  \int\limits_{-\delta}^{\delta}
+  \int\limits_{\frac13\abs v}^{\frac23\abs v}
+  \abs v^{-3p+2q}\Bigg|\tfrac{v-w}2\g''(u)\wedge\dg(u)
+  +\tfrac{v^{2}}2\int_{0}^{1}(1-\vth_{1})^{2}\g'''(u+\vth_{1}v)\d\vth_{1}\wedge\br{\dg(u)+\tfrac w2\g''(u)} \\
+  &\qquad{}-\tfrac{w^{2}}2\int_{0}^{1}(1-\vth_{2})^{2}\g'''(u+\vth_{2}w)\d\vth_{1}\wedge\br{\dg(u)+\tfrac v2\g''(u)} \\
+  &\qquad{}+\tfrac{v^{2}w^{2}}2\iint_{[0,1]^{2}}(1-\vth_{1})^{2}(1-\vth_{2})^{2}\g'''(u+\vth_{1}v)\wedge\g'''(u+\vth_{2}w)\d\vth_{1}\d\vth_{2}
+  \Bigg|^{q} \d w\d v\d u \\
+  &\ge \delta
+  \bv{\tilde c-C\delta \lnorm[\infty]{\g'''}^{q}\br{\lnorm[\infty]{\g'''}+\lnorm[\infty]{\g''}+1}^{q}}
+  \int_{-\delta}^{\delta}
+  \abs v^{-3p+3q+1}\d v.
+%  -C\delta^{2}\int\limits_{-\delta}^{\delta}\abs v^{3q-3p+2}\d v
+ \end{align*}
+ Lessening $\delta>0$, the square bracket is positive.
+ This gives $\E(\g)=\infty$.
+\end{remark}
+
+
+\section{\secB}
+
+The arguments here are quite similar as
+for the tangent-point energies~\cite{blatt-reiter3},
+however, we provide full proofs for the readers' convenience.
+
+Using Theorem~\ref{thm:energy-space} together with
+the Arzel\`a-Ascoli theorem, we see that sets of 
+curves in $\Cia(\mathbb R / \mathbb Z, \mathbb R^n)$
+with a uniform bound on the energy are sequentially compact in $C^1$.
+%The next proposition will help us to show that the limits we get
+%are injective curves:
+To this end we need the following result.
+
+\begin{proposition}[Uniform bi-Lipschitz estimate]\label{prop:bi-Lipschitz}
+ For every $M < \infty$ and~\eqref{eq:sub-critical} there is a constant $C(M,p,q)>0$ such 
+ that every curve $\gamma\in \Cia(\mathbb R / \mathbb Z, \mathbb R^n)$
+ parametrized by arc-length with
+ \begin{equation}\label{eq:TP<M}
+  \E(\gamma) \leq M
+ \end{equation}
+ satisfies the bi-Lipschitz estimate
+ \begin{equation}\label{eq:bil}
+  \abs{u-v} \leq C(M,p,q) \abs{\gamma(u) - \gamma(v)}
+  \qquad \text{for all } u,v \in \mathbb R / \mathbb Z.
+ \end{equation}
+\end{proposition}
+
+The proof is based on the following lemma.
+%We will give an easy proof that essential boils down to combining 
+%the regularity we get form Proposition~\ref{prop:conttang} with
+%a subtle scaling argument. The following lemma will be one of the
+%essential parts in the proof.
+To be able to state it,
+we set for two arc-length parametrized curves $\gamma_i : I_i \rightarrow \mathbb R$, $i=1,2$,
+$I_1,I_2$ open intervals,
+\begin{align*}
+ \E(\gamma_1, \gamma_2) &:= \E(\gamma_1) + \E(\gamma_2) + {} \\
+% &{}\qquad +
+% \int_{I_1} \int_{I_2} \br{\frac{\dist(\ell_1(t), \gamma_2(s))^q }{|\gamma_1(s)-\gamma_2(t)|^p} 
+% + \frac{\dist(\ell_2(t),\gamma_1(s))^q }{|\gamma_2(s)-\gamma_1(t)|^p}}\d s\d t, \\
+ &{}\qquad +\iiint\limits_{I_1^2\times I_{2}}
+ \frac{\abs{\dg_{1}(u_{1})}\abs{\dg_{1}(u_{2})}\abs{\dg_{2}(u_{3})}}{\RR(\g_{1}(u_{1}),\g_{1}(u_{2}),\g_{2}(u_{3}))}
+ {\d u_{1}\d u_{2}\d u_{3}} \\
+ &{}\qquad +\iiint\limits_{I_1\times I_{2}^{2}}
+ \frac{\abs{\dg_{1}(u_{1})}\abs{\dg_{2}(u_{2})}\abs{\dg_{2}(u_{3})}}{\RR(\g_{1}(u_{1}),\g_{2}(u_{2}),\g_{2}(u_{3}))}
+ {\d u_{1}\d u_{2}\d u_{3}}.
+\end{align*}
+
+%The proof of Proposition~\ref{prop:bi-Lipschitz} is based on
+
+%We then have
+\begin{lemma}\label{lem:last}
+ Let $\alpha \in (0,1)$. For $\mu>0$ we let
+ $M_\mu$ denote the set of all pairs $(\gamma_1, \gamma_2)$
+ of curves $\gamma_i \in \Cia([-1,1],\R^n)$ 
+ satisfying
+ \begin{enumerate}
+  \item $|\gamma_1(0) - \gamma_2 (0)| = 1$,
+  \item $\g_{1}'(0)\perp\br{\gamma_1(0)-\gamma_2(0)} \perp \gamma_2'(0)$,
+  \item $\|\gamma_{i}'\|_{C^{0,\alpha}} \leq \mu$, \qquad$i=1,2$.
+ \end{enumerate}
+ Then there is a $c=c(\a,\mu)>0$ such that
+ \begin{equation*}
+  \E(\gamma_1, \gamma_2) \geq c
+  \qquad\text{for all }(\gamma_1, \gamma_2) \in M_\mu.
+ \end{equation*}
+\end{lemma}
+
+\begin{figure}
+ \centering
+ \includegraphics[scale=.5]{dist-0.pdf}
+ \caption{A pair of curves $(\g_1,\g_{2})\in M_{\mu}$
+  defined in Lemma~\ref{lem:last}.
+  Note that the arcs $\g_{1}$, $\g_{2}$ cannot intersect each other.}
+\end{figure}
+
+\begin{proof}
+ It is easy to see that $\E(\gamma_1, \gamma_2)$
+ is zero if and only if both $\gamma_1$ and $\gamma_2$ 
+ are part of one single straight line.
+ We will show that $\E(\cdot,\cdot)$ attains its minimum
+ on $M_\mu$. As $M_\mu$ does not contain straight lines by~(i), (ii),
+ this minimum is strictly positive which thus proves the lemma.
+ 
+ Let $(\gamma_1^{(n)},\gamma_2^{(n)})$ be a minimizing sequence in 
+ $M_\mu$, i.e.\@ we have
+ \begin{equation*}
+  \lim_{n\rightarrow \infty}\E (\gamma_1^{(n)},\gamma_2^{(n)})
+  = \inf_{M_\mu} \E(\cdot,\cdot).
+ \end{equation*}
+ Subtracting $\g_{1}(0)$ from \emph{both} curves, i.e.\@ setting
+ \begin{equation*}
+  \tilde \gamma_i^{(n)}(\tau) := \gamma_i^{(n)}(\tau) - \gamma_{1}(0),
+  \qquad i = 1,2,
+ \end{equation*}
+ and using Arzel\`a-Ascoli we can pass to a subsequence such that
+ \begin{equation*}
+  \tilde \gamma_i^{(n)} \to \tilde \gamma_i\qquad\text{in }C^{1}.
+ \end{equation*}
+ Furthermore, $(\tilde \gamma_1, \tilde \gamma_2) \in M_\mu$
+ since $M_\mu$ is closed under convergence in $C^1$.
+ Since, by Fatou's lemma, the functional $\E$ is lower semi-continuous
+ with respect to $C^1$ convergence, we obtain
+ \begin{equation*}
+  \E(\tilde \gamma_1, \tilde \gamma_2) 
+  \leq \lim_{n\rightarrow \infty} \E (\tilde \gamma_1^{(n)}, \tilde \gamma_2^{(n)})
+  = \lim_{n\rightarrow \infty} \E ( \gamma_1^{(n)}, \gamma_2^{(n)})
+  =  \inf_{M_\mu} \E(\cdot,\cdot).
+  \end{equation*}
+\end{proof}
+
+Let us use this lemma to give the
+
+\begin{proof}[Proposition~\ref{prop:bi-Lipschitz}]
+Applying Theorem~\ref{thm:energy-space} to~\eqref{eq:TP<M} we obtain
+%\begin{equation*}
+ $\|\gamma'\|_{C^{0,\alpha}} \leq C(M)$
+%\end{equation*}
+ for $\alpha = 3\frac {p-1} q -2\in(0,1-\frac1q)$.
+As an immediate consequence there is a $\delta=\delta(\a,M)>0$
+such that
+\begin{equation}\label{eq:bil2}
+ |u-v| \leq 2 |\gamma(u)- \gamma(v)|
+\end{equation}
+for all $u,v \in \mathbb R / \mathbb Z$ with $|u-v| \leq \delta.$
+Let now
+\[ S := \inf \sets{\!\rule{0ex}{1em}\abs{\gamma(u)-\gamma(v)}}{u,v \in \R/\Z,\abs{u-v}\geq\delta} \leq \tfrac12. \]
+ We will complete the proof by estimating $S$ from below.
+ Using the compactness of $\set{u,v \in \R/\Z,\abs{u-v}\geq\delta}$,
+ there are $s,t \in \mathbb R / \mathbb Z$ with 
+$|s-t| \geq \delta$ and
+%\begin{equation*}
+ $|\gamma(s)-\gamma(t)| =S$.
+%\end{equation*}
+If now $|s-t| =\delta$ we obtain
+\begin{equation*}
+ 2 S = 2|\gamma (s) - \gamma(t)| \refeq[\ge]{bil2} \delta
+\end{equation*}
+and hence
+\begin{equation*}
+ |u-v| \leq \tfrac12 \le \frac S\delta \le \frac{\abs{\g(u)-\g(v)}}{\delta(\a,M)}
+\end{equation*}
+for all $u,v \in \mathbb R / \mathbb Z$ with $|u-v| \geq \delta$.
+This proves the proposition in this case.
+%
+If on the other hand $|s-t| > \delta$ then we infer using the
+minimality of $|\gamma(s)-\gamma(t)|$
+\begin{equation*}
+ \gamma'(s) \perp (\gamma(s) - \gamma(t)) \perp \g'(t).
+\end{equation*}
+We define for $\tau \in [-1,1]$
+\begin{equation*}
+ \gamma_1 (\tau) := \frac 1 S \gamma(s+ S\tau)
+ \qquad\text{and}\qquad
+ \gamma_2(\tau) := \frac 1 S \gamma(t + S \tau).
+\end{equation*}
+Since 
+%\begin{equation*}
+$\| \gamma'_i\|_{C^{0,\alpha}} \leq \| \gamma'\|_{C^{0,\alpha}}
+{\le C(M)}$
+%\end{equation*}
+we may apply Lemma~\ref{lem:last} which yields
+\begin{equation*}
+ \E(\gamma_1,\gamma_2) \geq c(\a,M) >0.
+\end{equation*}
+Together with 
+%\begin{equation*}
+ $\E (\gamma_1, \gamma_2) \leq S^{3p-2q-3} \E (\gamma)$
+%\end{equation*}
+this leads to
+\begin{equation*}
+ S \geq \left( \frac {c(\a,M)}{\E(\gamma)}\right)^{\frac 1 {3p-2q-3}}
+ \ge\br{\frac{c(\a,M)}{M}}^{\frac1{3p-2q-3}}.
+\end{equation*}
+Hence,
+$\abs{u-v} \le\tfrac12\le\frac{\abs{\g(u)-\g(v)}}{2S}
+   \le C(M,p,q)\abs{\g(u)-\g(v)}$
+   for all $u,v \in \mathbb R / \mathbb Z$ with $|u-v| \geq \delta$.
+\end{proof}
+
+We are now in the position to prove the
+compactness result which is crucial both to
+the existence of minimizers
+in any knot class
+and to the self-avoiding behavior of the energies.
+
+\begin{proposition}[Sequential compactness]\label{prop:sequentiallycompact}
+ For each $M< \infty$ the set
+ \begin{equation*}
+  A_M:=\sets{\gamma \in \Cia(\mathbb R / \mathbb Z, \mathbb R^n)}{ 
+  \E(\gamma) \leq M}
+ \end{equation*}
+ is sequentially compact in $C^1$ up to translations.
+\end{proposition}
+
+\begin{proof}
+ By Theorem~\ref{thm:energy-space}
+ there are $C(M)< \infty$ and $\a=\a(p,q)>0$ such that
+% \begin{equation*}
+  $\|\dg\|_{C^\alpha} \leq C(M)$
+% \end{equation*}
+ for all $\g\in A_M$ and hence
+ \begin{equation*}
+  \|\tilde \g\|_{C^{1,\alpha}} \leq C(M) + 1
+ \end{equation*}
+ where $\tilde \g (u) := \g(u)-\g(0)$.
+% Furthermore, from
+% Proposition~\ref{prop:bi-Lipschitz} we get
+% the bi-Lipschitz estimate
+% \begin{equation*}
+%  |u-v| \leq C(M,p,q) |\gamma(u)-\gamma(v)|
+% \end{equation*}
+% for all $u,v \in \mathbb R / \mathbb Z$.
+ By Proposition~\ref{prop:bi-Lipschitz},
+ the bi-Lipschitz estimate~\eqref{eq:bil} holds.
+ 
+ Let now $\g_n \in A_M$. Then
+ \begin{equation*}
+  \|\tilde \g_n\|_{C^{1,\alpha}} \leq C(M) + 1
+ \end{equation*}
+ and hence after passing to suitable subsequence we have
+% \begin{equation*}
+  $\tilde \g_n \rightarrow \g_{0}$
+% \end{equation*}
+ in $C^1$. Since $\g_n$ was parametrized by arc-length,
+ $\g_0$ is still parametrized by arc-length and
+% still
+% \begin{equation*}
+%  |u-v| \leq C(M,p,q) |\gamma_{0}(u) - \gamma_{0}(v)|
+% \end{equation*}
+% for all $u,v \in \mathbb R / \mathbb Z$.
+ the bi-Lipschitz estimate carries over to $\g_{0}$.
+ So, especially, $\g_{0} \in \Cia(\mathbb R / \mathbb Z, \mathbb R^n)$.
+ From lower semi-continuity with respect 
+ to $C^1$ convergence we infer
+ \begin{equation*}
+  \E(\g_0) \leq \liminf_{n\rightarrow \infty} \E(\g_n) \leq M.
+ \end{equation*}
+ So $\g_0 \in A_M$.
+\end{proof}
+
+We may now pass to the
+
+\begin{proof}[Theorem~\ref{thm:existence}]
+ Let $\seqn[k]{\g}\in \Cia$ be a minimal sequence for $\E$ in a given knot class $K$,
+ i.e.\@ let
+ \begin{equation*}
+  \lim_{k\rightarrow \infty} \E(\g_{k}) = \inf_{\Cia\cap K} \E.
+ \end{equation*}
+ After passing to a subsequence and suitable translations, we hence get by Proposition~\ref{prop:sequentiallycompact} 
+ a ~$\g_0\in \Cia$ with $\g_k\to\g_0$ in $C^1$.
+ As the intersection of every knot class with $C^1$
+ is an open set in $C^1$~\cite[Cor.~1.5]{blatt:isot}
+ (see~\cite{reiter:isot} for an explicit construction),
+ the curve $\g_0$ belongs to the same knot class
+ as the elements of the minimal sequence $\seqn[k]{\g}$. 
+ The lower semi-continuity of $\E$ furthermore implies
+ \begin{equation*}
+  \inf_{\Cia\cap K} \E\leq \E(\g_0)
+  \leq  \lim_{n\rightarrow \infty} \E(\g_n)=\inf_{\Cia\cap K}\E.
+ \end{equation*}
+ Hence, $\g_0$ is the minimizer we have been searching for.
+\end{proof}
+
+By the same reasoning one derives the existence of a global minimizer of~$\E$.
+
+Let us conclude this section by deriving that the generalized integral Menger curvature
+are in fact knot energies (in the sub-critical range).
+
+\begin{proposition}[$\E$ is a strong knot energy {\cite[Cor.~2.3]{SM9}}]\label{prop:strong-knot-energy}%\hfill\\
+Let~\eqref{eq:sub-critical} hold.\\[-2em]
+ \begin{enumerate}
+  \item If $\seqn[k]{\g}$ %\subset\Wir$
+  is a sequence of embedded $\W$-curves uniformly converging to a non-injective curve $\g_\infty\in C^{0,1}$ parametrized by arc-length then $\E(\g_k)\to\infty$.
+  \item For given $E,L>0$ there are only finitely many knot types having a representative with $\E<E$ and $\text{length}=L$.
+ \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+ The first statement immediately follows from the bi-Lipschitz estimate
+ in Proposition~\ref{prop:bi-Lipschitz}, as a sequence with bounded energy 
+ would be sequentially compact in $\Cia$ and thus cannot uniformly converge 
+ to a non-injective curve.   
+ 
+ To show the second statement, let us assume that it was wrong, i.e.,
+ that there are curves $\seqn[k]{\g}$ of length $L$,
+ all belonging to different knot classes,
+ with energy less than $E$. Of course we can assume that
+ $L=1$.
+ After applying suitable transformations and passing to a subsequence,
+ Proposition~\ref{prop:sequentiallycompact} guarantees the existence
+ of $\g_{0}\in A_{M}$ with $\g_{k}\to\g_{0}$ in $C^1$.
+ Again by~\cite{blatt:isot,reiter:isot}
+ this implies that almost all $\g_k$ belong to the
+ same knot class as $\g_0$, which is a contradiction.
+\end{proof}

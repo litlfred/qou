@@ -1,0 +1,270 @@
+\section*{Introduction}
+\label{sec:intro}
+
+\addcontentsline{toc}{section}{Introduction}
+
+The purpose of the present paper is to introduce the Mukai pairing on
+the Hochschild homology of smooth, proper spaces.  This pairing is the
+natural analogue, in the context of Hochschild theory, of the
+Poincar\'e pairing on the singular cohomology of smooth manifolds.
+
+Our approach is categorical.  We start with a geometric category,
+whose objects will be called {\em spaces}.  For a space $X$ we define
+its Hochschild homology which is a graded vector space $\HH_\blob(X)$
+equipped with the non-degenerate \emph{Mukai pairing}.  We show that
+this structure satisfies a number of properties, the most important of
+which are {\em functoriality} and {\em adjointness}.
+
+The advantage of the categorical approach is that the techniques we
+develop apply in a wide variety of geometric situations, as long as an
+analogue of Serre duality is satisfied.  Examples of categories for
+which our results apply include compact complex manifolds, proper
+smooth algebraic varieties, proper Deligne-Mumford stacks for which
+Serre duality holds, representations of a fixed finite group, and
+compact ``twisted spaces'' in the sense of~\cite{Cal}.  We expect the
+same construction to work for categories of Landau-Ginzburg
+models~\cite{Orl}, but at the moment it is not known whether Serre
+duality holds for these.
+
+\subsection*{The Hochschild structure}
+\label{subsec:hochstr}
+In order to define the Hochschild structure of a space we need
+notation for certain special kernels which will play a fundamental
+role in what follows.  For a space $X$, denote by $\Id_X$ and
+$\SerK_X^{-1}$ the objects of $\D(X\times X)$ given by
+\[ \Id_X := \Delta_* \cO_X \quad\mbox{and}\quad \SerK_X^{-1} :=
+\Delta_* \omega_X^{-1}[-\dim X], \] 
+where $\Delta:X \ra X\times X$ is the diagonal map, and
+$\omega_X^{-1}$ is the anti-canonical line bundle of $X$.  When
+regarded as kernels, these objects induce the identity functor and the
+inverse of the Serre functor on $\D(X)$, respectively.  We shall see
+in the sequel that $\Id_X$ can be regarded as the identity 1-morphism
+of $X$ in a certain 2-category $\gVar$.
+
+The {\em Hochschild structure} of the space $X$ then consists of the
+following data:
+\begin{itemize}
+\item the graded ring $\HH^\blob(X)$, the Hochschild cohomology ring of
+  $X$, whose $i$-th graded piece is defined as
+  \[ \HH^i(X) := \Hom_{\D(X\times X)}^i(\Id_X, \Id_X); \]
+\item the graded left $\HH^\blob(X)$-module $\HH_\blob(X)$, the
+  Hochschild homology module of $X$, defined as
+  \[ \HH_i(X) := \Hom_{\D(X\times X)}^{-i}(\SerK_X^{-1}, \Id_X); \]
+\item a non-degenerate graded pairing $\MP{{-}}{{-}}$ on
+  $\HH_\blob(X)$, the {\em generalized Mukai pairing}.
+\end{itemize}
+
+The above definitions of Hochschild homology and cohomology agree with
+the usual ones for quasi-projective schemes (see~\cite{CalHH2}).  The
+pairing is named after Mukai, who was the first to introduce a pairing
+satisfying the main properties below, on the total cohomology of
+complex K3 surfaces~\cite{MukK3}.
+
+\subsection*{Properties of the Mukai pairing}
+The actual definition of the Mukai pairing is quite complicated and is
+given in Section~\ref{sec:adjoint}.  We can, however, extricate the
+fundamental properties of Hochschild homology and of the Mukai
+pairing.
+\begin{Description}
+\item[Functoriality] Integral kernels induce, in a functorial way,
+  linear maps on Hochschild homology. Explicitly, to any integral
+  kernel \( \Phi\in \D(X\times Y) \) we associate, in
+  Section~\ref{def:defmaps}, a linear map of graded vector spaces
+  \[ \Phi_* \colon \HH_\blob(X) \ra \HH_\blob(Y), \]
+  and this association is functorial with respect to composition of
+  integral kernels (Theorem~\ref{thm:functorial}).
+\item[{Adjointness}] For any adjoint pair of integral kernels
+  $\Psi\adjoint \Phi$, the induced maps on homology are themselves
+  adjoint with respect to the Mukai pairing:
+  \[ \MP{\Psi_* v}{w} = \MP{v}{\Phi_* w}\]
+  for $v\in \HH_\blob(Y)$, $w \in \HH_\blob(X)$
+  (Theorem~\ref{thm:adjointness}).
+\end{Description}
+The following are then consequences of the above basic properties:
+\begin{Description}
+\item[{Chern character}] In all geometric situations there is a
+  naturally defined object $\bone \in \HH_0(\pt)$.  An element $\cE$
+  in $\D(X)$ can be thought of as the kernel of an integral transform
+  $\pt \ra X$, and using functoriality of homology we define a Chern
+  character map
+  \[ \ch\colon\K_0(X) \ra \HH_0(X), \quad \ch(\cE) = \cE_*(\bone).  \]
+  For a smooth proper variety the Hochschild-Kostant-Rosenberg
+  isomorphism identifies $\HH_0(X)$ and $\bigoplus_p \H^{p,p}(X)$; our
+  definition of the Chern character matches the usual one under this
+  identification~\cite{CalHH2}.
+\item[Semi-Hirzebruch-Riemann-Roch Theorem] For $\cE, \cF \in \D(X)$
+  we have
+  \[ \MP{\ch(\cE)}{\ch(\cF)} = \chi(\cE, \cF) = \sum_i (-1)^i \dim
+  \Ext_X^i(\cE, \cF). \]
+\item[Cardy Condition] The Hochschild structure appears naturally in
+  the context of open-closed topological quantum field theories
+  (TQFTs).  The Riemann-Roch theorem above is a particular case of a
+  standard constraint in these theories, the Cardy Condition.  We
+  briefly discuss open-closed TQFTs, and we argue that the natural
+  statement of the Cardy Condition in the B-model open-closed TQFT is
+  always satisfied, even for spaces which are not Calabi-Yau
+  (Theorem~\ref{thm:cardy}).
+\end{Description}
+
+\subsection*{The 2-categorical perspective}
+In order to describe the functoriality of Hochschild homology it is
+useful to take a macroscopic point of view using a 2-category called
+$\gVar$.  One way to think of this 2-category is as something half-way
+between the usual category consisting of spaces and maps, and $\gCat$,
+the 2-category of (derived) categories, functors and natural
+transformations.  The 2-category $\gVar$ has spaces as its objects,
+has objects of the derived category $\D(X\times Y)$ --- considered as
+integral kernels --- as its 1-morphisms from $X$ to $Y$, and has
+morphisms in the derived category as its
+2-morphisms.
+
+One consequence of thinking of spaces in this 2-category is that
+whereas in the usual category of spaces and maps two spaces are
+equivalent if they are isomorphic, in $\gVar$ two spaces are
+equivalent precisely when they are Fourier-Mukai partners.  This is
+the correct notion of equivalence in many circumstances, thus making
+$\gVar$ an appropriate context in which to work.
+
+This point of view is analogous to the situation in Morita theory in
+which the appropriate place to work is not the category of algebras
+and algebra morphisms, but rather the 2-category of algebras,
+bimodules and bimodule morphisms.  In this 2-category two algebras are
+equivalent precisely when they are Morita equivalent, which again is
+the pertinent notion of equivalence in many situations.
+
+Many facts about integral transforms can be stated very elegantly as
+facts about the 2-category $\gVar$.  For example, the fact that every
+integral transform between derived categories has both a left and
+right adjoint is an immediate consequence of the more precise fact ---
+proved exactly the same way --- that every integral kernel has both a
+left and right adjoint in $\gVar$.  Here the definition of an adjoint
+pair of 1-morphisms in a 2-category is obtained from one of the
+standard definitions of an adjoint pair of functors by everywhere replacing the
+word `functor' by the word `1-morphism' and the words `natural
+transformation' by the word `2-morphism'.
+
+The Hochschild cohomology of a space $X$ has a very natural
+description in terms of the 2-category $\gVar$: it is the ``second
+homotopy group of $\gVar$ based at $X$'', which means that it is
+$\THom_\gVar(\Id_X,\Id_X)$, the set of 2-morphisms from the identity
+1-morphism at $X$ to itself.  Unpacking this definition for $\gVar$
+one obtains precisely $\Ext^\blob_{X\times X}(\cO_\Delta,\cO_\Delta)$,
+one of the standard definitions of Hochschild cohomology.  By analogy
+with homotopy groups, given a kernel $\Phi\colon X\to Y$, i.e., a
+``path'' in $\gVar$, one might expect an induced map $\HH^\blob(X)\to
+\HH^\blob(Y)$ obtained by ``conjugating with $\Phi$''.  However, this
+does not work, as the analogue of the ``inverse path to $\Phi$''
+needed is a simultaneous left and right adjoint of $\Phi$, and such a
+thing does not exist in general as the left and right adjoints of
+$\Phi$ differ by the \emph{Serre kernels} of $X$ and $Y$.
+
+The Hochschild homology $\HH_\blob(X)$ of a space $X$ can be given a
+similar natural definition in terms of $\gVar$ --- it is
+$\THom_\gVar(\SerK^{-1}_X,\Id_X)$ the set of 2-morphisms from the
+inverse Serre kernel of $X$ to the identity 1-morphism at $X$.
+In this case, the idea of ``conjugating by a kernel $\Phi\colon X \to
+Y$'' does work as the Serre kernel in the definition exactly
+compensates the discrepancy between the left and right adjoints of
+$\Phi$.
+
+The functoriality of Hochschild homology can be expressed by saying
+that $\HH_\blob$ is a functor into the category of vector spaces from
+the Grothen\-dieck category of the 2-category $\gVar$ (i.e., the
+analogue of the Grothendieck group of a 1-category) whose objects are
+spaces and whose morphisms are \emph{isomorphism classes} of kernels.
+One aspect of this which we do not examine here is related to the fact
+that this Grothendieck category is actually a monoidal category with
+certain kinds of duals for objects and morphisms, and that Hochschild
+homology is a monoidal functor.  The Mukai pairing is then a
+manifestation of the fact that spaces are self-dual in this
+Grothendieck category.  Details will have to appear elsewhere.
+
+There is an alternative categorical approach to defining Hoch\-schild
+homology and cohomology.  This approach uses the notion of enhanced
+triangulated categories of Bondal and Kapranov~\cite{BonKap}, which
+are triangulated categories arising as homotopy categories of
+differential-graded (dg) categories.  In~\cite{Toe}, To\"en argued that
+the Hochschild cohomology $\HH^\blob(X)$ of a space $X$ can be
+regarded as the cohomology of the dg-algebra of dg-natural
+transformations of the identity functor on the dg-enhancement of
+$\D(X)$.  It seems reasonable to expect that a similar construction
+can be used to define the Hochschild homology $\HH_\blob(X)$ as
+dg-natural transformations from the inverse of the Serre functor to
+the identity.  However, since the theory of Serre functors for
+dg-categories is not yet fully developed, we chose to use the language
+of the 2-category $\gVar$, where all our results can be made precise.
+
+\subsection*{String diagram notation}
+As 2-categories are fundamental to the functoriality, and they are
+fundamentally 2-dimensional creatures, we adopt a 2-dimensional
+notation.  The most apt notation in this situation appears to be that
+of \emph{string diagrams}, which generalizes the standard notation
+used for monoidal categories in quantum topology.  String diagrams are
+Poincar\'e dual to the usual arrow diagrams for 2-categories.  The
+reader unfamiliar with these ideas should be aware that the pictures
+scattered through this paper form rigorous notation and are not just
+mnemonics.
+
+\subsection*{Note} This paper supersedes the unpublished paper
+\cite{CalMPI}, in which it was stated that hopefully the correct
+categorical context could be found for the results therein.  This
+paper is supposed to provide the appropriate context.
+
+\subsection*{Synopsis} The paper is structured as follows.  The first
+section is devoted to the study of integral transforms and of the
+2-category $\gVar$.  In the next section we review the Serre functor and
+Serre trace on the derived category, and we use these in
+Section~\ref{sec:adjoints} to study adjoint kernels in $\gVar$.  In
+Section~\ref{sec:defmaps} we introduce the maps between Hochschild
+homology groups associated to a kernel, and we examine their
+functorial properties.  The Mukai pairing is defined in
+Section~\ref{sec:adjoint}, where we also prove its compatibility with
+adjoint functors.  In Section~\ref{sec:chernchar} we define the Chern
+character and we prove the Semi-Hirzebruch-Riemann-Roch theorem.  We conclude with
+Section~\ref{sec:cardy} where we review open-closed TQFTs, and we
+discuss the Cardy Condition.  An appendix contains some of the more
+technical proofs.
+
+\subsection*{Notation} Throughout this paper $\k$ will denote an
+algebraically closed field of characteristic zero and $\D(X)$ will
+denote the bounded derived category of coherent sheaves on $X$.
+Categories will be denoted by bold letters, such as $\C$, and the
+names of 2-categories will have a script initial letter, such as
+$\gVar$.
+
+
+ \subsection*{The base category of spaces}
+We fix for the remainder of the paper a geometric category, whose
+objects we shall call \emph{spaces}.  It is beyond the purpose of this
+paper to list the axioms that this category needs to satisfy, but the
+following categories can be used:
+\begin{itemize}
+\item smooth projective schemes over $\k$;
+\item smooth proper Deligne-Mumford stacks over $\k$;
+\item smooth projective schemes over $\k$, with an action of a fixed
+  finite group $G$, along with $G$-equivariant morphisms;
+\item twisted spaces in the sense of~\cite{Cal}, i.e., smooth
+  projective schemes over $\k$, enriched with a sheaf of Azumaya
+  algebras.
+\end{itemize}
+For any space $X$ as above, the category of coherent sheaves on $X$
+makes sense, and the standard functors (push-forward, pull-back,
+sheaf-hom, {etc}.)  are defined and satisfy the usual compatibility
+relations.
+
+\subsection*{Acknowledgments} We have greatly benefited from
+conversations with Jonathan Block, Tom Bridgeland, Andrew Kresch,
+Aaron Lauda, Eyal Markman, Mircea Musta\c t\u a, Tony Pantev, Justin
+Roberts, Justin Sawon, and Sarah Witherspoon. Many of the ideas in
+this work were inspired by an effort to decipher the little known but
+excellent work~\cite{Mar} of Nikita Markarian. Greg Moore and Tom
+Bridgeland suggested the connection between the Semi-Hirzebruch-Riemann-Roch
+theorem and the Cardy Condition in physics.
+
+AC's initial work on this project was supported by an NSF
+post-doctoral fellowship, and by travel grants and hospitality from
+the University of Pennsylvania, the University of Salamanca, Spain,
+and the Newton Institute in Cambridge, England.  AC's current work is
+supported by the National Science Foundation under Grant No.\
+DMS-0556042.  SW has been supported by a WUN travel bursary and a
+Royal Society Conference grant.

@@ -1,0 +1,50 @@
+---
+doc_id: 0510388v1
+doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+section_id: sec-029-26-plan-of-the-proof
+section_title: "Plan of the proof."
+section_number: 26
+pages: 58-59
+source_pdf: 0510388v1.pdf
+source_sha256: c83c0f6a2eaa74f3
+toc_source: inferred
+---
+Consider the usual vector convolutions, this time in parallel transport format: 
+ 
+     A(V, ϕ)(y)  =  ∫S3  PyxV(x) ϕ(x, y)  dx 
+ 
+     B(V, ϕ)(y)  =  ∫S3  PyxV(x)  ×  ∇yϕ(x, y)  dx 
+ 
+      g(V, ϕ)(y)  =  ∫S3  PyxV(x)  ∙  ∇yϕ(x, y)  dx 
+ 
+     G(V, ϕ)(y)  =  ∇y g(V, ϕ)(y)  =  ∇y ∫S3  PyxV(x)  ∙  ∇yϕ(x, y)  dx . 
+ 
+Step 1.  First we will determine the unknown kernel function  ϕ  so as to make 
+ 
+∇y  ×  A(V, ϕ)(y)  =  — B(V, ϕ1)(y)  =  — BS(V)(y) . 
+ 
+Insisting that  ϕ  have a singularity only at  α  =  0  and not at  α  =  π  leads 
+to the unique solution  ϕ  =  ϕ2  given in the statement of the theorem above.   
+ 
+Step 2.  Then, as a consequence of Maxwell's equation, we will have 
+ 
+        — ∇y × ∇y × A(V, ϕ2)(y)  =  ∇y × BS(V)(y)   
+ 
+                                                  =  V(y)  —  ∇y ∫S3  ∇x ∙ V(x)  ϕ0(x, y)  dx . 
+Hence 
+ 
+∆y A(V, ϕ2)(y)  =  — ∇y × ∇y × A(V, ϕ2)(y)  +  ∇y(∇y ∙ A(V, ϕ2)(y)) 
+ 
+                      =  V(y)  —  ∇y ∫S3  ∇x ∙ V(x)  ϕ0(x, y)  dx   +  ∇y(∇y ∙ A(V, ϕ2)(y)) 
+ 
+                      =  V(y)  +  some gradient field . 
+ 
+We then find the kernel function  ϕ3  so that  ∆y G(V, ϕ3)(y)  =  G(V, ∆ϕ3)(y)   
+is the negative of the above gradient field, in which case defining 
+ 
+Gr(V)(y)  =  A(V, ϕ2)(y)  +  G(V, ϕ3)(y) 
+ 
+yields the desired equation  ∆y Gr(V)(y)  =  V(y) . 
+ 
+ 
+59

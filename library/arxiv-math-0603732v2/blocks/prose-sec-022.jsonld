@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0603732v2/blocks/prose-sec-022",
+  "kind": "prose",
+  "title": "Remarks",
+  "pageStart": 13,
+  "pageEnd": 13,
+  "text": "../sections/sec-022-35-remarks.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0603732v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0603732v2/manifest.jsonld",
+  "provenance": "ingested"
+}

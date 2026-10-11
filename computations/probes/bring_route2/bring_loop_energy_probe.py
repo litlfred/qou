@@ -154,7 +154,7 @@ def loop_setup(name, s_mp, u_mp, sig, rho, row=None):
     perm_s = R2.pcomp(R2.pcomp(pk, sig), pinv(pk))
     perm_u = R2.pcomp(R2.pcomp(pk, rho), pinv(pk))
     return dict(name=name, L=L, r=r, Gam=Gm, gens=[(gs, perm_s), (gu, perm_u),
-                (minv(gu), pinv(perm_u))], dist_m_cone=rho_d)
+                (minv(gu), pinv(perm_u))], dist_m_cone=rho_d, M=M)
 
 
 def enumerate_kernel(gens, R, slack):

@@ -5,24 +5,38 @@
   "file": "agt-v3-n1-p17-p.pdf",
   "sha256": "df196f0a732ad6b9381a6cd7a1030bc7454984b1e818e265f17264f2536d9bc1",
   "bytes": 201268,
-  "pages": 20
+  "pages": 20,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:17Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Skein-theoretical derivation of some formulas of Habiro",
-  "authors_raw": "Algebraic &GeometricTopology",
-  "abstract": "We use skein theory to compute the coe\u000ecients of certain power series considered by Habiro in his theory ofsl2 invariants of integral homol- ogy 3-spheres. Habiro originally derived these formulas using the quantum group Uqsl2 . As an application, we give a formula for the colored Jones polynomial of twist knots, generalizing formulas of Habiro and Le for the trefoil and the gure eight knot.",
-  "docinfo": {
-   "CreationDate": "D:191030616212253",
-   "Producer": "Acrobat Distiller 3.0 for Windows"
-  },
+  "title": "Skein-theoretical derivation of some formulas of Habiro Introduction",
+  "authors_raw": "Gregor Masbaum",
   "title_lines": [
    "Skein-theoretical derivation",
-   "of some formulas of Habiro",
-   "Gregor Masbaum"
+   "of some formulas of Habiro"
   ],
-  "title_prev": "Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum"
+  "abstract": "We use skein theory to compute the coe\ufb03cients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol- ogy 3-spheres. Habiro originally derived these formulas using the quantum group Uqsl2. As an application, we give a formula for the colored Jones polynomial of twist knots, generalizing formulas of Habiro and Le for the trefoil and the \ufb01gure eight knot.",
+  "docinfo": {
+   "Producer": "Acrobat Distiller 3.0 for Windows",
+   "CreationDate": "D:191030616212253"
+  },
+  "title_raw": "Skein-theoretical derivation of some formulas of Habiro",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Skein-theoretical derivation of some formulas of Habiro Introduction",
+   "text": "Skein-theoretical derivation of some formulas of Habiro",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -30,147 +44,411 @@
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "Reshetikhin-Turaev invariants at roots of unity,",
-   "page": 1,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Habiro’s formula for !",
+   "title": "Habiro\u2019s formula for \u03c9",
    "page": 3,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "A proof using orthogonal polynomials",
    "page": 5,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "Graphical calculus and a formula for !p",
+   "title": "Graphical calculus and a formula for \u03c9p",
    "page": 9,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "Another formula for the coe\u000ecients of !p",
+   "title": "Another formula for the coe\ufb03cients of \u03c9p",
    "page": 12,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The colored Jones polynomial of twist knots",
    "page": 17,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 20,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The Kau\ufb00man bracket relations. (Recall a = A2.)",
+   "page": 3,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "How to expand colored edges and vertices. The boxes stand for appropriate Jones-Wenzl idempotents",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The twist knot Kp. (Here p \u2208Z.) For p = 1, Kp is a left-handed trefoil, and for p = \u22121, Kp is the \ufb01gure eight knot",
+   "page": 17,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "A surgery description of the twist knot Kp with zero framing",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 699,
+   "n_words": 106,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 338,
-   "n_words": 56
-  },
-  {
-   "id": "sec-001-2-reshetikhin-turaev-invariants-at-roots-of-unit",
-   "number": "2",
-   "title": "Reshetikhin-Turaev invariants at roots of unity,",
-   "level": 1,
-   "page_start": 1,
    "page_end": 2,
-   "n_chars": 1221,
-   "n_words": 209
+   "n_chars": 1609,
+   "n_words": 267,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-1-habiros-formula-for",
+   "id": "sec-001-1-habiros-formula-for-\u03c9",
    "number": "1",
-   "title": "Habiro’s formula for !",
+   "title": "Habiro\u2019s formula for \u03c9",
    "level": 1,
    "page_start": 2,
    "page_end": 5,
-   "n_chars": 5325,
-   "n_words": 999
+   "n_chars": 5369,
+   "n_words": 1029,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-2-a-proof-using-orthogonal-polynomials",
+   "id": "sec-002-2-a-proof-using-orthogonal-polynomials",
    "number": "2",
    "title": "A proof using orthogonal polynomials",
    "level": 1,
    "page_start": 5,
    "page_end": 9,
-   "n_chars": 5222,
-   "n_words": 1006
+   "n_chars": 5253,
+   "n_words": 1025,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-3-graphical-calculus-and-a-formula-for-p",
+   "id": "sec-003-3-graphical-calculus-and-a-formula-for-\u03c9p",
    "number": "3",
-   "title": "Graphical calculus and a formula for !p",
+   "title": "Graphical calculus and a formula for \u03c9p",
    "level": 1,
    "page_start": 9,
    "page_end": 12,
-   "n_chars": 4281,
-   "n_words": 873
+   "n_chars": 4349,
+   "n_words": 932,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-4-another-formula-for-the-coecients-of-p",
+   "id": "sec-004-4-another-formula-for-the-coe\ufb03cients-of-\u03c9p",
    "number": "4",
-   "title": "Another formula for the coe\u000ecients of !p",
+   "title": "Another formula for the coe\ufb03cients of \u03c9p",
    "level": 1,
    "page_start": 12,
    "page_end": 17,
-   "n_chars": 5094,
-   "n_words": 997
+   "n_chars": 5215,
+   "n_words": 1112,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-5-the-colored-jones-polynomial-of-twist-knots",
+   "id": "sec-005-5-the-colored-jones-polynomial-of-twist-knots",
    "number": "5",
    "title": "The colored Jones polynomial of twist knots",
    "level": 1,
    "page_start": 17,
    "page_end": 20,
-   "n_chars": 3095,
-   "n_words": 614
+   "n_chars": 3093,
+   "n_words": 611,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-006-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 1880,
-   "n_words": 282
+   "n_chars": 1882,
+   "n_words": 277,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 8,
+  "toc_entries": 7,
+  "toc_inferred_entries": 7,
+  "toc_inferred_mean_confidence": 0.721,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
   "sections": 8,
-  "chars_total": 26456
+  "chars_total": 27469
  },
  "duplicate_copies": [
   "0306345v1"

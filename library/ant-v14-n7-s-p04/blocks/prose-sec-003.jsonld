@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s-p04/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s-p04/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "Modularity of elliptic curves over Q(ζ7)+",
+  "title": "Proof of Theorem 6",
   "pageStart": 4,
-  "pageEnd": 4,
-  "text": "../sections/sec-003-4-modularity-of-elliptic-curves-over-qζ7.md",
-  "derivedFrom": "library/ant-v14-n7-s-p04/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p04/manifest",
+  "pageEnd": 8,
+  "text": "../sections/sec-003-5-proof-of-theorem-6.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p04/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p04/manifest.jsonld",
   "provenance": "ingested"
 }

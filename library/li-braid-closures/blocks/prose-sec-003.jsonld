@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/li-braid-closures/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/li-braid-closures/blocks/prose-sec-003",
   "kind": "prose",
   "title": "Young diagrams",
   "pageStart": 3,
   "pageEnd": 4,
   "text": "../sections/sec-003-young-diagrams.md",
-  "derivedFrom": "library/li-braid-closures/manifest",
-  "sourceDocument": "library/li-braid-closures/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/li-braid-closures/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/li-braid-closures/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-hep-lat-9912004v2/sections/sec-004",
   "@type": [
     "doco:Section"
   ],
-  "title": "GAUGE FIELD CONFIGURATIONS AND",
-  "pageStart": 3,
+  "title": "Reporting the results",
+  "pageStart": 4,
   "pageEnd": 4,
   "contains": [
     "library/arxiv-hep-lat-9912004v2/blocks/prose-sec-004"
   ],
-  "derivedFrom": "library/arxiv-hep-lat-9912004v2/manifest",
-  "sourceDocument": "library/arxiv-hep-lat-9912004v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-lat-9912004v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-lat-9912004v2/manifest.jsonld",
   "provenance": "ingested"
 }

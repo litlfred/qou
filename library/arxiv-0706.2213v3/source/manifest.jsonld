@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0706.2213v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0706.2213v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0706.2213v3/manifest.jsonld",
+  "provenance": "ingested",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0706.2213&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0706.2213v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/0706.2213v3",
+    "content_type": "application/gzip",
+    "sha256": "cc3d00a6e73ef80f46047abbb76a6da4459730c01e1f75d5f0ee9b8a51be03c0",
+    "bytes": 136430,
+    "fetched": "2026-10-10T14:59:51+00:00",
+    "files": [
+      {
+        "path": "source/files/twist_knots-080307-arXiv.bbl",
+        "role": "bbl",
+        "sha256": "f4b81adf7645f409cff81c0c94b5863adec51cc1b02898883378465943769157",
+        "bytes": 5874
+      },
+      {
+        "path": "source/files/twist_knots-080307-arXiv.tex",
+        "role": "tex",
+        "sha256": "a38906000771d1ecc4096a644f511512c1eb0337a5296bbcffc4dee272442f4a",
+        "bytes": 144630
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

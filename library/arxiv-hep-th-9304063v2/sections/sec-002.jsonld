@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-hep-th-9304063v2/sections/sec-002",
   "@type": [
     "doco:Section"
   ],
-  "title": "(α2 −aj + 2v)q2",
-  "pageStart": 3,
-  "pageEnd": 3,
+  "title": "Differential Equations",
+  "pageStart": 6,
+  "pageEnd": 6,
   "contains": [
     "library/arxiv-hep-th-9304063v2/blocks/prose-sec-002"
   ],
-  "derivedFrom": "library/arxiv-hep-th-9304063v2/manifest",
-  "sourceDocument": "library/arxiv-hep-th-9304063v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9304063v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9304063v2/manifest.jsonld",
   "provenance": "ingested"
 }

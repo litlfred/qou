@@ -94,6 +94,41 @@ violation. Common breakages:
     inside a results table); (ii) the block has an explicit
     `tags: ["non-scholarly-voice-exception"]` opt-out.
 
+12. **Audit or agent-discussion commentary in paper prose** (owner
+    ruling 2026-10-11, STRICT). Paper prose carries mathematics and, at
+    the comparison points, physics. It must NOT carry:
+    - *audit commentary* — dated corrections, "measured on …",
+      "corrected", "retracted", "superseded", bean IDs (`qou-xxxx`), PR
+      numbers, staleness or precision-gate notes, figure-provenance
+      stories, repository paths (`computations/…`, `docs/audits/…`, a
+      backticked `lean/QOU/….lean`), and **formalisation bookkeeping**
+      ("sorry-free", "axiom-free", `#print axioms`, "not formalised",
+      "the Lean backing does not carry it", "absent from Mathlib",
+      "honest conjecture class", "not a self-assuming projection");
+    - *agent-discussion commentary* — "an agent found", "this session",
+      "we tried X and it failed", and the corpus narrating its own past
+      ("earlier drafts asserted", "an earlier formulation derived",
+      "an earlier version of this definition opened").
+
+    **Exception — open conjectures.** An open conjecture (a `conjecture`
+    block, or a block interpreting one) may carry **one brief remark** —
+    a few sentences, scholarly voice — on its current status and possible
+    routes. "The analytic relation at $q \neq 1$ remains conjectural; the
+    expected route is the shuffle recursion" is fine. A ledger of what was
+    tried, when, and by whom is not.
+
+    **Naming is allowed; grading is not.** "The formal statement is
+    [`QOU.X.thm`](…)" names a declaration and stays. "…`QOU.X.thm`,
+    sorry-free" grades it and moves to `authorNotes`.
+
+    Detector: `folio/pipeline/paper-commentary-audit.ts` (Category L
+    below). The platform voice checkers do NOT catch this class — they
+    key on banners, PR#/SHA, ISO dates and model names, and
+    `voice-author-notes-pollution` P4 explicitly exempts "measured …
+    <date>". Measured 2026-10-11 on Chapters 1–2: the 13 `voice-*`
+    checkers flagged 0 of 9 offending blocks; this detector flagged 9 of 9.
+    See [`docs/audits/2026-10-11-paper-voice-commentary-ch1-ch2.md`](../../docs/audits/2026-10-11-paper-voice-commentary-ch1-ch2.md).
+
 ## When to use
 
 - As a sub-pass of `editor` whenever content is added or edited.
@@ -139,6 +174,10 @@ grep -rEni \
   "structural argument|\bmorally\b|essentially (the |a |zero|complete|surjective|non-local)|heuristically (replaced|exploitable|the)|simplification for exposition|simplifies (the )?exposition|simplifies the paper|provides (the |a )(mathematical framework|natural setting|canonical (duality|basis|framework))|gives a canonical (functor|grading|ordering)|for context|by way of background|broadly speaking|loosely speaking|in some sense|conceptually analogous|amount(s|ed) to|(reformulated|reformulation) as" \
   "$CONTENT" --include="*.md"
 
+# Audit / agent-discussion commentary (Category L). Reading is still
+# required: a keyword grep found 4 weak hits where readers found 14 passages.
+bun run folio/pipeline/paper-commentary-audit.ts "$CONTENT/<chapter-dir>"
+
 # Section / subsection / chapter TITLE coherence (chapter-scoped —
 # runs on chapter manifests, not blocks): auto-split " : <tag>"
 # artifacts, trailing colons, over-long / compound titles. Hard
@@ -160,6 +199,7 @@ bun run content/pipeline/qa-section-title-audit.ts
 | **H. Banner-in-prose** | `> **Status: theorem (sorry-free)...**`, `> **Caveat (over-permissive...)...**`, `> **Status (May 2026):...**`, `> **Refined-framing note (added when promoting...)...**` | **Migrate to `authorNotes` field** on the block's `.ts` manifest. Per AGENTS.md `BlockBase.authorNotes` (the schema field added 2026-05-24), author-tracking notes belong as metadata, not in scholarly prose. Render pipeline skips them by default; `WITH_AUTHOR_NOTES=1` env var exposes them in working drafts. **EXCEPTION:** `**Theorem (conditional on [conj:X])**` banners required by AGENTS.md §3b-cond are STRUCTURAL parts of the theorem statement, not author notes — keep in prose. |
 | **I. Audit-doc reference in paper** | `docs/audits/...`, `[audit](../../../docs/audits/...)`, `per audit`, `see audit doc` | **Remove.** Paper content must NOT reference audit documents. Audit docs are internal working artifacts — they are not part of the scholarly publication. If the audit contains a result needed in the paper, promote the result to a content block (proposition/theorem/remark) and cite that block instead. Empirical observations (percentage matches, ppm comparisons to CODATA) belong in audit docs only, never in paper `.md` blocks. |
 | **J. Empirical fit in scholarly prose** | "within X% of CODATA", "matches to Y ppm", "≈ Z MeV (close to...)", "near-match", "numerical observation" | **Remove from paper content.** Empirical comparisons are audit-doc material. Paper content states the derived formula; the audit doc records how well it matches experiment. **EXCEPTION:** a content block may state a formula's formal precision target (e.g. "the substrate identity matches CODATA to $0.24\,\mathrm{ppm}$") if the block IS a proposition about precision (e.g. `prop:proton-mass-substrate-identity`). |
+| **L. Audit / agent commentary** | "sorry-free", "not formalised", "absent from Mathlib", "earlier drafts asserted", "an earlier formulation derived", "measured on 2026-…", `qou-xxxx`, a backticked `lean/QOU/….lean` path, "this session", an audit-flag ledger table (`current` / `post-discharge` columns) | **Relocate** to the block's `authorNotes` (§4d) when the author may want it; **cut** to one brief scholarly status/routes remark when the block is (or interprets) an open conjecture; **delete** when it is pure agent chatter or a hedge ("in the loosest terms that are still honest"). Never change a number or a mathematical claim while doing so. A whole block that is an audit ledger leaves the paper; record its content in a `docs/audits/` doc. Surfaced by `paper-commentary-audit.ts`; `commentary-open-status` and `commentary-witness-ref` are advisory (agent decides). |
 | **K. Title coherence** | section/subsection title ending in `" : vs"` / `" : generation"` / `" : characterisation"` / `" : comparison"`; a comma-list title of 3+ concepts; a title meaningless without its chapter | **Rewrite from the section's story** — read the section's intro block, make it short + coherent against its responsible parent (paper→chapter→section→subsection) and distinct from the sibling. Surfaced by `qa-section-title-audit.ts`; conventions in `one-voice-style-guide.md` §Title Conventions. |
 
 ### 3. Apply mechanical fixes
@@ -175,6 +215,9 @@ These are safe to do without author approval:
   tables) with words.
 - Remove Category I audit-doc references from paper `.md` files.
 - Strip Category J empirical fits from scholarly prose (move to audit).
+- Relocate / cut / delete Category L commentary as above. Removing a
+  whole audit-ledger block (a table of flags and their status) is an
+  author decision unless the block is referenced only by its parent.
 - Migrate Category H banners to `authorNotes` field (extract banner
   text → push as `{ kind, date?, body }` entry on the block's `.ts`
   manifest; remove blockquote from `.md`). Skip the `**Theorem

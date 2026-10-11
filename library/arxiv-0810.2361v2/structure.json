@@ -6,7 +6,8 @@
   "sha256": "77d6d59a29596484954523e639370760212cbc15de0691c8dbe6e24551b70846",
   "bytes": 536449,
   "pages": 44,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -399,6 +400,156 @@
   "likely_scanned": false,
   "toc_entries": 24,
   "sections": 19,
-  "chars_total": 105294
+  "chars_total": 105294,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "grpd-2vect.tex",
+   "tex_sections": 19,
+   "overlaid": 14,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.807,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-kapranov-voevodsky-2-vector-spaces",
+     "title": "Kapranov-Voevodsky 2-Vector Spaces",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.885,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-33-example-group-2-algebra",
+     "title": "Example: Group 2-Algebra",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-4-kv-2-vector-spaces-and-finite-groupoids",
+     "title": "KV 2-Vector Spaces and Finite Groupoids",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-42-the-ambidextrous-adjunction",
+     "title": "The Ambidextrous Adjunction",
+     "prose_ratio": 0.717,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-43-units-and-counits",
+     "title": "Units and Counits",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.838,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-5-spans-of-groupoids",
+     "title": "Spans of Groupoids",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-51-2-linear-maps-from-spans-of-groupoids",
+     "title": "2-Linear Maps from Spans of Groupoids",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-52-and-composition",
+     "title": "and Composition",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-6-spans-of-spans",
+     "title": "Spans of Spans",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-61-2-morphisms-from-spans-of-spans",
+     "title": "2-Morphisms from Spans of Spans",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-62-coordinate-description-of-2-morphisms",
+     "title": "Coordinate Description of 2-Morphisms",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-7-main-theorem",
+     "title": "Main Theorem",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-8-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-appendix-a-weak-preservation-of-composition",
+     "title": "Appendix A. Weak Preservation of Composition",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-a1-background-on-comma-categories",
+     "title": "A.1. Background on Comma Categories",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-a2-the-beck-condition",
+     "title": "A.2. The Beck Condition",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

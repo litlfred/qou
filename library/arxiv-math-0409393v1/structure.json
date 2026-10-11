@@ -6,7 +6,8 @@
   "sha256": "2107d961f60655395a65e6ced4d6874854f3e7e834c42c2c820adedb13912d17",
   "bytes": 353392,
   "pages": 26,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -107,6 +108,40 @@
   "likely_scanned": false,
   "toc_entries": 5,
   "sections": 3,
-  "chars_total": 59772
+  "chars_total": 59772,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "preprint.tex",
+   "tex_sections": 24,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction-and-general-conventions",
+     "title": "Introduction and general conventions",
+     "prose_ratio": 0.652,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-3-algebraic-summation",
+     "title": "Algebraic summation",
+     "prose_ratio": 0.808,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

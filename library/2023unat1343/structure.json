@@ -7,7 +7,10 @@
   "bytes": 29639,
   "pages": 5,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:17Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
@@ -23,30 +26,141 @@
   ],
   "abstract": null,
   "docinfo": {
+   "Title": "View PDF",
    "Producer": "dompdf 3.1.3 + CPDF",
-   "CreationDate": "D:20260831171834+00'00'",
-   "Title": "View PDF"
+   "CreationDate": "D:20260831171834+00'00'"
+  },
+  "title_raw": "2023-UNAT-1343, Ann-Christin Raschdorf UNAT Held or UNDT Pronouncements The UNAT dismissed the appeal. The UNAT held that the UNDT correctly found not receivable Ms. Raschdorf's application with respect to the non-renewal decision and",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "View PDF",
+   "heading": "2023-UNAT-1343, Ann-Christin Raschdorf",
+   "text": "2023-UNAT-1343, Ann-Christin Raschdorf UNAT Held or UNDT Pronouncements The UNAT dismissed the appeal. The UNAT held that the UNDT correctly found not receivable Ms. Raschdorf's application with respect to the non-renewal decision and",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [],
- "toc_source": "none",
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "16 inferred entries, 88% of them starting on page(s) 3, 4 of 5 \u2014 a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (16 inferred entries, 88% of them starting on page(s) 3, 4 of 5 \u2014 a list found ON a page, not the document's structure): one section per page.",
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-document",
+   "id": "page-001",
    "number": null,
-   "title": "Document",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
+   "page_end": 1,
+   "n_chars": 2002,
+   "n_words": 307,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 2709,
+   "n_words": 416,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 257,
+   "n_words": 35,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 446,
+   "n_words": 53,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
    "page_end": 5,
-   "n_chars": 5518,
-   "n_words": 820
+   "n_chars": 100,
+   "n_words": 9,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 0,
-  "sections": 1,
-  "chars_total": 5518
+  "toc_inferred_entries": 16,
+  "toc_inferred_mean_confidence": 0.6,
+  "toc_inferred_empty_share": 0.625,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 5514
  }
 }

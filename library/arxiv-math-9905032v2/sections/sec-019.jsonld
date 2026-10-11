@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-9905032v2/sections/sec-019",
   "@type": [
     "doco:Section"
   ],
-  "title": "Various formulas for the kernel J. Recall that since Jx is an",
-  "pageStart": 16,
-  "pageEnd": 17,
+  "title": "Convergence of trace class operators",
+  "pageStart": 40,
+  "pageEnd": 43,
   "contains": [
     "library/arxiv-math-9905032v2/blocks/prose-sec-019"
   ],
-  "derivedFrom": "library/arxiv-math-9905032v2/manifest",
-  "sourceDocument": "library/arxiv-math-9905032v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9905032v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9905032v2/manifest.jsonld",
   "provenance": "ingested"
 }

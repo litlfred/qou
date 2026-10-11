@@ -8,12 +8,10 @@ pages: 5-5
 source_pdf: 1704.02352v2.pdf
 source_sha256: 9a14dd6ee33248d3
 doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Y oung diagrams which can be regarded as a natural one-parameter deformation of so me classi- cal Y"
+text_source: latex
+latex_prose_ratio: 0.9
+latex_coverage_ratio: 1.0
 ---
-which correspond to the limit when the number of boxes n → ∞ of the
-random Y oung diagrams tends to inﬁnity. This corresponds to considering
-a sequence (χn) of reducible characters χn : Pn → R and the resulting
-sequence (P(α)
-χn ) of probability measures on Yn.
-We also allow that the deformation parameter α(n) depends on n; in
-order to make the notation light we will make this dependence implicit and
-write shortly α = α(n).
+In the current paper we consider asymptotic problems which correspond to the limit when the number of boxes $n\to\infty$ of the random Young diagrams tends to infinity. This corresponds to considering a *sequence* $(\chi_n)$ of reducible characters $\chi_n\colon \mathcal{P}_{n}\to\mathbb{R}$ and the resulting *sequence* $(\mathbb{P}^{(\alpha)}_{\chi_n})$ of probability measures on $\mathbb{Y}_{n}$.
+
+We also allow that the deformation parameter $\alpha(n)$ depends on $n$; in order to make the notation light we will make this dependence implicit and write shortly $\alpha=\alpha(n)$.

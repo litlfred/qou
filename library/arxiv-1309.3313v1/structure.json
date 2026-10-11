@@ -5,7 +5,8 @@
   "file": "1309.3313v1.pdf",
   "sha256": "11614aa35b1ffa50445679d8ac8beb3fce19d3b6e25ffdecac7393b04ec1f0b8",
   "bytes": 1299728,
-  "pages": 9
+  "pages": 9,
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -95,6 +96,24 @@
   "likely_scanned": false,
   "toc_entries": 7,
   "sections": 1,
-  "chars_total": 25238
+  "chars_total": 25238,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "HS13-Aleksejevs-Barkanova.tex",
+   "tex_sections": 6,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-document",
+     "title": "Document",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

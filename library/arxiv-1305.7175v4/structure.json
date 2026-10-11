@@ -6,7 +6,8 @@
   "sha256": "5a09955f4fb6a57e69075c38e4571f5aacb9f50a5fc4bc1ec16a536f73e393b4",
   "bytes": 493967,
   "pages": 37,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -388,6 +389,149 @@
   "likely_scanned": false,
   "toc_entries": 24,
   "sections": 18,
-  "chars_total": 96205
+  "chars_total": 96205,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 31,
+   "overlaid": 11,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-summary",
+     "title": "Summary",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.838,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-12-inspirations-and-motivations",
+     "title": "Inspirations and motivations",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-13-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 0.833,
+     "coverage_ratio": 0.929,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-2-overview",
+     "title": "Overview",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.006,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-005-3-traces-in-category-theory",
+     "title": "Traces in category theory",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-31-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-32-dualizability",
+     "title": "Dualizability",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.74,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-34-functoriality-of-dimension",
+     "title": "Functoriality of dimension",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-35-functoriality-of-traces",
+     "title": "Functoriality of traces",
+     "prose_ratio": 0.258,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-4-traces-in-geometry",
+     "title": "Traces in Geometry",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-41-categories-of-correspondences",
+     "title": "Categories of correspondences",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.913,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-43-geometric-functoriality-of-dimension",
+     "title": "Geometric functoriality of dimension",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.927,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-44-geometric-functoriality-of-trace",
+     "title": "Geometric functoriality of trace",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.928,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-5-traces-for-sheaves",
+     "title": "Traces for sheaves",
+     "prose_ratio": 0.914,
+     "coverage_ratio": 0.912,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-51-dimensions-and-traces-of-sheaf-categories-1-c",
+     "title": "Dimensions and traces of sheaf categories: 1-categorical consequences",
+     "prose_ratio": 0.928,
+     "coverage_ratio": 0.929,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-52-integration-formulas-for-traces-2-categorical",
+     "title": "Integration formulas for traces: 2-categorical consequences",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

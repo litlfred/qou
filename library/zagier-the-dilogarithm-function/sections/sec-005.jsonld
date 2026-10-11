@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/zagier-the-dilogarithm-function/sections/sec-005",
   "@type": [
     "doco:Section"
   ],
-  "title": "Dilogarithms and modular functions: the Nahm equation . . . . . . . . . . . 41",
-  "pageStart": 1,
-  "pageEnd": 3,
+  "title": "Notes on Chapter I",
+  "pageStart": 19,
+  "pageEnd": 20,
   "contains": [
     "library/zagier-the-dilogarithm-function/blocks/prose-sec-005"
   ],
-  "derivedFrom": "library/zagier-the-dilogarithm-function/manifest",
-  "sourceDocument": "library/zagier-the-dilogarithm-function/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zagier-the-dilogarithm-function/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zagier-the-dilogarithm-function/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -10,8 +10,8 @@ tags:
     - reorg-2026-10-04
     - 8f-ew
 created_at: 2026-09-03T09:08:29Z
-updated_at: 2026-10-10T07:15:58Z
-parent: qou-8lxd
+updated_at: 2026-10-10T18:10:00Z
+parent: qou-20sx
 ---
 
 Class B (mathematical) gap left as a content-bearing carrier with NO instance. Found in the SM-surface Lean sweep of bean qou-08zf (2026-09-03); report: docs/audits/2026-09-03-sm-surface-lean-best-practices-sweep.md.
@@ -21,3 +21,7 @@ WHAT IS FORMALISED: content/quantum-observable-universe/nuclear-interactions/wei
 WHAT IS OPEN: (1) the Higgs-vev automorphism of the Hoefsmit projector decomposition whose restriction to the (W³,B) plane is the θ_W rotation — a trace-preserving automorphism exists trivially (the identity), so an existential field would be the Round-11 vacuity; it needs the actual change-of-basis formula; (2) the corrected ratio: the .md records that the pure-pattern evaluation gives cot θ_W = q⁻⁴ (about 0.659 at q₀) against the CODATA 1.823, so the non-uniform pure-pattern multiplicities, the categorical-linking operation and the vev weighting must be derived before the class can be instantiated at the physical data. Tower status ORDER-ZERO-ONLY (single ratio at n = 6; the owner ruling of 2026-09-03 asks for the full tower).
 
 NEXT HONEST STEP: derive the vev rotation as an explicit R-algebra automorphism of H₆(q) acting on the Hoefsmit decomposition; compute tr_M(e_W σ₁⁴) and tr_M(e_B σ₅⁸) with non-uniform multiplicities (pyhecke) in exact arithmetic; compare at the boundary only. Do not add an instance.
+
+## 2026-10-10 — reparented under qou-20sx
+
+Owner decision 7b (ofri, 2026-10-10): the electroweak (`8f-ew`) beans are grouped under `qou-20sx`, the electroweak front's node, instead of directly under the epic `qou-8lxd`. Only the parent changed. Status, scope and body are untouched.

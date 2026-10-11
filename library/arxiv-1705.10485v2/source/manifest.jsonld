@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1705.10485v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Mod-φ convergence, II: Estimates on the speed of convergence (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1705.10485v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1705.10485&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1705.10485v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1705.10485v2",
+    "content_type": "application/gzip",
+    "sha256": "e62cd82161dbbf81554d92c1cb2aaec521cb5f3bee7ae13353ab0b8a07123b0a",
+    "bytes": 535124,
+    "fetched": "2026-10-10T15:12:11+00:00",
+    "files": [
+      {
+        "path": "source/files/speed_wide.bbl",
+        "role": "bbl",
+        "sha256": "7565e2c936914cc13880f8876a1021e4b4d3b1fe411c40db3decf2c55918487f",
+        "bytes": 11406
+      },
+      {
+        "path": "source/files/speed_wide.tex",
+        "role": "tex",
+        "sha256": "80d7cffbc5c83e7bfa830d8095b44625f47644e4b58f556223dd72e1659589b5",
+        "bytes": 192596
+      },
+      {
+        "path": "source/files/svmult.cls",
+        "role": "cls",
+        "sha256": "4d52d3243f321bee48579bf3b871116fe83dc36d5f1947b778fe97a0ff1a8779",
+        "bytes": 83801
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

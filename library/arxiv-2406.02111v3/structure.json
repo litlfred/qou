@@ -6,7 +6,8 @@
   "sha256": "d7be0c3f08b4d42a20fe9ae75651bec95417263c9e92d1796bb3d2cb3ea2f8e7",
   "bytes": 749608,
   "pages": 19,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -266,6 +267,91 @@
   "likely_scanned": false,
   "toc_entries": 18,
   "sections": 10,
-  "chars_total": 64985
+  "chars_total": 64985,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "main.tex",
+   "tex_sections": 15,
+   "overlaid": 6,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-quantum-tetrahedron",
+     "title": "Quantum tetrahedron",
+     "prose_ratio": 0.176,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-volume-operator",
+     "title": "Volume operator",
+     "prose_ratio": 0.143,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-spin-networks-and-graph-states",
+     "title": "Spin networks and graph states",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.328,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-004-string-diagrams",
+     "title": "String diagrams",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.93,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-derivation-of-the-categorical-volume-operator",
+     "title": "Derivation of the categorical volume operator",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-beyond-ribbon-fusion-categories",
+     "title": "Beyond ribbon fusion categories",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-hermiticity-of-the-categorical-volume-operator",
+     "title": "Hermiticity of the categorical volume operator",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-discussion-and-conclusions",
+     "title": "Discussion and Conclusions",
+     "prose_ratio": 0.838,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

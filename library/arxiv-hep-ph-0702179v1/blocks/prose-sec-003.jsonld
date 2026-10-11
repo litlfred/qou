@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-ph-0702179v1/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-ph-0702179v1/blocks/prose-sec-003",
   "kind": "prose",
   "title": "Perspective",
   "pageStart": 7,
   "pageEnd": 8,
   "text": "../sections/sec-003-perspective.md",
-  "derivedFrom": "library/arxiv-hep-ph-0702179v1/manifest",
-  "sourceDocument": "library/arxiv-hep-ph-0702179v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0702179v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0702179v1/manifest.jsonld",
   "provenance": "ingested"
 }

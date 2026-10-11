@@ -1,110 +1,42 @@
 ---
 doc_id: arxiv-math-0203003v2
-doc_title: "On the quantum Kazhdan-Lusztig functor Pavel I. Etingof Adriano A. Moura etingof@math.mit.edu adrianoam@ime.unicamp.br Introduction One of the most exciting developments in represe"
+doc_title: "arXiv:math/0203003v2 [math.QA] 24 Apr 2002"
 section_id: sec-001-1-representations-of-quantum-dynamical-r-matrice
-section_title: "Representations of Quantum Dynamical R-Matrices with Spe c-"
+section_title: "Representations of Quantum Dynamical R-Matrices with Spectral Parameters"
 section_number: 1
 pages: 2-4
 source_pdf: 0203003v2.pdf
 source_sha256: 7579ae76959396b8
-doc_brief: "On the quantum Kazhdan-Lusztig functor Pavel I. Etingof Adriano A. Moura etingof@math.mit.edu adrianoam@ime.unicamp.br Introduction One of the most exciting developments in representation the ory in t"
+toc_source: inferred
+text_source: latex
+latex_prose_ratio: 0.957
+latex_coverage_ratio: 0.966
 ---
-tral Parameters
-Let a be a ﬁnite dimensional abelian Lie algebra over C, V be a ﬁnite dimensional semisimple
-a-module, and γ ∈ C∗. The quantum dynamical Yang-Baxter equation with spectral parameter
-and step γ is
-R12(u1 −u2,λ −γh(3))R13(u1 −u3,λ )R23(u2 −u3,λ −γh(1))
-=R23(u2 −u3,λ )R13(u1 −u3,λ −γh(2))R12(u1 −u2,λ ) (1.1)
-with respect to a meromorphic function R : C × a∗ → Enda(V ⊗V ). The notation h(i) means that,
-for example, R12(u1 −u2,λ −γh(3))(v1 ⊗v2 ⊗v3) =
-(
-R(u1 −u2,λ −γµ )(v1 ⊗v2)
-)
-⊗v3 if v3 has
-weight µ . A function R is called a quantum dynamical R-matrix if it is a generically invertible
-solution of (1.1).
-Given a quantum dynamical R-matrix R : C × a∗ → Enda(V ⊗V ), we denote by Repf(R) the
-category of meromorphic ﬁnite dimensional representation s of R. This category was ﬁrst deﬁned in
-[Fe94a, Fe94b]. It consists of pairs ( W,L W ) where W is a semisimple ﬁnite dimensional a-module
-and LW is a meromorphic function
-LW : C × a∗ → Enda(V ⊗W )
-2
-such that LW (u,λ ) is (generically) invertible and satisﬁes
-R12(u1 −u2,λ −γh(3))L13
-W (u1 −u3,λ )L23
-W (u2 −u3,λ −γh(1))
-=L23
-W (u2 −u3,λ )L13
-W (u1 −u3,λ −γh(2))R12(u1 −u2,λ ) (1.2)
-in End a(V ⊗V ⊗W ). If ( W,L W ) and (U,L U ) are two representations, a morphism between them
-is a meromorphic function f : a∗ → Homa(W,U ) such that
-(
-1 ⊗f (λ)
-)
-LW (u,λ ) = LU (u,λ )
-(
-1 ⊗f (λ −γh(1))
-)
-(1.3)
-Thus, the category Repf(R) is linear over the ﬁeld MV of meromorphic functions on a∗ periodic
-under the lattice spanned by the weights of V .
-Example 1.1. Let R : C × a∗ → Enda(V ⊗V ) be a quantum dynamical R-matrix.
-1. Let W be any vector space and let a act trivially on W . Then ( W, 1), where 1 denotes the
-constant function 1 ∈ Enda(V ⊗W ), is a representation of R called the trivial representation
-associated to W .
-2. (V,R ) is a representation of R called the basic representation.
-3. If ( W,L W ) is a representation of R, f : a∗ → Enda(W ) is generically invertible and Lf
-W =(
-1 ⊗f (λ)−1)
-LW (u,λ )
-(
-1 ⊗f (λ −γh(1))
-)
-then (W,L f
-W ) is also a representation. It is clear that
-f provides an isomorphism from ( W,L f
-W ) to (W,L W ).
-Example 1.2. Let a be an abelian n-dimensional Lie algebra and V be a semisimple n-dimensional
-a-module whose weights form a basis for a∗ (in other words, a is the usual Cartan subalgebra of
-gln acting naturally on V = Cn). Quantum dynamical R-matrices for such a and V are said to be
-of gln type [EV98, EV99]. They have the form
-R(u,λ ) =
-∑
-m,l
-α m,l (u,λ )Em,m ⊗El,l +
-∑
-m⁄=l
-βm,l (u,λ )El,m ⊗Em,l
-The main example is the elliptic quantum dynamical R-matrix found by Felder [Fe94a, Fe94b]
-Rell
-τ,γ (u,λ ) =
-∑
-m
-Em,m ⊗Em,m +
-∑
-m⁄=l
-α (u,λ m,l )Em,m ⊗El,l +β (u,λ m,l )El,m ⊗Em,l
-with
-α (u,λ ) = ϑ 1(λ +γ;τ)
-ϑ 1(λ;τ)
-ϑ 1(u;τ)
-ϑ 1(u −γ;τ) β (u,λ ) = ϑ 1(γ;τ)
-ϑ 1(λ;τ)
-ϑ 1(u −λ;τ)
-ϑ 1(u −γ;τ)
-whereλ m,l =λ m −λ l, and ϑ 1 is the standard ﬁrst theta function. Felder also proposed to associate
-toRell
-τ,γ an elliptic quantum group Eτ,γ/ 2(gln), whose category of ﬁnite dimensional representations
-is Repf(Rell
-τ,γ ).
-LetR : C × a∗ → Enda(V ⊗V ) be a quantum dynamical R-matrix. The category Repf(R) can
-be endowed with a tensor product functor given by ( W,L W ) ⊙ (U,L U ) = (W ⊗U,L W ⊙U ) where
-LW ⊙U (u,λ ) = L12
-W (u,λ −γh(3))L13
-U (u,λ )
-on objects and
-f ⊙g(λ) = f (λ −γh(2)) ⊗g(λ)
-on morphisms. One easily checks that the ﬁrst formula deﬁnes a representation, and the second one
-a morphism of representations. Thus, ⊙ is a bifunctor. Moreover, it is easy to see that it deﬁnes a
-structure of a tensor category on Repf(R), with unit object being the trivial representation ( C, 1).
-3
+Let $\mathfrak{a}$ be a finite dimensional abelian Lie algebra over , $V$ be a finite dimensional semisimple $\mathfrak{a}$-module, and $\gamma \in \text{$\mathbb{C}$}^*$. The quantum dynamical Yang-Baxter equation with spectral parameter and step $\gamma$ is $$\begin{aligned}
+\notag
+R^{12}(u_1-u_2,\lambda-\gamma h^{(3)}) R^{13}(u_1-u_3,\lambda) R^{23}(u_2-u_3,\lambda-\gamma h^{(1)})\\ \label{eq:qdybs}
+= R^{23}(u_2-u_3,\lambda) R^{13}(u_1-u_3,\lambda-\gamma h^{(2)}) R^{12}(u_1-u_2,\lambda)
+\end{aligned}$$ with respect to a meromorphic function $R:\text{$\mathbb{C}$}\times\mathfrak{a}^* \to \text{End}_{\mathfrak{a}}(V\otimes V)$. The notation $h^{(i)}$ means that, for example, $R^{12}(u_1-u_2,\lambda-\gamma h^{(3)})(v_1\otimes v_2\otimes v_3) = \big(R(u_1-u_2,\lambda-\gamma\mu)(v_1\otimes v_2)\big)\otimes v_3$ if $v_3$ has weight $\mu$. A function $R$ is called a quantum dynamical R-matrix if it is a generically invertible solution of [\[eq:qdybs\]](#eq:qdybs){reference-type="eqref" reference="eq:qdybs"}.
+
+Given a quantum dynamical R-matrix $R:\text{$\mathbb{C}$}\times\mathfrak{a}^* \to \text{End}_{\mathfrak{a}}(V\otimes V)$, we denote by $\text{\bf Rep}_{\text{f}}(R)$ the category of meromorphic finite dimensional representations of $R$. This category was first defined in [@Fel94a; @Fel94b]. It consists of pairs $(W,L_{W})$ where $W$ is a semisimple finite dimensional $\mathfrak{a}$-module and $L_{W}$ is a meromorphic function $$L_{W} : \text{$\mathbb{C}$} \times \mathfrak{a}^* \to \text{End}_{\mathfrak{a}}(V\otimes W)$$ such that $L_{W}(u,\lambda)$ is (generically) invertible and satisfies $$\begin{aligned}
+\notag
+R^{12}(u_1-u_2,\lambda-\gamma h^{(3)}) L_{W}^{13}(u_1-u_3,\lambda) L_{W}^{23}(u_2-u_3,\lambda-\gamma h^{(1)})\\ \label{eq:Ldef}
+= L_{W}^{23}(u_2-u_3,\lambda) L_{W}^{13}(u_1-u_3,\lambda-\gamma h^{(2)}) R^{12}(u_1-u_2,\lambda)
+\end{aligned}$$ in $\text{End}_{\mathfrak{a}}(V\otimes V\otimes W)$. If $(W,L_{W})$ and $(U,L_{U})$ are two representations, a morphism between them is a meromorphic function $f:\mathfrak{a}^* \to \text{Hom}_{\mathfrak{a}}(W,U)$ such that $$\label{eq:morpdef}
+\big(1\otimes f(\lambda)\big)L_{W}(u,\lambda) = L_{U}(u,\lambda)\big(1\otimes f(\lambda - \gamma h^{(1)})\big)$$ Thus, the category $\text{\bf Rep}_{\text{f}}(R)$ is linear over the field $M_V$ of meromorphic functions on $\mathfrak{a}^*$ periodic under the lattice spanned by the weights of $V$.
+
+::: ex
+[]{#ex:bex label="ex:bex"} Let $R: \text{$\mathbb{C}$}\times \mathfrak{a}^* \to \text{End}_{\mathfrak{a}}(V\otimes V)$ be a quantum dynamical R-matrix.
+
+1.  []{#ex:trep label="ex:trep"} Let $W$ be any vector space and let $\mathfrak{a}$ act trivially on $W$. Then $(W,1)$, where $1$ denotes the constant function $1\in \text{End}_{\mathfrak{a}}(V\otimes W)$, is a representation of $R$ called the trivial representation associated to $W$.
+
+2.  $(V,R)$ is a representation of $R$ called the basic representation.
+
+3.  []{#ex:isorep label="ex:isorep"} If $(W,L_{W})$ is a representation of $R$, $f:\mathfrak{a}^* \to \text{End}_{\mathfrak{a}}(W)$ is generically invertible and $L_{W}^f = \big(1\otimes f(\lambda)^{-1}\big)L_{W}(u,\lambda)\big(1\otimes f(\lambda -\gamma h^{(1)})\big)$ then $(W,L_{W}^{f})$ is also a representation. It is clear that $f$ provides an isomorphism from $(W,L^f_W)$ to $(W,L_W)$.
+:::
+
+::: ex
+[]{#ex:felder label="ex:felder"} Let $\mathfrak{a}$ be an abelian $n$-dimensional Lie algebra and $V$ be a semisimple $n$-dimensional $\mathfrak{a}$-module whose weights form a basis for $\mathfrak{a}^*$ (in other words, $\mathfrak{a}$ is the usual Cartan subalgebra of $\mathfrak{gl}_n$ acting naturally on $V=\text{$\mathbb{C}$}^n$). Quantum dynamical R-matrices for such $\mathfrak{a}$ and $V$ are said to be of $\mathfrak{gl}_n$ type [@EtVa98; @EtVa99]. They have the form $$R(u,\lambda) = \sum_{m,l}  \alpha_{m,l}(u,\lambda) E_{m,m}\otimes E_{l,l} + \sum_{m\neq l} \beta_{m,l}(u,\lambda) E_{l,m}\otimes E_{m,l}$$ The main example is the elliptic quantum dynamical R-matrix found by Felder [@Fel94a; @Fel94b] $$R_{\tau,\gamma}^{ell}(u,\lambda) = \sum_{m} E_{m,m}\otimes E_{m,m} + \sum_{m\neq l} \alpha(u,\lambda_{m,l}) E_{m,m}\otimes E_{l,l} + \beta(u,\lambda_{m,l}) E_{l,m}\otimes E_{m,l}$$ with $$\alpha(u,\lambda) = \frac{\vartheta_1(\lambda+\gamma;\tau)}{\vartheta_1(\lambda;\tau)} \frac{\vartheta_1(u;\tau)}{\vartheta_1(u-\gamma;\tau)}\quad\quad \beta(u,\lambda) = \frac{\vartheta_1(\gamma;\tau)}{\vartheta_1(\lambda;\tau)} \frac{\vartheta_1(u-\lambda;\tau)}{\vartheta_1(u-\gamma;\tau)}$$ where $\lambda_{m,l} = \lambda_m - \lambda_l$, and $\vartheta_1$ is the standard first theta function. Felder also proposed to associate to $R^{ell}_{\tau,\gamma}$ an elliptic quantum group $E_{\tau,\gamma/2}({\mathfrak{g}l}_n)$, whose category of finite dimensional representations is $\text{\bf Rep}_{\text{f}}(R^{ell}_{\tau,\gamma})$.
+:::
+
+Let $R: \text{$\mathbb{C}$}\times \mathfrak{a}^* \to \text{End}_{\mathfrak{a}}(V\otimes V)$ be a quantum dynamical R-matrix. The category $\text{\bf Rep}_{\text{f}}(R)$ can be endowed with a tensor product functor given by $(W,L_{W})\odot (U,L_{U}) = (W\otimes U,L_{W\odot U})$ where $$L_{W\odot U}(u,\lambda) = L_{W}^{12}(u,\lambda-\gamma h^{(3)})L_{U}^{13}(u,\lambda)$$ on objects and $$f\odot g(\lambda) = f(\lambda-\gamma h^{(2)})\otimes g(\lambda)$$ on morphisms. One easily checks that the first formula defines a representation, and the second one a morphism of representations. Thus, $\odot$ is a bifunctor. Moreover, it is easy to see that it defines a structure of a tensor category on $\text{\bf Rep}_{\text{f}}(R)$, with unit object being the trivial representation $(\text{$\mathbb{C}$},1)$.

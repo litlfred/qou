@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-0306165v1/blocks/prose-sec-026",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-0306165v1/blocks/prose-sec-026",
   "kind": "prose",
-  "title": "It follows from the axioms (1) and (2) that a compact oriented 3-manifold M with ∂M =",
-  "pageStart": 34,
-  "pageEnd": 37,
-  "text": "../sections/sec-026-14-it-follows-from-the-axioms-1-and-2-that-a-com.md",
-  "derivedFrom": "library/arxiv-hep-th-0306165v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0306165v1/manifest",
+  "title": "Acknowledgments",
+  "pageStart": 53,
+  "pageEnd": 53,
+  "text": "../sections/sec-026-acknowledgments.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0306165v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0306165v1/manifest.jsonld",
   "provenance": "ingested"
 }

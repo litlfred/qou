@@ -8,363 +8,123 @@ pages: 15-23
 source_pdf: 2508.03145v1.pdf
 source_sha256: 2bf03452cb503e96
 doc_brief: "Θ-Categories and Tannakian duality — We introduce a notion ofΘ-categories, which is a refinement of the notion of symmetric monoidal∞-categories."
+text_source: latex
+latex_prose_ratio: 0.987
+latex_coverage_ratio: 0.81
 ---
-For a commutativek-algebraA, we considerQCoh(SpecA), also denoted by
-QCoh(A), the symmetric monoidal∞-category of complexes ofA-modules.
-When A varies in commutativek-algebras this defines an fpqc-stack in pre-
-sentable symmetric monoidal∞-categories
-QCoh: Affop
-k −→∞-Cat⊗
-pr.
-We will need a slight modification of the stackQCoh, which involves ind-
-perfect complexes. For any small stack F, the dualizable objects in the
-symmetric monoidal∞-category QCoh(F ) are the perfect complexes, whose
-∞-category will be denotedPerf(F ). It comes equipped with the restriction
-of the symmetric monoidal structure ofQCoh(F ), and as such forms a small,
-stable symmetric monoidal∞-category.
-Definition 2.1. The presentable symmetric monoidal∞-category of ind-
-perfect complexes onF is the ind-completion ofPerf(F ). It is denoted by
-dPerf(F ) := Ind(Perf(F )).
-For any small stackF∈ Stk we have a natural adjunction of presentable
-symmetric monoidal∞-categories
-dPerf(F ) ⇆ QCoh(F ),
-where the left adjoint is the canonical extension by filtered colimits of the
-inclusion Perf(F )⊂ QCoh(F ). When X = SpecA is an affinek-scheme,
-or more generally a quasi-compact and quasi-separatedk-scheme, then the
-perfect complexes are compact generators ofQCoh(X), and thus the above
-adjunction is an equivalence. However, we warn the reader that for a gen-
-eral stack, even representable by a nice Artin stack, perfect complexes might
-not even be compact objects in quasi-coherent complexes. In general, the
-natural∞-functor dPerf(F )→ QCoh(F ) is therefore neither fully faithful nor
-essentially surjective.
-We want to enhance the two∞-functorsF7→ dPerf(F )andF7→ QCoh(F )
-from small stacks to∞-Cat⊗
-pr, to∞-functors to∞-CatΘ
-pr. This is straight-
-forward for quasi-coherent complexes (see Remark 2.3 below), but more in-
-volved for ind-perfect complexes because the (L)Sym-monad does not pre-
-serve perfect complexes. We will therefore construct explicit models for
-15
-these symmetric monoidal∞-categories with strict representatives of the in-
-volved monads. A more intrinsic approach should follow from the techniques
-of [Rak20, §4.2].
-We letX∗ : I→ Affk be a small diagram of affinek-schemes overF such
-that the canonical morphismcolimi∈IXi→F is an equivalence. Dually, this
-yields a diagram of (discrete) commutativek-algebras A∗ : Iop→ k-CAlg♡.
-This diagram can be seen as a commutative algebra object in the ((1, 1)-)
-categoryofpresheavesofabeliangroups Fun(Iop, Ab), sothatwecanconsider
-the abelian categoryA∗-Mod of presheaves ofA∗-modules. Recall that an
-object M inA∗-Mod consists ofAi-modules Mi for alli∈I, and morphisms
-u∗ : Aj⊗AiMi→Mj ofAj-modules for allu: j→i inI, satisfying the usual
-compatibilities with compositions and identity inI. The abelian category
-A∗-Mod possesses enough projective objects: these are the direct sums of free
-A∗-modules F (i) on objectsi∈ I, characterized by the functorial bijection
-Hom(F (i),M )≃Mi. They can also be written more explicitly asF (i)(j) =L
-j→iAj for j∈I.
-We letscA∗-Mod be the category of simplicial-cosimplicial objects in the
-abelian categoryA∗-Mod. As explained in [BCN21] the categoryscA∗-Mod
-is endowed with a model category structure whose weak equivalences are
-induced by the totalization functor to presheaves of cochain complexes of
-abelian groups
-Tot⊕ : scA∗-Mod−→ Fun(Iop,C (Z)).
-The fibrations are the levelwise fibrations of simplicial-cosimplicial abelian
-groups of [BCN21, Defn. 5.2]. A set of generating cofibrations is given by the
-family of morphismsF (i)⊗ZE→F (i)⊗ZE′ wherei varies inI andE→E′
-is a generating cofibration of the model category of simplicial-cosimplicial
-abelian groups (see proof of [BCN21, Thm. 5.5]). We note in particular that
-theevaluationfunctorat i∈I,scA∗-Mod→scAi-Mod preservescofibrations
-and trivial cofibrations.
-LetL(scA∗-Mod) be the∞-category obtained fromscA∗-Mod by invert-
-ing the weak equivalences. The∞-categoryL(scA∗-Mod) is presentable and
-closed symmetric monoidal, and is equivalent to the lax limit of the diagram
-i7→ QCoh(Ai) (see e.g. [Har19]). The limit of this diagram,QCoh(F ), sits
-as a full symmetric monoidal sub-∞-category inL(scA∗-Mod): it consists
-precisely of objectsM such that for any morphismj→ i in I the induced
-morphism
-Aj⊗L
-AiMi→Mj
-is an equivalence of simplicial-cosimplicial modules (i.e. a quasi-isomorphism
-on the correspondingTot⊕).
-16
-Let us now consider the category scA∗-CAlg of strictly commutative
-simplicial-cosimplicial A∗-algebras, together with its natural forgetful func-
-torscA∗-CAlg→scA∗-Mod. We can lift the (semi-)model category structure
-along this forgetful functor, which now becomes a right Quillen functor pre-
-serving all weak equivalences. It induces a right adjoint∞-functor between
-presentable∞-categories
-L(scA∗-CAlg)→L(scA∗-Mod).
-Similarly, ifO is a cofibrant model for the simplicialE∞-operad we can con-
-siderO-algebras inside scA∗-Mod, together with its natural (semi-)model
-category structure lifted from the forgetful functorscA∗-AlgO→scA∗-Mod.
-The canonical projectionO→∗ to the terminal operad provides a factor-
-ization of (right Quillen) forgetful functors
-scA∗-CAlg→scA∗-AlgO→scA∗-Mod.
-Lemma 2.2. Upon inverting weak equivalences, the above sequence of right
-Quillen functors induces a sequence of right adjoints between presentable∞-
-categories
-L(scA∗-CAlg)→L(scA∗-AlgO)≃ CAlg(L(scA∗-Mod))→L(scA∗-Mod).
-that endows the presentable symmetric monoidal∞-categoryL(scA∗-Mod)
-with the structure of aΘ-category.
-Proof. On localizations, we obtain a sequence of conservative right adjoints
-that furthermore preserve geometric realizations, since these can be com-
-putedbythediagonalinthesimplicialdirection. Inparticular, L(scA∗-CAlg)
-and L(scA∗-AlgO) can be identified with∞-categories of modules for two
-monads on L(scA∗-Mod). In the second case, this is the E∞-monad and
-we obtain the middle equivalence. Both monads preserve sifted colimits by
-(the proof of) [BCN21, Prop. 5.17], so that the forgetful∞-functors pre-
-serve sifted colimits as well. Finally, the forgetful functorL(scA∗-CAlg)→
-L(scA∗-AlgO)≃ CAlg(L(scA∗-Mod)) also preserves coproducts, which are
-computed by (derived) tensor products.
-Finally, we define aΘ-structure on QCoh(F ) simply by pull-back along
-the inclusion QCoh(F )⊂L(scA∗-Mod)
-L(scA∗-CAlg) // CAlg(L(scA∗-Mod)) //L(scA∗-Mod)
-Θ-CAlg(QCoh(F )) //
-OO
-CAlg(QCoh(F )) //
-OO
-QCoh(F ),
-OO
-17
-where each square above is cartesian. Using Lemma 2.2 and the fact that
-QCoh(F )⊂L(scA∗-Mod) is closed under colimits, one sees that this indeed
-defines a Θ-structure. We will writeQCohLSym(F ) for this Θ-structure and
-refer to it as theLSym Θ-structure. We leave it to the reader to construct
-functorialities inF to provide a well defined∞-functor F7→ QCohLSym(F )
-from small stacks toΘ-categories.
-Remark2.3. Onecanalsogiveamoreintrinsicdescriptionof QCohLSym(F ),
-as follows. Let LSym-CAlg(k) denote the ∞-category of LSym-algebras
-over k, that is, algebras for theLSym-monad on QCoh(k) induced by the
-symmetric algebra monad on flat k-modules by right-left extension (see
-[BCN21,Rak20]). This comes with a forgetful functor LSym-CAlg(k) →
-k-CAlg to E∞-algebras over Z that preserves limits and colimits (sifted col-
-imits and tensor products).
-For each discretek-algebra A, we then have a natural sequence of right
-adjoint forgetful functors
-A/LSym-CAlg(k)→A/k-CAlg→A-Mod(QCoh(k))≃ QCoh(A)
-depending functorially onA. Since the first functor preserves colimits and
-A/k-CAlg≃ CAlg(QCoh(A)) by [Lur22, Cor. 3.4.1.7], this determines aΘ-
-structure onQCoh(A), equivalent to the LSymΘ-structure considered above.
-Using this, we obtain a functorQCohLSym : Affop
-k →∞ -CatΘ
-pr satisfying fpqc
-descent (since QCoh does). For each cardinalκ, we then define
-QCohLSym : Stκ−small,op
-k →∞ -CatΘ
-pr
-to be the unique extension preservingκ-small limits (using Remark 1.6).
-We now turn to the case of ind-perfect complexes. For theΘ-structure on
-dPerf(F ), we will need a slight modification of the previous construction. For
-this, we letP⊂ scA∗-Mod be the full sub-category of objectsM satisfying
-the following conditions.
-(1) The objectM is cofibrant.
-(2) For anyi∈ I, Tot⊕(Mi) defines a compact object in QCoh(Ai) and
-moreover for anyi→j the induced morphismAj⊗AiMi→Mj is an
-equivalence of simplicial-cosimplicialAj-modules.
-The localization of P along its weak equivalences is equivalent, via the
-canonical inclusion, toPerf(F )⊂ QCoh(F )⊂L(scA∗-Mod).
-18
-For any integern≥ 0 we have an endofunctorΘn : P→ P sending M
-to its genuinen-th symmetric power (M⊗n)Σn. This defines an N-graded
-object in the categoryFun(P, P), that is, a functor
-Θ∗ : N→ Fun(P, P),
-where N is the discrete category of natural numbers. The functor Θ∗ is
-moreover an N-graded monad, or equivalently,Θ∗ : N→ Fun(P, P) admits a
-natural structure of a lax monoidal functor, where the monoidal structure
-on N is given by the multiplication and the monoidal structure onFun(P, P)
-is the composition of endo-functors. The lax monoidal structure is given by
-the natural morphisms
-Θm(Θn(M∗)) = ((M⊗n
-∗ )Σn)⊗m
-Σm≃ (M⊗nm
-∗ )Σn⋉Σ×n
-m
-−→(M⊗nm
-∗ )Σnm
-induced by the canonical mapΣn ⋉Σ×n
-m → Σnm. The graded monadΘ∗ will
-be denoted byLSym∗.
-Similarly, any cofibrant simplicial operadO such thatO(k)hΣk has the
-homotopy type of a finite CW complex gives rise to anN-graded monad
-Sym∗
-O : N→ Fun(P, P)
-by sendingn to (O(n)⊗ (−)⊗n)hΣn. The finiteness condition onO implies
-that each endofunctor(O(n)⊗(−)⊗n)hΣn preserves the sub-categoryP. The
-lax monoidal structure on Sym∗
-O is the usual one and endowsSym∗
-O with
-the structure of a graded monad overP. Moreover, the canonical projection
-O→∗ to the terminal simplicial operad (which is not cofibrant anymore),
-produces a canonical morphism of graded monads
-Sym∗
-O→ LSym∗.
-We now apply this to cofibrant models for theEn-operads, and obtain a
-sequence of morphisms of graded monads onP
-Id = Sym∗
-E0→···→ Sym∗
-En→ Sym∗
-En+1→···→ LSym∗. (S)
-These monads preserve the weak equivalences onP, so that they induce a
-sequence of morphisms of graded monads on the localizationPerf(F ). We
-thus obtain a sequence (S) in the∞-category of lax monoidal∞-functors
-N→ Fun(Perf(F ), Perf(F )),
-19
-from the multiplicative monoidN to the monoidal∞-category of endo-∞-
-functorsof Perf(F ). Nowrecallthatthereisacanonicalfullmonoidalembed-
-ding Fun(Perf(F ), Perf(F )),→ Fun(dPerf(F ),dPerf(F )), whose essential image
-consists of filtered colimit preserving∞-functors that also preserve compact
-objects. We can therefore identify the sequence (S) with a sequence in the
-∞-category of graded monads ondPerf(F ). Taking the sum overN, we get a
-sequence of monoids inFun(dPerf(F ),dPerf(F ))
-Id→···→ SymEn→ SymEn+1→···→ LSym
-whose colimit provides the desired morphism of monads ondPerf(F )
-Sym = colimnSymEn→ LSym.
-Note that Sym is identified with the E∞-monad, and therefore the ∞-
-categories of algebras and their forgetful∞-functors
-LModLSym(dPerf(F ))→ LModSym(dPerf(F ))→ dPerf(F )
-defines a Θ-structure ondPerf(F ).
-We have thus constructed aΘ-category, denoted bydPerfLSym(F ), with
-underlying symmetric monoidal∞-category equivalent todPerf(F ). We leave
-it to the reader that this can be made functorial inF and provides a well
-defined∞-functor
-dPerfLSym(−) : Stsmall
-k →∞ -CatΘ
-pr
-fromsmallstacksto Θ-categories. Thecanonicalfunctor dPerf(F )→ QCoh(F )
-can be lifted to a morphism ofΘ-categories
-dPerfLSym(F )→ QCohLSym(F ).
-Note that this comparison map is an equivalence whenever the stackF ≃
-SpecA is affine.
-Definition 2.4. Let F be a small stack overk. We define the LSym Θ-
-categories of quasi-coherentand ind-perfect complexes on F to be the Θ-
-categories QCohLSym(F ) and dPerfLSym(F ) constructed above.
-For each stackF∈ Stk, theΘ-categories QCohLSym(F ) and dPerfLSym(F )
-are equipped with a natural map fromdPerfLSym(k)≃ QCohLSym(k). They
-thus acquire a naturalk-linear structure in the following sense.
-20
-Definition 2.5.We define ak-linear Θ-categoryto be a map ofΘ-categories
-dPerfLSym(k)≃ QCohLSym(k)→T Θ. We will write
-k/∞-CatΘ
-pr := dPerfLSym(k)/∞-CatΘ
-pr
-for the (2,∞)-category ofk-linear Θ-categories.
-Lemma 2.6. The underlying∞-categoryT of ak-linear Θ-categoryT Θ is
-a stable presentable∞-category.
-Proof. The underlying symmetric monoidal∞-functor u: QCoh(k)→T in-
-duces a natural tensored structure ofT over QCoh(k) by the simple formula
-E⊗x :=u(E)⊗x, forE∈ QCoh(k). As QCoh(k)is stable, this automatically
-implies the stability ofT.
-2.2 Tannakian Θ-categories and Tannakian gerbes
-For the sake of simplicity we will only deal with the neutral case in the
-present work.
-Definition 2.7. A neutralized k-linear Tannakian Θ-category is a map of
-k-linear Θ-categories
-ω : T Θ−→dPerfLSym(k)≃ QCohLSym(k)
-satisfying the following conditions.
-(T1) Theunderlyingpresentablesymmetricmonoidal ∞-categoryT is"rigid":
-it is compactly generated and compact objects inT coincide with du-
-alizable objects.
-(T2) The underlying∞-functorω : T→ dPerf(k)≃ QCoh(k) is conservative.
-(T3) Let QCoh(k)≤0⊂ QCoh(k) denote the full sub-∞-category of connec-
-tive objects. The full sub-∞-category ω−1(QCoh(k)≤0)⊂ T then de-
-fines the connective part of a bounded (on compact objects)t-structure
-on T for whichω becomes t-exact.
-Let us writek/∞-CatΘ
-pr/k :=
- 
-k/∞-CatΘ
-pr
-
-QCohLSym(k) for the (2,∞)-
-category ofk-linear Θ-categories over QCohLSym(k) and
-k-TanΘ
-∗ ⊆k/∞-CatΘ
-pr/k
-for the full sub-(2,∞)-category on the neutralized k-linear Tannakian Θ-
-categories. Here the "∗" refers to the neutralized assumption. As ω is
-conservative, the(2,∞)-category k-TanΘ
-∗ is in fact a(1,∞)-category.
-21
-Definition 2.8. A pointed (or neutralized) Tannakian gerbe over k is a
-pointed stackF∈∗/Stk satisfying the following conditions.
-(G1) The natural morphism of fpqc-sheaves∗→ π0(F ) is an isomorphism.
-(G2) The stackF is pointed Q-local: for any morphism of pointed and con-
-nected stacksu: G1→G2 whose induced∞-functoru∗ : QCoh(G2)→
-QCoh(G1) is an equivalence, the induced morphism in mapping spaces
-u∗ : MapStk(G2,F )→ MapStk(G1,F )
-is an equivalence.
-(G3) There exists a coconnectivek-linear LSym-algebra B and an equiva-
-lence
-SpecB≃ Ω∗F
-(see [Toe06] for the notion of spectrum of coconnectiveLSym-algebras
-and the theory of affine stacks). Moreover, B is of positive Tor-
-dimension (also called connectively flat): ifE is a coconnective object
-in QCoh(k), thenE⊗kB remains coconnective.
-(G4) The k-linear Θ-functor ω : dPerfLSym(F )→ dPerfLSym(k), obtained by
-pull-back along the base point∗→ F, makesdPerfLSym(F ) into a Tan-
-nakian Θ-category.
-We will writek-Gerb∗⊂∗/Stk for the full sub-∞-category on the pointed
-Tannakian gerbes overk.
-LetT Θ be ak-linear Θ-category. For a commutativek-algebraA, we set
-FibLSym(T Θ)(A) := Mapk/∞-CatΘ
-pr
-(T, QCohLSym(A)).
-Since QCohLSym defines an fpqc-stack ofk-linear Θ-categories, varyingA in-
-sidethecategoryofcommutative k-algebrasyieldsanfpqc-stack FibLSym(T Θ),
-called thestack of Θ-fiber functors onT Θ. This is part of an adjunction
-FibLSym : k/∞-CatΘ
-pr
-// Stop
-k : QCohLSym.oo
-Indeed, since QCohLSym satisfies fpqc descent, there is a natural equivalence
-for F∈ Stk and T Θ∈k/∞-CatΘ
-pr
-Mapk/∞-CatΘ
-pr
-(T Θ, QCohLSym(F ))≃ MapStk(F, FibLSym(T Θ)).
-22
-In particular, we have adjunction morphisms
-βT Θ : T Θ→ QCohLSym 
-FibLSym(T Θ)
-
-F→ FibLSym 
-QCohLSym(F )
-
-.
-Thesecondmorphism, composedwiththecanonicalmorphism dPerfLSym(F )→
-QCohLSym(F ), induces a morphism
-αF : F→ FibLSym dPerfLSym(F )
-
-.
-This extends naturally to the neutralized, or pointed, situation as follows.
-Let us writeFibLSym
-∗ (T Θ)⊂ FibLSym(T Θ) for the full sub-stack consisting of
-all fiber functors locally equivalent toω : T Θ → QCohLSym(k). This full
-sub-stack can also be written
-FibLSym
-∗ (T Θ)≃BautΘ(ω)⊂ FibLSym(T Θ)
-whereautΘ(ω)isthestackof Θ-auto-equivalencesof ω. Thestack FibLSym
-∗ (T Θ)
-is connected (by definition) and canonically pointed atω. Note that anyΘ-
-endomorphism ofω is also a self-equivalence, as a consequence of the rigidity
-condition (T1).
-Similarly, if x:∗ →F is a pointed connected stack, we can identify
-QCohLSym(F ) with an object ink/∞-CatΘ
-pr/k using its canonical fiber func-
-tor at the basepointx∗ : QCohLSym(F )→ QCohLSym(k). This yields a similar
-adjunction
-FibLSym
-∗ : k/∞-CatΘ
-pr/k // (∗/Stcn
-k )op : QCohLSym
-oo
-where∗/Stcn
-k denotes the∞-category of pointed connected stacks. Using
-the unit and counit of this adjunction, together with natural morphism
-dPerfLSym→ QCohLSym(F ), we obtain two canonical morphisms
-βT Θ : T Θ→ QCohLSym(FibLSym
-∗ (T Θ)) αF : F→ FibLSym
-∗ (dPerfLSym(F ))
-The Tannakian duality investigated in the next chapter ensures thatβ
-andαaresomehow equivalenceswhen T Θ isTannakianand F isaTannakian
-gerbe. We will only have partial answers, but we refer to Remarks 2.13 and
-2.15 for some indications of how better results can be obtained.
+For a commutative $k$-algebra $A$, we consider $\mathsf{QCoh}(\mathbf{Spec}\, A)$, also denoted by $\mathsf{QCoh}(A)$, the symmetric monoidal $\infty$-category of complexes of $A$-modules. When $A$ varies in commutative $k$-algebras this defines an fpqc-stack in presentable symmetric monoidal $\infty$-categories $$\mathsf{QCoh}\colon \mathbf{Aff}_k^{op} \longrightarrow \infty\text{-}\mathbf{Cat}_{pr}^\otimes.$$ We will need a slight modification of the stack $\mathsf{QCoh}$, which involves ind-perfect complexes. For any small stack $F$, the dualizable objects in the symmetric monoidal $\infty$-category $\mathsf{QCoh}(F)$ are the perfect complexes, whose $\infty$-category will be denoted $\mathsf{Perf}(F)$. It comes equipped with the restriction of the symmetric monoidal structure of $\mathsf{QCoh}(F)$, and as such forms a small, stable symmetric monoidal $\infty$-category.
+
+::: df
+The *presentable symmetric monoidal $\infty$-category of ind-perfect complexes on $F$* is the ind-completion of $\mathsf{Perf}(F)$. It is denoted by $$\widehat{\mathsf{Perf}}(F):=\mathsf{Ind}(\mathsf{Perf}(F)).$$
+:::
+
+For any small stack $F \in \mathbf{St}_k$ we have a natural adjunction of presentable symmetric monoidal $\infty$-categories $$\widehat{\mathsf{Perf}}(F) \leftrightarrows \mathsf{QCoh}(F),$$ where the left adjoint is the canonical extension by filtered colimits of the inclusion $\mathsf{Perf}(F)\subset \mathsf{QCoh}(F)$. When $X=\mathbf{Spec}\, A$ is an affine $k$-scheme, or more generally a quasi-compact and quasi-separated $k$-scheme, then the perfect complexes are compact generators of $\mathsf{QCoh}(X)$, and thus the above adjunction is an equivalence. However, we warn the reader that for a general stack, even representable by a nice Artin stack, perfect complexes might not even be compact objects in quasi-coherent complexes. In general, the natural $\infty$-functor $\widehat{\mathsf{Perf}}(F) \to \mathsf{QCoh}(F)$ is therefore neither fully faithful nor essentially surjective.\
+We want to enhance the two $\infty$-functors $F \mapsto \widehat{\mathsf{Perf}}(F)$ and $F \mapsto \mathsf{QCoh}(F)$ from small stacks to $\infty\text{-}\mathbf{Cat}_{pr}^\otimes$, to $\infty$-functors to $\infty\text{-}\mathbf{Cat}_{pr}^\Theta$. This is straightforward for quasi-coherent complexes (see Remark [\[r-2-1\]](#r-2-1){reference-type="ref" reference="r-2-1"} below), but more involved for ind-perfect complexes because the (L)Sym-monad does not preserve perfect complexes. We will therefore construct explicit models for these symmetric monoidal $\infty$-categories with strict representatives of the involved monads. A more intrinsic approach should follow from the techniques of [@raksit2020 §4.2].
+
+We let $X_*\colon I \to \mathbf{Aff}_k$ be a small diagram of affine $k$-schemes over $F$ such that the canonical morphism $\mathrm{colim}_{i\in I}X_i \to F$ is an equivalence. Dually, this yields a diagram of (discrete) commutative $k$-algebras $A_* \colon I^{op} \to k\text{-}\mathsf{CAlg}^{\ensuremath\heartsuit}$. This diagram can be seen as a commutative algebra object in the ((1, 1)-) category of presheaves of abelian groups $\mathsf{Fun}(I^{op},\mathsf{Ab})$, so that we can consider the abelian category $A_*\text{-}\mathsf{Mod}$ of presheaves of $A_*$-modules. Recall that an object $M$ in $A_*\text{-}\mathsf{Mod}$ consists of $A_i$-modules $M_i$ for all $i \in I$, and morphisms $u^* \colon A_j \otimes_{A_i}M_i \to M_j$ of $A_j$-modules for all $u \colon j \to i$ in $I$, satisfying the usual compatibilities with compositions and identity in $I$. The abelian category $A_*\text{-}\mathsf{Mod}$ possesses enough projective objects: these are the direct sums of free $A_*$-modules $F(i)$ on objects $i \in I$, characterized by the functorial bijection $\mathit{Hom}(F(i),M) \simeq M_i$. They can also be written more explicitly as $F(i)(j) = \bigoplus_{j \to i}A_j$ for $j\in I$.
+
+We let $scA_*\text{-}\mathsf{Mod}$ be the category of simplicial-cosimplicial objects in the abelian category $A_*\text{-}\mathsf{Mod}$. As explained in [@Joostsc] the category $scA_*\text{-}\mathsf{Mod}$ is endowed with a model category structure whose weak equivalences are induced by the totalization functor to presheaves of cochain complexes of abelian groups $$Tot^\oplus \colon scA_*\text{-}\mathsf{Mod}\longrightarrow \mathsf{Fun}(I^{op},C(\mathbb{Z})).$$ The fibrations are the levelwise fibrations of simplicial-cosimplicial abelian groups of [@Joostsc Defn. 5.2]. A set of generating cofibrations is given by the family of morphisms $F(i)\otimes_\mathbb{Z}E \to F(i)\otimes_\mathbb{Z}E'$ where $i$ varies in $I$ and $E \to E'$ is a generating cofibration of the model category of simplicial-cosimplicial abelian groups (see proof of [@Joostsc Thm. 5.5]). We note in particular that the evaluation functor at $i \in I$, $scA_*\text{-}\mathsf{Mod}\to scA_i\text{-}\mathsf{Mod}$ preserves cofibrations and trivial cofibrations.
+
+Let $L(scA_*\text{-}\mathsf{Mod})$ be the $\infty$-category obtained from $scA_*\text{-}\mathsf{Mod}$ by inverting the weak equivalences. The $\infty$-category $L(scA_*\text{-}\mathsf{Mod})$ is presentable and closed symmetric monoidal, and is equivalent to the lax limit of the diagram $i \mapsto \mathsf{QCoh}(A_i)$ (see e.g. [@Harpaz]). The limit of this diagram, $\mathsf{QCoh}(F)$, sits as a full symmetric monoidal sub-$\infty$-category in $L(scA_*\text{-}\mathsf{Mod})$: it consists precisely of objects $M$ such that for any morphism $j \to i$ in $I$ the induced morphism $$A_j\otimes^{\mathbb{L}}_{A_i}M_i \to M_j$$ is an equivalence of simplicial-cosimplicial modules (i.e. a quasi-isomorphism on the corresponding $Tot^\oplus$).
+
+Let us now consider the category $scA_*\text{-}\mathsf{CAlg}$ of strictly commutative simplicial-cosimplicial $A_*$-algebras, together with its natural forgetful functor $scA_*\text{-}\mathsf{CAlg}\to scA_*\text{-}\mathsf{Mod}$. We can lift the (semi-)model category structure along this forgetful functor, which now becomes a right Quillen functor preserving all weak equivalences. It induces a right adjoint $\infty$-functor between presentable $\infty$-categories $$L(scA_*\text{-}\mathsf{CAlg}) \to L(scA_*\text{-}\mathsf{Mod}).$$ Similarly, if $\mathcal{O}$ is a cofibrant model for the simplicial $E_\infty$-operad we can consider $\mathcal{O}$-algebras inside $scA_*\text{-}\mathsf{Mod}$, together with its natural (semi-)model category structure lifted from the forgetful functor $scA_*\text{-}\mathsf{Alg}^\mathcal{O}\to scA_*\text{-}\mathsf{Mod}$. The canonical projection $\mathcal{O}\to *$ to the terminal operad provides a factorization of (right Quillen) forgetful functors $$scA_*\text{-}\mathsf{CAlg}\to scA_*\text{-}\mathsf{Alg}^\mathcal{O}\to scA_*\text{-}\mathsf{Mod}.$$
+
+::: lem
+[]{#l-2-1 label="l-2-1"} Upon inverting weak equivalences, the above sequence of right Quillen functors induces a sequence of right adjoints between presentable $\infty$-categories $$L(scA_*\text{-}\mathsf{CAlg}) \to L(scA_*\text{-}\mathsf{Alg}^\mathcal{O})\simeq \mathsf{CAlg}(L(scA_*\text{-}\mathsf{Mod})) \to L(scA_*\text{-}\mathsf{Mod}).$$ that endows the presentable symmetric monoidal $\infty$-category $L(scA_*\text{-}\mathsf{Mod})$ with the structure of a $\Theta$-category.
+:::
+
+::: proof
+*Proof.* On localizations, we obtain a sequence of conservative right adjoints that furthermore preserve geometric realizations, since these can be computed by the diagonal in the simplicial direction. In particular, $L(scA_*\text{-}\mathsf{CAlg})$ and $L(scA_*\text{-}\mathsf{Alg}^\mathcal{O})$ can be identified with $\infty$-categories of modules for two monads on $L(scA_*\text{-}\mathsf{Mod})$. In the second case, this is the $E_\infty$-monad and we obtain the middle equivalence. Both monads preserve sifted colimits by (the proof of) [@Joostsc Prop. 5.17], so that the forgetful $\infty$-functors preserve sifted colimits as well. Finally, the forgetful functor $L(scA_*\text{-}\mathsf{CAlg}) \to L(scA_*\text{-}\mathsf{Alg}^\mathcal{O})\simeq \mathsf{CAlg}(L(scA_*\text{-}\mathsf{Mod}))$ also preserves coproducts, which are computed by (derived) tensor products. ◻
+:::
+
+Finally, we define a $\Theta$-structure on $\mathsf{QCoh}(F)$ simply by pull-back along the inclusion $\mathsf{QCoh}(F) \subset
+L(scA_*\text{-}\mathsf{Mod})$ $$\xymatrix{
+L(scA_*\text{-}\mathsf{CAlg}) \ar[r] &  \mathsf{CAlg}(L(scA_*\text{-}\mathsf{Mod})) \ar[r] &  L(scA_*\text{-}\mathsf{Mod}) \\
+\Theta\text{-}\mathsf{CAlg}(\mathsf{QCoh}(F)) \ar[r] \ar[u] & \mathsf{CAlg}(\mathsf{QCoh}(F)) \ar[r] \ar[u] & \mathsf{QCoh}(F), \ar[u]
+}$$ where each square above is cartesian. Using Lemma [\[l-2-1\]](#l-2-1){reference-type="ref" reference="l-2-1"} and the fact that $\mathsf{QCoh}(F)\subset L(scA_*\text{-}\mathsf{Mod})$ is closed under colimits, one sees that this indeed defines a $\Theta$-structure. We will write $\mathsf{QCoh}^{\mathrm{LSym}}(F)$ for this $\Theta$-structure and refer to it as the *LSym $\Theta$-structure*. We leave it to the reader to construct functorialities in $F$ to provide a well defined $\infty$-functor $F \mapsto \mathsf{QCoh}^{\mathrm{LSym}}(F)$ from small stacks to $\Theta$-categories.
+
+::: rmk
+[]{#r-2-1 label="r-2-1"} One can also give a more intrinsic description of $\mathsf{QCoh}^{\mathrm{LSym}}(F)$, as follows. Let $\mathrm{LSym}\text{-}\mathsf{CAlg}(k)$ denote the $\infty$-category of $\mathrm{LSym}$-algebras over $k$, that is, algebras for the $\mathrm{LSym}$-monad on $\mathsf{QCoh}(k)$ induced by the symmetric algebra monad on flat $k$-modules by right-left extension (see [@Joostsc; @raksit2020]). This comes with a forgetful functor $\mathrm{LSym}\text{-}\mathsf{CAlg}(k)\to k\text{-}\mathsf{CAlg}$ to $E_\infty$-algebras over $\mathbb{Z}$ that preserves limits and colimits (sifted colimits and tensor products).
+
+For each discrete $k$-algebra $A$, we then have a natural sequence of right adjoint forgetful functors $$A/\mathrm{LSym}\text{-}\mathsf{CAlg}(k)\to A/k\text{-}\mathsf{CAlg}\to A\text{-}\mathsf{Mod}(\mathsf{QCoh}(k))\simeq \mathsf{QCoh}(A)$$ depending functorially on $A$. Since the first functor preserves colimits and $A/k\text{-}\mathsf{CAlg}\simeq \mathsf{CAlg}(\mathsf{QCoh}(A))$ by [@HA Cor. 3.4.1.7], this determines a $\Theta$-structure on $\mathsf{QCoh}(A)$, equivalent to the LSym $\Theta$-structure considered above. Using this, we obtain a functor $\mathsf{QCoh}^{\mathrm{LSym}}\colon \mathbf{Aff}_k^{op}\to \infty\text{-}\mathbf{Cat}_{pr}^\Theta$ satisfying fpqc descent (since $\mathsf{QCoh}$ does). For each cardinal $\kappa$, we then define $$\mathsf{QCoh}^{\mathrm{LSym}}\colon \mathbf{St}_k^{\kappa-small, op} \to \infty\text{-}\mathbf{Cat}_{pr}^\Theta$$ to be the unique extension preserving $\kappa$-small limits (using Remark [\[r-1-3\]](#r-1-3){reference-type="ref" reference="r-1-3"}).
+:::
+
+We now turn to the case of ind-perfect complexes. For the $\Theta$-structure on $\widehat{\mathsf{Perf}}(F)$, we will need a slight modification of the previous construction. For this, we let $\mathbb{P} \subset scA_*\text{-}\mathsf{Mod}$ be the full sub-category of objects $M$ satisfying the following conditions.
+
+1.  The object $M$ is cofibrant.
+
+2.  For any $i \in I$, $Tot^\oplus(M_i)$ defines a compact object in $\mathsf{QCoh}(A_i)$ and moreover for any $i \to j$ the induced morphism $A_j \otimes_{A_i}M_i \to M_j$ is an equivalence of simplicial-cosimplicial $A_j$-modules.
+
+The localization of $\mathbb{P}$ along its weak equivalences is equivalent, via the canonical inclusion, to $\mathsf{Perf}(F) \subset \mathsf{QCoh}(F) \subset L(scA_*\text{-}\mathsf{Mod})$.
+
+For any integer $n\geq 0$ we have an endofunctor $\Theta_n \colon \mathbb{P} \to \mathbb{P}$ sending $M$ to its genuine $n$-th symmetric power $(M^{\otimes n})_{\Sigma_n}$. This defines an $\mathbb{N}$-graded object in the category $\mathsf{Fun}(\mathbb{P},\mathbb{P})$, that is, a functor $$\Theta_* \colon \mathbb{N}\to \mathsf{Fun}(\mathbb{P},\mathbb{P}),$$ where $\mathbb{N}$ is the discrete category of natural numbers. The functor $\Theta_*$ is moreover an $\mathbb{N}$-graded monad, or equivalently, $\Theta_* \colon \mathbb{N}\to \mathsf{Fun}(\mathbb{P},\mathbb{P})$ admits a natural structure of a lax monoidal functor, where the monoidal structure on $\mathbb{N}$ is given by the multiplication and the monoidal structure on $\mathsf{Fun}(\mathbb{P},\mathbb{P})$ is the composition of endo-functors. The lax monoidal structure is given by the natural morphisms $$\Theta_m(\Theta_n(M_*)) = ((M_*^{\otimes n})_{\Sigma_n})^{\otimes m}_{\Sigma_m} \simeq (M_*^{\otimes nm})_{\Sigma_n \ltimes \Sigma^{\times n}_m} \longrightarrow
+(M^{\otimes nm}_*)_{\Sigma_{nm}}$$ induced by the canonical map $\Sigma_n \ltimes \Sigma^{\times n}_m \to \Sigma_{nm}$. The graded monad $\Theta_*$ will be denoted by $\mathrm{LSym}^*$.
+
+Similarly, any cofibrant simplicial operad $\mathcal{O}$ such that $\mathcal{O}(k)_{h\Sigma_k}$ has the homotopy type of a finite CW complex gives rise to an $\mathbb{N}$-graded monad $$\mathrm{Sym}^*_\mathcal{O}\colon \mathbb{N}\to \mathsf{Fun}(\mathbb{P},\mathbb{P})$$ by sending $n$ to $(\mathcal{O}(n)\otimes (-)^{\otimes n})_{h\Sigma_n}$. The finiteness condition on $\mathcal{O}$ implies that each endofunctor $(\mathcal{O}(n)\otimes (-)^{\otimes n})_{h\Sigma_n}$ preserves the sub-category $\mathbb{P}$. The lax monoidal structure on $\mathrm{Sym}^*_\mathcal{O}$ is the usual one and endows $\mathrm{Sym}^*_\mathcal{O}$ with the structure of a graded monad over $\mathbb{P}$. Moreover, the canonical projection $\mathcal{O}\to *$ to the terminal simplicial operad (which is not cofibrant anymore), produces a canonical morphism of graded monads $$\mathrm{Sym}^*_\mathcal{O}\to \mathrm{LSym}^*.$$
+
+We now apply this to cofibrant models for the $E_n$-operads, and obtain a sequence of morphisms of graded monads on $\mathbb{P}$ $$\tag{S} Id = \mathrm{Sym}_{E_0}^*\to \dots \to \mathrm{Sym}_{E_n}^* \to \mathrm{Sym}^*_{E_{n+1}} \to \dots \to \mathrm{LSym}^*.$$ These monads preserve the weak equivalences on $\mathbb{P}$, so that they induce a sequence of morphisms of graded monads on the localization $\mathsf{Perf}(F)$. We thus obtain a sequence (S) in the $\infty$-category of lax monoidal $\infty$-functors $$\mathbb{N}\to \mathsf{Fun}(\mathsf{Perf}(F),\mathsf{Perf}(F)),$$ from the multiplicative monoid $\mathbb{N}$ to the monoidal $\infty$-category of endo-$\infty$-functors of $\mathsf{Perf}(F)$. Now recall that there is a canonical full monoidal embedding $\mathsf{Fun}(\mathsf{Perf}(F),\mathsf{Perf}(F)) \hookrightarrow \mathsf{Fun}(\widehat{\mathsf{Perf}}(F),\widehat{\mathsf{Perf}}(F))$, whose essential image consists of filtered colimit preserving $\infty$-functors that also preserve compact objects. We can therefore identify the sequence (S) with a sequence in the $\infty$-category of graded monads on $\widehat{\mathsf{Perf}}(F)$. Taking the sum over $\mathbb{N}$, we get a sequence of monoids in $\mathsf{Fun}(\widehat{\mathsf{Perf}}(F),\widehat{\mathsf{Perf}}(F))$ $$Id \to \dots \to \mathrm{Sym}_{E_n} \to \mathrm{Sym}_{E_{n+1}} \to \dots \to \mathrm{LSym}$$ whose colimit provides the desired morphism of monads on $\widehat{\mathsf{Perf}}(F)$ $$\mathrm{Sym}= \mathrm{colim}_n \mathrm{Sym}_{E_n} \to \mathrm{LSym}.$$ Note that $\mathrm{Sym}$ is identified with the $E_\infty$-monad, and therefore the $\infty$-categories of algebras and their forgetful $\infty$-functors $$\mathsf{LMod}_{\mathrm{LSym}}(\widehat{\mathsf{Perf}}(F)) \to \mathsf{LMod}_{\mathrm{Sym}}(\widehat{\mathsf{Perf}}(F)) \to \widehat{\mathsf{Perf}}(F)$$ defines a $\Theta$-structure on $\widehat{\mathsf{Perf}}(F)$.
+
+We have thus constructed a $\Theta$-category, denoted by $\widehat{\mathsf{Perf}}{}^{\mathrm{LSym}}(F)$, with underlying symmetric monoidal $\infty$-category equivalent to $\widehat{\mathsf{Perf}}(F)$. We leave it to the reader that this can be made functorial in $F$ and provides a well defined $\infty$-functor $$\widehat{\mathsf{Perf}}{}^{\mathrm{LSym}}(-) : \mathbf{St}^{small}_k \to \infty\text{-}\mathbf{Cat}_{pr}^\Theta$$ from small stacks to $\Theta$-categories. The canonical functor $\widehat{\mathsf{Perf}}(F)\to \mathsf{QCoh}(F)$ can be lifted to a morphism of $\Theta$-categories $$\widehat{\mathsf{Perf}}{}^{\mathrm{LSym}}(F) \to \mathsf{QCoh}^{\mathrm{LSym}}(F).$$ Note that this comparison map is an equivalence whenever the stack $F\simeq \mathbf{Spec}\; A$ is affine.
+
+::: df
+Let $F$ be a small stack over $k$. We define the *LSym $\Theta$-categories of quasi-coherent* and *ind-perfect complexes* on $F$ to be the $\Theta$-categories $\mathsf{QCoh}^{\mathrm{LSym}}(F)$ and $\widehat{\mathsf{Perf}}{}^{\mathrm{LSym}}(F)$ constructed above.
+:::
+
+For each stack $F\in \mathbf{St}_k$, the $\Theta$-categories $\mathsf{QCoh}^{\mathrm{LSym}}(F)$ and $\widehat{\mathsf{Perf}}{}^{\mathrm{LSym}}(F)$ are equipped with a natural map from $\widehat{\mathsf{Perf}}{}^{\mathrm{LSym}}(k)\simeq\mathsf{QCoh}^{\mathrm{LSym}}(k)$. They thus acquire a natural $k$-linear structure in the following sense.
+
+::: df
+[]{#d-2-1 label="d-2-1"} We define a *$k$-linear $\Theta$-category* to be a map of $\Theta$-categories $\widehat{\mathsf{Perf}}{}^{\mathrm{LSym}}(k)\simeq \mathsf{QCoh}^{\mathrm{LSym}}(k)\to T^{\Theta}$. We will write $$k / \infty\text{-}\mathbf{Cat}_{pr}^\Theta:= \widehat{\mathsf{Perf}}{}^{\mathrm{LSym}}(k) / \infty\text{-}\mathbf{Cat}_{pr}^\Theta$$ for the $(2,\infty)$-category of $k$-linear $\Theta$-categories.
+:::
+
+::: lem
+The underlying $\infty$-category $T$ of a $k$-linear $\Theta$-category $T^\Theta$ is a stable presentable $\infty$-category.
+:::
+
+::: proof
+*Proof.* The underlying symmetric monoidal $\infty$-functor $u \colon \mathsf{QCoh}(k) \to T$ induces a natural tensored structure of $T$ over $\mathsf{QCoh}(k)$ by the simple formula $E \otimes x := u(E)\otimes x$, for $E \in \mathsf{QCoh}(k)$. As $\mathsf{QCoh}(k)$ is stable, this automatically implies the stability of $T$. ◻
+:::
+
+## Tannakian $\Theta$-categories and Tannakian gerbes
+
+For the sake of simplicity we will only deal with the neutral case in the present work.
+
+::: df
+A *neutralized $k$-linear Tannakian $\Theta$-category* is a map of $k$-linear $\Theta$-categories $$\omega\colon  T^\Theta \longrightarrow \widehat{\mathsf{Perf}}{}^{\mathrm{LSym}}(k)\simeq \mathsf{QCoh}^{\mathrm{LSym}}(k)$$ satisfying the following conditions.
+
+1.  The underlying presentable symmetric monoidal $\infty$-category $T$ is \"rigid\": it is compactly generated and compact objects in $T$ coincide with dualizable objects.
+
+2.  The underlying $\infty$-functor $\omega \colon T \to \widehat{\mathsf{Perf}}(k) \simeq \mathsf{QCoh}(k)$ is conservative.
+
+3.  Let $\mathsf{QCoh}(k)^{\leq 0}\subset \mathsf{QCoh}(k)$ denote the full sub-$\infty$-category of connective objects. The full sub-$\infty$-category $\omega^{-1}(\mathsf{QCoh}(k)^{\leq 0}) \subset T$ then defines the connective part of a bounded (on compact objects) $t$-structure on $T$ for which $\omega$ becomes $t$-exact.
+
+Let us write $k/\infty\text{-}\mathbf{Cat}_{pr}^\Theta/k := \big(k/\infty\text{-}\mathbf{Cat}_{pr}^\Theta\big)\big/\mathsf{QCoh}^{\mathrm{LSym}}(k)$ for the $(2,\infty)$-category of $k$-linear $\Theta$-categories over $\mathsf{QCoh}^{\mathrm{LSym}}(k)$ and $$k\text{-}\mathcal{T}an_*^\Theta \subseteq k/ \infty\text{-}\mathbf{Cat}_{pr}^\Theta/ k$$ for the full sub-$(2,\infty)$-category on the neutralized $k$-linear Tannakian $\Theta$-categories. Here the \"$*$\" refers to the neutralized assumption. As $\omega$ is conservative, the $(2,\infty)$-category $k\text{-}\mathcal{T}an_*^\Theta$ is in fact a $(1,\infty)$-category.
+:::
+
+::: df
+A *pointed* (or *neutralized*) *Tannakian gerbe* over $k$ is a pointed stack $F \in \ast/\mathbf{St}_k$ satisfying the following conditions.
+
+1.  The natural morphism of fpqc-sheaves $* \to \pi_0(F)$ is an isomorphism.
+
+2.  The stack $F$ is *pointed Q-local*: for any morphism of pointed and connected stacks $u \colon G_1 \to G_2$ whose induced $\infty$-functor $u^* \colon \mathsf{QCoh}(G_2) \to \mathsf{QCoh}(G_1)$ is an equivalence, the induced morphism in mapping spaces $$u^* \colon \mathbf{Map}_{\mathbf{St}_k}(G_2,F) \to \mathbf{Map}_{\mathbf{St}_k}(G_1,F)$$ is an equivalence.
+
+3.  There exists a coconnective $k$-linear $\mathrm{LSym}$-algebra $B$ and an equivalence $$\mathbf{Spec}\, B \simeq \Omega_*F$$ (see [@chaff] for the notion of spectrum of coconnective $\mathrm{LSym}$-algebras and the theory of affine stacks). Moreover, $B$ is of positive Tor-dimension (also called connectively flat): if $E$ is a coconnective object in $\mathsf{QCoh}(k)$, then $E \otimes_k B$ remains coconnective.
+
+4.  The $k$-linear $\Theta$-functor $\omega\colon \widehat{\mathsf{Perf}}{}^{\mathrm{LSym}}(F) \to \widehat{\mathsf{Perf}}{}^{\mathrm{LSym}}(k)$, obtained by pull-back along the base point $* \to F$, makes $\widehat{\mathsf{Perf}}{}^{\mathrm{LSym}}(F)$ into a Tannakian $\Theta$-category.
+
+We will write $k\text{-}\mathcal{G}erb_* \subset */\mathbf{St}_k$ for the full sub-$\infty$-category on the pointed Tannakian gerbes over $k$.
+:::
+
+Let $T^\Theta$ be a $k$-linear $\Theta$-category. For a commutative $k$-algebra $A$, we set $$\mathsf{Fib}^{\mathrm{LSym}}(T^\Theta)(A):=\mathbf{Map}_{k/\infty\text{-}\mathbf{Cat}_{pr}^\Theta}(T,\mathsf{QCoh}^{\mathrm{LSym}}(A)).$$ Since $\mathsf{QCoh}^{\mathrm{LSym}}$ defines an fpqc-stack of $k$-linear $\Theta$-categories, varying $A$ inside the category of commutative $k$-algebras yields an fpqc-stack $\mathsf{Fib}^{\mathrm{LSym}}(T^\Theta)$, called the *stack of $\Theta$-fiber functors on $T^\Theta$*. This is part of an adjunction $$\xymatrix{
+\mathsf{Fib}^{\mathrm{LSym}}\colon k/\infty\text{-}\mathbf{Cat}_{pr}^\Theta\ar@<1ex>[r] &  \mathbf{St}^{op}_k : \mathsf{QCoh}^{\mathrm{LSym}}.\ar@<1ex>[l]
+}$$ Indeed, since $\mathsf{QCoh}^{\mathrm{LSym}}$ satisfies fpqc descent, there is a natural equivalence for $F \in \mathbf{St}_k$ and $T^\Theta \in k/\infty\text{-}\mathbf{Cat}_{pr}^\Theta$ $$\mathbf{Map}_{k/\infty\text{-}\mathbf{Cat}_{pr}^\Theta}(T^\Theta,\mathsf{QCoh}^{\mathrm{LSym}}(F)) \simeq 
+\mathbf{Map}_{\mathbf{St}_k}(F,\mathsf{Fib}^{\mathrm{LSym}}(T^\Theta)).$$ In particular, we have adjunction morphisms $$\beta_{T^\Theta} \colon T^\Theta \to \mathsf{QCoh}^{\mathrm{LSym}}\big(\mathsf{Fib}^{\mathrm{LSym}}(T^\Theta)\big) \qquad
+F \to \mathsf{Fib}^{\mathrm{LSym}}\big(\mathsf{QCoh}^{\mathrm{LSym}}(F)\big).$$ The second morphism, composed with the canonical morphism $\widehat{\mathsf{Perf}}{}^{\mathrm{LSym}}(F) \to \mathsf{QCoh}^{\mathrm{LSym}}(F)$, induces a morphism $$\alpha_F \colon F \to \mathsf{Fib}^{\mathrm{LSym}}\big(\widehat{\mathsf{Perf}}{}^{\mathrm{LSym}}(F)\big).$$
+
+This extends naturally to the neutralized, or pointed, situation as follows. Let us write $\mathsf{Fib}_*^{\mathrm{LSym}}(T^\Theta) \subset \mathsf{Fib}^{\mathrm{LSym}}(T^\Theta)$ for the full sub-stack consisting of all fiber functors locally equivalent to $\omega \colon T^{\Theta} \to \mathsf{QCoh}^{\mathrm{LSym}}(k)$. This full sub-stack can also be written $$\mathsf{Fib}_*^{\mathrm{LSym}}(T^\Theta) \simeq B\underline{aut}^{\Theta}(\omega) \subset \mathsf{Fib}^{\mathrm{LSym}}(T^\Theta)$$ where $\underline{aut}^{\Theta}(\omega)$ is the stack of $\Theta$-auto-equivalences of $\omega$. The stack $\mathsf{Fib}_*^{\mathrm{LSym}}(T^\Theta)$ is connected (by definition) and canonically pointed at $\omega$. Note that any $\Theta$-endomorphism of $\omega$ is also a self-equivalence, as a consequence of the rigidity condition (T1).
+
+Similarly, if $x \colon * \to F$ is a pointed connected stack, we can identify $\mathsf{QCoh}^{\mathrm{LSym}}(F)$ with an object in $k/\infty\text{-}\mathbf{Cat}_{pr}^\Theta/k$ using its canonical fiber functor at the basepoint $x^* \colon \mathsf{QCoh}^{\mathrm{LSym}}(F) \to \mathsf{QCoh}^{\mathrm{LSym}}(k)$. This yields a similar adjunction $$\xymatrix{
+\mathsf{Fib}_\ast^{\mathrm{LSym}}\colon k/\infty\text{-}\mathbf{Cat}_{pr}^\Theta/k\ar@<1ex>[r] &  (\ast/\mathbf{St}^{cn}_k)^{op} : \mathsf{QCoh}^{\mathrm{LSym}}\ar@<1ex>[l]
+}$$ where $\ast/\mathbf{St}^{cn}_k$ denotes the $\infty$-category of pointed connected stacks. Using the unit and counit of this adjunction, together with natural morphism $\widehat{\mathsf{Perf}}{}^{\mathrm{LSym}} \to \mathsf{QCoh}^{\mathrm{LSym}}(F)$, we obtain two canonical morphisms $$\beta_{T^\Theta} \colon T^\Theta \to \mathsf{QCoh}^{\mathrm{LSym}}(\mathsf{Fib}_*^{\mathrm{LSym}}(T^\Theta))
+ \qquad\quad \alpha_F \colon F \to \mathsf{Fib}_*^{\mathrm{LSym}}(\widehat{\mathsf{Perf}}{}^{\mathrm{LSym}}(F))$$
+
+The Tannakian duality investigated in the next chapter ensures that $\beta$ and $\alpha$ are somehow equivalences when $T^\Theta$ is Tannakian and $F$ is a Tannakian gerbe. We will only have partial answers, but we refer to Remarks [\[r1\]](#r1){reference-type="ref" reference="r1"} and [\[r2\]](#r2){reference-type="ref" reference="r2"} for some indications of how better results can be obtained.

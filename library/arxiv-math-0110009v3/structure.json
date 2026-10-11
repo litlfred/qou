@@ -7,7 +7,10 @@
   "bytes": 227454,
   "pages": 26,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -17,17 +20,29 @@
    "stamp_date": "3 Sep 2003"
   },
   "doi": null,
-  "title": "New upper bounds on sphere packings I",
-  "authors_raw": "By Henry Cohn and Noam Elkies *",
+  "title": "arXiv:math/0110009v3 [math.MG] 3 Sep 2003",
+  "authors_raw": "By Henry Cohn and Noam Elkies*",
   "title_lines": [
    "New upper bounds on sphere packings I"
   ],
-  "abstract": "We develop an analogue for sphere packing of the linear progr amming bounds for error-correcting codes, and use it to prove upper bounds for the density of sphere packings, which are the best bounds known a t least for di- mensions 4 through 36. We conjecture that our approach can be used to solve the sphere packing problem in dimensions 8 and 24.",
+  "abstract": "We develop an analogue for sphere packing of the linear programming bounds for error-correcting codes, and use it to prove upper bounds for the density of sphere packings, which are the best bounds known at least for di- mensions 4 through 36. We conjecture that our approach can be used to solve the sphere packing problem in dimensions 8 and 24.",
   "docinfo": {
+   "Title": "arXiv:math/0110009v3  [math.MG]  3 Sep 2003",
    "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20241126163421-05'00'",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:math/0110009v3  [math.MG]  3 Sep 2003"
+   "CreationDate": "D:20241126163421-05'00'"
+  },
+  "title_raw": "New upper bounds on sphere packings I",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math/0110009v3 [math.MG] 3 Sep 2003",
+   "heading": "New upper bounds on sphere packings I",
+   "text": "New upper bounds on sphere packings I",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -36,95 +51,446 @@
    "title": "Abstract",
    "page": 1,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Contents",
+   "page": 1,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Lattices, Fourier transforms, and Poisson summation",
-   "page": 1,
+   "page": 4,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Principal theorems",
-   "page": 1,
+   "page": 6,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Homogeneous spaces",
-   "page": 1,
+   "page": 8,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Conditions for a sharp bound",
-   "page": 1,
+   "page": 10,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Stationary points",
-   "page": 1,
+   "page": 12,
    "source": "inferred",
-   "number": "6"
+   "number": "6",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Numerical results",
-   "page": 1,
+   "page": 15,
    "source": "inferred",
-   "number": "7"
+   "number": "7",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Uniqueness",
-   "page": 1,
+   "page": 18,
    "source": "inferred",
-   "number": "8"
+   "number": "8",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "Acknowledgements",
-   "page": 1,
+   "title": "Technicalities about density",
+   "page": 20,
    "source": "inferred",
-   "number": null
+   "number": "A",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "References",
-   "page": 1,
+   "title": "Other convex bodies",
+   "page": 21,
    "source": "inferred",
-   "number": null
+   "number": "B",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "These two",
-   "page": 3,
+   "title": "Numerical data",
+   "page": 22,
    "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Lattices, F ourier transforms, and Poisson summation",
-   "page": 4,
-   "source": "inferred",
-   "number": "2"
+   "number": "C",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Plot of log2 \u03b4 + n(24 \u2212n)/96 vs. dimension n. 8 and 24 dimensions. (The solutions in dimensions 8 and 24 are obtained from the minimal nonzero vectors in the E8 and Leech lattices.) Because we know a priori that the answer must be an integer, any upper bound within less than 1 of the truth would su\ufb03",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Forced double roots for m = 11, n = 8",
+   "page": 17,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Forced double roots for m = 11, n = 24. Our numerical results lead us to the following conjectures",
+   "page": 18,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "Lower and upper bounds on center density, using m = 6",
+   "page": 23,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "4",
+   "title": "Values of 2\u03c0r2 and 2\u03c0z2",
+   "page": 24,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 155,
+   "n_words": 24,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-abstract",
    "number": null,
@@ -132,135 +498,171 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 358,
-   "n_words": 64
+   "n_chars": 347,
+   "n_words": 61,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-001-contents",
+   "number": null,
+   "title": "Contents",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 2,
+   "n_words": 1,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_end": 4,
+   "n_chars": 7830,
+   "n_words": 1348,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-2-lattices-fourier-transforms-and-poisson-summat",
+   "id": "sec-003-2-lattices-fourier-transforms-and-poisson-summat",
    "number": "2",
    "title": "Lattices, Fourier transforms, and Poisson summation",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 2271,
+   "n_words": 421,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-3-principal-theorems",
+   "id": "sec-004-3-principal-theorems",
    "number": "3",
    "title": "Principal theorems",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 5261,
+   "n_words": 966,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-4-homogeneous-spaces",
+   "id": "sec-005-4-homogeneous-spaces",
    "number": "4",
    "title": "Homogeneous spaces",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 3857,
+   "n_words": 735,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-5-conditions-for-a-sharp-bound",
+   "id": "sec-006-5-conditions-for-a-sharp-bound",
    "number": "5",
    "title": "Conditions for a sharp bound",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 4772,
+   "n_words": 885,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-6-stationary-points",
+   "id": "sec-007-6-stationary-points",
    "number": "6",
    "title": "Stationary points",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 5683,
+   "n_words": 1079,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-7-numerical-results",
+   "id": "sec-008-7-numerical-results",
    "number": "7",
    "title": "Numerical results",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 7031,
+   "n_words": 1310,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-8-uniqueness",
+   "id": "sec-009-8-uniqueness",
    "number": "8",
    "title": "Uniqueness",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 99,
-   "n_words": 14
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 5362,
+   "n_words": 994,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-acknowledgements",
-   "number": null,
-   "title": "Acknowledgements",
+   "id": "sec-010-a-technicalities-about-density",
+   "number": "A",
+   "title": "Technicalities about density",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 1991,
+   "n_words": 398,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-references",
-   "number": null,
-   "title": "References",
+   "id": "sec-011-b-other-convex-bodies",
+   "number": "B",
+   "title": "Other convex bodies",
    "level": 1,
-   "page_start": 1,
-   "page_end": 3,
-   "n_chars": 5588,
-   "n_words": 1015
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 948,
+   "n_words": 169,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-2-these-two",
-   "number": "2",
-   "title": "These two",
+   "id": "sec-012-c-numerical-data",
+   "number": "C",
+   "title": "Numerical data",
    "level": 1,
-   "page_start": 3,
-   "page_end": 4,
-   "n_chars": 1998,
-   "n_words": 372
-  },
-  {
-   "id": "sec-012-2-lattices-f-ourier-transforms-and-poisson-summa",
-   "number": "2",
-   "title": "Lattices, F ourier transforms, and Poisson summation",
-   "level": 1,
-   "page_start": 4,
+   "page_start": 22,
    "page_end": 26,
-   "n_chars": 44906,
-   "n_words": 8828
+   "n_chars": 6688,
+   "n_words": 1063,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 13,
-  "sections": 13,
-  "chars_total": 52949
+  "toc_inferred_entries": 13,
+  "toc_inferred_mean_confidence": 0.742,
+  "toc_inferred_empty_share": 0.077,
+  "toc_inferred_method": "font",
+  "figure_entries": 5,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 14,
+  "chars_total": 52198
  }
 }

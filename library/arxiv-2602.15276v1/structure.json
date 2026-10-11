@@ -6,7 +6,8 @@
   "sha256": "18d77d6aa140fc50acbd58b10496818adad25bcb9174f1911b6a50dfcc24bed8",
   "bytes": 4441451,
   "pages": 44,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -310,6 +311,106 @@
   "likely_scanned": false,
   "toc_entries": 23,
   "sections": 11,
-  "chars_total": 90532
+  "chars_total": 90532,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "sfcpnqballs-v3.tex",
+   "tex_sections": 20,
+   "overlaid": 10,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.998,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-the-lagrangian-and-euler-lagrange-equations",
+     "title": "The Lagrangian and Euler-Lagrange equations",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.892,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-radial-reduction",
+     "title": "Radial reduction",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.843,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-energy-density",
+     "title": "Energy density",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.934,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-noether-currents",
+     "title": "Noether currents",
+     "prose_ratio": 0.824,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-expansion-at-the-compacton-boundary",
+     "title": "Expansion at the compacton boundary",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.907,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-expansion-at-the-center",
+     "title": "Expansion at the center",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.893,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-numerical-solutions",
+     "title": "Numerical solutions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-shooting-method",
+     "title": "Shooting method",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-q-shells",
+     "title": "Q-shells",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.901,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-acknowledgmets",
+     "title": "Acknowledgmets",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.07,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/prose-sec-000",
   "kind": "prose",
   "title": "Aligarh Muslim University , Aligarh 202002, India",
   "pageStart": 1,
   "pageEnd": 1,
   "text": "../sections/sec-000-1-aligarh-muslim-university-aligarh-202002-india.md",
-  "derivedFrom": "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/manifest",
-  "sourceDocument": "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/manifest.jsonld",
   "provenance": "ingested"
 }

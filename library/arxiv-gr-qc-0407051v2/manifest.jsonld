@@ -1,25 +1,40 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-gr-qc-0407051v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Black hole entropy from Quantum Geometry",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-gr-qc-0407051v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-gr-qc-0407051v2",
   "contains": [
+    "library/arxiv-gr-qc-0407051v2/sections/sec-front-matter",
     "library/arxiv-gr-qc-0407051v2/sections/sec-000",
     "library/arxiv-gr-qc-0407051v2/sections/sec-001",
     "library/arxiv-gr-qc-0407051v2/sections/sec-002",
     "library/arxiv-gr-qc-0407051v2/sections/sec-003",
-    "library/arxiv-gr-qc-0407051v2/sections/sec-004",
-    "library/arxiv-gr-qc-0407051v2/sections/sec-005",
-    "library/arxiv-gr-qc-0407051v2/sections/sec-006",
-    "library/arxiv-gr-qc-0407051v2/sections/sec-007",
-    "library/arxiv-gr-qc-0407051v2/sections/sec-008",
-    "library/arxiv-gr-qc-0407051v2/sections/sec-009"
+    "library/arxiv-gr-qc-0407051v2/sections/sec-004"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:gr-qc/0407051&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-gr-qc-0407051v2",
+    "title_source": "slug",
     "source_file": "0407051v2.pdf",
     "source_sha256": "2de07e909b17c5a5117b4021c0a42d2ed3deeedad318a446c233de63d2cbf9f3",
     "pages": 14,

@@ -8,20 +8,23 @@ pages: 5-5
 source_pdf: 2501.03424v1.pdf
 source_sha256: 53e00a30fd850a5b
 doc_brief: "Soergel bimodules and Kazhdan-Lusztig polynomials ethan eugene wynner — This paper presents an exposition of Soergel bimodules, the categ oriﬁcation of Hecke alge- bras, and their applications to"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.971
 ---
-Let R = Z, with specialization ϕ : v↦→1. ThenHϕ = Z⊗Z[v,v − 1]H is isomorphic to the group
-algebra Z[W ] with δs↦→s,∀s∈ S.
-Proof: Deﬁne
-ϕ : Z[v, v−1]→ Z, v ↦→1.
-Then
-δ2
-s = (1 −1− 1)δs + 1 = 1 = δid.
-Hence δ2
-s satisﬁes the property s2 = e in W, and the braid relation holds by deﬁnition. We thus
-establish the bijection
-{δw| w∈ W}←→{ w∈ W},
-from which the bijection
-Z⊗Z[v,v − 1]H←→ Z[W ]
-arises. Since this mapping preserves the deﬁning relations in Z[W ], it is an isomorphism.
-In general, under the specialization v↦→1, the Hecke algebra recovers the group algebra Z[W ],
-hence we consider H to be a deformation of the Z[W ].
+Let $R = \Z,$ with specialization $ \varphi: v \mapsto 1.$ Then $\mathcal{H}_\varphi = \Z \otimes_{\Z[v, v^{-1}]} \mathcal{H}$ is isomorphic to the group algebra $\Z[W]$ with $\delta_s \mapsto s, \text{  }  \forall s \in S.$ 
+ \\ \textit{Proof:} Define 
+ $$\varphi: \Z[v, v^{-1}] \rightarrow \Z, \text{    }v \mapsto 1.$$
+  Then 
+ $$\delta^2_s = (1^{-1} - 1)\delta_s + 1 = 1 = \delta_{id}.$$
+ Hence $\delta^2_s$ satisfies the property $s^2 = e$ in $W,$ and the braid relation holds by definition. We thus establish the bijection 
+ $$\{\delta_w \st w \in W\} \longleftrightarrow \{w \in W\},$$
+ from which the bijection 
+ $$\Z \otimes_{\Z[v, v^{-1}]} \mathcal{H} \longleftrightarrow \Z[W]$$
+arises. Since this mapping preserves the defining relations in  $\Z[W],$ it is an isomorphism.  \Laughey
+ 
+ 
+ 
+\subsubsection{}
+ 
+ In general, under the specialization $v \mapsto 1,$ the Hecke algebra recovers the group algebra $\Z[W],$ hence we consider $\mathcal{H}$ to be a \textit{deformation} of the $\Z[W].$

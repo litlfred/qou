@@ -8,34 +8,37 @@ pages: 21-21
 source_pdf: 0603732v2.pdf
 source_sha256: 3464a2ddc2e54f3a
 doc_brief: "DUALISING COMPLEXES AND TWISTED HOCHSCHILD (CO)HOMOLOGY FOR NOETHERIAN HOPF ALGEBRAS — W e show that many noetherian Hopf algebras A have a rigid du- alising complex R with R ∼= ν A1[d]."
+text_source: latex
+latex_prose_ratio: 0.956
+latex_coverage_ratio: 0.989
 ---
-particular Hopf algebra A, we need to check that
-(1) A is AS-regular, and
-(2) the antipode S of A is bijective.
-In all examples in this section the antipode S is bijective, thanks either to known
-descriptions of the antipode, or to Skryabin’s result Proposition 1.1 , so (2) will
-present no diﬃculties. All the examples considered here are Ausland er-Gorenstein,
-and other than the group rings of (6.7), all the examples are Cohen -Macaulay. (See
-for example [BG1] for the deﬁnitions of these concepts.) So AS-reg ularity follows
-from the next lemma.
-Lemma. Let A be a noetherian Hopf algebra. If A is Auslander-Gorenstein (re-
-spectively, Auslander regular) and Cohen-Macaulay, then i t is AS-Gorenstein (re-
-spectively, AS-regular).
-Proof. Let d be the injective dimension of A. Since GKdim k = 0, the Cohen-
-Macaulay condition forces Ext i
-A(k, A) = 0 for all i ⁄= d, and then Ext d
-A(k, A) ⁄= 0
-by [ASZ1, Theorem 2.3(2)]. Now the Auslander condition and the Cohe n-Macaulay
-conditions applied to this latter module show that Ext d
-A(k, A) has GK-dimension
-zero; that is, it is ﬁnite dimensional over k. The lemma now follows from Lemma
-3.2. □
-Let ν be the Nakayama automorphism of A. By (3.1.1), to connect twisted
-Hochschild homologies HH ν
-i (A) with Hi(A, νA), one has to check that
-(3) ν is diagonalisable.
-In general, this condition will fail - see, for instance, Proposition 6.3 (d). We will
-review the situation for each class of algebras in turn.
-Finally, even when ν is not the identity, we sometimes nevertheless ﬁnd that
-(4) Hdim A = Hcdim A = gldim A.
+[]{#xxsec6.1 label="xxsec6.1"}
+
+To apply the results of Sections [\[xxsec3\]](#xxsec3){reference-type="ref" reference="xxsec3"} and [\[xxsec5\]](#xxsec5){reference-type="ref" reference="xxsec5"} to a particular Hopf algebra $A$, we need to check that
+
+\(1\) $A$ is AS-regular, and
+
+\(2\) the antipode $S$ of $A$ is bijective.
+
+In all examples in this section the antipode $S$ is bijective, thanks either to known descriptions of the antipode, or to Skryabin's result Proposition [\[xxsec1.1\]](#xxsec1.1){reference-type="ref" reference="xxsec1.1"}, so (2) will present no difficulties. All the examples considered here are Auslander-Gorenstein, and other than the group rings of ([\[xxsec6.7\]](#xxsec6.7){reference-type="ref" reference="xxsec6.7"}), all the examples are Cohen-Macaulay. (See for example [@BG1] for the definitions of these concepts.) So AS-regularity follows from the next lemma.
+
+::: lemma
+Let $A$ be a noetherian Hopf algebra. If $A$ is Auslander-Gorenstein (respectively, Auslander regular) and Cohen-Macaulay, then it is AS-Gorenstein (respectively, AS-regular).
+:::
+
+::: proof
+*Proof.* Let $d$ be the injective dimension of $A$. Since $\mathop{\mathrm{GKdim}}k=0$, the Cohen-Macaulay condition forces $\mathop{\mathrm{Ext}}^i_A(k,A)=0$ for all $i\neq
+d,$ and then $\mathop{\mathrm{Ext}}^d_A(k,A)\neq 0$ by [@ASZ1 Theorem 2.3(2)]. Now the Auslander condition and the Cohen-Macaulay conditions applied to this latter module show that $\mathop{\mathrm{Ext}}^d_A(k,A)$ has GK-dimension zero; that is, it is finite dimensional over $k$. The lemma now follows from Lemma [\[xxsec3.2\]](#xxsec3.2){reference-type="ref" reference="xxsec3.2"}. ◻
+:::
+
+Let $\nu$ be the Nakayama automorphism of $A$. By ([\[xxsec3.1\]](#xxsec3.1){reference-type="ref" reference="xxsec3.1"}.1), to connect twisted Hochschild homologies $HH^{\nu}_i(A)$ with $H_i (A,{^{\nu} A})$, one has to check that
+
+\(3\) $\nu$ is diagonalisable.
+
+In general, this condition will fail - see, for instance, Proposition [\[xxsec6.3\]](#xxsec6.3){reference-type="ref" reference="xxsec6.3"}(d). We will review the situation for each class of algebras in turn.
+
+Finally, even when $\nu$ is not the identity, we sometimes nevertheless find that
+
+\(4\) $\mathop{\mathrm{Hdim}}A=\mathop{\mathrm{Hcdim}}A=\mathop{\mathrm{gldim}}A$.
+
 We will discuss when this is true.

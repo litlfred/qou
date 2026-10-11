@@ -6,7 +6,8 @@
   "sha256": "84426ed37754aa7887343b5506acf1f63f15468ac5c96155e62f81b461dc307f",
   "bytes": 1370675,
   "pages": 55,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -664,6 +665,229 @@
   "likely_scanned": false,
   "toc_entries": 49,
   "sections": 28,
-  "chars_total": 141637
+  "chars_total": 141637,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "ms.tex",
+   "tex_sections": 48,
+   "overlaid": 21,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.728,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-12-cluster-ensemble-structures",
+     "title": "Cluster ensemble structures",
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-13-higher-teichm\u00fcller-spaces",
+     "title": "Higher Teichm\u00fcller spaces",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-14-results",
+     "title": "Results",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-15-historical-context",
+     "title": "Historical context",
+     "prose_ratio": 0.891,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-23-coxeter-elements",
+     "title": "Coxeter elements",
+     "prose_ratio": 0.097,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-2-ingredients",
+     "title": "Ingredients",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-24-generalized-minors",
+     "title": "Generalized minors",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-21-root-spaces-and-weyl-groups",
+     "title": "Root spaces and Weyl groups",
+     "prose_ratio": 0.927,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-22-unipotent-subgroups",
+     "title": "Unipotent subgroups",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.188,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-011-25-factorization-coordinates",
+     "title": "Factorization coordinates",
+     "prose_ratio": 0.792,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-26-quivers",
+     "title": "Quivers",
+     "prose_ratio": 0.918,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-27-cluster-ensembles",
+     "title": "Cluster ensembles",
+     "prose_ratio": 0.919,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-3-key-identities",
+     "title": "Key identities",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.678,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-32-grid-exchange-relations",
+     "title": "Grid exchange relations",
+     "prose_ratio": 0.89,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-4-coordinates-on-generically-decorated-represent",
+     "title": "Coordinates on generically-decorated representations",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.945,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-44-regarding-3-manifolds",
+     "title": "Regarding 3-manifolds",
+     "prose_ratio": 0.872,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-5-main-result-fockgoncharov-coordinate-structure",
+     "title": "Main Result: Fock\u2013Goncharov coordinate structures for non-A_n",
+     "prose_ratio": 0.904,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-51-overview",
+     "title": "Overview",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-52-building-the-rectangle-q0",
+     "title": "Building the rectangle Q0",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-021-56-the-map-m",
+     "title": "The map M",
+     "prose_ratio": 0.759,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-022-71-overview",
+     "title": "Overview",
+     "prose_ratio": 0.223,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-023-72-ordering-mutations",
+     "title": "Ordering mutations",
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-024-73-rotation-mutations",
+     "title": "Rotation mutations",
+     "prose_ratio": 0.92,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-025-74-flip-mutations",
+     "title": "Flip mutations",
+     "prose_ratio": 0.891,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-026-9-examples",
+     "title": "Examples",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-027-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

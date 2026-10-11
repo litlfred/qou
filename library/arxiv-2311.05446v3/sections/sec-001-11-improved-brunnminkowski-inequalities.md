@@ -8,113 +8,39 @@ pages: 1-3
 source_pdf: 2311.05446v3.pdf
 source_sha256: c5809730f598a56d
 doc_brief: "NEW BRUNN–MINKOWSKI AND FUNCTIONAL INEQUALITIES VIA CONVEXITY OF ENTROPY — We study the connection between the concavity properties of a measureνand the convexity properties of the associated"
+text_source: latex
+latex_prose_ratio: 0.937
+latex_coverage_ratio: 0.882
 ---
-sure onR n. We say thatνsatisfies a Brunn–Minkowski inequality with
-exponentaif for all Borel setsK 0,K 1⊆R n satisfyingν(K 0),ν(K 1)>0
-and every 0≤t≤1 we have
-ν((1−t)K 0 +tK 1)≥((1−t)ν(K 0)a +tν(K 1)a)1/a.(1)
-Here (1−t)K 0 +tK1 ={(1−t)x+ty:x∈K 0, y∈K 1}is thet-Minkowski
-averageof the setsK 0 andK 1. Note that the inequality becomes stronger
-asaincreases. The prototypical example is the classical Brunn–Minkowski
-inequality, which states that the Lebesgue measure satisfies ((1)) with ex-
-ponenta= 1
-n (see e.g. [25] for a survey on the Brunn–Minkowski inequality
-and its importance). Whenνis not the Lebesgue measure, inequalities such
-as (1) are sometimes called weighted Brunn–Minkowski inequalities.
-More generally, from the works of Borell ([11], [10]) and Brascamp–Lieb
-([14]), a characterization of all measuresνwhich satisfy ((1)) for some ex-
-ponentais known:
-Theorem 1.1.Letνbe a Borel measure onR n with densityϕwith respect
-to the Lebesgue measure onR n, and fixa∈[−∞, 1
-n]. Then the following are
-equivalent:
-1
-arXiv:2311.05446v3  [math.MG]  20 Mar 2026
-2 GAUTAM AISHWARYA AND LIRAN ROTEM
-(1)νsatisfies a Brunn–Minkowski inequality with exponenta(we also
-say thatνisa-concave).
-(2)For allx,y∈R n withϕ(x),ϕ(y)>0and every0≤t≤1we have
-ϕ((1−t)x+ty)≥
-
-(1−t)ϕ(x) b +tϕ(y) b
-1/b
-,(2)
-where 1
-a = 1
-b +n(we also say thatϕisb-concave).
-For simplicity we assumed thatνhas a density, though Borell’s orig-
-inal result is slightly more general. Note that the cases whereaorb
-belong to{−∞,0,+∞}are interpreted in the limiting sense: We define
-((1−λ)x a +λy a)1/a to be max(x,y) ifa=∞,x 1−λyλ ifa= 0, and
-min(x,y) ifa=−∞.
-Of special interest to us will be the casea=b= 0, when Borell’s theorem
-essentially reduces to the Pr´ ekopa–Leindler inequality ([40, 32]): A measure
-νislog-concave, i.e. it satisfies
-ν((1−t)K 0 +tK 1)≥ν(K 0)1−tν(K1)t,(3)
-if and only if its densityϕis of the formϕ=e −V whereV:R n→[0,∞) is
-a convex function.
-Borell’s theorem gives us the best possible Brunn–Minkowski inequality
-satisfied by a measureνforallBorel setsK 0 andK 1. However, a better
-inequality may hold for specific choices ofK 0 andK 1. For example, letγ
-denote the standard Gaussian measure onR n, i.e. the measure with density
-dγ
-dx = 1
-(2π)n/2e−|x|2/2. This is a log-concave measure, but in general it doesn’t
-satisfy the Brunn–Minkowski inequality with any exponenta>0. However,
-Kolesnikov–Livshyts ([29]) proved that ifK 0,K 1⊆R n are convex sets such
-that 0∈K 0∩K 1, then we have
-γ((1−t)K 0 +tK 1)
-1
-2n≥(1−t)γ(K 0)
-1
-2n +tγ(K 1)
-1
-2n.(4)
-Eskenazis and Moschidis ([22]) further proved that ifK 0,K 1⊆R n are
-convex andorigin-symmetric(i.e.K 0 =−K 0 andK 1 =−K 1), the exponent
-1
-2n improves to 1
-n, which is the best possible. This settled a conjecture
-of Gardner and Zvavitch ([26]). In fact, the original conjecture was that
-perhaps the condition 0∈K 0∩K 1 is sufficient to have ((4)) with exponent
-1
-n, but Nayar and Tkocz ([37]) proved that this is not the case and suggested
-that central symmetry may be the correct condition.
+Let $\nu$ be a Borel measure on $\mathbb{R}^{n}$. We say that $\nu$ satisfies a Brunn--Minkowski inequality with exponent $a$ if for all Borel sets $K_{0}, K_{1} \subseteq\mathbb{R}^{n}$ satisfying $\nu(K_{0}),\nu(K_{1})>0$ and every $0\le t \le1$ we have $$\label{eq:BM}
+\nu\left((1-t)K_{0}+ t K_{1}\right)\ge\left((1-t)\nu(K_{0})^{a}+ t \nu(K_{1})^{a}\right)^{1/a}.$$ Here $(1-t)K_{0} +t K_{1}=\left\{ (1-t) x+ t  y:\ x\in K_{0},\ y\in K_{1}\right\}$ is the $t$-*Minkowski average* of the sets $K_{0}$ and $K_{1}$. Note that the inequality becomes stronger as $a$ increases. The prototypical example is the classical BrunnMinkowski inequality, which states that the Lebesgue measure satisfies ([\[eq:BM\]](#eq:BM){reference-type="eqref" reference="eq:BM"}) with exponent $a=\frac{1}{n}$ (see e.g. [@Gardner02] for a survey on the BrunnMinkowski inequality and its importance). When $\nu$ is not the Lebesgue measure, inequalities such as [\[eq:BM\]](#eq:BM){reference-type="eqref" reference="eq:BM"} are sometimes called weighted Brunn--Minkowski inequalities.
+
+More generally, from the works of Borell ([@Borell74], [@Borell75]) and Brascamp--Lieb ([@BrascampLieb76BBL]), a characterization of all measures $\nu$ which satisfy ([\[eq:BM\]](#eq:BM){reference-type="eqref" reference="eq:BM"}) for some exponent $a$ is known:
+
+::: thm
+[]{#thm: Borell label="thm: Borell"} Let $\nu$ be a Borel measure on $\mathbb{R}^{n}$ with density $\phi$ with respect to the Lebesgue measure on $\mathbb{R}^n$, and fix $a\in[-\infty,\frac{1}{n}]$. Then the following are equivalent:
+
+1.  $\nu$ satisfies a BrunnMinkowski inequality with exponent $a$ (we also say that $\nu$ is $a$-concave).
+
+2.  For all $x,y\in\mathbb{R}^{n}$ with $\phi(x),\phi(y)>0$ and every $0\le t \le1$ we have $$\phi\left(\left(1-t\right)x+t y\right)\ge\left((1-t)\phi(x)^{b}+t\phi(y)^{b}\right)^{1/b},$$ where $\frac{1}{a}=\frac{1}{b}+n$ (we also say that $\phi$ is $b$-concave).
+:::
+
+For simplicity we assumed that $\nu$ has a density, though Borell's original result is slightly more general. Note that the cases where $a$ or $b$ belong to $\left\{ -\infty,0,+\infty\right\}$ are interpreted in the limiting sense: We define $\left((1-\lambda)x^{a}+\lambda y^{a}\right)^{1/a}$ to be $\max(x,y)$ if $a=\infty$, $x^{1-\lambda}y^{\lambda}$ if $a=0$, and $\min(x,y)$ if $a=-\infty$.
+
+Of special interest to us will be the case $a=b=0$, when Borell's theorem essentially reduces to the PrékopaLeindler inequality ([@Prekopa71; @Leindler72]): A measure $\nu$ is *log-concave*, i.e. it satisfies $$\nu\left((1-t)K_{0}+t K_{1}\right)\ge\nu(K_{0})^{1-t}\nu(K_{1})^{t},$$ if and only if its density $\phi$ is of the form $\phi=e^{-V}$ where $V:\mathbb{R}^{n}\to[0,\infty)$ is a convex function.
+
+Borell's theorem gives us the best possible BrunnMinkowski inequality satisfied by a measure $\nu$ for *all* Borel sets $K_{0}$ and $K_{1}$. However, a better inequality may hold for specific choices of $K_{0}$ and $K_{1}$. For example, let $\gamma$ denote the standard Gaussian measure on $\mathbb{R}^{n}$, i.e. the measure with density $\frac{\mathrm{d}\gamma}{\mathrm{d}x}=\frac{1}{\left(2\pi\right)^{n/2}}e^{-\left|x\right|^{2}/2}$. This is a log-concave measure, but in general it doesn't satisfy the BrunnMinkowski inequality with any exponent $a>0$. However, KolesnikovLivshyts ([@KolesnikovLivshyts21]) proved that if $K_{0},K_{1}\subseteq\mathbb{R}^{n}$ are convex sets such that $0\in K_{0}\cap K_{1}$, then we have $$\gamma\left((1-t)K_{0} + t K_{1}\right)^{\frac{1}{2n}}\ge(1-t)\gamma(K_{0})^{\frac{1}{2n}}+t \gamma(K_{1})^{\frac{1}{2n}}.\label{eq:gassian-BM-2n}$$
+
+Eskenazis and Moschidis ([@EskenazisMoschidis21]) further proved that if $K_{0},K_{1}\subseteq\mathbb{R}^{n}$ are convex and *origin-symmetric* (i.e. $K_{0}=-K_{0}$ and $K_{1}=-K_{1}$), the exponent $\frac{1}{2n}$ improves to $\frac{1}{n}$, which is the best possible. This settled a conjecture of Gardner and Zvavitch ([@GardnerZvavitch10]). In fact, the original conjecture was that perhaps the condition $0\in K_{0}\cap K_{1}$ is sufficient to have ([\[eq:gassian-BM-2n\]](#eq:gassian-BM-2n){reference-type="eqref" reference="eq:gassian-BM-2n"}) with exponent $\frac{1}{n}$, but Nayar and Tkocz ([@NayarTkocz13]) proved that this is not the case and suggested that central symmetry may be the correct condition.
+
 More generally, the following conjecture is widely believed:
-Conjecture 1.2.Letνbe an even log-concave measure onR n. Then for
-everyK 0,K 1⊆R n which are convex and origin-symmetric we have
-ν((1−t)K 0 +tK 1)
-1
-n≥(1−t)ν(K 0)
-1
-n +tν(K 1)
-1
-n.(5)
-One reason to believe this conjecture is the paper [33], which shows that it
-would follow from another important conjecture, the log-Brunn–Minkowski
-NEW BRUNN–MINKOWSKI AND FUNCTIONAL INEQUALITIES 3
-conjecture. In particular, the results of B¨ or¨ oczky–Lutwak–Yang–Zhang ([12])
-show that Conjecture 1.2 holds in dimensionn= 2.
-In dimensionsn >2, not much is known. It is immediate from Borell’s
-theorem that uniform measures on convex bodies satisfy the Brunn–Minkowski
-inequality with exponent 1
-n without any symmetry assumptions. The results
-of [20] show that the conjecture holds in particular for rotation-invariant log-
-concave measures (as well as some rotation-invariant measures that are not
-log-concave). Livshyts ([34]) proved that the conjecture holds for all even
-log-concave measures, but with the optimal exponent 1
-n replaced by 1
-n4+o(1) .
-The proofs of all the results mentioned so far followed the same general
-strategy. The idea was developed by Kolesnikov and Milman ([30], [31]) to
-study various Brunn–Minkowski type inequalities, both onR n and in the
-setting of Riemannian manifolds. The details will not be very important for
-us, but roughly speaking one tries to prove that d2
-dt2 (ν((1−t)K 0 +tK 1)a)≤
-0 by directly computing this second derivative. Without loss of generality
-it is enough to check this att= 0, which gives a functional inequality for
-functionsf:∂K 0→R. Then the crucial step is to transform this inequality
-to an inequality for functionsu:K 0→Rby takinguto be the solution of a
-certain elliptic PDE withfas its Neumann boundary condition. As far as
-we can tell this strategy strongly depends on the convexity ofK 0 andK 1,
-and without this assumption no results are possible.
+
+::: con
+[]{#conj:DBM label="conj:DBM"}Let $\nu$ be an even log-concave measure on $\mathbb{R}^{n}$. Then for every $K_{0},K_{1} \subseteq\mathbb{R}^{n}$ which are convex and origin-symmetric we have $$\nu\left((1-t)K_{0}+t K_{1}\right)^{\frac{1}{n}}\ge(1-t)\nu(K_{0})^{\frac{1}{n}}+ t\nu(K_{1})^{\frac{1}{n}}.$$
+:::
+
+One reason to believe this conjecture is the paper [@LivshytsMarsigliettiNayarZvavitch17], which shows that it would follow from another important conjecture, the log-BrunnMinkowski conjecture. In particular, the results of BöröczkyLutwakYangZhang ([@BoroczkyLutwakYangZhang12]) show that Conjecture [\[conj:DBM\]](#conj:DBM){reference-type="ref" reference="conj:DBM"} holds in dimension $n=2$.
+
+In dimensions $n>2$, not much is known. It is immediate from Borell's theorem that uniform measures on convex bodies satisfy the BrunnMinkowski inequality with exponent $\frac{1}{n}$ without any symmetry assumptions. The results of [@Cordero-ErasquinRotem23] show that the conjecture holds in particular for rotation-invariant log-concave measures (as well as some rotation-invariant measures that are not log-concave). Livshyts ([@Livshyts23]) proved that the conjecture holds for all even log-concave measures, but with the optimal exponent $\frac{1}{n}$ replaced by $\frac{1}{n^{4+o(1)}}$.
+
+The proofs of all the results mentioned so far followed the same general strategy. The idea was developed by Kolesnikov and Milman ([@KolesnikovMilman18], [@KolesnikovMilman22]) to study various BrunnMinkowski type inequalities, both on $\mathbb{R}^{n}$ and in the setting of Riemannian manifolds. The details will not be very important for us, but roughly speaking one tries to prove that $\frac{\mathrm{d}^{2}}{\mathrm{d}t^{2}}\left(\nu\left((1-t)K_{0}+t K_{1}\right)^{a}\right)\le0$ by directly computing this second derivative. Without loss of generality it is enough to check this at $t=0$, which gives a functional inequality for functions $f:\partial K_{0} \to\mathbb{R}$. Then the crucial step is to transform this inequality to an inequality for functions $u:K_{0} \to\mathbb{R}$ by taking $u$ to be the solution of a certain elliptic PDE with $f$ as its Neumann boundary condition. As far as we can tell this strategy strongly depends on the convexity of $K_{0}$ and $K_{1}$, and without this assumption no results are possible.

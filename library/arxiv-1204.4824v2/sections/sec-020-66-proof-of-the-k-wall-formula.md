@@ -8,162 +8,122 @@ pages: 40-42
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
 doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
+text_source: latex
+latex_prose_ratio: 0.921
+latex_coverage_ratio: 0.938
 ---
-Here we provide the proofs omitted in §6.3.
-First let us explain why L(γ) as deﬁned in (6.12) is indeed a 1-cycle, i.e. has no
-boundary. For any two-way streetp, the boundary of pΣ lies over the boundary of p. More
-precisely, a boundary point ofp may be either a branch point or a joint;pΣ has no boundary
-over a branch point, but does have a boundary over a joint. So we need to check that L(γ)
-has no boundary over a joint. To establish this we consider Figure 26. Let z denote the
-ij
-jk ik
-ij
-jkik
-ji
-ji
-kj
-kj
-ki
-ki
-Figure 26. A joint where two-way streets meet. Each two-way street is shown slightly “resolved”,
-as explained at the end of §6.2. The resolution here is the “American resolution,” as appropriate
-since we are considering the limit ϑ→ϑ−
-c .
-joint in the ﬁgure. The coeﬃcient of z(i) in ∂L(γ) is αγ(p1) +αγ(p2)−αγ(p3)−αγ(p4),
-and we would like to show that this vanishes. Consider the open paths ℘ and ℘′. The
-constraint of twisted homotopy invariance says that F (℘,ϑ−
-c ) = F (℘′,ϑ−
-c ). In particular,
-we can look at the pieces on both sides which involve paths which both begin and end on
-sheet i:
-F (℘,ϑ−
-c )ii =F (℘′,ϑ−
-c )ii. (6.19)
-Directly computing the two sides of (6.19) we obtain
-Q(p1)Q(p2) =Q(p3)Q(p4). (6.20)
+\label{sec:k-proof}
+
+Here we provide the proofs omitted in \S\ref{sec:f-jump}.
+
+First let us explain why $L(\gamma)$ as defined in \eqref{eq:def-L} is indeed a 1-cycle,
+i.e. has no boundary.
+For any two-way street $p$, the boundary of $p_\Sigma$ lies over the boundary of $p$.
+More precisely, a boundary point of $p$ may be either a branch point or a joint;
+$p_\Sigma$ has no boundary over a branch point, but does have a boundary over a joint.
+So we need to check that $L(\gamma)$ has no boundary over a joint.
+To establish this we consider Figure \ref{fig:six-way-junction}.
+\insfig{six-way-junction}{A joint where two-way streets meet.  Each two-way street is shown
+slightly ``resolved'', as explained at the end of \S\ref{sec:K-walls}.  The resolution here
+is the ``American resolution,'' as appropriate since we are considering the limit
+$\vartheta \to \vartheta_c^-$.}
+Let $z$ denote the joint in the figure.
+The coefficient of $z^{(i)}$ in $\partial L(\gamma)$ is
+$\alpha_\gamma(p_1) + \alpha_\gamma(p_2) - \alpha_\gamma(p_3) - \alpha_\gamma(p_4)$, and
+we would like to show that this vanishes.  Consider the open paths $\wp$ and $\wp'$.
+The constraint of twisted homotopy invariance
+says that $F(\wp, \vartheta_c^-) = F(\wp', \vartheta_c^-)$.
+In particular, we can look at the pieces on both sides which involve paths which
+both begin and end on sheet $i$:
+\begin{equation}\label{eq:Fpm-equals}
+F(\wp, \vartheta_c^-)_{ii} = F(\wp', \vartheta_c^-)_{ii}.
+\end{equation}
+Directly computing the two sides of \eqref{eq:Fpm-equals} we obtain
+\begin{equation}
+ Q(p_1) Q(p_2) = Q(p_3) Q(p_4).
+\end{equation}
 This amounts to
-αγ(p1) +αγ(p2) =αγ(p3) +αγ(p4), (6.21)
+\begin{equation}
+ \alpha_\gamma(p_1) + \alpha_\gamma(p_2) = \alpha_\gamma(p_3) + \alpha_\gamma(p_4),
+\end{equation}
 which is what we wanted to show.
-– 38 –
-Now let us explain why the jump formula (6.6) is true. We will show that the following
-hold both forF(℘) =F (℘,ϑ +
-c ) andF(℘) =K (F (℘,ϑ−
-c )):
-P1. F(℘) is a twisted homotopy invariant of ℘ (in the sense explained in §3.5).
-P2. If ℘ does not meetWϑc, then
-F(℘) =D(℘). (6.22)
-P3. If ℘ and ℘′ have endpoints oﬀWϑc,F obeys the composition law
-F(℘)F(℘′) =F(℘℘′). (6.23)
-P4. If ℘ crossesWϑc exactly once at a point z on a one-way street p, thenF(℘) is of the
-form
-F(℘) =D(℘+)
-
-1 +
-∑
-¯a∈Γs
-ij
-µ(a)Xa˜z
-
-D(℘−), (6.24)
-for some µ(a)∈ Z.
-P5. If℘ crossesWϑc exactly once at a point z on a two-way streetp, and the intersection
-between ℘ and p is positive (with respect to the orientation of p as a ji trajectory
-and the underlying orientation of C as a complex curve), then F(℘) is of the form
-F(℘) =D(℘+)
-
-1 +
-∑
-¯a∈Γs
-ji
-µ(a)Xa˜z
-
-
-
-1 +
-∑
-¯b∈Γs
-ij
-µ(b)Xb˜z
-
-D(℘−) (6.25)
-for some µ(a)∈ Z and µ(b)∈ Z.
-ForF(℘) =F (℘,ϑ +
-c ) these properties follow directly from what we have already said;
-the most nontrivial one is P5, which is (6.5). To prove them for F(℘) =K(F (℘,ϑ−
-c )) is
-slightly harder. P1-3 are true of F (℘,ϑ−
-c ) and clearly preserved by K. P4 is also true
-of F (℘,ϑ−
-c ), but we have to show it is preserved by K: this follows simply from the fact
-thatK just multiplies each term by a function of the X˜γ, which indeed preserves the form
-(6.24). P5 is the only really nontrivial one. We begin with the formula (6.4) for F (℘,ϑ−
-c ),
-and need to show that the action of K transforms it into the form (6.25). Expanding out
-(6.4) we ﬁnd various classes of terms:
-F (℘,ϑ−
-c )ii =℘(i)
-+
-
-1 +
-∑
-¯a,¯b
-µ−(a)µ−(b)XbXa
-
-℘(i)
-− =Q(p)℘(i), (6.26)
-F (℘,ϑ−
-c )ij =℘(i)
-+
-
-∑
-¯b
-µ−(b)Xb
-
-℘(j)
-− , (6.27)
-F (℘,ϑ−
-c )ji =℘(j)
-+
-(∑
-¯a
-µ−(a)Xa
-)
-℘(i)
-−, (6.28)
-F (℘,ϑ−
-c )jj =℘(j), (6.29)
-F (℘,ϑ−
-c )kk =℘(k) for k /∈{i,j}. (6.30)
-– 39 –
-Within each class, the terms in the sum over ¯ a,¯b diﬀer only by multiplication by factors
-X˜γ. Since L(γ) is a multiple of γ, it follows that ⟨γ,L (γ)⟩ = 0. Hence the action of
-K on each class of terms is independent of the particular term. We consider them in
-turn. For the ii terms,K acts by multiplication by ∏
-γ∈Γc(1 +X˜γ)⟨℘(i),L(γ)⟩, but using
-(6.12) we see that ⟨℘(i),L (γ)⟩ =−αγ(p) (since p is the only edge of W crossed by ℘)
-and hence this reduces to multiplication by Q(p)−1. On the jj termsK similarly acts
-by multiplication by Q(p). On the ij terms the action of K is more complicated: it
-is multiplication by a new function H = ∏
-γ∈Γc(1 + X˜γ)⟨℘(i)
-+ +¯b+℘(j)
-− ,L(γ)⟩. But we have
-⟨℘(i)
-+ + ¯b +℘(j)
-− ,L (γ)⟩ =−⟨℘(j)
-+ + ¯a +℘(i)
-−,L (γ)⟩ as one readily sees using the facts that
-cl(¯a +¯b) is proportional to L(γ) and⟨℘(i),L (γ)⟩ =−⟨℘(j),L (γ)⟩. It follows that the action
-ofK on the ji terms is multiplication by H−1. These facts together are suﬃcient to imply
-the desired P5. 28
-Finally we must explain why these properties actually determineF(℘). As a warm-
-up, suppose that there are only one-way streets. In that case we have shown in §4 and
-§5 above that the properties P1-P4 are suﬃcient to determine all of the µ(a), and hence
-also to ﬁx F(℘). The same kind of argument can be made in the presence of two-way
-streets; the only new complication is that the local structure around joints and branch
-points is more complicated. Nevertheless, a direct computation using only the fact that
-F(℘) obey P1-P5 determines the µ(a) appearing there for all charges a oriented out of a
-joint, in terms of theµ(a) for chargesa oriented into the same joint. (The resulting explicit
-formulae are recorded in Appendix A, e.g. (A.3).) Inductively we can thus determine the
-2d-4d degeneracies µ(a) everywhere onWϑc, just as we did in the (generic) case with only
-one-way streets. Having done so the F(℘) are also determined by P1-P5. This completes
-the proof.
+
+Now let us explain why the jump formula \eqref{eq:k-jump} is true.
+We will show that
+the following hold both
+for $\CF(\wp) = F(\wp, \vartheta_c^+)$ and $\CF(\wp) = \cK\left(F(\wp, \vartheta_c^-)\right)$:
+\begin{description}
+ \item[P1.] $\CF(\wp)$ is a twisted homotopy invariant of $\wp$ (in the sense explained
+in \S\ref{sec:tricky-sign}).
+ \item[P2.] If $\wp$ does not meet $\wnet_{\vartheta_c}$, then
+\begin{equation}
+ \CF(\wp) = \CD(\wp).
+\end{equation}
+ \item[P3.] If $\wp$ and $\wp'$ have endpoints off $\wnet_{\vartheta_c}$, $\CF$ obeys the composition law
+\begin{equation}
+ \CF(\wp) \CF(\wp') = \CF(\wp \wp').
+\end{equation}
+ \item[P4.] If $\wp$ crosses $\wnet_{\vartheta_c}$ exactly once at a point $z$ on a one-way street $p$, then $\CF(\wp)$ is of the form
+\begin{equation} \label{eq:f-one-way}
+ \CF(\wp) = \CD(\wp_+) \left(1 + \sum_{\bar a \in \Gamma_{ij}^s} \mu(a) X_{a_\tz}\right) \CD(\wp_-),
+\end{equation}
+for some $\mu(a) \in \Z$.
+\item[P5.] If $\wp$ crosses $\wnet_{\vartheta_c}$ exactly once at a point $z$ on a two-way street $p$, and the intersection between $\wp$ and $p$
+is positive (with respect to the orientation of $p$ as a $ji$ trajectory and the underlying orientation of $C$ as a complex curve),
+then $\CF(\wp)$ is of the form
+\begin{equation} \label{eq:f-two-way}
+ \CF(\wp) = \CD(\wp_+) \left(1 + \sum_{\bar a \in \Gamma_{ji}^s} \mu(a) X_{a_\tz}\right) \left(1 + \sum_{\bar b \in \Gamma_{ij}^s} \mu(b) X_{b_\tz} \right) \CD(\wp_-)
+\end{equation}
+for some $\mu(a) \in \Z$ and $\mu(b) \in \Z$.
+\end{description}
+
+For $\CF(\wp) = F(\wp, \vartheta_c^+)$ these properties follow directly from what we have already said; the most nontrivial one is
+P5, which is \eqref{eq:two-way-crossing-1}.  To prove them for
+$\CF(\wp) = \CK(F(\wp, \vartheta_c^-))$ is slightly harder.
+P1-3 are true of $F(\wp, \vartheta_c^-)$ and clearly preserved by $\CK$.
+P4 is also true of $F(\wp, \vartheta_c^-)$, but we have to show it is preserved by $\CK$:
+this follows simply from the fact that $\CK$ just multiplies each term by a function of the $X_{\tilde \gamma}$,
+which indeed preserves the form \eqref{eq:f-one-way}.  P5 is the only really nontrivial one.  We begin with
+the formula \eqref{eq:two-way-crossing-2} for $F(\wp, \vartheta_c^-)$, and need to show that the action of $\CK$
+transforms it into the form \eqref{eq:f-two-way}.  Expanding out \eqref{eq:two-way-crossing-2} we find
+various classes of terms:
+\begin{align}
+ F(\wp, \vartheta_c^-)_{ii} &= \wp_+^{(i)} \left( 1 + \sum_{\bar a, \bar b} \mu^-(a) \mu^-(b) X_b X_a \right) \wp_-^{(i)} = Q(p) \wp^{(i)}, \\
+ F(\wp, \vartheta_c^-)_{ij} &= \wp_+^{(i)} \left( \sum_{\bar b} \mu^-(b) X_b \right) \wp_-^{(j)}, \\
+ F(\wp, \vartheta_c^-)_{ji} &= \wp_+^{(j)} \left( \sum_{\bar a} \mu^-(a) X_a \right) \wp_-^{(i)}, \\
+ F(\wp, \vartheta_c^-)_{jj} &= \wp^{(j)}, \\
+ F(\wp, \vartheta_c^-)_{kk} &= \wp^{(k)} \quad \text{ for } k \notin \{i,j\}.
+\end{align}
+Within each class, the terms in the sum over $\bar a, \bar b$
+differ only by multiplication by factors $X_{\tilde\gamma}$.  Since $L(\gamma)$ is a multiple of
+$\gamma$, it follows that $\inprod{\gamma, L(\gamma)} = 0$.  Hence the action of $\CK$ on each class of terms is independent
+of the particular term.  We consider them in turn.  For the $ii$ terms, $\CK$ acts by multiplication by
+$\prod_{\gamma \in \Gamma_c} (1 + X_{\tilde\gamma})^{\inprod{\wp^{(i)}, L(\gamma)}}$, but using \eqref{eq:def-L}
+we see that $\inprod{\wp^{(i)}, L(\gamma)} = -\alpha_\gamma(p)$
+(since $p$ is the only edge of $\wnet$ crossed by $\wp$) and hence this reduces to
+multiplication by $Q(p)^{-1}$.  On the $jj$ terms $\CK$ similarly acts by multiplication by $Q(p)$.
+On the $ij$ terms the action of $\CK$ is more complicated:  it is multiplication by a new function $H = \prod_{\gamma \in \Gamma_c} (1 + X_{\tilde\gamma})^{\inprod{\wp_+^{(i)} + \bar b + \wp_-^{(j)}, L(\gamma)}}$.  But we have
+$\inprod{\wp_+^{(i)} + \bar b + \wp_-^{(j)}, L(\gamma)} = - \inprod{\wp_+^{(j)} + \bar a + \wp_-^{(i)}, L(\gamma)}$ as one readily
+sees using the facts that $\cl(\bar a+\bar b)$ is proportional to $L(\gamma)$ and
+$\inprod{\wp^{(i)}, L(\gamma)} = - \inprod{\wp^{(j)}, L(\gamma)}$.
+It follows that the action of $\CK$ on the $ji$ terms is multiplication by $H^{-1}$.
+These facts together are sufficient to imply the desired P5.\footnote{Incidentally, they also imply
+that $\CF(\wp)_{jj} = Q(p)$; this and the fact $\CF(\wp) = F(\wp, \vartheta_c^+)$ (which we are
+in the process of showing) together prove our remark under \eqref{eq:def-Q}.}
+
+Finally we must explain why these properties actually \ti{determine} $\CF(\wp)$.
+As a warm-up, suppose that there are only one-way streets.  In that case we have shown in \S \ref{sec:F-basics}
+and \S \ref{sec:wnet} above that the properties P1-P4 are sufficient to determine all of the $\mu(a)$,
+and hence also to fix $\CF(\wp)$.
+The same kind of argument can be made in the presence of two-way streets; the only new complication is that
+the local structure around joints and branch points is more complicated.
+Nevertheless, a direct computation
+using only the fact that $\CF(\wp)$ obey P1-P5 determines the $\mu(a)$ appearing there
+for all charges $a$ oriented out of a joint, in terms of the $\mu(a)$ for charges $a$
+oriented into the same joint.
+(The resulting explicit formulae are recorded in Appendix
+\ref{app:joint-rules}, e.g. \eqref{eq:outgoing-2wayjoint}.)
+Inductively we can thus determine the 2d-4d
+degeneracies $\mu(a)$ everywhere on $\wnet_{\vartheta_c}$, just as we did in the (generic) case
+with only one-way streets.
+Having done so the $\CF(\wp)$ are also determined by P1-P5.  This completes the proof.

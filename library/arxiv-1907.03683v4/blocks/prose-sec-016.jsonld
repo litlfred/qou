@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1907.03683v4/blocks/prose-sec-016",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1907.03683v4/blocks/prose-sec-016",
   "kind": "prose",
-  "title": "Palm measures of the discrete Bessel point process. In regards of subsection",
-  "pageStart": 17,
-  "pageEnd": 18,
-  "text": "../sections/sec-016-34-palm-measures-of-the-discrete-bessel-point-pr.md",
-  "derivedFrom": "library/arxiv-1907.03683v4/manifest",
-  "sourceDocument": "library/arxiv-1907.03683v4/manifest",
+  "title": "A deformation of the Gamma kernel",
+  "pageStart": 26,
+  "pageEnd": 28,
+  "text": "../sections/sec-016-43-a-deformation-of-the-gamma-kernel.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.03683v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.03683v4/manifest.jsonld",
   "provenance": "ingested"
 }

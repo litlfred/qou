@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0812.2426v1/blocks/prose-sec-020",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0812.2426v1/blocks/prose-sec-020",
   "kind": "prose",
-  "title": "Hopf diagrams. For a precise treatment of the theory of Hopf diagrams, we",
-  "pageStart": 8,
-  "pageEnd": 10,
-  "text": "../sections/sec-020-23-hopf-diagrams-for-a-precise-treatment-of-the.md",
-  "derivedFrom": "library/arxiv-0812.2426v1/manifest",
-  "sourceDocument": "library/arxiv-0812.2426v1/manifest",
+  "title": "Quasitriangular Hopf monads",
+  "pageStart": 13,
+  "pageEnd": 13,
+  "text": "../sections/sec-020-37-quasitriangular-hopf-monads.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0812.2426v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0812.2426v1/manifest.jsonld",
   "provenance": "ingested"
 }

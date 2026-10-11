@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ising/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ising/blocks/prose-sec-000",
   "kind": "prose",
-  "title": "JEHANNE DOUSSE AND VALENTIN F ´ERAY",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-000-2-jehanne-dousse-and-valentin-f-eray.md",
-  "derivedFrom": "library/ising/manifest",
-  "sourceDocument": "library/ising/manifest",
+  "title": "At very high temperature, with a weak magnetic ﬁeld.",
+  "pageStart": 8,
+  "pageEnd": 12,
+  "text": "../sections/sec-000-31-at-very-high-temperature-with-a-weak-magnetic.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ising/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ising/manifest.jsonld",
   "provenance": "ingested"
 }

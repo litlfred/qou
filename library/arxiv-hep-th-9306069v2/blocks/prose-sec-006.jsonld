@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9306069v2/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-9306069v2/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "Semi-classical theory",
-  "pageStart": 13,
-  "pageEnd": 15,
-  "text": "../sections/sec-006-23-semi-classical-theory.md",
-  "derivedFrom": "library/arxiv-hep-th-9306069v2/manifest",
-  "sourceDocument": "library/arxiv-hep-th-9306069v2/manifest",
+  "title": "REFERENCES",
+  "pageStart": 47,
+  "pageEnd": 48,
+  "text": "../sections/sec-006-references.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9306069v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9306069v2/manifest.jsonld",
   "provenance": "ingested"
 }

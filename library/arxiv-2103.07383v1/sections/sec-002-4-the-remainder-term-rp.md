@@ -8,10 +8,10 @@ pages: 9-9
 source_pdf: 2103.07383v1.pdf
 source_sha256: 9dca35ea16490ad8
 doc_brief: "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case — We prove the analyticity of smooth critical points for generalized integral Menger cur- vature"
+text_source: latex
+latex_prose_ratio: 0.958
+latex_coverage_ratio: 0.88
 ---
-Now we aim to estimate the remainder termR(p), which appears in the ﬁrst variation of the
-generalized integral Menger curvature forq = 2 and p∈( 7
-3, 8
-3), and its derivatives. We observe
-that it is indeed of lower order in comparison to the main termQ(p), which has been studied in
-the previous section.
+\label{sec:RemainderTermNonCritical}
+
+Now we aim to estimate the remainder term $R^{(p)}$, which appears in the first variation of the generalized integral Menger curvature for $q=2$ and $p\in (\tfrac 73, \tfrac 83)$, and its derivatives. We observe that it is indeed of lower order in comparison to the main term $Q^{(p)}$, which has been studied in the previous section.

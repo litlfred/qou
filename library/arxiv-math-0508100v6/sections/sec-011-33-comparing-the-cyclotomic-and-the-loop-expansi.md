@@ -8,32 +8,55 @@ pages: 10-10
 source_pdf: 0508100v6.pdf
 source_sha256: 9cc100a86b40c336
 doc_brief: "ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT — To a knot in 3-space, one can associate a sequence of Laurent p olynomials, whose nth term is the nth colored Jones polynomial."
+text_source: latex
+latex_prose_ratio: 0.85
+latex_coverage_ratio: 1.0
 ---
-cyclotomic expansion, one should treat qn and q (where n is the color) as two independent variables. Con-
-sider two independent variables z (standing for α) and y (standing for α/n). Let us deﬁne the following
-biholomorphic functions
-ck(z, y) =
-k∏
-j=1
-(ez + e−z − ejy − e−jy ),
-hK,k (z, y) = ck(z, y)HK,k (ey).
-The cyclotomic expansion says that for every n we have:
-(14) fK,n (α) =
-∞∑
-k=0
-hK,k (α, α/n) ∈ Q[[α]].
-The loop expansion is a Taylor expansion in α/n, so we will consider the Taylor expansion in y (around
-0) of hK,k (z, y):
-hK,k (z, y) =
-∞∑
-p=0
-dk,p (z) yp,
-where dk,p (z) (which depends on K) is holomorphic for z ∈ C.
-Comparing the loop and the cyclotomic expansion (Equations (
-10) and ( 14)), we obtain that:
-Lemma 3.2. For every knot K and every p ∈ N we have
-(15) RK,p (x) =
-∞∑
-k=0
-dk,p (x) ∈ Q[[x]].
-as formal power series in x.
+\lbl{sub.comparing}
+
+In the loop expansion, as well as in the
+cyclotomic expansion, one should treat $q^n$ and $q$ (where $n$ is
+the color) as two independent variables. Consider two
+independent variables $z$ (standing for $\a$) and $y$ (standing for
+$\a/n$). Let us define the following biholomorphic functions
+
+
+\begin{eqnarray*}
+c_k(z,y) &=&
+\prod_{j=1}^{k} (e^z+e^{-z} -e^{jy}-e^{-jy}), \\
+h_{K,k}(z,y) &=& c_k(z,y) H_{K,k}(e^{y}).
+\end{eqnarray*}
+
+The cyclotomic expansion says that for every $n$ we have:
+
+\begin{equation}
+\lbl{11}
+f_{K,n}(\a) = \sum_{k=0}^{\infty} h_{K,k}(\a,\a/n) \in \BQ[[\a]].
+
+\end{equation}
+
+The loop expansion is a Taylor expansion in $\a/n$, so we will
+consider the Taylor expansion in $y$ (around 0) of $h_{K,k}(z,y)$:
+
+$$
+h_{K,k}(z,y) = \sum_{p=0}^\infty d_{k,p}(z) \, y^p,
+$$
+where $d_{k,p}(z)$ (which depends on $K$) is holomorphic for $z \in \BC$.
+
+Comparing the loop and the cyclotomic expansion (Equations \eqref{eq.R}
+and \eqref{11}), we obtain that:
+
+\begin{lemma}
+\lbl{lem.compare3}
+For every knot $K$ and every $p \in \BN$ we have
+\begin{equation} R_{K,p}(x) = \sum_{k=0}^\infty
+d_{k,p}(x) \in \BQ[[x]].\label{12}
+\end{equation}
+as formal power series in $x$.
+\end{lemma}
+
+
+
+\section{A reduction of Theorem \ref{thm.boundC3}
+to estimates of the cyclotomic function}
+\lbl{sec.estimates}

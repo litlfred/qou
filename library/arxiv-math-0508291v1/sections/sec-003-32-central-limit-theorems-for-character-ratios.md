@@ -8,522 +8,215 @@ pages: 9-14
 source_pdf: 0508291v1.pdf
 source_sha256: d2d541426aaec742
 doc_brief: "Stein’s Method and Random Character Ratios — Stein’s method is used to prove limit theorems for random character ratios."
+text_source: latex
+latex_prose_ratio: 0.949
+latex_coverage_ratio: 0.946
 ---
-section is to prove a central limit theorem for the random var iableW deﬁned
-byW (λ) = |C|1/ 2χ λ (C)
-dim(λ ) , whereC is a ﬁxed conjugacy class such that C =C −1
-and λ is random from the Plancherel measure of G.
-For this purpose, it is useful to construct a Markov chain on t he set of
-irreducible representations of G as follows. First, ﬁx a non-trivial irreducible
-representationτ whose character is real valued. This gives a Markov chain
-Lτ by deﬁning the probability of transitioning from λ to ρ as
-Lτ (ρ,λ ) := dim(ρ)
-dim(λ)dim(τ )
-1
-|G|
-∑
-g
-χλ (g)χτ (g)χρ(g).
-It is worth remarking that since Stein’s method is in the spir it of Taylor
-approximation,τ should typically be chosen to be as close as possible to the
-trivial representation.
-Lemma 3.6 veriﬁes that Lτ is a Markov chain which is reversible with
-respect to Plancherel measure.
-Lemma 3.6. The transition probabilities of Lτ are real and non-negative
-and sum to 1. Moreover the chain Lτ is reversible with respect to the
-Plancherel measure of G.
-Proof. The transition probabilities of Lτ are real and non-negative since
-1
-|G|
-∑
-g
-χλ (g)χτ (g)χρ(g)
-is the multiplicity of ρ in the tensor product of λ and τ . Letting id denote
-the identity, it follows from Lemma 3.3 that
-∑
-ρ
-Lτ (λ,ρ ) = 1
-dim(λ)dim(τ )|G|
-∑
-g
-χλ (g)χτ (g)
-∑
-ρ
-χρ(id)χρ(g) = 1.
-For the reversibility assertion, the fact that χτ and the transition probabil-
-ities of Lτ are both real valued implies that
-dim(λ)2
-|G| Lτ (λ,ρ ) = dim(ρ)2
-|G| Lτ (ρ,λ ).
-□
-An exchangeable pair ( W,W ′) is now constructed from the chain Lτ in
-the standard way. First choose λ from the Plancherel measure of G, then
-chooseρ with probability Lτ (λ,ρ ), and ﬁnally let ( W,W ′) = (W (λ),W (ρ)).
-The remaining results in this subsection show that the excha ngeable pair
-(W,W ′) has desirable properties.
-Lemma 3.7. E(W ′|W ) =
-(
-χ τ (C)
-dim(τ)
-)
-W .
-10
-Proof. From the deﬁnition of W ′,
-E(W ′|λ) = |C|1/ 2∑
-ρ
-dim(ρ)
-dim(λ)dim(τ )
-1
-|G|
-∑
-g
-χλ (g)χτ (g)χρ(g)χρ(C)
-dim(ρ)
-= |C|1/ 2
-|G|
-∑
-g
-χλ (g)
-dim(λ)
-χτ (g)
-dim(τ )
-∑
-ρ
-χρ(C)χρ(g)
-=
-( χτ (C)
-dim(τ )
-)
-W (λ),
-where the last step is Lemma 3.3. The result follows since thi s depends on
-λ only through W . □
-Corollary 3.8 is not needed in what follows, but is worth reco rding.
-Corollary 3.8. The eigenvalues of Lτ are χ τ (C)
-dim(τ) asC ranges over conjugacy
-classes of G. The functions ψC(λ) = |C|1/ 2χ λ (C)
-dim(λ ) are a basis of eigenvectors
-of Lτ , orthonormal with respect to the inner product
-⟨f1,f 2⟩ =
-∑
-λ
-f1(λ)f2(λ)dim(λ)2
-|G| .
-Proof. The proof of Lemma 3.7 shows that ψC is an eigenvector of Lτ with
-eigenvalue χ τ (C)
-dim(τ) . The orthonormality assertion follows from Lemma 3.3,
-and the basis assertion follows since the number of conjugac y classes of G
-is equal to the number of irreducible representations of G. □
-Lemma 3.9. E(W ′ −W )2 = 2
-(
-1 − χ τ (C)
-dim(τ)
-)
-.
-Proof. This is immediate from Lemma 2.3 and 3.7. □
-For the remainder of this subsection, if K is a conjugacy class of G,pm(K)
-will denote the probability that the random walk generated b y C is in K
-after m steps.
-Lemma 3.10.
-E((W ′)2|λ) = |C|
-dim(λ)dim(τ )
-∑
-K
-p2(K)χλ (K)χτ (K)
-where the sum is over all conjugacy classes K of G.
-Proof.
-E((W ′)2|λ)
-= 1
-dim(λ)dim(τ )|G|
-∑
-ρ
-dim(ρ)
-∑
-g
-χλ (g)χτ (g)χρ(g)
-(
-|C|1/ 2χρ(C)
-dim(ρ)
-) 2
-= |C|
-dim(λ)dim(τ )|G|
-∑
-g
-χλ (g)χτ (g)
-∑
-ρ
-dim(ρ)χρ(g)
-( χρ(C)
-dim(ρ)
-) 2
-.
-11
-The result now follows from Lemma 3.4. □
-Lemma 3.11 writes Var ([E(W ′ −W )2|λ]) as a sum of positive quantities.
-Lemma 3.11.
-Var ([E(W ′ −W )2|λ]) = |C|2 ∑
-K⁄=id
-p2(K)2
-|K|
-( χτ (K)
-dim(τ ) + 1 − 2χτ (C)
-dim(τ )
-) 2
-,
-whereK ranges over all non-identity conjugacy classes of G.
-Proof. By Lemmas 3.10, 3.9, and 3.7,
-Var ([E(W ′ −W )2|λ])
-= E
-(
-E((W ′ −W )2|λ)2)
-− 4
-(
-1 − χτ (C)
-dim(τ )
-) 2
-= |C|2E
-[ ∑
-Kp2(K)χλ (K)χτ (K)
-dim(λ)dim(τ ) +
-(
-1 − 2χτ (C)
-dim(τ )
-)( χλ (C)
-dim(λ)
-) 2] 2
-−4
-(
-1 − χτ (C)
-dim(τ )
-) 2
-= T1 +T2 +T3 − 4
-(
-1 − χτ (C)
-dim(τ )
-) 2
-where
-T1 = |C|2
-dim(τ )2 E
-( ∑
-K
-p2(K)χλ (K)χτ (K)
-dim(λ)
-) 2
-T2 = 2|C|2
-dim(τ )
-(
-1 − 2χτ (C)
-dim(τ )
-) ∑
-K
-p2(K)χτ (K)E
-[
-χλ (K)
-dim(λ)
-( χλ (C)
-dim(λ)
-) 2]
-.
-T3 = |C|2
-(
-1 − 2χτ (C)
-dim(τ )
-) 2
-E
-( χλ (C)
-dim(λ)
-) 4
-.
-Fortunately, these terms can be simpliﬁed. By Lemma 3.10, th e expres-
-sion inside parentheses in T1 is real. Since χτ is real valued, Lemma 3.3
-implies that
-T1 = |C|2∑
-K
-p2(K)2
-|K|
-χτ (K)2
-dim(τ )2.
-Since χλ (C) is real, Lemma 3.4 implies that
-T2 = 2|C|2
-(
-1 − 2χτ (C)
-dim(τ )
-) ∑
-K
-p2(K)2
-|K|
-χτ (K)
-dim(τ )
-12
-and since C =C −1,
-T3 = |C|2
-(
-1 − 2χτ (C)
-dim(τ )
-) 2
-p4(id)
-= |C|2
-(
-1 − 2χτ (C)
-dim(τ )
-) 2∑
-K
-p2(K)2
-|K| .
-Thus one can write
-T1 +T2 +T3 = |C|2∑
-K
-p2(K)2
-|K|
-( χτ (K)
-dim(τ ) + 1 − 2χτ (C)
-dim(τ )
-) 2
-and the result follows since p2(id) = 1
-|K|. □
-Lemma 3.12. Letk be a positive integer.
-(1) E(W ′ −W )k = |C|k/ 2∑ k
-m=0(−1)k−m( k
-m
-) ∑
-K
-χ τ (K)
-dim(τ)
-pm(K)pk−m(K)
-|K| .
-(2) E(W ′ −W )4 is equal to
-|C|2∑
-K
-[
-8
-(
-1 − χτ (C)
-dim(τ )
-)
-− 6
-(
-1 − χτ (K)
-dim(τ )
-)] p2(K)2
-|K| .
-Proof. For the ﬁrst assertion, note that
-E((W ′ −W )k|λ) = |C|k/ 2
-dim(λ)dim(τ )
-∑
-ρ
-dim(ρ)
-|G|
-∑
-g
-χλ (g)χτ (g)χρ(g)
-·
-k∑
-m=0
-(−1)k−m
-( k
-m
-)( χρ(C)
-dim(ρ)
-) m( χλ (C)
-dim(λ)
-) k−m
-= |C|k/ 2
-dim(λ)dim(τ )
-k∑
-m=0
-(−1)k−m
-( k
-m
-)( χλ (C)
-dim(λ)
-) k−m
-·
-∑
-g
-χτ (g)χλ (g)
-∑
-ρ
-dim(ρ)
-|G|
-( χρ(C)
-dim(ρ)
-) m
-χρ(g)
-= |C|k/ 2
-dim(λ)dim(τ )
-k∑
-m=0
-(−1)k−m
-( k
-m
-)( χλ (C)
-dim(λ)
-) k−m
-·
-∑
-K
-χ τ (K)χλ (K)pm(K),
-where the ﬁnal equality is by Lemma 3.4. Thus E((W ′ −W )k) is equal to
-E(E((W ′ −W )k|λ))
-= |C|k/ 2
-dim(τ )
-k∑
-m=0
-(−1)k−m
-( k
-m
-)
-·
-∑
-K
-pm(K)χτ (K)
-∑
-λ
-dim(λ)2
-|G|
-χλ (K)
-dim(λ)
-( χλ (C)
-dim(λ)
-) k−m
-.
-13
-The ﬁrst assertion now follows from Lemma 3.4 and the fact tha t χλ (C) is
-real for all λ.
-For the second assertion, note by the ﬁrst assertion that
-E(W ′ −W )4 = |C|2
-4∑
-m=0
-(−1)m
-( 4
-m
-) ∑
-K
-χτ (K)
-dim(τ )
-pm(K)p4−m(K)
-|K| .
-If τ is the trivial representation, then W ′ =W , which implies that
-0 = |C|2
-4∑
-m=0
-(−1)m
-( 4
-m
-) ∑
-K
-pm(K)p4−m(K)
-|K| .
-Thus for general τ ,
-E(W ′ −W )4 = −|C|2
-4∑
-m=0
-(−1)m
-( 4
-m
-) ∑
-K
-(
-1 − χτ (K)
-dim(τ )
-) pm(K)p4−m(K)
-|K| .
-Observe that the m = 0, 4 terms in this sum vanish, since the only contri-
-bution could come from the identity, which contributes 0. Th e m = 2 term
-is
-−6|C|2∑
-K
-(
-1 − χτ (K)
-dim(τ )
-) p2(K)2
-|K| .
-Them = 1, 3 terms are equal and together contribute
-8|C|2∑
-K
-(
-1 − χτ (K)
-dim(τ )
-) p1(K)p3(K)
-|K|
-= 8 |C|
-(
-1 − χτ (C)
-dim(τ )
-)
-p3(C)
-= 8 |C|2
-(
-1 − χτ (C)
-dim(τ )
-)
-p4(id)
-= 8 |C|2
-(
-1 − χτ (C)
-dim(τ )
-) ∑
-K
-p2(K)2
-|K| ,
-whereid is the identity and the last two equalities can be seen either directly
-or from Lemma 3.4. This completes the proof of the second asse rtion. □
-Putting the pieces together, one obtains the following theo rem.
-Theorem 3.13. LetC be a conjugacy class of a ﬁnite group G such thatC =
-C −1 and ﬁx a nontrivial irreducible representation τ of G whose character
-is real valued. Let λ be a random irreducible representation, chosen from the
-14
-Plancherel measure of G. Let W = |C|1/ 2χ λ (C)
-dim(λ ) . Then for all real x0,
-⏐
-⏐
-⏐
-⏐P(W ≤x0) − 1
-√
-2π
-∫ x0
-−∞
-e− x2
-2 dx
-⏐
-⏐
-⏐
-⏐
-≤ |C|
-a
-/radicaltp
-/radicalvertex
-/radicalvertex
-√
-∑
-K⁄=id
-p2(K)2
-|K|
-( χτ (K)
-dim(τ ) + 2a − 1
-) 2
-+
-[
-|C|2
-π
-∑
-K
-(
-8 − 6
-a
-(
-1 − χτ (K)
-dim(τ )
-)) p2(K)2
-|K|
-] 1/ 4
-,
-wherea = 1 − χ τ (C)
-dim(τ) .
-Proof. One applies Theorem 2.1 to the exchangeable pair ( W,W ′) of this
-subsection. By Lemmas 2.4 and 3.11, the ﬁrst term in Theorem 2 .1 gives
-the ﬁrst term in the theorem. To upper bound the second term in Theorem
-2.1, note by the Cauchy-Schwarz inequality that
-E|W ′ −W |3 ≤
-√
-E(W ′ −W )2E(W ′ −W )4.
-Now use Lemma 3.9 and part 2 of Lemma 3.12. □
+\label{groupCLT}
+	
+	The goal of this subsection is to prove a central limit
+	theorem for the random variable $W$ defined by $W(\lambda) =
+	\frac{|C|^{1/2} \chi^{\lambda}(C)}{dim(\lambda)}$, where $C$
+	is a fixed conjugacy class such that $C=C^{-1}$ and $\lambda$
+	is random from the Plancherel measure of $G$.
+
+	For this purpose, it is useful to construct a Markov chain on
+	the set of irreducible representations of $G$ as
+	follows. First, fix a non-trivial irreducible representation
+	$\tau$ whose character is real valued. This gives a Markov chain
+	$L_{\tau}$ by defining the probability of transitioning from
+	$\lambda$ to $\rho$ as \[ L_{\tau}(\rho,\lambda) :=
+	\frac{dim(\rho)}{dim(\lambda) dim(\tau)} \frac{1}{|G|}
+	\sum_{g} \chi^{\lambda}(g) \chi^{\tau}(g)
+	\overline{\chi^{\rho}(g)}. \] It is worth remarking that since
+	Stein's method is in the spirit of Taylor approximation,
+	$\tau$ should typically be chosen to be as close as possible
+	to the trivial representation.
+
+	Lemma \ref{gchain} verifies that $L_{\tau}$ is a Markov chain
+which is reversible with respect to Plancherel measure.
+
+\begin{lemma} \label{gchain} The transition probabilities of $L_{\tau}$ are real and non-negative and sum to 1. Moreover the chain $L_{\tau}$ is reversible with respect to the Plancherel measure of $G$.
+\end{lemma}
+
+\begin{proof} The transition probabilities of $L_{\tau}$ are real and non-negative since \[  \frac{1}{|G|} \sum_{g} \chi^{\lambda}(g) \chi^{\tau}(g)
+	\overline{\chi^{\rho}(g)} \] is the multiplicity of $\rho$ in
+	the tensor product of $\lambda$ and $\tau$. Letting $id$
+	denote the identity, it follows from Lemma \ref{orth1} that \[
+	\sum_{\rho} L_{\tau}(\lambda,\rho) = \frac{1}{dim(\lambda)
+	dim(\tau) |G|} \sum_g \chi^{\lambda}(g) \chi^{\tau}(g)
+	\sum_{\rho} \chi^{\rho}(id) \overline{\chi^{\rho}(g)} = 1.\]
+	For the reversibility assertion, the fact that $\chi^{\tau}$
+	and the transition probabilities of $L_{\tau}$ are both real
+	valued implies that \[ \frac{dim(\lambda)^2}{|G|}
+	L_{\tau}(\lambda,\rho) = \frac{dim(\rho)^2}{|G|}
+	L_{\tau}(\rho,\lambda). \] \end{proof}
+
+	An exchangeable pair $(W,W')$ is now constructed from the
+	chain $L_{\tau}$ in the standard way. First choose $\lambda$
+	from the Plancherel measure of $G$, then choose $\rho$ with
+	probability $L_{\tau}(\lambda,\rho)$, and finally let $(W,W')
+	= (W(\lambda),W(\rho))$. The remaining results in this
+	subsection show that the exchangeable pair $(W,W')$ has
+	desirable properties.
+
+\begin{lemma} \label{steinsat} $\ee(W'|W) = \left(  \frac{\chi^{\tau}(C)}{dim(\tau)} \right) W$. \end{lemma} 
+
+\begin{proof} From the definition of $W'$,
+\begin{eqnarray*}
+\ee(W'|\lambda) & = & |C|^{1/2} \sum_{\rho} \frac{dim(\rho)}{dim(\lambda) dim(\tau)} \frac{1}{|G|} \sum_g \chi^{\lambda}(g) \chi^{\tau}(g) \overline{\chi^{\rho}(g)} \frac{\chi^{\rho}(C)}{dim(\rho)}\\
+& = & \frac{|C|^{1/2}}{|G|} \sum_{g} \frac{\chi^{\lambda}(g)}{dim(\lambda)} \frac{\chi^{\tau}(g)}{dim(\tau)} \sum_{\rho} \chi^{\rho}(C) \overline{\chi^{\rho}(g)}\\
+& = &  \left(  \frac{\chi^{\tau}(C)}{dim(\tau)} \right) W(\lambda), \end{eqnarray*} where the last step is Lemma \ref{orth1}. The result follows since this depends on $\lambda$ only through $W$. \end{proof}
+
+	Corollary \ref{record} is not needed in what follows, but is
+	worth recording.
+
+\begin{cor}
+ \label{record} The eigenvalues of $L_{\tau}$ are
+ $\frac{\chi^{\tau}(C)}{dim(\tau)}$ as $C$ ranges over conjugacy
+ classes of $G$. The functions $\psi_C(\lambda) = \frac{|C|^{1/2}
+ \chi^{\lambda}(C)}{dim(\lambda)}$ are a basis of eigenvectors of
+ $L_{\tau}$, orthonormal with respect to the inner product \[ \langle
+ f_1,f_2 \rangle = \sum_{\lambda} f_1(\lambda) \overline{f_2(\lambda)}
+ \frac{dim(\lambda)^2}{|G|}.\]
+\end{cor}
+
+\begin{proof} The proof of Lemma \ref{steinsat} shows that $\psi_C$ is an eigenvector of $L_{\tau}$ with eigenvalue $\frac{\chi^{\tau}(C)}{dim(\tau)}$. The orthonormality assertion follows from Lemma \ref{orth1}, and the basis assertion follows since the number of conjugacy classes of $G$ is equal to the number of irreducible representations of $G$. \end{proof} 
+
+\begin{lemma} \label{immcor} $\ee(W'-W)^2 = 2 \left(1 - \frac{\chi^{\tau}(C)}{dim(\tau)} \right)$. \end{lemma}
+
+\begin{proof} This is immediate from Lemma \ref{var} and \ref{steinsat}. \end{proof}
+
+	For the remainder of this subsection, if $K$ is a conjugacy
+	class of $G$, $p_m(K)$ will denote the probability that the
+	random walk generated by $C$ is in $K$ after $m$ steps.
+
+\begin{lemma} \label{pre2} \[ \ee((W')^2|\lambda) = \frac{|C|}{dim(\lambda) dim(\tau)} \sum_K p_2(K) \chi^{\lambda}(K) \chi^{\tau}(K) \] where the sum is over all conjugacy classes $K$ of $G$.     
+\end{lemma}
+
+\begin{proof} \begin{eqnarray*} & & \ee((W')^2|\lambda)\\ & = & \frac{1}{ dim(\lambda) dim(\tau) |G|} \sum_{\rho} dim(\rho) \sum_g \chi^{\lambda}(g) \chi^{\tau}(g) \overline{\chi^{\rho}(g)} \left(\frac{|C|^{1/2} \chi^{\rho}(C)}{dim(\rho)} \right)^2 \\
+& = & \frac{|C|}{ dim(\lambda) dim(\tau) |G|} \sum_g \chi^{\lambda}(g)
+\chi^{\tau}(g) \sum_{\rho} dim(\rho) \overline{\chi^{\rho}(g)} \left(
+\frac{\chi^{\rho}(C)}{dim(\rho)} \right)^2. \end{eqnarray*} The result
+now follows from Lemma \ref{countsol}. \end{proof}
+
+	Lemma \ref{big1} writes $Var([\ee(W'-W)^2|\lambda])$ as a sum
+	of positive quantities.
+
+\begin{lemma} \label{big1} \[
+ Var([\ee(W'-W)^2|\lambda]) = |C|^2 \sum_{ K \neq id}
+ \frac{p_2(K)^2}{|K|} \left( \frac{\chi^{\tau}(K)}{dim(\tau)} + 1 -
+ \frac{2 \chi^{\tau}(C)}{dim(\tau)} \right)^2  , \] where $K$
+ ranges over all non-identity conjugacy classes of $G$. \end{lemma}
+
+\begin{proof} By Lemmas \ref{pre2}, \ref{immcor}, and \ref{steinsat}, \begin{eqnarray*} & & Var([\ee(W'-W)^2|\lambda])\\ & = & \ee \left( \ee((W'-W)^2|\lambda)^2 \right) - 4 \left( 1 - \frac{\chi^{\tau}(C)}{dim(\tau)} \right)^2\\
+& = & |C|^2 \ee \left[ \frac{ \sum_K p_2(K)
+\chi^{\lambda}(K) \chi^{\tau}(K)   }{dim(\lambda) dim(\tau)}
+ + \left(1 - \frac{2 \chi^{\tau}(C)}{dim(\tau)} \right) \left(\frac{\chi^{\lambda}(C)}{dim(\lambda)} \right)^2 \right]^2\\
+& &  - 4  \left( 1 - \frac{\chi^{\tau}(C)}{dim(\tau)} \right)^2 \\ & = & T_1 + T_2 + T_3 - 4  \left( 1 - \frac{\chi^{\tau}(C)}{dim(\tau)} \right)^2 \end{eqnarray*} where
+\[ T_1 = \frac{|C|^2}{ dim(\tau)^2} \ee \left( \sum_K \frac{p_2(K) \chi^{\lambda}(K) \chi^{\tau}(K)}{dim(\lambda)} \right)^2 \]
+
+\[ T_2 = \frac{2 |C|^2}{ dim(\tau)}
+ \left(1-\frac{2 \chi^{\tau}(C)}{dim(\tau)} \right) \sum_K p_2(K)
+ \chi^{\tau}(K) \ee \left[ \frac{\chi^{\lambda}(K)}{dim(\lambda)}
+\left( \frac{\chi^{\lambda}(C)}{dim(\lambda)} \right)^2 \right] .\]
+
+\[ T_3 =  |C|^2 \left( 1-\frac{2 \chi^{\tau}(C)}{dim(\tau)} \right)^2 \ee \left( \frac{\chi^{\lambda}(C)}{dim(\lambda)} \right)^4 .\]
+
+	Fortunately, these terms can be simplified. By Lemma
+	\ref{pre2}, the expression inside parentheses in $T_1$ is
+	real. Since $\chi^{\tau}$ is real valued, Lemma \ref{orth1}
+	implies that \[ T_1 = |C|^2 \sum_K \frac{p_2(K)^2}{|K|}
+	\frac{\chi^{\tau}(K)^2}{dim(\tau)^2}.\] Since
+	$\chi^{\lambda}(C)$ is real, Lemma \ref{countsol} implies that
+	\[ T_2 = 2 |C|^2 \left( 1-\frac{2 \chi^{\tau}(C)}{dim(\tau)}
+	\right) \sum_K \frac{p_2(K)^2}{|K|} \frac{\chi^{\tau}(K)}
+	{dim(\tau)} \] and since $C=C^{-1}$, \begin{eqnarray*} T_3 & =
+	&  |C|^2 \left( 1-\frac{2 \chi^{\tau}(C)}{dim(\tau)} \right)^2 p_4(id)\\ & =
+	&  |C|^2 \left( 1-\frac{2 \chi^{\tau}(C)}{dim(\tau)} \right)^2 \sum_K
+	\frac{p_2(K)^2}{|K|}. \end{eqnarray*} Thus one can write \[
+	T_1+T_2+T_3 = |C|^2 \sum_K \frac{p_2(K)^2}{|K|} \left(
+	\frac{\chi^{\tau}(K)}{dim(\tau)} + 1 - 
+	\frac{2 \chi^{\tau}(C)}{dim(\tau)} \right)^2 \] and the result
+	follows since $p_2(id) = \frac{1}{|K|}$. \end{proof}
+
+\begin{lemma} \label{mom1} Let $k$ be a positive integer.
+\begin{enumerate}
+\item $\ee(W'-W)^k= |C|^{k/2} \sum_{m=0}^k  (-1)^{k-m} {k \choose m} \sum_K \frac{\chi^{\tau}(K)}{dim(\tau)} \frac{p_m(K) p_{k-m}(K)}{|K|}$.
+\item $\ee(W'-W)^4$ is equal to \[ |C|^2 
+\sum_K \left[  8 \left(1 - \frac{\chi^{\tau}(C)}{dim(\tau)} \right) - 6 \left( 1-\frac{\chi^{\tau}(K)}{dim(\tau)} \right) \right] \frac{p_2(K)^2}{|K|}.\]
+\end{enumerate}
+\end{lemma}  
+
+\begin{proof} For the first assertion, note that
+\begin{eqnarray*}  \ee((W'-W)^k|\lambda)
+ & = & \frac{|C|^{k/2}}{dim(\lambda) dim(\tau)}
+\sum_{\rho} \frac{dim(\rho)}{|G|}
+\sum_g \chi^{\lambda}(g) \chi^{\tau}(g) \overline{\chi^{\rho}(g)}\\ & & \cdot \sum_{m=0}^k
+(-1)^{k-m} {k \choose m} \left(\frac{\chi^{\rho}(C)}{dim(\rho)}
+\right)^m \left( \frac{\chi^{\lambda}(C)}{dim(\lambda)} \right)^{k-m}
+\\ & = & \frac{|C|^{k/2}}{dim(\lambda) dim(\tau)} \sum_{m=0}^k
+(-1)^{k-m} {k \choose m} \left( \frac{\chi^{\lambda}(C)}{dim(\lambda)}
+\right)^{k-m}\\ & & \cdot \sum_g \chi^{\tau}(g) \chi^{\lambda}(g)
+\sum_{\rho} \frac{dim(\rho)}{|G|} \left( \frac{\chi^{\rho}(C)}{dim(\rho)}
+\right)^m \overline{\chi^{\rho}(g)} \\
+& = & \frac{|C|^{k/2}}{dim(\lambda) dim(\tau)}
+\sum_{m=0}^k (-1)^{k-m} {k \choose m} \left(
+\frac{\chi^{\lambda}(C)}{dim(\lambda)} \right)^{k-m}\\ & & \cdot \sum_K \chi^{\
+\tau}(K) \chi^{\lambda}(K) p_m(K), \end{eqnarray*} where the final equality is by Lemma \ref{countsol}. Thus $ \ee((W'-W)^k)$ is equal to   \begin{eqnarray*}
+ &  & \ee(\ee((W'-W)^k|\lambda))\\
+& = &  \frac{|C|^{k/2}}{dim(\tau)}
+\sum_{m=0}^k (-1)^{k-m} {k \choose m} \\ & & 
+\cdot \sum_K p_m(K) \chi^{\tau}(K) \sum_{\lambda} \frac{dim(\lambda)^2}{|G|} \frac{\chi^{\lambda}(K)}{dim(\lambda)} \left( \frac{\chi^{\lambda}(C)}{dim(\lambda)} \right)^{k-m}. \end{eqnarray*} The first assertion now follows from Lemma \ref{countsol} and the fact that $\chi^{\lambda}(C)$ is real for all $\lambda$.
+
+	For the second assertion, note by the first assertion that \[
+	\ee(W'-W)^4 = |C|^2 \sum_{m=0}^4 (-1)^{m} {4 \choose m} \sum_K
+	\frac{\chi^{\tau}(K)}{dim(\tau)} \frac{p_m(K) p_{4-m}(K)}{|K|}
+	.\] If $\tau$ is the trivial representation, then $W'=W$,
+	which implies that \[ 0 = |C|^2 \sum_{m=0}^4 (-1)^{m} {4
+	\choose m} \sum_K \frac{p_m(K) p_{4-m}(K)}{|K|}. \] Thus for
+	general $\tau$, \[ \ee(W'-W)^4 = - |C|^2 \sum_{m=0}^4 (-1)^{m}
+	{4 \choose m} \sum_K \left( 1 -
+	\frac{\chi^{\tau}(K)}{dim(\tau)} \right) \frac{p_m(K)
+	p_{4-m}(K)}{|K|}.\] Observe that the $m=0,4$ terms in this sum
+	vanish, since the only contribution could come from the
+	identity, which contributes 0. The $m=2$ term is \[ -6 |C|^2
+	\sum_K \left( 1-\frac{\chi^{\tau}(K)}{dim(\tau)} \right)
+	\frac{p_2(K)^2}{|K|} .\] The $m=1,3$ terms are equal and
+	together contribute \begin{eqnarray*} & & 8 |C|^2 \sum_K \left(
+	1-\frac{\chi^{\tau}(K)}{dim(\tau)} \right) \frac{p_1(K)
+	p_3(K)}{|K|}\\ & = & 8 |C| \left(1 -
+	\frac{\chi^{\tau}(C)}{dim(\tau)} \right) p_3(C)\\ & = & 8
+	|C|^2 \left(1 - \frac{\chi^{\tau}(C)}{dim(\tau)} \right)
+	p_4(id)\\ & = & 8 |C|^2 \left(1 -
+	\frac{\chi^{\tau}(C)}{dim(\tau)} \right) \sum_K
+	\frac{p_2(K)^2}{|K|}, \end{eqnarray*} where $id$ is the
+	identity and the last two equalities can be seen either
+	directly or from Lemma \ref{countsol}. This completes the
+	proof of the second assertion. \end{proof}
+
+	Putting the pieces together, one obtains the following theorem.
+
+\begin{theorem} \label{main1} Let
+ $C$ be a conjugacy class of a finite group $G$ such that $C=C^{-1}$
+ and fix a nontrivial irreducible representation $\tau$ of $G$ whose character
+ is real valued. Let $\lambda$ be a random irreducible representation,
+ chosen from the Plancherel measure of $G$. Let $W=\frac{|C|^{1/2}
+ \chi^{\lambda}(C)}{dim(\lambda)}$. Then for all real $x_0$,
+ \begin{eqnarray*} && \left| \pp(W \leq x_0) - \frac{1}{\sqrt{2 \pi}}
+ \int_{-\infty}^{x_0} e^{-\frac{x^2}{2}} dx \right|\\ & \leq &
+ \frac{|C|}{a} \sqrt{\sum_{ K \neq id} \frac{p_2(K)^2}{|K|} \left(
+ \frac{\chi^{\tau}(K)}{dim(\tau)} + 2a -1 \right)^2}\\ & & +
+  \left[ \frac{|C|^2}{\pi} \sum_K \left(8 - \frac{6}{a} \left(
+ 1-\frac{\chi^{\tau}(K)}{dim(\tau)} \right) \right)
+ \frac{p_2(K)^2}{|K|} \right]^{1/4} , \end{eqnarray*} where
+ $a=1-\frac{\chi^{\tau}(C)}{dim(\tau)}$. \end{theorem}
+
+\begin{proof}
+ One applies Theorem \ref{steinbound} to the exchangeable pair
+ $(W,W')$ of this subsection. By Lemmas \ref{majorize} and \ref{big1},
+ the first term in Theorem \ref{steinbound} gives the first term in
+ the theorem. To upper bound the second term in Theorem
+ \ref{steinbound}, note by the Cauchy-Schwarz inequality that \[
+ \ee|W'-W|^3 \leq \sqrt{ \ee(W'-W)^2 \ee(W'-W)^4}.\] Now use Lemma
+ \ref{immcor} and part 2 of Lemma \ref{mom1}. \end{proof}

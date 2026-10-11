@@ -7,7 +7,7 @@
   ],
   "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/schechtman-varchenko1991-arrangements/manifest.jsonld",
   "@type": [
-    "folio-assistant-core:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "schechtman-varchenko1991-arrangements",
   "contains": [
@@ -23,6 +23,7 @@
     "library/schechtman-varchenko1991-arrangements/sections/sec-008"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "schechtman-varchenko1991-arrangements",
     "title_source": "slug",

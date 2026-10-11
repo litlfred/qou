@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/aif-2000-50-4-1021-0/sections/sec-006",
   "@type": [
     "doco:Section"
   ],
-  "title": "Q(^o)",
-  "pageStart": 43,
-  "pageEnd": 52,
+  "title": "Confluence et monodromie",
+  "pageStart": 8,
+  "pageEnd": 9,
   "contains": [
     "library/aif-2000-50-4-1021-0/blocks/prose-sec-006"
   ],
-  "derivedFrom": "library/aif-2000-50-4-1021-0/manifest",
-  "sourceDocument": "library/aif-2000-50-4-1021-0/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2000-50-4-1021-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2000-50-4-1021-0/manifest.jsonld",
   "provenance": "ingested"
 }

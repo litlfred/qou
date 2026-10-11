@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/angled-survey/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/angled-survey/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "Gluing equations",
-  "pageStart": 3,
-  "pageEnd": 3,
-  "text": "../sections/sec-003-2-gluing-equations.md",
-  "derivedFrom": "library/angled-survey/manifest",
-  "sourceDocument": "library/angled-survey/manifest",
+  "title": "Leading–trailing deformations",
+  "pageStart": 10,
+  "pageEnd": 16,
+  "text": "../sections/sec-003-4-leadingtrailing-deformations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/angled-survey/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/angled-survey/manifest.jsonld",
   "provenance": "ingested"
 }

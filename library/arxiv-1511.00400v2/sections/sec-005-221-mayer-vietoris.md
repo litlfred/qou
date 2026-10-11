@@ -8,47 +8,31 @@ pages: 7-8
 source_pdf: 1511.00400v2.pdf
 source_sha256: 6cb493049394ce3a
 doc_brief: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume."
+text_source: latex
+latex_prose_ratio: 0.947
+latex_coverage_ratio: 0.786
 ---
-considered, in particular instead of just the torsion it is more conve nient to
-consider the twisted Alexander polynomial, which is a torsion by [53]. T he
-subsection ﬁnishes with examples.
-7
-2.2.1 Mayer-Vietoris
-Let K be a CW-complex, with subcomplexes K1, K 2 ⊂K so that K = K1 ∪ K2.
-Let ρ∶ π1K → SLn(F ) be a representation. Consider the diagram of inclusions
-K1 ∩ K2
-i2
-/d15/d15
-i1 /d47/d47 K1
-j1
-/d15/d15
-K2
-j2 /d47/d47 K.
-There is a Mayer-Vietoris exact sequence in homology with twisted co eﬃcients,
-if the representations on π1K1, π1K2 and π1L are the restrictions:
-⋯ → /uni2295.big.disp
-L
-Hi(L; ρ)
-i1∗⊕i2∗
-/leftrightline /leftrightline /leftrightline /leftrightline → Hi(K1; ρ) ⊕ Hi(K2; ρ)
-j1∗−j2∗
-/leftrightline /leftrightline /leftrightline /leftrightline → Hi(K; ρ)
-→ /uni2295.big.disp
-L
-Hi−1(L; ρ) → ⋯ (8)
-where L runs on the connected components of K1 ∩ K2. Notice that diﬀer-
-ent choices of base-points yield canonical isomorphisms between th e homology
-groups, hence we can consider K1 ∩ K2 not connected,
-Choose a basis for each of these cohomology groups h∗ for H∗(K; ρ), h1∗ for
-H∗(K1; ρ), h2∗ for H∗(K2; ρ), and hL∗ for H∗(L; ρ). The long exact sequence
-(8) is viewed as a complex. Its torsion is denoted by tor (H, h∗∗).
-Proposition 2.10 (Mayer-Vietoris). Let K be a CW-complex, with subcom-
-plexes K1 ∩ K2 so that K = K1 ∪ K2. Let ρ∶ π1K → SLn(F ) be a representation
-and choose basis in homology. Then
-tor(K, h∗; ρ) = tor(K1, h1∗; ρ) tor(K2, h2∗; ρ)
-∏
-L
-tor(L, hL∗; ρ) tor(H, h∗∗)
-where L runs on the connected components of K1 ∩ K2.
-This is used in surgery formulas (e.g. Proposition 3.25) or for the map ping
-torus (Proposition 2.14). The proof can be found in [65] or in [82, Se ction 0.4].
+Let $K$ be a CW-complex, with subcomplexes $K_1,\ K_2\subset K$ so that $K=K_1\cup K_2$. Let $\rho\colon\pi_1K\to \mathrm{SL}_n(F)$ be a representation. Consider the diagram of inclusions $$\xymatrix{
+K_1\cap K_2
+\ar[d]^{i_2}
+\ar[r]^{i_1} & K_1 \ar[d]^{j_1} \\ 
+K_2 \ar[r]^{j_2}  & K.
+}$$ There is a Mayer-Vietoris exact sequence in homology with twisted coefficients, if the representations on $\pi_1K_1$, $\pi_1K_ 2$ and $\pi_1L$ are the restrictions: $$\begin{gathered}
+ \label{eqn:MV}
+  \cdots  \to \bigoplus_L H_i(L;\rho) \xrightarrow{i_{1*}\oplus i_{2*}}  
+H_i(K_1;\rho)\oplus H_i( K_2;\rho)
+  \xrightarrow{j_{1*}-j_{2*}}  H_i(K;\rho)  \\
+ \to \bigoplus_L  H_{i-1}(L;\rho)\to\cdots
+ 
+\end{gathered}$$ where $L$ runs on the connected components of $K_1\cap K_2$. Notice that different choices of base-points yield canonical isomorphisms between the homology groups, hence we can consider $K_1\cap K_2$ not connected,
+
+Choose a basis for each of these cohomology groups $h_*$ for $H_*(K;\rho)$, $h_{1*}$ for $H_*(K_1;\rho)$, $h_{2*}$ for $H_*(K_2;\rho)$, and $h_{L*}$ for $H_*(L ;\rho)$. The long exact sequence [\[eqn:MV\]](#eqn:MV){reference-type="eqref" reference="eqn:MV"} is viewed as a complex. Its torsion is denoted by $\operatorname{tor}
+(\mathcal H, h_{**})$.
+
+::: prop
+[]{#prop:MV label="prop:MV"} Let $K$ be a CW-complex, with subcomplexes $K_1\cap K_2$ so that $K=K_1\cup 
+K_2$. Let $\rho\colon\pi_1K\to \mathrm{SL}_n(F)$ be a representation and choose basis in homology. Then $$\operatorname{tor}(K, h_*;\rho)=\frac{\operatorname{tor}(K_1,h_{1*};\rho)\operatorname{tor}(K_2,h_{2*};\rho) 
+}{\prod\limits_L\operatorname{tor}(L,h_{L*};\rho) \operatorname{tor}(\mathcal H, h_{**}) }$$ where $L$ runs on the connected components of $K_1\cap K_2$.
+:::
+
+This is used in surgery formulas (e.g. Proposition [\[prop:SF\]](#prop:SF){reference-type="ref" reference="prop:SF"}) or for the mapping torus (Proposition [\[prop:MapTorus\]](#prop:MapTorus){reference-type="ref" reference="prop:MapTorus"}). The proof can be found in [@Milnor66] or in [@Memoirs Section 0.4].

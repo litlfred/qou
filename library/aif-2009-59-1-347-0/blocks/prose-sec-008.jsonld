@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/aif-2009-59-1-347-0/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/aif-2009-59-1-347-0/blocks/prose-sec-008",
   "kind": "prose",
   "title": "Appendix B. Expansion of Eq(x) at",
   "pageStart": 22,
   "pageEnd": 28,
   "text": "../sections/sec-008-appendix-b-expansion-of-eqx-at.md",
-  "derivedFrom": "library/aif-2009-59-1-347-0/manifest",
-  "sourceDocument": "library/aif-2009-59-1-347-0/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2009-59-1-347-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2009-59-1-347-0/manifest.jsonld",
   "provenance": "ingested"
 }

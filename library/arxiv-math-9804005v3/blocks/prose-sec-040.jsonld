@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9804005v3/blocks/prose-sec-040",
+  "kind": "prose",
+  "title": "SupposeA →B is surjective. If A is graded Auslander Kdim-Macaulay, then",
+  "pageStart": 24,
+  "pageEnd": 24,
+  "text": "../sections/sec-040-5-supposea-b-is-surjective-if-a-is-graded-auslan.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9804005v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9804005v3/manifest.jsonld",
+  "provenance": "ingested"
+}

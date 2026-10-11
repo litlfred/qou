@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/download-3/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Examples. Let A—A§+A\\ be a Z^ -graded algebra. Let F G A\\ such that",
+  "pageStart": 16,
+  "pageEnd": 17,
+  "contains": [
+    "library/download-3/blocks/prose-sec-005"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download-3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download-3/manifest.jsonld",
+  "provenance": "ingested"
+}

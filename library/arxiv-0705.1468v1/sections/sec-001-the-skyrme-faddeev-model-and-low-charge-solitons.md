@@ -8,202 +8,56 @@ pages: 3-7
 source_pdf: 0705.1468v1.pdf
 source_sha256: 4ff578cb3657e4a4
 doc_brief: "Knots in the Skyrme-Faddeev model Paul Sutcliffe — The Skyrme-Faddeev model is a modiﬁed sigma model in three-d imensional space, which has string-like topological solitons classiﬁed by th e"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.987
 ---
-The Skyrme-Faddeev model involves a map φ : R3 ↦→S2, which is realized as a real three-
-component vector φ = (φ1, φ2, φ3), of unit length, φ · φ = 1. As this paper is concerned only
-with static solutions then the model can be deﬁned by its ener gy
-E = 1
-32π2
-√
-2
-∫
-∂iφ · ∂iφ + 1
-2(∂iφ × ∂jφ ) · (∂iφ × ∂jφ ) d3x, (2.1)
-where the normalization is chosen for later convenience. Th e ﬁrst term in the energy is
-that of the usual O(3) sigma model and the second is a Skyrme term, required to pr ovide a
-balance under scaling and hence allow solitons with a ﬁnite n on-zero size.
-Finite energy boundary conditions require that the ﬁeld ten ds to a constant value at
-spatial inﬁnity, which is chosen to be φ (∞) = (0 , 0, 1) = e3. This boundary condition com-
-pactiﬁes space to S3, so that the ﬁeld becomes a map φ : S3 ↦→S2. Such maps are classiﬁed
-by π3(S2) = Z, so there is an integer-valued topological charge Q, the Hopf charge, which
-gives the soliton number. Unlike most theories with topolog ical solitons, the topological
-charge is not a winding number or degree of a mapping. Rather, it has a geometrical inter-
-pretation as a linking number of ﬁeld lines, as follows. Gene rically, the preimage of a point
-on the target two-sphere is a closed loop (or a collection of c losed loops) in the three-sphere
-domain obtained from the compactiﬁcation of R3. Two loops obtained as the preimages of
-any two distinct points on the target two-sphere are linked e xactly Q times, where Q is the
-Hopf charge.
-The Hopf charge can be written as the integral over the three- sphere domain of a charge
-density, but this density is non-local in the ﬁeld φ , as the following construction demon-
-strates. Let ω denote the area two-form on the target two-sphere and let F = φ ∗ω be its
-pull-back under φ to the domain three-sphere. The triviality of the second coh omology
-group of the three-sphere implies that F is an exact two-form, say F = dA. The Hopf charge
-is then given by integrating the Chern-Simons three-form ov er the three-sphere as
-Q = 1
-4π2
-∫
-S3
-F ∧ A. (2.2)
-The energy bound
-E ≥ c Q3/ 4, where c =
-( 3
-16
-) 3/ 8
-≈ 0.534 (2.3)
-has been proved [12, 9], and it is known that the fractional po wer is optimal [10], though it is
-expected that the above value of the constant c is not. Motivated by a study of the Skyrme-
-Faddeev model on a three-sphere with a ﬁnite radius, togethe r with an analogy with the
-Skyrme model, Ward has conjectured [13] that the above energ y bound holds with the value
-c = 1 (hence the choice of normalization factor for the energy i n (2.1)), but this has not been
-proven. As discussed shortly, the current energy values kno wn for low charge solitons are in
-good agreement with Ward’s conjectured energy bound, and la ter it will be demonstrated
-that the energies for higher charge solitons are too.
-3
-The simplest examples of Hopf solitons are axially symmetri c and their qualitative fea-
-tures may be described as follows. First, consider the model (2.1) deﬁned in two-dimensional
-space, so that the boundary conditions now result in a compac tiﬁcation of space from R2 to
-S2. The ﬁeld is then a map φ : S2 ↦→S2 and is classiﬁed by an integer m ∈ Z = π2(S2), which
-is the usual winding number familiar from the O(3) sigma model itself. Strictly speaking,
-in order to have two-dimensional solitons with a ﬁnite size i n this model then a potential
-term must also be included, upon which the two-dimensional s olitons are known as baby
-Skyrmions [11], but this aspect is not crucial for the discus sion here. Returning to the
-three-dimensional model, then a toroidal ﬁeld conﬁguratio n can be formed by embedding
-the two-dimensional soliton in the normal slice to a circle i n space. The two-dimensional
-soliton has an internal phase and this can be rotated through an angle 2 πn, as it travels
-around the circle once, where n ∈ Z counts the number of twists. A ﬁeld conﬁguration of
-this type has Hopf charge Q = nm, and it will be denoted by An,m , so the ﬁrst subscript
-labels the number of twists and the second is the winding numb er of the two-dimensional
-soliton forming the loop.
-The minimal energy Q = 1 soliton is of the type A1, 1 and has been studied numerically by
-a number of authors [6, 5, 1, 7, 14] using diﬀerent algorithms . Taken together, these results
-suggest that the charge one soliton has an energy of around E = 1 .21, and this is part of
-a general pattern where the minimal energy soliton exceeds W ard’s conjectured bound by
-around 20%. The numerical computations reported in this paper produce a charge one energy
-of E = 1.204, and hence appear to underestimate the energy by an amount of t he order of 1%.
-For low charge solitons this accuracy could be improved by in creasing the resolution of the
-numerical grid, but it is computationally too expensive to i ncrease the resolution for all the
-large number of simulations reported here for large charges . Moreover, although the energy
-is a slight underestimate for a given soliton solution, the r elative energies between two given
-solutions are much more accurate than this (changing grid re solutions and sizes suggests an
-accuracy of around 0 .1%) and it is more important to preserve the relative energie s than the
-absolute energy of any single solution.
-The details of the numerical computations are similar to tho se of Ref.[1], and full details
-of the related numerical code used to study Skyrmions can be f ound in Ref.[2]. Brieﬂy, a ﬁnite
-diﬀerence scheme is employed with a lattice spacing ∆ x = 0 .1 on a grid containing (151) 3
-lattice points, with the ﬁeld ﬁxed to the vacuum value φ = e3 on the boundary of the grid;
-this is preferable to other methods of dealing with the ﬁnite volume simulation domain, such
-as the one used in Ref.[1] which led to a more substantial unde restimate of energies, though
-again relative energies had a high accuracy. The energy mini mization algorithm proceeds by
-evolving second order in time dynamics and periodically rem oving kinetic energy from the
-system whenever the potential energy of the system begins to increase. It is based on the
-approach employed in Ref.[1], but is computationally more e ﬃcient since the second order
-dynamics is derived from the kinetic term of the sigma model o nly, rather than the full
-kinetic term determined from the Lorentz invariant Lagrang ian associated with the energy
-(2.1). This subtle diﬀerence leads to a more eﬃcient algorit hm since the leading term in the
-evolution equations is now diagonal, so a costly matrix inve rsion can be avoided.
-4
-A sensible deﬁnition of the position of a soliton is to identi fy where the ﬁeld is as far
-as possible from the vacuum ﬁeld. A Hopf soliton is therefore string-like, since the soliton’s
-position is deﬁned to be the closed loop (or collection of loo ps) corresponding to the preimage
-of the point φ = −e3 = (0 , 0, −1), which is antipodal to the vacuum value on the target
-two-sphere. To visualize a ﬁeld conﬁguration this position curve is plotted, though for clarity
-a tube around this position is displayed, given by an isosurf ace of the form φ3 = −1 + ν,
-where generally the value ν = 0.2 is chosen. If a pictorial representation of the Hopf charge
-is also required then a second preimage curve can also be plot ted (again as a tube), and
-the linking number of these two curves inspected. There is no natural choice for this second
-preimage value ( e3 is not a very useful choice) and in this paper when a second pre image
-curve is displayed it corresponds to the point φ = ( √2µ − µ2, 0, −1 + µ) where µ = 0 .1. In
-what follows this curve will be referred to as the linking cur ve, and since µ is relatively small
-then the linking curve remains reasonably close to the posit ion curve, making it fairly easy
-to inspect the linking number.
-In Figure 1 the position (light tube) and linking (dark tube) curves are displayed for
-the known lowest energy solitons with Hopf charges from one t o seven. Given the large
-number of numerical simulations performed by diﬀerent grou ps it seems reasonably certain
-that these are the minimal energy solitons for these charges . The energies of these solutions
-will be discussed later, and as mentioned above they are gene rally around 20% above Ward’s
-conjectured bound, but for now it is the structure of the solu tions that is of primary interest,
-and this is reviewed below.
-The solutions with charges one and two are both axially symme tric, and are of the type
-A1, 1 and A2, 1 respectively [5, 6], with one and two twists of the linking cu rve around the
-position curve clearly visible. There is a solution of the fo rm A1, 2 [13, 14, 7] but it has
-an energy around 13% above that of the minimal charge two soli ton. This solution has
-the interpretation of two Q = 1 solitons stacked one above the other, preserving the axia l
-symmetry.
-The charge three soliton is basically of the type A3, 1 but the axial symmetry is broken as
-the position curve is bent [1], so it will be denoted by ~A3, 1 to emphasize that the structure
-is deformed. There is an axial solution of the type An, 1 for any integer n, but for n > 2 this
-solution is unstable to a coiling instability [1]; a well-kn own phenomenon in other settings
-such as twisted elastic rods. The Q = 4 soliton is of the type A2, 2, [8, 13], and may be
-thought of as two Q = 2 solitons stacked one above the other. For both Q = 4 and Q = 5
-there are also bent solutions [1], similar to the charge thre e soliton, and therefore denoted
-~A4, 1 and ~A5, 1, but unlike the Q = 3 case, both these solutions are only local energy minima,
-with energies around 2% and 4% above the global minimum, resp ectively. The minimal
-energy charge ﬁve soliton provides the ﬁrst example of a link , that is, a solution in which
-the position curve contains two or more disconnected compon ents. It consists of a charge
-one soliton and a charge two soliton which are linked once [8] , with the result that each of
-these solitons gains an additional unit of linking number to make a total of ﬁve. To denote a
-link of this type the notation L1, 1
-1, 2 will be used, where the subscripts label the charges of the
-components of the links and the superscript above each subsc ript counts the extra linking
-5
-Figure 1: The position (light tube) and linking (dark tube) c urves for the known lowest
-energy solitons with Hopf charges 1 ≤ Q ≤ 7.
-number of that component, due to its linking with the others. Hence the total charge is the
-sum of the subscripts plus superscripts. The charge six soli ton is similar to that of charge
-ﬁve, but now both components of the link have charge two [1], s o using the above notation
-it is written as L1, 1
-2, 2.
-Finally, the charge seven soliton is the ﬁrst (and so far only ) example of a knot [1]. The
-position curve is a trefoil knot, which has a self-linking or crossing number of three (the
-crossing number of a knot is not an invariant and its use in thi s paper refers to the minimal
-crossing number over all presentations). An examination of the linking curve in Figure 1
-conﬁrms that it twists around the position curve four times a s the knot is traversed, so the
-Hopf charge is indeed seven, being the sum of the crossing num ber plus the number of twists.
-Any ﬁeld conﬁguration of a trefoil knot will be denoted by K3, 2, which refers to the fact that
-the trefoil knot is also the (3 , 2)-torus knot (see the following section for more informati on
-regarding torus knots). Note that this notation does not dis play the Hopf charge of the
-conﬁguration, which is determined by the twist number as wel l as the crossing number, but
-this should not cause any confusion in what follows. Of cours e, for knots and links, as well
-as for unknot conﬁgurations, the precise conformation of th e position curve is important in
-determining the energy, not just its topological type, but i ts knotted or linked structure is
-an important feature in classifying the solution. Thus, for example, the Q = 7 trefoil knot
-displayed in Figure 1 is not as symmetric as its typical knot t heory presentation, and it is
-signiﬁcant that the energy is lowered by breaking the possib le cyclic C3 symmetry.
-Having reviewed the known results for low charge solitons an d introduced the notation
-used to label their structural type, it is time to turn to the m ain questions addressed in
-this paper. Given the variety of solutions which appear, eve n at low charges, it is diﬃcult
-to make a conﬁdent prediction of the kind of behaviour that mi ght arise at higher charges.
-6
-In particular, an interesting open question is whether more knot solitons appear at higher
-charge, and if so what types of knots arise and are they local o r global minima? It could
-have been the case that the charge seven trefoil knot was the o nly knot soliton, though in
-this paper it will be shown that this is far from true. Also, it would be useful to have at least
-a qualitative understanding of the fact that Q = 7 is the lowest charge at which a knot ﬁrst
-appears, and desirable to be able to estimate the charges at w hich other knots might exist.
-In this section it has been mentioned brieﬂy that at each char ge there are often local
-minima in addition to the global minimum, and it is expected t hat the number of local
-minima generally increases with the charge. As noted in the i ntroduction, these local minima
-can have large capture basins, making it diﬃcult to fully exp lore the space of solutions. For
-any relaxation computation this makes the choice of initial conditions a crucial issue. In
-particular, it is not obvious how to construct a variety of re asonably low-energy initial
-ﬁeld conﬁgurations for all Hopf charges. One family of conﬁg urations are the axial ﬁelds
-An, 1, which are all unstable for n > 2. However, even for charges as low as four, initial
-conditions which use small perturbations of these unstable solutions get trapped in local
-minima. One successful approach for low charges involves co nstructing links by hand [7, 8],
-using a numerical cut-and-paste technique where various nu merical ﬁeld conﬁgurations are
-sewn together in diﬀerent parts of the simulation grid to cre ate a linked ﬁeld with a given
-Hopf charge. Although this approach was the ﬁrst method to su ccessfully yield the global
-minima at charges four and ﬁve, it becomes more cumbersome fo r larger charges and is not
-applicable for creating knot initial conditions; it is also not very elegant mathematically, but
-this is perhaps not a serious criticism. Another set of initi al conditions that have been used
-[8] are based on the ﬁelds An,m , with m > 1, though these ﬁelds tend to have relatively
-large energies and therefore require quite long simulation times (except for the low charge
-examples of A1, 2 and A2, 2). In the following section an analytic ansatz is presented tha t yields
-reasonable ﬁeld conﬁgurations for a variety of charges and d escribes all torus knots plus a
-wide range of links, in addition to ﬁelds of the type An,m . The key ingredient of the ansatz
-involves a rational map from the three-sphere into the compl ex projective line. The ansatz
-allows the construction of initial conditions correspondi ng to a variety of locations in ﬁeld
-conﬁguration space; in particular, conﬁgurations can be cr eated which are reasonably close
-to suspected local energy minima. This approach substantia lly reduces the computational
-eﬀort required to explore the energy landscape and makes it f easible to study knots and links
-for quite large charges.
+The Skyrme-Faddeev model involves a map $\mbox{\boldmath $\phi$}:
+\hbox{\mybb R}^3\mapsto S^2,$ which is realized as a real three-component vector $\mbox{\boldmath $\phi$}=(\phi_1,\phi_2,\phi_3),$ of unit length, $\mbox{\boldmath $\phi$}\cdot\mbox{\boldmath $\phi$}=1.$ As this paper is concerned only with static solutions then the model can be defined by its energy $$E=\frac{1}{32\pi^2\sqrt{2}}\int \partial_i\mbox{\boldmath $\phi$}\cdot\partial_i\mbox{\boldmath $\phi$}
++\frac{1}{2}(\partial_i\mbox{\boldmath $\phi$}\times\partial_j\mbox{\boldmath $\phi$})
+\cdot(\partial_i\mbox{\boldmath $\phi$}\times\partial_j\mbox{\boldmath $\phi$})\ d^3x, \label{energy}$$where the normalization is chosen for later convenience. The first term in the energy is that of the usual $O(3)$ sigma model and the second is a Skyrme term, required to provide a balance under scaling and hence allow solitons with a finite non-zero size.
+
+Finite energy boundary conditions require that the field tends to a constant value at spatial infinity, which is chosen to be $\mbox{\boldmath $\phi$}(\infty)=(0,0,1)={\bf e}_3.$ This boundary condition compactifies space to $S^3,$ so that the field becomes a map $\mbox{\boldmath $\phi$}:
+S^3\mapsto S^2.$ Such maps are classified by $\pi_3(S^2)=\hbox{\mybb Z},$ so there is an integer-valued topological charge $Q,$ the Hopf charge, which gives the soliton number. Unlike most theories with topological solitons, the topological charge is not a winding number or degree of a mapping. Rather, it has a geometrical interpretation as a linking number of field lines, as follows. Generically, the preimage of a point on the target two-sphere is a closed loop (or a collection of closed loops) in the three-sphere domain obtained from the compactification of $\hbox{\mybb R}^3.$ Two loops obtained as the preimages of any two distinct points on the target two-sphere are linked exactly $Q$ times, where $Q$ is the Hopf charge.
+
+The Hopf charge can be written as the integral over the three-sphere domain of a charge density, but this density is non-local in the field $\mbox{\boldmath $\phi$},$ as the following construction demonstrates. Let $\omega$ denote the area two-form on the target two-sphere and let $F=\mbox{\boldmath $\phi$}^*\omega$ be its pull-back under $\mbox{\boldmath $\phi$}$ to the domain three-sphere. The triviality of the second cohomology group of the three-sphere implies that $F$ is an exact two-form, say $F=dA.$ The Hopf charge is then given by integrating the Chern-Simons three-form over the three-sphere as $$Q=\frac{1}{4\pi^2}\int_{S^3}F\wedge
+A.$$
+
+The energy bound $$E\ge c\, Q^{3/4},\quad \mbox{where} \quad
+c=\left(\frac{3}{16}\right)^{3/8}\approx 0.534$$has been proved [@VK; @KR], and it is known that the fractional power is optimal [@LY], though it is expected that the above value of the constant $c$ is not. Motivated by a study of the Skyrme-Faddeev model on a three-sphere with a finite radius, together with an analogy with the Skyrme model, Ward has conjectured [@Wa4] that the above energy bound holds with the value $c=1$ (hence the choice of normalization factor for the energy in ([\[energy\]](#energy){reference-type="ref" reference="energy"})), but this has not been proven. As discussed shortly, the current energy values known for low charge solitons are in good agreement with Ward's conjectured energy bound, and later it will be demonstrated that the energies for higher charge solitons are too.
+
+The simplest examples of Hopf solitons are axially symmetric and their qualitative features may be described as follows. First, consider the model ([\[energy\]](#energy){reference-type="ref" reference="energy"}) defined in two-dimensional space, so that the boundary conditions now result in a compactification of space from $\hbox{\mybb R}^2$ to $S^2.$ The field is then a map $\mbox{\boldmath $\phi$}:S^2\mapsto S^2$ and is classified by an integer $m\in\hbox{\mybb Z}
+=\pi_2(S^2),$ which is the usual winding number familiar from the $O(3)$ sigma model itself. Strictly speaking, in order to have two-dimensional solitons with a finite size in this model then a potential term must also be included, upon which the two-dimensional solitons are known as baby Skyrmions [@PSZ], but this aspect is not crucial for the discussion here. Returning to the three-dimensional model, then a toroidal field configuration can be formed by embedding the two-dimensional soliton in the normal slice to a circle in space. The two-dimensional soliton has an internal phase and this can be rotated through an angle $2\pi n,$ as it travels around the circle once, where $n\in \hbox{\mybb Z}$ counts the number of twists. A field configuration of this type has Hopf charge $Q=nm,$ and it will be denoted by ${\cal A}_{n,m},$ so the first subscript labels the number of twists and the second is the winding number of the two-dimensional soliton forming the loop.
+
+The minimal energy $Q=1$ soliton is of the type ${\cal A}_{1,1}$ and has been studied numerically by a number of authors [@GH; @FN; @BS5; @HS; @Wa5] using different algorithms. Taken together, these results suggest that the charge one soliton has an energy of around $E=1.21,$ and this is part of a general pattern where the minimal energy soliton exceeds Ward's conjectured bound by around $20\%.$ The numerical computations reported in this paper produce a charge one energy of $E=1.204,$ and hence appear to underestimate the energy by an amount of the order of $1\%.$ For low charge solitons this accuracy could be improved by increasing the resolution of the numerical grid, but it is computationally too expensive to increase the resolution for all the large number of simulations reported here for large charges. Moreover, although the energy is a slight underestimate for a given soliton solution, the relative energies between two given solutions are much more accurate than this (changing grid resolutions and sizes suggests an accuracy of around $0.1\%$) and it is more important to preserve the relative energies than the absolute energy of any single solution.
+
+The details of the numerical computations are similar to those of Ref.[@BS5], and full details of the related numerical code used to study Skyrmions can be found in Ref.[@BS3]. Briefly, a finite difference scheme is employed with a lattice spacing $\Delta x=0.1$ on a grid containing $(151)^3$ lattice points, with the field fixed to the vacuum value $\mbox{\boldmath $\phi$}={\bf e}_3$ on the boundary of the grid; this is preferable to other methods of dealing with the finite volume simulation domain, such as the one used in Ref.[@BS5] which led to a more substantial underestimate of energies, though again relative energies had a high accuracy. The energy minimization algorithm proceeds by evolving second order in time dynamics and periodically removing kinetic energy from the system whenever the potential energy of the system begins to increase. It is based on the approach employed in Ref.[@BS5], but is computationally more efficient since the second order dynamics is derived from the kinetic term of the sigma model only, rather than the full kinetic term determined from the Lorentz invariant Lagrangian associated with the energy ([\[energy\]](#energy){reference-type="ref" reference="energy"}). This subtle difference leads to a more efficient algorithm since the leading term in the evolution equations is now diagonal, so a costly matrix inversion can be avoided.
+
+A sensible definition of the position of a soliton is to identify where the field is as far as possible from the vacuum field. A Hopf soliton is therefore string-like, since the soliton's position is defined to be the closed loop (or collection of loops) corresponding to the preimage of the point $\mbox{\boldmath $\phi$}=-{\bf e}_3=(0,0,-1),$ which is antipodal to the vacuum value on the target two-sphere. To visualize a field configuration this position curve is plotted, though for clarity a tube around this position is displayed, given by an isosurface of the form $\phi_3=-1+\nu,$ where generally the value $\nu=0.2$ is chosen. If a pictorial representation of the Hopf charge is also required then a second preimage curve can also be plotted (again as a tube), and the linking number of these two curves inspected. There is no natural choice for this second preimage value (${\bf e}_3$ is not a very useful choice) and in this paper when a second preimage curve is displayed it corresponds to the point $\mbox{\boldmath $\phi$}=(\sqrt{2\mu-\mu^2},0,-1+\mu)$ where $\mu=0.1.$ In what follows this curve will be referred to as the linking curve, and since $\mu$ is relatively small then the linking curve remains reasonably close to the position curve, making it fairly easy to inspect the linking number.
+
+In Figure [1](#fig-low){reference-type="ref" reference="fig-low"} the position (light tube) and linking (dark tube) curves are displayed for the known lowest energy solitons with Hopf charges from one to seven. Given the large number of numerical simulations performed by different groups it seems reasonably certain that these are the minimal energy solitons for these charges. The energies of these solutions will be discussed later, and as mentioned above they are generally around $20\%$ above Ward's conjectured bound, but for now it is the structure of the solutions that is of primary interest, and this is reviewed below.
+
+The solutions with charges one and two are both axially symmetric, and are of the type ${\cal A}_{1,1}$ and ${\cal A}_{2,1}$ respectively [@FN; @GH], with one and two twists of the linking curve around the position curve clearly visible. There is a solution of the form ${\cal A}_{1,2}$ [@Wa4; @Wa5; @HS] but it has an energy around $13\%$ above that of the minimal charge two soliton. This solution has the interpretation of two $Q=1$ solitons stacked one above the other, preserving the axial symmetry.
+
+The charge three soliton is basically of the type ${\cal
+A}_{3,1}$ but the axial symmetry is broken as the position curve is bent [@BS5], so it will be denoted by $\widetilde {\cal
+A}_{3,1}$ to emphasize that the structure is deformed. There is an axial solution of the type ${\cal A}_{n,1}$ for any integer $n,$ but for $n>2$ this solution is unstable to a coiling instability [@BS5]; a well-known phenomenon in other settings such as twisted elastic rods. The $Q=4$ soliton is of the type ${\cal
+A}_{2,2},$ [@HS2; @Wa4], and may be thought of as two $Q=2$ solitons stacked one above the other. For both $Q=4$ and $Q=5$ there are also bent solutions [@BS5], similar to the charge three soliton, and therefore denoted $\widetilde {\cal A}_{4,1}$ and $\widetilde {\cal
+A}_{5,1},$ but unlike the $Q=3$ case, both these solutions are only local energy minima, with energies around $2\%$ and $4\%$ above the global minimum, respectively.
+
+<figure id="fig-low">
+<div class="center">
+<embed src="1to7.ps" style="width:16cm" />
+</div>
+<figcaption>The position (light tube) and linking (dark tube) curves for the known lowest energy solitons with Hopf charges <span class="math inline">1 ≤ <em>Q</em> ≤ 7.</span></figcaption>
+</figure>
+
+The minimal energy charge five soliton provides the first example of a link, that is, a solution in which the position curve contains two or more disconnected components. It consists of a charge one soliton and a charge two soliton which are linked once [@HS2], with the result that each of these solitons gains an additional unit of linking number to make a total of five. To denote a link of this type the notation ${\cal L}_{1,2}^{1,1}$ will be used, where the subscripts label the charges of the components of the links and the superscript above each subscript counts the extra linking number of that component, due to its linking with the others. Hence the total charge is the sum of the subscripts plus superscripts. The charge six soliton is similar to that of charge five, but now both components of the link have charge two [@BS5], so using the above notation it is written as ${\cal L}_{2,2}^{1,1}.$
+
+Finally, the charge seven soliton is the first (and so far only) example of a knot [@BS5]. The position curve is a trefoil knot, which has a self-linking or crossing number of three (the crossing number of a knot is not an invariant and its use in this paper refers to the minimal crossing number over all presentations). An examination of the linking curve in Figure [1](#fig-low){reference-type="ref" reference="fig-low"} confirms that it twists around the position curve four times as the knot is traversed, so the Hopf charge is indeed seven, being the sum of the crossing number plus the number of twists. Any field configuration of a trefoil knot will be denoted by ${\cal K}_{3,2},$ which refers to the fact that the trefoil knot is also the $(3,2)$-torus knot (see the following section for more information regarding torus knots). Note that this notation does not display the Hopf charge of the configuration, which is determined by the twist number as well as the crossing number, but this should not cause any confusion in what follows. Of course, for knots and links, as well as for unknot configurations, the precise conformation of the position curve is important in determining the energy, not just its topological type, but its knotted or linked structure is an important feature in classifying the solution. Thus, for example, the $Q=7$ trefoil knot displayed in Figure [1](#fig-low){reference-type="ref" reference="fig-low"} is not as symmetric as its typical knot theory presentation, and it is significant that the energy is lowered by breaking the possible cyclic $C_3$ symmetry.
+
+Having reviewed the known results for low charge solitons and introduced the notation used to label their structural type, it is time to turn to the main questions addressed in this paper. Given the variety of solutions which appear, even at low charges, it is difficult to make a confident prediction of the kind of behaviour that might arise at higher charges. In particular, an interesting open question is whether more knot solitons appear at higher charge, and if so what types of knots arise and are they local or global minima? It could have been the case that the charge seven trefoil knot was the only knot soliton, though in this paper it will be shown that this is far from true. Also, it would be useful to have at least a qualitative understanding of the fact that $Q=7$ is the lowest charge at which a knot first appears, and desirable to be able to estimate the charges at which other knots might exist.
+
+In this section it has been mentioned briefly that at each charge there are often local minima in addition to the global minimum, and it is expected that the number of local minima generally increases with the charge. As noted in the introduction, these local minima can have large capture basins, making it difficult to fully explore the space of solutions. For any relaxation computation this makes the choice of initial conditions a crucial issue. In particular, it is not obvious how to construct a variety of reasonably low-energy initial field configurations for all Hopf charges. One family of configurations are the axial fields ${\cal A}_{n,1},$ which are all unstable for $n>2.$ However, even for charges as low as four, initial conditions which use small perturbations of these unstable solutions get trapped in local minima. One successful approach for low charges involves constructing links by hand [@HS; @HS2], using a numerical cut-and-paste technique where various numerical field configurations are sewn together in different parts of the simulation grid to create a linked field with a given Hopf charge. Although this approach was the first method to successfully yield the global minima at charges four and five, it becomes more cumbersome for larger charges and is not applicable for creating knot initial conditions; it is also not very elegant mathematically, but this is perhaps not a serious criticism. Another set of initial conditions that have been used [@HS2] are based on the fields ${\cal
+A}_{n,m},$ with $m>1,$ though these fields tend to have relatively large energies and therefore require quite long simulation times (except for the low charge examples of ${\cal A}_{1,2}$ and ${\cal
+A}_{2,2}).$ In the following section an analytic ansatz is presented that yields reasonable field configurations for a variety of charges and describes all torus knots plus a wide range of links, in addition to fields of the type ${\cal A}_{n,m}.$ The key ingredient of the ansatz involves a rational map from the three-sphere into the complex projective line. The ansatz allows the construction of initial conditions corresponding to a variety of locations in field configuration space; in particular, configurations can be created which are reasonably close to suspected local energy minima. This approach substantially reduces the computational effort required to explore the energy landscape and makes it feasible to study knots and links for quite large charges.

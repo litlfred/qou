@@ -1,0 +1,689 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SECTION 9: Proof of \thmref{B}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Proof of \thmref{B}, formulas (1) and (2)}\label{sec:B}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\thmref{B} provides three formulas for Milnor's $\mu$-invariant of a three-component link $L$ in $S^3$ whose pairwise linking numbers vanish:
+
+$(1)$\ (differential forms) \  
+$\mu(L) \ = \ \displaystyle{\frac12\, \int_{T^3} \delta(\varphi*\omega_L) \wedge \omega_L}$
+
+$(2)$\ (vector fields) \ 
+$\mu(L) \ = \ \displaystyle{\frac12\, \int_{\tor\times\tor} \vec_L(\x) \times \vec_L(\y) \dtw 
+\nabla_{\!\y}\,\varphi\left(\x - \y\right)\ d\x\, d\y}$
+
+$(3)$\ (Fourier series) \ 
+$\mu(L) \ = \  \displaystyle{8\pi^3 \sum_{\n\ne\zero} \a_\n\times \b_\n\dtw \n/\|\n\|^2}$
+
+\begin{comment}
+In the first integral, $\delta$  is the exterior co-derivative and  $\varphi*\omega_L$ is the convolution of  $\varphi$  and  $\omega_L$ $($taken with respect to the abelian group structure on the torus$)$.  In the second, $\nabla_{\!\y}$ indicates the gradient with respect to $\x$, the difference $\x-\x'$ is taken in the abelian group $\tor$,  and $d\x$ and $d\x'$ are volume elements.  
+\end{comment}
+
+\noindent
+The notation is explained in the introduction.
+
+In the subsections that follow, we obtain explicit expressions for the characteristic $2\textup{-form}$ $\omega_L$ and vector field $\vec_L$, and for the fundamental solution $\ph$ to the scalar Laplacian on $\tor$, and then establish formula (1) by making use of J.\,H.\,C.~Whitehead's integral formula for the Hopf invariant. Then, we show how to obtain formula (2) from formula (1). Finally, in 
+\secref{B'} we review the calculus of differential forms and Fourier analysis on $T^3$, in order to make explicit the role and form of $\ph$ and obtain formula (3). 
+
+%%
+\part{Explicit formula for the 2-form $\omega_L$ and the vector field $\vec_L$ on $T^3$}
+%%
+
+Recall the formula for the characteristic map $g_L\colon T^3\to S^2$ of the link $L$ given in \propref{char},
+$$
+g_L(s,t,u) \ = \ \frac{F(x,y,z)}{\| F(x,y,z)\|},
+$$
+where $x=x(s)$, $y=y(t)$ and $z=z(u)$ parametrize the components of $L$,
+and where $F$ was given in \secref{characteristic} as
+$$
+F(x,y,z) \ = \  (ix\dt y + iy\dt z + iz\dt x \ , \  jx\dt y + jy\dt z + jz\dt x \ , \  kx\dt y + ky\dt z + kz\dt x).
+$$
+Here we view $x$, $y$ and $z$ as quaternions for the multiplication and as vectors in $\reals^4$ when performing the dot product.   For simplicity, we write $g_L=F/\| F\|$, suppressing the appearance of the evaluation map $e_L(s,t,u)=(x(s),y(t),z(u))$.
+
+Again let $\omega$ be the Euclidean area 2-form on the unit 2-sphere 
+$S^2\subset\reals^3$, normalized so that the total area is 1 instead of $4\pi$.
+If $\p$ is a point of $S^2$, and $\a$ and $\b$ are tangent vectors to $S^2$
+at $\p$, then 
+$$
+\omega_{\p}(\a,\b) \ = \ \frac1{4\pi}(\a\times\b)\dtw\p.
+$$
+This 2-form $\omega$ on $S^2$ extends to a closed 2-form $\bah{\omega}$ in 
+$\reals^3-\zero$ given by
+$$
+\bah{\omega}_{\p}(\a,\b) \ = \ {(\a\times\b)\dt\p\over 4\pi\|\p\|^3},
+$$
+which is the pullback of $\omega$ from $S^2$ to $\reals^3-\zero$ via the 
+map $\p\mapsto \p/\|\p\|$.
+
+Hence the pullback $g_L^\dast\omega$ of $\omega$ from $S^2$ to $T^3$ via
+$g_L=F/\| F\|$ is the same as the pullback $F^\dast\bah{\omega}$
+of $\bah{\omega}$ from $\reals^3-\zero$ to $T^3$ via $F$.
+
+Write
+$$g_L^\dast\omega \ = \ F^\dast\bah{\omega} 
+\ = \ a(s,t,u)dt\wedge du+b(s,t,u)du\wedge ds+c(s,t,u)ds\wedge dt.$$
+Then we have
+$$
+\aligned
+a(s,t,u)& \ = \  F^\dast\bah\omega({\partial_t},{\partial_u}) \ = \  \bah\omega(F_\dast{\partial_t}, F_\dast{\partial_u}) \\
+& \ = \ \bah{\omega}(F_t,F_u) \ = \  \frac{(F_t\times F_u)\dt F}{4\pi\| F\|^3},
+\endaligned
+$$
+and likewise for $b(s,t,u)$ and $c(s,t,u)$, where the subscripts on $F$ denote
+partial derivatives.
+
+Therefore, the characteristic 2-form of the link $L$ is
+$$\omega_L \ = \  g_L^\dast\omega \ = \ 
+\frac{F_t\times F_u\dt F}{4\pi\| F\|^3}  \, dt\wedge du
++\frac{F_u\times F_s\dt F}{4\pi\| F\|^3} \, du\wedge ds
++\frac{F_s\times F_t\dt F}{4\pi\| F\|^3} \, ds\wedge dt,$$
+and its corresponding characteristic vector field is 
+$$\vec_L \ = \ 
+\frac{F_t\times F_u\dt F}{4\pi\| F\|^3} \, \partial_s
++\frac{F_u\times F_s\dt F}{4\pi\| F\|^3} \, \partial_t
++\frac{F_s\times F_t\dt F}{4\pi\| F\|^3} \, \partial_u.$$
+
+%%
+\part{Proof of \thmref{B}, formula (1)}
+%%
+
+Let $L$ be a three-component link in the 3-sphere $S^3$ with pairwise
+linking numbers $p$, $q$ and $r$ all zero.  By the first part of \thmref{A} these numbers are the degrees of the characteristic map $g_L\colon T^3\to S^2$ on the $2$-dimensional coordinate subtori. Since these degrees are all zero, $g_L$ is homotopic to a map $g\colon T^3\to S^2$ which collapses the 2-skeleton of $T^3$ to a point:
+$$
+g_L\ \simeq \ g\colon T^3 \stackrel{\sigma}{\longrightarrow}S^3 \stackrel{f}{\longrightarrow}S^2,
+$$
+where $\sigma$ is the collapsing map.  By the second part of \thmref{A}, Milnor's $\mu$-invariant of $L$ is equal to half of Pontryagin's $\nu$-invariant $\nu(g_L)$ (comparing $g_L$ to the constant map $f_{000}$ as explained in \secref{pontryagin}), which in turn is just the Hopf invariant of $f\colon S^3\to S^2$,
+$$
+\mu(L)\ = \ {1\over 2}\nu(g_L)\ = \ {1\over 2}\Hopf(f).
+$$
+
+We can thus use J.\,H.\,C.~Whitehead's integral formula for the Hopf invariant as the first ingredient in our formula for the $\mu$ invariant.  Starting from 
+Hopf's definition of his invariant of a map $f\colon S^3\to S^2$ as the linking number between the inverse images of two regular values, Whitehead \cite{Whitehead} found an integral formula for $\Hopf(f)$ as follows.
+
+Let $\omega$ be the area 2-form on $S^2$, normalized so that $\int_{S^2}
+\omega=1$. Its pullback $f^\dast\omega$ is a closed 2-form on $S^3$,
+which is exact because $H^2(S^3;\reals)=0$. Hence $f^\dast\omega=d\alpha$ for some 1-form $\alpha$ on $S^3$, and Whitehead showed that the Hopf invariant of $f$ is given by the formula
+$$
+\Hopf(f) \ = \ \int_{S^3}\alpha\wedge f^\dast\omega \ 
+= \ \int_{S^3}\alpha\wedge d\alpha,
+$$
+the value of the integral being independent of the choice of $\alpha$. 
+
+To make Whitehead's formula explicit requires a way to produce a 1-form
+$\alpha$ whose differential $d\alpha$ is a given 2-form $f^\dast\omega$ on $S^3$ which is known to be exact. We give an explicit formula for this in the 
+Appendix, since it is not needed in the body of the paper. Instead, we are
+going to pull the whole situation back to $T^3$ and perform our calculations
+there.
+
+In particular, the formula
+$$
+\Hopf(f) \ = \  \int_{S^3}\alpha_0\wedge f^\dast\omega,
+$$
+where $\alpha_0$ is any 1-form on $S^3$ such that $d\alpha_0=f^\dast\omega$, pulls back to the formula
+$$
+\nu(g_L)\ = \ \int_{T^3}\bah{\alpha_0}\wedge g^\dast\omega,
+$$
+where $\bah{\alpha_0}$ is any 1-form on $T^3$ such that $d\bah{\alpha_0} = g^\dast\omega$.  One such choice of $\bah{\alpha_0}$ would be $\bah{\alpha_0} = \sigma^\dast\alpha_0$, with $\alpha_0$
+obtained as in the Appendix.   However, since we don't have an explicit analytic formula
+for $\sigma$, and since the formula for $\alpha_0$ is complicated, we will pursue 
+a slightly different approach.
+
+Taking advantage of the fact that $g_L$ is homotopic to $g$, we also have
+$$
+\nu(g_L) \ = \  \int_{T^3}\alpha\wedge g_L^\dast\omega \ = \ \int_{T^3}\alpha\wedge \omega_L
+$$
+for any $1$-form $\alpha$ on $T^3$ such that $d\alpha=\omega_L$.  Therefore,
+what we really need is a canonical way to produce a $1$-form $\alpha$ on $T^3$ whose exterior derivative is the exact 2-form $\omega_L$.   We will prove in \propref{alp} that the $1$-form 
+$$
+\alpha_L \ = \ \delta(\ph * \omega_L)
+$$
+has the desired property that $d\alpha_L=\omega_L$.  Moreover, if $\widetilde\alpha$ is any other $1$-form such that $d\widetilde\alpha=\omega_L$, then $\|\alpha_L\| \le \|\widetilde\alpha\|$ in $L^2(\tor)$, with equality if and only if $\widetilde\alpha=\alpha_L$. 
+
+We thus obtain the explicit integral formula for Milnor's $\mu$-invariant of the three component link $L$:
+$$
+\mu(L) \ = \ {1\over 2}\nu(g_L) \ = \ {1\over 2}\int_{T^3}\delta(\ph * \omega_L)\wedge\omega_L,
+$$
+which is formula (1) of \thmref{B}.
+
+%\break
+
+%%
+\part{Proof of  \thmref{B}, formula (2)}
+%%
+
+The 1-form $\delta(\ph * \omega_L)$ on $T^3$ which appears in formula (1) of \thmref{B}
+converts to the vector field $\nabla\times(\ph * \vec_L)$, which can be regarded as the magnetic field 
+on $T^3$ due to the current flow $\vec_L$. The customary minus sign here is now hidden in the 
+definitions of the Laplacian and its inverse (Green's operator).
+
+The integral formula for Milnor's $\mu$-invariant given in formula (1),
+$$
+\mu(L) \ = \ {1\over 2}\int_{T^3}\delta(\ph * \omega_L)\wedge\omega_L\,,
+$$
+then converts to the formula
+$$
+\mu(L) \ = \ {1\over 2}\int_{T^3}\left(\vphantom{x^2}\nabla\times(\ph * \vec_L)\right)\dt\vec_L\,d\vol
+$$
+in the language of vector fields. To obtain formula (2) of \thmref{B}, we first expand out the convolution integral
+$$
+(\ph * \vec_L)(\x) \ = \ \int_{T^3}\vec_L(\y)\,\ph(\x-\y)\,d\y.
+$$
+Then we compute its curl:
+$$
+\begin{aligned}
+\left(\vphantom{x^2}\nabla_{\!\x}\times(\ph * \vec_L)\right)(\x)
+\ &= \  \int_{T^3}\nabla_{\!\x}\times\left(\vphantom{x^2}\vec_L(\y)\,\ph(\x-\y)\right)\,d\y  \\
+\ &= \  -\int_{T^3}\vec_L(\y)\times\nabla_{\!\x}\,\ph(\x-\y)\,d\y\,,
+\end{aligned}
+$$
+using the product formula $\nabla\times(f\veca)=f(\nabla\times \veca)-\veca\times\nabla f$.
+Note that $\nabla_{\!\x}\times\vec_L(\y)=\zero$ since, from the point of view of the variable
+$\x$, the vector field $\vec_L(\y)$ is constant.
+
+Inserting the expression for the curl of $\ph*\vec_L$ into the formula for $\mu(L)$, we get
+$$
+\aligned
+\mu(L)
+&\ = \ -\frac12\int_{T^3\times T^3}\left(\vphantom{x^2}\vec_L(\y)\times\nabla_{\!\x}\,\ph(\x-\y)\right)\dtw
+\vec_L(\x)\,d\x\,d\y \\
+&\ = \ -\frac12\int_{T^3\times T^3}\vec_L(\x)\times\vec_L(\y)\dtw\nabla_{\!\x}\,\ph(\x-\y)\,d\x\,d\y\\
+&\ = \ \frac12\int_{T^3\times T^3}\vec_L(\x)\times\vec_L(\y)\dtw\nabla_{\!\y}\,\ph(\x-\y)\,d\x\,d\y\,,
+\endaligned
+$$
+where at the last step we hid the minus sign by taking the gradient of $\ph$ with respect to
+$\y$ instead of $\x$, and obtained
+formula (2) of \thmref{B}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SECTION 9: Proof of \thmref{B}, formula (3)
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fourier series and the Proof of \thmref{B}, formula (3)}\label{sec:B'}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\vskip -.2in
+\vskip -.2in
+%%
+\part{Fourier series and the fundamental solution of the Laplacian}
+%%
+
+In the proofs of formulas (1) and (2) of \thmref{B}, we needed to find a 1-form $\alpha$ on $T^3$ whose exterior derivative is the exact 2-form $\omega_L$ associated with the three-component link $L$ in $S^3$. We asserted that we can choose  $\alpha=\delta(\ph * \omega_L)$, where $\ph$ is the fundamental solution of the scalar Laplacian on $T^3$. Furthermore, we asserted that this choice of $\alpha$ is canonical in the sense that it has the smallest $L^2$ norm among all possible choices. We justify these assertions in this section and lay the groundwork for the proof of formula (3) of \thmref{B} by studying the calculus of differential forms on $T^3=(\br/2\pi\bz)^3  $ in terms of their Fourier series. 
+
+We will prove the following two results:
+
+%%%
+\begin{comment}
+\noindent\bf Theorem C\rm.\ \ \it
+\rm (a) \it The fundamental solution 
+of the scalar Laplacian on the $3$-torus \\
+$T^3=S^1 \times S^1 \times S^1$ is given by the formula
+$$
+\varphi(x,y,z) \ = \  
+{1\over 8\pi^3}\sum_{{ m,n,p = -\infty }\atop
+{m^2+n^2+p^2\neq 0}}^\infty 
+{e^{i(mx+ny+pz)}\over m^2+n^2+p^2}.
+$$
+The function $\varphi$ is $C^\infty$ at all points of $T^3$ except $(0,0,0)$, where it becomes infinite. 
+\rm (b) \it If $\omega$ is any exact differential form on $T^3$ with $C^\infty$ coefficients, then 
+$$
+\alpha \ = \ \delta(\ph * \omega)
+$$
+satisfies $d\alpha=\omega$. Furthermore, if $d\widetilde\alpha=\omega$ as well, then $\Vert\alpha\Vert_{L^2}
+\le\Vert\widetilde\alpha\Vert_{L^2}$, with equality if and only if $\widetilde\alpha=\alpha$.
+\rm 
+\end{comment}
+%%%
+
+\begin{proposition}\label{prop:fs}
+\textbf{\boldmath  \ \ The fundamental solution of the scalar Laplacian on the\\
+ $3$-torus $T^3 = (\br/2\pi\bz)^3$ is given by the formula
+$$
+\varphi(\x) \ = \
+{1\over 8\pi^3}\sum_{\n\ne\zero}
+e^{i\n\dte\x} / \|\n\|^2.
+$$
+The function $\varphi$ is $C^\infty$ at all points $
+\x\in T^3$ except $\zero$, where it becomes infinite.} 
+\end{proposition}
+
+\bigskip
+
+\begin{proposition}\label{prop:alp}
+\textbf{\boldmath  If $\omega$ is any exact differential form on $T^3$ with $C^\infty$ coefficients, then 
+$$
+\alpha \ = \ \delta(\ph * \omega)
+$$
+is a $C^\infty$ differential form satisfying $d\alpha=\omega$.  Furthermore, if $d\widetilde\alpha=\omega$ as well, then $\Vert\alpha\Vert_{L^2}\le\Vert\widetilde\alpha\Vert_{L^2}$, with equality if and only if $\widetilde\alpha=\alpha$.} 
+\end{proposition} 
+
+
+Before diving into calculations, we pause for some words of explanation: We write $\Omega^k(T^3)$ for the space of $C^\infty$ $k$-forms on $T^3$. With $d$ as the exterior differentiation operator taking $\Omega^k(T^3)$ to $\Omega^{k+1}(T^3)$, and $\delta$ the co-differentiation map adjoint to  $d$ in the $L^2$ sense, the Laplacian of a $k$-form $\alpha$ is 
+$$
+\Delta\alpha \ = \ (d\delta+\delta d)\alpha.
+$$
+This definition gives us the ``geometer's sign convention'' for the Laplacian on functions (0-forms):
+$$
+\Delta f \ = \  -\left({\partial^2 f\over\partial x_1^2}+{\partial^2 f\over\partial x_2^2} +
+{\partial^2 f\over\partial x_3^2}\right).
+$$
+
+
+%%
+\part{Proof of \propref{fs}}
+%%
+
+The \it fundamental solution \rm of the scalar Laplacian is a function $\varphi$, 
+convolution with which ``inverts'' the Laplacian to the extent that this is possible. On $T^3$, only 
+functions that integrate to zero are in the range of the Laplacian, and so ``the'' fundamental 
+solution of $\Delta$ on $T^3$ is the function $\varphi$ which satisfies
+$$
+\int_{T^3}\varphi\,d\!\vol \ = \  0
+\qquad\textup{and}\qquad 
+\Delta(\varphi * f) \ = \ f
+$$
+for all $f\in C^\infty(T^3)$ such that $\displaystyle{\int_{T^3}f\,d\!\vol=0}$.
+
+Even though we have expressed $\varphi$ in terms of complex exponentials, 
+the value of $\varphi$ is real for real values of $\x$ because of the symmetry of the coefficients.
+
+\figref{fundsol} shows the graph of the corresponding fundamental solution
+$$\varphi(\x) \ = \
+{1\over 4\pi^2}\sum_{\n\ne\zero} e^{i\n\dte \x} /  \|\n\|^2 
+$$
+of the scalar Laplacian on the 2-torus $S^1 \times S^1$, summed for $|\n| \leq 10$, and displayed over the range $[-3\pi,3\pi]\times[-3\pi,3\pi]$.
+
+%%% FIGURE 31: Fund Sol %%%
+\begin{figure}[h!]
+\includegraphics[height=260pt]{FigFundSolDennis.pdf}
+\caption{Fundamental solution of the scalar Laplacian on $S^1 \times S^1$}
+\label{fig:fundsol}
+\end{figure}
+%%%%%%%%%%%%%%%%%%  
+
+
+With respect to the $L^2$ inner product
+$$
+\langle f,g\rangle \ = \  \int_{T^3}f(\x)\,\overline{g(\x)}\,d\x\,,
+$$
+the set of complex exponentials $\{e^{i\n\dte\x} \st \n\in\bz^3\}$ is an orthogonal set, and for all $\n$, 
+we have $\langle e^{i\n\dte\x},e^{i\n\dte\x}\rangle = 8\pi^3$. 
+
+Any function $f$ in $L^2(T^3)$ can be expanded into a Fourier series
+$$
+f\ \sim \ \sum_{\n\in\ints^3} c_{\n}e^{i\n\dte \x}$$
+where 
+$$
+c_\n\ = \ {1\over 8\pi^3}\langle f,e^{i\n\dte\x}\rangle \ = \  {1\over 8\pi^3}\int_{T^3} f(\x)\,e^{-i\n\dte\x}\,d\x.
+$$
+Moreover, by Plancharel's theorem, the $L^2(T^3)$-norm of $f$ is equal to the $\ell^2$-norm of the 
+sequence of coefficients:
+$$
+\Vert f\Vert_{L^2} \ = \  \int_{T^3}|f(x)|^2\,d\x \ = \  \sum_{\n\in\ints^3} 8\pi^3|c_\n|^2.
+$$
+This shows that the function $\varphi$ of \propref{fs} is in $L^2(T^3)$, since $\|c_\n\|^2$ is of order $1/\|\n\|^4$, while the number of lattice points at distance $\|\n\|$
+from $\zero$ is of order $\|\n\|^2$. 
+
+Because the range of the scalar Laplacian is the (closed) subspace of functions $f$ for which 
+$$
+\int_{T^3} f(\x)\,d\x\ = \ 0\,,
+$$
+we will denote this subspace of $L^2(T^3)$ by $L^2_0(T^3)$, and similarly for other function spaces, where a zero subscript will indicate that all functions in the space have average value zero.  In terms of Fourier coefficients, $f\in L^2_0(T^3)$ if and only if the Fourier coefficient $c_\zero=c_{(0,0,0)}=0$.  
+
+For functions $f$ and $g$ in $C^\infty(T^3)$, their {\itb convolution}
+$f*g$ is defined by
+$$
+\left(\vphantom{x^2}f*g\right)(\x)\ = \ \int_{T^3}f(\y)\,g(\x-\y)\,d\y\,,
+$$
+and also lies in $C^\infty(T^3)$.  One checks easily that $
+e^{i\m\dte\x}*e^{i\n\dte\x} = 0$ if $\m\neq \n$, and 
+$$
+e^{i\n\dte\x}*e^{i\n\dte\x}\ = \ 8\pi^3 e^{i\n\dte\x}.
+$$
+Therefore, if $f$ and $g$ have Fourier series $\sum c_{\n}e^{i\n\dte\x}$ and
+$\sum d_{\n}e^{i\n\dte\x}$ respectively, then the Fourier series of $f*g$ is
+$$
+8\pi^3\sum_{\n\in\ints^3}c_{\n}d_{\n}e^{i\n\dte\x}.
+$$
+
+From this
+it follows that the operation of convolution satisfies $f*g=g*f$
+and $(f*g)*h=f*(g*h)$ whenever all the convolutions are defined. Furthermore,
+$$
+{\partial\over \partial x_k}(f*g)\ = \ {\partial f\over \partial x_k}*g \ = \  f*{\partial g\over \partial x_k}.
+$$
+
+For $u\in C^\infty(T^3)$, with 
+$$
+u(\x)\ = \ \sum_{\n\in\ints^3} b_{\n}e^{i\n\dte\x}\,,
+$$
+we have
+$$
+\Delta u(\x)\ = \ \sum_{\n\neq\zero}|\n|^2b_{\n}e^{i\n\dte\x}.
+$$
+Because the $(0,0,0)$-coefficient of $\Delta u$ is zero, this shows why in order to solve $\Delta u=f$ we must restrict $f$ to be in $C^\infty_0(T^3)$.   And for $f\in C^\infty_0(T^3)$, with
+$$
+f(\x)\ = \ \sum_{\n\neq\zero}c_{\n}e^{i\n\dte\x},
+$$
+the unique solution $u\in C^\infty_0(T^3)$ of $\Delta u=f$ has $b_{\n}= c_\n/|\n|^2$,
+and so, since 
+$$
+\ph(\x)\ = \ \frac{1}{8\pi^3}\sum_{\n\ne\zero}{e^{i\n\dte \x}}/{\|\n\|^2}\,,
+$$
+we conclude that $u=\varphi * f$.  This completes the proof of \propref{fs} except for the assertion about the smoothness of $\ph$ away from its singularity, which follows from well-known local regularity theorems for elliptic partial differential equations (see, for example, Folland~\cite{Folland},  Theorem 6.33).
+
+%%
+\part{Fourier series and the calculus of differential forms on the 3-torus}
+%%
+
+To prove \propref{alp}, we express the calculus of differential forms on $T^3$ in terms of Fourier series.  Except for the fundamental solution $\ph$ of the (scalar) Laplacian on $T^3$, we will assume all functions and forms are $C^\infty$.
+
+We continue to express functions (0-forms) as Fourier series: for 
+$\x=(s,t,u)$ and $\n=(n_1,n_2,n_3)$, we write
+$$
+f(\x) \ = \ \sum_{\n\in\ints^3}c_{\n}e^{i\n\dte\x}\ \in\ \Omega^0(T^3).
+$$
+Likewise, we employ the notation described in the introduction and express 1-forms using 
+$\c_{\n}=(c_\n^{s},c_\n^{t},c_\n^{u})$
+and $d\x=(ds,dt,du)$. We write
+$$
+\alpha(\x) \ = \ \sum_{\n\in\ints^3}\c_{\n}e^{i\n\dte\x}\dt d\x\ \in\ \Omega^1(T^3).
+$$
+With $\star d\x=(dt\wedge du,du\wedge ds,ds\wedge dt)$ as before, we can express a 2-form as
+$$
+\beta(\x) \ = \ \sum_{\n\in\ints^3}\c_{\n}e^{i\n\dte\x}\dt \star d\x\ \in\ \Omega^2(T^3).
+$$
+Finally, with $dV=ds\wedge dt\wedge du$, a 3-form can be written as
+$$
+\gamma(\x) \ = \ \sum_{n\in\ints^3}c_{\n}e^{i\n\dte\x}dV\ \in\ \Omega^3(T^3).
+$$
+
+It is straightforward to express both the exterior derivative $d$ and the
+codifferential $\delta$ in terms of Fourier coefficients. With $f$, $\alpha$,
+$\beta$ and $\gamma$ as above, we have
+$$
+\begin{array}{lll}
+\displaystyle{df \ = \ \sum ic_{\n}\n e^{i\n\dte\x}\dt d\x} &
+\mbox{\rm\ and\ } & \delta f \ = \ 0,\\[0.3cm]
+\displaystyle{d\alpha \ = \ \sum i\n\times \c_\n e^{i\n\dte\x}\dt \star d\x} &
+\mbox{\rm\ and\ } & \displaystyle{\delta\alpha \ = \ -\sum i\n\dt \c_\n e^{i\n\dte\x}},\\[0.3cm]
+\displaystyle{d\beta \ = \ \sum i\n\dt\c_\n e^{i\n\dte\x}dV} &
+\mbox{\rm\ and\ } & \displaystyle{\delta\beta \ = \ \sum i\n\times\c_\n e^{i\n\dte\x}
+\dt d\x,}\\[0.3cm]
+d\gamma \ = \ 0 & \mbox{\rm\ and\ } & 
+\displaystyle{\delta\gamma \ = \ -\sum ic_\n \n e^{i\n\dte\x}\dt\star d\x}.
+\end{array}
+$$
+Thus, exterior differentiation and co-differentiation are expressed in terms of vector algebraic operations on the Fourier coefficients.
+From these expressions, we conclude the following about the kernel and image
+of $d$ and $\delta$:
+
+\begin{itemize}
+\item For 0-forms, 
+$$
+\begin{aligned}
+\ker d &\ = \ \{f \st c_\n=0\ \mbox{\rm for}\ \n\ne\zero,
+\mbox{\rm\ while\ }
+\ c_\zero
+\ \mbox{\rm is arbitrary}\} \ \ \ \\[0.2cm]
+\im d\, &\ = \  \{0\} \\[0.2cm]
+\ker \delta &\ = \  \{\mbox{\rm all}\ f\} \\[0.2cm]
+\im \delta\, &\ = \  \{f \st c_\zero=0\}
+\end{aligned}
+$$
+\item For 1-forms,
+$$
+\begin{aligned}
+\ker d &\ = \  \{\alpha \st \c_\n=\lambda_\n\n\ \mbox{\rm for}\ \n\ne\zero,
+\mbox{\rm\ while\ }\c_\zero
+\ \mbox{\rm is arbitrary}\} \\[0.2cm] 
+\im d\, &\ = \  \{\alpha \st \c_\n=\lambda_\n\n\ \mbox{\rm for}\ \n\ne\zero,\ \c_\zero=\zero\} \\[0.2cm]
+\ker \delta &\ = \  \{\alpha \st \c_\n\dt\n =0\ \mbox{\rm for}\ \n\ne\zero,
+\mbox{\rm\ while\ }\c_\zero \ \mbox{\rm is arbitrary}\} \\[0cm]
+%%%%%%% attempt to even out the spacing
+\im \delta\, &\ = \  \{\alpha \st \c_\n\dt\n=0\ \mbox{\rm for}
+\ \n\ne\zero,\ \c_\zero=\zero\}
+\end{aligned}
+$$
+\item For 2-forms,
+$$
+\begin{aligned}
+\ker d &\ = \  \{\beta \st \c_\n\dt\n=0\ \mbox{\rm for}\ \n\ne\zero,
+\mbox{\rm\ while\ }\c_\zero
+\ \mbox{\rm is arbitrary}\} \\[0.01cm]
+\im d\, &\ = \  \{\beta \st \c_\n\dt\n=0\ \mbox{\rm for}\ \n\ne\zero,\ \c_\zero=\zero\} \\[0cm]
+\ker \delta &\ = \  \{\beta \st \c_\n=\lambda_\n\n\ \mbox{\rm for}\ \n\ne\zero,
+\mbox{\rm\ while\ }\c_\zero \ \mbox{\rm is arbitrary}\} \\[0cm]
+\im \delta\, &\ = \  \{\beta \st \c_\n=\lambda_\n\n\ \mbox{\rm for}
+\ \n\ne\zero,\ \c_\zero=\zero\}
+\end{aligned}
+$$
+\item For 3-forms,
+$$
+\begin{aligned}
+\ker d&\ = \ \{\mbox{\rm all}\ \gamma\}\\[0.15cm]
+\im d\, &\ = \  \{\gamma \st c_\zero=0\} \\[0.2cm]
+\ker \delta &\ = \  \{\gamma \st c_\n=0\ \mbox{\rm for}\ \n\ne\zero,
+\mbox{\rm\ while\ }\ c_\zero
+\ \mbox{\rm is arbitrary}\} \\[0.1cm]
+\im \delta\, &\ = \ \{0\}
+\end{aligned}
+$$
+\end{itemize}
+
+Therefore $\im d\subset\ker d$ and $\im \delta\subset\ker\delta$, and
+the following orthogonal (with respect to the $L^2$ inner product) decompositions hold:
+$$
+\Omega^k(T^3)\ = \ \ker\delta\oplus\im d \ = \ \im\delta\oplus\ker d
+$$
+for $k=0,\ldots,3$. The $k$-forms in $\ker d\cap\ker\delta$ are the forms
+whose Fourier series contain only constant terms. These are called \it harmonic \rm
+$k$-forms because they are in the kernel of
+the Laplacian $\Delta=d\delta+\delta d$, so we write $\Har^k(T^3)=\ker d\cap\ker\delta$.
+We then have the Hodge decomposition 
+$$
+\Omega^k(T^3)\ = \ \im\delta\oplus\Har^k(T^3)\oplus \im d.
+$$
+The Laplacian $\Delta\colon\Omega^k(T^3)\to\Omega^k(T^3)$ preserves this Hodge decomposition, 
+taking $\im \delta$ bijectively to itself, killing $\Har^k(T^3)$, and taking $\im d$ bijectively to itself.
+
+%%%%%
+\part{Proof of \propref{alp}}
+%%%%%
+
+We must show that if $\omega$ is any $C^\infty$ exact differential $k$-form on $T^3$, then the $(k-1)$-form $\alpha=\delta(\ph*\omega)$ is $C^\infty$ and satisfies
+$d\alpha=\omega$, and that if $d\widetilde\alpha=\omega$ as well, then $\Vert\alpha\Vert_{L^2}
+\le\Vert\widetilde\alpha\Vert_{L^2}$, with equality if and only if $\widetilde\alpha=\alpha$.
+
+Because it is the case we use in \thmref{B}, we will carry this out 
+specifically for 2-forms. The proofs for 1-forms and 3-forms
+are essentially the same. 
+
+For a 2-form 
+$$
+\beta\ = \ \sum_{\n\in\ints^3}\c_\n e^{i\n\dte\x}\dt \star d\x\,,
+$$ 
+its Laplacian is given by
+$$
+\Delta\beta\ = \ \sum_{\n\ne\zero}|\n|^2\c_\n e^{i\n\dte\x}\dt \star d\x.
+$$
+We can use convolution with the fundamental solution $\ph$ of the scalar Laplacian to express the Green's operator,
+$$
+\Gr(\beta)\ = \ \ph * \beta \ = \  \sum_{\n\ne \zero}{\c_\n\over|\n|^2}e^{i\n\dte\x}\dt \star d\x.
+$$
+Clearly the Laplacian $\Delta$ and the Green's operator are inverses of one another when applied to 2-forms $\beta$ with $\c_\zero=\zero$, equivalently, to 2-forms $\beta$ orthogonal to $\Har^2(T^3)$.
+
+To prove \propref{alp}, assume that $\beta$ is exact, that is, 
+$\beta\in\im d$. Then $\Gr(\beta)$ is also exact, hence certainly closed, and therefore
+$$
+\beta\ = \ \Delta\Gr(\beta)\ = \ (d\delta+\delta d)\Gr(\beta)\ = \ d\delta\Gr(\beta)\ = \ d\delta(\ph*\beta).
+$$
+Thus $\alpha=\delta(\ph*\beta)$ satisfies $d\alpha=\beta$.
+
+If $\widetilde\alpha$ is any other 2-form satisfying $d\widetilde\alpha=\beta$, then $\widetilde\alpha$ differs from $\alpha$ by some closed 2-form, which must be $L^2$-orthogonal to $\alpha$ since $\alpha\in\im\delta$. Thus, $\Vert\alpha\Vert_{L^2}\le\Vert\widetilde\alpha\Vert_{L^2}$
+by the Pythagorean theorem.
+
+Since the Fourier coefficients of a $C^\infty$ 2-form decrease
+faster than any negative power of $|\n|$, we have that $\Gr(\beta)$ and 
+$\delta\Gr(\beta)$ will be $C^\infty$ if $\beta$ is. This completes the proof
+of \propref{alp}.
+
+%%
+\part{Proof of \thmref{B}, formula (3)}
+%%
+
+This formula expresses Milnor's invariant $\mu(L)$ in terms of the Fourier coefficients of $\omega_L$:
+$$
+\mu(L)\ = \ 8\pi^3\sum_{\n\ne\zero}\frac{\a_\n\times\b_\n\dtew\n}{\|\n\|^2}
+$$
+where 
+$$
+\omega_L\ = \ \sum_{\n\ne\zero}\c_\n e^{i\n\dte\x}\dtew \star d\x
+$$
+with $\c_\n=\a_\n+i\b_\n$ and with $\a_\n$ and $\b_\n$ real.
+
+The formula for $\omega_L$ is summed over $\n\ne\zero$ because the hypothesis
+of pairwise linking numbers zero is equivalent to the vanishing of the harmonic component of $\omega_L$, which in turn is equivalent to the vanishing of its Fourier coefficient $\c_\zero$.
+
+We begin with formula (1) of \thmref{B} for $\mu(L)$:
+$$
+\mu(L)\ = \ {1\over 2}\int_{T^3}\delta(\ph*\omega_L)\wedge\omega_L.
+$$
+We have
+$$
+\ph*\omega_L\ = \ \sum_{\n\ne\zero}\frac{\c_\n e^{i\n\dte\x}}{\|\n\|^2}\dtew \star d\x\,,
+$$
+and hence, from our table of derivatives and co-derivatives in terms of Fourier
+series,
+$$
+\delta(\ph*\omega_L)\ = \ \sum_{\n\ne\zero} \frac{(\n\times\c_\n)\,i\,e^{i\n\dte\x}}{\|\n\|^2}\dtew d\x.
+$$
+To compute $\delta(\ph*\omega_L)\wedge\omega_L$, we use the fact that if $\vv \dtew d\x$ is a 1-form and $\w\dtew \! \star \!d\x$ is a 2-form, then
+$$
+(\vv\dtew d\x)\wedge(\w\dtew \! \star\!d\x)\ = \ (\vv\dtew \w)\,dV.
+$$
+Thus
+$$
+\delta(\ph*\omega_L)\wedge\omega_L\ = \ \sum_{\m\ne\zero}\sum_{\n\ne\zero}
+\frac{(\n\times\c_\n)\dtew\c_\m\,ie^{i(\m+\n)\dte\x}}{\|\n\|^2}\,dV.
+$$
+When we insert this double sum into the integral 
+$\mu(L)={1\over 2}\int_{T^3}\delta(\ph*\omega_L)\wedge\omega_L,$
+most of the terms in the summation will integrate to zero, leaving only the terms
+where $\m+\n=\zero$. In those cases, $e^{i(\m+\n)\dte\x}=e^0=1$ integrates
+to $8\pi^3$, the volume of $T^3$.
+
+Thus
+$$
+\begin{aligned}
+\mu(L)&\ = \ 4\pi^3\sum_{\n\ne\zero}\frac{i(\n\times\c_\n)\dtew\c_{-\n}}{\|\n\|^2} \\
+&\ = \ 4\pi^3\sum_{\n\ne\zero}\frac{i(\c_\n\times\c_{-\n})\dtew\n}{\|\n\|^2}
+\end{aligned}
+$$
+and it remains to simplify this last series.
+
+Since $\c_\n=\a_\n+i\b_\n$ and since $\omega_L$ is real-valued, we have
+$
+\c_{-\n} = \bah{\c_\n} = \a_\n-i\b_\n.
+$
+Hence
+$$
+\c_\n\times\c_{-\n}\ = \ (\a_\n+i\b_\n)\times(\a_\n-i\b_\n)\ = \ 
+-2i\,\a_\n\times\b_\n,$$
+and therefore
+$$
+\begin{aligned}
+\mu(L)&\ = \ 4\pi^3\sum_{\n\ne\zero}\frac{i(\c_\n\times\c_{-\n})\dtew\n}{\|\n\|^2}\\
+&\ = \ 8\pi^3\sum_{\n\ne\zero}\frac{(\a_\n\times\b_\n)\dtew\n}{\|\n\|^2}\,,
+\end{aligned}
+$$
+completing the proof of formula (3) and, with it, that of \thmref{B}.
+
+%%
+\part{Numerical computation}
+%%
+
+We used Maple and Matlab 
+to calculate an approximation to Milnor's $\mu$-invariant for the three-component link $L$
+in $S^3$ given by
+$$
+\aligned
+x(s)&\ = \ [\textstyle{4\over 5}\sin s,\cos s,\textstyle{3\over 5}\sin s,0], \\
+y(t)&\ = \ [\textstyle{4\over 5}\sin t,0,\cos t,\textstyle{3\over 5}\sin t], \\
+z(u)&\ = \ [\textstyle{4\over 5}\sin u,\textstyle{3\over 5}\sin u,0,\cos u],
+\endaligned
+$$
+for $s\in[0,2\pi]$,
+$t\in[0,2\pi]$ and $u\in[0,2\pi]$,
+which is a concrete realization of the Borromean rings with $\mu=-1$. 
+
+%%%%%%%%%%%%%
+%%% FIGURE 32: Borromean Rings %%%
+\begin{figure}[h!]
+\includegraphics[height=130pt]{FigBorRafal.pdf}
+\caption{Borromean rings}
+\label{fig:bor}
+\end{figure}
+%%%%%%%%%%%%%%%%%%  
+%%%%%%%%%%%%%
+
+Maple gave the (long, ugly) formula for $\omega_L$ obtained from 
+\propref{char}, and we used Matlab to calculate approximations to its Fourier coefficients $\c_\n$
+for divisions of the $s$, $t$ and $u$ intervals into 60 subintervals and for $\n\in[-15,15]^3$. The approximation of $\mu$ we obtained in this way was $-0.97$. 
+
+%%%%
+\appendix
+%%%%
+
+\section*{Appendix.  Whitehead's integral formula for the Hopf invariant}
+
+We take this opportunity to make J.\,H.\,C.~Whitehead's integral formula for the Hopf invariant of a map $f\colon S^3\to S^2$ explicit, and have relegated it to an appendix because we do not use the result in this paper.
+
+Recall from \secref{B} Whitehead's formula, 
+$$
+\Hopf(f) \ = \ \int_{S^3}\alpha\wedge\omega_f,
+$$
+where $\omega_f=f^\dast\omega$ is the pullback to $S^3$ of the normalized area form $\omega$ on $S^2$, and $\alpha$ is any 1-form on $S^3$ such that $d\alpha=\omega_f$. To make this formula explicit requires a way to produce such an $\alpha$. 
+
+To do this, we first write Whitehead's formula in the language of vector fields,
+$$
+\Hopf(f) \ = \ \int_{S^3}\veca\dtw\vec_f\ d\vol,
+$$
+where the 2-form $\omega_f$ on $S^3$ has been converted to the vector field $\vec_f$ in the usual way, and where $\veca$ is any vector field on $S^3$ such that $\nabla\times\veca=\vec_f$.
+
+An explicit recipe for $\veca$ was given by DeTurck and Gluck~\cite{DeTurckGluck}:
+$$
+\veca(\y) \ = \ \BS(\vec_f)(\y) \ = \ \int_{S^3}P_{\y\x}\vec_f(\x)\times\nabla_{\!\y}\,\ph(\x,\y)\,d\x.
+$$
+Here $\BS$ is the Biot--Savart operator for vector fields on the $3$-sphere.  In the last integral, $P_{\y\x}$ indicates parallel transport in $S^3$ along the geodesic segment from $\x$ to $\y$, and the function $\ph$ is given by
+$$
+\ph(\alpha) \ = \ -{1\over 4\pi^2}(\pi-\alpha)\csc\alpha,
+$$
+and $\ph(\x,\y)$ is an abbreviation for $\ph(\alpha(\x,\y))$, with
+$\alpha(\x,\y)$ the geodesic distance on $S^3$ between $\x$ and $\y$. 
+
+The significance of the above function $\ph$ is that it is the fundamental solution of a shifted 
+Laplacian on $S^3$: 
+$$-\Delta\ph-\ph=\delta,$$
+where $\delta$ is the Dirac delta function. 
+
+The above formula for $\BS(\vec_f)$ is the analogue on $S^3$ of the classical Biot--Savart formula from 
+electrodynamics in $\reals^3$, expressing the magnetic field $\BS(\vec_f)$ in terms of the current 
+flow $\vec_f$. The equation $\nabla\times\BS(\vec_f)=\vec_f$ is just one of Maxwell's 
+equations, transplanted to $S^3$.
+
+Inserting this formula for $\BS(\vec)$ into the previous formula for the 
+Hopf invariant and performing simple manipulations, we get
+$$
+\Hopf(f) \ = \ -\int_{S^3\times S^3} P_{\y\x}\vec_f(\x)\times\vec_f(\y)\dtw
+\nabla_{\!\y}\,\ph(\x,\y)\,d\x\,d\y,
+$$
+the explicit version of Whitehead's integral formula on the 3-sphere $S^3$.
+
+
+

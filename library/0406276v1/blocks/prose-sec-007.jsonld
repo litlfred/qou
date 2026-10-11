@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/0406276v1/blocks/prose-sec-007",
+  "kind": "prose",
+  "title": "Maxwell's equations on S3 and H3 .",
+  "pageStart": 20,
+  "pageEnd": 22,
+  "text": "../sections/sec-007-8-maxwells-equations-on-s3-and-h3.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0406276v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0406276v1/manifest.jsonld",
+  "provenance": "ingested"
+}

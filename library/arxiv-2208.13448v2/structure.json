@@ -6,7 +6,8 @@
   "sha256": "8bfa244cf7ca867d90a5d465df2a3d3c63af08e500fc213a95cecdc6bd52693f",
   "bytes": 427105,
   "pages": 37,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -368,6 +369,154 @@
   "likely_scanned": false,
   "toc_entries": 21,
   "sections": 18,
-  "chars_total": 95732
+  "chars_total": 95732,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "3order7.tex",
+   "tex_sections": 25,
+   "overlaid": 13,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.375,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-21-galois-groups",
+     "title": "Galois groups",
+     "prose_ratio": 0.308,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-notations-and-conventions",
+     "title": "Notations and conventions",
+     "prose_ratio": 0.867,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-2-difference-algebra",
+     "title": "Difference algebra",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.008,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-004-23-from-theory-to-practice",
+     "title": "From theory to practice",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-3-galois-groups-of-difference-systems",
+     "title": "Galois groups of difference systems",
+     "prose_ratio": 0.896,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-31-the-reducible-case",
+     "title": "The reducible case",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-32-the-imprimitive-case",
+     "title": "The imprimitive case",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-33-the-primitive-case",
+     "title": "The primitive case",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-4-galois-groups-of-equations-of-order-one-and-di",
+     "title": "Galois groups of equations of order one and diagonal systems",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.656,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-42-galois-groups-of-diagonal-systems",
+     "title": "Galois groups of diagonal systems",
+     "prose_ratio": 0.852,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-5-galois-groups-of-equations-of-order-two",
+     "title": "Galois groups of equations of order two",
+     "prose_ratio": 0.789,
+     "coverage_ratio": 0.842,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-61-reducible-case",
+     "title": "Reducible case",
+     "prose_ratio": 0.878,
+     "coverage_ratio": 0.662,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-6-galois-groups-of-equations-of-order-three",
+     "title": "Galois groups of equations of order three",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-62-imprimitive-case",
+     "title": "Imprimitive case",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.227,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-015-64-summary",
+     "title": "Summary",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-7-application-to-the-differential-transcendence",
+     "title": "Application to the differential transcendence",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -1,0 +1,478 @@
+%#! latex main.tex
+%\addcontentsline{toc}{chapter}{Introduction.}
+%\chapter*{Introduction.}
+\markboth{INTRODUCTION}{}
+
+\begin{center}
+ {\large\bf Introduction.}
+\end{center}
+
+%\addtocontents{toc}{\protect\noindent Introduction.\hfill 1}
+\addcontentsline{toc}{subsection}{Introduction.}
+\subsection*{Purpose of this book.}
+
+This book stems from lectures given at the Universities of T\={o}hoku
+and Hokkaid\={o}.  
+
+Its main purpose is to introduce the reader to $p$-adic analytic
+geometry and to the theory of $p$-adic analytic functions and
+differential equations, by focusing on the theme of {\it period
+mappings}. Of course, this approach is not meant to replace more
+systematic expositions of $p$-adic analysis or geometry found in a
+number of good treatises, but to complement them.
+
+ It is our general rule, in this book, to follow as closely as possible
+the complex theory, and to go back and forth between the complex and the
+$p$-adic worlds. We hope that this will make the text of interest both
+to some complex geometers and to some arithmetic geometers.
+
+In the course of Chapter I, this approach will eventually become a
+kaleidoscope of half-correspondences and broken echoes. We hope that the
+reader will then have gained enough hindsight and wariness about these
+analogies, and will enjoy seeing unity being restored at a deeper level
+in Chapters II and III.
+
+\bigskip
+
+We have chosen the theme of period mappings because of its
+central role in the nineteen-century mathematics as a fertile place of
+interaction between differential equations, group theory, algebraic and
+differential geometry, topology (and even number theory).  In fact, it
+was a guiding thread in the early harmonious development of these
+branches of mathematics, from Gauss and Riemann to Klein and Poincar\'e
+(\cf [{\bf Gray86}]).
+
+\bigskip
+
+The origins lie in Gauss' largely unpublished work on elliptic
+functions on one hand (rediscovered and extended by Abel and by Jacobi),
+and on the hypergeometric differential equation in the complex domain on
+the other hand. Gauss knew the connection between the two topics: the
+inverse of the indefinite integral
+$\int\frac{dx}{\sqrt{(1-x^2)(1-k^2x^2)}}$ is a single-valued function
+with two independent periods $\omega_1$ and $\omega_2$ which are
+solutions of the 
+hypergeometric differential equation with parameters
+$(\frac{1}{2},\frac{1}{2};1)$ in the variable $k^2$.
+
+Riemann's point of view of the `Riemann surface' of a multivalued
+complex function has given a geometric framework for all of complex
+analysis. He applied this idea with equal success to Jacobi's inversion
+problem for more general indefinite algebraic integrals on one hand; and
+to the elucidation of the paradoxical polymorphism of hypergeometric
+functions which had puzzled Gauss and Kummer by introducing the concept
+of monodromy, on the other hand. He studied in detail the monodromy of
+the multivalued map $ \; k^2\mapsto \tau ={\omega_2/\omega_1}\;$, the
+first and basic example of a `period mapping' , whose inverse is
+single-valued. He also showed (and Schwarz rediscovered) that under
+certain conditions, the quotient of two solutions of more general
+hypergeometric equations maps the upper half-plane onto a curvilinear
+triangle.
+
+ Group-theoretic aspects of monodromy were studied by Jordan, and the
+ geometrization of complex analysis around the concept of automorphic
+ function was carried on by Klein, who once described his work as
+ `blending Galois with Riemann'\footnote{quoted from [{\bf Gray86},
+ p. 179].}.  The achievement fell to Poincar\'e. Starting from Fuchs'
+ problem of finding all second-order differential equations for which a
+ quotient of solutions $\tau$ admits a single-valued inverse, Poincar\'e
+ founded the theory of `uniformizing differential equations' (in modern
+ terminology), and eventually recognized that every Riemann surface of
+ genus $>1$ should arise from the action of a discrete group of
+ non-euclidean moves on the upper half-plane.
+
+\bigskip
+\bigskip
+
+ What about non-archimedean analogues of this saga?
+
+\bigskip
+
+It is clear that the development of $p$-adic analysis and geometry took
+a strikingly different route.
+
+
+The very beginnings looked similar, indeed: J. Tate introduced rigid
+geometry as a proper framework for the uniformization $\C_p^\times/q^\Z$
+of elliptic curves with multiplicative reduction; B. Dwork developed
+$p$-adic analysis starting from the hypergeometric differential equation
+with parameters $(\frac{1}{2},\frac{1}{2};1)$, where he discovered the
+essential notion of `Frobenius structure'. But it was immediately clear
+that since solutions of $p$-adic differential equations do not converge
+up to the next singularity, no faithful counterpart of complex monodromy
+could take place.
+
+From there on, different $p$-adic theories grew apart, with their own
+languages, most of them relying on sophisticated parts of contemporary
+algebraic geometry, and all claiming some analogy with ``the complex
+case'':
+
+\begin{itemize}
+ \renewcommand{\labelitemi}{\normalfont\bfseries\textendash}
+ \item the theory of differential equations matured slowly (with a strong
+       orientation toward applications to exponential sums), struggling with
+       the problems of singularities, without being able to tackle global
+       problems,
+ \item crystalline theory offered a global viewpoint on differential
+       equations (oriented toward the cohomology of varieties in positive
+       characteristic), but did not help to understand singularities,
+ \item the theory of $p$-adic representations and $p$-adic Hodge theory
+       developed independently of differential equations, as did the several
+       avatars of rigid geometry, motivated by idiosyncratic problems.
+\end{itemize}
+
+
+ \bigskip
+
+However, it is the author's opinion that the situation has somewhat
+changed over the last years, that isolated branches are merging by fits
+and starts\footnote{let us mention notably the incursion of rigid
+geometry into the crystalline viewpoint and into the geometric theory of
+finite coverings, the maturity of index theory and its applications to
+algebraic geometry in positive characteristic, the new connections
+between $p$-adic representations and differential equations on
+annuli...}, and that a synthesis is gradually emerging. This encourages
+to hope that, after many twists and turns, period mappings can indeed
+become a unifying theme in the $p$-adic context. This book is intended
+to be a contribution in this direction, by bringing closer the $p$-adic
+theory to its complex precursor --- from periods and monodromy up to
+triangle groups. Much remains to be done in order to achieve comparable
+harmony and clarity.
+
+\bigskip
+
+\subsection*{Contents of this book.}
+
+{\it Chapter I} is preparatory. It deals with the problems of analytic
+continuation --- with emphasis on the case of solutions of differential
+equations --- and periods of abelian integrals, in the $p$-adic context.
+
+\medskip Multivalued complex-analytic functions can be handled in two
+different, but essentially 
+equivalent, ways:
+
+$1)$ in a geometric way using Riemann surfaces, coverings and paths; 
+
+$2)$ as limits of algebraic functions; this less orthodox way leads to a more
+Galois-theoretic viewpoint on analytic continuation.
+
+\medskip  Both ways are practicable in the $p$-adic context, but
+eventually lead to completely different theories of analytic continuation. 
+
+Following the first way demands to have at disposal $p$-adic spaces
+which are locally arcwise connected.  Surprisingly enough in view of the
+fractal nature of $p$-adic numbers, such a nice $p$-adic geometry does 
+exist: it has been built by V. Berkovich (from the categorical
+viewpoint, it is essentially equivalent to rigid geometry, in the sense
+of Tate and Raynaud). In this framework, the monodromy of differential
+equations can be analyzed in the usual way; but a new phenomenon occurs:
+it is no longer true that there exists a basis of solutions around every
+ordinary point. This approach is therefore limited to a rather special 
+class of connections. We shall see in the sequel how the theory of
+$p$-adic period mappings provides interesting examples in this class.
+ 
+Following way $2)$, one encounters Dwork's notion of Frobenius
+structure, which has often been considered as a plausible substitute for
+monodromy in the $p$-adic context. We discuss so-called unit-root
+crystals and overconvergence, and illustrate these notions by Dwork's
+treatment of the $p$-adic Gamma function $\Gamma_p$, the Gross-Koblitz
+formula, and by a detailed study of the $p$-adic hypergeometric function
+$F(\frac{1}{2},\frac{1}{2},1; z)$.
+
+\medskip
+
+Abelian periods show themselves in two different ways:
+
+$1)$ as integrals of algebraic differentials over loops, 
+
+$2)$ when the integrand depends on a parameter $z$, as solutions of
+certain linear differential equations in $z$ (Picard-Fuchs, or Gauss-Manin).
+
+\medskip
+
+Both ways are passable in the $p$-adic context, and again lead
+to completely different theories. 
+
+Following up the first way --- integrals being interpreted as Riemann sums
+--- leads to P. Colmez' construction of abelian $p$-adic periods (in the
+sense of Fontaine-Messing). These periods relate the Tate module 
+($p$-primary torsion points) to the first De Rham cohomology module of
+a given abelian variety over a $p$-adic field. They do not live in
+$\C_p$, but in a certain $p$-adic ring $\matheur{B}^+_{\mathrm{dR}}$ (of which
+$\C_p$ is a quotient), and it is not possible in general to express them 
+function-theoretically, when the abelian variety moves in a
+family. Nevertheless, we stress some particular cases where this can
+actually be done, throwing a bridge between ways $1)$ and $2)$. 
+
+The second way --- Dwork's viewpoint of periods as solutions of
+Gauss-Manin connections --- will prevail at the modular level, when
+$p$-divisible groups and filtered De Rham modules attached to families
+of abelian varieties will be compared not directly, but via their moduli
+spaces by the period mapping.
+
+This way of looking at periods lacks arithmetic structure: namely, a
+rational, or at least a $\ovl{\Q}$-structure, on the $\C_p$-space of
+solutions, to convey some arithmetical meaning to the periods. We
+discuss some cases where such a canonical structure exists (`$p$-adic
+Betti lattices'), notably the case of abelian varieties with
+supersingular reduction. We get here well-defined $p$-adic periods
+(completely different from the Fontaine-Messing periods), and compute
+them in terms of $\Gamma_p$-values in the case of elliptic curves with
+complex multiplication ($p$-adic analogue of the Lerch-Chowla-Selberg
+formula).
+
+
+\bigskip
+
+{\it Chapter II} is an introduction to the geometric theory of $p$-adic
+period mappings, in the sense of Drinfeld-Rapoport-Zink.
+
+We have tried to keep prerequisites at a minimum, and to emphasize as
+much as possible the analogies between the complex and $p$-adic
+contexts. Basic definitions about $p$-divisible groups and crystals are
+recalled, and the proof of some basic results is sketched.
+
+\medskip
+
+The theory of period mappings attaches to a family of algebraic
+varieties its periods, viewed abstractly as a moving point in a suitable
+grassmannian. Due to constraints of Riemann-type, the period mapping
+actually takes its values in an open subset of the grassmannian, the
+period domain, which is a symmetric domain. It is multivalued, the
+ambiguity being described by the projective monodromy of the Gauss-Manin
+connection.
+
+The younger $p$-adic theory is far less advanced: at present, there is a
+theory of $p$-adic period mappings only for $p$-divisible groups or
+closely related geometric objects. For want of wide range, it has
+nevertheless gained richness and depth.
+
+\medskip
+
+In the presentation of Drinfeld-Rapoport-Zink, one starts by
+constructing a moduli space $\MM$ for $p$-divisible groups which are
+(quasi-)isogenous to a given one in characteristic $p$. The {\it
+$p$-adic period mapping} $\PP$ then relates this moduli space to a
+suitable grassmannian which parametrizes the Hodge filtration in the
+Dieudonn\'e module. There are again constraints of Riemann-type, which
+force the period mapping to take its values in an open subset of the
+grassmannian, the period domain, which is a `symmetric domain'. The best
+known example of such a period domain is the Drinfeld space
+$\C_p\setminus \Q_p$, a $p$-adic analogue of the double-half-plane
+$\C\setminus \R$.
+
+In the situation where the $p$-divisible groups are algebraizable, \ie
+come from $p$-primary torsion of abelian varieties parametri\-zed by a
+certain Shimura variety $\Sh$, the moduli space $\MM$ provides a
+uniformization of some tubular region in the Shimura variety $\Sh$. 
+
+We show that, just as in the complex case, $\PP$ can be described in
+terms of quotients of solutions of the associated Gauss-Manin connection
+(this feature does not seem to appear in the literature, except in the
+old special case of Dwork's period mapping for elliptic curves with 
+ordinary reduction). This allows to give explicit formulas `\`a la
+Dwork' for $\PP$ in many cases.
+
+The most interesting cases, investigated by Drinfeld-Rapoport-Zink,
+arise when $\Sh$ itself (more accurately: a whole connected component) is
+uniformized by $\MM$: $\Sh$ is then a quotient of $\MM$ by an arithmetic
+discrete group $\Gamma$.  We show that, up to replacing $\Sh$ by a finite
+covering (to kill torsion in $\Gamma$), the solutions of the Gauss-Manin 
+connection extend to global multivalued functions: in other words, the
+Gauss-Manin connection has global monodromy in the 
+sense of chapter I, and the projective monodromy group coincides with
+$\Gamma$. 
+
+We review the case of Shimura curves attached to quaternion algebras
+over totally real fields (\v{C}erednik-Drinfeld-Boutot-Zink):
+there is a global $p$-adic uniformization when $p$ divides the
+discriminant of the quaternion algebra. We then construct, using the
+$p$-adic Betti lattices of chapter I, a canonical $\ovl{\Q}$-space of
+solutions of the Gauss-Manin connection which is stable under global
+monodromy.
+
+
+
+ \bigskip {\it Chapter III} explores the group-theoretic aspects of the
+ theory of period mappings, in the $p$-adic context.
+
+ The modern presentation of ramified coverings, uniformization, and of
+ the Gauss-Riemann-Fuchs-Schwarz theory uses the notions of orbifold and
+ uniformizing differential equation. We develop $p$-adic counterparts of
+ these notions.
+
+\medskip
+
+The right notion of ramified covering to adopt is not obvious, because
+\'etale coverings are only exceptionally topological coverings, in the
+$p$-adic context. Ber\-ko\-vich's geometry provides a very convenient
+framework for this kind of problems, since his spaces are locally arcwise
+connected.  In the first section, we discuss the formalism of
+fundamental groups attached to categories of (possibly infinite) \'etale
+coverings satisfying simple axioms. Although the definition of these
+topological groups is simple and natural, their topology itself may be
+very complicated (not locally compact in general).
+
+It turns out that there are too few topological coverings and too many
+\'etale coverings, in general, to provide a workable theory of
+monodromy. To remedy this, we introduce in the second section the notion
+of {\it temperate \'etale covering}. Such coverings are essentially
+built from (possibly infinite) topological coverings of finite \'etale
+coverings. They are classified by temperate fundamental groups, which
+seem to be the right $p$-adic equivalents, in many ways, of fundamental
+groups of complex manifolds. These groups are not discrete in general,
+but nevertheless often possess many infinite discrete quotients. We
+present a large selection of examples.
+
+\medskip Temperate \'etale coverings are well-suited to the definition
+of $p$-adic orbifold charts and of the category of {\it $p$-adic
+orbifolds} (they replace the unramified coverings, over $\C$). As in the
+complex case, orbifolds and orbifold fundamental groups are the tools
+for a theory of ramified coverings, developed in section 4.
+
+Before turning to the $p$-adic analogue of the {\it uniformizing
+differential equation} attached to an orbifold of dimension one (via
+Schwarzian derivatives), we discuss local and global monodromy of
+$p$-adic differential equations in section 3.  
+ 
+We outline the Christol-Mebkhout theory of $p$-adic slopes of
+differential equations over annuli, and the relation with Galois
+representations of local fields of characteristic $p$.
+
+We then define and study the {\it $p$-adic \'etale Riemann-Hilbert
+functor}, which attaches a vector bundle with integrable connection to
+any discrete representation of the \'etale fundamental group of a
+$p$-adic manifold; connections in the image are characterized by the
+fact that the \'etale sheaf of germs of solutions is locally
+constant. This is a vast generalization of the phenomena of global
+monodromy studied in Chapter I; for instance, the differential equation
+$y'=y$ over the affine line belong to this class.
+
+Uniformizing differential equations of orbifolds of dimension one also
+belong to this class, and the representation actually factors through
+the temperate fundamental group.  The case of a Shimura orbifold is of
+special interest: the period mapping (complex or $p$-adic) is given by a
+quotient of two solutions of a fuchsian differential equation defined
+over a number field, which can be interpreted as uniformizing
+differential equation either over $\C$ or over $\C_p$.
+
+In Section 5, we examine the case of Schwarz orbifolds: the projective
+line with $0,1,\infty$ as branched points (endowed with suitable
+finite multiplicities). Over $\C$, the uniformizing differential
+equations are of hypergeometric type, with projective monodromy group
+identified with the orbifold fundamental group, namely with a
+(cocompact) triangle group.
+
+In the $p$-adic case, we define {\it $p$-adic triangle groups} to be
+projective monodromy groups of those hypergeometric differential
+equations which are in the image of the $p$-adic \'etale Riemann-Hilbert
+functor: thus by definition, there exists a finite \'etale covering of
+$\C_p\setminus \{0,1\}$ over which the hypergeometric function extends
+to a global multivalued analytic function.
+
+We give a purely geometric description of these discrete subgroups of
+$PSL_2(\C_p)$ (without reference to differential equations; it is
+perhaps here that we are closest to Fuchs and Schwarz).  From this, and
+recent combinatorial work by F. Kato, it follows that infinite $p$-adic
+triangle groups exist only for $p\leq 5$.
+
+We then construct the $p$-adic analogues of Takeuchi's list of
+arithmetic triangle groups, \ie the list of all ``arithmetic'' $p$-adic
+triangle groups for every $p$, using the 
+\v{C}erednik-Drinfeld-Boutot-Zink uniformization of Shimura curves and
+$p$-adic period mapping. Special values of the corresponding
+hypergeometric functions at CM points are expressed in terms of
+$\Gamma_p$-values.
+
+\medskip
+
+\subsection*{On the style.} 
+
+\medskip
+
+The first chapter is rather down-to-earth. It has kept
+something of the informal style of lecture notes, and this also holds to
+a lesser extent for the second chapter; the level is inhomogeneous, the
+pace may sometimes be brisk, proofs are often omitted and replaced by
+references.  In contrast, the last and longest chapter is devoted to a
+systematic exposition of new material.
+
+We hope that our constant function-theoretic viewpoint brings some unity
+to the exposition, throughout the chapters.  We have tried to keep them
+(and even the sections) as logically independent as possible. Thus, for
+example:
+
+only subsections 1.5 and 5.3 of chapter I are needed in the sequel;
+
+until section 7, chapter II is almost self-contained;
+
+until subsection 4.7, chapter III is almost self-contained;
+
+reading fragments of III should be enough to grasp the ins and outs
+of $p$-adic triangle groups.
+ 
+\medskip
+
+Sections I.3 and III.6 are small pieces of `computational mathematics'
+(without computer) intended as testing ground for notions developed in
+the preceding sections.
+
+\bigskip
+
+{\bf Acknowledgments.}
+It is a pleasure to acknowledge here our main sources of inspiration:
+
+
+first of all, V. Berkovich's views on $p$-adic geometry: without this
+extremely convenient way of seeing $p$-adic spaces, our systematic
+to-ings and fro-ings between complex and $p$-adic worlds would have 
+been impossible;
+
+Rapoport-Zink's book on period spaces for $p$-divisible groups has been
+a constant reference for Chapter II;
+
+in Chapter III, our treatment has been much influenced by the work of
+M. van der Put on $p$-adic discontinuous groups, by J. De Jong's study
+of \'etale coverings, and no less by M. Yoshida's orbifold viewpoint on
+the (complex) Gauss-Schwarz theory.
+
+\medskip
+
+Concerning this book, I am much indebted to F. Kato in many ways: not
+only did he organize the T\={o}hoku and the Hokkaid\={o} lectures
+series, asking me to speak on these matters, but he also suggested the
+very project of writing these notes, and influenced a lot both the
+content and the style by his numerous questions and comments; I have
+been much encouraged in writing them by his constant interest and by his
+own recent work on $p$-adic triangle groups.
+
+\medskip
+
+The T\={o}hoku lectures, as well as the birth of some ideas presented in
+III (especially $p$-adic triangle groups), took place during my stay in
+Japan thanks to a fellowship from the Japan Society for the promotion of
+Science. I am very grateful to this institution, and to H. Shiga who
+arranged the stay.
+
+\medskip
+
+I thank M. Matignon, F. Baldassarri and S. Bosch for invitations to
+lecture on these topics at the Universities of Bordeaux, Padova, and
+M\"unster respectively.
+
+ \medskip
+
+I am grateful to F. Kato and N. Tsuzuki for writing the appendices of
+this book. I am also very grateful to S. Matsuda who kindly took care,
+with great patience, of the nightmarish electronic harmonization of the
+main text and the appendices, and drawing the figures.
+
+ \medskip
+
+Thanks are also due to P. Colmez and O. Gabber for several useful
+comments, and to J.F. Boutot for sending me overseas his joint preprint
+with T. Zink about uniformization of Shimura curves.
+
+I also thank very much P. Bradley for his careful reading of a version
+of chapter III and for kindly providing a long list of errata (of
+course, I am responsible for any remaining error).

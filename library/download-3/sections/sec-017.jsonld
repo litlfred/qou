@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/download-3/sections/sec-017",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "One-Dimensional Families. Let IR+ = {/ G IR λ > 0}. Let Afα(M x IR+) be",
+  "pageStart": 31,
+  "pageEnd": 39,
+  "contains": [
+    "library/download-3/blocks/prose-sec-017"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download-3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download-3/manifest.jsonld",
+  "provenance": "ingested"
+}

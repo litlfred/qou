@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/stateintegralsqseries/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/stateintegralsqseries/blocks/prose-sec-007",
   "kind": "prose",
   "title": "Some auxiliary power series",
   "pageStart": 10,
   "pageEnd": 12,
   "text": "../sections/sec-007-25-some-auxiliary-power-series.md",
-  "derivedFrom": "library/stateintegralsqseries/manifest",
-  "sourceDocument": "library/stateintegralsqseries/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/stateintegralsqseries/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/stateintegralsqseries/manifest.jsonld",
   "provenance": "ingested"
 }

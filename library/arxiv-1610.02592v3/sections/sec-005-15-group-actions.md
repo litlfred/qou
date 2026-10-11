@@ -8,99 +8,103 @@ pages: 40-42
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Groups acting of spaces are so important in geometry, that they are some-
-times used as a deﬁnition of “geometry” itself.
-1.5.1. Deﬁnitions.The action of a groupG on a topological spaceX is
-a homomorphism
-G→ Homeo(X)
-where Homeo(X) is the group of all self-homeomorphisms ofX. The quotient
-setX/G is the set of all orbits inX and we give it the usual quotient topology.
-We denote byg(x) the image ofx∈X along the homeomorphism determined
-byg∈G. The action is:
-• free ifg(x)⁄=x for all non-trivialg∈G and allx∈X;
-• properly discontinuous if any two pointsx,y ∈ X have neighbour-
-hoodsUx andUy such that the set
-{
-g∈G
-⏐⏐g(Ux )∩Uy⁄= ∅
-}
-is ﬁnite.
-The relevance of these deﬁnitions is due to the following.
-Proposition 1.5.1. Let G act on a Hausdorﬀ connected spaceX. The
-following are equivalent:
-(1) G acts freely and properly discontinuously;
-(2) the quotientX/G is Hausdorﬀ and the mapX→X/G is a covering.
-1.5. GROUP ACTIONS 33
-A covering of typeX→X/G is calledregular. A coveringX→Y is regular
-if and only if the image ofπ1(X) in π1(Y ) is normal, and in that caseG is
-the quotient of the two groups. In particular every universal cover is regular.
+Groups acting of spaces are so important in geometry, that they are sometimes used as a definition of  ``geometry'' itself.
+
+
+\subsection{Definitions}
+The \emph{action} of a group $G$ on a topological space $X$ is a homomorphism 
+$$G\to \Omeo (X)$$ 
+where $\Omeo(X)$ is the group of all self-homeomorphisms of $X$. The quotient set $X/_G$ is the set of all orbits in $X$ and we give it the usual quotient topology. We denote by $g(x)$ the image of $x\in X$ along the homeomorphism determined by $g\in G$. The action is:
+\begin{itemize}
+\item \emph{free} if $g(x) \neq x$ for all non-trivial $g\in G$ and all $x\in X$;
+\item \emph{properly discontinuous} if any two points $x,y \in X$ have neighbourhoods $U_x$ and $U_y$ such that the set
+$$\big\{g \in G\ \big|\ g(U_x) \cap U_y \neq \emptyset \big\}$$
+is finite.
+\end{itemize}
+The relevance of these definitions is due to the following.
+\begin{prop} \label{equivalent:prop}
+Let $G$ act on a Hausdorff connected space $X$. The following are equivalent:
+\begin{enumerate}
+\item $G$ acts freely and properly discontinuously;
+\item the quotient $X/_G$ is Hausdorff and the map $X \to X/_G$ is a covering.
+\end{enumerate}
+\end{prop}
+
+A covering of type $X \to X/_G$ is called \emph{regular}. A covering $X \to Y$ is regular if and only if the image of $\pi_1(X)$ in $\pi_1(Y)$ is normal, and in that case $G$ is the quotient of the two groups. In particular every universal cover is regular.
 Summing up:
-Corollary 1.5.2.Every path-connected locally contractible Hausdorﬀ topo-
-logical spaceX is the quotient ˜X/G of its universal cover by the action of
-some groupG acting freely and properly discontinuously.
-The groupG is isomorphic toπ1(X).
-Exercise 1.5.3. Let a discrete groupG act on a locally compact spaceX.
-The following are equivalent:
-• the action is properly discontinuous;
-• for every compactK⊂X, the set
-{
-g|g(K)∩K⁄= ∅
-}
-is ﬁnite;
-• the mapG×X→X×X that sends (g,x ) to (g(x),x ) is proper.
-1.5.2. Isometry group.We now want to consider the case where a group
-G acts by isometries on a Riemannian manifoldM. In this case we have a
-homomorphism
-G→ Isom(M)
-withvaluesinthe isometrygroup Isom(M)ofM,i.e.thegroupofallisometries
-f :M→M. The groupIsom(M) is much smaller thanHomeo(M).
-Theorem 1.5.4 (Myers – Steenrod).The group Isom(M) has a natural
-Lie group structure compatible with the compact-open topology. The map
-F : Isom(M)×M→M×M that sends (ϕ,p ) to (ϕ(p),p ) is proper.
-Corollary 1.5.5.IfM is compact thenIsom(M) is compact.
-Proposition 1.5.6. The stabilizer of any pointx ∈ M is a compact Lie
-subgroup of Isom(M).
-Proof. Thestabilizerof x isclosedandhenceisaLiesubgroupof Isom(M).
-The isometries that ﬁxx are determined by their orthogonal action onTxM
-and therefore form a compact Lie subgroup ofO(n). □
-The hard part of the Myers – Steenrod Theorem is to endowIsom(M)with
-a Lie group structure. In fact, in all the concrete cases that we will encounter,
-the Lie group structure ofIsom(M) will be evident from the context, so we
-will not need the full strength of Theorem 1.5.4. The rest of the theorem is
-not diﬃcult to prove and we can leave it as an exercise.
-Exercise 1.5.7. Prove thatF is proper.
-We denote byIsom+(M) the subgroup of Isom(M) consisting of all the
-orientation-preserving isometries. It has index one or two inIsom(M).
-34 1. PRELIMINARIES
-1.5.3. Discrete groups. Let M be a Riemannian manifold. The group
-Isom(M) is a Lie group, so it makes sense to consider discrete subgroups.
-Proposition 1.5.8.A groupΓ< Isom(M) acts properly discontinuously on
-M if and only if it is discrete.
-Proof. If Γ is discrete, Theorem 1.5.4 and Exercise 1.5.3 imply that it acts
-properly discontinuously. Conversely, if Γ acts properly discontinuously then
-e∈ Γ is easily seen to be isolated, and we apply Exercise 1.4.18. □
-If Γ< Isom(M) is discrete and acts freely, the quotient mapM→M/Γ is
-a covering. Moreover, the Riemannian structure projects fromM toM/Γ.
-Proposition 1.5.9. Let Γ < Isom(M) act freely and properly discontinu-
-ously onM. There is a unique Riemannian structure on the manifoldM/Γ
-such that the coveringπ :M→M/Γ is a local isometry.
-Proof. LetU⊂M/Γ be a well-covered set: we haveπ−1(U) =⊔i∈IUi and
-π|Ui :Ui→U is a homeomorphism. Pick ani∈I and assign toU the smooth
-and Riemannian structure ofUi transported alongπ. The resulting structure
-onU does not depend oni since the open setsUi are related by isometries in
-Γ. We get a Riemannian structure onM/Γ, determined by the fact thatπ is
-a local isometry. □
-1.5.4. Measures. The case where a groupG acts by preserving some
-measure instead of a Riemannian metric is also very interesting, although
-quite diﬀerent. This situation will occur only in Chapter 8.
-Letagroup G actonamanifold M. ABorelmeasure µonM isG-invariant
-ifµ(S) =µ(g(S)) for every Borel setS⊂M.
-If G acts onM freely and properly discontinuously, thenM→ M/G is a
-covering and everyG-invariant measureµ onM descends to a natural measure
-on the quotient M/G which we still indicate byµ. The measure on M/G
-is deﬁned as follows: for every well-covered open setU ⊂ M/G we have
-π−1(U) =⊔i∈IUi and we assign toU the measure ofUi for anyi∈ I. This
-assignment extends to a unique Borel measure onM/G by Proposition 1.3.4.
-Note that the measure onM/G is not the push-forward ofµ, namely it is
-not true thatµ(U) =µ(π−1(U)).
+
+\begin{cor} \label{XG:cor}
+Every path-connected locally contractible Hausdorff topological space $X$ is the quotient $\tilde X/_G$ of its universal cover by the action of some group $G$ acting freely and properly discontinuously.
+\end{cor}
+
+The group $G$ is isomorphic to $\pi_1(X)$.
+
+\begin{ex} \label{proper:ex}
+Let a discrete group $G$ act on a locally compact space $X$. The following are equivalent:
+\begin{itemize}
+\item the action is properly discontinuous; 
+\item for every compact $K\subset X$, the set $\big\{g\ |\ g(K) \cap K \neq \emptyset\big\}$ is finite; \item the map 
+$ G \times X \to X \times X$ that sends $(g,x)$ to $(g(x), x)$ is proper.
+\end{itemize}
+\end{ex}
+
+
+\subsection{Isometry group}
+We now want to consider the case where a group $G$ acts by isometries on a Riemannian manifold $M$. In this case we have a homomorphism
+$$G \to \Iso(M)$$
+with values in the \emph{isometry group} $\Iso(M)$ of $M$, \emph{i.e.}~the group of all isometries $f \colon M \to M$. The group $\Iso(M)$ is much smaller than $\Omeo (M)$. \index{isometry!isometry group} \index{Myers -- Steenrod theorem}
+
+\begin{teo}[Myers -- Steenrod] \label{MS:teo}
+The group $\Iso (M)$ has a natural Lie group structure compatible with the compact-open topology. The map $F\colon \Iso(M) \times M \to M \times M$ that sends
+$(\varphi, p)$ to $(\varphi(p), p)$ is proper.
+\end{teo}
+\begin{cor} If $M$ is compact then $\Iso(M)$ is compact.
+\end{cor}
+
+\begin{prop} \label{stabilizer:compact:prop}
+The stabilizer of any point $x\in M$ is a compact Lie subgroup of $\Iso(M)$.
+\end{prop}
+\begin{proof}
+The stabilizer of $x$ is closed and hence is a Lie subgroup of $\Iso(M)$. The isometries that fix $x$ are determined by their orthogonal action on $T_xM$ and therefore form a compact Lie subgroup of $O(n)$. 
+\end{proof}
+
+The hard part of the Myers -- Steenrod Theorem is to endow $\Iso(M)$ with a Lie group structure. In fact, in all the concrete cases that we will encounter, the Lie group structure of $\Iso(M)$ will be evident from the context, so we will not need the full strength of Theorem \ref{MS:teo}. The rest of the theorem is not difficult to prove and we can leave it as an exercise.
+
+\begin{ex} Prove that $F$ is proper.
+\end{ex}
+
+We denote by $\Iso^+(M)$ the subgroup of $\Iso(M)$ consisting of all the orientation-preserving isometries. It has index one or two in $\Iso(M)$.
+
+
+\subsection{Discrete groups}
+Let $M$ be a Riemannian manifold. The group $\Iso(M)$ is a Lie group, so it makes sense to consider discrete subgroups.
+
+\begin{prop} \label{iff:discrete:prop}
+A group $\Gamma<\Iso(M)$ acts properly discontinuously on $M$ if and only if it is discrete.
+\end{prop}
+\begin{proof}
+If $\Gamma$ is discrete, Theorem \ref{MS:teo} and Exercise \ref{proper:ex} imply that it acts properly discontinuously. Conversely, if $\Gamma$ acts properly discontinuously then $e\in \Gamma$ is easily seen to be isolated, and we apply Exercise \ref{isolated:ex}.
+\end{proof}
+
+If $\Gamma < \Iso(M)$ is discrete and acts freely, the quotient map $M \to M/_\Gamma$ is a covering. Moreover, the Riemannian structure projects from $M$ to $M/_\Gamma$.
+
+\begin{prop} \label{quotient:prop}
+Let $\Gamma <\Iso(M)$ act freely and properly discontinuously on $M$. There is a unique Riemannian structure on the manifold $M/_\Gamma$ such that the covering $\pi\colon M \to M/_\Gamma$ is a local isometry.
+\end{prop}
+\begin{proof}
+Let $U\subset M/_\Gamma$ be a well-covered set: we have $\pi^{-1}(U) = \sqcup_{i\in I} U_i$ and $\pi|_{U_i}\colon U_i \to U$ is a homeomorphism. Pick an $i\in I$ and assign to $U$ the smooth and Riemannian structure of $U_i$ transported along $\pi$. The resulting structure on $U$ does not depend on $i$ since the open sets $U_i$ are related by isometries in $\Gamma$. We get a Riemannian structure on $M/_\Gamma$, determined by the fact that $\pi$ is a local isometry.
+\end{proof}
+
+
+\subsection{Measures} \label{measure:descends:subsection}
+The case where a group $G$ acts by preserving some measure instead of a Riemannian metric is also very interesting, although quite different. This situation will occur only in Chapter \ref{automorfismi:chapter}.
+
+Let a group $G$ act on a manifold $M$. A Borel measure $\mu$ on $M$ is \emph{$G$-invariant} if $\mu(S) = \mu(g(S))$ for every Borel set $S\subset M$. 
+
+If $G$ acts on $M$ freely and properly discontinuously, then $M \to M/_G$ is a covering and every $G$-invariant measure $\mu$ on $M$ descends to a natural measure on the quotient $M/_G$ which we still indicate by $\mu$. The measure on $M/_G$ is defined as follows: for every well-covered open set $U\subset M/_G$ we have $\pi^{-1}(U) = \sqcup_{i\in I}U_i$ and we assign to $U$ the measure of $U_i$ for any $i\in I$. This assignment extends to a unique Borel measure on $M/_G$ by Proposition \ref{ricoprimento2:prop}.
+
+Note that the measure on $M/_G$ is \emph{not} the push-forward of $\mu$, namely it is not true that $\mu(U) = \mu(\pi^{-1}(U))$.

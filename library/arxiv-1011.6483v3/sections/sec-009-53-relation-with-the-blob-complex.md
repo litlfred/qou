@@ -8,650 +8,140 @@ pages: 47-55
 source_pdf: 1011.6483v3.pdf
 source_sha256: 7a425e51860c37a4
 doc_brief: "DERIVED HIGHER HOCHSCHILD HOMOLOGY — W e study the higher Hochschild chain functor, factorizatio n alge- bras and their relationship with topological chiral homolo gy."
+text_source: latex
+latex_prose_ratio: 0.962
+latex_coverage_ratio: 0.914
 ---
-the Blob complex of Morrison-Walker is equivalent to an unoriented variant of
-topological chiral homology. We brieﬂy explain here how to deduce th is equivalence
-from the proof of Theorem 5 and several statements from [29]. Th e main diﬀerence
-with§ 5.1 and§ 5.2 to keep in mind is that we no longer assume our manifold to be
-framed. Indeed, we are using the variant of topological chiral homology fo r (non-
-necessarily framed nor oriented) manifolds of dimension n. However this forces us
-to restrict our attention to unorientedEn-algebras:
-48 G. GINOT, T. TRADLER, AND M. ZEINALIAN
-Deﬁnition 5. The category of unoriented En-algebras, denoted EO(n)
-n -Alg∞ is
-deﬁned as the ((∞, 1)-)category of symmetric monoidal functors
-EO(n)
-n -Alg∞ := Fun⊗(Diskn, k-Mod ∞)
-where Diskn is the category with objects the integers and morphism the spaces
-Diskn(k,ℓ ) := Emb(∐
-k Rn, ∐
-ℓ Rn) of smooth embeddings of k disjoint copies of a
-disk Rn into ℓ such copies; the monoidal structure is induced by disjoint union of
-copies of disks.
-Note that EO(n)
-n -algebras are denoted EBn-algebras in [29].
-Remark 15. The deﬁnition above is extracted from [25, 11]. There is an nat-
-ural action of the orthogonal group O(n) on En-Alg∞, see [26]; the category
-(En-Alg∞)hO(n) ofO(n)-homotopy ﬁxed points is equivalent to the (∞, 1)-category
-EO(n)
-n -Alg∞ of Deﬁnition 5 In particular, any CDGA is an unoriented En-algebra.
-If one replaces the action of O(n) by SO(n),one recovers the notion of oriented
-En-algebras which are commonly known as framedEn-algebras in the literature.
-Let M be a dimension n manifold. By [29, Example 6.2.10], an EO(n)
-n -algebra
-A deﬁnes an A∞-n-category6CA and thus yields the Blob complex B∗(M,CA),
-see [29, Deﬁnition 7.0.1]. Similarly we can form the topological chiral hom ology∫
-MA, see [11, Deﬁnition 3.15] (or [25, 26]).
-Proposition 12. LetM be a closedn-dimensional manifold (non necessarily framed
-nor oriented) and A an EO(n)
-n -algebra. There is an natural equivalence∫
-M
-A ∼= B∗(M,CA)
-in k-Mod ∞. Further, if A is a CDGA, there is an natural equivalence CH •
-M (A)∼=∫
-MA in k-Mod ∞.
-Proof. According to [29, Theorem 7.2.1], the Blob complex B∗(M,CA) satisﬁes
-the excision property for closed manifolds and can be computed usin g a colimit
-construction ([29, § 6.3]) similar to Deﬁnition 4. It also converts disjoint union
-of manifolds to tensor products [29, Property 1.3.2] and B∗(Dn,CA)∼= A by [29,
-Property 1.3.4] (and [29, Example 6.2.10]). The same properties hold f or topological
-chiral homology as in Proposition 11 (or Lemma 8), the proofs and re ferences to [11,
-25, 26] in the unoriented case being essentially the same as in the fra med one (using
-O(n)-homotopy ﬁxed En-algebras). It follows that one can apply mutatis mutandis
-the proof of Theorem 5 to get the equivalences stated in the propo sition. □
-Remark 16. Let A = C•(ΩnY ) be the En-algebra associated to the n-fold loop
-space of an n-connective pointed space Y . The Blob complex B∗(M,CC•(Ω nY ))
-for non-necessarily closed manifolds shall not be mistaken with the B lob complex
-associated to the A∞-n-category associated to the fundamental groupoid of the
-space Y in [29, § 6] (though the construction share some similarities). Indeed,
-it is claimed [29, Theorem 7.3.1] that the latter construction compute the chains
-on the space of all maps Map( M,Y ), while the ﬁrst one, by non-abelian Poincar´ e
-6this is, for n = 1, an instance of the linear category with a single object as sociated to an
-associative algebra and, for general n, a slight variant of the construction of an ( ∞ , n)-category
-Bn(A) associated to an En-algebra A as in [11]
-DERIVED HIGHER HOCHSCHILD, TCH, F ACTORIZATION ALGEBRAS 49
-duality [25],
-∫
-M ΩnY is the chains on the space of maps with compact support
-Mapc(M,Y ).
-Theorem 6 below and Proposition 12 suggest that the blob complex sh ould be
-closely related to Factorization algebras as well. It would be interest ing to relate
-system of ﬁelds, n-category and the blob complex in the sense of [2 9] to factorization
-algebras (with extra properties) in the sense of [8]. We plan to invest igate these
-relationship in a future work.
-5.4. T opological chiral homology as a factorization algebra. In this sec-
-tion we give a precise relationship between factorization algebras, t opological chiral
-homology for (stably) framed manifolds, and En-algebras.
-5.4.1. Topological chiral homology and factorization algebras fo r n-framed mani-
-folds. For any manifold M of dimension m which is n-framed ( i.e. M×Dn−m is
-framed) and En-algebra A, we can consider the topological chiral homology
-∫
-MA
-as well as
-∫
-UA for every open subset U inM (equipped with the induced framing).
-Further, if U1,...,U k are pairwise disjoint open subsets of V ∈Op(M ), there is a
-canonical equivalence ([25, Theorem 3.5.1])
-∫
-U1
-A⊗···⊗
-∫
-Uk
-A
-≃
-−→
-∫
-U1∪···∪Uk
-A
-and a natural map
-∫
-U1∪···∪Uk
-A→
-∫
-V A (since any ball in ⋃ Ui is a ball in V ).
-Composing these two maps yield natural maps of Em−n-algebras
-(24) µU1,...,Uk,V :
-∫
-U1
-A⊗···⊗
-∫
-Uk
-A −→
-∫
-V
-A.
-Proposition 13. LetM be an n-framed manifold of dimension m.
-(1) For any En-algebraA, the rule U↦→
-∫
-UA (for U open in M ) together with
-the structure maps µU1,...,Uk,V (24) deﬁne a locally constant factorization
-algebraTC M (−,A ) on M , such that TC M (U,A ) =
-∫
-UA is canonically an
-En−m-algebra for any open U .
-(2) The ruleA↦→TCM (−,A ) deﬁnes a functorTC M :En-Alg∞→FacM (En−m-Alg∞)
-which ﬁts into the following commutative diagram
-En-Alg∞
-∫
-M /d47/d47
-T C M
-/d15/d15
-En−m-Alg∞
-FacM (En−m-Alg∞)
-HF (−)
-/d52/d52✐✐✐✐✐✐✐✐✐✐✐✐✐✐✐✐✐
-In other words topological chiral homology computes the factoriz ation homology
-ofTC M .
-The idea behind Proposition 13 is that for any submanifold U of M and En-
-algebraA, we can cover U by a (coherent family of) open balls on which A deﬁnes
-a locally constant factorization algebra. Gluing these data deﬁnes a factorization
-algebra on U whose homology can be computed from the balls by using the glu-
-ing/locality lemma given above (Lemma 5). Since the topological chiral homology
-is equivalent to A on balls and satisfy a similar locality axiom, they agree on U .
-50 G. GINOT, T. TRADLER, AND M. ZEINALIAN
-Proof of Proposition 13. For any open subset V ofM , the topological chiral homol-
-ogy
-∫
-V A is the colimit lim−→ψV , where ψV :N (Disj(V ))→k-Mod ∞ is the diagram
-given by the formula ψV (V1∪···∪ Vn) =
-∫
-V1
-A⊗···⊗
-∫
-Vn
-A whereV1,...,V n are dis-
-joint open sets homeomorphic to a ball (Deﬁnition 4). In particular, the structure
-mapsµU1,...,Un,V are induced by a map of colimits and it is easy to check that they
-are natural with respect to open embeddings and thus deﬁnes a pr efactorization
-algebra. Hence TC M (−,A ) is functorially (in A) a prefactorization algebra on M
-with value in En−m-algebras.
-To prove thatTC M (−,A ) is actually a factorization algebra, the idea is ﬁrst to
-use a handle body decomposition to deﬁne another locally constant f actorization
-algebraFM on M whose factorization homology HF (F,M ) is equivalent to
-∫
-MA
-and then to prove that this factorization algebra is indeed equivalen t to TC M .
-Note that by Lemma 4, if FM is a locally constant factorization algebra on M
-with value in Ed-algebras such that
-∫
-MA∼=HF (FM,M ), then we have a natural
-factorization algebraFM×Rd onM× Rd and further HF (FM×Rd,M× Rd)∼=
-∫
-MA
-as an Ed-algebra.
-We start with the case of open balls. By deﬁnition of topological chira l homology,
-for every manifold B homeomorphic to an m-dimensional ball, there is a natural
-equivalence
-∫
-BA ∼= A of En−m-algebras (where the En−m-algebra structure of
-A is by restriction of structure), see [25, 26]. By a result of Lurie [25 ] (also see
-[9, Proposition 3.4.1] or Proposition 10), there is a locally constant fa ctorization
-algebraFB on B whose factorization homology is isomorphic to A.
-We now prove that the factorization algebra FB is equivalent toTC B, i.e., that
-there are equivalences of prefactorization algebras FB(U )∼=
-∫
-UA (for any open
-subset U ⊂ B). Note that FB(U ) ∼= FB |U (U ) ∼= HF (FB |U,U ). To shorten
-notation, we denoteFU the factorization algebra FB |U induced on U by restriction
-ofFB to U . One has A⊗n ∼=
-∫
-U1
-A⊗···
-∫
-Ul
-A∼=
-∫
-U1∪···∪Ul
-A for any pairwise
-disjoint open subsets U1,...,U n of B homeomorphic to a ball ([25]) and
-FB
-( l∐
-i=1
-Bi
-)
-∼=
-l⨂
-i=1
-FB(Bi) ∼=
-l⨂
-i=1
-A
-for any open balls Bi⊂ B (sinceFB is locally constant). Hence FB(U )∼=
-∫
-UA
-when U is a disjoint union of balls. In particular, this equivalence holds for any
-(framed) embedding of S0×Dm in B. We now prove, by induction on i, that
-FB(Si×Dm−i) ∼= HF (FSi×Dm−i,Si×Dm−i) ∼=
-∫
-Si×Dm−i
-A
-for any embedding of Si×Dm−i in B (where i≥ 1). We have a decomposition
-of the sphere Si×Dm−i as Si×Dm−i∼= D+∪Si−1×Di−m×D1 D− where D+ and
-D− are homeomorphic to framed open subballs of B. By above, the factorization
-homology ofFD+ andFD− are equivalent to A and the factorization homology of
-FSi−1×Di−m×D1 is equivalent to
-∫
-Si−1×Di−mA as an E1-algebra by the induction
-hypothesis. Now the equivalence HF (FSi×Dm−i,Si×Dm−i)∼=
-∫
-Si×Dm−iA follows
-from Lemma 5 and Proposition 11. This completes the inductive step. For general
-open submanifold U of B, we use a handle decomposition as in the proof of The-
-orem 5 (using Lemma 5 instead of Theorem 1 and arguments similar to w hat has
-DERIVED HIGHER HOCHSCHILD, TCH, F ACTORIZATION ALGEBRAS 51
-just been explained above for spheres) to obtain, in a similar way, th at
-∫
-U
-A ∼= HF
-(
-FU,U
-) ∼= F (U ).
-This proves that TC B∼=FB and thus that TC B is a factorization algebra.
-IfM = ∐ l
-i=1Bi is a disjoint union of balls of dimension m, then we also deduce
-thatTC M is a factorization algebra since
-∫
-U1
-A⊗···⊗
-∫
-Ul
-A∼=
-∫
-U1
-∐ ··· ∐ Ul
-A for
-any open subsets Ui⊂Bi. In particular, this applies to the case of S0×Dd (d≥ 0).
-Now let M∼=Sm×Dd (d≥ 0,m≥ 1) be framed (we do not assume it is embedded
-as an open set of an euclidean space). We work by induction on m so that we may
-assume the result of the proposition is known for Sm−1×Dl.
-Assume we have a cover U∪V of a space X and factorization algebras BU ,BV ,
-BU∩V on U , V and U∩V with equivalences BU∩V
-≃
-−→B U |U∩V andBU∩V
-≃
-−→
-BV |U∩V . Then we can glue these factorization algebras to deﬁne a factoriz ation
-algebra onX, see [8] (note that this descent property can be generalized to ar bitrary
-covers). We wish to apply this to a decomposition of the m-sphere Sm as Sm∼=
-D+∪Sm−1×D1 D− where D+ and Dm are homeomorphic to framed open balls.
-By the above analysis, there are locally constant factorization alge brasF+,F− on
-D+×Dd and D−×Dd which are equivalent to TC Dm+d (A). Restricting these
-equivalences to Sm−1×D1×Dd, we get an equivalence
-F+|Sm−1×D1×Dd
-≃
-−→F −|Sm−1×D1×Dd.
-Since Sm−1×D1×Dd is the intersection of D+×Dd with D−×Dd, we thus get
-a locally constant factorization algebra F on their union Sm×Dd. It follows from
-Lemma 5 and Proposition 11, that F (Sm×Dd)∼=
-∫
-Sm×DdA as an Ed-algebra.
-The equivalences F (U )∼=
-∫
-UA follows for any open proper subset of Sm×Dd
-by the above case for open balls (or by mimicking the proof). It follow s that
-TC Sm×Dd∼=F and thus is a factorization algebra.
-The case of general n-framed manifolds M is done similarly. Using a handle de-
-composition, induction and the descent property of factorization algebras we build
-a locally constant factorization algebra FM onM and then prove, by using handle
-decomposition of any open subset U of M , that FM (U )∼=
-∫
-UM ; the argument is
-similar to the case of spheres (as in the proof of Theorem 5).
-The factorization algebra TC M (−,A ) is locally constant by construction (since∫
-BA∼=A for any ball B) and its factorization homology is precisely the topological
-chiral homology of M with value in A. FurtherTC M (−,A ) is functorial in A since
-topological chiral homology is. □
-Remark 17. Theorem 5 follows easily from Proposition 13 and Corollary 9.
-5.4.2. Topological chiral homology and factorization algebras fo r En[M ]-algebras.
-We now go beyond the notion of n-framed manifolds M , and, more generally,
-consider locally constant algebras over an operad En[M ], for which there might not
-exist a globally deﬁned En-algebra.
-Following Lurie [25], topological chiral homology can also be deﬁned for a (locally
-constant) family of En-algebras parametrized by the points in M×Dm−n even if
-M is not n-framed. Such families objects are (locally constant) algebras ove r an
-(∞-)operad En[M ] := E⊗
-M×Dn−m , the operad of little n-cubes in M×Dm−n, see [25,
-52 G. GINOT, T. TRADLER, AND M. ZEINALIAN
-Deﬁnition 5.2.4.1] (here M is still of dimension m, and of course one can choose
-m = n). Note that there is a canonical map of ∞-operads from En[M ] to the
-the operad Comm governing CDGAs. Thus a CDGA is an En[M ]-algebra in a
-canonical way.
-By [25, Theorem 5.2.4.9], we can also describe an En[M ]-algebra as a locally
-constant N (Disk(M×Dn−m))-algebra. Indeed, by [25, Remark 5.3.2.7] we can
-extend Deﬁnition 4 to an En[M ]-algebraA as well by replacing the last equivalence
-in (17) by A(V1)⊗···⊗A (Vn). That is, there is an equivalence
-(25)
-∫
-M
-A ∼= lim−→
-∫
-V1
-A⊗···⊗
-∫
-Vn
-A∼= lim−→A(V1)⊗···⊗A (Vn)
-where V1,...,V n are disjoint open sets homeomorphic to a ball.
-Lemma 8 (Lurie [25]) . LetM be a manifold and A be an E[M ]-algebra. Assume
-that there is a codimension 1 submanifold N of M with a trivialization N×D1 of
-its neighborhood such that M is decomposable as M =X∪N ×D1Y whereX,Y are
-submanifolds of M glued along N×D1. Then
-(1) ∫
-N ×D1A is an E1-algebra and ∫
-XA and ∫
-YA are right and left modules
-over
-∫
-N ×D1A.
-(2) The natural map
-∫
-X
-A
-L
-⊗∫
-N ×D1 A
-∫
-Y
-A −→
-∫
-M
-A
-is an equivalence.
-Proof. The lemma is explained in [25] after Theorem 5.3.4.14 (where
-∫
-N ×D1A is
-simply denoted by
-∫
-NA). Let us give some more details. There is a homeomorphism
-N×D1∼=N× (0, 1) and similarly (since X has a neighborhood homeomorphic to
-N×D1) a homeomorphism X∼= X0 where X0 = X\N× [0, 1) (we also denote
-Y0 = Y \N× (−1, 0]). Since N× (−1, 0) and N× (0, 1) are disjoint open sets
-in N×D1, we get a natural map
-∫
-X0
-A⊗
-∫
-N ×(0,1)A→
-∫
-XA. Then the module
-structure on
-∫
-XA is given the composition
-∫
-X
-A⊗
-∫
-N ×D1
-A
-≃
-−→
-∫
-X0
-A⊗
-∫
-N ×(0,1)
-A−→
-∫
-X
-A
-and similarly for the module structure of
-∫
-YA and the E1-structure of
-∫
-N ×D1A.
-For the second statement, we need to prove that the canonical m ap
-(26) lim −→
-( ∫
-X
-A⊗
-∫
-N ×D1
-A⊗
-∫
-Y
-A ⇒
-∫
-X
-A⊗
-∫
-Y
-A
-)
-−→
-∫
-M
-A
-induced by the two module structures is an equivalence. Using the eq uivalences
-of modules ∫
-X0
-A
-≃
-→ ∫
-XA, ∫
-Y0
-A
-≃
-→ ∫
-YA and Deﬁnition 4 (or more precisely the
-equivalence (25)), the left hand side of the map (26) is computed by the colimit
-lim−→
-U1,...,U ℓ ∈ ~Ball
-pairwise disjoint
-∫
-U1
-A⊗···⊗
-∫
-Uℓ
-A
-DERIVED HIGHER HOCHSCHILD, TCH, F ACTORIZATION ALGEBRAS 53
-where ~Ball is the set of open sets U∈Op(M ) homeomorphic to a ball such that U
-is either in X0 or Y0 or in N×D1. Thus, denoting Ball (M ) the set of open sets
-homeomorphic to a ball in M , we are left to prove that the canonical map
-(27)
-lim−→
-U1,...,U ℓ ∈ ~Ball
-pairwise disjoint
-∫
-U1
-A⊗···⊗
-∫
-Uℓ
-A−→ lim−→
-V1,...,V i ∈ B all (M)
-pairwise disjoint
-∫
-V1
-A⊗···⊗
-∫
-Vi
-A→
-∫
-V
-A
-is an equivalence. For every family B1,...,B k of pairwise disjoint open subsets
-of M homeomorphic to a ball which intersects N×{ 0}, choosing a point xj in
-each Bj∩
-(
-N×{ 0}
-)
-, we can ﬁnd disjoint open subsets (homeomorphic to a ball)
-U1,...,U k included in N×D1, such that Uj containsxj and is included in Bj. The
-inclusion map Uj֒→Bj induces a canonical morphism
-∫
-Uj
-A→
-∫
-Bj
-A which is an
-equivalence since there is a natural equivalence
-∫
-BA∼= A for any ball. It follows
-that the map of (homotopy) colimits (27) is an equivalence. □
-The generalization of Proposition 13 to En[M ]-algebras is:
-Theorem 6. LetM be a manifold of dimension m and d∈ N an integer.
-(1) The rule A↦→
-(
-U ↦→
-∫
-UA
-)
-deﬁnes a functor of (∞, 1)-algebrasTC M :
-Ed[M ]-Alg→Faclc
-M (Ed-Alg) which ﬁts into a commutative diagram
-Ed[M ]-Alg
-∫
-M /d47/d47
-T C M
-/d15/d15
-Ed-Alg∞
-Faclc
-M (Ed-Alg∞)
-HF (−)
-/d53/d53❥❥❥❥❥❥❥❥❥❥❥❥❥❥❥
-(2) The functor TC M : Ed[M ]-Alg → Faclc
-M (Ed-Alg) is an equivalence of
-(∞, 1)-categories.
-In particular, any locally constant factorization algebra F on M with values
-in Ed-algebras is equivalent to TC M (A) for a unique (up to equivalences) Ed[M ]-
-algebraA, i.e., . algebra over the operad of little cubes in M×Dd. Further,
-topological chiral homology of an open set U with value in the associated E⊗
-M×Dd -
-algebra computes the (derived) sections of the factorization alge bra.
-Also note that if M is any manifold and A is a CDGA, viewed as an Ed[M ]-
-algebra, then the factorization algebra TC M (A) induced by Theorem 6 is strongly
-constant in the sense of Section 4.2. Thus by Corollary 9, there is an natural
-equivalence of (Ed-algebras)
-∫
-M
-A ∼= CHM (A)
-extending Theorem 5 to non-framed manifolds.
-Proof of Theorem 6. We ﬁrst deal with assertion (1). By Lemma 4, it is enough to
-prove that the rule U↦→
-∫
-UA, together with the structure maps
-(28)
-∫
-U1
-A⊗···⊗
-∫
-Uℓ
-A
-∼
-−→
-∫
-U1∪···∪Uℓ
-A−→
-∫
-V
-A
-54 G. GINOT, T. TRADLER, AND M. ZEINALIAN
-forUi’s pairwise disjoint open subsets ofV ∈Op(M×Dd), deﬁnes a locally constant
-factorization algebra on M×Dd, naturally in A∈ E⊗
-M×Dd -Alg. Note that, by [25,
-Theorem 5.2.4.9], the E⊗
-M×Dd -algebraA satisﬁes that, for any ball B which is a
-subset of a ball B′, the canonical map
-∫
-BA∼=A(B)→A (B′)∼=
-∫
-B′A is an equiv-
-alence in k-Mod ∞. Now we can apply the same proof as the one of Proposition 13
-withA instead of A, using Lemma 8 instead of Proposition 11.
-We now prove assertion (2). By [25, Theorem 5.2.4.9], the canonical e mbed-
-ding θ : E⊗
-M×Dd -Alg → N (Disk(M× Rd))-Alg induces an equivalence between
-E⊗
-M×Dd -Alg and locally constantN (Disk(M×Rd))-algebras; we writeN (Disklc(M ))-Alg
-for the latter subcategory. It is thus enough to deﬁne a functor EAM :Faclc
-M (Ed-Alg∞)→
-N (Disklc(M ))-Alg such thatTC M◦EAM andEAM◦TC M are respectively equiva-
-lent to the identity functors of Faclc
-M (Ed-Alg∞) and N (Disklc(M ))-Alg. Let F be
-in Faclc
-M (Ed-Alg∞). By Lemma 4, we can think of F as a locally constant factor-
-ization algebra on M×Dd. Let B∈Op(M×Dd) be homeomorphic to a ball. Then
-the restriction F|B is a locally constant factorization algebra on B∼= Rn, thus is
-equivalent to an En-algebra (which is canonically equivalent to F (B)). Further, for
-any ﬁnite family B1,...,B ℓ of pairwise disjoint open subsets homeomorphic to a
-ball and U an open subset homeomorphic to a ball containing the Bi’s, the locally
-constant factorization algebra structure deﬁnes a canonical ma p
-γB1,...,Bl,U :F (B1)⊗···⊗F (Bℓ)−→F (U )
-which is an equivalence if ℓ = 1. The maps γB1,...,Bl,U are compatible in a natural
-way. This shows that the collection F (B) for all open sets B⊂ M×Dd home-
-omorphic to a ball is a locally constant N (Disk(M× Rd))-algebra, denoted AF
-and we deﬁne the functor EAM to be deﬁned by EAM (F ) := AF (for M = pt it
-is the same as the functor for deﬁned in the proof of Proposition 10). In other
-words, the functorEAM (F ) is simply induced by the composition Disk( M× Rd)֒→
-Op(M×Rd)
-F
-→k-Mod ∞. By abuse of notation, we also write AF for the associated
-(well deﬁned up to equivalences) E⊗
-M×Dd -algebra.
-LetA be an E⊗
-M×Dd -algebra. By construction EAM◦TC M (A) is the (locally
-constant) N (Disk(M× Rd))-algebra given, on any (open set homeomorphic to an
-euclidean) ball B, by
-(
-EAM◦TC M (A)
-)
-(B) =
-∫
-B
-A∼=A(B)
-by deﬁnition of topological chiral homology [25, Example 5.3.2.8]. Hence there is a
-canonical equivalenceEAM◦TC M (A)∼=A of locally constant N (Disk(M× Rd))-
-algebras and thus of E⊗
-M×Dd -algebras as well.
-It remains to prove that, there are natural equivalences TC M (AF )∼=F of fac-
-torization algebras, where AF is the E⊗
-M×Dd -algebraEAM (F ) associated to F as
-above. Fixing a Riemannian metric on M×Dd, we can ﬁnd a cover Ballg(M×Dd)
-of M given by open sets in M×Dd which are geodesically convex. On every
-U∈B allg(M× Rd), the restrictions TC |U (AF ) and F|U are naturally isomorphic
-by the above paragraph. In particular, for any set UI := ⋂
-i∈IUi and any subset
-DERIVED HIGHER HOCHSCHILD, TCH, F ACTORIZATION ALGEBRAS 55
-J⊂I, the following diagram
-TC |UI (AF ) ≃ /d47/d47
-/d15/d15
-F|UI
-/d15/d15
-TC |UI\J (AF ) ≃ /d47/d47F|UI\J
-is commutative. Since TC M (AF ) and F are the factorization algebras obtained
-by descent from their restrictions on the cover Ballg(M× Rd), on which they are
-naturally equivalent, it follows that F is equivalent to TC M (AF ). □
-Example 12. SinceS2×D1 embeds as an open set in R3, anyE3-algebraA yields,
-by restriction, a (locally constant) factorization algebra AS2 on S2 (with values in
-E1-Alg) (Lemma 4). By Theorem 6 and Proposition 11, decomposing the sph ere as
-two disks glued along the equator, we get that the factorization ho mology of AS2
-is given by
-HF (AS2 ) ∼= A
-L
-⊗
-CHS1 (A)
-A
-as an E1-algebra. Here CHS1 (A) is the usual Hochschild chain complex of the
-(underlying) E1-algebra structure of A, which is naturally an E2-algebra by [25,
-Theorem 5.3.3.11] and Proposition 11.
-Similarly, any E2-algebraB yields a (translation invariant and locally constant)
-factorization algebra on R2, and thus a (locally constant) factorization algebra BT
-on a torus T =S1×S1∼= R2/Z2. Since T is framed, we can also deﬁne its topologi-
-cal chiral homology directly using the framing. It follows easily from t he uniqueness
-statement in Theorem 6, that BT is equivalent to TC T (B) in FacT (k-Mod ∞).
-Note that the two canonical projections p1,p 2 : R2 → R deﬁne two locally
-constant factorization algebras p1∗(B), p2∗(B) on R and thus, two E1-algebras B1
-and B2. Now, cutting the torus along two meridian circles, we get two copies of
-S1×D1∼= R2/(Z⊕{ 0}) glued along their boundaries. By Theorem 6 again, the
-topological chiral homology of S1×D1 is the same as the factorization algebra
-homology of the descent factorization algebra BZ⊕{0}. Thus
-∫
-S1×D1B is equivalent
-to the usual Hochschild chain complex CHS1(B1) and the later complex inherits an
-E1-structure from the E2-algebra structure of B. From Proposition 11, we deduce
-a natural equivalence (in k-Mod ∞)
-HF (BT )∼=CHS1 (B1)
-L
-⊗
-CHS1 (B1)⊗(CHS1 (B1))op
-CHS1(B1)∼=CHS1 (CHS1 (B1)).
-Note that if B was actually a CDGA, then the later equivalence follows directly
-from Corollary 11.
+[]{#S:blob label="S:blob"}
+
+It is asserted in [@MW Example 6.2.10] that the **Blob complex** of Morrison-Walker is equivalent to *an unoriented variant of* topological chiral homology. We briefly explain here how to deduce this equivalence from the proof of Theorem [\[T:TCH=CH\]](#T:TCH=CH){reference-type="ref" reference="T:TCH=CH"} and several statements from [@MW]. The main difference with § [\[S:ReviewTCH\]](#S:ReviewTCH){reference-type="ref" reference="S:ReviewTCH"} and § [\[S:locality\]](#S:locality){reference-type="ref" reference="S:locality"} to keep in mind is that we no longer assume our manifold to be *framed*. Indeed, we are using the variant of topological chiral homology for (non-necessarily framed nor oriented) manifolds of dimension $n$. However this forces us to restrict our attention to *unoriented $E_n$-algebras*:
+
+::: definition
+[]{#D:unorientedEn label="D:unorientedEn"} The category of *unoriented $E_n$-algebras*, denoted $\mathbb{E}_n^{O(n)}\textit{-}Alg_\infty$ is defined as the ($(\infty,1)$-)category of symmetric monoidal functors $$\mathbb{E}_n^{O(n)}\textit{-}Alg_\infty := \text{\emph{Fun}}^\otimes(\text{\emph{Disk}}_n,\,k\textit{-}Mod_\infty)$$ where $\text{\emph{Disk}}_n$ is the category with objects the integers and morphism the spaces $\text{\emph{Disk}}_n(k,\ell):= \text{\emph{Emb}}(\coprod_{k} \mathbb R^n, \coprod_{\ell} \mathbb R^n)$ of smooth embeddings of $k$ disjoint copies of a disk $\mathbb R^n$ into $\ell$ such copies; the monoidal structure is induced by disjoint union of copies of disks.
+:::
+
+Note that $\mathbb{E}_n^{O(n)}$-algebras are denoted $\mathcal{EB}_n$-algebras in [@MW].
+
+::: remark
+The definition above is extracted from [@L-VI; @Francis]. There is an natural action of the orthogonal group $O(n)$ on $E_n\textit{-}Alg_\infty$, see [@L-TFT]; the category $(E_n\textit{-}Alg_\infty)^{hO(n)}$ of $O(n)$-homotopy fixed points is equivalent to the $(\infty,1)$-category $\mathbb{E}_n^{O(n)}\textit{-}Alg_\infty$ of Definition [\[D:unorientedEn\]](#D:unorientedEn){reference-type="ref" reference="D:unorientedEn"} In particular, *any CDGA is an unoriented $E_n$-algebra*.
+
+If one replaces the action of $O(n)$ by $SO(n)$,one recovers the notion of *oriented* $E_n$-algebras which are commonly known as *framed $E_n$-algebras* in the literature.
+:::
+
+Let $M$ be a dimension $n$ manifold. By [@MW Example 6.2.10], an $\mathbb{E}_n^{O(n)}$-algebra $A$ defines an $A_\infty$-$n$-category[^1] $\mathcal{C}^A$ and thus yields the **Blob complex** $\mathcal{B}_*(M,\mathcal{C}^A)$, see [@MW Definition 7.0.1]. Similarly we can form the topological chiral homology $\int_M A$, see [@Francis Definition 3.15] (or [@L-VI; @L-TFT]).
+
+::: proposition
+[]{#P:blob label="P:blob"} Let $M$ be a closed $n$-dimensional manifold (non necessarily framed nor oriented) and $A$ an $\mathbb{E}_n^{O(n)}$-algebra. There is an natural equivalence $$\int_{M} A\; \cong\; \mathcal{B}_*(M,\mathcal{C}^A)$$ in $k\textit{-}Mod_\infty$. Further, if $A$ is a CDGA, there is an natural equivalence $CH_M^{\scriptstyle\bullet}(A) \cong \int_{M} A$ in $k\textit{-}Mod_\infty$.
+:::
+
+::: proof
+*Proof.* According to [@MW Theorem 7.2.1], the Blob complex $\mathcal{B}_*(M,\mathcal{C}^A)$ satisfies the excision property for closed manifolds and can be computed using a colimit construction ([@MW § 6.3]) similar to Definition [\[Def:TCHasColimit\]](#Def:TCHasColimit){reference-type="ref" reference="Def:TCHasColimit"}. It also converts disjoint union of manifolds to tensor products [@MW Property 1.3.2] and $\mathcal{B}_*(D^n,\mathcal{C}^A)\cong A$ by [@MW Property 1.3.4] (and [@MW Example 6.2.10]). The same properties hold for topological chiral homology as in Proposition [\[P:TCHpushout\]](#P:TCHpushout){reference-type="ref" reference="P:TCHpushout"} (or Lemma [\[L:TCHpushout2\]](#L:TCHpushout2){reference-type="ref" reference="L:TCHpushout2"}), the proofs and references to [@Francis; @L-VI; @L-TFT] in the unoriented case being essentially the same as in the framed one (using $O(n)$-homotopy fixed $E_n$-algebras). It follows that one can apply *mutatis mutandis* the proof of Theorem [\[T:TCH=CH\]](#T:TCH=CH){reference-type="ref" reference="T:TCH=CH"} to get the equivalences stated in the proposition. ◻
+:::
+
+::: remark
+Let $A=C_{\scriptstyle\bullet}(\Omega^{n} Y)$ be the $E_n$-algebra associated to the $n$-fold loop space of an $n$-connective pointed space $Y$. The Blob complex $\mathcal{B}_*(M,\mathcal{C}^{C_{\scriptstyle\bullet}(\Omega^{n} Y)})$ for non-necessarily closed manifolds shall not be mistaken with the Blob complex associated to the $A_\infty$-$n$-category associated to the fundamental groupoid of the space $Y$ in [@MW § 6] (though the construction share some similarities). Indeed, it is claimed [@MW Theorem 7.3.1] that the latter construction compute the chains on the space of all maps $\textrm{Map}(M,Y)$, while the first one, by non-abelian Poincaré duality [@L-VI], $\int_{M} \Omega^{n} Y$ is the chains on the space of maps with compact support $\textrm{Map}_{c}(M,Y)$.
+:::
+
+Theorem [\[T:HF=TCH\]](#T:HF=TCH){reference-type="ref" reference="T:HF=TCH"} below and Proposition [\[P:blob\]](#P:blob){reference-type="ref" reference="P:blob"} suggest that the blob complex should be closely related to Factorization algebras as well. It would be interesting to relate system of fields, n-category and the blob complex in the sense of [@MW] to factorization algebras (with extra properties) in the sense of [@CG]. We plan to investigate these relationship in a future work.
+
+## Topological chiral homology as a factorization algebra {#S:TCH=Fact}
+
+In this section we give a precise relationship between factorization algebras, topological chiral homology for (stably) framed manifolds, and $E_n$-algebras.
+
+### Topological chiral homology and factorization algebras for $n$-framed manifolds
+
+For any manifold $M$ of dimension $m$ which is $n$-framed (*i.e.* $M\times D^{n-m}$ is framed) and $E_n$-algebra $A$, we can consider the topological chiral homology $\int_M A$ as well as $\int_U A$ for every open subset $U$ in $M$ (equipped with the induced framing). Further, if $U_1,\dots, U_k$ are pairwise disjoint open subsets of $V\in Op(M)$, there is a canonical equivalence ([@L-VI Theorem 3.5.1]) $$\int_{U_1} A \otimes \cdots \otimes \int_{U_k} A \;\stackrel{\simeq}{\longrightarrow}\int_{U_1\cup \cdots \cup U_k} A \;$$ and a natural map $\int_{U_1\cup \cdots \cup U_k} A\to \int_V A$ (since any ball in $\bigcup U_i$ is a ball in $V$). Composing these two maps yield natural maps of $E_{m-n}$-algebras $$\label{eq:muTCHisFact}\mu_{U_1,\dots, U_k, V}: \int_{U_1} A \otimes \cdots \otimes \int_{U_k} A \; \longrightarrow \int_V A.$$
+
+::: proposition
+[]{#P:TCHisFact label="P:TCHisFact"} Let $M$ be an $n$-framed manifold of dimension $m$.
+
+1.  For any $E_n$-algebra $A$, the rule $U\mapsto \int_U A$ (for $U$ open in $M$) together with the structure maps $\mu_{U_1,\dots, U_k,V}$ [\[eq:muTCHisFact\]](#eq:muTCHisFact){reference-type="eqref" reference="eq:muTCHisFact"} define a *locally constant* factorization algebra $\mathcal{TC}_M(-,A)$ on $M$, such that $\mathcal{TC}_M(U,A)=\int_U A$ is canonically an $E_{n-m}$-algebra for any open $U$.
+
+2.  The rule $A\mapsto \mathcal{TC}_M(-,A)$ defines a functor $\mathcal{TC}_M:{E_n}\textit{-}Alg_\infty\to \mathop{Fac}_M({E_{n-m}}\textit{-}Alg_\infty)$ which fits into the following commutative diagram $$\xymatrix{{E_n}\textit{-}Alg_\infty \ar[rr]^{\int_M} \ar[d]_{\mathcal{TC}_M} & &{E_{n-m}}\textit{-}Alg_\infty  \\ 
+    \mathop{Fac}_M({E_{n-m}}\textit{-}Alg_\infty) \ar[rru]_{HF(-)} && }$$
+:::
+
+In other words topological chiral homology computes the factorization homology of $\mathcal{TC}_M$.
+
+The idea behind Proposition [\[P:TCHisFact\]](#P:TCHisFact){reference-type="ref" reference="P:TCHisFact"} is that for any submanifold $U$ of $M$ and $E_n$-algebra $A$, we can cover $U$ by a (coherent family of) open balls on which $A$ defines a locally constant factorization algebra. Gluing these data defines a factorization algebra on $U$ whose homology can be computed from the balls by using the gluing/locality lemma given above (Lemma [\[L:Enmodule\]](#L:Enmodule){reference-type="ref" reference="L:Enmodule"}). Since the topological chiral homology is equivalent to $A$ on balls and satisfy a similar locality axiom, they agree on $U$.
+
+::: proof
+*Proof of Proposition [\[P:TCHisFact\]](#P:TCHisFact){reference-type="ref" reference="P:TCHisFact"}.* For any open subset $V$ of $M$, the topological chiral homology $\int_V A$ is the colimit $\mathop{\lim\limits_{\textstyle\longrightarrow}}\limits_{} \psi_V$, where $\psi_V:N(\emph{\emph{\text{Disj}}}(V))\to k\textit{-}Mod_\infty$ is the diagram given by the formula $\psi_V(V_1\cup\cdots\cup V_n)=\int_{V_1}A \otimes \cdots \otimes \int_{V_n} A$ where $V_1,\dots, V_n$ are disjoint open sets homeomorphic to a ball (Definition [\[Def:TCHasColimit\]](#Def:TCHasColimit){reference-type="ref" reference="Def:TCHasColimit"}). In particular, the structure maps $\mu_{U_1,\dots,U_n,V}$ are induced by a map of colimits and it is easy to check that they are natural with respect to open embeddings and thus defines a prefactorization algebra. Hence $\mathcal{TC}_M(-,A)$ is functorially (in $A$) a *prefactorization* algebra on $M$ with value in $E_{n-m}$-algebras.
+
+To prove that $\mathcal{TC}_M(-,A)$ is actually a *factorization* algebra, the idea is first to use a handle body decomposition to define another locally constant factorization algebra $\mathcal{F}_M$ on $M$ whose factorization homology $HF(\mathcal{F},M)$ is equivalent to $\int_M A$ and then to prove that this factorization algebra is indeed equivalent to $\mathcal{TC}_M$. Note that by Lemma [\[L:EnFact\]](#L:EnFact){reference-type="ref" reference="L:EnFact"}, if $\mathcal{F}_M$ is a locally constant factorization algebra on $M$ with value in $E_d$-algebras such that $\int_M A \cong HF(\mathcal{F}_M,M)$, then we have a natural factorization algebra $\mathcal{F}_{M\times \mathbb R^d}$ on $M\times \mathbb R^d$ and further $HF(\mathcal{F}_{M\times \mathbb R^d},M\times \mathbb R^d)\cong \int_M A$ as an $E_d$-algebra.
+
+We start with the case of open balls. By definition of topological chiral homology, for every manifold $B$ homeomorphic to an $m$-dimensional ball, there is a natural equivalence $\int_B A \cong A$ of $E_{n-m}$-algebras (where the $E_{n-m}$-algebra structure of $A$ is by restriction of structure), see [@L-VI; @L-TFT]. By a result of Lurie [@L-VI] (also see [@Co Proposition 3.4.1] or Proposition [\[P:Fac=En\]](#P:Fac=En){reference-type="ref" reference="P:Fac=En"}), there is a locally constant factorization algebra $\mathcal{F}_B$ on $B$ whose factorization homology is isomorphic to $A$.
+
+We now prove that the factorization algebra $\mathcal{F}_B$ is equivalent to $\mathcal{TC}_B$, *i.e.*, that there are equivalences of prefactorization algebras $\mathcal{F}_B(U) \cong \int_U A$ (for any open subset $U\subset B$). Note that $\mathcal{F}_{B}(U)\cong {\mathcal{F}_B}_{|U}(U)\cong HF({\mathcal{F}_B}_{|U}, U)$. To shorten notation, we denote $\mathcal{F}_U$ the factorization algebra ${\mathcal{F}_B}_{|U}$ induced on $U$ by restriction of $\mathcal{F}_B$ to $U$. One has $A^{\otimes n} \cong \int_{U_1} A \otimes \cdots \int_{U_l} A \cong \int_{U_1\cup \cdots \cup U_l} A$ for any pairwise disjoint open subsets $U_1,\dots,U_n$ of $B$ homeomorphic to a ball ([@L-VI]) and $$\mathcal{F}_B\Big(\coprod_{i=1}^l B_i\Big)\;\cong \;\bigotimes_{i=1}^l \mathcal{F}_{B}(B_i)\;\cong \;\bigotimes_{i=1}^l A$$ for any open balls $B_i\subset B$ (since $\mathcal{F}_B$ is locally constant). Hence $\mathcal{F}_B(U)\cong \int_U A$ when $U$ is a disjoint union of balls. In particular, this equivalence holds for any (framed) embedding of $S^0\times D^m$ in $B$. We now prove, by induction on $i$, that $$\mathcal{F}_B(S^{i}\times D^{m-i})\;\cong\; HF({\mathcal{F}_{S^i\times D^{m-i}}}, S^i\times D^{m-i})\;\cong\; \int_{S^i\times D^{m-i}} A$$ for any embedding of $S^{i}\times D^{m-i}$ in $B$ (where $i\geq 1$). We have a decomposition of the sphere $S^i\times D^{m-i}$ as $S^i\times D^{m-i}\cong D^+ \cup_{S^{i-1}\times D^{i-m}\times D^1} D^-$ where $D^+$ and $D^-$ are homeomorphic to framed open subballs of $B$. By above, the factorization homology of $\mathcal{F}_{D^+}$ and $\mathcal{F}_{D^-}$ are equivalent to $A$ and the factorization homology of $\mathcal{F}_{S^{i-1}\times D^{i-m}\times D^1}$ is equivalent to $\int_{S^{i-1}\times D^{i-m}} A$ as an $E_{1}$-algebra by the induction hypothesis. Now the equivalence $HF({\mathcal{F}_{S^i\times D^{m-i}}}, S^i\times D^{m-i})\cong \int_{S^i\times D^{m-i}} A$ follows from Lemma [\[L:Enmodule\]](#L:Enmodule){reference-type="ref" reference="L:Enmodule"} and Proposition [\[P:TCHpushout\]](#P:TCHpushout){reference-type="ref" reference="P:TCHpushout"}. This completes the inductive step. For general open submanifold $U$ of $B$, we use a handle decomposition as in the proof of Theorem [\[T:TCH=CH\]](#T:TCH=CH){reference-type="ref" reference="T:TCH=CH"} (using Lemma [\[L:Enmodule\]](#L:Enmodule){reference-type="ref" reference="L:Enmodule"} instead of Theorem [\[T:derivedfunctor\]](#T:derivedfunctor){reference-type="ref" reference="T:derivedfunctor"} and arguments similar to what has just been explained above for spheres) to obtain, in a similar way, that $$\int_U A \;\cong\; HF\big(\mathcal{F}_U,U\big)\; \cong \; \mathcal{F}(U).$$ This proves that $\mathcal{TC}_B\cong \mathcal{F}_B$ and thus that $\mathcal{TC}_B$ is a factorization algebra.
+
+If $M=\coprod_{i=1}^l B_i$ is a disjoint union of balls of dimension $m$, then we also deduce that $\mathcal{TC}_{M}$ is a factorization algebra since $\int_{U_1} A \otimes \cdots \otimes \int_{U_l} A \cong \int_{U_1\coprod \dots \coprod U_l} A$ for any open subsets $U_i\subset B_i$. In particular, this applies to the case of $S^0\times D^d$ ($d\geq 0$). Now let $M\cong S^m\times D^d$ ($d\geq 0$, $m\geq 1$) be framed (we do not assume it is embedded as an open set of an euclidean space). We work by induction on $m$ so that we may assume the result of the proposition is known for $S^{m-1}\times D^l$.
+
+Assume we have a cover $U\cup V$ of a space $X$ and factorization algebras $\mathcal{B}_U$, $\mathcal{B}_V$, $\mathcal{B}_{U\cap V}$ on $U$, $V$ and $U\cap V$ with equivalences $\mathcal{B}_{U\cap V} \stackrel{\simeq}\longrightarrow {\mathcal{B}_U}_{|U\cap V}$ and $\mathcal{B}_{U\cap V} \stackrel{\simeq}\longrightarrow {\mathcal{B}_V}_{|U\cap V}$. Then we can glue these factorization algebras to define a factorization algebra on $X$, see [@CG] (note that this descent property can be generalized to arbitrary covers). We wish to apply this to a decomposition of the $m$-sphere $S^m$ as $S^m\cong D^+ \cup_{S^{m-1}\times D^1} D^-$ where $D^+$ and $D^m$ are homeomorphic to framed open balls. By the above analysis, there are locally constant factorization algebras $\mathcal{F}_+$, $\mathcal{F}_{-}$ on $D^+\times D^d$ and $D^-\times D^d$ which are equivalent to $\mathcal{TC}_{D^{m+d}}(A)$. Restricting these equivalences to $S^{m-1}\times D^1 \times D^{d}$, we get an equivalence $${\mathcal{F}_{+}}_{|S^{m-1}\times D^1 \times D^{d}} \stackrel{\simeq}\longrightarrow {\mathcal{F}_{-}}_{|S^{m-1}\times D^1 \times D^{d}}.$$ Since $S^{m-1}\times D^1 \times D^d$ is the intersection of $D^+\times D^d$ with $D^{-}\times D^d$, we thus get a locally constant factorization algebra $\mathcal{F}$ on their union $S^m\times D^d$. It follows from Lemma [\[L:Enmodule\]](#L:Enmodule){reference-type="ref" reference="L:Enmodule"} and Proposition [\[P:TCHpushout\]](#P:TCHpushout){reference-type="ref" reference="P:TCHpushout"}, that $\mathcal{F}(S^m\times  D^d)\cong \int_{S^m\times D^d} A$ as an $E_d$-algebra. The equivalences $\mathcal{F}(U)\cong \int_U A$ follows for any open proper subset of $S^m\times D^d$ by the above case for open balls (or by mimicking the proof). It follows that $\mathcal{TC}_{S^m\times D^d} \cong \mathcal{F}$ and thus is a factorization algebra.
+
+The case of general $n$-framed manifolds $M$ is done similarly. Using a handle decomposition, induction and the descent property of factorization algebras we build a locally constant factorization algebra $\mathcal{F}_M$ on $M$ and then prove, by using handle decomposition of any open subset $U$ of $M$, that $\mathcal{F}_M(U) \cong \int_U M$; the argument is similar to the case of spheres (as in the proof of Theorem [\[T:TCH=CH\]](#T:TCH=CH){reference-type="ref" reference="T:TCH=CH"}).
+
+The factorization algebra $\mathcal{TC}_M(-,A)$ is locally constant by construction (since $\int_B A \cong A$ for any ball $B$) and its factorization homology is precisely the topological chiral homology of $M$ with value in $A$. Further $\mathcal{TC}_M(-,A)$ is functorial in $A$ since topological chiral homology is. ◻
+:::
+
+::: remark
+[]{#R:TCH=HF=CH label="R:TCH=HF=CH"} Theorem [\[T:TCH=CH\]](#T:TCH=CH){reference-type="ref" reference="T:TCH=CH"} follows easily from Proposition [\[P:TCHisFact\]](#P:TCHisFact){reference-type="ref" reference="P:TCHisFact"} and Corollary [\[C:HFact=CH\]](#C:HFact=CH){reference-type="ref" reference="C:HFact=CH"}.
+:::
+
+### Topological chiral homology and factorization algebras for $\mathbb{E}_n[M]$-algebras {#SEC:En[M]-alg}
+
+We now go beyond the notion of $n$-framed manifolds $M$, and, more generally, consider locally constant algebras over an operad $\mathbb{E}_n[M]$, for which there might not exist a globally defined $E_n$-algebra.
+
+Following Lurie [@L-VI], topological chiral homology can also be defined for a (locally constant) family of $E_n$-algebras parametrized by the points in $M\times D^{m-n}$ even if $M$ is *not* $n$-framed. Such families objects are (locally constant) algebras over an *($\infty$-)operad $\mathbb{E}_n[M]:=\mathbb{E}_{M\times D^{n-m}}^{\otimes}$, the operad of little $n$-cubes in $M\times D^{m-n}$*, see [@L-VI Definition 5.2.4.1] (here $M$ is still of dimension $m$, and of course one can choose $m=n$). Note that there is a canonical map of $\infty$-operads from $\mathbb{E}_n[M]$ to the the operad $Comm$ governing CDGAs. Thus a CDGA is an $\mathbb{E}_n[M]$-algebra in a canonical way.
+
+By [@L-VI Theorem 5.2.4.9], we can also describe an $\mathbb{E}_n[M]$-algebra as a locally constant $N({\text{Disk}}(M\times D^{n-m}))$-algebra. Indeed, by [@L-VI Remark 5.3.2.7] we can extend Definition [\[Def:TCHasColimit\]](#Def:TCHasColimit){reference-type="ref" reference="Def:TCHasColimit"} to an $\mathbb{E}_n[M]$-algebra $\mathcal{A}$ as well by replacing the last equivalence in [\[eq:DefTCH\]](#eq:DefTCH){reference-type="eqref" reference="eq:DefTCH"} by $\mathcal{A}(V_1)\otimes \cdots \otimes \mathcal{A}(V_n)$. That is, there is an equivalence $$\label{eq:DefTCHnotframed} \int_M \mathcal{A} \; \cong \; \mathop{\lim\limits_{\textstyle\longrightarrow}}\limits\int_{V_1}A \otimes \cdots \otimes \int_{V_n} A\cong \mathop{\lim\limits_{\textstyle\longrightarrow}}\limits\mathcal{A}(V_1)\otimes \cdots \otimes \mathcal{A}(V_n)$$ where $V_1,\dots, V_n$ are disjoint open sets homeomorphic to a ball.
+
+::: lemma
+[]{#L:TCHpushout2 label="L:TCHpushout2"} Let $M$ be a manifold and $\mathcal{A}$ be an $\mathbb{E}[M]$-algebra. Assume that there is a codimension $1$ submanifold $N$ of $M$ with a trivialization $N\times D^1$ of its neighborhood such that $M$ is decomposable as $M=X\cup_{N\times D^1}Y$ where $X,Y$ are submanifolds of $M$ glued along $N \times D^1$. Then
+
+1.  $\int_{N\times D^1} \mathcal{A}$ is an $E_1$-algebra and $\int_X \mathcal{A}$ and $\int_{Y} \mathcal{A}$ are right and left modules over $\int_{N\times D^1} \mathcal{A}$.
+
+2.  The natural map $$\int_X \mathcal{A}\; \mathop{\otimes}_{\int_{N\times D^1} \mathcal{A}}^{\mathbb{L}} \; \int_Y \mathcal{A} \; \longrightarrow \; \int_{M} \mathcal{A}$$ is an equivalence.
+:::
+
+::: proof
+*Proof.* The lemma is explained in [@L-VI] after Theorem 5.3.4.14 (where $\int_{N\times D^1} \mathcal{A}$ is simply denoted by $\int_N \mathcal{A}$). Let us give some more details. There is a homeomorphism $N\times D^1 \cong N\times (0,1)$ and similarly (since $X$ has a neighborhood homeomorphic to $N\times D^1$) a homeomorphism $X\cong X_0$ where $X_0=X\setminus N\times [0,1)$ (we also denote $Y_0=Y\setminus N\times (-1,0]$). Since $N\times (-1,0)$ and $N\times (0,1)$ are disjoint open sets in $N\times D^1$, we get a natural map $\int_{X_0} \mathcal{A} \otimes \int_{N\times (0,1)} \mathcal{A} \to \int_{X} \mathcal{A}$. Then the module structure on $\int_{X} \mathcal{A}$ is given the composition $$\int_{X} \mathcal{A} \otimes \int_{N\times D^1}\mathcal{A}\stackrel{\simeq} \longrightarrow  \int_{X_0} \mathcal{A} \otimes \int_{N\times (0,1)} \mathcal{A} \longrightarrow \int_{X} \mathcal{A}$$ and similarly for the module structure of $\int_{Y} \mathcal{A}$ and the $E_1$-structure of $\int_{N\times D^1}\mathcal{A}$.
+
+For the second statement, we need to prove that the canonical map $$\label{eq:L:TCHpushout2}
+\mathop{\lim\limits_{\textstyle\longrightarrow}}\limits\Big(\int_{X} \mathcal{A} \, \otimes \int_{N\times D^1} \mathcal{A} \, \otimes \int_{Y} \mathcal{A} \rightrightarrows \int_{X} \mathcal{A} \, \otimes \int_{Y} \mathcal{A}\Big) \longrightarrow \int_{M} \mathcal{A}$$ induced by the two module structures is an equivalence. Using the equivalences of modules $\int_{X_0}\mathcal{A}\stackrel{\simeq}\to \int_X \mathcal{A}$, $\int_{Y_0}\mathcal{A}\stackrel{\simeq}\to \int_Y \mathcal{A}$ and Definition [\[Def:TCHasColimit\]](#Def:TCHasColimit){reference-type="ref" reference="Def:TCHasColimit"} (or more precisely the equivalence [\[eq:DefTCHnotframed\]](#eq:DefTCHnotframed){reference-type="eqref" reference="eq:DefTCHnotframed"}), the left hand side of the map [\[eq:L:TCHpushout2\]](#eq:L:TCHpushout2){reference-type="eqref" reference="eq:L:TCHpushout2"} is computed by the colimit $$\mathop{\lim\limits_{\textstyle\longrightarrow}}\limits_{\scriptsize \begin{array}{l} U_1,\dots, U_\ell \in \widetilde{\mathcal{B}\mathit{all}} \\ \mbox{pairwise disjoint}\end{array} } \int_{U_1}A \otimes \cdots\otimes \int_{U_\ell} A$$ where $\widetilde{\mathcal{B}\mathit{all}}$ is the set of open sets $U\in Op(M)$ homeomorphic to a ball such that $U$ is either in $X_0$ or $Y_0$ or in $N\times D^1$. Thus, denoting $\mathcal{B}\mathit{all}(M)$ the set of open sets homeomorphic to a ball in $M$, we are left to prove that the canonical map $$\label{eq:LTCHpushout3} \mathop{\lim\limits_{\textstyle\longrightarrow}}\limits_{\scriptsize \begin{array}{l} U_1,\dots, U_\ell \in \widetilde{\mathcal{B}\mathit{all}} \\ \mbox{pairwise disjoint}\end{array} } \int_{U_1}A \otimes \cdots\otimes \int_{U_\ell} A \, \longrightarrow \hspace{-20pt}\mathop{\lim\limits_{\textstyle\longrightarrow}}\limits_{\scriptsize \begin{array}{l} V_1,\dots, V_i \in \mathcal{B}\mathit{all}(M) \\ \mbox{pairwise disjoint}\end{array} } \int_{V_1}A \otimes \cdots\otimes \int_{V_i} A \to \int_{V}A$$ is an equivalence. For every family $B_1,\dots, B_k$ of pairwise disjoint open subsets of $M$ homeomorphic to a ball which intersects $N\times \{0\}$, choosing a point $x_j$ in each $B_j\cap \big(N\times \{0\}\big)$, we can find disjoint open subsets (homeomorphic to a ball) $U_1,\dots, U_k$ included in $N\times D^1$, such that $U_j$ contains $x_j$ and is included in $B_j$. The inclusion map $U_j\hookrightarrow B_j$ induces a canonical morphism $\int_{U_j} \mathcal{A} \to \int_{B_j} \mathcal{A}$ which is an equivalence since there is a natural equivalence $\int_B A \cong A$ for any ball. It follows that the map of (homotopy) colimits [\[eq:LTCHpushout3\]](#eq:LTCHpushout3){reference-type="eqref" reference="eq:LTCHpushout3"} is an equivalence. ◻
+:::
+
+The generalization of Proposition [\[P:TCHisFact\]](#P:TCHisFact){reference-type="ref" reference="P:TCHisFact"} to $\mathbb{E}_n[M]$-algebras is:
+
+::: theorem
+[]{#T:HF=TCH label="T:HF=TCH"}Let $M$ be a manifold of dimension $m$ and $d \in \mathbb N$ an integer.
+
+1.  The rule $\mathcal{A}\mapsto \Big(U\mapsto \int_U \mathcal{A} \Big)$ defines a functor of $(\infty,1)$-algebras $\mathcal{TC}_M: \mathbb{E}_d[M]\textit{-}Alg \to \mathop{Fac}^{lc}_{M}(E_d\textit{-}Alg)$ which fits into a commutative diagram $$\xymatrix{\mathbb{E}_d[M]\textit{-}Alg \ar[rr]^{\int_M} \ar[d]_{\mathcal{TC}_M} & &{E_{d}}\textit{-}Alg_\infty  \\ 
+    \mathop{Fac}^{lc}_M({E_{d}}\textit{-}Alg_\infty) \ar[rru]_{HF(-)} && }$$
+
+2.  The functor $\mathcal{TC}_M: \mathbb{E}_d[M]\textit{-}Alg \to \mathop{Fac}^{lc}_{M}(E_d\textit{-}Alg)$ is an equivalence of $(\infty,1)$-categories.
+:::
+
+In particular, any locally constant factorization algebra $\mathcal{F}$ on $M$ with values in $E_d$-algebras is equivalent to $\mathcal{TC}_M(\mathcal{A})$ for a unique (up to equivalences) $\mathbb{E}_d[M]$-algebra $\mathcal{A}$, *i.e.*, . algebra over the operad of little cubes in $M\times D^d$. Further, topological chiral homology of an open set $U$ with value in the associated $\mathbb{E}_{M\times D^d}^{\otimes}$-algebra computes the (derived) sections of the factorization algebra.
+
+Also note that if $M$ is any manifold and $A$ is a CDGA, viewed as an $\mathbb{E}_d[M]$-algebra, then the factorization algebra $\mathcal{TC}_M(A)$ induced by Theorem [\[T:HF=TCH\]](#T:HF=TCH){reference-type="ref" reference="T:HF=TCH"} is strongly constant in the sense of Section [\[S:Factorization\]](#S:Factorization){reference-type="ref" reference="S:Factorization"}. Thus by Corollary [\[C:HFact=CH\]](#C:HFact=CH){reference-type="ref" reference="C:HFact=CH"}, there is an natural equivalence of ($E_{d}$-algebras) $$\int_M A \;\cong\; CH_M(A)$$ extending Theorem [\[T:TCH=CH\]](#T:TCH=CH){reference-type="ref" reference="T:TCH=CH"} to non-framed manifolds.
+
+::: proof
+*Proof of Theorem [\[T:HF=TCH\]](#T:HF=TCH){reference-type="ref" reference="T:HF=TCH"}.* We first deal with assertion (1). By Lemma [\[L:EnFact\]](#L:EnFact){reference-type="ref" reference="L:EnFact"}, it is enough to prove that the rule $U\mapsto \int_U \mathcal{A}$, together with the structure maps $$\label{eq:muFacloc} \int_{U_1}\mathcal{A} \otimes \cdots\otimes \int_{U_\ell}\mathcal{A} \stackrel{\sim}\longrightarrow  \int_{U_1\cup \cdots \cup U_\ell}\mathcal{A}\longrightarrow \int_{V}\mathcal{A}$$ for ${U_i}$'s pairwise disjoint open subsets of $V\in Op(M\times D^d)$, defines a locally constant factorization algebra on $M\times D^d$, naturally in $\mathcal{A}\in \mathbb{E}_{M\times D^d}^{\otimes}\textit{-}Alg$. Note that, by [@L-VI Theorem 5.2.4.9], the $\mathbb{E}_{M\times D^d}^{\otimes}$-algebra $\mathcal{A}$ satisfies that, for any ball $B$ which is a subset of a ball $B'$, the canonical map $\int_B \mathcal{A}\cong \mathcal{A}(B) \to \mathcal{A}(B')\cong \int_{B'}\mathcal{A}$ is an equivalence in $k\textit{-}Mod_\infty$. Now we can apply the same proof as the one of Proposition [\[P:TCHisFact\]](#P:TCHisFact){reference-type="ref" reference="P:TCHisFact"} with $\mathcal{A}$ instead of $A$, using Lemma [\[L:TCHpushout2\]](#L:TCHpushout2){reference-type="ref" reference="L:TCHpushout2"} instead of Proposition [\[P:TCHpushout\]](#P:TCHpushout){reference-type="ref" reference="P:TCHpushout"}.
+
+We now prove assertion (2). By [@L-VI Theorem 5.2.4.9], the canonical embedding $\theta: \mathbb{E}_{M\times D^d}^{\otimes}\textit{-}Alg\to N(\text{Disk}(M\times \mathbb R^d))\textit{-}Alg$ induces an equivalence between $\mathbb{E}_{M\times D^d}^{\otimes}\textit{-}Alg$ and locally constant $N(\text{Disk}(M\times \mathbb R^d))$-algebras; we write $N(\text{Disk}^{lc}(M))\textit{-}Alg$ for the latter subcategory. It is thus enough to define a functor $\mathcal{EA}_M: \mathop{Fac}^{lc}_M({E_{d}}\textit{-}Alg_\infty)\to N(\text{Disk}^{lc}(M))\textit{-}Alg$ such that $\mathcal{TC}_M\circ \mathcal{EA}_M$ and $\mathcal{EA}_M \circ \mathcal{TC}_M$ are respectively equivalent to the identity functors of $\mathop{Fac}^{lc}_M({E_{d}}\textit{-}Alg_\infty)$ and $N(\text{Disk}^{lc}(M))\textit{-}Alg$. Let $\mathcal{F}$ be in $\mathop{Fac}^{lc}_M({E_{d}}\textit{-}Alg_\infty)$. By Lemma [\[L:EnFact\]](#L:EnFact){reference-type="ref" reference="L:EnFact"}, we can think of $\mathcal{F}$ as a locally constant factorization algebra on $M\times D^d$. Let $B \in Op(M\times D^d)$ be homeomorphic to a ball. Then the restriction $\mathcal{F}_{|B}$ is a locally constant factorization algebra on $B\cong \mathbb R^n$, thus is equivalent to an $E_n$-algebra (which is canonically equivalent to $\mathcal{F}(B)$). Further, for any finite family $B_1,\dots, B_\ell$ of pairwise disjoint open subsets homeomorphic to a ball and $U$ an open subset homeomorphic to a ball containing the $B_i$'s, the locally constant factorization algebra structure defines a canonical map $$\gamma_{B_1,\dots,B_l,U}:\mathcal{F}(B_1)\otimes \cdots \otimes \mathcal{F}(B_\ell) \longrightarrow \mathcal{F}(U)$$ which is an equivalence if $\ell=1$. The maps $\gamma_{B_1,\dots,B_l,U}$ are compatible in a natural way. This shows that the collection $\mathcal{F}(B)$ for all open sets $B\subset M\times D^d$ homeomorphic to a ball is a locally constant $N(\text{Disk}(M\times \mathbb R^d))$-algebra, denoted $\mathcal{A}_\mathcal{F}$ and we define the functor $\mathcal{EA}_M$ to be defined by $\mathcal{EA}_M(\mathcal{F}):=\mathcal{A}_\mathcal{F}$ (for $M=pt$ it is the same as the functor $for$ defined in the proof of Proposition [\[P:Fac=En\]](#P:Fac=En){reference-type="ref" reference="P:Fac=En"}). In other words, the functor $\mathcal{EA}_M(\mathcal{F})$ is simply induced by the composition $\text{Disk}(M\times \mathbb R^d)\hookrightarrow Op(M\times \mathbb R^d)\stackrel{\mathcal{F}}\to k\textit{-}Mod_\infty$. By abuse of notation, we also write $\mathcal{A}_{\mathcal{F}}$ for the associated (well defined up to equivalences) $\mathbb{E}_{M\times D^d}^{\otimes}$-algebra.
+
+Let $\mathcal{A}$ be an $\mathbb{E}_{M\times D^d}^{\otimes}$-algebra. By construction $\mathcal{EA}_M \circ \mathcal{TC}_M(\mathcal{A})$ is the (locally constant) $N(\text{Disk}(M\times \mathbb R^d))$-algebra given, on any (open set homeomorphic to an euclidean) ball $B$, by $$\Big(\mathcal{EA}_M \circ \mathcal{TC}_M(\mathcal{A})\Big)(B) = \int_B\mathcal{A}\, \cong \,  \mathcal{A}(B)$$ by definition of topological chiral homology [@L-VI Example 5.3.2.8]. Hence there is a canonical equivalence $\mathcal{EA}_M \circ \mathcal{TC}_M(\mathcal{A}) \cong \mathcal{A}$ of locally constant $N(\text{Disk}(M\times \mathbb R^d))$-algebras and thus of $\mathbb{E}_{M\times D^d}^{\otimes}$-algebras as well.
+
+It remains to prove that, there are natural equivalences $\mathcal{TC}_M(\mathcal{A}_{\mathcal{F}})\cong \mathcal{F}$ of factorization algebras, where $\mathcal{A}_{\mathcal{F}}$ is the $\mathbb{E}_{M\times D^d}^{\otimes}$-algebra $\mathcal{EA}_M(\mathcal{F})$ associated to $\mathcal{F}$ as above. Fixing a Riemannian metric on $M\times D^d$, we can find a cover $\mathcal{B}\mathit{all}^g(M\times D^d)$ of $M$ given by open sets in $M\times D^d$ which are geodesically convex. On every $U\in \mathcal{B}\mathit{all}^g(M\times \mathbb R^d)$, the restrictions $\mathcal{TC}_{|U}(\mathcal{A}_{\mathcal{F}})$ and $\mathcal{F}_{|U}$ are naturally isomorphic by the above paragraph. In particular, for any set $U_I:= \bigcap_{i\in I} U_i$ and any subset $J\subset I$, the following diagram $$\xymatrix{\mathcal{TC}_{|U_I}(\mathcal{A}_{\mathcal{F}}) \ar[rr]^{\simeq} \ar[d] & & \mathcal{F}_{|U_I} \ar[d]\\  \mathcal{TC}_{|U_{I\setminus J}}(\mathcal{A}_{\mathcal{F}}) \ar[rr]^{\simeq}& & \mathcal{F}_{|U_{I\setminus J}}}$$ is commutative. Since $\mathcal{TC}_M(\mathcal{A}_{\mathcal{F}})$ and $\mathcal{F}$ are the factorization algebras obtained by descent from their restrictions on the cover $\mathcal{B}\mathit{all}^g(M\times \mathbb R^d)$, on which they are naturally equivalent, it follows that $\mathcal{F}$ is equivalent to $\mathcal{TC}_M(\mathcal{A}_{\mathcal{F}})$. ◻
+:::
+
+::: example
+Since $S^2\times D^1$ embeds as an open set in $\mathbb R^3$, any $E_3$-algebra $A$ yields, by restriction, a (locally constant) factorization algebra $\mathcal{A}_{S^2}$ on $S^2$ (with values in $E_1\textit{-}Alg$) (Lemma [\[L:EnFact\]](#L:EnFact){reference-type="ref" reference="L:EnFact"}). By Theorem [\[T:HF=TCH\]](#T:HF=TCH){reference-type="ref" reference="T:HF=TCH"} and Proposition [\[P:TCHpushout\]](#P:TCHpushout){reference-type="ref" reference="P:TCHpushout"}, decomposing the sphere as two disks glued along the equator, we get that the factorization homology of $\mathcal{A}_{S^2}$ is given by $$HF(\mathcal{A}_{S^2}) \; \; \cong \;\; A \mathop{\otimes}^{\mathbb{L}}_{CH_{S^1}(A)} A$$ as an $E_1$-algebra. Here $CH_{S^1}(A)$ is the usual Hochschild chain complex of the (underlying) $E_1$-algebra structure of $A$, which is naturally an $E_2$-algebra by [@L-VI Theorem 5.3.3.11] and Proposition [\[P:TCHpushout\]](#P:TCHpushout){reference-type="ref" reference="P:TCHpushout"}.
+
+Similarly, any $E_2$-algebra $B$ yields a (translation invariant and locally constant) factorization algebra on $\mathbb R^2$, and thus a (locally constant) factorization algebra $\mathcal{B}_T$ on a torus $T=S^1\times S^1\cong \mathbb R^2/\mathbb Z^2$. Since $T$ is framed, we can also define its topological chiral homology directly using the framing. It follows easily from the uniqueness statement in Theorem [\[T:HF=TCH\]](#T:HF=TCH){reference-type="ref" reference="T:HF=TCH"}, that $\mathcal{B}_T$ is equivalent to $\mathcal{TC}_T(B)$ in $\mathop{Fac}_T(k\textit{-}Mod_\infty)$.
+
+Note that the two canonical projections $p_1, p_2:\mathbb R^2\to \mathbb R$ define two locally constant factorization algebras ${p_1}_*(\mathcal{B})$, ${p_2}_*(\mathcal{B})$ on $\mathbb R$ and thus, two $E_1$-algebras $B_1$ and $B_2$. Now, cutting the torus along two meridian circles, we get two copies of $S^1\times D^1\cong \mathbb R^2/(\mathbb Z\oplus \{0\})$ glued along their boundaries. By Theorem [\[T:HF=TCH\]](#T:HF=TCH){reference-type="ref" reference="T:HF=TCH"} again, the topological chiral homology of $S^1\times D^1$ is the same as the factorization algebra homology of the descent factorization algebra $\mathcal{B}^{\mathbb Z\oplus \{0\}}$. Thus $\int_{S^1\times D^1} B$ is equivalent to the usual Hochschild chain complex $CH_{S^1}(B_1)$ and the later complex inherits an $E_1$-structure from the $E_2$-algebra structure of $\mathcal{B}$. From Proposition [\[P:TCHpushout\]](#P:TCHpushout){reference-type="ref" reference="P:TCHpushout"}, we deduce a natural equivalence (in $k\textit{-}Mod_\infty$) $$HF(\mathcal{B}_T)  \cong  CH_{S^1}(B_1) \!\mathop{\otimes}^{\mathbb{L}}_{CH_{S^1}(B_1) \otimes (CH_{S^1}(B_1))^{op}} \!CH_{S^1}(B^1)  
+ \cong  CH_{S^1}(CH_{S^1}(B_1)).$$ Note that if $B$ was actually a CDGA, then the later equivalence follows directly from Corollary [\[L:CHYoCHX=CHXoCHZ\]](#L:CHYoCHX=CHXoCHZ){reference-type="ref" reference="L:CHYoCHX=CHXoCHZ"}.
+:::
+
+[^1]: this is, for $n=1$, an instance of the linear category with a single object associated to an associative algebra and, for general $n$, a slight variant of the construction of an $(\infty, n)$-category $\mathcal{B}^n(A)$ associated to an $E_n$-algebra $A$ as in [@Francis]

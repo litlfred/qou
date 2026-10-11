@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2607.03827v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Affine cellular algebras and asymptotic algebras (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2607.03827v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2607.03827&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2607.03827v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2607.03827v1",
+    "content_type": "application/gzip",
+    "sha256": "513d094a74aabcc1f80ad4875ebf8df256820e71a837aeaf82b5642e776ccc26",
+    "bytes": 44864,
+    "fetched": "2026-10-10T15:23:07+00:00",
+    "files": [
+      {
+        "path": "source/files/CKL-2026Juli04.tex",
+        "role": "tex",
+        "sha256": "1b8cbb99d5dddb745409e5b6c19fa09ea8a1542061149230c0542a069f539739",
+        "bytes": 152537
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0203194v1/sections/sec-010",
   "@type": [
     "doco:Section"
   ],
-  "title": "Let S be a topological space, connected and locally arcwise (or si m-",
-  "pageStart": 15,
-  "pageEnd": 16,
+  "title": "Limits of algebraic functions; complex case.",
+  "pageStart": 26,
+  "pageEnd": 43,
   "contains": [
     "library/arxiv-math-0203194v1/blocks/prose-sec-010"
   ],
-  "derivedFrom": "library/arxiv-math-0203194v1/manifest",
-  "sourceDocument": "library/arxiv-math-0203194v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
   "provenance": "ingested"
 }

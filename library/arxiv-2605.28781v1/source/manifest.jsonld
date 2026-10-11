@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2605.28781v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The sum-product conjecture is false for real numbers (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2605.28781v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2605.28781&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2605.28781v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2605.28781v1",
+    "content_type": "application/gzip",
+    "sha256": "51d17ef3ce49c25bdcb748a66d5b94c9c5a4a478cfafe3033703d4ac16e7b65f",
+    "bytes": 29710,
+    "fetched": "2026-10-10T15:23:03+00:00",
+    "files": [
+      {
+        "path": "source/files/SPArxiv.tex",
+        "role": "tex",
+        "sha256": "3f476034cc8fa9d20f41223ef58db53181952ce16f85f4f385af4bbaa2313956",
+        "bytes": 71618
+      },
+      {
+        "path": "source/files/SPCrefs.bib",
+        "role": "bib",
+        "sha256": "75f22c1cb700d572aa78d5c0a4b079cc1dae020b3f244a7513111295b11a7f8d",
+        "bytes": 23905
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

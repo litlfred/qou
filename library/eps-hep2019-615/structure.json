@@ -6,407 +6,199 @@
   "sha256": "b5fb4982d65e9fcd12e812ba1e056d177dac45b3e43a8c5cfad3e9173fcac399",
   "bytes": 342964,
   "pages": 6,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:25Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
   "title": "PoS(EPS-HEP2019)615",
-  "authors_raw": "Sedenions, the Clifford algebra C\ud835\udcc1(8), and three",
+  "authors_raw": "Sedenions, the Clifford algebra C\u2113(8), and three",
   "title_lines": [
    "PoS(EPS-HEP2019)615"
   ],
   "abstract": null,
   "docinfo": {
-   "CreationDate": "D:20191028170305+08'00'",
+   "Producer": "MiKTeX pdfTeX-1.40.16",
    "Creator": "TeX",
-   "Producer": "MiKTeX pdfTeX-1.40.16"
+   "CreationDate": "D:20191028170305+08'00'"
+  },
+  "title_raw": "PoS(EPS-HEP2019)615",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Sedenions, the Clifford algebra C \u2113 ( 8 ) , and three fermion generations",
+   "text": "PoS(EPS-HEP2019)615",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "7 inferred entries, 71% of them starting on page(s) 2, 5 of 6 \u2014 a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (7 inferred entries, 71% of them starting on page(s) 2, 5 of 6 \u2014 a list found ON a page, not the document's structure): one section per page.",
+ "figures": [
   {
-   "level": 1,
-   "title": "Introduction",
-   "page": 2,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Three generations from complex sedenions",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u2212e5 + ie4), \u03b12\u2261 1",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u2212e3 + ie1), \u03b13\u2261 1",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u2212e6 + ie2), (2.2)",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(e5 + ie4), \u03b1\u2020",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(e3 + ie1), \u03b1\u2020",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(e6 + ie2), (2.3)",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u2212ea + ie15\u2212a) where a\u2208 5,7,13,1,4,6,12, together with seven nilpotent",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(ea + ie15\u2212a), satisfying",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u2212e5 + ie10), \u03b21 = 1",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u2212e7 + ie8), \u03b31 = 1",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u2212e13 + ie2), (2.7)",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u2212e1 + ie14), (2.8)",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u2212e4 + ie11), \u03b23 = 1",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u2212e6 + ie9), \u03b33 = 1",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u2212e12 + ie3), (2.9)",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 2,
-   "title": "Spinorial degrees of freedom",
+   "kind": "figure",
+   "number": "1",
+   "title": "Fano planes of three octonionic subalgebras in the sedenions",
    "page": 4,
-   "source": "inferred",
-   "number": "2.1"
-  },
-  {
-   "level": 1,
-   "title": "The intersectionality of three generations as a basis for CKM mixing",
-   "page": 4,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Three generations from the triality of C\ud835\udcc1(8)",
-   "page": 5,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "Discussion",
-   "page": 5,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 5,
-   "source": "inferred",
-   "number": null
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
   }
  ],
- "toc_source": "inferred",
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "number": "1",
-   "title": "Introduction",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 1702,
-   "n_words": 271
-  },
-  {
-   "id": "sec-001-2-three-generations-from-complex-sedenions",
-   "number": "2",
-   "title": "Three generations from complex sedenions",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 842,
-   "n_words": 149
-  },
-  {
-   "id": "sec-002-2-e5-ie4-\u03b12-1",
-   "number": "2",
-   "title": "(\u2212e5 + ie4), \u03b12\u2261 1",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-003-2-e3-ie1-\u03b13-1",
-   "number": "2",
-   "title": "(\u2212e3 + ie1), \u03b13\u2261 1",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-004-2-e6-ie2-22",
-   "number": "2",
-   "title": "(\u2212e6 + ie2), (2.2)",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 7,
-   "n_words": 3
-  },
-  {
-   "id": "sec-005-2-e5-ie4-\u03b1",
-   "number": "2",
-   "title": "(e5 + ie4), \u03b1\u2020",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 4,
-   "n_words": 2
-  },
-  {
-   "id": "sec-006-2-e3-ie1-\u03b1",
-   "number": "2",
-   "title": "(e3 + ie1), \u03b1\u2020",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 4,
-   "n_words": 2
-  },
-  {
-   "id": "sec-007-2-e6-ie2-23",
-   "number": "2",
-   "title": "(e6 + ie2), (2.3)",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 3,
-   "n_chars": 2291,
-   "n_words": 410
-  },
-  {
-   "id": "sec-008-2-ea-ie15a-where-a-571314612-together-with-seven",
-   "number": "2",
-   "title": "(\u2212ea + ie15\u2212a) where a\u2208 5,7,13,1,4,6,12, together with seven nilpotent",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 29,
-   "n_words": 7
-  },
-  {
-   "id": "sec-009-2-ea-ie15a-satisfying",
-   "number": "2",
-   "title": "(ea + ie15\u2212a), satisfying",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 133,
-   "n_words": 40
-  },
-  {
-   "id": "sec-010-2-e5-ie10-\u03b21-1",
-   "number": "2",
-   "title": "(\u2212e5 + ie10), \u03b21 = 1",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-011-2-e7-ie8-\u03b31-1",
-   "number": "2",
-   "title": "(\u2212e7 + ie8), \u03b31 = 1",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-012-2-e13-ie2-27",
-   "number": "2",
-   "title": "(\u2212e13 + ie2), (2.7)",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 16,
-   "n_words": 7
-  },
-  {
-   "id": "sec-013-2-e1-ie14-28",
-   "number": "2",
-   "title": "(\u2212e1 + ie14), (2.8)",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 6,
-   "n_words": 3
-  },
-  {
-   "id": "sec-014-2-e4-ie11-\u03b23-1",
-   "number": "2",
-   "title": "(\u2212e4 + ie11), \u03b23 = 1",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-015-2-e6-ie9-\u03b33-1",
-   "number": "2",
-   "title": "(\u2212e6 + ie9), \u03b33 = 1",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-016-2-e12-ie3-29",
-   "number": "2",
-   "title": "(\u2212e12 + ie3), (2.9)",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 4,
-   "n_chars": 1080,
-   "n_words": 170
-  },
-  {
-   "id": "sec-017-21-spinorial-degrees-of-freedom",
-   "number": "2.1",
-   "title": "Spinorial degrees of freedom",
-   "level": 2,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 1131,
-   "n_words": 215
-  },
-  {
-   "id": "sec-018-3-the-intersectionality-of-three-generations-as",
-   "number": "3",
-   "title": "The intersectionality of three generations as a basis for CKM mixing",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 5,
-   "n_chars": 895,
-   "n_words": 162
-  },
-  {
-   "id": "sec-019-4-three-generations-from-the-triality-of-c\ud835\udcc18",
-   "number": "4",
-   "title": "Three generations from the triality of C\ud835\udcc1(8)",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 468,
-   "n_words": 77
-  },
-  {
-   "id": "sec-020-5-discussion",
-   "number": "5",
-   "title": "Discussion",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 2082,
-   "n_words": 342
-  },
-  {
-   "id": "sec-021-references",
+   "id": "page-001",
    "number": null,
-   "title": "References",
+   "title": "Page 1",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1775,
+   "n_words": 251,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 3209,
+   "n_words": 532,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 2602,
+   "n_words": 459,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 2691,
+   "n_words": 467,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
    "level": 1,
    "page_start": 5,
+   "page_end": 5,
+   "n_chars": 3066,
+   "n_words": 494,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
    "page_end": 6,
-   "n_chars": 2595,
-   "n_words": 398
+   "n_chars": 2343,
+   "n_words": 355,
+   "label_start": "5",
+   "label_end": "5"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 22,
-  "sections": 22,
-  "chars_total": 13285
+  "toc_entries": 0,
+  "toc_inferred_entries": 7,
+  "toc_inferred_mean_confidence": 0.764,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 15686
  }
 }

@@ -1,0 +1,136 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.02592v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1610.02592v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.02592v3/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1610.02592&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1610.02592v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1610.02592v3",
+    "content_type": "application/gzip",
+    "sha256": "e57813576e879b1e227778cc9a23a28ddf468fbe9bf8d6c89e8bf2d7635de6e3",
+    "bytes": 12330072,
+    "fetched": "2026-10-10T15:11:27+00:00",
+    "files": [
+      {
+        "path": "source/files/Automorphisms.tex",
+        "role": "tex",
+        "sha256": "669bde400278c1a232933931139f1372275eac4c1cf092e366471a1871a15e39",
+        "bytes": 135848
+      },
+      {
+        "path": "source/files/Biblio.tex",
+        "role": "tex",
+        "sha256": "0fe7d90d00a5e4be39df3ea930c968d5dd400dd67a7f1614aacf7e6c0faaa3c4",
+        "bytes": 9215
+      },
+      {
+        "path": "source/files/Construction.tex",
+        "role": "tex",
+        "sha256": "3bc4b7e7f7d7f16b65ce34f588ec77198ded2da4539a911311831d26a1bc276b",
+        "bytes": 64347
+      },
+      {
+        "path": "source/files/Eight.tex",
+        "role": "tex",
+        "sha256": "046d3521593c6dae0fd05812650c7afa2f217c38525b4d0a84b5db3b2e915457",
+        "bytes": 91731
+      },
+      {
+        "path": "source/files/Geometric_topology.tex",
+        "role": "tex",
+        "sha256": "d0dcf920d0a96e610d0eba262a047eab2145c3ee1d7af2ce807c112f285ff40d",
+        "bytes": 19085
+      },
+      {
+        "path": "source/files/Hyperbolic_Dehn.tex",
+        "role": "tex",
+        "sha256": "275a31957abf29e16f62ae7a0a878414c185874baf9595271c61b222a400a84b",
+        "bytes": 93020
+      },
+      {
+        "path": "source/files/Infinity.tex",
+        "role": "tex",
+        "sha256": "4c67b69bc1b6f8400a17692338c21234e6e2a61cabab952d5223835bc5246c88",
+        "bytes": 39720
+      },
+      {
+        "path": "source/files/Manifold.tex",
+        "role": "tex",
+        "sha256": "2422c199147174db58e31fd5ffda536edb26c95dd9257439d80de7701b159830",
+        "bytes": 89555
+      },
+      {
+        "path": "source/files/Mostow.tex",
+        "role": "tex",
+        "sha256": "dce5a056dd327d94f2e66fdc6b579c071009e81100994fc36580191cfdf1427a",
+        "bytes": 41187
+      },
+      {
+        "path": "source/files/Preliminaries.tex",
+        "role": "tex",
+        "sha256": "2a1df804a6000e91d38741245886cde314b19b92955c1f4087df38e5418ad603",
+        "bytes": 96753
+      },
+      {
+        "path": "source/files/Seifert.tex",
+        "role": "tex",
+        "sha256": "bda65734665ea9ec83b95c27742fb576f9c0c14376e486bd25c5b5575aa79f18",
+        "bytes": 104656
+      },
+      {
+        "path": "source/files/Space.tex",
+        "role": "tex",
+        "sha256": "7659fd2e36ec7c8df9571aac7d48f09ee232c8f9dc09ce0ca0d102f4f0d049ac",
+        "bytes": 64473
+      },
+      {
+        "path": "source/files/Surfaces.tex",
+        "role": "tex",
+        "sha256": "44c25450251906d70b9c42393e1353bff74668eaa92bf4fcd198c551260e6082",
+        "bytes": 97566
+      },
+      {
+        "path": "source/files/Teichmuller.tex",
+        "role": "tex",
+        "sha256": "b8d2137a3ed94c53017be1c36cbd254e8c431d71ea049adf4305d0eaca35dad1",
+        "bytes": 69726
+      },
+      {
+        "path": "source/files/Thick-thin.tex",
+        "role": "tex",
+        "sha256": "aae6be47a9214cc62bd1f94ebd8a356092cef334649c311f0273dd4454a42a89",
+        "bytes": 68707
+      },
+      {
+        "path": "source/files/Three.tex",
+        "role": "tex",
+        "sha256": "cdf37e7a510de9403ab191923b3527fff09f522060633e048610e66519a92260",
+        "bytes": 54526
+      },
+      {
+        "path": "source/files/Three_topology.tex",
+        "role": "tex",
+        "sha256": "6b419d363f7e6818f1a8456e8860c650131f14a4fcd30a54777701a6df437445",
+        "bytes": 86920
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

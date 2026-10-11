@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1108.4389v1/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.4389v1/manifest.jsonld",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "Gauge Theories Labelled by Three-Manifolds",
   "contains": [
+    "library/arxiv-1108.4389v1/sections/sec-front-matter",
     "library/arxiv-1108.4389v1/sections/sec-000",
     "library/arxiv-1108.4389v1/sections/sec-001",
     "library/arxiv-1108.4389v1/sections/sec-002",
@@ -22,38 +28,22 @@
     "library/arxiv-1108.4389v1/sections/sec-013",
     "library/arxiv-1108.4389v1/sections/sec-014",
     "library/arxiv-1108.4389v1/sections/sec-015",
-    "library/arxiv-1108.4389v1/sections/sec-016",
-    "library/arxiv-1108.4389v1/sections/sec-017",
-    "library/arxiv-1108.4389v1/sections/sec-018",
-    "library/arxiv-1108.4389v1/sections/sec-019",
-    "library/arxiv-1108.4389v1/sections/sec-020",
-    "library/arxiv-1108.4389v1/sections/sec-021",
-    "library/arxiv-1108.4389v1/sections/sec-022",
-    "library/arxiv-1108.4389v1/sections/sec-023",
-    "library/arxiv-1108.4389v1/sections/sec-024",
-    "library/arxiv-1108.4389v1/sections/sec-025",
-    "library/arxiv-1108.4389v1/sections/sec-026",
-    "library/arxiv-1108.4389v1/sections/sec-027",
-    "library/arxiv-1108.4389v1/sections/sec-028",
-    "library/arxiv-1108.4389v1/sections/sec-029",
-    "library/arxiv-1108.4389v1/sections/sec-030",
-    "library/arxiv-1108.4389v1/sections/sec-031",
-    "library/arxiv-1108.4389v1/sections/sec-032",
-    "library/arxiv-1108.4389v1/sections/sec-033",
-    "library/arxiv-1108.4389v1/sections/sec-034",
-    "library/arxiv-1108.4389v1/sections/sec-035",
-    "library/arxiv-1108.4389v1/sections/sec-036",
-    "library/arxiv-1108.4389v1/sections/sec-037",
-    "library/arxiv-1108.4389v1/sections/sec-038",
-    "library/arxiv-1108.4389v1/sections/sec-039",
-    "library/arxiv-1108.4389v1/sections/sec-040",
-    "library/arxiv-1108.4389v1/sections/sec-041",
-    "library/arxiv-1108.4389v1/sections/sec-042",
-    "library/arxiv-1108.4389v1/sections/sec-043"
+    "library/arxiv-1108.4389v1/sections/sec-016"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1108.4389&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1108.4389v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1108.4389v1.pdf",
     "source_sha256": "d3ac77510654d8285c0fd4e71d628421bf703cd739d76d8f6e14053b58aad8f9",
     "pages": 58,

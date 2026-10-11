@@ -1,0 +1,21 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+
+\begin{document}
+  \begin{tikzpicture}
+    \tikzstyle{v1} = [color=darkgray, circle, outer sep=1pt, fill, inner sep=1.5pt]
+    \tikzstyle{v2} = [color=darkgray, circle, outer sep=1pt, fill, inner sep=3.0pt]
+    \tikzstyle{e} = [->, >={stealth}] \tikzset{font=\tiny}
+
+    \node[v1, label={1}] (1) at (0, 0.0) {};
+    \node[v1, label={2}] (2) at (1, 0.0) {};
+    \node[v1, label={3}] (3) at (2, 0.0) {};
+    \node[v1, label={4}] (4) at (3, 0.5) {};
+    \node[v1, label={5}] (5) at (3,-0.5) {};
+    \draw[e] (1) -- (2);
+    \draw[e] (2) -- (3);
+    \draw[e] (3) -- (4);
+    \draw[e] (3) -- (5);
+  \end{tikzpicture}
+\end{document}

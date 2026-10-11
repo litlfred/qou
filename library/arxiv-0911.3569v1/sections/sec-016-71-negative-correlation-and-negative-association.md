@@ -8,37 +8,58 @@ pages: 19-20
 source_pdf: 0911.3569v1.pdf
 source_sha256: 4e7c15c9724fb453
 doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
+text_source: latex
+latex_prose_ratio: 0.985
+latex_coverage_ratio: 0.957
 ---
-distribution ϕ on Ω. An event E is any subset of Ω. The probability of the event
-E is Pr[ E] = ∑
-S∈Eϕ(S). An event E is increasing if whenever S≤ S′ in Ω and
-S∈ E, then S′∈ E. For example, if K is any subset of Λ and EK is the event that
-all sites in K are occupied, then EK is an increasing event. Notice that this event
-has the form EK = E′×{ 0, 1}ΛrK for some event E′⊆{ 0, 1}K. Two events E
-and F are disjointly supported when one can partition Λ = A∪B with A∩B = ∅
-and E = E′×{ 0, 1}B and F ={0, 1}A× F′ for some events E′ ⊆ {0, 1}A and
-F′⊆{ 0, 1}B.
-A probability distribution on Ω is negatively associated (NA) when Pr[ E∩ F]≤
-Pr[E]· Pr[F] for any two increasing events that are disjointly supported. It is
-negatively correlated (NC) when Pr[E{i,j}]≤ Pr[E{i}]· Pr[E{j}] for any two distinct
-sites{i,j}⊆ Λ. Clearly NA implies NC.
-It is useful to ﬁnd conditions under which NC implies NA, since NC is so much
-easier to check. The following originates with Feder and Mihail, but many others
-have contributed their insights – see Section 4.2 of [7]. The partition function of
-20 DAVID G. WAGNER
-anyϕ : Ω→ R is the real multiaﬃne polynomial
-Z(ϕ) =Z(ϕ; x) =
-∑
-S∈Ω
-ϕ(S)xS
-in R[x]MA. If ϕ is nonzero and nonnegative, then for anya∈ RΛ with a> 0, this de-
-ﬁnes a probability distribution ϕa : Ω→ [0, 1] by setting ϕa(S) = ϕ(S)aS/Z(ϕ; a)
-for all S∈ Ω.
-Feder-Mihail Theorem (Theorem 4.8 of [7]) . Let S be a class of nonzero non-
-negative functions satisfying the following conditions.
-(i) Each ϕ∈ S has domain{0, 1}Λ for some ﬁnite set Λ = Λ(ϕ).
-(ii) For each ϕ∈ S, Z(ϕ) is a homogeneous polynomial.
-(iii) For eachϕ∈ S and i∈ Λ(ϕ), Z(ϕ)|xi=0 and ∂iZ(ϕ) are partition functions of
-members of S.
-(iv) For each ϕ∈ S and a∈ RΛ(ϕ) with a> 0, ϕa is NC.
-Then for every ϕ∈ S and a∈ RΛ(ϕ) with a> 0, ϕa is NA.
+Consider a probability distribution $\varphi$ on $\Omega$.
+An \emph{event} $\E$ is any subset of $\Omega$.  The probability of the event
+$\E$ is $\Pr[\E] = \sum_{S\in\E} \varphi(S)$.
+An event $\E$ is \emph{increasing} if whenever $S\leq S'$ in $\Omega$
+and $S\in\E$, then $S'\in\E$.  For example, if $K$ is any subset of 
+$\Lambda$ and $\E_{K}$ is the event that all sites in $K$ are occupied, 
+then $\E_{K}$ is an increasing event.  Notice that this event has the 
+form $\E_{K}=\E' \times \{0,1\}^{\Lambda\drop K}$ for some event 
+$\E'\subseteq\{0,1\}^{K}$.  Two events $\E$ and $\F$ are 
+\emph{disjointly supported} when one can partition $\Lambda = A\cup 
+B$ with $A\cap B=\none$ and $\E=\E' \times \{0,1\}^{B}$
+and $\F=\{0,1\}^{A}\times\F'$ for some events 
+$\E'\subseteq\{0,1\}^{A}$ and $\F'\subseteq\{0,1\}^{B}$.
+
+A probability distribution on $\Omega$ is \emph{negatively associated}
+(NA) when $\Pr[\E\cap\F]\leq \Pr[\E]\cdot\Pr[\F]$ for any two
+increasing events that are disjointly supported.  It is 
+\emph{negatively correlated} (NC) when $\Pr[\E_{\{i,j\}}]\leq
+\Pr[\E_{\{i\}}]\cdot\Pr[\E_{\{j\}}]$  for any two distinct sites 
+$\{i,j\}\subseteq \Lambda$.  Clearly NA implies NC.
+
+It is useful to find conditions under which NC implies NA, since NC
+is so much easier to check.  The following originates with Feder and 
+Mihail, but many others have contributed their insights -- see Section
+4.2 of \cite{BBL}.  The \emph{partition function} of any
+$\varphi:\Omega\goesto\RR$ is the real multiaffine polynomial
+$$
+Z(\varphi)=Z(\varphi;\x) = \sum_{S\in\Omega} \varphi(S) \x^{S}
+$$
+in $\RR[\x]^{\ma}$.
+If $\varphi$ is nonzero and nonnegative, then for any $\a\in\RR^{\Lambda}$
+with $\a>\zero$, this defines a probability distribution
+$\varphi^{\a}:\Omega\goesto[0,1]$  by setting $\varphi^{\a}(S) =
+\varphi(S)\a^{S}/Z(\varphi;\a)$ for all $S\in\Omega$.\\
+
+\noindent
+\textbf{Feder-Mihail Theorem} (Theorem 4.8 of \cite{BBL})\textbf{.}\
+\emph{
+Let $\S$ be a class of nonzero nonnegative functions satisfying the following
+conditions.\\
+\textup{(i)}\  Each $\varphi\in\S$ has domain $\{0,1\}^{\Lambda}$
+for some finite set $\Lambda=\Lambda(\varphi)$.\\
+\textup{(ii)}\  For each $\varphi\in\S$, $Z(\varphi)$ is a homogeneous 
+polynomial.\\
+\textup{(iii)}\  For each $\varphi\in\S$ and $i\in\Lambda(\varphi)$,
+$Z(\varphi)|_{x_{i}=0}$ and $\partial_{i}Z(\varphi)$ are partition
+functions of members of $\S$.\\
+\textup{(iv)}\  For each $\varphi\in\S$ and $\a\in\RR^{\Lambda(\varphi)}$
+with $\a>\zero$, $\varphi^{\a}$ is NC.\\
+Then for every $\varphi\in\S$ and $\a\in\RR^{\Lambda(\varphi)}$
+with $\a>\zero$, $\varphi^{\a}$ is NA.}

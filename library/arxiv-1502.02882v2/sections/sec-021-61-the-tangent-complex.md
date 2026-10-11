@@ -8,119 +8,71 @@ pages: 30-32
 source_pdf: 1502.02882v2.pdf
 source_sha256: 43641c6f3aed63dd
 doc_brief: "Fusion categories via string diagrams Bruce Bartlett — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
+text_source: latex
+latex_prose_ratio: 0.959
+latex_coverage_ratio: 0.939
 ---
-In this subsection we recall the deﬁnition of the Yetter-Davydov cohomology of
-a fusion category C [28, 29, 6]. Deﬁne the functor
-Tn : C ⊠··· ⊠ C| {z }
-n times
-→ C
-byTn(A1,...,A n) =A1⊗···⊗ An, parenthesized from left-to-right for deﬁnite-
-ness, and deﬁne Cn = End(Tn), the vector space of natural endomorphisms of
-Tn. For n = 0, set C 0 = C. In terms of representative simple objects Xi, i∈I,
-we have
-Cn =
-⨁
-i1,...,in
-Hom(X1⊗···⊗ Xn, X1⊗···⊗ Xn).
-30
-In string diagrams, we can write the components of c∈Cn as
-.
-For instance, a 1-cochain c∈C 1 is simply a collection of scalars ci∈ C, i∈I.
-A 2-cochain A∈C 2 is a collection of morphisms Aij :Xi⊗Xj→Xi⊗Xj; this
-amounts to a collection of linear operators
-Ai
-jk : Hom(Xk,Xi⊗Xj)→ Hom(Xk,Xi⊗Xj). (40)
-Deﬁnition 6.1. The tangent complex of a fusion category C is the sequence of
-C-vector spaces and linear maps
-C 0 d0
-−→C 1 d1
-−→C 2 d2
-−→C 3→..., d n =
-n+1∑
-k=0
-(−1)kfn
-k
-where the maps fn
-k :Cn→Cn+1 are deﬁned by
-=
- ,
- =
-=
-∑
-k,α
-(Note that for c∈C 0 = C, (f 0
-0 (c))i = idXi = (f 0
-1 (c))i so that d0 = 0.)
-Lemma 6.2. The tangent complex is a complex, i.e. dn+1dn = 0.
-Proof. Follows from the identity
-fn+1
-k fn
-m =fn+1
-m+1fn
-k 0≤k≤m≤n + 1. (41)
-Fork =m = 0 or k =m =n + 1, (41) is just the resolution of the identity (6).
-Fork⁄=m, (41) is just the interchange law in a monoidal category. In the other
-cases, (41) takes the following form (we do the case k =m = 1, n = 2):
-∑
-m,α,p,β
-=
-∑
-n,δ,q,γ
-(42)
-31
-Pre-composing both sides of (42) with
-and inserting the associator expansion (4), the left and right sides become the
-same expression, namely
-∑
-m,α,β
-(Fs
-ijk)βmα
-θtω
- .
-Example 6.3. A 1-cocycle c∈ Z 1(C) is a collection of numbers ci such that
-ck =ci +cj wheneverXk is a summand of Xi⊗Xj. A 2-cocycle A∈Z 2(C) is
-a collection of linear operators Ai
-jk as in (40) such that
-−
- +
-∑
-γ,m,δ
-(Fs
-ijk)γmδ
-αtβ
-
-
-−
-
-
-= 0.
+In this subsection we recall the definition of the Yetter-Davydov cohomology of a fusion category $\cat{C}$ \cite{yetter1998-braided, yetter2003-abelian, davydov1997-twisting}. Define the functor 
+\[
+T_n : \underbrace{\cat{C} \boxtimes \cdots \boxtimes \cat{C}}_{n \text{ times}} \rightarrow \cat{C}
+\]
+by $T_n(A_1, \ldots, A_n) = A_1 \otimes \cdots \otimes A_n$, parenthesized from left-to-right for definiteness, and define $C^n = \End(T_n)$, the vector space of natural endomorphisms of $T_n$. For $n=0$, set $C^0 = \mathbb{C}$. In terms of representative simple objects $X_i$, $i \in I$, we have
+\[
+C^n = \bigoplus_{i_1, \ldots, i_n} \Hom(X_1 \otimes \cdots \otimes X_n, \, X_1 \otimes \cdots \otimes X_n) \, .
+\]
+In string diagrams, we can write the components of $c \in C^n$ as
+\[
+\ig{d21.pdf} \, .
+\]
+For instance, a 1-cochain $c \in C^1$ is simply a collection of scalars $c_i \in \mathbb{C}$, $i \in I$. A 2-cochain $A \in C^2$ is a collection of morphisms $A_{ij} : X_i \otimes X_j \rightarrow X_i \otimes X_j$; this amounts to a collection of linear operators
+\begin{equation} \label{2cocycle1}
+A^i_{jk} : \Hom(X_k, X_i \otimes X_j) \rightarrow \Hom(X_k, X_i \otimes X_j) \, .
+\end{equation}
+
+\begin{defn} The {\em tangent complex} of a fusion category $\cat{C}$ is the sequence of $\mathbb{C}$-vector spaces and linear maps
+\[
+C^0 \stackrel{d^0}{\longrightarrow} C^1 \stackrel{d^1}{\longrightarrow} C^2 \stackrel{d^2}{\longrightarrow} C^3 \rightarrow \ldots, \qquad d^n = \sum_{k=0}^{n+1}(-1)^kf^n_k
+\]
+where the maps $f^n_k : C^n \rightarrow C^{n+1}$ are defined by
+\[
+\ig{d22.pdf} = \ig{d23.pdf}, \qquad \ig{d24.pdf} = \ig{d25.pdf} 
+\]
+\[
+\ig{d26.pdf} = \sum_{k, \alpha} \ig{d27.pdf}
+\]
+(Note that for $c \in C^0 = \mathbb{C}$, $(f^0_0(c))_i = \id_{X_i} = (f^0_1(c))_i$ so that $d^0 = 0$.)
+\end{defn}
+\begin{lem} The tangent complex is a complex, i.e. $d^{n+1} d^n = 0$. 
+\end{lem}
+\begin{proof}
+Follows from the identity 
+\begin{equation} \label{chain_eqn}
+f^{n+1}_k f^n_m = f^{n+1}_{m+1} f^n_k \quad 0 \leq k \leq m \leq n+1 \, . 
+\end{equation}
+For $k=m=0$ or $k=m=n+1$, \eqref{chain_eqn} is just the resolution of the identity \eqref{res_id}. For $k \neq m$, \eqref{chain_eqn} is just the interchange law in a monoidal category. In the other cases, \eqref{chain_eqn} takes the following form (we do the case $k=m=1$, $n=2$):
+\begin{equation} \label{chain2}
+\sum_{m, \alpha, p, \beta} \ig{d29.pdf} = \sum_{n, \delta, q, \gamma} \ig{d30.pdf}
+\end{equation}
+Pre-composing both sides of \eqref{chain2} with
+\[
+\ig{d31.pdf}
+\]
+and inserting the associator expansion \eqref{associator_eqn}, the left and right sides become the same expression, namely
+\[
+\sum_{m, \alpha, \beta} (F^s_{ijk})^{\beta m \alpha}_{\theta t \omega} \ig{d32.pdf} \, .
+\]
+\end{proof}
+\begin{example} \label{2-cocycle-example}A 1-cocycle $c \in Z^1(C)$ is a collection of numbers $c_i$ such that $c_k = c_i + c_j$ whenever $X_k$ is a summand of $X_i \otimes X_j$. A 2-cocycle $A \in Z^2(C)$ is a collection of linear operators $A^i_{jk}$ as in \eqref{2cocycle1} such that 
+\[
+\ig{d33.pdf} - \ig{d34.pdf} + \sum_{\gamma, m, \delta} (F^s_{ijk})^{\gamma m \delta}_{\alpha t \beta} \left[ \ig{d35.pdf} - \ig{d36.pdf} \right] = 0.
+\]
 Expanded out fully, this is the equation
-∑
-α
-(At
-jk)αωFγ′m′δ′
-θtα −
-∑
-β
-(As
-it)βθFγ′m′δ′
-βtω +
-∑
-γ
-(As
-m′k)γ′γFγm′δ′
-θtω −
-∑
-δ
-(Am
-ij )δ′δFγ′m′δ
-θtω
-(43)
-for all values of the free indices, where F≡Fs
-ijk.
-Deﬁnition 6.4. The Yetter-Davydov cohomology Hi(C) of a fusion category
-C is the cohomology of its tangent complex.
-The low-dimensional cohomology groups have the following interpretations
-[28, 29, 6, 16]. The groupH 1(C) classiﬁes ﬁrst-order deformations of Aut⊗(idC),
-H 2(C) classiﬁes ﬁrst-order deformations of the tensor product functor, and
-H 3(C) classiﬁes ﬁrst-order deformations of the associator.
+\begin{equation} \label{2cocycle2}
+\sum_\alpha (A^t_{jk})_{\alpha \omega} F^{\gamma' m' \delta'}_{\theta t \alpha} - \sum_\beta (A^s_{it})_{\beta \theta} F^{\gamma' m' \delta'}_{\beta t \omega} + \sum_\gamma (A^s_{m' k})_{\gamma' \gamma} F^{\gamma m' \delta'}_{\theta t \omega} - \sum_\delta (A^m_{ij})_{\delta' \delta} F^{\gamma' m' \delta}_{\theta t \omega}
+\end{equation}
+for all values of the free indices, where $F\equiv F^s_{ijk}$.
+\end{example}
+
+\begin{defn} The {\em Yetter-Davydov} cohomology $H^i(\cat{C})$ of a fusion category $\cat{C}$ is the cohomology of its tangent complex.
+\end{defn}
+The low-dimensional cohomology groups have the following interpretations \cite{yetter1998-braided, yetter2003-abelian, davydov1997-twisting, k05-aes}. The group $H^1(\cat{C})$ classifies first-order deformations of $\Aut_\otimes (\id_{\cat{C}})$, $H^2(\cat{C})$ classifies first-order deformations of the tensor product functor, and $H^3(\cat{C})$ classifies first-order deformations of the associator.

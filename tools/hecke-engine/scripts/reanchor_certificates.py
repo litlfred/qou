@@ -34,6 +34,32 @@ The last two are why `--write` reports BLOCK on 12 files: rewriting three
 fields while a fourth stays at 1.10998 leaves one certificate straddling two
 anchors, with nothing recording the split. That is worse than not touching it.
 
+**`tr_markov_f64` is not a Markov trace, in any convention (measured
+2026-10-11, bean qou-m7py).** `v9.rs` weights each word by ``z^len(w)``
+with ``z = 1/(t + t⁻¹)``, ``t = √q`` (convention C, excised 2026-08-15). The
+Markov trace is not multiplicative in word length: ``tr(σ₀σ₁σ₀) = h·z² + z``,
+not ``z³`` (the same defect `gram.rs` fixed in `TR_M[5]`). The exact `jets`
+reproduce the committed value under that z^len rule to ~12 digits, which
+identifies the formula; it does not make the value a trace. A convention-D
+trace needs the per-word element, which the certificates do not store.
+**Deleted 2026-10-11 (owner ruling, litlfred/qou#7685):** v9 no longer
+writes `tr_markov_f64` / `tr_markov_cleared` / `tr_markov_denom_power`; it
+writes `tr_markov_d`, the exact Ocneanu trace at ``z = q³/(q²+1)``, computed
+in v9 from the full crossing product. The old values and code are on branch
+`cat/cat-harness/fsh-guts` under
+`fsh-guts/deprecated/tools/hecke-engine/v9-tr-markov-zlen/`.
+
+**And 34 of the 35 v9 certificates were built with a pre-fix crossing.**
+Their exact polynomials carry odd powers of ``t``; at every commit they are
+stamped with (`62d305e` and seven others, all 2026-04-05) the n-n crossing was ``t⁴σ + t − t³``, which is not
+proportional to ``σ⁻¹ = σ − (t² − t⁻²)`` under v9's own relation
+``σ² = (t² − t⁻²)σ + 1``. Only 40Ar (`1b1b1d5`) uses the fixed crossing.
+So the 22 fields re-anchored on 2026-10-10 are faithful evaluations of a
+mis-built element. Only `fsh-guts` deprecated scripts read these files.
+All 35 were regenerated with the current v9 on 2026-10-11 (#7686), so the
+v9 certificates now carry proton-pin `*_f64` fields straight from the
+generator and this script has nothing to re-anchor in them.
+
 That matters because the obvious alternative — re-running the generator — is
 actively destructive here: the 51 committed certificates come from four
 different binaries, and re-running the wrong one replaces exact symbolic data

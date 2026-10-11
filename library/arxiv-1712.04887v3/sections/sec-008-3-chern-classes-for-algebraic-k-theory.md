@@ -8,139 +8,76 @@ pages: 17-20
 source_pdf: 1712.04887v3.pdf
 source_sha256: 024317c20a1d8b66
 doc_brief: "Bloch groups, algebraic K-theory, units, and Nahm's conjecture — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F"
+text_source: latex
+latex_prose_ratio: 0.987
+latex_coverage_ratio: 0.784
 ---
-In this section, we will deﬁne the Chern class map (11).
-3.1. Deﬁnitions. In the following discussion, certain isomorphisms will depend on a choice
-of some primitive nth root of unity ζ. In order to make this clear, we shall write (in this
-section only) either =ζ or = to denote isomorphisms which respectively do or do not depend
-on such a choice. Let F be a number ﬁeld, and let O :=OF denote the ring of integers of
-F . The Tate twist Zp(1) is deﬁned to be the projective limit proj limµpn of thepnth roots of
-unity over all n, and Zp(m) := Zp(1)⊗m. The Galois group GF acts on Zp(m) via the mth
-powerχm of the cyclotomic character. For all m≥ 1, there exists a Chern class map:
-c :K2m−1(F )→H1(F, Zp(m)).
-These Chern class maps arise as the boundary map of a spectral sequence, speciﬁcally,
-the Atiyah–Hirzebruch spectral sequence for ´ etale K-theory. These maps were originally
-constructed by Soul´ e [26, Section II]. We may compose this map with reduction mod pi to
-obtain a map:
-c :K2m−1(F )→H1(F, Z/piZ(m)).
-By the Chinese remainder theorem, we may also piece these maps together to obtain a map:
-c :K2m−1(F )→H1(F, Z/nZ(m))
-for any integer n. Let ζ be a primitive nth root of unity, Fn = F (ζ) and write G for the
-(possibly trivial) Galois group Gal( Fn/F ). Let µ denote the module of n roots of unity.
-There is a canonical injection
-χ :G→ Aut(µ) = (Z/nZ)×.
-By inﬂation–restriction, there is a canonical map:
-H1(F, Z/nZ(m))→H1(Fn, Z/nZ(m))G (27)
-Form≥ 1, there is an invariant wm(F )∈ N that we will need. It is deﬁned in terms of
-Galois cohomology by
-wm(F ) =
-∏
-p
-⏐⏐H0(F, Qp/Zp(m))
-⏐⏐,
-18 FRANK CALEGARI, STA VROS GAROUF ALIDIS, AND DON ZAGIER
-Note that w1(F ) is equal to wF , the number of roots of unity in F , and w2(F ) agrees
-with (10) because the action of GF on Z/nZ(2)⊂ Qp/Zp(2) for any n precisely factors
-through Gal(F (ζ +ζ−1)/F ) for a primitive nth root of unity ζ. We also deﬁne
-~wF =
-∏
-p
-⏐⏐H0(~F (ζp +ζ−1
-p ), Qp/Zp(1))
-⏐⏐. (28)
-where ~F is the Galois closure of F over Q. Thus ~wF is divisible only by the ﬁnitely many
-primesp suchζp belongs to ~F (ζp +ζ−1
-p ). If p|~wF andp> 2, then p necessarily ramiﬁes in F .
-Note that ~wF is always divisible by wF .
-Lemma 3.1. The map (27) is injective for integers n prime to wm(F ).
-Proof. The kernel of this map is H1(Fn/F, Z/nZ(m)). Assume that this is non-zero. By
-Sah’s lemma, this group is annihilated by χm(g)− 1 for any g∈G. Equivalently, the kernel
-has order divisible byp|n if and only if the elementsam−1 are divisible byp for all (a,p ) = 1.
-Yet this is equivalent to saying that H0(F, Z/pZ(m))⊂ H0(F, Qp/Zp(m)) is non-zero, and
-hence p|wm(F ). □
-There is an isomorphism Z/nZ(1) = µ. A choice of primitive nth root of unity ζ gives a
-trivialization tζ : Z/nZ(1) =ζ Z/nZ(m) deﬁned by sending ζ to ζ⊗n. This isomorphism is
-not, in general, G-equivariant, but rather satisﬁes
-tζ(σx) =χ1−m(σ)σtζ(x) (29)
-The dependence of tζ on ζ is given by tζk = km−1tζ. By Hilbert 90, for a number ﬁeld L,
-there is a canonical isomorphism H1(L,µ ) =L×/L×n, and hence (given ζ) an isomorphism
-H1(Fn, Z/nZ(m))G =ζ H1(Fn, Z/nZ(1))χ1−m
-=
-(
-F×
-n/F×n
-n
-)χ1−m
-,
-where the ﬁrst isomorphism is induced by tζ. Thus c and ζ give rise to a map:
-cζ :K2m−1(F )→
-(
-F×
-n/F×n
-n
-)χ1−m
-. (30)
-3.2. The relation between ´ etale cohomology and Galois cohomology. There are
-isomorphisms that can be found in Sections 5.2 and 5.4 of [35]
-K2m−1(F )⊗ Zp≃K2m−1(OF [1/p])≃K2m−1(OF )⊗ Zp (31)
-form> 1. These isomorphisms are also reﬂected in the following isomorphism between ´ etale
-cohomology groups and Galois cohomology groups:
-H1
-´ et(OF [1/p], Zp(m))≃H1(F, Zp(m))
-for m≥ 2. In particular, we may also view the Chern class maps considered above as
-morphisms
-c :K2m−1(F )⊗ Zp≃K2m−1(OF )⊗ Zp→H1
-´ et(OF [1/p], Zp(m)).
-Theorem 3.2. Forp> 2, there is an isomorphism
-c :K3(F )⊗ Zp≃K3(OF )⊗ Zp→H1
-´ et(OF [1/p], Zp(2)).
-The rank of K3(F ) is r2.
-BLOCH GROUPS, ALGEBRAIC K-THEORY, UNITS, AND NAHM’S CONJECTURE 19
-Sketch. This follows from the Quillen–Lichtenbaum conjecture, as proven by Voevodsky and
-Rost (see [35], [34]). In this case, it can also be deduced from the description of torsion
-in K3(F ) by Merkurjev and Suslin [21] (described in terms of w2(F ) above) combined with
-Borel’s theorem for the rank (see also Theorem 6.5 of [31]), and the result of Soul´ e that the
-Chern class map is surjective. □
-Lemma 3.3. Suppose that p ∤w2(F ) for every prime p with p2|n. Then the map
-cζ :K3(F )→K3(F )/nK3(F )→
-(
-F×
-n/F×n
-n
-)χ−1
-(32)
-is injective on K3(F )/nK3(F ).
-Proof. By the Chinese Remainder Theorem, it suﬃces to consider the case n =pm. In light
-of Theorem 3.2, it suﬃces to show that the map
-H1(F, Zp(2))/n→H1(F, Z/nZ(2))→F×
-n/F×n
-n
-is injective. The kernel of the ﬁrst map is H0(F, Zp(2))/n = 0. The kernel of the sec-
-ond map is, via inﬂation–restriction, the group H1(Gal(Fn/F ),H 0(F, Z/nZ(2))). If n = p,
-then Gal(Fn/F ) has order prime top and the cohomology group vanishes. If p2|n, this group
-is certainly zero unless
-H0(F, Z/nZ(2))⊂H0(F, Qp/Zp(2))
-is non-zero, or in other words, unless p divides w2(F ). □
-3.3. Upgrading from F×
-n toOFn[1/S]×. The following is a consequence of the ﬁnite gen-
-eration of K3(F ):
-Lemma 3.4. For any ﬁeld F , there exists a ﬁnite set S of primes which avoids any given
-ﬁnite set of primes not dividing n such that the image of cζ on K3(F )/nK3(F ) may be
-realized by an element ofO×
-F (ζ)[1/S].
-Proof. Note that without the requirement that S avoids any given ﬁnite set of primes not
-dividingn, the result is a trivial consequence of the fact thatK3(F ) is ﬁnitely generated. The
-construction of c as a map to units in F×
-n proceeded via Hilbert 90. In light of Theorem 3.2
-above, it suﬃces to do the same with H1(Fn,µ ) replaced by H1
-´ et(OFn[1/S],µ ) for some set S
-containingp|n. However, in this case, the class group intervenes, as there is an exact sequence
-([22], p.125):
-OFn[1/S]×/OFn[1/S]×n→H1
-´ et(OFn[1/S],µ )→ Pic(OFn[1/S])[n]
-whereM[n] denotes then-torsion ofM and Pic is the Picard group, which may be identiﬁed
-with the class group ofOFn[1/S]. On the other hand, it is well known that one can represent
-generators in the class group by a set of primes avoiding any given ﬁnite set of primes,
-and hence for a set S including primes for each generator of the class group, the last term
-vanishes. □
-20 FRANK CALEGARI, STA VROS GAROUF ALIDIS, AND DON ZAGIER
+[]{#sec.chern label="sec.chern"}
+
+In this section, we will define the Chern class map [\[eq.cmap\]](#eq.cmap){reference-type="eqref" reference="eq.cmap"}.
+
+## Definitions {#sub.definitions.chern}
+
+In the following discussion, certain isomorphisms will depend on a choice of some primitive $n$th root of unity $\zeta$. In order to make this clear, we shall write (in this section only) either $=_{\zeta}$ or $=$ to denote isomorphisms which respectively do or do not depend on such a choice. Let $F$ be a number field, and let $\mathcal{O}:=\mathcal{O}_F$ denote the ring of integers of $F$. The Tate twist $\mathbf Z_p(1)$ is defined to be the projective limit $\projlim \mu_{p^n}$ of the $p^n$th roots of unity over all $n$, and $\mathbf Z_p(m):= \mathbf Z_p(1)^{\otimes m}$. The Galois group $G_F$ acts on $\mathbf Z_p(m)$ via the $m$th power $\chi^m$ of the cyclotomic character. For all $m\ge1$, there exists a Chern class map: $$c: K_{2m-1}(F) \rightarrow H^1(F,\mathbf Z_p(m))\,.$$ These Chern class maps arise as the boundary map of a spectral sequence, specifically, the Atiyah--Hirzebruch spectral sequence for étale $K$-theory. These maps were originally constructed by Soulé [@Soule2 Section II]. We may compose this map with reduction mod $p^i$ to obtain a map: $$c: K_{2m-1}(F) \rightarrow H^1(F,\mathbf Z/p^i\mathbf Z(m)).$$ By the Chinese remainder theorem, we may also piece these maps together to obtain a map: $$c: K_{2m-1}(F) \rightarrow H^1(F,\mathbf Z/n\mathbf Z(m) )$$ for any integer $n$.
+
+Let $\zeta$ be a primitive $n$th root of unity, $F_n=F(\zeta)$ and write $G$ for the (possibly trivial) Galois group $\mathrm{Gal}(F_n/F)$. Let $\mu$ denote the module of $n$ roots of unity. There is a canonical injection $$\chi: G \rightarrow  \mathrm{Aut}({\mu}) = (\mathbf Z/n\mathbf Z)^{\times} \,.$$ By inflation--restriction, there is a canonical map: $$\label{winj}
+H^1(F,\mathbf Z/n\mathbf Z(m) ) \rightarrow H^1(F_n,\mathbf Z/n\mathbf Z(m) )^{G}$$ For $m \ge 1$, there is an invariant $w_m(F)\in\mathbf N$ that we will need. It is defined in terms of Galois cohomology by $$w_m(F) \;=\; \prod_{p} \bigl|H^0(F,\mathbf Q_p/\mathbf Z_p(m) )\bigr|\,,$$ Note that $w_1(F)$ is equal to $w_F$, the number of roots of unity in $F$, and $w_2(F)$ agrees with [\[eq.w2F\]](#eq.w2F){reference-type="eqref" reference="eq.w2F"} because the action of $G_F$ on $\mathbf Z/n\mathbf Z(2) \subset \mathbf Q_p/\mathbf Z_p(2)$ for any $n$ precisely factors through $\mathrm{Gal}(F(\zeta+ \zeta^{-1})/F)$ for a primitive $n$th root of unity $\zeta$. We also define $$\label{wtwiddle}
+\widetilde w_F\;=\; \prod_{p} \bigl|H^0(\widetilde{F}(\zeta_p + \zeta^{-1}_p),\mathbf Q_p/\mathbf Z_p(1))\bigr|\,.$$ where $\widetilde{F}$ is the Galois closure of $F$ over $\mathbf Q$. Thus $\widetilde w_F$ is divisible only by the finitely many primes $p$ such $\zeta_p$ belongs to $\widetilde{F}(\zeta_p + \zeta^{-1}_p)$. If $p|\widetilde w_F$ and $p > 2$, then $p$ necessarily ramifies in $F$. Note that $\widetilde w_F$ is always divisible by $w_F$.
+
+::: lemma
+[]{#lemma:sahinj label="lemma:sahinj"} The map [\[winj\]](#winj){reference-type="eqref" reference="winj"} is injective for integers $n$ prime to $w_m(F)$.
+:::
+
+::: proof
+*Proof.* The kernel of this map is $H^1(F_n/F,\mathbf Z/n\mathbf Z(m) )$. Assume that this is non-zero. By Sah's lemma, this group is annihilated by $\chi^m(g) - 1$ for any $g \in G$. Equivalently, the kernel has order divisible by $p | n$ if and only if the elements $a^m - 1$ are divisible by $p$ for all $(a,p) = 1$. Yet this is equivalent to saying that $H^0(F,\mathbf Z/p\mathbf Z(m) ) \subset H^0(F,\mathbf Q_p/\mathbf Z_p(m))$ is non-zero, and hence $p | w_m(F)$. ◻
+:::
+
+There is an isomorphism $\mathbf Z/n\mathbf Z(1) = \mu$. A choice of primitive $n$th root of unity $\zeta$ gives a trivialization $t_{\zeta}:  
+\mathbf Z/n\mathbf Z(1)   =_{\zeta} \mathbf Z/n\mathbf Z(m)$ defined by sending $\zeta$ to $\zeta^{\otimes n}$. This isomorphism is not, in general, $G$-equivariant, but rather satisfies $$t_{\zeta}(\sigma x) =  \chi^{1-m}(\sigma) \sigma t_{\zeta}(x)$$ The dependence of $t_{\zeta}$ on $\zeta$ is given by $t_{\zeta^k} = k^{m-1} t_{\zeta}$.
+
+By Hilbert $90$, for a number field $L$, there is a canonical isomorphism $H^1(L,\mu) = L^{\times}/L^{\times n}$, and hence (given $\zeta$) an isomorphism $$H^1(F_n,\mathbf Z/n\mathbf Z(m) )^{G}
+ =_{\zeta}  H^1(F_n,\mathbf Z/n\mathbf Z(1))^{\chi^{1-m}}
+ = \left(F_n^{\times}/F_n^{\times n}\right)^{\chi^{1-m}} \,,$$ where the first isomorphism is induced by $t_{\zeta}$. Thus $c$ and $\zeta$ give rise to a map: $$\label{defc}
+c_\zeta: K_{2m-1}(F) \rightarrow 
+\left(F_n^{\times}/F_n^{\times n}\right)^{\chi^{1-m}}\,.$$
+
+## The relation between étale cohomology and Galois cohomology {#section:relations}
+
+There are isomorphisms that can be found in Sections 5.2 and 5.4 of [@Weibel] $$\label{useful}
+K_{2m-1}(F) \otimes \mathbf Z_p \simeq K_{2m-1}(\mathcal{O}_F[1/p]) \simeq 
+K_{2m-1}(\mathcal{O}_F) \otimes \mathbf Z_p$$ for $m > 1$. These isomorphisms are also reflected in the following isomorphism between étale cohomology groups and Galois cohomology groups: $$H^1_{\text{\'{e}t}}(\mathcal{O}_F[1/p],\mathbf Z_p(m) ) \simeq H^1(F,\mathbf Z_p(m) )$$ for $m \ge 2$. In particular, we may also view the Chern class maps considered above as morphisms $$c: K_{2m-1}(F) \otimes \mathbf Z_p \simeq
+K_{2m-1}(\mathcal{O}_F) \otimes \mathbf Z_p \rightarrow H^1_{\text{\'{e}t}}(\mathcal{O}_F[1/p],\mathbf Z_p(m) ).$$
+
+::: theorem
+[]{#theorem:surjective2 label="theorem:surjective2"} For $p > 2$, there is an isomorphism $$c: K_3(F)  \otimes \mathbf Z_p  \simeq K_3(\mathcal{O}_F) \otimes \mathbf Z_p
+\rightarrow H^1_{\text{\emph{\'{e}t}}}(\mathcal{O}_F[1/p],\mathbf Z_p(2)).$$ The rank of $K_3(F)$ is $r_2$.
+:::
+
+::: proof
+*Sketch.* This follows from the Quillen--Lichtenbaum conjecture, as proven by Voevodsky and Rost (see [@Weibel], [@Voe]). In this case, it can also be deduced from the description of torsion in $K_3(F)$ by Merkurjev and Suslin [@Suslin] (described in terms of $w_2(F)$ above) combined with Borel's theorem for the rank (see also Theorem 6.5 of [@TateK]), and the result of Soulé that the Chern class map is surjective. ◻
+:::
+
+::: lemma
+[]{#lemma:sahinj2 label="lemma:sahinj2"} Suppose that $p \nmid w_2(F)$ for every prime $p$ with $p^2|n$. Then the map $$\label{eq.cnv1}
+c_\zeta: K_3(F) \rightarrow K_3(F)/nK_3(F) \rightarrow
+\left(F_n^{\times}/F_n^{\times n}\right)^{\chi^{-1}}$$ is injective on $K_3(F)/nK_3(F)$.
+:::
+
+::: proof
+*Proof.* By the Chinese Remainder Theorem, it suffices to consider the case $n= p^{m}$. In light of Theorem [\[theorem:surjective2\]](#theorem:surjective2){reference-type="ref" reference="theorem:surjective2"}, it suffices to show that the map $$H^1(F,\mathbf Z_p(2))/{n} \rightarrow H^1(F,\mathbf Z/{n}\mathbf Z(2)) 
+\rightarrow F_{{n}}^{\times}/F_{{n}}^{\times {{n}}}$$ is injective. The kernel of the first map is $H^0(F,\mathbf Z_p(2))/{{n}} = 0$. The kernel of the second map is, via inflation--restriction, the group $H^1(\mathrm{Gal}(F_n/F),H^0(F,\mathbf Z/{n}\mathbf Z(2)))$. If $n= p$, then $\mathrm{Gal}(F_n/F)$ has order prime to $p$ and the cohomology group vanishes. If $p^2 | n$, this group is certainly zero unless $$H^0(F,\mathbf Z/{n}\mathbf Z(2)) \subset H^0(F,\mathbf Q_p/\mathbf Z_p(2))$$ is non-zero, or in other words, unless $p$ divides $w_2(F)$. ◻
+:::
+
+## Upgrading from $F_n^{\times}$ to $\mathcal{O}_{F_n}[1/S]^{\times}$
+
+The following is a consequence of the finite generation of $K_3(F)$:
+
+::: lemma
+[]{#lemma:avoidS label="lemma:avoidS"} For any field $F$, there exists a finite set $S$ of primes which avoids any given finite set of primes not dividing $n$ such that the image of $c_\zeta$ on $K_3(F)/nK_3(F)$ may be realized by an element of $\mathcal{O}^{\times}_{F(\zeta)}[1/S]$.
+:::
+
+::: proof
+*Proof.* Note that without the requirement that $S$ avoids any given finite set of primes not dividing $n$, the result is a trivial consequence of the fact that $K_3(F)$ is finitely generated. The construction of $c$ as a map to units in $F_n^{\times}$ proceeded via Hilbert $90$. In light of Theorem [\[theorem:surjective2\]](#theorem:surjective2){reference-type="ref" reference="theorem:surjective2"} above, it suffices to do the same with $H^1(F_n,\mu)$ replaced by $H^1_{\text{\'{e}t}}(\mathcal{O}_{F_n}[1/S],\mu)$ for some set $S$ containing $p| n$. However, in this case, the class group intervenes, as there is an exact sequence ([@Milne], p.125): $$\mathcal{O}_{F_n}[1/S]^{\times}/\mathcal{O}_{F_n}[1/S]^{\times n}
+\rightarrow H^1_{\text{\'{e}t}}(\mathcal{O}_{F_n}[1/S],\mu)
+\rightarrow \mathrm{Pic}(\mathcal{O}_{F_n}[1/S])[n]$$ where $M[n]$ denotes the $n$-torsion of $M$ and $\mathrm{Pic}$ is the Picard group, which may be identified with the class group of $\mathcal{O}_{F_n}[1/S]$. On the other hand, it is well known that one can represent generators in the class group by a set of primes avoiding any given finite set of primes, and hence for a set $S$ including primes for each generator of the class group, the last term vanishes. ◻
+:::

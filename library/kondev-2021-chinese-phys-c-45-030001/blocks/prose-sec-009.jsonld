@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-009",
   "kind": "prose",
-  "title": "Half-life",
-  "pageStart": 5,
-  "pageEnd": 6,
-  "text": "../sections/sec-009-23-half-life.md",
-  "derivedFrom": "library/kondev-2021-chinese-phys-c-45-030001/manifest",
-  "sourceDocument": "library/kondev-2021-chinese-phys-c-45-030001/manifest",
+  "title": "Trends in neighboring nuclei (TNN)",
+  "pageStart": 13,
+  "pageEnd": 13,
+  "text": "../sections/sec-009-31-trends-in-neighboring-nuclei-tnn.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kondev-2021-chinese-phys-c-45-030001/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kondev-2021-chinese-phys-c-45-030001/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -8,8 +8,8 @@ pages: 23-23
 source_pdf: 1001.2180v2.pdf
 source_sha256: f4225d7b024940aa
 doc_brief: "ASYMPTOTICS OF q-PLANCHEREL MEASURES — In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure"
+text_source: latex
+latex_prose_ratio: 0.931
+latex_coverage_ratio: 1.0
 ---
-In this section, we use the same tools to study other measures on partitions and to describe asymp-
-totically the shape of the diagrams. The purpose of this sect ion is to show that our method works as
-soon as the typical length of the ﬁrst rows of the diagram is of order nα with α > 1/2 and not only with
-α = 1.
+[]{#sect:schur-weyl label="sect:schur-weyl"} In this section, we use the same tools to study other measures on partitions and to describe asymptotically the shape of the diagrams. The purpose of this section is to show that our method works as soon as the typical length of the first rows of the diagram is of order $n^\alpha$ with $\alpha>1/2$ and not only with $\alpha=1$.

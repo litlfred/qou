@@ -1,8 +1,14 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+    }
+  ],
   "@id": "library/deligne-mostow-1986/blocks/prop-sec-018-01",
   "@type": [
-    "folio:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "kind": "proposition",
@@ -11,6 +17,6 @@
   "pageEnd": 46,
   "text": "prop-sec-018-01.md",
   "derivedFrom": "library/deligne-mostow-1986/sections/sec-018",
-  "sourceDocument": "library/deligne-mostow-1986/manifest",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
   "provenance": "ingested"
 }

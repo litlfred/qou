@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/cuspshapes/sections/sec-006",
   "@type": [
     "doco:Section"
@@ -10,9 +15,9 @@
   "contains": [
     "library/cuspshapes/blocks/prose-sec-006",
     "library/cuspshapes/blocks/prop-sec-006-01",
-    "library/cuspshapes/blocks/rem-sec-006-02"
+    "library/cuspshapes/blocks/remark-sec-006-02"
   ],
-  "derivedFrom": "library/cuspshapes/manifest",
-  "sourceDocument": "library/cuspshapes/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cuspshapes/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cuspshapes/manifest.jsonld",
   "provenance": "ingested"
 }

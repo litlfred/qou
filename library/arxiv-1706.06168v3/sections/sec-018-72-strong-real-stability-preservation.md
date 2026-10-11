@@ -8,188 +8,78 @@ pages: 24-26
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
 doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨ and´ en characterized all linear oper ators on multivariate polynomials which preserve the"
+text_source: latex
+latex_prose_ratio: 0.948
+latex_coverage_ratio: 0.993
 ---
-We state and prove our strong real stability preservation charac terization here, and then derive the Borcea-
-Br¨ and´ en characterization as a corollary. The proof here takes a bit more work than in the complex case,
-and will rely on many of the real stability results discussed in §4.3. This extra work is essentially taken from
-the proof of Theorem 1.2 found in [ BB09a].
-Theorem 7.2. Fix λ ∈ Nm
-0 , α ∈ Nl
-0, and a linear operator T ∈ Hom(V (λ),V (α)) such that T restricts to a
-real linear operator from VR(λ) to VR(α). The following are equivalent.
-(i) T preserves strong real stability.
-(ii) Symb(T ) is either (H−
-m
-× Hl
-+)-stable or (H−
-m
-× Hl
-−)-stable.
-Proof. (i) ⇒ (ii). Fixing ( z0 :w0) ∈ H−
-m
-, we have that ( w0x −z0y)λ is Hm
-+ -stable. If ( z0 :w0) ∈ R
-m
-, then
-T [(w0x −z0y)λ] is nonzero and real stable by assumption. Combining the symbol lem ma (Lemma 3.7) and
-the evaluation symbol lemma (Lemma 5.10), this implies Symb( T )(z0,w 0,x,y ) = ( −1)λT [(w0x −z0y)λ] is
-both Hl
-+-stable and Hl
-−-stable.
-On the other hand, suppose ( z0 :w0) ⁄∈R
-m
-. By Lemma 4.10, we have that T [(w0x −z0y)λ] is either Hl
-+-
-stable, Hl
-−-stable, or zero. Now suppose there are ( z0 :w0), (z′
-0 :w′
-0) ∈ H−
-m
-\ R
-m
-such that T [(w0x −z0y)λ]
-24
-is Hl
-+-stable and T [(w′
-0x −z′
-0y)λ] is Hl
-−-stable. By a homotopy argument, there exists ( z′′
-0 :w′′
-0 ) ∈ H−
-m
-\ R
-m
-such that T [(w′′
-0x −z′′
-0y)λ] is ( Hl
-+ ∪ H l
-−)-stable or zero. By Lemma 4.11, T [c0(w′′
-0x −z′′
-0y)λ] is either real
-stable or zero for some complex scalar c0 ⁄= 0.
-Let c0(w′′
-0x −z′′
-0y)λ =q(x,y ) +ir(x,y ) for q,r ∈VR(λ), which are both real stable or zero by Hermite-
-Biehler (Proposition 4.9). Note further that r ⁄≡0 since ( z′′
-0 : w′′
-0 ) ⁄∈R
-m
-. However, since T (q +ir) =
-T (q) +iT (r) is real stable or zero and T restricts to real linear operator, it must be that T (r) ≡ 0. This
-contradicts the fact that T strongly preserves real stability.
-So, Symb(T )(z0,w 0,x,y ) = ( −1)λT [(w0x −z0y)λ] is either Hl
-+-stable (in the x,y variables) for all ( z0 :
-w0) ∈ H−
-m
-\ R
-m
-, or Hl
-−-stable for all ( z0 :w0) ∈ H−
-m
-\ R
-m
-. Combining this with the ( z0 :w0) ∈ R
-m
-case,
-we have that Symb(T ) is either ( H−
-m
-× Hl
-+)-stable or ( H−
-m
-× Hl
-−)-stable.
-(ii) ⇒ (i). By the complex stability characterization (Theorem 6.2), T maps Hm
-+ -stable polynomials to
-either nonzero Hl
-+-stable polynomials or nonzero Hl
-−-stable polynomials. Since T restricts to a real linear
-operator on VR(λ), T preserves strong real stability.
-As a ﬁnal note, the “homotopy argument” used in the previous pro of is not quite that of the proof found
-in [ BB09a], though it is similar. Here, one just needs to be a bit more careful ab out the precise homotopy
-with respect to points at inﬁnity.
-7.3 Deriving the Real Borcea-Br¨ and´ en Characterization
-As in the complex case, we now obtain the Borcea-Br¨ and´ en weak real stability characterization as a corollary
-to our strong real stability characterization given in Theorem 7.2. To this end, we start by giving a sort of
-real stability version of Lemma 6.11. The proof of this lemma is similar in spirit to that of the strong real
-stability characterization given above.
-Lemma 7.3. Fix λ,α ∈ Nm
-0 and a linear operator T ∈ Hom(V (λ),V (α)) such that T restricts to a real
-linear operator from VR(λ) to VR(α). The following are equivalent.
-(i) T preserves weak real stability.
-(ii) One of the following holds:
-(a) T maps H+
-m
--stable polynomials to nonzero Hm
-+ -stable polynomials.
-(b) T maps H+
-m
--stable polynomials to nonzero Hm
-− -stable polynomials.
-(c) T has image of dimension at most two, and is of the form
-T :p ↦→q ·ψ1(p) +r ·ψ2(p)
-whereq,r ∈VR(α) are weakly real stable such that q ≪r, and ψ1,ψ 2 are real linear functionals.
-Proof. (i) ⇒ (ii). By the complex characterization (Theorem 6.2), we only need to consider evaluation
-symbols when demonstrating ( a) or (b). For any ( z0 :w0) ∈ H m
-− , Lemma 4.10 then implies T [(w0x −z0y)λ]
-is either Hm
-+ -stable, Hm
-− -stable, or identically zero. We now show that ( c) holds if ( a) and (b) do not.
-If neither ( a) nor ( b) holds for evaluation symbols, then there exist ( z0 : w0), (z′
-0 : w′
-0) ∈ H m
-− such that
-T [(w0x −z0y)λ] is Hm
-+ -stable or zero and T [(w′
-0x −z′
-0y)λ] is Hm
-− -stable or zero. As in the proof of the strong
-real stability characterization (Theorem 7.2), a homotopy argument implies there exists ( z′′
-0 : w′′
-0 ) ∈ H m
-−
-such that T [(w′′
-0x −z′′
-0y)λ] is ( Hm
-+ ∪ Hm
-− )-stable or zero. Lemma 4.11 then implies T [c0(w′′
-0x −z′′
-0y)λ] is real
-stable or zero, for some complex scalar c0 ⁄= 0.
-For the sake of simplicity, we denote q0(x,y ) = q0(x1,y 1,...,x m,y m) := c0(w′′
-0x −z′′
-0y)λ. Since the set
-of H+
-m
--stable polynomials is open in V (λ), let B(0) be some open ball centered at 0 such that q0 +iB(0)
-consists of nonzero H+
-m
--stable polynomials. So, for any r0 ∈ B(0), Lemma 4.10 implies T (q0) +iT (r0) is
-either Hm
-+ -stable, Hm
-− -stable, or zero. Hermite-Biehler then implies T (r0) is real stable or zero whenever
-r0 ∈B(0) ∩VR(λ). Therefore, T [VR(λ)] consists of real stable polynomials, and ( c) follows from Lemma 4.12.
-25
-(ii) ⇒ (i). If ( c) holds, then ( i) follows from Hermite-Biehler. Otherwise, suppose WLOG that ( a)
-holds. We can then use an argument similar in spirit to that of Lemma 6.11 to show that T maps Hm
-+ -stable
-polynomials to weakly Hm
-+ -stable polynomials. Since T restricts to a real operator, this implies ( i).
-As in Lemma 6.11, we use the previous lemma to link the characterizations of weak and strong stability
-preserving operators as follows. Applying the necessary maps to c onvert Symb(T ) to Symb BB (T ) below
-gives essentially the characterization of weak real stability preser ving operators given in Theorem 1.2.
-Corollary 7.4. Fix λ,α ∈ Nm
-0 and a linear operator T ∈ Hom(V (λ),V (α)) such that T restricts to a real
-linear operator from VR(λ) to VR(α). The following are equivalent.
-(i) T preserves weak real stability.
-(ii) One of the following holds:
-(a) Symb(T ) is (Hm
-− × Hm
-+ )-stable.
-(b) Symb(T ) is (Hm
-− × Hm
-− )-stable.
-(c) T has image of dimension at most two, and is of the form
-T :p ↦→q ·ψ1(p) +r ·ψ2(p)
-whereq,r ∈VR(α) are weakly real stable such that q ≪r, and ψ1,ψ 2 are real linear functionals.
-Proof. Apply the complex characterization (Theorem 6.2) to conditions ( ii)(a) and ( ii)(b) of Lemma 7.3
-above.
+We state and prove our strong real stability preservation characterization here, and then derive the Borcea-Brändén characterization as a corollary. The proof here takes a bit more work than in the complex case, and will rely on many of the real stability results discussed in §[\[stab_subsect\]](#stab_subsect){reference-type="ref" reference="stab_subsect"}. This extra work is essentially taken from the proof of Theorem [\[BB_Rops_thm\]](#BB_Rops_thm){reference-type="ref" reference="BB_Rops_thm"} found in [@bb1].
+
+::: theorem
+[]{#Rops_graces label="Rops_graces"} Fix $\lambda \in \mathbb{N}_0^m$, $\alpha \in \mathbb{N}_0^l$, and a linear operator $T \in \mathop{\mathrm{Hom}}(V(\lambda),V(\alpha))$ such that $T$ restricts to a real linear operator from $V_\mathbb{R}(\lambda)$ to $V_\mathbb{R}(\alpha)$. The following are equivalent.
+
+1.  $T$ preserves strong real stability.
+
+2.  $\mathop{\mathrm{Symb}}(T)$ is either $(\overline{\mathcal{H}_-}^m \times \mathcal{H}_+^l)$-stable or $(\overline{\mathcal{H}_-}^m \times \mathcal{H}_-^l)$-stable.
+:::
+
+::: proof
+*Proof.* $(i) \Rightarrow (ii)$. Fixing $(z_0:w_0) \in \overline{\mathcal{H}_-}^m$, we have that $(w_0x - z_0y)^\lambda$ is $\mathcal{H}_+^m$-stable. If $(z_0:w_0) \in \overline{\mathbb{R}}^m$, then $T[(w_0x - z_0y)^\lambda]$ is nonzero and real stable by assumption. Combining the symbol lemma (Lemma [\[symb_lemma\]](#symb_lemma){reference-type="ref" reference="symb_lemma"}) and the evaluation symbol lemma (Lemma [\[ev_lemma\]](#ev_lemma){reference-type="ref" reference="ev_lemma"}), this implies $\mathop{\mathrm{Symb}}(T)(z_0,w_0,x,y) = (-1)^\lambda T[(w_0x - z_0y)^\lambda]$ is both $\mathcal{H}_+^l$-stable and $\mathcal{H}_-^l$-stable.
+
+On the other hand, suppose $(z_0:w_0) \not\in \overline{\mathbb{R}}^m$. By Lemma [\[rs_lemma\]](#rs_lemma){reference-type="ref" reference="rs_lemma"}, we have that $T[(w_0x - z_0y)^\lambda]$ is either $\mathcal{H}_+^l$-stable, $\mathcal{H}_-^l$-stable, or zero. Now suppose there are $(z_0:w_0), (z_0':w_0') \in \overline{\mathcal{H}_-}^m \setminus \overline{\mathbb{R}}^m$ such that $T[(w_0x - z_0y)^\lambda]$ is $\mathcal{H}_+^l$-stable and $T[(w_0'x - z_0'y)^\lambda]$ is $\mathcal{H}_-^l$-stable. By a homotopy argument, there exists $(z_0'':w_0'') \in \overline{\mathcal{H}_-}^m \setminus \overline{\mathbb{R}}^m$ such that $T[(w_0''x - z_0''y)^\lambda]$ is $(\mathcal{H}_+^l \cup \mathcal{H}_-^l)$-stable or zero. By Lemma [\[scal_rs_lemma\]](#scal_rs_lemma){reference-type="ref" reference="scal_rs_lemma"}, $T[c_0(w_0''x - z_0''y)^\lambda]$ is either real stable or zero for some complex scalar $c_0 \neq 0$.
+
+Let $c_0(w_0''x - z_0''y)^\lambda = q(x,y) + ir(x,y)$ for $q,r \in V_\mathbb{R}(\lambda)$, which are both real stable or zero by Hermite-Biehler (Proposition [\[hermite-biehler\]](#hermite-biehler){reference-type="ref" reference="hermite-biehler"}). Note further that $r \not\equiv 0$ since $(z_0'':w_0'') \not\in \overline{\mathbb{R}}^m$. However, since $T(q + ir) = T(q) + iT(r)$ is real stable or zero and $T$ restricts to real linear operator, it must be that $T(r) \equiv 0$. This contradicts the fact that $T$ strongly preserves real stability.
+
+So, $\mathop{\mathrm{Symb}}(T)(z_0,w_0,x,y) = (-1)^\lambda T[(w_0x - z_0y)^\lambda]$ is either $\mathcal{H}_+^l$-stable (in the $x,y$ variables) for all $(z_0:w_0) \in \overline{\mathcal{H}_-}^m \setminus \overline{\mathbb{R}}^m$, or $\mathcal{H}_-^l$-stable for all $(z_0:w_0) \in \overline{\mathcal{H}_-}^m \setminus \overline{\mathbb{R}}^m$. Combining this with the $(z_0:w_0) \in \overline{\mathbb{R}}^m$ case, we have that $\mathop{\mathrm{Symb}}(T)$ is either $(\overline{\mathcal{H}_-}^m \times \mathcal{H}_+^l)$-stable or $(\overline{\mathcal{H}_-}^m \times \mathcal{H}_-^l)$-stable.
+
+$(ii) \Rightarrow (i)$. By the complex stability characterization (Theorem [\[Cops_graces\]](#Cops_graces){reference-type="ref" reference="Cops_graces"}), $T$ maps $\mathcal{H}_+^m$-stable polynomials to either nonzero $\mathcal{H}_+^l$-stable polynomials or nonzero $\mathcal{H}_-^l$-stable polynomials. Since $T$ restricts to a real linear operator on $V_\mathbb{R}(\lambda)$, $T$ preserves strong real stability. ◻
+:::
+
+As a final note, the "homotopy argument" used in the previous proof is not quite that of the proof found in [@bb1], though it is similar. Here, one just needs to be a bit more careful about the precise homotopy with respect to points at infinity.
+
+## Deriving the Real Borcea-Brändén Characterization {#Rops_deriv_subsect}
+
+As in the complex case, we now obtain the Borcea-Brändén weak real stability characterization as a corollary to our strong real stability characterization given in Theorem [\[Rops_graces\]](#Rops_graces){reference-type="ref" reference="Rops_graces"}. To this end, we start by giving a sort of real stability version of Lemma [\[bb_Clink\]](#bb_Clink){reference-type="ref" reference="bb_Clink"}. The proof of this lemma is similar in spirit to that of the strong real stability characterization given above.
+
+::: lemma
+[]{#bb_Rlink label="bb_Rlink"} Fix $\lambda,\alpha \in \mathbb{N}_0^m$ and a linear operator $T \in \mathop{\mathrm{Hom}}(V(\lambda),V(\alpha))$ such that $T$ restricts to a real linear operator from $V_\mathbb{R}(\lambda)$ to $V_\mathbb{R}(\alpha)$. The following are equivalent.
+
+1.  $T$ preserves weak real stability.
+
+2.  One of the following holds:
+
+    1.  $T$ maps $\overline{\mathcal{H}_+}^m$-stable polynomials to nonzero $\mathcal{H}_+^m$-stable polynomials.
+
+    2.  $T$ maps $\overline{\mathcal{H}_+}^m$-stable polynomials to nonzero $\mathcal{H}_-^m$-stable polynomials.
+
+    3.  $T$ has image of dimension at most two, and is of the form $$T: p \mapsto q \cdot \psi_1(p) + r \cdot \psi_2(p)$$ where $q,r \in V_\mathbb{R}(\alpha)$ are weakly real stable such that $q \ll r$, and $\psi_1,\psi_2$ are real linear functionals.
+:::
+
+::: proof
+*Proof.* $(i) \Rightarrow (ii)$. By the complex characterization (Theorem [\[Cops_graces\]](#Cops_graces){reference-type="ref" reference="Cops_graces"}), we only need to consider evaluation symbols when demonstrating $(a)$ or $(b)$. For any $(z_0:w_0) \in \mathcal{H}_-^m$, Lemma [\[rs_lemma\]](#rs_lemma){reference-type="ref" reference="rs_lemma"} then implies $T[(w_0x-z_0y)^\lambda]$ is either $\mathcal{H}_+^m$-stable, $\mathcal{H}_-^m$-stable, or identically zero. We now show that $(c)$ holds if $(a)$ and $(b)$ do not.
+
+If neither $(a)$ nor $(b)$ holds for evaluation symbols, then there exist $(z_0:w_0),(z_0':w_0') \in \mathcal{H}_-^m$ such that $T[(w_0x-z_0y)^\lambda]$ is $\mathcal{H}_+^m$-stable or zero and $T[(w_0'x-z_0'y)^\lambda]$ is $\mathcal{H}_-^m$-stable or zero. As in the proof of the strong real stability characterization (Theorem [\[Rops_graces\]](#Rops_graces){reference-type="ref" reference="Rops_graces"}), a homotopy argument implies there exists $(z_0'':w_0'') \in \mathcal{H}_-^m$ such that $T[(w_0''x-z_0''y)^\lambda]$ is $(\mathcal{H}_+^m \cup \mathcal{H}_-^m)$-stable or zero. Lemma [\[scal_rs_lemma\]](#scal_rs_lemma){reference-type="ref" reference="scal_rs_lemma"} then implies $T[c_0(w_0''x-z_0''y)^\lambda]$ is real stable or zero, for some complex scalar $c_0 \neq 0$.
+
+For the sake of simplicity, we denote $q_0(x,y) = q_0(x_1,y_1,\ldots,x_m,y_m) := c_0(w_0''x-z_0''y)^\lambda$. Since the set of $\overline{\mathcal{H}_+}^m$-stable polynomials is open in $V(\lambda)$, let $B(0)$ be some open ball centered at $0$ such that $q_0 + iB(0)$ consists of nonzero $\overline{\mathcal{H}_+}^m$-stable polynomials. So, for any $r_0 \in B(0)$, Lemma [\[rs_lemma\]](#rs_lemma){reference-type="ref" reference="rs_lemma"} implies $T(q_0) + iT(r_0)$ is either $\mathcal{H}_+^m$-stable, $\mathcal{H}_-^m$-stable, or zero. Hermite-Biehler then implies $T(r_0)$ is real stable or zero whenever $r_0 \in B(0) \cap V_\mathbb{R}(\lambda)$. Therefore, $T[V_\mathbb{R}(\lambda)]$ consists of real stable polynomials, and $(c)$ follows from Lemma [\[dim_lemma\]](#dim_lemma){reference-type="ref" reference="dim_lemma"}.
+
+$(ii) \Rightarrow (i)$. If $(c)$ holds, then $(i)$ follows from Hermite-Biehler. Otherwise, suppose WLOG that $(a)$ holds. We can then use an argument similar in spirit to that of Lemma [\[bb_Clink\]](#bb_Clink){reference-type="ref" reference="bb_Clink"} to show that $T$ maps $\mathcal{H}_+^m$-stable polynomials to weakly $\mathcal{H}_+^m$-stable polynomials. Since $T$ restricts to a real operator, this implies $(i)$. ◻
+:::
+
+As in Lemma [\[bb_Clink\]](#bb_Clink){reference-type="ref" reference="bb_Clink"}, we use the previous lemma to link the characterizations of weak and strong stability preserving operators as follows. Applying the necessary maps to convert $\mathop{\mathrm{Symb}}(T)$ to $\mathop{\mathrm{Symb}}_{BB}(T)$ below gives essentially the characterization of weak real stability preserving operators given in Theorem [\[BB_Rops_thm\]](#BB_Rops_thm){reference-type="ref" reference="BB_Rops_thm"}.
+
+::: corollary
+[]{#bb_Rops label="bb_Rops"} Fix $\lambda,\alpha \in \mathbb{N}_0^m$ and a linear operator $T \in \mathop{\mathrm{Hom}}(V(\lambda),V(\alpha))$ such that $T$ restricts to a real linear operator from $V_\mathbb{R}(\lambda)$ to $V_\mathbb{R}(\alpha)$. The following are equivalent.
+
+1.  $T$ preserves weak real stability.
+
+2.  One of the following holds:
+
+    1.  $\mathop{\mathrm{Symb}}(T)$ is $(\mathcal{H}_-^m \times \mathcal{H}_+^m)$-stable.
+
+    2.  $\mathop{\mathrm{Symb}}(T)$ is $(\mathcal{H}_-^m \times \mathcal{H}_-^m)$-stable.
+
+    3.  $T$ has image of dimension at most two, and is of the form $$T: p \mapsto q \cdot \psi_1(p) + r \cdot \psi_2(p)$$ where $q,r \in V_\mathbb{R}(\alpha)$ are weakly real stable such that $q \ll r$, and $\psi_1,\psi_2$ are real linear functionals.
+:::
+
+::: proof
+*Proof.* Apply the complex characterization (Theorem [\[Cops_graces\]](#Cops_graces){reference-type="ref" reference="Cops_graces"}) to conditions $(ii)(a)$ and $(ii)(b)$ of Lemma [\[bb_Rlink\]](#bb_Rlink){reference-type="ref" reference="bb_Rlink"} above. ◻
+:::

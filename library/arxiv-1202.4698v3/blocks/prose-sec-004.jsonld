@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1202.4698v3/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1202.4698v3/blocks/prose-sec-004",
   "kind": "prose",
   "title": "A new integral formula for the b-6j symbols",
   "pageStart": 7,
   "pageEnd": 8,
   "text": "../sections/sec-004-25-a-new-integral-formula-for-the-b-6j-symbols.md",
-  "derivedFrom": "library/arxiv-1202.4698v3/manifest",
-  "sourceDocument": "library/arxiv-1202.4698v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.4698v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.4698v3/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -8,39 +8,28 @@ pages: 9-10
 source_pdf: 1104.0755v2.pdf
 source_sha256: d2fbbea44598e8f4
 doc_brief: "A connection formula between the Ramanujan function and the q-Airy function — We show a connection formula between two diﬀerent q-Airy func- tions."
+text_source: latex
+latex_prose_ratio: 0.955
+latex_coverage_ratio: 0.846
 ---
-transformation following Zhang [13].
-4.1 The q-Borel transformation and the q-Laplace trans-
-formation
-Deﬁnition 5 For f (t) = ∑
-n≥0antn, the q-Borel transformation is deﬁned
-by
-g(τ) = ( Bqf ) (τ) :=
-∑
-n≥0
-anq− n(n− 1)
-2 τn,
-and the q-Laplace transformation is given by
-(Lqg) (t) := 1
-2πi
-∫
-|τ|=r
-g(τ)θ
-(t
-τ
-) dτ
-τ , 0<r < 1
-|q2|.
-The q-Borel transformation can be considered as a formal inverse of t he q-
-Laplace transformation.
-Lemma 5 For any entire function f ,
-Lq ◦ Bqf =f.
-Proof We can prove this lemma calculating residues of the q-Laplace trans-
-formation around the origin.
-The q-Borel transformation has following operational relation;
-Lemma 6 For any l,m ∈ Z≥0,
-Bq(tmσ l
-q) = q− m(m− 1)
-2 τmσ l−m
-q Bq.
-9
+::: defi
+For $f(t)=\sum_{n\ge 0}a_nt^n$, the $q$-Borel transformation is defined by $$g(\tau )=\left(\mathcal{B}_qf\right)(\tau ):=\sum_{n\ge 0}a_nq^{-\frac{n(n-1)}{2}}\tau^n,$$ and the $q$-Laplace transformation is given by $$\left(\mathcal{L}_qg\right)(t):=\frac{1}{2\pi i}\int_{|\tau |=r}g(\tau )\theta\left(\frac{t}{\tau}\right)\frac{d\tau}{\tau },\qquad 0<r<\frac{1}{|q^2|}.$$
+:::
+
+The $q$-Borel transformation can be considered as a formal inverse of the $q$-Laplace transformation.
+
+::: lem
+For any entire function $f$, $$\mathcal{L}_q\circ\mathcal{B}_qf=f.$$
+:::
+
+::: pf
+We can prove this lemma calculating residues of the $q$-Laplace transformation around the origin.
+
+------------------------------------------------------------------------
+:::
+
+The $q$-Borel transformation has following operational relation;
+
+::: lem
+[]{#orqb label="orqb"} For any $l,m\in\mathbb{Z}_{\ge 0}$, $$\mathcal{B}_q(t^m\sigma_q^l)=q^{-\frac{m(m-1)}{2}}\tau^m\sigma_q^{l-m}\mathcal{B}_q.$$
+:::

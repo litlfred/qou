@@ -6,7 +6,8 @@
   "sha256": "38fc6fa465a06a7bc25954bfd34baccc888bd93a4e20522c26eae7d1c04af841",
   "bytes": 273662,
   "pages": 17,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -289,6 +290,107 @@
   "likely_scanned": false,
   "toc_entries": 17,
   "sections": 13,
-  "chars_total": 39614
+  "chars_total": 39614,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "osp-link-invariant-and-categorifications.tex",
+   "tex_sections": 17,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.202,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-results",
+     "title": "Results",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.275,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-002-12-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 0.081,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-2-osp12-braid-invariant",
+     "title": "osp(1|2) braid invariant",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-3-explanation-using-representation-theory",
+     "title": "Explanation using representation theory",
+     "prose_ratio": 0.5,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-32-quantum-covering-group",
+     "title": "Quantum covering group",
+     "prose_ratio": 0.051,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-31-parameters",
+     "title": "Parameters",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.188,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-007-4-two-categorifications",
+     "title": "Two Categorifications",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-41-normal-khovanov-homology",
+     "title": "Normal Khovanov Homology",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-42-e-graded-khovanov-homology",
+     "title": "e-graded Khovanov Homology",
+     "prose_ratio": 0.91,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-421-r1",
+     "title": "R1",
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.833,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-43-e-graded-covering-khovanov-homology",
+     "title": "e-graded Covering Khovanov Homology",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

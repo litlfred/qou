@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1312.3086v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Quantum repeater with Rydberg blocked atomic ensembles in ﬁber-coupled cavities (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1312.3086v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1312.3086&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1312.3086v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1312.3086v1",
+    "content_type": "application/gzip",
+    "sha256": "d78a5a4d0ea2dfcdddab650503416063a8f852635540eeb9a552684679fb9304",
+    "bytes": 832644,
+    "fetched": "2026-10-10T15:08:51+00:00",
+    "files": [
+      {
+        "path": "source/files/article.tex",
+        "role": "tex",
+        "sha256": "c64d9168803b8f8ad649a33ca9d32bf37ca0feac427ec27b32d939f37fd84744",
+        "bytes": 62908
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

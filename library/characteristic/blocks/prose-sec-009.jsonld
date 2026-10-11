@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/characteristic/blocks/prose-sec-009",
+  "kind": "prose",
+  "title": "Computing the Aq polynomial of a knot",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "text": "../sections/sec-009-23-computing-the-aq-polynomial-of-a-knot.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/characteristic/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/characteristic/manifest.jsonld",
+  "provenance": "ingested"
+}

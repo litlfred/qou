@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/zagier-the-dilogarithm-function-copy-b/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/zagier-the-dilogarithm-function-copy-b/blocks/prose-sec-010",
   "kind": "prose",
-  "title": "Li2(1) − 1",
-  "pageStart": 6,
-  "pageEnd": 6,
-  "text": "../sections/sec-010-2-li21-1.md",
-  "derivedFrom": "library/zagier-the-dilogarithm-function-copy-b/manifest",
-  "sourceDocument": "library/zagier-the-dilogarithm-function-copy-b/manifest",
+  "title": "References",
+  "pageStart": 61,
+  "pageEnd": 63,
+  "text": "../sections/sec-010-references.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zagier-the-dilogarithm-function-copy-b/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zagier-the-dilogarithm-function-copy-b/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,27 @@
+{
+ "url": "https://arxiv.org/e-print/0806.2317v1",
+ "content_type": "application/gzip",
+ "sha256": "9df63168f8c7bc91652e1a9f6bb02c1cacff78b52365be9ade0e414ea47edb3f",
+ "bytes": 25329,
+ "fetched": "2026-10-10T15:00:48+00:00",
+ "files": [
+  {
+   "path": "files/mathdots.sty",
+   "role": "sty",
+   "sha256": "990eb71f66cb8efe9160be69755479b906f22929fc899e5c285faa0f7483e9de",
+   "bytes": 3342
+  },
+  {
+   "path": "files/subspacepaper.bbl",
+   "role": "bbl",
+   "sha256": "d2b4fcdfb78ab94e31db333758fa1062162ad1497dcd0d0164e0a687ee7b400a",
+   "bytes": 4200
+  },
+  {
+   "path": "files/subspacepaper.tex",
+   "role": "tex",
+   "sha256": "1e43680661df39a75a200da85f0cdc00a482872e2f6643da2d90dd1008f7e1bc",
+   "bytes": 74231
+  }
+ ]
+}

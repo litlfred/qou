@@ -8,264 +8,242 @@ pages: 6-9
 source_pdf: 1205.4619v1.pdf
 source_sha256: 8c76e30a52dca571
 doc_brief: "Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators — An attempt has been made to investigate the global SU (2) and SU (3) unitary ﬂavor symmetries systematically in terms of"
+text_source: latex
+latex_prose_ratio: 0.607
+latex_coverage_ratio: 1.0
 ---
-Let us deﬁne the free particle quaternion Dirac equation [26 ] for a particle of mass m as
-(iγµ∂µ −m)ψ =0. (26)
-Here, we used the following quaternion valued Weyl represen tation of γ matrices as it is convenient for
-ultra relativistic problems i.e
-γ0 =
-[
-0 e0
-e0 0
-]
-, ≡
-[
-0 ˆ12
-ˆ12 0
-]
-, γ j =
-[
-0 −iej
-iej 0
-]
-≡
-[
-0 τ j
-−τ j 0
-]
-(∀j = 1, 2, 3). (27)
-In Weyl representation, we have
-(
-γ0) †
-= γ0,
-(
-γj) †
-= −γj and {γµ, γν} = γµγν +γνγµ = 0 ( ∀µ,ν =
-0, 1, 2, 3). Rather, at suﬃciently low energies [27] the eﬀect of weak in teractions dies away and the
-dominant contribution appears due to the presence of electr omagnetic and the strong interactions both
-of which are Parity conserving interactions. So, we use the s implest representation that closes under
-Parity ˆP for Dirac spinor ﬁeld ψ in equation (26) as,
-ψ =
-(
-ψL
-ψR
-)
-∼= ( 1
-2, 0) ⊕ (0, 1
-2 ) (28)
-where ( 1
-2, 0) and (0, 1
-2 ) are the simplest representations of the Lorentz group SL(2,C ) so that an object
-transforming in the ( 1
-2, 0) representation is called a left-chiral ψL Weyl spinor. Similarly, an object
-transforming in the (0, 1
-2 ) representation of Lorentz group SL(2,C ), is called a right-chiral Weyl spinor
-ψR. It is to be noted that the meaning assigned to the technical w ord ’chiral’ (or so called chirality means
-handedness)) is associated with the matrix γ5 which anti-commutes with all Dirac matrices (27) i.e.
-{
-γ5, γµ}
-=γ5γµ +γµγ5 = 0 ( ∀µ = 0, 1, 2, 3). (29)
-6
-So, from the anti-commutation relation {γµ, γν} = γµγν +γνγµ = 0 ( ∀µ,ν = 0, 1, 2, 3) between the
-γmatrices (27), it can be easily seen that the matrix
-γ5 =iγ0γ1γ2γ3 =
-(
-−e0 0
-0 e0
-)
-≡
-(
-−ˆ12 0
-0 ˆ12
-)
-(30)
-satisﬁes Eq. (29) along with the following properties
-(
-γ5) †
-=γ5;
-(
-γ5) 2
-= ˆ12 ≡ 1. (31)
-As such, we may deﬁne the “left-handed” and “right-handed” p rojection operators (which are generally
-used as the terms “left-chiral” and “right-chiral”) as
-ˆPL = 1
-2
-(
-1 −γ5)
-; ˆPR = 1
-2
-(
-1 +γ5)
-; (32)
-which shows that the operators ˆPL/R project onto the left/right-chiral Weyl spinor as
-ˆPLψ = 1
-2
-(
-1 −γ5)
-ψ =
-(
-ψL
+Let us define the free particle quaternion Dirac equation \cite{key-26}
+for a particle of mass $m$ as 
+
+\begin{align}
+\left(i\gamma^{\mu}\partial_{\mu}-m\right)\psi= & 0.\label{eq:26}
+\end{align}
+Here, we used the following quaternion valued Weyl representation
+of $\gamma$ matrices as it is convenient for ultra relativistic problems
+i.e
+
+\begin{align}
+\gamma^{0}=\left[\begin{array}{cc}
+0 & e_{0}\\
+e_{0} & 0
+\end{array}\right],\equiv\left[\begin{array}{cc}
+0 & \hat{1}_{2}\\
+\hat{1}_{2} & 0
+\end{array}\right],\,\,\,\,\,\, & \gamma^{j}=\left[\begin{array}{cc}
+0 & -ie_{j}\\
+ie_{j} & 0
+\end{array}\right]\equiv\left[\begin{array}{cc}
+0 & \tau^{j}\\
+-\tau^{j} & 0
+\end{array}\right](\forall j=1,2,3).\label{eq:27}
+\end{align}
+In Weyl representation, we have $\left(\gamma^{0}\right)^{\dagger}=\gamma^{0}$,
+$\left(\gamma^{j}\right)^{\dagger}=-\gamma^{j}$ and $\left\{ \text{\textgreek{g}}^{\mu},\,\text{\textgreek{g}}^{\nu}\right\} =\text{\textgreek{g}}^{\mu}\text{\textgreek{g}}^{\nu}+\gamma^{\nu}\gamma^{\mu}=0\,(\forall\mu,\nu=0,1,2,3)$.
+Rather, at sufficiently low energies \cite{key-27} the effect of
+weak interactions dies away and the dominant contribution appears
+due to the presence of electromagnetic and the strong interactions
+both of which are Parity conserving interactions. So, we use the simplest
+representation that closes under Parity $\mathbb{\hat{P}}$ for Dirac
+spinor field $\psi$ in equation (\ref{eq:26}) as,
+
+\begin{align}
+\psi= & \left(\begin{array}{c}
+\psi_{L}\\
+\psi_{R}
+\end{array}\right)\cong(\frac{1}{2},\,0)\,\oplus(0,\,\frac{1}{2})\label{eq:28}
+\end{align}
+where $(\frac{1}{2},\,0)$ and $(0,\,\frac{1}{2})$ are the simplest
+representations of the Lorentz group $SL(2,C)$ so that an object
+transforming in the $(\frac{1}{2},\,0)$ representation is called
+a left-chiral $\psi_{L}$ Weyl spinor. Similarly, an object transforming
+in the $(0,\,\frac{1}{2})$ representation of Lorentz group $SL(2,C)$,
+is called a right-chiral Weyl spinor $\psi_{R}$. It is to be noted
+that the meaning assigned to the technical word 'chiral' (or so called
+chirality means handedness)) is associated with the matrix $\lyxmathsym{\textgreek{g}}^{5}$
+which anti-commutes with all Dirac matrices (\ref{eq:27}) i.e.
+
+\begin{align}
+\left\{ \lyxmathsym{\textgreek{g}}^{5}\,,\,\lyxmathsym{\textgreek{g}}^{\mu}\right\} = & \text{\textgreek{g}}^{5}\lyxmathsym{\textgreek{g}}^{\mu}+\gamma^{\mu}\gamma^{5}=0\,\,(\forall\mu=0,1,2,3).\label{eq:29}
+\end{align}
+So, from the anti-commutation relation $\left\{ \text{\textgreek{g}}^{\mu},\,\lyxmathsym{\textgreek{g}}^{\nu}\right\} =\text{\textgreek{g}}^{\mu}\text{\textgreek{g}}^{\nu}+\gamma^{\nu}\gamma^{\mu}=0\,(\forall\mu,\nu=0,1,2,3)$
+between the $\lyxmathsym{\textgreek{g}}$matrices (\ref{eq:27}),
+it can be easily seen that the matrix
+
+\begin{align}
+\gamma^{5}=i\gamma^{0}\gamma^{1}\gamma^{2}\gamma^{3} & =\left(\begin{array}{cc}
+-e_{0} & 0\\
+0 & e_{0}
+\end{array}\right)\equiv\left(\begin{array}{cc}
+-\widehat{1}_{2} & 0\\
+0 & \hat{1}_{2}
+\end{array}\right)\label{eq:30}
+\end{align}
+satisfi{}es Eq. (\ref{eq:29}) along with the following properties
+
+\begin{align}
+\left(\gamma^{5}\right)^{\dagger}=\gamma^{5};\,\,\,\,\,\,\, & \left(\gamma^{5}\right)^{2}=\hat{1}_{2}\equiv1.\label{eq:31}
+\end{align}
+As such, we may define the \textquotedblleft{}left-handed\textquotedblright{}
+and \textquotedblleft{}right-handed\textquotedblright{} projection
+operators (which are generally used as the terms \textquotedblleft{}left-chiral\textquotedblright{}
+and \textquotedblleft{}right-chiral\textquotedblright{}) as
+
+\begin{align}
+\widehat{P}_{L}=\frac{1}{2}\left(1-\gamma^{5}\right);\,\,\,\,\,\,\,\, & \widehat{P}_{R}=\frac{1}{2}\left(1+\gamma^{5}\right);\label{eq:32}
+\end{align}
+which shows that the operators $\widehat{P}_{L/R}$ project onto the
+left/right-chiral Weyl spinor as
+
+\begin{align}
+\widehat{P}_{L}\psi=\frac{1}{2}\left(1-\gamma^{5}\right)\psi=\left(\begin{array}{c}
+\psi_{L}\\
 0
-)
-≡ψL; ˆPRψ = 1
-2
-(
-1 +γ5)
-ψ =
-(
-0
-ψR
-)
-≡ψR. (33)
-Thus, we may write the suitable Dirac Lagrangian for left-ri ght chiral spinors as,
-LD =ψ†
-Leµ∂µψL +ψ†
-Reµ∂µψR −m
-(
-ψ†
-LψR +ψ†
-RψL
-)
-; (34)
-where µ = 0, 1, 2, 3. Here, the Euler-Lagrange equations are obtained on conside ring ψL and ψ⋆
-L inde-
-pendent (since they are complex ﬁelds) and similarly for ψR, ψ⋆
-R. Then, performing the variations with
-respect to ψ⋆
-L and ψ⋆
-R, we get that the Dirac equation (26) is equivalent to the pair of equations
-eµ∂µψL =mψR;
-eµ∂µψR =mψL. (35)
-These two pairs of equations decouple for the m = 0 (i.e for zero mass) particles like neutrinos. We may
-also write the Lagrangian in a compact form for which it is con venient to deﬁne the Dirac adjoint spinor
-as ψ =ψ†γ0 ≡
-(
-ψ†
-R,ψ †
-L
-)
-in chiral representation. hence, the compact and consisten t form of the Dirac
-Lagrangian may be written as,
-LD =ψ (iγµ∂µ −m)ψ. (36)
-4 Flavor SU (3)f and Octonions
-Gell-Mann and Ne’eman [28] were the ﬁrst to propose SU (3)f as the correct generalization of isospin
-SU (2)f to include third quantum number the strangeness along with t he isospin. The Gell-Mann λ
-7
-matrices are used for the representations of the inﬁnitesim al generators of the special unitary group
-called SU (3). This group consists eight linearly independent generator s FA = λA
-2 (∀A = 1, 2, 3,........ 8)
+\end{array}\right)\equiv\psi_{L};\,\,\,\,\,\,\,\, & \widehat{P}_{R}\psi=\frac{1}{2}\left(1+\gamma^{5}\right)\psi=\left(\begin{array}{c}
+0\\
+\psi_{R}
+\end{array}\right)\equiv\psi_{R}.\label{eq:33}
+\end{align}
+Thus, we may write the suitable Dirac Lagrangian for left-right chiral
+spinors as,
+
+\begin{align}
+\mathcal{L}_{D}= & \psi_{L}^{\dagger}\overline{e_{\mu}}\partial_{\mu}\psi_{L}+\psi_{R}^{\dagger}\overline{e_{\mu}}\partial_{\mu}\psi_{R}-m\left(\psi_{L}^{\dagger}\psi_{R}+\psi_{R}^{\dagger}\psi_{L}\right);\label{eq:34}
+\end{align}
+where $\mu=0,1,2,3.$ Here, the Euler-Lagrange equations are obtained
+on considering $\psi_{L}$ and $\psi_{L}^{\star}$ independent (since
+they are complex fields) and similarly for $\psi_{R}$, $\psi_{R}^{\star}$.
+Then, performing the variations with respect to $\psi_{L}^{\star}$
+and $\psi_{R}^{\star}$, we get that the Dirac equation (\ref{eq:26})
+is equivalent to the pair of equations
+
+\begin{align}
+\overline{e_{\mu}}\partial_{\mu}\psi_{L}= & m\psi_{R};\nonumber \\
+\overline{e_{\mu}}\partial_{\mu}\psi_{R}= & m\psi_{L}.\label{eq:35}
+\end{align}
+These two pairs of equations decouple for the $m=0$ (i.e for zero
+mass) particles like neutrinos. We may also write the Lagrangian in
+a compact form for which it is convenient to define the Dirac adjoint
+spinor as $\overline{\psi}=\psi^{\dagger}\gamma^{0}\equiv\left(\psi_{R}^{\dagger},\psi_{L}^{\dagger}\right)$
+in chiral representation. hence, the compact and consistent form of
+the Dirac Lagrangian may be written as,
+
+\begin{align}
+L_{D}= & \overline{\psi}\left(i\gamma^{\mu}\partial_{\mu}-m\right)\psi.\label{eq:36}
+\end{align}
+
+
+
+
+\section{Flavor $SU(3)_{f}$ and Octonions}
+
+Gell-Mann and Ne'eman \cite{key-28} were the first to propose $SU(3)_{f}$
+as the correct generalization of isospin $SU(2)_{f}$ to include third
+quantum number the strangeness along with the isospin. The Gell-Mann
+$\lambda$ matrices are used for the representations of the infinitesimal
+generators of the special unitary group called $SU(3)$. This group
+consists eight linearly independent generators $F_{A}=\frac{\lambda_{A}}{2}(\forall\, A=1,2,3,........8)$
 which satisfy the following commutation relation as
-[FA,F B] =ifABCFC (37)
-wherefABC is the structure constants of SU (3) likeǫjkl ofSU (2) and is completely antisymmetric. The
-Gell-Mann matrices λA(∀A = 1, 2, 3,........ 8) are deﬁned as
-λ1 =
-
-
-0 1 0
-1 0 0
-0 0 0
-
- ; λ2 =
-
-
-0 −i 0
-i 0 0
-0 0 0
-
- ;
-λ3 =
-
-
-1 0 0
-0 −1 0
-0 0 0
-
- ; λ4 =
-
-
-0 0 1
-0 0 0
-1 0 0
-
- ;
-λ5 =
-
-
-0 0 −i
-0 0 0
-i 0 0
-
- ; λ6 =
-
-
-0 0 0
-0 0 1
-0 1 0
-
- ;
-λ7 =
-
-
-0 0 0
-0 0 −i
-0 i 0
-
- ; λ8 = 1√3
-
-
-1 0 0
-0 1 0
-1 0 −2
-
- (38)
+
+\begin{align}
+\left[F_{A}\,,F_{B}\right]= & if_{ABC}F_{C}\label{eq:37}
+\end{align}
+where $f_{ABC}$ is the structure constants of $SU(3)$ like $\epsilon_{jkl}$
+of $SU(2)$ and is completely antisymmetric. The Gell-Mann matrices
+$\lambda_{A}(\forall\, A=1,2,3,........8)$ are defined as
+
+\begin{align}
+\lambda_{1}= & \begin{pmatrix}0 & 1 & 0\\
+1 & 0 & 0\\
+0 & 0 & 0
+\end{pmatrix};\qquad\:\lambda_{2}=\,\begin{pmatrix}0 & -i & 0\\
+i & 0 & 0\\
+0 & 0 & 0
+\end{pmatrix};\nonumber \\
+\lambda_{3}= & \begin{pmatrix}1 & 0 & 0\\
+0 & -1 & 0\\
+0 & 0 & 0
+\end{pmatrix};\qquad\lambda_{4}=\,\begin{pmatrix}0 & 0 & 1\\
+0 & 0 & 0\\
+1 & 0 & 0
+\end{pmatrix};\nonumber \\
+\lambda_{5}= & \begin{pmatrix}0 & 0 & -i\\
+0 & 0 & 0\\
+i & 0 & 0
+\end{pmatrix};\qquad\lambda_{6}=\,\begin{pmatrix}0 & 0 & 0\\
+0 & 0 & 1\\
+0 & 1 & 0
+\end{pmatrix};\nonumber \\
+\lambda_{7}= & \begin{pmatrix}0 & 0 & 0\\
+0 & 0 & -i\\
+0 & i & 0
+\end{pmatrix};\qquad\lambda_{8}=\,\frac{1}{\surd3}\begin{pmatrix}1 & 0 & 0\\
+0 & 1 & 0\\
+1 & 0 & -2
+\end{pmatrix}\label{eq:38}
+\end{align}
 which satisfy the following properties
-(λA)† =λA;
-Tr (λA) = 0 Tr (λAλB) = 2δAB;
-[λA,λ B] =2if ABCλC ;
-{λA,λ B} = 4
-3δAB + 2dABCλC. (39)
-Here dABC is totally symmetric tensor and it is required only to obtain one of the Casimir operators
-of SU (3) symmetry group. Gellmann λ matrices obviously act on three component column vectors as
-the generalization of the two component isospinors of SU (2). The generators of SU (3)f connect three
-quarks namely the up (u), down (d). and strange (s) quarks so that we may consider unitary 3 × 3
-transformations among them as
-ψ/barshort=Wψ ; (40)
-where ψ now stands for the three component column vector
-ψ =
-
-
-u
-d
+
+\begin{align}
+\left(\lambda_{A}\right)^{\dagger}= & \lambda_{A};\nonumber \\
+Tr(\lambda_{A})=0\,\,\,\,\,\,\, & Tr(\lambda_{A}\lambda_{B})=2\delta_{AB};\nonumber \\
+\left[\lambda_{A},\lambda_{B}\right]= & 2if^{ABC}\lambda_{C};\nonumber \\
+\left\{ \lambda_{A},\lambda_{B}\right\} = & \frac{4}{3}\delta_{AB}+2\, d_{ABC}\lambda_{C}.\label{eq:39}
+\end{align}
+Here $d_{ABC}$ is totally symmetric tensor and it is required only
+to obtain one of the Casimir operators of $SU(3)$ symmetry group.
+Gellmann $\lambda$ matrices obviously act on three component column
+vectors as the generalization of the two component isospinors of $SU(2).$
+The generators of $SU(3)_{f}$ connect three quarks namely the up
+$(u)$, down $(d)$. and strange $(s)$ quarks so that we may consider
+unitary $3\times3$ transformations among them as
+
+\begin{align}
+\psi^{\shortmid}= & W\psi;\label{eq:40}
+\end{align}
+where $\psi$ now stands for the three component column vector
+
+\begin{align*}
+\psi= & \left(\begin{array}{c}
+u\\
+d\\
 s
-
- ;
-8
-andW is the 3 × 3 unitary matrix of determinant 1. The representation provided by this triplet of states
-is called the fundamental representation of SU (3)f . An inﬁnitesimal SU (3) matrix may then be deﬁned
-as
-Winf l =ˆ13 +iχ; (41)
-where ˆ13is the unit matrix of order 3 and χ is 3 × 3 matrix and satisﬁes the properties of octonions
-[17, 19]. The relation between Gell - Mann λ matrices and octonion units are given [18] as
-e1 ⇒iλ1, e2 ⇒iλ2, e3 ⇒iλ3 ↦− →eA ⇐ ⇒iλA; ( ∀A = 1, 2, 3);
-e4 ⇒i
-2λ4, e5 ⇒ i
-2λ5, ⇐ ⇒eA = i
-2λA; ( ∀A = 4, 5, );
-e6 ⇒ −i
-2λ6, e7 ⇒ −i
-2λ7, ⇐ ⇒eA = −i
-2λA; ( ∀A = 6, 7, );
-e0 ⇐ ⇒
-√3
-2 λ8; (42)
-where eA(A = 1, 2,....., 7) are imaginary octonion units and e0 is the real octonion basis element corre-
-sponding to unity. Here, a set of octets (e0, e1, e2, e3, e4, e5, e6, e7) are known as the octonion [6] basis
-elements and satisfy the following multiplication rules
-e0 = 1; e0eA =eAe0 =eA;
-eAeB = −δABe0 +fABCeC. (∀A, B, C= 1, 2,....., 7). (43)
-The structure constants fABC is completely antisymmetric and takes the value 1 for the following com-
-binations,
-fABC = +1;
-∀ (ABC ) = (123) , (471), (257), (165), (624), (543), (736). (44)
-Thus, it is worth noting to suitably handle the octonions in o rder to reexamine the SU (3)f symmetry
-group and its properties.
+\end{array}\right);
+\end{align*}
+and $W$ is the $3\times3$ unitary matrix of determinant$1$. The
+representation provided by this triplet of states is called the fundamental
+representation of $SU(3)_{f}$. An infinitesimal $SU(3)$ matrix may
+then be defined as 
+
+\begin{align}
+W_{infl}= & \hat{1}_{3}+i\chi;\label{eq:41}
+\end{align}
+where $\hat{1}_{3}$is the unit matrix of order $3$ and $\chi$ is
+$3\times3$ matrix and satisfies the properties of octonions \cite{key- 17,key-19}.
+The relation between Gell - Mann $\lambda$ matrices and octonion
+units are given \cite{key-18} as 
+
+\begin{align}
+e_{1}\Rightarrow & i\lambda_{1},\; e_{2}\Rightarrow i\lambda_{2},\; e_{3}\Rightarrow i\lambda_{3}\longmapsto e_{A}\Longleftrightarrow i\lambda_{A};\,\,\,\,\,(\forall\: A=1,2,3);\nonumber \\
+e_{4}\Rightarrow & \frac{i}{2}\lambda_{4},\,\,\, e_{5}\Rightarrow\frac{i}{2}\lambda_{5},\Longleftrightarrow e_{A}=\frac{i}{2}\lambda_{A};\,\,\,\,\,(\forall\: A=4,5,);\nonumber \\
+e_{6}\Rightarrow- & \frac{i}{2}\lambda_{6},\text{\,\,\,}e_{7}\Rightarrow-\frac{i}{2}\lambda_{7},\Longleftrightarrow e_{A}=-\frac{i}{2}\lambda_{A};\,\,\,\,\,(\forall\: A=6,7,);\nonumber \\
+e_{0}\Longleftrightarrow & \frac{\surd3}{2}\lambda_{8};\label{eq:42}
+\end{align}
+where $e_{A}(A=1,2,.....,7)$ are imaginary octonion units and $e_{0}$
+is the real octonion basis element corresponding to unity. Here, a
+set of octets $(e_{0},\, e_{1},\, e_{2},\, e_{3},\, e_{4},\, e_{5},\, e_{6},\, e_{7})$
+are known as the octonion \cite{key-6} basis elements and satisfy
+the following multiplication rules
+
+\begin{align}
+e_{0}=1;\,\, e_{0}e_{A}=e_{A}e_{0}= & e_{A};\nonumber \\
+e_{A}e_{B}=-\delta_{AB}e_{0}+f_{ABC}e_{C}.\,\,(\forall\, A,\, B,\, C=1,\,2,.....,\,7) & .\label{eq:43}
+\end{align}
+The structure constants $f_{ABC}$ is completely antisymmetric and
+takes the value $\mbox{\ensuremath{1}}$ for the following combinations,
+
+\begin{eqnarray}
+f_{ABC} & = & +1;\nonumber \\
+\forall & (ABC) & =(123),\,(471),\,(257),\,(165),\,(624),\,(543),\,(736).\label{eq:44}
+\end{eqnarray}
+Thus, it is worth noting to suitably handle the octonions in order
+to reexamine the $SU(3)_{f}$ symmetry group and its properties.

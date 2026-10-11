@@ -8,89 +8,18 @@ pages: 6-7
 source_pdf: 2211.12836v2.pdf
 source_sha256: 4ffbb8b21f8b175d
 doc_brief: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION — We study a class of commuting Markov kernels whose simplest element describes the movement ofk particles on a discrete"
+text_source: latex
+latex_prose_ratio: 0.971
+latex_coverage_ratio: 0.865
 ---
-through the mapξn. This map can be transformed into a map, still denoted byξn, fromM≥0(Bk,n)
-toMf(Tk), the space of ﬁnite Radon measures on Tk with the formula
-ξn(µ) =
-(2π
-n
-)k ∑
-I∈Bk,n
-µ(I)δξn(I).
-As explained in the previous section, for µ ∈ M1(Bk,n) we have ∑
-I∈Bk,nµh(I)µ(I) = 1 with
-µh(I) = |V (ξn(I)|2
-nk , so that
-(3)
-∫
-Tk
-|V (⃗ u)|2
-(2π)k d [ξn(µ)] (⃗ u) = 1.
-The latter equality is reminiscent of the spectral projection of conjugation invariant probability
-measures on the unitary group U(k). Indeed, according to the Weyl integration formula [1, Section
-4], the projection p :U(k)→Tk mappingU to the arguments of its eigenvalues sorted in decreasing
-order (and taken in [0, 2π)) transforms the Haar measure µH on U(k) into the measure
-dp⋆µH(⃗ u) =|V (⃗ u)|2
-(2π)k d⃗ u
-onTk, where p⋆ denotes the push-forward of µH throughp 1. For ⃗ u∈Tk, |V (⃗ u)|2
-(2π)k is exactly the area
-of the adjoint orbitO(⃗ u) of unitary matrices having eigenvalues
-(
-eiu1,...,e iuk
-)
-, see [1, Section 4.1,
-Eq. (4.1.17)]. Hence, for any conjugation invariant probability measure ˜µ on U(k) with density f
-with respect to µH (which means that f = ˜f◦p for some measurable function ˜f : Tk→ R), we
-have
-dp⋆˜µ(⃗ u) =|V (⃗ u)|2
-(2π)k
-˜f(⃗ u)d⃗ u,
-onTk. In particular, ˜f(⃗ u)d⃗ usatisﬁes (3). Let us denote byM1(Tk) the closure in the weak topology
-of the set of positive measurable functions ˜f onTk such that (3) is satisﬁed withd [ξn(µ)] (⃗ u) replaced
-1We recall that p⋆µ(A) =µ(p−1(A)) for A measurable set of Tk.
-QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION 7
-byf(⃗ u)d⃗ u. Note that the set of extreme points of the convex setM1(Tk) includes the weighted Dirac
-masses (2π)k
-|V (⃗ u)|2δ⃗ ufor elements⃗ uofTk with|V (⃗ u)|> 0. As a consequence, ξn [M1(Bk,n)]⊂M 1(Tk).
-For any element µ ofM1(Tk), there exists a unique conjugation invariant probability measure
-p⋆µ onU(k) (meaning that p⋆µ(UEU∗) =p⋆µ(E) for all U∈U(k) and E measurable set of U(k))
-such that
-p⋆ [p⋆µ] =µ,
-so thatp⋆ yields an embedding ofM1(Tk) into the set of conjugation invariant probability measures
-on U(k), see [1, Chapter 4]. Dirac masses on M1(Tk) correspond through p⋆ to Dirac masses on
-orbitsO(⃗ u) = {U ∈ U(k), p(U) = ⃗ u) for ⃗ u∈ Tk. In particular, the set M1(Bk,n), which had
-been seen previously as a discrete subset of M1(Tk), can now be considered through p⋆ as a set of
-conjugation invariant probability measures on U(k).
-The relation betweenBk,n andU(k) is actually much stronger. There exists a natural convolution
-product∗ on the set of probability measures on U(k) which is characterized for µ,ν probability
-measures on U(k) by the formula
-∫
-U(k)
-f(U)d [µ∗ν] (U) =
-∫
-U(k)×U(k)
-f(UV )dµ(U)⊗dµ(V )
-for any continuous map f : U(k)→ R. Conjugating by p⋆ turns this product into a convolution
-product, also denoted by ∗, on the set M1(Tk).
-The set (M1(Bk,n),∗) can be seen as an-step discrete version of the space (M1(Tk),∗)), although
-the former is not a subgroup of the latter. However, it has been proven in [18, Proposition 7.1]
-that the convolution algebra (M1(Bk,n),∗) converges towards (M1(Tk,∗)) as n goes to inﬁnity in
-some sense. Indeed, for λ,µ ∈ Tk which are decreasing, set λ(n) =
-{⌊
-nλi
-2π
-⌋}
-1≤i≤k
-for n≥ 1 and
-similarly for µ(n), so that ξn(λ(n)) (resp. ξn(µ(n))) converges to λ (resp. µ) as n→∞ . Then,
-λ(n),µ (n)∈Bk,n for n large enough and, as n→∞ ,
-lim
-n→∞
-ξn
-( eλ(n)
-µh(λ(n))∗Bk,n
-eµ(n)
-µh(µ(n))
-)
-=δ(λ)∗Tkδ(µ) =p⋆(δO(λ)∗U(k)δO(µ)),
-where we wrote∗F to specify that the convolution occurs in the group M1(F ).
+Recall that we embedded $B_{k,n}$ into $T_k$ through the map $\xi_n$. This map can be transformed into a map, still denoted by $\xi_n$, from $\mathcal{M}_{\geq 0}(B_{k,n})$ to $\mathcal{M}_f( T_{k})$, the space of finite Radon measures on $T_{k}$ with the formula $$\xi_n(\mu)=\left(\frac{2\pi}{n}\right)^k\sum_{I\in B_{k,n}}\mu(I)\delta_{\xi_n(I)}.$$ As explained in the previous section, for $\mu\in\mathcal{M}_{1}(B_{k,n})$ we have $\sum_{I\in B_{k,n}}\mu^h(I)\mu(I)=1$ with $\mu^h(I)=\frac{\vert V(\xi_n(I)\vert^2}{n^k}$, so that $$\label{eq:spherical_integral_xi(mu)}
+\int_{ T_{k}}\frac{\left\vert V\left(\vec{u}\right)\right\vert^2}{(2\pi)^k}d\left[\xi_n(\mu)\right](\vec{u})=1.$$ The latter equality is reminiscent of the spectral projection of conjugation invariant probability measures on the unitary group $U(k)$. Indeed, according to the Weyl integration formula [@AGZ Section 4], the projection $p:U(k)\rightarrow  T_{k}$ mapping $U$ to the arguments of its eigenvalues sorted in decreasing order (and taken in $[0,2\pi)$) transforms the Haar measure $\mu_H$ on $U(k)$ into the measure $$dp_{\star}\mu_H(\vec{u})=\frac{\left\vert V\left(\vec{u}\right)\right\vert^2}{(2\pi)^k}d\vec{u}$$ on $T_{k}$, where $p_{\star}$ denotes the push-forward of $\mu_H$ through $p$ [^1]. For $\vec{u}\in  T_{k}$, $\frac{\left\vert V\left(\vec{u}\right)\right\vert^2}{(2\pi)^k}$ is exactly the area of the adjoint orbit $\mathcal{O}(\vec{u})$ of unitary matrices having eigenvalues $\left(e^{i u_1},\ldots,e^{iu_k}\right)$, see [@AGZ Section 4.1, Eq. (4.1.17)]. Hence, for any conjugation invariant probability measure $\tilde{\mu}$ on $U(k)$ with density $f$ with respect to $\mu_H$ (which means that $f=\tilde{f}\circ p$ for some measurable function $\tilde{f}:T_k\rightarrow \mathbb{R}$), we have $$dp_{\star}\tilde{\mu}(\vec{u})=\frac{\left\vert V\left(\vec{u}\right)\right\vert^2}{(2\pi)^k} \tilde{f}(\vec{u})d\vec{u},$$ on $T_k$. In particular, $\tilde{f}(\vec{u})d\vec{u}$ satisfies [\[eq:spherical_integral_xi(mu)\]](#eq:spherical_integral_xi(mu)){reference-type="eqref" reference="eq:spherical_integral_xi(mu)"}. Let us denote by $\mathcal{M}_1( T_{k})$ the closure in the weak topology of the set of positive measurable functions $\tilde{f}$ on $T_k$ such that [\[eq:spherical_integral_xi(mu)\]](#eq:spherical_integral_xi(mu)){reference-type="eqref" reference="eq:spherical_integral_xi(mu)"} is satisfied with $d\left[\xi_n(\mu)\right](\vec{u})$ replaced by $f(\vec{u})d\vec{u}$. Note that the set of extreme points of the convex set $\mathcal{M}_1( T_{k})$ includes the weighted Dirac masses $\frac{(2\pi)^k}{\vert V(\vec{u})\vert^2}\delta_{\vec{u}}$ for elements $\vec{u}$ of $T_k$ with $\vert V(\vec{u})\vert>0$. As a consequence, $\xi_n\left[\mathcal{M}_{1}(B_{k,n})\right]\subset\mathcal{M}_1(T_k)$.
+
+For any element $\mu$ of $\mathcal{M}_1(T_k)$, there exists a unique conjugation invariant probability measure $p^{\star}\mu$ on $U(k)$ (meaning that $p^{\star}\mu(UEU^*)=p^{\star}\mu(E)$ for all $U\in U(k)$ and $E$ measurable set of $U(k)$) such that $$p_{\star}\left[p^{\star}\mu\right]=\mu,$$ so that $p^{\star}$ yields an embedding of $\mathcal{M}_1(T_k)$ into the set of conjugation invariant probability measures on $U(k)$, see [@AGZ Chapter 4]. Dirac masses on $\mathcal{M}_1(T_k)$ correspond through $p^{\star}$ to Dirac masses on orbits $\mathcal{O}(\vec{u})=\{U\in U(k),\, p(U)=\vec{u})$ for $\vec{u}\in T_k$. In particular, the set $\mathcal{M}_{1}(B_{k,n})$, which had been seen previously as a discrete subset of $\mathcal{M}_1(T_k)$, can now be considered through $p^{\star}$ as a set of conjugation invariant probability measures on $U(k)$.
+
+The relation between $B_{k,n}$ and $U(k)$ is actually much stronger. There exists a natural convolution product $*$ on the set of probability measures on $U(k)$ which is characterized for $\mu,\nu$ probability measures on $U(k)$ by the formula $$\int_{U(k)}f(U)d\left[\mu*\nu\right](U)=\int_{U(k)\times U(k)}f(UV)d\mu(U)\otimes d\mu(V)$$ for any continuous map $f:U(k)\rightarrow \mathbb{R}$. Conjugating by $p^\star$ turns this product into a convolution product, also denoted by $*$, on the set $\mathcal{M}_1( T_{k})$.
+
+The set $(\mathcal{M}_1(B_{k,n}),*)$ can be seen as a $n$-step discrete version of the space $(\mathcal{M}_1( T_{k}),*))$, although the former is not a subgroup of the latter. However, it has been proven in [@De Proposition 7.1] that the convolution algebra $(\mathcal{M}_1(B_{k,n}),*)$ converges towards $(\mathcal{M}_1( T_{k},*))$ as $n$ goes to infinity in some sense. Indeed, for $\lambda,\mu\in  T_{k}$ which are decreasing, set $\lambda^{(n)}=\left\{\left\lfloor \frac{n\lambda_i}{2\pi}\right\rfloor\right\}_{1\leq i\leq k}$ for $n\geq 1$ and similarly for $\mu^{(n)}$, so that $\xi_{n}(\lambda^{(n)})$ (resp. $\xi_n(\mu^{(n)})$) converges to $\lambda$ (resp. $\mu$) as $n\rightarrow \infty$. Then, $\lambda^{(n)}, \mu^{(n)}\in B_{k,n}$ for $n$ large enough and, as $n\rightarrow \infty$, $$\lim_{n\rightarrow \infty}\xi_n\left(\frac{e_{\lambda^{(n)}}}{\mu^h(\lambda^{(n)})}*_{B_{k,n}}\frac{e_{\mu^{(n)}}}{\mu^h(\mu^{(n)})}\right)=\delta(\lambda)*_{ T_{k}}\delta(\mu)
+=p_{\star}(\delta_{\mathcal{O}(\lambda)}*_{U(k)}\delta_{\mathcal{O}(\mu)}),$$ where we wrote $*_F$ to specify that the convolution occurs in the group $\mathcal{M}_1(F)$.
+
+[^1]: We recall that $p_{\star}\mu(A)=\mu(p^{-1}(A))$ for $A$ measurable set of $T_k$.

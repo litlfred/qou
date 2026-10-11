@@ -6,7 +6,8 @@
   "sha256": "1aef66179da3c154d15e54acfef9b7bfafc086ecbf7e51de146503faff1bcf60",
   "bytes": 361664,
   "pages": 14,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -177,6 +178,80 @@
   "likely_scanned": false,
   "toc_entries": 8,
   "sections": 8,
-  "chars_total": 19474
+  "chars_total": 19474,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "article2.tex",
+   "tex_sections": 12,
+   "overlaid": 7,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-basic-definitions-and-notations",
+     "title": "Basic definitions and notations",
+     "prose_ratio": 0.932,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-21-examples",
+     "title": "Examples",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-22-the-multilinear-bracket",
+     "title": "The multilinear bracket",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-3-expansion-of-cables-in-the-skein-module",
+     "title": "Expansion of cables in the skein module",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-4-proof-of-theorem-1",
+     "title": "Proof of Theorem 1",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-5-appendix",
+     "title": "Appendix",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -1,0 +1,509 @@
+
+
+\newpage
+
+%\footline={\hss\folio\hss}
+%\pageno=1
+
+\dspace
+\subhead
+Appendice. Rappels sur les groupes
+alg\'ebriques unipotents
+\endsubhead
+
+Dans tout cet appendice, nous supposons
+\^{e}tre en caract\'eristique z\'ero.
+
+\subhead
+A.1
+\endsubhead
+En caract\'eristique z\'ero, le th\'eor\`eme de
+Poincar\'e-Birkhoff-Witt peut \^{e}tre
+\'enonc\'e comme suit. 
+Pour $\scrL$ une
+alg\`ebre de Lie sur $K$, soit
+$\varphi_n\colon\,\Sym^n\scrL\to\scrU\scrL$ le
+produit sym\'etris\'e, de la puissance
+symm\'etrique $n^{\ieme}$ de $\scrL$ dans
+l'alg\`ebre enveloppante de $\scrL$.
+Pour $x$ dans $\scrL$, il envoie
+$x^n\in\Sym^n\scrL$ sur $x^n\in\scrU\scrL$.
+Le morphisme d'espaces vectoriels
+$$
+\varphi_*\colon\,\Sym^*\scrL\to\scrU\,\scrL
+\tag{A.1.1}
+$$
+est un isomorphisme de cog\`ebres.
+Il transforme la filtration croissante de
+$\Sym^*\scrL$ par les $\oplusop_{n\Le
+p}\Sym^n\scrL$ en la filtration de
+$\scrU\scrL$ par les images des
+$\oplusop_{n\Le p}\otimes^n\scrL$.
+
+Sous cette forme, le th\'eor\`eme est valable
+dans toute cat\'egorie tensorielle (de
+caract\'eristique $0$) pseudo-ab\'elienne
+(pour donner un sens \`a $\Sym^n$) qui admet
+des sommes d\'enombrables. 
+Le cas qui nous int\'eresse est celui des
+espaces vectoriels filtr\'es.
+Soit $\scrL$ une alg\`ebre de Lie munie d'une
+filtration d\'ecroissante $F$.
+La filtration correspondante de $\scrU\,\scrL$
+est caract\'eris\'ee par la propri\'et\'e qu'une
+filtration sur un $\scrL$-module $M$ est
+compatible \`a la filtration de $\scrL$ si et
+seulement si elle l'est \`a celle de
+$\scrU\,\scrL$.
+La version cat\'egorique de
+Poincar\'e-Birkhoff-Witt implique
+ la compatibilit\'e de (A.1.1) aux filtrations.
+
+Une filtration $F$ sur un
+$\scrL$-module $M$ est compatible la
+filtration centrale descendante $\grZ$ de
+$\scrL$, si et
+seulement si les $F^pM$ sont des sous-modules
+et que $\scrL$ agit trivialement sur les
+$\Gr_F^pM$.
+La filtration de $\scrU\,\scrL$ induite par le
+filtration $\grZ$ de $\scrL$ est donc la
+filtration par les puissances de l'id\'eal
+d'augmentation $I$.
+Par compatibilit\'e de (A.1.1) aux
+filtrations, on a
+
+\proclaim{Corollaire A.2}
+Si l'alg\`ebre de Lie $\scrL$, de s\'erie
+centrale descendante  $\grZ$, est nilpotente
+de classe $c$ $(\grZ^{c+1}=0)$, alors, si on
+identifie $\Sym^*\scrL$ et $\scrU\,\scrL$ par
+(A.1.1), on a
+$$
+I^n\Supset\oplusop_{p\Ge n}\Sym^p\scrL\Supset
+I^{nc}\tag{A.2.1}
+$$
+\endproclaim
+
+Notons $\scrU^{\uphat}\scrL$ le compl\'et\'e
+$I$-adique de $\scrU\,\scrL$. 
+
+\proclaim{Corollaire A.3}
+Si l'alg\`ebre de Lie $\scrL$ est nilpotente,
+l'isomorphisme (A.1.1) induit par compl\'etion
+un isomorphisme d'espace vectoriels
+$$
+\prod\limits_{n\Ge 0}\Sym^n\scrL\to
+\scrU^{\uphat}\scrL.
+\tag{A.3.1}
+$$
+\endproclaim
+
+L'isomorphisme (A.3.1) est compatible aux
+topologies des deux membres.
+A gauche, la topologie est la topologie
+produit (d'espaces discrets).
+A droite, celle de limite projective des
+(espaces discrets) $\scrU\,\scrL/I^n$.
+
+\subhead
+A.4
+\endsubhead
+Le foncteur ``alg\`ebre de Lie'' est une
+\'equivalence de la cat\'egorie des groupes
+alg\'ebriques unipotents avec celle des
+alg\`ebres de Lie nilpotentes de dimension
+finie.
+De plus, le foncteur $\rho\mapsto d\rho$ est
+une \'equivalence de la cat\'egorie des
+repr\'esentations lin\'eaires (de dimension
+finie) de $V$, suppos\'e unipotent, avec celle
+des repr\'esentations nilpotentes de son
+alg\`ebre de Lie $\bfv$.
+
+On dispose d'une application exponentielle
+$$
+\exp\colon\,\bfv\to V\tag{A.4.1}
+$$
+caract\'eris\'ee par la propri\'et\'e que pour
+toute repr\'esentation lin\'eaire  $\rho$ de
+$V$, on ait
+$$
+\rho(\exp(x))=\exp(d\rho(x)).\tag{A.4.2}
+$$
+C'est un isomorphisme de $\bfv$, muni de la
+loi de groupe de Campbell-Hausdorff, avec $V$.
+
+\subhead
+A.5
+\endsubhead
+Soit $V$ un groupe alg\'ebrique unipotent
+d'alg\`ebre de Lie $\bfv$.
+L'alg\`ebre enveloppante $\scrU\bfv$ est
+l'alg\`ebre des op\'erateurs diff\'erentiels
+sur $V$ invariants par translations \`a gauche.
+Comme cog\`ebre, c'est le dual topologique du
+compl\'et\'e de l'anneau local de $V$ en $1$.
+L'application exponentielle (A.4.1) induit un
+isomorphisme de la cog\`ebre $\scrU\bfv$ avec
+la cog\`ebre $\Sym^*\bfv$ des op\'erateurs
+diff\'erentiels en $0$ sur l'espace affine
+$\bfv$.
+
+Par r\'eduction au cas o\`u $\bfv$ est de
+dimension un, on v\'erifie que cet
+isomorphisme envoie $x^n\in\Sym^n\bfv$ sur
+$x^n\in\scrU\bfv$.
+C'est donc l'isomorphisme (A.1.1).
+Pour l'espace affine $\bfv$, l'alg\`ebre
+affine de $\bfv$ est le dual topologique de la
+cog\`ebre compl\'et\'ee
+$\prod\limits_{n>0}\Sym^n\bfv$.
+Appliquant A3, on obtient:
+
+\proclaim{Proposition A.6}
+L'alg\`ebre affine de $V$ est le dual
+topologique de la cog\`ebre $\scrU\bfv$,
+compl\'et\'ee pour la topologie $I$-adique.
+\endproclaim
+
+Dualement, le dual (muni de la topologie
+faible) de l'alg\`ebre affine de $V$ est
+$\scrU^{\uphat} \bfv$.
+Les points de $V$ \`a valeurs dans une
+alg\`ebre $A$ (homomorphismes
+de l'alg\`ebre affine dans $A$) sont les {\it
+\'el\'ements groupaux} $g$ de
+$A\widehat{\otimes}\scrU^{\uphat}\bfv$: les
+\'el\'ements d'augmentation $1$ tels que
+$\Delta g=g\otimes g$.
+Compatibilit\'es: l'application exponentielle
+(A.4.1) est l'exponentielle, de $A\otimes g$
+dans $V(A)\Subset
+A\widehat{\otimes}\scrU^{\uphat}\bfv$.
+La loi de groupe est le produit dans $\scrU^{\uphat}
+\bfv$.
+
+\subhead
+A.7
+\endsubhead
+Un sch\'ema en groupe affine $G$ est la
+limite projective de ses quotients $G_\alpha$
+qui sont des groupes alg\'ebriques.
+Il y a lieu de d\'efinir son alg\`ebre de Lie
+$\Lie(G)$ comme \'etant la pro-alg\`ebre de
+Lie limite projective des $\Lie(G_\alpha)$.
+De fa\c{c}on \'equivalente, c'est la limite
+projective des $\Lie(G_\alpha)$, qui sont de
+dimension finie, munie de sa topologie de
+limite projective d'espaces discrets.
+C'est le dual de la limite inductive
+$\colim(\Lie(G_\alpha)\upvee)$, muni de sa
+topologie faible.
+
+\subhead
+A.8
+\endsubhead
+Un sch\'ema en groupe affine $G$ est {\it
+pro-unipotent} s'il est limite projective de
+groupes alg\'ebriques unipotents, i.e. si les
+$G_\alpha$ de A.7 sont unipotents.
+On d\'efinit l'alg\`ebre enveloppante
+compl\'et\'ee $\scrU^{\uphat} \Lie(G)$ de
+$\Lie(G)$ par
+$$
+\scrU^{\uphat}\Lie\,G=\lim\nolimits_\alpha
+\scrU^{\uphat}\Lie(G_\alpha)=\lim\nolimits_{\alpha,n}
+\scrU(\Lie(G_\alpha))/I^n,
+$$
+cette limite \'etant munie de sa topologie de
+limite projective.
+Avec ces d\'efinitions, A.6 reste valable,
+comme on le v\'erifie par passage aux limites.
+
+\subhead
+A.9
+\endsubhead
+Cas particulier. Soit $\Lib((x_i)_{i\in I})$
+l'alg\`ebre de Lie libre sur $K$ engendr\'ee
+par une famille finie de g\'en\'erateurs
+$x_i$.
+Notons-la simplement $\Lib$.
+Son alg\`ebre enveloppante est l'alg\`ebre
+associative libre $K\left<(x_i)_{i\in I}\right>$.
+
+Soit $\Lib^{\uphat}$ le compl\'et\'e de Lib pour
+la filtration centrale descendante.
+C'est l'alg\`ebre de Lie du sch\'ema en groupe
+pro-unipotent
+$$
+\exp(\Lib^{\uphat})=\lim\,\exp(\Lib/\grZ^n).
+$$
+Son alg\`ebre enveloppante compl\'et\'ee est
+l'alg\`ebre des s\'eries formelles
+associatives $K\left<\!\left<(x_i)\right>\!\right>$.
+Les points de $\exp(\Lib^{\uphat})$ \`a valeurs
+dans une $K$-alg\`ebre $A$ sont les \'el\'ements
+groupaux $g$ de 
+$K\left<\!\left<(x_i)\right>\!\right>$:
+terme constant $1$ et $\Delta g=g\otimes g$,
+$\Delta$ \'etant le coproduit $K\left<\!\left<
+(x_i)\right>\!\right>\to K\left<\!\left<
+(x_i)\right>\!\right>\widehat{\otimes}K\left<\!\left<
+(x_i)\right>\!\right>$ tel que $\Delta
+x_i=x_i\otimes 1+1\otimes x_i$.
+
+\subhead
+A.10
+\endsubhead
+Soit $\bfv$ l'alg\`ebre de Lie d'un groupe
+alg\'ebrique nilpotent $V$, et soit
+$D$ une filtration
+d\'ecroissante finie de l'alg\`ebre de Lie
+$\bfv$, telle que $D^0(\bfv)=\bfv$.
+On notera encore $D$ la filtration de $V$ par
+les sous-groupes d'alg\`ebres de Lie les
+$D^p\bfv$.
+Puisque $[D^p\bfv, D^q\bfv]\Subset
+D^{p+q}\bfv$, ce sont des sous-groupes
+distingu\'es, et pour $p\Ge 1$, $D^pV/D^{p+1}V$
+est ab\'elien.
+
+On notera encore $D$ les filtrations induites
+sur $\scrU\bfv$, $\scrU^{\uphat} \bfv$ et son
+dual $\scrO(V)$.
+La filtration $n\mapsto D^{-n}\scrO(V)$
+de $\scrO(V)$ est croissante, et
+$D^1\scrO(V)=0$.
+
+Pour $\bfv$ muni du crochet nul,
+$\exp(\bfv,\text{crochet }0)$ est le sch\'ema
+pro-vectoriel $\bfv$.
+
+Par A.1, l'application exponentielle $\exp\colon\,
+\bfv\to V$ respecte les filtrations $D$ des
+alg\`ebres affines.
+Par r\'eduction au cas lin\'eaire, on en
+d\'eduit que l'alg\`ebre affine de
+$V/D^{n+1}V$ est la sous-alg\`ebre de
+$\scrO(V)$ engendr\'ee par $D^{-n}\scrO(V)$.
+En particulier, $D^0\scrO(V)$ est l'alg\`ebre
+affine de $V/D^1V$.
+
+Si $M$ est une repr\'esentation de $V$, les
+conditions suivantes sur une filtration $F$ de $M$
+sont \'equivalentes:
+
+\medskip\noindent
+\underbar{$\,\,\,$}
+compatiblit\'e \`a $D$ sur $\bfv$:
+$D^p\bfv\otimes F^qM\to F^{p+q}M$,
+
+\noindent
+\underbar{$\,\,\,$}
+compatibilit\'e \`a $D$ sur $\scrU\bfv$:
+$D^p\scrU\bfv\otimes F^qM\to F^{p+q}M$,
+
+\noindent
+\underbar{$\,\,\,$}
+compatibilit\'e \`a $D$ sur $\scrO(V)$:
+$F^pM\to\sum D^{-r}\scrO(V)\otimes F^{p+r}M$
+
+\medskip
+La filtration $D$ de $\scrO(V)$ est stable par
+translations \`a gauche et \`a droite.
+Si $P$ est un $V$-torseur, elle fournit encore
+une filtration $D$ sur l'alg\`ebre affine
+$\scrO(P)$ de $P$.
+
+\subhead
+A.11 Fonctorialit\'es
+\endsubhead
+(i)\enspace
+Soient $\bfv_1$ une sous-alg\`ebre de Lie de
+$\bfv$ (resp. un quotient) et $V_1$ le
+sous-groupe (resp. quotient) correspondant de
+$V$.
+Notons $D_1$ la filtration de $\bfv_1$ induite
+par (resp. quotient de) la filtration $D$ de
+$\bfv$, et les filtrations qui s'en
+d\'eduisent sur $\Sym^*\bfv_1$, $\scrU\bfv_1$,
+$\scrU^{\uphat}\bfv_1$ et $\scrO(V_1)$.
+La puissance symm\'etrique $\Sym^n(\bfv_1)$
+est un sous-espace (resp. quotient) de
+$\Sym^n(\bfv)$, et sa filtration $D_1$ est
+induite par (resp. quotient de) la filtration
+$D$ de $\Sym^n(\bfv)$.
+Il r\'esulte de A.1 que la m\^{e}me assertion
+vaut pour $\scrU v_1$ et $\scrU^{\uphat}v_1$
+et que dualement, la filtration $D_1$ du
+quotient (resp. sous-espace) $\scrO(V_1)$ de
+$\scrO(V)$ est quotient de (resp. induite
+par) la filtration $D$ de $\scrO(V)$.
+
+\noindent
+(ii)\enspace
+Supposons que la filtration $D$ de $\bfv$
+provienne d'une graduation
+$\bfv=\oplusop_{n\Ge 0}\bfv_n$.
+Cette graduation se propage \`a
+$\Sym^*(\bfv)$, $\scrU\bfv$,
+$\scrU^{\uphat}\bfv$ et $\scrO(V)$.
+Pour $\scrU^{\uphat}\bfv$, ``graduation'' et
+\`a prendre au sens de ``d\'ecomposition en
+produit'' plut\^{o}t que ``d\'ecomposition en
+somme''.
+La filtration $D$ de $\Sym^n(\bfv)$ provient
+de la graduation de $\Sym^n(\bfv)$.
+Par A.1, la m\^{e}me assertion vaut pour
+$\scrU\bfv$, $\scrU^{\uphat}\bfv$ et
+$\scrO(V)$.
+
+\noindent
+(iii)\enspace
+Par passage \`a la limite, A.10 et A.11
+restent valable dans le cas pro-unipotent.
+
+\proclaim{A.12 Exemples} \rm
+(i)\enspace
+Prenons l'alg\`ebre de Lie pro-unipotente
+$\Lib^{\uphat}$ de A.9, et la filtration centrale
+descendante $\grZ$.
+Elle provient de la graduation pour laquelle
+les $x_i$ sont de degr\'e $1$.
+Chaque mon\^{o}me $m$ en les $x_i$ d\'efinit
+sur $\exp(\Lib^{\uphat})\Subset k\left<\!\left<
+(x_i\right>\!\right>$ une fonction $c_m$
+``coefficient de $m$ dans $g$'', et
+l'alg\`ebre affine a pour base les $c_m$.
+Le produit est le produit de m\'elange.
+Le degr\'e de $c_m$ est l'oppos\'e de celui de
+$m$.
+
+\noindent
+(ii)\enspace
+Parmi les g\'en\'erateurs $x_i$, distinguons en
+un, not\'e $x_0$, et posons $I=\{0\}\amalg J$.
+On a 
+$$
+\Lib:=\Lib((x_i)_{i\in I})=k.x_0\ltimes
+\Lib((\ad\,x_0)^n(x_j),\,\,
+(n\Ge 0,\,j\in J)).
+$$
+Soit $D$ la filtration de Lib pour laquelle
+$D^p$ est, pour $p\Ge 1$, la s\'erie centrale
+descendante du second facteur.
+La filtration $D$ provient de la graduation
+pour laquelle $x_0$ est de degr\'e $0$ et les
+$x_j$ $(j\in J)$ de degr\'e $1$.
+Compl\'etant cette filtration, on obtient une
+filtration, encore not\'ee $D$, de
+$\Lib^{\uphat}$.
+La filtration correspondante de l'alg\`ebre
+affine
+$$
+\scrO(\exp(\Lib^{\uphat}))
+$$
+est d\'eduite de la graduation pour laquelle
+le degr\'e de $c_m$ est l'oppos\'e du degr\'e
+du mon\^{o}me $m$ en les $x_j$ $(j\in J)$.
+\endproclaim
+
+\subhead
+A.13
+\endsubhead
+Soit $G$ un groupe alg\'ebrique produit
+semi-direct du groupe multiplicatif $\dbG_m$
+par un groupe alg\'ebrique unipotent $V$,
+d'alg\`ebre de Lie $\bfv$.
+L'action de $\dbG_m$ sur $\bfv$ gradue cette
+alg\`ebre de Lie; sur $\bfv_n$,
+$\lambda\in\dbG_m$ agit par multiplication par
+$\lambda^n$.
+
+Supposons $\bfv$ \`a degr\'es $>0$.
+Le foncteur $\rho\mapsto d\rho$ est alors une
+\'equivalence de la cat\'egorie des
+repr\'esentations lin\'eaires de $G$ avec
+celle des espaces vectoriels gradu\'es $E$,
+muni d'une action compatible aux graduations
+de l'alg\`ebre de Lie $\bfv$.
+La graduation de $E$ donne l'action de
+$\dbG_m$ et l'action de $\bfv$,
+automatiquement nilpotente, donne celle de $V$.
+
+Notons $k(a)$ l'espace vectoriel $k$
+plac\'e en degr\'e $a$.
+Pour $a<b$, une extension de $k(a)$ par
+$k(b)$ dans la cat\'egorie des
+repr\'esentations de $G$ est donn\'ee par un
+homomorphisme $\bfv\to
+\Hom(k(a),k(b))$, i.e.
+par un \'el\'ement du dual de la partie
+homog\`ene de degre\'e $b-a$ de $\bfv^{\ab}:=
+\bfv/[\bfv,\bfv]$:
+$$
+\Ext_{\Rep(G)}^1(k(a),k(b))=
+(\bfv^{\ab})_{b-a}{\upvee}.
+\tag{A.13.1}
+$$
+
+\subhead
+A.14
+\endsubhead
+Soit $G$ un sch\'ema en groupes produit
+semi-direct de  $\dbG_m$ par $V$
+pro-unipotent.
+Ecrivons-le comme limite projective de
+quotients par des sous-groupes distingu\'es
+contenus dans $V$:
+$$
+G=\dbG_m\ltimes V=\lim\,\dbG_m\ltimes
+V_\alpha.
+$$
+
+Supposons les alg\`ebres de Lie gradu\'ees
+$\bfv_\alpha$ des $V_\alpha$ (A.13) \`a
+degr\'e $>0$.
+Passant \`a la limite, on d\'eduit de (A.13.1)
+que
+$$
+\Ext_{\Rep(G)}^1(k(a),k(b))=
+\colim(v_\alpha^{\ab})_{b-a}{\upvee}.
+\tag{A.14.1}
+$$
+
+Supposons en outre que pour tout,
+$$
+\dim\,\Ext^1(k(0),k(n))<\infty.
+$$
+Les limites projectives (A.14.1) sont alors
+stationnaires et, puisque si on rel\`eve dans les
+$(\bfv_\alpha)_n$ des bases des
+$(\bfv_\alpha^{\ab})_n$, on obtient un syst\`eme
+g\'en\'erateur de $\bfv_\alpha$, la dimension de
+$(\bfv_\alpha)_n$ est, pour chaque $n$, born\'ee
+ind\'ependamment de $n$.
+On notera $\bfv_{\GR}$ l'alg\`ebre de Lie
+gradu\'ee de composantes homog\`enes les
+limites projectives (stationnaires) des
+composantes homog\`enes des $v_\alpha$.
+Passant \`a la limite dans A.13, on obtient:
+
+\proclaim{Proposition A.15}
+Sous les hypoth\`eses de A.14:
+$G=\dbG_m\ltimes V$, Lie $V$ \`a degr\'es
+$>0$, $\Ext_{\Rep(G)}^1(k(0),k(n))$
+de dimension finie, le foncteur $\rho\mapsto
+d\rho$ est une \'equivalence de la cat\'egorie
+des repr\'esentations de $G$ avec celle des
+espaces vectoriels gradu\'es munis d'une 
+action de l'alg\`ebre de Lie gradu\'ee
+$\bfv_{\GR}$.
+On a
+$$
+\Ext_{\Rep(G)}^1(k(0),k(n))=
+(\bfv_{\GR}^{\ab})_n\upvee.
+$$
+\endproclaim
+

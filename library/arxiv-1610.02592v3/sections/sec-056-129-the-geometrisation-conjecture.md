@@ -8,124 +8,110 @@ pages: 409-413
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-(by Propositions 1.4.3 and 1.4.10) the groupπ1(S) would also be, and hence
-it would contain a normal cyclic subgroup, contradicting Corollary 5.1.10.
-If X =~SL2 thenπ1(S) =π1(M)/K and no ﬁnite-index subgroup ofπ1(S)
-can lift toπ1(M) by Proposition 12.6.4.
-Finally, if X = H3 then π1(M) contains no normal cyclic groupK by
-Corollary 5.1.10 again. □
-The boundary case is slightly diﬀerent. Of the eight geometries, only three
-produce non-compact ﬁnite-volume complete orientable manifolds:
-H3, H2× R, ~SL2.
-These non-compact ﬁnite-volume manifolds are diﬀeomorphic to the interior
-of a compact manifoldM with boundary consisting of tori.
-Theorem12.8.4. LetM beacompactorientable3-manifoldwithboundary
-consisting of tori. The following are equivalent:
-• M has a ﬁnite-volume completeH2× R structure,
-• M has a ﬁnite-volume complete~SL2 structure,
-• M is Seifert withχ< 0.
-In contrast with the closed case, a non-closedM may admit two diﬀerent
-geometric structures of Seifert type. On the other hand, a manifoldM cannot
-admit both a hyperbolic and a Seifert structure.
-12.9. The geometrisation conjecture
-We can ﬁnally state the famous Geometrisation Conjecture, proposed by
-Thurston in 1982 and proved twenty years later by Perelman in 2002.
-12.9.1. Statement and main consequences.We say that a compact 3-
-manifold with (possibly empty) boundary consisting of tori isgeometric if its
-interior has a ﬁnite-volume complete geometric structure modelled on one of
-the eight geometries:
-S3, R3, H3, S2× R, H2× R, Nil, Sol, ~SL2.
-The following conjecture was formulated by Thurston in 1982:
-Conjecture 12.9.1 (Geometrisation Conjecture).Let M be an irreducible
-orientable compact 3-manifold with (possibly empty) boundary consisting of
-tori. Every block of the geometric decomposition ofM is geometric.
-The conjecture has been proved by Perelman in 2002 and its proof goes
-very very far from the scope of this book. It is however quite easy to deduce
-important consequences from it.
-Conjecture 12.9.2 (Poincaré conjecture).Every simply connected closed
-3-manifoldM is diﬀeomorphic toS3.
-402 12. THE EIGHT GEOMETRIES
-Proof using geometrisation. Via the prime decomposition we may restrict
-to the caseM is prime, hence irreducible. The groupπ1(M) is trivial and
-hence does not containZ× Z: every torus inM is thus compressible and the
-geometric decomposition is trivial. By geometrisationM is itself geometric.
-The only geometry with ﬁnite fundamental groups isS3, and henceM =S3/Γ
-is elliptic. SinceM is simply connected, the groupΓ = π1(M) is trivial and
-henceM =S3. □
-Conjecture 12.9.3 (Elliptisation). Every closed 3-manifoldM with ﬁnite
-π1(M) is elliptic.
-Proof using geometrisation. Same proof as above. Note that this isnot a
-consequence of Poincaré conjecture in general, for a manifold covered bySn
-needs not to be elliptic a priori. □
-Conjecture 12.9.4 (Hyperbolisation). Every closed irreducible 3-manifold
-M with inﬁniteπ1(M) not containing Z× Z is hyperbolic.
-Proof using geometrisation. Sinceπ1(M) does not contain Z× Z every
-torus is compressible and the geometric decomposition ofM is trivial. By
-geometrisationM is geometric. Its geometry is notS3 sinceπ1(M) is inﬁnite,
-and is notS2× R sinceM is irreducible. In the other Seifert geometries and
-in Sol the fundamental groupπ1(M) always contain aZ× Z (there is always
-a ﬁnite covering containing an incompressible torus). □
-Corollary 12.9.5.Let ˜M→M be a ﬁnite covering. If˜M is geometric, then
-M also is (with the same geometry).
-Proof using geometrisation. Note that this is stronger than Conjecture
-12.9.3. Since ˜M is geometric, it is irreducible and hence alsoM is. Proposi-
-tion 11.5.7 implies that the geometric decomposition ofM is trivial, and by
-geometrisationM is geometric. □
+\label{geometrisation:section}
+
+We can finally state the famous Geometrisation Conjecture, proposed by Thurston in 1982 and proved twenty years later by Perelman in 2002.
+
+
+\subsection{Statement and main consequences}
+We say that a compact 3-manifold with (possibly empty) boundary consisting of tori is \emph{geometric} if its interior has a finite-volume complete geometric structure modelled on one of the eight geometries:\index{three-manifold!geometric three-manifold} 
+$$S^3,\ \matR^3,\ \matH^3,\ S^2\times \matR,\ \matH^2\times \matR,\ \Nil,\ \Sol,\ \widetilde{\SL_2}.$$
+The following conjecture was formulated by Thurston in 1982:\index{geometrisation conjecture}
+
+\begin{conj}[Geometrisation Conjecture]
+Let $M$ be an irreducible orientable compact 3-manifold with (possibly empty) boundary consisting of tori. Every block of the geometric decomposition of $M$ is geometric.
+\end{conj}
+
+The conjecture has been proved by Perelman in 2002 and its proof goes very very far from the scope of this book. It is however quite easy to deduce important consequences from it.
+
+\begin{conj}[Poincar\'e conjecture] \label{Poincare:conj}
+Every simply connected closed 3-manifold $M$ is diffeomorphic to $S^3$.
+\end{conj}
+\begin{proof}[Proof using geometrisation]
+Via the prime decomposition we may restrict to the case $M$ is prime, hence irreducible. The group $\pi_1(M)$ is trivial and hence does not contain $\matZ \times \matZ$: every torus in $M$ is thus compressible and the geometric decomposition is trivial. By geometrisation $M$ is itself geometric. The only geometry with finite fundamental groups is $S^3$, and hence $M= S^3/_\Gamma$ is elliptic. Since $M$ is simply connected, the group $\Gamma = \pi_1(M)$ is trivial and hence $M=S^3$.
+\end{proof}
+
+\begin{conj}[Elliptisation]  \label{finite:conj}
+Every closed 3-manifold $M$ with finite $\pi_1(M)$ is elliptic.
+\end{conj}
+\begin{proof}[Proof using geometrisation]
+Same proof as above. Note that this is \emph{not} a consequence of Poincar\'e conjecture in general, for a manifold covered by $S^n$ needs not to be elliptic a priori.
+\end{proof}
+
+\begin{conj}[Hyperbolisation] \label{hyperbolisation:conj}
+Every closed irreducible 3-manifold $M$ with infinite $\pi_1(M)$ not containing $\matZ \times \matZ$ is hyperbolic.
+\end{conj}
+\begin{proof}[Proof using geometrisation]
+Since $\pi_1(M)$ does not contain $\matZ\times \matZ$ every torus is compressible and the geometric decomposition of $M$ is trivial. By geometrisation $M$ is geometric. Its geometry is not $S^3$ since $\pi_1(M)$ is infinite, and is not $S^2\times \matR$ since $M$ is irreducible. In the other Seifert geometries and in $\Sol$ the fundamental group $\pi_1(M)$ always contain a $\matZ\times \matZ$ (there is always a finite covering containing an incompressible torus).
+\end{proof}
+
+\begin{cor} 
+Let $\tilde M \to M$ be a finite covering. If $\tilde M$ is geometric, then $M$ also is (with the same geometry).
+\end{cor}
+\begin{proof}[Proof using geometrisation]
+Note that this is stronger than Conjecture \ref{finite:conj}. 
+Since $\tilde M$ is geometric, it is irreducible and hence also $M$ is. Proposition \ref{JSJ:lifts:prop} implies that the geometric decomposition of $M$ is trivial, and by geometrisation $M$ is geometric.
+\end{proof}
+
 Concerning bounded manifolds, we get the following simple statement.
-Corollary 12.9.6. Every simple compact manifoldM bounded by a non-
-empty collection of tori is hyperbolic.
-Proof using geometrisation. Being simple, it is geometric. Seifert mani-
-folds with boundary are never simple. □
-That statement is not true for closed manifolds, because many Seifert
-manifolds ﬁbering overS2 with at most 3 singular ﬁbres are simple.
-12.9.2. Surface bundles. There is a nice way to formulate geometrisa-
-tion for surface bundles. We start with the much simpler torus case.
-Proposition 12.9.7. Let MA be a torus bundle with monodromyA⁄=±I.
-The following holds:
-12.9. THE GEOMETRISATION CONJECTURE 403
-• if|trA|< 2, i.e.A has ﬁnite order, thenMA is ﬂat;
-• if|trA| = 2, i.e.A is reducible, thenMA is Nil;
-• if|trA|> 2, i.e.A is Anosov, thenMA is Sol.
-Proof. Use Proposition 11.4.14. □
-We now turn to the generic case. LetΣ be a closed orientable surface
-withχ(Σ)< 0.
-Theorem 12.9.8.LetMψ be a surface bundle with ﬁbreΣ and monodromy
-ψ∈ MCG(Σ). The following holds:
-• ifψ has ﬁnite order, thenMψ has a H2× R geometry,
-• ifψ is reducible, thenMψ contains an essential torus,
-• ifψ is pseudo-Anosov, thenMψ is hyperbolic.
-Proof using geometrisation. Use Proposition 11.4.15. □
-Theorem 12.9.8 was initially proved by Thurston in the 1980s. In the
-same years Thurston also proved the geometrisation conjecture for all Haken
-3-manifolds. Before Perelman’s proof the conjecture was open “only” in the
-non-Haken case, and it naturally split in three parts: the Conjectures 12.9.2,
-12.9.3, and 12.9.4. Perelman’s proof certiﬁes geometrisation in all cases with
-a uniﬁed technique.
-12.9.3. References. This chapter contains many technical proofs. Most
-of them were taken from Scott [52], that is the standard reference on the
-geometrisation of Seifert manifolds, and Thurson’s book [57]. We have also
-consulted a nice survey of Bonahon [8], that contains in particular the sugges-
-tion of calculating the Ricci tensors in the non-product geometries. Thurson’s
-geometrisation conjecture appears in [58] in 1982, while Perelman’s proof con-
-sists of three papers that he sent to the arXiv in 2003 [45, 46, 47].
-CHAPTER 13
-Mostow rigidity theorem
-We have deﬁned in Chapter 7 the Teichmüller spaceTeich(Sg) of a genus-
-g closed orientable surfaceSg as the space of all the hyperbolic metrics onSg,
-considered up to isometries isotopic to the identity; we have then proved that
-Teich(Sg) is homeomorphic toR6g−6 using the Fenchel–Nielsen coordinates.
-This deﬁnition ofTeich(M) actually applies to any closed hyperbolic man-
-ifold M, and we show here a striking diﬀerence between the dimensions two
-and three: ifdimM = 3 then Teich(M) is a single point. This strong result is
-known as theMostow rigidity Theorem.
-TheimpactofMostow’srigidityonourunderstandingofthree-dimensional
-topology cannot be overestimated. Thanks to this theorem every geometric
-information on a given closed hyperbolic three-manifoldM like its volume,
-geodesic spectrum, etc. is promoted to atopological invariant ofM, that is
-it depends on the diﬀerentiable structure ofM only. In its strongest version,
-Mostow’s rigidity says that the hyperbolic metric ofM is fully determined by
-the groupπ1(M) alone.
-We expose here Gromov’s proof of Mostow’s rigidity, which uses hyper-
-bolic tetrahedra and introduces a nice invariant on closed manifolds of any
-dimension, called thesimplicial volume.
+
+\begin{cor} \label{simple:bounded:hyperbolic}
+Every simple compact manifold $M$ bounded by a non-empty collection of tori is hyperbolic.
+\end{cor}
+\begin{proof}[Proof using geometrisation]
+Being simple, it is geometric. Seifert manifolds with boundary are never simple.
+\end{proof}
+
+That statement is not true for closed manifolds, because many Seifert manifolds fibering over $S^2$ with at most 3 singular fibres are simple. 
+
+
+\subsection{Surface bundles}
+There is a nice way to formulate geometrisation for surface bundles. 
+We start with the much simpler torus case.
+
+\begin{prop}
+Let $M_A$ be a torus bundle with monodromy $A \neq \pm I$. The following holds:
+\end{prop}
+\begin{itemize}
+\item if $|\tr A|<2$, \emph{i.e.}~$A$ has finite order, then $M_A$ is flat;
+\item if $|\tr A|=2$, \emph{i.e.}~$A$ is reducible, then $M_A$ is $\Nil$;
+\item if $|\tr A|>2$, \emph{i.e.}~$A$ is Anosov, then $M_A$ is $\Sol$.
+\end{itemize}
+\begin{proof}
+Use Proposition \ref{torus:bundle:prop}.
+\end{proof}
+
+We now turn to the generic case. Let $\Sigma$ be a closed orientable surface with $\chi(\Sigma)<0$.
+\begin{teo} \label{fibering:geometrisation:teo}
+Let $M_\psi$ be a surface bundle with fibre $\Sigma$ and monodromy $\psi \in \MCG(\Sigma)$. The following holds:
+\begin{itemize}
+\item if $\psi$ has finite order, then $M_\psi$ has a $\matH^2 \times \matR$ geometry,
+\item if $\psi$ is reducible, then $M_\psi$ contains an essential torus,
+\item if $\psi$ is pseudo-Anosov, then $M_\psi$ is hyperbolic.
+\end{itemize}
+\end{teo}
+\begin{proof}[Proof using geometrisation]
+Use Proposition \ref{trichotomy:prop}.
+\end{proof}
+
+Theorem \ref{fibering:geometrisation:teo} was initially proved by Thurston in the 1980s. In the same years Thurston also proved the geometrisation conjecture for all Haken 3-manifolds. Before Perelman's proof the conjecture was open ``only'' in the non-Haken case, and it naturally split in three parts: the Conjectures \ref{Poincare:conj}, \ref{finite:conj}, and \ref{hyperbolisation:conj}. Perelman's proof certifies geometrisation in all cases with a unified technique.
+
+
+\subsection{References}
+This chapter contains many technical proofs. Most of them were taken from Scott \cite{S}, that is the standard reference on the geometrisation of Seifert manifolds, and Thurson's book \cite{Th_book}. We have also consulted a nice survey of Bonahon \cite{B3}, that contains in particular the suggestion of calculating the Ricci tensors in the non-product geometries. Thurson's geometrisation conjecture appears in \cite{Th_conj} in 1982, while Perelman's proof consists of three papers that he sent to the arXiv in 2003 \cite{Pe1, Pe2, Pe3}.
+
+
+
+\chapter{Mostow rigidity theorem} \label{Mostow:chapter}
+We have defined in Chapter \ref{Teichmuller:chapter} the
+Teichm\"uller space $\Teich(S_g)$ of a genus-$g$ closed orientable surface $S_g$ as the space of all the hyperbolic metrics on $S_g$, considered up to isometries isotopic to the identity; we have then proved that $\Teich(S_g)$ is homeomorphic to $\matR^{6g-6}$ using the Fenchel--Nielsen coordinates.
+
+This definition of $\Teich(M)$ actually applies to any closed hyperbolic manifold $M$, and we show here a striking difference between the dimensions two and three: if $\dim M = 3$ then $\Teich(M)$ is a single point. This strong result is known as the \emph{Mostow rigidity Theorem}.\index{Mostow--Prasad rigidity theorem} 
+
+The impact of Mostow's rigidity on our understanding of three-dimensional topology cannot be overestimated. Thanks to this theorem every geometric information on a given closed hyperbolic three-manifold $M$ like its volume, geodesic spectrum, etc.~is promoted to a \emph{topological} invariant of $M$, that is it depends on the differentiable structure of $M$ only. In its strongest version, Mostow's rigidity says that the hyperbolic metric of $M$ is fully determined by the group $\pi_1(M)$ alone. 
+
+We expose here Gromov's proof of Mostow's rigidity, which uses hyperbolic tetrahedra and introduces a nice invariant on closed manifolds of any dimension, called the \emph{simplicial volume}.\index{simplicial volume}

@@ -1,0 +1,27 @@
+{
+ "url": "https://arxiv.org/e-print/2411.04021v1",
+ "content_type": "application/gzip",
+ "sha256": "35f596fc69ee061f04aa48699ebccfa24d6c8355297c8d76bb61e813b945883d",
+ "bytes": 15634,
+ "fetched": "2026-10-10T15:20:51+00:00",
+ "files": [
+  {
+   "path": "files/References.bib",
+   "role": "bib",
+   "sha256": "4ae6160277a5cf2e5097e7b2d70412e3ca371702e816094d36d67cc6903a3534",
+   "bytes": 4485
+  },
+  {
+   "path": "files/main.bbl",
+   "role": "bbl",
+   "sha256": "0a83c50fc550bab6943543ffa7a05ed00a424440ad4261d2d5ef5f13615e20ed",
+   "bytes": 2017
+  },
+  {
+   "path": "files/main.tex",
+   "role": "tex",
+   "sha256": "d7508376685e8a15de66de7b62d7dad21b0f8d2115b0cf1da5348fa497cd00fc",
+   "bytes": 49155
+  }
+ ]
+}

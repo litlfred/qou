@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1908.07065v3/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1908.07065v3/blocks/prose-sec-007",
   "kind": "prose",
   "title": "Quantum periods from instanton calculus",
   "pageStart": 20,
   "pageEnd": 21,
   "text": "../sections/sec-007-4-quantum-periods-from-instanton-calculus.md",
-  "derivedFrom": "library/arxiv-1908.07065v3/manifest",
-  "sourceDocument": "library/arxiv-1908.07065v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1908.07065v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1908.07065v3/manifest.jsonld",
   "provenance": "ingested"
 }

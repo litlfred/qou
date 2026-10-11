@@ -8,269 +8,205 @@ pages: 367-372
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-This theorem reveals in particular that it is fairly easy to construct plenty
-of simply connected four-manifolds with boundary. Note that the simply con-
-nected four-manifolds constructed in this way are not contractible: indeed
-the following proposition shows that they have a non-trivial second homology
-group.
-Proposition 11.3.17. A four-manifold with one 0-handle and k 2-handles
-is homotopy equivalent to a bouquet ofk two-spheres.
-Proof. We ﬁrst deformation retract the two-handles over their core discs,
-and then we shrink the whole 0-handle to a point. □
-To construct contractible four-manifolds, we need to employ 1-handles.
-11.3.7. Three-manifolds with boundary.The Lickorish-Wallace Theo-
-rem extends to compact manifolds with boundary, in the appropriate way.
-Proposition 11.3.18.Every compact orientable 3-manifoldM with bound-
-ary is obtained fromS3 as follows: pickL⊔C⊂S3 where L is a link andC
-is a 1-complex; remove an open regular neighbourhood ofC and perform an
-integral surgery onL.
-Proof. Cap oﬀ the boundary ofM by adding handlebodiesHg, to get a
-closedmanifold M′. Choosea1-complex C⊂M′ whoseregularneighbourhood
-consists of these handlebodies, so that by removingC we getM back.
-Now M′ is obtained fromS3 via integral surgery along some linkL, and
-by general position we may suppose thatC is disjoint from the cores of the
-surgered solid tori, so that we can see bothC andL disjointly inS3. □
-If∂M consists of tori we may suppose thatC is also a link.
-11.4. Surface bundles
-Seifert manifolds have base orbifolds of dimension 2 and smooth ﬁbres of
-dimension 1. We now introduce a complementary construction where the base
-orbifolds have dimension 1 and the smooth ﬁbres have dimension 2. These are
-called surface bundles.
-11.4.1. Surface bundles.Asurface bundle overS1 is a ﬁbre bundleM→
-S1 of a compact orientable 3-manifoldM (possibly with boundary) over the
-circle, whose ﬁbreΣ is a connected compact orientable surface. IfM has
-boundary, thenΣ also has, and∂M consists of tori ﬁbering overS1.
-Proposition 11.4.1.Every surface bundle overS1 is constructed by taking
-Σ× [0, 1] and glueing Σ× 0 to Σ× 1 via an orientation-preserving diﬀeomor-
-phismψ.
-360 11. CONSTRUCTIONS OF THREE-MANIFOLDS
-Proof. One such glueing clearly gives rise to a surface bundle overS1.
-Conversely, by cutting a surface bundle overS1 along a ﬁbre we get a surface
-bundle over the interval, which is a productΣ× [0, 1]. □
-The diﬀeomorphismψ is themonodromy of the surface bundleMψ. Since
-isotopic glueings produce diﬀeomorphic manifolds, the three-manifoldMψ de-
-pends only of the class ofψ in the mapping class groupMCG(Σ) on Σ. More
-than that, it actually depends only on its conjugacy class:
-Proposition 11.4.2. If ψ and φ are conjugate inMCG(Σ), thenMψ and
-Mφ are diﬀeomorphic.
-Proof. The diﬀeomorphismg : Σ → Σ that conjugates them extends to
-Σ× [0, 1] and gives a diﬀeomorphismMψ→Mφ. □
-The manifoldsMψ andMψ−1 are (orientation-reversingly) diﬀeomorphic.
-11.4.2. Properties. We now start to investigate the topological proper-
-ties of surface bundles. LetM→S1 be a surface bundle with ﬁbreΣ.
-Exercise 11.4.3. The mapsΣ→M→S1 induce an exact sequence
-0−→π1(Σ)−→π1(M)−→π1(S1)−→0.
-This implies in particular thatπ1(M) surjects onto Z and therefore:
-Corollary 11.4.4.We haveb1(M)> 1.
-In other terms, the surface ﬁbreΣ is non-separating and hence [Σ] ∈
-H2(M,∂M )isnon-trivial(andhasinﬁniteorder,sincethereisnotorsionthere).
-Note that there is an obvious degree-n regular coveringMψn→ Mψ for
-every n and an inﬁnite regular coveringΣ× R→Mψ induced by the normal
-subgroupπ1(Σ)◁π 1(M).
-Proposition 11.4.5. The ﬁbreΣ is an essential surface. Ifχ(Σ)> 0 then
-M is diﬀeomorphic toD×S1 orS2×S1. Ifχ(Σ)⩽ 0 the universal cover of
-int(M) is R3 andM is Haken.
-Proof. Ifχ(Σ)> 0then MCG(Σ)is trivial and we are done, so we suppose
-χ(Σ)⩽ 0. The ﬁbreΣ is incompressible becauseπ1(Σ) injects, and is also
-∂-incompressible by a doubling argument (the doubleDM ﬁbres toS1 with
-incompressible ﬁbreDΣ, henceΣ is∂-incompressible). The ﬁbre is clearly not
-∂-parallel, hence it is essential.
-The manifoldM is covered byΣ×R, whose interior is covered byR2×R =
-R3: henceM is irreducible. It is also∂-irreducible because its double also ﬁbres
-and hence is irreducible. ThereforeM is Haken. □
-11.4. SURFACE BUNDLES 361
-11.4.3. Semi-bundles. The Seifert ﬁbrations are circle bundles over two-
-dimensional orbifolds, and likewise it is natural to consider surface bundles
-over 1-orbifolds. The compact 1-orbifolds areS1 and the closed segment with
-mirrored endpoints. We have already considered the S1 case and we now
-deﬁne some surface bundles over the closed segment, calledsemi-bundles.
-Let Σ be a non-orientable surface, with orientable double coverp : ˜Σ→ Σ
-and deck transformationτ that gives Σ = ˜Σ/τ. We have
-Σ×∼ (−1, 1) =
-( ˜Σ× (−1, 1)
-)
-/(τ,ι)
-with ι(x) = −x. A local semi-bundle is the mapΣ×∼ (−1, 1)→ [0, 1) that
-sends (p,x ) to|x|. The ﬁbre over0 is Σ, that overx∈ (0, 1) is ˜Σ.
-A semi-bundle M→ [−1, 1] is a map which is a local semi-bundle when
-restricted to [−1, 1−ε) and (ε, 1]. The ﬁbre over±1 is Σ and the ﬁbre of
-x∈ (−1, 1) is ˜Σ. We should think about this object as a surface bundle over
-the segment orbifold[−1, 1] with mirror points±1.
-Exercise 11.4.6. Every semi-bundle is constructed by gluing two copies of
-Σ×∼ [−1, 1] along their boundaries via some diﬀeomorphism.
-Set I = [−1, 1]. LetM→I be a semi-bundle with ﬁbresΣ and ˜Σ. Note
-thatI = R/Γ where Γ< Isom(R) is generated by the reﬂections at the points
-±1. The orbifold fundamental group ofI is
-π1(I) = Γ = Z/2Z∗ Z/2Z.
-Exercise 11.4.7. The maps˜Σ→M→I induce an exact sequence
-0−→π1( ˜Σ)−→π1(M)−→π1(I)−→0.
-Proposition 11.4.8.Ifχ(Σ)> 0 thenM is diﬀeomorphic toRP2×∼ S1. If
-χ(Σ)⩽ 0 the orientable ﬁbre˜Σ is essential, the universal cover ofint(M) is
-R3, andM is Haken.
-Proof. Same proof as in the standard bundle case. □
-Exercise 11.4.9. An orientable 3-manifoldM has a (semi-)bundle structure
-if and only if there is an orientableΣ⊂M that cutsM into interval bundles.
-Let M→ I be a semi-bundle. We may pull-back the semi-bundle along
-the orbifold double coverS1→I and get an ordinary surface bundle˜M→S1,
-so that the following diagram commutes:
-˜M //
-
-M
-
-S1 //I
+Seifert manifolds have base orbifolds of dimension 2 and smooth fibres of dimension 1. We now introduce a complementary construction where the base orbifolds have dimension 1 and the smooth fibres have dimension 2. These are called \emph{surface bundles}.
+
+
+\subsection{Surface bundles}
+A \emph{surface bundle over $S^1$} is a fibre bundle $M\to S^1$ of a compact orientable 3-manifold $M$ (possibly with boundary) over the circle, whose fibre $\Sigma$ is a connected compact orientable surface. If $M$ has boundary, then $\Sigma$ also has, and $\partial M$ consists of tori fibering over $S^1$.\index{surface bundle over $S^1$}
+
+\begin{prop}
+Every surface bundle over $S^1$ is constructed by taking $\Sigma\times [0,1]$ and glueing $\Sigma\times 0$ to $\Sigma\times 1$ via an orientation-preserving diffeomorphism $\psi$.
+\end{prop}
+\begin{proof}
+One such glueing clearly gives rise to a surface bundle over $S^1$. Conversely, by cutting a surface bundle over $S^1$ along a fibre we get a surface bundle over the interval, which is a product $\Sigma\times [0,1]$.
+\end{proof}
+
+The diffeomorphism $\psi$ is the \emph{monodromy} of the surface bundle $M_\psi$. Since isotopic glueings produce diffeomorphic manifolds, the three-manifold $M_\psi$ depends only of the class of $\psi$ in the mapping class group $\MCG(\Sigma)$ on $\Sigma$. More than that, it actually depends only on its conjugacy class:
+
+\begin{prop}
+If $\psi$ and $\phi$ are conjugate in $\MCG(\Sigma)$, then $M_\psi$ and $M_\phi$ are diffeomorphic.
+\end{prop}
+\begin{proof}
+The diffeomorphism $g\colon \Sigma\to \Sigma$ that conjugates them extends to $\Sigma\times [0,1]$ and gives a diffeomorphism $M_\psi \to M_\phi$.
+\end{proof}
+
+The manifolds $M_\psi$ and $M_{\psi^{-1}}$ are (orientation-reversingly) diffeomorphic.
+
+
+\subsection{Properties}
+We now start to investigate the topological properties of surface bundles.
+Let $M\to S^1$ be a surface bundle with fibre $\Sigma$.
+
+\begin{ex}
+The maps $\Sigma\to M \to S^1$ induce an exact sequence
+$$0 \longrightarrow \pi_1(\Sigma) \longrightarrow \pi_1(M) \longrightarrow \pi_1(S^1) \longrightarrow 0.$$
+\end{ex}
+
+This implies in particular that $\pi_1(M)$ surjects onto $\matZ$ and therefore:
+
+\begin{cor}
+We have $b_1(M)\geqslant 1$.
+\end{cor}
+
+In other terms, the surface fibre $\Sigma$ is non-separating and hence $[\Sigma]\in H_2(M,\partial M)$ is non-trivial (and has infinite order, since there is no torsion there).
+
+Note that there is an obvious degree-$n$ regular covering $M_{\psi^n} \to M_{\psi}$ for every $n$ and an infinite regular covering $\Sigma\times \matR \to M_{\psi}$ induced by the normal subgroup $\pi_1(\Sigma) \triangleleft \pi_1(M)$. 
+
+\begin{prop}
+The fibre $\Sigma$ is an essential surface.
+If $\chi(\Sigma)>0$ then $M$ is diffeomorphic to $D\times S^1$ or $S^2\times S^1$.
+If $\chi(\Sigma)\leqslant 0$ the universal cover of $\interior M$ is $\matR^3$ and $M$ is Haken.
+\end{prop}
+\begin{proof}
+If $\chi(\Sigma)>0$ then $\MCG(\Sigma)$ is trivial and we are done, so we suppose $\chi(\Sigma)\leqslant 0$. The fibre $\Sigma$ is incompressible because $\pi_1(\Sigma)$ injects, and is also $\partial$-incompressible by a doubling argument (the double $DM$ fibres to $S^1$ with incompressible fibre $D\Sigma$, hence $\Sigma$ is $\partial$-incompressible). The fibre is clearly not $\partial$-parallel, hence it is essential.
+
+The manifold $M$ is covered by $\Sigma \times \matR$, whose interior is covered by $\matR^2 \times \matR = \matR^3$: hence $M$ is irreducible. It is also $\partial$-irreducible because its double also fibres and hence is irreducible. Therefore $M$ is Haken. 
+\end{proof}
+
+
+\subsection{Semi-bundles}
+The Seifert fibrations are circle bundles over two-dimensional orbifolds, and likewise it is natural to consider surface bundles over 1-orbifolds. The compact 1-orbifolds are $S^1$ and the closed segment with mirrored endpoints. We have already considered the $S^1$ case and we now define some surface bundles over the closed segment, called \emph{semi-bundles}.
+
+Let $\Sigma$ be a non-orientable surface, with orientable double cover $p\colon \tilde \Sigma \to \Sigma$ and deck transformation $\tau$ that gives $\Sigma=\tilde \Sigma/_\tau$. We have 
+$$\Sigma\timtil (-1,1) = \big(\tilde \Sigma \times (-1,1)\big)/_{(\tau, \iota)}$$
+with $\iota(x) = -x$. A \emph{local semi-bundle} is the map $\Sigma\timtil (-1,1) \to [0,1)$ that sends $(p,x)$ to $|x|$. The fibre over $0$ is $\Sigma$, that over $x\in (0,1)$ is $\tilde \Sigma$.
+
+A \emph{semi-bundle} $M \to [-1,1]$ is a map which is a local semi-bundle when restricted to $[-1, 1-\varepsilon)$ and $(\varepsilon, 1]$. The fibre over $\pm 1$ is $\Sigma$ and the fibre of $x\in (-1,1)$ is $\tilde \Sigma$. We should think about this object as a surface bundle over the segment orbifold $[-1,1]$ with mirror points $\pm 1$. 
+
+\begin{ex}
+Every semi-bundle is constructed by gluing two copies of $\Sigma\timtil [-1,1]$ along their boundaries via some diffeomorphism.
+\end{ex}
+
+Set $I = [-1,1]$. Let $M\to I$ be a semi-bundle with fibres $\Sigma$ and $\tilde \Sigma$.
+Note that $I=\matR/_\Gamma$ where $\Gamma<\Iso(\matR)$ is generated by the reflections at the points $\pm 1$. The orbifold fundamental group of $I$ is 
+$$\pi_1(I) = \Gamma = \matZ/_{2\matZ} * \matZ/_{2\matZ}.$$
+
+\begin{ex}
+The maps $\tilde\Sigma\to M \to I$ induce an exact sequence
+$$0 \longrightarrow \pi_1(\tilde \Sigma) \longrightarrow \pi_1(M) \longrightarrow \pi_1(I) \longrightarrow 0.$$
+\end{ex}
+
+\begin{prop}
+If $\chi(\Sigma)>0$ then $M$ is diffeomorphic to $\matRP^2 \timtil S^1$. If $\chi(\Sigma)\leqslant 0$ the orientable fibre $\tilde \Sigma$ is essential, the universal cover of $\interior M$ is $\matR^3$, and $M$ is Haken.
+\end{prop}
+\begin{proof}
+Same proof as in the standard bundle case.
+\end{proof}
+
+\begin{ex} \label{semi:iff:ex}
+An orientable 3-manifold $M$ has a (semi-)bundle structure if and only if there is an orientable $\Sigma \subset M$ that cuts $M$ into interval bundles.
+\end{ex}
+
+Let $M\to I$ be a semi-bundle. We may pull-back the semi-bundle along the orbifold double cover $S^1 \to I$ and get an ordinary surface bundle $\tilde M \to S^1$, so that the following diagram commutes:
+$$
+\xymatrix{ 
+\tilde M\ar@{.>}[r] \ar@{.>}[d] & M \ar[d] \\
+S^1\ar[r] & I
+}
+$$
 Every semi-bundle is thus covered by an ordinary bundle.
-362 11. CONSTRUCTIONS OF THREE-MANIFOLDS
-11.4.4. Seifert manifolds. We now classify the Seifert manifolds that
-have a surface (semi-)bundle structure.
-Proposition 11.4.10. A Seifert manifoldM has a (semi-)bundle structure
-if and only if one of the following holds:
-• ∂M⁄= 0,
-• e(M) = 0,
-• M =
-(
-T, (1,e )
-)
-or
-(
-K, (1,e )
-)
-,
-• M =
-(
-S2, (2, 1),(2, 1),(2, 1),(2, 2q +1)
-)
-or
-(
-RP2, (2, 1),(2, 2q +1)
-)
-.
+
+
+\subsection{Seifert manifolds} \label{Seifert:fibers:subsection}
+We now classify the Seifert manifolds that have a surface (semi-)bundle structure.
+
+\begin{prop} \label{Seifert:bundle:prop}
+A Seifert manifold $M$ has a (semi-)bundle structure if and only if one of the following holds: 
+\begin{itemize}
+\item $\partial M \neq 0$, 
+\item $e(M)=0$, 
+\item $M = \big(T,(1,e)\big)$ or $\big(K,(1,e)\big)$,
+\item $M = \big(S^2, (2,1),\! (2,1),\! (2,1),\! (2,2q+1)\big)$ or $\big(\matRP^2, (2,1),\! (2,2q+1)\big)$.
+\end{itemize}
 The manifolds in the last line occur only as semi-bundles.
-Proof. If∂M⁄= ∅ ore(M) = 0 thenM→S has an orientable sectionΣ,
-which cutsM into interval bundles: henceΣ is a ﬁbre of a (semi-)bundle (see
-Exercise 11.4.9).
-LetS be one of the orbifolds
-T, K, (S2, 2, 2, 2, 2), (RP2, 2, 2).
-It contains a circle that splitsS into one or two annuli, Möbius strips, or
-(D, 2, 2). Every circle ﬁbering over these pieces is an interval bundle by Propo-
-sition 10.3.33. Therefore every ﬁberingM→S contains a vertical torus that
-splitsM into interval bundles and is hence a (semi-)bundle.
-Conversely, ifM has a (semi-)bundle structure the orientable ﬁbre is es-
-sential and is hence either horizontal or vertical: we get one of the types
-listed. □
-11.4.5. Torusbundles. Atorusbundle isofcourseasurfacebundle M→
-S1 with ﬁbre a torusT. We ﬁx a basis forπ1(T ), so thatMCG(T ) = SL 2(Z).
-By what said above, every matrixA∈ SL2(Z) deﬁnes a torus bundleMA with
-monodromyA. We want to understand whenMA is a Seifert manifold.
-Exercise 11.4.11. For everye∈ Z there are diﬀeomorphisms
-M(1e
-0 1
-)∼=
-(
-T, (1,e )
-)
-, M (−1 e
-0 −1
-)∼=
-(
-K, (1,e )
-)
-.
-The classiﬁcation of torus bundles reduces to linear algebra.
-Proposition 11.4.12. Two torus bundlesMA andMA′ are diﬀeomorphic if
-and only ifA′ is conjugate toA±1 in SL2(Z).
-Proof. LetMA∼=MA′ be a diﬀeomorphism. Consider the toriT andT′ of
-the two ﬁbrations both insideMA and minimise their transverse intersection.
-If T∩T′ = ∅, by Proposition 9.3.18 the tori are parallel and the two
-ﬁbrations are isotopic: henceA′ is conjugate toA±1. Otherwise by the same
-propositionT′ decomposesintoﬁberedannuliintheproductlinebundle MA\T.
-One such ﬁbered annulus identiﬁes a circleγ⊂T preserved byA. Therefore
-A is conjugate to
-(1e
-0 1
-)
-or
-(−1 e
-0 −1
-)
-, andA′ is conjugate to
-(1e′
-0 1
-)
-or
-(−1 e′
-0 −1
-)
-for
-the same reason. Exercise 11.4.11 implies thatA′ =A±1. □
-11.4. SURFACE BUNDLES 363
-Exercise 11.4.13. A matrix A ∈ SL2(Z) has ﬁnite order if and only if
-A =±I or|trA|< 2. Every ﬁnite-orderA is conjugate to one of
-(1 0
-0 1
-)
-,
-(−1 0
-0 −1
-)
-,
-(−1 1
-−1 0
-)
-,
-(0 −1
-1 0
-)
-,
-(1 −1
-1 0
-)
-.
+\end{prop}
+\begin{proof}
+If $\partial M \neq \emptyset$ or $e(M)=0$ then $M\to S$ has an orientable section $\Sigma$, which cuts $M$ into interval bundles: hence $\Sigma$ is a fibre of a (semi-)bundle (see Exercise \ref{semi:iff:ex}).
+
+Let $S$ be one of the orbifolds
+$$T, \quad K, \quad (S^2,2,2,2,2), \quad (\matRP^2, 2,2).$$
+It contains a circle that splits $S$ into one or two annuli, M\"obius strips, or $(D,2,2)$. 
+Every circle fibering over these pieces is an interval bundle by Proposition \ref{diffeo:fiberings:prop}. Therefore every fibering $M \to S$ contains a vertical torus that splits $M$ into interval bundles and is hence a (semi-)bundle.
+
+Conversely, if $M$ has a (semi-)bundle structure the orientable fibre is essential and is hence either horizontal or vertical: we get one of the types listed.
+\end{proof}
+
+
+\subsection{Torus bundles}
+A \emph{torus bundle} is of course a surface bundle $M\to S^1$ with fibre a torus $T$. We fix a basis for $\pi_1(T)$, so that $\MCG(T) = \SLZ$. By what said above, every matrix $A\in \SLZ$ defines a torus bundle $M_A$\index{torus bundle} with monodromy $A$. We want to understand when $M_A$ is a Seifert manifold.
+
+\begin{ex} \label{Me:ex}
+For every $e\in\matZ$ there are diffeomorphisms 
+$$M_{\matr 1e01} \isom \big(T,(1,e)\big), \quad M_{\matr {-1}e0{-1}} \isom \big(K,(1,e)\big). $$
+\end{ex}
+
+The classification of torus bundles reduces to linear algebra.
+
+\begin{prop} \label{torus:bundle:classification:prop}
+Two torus bundles $M_A$ and $M_{A'}$ are diffeomorphic if and only if $A'$ is conjugate to $A^{\pm 1}$ in $\SLZ$.
+\end{prop}
+\begin{proof}
+Let $M_A \isom M_{A'}$ be a diffeomorphism. Consider the tori $T$ and $T'$ of the two fibrations both inside $M_A$ and minimise their transverse intersection. 
+
+If $T\cap T' = \emptyset$, by Proposition \ref{line:bundles:prop} the tori are parallel and the two fibrations are isotopic: hence $A'$ is conjugate to $A^{\pm 1}$. Otherwise by the same proposition $T'$ decomposes into fibered annuli in the product line bundle $M_A\setminus T$. One such fibered annulus identifies a circle $\gamma\subset T$ preserved by $A$. Therefore $A$ is conjugate to $\matr 1 e 0 1 $ or $\matr {-1} e 0 {-1}$, and $A'$ is conjugate to $\matr 1 {e'} 0 1 $ or $\matr {-1} {e'} 0 {-1}$ for the same reason. Exercise \ref{Me:ex} implies that $A' = A^{\pm 1}$.
+\end{proof}
+
+\begin{ex} A matrix $A\in \SLZ$ has finite order if and only if $A=\pm I$ or $|\tr A| < 2$. Every finite-order $A$ is conjugate to one of
+$$ 
+\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}, \quad
+\begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix}, \quad
+\begin{pmatrix} -1 & 1 \\ -1 & 0 \end{pmatrix}, \quad
+ \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}, \quad
+\begin{pmatrix} 1 & -1 \\ 1 & 0 \end{pmatrix}.
+$$
 These matrices have order 1, 2, 3, 4, 6.
-Hint. Use Proposition 2.3.9. □
-We can easily determine whether a torus bundle is Seifert by looking at its
-monodromyA.
-Proposition 11.4.14. Let M = MA be a torus bundle with monodromy
-A⁄=±I. The following holds:
-• if|trA|< 2 thenM is a Seifert manifold withe = 0 andχ = 0,
-• if|trA| = 2 thenM is a Seifert manifold withe⁄= 0 andχ = 0,
-• if|trA|> 2 thenM is not a Seifert manifold.
-Proof. ConsiderT× [−1, 1] foliated by lines{x}× [−1, 1]. The foliation
-extendsto MA. IfAhasﬁniteorder, thenMA isﬁnitelycoveredby MI =T×S1
-and hence all ﬁbers are compact. ThereforeMA is Seifert ﬁbered and covered
-byT×S1, and we gete =χ = 0.
-If|trA| = 2 then A is conjugate to
-(±1 e
-0 ±1
-)
-and we use Exercise 11.4.11.
-Proposition 11.4.10 easily shows that all the Seifert manifolds that are torus
-bundles are realised with|trA|⩽ 2, hence if|trA|> 2 the manifoldM is not
-Seifert by Proposition 11.4.12. □
-When|trA|> 2 we say that the monodromyA is Anosov.
-11.4.6. Bundles withχ(Σ)< 0. Proposition 11.4.12 does not extend to
-surfacebundleswith χ(Σ)< 0; indeeditmayhappenthatnon-conjugatemon-
-odromies in MCG(Σ) give rise to diﬀeomorphic manifolds and understanding
-when this happens is a hard problem.
-Proposition 11.4.14 extends nevertheless and reﬂects the trichotomy of
-mapping classes. Let Σ be a closed orientable surface withχ(Σ) < 0. Re-
-call from Section 8.4 that every elementψ∈ MCG(Σ) is either ﬁnite order,
-reducible, or pseudo-Anosov.
-Proposition 11.4.15. Let Mψ be a surface bundle with ﬁbreΣ and mon-
-odromyψ∈ MCG(Σ). The following holds:
-• ifψ has ﬁnite order, thenMψ is Seifert withχ< 0 ande = 0,
-• ifψ is reducible, thenMψ contains an essential torus,
-• ifψ is pseudo-Anosov, thenMψ is simple and not Seifert.
-Proof. Same proof as Proposition 11.4.14. Ifψ has ﬁnite order, it is an
-isometry for some hyperbolic metric onΣ, and the line ﬁbration ofΣ× [−1, 1]
-glues to a Seifert ﬁbration forMψ.
-364 11. CONSTRUCTIONS OF THREE-MANIFOLDS
-Ifψ is reducible there are disjoint essential simple closed curvesγ1,...,γ k
-with ψ(γi ) = γi+1 cyclically; by gluing the annuliγi× [−1, 1] we get a torus
-T⊂Mψ. It is essential because by cutting along it we still get a ﬁbration over
-S1 with ﬁbers havingχ⩽ 0.
-Ifψ ispseudo-Anosovtherearenoessentialtori T⊂Mψ, forbyminimising
-T∩ Σ then Mψ\T would consist of essential annuli of typeγ× [−1, 1] and
-henceψ would be reducible. The manifoldMψ is not Seifert because the ﬁbre
-Σ would become a horizontal surface: thenM would be covered byΣ×S1
-and henceψ would be of ﬁnite order. □
+\end{ex}
+\begin{proof}[Hint]
+Use Proposition \ref{PSLR:prop}.
+\end{proof}
+
+We can easily determine whether a torus bundle is Seifert by looking at its monodromy $A$.
+
+\begin{prop} \label{torus:bundle:prop}
+Let $M = M_A$ be a torus bundle with monodromy $A\neq \pm I$. The following holds:
+\begin{itemize}
+\item if $|\tr A| < 2$ then $M$ is a Seifert manifold with $e=0$ and $\chi = 0$,
+\item if $|\tr A|=2$ then $M$ is a Seifert manifold with $e\neq 0$ and $\chi = 0$,
+\item if $|\tr A|>2$ then $M$ is not a Seifert manifold.
+\end{itemize}
+\end{prop}
+\begin{proof}
+Consider $T \times [-1,1]$ foliated by lines $\{x\}\times [-1,1]$. The foliation extends to $M_A$. If $A$ has finite order, then $M_A$ is finitely covered by $M_I = T\times S^1$ and hence all fibers are compact. Therefore $M_A$ is Seifert fibered and covered by $T\times S^1$, and we get $e=\chi=0$. 
+
+If $|\tr A|=2$ then $A$ is conjugate to $\matr {\pm 1}e0{\pm 1}$ and we use Exercise \ref{Me:ex}. Proposition \ref{Seifert:bundle:prop} easily shows that all the Seifert manifolds that are torus bundles are realised with $|\tr A| \leqslant 2$, hence if $|\tr A|>2$ the manifold $M$ is not Seifert by Proposition \ref{torus:bundle:classification:prop}.
+\end{proof}
+
+When $|\tr A| > 2$ we say that the monodromy $A$ is \emph{Anosov}.
+
+
+\subsection{Bundles with $\chi(\Sigma) <0$}
+Proposition \ref{torus:bundle:classification:prop} does not extend to surface bundles with $\chi(\Sigma)<0$; indeed it may happen that non-conjugate monodromies in $\MCG(\Sigma)$ give rise to diffeomorphic manifolds and understanding when this happens is a hard problem.
+
+Proposition \ref{torus:bundle:prop} extends nevertheless and reflects the trichotomy of mapping classes. Let $\Sigma$ be a closed orientable surface with $\chi(\Sigma)<0$.
+Recall from Section \ref{surface:diffeomorphisms:section} that every element $\psi\in\MCG(\Sigma)$ is either finite order, reducible, or pseudo-Anosov.
+
+\begin{prop} \label{trichotomy:prop}
+Let $M_\psi$ be a surface bundle with fibre $\Sigma$ and monodromy $\psi\in\MCG(\Sigma)$. The following holds:
+\begin{itemize}
+\item if $\psi$ has finite order, then $M_\psi$ is Seifert with $\chi <0$ and $e=0$,
+\item if $\psi$ is reducible, then $M_\psi$ contains an essential torus,
+\item if $\psi$ is pseudo-Anosov, then $M_\psi$ is simple and not Seifert.
+\end{itemize}
+\end{prop}
+\begin{proof}
+Same proof as Proposition \ref{torus:bundle:prop}. If $\psi$ has finite order, it is an isometry for some hyperbolic metric on $\Sigma$, and the line fibration of $\Sigma \times [-1,1]$ glues to a Seifert fibration for $M_\psi$. 
+
+If $\psi$ is reducible there are disjoint essential simple closed curves $\gamma_1,\ldots, \gamma_k$ with $\psi(\gamma_i) = \gamma_{i+1}$ cyclically; by gluing the annuli $\gamma_i \times [-1,1]$ we get a torus $T\subset M_\psi$. It is essential because by cutting along it we still get a fibration over $S^1$ with fibers having $\chi \leqslant 0$.
+
+If $\psi$ is pseudo-Anosov there are no essential tori $T\subset M_\psi$, for by minimising $T\cap \Sigma$ then $M_\psi \setminus T$ would consist of essential annuli of type $\gamma \times [-1,1]$ and hence $\psi$ would be reducible.
+The manifold $M_\psi$ is not Seifert because the fibre $\Sigma$ would become a horizontal surface: then $M$ would be covered by $\Sigma \times S^1$ and hence $\psi$ would be of finite order.
+\end{proof}

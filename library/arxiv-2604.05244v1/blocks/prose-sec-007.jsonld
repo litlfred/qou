@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2604.05244v1/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2604.05244v1/blocks/prose-sec-007",
   "kind": "prose",
-  "title": "Ai(s+u) Ai(t+u) du. Figure 7(b)",
-  "pageStart": 24,
-  "pageEnd": 27,
-  "text": "../sections/sec-007-0-aisu-aitu-du-figure-7b.md",
-  "derivedFrom": "library/arxiv-2604.05244v1/manifest",
-  "sourceDocument": "library/arxiv-2604.05244v1/manifest",
+  "title": "Monochromatic phase drive and Toeplitz Floquet scattering",
+  "pageStart": 9,
+  "pageEnd": 10,
+  "text": "../sections/sec-007-monochromatic-phase-drive-and-toeplitz-floquet-s.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2604.05244v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2604.05244v1/manifest.jsonld",
   "provenance": "ingested"
 }

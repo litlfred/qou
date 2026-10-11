@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ft-dpm-quaternion-kernel-ieee-tit-2014/manifest.jsonld",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions",
   "contains": [
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-front-matter",
     "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-000",
     "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-001",
     "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-002",
@@ -14,11 +20,31 @@
     "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-005",
     "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-006",
     "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-007",
-    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-008"
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-008",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-009",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-010",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-011",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-012",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-013",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-014",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-015",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-016",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-017",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-018",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-019",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-020",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-021",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-022",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-023",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-024"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "ft-dpm-quaternion-kernel-ieee-tit-2014",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "FT_DPM_Quaternion_Kernel_IEEE_TIT_2014.pdf",
     "source_sha256": "aa2f1eb73610a81b0c8ae9e25dec4824ade6661ae3598f907289d9161ecded35",
     "pages": 14,

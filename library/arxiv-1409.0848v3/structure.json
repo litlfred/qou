@@ -6,7 +6,8 @@
   "sha256": "5af73ef812ccee40711d79a3493ca54c62567ff03137e1820b3a2f3987784cb8",
   "bytes": 645155,
   "pages": 52,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -344,6 +345,136 @@
   "likely_scanned": false,
   "toc_entries": 22,
   "sections": 15,
-  "chars_total": 150567
+  "chars_total": 150567,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 24,
+   "overlaid": 14,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-1-recollections",
+     "title": "Recollections",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-2-factorization",
+     "title": "Factorization",
+     "prose_ratio": 0.76,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-21-disk-algebras",
+     "title": "Disk algebras",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-22-factorization-homology",
+     "title": "Factorization homology",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-24-localizing-with-respect-to-isotopy-equivalenc",
+     "title": "Localizing with respect to isotopy equivalences",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-25-pushforward",
+     "title": "Pushforward",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-26-algebras-over-a-closed-interval",
+     "title": "Algebras over a closed interval",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-27-homology-theories",
+     "title": "Homology theories",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-3-homotopy-invariant-homology-theories",
+     "title": "Homotopy invariant homology theories",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-31-classical-homology-theories",
+     "title": "Classical homology theories",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-33-compactly-supported-cohomology",
+     "title": "Compactly supported cohomology",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-4-examples-of-factorization-homology-theories",
+     "title": "Examples of factorization homology theories",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-42-intersection-homology",
+     "title": "Intersection homology",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.942,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1001.2937v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Microscopic Spectrum of the Wilson Dirac Operator (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1001.2937v3/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1001.2937&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1001.2937v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1001.2937v3",
+    "content_type": "application/gzip",
+    "sha256": "06adda234f3b159cb7a4257150dd31a81498f91a6d95f17d75a3559764f5ba64",
+    "bytes": 25389,
+    "fetched": "2026-10-10T15:02:55+00:00",
+    "files": [
+      {
+        "path": "source/files/DSV-PRL-resubmit-appeal-final.tex",
+        "role": "tex",
+        "sha256": "9118690619543ebeb63db6c8c9e3d496a92543e6aafa278ab0e6ccd984310829",
+        "bytes": 28242
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

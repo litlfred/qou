@@ -6,7 +6,8 @@
   "sha256": "b7ee20b0a7f5f3da02f7c5c82a1b49f8036b4a9abe215c8c7597e3d16c97f4f6",
   "bytes": 266084,
   "pages": 21,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -23,7 +24,7 @@
    "CLOSED BRAID",
    "TETSUYA ITO"
   ],
-  "abstract": "The relationships between braid ordering and the ge- ometry of its closure is studied. We prove that if an essential closed surface F in the complements of closed braid has relatively small genus with respect to the Dehornoy ﬂoor of the braid, F is circular-foliated in a sense of Birman-Menasco’s Braid foliation theory. As an application of the result, we prove that if Dehornoy ﬂoor of braids are larger than three, Nielsen-Thurston classiﬁcat ion of braids and the geometry of their closure’s complements are in one-to-one correspondence. Using this result, we construct inﬁ n- itely many hyperbolic knots explicitly from pseudo-Anosov element of mapping class groups.",
+  "abstract": "The relationships between braid ordering and the ge- ometry of its closure is studied. We prove that if an essential closed surface F in the complements of closed braid has relatively small genus with respect to the Dehornoy \ufb02oor of the braid, F is circular-foliated in a sense of Birman-Menasco\u2019s Braid foliation theory. As an application of the result, we prove that if Dehornoy \ufb02oor of braids are larger than three, Nielsen-Thurston classi\ufb01cat ion of braids and the geometry of their closure\u2019s complements are in one-to-one correspondence. Using this result, we construct in\ufb01 n- itely many hyperbolic knots explicitly from pseudo-Anosov element of mapping class groups.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20181026173032-04'00'",
@@ -214,6 +215,80 @@
   "likely_scanned": false,
   "toc_entries": 13,
   "sections": 8,
-  "chars_total": 41180
+  "chars_total": 41180,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "paper.tex",
+   "tex_sections": 12,
+   "overlaid": 7,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-braid-ordering-and-dehornoy-floor",
+     "title": "Braid ordering and Dehornoy floor",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.723,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-22-the-geometric-meaning-of-dehornoy-ordering-an",
+     "title": "The geometric meaning of Dehornoy ordering and Dehornoy floor",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-3-braid-foliation",
+     "title": "Braid Foliation",
+     "prose_ratio": 0.908,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-41-tiled-essential-surface",
+     "title": "Tiled essential surface",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-42-mixed-foliated-surface",
+     "title": "Mixed foliated surface",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-5-nielsen-thurston-classification-and-the-geomet",
+     "title": "Nielsen-Thurston classification and the geometry of closed braid complements",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

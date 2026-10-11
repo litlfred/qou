@@ -7,7 +7,8 @@
   "bytes": 372087,
   "pages": 32,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -151,6 +152,57 @@
   "likely_scanned": false,
   "toc_entries": 7,
   "sections": 6,
-  "chars_total": 57180
+  "chars_total": 57180,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "statpointmenger.tex",
+   "tex_sections": 7,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.656,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-existence-of-minimizers-within-knot-classes",
+     "title": "Existence of minimizers within knot classes",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-4-regularity-of-stationary-points",
+     "title": "Regularity of stationary points",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-a-product-and-chain-rule",
+     "title": "A Product and chain rule",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-b-equivalence-of-fractional-seminorms",
+     "title": "B Equivalence of fractional seminorms",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.248,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

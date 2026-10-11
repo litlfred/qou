@@ -6,7 +6,8 @@
   "sha256": "ad965f5c808388245c348adfee28f47127cacf09c057110082bb8723d79050cb",
   "bytes": 318321,
   "pages": 22,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -347,6 +348,138 @@
   "likely_scanned": false,
   "toc_entries": 19,
   "sections": 17,
-  "chars_total": 52035
+  "chars_total": 52035,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 47,
+   "overlaid": 9,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.19,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-2-self-equivalences",
+     "title": "Self-equivalences",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.517,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-21-a-general-construction",
+     "title": "A general construction",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-22-applications",
+     "title": "Applications",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-3-the-2-braid-group",
+     "title": "The 2-braid group",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-31-coxeter-group-action",
+     "title": "Coxeter group action",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-32-braid-group-action",
+     "title": "Braid group action",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.924,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-4-principal-block-of-a-semi-simple-complex-lie-a",
+     "title": "Principal block of a semi-simple complex Lie algebra",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-41-review-of-category-o",
+     "title": "Review of category O",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-42-link-with-bimodules",
+     "title": "Link with bimodules",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-5-flag-varieties",
+     "title": "Flag varieties",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-51-classical-results",
+     "title": "Classical results",
+     "prose_ratio": 0.909,
+     "coverage_ratio": 0.943,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-52-genuine-braid-group-action",
+     "title": "Genuine braid group action",
+     "prose_ratio": 0.33,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-013-53-link-with-bimodules",
+     "title": "Link with bimodules",
+     "prose_ratio": 0.342,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-6-appendix-associativity-of-kernel-transforms",
+     "title": "Appendix : associativity of kernel transforms",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-015-61-classical-isomorphisms",
+     "title": "Classical isomorphisms",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

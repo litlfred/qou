@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2312.00624v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2312.00624v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2312.00624v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2312.00624&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2312.00624v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2312.00624v1",
+    "content_type": "application/gzip",
+    "sha256": "353ea7fb51871cacdc24d8e4f8ab0f2e45da8811608692370cbd60d55c336b42",
+    "bytes": 1728088,
+    "fetched": "2026-10-10T15:19:35+00:00",
+    "files": [
+      {
+        "path": "source/files/biblio-apol.bib",
+        "role": "bib",
+        "sha256": "e3413c1a2a657f3ea523aa055eb3fbcc6831e5e4385ce93c05dc26a297ba7de5",
+        "bytes": 267005
+      },
+      {
+        "path": "source/files/draft-v4.bbl",
+        "role": "bbl",
+        "sha256": "86d0b44b29e4b2dd58c21b64d541a6b6d9fa8e7d0645602bf350b8f0b87ee9b7",
+        "bytes": 11632
+      },
+      {
+        "path": "source/files/draft-v4.tex",
+        "role": "tex",
+        "sha256": "d9fc3c59f9ed83fa101dc56d69f0e12a341a009bb98a3ca21bc4491dfa1e5dc3",
+        "bytes": 135836
+      },
+      {
+        "path": "source/files/jheppub.sty",
+        "role": "sty",
+        "sha256": "e73b2ddb75c396b8a366be04b661b69492d85c74326555dc6ff0b6d6fae7467d",
+        "bytes": 11816
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

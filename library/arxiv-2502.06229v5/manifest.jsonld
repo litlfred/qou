@@ -7,7 +7,7 @@
   ],
   "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2502.06229v5/manifest.jsonld",
   "@type": [
-    "folio-assistant-core:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "Constructing equivalences between fusion categories of quantum groups and of vertex operator algebras via quantum gauge groups",
   "contains": [
@@ -34,6 +34,7 @@
     "library/arxiv-2502.06229v5/sections/sec-019"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "arxiv-2502.06229v5",
     "title_source": "pdf-info",

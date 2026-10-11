@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1907.03683v4/sections/sec-012",
   "@type": [
     "doco:Section"
   ],
-  "title": "On the Plancherel measure on partitions. The Plancherel measure is a probability",
-  "pageStart": 11,
-  "pageEnd": 12,
+  "title": "Proof of Theorem 3.1",
+  "pageStart": 13,
+  "pageEnd": 17,
   "contains": [
     "library/arxiv-1907.03683v4/blocks/prose-sec-012"
   ],
-  "derivedFrom": "library/arxiv-1907.03683v4/manifest",
-  "sourceDocument": "library/arxiv-1907.03683v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.03683v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.03683v4/manifest.jsonld",
   "provenance": "ingested"
 }

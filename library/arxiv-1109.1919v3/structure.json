@@ -6,7 +6,8 @@
   "sha256": "2b634edddf2320474b4564dc74eb35972264f5590cef16cfa400ad5f56d52dcb",
   "bytes": 554216,
   "pages": 13,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -126,6 +127,53 @@
   "likely_scanned": false,
   "toc_entries": 5,
   "sections": 5,
-  "chars_total": 29176
+  "chars_total": 29176,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "paper.tex",
+   "tex_sections": 4,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-combinatorial-descent-data",
+     "title": "Combinatorial Descent Data",
+     "prose_ratio": 0.097,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-0-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.268,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-002-2-the-main-theorem",
+     "title": "The Main Theorem",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-3-some-remarks",
+     "title": "Some Remarks",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

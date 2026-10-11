@@ -1,0 +1,51 @@
+{
+ "url": "https://arxiv.org/e-print/2404.19155v2",
+ "content_type": "application/gzip",
+ "sha256": "63d844807a75f0792cb5d620012e772c966ca4283e8edd3076eb79dd92c30775",
+ "bytes": 176887,
+ "fetched": "2026-10-10T15:20:08+00:00",
+ "files": [
+  {
+   "path": "files/biblatex.sty",
+   "role": "sty",
+   "sha256": "cd7d2bb7fa93cd406863f6e43bc3ef08ff34b18a55f6015db759d8d34ebe9984",
+   "bytes": 533961
+  },
+  {
+   "path": "files/blx-case-expl3.sty",
+   "role": "sty",
+   "sha256": "35a9fcb0f0620ddf7202917911e1f7dd21a20e20b32180d1c273ee3fbc859772",
+   "bytes": 9961
+  },
+  {
+   "path": "files/hyphenation.tex",
+   "role": "tex",
+   "sha256": "95fcb7df777f588d4dbfa23ec7c726f5e5d2f121a90a92cc996296f4cf0fa63b",
+   "bytes": 533
+  },
+  {
+   "path": "files/note-macros.tex",
+   "role": "tex",
+   "sha256": "905d06d713cdc984cc73896c50fb60ca777ab46ae4853bde6e37a770ee2b1cf0",
+   "bytes": 1427
+  },
+  {
+   "path": "files/note.bbl",
+   "role": "bbl",
+   "sha256": "97ceaf6a61fae83fdfbc12f559debecc1fbb4fc675b4caa7615796162c2af97b",
+   "bytes": 40102
+  },
+  {
+   "path": "files/note.tex",
+   "role": "tex",
+   "sha256": "ad136a60f76bfac297c2526ff0b78bb3bd41427cb241e9205d878b9c8b0d1f05",
+   "bytes": 64214
+  },
+  {
+   "path": "files/sl2art.cls",
+   "role": "cls",
+   "sha256": "9ea74b9904877c307ded6ab4f8ea77c3db142fde21af19bc9da8c3cd415017c2",
+   "bytes": 6605
+  }
+ ]
+}

@@ -6,7 +6,12 @@
   "sha256": "a84f478d72d40af25ad556602a5d27cd81e14931527abe71f4ab931597d0297d",
   "bytes": 150569,
   "pages": 13,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,119 +21,308 @@
    "stamp_date": "28 Oct 2002"
   },
   "doi": null,
-  "title": "Differential and complex geometry of two-dimensional noncommutative tori Momar Dieng Albert Schwarz\u2217 Department of Mathematics University of California",
-  "authors_raw": "Davis, CA 95616",
+  "title": "arXiv:math/0203160v3 [math.QA] 28 Oct 2002",
+  "authors_raw": "Momar Dieng",
   "title_lines": [
    "Differential and complex geometry of",
-   "two-dimensional noncommutative tori",
-   "Momar Dieng",
-   "Albert Schwarz\u2217",
-   "Department of Mathematics",
-   "University of California"
+   "two-dimensional noncommutative tori"
   ],
-  "abstract": "We analyze in detail projective modules over two-dimension al noncom- mutative tori and complex structures on these modules.We co ncentrate our attention on properties of holomorphic vectors in these modules; the theory of these vectors generalizes the theory of theta-fun ctions. The pa- per is self-contained; it can be used also as an introduction to the theory of noncommutative spaces with simplest space of this kind th oroughly analyzed as a basic example.",
+  "abstract": "We analyze in detail projective modules over two-dimensional noncom- mutative tori and complex structures on these modules.We concentrate our attention on properties of holomorphic vectors in these modules; the theory of these vectors generalizes the theory of theta-functions. The pa- per is self-contained; it can be used also as an introduction to the theory of noncommutative spaces with simplest space of this kind thoroughly analyzed as a basic example.",
   "docinfo": {
+   "Title": "arXiv:math/0203160v3  [math.QA]  28 Oct 2002",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20211124140528-05'00'",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:math/0203160v3  [math.QA]  28 Oct 2002"
+   "CreationDate": "D:20211124140528-05'00'"
+  },
+  "title_raw": "Differential and complex geometry of two-dimensional noncommutative tori",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math/0203160v3 [math.QA] 28 Oct 2002",
+   "heading": "Di\ufb00erential and complex geometry of two-dimensional noncommutative tori",
+   "text": "Differential and complex geometry of two-dimensional noncommutative tori",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
+   "title": "Projective modules and their tensor products.",
+   "page": 2,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Connections and complex structures.",
+   "page": 6,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
    "title": "Acknowledgments",
    "page": 8,
    "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 8,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "Appendix",
-   "page": 10,
-   "source": "inferred",
-   "number": "4"
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 288,
-   "n_words": 43
+   "n_chars": 506,
+   "n_words": 67,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 8,
-   "n_chars": 14610,
-   "n_words": 3272
+   "page_end": 2,
+   "n_chars": 3383,
+   "n_words": 541,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-acknowledgments",
+   "id": "sec-001-2-projective-modules-and-their-tensor-products",
+   "number": "2",
+   "title": "Projective modules and their tensor products.",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 6,
+   "n_chars": 6045,
+   "n_words": 1443,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-3-connections-and-complex-structures",
+   "number": "3",
+   "title": "Connections and complex structures.",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 4820,
+   "n_words": 999,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
-   "level": 1,
+   "level": 2,
    "page_start": 8,
-   "page_end": 8,
-   "n_chars": 343,
-   "n_words": 67
-  },
-  {
-   "id": "sec-003-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 10,
-   "n_chars": 1908,
-   "n_words": 280
-  },
-  {
-   "id": "sec-004-4-appendix",
-   "number": "4",
-   "title": "Appendix",
-   "level": 1,
-   "page_start": 10,
    "page_end": 13,
-   "n_chars": 5002,
-   "n_words": 1530
+   "n_chars": 7063,
+   "n_words": 1666,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 5,
+  "toc_entries": 4,
+  "toc_inferred_entries": 4,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
   "sections": 5,
-  "chars_total": 22151
+  "chars_total": 21817,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 4,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-projective-modules-and-their-tensor-products",
+     "title": "Projective modules and their tensor products.",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-connections-and-complex-structures",
+     "title": "Connections and complex structures.",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.129,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

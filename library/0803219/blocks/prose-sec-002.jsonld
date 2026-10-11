@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/0803219/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/0803219/blocks/prose-sec-002",
   "kind": "prose",
-  "title": "SL(2; C)-Character variety of a knot group. For a knot in S3, let us",
-  "pageStart": 4,
-  "pageEnd": 6,
-  "text": "../sections/sec-002-12-sl2-c-character-variety-of-a-knot-group-for-a.md",
-  "derivedFrom": "library/0803219/manifest",
-  "sourceDocument": "library/0803219/manifest",
+  "title": "Representations of the fundamental group of the cinquefoil knot.",
+  "pageStart": 26,
+  "pageEnd": 31,
+  "text": "../sections/sec-002-42-representations-of-the-fundamental-group-of-t.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0803219/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0803219/manifest.jsonld",
   "provenance": "ingested"
 }

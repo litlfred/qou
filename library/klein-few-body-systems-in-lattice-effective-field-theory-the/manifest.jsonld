@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Few-body systems in lattice effective field theory",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Few-Body Systems in Lattice Effective Field Theory",
   "contains": [
     "library/klein-few-body-systems-in-lattice-effective-field-theory-the/sections/sec-000",
     "library/klein-few-body-systems-in-lattice-effective-field-theory-the/sections/sec-001",
@@ -66,8 +71,11 @@
     "library/klein-few-body-systems-in-lattice-effective-field-theory-the/sections/sec-057"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "klein-few-body-systems-in-lattice-effective-field-theory-the",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf",
     "source_sha256": "7ecafdd08255d5c6bfe843f9c11ad056beefac13bd6da459a98322f8cd1e6317",
     "pages": 111,

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0203194v1/sections/sec-050",
   "@type": [
     "doco:Section"
   ],
-  "title": "Over the p-adics. We have an analogous situation. Let K be a",
-  "pageStart": 25,
-  "pageEnd": 25,
+  "title": "On special values of hypergeometric functions attached to arithmetic $p$-adic triangle groups.",
+  "pageStart": 192,
+  "pageEnd": 200,
   "contains": [
     "library/arxiv-math-0203194v1/blocks/prose-sec-050"
   ],
-  "derivedFrom": "library/arxiv-math-0203194v1/manifest",
-  "sourceDocument": "library/arxiv-math-0203194v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
   "provenance": "ingested"
 }

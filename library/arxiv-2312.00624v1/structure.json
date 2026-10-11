@@ -5,7 +5,8 @@
   "file": "2312.00624v1.pdf",
   "sha256": "bda867f7b84f69c35e3171477939743ca4a9b1a8426106b168e40cbc91dc9767",
   "bytes": 1986072,
-  "pages": 43
+  "pages": 43,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -15,9 +16,9 @@
    "stamp_date": "1 Dec 2023"
   },
   "doi": null,
-  "title": "On the structure of wave functions in complex Chern–Simons theory",
-  "authors_raw": "Marcos Mariño and Claudia Rella",
-  "abstract": "We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the similarities with the topological string/spectral theory correspondence. We first conjecture a hidden integrality structure in the holomorphic blocks and show that this structure guarantees the cancellation of potential singularities in the full non- perturbative wave function at rational values of the coupling constant. We then develop various techniques to determine the wave function at such rational points. Finally, we illustrate our conjec- tures and obtain explicit results in the examples of the figure-eight and the three-twist knots. In the case of the figure-eight knot, we also perform a direct evaluation of the state integral in the rational case and observe that the resulting wave function has the features of the ground state for a quantum mirror curve. arXiv:2312.00624v1 [hep-th] 1 Dec 2023",
+  "title": "On the structure of wave functions in complex Chern\u2013Simons theory",
+  "authors_raw": "Marcos Mari\u00f1o and Claudia Rella",
+  "abstract": "We study the structure of wave functions in complex Chern\u2013Simons theory on the complement of a hyperbolic knot, emphasizing the similarities with the topological string/spectral theory correspondence. We first conjecture a hidden integrality structure in the holomorphic blocks and show that this structure guarantees the cancellation of potential singularities in the full non- perturbative wave function at rational values of the coupling constant. We then develop various techniques to determine the wave function at such rational points. Finally, we illustrate our conjec- tures and obtain explicit results in the examples of the figure-eight and the three-twist knots. In the case of the figure-eight knot, we also perform a direct evaluation of the state integral in the rational case and observe that the resulting wave function has the features of the ground state for a quantum mirror curve. arXiv:2312.00624v1 [hep-th] 1 Dec 2023",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20231204014717Z",
@@ -27,7 +28,7 @@
   },
   "title_lines": [
    "On the structure of wave functions in",
-   "complex Chern–Simons theory"
+   "complex Chern\u2013Simons theory"
   ]
  },
  "toc": [
@@ -40,7 +41,7 @@
   },
   {
    "level": 1,
-   "title": "Complex Chern–Simons theory and the A-polynomial",
+   "title": "Complex Chern\u2013Simons theory and the A-polynomial",
    "page": 4,
    "source": "outline",
    "number": null
@@ -194,7 +195,7 @@
   {
    "id": "sec-001-complex-chernsimons-theory-and-the-a-polynomial",
    "number": null,
-   "title": "Complex Chern–Simons theory and the A-polynomial",
+   "title": "Complex Chern\u2013Simons theory and the A-polynomial",
    "level": 1,
    "page_start": 4,
    "page_end": 4,
@@ -367,6 +368,152 @@
   "likely_scanned": false,
   "toc_entries": 21,
   "sections": 18,
-  "chars_total": 94262
+  "chars_total": 94262,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "draft-v4.tex",
+   "tex_sections": 17,
+   "overlaid": 14,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-complex-chernsimons-theory-and-the-a-polynomial",
+     "title": "Complex Chern\u2013Simons theory and the A-polynomial",
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-classical-and-quantum-a-polynomials",
+     "title": "Classical and quantum A-polynomials",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.94,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-the-structure-of-the-wave-function",
+     "title": "The structure of the wave function",
+     "prose_ratio": 0.925,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-general-conjectures",
+     "title": "General conjectures",
+     "prose_ratio": 0.904,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-cancellation-of-singularities",
+     "title": "Cancellation of singularities",
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.888,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-the-wave-function-in-the-rational-case-i",
+     "title": "The wave function in the rational case, I",
+     "prose_ratio": 0.904,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-the-wave-function-in-the-rational-case-ii",
+     "title": "The wave function in the rational case, II",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-solving-a-second-order-q-difference-equation",
+     "title": "Solving a second-order q-difference equation",
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-solving-a-third-order-q-difference-equation",
+     "title": "Solving a third-order q-difference equation",
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-examples",
+     "title": "Examples",
+     "prose_ratio": 0.932,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-the-figure-eight-knot",
+     "title": "The figure-eight knot",
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-the-three-twist-knot",
+     "title": "The three-twist knot",
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-the-wave-function-from-the-state-integral",
+     "title": "The wave function from the state integral",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-evaluation-at-rational-points",
+     "title": "Evaluation at rational points",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-factorization-and-two-special-subcases",
+     "title": "Factorization and two special subcases",
+     "prose_ratio": 0.401,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-conclusions",
+     "title": "Conclusions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-an-alternative-way-of-obtaining-the-integer-sequ",
+     "title": "An alternative way of obtaining the integer sequences",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -5,7 +5,8 @@
   "file": "2402.01890v4.pdf",
   "sha256": "e1eeb2865f0b53e1d85365990676623a1dbae001dd82c43a796613f573754841",
   "bytes": 1060883,
-  "pages": 27
+  "pages": 27,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,8 +17,8 @@
   },
   "doi": null,
   "title": "On the spherical partition algebra",
-  "authors_raw": "Katherine Ormeño Bast´ ıas∗1, Paul Martin †2, and Steen Ryom-Hansen ‡3",
-  "abstract": "For k ∈ N we introduce an idempotent subalgebra, the spherical partition algebra SP k, of the partition algebra Pk, that we define using an embedding associated with the trivial representation of the symmetric group Sk. We determine a basis for SP k, and this provides a combinatorial interpretation of the dimension of SP k involving bipartite partitions of k. For t ∈ C we consider the specialized algebra SP k(t). For t = n ∈ N, we describe the structure of SP k(n) by giving the permutation module decomposition of thekth symmetric power of the defining module for the symmetric group algebra CSn. In general, we show that SP k(t) is quasi-hereditary over C for all t ∈ C , except t = 0. We determine the decomposition numbers for SP k(t) for every specialization t ∈ C except t = 0, (which includes semisimple and non-semisimple cases). In particular we determine the structure of all indecomposable projective modules, and the indecomposable tilting modules.",
+  "authors_raw": "Katherine Orme\u00f1o Bast\u00b4 \u0131as\u22171, Paul Martin \u20202, and Steen Ryom-Hansen \u20213",
+  "abstract": "For k \u2208 N we introduce an idempotent subalgebra, the spherical partition algebra SP k, of the partition algebra Pk, that we define using an embedding associated with the trivial representation of the symmetric group Sk. We determine a basis for SP k, and this provides a combinatorial interpretation of the dimension of SP k involving bipartite partitions of k. For t \u2208 C we consider the specialized algebra SP k(t). For t = n \u2208 N, we describe the structure of SP k(n) by giving the permutation module decomposition of thekth symmetric power of the defining module for the symmetric group algebra CSn. In general, we show that SP k(t) is quasi-hereditary over C for all t \u2208 C , except t = 0. We determine the decomposition numbers for SP k(t) for every specialization t \u2208 C except t = 0, (which includes semisimple and non-semisimple cases). In particular we determine the structure of all indecomposable projective modules, and the indecomposable tilting modules.",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20241105021347Z",
@@ -172,6 +173,67 @@
   "likely_scanned": false,
   "toc_entries": 9,
   "sections": 7,
-  "chars_total": 90551
+  "chars_total": 90551,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "spherical.tex",
+   "tex_sections": 10,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-basic-notation",
+     "title": "Basic notation",
+     "prose_ratio": 0.065,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-bipartite-partitions",
+     "title": "Bipartite partitions",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.455,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-003-the-partition-algebra-and-the-spherical-partitio",
+     "title": "The partition algebra and the spherical partition algebra",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-rank-of-the-spherical-partition-algebra",
+     "title": "Rank of the Spherical Partition Algebra",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-schur-weyl-duality-for-sp-kn",
+     "title": "Schur-Weyl duality for SP k(n)",
+     "prose_ratio": 0.594,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-cellularity-of-sp-kt",
+     "title": "Cellularity of SP k(t)",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1106.6298v1/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1106.6298v1/blocks/prose-sec-009",
   "kind": "prose",
   "title": "Strategy of the proof",
   "pageStart": 10,
   "pageEnd": 11,
   "text": "../sections/sec-009-21-strategy-of-the-proof.md",
-  "derivedFrom": "library/arxiv-1106.6298v1/manifest",
-  "sourceDocument": "library/arxiv-1106.6298v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1106.6298v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1106.6298v1/manifest.jsonld",
   "provenance": "ingested"
 }

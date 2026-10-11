@@ -5,7 +5,8 @@
   "file": "2601.15862v1.pdf",
   "sha256": "e37fa9b4515f58d167754cb63ea6fc117e6394ae4b480dd9b9283b61922721b2",
   "bytes": 509880,
-  "pages": 16
+  "pages": 16,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED",
   "authors_raw": "GRIGORIOS GIOTOPOULOS, IGOR KHAVKINE, HISHAM SATI, AND URS SCHREIBER",
-  "abstract": "We have previously observed that the theory of solutions of par- tial differential equations, regarded asdiffietiesinside jet bundles, acquires a powerful comonadic formulation after passage from the category of Fr´ echet smooth manifolds to theCahiers toposofformal smooth sets(a well-adapted model for Synthetic Differential Geometry). However, the tacit assumption that this passage preserves the projective limits that define infinite jet bundles had remained unproven. Here we provide a detailed proof.",
+  "abstract": "We have previously observed that the theory of solutions of par- tial differential equations, regarded asdiffietiesinside jet bundles, acquires a powerful comonadic formulation after passage from the category of Fr\u00b4 echet smooth manifolds to theCahiers toposofformal smooth sets(a well-adapted model for Synthetic Differential Geometry). However, the tacit assumption that this passage preserves the projective limits that define infinite jet bundles had remained unproven. Here we provide a detailed proof.",
   "docinfo": {
    "Author": "Grigorios Giotopoulos; Igor Khavkine; Hisham Sati; Urs Schreiber",
    "Creator": "arXiv GenPDF (tex2pdf:57610bf)",
@@ -96,6 +97,38 @@
   "likely_scanned": false,
   "toc_entries": 4,
   "sections": 3,
-  "chars_total": 29697
+  "chars_total": 29697,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "main.tex",
+   "tex_sections": 2,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-2-statement-and-proof",
+     "title": "Statement and Proof",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

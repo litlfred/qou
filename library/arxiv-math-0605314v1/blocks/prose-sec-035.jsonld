@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0605314v1/blocks/prose-sec-035",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0605314v1/blocks/prose-sec-035",
   "kind": "prose",
-  "title": "Finite-dimensional representations of Uh. By a ﬁnite-dimensional repre-",
-  "pageStart": 18,
-  "pageEnd": 19,
-  "text": "../sections/sec-035-51-finite-dimensional-representations-of-uh-by-a.md",
-  "derivedFrom": "library/arxiv-math-0605314v1/manifest",
-  "sourceDocument": "library/arxiv-math-0605314v1/manifest",
+  "title": "Divisibility results",
+  "pageStart": 44,
+  "pageEnd": 45,
+  "text": "../sections/sec-035-1242-divisibility-results.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0605314v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0605314v1/manifest.jsonld",
   "provenance": "ingested"
 }

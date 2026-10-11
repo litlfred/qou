@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-hep-ph-9502366v1/sections/sec-014",
   "@type": [
     "doco:Section"
   ],
-  "title": "ChPT at O(p4)",
-  "pageStart": 10,
-  "pageEnd": 11,
+  "title": "Loops",
+  "pageStart": 38,
+  "pageEnd": 39,
   "contains": [
     "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-014"
   ],
-  "derivedFrom": "library/arxiv-hep-ph-9502366v1/manifest",
-  "sourceDocument": "library/arxiv-hep-ph-9502366v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9502366v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9502366v1/manifest.jsonld",
   "provenance": "ingested"
 }

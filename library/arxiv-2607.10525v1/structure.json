@@ -6,7 +6,8 @@
   "sha256": "b893cb4c87ea1d6623ff7b97fa4cc883df4874fa50c6d334c8aced8b6d899c1f",
   "bytes": 610956,
   "pages": 34,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -262,6 +263,104 @@
   "likely_scanned": false,
   "toc_entries": 16,
   "sections": 11,
-  "chars_total": 74423
+  "chars_total": 74423,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "main.tex",
+   "tex_sections": 20,
+   "overlaid": 10,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.929,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-21-finite-tensor-categories-and-their-module-cat",
+     "title": "Finite tensor categories and their module categories",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.81,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-22-equivariant-tensor-categories-and-their-modul",
+     "title": "Equivariant tensor categories and their module categories",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.675,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-31-the-correspondence-between-fiber-functors-and",
+     "title": "The correspondence between fiber functors and rank-one module categories",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.782,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-32-rank-one-equivariantizations",
+     "title": "Rank-one equivariantizations",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.749,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-33-classification-of-fiber-functors",
+     "title": "Classification of fiber functors",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.762,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-41-tambarayamagami-categories-and-fiber-functors",
+     "title": "Tambara\u2013Yamagami categories and fiber functors",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.735,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-5-fiber-functors-on-gaugings",
+     "title": "Fiber functors on gaugings",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.728,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-51-first-reductions-for-small-radical-gaugings",
+     "title": "First reductions for small radical gaugings",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.696,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

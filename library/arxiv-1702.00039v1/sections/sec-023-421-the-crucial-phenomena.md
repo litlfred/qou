@@ -8,111 +8,110 @@ pages: 22-25
 source_pdf: 1702.00039v1.pdf
 source_sha256: b47ca7d1cf7b44be
 doc_brief: "Gentle introduction to Soergel bimodules I: The basics NICOLAS LIBEDINSKY — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
+text_source: latex
+latex_prose_ratio: 0.976
+latex_coverage_ratio: 0.875
 ---
-Baby Stability Theorem 4.1 The categoryB(S3) is stable under product.
-Proof It is obvious that we just need to prove that we can write any product
-of two elements ofI as a direct sum of shifts of elements inI.
-One important fact about R is that if p∈ R, then p−s·p∈ (y−x)Rs. For
-example, ifp = 3xy2z7 +yz ,
-p−s·p = 3xy2z7 +yz− 3yx2z7−xz
-= (y−x)(3xyz 7 +z).
-It is an easy exercise to convince oneself of this fact (hint: start with monomi-
-als). One can also see this fact more conceptually by noticing that the polyno-
-mial p−s·p vanishes in the hyperplane deﬁned by the equation y = x. The
-same result stands for r. The element p−r·p is (z−y) multiplied by some
-element ofRr. We deﬁne αs :=y−x andαr :=z−y. If we deﬁne
-Ps(p) = p +s·p
-2 ∈Rs and ∂s(p) = p−s·p
-2αs
-∈Rs
-then we have the decomposition
-p =Ps(p) +αs∂s(p). (17)
-This equality gives rise to an isomorphism of gradedRs-bimodules
-R∼=Rs⊕Rs(−2). (18)
+\begin{st}\label{st}
+The category $\mathcal{B}(S_3)$ is stable under product. 
+\end{st}
+
+\begin{proof}
+It is obvious that we just need to prove that we can write any product of two elements of $\II$ as a direct sum of shifts of elements in $\II.$
+
+
+One important fact about $R$ is that if $p\in R$, then $p-s\cdot p \in (y-x)R^s.$  For example, if $p=3xy^2z^7+ yz$, 
+ \begin{align*}
+p-s\cdot p &=3xy^2z^7+ yz -3yx^2z^7- xz \\
+&= (y-x)(3xyz^7+z).
+\end{align*}
+ 
+ It is an easy exercise to convince oneself of this fact (hint: start with monomials). One can also see this fact more conceptually by noticing that the polynomial $p-s\cdot p$ vanishes in the hyperplane defined by the equation $y=x$. 
+The same result stands for $r$. The element $p-r\cdot p$ is  $(z-y)$ multiplied by some element of $R^r.$ We define $\alpha_s:=y-x$ and $\alpha_r:=z-y$. If we define $$P_s(p)=\frac{p+s\cdot p}{2} \in R^s \  \ \mathrm{ and  } \ \  \del_s(p)=\frac{p-s\cdot p}{2\alpha_s} \in R^s$$
+ then we have the decomposition \begin{equation}\label{p}p=P_s(p)+\alpha_s\del_s(p).\end{equation} This equality gives rise to an isomorphism of graded  $R^s$-bimodules
+ \begin{equation}\label{Rgr}
+ R\cong R^s\oplus R^s(-2).
+ \end{equation}
+
+
+
+
 As a direct consequence of this equation we obtain the isomorphism
-BsBs ∼= R⊗RsR⊗RsR(2)
-∼= R⊗RsR(2)⊕ R⊗RsR
-= Bs(1)⊕Bs(−1) (19)
-Compare this isomorphism with the equality bsbs =vbs +v−1bs in the Hecke
-algebra. We also obtain the following isomorphism
-BsBsrs ∼= R⊗RsR⊗Rs,r R(4)
-∼= Bsrs(1)⊕Bsrs(−1). (20)
-Compare this isomorphism with the equality bsbsrs = vbsrs +v−1bsrs in the
-Hecke algebra.
-22
-Let us recall a classic result of invariant theory. There is an isomorphism of
-Rs,r -bimodules (see, for example [Hi, ch. IV , cor. 1.11 a.])
-R∼=
-⨁
-w∈S3
-Rs,r(−2l(w)) (21)
-This isomorphism implies that
-BsrsBsrs∼=Bsrs(−3)⊕Bsrs(−1)⊕2⊕Bsrs(1)⊕2⊕Bsrs(3) (22)
-Compare this isomorphism with the equality
-bsrsbsrs = (v−3 + 2v−1 + 2v1 +v3)bsrs
-in the Hecke algebra.
-To ﬁnish the proof of the Baby Stability Theorem 4.1 we just need to prove
-the following isomorphism (that one should compare with the formula in the
-Hecke algebrabsbrbs =bsrs +bs).
-4.3 BsBrBs∼= Bsrs⊕ Bs
-For this we need ﬁrst to deﬁne four morphisms of R-bimodules. The ﬁrst one
-is the multiplication morphismms∈ Hom(Bs,R )
-ms :R⊗RsR(1)→R
-p⊗q↦→pq
-that is obviously a (degree1) morphism. The second morphismma
-s∈ Hom(R,B s)
-is its adjoint, in a sense that will become clear in Section 6.1 (thus explaining
-the notation used for this morphism).
-ma
-s :R→R⊗RsR(1)
-1↦→αs⊗ 1 + 1⊗αs
-To check that this is a (degree 1) morphism of R-bimodules we need to check
-that for anyp∈R we havema
-s(1)p =pma
-s(1). This is
-αs⊗p + 1⊗αsp =αsPs(p)⊗ 1 +αs∂s(p)⊗αs +Ps(p)⊗αs +∂s(p)α2
-s⊗ 1
-=pαs⊗ 1 +p⊗αs.
-For the ﬁrst equality we used equation (17) and the fact that
-α2
-s = (x +y)2− 4xy∈Rs.
-23
-The following morphismjs∈ Hom(BsBs,B s) has degree−1
-js :R⊗RsR⊗RsR(2)→R⊗RsR(1)
-p⊗q⊗h↦→p∂s(q)⊗h
-If it is a well deﬁned map it is obvious that it is an R-bimodule morphism.
-So one just needs to check that js(prs⊗q⊗h) = js(p⊗rsq⊗h) and that
-js(p⊗qrs⊗h) = js(p⊗q⊗rsh), for any rs ∈ Rs. Both equations follow
-from the fact that ∂s is a morphism of left (or right) Rs-modules (this is easy
-to check).
-And ﬁnally, the last morphism, the adjoint ofjs (also of degree−1)
-ja
-s :R⊗RsR(1)→R⊗RsR⊗RsR(2)
-p⊗q↦→p⊗ 1⊗q
-Notation 4.2 When it is clear from the context we will not write the identity
-morphisms. For example if we writemr for a morphism inHom(BsBrBs,B sBs)
-we mean id⊗mr⊗ id.
-Easy Fact 4.3 The morphism e :=−ma
-r◦ja
-s◦js◦mr∈ End(BsBrBs) is an
-idempotent (here we are using Notation 4.2).
-Proof It is enough to check that js◦mr◦ma
-r◦ja
-s =−id∈ End(Bs), which is
-trivial.
-From this fact we deduce that
-BsBrBs = im(1−e)⊕ im(e), (23)
-because if e is an idempotent 1− e is easily checked to be an idempotent
-orthogonal toe. It is obvious thatmr andjs are surjective and thatma
-r andja
-s
-are injective morphisms. This implies that
-im(e)∼= im(ma
-r◦ja
-s )∼=Bs.
-To ﬁnish the proof we need to check the following isomorphism of graded
-R-bimodules
-4.4 im(1− e)∼= Bsrs.
-Let 1⊗ := 1⊗ 1⊗ 1⊗ 1∈R⊗RsR⊗Rr R⊗RsR and let us denote by⟨1⊗⟩ the
-R-bimodule generated by 1⊗. We will prove the Lemma in two steps.
-24
+\begin{eqnarray}\label{BsBs}
+B_sB_s &\cong& R\otimes_{R^s}R\otimes_{R^s}R(2) \nonumber\\
+&\cong&  R\otimes_{R^s}R(2)\,  \oplus \,  R\otimes_{R^s}R \nonumber\\
+&=& B_s(1)\oplus B_s(-1)
+\end{eqnarray}
+Compare this isomorphism with the equality $b_sb_s=vb_s+v^{-1}b_s$ in the Hecke algebra. 
+We also obtain the following isomorphism
+\begin{eqnarray}\label{BsBsrs}
+B_sB_{srs} &\cong& R\otimes_{R^s}R\otimes_{R^{s,r}}R(4) \nonumber\\
+&\cong&  B_{srs}(1) \oplus  B_{srs}(-1).
+\end{eqnarray}
+Compare this isomorphism with the equality $b_sb_{srs}=vb_{srs}+v^{-1}b_{srs}$ in the Hecke algebra. 
+
+Let us recall a classic result of invariant theory. There is an isomorphism of $R^{s,r}$-bimodules (see, for example  \cite[ch. IV, cor. 1.11 a.]{Hi})
+\begin{equation}\label{sr} R\cong \bigoplus_{w\in S_3}R^{s,r}(-2l(w))\end{equation}
+
+This isomorphism implies  that 
+\begin{equation}\label{w0}
+B_{srs}B_{srs}\cong B_{srs}(-3)\oplus B_{srs}(-1)^{\oplus 2}\oplus B_{srs}(1)^{\oplus 2}\oplus B_{srs}(3)
+\end{equation}
+Compare this isomorphism with the equality $$b_{srs}b_{srs}=(v^{-3}+2v^{-1}+2v^{1}+v^3)b_{srs}$$ in the Hecke algebra.
+
+
+To finish the proof of the Baby Stability Theorem \ref{st} we just need to prove the following isomorphism (that one should compare with the formula  in the Hecke algebra $b_sb_rb_s=b_{srs}+b_s).$
+
+\subsection{$B_sB_rB_s\cong B_{srs}\oplus B_s$}\label{dec}
+ 
+
+ For this we need first to define four morphisms of $R$-bimodules. The first one is the multiplication morphism $m_s\in \mathrm{Hom}(B_s, R)$
+\begin{align*}
+m_s: R\otimes_{R^s}R(1)&\rightarrow R\\
+p\otimes q &\mapsto pq
+\end{align*}
+that is obviously a (degree $1$) morphism. The second morphism  $m_s^a\in \mathrm{Hom}(R, B_s)$ is its adjoint, in a sense that will become clear in Section \ref{adjunction} (thus explaining the notation  used for this morphism).
+\begin{align*}
+m_s^a: R &\rightarrow R\otimes_{R^s}R(1)\\
+1 &\mapsto \alpha_s\otimes 1+ 1\otimes \alpha_s
+\end{align*}
+
+To check that this is  a (degree $1$) morphism of $R$-bimodules we need to check that for any $p\in R$ we have  $m_s^a(1)p=pm_s^a(1).$ This is
+\begin{align*}
+\alpha_s\otimes p+ 1\otimes \alpha_sp&=\alpha_sP_s(p)\otimes1+\alpha_s\del_s(p)\otimes\alpha_s+P_s(p)\otimes\alpha_s +\del_s(p)\alpha_s^2\otimes1\\
+ &= p\alpha_s\otimes 1+p\otimes \alpha_s.
+\end{align*}
+For the first equality we used equation (\ref{p}) and the fact that $$\alpha_s^2=(x+y)^2-4xy\in R^s.$$
+The following  morphism $j_s\in \mathrm{Hom}(B_sB_s, B_s)$ has  degree $-1$
+\begin{align*}
+j_s: R\otimes_{R^s}R\otimes_{R^s}R(2)&\rightarrow R\otimes_{R^s}R(1)\\
+p\otimes q \otimes h&\mapsto p\del_s(q)\otimes h
+\end{align*}
+If it is a well defined map it is obvious that it is an $R$-bimodule morphism. So one just needs to check that $j_s(pr^s\otimes q \otimes h)=j_s(p\otimes r^s q \otimes h)$ and that $j_s(p\otimes q r^s\otimes h)=j_s(p\otimes  q \otimes r^sh)$, for any $r^s\in R^s.$ Both equations follow from the fact that $\del_s$ is a morphism of left (or right) $R^s$-modules (this is easy to check). 
+
+And finally, the last morphism, the adjoint of $j_s$ (also of degree $-1$)
+\begin{align*}
+j_s^a: R\otimes_{R^s}R(1)  & \rightarrow   R\otimes_{R^s}R\otimes_{R^s}R(2)\\
+p\otimes q & \mapsto p\otimes 1\otimes q
+\end{align*}
+
+\begin{nota}\label{cucu}
+When it is clear from the context we will not write the identity morphisms. For example if we write $m_r$ for a morphism in $\mathrm{Hom}(B_sB_rB_s,B_sB_s)$ we mean $\mathrm{id}\otimes m_r\otimes \mathrm{id}.$ 
+\end{nota}
+
+\begin{ef}
+The morphism $e:=   - m_r^a \circ j_s^a\circ j_s\circ m_r\in \mathrm{End}(B_sB_rB_s)$ is an idempotent (here we are using Notation \ref{cucu}).
+\end{ef}
+\begin{proof}
+It is enough to check that $j_s\circ m_r\circ m_r^a \circ j_s^a=-\mathrm{id}\in \mathrm{End}(B_s),$ which is trivial. 
+\end{proof}
+From this fact we deduce that 
+\begin{equation}\label{e}B_sB_rB_s=\mathrm{im}(1-e)\oplus \mathrm{im}(e),\end{equation} because if $e$ is an idempotent $1-e$ is easily checked to be an idempotent orthogonal to $e$. It is obvious that $m_r$ and $j_s$ are surjective and that $m_r^a$ and $j_s^a$ are injective morphisms. This implies that $$\mathrm{im}(e)\cong \mathrm{im}(m_r^a \circ j_s^a)\cong B_s.$$
+
+To finish the proof we need to check the following isomorphism of graded $R$-bimodules
+
+\subsection{$\mathrm{im}(1-e)\cong B_{srs}.$}\label{achi}
+ 
+Let $1^{\otimes}:=1\otimes 1\otimes 1\otimes 1\in R\otimes_{R^s}R\otimes_{R^r}R\otimes_{R^s}R$
+and let us denote  by $\langle 1^{\otimes} \rangle$   the $R$-bimodule generated by    $1^{\otimes}$.
+We will prove the Lemma in two steps.

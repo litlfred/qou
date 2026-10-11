@@ -5,7 +5,8 @@
   "file": "2302.05903v2.pdf",
   "sha256": "9a17abd36cc8a317e86c463e7b641bb0a1cef799920ff374e62f9cb229c2ea1b",
   "bytes": 556243,
-  "pages": 15
+  "pages": 15,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -268,6 +269,121 @@
   "likely_scanned": false,
   "toc_entries": 14,
   "sections": 13,
-  "chars_total": 34413
+  "chars_total": 34413,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 15,
+   "overlaid": 12,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-basic-example-of-averaging-method",
+     "title": "Basic example of averaging method",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-simple-generalizations",
+     "title": "Simple generalizations",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-derivation-of-various-sum-formulas-by-the-averag",
+     "title": "Derivation of various sum formulas by the averaging method",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-extension-to-skew-functions",
+     "title": "Extension to skew functions",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-a-collection-of-sum-formulas",
+     "title": "A collection of sum formulas",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.934,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-the-gaussian-measure",
+     "title": "The Gaussian measure",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-calculating-various-sums",
+     "title": "Calculating various sums",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-strong-integrability-in-gaussian-hermitian-matri",
+     "title": "Strong integrability in Gaussian Hermitian matrix model",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-strong-superintegrability-in-the-p-gaussian-mode",
+     "title": "Strong superintegrability in the p-Gaussian model",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-relation-of-sum-formulas-to-ramanujan-sums",
+     "title": "Relation of sum formulas to Ramanujan sums",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.921,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-hurwitz-tau-functions",
+     "title": "Hurwitz tau-functions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-conclusion",
+     "title": "Conclusion",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.524,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

@@ -1,0 +1,19 @@
+% \def\ry#1{\rule{0mm}{#1}}
+\def\rx#1{\rule{#1}{0mm}}
+
+
+\def\@rot#1{%
+   \mbox{\special{ps: /@@s save def /B{bind def}bind def/@t{translate}B
+		      /cn{gsave currentpoint 2 copy @t 90 rotate 2
+		      {exch neg}repeat @t}B /ce{grestore @@s restore}B cn
+		 }%
+         #1\special{ps:ce}
+   }%
+}
+
+
+\def\rot@box#1#2#3% #1=h"ohe #2=breite #3=box
+{\hbox to #2{\raisebox{#1}[#1]{\@rot{#3}}\rx{-#1}\hss}}
+\def\rbox#1%#2#3% #1=h"ohe #2=breite #3=box
+{\setbox0=\hbox{#1}\hbox{\hbox to \dp0{\hss}\rot@box{\wd0}{\ht0}{#1}}}
+

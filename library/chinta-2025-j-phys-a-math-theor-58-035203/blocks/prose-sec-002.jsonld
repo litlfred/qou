@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-002",
   "kind": "prose",
-  "title": "Matematiska institutionen Uppsala universitet Box 256, 751 05 Uppsala, Sweden",
-  "pageStart": 2,
-  "pageEnd": 2,
-  "text": "../sections/sec-002-3-matematiska-institutionen-uppsala-universitet.md",
-  "derivedFrom": "library/chinta-2025-j-phys-a-math-theor-58-035203/manifest",
-  "sourceDocument": "library/chinta-2025-j-phys-a-math-theor-58-035203/manifest",
+  "title": "The building block of heat kernels of graphs",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "text": "../sections/sec-002-2-the-building-block-of-heat-kernels-of-graphs.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/chinta-2025-j-phys-a-math-theor-58-035203/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/chinta-2025-j-phys-a-math-theor-58-035203/manifest.jsonld",
   "provenance": "ingested"
 }

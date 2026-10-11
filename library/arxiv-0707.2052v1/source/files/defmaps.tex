@@ -1,0 +1,147 @@
+\section{Induced maps on homology}
+\label{sec:defmaps}
+In this section we define $\HH_\blob(X)$, the Hochschild homology of a
+space $X$, and show that given a kernel $\Phi\colon X\kerto Y$ we get
+pull-back and push-forward maps, $\Phi^*\colon \HH_\blob(Y)\to
+\HH_\blob(X)$ and $\Phi_*\colon \HH_\blob(X)\to \HH_\blob(Y)$, such
+that if $\Phi$ is right adjoint to $\Psi$ then $\Psi^*=\Phi_*$.
+
+ \subsection{Hochschild cohomology.}
+First recall that for a space $X$, one way to define its Hochschild
+\emph{cohomology} is as
+\[\HH^\blob(X):=\Ext_{X\times X}^\blob(\OO_\Delta,\OO_\Delta).\]
+However, the ext-group is just the hom-set $\Hom^\blob_{\D(X\times
+  X)}(\OO_\Delta,\OO_\Delta)$ which by the definition of $\gVar$ is
+just $\THom^\blob_\gVar(\Id_X, \Id_X)$.  In terms of diagrams, we can
+thus denote an element $\phi\in \HH^\blob(X)$ as
+\[\pic{phiinHH}.\]
+Note that the grading is not indicated in the picture, but this should
+not give rise to confusion.
+
+ \subsection{Hochschild homology.}
+Now we define $\HH_\blob(X)$ the Hochschild \emph{homology} of a space
+$X$ as follows:
+\[\HH_\blob(X):=\THom_\gVar^\blob(\SerK_X^{-1},\Id_X) \]
+or, in more concrete terms, 
+\[ \HH_\blob(X) = \Ext_{X\times X}^{-\blob}(\SerK^{-1}_X,\OO_\Delta).\]
+Thus an element $w\in \HH_\blob(X)$ will be denoted
+\[\pic{winHH},\]
+where again the shifts are understood.
+
+
+It is worth taking a moment to compare this with other definitions of
+Hochschild homology, such as that of Weibel~\cite{Weibel}.  He defines
+the Hochschild homology of a space $X$ as
+$\H^\blob(X,\Delta^*\cO_\Delta)$, where as usual by $\Delta^*$ we mean
+the left-derived functor.  This cohomology group is naturally
+identified with the hom-set $\Hom^\blob_{X}(\cO_X,\Delta^*\cO_\Delta)$
+which is isomorphic to $\Hom^\blob_{X\times
+  X}(\Delta_!\cO_X,\cO_\Delta)$ where $\Delta_!$ is the left-adjoint
+of $\Delta^*$.  Direct calculation shows that $\Delta_!\cO_X\cong
+\SerK_X^{-1}$ and so our definition is recovered.  Another feasible
+definition of Hochschild homology is $\H^\blob(X\times
+X,\cO_\Delta\otimes \cO_\Delta)$, and this again is equivalent to our
+definition as there is the isomorphism $\SerK_X^{-1}\cong
+\cO_\Delta^\chk$.
+
+ \subsection{Push-forward and pull-back.}
+\label{def:defmaps}
+For spaces $X$ and $Y$ and a kernel $\Phi\colon X\kerto Y$ define the
+push-forward on Hochschild homology $\Phi_*\colon \HH_\blob(X)\to \HH_\blob(Y)$ as follows
+\[\Phi_*\left(\pic{winHH}\right):=\pic{PhiPushOfw}.\]
+For the reader still unhappy with diagrams, for $v\in
+\Hom^\blob(\SerK_X^{-1},\Id_X)$, define
+$\Phi_*(v)\in \Hom^\blob(\SerK_Y^{-1},\Id_Y)$ as
+the following composite, which is read from the above diagram by
+reading upwards from the bottom:
+\begin{align*}
+  \SerK^{-1}_Y
+  &\xrightarrow{\gamma}
+  \Phi\circ \Phi^\chk
+  \xrightarrow{\Id\circ\eta\circ\Id}
+  \Phi\circ\SerK_X^{-1}\circ\SerK_X\circ \Phi^\chk
+  \xrightarrow{\Id\circ v\circ\Id\circ\Id} \Phi\circ\SerK_X\circ
+  \Phi^\chk \xrightarrow{\rote} \Id_Y.
+\end{align*}
+\medskip
+
+\noindent
+Similarly define the pull-back $\Phi^*\colon \HH_\blob(Y)\to
+\HH_\blob(X)$ as follows
+\[\Phi^*\left(\pic{vinHH}\right):=\pic{PhiPullOfv}.\]
+These operations depend only on the isomorphism class of the kernel as
+shown by the following.
+
+\begin{Proposition}
+\label{prop:indepiso}
+  If kernels $\Phi$ and $\hat\Phi$ are isomorphic then they give rise to
+  equal push-forwards and equal pull-backs: $\Phi_*=\hat\Phi_*$ and
+  $\Phi^*=\hat\Phi^*$.
+\end{Proposition}
+
+\begin{Proof}
+  This follows immediately from the fact that the 2-morphisms $\gamma_\Phi$,
+  $\gamma_{\hat\Phi}$, $\rote_\Phi$ and $\rote_{\hat\Phi}$ of
+  Section~\ref{subsec:yphimphi} are natural and thus commute with the
+  given kernel isomorphism $\Phi\cong\hat\Phi$.
+\end{Proof}
+\medskip
+
+\noindent
+The push-forward and pull-back operations are functorial in the
+following sense.
+
+\begin{Theorem}[Functoriality]
+\label{thm:functorial}
+  If $\Phi\colon X\to Y$ and $\Psi\colon Y\to Z$ are kernels then the
+  push-forwards and pull-backs compose appropriately, namely:
+  \[(\Psi\circ\Phi)_*=\Psi_*\circ \Phi_*\colon
+  \HH_\blob(X)\to\HH_\blob(Z)\]
+  and
+  \[(\Psi\circ\Phi)^*=\Phi^*\circ \Psi^*\colon
+  \HH_\blob(Z)\to\HH_\blob(X).\]
+\end{Theorem}
+
+\begin{Proof}
+  This follows from the fact that the right adjunction $\tau_R$ is a
+  2-functor.  The adjoint of $\Psi\circ\Phi$ is canonically
+  $\tau_R(\Phi)\circ\tau_R(\Psi)$, i.e., is
+  $\SerK_X\circ\Phi^\chk\circ\SerK_Y\circ\Psi^\chk$.  This means that
+  the unit of the adjunction $\Id\Rightarrow
+  \Psi\circ\Phi\circ\SerK_X\circ\Phi^\chk\circ\SerK_Y\circ\Psi^\chk$
+  is given by the composition
+  $\Id\Rightarrow\Psi\circ\SerK_Y\circ\Psi^\chk\Rightarrow
+  \Psi\circ\Phi\circ\SerK_X\circ\Phi^\chk\circ\SerK_Y\circ\Psi^\chk$.
+  This gives
+  \[(\Psi\circ\Phi)_*(w)=\pic{PsiOfPhiOfw}=\Psi_*\left(\Phi_*(w)\right).
+  \qedhere
+  \]
+\end{Proof}
+
+\begin{Theorem}
+\label{thm:adjadj}
+  If $\Phi\colon X\to Y$ and $\Psi\colon Y\to X$ are adjoint kernels,
+  $\Phi\dashv\Psi$, then we have
+  \[\Phi_*=\Psi^*\colon \HH_\blob(X)\to\HH_\blob(Y).\]
+\end{Theorem}
+
+\begin{Proof}
+  By the uniqueness of adjoints we have a canonical isomorphism,
+  $\Psi\cong\tau_R(\Phi)$ and by Proposition~\ref{prop:indepiso}
+  $\Psi^*=(\tau_R(\Phi))^*$.  It therefore suffices to show that
+  $\Phi_*=(\tau_R(\Phi))^*$.  Observe that
+  \[\tau_R(\tau_R(\Phi))=\tau_R(\SerK_X\circ\Phi^\chk)\cong
+  \tau_R(\Phi^\chk)\circ
+  \tau_R(\SerK_X)\cong\SerK_Y\circ\Phi^{\chk\chk}\circ \SerK_X^{-1},\]
+  and similarly
+ \[\tau_L(\tau_R(\Phi))\cong
+ \Phi\circ\SerK_X^{-1}\circ \SerK_X.\] Of course the latter is
+ isomorphic to $\Phi$ but the Serre kernels are left in so to make the
+ adjunctions more transparent.  We now get the unit for adjunction
+ $\tau_R(\Phi)\dashv\tau_R(\tau_R(\Phi))$ and the counit for the
+ adjunction $\tau_L(\tau_R(\Phi))\dashv\tau_R(\Phi)$ as follows:
+ \[\pic{tauRunit};\quad\pic{tauRcounit}.\]
+ Thus
+ \[\tau_R(\Phi)^*\left(w\right)
+ =\pic{MessyPhiPushOfw}= \pic{PhiPushOfw}=\Phi_*(w). \qedhere\]
+\end{Proof}

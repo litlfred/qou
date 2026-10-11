@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-nucl-th-0006014v1/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-nucl-th-0006014v1/blocks/prose-sec-000",
   "kind": "prose",
-  "title": "Scattering equation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-000-1-scattering-equation-15.md",
-  "derivedFrom": "library/arxiv-nucl-th-0006014v1/manifest",
-  "sourceDocument": "library/arxiv-nucl-th-0006014v1/manifest",
+  "title": "Introduction",
+  "pageStart": 3,
+  "pageEnd": 3,
+  "text": "../sections/sec-000-1-introduction.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-nucl-th-0006014v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-nucl-th-0006014v1/manifest.jsonld",
   "provenance": "ingested"
 }

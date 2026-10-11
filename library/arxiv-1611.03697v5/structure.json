@@ -5,7 +5,8 @@
   "file": "1611.03697v5.pdf",
   "sha256": "3d7e5a14a079c8c5810f97466d89979af7cbeea1a731c08933d630c2a71f9946",
   "bytes": 476611,
-  "pages": 51
+  "pages": 51,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY",
   "authors_raw": null,
-  "abstract": "We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory. In certain special cases we show that these problems hav e unique solutions which can be written explicitly as products of gamma functions. We brieﬂy explain c onnections with Gromov- Witten theory and exact WKB analysis.",
+  "abstract": "We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory. In certain special cases we show that these problems hav e unique solutions which can be written explicitly as products of gamma functions. We brie\ufb02y explain c onnections with Gromov- Witten theory and exact WKB analysis.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20200624205611-04'00'",
@@ -923,6 +924,392 @@
   "likely_scanned": false,
   "toc_entries": 56,
   "sections": 49,
-  "chars_total": 94425
+  "chars_total": 94425,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 55,
+   "overlaid": 40,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.804,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-plan-of-the-paper",
+     "title": "Plan of the paper",
+     "prose_ratio": 0.931,
+     "coverage_ratio": 0.921,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 0.857,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-2-bps-structures-initial-definitions",
+     "title": "BPS structures: initial definitions",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-22-donaldson-thomas-invariants",
+     "title": "Donaldson-Thomas invariants",
+     "prose_ratio": 0.902,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-23-poisson-algebraic-torus",
+     "title": "Poisson algebraic torus",
+     "prose_ratio": 0.528,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-24-twisted-torus",
+     "title": "Twisted torus",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.806,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-25-ray-diagram",
+     "title": "Ray diagram",
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-26-further-terminology",
+     "title": "Further terminology",
+     "prose_ratio": 0.866,
+     "coverage_ratio": 0.892,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-27-bps-automorphisms",
+     "title": "BPS automorphisms",
+     "prose_ratio": 0.908,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-28-doubling-construction",
+     "title": "Doubling construction",
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.851,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-29-a-basic-example-the-kronecker-quiver",
+     "title": "A basic example: the Kronecker quiver",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-3-summary-of-the-contents-of-the-paper",
+     "title": "Summary of the contents of the paper",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-31-the-riemann-hilbert-problem",
+     "title": "The Riemann-Hilbert problem",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-32-solution-in-the-uncoupled-case",
+     "title": "Solution in the uncoupled case",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-33-variations-of-bps-structure",
+     "title": "Variations of BPS structure",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-34-tau-functions",
+     "title": "Tau functions",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-35-tau-function-in-the-uncoupled-case",
+     "title": "Tau function in the uncoupled case",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-36-two-classes-of-examples",
+     "title": "Two classes of examples",
+     "prose_ratio": 0.867,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-i-topological-strings",
+     "title": "(i) Topological strings.",
+     "prose_ratio": 0.868,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-4-the-riemann-hilbert-problem",
+     "title": "The Riemann-Hilbert problem",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-021-ii-theories-of-class-s",
+     "title": "(ii) Theories of class S",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-022-41-analytic-bps-automorphisms",
+     "title": "Analytic BPS automorphisms",
+     "prose_ratio": 0.892,
+     "coverage_ratio": 0.933,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-023-42-statement-of-the-problem",
+     "title": "Statement of the problem",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-024-43-remarks-on-the-formulation",
+     "title": "Remarks on the formulation",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-025-44-symmetries-of-the-problem",
+     "title": "Symmetries of the problem",
+     "prose_ratio": 0.932,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-026-45-null-vectors-and-uniqueness",
+     "title": "Null vectors and uniqueness",
+     "prose_ratio": 0.655,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-027-46-tau-functions",
+     "title": "Tau functions",
+     "prose_ratio": 0.495,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-028-5-explicit-solutions-in-the-finite-uncoupled-cas",
+     "title": "Explicit solutions in the finite, uncoupled case",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-029-51-doubled-a1-example",
+     "title": "Doubled A1 example",
+     "prose_ratio": 0.694,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-030-54-tau-function-in-the-uncoupled-case",
+     "title": "Tau function in the uncoupled case",
+     "prose_ratio": 0.674,
+     "coverage_ratio": 0.232,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-031-6-geometric-case-gromov-witten-invariants",
+     "title": "Geometric case: Gromov-Witten invariants",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-032-61-gopakumar-vafa-invariants",
+     "title": "Gopakumar-Vafa invariants",
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-033-62-torsion-sheaf-bps-invariants",
+     "title": "Torsion sheaf BPS invariants",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-034-7-quadratic-differentials-and-exact-wkb-analysis",
+     "title": "Quadratic differentials and exact WKB analysis",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.711,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-035-72-voros-symbols",
+     "title": "Voros symbols",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-036-a1-introductory-remarks",
+     "title": "A.1. Introductory remarks",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-037-a2-formal-completions",
+     "title": "A.2. Formal completions",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-038-a3-lie-algebra-and-associated-group",
+     "title": "A.3. Lie algebra and associated group",
+     "prose_ratio": 0.939,
+     "coverage_ratio": 0.931,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-039-a4-products-over-rays",
+     "title": "A.4. Products over rays",
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-040-a5-deforming-the-central-charge",
+     "title": "A.5. Deforming the central charge",
+     "prose_ratio": 0.555,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-041-a6-variations-of-bps-structure",
+     "title": "A.6. Variations of BPS structure",
+     "prose_ratio": 0.474,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-042-a7-behaviour-of-bps-invariants",
+     "title": "A.7. Behaviour of BPS invariants",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.942,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-043-appendix-b-convergent-bps-structures",
+     "title": "Appendix B. Convergent BPS structures",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-044-b1-convergent-bps-structures",
+     "title": "B.1. Convergent BPS structures",
+     "prose_ratio": 0.711,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-045-b3-bps-automorphisms",
+     "title": "B.3. BPS automorphisms",
+     "prose_ratio": 0.42,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-046-b4-compositions-of-bps-automorphisms",
+     "title": "B.4. Compositions of BPS automorphisms",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-047-b5-birational-transformations",
+     "title": "B.5. Birational transformations",
+     "prose_ratio": 0.904,
+     "coverage_ratio": 0.89,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-048-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

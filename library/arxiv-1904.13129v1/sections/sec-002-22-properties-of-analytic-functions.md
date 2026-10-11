@@ -8,874 +8,350 @@ pages: 4-14
 source_pdf: 1904.13129v1.pdf
 source_sha256: dfa7fd0ebf1ab8c4
 doc_brief: "On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity — W e prove the analyticity of smooth critical points for O’Har a’s knot energies E α,p , with p = 1"
+text_source: latex
+latex_prose_ratio: 0.949
+latex_coverage_ratio: 0.96
 ---
-istics of analytic functions. More information on analytic functions can be found
-for instance in [ Eva10, Chap. 6.4] and [ Fol95, Chap. 1, D].
-It is well-known that analytic functions can be characteriz ed by [KP02, Prop. 2.2.10]
-and a standard covering argument as follows:
-Theorem 2.1. A function f ∈C∞(Ω, Rn) on Ω ⊆ Rm open,n,m ≥ 1, is analytic
-on Ω if and only if for every compact set K ⊆ Ω there are positive constants rK
-and CK such that
-‖∂αf ‖L∞ (K) ≤CK
-|α|!
-r|α|
-K
-holds for every multiindex α ∈ Nm
-0 .
-The previous theorem, together with the embedding of the cla ssical Sobolev
-spaceW k =W k,2 intoC0 for k ∈ N with k >m
-2 , yields the following:
-Corollary 2.2. A function f ∈C∞(Ω, Rn) on Ω ⊆ Rm open,n,m ≥ 1, is analytic
-on Ω if for every compact set K ⊂ Ω there are positive constants rK and CK such
-that
-‖∂αf ‖W 1(K) ≤CK
-|α|!
-r|α|
-K
-holds for every multiindex α ∈ Nm
-0 .
-On the regularity of critical points for O’Hara’s knot energ ies: From smoothness to analyticity. 5
-By the equivalence of the W 1- and the H 1-norm on R/Z as well as the embedding
-H s ⊆H t for any t<s we obtain:
-Corollary 2.3. Let f ∈ C∞(R/Z, Rn) and s ∈ (0, 1). Then the function f is
-analytic on R/Z if there are positive constants r and C such that
-‖∂kf ‖H1+s ≤Ck!
-rk
-holds for all integers k ≥ 0.
-Furthermore, we will need a ODE version of the theorem of Cauc hy-Kovalevskaya,
-which is originally an existence and uniqueness theorem for analytic nonlinear par-
-tial diﬀerential equations associated with Cauchy initial value problems.
-Theorem 2.4 (Cauchy-Kovalevskaya - ODE case). Suppose the function g : Rn →
-Rn is real analytic around 0 and the function f ∈ C∞((−ε,ε ), Rn) of the form
-f (x) = (f1(x),...,f n(x)), for any ε> 0, is a solution of the initial value problem
-˙f (x) = g(f (x)) for x ∈ (−ε,ε ) with
-f (0) = 0.
-Then the function f is real analytic around 0.
-One possible method to prove the theorem of Cauchy-Kovalevs kaya is the method
-of majorants (c.f. [ Fol95, Chap. 1, D] or [ Eva10, Chap. 4.6.3, Theor. 2]). This
-method turns out to be useful in proving the main result of thi s article.
-2.3. F aà di Bruno’s formula. The k-th derivative of the composition of two
-functions f,g ∈ Ck(R, R) can be expressed by Faà di Bruno’s formula which is
-given by
-(d
-dt
-) k
-g(f (t)) =
-∑
-m1+2m2+···kmk=k,
-m1,...,mk∈N0
-k!
-m1!1!m1m2!2!m2...m k!k!mk
-g(m1+···+mk)(f (t))
-k∏
-j=1
-(f (j)(t))mj.
-This formula can be generalized to the multivariate case by a result of [ Mis00]. In
-our case the precise generalized Faà di Bruno’s formula is no t required. Nonetheless
-we will make use of the the following that can be easily proven from scratch by
-induction:
-For any functions f ∈ Ck(R, Rn) and g ∈ Ck(Rn, R), for integers n ≥ 1 and
-k ≥ 0, there exists a universial polynomial p(n)
-k with non-negative coeﬃcients,
-which are independent of f and g, such that
-∂kg(f (x)) = p(n)
-k ({∂αg}|α|≤k, {∂jfi}i=1,...,n,j=1,...,k). (2.2)
-In addition, p(n)
-k is one-homogeneous in the ﬁrst entries.
-On the regularity of critical points for O’Hara’s knot energ ies: From smoothness to analyticity. 6
-3. Decomposition of the ﬁrst variation of E α
-Results concerning the diﬀerentiability of O’Hara’s knot e nergies go back to
-the paper [ FHW94] where the Gâteaux diﬀerentiability and the L2-gradient of the
-Möbius energy E 2 was derived. Subsequently, a linearized version for the gra dient
-of the Möbius energy was given by He [ He00, Lem. 2.2] in the context of the heat
-ﬂow. An application of He’s linearization trick to a range of O’Hara’s knot energies
-E α, for 2 ≤α< 3, was given by Reiter [ Rei12, Chap. 2].
-In the following we will use the linearization trick of He and Reiter to decompose
-the ﬁrst variation of the energies E α, for 2<α< 3, into a highest order quasilinear
-part Qα and two remaining Rα
-1 , Rα
-2 parts of lower order (as it was done in [ BR13]
-and [ Bla18, Theor. 2.3]). A similar decomposition of the ﬁrst variatio n proved apt
-for the analyticity proof of critical points of the Möbius en ergy that was given in
-[BV19].
-Let γ ∈ C∞(R/Z, Rn) be a simple closed arc-length parametrized curve and
-x ∈ R/Z. We recall that the orthogonal projection P ⊥
-˙γ(x) : Rn → Rn at the point
-γ(x) onto the normal space of the curve γ is given by
-(P ⊥
-˙γ v)(x) = P ⊥
-˙γ(x)(v) = v − ⟨v, ˙γ(x)⟩Rn ˙γ(x)
-for any v ∈ Rn. Furthermore, the tangential projection P T
-˙γ : Rn → Rn at the point
-γ(x) onto the tangent space of the curve γ is given by
-(P T
-˙γ v)(x) = P T
-˙γ(x)(v) = ⟨v, ˙γ(x)⟩Rn ˙γ(x)
-for any v ∈ Rn. We remark also that the curvature vector of the curve γ is denoted
-byκ i.e. κ = ( d
-ds )2γ where d
-ds is the derivative with respect to the arc-length. We
-recall the following:
-Theorem 3.1 (Reiter [Rei12, Theor. 2.24]) . The ﬁrst variation of E α, for 2<α<
-3, at a simple regular curve γ ∈ C∞(R/Z, Rn) in direction h ∈ H 2(R/Z, Rn) can
-be expressed as
-δE α(γ,h ) =
-∫ 1
-0
-⟨(H αγ)(x),h (x)⟩Rn | ˙γ(x)|dx,
-where
-(H αγ)(x) := lim
-ǫ↓0
-∫
-|w|∈[ǫ, 1
-2 ]
-P ⊥
-˙γ(x){2α γ(x +w) −γ(x)
-|γ(x +w) −γ(x)|2+α
-− (α − 2) κ(x)
-D(γ(x +w),γ (x))α − 2 κ(x)
-|γ(x +w) −γ(x)|α }| ˙γ(x +w)|dw.
-Due to the the fact that P ⊥
-˙γ(x)( ˙γ(x)) = 0 , ⟨˙γ(x), ¨γ(x)⟩Rn = 0 , the curve γ is
-parametrized by arc-length and the orthogonal projection P ⊥
-˙γ(x) is linear, one can
-easily rewrite H αγ as
-(H αγ)(x) = (P ⊥
-˙γ ~H αγ)(x) = P ⊥
-˙γ(x)((~H αγ)(x)), (3.1)
-where
-(~H αγ)(x) := lim
-ε↓0
-∫
-|w|∈[ε, 1
-2 ]
-{2αγ(x +w) −γ(x) −w ˙γ(x)
-|γ(x +w) −γ(x)|2+α
-− (α − 2) ¨γ(x)
-D(γ(x +w),γ (x))α − 2 ¨γ(x)
-|γ(x +w) −γ(x)|α }dw.
-On the regularity of critical points for O’Hara’s knot energ ies: From smoothness to analyticity. 7
-Now we want to apply the strategy of He and Reiter indicated as in the above.
-We decompose ~H αγ pointwise for all x ∈ R/Z into three functionals by
-~H αγ =αQαγ + 2αRα
-1γ − 2Rα
-2γ, (3.2)
-where
-Qαγ(x) = lim
-ε↓0
-Qα,εγ(x)
-Rα
-1γ(x) = lim
-ε↓0
-Rα,ε
-1 γ(x)
-Rα
-2γ(x) = lim
-ε↓0
-Rα,ε
-2 γ(x)
-are given, for any 0<ε ≤ 1
-2 , by
-(Qα,εγ)(x) =
-∫
-|w|∈[ε, 1
-2 ]
-(
-2γ(x +w) −γ(x) −w ˙γ(x)
-w2 − ¨γ(x)
-) dw
-|w|α,
-(Rα,ε
-1 γ)(x) =
-∫
-|w|∈[ε, 1
-2 ]
-(γ(x +w) −γ(x) −w ˙γ(x))
-( 1
-|γ(x +w) −γ(x)|α+2 − 1
-|w|α+2
-)
-dw,
-(Rα,ε
-2 γ)(x) =
-∫
-|w|∈[ε, 1
-2 ]
-¨γ(x)
-( 1
-|γ(x +w) −γ(x)|α − 1
-|w|α
-)
-dw
-Blatt and Reiter [ BR13] have already used this partitioning for studying the reg-
-ularity of stationary points of O’Hara’s energies E α, 2 < α <3, and furthermore,
-Blatt (cf. [ Bla18, Theor. 2.3]) used it in the study of the gradient ﬂow for the s ame
-range of O’Hara’s knot energies.
-In the next section we will see that Qα contains the highest order part of the
-ﬁrst variation of E α. Thereafter the challenge will be to attain suﬃcient estima tes
-of the tangential part of Qα, whereas Rα
-1 and Rα
-2 are of lower order and easier to
-get under control.
-4. An estimate for the Qα term
-Let the quantities
-q(α)
-k :=
-{
-4π
-|k|α +1
-∫ π
-0
-(kτ )2−2+2 cos(kτ )
-τ 2+α dτ k ⁄= 0,
-0 k = 0
-and set
-λ(α)
-k :=
-∫ kπ
-0
-sin(τ )
-τ α−1 dτ.
-We remark that the λk are well-deﬁned for all k ∈ Z andλ(α)
-∞ := lim k→∞λ(α)
-k < ∞
-(cf. [ Rei12, Lem. 2.4]). We deduce from [ Rei12, Prop. 2.3], by switching from the
-weak formulation of the Euler-Lagrange equation to the stro ng one, the following:
-Theorem 4.1. For every curve γ ∈C∞(R/Z, Rn) the term Qαγ is a C∞-function
-and its Fourier coeﬃcients, for all k ∈ Z, are given by
-ˆQαγ(k) = −q(α)
-k |k|α+1ˆγ(k). (4.1)
-The constants q(α)
-k are bounded and satisfy
-0 ≤q(α)
-k = 8πλ(α)
-k
-α(α + 1)(α − 1) +O( 1
-k1− α )
-On the regularity of critical points for O’Hara’s knot energ ies: From smoothness to analyticity. 8
-as k → ∞.
-Proof. By Taylor’s expansion up to third order we obtain
-Qαγ(x) = lim
-ε↓0
-2
-∫
-|w|∈[ε, 1
-2 ]
-w
-|w|α
-∫ 1
-0
-(1 −t)2...γ (x +tw)dtdw
-= lim
-ε↓0
-2
-∫
-|w|∈[ε, 1
-2 ]
-w
-|w|α
-∫ 1
-0
-(1 −t)2 (...γ (x +tw) − ...γ (x)) dtdw, (4.2)
-from which directly follows that Qα mapsC3,β toL∞ for any 0<β ≤ 1. From the
-linearity of Qα we get ∂lQαγ(x) = Qα∂lγ(x), so Qα maps Cl+3,β to Cl−1,1 for all
-integersl ≥ 1, which demonstrates the ﬁrst part of the Theorem’s statemen t.
-Now we deﬁne the bilinear functional
-~Qα(γ,η ) := lim
-ε↓0
-∫
-R/Z
-∫
-|w|∈[ε, 1
-2 ]
-(⟨γ(x +w) −γ(x),η (x +w) −η(x)⟩Rn
-w2 − ⟨˙γ(x), ˙η(x)⟩Rn
-) dwdx
-|w|α .
-for any γ,η ∈ H
-α +1
-2 (R/Z, Rn). Applying continuous and discrete integration by
-parts, gives
-~Qα(γ,η ) = lim
-ε↓0
-∫
-R/Z
-∫
-|w|∈[ε, 1
-2 ]
-(
-−2 ⟨γ(x +w) −γ(x),η (x)⟩Rn
-w2 − ⟨˙γ(x), ˙η(x)⟩Rn
-) dwdx
-|w|α
-= − lim
-ε↓0
-∫
-R/Z
-⟨Qα,εγ(x),η (x)⟩Rn dx = −
-∫
-R/Z
-⟨Qαγ(x),η (x)⟩Rn dx (4.3)
-because Qα,εγ converges to Qαγ in L∞(R/Z, Rn) as ǫ ↓ 0 by ( 4.2). Furthermore,
-by [ Rei12, Prop. 2.3], we have that
-~Qα(γ,η ) =
-∑
-k∈Z
-q(α)
-k |k|α+1ˆγ(k)ˆη(k)
-and by Plancherel’s identity we get
-∫
-R/Z
-⟨Qαγ,η ⟩dx =
-∑
-k∈Z
-ˆQαγ(k)ˆη(k).
-So by comparing the Fourier coeﬃcients in ( 4.3) we have ˆQαf (k) = −q(α)
-k |k|α+1ˆγ(k)
-for all k ∈ Z. The properties of the coeﬃcients q(α)
-k directly follow from the proof
-of [ Rei12, Prop. 2.3]. □
-By Theorem 4.1 we obtain the following essential corollary.
-Corollary 4.2. There exists a positive constant ~C such that for all curves γ ∈
-C∞(R/Z, Rn) and integers l ≥ 0
-‖∂l+3γ‖Hm+α − 2 ≤ ~C‖∂lQαγ‖Hm
-holds for any real numbers m ≥ 0 and 2<α< 3.
-Proof. By considering Theorem 4.1, in particular the form of the Fourier coeﬃcients
-(4.1), the deﬁnition of the fractional Sobolev-norm, elementar y properties of Fourier
-On the regularity of critical points for O’Hara’s knot energ ies: From smoothness to analyticity. 9
-coeﬃcients and the simple estimate (1 +k2)α−2 ≤ (2|k|)2(α−2) for any k ∈ Z \ 0,
-we get
-‖∂lQαγ‖2
-Hm =
-∑
-k∈Z
-(1 + |k|2)m| ˆ∂lQαγ(k)|2
-=
-∑
-k∈Z
-(1 + |k|2)m(2π|k|)2l|ˆQαγ(k)|2
-=
-∑
-k∈Z
-(1 + |k|2)m(2π|k|)2l(q(α)
-k )2|k|2(α+1)|ˆγ(k)|2
-≥ inf
-k∈Z\0
-{(q(α)
-k )2(2π)−622−α}
-∑
-k∈Z
-(1 + |k|2)m+α−2(2π|k|)2(l+3)|ˆγ(k)|2
-= ~C−2∑
-k∈Z
-(1 + |k|2)m+α−2| ˆ∂(l+3)γ(k)|2
-= ~C−2‖∂(l+3)γ‖2
-Hm+α − 2,
-where ~C := inf k∈Z\0{(q(α)
-k )2(2π)−622−α}− 1
-2 is a positive constant. □
-5. A fractional leibniz rule and the form of P T
-˙γ Qαγ
-Let γ ∈ C∞(R/Z, Rn) be a closed simple curve parametrized by arc-length.
-Recall that in the decomposed ﬁrst variation of O’Hara’s ran ge of energies E α, for
-2 < α <3, there appears the orthogonal projection of the main part Qαγ, which
-is given by P ⊥
-˙γ Qαγ = Qαγ −P T
-˙γ Qαγ. Since we have worked out an estimate for
-Qαγ in the previous section, it remains to study P T
-˙γ Qαγ, i.e. the tangential part of
-Qαγ.
-In this section we will see that a type of fractional derivati ve of a product of
-two functions can help to estimate the tangential part of Qαγ. We interpret the
-resulting estimate as a fractional Leibniz rule .
-In order to avoid problems coming from the singularities of t he integrand, we will
-work with the truncated functional Qα,ε for 0<ε ≤ 1
-2 . By using Taylor’s approxi-
-mation up to second order with remainder term in integral fro m and ⟨˙γ(x), ¨γ(x)⟩ = 0
-for all x ∈ R/Z together with the bilinearity of the scalar product and α >2, we
-can write
-⟨Qα,εγ(x), ˙γ(x)⟩Rn
-=
-∫
-|w|∈[ε, 1
-2 ]
-⟨
-2γ(x +w) −γ(x) −w ˙γ(x)
-w2 − ¨γ(x), ˙γ(x)
-⟩
-Rn
-dw
-|w|α
-= 2
-∫
-|w|∈[ε, 1
-2 ]
-∫ 1
-0
-(1 −t) ⟨¨γ(x +tw), ˙γ(x)⟩Rn dt dw
-|w|α
-= 2
-∫
-|w|∈[ε, 1
-2 ]
-∫ 1
-0
-(1 −t)
-⟨
-¨γ(x +tw), ˙γ(x) − ˙γ(x +tw)
-w
-⟩
-Rn
-dt dw
-w|w|α−2
-= 2
-∫
-|w|∈[ε, 1
-2 ]
-∫ 1
-0
-∫ 1
-0
-(1 −t)(−t) ⟨¨γ(x +tw), ¨γ(x +stw)⟩Rn
-w dsdt dw
-|w|α−2. (5.1)
-On the regularity of critical points for O’Hara’s knot energ ies: From smoothness to analyticity. 10
-With ε ↓ 0 we also get
-(P T
-˙γ Qγ)(x)
-= 4 lim
-ε↓0
-∫
-|w|∈[ε, 1
-2 ]
-∫∫
-[0,1]2
-(1 −t)(−t) ⟨¨γ(x +tw), ¨γ(x +stw)⟩Rn
-w|w|α−2 ˙γ(x)dsdtdw. (5.2)
-The last terms of ( 5.1) and ( 5.2) motivate us to introduce the following:
-Deﬁnition 5.1. Let s1,s 2 ∈ [0, 1], 0 < ε ≤ 1
-2 and β ∈ (0, 1). Then the bilinear
-singular integral Hs1,s2,β :C1(R/Z, R) ×C1(R/Z, R) →L∞(R/Z, R) is given by
-Hs1,s2,β(f,g )(x) := lim
-ε↓0
-∫
-|w|∈[ε, 1
-2 ]
-f (x +s1w)g(x +s2w)
-w|w|β dw (5.3)
-for all x ∈ R/Z and, its truncated version H ε
-s1,s2,β : C1(R/Z, R) ×C1(R/Z, R) →
-L∞(R/Z, R) is given by
-H ε
-s1,s2,β(f,g )(x) :=
-∫
-|w|∈[ε, 1
-2 ]
-f (x +s1w)g(x +s2w)
-w|w|β dw (5.4)
-for all x ∈ R/Z.
-Ifβ was allowed to vanish, the previous deﬁnition would yield th e bilinear Hilbert
-transform. Since we have the factor |w|β for β ∈ (0, 1) in the denominator in the
-deﬁnition of the bilinear singular integral ( 5.3), the formula is reminiscent of a
-fractional derivative.
-Lemma 5.2. For every s1,s 2 ∈ [0, 1], 0 < ε ≤ 1
-2 and β ∈ (0, 1) the transforms
-Hs1,s2,β and H ε
-s1,s2,β are well-deﬁned, continuous and bilinear from C1(R/Z, R) ×
-C1(R/Z, R) to L∞(R/Z, R). Furthermore, the truncated bilinear integral H ε
-s1,s2,β
-is also continuous from C(R/Z, R) ×C(R/Z, R) to L∞(R/Z, R).
-Proof. It is easy to see by the linearity of the integral in ( 5.3) that Hs1,s2,β is
-indeed linear in both components. The function Hs1,s2,β is also well-deﬁned for
-everyf,g ∈C1(R/Z, R), which we can see by adding a zero to the deﬁnition of the
-bilinear singular integral ( 5.3) as
-Hs1,s2,β(f,g )(x) = lim
-ε↓0
-∫
-|w|∈[ε, 1
-2 ]
-f (x +s1w)g(x +s2w)
-w|w|β − f (x)g(x)
-w|w|β dw,
-by inserting a second zero and by the Lipschitz-continuity o f continuously diﬀeren-
-tiable functions on a compact set such that
-|Hs1,s2,β(f,g )(x)|
-≤ lim
-ε↓0
-∫
-|w|∈[ε, 1
-2 ]
-|f (x +s1w)g(x +s2w) −f (x)g(x +s2w) +f (x)g(x +s2w) −f (x)g(x)|
-|w|1+β dw
-≤ lim
-ε↓0
-∫
-|w|∈[ε, 1
-2 ]
-|f (x +s1w) −f (x)||g(x +s2w)| + |f (x)||g(x +s2w) −g(x)|
-|w|1+β dw
-≤ lim
-ε↓0
-∫
-|w|∈[ε, 1
-2 ]
-‖f ′‖∞s1|w|‖g‖∞ + ‖f ‖∞‖g′‖∞s2|w|
-|w|1+β dw
-≤C(s1,s 2,β )‖f ‖C 1‖g‖C 1 < ∞ (5.5)
-for some positive ﬁnite constant C(s1,s 2,β ). Hence we can deduce from ( 5.5) that
-Hs1,s2,β is continuous. We get the same properties for H ε
-s1,s2,β for any 0<ε ≤ 1
-2 by
-On the regularity of critical points for O’Hara’s knot energ ies: From smoothness to analyticity. 11
-transfering the previous arguments. Additionally, since w e cut oﬀ the singularity
-in the deﬁnition of H ε
-s1,s2,β, the continuity of H ε
-s1,s2,β fromC(R/Z, R) ×C(R/Z, R)
-to L∞(R/Z, R) follows by the following elementary estimates
-⏐⏐H ε
-s1,s2,β(f,g )(x)
-⏐⏐ =
-⏐⏐⏐⏐⏐
-∫
-|w|∈[ε, 1
-2 ]
-f (x +s1w)g(x +s2w)
-w|w|β − f (x)g(x)
-w|w|β dw
-⏐⏐⏐⏐⏐
-≤
-∫
-|w|∈[ε, 1
-2 ]
-|f (x +s1w)||g(x +s2w)| + |f (x)||g(x)|
-|w|1+β dw
-≤
-∫
-|w|∈[ε, 1
-2 ]
-‖f ‖∞‖g‖∞ + ‖f ‖∞‖g‖∞
-|w|1+β dw
-≤C(β,ε )‖f ‖L∞ ‖g‖L∞ < ∞
-for all x ∈ [0, 1] and some constant 0<C (β,ε )< ∞. □
-We next estimate the truncated bilinear integral ( 5.4) that leads to a new kind
-of fractional Leibniz rule.
-Theorem 5.3. Let m > 1
-2 , 0 < ε≤ 1
-2 , s1,s 2 ∈ [0, 1] and β ∈ (0, 1). Then there
-exists a positive constant CH =CH (m,β )< ∞ independent of ε such that
-‖H ε
-s1,s2,β(f,g )‖Hm ≤CH ‖f ‖Hm+β ‖g‖Hm+β (5.6)
-for all f,g ∈C∞(R/Z, Rn).
-For the proof we will identify, for any p ∈ [1, ∞), the sequence space ℓp by
-ℓp := {x = (xk)k∈Z ∈ CZ | ‖x‖ℓp := (∑
-k∈Z |xk|p)
-1
-p < ∞}
-and use the following lemmata.
-Lemma 5.4 (Young’s inequality). Let p,q,r ≥ 1 such that 1
-p + 1
-q = 1
-r + 1. For
-sequencesx ∈ ℓp and y ∈ ℓq the convolution (x ∗y)(k) := ∑
-n∈Zx(n)y(k −n) is
-such that x ∗y ∈ℓr and
-‖x ∗y‖ℓr ≤ ‖x‖ℓp ‖y‖ℓq.
-Lemma 5.5 (Sobolev-type inequality [ BV19, Lem. 5.5]) . Let f ∈ H m(R/Z, Rn)
-for m> 1
-2 . Then ˆf := ( ˆf (k))k∈Z ∈ℓ1 and there exists a positive constant C0 < ∞
-such that
-‖ ˆf ‖ℓ1 ≤C0‖f ‖Hm.
-Proof of Theorem 5.3. Let f,g ∈ C∞(R/Z, R) ⊆ H m(R/Z, R). Because of m > 1
-2
-and [ DNPV12, Theor. 8.2], the partial sums of the Fourier series, i.e. pn(x) :=∑ n
-k=−n
-ˆf (k)e−2πikx andqn(x) :=∑ n
-k=−n ˆg(k)e−2πikx for any n ∈ N0 andx ∈ R/Z,
-converge uniformly to the functions f and g, that means
-‖f −pn‖∞ → 0 and ‖g −qn‖∞ → 0 as n → ∞. (5.7)
-Note that since f,g ∈C∞(R/Z, R), also pn,q n ∈C∞(R/Z, R) holds.
-Our approach is to ﬁrstly prove the estimate ( 5.6) for the approximating func-
-tionspn andqn and secondly derive the actual statement of Theorem 5.3 by passing
-to the limit n → ∞. We start by interchanging the integrals two times due to ε> 0
-On the regularity of critical points for O’Hara’s knot energ ies: From smoothness to analyticity. 12
-and taking account of the fact that the Fourier coeﬃcients of a product of two
-functions are the convolution of their Fourier coeﬃcients, to gain
-ˆH ε
-s1,s2,β(pn,q n)(k)
-=
-∫ 1
-0
-∫
-|w|∈[ε, 1
-2 ]
-pn(x +s1w)qn(x +s2w)
-w|w|β e−2πikxdwdx
-=
-∫
-|w|∈[ε, 1
-2 ]
-∫ 1
-0
-pn(x +s1w)qn(x +s2w)e−2πikx dx dw
-w|w|β
-=
-∫
-|w|∈[ε, 1
-2 ]
-∑
-l∈Z
-ˆpn(l)e2πils1wˆqn(k −l)e2πi(k−l)s2w dw
-w|w|β
-=
-{
-0 if |k|> 2n∫
-|w|∈[ε, 1
-2 ]
-∑ n
-l=−ne2πi(ls1+(k−l)s2)wˆf (l)ˆg(k −l) dw
-w|w|β if |k| ≤ 2n. (5.8)
-Now we focus on the non-trivial Fourier coeﬃents of H ε
-s1,s2,β(pn,q n), that means
-on the indices |k| ≤ 2n. By deﬁning φl,k := 2π(ls1 + (k −l)s2) ∈ R, substitution
-and interchanging integral and sum, we get
-∫
-|w|∈[ε, 1
-2 ]
-n∑
-l=−n
-eiwφl,k ˆf (l)ˆg(k −l) dw
-w|w|β
-=
-∫ 1
-2
-ε
-n∑
-l=−n
-eiwφl,k −e−iwφl,k
-w|w|β
-ˆf (l)ˆg(k −l)dw
-=
-∫ 1
-2
-ε
-n∑
-l=−n
-2i sin(wφl,k)
-w1+β
-ˆf (l)ˆg(k −l)dw
-=
-n∑
-l=−n
-ˆf (l)ˆg(k −l)2i
-∫ 1
-2
-ε
-sin(wφl,k)
-w1+β dw
-=
-n∑
-l=−n
-ˆf (l)ˆg(k −l)2iφβ
-l,k
-∫ φ l,k
-2
-φl,k ε
-sin(~w)
-~w1+β d~w
-=
-n∑
-l=−n
-ˆf (l)ˆg(k −l)2iφβ
-l,k(Siβ
-(
-φl,k
-2
-)
-− Siβ(φl,kε)), (5.9)
-where Si β(x) :=
-∫ x
-0
-sin(t)
-t1+β dt. Hence we can deduce from the previous computations
-in ( 5.8) and ( 5.9)
-⏐⏐⏐ ˆH ε
-s1,s2,β(pn,q n)(k)
-⏐⏐⏐ ≤
-n∑
-l=−n
-|ˆf (l)||ˆg(k −l)|2|φl,k|β
-(⏐⏐⏐⏐Siβ
-(φl,k
-2
-) ⏐⏐⏐⏐+ |Siβ(φl,kε)|
-)
-≤ ˜M
-n∑
-l=−n
-|ˆf (l)||ˆg(k −l)||φl,k|β, (5.10)
-where ˜M := 4 supφ∈[0,∞[ Siβ(φ)< ∞ due to [ Rei12, Lem. 2.4]. By ( 5.10) and
-|φk,l|β = |2π(ls1 + (k −l)s2)|β ≤ 2π|l|β|k −l|β ≤ 2π(l2 + 1)
-β
-2 ((k −l)2 + 1)
-β
-2,
-On the regularity of critical points for O’Hara’s knot energ ies: From smoothness to analyticity. 13
-we conclude
-⏐⏐⏐ ˆH ε
-s1,s2,β(pn,q n)(k)
-⏐⏐⏐ ≤ ˜M
-n∑
-l=−n
-|ˆf (l)||ˆg(k −l)||φl,k|β
-≤M
-n∑
-l=−n
-(l2 + 1)
-β
-2 |ˆf (l)|((k −l)2 + 1)
-β
-2 |ˆg(k −l)|
-=M
-n∑
-l=−n
-(l2 + 1)
-β
-2 |ˆpn(l)|((k −l)2 + 1)
-β
-2 |ˆqn(k −l)|, (5.11)
-where M := 2π ˜M . In addition, we obtain by ( 5.11) and the elementary estimates
-(k2 + 1)
-m
-2 ≤ 2m(
-(l2 + 1)
-m
-2 + ((k −l)2 + 1)
-m
-2
-)
-,
-which are an immediate consequence of |k| ≤ 2 max{|l|, |k −l|}, that
-⏐⏐⏐(k2 + 1)
-m
-2 ˆH ε
-s1,s2,β(pn,q n)(k)
-⏐⏐⏐
-≤MC (m)
-∑
-l∈Z
-(l2 + 1)
-m+β
-2 |ˆpn(l)| ((k −l)2 + 1)
-β
-2 |ˆqn(k −l)|
-+MC (m)
-∑
-l∈Z
-(l2 + 1)
-β
-2 |ˆpn(l)| ((k −l)2 + 1)
-m+β
-2 |ˆqn(k −l)|, (5.12)
-where the positive constant C(m) < ∞ only depends on the parameter m. This
-leads us to the idea to set the following series component-wi se for all k ∈ Z and
-anyλ> 0
-pλ
-n(k) := (k2 + 1)
-m+λ
-2 |ˆpn(k)| and
-qλ
-n(k) := (k2 + 1)
-m+λ
-2 |ˆqn(k)|
-such that we can rewrite ( 5.12) as
-⏐⏐⏐(k2 + 1)
-m
-2 ˆH ε
-s1,s2,β(pn,q n)(k)
-⏐⏐⏐ ≤MC (m)
-(
-(pβ
-n ∗q0
-n)(k) + (p0
-n ∗qβ
-n)(k)
-)
-.
-Finally, we obtain the desired estimate ( 5.6) for pn andqn by applying Lemma 5.4,
-Lemma 5.5, and Sobolev’s embedding theorem to estimate
-‖H ε
-s1,s2,β(pn,q n)‖Hm = ‖((k2 + 1)
-m
-2 ˆH εs1,s2(pn,q n)(k))k∈Z‖ℓ2
-≤MC (m)
-(
-‖((pβ
-n ∗q0
-n)(k))k∈Z‖ℓ2 + ‖((p0
-n ∗qβ
-n)(k))k∈Z‖ℓ2
-)
-≤MC (m)
-(
-‖pβ
-n‖ℓ2‖q0
-n‖ℓ1 + ‖p0
-n‖ℓ1‖qβ
-n‖ℓ2
-)
-≤MC (m)C0 (‖pn‖Hm+β ‖qn‖Hm + ‖pn‖Hm‖qn‖Hm+β )
-=CH ‖pn‖Hm+β ‖qn‖Hm+β, (5.13)
-where CH := 2MC (m)C0 is a constant only depending on m and β.
-Finally, we get the statement ( 5.6) for f and g by passing to the limit n → ∞ .
-In particular, by using ( 5.13), we ﬁnd for any integer n ≥ 0 that
-‖H ε
-s1,s2,β(pn,q n)‖Hm ≤CH ‖pn‖Hm+β ‖qn‖Hm+β
-≤CH ‖f ‖Hm+β ‖g‖Hm+β (5.14)
-On the regularity of critical points for O’Hara’s knot energ ies: From smoothness to analyticity. 14
-By uniform convergence and by Lemma 5.2 we ﬁnd that
-‖H ε
-s1,s2,β(f,g ) −H ε
-s1,s2,β(pn,q n)‖∞
-≤ ‖H ε
-s1,s2,β(f,g ) −H ε
-s1,s2,β(pn,g )‖∞ + ‖H ε
-s1,s2,β(pn,g ) −H ε
-s1,s2,β(pn,q n)‖∞
-= ‖H ε
-s1,s2,β(f −pn,g )‖∞ + ‖H ε
-s1,s2,β(pn,g −qn)‖∞
-≤C(β,ε )‖f −pn‖∞‖g‖∞ +C(β,ε )‖pn‖∞‖g −qn‖∞
-→ 0
-asn → ∞, since ‖f −pn‖∞ → 0 and ‖g −qn‖∞ → 0 asn → ∞ by our assumption
-(5.7). Moreover, by the uniqueness of the Fourier coeﬃcients of H ε
-s1,s2,β(pn,q n) ∈
-H m(R/Z, R) ⊆L2(R/Z, R) we have, for all k ∈ Z, that
-⏐⏐⏐ ˆH ε
-s1,s2,β(f,g )(k) − ˆH ε
-s1,s2,β(pn,q n)(k)
-⏐⏐⏐ → 0
-as n → ∞. Thus for all positive integers N ≥ 1 we ﬁnd that
-⏐⏐⏐
-(∑
-|k|≤N
-(1 + |k|2)m| ˆH ε
-s1,s2,β(pn,q n)(k)|2
-) 1
-2
-−
-(∑
-|k|≤N
-(1 + |k|2)m| ˆH ε
-s1,s2,β(f,g )(k)|2
-) 1
-2
-⏐⏐⏐ → 0
-as n → ∞. Then by ( 5.14) we conclude that
-(∑
-|k|≤N
-(1 + |k|2)m| ˆH ε
-s1,s2,β(f,g )(k)|2
-) 1
-2
-≤CH ‖f ‖Hm+β ‖g‖Hm+β
-which implies the desired estimate ( 5.6) for f and g. □
+We shortly recall some basic characteristics of analytic functions. More information on analytic functions can be found for instance in [@E98 Chap. 6.4] and [@F95 Chap. 1, D].
+
+It is well-known that analytic functions can be characterized by [@KP02 Prop. 2.2.10] and a standard covering argument as follows:
+
+::: thm
+[]{#thm:Tayloranalytic label="thm:Tayloranalytic"} A function $f\in C^\infty (\Omega,\mathbb{R}^n)$ on $\Omega \subseteq \mathbb{R}^m$ open, $n,m \geq 1$, is analytic on $\Omega$ if and only if for every compact set $K \subseteq \Omega$ there are positive constants $r_K$ and $C_K$ such that $$\begin{aligned}
+    \|\partial^\alpha f\|_{L^\infty(K)} \leq C_K \frac{|\alpha|!}{r_K^{|\alpha|}}
+    
+\end{aligned}$$ holds for every multiindex $\alpha \in \mathbb N_0^m$.
+:::
+
+The previous theorem, together with the embedding of the classical Sobolev space $W^{k}=W^{k,2}$ into $C^0$ for $k\in \mathbb N$ with $k>\frac m2$, yields the following:
+
+::: cor
+A function $f\in C^\infty (\Omega,\mathbb{R}^n)$ on $\Omega \subseteq \mathbb{R}^m$ open, $n,m \geq 1$, is analytic on $\Omega$ if for every compact set $K \subset \Omega$ there are positive constants $r_K$ and $C_K$ such that $$\begin{aligned}
+    \|\partial^\alpha f\|_{W^1(K)} \leq C_K \frac{|\alpha|!}{r_K^{|\alpha|}}
+    
+\end{aligned}$$ holds for every multiindex $\alpha \in \mathbb N_0^m.$
+:::
+
+By the equivalence of the $W^1$- and the $H^1$-norm on $\mathbb R / \mathbb Z$ as well as the embedding $H^s\subseteq H^t$ for any $t < s$ we obtain:
+
+::: cor
+[]{#cor:TayloranalyticSob label="cor:TayloranalyticSob"} Let $f\in C^\infty (\mathbb R / \mathbb Z,\mathbb{R}^n)$ and $s\in (0,1)$. Then the function $f$ is analytic on $\mathbb{R}/ \mathbb{Z}$ if there are positive constants $r$ and $C$ such that $$\begin{aligned}
+    \|\partial^k f\|_{H^{1+s}} \leq C \frac{k!}{r^{k}}
+    
+\end{aligned}$$ holds for all integers $k \geq 0$.
+:::
+
+Furthermore, we will need a ODE version of the theorem of Cauchy-Kovalevskaya, which is originally an existence and uniqueness theorem for analytic nonlinear partial differential equations associated with Cauchy initial value problems.
+
+::: thm
+[]{#CK label="CK"} Suppose the function $g: \mathbb{R}^n \rightarrow \mathbb{R}^n$ is real analytic around $0$ and the function $f \in C^\infty((-\varepsilon, \varepsilon),\mathbb{R}^n)$ of the form $f(x)= (f_1(x),\ldots,f_n(x))$, for any $\varepsilon > 0$, is a solution of the initial value problem $$\begin{aligned}
+    \dot{f}(x) & = g (f(x)) \textnormal{ for } x \in (-\varepsilon,\varepsilon) \textnormal{ with}\\
+    f(0)& =0.
+    
+\end{aligned}$$ Then the function $f$ is real analytic around $0$.
+:::
+
+One possible method to prove the theorem of Cauchy-Kovalevskaya is the *method of majorants* (c.f. [@F95 Chap. 1, D] or [@E98 Chap. 4.6.3, Theor. 2]). This method turns out to be useful in proving the main result of this article.
+
+## Faà di Bruno's formula
+
+The $k$-th derivative of the composition of two functions $f, g\in C^k (\mathbb{R},\mathbb{R})$ can be expressed by Faà di Bruno's formula which is given by $$\begin{aligned}
+    &\left(\frac{d}{dt}\right)^k g(f(t)) = \\
+    &\sum_{\substack{m_1+2m_2+ \cdots km_k=k, \\ m_1,\ldots,m_k\in\mathbb{N}_0}} \frac{k!}{m_1!1!^{m_1}m_2!2!^{m_2}\ldots m_k!k!^{m_k}} g^{(m_1+\cdots +m_k)}(f(t))\prod_{j=1}^{k} (f^{(j)} (t))^{m_j}.
+    
+\end{aligned}$$ This formula can be generalized to the multivariate case by a result of [@M00]. In our case the precise generalized Faà di Bruno's formula is not required. Nonetheless we will make use of the the following that can be easily proven from scratch by induction:
+
+For any functions $f \in C ^k (\mathbb R, \mathbb R ^n)$ and $g \in C^k(\mathbb R ^n, \mathbb R)$, for integers $n\geq 1$ and $k\geq 0$, there exists a universial polynomial $p_k^{(n)}$ with non-negative coefficients, which are independent of $f$ and $g$, such that $$\label{eqn:FdB}
+    \partial^k g(f(x)) = p_k^{(n)} (\{\partial^\alpha g\}_{|\alpha|\leq k}, \{\partial^j f_i\}_{i=1, \ldots, n, j=1, \ldots, k} ).$$ In addition, $p_k^{(n)}$ is one-homogeneous in the first entries.
+
+Decomposition of the first variation of $\mathcal{E}^\alpha$[]{#section:decomposition label="section:decomposition"}
+
+Results concerning the differentiability of O'Hara's knot energies go back to the paper [@FHW94] where the Gâteaux differentiability and the $L^2$-gradient of the Möbius energy $\mathcal{E}^{2}$ was derived. Subsequently, a linearized version for the gradient of the Möbius energy was given by He [@H00 Lem. 2.2] in the context of the heat flow. An application of He's linearization trick to a range of O'Hara's knot energies $\mathcal{E}^\alpha$, for $2 \leq \alpha <3$, was given by Reiter [@R12 Chap. 2].
+
+In the following we will use the linearization trick of He and Reiter to decompose the first variation of the energies $\mathcal{E}^\alpha$, for $2 < \alpha < 3$, into a highest order quasilinear part $Q^\alpha$ and two remaining $R_1^\alpha$, $R_2^\alpha$ parts of lower order (as it was done in [@BR13] and [@B18 Theor. 2.3]). A similar decomposition of the first variation proved apt for the analyticity proof of critical points of the Möbius energy that was given in [@BV19].
+
+Let $\gamma \in C^\infty(\mathbb{R}/ \mathbb{Z},\mathbb{R}^n)$ be a simple closed arc-length parametrized curve and $x\in\mathbb{R}/ \mathbb{Z}$. We recall that the orthogonal projection $P^\perp_{\dot{\gamma}(x)} : \mathbb{R}^n \rightarrow \mathbb{R}^n$ at the point $\gamma(x)$ onto the normal space of the curve $\gamma$ is given by $$\begin{aligned}
+  (P^\perp_{\dot{\gamma}}v)(x) = P^\perp_{ \dot{\gamma}(x)}(v) = v-\langle v,\dot{\gamma}(x) \rangle_{\mathbb{R}^n} \dot{\gamma}(x)
+\end{aligned}$$ for any $v\in \mathbb{R}^n$. Furthermore, the tangential projection $P^T_{\dot{\gamma}} : \mathbb{R}^n \rightarrow \mathbb{R}^n$ at the point $\gamma(x)$ onto the tangent space of the curve $\gamma$ is given by $$\begin{aligned}
+(P^T_{\dot{\gamma}}v)(x) = P^T_{\dot{\gamma}(x)} (v) = \langle v, \dot{\gamma}(x) \rangle_{\mathbb{R}^n} \dot{\gamma}(x)
+\end{aligned}$$ for any $v\in \mathbb{R}^n$. We remark also that the curvature vector of the curve $\gamma$ is denoted by $\kappa$ i.e. $\kappa = (\frac{d}{ds})^2 \gamma$ where $\frac{d}{ds}$ is the derivative with respect to the arc-length. We recall the following:
+
+::: thm
+[]{#thm:1stvar label="thm:1stvar"} The first variation of $\mathcal{E}^{\alpha}$, for $2 < \alpha < 3$, at a simple regular curve $\gamma \in C^\infty(\mathbb{R}/ \mathbb{Z},\mathbb{R}^n)$ in direction $h \in H^2 (\mathbb{R}/ \mathbb{Z},\mathbb{R}^n)$ can be expressed as $$\begin{aligned}
+    \delta \mathcal{E}^\alpha(\gamma, h) = \int_{0}^{1} \langle (H^\alpha\gamma)(x), h(x) \rangle_{\mathbb{R}^n} |\dot{\gamma}(x)|  \mathrm{d} x,
+    
+\end{aligned}$$ where $$\begin{aligned}
+    &(H^\alpha \gamma)(x) := \lim_{\epsilon \downarrow 0} \int_{|w| \in [\epsilon, \frac{1}{2}]} P^\perp_{\dot{\gamma}(x)} \{ 2\alpha \frac{\gamma(x+w)-\gamma(x)}{|\gamma(x+w)-\gamma(x)|^{2+\alpha}} \\
+    &\hspace{5em}  -(\alpha -2) \frac{\kappa(x)}{\mathcal{D}(\gamma(x+w),\gamma(x))^{\alpha}} -2 \frac{\kappa(x)}{|\gamma(x+w)-\gamma(x)|^{\alpha}} \} |\dot{\gamma}(x+w)| \mathrm{d} w.
+    
+\end{aligned}$$
+:::
+
+Due to the the fact that $P^\perp_{\dot{\gamma}(x)}(\dot{\gamma}(x)) = 0$, $\langle \dot{\gamma}(x),\ddot{\gamma}(x) \rangle_{\mathbb{R}^n} = 0$, the curve $\gamma$ is parametrized by arc-length and the orthogonal projection $P^\perp_{\dot{\gamma}(x)}$ is linear, one can easily rewrite $H^{\alpha} \gamma$ as $$\begin{aligned}
+\label{formula:H}
+(H^\alpha\gamma) (x) = (P^\perp_{\dot{\gamma}}\widetilde{H}^\alpha \gamma) (x) = P^\perp_{\dot{\gamma}(x)} ((\widetilde{H}^\alpha \gamma) (x)) ,
+\end{aligned}$$ where $$\begin{aligned}
+(\widetilde{H}^{\alpha} \gamma) (x) := \lim_{\varepsilon \downarrow 0} & \int_{|w| \in [\varepsilon,\frac{1}{2}]} \{ 2\alpha \frac{\gamma(x+w)-\gamma(x)-w\dot{\gamma}(x)}{|\gamma(x+w)-\gamma(x)|^{2+\alpha}} \\
+& -(\alpha -2) \frac{\ddot{\gamma}(x)}{ \mathcal{D}(\gamma(x+w),\gamma(x))^{\alpha}}  -2 \frac{\ddot{\gamma}(x)}{ |\gamma(x+w)-\gamma(x)|^{\alpha}} \}  \mathrm{d} w .
+\end{aligned}$$
+
+Now we want to apply the strategy of He and Reiter indicated as in the above. We decompose $\widetilde{H}^\alpha \gamma$ pointwise for all $x\in \mathbb{R}/ \mathbb{Z}$ into three functionals by $$\begin{aligned}
+\label{formula:Htilde}
+\widetilde{H}^\alpha\gamma = \alpha Q^\alpha\gamma + 2\alpha R_1^\alpha \gamma - 2 R_2^\alpha \gamma  ,
+\end{aligned}$$ where $$\begin{aligned}
+    Q^\alpha\gamma (x) 
+    &= \lim_{\varepsilon \downarrow 0}Q^{\alpha,\varepsilon}\gamma(x) \\    
+    R_1^\alpha \gamma (x) &= \lim_{\varepsilon \downarrow 0}R_1^{\alpha,\varepsilon}\gamma(x) \\
+    R_2^\alpha \gamma (x) &= \lim_{\varepsilon \downarrow 0}R_2^{\alpha,\varepsilon}\gamma(x) 
+\end{aligned}$$ are given, for any $0<\varepsilon\leq \frac 12$, by $$\begin{aligned}
+(Q^{\alpha,\varepsilon}\gamma)(x) &= \int_{|w| \in [\varepsilon, \frac{1}{2}]} \left(2 \frac{\gamma(x+w)-\gamma(x)-w\dot{\gamma}(x)}{w^2} - \ddot{\gamma}(x) \right) \frac{\mathrm{d} w}{|w|^\alpha}, \\
+(R_1^{\alpha,\varepsilon} \gamma)(x) &= \int_{|w| \in [\varepsilon, \frac{1}{2}]} (\gamma(x+w)-\gamma(x)-w\dot{\gamma}(x)) \left(\frac{1}{|\gamma(x+w)-\gamma(x)|^{\alpha +2}} - \frac{1}{ |w|^{\alpha +2}}\right)\mathrm{d} w, \\
+(R_2^{\alpha,\varepsilon} \gamma)(x) &= \int_{|w| \in [\varepsilon, \frac{1}{2}]} \ddot{\gamma}(x)\left(\frac{1}{|\gamma(x+w)-\gamma(x)|^{\alpha}} - \frac{1}{ |w|^{\alpha }}\right)\mathrm{d} w
+\end{aligned}$$ Blatt and Reiter [@BR13] have already used this partitioning for studying the regularity of stationary points of O'Hara's energies $\mathcal{E}^{\alpha}$, $2<\alpha <3$, and furthermore, Blatt (cf. [@B18 Theor. 2.3]) used it in the study of the gradient flow for the same range of O'Hara's knot energies.
+
+In the next section we will see that $Q^\alpha$ contains the highest order part of the first variation of $\mathcal{E}^\alpha$. Thereafter the challenge will be to attain sufficient estimates of the tangential part of $Q^\alpha$, whereas $R_1^\alpha$ and $R_2^\alpha$ are of lower order and easier to get under control.
+
+An estimate for the $Q^\alpha$ term[]{#sec:maintermQ label="sec:maintermQ"}
+
+Let the quantities $$\begin{aligned}
+q_k^{(\alpha)} := \begin{cases}
+\frac{4\pi}{|k|^{\alpha +1}} \int_0^\pi \frac{(k\tau)^2 - 2 + 2\cos(k\tau)}{\tau^{2+\alpha}} \mathrm{d}\tau & \quad k\neq 0, \\
+0 & \quad k = 0
+\end{cases}
+\end{aligned}$$ and set $$\begin{aligned}
+    \lambda_k^{(\alpha)} := \int_0^{k\pi} \frac{\sin (\tau)}{\tau^{\alpha - 1}} \mathrm{d} \tau.
+\end{aligned}$$ We remark that the $\lambda_k$ are well-defined for all $k\in\mathbb{Z}$ and $\lambda_\infty^{(\alpha)}  := \lim_{k\rightarrow \infty} \lambda_k^{(\alpha)} < \infty$ (cf. [@R12 Lem. 2.4]). We deduce from [@R12 Prop. 2.3], by switching from the weak formulation of the Euler-Lagrange equation to the strong one, the following:
+
+::: thm
+[]{#thm:QFourier label="thm:QFourier"} For every curve $\gamma \in C^\infty(\mathbb{R}/ \mathbb{Z}, \mathbb{R}^n)$ the term $Q^\alpha \gamma$ is a $C^\infty$-function and its Fourier coefficients, for all $k\in \mathbb{Z}$, are given by $$\begin{aligned}
+\label{eq:fouriercoeffQ}
+    \widehat{Q^{\alpha} \gamma}(k) = -q_k^{(\alpha)} |k|^{\alpha +1} \hat{\gamma} (k) 
+    .
+\end{aligned}$$ The constants $q_k^{(\alpha)}$ are bounded and satisfy $$0 \leq q_k^{(\alpha)} = \frac{8\pi \lambda_k^{(\alpha)}}{\alpha (\alpha + 1 )(\alpha -1)} + O(\tfrac{1}{k^{1-\alpha}})$$ as $k \rightarrow \infty$.
+:::
+
+::: proof
+*Proof.* By Taylor's expansion up to third order we obtain $$\begin{aligned}
+Q^\alpha \gamma (x) & = \lim_{\varepsilon\downarrow 0} 2  \int_{|w| \in [\varepsilon, \frac{1}{2}]} \frac{w }{|w|^\alpha}   \int_0^1 (1-t)^2 \dddot{\gamma}(x+tw) \mathrm{d}t \mathrm{d} w \nonumber \\
+& = \lim_{\varepsilon\downarrow 0} 2  \int_{|w| \in [\varepsilon, \frac{1}{2}]} \frac{w }{|w|^\alpha}   \int_0^1 (1-t)^2 \left(\dddot{\gamma}(x+tw) - \dddot{\gamma}(x)\right) \mathrm{d}t  \mathrm{d} w , \label{eq:Qcont}
+\end{aligned}$$ from which directly follows that $Q^\alpha$ maps $C^{3,\beta}$ to $L^\infty$ for any $0 < \beta \leq 1$. From the linearity of $Q^\alpha$ we get $\partial^l Q^\alpha \gamma (x) = Q^\alpha\partial^l \gamma(x)$, so $Q^\alpha$ maps $C^{l+3,\beta}$ to $C^{l-1,1}$ for all integers $l\geq 1$, which demonstrates the first part of the Theorem's statement.
+
+Now we define the bilinear functional $$\begin{aligned}
+\widetilde Q^\alpha (\gamma,\eta) := \lim_{\varepsilon  \downarrow 0 } \int_{\mathbb R / \mathbb Z} \int_{|w| \in [\varepsilon, \frac 1 2]} \Big( \frac {\langle \gamma(x+w)-\gamma(x),\eta(x+w)-\eta(x)\rangle_{\mathbb{R}^n} }{w^2}- \langle \dot \gamma (x) , \dot \eta (x) \rangle_{\mathbb{R}^n} \Big) \frac{\mathrm{d}w \mathrm{d}x}{|w|^\alpha} .
+\end{aligned}$$ for any $\gamma,\eta \in H^{\frac{\alpha+1}{2}}(\mathbb R / \mathbb Z, \mathbb R ^n)$. Applying continuous and discrete integration by parts, gives $$\begin{aligned}
+\widetilde Q^\alpha (\gamma,\eta) & = \lim_{\varepsilon  \downarrow 0 } \int_{\mathbb R / \mathbb Z} \int_{|w| \in [\varepsilon, \frac 1 2]} \left( -2 \frac {\langle \gamma(x+w)-\gamma(x),\eta(x)\rangle_{\mathbb{R}^n} }{w^2} - \langle \dot \gamma(x) , \dot \eta(x) \rangle_{\mathbb{R}^n} \right) \frac{\mathrm{d}w \mathrm{d}x}{|w|^\alpha}  \nonumber \\
+& = -\lim_{\varepsilon \downarrow 0} \int_{\mathbb R / \mathbb Z} \langle Q^{\alpha,\varepsilon} \gamma(x), \eta(x) \rangle_{\mathbb{R}^n} \mathrm{d}x 
+= - \int_{\mathbb R / \mathbb Z} \langle Q^\alpha \gamma(x) ,\eta(x) \rangle_{\mathbb{R}^n} \mathrm{d}x   \label{formula:Qtildecalc}
+\end{aligned}$$ because $Q^{\alpha,\varepsilon} \gamma$ converges to $Q^\alpha \gamma$ in $L^\infty(\mathbb{R}/ \mathbb{Z},\mathbb{R}^n)$ as $\epsilon\downarrow 0$ by [\[eq:Qcont\]](#eq:Qcont){reference-type="eqref" reference="eq:Qcont"}. Furthermore, by [@R12 Prop. 2.3], we have that $$\begin{aligned}
+ \widetilde Q^\alpha(\gamma,\eta) = \sum_{k \in \mathbb Z} q_k^{(\alpha)} |k|^{\alpha+1} \hat{\gamma} (k) \hat {\eta}(k)
+\end{aligned}$$ and by Plancherel's identity we get $$\begin{aligned}
+  \int_{\mathbb R / \mathbb Z} \langle Q^\alpha\gamma ,\eta \rangle dx  = \sum_{k \in \mathbb Z} \widehat{Q^\alpha \gamma}(k) \widehat{\eta}(k).
+\end{aligned}$$ So by comparing the Fourier coefficients in [\[formula:Qtildecalc\]](#formula:Qtildecalc){reference-type="eqref" reference="formula:Qtildecalc"} we have $\widehat{Q^\alpha f}(k) = -q_k^{(\alpha)}|k|^{\alpha +1} \hat{\gamma} (k)$ for all $k\in \mathbb{Z}.$ The properties of the coefficients $q_k^{(\alpha)}$ directly follow from the proof of [@R12 Prop. 2.3]. ◻
+:::
+
+By Theorem [\[thm:QFourier\]](#thm:QFourier){reference-type="ref" reference="thm:QFourier"} we obtain the following essential corollary.
+
+::: cor
+[]{#kor:Ql label="kor:Ql"} There exists a positive constant $\widetilde{C}$ such that for all curves $\gamma \in C^\infty(\mathbb{R}/ \mathbb{Z}, \mathbb{R}^n)$ and integers $l\geq 0$ $$\begin{aligned}
+    \|\partial^{l+3}\gamma \|_{H^{m+\alpha-2}} \leq \widetilde{C} \|\partial^{l} Q^{\alpha}\gamma\|_{H^m}
+    
+\end{aligned}$$ holds for any real numbers $m\geq 0$ and $2 < \alpha < 3$.
+:::
+
+::: proof
+*Proof.* By considering Theorem [\[thm:QFourier\]](#thm:QFourier){reference-type="ref" reference="thm:QFourier"}, in particular the form of the Fourier coefficients [\[eq:fouriercoeffQ\]](#eq:fouriercoeffQ){reference-type="eqref" reference="eq:fouriercoeffQ"}, the definition of the fractional Sobolev-norm, elementary properties of Fourier coefficients and the simple estimate $(1+k^2)^{\alpha -2} \leq (2|k|)^{2(\alpha -2)}$ for any $k\in \mathbb{Z}\setminus 0$, we get $$\begin{aligned}
+    \|\partial^{l}Q^\alpha\gamma \|_{H^m}^2 &= \sum_{k\in \mathbb{Z}} (1+|k|^2)^m|\widehat{\partial^{l}Q^\alpha \gamma}(k)|^2 \\
+    &= \sum_{k\in \mathbb{Z}} (1+|k|^2)^m (2\pi| k|)^{2l} |\widehat{Q^\alpha \gamma}(k)|^2 \\
+    &= \sum_{k\in \mathbb{Z}} (1+|k|^2)^m (2\pi| k|)^{2l} (q_k^{(\alpha)})^2 |k|^{2(\alpha +1)} |\hat{\gamma} (k)|^2\\
+    &\geq \inf_{k\in\mathbb{Z}\setminus 0} \{(q_k^{(\alpha)})^2 (2\pi)^{-6} 2^{2-\alpha} \} \sum_{k \in \mathbb{Z}} (1+|k|^2)^{m+\alpha-2} (2\pi| k|)^{2(l+3)}   |\hat{\gamma} (k)|^2 \\
+    &= \widetilde{C}^{-2} \sum_{k \in \mathbb{Z}} (1+|k|^2)^{m+\alpha-2} |\widehat{\partial^{(l+3)}\gamma} (k)|^2 \\
+    &= \widetilde{C}^{-2}   \|\partial^{(l+3)}\gamma \|_{H^{m+\alpha-2}}^2,
+    
+\end{aligned}$$ where $\widetilde{C}:= \inf_{k\in\mathbb{Z}\setminus{0}} \{(q_k^{(\alpha)})^2 (2\pi)^{-6} 2^{2-\alpha}\}^{-\frac{1}{2}}$ is a positive constant. ◻
+:::
+
+A fractional leibniz rule and the form of $P^T_{\dot{\gamma}} Q^\alpha\gamma$ []{#sec:bilinearHilberttransform label="sec:bilinearHilberttransform"}
+
+Let $\gamma \in C^\infty(\mathbb{R}/ \mathbb{Z},\mathbb{R}^n)$ be a closed simple curve parametrized by arc-length. Recall that in the decomposed first variation of O'Hara's range of energies $\mathcal{E}^\alpha$, for $2 < \alpha < 3$, there appears the orthogonal projection of the main part $Q^\alpha \gamma$, which is given by $P^\perp_{\dot{\gamma}} Q^\alpha\gamma =  Q^\alpha\gamma - P^T_{\dot{\gamma}} Q^\alpha\gamma$. Since we have worked out an estimate for $Q^\alpha \gamma$ in the previous section, it remains to study $P^T_{\dot{\gamma}} Q^\alpha\gamma$, i.e. the tangential part of $Q^\alpha\gamma$.
+
+In this section we will see that a type of fractional derivative of a product of two functions can help to estimate the tangential part of $Q^\alpha\gamma$. We interpret the resulting estimate as a *fractional Leibniz rule*.
+
+In order to avoid problems coming from the singularities of the integrand, we will work with the truncated functional $Q^{\alpha,\varepsilon}$ for $0 < \varepsilon \leq \frac 12$. By using Taylor's approximation up to second order with remainder term in integral from and $\left< \dot{\gamma}(x), \ddot{\gamma}(x) \right> = 0$ for all $x\in \mathbb{R}/ \mathbb{Z}$ together with the bilinearity of the scalar product and $\alpha > 2$, we can write $$\begin{aligned}
+\label{formula:PTQepsilon}
+& \langle Q^{\alpha,\varepsilon}\gamma(x), \dot{\gamma}(x) \rangle_{\mathbb{R}^n} \nonumber\\
+& = \int_{|w|\in [\varepsilon, \frac{1}{2}]} \left< 2 \frac{\gamma(x+w)-\gamma(x)-w\dot{\gamma}(x)}{w^2} - \ddot{\gamma}(x) , \dot{\gamma}(x) \right>_{\mathbb{R}^n}  \frac{\mathrm{d}w}{|w|^\alpha} \nonumber\\
+& = 2  \int_{|w|\in [\varepsilon, \frac{1}{2}]} \int_0^1 (1-t) \left< \ddot{\gamma}(x+tw) , \dot{\gamma}(x) \right>_{\mathbb{R}^n}  \mathrm{d}t \frac{\mathrm{d}w}{|w|^{\alpha}} \nonumber\\
+& = 2  \int_{|w|\in [\varepsilon, \frac{1}{2}]} \int_0^1 (1-t)  \left<\ddot{\gamma}(x+tw), \frac{\dot{\gamma}(x) - \dot{\gamma}(x+tw)}{w}\right>_{\mathbb{R}^n}  \mathrm{d}t \frac{\mathrm{d}w}{w|w|^{\alpha-2}}  \nonumber\\
+& = 2 \int_{|w|\in [\varepsilon, \frac{1}{2}]} \int_0^1  \int_0^1 (1-t) (-t) \frac{\left<\ddot{\gamma}(x+tw), \ddot{\gamma}(x+stw)\right>_{\mathbb{R}^n}}{w}  \mathrm{d}s \mathrm{d}t \frac{\mathrm{d}w}{|w|^{\alpha-2}}.
+\end{aligned}$$ With $\varepsilon\downarrow 0$ we also get $$\begin{aligned}
+&(P^T_{\dot{\gamma}} Q\gamma)(x) \nonumber\\
+& = 4 \lim_{\varepsilon \downarrow 0} \int_{|w|\in [\varepsilon, \frac{1}{2}]} \iint_{[0,1 ]^2} (1-t) (-t) \frac{\left<\ddot{\gamma}(x+tw), \ddot{\gamma}(x+stw)\right>_{\mathbb{R}^n}}{w|w|^{\alpha-2}} \dot{\gamma}(x) \mathrm{d}s \mathrm{d}t \mathrm{d}w. \label{formula:compTQ}
+\end{aligned}$$ The last terms of [\[formula:PTQepsilon\]](#formula:PTQepsilon){reference-type="eqref" reference="formula:PTQepsilon"} and [\[formula:compTQ\]](#formula:compTQ){reference-type="eqref" reference="formula:compTQ"} motivate us to introduce the following:
+
+::: defn
+Let $s_1,s_2 \in [0,1]$, $0 < \varepsilon \leq \frac{1}{2}$ and $\beta \in (0,1)$. Then the bilinear singular integral $H_{s_1,s_2,\beta}: C^1 (\mathbb{R}/ \mathbb{Z},\mathbb{R}) \times C^1 (\mathbb{R}/ \mathbb{Z},\mathbb{R}) \rightarrow L^\infty (\mathbb{R}/ \mathbb{Z},\mathbb{R})$ is given by $$\begin{aligned}
+\label{defn:Hs1s2}
+    H_{s_1,s_2,\beta}(f,g) (x) := \lim_{\varepsilon \downarrow 0} \int_{|w| \in [\varepsilon, \frac 12]} \frac{f(x+s_1w)  g(x+s_2w)}{w |w|^\beta} \mathrm{d}w 
+    
+\end{aligned}$$ for all $x\in \mathbb{R}/ \mathbb{Z}$ and, its truncated version $H_{s_1,s_2,\beta}^\varepsilon: C^1 (\mathbb{R}/ \mathbb{Z},\mathbb{R}) \times C^1 (\mathbb{R}/ \mathbb{Z},\mathbb{R}) \rightarrow L^\infty (\mathbb{R}/ \mathbb{Z},\mathbb{R})$ is given by $$\begin{aligned}
+\label{defn:Hs1s2eps}
+        & H_{s_1,s_2,\beta}^\varepsilon(f,g) (x) := \int_{|w| \in [\varepsilon, \frac 12]} \frac{f(x+s_1w)  g(x+s_2w)}{w |w|^\beta} \mathrm{d}w
+    
+\end{aligned}$$ for all $x\in\mathbb{R}/ \mathbb{Z}$.
+:::
+
+If $\beta$ was allowed to vanish, the previous definition would yield the bilinear Hilbert transform. Since we have the factor $|w|^\beta$ for $\beta \in (0,1)$ in the denominator in the definition of the bilinear singular integral [\[defn:Hs1s2\]](#defn:Hs1s2){reference-type="eqref" reference="defn:Hs1s2"}, the formula is reminiscent of a fractional derivative.
+
+::: lem
+[]{#lem:Hs1s2cont label="lem:Hs1s2cont"} For every $s_1,s_2 \in [0,1]$, $0 < \varepsilon \leq \frac 12$ and $\beta \in (0,1)$ the transforms $H_{s_1,s_2,\beta}$ and $H_{s_1,s_2,\beta}^\varepsilon$ are well-defined, continuous and bilinear from $C^1 (\mathbb{R}/ \mathbb{Z},\mathbb{R})\times C^1 (\mathbb{R}/ \mathbb{Z},\mathbb{R})$ to $L^\infty (\mathbb{R}/ \mathbb{Z},\mathbb{R})$. Furthermore, the truncated bilinear integral $H_{s_1,s_2,\beta}^\varepsilon$ is also continuous from $C (\mathbb{R}/ \mathbb{Z},\mathbb{R})\times C (\mathbb{R}/ \mathbb{Z},\mathbb{R})$ to $L^\infty (\mathbb{R}/ \mathbb{Z},\mathbb{R})$.
+:::
+
+::: proof
+*Proof.* It is easy to see by the linearity of the integral in [\[defn:Hs1s2\]](#defn:Hs1s2){reference-type="eqref" reference="defn:Hs1s2"} that $H_{s_1,s_2,\beta}$ is indeed linear in both components. The function $H_{s_1,s_2,\beta}$ is also well-defined for every $f,g \in C^1 (\mathbb{R}/ \mathbb{Z},\mathbb{R})$, which we can see by adding a zero to the definition of the bilinear singular integral [\[defn:Hs1s2\]](#defn:Hs1s2){reference-type="eqref" reference="defn:Hs1s2"} as $$\begin{aligned}
+    H_{s_1,s_2,\beta}(f,g)(x)= \lim_{\varepsilon \downarrow 0} \int_{|w|\in [\varepsilon, \frac{1}{2}]} \frac{f(x+s_1w)  g(x+s_2w)}{w|w|^\beta} - \frac{f(x)  g(x)}{w|w|^\beta}  \mathrm{d}w,
+    
+\end{aligned}$$ by inserting a second zero and by the Lipschitz-continuity of continuously differentiable functions on a compact set such that $$\begin{aligned}
+\label{lem:Hs1s2}
+    & \left|H_{s_1,s_2,\beta}(f,g)(x)\right| \nonumber\\
+    & \leq \lim_{\varepsilon \downarrow 0} \int_{|w|\in [\varepsilon, \frac{1}{2}]} \frac{|f(x+s_1w)  g(x+s_2w) - f(x)g(x+s_2w) +f(x)g(x+s_2w) -f(x)  g(x)|}{|w|^{1+\beta}}  \mathrm{d}w \nonumber\\
+    & \leq \lim_{\varepsilon \downarrow 0} \int_{|w|\in [\varepsilon, \frac{1}{2}]} \frac{|f(x+s_1w) - f(x)| | g(x+s_2w)| +  |f(x)| |g(x+s_2w)- g(x)|}{|w|^{1+\beta}}  \mathrm{d}w \nonumber\\
+    & \leq \lim_{\varepsilon \downarrow 0} \int_{|w|\in [\varepsilon, \frac{1}{2}]} \frac{\|f'\|_\infty s_1|w| \|g\|_\infty +  \|f\|_\infty \|g'\|_\infty s_2 |w|}{|w|^{1+\beta}}  \mathrm{d}w \nonumber\\
+    & \leq C (s_1,s_2,\beta)  \|f\|_{C^1} \|g\|_{C^1}  < \infty
+    
+\end{aligned}$$ for some positive finite constant $C(s_1,s_2,\beta)$. Hence we can deduce from [\[lem:Hs1s2\]](#lem:Hs1s2){reference-type="eqref" reference="lem:Hs1s2"} that $H_{s_1,s_2,\beta}$ is continuous. We get the same properties for $H_{s_1,s_2,\beta}^\varepsilon$ for any $0<\varepsilon\leq \frac 12$ by transfering the previous arguments. Additionally, since we cut off the singularity in the definition of $H_{s_1,s_2,\beta}^\varepsilon$, the continuity of $H_{s_1,s_2,\beta}^\varepsilon$ from $C (\mathbb{R}/ \mathbb{Z},\mathbb{R})\times C (\mathbb{R}/ \mathbb{Z},\mathbb{R})$ to $L^\infty (\mathbb{R}/ \mathbb{Z},\mathbb{R})$ follows by the following elementary estimates $$\begin{aligned}
+     \left|H_{s_1,s_2,\beta}^\varepsilon(f,g)(x)\right| & = \left| \int_{|w|\in [\varepsilon, \frac{1}{2}]} \frac{f(x+s_1w)  g(x+s_2w)}{w|w|^\beta} - \frac{f(x)  g(x)}{w|w|^\beta}  \mathrm{d}w \right| \\
+    & \leq \int_{|w|\in [\varepsilon, \frac{1}{2}]} \frac{|f(x+s_1w)| | g(x+s_2w)| +  |f(x)| |g(x)|}{|w|^{1+\beta }}  \mathrm{d}w \\
+    & \leq  \int_{|w|\in [\varepsilon, \frac{1}{2}]} \frac{\|f\|_\infty \|g\|_\infty +  \|f\|_\infty \|g\|_\infty }{|w|^{1+\beta}}  \mathrm{d}w \\
+    & \leq C (\beta, \varepsilon)  \|f\|_{L^\infty} \|g\|_{L^\infty}  < \infty
+    
+\end{aligned}$$ for all $x\in [0,1]$ and some constant $0 < C(\beta, \varepsilon) < \infty$. ◻
+:::
+
+We next estimate the truncated bilinear integral [\[defn:Hs1s2eps\]](#defn:Hs1s2eps){reference-type="eqref" reference="defn:Hs1s2eps"} that leads to a new kind of fractional Leibniz rule.
+
+::: thm
+[]{#thm:BilinearHT label="thm:BilinearHT"} Let $m> \frac{1}{2}$, $0 < \varepsilon \leq \frac{1}{2}$, $s_1,s_2 \in [0,1]$ and $\beta \in (0,1)$. Then there exists a positive constant $C_H = C_H(m, \beta) < \infty$ independent of $\varepsilon$ such that $$\begin{aligned}
+\label{formula:BilinearHT}
+    \|H_{s_1,s_2,\beta}^\varepsilon(f,g)\|_{H^m} \leq C_H \|f\|_{H^{m+ \beta}} \|g\|_{H^{m+ \beta }}
+    
+\end{aligned}$$ for all $f,g \in  C^\infty(\mathbb{R}/ \mathbb{Z},\mathbb{R}^n)$.
+:::
+
+For the proof we will identify, for any $p \in [1,\infty)$, the sequence space $\ell^p$ by $$\begin{aligned}
+\ell^p := \{x = (x_k)_{k\in\mathbb{Z}} \in \mathbb{C}^\mathbb{Z}\ | \ \|x\|_{\ell^p}:= (\textstyle \sum_{k\in\mathbb{Z}} |x_k|^p)^{\frac{1}{p}} < \infty \}
+\end{aligned}$$ and use the following lemmata.
+
+::: lem
+[]{#lem:Young label="lem:Young"} Let $p,q,r \geq 1$ such that $\frac{1}{p} + \frac{1}{q}=\frac{1}{r}+1$. For sequences $x\in \ell^p$ and $y\in  \ell^q$ the convolution $(x*y)(k):= \sum_{n\in \mathbb{Z}} x(n) y(k-n)$ is such that $x*y \in \ell^r$ and $$\begin{aligned}
+    \|x*y\|_{\ell^r} \leq \|x\|_{\ell^p} \|y\|_{\ell^q} .
+    
+\end{aligned}$$
+:::
+
+::: lem
+[]{#lem:Sobolev label="lem:Sobolev"} Let $f\in H^m(\mathbb{R}/ \mathbb{Z}, \mathbb{R}^n)$ for $m> \frac{1}{2}$. Then $\hat{f}:= (\hat{f}(k))_{k\in\mathbb{Z}} \in \ell^1$ and there exists a positive constant $C_0 < \infty$ such that $$\begin{aligned}
+    \|\hat{f}\|_{\ell^1} \leq C_0 \|f\|_{H^m}.
+    
+\end{aligned}$$
+:::
+
+::: proof
+*Proof of Theorem [\[thm:BilinearHT\]](#thm:BilinearHT){reference-type="ref" reference="thm:BilinearHT"}.* Let $f,g \in  C^\infty(\mathbb{R}/ \mathbb{Z},\mathbb{R})\subseteq H^m(\mathbb{R}/ \mathbb{Z},\mathbb{R})$. Because of $m > \frac{1}{2}$ and [@DNPV12 Theor. 8.2], the partial sums of the Fourier series, i.e. $p_n (x) := \sum_{k=-n}^{n} \hat{f}(k) e^{-2\pi i k x}$ and $q_n (x):=\sum_{k=-n}^{n} \hat{g}(k) e^{-2\pi i k x}$ for any $n\in\mathbb{N}_0$ and $x\in \mathbb{R}/ \mathbb{Z}$, converge uniformly to the functions $f$ and $g$, that means $$\begin{aligned}
+\label{formula:apprfg}
+    \begin{split}
+    \|f-p_n \|_\infty  \rightarrow 0 \textnormal{ and } \|g-q_n \|_\infty \rightarrow 0 \textnormal{ as } n\rightarrow \infty.
+    \end{split}     
+    
+\end{aligned}$$ Note that since $f,g \in  C^\infty(\mathbb{R}/ \mathbb{Z},\mathbb{R})$, also $p_n, q_n \in C^\infty (\mathbb{R}/ \mathbb{Z}, \mathbb{R})$ holds.
+
+Our approach is to firstly prove the estimate [\[formula:BilinearHT\]](#formula:BilinearHT){reference-type="eqref" reference="formula:BilinearHT"} for the approximating functions $p_n$ and $q_n$ and secondly derive the actual statement of Theorem [\[thm:BilinearHT\]](#thm:BilinearHT){reference-type="ref" reference="thm:BilinearHT"} by passing to the limit $n\rightarrow \infty$. We start by interchanging the integrals two times due to $\varepsilon > 0$ and taking account of the fact that the Fourier coefficients of a product of two functions are the convolution of their Fourier coefficients, to gain $$\begin{aligned}
+\label{formula:pnqnepsilonI}
+    & \widehat{H_{s_1,s_2,\beta}^\varepsilon(p_n,q_n)}(k) \nonumber\\
+     & = \int_0^1 \int_{|w|\in [\varepsilon, \frac{1}{2}]} \frac{p_n(x+s_1w)  q_n(x+s_2w)}{w|w|^\beta} e^{-2\pi i k x} \mathrm{d}w \mathrm{d}x  \nonumber\\
+    & = \int_{|w|\in [\varepsilon, \frac{1}{2}]} \int_0^1  p_n(x+s_1w)  q_n(x+s_2w) e^{-2\pi i k x}  \mathrm{d}x \frac{\mathrm{d}w }{w|w|^\beta} \nonumber \\
+    & = \int_{|w|\in [\varepsilon, \frac{1}{2}]}  \sum_{l\in\mathbb{Z}} \widehat{p_n}(l) e^{2\pi ils_1 w} \widehat{q_n}(k-l) e^{2\pi i(k-l)s_2 w} \frac{\mathrm{d}w }{w|w|^\beta} \nonumber \\ 
+    & = 
+    \begin{cases}
+    0       & \quad \text{if } |k| > 2n \\
+    \int_{|w|\in [\varepsilon, \frac{1}{2}]}  \sum_{l=-n}^{n} e^{2\pi i(ls_1+ (k-l)s_2) w} \widehat{f}(l) \widehat{g}(k-l) \frac{\mathrm{d}w }{w|w|^\beta}  & \quad \text{if } |k| \leq 2n
+    \end{cases} 
+    .
+\end{aligned}$$ Now we focus on the non-trivial Fourier coeffients of $H_{s_1,s_2,\beta}^\varepsilon(p_n,q_n)$, that means on the indices $|k|\leq 2n$. By defining $\phi_{l,k} := 2\pi (ls_1 +(k-l)s_2) \in \mathbb{R}$, substitution and interchanging integral and sum, we get $$\begin{aligned}
+\label{formula:pnqnepsilonII}
+    & \int_{|w|\in [\varepsilon, \frac{1}{2}]}  \sum_{l=-n}^{n} e^{iw\phi_{l,k} } \widehat{f}(l) \widehat{g}(k-l) \frac{\mathrm{d}w }{w|w|^\beta} \nonumber\\ 
+    &\qquad \qquad= \int_\varepsilon^{\frac{1}{2}}  \sum_{l=-n}^{n} \frac{e^{i w\phi_{l,k}} - e^{-i w \phi_{l,k}}}{w|w|^\beta} \widehat{f}(l) \widehat{g}(k-l) \mathrm{d}w \nonumber\\
+    &\qquad\qquad = \int_\varepsilon^{\frac{1}{2}}  \sum_{l=-n}^{n}\frac{2i \sin (w \phi_{l,k})}{w^{1+\beta}} \widehat{f}(l) \widehat{g}(k-l) \mathrm{d}w \nonumber\\
+    &\qquad\qquad =  \sum_{l=-n}^{n} \widehat{f}(l) \widehat{g}(k-l) 2i \int_\varepsilon^{\frac{1}{2}} \frac{ \sin (w \phi_{l,k})}{w^{1+\beta}}  \mathrm{d}w \nonumber\\
+    &\qquad\qquad = \sum_{l=-n}^{n} \widehat{f}(l) \widehat{g}(k-l) 2i \phi_{l,k}^\beta \int_{\phi_{l,k}\varepsilon}^{\frac{\phi_{l,k}}{2}} \frac{ \sin (\widetilde{w})}{\widetilde{w}^{1+\beta}}  \mathrm{d}\widetilde{w} \nonumber\\
+    &\qquad\qquad = \sum_{l=-n}^{n} \widehat{f}(l) \widehat{g}(k-l) 2i \phi_{l,k}^\beta (\textnormal{Si}_\beta\left(\tfrac{\phi_{l,k}}{2}\right) - \textnormal{Si}_\beta(\phi_{l,k}\varepsilon)),
+    
+\end{aligned}$$ where $\textnormal{Si}_\beta (x) := \int_0^x \frac{\sin (t)}{t^{1+\beta}}dt$. Hence we can deduce from the previous computations in [\[formula:pnqnepsilonI\]](#formula:pnqnepsilonI){reference-type="eqref" reference="formula:pnqnepsilonI"} and [\[formula:pnqnepsilonII\]](#formula:pnqnepsilonII){reference-type="eqref" reference="formula:pnqnepsilonII"} $$\begin{aligned}
+\label{formula:Hfouriercoeffpnqn}
+    \left|\widehat{H_{s_1,s_2,\beta}^\varepsilon(p_n,q_n)}(k) \right| 
+    & \leq \sum_{l=-n}^{n} |\widehat{f}(l)| | \widehat{g}(k-l)| 2 |\phi_{l,k}|^\beta \left(\left|\textnormal{Si}_\beta\left(\frac{\phi_{l,k}}{2}\right) \right| + \left| \textnormal{Si}_\beta(\phi_{l,k}\varepsilon) \right| \right) \nonumber\\
+    & \leq \tilde{M} \sum_{l=-n}^{n} |\widehat{f}(l)| | \widehat{g}(k-l)| |\phi_{l,k}|^\beta, 
+    
+\end{aligned}$$ where $\tilde{M} := 4 \sup_{\phi \in [0,\infty [} \textnormal{Si}_\beta (\phi) <\infty$ due to [@R12 Lem. 2.4]. By [\[formula:Hfouriercoeffpnqn\]](#formula:Hfouriercoeffpnqn){reference-type="eqref" reference="formula:Hfouriercoeffpnqn"} and $$\begin{aligned}
+    |\phi_{k,l}|^\beta = |2\pi (ls_1 +(k-l)s_2)|^\beta \leq 2 \pi  |l|^{\beta} |k-l|^{\beta} \leq 2\pi (l^2 +1)^{\frac{\beta}{2}} ((k-l)^2+1)^{\frac{\beta}{2}},
+    
+\end{aligned}$$ we conclude $$\begin{aligned}
+\label{formula:Hfouriercoeffpnqnfinal}
+        \left|\widehat{H_{s_1,s_2,\beta}^\varepsilon(p_n,q_n)}(k) \right| \leq & \tilde{M} \sum_{l=-n}^{n} |\widehat{f}(l)| | \widehat{g}(k-l)| |\phi_{l,k}|^\beta  \nonumber\\
+        \leq & M \sum_{l=-n}^{n} (l^2 +1)^{\frac{\beta}{2}}  |\widehat{f}(l)| ((k-l)^2+1)^{\frac{\beta}{2}} | \widehat{g}(k-l)| \nonumber\\
+        = & M \sum_{l=-n}^{n} (l^2 +1)^{\frac{\beta}{2}}  |\widehat{p_n}(l)| ((k-l)^2+1)^{\frac{\beta}{2}} | \widehat{q_n}(k-l)|,
+    
+\end{aligned}$$ where $M:= 2\pi \tilde{M}$. In addition, we obtain by [\[formula:Hfouriercoeffpnqnfinal\]](#formula:Hfouriercoeffpnqnfinal){reference-type="eqref" reference="formula:Hfouriercoeffpnqnfinal"} and the elementary estimates $$\begin{aligned}
+        (k^2+1)^{\frac{m}{2}} \leq 2^m \left((l^2+1)^{\frac{m}{2}} + ((k-l)^2+1)^{\frac{m}{2}} \right),
+    
+\end{aligned}$$ which are an immediate consequence of $|k| \leq 2 \max\{|l|, |k-l|\}$, that $$\begin{aligned}
+\label{formula:Hs1s2decompose} 
+&   \left|(k^2 + 1)^{\frac{m}{2}}\widehat{H_{s_1,s_2,\beta}^\varepsilon(p_n,q_n)}(k) \right|  \nonumber \\
+     &\qquad \leq  MC(m) \sum_{l\in\mathbb{Z}} (l^2 + 1)^{\frac{m+\beta}{2}} \left|\widehat{p_n}(l)\right|  ((k-l)^2+1)^{\frac{\beta}{2}} \left| \widehat{q_n}(k-l) \right| \nonumber \\
+    &\qquad\qquad     + MC(m) \sum_{l\in\mathbb{Z}}  (l^2 +1)^{\frac{\beta}{2}}  \left|\widehat{p_n}(l)\right| ((k-l)^2 + 1)^{\frac{m+\beta}{2}} \left| \widehat{q_n}(k-l) \right|,
+    
+\end{aligned}$$ where the positive constant $C(m) < \infty$ only depends on the parameter $m$. This leads us to the idea to set the following series component-wise for all $k\in\mathbb{Z}$ and any $\lambda >0$ $$\begin{aligned}
+    p_n^\lambda(k) &:= (k^2 + 1)^{\frac{m+\lambda}{2}} \left|\widehat{p_n}(k)\right| \textnormal{ and } \\
+    q_n^\lambda(k) &:= (k^2 + 1)^{\frac{m+\lambda}{2}} \left|\widehat{q_n}(k)\right|
+    
+\end{aligned}$$ such that we can rewrite [\[formula:Hs1s2decompose\]](#formula:Hs1s2decompose){reference-type="eqref" reference="formula:Hs1s2decompose"} as $$\begin{aligned}
+    \left|(k^2 + 1)^{\frac{m}{2}}\widehat{H_{s_1,s_2,\beta}^\varepsilon(p_n,q_n)}(k) \right| \leq MC(m) \left( (p_n^\beta*q_n^0) (k) +  (p_n^0*q_n^\beta ) (k)\right).
+    
+\end{aligned}$$ Finally, we obtain the desired estimate [\[formula:BilinearHT\]](#formula:BilinearHT){reference-type="eqref" reference="formula:BilinearHT"} for $p_n$ and $q_n$ by applying Lemma [\[lem:Young\]](#lem:Young){reference-type="ref" reference="lem:Young"}, Lemma [\[lem:Sobolev\]](#lem:Sobolev){reference-type="ref" reference="lem:Sobolev"}, and Sobolev's embedding theorem to estimate $$\begin{aligned}
+\label{formula:mainestimatepnqn}
+    \|H_{s_1,s_2,\beta}^\varepsilon(p_n,q_n)\|_{H^m} & = \|( (k^2 + 1)^{\frac{m}{2}}\widehat{H_{s_1,s_2}^\varepsilon(p_n,q_n)}(k))_{k\in\mathbb{Z}} \|_{\ell^2} \nonumber\\
+    & \leq MC(m) \left( \| ((p_n^\beta*q_n^0) (k))_{k\in\mathbb{Z}} \|_{\ell^2}  + \|((p_n^0*q_n^\beta ) (k))_{k\in\mathbb{Z}} \|_{\ell^2} \right) \nonumber\\
+    & \leq MC(m) \left(\|p_n^\beta\|_{\ell^2} \|q_n^0\|_{\ell^1} +  \|p_n^0\|_{\ell^1} \|q_n^\beta\|_{\ell^2} \right) \nonumber\\
+    & \leq MC(m)C_0 \left(\|p_n\|_{H^{m+\beta}} \|q_n\|_{H^m} + \|p_n\|_{H^m} \|q_n\|_{H^{m+\beta}}\right) \nonumber\\
+    & = C_H \|p_n\|_{H^{m+\beta}} \|q_n\|_{H^{m+\beta}} 
+    ,
+\end{aligned}$$ where $C_H:= 2MC(m)C_0$ is a constant only depending on $m$ and $\beta$.
+
+Finally, we get the statement [\[formula:BilinearHT\]](#formula:BilinearHT){reference-type="eqref" reference="formula:BilinearHT"} for $f$ and $g$ by passing to the limit $n\rightarrow \infty$. In particular, by using [\[formula:mainestimatepnqn\]](#formula:mainestimatepnqn){reference-type="eqref" reference="formula:mainestimatepnqn"}, we find for any integer $n\geq 0$ that $$\begin{aligned}
+    \|H_{s_1,s_2,\beta }^\varepsilon(p_{n},q_{n})\|_{H^m} & \leq C_H \|p_{n}\|_{H^{m+\beta}} \|q_{n}\|_{H^{m+\beta}} \nonumber\\
+    &  \leq C_H \|f\|_{H^{m+\beta}} \|g\|_{H^{m+\beta}}  \label{formula:Hfg}
+    
+\end{aligned}$$ By uniform convergence and by Lemma [\[lem:Hs1s2cont\]](#lem:Hs1s2cont){reference-type="ref" reference="lem:Hs1s2cont"} we find that $$\begin{aligned}
+    & \|H_{s_1,s_2,\beta}^\varepsilon(f,g) - H_{s_1,s_2,\beta}^\varepsilon(p_n,q_n)\|_\infty \\
+    &\quad \leq \|H_{s_1,s_2,\beta}^\varepsilon(f,g) - H_{s_1,s_2,\beta}^\varepsilon(p_n,g)\|_\infty + \|H_{s_1,s_2,\beta}^\varepsilon(p_n,g) - H_{s_1,s_2,\beta}^\varepsilon(p_n,q_n)\|_\infty \\
+    &\quad = \|H_{s_1,s_2,\beta}^\varepsilon(f-p_n,g)\|_\infty + \|H_{s_1,s_2,\beta}^\varepsilon(p_n,g-q_n)\|_\infty \\
+    &\quad \leq C(\beta,\varepsilon) 
+    \|f-p_n\|_\infty
+    \|g\|_\infty + C(\beta, \varepsilon) \|p_n\|_\infty 
+    \|g-q_n\|_\infty \\
+    &\quad \to 0
+    
+\end{aligned}$$ as $n\to \infty$, since $\|f-p_n\|_\infty \to 0$ and $\|g-q_n\|_\infty \to 0$ as $n\to \infty$ by our assumption [\[formula:apprfg\]](#formula:apprfg){reference-type="eqref" reference="formula:apprfg"}. Moreover, by the uniqueness of the Fourier coefficients of $H_{s_1,s_2,\beta}^\varepsilon(p_n,q_n) \in H^m (\mathbb{R}/ \mathbb{Z},\mathbb{R}) \subseteq L^2(\mathbb{R}/ \mathbb{Z},\mathbb{R})$ we have, for all $k\in\mathbb{Z}$, that $$\begin{aligned}
+    \left|\widehat{H_{s_1,s_2,\beta}^\varepsilon(f,g)}(k)- \widehat{H_{s_1,s_2,\beta}^\varepsilon(p_n,q_n)}(k)\right| 
+    \to 0 
+    
+\end{aligned}$$ as $n\to \infty$. Thus for all positive integers $N \geq 1$ we find that $$\begin{aligned}
+    &\Big| \Big( \sum_{|k|\leq N} (1+|k|^2)^m|\widehat{H_{s_1,s_2,\beta}^\varepsilon(p_n,q_n)}(k)|^2 \Big)^{\frac{1}{2}} 
+    \\  &\hspace{3cm} 
+    - \Big( \sum_{|k|\leq N} (1+|k|^2)^m|\widehat{H_{s_1,s_2,\beta}^\varepsilon(f,g)}(k)|^2 \Big)^{\frac{1}{2}} \Big| 
+    \to 0
+    
+\end{aligned}$$ as $n\to\infty$. Then by [\[formula:Hfg\]](#formula:Hfg){reference-type="eqref" reference="formula:Hfg"} we conclude that $$\begin{aligned}
+    \Big( \sum_{|k|\leq N} (1+|k|^2)^m|\widehat{H_{s_1,s_2,\beta}^\varepsilon(f,g)}(k)|^2 \Big)^{\frac{1}{2}} \leq C_H \|f\|_{H^{m+\beta}} \|g\|_{H^{m+\beta}} 
+    
+\end{aligned}$$ which implies the desired estimate [\[formula:BilinearHT\]](#formula:BilinearHT){reference-type="eqref" reference="formula:BilinearHT"} for $f$ and $g$. ◻
+:::

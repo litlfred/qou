@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.02592v3/sections/sec-017",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Orbifolds",
+  "pageStart": 109,
+  "pageEnd": 117,
+  "contains": [
+    "library/arxiv-1610.02592v3/blocks/prose-sec-017",
+    "library/arxiv-1610.02592v3/blocks/remark-sec-017-01",
+    "library/arxiv-1610.02592v3/blocks/example-sec-017-02",
+    "library/arxiv-1610.02592v3/blocks/prop-sec-017-03",
+    "library/arxiv-1610.02592v3/blocks/example-sec-017-04",
+    "library/arxiv-1610.02592v3/blocks/example-sec-017-05",
+    "library/arxiv-1610.02592v3/blocks/prop-sec-017-06",
+    "library/arxiv-1610.02592v3/blocks/example-sec-017-07",
+    "library/arxiv-1610.02592v3/blocks/example-sec-017-08",
+    "library/arxiv-1610.02592v3/blocks/example-sec-017-09",
+    "library/arxiv-1610.02592v3/blocks/example-sec-017-10",
+    "library/arxiv-1610.02592v3/blocks/example-sec-017-11",
+    "library/arxiv-1610.02592v3/blocks/prop-sec-017-12",
+    "library/arxiv-1610.02592v3/blocks/cor-sec-017-13"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.02592v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.02592v3/manifest.jsonld",
+  "provenance": "ingested"
+}

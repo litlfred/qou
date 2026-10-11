@@ -8,153 +8,105 @@ pages: 10-13
 source_pdf: 1411.6062v2.pdf
 source_sha256: 5abd328d027de43c
 doc_brief: "EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS — Multi-dimensional state-integrals of products of Faddeev’s quant um diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨ uller t"
+text_source: latex
+latex_prose_ratio: 0.932
+latex_coverage_ratio: 0.918
 ---
-section we prove Theorem 1.1. Fix integers A and B with B > A > 0. The values of
-particular interest are ( A, B ) = (1 , 2) and (1 , 3) which correspond to the state-integrals of
-the knots 4 1 and 5 2 respectively. For the 4 1 knot, see [ AK14, Eqn.38] and [ KL V12, Eqn.47]
-and [GK]. For the 5 2 knot, see [KL V12, Eqn.53]. For the remaining values of ( A, B ), although
-EV ALUATION OF STATE INTEGRALS AT RATIONAL POINTS 11
-the 1-dimensional state integral makes sense, and it can be analyz ed using our methods, there
-is no corresponding knot that we know of.
-If
-(51) f( z− cb) = Φ b(z)Be−Aπiz2
-, c b = (b + b−1)i/ 2,
-then
-g(x) = (−x)A(1− x)−B(52a)
-g±(x) = g( q±x)(52b)
-g±
-n(x; q±) = (−x)Anq
-A
-2 n(n+1)
-± (q±x; q±)−B
-n , ∀n∈ Z.(52c)
-Observe that f( z) is non-vanishing and absolutely integrable along the line Cλ if
-(53) − (M + N)/ 2 < λ < 0,
-and f( z + si)⁄= f( z) if λ is in general position. By using (
-25), we obtain that
-f(z) = Φ b(z + cb)Be−Aπi(z+cb)2
-(54)
-= e
-iB
-2π s2 Li2(e2π sz ) (1− e2πsz)B+Bizs−1
-/DN (e2πbz; q+)B /DM (e2πb−1z; q−)B e−Aπi(z+cb)2
-.
-By using the identity
-e−Aπi(z+cb)2
-= e−Aπi(cb+ i
-2s)
-2
-eA(2πsz−πi)(1−4sicb−2siz)s−2/4
-= eAπi (M +N+1)2
-4M N eA(2πsz−πi)(1−4sicb−2siz)s−2/4
-and ( 52a), we can rewrite ( 54) in the form
-f(z) = e
-iB
-2π s2 R(e2π sz )(1−e2π sz )
-(2N+1)(2M +1)
-4M N B
-/DN (e2πbz; q+)B /DM (e2πb−1z; q−)B eπi B+3A(M +N+1)2
-12M N g
-(
-e2πsz) 1−4sicb−2siz
-4s2 ,(55)
-where R(x) is the Rogers dilogarithm (
-8).
-It is easy to see that the only singularities in Equation ( 42) are simple poles that come
-from solutions to the equation 1 − g(e2πsz) = 1. Moreover, if z = α is a solution with
-0 < s Imα− λ < 1, then
-2πi Resz=α
-f(z) S
-(
-e2πbz, e 2πb−1z
-)
-1− g(e2πsz) = i−1s−1
-f(α ) S
-(
-e2πbα, e 2πb−1α
-)
-e2πsα g′ (e2πsα) .
-Combining Lemma 2.3 with Equation ( 55) concludes the proof of Theorem 1.1. □
-2.3. The case of the (−2, 3, 7) pretzel knot. The second author computed the state-
-integral invariant of the ( −2, 3, 7) pretzel knot. The result of the long computation is the
-following 1-dimensional state integral, which we take as input to our a nalysis:
-(56) I(−2,3,7)(b) =
-∫
-/CA +iǫ
-Φ b(x)2 Φ b(2x− cb)e−2πix2
-dx
-12 STA VROS GAROUF ALIDIS AND RINAT KASHAEV
-The integral is absolutely convergent, and the statement and pro of of Theorem
-1.1 applies
-using the following deﬁnition of the functions f( x), g ±
-k(x, q ) and g( x):
-f(x− cb) = Φ b(x)2 Φ b(2x− cb)e−2πix2
-(57a)
-g±
-k(x, q ) = qk(k+1)x2k
-(qx; q)2
-k(qx2; q)2k
-(57b)
-g(x) = x2
-(1− x)2(1− x2)2 .(57c)
-Observe that f( z) is non-vanishing and absolutely integrable along the line Cλ if
-(58) − (M + N)/ 4 < λ < 0,
-and f( z + si)⁄= f( z) if λ is in general position.
-We now discuss the solutions of the gluing equations g( x) = 1 and the matching with the
-set of nonabelian parabolic PSL(2 ,
-/BV ) representations, illustrating Remark 1.6.
-The equation g( x) = 1 has 6 solutions that come from two cubic equations:
-(59) z
-(1− z2)(1− z) =±1 .
-Each triple of solutions lies in number ﬁelds F+ and F− of discriminant−23 and 49 and type
-[1, 1] and [3 , 0] respectively.
-On the other hand, there are 6 nonabelian parabolic PSL(2 , /BV ) representations of the
-(−2, 3, 7) pretzel knot. These may be found using the Ptolemy methods of [GGZ14] and
-their snappy implementation [ CDW]. An alternative method is to use the A-polynomial of
-the pretzel knot from [ Cul]
-A(m, l ) = l6−l5m8+2l5m9−l5m10−2l4m18−l4m19+l2m36+2l2m37+lm45−2lm46+lm47−m55
-Observe that A(1, l ) = ( l− 1)3(l + 1)3. Setting ( m, l ) = (1 + t,±1 + c±t + O(t2)) we obtain
-that
-−6119 + 2012c−− 220c2
-− + 8c3
-− = 0, −6193− 2020c+− 220c2
-+− 8c3
-+ = 0
-Then, we have F± =
-/C9 (c±). If z is a solution to ( 59), let ρz denote the corresponding
-nonabelian parabolic PSL(2 , /BV ) representation. The Rogers dilogarithm of z agrees with the
-complex volume of ρz, and g ′(x) agrees with the 1-loop invariant of ρz.
-Incidentally, if z∈ F+, a totally real ﬁeld, then the corresponding triple of elements of th e
-Bloch group is torsion and triple of complex volumes is given by
-(
-e
-(
-−19
-42
-)
-, e
-(
-−13
-42
-)
-, e
-(11
-42
-))
-= e
-(
-−19
-42
-)(
-1, e
-(1
-7
-)
-, e
-(
-−2
-7
-))
-,
-where e(x) is given by Equation ( 20).
-EV ALUATION OF STATE INTEGRALS AT RATIONAL POINTS 13
+[]{#sub.application label="sub.application"}
+
+In this section we prove Theorem [\[thm.1\]](#thm.1){reference-type="ref" reference="thm.1"}. Fix integers $A$ and $B$ with $B>A>0$. The values of particular interest are $(A,B)=(1,2)$ and $(1,3)$ which correspond to the state-integrals of the knots $4_1$ and $5_2$ respectively. For the $4_1$ knot, see  [@AK Eqn.38] and [@KLV Eqn.47] and [@state-integrals]. For the $5_2$ knot, see  [@KLV Eqn.53]. For the remaining values of $(A,B)$, although the 1-dimensional state integral makes sense, and it can be analyzed using our methods, there is no corresponding knot that we know of.
+
+If $$\operatorname{f}(z-c_{\mathsf{b}})=\operatorname{\Phi}_{\mathsf{b}}(z)^Be^{-A\pi\mathsf{i}z^2},
+\quad c_{\mathsf{b}}=(\mathsf{b}+\mathsf{b}^{-1})\mathsf{i}/2,$$ then $$\begin{align}
+\label{gxAB}
+\operatorname{g}\!\left(x\right) &= 
+\left(-x \right)^A\! \left(1-x\right)^{-B}
+\\
+\operatorname{g^\pm}(x)&=\operatorname{g}\!\left(q_\pm x\right)
+\\
+\operatorname{g^\pm}_n(x;q_\pm)&=\left(-x \right)^{An}\!
+q_\pm^{\frac{A}{2}n(n+1)}\!\left(q_\pm x;q_\pm\right)_{n}^{-B},\qquad 
+\forall n\in\mathbb{Z}.
+\end{align}$$ Observe that $\operatorname{f}(z)$ is non-vanishing and absolutely integrable along the line $\mathcal{C}_{\lambda}$ if $$-(M+N)/2<\lambda<0,$$ and $\operatorname{f}(z+\mathsf{s}\mathsf{i})\ne \operatorname{f}(z)$ if $\lambda$ is in general position. By using [\[eq.Phieval+\]](#eq.Phieval+){reference-type="eqref" reference="eq.Phieval+"}, we obtain that
+
+$$\begin{aligned}
+\label{fzAB}
+\operatorname{f}(z)&=\operatorname{\Phi}_{\mathsf{b}}(z+c_{\mathsf{b}})^B
+e^{-A\pi\mathsf{i}(z+c_{\mathsf{b}})^2} \\ \notag 
+&
+=\frac{e^{\frac{\mathsf{i}B}{2\pi\mathsf{s}^2}\operatorname{Li_2}(e^{2\pi\mathsf{s}z})}
+\left(1-e^{2\pi\mathsf{s}z}\right)^{B+B\mathsf{i}z\mathsf{s}^{-1}}}{
+\slashed{\operatorname{D}}_N(e^{2\pi\mathsf{b}z};q_+)^B
+\slashed{\operatorname{D}}_M(e^{2\pi\mathsf{b}^{-1}z};q_-)^B}
+e^{-A\pi\mathsf{i}(z+c_{\mathsf{b}})^2}.
+\end{aligned}$$
+
+By using the identity $$\begin{aligned}
+e^{-A\pi\mathsf{i}(z+c_{\mathsf{b}})^2} &=
+e^{-A\pi\mathsf{i}\left(c_{\mathsf{b}}+\frac{\mathsf{i}}{2\mathsf{s}}\right)^2}
+e^{A(2\pi\mathsf{s}z-\pi\mathsf{i}) (1-4\mathsf{s}\mathsf{i}c_{\mathsf{b}} -2\mathsf{s}\mathsf{i}z)\mathsf{s}^{-2}/4}
+\\
+&=e^{A\pi\mathsf{i}\frac{(M+N+1)^2}{4 M N}}
+e^{A(2\pi\mathsf{s}z-\pi\mathsf{i}) (1-4\mathsf{s}\mathsf{i}c_{\mathsf{b}} -2\mathsf{s}\mathsf{i}z)\mathsf{s}^{-2}/4}
+\end{aligned}$$ and [\[gxAB\]](#gxAB){reference-type="eqref" reference="gxAB"}, we can rewrite [\[fzAB\]](#fzAB){reference-type="eqref" reference="fzAB"} in the form
+
+$$\begin{aligned}
+\label{eq.fzval}
+\operatorname{f}(z)&=
+\frac{e^{\frac{\mathsf{i}B}{2\pi \mathsf{s}^2}\operatorname{R}(e^{2\pi\mathsf{s}z})
+(1-e^{2\pi\mathsf{s}z})^{\frac{(2N+1)(2M+1)}{4 M N}B}
+}}{
+\slashed{\operatorname{D}}_N(e^{2\pi\mathsf{b}z};q_+)^B
+\slashed{\operatorname{D}}_M(e^{2\pi\mathsf{b}^{-1}z};q_-)^B} 
+\,\, e^{\pi\mathsf{i}\frac{B+3A(M+N+1)^2}{12 M N}} 
+
+
+\operatorname{g}\!\left(e^{2\pi\mathsf{s}z}
+\right)^{\frac{1-4\mathsf{s}\mathsf{i}c_{\mathsf{b}} -2\mathsf{s}\mathsf{i}z}{4\mathsf{s}^{2}}},
+\end{aligned}$$
+
+where $R(x)$ is the Rogers dilogarithm [\[eq.rogers\]](#eq.rogers){reference-type="eqref" reference="eq.rogers"}.
+
+It is easy to see that the only singularities in Equation [\[eq.main\]](#eq.main){reference-type="eqref" reference="eq.main"} are simple poles that come from solutions to the equation $1-\operatorname{g}\! \left(e^{2\pi\mathsf{s}z}\right)=1$. Moreover, if $z=\alpha$ is a solution with $0<\mathsf{s}\, \mathrm{Im}\alpha-\lambda<1$, then $$2\pi\mathsf{i}\operatorname{Res}_{z=\alpha}
+\frac{\operatorname{f}(z)\operatorname{S}\!
+\left(e^{2\pi\mathsf{b}z},e^{2\pi\mathsf{b}^{-1}z}\right)}{1-\operatorname{g}\!
+\left(e^{2\pi\mathsf{s}z}\right)} =
+\mathsf{i}^{-1} \mathsf{s}^{-1}
+\frac{\operatorname{f}(\alpha)\operatorname{S}\!
+\left(e^{2\pi\mathsf{b}\alpha},e^{2\pi\mathsf{b}^{-1}\alpha}\right)}{
+e^{2\pi\mathsf{s}\alpha} \operatorname{g}'
+\left(e^{2\pi\mathsf{s}\alpha}\right)} \,.$$ Combining Lemma [\[lem.main\]](#lem.main){reference-type="ref" reference="lem.main"} with Equation [\[eq.fzval\]](#eq.fzval){reference-type="eqref" reference="eq.fzval"} concludes the proof of Theorem [\[thm.1\]](#thm.1){reference-type="ref" reference="thm.1"}. 0◻
+
+## The case of the $(-2,3,7)$ pretzel knot {#sub.pretzel}
+
+The second author computed the state-integral invariant of the $(-2,3,7)$ pretzel knot. The result of the long computation is the following 1-dimensional state integral, which we take as input to our analysis:
+
+$$\label{eq.I237}
+I_{(-2,3,7)}(b)=\int_{\mathbbm R+ i \epsilon} \operatorname{\Phi}_{\mathsf{b}}(x)^2 
+\operatorname{\Phi}_{\mathsf{b}}(2x-c_{\mathsf{b}}) e^{-2 \pi \mathsf{i}x^2} dx$$ The integral is absolutely convergent, and the statement and proof of Theorem [\[thm.1\]](#thm.1){reference-type="ref" reference="thm.1"} applies using the following definition of the functions $\operatorname{f}(x)$, $\operatorname{g^\pm}_k(x,q)$ and $\operatorname{g}(x)$: $$\begin{align}
+\operatorname{f}(x-c_{\mathsf{b}}) &= 
+\operatorname{\Phi}_{\mathsf{b}}(x)^2 \operatorname{\Phi}_{\mathsf{b}}(2x-c_{\mathsf{b}})e^{-2 \pi \mathsf{i}x^2} \\
+\operatorname{g^\pm}_k(x,q) &=  \frac{
+q^{k(k+1)} \!x^{2k} }{\left(q x;q\right)^{2}_k\!\left(q x^2;q\right)_{2k}}   \\
+\operatorname{g}(x) &= \frac{x^2}{\left(1-x\right)^2\!\left(1-x^2\right)^2} \,.
+\end{align}$$ Observe that $\operatorname{f}(z)$ is non-vanishing and absolutely integrable along the line $\mathcal{C}_{\lambda}$ if $$-(M+N)/4<\lambda<0,$$ and $\operatorname{f}(z+\mathsf{s}\mathsf{i})\ne \operatorname{f}(z)$ if $\lambda$ is in general position.
+
+We now discuss the solutions of the gluing equations $\operatorname{g}(x)=1$ and the matching with the set of nonabelian parabolic $\mathrm{PSL}(2,\mathbbm C)$ representations, illustrating Remark [\[rem.parabolic\]](#rem.parabolic){reference-type="ref" reference="rem.parabolic"}.
+
+The equation $\operatorname{g}(x)=1$ has 6 solutions that come from two cubic equations: $$\label{eq.2cubic}
+\frac{z}{(1-z^2)(1-z)} = \pm 1 \,.$$ Each triple of solutions lies in number fields $F_+$ and $F_-$ of discriminant $-23$ and $49$ and type $[1,1]$ and $[3,0]$ respectively.
+
+On the other hand, there are 6 nonabelian parabolic $\mathrm{PSL}(2,\mathbbm C)$ representations of the $(-2,3,7)$ pretzel knot. These may be found using the Ptolemy methods of [@ptolemy] and their `snappy` implementation [@snappy]. An alternative method is to use the $A$-polynomial of the pretzel knot from [@Culler:Apoly]
+
+$$A(m,l)=l^6 - l^5 m^8 + 2 l^5 m^9 - l^5 m^{10} - 2 l^4 m^{18} - l^4 m^{19} + 
+l^2 m^{36} + 2 l^2 m^{37} + l m^{45} - 2 l m^{46} + l m^{47} - m^{55}$$ Observe that $A(1,l)=(l-1)^3(l+1)^3$. Setting $(m,l)=(1+t,\pm 1+c_{\pm} t + O(t^2))$ we obtain that $$-6119 + 2012 c_- - 220 c_-^2 + 8 c_-^3 =0, \qquad
+-6193 - 2020 c_+ - 220 c_+^2 - 8 c_+^3 =0$$ Then, we have $F_\pm=\mathbbm Q(c_\pm)$. If $z$ is a solution to [\[eq.2cubic\]](#eq.2cubic){reference-type="eqref" reference="eq.2cubic"}, let $\rho_z$ denote the corresponding nonabelian parabolic $\mathrm{PSL}(2,\mathbbm C)$ representation. The Rogers dilogarithm of $z$ agrees with the complex volume of $\rho_z$, and $\operatorname{g}'(x)$ agrees with the 1-loop invariant of $\rho_z$.
+
+Incidentally, if $z \in F_+$, a totally real field, then the corresponding triple of elements of the Bloch group is torsion and triple of complex volumes is given by $$\left(\mathsf{e}\left(-\frac{19}{42}\right), 
+\mathsf{e}\left(-\frac{13}{42}\right),
+\mathsf{e}\left(\frac{11}{42}\right) \right)= 
+\mathsf{e}\left(-\frac{19}{42}\right) 
+\left(1, 
+\mathsf{e}\left(\frac{1}{7}\right),
+\mathsf{e}\left(-\frac{2}{7}\right) \right)
+\,,$$ where $\mathsf{e}(x)$ is given by Equation [\[eq.ex\]](#eq.ex){reference-type="eqref" reference="eq.ex"}.

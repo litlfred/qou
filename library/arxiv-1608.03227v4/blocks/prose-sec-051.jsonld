@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1608.03227v4/blocks/prose-sec-051",
+  "kind": "prose",
+  "title": "A geometric interpretation for the matrix factorization",
+  "pageStart": 54,
+  "pageEnd": 56,
+  "text": "../sections/sec-051-101-a-geometric-interpretation-for-the-matrix-fa.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1608.03227v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1608.03227v4/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s0894-0347-00-00337-4/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/s0894-0347-00-00337-4/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "Asymptotics in the bulk of the spectrum. Given a sequence of subsets",
-  "pageStart": 4,
-  "pageEnd": 6,
-  "text": "../sections/sec-005-13-asymptotics-in-the-bulk-of-the-spectrum-given.md",
-  "derivedFrom": "library/s0894-0347-00-00337-4/manifest",
-  "sourceDocument": "library/s0894-0347-00-00337-4/manifest",
+  "title": "Poissonization and depoissonization",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "text": "../sections/sec-005-15-poissonization-and-depoissonization.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0894-0347-00-00337-4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0894-0347-00-00337-4/manifest.jsonld",
   "provenance": "ingested"
 }
