@@ -1,4 +1,4 @@
-Each item of the definition answers a physical question. This remark says which, in the loosest terms that are still honest; the precise consequences are proved later.
+Each item of the definition answers a physical question. This remark says which; the precise consequences are proved later.
 
 **Why braided.** Two systems sitting side by side can be exchanged, and in three dimensions the exchange is a *process*, not a relabelling: passing $V$ in front of $W$ is a different operation from passing it behind. A *symmetric* braiding forgets the difference, and that is the classical limit — ordinary bosons and fermions, where a swap is undone by a swap. Keeping the difference is what lets a strand hold a knot, and what lets an exchange accumulate a phase.
 
@@ -16,7 +16,7 @@ The classical picture is $\mathrm{SO}(3)$. Rotations compose, every rotation has
 
 The two invertibility conditions say that no channel is degenerate: a block whose Frobenius weight is not invertible would be present in the algebra yet carry no usable share of any trace, and a block whose quantum dimension is not invertible could not be normalised against. Over a field this is just non-vanishing; over a ring it is the stronger demand, and it is the stronger one that is meant.
 
-This axiom is what earlier drafts asserted, less directly, as a numerical identity. Once the blocks exist and are non-degenerate, the **co-Casimir trace**
+Once the blocks exist and are non-degenerate, the **co-Casimir trace**
 $$
   \mathrm{tr}_M(C_{\dim_q}) \;=\; \sum_{\lambda \in \widehat{A}} \frac{1}{\dim_q(\lambda)}
 $$
