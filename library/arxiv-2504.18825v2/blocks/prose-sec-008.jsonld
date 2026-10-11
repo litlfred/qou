@@ -1,16 +1,22 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
+    }
+  ],
   "@id": "library/arxiv-2504.18825v2/blocks/prose-sec-008",
   "@type": [
-    "folio:Prose",
+    "folio-assistant-core:Prose",
     "doco:Section"
   ],
   "kind": "prose",
-  "title": "Introduction",
-  "pageStart": 2,
-  "pageEnd": 7,
-  "text": "../sections/sec-008-introduction.md",
-  "derivedFrom": "library/arxiv-2504.18825v2/manifest",
-  "sourceDocument": "library/arxiv-2504.18825v2/manifest",
+  "title": "Appendix B. SageMath implementation of the Murnaghan–Nakayama rule",
+  "pageStart": 51,
+  "pageEnd": 55,
+  "text": "../sections/sec-008-appendix-b-sagemath-implementation-of-the-murnag.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2504.18825v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2504.18825v2/manifest.jsonld",
   "provenance": "ingested"
 }
