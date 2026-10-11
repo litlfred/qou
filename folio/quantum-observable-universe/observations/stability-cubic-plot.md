@@ -5,7 +5,7 @@ $$
   \qquad c = \frac{\lambda_C}{2a_{\mathrm{asym}}} \approx 0.0145158337, \quad A = t^3,
 $$
 
-with $c$ the asymmetry constant of [neutron prediction comparison](#prop:neutron-prediction-comparison). The [Diophantine valley](#rem:diophantine-valley) writes the same curve as $t^3 = 2p(1 + ct^2)$, which carries twice this $ct^2$ term; the table below uses the form above.
+with $c$ the asymmetry constant of [neutron prediction comparison](#prop:neutron-prediction-comparison). This is the stability cubic of the [Diophantine valley](#rem:diophantine-valley).
 
 See [Table](#tbl:stability-cubic-plot-table-data).
 

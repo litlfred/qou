@@ -13,9 +13,9 @@ $$
 The nuclear stability condition ([beta-stability](#prop:beta-stability)), under the substitution $t = A^{1/3}$, yields:
 
 $$
-  t^3 - 2cpt^2 - 2p = 0,
+  t^3 - cpt^2 - 2p = 0,
   \qquad c = \frac{a_C}{2a_A}
-  = \frac{(q - q^{-1})\lambda_C}{2a_A}.
+  = \frac{\lambda_C}{2a_{\mathrm{asym}}}.
   \tag{S}
 $$
 
@@ -23,12 +23,12 @@ Both are cubics in one variable parametrized by another. The color cubic (C) car
 
 **Genus comparison.**
 
-The stability cubic (S) is rational. Solving for $p$ yields $p = t^3 / (2 + 2ct^2)$, confirming genus $0$. The color cubic (C) has genus $1$ for generic $z$ (it defines an elliptic curve whose $j$-invariant varies as a rational function of $z$).
+The stability cubic (S) is rational. Solving for $p$ yields $p = t^3 / (2 + ct^2)$, confirming genus $0$. The color cubic (C) has genus $1$ for generic $z$ (it defines an elliptic curve whose $j$-invariant varies as a rational function of $z$).
 
 The physical stability problem incorporates the pairing energy $\pm \lambda_P / t^{3/2}$, distinguishing even-even, even-odd, odd-even, and odd-odd nuclei. The **degeneracy locus** — the set of $(p, t)$ where the even-even and odd-odd binding energies coincide — satisfies:
 
 $$
-  t^3 - 2cpt^2 - 2p
+  t^3 - cpt^2 - 2p
   =  \frac{2\lambda_P}{a_A} \cdot t^{3/2}.
   \tag{D}
 $$
@@ -36,7 +36,7 @@ $$
 Squaring to clear the half-integer exponent and substituting $u = t^{1/2}$ (so $t = u^2$, $t^{3/2} = u^3$, $t^3 = u^6$) gives:
 
 $$
-  \bigl(u^6 - 2cpu^4 - 2p\bigr)^2
+  \bigl(u^6 - cpu^4 - 2p\bigr)^2
   =  \frac{4\lambda_P^2}{a_A^2} \cdot u^6.
   \tag{D$'$}
 $$
@@ -50,7 +50,7 @@ This defines a degree-12 curve in $(p, u)$. Factoring out the genus-$0$ componen
 2. *There exists an isogeny $\varphi \colon E_Q \to E_{z(p)}$ to the color fiber of the Bring's surface, where $z(p)$ is the spacetime ratio at which the color-tube cubic ([color tube cubic](#rem:color-tube-cubic)) specialises to the stability cubic:*
 
 $$
-  z(p) =  -\frac{1}{2cp}
+  z(p) =  -\frac{1}{cp}
 $$
 
    *so that the coefficients of (C) at $z = z(p)$ match those of (S) up to a Möbius transformation.*
@@ -58,34 +58,34 @@ $$
 
 **Coefficient matching.**
 
-The color cubic at $z = -1/(2cp)$ is:
+The color cubic at $z = -1/(cp)$ is:
 
 $$
-  X^3 + \left(1 - \frac{1}{2cp}\right) X^2
-  + \left(\frac{1}{4c^2p^2} - \frac{1}{2cp} + 1\right) X
+  X^3 + \left(1 - \frac{1}{cp}\right) X^2
+  + \left(\frac{1}{c^2p^2} - \frac{1}{cp} + 1\right) X
   + \cdots = 0.
 $$
 
 We rewrite the stability cubic as a monic cubic in $t$ with parameter $p$:
 
 $$
-  t^3 - 2cp \cdot t^2 + 0 \cdot t - 2p = 0.
+  t^3 - cp \cdot t^2 + 0 \cdot t - 2p = 0.
 $$
 
-Under the substitution $t = \alpha X + \beta$ with $\alpha = -2cp$ and $\beta = 2cp \cdot z$, the leading coefficients match:
+Under the substitution $t = \alpha X + \beta$ with $\alpha = -cp$ and $\beta = cp \cdot z$, the leading coefficients match:
 
 | Coefficient | Chiral (C) | Stability (S) | Match condition |
 |-------------|-----------|---------------|-----------------|
-| $X^2$ | $z + 1$ | $-2cp$ | $z = -(2cp + 1)$ |
+| $X^2$ | $z + 1$ | $-cp$ | $z = -(cp + 1)$ |
 | $X^0$ | $z^3 + z^2 + z + 1$ | $-2p$ | $(z+1)(z^2+1) = -2p$ |
 
-Eliminating $z$: since $z + 1 = -2cp$ and $z^2 + 1 = (2cp + 1)^2 + 1 = 4c^2p^2 + 4cp + 2$, the $X^0$ condition reads $(-2cp)(4c^2p^2 + 4cp + 2) = -2p$, that is,
+Eliminating $z$: since $z + 1 = -cp$ and $z^2 + 1 = (cp + 1)^2 + 1 = c^2p^2 + 2cp + 2$, the $X^0$ condition reads $(-cp)(c^2p^2 + 2cp + 2) = -2p$, that is,
 
 $$
-  4c^3 p^2 + 4c^2 p + 2c = 1.
+  c^3 p^2 + 2c^2 p + 2c = 2.
 $$
 
-At $c = \lambda_C/(2a_{\mathrm{asym}}) \approx 0.0145158337$ (the asymmetry constant of [neutron prediction comparison](#prop:neutron-prediction-comparison)), the positive root is $p \approx 249.4$; at the earlier value $c = 0.01497$ it is $p \approx 237.5$. Both lie far beyond the heaviest known element ($Z = 118$), so this coefficient match does not single out any observed nucleus.
+At $c = \lambda_C/(2a_{\mathrm{asym}}) \approx 0.0145158337$ (the asymmetry constant of [neutron prediction comparison](#prop:neutron-prediction-comparison)), the positive root is $p \approx 736.8$. Both lie far beyond the heaviest known element ($Z = 118$), so this coefficient match does not single out any observed nucleus.
 
 **Physical interpretation.**
 
@@ -112,15 +112,15 @@ Since $\Delta < 0$, the real locus $\mathcal{E}_q(\mathbb{R})$ possesses a singl
 The stable nuclei provide the **$\mathbb{N}^2$ lattice points** $(Q, N)$ on the genus-$0$ **stability cubic** ([Diophantine valley](#rem:diophantine-valley)):
 
 $$
-  t^3 =  2p(1 + ct^2),
+  t^3 =  p(2 + ct^2),
   \qquad A = Z + N = t^3.
 $$
 
-This curve is rational: $p = t^3/(2 + 2ct^2)$. For each mass number $A \in \mathbb{N}$, the stable proton number $p$ serves as the exact integer minimiser of the convex quadratic $E(p, A)$ ([integer stability](#prop:integer-stability)). There is no approximation — the integer minimiser of a convex quadratic is determined exactly.
+This curve is rational: $p = t^3/(2 + ct^2)$. For each mass number $A \in \mathbb{N}$, the stable proton number $p$ serves as the exact integer minimiser of the convex quadratic $E(p, A)$ ([integer stability](#prop:integer-stability)). There is no approximation — the integer minimiser of a convex quadratic is determined exactly.
 
 **Pairing lift to genus $1$ (open).**
 
-The genus-$0$ stability cubic accounts for all stable nuclei via lattice-point enumeration. Whether the pairing energy lifts this curve to the genus-$1$ elliptic curve $\mathcal{E}_q$ — and whether the stability pairs $\{2, 8, 20, 28, 50, 82, 126\}$ then acquire an interpretation as integer points of $\mathcal{E}_p$ — remains an open question. The structural parallel between the stability cubic and the color cubic (identical algebraic origin in the Bring's surface, coefficient matching at $p \approx 68$) is suggestive but unproven.
+The genus-$0$ stability cubic accounts for all stable nuclei via lattice-point enumeration. Whether the pairing energy lifts this curve to the genus-$1$ elliptic curve $\mathcal{E}_q$ — and whether the stability pairs $\{2, 8, 20, 28, 50, 82, 126\}$ then acquire an interpretation as integer points of $\mathcal{E}_p$ — remains an open question. The structural parallel between the stability cubic and the color cubic (identical algebraic origin in the Bring's surface) is unproven, and the coefficient matching above lands at $p \approx 736.8$, outside the nuclear chart.
 
 **Established results:**
 
