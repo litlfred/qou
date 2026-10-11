@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-11T07:35:00Z
-updated_at: 2026-10-11T07:35:00Z
+updated_at: 2026-10-11T07:45:00Z
 parent: qou-8lxd
 ---
 
@@ -40,3 +40,27 @@ agreement with a fitted 68.9 MeV, which is not a derivation.
 2. Whether the [5]_q! block should be scoped as superseded by the k=4 cap.
 
 Nothing edited. Status stays todo: this tracks an open identification.
+
+
+---
+
+# 2026-10-11 — CORRECTION to the table above (my own error)
+
+The third row is mislabelled. `prop:wigner-2-coefficient` is not a (2,2)
+coefficient. It is a general theorem for self-conjugate shapes,
+`tr(sigma_g^lambda)/dim(lambda) = h/2` (Lean `paired_sum_identity`,
+`self_conjugate_trace`), with headline case `[3,2,1]` at k = 6, and its
+interpretation block says `[3,2,1]` scales as `(Z-N)(A-1)`, not `T(T+1)`. So
+it is a different term ("Wigner-2"). The 0.017357 figure is that formula
+evaluated at (2,2) by me, not a value the block states. Under convention D
+`[3,2,1]` has three rows, so its Markov weight is zero as well.
+
+Lean status of the other two, measured:
+
+- `prop:wigner-np-pairing` -> `ConfinedKnotBinding.wigner_energy_from_22`
+  is `w*v*a*Z = a*w*Z*v := by ring`, a commutativity identity that says
+  nothing about `[3]_q[2]_q^2`. `uses: []`. The value is stated, not derived.
+- `prop:wigner-coefficient-derivation` -> `wigner_coefficient` is discharged
+  by `wigner_coefficient_axiom`, an axiom asserting
+  `|[5]_q! m_e - 68.896|/68.896 < 0.03` at the muon-era q0. That is an
+  empirical comparison inside a formal proof.
