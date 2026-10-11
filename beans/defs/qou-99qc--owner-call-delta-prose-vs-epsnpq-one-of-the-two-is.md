@@ -3353,3 +3353,7 @@ Full entry on `qou-pzsi`; probe `computations/probes/ohara_link_energy/`.
 - No word is selected by route 2.
 
 **2026-10-11 (route 2, options 1b/1c, PRs #7672 merged, #7679).** On fresh 13-letter words: 316 classes = 33 braids; the shortest Bring loop carries 3 braids (88 spellings of one), so Bring-loop energies select loops, not words. The owner-ruled q-length at t = -q0 separates braids: alone it picks sigma0*Delta^4 (length ln q0, no Bring loop); Bring-loop-first picks a different braid. Contaminated read-across to the seen candidates: rule A -> nuc11_interleaved (the scored element), rule B -> class A. The two rules disagree; which (if either) is the selection principle is an OPEN owner decision. Nothing selected. Bean stays open.
+
+## 2026-10-11 — option 1d (11-letter, all 94 classes; PR #7679, 007720dbbf)
+
+Pre-registered rules on all 94 positive 11-letter word classes (16 braids). Rule A (q-length at t=−q₀ alone) picks the braid of nuc11_interleaved (parabolic, E_q = ln q₀, no Bring loop). Rule B (shortest Bring loop, L = 4.6031833095, then q-length) picks the braid of class A (gluon_s1_s0/s1_s1, E_q = 2.6496). Both decided, they disagree; contaminated (seen q-lengths known beforehand). The selection rule remains an OPEN owner decision — this bean stays open.
