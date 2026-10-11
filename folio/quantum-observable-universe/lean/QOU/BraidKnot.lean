@@ -86,6 +86,14 @@ import QOU.BraidKnot.SearchCoercivity
 --- falls short of a bound implies nothing about the true one -- only EXCEEDING a bound refutes.
 --- The corpus's sole recorded support for G1 (`Xbot(s) <= Xblock(s)`) has exactly that shape.
 import QOU.BraidKnot.SupergradientCertificate
+--- The sharp-coefficient upper bound M_n <= A sqrt(2n) + O(n^{1/4}) (bean qou-fxym). The pair
+--- term is bounded below by tangent lines at 2k per neighbour order k, losing sum_k |eps'(2k)|
+--- Delta_k(t); that loss is measured against the WATER-FILLING reference p = max(tau, wall),
+--- which is monotone (`shiftDiff_nonpos_of_monotone`, so it loses nothing) and obeys
+--- `waterfill_pythagoras`, so the distance to it is paid by the within-row-count energy.
+--- `linear_sub_excess_le` is the scalar trade-off; the integrality defect l/4 is why the error
+--- is O(n^{1/4}) and not O(1).
+import QOU.BraidKnot.HardWallProjection
 -- The M_1 edge calculus (bean qou-t6hc): Fact A, giving the per-edge sign of
 -- P = Cov(Sum|c|, omega_3) >= 0 -- which is pure integer algebra, true of any two
 -- contents -- and the 1-Lipschitz diagonal lemma |D(c) - D(c+1)| <= 1, which is
