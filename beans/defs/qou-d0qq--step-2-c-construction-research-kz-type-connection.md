@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T08:13:53Z
-updated_at: 2026-10-10T18:11:06Z
+updated_at: 2026-10-11T05:59:18Z
 parent: qou-wp3h
 ---
 
@@ -67,3 +67,6 @@ Was in-progress with no bean update since 2026-09-13 and no main commit naming i
 
 ## 2026-10-10 — now also gates the continuous mass identity (qou-ywyq)
 The discrete mass identity tr_M(β) = (1+q²)^{-n}·Tr(K^{⊗n}·Hol(β)) is proved (QOU.Torsion.MassTraceMarkov, PR #7632). Promoting Hol to a continuous KZ holonomy at the real pin q₀ needs the imaginary level this bean studies; the real-level route is pruned (qou-74ip). Cross-link only; no new work done here.
+
+## 2026-10-11 — Drinfeld–Kohno holds at the real pin; what remains is the framework connection
+Kohno 1987 Remark 1.3.14 (library/kohno1987-aif, p.150): Theorem 1.2.8 holds at any complex coupling λ for which the R-side images φ(γ_k), γ_k=(σ1…σ_{k−1})^k, are diagonalizable, which holds when φ is completely reducible. At real q0>1 (not a root of unity) the U_q(sl2) tensor powers are semisimple and γ_k acts by ribbon scalars, so the theorem holds at the imaginary coupling λ0 = ln q0/(iπ) ≈ −0.0332i. The weight-preserving intertwiner argument (PR #7632) needs only q not a root of unity, so the weighted trace Tr(K^{⊗n}·) transports there too. Numerical check computations/kz_real_q0_pure_braid_monodromy_probe.py (mpmath 40 dps, n=3, pure braids incl. products): per-weight-sector traces agree to 1e-15, residual ∝ h^4, wrong orientation q→1/q fails by 0.70. Branch claude/kz-real-q0-2026-10-11. Cited, not proved in Lean. STILL OPEN (do not close): whether the framework's substrate connection IS this KZ connection (KZPullbackGenerators), and n>3 / full braid group only by citation.
