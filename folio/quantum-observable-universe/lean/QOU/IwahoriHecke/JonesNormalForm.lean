@@ -53,7 +53,9 @@ arbitrary quadratic relation, which is what Markov uniqueness needs.
   class `QOU.Hecke.MarkovTrace` without the cross-level Markov property — and was **false**
   (`QOU.Hecke.MarkovTraceClassNotUnique.markov_trace_unique_axiom_false`). The axiom is
   removed; `QOU.Hecke.markov_trace_unique` is now proved from `markov_unique_of_adjoin_eq_top`
-  with (M3) as a hypothesis (`MarkovTrace.IsMarkov`).
+  with (M3) as a hypothesis (`MarkovTrace.IsMarkov`). The concrete traces
+  `markovTraceH2` / `markovTraceH3A` / `markovTraceH4A` satisfy (M3) for every `z`
+  (`QOU.Hecke.MarkovTraceIsMarkov`), so the theorem applies at `n = 2, 3, 4`.
 
 -- Ref: [jones1987] Jones, *Hecke algebra representations of braid groups and link
 --      polynomials*, Ann. Math. 126 (1987), §4–5 (normal form, Markov trace).
