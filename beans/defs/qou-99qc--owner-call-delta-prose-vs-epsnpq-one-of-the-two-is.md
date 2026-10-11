@@ -3351,3 +3351,5 @@ Full entry on `qou-pzsi`; probe `computations/probes/ohara_link_energy/`.
 - Option 1, ropelength on fresh 11-letter words, FAILED its pre-registered test (24-way tie). PR #7651 merged.
 - Option 1b pre-registers a same-loop-up-to-symmetry rule on fresh 13-letter words (branch claude/bring-route2-sameloop-2026-10-11).
 - No word is selected by route 2.
+
+**2026-10-11 (route 2, options 1b/1c, PRs #7672 merged, #7679).** On fresh 13-letter words: 316 classes = 33 braids; the shortest Bring loop carries 3 braids (88 spellings of one), so Bring-loop energies select loops, not words. The owner-ruled q-length at t = -q0 separates braids: alone it picks sigma0*Delta^4 (length ln q0, no Bring loop); Bring-loop-first picks a different braid. Contaminated read-across to the seen candidates: rule A -> nuc11_interleaved (the scored element), rule B -> class A. The two rules disagree; which (if either) is the selection principle is an OPEN owner decision. Nothing selected. Bean stays open.
