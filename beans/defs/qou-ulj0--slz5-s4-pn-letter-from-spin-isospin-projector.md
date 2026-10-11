@@ -45,3 +45,12 @@ D − S = (s·i' − s'·i)·tr p·tr p'.
 - Open: sign of the energy splitting (trace→energy map, Δ² vs Δ⁻²) and exponent normalisation (k = 1 vs 2).
 Files: QOU/Hecke/TwistedChannelSplitting.lean (exit 0, no sorry); computations/deltalambda/framing_twist_channel_split_probe.py (6/6).
 Status stays todo: the spin/isospin asymmetry is still underived.
+
+## 2026-10-11 — is theta_iso = 1 derivable? Mostly NO (commit 8e8c2fdeb94, PR #7612)
+
+Lean QOU/Hecke/IsospinTwistFromBalancing.lean (exit 0; axioms propext/Classical.choice/Quot.sound). Balancing theta_{X⊗Y} = c_{Y,X}c_{X,Y}(theta_X⊗theta_Y) fixes the isospin twist from the isospin braiding; the block-level form theta|_lambda = tau^n f_lambda is carried as a hypothesis [bakalovkirillov2001, turaev2010].
+- Spin Hecke-braided at q, isospin at t: D − S = sigma^6 tau^6 q^6 t^6 (q^4 − t^4) tr p tr p' (hecke_balanced_split; needs JucysMurphySpectrum for (4,2), (3,3)).
+- The corpus grades isospin by the P± of the SAME H_n(q0) (audit 2026-08-16 §4), so t = q and D = S. In the corpus's own structure theta_iso = 1 contradicts balancing. Scope (b) for that structure; the invariant is balancing + q^4 = t^4.
+- The spin-only form follows iff isospin is transparent (Müger centre), which under Hecke braiding is iff t^2 = 1 (classical). No corpus structure makes isospin classical. That would need C_spin ⊠ Rep(SU(2)), which also breaks the shared-trace Pauli lock.
+- Convention correction: with Delta^2 = theta^2 (fullTwist_eq_theta_sq) the balancing ratio is q^4, so spin-only D/S = q0^4 = 1.517953. The earlier q0^2 used theta = q^c, half the balancing twist. TwistedChannelSplitting must say which twist it means.
+Verdict: the spin/isospin split is NOT derivable from the present structure. Status stays todo.
