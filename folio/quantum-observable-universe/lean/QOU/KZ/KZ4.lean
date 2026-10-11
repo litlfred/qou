@@ -16,12 +16,13 @@ The real triangle `Δ = {0 < x < y < 1}` has five boundary divisors, met in cycl
 `x = 0`, `x = y = 0`, `x = y`, `x = y = 1`, `y = 1`, with residues `t₁₂`, `T₁₂₃`, `t₂₃`, `T₂₃₄`,
 `t₃₄`.  For each divisor there is a chart `ψᵢ : (0,1)² → Δ`, `(s, ε) ↦ (x, y)`, in which the
 divisor is `ε = 0` and the two adjacent corners are `s = 0` and `s = 1`; in every chart the
-pulled-back connection has the same shape (`pullback_s`, `pullback_e`):
+pulled-back connection has the same shape (the `Chart` fields, `chart1` … `chart5`):
 
   `Ω_s = P/s + Q/(s−1) − ε/(1 − ε(1−s)) · B`,   `Ω_ε = E/ε + A/(ε−1) + (1−s)/(1 − ε(1−s)) · B`,
 
 so at `ε = 0` the `s`-equation is the three-point KZ equation with residues `P, Q`, and `E`
-commutes with `P` and `Q`.  Consecutive charts agree at the corners (`corner_eq`).
+commutes with `P` and `Q`.  Consecutive charts agree at the corners
+(`KZPentagon.corner12` … `KZPentagon.corner51`).
 
 -- Ref: [drinfeld1990] Leningrad Math. J. 1 (1990) 1419–1457, §2
 -- Ref: [manuscript] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1
