@@ -576,45 +576,6 @@
    "verdict": "loop",
    "L": "9.206366619015833319948345"
   },
-  "neutron term s0^+1 s1^+1": {
-   "sl2z": [
-    [
-     5,
-     18
-    ],
-    [
-     3,
-     11
-    ]
-   ],
-   "trace": 16,
-   "p1f2_fixed": [
-    "0"
-   ],
-   "rule": "one fixed point (route 2 unchanged)",
-   "placements": [
-    {
-     "point": "0",
-     "gamma0_2_rep": [
-      [
-       11,
-       -3
-      ],
-      [
-       -18,
-       5
-      ]
-     ],
-     "in_gamma0_2": true,
-     "r": 3,
-     "trace_delta245_abs": "3.236067977499789696409174",
-     "status": "loop",
-     "L": "6.367650371430213912198113"
-    }
-   ],
-   "verdict": "loop",
-   "L": "6.367650371430213912198113"
-  },
   "proton term s0^+1 s1^-1": {
    "sl2z": [
     [
@@ -653,45 +614,6 @@
    ],
    "verdict": "loop",
    "L": "15.94310614376239537061373"
-  },
-  "neutron term s0^+1 s1^-1": {
-   "sl2z": [
-    [
-     21,
-     50
-    ],
-    [
-     13,
-     31
-    ]
-   ],
-   "trace": 52,
-   "p1f2_fixed": [
-    "0"
-   ],
-   "rule": "one fixed point (route 2 unchanged)",
-   "placements": [
-    {
-     "point": "0",
-     "gamma0_2_rep": [
-      [
-       31,
-       -13
-      ],
-      [
-       -50,
-       21
-      ]
-     ],
-     "in_gamma0_2": true,
-     "r": 5,
-     "trace_delta245_abs": "7.854101966249684544613761",
-     "status": "loop",
-     "L": "20.44416022260005416268225"
-    }
-   ],
-   "verdict": "loop",
-   "L": "20.44416022260005416268225"
   },
   "proton term s0^-1 s1^+1": {
    "sl2z": [
@@ -732,45 +654,6 @@
    "verdict": "loop",
    "L": "6.367650371430213912198113"
   },
-  "neutron term s0^-1 s1^+1": {
-   "sl2z": [
-    [
-     31,
-     44
-    ],
-    [
-     19,
-     27
-    ]
-   ],
-   "trace": 58,
-   "p1f2_fixed": [
-    "0"
-   ],
-   "rule": "one fixed point (route 2 unchanged)",
-   "placements": [
-    {
-     "point": "0",
-     "gamma0_2_rep": [
-      [
-       27,
-       -19
-      ],
-      [
-       -44,
-       31
-      ]
-     ],
-     "in_gamma0_2": true,
-     "r": 5,
-     "trace_delta245_abs": "10.09016994374947424102293",
-     "status": "loop",
-     "L": "23.01591654753958329987086"
-    }
-   ],
-   "verdict": "loop",
-   "L": "23.01591654753958329987086"
-  },
   "proton term s0^-1 s1^-1": {
    "sl2z": [
     [
@@ -810,7 +693,124 @@
    "verdict": "loop",
    "L": "20.44416022260005416268225"
   },
-  "neutron term s0^-1 s1^-1": {
+  "neutron term s0^+1 s0^+1": {
+   "sl2z": [
+    [
+     47,
+     128
+    ],
+    [
+     29,
+     79
+    ]
+   ],
+   "trace": 126,
+   "p1f2_fixed": [
+    "0"
+   ],
+   "rule": "one fixed point (route 2 unchanged)",
+   "placements": [
+    {
+     "point": "0",
+     "gamma0_2_rep": [
+      [
+       79,
+       -29
+      ],
+      [
+       -128,
+       47
+      ]
+     ],
+     "in_gamma0_2": true,
+     "r": 3,
+     "trace_delta245_abs": "14.32623792124926393743211",
+     "status": "loop",
+     "L": "15.94310614376239537061373"
+    }
+   ],
+   "verdict": "loop",
+   "L": "15.94310614376239537061373"
+  },
+  "neutron term s0^+1 s0^-1": {
+   "sl2z": [
+    [
+     21,
+     50
+    ],
+    [
+     13,
+     31
+    ]
+   ],
+   "trace": 52,
+   "p1f2_fixed": [
+    "0"
+   ],
+   "rule": "one fixed point (route 2 unchanged)",
+   "placements": [
+    {
+     "point": "0",
+     "gamma0_2_rep": [
+      [
+       31,
+       -13
+      ],
+      [
+       -50,
+       21
+      ]
+     ],
+     "in_gamma0_2": true,
+     "r": 5,
+     "trace_delta245_abs": "7.854101966249684544613761",
+     "status": "loop",
+     "L": "20.44416022260005416268225"
+    }
+   ],
+   "verdict": "loop",
+   "L": "20.44416022260005416268225"
+  },
+  "neutron term s0^-1 s0^+1": {
+   "sl2z": [
+    [
+     21,
+     50
+    ],
+    [
+     13,
+     31
+    ]
+   ],
+   "trace": 52,
+   "p1f2_fixed": [
+    "0"
+   ],
+   "rule": "one fixed point (route 2 unchanged)",
+   "placements": [
+    {
+     "point": "0",
+     "gamma0_2_rep": [
+      [
+       31,
+       -13
+      ],
+      [
+       -50,
+       21
+      ]
+     ],
+     "in_gamma0_2": true,
+     "r": 5,
+     "trace_delta245_abs": "7.854101966249684544613761",
+     "status": "loop",
+     "L": "20.44416022260005416268225"
+    }
+   ],
+   "verdict": "loop",
+   "L": "20.44416022260005416268225"
+  },
+  "neutron term s0^-1 s0^-1": {
    "sl2z": [
     [
      -5,
