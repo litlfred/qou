@@ -1,1 +1,1 @@
-Letk be a positive integer. Then, the series
+Let k be a positive integer. Then, the series

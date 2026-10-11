@@ -1,1 +1,1 @@
-Letk ≥ 1. Then for all n ≥ 0,
+Let k ≥1. Then for all n ≥0,

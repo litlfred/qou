@@ -1,1 +1,1 @@
-[9, Conjecture 3] Forn ≥ 0,k >0
+[9, Conjecture 3] For n ≥0, k > 0
