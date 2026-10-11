@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/ant-v14-n7-s/sections/sec-170",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "3A1. A general set-up",
+  "pageStart": 298,
+  "pageEnd": 308,
+  "contains": [
+    "library/ant-v14-n7-s/blocks/prose-sec-170"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "provenance": "ingested"
+}

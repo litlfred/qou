@@ -7,7 +7,7 @@ section_number: null
 pages: 1-1
 source_pdf: 2103.07383v1.pdf
 source_sha256: 9dca35ea16490ad8
-doc_brief: "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case — We prove the analyticity of smooth critical points for generalized integral Menger cur- vature"
+toc_source: outline
 ---
 On the Analyticity of Critical Points of the Generalized
 Integral Menger Curvature in the Hilbert Case
@@ -24,12 +24,12 @@ uni-salzburg.at/index.php?id=209722
 November 23, 2021
 Abstract
 We prove the analyticity of smooth critical points for generalized integral Menger cur-
-vature energies intM(p,2), withp ∈ ( 7
+vature energies intM(p,2), with p ∈( 7
 3, 8
-3 ), subject to a ﬁxed length constraint. This implies,
-together with already well-known regularity results, that ﬁnite-energy, criticalC 1-curves
-γ: R/Z → Rn of generalized integral Menger curvature intM(p,2) subject to a ﬁxed length
-constraint are not onlyC ∞ but also analytic. Our approach is inspired by analyticity results
+3), subject to a ﬁxed length constraint. This implies,
+together with already well-known regularity results, that ﬁnite-energy, critical C1-curves
+γ : R/Z →Rn of generalized integral Menger curvature intM(p,2) subject to a ﬁxed length
+constraint are not only C∞but also analytic. Our approach is inspired by analyticity results
 on critical points for O’Hara’s knot energies based on Cauchy’s method of majorants and
 a decomposition of the ﬁrst variation. The main new idea is an additional iteration in the
 recursive estimate of the derivatives to obtain a suﬃcient diﬀerence in the order of regularity.
