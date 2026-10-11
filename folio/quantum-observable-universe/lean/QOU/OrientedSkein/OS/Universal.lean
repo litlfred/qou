@@ -25,7 +25,7 @@ sideways crossing, and the dimension relation).  Then:
   on layers is `lift D`, and `lift_layer` computes the layers from the four generators.
 
 The strictly stronger statement — that any linear monoidal functor sending the universal datum
-to `D` is monoidally isomorphic to `lift D` — is not proved here.
+to `D` is monoidally isomorphic to `lift D` — is `liftIso` in `QOU.OrientedSkein.OS.Unique`.
 
 Sorry-free.
 

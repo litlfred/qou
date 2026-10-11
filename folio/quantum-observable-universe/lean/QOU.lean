@@ -462,6 +462,7 @@ import QOU.OrientedSkein.OS.Datum
 import QOU.OrientedSkein.OS.Interpret
 import QOU.OrientedSkein.OS.Universal
 import QOU.OrientedSkein.OS.NonVacuity
+import QOU.OrientedSkein.OS.Unique
 import QOU.SchurWeyl.HeckeCoset
 import QOU.SchurWeyl.HeckeDim3
 import QOU.SchurWeyl.HeckeDim3Dim
