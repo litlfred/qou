@@ -439,6 +439,7 @@ import QOU.SchurWeyl.GenericParameterReal
 import QOU.SchurWeyl.HeckeWedderburnDataGeneral
 import QOU.SchurWeyl.HeckeAlgebra
 import QOU.OrientedSkein.HeckeCrossing
+import QOU.OrientedSkein.SkeinDatum
 import QOU.SchurWeyl.HeckeCoset
 import QOU.SchurWeyl.HeckeDim3
 import QOU.SchurWeyl.HeckeDim3Dim
