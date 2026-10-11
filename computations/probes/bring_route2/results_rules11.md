@@ -1,5 +1,8 @@
 # Route 2, option 1d: results
 
+> **🛑 CORRECTION 2026-10-11 (`results_signed.md`).** The seen candidates in this file are the generator sequences of `qbeta_candidate_closures_are_links_probe.CANDIDATES`, with the signs erased. The scored nucleon has σ₁⁻¹ in its core and averaged ud letters; it is a sum of four braids. Every statement here about the *seen candidates* is withdrawn. The statements about fresh positive words stand.
+
+
 Recipe: `preregistration-rules11.md`, committed (25c77a0265) before this run. Producer: `rules11_probe.py`. The braid keys use exact integer and sympy arithmetic. q-lengths use mpmath at 60 dps, with q₀ the proton pin. The Bring geometry uses mpmath at 30 dps. **6/6 checks pass.** No Q_β, CODATA or mass input.
 
 **Read §0 of the pre-registration first.** The seen candidates' q-lengths were known before this run, so §2 below is a consistency observation, not evidence.

@@ -3357,3 +3357,7 @@ Full entry on `qou-pzsi`; probe `computations/probes/ohara_link_energy/`.
 ## 2026-10-11 — option 1d (11-letter, all 94 classes; PR #7679, 007720dbbf)
 
 Pre-registered rules on all 94 positive 11-letter word classes (16 braids). Rule A (q-length at t=−q₀ alone) picks the braid of nuc11_interleaved (parabolic, E_q = ln q₀, no Bring loop). Rule B (shortest Bring loop, L = 4.6031833095, then q-length) picks the braid of class A (gluon_s1_s0/s1_s1, E_q = 2.6496). Both decided, they disagree; contaminated (seen q-lengths known beforehand). The selection rule remains an OPEN owner decision — this bean stays open.
+
+## 2026-10-11 — CORRECTION: route 2 used sign-erased candidates (results_signed.md)
+
+Route 2 and options 1 through 1d (and route 1, ohara_link_energy) took the seen candidates from the sign-erased generator list in qbeta_candidate_closures_are_links_probe. The canonical nucleon (pyhecke.atom.build_nucleon_nf) has a (σ₀σ₁⁻¹)³ core and averaged ud letters, so it is a SUM OF FOUR BRAIDS. Under route 2 every proton term has a Bring loop (L = 9.21 / 15.94 / 6.37 / 20.44), whereas the sign-erased nuc11 is parabolic with no loop. Every seen-candidate read-across from route 2 is WITHDRAWN, including 1d's "Rule A → nuc11, Rule B → class A". The fresh-positive-word results stand. γγ words (σ₀σ₁⁻¹)^k never get a Bring loop under route 2's "exactly one fixed point" rule: this is a limit of the rule (3 ∤ k: no conjugate of Γ₀(2) contains the word; 3 | k: the word is pure, so all three conjugates contain it). Scope (a). The selection rule stays OPEN.

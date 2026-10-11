@@ -1,5 +1,8 @@
 # Route 2, recipe R-q: results
 
+> **🛑 CORRECTION 2026-10-11 (`results_signed.md`).** The seen candidates in this file are the generator sequences of `qbeta_candidate_closures_are_links_probe.CANDIDATES`, with the signs erased. The scored nucleon has σ₁⁻¹ in its core and averaged ud letters; it is a sum of four braids. Every statement here about the *seen candidates* is withdrawn. The statements about fresh positive words stand.
+
+
 q0 = 1.1099785827513808075916690956107688798744991218736 (proton pin). mpmath 60 dps. Recipe: preregistration-qdeformed.md. No ranking rule; nothing selected.
 
 ## Checks

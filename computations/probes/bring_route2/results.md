@@ -1,5 +1,8 @@
 # Results: route 2, braid word → Bring geodesic (lengths only)
 
+> **🛑 CORRECTION 2026-10-11 (`results_signed.md`).** The seen candidates in this file are the generator sequences of `qbeta_candidate_closures_are_links_probe.CANDIDATES`, with the signs erased. The scored nucleon has σ₁⁻¹ in its core and averaged ud letters; it is a sum of four braids. Every statement here about the *seen candidates* is withdrawn. The statements about fresh positive words stand.
+
+
 Run: `python3 -u bring_route2_probe.py` → `results.json`, mpmath 80 dps, exit 0. All 7 checks pass.
 
 | word | SL(2,ℤ) trace | Δ(2,4,5) image | \|tr\| in Δ | r (order in S₅) | Bring length |
