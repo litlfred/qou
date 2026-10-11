@@ -228,6 +228,7 @@ import QOU.KZ.AssociatorKZ
 import QOU.KZ.FuchsianAnalytic
 import QOU.KZ.FuchsianConvergence
 import QOU.KZ.FuchsianFormal
+import QOU.KZ.KZComplex
 import QOU.Knot.CuspShapeBarParity
 import QOU.Knot.FigureEightDeformedMeridianWinding
 import QOU.Knot.RademacherReversible
