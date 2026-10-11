@@ -8,7 +8,7 @@ tags:
     - 8f-decide
     - no-fitting
 created_at: 2026-10-11T06:45:00Z
-updated_at: 2026-10-11T06:45:00Z
+updated_at: 2026-10-11T07:20:00Z
 parent: qou-8lxd
 ---
 
@@ -81,3 +81,42 @@ That has exactly the seven-term shape (N-Z)^2/(4A), but with asymmetry/volume ra
 l2 / (l2/4) = 4, against the stated a_asym/lambda_V = 3/2, and it carries a term l T odd in
 Z - N that the seven-term formula lacks. So: shape suggested under an unjustified normalisation,
 coefficient not reproduced. Still open.
+
+
+---
+
+# 2026-10-11 — Does the channel product map to a binding energy? (owner option 1)
+
+Short answer: **no route in the corpus, and the obvious one is already
+excluded.** Recorded as a scope-(a) negative for this construction alone.
+
+1. **The corpus's step-7 functional is not ln|Lambda_sym|.** The map
+   trace -> MeV is `S = -alpha * sum_{bonds} log mu_e`, summed over the
+   chain's `A-1` interfaces (`binding_functional_extensivity_prune_probe.py`,
+   bean `qou-y0mc`). `Lambda_sym` is a product over **all** pairs:
+   `ln|Lambda| = l(n_pp - n_nn) + l2*n_pn` with `n_pn = ZN`, which is
+   complete-graph coordination.
+2. **Taken unnormalised it is the excluded complete-graph law.**
+   `QOU.Mass.CoordinationSaturation.complete_graph_no_saturation`
+   (sorry-free): `B/A ~ eps*(A-1)/2`, unbounded.
+3. **Dividing by A is not forced anywhere.** It is a Kac/mean-field
+   rescaling (pair strength ~ 1/A). The corpus already labels the
+   `(N-Z)^2/A` power as needing "a well-mixed assignment, which is a
+   mean-field model and is labelled as one", with the canonical segregated
+   layout giving no symmetry term at all
+   (`docs/audits/2026-09-05-binding-law-arc-synthesis.md` section 6a).
+4. **Even granting /A, the ratio is fixed by counting and matches neither
+   formula.** `ln|Lambda|/A = (l2/4)[A - (N-Z)^2/A] + l*T(A-1)/A`, so
+   volume : asymmetry = 1 : 1 per `(N-Z)^2/A`, for every q. The corpus
+   coefficients give 3/2 (beta-stability normalisation, `(N-Z)^2/A`) and
+   3/8 (seven-term, `(N-Z)^2/(4A)`). The q-dependence also differs:
+   `ln([2]_q/2)` against `[2]_q[7]_q`. So the channel product does not
+   settle the normalisation conflict.
+5. **The one derived 1/A route in the corpus is the Wigner term**,
+   `-Delta_W T(T+1)/A` from the (2,2) self-conjugate shadow price
+   (`unified-iterative-correction-proof.md`); `qou-a5jk`/`qou-w06d` cap it
+   at k = 4 and leave open whether (2,2) alone reproduces it. Note
+   `T(T+1)/A ~ (N-Z)^2/(4A)` is the seven-term normalisation's shape. Not
+   assessed further here.
+
+Stays todo: lambda_C and a_asym remain stated, not derived.
