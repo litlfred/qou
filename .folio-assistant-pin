@@ -216,4 +216,33 @@
 # Before the removal: bib_ledger.py --parity identical on both ledgers, and
 # bib:attestations:migrate --check byte-identical (456 rows / 423 files; 2 reviews).
 #
-717aa19a660caa54be312f50abfc813b0b1bdb76
+# BUMPED 2026-10-11 to c56b73b80 (folio-assistant#2535 merged) — past the platform's
+# LAYER SPLIT, and the only qou change it needs is in setup-folio-assistant.sh.
+#
+# Platform main no longer carries cat-harness, cat-harness-tools,
+# folio-assistant-core, folio-assistant-sci, bootstrap, ... in-tree: they are
+# remote mounts recorded in its index.lock.json. setup-folio-assistant.sh now
+# runs the platform's own .github/mount-from-lock.sh after checkout, so the
+# `folio-assistant/cat-harness/...` paths qou already uses resolve unchanged.
+# Measured: of 71 distinct `folio-assistant/...` paths qou references, none
+# that exists at 717aa19 is gone at the new pin (survey by
+# session_01V4jKAVshqv4wPErr8o8myk), so no import rewrites.
+#
+# Why this bump: #2535 pins cat-harness 81a9db4e0 = a89998b + the validator fix
+# from cat-harness-tools #85 ("collect subsection labels so a #sec: link to a
+# nested section resolves"). Owner, 2026-10-11: "repins ok", "do qou side too".
+#
+# Same corpus (qou origin/main), `run-validate folio/quantum-observable-universe`:
+#
+#     717aa19a6  ->  "11 issue(s)", valid
+#     c56b73b80  ->  "9 issue(s)", valid. The two lines that clear are exactly
+#        [intro] sec:introduction-substrate-parameter and [chapter-overview]
+#        sec:introduction-mathematics-measurement (links into subsections).
+#        One line is reworded (`bun run qa:fetch` -> `bun run cat qa:fetch`);
+#        nothing new appears.
+#
+# Measured against platform c03d809bd, the PR head that rebase-merged as
+# c56b73b80 (same tree). A fresh setup-folio-assistant.sh clone at that pin laid
+# down all 11 layers (~607 MB).
+#
+c56b73b801804d3fe769a09e6d7871842037e339
