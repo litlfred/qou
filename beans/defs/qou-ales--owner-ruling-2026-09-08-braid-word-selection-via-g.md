@@ -203,3 +203,30 @@ which **is** the disjoint-block form of the connected-sum multiplicativity step 
 **Third point, independent agreement:** #7418's C9 (*"the corpus's bond-product grounding cites a theorem whose hypothesis the production word fails"*) is §6b's finding from the other side — `ProductionChainBondProduct`'s strand-window hypotheses are sufficient-not-necessary. Two arcs, two methods, same conclusion about the same citation.
 
 Recorded as §7b of the step-11 audit; §7 reason 3 re-scoped from "not formalised" to "conditionally formalised on an open PR". Coordination comment posted on #7418.
+
+## 2026-10-11 — nn and pn under the same selection (commit 9fff77c6ecc, PR #7612; owner pick "2y")
+- Bond-alone reading 3 is content-blind by construction: nn, pn and np select G^3 like pp, at all four placements V1..V4 (feasible m ≤ 10 = {0,3,6,9}).
+- V1 (canonical) with G^3: B_pp = B_np = −4.469 keV, B_nn = B_pn = −2.583 keV. All unbound; charge independence fails (pp − nn = −1.886 keV); pn equals one like pair.
+- Whole-element reading 3 (2026-09-13 scope B): content-blind at V1 and V2 (measured, m ≤ 10); at V3 and V4 content-dependent (V3 m=1 all; V4 m=1 for pp, pn and m=2 for nn, np). In every cell B_pn equals one like-pair value.
+- Lean QOU/Mass/OneBodyBondOrdering.lean (sorry-free, generic linear order): for a one-body pair functional, pn ∈ {pp, nn} (pn_eq_like), pn can never be strictly the max/min/between, and pp = nn forces all equal. The deuteron-most-bound ordering is excluded whatever the signs; a two-body witness shows the premise is needed.
+- pn T=0 vs T=1 cannot be separated: the words carry no spin/isospin label.
+Scope (a): the one-body premise is from step 11 (conditional on connected-sum multiplicativity); placement is underived.
+Consequence: the gamma-gamma selection alone cannot produce the nuclear ordering; something two-body (in the nucleon pair) or a T label is needed.
+
+## 2026-10-11 — G^3 combined with isospin projectors P± (commit 54c2968d9b5, PR #7612; owner pick "try 1")
+Six compositions of W = W_L W_R with the selected bond G = (sigma_2 sigma_3^-1)^3 and P± on sigma_2 (P+ = T=1, P− = T=0); law B = E0^full ln(|tr_free|/|tr_atom|). None gives the right ordering with pp = nn:
+- C1–C3 (ratios over W): all channels bound (≈1.2 MeV T=1, ≈5.8–5.9 MeV T=0).
+- C4, C6 (over W·P): inverted, T=1 bound and T=0 unbound.
+- C5 (W·P·G over W·P): physical signs (T=1 −10…−17 keV, T=0 +20…+35 keV), but it differs from C4 only by the order of P and G, so picking it is selection against the target.
+- pp = nn holds only without G (C0 reproduces mu+ = 0.7527, mu− = 0.2473 exactly); any G breaks it (one-body response, step 11). pn ≠ np.
+Lean QOU/Mass/GammaGammaIsospinChannel.lean (sorry-free): C1 sum rule mu+ + mu− = mu_G; under C1 the right sign pattern forces B_{T=0} > alpha ln(1/(mu_G − 1)) ≈ 31 MeV; under C4/C5 mu_G > 1 forces at least one unbound channel.
+Scope (a): the six compositions are an enumeration; the corpus fixes no composition rule.
+Combined with the nn/pn entry above: neither the selection alone nor selection + T projectors yields the nuclear ordering with charge independence. Open lever: a derived composition rule, a two-body bond term, or the binding law (owner hold, option 3).
+
+## 2026-10-11 — two-body interface bonds (commit 079fd5e51b8, PR #7612; owner "explore all", item 2)
+Enumerated all 126 gamma-gamma words of up to 6 vertices over the straddling vertices v1 = sigma_1 sigma_2^-1 and v2 = sigma_2 sigma_3^-1: 83 are genuinely two-body (B_pn ∉ {B_pp, B_nn}), and 34 pass bond-alone reading 3.
+- Bond-alone reading 3, cheapest: a forced tie at 4 crossings, {v12 = sigma_1 sigma_3^-1 (split, additively separable), v21 = its conjugate (two-body)}, with equal characters. v21: pp 4.318, nn 4.272, pn 4.562, np 3.986 MeV, all bound; pn is the strict max but np the strict min; the symmetrised pn sits between pp and nn. Breaking the tie needs a rule not found in the corpus.
+- Whole-element reading 3 (live scope B): selects additively separable or one-body words only; no two-body word is selected.
+- Non-gamma-gamma references (block braiding c, c^2, full twist) are two-body but writhe ≠ 0 excludes them under the ruling.
+Lean QOU/Mass/TwoBodyInterfaceBond.lean (sorry-free): additively separable ⇒ B_pn + B_np = B_pp + B_nn; a strict max forces the reverse strict min; exchange-symmetric ⇒ 2B_pn = B_pp + B_nn, so pn is never strictly first; a two-body witness shows non-vacuity.
+Consequence (CORRECTED same day): an ADDITIVELY SEPARABLE, exchange-symmetric pair functional can never put the deuteron strictly first (exchangeSymmetric_midpoint needs AddSeparable). A non-separable two-body functional can (twoBody_strict_max_witness), but in 79 of the 83 reachable two-body words the symmetrised pn sits between pp and nn; the one exception (v2121, all unbound) is not selected. Scope (a) for the selection outcome; the structural lemmas are scope (b).

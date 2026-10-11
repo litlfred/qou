@@ -1,13 +1,13 @@
 ---
 # qou-7zob
-title: 'NN sector: open the ell/space index -- a flavour-only interface CANNOT split 3S1 from 1S0, proved degenerate'
+title: 'NN sector: space index gives only ell mod 2 -- parked; 3S1/1S0 split now via spin-only twist (qou-ulj0), sign defect via qou-ales'
 status: todo
 type: task
-priority: normal
+priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T03:11:32Z
-updated_at: 2026-10-04T15:21:41Z
+updated_at: 2026-10-11T05:45:00Z
 parent: qou-10v9
 ---
 
@@ -83,3 +83,33 @@ Full write-up:
   docs/audits/2026-08-09-two-nucleon-channels-isospin-not-crossing-count.md
   (section 4 = the degeneracy theorem; section 6b = the ell addresses)
 Lean: QOU/QBeta/InterfaceScalar.lean, sections IsospinOrdering + ChannelSelection.
+
+## 2026-10-10 — strand -> ell map: none exists; only ell mod 2 is derivable (PR #7612, f086f6e0400)
+
+Search covered the six grep paths, including library sections and ocr; corpus_search was unreachable. No derived map from braid or strand data to ell, or to a 3D direction r-hat, exists.
+- The Bring orbital blocks (orbital-space-normal-bundle, orbital-fourier-decomposition) are conjectures about the electron orbital, and their SO(3) action is asserted, not derived. Their prose is also internally inconsistent: it gives a curve in a surface a rank-2 normal bundle, and it says multiplicity 2 per ell while claiming dimension 2ell+1.
+- The A5 subset SO(3) material maps ell -> strand data, many-to-one, and only at n = 5.
+- The ribbon twist's SU(2) is the Schur–Weyl dual of V = C^2, which is already used for isospin.
+
+Lean: `QOU/Hecke/OrbitalIndexCarrier.lean` (generic CommRing, sorry-free, exit 0; axioms propext/Classical.choice/Quot.sound):
+- `exchange_even_same_scalar`: no polynomial in the exchange separates ell = 0 from ell = 2. Exchange acts as (-1)^ell on relative position, so strand data sees only ell mod 2.
+- `wigner_lock_same_scalar`: the Wigner-SU(4) degeneracy, stated with no binding functional chosen.
+- `mixing_not_in_letter_algebra`: any ell = 0 -> ell = 2 coupling lies outside the one-letter algebra. The scope is one-letter algebras only; multi-letter words, a second tensor factor and framing remain open.
+
+**This bean's body (2026-08-09) predates later work that changes its premise:**
+- audit 2026-08-16-interface-graded-by-t3 §5: T-grading via P+- already splits the S-wave channels;
+- audit 2026-09-03-tensor-coupling-cannot-unbind-singlet with TensorCouplingCannotUnbindSinglet.lean: S12 annihilates the spin singlet and only binds the triplet harder;
+- InterfaceScalar.separable_interface_degenerate and space_index_separability_probe.
+
+So a space index cannot fix the NN sign defect, which now sits with qou-ales (gamma-gamma word selection). Its only remaining use would be 3S1-3D1 mixing, and the corpus has no target for that: "quadrupole moment" has zero hits in docs, folio, computations and beans.
+
+Suggested re-scope (owner decision, NOT enacted): "only ell mod 2 is derivable from interface letters; a space index cannot address the sign defect"; reopen when a deuteron D-state or quadrupole target exists. Next object if built: a second Schur–Weyl factor carrying spatial SU(2). Not recommended, because nothing in the corpus forces it.
+
+## 2026-10-11 — RE-SCOPE ENACTED (owner ofri, thread "full-tower mass weight": "Re-scope bean qou-7zob, as offered above")
+
+- Interface letters can derive only ell mod 2 (exchange acts as (-1)^ell; QOU/Hecke/OrbitalIndexCarrier.lean, PR #7612). A space index cannot fix the NN sign defect (nn > pn > pp).
+- The tensor door is closed: TensorCouplingCannotUnbindSinglet (S12 annihilates the singlet). The P± isospin grading already separates the channels (audit 2026-08-16 §5).
+- The sign defect is owned by qou-ales (gamma-gamma word selection + confinement SDP).
+- The 3S1/1S0 split is now pursued in qou-ulj0. A spin-only ribbon twist gives D/S = q0^2 (TwistedChannelSplitting.lean), conditional on theta_iso = 1. Its derivation and the sign of the split are being worked on PR #7612.
+- Reopen trigger: a deuteron D-state or quadrupole target, or a corpus structure that forces a spatial SU(2) Schur–Weyl factor.
+Status stays todo (priority lowered): the question is parked, not answered.
