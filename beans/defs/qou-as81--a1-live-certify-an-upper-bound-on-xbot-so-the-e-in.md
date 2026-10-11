@@ -863,6 +863,13 @@ by a source assertion and an exhaustive grid check rather than by a proof about 
 That is strictly stronger than the sibling's "credible lead" and strictly weaker than
 "sorry-free theorem about the objective". Do not compress it to either.
 
+**Tally confirmed after the fact.** `3359e0e3169`'s message notes the 5/5 run was still in flight
+at commit time, with the figures taken from the confirmed 4/4 run plus C2b/C3 from the live one.
+It has since completed: **5/5**, and C4 reproduced **identically** — 1876 non-trivial pairs, 1724
+trivial excluded, 0 inadmissible, tightest slack `0.00709354725729` at `pe=0, T=8`. So every
+figure in that commit and in the entry above is from a single self-consistent run of the
+committed bytes, and the caveat is discharged rather than left standing.
+
 ## 2026-10-10 (afternoon) — integer hi_j floor, checkpoint, and the Murota lead CHECKED
 
 **Integer box (`hi_j` floor), scope (a) negative.** Rounding the per-row confinement box to
