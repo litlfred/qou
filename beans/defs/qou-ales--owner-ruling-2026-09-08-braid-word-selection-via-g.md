@@ -212,3 +212,13 @@ Recorded as §7b of the step-11 audit; §7 reason 3 re-scoped from "not formalis
 - pn T=0 vs T=1 cannot be separated: the words carry no spin/isospin label.
 Scope (a): the one-body premise is from step 11 (conditional on connected-sum multiplicativity); placement is underived.
 Consequence: the gamma-gamma selection alone cannot produce the nuclear ordering; something two-body (in the nucleon pair) or a T label is needed.
+
+## 2026-10-11 — G^3 combined with isospin projectors P± (commit 54c2968d9b5, PR #7612; owner pick "try 1")
+Six compositions of W = W_L W_R with the selected bond G = (sigma_2 sigma_3^-1)^3 and P± on sigma_2 (P+ = T=1, P− = T=0); law B = E0^full ln(|tr_free|/|tr_atom|). None gives the right ordering with pp = nn:
+- C1–C3 (ratios over W): all channels bound (≈1.2 MeV T=1, ≈5.8–5.9 MeV T=0).
+- C4, C6 (over W·P): inverted, T=1 bound and T=0 unbound.
+- C5 (W·P·G over W·P): physical signs (T=1 −10…−17 keV, T=0 +20…+35 keV), but it differs from C4 only by the order of P and G, so picking it is selection against the target.
+- pp = nn holds only without G (C0 reproduces mu+ = 0.7527, mu− = 0.2473 exactly); any G breaks it (one-body response, step 11). pn ≠ np.
+Lean QOU/Mass/GammaGammaIsospinChannel.lean (sorry-free): C1 sum rule mu+ + mu− = mu_G; under C1 the right sign pattern forces B_{T=0} > alpha ln(1/(mu_G − 1)) ≈ 31 MeV; under C4/C5 mu_G > 1 forces at least one unbound channel.
+Scope (a): the six compositions are an enumeration; the corpus fixes no composition rule.
+Combined with the nn/pn entry above: neither the selection alone nor selection + T projectors yields the nuclear ordering with charge independence. Open lever: a derived composition rule, a two-body bond term, or the binding law (owner hold, option 3).
