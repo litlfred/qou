@@ -774,6 +774,31 @@ fn main() {
     // because prefixes created by later crossings weren't present yet.
     // Now that construction is complete, iterate I9+I8 to convergence.
     let pre_final = elem.n_terms();
+
+    // Optional per-word dump of the complete normal-form element, BEFORE the
+    // final strip, so its genuine Markov trace can be computed word by word.
+    // `tr_markov_f64` below weights each word by z^len(w), which is not the
+    // Markov trace for words that repeat a generator (e.g. tr(σ0σ1σ0) =
+    // h·z² + z, not z³), and uses the excised convention-C z. Only meaningful
+    // when `accum` is empty, i.e. nothing was stripped mid-construction, so
+    // `elem` is the full product. Bean qou-m7py.
+    if let Ok(path) = std::env::var("V9_DUMP_ELEM") {
+        let mut words: Vec<(Vec<u8>, Vec<(i32, String)>)> = elem.terms.iter()
+            .map(|(w, c)| ((0..w.len()).map(|i| w.get(i)).collect(),
+                           c.terms.iter().map(|(k, v)| (*k, v.to_string())).collect()))
+            .collect();
+        words.sort();
+        let mid_stripped = !accum.net.is_zero() || !accum.net_by_len.is_empty();
+        let dump = serde_json::json!({
+            "z": z, "n": n, "a": a, "pn_count": elem.pn_count,
+            "variable": "t = q^(1/2); word letters are 0-based generators",
+            "mid_construction_strip": mid_stripped,
+            "words": words,
+        });
+        std::fs::write(&path, serde_json::to_string(&dump).unwrap()).unwrap();
+        eprintln!("  dumped {} words to {} (mid-strip: {})", elem.n_terms(), path, mid_stripped);
+    }
+
     let final_removed = Eng::strip_with_pauli(&mut elem.terms);
     let post_final = elem.n_terms();
 
