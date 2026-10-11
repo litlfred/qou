@@ -688,6 +688,25 @@
         "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
         "evidence": "Full read: proof block, 2-sentence templated preamble plus a 6-line body. All ten categories checked on the whole text."
       }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "4e3b02f331d3",
+          "ts": "047f7783ea28"
+        },
+        "result": "n/a",
+        "notes": "criterion does not apply: block kind 'proof' is outside expo-milnor-clarity applies_to (EXPO_NARRATIVE_KINDS, qa-criteria-registry.ts). Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      }
     ]
   }
 }

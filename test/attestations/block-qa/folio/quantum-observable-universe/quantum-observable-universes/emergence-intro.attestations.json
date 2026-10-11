@@ -288,6 +288,39 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "919c46662974",
+          "ts": "578f17b4ec35"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 12,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 1,
+            "H3": 2,
+            "H4": 2,
+            "H5": 1,
+            "H6": 2,
+            "H7": 1,
+            "H8": 1
+          }
+        },
+        "evidence": "H5: L1 'the four axioms of the quantum observable universe' — def:quantum-observable-universe lists five conditions. H8: L1 'The volume constraint and the dagger structure pin $G\\cong\\mathrm{SU}(2)$' overstates thm:su2-emergence, which gives $G\\subseteq\\mathrm{SU}(2)$ under an explicit realisation hypothesis.",
+        "notes": "Milnor H1-H8 = [2, 1, 2, 2, 1, 2, 1, 1] (T=12/16, warn); weakest: H2, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): L1: '...from the five conditions ... The volume constraint forces the fundamental object to have rank 2, and with the dagger the gauge group lies in $\\mathrm{SU}(2)$ (thm:su2-emergence, under its realisation hypothesis).' Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

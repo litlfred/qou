@@ -290,6 +290,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "6c7152525475",
+          "ts": "ee8e2949669f",
+          "lean": "977d89ad9284",
+          "lean_statement": "2c1dc1fcdd1d"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 14,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 1,
+            "H3": 2,
+            "H4": 2,
+            "H5": 2,
+            "H6": 2,
+            "H7": 1,
+            "H8": 2
+          }
+        },
+        "evidence": "H7: L5 invokes Deligne's neutral-Tannakian reconstruction 'over $R$', but Deligne's theorem is over a field; the hypothesis needed over a ring is not stated. H2: no instance ($G=\\mathrm{SU}(2)$ for $\\tau$ the forgetful functor on $\\mathrm{Rep}(\\mathrm{SU}(2))$).",
+        "notes": "Milnor H1-H8 = [2, 1, 2, 2, 2, 2, 1, 2] (T=14/16, warn); weakest: H2, H7. Suggested rewrite (not applied; owner rule 'ask before changing'): L5: 'When $R$ is a field and $(\\mathbf C,\\tau)$ is neutral Tannakian, Deligne's theorem gives ...; over a general ring we use only the group-valued functor $\\mathrm{Aut}^\\otimes(\\tau)$.' Add: 'For the forgetful functor on $\\mathrm{Rep}(\\mathrm{SU}(2))$, $G=\\mathrm{SU}(2)$.' Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

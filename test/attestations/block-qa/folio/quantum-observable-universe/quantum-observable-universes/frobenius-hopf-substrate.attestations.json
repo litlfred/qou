@@ -790,6 +790,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "efa5c30e63d6",
+          "ts": "1937f1a3147a",
+          "lean": "ac32450eee1f",
+          "lean_statement": "61e32e4498fe"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 5,
+          "max": 16,
+          "rubric": {
+            "H1": 0,
+            "H2": 0,
+            "H3": 1,
+            "H4": 0,
+            "H5": 1,
+            "H6": 2,
+            "H7": 0,
+            "H8": 1
+          }
+        },
+        "evidence": "H4/H5: the Frobenius form is $\\lambda$ and the braiding $\\beta$ (the rest of Chapters 1-2 use $\\int_A$ and $c$); axiom 3 (L24) calls '$\\mu\\circ\\Delta=(\\Delta\\otimes\\mathrm{id})\\circ\\alpha\\circ(\\mathrm{id}\\otimes\\mu)$' a property of $\\lambda$, though $\\lambda$ does not occur in it and the two sides have different source and target, and it uses the Hopf $\\Delta$ that ex:frobenius-relation-su2 says is *not* the Frobenius coproduct. H1/H7: L21-23 and L40-42 add ~250 words of commentary — including drafting history ('An earlier version of this definition...') and a Lean structure name. H2/H3: no example and no purpose. | Also: proof-no-lean-mention-in-prose: L42 names `FrobeniusHopfData` and 'The formalization'; drafting-history leak ('An earlier version'). needs_owner (content): L23 says the antipode identity μ(S⊗id)Δ = ηε 'forces A to be trivial whenever the scalars form a field' — group algebras over a field are counterexamples as stated; L24 axiom 3 is mistyped.",
+        "notes": "Milnor H1-H8 = [0, 0, 1, 0, 1, 2, 0, 1] (T=5/16, fail); weakest: H1, H2, H3, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Use $\\int_A$ and $c$. Write axiom 3 with the Frobenius coproduct $\\Delta_\\mu$ and matching types, e.g. $(\\mu\\otimes\\mathrm{id})(\\mathrm{id}\\otimes\\Delta_\\mu)=\\Delta_\\mu\\mu$. Move L23 and L40 to a remark; delete L42. Open with the example: 'For a finite group $G$, $A=\\mathbb C^G$ with pointwise product, group coproduct, $S(f)=f(\\,\\cdot^{-1})$ and counting measure is a Frobenius–Hopf object.' Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

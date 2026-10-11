@@ -669,6 +669,25 @@
         "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
         "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
       }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "d8c6097a9532",
+          "ts": "49e80a18f08b"
+        },
+        "result": "n/a",
+        "notes": "criterion does not apply: block kind 'proof' is outside expo-milnor-clarity applies_to (EXPO_NARRATIVE_KINDS, qa-criteria-registry.ts). Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      }
     ]
   }
 }

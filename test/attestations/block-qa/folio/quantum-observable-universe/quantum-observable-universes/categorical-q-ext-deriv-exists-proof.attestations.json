@@ -669,6 +669,25 @@
         "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
         "evidence": "Full read: proof block, five sentences, opening 'We build d_q as a scalar-weighted linear combination of ...'. trap-meta-commentary considered on that opener and PASSED: unlike the instanton/Lagrangian *-proof preambles it is one sentence, it accurately describes what the body then does, and it introduces the construction rather than narrating emphasis. No other category fires."
       }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "b41946f5fdef",
+          "ts": "d0cd7ba1caff"
+        },
+        "result": "n/a",
+        "notes": "criterion does not apply: block kind 'proof' is outside expo-milnor-clarity applies_to (EXPO_NARRATIVE_KINDS, qa-criteria-registry.ts). Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      }
     ]
   }
 }

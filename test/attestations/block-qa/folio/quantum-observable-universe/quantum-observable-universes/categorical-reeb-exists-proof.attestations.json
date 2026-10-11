@@ -669,6 +669,25 @@
         "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
         "evidence": "Full read: proof block, a single sentence. All ten categories checked; nothing fires (no preamble, no closer, no construction). OUT-OF-SCOPE observation reported to the caller: this one sentence is offered as the proof of an existence-AND-uniqueness theorem, and it verifies neither stated constraint -- the vertical-generator identity \\pi_V\\circ d = \\iota_\\xi d\\varTheta_A is never touched, and 'uniquely determined by the normalisation condition' is asserted, not derived."
       }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "d6a48a950dc6",
+          "ts": "2f94716b8383"
+        },
+        "result": "n/a",
+        "notes": "criterion does not apply: block kind 'proof' is outside expo-milnor-clarity applies_to (EXPO_NARRATIVE_KINDS, qa-criteria-registry.ts). Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      }
     ]
   }
 }

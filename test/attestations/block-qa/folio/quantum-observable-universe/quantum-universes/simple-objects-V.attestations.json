@@ -288,6 +288,39 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4af18292dabf",
+          "ts": "0c365e8dbae3"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 10,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 1,
+            "H3": 1,
+            "H4": 1,
+            "H5": 0,
+            "H6": 2,
+            "H7": 2,
+            "H8": 1
+          }
+        },
+        "evidence": "H5: L3 'X is simple if and only if $\\tau(X)$ is a simple module' contradicts L5, where the simple object $V$ has $\\tau(V)$ a rank-2 free module (not simple). L5 conflates categorical dimension with module rank. | Also: needs_owner (content): L3's 'iff τ(X) is a simple module' is false in the running example (τ(V)=C^2).",
+        "notes": "Milnor H1-H8 = [2, 1, 1, 1, 0, 2, 2, 1] (T=10/16, fail); weakest: H2, H3, H4, H5, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): L3: 'A faithful exact $\\tau$ detects zero objects and isomorphisms; simplicity of $X$ is a statement in $\\mathbf C$, not about $\\tau(X)$.' L5: '$\\tau(V)$ is free of rank 2, so $V$ has dimension 2.' Give $V=\\mathbb C^2$ in $\\mathrm{Rep}(\\mathrm{SU}(2))$. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

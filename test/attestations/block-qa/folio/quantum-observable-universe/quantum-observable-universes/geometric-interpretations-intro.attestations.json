@@ -288,6 +288,39 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ccd3ff59ff67",
+          "ts": "c3e612dd20c8"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 10,
+          "max": 16,
+          "rubric": {
+            "H1": 1,
+            "H2": 1,
+            "H3": 2,
+            "H4": 1,
+            "H5": 1,
+            "H6": 2,
+            "H7": 1,
+            "H8": 1
+          }
+        },
+        "evidence": "H8/H4: L1 'identifies equilibrium between the spatial environment and internal quantum spin' and 'Coriolis cross-coupling' are metaphors offered as identifications; L3 'A particle is simultaneously $q$-closed and $q$-coclosed' defines 'particle' in passing; L3's last sentence about $q$ acquiring a phase is unrelated to the section.",
+        "notes": "Milnor H1-H8 = [1, 1, 2, 1, 1, 2, 1, 1] (T=10/16, fail); weakest: H1, H2, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): 'We translate $d_q$, $\\delta_q$ and $\\Delta_q$ into vector calculus (rem:vector-calculus-bridge). $\\Delta_q$ splits into a base Laplacian, a cross term and a fibre Laplacian (prop:...). We call harmonic forms particles.' Delete the phase sentence. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

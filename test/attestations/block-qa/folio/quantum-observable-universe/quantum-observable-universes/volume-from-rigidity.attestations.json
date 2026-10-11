@@ -719,6 +719,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4ba2ae8b2e73",
+          "ts": "f69e1c2097ad",
+          "lean": "3a53ccbb92c5",
+          "lean_statement": "60e7e56c9df1"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 8,
+          "max": 16,
+          "rubric": {
+            "H1": 1,
+            "H2": 1,
+            "H3": 1,
+            "H4": 1,
+            "H5": 1,
+            "H6": 2,
+            "H7": 1,
+            "H8": 0
+          }
+        },
+        "evidence": "H8: L1 'This alternating condition forces $\\mathrm{rank}(V)=2$' is asserted, and the following sentences instead derive $\\mathrm{rank}(\\Lambda^2V)=1$ from non-degeneracy of $\\epsilon$, i.e. they assume what the lemma claims. A symplectic self-duality alone exists in every even rank. H4: 'rank' of an object of an abstract rigid category is undefined. H1: L19 'This construction intrinsically satisfies the volume form requirement' is empty. | Also: needs_owner (content): the statement 'symplectic self-duality forces rank 2' is false without the Λ²V ≅ 1 hypothesis (C^4 with a symplectic form is a counterexample in Rep(Sp(4))).",
+        "notes": "Milnor H1-H8 = [1, 1, 1, 1, 1, 2, 1, 0] (T=8/16, fail); weakest: H1, H2, H3, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): State the lemma with its real hypothesis: 'If $V$ is simple, symplectically self-dual, and $\\epsilon$ is an isomorphism $\\Lambda^2V\\cong\\mathbf1$, then $\\dim\\tau(V)=2$.' Say 'rank' means $\\dim\\tau(V)$. Delete L19. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

@@ -290,6 +290,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "701787154280",
+          "ts": "ca2f62e5bde2",
+          "lean": "3ae738ff066c",
+          "lean_statement": "bf788e2df0e8"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 13,
+          "max": 16,
+          "rubric": {
+            "H1": 1,
+            "H2": 2,
+            "H3": 1,
+            "H4": 1,
+            "H5": 2,
+            "H6": 2,
+            "H7": 2,
+            "H8": 2
+          }
+        },
+        "evidence": "H4: $g$ is a group element (L1 '$f^\\dagger(g)=\\overline{f(g^{-1})}$') while $f$ ranges over both intertwiners $V_j\\to V_k$ and functions on $\\mathrm{SU}(2)$ in one paragraph. H1/H3: a single 100-word paragraph with no stated purpose; L1 says the dagger comes 'from the antipode' and then uses the Hilbert-space adjoint without connecting them.",
+        "notes": "Milnor H1-H8 = [1, 2, 1, 1, 2, 2, 2, 2] (T=13/16, warn); weakest: H1, H3, H4. Suggested rewrite (not applied; owner rule 'ask before changing'): Split into two short paragraphs: (1) on $\\mathrm{Rep}(\\mathrm{SU}(2))$, $\\dagger$ is the Hilbert adjoint for invariant inner products; (2) on $A$, it is $\\phi\\mapsto\\overline{\\phi(\\,\\cdot^{-1})}$, i.e. antipode then conjugation — 'which is why it comes from the antipode'. Use $\\phi$ for functions. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

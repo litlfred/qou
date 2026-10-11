@@ -812,6 +812,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3d0a6d94f497",
+          "ts": "45dc2952f26d",
+          "lean": "957af04df5e1",
+          "lean_statement": "fda736022854"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 10,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 1,
+            "H3": 1,
+            "H4": 1,
+            "H5": 1,
+            "H6": 1,
+            "H7": 2,
+            "H8": 1
+          }
+        },
+        "evidence": "H5/H8: L1 'Because $G\\cong\\mathrm{SU}(2)$' — thm:su2-emergence gives only $G\\subseteq\\mathrm{SU}(2)$ under a realisation hypothesis; and equality of the group does not by itself index the simple objects of $\\mathbf C$ (that needs $\\mathbf C\\simeq\\mathrm{Rep}(G)$). H4: '$\\mathrm{Ad}(A)$' appears with no definition in this block. H6: a tikz row (L3-10) repeats the sentence.",
+        "notes": "Milnor H1-H8 = [2, 1, 1, 1, 1, 1, 2, 1] (T=10/16, fail); weakest: H2, H3, H4, H5, H6, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): 'Assume $\\mathbf C\\simeq\\mathrm{Rep}(\\mathrm{SU}(2))$ via $\\tau$ (Tannaka–Krein). Then the simple objects are $V_j$, $j\\in\\tfrac12\\mathbb Z_{\\ge0}$, of dimension $2j+1$; $V=V_{1/2}$, and the adjoint object $\\mathrm{Ad}(A)$ (def:...) is $V_1$.' Drop the tikz row. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

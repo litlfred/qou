@@ -775,6 +775,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "22e1d3b6e766",
+          "ts": "c9c24dbb4c23",
+          "lean": "026aa44bfafb",
+          "lean_statement": "130ab37164eb"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 11,
+          "max": 16,
+          "rubric": {
+            "H1": 1,
+            "H2": 1,
+            "H3": 1,
+            "H4": 1,
+            "H5": 1,
+            "H6": 2,
+            "H7": 2,
+            "H8": 2
+          }
+        },
+        "evidence": "H5/H4: L7 'For an object $V$, $\\Lambda^k V$ denotes its $k$-th exterior power' is unrelated to the forms being defined and introduces notation the block never uses. H2/H3: no purpose stated and no instance before the de Rham diagram.",
+        "notes": "Milnor H1-H8 = [1, 1, 1, 1, 1, 2, 2, 2] (T=11/16, fail); weakest: H1, H2, H3, H4, H5. Suggested rewrite (not applied; owner rule 'ask before changing'): Delete the $\\Lambda^k V$ sentence. Open with: 'Forms of every degree let us state curvature ($d^2$ of a connection) and volume (top forms).' Point to ex:higher-forms-su2 in the first paragraph. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

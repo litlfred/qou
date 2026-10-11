@@ -288,6 +288,39 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b160b1a939d0",
+          "ts": "9851bb61d4e4"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 7,
+          "max": 16,
+          "rubric": {
+            "H1": 1,
+            "H2": 1,
+            "H3": 1,
+            "H4": 1,
+            "H5": 1,
+            "H6": 1,
+            "H7": 1,
+            "H8": 0
+          }
+        },
+        "evidence": "H8: L1 'The Reeb time $t$ evolves at fixed cosmological time $q$' treats the substrate parameter as a time without construction. H6: L4 contains a placeholder '[Coriolis]' in place of an operator. H5: L7 'holds over any commutative ring in which $q-1$ is invertible' — $\\partial_t$ has no meaning over an arbitrary ring.",
+        "notes": "Milnor H1-H8 = [1, 1, 1, 1, 1, 1, 1, 0] (T=7/16, fail); weakest: H1, H2, H3, H4, H5, H6, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Replace the display by the expansion of rem:q-laplacian-expansion (or cite it) with the cross term written out. Delete the 'cosmological time' sentence; replace L7 with 'The operator $\\Delta_q$ is defined over $\\mathbb Z[q,q^{-1}]$; the time derivative is archimedean.' Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

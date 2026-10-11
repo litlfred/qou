@@ -683,6 +683,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "72373748e8c0",
+          "ts": "584b80145264",
+          "lean": "78f90392a600",
+          "lean_statement": "0bf9c4b69450"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 7,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 0,
+            "H3": 1,
+            "H4": 0,
+            "H5": 1,
+            "H6": 2,
+            "H7": 0,
+            "H8": 1
+          }
+        },
+        "evidence": "H7: derived categories, injective dimension, $R\\mathrm{Hom}_{A^e}$ and Van den Bergh duality arrive with no statement of what the dualizing complex is for and no simple case (for a smooth projective curve it is $K[1]$). H4: 'rigid' here collides with 'rigid monoidal'; $H^{d-i}(M)$ and $d$ are undefined. H5: L4 '$\\omega\\simeq R\\mathrm{Hom}_{A^e}(A,A^e)$' is the inverse dualizing complex, not Van den Bergh's rigidity condition $R\\cong R\\mathrm{Hom}_{A^e}(A,R\\otimes R)$. | Also: needs_owner (content): L4 states the inverse dualizing complex as the rigidity condition.",
+        "notes": "Milnor H1-H8 = [2, 0, 1, 0, 1, 2, 0, 1] (T=7/16, fail); weakest: H2, H3, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Open: 'For a smooth projective curve $X$, Serre duality pairs $H^i(X,F)$ with $H^{1-i}(X,F^\\vee\\otimes K_X)$; the dualizing complex $K_X[1]$ is what makes this work. A rigid dualizing complex is the noncommutative replacement [Van den Bergh 1997, Yekutieli].' State the rigidity isomorphism correctly or cite it. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

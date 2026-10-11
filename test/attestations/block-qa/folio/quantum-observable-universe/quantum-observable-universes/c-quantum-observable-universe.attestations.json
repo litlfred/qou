@@ -290,6 +290,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c215207a65b9",
+          "ts": "2dce694b061f",
+          "lean": "145e10aa6125",
+          "lean_statement": "ee6cbd591e00"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 9,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 1,
+            "H3": 1,
+            "H4": 1,
+            "H5": 1,
+            "H6": 2,
+            "H7": 1,
+            "H8": 0
+          }
+        },
+        "evidence": "H8: L6 '$\\Gamma_c(M,\\mathcal S)=0$' — sections of a $\\mathbb P^1$-bundle do not form a vector space, so 'vanishing' has no meaning as stated; L9 'the irreducibility of the instanton connection' invokes an object not introduced. H5: L9 'force $H^0(M,\\mathrm{Ad}(P))=0$' is stated without argument. | Also: needs_owner (content): 'Γ_c(M, S) = 0' for a P^1-bundle is not well-defined.",
+        "notes": "Milnor H1-H8 = [2, 1, 1, 1, 1, 2, 1, 0] (T=9/16, fail); weakest: H2, H3, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): State the condition on a linear object (e.g. sections of the associated vector bundle $P\\times_G\\mathbb C^2$) and cite where the connection is introduced. 'Observability becomes: the adjoint bundle has no non-zero parallel sections.' Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

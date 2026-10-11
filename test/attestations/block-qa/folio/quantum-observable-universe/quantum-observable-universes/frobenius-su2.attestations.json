@@ -290,6 +290,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "73abb43c2e1e",
+          "ts": "50d470b5c468",
+          "lean": "d6a3200d3b66",
+          "lean_statement": "d8c2e0317b22"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 10,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 2,
+            "H3": 1,
+            "H4": 1,
+            "H5": 0,
+            "H6": 2,
+            "H7": 1,
+            "H8": 1
+          }
+        },
+        "evidence": "H5: this block gives $\\Delta_\\mu(f)(g,h)=\\int_G f(xg)\\overline{h(x)}\\,dx$ and says the Frobenius relation 'encodes the associativity of convolution', while ex:frobenius-relation-su2 (Chapter 1) computes the same $\\Delta_\\mu$ for the same $A$ as the diagonal $f(x)\\delta_{x=y}$ and warns that it is not the group coproduct. The two examples of one object disagree. | Also: needs_owner (content): inconsistent with ex:frobenius-relation-su2 — two different formulas for Δ_μ on O(SU(2)).",
+        "notes": "Milnor H1-H8 = [2, 2, 1, 1, 0, 2, 1, 1] (T=10/16, fail); weakest: H3, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Delete this block and cite ex:frobenius-relation-su2, or state which pairing (with or without conjugation) is used here and reconcile the two formulas. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

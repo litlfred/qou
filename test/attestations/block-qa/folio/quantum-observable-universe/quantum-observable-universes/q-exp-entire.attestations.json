@@ -186,6 +186,43 @@
         "evidence": "Read the block aloud-style for noun-heavy chains that stall. Block is proposition + inline ratio-test proof for entirety of exp_q; sentences are speakable.",
         "notes": "No fix needed."
       }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "e81dc01d3c5a",
+          "ts": "a3e0cfdbb19d",
+          "lean": "28806aa91862",
+          "lean_statement": "9614ced4e2ee"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 14,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 1,
+            "H3": 1,
+            "H4": 2,
+            "H5": 2,
+            "H6": 2,
+            "H7": 2,
+            "H8": 2
+          }
+        },
+        "evidence": "H3/H2: the proposition does not say why entireness matters (e.g. so that $\\exp_q(-s\\Delta)$ is defined for every $s$) and gives no small instance. H4 (minor): $\\|x\\|$ for the modulus of a complex number.",
+        "notes": "Milnor H1-H8 = [2, 1, 1, 2, 2, 2, 2, 2] (T=14/16, warn); weakest: H2, H3. Suggested rewrite (not applied; owner rule 'ask before changing'): Open: 'We need $\\exp_q$ to be defined on all of $\\mathbb C$ for the Laplace transform below.' Use $|x|$. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      }
     ]
   }
 }

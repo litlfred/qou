@@ -288,6 +288,39 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5ee07e93203b",
+          "ts": "26d922cfb61e"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 7,
+          "max": 16,
+          "rubric": {
+            "H1": 1,
+            "H2": 1,
+            "H3": 2,
+            "H4": 0,
+            "H5": 1,
+            "H6": 1,
+            "H7": 0,
+            "H8": 1
+          }
+        },
+        "evidence": "H4/H7: a 300-word section intro introduces $\\nabla$, $F_\\nabla$, $\\mathrm{Ad}(A)$, $J^1(A)=A\\otimes_{\\mathbf C}\\Omega^1(A)$, $\\star$, $\\alpha^*$, $\\mathrm{vol}$, $\\pi$, $[\\pi,\\pi]_{\\mathrm{SN}}$ and the HKR map — formulas that the following definitions restate. L3 gives $J^1(A)$ both as a tensor product and as the middle term of an extension; L7 'the skew-Poisson structure of formal-group integration' is unexplained. H8: L3 'Every QU admits such a $\\nabla$' and L5 '$\\star^2=\\mathrm{id}$' are asserted without hypotheses.",
+        "notes": "Milnor H1-H8 = [1, 1, 2, 0, 1, 1, 0, 1] (T=7/16, fail); weakest: H1, H2, H4, H5, H6, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Cut to a roadmap with no formulas: 'This section builds differential geometry from the QU data alone: a connection and its curvature; the jet object, which packages a function with its first derivative; a Hodge star, built from the Frobenius form and a volume form; and an internal Poisson bracket, the first-order shadow of deforming $q$. On $\\mathrm{SU}(2)$ these are the Maurer–Cartan connection, first jets, the Hodge star of the round metric, and the Poisson–Lie bracket.' Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

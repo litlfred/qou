@@ -288,6 +288,39 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e2c3f7847237",
+          "ts": "a76d57c50a49"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 8,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 1,
+            "H3": 1,
+            "H4": 0,
+            "H5": 1,
+            "H6": 2,
+            "H7": 0,
+            "H8": 1
+          }
+        },
+        "evidence": "H4/H7: 'the free grouplike on the primitive generator of the Reeb flow', 'the Habiro ring $\\widehat{\\mathbb Z[q]}[[x]]$', 'cyclotomic-projection' — heavy, undefined, unframed. H8: L1 places the Taylor coefficients $1/[n]_q!$ in the Habiro ring, which contains no inverses of $[n]_q$. | Also: needs_owner (content): 1/[n]_q! is not in the Habiro ring.",
+        "notes": "Milnor H1-H8 = [2, 1, 1, 0, 1, 2, 0, 1] (T=8/16, fail); weakest: H2, H3, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): '$\\exp_q$ is the function whose $q$-derivative is itself; its coefficients $1/[n]_q!$ are rational functions of $q$.' Remove the Habiro claim or state the integral variant meant. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

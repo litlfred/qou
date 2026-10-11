@@ -719,6 +719,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e9b12eef10c0",
+          "ts": "172f8b4ab5ab",
+          "lean": "55df91ba9839",
+          "lean_statement": "4786c29d13ba"
+        },
+        "result": "n/a",
+        "notes": "criterion does not apply: near-empty prose (32 whitespace words < ~50; spec §5A n/a rule for a bare statement/formula). Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

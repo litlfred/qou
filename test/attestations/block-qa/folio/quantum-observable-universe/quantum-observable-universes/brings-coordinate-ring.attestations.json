@@ -683,6 +683,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9fa59e7d52a8",
+          "ts": "a9bf8993dbac",
+          "lean": "df5b3c625c43",
+          "lean_statement": "92abc43a0144"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 12,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 2,
+            "H3": 1,
+            "H4": 2,
+            "H5": 1,
+            "H6": 2,
+            "H7": 1,
+            "H8": 1
+          }
+        },
+        "evidence": "H5: L29 says the $S_5$ permutation action descends to $\\mathcal O_q(\\mathcal B)$ by algebra automorphisms, but swapping $x_i,x_j$ turns $x_ix_j=qx_jx_i$ into $x_jx_i=qx_ix_j$, so permutations do not preserve the relations of L27 unless $q=\\pm1$. H8: L29 'The $2g=8$ fundamental modes of the Reeb spectrum correspond to the 8 independent cycles' is asserted without construction. H3: why Bring's curve is the fibre is not said here. | Also: needs_owner (content): S_5 acting by permutations does not preserve the q-commutation relations x_i x_j = q x_j x_i (i<j) for q ≠ ±1.",
+        "notes": "Milnor H1-H8 = [2, 2, 1, 2, 1, 2, 1, 1] (T=12/16, warn); weakest: H3, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): State which action is meant (e.g. a twisted action, or only the subgroup preserving the order of indices). Replace the last sentence with a pointer to where the correspondence is constructed. Add one line of purpose: 'Bring's curve is the genus-4 curve with the largest symmetry group, $S_5$; we use it because ...'. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

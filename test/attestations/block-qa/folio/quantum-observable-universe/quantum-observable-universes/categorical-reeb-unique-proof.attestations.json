@@ -503,6 +503,25 @@
         "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
         "evidence": "Full read: proof block, four sentences with indexed data (\\xi_i, \\varTheta_A^{(i)}). All ten checked; the single spaced em-dash ('an endomorphism of A -- unique up to the Lie-algebra action of T') is a true apposition at density 1, so trap-em-dash passes. Nothing else fires. OUT-OF-SCOPE math observation reported to the caller: the opening step writes \\xi_i = \\iota_{\\xi_i} d\\varTheta_A^{(i)} \\circ (\\pi_V \\circ d)^{-1}, inverting \\pi_V \\circ d, which is a projector-composite and is not invertible on \\Omega^k(A) as a whole; the step needs restriction to a summand on which it is an isomorphism, stated explicitly."
       }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "n/a",
+        "notes": "criterion does not apply: block kind 'proof' is outside expo-milnor-clarity applies_to (EXPO_NARRATIVE_KINDS, qa-criteria-registry.ts). Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      }
     ]
   }
 }

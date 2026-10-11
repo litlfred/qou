@@ -468,6 +468,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9d631103dcdf",
+          "ts": "1dd21cd5f424",
+          "lean": "bdc09f8fb312",
+          "lean_statement": "e3a5bd7d117d"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 10,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 1,
+            "H3": 1,
+            "H4": 1,
+            "H5": 1,
+            "H6": 2,
+            "H7": 1,
+            "H8": 1
+          }
+        },
+        "evidence": "H5: L7 'The chart-swap one-parameter subgroup' — the chart swap $z\\mapsto z^{-1}$ is an involution, not a one-parameter subgroup; $\\rho_{\\theta_q}$ and $\\phi_t$ are not defined in this block, and $\\theta_q\\in U(1)$ mixes an angle with a group element. H2: no $\\mathrm{SU}(2)$ instance (rotations of $\\mathbb{CP}^1$ about the axis through $0$ and $\\infty$).",
+        "notes": "Milnor H1-H8 = [2, 1, 1, 1, 1, 2, 1, 1] (T=10/16, fail); weakest: H2, H3, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): 'On $\\mathbb{CP}^1$, the rotations $z\\mapsto e^{i\\theta}z$ (fixing $0$ and $\\infty$) form the image of the maximal torus; we show the Reeb flow generates the same subgroup.' Define $\\rho_\\theta$, $\\phi_t$. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

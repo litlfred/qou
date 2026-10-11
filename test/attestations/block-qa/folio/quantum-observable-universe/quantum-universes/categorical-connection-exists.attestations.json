@@ -812,6 +812,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f0b72cb944c2",
+          "ts": "5fba0395ffc7",
+          "lean": "0cb51202aa37",
+          "lean_statement": "2952264578aa"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 11,
+          "max": 16,
+          "rubric": {
+            "H1": 1,
+            "H2": 1,
+            "H3": 2,
+            "H4": 1,
+            "H5": 1,
+            "H6": 2,
+            "H7": 2,
+            "H8": 1
+          }
+        },
+        "evidence": "H4/H5: L3 types the connection as $\\nabla\\colon A\\to\\Omega^1(A)$, while def:categorical-connection has $\\nabla\\colon A\\to A\\otimes\\Omega^1(A)$. L1 calls $A$ 'the observable algebra' in a chapter where the universe is not yet observable, and 'carries the same differential geometry as a bundle with connection' overclaims.",
+        "notes": "Milnor H1-H8 = [1, 1, 2, 1, 1, 2, 2, 1] (T=11/16, fail); weakest: H1, H2, H4, H5, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Statement: 'Every quantum universe admits a categorical connection $\\nabla\\colon A\\to A\\otimes\\Omega^1(A)$.' Motivation: 'On $\\mathrm{SU}(2)$ the universal derivation $d$ is one; the proposition says a connection exists in general.' Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

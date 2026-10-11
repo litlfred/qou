@@ -290,6 +290,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4a02fbf91602",
+          "ts": "163571a582c8",
+          "lean": "65188f7e05e7",
+          "lean_statement": "ba5242f30070"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 12,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 2,
+            "H3": 1,
+            "H4": 1,
+            "H5": 1,
+            "H6": 2,
+            "H7": 2,
+            "H8": 1
+          }
+        },
+        "evidence": "H4/H5: L1 writes $\\Omega^1(A)=\\mathrm{span}\\{\\omega_i\\}$ and L4 writes $\\Omega^1(A)=A\\otimes\\mathrm{span}\\{\\omega_i\\}$. H8: L9 the structure equation $d\\omega_i=-\\tfrac12\\epsilon_{ijk}\\omega_j\\wedge\\omega_k$ arrives with no source (Maurer–Cartan) or normalisation of the $\\omega_i$.",
+        "notes": "Milnor H1-H8 = [2, 2, 1, 1, 1, 2, 2, 1] (T=12/16, warn); weakest: H3, H4, H5, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): L1: '$\\Omega^1(A)$ is the free $A$-module on the left-invariant forms $\\omega_1,\\omega_2,\\omega_3$.' L9: 'The Maurer–Cartan equation, with $\\omega_i$ dual to the basis $\\tfrac{i}{2}\\sigma_i$ of $\\mathfrak{su}(2)$, gives $d\\omega_i=\\dots$'. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

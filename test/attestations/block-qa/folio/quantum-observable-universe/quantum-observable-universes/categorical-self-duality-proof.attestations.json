@@ -691,6 +691,26 @@
         "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
         "evidence": "Full read: proof block, two sentences around one display of the Bogomolny decomposition. All ten categories checked; nothing fires. VERIFIED the quoted identity against the classical Bogomolny bound: with |F|^2 = |F^+|^2 + |F^-|^2 and \\int F\\wedge F = \\int(|F^+|^2 - |F^-|^2), eliminating |F^+|^2 gives \\int|F|^2 = 2\\int|F^-|^2 + \\int F\\wedge F -- exactly the coefficients and signs quoted, so the '2' and the topological second term are both correct, and 'minimising forces F^- = 0' follows."
       }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "88cacedb9a5c",
+          "ts": "1cfc435c464a",
+          "lean": "8b6a5d36e8f5"
+        },
+        "result": "n/a",
+        "notes": "criterion does not apply: block kind 'proof' is outside expo-milnor-clarity applies_to (EXPO_NARRATIVE_KINDS, qa-criteria-registry.ts). Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      }
     ]
   }
 }

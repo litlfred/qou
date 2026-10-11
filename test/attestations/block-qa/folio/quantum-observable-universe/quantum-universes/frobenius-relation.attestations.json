@@ -812,6 +812,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "e03e4a252ac0",
+          "lean": "0b389264e5a7",
+          "lean_statement": "f4ed4f657ef4"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 11,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 1,
+            "H3": 1,
+            "H4": 2,
+            "H5": 1,
+            "H6": 1,
+            "H7": 2,
+            "H8": 1
+          }
+        },
+        "evidence": "H5: L1 'This compatibility makes $A$ a Frobenius algebra' — no compatibility has been stated yet. H6/H8: L22 'Sliding a multiplication past a comultiplication yields the same result as composing them' does not say what the diagram asserts; the second (mirror) Frobenius relation is not mentioned.",
+        "notes": "Milnor H1-H8 = [2, 1, 1, 2, 1, 1, 2, 1] (T=11/16, fail); weakest: H2, H3, H5, H6, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): L1: 'Let $\\Delta_\\mu$ be the coproduct dual to $\\mu$ under the Frobenius pairing.' After the diagram: 'Read on elements: multiplying by $a$ and then splitting equals splitting and then multiplying the left factor by $a$. Together with its mirror image, this is what it means for $A$ to be a Frobenius algebra.' Point to ex:frobenius-relation-su2 for the $\\mathrm{SU}(2)$ check. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

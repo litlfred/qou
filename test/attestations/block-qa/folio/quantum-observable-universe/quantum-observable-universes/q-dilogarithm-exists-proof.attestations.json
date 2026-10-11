@@ -679,6 +679,25 @@
         "evidence": "Full read of the proof; no instance of this construction. Level bookkeeping cross-checked and consistent: p_0 = 1, p_1 = log_q, p_2 = Li_2^q matches sec:intro-q-special-functions, which calls Li_2^q the level-2 iterated primitive, and matches def:q-dilogarithm's shuffle recursion.",
         "notes": "No trap. Structural note, not fixed: the proof's load-bearing step -- 'has a one-dimensional solution space at each level (up to lower-level primitives)' -- is asserted, not argued, and the rest of the proof follows from it immediately. The block also carries no QED marker where the sibling proof block in this chapter does."
       }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "n/a",
+        "notes": "criterion does not apply: block kind 'proof' is outside expo-milnor-clarity applies_to (EXPO_NARRATIVE_KINDS, qa-criteria-registry.ts). Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      }
     ]
   }
 }

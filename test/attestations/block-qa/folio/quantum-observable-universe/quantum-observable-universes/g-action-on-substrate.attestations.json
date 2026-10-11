@@ -735,6 +735,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "530f3eb9ae42",
+          "ts": "42f4775addea",
+          "lean": "ade7f2a837b7",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 5,
+          "max": 16,
+          "rubric": {
+            "H1": 1,
+            "H2": 1,
+            "H3": 1,
+            "H4": 0,
+            "H5": 1,
+            "H6": 1,
+            "H7": 0,
+            "H8": 0
+          }
+        },
+        "evidence": "H4/H7: the block introduces $\\mathcal N_{\\rm sym}$, $\\mathrm{tr}_F$, $e^{\\rm EW}_{\\rm sym}$, $e_H$, $\\varrho_\\Phi$, $T(2,4)$, $T(2,6)$, $\\hbar_q$ and 'Anchor II' without definition, and presumes the electroweak sector ($W^\\pm$, $Z$, Higgs VEV $v\\approx246$ GeV) as background. H8: L52-55 the trace of a product is factored into a product of $q$-dimensions with no argument, and L69 multiplies $[4]_q$ twice for $W^+$ and $W^-$ while L54 forms a direct sum. L87 lists candidate corrections to a $-1.81\\%$ residual. | Also: needs_owner (content/anti-fit): the L52-72 factorisation and the [4]_q^2 for a direct sum are unexplained; L87 lists post-hoc correction candidates for the residual (AGENTS.md anti-fit discipline).",
+        "notes": "Milnor H1-H8 = [1, 1, 1, 0, 1, 1, 0, 0] (T=5/16, fail); weakest: H1, H2, H3, H4, H5, H6, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Separate the conjecture (constraints G-1…G-4, stated with each symbol defined) from the numerical comparison (a remark marked as the comparison point with CODATA). Justify or flag the step 'trace of the product = product of $q$-dimensions'. Introduce the electroweak names as names for components of $A$, with the physical reading in a follow-on remark. Remove the speculative-correction list or move it to the bean tracker. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

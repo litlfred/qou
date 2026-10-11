@@ -288,6 +288,39 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "aa202d75fd73",
+          "ts": "420ff02579e8"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 15,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 2,
+            "H3": 2,
+            "H4": 2,
+            "H5": 2,
+            "H6": 2,
+            "H7": 2,
+            "H8": 1
+          }
+        },
+        "evidence": "H8 (minor): L2-4 'each operation is replaced by its geometric mirror' presents the adjoint rule as a recipe; it is correct only because $\\varTheta\\wedge$ and $\\iota_\\xi$ are adjoint for the Webster metric with $|\\varTheta|=1$, which is the step that needs saying. Otherwise a clear remark.",
+        "notes": "Milnor H1-H8 = [2, 2, 2, 2, 2, 2, 2, 1] (T=15/16, warn); weakest: H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Add: 'Since $\\varTheta(\\xi)=1$ and $\\xi$ is unit-length for the Webster metric, $\\iota_\\xi$ is the adjoint of $\\varTheta\\wedge$; adjoints of composites reverse order, so ...'. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

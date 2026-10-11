@@ -288,6 +288,39 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c0c52a0733f5",
+          "ts": "64ab16b1f8d1"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 7,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 1,
+            "H3": 1,
+            "H4": 0,
+            "H5": 1,
+            "H6": 2,
+            "H7": 0,
+            "H8": 0
+          }
+        },
+        "evidence": "H8/H4: L3 '$q(p)=1+|\\langle L_\\varTheta,F_A^+\\rangle|\\ge1$' defines the substrate parameter by a curvature pairing — a fourth definition of $q$, unexplained, with $F_A^+$ undefined; L1 'relies on Levi non-degeneracy over strict pseudoconvexity' is unclear. H7: Kohn–Rossi cohomology invoked unframed; $\\Gamma_c(M,\\mathcal S)=0$ inherits the issue noted at ex:c-quantum-observable-universe. | Also: needs_owner (content): a fourth, curvature-based formula for q(p) with no derivation.",
+        "notes": "Milnor H1-H8 = [2, 1, 1, 0, 1, 2, 0, 0] (T=7/16, fail); weakest: H2, H3, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Delete the formula for $q(p)$ or derive it. 'We need only that the Levi form is non-degenerate (not that it is definite). Under that hypothesis Kohn–Rossi cohomology is finite-dimensional [Folland–Kohn], which is what controls $q$-harmonic forms.' Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

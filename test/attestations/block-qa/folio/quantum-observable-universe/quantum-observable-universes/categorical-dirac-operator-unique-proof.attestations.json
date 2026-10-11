@@ -507,6 +507,25 @@
         "evidence": "Short declaratives.",
         "notes": "MATH FINDING to report (not edited): the proposition this proves is a tautology. prop:categorical-dirac-operator-unique says any morphism decomposing as alpha nabla + beta iota_xi nabla WITH alpha = q^{-1} and beta = 1 - q^{-1} equals D_nabla - i.e. the same expression equals itself, which the proof concedes ('is literally the same morphism'). A non-vacuous uniqueness statement would fix the constraints (the q = 1 and q -> infinity limits, or whatever categorical conditions are intended) and derive alpha, beta from them, which is what this proof's preamble claims to do."
       }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "a65ee9a0ebc1",
+          "ts": "e9eb1e94d065"
+        },
+        "result": "n/a",
+        "notes": "criterion does not apply: block kind 'proof' is outside expo-milnor-clarity applies_to (EXPO_NARRATIVE_KINDS, qa-criteria-registry.ts). Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      }
     ]
   }
 }

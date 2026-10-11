@@ -467,6 +467,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9eb6e79a48af",
+          "ts": "422c23b57fbf",
+          "lean": "77e229ea9a95",
+          "lean_statement": "54bafa17a38c"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 12,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 1,
+            "H3": 1,
+            "H4": 2,
+            "H5": 2,
+            "H6": 2,
+            "H7": 1,
+            "H8": 1
+          }
+        },
+        "evidence": "H7/H8: L1 concludes that fibre functors form 'a $G$-gerbe', a heavy notion for the primary reader, with no framing of why it is the right tool and no reference; 'functorial composition enforces the cocycle condition' hand-waves the step. The torsor statement holds fpqc-locally, not for 'any two' fibre functors over an arbitrary $R$.",
+        "notes": "Milnor H1-H8 = [2, 1, 1, 2, 2, 2, 1, 1] (T=12/16, warn); weakest: H2, H3, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Add the classical case: 'For $\\mathrm{Rep}(\\mathrm{SU}(2))$ over $\\mathbb C$ any two fibre functors are isomorphic and the isomorphisms form a copy of $G$ acted on by translation.' Cite Deligne 1990 §1.12 for the torsor and say 'locally' where needed. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

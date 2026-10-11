@@ -193,6 +193,43 @@
         "evidence": "Noun chains stay short ('the additive twist associator', 'the classical shuffle-associator identification'); every sentence parses aloud.",
         "notes": "MATH VERIFIED (not a trap): the displayed five-term relation f(y)+f(x) = f(xy)+f(x(1-y)/(1-xy))+f(y(1-x)/(1-xy)) is the classical Rogers/Abel five-term identity - recomputed with mpmath at 60 dps for (x,y) = (0.3,0.4), (0.11,0.77), (0.9,0.05) using L(x) = Li_2(x) + log(x)log(1-x)/2; residual 3.1e-61, i.e. exact. The Faddeev-Kashaev operator pentagon Phi(P)Phi(Q) = Phi(Q)Phi(P+Q)Phi(P) is also as published. uses[] carries no conj: label, so no section-3b propagation violation."
       }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93",
+          "lean": "2b4dad95379e",
+          "lean_statement": "7eea4804eb89"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 5,
+          "max": 16,
+          "rubric": {
+            "H1": 0,
+            "H2": 1,
+            "H3": 1,
+            "H4": 1,
+            "H5": 0,
+            "H6": 2,
+            "H7": 0,
+            "H8": 0
+          }
+        },
+        "evidence": "H5/H8: the 'if and only if' (L1-7) holds because a '$q$-dilogarithm datum' is defined as something satisfying the five-term relation (L20 'the reverse reads the datum's five-term field') — a tautology presented as 'the precise sense in which the $q$-dilogarithm is forced by the rigid-monoidal axioms' (L9), which L24 then says is not proved. The five-term functional equation is called 'the Mac Lane pentagon' (L1). L9 cites prop:q-dilogarithm-exists for uniqueness. L18-20 is a Lean section in prose. | Also: proof-no-lean-mention-in-prose: L15, L18-20 name `QOU.BringsSurface.PentagonTwist.assoc_pentagon`, `pentagon_iff_isDilog`, `#print axioms`, Mathlib, `QRogersAnalyticContinuation`.",
+        "notes": "Milnor H1-H8 = [0, 1, 1, 1, 0, 2, 0, 0] (T=5/16, fail); weakest: H1, H2, H3, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Restate as what it is: 'By definition, a $q$-dilogarithm is a solution of the five-term relation. That this relation is the image of the Mac Lane pentagon is the Faddeev–Kashaev identification [cite], not proved here.' Remove the Lean section; fix the uniqueness citation. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      }
     ]
   }
 }

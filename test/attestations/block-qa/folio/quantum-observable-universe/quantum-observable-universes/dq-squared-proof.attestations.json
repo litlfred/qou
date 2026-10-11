@@ -513,6 +513,25 @@
         "evidence": "Full read of the proof of prop:dq-squared. Verified the whole computation by hand: d_q(d_q alpha) = a^2 d^2 alpha + ab d(Theta wedge L_xi alpha) + ab Theta wedge L_xi d alpha + b^2 Theta wedge L_xi(Theta wedge L_xi alpha) with a = q^{-1}, b = 1-q^{-1}; term 1 vanishes by d^2 = 0; term 2 expands as ab dTheta wedge L_xi alpha - ab Theta wedge d L_xi alpha since Theta is a 1-form; term 3 cancels its negative part by [d, L_xi] = 0; L_xi Theta = iota_xi dTheta + d(Theta(xi)) = 0 by Cartan, so term 4 becomes b^2 Theta wedge Theta wedge L_xi^2 alpha = 0. Result ab dTheta wedge L_xi alpha is correct. Prose is bare computation - no negation-contrast, pivot, load-bearing dash, triple, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
         "notes": "MATH DEFECT REPORTED, NOT FIXED (math-adjacent, per skill: report never fix inline). The token '\\\\mathcal{L}_\\\\xid\\\\alpha' appears twice - once in the align block (third term) and once in the prose sentence about [d, L_xi] = 0. The intended reading is L_xi (d alpha), but '\\\\xid' is a REAL macro: main.tex:222 defines \\\\newcommand{\\\\xid}{{\\\\xi_{d}}} ('Reeb field (d-component)'). So the PDF silently typesets L_{xi_d} alpha instead of L_xi d alpha, turning the key cancellation sentence into 'Theta wedge L_{xi_d} alpha = Theta wedge d L_xi alpha', which is not what [d, L_xi] = 0 gives. On the KaTeX/markdown render path \\\\xid is not defined at all, so the same two spots error out. These are the only two occurrences of \\\\xid in all of content/. PROPOSED FIX: insert a space - '\\\\mathcal{L}_\\\\xi d\\\\alpha' in both places."
       }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "c3eb7dc1b0bf",
+          "ts": "1e759a62b346"
+        },
+        "result": "n/a",
+        "notes": "criterion does not apply: block kind 'proof' is outside expo-milnor-clarity applies_to (EXPO_NARRATIVE_KINDS, qa-criteria-registry.ts). Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      }
     ]
   }
 }

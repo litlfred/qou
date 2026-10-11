@@ -700,6 +700,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9",
+          "lean": "30d42a5b80da",
+          "lean_statement": "05b72b0f98d9"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 8,
+          "max": 16,
+          "rubric": {
+            "H1": 0,
+            "H2": 1,
+            "H3": 1,
+            "H4": 2,
+            "H5": 1,
+            "H6": 2,
+            "H7": 0,
+            "H8": 1
+          }
+        },
+        "evidence": "H1/H7: L14 is a generic 'Archimedean specialisation' paragraph ('real-valued physical observables, real-analytic bounds, transcendental constants ...') appended to a purely algebraic uniqueness statement it does not describe. H5: condition 3 'R-linear in the components' is vague. | Also: boilerplate: L14 generic 'Archimedean specialisation' stamp that does not match the block.",
+        "notes": "Milnor H1-H8 = [0, 1, 1, 2, 1, 2, 0, 1] (T=8/16, fail); weakest: H1, H2, H3, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Delete L14. State: 'Since $\\Omega^k=\\Omega^k_H\\oplus\\Omega^k_V$, an $R$-linear map is determined by its restrictions; conditions 1–2 therefore determine $d_q$.' Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

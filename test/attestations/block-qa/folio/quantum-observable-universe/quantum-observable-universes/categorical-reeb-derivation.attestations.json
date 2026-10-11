@@ -703,6 +703,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "df871805a627",
+          "ts": "697942f07da7",
+          "lean": "662bd361a2e5",
+          "lean_statement": "094d239f726a"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 7,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 1,
+            "H3": 1,
+            "H4": 0,
+            "H5": 0,
+            "H6": 2,
+            "H7": 1,
+            "H8": 0
+          }
+        },
+        "evidence": "H4: a second 'categorical Reeb derivation' ($\\xi_q$) beside def:categorical-reeb ($\\xi$), with different defining conditions. L3 '$\\xi_q\\circ\\varTheta=\\varTheta$' composes a map $A\\to A$ after a 1-form. H5/H8: L1 'uniquely determined by' two conditions that do not determine it; L6 defines a period $\\Omega_q$ with $\\xi_q^{\\Omega_q}=\\mathrm{id}_A$, but a derivation kills the unit ($\\xi_q(1)=0$), so no power of it is the identity. | Also: needs_owner (content): ξ_q^{Ω_q} = id_A is impossible for a derivation (ξ_q(1)=0); duplicate definition of the Reeb derivation.",
+        "notes": "Milnor H1-H8 = [2, 1, 1, 0, 0, 2, 1, 0] (T=7/16, fail); weakest: H2, H3, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Unify with def:categorical-reeb (one name, one definition). If the intended object is the time-$t$ flow $\\exp(t\\xi_q)$, define the period as the least $T>0$ with $\\exp(T\\xi_q)=\\mathrm{id}$. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

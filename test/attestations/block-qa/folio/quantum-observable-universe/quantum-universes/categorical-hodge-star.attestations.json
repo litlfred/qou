@@ -775,6 +775,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "36884e246fa5",
+          "ts": "0dba56718098",
+          "lean": "17305fb6eacc",
+          "lean_statement": "1511b910f1df"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 8,
+          "max": 16,
+          "rubric": {
+            "H1": 1,
+            "H2": 1,
+            "H3": 1,
+            "H4": 1,
+            "H5": 1,
+            "H6": 1,
+            "H7": 1,
+            "H8": 1
+          }
+        },
+        "evidence": "H4: $n$ (L1) is never defined; $\\alpha^*=S(\\alpha)$ (L20) applies the antipode of $A$ to a form; 'involution $\\star\\colon\\Omega^k\\to\\Omega^{n-k}$' cannot be an involution unless $k=n-k$. H8/H7: L20 '$\\star^2=\\mathrm{id}$ follows from the non-degeneracy of $\\int_A$ and the involutivity of the antipode' — in general $\\star^2=\\pm1$ depending on degree and signature; the claim is waved through. H6: a tikz square (L9-17) restates $\\star^2=\\mathrm{id}$.",
+        "notes": "Milnor H1-H8 = [1, 1, 1, 1, 1, 1, 1, 1] (T=8/16, fail); weakest: H1, H2, H3, H4, H5, H6, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Open with the classical case: 'On an oriented Riemannian $n$-manifold, $\\star$ is defined by $\\alpha\\wedge\\star\\beta=\\langle\\alpha,\\beta\\rangle\\mathrm{vol}$; we replace the metric by the Frobenius form.' Define $n$ as the top degree of $\\Omega^\\bullet(A)$; call $\\star$ an isomorphism and state $\\star\\star$ with its sign, or restrict to the case proved. Delete the square. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

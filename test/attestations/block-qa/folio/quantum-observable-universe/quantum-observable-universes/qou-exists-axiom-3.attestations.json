@@ -720,6 +720,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "156260b22c71",
+          "ts": "1fd4f68c7c9a",
+          "lean": "6ae831127b56",
+          "lean_statement": "60d9cc7a1cc2"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 8,
+          "max": 16,
+          "rubric": {
+            "H1": 1,
+            "H2": 1,
+            "H3": 1,
+            "H4": 1,
+            "H5": 1,
+            "H6": 2,
+            "H7": 0,
+            "H8": 1
+          }
+        },
+        "evidence": "H5: titled 'Axiom 3' but def:quantum-observable-universe numbers Chern-class vanishing as condition 4 (Observability is 3). H7: L8 replaces the base category by $\\mathbf{Rep}_k(\\widehat{\\mathfrak g})$ 'at level $k=\\langle c_2,[M]\\rangle$' — a heavy construction, with $M$ and $P$ undefined, in a lemma statement. H8: with $c_i(\\mathrm{Ad}(A)):=c_i(\\tau(\\mathrm{Ad}(A)))$ the statement reduces to the hypothesis; the block does not say what is being proved.",
+        "notes": "Milnor H1-H8 = [1, 1, 1, 1, 1, 2, 0, 1] (T=8/16, fail); weakest: H1, H2, H3, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Retitle 'Condition 4 (measurability)'. State: 'If the classical adjoint bundle has $c_1=c_2=0$, then the categorical Chern classes of $\\mathrm{Ad}(A)$ vanish.' Move the level-$k$ sentence to a remark with $M$ and the WZW category introduced. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

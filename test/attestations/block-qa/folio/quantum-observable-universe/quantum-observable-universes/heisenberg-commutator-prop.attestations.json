@@ -719,6 +719,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e491fccbf126",
+          "ts": "184771f36b4d",
+          "lean": "6ee111bfc19c",
+          "lean_statement": "7ab0e0f675ff"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 11,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 1,
+            "H3": 1,
+            "H4": 1,
+            "H5": 2,
+            "H6": 2,
+            "H7": 1,
+            "H8": 1
+          }
+        },
+        "evidence": "H8: the proposition records the two limits of $1-q^{-1}$ (L3-4), immediate from def:q-deformed-commutator, under physics labels ('maximal uncertainty'); it inherits that block's undefined $\\hat X,\\hat P$.",
+        "notes": "Milnor H1-H8 = [2, 1, 1, 1, 2, 2, 1, 1] (T=11/16, fail); weakest: H2, H3, H4, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Fold into the definition as one sentence: '$\\hbar_q\\to0$ as $q\\to1$ and $\\hbar_q\\to1$ as $q\\to\\infty$.' Move the physical labels to rem:heisenberg-commutator. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

@@ -695,6 +695,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "40ac3d365ae3",
+          "ts": "1e87926ef9da",
+          "lean": "e2dc46cfacd2",
+          "lean_statement": "9938c873b0ee"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 7,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 1,
+            "H3": 1,
+            "H4": 1,
+            "H5": 0,
+            "H6": 1,
+            "H7": 1,
+            "H8": 0
+          }
+        },
+        "evidence": "H4/H5: L1 calls $\\sigma\\colon\\mathbb P(V)\\hookrightarrow\\mathrm{Ad}(A)$ 'an involution', but a map between two different objects cannot be one. H8: L1 'The non-degeneracy of the Frobenius pairing then forces the observability condition $\\mathrm{Hom}(\\mathbf1,\\mathrm{Ad}(A))=0$' — the step is not given, and observability is an axiom of def:quantum-observable-universe.",
+        "notes": "Milnor H1-H8 = [2, 1, 1, 1, 0, 1, 1, 0] (T=7/16, fail); weakest: H2, H3, H4, H5, H6, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Call $\\sigma$ an embedding. Remove the observability sentence or state precisely what is derived. Open with ex:fiber-adjoint-su2's picture: a line $\\ell\\subset\\mathbb C^2$ goes to the projector onto $\\ell$. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

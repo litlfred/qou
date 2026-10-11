@@ -288,6 +288,39 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8ce550c773c1",
+          "ts": "409e1717a0bd"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 9,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 1,
+            "H3": 1,
+            "H4": 1,
+            "H5": 1,
+            "H6": 2,
+            "H7": 1,
+            "H8": 0
+          }
+        },
+        "evidence": "H8: L9 'the Ad action conjugates the antisymmetric component by $G$, mixing the fermionic state with the bosonic eigenspace' — $\\mathrm{Sym}^2V$ and $\\Lambda^2V$ are $G$-subrepresentations, so the $G$ action does not mix them; 'depositing $q+q^{-1}$ per crossing in the colour fibre' is unexplained. H4: 'bosonic'/'fermionic' label the symmetric/antisymmetric two-particle spaces without saying so. | Also: needs_owner (content): G-equivariance contradicts the claimed mixing of Sym^2 V and Λ^2 V.",
+        "notes": "Milnor H1-H8 = [2, 1, 1, 1, 1, 2, 1, 0] (T=9/16, fail); weakest: H2, H3, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): State which operator mixes the summands (it cannot be the $G$-action), or delete the mixing claim. 'Call $\\mathrm{Sym}^2V$ the bosonic and $\\Lambda^2V$ the fermionic two-particle space.' Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

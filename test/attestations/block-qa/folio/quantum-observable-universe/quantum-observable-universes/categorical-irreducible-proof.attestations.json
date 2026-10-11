@@ -691,6 +691,26 @@
         "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
         "evidence": "Full read: proof block, no templated preamble (contrast with the exists/unique proof blocks of this chapter), a commuting tikzcd triangle in a fenced tex block, and a three-sentence argument. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller, not fixed: the last step is a non sequitur as written -- '\\int_A vanishes on \\mathrm{Ad}(A) ... But \\int_A is non-degenerate ..., so s=0' does not follow, since a form that vanishes identically on a subobject cannot be used with global non-degeneracy to kill a morphism into that subobject; the argument needs non-degeneracy of the restricted pairing on \\mathrm{Ad}(A), or the trace-free splitting stated as an orthogonal decomposition."
       }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3",
+          "lean": "34fc25b8e49e"
+        },
+        "result": "n/a",
+        "notes": "criterion does not apply: block kind 'proof' is outside expo-milnor-clarity applies_to (EXPO_NARRATIVE_KINDS, qa-criteria-registry.ts). Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      }
     ]
   }
 }

@@ -288,6 +288,39 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "1b8673f9b0e7",
+          "ts": "b18db4ca5665"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 10,
+          "max": 16,
+          "rubric": {
+            "H1": 1,
+            "H2": 2,
+            "H3": 1,
+            "H4": 1,
+            "H5": 1,
+            "H6": 2,
+            "H7": 1,
+            "H8": 1
+          }
+        },
+        "evidence": "H5: L1 'a quantum universe is a triple $(\\mathbf{C},A,\\tau)$' omits the differential calculus that sec:qou-intro L14 lists as part of the definition; L1 'The triple is non-empty' (meaning: an instance exists) is imprecise. H8: L5 'The simplicity of the unit object $\\mathbf{1}$ forces the uniqueness of the volume form' asserts a result with no indication why. H4: L5 introduces $\\omega_1,\\omega_2,\\omega_3$ with no definition.",
+        "notes": "Milnor H1-H8 = [1, 2, 1, 1, 1, 2, 1, 1] (T=10/16, fail); weakest: H1, H3, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): L1: 'a quantum universe consists of an $R$-linear braided monoidal category $\\mathbf{C}$, a Frobenius–Hopf object $A$, a fibre functor $\\tau$, and a differential calculus on $A$; $\\mathcal{O}(\\mathrm{SU}(2))$ shows the axioms are consistent.' L5: 'Because $\\mathrm{End}(\\mathbf{1})=R$, any two volume forms differ by a scalar (prop:volume-form-unique).' Name the $\\omega_i$ as the left-invariant Maurer–Cartan 1-forms. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

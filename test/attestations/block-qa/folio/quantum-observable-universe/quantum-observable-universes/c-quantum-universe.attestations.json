@@ -290,6 +290,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e8a1dc857a39",
+          "ts": "62f71e47d0e4",
+          "lean": "48ddfb0c9d78",
+          "lean_statement": "8dcd2dadb3d0"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 10,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 1,
+            "H3": 1,
+            "H4": 1,
+            "H5": 1,
+            "H6": 2,
+            "H7": 1,
+            "H8": 1
+          }
+        },
+        "evidence": "H5: L1 'A quantum universe over $K$ is realised by the 4-tuple $(\\mathbf C,\\varTheta,G,\\mathcal S)$' — the relation between this 4-tuple and the triple $(\\mathbf C,A,\\tau)$ of def:quantum-universe is never stated; L9 sets $\\mathbf C=\\mathrm{Rep}(\\mathrm{SU}_{q(p)}(2))$ with a point-dependent $q(p)$ and no explanation of a category varying with $p$. H7/H4: Levi form, Webster metric, signature $(r,s)$ all appear without use.",
+        "notes": "Milnor H1-H8 = [2, 1, 1, 1, 1, 2, 1, 1] (T=10/16, fail); weakest: H2, H3, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Open with the dictionary: 'The triple $(\\mathbf C,A,\\tau)$ is realised as follows: $A=\\mathcal O_q(\\mathrm{SU}(2))$, ... ; the extra geometric data $(\\varTheta,\\mathcal S)$ on a manifold $M$ is what the archimedean setting adds.' Keep only the CR data used later. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

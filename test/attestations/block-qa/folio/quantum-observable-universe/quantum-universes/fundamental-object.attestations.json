@@ -290,6 +290,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a7ee86274865",
+          "ts": "b07915d837e4",
+          "lean": "c38849e72cc3",
+          "lean_statement": "b5e426285e75"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 11,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 2,
+            "H3": 1,
+            "H4": 1,
+            "H5": 1,
+            "H6": 2,
+            "H7": 1,
+            "H8": 1
+          }
+        },
+        "evidence": "H8: L7 'Under a fibre functor the volume constraint forces $\\mathrm{rank}(V)=2$' states a theorem without its source and before the volume constraint is defined. H4: $\\epsilon$ is typed $V\\otimes V\\to\\mathbf{1}$ (L3) and then as $\\Lambda^2V\\to\\mathbf{1}$ (L5); the coform is called $\\eta$, the Hopf unit's symbol. H5: L7 'every other simple object is an exterior or symmetric power of $V$' — for $\\mathrm{SU}(2)$ the exterior powers above degree 2 vanish; only symmetric powers occur.",
+        "notes": "Milnor H1-H8 = [2, 2, 1, 1, 1, 2, 1, 1] (T=11/16, fail); weakest: H3, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): L5: 'an antisymmetric form $\\epsilon\\colon V\\otimes V\\to\\mathbf 1$ (it factors through $\\Lambda^2V$)'; rename the coform (e.g. $\\epsilon^\\vee$). L7: 'Once the volume constraint is imposed (Chapter 2) a fibre functor sends $V$ to a rank-2 module (prop:...); in $\\mathrm{SU}(2)$, $V=\\mathbb{C}^2$ and every simple object is a symmetric power $\\mathrm{Sym}^n V$.' Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

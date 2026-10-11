@@ -775,6 +775,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f5312b6e974a",
+          "ts": "ab48048809b5",
+          "lean": "1d5e9f2df808",
+          "lean_statement": "40fd0979a138"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 9,
+          "max": 16,
+          "rubric": {
+            "H1": 1,
+            "H2": 1,
+            "H3": 1,
+            "H4": 1,
+            "H5": 2,
+            "H6": 1,
+            "H7": 1,
+            "H8": 1
+          }
+        },
+        "evidence": "H6/H1: three tikz diagrams (L6-41) restate one-line equations; the monoidal-compatibility square (L17-26) is mistyped — $(\\mathrm{id}\\otimes f)^\\dagger$ is drawn $X\\otimes Y\\to X\\otimes Z$, the direction of $\\mathrm{id}\\otimes f$. H4: L43 applies the antipode $S$ (a map on elements of $A$) to a morphism $f$. H3/H2: no purpose and no instance (conjugate transpose in $\\mathrm{Vect}_{\\mathbb C}$).",
+        "notes": "Milnor H1-H8 = [1, 1, 1, 1, 2, 1, 1, 1] (T=9/16, fail); weakest: H1, H2, H3, H4, H6, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): State the four axioms as displayed equations only, including $(f\\otimes g)^\\dagger=f^\\dagger\\otimes g^\\dagger$. Open with: 'An involutive structure is the categorical form of the adjoint of a linear map; in $\\mathrm{Vect}_{\\mathbb C}$ with inner products it is $f\\mapsto\\bar f^{T}$.' Rewrite L43 to say on which morphisms the formula is defined. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

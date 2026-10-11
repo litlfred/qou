@@ -198,6 +198,25 @@
         "evidence": "Read the block aloud-style for noun-heavy chains that stall. Block is extracted 6-row base-ring table (pure tabular, almost no prose); sentences are speakable.",
         "notes": "Pass - the block is a 6-row table with no connected prose to read aloud. Row contents were checked mathematically; one edge case is reported in the batch anomaly list (the Q_p convergence domain p Z_p is the p-odd case)."
       }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "60da2e57a7a2",
+          "ts": "1e3ae17e1170"
+        },
+        "result": "n/a",
+        "notes": "criterion does not apply: block kind 'table' is outside expo-milnor-clarity applies_to (EXPO_NARRATIVE_KINDS, qa-criteria-registry.ts). Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      }
     ]
   }
 }

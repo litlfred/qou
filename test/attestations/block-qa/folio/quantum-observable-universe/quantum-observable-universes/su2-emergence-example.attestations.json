@@ -290,6 +290,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "09aa1ad48a58",
+          "ts": "96a0d63a5225",
+          "lean": "1bb75ee505f2",
+          "lean_statement": "9338b9853f6c"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 14,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 2,
+            "H3": 1,
+            "H4": 2,
+            "H5": 2,
+            "H6": 2,
+            "H7": 2,
+            "H8": 1
+          }
+        },
+        "evidence": "H8: L1 'Any tensor automorphism $g$ must preserve $\\epsilon$' — the reason (naturality: $\\epsilon$ is a morphism of $\\mathbf C$) is the load-bearing step and is not given.",
+        "notes": "Milnor H1-H8 = [2, 2, 1, 2, 2, 2, 2, 1] (T=14/16, warn); weakest: H3, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): 'Because $\\epsilon$ is a morphism in $\\mathbf C$, every tensor automorphism of $\\tau$ commutes with it, so $\\det g_V=1$.' Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

@@ -692,6 +692,27 @@
         "evidence": "Prose is short declaratives around the displays.",
         "notes": "THREE MATH FINDINGS to report (none edited). (1) Degree mismatch in the displayed commutator: [d, pi_V] alpha = L_xi(alpha) - pi_V(L_xi(alpha)) = pi_H(L_xi alpha) cannot hold, since d raises form degree by one and pi_V preserves it, so the left side has degree deg(alpha)+1 while the right side has degree deg(alpha). (2) omega_V = d(pi_V(d 1_A)) is identically zero: in any first-order differential calculus d(1_A) = 0 (from d(1.1) = 2 d1), so pi_V(d 1_A) = 0 and omega_V = 0 - which would make prop:categorical-dq-squared's right-hand side vanish for every alpha, contradicting the proposition. Whatever 2-form is intended, this is not a well-formed definition of it. (3) The middle term is over-stated rather than wrong: (pi_V d) o d = pi_V o d^2 = 0 by the same d^2 = 0 already invoked, so ab(d(pi_V d alpha) + pi_V d(d alpha)) reduces to ab d(pi_V d alpha) and the second summand can be dropped. Checked and correct: the binomial expansion is right, and the coefficient ab = q^{-1}(1 - q^{-1}) matches the proposition's stated prefactor exactly. The align* is correctly fenced as an outer environment inside a tex fence (render-math-mode-envelope satisfied)."
       }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "1058965cf373",
+          "ts": "f4866418996c",
+          "lean": "3c72a688ab50",
+          "lean_statement": "15a7826700a4"
+        },
+        "result": "n/a",
+        "notes": "criterion does not apply: block kind 'proof' is outside expo-milnor-clarity applies_to (EXPO_NARRATIVE_KINDS, qa-criteria-registry.ts). Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      }
     ]
   }
 }

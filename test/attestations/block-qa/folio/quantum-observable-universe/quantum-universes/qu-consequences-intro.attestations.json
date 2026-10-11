@@ -288,6 +288,39 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "86d0012d29bb",
+          "ts": "0457c05338da"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 11,
+          "max": 16,
+          "rubric": {
+            "H1": 1,
+            "H2": 2,
+            "H3": 2,
+            "H4": 1,
+            "H5": 1,
+            "H6": 2,
+            "H7": 1,
+            "H8": 1
+          }
+        },
+        "evidence": "H4/H5: L1 introduces the Hopf comultiplication 'built from the group-multiplication rule' and L3 the Frobenius comultiplication $\\Delta_\\mu$ 'dual to $\\mu$', and L1 says both 'follow directly from the Frobenius pairing' — the two coproducts are conflated. H8: L5 'the QU axioms are independent over arbitrary rings' is asserted with no gloss.",
+        "notes": "Milnor H1-H8 = [1, 2, 2, 1, 1, 2, 1, 1] (T=11/16, fail); weakest: H1, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): L1: 'Two coproducts appear: the Hopf coproduct $\\Delta$ (from group multiplication) and the Frobenius coproduct $\\Delta_\\mu$ (dual to $\\mu$). This section concerns $\\Delta_\\mu$.' L5: 'Finally, no QU axiom follows from the others (prop:axiom-independence).' Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
       }
     ],
     "milnor-brevity": [

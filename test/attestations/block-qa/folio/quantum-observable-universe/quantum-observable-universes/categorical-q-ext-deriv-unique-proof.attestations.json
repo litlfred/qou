@@ -503,6 +503,25 @@
         "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
         "evidence": "Full read: proof block, three sentences, no templated preamble. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller and DERIVED rather than eyeballed: the proof concludes d' = q^{-1} d \\circ \\pi_H + d \\circ \\pi_V = d_q, but the definition gives d_q = q^{-1}d + (1-q^{-1})\\pi_V \\circ d. Writing P = q^{-1}\\mathrm{id} + (1-q^{-1})\\pi_V and using \\pi_H = \\mathrm{id}-\\pi_V, the proof's operator is d\\,P while the definition's is P\\,d -- the same P on opposite sides of d. They are equal iff [\\pi_V, d] = 0, i.e. iff d preserves the horizontal/vertical splitting, which the chapter's d_q^2 != 0 anomaly explicitly denies. So the uniqueness proof characterises a different operator from the one defined, unless that commutation is added as a hypothesis."
       }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "68c4740b91b1",
+          "ts": "240a1dd3a218"
+        },
+        "result": "n/a",
+        "notes": "criterion does not apply: block kind 'proof' is outside expo-milnor-clarity applies_to (EXPO_NARRATIVE_KINDS, qa-criteria-registry.ts). Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      }
     ]
   }
 }
