@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-10T07:03:49Z
-updated_at: 2026-10-11T12:00:00Z
+updated_at: 2026-10-11T14:00:00Z
 parent: qou-3e6w
 ---
 
@@ -178,3 +178,96 @@ an O(1) defect, the argument gives `M_n ≤ A√(2n) + O(1)`, i.e. `e_n` BOUNDED
 
 **Do not close this bean** — the O(1) (bounded-excess) statement is still a conjecture, and this
 bean's own title is superseded rather than settled by this entry.
+
+## 2026-10-11 (later) — the excess is BOUNDED ABOVE: `M_n ≤ A√(2n) + K₂` for every `n ≥ 1`
+
+**Claim.** `e_n := M_n − A√(2n) ≤ K₂ = S₂ + K₁ + J − ε(1) = 85.36625301668` for every `n ≥ 1`. The
+constants are explicit convergent sums in `q₀`, and nothing is fitted:
+
+| constant | value |
+|---|---|
+| `c₀ = Σ_k ∣ε'(2k)∣` | 0.77707 |
+| `c₁ = 2Σ_k k∣ε'(2k)∣` | 3.45865 |
+| `K₁ = c₁ + c₀c₁/(2L)` | 16.3377 |
+| `J = (A + L/2)²/(2L)` | 64.0356 |
+| `S₂ = Σ_k k·ε(2k)` | 6.66247 |
+
+This is what the previous entry called the next step. Both sources of its `O(n^{1/4})` turned out
+to be slack in the argument, and each one is removed by one discrete statement.
+
+1. **Integrality defect (the ℓ/4).**
+   - Compare `t` with the **rounded** water-fill `q`, not with the continuous `p`. Here
+     `q = max(w, c)`, where `c` takes values in `{a, a+1}`, sorted ascending.
+   - **Is `q` a valid reference?** Yes. `q` is nondecreasing with steps of at most 1, so it is a
+     genuine ℓ-row partition, and `Δ_k(q) ≤ 0`.
+   - **What the exchange inequality gives.**
+     - Every ℓ-row `t` with the same sum has `tᵢ < qᵢ` only where `qᵢ ≤ a+1`, and `a ≤ q`
+       holds everywhere.
+     - From this: `Σt² ≥ Σq² + Σdᵢ² − Σ∣dᵢ∣`, where `d = t − q` is an integer vector.
+   - **Where the Lean result comes in.** This is the discrete Pythagoras, proved as Lean
+     `rounded_pythagoras` (stated with no projection and no integrality).
+   - It also proves that `q` attains `H_ℓ^min`.
+   - **The loss is separable.**
+     - `Δ_k(d)` reduces to the first `m_k` coordinates minus the last `m_k`, with
+       `m_k = min(k, ℓ−k)`, because the middle cancels.
+     - So the loss is at most `Σᵢ ωᵢ∣dᵢ∣`, with `Σωᵢ ≤ c₁` and `ωᵢ ≤ c₀`.
+   - **The trade-off per coordinate.** On the integer grid, `ωx − (L/2)(x² − x) ≤ ω + ω²/(2L)`
+     (Lean `int_tradeoff`). Summed over coordinates this is `K₁`, so no `√ℓ` survives.
+2. **Row-count slack (the `−r`).**
+   - **The key identity.** `H(λ) = Σ_{(i,j)∈λ}(i+j−1)`, i.e. `n(λ) + n(λ') + n`. So `H` is linear
+     in the anti-diagonal counts `a_d`.
+   - **Diagonal exchange** (Lean `diagonal_exchange`):
+     `Σ(a_d − o_d)d ≥ Σ_{d≥k+2} a_d(d−k−1)`, measured against the greedy fill `o`.
+   - **What it gives for ℓ-row shapes.** An ℓ-row shape has a cell on every diagonal `d ≤ ℓ` (its
+     first column). Hence `H − H_min ≥ T_{ℓ−k−1}`. This replaces #7185's `(ℓ−k)² − r`, which let ℓ
+     run `√r` rows past `k` at no cost.
+   - **The extra-rows cap.** Lean `extra_rows_tradeoff` bounds `jA − (L/2)j(j−1)` by `J`.
+   - **A side benefit.** The same exchange (with ℓ arbitrary) **proves** the formula
+     `H_min(n) = P_k + r(k+1)` together with its attainment by `δ_k` plus `r` outer corners. That
+     closes the attainment caveat carried since #7185, modulo the classical hook-sum identity.
+
+**How the pieces combine.**
+- Per shape: `Ψ(λ) ≤ ℓA + S₂ − F(n) + Σᵢ[ωᵢ∣dᵢ∣ − (L/2)(dᵢ² − ∣dᵢ∣)] − L·T_{ℓ−k−1}`.
+- Applying `int_tradeoff` and `extra_rows_tradeoff`: `Ψ(λ) ≤ Ak + S₂ − F(n) + K₁ + J`.
+- Finally `k < √(2n)` and `F(n) ≥ ε(1)`, which gives `K₂`.
+
+**Evidence.**
+- **Lean.** `QOU/BraidKnot/RoundedWaterfillExchange.lean` holds 4 theorems, sorry-free, over a
+  generic ordered ring/field (§7c). It passes lean-direct with `-DautoImplicit=false -s 65536`,
+  exit 0, and the axioms are propext / Classical.choice / Quot.sound.
+- **Probe.** `computations/deltalambda/rev_bounded_excess_upper_bound_probe.py` passes **7/7** in
+  33 s, with mpmath at 60 dps and exact Fractions:
+  - (A)–(D) and the per-shape chain hold exactly on all 28,628 shapes with `n ≤ 30`. The minimum
+    chain slack is 5.63.
+  - `M_n ≤ U₂(n) ≤ Ak + const` and `e_n ≤ K₂` hold for `n ≤ 40`.
+  - The witness is `computations/rev-bounded-excess-upper-bound.witness.json`.
+- **Measured** `e_n` sits in [−12.83, −5.10] for `n ≤ 40`, with `e_40 = −12.48`.
+
+**What is NOT established — scope it exactly.**
+- **Upper bound only.** No `O(1)` lower bound on `e_n` for general `n` is proved.
+  - The staircase gives the lower half only at triangular `n`.
+  - A crude corner-adding argument loses `O(r)`.
+- **Not the value, not convergence.**
+  - `K₂ = 85.37` is a bound, against measured values near −12.5 and #7294's conjectured
+    `κ = −10.72317` (where `M_n = A√(2n+1/4) + κ + o(1)`).
+  - `e_n → κ` remains MEASURED.
+  - **Do not compare `K₂` with qou-as81's `e_∞ = 2.4393`.** That constant belongs to a different
+    normalisation. The bean title's "`e_∞·√(2n)`" conflates the two, as recorded in the previous
+    entry.
+- **The assembly is not in Lean.** Four steps are verified per shape but not formalised:
+  - the tangent-line pair bound;
+  - the hook-sum = cell-weight identity;
+  - the explicit construction of `q` and its properties;
+  - the `Δ_k` middle cancellation.
+
+**Is this the bean's headline?** For the gate this arc serves, yes in substance:
+- It gives an `O(√n)` upper bound on `M_n` with sharp coefficient and `O(1)` error, which is what
+  the q-Borel convergence in `qou-v2om` needs.
+- **I am still not closing the bean.** The two-sided `e_n = O(1)` and the limit `κ` are still open
+  conjectures in its scope (directive 13a).
+
+**Next step (judgement).**
+- The cheap target is the lower half: `M_n ≥ A√(2n) − O(1)` at non-triangular `n`.
+  - Try a shape that interpolates between `δ_k` and `δ_{k+1}` with `O(1)` pair-term cost, rather
+    than adding corners one at a time.
+- After that, formalise the assembly, starting with the hook-sum = cell-weight identity.
