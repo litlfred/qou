@@ -1,13 +1,13 @@
 ---
 # qou-as81
 title: 'A1 (live): certify an UPPER bound on Xbot so the e_inf join needs no G1'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-10T07:03:48Z
-updated_at: 2026-10-10T16:30:00Z
+updated_at: 2026-10-11T08:00:00Z
 parent: qou-3e6w
 blocking:
     - qou-jz80
@@ -261,3 +261,28 @@ re-implements it in-repo rather than porting it.
 each certified by min cut; the best NON-EMPTY move at any optimum loses >= 0.000759 (pe = 2).
 Cut **25** (threshold -1.97424; xrun(25) = -1.96143, xrun(26) = -2.01360), limit 32.
 **Still conditional** on the tail lemma (T > 40) and the all-pe lemma (pe > 20); this bean stays open.
+
+## 2026-10-11 — CLOSED: both lemmas proved, e_inf join certified with no G1
+
+**Lemmas** (proofs in the `rev_e_infinity_xbot_lnatural_probe.py` docstring, "The two lemmas"):
+- *Tail (all T > N):* on the bi-infinite lattice the antisymmetric ψ terms cancel, so displacing
+  rows above N gains at most `eps(b_N + 1) + cbar_N`, which is below `ln q0 / 2` at every certified
+  frame (M7). The padded optimum at T = N + 4 and N + 12 has no improving ±χ_S move (M7b).
+- *All pe > 20:* `G_{pe+1}(0, u) = G_pe(u)` exactly (M8, 40 random points). Displacing the bottom
+  row of a deep wall costs at least `ln q0 · (pe + 1)` and gains at most `eps(1) = 1.66947`, and
+  `eps(1) / ln q0 = 16.0002 < 21` (M9).
+
+Full run (`pe = 0..20`, `N = 40`): **10/10**, witness `rev-e-infinity-xbot-lnatural.witness.json`,
+`open_gaps = []`. Cut **25**.
+
+**Join without G1** (`rev_e_infinity_xbot_join_probe.py`, 4/4, witness
+`rev-e-infinity-xbot-join.witness.json`). The per-sum bottom bound comes from a Lagrange multiplier:
+`Xbot(s) ≤ h(μ) + μ s`, with h(μ) certified by the same min-cut method for
+μ ∈ {0.4, …, 0}. With μ ≥ 0 the tail condition relaxes to `bracket < ln q0/2 + μ` and the wall
+condition to `eps(1) − μ < ln q0 · (pe + 1)` (J2, J3). Over the window `s_t + s_b ≤ 25`, the
+maximum of `Xblock(s_t) + xrun(s_t + s_b) + Xbot(s_b)` is **2.439296455120784027065** at
+(8, 8), equal to e_inf (J4). The bottom bound equals the top block at s = 1, 3, 6, 7, 8, 11..14.
+
+**Single external input:** Murota (2003), Ch. 7, which says the best ±χ_S move of an L♮-concave
+function is a min cut (`murota2003`). Everything else is computed at mp.dps 25/30 at the proton q0.
+Not Lean-formalised; that is a possible follow-up, not this bean's goal.
