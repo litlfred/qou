@@ -9,7 +9,7 @@ tags:
     - 8f-gen
     - 8f-open
 created_at: 2026-08-10T18:57:48Z
-updated_at: 2026-10-11T07:45:12Z
+updated_at: 2026-10-11T08:34:21Z
 parent: qou-8lxd
 ---
 
@@ -280,3 +280,93 @@ rather than offered as a finding.
 No conjecture closes, no observable is predicted, no witness or dashboard row
 moves. The SM labels still enter as the target to be reproduced. Per rule 13a
 this bean stays `todo`.
+
+
+---
+
+## Measured: the involution is PARAMETERISED, never instantiated — and the corpus already holds a candidate (2026-10-11)
+
+The scoping question from the previous append was whether the open item is
+*instantiate an existing object* or *build one from CR geometry*. Measured: it is
+**instantiate**, and the candidate was already on disk, unremarked.
+
+### The gap is an instantiation gap
+
+V10's `ChiralityGradingConstruction.lean` quantifies over `reeb : State → State`
+and `free_of_reeb_odd_grading` is a statement *about* such a map. **Nothing in
+the corpus instantiates it.** Searched every `def`/`abbrev` whose name contains
+`reeb` (case-insensitive) across `folio/**/*.lean` excluding `.lake`: twelve
+hits, none of them an involution on a state space. They are a period
+(`reebPeriod`), vector fields (`qReebVectorField` ×2), a flow sector, a spectrum
+example, a bundle-complement predicate, a horizontality predicate
+(`ReebDecomposition.isPurelyHorizontal`), a divisor predicate, a weight-
+decomposition constructor — and the three **Reeb operators** on the Bring cone.
+
+### The candidate: the SQUARE of a Reeb operator IS negation
+
+`QOU/BringCone.lean` defines `BringCone R := Quaternion R` and
+`reebM_i p := p * ⟨0,1,0,0⟩`, right-multiplication by a quaternionic unit. Those
+operators have **order four**, and their square is negation:
+
+    reebM_i (reebM_i p) = p · i · i = p · (−1) = −p
+
+which is *literally* the `ξ ↦ −ξ` that
+[`brings-surface/archimedean-chirality.md`](../folio/quantum-observable-universe/brings-surface/archimedean-chirality.md)
+names — and that block is one paragraph, one line of file, asserting it.
+
+Hand-verified independently in exact rationals before writing any Lean, on
+`p = (2,3,5,7)`: all three squares return `(−2,−3,−5,−7) = −p`, and
+`reebM_i⁴ p = p`. So `reebM_i` itself is **not** the involution; its square is.
+
+**And negation satisfies V10's criterion where it matters.** `−p = p` iff
+`p + p = 0`, so on a cone where `2` is cancellable the only fixed point is the
+origin — negation is **fixed-point free on the punctured cone**, which is
+exactly the hypothesis `free_of_reeb_odd_grading` needs. V11's constraint (the
+involution must be free, so it is *not* the Type-B folding's matter-fixing one)
+is met by construction rather than by assumption.
+
+### Lean added to `QOU/BringCone.lean` (additive)
+
+| decl | statement |
+|---|---|
+| `reebM_i_sq` / `reebM_j_sq` / `reebM_k_sq` | `reebM_x (reebM_x p) = -p` |
+| `reebM_i_quartic` | `reebM_i⁴ = id` — order four, so `M_i` is not itself the involution |
+| `neg_involutive_cone` | `-(-p) = p` |
+| `neg_fixed_iff_add_self_eq_zero` | `-p = p ↔ p + p = 0` |
+| `neg_free_of_ne_zero` | `2` cancellable on the cone + `p ≠ 0` ⟹ `-p ≠ p` |
+
+Over generic `{R : Type*} [CommRing R]` per §7c — pure ring identities, no
+ordering, no `Real`, no new import. The cancellation hypothesis is explicit
+rather than a typeclass for the same reason; it holds in any `R` of
+characteristic `≠ 2` without zero divisors, so in `ℝ` for the archimedean
+specialisation.
+
+### Corpus-grep before writing
+
+`reebM_i (reebM_i`, `reebM_i ∘ reebM_i`, `reeb_square`, `reebM_sq`: **0 hits**.
+Negation-as-an-involution on the cone: **0 hits** — the `bar-involution.lean`
+and `spin-involution.lean` matches are a different statement (`bar(−x) =
+−bar(x)`, that an involution *commutes* with negation, not that negation *is*
+one). `BringCone.lean` held exactly four declarations before this: the abbrev,
+the three operators, and the three twist identities.
+
+### 🛑 THIS IS A CANDIDATE, NOT A DERIVATION — the gap, named
+
+Proved: the **algebra**. That each Reeb operator squares to negation, that
+negation is involutive, and exactly when it is free.
+
+**Not** proved, and not proved anywhere in the corpus:
+
+1. that the **Bring cone is the physical state space** — the cone is a
+   quaternionic model of the contact link, and V10's `State` is the eight-element
+   gen-1 label set in its instantiation; no map between them exists;
+2. that the involution the **Reeb field induces on physical states** is this
+   negation. `archimedean-chirality` asserts the eigenspace reading in one
+   paragraph; nothing derives it.
+
+So this narrows the open item from *"identify an involution"* to *"show the
+asserted Reeb involution on states is the cone's negation, or exhibit the map
+that transports one to the other"* — a smaller and better-posed question, with
+the first concrete object to aim at. The whole V10/V11 tower stays conditional
+on step 2. Nothing is wired, no observable is predicted, and
+`conj:sm-hypercharge-invariant` stays open; per rule 13a this bean stays `todo`.
