@@ -250,3 +250,14 @@ Item 1/2/3 summary: no composition rule, no selected two-body bond, and no F(mu)
 - pn ≠ np is STRUCTURAL, not a bug: Phi is cyclic and conjugation-invariant (Lean), and Phi(W_pn) = Phi(W_np), but with the interface letter the half twist gives Phi(W_pn s2) = Phi(W̃_np s2), W̃ = mirrored nucleon words. tr_M Markov-factorises (tr(Ws2) = z tr W), so it is order-blind; Phi does not factorise. No derived symmetrisation (bar involution moves q0); averaging the two orders is a choice.
 - Not charge-independent (pp ≠ nn). Magnitudes ~0.1 MeV vs deuteron 2.22 (labelled comparison only).
 Lean QOU/Mass/DeltaLambdaReadingAndExchange.lean (9 decls, sorry-free). Bean stays in-progress.
+
+## 2026-10-11: does a derived symmetry make Φ give pn = np? No (scope a)
+
+PR #7612, commit `47f367ea2ed`. Lean `QOU/Mass/DeltaLambdaMirrorTransport.lean` (7 statements, generic ring, sorry-free, lean-direct exit 0). Probe `computations/probes/delta_lambda_mirror_symmetry_probe.py`, 15/15.
+
+- Among the symmetries checked, only the six-strand half twist F (σ_i ↦ σ_{4−i}) and F composed with word reversal fix the interface s₂ and exchange the blocks. So pn = np needs the nucleon word N to satisfy (M) μN ~ N or (P) ρμN ~ N, up to conjugation commuting with s₂.
+- The proton word, the neutron word and the γγ core (σ_aσ_b⁻¹)³ fail both (M) and (P) exactly. The core's mirror swaps the diagonal entries 1.01123 and 0.98296 in the (2,1) irrep. Borromean amphichirality gives μβ = β⁻¹, not μβ = β.
+- Bar involution and the sign automorphism keep the block order. The sign automorphism also moves the convention-D support onto shapes with three or more rows, where y = 0. Neither can exchange pn and np.
+- Placing a mirrored nucleon in one block makes pn = np for any word. But the two placements disagree (R: T=1 bound, T=0 unbound; L: T=1 unbound, T=0 bound), so this trades defect 1 for an underived choice of which end of the nucleon faces the interface. NOT adopted; choosing would be an owner ruling, never chosen by agreement with data.
+- Charge independence fails in every placement: pp − nn = −0.018 (corpus T), +0.046 (R), −0.069 (L) MeV.
+- Defect 1 (pn ≠ np) stays open.
