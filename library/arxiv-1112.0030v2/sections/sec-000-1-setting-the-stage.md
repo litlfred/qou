@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-7
 source_pdf: 1112.0030v2.pdf
 source_sha256: 745f143c2df4734b
-text_source: latex
-latex_prose_ratio: 0.945
-latex_coverage_ratio: 0.972
 doc_brief: "Homological algebra of knots and BPS states — It is known that knot homologies admit a physical descriptio n as spaces of open BPS states. W e study operators and algebras acting on these spaces."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:intro}
 
@@ -266,7 +266,8 @@ and extends the familiar symmetry $q \leftrightarrow q^{-1}$ of the ordinary HOM
 We plan to pursue the categorification of level-rank duality
 and to study the new, homological symmetry \eqref{mirwild} in the future work.
 
-\subsection*{Organization of the paper}
+
+\subsection{Organization of the paper}
 We start by explaining in section \ref{sec:algebra} that, in general, the space of open BPS states forms a representation
 of the algebra of closed BPS states. Then, in section \ref{sec:matrix} we review elements of the connection between
 string realizations \eqref{theoryA}--\eqref{theoryB} of knot homologies and Landau-Ginzburg models that play an important role

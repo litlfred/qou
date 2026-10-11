@@ -790,8 +790,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 8,
-   "overlaid": 1,
+   "tex_sections": 45,
+   "overlaid": 30,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -817,27 +817,40 @@
     {
      "id": "sec-002-02-rigid-dualising-complexes",
      "title": "Rigid dualising complexes",
-     "result": "no matching \\section"
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.785,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-03-nakayama-automorphisms",
      "title": "Nakayama automorphisms",
-     "result": "no matching \\section"
+     "prose_ratio": 0.655,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-06-the-antipode",
      "title": "The antipode",
-     "result": "no matching \\section"
+     "prose_ratio": 0.067,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-005-04-twisted-hochschild-groups",
      "title": "Twisted Hochschild groups",
-     "result": "no matching \\section"
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-05-classes-of-examples",
      "title": "Classes of examples",
-     "result": "no matching \\section"
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.675,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-07",
@@ -853,17 +866,26 @@
     {
      "id": "sec-009-11-standard-notation",
      "title": "Standard notation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.935,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-12-artin-schelter-gorenstein-algebras",
      "title": "Artin-Schelter Gorenstein algebras",
-     "result": "no matching \\section"
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-13-homological-integrals",
      "title": "Homological integrals",
-     "result": "no matching \\section"
+     "prose_ratio": 0.93,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-2-hopf-algebra-preparations",
@@ -874,95 +896,140 @@
     {
      "id": "sec-013-21-restriction-via",
      "title": "Restriction via",
-     "result": "no matching \\section"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.935,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-014-22-the-left-adjoint-action",
      "title": "The left adjoint action",
-     "result": "no matching \\section"
+     "prose_ratio": 0.906,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-015-23-twisted-bimodules",
      "title": "Twisted (bi)modules",
-     "result": "no matching \\section"
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-016-24-homological-properties-of-the-adjoint-action",
      "title": "Homological properties of the adjoint action",
-     "result": "no matching \\section"
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-017-25-representations-and-winding-automorphisms",
      "title": "Representations and winding automorphisms",
-     "result": "no matching \\section"
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-018-26-the-right-adjoint-action",
      "title": "The right adjoint action",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-019-3-twisted-hochschild-homology",
      "title": "Twisted Hochschild homology",
-     "prose_ratio": 0.589,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-020-33-the-link-with-integrals",
      "title": "The link with integrals",
-     "result": "no matching \\section"
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.948,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-021-34-proof-of-theorem-04a",
      "title": "Proof of Theorem 0.4(a)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.838,
+     "coverage_ratio": 0.943,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-022-35-remarks",
      "title": "Remarks",
-     "result": "no matching \\section"
+     "prose_ratio": 0.938,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-023-4-as-gorenstein-algebras-and-dualising-complexes",
      "title": "AS-Gorenstein algebras and dualising complexes",
-     "prose_ratio": 0.239,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.649,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-024-42-rigid-dualising-complexes",
      "title": "Rigid dualising complexes",
-     "result": "no matching \\section"
+     "prose_ratio": 0.308,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-025-43-van-den-bergh-condition",
      "title": "Van den Bergh condition",
-     "result": "no matching \\section"
+     "prose_ratio": 0.816,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-026-44-rigid-gorenstein-algebras-and-nakayama-automo",
      "title": "Rigid Gorenstein algebras and Nakayama automorphisms",
-     "result": "no matching \\section"
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.945,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-027-45-as-gorenstein-hopf-algebras-are-rigid-gorenst",
      "title": "AS-Gorenstein Hopf algebras are rigid Gorenstein",
-     "result": "no matching \\section"
+     "prose_ratio": 0.556,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-028-46-the-antipode",
      "title": "The antipode",
-     "result": "no matching \\section"
+     "prose_ratio": 0.587,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-029-5-twisted-hochschild-cohomology",
      "title": "Twisted Hochschild cohomology",
-     "prose_ratio": 0.033,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.857,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-030-51-cohomology-and-duality",
      "title": "Cohomology and duality",
-     "result": "no matching \\section"
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-031-6-examples",
@@ -973,37 +1040,58 @@
     {
      "id": "sec-032-61-some-general-properties",
      "title": "Some general properties",
-     "result": "no matching \\section"
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-033-62-noetherian-pi-hopf-algebras",
      "title": "Noetherian PI Hopf algebras",
-     "result": "no matching \\section"
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-034-63-enveloping-algebras",
      "title": "Enveloping algebras",
-     "result": "no matching \\section"
+     "prose_ratio": 0.93,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-035-64-quantised-enveloping-algebras",
      "title": "Quantised enveloping algebras",
-     "result": "no matching \\section"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-036-65-quantised-function-algebras",
      "title": "Quantised function algebras",
-     "result": "no matching \\section"
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-037-66-the-special-linear-group",
      "title": "The special linear group",
-     "result": "no matching \\section"
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.921,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-038-67-noetherian-group-algebras",
      "title": "Noetherian group algebras",
-     "result": "no matching \\section"
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-039-acknowledgments",

@@ -7,10 +7,10 @@ section_number: null
 pages: 3-3
 source_pdf: 2205.01282v2.pdf
 source_sha256: 00f656afa60db838
-text_source: latex
-latex_prose_ratio: 0.974
-latex_coverage_ratio: 1.0
 doc_brief: "Witten-Reshetikhin-Turaev invariants and homological blocks for plumbed homology spheres — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed 3-manifolds."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 []{#sec:acknowledgement label="sec:acknowledgement"}
 

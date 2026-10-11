@@ -7,10 +7,10 @@ section_number: 5.2
 pages: 151-163
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.968
-latex_coverage_ratio: 0.667
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 This section is entirely devoted to the proof of the following theorem. Recall that every map $f\colon M\to N$ between connected manifolds lifts to a (non-unique) map $\tilde f\colon \tilde M \to \tilde N$ between their universal covers.
 \begin{teo} \label{estensione:teo}
@@ -19,6 +19,7 @@ Let $f\colon M \to N$ be a smooth homotopy equivalence between closed hyperbolic
 
 Every smooth homotopy equivalence extends to a homeomorphism of the boundaries of the universal coverings. This theorem will have important consequences in the Chapters \ref{automorphisms:chapter} and \ref{Mostow:chapter}.
 To prove it, we need to define a weaker notion of isometry.
+
 
 \subsection{Quasi-isometries}
 
@@ -31,6 +32,7 @@ for all $x_1,x_2 \in X$ and $d(F(X),y)\leqslant C_2$ for all $y\in Y$.
 A quasi-isometry is an isometry up to some error: note that $F$ might neither be continuous nor injective. Two metric spaces are \emph{quasi-isometric} if there is a quasi-isometry $F\colon X \to Y$ (which implies the existence of a quasi-isometry $G\colon Y\to X$, exercise) and quasi-isometry is an equivalence relation between metric spaces. Intuitively, looking at a space up to quasi-isometries is like watching it from some distance. Compact metric spaces are obviously quasi-isometric to a point. 
 
 This notion is an important ingredient in \emph{geometric group theory}: one may for instance give every finitely-presented group $G$ a canonical metric (through its \emph{Cayley graph}), uniquely determined up to quasi-isometries.\index{geometric group theory}\index{Cayley graph} 
+
 
 \subsection{Pseudo-isometries}
 Let $f\colon M \to N$ be a homotopic equivalence between closed hyperbolic $n$-manifolds. Every continuous function is homotopic to a smooth one, hence we suppose that $f$ is smooth. The map lifts to a map $\tilde f\colon \matH^n \to \matH^n$. We will prove that $\tilde f$ is a quasi-isometry. Actually, the map $\tilde f$ is also continuous and (as we soon see) Lipschitz: it will be useful for us to retain this information on $\tilde f$ to simplify some arguments, so we introduce a different (more restrictive but less natural) version of a quasi-isometry.\index{pseudo-isometry}
@@ -59,6 +61,7 @@ Being a composition of lifts, the map $\tilde g \circ \tilde f$ commutes with $\
 $$d(x_1,x_2) - 2K \leqslant d\big( \tilde g (\tilde f(x_1)), \tilde g (\tilde f(x_2)) \big) \leqslant C_1 \cdot d\big(\tilde f(x_1), \tilde f(x_2)\big) $$
 for all $x_1,x_2 \in \matH^n$. Therefore $\tilde f$ is a pseudo-isometry with $C_2 = 2K/C_1$.
 \end{proof}
+
 
 \subsection{Boundary extension of a pseudo-isometry}
 We now prove that not only pseudo-isometries $\matH^n \to \matH^n$ extend at infinity, but their extensions at $\partial \matH^n$ eliminate the ``errors'' and behave nicely.
@@ -216,6 +219,7 @@ We know that $\tilde f$ is a pseudo-isometry and hence extends to a map $\tilde 
 
 Pick a smooth homotopic inverse $g$ for $f$. The homotopy $\id_M \sim g \circ f$ lifts to a homotopy $\id_{\matH^n}\sim\tilde g\circ \tilde f$ for some lift $\tilde g$. Since $M$ is compact, the latter homotopy moves every point at uniformly bounded distance and hence $\tilde g\circ \tilde f$ extends continuously to the identity on $\partial \matH^n$, and the same holds for $\tilde f\circ \tilde g$. Therefore $\tilde g|_{\partial \matH^n}$ is the inverse of $\tilde f|_{\partial \matH^n}$ and they are both homeomorphisms.
 \end{proof}
+
 
 \subsection{References}
 As in the previous chapters, we have mostly consulted Benedetti -- Petronio \cite{BP}, Ratcliffe \cite{R}, and Thurston's notes \cite{Th}. The Epstein -- Penner decomposition is taken from their 1988 paper \cite{EP}. 

@@ -7,10 +7,10 @@ section_number: 8
 pages: 54-56
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
-text_source: latex
-latex_prose_ratio: 0.939
-latex_coverage_ratio: 0.946
 doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sdeg}
 

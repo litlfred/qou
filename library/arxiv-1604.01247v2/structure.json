@@ -371,8 +371,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 8,
-   "overlaid": 2,
+   "tex_sections": 29,
+   "overlaid": 12,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -382,76 +382,104 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.864,
+     "prose_ratio": 0.884,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-23-the-quark-lepton-symmetry",
      "title": "The quark-lepton symmetry",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-24-gauge-theoretical-aspect",
      "title": "Gauge theoretical aspect",
-     "result": "no matching \\section"
+     "prose_ratio": 0.937,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-31-the-3-generations",
      "title": "the 3-generations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.972,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-32-finite-quantum-spaces",
      "title": "Finite quantum spaces",
-     "result": "no matching \\section"
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-34-exceptional-almost-classical-quantum-spacetim",
      "title": "Exceptional almost classical quantum spacetime",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-4-modules-and-fundamental-fermions",
      "title": "Modules and fundamental fermions",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-007-41-modules-over-jordan-algebras",
      "title": "Modules over Jordan algebras",
-     "result": "no matching \\section"
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-43-modules-for-the-two-families-by-generation",
      "title": "Modules for the two families by generation",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-45-charge-conjugation",
      "title": "Charge conjugation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.991,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-6-connections-on-jordan-modules",
      "title": "Connections on Jordan modules",
-     "prose_ratio": 0.758,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.772,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-011-63-general-connections",
      "title": "General connections",
-     "result": "no matching \\section"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-7-tentative-conclusion",
      "title": "Tentative conclusion",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.483,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.547,
+     "result": "overlaid",
+     "converter": "pandoc"
     }
    ]
   }

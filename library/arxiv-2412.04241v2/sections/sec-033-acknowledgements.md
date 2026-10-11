@@ -7,10 +7,10 @@ section_number: null
 pages: 71-71
 source_pdf: 2412.04241v2.pdf
 source_sha256: 308d1dd1c42bd979
-text_source: latex
-latex_prose_ratio: 0.976
-latex_coverage_ratio: 0.976
 doc_brief: "THE HABIRO RING OF A NUMBER FIELD — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 The authors wish to thank Frank Calegari, Maxim Kontsevich, Yan Soibelman,
 Matthias Storzer and Ferdinand Wagner for enlightening conversations.

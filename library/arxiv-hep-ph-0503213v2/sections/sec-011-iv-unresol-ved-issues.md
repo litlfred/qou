@@ -7,10 +7,10 @@ section_number: IV
 pages: 5-6
 source_pdf: 0503213v2.pdf
 source_sha256: 637a9e53b9b30776
-text_source: latex
-latex_prose_ratio: 0.873
-latex_coverage_ratio: 1.0
 doc_brief: "A topological model of composite preons — 14 sections: INTRODUCTION; THE HELON MODEL; PHENOMENOLOGY OF THE HELON"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.988
 ---
 []{#sec:issues label="sec:issues"} There are three significant issues the helon model has not yet addressed: the origin of spin, the origin of mass, and the nature of Cabbibo-mixing.\
 At the outset we hoped that spin would be emergent. Thus far we have been partly successful, identifying helicity of helon triplets, but not spin itself. It may be tempting then to assume that helons carry spin-$\frac{1}{2}$, and combine to form spin-$\frac{1}{2}$ composites. However this would not explain what spin is, would complicate the model, and would necessitate further assumptions to explain why helons never combine to form spin-$\frac{3}{2}$ states. It therefore seems reasonable to press ahead in the hope that spin will emerge as a consequence, rather than an assumption, of a dynamical theory based on the helon model.\

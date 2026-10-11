@@ -8,168 +8,187 @@ pages: 9-11
 source_pdf: 2007.10190v2.pdf
 source_sha256: 37bcbd3a343bb21a
 doc_brief: "THE RESURGENT STRUCTURE OF QUANTUM KNOT INVARIANTS — The asymptotic expansion of quantum knot invariants in complex Chern-Simons theory gives rise to factorially divergent formal power series."
+text_source: latex
+latex_prose_ratio: 0.97
+latex_coverage_ratio: 0.93
 ---
-of state integrals and some of their basic properties. State integrals are multidimensional
-integrals whose integrand is a product of Faddeev’s quantum dilogarithm function Φb (whose
-deﬁnition we will not need and may be found in [Fad95, FK94]) times an exponential of a
-quadratic and linear form. Here τ = b2∈ C ′ := C \ (−∞, 0], thus even if the integrand
-contains no free variables, a state integral is always a holomorphic function of τ.
+\label{sub.state}
+
+In this section we recall the definition of state integrals and some
+of their basic properties. State integrals are multidimensional
+integrals whose integrand is a product of Faddeev's quantum
+dilogarithm function $\Phi_{\bb}$ (whose definition we will not need
+and may be found in~\cite{Faddeev,FK-QDL}) times an exponential of a
+quadratic and linear form. Here
+$\tau=\bb^2 \in \BC':=\BC\setminus(-\infty,0]$, thus even if the
+integrand contains no free variables, a state integral is always a
+holomorphic function of $\tau$.
+
 State integrals have two key properties:
-(a) they deﬁne holomorphic functions in the complex cut plane C ′.
-(b) they can be expressed bilinearly in the upper and in the lower half-plane in terms of
-products of q-series and ˜q-series.
-For a detailed discussion of state integrals and numerous example, see for instance [BDP14]
-and also [AK14] and [GK17].
-In this section we introduce a descendant version of the one dimensional state integrals
-of [GK17] that satisﬁes the above properties. In this section we will use the notation
-from [GK17]. Consider the state integral
-IA,B,λ,µ(b) =
-∫
-R +iϵ
-Φb(x)Be−Aπix2+2π(λb−µb−1)xdx, (λ,µ∈ Z ) (39)
-where A and B are integers and B > A >0. Under these assumptions, it follows that the
-integrand is exponentially decaying at inﬁnity and the integral is absolutely convergent and
-deﬁnes a holomorphic function of τ = b2∈ C ′. Below, we will use the notation φ(w,δ•),
-˜φ(w, ˜δ•) and
-⟨F (q,x )⟩ =F (q, 1) (40)
-from [GK17].
-Theorem 3. Fix integers A and B with B > A >0 and integers λ and µ. For all τ with
-ℑ(τ)> 0, we have:
-IA,B,λ,µ(b) = (−1)λ−µq
-λ
-2 ˜q
-µ
-2
-( ˜q
-q
-)B−3A
-24
-eπiB+2(A+1)
-4 ⟨PA,B,λ,µ
-(
-FA,B,λ(q,x )~FA,B,µ(˜q, ˜x)
-)
-⟩ (41)
-where the operator PA,B,λ,µ is given by
-PA,B,λ,µ = Resw=0
-(
-e
-w2
-4πi +w(b(δ+1/2+λ/A)+b−1(˜δ+1/2−µ/A)))A
-(
-φ(bw,δ•)˜φ(b−1w, ˜δ•)
-b(1− eb−1w)
-)B
-. (42)
-In particular, the right hand side of Equation (41) is a bilinear combination ofq and ˜q-series
-extend to the cut plane C ′. A similar formula can be given when τ is in the lower half-plane,
-and what is more, the state integral satisﬁes the symmetry IA,B,λ,µ(b) =IA,B,λ,µ(b−1) which
-is a consequence of the symmetry Φ b−1(x) = Φb(x) of the quantum dilogarithm.
-Proof. We follow the derivation in [GK17] closely. The idea is to sum up residues at all
-singularities in the upper half-plane. The factor Φ b(x) has poles at
-xm,n = ib(m + 1/2) + ib−1(n + 1/2), m,n ∈ N . (43)
-10 STA VROS GAROUF ALIDIS, JIE GU, AND MARCOS MARI ˜NO
-We notice that
-e2π(λb−µb−1)(x+xm,n) = ew(λb−µb−1)qλ(m+1/2)˜qµ(n+1/2)(−1)λ−µ (44)
-where we have made the change of variables w = 2πx and used the notation
-q = e2πib2
-, ˜q = e−2πib−2
-. (45)
-Now by modifying Eqn.(27) of [GK17], we ﬁnd
-IA,B,λ,µ(b) = (−1)λ−µq
-λ
-2 ˜q
-µ
-2
-( ˜q
-q
-)B−3A
-24
-eπiB+2(A+1)
-4 ×
-∞∑
-m,n=0
-(Resw=0FA,B,m,n,λ,µ(w))qλmtm(q)A
-(q;q)B
-m
-˜qµn˜tn(˜q)A
-(˜q−1; ˜q−1)B
-n
-, (46)
-where
-FA,B,m,n,λ,µ(w) =
-(
-e
-w2
-4πi +w(b(m+1/2+λ/A)+b−1(n+1/2−µ/A)))A
-(
-φm(bw)˜φn(b−1w)
-b(1−eb−1w)
-)B
-. (47)
-Using the operator formalism in [GK17], this concludes the proof of Equation (41). □
-The reader may ﬁnd in [GK17] the expressions of the operators φ(w,δ•), ˜φ(w, ˜δ•). Note
-that el(˜q) in the paper are simply E(0)
-l (˜q). In addition,
-FA,B,λ(q,x ) =
-∞∑
-n=0
-(−1)AnqAn(n+1)
-2 +nλ
-(q;q)B
-n
-xn, (48)
-~FA,B,µ(˜q, ˜x) =
-∞∑
-n=0
-(−1)(B−A)n ˜q(B−A)n(n+1)
-2 +nµ
-(˜q; ˜q)B
-n
-˜xn. (49)
-They can be related by
-FA,B,λ(q−1,x ) = ~FA,B,−λ(q,x ). (50)
-Example 4. In this example we illustrate theorem 3 with the state integral I1,2,λ,µ(b) asso-
-ciated to the 4 1 knot [AK14]. As we will see, this reproduces the q-series G0
-m(q) and G1
-m(q)
-of (13a) and (13b).
+\begin{itemize}
+\item[(a)] they define holomorphic functions in the complex cut plane
+  $\BC'$.
+\item[(b)] they can be expressed bilinearly in the upper and in the
+  lower half-plane in terms of products of $q$-series and
+  $\tq$-series.
+\end{itemize}
+For a detailed discussion of state integrals and numerous example, see
+for instance~\cite{Beem} and also~\cite{AK} and~\cite{GK:qseries}.
+
+In this section we introduce a descendant version of the one
+dimensional state integrals of~\cite{GK:qseries} that satisfies the
+above properties. In this section we will use the notation
+from~\cite{GK:qseries}.  Consider the state integral
+
+\begin{equation}
+\label{eq.statelm}
+  \calI_{A,B,\lambda,\mu}(\bb) =
+    \int_{\BR+\ri\epsilon} \Phi_{\bb}(x)^B \re^{-A\pi\ri x^2 +
+      2\pi(\lambda \bb - \mu \bb^{-1})x}\rd x,\qquad
+     (\lambda,\mu\in \BZ)
+   \end{equation}
+   
+   where $A$ and $B$ are integers and $B > A > 0$. Under these
+  assumptions, it follows that the integrand is exponentially decaying
+  at infinity and the integral is absolutely convergent and defines
+  a holomorphic
+  function of $\tau = \bb^2 \in \BC'$.
+  Below, we will use the notation
+  $\phi(w,\delta_\bullet)$, $\tilde{\phi}(w,\tilde{\delta}_\bullet)$
+  and 
+  \begin{equation}
+    \vev{F(q,x)} = F(q,1)
+  \end{equation}
+  from~\cite{GK:qseries}.
+  
+  \begin{theorem}
+    \label{thm.state}
+    Fix integers $A$ and $B$ with $B > A > 0$ and integers $\lambda$ and
+    $\mu$. For all $\tau$ with $\Im(\tau)>0$, we have:
+\begin{equation}
+\label{thm1}
+    \calI_{A,B,\lambda,\mu}(\bb) =
+    (-1)^{\lambda-\mu} q^{\frac{\lambda}{2}}\tq^{\frac{\mu}{2}}
+    \left(\frac{\tq}{q}\right)^{\frac{B-3A}{24}}
+    \re^{\pi\ri\frac{B+2(A+1)}{4}}
+    \vev{P_{A,B,\lambda,\mu}
+      \left(F_{A,B,\lambda}(q,x)\wt{F}_{A,B,\mu}(\tq,\tx)\right)}
+  \end{equation}
+where the operator $P_{A,B,\lambda,\mu}$ is given by
+\begin{equation}
+  \label{Plm}
+    P_{A,B,\lambda,\mu} = \Res_{w=0}
+    \left(
+      \re^{\frac{w^2}{4\pi\ri}+w\left(\bb(\delta+1/2+\lambda/A)
+          +\bb^{-1}(\tilde{\delta}+1/2-\mu/A)\right)}
+    \right)^A
+    \left(\frac{\phi(\bb w,\delta_\bullet)
+        \tilde{\phi}(\bb^{-1}w,\tilde{\delta}_\bullet)}
+      {\bb(1-\re^{\bb^{-1}w})}\right)^B .
+  \end{equation}
+  \end{theorem}
+  In particular, the right hand side of Equation~\eqref{thm1} is a
+  bilinear combination of $q$ and $\tq$-series extend to the cut plane
+  $\BC'$. A similar formula can be given when $\tau$ is in the lower
+  half-plane, and what is more, the state integral satisfies the
+  symmetry
+  $\calI_{A,B,\lambda,\mu}(\bb) = \calI_{A,B,\lambda,\mu}(\bb^{-1})$
+  which is a consequence of the symmetry
+  $\Phi_{\bb^{-1}}(x)=\Phi_{\bb}(x)$ of the quantum dilogarithm.
+  
+  \begin{proof}
+  We follow the derivation in \cite{GK:qseries} closely.
+  The idea is to sum up residues at all singularities in the upper
+  half-plane.  The factor $\Phi_{\bb}(x)$ has poles at
+  \begin{equation}
+    x_{m,n} = \ri\bb(m+1/2) + \ri\bb^{-1}(n+1/2),\quad m,n\in
+    \BN \,.
+  \end{equation}
+  We notice that
+  \begin{equation}
+    \re^{2\pi(\lambda\bb - \mu\bb^{-1})(x+x_{m,n})} =
+    \re^{w(\lambda\bb - \mu\bb^{-1})}
+    q^{\lambda(m+1/2)}\tq^{\mu(n+1/2)}(-1)^{\lambda-\mu} 
+  \end{equation}
+  where we have made the change of variables $w = 2\pi x$ and used the
+  notation
+  \begin{equation}
+    q = \re^{2\pi\ri \bb^2},\quad \tq = \re^{-2\pi\ri \bb^{-2}}.
+  \end{equation}
+  Now by modifying Eqn.(27) of~\cite{GK:qseries}, we find
+  \begin{multline}
+    \calI_{A,B,\lambda,\mu}(\bb) =
+    (-1)^{\lambda-\mu} q^{\frac{\lambda}{2}}\tq^{\frac{\mu}{2}}
+    \left(\frac{\tq}{q}\right)^{\frac{B-3A}{24}}
+    \re^{\pi\ri\frac{B+2(A+1)}{4}} \times \\
+    \sum_{m,n=0}^\infty \left(\Res_{w = 0}F_{A,B,m,n,\lambda,\mu}(w)\right)
+    \frac{q^{\lambda m}t_m(q)^A}{(q;q)_m^B}
+    \frac{\tq^{\mu n}\tilde{t}_n(\tq)^A}{(\tq^{-1};\tq^{-1})_n^B} \,,
+  \end{multline}
+  where
+  \begin{equation}
+    F_{A,B,m,n,\lambda,\mu}(w) =
+    \left(e^{\frac{w^2}{4\pi\ri}+w\left(\bb(m+1/2
+          +\lambda/A)+\bb^{-1}(n+1/2-\mu/A)\right)}
+    \right)^A
+    \left(\frac{\phi_m(\bb w)\tilde{\phi}_n(\bb^{-1}w)}
+      {\bb(1-e^{\bb^{-1}w})}\right)^B \,.
+  \end{equation}
+  Using the operator formalism in \cite{GK:qseries}, this concludes
+  the proof of Equation~\eqref{thm1}.
+\end{proof}
+
+  The reader may find in~\cite{GK:qseries} the expressions of the operators
+  $\phi(w,\delta_\bullet)$, $\tilde{\phi}(w,\tilde{\delta}_\bullet)$.
+  Note that $e_l(\tq)$ in the paper are simply $E_l^{(0)}(\tq)$.
+  In addition,
+  \begin{align}
+    &F_{A,B,\lambda}(q,x) = \sum_{n=0}^\infty (-1)^{A n}
+      \frac{q^{A\frac{n(n+1)}{2}+n\lambda}}{(q;q)_n^B} x^n,\\
+    &\wt{F}_{A,B,\mu}(\tq,\tx) = \sum_{n=0}^\infty (-1)^{(B-A) n}
+      \frac{\tq^{(B-A)\frac{n(n+1)}{2}+n\mu}}{(\tq;\tq)_n^B} \tx^n.
+  \end{align}
+  They can be related by
+  \begin{equation}
+    F_{A,B,\lambda}(q^{-1},x) = \wt{F}_{A,B,-\lambda}(q,x).
+  \end{equation}
+
+  \begin{example}
+\label{ex.41s}
+In this example we illustrate theorem~\ref{thm.state} with the
+state integral $\calI_{1,2,\lambda,\mu}(\bb)$ associated to the $4_1$
+knot~\cite{AK}. As we will see, this reproduces the $q$-series
+$G^0_m(q)$ and $G^1_m(q)$ of~\eqref{gm} and~\eqref{Gm}.
+
 Using
-Fλ(q,x ) =F1,2,λ(q,x ) = ~F1,2,λ(q,x ) =
-∞∑
-n=0
-(−1)nq
-n(n+1)
-2 +nλ
-(q;q)2
-n
-xn. (51)
-we ﬁnd that
-P1,2,λ,µ = b
-2(1 + 2δ− 4δ1 + 2λ)− b−1
-2 (1 + 2˜δ− 4˜δ1 + 2µ). (52)
-It then follows that (τ = b2)
-I1,2,λ,µ(b) = (−1)λ−µ+1iq
-λ
-2 ˜q
-µ
-2
-(q
-˜q
-) 1
-24
-(τ 1/2
-2 G1
-λ(q)G0
-µ(˜q)− τ−1/2
-2 G0
-λ(q)G1
-µ(˜q)
-)
-, (53)
-THE RESURGENT STRUCTURE OF QUANTUM KNOT INV ARIANTS 11
-where we have used that
-⟨Fλ(q,x )⟩ =G0
-λ(q), ⟨(1 + 2λ + 2δ− 4δ1)Fλ(q,x )⟩ =G1
-λ(q). (54)
-In appendix A, we give the details for the state integral I2,3,λ,µ(b) of the 5 2 knot.
+  \begin{equation}
+    F_\lambda(q,x) = F_{1,2,\lambda}(q,x) = \wt{F}_{1,2,\lambda}(q,x)
+    = \sum_{n=0}^\infty (-1)^n \frac{q^{\frac{n(n+1)}{2}+n\lambda}}{(q;q)_n^2}x^n.
+  \end{equation}
+  we find that 
+  \begin{equation}
+    P_{1,2,\lambda,\mu} =
+    \frac{\bb}{2}(1+2\delta - 4\delta_1+2\lambda)
+    -\frac{\bb^{-1}}{2}(1+2\tilde{\delta} - 4\tilde{\delta}_1 + 2\mu).
+  \end{equation}
+  It then follows that ($\tau = \bb^2$)
+  \begin{equation}
+  \label{desc-41}
+    \calI_{1,2,\lambda,\mu}(\bb)
+    =
+    (-1)^{\lambda-\mu+1}\ri q^{\frac{\lambda}{2}}\tq^{\frac{\mu}{2}}
+    \left(\frac{q}{\tq}\right)^{\frac{1}{24}}
+    \left(\frac{\tau^{1/2}}{2}G^1_\lambda(q)G^0_\mu(\tq) -
+      \frac{\tau^{-1/2}}{2}G^0_\lambda(q)G^1_\mu(\tq)\right),
+  \end{equation}
+  
+  where we have used that
+  
+  \be
+  \vev{F_{\lambda}(q,x)}=G^0_\lambda(q) , \qquad
+  \vev{(1+2\lambda+2\delta-4\delta_1)F_\lambda(q,x)}=G^1_\lambda(q). 
+    \end{equation}
+    
+\end{example}
+In appendix~\ref{sec.A52}, we give the details for the state integral
+$\calI_{2,3,\lambda,\mu}(\bb)$ of the $5_2$ knot.

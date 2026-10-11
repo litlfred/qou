@@ -7,7 +7,8 @@
   "bytes": 193643,
   "pages": 18,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -228,6 +229,77 @@
   "likely_scanned": false,
   "toc_entries": 11,
   "sections": 11,
-  "chars_total": 32747
+  "chars_total": 32747,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 8,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.724,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-2-v-\u03bbv-\u00b5-1",
+     "title": "(V (\u03bb)+V (\u00b5)) 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-2-utx",
+     "title": "(u(t)x)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-2-ux",
+     "title": "(ux)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-2-v-\u03bb2v-\u00b52-1",
+     "title": "(V (\u03bb2)+V (\u00b52)) 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-2-uxj\u03b11",
+     "title": "(ux)J\u03b1\u22121",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-2-ux-1",
+     "title": "(u\u2032x) = 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-2-j\u03b13",
+     "title": "J\u03b1\u22123",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-acknowledgements",
+     "title": "Acknowledgements",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -7,10 +7,10 @@ section_number: 15.4
 pages: 476-487
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.972
-latex_coverage_ratio: 0.844
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 We have discovered that ``most'' Dehn fillings of a cusped finite-volume hyperbolic manifold are hyperbolic, and we now discuss their volumes.
 
@@ -34,6 +34,7 @@ that computes the volume of each hyperbolic structure on $M$. We show that the v
 
 We conclude with a couple of finite-covering tricks to pass from local (near $(\infty, \ldots, \infty)$) to global, and to deal with more general manifolds $M$ that do not decompose into hyperbolic ideal tetrahedra.
 
+
 \subsection{Angle structures}
 Let $M= \interior{N}$ where $N$ is an orientable compact three-manifold bounded by $c>0$ tori, equipped with an oriented ideal triangulation $\calT$ with $n$ tetrahedra $\Delta_1,\ldots, \Delta_n$ and $n$ edges $e_1,\ldots, e_n$. We identify orientation-preservingly each $\Delta_i$ with the one shown in Figure \ref{tetrahedron_labels:fig}, and we label the edge pairs of type 1, 2, 3, with the numbers $i$, $i+n$, and $i+2n$ respectively.
 
@@ -56,6 +57,7 @@ Condition (2) is only ``half'' of the consistency equation at each $e_i$, which 
 
 With this geometric description, the deformation space $\Def(M,\calT)$ is naturally a smooth submanifold of $\calA$. 
 
+
 \subsection{Dimensions}
 We will henceforth suppose that $\Def(M,\calT)$ is non-empty and contains a complete solution $z^0$, that is $\calT$ can be realised as a geometric ideal triangulation. This implies in particular that $\calA$ is also non-empty and has dimension $\dim\ker A = 3n - (2n-c) =n+c$ by Corollary \ref{rk:A:cor}. The space $\Def(M,\calT)$ is a real smooth submanifold of dimension $2c$. 
 
@@ -76,6 +78,7 @@ To prove that the $n+2c$ listed vectors generate $\ker A$ it suffices to show th
 
 The vectors $A_1,\ldots, A_{2n},v_{m_1}, v_{l_1}, \ldots, v_{m_c}, v_{l_c}$  span a dimension-$(2n+c)$ space. Since $\dim \ker \omega = n$, the vectors $A_1^*,\ldots, A_{2n}^*,v_{m_1}^*, v_{l_1}^*, \ldots, v_{m_c}^*, v_{l_c}^*$ span a space of dimension at least $2n+c-n = n+c$. Since $A_1^* = \ldots = A_n^* = 0$, we are done.
 \end{proof}
+
 
 \subsection{The volume function}
 The volume function on $\Def(M,\calT)$ extends naturally to a function
@@ -113,6 +116,7 @@ Indeed the denominator is positive since $\theta_i, \theta_{i+n} < \frac \pi 2$,
 
 We have discovered that $\Vol$ is a smooth strictly concave function on $\calA$. 
 
+
 \subsection{The complete solution}
 We now remember that $\Def(M,\calT)$ contains a complete solution $z^0$ by assumption.
 
@@ -136,6 +140,7 @@ Proposition \ref{redundant:generators:prop} shows that vectors of type $A_{n+i}^
 \begin{cor}
 The space $\Def(M,\calT)$ contains at most one complete solution.
 \end{cor}
+
 
 \subsection{Volumes and Dehn filling}
 We can now prove Theorem \ref{vol:vol:teo} on manifolds having a geometric ideal triangulation. We start with a ``local'' version which also considers generalised Dehn fillings, see Section \ref{generalised:subsection}.
@@ -185,6 +190,7 @@ Let $M$ have a geometric ideal triangulation. If $M_i$ is a closed Dehn filling 
 
 To conclude the proof of Theorem \ref{vol:vol:teo} we only need to consider the unlucky case where $M$ has no geodesic ideal triangulations. We prove that geometric triangulations exist on some finite cover of $M$, and this will suffice.
 
+
 \subsection{Geometric triangulations exist virtually}
 We prove here the following.
 
@@ -204,6 +210,7 @@ The subgroup $\Stab_\Gamma(\tilde v) = \pi_1(T)$ is separable by Corollary \ref{
 No element $\varphi\in H$ is such that $\varphi(\tilde v) = \tilde v'$, otherwise we would have $\gamma^{-1}\varphi \in \Stab_\Gamma(v) < H$ and hence $\gamma \in H$, a contradiction. We have constructed a finite-cover $\matH^3/_H$ where in some lift $P_i^j$ of $P_i$ the two lifted vertices $\tilde v,\tilde v'$ lie in distinct cusps.
 \end{proof}
 
+
 \subsection{Conclusion of the proof}
 We can finally prove Theorem \ref{vol:vol:teo}.
 
@@ -221,6 +228,7 @@ By Lemma \ref{sse:converge:lemma} there is an $\varepsilon > 0$ such that
 $$\Vol(\tilde M) - \varepsilon > v_3\|\tilde M^{\rm fill}_i\| \geqslant d v_3\|M^{\rm fill}_i\| = d\Vol(M^{\rm fill}_i)$$
 for all $i$, hence $d\Vol(M) - \varepsilon = \Vol(\tilde M) - \varepsilon \geqslant d\Vol(M^{\rm fill})$. 
 \finedimo
+
 
 \subsection{Bounded volume}
 How many hyperbolic manifolds are there with bounded volume? In general, infinitely many. 
@@ -242,6 +250,7 @@ Let $X\subset M^{\rm thick}$ be a \emph{maximal $\frac{\varepsilon}2$-net}, that
 
 The set $X$ determines a cellularisation of $M^{\rm thick}$ as follows. Lift $X$ to $\tilde X\subset \matH^3$, take the Voronoi tessellation (see Section \ref{Voronoi:subsection}) determined by $\tilde X$ and project it back to $M$: this furnishes a subdivision of $M^{\rm thick}$ into polyhedra. Since $X$ is maximal, every polyhedron has at most $C'(\varepsilon)$ faces with $C'$ depending only on $\varepsilon$. Hence there are finitely many combinatorial types of polyhedra, depending only on $\varepsilon$. With at most $C(V)$ of them we obtain only finitely many manifolds. (The proof of Proposition \ref{X:triangulation:prop} applies to polyhedra and shows that the combinatorial subdivision determines the smooth manifold.)
 \end{proof}
+
 
 \subsection{Volumes of hyperbolic three-manifolds}
 We finish this chapter by furnishing some qualitative information on the set of volumes of hyperbolic three-manifolds. We start with the following.
@@ -280,6 +289,7 @@ For every $V>0$ and $R>0$ there are only finite many closed hyperbolic three-man
 \begin{proof}
 On a sequence of closed hyperbolic three-manifolds with bounded volume, the length of some core geodesic tends to zero.
 \end{proof}
+
 
 
 \subsection{References}

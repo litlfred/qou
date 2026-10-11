@@ -7,10 +7,10 @@ section_number: 1
 pages: 2-2
 source_pdf: 0203462v1.pdf
 source_sha256: 337c24b051365f0a
-text_source: latex
-latex_prose_ratio: 0.928
-latex_coverage_ratio: 0.969
 doc_brief: "1Astronomy & Astrophysics manuscript no. (will be inserted by hand later) — We present a high-resolution (R=75,000, S/N ∼ 500) spectroscopic analysis of the bright (V=11.7), extreme halo giant CS"
+text_source: latex
+latex_prose_ratio: 0.997
+latex_coverage_ratio: 0.98
 ---
 []{#introduction label="introduction"}
 
@@ -18,7 +18,7 @@ The detailed chemical abundances of the most metal-poor halo stars contain uniqu
 
 The difficulty in obtaining the required data for such stars challenges 4m-class telescopes to their limits, hence the accuracy of the results was significantly limited by the resolution and S/N ratio of the available spectra. Therefore, we have conducted a large program at the ESO *Very Large Telescope* (VLT) and its UVES spectrograph to obtain a systematic, homogeneous spectroscopic analysis of a large sample of extreme halo stars from the HK survey of Beers et al. ([@beers92]), and ongoing follow-up work. This contribution is the first in a series of several analysis papers to appear from this program.
 
-During this program, the bright (V = 11.7), very metal-poor halo giant CS 31082-001 , discovered during medium-resolution spectroscopic follow-up of candidate metal-poor stars from the HK survey of Beers and colleagues (Beers, Preston, & Shectman [@beers92]; Beers [@beers99]; Beers et al. [@beers02b]) was found to be strongly enhanced in heavy neutron-capture elements. Its large $r$-element excess, low carbon and nitrogen content (reducing the CN and CH molecular band contamination, see Table [\[T-elements\]](#T-elements){reference-type="ref" reference="T-elements"} and Fig. [1](#F-CN){reference-type="ref" reference="F-CN"}), and our superb VLT/UVES spectra permitted the first $^{238}$U abundance measurement in a halo star (Cayrel et al. [@cayrel01]), as well as a very accurate abundance of $^{232}$Th. This discovery opens the way to a new, far more accurate and reliable radioactive chronometer for old stars, based on the ratio U/Th rather than the conventional Th/Eu ratio, provided that the initial production ratio of U/Th can be reliably estimated.
+During this program, the bright (V = 11.7), very metal-poor halo giant CS 31082-001 , discovered during medium-resolution spectroscopic follow-up of candidate metal-poor stars from the HK survey of Beers and colleagues (Beers, Preston, & Shectman [@beers92]; Beers [@beers99]; Beers et al. [@beers02b]) was found to be strongly enhanced in heavy neutron-capture elements. Its large $r$-element excess, low carbon and nitrogen content (reducing the CN and CH molecular band contamination, see Table [\[T-elements\]](#T-elements){reference-type="ref" reference="T-elements"} and Fig. [\[F-CN\]](#F-CN){reference-type="ref" reference="F-CN"}), and our superb VLT/UVES spectra permitted the first $^{238}$U abundance measurement in a halo star (Cayrel et al. [@cayrel01]), as well as a very accurate abundance of $^{232}$Th. This discovery opens the way to a new, far more accurate and reliable radioactive chronometer for old stars, based on the ratio U/Th rather than the conventional Th/Eu ratio, provided that the initial production ratio of U/Th can be reliably estimated.
 
 Uranium was first detected outside the Solar System in the spectra of a handful of CP stars (Jaschek & Malaroda [@jm70]; Cowley, Aikman & Fisher [@cow77] and references therein). The huge enhancements of the rare earths and other heavy elements in Ap stars are not fully understood, but radiative support (e.g, Michaud et al. [@michaud76]) is generally favoured over a nucleosynthetic origin (Burbidge & Burbidge [@burbige55]). Hence, the U abundance in CP stars is not relevant to galactic nucleosynthesis and radioactive chronometry and is not considered further here.
 
@@ -28,7 +28,6 @@ Our first study of the *r*-process elements in CS 31082-001 (Hill et al. [@h
 
 This paper is organized as follows: Section [\[observations\]](#observations){reference-type="ref" reference="observations"} describes the observations and data reduction, while section 3 presents a detailed analysis of the elements up to nickel. Section [\[neutron capture\]](#neutron capture){reference-type="ref" reference="neutron capture"} presents a re-analysis of the $r$-process elements, while section [\[r universal\]](#r universal){reference-type="ref" reference="r universal"} addresses the universality or otherwise of the $r$-process. In section [\[age\]](#age){reference-type="ref" reference="age"} we consider anew the age determination for CS 31082-001 . Section [\[conclusion\]](#conclusion){reference-type="ref" reference="conclusion"} summarizes our conclusions.
 
-<figure id="F-CN">
-<p><span><embed src="M2317f1.ps" style="width:17cm" /> <embed src="M2317f2.ps" style="width:17cm" /></span></p>
-<figcaption>Comparison of the spectrum of CS 31082-001 (thick line) and CS 22892-052   (narrow line) showing the much reduced molecular band strength in the former. <span><em>Upper panel:</em></span> CN 3871 and 3883Å band heads; <span><em>lower panel:</em></span> G band (CH). The spectrum of CS 22892-052 was obtained during the comissioning of the spectrograph UVES, and is publicly available(http://www.eso.org/science/uves_comm/).</figcaption>
-</figure>
+::: figure*
+![image](M2317f1.ps){width="17cm"} ![image](M2317f2.ps){width="17cm"}
+:::

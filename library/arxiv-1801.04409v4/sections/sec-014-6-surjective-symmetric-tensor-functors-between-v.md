@@ -7,10 +7,10 @@ section_number: 6
 pages: 25-26
 source_pdf: 1801.04409v4.pdf
 source_sha256: db61d011e3775aca
-text_source: latex
-latex_prose_ratio: 0.971
-latex_coverage_ratio: 0.959
 doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.973
 ---
 Let $G$ be a simple algebraic group over $\Bbb Z$, $h=h(G)$ the Coxeter number of $G$, and $p\ge h$ a prime. Let $\mathbf{k}$ be an algebraically closed field of characteristic $p$. Let $\mathrm{Ver}_p(G)=\mathrm{Ver}_p(G,\mathbf{k})$ be the associated Verlinde category of $G$, i.e., the semisimplification of the category ${\rm Tilt}(G)$ of tilting modules for $G$ over $\mathbf{k}$. For example, $\mathrm{Ver}_p(SL(2))=\mathrm{Ver}_p$.
 

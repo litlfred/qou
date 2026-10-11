@@ -7,10 +7,10 @@ section_number: 4
 pages: 9-11
 source_pdf: 2605.28781v1.pdf
 source_sha256: eee6d535af1996ca
-text_source: latex
-latex_prose_ratio: 0.926
-latex_coverage_ratio: 0.694
 doc_brief: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA⊂R(whose elements are algebraic integers in a number"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.93
 ---
 In this section we use the algebraic number theory facts of the previous section to prove Theorems [\[th-main\]](#th-main){reference-type="ref" reference="th-main"} and [\[th-mainmult\]](#th-mainmult){reference-type="ref" reference="th-mainmult"}.
 

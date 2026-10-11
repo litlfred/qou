@@ -7,10 +7,10 @@ section_number: 9
 pages: 23-24
 source_pdf: 1203.6551v1.pdf
 source_sha256: a8e84f8ed63dbcca
-text_source: latex
-latex_prose_ratio: 0.89
-latex_coverage_ratio: 0.992
 doc_brief: "On the number of hyperbolic 3-manifolds of a given volume — The work of Jørgensen and Thurston shows that there is a ﬁnite number N (v) of orientable hyperbolic 3-manifolds with any given volum e v."
+text_source: latex
+latex_prose_ratio: 0.993
+latex_coverage_ratio: 0.987
 ---
 1.  Find additional exact values of $N(v)$ or upper bounds on $N(v)$.
 

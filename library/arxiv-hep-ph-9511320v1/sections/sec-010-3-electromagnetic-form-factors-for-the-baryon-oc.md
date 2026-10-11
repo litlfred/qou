@@ -8,8 +8,8 @@ pages: 12-12
 source_pdf: 9511320v1.pdf
 source_sha256: 4336112cecabdfdf
 doc_brief: "TK 95 31 CHIRAL LAGRANGIANS FOR BARYONS COUPLED TO MASSIVE SPIN–1 FIELDS ⋆ — We analyze the eﬀective low–energy ﬁeld theory of Goldstone b osons and baryons chirally coupled to massive spin–1 ﬁelds."
+text_source: latex
+latex_prose_ratio: 0.871
+latex_coverage_ratio: 1.0
 ---
-In this section, we want to establish the equivalence between the te nsor and
-the vector ﬁeld formulation by calculating the vector meson contrib ution to
-the electromagnetic form factors of the baryon octet. This is ana logous to the
-pion form factor calculation performed in Ref.[10]. First, we will give so me
+In this section, we want to establish the equivalence between the tensor and the vector field formulation by calculating the vector meson contribution to the electromagnetic form factors of the baryon octet. This is analogous to the pion form factor calculation performed in Ref.[@reso1]. First, we will give some basic definitions and then establish the equivalence.

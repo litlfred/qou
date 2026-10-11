@@ -7,10 +7,10 @@ section_number: null
 pages: 21-34
 source_pdf: 0305275v1.pdf
 source_sha256: 9b356a9d716a0d3e
-text_source: latex
-latex_prose_ratio: 0.975
-latex_coverage_ratio: 0.972
 doc_brief: "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds — Let W be a compact manifold and let ρ be a representation of its fundamental group into PSL(2 , C)."
+text_source: latex
+latex_prose_ratio: 0.995
+latex_coverage_ratio: 0.977
 ---
 []{#s r label="s r"} This section is completely devoted to proving the following:
 
@@ -74,7 +74,7 @@ Let $S$ be the set of all genuine (non-ideal, non-degenerate) tetrahedra: $$S=\{
 
 For any $Y\in S$ let $S(R)$ be the set of all isometric copies of $Y$: $$S(Y)=\{X\in S:\ \exists g\in{\rm Isom}(\ensuremath{\mathbb H}^3),\  X=g(Y)\}.$$
 
-Then a natural bijection $f_Y:\$Isom$(\ensuremath{\mathbb H}^3)\to S(Y)$ is well-defined by $$f_Y(g)=g(Y).$$ Thus $\mu$ induces a measure, which we still call $\mu$, on $S(Y)$ defined by $$\mu(A)=\mu(f_Y^{-1}(A)).$$
+Then a natural bijection $f_Y:\ $Isom$(\ensuremath{\mathbb H}^3)\to S(Y)$ is well-defined by $$f_Y(g)=g(Y).$$ Thus $\mu$ induces a measure, which we still call $\mu$, on $S(Y)$ defined by $$\mu(A)=\mu(f_Y^{-1}(A)).$$
 
 We consider the sets $S_\pm(Y)=f_Y^{-1}($Isom$^\pm(\ensuremath{\mathbb H}^3))$ of tetrahedra respectively positively and negatively isometric to $Y$. Note that $S_+(Y)$ and $S(Y)_-$ are both measurable.
 
@@ -155,9 +155,9 @@ For $\eta\in\ensuremath{\mathfrak N}$, we set $v_\eta={\rm vol}(\Delta_\eta)$. U
 ::: lemma
 []{#l novo label="l novo"} For any $\ensuremath{\varepsilon}>0$, for large enough $R$ we have that for any $\eta\in \ensuremath{\mathfrak N}$
 
-- $a_R^+(\eta)\cdot a_R^-(\eta)=0$.
+-   $a_R^+(\eta)\cdot a_R^-(\eta)=0$.
 
-- $a_R(\eta)\neq 0\implies a_R(\eta)\cdot v_\eta\geq 0$.
+-   $a_R(\eta)\neq 0\implies a_R(\eta)\cdot v_\eta\geq 0$.
 :::
 
 ::: lemma
@@ -322,7 +322,7 @@ By contradiction, we apply Lemma [\[l basedue\]](#l basedue){reference-type="re
 We now prove Lemma [\[l basedue\]](#l basedue){reference-type="ref" reference="l basedue"}.
 
 ::: lemma
-In the hypothesis of Lemma [\[l basedue\]](#l basedue){reference-type="ref" reference="l basedue"} there exists a positive-mea­sure set $A\subset S_\infty^2$ such that $\ensuremath{\overline{D}}_\rho$ is constant on A.
+In the hypothesis of Lemma [\[l basedue\]](#l basedue){reference-type="ref" reference="l basedue"} there exists a positive-measure set $A\subset S_\infty^2$ such that $\ensuremath{\overline{D}}_\rho$ is constant on A.
 :::
 
  By Lemma [\[l era1\]](#l era1){reference-type="ref" reference="l era1"} it is not restrictive to suppose that the set $$\{(a,b,c)\in S_\infty^2\times S_\infty^2\times S_\infty^2:\ 
@@ -340,20 +340,16 @@ By Lemma [\[l era1\]](#l era1){reference-type="ref" reference="l era1"} the set
 We work now in the half space model $\ensuremath{\mathbb C}\times \ensuremath{\mathbb R}^+$ of $\ensuremath{\mathbb H}^3$. So $S_\infty^2=\ensuremath{\mathbb C}\cup\{\infty\}$. In that model $$Q(\infty,a,z)=\alpha(z-a)+a$$ where $\alpha=(1+i\sqrt 3)/2$. Again by Fubini's theorem $\ensuremath{\widetilde{\forall }}a_0\in
 A,\ \ensuremath{\widetilde{\forall }}(a_1,x)\in A\times A^c$, we have $Q(a_0,a_1,x)\in A$ and we can suppose that this holds for $a_0=\infty$.
 
-In other words, for almost all $(a,x)\in A\times A^c$ the third vertex of the equilateral triangle with the first two vertices in $a$ and $x$ is in $A$. For any $a,x\in\ensuremath{\mathbb C}$ we call $E_x(a)$ the set of the vertices of the regular hexagon centered at $x$ and with a vertex in $a$. Then we have $$\begin{equation}
-\label{1}
-\ensuremath{\widetilde{\forall }}(a,x)\in A\times A^c, \ E_x(a)\subset A
-\end{equation}$$ and in particular $\ensuremath{\widetilde{\forall }}(a,x)\in A\times A^c, \ 2x-a\in A.$ Note that $x$ is the middle-point of the segment between $a$ and $2x-a$.
+In other words, for almost all $(a,x)\in A\times A^c$ the third vertex of the equilateral triangle with the first two vertices in $a$ and $x$ is in $A$. For any $a,x\in\ensuremath{\mathbb C}$ we call $E_x(a)$ the set of the vertices of the regular hexagon centered at $x$ and with a vertex in $a$. Then we have $$\label{1}
+\ensuremath{\widetilde{\forall }}(a,x)\in A\times A^c, \ E_x(a)\subset A$$ and in particular $\ensuremath{\widetilde{\forall }}(a,x)\in A\times A^c, \ 2x-a\in A.$ Note that $x$ is the middle-point of the segment between $a$ and $2x-a$.
 
 ::: lemma
 []{#l v2 label="l v2"} For any open set $B\subset\ensuremath{\mathbb C}$ we have $\mu(A\cap B)>0$.
 :::
 
   Suppose the contrary. Then there exists an open set $B$ such that $\mu(A\cap B)=0$. That is, almost all the points of $B$ are in $A^c$. Moreover, from ([\[1\]](#1){reference-type="ref" reference="1"}) and Fubini's theorem it follows that $\ensuremath{\widetilde{\forall }}x\in
-A^c, \ensuremath{\widetilde{\forall }}a\in A, E_x(a)\in A$. Therefore there exists a point $x_0\in B$ such that a small ball $B_0=B(x_0,r_0)$ is contained in $B$ and $$\begin{equation}
-\label{2}
-\ensuremath{\widetilde{\forall }}a\in A,\ E_{x_0}(a)\in A.
-\end{equation}$$
+A^c, \ensuremath{\widetilde{\forall }}a\in A, E_x(a)\in A$. Therefore there exists a point $x_0\in B$ such that a small ball $B_0=B(x_0,r_0)$ is contained in $B$ and $$\label{2}
+\ensuremath{\widetilde{\forall }}a\in A,\ E_{x_0}(a)\in A.$$
 
 Since $\mu(A)>0$ then there exists a small ball $B_1=B(x_1,r_1)$ such that $\mu(A\cap B_1)>0$. Let $x_2=(x_1+x_0)/2$. If there exists $r>0$ such that $\mu(A\cap
 B(x_2,r))=0$, then applying the same argument we can find a point $y$ arbitrarily close to $x_2$ such that ([\[2\]](#2){reference-type="ref" reference="2"}) holds for $y$. In particular we get that almost all the points of the set $C=\{2y-a:\ a\in B_1\cap A\}$ are in $A$. But if $y$ is close enough to $x_2$ then $C\cap B_0$ has positive measure, contradicting that $\mu(A\cap B)=0$.
@@ -362,16 +358,12 @@ It follows that for all $r_2>0$ we have $\mu(A\cap
 B(x_2,r_2))>0$, in particular we choose $r_2<r_0/2$. By iterating this construction, we find a sequence of points $x_n\to x_0$ and radii $r_0/2>r_n>0$ such that $\mu(A\cap B(x_n,r_n))>0$. For $n$ large enough this contradicts the fact that $\mu(A\cap B)=0$.\
 
 ::: lemma
-[]{#l v3 label="l v3"} For all $z\in \ensuremath{\mathbb C}$ we have $$\begin{equation}
-\label{3}
-\forall r>0\ \ \mu(B(z,r)\cap A)\geq\frac{1}{2}\mu(B(z,r)).
-\end{equation}$$
+[]{#l v3 label="l v3"} For all $z\in \ensuremath{\mathbb C}$ we have $$\label{3}
+\forall r>0\ \ \mu(B(z,r)\cap A)\geq\frac{1}{2}\mu(B(z,r)).$$
 :::
 
-  From Fubini's theorem, and condition ([\[1\]](#1){reference-type="ref" reference="1"}), it follows that for almost all $a\in A$ we have $$\begin{equation}
-\label{4}
-\ensuremath{\widetilde{\forall }}x\in A^c, \ E_x(a)\subset A.
-\end{equation}$$ Note that if $(\ref{4})$ holds for $a$, then $(\ref{3})$ holds for $a$.
+  From Fubini's theorem, and condition ([\[1\]](#1){reference-type="ref" reference="1"}), it follows that for almost all $a\in A$ we have $$\label{4}
+\ensuremath{\widetilde{\forall }}x\in A^c, \ E_x(a)\subset A.$$ Note that if $(\ref{4})$ holds for $a$, then $(\ref{3})$ holds for $a$.
 
 Let $z\in \ensuremath{\mathbb C}$. From Lemma [\[l v2\]](#l v2){reference-type="ref" reference="l v2"} it follows that there exists a sequence $x_n\to z$ such that $(\ref{4})$ (and hence $(\ref{3})$) holds for $x_n$. As the function $x\mapsto
 \mu(A\cap B(x,r))$ is continuous, then the claim holds for $z$.\

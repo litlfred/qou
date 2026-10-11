@@ -7,10 +7,10 @@ section_number: null
 pages: 1-2
 source_pdf: 2605.22763v1.pdf
 source_sha256: 1fe6b92bb5eb0b45
-text_source: latex
-latex_prose_ratio: 0.735
-latex_coverage_ratio: 0.92
 doc_brief: "Advancing mathematics research with AI-driven formal proof search — 14 sections: Introduction; AlphaProof Nexus; Systematic Evaluation on Open Prob"
+text_source: latex
+latex_prose_ratio: 0.624
+latex_coverage_ratio: 1.0
 ---
 Large language models (LLMs) have recently shown remarkable promise in solving complex mathematics problems \cite{feng2026autonomous, woodruff2026accelerating}, but \emph{unreliability} remains a primary barrier to their integration into mathematics research. Because LLM-generated natural language proofs can contain subtle logical errors, or ``hallucinations,'' they require expensive expert review. Mistakes in unreviewed intermediate steps can cascade through a proof, limiting the complexity of tasks that can be delegated to AI. 
 
@@ -40,3 +40,37 @@ The prover then decomposed that goal into three simpler lemmas, and called {\AP}
 }
     \label{fig:components}
 \end{figure}
+
+
+
+
+
+\section{{\systemlong}}
+
+\paragraph{Lean.} Lean \cite{moura2021lean} is a proof assistant in which definitions, theorems, and proofs are all mechanically verified code. Proofs are constructed via a sequence of applications of \emph{tactics}, or elementary proof steps. Lean's compiler ``executes'' a proof tactic-by-tactic, tracking the proof goals pending after every tactic. A proof is correct if it leads the compiler to a state with no pending goals.
+
+Lean includes a special $\mathtt{sorry}$ tactic, which immediately closes pending goals while passing the type checker. Proving a theorem thus amounts to the generation of type-safe code without $\mathtt{sorry}$ tactics. 
+
+\paragraph{Input and Output.} {\systemlong} is a new framework for agents that query frontier LLMs and the Lean compiler. The agents take as input a Lean file consisting of a target theorem with $\mathtt{sorry}$ in place of a proof, along with definitions and library imports on which the theorem depends (we refer to such a file as a \emph{proof sketch}). Optionally, the user may input additional natural-language context and domain knowledge encoded in Lean. 
+
+The input sketch is annotated with user-provided markers that delineate which code segments the agent may modify (see Fig.~\ref{fig:components}).
+Within \texttt{EVOLVE-BLOCK} markers, the agent can introduce helper lemmas, definitions, and proof steps. \texttt{EVOLVE-VALUE} markers are used to enclose expressions (e.g., parameters) whose values the agent can change. On successful termination, the agent outputs a $\mathtt{sorry}$-free proof of the target theorem.
+
+\paragraph{Agent Architecture.} 
+The basic agent in {\systemlong} (agent (A)) consists of a set of \emph{prover subagents} that execute independently with no shared state. Each subagent 
+is a ``Ralph loop''~\cite{huntley2025ralph} consisting of a sequence of \emph{episodes}: multi-turn LLM inference loops (based on Gemini 3.1 Pro) in which the subagent can reason via chain-of-thought and refine the sketch using a search-and-replace tool. After each turn, the subagent uses Lean to check that the current proof sketch compiles; if it does not, Lean's error message is used to direct the next turn. If the sketch contains \texttt{sorry} when the episode terminates, the subagent adds a comment to the sketch summarizing the lessons learned from the episode. The resulting sketch is the input to the next episode. 
+
+We extended the basic agent into one (B) that can query {\AP} \cite{hubert2025olympiad} to fill out missing parts of sketches. Queries to {\AP} can return a proof, disproof (a proof that the submitted subgoal is false), or a failure message; proofs are directly substituted into the sketch, while disproofs and failure messages are fed into the prover's prompt.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{assets/system_design_centered.pdf} 
+    \caption{\textbf{Design of the full-featured {\systemlong} agent.} The mathematician provides as input a Lean theorem with \texttt{sorry} for a proof, and optionally, natural language context and additional domain knowledge encoded in Lean. The agent architecture consists of a basic generation-validation pipeline and an optional evolutionary framework. An LLM-based prover subagent attempts to solve the problem by refining proof sketches \textbf{(2)}. The subagent may optionally call {\AP} as a tool; each invocation of {\AP} on a goal returns whether a proof or disproof was found, or whether it was unsuccessful in resolving the goal. The sketch produced in the end is checked by a validator to ensure the problem statement was not changed unsafely and the proof compiles. If all goals are successfully proved, the agent outputs the final Lean proof. This basic pipeline can be extended with an evolutionary population database and rating mechanism. In this configuration, validated sketches are admitted into the Population Database \textbf{(3)}. Simultaneously, rater subagents sample previous attempts \textbf{(4)}, which are then ranked by an LLM critic in matches. The match results are admitted back into the database \textbf{(5)} to update the Elo scores of the sketches. These scores are then used by the evolutionary algorithm to sample prior sketches from the database, constructing an overall prompt -- which includes any optional inputs from the mathematician -- to condition new episodes \textbf{(1)}.}
+    \label{fig:detailed_system}
+\end{figure}
+
+
+
+Separately, we developed an evolutionary agent (C), inspired by AlphaEvolve \cite{novikov2025alphaevolve}, in which prover subagents sample from and contribute to a shared population database of sketches. A challenge here is the mismatch between evolutionary algorithms, which typically assume a graduated fitness landscape, and formal proof evaluation, which is inherently binary. To bridge this gap, we used a pool of \emph{rating agents} (based on the less expensive Gemini 3.0 Flash) to construct relative rankings of sketches based on their plausibility, clarity, and novelty. We aggregated these rankings into Elo ratings for the sketches and used a sampling procedure based on the P-UCB formula \cite{hubert2021learning,silver2017masteringchessshogiselfplay} to drive the search. 
+
+Finally, we combined the {\AP} and evolution capabilities into a ``full-featured'' agent (D; see Fig.~\ref{fig:detailed_system}) in which prover subagents can use {\AP} as well as evolutionary search. We used this agent as the instrument in our exploration of open research problems.

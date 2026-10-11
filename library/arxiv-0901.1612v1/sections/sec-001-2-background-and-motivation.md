@@ -7,19 +7,19 @@ section_number: 2
 pages: 4-5
 source_pdf: 0901.1612v1.pdf
 source_sha256: b4f3efcadd1e5caf
-text_source: latex
-latex_prose_ratio: 0.807
-latex_coverage_ratio: 0.968
 doc_brief: "Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links — Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John"
 duplicate_of: "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.815
 ---
 []{#sec:background label="sec:background"}
 
-Let $L$ be an ordered oriented link in $\mathbb R^3$ with two parametrized components $$X = \{x(s) \ | \ s \in S^1\} \ \  \text{and} \ \ Y = \{y(t) \ | \ t \in S^1 \}.$$ The classical linking number $\text{Lk}(X, Y)$ is the degree of the Gauss map $S^1\times S^1\to S^2$ sending $(s,t)$ to $(y(t)-x(s))/\|y(t)-x(s)\|$, and can be expressed by the famous integral formula of Gauss [@Gauss], $$\begin{align*}
+Let $L$ be an ordered oriented link in $\mathbb R^3$ with two parametrized components $$X = \{x(s) \ | \ s \in S^1\} \ \  \text{and} \ \ Y = \{y(t) \ | \ t \in S^1 \}.$$ The classical linking number $\text{Lk}(X, Y)$ is the degree of the Gauss map $S^1\times S^1\to S^2$ sending $(s,t)$ to $(y(t)-x(s))/\|y(t)-x(s)\|$, and can be expressed by the famous integral formula of Gauss [@Gauss], $$\begin{aligned}
     \text{Lk}(X, & Y) = 
     \frac{1}{4\pi} \int_{S^1 \times S^1} x'(s)  \times  y'(t)  \,\,\raisebox{.2ex}{\text{\tiny\textbullet}}\,\,\frac{x(s)-y(t)}{\|x(s)-y(t)\|^3} \ ds \, dt \\
     & = \int_{S^1 \times S^1} x'(s)  \times  y'(t)  \,\,\raisebox{.2ex}{\text{\tiny\textbullet}}\,\,\nabla_x \, \varphi\left(\|x(s)-y(t)\|\right) \ ds \, dt,
-\end{align*}$$ where $\varphi(r) = -1/(4\pi r)$ is the fundamental solution of the scalar Laplacian in $\mathbb R^3$. The integrand is invariant under the group of orientation-preserving rigid motions of $\mathbb R^3$, acting on the link $L$. Corresponding formulas in $S^3$ appear in DeTurck and Gluck [@DeTurckGluck] and in Kuperberg [@Kuperberg].
+\end{aligned}$$ where $\varphi(r) = -1/(4\pi r)$ is the fundamental solution of the scalar Laplacian in $\mathbb R^3$. The integrand is invariant under the group of orientation-preserving rigid motions of $\mathbb R^3$, acting on the link $L$. Corresponding formulas in $S^3$ appear in DeTurck and Gluck [@DeTurckGluck] and in Kuperberg [@Kuperberg].
 
 Theorems [\[thm:A\]](#thm:A){reference-type="ref" reference="thm:A"} and [\[thm:B\]](#thm:B){reference-type="ref" reference="thm:B"} above give a similar formulation of Milnor's triple linking number in $S^3$. We emphasize that these two theorems are set specifically in $S^3$, and that so far we have been unable to find corresponding formulas in Euclidean space $\mathbb R^3$ which are equivariant (for Theorem [\[thm:A\]](#thm:A){reference-type="ref" reference="thm:A"}) and invariant (for Theorem [\[thm:B\]](#thm:B){reference-type="ref" reference="thm:B"}) under the *noncompact* group of orientation-preserving rigid motions of $\mathbb R^3$.
 
@@ -47,9 +47,3 @@ Our study was motivated by a problem proposed by Arnol$'$d and Khesin [@ArnoldK
 Many others have been motivated by this problem, and have contributed to its understanding; see, for example, Berger and Field [@Berger84], Berger [@Berger90; @Berger91], Evans and Berger [@EvansBerger92], Akhmetiev and Ruzmaiken [@Akhmetiev94; @Akhmetiev95], Akhmetiev [@Akhmetiev98], Laurence and Stredulinsky [@Laurence], Hornig and Mayer [@Hornig], Rivière [@Riviere], Khesin [@Khesin], and Bodecker and Hornig [@Bodecker04].
 
 The formulation in Theorems [\[thm:A\]](#thm:A){reference-type="ref" reference="thm:A"} and [\[thm:B\]](#thm:B){reference-type="ref" reference="thm:B"} has led to partial results that address the case of vector fields on invariant domains such as flux tubes modeled on the Borromean rings; see Komendarczyk [@Komendarczyk].
-
-## Acknowledgements {#acknowledgements .unnumbered}
-
-We are grateful to Fred Cohen and Jim Stasheff for their substantial input and help during the preparation of this paper, and to Toshitake Kohno, whose 2002 paper provided the original inspiration for this work. Komendarczyk and Shonkwiler also acknowledge support from DARPA grant #FA9550-08-1-0386.
-
-The Borromean rings shown on the first page of this paper are from a panel in the carved walnut doors of the Church of San Sigismondo in Cremona, Italy. The photograph is courtesy of Peter Cromwell.

@@ -8,177 +8,100 @@ pages: 15-17
 source_pdf: 0410233v4.pdf
 source_sha256: 1f7215c9f21aa2b7
 doc_brief: "Cusp shapes under cone deformation — A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp sh ape."
+text_source: latex
+latex_prose_ratio: 0.843
+latex_coverage_ratio: 0.967
 ---
-how normalized lengths of curves on the torus ∂U change over the deforma-
-tion.
-Deﬁnition 3.4. Let β be a slope on the torus T , that is, an isotopy class
-of simple closed curves. The normalized length of β is deﬁned to be:
-Normalized length( β) = Length(β)
-√
-Area(T )
-,
-where Length( β) is deﬁned to be the length of a geodesic representative of
-β on T .
-Lemma 3.5. Let β be a slope on ∂Ut. Let Lt(β) denote its normalized
-length, with derivative ˙L(β). Then Lt(β) satisﬁes:
-(19) − ‖γ′(t)‖ Lt(β) ≤ ˙L(β) ≤ ‖ γ′(t)‖ Lt(β).
-Proof. Fix a time t = t0. We will show the lemma for t0.
-We saw in the proof of Lemma 3.2 that γ(t) agrees inﬁnitesimally with an
-explicit Teichm¨ uller geodesicζ(u) determined by the matrix A of equation
-(18) when t = t0 and u = 0. More speciﬁcally, ζ(u) multiplies vectors along
-F1 by exp(−u
-√
-a2 + b2), and multiplies vectors along F2 by exp(u
-√
-a2 + b2),
-where F1 and F2 are orthogonal geodesic foliations (determined by the ma-
-trix A) on the torus ∂Ut0. Thus we will prove the lemma by showing it is
-true when the change in metric on ∂Ut0 is given by ζ(u).
-Now, Lt(β) is deﬁned to be the length of a geodesic representative of β
-divided by
-√
-Area(∂Ut). Without loss of generality, we may assume that
-Area(∂Ut) = 1, since γ′(t) is given by a trace free (hence area preserving)
-matrix A. Thus Lt(β) is just the length of a geodesic representative of β at
-time t0.
-Let ˆβt0 : I → ∂Ut0 be a geodesic representative of β at time t0. Then ˆβt0
-makes some angle θ with the foliation F1. For any u, ζ(u) takes ˆβt0 to a
-new geodesic, still with slope β, and length Lu(β) = αu(θ) Lt0 (β). Here
-αu(θ) =
-√
-cos2 θ exp(−2u
-√
-a2 + b2) + sin2 θ exp(2u
-√
-a2 + b2)
-is maximized when θ = π/2 and minimized when θ = 0. Thus we have
-exp(−
-√
-a2 + b2 u) Lt0 (β) ≤ Lu(β) ≤ exp(
-√
-a2 + b2 u) Lt0 (β).
-16 JESSICA S. PURCELL
-Since d
-dt
-⏐
-⏐
-t=t0
-Lt(β) = d
-du
-⏐
-⏐
-u=0 Lu(β),
-−
-√
-a2 + b2 Lt0(β) ≤ d
-dt
-⏐
-⏐
-⏐
-⏐
-t=t0
-Lt(β) ≤
-√
-a2 + b2 Lt0(β).
-□
-Combining this with the inequality of Theorem 3.3, we obtain the follow-
-ing theorem.
-Theorem 3.6. Let Lt be the normalized length of a slope on a cusp torus
-∂Ut under a cone deformation, with derivative ˙L = d
-dt Lt. Then the change
-in Lt is bounded by the following inequality:
-−
-( √ ∑ bi(t)
-2Area(∂Ut)
-)
-Lt ≤ ˙L ≤
-( √ ∑ bi(t)
-2Area(∂Ut)
-)
-Lt.
-Proof. Solving for ‖γ′(t)‖ in the inequality of Theorem 3.3, we ﬁnd
-‖γ′(t)‖ ≤
-√ ∑ bj(t)
-2Area(∂Ut) .
-The result is given by substituting this into equation (19). □
-3.3.1. Normalized height. For our applications, the curve on the torus we
-are particularly interested in is the one running orthogona l to the meridian.
-When we are dealing with link complements in S3, as in a future section
-of this paper, there is a well deﬁned meridian on a cusp torus. Otherwise,
-choose the shortest nontrivial simple closed curve on the in itial cusp torus to
-be the meridian (for our applications to knots and links in S3, these choices
-will agree).
-We will be interested in estimating the length of the next sho rtest non-
-trivial simple closed curve. This length will be at least as l ong as the length
-of the arc orthogonal to the meridian.
-At time t, let pt denote the geodesic arc perpendicular to the meridian,
-running from meridian to meridian on ∂Ut. This arc will generally not
-be a closed curve. Let ht be the normalized length of pt, that is, ht =
-Length(pt)/
-√
-Area(∂Ut). We refer to ht as the normalized height of the
-torus at time t. Denote its derivative at time t by ˙h.
-Lemma 3.7. The normalized height ht satisﬁes
-−
-√
-a2 + b2 ht ≤ ˙h ≤
-√
-a2 + b2 ht.
-Proof. Let µ denote the meridian slope, with Lt(µ) its normalized length at
-time t. Then htLt(µ) = 1. Thus
-˙h
-ht
-+
-˙L(µ)
-Lt(µ) = 0.
-CUSP SHAPES UNDER CONE DEFORMATION 17
-By Lemma 3.5 and Lemma 3.2,
-−
-√
-a2 + b2 ≤
-˙L(µ)
-Lt(µ) ≤
-√
-a2 + b2.
-Hence −
-√
-a2 + b2 ht ≤ ˙h ≤
-√
-a2 + b2 ht.
-□
-Again Lemma 3.7, combined with the inequality of Theorem 3.3 , gives
-(20) −
-( √ ∑ bi
-2Area(∂Ut)
-)
-ht ≤ ˙h ≤
-( √ ∑ bi
-2Area(∂Ut)
-)
-ht
-We simplify equation (20) by noting the area of Ut is given by the length
-of the meridian times the actual length of the arc pt. Recall that the length
-of pt is
-√
-Area(∂Ut) Lt(pt) =
-√
-Area(∂Ut)ht. So denoting the length of the
-meridian of ∂Ut by mt, we have
-√
-Area(∂Ut) = mtht.
-Putting this into equation (20), we obtain:
-Theorem 3.8. Let M be a hyperbolic 3–manifold with a cusp, and let X
-be a hyperbolic 3–manifold which can be joined to M by a smooth family of
-hyperbolic cone manifolds. Let ht denote the normalized height at time t of
-the cusp which deforms to the cusp of M , and let mt denote the length of
-its meridian. Finally, denote by ˙h the derivative of ht. Then
-(21) −
-√ ∑ bi(t)
-mt
-√
-2
-≤ ˙h ≤
-√ ∑ bi(t)
-mt
-√
-2
+[]{#sec:normlength label="sec:normlength"}
+
+We are interested in determining how *normalized lengths* of curves on the torus $\partial U$ change over the deformation.
+
+::: define
+Let $\beta$ be a slope on the torus $T$, that is, an isotopy class of simple closed curves. The normalized length of $\beta$ is defined to be: $$\mbox{Normalized length}(\beta) =
+  \frac{\mbox{Length}(\beta)}{\sqrt{\mbox{Area}(T)}},$$ where $\mbox{Length}(\beta)$ is defined to be the length of a geodesic representative of $\beta$ on $T$.
+:::
+
+::: lemma
+Let $\beta$ be a slope on $\partial U_t$. Let $L_t(\beta)$ denote its normalized length, with derivative $\dot{L}(\beta)$. Then $L_t(\beta)$ satisfies: $$-\|\gamma'(t)\| \, L_t(\beta) \;\leq\; \dot{L}(\beta) \;\leq\;
+   \|\gamma'(t)\| \,L_t(\beta).
+  \label{eqn:norm-length-L}$$ []{#lemma:ldot-bound label="lemma:ldot-bound"}
+:::
+
+::: proof
+*Proof.* Fix a time $t=t_0$. We will show the lemma for $t_0$.
+
+We saw in the proof of Lemma [\[lemma:a+b-gamma\]](#lemma:a+b-gamma){reference-type="ref" reference="lemma:a+b-gamma"} that $\gamma(t)$ agrees infinitesimally with an explicit Teichmüller geodesic $\zeta(u)$ determined by the matrix $A$ of equation ([\[eqn:define-A\]](#eqn:define-A){reference-type="ref" reference="eqn:define-A"}) when $t=t_0$ and $u=0$. More specifically, $\zeta(u)$ multiplies vectors along $F_1$ by $\exp(-u\sqrt{a^2+b^2})$, and multiplies vectors along $F_2$ by $\exp(u\sqrt{a^2+b^2})$, where $F_1$ and $F_2$ are orthogonal geodesic foliations (determined by the matrix $A$) on the torus $\partial U_{t_0}$. Thus we will prove the lemma by showing it is true when the change in metric on $\partial U_{t_0}$ is given by $\zeta(u)$.
+
+Now, $L_t(\beta)$ is defined to be the length of a geodesic representative of $\beta$ divided by $\sqrt{\rm{Area}(\partial U_t)}$. Without loss of generality, we may assume that $\rm{Area}(\partial
+U_t) = 1$, since $\gamma'(t)$ is given by a trace free (hence area preserving) matrix $A$. Thus $L_t(\beta)$ is just the length of a geodesic representative of $\beta$ at time $t_0$.
+
+Let $\hat{\beta}_{t_0}\colon\thinspace I \to \partial U_{t_0}$ be a geodesic representative of $\beta$ at time $t_0$. Then $\hat{\beta}_{t_0}$ makes some angle $\theta$ with the foliation $F_1$. For any $u$, $\zeta(u)$ takes $\hat{\beta}_{t_0}$ to a new geodesic, still with slope $\beta$, and length $L_u(\beta) = \alpha_u(\theta) \,
+L_{t_0}(\beta)$. Here $$\alpha_u(\theta)
+= \sqrt{\cos^2\theta \,\exp(-2u\sqrt{a^2+b^2}) +\sin^2\theta \exp(2u\sqrt{a^2+b^2})}$$ is maximized when $\theta=\pi/2$ and minimized when $\theta=0$. Thus we have $$\exp(-\sqrt{a^2+b^2}\,u)\,L_{t_0}(\beta) \leq L_u(\beta) \leq
+\exp(\sqrt{a^2+b^2}\,u) \,L_{t_0}(\beta).$$
+
+Since $\left.\frac{d}{dt}\right|_{t=t_0} L_t(\beta) =
+\left.\frac{d}{du}\right|_{u=0} L_u(\beta),$ $$-\sqrt{a^2+b^2} \, L_{t_0}(\beta) \leq \left.\frac{d}{dt}\right|_{t=t_0}
+L_t(\beta) \leq \sqrt{a^2+b^2}\, L_{t_0}(\beta).$$ ◻
+:::
+
+Combining this with the inequality of Theorem [\[thm:cusp-1\]](#thm:cusp-1){reference-type="ref" reference="thm:cusp-1"}, we obtain the following theorem.
+
+::: theorem
+Let $L_t$ be the normalized length of a slope on a cusp torus $\partial U_t$ under a cone deformation, with derivative $\dot{L} =
+  \frac{d}{dt} L_t$. Then the change in $L_t$ is bounded by the following inequality: $$-\left(\sqrt{\frac{\sum b_i(t)}{2\mbox{Area}(\partial
+        U_t)}}\right) \, L_t
+    \;\leq\; \dot{L} \;\leq\;
+  \left(\sqrt{\frac{\sum b_i(t)}{2\mbox{Area}(\partial U_t)}}\right)\,
+  L_t.$$ []{#thm:norm-length-1 label="thm:norm-length-1"}
+:::
+
+::: proof
+*Proof.* Solving for $\|\gamma'(t)\|$ in the inequality of Theorem [\[thm:cusp-1\]](#thm:cusp-1){reference-type="ref" reference="thm:cusp-1"}, we find $$\|\gamma'(t)\| \leq \sqrt{\frac{\sum b_j(t)}{2\mbox{Area}(\partial
+      U_t)}}.$$ The result is given by substituting this into equation ([\[eqn:norm-length-L\]](#eqn:norm-length-L){reference-type="ref" reference="eqn:norm-length-L"}). ◻
+:::
+
+### Normalized height
+
+For our applications, the curve on the torus we are particularly interested in is the one running orthogonal to the meridian. When we are dealing with link complements in $S^3$, as in a future section of this paper, there is a well defined meridian on a cusp torus. Otherwise, choose the shortest nontrivial simple closed curve on the initial cusp torus to be the meridian (for our applications to knots and links in $S^3$, these choices will agree).
+
+We will be interested in estimating the length of the next shortest nontrivial simple closed curve. This length will be at least as long as the length of the arc orthogonal to the meridian.
+
+At time $t$, let $p_t$ denote the geodesic arc perpendicular to the meridian, running from meridian to meridian on $\partial U_t$. This arc will generally not be a closed curve. Let $h_t$ be the normalized length of $p_t$, that is, $h_t =
+\rm{Length}(p_t)/\sqrt{\rm{Area}(\partial U_t)}$. We refer to $h_t$ as the *normalized height* of the torus at time $t$. Denote its derivative at time $t$ by $\dot{h}$.
+
+::: lemma
+The normalized height $h_t$ satisfies $$-\sqrt{a^2+b^2}\,h_t \leq \dot{h} \leq
+\sqrt{a^2+b^2}\,h_t.$$ []{#lemma:hdot-bound label="lemma:hdot-bound"}
+:::
+
+::: proof
+*Proof.* Let $\mu$ denote the meridian slope, with $L_t(\mu)$ its normalized length at time $t$. Then $h_t L_t(\mu) = 1$. Thus $$\frac{\dot{h}}{h_t} + \frac{\dot{L}(\mu)}{L_t(\mu)} = 0.$$ By Lemma [\[lemma:ldot-bound\]](#lemma:ldot-bound){reference-type="ref" reference="lemma:ldot-bound"} and Lemma [\[lemma:a+b-gamma\]](#lemma:a+b-gamma){reference-type="ref" reference="lemma:a+b-gamma"}, $$-\sqrt{a^2+b^2} \leq \frac{\dot{L}(\mu)}{L_t(\mu)} \leq
+\sqrt{a^2+b^2}.$$ Hence $-\sqrt{a^2+b^2}\,h_t \leq \dot{h} \leq
+\sqrt{a^2+b^2}\,h_t.$ ◻
+:::
+
+Again Lemma [\[lemma:hdot-bound\]](#lemma:hdot-bound){reference-type="ref" reference="lemma:hdot-bound"}, combined with the inequality of Theorem [\[thm:cusp-1\]](#thm:cusp-1){reference-type="ref" reference="thm:cusp-1"}, gives $$-\left(\sqrt{\frac{\sum b_i}{2\mbox{Area}(\partial U_t)}}\right) \,
+h_t \leq \dot{h} \leq
+\left(\sqrt{\frac{\sum b_i}{2\mbox{Area}(\partial U_t)}}\right) \,
+h_t
+\label{eqn:norm-height}$$
+
+We simplify equation ([\[eqn:norm-height\]](#eqn:norm-height){reference-type="ref" reference="eqn:norm-height"}) by noting the area of $U_t$ is given by the length of the meridian times the actual length of the arc $p_t$. Recall that the length of $p_t$ is $\sqrt{\mbox{Area}(\partial U_t)}\,L_t(p_t) =
+\sqrt{\mbox{Area}(\partial U_t)}h_t.$ So denoting the length of the meridian of $\partial U_t$ by $m_t$, we have $$\sqrt{\mbox{Area}(\partial U_t)} = m_t h_t.$$
+
+Putting this into equation ([\[eqn:norm-height\]](#eqn:norm-height){reference-type="ref" reference="eqn:norm-height"}), we obtain:
+
+::: theorem
+Let $M$ be a hyperbolic 3--manifold with a cusp, and let $X$ be a hyperbolic 3--manifold which can be joined to $M$ by a smooth family of hyperbolic cone manifolds. Let $h_t$ denote the normalized height at time $t$ of the cusp which deforms to the cusp of $M$, and let $m_t$ denote the length of its meridian. Finally, denote by $\dot{h}$ the derivative of $h_t$. Then $$-\frac{\sqrt{\sum b_i(t)}}{m_t\sqrt{2}} \leq \dot{h} \leq
+\frac{\sqrt{\sum b_i(t)}}{m_t\sqrt{2}}
+\label{eqn:norm-height-mer}$$ []{#thm:norm-height-mer label="thm:norm-height-mer"}
+:::
+
+# Bounding the boundary terms []{#sec:bdrybound label="sec:bdrybound"}
+
+In this section, we finish the proofs of Theorems [\[thm:main-cusp\]](#thm:main-cusp){reference-type="ref" reference="thm:main-cusp"} and [\[thm:main-norm-length\]](#thm:main-norm-length){reference-type="ref" reference="thm:main-norm-length"} by
+
+finding a parameterization of the cone deformation for which we may bound the sum $\sum b_j$.
+
+In order to bound $\sum b_j$, we need more explicit formulas for the $b_j$. Recall that $b_j$ was defined in Definition [\[def:bj\]](#def:bj){reference-type="ref" reference="def:bj"} as: $$b_j = b_{V_j}(\eta_0, \eta_0).$$ Here $\eta_0$ is the real part of the 1--form $\omega_0$ in the $j$-th component $V_j$ of a tubular neighborhood of the singular locus. Thus we begin by revisiting our decomposition of $\omega_0$ in $V_j$.

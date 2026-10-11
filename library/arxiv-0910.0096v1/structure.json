@@ -87,7 +87,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 3,
-   "overlaid": 1,
+   "overlaid": 2,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -98,16 +98,17 @@
      "id": "sec-000-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.966,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 0.409,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.749,
+     "result": "overlaid",
+     "converter": "pandoc"
     }
    ]
   }

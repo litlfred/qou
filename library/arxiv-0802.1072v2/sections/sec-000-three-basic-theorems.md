@@ -7,35 +7,28 @@ section_number: null
 pages: 1-3
 source_pdf: 0802.1072v2 (1).pdf
 source_sha256: 6f4d93f0b7ba5cd7
-text_source: latex
-latex_prose_ratio: 0.978
-latex_coverage_ratio: 0.913
 doc_brief: "A note on closed 3-braids ∗ — This is a review article about knots and links of braid index 3."
+text_source: latex
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 0.969
 ---
 []{#S:Three basic theorems label="S:Three basic theorems"}
 
-In this section we present the basic lemmas and theorems about links that are closed three-braids. Initially, we will use the classical presentation for the braid group $B_3$: $$\begin{equation}
-\label{E:classical presentation}
-<\sigma_1,\sigma_2; \sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2>
-\end{equation}$$ In the presentation ([\[E:classical presentation\]](#E:classical presentation){reference-type="ref" reference="E:classical presentation"}) the generator $\sigma_i$ is a positive interchange of strands $i$ and $i+1$, where $i=1$ or $2$.
+In this section we present the basic lemmas and theorems about links that are closed three-braids. Initially, we will use the classical presentation for the braid group $B_3$: $$\label{E:classical presentation}
+<\sigma_1,\sigma_2; \sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2>$$ In the presentation ([\[E:classical presentation\]](#E:classical presentation){reference-type="ref" reference="E:classical presentation"}) the generator $\sigma_i$ is a positive interchange of strands $i$ and $i+1$, where $i=1$ or $2$.
 
 Before we can state our first theorem, we need a definition. Let $\mathcal L$ be a closed 3-braid, with representative $L\in B_3$. Then:
 
-- $\mathcal L$ is said to *admit a flype* if the conjugacy class of $L$ has a representative which is in one of the special forms illustrated in each of the four sketches in Figure 1. In particular its associated (open) braids are conjugate to:
+-   $\mathcal L$ is said to *admit a flype* if the conjugacy class of $L$ has a representative which is in one of the special forms illustrated in each of the four sketches in Figure 1. In particular its associated (open) braids are conjugate to:
 
-  $$\begin{equation}
-   \label{E:flype-admissible form} 
-  L = \sigma_1^u\sigma_2^v\sigma_1^w\sigma_2^\epsilon,  \  \  {\rm for \ \ some} \ \ u,v,w,\epsilon \in \mathbb N,  \ \ \epsilon = \pm 1.
-  \end{equation}$$
+    $$\label{E:flype-admissible form} 
+    L = \sigma_1^u\sigma_2^v\sigma_1^w\sigma_2^\epsilon,  \  \  {\rm for \ \ some} \ \ u,v,w,\epsilon \in \mathbb N,  \ \ \epsilon = \pm 1.$$
 
-- A flype is *positive* or *negative*, according as $\epsilon$ is $+1$ or $-1$.
+-   A flype is *positive* or *negative*, according as $\epsilon$ is $+1$ or $-1$.
 
-- A flype is *non-degenerate* when the braids $L= \sigma_1^u\sigma_2^v\sigma_1^w\sigma_2^\epsilon$ and $L' = \sigma_1^w\sigma_2^v\sigma_1^u\sigma_2^\epsilon$ are in distinct conjugacy classes. We are interested only in non-degenerate flypes.
+-   A flype is *non-degenerate* when the braids $L= \sigma_1^u\sigma_2^v\sigma_1^w\sigma_2^\epsilon$ and $L' = \sigma_1^w\sigma_2^v\sigma_1^u\sigma_2^\epsilon$ are in distinct conjugacy classes. We are interested only in non-degenerate flypes.
 
-<figure id="F:flype" data-latex-placement="htpb!">
-<embed src="flype.eps" />
-<figcaption>Positive and Negative 3-braid flypes</figcaption>
-</figure>
+![Positive and Negative 3-braid flypes](flype.eps){#F:flype}
 
 ::: theorem
 **The classification theorem [@BM-SLVCB-III]:** []{#T:topological label="T:topological"} Let $\mathcal{L}$ be a link type which is represented by the closure of a 3-braid $L$. Then one of the following holds:

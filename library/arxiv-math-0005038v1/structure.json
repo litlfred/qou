@@ -375,7 +375,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 4,
+   "tex_sections": 12,
    "overlaid": 1,
    "thresholds": {
     "title": 0.85,
@@ -391,7 +391,7 @@
     {
      "id": "sec-001-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.281,
+     "prose_ratio": 0.147,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -463,8 +463,8 @@
     {
      "id": "sec-015-4-matrices-for-the-lawrence-krammer-representati",
      "title": "Matrices for the Lawrence-Krammer representation",
-     "prose_ratio": 0.632,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },

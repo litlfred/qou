@@ -8,305 +8,214 @@ pages: 73-76
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
 doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
+text_source: latex
+latex_prose_ratio: 0.957
+latex_coverage_ratio: 0.887
 ---
-lemmas on graphs and spanning trees.
-9.3.1. A functional on graphs. In this section, we consider graphsH with multiple edges
-and loops. We use the standard notationV(H) and E(H) for their vertex and edge sets.
-For a graph H and a set partition π of V(H), we denote π⊥ H when the following
-holds: for any edge{i, j}∈ E(H), the elements i and j lie in different parts of π (in this
-case we use the notation i≁π j). We introduce the following functional on graphs H:
-FH = (−1)|V(H)|−1
-∑
-π⊥H
-µ(π).
-Lemma 9.12. For any graph H, one has
-FH = ∑
-E⊂E(H)
-(V(H),E) connected
-(−1)|E|−|V(H)|+1.
-Proof. To simplify notation, suppose V(H) = [ r]. We denote 1 (P) the characteristic
-function of the property (P). By inclusion-exclusion,
-(−1)|V(H)|−1 FH = ∑
-π∈Q(r)
-
- ∏
-(i,j)∈E(H)
-1 i≁π j
-
- µ(π) = ∑
-π∈Q(r)
-
- ∏
-(i,j)∈E(H)
-(1− 1 i∼π j)
-
- µ(π)
-= ∑
-E⊂E(H)
-∑
-π∈Q(r)
-(−1)|E|
-
- ∏
-(i,j)∈E
-1 i∼π j
-
- µ(π)
-= ∑
-E⊂E(H)
-(−1)|E|
-
- ∑
-π such that
-∀(i,j)∈E, i∼π j
-µ(π)
-
- .
-74 VALENTIN FÉRAY, PIERRE-LOÏC MÉLIOT, AND ASHKAN NIKEGHBALI
-But the quantity in the bracket is 0 unless the only partition in the sum is the maximal
-partition
-{
-[r]
-}
-, in which case it is 1. This corresponds to the case where the edges in E
-form a connected subgraph of H. □
-Corollary 9.13. The functional FH fulﬁlls the deletion-contraction induction, i.e., if e is an
-edge of H which is not a loop, then
-FH = FH/e + FH\e,
-where H\ e (respectively H/e) are the graphs obtained from H by deleting (resp. contracting)
-the edge e.
-Proof. The ﬁrst term corresponds to sets of edges containing e, and the second to those
-that do not contain e. □
-This induction (over-)determines FH together with the initial conditions:
-
-
-
-F
-MOD-GAUSSIAN CONVERGENCE OF POL YNOMIAL FUNCTIONS UNDER CE NTRAL MEASURES3
-Proof. Each spanning tree of HA can be lifted (non necessarily in a unique way) to
-ap s e u d o - t r e ec o n t a i n e di nGA.S o t h e n u m b e ro f c o u p l e s(A,T ) of the statement
-is bounded by the number of couples (A,G ),w h e r eG is a pseudo-tree contained
-in GA.B yL e m m a1 . 1a n d1 . 2 ,t h i sn u m b e ri sg i v e nb yt h ef o r m u l aa b o ve.
-The second assertion comes from the fact that a connected gra ph has at least one
-spanning tree. □
-Let H be a graph on vertex set [𝓁] (eventually with some multiple edges and/or
-loops). We consider the following quantity
-AH =( −1)V (H)−1 ∑
-Π⊥E(H)
-µ(Π),
-where Π⊥E(H) means: (i, j) ∈ E(H) implies that i and j lie in different parts of
-Π (notation: i ≁Π j).
-Lemma 1.4. Fo r a n y g ra p hH,o n eh a s
-AH =
-∑
-E⊂ E(H)
-(V (H),E) connected
-(−1)|E|−V (H)+1.
-Proof. By inclusion-exclusion,
-AH =( −1)V (H)−1 ∑
-E⊂ E(H)
-E⁄=∅
-(−1)|E|
-
-
-∑
-Πsuch that
-∀(i,j)∈E,i∼ Πj
-µ(Π)
-
-.
-But the quantity in the bracket is 0 unless the only partition in the sum is the
-maximal partition
-{
-{1,..., 𝓁}
-}
-,i nw h i c hc a s ei ti s1.T h i sc o r r e s p o n d st ot h ec a s e
-where the edges in E form a connected subgraph of H. □
-Corollary 1.5. AH fulﬁlls the deletion-contraction induction: if e is an edge of H,
-then
-AH = AH\e + AH/e,
-where H∩e (resp. H/e)a r et h eg r a p h so b t a i n e df r o mH by contracting (resp.
-deleting) the edge e.
-Proof. The ﬁrst term correspond to sets of edges containing e,t h es e c o n dt ot h o s e
-who do not contain e. □
-This induction detemines AH together with the initial conditions:
-
-
-
-A =1
-A =0
-AH =0 if H is disconnected.
-Corollary 1.6. Fo r a n y g ra p hH,t h eq u a n t i t yAH is positive and smaller than the
-number STH of spanning trees in H. = 1,
-F = F =··· = 0,
-FH = 0 if H is disconnected.
-Corollary 9.14. For any graph H, the quantity FH is nonnegative and less or equal than the
-number STH of spanning trees in H.
-Proof. The quantity STH fulﬁlls the same induction as F H with initial conditions:
-
-
-
-ST
-MOD-GAUSSIAN CONVERGENCE OF POL YNOMIAL FUNCTIONS UNDER CE NTRAL MEASURES3
-Proof. Each spanning tree of HA can be lifted (non necessarily in a unique way) to
-ap s e u d o - t r e ec o n t a i n e di nGA.S o t h e n u m b e ro f c o u p l e s(A,T ) of the statement
-is bounded by the number of couples (A,G ),w h e r eG is a pseudo-tree contained
-in GA.B yL e m m a1 . 1a n d1 . 2 ,t h i sn u m b e ri sg i v e nb yt h ef o r m u l aa b o ve.
-The second assertion comes from the fact that a connected gra ph has at least one
-spanning tree. □
-Let H be a graph on vertex set [𝓁] (eventually with some multiple edges and/or
-loops). We consider the following quantity
-AH =( −1)V (H)−1 ∑
-Π⊥E(H)
-µ(Π),
-where Π⊥E(H) means: (i, j) ∈ E(H) implies that i and j lie in different parts of
-Π (notation: i ≁Π j).
-Lemma 1.4. Fo r a n y g ra p hH,o n eh a s
-AH =
-∑
-E⊂ E(H)
-(V (H),E) connected
-(−1)|E|−V (H)+1.
-Proof. By inclusion-exclusion,
-AH =( −1)V (H)−1 ∑
-E⊂ E(H)
-E⁄=∅
-(−1)|E|
-
-
-∑
-Πsuch that
-∀(i,j)∈E,i∼ Πj
-µ(Π)
-
-.
-But the quantity in the bracket is 0 unless the only partition in the sum is the
-maximal partition
-{
-{1,..., 𝓁}
-}
-,i nw h i c hc a s ei ti s1.T h i sc o r r e s p o n d st ot h ec a s e
-where the edges in E form a connected subgraph of H. □
-Corollary 1.5. AH fulﬁlls the deletion-contraction induction: if e is an edge of H,
-then
-AH = AH\e + AH/e,
-where H∩e (resp. H/e)a r et h eg r a p h so b t a i n e df r o mH by contracting (resp.
-deleting) the edge e.
-Proof. The ﬁrst term correspond to sets of edges containing e,t h es e c o n dt ot h o s e
-who do not contain e. □
-This induction detemines AH together with the initial conditions:
-
-
-
-A =1
-A =0
-AH =0 if H is disconnected.
-Corollary 1.6. Fo r a n y g ra p hH,t h eq u a n t i t yAH is positive and smaller than the
-number STH of spanning trees in H. = 1,
-ST = ST =··· = 1,
-STH = 0 if H is disconnected. □
-Remark 9.15. If H is connected, both F H and ST H are actually specializations of the
-bivariate Tutte polynomial TH(x, y) of H (cf. [Bol98, Chapter X]):
-FH = TH(1, 0) ; ST H = TH(1, 1).
-This explains the deletion-contraction relation. As the bivariate Tutte polynomials has
-non-negative coefﬁcients, it also explains the inequality 0≤ FH≤ STH.
-9.3.2. Induced graphs containing spanning trees. Fix a graph G (typically the dependency
-graphs of our family of variables). For a list (v1, . . . ,vr) of r vertices of G, we deﬁne the
-induced graph G[v1, . . . ,vr] as follows:
-• its vertex set is [r];
-• there is an edge between i and j if and only if vi = vj or vi and vj are linked in
-G.
-MOD-φ CONVERGENCE, I 75
-We will be interested in spanning trees of induced graphs. As the vertex set is[r], these
-spanning trees may be seen as Cayley trees. Recall that a Cayley tree of size r is by def-
-inition a tree with vertex set [r] (Cayley trees are neither rooted, nor embedded in the
-plane, they are only speciﬁed by an adjacency matrix). These objects are enumerated
-by the well-known Cayley formula established by C. Borchardt in [Bor60]: there are
-exactly rr−2 Cayley trees of size r.
-Lemma 9.16. Fix a Cayley tree T of size r and a graph G with N vertices and maximal degree
-D. Fix a vertex v 1 of G. The number of lists (v1, . . . ,vr) of r vertices of G such that T is
-contained in the induced subgraph G[v1, . . . ,vr] is bounded from above by
-(D + 1)r−1.
-Proof. Lists (v1, . . . ,vr) as in the lemma are constructed as follows. First consider a
-neighbor j of 1 in T. As we require G[v1, . . . ,vr] to contain T, the vertices 1 and j must
-also be neighbors in G[v1, . . . ,vr], i.e. v j = v1 or vj is a neighbor of v1 in T. Thus,
-once v1 is ﬁxed, there are at most D + 1 possible values for vj. The same is true for all
-neighbors of 1 and then for all neighbors of neighbors of 1 and so on. □
+We start our proof of Theorem \ref{thm:dependencygraphsrefined} by stating a few lemmas on graphs and spanning trees.
+
+
+\subsubsection{A functional on graphs}
+In this section, we consider graphs $H$ with multiple edges and loops. We use the standard notation $V(H)$ and $E(H)$ for their vertex and edge sets. For a graph $H$ and a set partition $\pi$ of $V(H)$, we denote $\pi \perp H$ when the following holds: for any edge $\{i,j\} \in E(H)$, the elements $i$ and $j$ lie in different parts of $\pi$ (in this case we use the notation $i \nsim_\pi j$). We introduce the following functional on graphs $H$:
+$$\SF_{H}=(-1)^{|V(H)|-1}\sum_{\pi \perp H}\mu(\pi).$$
+
+\begin{lemma}
+For any graph $H$, one has
+$$\SF_{H}= \sum_{\substack{E \subset E(H) \\ (V(H),E)\text{ connected}}} (-1)^{|E|-|V(H)|+1}.$$
+\end{lemma}
+
+\begin{proof}
+To simplify notation, suppose $V(H)=[r]$. We denote $\mathbbm{1}_{(P)}$ the characteristic function of the property $(P)$. By inclusion-exclusion,
+\begin{align*}
+(-1)^{|V(H)|-1}\,\SF_{H}&= \sum_{\pi \in \qym(r)} \!\left( \prod_{(i,j) \in E(H)}
+\mathbbm{1}_{i \nsim_{\pi} j} \right) \mu(\pi)=\sum_{\pi \in \qym(r)}\!
+\left( \prod_{(i,j) \in E(H)} (1- \mathbbm{1}_{i \sim_{\pi} j})\right) \mu(\pi)\\
+&= \sum_{E \subset E(H)} \sum_{\pi \in \qym(r)} (-1)^{|E|} \left( \prod_{(i,j) \in E}  \mathbbm{1}_{i \sim_{\pi} j} \right)  \mu(\pi) \\
+&= \sum_{E \subset E(H)} (-1)^{|E|} \left[ \sum_{\substack{\pi \text{ such that } \\ \forall (i,j) \in E,\,\, i \sim_\pi j}} \mu(\pi) \right].
+\end{align*}
+But the quantity in the bracket is $0$ unless the only partition in the sum is the maximal partition $\big\{[r]\big\}$, in which case it is $1$. This corresponds to the case where the edges in $E$ form a connected subgraph of $H$.
+\end{proof}
+\medskip
+
+\begin{corollary}
+The functional $\SF_H$ fulfills the deletion-contraction induction, \emph{i.e.}, if $e$ is an edge of $H$ which is not a loop, then
+$$\SF_H = \SF_{H / e} + \SF_{H \setminus e},$$
+where $H \setminus e$ (respectively $H / e$) are the graphs obtained from $H$ by deleting (resp. contracting) the edge $e$.
+\end{corollary}
+
+\begin{proof}
+The first term corresponds to sets of edges containing $e$, and the second to those that do not contain $e$.
+\end{proof}
+\bigskip
+
+This induction (over-)determines $\SF_H$ together with the initial conditions:
+$$\begin{cases}
+&\SF_{\includegraphics{node.pdf}}=1, \\
+&\SF_{\! \!\! \GraphOneLoop } \! =\SF_{\!  \!\! \!\GraphTwoLoops } \!=\cdots=0,\phantom{}\vspace{2mm}\\
+&\SF_{H}=0\quad\text{ if $H$ is disconnected}.
+\end{cases}$$
+
+\begin{corollary}\label{cor:ineq_SFST}
+For any graph $H$, the quantity $\SF_H$ is nonnegative and less or equal than the number $\ST_H$ of spanning trees in $H$.
+\end{corollary}
+
+\begin{proof}
+The quantity $\ST_H$ fulfills the same induction as $\SF_H$ with initial conditions:
+$$\hspace{2cm}\begin{cases}
+&\ST_{\includegraphics{node.pdf}}=1, \\
+&\ST_{\! \! \GraphOneLoop } \!=\ST_{ \! \! \GraphTwoLoops } \!=\cdots=1, \phantom{}\vspace{2mm}\\
+&\ST_{H}=0\quad\text{ if $H$ is disconnected}.
+\end{cases}\vspace*{-7mm}$$
+\end{proof}
+\medskip
+
+\begin{remark}
+If $H$ is connected, both $\SF_H$ and $\ST_{H}$ are actually specializations of the bivariate \emph{Tutte polynomial} $T_{H}(x,y)$ of $H$ (\emph{cf.} \cite[Chapter X]{Bol98}):
+$$\SF_{H}=T_{H}(1,0)\qquad;\qquad\ST_{H}=T_{H}(1,1).$$
+This explains the deletion-contraction relation. As the bivariate Tutte polynomials has non-negative coefficients, it also explains the inequality $0 \le \SF_H \le \ST_H$.
+\end{remark}
+\bigskip
+
+
+
+\subsubsection{Induced graphs containing spanning trees}
+Fix a graph $G$ (typically the dependency graphs of our family of variables). For a list $(v_1,\dots,v_r)$ of $r$ vertices of $G$, we define the induced graph $G[v_1,\dots,v_r]$ as follows:\vspace{2mm}
+\begin{itemize}
+    \item its vertex set is $[r]$;\vspace{2mm}
+    \item there is an edge between $i$ and $j$ if and only if 
+        $v_i=v_j$ or $v_i$ and $v_j$ are linked in $G$.\vspace{2mm}
+\end{itemize}
+We will be interested in spanning trees of induced graphs. As the vertex set is $[r]$, these spanning trees may be seen as {\em Cayley trees}. Recall that a Cayley tree of size $r$ is by definition a tree with vertex set $[r]$ (Cayley trees are neither rooted, nor embedded in the plane, they are only specified by an adjacency matrix). These objects are enumerated by the well-known Cayley formula established by C. Borchardt in \cite{Borchardt60}: there are exactly $r^{r-2}$ Cayley trees of size $r$.
+
+\begin{lemma}
+    Fix a Cayley tree $T$ of size $r$ and a graph $G$ with $N$ vertices and maximal degree $D$.
+    Fix a vertex $v_1$ of $G$.
+    The number of lists $(v_1,\dots,v_r)$ of $r$ vertices of $G$
+    such that $T$ is contained in the induced subgraph $G[v_1,\dots,v_r]$ is bounded from above by
+    \[ (D+1)^{r-1}. \]
+\end{lemma}
+
+\begin{proof}
+    Lists $(v_1,\dots,v_r)$ as in the lemma are constructed as follows. First consider a neighbor $j$ of $1$ in $T$. As we require $G[v_1,\dots,v_r]$ to contain $T$, the vertices $1$ and $j$ must also be neighbors in $G[v_1,\dots,v_r]$, {\it i.e.} $v_j=v_1$ or $v_j$ is a neighbor of $v_1$ in $T$. Thus, once $v_1$ is fixed, there are at most $D+1$ possible values for $v_j$. The same is true for all neighbors of $1$ and then for all neighbors of neighbors of $1$ and so on.
+\end{proof}
+\medskip
+
 We have the following immediate consequence.
-Corollary 9.17. Let G be a graph with n vertices and maximal degree D and r ≥ 1. Fix a
-vertex v1 of G. The number of couples
-(
-(v1, . . . ,vr), T
-)
-where each vi is a vertex of V and T a
-spanning tree of the induced subgraph G[v1, . . . ,vr] is bounded above by
-rr−2 (D + 1)r−1.
-9.3.3. Spanning trees and set partitions of vertices. Recall that ST H denotes the number
-of spanning trees of a graph H. Consider now a graph H with vertex set [r] and a set
-partition π = ( π1, . . . ,πt) of [r]. For each i, we denote ST πi (H) = STH[πi] the number
-of spanning trees of the graph induced by H on the vertex set πi. We also use the
-multiplicative notation
-STπ(H) =
-t
-∏
-j=1
-STπj(H).
-We can also consider the contraction H/π of H with respect to π. By deﬁnition, it
-is the multigraph ( i.e. graph with multiple edges, but no loops) deﬁned as follows.
-Its vertex set is the index set [t] of the parts of π and, for i⁄= j, there are as many
-edges between i and j as edges between a vertex of πi and a vertex of πj in H. Denote
-STπ(H) = STH/π the number of spanning trees of this contracted graph (multiple
-edges are here important). This should not be confused with STπ(H): in the latter, π is
-placed as an exponent because the quantity is multiplicative with respect to the part of
-π.
-Note that the union of a spanning tree T of H/π and of spanning trees Ti of H[πi]
-(one for each 1≤ i≤ t) gives a spanning tree T of H. Conversely, take a spanning tree
-T on H and a bicoloration of its edges. Edges of color 1 can be seen as a subgraph of H
-with the same vertex set [r]. This graph is of course acyclic. Its connected components
-deﬁne a partition π ={π1, . . . ,πt} of [r] and edges of color 1 correspond to a collection
-of spanning trees Ti of H[πi] (for 1≤ i≤ t). Besides, edges of color 2 deﬁne a spanning
-tree T on H/π.
-76 VALENTIN FÉRAY, PIERRE-LOÏC MÉLIOT, AND ASHKAN NIKEGHBALI
-Therefore, we have described a bijection between spanning trees T0 of H with a bi-
-coloration of their edges and triples (π, T, (Ti)1≤i≤t) where:
-• π is a set partition of the vertex set [r] of H (we denote t its number of parts);
-• T is a spanning tree of the contracted graph H/π;
-• for each 1≤ i≤ t, Ti is a spanning tree of the induced graph H[πi].
+\begin{corollary}
+    \label{cor:countingcouplessequences_ST}
+    Let $G$ be a graph with $n$ vertices and maximal degree $D$ and $r\ge 1$.
+    Fix a vertex $v_1$ of $G$.
+    The number of couples 
+    $\big( (v_1,\dots,v_r), T  \big) $
+    where each $v_i$ is a vertex of $V$ and $T$ a spanning tree of
+    the induced subgraph $G[v_1,\dots,v_r]$ is bounded above by
+    \[r^{r-2} \, (D+1)^{r-1}.\]
+\end{corollary}\bigskip
+
+
+\subsubsection{Spanning trees and set partitions of vertices}
+Recall that $\ST_H$ denotes the number of spanning trees of a graph $H$. Consider now a graph $H$ with vertex set $[r]$ and a set partition $\pi=(\pi_1,\dots,\pi_t)$ of $[r]$. For each $i$, we denote $\ST^{\pi_i}(H)=\ST_{H[\pi_i]}$ the number of spanning trees of the graph induced by $H$ on the vertex set $\pi_i$. We also use the multiplicative notation
+$$\ST^\pi(H) = \prod_{j=1}^t \ST^{\pi_j}(H).$$
+We can also consider the contraction $H/\pi$ of $H$ with respect to $\pi$. By definition, it is the multigraph ({\em i.e.} graph with multiple edges, but no loops) defined as follows. Its vertex set is the index set $[t]$ of the parts of $\pi$ and, for $i \neq j$, there are as many edges between $i$ and $j$ as  edges between a vertex of $\pi_i$ and a vertex of $\pi_j$ in $H$. Denote $\ST_{\pi}(H)=\ST_{H/\pi}$ the number of spanning trees of this contracted graph (multiple edges are here important). This should not be confused with $\ST^\pi(H)$: in the latter, $\pi$ is placed as an exponent because the quantity is multiplicative with respect to the part of $\pi$.
+\bigskip
+
+Note that the union of a spanning tree $\overline{T}$ of $H/\pi$ and  of spanning trees $T_i$ of $H[\pi_i]$ (one for each $1 \le i \le t$) gives a spanning tree $T$ of $H$. Conversely, take a spanning tree $T$ on $H$ and a bicoloration of its edges. Edges of color $1$ can be seen as a subgraph of $H$ with the same vertex set $[r]$. This graph is of course acyclic. Its connected components define a partition $\pi=\{\pi_1,\dots,\pi_t\}$ of $[r]$ and edges of color $1$ correspond to a collection of spanning trees $T_i$ of $H[\pi_i]$ (for $1 \le i \le t$). Besides, edges of color $2$ define a spanning tree $\overline{T}$ on $H/\pi$.\bigskip
+
+Therefore, we have described a bijection between spanning trees $T_0$ of $H$ with a bicoloration of their edges and triples $(\pi,\overline{T},(T_i)_{1\le i \le t})$ where:\vspace{2mm}
+\begin{itemize}
+    \item $\pi$ is a set partition of the vertex set $[r]$ of $H$ (we denote $t$ its number of parts);\vspace{2mm}
+    \item $\overline{T}$ is a spanning tree of the contracted graph $H/\pi$;\vspace{2mm}
+    \item for each $1 \le i \le t$,  $T_i$ is a spanning tree of the induced graph $H[\pi_i]$.\vspace{2mm}
+\end{itemize}
 Before giving a detailed example, let us state the numerical corollary of this bijection:
-2r−1 STH = ∑
-π
-STπ(H) STπ(H), (43)
-where the sum runs over all set partitions π of [r].
-T = 1
-23
-4
-5 6
-↔
-
-
-
-π ={π1, π2} with π1 ={1, 2, 3}, π2 ={4, 5, 6};
-T1 =
-1
-23
-, T2 =
-4
-5 6
-;
-T =
-π1
-π2
-.
-FIGURE 9. Bijection explaining Identity (43).
-Our bijection is illustrated on Figure 9, with the following conventions.
-• On the left, blue plain edges are edges of color 1 in the treeT0; on the right, these
-blue plain edges are the edges of the spanning trees Ti.
-• On the left, green dashed edges are edges of color 2 in the tree T0; on the right,
-these green dashed edges are edges of the spanning tree T.
-• Red dotted edges belong to the graphs H, H/π, H[πi] but not to their spanning
-tree T0, T, Ti.
-Note that in this example the graph H/π has two vertices linked by four edges. These
-four edges correspond to the edges (1, 4), (1, 6), (2, 6) and (3, 5) of H. In the example,
-the spanning tree T is the edge{(3, 5)}. If we had chosen another edge, the tree T on
-the left-hand side would have been different. Hence, in the Equality (43), the multiple
-edges of H/π must be taken into account: in our example, STπ(H) = 4.
+\begin{equation}\label{eq:coloredpseudotree}
+    2^{r-1} \,\ST_H = \sum_{\pi} \ST_\pi(H) \,\ST^\pi(H),
+\end{equation}
+where the sum runs over all set partitions $\pi$ of $[r]$.
+
+\begin{center}
+\begin{figure}[ht]
+    $$T=\begin{array}{c}
+        \begin{tikzpicture}
+    \tikzstyle{vertex1}=[circle,draw,inner sep=0.5pt,minimum size=1mm]
+    \tikzstyle{vertex2}=[rectangle,draw,inner sep=1.5pt,minimum size=1mm]
+    \tikzstyle{rededge}=[red, dotted,thick,line width=1.2pt]
+    \tikzstyle{blueedge}=[blue!90!white,thick,line width=1.2pt]
+    \tikzstyle{greenedge}=[ForestGreen!80!white, dashed,thick,line width=1.2pt]
+    \node (v1) at (0:1) [vertex1] {\footnotesize $1$};
+    \node (v2) at (60:1) [vertex1] {\footnotesize $2$};
+    \node (v3) at (120:1) [vertex1] {\footnotesize $3$};
+    \node (v4) at (180:1) [vertex1] {\footnotesize $4$};
+    \node (v5) at (240:1) [vertex1] {\footnotesize $5$};
+    \node (v6) at (300:1) [vertex1] {\footnotesize $6$};
+    \draw [blueedge] (v1) to (v2);
+    \draw [blueedge] (v2) to (v3);
+    \draw [blueedge] (v4) to (v5);
+    \draw [blueedge] (v4) to (v6);
+    \draw [greenedge] (v3) to (v5);
+    \draw [rededge] (v3) to (v1);
+    \draw [rededge] (v1) to (v4);
+    \draw [rededge] (v2) to (v6);
+    \draw [rededge] (v1) to (v6);
+\end{tikzpicture} \end{array}\,\,\leftrightarrow\,\,
+        \begin{cases}
+        \,\,\,\,\pi=\{\pi_1,\pi_2\} \text{ with }\pi_1=\{1,2,3\},\ \pi_2=\{4,5,6\};\\
+        \\
+        \,\,\,\,T_1=\begin{array}{c}
+        \begin{tikzpicture}
+    \tikzstyle{vertex1}=[circle,draw,inner sep=0.5pt,minimum size=1mm]
+    \tikzstyle{vertex2}=[rectangle,draw,inner sep=1.5pt,minimum size=1mm]
+    \tikzstyle{rededge}=[red, dotted,thick,line width=1.2pt]
+    \tikzstyle{blueedge}=[blue!90!white,thick,line width=1.2pt]
+    \tikzstyle{greenedge}=[ForestGreen!80!white, dashed,thick,line width=1.2pt]
+    \node (v1) at (0:1) [vertex1] {\footnotesize $1$};
+    \node (v2) at (60:1) [vertex1] {\footnotesize $2$};
+    \node (v3) at (120:1) [vertex1] {\footnotesize $3$};
+    \draw [blueedge] (v1) to (v2);
+    \draw [blueedge] (v2) to (v3);
+    \draw [rededge] (v3) to (v1);
+        \end{tikzpicture} 
+        \end{array},\quad 
+        T_2=\begin{array}{c}
+        \begin{tikzpicture}
+    \tikzstyle{vertex1}=[circle,draw,inner sep=0.5pt,minimum size=1mm]
+    \tikzstyle{vertex2}=[rectangle,draw,inner sep=1.5pt,minimum size=1mm]
+    \tikzstyle{rededge}=[red, dotted,thick,line width=1.2pt]
+    \tikzstyle{blueedge}=[blue!90!white,thick,line width=1.2pt]
+    \tikzstyle{greenedge}=[ForestGreen!80!white, dashed,thick,line width=1.2pt]
+    \node (v4) at (180:1) [vertex1] {\footnotesize $4$};
+    \node (v5) at (240:1) [vertex1] {\footnotesize $5$};
+    \node (v6) at (300:1) [vertex1] {\footnotesize $6$};
+    \draw [blueedge] (v4) to (v5);
+    \draw [blueedge] (v4) to (v6);
+        \end{tikzpicture} 
+        \end{array};\\
+        \\
+        \,\,\,\,\overline{T}=\begin{array}{c}
+        \begin{tikzpicture}
+    \tikzstyle{vertex1}=[circle,draw,inner sep=0.5pt,minimum size=1mm]
+    \tikzstyle{vertex2}=[rectangle,draw,inner sep=1.5pt,minimum size=1mm]
+    \tikzstyle{rededge}=[red, dotted,thick,line width=1.2pt]
+    \tikzstyle{blueedge}=[blue!90!white,thick,line width=1.2pt]
+    \tikzstyle{greenedge}=[ForestGreen!80!white, dashed,thick,line width=1.2pt]
+    \node (v123) at (60:1) [vertex1] {\footnotesize $\pi_1$};
+    \node (v456) at (240:1) [vertex1] {\footnotesize $\pi_2$};
+    \draw [rededge] (v123) to [bend right=-60] (v456);
+    \draw [rededge] (v123) to [bend right=20] (v456);
+    \draw [rededge] (v123) to [bend right=-20] (v456);
+    \draw [greenedge] (v123) to [bend right=60] (v456);
+\end{tikzpicture}
+        \end{array}.
+        \end{cases}
+$$
+    \caption{Bijection explaining Identity \eqref{eq:coloredpseudotree}.}
+    \label{fig:partitionspanningtrees}
+\end{figure}
+\end{center}
+Our bijection is illustrated on Figure \ref{fig:partitionspanningtrees}, with the following conventions.\vspace{1.5mm}
+\begin{itemize}
+    \item On the left, blue plain edges are edges of color $1$ in the tree $T_0$; on the right, these blue plain edges are the edges of the spanning trees $T_i$.\vspace{1.5mm}
+    \item On the left, green dashed edges are edges of color $2$ in the tree $T_0$; on the right, these green dashed edges are edges of the spanning tree $\overline{T}$.\vspace{1.5mm}
+    \item Red dotted edges belong to the graphs $H$, $H/\pi$, $H[\pi_i]$ but not to their spanning tree $T_0,\overline{T},T_i$.\vspace{1.5mm}
+\end{itemize}
+Note that in this example the graph $H/\pi$ has two vertices linked by four edges. These four edges correspond to the edges $(1,4)$, $(1,6)$, $(2,6)$ and $(3,5)$ of $H$. In the example, the spanning tree $\overline{T}$ is the edge $\{(3,5)\}$. If we had chosen another edge, the tree $T$ on the left-hand side would have been different. Hence, in the Equality \eqref{eq:coloredpseudotree}, the multiple edges of $H/\pi$ must be taken into account: in our example, $\ST_\pi(H)=4$.\bigskip

@@ -7,13 +7,14 @@ section_number: 5
 pages: 20-25
 source_pdf: 2504.18825v2.pdf
 source_sha256: 829f97190cb1c8ad
-text_source: latex
-latex_prose_ratio: 0.966
-latex_coverage_ratio: 0.971
 doc_brief: "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU — 16 sections: Introduction; Preliminaries; Murnaghan–Nakayama rule for the cy"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{s:OV}
 In the previous section, we establish a Murnaghan--Nakayama rule, which can be regarded as an iterative formula on the lower multipartitions of the irreducible characters. In this section, as duality, an iteration of the characters on the upper multipartitions will be derived with the help of the vertex operator realization of Schur functions.
+
 
 \subsection{Vertex operator realization of Schur functions}
 Let $\mathfrak{h}$ be the infinite dimensional Heisenberg algebra over $\mathbb{C}$ with generators $h_n$, $n\in\mathbb{Z}\setminus\{0\}$ and the central element $c$ subject to the relation:
@@ -85,6 +86,7 @@ Recall that $\{s_{\bla}\mid \bla\in\mathcal{P}_{n,m}\}$ forms an orthonormal bas
 =&\langle S^*_{\la^{(j)}_1}q_{\bm{\mu}}(x;q,\bm{u}), s_{\bm{\la}\setminus\la^{(j)}_1} \rangle_{\otimes}.
 \end{split}
 \end{align}
+
 \subsection{An iterative formula on the upper multipartitions}
 Next, we will find a formula for $S^{*}_{k}q_{\bm{\mu}}(x;q,\bm{u})$ in terms of $q_{\bm{\rho}}(x;q,\bm{u})S^{*}_{m}$, which further yields an iteration of $\chi^{\bm{\la}}_{\bm{\mu}}$. 
 

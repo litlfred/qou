@@ -7,55 +7,61 @@ section_number: 4
 pages: 13-24
 source_pdf: 2408.04921v2.pdf
 source_sha256: dcfe112640a8adda
-text_source: latex
-latex_prose_ratio: 0.986
-latex_coverage_ratio: 0.577
 doc_brief: "IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP HUIMIN GAO AND NAIHUAN JING — 5 sections: Introduction; Irreducible characters of Ck ≀ Sn; X ij"
+text_source: latex
+latex_prose_ratio: 0.995
+latex_coverage_ratio: 0.992
 ---
-For completeness, we first calculate the degree of any irreducible character of $C_k\wr S_n$ [@IJS]. Recall that the inner product in $V$ is given by: $$\begin{align}
+For completeness, we first calculate the degree of any irreducible character of $C_k\wr S_n$ [@IJS]. Recall that the inner product in $V$ is given by: $$\begin{aligned}
     \langle a_{-\boldsymbol{\lambda}},a_{-\boldsymbol{\mu}} \rangle=\prod_{i=0}^{k-1}\langle a_{-\lambda^{(i)}},a_{-\mu^{(i)}}\rangle=\delta_{\boldsymbol{\lambda}\boldsymbol{\mu}}\prod_{i=0}^{k-1}z_{\lambda^{(i)}}.
-\end{align}$$ Under this inner product the wreath Schur functions are orthonormal: $$\begin{align}
+\end{aligned}$$ Under this inner product the wreath Schur functions are orthonormal: $$\begin{aligned}
     \langle s_{\boldsymbol{\lambda}},s_{\boldsymbol{\mu}} \rangle=\prod_{i=0}^{k-1}\langle s_{\lambda^{(i)}},s_{\mu^{(i)}}\rangle=\delta_{\boldsymbol{\lambda}\boldsymbol{\mu}}.
-\end{align}$$ Then we have $$\begin{align}
+\end{aligned}$$ Then we have $$\begin{aligned}
 \label{e:inner}
     \langle s_{\boldsymbol{\lambda}},a_{-\boldsymbol{\mu}} \rangle=\prod_{i=0}^{k-1}\langle s_{\lambda^{(i)}},a_{-\mu^{(i)}}\rangle.
-\end{align}$$
+\end{aligned}$$
 
 The following result is well-known for the wreath products and is included here using the vertex operator approach.
 
 ::: thm
-[@O] For any colored partition $\boldsymbol{\lambda}=(\lambda^{(0)},\lambda^{(1)},\cdots,\lambda^{(k-1)})$ of $n$, the degree of the irreducible character $\chi^{\boldsymbol{\lambda}}$ of $C_k\wr S_n$ is given by $$\begin{align}
+[@O] For any colored partition $\boldsymbol{\lambda}=(\lambda^{(0)},\lambda^{(1)},\cdots,\lambda^{(k-1)})$ of $n$, the degree of the irreducible character $\chi^{\boldsymbol{\lambda}}$ of $C_k\wr S_n$ is given by $$\begin{aligned}
         \chi^{\boldsymbol{\lambda}}(\boldsymbol{1})=\frac{n!}{\prod_{i=0}^{k-1}h(\lambda^{(i)})},
-\end{align}$$ where $\boldsymbol{1}=((1^n),\emptyset,\cdots,\emptyset)$ and $h(\lambda^{(i)})$ is the hook length of $\lambda^{(i)}$.
+    
+\end{aligned}$$ where $\boldsymbol{1}=((1^n),\emptyset,\cdots,\emptyset)$ and $h(\lambda^{(i)})$ is the hook length of $\lambda^{(i)}$.
 :::
 
 ::: proof
-*Proof.* By definition, $\chi^{\boldsymbol{\lambda}}(\boldsymbol{1})=\langle s_{\boldsymbol{\lambda}}, (\widetilde{a}_{-01})^n \rangle=\langle s_{\boldsymbol{\lambda}}, (\sum_{j=0}^{k-1}a_{-j1})^n \rangle$. The non-zero items are only $$\begin{align*}
+*Proof.* By definition, $\chi^{\boldsymbol{\lambda}}(\boldsymbol{1})=\langle s_{\boldsymbol{\lambda}}, (\widetilde{a}_{-01})^n \rangle=\langle s_{\boldsymbol{\lambda}}, (\sum_{j=0}^{k-1}a_{-j1})^n \rangle$. The non-zero items are only $$\begin{aligned}
         \langle s_{\boldsymbol{\lambda}},\prod_{j=0}^{k-1}a_{-j1}^{|\lambda^{(j)}|} \rangle=\prod_{j=0}^{k-1}\langle s_{\lambda^{(j)}},a_{-j1}^{|\lambda^{(j)}|} \rangle=\prod_{j=0}^{k-1}\frac{|\lambda^{(j)}|!}{h(\lambda^{(j)})},
-\end{align*}$$ where the second equality has used the degree formula of irreducible characters in $S_{\lambda^{(j)}}$. Since the coefficient of $\prod_{j=0}^{k-1}a_{-j1}^{|\lambda^{(j)}|}$ in $(\sum_{j=0}^{k-1}a_{-j1})^n$ equals to $$\begin{align*}
+    
+\end{aligned}$$ where the second equality has used the degree formula of irreducible characters in $S_{\lambda^{(j)}}$. Since the coefficient of $\prod_{j=0}^{k-1}a_{-j1}^{|\lambda^{(j)}|}$ in $(\sum_{j=0}^{k-1}a_{-j1})^n$ equals to $$\begin{aligned}
         C_n^{|\lambda^{(0)}|}C_{n-|\lambda^{(0)}|}^{|\lambda^{(1)}|}\cdots=\frac{n!}{\prod_{j=0}^{k-1}|\lambda^{(j)}|!},
-\end{align*}$$ and the theorem is proved. ◻
+    
+\end{aligned}$$ and the theorem is proved. ◻
 :::
 
 ::: cor
-Given colored partitions $\boldsymbol{\lambda}=(\lambda^{(0)},\lambda^{(1)},\cdots,\lambda^{(k-1)})$ of $n$, let $\boldsymbol{\kappa}^j$ be a colored partition supported only at the $j$-th constituent $(1^n)$, and $\omega$ be the $k$-th primitive root of unity. Then we have $$\begin{align}
+Given colored partitions $\boldsymbol{\lambda}=(\lambda^{(0)},\lambda^{(1)},\cdots,\lambda^{(k-1)})$ of $n$, let $\boldsymbol{\kappa}^j$ be a colored partition supported only at the $j$-th constituent $(1^n)$, and $\omega$ be the $k$-th primitive root of unity. Then we have $$\begin{aligned}
         \chi^{\boldsymbol{\lambda}}_{\boldsymbol{\kappa}^j}=\frac{\omega^{-\mathrm{deg}(\boldsymbol{\lambda})j}n!}{\prod_{i=0}^{k-1}h(\lambda^{(i)})},
-\end{align}$$ where $\mathrm{deg}(\boldsymbol{\lambda})$ is defined as the sum of $i |\lambda^{(i)}|$.
+    
+\end{aligned}$$ where $\mathrm{deg}(\boldsymbol{\lambda})$ is defined as the sum of $i |\lambda^{(i)}|$.
 :::
 
 In the dual case, one has the following result.
 
 ::: prop
-Given a colored partition $\boldsymbol{\rho}=(\rho^{(0)},\rho^{(1)},\cdots,\rho^{(k-1)})$ of $n$, the irreducible character value is $$\begin{align}
+Given a colored partition $\boldsymbol{\rho}=(\rho^{(0)},\rho^{(1)},\cdots,\rho^{(k-1)})$ of $n$, the irreducible character value is $$\begin{aligned}
 \label{e:char-}
         \chi^{\boldsymbol{\kappa}^j}_{\boldsymbol{\rho}}=\omega^{-\eta(\boldsymbol{\rho})j}(-1)^{l(\boldsymbol{\rho})+n},
-\end{align}$$ where $\boldsymbol{\kappa}^j$ is a colored partition supported only at the $j$-th constituent $(1^n)$, $\eta(\boldsymbol{\rho})$ is the weighted length $\sum_i il(\rho^{(i)})$.
+    
+\end{aligned}$$ where $\boldsymbol{\kappa}^j$ is a colored partition supported only at the $j$-th constituent $(1^n)$, $\eta(\boldsymbol{\rho})$ is the weighted length $\sum_i il(\rho^{(i)})$.
 :::
 
 ::: proof
-*Proof.* In view of [\[e:inner\]](#e:inner){reference-type="eqref" reference="e:inner"}, the only nonzero factor of $\langle s_{\boldsymbol{\kappa}^j}, \widetilde{a}_{\boldsymbol{\rho}} \rangle$ is $$\begin{align*}
+*Proof.* In view of [\[e:inner\]](#e:inner){reference-type="eqref" reference="e:inner"}, the only nonzero factor of $\langle s_{\boldsymbol{\kappa}^j}, \widetilde{a}_{\boldsymbol{\rho}} \rangle$ is $$\begin{aligned}
         \langle s_{j(1^n)}, \prod_{i=0}^{k-1}\omega^{-ij|\rho^{(i)}|}a_{-j\rho^{(i)}} \rangle
-\end{align*}$$ since $|\lambda^{(j)}|$ exhausts $n$. Note that $\prod_{i=0}^{k-1}a_{-j\rho^{(i)}}$ can be written as $a_{-j\rho}$, where $\rho$ is the rearrangement of $\boldsymbol{\rho}$.
+    
+\end{aligned}$$ since $|\lambda^{(j)}|$ exhausts $n$. Note that $\prod_{i=0}^{k-1}a_{-j\rho^{(i)}}$ can be written as $a_{-j\rho}$, where $\rho$ is the rearrangement of $\boldsymbol{\rho}$.
 
 For the character value $\chi^{(1^n)}_{\rho}$, we apply Theorem [\[c:3.10\]](#c:3.10){reference-type="ref" reference="c:3.10"} with induction on $n$. First $\chi^{(1)}_{(1)}=1$ is clear. The inductive hypothesis says that $$\chi^{(1^{n-1})}_{(\rho\backslash\mu)\cup\tau}=(-1)^{l(\rho)-l(\mu)+l(\tau)+n-1}.$$ Note that $$\sum_{\lambda\vdash n}\frac{1}{z_\lambda}=1.$$ Then $$\chi^{(1^n)}_{\rho}=(-1)^{l(\rho)+n-1}\sum_{\mu\vartriangleleft\rho,|\mu|\geq 1}(-1)^{l(\mu)},$$ where the sum is over all nonempty subpartitions $\mu\vartriangleleft\rho$, which is an alternating sum of binomial coefficients: $$\sum_{k=1}^{l(\rho)}(-1)^k\binom{l(\rho)}{k}=-C_{l(\rho)}^0=-1,$$ Therefore $\chi^{(1^n)}_{\rho}=(-1)^{l(\rho)+n}$. Obviously $l(\boldsymbol{\rho})=l(\rho)$, and $\prod_{i=0}^{k-1}\omega^{-ij|\rho^{(i)}|}$ equals to $\omega^{-\eta(\boldsymbol{\rho})j}$, subsequently we have shown $\chi^{\boldsymbol{\kappa}^j}_{\boldsymbol{\rho}}$ is given as stated. ◻
 :::
@@ -91,13 +97,13 @@ For example, given $\lambda=(4,2,1)$ and $k=3$ as above. Take $m=3$, then $\xi=(
 
 The above procedure shows that any partition $\lambda$ determines its $k$-core $\gamma_\lambda$ and $k$-quotient $\boldsymbol{\beta}_\lambda$ uniquely. Moreover, $$|\lambda|=k\cdot \Arrowvert\boldsymbol{\beta}_\lambda\Arrowvert+|\gamma_\lambda|.$$ In fact, $\lambda$ also can be determined uniquely by $\gamma_\lambda$ and $\beta_\lambda$ conversely (cf. [@Mac I.I. Ex. 8]).
 
-For convenience, we define the *standard form* of an irreducible character value of $C_k\wr S_n$. According to Theorem [\[t:MN-gensym\]](#t:MN-gensym){reference-type="ref" reference="t:MN-gensym"}, each $\chi_{\boldsymbol{\rho}}^{\boldsymbol{\lambda}}$ can be written as $$c_0+c_1\omega+\cdots+c_{k-1}\omega^{k-1}, c_i\in \mathbb{Z}$$ since the coefficients of the recursive formula lie in $\mathbb{Z}[\omega]$. However, $k$-tuple $(c_0, c_1, \cdots, c_{k-1})$ is not unique due to $1+\omega+\cdots+\omega^{k-1}=0$. Indeed, $$c_0+c_1\omega+\cdots+c_{k-1}\omega^{k-1}=c_0'+c_1'\omega+\cdots+c_{k-1}'\omega^{k-1}$$ if and only if $c_0-c_0'=c_1-c_1'=\cdots=c_{k-1}-c_{k-1}'$. For example, the values of $\chi_{(\emptyset, (1), (1,1))}^{(\emptyset, (2), (1))}$ can be $$\begin{gather*}
+For convenience, we define the *standard form* of an irreducible character value of $C_k\wr S_n$. According to Theorem [\[t:MN-gensym\]](#t:MN-gensym){reference-type="ref" reference="t:MN-gensym"}, each $\chi_{\boldsymbol{\rho}}^{\boldsymbol{\lambda}}$ can be written as $$c_0+c_1\omega+\cdots+c_{k-1}\omega^{k-1}, c_i\in \mathbb{Z}$$ since the coefficients of the recursive formula lie in $\mathbb{Z}[\omega]$. However, $k$-tuple $(c_0, c_1, \cdots, c_{k-1})$ is not unique due to $1+\omega+\cdots+\omega^{k-1}=0$. Indeed, $$c_0+c_1\omega+\cdots+c_{k-1}\omega^{k-1}=c_0'+c_1'\omega+\cdots+c_{k-1}'\omega^{k-1}$$ if and only if $c_0-c_0'=c_1-c_1'=\cdots=c_{k-1}-c_{k-1}'$. For example, the values of $\chi_{(\emptyset, (1), (1,1))}^{(\emptyset, (2), (1))}$ can be $$\begin{gathered}
 \vdots\\
 2+\omega+3\omega^2\\
 1+2\omega^2\\
 -\omega+\omega^2\\
 \vdots
-\end{gather*}$$ The standard form is the *unique* form such that the sum of $c_i$ lies in the color set $I=\{0, 1, \ldots, k-1\}$. We also denote by $d(\chi_{\boldsymbol{\rho}}^{\boldsymbol{\lambda}})$ the sum of $c_i$ in the standard form. Then $-\omega+\omega^2$ is the standard form in the above example, and $d(\chi_{(\emptyset, (1), (1,1))}^{(\emptyset, (2), (1))})=0$.
+\end{gathered}$$ The standard form is the *unique* form such that the sum of $c_i$ lies in the color set $I=\{0, 1, \ldots, k-1\}$. We also denote by $d(\chi_{\boldsymbol{\rho}}^{\boldsymbol{\lambda}})$ the sum of $c_i$ in the standard form. Then $-\omega+\omega^2$ is the standard form in the above example, and $d(\chi_{(\emptyset, (1), (1,1))}^{(\emptyset, (2), (1))})=0$.
 
 ::: thm
 (Relation between $C_k\wr{S}_n$ and $S_{kn}$) Given colored partitions $\boldsymbol{\lambda}$ and $\boldsymbol{\rho}$ of $n$. Let $\lambda$ be the partition of $kn$ with the $k$-core $\emptyset$ and $k$-quotient $\boldsymbol{\lambda}$, and let $\rho$ be the rearrangement of $k\boldsymbol{\rho}$. Then $$d(\chi_{\boldsymbol{\rho}}^{\boldsymbol{\lambda}})=\sigma_{\lambda}(\chi_{\rho}^{\lambda} \quad mod \quad k).$$
@@ -108,9 +114,9 @@ For convenience, we define the *standard form* of an irreducible character value
 
 By Theorem [\[t:MN-gensym\]](#t:MN-gensym){reference-type="ref" reference="t:MN-gensym"} it follows that the irreducible character value $\chi_{\boldsymbol{\rho}}^{\boldsymbol{\lambda}}$ of $C_k\wr S_n$ can be written as $$\chi_{\boldsymbol{\rho}}^{\boldsymbol{\lambda}}=\sum_{p\in P}\sigma_p\omega(p),$$ where the sum is over all paths $p\in P$ and $\sigma_p: =(-1)^{\mathrm{ht}(p)}$ with $\mathrm{ht}(p)$ being the sum of all colored rim-hook heights in path $p$. Note that $\omega(p)$ equals to some power of $\omega$ depending on $p$. Suppose the standard form of $\chi_{\boldsymbol{\rho}}^{\boldsymbol{\lambda}}$ is of the following form: $\sum_{i=0}^{k-1}c_i\omega^i$.
 
-On the other hand, let $\tilde{P}$ be the set of paths from $\lambda$ to $\emptyset$ that remove $k|\rho_1|$-rim hooks, $k|\rho_2|$-rim hooks,\..., and $k|\rho_{l(\lambda)}|$-rim hooks. By the ordinary Murnaghan-Nakayama rule of $S_{kn}$, we have that $$\chi_{\rho}^{\lambda}=\sum_{\tilde{p}\in \tilde{P}}\sigma_{\tilde{p}},$$ where $\sigma_{\tilde{p}}=(-1)^{\mathrm{ht}(\tilde{p})}$ is defined similarly as $\sigma_p$. It is known that $\sigma_p$ and $\sigma_{\tilde{p}}$ are related by the fundamental relation [@O]: $$\begin{align}
+On the other hand, let $\tilde{P}$ be the set of paths from $\lambda$ to $\emptyset$ that remove $k|\rho_1|$-rim hooks, $k|\rho_2|$-rim hooks,\..., and $k|\rho_{l(\lambda)}|$-rim hooks. By the ordinary Murnaghan-Nakayama rule of $S_{kn}$, we have that $$\chi_{\rho}^{\lambda}=\sum_{\tilde{p}\in \tilde{P}}\sigma_{\tilde{p}},$$ where $\sigma_{\tilde{p}}=(-1)^{\mathrm{ht}(\tilde{p})}$ is defined similarly as $\sigma_p$. It is known that $\sigma_p$ and $\sigma_{\tilde{p}}$ are related by the fundamental relation [@O]: $$\begin{aligned}
 \sigma_p=\sigma_{\lambda}\sigma_{\tilde{p}}.
-\end{align}$$ and there is a bijection between the sets $P$ and $\tilde{P}$. This implies that $\sum_ic_i$ in the standard form equals to $\sigma_{\lambda}\cdot \chi_{\rho}^{\lambda}$ mod $k$, which finishes the proof. ◻
+\end{aligned}$$ and there is a bijection between the sets $P$ and $\tilde{P}$. This implies that $\sum_ic_i$ in the standard form equals to $\sigma_{\lambda}\cdot \chi_{\rho}^{\lambda}$ mod $k$, which finishes the proof. ◻
 :::
 
 Finally we discuss how to implement our iterative formulas using the SageMath program.

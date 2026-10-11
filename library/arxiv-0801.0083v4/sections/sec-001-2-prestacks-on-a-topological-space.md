@@ -7,10 +7,10 @@ section_number: 2
 pages: 8-11
 source_pdf: 0801.0083v4.pdf
 source_sha256: 8e38b9e56d246709
-text_source: latex
-latex_prose_ratio: 0.805
-latex_coverage_ratio: 0.942
 doc_brief: "CENTRAL EXTENSIONS OF GERBES AMNON YEKUTIELI — W e introduce the notion of central extension of gerbes on a to po- logical space X."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:prest}
 

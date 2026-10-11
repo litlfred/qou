@@ -7,7 +7,7 @@
   "bytes": 1334322,
   "pages": 49,
   "text_source": "embedded",
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -329,8 +329,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "ising_arxiv.tex",
-   "tex_sections": 5,
-   "overlaid": 0,
+   "tex_sections": 25,
+   "overlaid": 13,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -340,73 +340,112 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.091,
+     "prose_ratio": 0.169,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-11-complex-convergence-and-interpretation-of-the",
      "title": "Complex convergence and interpretation of the residue",
-     "result": "no matching \\section"
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.942,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-12-the-method-of-joint-cumulants",
      "title": "The method of joint cumulants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-13-basic-models",
      "title": "Basic models",
-     "result": "no matching \\section"
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-31-ellis-newman-lemma-and-deconvolution-of-a-lar",
      "title": "Ellis-Newman lemma and deconvolution of a large Gaussian noise",
-     "result": "no matching \\section"
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.889,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-32-the-residue-of-mod-gaussian-convergence-as-a",
      "title": "The residue of mod-Gaussian convergence as a limiting law",
-     "result": "no matching \\section"
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.922,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-33-application-to-the-curie-weiss-model",
      "title": "Application to the Curie-Weiss model",
-     "result": "no matching \\section"
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-34-mixed-curie-weiss-ising-model",
      "title": "Mixed Curie-Weiss-Ising model",
-     "result": "no matching \\section"
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.889,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-35-sub-critical-changes-of-measures",
      "title": "Sub-critical changes of measures",
-     "result": "no matching \\section"
+     "prose_ratio": 0.913,
+     "coverage_ratio": 0.918,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-36-random-walks-changed-in-measure",
      "title": "Random walks changed in measure",
-     "result": "no matching \\section"
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-41-speed-of-convergence",
      "title": "Speed of convergence",
-     "result": "no matching \\section"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-42-local-limit-theorem",
      "title": "Local limit theorem",
-     "result": "no matching \\section"
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.934,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-51-joint-cumulants-of-the-spins",
      "title": "Joint cumulants of the spins",
-     "result": "no matching \\section"
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-013-52-bounds-on-the-cumulants-of-the-magnetization",
      "title": "Bounds on the cumulants of the magnetization",
-     "result": "no matching \\section"
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-014-references",

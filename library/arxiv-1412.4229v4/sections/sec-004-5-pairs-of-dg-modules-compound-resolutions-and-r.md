@@ -7,10 +7,10 @@ section_number: 5
 pages: 26-32
 source_pdf: 1412.4229v4.pdf
 source_sha256: 248d6a1e28a76a94
-text_source: latex
-latex_prose_ratio: 0.991
-latex_coverage_ratio: 0.876
 doc_brief: "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI — Let A → B be a homomorphism of commutative rings."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:pairs-DG-modules}
 

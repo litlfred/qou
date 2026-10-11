@@ -6,7 +6,7 @@
   "sha256": "bda867f7b84f69c35e3171477939743ca4a9b1a8426106b168e40cbc91dc9767",
   "bytes": 1986072,
   "pages": 43,
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -372,8 +372,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "draft-v4.tex",
-   "tex_sections": 5,
-   "overlaid": 0,
+   "tex_sections": 17,
+   "overlaid": 14,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -388,81 +388,120 @@
     {
      "id": "sec-001-complex-chernsimons-theory-and-the-a-polynomial",
      "title": "Complex Chern\u2013Simons theory and the A-polynomial",
-     "prose_ratio": 0.149,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-classical-and-quantum-a-polynomials",
      "title": "Classical and quantum A-polynomials",
-     "result": "no matching \\section"
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.94,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-the-structure-of-the-wave-function",
      "title": "The structure of the wave function",
-     "prose_ratio": 0.088,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.925,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-general-conjectures",
      "title": "General conjectures",
-     "result": "no matching \\section"
+     "prose_ratio": 0.904,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-cancellation-of-singularities",
      "title": "Cancellation of singularities",
-     "result": "no matching \\section"
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.888,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-the-wave-function-in-the-rational-case-i",
      "title": "The wave function in the rational case, I",
-     "result": "no matching \\section"
+     "prose_ratio": 0.904,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-the-wave-function-in-the-rational-case-ii",
      "title": "The wave function in the rational case, II",
-     "result": "no matching \\section"
+     "prose_ratio": 0.941,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-solving-a-second-order-q-difference-equation",
      "title": "Solving a second-order q-difference equation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-solving-a-third-order-q-difference-equation",
      "title": "Solving a third-order q-difference equation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-examples",
      "title": "Examples",
-     "prose_ratio": 0.158,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.932,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-the-figure-eight-knot",
      "title": "The figure-eight knot",
-     "result": "no matching \\section"
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-the-three-twist-knot",
      "title": "The three-twist knot",
-     "result": "no matching \\section"
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-the-wave-function-from-the-state-integral",
      "title": "The wave function from the state integral",
-     "prose_ratio": 0.113,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.948,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-014-evaluation-at-rational-points",
      "title": "Evaluation at rational points",
-     "result": "no matching \\section"
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-015-factorization-and-two-special-subcases",
      "title": "Factorization and two special subcases",
-     "result": "no matching \\section"
+     "prose_ratio": 0.401,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-016-conclusions",

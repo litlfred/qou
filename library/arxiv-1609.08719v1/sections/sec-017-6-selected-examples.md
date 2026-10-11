@@ -7,10 +7,10 @@ section_number: 6
 pages: 14-17
 source_pdf: 1609.08719v1.pdf
 source_sha256: f61ff2111e9a97f9
-text_source: latex
-latex_prose_ratio: 0.807
-latex_coverage_ratio: 0.967
 doc_brief: "AN EXPERIMENTAL INVESTIGATION OF NEUMANN’S CONJECTURE — We use a large census of hyperbolic 3-manifolds to experimentally investigate a conjecture of Neumann regarding the Bloch Group."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:lattice-examples}
 

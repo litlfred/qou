@@ -177,7 +177,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 10,
-   "overlaid": 4,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -195,24 +195,24 @@
     {
      "id": "sec-001-2-quaternion-gauge-theory-and-isospin",
      "title": "Quaternion Gauge Theory and Isospin",
-     "prose_ratio": 0.995,
-     "coverage_ratio": 0.979,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-3-quaternions-and-dirac-spinors",
      "title": "Quaternions and Dirac spinors",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.581,
+     "prose_ratio": 0.607,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-5-generators-and-casimir-invariants",
      "title": "Generators and Casimir Invariants",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.683,
+     "prose_ratio": 0.704,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -220,8 +220,9 @@
      "id": "sec-004-7-split-octonions",
      "title": "Split Octonions",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.469,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.927,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-10-conclusion",

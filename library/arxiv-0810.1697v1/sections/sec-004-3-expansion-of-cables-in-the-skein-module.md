@@ -7,10 +7,10 @@ section_number: 3
 pages: 5-8
 source_pdf: 0810.1697v1.pdf
 source_sha256: 1aef66179da3c154
-text_source: latex
-latex_prose_ratio: 0.989
-latex_coverage_ratio: 0.989
 doc_brief: "ON THE CABLE EXPANSION FORMULA QIHOU LIU — In this paper, a generalized version of Morton’s formula [8] is proved."
+text_source: latex
+latex_prose_ratio: 0.995
+latex_coverage_ratio: 1.0
 ---
 []{#thm label="thm"} []{#thm label="thm"} In this section, the framing convention is assumed.
 
@@ -58,21 +58,21 @@ $$\scalebox{.25}{\psfig{file=link-L2.eps}}$$ each component has 0 framing. Let $
 
 Let $r$ be a positive integer, and $$\omega_r=\sum_{t=0}^{r-1} (-1)^t[t+1]e_t$$ then for $r>m>0$, we have $$\langle e_m,\omega_r\rangle_H\equiv 0$$ and $$\langle e_0,\omega_r\rangle_H\equiv \langle\omega_r\rangle_U$$ where $U$ is the unknot with framing 0, equivalence means equal at $A=exp\left(\frac {\pi i}{2(r+1)}\right)$. See Lemma 13.9 from Lickorish's book [@LBook].
 
-Thus for $r>2l\ge0,r>2k\ge0$, we have $$\begin{align}
+Thus for $r>2l\ge0,r>2k\ge0$, we have $$\begin{aligned}
 \langle e_l,e_k,\omega_r\rangle_L&=\langle e_l\cdot e_k,\omega_r\rangle_H\notag\\
                        &=\sum_{\substack{m\\(k,l,m)\ admissible}}\langle e_m,\omega_r\rangle_H\notag\\
                        &\equiv \sum_{\substack{m\\(k,l,m)\ admissible}}\delta(m)\langle\omega_r\rangle_U\notag
-\end{align}$$ Thus we have $$\langle e_l,e_k,\omega_r\rangle_L\equiv\delta(l-k)\langle\omega_r\rangle_U\tag {*}$$
+\end{aligned}$$ Thus we have $$\langle e_l,e_k,\omega_r\rangle_L\equiv\delta(l-k)\langle\omega_r\rangle_U\tag {*}$$
 
 Then $$\langle e_l,\ T_\sigma(p,q;s),\omega_r\rangle_L\equiv g_\sigma^l(p,q;s)\langle\omega_r\rangle_U\tag {**}$$
 
-Let $L_1$ be the second example mentioned in 2.1.2, we have $$\langle e_l,e_t\rangle_{L_1}=(-1)^l \frac{[(l+1)(t+1)]}{[t+1]} e_t$$ Map $D \times S^1$ to a tubular neighborhood of $K_3$, we have $$\begin{align}
+Let $L_1$ be the second example mentioned in 2.1.2, we have $$\langle e_l,e_t\rangle_{L_1}=(-1)^l \frac{[(l+1)(t+1)]}{[t+1]} e_t$$ Map $D \times S^1$ to a tubular neighborhood of $K_3$, we have $$\begin{aligned}
  \langle e_l,\ T_\sigma(p,q;s),\omega_r\rangle_L&=\langle T_\sigma(p,q;s),\langle e_l,\omega_r\rangle_{L_1}\rangle_H\notag\\
 &=\langle T_\sigma(p,q;s),\ \sum_{t=0}^{r-1}
 (-1)^t[t+1]\langle e_l,e_t\rangle_{L_1}\rangle_H\notag\\
 &=\langle T_\sigma(p,q;s),\ \sum_{t=0}^{r-1} (-1)^{l+t}[(t+1)(l+1)]
 e_t\rangle_H\tag {***}
-\end{align}$$
+\end{aligned}$$
 
  
 
@@ -93,21 +93,21 @@ T_{\sigma}(q,p;t)\rangle_H\tag {****}$$ Then we expand $T_{\sigma}(q,p;t)$ on th
 We summarize (\*\*),(\*\*\*),(\*\*\*\*) into the following lemma.
 
 ::: lemma
-$$\begin{align}
+$$\begin{aligned}
  (-1)^{l+s}&g_\sigma^l(p,q;s)\langle\omega_r\rangle\notag\\
 &\equiv \sum_{t=0}^{r-1}\sum_{k\ge 0} (-1)^{k+t}g_{\sigma}^k(q,p;t)[(t+1)(l+1)][(s+1)(k+1)]\notag
-\end{align}$$ here equivalence means equal at $A=exp\left(\frac {\pi i}{2(r+1)}\right)$. Note that in this formula $g(p,q)$ and $g(q,p)$ have the same framing.
+\end{aligned}$$ here equivalence means equal at $A=exp\left(\frac {\pi i}{2(r+1)}\right)$. Note that in this formula $g(p,q)$ and $g(q,p)$ have the same framing.
 :::
 
 Using the two lemmas and the formula for (p,q)=(1,0), we can now write down the general formula for $g^,$s.
 
 ::: theorem
-Assume $p>0$,let $\epsilon, \beta, \alpha$ be such that $\epsilon=[\frac{q}{p}]$, $q=\epsilon p+\beta$ with $0\le \beta<p$, $\alpha=p\cdot\beta$.Then for framing $\sigma=pq$, we have $$\begin{align}
+Assume $p>0$,let $\epsilon, \beta, \alpha$ be such that $\epsilon=[\frac{q}{p}]$, $q=\epsilon p+\beta$ with $0\le \beta<p$, $\alpha=p\cdot\beta$.Then for framing $\sigma=pq$, we have $$\begin{aligned}
  g_\sigma^l(p,q;s)&=(-1)^{qN} A^{\epsilon
 (-s^2-2s+l^2+2l)}\notag\\
 &\times\sum_{ \substack {k=-N\\ k+N\ even}}^N A^{\alpha {k}^2+2\beta k
 (s+1)}\{\delta(l-s-pk)-\delta(l+s+2+pk)\}\notag
-\end{align}$$
+\end{aligned}$$
 :::
 
 It seems to be complicated. But note there're at most two nonzero terms in this summation. Since for each value of $k$, the summand is nonzero only if $l-s-pk=0$ or $l+s+2+pk=0$.

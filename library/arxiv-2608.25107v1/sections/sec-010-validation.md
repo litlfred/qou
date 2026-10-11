@@ -7,10 +7,10 @@ section_number: null
 pages: 7-8
 source_pdf: 2608.25107v1.pdf
 source_sha256: 6dca8b99a1f32db4
-text_source: latex
-latex_prose_ratio: 0.906
-latex_coverage_ratio: 0.975
 doc_brief: "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples César Jesús-Valls1,∗ 1European Organization for Nuclear Research (CERN), 1211 Geneva 23, Switzerland — 17 sections: ADoNIS: A Differe"
+text_source: latex
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 0.931
 ---
 []{#sec:validation label="sec:validation"}
 
@@ -24,22 +24,10 @@ The last two comparisons isolate single ingredients. Figure [3](#fig:val_ee){re
 
 Taken together, these comparisons show that the differentiable reformulation preserves the underlying physics predictions.
 
-<figure id="fig:val_minerva" data-latex-placement="htbp">
-<img src="fig09_minerva_cc0pi_noratio" />
-<figcaption>ADoNIS (solid) vs. ACHILLES (dashed). MINERvA CC0<span class="math inline"><em>π</em></span> on <span class="math inline"><sup>12</sup></span>C at <span class="math inline">⟨<em>E</em><sub><em>ν</em></sub>⟩ ≈ 3</span> GeV, with the signal definition of Ref. <span class="citation" data-cites="MINERvA:2018hba"></span>: the TKI variables <span class="math inline"><em>δ</em><em>α</em><sub><em>T</em></sub></span>, <span class="math inline"><em>p</em><sub><em>n</em></sub></span>, <span class="math inline"><em>δ</em><em>p</em><sub><em>T</em></sub></span> and <span class="math inline"><em>δ</em><em>ϕ</em><sub><em>T</em></sub></span>, and the proton and muon kinematics.</figcaption>
-</figure>
+![ADoNIS (solid) vs. ACHILLES (dashed). MINERvA CC0$\pi$ on $^{12}$C at $\langle E_\nu\rangle \approx 3$ GeV, with the signal definition of Ref. [@MINERvA:2018hba]: the TKI variables $\delta\alpha_T$, $p_n$, $\delta p_T$ and $\delta\phi_T$, and the proton and muon kinematics.](fig09_minerva_cc0pi_noratio){#fig:val_minerva width="\\linewidth"}
 
-<figure id="fig:val_uboone_nc2d" data-latex-placement="htbp">
-<img src="fig11_uboone_nc1pi0_doublediff_noratio" />
-<figcaption>ADoNIS (solid) vs. ACHILLES (dashed). MicroBooNE NC 1<span class="math inline"><em>π</em><sup>0</sup></span>Xp on <span class="math inline"><sup>40</sup></span>Ar <span class="citation" data-cites="MicroBooNE:2024pdj"></span>: the double-differential cross section <span class="math inline"><em>d</em><sup>2</sup><em>σ</em>/<em>d</em>cos <em>θ</em><sub><em>π</em><sup>0</sup></sub> <em>d</em><em>p</em><sub><em>π</em><sup>0</sup></sub></span>, in slices of <span class="math inline">cos <em>θ</em><sub><em>π</em><sup>0</sup></sub></span>.</figcaption>
-</figure>
+![ADoNIS (solid) vs. ACHILLES (dashed). MicroBooNE NC 1$\pi^0$Xp on $^{40}$Ar [@MicroBooNE:2024pdj]: the double-differential cross section $d^2\sigma/d\cos\theta_{\pi^0}\,dp_{\pi^0}$, in slices of $\cos\theta_{\pi^0}$.](fig11_uboone_nc1pi0_doublediff_noratio){#fig:val_uboone_nc2d width="\\linewidth"}
 
-<figure id="fig:val_ee" data-latex-placement="htbp">
-<img src="fig01_ee_domega_noratio" />
-<figcaption>ADoNIS (solid) vs. ACHILLES (dashed). Inclusive <span class="math inline">(<em>e</em>, <em>e</em><sup>′</sup>)</span> cross section <span class="math inline"><em>d</em><em>σ</em>/<em>d</em><em>ω</em></span> on <span class="math inline"><sup>12</sup></span>C and <span class="math inline"><sup>40</sup></span>Ar at a beam energy of <span class="math inline">2.222</span> GeV and <span class="math inline"><em>θ</em><sub><em>e</em><sup>′</sup></sub> ≈ 15.5<sup>∘</sup></span> <span class="citation" data-cites="Murphy:2019wed JeffersonLabHallA:2022cit JeffersonLabHallA:2022ljj"></span>, separated into quasi-elastic and resonant contributions.</figcaption>
-</figure>
+![ADoNIS (solid) vs. ACHILLES (dashed). Inclusive $(e,e')$ cross section $d\sigma/d\omega$ on $^{12}$C and $^{40}$Ar at a beam energy of $2.222$ GeV and $\theta_{e'}\approx 15.5^\circ$ [@Murphy:2019wed; @JeffersonLabHallA:2022cit; @JeffersonLabHallA:2022ljj], separated into quasi-elastic and resonant contributions.](fig01_ee_domega_noratio){#fig:val_ee width="\\linewidth"}
 
-<figure id="fig:val_pinuc" data-latex-placement="htbp">
-<img src="fig03_pi_nucleus_sigma_noratio" />
-<figcaption>ADoNIS (solid) vs. ACHILLES (dashed). <span class="math inline"><em>π</em><sup>+</sup></span>–nucleus absorption and reaction cross sections on carbon and argon as a function of pion momentum <span class="citation" data-cites="ASHERY LADS:2000pzh DUET"></span>, testing the intranuclear cascade in isolation.</figcaption>
-</figure>
+![ADoNIS (solid) vs. ACHILLES (dashed). $\pi^+$--nucleus absorption and reaction cross sections on carbon and argon as a function of pion momentum [@ASHERY; @LADS:2000pzh; @DUET], testing the intranuclear cascade in isolation.](fig03_pi_nucleus_sigma_noratio){#fig:val_pinuc width="\\linewidth"}

@@ -7,10 +7,10 @@ section_number: 4
 pages: 13-19
 source_pdf: 1403.4021v2.pdf
 source_sha256: 046d02411e0dc086
-text_source: latex
-latex_prose_ratio: 0.937
-latex_coverage_ratio: 0.868
 doc_brief: "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS — We classify the Markov traces factoring through the Birman-Wenzl-Murakami (BMW) algebras."
+text_source: latex
+latex_prose_ratio: 0.975
+latex_coverage_ratio: 1.0
 ---
 We still denote $R = \Q[a,b,c,(abc)^{-1}]$, $S = R[(b+c)^{-1}]$. In all what follows, $\Q$ could be replaced by $\Z[\frac{1}{2}]$
 without damage ; however the invertibility of $2$ is crucial at several steps.
@@ -436,3 +436,17 @@ of $\overline{BMW_n} \otimes_{\overline{R}} \overline{S}$ exchanging $BMW_n^+$ a
 \end{prop}
 
 The automorphism of proposition \ref{propdefE} relates the traces $t_n^+$ and $t_n^-$, as we will see in corollary \ref{cortnplusettnmoins} below.
+
+
+
+\section{Traces on $\widetilde{BMW}_n$}
+
+
+By definition, a Markov trace on the tower of algebras $(\WBMW_n)_{n \geq 1}$ with
+values in a fixed $R$-module $M$ is a sequence $(t_n)_{n \geq 1}$ of $R$-linear maps $t_n = \WBMW_n \to M$
+which are traces on each $\WBMW_n$ (that is, $t_n(xy)=t_n(yx)$ for $x,y \in \WBMW_n$) and which
+satisfy the Markov conditions $t_{n+1}(\iota_n(x)s_n^{\pm 1}) = t_n(x)$ for each $x \in \WBMW_n$, where
+$\iota_n$ denotes the natural map $\iota_n : \WBMW_n \to \WBMW_{n+1}$. 
+We let $(t_n^H)$ denote the Markov trace induced by the Ocneanu trace on
+the Hecke algebra $\mathcal{H}_n(b,c)$ through the factorization of proposition \ref{propstructgenWBMW} (i),
+normalized by $t_1^H(1) = 1$.

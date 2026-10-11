@@ -206,7 +206,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 4,
+   "tex_sections": 17,
    "overlaid": 4,
    "thresholds": {
     "title": 0.85,
@@ -218,15 +218,15 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.995,
-     "coverage_ratio": 0.955,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-mathematical-tools",
      "title": "Mathematical Tools",
-     "prose_ratio": 0.906,
-     "coverage_ratio": 0.97,
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -248,8 +248,8 @@
     {
      "id": "sec-005-3-distribution-of-zeros-and-critical-points",
      "title": "Distribution of zeros and critical points",
-     "prose_ratio": 0.805,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -262,7 +262,7 @@
      "id": "sec-007-4-quantum-ergodicity-and-random-waves",
      "title": "Quantum ergodicity and random waves",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.97,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "pandoc"
     },

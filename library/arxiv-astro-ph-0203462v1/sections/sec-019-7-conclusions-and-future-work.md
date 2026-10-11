@@ -7,10 +7,10 @@ section_number: 7
 pages: 16-16
 source_pdf: 0203462v1.pdf
 source_sha256: 337c24b051365f0a
-text_source: latex
-latex_prose_ratio: 0.995
-latex_coverage_ratio: 1.0
 doc_brief: "1Astronomy & Astrophysics manuscript no. (will be inserted by hand later) — We present a high-resolution (R=75,000, S/N ∼ 500) spectroscopic analysis of the bright (V=11.7), extreme halo giant CS"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 []{#conclusion label="conclusion"}
 

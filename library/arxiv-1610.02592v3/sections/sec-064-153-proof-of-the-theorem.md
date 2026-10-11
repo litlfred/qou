@@ -7,13 +7,14 @@ section_number: 15.3
 pages: 469-476
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.982
-latex_coverage_ratio: 0.766
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 We now conclude the proof of Theorem \ref{DF:teo}.
 Through all this section, we let $M= \interior N$ be a complete orientable finite-volume cusped hyperbolic three-manifold. We have $\partial N = T_1 \cup \ldots \cup T_c$ for some $c\geqslant 1$. We also fix a positive pair $m_i, l_i$ of generators for $\pi_1(T_i)$ at each $T_i$. Recall that each $T_i$ has Euclidean structure, defined up to rescaling.
+
 
 \subsection{Near the complete solution} \label{near:complete:subsection}
 We now suppose that $M$ has a geometric decomposition $\calT$ into ideal hyperbolic tetrahedra, in other words the space $\Def(M,\calT)$ is non-empty and contains a complete solution $z^0$. We want to study $\Def(M,\calT)$ near $z^0$. 
@@ -66,6 +67,7 @@ If $M$ has a geometric decomposition $\calT$ into ideal tetrahedra, we can easil
 
 However, we still do not know if every complete cusped finite-volume $M$ decomposes into ideal tetrahedra! If that were the case, we would be done. Unfortunately we are not able to prove this, so more effort is needed to complete the proof.
 
+
 \subsection{Triangulations with flat tetrahedra}
 As we said, we are not able to prove that every cusped finite-volume $M$ decomposes into ideal tetrahedra. The best that we can do is to show that $M$ decomposes into ideal tetrahedra that are either ordinary or ``flat'', that is degenerated to an ideal quadrilateral. We show this using the Epstein--Penner canonical decomposition.
 
@@ -95,6 +97,7 @@ the vertex triangle of Figure \ref{tetraedro2:fig}-(left) is a degenerated flat 
 
 We set $z^0 = (z_1,\ldots, z_n)$. By construction, the point $z^0$ satisfies the consistency equations (\ref{gi:eqn}). 
 
+
 \subsection{Perturbations}
 We now let $U$ be a small contractible neighbourhood of $z^0$ in $(\matC \setminus \{0,1\})^n$. Note that $U$ necessarily contains some points $z$ with $\Im z_i <0$ for some $i$. The consistency equations (\ref{gi:eqn}) make sense in $U$, and we define $\Def_U \subset U$ to be the set of solutions. We still have $\Def_U = G^{-1}(2\pi i, \ldots, 2\pi i)$.
 
@@ -111,6 +114,7 @@ The new possibly non-convex polyhedra $P_j'(z)$ glue isometrically along their p
 \begin{prop}
 If $U$ is sufficiently small, every solution $z \in \Def_U$ represents naturally a hyperbolic structure on $M$.
 \end{prop}
+
 
 \subsection{Local smoothness}
 We have seen that every solution $z$ that is sufficiently close to $z^0$ determines a hyperbolic metric on $M$. We now need to extend Corollary \ref{smooth:cor}. 
@@ -154,10 +158,12 @@ We have proved that $\dim M(\matR^{2n}) = n-c$, and we conclude as in the proof 
 If $Mv_1, Mv_2 \in \matC^n_{\rm flat}$ then both $Mv_1$ and $Mv_2$ are real since $\frac 1{z_i}, \frac{1}{z_i-1} \in \matR$ for every flat $\Delta_i$. Now $0 = M(v_1+iv_2) = Mv_1 + iMv_2$ implies that $Mv_1 = Mv_2 = 0$, a contradiction.
 \end{proof}
 
+
 \subsection{Conclusion of the proof}
 The proof of Theorem \ref{DF:teo} finishes like in the geometric triangulation case.
 All the discussion of Section \ref{holonomy:subsection} applies here: the holonomies are defined also in this context and may be used to parametrize the complex manifold $U(z^0)$. The strategy of Section \ref{near:complete:subsection} is still valid: the generalised Dehn filling invariant map $d$ sends $U(z^0)$ to an open neighbourhood of $(\infty,\ldots, \infty)$ in $S^2\times \ldots \times S^2$ and the discussion in Section \ref{generalized:DF:subsection} finishes the proof.
 We have completed the proof of Theorem \ref{DF:teo}.
+
 
 \subsection{Mostow--Prasad rigidity}
 We can use the Dehn filling Theorem \ref{DF:teo} to extend Mostow Rigidity Theorem \ref{Mostow:teo} from the closed to the cusped case. The cusped case was proved by Prasad in 1973, hence the theorem is known as \emph{Mostow--Prasad Rigidity Theorem}.\index{Mostow--Prasad rigidity theorem}

@@ -8,8 +8,10 @@ pages: 23-23
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
 doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-In this section we show how to solve the Riemann-Hilbert problem asso ciated to a ﬁnite, un-
-coupled, integral BPS structure, and compute the τ -function associated to a variation of such
-structures. The situation considered here corresponds to the c ase of ‘mutually local corrections’ in
-[16]. The inspiration for our solution comes from a calculation of Gaiotto [ 15, Section 3].
+\label{sol}
+
+In this section we show how to solve the Riemann-Hilbert problem associated to a finite, uncoupled, integral BPS structure, and compute the $\tau$-function associated to a variation of such structures. The situation considered here corresponds to the case of `mutually local corrections' in \cite{GMN1}. The inspiration for our solution  comes from a calculation of Gaiotto \cite[Section 3]{G}.

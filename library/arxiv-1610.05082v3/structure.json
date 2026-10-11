@@ -328,8 +328,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "ising.tex",
-   "tex_sections": 5,
-   "overlaid": 2,
+   "tex_sections": 27,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -339,73 +339,89 @@
     {
      "id": "sec-000-12-weighted-dependency-graphs",
      "title": "Weighted dependency graphs",
-     "result": "no matching \\section"
+     "prose_ratio": 0.134,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-1-introduction-and-statement-of-results",
      "title": "Introduction and statement of results",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-11-cumulants-in-the-ising-model",
      "title": "Cumulants in the Ising model",
-     "result": "no matching \\section"
+     "prose_ratio": 0.853,
+     "coverage_ratio": 0.911,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-13-central-limit-theorems",
      "title": "Central limit theorems",
-     "result": "no matching \\section"
+     "prose_ratio": 0.605,
+     "coverage_ratio": 0.475,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-004-21-the-ising-model",
      "title": "The Ising model",
-     "result": "no matching \\section"
+     "prose_ratio": 0.31,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-005-14-outline-of-the-paper",
      "title": "Outline of the paper",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-006-22-joint-cumulants",
      "title": "Joint cumulants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.079,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-007-2-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.596,
+     "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-008-23-spanning-trees-of-maximal-weight-and-tree-len",
      "title": "Spanning trees of maximal weight and tree lengths",
-     "result": "no matching \\section"
+     "prose_ratio": 0.522,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-009-24-weighted-dependency-graphs",
      "title": "Weighted dependency graphs",
-     "result": "no matching \\section"
+     "prose_ratio": 0.248,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-010-3-cluster-expansions-and-bounds-on-joint-cumulan",
      "title": "Cluster expansions and bounds on joint cumulants",
-     "prose_ratio": 0.966,
-     "coverage_ratio": 0.96,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-011-4-weighted-dependency-graphs-and-central-limit-t",
      "title": "Weighted dependency graphs and central limit theorems",
-     "prose_ratio": 0.575,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.933,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-42-central-limit-theorem-for-occurrences-of-give",
      "title": "Central limit theorem for occurrences of given patterns",
-     "result": "no matching \\section"
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.925,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-acknowledgements",

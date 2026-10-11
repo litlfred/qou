@@ -6,7 +6,7 @@
   "sha256": "fea7f118014838fe28843b30f7a8f6fb2b913d5198eb668c074eb541ca6ed6b7",
   "bytes": 113932,
   "pages": 11,
-  "math_source": "latex"
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -100,7 +100,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 3,
-   "overlaid": 1,
+   "overlaid": 0,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -115,10 +115,8 @@
     {
      "id": "sec-001-1-motivation",
      "title": "Motivation",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.537,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.534,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-references",

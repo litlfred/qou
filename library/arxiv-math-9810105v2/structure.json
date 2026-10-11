@@ -1033,16 +1033,16 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.944,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-riemann-hilbert-theory",
      "title": "Riemann-Hilbert Theory",
-     "prose_ratio": 0.849,
-     "coverage_ratio": 0.953,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -1070,7 +1070,7 @@
     {
      "id": "sec-006-4-equilibrium-measure-and-g-function",
      "title": "Equilibrium Measure and g-function",
-     "prose_ratio": 0.458,
+     "prose_ratio": 0.23,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -1312,8 +1312,8 @@
     {
      "id": "sec-054-8-de-poissonization-lemmas",
      "title": "De-Poissonization Lemmas",
-     "prose_ratio": 0.985,
-     "coverage_ratio": 0.957,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

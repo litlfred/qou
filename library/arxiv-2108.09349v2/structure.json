@@ -400,8 +400,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "3BraidsRev1.tex",
-   "tex_sections": 6,
-   "overlaid": 3,
+   "tex_sections": 20,
+   "overlaid": 18,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -411,101 +411,143 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.615,
-     "coverage_ratio": 0.958,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.655,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-organization",
      "title": "Organization",
-     "result": "no matching \\section"
+     "prose_ratio": 0.795,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-acknowledgments",
      "title": "Acknowledgments",
-     "result": "no matching \\section"
+     "prose_ratio": 0.898,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-2-ideal-triangulations",
      "title": "Ideal triangulations",
-     "prose_ratio": 0.255,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-21-forming-a-three-stranded-full-twist",
      "title": "Forming a three-stranded full twist",
-     "result": "no matching \\section"
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-22-a-foundational-ideal-triangulation",
      "title": "A foundational ideal triangulation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-24-an-ideal-triangulation-for-any-p",
      "title": "An ideal triangulation for any p",
-     "result": "no matching \\section"
+     "prose_ratio": 0.788,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-25-equivalence-classes-of-edges-in-the-triangula",
      "title": "Equivalence classes of edges in the triangulation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.932,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-3-angle-structures-and-the-casson-rivin-program",
      "title": "Angle structures and the Casson-Rivin program",
-     "prose_ratio": 0.577,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.89,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-32-volumes-of-angle-structures",
      "title": "Volumes of angle structures",
-     "result": "no matching \\section"
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.932,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-33-the-casson-rivin-program",
      "title": "The Casson-Rivin program",
-     "result": "no matching \\section"
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.835,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-34-symmetries-of-angle-structures",
      "title": "Symmetries of angle structures",
-     "result": "no matching \\section"
+     "prose_ratio": 0.809,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-4-the-space-of-positive-angle-structures-is-none",
      "title": "The space of positive angle structures is nonempty",
-     "prose_ratio": 0.153,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-013-41-the-triangulations-are-veering",
      "title": "The triangulations are veering",
-     "result": "no matching \\section"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-014-42-coordinates-for-the-space-of-positive-angle-s",
      "title": "Coordinates for the space of positive angle structures",
-     "result": "no matching \\section"
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-015-43-a-symmetry-of-the-space-of-angle-structures",
      "title": "A symmetry of the space of angle structures",
-     "result": "no matching \\section"
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.907,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-016-5-the-maximal-volume-occurs-at-a-positive-angle",
      "title": "The maximal volume occurs at a positive angle structure",
-     "prose_ratio": 0.944,
-     "coverage_ratio": 0.958,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-017-6-extending-the-construction",
      "title": "Extending the construction",
-     "prose_ratio": 0.941,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"

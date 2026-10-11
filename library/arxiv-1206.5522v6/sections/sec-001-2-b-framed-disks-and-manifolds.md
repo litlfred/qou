@@ -8,5 +8,8 @@ pages: 6-6
 source_pdf: 1206.5522v6.pdf
 source_sha256: 6e992242435b5e9f
 doc_brief: "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS — Factorization homology theories of topological manifolds , after Beilinson, Drinfeld and Lurie, are homology-type theories for topological"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-We now specify the details of our basic objects of study, n-manifolds.
+We now specify the details of our basic objects of study, $n$-manifolds.

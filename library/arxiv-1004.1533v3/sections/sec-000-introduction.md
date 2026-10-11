@@ -7,10 +7,10 @@ section_number: null
 pages: 1-2
 source_pdf: 1004.1533v3.pdf
 source_sha256: 95c1544431e6bf37
-text_source: latex
-latex_prose_ratio: 0.885
-latex_coverage_ratio: 0.953
 doc_brief: "TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT — In this paper we show how one can extend Turaev-Viro invarian ts, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.91
 ---
 Turaev--Viro (TV) invariants of 3-manifolds $Z_{TV}(M)$ were defined by
 Turaev and Viro in \ocite{TV} using a quantum analog of 6j symbols for
@@ -69,10 +69,4 @@ these constructions in forthcoming papers.
 After the preliminary version of this paper was posted, a proof of formula
 $Z_{TV, \C}(M)=Z_{RT, Z(\C)}(M)$ was announced by Turaev
 \ocite{turaev-conference}; howevere, details of this proof are not yet
-available. 
-
-
-\subsection*{Acknowledgments}
-The authors would like  to thank
-Oleg Viro, Victor Ostrik, Kevin Costello and Owen Gwilliam
-for helpful suggestions and discussions.
+available.

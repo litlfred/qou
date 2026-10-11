@@ -7,13 +7,14 @@ section_number: 4
 pages: 18-20
 source_pdf: 2504.18825v2.pdf
 source_sha256: 829f97190cb1c8ad
+doc_brief: "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU — 16 sections: Introduction; Preliminaries; Murnaghan–Nakayama rule for the cy"
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.967
-doc_brief: "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU — 16 sections: Introduction; Preliminaries; Murnaghan–Nakayama rule for the cy"
+latex_coverage_ratio: 1.0
 ---
 \label{s:special}
 In this section, we will explain how our Murnaghan--Nakayama rule recovers the existing formulae as special cases. Three special cases of Corollary \ref{t:m-n2} will be considered case by case, which correspond to the complex reflection group of type $G(m, 1, n)$, the Iwahori--Hecke algebra in type $A$ and type $B$ respectively.
+
 \subsection{Complex reflection group of type $G(m, 1, n)$}
 As pointed out in the introduction, when we take the specialization $\bm{u}=\bm{\zeta}=(1,\zeta,\zeta^2,\cdots,\zeta^{m-1})$ and $q=1$, where $\zeta$ is the primitive
 $m$-th root of unity, $\mathscr{H}_{m,n}(q,\bm{u})$ will reduce to $\mathscr{W}_{m,n}$. In this case, by definition, $\frac{q^{\mu_j^{(r)}}}{q-q^{-1}}\wt(\bm{\la/\mu};q^{-2},\bm{u},r)=0$ unless $cc(\bm{\la/\mu})=1$, i.e., $\bm{\la/\mu}$ has only one nonempty entry, in which the unique nonempty entry is a ribbon. We call such $\bm{\la/\mu}$ {\em $m$-multi-ribbon}. If we denote the unique nonempty entry by $s$, then $$\frac{q^{\mu_j^{(r)}}}{q-q^{-1}}\wt(\bm{\la/\mu};q^{-2},\bm{u},r)\Big|_{\substack{
@@ -30,6 +31,7 @@ summed over all $\bm{\nu}\in\mathcal{P}_{n-\mu^{(r)}_{j},m}$ such that the $s$-t
 \end{align}
 summed over all $\bm{\nu}\in\mathcal{P}_{n-\mu^{(r)}_{j},m}$ such that $\bm{\la/\nu}$ is a $m$-multi-ribbon. Where $s$ is the unique nonempty entry in $\bm{\la/\nu}$.
 \end{cor}
+
 
 \subsection{Iwahori--Hecke algebra in type $A$}
 The Iwahori--Hecke algebra in type $A$ (denoted by $\mathscr{H}_{n}(q)$) is the unital associative algebra
@@ -54,6 +56,7 @@ summed over all partitions $\nu$ such that $\la/\nu$ is a $\mu_j$-generalized ri
 \begin{rem}
 We remark that \eqref{e:m-nH} is slightly different from those formulae in the literature due to the different presentation of $\mathscr{H}_{n}(q)$. One can obtain the previous one by noting that $\tilde{\psi}^{\la}_{\mu}(q^2)=q^{|\mu|-l(\mu)}\psi^{\la}_{\mu}(q)$ under the substitution $g_i\rightarrow q^{-1}T_{i-1}$ $(2\leq i\leq n)$, $u_1\rightarrow q^{-1}u_1$, followed by $q^2\rightarrow q$, where $\tilde{\psi}^{\la}_{\mu}$ is the previous irreducible character associated with $\la$ acting on the standard element $T_{\sigma_{\mu}}$ (see \cite[p. 29]{JL1} for the notation $T_{\sigma_{\mu}}$).
 \end{rem}
+
 
 \subsection{Iwahori--Hecke algebra in type $B$}
 The Iwahori--Hecke algebra $\mathscr{B}_n(u, q^2)$ in type $B$ is the associative algebra over the field $\mathbb{C}(u,q)$ with generators

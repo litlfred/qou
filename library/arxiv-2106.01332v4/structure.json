@@ -198,7 +198,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Braided_matter_final.tex",
-   "tex_sections": 9,
+   "tex_sections": 15,
    "overlaid": 6,
    "thresholds": {
     "title": 0.85,
@@ -209,8 +209,8 @@
     {
      "id": "sec-000-i-introduction",
      "title": "INTRODUCTION",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.791,
+     "prose_ratio": 0.797,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -223,7 +223,7 @@
      "id": "sec-002-iii-theories-on-ribbon-graphs",
      "title": "THEORIES ON RIBBON GRAPHS",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.988,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -231,7 +231,7 @@
      "id": "sec-003-iv-leptons-and-quarks-as-topological-excit-a-tio",
      "title": "LEPTONS AND QUARKS AS TOPOLOGICAL EXCIT A TIONS",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.938,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -249,8 +249,8 @@
     {
      "id": "sec-006-vi-isotopy-inv-ariants-of-braided-networks",
      "title": "ISOTOPY INV ARIANTS OF BRAIDED NETWORKS",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.985,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -265,8 +265,8 @@
     {
      "id": "sec-008-viii-discussion",
      "title": "DISCUSSION",
-     "prose_ratio": 0.995,
-     "coverage_ratio": 0.52,
+     "prose_ratio": 0.851,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     }

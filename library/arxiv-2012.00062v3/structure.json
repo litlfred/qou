@@ -459,8 +459,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "GGM_peacock_20v4.tex",
-   "tex_sections": 7,
-   "overlaid": 2,
+   "tex_sections": 31,
+   "overlaid": 12,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -476,45 +476,64 @@
     {
      "id": "sec-001-11-chernsimons-theory-with-compact-and-complex-g",
      "title": "Chern\u2013Simons theory with compact and complex gauge group",
-     "result": "no matching \\section"
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.846,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-13-a-q-holonomic-module-of-the-partition-functio",
      "title": "A q-holonomic module of the partition function and its descendants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.897,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-14-perturbative-series-and-their-resurgence",
      "title": "Perturbative series and their resurgence",
-     "result": "no matching \\section"
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.882,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-15-disclaimers",
      "title": "Disclaimers",
-     "result": "no matching \\section"
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.83,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-16-further-directions",
      "title": "Further directions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.885,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-acknowledgements",
      "title": "Acknowledgements",
-     "result": "no matching \\section"
+     "prose_ratio": 0.805,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-2-borel-resummation-and-stokes-automorphisms",
      "title": "Borel resummation and Stokes automorphisms",
-     "prose_ratio": 0.958,
-     "coverage_ratio": 0.487,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.886,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-4-holonomic-and-elliptic-functions-inside-and-ou",
      "title": "Holonomic and elliptic functions inside and outside the unit disk",
-     "prose_ratio": 0.952,
-     "coverage_ratio": 0.895,
+     "prose_ratio": 0.991,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -526,17 +545,22 @@
     {
      "id": "sec-010-51-asymptotic-series",
      "title": "Asymptotic series",
-     "result": "no matching \\section"
+     "prose_ratio": 0.443,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-011-52-holomorphic-blocks",
      "title": "Holomorphic blocks",
-     "result": "no matching \\section"
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.875,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-55-the-borel-resummations-of-the-asymptotic-seri",
      "title": "The Borel resummations of the asymptotic series",
-     "result": "no matching \\section"
+     "prose_ratio": 0.555,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-013-6-the-52-knot",
@@ -546,23 +570,30 @@
     {
      "id": "sec-014-61-asymptotic-series",
      "title": "Asymptotic series",
-     "result": "no matching \\section"
+     "prose_ratio": 0.713,
+     "coverage_ratio": 0.65,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-015-62-holomorphic-blocks",
      "title": "Holomorphic blocks",
-     "result": "no matching \\section"
+     "prose_ratio": 0.673,
+     "coverage_ratio": 0.723,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-016-65-the-borel-resummations-of-the-asymptotic-seri",
      "title": "The Borel resummations of the asymptotic series",
-     "result": "no matching \\section"
+     "prose_ratio": 0.283,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-017-7-one-dimensional-state-integrals-and-their-desc",
      "title": "One-dimensional state-integrals and their descendants",
-     "prose_ratio": 0.963,
-     "coverage_ratio": 0.841,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

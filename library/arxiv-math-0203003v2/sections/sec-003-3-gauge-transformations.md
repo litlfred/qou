@@ -7,10 +7,10 @@ section_number: 3
 pages: 8-10
 source_pdf: 0203003v2.pdf
 source_sha256: 7579ae76959396b8
-text_source: latex
-latex_prose_ratio: 0.979
-latex_coverage_ratio: 0.979
 doc_brief: "On the quantum Kazhdan-Lusztig functor Pavel I. Etingof Adriano A. Moura etingof@math.mit.edu adrianoam@ime.unicamp.br Introduction One of the most exciting developments in representation the ory in t"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.965
 ---
 To prove the theorem stated in the introduction, it remains to identify the category $\text{\bf Rep}_{\text{f}}(R_V)$ for $V$ being the vector representation of $U_q({\widehat{\mathfrak{s}}l}_n)$ with the category of representations of Felder's elliptic quantum group. To construct such an identification is the goal of this section. It is achieved by using the fact that the corresponding dynamical R-matrices are gauge equivalent [@Mou01].
 
@@ -22,17 +22,13 @@ For a given $\gamma \in \text{$\mathbb{C}$}^*$ and $s \in \{1, \dots, n\}$ defin
 
 We list now the gauge transformations that will be important for us. Let $R$ be an R-matrix of $\mathfrak{gl}_n$ type and step $\gamma$ and define the following transformations
 
-$$\begin{equation}
-\label{eq:g4}
-R(u,\lambda) \mapsto c(u)R(u,\lambda)
-\end{equation}$$ where $c(u)$ is a meromorphic scalar function; $$\begin{equation}
-\label{eq:g5}
-R(u,\lambda) \mapsto R(au,b\lambda + \mu)
-\end{equation}$$ where $a,b \in \text{$\mathbb{C}$}^*$ and $\mu \in \mathfrak{h}^*$; $$\begin{gather}
+$$\label{eq:g4}
+R(u,\lambda) \mapsto c(u)R(u,\lambda)$$ where $c(u)$ is a meromorphic scalar function; $$\label{eq:g5}
+R(u,\lambda) \mapsto R(au,b\lambda + \mu)$$ where $a,b \in \text{$\mathbb{C}$}^*$ and $\mu \in \mathfrak{h}^*$; $$\begin{gathered}
 \notag
 R(u,\lambda) \mapsto \\\label{eq:g2}
 \sum_{m=0}^{n} \alpha_{m,m}(u,\lambda)E_{m,m}\otimes E_{m,m} + \sum_{m\neq l} \varphi_{m,l}(\lambda)\alpha_{m,l}(u,\lambda) E_{m,m}\otimes E_{l,l} + \beta_{m,l}(u,\lambda) E_{l,m}\otimes E_{m,l}
-\end{gather}$$ where $\varphi=\{\varphi_{m,l}(\lambda)\}$ is a $\gamma$-closed 2-form.
+\end{gathered}$$ where $\varphi=\{\varphi_{m,l}(\lambda)\}$ is a $\gamma$-closed 2-form.
 
 It was proved in [@EtVa98] that if $\tilde R$ is obtained from $R$ by these gauge transformations, then it is a quantum dynamical R-matrix of $\mathfrak{gl}_n$ type and step $\gamma$ (for [\[eq:g4\]](#eq:g4){reference-type="eqref" reference="eq:g4"} and [\[eq:g2\]](#eq:g2){reference-type="eqref" reference="eq:g2"}) or $\gamma/b$ (for [\[eq:g5\]](#eq:g5){reference-type="eqref" reference="eq:g5"}). It is clear that if $\tilde R$ is obtained from $R$ by [\[eq:g4\]](#eq:g4){reference-type="eqref" reference="eq:g4"} and [\[eq:g5\]](#eq:g5){reference-type="eqref" reference="eq:g5"}, then $\text{\bf Rep}_{\text{f}}(\tilde R)$ is equivalent to $\text{\bf Rep}_{\text{f}}(R)$. The following theorem, concerning gauge transformation [\[eq:g2\]](#eq:g2){reference-type="eqref" reference="eq:g2"}, was proved in [@EtVa99] in the language of bialgebroids. We repeat the proof here with the appropriate adaptations for this context.
 
@@ -50,10 +46,8 @@ One can regard the exchange matrix $R_{\text{$\mathbb{C}$}^n}$ of example [\[ex:
 []{#thm:Rk=Rell label="thm:Rk=Rell"}[@Mou01] Let $R^{ell}_{\tau,\gamma}$ be the elliptic quantum dynamical R-matrix of example [\[ex:felder\]](#ex:felder){reference-type="ref" reference="ex:felder"}. Then $R_{\text{$\mathbb{C}$}^n}$ is gauge equivalent to $R^{ell}_{\tau,\gamma}$ for $\gamma = \frac{\log q}{\pi i}$ and $\tau = -\kappa\gamma = -\kappa\frac{\log q}{\pi i}$, where $\kappa = k+n$.
 :::
 
-The three gauge transformations we have listed are used in theorem [\[thm:Rk=Rell\]](#thm:Rk=Rell){reference-type="ref" reference="thm:Rk=Rell"}. In particular, the gauge transformation of type [\[eq:g2\]](#eq:g2){reference-type="eqref" reference="eq:g2"} used is given by the following multiplicative 2-form $$\begin{equation}
-\label{eq:varphi}
-\varphi_{i,j}(\lambda) = \sigma_{j,i}(\lambda/\gamma-\rho)
-\end{equation}$$ where, for $m<l$, $$\sigma_{l,m}(\lambda) = q\frac{\Gamma_p(1+\frac{1}{\kappa}(\lambda+\rho)_{l,m}+\frac{1}{\kappa})} {\Gamma_p(1+\frac{1}{\kappa}(\lambda+\rho)_{l,m})} \frac{\Gamma_p(-\frac{1}{\kappa}(\lambda+\rho)_{l,m})} {\Gamma_p(-\frac{1}{\kappa}(\lambda+\rho)_{l,m}+\frac{1}{\kappa})} \quad, \sigma_{m,l}(\lambda) = \frac{1}{\sigma_{l,m}(\lambda)},$$ and $\Gamma_q$ is the q-Gamma function.
+The three gauge transformations we have listed are used in theorem [\[thm:Rk=Rell\]](#thm:Rk=Rell){reference-type="ref" reference="thm:Rk=Rell"}. In particular, the gauge transformation of type [\[eq:g2\]](#eq:g2){reference-type="eqref" reference="eq:g2"} used is given by the following multiplicative 2-form $$\label{eq:varphi}
+\varphi_{i,j}(\lambda) = \sigma_{j,i}(\lambda/\gamma-\rho)$$ where, for $m<l$, $$\sigma_{l,m}(\lambda) = q\frac{\Gamma_p(1+\frac{1}{\kappa}(\lambda+\rho)_{l,m}+\frac{1}{\kappa})} {\Gamma_p(1+\frac{1}{\kappa}(\lambda+\rho)_{l,m})} \frac{\Gamma_p(-\frac{1}{\kappa}(\lambda+\rho)_{l,m})} {\Gamma_p(-\frac{1}{\kappa}(\lambda+\rho)_{l,m}+\frac{1}{\kappa})} \quad, \sigma_{m,l}(\lambda) = \frac{1}{\sigma_{l,m}(\lambda)},$$ and $\Gamma_q$ is the q-Gamma function.
 
 ::: lem
 []{#lem:exact label="lem:exact"} The multiplicative 2-form [\[eq:varphi\]](#eq:varphi){reference-type="eqref" reference="eq:varphi"} is $\gamma$-exact.

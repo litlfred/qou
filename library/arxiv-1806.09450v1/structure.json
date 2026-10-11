@@ -145,8 +145,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "JordanAlgebra_29mars.tex",
-   "tex_sections": 5,
-   "overlaid": 2,
+   "tex_sections": 8,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -156,31 +156,38 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.994,
-     "coverage_ratio": 0.526,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.539,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-31-the-automorphism-group-f4-of-the-exceptional",
      "title": "The automorphism group F4 of the exceptional Jordan algebra and its Lie algebra f4",
-     "result": "no matching \\section"
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-32-the-magic-square",
      "title": "The magic square",
-     "result": "no matching \\section"
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-33-the-exceptional-lie-groups-e6-and-e7",
      "title": "The exceptional Lie groups E6 and E7",
-     "result": "no matching \\section"
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-4-borel-de-siebenthal-theory-and-intersections-o",
      "title": "Borel-de Siebenthal theory and intersections of maximal subgroups of compact exceptional Lie groups",
-     "prose_ratio": 0.994,
-     "coverage_ratio": 0.518,
+     "prose_ratio": 0.827,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "pandoc"
     }

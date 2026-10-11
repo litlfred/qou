@@ -7,12 +7,13 @@ section_number: 5.1
 pages: 143-151
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.968
-latex_coverage_ratio: 0.847
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 How does a discrete group $\Gamma $ of isometries of $\matH^n$ act on the boundary at infinity $\partial \matH^n$? We now prove that $\partial \matH^n$ divides canonically into two $\Gamma$-invariant subsets: an open zone $\Omega(\Gamma)$ where $\Gamma$ acts properly discontinuously, and a closed one $\Lambda(\Gamma)$ where it does not. These regions are called respectively the \emph{domain of discontinuity} and the \emph{limit set} of $\Gamma$. 
+
 
 \subsection{The limit set}
 Throughout this section, we let $\Gamma$ be a non-trivial discrete group of isometries of $\matH^n$. Fix a point $x\in\matH^n$. We now that the orbit $\Gamma(x)$ is a discrete subset of $\matH^n$. The \emph{limit set} $\Lambda (\Gamma)\subset \partial \matH^n$ of $\Gamma$ is the set of all the accumulation points of the orbit $\Gamma(x)$ in $\overline{\matH^n}$.\index{limit set}\index{$\Lambda(\Gamma)$}
@@ -58,6 +59,7 @@ We are left with the case where $\Gamma$ fixes a point $x\in \partial \matH^n$, 
 If it consists of one or two points, these are preserved by $\Gamma$.
 \end{proof}
 
+
 \subsection{Minimality}
 Let $\Gamma$ be a non elementary non-trivial discrete group of isometries of $\matH^n$.
 We are interested in the action of $\Gamma$ on $\Lambda(\Gamma)$. We want to prove that the action is \emph{minimal}, that is $\Lambda(\Gamma)$ has no invariant non-empty proper closed subset.
@@ -80,6 +82,7 @@ For every $\gamma \in \Gamma$ we have $\gamma^{-1}\Gamma' \gamma = \Gamma'$, so 
 The limit set $\Lambda(\Gamma')$ is not empty because $\Gamma'$ is infinite: the minimality of $\Lambda(\Gamma)$ implies that $\Lambda(\Gamma') = \Lambda(\Gamma)$.
 \end{proof}
 
+
 \subsection{The convex core}
 If $C\subset \overline{\matH^n}$ is a closed convex set, we define the \emph{nearest point retraction}\index{nearest point retraction} 
 $$r\colon \overline{\matH^n} \to C$$ 
@@ -92,6 +95,7 @@ Let $\Gamma < \Iso(\matH^n)$ be a non elementary non-trivial discrete group. The
 
 We are of course mostly interested in the case where $\Gamma$ acts freely and hence $M=\matH^n/_\Gamma$ is a manifold.
 The deformation retraction defined above is $\Gamma$-invariant, therefore every complete hyperbolic manifold $M$ deformation retracts onto its convex core. In particular, $M$ is homotopically equivalent to its convex core.
+
 
 \subsection{The domain of discontinuity}
 Let $\Gamma < \Iso(\matH^n)$ be a non elementary non-trivial discrete group. The \emph{domain of discontinuity} of $\Gamma$ is the open set\index{domain of discontinuity}\index{$\Omega(\Gamma)$}
@@ -128,6 +132,7 @@ The fundamental group of a finite-volume complete hyperbolic manifold is never s
 Solvable groups have non-trivial normal abelian subgroups, as proved in Proposition \ref{solvable:normal:prop}.
 \end{proof}
 
+
 \subsection{Schottky groups}
 In all the examples encountered up to now the limit set $\Lambda(\Gamma)$ consists of either few points or the whole of $\partial \matH^n$. There are many cases where $\Lambda(\Gamma)$ is a more interesting (and often beautiful) set. The simplest examples are probably the following.
 
@@ -136,6 +141,7 @@ The closed complement $C = \matH^n \setminus \interior{H_1 \cup \ldots \cup H_{2
 
 \begin{ex} If $n=2$, the limit set $\Lambda(\Gamma)\subset \partial \matH^2 = S^1$ is a Cantor set.
 \end{ex}
+
 
 \subsection{Parabolic and hyperbolic points}
 Let $\Gamma < \Iso(\matH^n)$ be a non elementary non-trivial discrete group. A \emph{parabolic point} $x\in \partial \matH^n$ for $\Gamma$ is a point that is fixed by some parabolic element $\gamma \in \Gamma$. Similarly, a \emph{hyperbolic point} is a point that is fixed by some hyperbolic element.\index{parabolic point}\index{hyperbolic point}
@@ -150,6 +156,7 @@ They clearly form a $\Gamma$-invariant subset, so its closure also is. We conclu
 \begin{cor} \label{parabolic:hyperbolic:dense:cor}
 If $\Vol(\matH^n/_\Gamma)<+\infty $, the set of all parabolic (hyperbolic) points is either empty or dense in $\partial \matH^n$.
 \end{cor}
+
 
 \subsection{Horoballs in the hyperboloid model}
 In the conformal models, horoballs are just Euclidean balls tangent to the boundary at infinity. In the hyperboloid model $I^n$ there is a more algebraic description. We denote by
@@ -169,6 +176,7 @@ There is also a simple (and maybe surprising) geometric relation between the vec
 \begin{ex} \label{Euclidean-centre:ex}
 The Euclidean centre of the horoball $\pi(O)$ is $\pi(x)$.
 \end{ex}
+
 
 \subsection{The Epstein--Penner decomposition} \label{EP:subsection}
 We now show that every cusped finite-volume hyperbolic manifold decomposes canonically into some ideal polyhedra. This decomposition is known as the \emph{canonical} or \emph{Epstein--Penner decomposition}.\index{Epstein--Penner decomposition}

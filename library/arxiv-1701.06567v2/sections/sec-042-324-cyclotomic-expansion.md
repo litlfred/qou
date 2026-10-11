@@ -8,186 +8,57 @@ pages: 39-41
 source_pdf: 1701.06567v2.pdf
 source_sha256: c1610b50f5a7e22c
 doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
+text_source: latex
+latex_prose_ratio: 0.957
+latex_coverage_ratio: 1.0
 ---
-In this secition we show how to obtain expression for ˆZa(1/q,t ) with |q| < 1 using what is
-usually called the cyclotomic expansion.
-Let us ﬁrst consider the general construction. Let F (q,t ) be some function of q and t,
-and suppose we know its restrictions at t =qβ, with β∈ Z,
-F (β)(q)≡F (q,qβ). (3.73)
-Then, one can write the following formal cyclotomic-like expansion for F (q,t ):
-F (q,t ) =
-∞∑
-m=0
-~F (m)(q)· tm(1/t;q)m
-(q;q)m
-. (3.74)
-The coeﬃcient of the cyclotomic expansion, ~F (m)(q), are related to F (m)(q) by a “triangular”
-linear transform:
-~F (0)(q) = F (0)(q)
-~F (1)(q) = F (0)(q)−F (1)(q)
-~F (2)(q) = F (0)(q)− (1 +q−1)F (1)(q) +q−1F (2)(q)
-~F (3)(q) = F (0)(q)− (1 +q−1 +q−2)F (1)(q) + (q−1 +q−2 +q−3)F (2)(q)−q−4F (3)(q)
-...
-(3.75)
-Note, that the denominators (q;q)m in (3.74) are introduced for convenience, so that
-F (β)(q) ∈ Z[q,q−1] ⇐⇒ ~F (m)(q)∈ Z[q,q−1] (3.76)
-but in principle they can be absorbed into the deﬁnition of cyclotomic coeﬃcients ~F (m)(q).
-– 38 –
-If the minimal degree of q in ~F (m)(q) grows with m, one can produce a q-expansion from
-the cyclotomic expansion ( 3.74). However, such procedure is quite formal and in general
-might not actually give the actual q-expansion that converges to F (q,t ) when|q| < 1. But
-it can be done for homological blocks. In particular, from ( 3.59) one obtains the following
-cyclotomic-like expansion:
-ˆZa(q,t ) = 1
-(qt;q)∞
-∞∑
-m=0
-~ˆZ
-(m)
-a (q)· tm(1/t;q)m
-(q;q)m
-(3.77)
-where the coeﬃcients
-~ˆZ
-(m)
-a (q) ∈ Z[q] (3.78)
-turn out to be polynomials in q (non-Laurent) with minimal power growing linearly in m.
-Expanding each term in q then gives us a q-series of the following form:
-ˆZa(q,t ) =
-∞∑
-n=0
-Pn(t)qn, P n(t)∈ Z[t], (3.79)
-which coincides with the q-series that can be produced directly from ( 3.33). On the other
-hand, since Pm(t) contain only positive powers of t, one can produce ˆZ(β)(q) — or, equiva-
-lently, the coeﬃcients of the cyclotomic expansion ~ˆZ
-(β)
-(q) — from (3.33) just by making the
-substitution t =qβ and observing that the resulting q-series truncates.
-Therefore, we assume that for anti-blocks one can write similarly:
-ˆZa(1/q,t ) = (1/t;q)∞
-∞∑
-m=0
-~ˆZ
-(−m)
-a (1/q)· tm(1/t;q)m
-(q;q)m
-(3.80)
-where ~ˆZ
-(−m)
-a (1/q) are related to ˆZ(−β)
-a (1/q)≡ (q−1t;q−1)∞ˆZa(q−1,t )|t=qβ in the same way
-as ~F (m)(q) are related to F (β)(q) in (3.75).
-For example, in the case p = 5, using expressions for ˆZ(−β)
-a (q) calculated in Section 3.2.3
-we have
-2ˆZ0(1/q,t ) =
-(
-−t3 +t2−t + 1
-)
-+
-(
-t4− 3t3 + 5t2− 3t
-)
-q +
-(
-−t5 + 6t4− 11t3 + 11t2− 6t + 1
-)
-q2
-+
-(
-t6− 6t5 + 17t4− 28t3 + 26t2− 12t + 2
-)
-q3 +O
-(
-q4)
-,
-ˆZ1(1/q,t ) = q−1/5
-((
-t2−t
-)
-+
-(
-t4− 3t3 + 3t2− 2t + 1
-)
-q +
-(
-−t5 + 4t4− 9t3 + 10t2− 5t + 1
-)
-q2
-+
-(
-−4t5 + 15t4− 24t3 + 21t2− 10t + 2
-)
-q3 +O
-(
-q4))
-,
-ˆZ2(1/q,t ) = q1/5
-((
-−t3 + 2t2−t
-)
-+
-(
-2t4− 5t3 + 5t2− 3t + 1
-)
-q+
-+
-(
-−2t5 + 7t4− 13t3 + 14t2− 7t + 1
-)
-q2 +O
-(
-q3))
-.
-(3.81)
-– 39 –
-Now we can check ( 3.35) and ( 3.55) directly. From ( 3.31), or equivalently from ( 3.77), we
-have
-ˆZ0(q,t ) = 1 +q + (2−t +t2)q2 + (3− 2t + 2t2)q3 +O(q4),
-ˆZ1(q,t ) = q1/5(
-−1 + (−2 +t)q + (−3 + 2t− 2t2)q2 + (−5 + 4t− 3t2 +t3)q3 +O(q4)
-)
-,
-ˆZ2(q,t ) = q4/5(
-(1−t)q + (1− 2t +t2)q2 +O(q3)
-)
-.
-(3.82)
-And from (3.31) we have:
-I(q,t ) =
-(
-1− 1
-t3
-)
-+
-(
-−1 + 1
-t + 1
-t2− 1
-t3
-)
-q +
-(
-t2− 2 + 1
-t− 1
-t3 + 1
-t4
-)
-q2+
-+
-(1
-t− 1
-t2− 1
-t5 + 1
-t6
-)
-q3 +O
-(
-q4)
-. (3.83)
-Then, one can check explicitly that indeed
-I(q,t ) = ˆZ0(q,t )· 2ˆZ0(1/q, 1/t) +ˆZ1(q,t )ˆZ1(1/q, 1/t) +ˆZ2(q,t )ˆZ2(1/q, 1/t). (3.84)
-Similarly, the topologically twisted index,
-Itop(q,t ) = 1 −t3, (3.85)
-can indeed be decomposed as
-Itop(q,t ) = ˆZ0(q,t )· 2ˆZ0(1/q,t ) +ˆZ1(q,t )ˆZ1(1/q,t ) +ˆZ2(q,t )ˆZ2(1/q,t ). (3.86)
+[]{#sec:cyclotomic label="sec:cyclotomic"}
+
+In this secition we show how to obtain expression for $\widehat{Z}_a(1/q,t)$ with $|q|<1$ using what is usually called the *cyclotomic expansion*.
+
+Let us first consider the general construction. Let $F(q,t)$ be some function of $q$ and $t$, and suppose we know its restrictions at $t=q^\beta$, with $\beta\in{\mathbb Z}$, $$F^{(\beta)}(q)\equiv F(q,q^\beta).$$ Then, one can write the following formal cyclotomic-like expansion for $F(q,t)$: $$F(q,t)=\sum_{m=0}^\infty\widetilde{F}^{(m)}(q)\cdot\frac{t^m(1/t;q)_m}{(q;q)_m}.
+    \label{cyclotomic}$$ The coefficient of the cyclotomic expansion, $\widetilde{F}^{(m)}(q)$, are related to ${F}^{(m)}(q)$ by a "triangular" linear transform: $$\begin{array}{rcl}
+        \widetilde{F}^{(0)}(q) & = & F^{(0)}(q)\\
+        \widetilde{F}^{(1)}(q) & = & F^{(0)}(q)-F^{(1)}(q)\\
+        \widetilde{F}^{(2)}(q) & = & F^{(0)}(q)-(1+q^{-1})F^{(1)}(q)+q^{-1}F^{(2)}(q)\\
+        \widetilde{F}^{(3)}(q) & = & F^{(0)}(q)-(1+q^{-1}+q^{-2})F^{(1)}(q)
+        +(q^{-1}+q^{-2}+q^{-3})F^{(2)}(q)-q^{-4}F^{(3)}(q)\\
+        \ldots
+    \end{array}
+    \label{Cyc-transform}$$ Note, that the denominators $(q;q)_m$ in ([\[cyclotomic\]](#cyclotomic){reference-type="ref" reference="cyclotomic"}) are introduced for convenience, so that $$F^{(\beta)}(q)\;\in{\mathbb Z}[q,q^{-1}]\qquad\Longleftrightarrow \qquad\widetilde{F}^{(m)}(q) \in{\mathbb Z}[q,q^{-1}]$$ but in principle they can be absorbed into the definition of cyclotomic coefficients $\widetilde{F}^{(m)}(q)$.
+
+If the minimal degree of $q$ in $\widetilde{F}^{(m)}(q)$ grows with $m$, one can produce a $q$-expansion from the cyclotomic expansion ([\[cyclotomic\]](#cyclotomic){reference-type="ref" reference="cyclotomic"}). However, such procedure is quite formal and in general might not actually give the actual $q$-expansion that converges to $F(q,t)$ when $|q|<1$. But it can be done for homological blocks. In particular, from ([\[BlockBeta\]](#BlockBeta){reference-type="ref" reference="BlockBeta"}) one obtains the following cyclotomic-like expansion: $$\widehat{Z}_a(q,t)=\frac{1}{(qt;q)_\infty}\sum_{m=0}^\infty\widetilde{\widehat{Z}}_a^{(m)}(q)\cdot\frac{t^m(1/t;q)_m}{(q;q)_m}
+    \label{Zcyclotomic}$$ where the coefficients $$\widetilde{\widehat{Z}}_a^{(m)}(q)\;\;\in{\mathbb Z}[q]$$ turn out to be polynomials in $q$ (non-Laurent) with minimal power growing linearly in $m$. Expanding each term in $q$ then gives us a $q$-series of the following form: $$\widehat{Z}_a(q,t)=\sum_{n= 0}^\infty P_n(t)q^n,\qquad P_n(t)\in {\mathbb Z}[t],
+    \label{Block-qexp}$$ which coincides with the $q$-series that can be produced directly from ([\[TM3mod\]](#TM3mod){reference-type="ref" reference="TM3mod"}). On the other hand, since $P_m(t)$ contain only positive powers of $t$, one can produce $\widehat{Z}^{(\beta)}(q)$ --- or, equivalently, the coefficients of the cyclotomic expansion $\widetilde{\widehat{Z}}^{(\beta)}(q)$ --- from ([\[TM3mod\]](#TM3mod){reference-type="ref" reference="TM3mod"}) just by making the substitution $t=q^\beta$ and observing that the resulting $q$-series truncates.
+
+Therefore, we assume that for anti-blocks one can write similarly: $$\widehat{Z}_a(1/q,t)=(1/t;q)_\infty\sum_{m=0}^\infty\widetilde{\widehat{Z}}_a^{(-m)}(1/q)\cdot\frac{t^m(1/t;q)_m}{(q;q)_m}
+    \label{AZcyclotomic}$$ where $\widetilde{\widehat{Z}}_a^{(-m)}(1/q)$ are related to ${\widehat{Z}}_a^{(-\beta)}(1/q)\equiv (q^{-1}t;q^{-1})_\infty\widehat{Z}_a(q^{-1},t)|_{t=q^\beta}$ in the same way as $\widetilde{F}^{(m)}(q)$ are related to $F^{(\beta)}(q)$ in ([\[Cyc-transform\]](#Cyc-transform){reference-type="ref" reference="Cyc-transform"}).
+
+For example, in the case $p=5$, using expressions for $\widehat{Z}_a^{(-\beta)}(q)$ calculated in Section [\[sec:beta-reduction\]](#sec:beta-reduction){reference-type="ref" reference="sec:beta-reduction"} we have $$\begin{array}{rl}
+        2\widehat{Z}_0(1/q,t)=&\left(-t^3+t^2-t+1\right)+\left(t^4-3 t^3+5 t^2-3 t\right)
+   q+\left(-t^5+6 t^4-11 t^3+11 t^2-6 t+1\right) q^2\\ &\qquad+\left(t^6-6
+   t^5+17 t^4-28 t^3+26 t^2-12 t+2\right)
+   q^3+O\left(q^4\right),\vspace{1ex}
+   \\
+        \widehat{Z}_1(1/q,t)=&q^{-1/5}\Big(\left(t^2-t\right)+\left(t^4-3 t^3+3
+   t^2-2 t+1\right) q+\left(-t^5+4 t^4-9 t^3+10 t^2-5 t+1\right)
+   q^2 \\& \qquad+\left(-4 t^5+15 t^4-24 t^3+21 t^2-10 t+2\right)
+   q^3+O\left(q^{4}\right)\Big),\vspace{1ex}
+   \\
+        \widehat{Z}_2(1/q,t)=&q^{1/5}\Big(\left(-t^3+2 t^2-t\right)+\left(2
+   t^4-5 t^3+5 t^2-3 t+1\right) q+ \\& \qquad+\left(-2 t^5+7 t^4-13 t^3+14
+   t^2-7 t+1\right) q^2+O\left(q^3\right)\Big).
+    \end{array}$$ Now we can check ([\[Index-factorization\]](#Index-factorization){reference-type="ref" reference="Index-factorization"}) and ([\[Itop-factorization\]](#Itop-factorization){reference-type="ref" reference="Itop-factorization"}) directly. From ([\[I-Lp1-SU2\]](#I-Lp1-SU2){reference-type="ref" reference="I-Lp1-SU2"}), or equivalently from ([\[Zcyclotomic\]](#Zcyclotomic){reference-type="ref" reference="Zcyclotomic"}), we have $$\begin{array}{rl}
+        \widehat{Z}_0(q,t)&=1+q+(2-t+t^2)q^2+(3-2t+2t^2)q^3+O(q^4),\vspace{1ex}\\
+        \widehat{Z}_1(q,t)&=q^{1/5}\left(-1+(-2+t)q+(-3+2t-2t^2)q^2+(-5+4t-3t^2+t^3)q^3+O(q^4)\right),\vspace{1ex}\\
+        \widehat{Z}_2(q,t)&=q^{4/5}\left((1-t)q+(1-2t+t^2)q^2+O(q^3)\right).
+    \end{array}$$ And from ([\[I-Lp1-SU2\]](#I-Lp1-SU2){reference-type="ref" reference="I-Lp1-SU2"}) we have: $$\begin{gathered}
+    {\mathcal I}(q,t)=\left(1-\frac{1}{t^3}\right)+\left(-1+\frac{1}{t}+\frac{1}{t^2}-\frac{1}{t^3}\right)
+   q+\left(t^2-2+\frac{1}{t}-\frac{1}{t^3}+\frac{1}{t^4}\right)
+   q^2+\\+\left(\frac{1}{t}-\frac{1}{t^2}-\frac{1}{t^5}+\frac{1}{t^6}
+   \right) q^3+O\left(q^4\right).
+\end{gathered}$$ Then, one can check explicitly that indeed $${\mathcal I}(q,t) \; = \; \widehat{Z}_0(q,t)\cdot 2\widehat{Z}_0(1/q,1/t)+
+    \widehat{Z}_1(q,t)\widehat{Z}_1(1/q,1/t)+
+    \widehat{Z}_2(q,t)\widehat{Z}_2(1/q,1/t) \,.$$ Similarly, the topologically twisted index, $${\mathcal I}_\text{top}(q,t) \; = \; 1-t^3 \,,$$ can indeed be decomposed as $${\mathcal I}_\text{top}(q,t) \; = \; \widehat{Z}_0(q,t)\cdot 2\widehat{Z}_0(1/q,t)+
+    \widehat{Z}_1(q,t)\widehat{Z}_1(1/q,t)+
+    \widehat{Z}_2(q,t)\widehat{Z}_2(1/q,t) \,.$$

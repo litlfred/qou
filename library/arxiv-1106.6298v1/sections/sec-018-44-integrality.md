@@ -8,59 +8,71 @@ pages: 17-17
 source_pdf: 1106.6298v1.pdf
 source_sha256: 23b0754067873a04
 doc_brief: "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INVARIANTS — In 2006 Habiro initiated a construction of generating functions for Witten– Reshetikhin–Turaev (WRT) invariants known as uniﬁed WRT invariant s."
+text_source: latex
+latex_prose_ratio: 0.983
+latex_coverage_ratio: 1.0
 ---
-unity and for all 3–manifolds is given in [4]. Note that even restricted t o rational homology
-3–spheres, this fact requires a separate proof, since the existe nce of IM ∈ R b does not
-imply integrality of the WRT invariants, unless b = 1. In this subsection we deﬁne a
-subring Γ b ⊂ R b, such that for any f ∈ Γ b, ev ξ(f ) ∈ Z[ξ]. The fact that IM, 1 belongs to
-this subring was proved in [4]. We conjecture that this holds in genera l.
-For any divisor c of b, let us decompose N = ∪c|b c Nb/c . Then
-Z[1/b][q]N =
-∏
-c|b
-Z[1/b][q]c Nb/c .
-Analogously, we have Γ b =∏
-c|b Γ b,c , where Γ b,c ⊂ Z[1/b][q]c Nb/c is deﬁned as follows.
-Let Ab,c = Z[ec][q±1, q±c/b ]. Put t = qc/b and let A(m)
-b,c be the algebra generated over Ab,c
+The proof of integrality of the SO(3) WRT invariants for
+all  roots of unity and for all 3--manifolds is given in \cite{BL}.
+Note that even restricted to rational homology 3--spheres,
+this fact requires a separate proof, since
+ the existence
+of $I_M \in \R_b$ does not imply  integrality of the WRT invariants,
+unless $b= 1$. In this subsection
+we define a subring $\Gamma_b \subset \R_b$, such that
+for any $f\in \Gamma_b$, $\ev_\xi(f)\in \Z[\xi]$.
+
+
+The fact that $I_{M,1}$ belongs
+to this subring was proved in \cite{BL}. We conjecture that
+this holds in general.
+
+For any divisor $c$ of $b$, let us decompose
+$\N=\cup_{c|b}\; c\; \N_{b/c}$. Then
+$$\Z[1/b][q]^\N=\prod_{c|b} \Z[1/b][q]^{c\,\N_{b/c}}\, .$$
+Analogously, we have
+$\Gamma_b=\prod_{c|b} \Gamma_{b,c}$, where
+$\Gamma_{b,c} \subset \Z[1/b][q]^{c\, \N_{b/c}}$ is defined as follows.
+
+Let $A_{b,c}=\Z[e_c][q^{\pm 1}, q^{\pm c/b}]$.
+Put $t=q^{c/b}$ and let $A^{(m)}_{b,c}$ be the algebra generated over  $A_{b,c}$
 by
-(t; t)m
-(qc; qc)m
-(ec; ec)(c−1)/ 2
-~(q; q)m
-where
-~(q; q)m =
-m∏
-i=1,c ∤ i
-(1 − qi) .
-Then every element f ∈ Γ b,c has a presentation
-f =
-∞∑
-m=0
-fm
-(qm+1; q)m+1
-1 − q
-with fm ∈ A(m)
-b,c . For any root of unity ξ of odd order r with ( r, b) = c and f ∈ Γ b,c , we
-have
-evξ(f ) = ev ξ
-
-
-(r−3)/ 2∑
-m=0
-fm
-(qm+1; q)m+1
-1 − q
-
- .
-Observe that for m < (r − 1)/2,
-evξ( ~(q; q)m) | (ec; ec)(c−1)/ 2 and ev ξ
-( (t; t)m
-(qc; qc)m
-)
-∈ Z[ξ] .
-Conjecture. For any M ∈ M b, there exists an invariant I′
-M ∈ Γ b, such that for any root
-of unity ξ of odd order evξ(I′
-M ) = τM (ξ).
-We also expect that Γ b,b is determined by its Taylor expansion at eb.
+$$\frac{(t;t)_m}{(q^c;q^c)_{m}}\;
+ \frac{(e_c;e_c)_{(c-1)/2}}{\widetilde {(q;q)_m}}\; $$
+where $$\widetilde{(q;q)_m}=\prod^m_{i=1, c\, \nmid\,  i}(1-q^i)\, .$$
+Then
+every element $f\in \Gamma_{b,c}$ has a presentation
+$$f=\sum^\infty_{m=0} f_m \; \frac{(q^{m+1};q)_{m+1}}{1-q}
+$$
+with $f_m\in A^{(m)}_{b,c}$.
+For any root of unity $\xi$ of odd order $r$ with $(r,b)=c$
+and $f\in \Gamma_{b,c}$, we have
+$$ \ev_\xi (f)= \ev_\xi \left(\sum^{(r-3)/2}_{m=0} f_m \frac{(q^{m+1};q)_{m+1}}{1-q}
+\right)\; .$$
+
+
+
+
+
+
+
+
+Observe that for $m<(r-1)/2$,
+$$
+\ev_\xi (\widetilde {(q;q)_{m}}) \; \mid\;
+(e_c;e_c)_{(c-1)/2}
+\;\;\text{and}\;\;
+\ev_\xi \left(\frac{(t;t)_m}{(q^c;q^c)_{m}}
+\right) \in \Z[\xi]\, .$$
+
+
+
+\begin{conjecture}
+For any $M\in \M_b$,
+there exists an invariant $I'_M \in \Gamma_b$, such that
+for any root of unity $\xi$ of odd order
+$\ev_\xi(I'_M)=\tau_M(\xi)$.
+\end{conjecture}
+
+We also expect that $\Gamma_{b,b}$ is determined by its Taylor
+expansion at $e_b$.

@@ -7,23 +7,19 @@ section_number: 5
 pages: 13-16
 source_pdf: 2401.04019v1.pdf
 source_sha256: 1a29e52a81639640
-text_source: latex
-latex_prose_ratio: 0.986
-latex_coverage_ratio: 0.935
 doc_brief: "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY — The work of Andrews and Merca on the truncated Euler’s pen- tagonal number theorem led to a resurgence in research on tru ncated"
+text_source: latex
+latex_prose_ratio: 0.993
+latex_coverage_ratio: 0.988
 ---
 []{#sec-JTP label="sec-JTP"}
 
 In this section we give both analytic and combinatorial proofs of an identity which includes as particular cases the conjectural identities (6.7), (6.10), (6.12), (6.13) in [@M1].
 
-First, we recall the Jacobi Triple Product identity in its general form. See, for example, [@KK] where a combinatorial proof is provided. For integers $m$ and $s$ such that $0<s<m$, and complex numbers $q$ and $z$ with $|q|<1$ and $z\neq 0$, we have $$\begin{equation}
-\label{JTP} (zq^s,z^{-1}q^{m-s}, q^m;q^m)_\infty=\sum_{i=-\infty}^\infty(-z)^iq^{m(i^2-i)/2+si}.
-\end{equation}$$
+First, we recall the Jacobi Triple Product identity in its general form. See, for example, [@KK] where a combinatorial proof is provided. For integers $m$ and $s$ such that $0<s<m$, and complex numbers $q$ and $z$ with $|q|<1$ and $z\neq 0$, we have $$\label{JTP} (zq^s,z^{-1}q^{m-s}, q^m;q^m)_\infty=\sum_{i=-\infty}^\infty(-z)^iq^{m(i^2-i)/2+si}.$$
 
 ::: theorem
-[]{#T-gen label="T-gen"}Let $m, s$ be positive integers such that $m\geq 2$ and $0<s<m$. Then, $$\begin{equation}
-\label{I6.7-gen}\frac{(q^s,q^{2m-s},q^{2m};q^{2m})_\infty(q^{2m-2s},q^{2m+2s} ;q^{4m})_\infty}{(q^s, q^{m-s};q^{m})_\infty}=\sum_{n=-\infty}^\infty q^{n(mn+s)}.
-\end{equation}$$
+[]{#T-gen label="T-gen"}Let $m, s$ be positive integers such that $m\geq 2$ and $0<s<m$. Then, $$\label{I6.7-gen}\frac{(q^s,q^{2m-s},q^{2m};q^{2m})_\infty(q^{2m-2s},q^{2m+2s} ;q^{4m})_\infty}{(q^s, q^{m-s};q^{m})_\infty}=\sum_{n=-\infty}^\infty q^{n(mn+s)}.$$
 :::
 
 ::: corollary
@@ -35,11 +31,12 @@ In [@KMR], the authors point out that identities (6.7), (6.10), (6.12), (6.13) i
 :::
 
 ::: proof
-*Analytic proof.* Since $$\begin{align*}
+*Analytic proof.* Since $$\begin{aligned}
 (q^s;q^{m})_\infty& =(q^s;q^{2m})_\infty(q^{m+s};q^{2m})_\infty\\ (q^{2m+2s};q^{4m})_\infty& =  (q^{m+s};q^{2m})_\infty(-q^{m+s};q^{2m})_\infty,
-\end{align*}$$ to prove identity [\[I6.7-gen\]](#I6.7-gen){reference-type="eqref" reference="I6.7-gen"}, we need to show that $$\begin{align}
+\end{aligned}$$ to prove identity [\[I6.7-gen\]](#I6.7-gen){reference-type="eqref" reference="I6.7-gen"}, we need to show that $$\begin{aligned}
 \label{eq_staircase}(-q^{m+s};q^{2m})_\infty(-q^{m-s};q^{2m})_\infty(q^{2m};q^{2m})_\infty=\sum_{n=-\infty}^\infty q^{n(mn+s)},
-\end{align}$$ which is precisely [\[JTP\]](#JTP){reference-type="eqref" reference="JTP"} with $q$ replaced by $q^2$ and $z$ replaced by $-q^{m-s}$. ◻
+  
+\end{aligned}$$ which is precisely [\[JTP\]](#JTP){reference-type="eqref" reference="JTP"} with $q$ replaced by $q^2$ and $z$ replaced by $-q^{m-s}$. ◻
 :::
 
 ::: proof
@@ -47,19 +44,15 @@ In [@KMR], the authors point out that identities (6.7), (6.10), (6.12), (6.13) i
 
 We continue with the combinatorial proof of Theorem [\[T-gen\]](#T-gen){reference-type="ref" reference="T-gen"}.
 
-If $m=2$, then [\[I6.7-gen\]](#I6.7-gen){reference-type="eqref" reference="I6.7-gen"} becomes $$\begin{equation}
-\label{I6.7-2}\frac{(q,q^{3},q^{4};q^{4})_\infty(q^{2},q^{6} ;q^{8})_\infty}{(q;q^{2})^2_\infty}=\sum_{n=-\infty}^\infty q^{n(2n+1)}.
-\end{equation}$$ Using the transformation $F$ above on pairs of partitions with odd parts, we have that [\[I6.7-2\]](#I6.7-2){reference-type="eqref" reference="I6.7-2"} is equivalent to $$\begin{equation}
-\label{I6.7-2'}\frac{(q^{2};q^{2})_\infty}{(q;q^{2})_\infty}=\sum_{n=0}^\infty q^{n(n+1)/2}.
-\end{equation}$$ This is Gauss's identity [@A72 Identity (1.3)] with $q$ replaced by $-q$. However, since $\ell_o(\lambda)\equiv |\lambda| \mod 2$, Andrews' combinatorial proof of Gauss' identity given in [@A72] also proves [\[I6.7-2\]](#I6.7-2){reference-type="eqref" reference="I6.7-2"} combinatorially.
+If $m=2$, then [\[I6.7-gen\]](#I6.7-gen){reference-type="eqref" reference="I6.7-gen"} becomes $$\label{I6.7-2}\frac{(q,q^{3},q^{4};q^{4})_\infty(q^{2},q^{6} ;q^{8})_\infty}{(q;q^{2})^2_\infty}=\sum_{n=-\infty}^\infty q^{n(2n+1)}.$$ Using the transformation $F$ above on pairs of partitions with odd parts, we have that [\[I6.7-2\]](#I6.7-2){reference-type="eqref" reference="I6.7-2"} is equivalent to $$\label{I6.7-2'}\frac{(q^{2};q^{2})_\infty}{(q;q^{2})_\infty}=\sum_{n=0}^\infty q^{n(n+1)/2}.$$ This is Gauss's identity [@A72 Identity (1.3)] with $q$ replaced by $-q$. However, since $\ell_o(\lambda)\equiv |\lambda| \mod 2$, Andrews' combinatorial proof of Gauss' identity given in [@A72] also proves [\[I6.7-2\]](#I6.7-2){reference-type="eqref" reference="I6.7-2"} combinatorially.
 
 For the remainder of the proof let $m\geq 3$.
 
 Denote by $\mathcal A(n)$ the set consisting of pairs of partitions $(\lambda, \mu)\vdash n$ such that
 
-- $\lambda$ is a partition with distinct parts congruent to $0$, $s$ or $-s$ modulo $2m$ or congruent to $2m+2s$ or $2m-2s$ modulo $4m$;
+-   $\lambda$ is a partition with distinct parts congruent to $0$, $s$ or $-s$ modulo $2m$ or congruent to $2m+2s$ or $2m-2s$ modulo $4m$;
 
-- $\mu$ is a partition with parts congruent to $s$ or $-s$ modulo $m$. (Thus, $\mu$ has parts congruent to $s,m+s,-s$ or $m-s$ modulo $2m$.)
+-   $\mu$ is a partition with parts congruent to $s$ or $-s$ modulo $m$. (Thus, $\mu$ has parts congruent to $s,m+s,-s$ or $m-s$ modulo $2m$.)
 
 Define $$\mathcal A_e(n):=\{(\lambda, \mu)\in \mathcal A(n) \mid \ell(\lambda) \text{ even}\}$$ and $$\mathcal A_o(n):=\{(\lambda, \mu)\in \mathcal A(n) \mid \ell(\lambda) \text{ odd}\}.$$
 
@@ -97,9 +90,7 @@ This completes the combinatorial proof of Theorem [\[T-gen\]](#T-gen){reference-
 The combinatorial proof of Theorem [\[T-gen\]](#T-gen){reference-type="ref" reference="T-gen"} above also gives a combinatorial proof of [@KMR Theorem 38].
 
 ::: theorem
-Let $a$ be $1$ or $3$. Furthermore, let $(a_n)_{n\geq 0}$ be the sequence of non-negative integers $j$ such that $16j+a^2$ is a square. Then $$\begin{equation}
-\label{Th38}\sum_{n=0}^\infty q^{a_n}=(q^8;q^8)_\infty(-q^{4+a};q^8)_\infty(-q^{4-a};q^8)_\infty.
-\end{equation}$$
+Let $a$ be $1$ or $3$. Furthermore, let $(a_n)_{n\geq 0}$ be the sequence of non-negative integers $j$ such that $16j+a^2$ is a square. Then $$\label{Th38}\sum_{n=0}^\infty q^{a_n}=(q^8;q^8)_\infty(-q^{4+a};q^8)_\infty(-q^{4-a};q^8)_\infty.$$
 :::
 
 ::: proof

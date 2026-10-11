@@ -7,14 +7,15 @@ section_number: 2
 pages: 8-14
 source_pdf: 1712.04212v4.pdf
 source_sha256: 521911fc8724f3c2
-text_source: latex
-latex_prose_ratio: 0.967
-latex_coverage_ratio: 0.918
 doc_brief: "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION — In this paper, we consider a concentration of measure problem on Riemannian manifolds with"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:Preliminaries}
 Throughout this section,
 let $(M,d_{M},m_{M,f})$ denote an $n$-dimensional weighted Riemannian manifold with boundary defined as (\ref{eq:weighted volume measure}). 
+
 
 
 \subsection{Curvatures}\label{sec:Curvatures}
@@ -110,6 +111,7 @@ the author \cite{S2} has studied comparison geometry of manifolds with boundary 
 \end{rem}
 
 
+
 \subsection{Laplacians and Dirichlet eigenvalues}
 For the weighted Laplacian $\Delta_{f}$ defined as (\ref{eq:weighted Laplacian}),
 the following formula of Bochner type is well-known (see e.g., Chapter 14 in \cite{V}):
@@ -163,6 +165,7 @@ the min-max principle states
 where the infimum is taken over all $k$-dimensional subspaces $L$ of the Sobolev space $H^{1}_{0}(M,m_{M,f})$.
 
 
+
 \subsection{Dirichlet isoperimetric constants}\label{sec:Dirichlet isoperimetric constants}
 For a Borel subset $\Omega \subset M$,
 \begin{equation*}
@@ -203,6 +206,7 @@ here we recall that any eigenfunctions of $\nu_{f,1}(M)$ are either always posit
 Note that
 for such an eigenfunction,
 the $2k$ disjointly supported Lipschitz functions constructed in the proof of Lemma 3.3 in \cite{Liu} also satisfy the Dirichlet boundary condition.
+
 
 
 \subsection{Dirichlet eigenvalue estimates}\label{sec:Isoperimetric inequalities}
@@ -284,6 +288,7 @@ for all $k\geq 1$.
 Theorem \ref{thm:universal inequality} is a refinement of (\ref{eq:Li-Yau-Cheng dimension dependent inequality}) in the sense that
 the upper bound of $\nu_{k}(M)/\nu_{1}(M)$ does not depend on $n$.
 \end{rem}
+
 
 
 \subsection{Comparisons}\label{sec:Comparison theorems}

@@ -8,57 +8,20 @@ pages: 45-46
 source_pdf: 1608.03227v4.pdf
 source_sha256: c71128e9a6c35343
 doc_brief: "January 30, 2018 — For each braid β ∈ Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗ × C∗ - equivariant sheaves on the non-commutative nested Hilbert scheme Hilb f ree 1,n ."
+text_source: latex
+latex_prose_ratio: 0.94
+latex_coverage_ratio: 0.917
 ---
-X
-◦
-2(Gk...m) = b×Gk...m× n2,
-X 3(Gn,G k...m) := bn×Gn×Gm−k+1× nn.
-Let us also deﬁne an embedding ¯ik...m : X 3(Gn,G k...m)→ X 3 by
-¯ik...m(X,g 12,g 23,Y ) = (X,g 12,i k...m(g23),Y ).
-Using the last embedding we deﬁne the maps ¯ πij by restricting from the ambient X3:
-¯π12, ¯π13 : X 3(Gn,G k...m)→ X 2(Gn), ¯π23 : X 3(Gn,G k...m)→ X 2(Gk...m).
-Similarly, we deﬁne X 3(Gk...m,G n) together with the embedding ¯ik...m : X 3(Gk...m,G n)→ X3:
-¯ik...m(X,g 12,g 23,Y ) = (X,i k...m(g12),g 23,Y ).
-The same way as before we deﬁne the corresponding maps ¯ πij.
-The spaces X 3(Gk...m,G n) and X 3(Gn,G k...m) have natural Bn×Bm−k+1×Bn-equivariant structure.
-Moreover, the maps ¯πij are B2
-n-equivariant but not Bm−k+1-equivariant. However, we can introduce the
-Bn×Bm−k+1×Bn-equivariant structure on the pull-back (¯π12×¯π23)(F⊗G ) whereF,G are equivariant matrix
-factorizations from the appropriate spaces. More precisely, rep eating the argument of the proposition 5.4 we
-obtain
-Proposition 8.3. Let
-F∈ MFsc
-B2n
-(X 2(Gn),W ), G∈ MFsc
-B2
-m−k+1
-(X 2(Gm−k+1),W )
-then there is a unique matrix factorization
-(¯π12⊗Bm−k+1 ¯π23)∗(F ⊠G)∈ MFsc
-Bn×Bm−k+1×Bn (X 3(Gn,G m...k), ¯π∗
-13(W )),
-such that its B2
-n-equivariant specialization has properties:
-(¯π12⊗Bm−k+1 ¯π23)∗(F ⊠G)♯ = (¯π12× ¯π23)∗(F ⊠G),
-45
-and
-CEnm−k+1 (π13∗((¯π12⊗Bm−k+1 ¯π23)∗(F ⊠G)))T (2)
-m−k+1 =F ¯⋆Indk...m(G).
-Lemma 8.4. Let
-F∈ MFsc
-B2
-m−k+1
-(X 2(Gm−k+1),W ), G∈ MFsc
-B2
-m−k+1
-(X 2(Gn),W )
-then there is a unique matrix factorization
-(¯π12⊗Bm−k+1 ¯π23)∗(F ⊠G)∈ MFsc
-Bn×Bm−k+1×Bn (X 3(Gm...k,G n), ¯π∗
-13(W )),
-such that its B2
-n limit has properties:
-(¯π12⊗Bm−k+1 ¯π23)∗(F ⊠G)♯ = (¯π12× ¯π23)∗(F ⊠G),
-and
-CEnm−k+1 (π13∗((¯π12⊗Bm−k+1 ¯π23)∗(F ⊠G)))T (2)
-m−k+1 = Indk...m(F )¯⋆G.
+Let us introduce $$\SymbolPrint{\calXr^{\circ}_2(G_{k\dots m})}=\frb\times G_{k\dots m} \times \frn^2,$$ $$\SymbolPrint{\calXr_3(G_n,G_{k\dots m})}:=\frb_n\times G_n\times G_{m-k+1}\times \frn_n.$$ Let us also define an embedding $\SymbolPrint{\bar{i}_{k\dots m}}:\calXr_3(G_n,G_{k\dots m})\to \calXr_3$ by $$\bar{i}_{k\dots m}(X,g_{12},g_{23},Y)=(X,g_{12},i_{k\dots m}(g_{23}),Y).$$ Using the last embedding we define the maps $\SymbolPrint{\bar{\pi}_{ij}}$ by restricting from the ambient $\calX_3$: $$\bar{\pi}_{12},\bar{\pi}_{13}: \calXr_3(G_n,G_{k\dots m})\to \calXr_2(G_n),\quad \bar{\pi}_{23}: \calXr_3(G_n,G_{k\dots m})\to \calXr_2(G_{k\dots m}).$$
+
+Similarly, we define $\calXr_3(G_{k\dots m},G_n)$ together with the embedding $\bar{i}_{k\dots m}: \calXr_3(G_{k\dots m}, G_n)\to \calX_3$: $$\bar{i}_{k\dots m}(X,g_{12},g_{23},Y)=(X,i_{k\dots m}(g_{12}),g_{23},Y).$$ The same way as before we define the corresponding maps $\bar{\pi}_{ij}$.
+
+The spaces $\calXr_3(G_{k\dots m},G_n)$ and $\calXr_3(G_n,G_{k\dots m})$ have natural $B_n\times B_{m-k+1}\times B_n$-equivariant structure. Moreover, the maps $\bar{\pi}_{ij}$ are $B_n^2$-equivariant but not $B_{m-k+1}$-equivariant. However, we can introduce the $B_n\times B_{m-k+1}\times B_n$-equivariant structure on the pull-back $(\bar{\pi}_{12}\times \bar{\pi}_{23})(\calF\otimes\calG)$ where $\calF,\calG$ are equivariant matrix factorizations from the appropriate spaces. More precisely, repeating the argument of the proposition [\[prop: Knorrer factor\]](#prop: Knorrer factor){reference-type="ref" reference="prop: Knorrer factor"} we obtain
+
+::: proposition
+[]{#prop: small prod 1 label="prop: small prod 1"} Let $$\calF\in \MF_{B_n^2}(\calXr_2(G_n),\Wr), \quad\calG\in \MF_{B_{m-k+1}^2}(\calXr_2(G_{m-k+1}),\Wr)$$ then there is a unique matrix factorization $$(\bar{\pi}_{12}\otimes_{B_{m-k+1}}\bar{\pi}_{23})^*(\calF\boxtimes \calG)\in \MF_{B_n\times B_{m-k+1}\times B_n}(\calXr_3(G_n,G_{m\dots k}),\bar{\pi}_{13}^*(\Wr)),$$ such that its $B_n^2$-equivariant specialization has properties: $$(\bar{\pi}_{12}\otimes_{B_{m-k+1}}\bar{\pi}_{23})^*(\calF\boxtimes \calG)^\sharp=(\bar{\pi}_{12}\times\bar{\pi}_{23})^*(\calF\boxtimes \calG),$$ and $$\CE_{\frn_{m-k+1}}(\pi_{13*}((\bar{\pi}_{12}\otimes_{B_{m-k+1}}\bar{\pi}_{23})^*(\calF\boxtimes \calG)))^{T_{m-k+1}^{(2)}}=\calF\bar{\star}\Indb_{k\dots m}(\calG).$$
+:::
+
+::: lemma
+[]{#prop: small prod 2 label="prop: small prod 2"} Let $$\calF\in \MF_{B_{m-k+1}^2}(\calXr_2(G_{m-k+1}),\Wr),\quad\calG\in \MF_{B_{m-k+1}^2}(\calXr_2(G_n),\Wr)$$ then there is a unique matrix factorization $$(\bar{\pi}_{12}\otimes_{B_{m-k+1}}\bar{\pi}_{23})^*(\calF\boxtimes \calG)\in \MF_{B_n\times B_{m-k+1}\times B_n}(\calXr_3(G_{m\dots k},G_n),\bar{\pi}_{13}^*(\Wr)),$$ such that its $B_n^2$ limit has properties: $$(\bar{\pi}_{12}\otimes_{B_{m-k+1}}\bar{\pi}_{23})^*(\calF\boxtimes \calG)^\sharp=(\bar{\pi}_{12}\times\bar{\pi}_{23})^*(\calF\boxtimes \calG),$$ and $$\CE_{\frn_{m-k+1}}(\pi_{13*}((\bar{\pi}_{12}\otimes_{B_{m-k+1}}\bar{\pi}_{23})^*(\calF\boxtimes \calG)))^{T_{m-k+1}^{(2)}}=\Indb_{k\dots m}(\calF)\bar{\star}\calG.$$
+:::

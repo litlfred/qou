@@ -7,10 +7,10 @@ section_number: 4
 pages: 7-10
 source_pdf: 1007.2335v1.pdf
 source_sha256: a55d544d1740523f
-text_source: latex
-latex_prose_ratio: 0.981
-latex_coverage_ratio: 1.0
 doc_brief: "Hopf solitons in the Nicole model — The Nicole model is a conformal ﬁeld theory in three-dimensi onal space."
+text_source: latex
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 0.97
 ---
 []{#sec-num label="sec-num"} In this section we present the results of numerical computations of Hopf solitons using the volume-preserving flow algorithm, with initial conditions constructed as in the previous section. The simulation region $\Omega$ consists of the cube $|x_i|\le 75$ with spatial derivatives approximated by fourth-order accurate finite differences using a lattice spacing $\Delta x=1.$ The flow is evolved using an explicit method with timestep $\Delta t=0.1$ and is terminated once the energy has stabilized at a constant value.
 

@@ -8,64 +8,75 @@ pages: 9-10
 source_pdf: 1202.4698.pdf
 source_sha256: 54171c652161ca5b
 doc_brief: "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as"
+text_source: latex
+latex_prose_ratio: 0.921
+latex_coverage_ratio: 0.967
 ---
-In the following we will assume that αk ∈ R, 0 < αk < Q/2. In order to study the quasi-
-classical limit of (2.27) let us write the right hand side of (2.27) in the form
-I :=E(α
-)
-∫
-C
-du I(a,b ;u). (3.5)
-The integrand I(a,b ;u) may be written as
-I(a,b ;u) =
-∏ 4
-i=1Sb(ai +u)
-Sb(−Q +u)∏ 3
-i=1Sb(Q −bi +u)
-du, (3.6)
+In the
+following we will assume that $\al_k\in\BR$,
+$0<\al_k<Q/2$.
+In order to 
+study the quasi-classical limit of (\ref{6j3}) let us write the 
+right hand side
+ of \rf{6j3} in the form 
+\begin{equation}\label{Int}
+I:=E(\underline{\al})\int_{\CC}du \,\CI(a,b;u)\,.
+\end{equation}
+The integrand $\CI(a,b;u)$ may be written as
+\begin{equation}\label{int}
+\CI(a,b;u)=
+\frac{\prod_{i=1}^4 S_b(a_i+u)}{S_b(-Q+u) \prod_{i=1}^3 S_b(Q-b_i+u)} du,
+\end{equation}
 where
-a ≡ [a1,a 2,a 3,a 4] = [ −αs −α1 −α2, −αs −α3 −α4, −αt −α1 −α4, −αt −α2 −α3],
-b ≡ [b1,b 2,b 3] = [ αs +αt +α1 +α3,α s +αt +α2 +α4,α 1 +α2 +α3 +α4]. (3.7)
-The quasi-classical limit of I(a,b ;u) is easily determined with the help of formula (A.17) in
-Appendix A. In order to write the result in an convenient form let us reparameterize variables
-e−2πibαk+πi ≡Ak, k ∈ {1, 2, 3, 4,s,t }.
-Introducing the integration variablesv := 2πb(u −Q/2) we get an integral of the form
-I =D(α
-)
-∫
-C−Q/2
-dv
-2πb J (a,b ;v) (3.8)
-whose integrand J (a,b ;v) has quasi-classical asymptotics
-J (a,b ;v) = exp
-( 1
-2πb2U(eiv,A )
-)(
-1 + O(b2)
-)
-, (3.9)
-with U(eiv,A ) given by the formula (3.1). The quasiclassical asymptotics of the prefactor in
-(3.8) is
-Dcl(A) = exp
-( 1
-2πib2
-(
-∆(A) − 5
-3π2
-))
-, (3.10)
-where ∆(A) was deﬁned in (3.2) above.
-Now we are ready to perform the saddle-point approximation f or the integral (3.5). The
-saddle points are the solutions of the equation (3.4). The values of the b-6j at these points are
-exp
-( 1
-2πib2W±(A)
-)
-, where W±(A) = U(z±,A ) + ∆( A) − 5
-3π2 + 2πi logu±.
-Sinceu± =e±πiφ,φ ∈ R as noted above, we ﬁnd that
-W±(A) = U(z±,A ) + ∆( A) − 5
-3π2 ∓ 2π2φ. (3.11)
-Taking the imaginary part of (3.11) one sees that we are getti ng the volume of a hyperbolic
-tetrahedron (3.3).
-10
+\begin{align}
+& a\equiv[ a_1,a_2,a_3,a_4 ] \ = \ [-\alpha_s-\alpha_1-\alpha_2, -\alpha_s-\alpha_3-\alpha_4, -\alpha_t-\alpha_1-\alpha_4, -\alpha_t-\alpha_2-\alpha_3], \nonumber \\ & 
+b\equiv[ b_1,b_2,b_3 ] \ = \ [ \alpha_s+\alpha_t+\alpha_1+\alpha_3, \alpha_s+\alpha_t+\alpha_2+\alpha_4, \alpha_1+\alpha_2+\alpha_3+\alpha_4 ].
+\end{align}
+The quasi-classical limit of $\CI(a,b;u)$ is easily determined with the help
+of formula \rf{Sbscl} in Appendix \ref{Qdil}. In order to write
+the result in an convenient form
+let us reparameterize variables
+$$e^{-2 \pi \textup{i} b  \alpha_k+\pi \textup{i}} \equiv A_k\,,\qquad k\in\{1,2,3,4,s,t\}\,.
+$$
+Introducing the integration variables $v:=2\pi b(u-Q/2)$ 
+we get an integral of the form 
+\begin{equation}\label{Int'}
+I=D(\underline{\al})\int_{\CC-Q/2}
+\frac{dv}{2\pi b} 
+\,\CJ(a,b;v)
+\end{equation} 
+whose integrand $\CJ(a,b;v)$ 
+has quasi-classical asymptotics
+\begin{equation}
+\CJ(a,b;v)\,=\,\exp\bigg(\frac{1}{2\pi b^2}\,U(e^{\textup{i}v},\underline{{A}})\bigg)
+\Big(1+\CO(b^2)\Big)\,,
+\end{equation}
+with $U(e^{\textup{i}v},\underline{{A}})$ given by the formula \rf{Udef}.
+The quasiclassical asymptotics of the prefactor in \rf{Int'} is
+\beqa
+&& D_{\rm cl}(\underline{{A}}) = \exp \left( \frac{1}{2 \pi \textup{i} b^2} 
+\Big( \Delta(\underline{{A}}) - \frac53 \pi^2 \Big) \right)\,,
+\eeqa
+where $\Delta(\underline{{A}})$ was defined in \rf{Deltadef} above.
+
+
+Now we are ready to perform the saddle-point approximation for 
+the integral (\ref{Int}). 
+The saddle points are the solutions of the equation \rf{eq}.
+The values of the b-$6j$ at these points are
+$$
+\exp \bigg( \frac{1}{2 \pi \textup{i} b^2} 
+W_{\pm}(\underline{{A}}) \bigg),\quad{\rm where}
+\quad
+W_{\pm}(\underline{{A}}) = U(z_{\pm},\underline{{A}}) + 
+\Delta(\underline{{A}}) - \frac53 \pi^2 + 2 \pi \textup{i} \log u_{\pm}.
+$$
+Since $u_{\pm}=e^{\pm \pi \textup{i} \phi}$, $\phi\in\BR$ as noted
+above,  we find that
+\beq \label{quasclas}
+W_{\pm}(\underline{{A}}) = U(z_{\pm},\underline{{A}}) + 
+\Delta(\underline{{A}}) - \frac53 \pi^2 \mp 2 \pi^2 \phi.
+\eeq
+Taking the imaginary part of (\ref{quasclas}) one sees 
+that we are  getting the volume 
+of a hyperbolic tetrahedron \rf{volume}.

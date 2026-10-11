@@ -7,21 +7,17 @@ section_number: 6
 pages: 17-20
 source_pdf: 2507.12454v1.pdf
 source_sha256: 156fd9080847b4e7
-text_source: latex
-latex_prose_ratio: 0.96
-latex_coverage_ratio: 0.906
 doc_brief: "COHOMOLOGY RINGS OF CHARACTER VARIETIES ANTON MELLIT — In this talk I give an introduction and present some recent progress towards understanding the cohomology rings of character varieties of"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.983
 ---
-A special case can be worked out in full detail. We take $g=0$, i.e. $C=\mathbb P^1$, and consider the $k+1$-twisted Higgs bundles, so that the Higgs field is a morphism $\mathcal E\to \mathcal E(k-1)$. Equivalently, we may consider $k+1$ marked points without any parabolic structures and conditions on the residue of the Higgs field. The corresponding specialization of the partition function is given by $$\begin{equation}
-\label{eq:omega example}
+A special case can be worked out in full detail. We take $g=0$, i.e. $C=\mathbb P^1$, and consider the $k+1$-twisted Higgs bundles, so that the Higgs field is a morphism $\mathcal E\to \mathcal E(k-1)$. Equivalently, we may consider $k+1$ marked points without any parabolic structures and conditions on the residue of the Higgs field. The corresponding specialization of the partition function is given by $$\label{eq:omega example}
         \Omega_k(z; q,t) := 
         \sum_{n=0}^\infty \sum_{\lambda\vdash n} \frac{(-1)^{(k+1)|\lambda|}\left(q^{n(\lambda')} t^{n(\lambda)}\right)^{k+1}}{
-            \prod_{\square\in\lambda} (q^{a(\square)} - t^{\ell(\square)+1})(q^{a(\square)+1} - t^{\ell(\square)})} z^{n}.
-\end{equation}$$ We use the variable $z$ to keep track of the rank. In [\[eq:partition function\]](#eq:partition function){reference-type="eqref" reference="eq:partition function"} we didn't need it because the rank of each term can be extracted as the degree of the symmetric function in each set of variables. The first terms of $\Omega$ look as follows: $$1 + \frac{(-1)^{k}}{(1-t)(1-q)} z + \frac{q^{k+1}(1-t^2)-t^{k+1}(1-q^2)}{(q-t)(1-q)(1-q^2)(1-t)(1-t^2)} z^2 + \cdots,$$ and the first terms of its plethystic logarithm read: $$\begin{equation}
-\label{eq:plog example}
+            \prod_{\square\in\lambda} (q^{a(\square)} - t^{\ell(\square)+1})(q^{a(\square)+1} - t^{\ell(\square)})} z^{n}.$$ We use the variable $z$ to keep track of the rank. In [\[eq:partition function\]](#eq:partition function){reference-type="eqref" reference="eq:partition function"} we didn't need it because the rank of each term can be extracted as the degree of the symmetric function in each set of variables. The first terms of $\Omega$ look as follows: $$1 + \frac{(-1)^{k}}{(1-t)(1-q)} z + \frac{q^{k+1}(1-t^2)-t^{k+1}(1-q^2)}{(q-t)(1-q)(1-q^2)(1-t)(1-t^2)} z^2 + \cdots,$$ and the first terms of its plethystic logarithm read: $$\label{eq:plog example}
         \mathop{\mathrm{Log}}\Omega_k(z; q,t) = -\frac{1}{(1-q)(1-t)}\left((-1)^{k+1} z + 
-        z^2 \sum_{\substack{i\geq 0,\; j\geq 0,\; i+j\leq k-2, \\ i+j\equiv k\pmod{2}}} q^i t^j + \cdots\right).
-\end{equation}$$
+        z^2 \sum_{\substack{i\geq 0,\; j\geq 0,\; i+j\leq k-2, \\ i+j\equiv k\pmod{2}}} q^i t^j + \cdots\right).$$
 
 In [\[eq:omega example\]](#eq:omega example){reference-type="eqref" reference="eq:omega example"} one can recognize the localization formula for the bundle $O(k)$ on the Hilbert scheme (see [@haiman2002vanishing]). We have $$\Omega_k(z; q,t) = \sum_{n=0}^\infty (-1)^{kn} z^n \chi(\mathrm{Hilb}_n(\mathbb{C}^2), O(k)).$$
 

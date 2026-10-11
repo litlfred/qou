@@ -7,10 +7,10 @@ section_number: null
 pages: 1-12
 source_pdf: 0505056v2.pdf
 source_sha256: 1b6580406c3d35b5
-text_source: latex
-latex_prose_ratio: 0.992
-latex_coverage_ratio: 0.96
 doc_brief: "Matrix factorizations and link homology II — To a presentation of an oriented link as the closure of a braid we assign a complex of bigraded vector spaces."
+text_source: latex
+latex_prose_ratio: 0.998
+latex_coverage_ratio: 0.987
 ---
 []{#section-one label="section-one"}
 
@@ -25,23 +25,15 @@ Take an oriented arc $c$ as in figure [1](#arc){reference-type="ref" reference=
 <figcaption>An arc</figcaption>
 </figure>
 
-Make $R$ bigraded by setting $$\begin{equation}
-\label{degrees}\deg(a) = (2,0), \hspace{0.3in} \deg(x_i)=(0,2).
-\end{equation}$$ This implies $\deg(d^2) = (2,2)$ and we select the bigrading of the middle $R$ in the factorization so that $\deg(d)= (1,1)$: $$\begin{equation}
-\label{arcfact} 
-  R \stackrel{a}{\lra} R\{-1,1\} \stackrel{x_1 -x_2}{\lra} R,
-\end{equation}$$ where the bidegree shift by $(n_1,n_2)$ is denoted $\{n_1,n_2\}.$
+Make $R$ bigraded by setting $$\label{degrees}\deg(a) = (2,0), \hspace{0.3in} \deg(x_i)=(0,2).$$ This implies $\deg(d^2) = (2,2)$ and we select the bigrading of the middle $R$ in the factorization so that $\deg(d)= (1,1)$: $$\label{arcfact} 
+  R \stackrel{a}{\lra} R\{-1,1\} \stackrel{x_1 -x_2}{\lra} R,$$ where the bidegree shift by $(n_1,n_2)$ is denoted $\{n_1,n_2\}.$
 
 <figure id="xonefour">
 
 <figcaption>Wide edge <span class="math inline"><em>t</em></span></figcaption>
 </figure>
 
-Next, given a wide edge $t$ as in figure [2](#xonefour){reference-type="ref" reference="xonefour"}, assign variables $x_1,x_2,x_3,x_4$ to the edges next to it. We can write $$ax_1 + ax_2 - ax_3 -ax_4 = a(x_1+x_2-x_3-x_4) + 0 (x_1 x_2-x_3x_4).$$ Define $C_t$ as the tensor product (over $R$) of factorizations $$\begin{equation}
- R \stackrel{a}{\lra} R\{-1,1\} \xrightarrow{x_1+x_2-x_3-x_4} R
-\end{equation}$$ and $$\begin{equation}
- R\stackrel{0}{\lra} R\{-1,3\} \xrightarrow{x_1 x_2 - x_3 x_4} R
-\end{equation}$$ where $R= \Q[a,x_1,x_2,x_3,x_4].$
+Next, given a wide edge $t$ as in figure [2](#xonefour){reference-type="ref" reference="xonefour"}, assign variables $x_1,x_2,x_3,x_4$ to the edges next to it. We can write $$ax_1 + ax_2 - ax_3 -ax_4 = a(x_1+x_2-x_3-x_4) + 0 (x_1 x_2-x_3x_4).$$ Define $C_t$ as the tensor product (over $R$) of factorizations $$R \stackrel{a}{\lra} R\{-1,1\} \xrightarrow{x_1+x_2-x_3-x_4} R$$ and $$R\stackrel{0}{\lra} R\{-1,3\} \xrightarrow{x_1 x_2 - x_3 x_4} R$$ where $R= \Q[a,x_1,x_2,x_3,x_4].$
 
 Throughout the paper we work with matrix factorizations with potentials $w=a \sum_i \epsilon_i x_i$ where $i$ ranges over some finite set $I$ of integers and $\epsilon_i\in \{1,-1\}$ are \"orientations\" of $x_i.$ The category $mf_w$ has objects $(M,d)$ where $M=M^0\oplus M^1$ and $M^0,M^1$ are free bigraded $R$-modules (possibly of infinite rank), while $d$ is a generalized differential $$M^0 \stackrel{d}{\lra} M^1 \stackrel{d}{\lra} M^0$$ of bidegree $(1,1)$ and subject to $d^2=w.$ Here $R$ is the ring of polynomials in $a$ and $x_i$'s with rational coefficients. The bidegrees are given by formula ([\[degrees\]](#degrees){reference-type="ref" reference="degrees"}). Morphisms in $mf_w$ are bidegree-preserving maps of $R$-modules $M^0\to N^0,$ $M^1\to N^1$ that commute with $d.$
 
@@ -73,47 +65,35 @@ If $\Gamma$ is a single circle with one mark (glue together the endpoints of the
 <figcaption>Graphs <span class="math inline"><em>Γ</em><sup>0</sup></span> and <span class="math inline"><em>Γ</em><sup>1</sup></span></figcaption>
 </figure>
 
-Consider the diagrams $\Gamma^0, \Gamma^1$ in figure [5](#pair2){reference-type="ref" reference="pair2"}. Factorization $C(\Gamma^0)$ is the tensor product of $$R \stackrel{a}{\lra} R\{-1,1\} \xrightarrow{x_1-x_4} R$$ and $$R \stackrel{a}{\lra} R\{-1,1\} \xrightarrow{x_2-x_3} R,$$ where $R=\Q[a,x_1,x_2,x_3,x_4].$ In the product basis, $C(\Gamma^0)$ has the form $$\begin{equation*}
-  \begin{array}{l}R \\  \oplus \\ R\{-2,2\}\end{array}
+Consider the diagrams $\Gamma^0, \Gamma^1$ in figure [5](#pair2){reference-type="ref" reference="pair2"}. Factorization $C(\Gamma^0)$ is the tensor product of $$R \stackrel{a}{\lra} R\{-1,1\} \xrightarrow{x_1-x_4} R$$ and $$R \stackrel{a}{\lra} R\{-1,1\} \xrightarrow{x_2-x_3} R,$$ where $R=\Q[a,x_1,x_2,x_3,x_4].$ In the product basis, $C(\Gamma^0)$ has the form $$\begin{array}{l}R \\  \oplus \\ R\{-2,2\}\end{array}
   \stackrel{P_0}{\lra}
   \begin{array}{l} R\{-1,1\} \\ \oplus \\ R\{-1,1\}  \end{array}
   \stackrel{P_1}{\lra} 
-  \begin{array}{l}R \\ \oplus \\ R\{-2,2\}\end{array}
-\end{equation*}$$ with $$\begin{equation*}
-P_0=\left(\begin{array}{cc} a  & x_3-x_2 \\
+  \begin{array}{l}R \\ \oplus \\ R\{-2,2\}\end{array}$$ with $$P_0=\left(\begin{array}{cc} a  & x_3-x_2 \\
       a   & x_1-x_4 \end{array} \right), \hspace{0.2in}
 P_1=\left(\begin{array}{cc} x_1-x_4  & x_2-x_3 \\
-      -a  & a \end{array} \right).
-\end{equation*}$$
+      -a  & a \end{array} \right).$$
 
-Likewise, $C(\Gamma^1)$ has the presentation $$\begin{equation*}
-  \begin{array}{l}R \\ \oplus \\ R\{-2,4\}\end{array}
+Likewise, $C(\Gamma^1)$ has the presentation $$\begin{array}{l}R \\ \oplus \\ R\{-2,4\}\end{array}
   \stackrel{Q_0}{\lra}
   \begin{array}{l} R\{-1,1\} \\ \oplus \\ R\{-1,3\}  \end{array}
   \stackrel{Q_1}{\lra} 
-  \begin{array}{l}R \\ \oplus \\ R\{-2,4\}\end{array}
-\end{equation*}$$ with $$\begin{equation*}
-Q_0=\left(\begin{array}{cc} a  & x_3x_4-x_1x_2 \\
+  \begin{array}{l}R \\ \oplus \\ R\{-2,4\}\end{array}$$ with $$Q_0=\left(\begin{array}{cc} a  & x_3x_4-x_1x_2 \\
       0   & x_1+x_2-x_3-x_4 \end{array} \right), \hspace{0.2in}
 Q_1=\left(\begin{array}{cc} x_1+x_2-x_3-x_4  & x_1x_2-x_3x_4 \\
-      0  & a \end{array} \right).
-\end{equation*}$$ A map between $C(\Gamma^0)$ and $C(\Gamma^1)$ can be described by a pair of $2\times 2$ matrices with coefficients in $R$ that specify the images of the basis vectors of $C^i(\Gamma^0)$ in $C^i(\Gamma^1)$ for $i=0,1.$
+      0  & a \end{array} \right).$$ A map between $C(\Gamma^0)$ and $C(\Gamma^1)$ can be described by a pair of $2\times 2$ matrices with coefficients in $R$ that specify the images of the basis vectors of $C^i(\Gamma^0)$ in $C^i(\Gamma^1)$ for $i=0,1.$
 
-Let $\chi_0: C(\Gamma^0) \lra C(\Gamma^1)$ be given by the pair of matrices $$\begin{equation}
-\label{chinull} 
+Let $\chi_0: C(\Gamma^0) \lra C(\Gamma^1)$ be given by the pair of matrices $$\label{chinull} 
 U_0^0=\left(\begin{array}{cc} x_4-x_2  &  0  \\
       0   &  1  \end{array} \right), \hspace{0.2in}
 U_0^1=\left(\begin{array}{cc} x_4  &  -x_2 \\
-      -1  & 1 \end{array} \right).
-\end{equation}$$ Our bases in $C(\Gamma^0)$ and $C(\Gamma^1)$ are homogeneous with respect to the bigrading of $R.$ It's easy to see that $\chi_0$ is a homogeneous map of bidegree $(0,2).$
+      -1  & 1 \end{array} \right).$$ Our bases in $C(\Gamma^0)$ and $C(\Gamma^1)$ are homogeneous with respect to the bigrading of $R.$ It's easy to see that $\chi_0$ is a homogeneous map of bidegree $(0,2).$
 
-Next, define $\chi_1: C(\Gamma^1) \lra C(\Gamma^0)$ by the pair of matrices $$\begin{equation}
-\label{chione} 
+Next, define $\chi_1: C(\Gamma^1) \lra C(\Gamma^0)$ by the pair of matrices $$\label{chione} 
 U_1^0=\left(\begin{array}{cc} 1  &  0  \\
       0   &  x_4-x_2  \end{array} \right), \hspace{0.2in}
 U_1^1=\left(\begin{array}{cc} 1  &  x_2 \\
-      1  & x_4 \end{array} \right).
-\end{equation}$$ The map $\chi_1$ is bidegree-preserving.
+      1  & x_4 \end{array} \right).$$ The map $\chi_1$ is bidegree-preserving.
 
 Given a plane diagram $D$ of a tangle, place at least one mark on each internal edge of the diagram (an edge disjoint from the boundary of $D$), and label the marks and boundary points by $x_1, \dots, x_m.$ To each crossing $p$ of the diagram assign the complex $C_p$ of matrix factorizations as follows. Up to shifts, the complex is the cone of the map $\chi_0$ or $\chi_1,$ depending on whether the crossing is positive or negative. The shifts are explained in figure [6](#cones){reference-type="ref" reference="cones"}.
 
@@ -167,14 +147,14 @@ It seems likely to us that $C(D_1)$ and $C(D_2)$ are not isomorphic (up to a shi
 
 \(a\) conjugation $DD' \leftrightarrow D'D,$
 
-\(b\) transformations in the braid group: $$\begin{eqnarray*}
+\(b\) transformations in the braid group: $$\begin{aligned}
 D\sigma_j \sigma_i & \leftrightarrow & D \sigma_i \sigma_j \hspace{0.1in} \mathrm{if} 
  \hspace{0.1in} |i-j|>1, \\ 
 D & \leftrightarrow & D \sigma_i \sigma_i^{-1},  \\
 D & \leftrightarrow & D \sigma_i^{-1} \sigma_i,  \\
 D \sigma_i \sigma_{i+1}\sigma_i & \leftrightarrow & D \sigma_{i+1}
   \sigma_{i} \sigma_{i+1} .
-\end{eqnarray*}$$
+\end{aligned}$$
 
 \(c\) transformations $D \leftrightarrow D \sigma_n^{\pm 1},$ for a braid $D$ with $n$ strands.
 
@@ -186,18 +166,18 @@ Given two braid diagrams $D_1,D_2$ of an oriented link $L,$ the cohomology group
 
 To describe the Euler characteristic of $H(D),$ we consider the function $F$ from braid diagrams to the ring of rational functions in $q$ and $t$ that is uniquely determined by the following properties:
 
-- $F(D_1)=F(D_2)$ if $D_1,D_2$ are conjugate braid presentations (see Markov move (a) above),
+-   $F(D_1)=F(D_2)$ if $D_1,D_2$ are conjugate braid presentations (see Markov move (a) above),
 
-- $F(D_1)=F(D_2)$ if $D_1,D_2$ are related by a braid presentation move (Markov moves (b) above),
+-   $F(D_1)=F(D_2)$ if $D_1,D_2$ are related by a braid presentation move (Markov moves (b) above),
 
-- $F(D \sigma_n) = F(D),$ for a braid $D$ with $n$ strands,
+-   $F(D \sigma_n) = F(D),$ for a braid $D$ with $n$ strands,
 
-- $F(D\sigma_n^{-1})= - t^{-1}q^{-1} F(D),$ for a braid $D$ with $n$ strands,
+-   $F(D\sigma_n^{-1})= - t^{-1}q^{-1} F(D),$ for a braid $D$ with $n$ strands,
 
-- For any braid diagram $D$ there is a skein relation $$q^{-1} F(D \sigma_i) - q F(D \sigma_i^{-1})= (q-q^{-1})
-   F(D),$$
+-   For any braid diagram $D$ there is a skein relation $$q^{-1} F(D \sigma_i) - q F(D \sigma_i^{-1})= (q-q^{-1})
+     F(D),$$
 
-- If $D$ is the one-strand diagram of the unknot, $F(D)=\frac{t^{-1}}{q^{-1}-q}.$
+-   If $D$ is the one-strand diagram of the unknot, $F(D)=\frac{t^{-1}}{q^{-1}-q}.$
 
 To see that $F$ is simply a version of the HOMFLYPT polynomial, let $\alpha= - t^{-1}q^{-1}$ and consider $$\widetilde{F}(D) = \sqrt{\alpha}^{|D|_+ - |D|_-  - s(D)+1}  F(D)$$ where $|D|_+,$ respectively $|D|_-,$ is the number of positive, respectively negative, crossings of $D,$ while $s(D)$ is the number of strands of $D.$ Our conventions are explained in figure [9](#conv){reference-type="ref" reference="conv"}.
 
@@ -206,21 +186,17 @@ To see that $F$ is simply a version of the HOMFLYPT polynomial, let $\alpha= - t
 <figcaption>Positive and negative crossings and braid generators</figcaption>
 </figure>
 
-Then $\widetilde{F}(D)$ is invariant under all Markov moves of braids and satisfies the HOMFLYPT skein relation $$\begin{equation}
-\label{homfly-rel}
+Then $\widetilde{F}(D)$ is invariant under all Markov moves of braids and satisfies the HOMFLYPT skein relation $$\label{homfly-rel}
  q \sqrt{\alpha}\hspace{0.05in} \widetilde{F}(D\sigma_i^{-1}) - 
- (q \sqrt{\alpha})^{-1} \widetilde{F}(D\sigma_i) = (q-q^{-1}) \widetilde{F}(D).
-\end{equation}$$ Thus, $\widetilde{F}(D)$ equals the HOMFLYPT polynomial of the link $L,$ normalized so that $$\widetilde{F}(\mathrm{unknot})= \frac{\alpha }{1-q^{-2}}.$$
+ (q \sqrt{\alpha})^{-1} \widetilde{F}(D\sigma_i) = (q-q^{-1}) \widetilde{F}(D).$$ Thus, $\widetilde{F}(D)$ equals the HOMFLYPT polynomial of the link $L,$ normalized so that $$\widetilde{F}(\mathrm{unknot})= \frac{\alpha }{1-q^{-2}}.$$
 
 ::: theorem
 []{#sec-thm label="sec-thm"} For any braid diagram $D$ the Euler characteristic $\langle D \rangle$ of $H(D)$ equals $F(D).$
 :::
 
-The Euler characteristic $$\begin{equation*}
- \label{euler-char} 
+The Euler characteristic $$\label{euler-char} 
   \langle D \rangle \define \sum_{j,k,l}(-1)^j t^k q^l \dim_{\Q} 
- H^j_{k,l}(D)
-\end{equation*}$$ is a power series in $q$ with coefficients in $\Z[t,t^{-1}].$ The theorem claims that each vector space $H^j_{k,l}(D)$ is finite dimensional and the sum above is a rational function of $t$ and $q$ equal to $F(D).$ See the end of Section [\[sec-proofs\]](#sec-proofs){reference-type="ref" reference="sec-proofs"} for a proof.
+ H^j_{k,l}(D)$$ is a power series in $q$ with coefficients in $\Z[t,t^{-1}].$ The theorem claims that each vector space $H^j_{k,l}(D)$ is finite dimensional and the sum above is a rational function of $t$ and $q$ equal to $F(D).$ See the end of Section [\[sec-proofs\]](#sec-proofs){reference-type="ref" reference="sec-proofs"} for a proof.
 
 Specializing to $q\sqrt{\alpha}=1$ in the equation ([\[homfly-rel\]](#homfly-rel){reference-type="ref" reference="homfly-rel"}) nets us the Alexander polynomial. In terms of $t$ and $q,$ we are imposing the relation $t=-q.$ Homologically, $t,$ $q$ and the minus sign correspond to the three grading directions. Hence, suitably collapsing the tri-grading to a bigrading we get a categorification of the Alexander polynomial.
 
@@ -232,13 +208,13 @@ Triply-graded cohomology theories had previously appeared in the work of Asaeda,
 
 To conclude this section, we mention several modifications, potential generalizations and illnesses of the homology theory $H.$
 
-- It's not natural that we have to restrict to braid diagrams to get a link invariant. In another sign of disfunctionality, the theory does not extend to all cobordisms. For instance, the cohomology groups of the unknot do not have a Frobenius algebra structure over the cohomology ring of the empty link (it's convenient to define the latter ring to be $\Q[a]$), preventing us from extending the theory even to unknotted cobordisms between unlinks.
+-   It's not natural that we have to restrict to braid diagrams to get a link invariant. In another sign of disfunctionality, the theory does not extend to all cobordisms. For instance, the cohomology groups of the unknot do not have a Frobenius algebra structure over the cohomology ring of the empty link (it's convenient to define the latter ring to be $\Q[a]$), preventing us from extending the theory even to unknotted cobordisms between unlinks.
 
-- Any field $k$ can be used instead of $\Q.$ More generally, we can work over $\Z,$ so that the invariant of a closed planar graph $\Gamma$ is a complex of graded free abelian groups, up to chain homotopy equivalence, and the invariant of a link is a complex of complexes as above, up to chain homotopy equivalence. Taking the homology $H(\Gamma,\Z)$ of each resolution of $D$ and forming a complex out of them produces a complex $CH(D,\Z)$ from a diagram $D.$ We then specialize to braid diagrams and take the cohomology of $CH(D,\Z).$ The resulting groups $H(D,\Z)$ are triply-graded and, up to isomorphism, do not depend on the choice of braid diagram $D,$ given $L.$
+-   Any field $k$ can be used instead of $\Q.$ More generally, we can work over $\Z,$ so that the invariant of a closed planar graph $\Gamma$ is a complex of graded free abelian groups, up to chain homotopy equivalence, and the invariant of a link is a complex of complexes as above, up to chain homotopy equivalence. Taking the homology $H(\Gamma,\Z)$ of each resolution of $D$ and forming a complex out of them produces a complex $CH(D,\Z)$ from a diagram $D.$ We then specialize to braid diagrams and take the cohomology of $CH(D,\Z).$ The resulting groups $H(D,\Z)$ are triply-graded and, up to isomorphism, do not depend on the choice of braid diagram $D,$ given $L.$
 
-- In Section [\[sec-proofs\]](#sec-proofs){reference-type="ref" reference="sec-proofs"} we rewrite the factorizations $C(\Gamma^0), 
-  C(\Gamma^1)$ and the maps $\chi_0,$ $\chi_1$ in the form that depends only on $a$ and the differences $x_i-x_j$ of the variables $x_i.$ This allows us to pass from the ring $R=\Q[a,x_1, \dots, x_m]$ to the smaller ring $\overline{R}=\Q[a,x_2-x_1, \dots, x_m-x_1].$ The definition of cohomology and the proof of its invariance work over $\overline{R}$ as well, leading to *reduced* cohomology groups $\overline{H}(D),$ with the property $H(D)= \overline{H}(D)\otimes_{\Q} \Q[x].$ In the reduced theory the unknot has one-dimensional cohomology groups.
+-   In Section [\[sec-proofs\]](#sec-proofs){reference-type="ref" reference="sec-proofs"} we rewrite the factorizations $C(\Gamma^0), 
+    C(\Gamma^1)$ and the maps $\chi_0,$ $\chi_1$ in the form that depends only on $a$ and the differences $x_i-x_j$ of the variables $x_i.$ This allows us to pass from the ring $R=\Q[a,x_1, \dots, x_m]$ to the smaller ring $\overline{R}=\Q[a,x_2-x_1, \dots, x_m-x_1].$ The definition of cohomology and the proof of its invariance work over $\overline{R}$ as well, leading to *reduced* cohomology groups $\overline{H}(D),$ with the property $H(D)= \overline{H}(D)\otimes_{\Q} \Q[x].$ In the reduced theory the unknot has one-dimensional cohomology groups.
 
-- $sl(n)$ link homology theory (see \[KR\]) utilized the potential $x^{n+1}.$ Soon afterwards Gornik \[G\] studied a deformation of that theory with the potential $x^{n+1}-(n+1)\beta^n x.$ In the $n=2$ case the deformation was found earlier by Lee \[L\] and used by Rasmussen in his combinatorial proof of the Milnor conjecture \[R2\]. The definitions in \[KR\] can be generalized to the potential $x^{n+1}+a_n x^n + \dots + a_1 x$ where $a_1, \dots, a_n$ are formal variables. We hope that this generalization will be invariant under the Reidemeister moves and will turn out to be the \"$sl(n)$-equivariant\" version of $sl(n)$ link homology. The invariant of the empty link should be the ring of polynomials in $a_1, \dots, a_n,$ and naturally isomorphic to the $U(n)$-equivariant cohomology ring of the point. The invariant of the unknot should be the quotient of the polynomial ring $\Q[x,a_1, \dots, a_n]$ by the relation $x^{n+1}+a_n x^n + \dots + a_1 x=0,$ isomorphic to the $U(n)$-equivariant cohomology ring of $\mathbb{CP}^n.$ A certain version of Bar-Natan link homology \[BN\], \[K\] should correspond to the potential $x^3+ a x.$
+-   $sl(n)$ link homology theory (see \[KR\]) utilized the potential $x^{n+1}.$ Soon afterwards Gornik \[G\] studied a deformation of that theory with the potential $x^{n+1}-(n+1)\beta^n x.$ In the $n=2$ case the deformation was found earlier by Lee \[L\] and used by Rasmussen in his combinatorial proof of the Milnor conjecture \[R2\]. The definitions in \[KR\] can be generalized to the potential $x^{n+1}+a_n x^n + \dots + a_1 x$ where $a_1, \dots, a_n$ are formal variables. We hope that this generalization will be invariant under the Reidemeister moves and will turn out to be the \"$sl(n)$-equivariant\" version of $sl(n)$ link homology. The invariant of the empty link should be the ring of polynomials in $a_1, \dots, a_n,$ and naturally isomorphic to the $U(n)$-equivariant cohomology ring of the point. The invariant of the unknot should be the quotient of the polynomial ring $\Q[x,a_1, \dots, a_n]$ by the relation $x^{n+1}+a_n x^n + \dots + a_1 x=0,$ isomorphic to the $U(n)$-equivariant cohomology ring of $\mathbb{CP}^n.$ A certain version of Bar-Natan link homology \[BN\], \[K\] should correspond to the potential $x^3+ a x.$
 
-- For a common generalization of the $U(n)$-equivariant link homology and the theory described here one could try the potential $a_{n+1}x^{n+1}+a_n x^n + \dots + a_1 x$ with all $a$'s being formal variables. Factorizations $C(\Gamma^0), C(\Gamma^1),$ the maps $\chi_0, \chi_1$ and the complex $C(D)$ can be defined for this potential as well, but we don't know whether this theory will be invariant under the Reidemeister-Markov moves of braid diagrams.
+-   For a common generalization of the $U(n)$-equivariant link homology and the theory described here one could try the potential $a_{n+1}x^{n+1}+a_n x^n + \dots + a_1 x$ with all $a$'s being formal variables. Factorizations $C(\Gamma^0), C(\Gamma^1),$ the maps $\chi_0, \chi_1$ and the complex $C(D)$ can be defined for this potential as well, but we don't know whether this theory will be invariant under the Reidemeister-Markov moves of braid diagrams.

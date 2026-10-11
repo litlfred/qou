@@ -7,10 +7,10 @@ section_number: 5
 pages: 13-16
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
-text_source: latex
-latex_prose_ratio: 0.955
-latex_coverage_ratio: 0.991
 doc_brief: "Combinatorial optimization in geometry (Rivin) — extends and unifies results on ideal polyhedra in H³ to singular Euclidean structures on surfaces, possibly with infinitely many singularities."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.991
 ---
 []{#nflow label="nflow"}
 
@@ -48,10 +48,8 @@ What is the capacity of $C$? Evidently, it is equal to
 $$\label{thesum}
 F_{0}+ 3 F_{2}+ \sum_{e\in E(F_{3})} \delta(e).$$ If we want the flow through $N_{1}$ to be $F$, we must have $$F_{0}+ 3 F_{2}+ \sum_{e\in E(F_{3})} \delta(e) \geq F,$$ Or, noting that $F_{1} = F - F_{0}$, $$3 F_{2}+ \sum_{e\in E(F_{3})} \delta(e) \geq F_{1}.$$
 
-In the special case where $F_{2} = 0$, it follows that $$\begin{equation}
-\label{geq}
-\sum_{e\in E(F_{3})} \delta(e) \geq F.
-\end{equation}$$
+In the special case where $F_{2} = 0$, it follows that $$\label{geq}
+\sum_{e\in E(F_{3})} \delta(e) \geq F.$$
 
 Since $F_{3}$ could have been any subset of $F$, it follows that condition [\[sumdih\]](#sumdih){reference-type="ref" reference="sumdih"} is necessary (this is, in any event, self evident).
 
@@ -64,11 +62,9 @@ Modify the capacity of level $1$ edges to be $1-3\epsilon$; those of level $2$ t
 
 Consider now a cut $C$ in $N_{2}$, with notation as before. The capacity of $C$ will be:
 
-$$\begin{equation}
-\label{epseq}
+$$\label{epseq}
 (1-3\epsilon)F_{0} + 3 (1-\epsilon)F_{2} + \sum_{e\in E(F_{3}} 
-\delta(e) - 2\epsilon E(F_{3}).
-\end{equation}$$
+\delta(e) - 2\epsilon E(F_{3}).$$
 
 Assume that $F_{2} = 0$. The MinCut condition together with expression [\[epseq\]](#epseq){reference-type="ref" reference="epseq"} gives: $$(1-3\epsilon)F_{0} + \sum_{e\in E(F_{3}} 
 \delta(e) - 2\epsilon E(F_{3}) \geq (1-3\epsilon) F,$$ or $$\sum_{e\in E(F_{3}} \delta(e) \geq (1-3\epsilon)F_{3} + 2\epsilon 
@@ -77,20 +73,14 @@ E(F_{3}).$$ If $\emptyset \subset F_{3}\subset F$, then $E(F_{3}) >
 
 Suppose now that $\delta(F') - F' \geq \psi > 0$, for all proper non-empty subsets $F'$ of $F$.
 
-Then the expression [\[epseq\]](#epseq){reference-type="ref" reference="epseq"} is no smaller than $$\begin{equation}
-\label{ineqq}
-(1-3\epsilon)F_{0} + 3 (1-\epsilon)F_{2} + F_{3}+\psi- 2\epsilon E(F_{3}).
-\end{equation}$$
+Then the expression [\[epseq\]](#epseq){reference-type="ref" reference="epseq"} is no smaller than $$\label{ineqq}
+(1-3\epsilon)F_{0} + 3 (1-\epsilon)F_{2} + F_{3}+\psi- 2\epsilon E(F_{3}).$$
 
-The edges of $F_{3}$ can be divided into two classes: interior edges (those incident to two triangles of $F_{3}$) -- these number $E_{i}(F_{3})$, and boundary edges of $F_{3}$ -- those incident to only one triangle. These number $E_{\partial}(F_{3})$. Since $F_{3}$ is a proper subset of $F$, $E_{\partial}(F_{3})>0$. Clearly, $$\begin{equation}
-2 E(F_{3}) = 3 F_{3} + E_{\partial}(F_{3}).
-\end{equation}$$ The lower bound [\[ineqq\]](#ineqq){reference-type="ref" reference="ineqq"} can thus be rewritten as $$\begin{eqnarray}
+The edges of $F_{3}$ can be divided into two classes: interior edges (those incident to two triangles of $F_{3}$) -- these number $E_{i}(F_{3})$, and boundary edges of $F_{3}$ -- those incident to only one triangle. These number $E_{\partial}(F_{3})$. Since $F_{3}$ is a proper subset of $F$, $E_{\partial}(F_{3})>0$. Clearly, $$2 E(F_{3}) = 3 F_{3} + E_{\partial}(F_{3}).$$ The lower bound [\[ineqq\]](#ineqq){reference-type="ref" reference="ineqq"} can thus be rewritten as $$\begin{aligned}
 c(C) & \geq &(1-3\epsilon)F_{0} + 3 (1-\epsilon)F_{2} +
 (1-3\epsilon)F_{3}+\psi- \epsilon E_{\partial}(F_{3}) \\
 & = & (1-3\epsilon) F + \psi +  (1-3\epsilon)F_{2} - \epsilon
-E_{\partial}(F_{3}).
-\end{eqnarray}$$ Since $\epsilon\leq\frac13$ (a triangle cannot have all angles greater than $\pi/3$), we get $$\begin{equation}
-c(C) -(1-3 \epsilon)F\geq \psi - \epsilon E_{\partial}(F_{3}).
-\end{equation}$$
+E_{\partial}(F_{3}). 
+\end{aligned}$$ Since $\epsilon\leq\frac13$ (a triangle cannot have all angles greater than $\pi/3$), we get $$c(C) -(1-3 \epsilon)F\geq \psi - \epsilon E_{\partial}(F_{3}).$$
 
 In other words, if $\sum_{e\in E(F')} \delta(e) - F'\geq \psi$ for every $\emptyset \subset F'\subset F$, there is a solution of the linear program $L_{1}$ with all face angles of all triangles no smaller than $\psi/E(\mathcal{T})$. 0◻

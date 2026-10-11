@@ -7,10 +7,10 @@ section_number: 6
 pages: 43-45
 source_pdf: 1409.1198v1.pdf
 source_sha256: 13ecb6c28bab6744
-text_source: latex
-latex_prose_ratio: 0.965
-latex_coverage_ratio: 0.945
 doc_brief: "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR — Categoriﬁcation is a process of lifting structures to a high er categorical level."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{action}
 
@@ -18,6 +18,7 @@ doc_brief: "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR — Categoriﬁca
 
 This section is devoted to the proof of Theorem \ref{2-reps}. The action of the current algebra on the trace of any 2-representation follows
 directly from the functotiality of the trace. The rest of the section establishes the action on the center.
+
 
 
 
@@ -116,6 +117,7 @@ traces in this context are studied.  M\"{u}ger points out in \cite[page 11]{Muge
 
 
 
+
 \subsubsection{A current algebra action on centers}
 
 
@@ -206,6 +208,7 @@ is a $\bfU(\fsl_n[t])$-module with
 This theorem follows immediately from Proposition ~\ref{prop-cur}.
 In particular, the fact that the current algebra relations hold in the trace $\Tr(\Ucat^\ast(\mf{sl}_n))$ imply that these relations hold under the action described above.
 \end{proof}
+
 
 
 

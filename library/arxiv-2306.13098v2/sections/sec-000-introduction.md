@@ -7,10 +7,10 @@ section_number: null
 pages: 1-3
 source_pdf: 2306.13098v2.pdf
 source_sha256: edeb214d587bfca4
-text_source: latex
-latex_prose_ratio: 0.902
-latex_coverage_ratio: 0.992
 doc_brief: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU (3)C color symmetry based on the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.993
 ---
 []{#sec:Introduction label="sec:Introduction"} Despite its great practical success in colliders and other experiments, there are several unexplained features of the Standard Model of particle physics (SM) which lack a deeper theoretical motivation. These include, among others, a derivation of the SM gauge group from first principles, an explanation for why some representations of the SM gauge group correspond to particle multiplets whereas others do not, and an account for why fermions come in three generations. These theoretical shortcomings may be suggestive that the SM ultimately emerges from a more fundamental physical principle or mathematical structure.
 

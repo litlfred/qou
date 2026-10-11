@@ -8,91 +8,42 @@ pages: 12-13
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
 doc_brief: "The 3D index of an ideal triangulation and angle structures — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary"
+text_source: latex
+latex_prose_ratio: 0.972
+latex_coverage_ratio: 0.896
 ---
-Theorem 3.2. Equation (3.2) concerns the following Z/3-action on V .
-Deﬁnition 4.2. Consider the action f↦→Sf on a function f : Z2−→ Z((q1/2)) given by:
-(4.3) Sf (m,e ) = (−q
-1
-2 )−ef(e,−e−m).
-Proposition 4.3. (a) We have: S3 =Id.
-(b) If f∈V , then Sf =f, and of course, also S2f =f.
-Part (c) of Theorem 3.2 follows from part (b) of the above proposition.
-Proof. (of Proposition 4.3) Part (a) is elementary. For part (b), assume that f satisﬁes
-Equation (3.1a) for all ( m,e ). Replace ( m,e ) by (e,−1−e−m) in (3.1a) and we obtain
-that
-(4.4) −f(e,−1−e−m) +q−e
-2f(e,−e−m) +q− 1
-2−e
-2−m
-2f(1 +e,−1−e−m) = 0.
-Now, replace f bySf in the left hand side of Equation (3.1a), and compute that the result
-is given by
-(−1)e+1
-(
-−f(e,−1−e−m) +q−e
-2f(e,−e−m) +q− 1
-2−e
-2−m
-2f(1 +e,−1−e−m)
-)
-The above vanishes from Equation (4.4).
-Likewise, assume that f satisﬁes Equation (3.1b) for all (m,e ). Replace (m,e ) by (e, 1−
-e−m) in (3.1b) and we obtain that
-(4.5) q
-1
-2−e
-2−m
-2f(−1 +e, 1−e−m) +q−e
-2f(e,−e−m)−f(e, 1−e−m) = 0
-Now, replace f bySf in the left hand side of Equation (3.1b), and compute that the result
-is given by
-(−1)e+1
-(
-q
-1
-2−e
-2−m
-2f(−1 +e, 1−e−m) +q−e
-2f(e,−e−m)−f(e, 1−e−m)
-)
-It follows that if f ∈ V , then the above vanishes from Equation (4.5). In other words, if
-f∈V then Sf∈V . To conclude that f =Sf , it suﬃces to show (by part (a) of Theorem
-3.2) that f(0, 0) = (Sf )(0, 0). If f(0, 0) =A, f(0, 1) =B, using Remark 3.4 we have:
-(Sf )(0, 0) =f(0, 0) =A (Sf )(0, 1) =f(0, 1) +q− 1
-2f(1,−1) =B +q− 1
-2 (−Bq
-1
-2 ) = 0.
-This concludes the proof of Proposition 4.3. □
-THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES 13
-4.5. I∆ is a tetrahedron index. Observe that by its deﬁnition,
-I∆(m,e ) =
-∑
-e∈Z
-S(m,e,n )
-is given by a one-dimensional sum of a properq-hypergeometric term ([27, 21])
-S(m,e,n ) = (−1)nq
-1
-2n(n+1)−(n+ 1
-2e)m
-(q)n(q)n+e
-.
-It follows by [27] thatI∆(m,e ) isq-holonomic in both variablesm ande. Moreover, recursion
-relations for I∆(m,e ) can be found by the creative telescoping method of [27]. For instance,
-S satisﬁes the recursion
-(4.6) q
-e
-2S(m− 1,e,n ) +q−m
-2S(m,e− 1,n )−S(m,e,n ) = 0
-which implies thatI∆ satisﬁes Equation (3.1b). To prove Equation (4.6), divide byS(m,e,n )
-and use the fact that
-q
-e
-2
-S(m− 1,e,n )
-S(m,e,n ) =qe+n q−m
-2
-S(m,e− 1,n )
-S(m,e,n ) = 1−qe+n.
-The proof of Equation (3.1a) is similar. For an alternative proof, using the quantum dilog-
-arithm, see Section B.
+[]{#sub.prop.S3 label="sub.prop.S3"}
+
+In this section we prove part (c) of Theorem [\[thm.1\]](#thm.1){reference-type="ref" reference="thm.1"}. Equation [\[eq.Z3\]](#eq.Z3){reference-type="eqref" reference="eq.Z3"} concerns the following $\mathbb Z/3$-action on $V$.
+
+::: definition
+[]{#def.Sf label="def.Sf"} Consider the action $f \mapsto Sf$ on a function $f: \mathbb Z^2 \longrightarrow\mathbb Z((q^{1/2}))$ given by: $$\label{eq.Sf}
+Sf(m,e)=(-q^{\frac{1}{2}})^{-e} f(e,-e-m) \,.$$
+:::
+
+::: proposition
+[]{#prop.S3 label="prop.S3"} (a) We have: $S^3=Id$. (b) If $f \in V$, then $Sf=f$, and of course, also $S^2f=f$.
+:::
+
+Part (c) of Theorem [\[thm.1\]](#thm.1){reference-type="ref" reference="thm.1"} follows from part (b) of the above proposition.
+
+::: proof
+*Proof.* (of Proposition [\[prop.S3\]](#prop.S3){reference-type="ref" reference="prop.S3"}) Part (a) is elementary. For part (b), assume that $f$ satisfies Equation [\[eq.rec1\]](#eq.rec1){reference-type="eqref" reference="eq.rec1"} for all $(m,e)$. Replace $(m,e)$ by $(e,-1-e-m)$ in [\[eq.rec1\]](#eq.rec1){reference-type="eqref" reference="eq.rec1"} and we obtain that $$\label{eq.em1}
+-f(e, -1 - e - m) + q^{-\frac{e}{2}} f(e, -e - m) + 
+ q^{-\frac{1}{2} - \frac{e}{2} - \frac{m}{2}} f(1 + e, -1 - e - m)=0 \,.$$ Now, replace $f$ by $Sf$ in the left hand side of Equation [\[eq.rec1\]](#eq.rec1){reference-type="eqref" reference="eq.rec1"}, and compute that the result is given by $$(-1)^{e+1}\left( -f(e, -1 - e - m) + q^{-\frac{e}{2}} f(e, -e - m) + 
+ q^{-\frac{1}{2} - \frac{e}{2} - \frac{m}{2}} f(1 + e, -1 - e - m) \right)$$ The above vanishes from Equation [\[eq.em1\]](#eq.em1){reference-type="eqref" reference="eq.em1"}.
+
+Likewise, assume that $f$ satisfies Equation [\[eq.rec2\]](#eq.rec2){reference-type="eqref" reference="eq.rec2"} for all $(m,e)$. Replace $(m,e)$ by $(e,1-e-m)$ in [\[eq.rec2\]](#eq.rec2){reference-type="eqref" reference="eq.rec2"} and we obtain that $$\label{eq.em2}
+q^{\frac{1}{2} - \frac{e}{2} - \frac{m}{2}} f(-1 + e, 1 - e - m) 
++ q^{-\frac{e}{2}} f(e, -e - m) -  f(e, 1 - e - m)=0$$ Now, replace $f$ by $Sf$ in the left hand side of Equation [\[eq.rec2\]](#eq.rec2){reference-type="eqref" reference="eq.rec2"}, and compute that the result is given by $$(-1)^{e+1}\left( q^{\frac{1}{2} - \frac{e}{2} - \frac{m}{2}} f(-1 + e, 1 - e - m) + q^{-\frac{e}{2}} f(e, -e - m) - 
+ f(e, 1 - e - m) \right)$$ It follows that if $f \in V$, then the above vanishes from Equation [\[eq.em2\]](#eq.em2){reference-type="eqref" reference="eq.em2"}. In other words, if $f \in V$ then $Sf \in V$. To conclude that $f=Sf$, it suffices to show (by part (a) of Theorem [\[thm.1\]](#thm.1){reference-type="ref" reference="thm.1"}) that $f(0,0)=(Sf)(0,0)$. If $f(0,0)=A$, $f(0,1)=B$, using Remark [\[rem.thm1a\]](#rem.thm1a){reference-type="ref" reference="rem.thm1a"} we have: $$(Sf)(0,0)=f(0,0)=A \qquad (Sf)(0,1)=f(0,1)+q^{-\frac{1}{2}}f(1,-1)=
+B + q^{-\frac{1}{2}} (- B q^{\frac{1}{2}})=0 \,.$$ This concludes the proof of Proposition [\[prop.S3\]](#prop.S3){reference-type="ref" reference="prop.S3"}. ◻
+:::
+
+## $I_{\Delta}$ is a tetrahedron index {#sub.isindex}
+
+Observe that by its definition, $$I_{\Delta}(m,e)=\sum_{e \in \mathbb Z} S(m,e,n)$$ is given by a one-dimensional sum of a *proper $q$-hypergeometric term* ([@WZ; @PWZ]) $$S(m,e,n)=(-1)^n \frac{q^{\frac{1}{2}n(n+1)
+-\left(n+\frac{1}{2}e\right)m}}{(q)_n(q)_{n+e}} \,.$$ It follows by [@WZ] that $I_{\Delta}(m,e)$ is $q$-holonomic in both variables $m$ and $e$. Moreover, recursion relations for $I_{\Delta}(m,e)$ can be found by the creative telescoping method of [@WZ]. For instance, $S$ satisfies the recursion $$\label{eq.Scert2}
+q^{\frac{e}{2}} S(m - 1, e, n)+ q^{-\frac{m}{2}} S(m, e - 1, n) -S(m,e,n)=0$$ which implies that $I_{\Delta}$ satisfies Equation [\[eq.rec2\]](#eq.rec2){reference-type="eqref" reference="eq.rec2"}. To prove Equation [\[eq.Scert2\]](#eq.Scert2){reference-type="eqref" reference="eq.Scert2"}, divide by $S(m,e,n)$ and use the fact that $$q^{\frac{e}{2}} \frac{S(m - 1, e, n)}{S(m,e,n)}=q^{e + n}
+\qquad
+ q^{-\frac{m}{2}} \frac{S(m, e - 1, n)}{S(m,e,n)}=1-q^{e + n} \,.$$ The proof of Equation [\[eq.rec1\]](#eq.rec1){reference-type="eqref" reference="eq.rec1"} is similar. For an alternative proof, using the quantum dilogarithm, see Section [\[sec.QDL\]](#sec.QDL){reference-type="ref" reference="sec.QDL"}.

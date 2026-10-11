@@ -7,7 +7,7 @@
   "bytes": 1171490,
   "pages": 68,
   "text_source": "embedded",
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -575,8 +575,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Draft_proof.tex",
-   "tex_sections": 7,
-   "overlaid": 0,
+   "tex_sections": 33,
+   "overlaid": 23,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -586,28 +586,38 @@
     {
      "id": "sec-000-spherical-fusion-categories",
      "title": "Spherical fusion categories",
-     "result": "no matching \\section"
+     "prose_ratio": 0.134,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-categorical-data",
      "title": "Categorical data",
-     "prose_ratio": 0.445,
+     "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-bimodule-categories-functors-and-natural-transfo",
      "title": "(Bi)module categories, functors and natural transformations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.93,
+     "coverage_ratio": 0.652,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-finite-semisimple-bimodule-categories-over-pivot",
      "title": "Finite semisimple (bi)module categories over pivotal fusion categories",
-     "result": "no matching \\section"
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.853,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-bimodule-categories-with-bimodule-traces",
      "title": "Bimodule categories with bimodule traces",
-     "result": "no matching \\section"
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.811,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-diagrammatic-calculus",
@@ -618,63 +628,92 @@
     {
      "id": "sec-006-diagrams-for-spherical-fusion-categories",
      "title": "Diagrams for spherical fusion categories",
-     "result": "no matching \\section"
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-diagrams-for-bimodule-categories-functors-and-na",
      "title": "Diagrams for (bi)module categories, functors and natural transformations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-diagrams-for-2-categories",
      "title": "Diagrams for 2-categories",
-     "result": "no matching \\section"
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-diagrams-for-pivotal-2-categories",
      "title": "Diagrams for pivotal 2-categories",
-     "result": "no matching \\section"
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-mixed-diagrams",
      "title": "Mixed diagrams",
-     "result": "no matching \\section"
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.872,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-polygon-diagrams",
      "title": "Polygon diagrams",
-     "result": "no matching \\section"
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-012-action-on-category-diagrams",
      "title": "Action on category diagrams",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.903,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-013-bordered-diagrams",
      "title": "Bordered diagrams",
-     "result": "no matching \\section"
+     "prose_ratio": 0.301,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-014-polygon-diagrams",
      "title": "Polygon diagrams",
-     "result": "no matching \\section"
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-015-gluing-polygon-diagrams",
      "title": "Gluing polygon diagrams",
-     "prose_ratio": 0.147,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-016-projections-and-inclusions-for-simple-objects",
      "title": "Projections and inclusions for simple objects",
-     "result": "no matching \\section"
+     "prose_ratio": 0.919,
+     "coverage_ratio": 0.814,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-017-gluing-identities-for-polygon-diagrams",
      "title": "Gluing identities for polygon diagrams",
-     "result": "no matching \\section"
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.907,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-018-state-sum-models-with-defects",
@@ -685,23 +724,34 @@
     {
      "id": "sec-019-triangulated-3-manifolds-with-defects",
      "title": "Triangulated 3-manifolds with defects",
-     "result": "no matching \\section"
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.909,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-020-labeling-of-the-triangulation",
      "title": "Labeling of the triangulation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.872,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-021-generalised-6j-symbols",
      "title": "Generalised 6j symbols",
-     "result": "no matching \\section"
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.894,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-022-state-sum-model-with-defects",
      "title": "State sum model with defects",
-     "prose_ratio": 0.446,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.865,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-023-topological-invariance",
@@ -712,38 +762,58 @@
     {
      "id": "sec-024-moves-between-triangulated-pl-manifolds",
      "title": "Moves between triangulated PL manifolds",
-     "result": "no matching \\section"
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.904,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-025-neighbourhoods-of-defect-surfaces",
      "title": "Neighbourhoods of defect surfaces",
-     "result": "no matching \\section"
+     "prose_ratio": 0.932,
+     "coverage_ratio": 0.837,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-026-state-sums-with-defect-discs",
      "title": "State sums with defect discs",
-     "result": "no matching \\section"
+     "prose_ratio": 0.92,
+     "coverage_ratio": 0.861,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-027-triangulation-independence",
      "title": "Triangulation independence",
-     "result": "no matching \\section"
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.877,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-028-examples-of-state-sums",
      "title": "Examples of state sums",
-     "prose_ratio": 0.048,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-029-state-sums-with-defect-surfaces",
      "title": "State sums with defect surfaces",
-     "result": "no matching \\section"
+     "prose_ratio": 0.891,
+     "coverage_ratio": 0.838,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-030-ribbon-invariants-from-line-defects",
      "title": "Ribbon invariants from line defects",
-     "result": "no matching \\section"
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.698,
+     "result": "overlaid",
+     "converter": "latex"
     }
    ]
   }

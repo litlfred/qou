@@ -7,14 +7,15 @@ section_number: IV
 pages: 5-6
 source_pdf: 2106.01332v4.pdf
 source_sha256: 44c19a99624997bf
+doc_brief: "Braided matter interactions in quantum gravity via 1-handle attachment — 9 sections: INTRODUCTION; (for C𝓁(6)) and B3 (for C𝓁(4)). In; THEORIES ON RIBBON GRAPHS"
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.938
-doc_brief: "Braided matter interactions in quantum gravity via 1-handle attachment — 9 sections: INTRODUCTION; (for C𝓁(6)) and B3 (for C𝓁(4)). In; THEORIES ON RIBBON GRAPHS"
+latex_coverage_ratio: 1.0
 ---
 \subsection{The trivalent scheme}
 
 What was shown in \cite{BT2} is that the braids proposed in \cite{BT}, representing leptons and quarks, correspond to the simplest conserved topological excitations in a trivalent network. By conserved, we mean that the generators of such dynamics (the adapted dual Pachner moves) commute with the braiding and twisting content of the topological excitations, and the latter therefore correspond to noiseless subsystems of the quantum dynamics. This means that although the simplest excitations propagate coherently, they are too strongly conserved since they do not destabilise \cite{BT2}. Thus, although it is possible to describe scattering, the creation and annihilation of particles is impossible  without some  modification \cite{JH}.
+
 
 \subsection{The tetravalent scheme}
 

@@ -7,10 +7,10 @@ section_number: 4
 pages: 12-15
 source_pdf: A_quantum_Murnaghan--Nakayama_rule_for_the_flag_ma.pdf
 source_sha256: c431fca150329547
-text_source: latex
-latex_prose_ratio: 0.951
-latex_coverage_ratio: 0.98
 doc_brief: "A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD C. BENEDETTI, N. BERGERON, L. COLMENAREJO, F. SALIOLA, AND F. SOTTILE — 5 sections: Introduction; A Murnaghan–Nakayama rule for (cla; A Murnagha"
+text_source: latex
+latex_prose_ratio: 0.995
+latex_coverage_ratio: 0.931
 ---
 []{#quantum-equals-classical label="quantum-equals-classical"}
 
@@ -18,12 +18,13 @@ A recurring theme in quantum Schubert calculus is that oftentimes the numerical 
 
 Fix $i\in[n{-}1]$. Let ${\color{RoyalBlue}e_i}\vcentcolon=(0,\dotsc,0,1,0,\dotsc,0)$ be the $i$th standard basis vector, so that $q^{e_i}=q_i$. Write ${\color{RoyalBlue}s_i}\vcentcolon=(i,i{+}1)$, the $i$th simple transposition. We will also need the linear map $\varpi_i\colon{\mathbb Z}^{n-1}\to{\mathbb Z}$, defined by ${\color{RoyalBlue}\varpi_i}(\alpha)\vcentcolon=-\alpha_{i-1}+2\alpha_i-\alpha_{i+1}$, where $\alpha_0=\alpha_n=0$. Thus
 
-$$\begin{multline*}
+$$\begin{gathered}
    \qquad  q_{2,4}=q^{(01100)}=q^{e_2+e_3}\,,   \qquad
    6{\color{red}\underline{35}}214 s_2\ =\ 6{\color{red}\underline{53}}214\,,\quad
    63{\color{red}\underline{52}}14 s_3\ =\ 63{\color{red}\underline{25}}14\,, \\
-   \varpi_2(\underline{122}32)\ =\ -1+4-2=1\,,\quad \mbox{ and }\quad  \varpi_4(12\underline{232})\ =\ -2+6-2=2\,.\qquad
-\end{multline*}$$ For $i\in[n{-}1]$, we also define a map ${\color{RoyalBlue}{\mbox{\rm sg}}_i}\colon S_n\to\{0,1\}$ which records whether or not $u\lessdot_i
+   \varpi_2(\underline{122}32)\ =\ -1+4-2=1\,,\quad \mbox{ and }\quad  \varpi_4(12\underline{232})\ =\ -2+6-2=2\,.\qquad 
+ 
+\end{gathered}$$ For $i\in[n{-}1]$, we also define a map ${\color{RoyalBlue}{\mbox{\rm sg}}_i}\colon S_n\to\{0,1\}$ which records whether or not $u\lessdot_i
  us_i$, $${\mbox{\rm sg}}_i(u)\ \vcentcolon=\ \left\{ \begin{array}{rcl}
        1& &\mbox{if\ } u s_i\lessdot_i  u     \quad\mbox{equivalently, if\ } u(i+1)<u(i)
       \\
@@ -42,10 +43,8 @@ $$\begin{multline*}
 
 Note that if $N^{w,\alpha}_{u,v}\neq 0$, then by part (1), we have $\varpi_i(\alpha)\leq 2$ for each $i\in[n{-}1]$. This also constrains $u,v,w$. For example, if $N^{w,\alpha}_{u,v(\lambda,k)}\neq 0$ and $i\neq k$, then ${\mbox{\rm sg}}_i(v(\lambda,k))=0$ and Proposition [\[P:LL_Th1.1\]](#P:LL_Th1.1){reference-type="ref" reference="P:LL_Th1.1"}(1) becomes
 
-$$\begin{equation}
-\label{Eq:Grass_bound}
-  {\mbox{\rm sg}}_i(w)\ +\ \varpi_i(\alpha)\ \leq\ {\mbox{\rm sg}}_i(u)\ \leq\ 1\,.
-\end{equation}$$
+$$\label{Eq:Grass_bound}
+  {\mbox{\rm sg}}_i(w)\ +\ \varpi_i(\alpha)\ \leq\ {\mbox{\rm sg}}_i(u)\ \leq\ 1\,.$$
 
 We first recall two lemmas from [@LeungLi2012].
 
@@ -96,7 +95,7 @@ Since $q_{5,8}=q^\alpha$ for $\alpha=(0,0,0,0,1,1,1)$, we have $\varpi_7(\alpha)
 
 If $\beta=\alpha-e_7-e_6$, so that $q^\beta=q_{5,6}=q_5$, then $i=5=k$ is the only index with $\varpi_i(\beta)>0$ and we have $\varpi_5(\beta)=2$. By Proposition [\[P:LLThm1.2\]](#P:LLThm1.2){reference-type="ref" reference="P:LLThm1.2"}(2) again, $N^{7825{\color{red}1\raisebox{-0.3pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{6pt}}\hspace{0.55pt}6}34, q_5}_{6823{\color{red}5\raisebox{-0.3pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{6pt}}\hspace{0.55pt}1}74, v(\lambda,5)}= c^{7825{\color{red}6\raisebox{-0.3pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{6pt}}\hspace{0.55pt}1}34}_{6823{\color{red}1\raisebox{-0.3pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{6pt}}\hspace{0.55pt}5}74, v(\lambda,5)}$. Figure [1](#F:qminimal){reference-type="ref" reference="F:qminimal"} shows the interval $[68231\raisebox{-0.5pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{9pt}}\hspace{0.55pt}574, 78256\raisebox{-0.5pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{9pt}}\hspace{0.55pt}134]_5$, which has one peakless chain (the vertical one in blue, with labels $6,3,1,3$).
 
-<figure id="F:qminimal" data-latex-placement="htb">
+<figure id="F:qminimal">
 <div class="picture">
 <p>(145,122)(-50,-2) (-31,0)<span><embed src="qminimal_2.eps" /></span> (0,112)<span><span class="math inline">$78256\raisebox{-0.5pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{9pt}}\hspace{0.55pt}134$</span></span> (-50, 84)<span><span class="math inline">$78236\raisebox{-0.5pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{9pt}}\hspace{0.55pt}154$</span></span> (0, 84)<span><span class="math inline">$7825{\color{red}\underline{3}}\raisebox{-0.5pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{9pt}}\hspace{0.55pt}164$</span></span> (-50, 56)<span><span class="math inline">$78235\raisebox{-0.5pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{9pt}}\hspace{0.55pt}164$</span></span> (0, 56)<span><span class="math inline">$7825{\color{red}\underline{1}}\raisebox{-0.5pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{9pt}}\hspace{0.55pt}364$</span></span> (50,56)<span><span class="math inline">$68253\raisebox{-0.5pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{9pt}}\hspace{0.55pt}174$</span></span> (-50, 28)<span><span class="math inline">$68235\raisebox{-0.5pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{9pt}}\hspace{0.55pt}174$</span></span> (0, 28)<span><span class="math inline">$782{\color{red}\underline{3}}1\raisebox{-0.5pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{9pt}}\hspace{0.55pt}564$</span></span> (50,28)<span><span class="math inline">$68251\raisebox{-0.5pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{9pt}}\hspace{0.55pt}374$</span></span> (0, 0)<span><span class="math inline">${\color{red}\underline{6}}8231\raisebox{-0.5pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{9pt}}\hspace{0.55pt}574$</span></span></p>
 </div>
@@ -106,17 +105,17 @@ If $\beta=\alpha-e_7-e_6$, so that $q^\beta=q_{5,6}=q_5$, then $i=5=k$ is the on
 <figcaption>Two minimal intervals in the quantum 5-Bruhat order on <span class="math inline"><em>S</em><sub>8</sub>[<em>q</em>]</span>.</figcaption>
 </figure>
 
-As this has height 3 (as does the minimal permutation $(1,6,7,3,5)$), we see that\
-$c^{7825{\color{red}6\raisebox{-0.3pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{6pt}}\hspace{0.55pt}1}34}_{6823{\color{red}1\raisebox{-0.3pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{6pt}}\hspace{0.55pt}5}74, v((2,1,1,0,0),5)}=1$, and thus all of the other coefficients considered above are 1.
+As this has height 3 (as does the minimal permutation $(1,6,7,3,5)$), we see that $c^{7825{\color{red}6\raisebox{-0.3pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{6pt}}\hspace{0.55pt}1}34}_{6823{\color{red}1\raisebox{-0.3pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{6pt}}\hspace{0.55pt}5}74, v((2,1,1,0,0),5)}=1$, and thus all of the other coefficients considered above are 1.
 
 Results in [@BS-Bruhat] also show that $c^{78256\raisebox{-0.3pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{6pt}}\hspace{0.55pt}134}_{68231\raisebox{-0.3pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{6pt}}\hspace{0.55pt}574, v((2,2,0,0,0),5)}=1$, and thus
 
-$$\begin{eqnarray*}
+$$\begin{aligned}
     1\ =\ c^{78256\raisebox{-0.3pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{6pt}}\hspace{0.55pt}134}_{68231\raisebox{-0.3pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{6pt}}\hspace{0.55pt}574, v((2,2,0,0,0),5)}
     &=&  N^{78251\raisebox{-0.3pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{6pt}}\hspace{0.55pt}634, q_{5,6}}_{68235\raisebox{-0.3pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{6pt}}\hspace{0.55pt}174, v((2,2,0,0,0),5)}\\
     &=&  N^{78251\raisebox{-0.3pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{6pt}}\hspace{0.55pt}364, q_{5,7}}_{68235\raisebox{-0.3pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{6pt}}\hspace{0.55pt}714, v((2,2,0,0,0),5)}
     \ =\ N^{78251\raisebox{-0.3pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{6pt}}\hspace{0.55pt}346, q_{5,8}}_{68235\raisebox{-0.3pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{6pt}}\hspace{0.55pt}741, v((2,2,0,0,0),5)}\,,
-\end{eqnarray*}$$
+ 
+\end{aligned}$$
 
 by Lemma [\[L:Quantum_is_Classical\]](#L:Quantum_is_Classical){reference-type="ref" reference="L:Quantum_is_Classical"}. For $\lambda\neq(2,1,1,0,0), (2,2,0,0,0)$ with $|\lambda|=4$, these coefficients vanish.$\diamond$
 :::

@@ -579,8 +579,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "paper_april4.tex",
-   "tex_sections": 12,
-   "overlaid": 5,
+   "tex_sections": 32,
+   "overlaid": 22,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -590,151 +590,203 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.908,
-     "coverage_ratio": 0.817,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.911,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-acknowledgements",
      "title": "Acknowledgements",
-     "result": "no matching \\section"
+     "prose_ratio": 0.846,
+     "coverage_ratio": 0.71,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-2-the-tetrahedral-index",
      "title": "The tetrahedral index",
-     "prose_ratio": 0.956,
-     "coverage_ratio": 0.797,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-3-notation-and-conventions-for-triangulated-3-ma",
      "title": "Notation and conventions for triangulated 3-manifolds",
-     "prose_ratio": 0.17,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.893,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-31-gluing-equations",
      "title": "Gluing equations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.737,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-32-generalised-angle-structures",
      "title": "Generalised angle structures",
-     "result": "no matching \\section"
+     "prose_ratio": 0.516,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-006-4-the-3d-index-of-an-ideal-triangulation",
      "title": "The 3D-index of an ideal triangulation",
-     "prose_ratio": 0.958,
-     "coverage_ratio": 0.738,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-007-5-dependence-on-the-choice-of-triangulation",
      "title": "Dependence on the choice of triangulation",
-     "prose_ratio": 0.966,
-     "coverage_ratio": 0.728,
+     "prose_ratio": 0.827,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-008-61-construction-of-spun-normal-surfaces",
      "title": "Construction of spun normal surfaces",
-     "result": "no matching \\section"
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.911,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-62-geometric-generators-for-q-normal-classes",
      "title": "Geometric generators for Q-normal classes",
-     "result": "no matching \\section"
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.805,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-7-combinatorics-of-ideal-triangulations-and-inte",
      "title": "Combinatorics of ideal triangulations and integer normal surface theory",
-     "prose_ratio": 0.799,
-     "coverage_ratio": 0.891,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.835,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-011-71-geometric-generators-for-integer-q-normal-cla",
      "title": "Geometric generators for integer Q-normal classes",
-     "result": "no matching \\section"
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.813,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-81-convergence-of-the-index-sum",
      "title": "Convergence of the index sum",
-     "result": "no matching \\section"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.772,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-013-10-generalised-normal-surfaces",
      "title": "Generalised normal surfaces",
-     "prose_ratio": 0.093,
+     "prose_ratio": 0.394,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-014-101-generalised-normal-and-spun-normal-surfaces",
      "title": "Generalised normal and spun normal surfaces",
-     "result": "no matching \\section"
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.895,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-015-102-degrees-of-index-terms",
      "title": "Degrees of index terms",
-     "result": "no matching \\section"
+     "prose_ratio": 0.913,
+     "coverage_ratio": 0.814,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-016-103-normalisation-and-barriers",
      "title": "Normalisation and barriers",
-     "result": "no matching \\section"
+     "prose_ratio": 0.808,
+     "coverage_ratio": 0.909,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-017-111-solid-torus",
      "title": "Solid torus",
-     "result": "no matching \\section"
+     "prose_ratio": 0.388,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-018-11-some-examples",
      "title": "Some examples",
-     "prose_ratio": 0.401,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.317,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-019-112-trefoil-complement",
      "title": "Trefoil complement",
-     "result": "no matching \\section"
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.843,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-020-114-a-toroidal-example",
      "title": "A toroidal example",
-     "result": "no matching \\section"
+     "prose_ratio": 0.898,
+     "coverage_ratio": 0.879,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-021-115-m009",
      "title": "m009",
-     "result": "no matching \\section"
+     "prose_ratio": 0.88,
+     "coverage_ratio": 0.721,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-022-12-notes-on-connectedness-of-the-1-efficient-pac",
      "title": "Notes on connectedness of the 1-efficient Pachner Graph",
-     "prose_ratio": 0.461,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.934,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-023-121-a-census-of-ideal-triangulations",
      "title": "A census of ideal triangulations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.894,
+     "coverage_ratio": 0.907,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-024-122-two-tetrahedron-ideal-triangulations",
      "title": "Two tetrahedron ideal triangulations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.901,
+     "coverage_ratio": 0.856,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-025-124-connected-components-of-normal-surfaces",
      "title": "Connected components of normal surfaces",
-     "result": "no matching \\section"
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.828,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-026-appendix-a-generalised-angle-structures-and-the",

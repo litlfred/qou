@@ -200,7 +200,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 5,
-   "overlaid": 3,
+   "overlaid": 2,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -215,8 +215,8 @@
     {
      "id": "sec-001-1-i-ntroduction",
      "title": "I ntroduction",
-     "prose_ratio": 0.936,
-     "coverage_ratio": 0.912,
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -239,10 +239,8 @@
     {
      "id": "sec-005-3-a-p-olynomial",
      "title": "A-P olynomial",
-     "prose_ratio": 0.887,
-     "coverage_ratio": 0.544,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.472,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-006-6-kazuhiro-hikami",

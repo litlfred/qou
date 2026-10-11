@@ -7,10 +7,10 @@ section_number: 2
 pages: 12-16
 source_pdf: 1412.4229v4.pdf
 source_sha256: 248d6a1e28a76a94
-text_source: latex
-latex_prose_ratio: 0.97
-latex_coverage_ratio: 0.787
 doc_brief: "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI — Let A → B be a homomorphism of commutative rings."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:resolutions-modules}
 

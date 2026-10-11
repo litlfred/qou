@@ -7,10 +7,10 @@ section_number: 9
 pages: 51-58
 source_pdf: 2209.06973v1.pdf
 source_sha256: cc3393a17c48b9df
-text_source: latex
-latex_prose_ratio: 0.981
-latex_coverage_ratio: 0.973
 doc_brief: "On the geometry of two state models for the colored Jones polynomial — Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.983
 ---
 Recall our notation for $a$ a positive integer, $\underline{a}:=\{0,1,\ldots ,a-1\}$.
 
@@ -38,10 +38,10 @@ l7.5cm ![image](Figure24.pdf){width="7.5cm" height="11cm"}
 
 For $\ell =1$ we are calculating the colored Jones polynomial of the weaving knot $W(3,4)$, which is the knot $8_{18}$. The figure shows the long braid representation of this knot and coloring according to [@G].
 
-Figure 21 shows the corresponding arc graph-graph according to [@GL] with colorings. Note that it is our specific choice of braid (starting with a negative braid generator and ending with a positive braid generator), which allows to discard the first overcrossing arc (which we label $0$). The system of equations restricting the values of the vector $\mathbf{j}$ by the non-negativity of the vector $\mathbf{i}$ and $n$ are now obvious from the figure. We would like to point out that working out the restriction to contributing states seems the most challenging piece of the computation. In the case of weaving links this can be reduced to periodicity according to the value of $\ell$. In general we will get a linear system of inequalities restricting the values to an intersection of half-spaces. For $\ell =1$ the system of inequalities can be reduced in the following way for the coefficients of the vector (see [\[eq=contributing\]](#eq=contributing){reference-type="eqref" reference="eq=contributing"}): $$\mathbf{j}'=(j_1,j_3,j_4,j_5,j_6,j_7)\in (\underline{n+1})^6$$ $$\begin{align*}
+Figure 21 shows the corresponding arc graph-graph according to [@GL] with colorings. Note that it is our specific choice of braid (starting with a negative braid generator and ending with a positive braid generator), which allows to discard the first overcrossing arc (which we label $0$). The system of equations restricting the values of the vector $\mathbf{j}$ by the non-negativity of the vector $\mathbf{i}$ and $n$ are now obvious from the figure. We would like to point out that working out the restriction to contributing states seems the most challenging piece of the computation. In the case of weaving links this can be reduced to periodicity according to the value of $\ell$. In general we will get a linear system of inequalities restricting the values to an intersection of half-spaces. For $\ell =1$ the system of inequalities can be reduced in the following way for the coefficients of the vector (see [\[eq=contributing\]](#eq=contributing){reference-type="eqref" reference="eq=contributing"}): $$\mathbf{j}'=(j_1,j_3,j_4,j_5,j_6,j_7)\in (\underline{n+1})^6$$ $$\begin{aligned}
 j_1&\leq \textrm{min} \{j_3,j_4+j_5.j_5+j_6\}\\
 \textrm{max} \{j_3+j_4,j_4+j_5,j_5+j_6\}&\leq n
-\end{align*}$$ The main question seems to be to get a direct geometric understanding of those inequalities in terms of the geometry of the links.
+\end{aligned}$$ The main question seems to be to get a direct geometric understanding of those inequalities in terms of the geometry of the links.
 
 ::: center
 ![image](Figure25.pdf){width="100%"}
@@ -55,15 +55,15 @@ j_1&\leq \textrm{min} \{j_3,j_4+j_5.j_5+j_6\}\\
 
 The non-negativity requirement for contributing states and basing of $0$ on the long strand immediately implies $j_0=j_{6\ell -2}=0$. The following two cycle relations have to hold for each coloring (note that the relation for the first component follows from the other two as we know):
 
-$$\begin{align*}
+$$\begin{aligned}
 j_1+j_2+\cdots +j_{2\ell -1}=j_{2\ell}+j_{2\ell +1}+\cdots +j_{4\ell -2}+j_{4\ell -1}\\
 j_{2\ell}+j_{2\ell +1}+\cdots +j_{4\ell -2}+j_{4\ell -1}=j_{4\ell }+j_{4\ell +1}+\cdots +j_{6\ell -1}
-\end{align*}$$
+\end{aligned}$$
 
-We use the equations to eliminate $j_{2\ell }$ and $j_{4\ell }$ but will use them in subsequent inequalities: $$j_{2\ell }=j_1+\cdots j_{2\ell -1}-(j_{2\ell +1}+\cdots +j_{4\ell -1})$$ respectively $$\begin{align*}
+We use the equations to eliminate $j_{2\ell }$ and $j_{4\ell }$ but will use them in subsequent inequalities: $$j_{2\ell }=j_1+\cdots j_{2\ell -1}-(j_{2\ell +1}+\cdots +j_{4\ell -1})$$ respectively $$\begin{aligned}
 j_{4\ell }&=j_{2\ell }+\cdots j_{4\ell -1}-(j_{4\ell +1}+\cdots j_{6\ell -1})\\
 &=j_1+\cdots j_{2\ell -1}-(j_{4l+1}+\cdots +j_{6\ell -3}, j_{6\ell -1})
-\end{align*}$$
+\end{aligned}$$
 
 ::: wrapfigure
 l7.5cm ![image](Figure26.pdf){width="7.5cm" height="13cm"}
@@ -73,19 +73,17 @@ l7.5cm ![image](Figure26.pdf){width="7.5cm" height="13cm"}
 
 Just like in the knot cases we can determine the set of contributing states $\mathcal{F}_n^*(G\mathcal{K})$. Each contributing state is determined by a vector $$\mathbf{j}=(\mathbf{j}(1),\mathbf{j}(2),\mathbf{j}(3),\beta_1,\beta_2)$$ with components in $\underline{n+1}$. We $\mathfrak{c}(1)=\mathfrak{c}(2)=\mathfrak{c}(3)=2\ell$. The vector $\mathbf{i}$ determined from the system of equations [\[eq=cycle i\]](#eq=cycle i){reference-type="eqref" reference="eq=cycle i"}.
 
-Using the base value on the first component and the two cycle relations above we can omit the first components in the vectors $\mathfrak{j}(\ell )$, and so have $$\begin{align*}
+Using the base value on the first component and the two cycle relations above we can omit the first components in the vectors $\mathfrak{j}(\ell )$, and so have $$\begin{aligned}
 \mathbf{j}(1)&=(j_1,\ldots ,j_{2\ell -1})\\
 \mathbf{j}(2)&=(j_{2\ell +1},\ldots ,j_{4\ell -1})\\
 \mathbf{j}(3)&=(j_{4\ell +1},\ldots ,j_{6\ell -3},j_{6\ell -1})
-\end{align*}$$ We have $j_{6\ell -}=j_{\tau^{-1}(0)}=0$.
+\end{aligned}$$ We have $j_{6\ell -}=j_{\tau^{-1}(0)}=0$.
 
 These vectors satisfy a system of inqualities see [\[eq=contributing\]](#eq=contributing){reference-type="eqref" reference="eq=contributing"} determining the contributing states, in fact one system for each cycle.
 
 Figure 27 shows the corresponding arc-graph.
 
- \
- \
- \
+     
 
 ::: center
 ![image](Figure27.pdf){width="100%"}

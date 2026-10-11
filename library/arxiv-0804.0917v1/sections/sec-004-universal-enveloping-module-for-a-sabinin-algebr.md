@@ -7,16 +7,16 @@ section_number: null
 pages: 11-16
 source_pdf: 0804.0917v1.pdf
 source_sha256: 887fbd8be47a2781
-text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.523
 doc_brief: "Czechoslovak Mathematical Journal — 9 sections: Front matter; Introduction; Composition-Diamond lemma for left"
 duplicate_of: "czechmathj-60-2010-1-4"
+text_source: latex
+latex_prose_ratio: 0.978
+latex_coverage_ratio: 0.992
 ---
 In this section, we deal with the universal enveloping module for a Sabinin algebra.
 
 ::: definition
-*([@pe]) A vector space $V$ is called a Sabinin algebra if it is endowed with multilinear operation $\langle;\rangle$: for any $x_1,x_2,\cdots,x_m,y,z\in V$ and any $m\geq0$, $$\langle x_1,x_2,\cdots,x_m;y,z\rangle$$ satisfying the identities $$\begin{eqnarray*}
+*([@pe]) A vector space $V$ is called a Sabinin algebra if it is endowed with multilinear operation $\langle;\rangle$: for any $x_1,x_2,\cdots,x_m,y,z\in V$ and any $m\geq0$, $$\langle x_1,x_2,\cdots,x_m;y,z\rangle$$ satisfying the identities $$\begin{aligned}
 && \langle x_1,x_2,\cdots,x_m;y,
 z\rangle =-\langle x_1,x_2,\cdots,x_m;z,y\rangle,\\
 && \langle x_1,x_2,\cdots, x_r,a,b,x_{r+1},\cdots,x_m; y,z\rangle
@@ -28,7 +28,7 @@ x_{\alpha_{k+1}},\cdots ,x_{\alpha_r};a,b\rangle,\cdots,x_m;y,z\rangle =0,\\
 {k=0}^ {r}\sum_ {\alpha}\langle
 x_{\alpha_1},\cdots,x_{\alpha_k};\langle x_{\alpha_{k+1}},\cdots
 ,x_{\alpha_r};y,z\rangle,x\rangle) =0,
-\end{eqnarray*}$$ where $\alpha$ runs the set of all bijections of the type $\alpha:\
+\end{aligned}$$ where $\alpha$ runs the set of all bijections of the type $\alpha:\
 \{1,2,\cdots,r\}\rightarrow \{1,2,\cdots,r\},\ i\mapsto \alpha_i,\
 \alpha_1<\alpha_2<\cdots<\alpha_k,\ \alpha_{k+1}<\cdots<\alpha_r,\
 r\geq0,\ \sigma_{x,y,z}$ denotes the cyclic sum by $x,y,z$.*
@@ -44,7 +44,7 @@ x_{(1)}\otimes x_{(2)}$.
 
 Let $T(V)$ be the tensor algebra over $V$ endowed with its natural structure of cocommutative Hopf algebra, that is, $V\subseteq
 Prim(T(V))$ (the primitive element of $T(V)$). Let $\langle;\rangle:
-T(V)\bigotimes V \bigotimes V\rightarrow V$ be a map. Then we may write the definition of a Sabinin algebra very shortly as $$\begin{eqnarray*}
+T(V)\bigotimes V \bigotimes V\rightarrow V$ be a map. Then we may write the definition of a Sabinin algebra very shortly as $$\begin{aligned}
 &&\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \langle x;a,
 b\rangle =-\langle x;b,a\rangle,\\
 &&\\
@@ -54,7 +54,7 @@ c,e\rangle
 &&\\
 &&\ \ \ \ \ \sigma_{a,b,c}(\langle xc; a,b\rangle+\sum\langle
 x_{(1)};\langle x_{(2)};a,b\rangle,c\rangle) =0,
-\end{eqnarray*}$$ where $[a,b]=ab-ba$.
+\end{aligned}$$ where $[a,b]=ab-ba$.
 
 ::: definition
 *([@pe]) Let $(V,\langle;\rangle)$ be a Sabinin algebra. Then $$\widetilde{S}(V)=T(V)/span\langle xaby-xbay+\sum x_{(1)}\langle
@@ -71,13 +71,13 @@ Then we have the following theorem.
 :::
 
 **Proof:** There are two kinds of compositions: $w_1=xabc\
-(a>b>c) \ \mbox{ and } \ w_2=ucdvab\ (c>d,a>b)$. Denote by $$\begin{eqnarray*}
+(a>b>c) \ \mbox{ and } \ w_2=ucdvab\ (c>d,a>b)$. Denote by $$\begin{aligned}
 f_1&=&xabc-xacb+\sum(xa)_{(1)}\langle (xa)_{(2)};b,c\rangle,\\
 f_2&=&xab-xba+\sum x_{(1)}\langle x_{(2)};a,b\rangle,\\
 f_3&=&ucdvab-ucdvba+\sum(ucdv)_{(1)}\langle
 (ucdv)_{(2)};a,b\rangle,\\
 f_4&=&ucd-udc+\sum u_{(1)}\langle u_{(2)};c,d\rangle.
-\end{eqnarray*}$$ Then $$\begin{eqnarray*}
+\end{aligned}$$ Then $$\begin{aligned}
 (f_1,f_2)_{w_1}&=&xabc-xacb+\sum x_{(1)}a\langle
 x_{(2)};b,c\rangle+\sum
 x_{(1)}\langle x_{(2)}a;b,c\rangle\\
@@ -103,10 +103,10 @@ x_{(2)};\langle x_{(3)};c,a\rangle, b\rangle \\
 &&+\sum x_{(1)}\langle x_{(2)};\langle x_{(3)};a,b\rangle,
 c\rangle\\
 &\equiv&0
-\end{eqnarray*}$$ since $\sigma_{a,b,c}(\langle xc; a,b\rangle+\sum\langle
+\end{aligned}$$ since $\sigma_{a,b,c}(\langle xc; a,b\rangle+\sum\langle
 x_{(1)};\langle x_{(2)};a,b\rangle,c\rangle) =0$.
 
-$$\begin{eqnarray*}
+$$\begin{aligned}
 (f_3,f_4)_{w_2}&=& ucdvab-ucdvba+\sum u_{(1)}v_{(1)}\langle
 u_{(2)}cdv_{(2)};a,b\rangle+\sum u_{(1)}cv_{(1)}\langle
 u_{(2)}dv_{(2)};a,b\rangle\\
@@ -141,7 +141,7 @@ u_{(2)};c,d\rangle)v_{(1)}\langle u_{(3)}v_{(2)};a,b\rangle\\
 u_{(1)}v_{(1)}\langle u_{(2)}\langle u_{(3)};c,d\rangle
 v_{(2)};a,b\rangle\\
 &\equiv&0
-\end{eqnarray*}$$ since $\langle x[a,b]y; c,e\rangle +\sum\langle x_{(1)}\langle
+\end{aligned}$$ since $\langle x[a,b]y; c,e\rangle +\sum\langle x_{(1)}\langle
 x_{(2)};a,b\rangle y; c,e\rangle=0$.
 
 Hence, $I$ is a Gröbner-Shirshov basis in $mod\langle

@@ -7,7 +7,8 @@
   "bytes": 547063,
   "pages": 43,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -544,6 +545,191 @@
   "likely_scanned": false,
   "toc_entries": 29,
   "sections": 30,
-  "chars_total": 99226
+  "chars_total": 99226,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "review-posted.tex",
+   "tex_sections": 11,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "INTRODUCTION",
+     "prose_ratio": 0.773,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-4-steven-c-pieper-and-r-b-wiringa",
+     "title": "Steven C. Pieper and R. B. Wiringa",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-2-hamiltonian-and-currents",
+     "title": "HAMILTONIAN AND CURRENTS",
+     "prose_ratio": 0.103,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-4-1",
+     "title": "( 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-6-steven-c-pieper-and-r-b-wiringa",
+     "title": "Steven C. Pieper and R. B. Wiringa",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-3-\u03c4-i-\u03c4-j-\u03c4-j-\u03c4-k-\u03c4-k-\u03c4-i-4pt-32-17",
+     "title": "(\u03c4 i \u00b7 \u03c4 j + \u03c4 j \u00b7 \u03c4 k + \u03c4 k \u00b7 \u03c4 i) = 4PT =3/2 . (17)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-8-steven-c-pieper-and-r-b-wiringa",
+     "title": "Steven C. Pieper and R. B. Wiringa",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-3-v-ariational-monte-carlo",
+     "title": "V ARIATIONAL MONTE CARLO",
+     "prose_ratio": 0.243,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-10-steven-c-pieper-and-r-b-wiringa",
+     "title": "Steven C. Pieper and R. B. Wiringa",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-14-steven-c-pieper-and-r-b-wiringa",
+     "title": "Steven C. Pieper and R. B. Wiringa",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-4-greens-function-monte-carlo",
+     "title": "GREEN\u2019S FUNCTION MONTE CARLO",
+     "prose_ratio": 0.144,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-16-steven-c-pieper-and-r-b-wiringa",
+     "title": "Steven C. Pieper and R. B. Wiringa",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-18-steven-c-pieper-and-r-b-wiringa",
+     "title": "Steven C. Pieper and R. B. Wiringa",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-15-mev-below-these-the-gfmc-very-rapidly-makes-a",
+     "title": "MeV below these. The GFMC very rapidly makes a large impro vement on",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-8-mev-this-rapid-improvement-corresponds-to-the",
+     "title": "MeV. This rapid improvement corresponds to the removal of s mall admixtures of",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-20-steven-c-pieper-and-r-b-wiringa",
+     "title": "Steven C. Pieper and R. B. Wiringa",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-5-energy-results",
+     "title": "ENERGY RESULTS",
+     "prose_ratio": 0.528,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-017-22-steven-c-pieper-and-r-b-wiringa",
+     "title": "Steven C. Pieper and R. B. Wiringa",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-24-steven-c-pieper-and-r-b-wiringa",
+     "title": "Steven C. Pieper and R. B. Wiringa",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-26-steven-c-pieper-and-r-b-wiringa",
+     "title": "Steven C. Pieper and R. B. Wiringa",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-6-density-and-momentum-distributions",
+     "title": "DENSITY AND MOMENTUM DISTRIBUTIONS",
+     "prose_ratio": 0.259,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-021-28-steven-c-pieper-and-r-b-wiringa",
+     "title": "Steven C. Pieper and R. B. Wiringa",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-30-steven-c-pieper-and-r-b-wiringa",
+     "title": "Steven C. Pieper and R. B. Wiringa",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-7-low-energy-nucleon-nucleus-scattering",
+     "title": "LOW-ENERGY NUCLEON-NUCLEUS SCATTERING",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-024-8-astrophysical-electroweak-reactions",
+     "title": "ASTROPHYSICAL ELECTROWEAK REACTIONS",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-025-9-neutron-drops",
+     "title": "NEUTRON DROPS",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-026-10-conclusions-and-outlook",
+     "title": "CONCLUSIONS AND OUTLOOK",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-027-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.453,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-028-16-nollett-km-nucl-th0102022-submitted-to-phys-r",
+     "title": "Nollett KM. nucl-th/0102022, submitted to Phys. Rev. C",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

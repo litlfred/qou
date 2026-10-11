@@ -164,8 +164,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "higher_v17.tex",
-   "tex_sections": 9,
-   "overlaid": 2,
+   "tex_sections": 49,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -175,32 +175,34 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.978,
-     "coverage_ratio": 0.94,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-bosonic-and-fermionic-generators",
      "title": "Bosonic and Fermionic generators",
-     "prose_ratio": 0.915,
-     "coverage_ratio": 0.678,
+     "prose_ratio": 0.67,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-4-examples",
      "title": "Examples",
-     "prose_ratio": 0.957,
-     "coverage_ratio": 0.354,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.93,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-appendix-a-rectangle-colored-invariants-of-2m-to",
      "title": "Appendix A. Rectangle-colored invariants of (2,m) torus knots",
-     "prose_ratio": 0.917,
-     "coverage_ratio": 0.275,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-references",

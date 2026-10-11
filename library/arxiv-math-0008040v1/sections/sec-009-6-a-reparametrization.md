@@ -7,10 +7,10 @@ section_number: 6
 pages: 13-20
 source_pdf: 0008040v1.pdf
 source_sha256: a72319b55dbaf20b
-text_source: latex
-latex_prose_ratio: 0.895
-latex_coverage_ratio: 0.972
 doc_brief: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A — Let U be the quantum group associated to a Lie algebra g of type An."
+text_source: latex
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 0.989
 ---
 We will now use the rectangle combinatorics from the previous section to calculate the Lusztig parametrizations $c_j(\mathbf{j})$, $c_P(\mathbf{j})$ of the canonical basis elements arising in Theorem [\[natural\]](#natural){reference-type="ref" reference="natural"}; here $\mathbf{j}$ is fixed as the reduced expression $(n,n-1,n,n-2,n-1,n,\ldots ,1,2,\ldots ,n)$ for $w_0$.
 
@@ -28,7 +28,7 @@ We will now use the rectangle combinatorics from the previous section to calcula
 <p>1 1 2 / 2 2.5 0.5 / 0.5 1.5 -0.5 /</p>
 <p>2 2.5 -1.5 /</p>
 <p>[c] at 2.8 1.5 [c] at -0.3 0 [c] at 2.8 0.5</p>
-<figcaption>The central line in <span class="math inline"><em>D</em>(<em>L</em><em>R</em><em>L</em>−)</span>.<span id="centrallinef" data-label="centrallinef"></span></figcaption>
+<figcaption>The central line in <span class="math inline"><em>D</em>(<em>L</em><em>R</em><em>L</em>−)</span>.<span id="centrallinef" label="centrallinef"></span></figcaption>
 </figure>
 
 Let $Y$ be a component of $P$, and define a set $S(Y)$ of positive roots as follows. The rectangle $\rho(Y)$ for $Y$ is divided into two parts by the central line. Let $\rho^*(Y)$ be the part of $\rho(Y)$ which is labelled. The root $\alpha_{ij}$ lies in $S(Y)$ if and only if the intersection of a diagonal row of $D(P)$ (see Definition [\[diagonalrow\]](#diagonalrow){reference-type="ref" reference="diagonalrow"}) with $\rho^*(Y)$ contains the numbers $i,i+1,\ldots ,j-1,$ in order, reading from top left to bottom right. Then $S(P)$ is defined to be the union of the sets $S(Y)$ for $Y$ a component of $P$. In our example, $S(L_1)=\{\alpha_1,\alpha_2,\alpha_3\}$, $S(R_1)=\{\alpha_4+\alpha_5\}$ and $S(L_2)=\{\alpha_1+\alpha_2+\alpha_3,
@@ -95,7 +95,7 @@ Case (c) Suppose that $\beta_1$ and $\beta_2$ arise from distinct components of 
 <p>2.5 6.5 -3.5 /</p>
 <p>at 0.5 0 at 3 2.5 at 3 2.1 at 4 3.65 at 6.3 1 at 5.15 0.2 at 5.28 -0.2 at 3 -2.3 at 6.15 -0.8 at 6.28 -1.2 at 4 -3.65</p>
 <p>[c] at -0.3 0 [c] at 7.3 1</p>
-<figcaption>The rectangles <span class="math inline"><em>ρ</em>(<em>Y</em>)</span> and <span class="math inline"><em>ρ</em>(<em>Z</em>)</span>.<span id="rhoyrhoz" data-label="rhoyrhoz"></span></figcaption>
+<figcaption>The rectangles <span class="math inline"><em>ρ</em>(<em>Y</em>)</span> and <span class="math inline"><em>ρ</em>(<em>Z</em>)</span>.<span id="rhoyrhoz" label="rhoyrhoz"></span></figcaption>
 </figure>
 
 where as usual, the dashed line indicates the central line in $D(P)$. Then the roots for $Y$ will be taken from above this line, and the roots for $Z$ from below, such roots $\alpha$ will have differing values of $r(\alpha)$ so we see that this case cannot occur.\
@@ -140,7 +140,7 @@ To illustrate this Lemma we go back to our example (see Definition [\[diagonal\
 <p>at 1 1 at 2 1 at 3 1 at 4 1 at 5 1 at 1.5 2 at 2.5 2 at 3.5 2 at 4.5 2 at 2 3 at 3 3 at 4 3 at 2.5 4 at 3.5 4 at 3 5</p>
 <p>at 7 3</p>
 <p>at 9 1 at 10 1 at 11 1 at 12 1 at 13 1 at 9.5 2 at 10.5 2 at 11.5 2 at 12.5 2 at 10 3 at 11 3 at 12 3 at 10.5 4 at 11.5 4 at 11 5</p>
-<figcaption>The vector <span class="math inline">$\bf c$</span>.<span id="vectorc" data-label="vectorc"></span></figcaption>
+<figcaption>The vector <span class="math inline">$\bf c$</span>.<span id="vectorc" label="vectorc"></span></figcaption>
 </figure>
 
 We have ${\bf x}_0=(c_{34},c_{44})=(0,1)$, ${\bf x}_1=(c_{35},c_{45})=(0,1)$, and ${\bf x}_2=(c_{36},c_{46})=(0,0)$ --- these are indicated by underlining in Figure [3](#vectorc){reference-type="ref" reference="vectorc"} (note that $c_{44}$ does not appear in the diagram). Thus the sequence of symbols as in Lemma [\[applyreineke\]](#applyreineke){reference-type="ref" reference="applyreineke"} is $(-,-,0)$. In the reduction step, we remove the final zero to get $(-,-)$ and see we are in case (x) of the Lemma, and that the final '$-$' is marked. This corresponds to ${\bf x}_1$ and the Lemma tells us that applying $\widetilde{F}_i$ changes $c_{35}$ from $0$ to $1$ and $c_{45}$ from $1$ to $0$. As a more complicated example, consider the sequence of symbols $(0,0,+,+,-,-,+,+,+,0,-,0,-,-,+,-,-,-,-,0,0)$. We first of all remove non-initial zeros to get $(0,+,+,-,-,+,+,+,-,-,-,+,-,-,-,-)$ and then remove $+,-$ pairs to get $(0,-,-,-)$ --- which is case (ii) of the Lemma. Thus the last '$-$' is indicated, corresponding to the last '$-$' of the original sequence.

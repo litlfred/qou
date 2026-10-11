@@ -7,30 +7,24 @@ section_number: null
 pages: 3-7
 source_pdf: 0705.1468v1.pdf
 source_sha256: 4ff578cb3657e4a4
-text_source: latex
-latex_prose_ratio: 0.996
-latex_coverage_ratio: 1.0
 doc_brief: "Knots in the Skyrme-Faddeev model Paul Sutcliffe — The Skyrme-Faddeev model is a modiﬁed sigma model in three-d imensional space, which has string-like topological solitons classiﬁed by th e"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.987
 ---
 The Skyrme-Faddeev model involves a map $\mbox{\boldmath $\phi$}:
-\hbox{\mybb R}^3\mapsto S^2,$ which is realized as a real three-component vector $\mbox{\boldmath $\phi$}=(\phi_1,\phi_2,\phi_3),$ of unit length, $\mbox{\boldmath $\phi$}\cdot\mbox{\boldmath $\phi$}=1.$ As this paper is concerned only with static solutions then the model can be defined by its energy $$\begin{equation}
-E=\frac{1}{32\pi^2\sqrt{2}}\int \partial_i\mbox{\boldmath $\phi$}\cdot\partial_i\mbox{\boldmath $\phi$}
+\hbox{\mybb R}^3\mapsto S^2,$ which is realized as a real three-component vector $\mbox{\boldmath $\phi$}=(\phi_1,\phi_2,\phi_3),$ of unit length, $\mbox{\boldmath $\phi$}\cdot\mbox{\boldmath $\phi$}=1.$ As this paper is concerned only with static solutions then the model can be defined by its energy $$E=\frac{1}{32\pi^2\sqrt{2}}\int \partial_i\mbox{\boldmath $\phi$}\cdot\partial_i\mbox{\boldmath $\phi$}
 +\frac{1}{2}(\partial_i\mbox{\boldmath $\phi$}\times\partial_j\mbox{\boldmath $\phi$})
-\cdot(\partial_i\mbox{\boldmath $\phi$}\times\partial_j\mbox{\boldmath $\phi$})\ d^3x, \label{energy}
-\end{equation}$$where the normalization is chosen for later convenience. The first term in the energy is that of the usual $O(3)$ sigma model and the second is a Skyrme term, required to provide a balance under scaling and hence allow solitons with a finite non-zero size.
+\cdot(\partial_i\mbox{\boldmath $\phi$}\times\partial_j\mbox{\boldmath $\phi$})\ d^3x, \label{energy}$$where the normalization is chosen for later convenience. The first term in the energy is that of the usual $O(3)$ sigma model and the second is a Skyrme term, required to provide a balance under scaling and hence allow solitons with a finite non-zero size.
 
 Finite energy boundary conditions require that the field tends to a constant value at spatial infinity, which is chosen to be $\mbox{\boldmath $\phi$}(\infty)=(0,0,1)={\bf e}_3.$ This boundary condition compactifies space to $S^3,$ so that the field becomes a map $\mbox{\boldmath $\phi$}:
 S^3\mapsto S^2.$ Such maps are classified by $\pi_3(S^2)=\hbox{\mybb Z},$ so there is an integer-valued topological charge $Q,$ the Hopf charge, which gives the soliton number. Unlike most theories with topological solitons, the topological charge is not a winding number or degree of a mapping. Rather, it has a geometrical interpretation as a linking number of field lines, as follows. Generically, the preimage of a point on the target two-sphere is a closed loop (or a collection of closed loops) in the three-sphere domain obtained from the compactification of $\hbox{\mybb R}^3.$ Two loops obtained as the preimages of any two distinct points on the target two-sphere are linked exactly $Q$ times, where $Q$ is the Hopf charge.
 
-The Hopf charge can be written as the integral over the three-sphere domain of a charge density, but this density is non-local in the field $\mbox{\boldmath $\phi$},$ as the following construction demonstrates. Let $\omega$ denote the area two-form on the target two-sphere and let $F=\mbox{\boldmath $\phi$}^*\omega$ be its pull-back under $\mbox{\boldmath $\phi$}$ to the domain three-sphere. The triviality of the second cohomology group of the three-sphere implies that $F$ is an exact two-form, say $F=dA.$ The Hopf charge is then given by integrating the Chern-Simons three-form over the three-sphere as $$\begin{equation}
-Q=\frac{1}{4\pi^2}\int_{S^3}F\wedge
-A.
-\end{equation}$$
+The Hopf charge can be written as the integral over the three-sphere domain of a charge density, but this density is non-local in the field $\mbox{\boldmath $\phi$},$ as the following construction demonstrates. Let $\omega$ denote the area two-form on the target two-sphere and let $F=\mbox{\boldmath $\phi$}^*\omega$ be its pull-back under $\mbox{\boldmath $\phi$}$ to the domain three-sphere. The triviality of the second cohomology group of the three-sphere implies that $F$ is an exact two-form, say $F=dA.$ The Hopf charge is then given by integrating the Chern-Simons three-form over the three-sphere as $$Q=\frac{1}{4\pi^2}\int_{S^3}F\wedge
+A.$$
 
-The energy bound $$\begin{equation}
-E\ge c\, Q^{3/4},\quad \mbox{where} \quad
-c=\left(\frac{3}{16}\right)^{3/8}\approx 0.534
-\end{equation}$$has been proved [@VK; @KR], and it is known that the fractional power is optimal [@LY], though it is expected that the above value of the constant $c$ is not. Motivated by a study of the Skyrme-Faddeev model on a three-sphere with a finite radius, together with an analogy with the Skyrme model, Ward has conjectured [@Wa4] that the above energy bound holds with the value $c=1$ (hence the choice of normalization factor for the energy in ([\[energy\]](#energy){reference-type="ref" reference="energy"})), but this has not been proven. As discussed shortly, the current energy values known for low charge solitons are in good agreement with Ward's conjectured energy bound, and later it will be demonstrated that the energies for higher charge solitons are too.
+The energy bound $$E\ge c\, Q^{3/4},\quad \mbox{where} \quad
+c=\left(\frac{3}{16}\right)^{3/8}\approx 0.534$$has been proved [@VK; @KR], and it is known that the fractional power is optimal [@LY], though it is expected that the above value of the constant $c$ is not. Motivated by a study of the Skyrme-Faddeev model on a three-sphere with a finite radius, together with an analogy with the Skyrme model, Ward has conjectured [@Wa4] that the above energy bound holds with the value $c=1$ (hence the choice of normalization factor for the energy in ([\[energy\]](#energy){reference-type="ref" reference="energy"})), but this has not been proven. As discussed shortly, the current energy values known for low charge solitons are in good agreement with Ward's conjectured energy bound, and later it will be demonstrated that the energies for higher charge solitons are too.
 
 The simplest examples of Hopf solitons are axially symmetric and their qualitative features may be described as follows. First, consider the model ([\[energy\]](#energy){reference-type="ref" reference="energy"}) defined in two-dimensional space, so that the boundary conditions now result in a compactification of space from $\hbox{\mybb R}^2$ to $S^2.$ The field is then a map $\mbox{\boldmath $\phi$}:S^2\mapsto S^2$ and is classified by an integer $m\in\hbox{\mybb Z}
 =\pi_2(S^2),$ which is the usual winding number familiar from the $O(3)$ sigma model itself. Strictly speaking, in order to have two-dimensional solitons with a finite size in this model then a potential term must also be included, upon which the two-dimensional solitons are known as baby Skyrmions [@PSZ], but this aspect is not crucial for the discussion here. Returning to the three-dimensional model, then a toroidal field configuration can be formed by embedding the two-dimensional soliton in the normal slice to a circle in space. The two-dimensional soliton has an internal phase and this can be rotated through an angle $2\pi n,$ as it travels around the circle once, where $n\in \hbox{\mybb Z}$ counts the number of twists. A field configuration of this type has Hopf charge $Q=nm,$ and it will be denoted by ${\cal A}_{n,m},$ so the first subscript labels the number of twists and the second is the winding number of the two-dimensional soliton forming the loop.

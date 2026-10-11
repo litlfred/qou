@@ -308,7 +308,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "LPRS.tex",
-   "tex_sections": 10,
+   "tex_sections": 40,
    "overlaid": 8,
    "thresholds": {
     "title": 0.85,
@@ -319,16 +319,16 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.964,
-     "coverage_ratio": 0.925,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-algebra-uqsl2-and-its-representations",
      "title": "Algebra Uq(sl2) and its representations",
-     "prose_ratio": 0.99,
-     "coverage_ratio": 0.702,
+     "prose_ratio": 0.745,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -340,48 +340,48 @@
     {
      "id": "sec-003-5-recursive-formulae-for-uqsl2-and-uqsl2-tensor",
      "title": "Recursive formulae for Uq(sl2) and uq(sl2) tensor products.",
-     "prose_ratio": 0.968,
-     "coverage_ratio": 0.789,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-6-multiplicities-and-lattice-paths",
      "title": "Multiplicities and lattice paths",
-     "prose_ratio": 0.958,
-     "coverage_ratio": 0.895,
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.921,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-7-integral-formula-for-multiplicities",
      "title": "Integral formula for multiplicities",
-     "prose_ratio": 0.979,
-     "coverage_ratio": 0.91,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-8-probabilistic-measures-on-the-tensor-product-d",
      "title": "Probabilistic measures on the tensor product decomposition",
-     "prose_ratio": 0.948,
-     "coverage_ratio": 0.867,
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-007-9-the-asymptotic-of-the-character-and-plancherel",
      "title": "The asymptotic of the character and Plancherel measures for Uq(sl2)",
-     "prose_ratio": 0.929,
-     "coverage_ratio": 0.901,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-008-10-the-asymptotic-of-probability-measures-for-uq",
      "title": "The asymptotic of probability measures for uq(sl2)",
-     "prose_ratio": 0.965,
-     "coverage_ratio": 0.919,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
     },

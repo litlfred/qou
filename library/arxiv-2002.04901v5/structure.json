@@ -129,7 +129,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 8,
-   "overlaid": 1,
+   "overlaid": 2,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -139,17 +139,18 @@
     {
      "id": "sec-000-0-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.989,
-     "coverage_ratio": 0.835,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-1-idealistic-derived-completion-and-torsion",
      "title": "Idealistic Derived Completion and Torsion",
-     "prose_ratio": 0.891,
-     "coverage_ratio": 0.226,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.816,
+     "result": "overlaid",
+     "converter": "latex"
     }
    ]
   }

@@ -7,10 +7,10 @@ section_number: 2
 pages: 11-12
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
-text_source: latex
-latex_prose_ratio: 0.986
-latex_coverage_ratio: 0.973
 doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:review-S}
 

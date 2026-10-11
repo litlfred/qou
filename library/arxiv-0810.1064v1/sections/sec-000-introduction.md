@@ -7,29 +7,25 @@ section_number: null
 pages: 1-2
 source_pdf: 0810.1064v1.pdf
 source_sha256: b2d7514c5382ceaa
-text_source: latex
-latex_prose_ratio: 0.994
-latex_coverage_ratio: 1.0
 doc_brief: "Multiple polylogarithm values at roots of unity — For any positive integer N let µ N be the group of the N th roots of unity."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.984
 ---
-Double shuffle relations have played significant roles in the study of multiple zeta values in recent years. These relations can be easily generalized to the special values of multiple polylogarithms at roots of unity (MPV for short): $$\begin{equation}
-\label{equ:seriesdefn}
+Double shuffle relations have played significant roles in the study of multiple zeta values in recent years. These relations can be easily generalized to the special values of multiple polylogarithms at roots of unity (MPV for short): $$\label{equ:seriesdefn}
 Li_{s_1,\dots,s_n}(\zeta_1,\dots,\zeta_n):=\sum_{k_1>\dots>k_n>0}
-\frac{\zeta_1^{k_1} \cdots \zeta_n^{k_n}}{k_1^{s_1}\cdots k_n^{s_n}},\quad(s_1,\zeta_1)\ne (1,1),
-\end{equation}$$ where $\zeta_j$ are all $N$th roots of unity for $j=1,\dots,n$. We call $N$ the *level* and $w:=s_1+\cdots+s_n$ the *weight*. One of our major interests is to find the dimension $d(w,N)$ of the $\Q$-vector space $\MPV(w,N)$ spanned by these values.
+\frac{\zeta_1^{k_1} \cdots \zeta_n^{k_n}}{k_1^{s_1}\cdots k_n^{s_n}},\quad(s_1,\zeta_1)\ne (1,1),$$ where $\zeta_j$ are all $N$th roots of unity for $j=1,\dots,n$. We call $N$ the *level* and $w:=s_1+\cdots+s_n$ the *weight*. One of our major interests is to find the dimension $d(w,N)$ of the $\Q$-vector space $\MPV(w,N)$ spanned by these values.
 
-In [@Rac], Racinet listed the following relations: double shuffle relations and their regularized versions (by regularizing both the divergent integrals and divergent series representing MPVs), (regularized) distributions, and weight one relations. We will call these *standard relations*. By intensive MAPLE computation it is shown [@Zpolyrel] that in many cases these relations cannot produce all the possible $\Q$-linear relations. For example, standard relations imply only $d(3,4)\le 9$ which is one more than the bound given by [@DG 5.25]. Concretely, from standard relations MAPLE confirms the following $$\begin{equation}
-\label{fact}
+In [@Rac], Racinet listed the following relations: double shuffle relations and their regularized versions (by regularizing both the divergent integrals and divergent series representing MPVs), (regularized) distributions, and weight one relations. We will call these *standard relations*. By intensive MAPLE computation it is shown [@Zpolyrel] that in many cases these relations cannot produce all the possible $\Q$-linear relations. For example, standard relations imply only $d(3,4)\le 9$ which is one more than the bound given by [@DG 5.25]. Concretely, from standard relations MAPLE confirms the following $$\label{fact}
 \aligned
  \text{Fact: }&\text{Every MPV of weight 3 and level 4 can be written explicitly} \\
  &\text{as a linear combination of the nine MPVs appearing in \eqref{equ:conj},}
 \endaligned
-\tag{$\ast$}
-\end{equation}$$ and no further $\Q$-linear relations between these values can be deduced from the standard relations. But by GiNac [@GiNac] and EZface [@EZface] the following is found numerically (see [@Zpolyrel Remark 10.1]) $$\begin{multline}
+\tag{$\ast$}$$ and no further $\Q$-linear relations between these values can be deduced from the standard relations. But by GiNac [@GiNac] and EZface [@EZface] the following is found numerically (see [@Zpolyrel Remark 10.1]) $$\begin{gathered}
 \label{equ:conj}
 5Li_{1,2}(-1,-i)=46Li_{1,1,1}(i,1,1)-7Li_{1,1,1}(-1,-1,i)-13Li_{1,1,1}(i,i,i) +13Li_{1,2}(-i,i)\\
 -Li_{1,1,1}(-i,-1,1)+25Li_{1,1,1}(-i,1,1)-8Li_{1,1,1}(i,i,-1) +18Li_{2,1}(-i,1).
-\end{multline}$$ In this note, we shall prove [\[equ:conj\]](#equ:conj){reference-type="eqref" reference="equ:conj"} from the explicit relations in [\[fact\]](#fact){reference-type="eqref" reference="fact"} by using the octahedral symmetry of ${\mathbb P}^1-(\{0,\infty\}\cup \mmu_4)$ where $\mmu_N$ denotes the set of $N$th roots of unity. We can treat the weight 4 and level 4 case in a similar fashion.
+\end{gathered}$$ In this note, we shall prove [\[equ:conj\]](#equ:conj){reference-type="eqref" reference="equ:conj"} from the explicit relations in [\[fact\]](#fact){reference-type="eqref" reference="fact"} by using the octahedral symmetry of ${\mathbb P}^1-(\{0,\infty\}\cup \mmu_4)$ where $\mmu_N$ denotes the set of $N$th roots of unity. We can treat the weight 4 and level 4 case in a similar fashion.
 
 The result above in level four case shows that the standard relations are not always sufficient to determine $d(w,N)$. On the other hand, Deligne and Goncharov [@DG] find some closed formulae for upper bounds of $d(w,N)$ for all $w$ and $N$ by studying the motivic fundamental group of ${\mathbb P}^1-(\{0,\infty\}\cup \mmu_N)$ in the framework of mixed Tate motives over the ring of $S$-integers of a number field.
 

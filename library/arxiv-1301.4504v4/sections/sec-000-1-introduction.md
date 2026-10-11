@@ -7,10 +7,10 @@ section_number: 1
 pages: 2-8
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
-text_source: latex
-latex_prose_ratio: 0.927
-latex_coverage_ratio: 0.961
 doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
+text_source: latex
+latex_prose_ratio: 0.999
+latex_coverage_ratio: 0.999
 ---
 The recently proposed firewall phenomenon [@Almheiri:2012rt] has dramatically emphasized the extent to which black holes remain interesting and mysterious in quantum gravity. Using "reasonable" assumptions about the structure of the quantum theory of black holes, the authors of [@Almheiri:2012rt], henceforth referred to as AMPS, have argued that unitarity of black hole evaporation, along with some limited form of locality, is inconsistent with a smooth horizon for an observer falling into an "old" black hole.[^1] There has been significant discussion of this claim in the literature, but in our view none of the followup work so far has decisively challenged the original argument.
 
@@ -20,13 +20,13 @@ As a simple example, consider a Schwarzschild black hole in $3+1$ dimensions. It
 
 In light of our discussion, a firewall enthusiast might nonetheless argue that even though the decoding cannot be done the information is still "there". It has been clear for some time however that operational constraints are important in understanding the structure of the Hilbert space used in describing black hole evaporation, and we view our results in this context. More concretely the real issue at stake is for which types of situations we should trust effective field theory (EFT). Traditionally EFT was viewed as holding away from local regions with high energy density or spacetime curvature. If this were the only way in which EFT could break down however, then we would seem to be led inexorably to information loss [@Hawking:1976ra]. If we wish to maintain belief in unitarity, as AdS/CFT strongly suggests we should, then there must be a more broad set of criteria for when EFT is not be valid. It is not trivial however to find such criteria which do not flagrantly violate the extraordinary level to which EFT has been experimentally tested. Careful analysis of thought experiments near black holes in the mid 1990's [@sussthorug; @sussthor; @susspol] led to an additional criterion involving causality:
 
-- Two spacelike-separated low-energy observables which cannot both be causally accessed by some single observer do not need to be realized even approximately as distinct and commuting operators on the same Hilbert space.
+-   Two spacelike-separated low-energy observables which cannot both be causally accessed by some single observer do not need to be realized even approximately as distinct and commuting operators on the same Hilbert space.
 
 This criterion was claimed to preclude the apparent contradiction between unitarity and local EFT in Hawking's argument. It is clear that it does not lead to obvious testable violations of EFT, and it was also claimed to avoid more subtle problems like quantum cloning and unacceptably large baryon number violation. The key point for us however is that this criterion, which is a profound statement about the structure of the Hilbert space of quantum gravity, was motivated by operational constraints. It says that whether or not quantum information is "there" is indeed related to its practical accessibility.[^5]
 
 The deep insight of AMPS is that even with this stronger causal restriction on when we may use effective field theory there is still a paradox that seems to require more modification of the rules, either by having firewalls or by further violating effective field theory. We interpret our results as supporting a new criterion for the validity of effective field theory:
 
-- Two spacelike-separated low-energy observables which are not both computationally accessible to some single observer do not need to be realized even approximately as distinct and commuting operators on the same Hilbert space.
+-   Two spacelike-separated low-energy observables which are not both computationally accessible to some single observer do not need to be realized even approximately as distinct and commuting operators on the same Hilbert space.
 
 By computationally inaccessible we mean that one or both of them is so quantum-mechanically nonlocal that measuring it would require more time and/or memory than the observer fundamentally has available. This criterion clearly implies the previous one, but it is stronger: as we will see, it can apply even if both observables are within the past lightcone of some observer. In Minkowski space this criterion (and also the causality criterion) is irrelevant, but in spacetimes with singularities there are observers whose available time is fundamentally limited. This is also true in spacetimes where the fundamental Hilbert space is effectively finite, for example the de Sitter static patch. In that case recurrence phenomena limit how much time is available for low-energy observation rather than a singularity.[^6] Our proposal violates what AMPS call postulate II, and we will see below that it seems to remove the contradiction that led AMPS to argue for firewalls.
 

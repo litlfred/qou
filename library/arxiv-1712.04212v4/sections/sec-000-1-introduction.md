@@ -7,14 +7,15 @@ section_number: 1
 pages: 1-8
 source_pdf: 1712.04212v4.pdf
 source_sha256: 521911fc8724f3c2
-text_source: latex
-latex_prose_ratio: 0.959
-latex_coverage_ratio: 0.917
 doc_brief: "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION — In this paper, we consider a concentration of measure problem on Riemannian manifolds with"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 In the present paper,
 we consider a concentration of measure problem on manifolds with boundary.
 We study concentration phenomena of non-negative $1$-Lipschitz functions with Dirichlet boundary condition.
+
 
 
 \subsection{Motivations}
@@ -38,6 +39,7 @@ every $1$-Lipschitz function $\varphi_{n}:X_{n}\to [0,\infty)$ with $\varphi_{n}
 From this point of view,
 we investigate concentration phenomena of non-negative $1$-Lipschitz functions with Dirichlet boundary condition around zero.
 We call such phenomena \textit{boundary concentration phenomena}.
+
 
 
 \subsection{Observable inscribed radii}
@@ -127,6 +129,7 @@ We further see that the following are equivalent (see Proposition \ref{prop:char
 \end{rem}
 
 
+
 \subsection{Dirichlet eigenvalues and concentration phenomena}
 We study relation between boundary concentration phenomena and large spectral gap phenomena for Dirichlet eigenvalues of Laplacian.
 For $n\geq 2$,
@@ -193,6 +196,7 @@ Theorem \ref{thm:higher order Dirichlet eigenvalue and Dirichlet Levy family} is
 One of key ingredients of the proof is to obtain an upper bound of the ratio $\nu_{f,k}(M)/\nu_{f,1}(M)$ in terms of $C\,k^{2}$ for some universal constant $C>0$ under $\ric^{\infty}_{f,M}\geq 0$ and $H_{f,\bm}\geq 0$ (see Theorem \ref{thm:universal inequality}).
 We obtain such universal estimate by combining an improved Cheeger inequality of Kwak, Lau, Lee, Oveis Gharan and Trevisan \cite{KLLOT},
 and an isoperimetric inequality of Wang \cite{Wa} (see Subsections \ref{sec:Dirichlet isoperimetric constants}, \ref{sec:Isoperimetric inequalities}).
+
 
 
 \subsection{Comparisons and concentration phenomena}\label{sec:Comparisons and concentration phenomena}
@@ -348,6 +352,7 @@ then $\liminf_{n\to \infty} m_{\ball}(\Omega_{n})>0$ and $\lim_{n\to \infty} d_{
 \end{rem}
 
 
+
 \subsection{Organization}
 In Section \ref{sec:Preliminaries},
 we review basics of weighted Riemannian manifolds with boundary,
@@ -369,7 +374,8 @@ Furthermore,
 we construct several non-trivial examples of boundary concentration families (see Examples \ref{ex:finite dimensional example} and \ref{ex:one dimensional example}).
 
 
-\subsection*{{\rm Acknowledgements}}
+
+\subsection{{\rm Acknowledgements}}
 The author expresses his gratitude to Ryunosuke Ozawa and Kohei Suzuki for fruitful discussions and encouragement.
 The author would like to thank Shin-ichi Ohta for his useful comments.
 One of his comment leads to the study of Section \ref{sec:Infinite dimensional comparisons}.

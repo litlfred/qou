@@ -7,10 +7,10 @@ section_number: 1
 pages: 3-5
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
-text_source: latex
-latex_prose_ratio: 0.955
-latex_coverage_ratio: 0.982
 doc_brief: "Combinatorial optimization in geometry (Rivin) — extends and unifies results on ideal polyhedra in H³ to singular Euclidean structures on surfaces, possibly with infinitely many singularities."
+text_source: latex
+latex_prose_ratio: 0.995
+latex_coverage_ratio: 0.992
 ---
 []{#oldstuff label="oldstuff"}
 
@@ -41,15 +41,11 @@ The following is a slight extension of [@rvol Lemma 4.2].
 :::
 
 ::: proof
-*Proof.* First, let $v$ be an interior vertex. Suppose that there are $n$ triangles $t_1, \dots, t_n$ incident to $v$. The sum of all of their angles is $n \pi.$ The cone angle at $v$ is the sum of the angles of the triangles $t_i$ at $v.$ On the other hand, the sum of the dihedral angles of the edges $e_1, \dots, e_n$ incident to $v$ is the sum of all of the angles of $t_i$ *not* incident to $v$. Thus, $$\begin{equation}
-\label{anglesum1}
-n \pi = \mbox{Cone angle at $v$} + \sum_{i=1}^n \delta(e_i).
-\end{equation}$$ The result follows by rearranging the terms.
+*Proof.* First, let $v$ be an interior vertex. Suppose that there are $n$ triangles $t_1, \dots, t_n$ incident to $v$. The sum of all of their angles is $n \pi.$ The cone angle at $v$ is the sum of the angles of the triangles $t_i$ at $v.$ On the other hand, the sum of the dihedral angles of the edges $e_1, \dots, e_n$ incident to $v$ is the sum of all of the angles of $t_i$ *not* incident to $v$. Thus, $$\label{anglesum1}
+n \pi = \mbox{Cone angle at $v$} + \sum_{i=1}^n \delta(e_i).$$ The result follows by rearranging the terms.
 
-If $v$ is a boundary vertex, and there are $n$ faces incident to $v$, then there are $n+1$ edges, and equation [\[anglesum1\]](#anglesum1){reference-type="ref" reference="anglesum1"} becomes: $$\begin{equation}
-\label{anglesum2}
-n \pi = \mbox{boundary angle at $v$} + \sum_{i=1}^{n+1} \delta(e_i),
-\end{equation}$$ and the result follows by rearranging terms, as above. ◻
+If $v$ is a boundary vertex, and there are $n$ faces incident to $v$, then there are $n+1$ edges, and equation [\[anglesum1\]](#anglesum1){reference-type="ref" reference="anglesum1"} becomes: $$\label{anglesum2}
+n \pi = \mbox{boundary angle at $v$} + \sum_{i=1}^{n+1} \delta(e_i),$$ and the result follows by rearranging terms, as above. ◻
 :::
 
 ::: observation

@@ -7,10 +7,10 @@ section_number: null
 pages: 8-11
 source_pdf: 0605242v1.pdf
 source_sha256: 65fac7285e4a77f4
-text_source: latex
-latex_prose_ratio: 0.989
-latex_coverage_ratio: 0.996
 doc_brief: "N-Fold Integer Programming Jesús A. De Loera∗ Raymond Hemmecke † Shmuel Onn ‡ Robert Weismantel § — In this article we study a broad class of integer programming problem s in variable dimension."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 Consider the following family $\IP_A$ of integer programs in
 standard form, with arbitrary demand vector $b\in\Z^m$ and

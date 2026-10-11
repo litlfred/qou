@@ -8,103 +8,68 @@ pages: 4-7
 source_pdf: 2607.29018v1.pdf
 source_sha256: 789faa122dd32290
 doc_brief: "The Aldous property for normal Cayley graphs on symmetric groups — Aldous’ spectral gap conjecture states that the random walk and the interchange process on any connected graph have the same"
+text_source: latex
+latex_prose_ratio: 0.899
+latex_coverage_ratio: 0.665
 ---
-states that for any 2≤k≤n−2, Cay(S n,C(n,k)) has the Aldous property, thereby proving
-a conjecture in [26, Conjecture 1.4] and solving an open problem in [30]. (See [11, 16, 17, 26]
-for the proof of this conjecture whenk= 2,3,4,5 respectively.)
-In [30], Siemons and Zalesski conjectured that forn≥5 and 1≤r <k <nthe nonnormal
-Cayley graph Cay(Sn,C(n,k;r)) has the Aldous property. They proved in the same paper
-that this is true whenr=k−1, and the case whenk= 2,3 was established earlier in
-[12] and [16], respectively. In [24, Theorem 1.3], Li, Xia and Zhou settled this conjecture
-by showing that forn≥5,k≥4 and 1≤r < k < n, Cay(S n,C(n,k;r)) has the Aldous
-property except for (i) (n,k,r) = (6,5,1), or (ii)nis odd,k=n−1 and 1≤r < n
-2 . In [17],
-Huang, Huang and Cioab˘ a proved that most connected normal Cayley graphs onS n with
-n≥7 whose connection sets consist of permutations moving at most five points have the
-Aldous property. In [5], Cesi showed that the pancake graphP n has the Aldous property,
-and Chung and Tobin [9] generalized this result to a family of graphs containing all pancake
-graphs. The reader is referred to [25, Section 8] for more results on the Aldous property and
-the second largest eigenvalue of Cayley graphs.
-4
-1.2 Main results
-A subsetSofS n\{e}is called [27] anormal setinS n if it is the union of some conjugacy
-classes ofS n. Since inS n every element is conjugate to its inverse element, a Cayley graph
-Cay(Sn,S) onS n is normal if and only ifSis a normal set inS n. Clearly, for a normal set
-SinS n, the set
-Sc = (Sn\{e})\S
-is also a normal set inS n, and moreover Cay(Sn,S) and Cay(Sn,Sc) are complements of each
-other. Throughout the paper, we denote byK n the complete graph of ordern, byK m,n the
-complete bipartite graph withmandnvertices in the two partite sets respectively, and by
-tΓ the vertex-disjoint union oftcopies of a graph Γ. The first main result in this paper is as
-follows.
-Theorem 1.2.Letn≥5, and letSbe a nonempty normal set inS n withS̸=S n\{e}.
-(a)If neitherSnorS c is equal toA n\{e}, then at most one ofCay(S n,S)andCay(S n,Sc)
-has the Aldous property.
-(b)If eitherSorS c is equal toAn\{e}, then one ofCay(S n,S)andCay(S n,Sc)is isomorphic
-to2K n!/2 and the other toK n!/2,n!/2, and moreover both graphs have the Aldous property.
-Theorem 1.2 implies that at most half of all normal Cayley graphs onSn exhibit the Aldous
-property. This is true no matter whether isomorphism is taken into consideration because
-two normal Cayley graphs are isomorphic if and only if their complements are isomorphic.
-The second main result in this paper, Theorem 1.3 below, settles Problem 1.1 for suffi-
-ciently largenand normal Cayley graphs whose connection sets consist of permutations with
-support size between 2 andn−2. For a subsetS⊆S n, denote byO(S) andE(S) the sets
-of odd and even permutations inS, respectively.
-Theorem 1.3.There exists a positive integerN≥5such that, for everyn≥Nand every
-nonempty normal setSinS n satisfying2≤|supp(σ)|≤n−2for allσ∈S, the following
-statements hold:
-(a)ifE(S) =∅orO(S) =∅, thenCay(S n,S)has the Aldous property;
-(b)ifE(S)̸=∅andO(S)̸=∅, thenCay(S n,S)has the Aldous property if and only if
-∑
-σ∈S
-|fix(σ)|≥n|E(S)|−(n−2)|O(S)|; (2)
-moreover, ifCay(S n,S)does not have the Aldous property, then its strictly second largest
-eigenvalue is attained by the sign representation ofS n.
-If 2≤|supp(σ)|≤n−2 for allσ∈S, then ∑
-σ∈S|fix(σ)|≥2|S|= 2|E(S)|+ 2|O(S)|, and
-hence (2) is satisfied whenn|O(S)|≥(n−2)|E(S)|. So we obtain the following corollary of
-Theorem 1.3 immediately.
-5
-Corollary 1.4.There exists a positive integerN≥5such that, for everyn≥Nand
-every nonempty normal setSinS n satisfying2≤ |supp(σ)| ≤n−2for allσ∈S, if
-n|O(S)|≥(n−2)|E(S)|, thenCay(S n,S)has the Aldous property.
-Another corollary of Theorem 1.3 is the following explicit formula for the second largest
-eigenvalue of normal Cayley graphs on the alternating groupA n.
-Corollary 1.5.There exists a positive integerN≥5such that, for everyn≥Nand every
-nonempty normal setSinS n, ifS⊆A n and2≤|supp(σ)|≤n−2for allσ∈S, then the
-strictly second largest eigenvalue ofCay(S n,S)is given by
-1
-n−1
-(∑
-σ∈S
-|fix(σ)|−|S|
-)
-,
-and moreoverCay(Sn,S)is disconnected with two components each isomorphic toCay(A n,S).
-For a subsetS⊆S n, let
-AS =S∩Supp n({2,3,...,n−2}), B S =S∩Supp n(n−1), C S =S∩Supp n(n) (3)
-and
-AS = Suppn({2,3,...,n−2})\A S, BS = Suppn(n−1)\B S, CS = Suppn(n)\C S.(4)
-The following theorem classifies all normal Cayley graphs Cay(S n,S) that have the Aldous
-property under an easy-to-check condition.
-Theorem 1.6.Letn≥5, and letSbe a nonempty normal set inS n. If
-∑
-σ∈AS
-|fix(σ)|≤|A S|+|C S|+n−1,(5)
-thenCay(S n,S)has the Aldous property if and only ifS=S n\{e},S n\An orA n\{e}, or,
-equivalently,Cay(S n,S) ∼=Kn!,Kn!/2,n!/2 or2K n!/2, respectively.
-Note that condition (5) holds only if eitherA S is empty orC S is nonempty. Theorem 1.6
-implies the following corollary.
-Corollary 1.7.Letn≥5, and letSbe a nonempty normal set inS n. ThenCay(S n,S)does
-not have the Aldous property if one of the following conditions holds:
-(a)S⊆Supp n({n−1,n});
-(b)| AS|−| CS|+ 2(n−1)≥0andS /∈{S n\{e},S n\An,An\{e}};
-(c) Suppn(n)⊆SandS̸=S n\{e}.
-6
-In [22, Problem 1.2], Li, Xia and Zhou ask for a necessary and sufficient condition for
-Cay(Sn,Suppn(I)) with{n} ⊂I⊆ {2,3,...,n−2,n}to have the Aldous property for
-sufficiently largen. Solving this problem, part (c) of Corollary 1.7 implies that such a graph
-Cay(Sn,Suppn(I)) does not have the Aldous property for anyn≥5.
-Theorem 1.3 and Corollary 1.7 together resolve Problem 1.1 for all normal Cayley graphs
-Cay(Sn,S) with sufficiently largenexcept whenS∩Supp n({2,3,...,n−2})̸=∅,S∩
-Suppn({n−1,n})̸=∅, and Supp n(n)̸⊆S.
-The rest of the paper is organized as follows. The next section is a quick review of repre-
+A subset $S$ of $S_n \setminus \{e\}$ is called [@PP] a *normal set* in $S_n$ if it is the union of some conjugacy classes of $S_n$. Since in $S_n$ every element is conjugate to its inverse element, a Cayley graph $\mathrm{Cay}(S_n,S)$ on $S_n$ is normal if and only if $S$ is a normal set in $S_n$. Clearly, for a normal set $S$ in $S_n$, the set $$S^c=(S_n\setminus\{e\})\setminus S$$ is also a normal set in $S_n$, and moreover $\mathrm{Cay}(S_n,S)$ and $\mathrm{Cay}(S_n,S^c)$ are complements of each other. Throughout the paper, we denote by $K_n$ the complete graph of order $n$, by $K_{m,n}$ the complete bipartite graph with $m$ and $n$ vertices in the two partite sets respectively, and by $t\Gamma$ the vertex-disjoint union of $t$ copies of a graph $\Gamma$. The first main result in this paper is as follows.
+
+::: thm
+[]{#thm:complement label="thm:complement"} Let $n \ge 5$, and let $S$ be a nonempty normal set in $S_n$ with $S\neq S_n\setminus\{e\}$.
+
+1.  If neither $S$ nor $S^c$ is equal to $A_n\setminus\{e\}$, then at most one of $\mathrm{Cay}(S_n,S)$ and $\mathrm{Cay}(S_n,S^c)$ has the Aldous property.
+
+2.  If either $S$ or $S^c$ is equal to $A_n\setminus\{e\}$, then one of $\mathrm{Cay}(S_n, S)$ and $\mathrm{Cay}(S_n, S^c)$ is isomorphic to $2K_{n!/2}$ and the other to $K_{n!/2,n!/2}$, and moreover both graphs have the Aldous property.
+:::
+
+Theorem [\[thm:complement\]](#thm:complement){reference-type="ref" reference="thm:complement"} implies that at most half of all normal Cayley graphs on $S_n$ exhibit the Aldous property. This is true no matter whether isomorphism is taken into consideration because two normal Cayley graphs are isomorphic if and only if their complements are isomorphic.
+
+The second main result in this paper, Theorem [\[thm:main1\]](#thm:main1){reference-type="ref" reference="thm:main1"} below, settles Problem [\[prob\]](#prob){reference-type="ref" reference="prob"} for sufficiently large $n$ and normal Cayley graphs whose connection sets consist of permutations with support size between $2$ and $n-2$. For a subset $S\subseteq S_n$, denote by $O(S)$ and $E(S)$ the sets of odd and even permutations in $S$, respectively.
+
+::: thm
+[]{#thm:main1 label="thm:main1"} There exists a positive integer $N \geq 5$ such that, for every $n\ge N$ and every nonempty normal set $S$ in $S_n$ satisfying $2 \le |\mathrm{supp}(\sigma)| \le n-2$ for all $\sigma\in S$, the following statements hold:
+
+1.  if $E(S)=\emptyset$ or $O(S)=\emptyset$, then $\mathrm{Cay}(S_n,S)$ has the Aldous property;
+
+2.  if $E(S)\ne\emptyset$ and $O(S)\ne\emptyset$, then $\mathrm{Cay}(S_n,S)$ has the Aldous property if and only if $$\label{eq:fix}
+    \sum_{\sigma\in S} |\mathrm{fix}(\sigma)| \ge n|E(S)|-(n-2)|O(S)|;$$ moreover, if $\mathrm{Cay}(S_n,S)$ does not have the Aldous property, then its strictly second largest eigenvalue is attained by the sign representation of $S_n$.
+:::
+
+If $2 \le |\mathrm{supp}(\sigma)| \le n-2$ for all $\sigma\in S$, then $\sum_{\sigma\in S} |\mathrm{fix}(\sigma)| \geq 2|S| = 2|E(S)|+2|O(S)|$, and hence [\[eq:fix\]](#eq:fix){reference-type="eqref" reference="eq:fix"} is satisfied when $n|O(S)| \ge (n-2)|E(S)|$. So we obtain the following corollary of Theorem [\[thm:main1\]](#thm:main1){reference-type="ref" reference="thm:main1"} immediately.
+
+::: cor
+[]{#odd-even label="odd-even"} There exists a positive integer $N \ge 5$ such that, for every $n \ge N$ and every nonempty normal set $S$ in $S_n$ satisfying $2 \le |\mathrm{supp}(\sigma)| \le n-2$ for all $\sigma \in S$, if $n|O(S)| \ge (n-2)|E(S)|$, then $\mathrm{Cay}(S_n, S)$ has the Aldous property.
+:::
+
+Another corollary of Theorem [\[thm:main1\]](#thm:main1){reference-type="ref" reference="thm:main1"} is the following explicit formula for the second largest eigenvalue of normal Cayley graphs on the alternating group $A_n$.
+
+::: cor
+[]{#An-sec-eigen label="An-sec-eigen"} There exists a positive integer $N \ge 5$ such that, for every $n \ge N$ and every nonempty normal set $S$ in $S_n$, if $S \subseteq A_n$ and $2 \le |\mathrm{supp}(\sigma)| \le n-2$ for all $\sigma \in S$, then the strictly second largest eigenvalue of $\mathrm{Cay}(S_n, S)$ is given by $$\frac{1}{n-1} \big(\sum_{\sigma \in S} |\mathrm{fix}(\sigma)| - |S| \big),$$ and moreover $\mathrm{Cay}(S_n, S)$ is disconnected with two components each isomorphic to $\mathrm{Cay}(A_n, S)$.
+:::
+
+For a subset $S \subseteq S_n$, let $$\label{eq:ABCS}
+A_S = S \cap \mathrm{Supp}_n(\{2,3,\ldots,n-2\}),\; B_S = S \cap \mathrm{Supp}_n(n-1),\; C_S = S \cap \mathrm{Supp}_n(n)$$ and $$\label{eq:barABCS}
+\overline{A}_S = \mathrm{Supp}_n(\{2,3,\ldots,n-2\}) \setminus A_S,\; \overline{B}_S = \mathrm{Supp}_n(n-1)\setminus B_S,\; \overline{C}_S = \mathrm{Supp}_n(n)\setminus C_S.$$ The following theorem classifies all normal Cayley graphs $\mathrm{Cay}(S_n, S)$ that have the Aldous property under an easy-to-check condition.
+
+::: thm
+[]{#thm:main2 label="thm:main2"} Let $n\ge 5$, and let $S$ be a nonempty normal set in $S_n$. If $$\label{eq:ABC}
+\sum_{\sigma\in A_S} |\mathrm{fix}(\sigma)| \le |A_S|+|C_S|+n-1,$$ then $\mathrm{Cay}(S_n, S)$ has the Aldous property if and only if $S = S_n\setminus\{e\}, S_n\setminus A_n$ or $A_n\setminus\{e\}$, or, equivalently, $\mathrm{Cay}(S_n,S)\cong K_{n!}, K_{n!/2,n!/2}$ or $2K_{n!/2}$, respectively.
+:::
+
+Note that condition [\[eq:ABC\]](#eq:ABC){reference-type="eqref" reference="eq:ABC"} holds only if either $A_S$ is empty or $C_S$ is nonempty. Theorem [\[thm:main2\]](#thm:main2){reference-type="ref" reference="thm:main2"} implies the following corollary.
+
+::: cor
+[]{#cor:main2 label="cor:main2"} Let $n\ge 5$, and let $S$ be a nonempty normal set in $S_n$. Then $\mathrm{Cay}(S_n,S)$ does not have the Aldous property if one of the following conditions holds:
+
+1.  $S \subseteq \mathrm{Supp}_n(\{n-1,n\})$;
+
+2.  $|\overline{A}_S|-|\overline{C}_S|+2(n-1) \ge 0$ and $S \notin \{S_n\setminus\{e\}, S_n\setminus A_n, A_n\setminus\{e\}\}$;
+
+3.  $\mathrm{Supp}_n(n)\subseteq S$ and $S \neq S_n\setminus\{e\}$.
+:::
+
+In [@LXZ Problem 1.2], Li, Xia and Zhou ask for a necessary and sufficient condition for $\mathrm{Cay}(S_n, \mathrm{Supp}_n(I))$ with $\{n\} \subset I \subseteq \{2,3,\ldots,n-2,n\}$ to have the Aldous property for sufficiently large $n$. Solving this problem, part (c) of Corollary [\[cor:main2\]](#cor:main2){reference-type="ref" reference="cor:main2"} implies that such a graph $\mathrm{Cay}(S_n, \mathrm{Supp}_n(I))$ does not have the Aldous property for any $n \geq 5$.
+
+Theorem [\[thm:main1\]](#thm:main1){reference-type="ref" reference="thm:main1"} and Corollary [\[cor:main2\]](#cor:main2){reference-type="ref" reference="cor:main2"} together resolve Problem [\[prob\]](#prob){reference-type="ref" reference="prob"} for all normal Cayley graphs $\mathrm{Cay}(S_n, S)$ with sufficiently large $n$ except when $S \cap \mathrm{Supp}_n(\{2, 3, \dots, n-2\}) \neq \emptyset$, $S \cap \mathrm{Supp}_n(\{n-1, n\}) \neq \emptyset$, and $\mathrm{Supp}_n(n) \not\subseteq S$.
+
+The rest of the paper is organized as follows. The next section is a quick review of representation theory preliminaries. We prove Theorem [\[thm:complement\]](#thm:complement){reference-type="ref" reference="thm:complement"} in Section [\[sec:complements\]](#sec:complements){reference-type="ref" reference="sec:complements"} and establish Theorem [\[thm:main1\]](#thm:main1){reference-type="ref" reference="thm:main1"} and Corollary [\[An-sec-eigen\]](#An-sec-eigen){reference-type="ref" reference="An-sec-eigen"} in Section [\[supp-small\]](#supp-small){reference-type="ref" reference="supp-small"}. To prove Theorem [\[thm:main2\]](#thm:main2){reference-type="ref" reference="thm:main2"}, we first need to determine all normal Cayley graphs on $S_n$ that are line graphs (see Theorem [\[class-linegraph\]](#class-linegraph){reference-type="ref" reference="class-linegraph"}). Using this and the classification [@Stanic2010] of connected regular graphs with second largest eigenvalue at most $1$, we obtain a classification of all normal Cayley graphs on $S_n$ whose strictly second largest eigenvalue is at most $1$ (see Theorem [\[sn-cay-sec-1\]](#sn-cay-sec-1){reference-type="ref" reference="sn-cay-sec-1"}). With the help of this classification, which is of interest for its own sake, we prove Theorem [\[thm:main2\]](#thm:main2){reference-type="ref" reference="thm:main2"} and Corollary [\[cor:main2\]](#cor:main2){reference-type="ref" reference="cor:main2"} in Section [\[supp-large\]](#supp-large){reference-type="ref" reference="supp-large"}.

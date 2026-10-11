@@ -7,12 +7,13 @@ section_number: 1.5
 pages: 40-42
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.973
-latex_coverage_ratio: 0.832
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 Groups acting of spaces are so important in geometry, that they are sometimes used as a definition of  ``geometry'' itself.
+
 
 \subsection{Definitions}
 The \emph{action} of a group $G$ on a topological space $X$ is a homomorphism 
@@ -51,6 +52,7 @@ $ G \times X \to X \times X$ that sends $(g,x)$ to $(g(x), x)$ is proper.
 \end{itemize}
 \end{ex}
 
+
 \subsection{Isometry group}
 We now want to consider the case where a group $G$ acts by isometries on a Riemannian manifold $M$. In this case we have a homomorphism
 $$G \to \Iso(M)$$
@@ -77,6 +79,7 @@ The hard part of the Myers -- Steenrod Theorem is to endow $\Iso(M)$ with a Lie 
 
 We denote by $\Iso^+(M)$ the subgroup of $\Iso(M)$ consisting of all the orientation-preserving isometries. It has index one or two in $\Iso(M)$.
 
+
 \subsection{Discrete groups}
 Let $M$ be a Riemannian manifold. The group $\Iso(M)$ is a Lie group, so it makes sense to consider discrete subgroups.
 
@@ -95,6 +98,7 @@ Let $\Gamma <\Iso(M)$ act freely and properly discontinuously on $M$. There is a
 \begin{proof}
 Let $U\subset M/_\Gamma$ be a well-covered set: we have $\pi^{-1}(U) = \sqcup_{i\in I} U_i$ and $\pi|_{U_i}\colon U_i \to U$ is a homeomorphism. Pick an $i\in I$ and assign to $U$ the smooth and Riemannian structure of $U_i$ transported along $\pi$. The resulting structure on $U$ does not depend on $i$ since the open sets $U_i$ are related by isometries in $\Gamma$. We get a Riemannian structure on $M/_\Gamma$, determined by the fact that $\pi$ is a local isometry.
 \end{proof}
+
 
 \subsection{Measures} \label{measure:descends:subsection}
 The case where a group $G$ acts by preserving some measure instead of a Riemannian metric is also very interesting, although quite different. This situation will occur only in Chapter \ref{automorfismi:chapter}.

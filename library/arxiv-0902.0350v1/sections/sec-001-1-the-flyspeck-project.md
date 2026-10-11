@@ -7,13 +7,14 @@ section_number: 1
 pages: 3-5
 source_pdf: 0902.0350v1.pdf
 source_sha256: 4591687132c93973
-text_source: latex
-latex_prose_ratio: 0.964
-latex_coverage_ratio: 0.989
 doc_brief: "A REVISION OF THE PROOFOF THE KEPLER CONJECTURE — The Kepler conjecture asserts that no packing of congruent balls in three-dimensional Euclidean space has density greater than that of the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 The purpose of a long-term project, called the Flyspeck project, is to give a formal proof of the Kepler conjecture.  This section makes some preliminary remarks about
 formal proofs and gives a general overview of the current status of this project.
+
 
 
 \subsection{Formal proof}
@@ -37,6 +38,7 @@ In general, a formal proof of a computer verification can be viewed
 as a formal proof of the correctness of the computer code used in the
 verification.  That is, the formal proof certifies that the the code
 is a bug-free implementation of its specification.
+
 
 
 

@@ -7,13 +7,14 @@ section_number: 8.4
 pages: 266-277
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.96
-latex_coverage_ratio: 0.83
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{surface:diffeomorphisms:section}
 We have discovered that Thurston's compactification $\overline{\Teich(S_g)}$ of the Teichm\"uller space is homeomorphic to a closed disc. The mapping class group $\MCG(S_g)$ acts on it naturally. We can now apply Brouwer's fixed point theorem to every element $\varphi \in \MCG(S_g)$, and characterise $\varphi$ according to the position of its fixed points, much similarly as we did for the isometries of $\matH^n$.
+
 
 \subsection{The torus case}
 As usual, the flat torus case is very instructive because everything can be written explicitly. 
@@ -23,6 +24,7 @@ We know from Proposition \ref{toro:azione:prop} that $\MCG(T)$ acts on $\Teich(T
 As an integral matrix, the isometry $A$ has also more properties that are easy to check: if it is elliptic, it has finite order because $\PSLZ$ is discrete; if it is parabolic, it is conjugate in $\PSLZ$ to a matrix $\matr 1 n 0 1$ for some $n\neq 0$ and is thus the $n$-th power of a Dehn twist; if it is hyperbolic, it is conjugate in $\PSLR$ to a diagonal matrix $\matr \lambda 0 0 {\lambda^{-1}}$ for some $\lambda >1$, with some basis of eigenvectors $v,w$. The two foliations of $\matR^2$ into lines parallel to $v$ or $w$ are both preserved by $A$ and descend to foliations in $T = \matR^2/_{\matZ^2}$ that are preserved by $A$. The two foliations are both irrational (because $\lambda$ is), that is every leaf is dense in $T$, and $A$ stretches one foliation by $\lambda$ and contracts the other by $1/\lambda$. One such diffeomorphism of $T$ is called \emph{Anosov}.\index{Anosov diffeomorphism}
 
 Summing up, the non-trivial elements in $\MCG(T)$ either have finite order, or preserve a simple closed curve, or are Anosov. We now define an analogous trichotomy for the elements in $\MCG(S_g)$ when $g\geqslant 2$, where the foliations are replaced by measured geodesic laminations, and the measure is there to encode stretchings and contractions.
+
 
 \subsection{The trichotomy}
 Let $S_g$ have genus $g\geqslant 2$. The mapping class group $\MCG(S_g)$ acts naturally on the whole space $\calC$ of currents and in particular on the compactification $\overline{\Teich(S_g)} \cong D^{6g-6}$ of the Teichm\"uller space.
@@ -35,6 +37,7 @@ Let $\varphi \in \MCG(S_g)$ be a non-trivial element. By Brouwer's fixed point t
 \end{enumerate}
 
 We now analyse the three cases individually.\index{finite-order mapping class}\index{reducible mapping class}\index{pseudo-Anosov mapping class}
+
 
 \subsection{Finite order elements}
 We must first explain the terminology.
@@ -62,11 +65,13 @@ If $\varphi\in\MCG(S_g)$ has order $k$, it may be represented by a diffeomorphis
 The class $\varphi$ has a representative $\varphi\colon S_g \to S_g$ that is an isometry for some hyperbolic metric; the isometry $\varphi^k$ is isotopic to the identity and is hence the identity by Corollary \ref{isometries:not:homotopic:cor}.
 \end{proof}
 
+
 \subsection{Reducible elements}
 We must explain the terminology also in this case.
 If $\varphi$ fixes a multicurve $\mu$, one can cut $S_g$ along $\mu$ and look at the restriction of $\varphi$ to the resulting pieces: after extending all the theory to surfaces with boundary (that we have not done here for simplicity), we can hence study inductively each piece, and this explains the word \emph{reducible}.
 
 The cases (1) and (2) are not exclusive: there are isometries of hyperbolic surfaces that preserve some multicurve. On the other hand, there are finite order elements that are not reducible (exercise) and reducible mapping classes that are not of finite order: for instance, Dehn twists. 
+
 
 \subsection{The action on $\calML$}
 The mapping class group $\MCG(S_g)$ of $S_g$ acts on the currents space $\calC$ and hence on the ``light cone'' subspace $\calML$ of all measured geodesic laminations, which contains the space $\calM$ of multicurves. 
@@ -98,6 +103,7 @@ The two properties just listed together easily imply that, since $l$ is fixed, t
 \end{proof}
 
 The previous proposition shows in particular that pseudo-Anosov elements act freely on $\calML\setminus \{0\}$. We now investigate more closely these mysterious mapping classes.
+
 
 \subsection{Pseudo-Anosov elements}
 A pseudo-Anosov element $\varphi$ is by definition neither finite order nor reducible. We have just seen that $\varphi$ acts freely on $\calML\setminus \{0\}$, but this does not prevent it from having some fixed points in $\PML$; indeed we now show that there are two fixed points there, one attracting and the other repelling, so that $\varphi$ looks very much like a hyperbolic isometry on the hyperbolic space.
@@ -153,6 +159,7 @@ $$i\big(\varphi^k(\alpha), \mu\big) = i\big(\alpha, \varphi^{-k}(\mu)\big) =
 as $k\to +\infty$. Therefore $\varphi(\alpha) \neq \alpha$ unless $i(\alpha, \mu)=0$, which is excluded since $\mu$ is full.
 \end{proof}
 
+
 \subsection{Examples}
 We now construct plenty of pseudo-Anosov diffeomorphisms. We need a bit of simple linear algebra.
 
@@ -194,6 +201,7 @@ where $I$ is the identity and $D_i$ has 1 on the $i$-th entry of the diagonal an
 The positive eigenvector $v$ determines an element $\mu \in \ML$ such that $\varphi(\mu) = \lambda \mu$. We leave to the reader the proof that $\mu$ is full, 
 and we conclude using Proposition \ref{pA:converse:prop}.
 \end{proof}
+
 
 \subsection{References}
 The material contained in this chapter is well known to experts, but it is hard to find a source in the literature that contains everything in a fully self-contained way. The whole theory was presented by Thurston in a very nice and readable paper \cite{Th_diff} that however contained no proof. The most complete book on the subject is then Fathi -- Laudenbach -- Po\'enaru \cite{FLP}, and this is also the main source that we have used for writing this chapter. 

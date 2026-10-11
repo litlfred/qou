@@ -8,6 +8,10 @@ pages: 2-2
 source_pdf: 1002.0126v1.pdf
 source_sha256: ea218a0586a13490
 doc_brief: "An introduction to the volume conjecture — This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-In this section I describe how we can deﬁne a link invariant by using a Ya ng–
-Baxter operator.
+[]{#sec:YB label="sec:YB"}
+
+In this section I describe how we can define a link invariant by using a Yang--Baxter operator.

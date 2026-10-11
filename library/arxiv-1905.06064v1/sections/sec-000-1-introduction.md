@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-4
 source_pdf: 1905.06064v1.pdf
 source_sha256: 3ffe25c8ee62779d
-text_source: latex
-latex_prose_ratio: 0.967
-latex_coverage_ratio: 0.976
 doc_brief: "ON O’HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS — We develop a regularity theory for extremal knots of scale invariant knot ener- gies deﬁned by J. O’hara in 1991."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 For $\alpha p \geq 4$, $p \geq 2$, the O'hara knot energies\footnote{In this paper we divert from the usual notation of the literature by writing $\frac{p}{2}$ instead of $p$ for the simple reason that the case $p=2$ (in the knot literature: $p=1$) corresponds to the Hilbert-space case of an $L^2$-energy.} $\mathcal{O}^{\alpha,p}$ named after their inventor J.~O'hara \cite{OH91,OH92} are defined for closed Lipschitz curves $\sol: \R/\Z \to \R^3$ from the circle $\R/\Z$ into the three-dimensional space $\R^3$ by
 \begin{equation}\label{eq:oharaenergiesnew}
@@ -49,7 +49,8 @@ If $\alpha p = 4$, $p\geq 2$, then any critical knot $\sol$ of $\mathcal{O}^{\al
 \end{mtheorem}
 
 Before we explain the main ideas behind the proof of Theorem~\ref{th:regularity} let us gather further facts about O'hara energies.
-\subsection*{Known results for O'hara energies}
+
+\subsection{Known results for O'hara energies}
 For $\alpha p \geq 4$, $p \geq 2$, circles are the global minimizers of all O'hara energies among curves of fixed length \cite{Abrams2003}. Regarding minimizers in a given knot class: for the scaling-dependent case $\alpha p > 4$, O'hara \cite{OH91,OH92} proved the existence of minimizers in any knot class. His argument relies on the fact that for $\alpha p > 4$ the knot energies are coercive on the space of embedded $C^{1, \beta}$ curves and lower semi-continuous with respect to $C^1$ convergence. This can nowadays be derived from the classification of curves of finite energy in \cite{Blatt12}: curves with a uniform bound on $\mathcal O^{\alpha,p}$ are uniformly bounded in the fractional Sobolev space $W^{1+\frac{\alpha}{2}-\frac{1}{p},p}$ which continuously embeds into $C^{1+\beta}$ for $\beta = \frac \alpha 2 -  \frac 2 p >0$, if $\alpha p > 4$. Observe that this embedding fails if $\alpha p = 4$.
 
 Adapting arguments of O'hara and Freedman, He, and Wang, the existence of symmetric but non-minimizing critical points was proven in  \cite{Gv18,BGRv19} for both, the non scale-invariant case $\alpha p > 4$ and the M\"obius energy $(\alpha,p) = (2,2)$ (in that case only in prime knot classes). This extends previous work of Kim and Kusner on torus knots \cite{Kim1993} and of Cantarella, Fu, Mastin, Royal on symmetric critical knots for the rope-length \cite{Cantarella2014}.
@@ -58,7 +59,8 @@ For $\alpha > 2$, $p=2$ it was proven in \cite{BR12} that critical knots are $C^
 
 In a series of papers Ishizeki and Nagasawa \cite{IshizekiNagasawa, IshizekiNagasawaII,Ishizeki16, IshizekiNagasawaIII} showed and analyzed various decomposition results for the M\"obius energy and more generally O'hara energies, see also~\cite{N18}.
 
-\subsection*{Main ideas behind Theorem~\ref{th:regularity}}
+
+\subsection{Main ideas behind Theorem~\ref{th:regularity}}
 A first na\"ive attempt of proving Theorem~\ref{th:regularity} would be to try to extend the geometric arguments in \cite{Freedman1994}. This attempt is thwarted, however, because their proof crucially exploits the M\"obius invariance of the energy $\mathcal{O}^{2,2}$. But this means that there is no hope of extending these arguments: indeed in Section~\ref{s:distortion} we present strong numerical evidence for the following conjecture.
 
 \begin{conjecture}\label{conj}
@@ -103,14 +105,16 @@ A minor technical adaptation of the arguments in this article leads  to the corr
 \end{equation}
 \end{remark}
 
-\subsection*{Notation}
+
+\subsection{Notation}
 We will use fairly standard notation: $\iv$ will denote intervals in $\R$. 
 In estimates we write $a \aleq b$ if $a \leq C\, b$ for some multiplicative constant $C$. We write $a \ageq b$ if $b\aleq a$, and $a \aeq b$ if $a \aleq b$ and $b \aleq a$.
 
 We work with two types of critical points of energy functionals, which for the convenience of the reader we label differently: we will denote as \emph{critical knots} the critical (i.e. stationary) points $\sol: \R / \Z \to \R^3$ of the O'hara energy $\mathcal{O}^{\alpha,p}$. As \emph{critical maps} we will denote the critical points $\solu: \R / \Z \to \S^2$ of the (yet to be defined) energy functional $\mathcal{E}^{\alpha,p}$.
 
 
-\subsection*{Acknowledgments.}
+
+\subsection{Acknowledgments.}
 
 Financial support is acknowledged as follows
 \begin{itemize}

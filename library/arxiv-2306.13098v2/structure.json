@@ -271,8 +271,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Article.tex",
-   "tex_sections": 9,
-   "overlaid": 4,
+   "tex_sections": 18,
+   "overlaid": 10,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -282,47 +282,58 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.902,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-normed-division-algebras",
      "title": "Normed division algebras",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.883,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.965,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-one-generation-of-electrocolor-states-from-co",
      "title": "One generation of electrocolor states from CO",
-     "prose_ratio": 0.974,
-     "coverage_ratio": 0.982,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-the-cayley-dickson-construction-and-the-algebra",
      "title": "The Cayley-Dickson construction and the algebra of sedenions",
-     "prose_ratio": 0.369,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-octonion-subalgebras-inside-the-sedenions",
      "title": "Octonion subalgebras inside the sedenions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-automorphisms-of-sedenions",
      "title": "Automorphisms of sedenions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-why-not-sedenions",
      "title": "Why not sedenions?",
-     "result": "no matching \\section"
+     "prose_ratio": 0.763,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-one-generation-of-electrocolor-states-from-cs",
@@ -333,26 +344,32 @@
     {
      "id": "sec-008-generating-two-additional-generations-from-s3-au",
      "title": "Generating two additional generations from S3 automorphisms",
-     "result": "no matching \\section"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-linear-dependence-of-minimal-ideal-states",
      "title": "Linear dependence of minimal ideal states",
-     "result": "no matching \\section"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-outlook",
      "title": "Outlook",
-     "prose_ratio": 0.924,
-     "coverage_ratio": 0.994,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-011-discussion",
      "title": "Discussion",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.385,
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.408,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     }
    ]

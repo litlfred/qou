@@ -8,39 +8,67 @@ pages: 3-4
 source_pdf: 2512.02998v1.pdf
 source_sha256: 146ff93cd70baad4
 doc_brief: "STABILITY OFKNOT EQUIVALENCE AT LOW REGULARITY, AND SYMMETRIC CRITICAL KNOTS FOR THEMÖBIUS ENERGY — We present sufficient criteria for the equivalence of tame knots at low regularity."
+text_source: latex
+latex_prose_ratio: 0.955
+latex_coverage_ratio: 0.844
 ---
-bination with part (iii) of Theorem B we obtain a simple sufficient geometric criterion for knot
-equivalence.
-Corollary 1.3(Knot equivalence via local distortion).Two tame knotsγ i∈C 0(R/Z,R 3)with
-local distortionδ(γ i(R/Z),rγi)<g 3 at scalesr γi >0fori= 1,2, anddist H(γ1(R/Z),γ 2(R/Z))
-< 1
-4 min{rγ1,rγ2}, are equivalent.
-4 SIMON BLATT, ALEXANDRA GILSBACH, PHILIPP REITER, AND HEIKO VON DER MOSEL
-Notice that a small Hausdorff-distance, even an arbitrarily smallL ∞-distance∥γ 1−γ 2∥L∞
-alonedoes not guarantee knot equivalence: One can insert small knotted arcs at any scale to
-produce highly complex knots arbitrarily close to the round circle. Essential is the combination
-of controlled local distortion at some scales and the Hausdorff-distance bounded in terms of
-these scales. With Corollary 1.3 we can prove the following stability of knot equivalence in the
+As an immediate consequence of Theorem~\ref{thm:isomorphic} in combination with
+part (iii) of Theorem~\ref{thm:gordon-luecke} we obtain a simple
+sufficient geometric criterion for knot equivalence.
+\begin{corollary}[Knot equivalence via local distortion]
+\label{cor:equiv-knots}
+Two tame knots $\g_i\in C^0(\R/\Z,\R^3)$ with local 
+distortion 
+ $\delta(\g_i(\R/\Z),r_{\g_i})<g_3$
+at scales $r_{\g_i}>0$
+for $i=1,2$, and
+$\dist_{\HH}(\g_1(\R/\Z),\g_2(\R/\Z))$
+$<\frac 14 \min\{r_{\g_1},r_{\g_2}\}$, are equivalent.
+\end{corollary}
+
+Notice that a small Hausdorff-distance, even an arbitrarily
+small $L^\infty$-distance $\|\g_1-\g_2\|_{L^\infty}$
+\emph{alone} does not guarantee knot equivalence:
+One can insert small knotted arcs at any scale to produce highly complex
+knots arbitrarily close to the round circle. Essential 
+is the combination of controlled local
+distortion at some scales and  
+the Hausdorff-distance bounded in terms of these scales.
+With Corollary \ref{cor:equiv-knots} we can prove 
+the following stability of knot equivalence in the 
 Lipschitz category.
-Corollary 1.4(Lipschitz stability of knot equivalence).Letγ:R/Z→R 3 be an arclength
-parametrized tame knot with local distortionδ(γ(R/Z),r γ)< g3 at scaler γ >0. Then for all
-h∈C 0,1(R/Z,R 3)there existsϵ γ,h >0such thatγ ϵ :=γ+ϵhis an immersed knot equivalent
-toγfor all|ϵ|≤ϵ γ,h.
-Note that Lipschitz continuous curves are differentiable a.e., and we call such curvesimmersed
-ifv γ := essinfu∈R/Z|γ′(u)|>0.
-ForC 1-knotsγone has, of course,δ(γ(R/Z),r)→1 asr→0, so that one finds a scale
-rγ sufficiently small so thatγhas local distortion strictly belowg 3. In fact, this observation
-implies a weaker version of Theorem A where ambient isotopy is replaced by knot equivalence.
-But we will prove here that a fractional Sobolev regularity (belowC 1) suffices, which leads to
-the following fractional stability result for knot equivalence.
-Corollary 1.5(Fractional stability of knot equivalence).For any arclength parametrized knot
-γ∈W
-3
-2,2(R/Z,R 3)there existsϵ γ >0such that every arclength parametrized curveη∈
-Bϵγ(γ)⊂W
-3
-2,2(R/Z,R 3)is a knot equivalent toγ.
-The preceding statement can be shown to hold true also ifγandηare only immersed and
-not necessarily arclength parametrized, but we will not discuss the details here. Open at this
-point, however, is if the bound on local distortion in Corollaries 1.3 and 1.4 already implies
-tameness of the knots, or some improved regularity.
+
+
+\begin{corollary}[Lipschitz stability of knot equivalence]\label{cor:lipschitz-stability}
+Let $\g:\R/\Z\to\R^3$ be an arclength parametrized tame 
+knot with 
+local distortion $\delta(\g(\R/\Z),r_\g)< g_3$
+at scale $r_\g>0$. Then for all $h\in C^{0,1}(\R/\Z,\R^3)$
+there exists $\epsilon_{\g,h}>0$ such that $\g_\epsilon:=\g+\epsilon h$ is
+an immersed knot equivalent to $\g$ for all $|\epsilon| \le \epsilon_{\g,h}$.
+\end{corollary}
+Note that Lipschitz continuous curves are differentiable a.e., and we call such curves
+\emph{immersed} if $v_\g:=\essinf_{u\in\R/\Z}|\g'(u)|>0$.
+
+For $C^1$-knots $\g$ one has, of course, $\delta(\g(\R/\Z),r)\to 1 $ as $r\to 0$, so that
+one finds a scale $r_\g$ sufficiently small so that $\g$ has 
+local distortion strictly below $g_3$.
+In fact, this observation implies a weaker version of Theorem~\ref{thm:C1-stability} where ambient isotopy is replaced by knot equivalence.
+But we will prove here
+that a fractional Sobolev regularity (below $C^1$) suffices, 
+which leads to the following fractional stability result for knot equivalence.
+\begin{corollary}[Fractional stability of knot equivalence]
+\label{cor:fractional-stability}
+For any arclength parametrized knot $\g\in W^{\frac32,2}(\R/\Z,\R^3)$ there exists
+$\epsilon_\g>0$ such that every arclength parametrized
+curve $\eta\in B_{\epsilon_\g}(\g)\subset
+W^{\frac32,2}(\R/\Z,\R^3)$ is a knot equivalent to $\g$.
+\end{corollary}
+The preceding statement can be shown to hold true also
+if $\g$ and
+$\eta$ are only immersed and not necessarily arclength
+parametrized, but we will not discuss the details here.
+Open at this point, however, is if the bound on local 
+distortion in Corollaries \ref{cor:equiv-knots} and 
+\ref{cor:lipschitz-stability} already
+implies tameness of the knots, or some improved regularity.

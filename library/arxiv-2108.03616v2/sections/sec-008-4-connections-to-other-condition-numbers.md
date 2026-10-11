@@ -7,12 +7,13 @@ section_number: 4
 pages: 15-18
 source_pdf: 2108.03616v2.pdf
 source_sha256: 63696ad045602440
-text_source: latex
-latex_prose_ratio: 0.947
-latex_coverage_ratio: 0.969
 doc_brief: "Circuit imbalance measures and linear programming ∗ — We study properties and applications of various circuit imbalance mea sures associated with linear spaces."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:connections}
+
 \subsection{The condition number \texorpdfstring{$\bar\chi$}{chi bar} and the lifting operator}
 \label{subsec:lifting_operator}
 
@@ -95,6 +96,7 @@ We have thus shown that the maximum value in the statement is at most $\kappa_W$
 Let us set $I=([n]\setminus C)\cup \{i\}$, and define $p_k=0$ if $k\in [n]\setminus C$ and $p_i=g^C_i$. Then  $p\in \pi_I(W)$,  and the unique extension to $W$ is $g^C$; thus, $L_I^W(p)=g^C$. We have $\|L_I^W(p)\|_\infty=|g^C_j|$. Noting that $\|p\|_1=|g^C_i|$, it follows that 
 $\kappa_W=\|L_I^W(p)\|_\infty/\|p\|_1$.
 \end{proof}
+
 
 \subsection{The condition number $\delta$ and bounds on diameters of polyhedra}\label{sec:delta}
 

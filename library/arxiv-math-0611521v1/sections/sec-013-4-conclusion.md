@@ -7,10 +7,10 @@ section_number: 4
 pages: 19-20
 source_pdf: 0611521v1.pdf
 source_sha256: 65fcd77b7b0a208e
-text_source: latex
-latex_prose_ratio: 0.934
-latex_coverage_ratio: 0.989
 doc_brief: "THE q-ANALOGUE OF THE WILD FUNDAMENTAL GROUP — We describe an explicit construction of galoisian Stokes op erators for irregular linear q-difference equations."
+text_source: latex
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 0.995
 ---
 The construction of the alien derivations in the differential and $q$-difference case are apparently quite different. In fact, it is possible to reformulate things in the differential case to exhibit some analogy; one can mimick the constructions of the $q$-difference case: in place of a meromorphic function of a $q$-direction of summation in $E_q$, one gets in the differential case a locally constant function of a direction of summation in $S^1$ minus a finite singular set, the poles being replaced by "jump points". The jumps are evaluated by a non-abelian boundary value: one gets the Stokes operators. The alien derivation are the logarithms of these operators. There is a slight difference with the $q$-difference case: in this last case, we took the logarithm *before* evaluating the singularity by a residue. We remark that to consider locally constant functions on $S^1$ with a finite set of jumps as the differential analog of meromorphic functions in the $q$-difference case is in perfect accordance with the study of the confluence process by the second author in [@JSAIF].\
 Our constructions suggest some interesting problems.\

@@ -8,10 +8,10 @@ pages: 20-21
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
 doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
+text_source: latex
+latex_prose_ratio: 0.92
+latex_coverage_ratio: 0.793
 ---
-Our next goal is introduce the basic ingredients and building blocks necessary to understand
-the ﬁeld theory side of the correspondence ( M, Π)↔TM,Π. We will see a clear parallel with
-9We suggest the veriﬁcation of this statement as an exercise for the reader.
-– 19 –
-the construction of 3-manifolds in Section 2, which will lead us to the deﬁnition of the theory
-TM,Π in Section 4.
+[]{#sec:ops label="sec:ops"}
+
+Our next goal is introduce the basic ingredients and building blocks necessary to understand the field theory side of the correspondence $(M,\Pi)\leftrightarrow T_{M,\Pi}$. We will see a clear parallel with the construction of 3-manifolds in Section [\[sec:geom\]](#sec:geom){reference-type="ref" reference="sec:geom"}, which will lead us to the definition of the theory $T_{M,\Pi}$ in Section [\[sec:glue\]](#sec:glue){reference-type="ref" reference="sec:glue"}.

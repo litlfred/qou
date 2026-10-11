@@ -8,59 +8,37 @@ pages: 6-8
 source_pdf: 0805.1447v2.pdf
 source_sha256: b7ee20b0a7f5f3da
 doc_brief: "Braid ordering and the geometry of closed braid — The relationships between braid ordering and the ge- ometry of its closure is studied."
+text_source: latex
+latex_prose_ratio: 0.964
+latex_coverage_ratio: 0.971
 ---
-hornoy ﬂoor. Now we give a geometric description of Dehornor order-
-ing given in [FGRR W]. Let Γ be a graph in Dn consisting of horizontal
-line which connects puncture points. See ﬁgure 3. We identify braid
-groups as a relative mapping class group M CG(Dn, ∂D n), which is a
-group of isotopy classes of homeomorphisms of Dn whose restriction
-to boundary ∂Dn is an identity. For braid α, β , consider the image of
-graph Γ. By performing isotopy, we can assume α (Γ) and β (Γ) have
-minimal intersections. If α ⁄= β , these graphs must be diﬀerent, so
-at some puncture point two graphs will diverge. We say β > geom α
-if at divergence point, β (Γ) moves left side of α (Γ). See ﬁgure 3. In
-[FGRR W] it is proved that this relation >geom coincide with Dehornoy
-ordering >.
-Since ∆ 2 corresponds to rotation of the disc Dn, Dehornoy ﬂoor of
-β is the number of how many times the initial segment of graph β (Γ)
-winding around ∂Dn under neglecting orientation.
-BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID 7
-/C8/CB/CU/D6/CP/CV /D6/CT/D4/D0/CP
-/CT/D1/CT/D2 /D8/D7
-/A0
-/AB /B4/A0/B5
-/AC /B4/A0/B5
-/AB /BQ /AC
-Figure 3. Graph Γ and examples
-2.3. More precious estimation of Dehornoy ﬂoor. For later use,
-we prove slightly more precious estimation of Dehornoy ﬂoor than
-proposition 2 (1).
-Propotition 3. If a braid β is conjugate to a braid α which is repre-
-sented by braid word which contains s occurrence of σ1 and k occurrence
-of σ −1
-1 , then [β ]D < max{s, k }.
-Proof. We show β < ∆ 2k. The proof of ∆ −2s < β is identical. By
-assumption, we can write β = γ−1(W0σ1W1σ1 · · · Wk)γ where Wi is a
-braid word which contains no σ1 and γ ∈ Bn. We remark that we can
-assume W0 is empty because we can amalgamate W0 into conjugating
-element γ.
-Let ∆ ′ = ( σ2σ3 · · · σn−1)n−1. From property S, we can ﬁnd a braid
-β ′ = γ−1(σ1∆ ′2p
-(1)σ1 · · · ∆ ′2p
-(k))γ > β by inserting σ1, · · ·σn−1 to braid β ,
-for suﬃciently large p > 0. We show β ′ < ∆ 2k, that is equivalent to
-an inequality ( σ1∆ ′2p
-(1)σ1 · · · ∆ ′2p
-(k))γ < ∆ 2kγ. First we consider the case
-k = 1. We use the geometric interpretation of Dehornoy ordering. Le t
-D′ be a sub-disc of Dn which contains 2 , · · ·n-th puncture of Dn. Since
-∆ ′2p is p-times twists around ∂D ′ and ∆ 2 is a rotation along ∂Dn, we
-conclude that the image of ∆ 2γ(Γ) moves more left than σ1∆ ′2pγ(Γ) for
-all p, thus σ1∆ ′2pγ < ∆ 2γ. Induction about k gives desired result. □
-This proposition gives more accurate estimation of Dehornoy ﬂoor
-than using lemma 2 (1).
-Remark 3. Proposition 3 makes results in [MN] a bit stronger form
-because in [MN] they use estimation via lemma 2 (1). Especially, we
-conclude that if ˆβ admit destabilization or exchange move, then [ βD] =
-0.
-8 TETSUYA ITO
+Now we give a geometric description of Dehornor ordering given in [@fgrrw]. Let $\Gamma$ be a graph in $D_{n}$ consisting of horizontal line which connects puncture points. See figure [1](#fig:braidorder_meaning){reference-type="ref" reference="fig:braidorder_meaning"}. We identify braid groups as a relative mapping class group $MCG(D_{n},\partial D_{n})$, which is a group of isotopy classes of homeomorphisms of $D_{n}$ whose restriction to boundary $\partial D_{n}$ is an identity. For braid $\alpha, \beta$, consider the image of graph $\Gamma$. By performing isotopy, we can assume $\alpha(\Gamma)$ and $\beta(\Gamma)$ have minimal intersections. If $\alpha \neq \beta$, these graphs must be different, so at some puncture point two graphs will diverge. We say $\beta >_{geom} \alpha$ if at divergence point, $\beta(\Gamma)$ moves left side of $\alpha(\Gamma)$. See figure [1](#fig:braidorder_meaning){reference-type="ref" reference="fig:braidorder_meaning"}. In [@fgrrw] it is proved that this relation $>_{geom}$ coincide with Dehornoy ordering $>$.
+
+Since $\Delta^{2}$ corresponds to rotation of the disc $D_{n}$, Dehornoy floor of $\beta$ is the number of how many times the initial segment of graph $\beta(\Gamma)$ winding around $\partial D_{n}$ under neglecting orientation.
+
+<figure id="fig:braidorder_meaning">
+<div class="center">
+<embed src="braidorder.eps" style="width:100mm" />
+</div>
+<figcaption>Graph <span class="math inline"><em>Γ</em></span> and examples</figcaption>
+</figure>
+
+## More precious estimation of Dehornoy floor
+
+For later use, we prove slightly more precious estimation of Dehornoy floor than proposition [\[prop:dehornoyfloor\]](#prop:dehornoyfloor){reference-type="ref" reference="prop:dehornoyfloor"} (1).
+
+::: prop
+[]{#prop:newestimation label="prop:newestimation"} If a braid $\beta$ is conjugate to a braid $\alpha$ which is represented by braid word which contains $s$ occurrence of $\sigma_{1}$ and $k$ occurrence of $\sigma_{1}^{-1}$, then $[\beta]_{D} < max\{s,k\}$.
+:::
+
+::: proof
+*Proof.* We show $\beta < \Delta^{2k}$. The proof of $\Delta^{-2s}< \beta$ is identical. By assumption, we can write $\beta = \gamma^{-1}(W_{0}\sigma_{1}W_{1}\sigma_{1}\cdots W_{k})\gamma$ where $W_{i}$ is a braid word which contains no $\sigma_{1}$ and $\gamma \in B_{n}$. We remark that we can assume $W_{0}$ is empty because we can amalgamate $W_{0}$ into conjugating element $\gamma$.
+
+Let $\Delta' = (\sigma_{2}\sigma_{3}\cdots \sigma_{n-1})^{n-1}$. From property S, we can find a braid $\beta' = \gamma^{-1}(\sigma_{1}\Delta'^{2p}_{(1)}\sigma_{1}\cdots \Delta'^{2p}_{(k)})\gamma > \beta$ by inserting $\sigma_{1},\cdots \sigma_{n-1}$ to braid $\beta$, for sufficiently large $p>0$. We show $\beta' <\Delta^{2k}$, that is equivalent to an inequality $(\sigma_{1}\Delta'^{2p}_{(1)}\sigma_{1}\cdots \Delta'^{2p}_{(k)})\gamma < \Delta^{2k} \gamma$. First we consider the case $k=1$. We use the geometric interpretation of Dehornoy ordering. Let $D'$ be a sub-disc of $D_{n}$ which contains $2,\cdots n$-th puncture of $D_{n}$. Since $\Delta'^{2p}$ is p-times twists around $\partial D'$ and $\Delta^{2}$ is a rotation along $\partial D_{n}$, we conclude that the image of $\Delta^{2}\gamma(\Gamma)$ moves more left than $\sigma_{1}\Delta'^{2p}\gamma(\Gamma)$ for all $p$, thus $\sigma_{1}\Delta'^{2p}\gamma <\Delta^{2}\gamma$. Induction about $k$ gives desired result. ◻
+:::
+
+This proposition gives more accurate estimation of Dehornoy floor than using lemma [\[prop:dehornoyfloor\]](#prop:dehornoyfloor){reference-type="ref" reference="prop:dehornoyfloor"} (1).
+
+::: rem
+Proposition [\[prop:newestimation\]](#prop:newestimation){reference-type="ref" reference="prop:newestimation"} makes results in [@mn] a bit stronger form because in [@mn] they use estimation via lemma [\[prop:dehornoyfloor\]](#prop:dehornoyfloor){reference-type="ref" reference="prop:dehornoyfloor"} (1). Especially, we conclude that if $\widehat{\beta}$ admit destabilization or exchange move, then $[\beta_{D}]=0$.
+:::

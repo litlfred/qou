@@ -7,10 +7,10 @@ section_number: 4
 pages: 19-28
 source_pdf: 1808.02836v2.pdf
 source_sha256: 0224a296253122a2
-text_source: latex
-latex_prose_ratio: 0.977
-latex_coverage_ratio: 0.975
 doc_brief: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds — Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low degree edges"
+text_source: latex
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 0.978
 ---
 []{#sec:quadsurfs label="sec:quadsurfs"}
 
@@ -31,10 +31,8 @@ Following the notation used in Section [\[sec:normsurfs\]](#sec:normsurfs){refe
 
 Let $d_i$ be the maximal number of pairwise disjoint compression discs for $S_i$, whose union does not separate any component of $S_i.$ We have $|| c_i || \leq - \chi (S_i)$ due to Lemma [\[lem:chi bounds norm for canonical\]](#lem:chi bounds norm for canonical){reference-type="ref" reference="lem:chi bounds norm for canonical"}. Moreover, in the presence of compression discs, we obtain the stronger bound $$\sum \limits_{i=1}^{3} ||\ c_i\ || \le - \sum \limits_{i=1}^{3} (\chi(S_i) +2d_i)$$ since compressions do not change the homology class and do not introduce components that are spheres or projective planes. To simplify the expression, and with a view towards the second part of the theorem, we write $$\sum \limits_{i=1}^{3} ||\ c_i\ ||  = -D - \sum \chi(S_i),$$ where $D\ge 0.$ Here, we take care of the possibility that the canonical surfaces are incompressible but not norm minimising, and we note that each independent compression disc contributes 2 to $D.$
 
-For the sake of contradiction, assume $$|\mathcal{T}| < \sum \limits_{i=1}^{3} ||\ c_i\ ||.$$ Lemma [\[lem:formula for degree 3 edges\]](#lem:formula for degree 3 edges){reference-type="ref" reference="lem:formula for degree 3 edges"} now implies the strict inequality $$\begin{equation}
-  \label{eq:main}
-  n_{\mathfrak{tt}}+n_{\mathfrak{qtt}}+2 D+\sum_{d=5}^{\infty} (d-4) \mathfrak{e}_d < \mathfrak{e}_3.
-\end{equation}$$
+For the sake of contradiction, assume $$|\mathcal{T}| < \sum \limits_{i=1}^{3} ||\ c_i\ ||.$$ Lemma [\[lem:formula for degree 3 edges\]](#lem:formula for degree 3 edges){reference-type="ref" reference="lem:formula for degree 3 edges"} now implies the strict inequality $$\label{eq:main}
+  n_{\mathfrak{tt}}+n_{\mathfrak{qtt}}+2 D+\sum_{d=5}^{\infty} (d-4) \mathfrak{e}_d < \mathfrak{e}_3.$$
 
 Hence, proving the first part of Theorem [\[thm:sumofnorms\]](#thm:sumofnorms){reference-type="ref" reference="thm:sumofnorms"} is equivalent to showing that this is impossible. That is, we need to prove that the left hand side of inequality ([\[eq:main\]](#eq:main){reference-type="ref" reference="eq:main"}) must be at least as large as the right hand side.
 
@@ -96,17 +94,11 @@ In the case $(2,5)$ this implies that $\Delta_2$ cannot equal $\Delta_4.$ Howeve
 
 It remains to consider the case $(1,4).$ First suppose that $\Delta_2$ and $\Delta_3$ are the same tetrahedron. There are two possibilities that are combinatorially equivalent. Taking all the face pairings into account, we conclude that $\Delta_2$ is a 1--tetrahedron $\operatorname{LST}^\star(1, 2, 3).$ But this meets $\Delta_1,$ and hence $\operatorname{LST}_1,$ in three edges, a contradiction. See Figure [1](#fig:distinct1){reference-type="ref" reference="fig:distinct1"} for an illustration of this case.
 
-<figure id="fig:distinct1" data-latex-placement="htb">
-<img src="distinct_1" />
-<figcaption>Identifying <span class="math inline"><em>Δ</em><sub>2</sub></span> and <span class="math inline"><em>Δ</em><sub>3</sub></span> in case <span class="math inline">(1, 4)</span> yields a one-tetrahedron layered solid torus meeting <span class="math inline">LST<sub>1</sub></span> in three edges. <span id="fig:distinct1" data-label="fig:distinct1"></span></figcaption>
-</figure>
+![Identifying $\Delta_2$ and $\Delta_3$ in case $(1,4)$ yields a one-tetrahedron layered solid torus meeting $\operatorname{LST}_1$ in three edges. []{#fig:distinct1 label="fig:distinct1"}](distinct_1){#fig:distinct1 width=".45\\textwidth"}
 
 Hence suppose without loss of generality that $\Delta_2$ and $\Delta_4$ are the same tetrahedron. Analysing the two different gluings that arise, we see that $\Delta_2$ is layered on one of the two $H$-odd boundary edges of $\Delta_1.$ But this either contradicts maximality of $\operatorname{LST}_1$ or it contradicts Lemma [\[lem:lst no folds\]](#lem:lst no folds){reference-type="ref" reference="lem:lst no folds"}, see Figure [2](#fig:distinct2){reference-type="ref" reference="fig:distinct2"}.
 
-<figure id="fig:distinct2" data-latex-placement="htb">
-<img src="distinct_2" />
-<figcaption>Identifying <span class="math inline"><em>Δ</em><sub>2</sub></span> and <span class="math inline"><em>Δ</em><sub>4</sub></span> in case <span class="math inline">(1, 4)</span> yields a layering on the boundary of <span class="math inline">LST<sub>1</sub>.</span> <span id="fig:distinct2" data-label="fig:distinct2"></span></figcaption>
-</figure>
+![Identifying $\Delta_2$ and $\Delta_4$ in case $(1,4)$ yields a layering on the boundary of $\operatorname{LST}_1.$ []{#fig:distinct2 label="fig:distinct2"}](distinct_2){#fig:distinct2 width=".45\\textwidth"}
 
 This completes the proof of the claim.0◻
 
@@ -126,10 +118,7 @@ Hence all tetrahedra $\Delta_i,$ $1\leq i \leq 6,$ are of type $\Delta_{\mathfra
 
 Moreover, note that three of the quadrilaterals in the tubes linking edge $f$ are contained in layered solid tori $\operatorname{LST}_j$, $1 \leq j \leq 3$. Hence, each such quadrilateral has its vertices identified in diagonally opposed pairs. In particular, the compressed surfaces still have the same number of connected components, and their components still have non-positive Euler characteristic and Lemma [\[lem:chi bounds norm for canonical\]](#lem:chi bounds norm for canonical){reference-type="ref" reference="lem:chi bounds norm for canonical"} applies. Altogether, the possibility of such compressions yields a contribution of $8$ to the term $2D \geq 4 \sum_{i=1}^{3} d_i$ of the left hand side of ([\[eq:main\]](#eq:main){reference-type="ref" reference="eq:main"}).
 
-<figure id="fig:compression" data-latex-placement="htb">
-<img src="compression" />
-<figcaption>Compression along an <span class="math inline"><em>H</em></span>–even edge surrounded by tetrahedra of type <span class="math inline"><em>Δ</em><sub>𝔮𝔮</sub>.</span> The picture only shows one of the two parallel surfaces. <span id="fig:compression" data-label="fig:compression"></span></figcaption>
-</figure>
+![Compression along an $H$--even edge surrounded by tetrahedra of type $\Delta_{\mathfrak{qq}}.$ The picture only shows one of the two parallel surfaces. []{#fig:compression label="fig:compression"}](compression){#fig:compression width=".8\\textwidth"}
 
 We distribute this contribution onto $f$ and the three remaining $H$--even edges of $\Delta_2,$ $\Delta_4$ and $\Delta_6$ equally. Thus, all of the four edges receive a sufficient contribution to give a deficit in ([\[eq:main\]](#eq:main){reference-type="ref" reference="eq:main"}), and are not visited again (except that they may receive additional deficit from other edges). In particular, any other compression discs we find do not intersect the tetrahedra in the star of $f.$
 
@@ -145,10 +134,7 @@ If one of $\Delta_4$ and $\Delta_5$ is of type $\Delta_{\mathfrak{qq}}$ the othe
 
 Hence, we can assume that both $\Delta_4$ and $\Delta_5$ are of type $\Delta_{\mathfrak{tt}},$ both with the same colouring. We obtain a contribution of $2$ to the left hand side of ([\[eq:main\]](#eq:main){reference-type="ref" reference="eq:main"}) which needs to be shared with the two other $H$--even edges, $g$ and $h$ of the triangle shared by $\Delta_4$ and $\Delta_5.$ However, for this contribution to be insufficient globally, both $g$ and $h$ must be surrounded by some internally unbalanced maximal layered solid tori, with the tetrahedra surrounding $g$ and $h$ and distinct from $\Delta_4$ and $\Delta_5$ all being of type $\Delta_{\mathfrak{qq}}$ and of matching colours. This implies that one can perform two compressions of two of the surfaces $S_i,$ $i  \in \{1,2,3\},$ by cutting along the three times two incomplete tubes around the edges $f,$ $g$ and $h.$ This process replaces the two parallel triangles inside $\Delta_4$ and $\Delta_5$ by pairs of parallel normal triangles of all three other types. Again, quadrilaterals in the tubes linking edges which are contained in a layered solid torus have their vertices identified in diagonally opposed pairs. Hence this operation does not produce any new connected components. See Figure [4](#fig:doubleCompression){reference-type="ref" reference="fig:doubleCompression"} for an illustration of this process in the case of one surface (rather than two parallel ones).
 
-<figure id="fig:doubleCompression" data-latex-placement="htb">
-<img src="doubleCompression" />
-<figcaption>Double compression along a triangle of <span class="math inline"><em>H</em></span>–even edges. Only one of the two parallel copies of surfaces is drawn. <span id="fig:doubleCompression" data-label="fig:doubleCompression"></span></figcaption>
-</figure>
+![Double compression along a triangle of $H$--even edges. Only one of the two parallel copies of surfaces is drawn. []{#fig:doubleCompression label="fig:doubleCompression"}](doubleCompression){#fig:doubleCompression width="\\textwidth"}
 
 This double compression of two surfaces contributes a total of $16$ to the left hand side of ([\[eq:main\]](#eq:main){reference-type="ref" reference="eq:main"}). We distribute two to each of $f,$ $g$ and $h,$ as well as to the at most three other $H$--even edges in the neighbourhoods of $f,$ $g$ and $h.$ The extra contribution of at least $4$ is a surplus and not needed. We therefore again have a deficit.
 
@@ -172,9 +158,7 @@ If the balancing edge $f$ received a contribution $>0$ as a member of the star o
 
 *In particular, this shows that associated to the subcomplex that is the union of all internally unbalanced tori and all tetrahedra of type $\Delta_{\mathfrak{qtt}}$ or $\Delta_{\mathfrak{tt}}$ we have an overall deficit.*
 
-These observations regarding the balancing edges suffice to analyse the case of equality. Hence suppose $|\mathcal{T}| = \sum \limits_{0\neq c \in H} ||\ c\ ||$ and so $$\begin{equation*}
-  n_{\mathfrak{tt}}+n_{\mathfrak{qtt}}+2 D+\sum_{d=5}^{\infty} (d-4) \mathfrak{e}_d = \mathfrak{e}_3.
-\end{equation*}$$
+These observations regarding the balancing edges suffice to analyse the case of equality. Hence suppose $|\mathcal{T}| = \sum \limits_{0\neq c \in H} ||\ c\ ||$ and so $$n_{\mathfrak{tt}}+n_{\mathfrak{qtt}}+2 D+\sum_{d=5}^{\infty} (d-4) \mathfrak{e}_d = \mathfrak{e}_3.$$
 
 The above analysis shows that this equality is only possible if there is no deficit since otherwise the right hand side is smaller than the left hand side. In particular, the subcomplex that is the union of all internally unbalanced tori and all tetrahedra of type $\Delta_{\mathfrak{qtt}}$ or $\Delta_{\mathfrak{tt}}$ must be empty. Whence $n_{\mathfrak{tt}}= n_{\mathfrak{qtt}}=0.$ From the possible face pairings between tetrahedra of the different types, this implies that either all tetrahedra in $\mathcal{T}$ are of type $\Delta_{\emptyset}$ (but then $H$ has rank 0); or all tetrahedra are of type $\Delta_{\mathfrak{qq}}$ (but then $H$ has rank 1); or all are of type $\Delta_{\mathfrak{qqq}}.$ Hence we have the last case and each canonical surface is a quadrilateral surface. Since all tetrahedra are of type $\Delta_{\mathfrak{qqq}},$ there are no $H$--even edges. Whence $\mathfrak{e}_3=0,$ which implies $D=0$ and the three surfaces therefore are taut.
 
@@ -185,7 +169,4 @@ We first note that every edge $e$ of $\mathcal{T}$ is contained in at most $d(e)
 We now show that if all tetrahedra are of type $\Delta_{\mathfrak{qqq}}$, then the total number of tetrahedra in $\mathcal{T}$ is even. For this we use the fact that $M$ is orientable and we assume that all tetrahedra are coherently oriented. In a tetrahedron of type $\Delta_{\mathfrak{qqq}}$, every boundary triangle has one 1-even, one 2-even and one 3-even edge and the orientation on the triangle induced by the orientation of the tetrahedron determines a cyclic order of the labels 1, 2, and 3. This is the same cyclic order for all boundary triangles of the same oriented tetrahedron. Hence there are two types of oriented tetrahedra of type $\Delta_{\mathfrak{qqq}}$. Tetrahedra meeting in a triangle must induce opposite cyclic orders on this triangle, see Figure [5](#fig:even){reference-type="ref" reference="fig:even"}. Hence, they are of different orientation types. It follows that the number of tetrahedra is even. ◻
 :::
 
-<figure id="fig:even" data-latex-placement="htb">
-<img src="even" />
-<figcaption>The two orientation types of a tetrahedron of type <span class="math inline"><em>Δ</em><sub>𝔮𝔮𝔮</sub></span>. <span id="fig:even" data-label="fig:even"></span></figcaption>
-</figure>
+![The two orientation types of a tetrahedron of type $\Delta_{\mathfrak{qqq}}$. []{#fig:even label="fig:even"}](even){#fig:even width=".6\\textwidth"}

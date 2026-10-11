@@ -7,10 +7,10 @@ section_number: null
 pages: 4-6
 source_pdf: 2605.22763v1.pdf
 source_sha256: 1fe6b92bb5eb0b45
-text_source: latex
-latex_prose_ratio: 0.787
-latex_coverage_ratio: 0.762
 doc_brief: "Advancing mathematics research with AI-driven formal proof search — 14 sections: Introduction; AlphaProof Nexus; Systematic Evaluation on Open Prob"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \paragraph{{\erdos} Problems.} 
 

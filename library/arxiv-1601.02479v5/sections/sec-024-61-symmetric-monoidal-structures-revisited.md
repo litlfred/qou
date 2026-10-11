@@ -8,421 +8,66 @@ pages: 50-53
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
 doc_brief: "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and"
+text_source: latex
+latex_prose_ratio: 0.967
+latex_coverage_ratio: 0.953
 ---
-+ be a stability
-condition, and let µ ∈ (−∞, ∞) be a slope. We assume that ζ is µ -generic. We
-deﬁne Xζ -ss
-d,N and Xζ -ss
-d′,d′′,N as in (78) and (79) respectively. As throughout the
-paper, we assume that we are given a Serre subcategory of the ca tegory of ﬁnite-
-dimensional CQ-modules, and denote by
-ωd,N : Xζ -ss,S
-d,N → Xζ -ss
-d,N ωd′,d′′,N : Xζ -ss,S
-d′,d′′,N → Xζ -ss
-d′,d′′,N
-COHAS AND QUANTUM ENVELOPING ALGEBRAS 51
-the inclusions of the reduced loci corresponding to CQ-modules in S. Consider
-again the algebra from the end of Section 5.1
-H
-(
-Aζ ,S
-W,µ
-)
-= H c
-(
-Mζ -ss,S
-µ , ICζ
-W,µ
-) ∨
-∼
-=
-⨁
-d∈Λ ζ
-µ
-lim
-N ↦→∞
-H
-(
-Dim∗ ω!
-d,Nφ mon
-Tr(W )ζ
-d,N
-L(d,d)/2
-Xζ -ss
-d,N
-)
-.
-By [10, Thm.5.11] this algebra carries a localised bialgebra structure, in the sense
-that for all decompositions d = d′ + d′′, with d′, d′′ ∈Λζ
-µ , there are maps
-H
-(
-Aζ ,S
-W,d
-)
-→ H
-(
-Aζ ,S
-W,d′
-)
-˜⊠
-tw
-+ H
-(
-Aζ ,S
-W,d′′
-)
-(90)
-where
-H
-(
-Aζ ,S
-W,d′
-)
-˜⊠
-tw
-+ H
-(
-Aζ ,S
-W,d′′
-)
-:=
-(
-H
-(
-Aζ ,S
-W,d′
-)
-⊠tw
-+ H
-(
-Aζ ,S
-W,d′′
-))
-(d,d′′)
-:=
-(
-H
-(
-Aζ ,S
-W,d′
-)
-⊠tw
-+ H
-(
-Aζ ,S
-W,d′′
-))
-[L−1
-d′,d′′ ]
-Ld′,d′′ :=
-∏
-i,j∈Q0
-∏
-1≤t′≤d′
-i
-∏
-1≤t′′≤d′′
-j
-(yj,t′′ − xi,t′ )
-∈ HGd′ (pt) ⊗ HGd′′ (pt)
-=C[x1,1, . . . , x1,d′
-1 , . . . , xn,1, . . . , xn,d′
-n ]Symd′
-⊗ C[y1,1, . . . , y1,d′′
-1 , . . . , yn,1, . . . , yn,d′′
-n ]Symd′′
-with Q0 = {1, . . . , n}, satisfying some natural compatibility conditions with the
-multiplication, see [10, Def.5.3]. We next describe the most important o f these
-conditions, which is a localised variant of the condition that the multiplic ation and
-comultiplication together endow H
-(
-Aζ ,S
-W,µ
-)
-with a bialgebra structure.
-Let d1, d2, d3, d4 ∈Λζ
-µ . Set
-d = d1 + d2 + d3 + d4
-c1 = d1 + d2
-c2 = d3 + d4
-e1 = d1 + d3
-e2 = d2 + d4 .
-Let I• = H
-(
-Mζ -ss,S
-• ,φ mon
-Tr(W )ζ
-•
-QMζ -ss, S
-•
-)
-. I.e. for now we do not impose our usual
-system of (half) Tate twists. By the main result of [10] the following diagram
-commutes
-Ic1 ⊠+ Ic2
-b
-/d15/d15
-a /d47/d47 (Id1 ⊠+ Id2 ⊠+ Id3 ⊠+ Id4 )(d1,d2),(d3,d4)
-c
-/d15/d15
-Id
-d /d47/d47 (Ie1 ⊠+ Ie2)(e1,e2)
-where we have left out the (whole) Tate twists, and the subscripts indicate which
-Euler class we localise with respect to. Here, a and d are given by the comultipli-
-cation, while b is given by multiplication. The morphism c is given by ﬁrst further
-localising, then swapping the second and third entries (observing th e Koszul sign
-rule), multiplying by the scalar ( −1)χ (d2,d3), then the CoHA multiplication. The
-reader is encouraged to consult [10] for the full details; our descr iption in this section
-is mainly directed towards the limited aim of explaining required sign conv entions,
-as we next explain.
-52 BEN DA VISON AND SVEN MEINHARDT
-We would like to have, instead, commutativity of the diagram
-H
-(
-Aζ ,S
-W,c1
-)
-⊠+ H
-(
-Aζ ,S
-W,c2
-)
-a′
-/d47/d47
-b′
-/d15/d15
-(
-H
-(
-Aζ ,S
-W,d1
-)
-⊠+ H
-(
-Aζ ,S
-W,d2
-)
-⊠+ H
-(
-Aζ ,S
-W,d3
-)
-⊠+ H
-(
-Aζ ,S
-W,d4
-))
-♥
-c′
-/d15/d15
-H
-(
-Aζ ,S
-W,d
-)
-d′
-/d47/d47
-(
-H
-(
-Aζ ,S
-W,e1
-)
-⊠ H
-(
-Aζ ,S
-W,e2
-))
-♠
-(91)
-where now the map c′ is deﬁned to be the map swapping the second and third terms
-via the symmetric monoidal structure in D≥,lf (MMHM(Λζ
-µ )), and then applying
-the multiplication. Here,
-♥ =(d1, d2), (d3, d4)
-♠ =(e1, e2)
-as before. The relation between the two diagrams is as follows. The o bjects in
-diagram (91) are tensor products of terms I• tensored on the left with half Tate
-twists, which we may commute to the left. Then tensoring the morph isms a, b, c, d
-on the left by an overall half Tate twist and commuting the required h alf Tate
-twists into the tensor product, we obtain the maps a′, b′, c′, d′ respectively. In
-order to arrange commutativity of (91), then, we deﬁne the sign o ccurring in the
-symmetrizing morphism for D≥,lf (MMHM(Λζ
-µ )) to be given by
-τ sw(α ⊗β ) = ( −1)χ (d2,d2)χ (d3,d3)+χ (d2,d3)sw(α ⊗β )
-where sw is the standard symmetrizing morphism. We pick the superscript τ
-since the bilinear form (15) deﬁnes the deviation from the usual sign conven-
-tion. The χ(d2, d3) term is as in the deﬁnition of the morphism c. We denote
-byτ D≥,lf (MMHM(Λζ
-µ )) the symmetric monoidal category obtained via this modi-
-ﬁed sign convention.
-Proposition 6.1. Let (B, ∗) be a free supercommutative algebra in the category
-D(MMHM(Λζ
-µ )), given the above symmetric monoidal structure. Then if we de ﬁne
-ψ B by modifying the product as in (17), it is a free supercommuta tive algebra in
-D(MMHM(Λζ
-µ )) with its usual symmetric monoidal structure.
-Explicitly, we deﬁne τ sw via the chain of isomorphisms
-⨁
-d′∈Λ ζ
-µ
-F ′
-d′ ⊠+
-⨁
-d′′∈Λ ζ
-µ
-F ′′
-d′′ ∼
-=
-⨁
-d′,d′′∈Λ ζ
-µ
-L(χ (d′,d′)+χ (d′′,d′′))/2 ⊗
-(
-L−χ (d′,d′)/2 ⊗ F ′
-d′
-)
-⊠+
-(
-L−χ (d′′,d′′)/2 ⊗ F ′′
-d′′
-)(92)
-∼
-=
-⨁
-d′,d′′∈Λ ζ
-µ
-L(χ (d′,d′)+χ (d′′,d′′))/2 ⊗
-(
-L−χ (d′′,d′′)/2 ⊗ F ′′
-d′′
-)
-⊠+
-(
-L−χ (d′,d′)/2 ⊗ F ′
-d′
-)
-∼
-=
-⨁
-d′′∈Λ ζ
-µ
-F ′′
-d′′ ⊠+
-⨁
-d′∈Λ ζ
-µ
-F ′
-d′
-where we have applied the usual symmetrizing natural isomorphism f or the ten-
-sor product of the objects L−χ (d′,d′)/2 ⊗ F ′
-d′ and L−χ (d′′,d′′)/2 ⊗ F ′′
-d′′ . We deﬁne
-the twisted symmetric monoidal structure on D≥,lf (MMHM(Mζ -ss
-µ )) via the same
-recipe as (92), with ⊠+ replaced with ⊠⊕. It then follows as before from [34] that
-dim∗ : τ D≥,lf (MMHM(Mζ -ss
-µ )) →τ D≥,lf (MMHM(Λζ
-µ ))
-is a symmetric monoidal functor.
-COHAS AND QUANTUM ENVELOPING ALGEBRAS 53
-The algebras H
-(
-Aζ ,S
-W
-)
-and H(ψAζ ,S
-W,µ ) diﬀer by the above type of sign twist. In
-particular, their underlying graded monodromic mixed Hodge struct ures are the
-same, and Theorem C implies that there is an isomorphism in D≥,lf (MMHM(Λζ
-µ )):
-τ Sym⊠+
-(
-H(BC*)vir ⊗ BPSζ ,S
-W,µ
-)
-∼
-= Sym⊠+
-(
-H(BC*)vir ⊗ BPSζ ,S
-W,µ
-)
-.
-The next proposition shows that this is a general phenomenon.
-Proposition 6.2. Let F ∈ D ≥,lf (MMHM(Mζ -ss
-µ \ Mζ -ss
-0 )). Then there is an
-isomorphism
-τ Sym⊠+ (F ) ∼
-= Sym⊠+ (F ).
-Proof. Let F be represented by the complex ( G, d) of mixed Hodge modules on
-Mζ -ss
-µ × A1. Let ψ be as in (17). Let
-T (G, d) :=
-
-⨁
-n≥0
-Tn(G), d
-
-
-Tn(G) :=
-⨁
-n≥0
-G ⊠ . . . ⊠ G/bracehtipupleft
-/bracehtipdownright/bracehtipdownleft/bracehtipupright
-n times
-be the algebra generated by G in the category
-D≥,lf
-
-MHM
-
-∐
-n≥0
-(
-(Mζ -ss
-µ \ Mζ -ss
-0 ) × A1
-) ×n
-
-
-
-
-along with its natural diﬀerential. Via the results of [34], as recalled in S ection 3.2,
-Tn(G, d) carries an action of Sn, determined by morphisms for each π ∈ Sn and
-a1, . . . , an ∈Λζ
-µ
-Ga1 ⊠ . . . ⊠ Gan
-π #
-a1,...,a n
-− − − − − − →π ∗
-(
-Gπ (a1) ⊠ . . . ⊠ Gπ (an)
-)
-.
-Setting
-π #,τ
-a1,...,an :=
-∑
-1≤i<j≤n|π (i)>π (j)
-(−1)τ (ai,aj )π #
-a1,...,an
-we obtain the τ-twisted action. Then the morphisms
-Ga1 ⊠ . . . ⊠ Gan
-· ∑
-1≤i<j≤n|π (i)>π (j) (−1)ψ (ai ,a j )
-− − − − − − − − − − − − − − − − − − − − − − → Ga1 ⊠ . . . ⊠ Gan
-commute with the diﬀerential, and intertwine the two Sn-actions. Passing to the
-invariant subcomplexes, and taking the direct image along the iterat ed monoid
-morphism
-∐
-n≥0
-(
-(Mζ -ss
-µ \ Mζ -ss
-0 ) × A1
-) ×n
-→ Mζ -ss
-µ × A1
-we deduce the result. □
+[]{#lc_signs label="lc_signs"} Let $\upzeta\in \mathbb{H}_+^{Q_0}$ be a stability condition, and let $\upmu\in(-\infty,\infty)$ be a slope. We assume that $\upzeta$ is $\upmu$-generic. We define $X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}},N}$ and $X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',N}$ as in ([\[XNdef\]](#XNdef){reference-type="ref" reference="XNdef"}) and ([\[XXNdef\]](#XXNdef){reference-type="ref" reference="XXNdef"}) respectively. As throughout the paper, we assume that we are given a Serre subcategory of the category of finite-dimensional $\mathbb{C}Q$-modules, and denote by $$\begin{aligned}
+\omega_{\mathop{\mathrm{\mathbf{d}}},N}\colon &X^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}},N}\rightarrow X_{\mathop{\mathrm{\mathbf{d}}},N}^{\upzeta\mathop{\mathrm{-ss}}}&
+\omega_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',N}\colon & X^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',N}\rightarrow X_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',N}^{\upzeta\mathop{\mathrm{-ss}}}
+\end{aligned}$$ the inclusions of the reduced loci corresponding to $\mathbb{C}Q$-modules in $\mathcal{S}$. Consider again the algebra from the end of Section [\[relc\]](#relc){reference-type="ref" reference="relc"} $$\mathop{\mathrm{H}}\left(\mathcal{A}_{W,\upmu}^{\upzeta,\mathcal{S}}\right)=\mathop{\mathrm{H}}_c\left(\mathfrak{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}},\mathfrak{IC}_{W,\upmu}^{\upzeta}\right)^{\vee}\cong\bigoplus_{\mathop{\mathrm{\mathbf{d}}}\in\Uplambda_{\upmu}^{\upzeta}}\lim_{N\mapsto\infty}\mathop{\mathrm{\mathcal{H}}}\left(\mathop{\mathrm{\mathrm{Dim}}}_*\omega^!_{\mathop{\mathrm{\mathbf{d}}},N}\upphi^{\mathop{\mathrm{mon}}}_{\mathrm{Tr}(W)_{\mathop{\mathrm{\mathbf{d}}},N}^{\upzeta}}\mathbb{L}^{(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}_{X_{\mathop{\mathrm{\mathbf{d}}},N}^{\upzeta\mathop{\mathrm{-ss}}}}\right).$$ By [@Da13 Thm.5.11] this algebra carries a localised bialgebra structure, in the sense that for all decompositions $\mathop{\mathrm{\mathbf{d}}}=\mathop{\mathrm{\mathbf{d}}}'+\mathop{\mathrm{\mathbf{d}}}''$, with $\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''\in\Uplambda_{\upmu}^{\upzeta}$, there are maps $$\begin{aligned}
+\label{coprodint}
+\mathop{\mathrm{H}}\left(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}}^{\upzeta,\mathcal{S}}\right)\rightarrow \mathop{\mathrm{H}}\left(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta,\mathcal{S}}\right)\tilde{\boxtimes}_+^{\mathop{\mathrm{tw}}} \mathop{\mathrm{H}}\left(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta,\mathcal{S}}\right)
+\end{aligned}$$ where $$\begin{aligned}
+\mathop{\mathrm{H}}\left(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta,\mathcal{S}}\right)\tilde{\boxtimes}_+^{\mathop{\mathrm{tw}}} \mathop{\mathrm{H}}\left(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta,\mathcal{S}}\right)\colonequals &\left(\mathop{\mathrm{H}}\left(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta,\mathcal{S}}\right)\boxtimes_+^{\mathop{\mathrm{tw}}} \mathop{\mathrm{H}}\left(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta,\mathcal{S}}\right)\right)_{(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}}'')}\\
+\colonequals &\left(\mathop{\mathrm{H}}\left(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta,\mathcal{S}}\right)\boxtimes_+^{\mathop{\mathrm{tw}}} \mathop{\mathrm{H}}\left(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta,\mathcal{S}}\right)\right)[\mathfrak{L}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}^{-1}]\\
+\mathfrak{L}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\colonequals &\prod_{i,j\in Q_0}\prod_{1\leq t'\leq \mathop{\mathrm{\mathbf{d}}}'_i}\prod_{1\leq t''\leq \mathop{\mathrm{\mathbf{d}}}''_j}(y_{j,t''}-x_{i,t'})\\
+\in &\mathop{\mathrm{H}}_{G_{\mathop{\mathrm{\mathbf{d}}}'}}(\mathop{\mathrm{pt}})\otimes \mathop{\mathrm{H}}_{G_{\mathop{\mathrm{\mathbf{d}}}''}}(\mathop{\mathrm{pt}})\\
+=&\mathbb{C}[x_{1,1},\ldots,x_{1,\mathop{\mathrm{\mathbf{d}}}'_1},\ldots,x_{n,1},\ldots,x_{n,\mathop{\mathrm{\mathbf{d}}}'_n}]^{\mathop{\mathrm{Sym}}_{\mathop{\mathrm{\mathbf{d}}}'}}\\&\otimes \mathbb{C}[y_{1,1},\ldots,y_{1,\mathop{\mathrm{\mathbf{d}}}''_1},\ldots,y_{n,1},\ldots,y_{n,\mathop{\mathrm{\mathbf{d}}}''_n}]^{\mathop{\mathrm{Sym}}_{\mathop{\mathrm{\mathbf{d}}}''}}
+\end{aligned}$$ with $Q_0=\{1,\ldots,n\}$, satisfying some natural compatibility conditions with the multiplication, see [@Da13 Def.5.3]. We next describe the most important of these conditions, which is a localised variant of the condition that the multiplication and comultiplication together endow $\mathop{\mathrm{H}}\left(\mathcal{A}_{W,\upmu}^{\upzeta,\mathcal{S}}\right)$ with a bialgebra structure.
+
+Let $\mathop{\mathrm{\mathbf{d}}}^1,\mathop{\mathrm{\mathbf{d}}}^2,\mathop{\mathrm{\mathbf{d}}}^3,\mathop{\mathrm{\mathbf{d}}}^4\in\Uplambda_{\upmu}^{\upzeta}$. Set $$\begin{aligned}
+\mathop{\mathrm{\mathbf{d}}}=&\mathop{\mathrm{\mathbf{d}}}^1+\mathop{\mathrm{\mathbf{d}}}^2+\mathop{\mathrm{\mathbf{d}}}^3+\mathop{\mathrm{\mathbf{d}}}^4\\
+\mathop{\mathrm{\mathbf{c}}}^1=&\mathop{\mathrm{\mathbf{d}}}^1+\mathop{\mathrm{\mathbf{d}}}^2\\
+\mathop{\mathrm{\mathbf{c}}}^2=&\mathop{\mathrm{\mathbf{d}}}^3+\mathop{\mathrm{\mathbf{d}}}^4\\
+\mathop{\mathrm{\mathbf{e}}}^1=&\mathop{\mathrm{\mathbf{d}}}^1+\mathop{\mathrm{\mathbf{d}}}^3\\
+\mathop{\mathrm{\mathbf{e}}}^2=&\mathop{\mathrm{\mathbf{d}}}^2+\mathop{\mathrm{\mathbf{d}}}^4.
+\end{aligned}$$ Let $\mathbb{I}_{\bullet}=\mathop{\mathrm{H}}\left(\mathfrak{M}_{\bullet}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}},\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)^{\upzeta}_{\bullet}}\mathbb{Q}_{\mathfrak{M}_{\bullet}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}}\right)$. I.e. for now we do not impose our usual system of (half) Tate twists. By the main result of [@Da13] the following diagram commutes $$\xymatrix{
+\mathbb{I}_{\mathop{\mathrm{\mathbf{c}}}^1}\boxtimes_+ \mathbb{I}_{\mathop{\mathrm{\mathbf{c}}}^2}\ar[d]^-{b}\ar[r]^-a&\left(\mathbb{I}_{\mathop{\mathrm{\mathbf{d}}}^1}\boxtimes_+  \mathbb{I}_{\mathop{\mathrm{\mathbf{d}}}^2}\boxtimes_+  \mathbb{I}_{\mathop{\mathrm{\mathbf{d}}}^3}\boxtimes_+  \mathbb{I}_{\mathop{\mathrm{\mathbf{d}}}^4}\right)_{(\mathop{\mathrm{\mathbf{d}}}^1,\mathop{\mathrm{\mathbf{d}}}^2),(\mathop{\mathrm{\mathbf{d}}}^3,\mathop{\mathrm{\mathbf{d}}}^4)}\ar[d]^-c\\
+\mathbb{I}_{\mathop{\mathrm{\mathbf{d}}}}\ar[r]^-d& \left(\mathbb{I}_{\mathop{\mathrm{\mathbf{e}}}^1}\boxtimes_+ \mathbb{I}_{\mathop{\mathrm{\mathbf{e}}}^2}\right)_{(\mathop{\mathrm{\mathbf{e}}}^1,\mathop{\mathrm{\mathbf{e}}}^2)}
+}$$ where we have left out the (whole) Tate twists, and the subscripts indicate which Euler class we localise with respect to. Here, $a$ and $d$ are given by the comultiplication, while $b$ is given by multiplication. The morphism $c$ is given by first further localising, then swapping the second and third entries (observing the Koszul sign rule), multiplying by the scalar $(-1)^{\upchi(\mathop{\mathrm{\mathbf{d}}}^2,\mathop{\mathrm{\mathbf{d}}}^3)}$, then the CoHA multiplication. The reader is encouraged to consult [@Da13] for the full details; our description in this section is mainly directed towards the limited aim of explaining required sign conventions, as we next explain.
+
+We would like to have, instead, commutativity of the diagram $$\begin{aligned}
+\label{desComm}
+\xymatrix{
+\mathop{\mathrm{H}}\left(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{c}}}^1}^{\upzeta,\mathcal{S}}\right)\boxtimes_+\mathop{\mathrm{H}}\left(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{c}}}^2}^{\upzeta,\mathcal{S}}\right)\ar[r]^-{a'}\ar[d]^{b'}&\left(\mathop{\mathrm{H}}\left(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}^1}^{\upzeta,\mathcal{S}}\right)\boxtimes_+ \mathop{\mathrm{H}}\left(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}^2}^{\upzeta,\mathcal{S}}\right)\boxtimes_+ \mathop{\mathrm{H}}\left(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}^3}^{\upzeta,\mathcal{S}}\right)\boxtimes_+ \mathop{\mathrm{H}}\left(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}^4}^{\upzeta,\mathcal{S}}\right)\right)_{\heartsuit}\ar[d]^{c'}\\
+\mathop{\mathrm{H}}\left(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}}^{\upzeta,\mathcal{S}}\right)\ar[r]^-{d'}&\left(\mathop{\mathrm{H}}\left(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{e}}}^1}^{\upzeta,\mathcal{S}}\right)\boxtimes \mathop{\mathrm{H}}\left(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{e}}}^2}^{\upzeta,\mathcal{S}}\right)\right)_{\spadesuit}
+}
+\end{aligned}$$ where now the map $c'$ is defined to be the map swapping the second and third terms via the symmetric monoidal structure in $\mathcal{D}^{\geq, \mathrm{lf}}(\mathop{\mathrm{MMHM}}(\Uplambda_{\upmu}^{\upzeta}))$, and then applying the multiplication. Here, $$\begin{aligned}
+\heartsuit=&(\mathop{\mathrm{\mathbf{d}}}^1,\mathop{\mathrm{\mathbf{d}}}^2),(\mathop{\mathrm{\mathbf{d}}}^3,\mathop{\mathrm{\mathbf{d}}}^4)\\
+\spadesuit=&(\mathop{\mathrm{\mathbf{e}}}^1,\mathop{\mathrm{\mathbf{e}}}^2)
+\end{aligned}$$ as before. The relation between the two diagrams is as follows. The objects in diagram ([\[desComm\]](#desComm){reference-type="ref" reference="desComm"}) are tensor products of terms $\mathbb{I}_{\bullet}$ tensored on the left with half Tate twists, which we may commute to the left. Then tensoring the morphisms $a,b,c,d$ on the left by an overall half Tate twist and commuting the required half Tate twists into the tensor product, we obtain the maps $a',b',c',d'$ respectively. In order to arrange commutativity of ([\[desComm\]](#desComm){reference-type="ref" reference="desComm"}), then, we define the sign occurring in the symmetrizing morphism for $\mathcal{D}^{\geq, \mathrm{lf}}(\mathop{\mathrm{MMHM}}(\Uplambda_{\upmu}^{\upzeta}))$ to be given by $${}^{\uptau}\mathbf{sw}(\upalpha\otimes\upbeta)=(-1)^{\upchi(\mathop{\mathrm{\mathbf{d}}}^2,\mathop{\mathrm{\mathbf{d}}}^2)\upchi(\mathop{\mathrm{\mathbf{d}}}^3,\mathop{\mathrm{\mathbf{d}}}^3)+\upchi(\mathop{\mathrm{\mathbf{d}}}^2,\mathop{\mathrm{\mathbf{d}}}^3)}\mathbf{sw}(\upalpha\otimes\upbeta)$$ where $\mathbf{sw}$ is the standard symmetrizing morphism. We pick the superscript $\uptau$ since the bilinear form ([\[half_tau\]](#half_tau){reference-type="ref" reference="half_tau"}) defines the deviation from the usual sign convention. The $\upchi(\mathop{\mathrm{\mathbf{d}}}^2,\mathop{\mathrm{\mathbf{d}}}^3)$ term is as in the definition of the morphism $c$. We denote by ${}^{\uptau}\mathcal{D}^{\geq, \mathrm{lf}}(\mathop{\mathrm{MMHM}}(\Uplambda_{\upmu}^{\upzeta}))$ the symmetric monoidal category obtained via this modified sign convention.
+
+::: proposition
+Let $(\mathcal{B},\ast)$ be a free supercommutative algebra in the category $\mathcal{D}(\mathop{\mathrm{MMHM}}(\Uplambda_{\upmu}^{\upzeta}))$, given the above symmetric monoidal structure. Then if we define ${}^{\uppsi}\!\mathcal{B}$ by modifying the product as in ([\[psitwdef\]](#psitwdef){reference-type="ref" reference="psitwdef"}), it is a free supercommutative algebra in $\mathcal{D}(\mathop{\mathrm{MMHM}}(\Uplambda_{\upmu}^{\upzeta}))$ with its usual symmetric monoidal structure.
+:::
+
+Explicitly, we define ${}^{\uptau}\mathbf{sw}$ via the chain of isomorphisms $$\begin{aligned}
+\label{funct_tw}
+\bigoplus_{\mathop{\mathrm{\mathbf{d}}}'\in\Uplambda_{\upmu}^{\upzeta}}\mathcal{F}'_{\mathop{\mathrm{\mathbf{d}}}'}\boxtimes_+ \bigoplus_{\mathop{\mathrm{\mathbf{d}}}''\in\Uplambda_{\upmu}^{\upzeta}}\mathcal{F}''_{\mathop{\mathrm{\mathbf{d}}}''}\cong&\bigoplus_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''\in\Uplambda_{\upmu}^{\upzeta}} \mathbb{L}^{\left(\upchi(\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}')+\upchi(\mathop{\mathrm{\mathbf{d}}}'',\mathop{\mathrm{\mathbf{d}}}'')\right)/2}\otimes \left(\mathbb{L}^{-\upchi(\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}')/2}\otimes\mathcal{F}'_{\mathop{\mathrm{\mathbf{d}}}'}\right)\boxtimes_+\left(\mathbb{L}^{-\upchi(\mathop{\mathrm{\mathbf{d}}}'',\mathop{\mathrm{\mathbf{d}}}'')/2}\otimes\mathcal{F}''_{\mathop{\mathrm{\mathbf{d}}}''}\right)
+\\ \cong&\bigoplus_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''\in\Uplambda_{\upmu}^{\upzeta}} \mathbb{L}^{\left(\upchi(\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}')+\upchi(\mathop{\mathrm{\mathbf{d}}}'',\mathop{\mathrm{\mathbf{d}}}'')\right)/2}\otimes \left(\mathbb{L}^{-\upchi(\mathop{\mathrm{\mathbf{d}}}'',\mathop{\mathrm{\mathbf{d}}}'')/2}\otimes\mathcal{F}''_{\mathop{\mathrm{\mathbf{d}}}''}\right)\boxtimes_+\left(\mathbb{L}^{-\upchi(\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}')/2}\otimes\mathcal{F}'_{\mathop{\mathrm{\mathbf{d}}}'}\right)\nonumber 
+\\ \cong &\bigoplus_{\mathop{\mathrm{\mathbf{d}}}''\in\Uplambda_{\upmu}^{\upzeta}}\mathcal{F}''_{\mathop{\mathrm{\mathbf{d}}}''}\boxtimes_+ \bigoplus_{\mathop{\mathrm{\mathbf{d}}}'\in\Uplambda_{\upmu}^{\upzeta}}\mathcal{F}'_{\mathop{\mathrm{\mathbf{d}}}'}\nonumber
+\end{aligned}$$ where we have applied the usual symmetrizing natural isomorphism for the tensor product of the objects $\mathbb{L}^{-\upchi(\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}')/2}\otimes\mathcal{F}'_{\mathop{\mathrm{\mathbf{d}}}'}$ and $\mathbb{L}^{-\upchi(\mathop{\mathrm{\mathbf{d}}}'',\mathop{\mathrm{\mathbf{d}}}'')/2}\otimes\mathcal{F}''_{\mathop{\mathrm{\mathbf{d}}}''}$. We define the twisted symmetric monoidal structure on $\mathcal{D}^{\geq, \mathrm{lf}}(\mathop{\mathrm{MMHM}}(\mathcal{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}}}))$ via the same recipe as ([\[funct_tw\]](#funct_tw){reference-type="ref" reference="funct_tw"}), with $\boxtimes_+$ replaced with $\boxtimes_{\oplus}$. It then follows as before from [@MSS11] that $$\dim_*\colon{}^{\uptau}\mathcal{D}^{\geq, \mathrm{lf}}(\mathop{\mathrm{MMHM}}(\mathcal{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}}}))\rightarrow {}^{\uptau}\mathcal{D}^{\geq, \mathrm{lf}}(\mathop{\mathrm{MMHM}}(\Uplambda_{\upmu}^{\upzeta}))$$ is a symmetric monoidal functor.
+
+The algebras $\mathop{\mathrm{H}}\left(\mathcal{A}_{W}^{\upzeta,\mathcal{S}}\right)$ and $\mathop{\mathrm{H}}(^{\uppsi}\!\!\mathcal{A}_{W,\upmu}^{\upzeta,\mathcal{S}})$ differ by the above type of sign twist. In particular, their underlying graded monodromic mixed Hodge structures are the same, and Theorem [\[qea\]](#qea){reference-type="ref" reference="qea"} implies that there is an isomorphism in $\mathcal{D}^{\geq, \mathrm{lf}}(\mathop{\mathrm{MMHM}}(\Uplambda_{\upmu}^{\upzeta}))$: $${}^{\uptau}\!\mathop{\mathrm{Sym}}_{\boxtimes_+}\left(\mathop{\mathrm{H}}(\mathop{\mathrm{B\mathbb{C}^*}})_{\mathop{\mathrm{vir}}}\otimes \mathop{\mathrm{BPS}}_{W,\upmu}^{\upzeta,\mathcal{S}}\right)\cong{}\mathop{\mathrm{Sym}}_{\boxtimes_+}\left(\mathop{\mathrm{H}}(\mathop{\mathrm{B\mathbb{C}^*}})_{\mathop{\mathrm{vir}}}\otimes \mathop{\mathrm{BPS}}_{W,\upmu}^{\upzeta,\mathcal{S}}\right).$$ The next proposition shows that this is a general phenomenon.
+
+::: proposition
+[]{#underlying_same label="underlying_same"} Let $\mathcal{F}\in\mathcal{D}^{\geq, \mathrm{lf}}(\mathop{\mathrm{MMHM}}(\mathcal{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}}}\setminus\mathcal{M}_0^{\upzeta\mathop{\mathrm{-ss}}}))$. Then there is an isomorphism $${}^{\uptau}\mathop{\mathrm{Sym}}_{\boxtimes_+}(\mathcal{F})\cong\mathop{\mathrm{Sym}}_{\boxtimes_+}(\mathcal{F}).$$
+:::
+
+::: proof
+*Proof.* Let $\mathcal{F}$ be represented by the complex $(\mathcal{G},d)$ of mixed Hodge modules on $\mathcal{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}}}\times\mathbb{A}^1$. Let $\uppsi$ be as in ([\[psitwdef\]](#psitwdef){reference-type="ref" reference="psitwdef"}). Let $$\begin{aligned}
+T(\mathcal{G},d)\colonequals &\left(\bigoplus_{n\geq 0}T_n(\mathcal{G}),d\right)\\
+T_n(\mathcal{G})\colonequals &\bigoplus_{n\geq 0}\underbrace{\mathcal{G}\boxtimes\ldots\boxtimes \mathcal{G}}_{n \;\textrm{times}}
+\end{aligned}$$ be the algebra generated by $\mathcal{G}$ in the category $$\mathcal{D}^{\geq, \mathrm{lf}}\left(\mathop{\mathrm{MHM}}\left(\coprod_{n\geq 0}\left((\mathcal{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}}}\setminus\mathcal{M}_0^{\upzeta\mathop{\mathrm{-ss}}})\times\mathbb{A}^1\right)^{\times n}\right)\right)$$ along with its natural differential. Via the results of [@MSS11], as recalled in Section [\[prodss\]](#prodss){reference-type="ref" reference="prodss"}, $T_n(\mathcal{G},d)$ carries an action of $\mathop{\mathrm{\mathfrak{S}}}_n$, determined by morphisms for each $\uppi\hspace{0.05em}\in\mathop{\mathrm{\mathfrak{S}}}_n$ and $a_1,\ldots,a_n\in\Uplambda_{\upmu}^{\upzeta}$ $$\mathcal{G}_{a_1}\boxtimes\ldots\boxtimes\mathcal{G}_{a_n}\xrightarrow{\uppi\hspace{0.05em}^{\#}_{a_1,\ldots,a_n}}\uppi\hspace{0.05em}_*\left(\mathcal{G}_{\uppi\hspace{0.05em}(a_1)}\boxtimes\ldots\boxtimes\mathcal{G}_{\uppi\hspace{0.05em}(a_n)}\right).$$ Setting $$\uppi\hspace{0.05em}^{\#,\uptau}_{a_1,\ldots,a_n}\colonequals \sum_{1\leq i<j\leq n|\uppi\hspace{0.05em}(i)>\uppi\hspace{0.05em}(j)}(-1)^{\uptau(a_i,a_j)}\uppi\hspace{0.05em}^{\#}_{a_1,\ldots,a_n}$$ we obtain the $\uptau$-twisted action. Then the morphisms $$\mathcal{G}_{a_1}\boxtimes\ldots\boxtimes\mathcal{G}_{a_n}\xrightarrow{\cdot\sum_{1\leq i<j\leq n|\uppi\hspace{0.05em}(i)>\uppi\hspace{0.05em}(j)}(-1)^{\uppsi(a_i,a_j)}}\mathcal{G}_{a_1}\boxtimes\ldots\boxtimes\mathcal{G}_{a_n}$$ commute with the differential, and intertwine the two $\mathop{\mathrm{\mathfrak{S}}}_n$-actions. Passing to the invariant subcomplexes, and taking the direct image along the iterated monoid morphism $$\coprod_{n\geq 0}\left((\mathcal{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}}}\setminus\mathcal{M}_0^{\upzeta\mathop{\mathrm{-ss}}})\times\mathbb{A}^1\right)^{\times n}\rightarrow \mathcal{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}}}\times\mathbb{A}^1$$ we deduce the result. ◻
+:::

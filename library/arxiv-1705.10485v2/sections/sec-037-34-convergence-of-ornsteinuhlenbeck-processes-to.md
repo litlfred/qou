@@ -8,115 +8,43 @@ pages: 24-26
 source_pdf: 1705.10485v2.pdf
 source_sha256: b33759def53c6a43
 doc_brief: "Mod-φ convergence, II: Estimates on the speed of convergence — In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ"
+text_source: latex
+latex_prose_ratio: 0.961
+latex_coverage_ratio: 0.894
 ---
-Another way to approximate a stable lawφc,α,β is by using the marginales of a random process of
-Ornstein–Uhlenbeck type. Consider more generally a self-decomposable lawφ on R, that is an inﬁnitely
-divisible distribution such that for anyb∈ (0, 1), there exists a probability measurepb on R such that
-ˆφ(ξ) =ˆφ(bξ)ˆpb(ξ); (6)
-see [Sat99, Chapter 3, Deﬁnition 15.1]. In Equation (6), the lawspb are the marginale laws of certain
-Markov processes. Fix a Lévy–Khintchine triplet(l∈ R, ν2∈ R+, ρ) with ρ probability measure on
-R\{ 0} that integrates min(1,|x|2), and consider the Lévy process(Zt)t∈R+ associated to this triplet:
-E[eiξZt] = exp(tψ(iξ))
-= exp
-(
-t
-(
-ilξ− ν2ξ2
-2 +
-∫
-R
-(eiξx− 1− 1|x|<1iξx)ρ(dx)
-))
-.
-The Ornstein–Uhlenbeck process with triplet(l,ν 2,ρ ), speedv and starting pointx is the solution(Ut)t≥0
-of the stochastic diﬀerential equation
-Ut = e−vtx +
-∫ t
-0
-e−v(t−s)dZs.
-The Ornstein–Uhlenbeck process(Ut)t≥0 can be shown to be a Markov process whose transition kernel
-(Pt(x,dy))t≥0 satisﬁes:
-ˆPt(x,·)(ξ) =
-∫
-R
-eiξyPt(x,dy) = exp
-(
-iξe−vtx +
-∫ t
-0
-ψ(iξe−vs)ds
-)
-see [Sat99, Lemma 17.1]. The connection with self-decomposable laws is provided by:
-Theorem 24 (Sato–Yamazato, 1983).For any self-decomposable lawφ and any ﬁxed speedv, there
-exists a unique Lévy–Khintchine triplet(l,ν 2,ρ ) with
-∫
-|x|≥1 log|x|ρ(dx)< +∞, such that the associated
-Ornstein–Uhlenbeck process(Ut)t≥0 with speedv satisﬁes:
-Mod-φ convergence, II: Estimates on the speed of convergence 25
-∀x∈ R, Pt(x,·)⇀φ.
-If ψ(iξ) is the exponent associated to(l,ν 2,ρ ), then
-ˆφ(ξ) = exp
-(∫ ∞
-s=0
-ψ(iξe−vs)ds
-)
-.
-We refer to [SY83] and [Sat99, Theorem 17.5]. In the setting of Theorem 24, one has the relation
-ˆφ(ξ) =ˆφ(e−vtξ)
-(
-ˆPt(x,·)(ξ) ˆδ−e−vtx(ξ)
-)
-,
-so ifb∈ (0, 1), settingb = e−vt, one recoverspb as the law ofUt− e−vtx, where(Ut)t∈R+ is the Ornstein–
-Uhlenbeck process that converges in distribution toφ and that has speedv and starting pointx.
-Suppose thatφ =φc,α,β is a stable law. Then, the previous computations can be reinterpreted in the
-framework of mod-φ convergence. We set
-θ(ξ) =
-ˆδx(ξ)
-ˆφ(ξ)
-= exp(iξx−η(iξ)),
-and
-Xt =
-{
-evtUt if α⁄= 1,
-evt
-(
-Ut− 2cβvt
-π
-)
-if α = 1.
-Then,
-E[eiξXt] =
-{
-ˆµ(evtξ)θ(ξ) if α⁄= 1,
-ˆµ(evtξ) e−iξevt 2cβvt
-π θ(ξ) if α = 1,
-= eeαvtη(iξ)θ(ξ),
-so (Xt)t≥0 converges mod-φ with parameters eαvt, and with limit equal to the residueθ(ξ). Note that
-θt =θ for anyt≥ 0, so we are in a special situation where the residues are constant (time-independent).
-Assuming thatx⁄= 0, one has for anyξ∈ R
-|θ(ξ)− 1|≤
-
-
-
-K1|ξ| exp(K2|ξ|α) if α∈ (1, 2],
-K1|ξ|α exp(K2|ξ|α) if α∈ (0, 1) or α = 1,β = 0,
-K1|ξ| log|ξ| exp(K2|ξ|) if α = 1,β⁄= 0.
-For the two ﬁrst cases, the conditionγ≤ min( 1
-w−α, v−1
-α ) in Theorem 20 imposes the following choices of
-γ when computing Berry–Esseen estimates:γ = α−1
-α whenα≤ 1, andγ = 0 whenα≥ 1. In these cases,
-one obtains:
-dKol(Ut,φc,α,β) =
-{
-O(e−vt) if α∈ (1, 2],
-O(e−αvt) if α∈ (0, 1) or α = 1,β = 0.
-Because of the termlog|ξ|, the last case does not exactly ﬁt the framework of zones of control, but it is
-easy to adapt the proofs and one gets an estimateO(vt e−vt). On the other hand, whenx = 0, the only
-diﬀerence with the previous discussion is the caseα∈ (1, 2], where we obtain
-|θ(ξ)− 1|≤ K1|ξ|α exp(K2|ξ|α)
-and by Theorem 20,dKol(Ut,φc,α,β) =O(e−αvt), choosingγ = α−1
-α . So, to summarise:
-Proposition 25.Let Y be a random variable with stable lawφc,α,β, and (Ut)t≥0 be the corresponding
-Ornstein–Uhlenbeck process with starting pointx and speedv. We have:
+[]{#subsec:ornstein label="subsec:ornstein"} Another way to approximate a stable law $\phi_{c,\alpha,\beta}$ is by using the marginales of a random process of Ornstein--Uhlenbeck type. Consider more generally a self-decomposable law $\phi$ on $\mathbb{R}$, that is an infinitely divisible distribution such that for any $b\in (0,1)$, there exists a probability measure $p_b$ on $\mathbb{R}$ such that $$\widehat{\phi}(\xi) = \widehat{\phi}(b\xi)\,\widehat{p}_b(\xi);\label{eq:selfdecomposable}$$ see [@Sato99 Chapter 3, Definition 15.1]. In Equation [\[eq:selfdecomposable\]](#eq:selfdecomposable){reference-type="eqref" reference="eq:selfdecomposable"}, the laws $p_b$ are the marginale laws of certain Markov processes. Fix a Lévy--Khintchine triplet $(l\in \mathbb{R},\,\, \nu^2 \in \mathbb{R}_+,\,\,\rho)$ with $\rho$ probability measure on $\mathbb{R}\setminus \{0\}$ that integrates $\min(1,|x|^2)$, and consider the Lévy process $(Z_t)_{t \in \mathbb{R}_+}$ associated to this triplet: $$\begin{aligned}
+\mathbb{E}[\E^{\I \xi Z_t}] &= \exp(t\psi(\I \xi)) \\
+&=  \exp\left(t\left(\I l \xi - \frac{\nu^2\xi^2}{2}+\int_{\mathbb{R}} (\E^{\I \xi x} - 1 - 1_{|x|<1}\I \xi x)\,\rho(\!\,d\hspace*{-0.3mm}{x})\right)\right).
+\end{aligned}$$ The Ornstein--Uhlenbeck process with triplet $(l,\nu^2,\rho)$, speed $v$ and starting point $x$ is the solution $(U_t)_{t \geq 0}$ of the stochastic differential equation $$U_t = \E^{-vt}x + \int_0^t \E^{-v(t-s)}\,dZ_s.$$ The Ornstein--Uhlenbeck process $(U_t)_{t \geq 0}$ can be shown to be a Markov process whose transition kernel $(P_t(x,\!\,d\hspace*{-0.3mm}{y}))_{t\geq 0}$ satisfies: $$\widehat{P_t(x,\cdot)}(\xi) =\int_{\mathbb{R}} \E^{\I \xi y}\,P_t(x,\!\,d\hspace*{-0.3mm}{y}) = \exp\left(\I \xi \E^{-vt} x + \int_{0}^t \psi(\I \xi\E^{-vs})\,d\hspace*{-0.3mm}{s} \right)$$ see [@Sato99 Lemma 17.1]. The connection with self-decomposable laws is provided by:
+
+::: theorem
+[]{#thm:selfdecomposable label="thm:selfdecomposable"} For any self-decomposable law $\phi$ and any fixed speed $v$, there exists a unique Lévy--Khintchine triplet $(l,\nu^2,\rho)$ with $\int_{|x|\geq 1}\log |x|\,\rho(\!\,d\hspace*{-0.3mm}{x})<+\infty$, such that the associated Ornstein--Uhlenbeck process $(U_t)_{t \geq 0}$ with speed $v$ satisfies: $$\forall x \in \mathbb{R},\,\,P_t(x,\cdot) \rightharpoonup \phi.$$ If $\psi(\I \xi)$ is the exponent associated to $(l,\nu^2,\rho)$, then $$\widehat{\phi}(\xi) = \exp\left(\int_{s=0}^\infty \psi(\I \xi\E^{-vs}) \,d\hspace*{-0.3mm}{s}\right).$$
+:::
+
+We refer to [@SY83] and [@Sato99 Theorem 17.5]. In the setting of Theorem [\[thm:selfdecomposable\]](#thm:selfdecomposable){reference-type="ref" reference="thm:selfdecomposable"}, one has the relation $$\widehat{\phi}(\xi) = \widehat{\phi}(\E^{-vt}\xi)\,\left(\widehat{P_t(x,\cdot)}(\xi)\,\widehat{\delta_{-\E^{-vt}x}}(\xi)\right),$$ so if $b \in (0,1)$, setting $b=\E^{-vt}$, one recovers $p_b$ as the law of $U_t-\E^{-vt}x$, where $(U_t)_{t \in \mathbb{R}_+}$ is the Ornstein--Uhlenbeck process that converges in distribution to $\phi$ and that has speed $v$ and starting point $x$.
+
+Suppose that $\phi=\phi_{c,\alpha,\beta}$ is a stable law. Then, the previous computations can be reinterpreted in the framework of mod-$\phi$ convergence. We set $$\theta(\xi) =  \frac{\widehat{\delta_{x}}(\xi)}{\widehat{\phi}(\xi)} = \exp(\I \xi x - \eta(\I \xi)),$$ and $$X_t = \begin{cases}
+     \E^{vt} U_t &\text{ if }\alpha \neq 1,\\
+     \E^{vt} \left(U_t - \frac{2c\beta vt}{\pi}\right) &\text{ if }\alpha = 1.
+\end{cases}$$ Then, $$\begin{aligned}
+\mathbb{E}[\E^{\I \xi X_t}] &= \begin{cases}
+    \widehat{\mu}(\E^{vt} \xi) \,\theta(\xi)&\text{ if }\alpha \neq 1,\\
+    \widehat{\mu}(\E^{vt} \xi)\,\E^{-\I \xi \E^{vt} \frac{2c\beta vt}{\pi}} \,\theta(\xi)&\text{ if }\alpha = 1,
+\end{cases}\\
+&= \E^{\E^{\alpha vt}\eta(\I \xi)} \,\theta(\xi),
+\end{aligned}$$ so $(X_t)_{t \geq 0}$ converges mod-$\phi$ with parameters $\E^{\alpha vt}$, and with limit equal to the residue $\theta(\xi)$. Note that $\theta_t = \theta$ for any $t \geq 0$, so we are in a special situation where the residues are constant (time-independent). Assuming that $x \neq 0$, one has for any $\xi \in \mathbb{R}$ $$|\theta(\xi)-1| \leq \begin{cases}
+K_1\, |\xi|\,\exp(K_2\,|\xi|^\alpha) &\text{if }\alpha \in (1,2],\\
+K_1\, |\xi|^{\alpha}\,\exp(K_2\,|\xi|^\alpha) & \text{if }\alpha \in (0,1) \text{ or }\alpha=1,\beta=0,\\
+K_1\, |\xi|\log |\xi| \,\exp(K_2\,|\xi|) &\text{if }\alpha=1,\beta \neq 0.
+\end{cases}$$ For the two first cases, the condition $\gamma \leq \min(\frac{1}{w-\alpha},\frac{v-1}{\alpha})$ in Theorem [\[thm:kolmogorov\]](#thm:kolmogorov){reference-type="ref" reference="thm:kolmogorov"} imposes the following choices of $\gamma$ when computing Berry--Esseen estimates: $\gamma = \frac{\alpha-1}{\alpha}$ when $\alpha\leq 1$, and $\gamma = 0$ when $\alpha \geq 1$. In these cases, one obtains: $$d_\mathrm{Kol}(U_t, \phi_{c,\alpha,\beta}) = \begin{cases}
+    O(\E^{-vt}) &\text{ if } \alpha \in (1,2],\\
+    O(\E^{-\alpha vt}) &\text{ if }\alpha \in (0,1) \text{ or }\alpha=1,\beta=0.
+\end{cases}$$ Because of the term $\log |\xi|$, the last case does not exactly fit the framework of zones of control, but it is easy to adapt the proofs and one gets an estimate $O(vt\,\E^{-vt})$. On the other hand, when $x=0$, the only difference with the previous discussion is the case $\alpha \in (1,2]$, where we obtain $$|\theta(\xi)-1| \leq K_1\, |\xi|^\alpha\,\exp(K_2\,|\xi|^\alpha)$$ and by Theorem [\[thm:kolmogorov\]](#thm:kolmogorov){reference-type="ref" reference="thm:kolmogorov"}, $d_\mathrm{Kol}(U_t,\phi_{c,\alpha,\beta}) = O(\E^{-\alpha vt})$, choosing $\gamma = \frac{\alpha-1}{\alpha}$. So, to summarise:
+
+::: proposition
+[]{#prop:ornstein label="prop:ornstein"} Let $Y$ be a random variable with stable law $\phi_{c,\alpha,\beta}$, and $(U_t)_{t \geq 0}$ be the corresponding Ornstein--Uhlenbeck process with starting point $x$ and speed $v$. We have: $$d_\mathrm{Kol}(U_t,Y) = \begin{cases}
+     O(\E^{-vt})\!&\text{if }\alpha \in (1,2],x \neq 0,\\
+    O(\E^{-\alpha vt})\!&\text{if }\alpha \in (0,1) \text{ or }\alpha =1,\beta =0 \text{ or }\alpha \in (1,2],x=0,\\
+    O(vt\,\E^{-vt})\! &\text{if }\alpha=1,\beta \neq 0,
+\end{cases}$$ with constants in the $O(\cdot)$ depending only on $x$ and $\alpha$.
+:::

@@ -7,10 +7,10 @@ section_number: null
 pages: 26-27
 source_pdf: 1308.2499v1.pdf
 source_sha256: 3b20abdc0e1b0ba9
-text_source: latex
-latex_prose_ratio: 0.892
-latex_coverage_ratio: 1.0
 doc_brief: "Towards a regularity theory for integral Menger curvature — We generalize the notion of integral Menger curvature introduced by Gonzalez and Maddocks [14] by decoupling the powers in the integrand."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sect:fractional}
 

@@ -319,8 +319,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Plumbed_GPPV_arXiv.tex",
-   "tex_sections": 7,
-   "overlaid": 4,
+   "tex_sections": 15,
+   "overlaid": 15,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -330,15 +330,15 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.887,
-     "coverage_ratio": 0.919,
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-acknowledgement",
      "title": "Acknowledgement",
-     "prose_ratio": 0.974,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
@@ -346,76 +346,106 @@
     {
      "id": "sec-002-2-basic-notations-for-plumbing-graphs",
      "title": "Basic notations for plumbing graphs",
-     "prose_ratio": 0.082,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.867,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-21-notations-for-graphs",
      "title": "Notations for graphs",
-     "result": "no matching \\section"
+     "prose_ratio": 0.823,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-22-the-inverse-matrix-of-the-linking-matrix",
      "title": "The inverse matrix of the linking matrix",
-     "result": "no matching \\section"
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.868,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-23-periodic-maps-determined-by-the-linking-matri",
      "title": "Periodic maps determined by the linking matrix",
-     "result": "no matching \\section"
+     "prose_ratio": 0.881,
+     "coverage_ratio": 0.889,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-24-rational-functions-determined-by-the-linking",
      "title": "Rational functions determined by the linking matrix",
-     "result": "no matching \\section"
+     "prose_ratio": 0.877,
+     "coverage_ratio": 0.82,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-3-calculations-of-wrt-invariants",
      "title": "Calculations of WRT invariants",
-     "prose_ratio": 0.974,
-     "coverage_ratio": 0.915,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.962,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-008-4-expressions-of-homological-blocks-as-false-the",
      "title": "Expressions of homological blocks as false theta functions",
-     "prose_ratio": 0.898,
-     "coverage_ratio": 0.869,
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-009-5-an-asymtotic-formula",
      "title": "An asymtotic formula",
-     "prose_ratio": 0.075,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-51-asymtotic-formulas-obtained-from-eulermaclaur",
      "title": "Asymtotic formulas obtained from Euler\u2013Maclaurin summation formula",
-     "result": "no matching \\section"
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.906,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-52-asymtotic-expansion-of-infinite-series-with-w",
      "title": "Asymtotic expansion of infinite series with weighted Gauss sums",
-     "result": "no matching \\section"
+     "prose_ratio": 0.899,
+     "coverage_ratio": 0.892,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-6-a-proof-of-the-main-theorem",
      "title": "A proof of the main theorem",
-     "prose_ratio": 0.117,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.909,
+     "coverage_ratio": 0.909,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-61-the-main-result",
      "title": "The main result",
-     "result": "no matching \\section"
+     "prose_ratio": 0.732,
+     "coverage_ratio": 0.806,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-014-62-a-proof-of-the-main-result",
      "title": "A proof of the main result",
-     "result": "no matching \\section"
+     "prose_ratio": 0.88,
+     "coverage_ratio": 0.845,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-015-references",

@@ -7,36 +7,35 @@ section_number: null
 pages: 13-14
 source_pdf: 2404.19155v2.pdf
 source_sha256: 45b9ed90006536b3
-text_source: latex
-latex_prose_ratio: 0.655
-latex_coverage_ratio: 0.897
 doc_brief: "Octahedral coordinates from the Wirtinger presentation Calvin McPhail-Snyder Duke University calvin@sl2.site — Letρ be a representation of a knot group (or more generally, the funda- mental group of"
+text_source: latex
+latex_prose_ratio: 0.993
+latex_coverage_ratio: 0.976
 ---
 []{#sec:gauge-transformations label="sec:gauge-transformations"}
 
-In this section we discuss how gauge transformation (conjugation) of the representation $\rho$ interacts with the decorations and shadows. In this context it is natural to break gauge transformations into two separate types. We then use gauge transformations to prove that every decorated representation is gauge-equivalent to an admissible one (i.e. one that is the holonomy of an octahedral coloring).
+In this section we discuss how gauge transformation (conjugation) of the representation $\rho$ interacts with the decorations and shadows. In this context it is natural to break gauge transformations into two separate types. We then use gauge transformations to prove that every decorated representation is gauge-equivalent to an admissible one (i.e.one that is the holonomy of an octahedral coloring).
 
 ::: definition
 Let $i \mapsto (g_i, L_i)$, $j \mapsto u_j$ be a decorated shadow $\slg$ coloring of a tangle diagram $D$. A of it is a coloring of the form
 
-- $i \mapsto (h^{-1} g_i h, L_i h)$ and $j \mapsto g^{-1} u_j$
+-   $i \mapsto (h^{-1} g_i h, L_i h)$ and $j \mapsto g^{-1} u_j$
 
-- $i \mapsto (g_i, L_i)$ and $j \mapsto h^{-1} u_j$
+-   $i \mapsto (g_i, L_i)$ and $j \mapsto h^{-1} u_j$
 
 for some $h \in \slg$. We say the new colorings are the images of and gauge transformations .
 :::
 
-It is not hard to see that the gauge transformation of a coloring is still a coloring and that the corresponding representation $\rho : \pi(D) \to \slg$ is conjugated under a type (A) transformation and unchanged under type (B). We can use type (B) transformations to choose the shadow of a single region arbitrarily as in [\[thm:shadow-colors-free\]](#thm:shadow-colors-free){reference-type="ref+label" reference="thm:shadow-colors-free"}.
+It is not hard to see that the gauge transformation of a coloring is still a coloring and that the corresponding representation $\rho : \pi(D) \to \slg$ is conjugated under a type (A) transformation and unchanged under type (B). We can use type (B) transformations to choose the shadow of a single region arbitrarily as in [\[thm:shadow-colors-free\]](#thm:shadow-colors-free){reference-type="ref" reference="thm:shadow-colors-free"}.
 
 <figure id="fig:gauge-transformation">
 
 <figcaption> Graphical description of gauge transformations. The thick strands represent bundles of incoming and outgoing segments (possibly empty) with arbitrary colorings. </figcaption>
 </figure>
 
-The letters A and B are chosen because a type (A) transformation comes from pulling a strand colored by $h$ across and **A**bove the diagram, while for type (B) we pull across and **B**elow. Both are shown in [1](#fig:gauge-transformation){reference-type="ref+label" reference="fig:gauge-transformation"}. These are quite similar to the diagrammatic gauge transformations of @Blanchet2018 [Section 3.3]. Combinatorially they come from Reidemeister moves for shadow colored diagrams.
+The letters A and B are chosen because a type (A) transformation comes from pulling a strand colored by $h$ across and **A**bove the diagram, while for type (B) we pull across and **B**elow. Both are shown in [1](#fig:gauge-transformation){reference-type="ref" reference="fig:gauge-transformation"}. These are quite similar to the diagrammatic gauge transformations of @Blanchet2018 [Section 3.3]. Combinatorially they come from Reidemeister moves for shadow colored diagrams.
 
-Let $i \mapsto \chi_i$ be the octahedral coloring associated to a shadow coloring. We can immediately compute that under a type (A) transformation by $h$ the new associated coloring is $$\begin{equation}
-  \label{eq:type-A-gauge}
+Let $i \mapsto \chi_i$ be the octahedral coloring associated to a shadow coloring. We can immediately compute that under a type (A) transformation by $h$ the new associated coloring is $$\label{eq:type-A-gauge}
   i \mapsto
   \tilde{\chi}_i
   =
@@ -72,9 +71,7 @@ Let $i \mapsto \chi_i$ be the octahedral coloring associated to a shadow colorin
     }
     ,
     m_i
-  \right)
-\end{equation}$$ while under type (B) it is $$\begin{equation}
-  \label{eq:type-B-gauge}
+  \right)$$ while under type (B) it is $$\label{eq:type-B-gauge}
   i \mapsto
   \tilde{\chi}_i
   =
@@ -110,8 +107,7 @@ Let $i \mapsto \chi_i$ be the octahedral coloring associated to a shadow colorin
     }
     ,
     m_i
-  \right)
-\end{equation}$$
+  \right)$$
 
 ::: bigtheorem
 []{#thm:gauge-equivalent-to-admissible label="thm:gauge-equivalent-to-admissible"} Let $D$ be any tangle diagram and $\rho : \pi(D) \to \slg$ any decorated representation. Then $\rho$ is gauge-equivalent to an admissible representation, in the sense that there is a conjugate $h^{-1} \rho h$ of $\rho$ that gives an admissible decorated shadow coloring of $D$.

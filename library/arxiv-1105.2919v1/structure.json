@@ -888,8 +888,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "revc.tex",
-   "tex_sections": 8,
-   "overlaid": 1,
+   "tex_sections": 45,
+   "overlaid": 24,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -899,45 +899,65 @@
     {
      "id": "sec-000-1-introduction-and-historical-perspective",
      "title": "Introduction and historical perspective",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.813,
+     "prose_ratio": 0.794,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-21-symmetries-of-low-energy-qcd",
      "title": "Symmetries of low-energy QCD",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.309,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-002-211-chiral-symmetry",
      "title": "Chiral symmetry",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.922,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-212-explicit-symmetry-breaking",
      "title": "Explicit symmetry breaking",
-     "result": "no matching \\section"
+     "prose_ratio": 0.923,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-213-spontaneous-symmetry-breaking",
      "title": "Spontaneous symmetry breaking",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-221-relativistic-formulation",
      "title": "Relativistic formulation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-222-heavy-baryon-formalism",
      "title": "Heavy baryon formalism",
-     "result": "no matching \\section"
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-23-nucleon-contact-lagrangians",
      "title": "Nucleon contact Lagrangians",
-     "result": "no matching \\section"
+     "prose_ratio": 0.865,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-3-nuclear-forces-from-eft-overview",
@@ -947,18 +967,26 @@
     {
      "id": "sec-009-31-chiral-perturbation-theory-and-power-counting",
      "title": "Chiral perturbation theory and power counting",
-     "result": "no matching \\section"
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-32-the-hierarchy-of-nuclear-forces",
      "title": "The hierarchy of nuclear forces",
-     "result": "no matching \\section"
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-4-two-nucleon-interactions",
      "title": "Two-nucleon interactions",
-     "prose_ratio": 0.015,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.714,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-411-one-pion-exchange",
@@ -968,7 +996,8 @@
     {
      "id": "sec-013-41-pion-exchange-contributions-in-chpt",
      "title": "Pion-exchange contributions in ChPT",
-     "result": "no matching \\section"
+     "prose_ratio": 0.425,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-014-412-two-pion-exchange",
@@ -978,12 +1007,18 @@
     {
      "id": "sec-015-413-three-pion-exchange",
      "title": "Three-pion exchange",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-016-42-perturbative-nn-scattering-in-peripheral-part",
      "title": "Perturbative NN scattering in peripheral partial waves",
-     "result": "no matching \\section"
+     "prose_ratio": 0.848,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-017-43-nn-contact-terms",
@@ -993,47 +1028,69 @@
     {
      "id": "sec-018-431-zeroth-order-lo",
      "title": "Zeroth order (LO)",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-019-432-second-order-nlo",
      "title": "Second order (NLO)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.799,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-020-45-renormalization",
      "title": "Renormalization",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.0,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-021-451-regularization-and-non-perturbative-renormal",
      "title": "Regularization and non-perturbative renormalization",
-     "result": "no matching \\section"
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-022-452-renormalization-beyond-leading-order",
      "title": "Renormalization beyond leading order",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-023-453-back-to-the-beginnings",
      "title": "Back to the beginnings",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-024-454-concluding-the-renormalization-issue",
      "title": "Concluding the renormalization issue",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.826,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-025-46-constructing-quantitative-chiral-nn-potential",
      "title": "Constructing quantitative chiral NN potentials",
-     "result": "no matching \\section"
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-026-461-what-order",
      "title": "What order?",
-     "result": "no matching \\section"
+     "prose_ratio": 0.328,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-027-462-charge-dependence",
@@ -1048,32 +1105,50 @@
     {
      "id": "sec-029-51-three-nucleon-forces",
      "title": "Three-nucleon forces",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-030-511-next-to-leading-order",
      "title": "Next-to-leading order",
-     "result": "no matching \\section"
+     "prose_ratio": 0.948,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-031-512-next-to-next-to-leading-order",
      "title": "Next-to-next-to-leading order",
-     "result": "no matching \\section"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-032-513-next-to-next-to-next-to-leading-order",
      "title": "Next-to-next-to-next-to-leading order",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-033-515-3nf-summary",
      "title": "3NF summary",
-     "result": "no matching \\section"
+     "prose_ratio": 0.98,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-034-52-four-nucleon-forces",
      "title": "Four-nucleon forces",
-     "result": "no matching \\section"
+     "prose_ratio": 0.758,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-035-7-conclusions",

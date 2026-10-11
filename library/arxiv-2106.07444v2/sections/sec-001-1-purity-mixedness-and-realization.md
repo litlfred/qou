@@ -7,10 +7,10 @@ section_number: 1
 pages: 15-22
 source_pdf: 2106.07444v2.pdf
 source_sha256: 5acca39c07bcdddd
-text_source: latex
-latex_prose_ratio: 0.987
-latex_coverage_ratio: 0.966
 doc_brief: "FROM THE HECKE CATEGORY TO THE UNIPOTENT LOCUS — Let W be the W eyl group of a split semisimple group G. Its Hecke category HW can be built from pure perverse sheaves on the double ﬂag variety of G."
+text_source: latex
+latex_prose_ratio: 0.995
+latex_coverage_ratio: 0.993
 ---
 []{#sec:mixed label="sec:mixed"}
 
@@ -24,13 +24,13 @@ Fix a root datum $(\Phi, \bb{X}, \Phi^\vee, \bb{X}^\vee)$. Let $G$ be the reduct
 
 Let $X_0$ be a $G_0$-variety over $\bb{F}$, equipped with a fixed $G_0$-stable stratification by locally closed subvarieties. Let $X = X_0 \otimes \bar{\bb{F}}$. In general, we use a subscript $0$ to denote varieties over $\bb{F}$, and omit the subscript to denote their pullback to $\bar{\bb{F}}$.
 
-Fix a prime $\ell$ invertible in $\bb{F}$. We write $$\begin{align}
+Fix a prime $\ell$ invertible in $\bb{F}$. We write $$\begin{aligned}
 \sf{D}_G^b(X) &= \sf{D}_G^b(X, \bar{\mathbf{Q}}_\ell),\\
 \emph{resp.}\qquad
 \sf{D}_{G, m}^b(X_0) &= \sf{D}_{G, m}^b(X_0, \bar{\mathbf{Q}}_\ell),
-\end{align}$$ for the bounded derived category of complexes, *resp.* mixed complexes, of $\bar{\mathbf{Q}}_\ell$-sheaves on the lisse-étale site of the stack $[X/G]$, *resp.* $[X_0/G_0]$, with constructible cohomology with respect to the stratification. Mixed complexes were introduced by Deligne in the non-stacky, étale setting [@deligne_1980]; we refer to [@bbd Ch. 5] for an overview. We fix a square root $q^{\frac{1}{2}} \in \bar{\mathbf{Q}}_\ell^\times$ to define a half-Tate twist $(\frac{1}{2})$. The **shift-twist** $\langle 1 \rangle = [1](\frac{1}{2})$ is a weight-preserving endofunctor of $\sf{D}_{G, m}^b(X_0)$. We write $$\begin{align}
+\end{aligned}$$ for the bounded derived category of complexes, *resp.* mixed complexes, of $\bar{\mathbf{Q}}_\ell$-sheaves on the lisse-étale site of the stack $[X/G]$, *resp.* $[X_0/G_0]$, with constructible cohomology with respect to the stratification. Mixed complexes were introduced by Deligne in the non-stacky, étale setting [@deligne_1980]; we refer to [@bbd Ch. 5] for an overview. We fix a square root $q^{\frac{1}{2}} \in \bar{\mathbf{Q}}_\ell^\times$ to define a half-Tate twist $(\frac{1}{2})$. The **shift-twist** $\langle 1 \rangle = [1](\frac{1}{2})$ is a weight-preserving endofunctor of $\sf{D}_{G, m}^b(X_0)$. We write $$\begin{aligned}
 \xi : \sf{D}_{G, m}^b(X_0) \to \sf{D}_G^b(X)
-\end{align}$$ for the pullback functor.
+\end{aligned}$$ for the pullback functor.
 
 In [@lo_2008], Laszlo--Olsson extended the Grothendieck--Verdier yoga of the six operations to lisse-étale sheaves on Artin stacks locally of finite type over a finite-dimensional affine excellent base. In [@lo_2009], they did the same for the theory of $t$-structures and perverse sheaves developed in [@bbd Ch. 1-2]. In [@sun], S. Sun extended the theory of mixed complexes to this setting, under the hypothesis that *the stabilizers of the stack are affine algebraic groups*. For all choices of $X_0$ that we will consider, this hypothesis will hold for $[X_0/G_0]$ and $[X/G]$. Sun's work covers all of the results from [@bbd Ch. 5] that we need.
 
@@ -40,12 +40,12 @@ Throughout this paper, all maps between $G_0$-varieties or $G$-varieties will be
 []{#rem:bounded-below label="rem:bounded-below"} The categories $\sf{D}_{G, m}^b(X_0)$ and $\sf{D}_G^b(X)$ need not be closed under internal Hom. But for any $K, L \in \sf{D}_{G, m}^b(X_0)$, the object $\SHom(K, L)$ does exist in the *bounded-below* derived category of mixed complexes over $[X_0/G_0]$, and similarly with $\sf{D}_G^b(X)$ in place of $\sf{D}_{G, m}^b(X_0)$ [@lo_2008]. We will not comment further on this issue since it will not raise problems, except to note that the hypercohomology of $\SHom(K, L)$ will always be bounded below.
 :::
 
-Let $\mathit{pt}_0 = \Spec \bb{F}$, and let $a : X_0 \to \mathit{pt}_0$ be the structure map. For all objects $K, L \in \sf{D}_{G, m}^b(X_0)$, we write $$\begin{align}
+Let $\mathit{pt}_0 = \Spec \bb{F}$, and let $a : X_0 \to \mathit{pt}_0$ be the structure map. For all objects $K, L \in \sf{D}_{G, m}^b(X_0)$, we write $$\begin{aligned}
 \SHom^n(K, L) &= \ur{H}^n(\xi a_\ast \SHom(K, L)).
-\end{align}$$ Similarly, we write $\SEnd^n(K) = \SHom^n(K, K)$. We can view $a_\ast \SHom(K, L)$ as a sheaf over $\mathit{pt}_0$, so its pullback along $\xi$ can be viewed as a sheaf over $\mathit{pt}$ endowed with an $F$-equivariant structure. In particular, $\SHom^n(K, L)$ is the vector space $\Hom^n(\xi K, \xi L)$ endowed with an $F$-action. The $\bar{\mathbf{Q}}_\ell[F]$-module formed by $\SHom^\ast(K, L)$ is related to the vector space $\Hom^\ast(K, L)$ by short exact sequences $$\begin{align}
+\end{aligned}$$ Similarly, we write $\SEnd^n(K) = \SHom^n(K, K)$. We can view $a_\ast \SHom(K, L)$ as a sheaf over $\mathit{pt}_0$, so its pullback along $\xi$ can be viewed as a sheaf over $\mathit{pt}$ endowed with an $F$-equivariant structure. In particular, $\SHom^n(K, L)$ is the vector space $\Hom^n(\xi K, \xi L)$ endowed with an $F$-action. The $\bar{\mathbf{Q}}_\ell[F]$-module formed by $\SHom^\ast(K, L)$ is related to the vector space $\Hom^\ast(K, L)$ by short exact sequences $$\begin{aligned}
 \label{eq:bbd}
 0 \to \SHom^{n - 1}(K, L)_F \to \Hom^n(K, L) \to \SHom^n(K, L)^F \to 0
-\end{align}$$ for all $n$ [@bbd (5.1.2.5)]. The morphism $\Hom^n(K, L) \to \Hom^n(\xi K, \xi L)$ factors through the morphism $\Hom^n(K, L) \to \SHom^n(K, L)^F$ above.
+\end{aligned}$$ for all $n$ [@bbd (5.1.2.5)]. The morphism $\Hom^n(K, L) \to \Hom^n(\xi K, \xi L)$ factors through the morphism $\Hom^n(K, L) \to \SHom^n(K, L)^F$ above.
 
 Throughout this paper, all $\bar{\mathbf{Q}}_\ell[F]$-modules will arise from mixed complexes, and all of their eigenvalues under the action of $F$ will be pure of integer weight in the sense of [@deligne_1980 §1.2.1]. We write $\bm{w}_{\leq \ast}$ to denote the weight filtration on such a module $M$. Explicitly, $\bm{w}_{\leq n} M \subseteq M$ is the sum of the generalized eigenspaces of $F$ where the eigenvalues are pure of weight $\leq n$.
 
@@ -53,41 +53,40 @@ Throughout this paper, all $\bar{\mathbf{Q}}_\ell[F]$-modules will arise from mi
 
 We will introduce a mild generalization of the realization functors used by Rider in [@rider]. Our formalism also resembles the ones used by Bezrukavnikov--Yun in [@by Appendix B] and Lusztig--Yun in [@ly_2020 §9], though we do not need to develop ours as extensively. All of these formalisms are ultimately based on the work of Beilinson in [@beilinson].
 
-Let $\sf{C}(X_0) \subseteq \sf{D}_{G, m}^b(X_0)$ be a full, additive subcategory. We say that $\sf{C}(X_0)$ is **realizable** iff, for all $K, L \in \sf{C}(X_0)$, we have $$\begin{align}
+Let $\sf{C}(X_0) \subseteq \sf{D}_{G, m}^b(X_0)$ be a full, additive subcategory. We say that $\sf{C}(X_0)$ is **realizable** iff, for all $K, L \in \sf{C}(X_0)$, we have $$\begin{aligned}
 \label{eq:realizable}
 n \neq 0 \implies \gr_0^{\bm{w}} \SHom^n(K, L) = 0,
-\end{align}$$ where $\gr_0^{\bm{w}}$ denotes the $0$th graded piece of the weight filtration. (Compare to Assumption $\mathrm{C}_1$ in [@by §B.1].) In practice, the objects of $\sf{C}(X_0)$ will be direct sums of pure shifted perverse sheaves.
+\end{aligned}$$ where $\gr_0^{\bm{w}}$ denotes the $0$th graded piece of the weight filtration. (Compare to Assumption $\mathrm{C}_1$ in [@by §B.1].) In practice, the objects of $\sf{C}(X_0)$ will be direct sums of pure shifted perverse sheaves.
 
 ::: lem
-If $\sf{C}(X_0)$ is realizable, then $$\begin{align}
+If $\sf{C}(X_0)$ is realizable, then $$\begin{aligned}
 \label{eq:zero-one}
 n \neq 0, 1 \implies \Hom^n(K, L) = 0
-\end{align}$$ for all $K, L \in \sf{C}(X_0)$.
+\end{aligned}$$ for all $K, L \in \sf{C}(X_0)$.
 :::
 
 ::: proof
 *Proof.* If $n \neq 0, 1$, then $\SHom^{n - 1}(K, L)_F,\,\SHom^n(K, L)^F = 0$ by the realizability of $\sf{C}(X_0)$, so $\Hom^n(K, L) = 0$ by the exactness of [\[eq:bbd\]](#eq:bbd){reference-type="eqref" reference="eq:bbd"}. ◻
 :::
 
-We write $\underline{\sf{C}}(X_0)$ for the category in which the objects are the same as in $\sf{C}(X_0)$, but the morphisms are given by $$\begin{align}
+We write $\underline{\sf{C}}(X_0)$ for the category in which the objects are the same as in $\sf{C}(X_0)$, but the morphisms are given by $$\begin{aligned}
 \Hom_{\underline{\sf{C}}(X_0)}(K, L) = \gr_0^{\bm{w}} \SHom^0(K, L).
-\end{align}$$ By construction, it is a full, additive subcategory of $\underline{\sf{D}}_{G, m}^b(X_0)$. There is a functor $$\begin{align}
+\end{aligned}$$ By construction, it is a full, additive subcategory of $\underline{\sf{D}}_{G, m}^b(X_0)$. There is a functor $$\begin{aligned}
 \kappa : \sf{C}(X_0) \to \underline{\sf{C}}(X_0)
-\end{align}$$ induced by the composition of morphisms $$\begin{align}
+\end{aligned}$$ induced by the composition of morphisms $$\begin{aligned}
 \label{eq:c-to-underline-c}
 \Hom(K, L) \to \SHom(K, L)^F \to \bm{w}_{\leq 0}\,\SHom(L, K) \to \Hom_{\underline{\sf{C}}(X_0)}(K, L).
-\end{align}$$ If $\sf{C}(X_0)$ is realizable, then [\[eq:c-to-underline-c\]](#eq:c-to-underline-c){reference-type="eqref" reference="eq:c-to-underline-c"} is injective by the exactness of [\[eq:bbd\]](#eq:bbd){reference-type="eqref" reference="eq:bbd"}, so in this case, $\kappa$ is faithful.
+\end{aligned}$$ If $\sf{C}(X_0)$ is realizable, then [\[eq:c-to-underline-c\]](#eq:c-to-underline-c){reference-type="eqref" reference="eq:c-to-underline-c"} is injective by the exactness of [\[eq:bbd\]](#eq:bbd){reference-type="eqref" reference="eq:bbd"}, so in this case, $\kappa$ is faithful.
 
 ## 
 
 Given any additive category $\sf{A}$, we write $\sf{C}^b(\sf{A})$ for the category of bounded complexes of objects of $\sf{A}$ and $\sf{K}^b(\sf{A})$ for the homotopy category of $\sf{C}^b(\sf{A})$. We write $[1]_\triangle$ for the endofunctors of these categories that shift each complex down by one degree.
 
-*Throughout the rest of this subsection, we assume that $\sf{C}(X_0)$ is realizable*. We will construct **realization functors** $$\begin{align}
+*Throughout the rest of this subsection, we assume that $\sf{C}(X_0)$ is realizable*. We will construct **realization functors** $$\begin{aligned}
 \rho : \sf{K}^b(\sf{C}(X_0)) &\to \sf{D}_{G, m}^b(X_0),\\
 \emph{resp.}\qquad
 \rho : \sf{K}^b(\underline{\sf{C}}(X_0)) &\to \underline{\sf{D}}_{G, m}^b(X_0),
-\end{align}$$ that are triangulated in the sense that $\rho([1]_\triangle) = [1]$ and restrict to the identity functor on $\sf{C}(X_0)$, *resp.* $\underline{\sf{C}}(X_0)$, viewed as the full subcategory of $\sf{K}^b(\sf{C}(X_0))$, *resp.* $\sf{K}^b(\underline{\sf{C}}(X_0))$, of complexes concentrated in degree zero. The explicit construction of these functors will show that the diagram $$\begin{equation}
-\label{eq:kappa-rho}
+\end{aligned}$$ that are triangulated in the sense that $\rho([1]_\triangle) = [1]$ and restrict to the identity functor on $\sf{C}(X_0)$, *resp.* $\underline{\sf{C}}(X_0)$, viewed as the full subcategory of $\sf{K}^b(\sf{C}(X_0))$, *resp.* $\sf{K}^b(\underline{\sf{C}}(X_0))$, of complexes concentrated in degree zero. The explicit construction of these functors will show that the diagram $$\label{eq:kappa-rho}
 \begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]
 \matrix(m)[matrix of math nodes, row sep=2em, column sep=3em, text height=2ex, text depth=0.5ex]
 {   \sf{K}^b(\sf{C}(X_0))
@@ -100,8 +99,7 @@ Given any additive category $\sf{A}$, we write $\sf{C}^b(\sf{A})$ for the catego
 (m-2-1)     edge node{$\sf{K}^b\kappa$} (m-2-2)
 (m-1-1)     edge node[left]{$\rho$} (m-2-1)
 (m-1-2)     edge node{$\rho$} (m-2-2);
-\end{tikzpicture}
-\end{equation}$$ commutes.
+\end{tikzpicture}$$ commutes.
 
 Let $\sf{D}$ and $\sf{C}$ be defined by one of the following situations:
 
@@ -109,8 +107,7 @@ Let $\sf{D}$ and $\sf{C}$ be defined by one of the following situations:
 
 2.  $\sf{D} = \underline{\sf{D}}_{G, m}^b(X_0)$ and $\sf{C} = \underline{\sf{C}}(X_0)$.
 
-Let $\tilde{\sf{D}}$ be a filtered version of $\sf{D}$ in the sense of Beilinson [@beilinson], and let $\omega : \tilde{\sf{D}} \to \sf{D}$ be the forgetful functor. We will construct a full and faithful embedding $\tilde{\rho} : \sf{C}^b(\sf{C}) \to \tilde{\sf{D}}$, fitting into a commutative diagram: $$\begin{equation}
-\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]
+Let $\tilde{\sf{D}}$ be a filtered version of $\sf{D}$ in the sense of Beilinson [@beilinson], and let $\omega : \tilde{\sf{D}} \to \sf{D}$ be the forgetful functor. We will construct a full and faithful embedding $\tilde{\rho} : \sf{C}^b(\sf{C}) \to \tilde{\sf{D}}$, fitting into a commutative diagram: $$\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]
 \matrix(m)[matrix of math nodes, row sep=2em, column sep=2.5em, text height=2ex, text depth=0.5ex]
 {   \sf{C}^b(\sf{C})
         &\sf{K}^b(\sf{C})\\
@@ -123,27 +120,26 @@ Let $\tilde{\sf{D}}$ be a filtered version of $\sf{D}$ in the sense of Beilinson
 \path[->,font=\scriptsize, auto, densely dotted]
 (m-1-1)     edge (m-1-2)
 (m-1-2)     edge node{$\rho$} (m-2-2);
-\end{tikzpicture}
-\end{equation}$$ More precisely, we will show that $\omega \circ \tilde{\rho}$ factors through the quotient functor $\sf{C}^b(\sf{C}) \to \sf{K}^b(\sf{C})$, allowing us to define $\rho$.
+\end{tikzpicture}$$ More precisely, we will show that $\omega \circ \tilde{\rho}$ factors through the quotient functor $\sf{C}^b(\sf{C}) \to \sf{K}^b(\sf{C})$, allowing us to define $\rho$.
 
-The filtered structure of $\tilde{\sf{D}}$ is given by full triangulated subcategories $\tilde{\sf{D}}^{\leq n}, \tilde{\sf{D}}^{\geq n}$ for each integer $n$, subject to certain axioms [@rider Def. 3.1]. Let $$\begin{align}
+The filtered structure of $\tilde{\sf{D}}$ is given by full triangulated subcategories $\tilde{\sf{D}}^{\leq n}, \tilde{\sf{D}}^{\geq n}$ for each integer $n$, subject to certain axioms [@rider Def. 3.1]. Let $$\begin{aligned}
 \bm{w}_{\leq n} : \tilde{\sf{D}} &\to \tilde{\sf{D}}^{\leq n},\\
 \emph{resp.}\qquad
 \bm{w}_{\geq n} : \tilde{\sf{D}} &\to \tilde{\sf{D}}^{\geq n},
-\end{align}$$ be right adjoint to the inclusion $\tilde{\sf{D}}^{\leq n} \to \tilde{\sf{D}}$, *resp.* left adjoint to the inclusion $\tilde{\sf{D}}^{\geq n} \to \tilde{\sf{D}}$. We set $$\begin{align}
+\end{aligned}$$ be right adjoint to the inclusion $\tilde{\sf{D}}^{\leq n} \to \tilde{\sf{D}}$, *resp.* left adjoint to the inclusion $\tilde{\sf{D}}^{\geq n} \to \tilde{\sf{D}}$. We set $$\begin{aligned}
 \gr_n = \bm{w}_{\leq n}\,\bm{w}_{\geq n} = \bm{w}_{\geq n}\,\bm{w}_{\leq n} : \tilde{\sf{D}} \to \tilde{\sf{D}}^{\leq n} \cap \tilde{\sf{D}}^{\geq n} \subseteq \tilde{\sf{D}}.
-\end{align}$$ Let $s : \tilde{\sf{D}} \to \tilde{\sf{D}}$ be the shift-of-filtration functor, so that $s(\tilde{\sf{D}}^{\leq n}) = \tilde{\sf{D}}^{\leq n + 1}$ and $s(\tilde{\sf{D}}^{\geq n}) = \tilde{\sf{D}}^{\geq n + 1}$.
+\end{aligned}$$ Let $s : \tilde{\sf{D}} \to \tilde{\sf{D}}$ be the shift-of-filtration functor, so that $s(\tilde{\sf{D}}^{\leq n}) = \tilde{\sf{D}}^{\leq n + 1}$ and $s(\tilde{\sf{D}}^{\geq n}) = \tilde{\sf{D}}^{\geq n + 1}$.
 
-Let $\tilde{\sf{A}} \subseteq \tilde{\sf{D}}$ be the full, additive subcategory of objects $K$ such that $\gr_n(K) \in s^n \sf{C}[n]$ for all $n$. We construct an additive functor $\alpha : \tilde{\sf{A}} \to \sf{C}^b(\sf{C})$ as follows. Let $$\begin{align}
+Let $\tilde{\sf{A}} \subseteq \tilde{\sf{D}}$ be the full, additive subcategory of objects $K$ such that $\gr_n(K) \in s^n \sf{C}[n]$ for all $n$. We construct an additive functor $\alpha : \tilde{\sf{A}} \to \sf{C}^b(\sf{C})$ as follows. Let $$\begin{aligned}
 \alpha(K)^n = \omega \gr_{-n}(K)[n],
-\end{align}$$ and let $\delta^n : \alpha(K)^n \to \alpha(K)^{n + 1}$ be the morphism we obtain by applying $\omega(-)[n]$ to the boundary morphism in the exact triangle $$\begin{align}
+\end{aligned}$$ and let $\delta^n : \alpha(K)^n \to \alpha(K)^{n + 1}$ be the morphism we obtain by applying $\omega(-)[n]$ to the boundary morphism in the exact triangle $$\begin{aligned}
 \begin{split}
 \gr_{-(n + 1)}(K)
 \to \bm{w}_{\leq -n}\, \bm{w}_{\geq -(n + 1)}(K)
 &\to \gr_{-n}(K)
 \xrightarrow{\delta^n} \gr_{-(n + 1)} (K)[1].
 \end{split}
-\end{align}$$ The map $K \mapsto \alpha(K)$ is functorial and additive, so it remains to show that:
+\end{aligned}$$ The map $K \mapsto \alpha(K)$ is functorial and additive, so it remains to show that:
 
 ::: lem
 For all $K \in \tilde{\sf{A}}$, the sequence $\alpha(K)$ is a well-defined object of $\sf{C}^b(\sf{C})$, *i.e.*, $\delta^{n + 1} \circ \delta^n = 0$ for all $n$.
@@ -172,8 +168,7 @@ The functor $\alpha : \tilde{\sf{A}} \to \sf{C}^b(\sf{C})$ is an equivalence. Mo
 :::
 
 ::: rem
-[]{#rem:compatible label="rem:compatible"} Realization functors are compatible with other functors in the following sense. We keep the notation above, but assume that we have two copies of each category and functor, *e.g.*, $\sf{D}_1, \sf{D}_2$ in place of $\sf{D}$. Let $\Phi : \sf{D}_1 \to \sf{D}_2$ be an exact functor that admits a canonical lift $\tilde{\Phi} : \tilde{\sf{D}}_1 \to \tilde{\sf{D}}_2$ compatible with the filtered structures on these categories in the sense of [@beilinson]. In particular, this condition means $\tilde{\Phi}$ is compatible with the functors $\gr_n$. If $\Phi$ restricts to a functor $\sf{C}_1 \to \sf{C}_2$, then there is a commutative diagram: $$\begin{equation}
-\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]
+[]{#rem:compatible label="rem:compatible"} Realization functors are compatible with other functors in the following sense. We keep the notation above, but assume that we have two copies of each category and functor, *e.g.*, $\sf{D}_1, \sf{D}_2$ in place of $\sf{D}$. Let $\Phi : \sf{D}_1 \to \sf{D}_2$ be an exact functor that admits a canonical lift $\tilde{\Phi} : \tilde{\sf{D}}_1 \to \tilde{\sf{D}}_2$ compatible with the filtered structures on these categories in the sense of [@beilinson]. In particular, this condition means $\tilde{\Phi}$ is compatible with the functors $\gr_n$. If $\Phi$ restricts to a functor $\sf{C}_1 \to \sf{C}_2$, then there is a commutative diagram: $$\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]
 \matrix(m)[matrix of math nodes, row sep=2em, column sep=2.5em, text height=2ex, text depth=0.5ex]
 {   \tilde{\sf{A}}_1
         &\tilde{\sf{A}}_2\\
@@ -185,9 +180,7 @@ The functor $\alpha : \tilde{\sf{A}} \to \sf{C}^b(\sf{C})$ is an equivalence. Mo
 (m-2-1)     edge node{$\Phi$} (m-2-2)
 (m-1-1)     edge node[left]{$\alpha_1$} (m-2-1)
 (m-1-2)     edge node{$\alpha_2$} (m-2-2);
-\end{tikzpicture}
-\end{equation}$$ It in turn induces a commutative diagram: $$\begin{equation}
-\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]
+\end{tikzpicture}$$ It in turn induces a commutative diagram: $$\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]
 \matrix(m)[matrix of math nodes, row sep=2em, column sep=3em, text height=2ex, text depth=0.5ex]
 {   \sf{K}^b(\sf{C}_1)
         &\sf{K}^b(\sf{C}_2)\\
@@ -199,8 +192,7 @@ The functor $\alpha : \tilde{\sf{A}} \to \sf{C}^b(\sf{C})$ is an equivalence. Mo
 (m-2-1)     edge node{$\Phi$} (m-2-2)
 (m-1-1)     edge node[left]{$\rho$} (m-2-1)
 (m-1-2)     edge node{$\rho$} (m-2-2);
-\end{tikzpicture}
-\end{equation}$$ So in this situation, $\Phi$ is compatible with realization.
+\end{tikzpicture}$$ So in this situation, $\Phi$ is compatible with realization.
 
 In practice, it will be easier to check the conditions on $\Phi$ when the categories $\sf{D}_i$ take the form $\sf{D}_{G, m}^b(X_0)$ than when they take the form $\underline{\sf{D}}_{G, m}^b(X_0)$.
 :::
@@ -213,34 +205,33 @@ We say that a full, additive subcategory $\sf{C}(X_0) \subseteq \sf{D}_{G, m}^b(
 
 2.  $\SHom^0(K, L)$ is concentrated in weight zero for all $K, L \in \sf{C}(X_0)$.
 
-These hypotheses imply that $$\begin{align}
+These hypotheses imply that $$\begin{aligned}
 \SHom^n(K, L) \simeq \SHom^0(K, L\langle n\rangle)(-\tfrac{n}{2})
-\end{align}$$ is concentrated in weight $n$ for all $K, L \in \sf{C}(X_0)$ and $n \in \bb{Z}$, so $\SHom$-purity implies realizability. The following result is inspired by [@rider Thm. 4.3]:
+\end{aligned}$$ is concentrated in weight $n$ for all $K, L \in \sf{C}(X_0)$ and $n \in \bb{Z}$, so $\SHom$-purity implies realizability. The following result is inspired by [@rider Thm. 4.3]:
 
 ::: prop
-[]{#prop:realization label="prop:realization"} If $\sf{C}(X_0)$ is $\SHom$-pure, then $\rho : \sf{K}^b(\underline{\sf{C}}(X_0)) \to \underline{\sf{D}}_{G, m}^b(X_0)$ induces an isomorphism of vector spaces $$\begin{align}
+[]{#prop:realization label="prop:realization"} If $\sf{C}(X_0)$ is $\SHom$-pure, then $\rho : \sf{K}^b(\underline{\sf{C}}(X_0)) \to \underline{\sf{D}}_{G, m}^b(X_0)$ induces an isomorphism of vector spaces $$\begin{aligned}
 \label{eq:realization}
 \Hom_{\sf{K}^b(\underline{\sf{C}}(X_0))}(\cal{K}, \cal{L}\langle n\rangle [-n]_\triangle)
 \xrightarrow{\sim}
 \gr_n^{\bm{w}} \SHom^0(\rho(\cal{K}), \rho(\cal{L}))
-\end{align}$$ for all $\cal{K}, \cal{L} \in \sf{K}^b(\underline{\sf{C}}(X_0))$ and $n \in \bb{Z}$.
+\end{aligned}$$ for all $\cal{K}, \cal{L} \in \sf{K}^b(\underline{\sf{C}}(X_0))$ and $n \in \bb{Z}$.
 :::
 
 ::: proof
-*Proof.* First, suppose that $\cal{K} = K$ and $\cal{L} = L[i]_\triangle$, where $K, L \in \underline{\sf{C}}(X_0)$, viewed as objects of $\sf{K}^b(\underline{\sf{C}}(X_0))$ represented by complexes concentrated in degree zero. In this case, the right-hand side of [\[eq:realization\]](#eq:realization){reference-type="eqref" reference="eq:realization"} becomes $\gr_n^{\bm{w}} \SHom^i(K, L)$. If $i \neq n$, then $$\begin{align}
+*Proof.* First, suppose that $\cal{K} = K$ and $\cal{L} = L[i]_\triangle$, where $K, L \in \underline{\sf{C}}(X_0)$, viewed as objects of $\sf{K}^b(\underline{\sf{C}}(X_0))$ represented by complexes concentrated in degree zero. In this case, the right-hand side of [\[eq:realization\]](#eq:realization){reference-type="eqref" reference="eq:realization"} becomes $\gr_n^{\bm{w}} \SHom^i(K, L)$. If $i \neq n$, then $$\begin{aligned}
 \Hom_{\sf{K}^b(\underline{\sf{C}}(X_0))}(\cal{K}, \cal{L}\langle n\rangle [-n]_\triangle)
 \simeq 0 \simeq \gr_n^{\bm{w}} \SHom^i(K, L),
-\end{align}$$ where the second isomorphism uses the $\SHom$-purity of $\sf{C}(X_0)$. If $i = n$, then $$\begin{align}
+\end{aligned}$$ where the second isomorphism uses the $\SHom$-purity of $\sf{C}(X_0)$. If $i = n$, then $$\begin{aligned}
 \begin{split}
 \Hom_{\sf{K}^b(\underline{\sf{C}}(X_0))}(\cal{K}, \cal{L}\langle n\rangle [-n]_\triangle)
 &\simeq     \Hom_{\underline{\sf{C}}(X_0)}(K, L\langle n\rangle)\\
 &\simeq     \gr_0^{\bm{w}} \SHom^0(K, L\langle n\rangle)\\
 &\simeq     \gr_n^{\bm{w}} \SHom^n(K, L).
 \end{split}
-\end{align}$$ Now, we allow $\cal{K}$ and $\cal{L}$ to be arbitrary, and proceed by double induction on their amplitudes. As in [@rider], we only illustrate the induction on the amplitude of $\cal{K}$.
+\end{aligned}$$ Now, we allow $\cal{K}$ and $\cal{L}$ to be arbitrary, and proceed by double induction on their amplitudes. As in [@rider], we only illustrate the induction on the amplitude of $\cal{K}$.
 
-By taking (brutal) truncations of $\cal{K}$, we can build an exact triangle $\cal{K}' \to \cal{K} \to \cal{K}'' \to \cal{K}'[1]$ in which $\cal{K}', \cal{K}'' \in \sf{K}^b(\underline{\sf{C}}(X_0))$ are of strictly smaller amplitude than $\cal{K}$. We get the following commutative diagram in which the rows are exact: $$\begin{equation}
-{\small
+By taking (brutal) truncations of $\cal{K}$, we can build an exact triangle $\cal{K}' \to \cal{K} \to \cal{K}'' \to \cal{K}'[1]$ in which $\cal{K}', \cal{K}'' \in \sf{K}^b(\underline{\sf{C}}(X_0))$ are of strictly smaller amplitude than $\cal{K}$. We get the following commutative diagram in which the rows are exact: $${\small
 \begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]
 \matrix(m)[matrix of math nodes, row sep=2em, column sep=1em, text height=2ex, text depth=0.5ex]
 {   {}
@@ -276,8 +267,7 @@ By taking (brutal) truncations of $\cal{K}$, we can build an exact triangle $\ca
 (m-1-4)     edge (m-2-4)
 (m-3-2)     edge (m-4-2)
 (m-3-3)     edge (m-4-3);
-\end{tikzpicture}}
-\end{equation}$$ By the inductive hypothesis, the first, second, fourth, and fifth vertical arrows are isomorphisms, so by the five lemma, the third vertical arrow is an isomorphism as well, completing the induction. ◻
+\end{tikzpicture}}$$ By the inductive hypothesis, the first, second, fourth, and fifth vertical arrows are isomorphisms, so by the five lemma, the third vertical arrow is an isomorphism as well, completing the induction. ◻
 :::
 
 Generalizing [@rider Def. 2.3], we say that $\sf{C}(X_0)$ is **Frobenius invariant** iff it is $\SHom$-pure and, strengthening hypothesis (2), $\SHom^0(K, L)$ is $F$-invariant for all $K, L$. In this case, $\underline{\sf{C}}(X_0) \simeq \sf{C}(X_0)$. In particular, by the commutativity of [\[eq:kappa-rho\]](#eq:kappa-rho){reference-type="eqref" reference="eq:kappa-rho"}, Proposition [\[prop:realization\]](#prop:realization){reference-type="ref" reference="prop:realization"} is actually a generalization of [@rider Thm. 4.3].
@@ -286,21 +276,20 @@ Generalizing [@rider Def. 2.3], we say that $\sf{C}(X_0)$ is **Frobenius invari
 
 It is not obvious when functors between categories of the form $\sf{C}(X_0)$ can be extended to functors between categories of the form $\underline{\sf{C}}(X_0)$, because $\Hom_{\underline{\sf{C}}(X_0)}$ is defined in terms of the global sections of a sheaf. However, we will only need this property in the case of pullback functors, where we can make use of the well-known adjunctions. The arguments below are essentially the same as the arguments showing that the morphisms on homology/cohomology induced by pullbacks and pushforwards between $G_0$-varieties are weight-preserving, *cf.* Section [\[sec:steinberg\]](#sec:steinberg){reference-type="ref" reference="sec:steinberg"}.
 
-Namely, if $f : Y_0 \to X_0$ is an (equivariant, stratification-preserving) map of $G_0$-varieties over $\bb{F}$, then we have a composition of natural transformations of sheaf-valued bifunctors on $\sf{D}_{G, m}^b(X_0)$: $$\begin{align}
+Namely, if $f : Y_0 \to X_0$ is an (equivariant, stratification-preserving) map of $G_0$-varieties over $\bb{F}$, then we have a composition of natural transformations of sheaf-valued bifunctors on $\sf{D}_{G, m}^b(X_0)$: $$\begin{aligned}
 \SHom(-, -) \to \SHom(-, f_\ast f^\ast(-)) \xrightarrow{\sim} f_\ast \SHom(f^\ast(-), f^\ast(-)).
-\end{align}$$ Let $a : X_0 \to \mathit{pt}_0$ and $b : Y_0 \to \mathit{pt}_0$ be the structure maps, so that $b = a \circ f$. Then we have $b_\ast = a_\ast f_\ast$, so applying $a_\ast$ gives: $$\begin{align}
+\end{aligned}$$ Let $a : X_0 \to \mathit{pt}_0$ and $b : Y_0 \to \mathit{pt}_0$ be the structure maps, so that $b = a \circ f$. Then we have $b_\ast = a_\ast f_\ast$, so applying $a_\ast$ gives: $$\begin{aligned}
 \label{eq:a-to-b}
 a_\ast \SHom(-, -) \to b_\ast \SHom(f^\ast(-), f^\ast(-)).
-\end{align}$$ Applying $\gr_0^{\bm{w}}\,\ur{H}^0 \circ \xi$ gives: $$\begin{align}
+\end{aligned}$$ Applying $\gr_0^{\bm{w}}\,\ur{H}^0 \circ \xi$ gives: $$\begin{aligned}
 f^\ast : \Hom_{\underline{\sf{D}}_{G, m}^b(X_0)}(-, -) \to \Hom_{\underline{\sf{D}}_{G, m}^b(Y_0)}(f^\ast(-), f^\ast(-)).
-\end{align}$$ We can check that these natural transformations together define a functor $$\begin{align}
+\end{aligned}$$ We can check that these natural transformations together define a functor $$\begin{aligned}
 \label{eq:pullback}
 f^\ast : \underline{\sf{D}}_{G, m}^b(X_0) \to \underline{\sf{D}}_{G, m}^b(Y_0)
-\end{align}$$ that sends $K \mapsto f^\ast K$ at the level of objects.
+\end{aligned}$$ that sends $K \mapsto f^\ast K$ at the level of objects.
 
 ::: lem
-[]{#lem:pullback label="lem:pullback"} For $f : Y_0 \to X_0$ as above, we have a commutative diagram: $$\begin{equation}
-\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]
+[]{#lem:pullback label="lem:pullback"} For $f : Y_0 \to X_0$ as above, we have a commutative diagram: $$\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]
 \matrix(m)[matrix of math nodes, row sep=2em, column sep=3em, text height=2.5ex, text depth=0.5ex]
 {   \sf{D}_{G, m}^b(X_0)
         &\sf{D}_{G, m}^b(Y_0)\\
@@ -312,8 +301,7 @@ f^\ast : \underline{\sf{D}}_{G, m}^b(X_0) \to \underline{\sf{D}}_{G, m}^b(Y_0)
 (m-1-1)     edge node[left]{$\kappa$} (m-2-1)
 (m-1-2)     edge node{$\kappa$} (m-2-2)
 (m-2-1)     edge node{$f^\ast$} (m-2-2);
-\end{tikzpicture}
-\end{equation}$$
+\end{tikzpicture}$$
 :::
 
 ::: proof

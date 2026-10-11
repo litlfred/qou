@@ -82,7 +82,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "quantum-mn-rule.tex",
-   "tex_sections": 5,
+   "tex_sections": 30,
    "overlaid": 5,
    "thresholds": {
     "title": 0.85,
@@ -93,40 +93,40 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.942,
-     "coverage_ratio": 0.974,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-a-murnaghan-nakayama-rule-for-classic-cohomology",
      "title": "A Murnaghan\u2013Nakayama rule for (classic) cohomology",
-     "prose_ratio": 0.949,
-     "coverage_ratio": 0.991,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.956,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-a-murnaghan-nakayama-rule-for-quantum-cohomology",
      "title": "A Murnaghan\u2013Nakayama rule for quantum cohomology",
-     "prose_ratio": 0.925,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.949,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-quantum-equals-classical",
      "title": "Quantum equals classical",
-     "prose_ratio": 0.951,
-     "coverage_ratio": 0.98,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.931,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-left-operators",
      "title": "Left operators",
-     "prose_ratio": 0.965,
-     "coverage_ratio": 0.723,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "pandoc"
     }

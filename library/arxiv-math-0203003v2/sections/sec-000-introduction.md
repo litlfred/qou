@@ -7,10 +7,10 @@ section_number: null
 pages: 1-2
 source_pdf: 0203003v2.pdf
 source_sha256: 7579ae76959396b8
-text_source: latex
-latex_prose_ratio: 0.974
-latex_coverage_ratio: 1.0
 doc_brief: "On the quantum Kazhdan-Lusztig functor Pavel I. Etingof Adriano A. Moura etingof@math.mit.edu adrianoam@ime.unicamp.br Introduction One of the most exciting developments in representation the ory in t"
+text_source: latex
+latex_prose_ratio: 0.987
+latex_coverage_ratio: 0.983
 ---
 One of the most exciting developments in representation theory in the recent years was the discovery of the Kazhdan-Lusztig functor [@KaLu93a; @KaLu93b; @KaLu94a; @KaLu94b], which is a tensor functor from the fusion category of representations of an affine Lie algebra to the category of representations of the corresponding quantum group, and is often an equivalence of categories. Informally speaking, this functor may be obtained by considering the monodromy of the Knizhnik-Zamolodchikov equations, or, equivalently, by considering exchange relations between intertwining (vertex) operators for the affine Lie algebra.
 

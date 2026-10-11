@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-2
 source_pdf: 1406.7337v4 (1).pdf
 source_sha256: 5bae8237742733b9
-text_source: latex
-latex_prose_ratio: 0.934
-latex_coverage_ratio: 0.863
 doc_brief: "Semi-Adequate Closed Braids and Volume Adam Giambrone Alma College giambroneaj@alma.edu — In this paper, we show that the volumes for a family of A-adequate closed braids can be bounded above and"
+text_source: latex
+latex_prose_ratio: 0.928
+latex_coverage_ratio: 0.994
 ---
 One of the current aims of knot theory is to strengthen the relationships among the hyperbolic volume of the link complement, the colored Jones polynomial, and data extracted from link diagrams. In a recent monograph, Futer, Kalfagianni, and Purcell ([@Guts], or see [@Survey] for a survey of results) showed that, for sufficiently twisted negative braid closures and for certain Montesinos links, the volume of the link complement can be bounded above and below in terms of the twist number of an A-adequate link diagram. The results for Montesinos links were recently generalized by Purcell and Finlinson in [@Montesinos]. Similar results for alternating links were previously given by Lackenby in [@Lackenby], with the lower bounds improved upon by Agol, Storm, and W. Thurston in [@AgolStorm] and the upper bounds improved upon by Agol and D. Thurston in the appendix of [@Lackenby] and more recently improved upon by Dasbach and Tsvietkova in [@Refined]. In a previous paper ([@Me]), the author showed that the volumes for a large family of A-adequate link complements can be bounded in terms of two diagrammatic quantities: the twist number and the number of certain alternating tangles in a given A-adequate diagram.
 
@@ -33,3 +33,7 @@ The volumes for many families of link complements have also been expressed in te
 ::: corollary
 []{#newcor label="newcor"} For $D(K)$ a certain A-adequate closed $n$-braid diagram, the complement of $K$ satisfies the volume bounds $$v_{8}\cdot(\left|\beta_{K}'\right|-1) \leq \mathrm{vol}(S^{3}\backslash K) < 20v_{3}\cdot\left(\left|\beta_{K}'\right|+n+m-\dfrac{7}{2}\right).$$
 :::
+
+# Acknowledgments
+
+I would like to thank Efstratia Kalfagianni for helpful conversations that led to this project. I would also like to thank the anonymous referee for helpful comments that led to an improvement in the quality of exposition in this paper.

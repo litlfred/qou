@@ -6,7 +6,7 @@
   "sha256": "209af6ae25439050acd32974f2c6eeb4d407661c14b064472346b33807ae019f",
   "bytes": 714906,
   "pages": 53,
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -797,8 +797,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "torsion.tex",
-   "tex_sections": 5,
-   "overlaid": 0,
+   "tex_sections": 39,
+   "overlaid": 27,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -814,161 +814,242 @@
     {
      "id": "sec-001-11-the-kashaev-invariant-and-perturbative-chern",
      "title": "The Kashaev invariant and perturbative Chern-Simons theory",
-     "result": "no matching \\section"
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.661,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-12-the-neumann-zagier-datum",
      "title": "The Neumann-Zagier datum",
-     "result": "no matching \\section"
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-13-the-1-loop-invariant",
      "title": "The 1-loop invariant",
-     "result": "no matching \\section"
+     "prose_ratio": 0.915,
+     "coverage_ratio": 0.915,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-14-expectations",
      "title": "Expectations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-15-the-higher-loop-invariants",
      "title": "The higher-loop invariants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.778,
+     "coverage_ratio": 0.908,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-16-feynman-diagrams",
      "title": "Feynman diagrams",
-     "result": "no matching \\section"
+     "prose_ratio": 0.47,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-007-17-the-2-loop-invariant",
      "title": "The 2-loop invariant",
-     "result": "no matching \\section"
+     "prose_ratio": 0.141,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-008-18-the-3-loop-invariant",
      "title": "The 3-loop invariant",
-     "result": "no matching \\section"
+     "prose_ratio": 0.296,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-009-19-generalizations",
      "title": "Generalizations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.905,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-acknowledgment",
      "title": "Acknowledgment",
-     "result": "no matching \\section"
+     "prose_ratio": 0.429,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-011-2-mechanics-of-triangulations",
      "title": "Mechanics of triangulations",
-     "prose_ratio": 0.11,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-21-ideal-tetrahedra",
      "title": "Ideal tetrahedra",
-     "result": "no matching \\section"
+     "prose_ratio": 0.911,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-22-the-gluing-matrices",
      "title": "The gluing matrices",
-     "result": "no matching \\section"
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-014-23-the-neumann-zagier-matrices",
      "title": "The Neumann-Zagier matrices",
-     "result": "no matching \\section"
+     "prose_ratio": 0.898,
+     "coverage_ratio": 0.926,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-015-25-the-shape-solutions-to-the-gluing-equations",
      "title": "The shape solutions to the gluing equations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.919,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-016-3-topological-invariance-of-our-torsion",
      "title": "Topological invariance of our torsion",
-     "prose_ratio": 0.339,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-017-32-independence-of-a-choice-of-quad-type",
      "title": "Independence of a choice of quad type",
-     "result": "no matching \\section"
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.932,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-018-33-independence-of-a-choice-of-edge",
      "title": "Independence of a choice of edge",
-     "result": "no matching \\section"
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.918,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-019-34-independence-of-a-choice-of-meridian-path",
      "title": "Independence of a choice of meridian path",
-     "result": "no matching \\section"
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-020-36-invariance-under-23-moves",
      "title": "Invariance under 2\u20133 moves",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.94,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-021-4-torsion-on-the-character-variety",
      "title": "Torsion on the character variety",
-     "prose_ratio": 0.442,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.915,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-022-42-the-epstein-penner-cell-decomposition-and-its",
      "title": "The Epstein-Penner cell decomposition and its triangulations",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.85,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-023-43-neumann-zagier-datum-and-the-geometric-compon",
      "title": "Neumann-Zagier datum and the geometric component",
-     "result": "no matching \\section"
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-024-44-flattening-compatible-with-a-longitude",
      "title": "Flattening compatible with a longitude",
-     "result": "no matching \\section"
+     "prose_ratio": 0.892,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-025-45-invariance-of-the-generalized-torsion",
      "title": "Invariance of the generalized torsion",
-     "result": "no matching \\section"
+     "prose_ratio": 0.926,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-026-5-the-state-integral-and-higher-loops",
      "title": "The state integral and higher loops",
-     "prose_ratio": 0.334,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.714,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-027-51-critical-points",
      "title": "Critical points",
-     "result": "no matching \\section"
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.585,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-028-52-volume",
      "title": "Volume",
-     "result": "no matching \\section"
+     "prose_ratio": 0.873,
+     "coverage_ratio": 0.791,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-029-53-torsion-revisited",
      "title": "Torsion revisited",
-     "result": "no matching \\section"
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-030-54-feynman-diagrams-and-higher-loops",
      "title": "Feynman diagrams and higher loops",
-     "result": "no matching \\section"
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.948,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-031-55-n-loop-invariants-on-the-character-variety",
      "title": "n-loop invariants on the character variety",
-     "result": "no matching \\section"
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-032-appendix-a-symplectic-properties-of-a-and-b",

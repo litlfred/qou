@@ -7,26 +7,22 @@ section_number: 5
 pages: 12-18
 source_pdf: 0604057v2.pdf
 source_sha256: 649fad141dc34eb9
+doc_brief: "VOLUME CONJECTURE, REGULATOR AND SL2(C)-CHARACTER VARIETY OF A KNOT — In this paper, by using the regulator map of Beilinson-Delig ne, we show that the quan- tization condition posed by Gukov is true"
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.985
-doc_brief: "VOLUME CONJECTURE, REGULATOR AND SL2(C)-CHARACTER VARIETY OF A KNOT — In this paper, by using the regulator map of Beilinson-Delig ne, we show that the quan- tization condition posed by Gukov is true"
+latex_coverage_ratio: 0.994
 ---
 Throughout this section, we shall denote by $M$ the complement of the figure-eight knot in $S^3$. we compute its character variety and give some applications.
 
-It is well-known that $\pi_1(M)$ is given by two generators and one relation: $$\begin{equation}
-\label{8gp}
+It is well-known that $\pi_1(M)$ is given by two generators and one relation: $$\label{8gp}
   \pi_1(M)=<\alpha,\beta|R(\alpha,\beta)>,\;
-  R(\alpha,\beta)=\beta^{-1}\alpha^{-1}\beta\alpha\beta^{-1}\alpha\beta\alpha^{-1}\beta^{-1}\alpha,
-\end{equation}$$
+  R(\alpha,\beta)=\beta^{-1}\alpha^{-1}\beta\alpha\beta^{-1}\alpha\beta\alpha^{-1}\beta^{-1}\alpha,$$
 
 where $\alpha$, $\beta$ are meridians, and they are conjugate to each other $\beta=\delta\alpha\delta^{-1}$ with $\delta=\alpha^{-1}\beta\alpha\beta^{-1}$.
 
-Set $\tau=\alpha\beta^{-1}\alpha^{-1}\beta$, we have a peripheral subgroup $\pi_1(\partial M)$ $$\begin{equation}
-\label{8bgp}
+Set $\tau=\alpha\beta^{-1}\alpha^{-1}\beta$, we have a peripheral subgroup $\pi_1(\partial M)$ $$\label{8bgp}
  \pi_1(\partial M)=<\alpha,\lambda>; \;
- \lambda=\tau^{-1}\delta=\beta^{-1}\alpha\beta\alpha^{-1}\alpha^{-1}\beta\alpha\beta^{-1},
-\end{equation}$$
+ \lambda=\tau^{-1}\delta=\beta^{-1}\alpha\beta\alpha^{-1}\alpha^{-1}\beta\alpha\beta^{-1},$$
 
 where $\alpha$ is the meridian and $\lambda$ is the longitude. Note in this section, we use $\alpha$ for the meridian instead of $\mu$.
 
@@ -35,13 +31,9 @@ Let us consider its character variety $X(M)$. We use ([\[8gp\]](#8gp){reference-
 \chi(\beta),\chi(\alpha\beta))$ and $X(M)$ is the image $t(R(M))$. Let $(x,y,z)$ be the affine coordinate for $\mathbb{C}^3$.
 
 ::: proposition
-[]{#8cha label="8cha"} The affine variety $X(M)\subset \mathbb{C}^3$ is defined by the following equations: $$\begin{equation}
-\label{8d1}
-  x=y,
-\end{equation}$$ $$\begin{equation}
-\label{8d2}
- (x^2-z-2)(z^2-(1+x^2)z+2x^2-1)=0.
-\end{equation}$$ In particular, we can identify $X(M)$ with the affine plane curve $\{(x,z)\in \mathbb{C}^2|(x^2-z-2)(z^2-(1+x^2)z+2x^2-1)=0\}$. It has two irreducible components.
+[]{#8cha label="8cha"} The affine variety $X(M)\subset \mathbb{C}^3$ is defined by the following equations: $$\label{8d1}
+  x=y,$$ $$\label{8d2}
+ (x^2-z-2)(z^2-(1+x^2)z+2x^2-1)=0.$$ In particular, we can identify $X(M)$ with the affine plane curve $\{(x,z)\in \mathbb{C}^2|(x^2-z-2)(z^2-(1+x^2)z+2x^2-1)=0\}$. It has two irreducible components.
 :::
 
 ::: proof
@@ -51,10 +43,8 @@ Let us consider its character variety $X(M)$. We use ([\[8gp\]](#8gp){reference-
 By the preceding proposition, the component defined by the equation $z^2-(1+x^2)z+2x^2-1=0$ consists of the characters of non-abelian representations, in particular, it contains the discrete faithful representations of the complete hyperbolic metric of $M$. We denote this component $X_0$. Hence we have :
 
 ::: corollary
-[]{#8-cor1 label="8-cor1"} The component $X_0$ is an irreducible smooth curve in $\mathbb{C}^2$ with the defining equation: $$\begin{equation}
-\label{8d3}
-   z^2-(1+x^2)z+2x^2-1=0.
-\end{equation}$$
+[]{#8-cor1 label="8-cor1"} The component $X_0$ is an irreducible smooth curve in $\mathbb{C}^2$ with the defining equation: $$\label{8d3}
+   z^2-(1+x^2)z+2x^2-1=0.$$
 :::
 
 ::: proof
@@ -83,8 +73,7 @@ Two inequivalent reducible representations may have the same character. The poin
 :::
 
 ::: proof
-*Proof.* Plug $x=\pm 2$ in ([\[8d3\]](#8d3){reference-type="ref" reference="8d3"}), we get $z^2-5z+7=0$ and hence $z=\frac{5 \pm \sqrt{-3}}{2}$. The following representation $\theta:\pi_1(M)\rightarrow PSL_2(\mathbb{C})$ was given in [@Ril2]: $$\begin{equation*}
-\theta(\alpha)=\pm
+*Proof.* Plug $x=\pm 2$ in ([\[8d3\]](#8d3){reference-type="ref" reference="8d3"}), we get $z^2-5z+7=0$ and hence $z=\frac{5 \pm \sqrt{-3}}{2}$. The following representation $\theta:\pi_1(M)\rightarrow PSL_2(\mathbb{C})$ was given in [@Ril2]: $$\theta(\alpha)=\pm
   \left[
   \begin{matrix}
     1 & 1\\
@@ -97,8 +86,7 @@ Two inequivalent reducible representations may have the same character. The poin
     1 & 0\\
     -\omega & 1
   \end{matrix}
-  \right];
-\end{equation*}$$ where $\omega=\frac{-1+\sqrt{-3}}{2}$ is a primitive cube root of unity. By [@Ril2 Theorem 1], $\theta$ is an isomorphism. Thus, $\theta$ is a discrete faithful representation of $\pi_1(M)$. Let $\overline{\theta}$ be the complex conjugation of $\theta$. It is straightforward to check that the four points $(\pm 2, \frac{5 \pm \sqrt{-3}}{2})$ correspond to the $SL_2(\mathbb{C})$ characters of the lifts of $\theta$ and $\overline{\theta}$. The result follows. ◻
+  \right];$$ where $\omega=\frac{-1+\sqrt{-3}}{2}$ is a primitive cube root of unity. By [@Ril2 Theorem 1], $\theta$ is an isomorphism. Thus, $\theta$ is a discrete faithful representation of $\pi_1(M)$. Let $\overline{\theta}$ be the complex conjugation of $\theta$. It is straightforward to check that the four points $(\pm 2, \frac{5 \pm \sqrt{-3}}{2})$ correspond to the $SL_2(\mathbb{C})$ characters of the lifts of $\theta$ and $\overline{\theta}$. The result follows. ◻
 :::
 
 Denote by $\mathbb{CP}^2$ the complex projective plane. We use $[X:Y:Z]$ to represent its homogenous coordinates. We will identify $\mathbb{C}^2$ with the open subset $\{[x:1:z]|(x,z)\in
@@ -107,10 +95,8 @@ Denote by $\mathbb{CP}^2$ the complex projective plane. We use $[X:Y:Z]$ to repr
 Let $\widetilde{X_0}$ be a smooth projective model of $X_0$. We have the following explicit description of $\widetilde{X_0}$ in $\mathbb{CP}^2$.
 
 ::: proposition
-[]{#8-smo label="8-smo"} $\widetilde{X_0}$ is an elliptic curve and defined by the equation in $\mathbb{CP}^2$: $$\begin{equation}
-\label{8sm}
-   YZ^2-Y^2Z-X^2Z+2X^2Y-Y^3=0.
-\end{equation}$$
+[]{#8-smo label="8-smo"} $\widetilde{X_0}$ is an elliptic curve and defined by the equation in $\mathbb{CP}^2$: $$\label{8sm}
+   YZ^2-Y^2Z-X^2Z+2X^2Y-Y^3=0.$$
 :::
 
 ::: proof
@@ -194,23 +180,15 @@ Let $M(3)$ be the closed $3$-manifold obtained by the Dehn surgery of $M$ along 
 
 ::: proof
 *Proof.* Since $\pi_1(M(3))=\langle \pi_1(M)|\alpha^3\lambda=1\rangle$, we have an embedding of character varieties $X(M(3))\hookrightarrow X(M)$. On the other hand, $X_0$ is the only component of $X(M)$ containing characters of non-abelian representations. Thus, the irreducible characters of $M(3)$ are contained in the set $S=\{\chi|\chi\in X_0,
- \chi(\alpha^3\lambda)=2\}$. By ([\[tf3\]](#tf3){reference-type="ref" reference="tf3"}), we have $$\begin{equation}
-  \chi(\alpha^2\lambda)=\chi(\alpha)\chi(\alpha\lambda)-\chi(\lambda),
-\end{equation}$$ and $$\begin{equation}
-\label{3/1-t}
+ \chi(\alpha^3\lambda)=2\}$. By ([\[tf3\]](#tf3){reference-type="ref" reference="tf3"}), we have $$\chi(\alpha^2\lambda)=\chi(\alpha)\chi(\alpha\lambda)-\chi(\lambda),$$ and $$\label{3/1-t}
     \begin{aligned}
       \chi(\alpha^3\lambda)=&\chi(\alpha)\chi(\alpha^2\lambda)-\chi(\alpha\lambda)\\
                            =&(\chi(\alpha)^2-1)\chi(\alpha\lambda)-\chi(\alpha)\chi(\lambda).
-    \end{aligned}
-\end{equation}$$ By Theorem [\[8res\]](#8res){reference-type="ref" reference="8res"}, we obtain $$\begin{equation}
-\label{3/1-eq1}
-  (x^2-1)[(4x-x^3)z+x^5-4x^3-x]-x(x^4-5x^2+2)=2.
-\end{equation}$$ It is clear that the set $S$ is exactly the common solutions to equations ([\[3/1-eq1\]](#3/1-eq1){reference-type="ref" reference="3/1-eq1"}) and ([\[8d3\]](#8d3){reference-type="ref" reference="8d3"}). Note when $x=1$, ([\[3/1-eq1\]](#3/1-eq1){reference-type="ref" reference="3/1-eq1"}) holds and is independent of the values of $z$. From ([\[8d3\]](#8d3){reference-type="ref" reference="8d3"}), when $x=1$, $z=1$. So $(1,1)\in S$.
+    \end{aligned}$$ By Theorem [\[8res\]](#8res){reference-type="ref" reference="8res"}, we obtain $$\label{3/1-eq1}
+  (x^2-1)[(4x-x^3)z+x^5-4x^3-x]-x(x^4-5x^2+2)=2.$$ It is clear that the set $S$ is exactly the common solutions to equations ([\[3/1-eq1\]](#3/1-eq1){reference-type="ref" reference="3/1-eq1"}) and ([\[8d3\]](#8d3){reference-type="ref" reference="8d3"}). Note when $x=1$, ([\[3/1-eq1\]](#3/1-eq1){reference-type="ref" reference="3/1-eq1"}) holds and is independent of the values of $z$. From ([\[8d3\]](#8d3){reference-type="ref" reference="8d3"}), when $x=1$, $z=1$. So $(1,1)\in S$.
 
-We solve $z$ in terms of $x$ from ([\[3/1-eq1\]](#3/1-eq1){reference-type="ref" reference="3/1-eq1"}), then plug in ([\[8d3\]](#8d3){reference-type="ref" reference="8d3"}) and simplify the expression, we get $$\begin{equation}
-\label{3/1-eq2}
-  C(x)=x^4-4x^3+2x^2+4x+1=(x^2-2x-1)^2=0.
-\end{equation}$$ It has two solutions $x=1\pm \sqrt{2}$. Hence the set $S$ has three elements. They are not equal to $\pm 2$ or $\pm \sqrt{5}$. By Corollary [\[8-cor2\]](#8-cor2){reference-type="ref" reference="8-cor2"}, $x\ne \pm \sqrt{5}$ implies that each one is an irreducible character. By Proposition [\[8cha-1\]](#8cha-1){reference-type="ref" reference="8cha-1"} and [\[kin\]](#kin){reference-type="ref" reference="kin"}, $x\ne \pm 2$ means that each one is also a character of $M(3)$. The result follows. ◻
+We solve $z$ in terms of $x$ from ([\[3/1-eq1\]](#3/1-eq1){reference-type="ref" reference="3/1-eq1"}), then plug in ([\[8d3\]](#8d3){reference-type="ref" reference="8d3"}) and simplify the expression, we get $$\label{3/1-eq2}
+  C(x)=x^4-4x^3+2x^2+4x+1=(x^2-2x-1)^2=0.$$ It has two solutions $x=1\pm \sqrt{2}$. Hence the set $S$ has three elements. They are not equal to $\pm 2$ or $\pm \sqrt{5}$. By Corollary [\[8-cor2\]](#8-cor2){reference-type="ref" reference="8-cor2"}, $x\ne \pm \sqrt{5}$ implies that each one is an irreducible character. By Proposition [\[8cha-1\]](#8cha-1){reference-type="ref" reference="8cha-1"} and [\[kin\]](#kin){reference-type="ref" reference="kin"}, $x\ne \pm 2$ means that each one is also a character of $M(3)$. The result follows. ◻
 :::
 
 Let $sl_2(\mathbb{C})$ be the Lie algebra of $SL_2(\mathbb{C})$. Then we have the adjoint representation $Ad:
@@ -232,23 +210,13 @@ For the other eight exceptional surgery slopes $\pm 1$, $\pm 2$, $\pm 3$, $\pm 4
 Now we turn to the proof of Theorem [\[8res\]](#8res){reference-type="ref" reference="8res"}. We need to find explicit expressions of the traces $F(x,z)$, $G(x,z)$ of $\rho(\lambda)$ and $\rho(\alpha\lambda)$ respectively in terms of traces of $\rho(\alpha)$ and $\rho(\alpha\beta)$.
 
 We need some preliminary lemmas. For $A$, $B$, $C\in
-SL_2(\mathbb{C}))$, we have the following identities on their traces [@Wh]: $$\begin{equation}
-\label{tf1}
-  \sigma(AB)=\sigma(BA);
-\end{equation}$$ $$\begin{equation}
-\label{tf2}
- \sigma(A)=\sigma(A^{-1});
-\end{equation}$$ $$\begin{equation}
-\label{tf3}
-  \sigma(AB)=\sigma(A)\sigma(B)-\sigma(AB^{-1});
-\end{equation}$$ $$\begin{equation}
-\label{tf4}
- \sigma(ABC)=\sigma(A)\sigma(BC)+\sigma(B)\sigma(AC)+\sigma(C)\sigma(AB)-\sigma(A)\sigma(B)\sigma(C)-\sigma(ACB);
-\end{equation}$$ $$\begin{equation}
-\label{tf5}
+SL_2(\mathbb{C}))$, we have the following identities on their traces [@Wh]: $$\label{tf1}
+  \sigma(AB)=\sigma(BA);$$ $$\label{tf2}
+ \sigma(A)=\sigma(A^{-1});$$ $$\label{tf3}
+  \sigma(AB)=\sigma(A)\sigma(B)-\sigma(AB^{-1});$$ $$\label{tf4}
+ \sigma(ABC)=\sigma(A)\sigma(BC)+\sigma(B)\sigma(AC)+\sigma(C)\sigma(AB)-\sigma(A)\sigma(B)\sigma(C)-\sigma(ACB);$$ $$\label{tf5}
  \text{For}\, m\geq 2,
- \sigma(A^m)=\sigma(A^{m-1})\sigma(A)-\sigma(A^{m-2}).
-\end{equation}$$
+ \sigma(A^m)=\sigma(A^{m-1})\sigma(A)-\sigma(A^{m-2}).$$
 
 Notice that ([\[tf1\]](#tf1){reference-type="ref" reference="tf1"}) is true for any $n\times n$ matrices. It is easy to see that ([\[tf4\]](#tf4){reference-type="ref" reference="tf4"}) and ([\[tf5\]](#tf5){reference-type="ref" reference="tf5"}) follow from ([\[tf3\]](#tf3){reference-type="ref" reference="tf3"}). Equations ([\[tf2\]](#tf2){reference-type="ref" reference="tf2"}) and ([\[tf3\]](#tf3){reference-type="ref" reference="tf3"}) can be checked by direct computations.\
 Now for $\rho\in R(M)$, set $a=\rho(\alpha)$, $b=\rho(\beta)$, $x=\sigma(a)=\sigma(b)$ and $z=\sigma(ab)=\sigma(\rho(\alpha\beta))$.
@@ -279,12 +247,12 @@ Now for $\rho\in R(M)$, set $a=\rho(\alpha)$, $b=\rho(\beta)$, $x=\sigma(a)=\sig
 
 \(ii\) By ([\[tf3\]](#tf3){reference-type="ref" reference="tf3"}), $$\sigma(b(a^{-1}a^{-1}b))=\sigma(b)\sigma(a^{-1}a^{-1}b)-\sigma(bb^{-1}aa)=\sigma(b)\sigma(a^{-1}a^{-1}b)-\sigma(a^2)$$ The formula follows.
 
-\(iii\) By ([\[tf4\]](#tf4){reference-type="ref" reference="tf4"}), we have $$\begin{align*}
+\(iii\) By ([\[tf4\]](#tf4){reference-type="ref" reference="tf4"}), we have $$\begin{aligned}
   \begin{split}
     \sigma((ba^{-1})(a^{-1}b)(ab^{-1}))&=\sigma(ba^{-1})\sigma(a^{-1}bab^{-1})+\sigma(a^{-1}b)\sigma(1)+\sigma(ab^{-1})\sigma(ba^{-1}a^{-1}b)-\\
                                        & \sigma(ba^{-1})\sigma(a^{-1}b)\sigma(ab^{-1})-\sigma(a^{-1}b)
   \end{split}
-\end{align*}$$
+\end{aligned}$$
 
 Plug in what we know on the right-hand side and simplify, we obtain the formula. ◻
 :::
@@ -302,22 +270,22 @@ Plug in what we know on the right-hand side and simplify, we obtain the formula.
 :::
 
 ::: proof
-*Proof of Theorem [\[8res\]](#8res){reference-type="ref" reference="8res"}.* First, let us compute $F(x,z)=\sigma(\rho(\lambda))$, the trace of $\rho(\lambda)$. By ([\[tf4\]](#tf4){reference-type="ref" reference="tf4"}), we have $$\begin{align*}
+*Proof of Theorem [\[8res\]](#8res){reference-type="ref" reference="8res"}.* First, let us compute $F(x,z)=\sigma(\rho(\lambda))$, the trace of $\rho(\lambda)$. By ([\[tf4\]](#tf4){reference-type="ref" reference="tf4"}), we have $$\begin{aligned}
   \begin{split}
      \sigma((b^{-1}a)(ba^{-1})(a^{-1}bab^{-1}))&=\sigma(b^{-1}a)\sigma(ba^{-1}a^{-1}bab^{-1})+\sigma(ba^{-1})\sigma(ab^{-1})+\\
                                                & \sigma(a^{-1}bab^{-1})\sigma(b^{-1}aba^{-1})
                    -\sigma(b^{-1}a)\sigma(ba^{-1})\sigma(a^{-1}bab^{-1})-\sigma(I)
   \end{split}
-\end{align*}$$
+\end{aligned}$$
 
 By Lemmas [\[tr1\]](#tr1){reference-type="ref" reference="tr1"} and [\[tr2\]](#tr2){reference-type="ref" reference="tr2"}, we know all the terms on the right-hand side. Notice that $(x,z)\in X_0$, hence $z^2-(1+x^2)z+2x^2-1=0$. Now divide the right-hand side by $z^2-(1+x^2)z+2x^2-1$, the remainder is $F(x,z)$. we calculate that $F(x,z)=x^4-5x^2+2$.\
-For the trace of $\rho(\alpha\lambda)$, we have $$\begin{align*}
+For the trace of $\rho(\alpha\lambda)$, we have $$\begin{aligned}
   \begin{split}
      \sigma((ab^{-1}a)(ba^{-1})(a^{-1}bab^{-1}))&=\sigma(ab^{-1}a)\sigma(ba^{-1}a^{-1}bab^{-1})+\sigma(ba^{-1})\sigma(aab^{-1})+\\
                                                 & \sigma(a^{-1}bab^{-1})\sigma(ab^{-1}aba^{-1})-\sigma(ab^{-1}a)\sigma(ba^{-1})\sigma(a^{-1}bab^{-1})
                                                 -\sigma(a).
   \end{split}
-\end{align*}$$
+\end{aligned}$$
 
 By Lemmas [\[tr1\]](#tr1){reference-type="ref" reference="tr1"}, [\[tr2\]](#tr2){reference-type="ref" reference="tr2"} and [\[tr3\]](#tr3){reference-type="ref" reference="tr3"}, we have all the terms on the right-hand side. Then we divide the result of the right-hand side by the polynomial $z^2-(1+x^2)z+2x^2-1=0$ and $G(x,z)$ equals the remainder. We calculate that it is $(4x-x^3)z+(x^5-4x^3-x)$. ◻
 :::

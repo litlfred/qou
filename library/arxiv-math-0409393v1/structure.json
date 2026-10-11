@@ -112,7 +112,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "preprint.tex",
-   "tex_sections": 4,
+   "tex_sections": 24,
    "overlaid": 2,
    "thresholds": {
     "title": 0.85,
@@ -123,16 +123,16 @@
     {
      "id": "sec-000-1-introduction-and-general-conventions",
      "title": "Introduction and general conventions",
-     "prose_ratio": 0.979,
-     "coverage_ratio": 0.662,
+     "prose_ratio": 0.652,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-3-algebraic-summation",
      "title": "Algebraic summation",
-     "prose_ratio": 0.956,
-     "coverage_ratio": 0.822,
+     "prose_ratio": 0.808,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },

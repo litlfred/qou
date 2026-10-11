@@ -7,17 +7,15 @@ section_number: 7
 pages: 16-18
 source_pdf: 1012.4941v2.pdf
 source_sha256: 1932a359f3bafb83
-text_source: latex
-latex_prose_ratio: 0.937
-latex_coverage_ratio: 0.948
 doc_brief: "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS — This paper deals with exploiting symmetry for solving linea r and integer programming problems."
+text_source: latex
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 0.97
 ---
 []{#sec:hypertruncated label="sec:hypertruncated"} In this section we will construct a specific class of highly symmetric convex polytopes among which one can find examples of rather high Gomory-Chvátal rank. The motivation for this construction is rooted in the systematic study of Gomory-Chvátal cuts and cutting-plane proof systems. Pokutta and Stauffer [@PokuttaStauffer10] propose a new method for computing lower bounds on the Gomory-Chvátal rank for polytopes contained in the $0/1$-cube, and the polytopes constructed here provide examples which asymptotically almost attain the bounds obtained. The subsequent section on computational experiments also contains results about these polytopes.
 
-Our construction starts out with the unit cube $C=[0,1]^n$. Intersecting $C$ with the hyperplane defined by $\sum x_i=r$ for $r\in\{2,3,\dots,n-1\}$ gives the hypersimplex $\Delta(r,n)$ which already appeared in Example [\[exmp:core\]](#exmp:core){reference-type="ref" reference="exmp:core"}. Here we are interested in the *$(r,n)$-truncated cube* $C' = \{x\in [0,1]^n\,|\,\sum x_i\le r\}$. We make one more modification to the cube $C$ by defining the polytope $$\begin{equation}
-\label{eq:hypertruncated}
-  C'' \ = \ \mathop{\mathrm{conv}}(C'\cup\lambda\mathbbm{1}) \quad \text{for $\lambda>r/n$}
-\end{equation}$$ which we call the *$(r,n;\lambda)$-hypertruncated cube*. Notice that the full group $\mathop{\mathrm{Sym}}(n)$ acts on the cube $C$ as well as on the truncated cube $C'$ as well as on the hypertruncated cube $C''$. Hence our algorithms above can be applied. Our next goal is to describe the vertices and the facets of $C''$.
+Our construction starts out with the unit cube $C=[0,1]^n$. Intersecting $C$ with the hyperplane defined by $\sum x_i=r$ for $r\in\{2,3,\dots,n-1\}$ gives the hypersimplex $\Delta(r,n)$ which already appeared in Example [\[exmp:core\]](#exmp:core){reference-type="ref" reference="exmp:core"}. Here we are interested in the *$(r,n)$-truncated cube* $C' = \{x\in [0,1]^n\,|\,\sum x_i\le r\}$. We make one more modification to the cube $C$ by defining the polytope $$\label{eq:hypertruncated}
+  C'' \ = \ \mathop{\mathrm{conv}}(C'\cup\lambda\mathbbm{1}) \quad \text{for $\lambda>r/n$}$$ which we call the *$(r,n;\lambda)$-hypertruncated cube*. Notice that the full group $\mathop{\mathrm{Sym}}(n)$ acts on the cube $C$ as well as on the truncated cube $C'$ as well as on the hypertruncated cube $C''$. Hence our algorithms above can be applied. Our next goal is to describe the vertices and the facets of $C''$.
 
 ::: proposition
 Let $n\ge 2$, $r\in\{2,3,\dots,n-1\}$, and $r/n<\lambda<1$. The vertices of the $(r,n;\lambda)$-hypertruncated cube $C''$ are $$e_S \quad \text{for all $S\subset[n]$ with $\#S\le r$} \qquad \text{and} \qquad
@@ -31,12 +29,13 @@ Let $n\ge 2$, $r\in\{2,3,\dots,n-1\}$, and $r/n<\lambda<1$. The vertices of the 
 Of course, the vertices determine the facets completely. In this case, it is particularly easy to read off the facets of $C''$ by looking at the facets of $C'$ and analyzing what changes in case the point $\lambda\mathbbm{1}$ is added as a generator. This proves the claim in [@PokuttaStauffer10 Remark 3.3].
 
 ::: proposition
-[]{#prop:hypertruncated_facets label="prop:hypertruncated_facets"} Let $n\ge 2$, $r\in\{2,3,\dots,n-1\}$, and $\lambda>r/n$. The facets of the $(r,n;\lambda)$-hypertruncated cube $C''$ are $$\begin{align}
+[]{#prop:hypertruncated_facets label="prop:hypertruncated_facets"} Let $n\ge 2$, $r\in\{2,3,\dots,n-1\}$, and $\lambda>r/n$. The facets of the $(r,n;\lambda)$-hypertruncated cube $C''$ are $$\begin{aligned}
     & x_i \ \ge \ 0 \ , \quad x_i \ \le \ 1 \label{eq:hypertruncated_facets:cube}\\
     & \bigl(1-n+\frac{r}{\lambda}\bigr) x_i + \sum_{k\ne i} x_k \ \ge \ r  \label{eq:hypertruncated_facets:deletion}\\
     & \bigl(1-r+\lambda(n-1)\bigr) x_i + (1-\lambda) \sum_{k\ne i} x_k \ \le \
     \lambda(n-r) \label{eq:hypertruncated_facets:contraction}
-\end{align}$$ for $i\in[n]$. In particular, $C''$ has precisely $4n$ facets.
+  
+\end{aligned}$$ for $i\in[n]$. In particular, $C''$ has precisely $4n$ facets.
 :::
 
 ::: proof
@@ -44,6 +43,6 @@ Of course, the vertices determine the facets completely. In this case, it is par
 :::
 
 ::: remark
-[]{#rem:hypertruncated:parameters label="rem:hypertruncated:parameters"} Pokutta and Stauffer [@PokuttaStauffer10] show that the Gomory-Chvátal ranks of the $(r,n;\lambda)$-hyper­trun­ca­ted cubes for $r=\lfloor n/e\rfloor$, where $e=2.7172\ldots$ is Euler's constant, and $\lambda=(m-1)/m$ approach $n/e - o(1)$ as $m\in{\mathbb{N}}$ goes to infinity. In our experiments below we look at the case $r=\lfloor
+[]{#rem:hypertruncated:parameters label="rem:hypertruncated:parameters"} Pokutta and Stauffer [@PokuttaStauffer10] show that the Gomory-Chvátal ranks of the $(r,n;\lambda)$-hypertruncated cubes for $r=\lfloor n/e\rfloor$, where $e=2.7172\ldots$ is Euler's constant, and $\lambda=(m-1)/m$ approach $n/e - o(1)$ as $m\in{\mathbb{N}}$ goes to infinity. In our experiments below we look at the case $r=\lfloor
   n/e\rfloor$ and $\lambda=1/2$, that is, $m=2$.
 :::

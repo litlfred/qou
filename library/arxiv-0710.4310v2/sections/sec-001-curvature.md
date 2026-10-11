@@ -8,26 +8,12 @@ pages: 5-6
 source_pdf: 0710.4310v2.pdf
 source_sha256: 9a7757f998b7f680
 doc_brief: "On Two-Dimensional Holonomy João Faria Martins Centro de Matemática da Universidade do Porto — We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold ( M, ∗) as the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.825
 ---
-LetP be a principal G-bundle overM . Let ω ∈ A1(P, g) be a connection 1-form
-onP . Given an n-forma onP , the exterior covariant derivative of a is given by
-Da =da ◦ (H ×H... ×H/bracehtipupleft /bracehtipdownright/bracehtipdownleft/bracehtipupright
-(n+1)-times
-).
-Let Ω ∈ A2(P, g) be the curvature 2-form of the connection ω. It can be
-deﬁned as the exterior covariant derivative Dω of the connection 1-form ω, in
-other words:
-Ω(X,Y ) = dω(XH,Y H ),
-where X,Y ∈ X(P ). The curvature 2-form Ω is G-equivariant, which means:
-R∗
-g(Ω) = g−1Ωg, ∀g ∈G.
-Recall also Cartan’s structure equation:
-dω(X,Y ) + [ω(X),ω (Y )] = Ω( X,Y ), (1)
-5
-valid for any vector ﬁelds X,Y ∈ X(P ). The Bianchi identity can be stated by
-saying that the exterior covariant derivative DΩ of the curvature form is zero,
-in other words:
-DΩ = dΩ ◦ (H ×H ×H) = 0. (2)
-The Bianchi identity can also be written as:
-dΩ(X,Y,Z ) + [ω(X), Ω(Y,Z )] + [ω(Y ), Ω(Z,X )] + [ω(Z), Ω(X,Y )] = 0,
-for any smooth vector ﬁelds X,Y,Z ∈ X(P ).
+[]{#curv label="curv"}
+
+Let $P$ be a principal $G$-bundle over $M$. Let $\w \in \A^1(P,\lg)$ be a connection 1-form on $P$. Given an $n$-form $a$ on $P$, the exterior covariant derivative of $a$ is given by $$Da=d a \circ (\underbrace{H \times H \ldots \times  H}_{(n+1)\textrm{-times }} ).$$
+
+Let $\W\in \A^2(P,\lg)$ be the curvature 2-form of the connection $\w$. It can be defined as the exterior covariant derivative $D\w$ of the connection 1-form $\w$, in other words: $$\W(X,Y)=d \w(X^H,Y^H),$$ where $X,Y \in \X(P)$. The curvature $2$-form $\W$ is $G$-equivariant, which means: $$R_g^*(\W)=g^{-1}\W g, \forall g \in G .$$ Recall also Cartan's structure equation: $$\label{cse}{d \w(X,Y) +[\w(X),\w(Y)]=\W(X,Y),}$$ valid for any vector fields $X,Y \in \X(P)$. The Bianchi identity can be stated by saying that the exterior covariant derivative $D \W$ of the curvature form is zero, in other words: $$D \W=d \W\circ (H \times H \times H)=0.$$ The Bianchi identity can also be written as: $${d \W(X,Y,Z)+[\w(X),\W(Y,Z)]+[\w(Y),\W(Z,X)]+[\w(Z),\W(X,Y)]=0,}$$ for any smooth vector fields $X,Y,Z \in \X(P)$.

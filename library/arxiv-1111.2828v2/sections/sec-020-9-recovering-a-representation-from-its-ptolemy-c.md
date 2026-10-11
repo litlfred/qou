@@ -7,10 +7,10 @@ section_number: 9
 pages: 26-34
 source_pdf: 1111.2828v2.pdf
 source_sha256: 90e2f5a9b978d403
-text_source: latex
-latex_prose_ratio: 0.879
-latex_coverage_ratio: 0.966
 doc_brief: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \lbl{proofsection}
 
@@ -427,6 +427,7 @@ We stress that the Ptolemy variety parametrizes decorated representations and \e
 
 
 
+
 \subsection{Obstruction cocycles and the $p\SL(n,\C)$-Ptolemy varieties}
 \lbl{sub.obstruction}
 Suppose $n$ is even. The projection $G\to pG$ maps $N$ isomorphically onto its image (also denoted by $N$), and by elementary obstruction theory (see e.g.~Steenrod~\cite{Steenrod}), the obstruction to lifting a $(pG,N)$-representation $\rho$ to a $(G,N)$-representation is a class in 
@@ -516,6 +517,7 @@ $(pG,N)$-cocycles on $M$\\with obstruction cocycle $\sigma$}\right\}\ar@{->>}[r]
 $(pG,N)$-representations\\with obstruction cocycle $\sigma$}\right\},}
 \end{equation}
 where $k$ is the number of lifts, i.e.~$k=\vert Z^1(K;\Z/2\Z)\vert$.
+
 
 \subsection{Proof of Theorem~\ref{mainthmintro} and Theorem~\ref{mainthmpSLintro}}\label{Proofofmainthm}
 Let $\rho\colon P_n(K)\to R_{G,N}(M)\big/\Conj$ be the composition of the map in~\eqref{summaryof1to1} with the forgetful map ignoring the decoration.  Let $c\in P_n(K)$. By Proposition~\ref{lambdaimageinBhat}, $\lambda(c)$ is in $\widehat\B(\C)$ and by Proposition~\ref{independenceofdec}, $\lambda(c)$ only depends on $\rho(c)$.  Commutativity of diagram~\eqref{mainthmdiag} follows from Remark~\ref{extensionremark}, and the fact that $\rho$ is surjective if $K$ is sufficiently fine follows from Proposition~\ref{barycentric}.

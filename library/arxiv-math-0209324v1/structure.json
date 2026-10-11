@@ -453,7 +453,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 7,
+   "tex_sections": 14,
    "overlaid": 5,
    "thresholds": {
     "title": 0.85,
@@ -469,8 +469,8 @@
     {
      "id": "sec-001-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.778,
-     "coverage_ratio": 0.919,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -482,7 +482,7 @@
     {
      "id": "sec-003-2-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.986,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
@@ -506,7 +506,8 @@
     {
      "id": "sec-007-32-injectivity-of-the-homomorphism-\u03c1r",
      "title": "Injectivity of the homomorphism \u03c1R",
-     "result": "no matching \\section"
+     "prose_ratio": 0.506,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-008-8-kazuo-habiro",
@@ -516,7 +517,7 @@
     {
      "id": "sec-009-4-injectivity-of-\u03c1r",
      "title": "Injectivity of \u03c1R",
-     "prose_ratio": 0.658,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
@@ -529,8 +530,8 @@
     {
      "id": "sec-011-5-expansions-at-roots-of-unity",
      "title": "Expansions at roots of unity",
-     "prose_ratio": 0.84,
-     "coverage_ratio": 0.955,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -542,8 +543,8 @@
     {
      "id": "sec-013-6-v-alues-at-roots-of-unity",
      "title": "V alues at roots of unity",
-     "prose_ratio": 0.903,
-     "coverage_ratio": 0.977,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -581,7 +582,8 @@
     {
      "id": "sec-020-74-non-surjectivity-of-\u03c1z",
      "title": "Non-surjectivity of \u03c1Z",
-     "result": "no matching \\section"
+     "prose_ratio": 0.597,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-021-75-the-ring-qqs-the-structure-of-qqs-for-s-n-is",

@@ -7,12 +7,13 @@ section_number: 9.1
 pages: 277-280
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.985
-latex_coverage_ratio: 0.825
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 The algebraic topology of compact three-manifolds is not very complicate. 
+
 
 \subsection{Integral homology}
 In this section all the homology groups are considered over $\matZ$. We first note that, for closed orientable 3-manifolds, the fundamental group determines everything.
@@ -24,6 +25,7 @@ The homology $H_*(M)$ of a closed orientable 3-manifold $M$ is determined by $\p
 As in every path connected space, the group $H_1(M)$ is the abelianisation of $\pi_1(M)$ and $H^1(M) = \Hom(H_1(M),\matZ)$, which is hence isomorphic to $H_1(M)$ modulo its torsion. By Poincar\'e duality $H_2(M) = H^1(M)$ and $H^2(M) = H_1(M)$. Finally $H_3(M) = \matZ$.
 \end{proof}
 
+
 \subsection{Homology spheres}
 A \emph{homology $n$-sphere} is a closed orientable $n$-manifold $M$ whose homology is the same as that of $S^n$. That is, we have $H_0(M) = H_n(M) = \matZ$ and $H_i(M)$ vanishes for all $0<i<n$.\index{homology sphere} 
 
@@ -32,6 +34,7 @@ By Poincar\'e duality, a closed 3-manifold $M$ is a homology sphere if and only 
 In 1900 Poincar\'e conjectured that every homology 3-sphere should be homeomorphic to $S^3$. Four years later, he found himself a counterexample by constructing what is known today as \emph{Poincar\'e's homology sphere}, a closed 3-manifold with a perfect fundamental group of order 120. He then modified his original conjecture by asking whether every simply connected closed 3-manifold should be homeomorphic to $S^3$. This fact, widely known as \emph{Poincar\'e's Conjecture}, was proved only in 2002 by Perelman.
 
 We will construct Poincar\'e's homology sphere (and many more homology spheres) in Chapter \ref{Seifert:chapter}, and we will discuss the Poincar\'e Conjecture in Section \ref{geometrisation:section}, as a part of Thurston's wider \emph{Geometrisation Conjecture}, also proved by Perelman in 2002.
+
 
 \subsection{The boundary}
 The Euler characteristic $\chi(M)$ of a closed odd-dimensional manifold vanishes, and on manifolds with boundary we have the following.
@@ -90,6 +93,7 @@ The rank of $H_1(M)$ equals that of $H^1(M) = H_2(M,\partial M)$.
 \begin{cor}
 The boundary of a simply connected compact 3-manifold consists of spheres.
 \end{cor}
+
 
 \subsection{Non-orientable surfaces}
 Let $M$ be an orientable 3-manifold and $S\subset M$ be a connected surface. If $S$ is orientable, then by Proposition \ref{unique:line:bundle:prop} every tubular neighbourhood for $S$ is diffeomorphic to the product $S \times \matR$.

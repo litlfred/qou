@@ -6,7 +6,7 @@
   "sha256": "52c2dcd4adf2e72b5d773c0ef933d3a51ba08d4c03631c4c0283c956ad9f6a1e",
   "bytes": 803051,
   "pages": 64,
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -559,8 +559,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "CoHAv3-04032020.tex",
-   "tex_sections": 6,
-   "overlaid": 0,
+   "tex_sections": 31,
+   "overlaid": 22,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -570,65 +570,94 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-11-background",
      "title": "Background",
-     "result": "no matching \\section"
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.911,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-12-absolute-versus-relative-donaldsonthomas-theo",
      "title": "Absolute versus relative Donaldson\u2013Thomas theory",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-13-cohomological-integrality",
      "title": "Cohomological integrality",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-14-cohomological-wall-crossing",
      "title": "Cohomological wall-crossing",
-     "result": "no matching \\section"
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-16-main-results-for-cohomological-hall-algebras",
      "title": "Main results for cohomological Hall algebras",
-     "prose_ratio": 0.333,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-17-the-bps-lie-algebra",
      "title": "The BPS Lie algebra",
-     "result": "no matching \\section"
+     "prose_ratio": 0.952,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-18-structure-of-the-paper",
      "title": "Structure of the paper",
-     "result": "no matching \\section"
+     "prose_ratio": 0.935,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-19-acknowledgements",
      "title": "Acknowledgements",
-     "result": "no matching \\section"
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-2-hodge-theory-and-equivariant-vanishing-cycles",
      "title": "Hodge theory and equivariant vanishing cycles",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-010-21-monodromic-mixed-hodge-modules",
      "title": "Monodromic mixed Hodge modules",
-     "result": "no matching \\section"
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-22-equivariant-vanishing-cycles",
      "title": "Equivariant vanishing cycles",
-     "result": "no matching \\section"
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-3-moduli-spaces-of-quiver-representations",
@@ -639,38 +668,58 @@
     {
      "id": "sec-013-31-basic-notions",
      "title": "Basic notions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-014-32-monoidal-products",
      "title": "Monoidal products",
-     "result": "no matching \\section"
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-015-33-framed-moduli-spaces",
      "title": "Framed moduli spaces",
-     "result": "no matching \\section"
+     "prose_ratio": 0.901,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-016-34-jacobi-algebras-and-potentials",
      "title": "Jacobi algebras and potentials",
-     "result": "no matching \\section"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-017-4-cohomological-donaldsonthomas-invariants",
      "title": "Cohomological Donaldson\u2013Thomas invariants",
-     "prose_ratio": 0.523,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.931,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-018-42-the-integrality-isomorphism-theorem-a",
      "title": "The integrality isomorphism \u2014 Theorem A",
-     "result": "no matching \\section"
+     "prose_ratio": 0.908,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-019-43-the-cohomological-wall-crossing-isomorphism-t",
      "title": "The cohomological wall crossing isomorphism \u2014 Theorem B",
-     "result": "no matching \\section"
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-020-5-cohomological-hall-algebras",
@@ -681,12 +730,18 @@
     {
      "id": "sec-021-51-the-relative-cohomological-hall-algebra",
      "title": "The relative cohomological Hall algebra",
-     "result": "no matching \\section"
+     "prose_ratio": 0.842,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-022-52-the-absolute-cohomological-hall-algebra",
      "title": "The absolute cohomological Hall algebra",
-     "result": "no matching \\section"
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-023-6-structural-results-for-cohomological-hall-alge",
@@ -697,17 +752,26 @@
     {
      "id": "sec-024-61-symmetric-monoidal-structures-revisited",
      "title": "Symmetric monoidal structures, revisited",
-     "result": "no matching \\section"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-025-62-the-perverse-associated-graded-hopf-algebra",
      "title": "The perverse associated graded Hopf algebra",
-     "result": "no matching \\section"
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-026-63-proof-of-theorem-c-and-construction-of-the-bp",
      "title": "Proof of Theorem C and construction of the BPS Lie algebra",
-     "result": "no matching \\section"
+     "prose_ratio": 0.732,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-027-64-proof-of-theorem-d",

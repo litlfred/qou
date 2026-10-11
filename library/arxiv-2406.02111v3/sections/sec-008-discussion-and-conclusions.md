@@ -7,10 +7,10 @@ section_number: null
 pages: 14-15
 source_pdf: 2406.02111v3.pdf
 source_sha256: d7be0c3f08b4d42a
-text_source: latex
-latex_prose_ratio: 0.973
-latex_coverage_ratio: 0.852
 doc_brief: "Categorical Quantum Volume Operator — 10 sections: Introduction; Quantum tetrahedron; Volume operator"
+text_source: latex
+latex_prose_ratio: 0.838
+latex_coverage_ratio: 1.0
 ---
 \label{sec:discussion_conclusions}
 In condensed matter physics, the categorification of spin models such as the Heisenberg model and certain lattice gauge theories has given rise to several physically rich anyonic lattice models that realize both conventional and exotic quantum phases of matter. Motivated by these developments, here we have introduced a categorification of the quantum volume operator [Sec.~\ref{sec:Qvol}] that plays a fundamental role in the description of discrete spacetime geometries underlying the formulation of background-independent candidate theories of quantum gravity such as LQG.
@@ -25,3 +25,15 @@ To establish a connection between $k$ and the cosmological constant, one could a
 In the large spin limit, this resembles a modified Regge action that includes an explicit volume term, akin to the Einstein-Hilbert action with a cosmological constant (see e.g., Refs.~\cite{Smolinqdeformed, Smolinqdeformed1}). These calculations are performed in the small deformation limit, $k \gg 1$, which also regularizes the partition function. The partition function is proportional to a product over $6j$-symbols for all triangulation labellings and would diverge without a cutoff on the irreducible representations.
 
 Our approach differs significantly as it is non-perturbative and uses a spin-network geometry instead of the Regge geometry, where the connection to an Einstein-Hilbert-like action is less clear. For instance, unlike in the Regge case, where the partition function sums over all admissible spin labelings of tetrahedra edges, a spin network also includes quantum degrees of freedom at the nodes (the intertwiners), which must also be considered.
+
+
+
+
+\section{Acknowledgements}
+AH sincerely thanks Hanno Sahlmann for very interesting and helpful discussions and for pointing out several relevant references.
+Furthermore, AH thanks Jacob C Bridgeman and Ramona Wolf for an interesting exchange. SM and GKB thank Sundance Bilson-Thompson for illuminating discussions.
+
+AH acknowledges partial funding from the Sydney Quantum Academy.
+SM is supported by the Quantum Gravity Unit of the Okinawa Institute of Science and Technology (OIST). G.K.B.\ acknowledges support from the Australian Research Council Centre of Excellence for Engineered Quantum Systems (Grant No. CE 170100009).
+	
+\bibliographystyle{prsty-title-hyperref}

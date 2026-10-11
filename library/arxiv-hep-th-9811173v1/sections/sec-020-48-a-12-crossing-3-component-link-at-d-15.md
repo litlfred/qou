@@ -8,26 +8,13 @@ pages: 11-12
 source_pdf: 9811173v1.pdf
 source_sha256: 986bf57947746523
 doc_brief: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links — We identify 998 closed hyperbolic 3-manifolds whose volumes are ratio nally related to"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-The next case likewise comes from [1]. The 12-crossing 3-component link of Fig. 8, with
-braid word ( σ 2
-1σ − 2
-2 )3, has Dedekind-zeta invariant empirically equal to 2, at 1800-digit
-precision. This corresponds to the relation
-24Cl2(θ5, 3)−12Cl2(2θ5, 3)−8Cl2(3θ5, 3)+6Cl2(4θ5, 3) = Z15 = 15
-7∑
-k=1
-(
-k
-15
-)
-Cl2
-(
-2πk
-15
-)
-(29)
-10
-with θ5, 3 := 2 arctan
-√
-5/ 3. Again, where is the proof?
+The next case likewise comes from [@9806174]. The 12-crossing 3-component link of Fig. 8, with braid word $(\sigma_1^2\sigma_2^{-2})^3$, has Dedekind-zeta invariant empirically equal to 2, at 1800-digit precision. This corresponds to the relation $$24{\rm Cl}_2(\theta_{5,3})-12{\rm Cl}_2(2\theta_{5,3})
+-8{\rm Cl}_2(3\theta_{5,3})
++6{\rm Cl}_2(4\theta_{5,3})=Z_{15}
+=15\sum_{k=1}^7\left(\frac{k}{15}\right)
+{\rm Cl}_2\left(\frac{2\pi k}{15}\right)
+\label{d15}$$ with $\theta_{5,3}:=2\arctan\sqrt{5/3}$. Again, where is the proof?

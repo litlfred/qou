@@ -102,7 +102,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 5,
-   "overlaid": 1,
+   "overlaid": 2,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -112,17 +112,18 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.994,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-the-motivic-setup",
      "title": "The motivic setup",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.265,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.89,
+     "result": "overlaid",
+     "converter": "pandoc"
     }
    ]
   }

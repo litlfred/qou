@@ -7,11 +7,11 @@ section_number: 7
 pages: 43-51
 source_pdf: 1303.5278v1.pdf
 source_sha256: 92e417c93f8b883a
-text_source: latex
-latex_prose_ratio: 0.878
-latex_coverage_ratio: 0.871
 doc_brief: "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD — In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of"
 duplicate_of: "topologicalinvariance3dindex"
+text_source: latex
+latex_prose_ratio: 0.993
+latex_coverage_ratio: 0.895
 ---
 []{#sec.computation label="sec.computation"}
 
@@ -77,14 +77,12 @@ We obtain the angle structure equations $$\mathbf A' \alpha+ \mathbf B' \gamma =
 \right)\, .$$ Here, a column vector $v$ of a matrix, spans the ray $\mathbb R_+ v$. It follows that for every natural number $N$ we have $$I_{4_1}(0)(q) + O(q)^{N+1}=
 \sum_{k=\lfloor 1/4 (-1 - \sqrt{1 + 8 N}) \rfloor}^{\lceil 
 1/4 (-1 + \sqrt{1 + 8 N}) \rceil }
-I_{\Delta}(k,k)(q)^2 + O(q)^{N+1} \, .$$ To compute $I_{\Delta}(k,k)(q) +  O(q)^{N+1}$, we use its definition [\[eq.ID\]](#eq.ID){reference-type="eqref" reference="eq.ID"} and truncate the $n$-summation as follows $$\begin{equation}
-\label{eq.IDtruncated}
+I_{\Delta}(k,k)(q)^2 + O(q)^{N+1} \, .$$ To compute $I_{\Delta}(k,k)(q) +  O(q)^{N+1}$, we use its definition [\[eq.ID\]](#eq.ID){reference-type="eqref" reference="eq.ID"} and truncate the $n$-summation as follows $$\label{eq.IDtruncated}
 I_{\Delta}(k,k)(q) +  O(q)^{N+1}=
 \sum_{n=\lfloor 1/2 (-1 + 2 k - \sqrt{1 - 4 k + 8 k^2 + 8 N}) \rfloor }^{
 \lceil 1/4 (-1 + \sqrt{1 + 8 N}) \rceil } 
 (-1)^n \frac{q^{\frac{1}{2}n(n+1)
--\left(n+\frac{1}{2}k\right)k}}{(q)_n(q)_{n+k}} + O(q)^{N+1} \, .
-\end{equation}$$ Putting everything together, the first 100 coefficients of $I_{4_1}(0)(q)$ are given by
+-\left(n+\frac{1}{2}k\right)k}}{(q)_n(q)_{n+k}} + O(q)^{N+1} \, .$$ Putting everything together, the first 100 coefficients of $I_{4_1}(0)(q)$ are given by
 
 $1-2 q-3 q^2+2 q^3+8 q^4+18 q^5+18 q^6+14 q^7-12 q^8-52 q^9-106 q^{10}-164 q^{11}-209 q^{12}-212 q^{13}-141 q^{14}+14 q^{15}+309 q^{16}+714 q^{17}+1249 q^{18}+1824 q^{19}+2401 q^{20}+2794 q^{21}+2898 q^{22}+2434 q^{23}+1256 q^{24}-918 q^{25}-4186 q^{26}-8712 q^{27}-14394 q^{28}-21046 q^{29}-28184 q^{30}-35094 q^{31}-40740 q^{32}-43732 q^{33}-42508 q^{34}-35068 q^{35}-19524 q^{36}+6288 q^{37}+43942 q^{38}+95026 q^{39}+159698 q^{40}+237774 q^{41}+326680 q^{42}+422880 q^{43}+519595 q^{44}+608636 q^{45}+677761 q^{46}+713352 q^{47}+697625 q^{48}+611956 q^{49}+434572 q^{50}+144616 q^{51}-279773 q^{52}-856288 q^{53}-1599627 q^{54}-2515906 q^{55}-3602521 q^{56}-4842516 q^{57}-6203552 q^{58}-7632646 q^{59}-9054429 q^{60}-10367858 q^{61}-11443874 q^{62}-12125534 q^{63}-12226286 q^{64}-11535062 q^{65}-9815935 q^{66}-6820480 q^{67}-2289703 q^{68}+4024698 q^{69}+12355340 q^{70}+22887604 q^{71}+35751602 q^{72}+50979996 q^{73}+68497913 q^{74}+88071340 q^{75}+109297633 q^{76}+131547294 q^{77}+153959928 q^{78}+175385202 q^{79}+194390216 q^{80}+209208210 q^{81}+217767013 q^{82}+217655122 q^{83}+206182023 q^{84}+180375446 q^{85}+137083864 q^{86}+73018494 q^{87}-15089960 q^{88}-130393760 q^{89}-275708923 q^{90}-453351590 q^{91}-664856517 q^{92}-910744842 q^{93}-1190185170 q^{94}-1500703210 q^{95}-1837805659 q^{96}-2194650672 q^{97}-2561673782 q^{98}-2926258326 q^{99}-3272416148 q^{100}$
 
@@ -147,18 +145,16 @@ Eliminating $\overline{\mathbf B}$, and removing the third row (which correspond
  0 \\
  0 \\
 \end{array}
-\right) \, .$$ The index of $\mathcal{T}$ is given by $$\begin{equation}
-\label{eq.ind.52}
+\right) \, .$$ The index of $\mathcal{T}$ is given by $$\label{eq.ind.52}
 I_{5_2}(0)(q)=\sum_{(k_1,k_2) \in \mathbb Z^2} I_{\Delta}(-k_1,k_1-k_2)^2 I_{\Delta}(2 k_1-2 k_2,-k_1)
-\in \mathbb Z[[q]] \, .
-\end{equation}$$ Equation [\[eq.degID\]](#eq.degID){reference-type="eqref" reference="eq.degID"} implies that the degree $\delta(k_1,k_2)$ of the summand is a piecewise quadratic polynomial with fan $\mathcal F_{\mathcal{T}}$ given by six rays, $\rho_1, \ldots, \rho_6$, corresponding to the columns of the matrix $$\left(
+\in \mathbb Z[[q]] \, .$$ Equation [\[eq.degID\]](#eq.degID){reference-type="eqref" reference="eq.degID"} implies that the degree $\delta(k_1,k_2)$ of the summand is a piecewise quadratic polynomial with fan $\mathcal F_{\mathcal{T}}$ given by six rays, $\rho_1, \ldots, \rho_6$, corresponding to the columns of the matrix $$\left(
 \begin{array}{cccccc}
  2 & 1 & 0 & -1 & -1 & 0 \\
  1 & 1 & 1 & 0 & -1 & -1 \\
 \end{array}
 \right) \, .$$
 
-<figure id="6ays" data-latex-placement="htpb">
+<figure id="6ays">
 <p><span class="math inline"><em>ρ</em><sub>5</sub></span> at -3 3 <span class="math inline"><em>ρ</em><sub>4</sub></span> at -3 18 <span class="math inline"><em>ρ</em><sub>3</sub></span> at 13 33 <span class="math inline"><em>ρ</em><sub>2</sub></span> at 38 33 <span class="math inline"><em>ρ</em><sub>1</sub></span> at 38 25 <span class="math inline"><em>ρ</em><sub>6</sub></span> at 22 3</p>
 <img src="draws_eps/6rays" style="width:13.0%" />
 <figcaption>The fan of the summand of <span class="math inline"><em>I</em><sub>5<sub>2</sub></sub>(0)</span>.</figcaption>
@@ -180,10 +176,7 @@ k_1+2 k_1^2-k_2-4 k_1 k_2+2 k_2^2
 & \text{if} \,\, (k_1,k_2) \in C_{61}  \, .
 \end{cases}$$ A plot of $\delta(k_1,k_2)$ for $k_1, k_2 \in [-1,1]$ is given in Figure [2](#plot.summand.52){reference-type="ref" reference="plot.summand.52"}.
 
-<figure id="plot.summand.52" data-latex-placement="htpb">
-<img src="draws_eps/plot_summand_52" style="width:50.0%" />
-<figcaption>The plot of the degree of the summand of <span class="math inline">5<sub>2</sub></span>.</figcaption>
-</figure>
+![The plot of the degree of the summand of $5_2$.](draws_eps/plot_summand_52){#plot.summand.52 width="50%"}
 
 If $\delta(k_1,k_2) \leq N$, then to bound $k_1$ from above and below we use the restriction to the rays $\rho_1$ and $\rho_5$ respectively. Likewise, to bound $k_2$ from above and below we use the restriction to the rays $\rho_2$ and $\rho_5$ respectively. The equations $$\delta(k_1,k_1)=
 \begin{cases} 
@@ -247,28 +240,26 @@ $$\overline{\mathbf A} =
 
 Apply the following operations on $(\overline{\mathbf A}|\overline{\mathbf B}|\overline{\mathbf C})$:
 
-- Permute the rows according to $(123) \mapsto (312)$.
+-   Permute the rows according to $(123) \mapsto (312)$.
 
-- Permute the second and third columns of $\overline{\mathbf A}$ and simultaneously, of $\overline{\mathbf B}$ and $\overline{\mathbf C}$.
+-   Permute the second and third columns of $\overline{\mathbf A}$ and simultaneously, of $\overline{\mathbf B}$ and $\overline{\mathbf C}$.
 
-- If $\bar{\boldsymbol a}_1, \bar{\boldsymbol b}_1, \bar{\boldsymbol c}_1$ are the first columns of $\overline{\mathbf A}$, $\overline{\mathbf B}$ and $\overline{\mathbf C}$, then permute $(\bar{\boldsymbol a}_1| \bar{\boldsymbol b}_1 | \bar{\boldsymbol c}_1)\mapsto 
-  (\bar{\boldsymbol b}_1| \bar{\boldsymbol c}_1 | \bar{\boldsymbol a}_1)$.
+-   If $\bar{\boldsymbol a}_1, \bar{\boldsymbol b}_1, \bar{\boldsymbol c}_1$ are the first columns of $\overline{\mathbf A}$, $\overline{\mathbf B}$ and $\overline{\mathbf C}$, then permute $(\bar{\boldsymbol a}_1| \bar{\boldsymbol b}_1 | \bar{\boldsymbol c}_1)\mapsto 
+    (\bar{\boldsymbol b}_1| \bar{\boldsymbol c}_1 | \bar{\boldsymbol a}_1)$.
 
 After the above permutations, the matrix $(\overline{\mathbf A}|\overline{\mathbf B}|\overline{\mathbf C})$ of the $(-2,3,7)$ pretzel knot becomes the corresponding matrix of the $5_2$ knot. Since the above permutations do not change the index, it follows that $I_{(-2,3,7)}(0)=I_{5_2}(0)$.
 
 ::: exercise
-[]{#exerc.237 label="exerc.237"} Using the matrix $(\overline{\mathbf A}|\overline{\mathbf B}|\overline{\mathbf C})$ above, it follows that the index of $\mathcal{T}$ is given by $$\begin{equation}
-\label{eq.ind.237}
+[]{#exerc.237 label="exerc.237"} Using the matrix $(\overline{\mathbf A}|\overline{\mathbf B}|\overline{\mathbf C})$ above, it follows that the index of $\mathcal{T}$ is given by $$\label{eq.ind.237}
 I_{(-2,3,7)}(0)(q)=\sum_{(k_1,k_2) \in \mathbb Z^2} 
 (-1)^{k_2} q^{\frac{1}{2} (k_1 - 2 k_2)}
-I_{\Delta}(k_1, -k_2) I_{\Delta}(-k_1 + k_2, k_1) I_{\Delta}(-2 k_1 + 2 k_2, k_1 - 2 k_2).
-\end{equation}$$ On the other hand, the index of $5_2$ is given by Equation [\[eq.ind.52\]](#eq.ind.52){reference-type="eqref" reference="eq.ind.52"}. Using the identities of the tetrahedron index from Section [\[sec.review\]](#sec.review){reference-type="ref" reference="sec.review"}, show that $$\begin{align*}
+I_{\Delta}(k_1, -k_2) I_{\Delta}(-k_1 + k_2, k_1) I_{\Delta}(-2 k_1 + 2 k_2, k_1 - 2 k_2).$$ On the other hand, the index of $5_2$ is given by Equation [\[eq.ind.52\]](#eq.ind.52){reference-type="eqref" reference="eq.ind.52"}. Using the identities of the tetrahedron index from Section [\[sec.review\]](#sec.review){reference-type="ref" reference="sec.review"}, show that $$\begin{aligned}
 \sum_{(k_1,k_2) \in \mathbb Z^2} I_{\Delta}(-k_1,k_1-k_2)^2 I_{\Delta}(2 k_1-2 k_2,-k_1)
 &= \\
 \sum_{(k_1,k_2) \in \mathbb Z^2} 
 (-1)^{k_2} q^{\frac{1}{2} (k_1 - 2 k_2)}
   I_{\Delta}(k_1, -k_2) I_{\Delta}(-k_1 + k_2, k_1) I_{\Delta}(-2 k_1 + 2 k_2, k_1 - 2 k_2). &
-\end{align*}$$
+\end{aligned}$$
 :::
 
 ## The index of the $6_1$ knot complement {#sub.index61}
@@ -330,29 +321,23 @@ Eliminating $\overline{\mathbf B}$, and removing the fourth row (which correspon
  0 \\
  1 \\
 \end{array}
-\right) \, .$$ The index of $\mathcal{T}$ is given by $$\begin{align*}
+\right) \, .$$ The index of $\mathcal{T}$ is given by $$\begin{aligned}
 I_{6_1}(0)(q) &= \sum_{(k_1,k_2,k_3) \in \mathbb Z^3} 
 q^{\frac{1}{2} (-k_1 + k_3)}
   I_{\Delta}(-k_1, -k_2 + k_3) I_{\Delta}(
   2 k_1 - 2 k_2, -k_1 + k_3) \\
 &  I_{\Delta}(-k_3, -k_1 + k_2) I_{\Delta}(-k_1 + k_3, 
   k_1 - k_2 - k_3) \in \mathbb Z[[q]] \, .
-\end{align*}$$ $\mathcal F_{\mathcal{T}}$ in $\mathbb R^3$ has 18 rays, corresponding to the columns of the matrix $$\left(
+\end{aligned}$$ $\mathcal F_{\mathcal{T}}$ in $\mathbb R^3$ has 18 rays, corresponding to the columns of the matrix $$\left(
 \begin{array}{cccccccccccccccccc}
  -1 & -1 & -1 & -1 & -1 & -1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 2 & 3 \\
  -2 & -2 & -1 & 0 & 0 & 1 & -1 & -1 & -1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 1 & 2 \\
  -3 & -1 & 0 & -1 & 0 & 0 & -2 & -1 & 0 & 1 & -1 & 0 & -1 & 1 & 0 & 1 & 1 & 1 \\
 \end{array}
-\right) \, .$$ If $\delta(k_1,k_2,k_3)$ denotes the degree of the summand and $N \in \mathbb N$, then $\delta(k_1,k_2,k_3) \leq N$ implies that $(k_1,k_2,k_3)$ satisfy the bounds $$\begin{equation*}
-\frac{1}{2} (1 - \sqrt{1 + 4 N}) \leq k_1  \leq 
-\frac{1}{2} (-1 + \sqrt{1 + 12 N})
-\end{equation*}$$ $$\begin{equation*}
-\frac{2}{3} (1 - \sqrt{1 + 3 N}) \leq k_2  \leq 
-\frac{1}{2} (-1 + \sqrt{1 + 8 N})
-\end{equation*}$$ $$\begin{equation*}
-\frac{3}{7} (1 - \sqrt{1 + 7 N}) \leq k_3  \leq 
-N  \, .
-\end{equation*}$$ Observe that the upper bound for $k_3$ is linear in $N$. For instance, when $N=3$, the following 17 terms (each a product of 4 truncated tetrahedron indices, as in Equation [\[eq.IDtruncated\]](#eq.IDtruncated){reference-type="eqref" reference="eq.IDtruncated"} for $N=3$) contribute to $I_{6_1}(0)+O(q)^4= 1-4 q+q^2+18 q^3+O(q)^4$:
+\right) \, .$$ If $\delta(k_1,k_2,k_3)$ denotes the degree of the summand and $N \in \mathbb N$, then $\delta(k_1,k_2,k_3) \leq N$ implies that $(k_1,k_2,k_3)$ satisfy the bounds $$\frac{1}{2} (1 - \sqrt{1 + 4 N}) \leq k_1  \leq 
+\frac{1}{2} (-1 + \sqrt{1 + 12 N})$$ $$\frac{2}{3} (1 - \sqrt{1 + 3 N}) \leq k_2  \leq 
+\frac{1}{2} (-1 + \sqrt{1 + 8 N})$$ $$\frac{3}{7} (1 - \sqrt{1 + 7 N}) \leq k_3  \leq 
+N  \, .$$ Observe that the upper bound for $k_3$ is linear in $N$. For instance, when $N=3$, the following 17 terms (each a product of 4 truncated tetrahedron indices, as in Equation [\[eq.IDtruncated\]](#eq.IDtruncated){reference-type="eqref" reference="eq.IDtruncated"} for $N=3$) contribute to $I_{6_1}(0)+O(q)^4= 1-4 q+q^2+18 q^3+O(q)^4$:
 
 $I_{\Delta}(-2,0)^2 I_{\Delta}(0,-2) I_{\Delta}(0,0)
 -q^{-\frac{1}{2}} I_{\Delta}(-1,-1) I_{\Delta}(-1,0) I_{\Delta}(0,-1) I_{\Delta}(0,0)
@@ -432,31 +417,21 @@ $$\overline{\mathbf A} =
 1 \\
 -1 \\
 \end{array}
-\right) \, .$$ The index of $\mathcal{T}$ is given by $$\begin{align*}
+\right) \, .$$ The index of $\mathcal{T}$ is given by $$\begin{aligned}
 I_{7_2}(0)(q) &= \sum_{(k_1,k_2,k_3) \in \mathbb Z^3} 
 (-1)^{k_1+k_2-k_3} q^{\frac{1}{2} (k_1+k_2-k_3)} 
 I_{\Delta}(-k_1,k_1+k_2-k_3) I_{\Delta}(-2 k_2,k_3) \\
  & I_{\Delta}(k_1+k_2-k_3,-k_2+k_3) I_{\Delta}(-k_2+k_3,2 k_1-2 k_3)
 \in \mathbb Z[[q]] \, .
-\end{align*}$$ $\mathcal F_{\mathcal{T}}$ in $\mathbb R^3$ has 14 rays, spanned by the columns of the matrix $$\left(
+\end{aligned}$$ $\mathcal F_{\mathcal{T}}$ in $\mathbb R^3$ has 14 rays, spanned by the columns of the matrix $$\left(
 \begin{array}{cccccccccccccc}
  -2 & -1 & -1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 2 \\
  -1 & -1 & 0 & -1 & -1 & -1 & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 1 \\
  -2 & -1 & 0 & -2 & -1 & 0 & 1 & -1 & 0 & 0 & 1 & 2 & 1 & 3 \\
 \end{array}
-\right) \, .$$ If $\delta(k_1,k_2,k_3)$ denotes the degree of the summand and $N \in \mathbb N$, then $\delta(k_1,k_2,k_3) \leq N$ implies that $(k_1,k_2,k_3)$ satisfy the bounds $$\begin{equation*}
-1 - \sqrt{1 + 2 N} \leq k_1  \leq 
-\frac{1}{2} (-1 + \sqrt{1 + 8 N})
-\end{equation*}$$ $$\begin{equation*}
-\frac{1}{2} (1 - \sqrt{1 + 4 N}) \leq k_2  \leq 
-N
-\end{equation*}$$ $$\begin{equation*}
-1 - \sqrt{1 + 2 N} \leq k_3  \leq 
-\frac{1}{2} (-1 + \sqrt{1 + 12 N}) \, .
-\end{equation*}$$ Observe that the upper bound for $k_3$ is linear in $N$. The first 50 coefficients of $I_{7_2}(0)$ are given by:
+\right) \, .$$ If $\delta(k_1,k_2,k_3)$ denotes the degree of the summand and $N \in \mathbb N$, then $\delta(k_1,k_2,k_3) \leq N$ implies that $(k_1,k_2,k_3)$ satisfy the bounds $$1 - \sqrt{1 + 2 N} \leq k_1  \leq 
+\frac{1}{2} (-1 + \sqrt{1 + 8 N})$$ $$\frac{1}{2} (1 - \sqrt{1 + 4 N}) \leq k_2  \leq 
+N$$ $$1 - \sqrt{1 + 2 N} \leq k_3  \leq 
+\frac{1}{2} (-1 + \sqrt{1 + 12 N}) \, .$$ Observe that the upper bound for $k_3$ is linear in $N$. The first 50 coefficients of $I_{7_2}(0)$ are given by:
 
 $1-4 q+q^2+16 q^3+20 q^4+q^5-72 q^6-156 q^7-206 q^8-98 q^9+275 q^{10}+924 q^{11}+1740 q^{12}+2370 q^{13}+2227 q^{14}+495 q^{15}-3485 q^{16}-10168 q^{17}-19045 q^{18}-28467 q^{19}-34899 q^{20}-33157 q^{21}-16460 q^{22}+22305 q^{23}+89035 q^{24}+185478 q^{25}+306146 q^{26}+434575 q^{27}+539981 q^{28}+575717 q^{29}+479148 q^{30}+176483 q^{31}-408854 q^{32}-1340316 q^{33}-2648389 q^{34}-4301970 q^{35}-6179555 q^{36}-8036073 q^{37}-9477453 q^{38}-9942897 q^{39}-8710346 q^{40}-4925980 q^{41}+2323715 q^{42}+13897628 q^{43}+30430263 q^{44}+52111135 q^{45}+78414600 q^{46}+107796294 q^{47}+137380650 q^{48}+162674912 q^{49}+177363801 q^{50}$
-
-## Acknowledgments
-
-S.G. wishes to thank Tudor Dimofte, Josephine Yu and especially Don Zagier for enlightening conversations. A preliminary report was delivered by S.G. during the Oberwolfach 8/2012 workshop on *Low-Dimensional Topology and Number Theory*; we thank the organizers, Paul E. Gunnells, Walter Neumann, Adam S. Sikora and Don Zagier, for their hospitality.

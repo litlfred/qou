@@ -207,7 +207,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "verifyingClosedManifolds.tex",
-   "tex_sections": 11,
+   "tex_sections": 21,
    "overlaid": 8,
    "thresholds": {
     "title": 0.85,
@@ -218,47 +218,47 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.968,
-     "coverage_ratio": 0.811,
+     "prose_ratio": 0.801,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-3-cocycles",
      "title": "Cocycles",
-     "prose_ratio": 0.92,
-     "coverage_ratio": 0.986,
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-4-extending-cocycles-on-genus-0-surfaces",
      "title": "Extending cocycles on genus 0 surfaces",
-     "prose_ratio": 0.921,
-     "coverage_ratio": 0.982,
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.956,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-5-extending-cocycles-on-triangulations",
      "title": "Extending cocycles on triangulations",
-     "prose_ratio": 0.878,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.96,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-6-examples-of-non-gimbal-lock",
      "title": "Examples of (non-)gimbal lock",
-     "prose_ratio": 0.924,
-     "coverage_ratio": 0.981,
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-7-algorithm",
      "title": "Algorithm",
-     "prose_ratio": 0.934,
+     "prose_ratio": 0.938,
      "coverage_ratio": 0.963,
      "result": "overlaid",
      "converter": "pandoc"
@@ -266,16 +266,16 @@
     {
      "id": "sec-006-8-results",
      "title": "Results",
-     "prose_ratio": 0.947,
-     "coverage_ratio": 0.989,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-007-9-discussion",
      "title": "Discussion",
-     "prose_ratio": 0.916,
-     "coverage_ratio": 0.991,
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },

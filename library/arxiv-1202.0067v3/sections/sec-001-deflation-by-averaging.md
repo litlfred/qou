@@ -7,10 +7,10 @@ section_number: 2
 pages: 7-9
 source_pdf: 1202.0067v3.pdf
 source_sha256: 2ce621c8982ee764
-text_source: latex
-latex_prose_ratio: 0.938
-latex_coverage_ratio: 0.912
 doc_brief: "CHARACTER DEFLATIONS AND A GENERALIZATION OF THE MURNAGHAN–NAKAYAMA RULE ANTON EVSEEV, ROWENA PAGET AND MARK WILDON — 8 sections: Introduction; Deflation by averaging; Skew characters"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:averaging}
 

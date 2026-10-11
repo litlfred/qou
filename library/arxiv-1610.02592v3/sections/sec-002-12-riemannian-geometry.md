@@ -7,12 +7,13 @@ section_number: 1.2
 pages: 23-31
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.925
-latex_coverage_ratio: 0.798
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 We briefly introduce Riemannian manifolds and their geometric properties: distance, geodesics, volume, exponential map, injectivity radius, completeness, curvature, and isometries. These notions are carefully explained in do Carmo's \emph{Riemannian Geometry} \cite{Do}.
+
 
 \subsection{Metric tensor}
 A differentiable manifold lacks many natural geometric notions, such as distance between points, angle between vectors, path lengths, geodesics, volumes, etc. It is a quite remarkable fact that the introduction of a single additional mathematical entity suffices to recover all these geometric notions: this miraculous object is the metric tensor.
@@ -44,6 +45,7 @@ The metric tensor $g$ defines in particular a norm for every tangent vector, and
 $$L(\gamma) = \int_I \|\gamma'(t)\| dt$$
 and can be finite or infinite. A \emph{reparametrisation} of $\gamma$ is the curve $\eta \colon J \to M$ obtained as $\eta = \gamma\circ\varphi$ where $\varphi\colon J\to I$ is a diffeomorphism of intervals. The length is invariant under reparametrisations, that is $L(\gamma) = L(\eta)$.
 
+
 \subsection{Distance and geodesics}
 Let $(M,g)$ be a connected Riemannian manifold. The curves in $M$ now have a length and hence may be used to define a distance on $M$. 
 
@@ -72,6 +74,7 @@ A geodesic $\gamma:I \to M$ is \emph{maximal} if it cannot be extended to a geod
 Let $p\in M$ be a point and $v\in T_pM$ a tangent vector. There exists a unique maximal geodesic $\gamma\colon I \to M$ with $\gamma(0) = p$ and $\gamma'(0) = v$. The interval $I$ is open and contains $0$.
 \end{teo}
 
+
 \subsection{Volume}
 If the differentiable manifold $M$ is oriented, the metric tensor also induces a \emph{volume form}.
 \index{volume form}
@@ -91,6 +94,7 @@ which is a positive number or infinity. If $D$ has compact closure the volume is
 On a chart, the volume form can be calculated from the metric tensor $g$ via the following formula: 
 $$\omega = \sqrt{\det g} \cdot dx_1\cdots dx_n.$$
 
+
 \subsection{Completeness}
 A Riemannian manifold $(M,g)$ is a metric space, and as such it may be complete or not. For instance,
 a compact Riemannian manifold is always complete; on the other hand, by removing a point from a Riemannian manifold we always get a non-complete space. Non-compact manifolds like $\matR^n$ typically admit both complete and non-complete Riemannian structures. 
@@ -106,6 +110,7 @@ Let $(M,g)$ be a connected Riemannian manifold. The following are equivalent:
 \end{enumerate}
 If $M$ is complete, any two points $p,q \in M$ are joined by a \emph{minimising} geodesic $\gamma$, \emph{i.e.}~a curve such that $L(\gamma) = d(p,q)$.
 \end{teo}
+
 
 
 
@@ -127,6 +132,7 @@ The differential of the exponential map $\exp_p$ at the origin is the identity a
 Via the exponential map, a small neighborhood of the origin in  $T_pM$ can be used as a chart near $p$: we recover here the intuitive idea that the tangent space approximates the manifold near $p$.
 
 When $M$ is not complete, the exponential map is only defined in some open star-shaped neighbourhood $V_p \subset T_pM$ of the origin, and Theorem \ref{exp:teo} holds also in this case.
+
 
 \subsection{Injectivity radius}
 Let $M$ be a complete Riemannian manifold. We introduce the following.
@@ -162,6 +168,7 @@ Set $p=\gamma(a) = \gamma (b)$. Since $\gamma$ is shorter than $2\cdot\inj (M)$,
 
 A proof of the continuity of $\inj_p(M)$ can be found in \cite{Lee}.
 
+
 \subsection{Curvature} \label{curvatura:subsection}
 The \emph{curvature} of a Riemannian manifold $(M,g)$ is some mathematical entity that measures how distorted $g$ is when compared to the familiar Euclidean structure on $\matR^n$. The curvature is encoded by various kinds of mathematical objects, and some of them may be frustratingly complicated when $n=\dim M \geqslant 3$. Luckily, most of the Riemannian manifolds that we will encounter in this book have ``constant curvature'' and therefore these objects will simplify dramatically. We briefly recall them here.
 \index{curvature}
@@ -189,6 +196,7 @@ The Ricci tensor is symmetric, and by further contracting we get the \emph{scala
 $$R = g^{ij}R_{ij}.$$
 \index{scalar curvature}
 
+
 \subsection{Scalar curvature} \label{gauss:subsection}
 What kind of geometric information is contained in the tensors introduced above? The scalar curvature $R$ is the simplest curvature detector, and it measures the local discrepancy between volumes in $M$ and in $\matR^n$. Let $B_p(\varepsilon)\subset M$ be the $\varepsilon$-ball in $M$ centred at $p$ and $B_0(\varepsilon)\subset \matR^n$ be the $\varepsilon$-ball in the Euclidean $\matR^n$. We have
 $$\Vol\big(B_p(\varepsilon)\big) = \Vol\big(B_0(\varepsilon)\big) \cdot \left( 1- \frac R{6(n+2)}\varepsilon^2 \right) + {\rm O}(\varepsilon^4).$$
@@ -206,6 +214,7 @@ $$\Area(B_p(\varepsilon)) = \pi\varepsilon^2 - \frac{\pi \varepsilon^4}{12}K + {
 \end{center}
 \end{figure}
 
+
 \subsection{Sectional curvature}
 If $(M,g)$ has dimension $n\geqslant 3$ the scalar curvature is a weak curvature detector when compared to the Ricci and Riemann tensors. Moreover, there is yet another curvature detector which encodes the same amount of information of the full Riemann tensor, but in a more geometric way: this is the \emph{sectional curvature} and is defined as follows. 
 \index{sectional curvature}
@@ -221,6 +230,7 @@ the Ricci tensor $R_{ij}$ in $p$ measures the average sectional curvature along 
 
 The Riemann tensor is determined by the sectional curvatures and vice-versa. In dimension $n=3$ the Ricci tensor fully determines the sectional curvatures and hence also the Riemann tensor. This is not true in dimension $n\geqslant 4$.
 
+
 \subsection{Constant sectional curvature}
 A Riemannian manifold $(M,g)$ has \emph{constant sectional curvature} $K$ if the sectional curvature of every 2-dimensional vector space $W\subset T_pM$ at every point $p\in M$ is always $K$.
 
@@ -233,6 +243,7 @@ By rescaling the metric we may transform every Riemannian manifold with constant
 \begin{example}
 Euclidean space $\matR^n$ has constant curvature zero. A sphere of radius $R$ has constant curvature $1/R^2$.
 \end{example}
+
 
 \subsection{Isometries}
 Every honest category has its morphisms. Riemannian manifolds are so rigid, that in fact one typically introduces only isomorphisms: these are called \emph{isometries}.
@@ -257,6 +268,7 @@ By Theorem \ref{exp:teo} there is an open neighbourhood $U_p \subset T_pM$ of th
 
 A point $q\in\exp_p(U_p)$ is the image $q=\exp(v)$ of a vector $v\in U_p$ and hence $q=\gamma(1)$ for the geodesic $\gamma$ determined by the data $\gamma(0)=p, \gamma'(0)=v$. The maps $f$ and $g$ are isometries and hence send geodesics to geodesics: here $f\circ \gamma$ and $g\circ\gamma$ are geodesics starting from $f(p)=g(p)$ with the same initial velocities and thus they coincide. This implies that $f(q)=g(q)$. Since $f$ and $g$ coincide on the open set $\exp_p(U_p)$, also their differentials do.
 \end{proof}
+
 
 
 \subsection{Local isometries}
@@ -292,12 +304,14 @@ We may find a disjoint union of well-covered open sets in $N$ whose complement h
 
 The formula makes sense also when some of the quantities $\Vol(M)$, $\Vol(N)$, and $d$ are infinite.
 
+
 \subsection{Totally geodesic submanifolds}
 A differentiable submanifold $M$ in a Riemannian manifold $N$ is \emph{totally geodesic} if 
 every geodesic in $M$ with the induced metric is also a geodesic in $N$. 
 \index{submanifold!totally geodesic submanifold}
 
 When $\dim M=1$ this notion is equivalent to that of an unparametrized embedded geodesic; if $\dim M\geqslant 2$ then $M$ is a quite peculiar object: generic Riemannian manifolds do not contain totally geodesic surfaces at all. An equivalent condition is that, for every $p\in M$ and every $v \in T_p(M)$, the unique geodesic in $N$ passing through $p$ with velocity $v$ stays in $M$ for some interval $(-\varepsilon, \varepsilon)$.
+
 
 \subsection{Riemannian manifolds with boundary}
 Many geometric notions in Riemannian geometry extend easily to manifolds $M$ with boundary. The boundary $\partial M$ of a Riemannian manifold $M$ is naturally a Riemannian manifold without boundary. 

@@ -7,10 +7,10 @@ section_number: 2
 pages: 7-8
 source_pdf: 2111.12409v4.pdf
 source_sha256: 3f0b94ee06fe79bf
-text_source: latex
-latex_prose_ratio: 0.951
-latex_coverage_ratio: 0.97
 doc_brief: "On the generalisation of Roth’s theorem Paolo Dolce Francesco Zucconi 0 Introduction 1 0.1 History . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 — We"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{aux}
 

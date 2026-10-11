@@ -7,20 +7,14 @@ section_number: 6
 pages: 36-37
 source_pdf: 1504.07260v3.pdf
 source_sha256: 707cb014400a3f05
-text_source: latex
-latex_prose_ratio: 0.983
-latex_coverage_ratio: 0.958
 doc_brief: "Fricke S-duality in CHL models — We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3×T 2 by aZN symmetry acting"
+text_source: latex
+latex_prose_ratio: 0.953
+latex_coverage_ratio: 0.99
 ---
 []{#sec:conclusions label="sec:conclusions"} In this paper we have analysed a large class of non-geometric CHL models and showed that they exhibit larger symmetries than previously expected. These models are in particular invariant under Fricke involution $S\to -1/(NS)$ which lies outside of the $SL(2,\mathbb{Z})$-symmetry of the original unorbifolded model. We showed that this leads to new non-trivial heterotic-type II dualities and gives rise to strong constraints on the associated electric and magnetic charge lattices. In particular, for self-dual CHL models these lattice are required to be $N$-modular. We also demonstrated that Fricke S-duality is compatible with the counting of 1/2 BPS-states by calculating the relevant helicity supertraces and verified the invariance of certain BPS-saturated topological couplings.
 
-As mentioned in the introduction, our results give a physical interpretation of the modular properties of the class of Siegel modular forms $\Phi_{g,h}$ constructed in [@Persson:2013xpa] in the context of Mathieu moonshine. It is therefore natural to speculate about the physical interpretation of these Siegel modular forms. It is known that in cases when $g$ is a geometric symmetry of the target space the reciprocals $1/\Phi_{g, h}$ are generating functions of certain (twisted) 1/4 BPS-states in CHL models. One can also relate the $\Phi_{g,h}$ to the generalised eta-products via the following limit $$\begin{equation}
-\lim_{z\to 0}\frac{\Phi_{g,h}(\sigma,\tau,z)}{(2\pi iz)^2}=\eta_{g,h}(\tau)\eta_{g,h'}(N\sigma),
-\end{equation}$$ Since we have seen in this paper that the generalised eta-products appear in certain topological one-loop couplings involving the fourth helicity supertraces, it is natural to speculate that the $\Phi_{g,h}$ would similarly appear in some topological couplings involving the *sixth helicity supertrace* $$\begin{equation}
-B_6^{\text{CHL}[g]}:=\text{Tr}_g(-1)^{F} J_3^6 q^{L_0} \bar{q}^{\bar{L}_0},
-\end{equation}$$ which indeed receives contributions from 1/4 BPS-states. Schematically, this coupling should take the form [@Kawai:1995hy] $$\begin{equation}
-\int_{\mathcal{F}} B_6^{\text{CHL}[g]} = \text{log} \left((\text{det}\mathop{\mathrm{Im}}\Omega)^{w_{g,h}} |\Phi_{g,e}(T, U, V)|^2\right),
-\end{equation}$$ where $V$ is a Wilson line modulus, $\Omega =  \left(\begin{smallmatrix}
+As mentioned in the introduction, our results give a physical interpretation of the modular properties of the class of Siegel modular forms $\Phi_{g,h}$ constructed in [@Persson:2013xpa] in the context of Mathieu moonshine. It is therefore natural to speculate about the physical interpretation of these Siegel modular forms. It is known that in cases when $g$ is a geometric symmetry of the target space the reciprocals $1/\Phi_{g, h}$ are generating functions of certain (twisted) 1/4 BPS-states in CHL models. One can also relate the $\Phi_{g,h}$ to the generalised eta-products via the following limit $$\lim_{z\to 0}\frac{\Phi_{g,h}(\sigma,\tau,z)}{(2\pi iz)^2}=\eta_{g,h}(\tau)\eta_{g,h'}(N\sigma),$$ Since we have seen in this paper that the generalised eta-products appear in certain topological one-loop couplings involving the fourth helicity supertraces, it is natural to speculate that the $\Phi_{g,h}$ would similarly appear in some topological couplings involving the *sixth helicity supertrace* $$B_6^{\text{CHL}[g]}:=\text{Tr}_g(-1)^{F} J_3^6 q^{L_0} \bar{q}^{\bar{L}_0},$$ which indeed receives contributions from 1/4 BPS-states. Schematically, this coupling should take the form [@Kawai:1995hy] $$\int_{\mathcal{F}} B_6^{\text{CHL}[g]} = \text{log} \left((\text{det}\mathop{\mathrm{Im}}\Omega)^{w_{g,h}} |\Phi_{g,e}(T, U, V)|^2\right),$$ where $V$ is a Wilson line modulus, $\Omega =  \left(\begin{smallmatrix}
 T & V \\ V & U
 \end{smallmatrix}\right)$ is the genus 2 period matrix and $w_{g,h}$ is the weight of the corresponding Siegel modular form. This would generalise the "threshold integrals" previously calculated by Sen and collaborators for a class of CHL models [@David:2006ji; @David:2006yn; @Sen:2010ts].
 

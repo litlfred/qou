@@ -7,10 +7,10 @@ section_number: 2
 pages: 2-3
 source_pdf: 0010012v1.pdf
 source_sha256: cd6eca5ccb81ff90
-text_source: latex
-latex_prose_ratio: 0.906
-latex_coverage_ratio: 0.97
 doc_brief: "From random polynomials to symplectic geometry Steve Zelditch — We review some recent results on random polynomials and their generalizations in complex and symplectic geometry."
+text_source: latex
+latex_prose_ratio: 0.997
+latex_coverage_ratio: 0.994
 ---
 We give a quick summary of some basic tools and methods that are used below. We will concentrate on general ideas and refer to [@SZ1; @SZ2; @BSZ3] for detailed expositions.
 
@@ -34,11 +34,11 @@ N^m + \cdots$ for sufficiently large $N$, where $\cdots$ represent the lower ord
 
 In the simplest case of Riemann surfaces, examples include:
 
-- $M = {\mathbb C}{\mathbb P}^1, L = {\mathcal O}(1), L^2 = T {\mathbb C}{\mathbb P}^1, h = h_{FS}, \omega = \omega_{FS}$ (Fubini study hermitian metric and curvature (1,1)-form). That $({\mathbb C}{\mathbb P}^1, \omega_{FS})$ is positively curved in the usual Riemannian sense is equivalent to positivity of $T{\mathbb C}{\mathbb P}^1$. $H^0({\mathbb C}{\mathbb P}^1, {\mathcal O}(2 N))$ may be interpreted as the space of holomorphic vector fields of type $(\frac{\partial}{\partial z})^N$. More simply put, sections are homogeneous holomorphic polynomials $s = \sum_{j = 0}^N c_k z_0^k z_1^{N - k}$ of degree $N$ in two complex variables. Such polynomials are known as the $SU(2)$-ensemble.
+-   $M = {\mathbb C}{\mathbb P}^1, L = {\mathcal O}(1), L^2 = T {\mathbb C}{\mathbb P}^1, h = h_{FS}, \omega = \omega_{FS}$ (Fubini study hermitian metric and curvature (1,1)-form). That $({\mathbb C}{\mathbb P}^1, \omega_{FS})$ is positively curved in the usual Riemannian sense is equivalent to positivity of $T{\mathbb C}{\mathbb P}^1$. $H^0({\mathbb C}{\mathbb P}^1, {\mathcal O}(2 N))$ may be interpreted as the space of holomorphic vector fields of type $(\frac{\partial}{\partial z})^N$. More simply put, sections are homogeneous holomorphic polynomials $s = \sum_{j = 0}^N c_k z_0^k z_1^{N - k}$ of degree $N$ in two complex variables. Such polynomials are known as the $SU(2)$-ensemble.
 
-- $M = {\bf H}^2/\Gamma, L = T^*M, h_{FS} =$ hyperbolic metric. Hyperbolic surfaces are negatively curved in the Riemannian sense, so their tangent bundles are negatively curved, and their co-tangent bundles are positively curved. Holomorphic sections are holomorphic differentials of type $(dz)^N$.
+-   $M = {\bf H}^2/\Gamma, L = T^*M, h_{FS} =$ hyperbolic metric. Hyperbolic surfaces are negatively curved in the Riemannian sense, so their tangent bundles are negatively curved, and their co-tangent bundles are positively curved. Holomorphic sections are holomorphic differentials of type $(dz)^N$.
 
-- $M = {\mathbb C}/ {\mathbb Z}^2, \omega_0 = dz \wedge d\bar{z}$. The complex torus is flat in the Riemannian sense, so neither its tangent nor cotangent bundles are positively curved. The 'quantizing line bundle' with curvature $\omega_0$ is rather the bundle $\Theta$ whose sections are the classical theta-functions. The sections of $\Theta^N$ are known as theta-functions of level $N$.
+-   $M = {\mathbb C}/ {\mathbb Z}^2, \omega_0 = dz \wedge d\bar{z}$. The complex torus is flat in the Riemannian sense, so neither its tangent nor cotangent bundles are positively curved. The 'quantizing line bundle' with curvature $\omega_0$ is rather the bundle $\Theta$ whose sections are the classical theta-functions. The sections of $\Theta^N$ are known as theta-functions of level $N$.
 
 ### Almost holomorphic sections
 
@@ -48,13 +48,11 @@ Symplectic almost-complex manifolds $(M, J, \omega)$ possess a similar but analy
 
 We will restrict attention to two related ensembles:
 
-- *Gaussian ensembles*: We fix an orthonormal basis $\{f_j\}$ of ${\mathcal H}_N$ and write functions as orthonormal sums $f = \sum_{j = 1}^{d_N} c_j f_j$. We then define the (complex) Gaussian measure by $$\gamma = e^{- ||f||^2} {\mathcal D}f,\;\; \mbox{i.e.} \;\; \gamma = e^{- |c|^2} dc.$$ More generally we fix a symmetric matrix $\Delta$ on ${\mathbb C}^{d_N}$ with positive (semi-)definite imaginary part and define: $$\begin{equation}
-  \gamma_\Delta= \frac{e^{- \langle\Delta^{-1}
-  c,c\rangle}}{(2\pi)^{p/2}\det\Delta}
-  dc\,,\label{gaussian}
-  \end{equation}$$ Gaussian ensembles come in both real and complex flavors. In the real case, the exponents acquire factors of $1/2$ and the denominator acquires a square root.
+-   *Gaussian ensembles*: We fix an orthonormal basis $\{f_j\}$ of ${\mathcal H}_N$ and write functions as orthonormal sums $f = \sum_{j = 1}^{d_N} c_j f_j$. We then define the (complex) Gaussian measure by $$\gamma = e^{- ||f||^2} {\mathcal D}f,\;\; \mbox{i.e.} \;\; \gamma = e^{- |c|^2} dc.$$ More generally we fix a symmetric matrix $\Delta$ on ${\mathbb C}^{d_N}$ with positive (semi-)definite imaginary part and define: $$\gamma_\Delta= \frac{e^{- \langle\Delta^{-1}
+    c,c\rangle}}{(2\pi)^{p/2}\det\Delta}
+    dc\,,\label{gaussian}$$ Gaussian ensembles come in both real and complex flavors. In the real case, the exponents acquire factors of $1/2$ and the denominator acquires a square root.
 
-- *Spherical ensembles*: We denote by $S{\mathcal H}_N = \{f \in {\mathcal H}_N: ||f|| = 1\}.$ We then equip $S{\mathcal H}_N$ with the uniform (Haar) probability measure $\nu_N.$
+-   *Spherical ensembles*: We denote by $S{\mathcal H}_N = \{f \in {\mathcal H}_N: ||f|| = 1\}.$ We then equip $S{\mathcal H}_N$ with the uniform (Haar) probability measure $\nu_N.$
 
 We will denote the expected value of a random variable $X$ with respect to the Gaussian ensemble by ${\bf E}_{\gamma}(X)$ (resp. ${\bf E}_{\nu}(X)$ for the spherical ensemble).
 
@@ -77,16 +75,16 @@ Our results depend on the fact that certain statistical properties of polynomial
 ::: theo
 As $N \to \infty$, we have:
 
-- [@BSZ2; @SZ2] Complex case: $$\Pi_N(z_0 + \frac{u}{\sqrt{N}}, \frac{\theta}{N}, z_0 + 
-  \frac{v}{\sqrt{N}}, \frac{\varphi}{N})
-  \sim \frac{1}{\pi^m} e^{i (\theta - \varphi)}
-  e^{u \cdot \bar{v} -{\frac{1}{2}}(|u|^2 + |v|^2)} \{1 + \frac{1}{\sqrt{N}}
-  p_{1}(u,v; z_0)
-  + \cdots \}\,.$$ The leading order term is the Szegö kernel for the reduced Heisenberg group, whence the name 'Heisenberg class.'
+-   [@BSZ2; @SZ2] Complex case: $$\Pi_N(z_0 + \frac{u}{\sqrt{N}}, \frac{\theta}{N}, z_0 + 
+    \frac{v}{\sqrt{N}}, \frac{\varphi}{N})
+    \sim \frac{1}{\pi^m} e^{i (\theta - \varphi)}
+    e^{u \cdot \bar{v} -{\frac{1}{2}}(|u|^2 + |v|^2)} \{1 + \frac{1}{\sqrt{N}}
+    p_{1}(u,v; z_0)
+    + \cdots \}\,.$$ The leading order term is the Szegö kernel for the reduced Heisenberg group, whence the name 'Heisenberg class.'
 
-- Real case: $$N^{-m + 1} \Pi_N(x_0 + \frac{u}{N},  x_0 + 
-  \frac{v}{N})
-  \sim \Gamma(\frac{m - 1}{2}) (\frac{|u - v|}{2})^{\frac{m - 2}{2}} J_{\frac{m - 2}{2}}(|u - v|) + \cdots \,,$$ where $J_{\nu}$ is the Bessel function of the first kind of order $\nu$ (whence the name 'Euclidean class'.)
+-   Real case: $$N^{-m + 1} \Pi_N(x_0 + \frac{u}{N},  x_0 + 
+    \frac{v}{N})
+    \sim \Gamma(\frac{m - 1}{2}) (\frac{|u - v|}{2})^{\frac{m - 2}{2}} J_{\frac{m - 2}{2}}(|u - v|) + \cdots \,,$$ where $J_{\nu}$ is the Bessel function of the first kind of order $\nu$ (whence the name 'Euclidean class'.)
 :::
 
 The proof of the scaling asymptotics in the complex holomorphic case [@BSZ2] is based on the Boutet-de-Monvel- Sjostrand parametrix for the Szegö kernel, which is valid for positive line bundles. A similar parametrix was constructed in the symplectic almost-complex case [@SZ2], and the scaling asymptotics were derived from it. In the real case of $S^m$, the scaling asymptotics are closely related to the 'Mehler-Heine formula'. The terms 'Heisenberg class' and 'Euclidean class' suggest infinite dimensional Gaussian ensembles related to representations of the Heisenberg and Euclidean motion groups.

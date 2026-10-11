@@ -884,8 +884,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 8,
-   "overlaid": 2,
+   "tex_sections": 22,
+   "overlaid": 12,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -905,26 +905,30 @@
     {
      "id": "sec-002-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.998,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-2-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-004-21-some-de\ufb01nitions-and-notations",
      "title": "Some de\ufb01nitions and notations",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-22-frobenius-algebras-and-2-categories",
      "title": "Frobenius algebras and 2-categories",
-     "result": "no matching \\section"
+     "prose_ratio": 0.307,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-006-1-the-sets-of-2-morphisms-in-e-are-\ufb01nite-dimensi",
@@ -965,17 +969,24 @@
     {
      "id": "sec-013-31-on-half-braidings",
      "title": "On half braidings",
-     "result": "no matching \\section"
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.923,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-014-32-elementary-properties-of-the-quantum-double",
      "title": "Elementary properties of the quantum double",
-     "result": "no matching \\section"
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-015-33-semisimplicity-of-z1c",
      "title": "Semisimplicity of Z1(C)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.447,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-016-2-the-r\u02c6-ole-of-the-assumption-on-the-dimension",
@@ -995,17 +1006,26 @@
     {
      "id": "sec-019-41-a-frobenius-algebra-in-c-c-op",
      "title": "A Frobenius Algebra in C \u22a0 C op",
-     "result": "no matching \\section"
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-020-42-a-fully-faithful-tensor-functor-f-z1c-b",
      "title": "A fully faithful tensor functor F : Z1(C) \u2192 B",
-     "result": "no matching \\section"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.91,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-021-43-f-is-essentially-surjective",
      "title": "F is essentially surjective",
-     "result": "no matching \\section"
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-022-2-it-seems-likely-that-a-simpler-proof-of-the-th",
@@ -1021,7 +1041,8 @@
     {
      "id": "sec-024-51-the-tube-algebra",
      "title": "The \u2018Tube algebra\u2019",
-     "result": "no matching \\section"
+     "prose_ratio": 0.365,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-025-2-note-that-in-the-de\ufb01nition-of-\u03be-l-we-could-rep",
@@ -1031,7 +1052,8 @@
     {
      "id": "sec-026-52-invertibility-of-the-s-matrix",
      "title": "Invertibility of the S-matrix",
-     "result": "no matching \\section"
+     "prose_ratio": 0.439,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-027-2-an-alternative-proof-of-the-modularity-of-z1c",
@@ -1066,7 +1088,10 @@
     {
      "id": "sec-033-53-computation-of-the-gauss-sums",
      "title": "Computation of the Gauss sums",
-     "result": "no matching \\section"
+     "prose_ratio": 0.868,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-034-2-the-representation-category-of-a-rational-conf",
@@ -1102,8 +1127,8 @@
     {
      "id": "sec-040-7-the-quantum-double-of-a-braided-category",
      "title": "The quantum double of a braided category",
-     "prose_ratio": 0.822,
-     "coverage_ratio": 0.988,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -1121,17 +1146,26 @@
     {
      "id": "sec-043-81-an-adjoint-for-the-forgetful-functor-z1c-c",
      "title": "An adjoint for the forgetful functor Z1(C) \u2192 C",
-     "result": "no matching \\section"
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.923,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-044-82-invariants-of-3-manifolds",
      "title": "Invariants of 3-manifolds",
-     "result": "no matching \\section"
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-045-83-subfactor-theory-the-longo-rehren-subfactor",
      "title": "Subfactor theory: The Longo-Rehren subfactor",
-     "result": "no matching \\section"
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.805,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-046-12-1-br1",

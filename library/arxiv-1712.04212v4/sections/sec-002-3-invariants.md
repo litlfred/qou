@@ -7,12 +7,13 @@ section_number: 3
 pages: 14-19
 source_pdf: 1712.04212v4.pdf
 source_sha256: 521911fc8724f3c2
-text_source: latex
-latex_prose_ratio: 0.95
-latex_coverage_ratio: 0.866
 doc_brief: "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION — In this paper, we consider a concentration of measure problem on Riemannian manifolds with"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:Invariants}
+
 
 
 \subsection{Isomophisms}
@@ -138,6 +139,7 @@ According to Lemmas \ref{lem:monotonicity of the partial inscribed radius} and \
 they are invariants under the isomorphism introduced in Definition \ref{defi:dominance}.
 
 
+
 \subsection{Boundary separation distances}
 Let $X=(X,d_{X},\mu_{X})$ be a metric measure space with boundary,
 and let $k\geq 1$ be an integer.
@@ -231,6 +233,7 @@ This completes the proof.
 \end{proof}
 Lemma \ref{lem:monotonicity of Dirichlet separation distance} tells us that
 the boundary separation distance is an invariant under the isomorphism introduced in Definition \ref{defi:dominance}.
+
 
 
 \subsection{Relations between invariants}

@@ -7,10 +7,10 @@ section_number: 13
 pages: 72-75
 source_pdf: 1608.03227v4.pdf
 source_sha256: c71128e9a6c35343
-text_source: latex
-latex_prose_ratio: 0.69
-latex_coverage_ratio: 0.942
 doc_brief: "January 30, 2018 — For each braid β ∈ Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗ × C∗ - equivariant sheaves on the non-commutative nested Hilbert scheme Hilb f ree 1,n ."
+text_source: latex
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 0.997
 ---
 []{#sec: link inv 2 label="sec: link inv 2"} The nested Hilbert scheme $\Hilb_{1,n}$ is a very singular scheme and it has very complicated geometry, the main source of complexity is the commutativity relation between the matrices. On the other hands, we can define the free Hilbert scheme $\Hilb^{free}_{1,n}$ by omitting commutativity condition, this turn out to be relatively simple variety which is an iterated fibration of projective spaces (see proposition [\[prop: aff cover\]](#prop: aff cover){reference-type="ref" reference="prop: aff cover"}). In this section we explain a construction for $\bbS_\beta \in D^{per}_{\Tsc}(\Hilb^{free}_{1,n})$ for $\beta\in \Brgr_n$ with the property that the total cohomology of $\bbS_\beta$ is an isotopy invariant of the closure $L(\beta)$ (see theorem [\[thm: main\]](#thm: main){reference-type="ref" reference="thm: main"}).
 
@@ -27,12 +27,10 @@ Define a map $p: \Hilb^{free}_{1,n}\to \Hilb^{free}_{1,n-1}$ as the map induced 
 ::: proof
 *Proof.* Below we construct an affine cover of the space $\Hilb^{free}_{1,n}(z)$, these are the affine charts for the space $\Hilb^{free}_{1,n}(z)$. The charts a labeled by the following combinatorial data: $(\vec{S}_1,\vec{S}_2)$ where $\vec{S}_1=(S_1^1,\dots,S_1^{n-1})$, $\vec{S}_2=(S_2^1,\dots, S_2^{n-1})$ where $S_i^j$ are the subsets of integers with the following properties: $$S_1^i, S_2^i\subset \{1,\dots,i\},\quad S_i^j\subset S_i^{j+1},\quad |S_1^i|+|S_2^i|=i.$$
 
-For a given $\SymbolPrint{(\vec{S}_1,\vec{S}_2)}$ we define the affine subspace $\SymbolPrint{\mathbb{A}_{\vec{S}_1,\vec{S}_2}}$ inside $\frb\times \frn\times V$ by the following equations: $$\begin{gather}
+For a given $\SymbolPrint{(\vec{S}_1,\vec{S}_2)}$ we define the affine subspace $\SymbolPrint{\mathbb{A}_{\vec{S}_1,\vec{S}_2}}$ inside $\frb\times \frn\times V$ by the following equations: $$\begin{gathered}
 x_{n-i, n+1-k}=0 \mbox{ if } k\in S_1^i,\quad y_{n-i,n+1-k}=0,\mbox{ if } k\in S_2^i, \label{eq: slice 1}\\
 x_{n-i,n+1-k}=1 \mbox{ if } k \in S_1^{i+1}\setminus S_1^i\quad y_{n-i,n+1-k}=1 \mbox{ if } k \in S_2^{i+1}\setminus S_2^i, \label{eq: slice 2}
-\end{gather}$$ where $i=1,\dots, n-1,$ and $$\begin{equation}
- v_i=\delta_{in}\label{eq: slice 3}.
-\end{equation}$$
+\end{gathered}$$ where $i=1,\dots, n-1,$ and $$v_i=\delta_{in}\label{eq: slice 3}.$$
 
 Below we use induction by $n$ to show that
 
@@ -60,10 +58,11 @@ Let us denote by $\chi_i\in \Hom(T,\CC^*)$, $T\subset B$ such that $\chi_i(\exp(
 :::
 
 ::: proof
-*Proof.* Let $U\subset \Hilb_{1,n-1}^{free}$ is an open subset then we can apply the global section functor $\Gamma(p^{-1}(U),-)$ to the short exact sequence of sheaves on : $$\begin{multline*}
+*Proof.* Let $U\subset \Hilb_{1,n-1}^{free}$ is an open subset then we can apply the global section functor $\Gamma(p^{-1}(U),-)$ to the short exact sequence of sheaves on : $$\begin{gathered}
   0\to \calO_n(m)\otimes\wedge^k p^*(\calB_{n-1})\to \calO_n(m)\otimes\wedge^k\calB_n\\
   \to \calO_n(m)\otimes\calB_n/p^*(\calB_{n-1})\otimes \wedge^{k-1}(p^*(\calB_{n-1}))\to 0.
-\end{multline*}$$
+  
+\end{gathered}$$
 
 The fibers of the map $p$ are projective spaces $\mathbb{P}^n$ and the line bundle $\calO_n(-1)$ restricted to a fiber is the standard tautological bundle $\calO(-1)$. Since $\calB_n/p^*(\calB_{n-1})=\calO_n(-1)$ then by the previous observation and well known formulas for the homology of $\calO(k)$ on the projective space combined with the short exact sequence from above imply $$\textup{H}^i(p^{-1}(U),\calO_n(m)\otimes\wedge^k\calB_n)=0,\quad i\ne 0, n$$ $$\textup{H}^0(p^{-1}(U),\calO_n(m)\otimes \wedge^k\calB_n)=\begin{cases} &\textup{H}^0(U,\wedge^k\calB_{n-1}),\mbox{ if } m=0\\
                                                                                                                                              & 0,\mbox{ if } m<0.
@@ -82,10 +81,8 @@ First let us introduce the analogs of the previous constructions for the Knörre
 
 The space $\calXr_{2,fr}$ is an open subvariety of $\calXr_{2,fr}\times V$ and we can restrict the Knörrer $\Phi_n\times \mathrm{id}_V$ on this open set to obtain: $$\Phi_n: \MF_{B^2}(\calXr_{2,fr},\Wr)\to \MF_{B^2}(\calX_{2,fr},W).$$
 
-There is forgetful map $\forg:\calXr_{2,fr}\rightarrow \calXr_2$ and the argument almost identical to the proof of Lemma [\[lem: for homom\]](#lem: for homom){reference-type="ref" reference="lem: for homom"} implies that $\forg^*$ is the homomorphism of the convolution algebras and $$\begin{equation}
-\label{eq: Phi for}
-  \Phi_n\circ \forg^*=\forg^*\circ\Phi_n.
-\end{equation}$$
+There is forgetful map $\forg:\calXr_{2,fr}\rightarrow \calXr_2$ and the argument almost identical to the proof of Lemma [\[lem: for homom\]](#lem: for homom){reference-type="ref" reference="lem: for homom"} implies that $\forg^*$ is the homomorphism of the convolution algebras and $$\label{eq: Phi for}
+  \Phi_n\circ \forg^*=\forg^*\circ\Phi_n.$$
 
 It is natural to define $\SymbolPrint{\calXr_1}:=\frb\times\frn$ and respectively we have the analog of the closure map $j_e:\calXr_1\rightarrow \calXr_2$ by $j_e(X,Y)=(X,e,Y)$. Similarly, we define $\calXr_{1,fc}\subset \frb\times\frn\times V$ to be $\widetilde{\Hilb}^{free}_{1,n}$ and we have a natural map $\SymbolPrint{j_e}:\calXr_{1,fc}\rightarrow \calX_{2,fr}$.
 
@@ -111,18 +108,16 @@ By the construction the $\mathbb{H}^k(\beta)$ does not depends on the presentati
 Thus given a presentation $\beta=\sigma_{i_1}^{\epsilon_1}\cdot\dots\cdot\sigma_{i_\ell}^{\epsilon_\ell}$ we have $$\mathbb{H}^k(\beta)=\mathbb{H}(\Lambda^k\pi_1^*(\mathcal{B})\otimes \CE_{\frn^\ell}(\pi_{12}^*(\calC_{\sigma_{i_1}^{\epsilon_1}})\otimes
   \dots \pi_{\ell,1}^*(\calC_{\sigma_{i_\ell}^{\epsilon_\ell}}))).$$ where $\pi_{ij}:\calX_{\ell,fc}\to \calX_{2,fr}$ are the natural projections. The LHS of the last formula only depends on the cyclic order of the elements $\sigma_{i_k}^{\epsilon_k}$, because the space $\calX_{\ell,fc}$ has $\mathbb{Z} _\ell$ cyclic symmetry and the group element $g_{i,i+1}$ provides an isomorphism of the vector bundles $\pi_i^*(\calB)$ and $\pi_{i+1}^*(\calB)$ for all $i$. Hence we showed that $\mathbb{H}^k(\beta)$ only depends on the conjugacy class of $\beta$.
 
-To complete our proof we need to show that $$\begin{equation}
-\label{eq: Markov}
-\mathbb{H}^k(\beta\cdot \sigma_1)=\mathbb{H}^k(\beta'),\quad \mathbb{H}^k(\beta\cdot \sigma_1^{-1})=\mathbb{H}^{k-1}(\beta')
-\end{equation}$$ for $\beta'\in \Brgr_{n-1}$ and $\beta=1\boxtimes\beta'\in \Brgr_n$ is the inclusion of $\beta'$ in the braid with $n$ strings in a such way it tangles only the last $n-1$ strings.
+To complete our proof we need to show that $$\label{eq: Markov}
+\mathbb{H}^k(\beta\cdot \sigma_1)=\mathbb{H}^k(\beta'),\quad \mathbb{H}^k(\beta\cdot \sigma_1^{-1})=\mathbb{H}^{k-1}(\beta')$$ for $\beta'\in \Brgr_{n-1}$ and $\beta=1\boxtimes\beta'\in \Brgr_n$ is the inclusion of $\beta'$ in the braid with $n$ strings in a such way it tangles only the last $n-1$ strings.
 
 Next we can use proposition [\[prop: small prod 1\]](#prop: small prod 1){reference-type="ref" reference="prop: small prod 1"} to conclude:
 
-$$\begin{multline*}
+$$\begin{gathered}
 \mathbb{H}^k(\beta\cdot \sigma_1^{\pm 1})=
 \mathbb{H}(\forg^*(\CE_\frn(\cl^*(\bar{\pi}_{13*}(\CE_{\frn_n}(\bar{\pi}_{12}\otimes_{B_n}\bar{\pi}_{23})^*(\bar{\calC}_\beta\boxtimes\bar{\calC}_{\sigma_1^{\pm 1}}))^{T_n}))^{T_n}\otimes \Lambda^k\calB)\\
 =\mathbb{H}(\forg^*(\CE_\frn(\cl^*(\bar{\pi}_{13*}(\CE_{\frn_2}(\bar{\pi}_{12}\otimes_{B_2}\bar{\pi}_{23})^*(\bar{\calC}_\beta\boxtimes\bar{\calC}_{\sigma^{\pm 1}_1}))^{T_2}))^{T_n}\otimes\Lambda^k\calB)
-\end{multline*}$$
+\end{gathered}$$
 
 Thus we have shown that $$\mathbb{H}^k(\beta\cdot \sigma_{n-1}^{\pm 1})= \mathbb{H}(\forg^*(\CE_{\frn\oplus \frn_2}(j^*_{e}(\bar{\pi}_{12}\otimes_{B_2}\bar{\pi}_{23})^*(\bcalC_{\beta}\boxtimes\bcalC_{\sigma_{1}^{\pm 1}}))^{T_n\times T_2}\otimes \wedge^k\calB_n),$$ where $j_e:\frb\times G_2\times \frn\to \calXr_3(G_n,G_{n,n-1})$ is the embedding that identifies $\frb\times G_2\times \frn$ with the subvariety of $\calXr_3(G_n,G_{n,n-1})$ defined by the equation $j_{e}(X,g,Y)=(X,g^{-1},g,Y)$.
 
@@ -132,10 +127,11 @@ As we explained previously in the subsection [\[ssec: row ops\]](#ssec: row ops
  \boxtimes\bcalC_{\sigma_{n-1}^{\pm 1}})$ and the only dependence of it differentials on $g_{12}$ comes from the term $g_{12}\theta_2$ of $d^+$. Then we can contract $\calC'$ along the differential $g_{12}\theta_2$ to obtain a homotopy equivalence $$(\bar{\pi}_{12}\otimes_{B_2}\bar{\pi}_{23})^*(\bcalC_{\beta}
  \boxtimes\bcalC_{\sigma_{n-1}^{\pm 1}}) \sim\calC''\sim (\bcalC_{\beta,12}\otimes \bar{\pi}_{23}^*(\bcalC_\pm)),$$ where the last complex is the complex of $\CC[\frb\times B_2\times G_n\times \frn]$-modules and $\bcalC_{\beta,12}\in \MF_{B\times B_2}(\frb\times B_2\times \frn,0)$ is the matrix factorization defined by the data $$\bcalC_{\beta,12}=(j_{12}^*(M)\otimes\Lambda^* V_{12},d^+_{12}+j^*_{12}(D+d^++d^-),j^*_{12}(\partial_l),j^*_{12}(\partial_r)),$$ where $j_{12}:\frb\times B_2\times G_n\times\frn\to \frb \times G_2\times G_n\times \frn$ is the embedding; $V_{12}=\langle \theta_3,\dots, \theta_n\rangle$ and $d^+_{12}=\sum_{i=3}^n g_{1i}\theta_i$.
 
-Next note that since $\CE_{\frn_2}(\CC[B_2])^{T_2}=\CC$ there is a homotopy equivalence $$\begin{multline*}
+Next note that since $\CE_{\frn_2}(\CC[B_2])^{T_2}=\CC$ there is a homotopy equivalence $$\begin{gathered}
  \CE_{\frn_2}( j^*_{e}(\bar{\pi}_{12}\otimes_{B_2}\bar{\pi}_{23})^*(\bcalC_{\beta}\boxtimes\bcalC_{\sigma_{n-1}^{\pm 1}}))^{T_2}\sim
   j_{e,e}^*(\bcalC_{12,\beta}\otimes \bar{\pi}^*_{23}(\bcalC_{\pm}))\\=j_{e,e}^*(\bcalC_{\beta,12})\otimes j_{e,e}^*(\bar{\pi}^*_{23}(\bcalC_{\pm})),
-\end{multline*}$$ where $\SymbolPrint{j_{e,e}}: \frb\times 1\times 1\times \frn\to \frn\times B_2\times G_n\times \frn$. Below we analyze two terms in the last tensor product.
+  
+\end{gathered}$$ where $\SymbolPrint{j_{e,e}}: \frb\times 1\times 1\times \frn\to \frn\times B_2\times G_n\times \frn$. Below we analyze two terms in the last tensor product.
 
 Let us notice that $\bcalC_{\pm}|_{g=1}=[x_{11}-x_{22},0]^{\pm}$ where where $[x_{11}-x_{22},0]^+=[x_{11}-x_{22},0]$ and $[x_{11}-x_{22},0]\langle -1\rangle$.Thus we obtain $$j_{e,e}^*(\bar{\pi}^*_{23}(\bcalC_{+}))=[x_{11}-x_{22},0]^+:=[x_{11}-x_{22},0],$$ $$j_{e,e}^*(\bar{\pi}^*_{23}(\bcalC_{-}))=[x_{11}-x_{22},0]^-:=[x_{11}-x_{22},0]\otimes \chi_n^{-1}.$$
 

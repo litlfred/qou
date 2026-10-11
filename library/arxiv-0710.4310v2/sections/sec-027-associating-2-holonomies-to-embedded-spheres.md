@@ -8,147 +8,47 @@ pages: 41-43
 source_pdf: 0710.4310v2.pdf
 source_sha256: 9a7757f998b7f680
 doc_brief: "On Two-Dimensional Holonomy João Faria Martins Centro de Matemática da Universidade do Porto — We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold ( M, ∗) as the"
+text_source: latex
+latex_prose_ratio: 0.992
+latex_coverage_ratio: 0.992
 ---
-Let G = (∂ : E →G,⊲ ) be a Lie crossed module. Let M be a smooth mani-
-fold. Consider a principal G-bundle P overM with a G-categorical connection
-(ω,m ). Consider an embedded oriented 2-sphere Σ ⊂ M . We want to deﬁne
-the categorical holonomy of Σ, which we call a Wilson Sphere, by analogy with
-Wilson loops, familiar in gauge theory.
-Deﬁnition 48 Choose an orientation preserving parametrisation
-S2 = D2/∂D2 φ
-− →Σ ⊂M
-of Σ . Let ∗ = φ(∂D2) ∈ Σ ⊂ M . Choose u ∈ P∗, the ﬁbre of P at ∗. The
-categorical holonomy of Σ is deﬁned as:
-W(ω,m)(Σ,φ,u ) = F 2
-(ω,m,u)(φ) ∈ ker(∂) ⊂E.
-The fact that the categorical holonomy W(ω,m)(Σ,φ,u ) lives in ker( ∂) ⊂ E
-follows from the fact that ∂d(φ) = ∂u(φ) = ∗, and lemma 40.
-Theorem 49 The categorical holonomy W(ω,m)(Σ,φ,u ) does not depend on φ
-and u, up to acting by an element of G. Therefore, we can deﬁne a categorical
-holonomy W(ω,m)(Σ) of embedded 2-spheres Σ in M (the Wilson Sphere), tak-
-ing values in E/G. If Σ ∗ is obtained from Σ by reversing its orientation then
-W(ω,m)(Σ ∗) =
-(
-W(ω,m)(Σ)
-) −1
-.
-41
-Example 50 Consider the U (1)-bundle Pn over S2 with Chern class n, where
-n ∈ Z. Deﬁne a crossed module G given by the exponential map exp :iR →U (1),
-considering the trivial action of U (1) on iR. Consider some connection 1-form
-ω on Pn, thus (ω, Ω) is a categorical G-connection on Pn. We will then have
-that W(ω,Ω) (S2) = n.
-Proof. (Theorem 49) The independence of W(ω,m)(Σ,φ,u ) on the choice
-of u ∈P∗, up to acting by an element of G, follows from theorem 46.
-Choose a diﬀerent orientation preserving parametrisation D 2/∂D2 φ′
-− →Σ
-of Σ. Since both φ and φ′ are orientation preserving, there exists a smooth 1-
-parameter family of embeddings x ∈ [0, 1] ↦→φx connectingφ andφ′. Here φx is
-an orientation preserving parametrisation φx : D 2/∂D2 → Σ, for each x ∈ [0, 1].
-Let q : [0, 1] → M be the map such that q(x) = φx(∂([0, 1]2)), ∀x ∈ [0, 1];
-therefore ∗ = q(0). Put Γ x(t,s ) .= φx(t,s ), where t,s,x ∈ [0, 1]. Therefore
-∂l(Γx) = ∂r(Γx) = q(x), for each x ∈ [0, 1]. Let also J(t,s,x ) .= Γx(t,s ), where
-t,s,x ∈ [0, 1].
-The map J : [0, 1]3 → Σ ⊂ M satisﬁes the conditions of theorem 42. In
-particular
-W(ω,m)(Σ,φ 0,u ) = eΓ 0 =eΓ 1 = W(ω,m)(Σ,φ 1, Hω(q, 1,u )),
-since certainly Rank( DzJ) ≤ 2, ∀z ∈ [0, 1]3.
-Finally, let φ−1(x,y ) = φ(1 −x,y ); ∀x,y ∈ [0, 1]. It does not follow that
-φ−1 ◦hφ is rank-2 homotopic to ∗ in a strict sense, since a homotopy connecting
-φ−1 ◦hφ with ∗ will have some singular points, as φ and φ−1 are not 2-paths,
-because they fail the sitting instant conditions.
-Let γs(t) = φ(t,s ) and γ′
-s(t) = φ−1(t,s ), where t,s ∈ [0, 1]. Let us analyse
-eφ−1(s) directly. We have:
-d
-dseφ−1(s) = eφ−1(s)
-∫ 1
-0
-m
-(
-~∂
-∂tγ′s(t),
-~∂
-∂sγ′s(t)
-)
-Hω (γ′
-s,t,u)
-dt
-= −eφ−1(s)
-∫ 1
-0
-m
-(
-~∂
-∂tγs(t),
-~∂
-∂sγs(t)
-)
-Hω (γs,t,ugγ ′s )
-dt
-Therefore:
-d
-dseφ−1(s) = −eφ−1(s)
-(
-g−1
-γ′s
-⊲
-∫ 1
-0
-m
-(
-~∂
-∂tγs(t),
-~∂
-∂sγs(t)
-)
-Hω (γs,t,u)
-dt
-)
-= −eφ−1(s)
-(
-∂
-(
-e−1
-φ−1(s)
-)
-⊲
-∫ 1
-0
-m
-(
-~∂
-∂tγs(t),
-~∂
-∂sγs(t)
-)
-Hω (γs,t,u)
-dt
-)
-= −
-(∫ 1
-0
-m
-( ~∂
-∂tγs(t),
-~∂
-∂sγs(t)
-)
-Hω (γs,t,u)
-dt
-)
-eφ−1(s).
-42
-The result follows from the fact that if A(t) is a smooth function [0, 1] →E and if
-w(s) is a solution of d
-dsw(s) = w(s)A(s) then the smooth function v(s) .=w(s)−1
-is a solution of d
-dsv(s) = −A(s)v(s). In particular eφ−1(1) = e−1
-φ (1).
-Note that the previous proof uses, in an essential way, the fact t hat the
-mapping class group of S2 is {±1}. Therefore, it is likely that the previous
-theorem does not extend to an embedded surface of genus great er than zero.
-However, it is probable that this can be ﬁxed if any embedded surfac e Σ ⊂M
-is assigned an equivalence class of embedding S → Σ, where two embeddings
-φ,φ ′ : S → Σ are equivalent if φ−1 ◦φ′ is isotopic to the identity diﬀeomorphism.
-We will analyse this issue in a subsequent publication.
+[]{#WS label="WS"}
+
+Let ${\Gc=(\d\colon E \to G,\tr)}$ be a Lie crossed module. Let $M$ be a smooth manifold. Consider a principal $G$-bundle $P$ over $M$ with a $\Gc$-categorical connection $(\w,m)$. Consider an embedded oriented 2-sphere $\Sigma\subset M$. We want to define the categorical holonomy of $\Sigma$, which we call a *Wilson Sphere*, by analogy with Wilson loops, familiar in gauge theory.
+
+::: Definition
+Choose an orientation preserving parametrisation $$S^2 = {{\rm D}}^2 / \d {{\rm D}}^2 \ra{\f} \Sigma \subset M$$ of $\Sigma$. Let $*=\f(\d {{\rm D}}^2) \in \Sigma \subset M$. Choose $u\in P_*$, the fibre of $P$ at $*$. The categorical holonomy of $\Sigma$ is defined as: $${\Wc}_{(\w,m)}(\Sigma,\f,u)=F^2_{(\w,m,u)}(\f) \in \ker(\d) \subset E.$$
+:::
+
+The fact that the categorical holonomy ${\Wc}_{(\w,m)}(\Sigma,\f,u)$ lives in $\ker(\d) \subset E$ follows from the fact that $\d_d(\f)=\d_u(\f)=*$, and lemma [\[DDD\]](#DDD){reference-type="ref" reference="DDD"}.
+
+::: Theorem
+[]{#asd label="asd"} The categorical holonomy ${\Wc}_{(\w,m)}(\Sigma,\f,u)$ does not depend on $\f$ and $u$, up to acting by an element of $G$. Therefore, we can define a categorical holonomy ${\Wc}_{(\w,m)}(\Sigma)$ of embedded 2-spheres $\Sigma$ in $M$ (the Wilson Sphere), taking values in $E/G$. If $\Sigma^*$ is obtained from $\Sigma$ by reversing its orientation then ${\Wc}_{(\w,m)}(\Sigma^*)=\left ({\Wc}_{(\w,m)}(\Sigma)\right)^{-1}$.
+:::
+
+::: Example
+Consider the $U(1)$-bundle $P^n$ over $S^2$ with Chern class $n$, where $n \in \Z$. Define a crossed module $\Gc$ given by the exponential map $\exp \colon i \R \to  U(1)$, considering the trivial action of $U(1)$ on $i\R$. Consider some connection 1-form $\w$ on $P_n$, thus $(\w,\W)$ is a categorical $\Gc$-connection on $P^n$. We will then have that $\Wc_{(\w,\W)}(S^2)= n$.
+:::
+
+::: Proof
+**(Theorem [\[asd\]](#asd){reference-type="ref" reference="asd"})** The independence of ${\Wc}_{(\w,m)}(\Sigma,\f,u)$ on the choice of $u \in P_*$, up to acting by an element of $G$, follows from theorem [\[I\]](#I){reference-type="ref" reference="I"}.
+
+Choose a different orientation preserving parametrisation ${{\rm D}}^2 / \d {{\rm D}}^2 \ra{\f'} \Sigma$ of $\Sigma$. Since both $\f$ and $\f'$ are orientation preserving, there exists a smooth 1-parameter family of embeddings $x \in [0,1] \mapsto \f_x$ connecting $\f$ and $\f'$. Here $\f_x$ is an orientation preserving parametrisation $\f_x \colon {{\rm D}}^2 / \d {{\rm D}}^2 \to \Sigma$, for each $x \in [0,1]$.
+
+Let $q\colon [0,1] \to M$ be the map such that $q(x)=\f_x(\d ([0,1]^2)), \forall x \in  [0,1]$; therefore $* =q(0)$. Put $\G^x(t,s)\doteq \f_x(t,s),$ where $t,s,x \in [0,1]$. Therefore $\d_l(\G^x)=\d_r(\G^x)=q(x),$ for each $x \in  [0,1]$. Let also $J(t,s,x)\doteq \G^x(t,s)$, where $t,s,x \in [0,1]$.
+
+The map $J\colon [0,1]^3 \to \Sigma \subset M$ satisfies the conditions of theorem [\[Main2\]](#Main2){reference-type="ref" reference="Main2"}. In particular $${\Wc}_{(\w,m)}(\Sigma,\f_0,u)=e_{\G^0} =e_{\G^1} ={\Wc}_{(\w,m)}(\Sigma,\f_1,\H_\w(q,1,u)),$$ since certainly $\Rank ({\EuScript{D}}_z J)\leq 2,\forall z \in [0,1]^3.$
+
+Finally, let $\f^{-1}(x,y)=\f(1-x,y); \forall x,y \in [0,1]$. It does not follow that $\f^{-1}\circ_h \f$ is rank-2 homotopic to $*$ in a strict sense, since a homotopy connecting $\f^{-1}\circ_h \f$ with $*$ will have some singular points, as $\f$ and $\f^{-1}$ are not 2-paths, because they fail the sitting instant conditions.
+
+Let $\g_s(t)=\f(t,s)$ and $\g_s'(t)=\f^{-1}(t,s)$, where $t,s \in[0,1]$. Let us analyse $e_{\f^{-1}}(s)$ directly. We have: $$\begin{aligned}
+\frac{d}{d s} e_{\f^{-1}}(s) 
+&=  e_{\f^{-1}}(s)   \int_{0}^{1} m \left (\t{\frac{\d}{\d t}\g_s'(t)},\t{\frac{\d}{\d s}\g_s'(t)} \right)  _{{\mathcal{H}}_\w(\g_s',t,u) } dt\\&= - e_{\f^{-1}}(s)   \int_{0}^{1} m \left (\t{\frac{\d}{\d t}\g_s(t)},\t{\frac{\d}{\d s}\g_s(t)} \right)  _{{\mathcal{H}}_\w(\g_s,t,ug_{\g_s'}) } dt
+\end{aligned}$$ Therefore: $$\begin{aligned}
+\frac{d}{d s} e_{\f^{-1}}(s) &= - e_{\f^{-1}}(s) \Big ( g_{\g_s'}^{-1} \tr  \int_{0}^{1} m \left (\t{\frac{\d}{\d t}\g_s(t)},\t{\frac{\d}{\d s}\g_s(t)} \right)  _{{\mathcal{H}}_\w(\g_s,t,u) } dt\Big)\\
+&= - e_{\f^{-1}}(s) \Big ( \d \left (e^{-1}_{\f^{-1}}(s) \right ) \tr  \int_{0}^{1} m \left (\t{\frac{\d}{\d t}\g_s(t)},\t{\frac{\d}{\d s}\g_s(t)} \right)  _{{\mathcal{H}}_\w(\g_s,t,u) } dt\Big)\\
+&= -\Big( \int_{0}^{1} m \left (\t{\frac{\d}{\d t}\g_s(t)},\t{\frac{\d}{\d s}\g_s(t)} \right)  _{{\mathcal{H}}_\w(\g_s,t,u) } dt\Big)  e_{\f^{-1}}(s).
+\end{aligned}$$ The result follows from the fact that if $A(t)$ is a smooth function $[0,1] \to E$ and if $w(s)$ is a solution of $\frac{d}{d s} w(s)=w(s)A(s)$ then the smooth function $v(s)\doteq w(s)^{-1}$ is a solution of $\frac{d}{d s} v(s)=-A(s)v(s)$. In particular $e_{\f^{-1}}(1)=  e_{\f}^{-1}(1)$.
+:::
+
+Note that the previous proof uses, in an essential way, the fact that the mapping class group of $S^2$ is $\{\pm 1\}$. Therefore, it is likely that the previous theorem does not extend to an embedded surface of genus greater than zero. However, it is probable that this can be fixed if any embedded surface $\Sigma \subset M$ is assigned an equivalence class of embedding $S \to \Sigma$, where two embeddings $\f,\f'\colon S \to \Sigma$ are equivalent if $\f^{-1} \circ \f'$ is isotopic to the identity diffeomorphism. We will analyse this issue in a subsequent publication.

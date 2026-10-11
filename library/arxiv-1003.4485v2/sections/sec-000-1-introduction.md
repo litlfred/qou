@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-3
 source_pdf: 1003.4485v2.pdf
 source_sha256: 714d73873cecd73a
-text_source: latex
-latex_prose_ratio: 0.979
-latex_coverage_ratio: 0.889
 doc_brief: "An Invitation to Higher Gauge Theory — In this easy introduction to higher gauge theory, we describ e parallel trans- port for particles and strings in terms of 2-connections on 2 -bundles."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{introduction}
 

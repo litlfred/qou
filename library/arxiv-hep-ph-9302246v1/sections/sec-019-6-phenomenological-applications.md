@@ -8,17 +8,10 @@ pages: 19-19
 source_pdf: 9302246v1.pdf
 source_sha256: 2d352297255be8de
 doc_brief: "We present a calculation of the coupling constants in the massive spin -1 ﬁeld chiral Lagrangian to chiral O(p3) in the context of the extended Nambu–Jona-Lasinio model described in Ref. [1]."
+text_source: latex
+latex_prose_ratio: 0.977
+latex_coverage_ratio: 1.0
 ---
-In this Section we shall discuss some phenomenological applications f rom our
-calculations. In the whole following analysis we shall work in the chiral lim it, i.e.
-M → 0. Therefore, we shall disregard possible ω8 − ρ0 and η8 − π0 mixings, which
-are proportional to light-quark masses. In addition, the operato rs that generate
-these mixings are order O(p4) in the chiral expansion [21]. Here we shall use the
-coupling constants we have calculated in the previous Sections in the ENJL cut-oﬀ
-model [1] to make predictions on a large variety of processes where spin-1 particle
-are involved (anomalous transitions, radiative decays, · · ·). The radiative decays of
-vector mesons in the context of Zweig’s rule and explicit SU(3)-symm etry violation
-induced by a non-vanishing strange-quark mass was considered in R ef. [22] in the
-non-relativistic quark model. The diﬀerent coupling constants appe aring there were
-ﬁxed from a ﬁt to experimental data. Phenomenology involving spin- 1 particles has
-been discussed before within diﬀerent approaches. See for instan ce Refs. [22]- [27].
+[]{#5 label="5"}
+
+In this Section we shall discuss some phenomenological applications from our calculations. In the whole following analysis we shall work in the chiral limit, *i.e.* ${\cal M} \to 0$. Therefore, we shall disregard possible $\omega_8-\rho^0$ and $\eta_8-\pi^0$ mixings, which are proportional to light-quark masses. In addition, the operators that generate these mixings are order ${\cal O} (p^4)$ in the chiral expansion [@gl2]. Here we shall use the coupling constants we have calculated in the previous Sections in the ENJL cut-off model [@bbr] to make predictions on a large variety of processes where spin-1 particle are involved (anomalous transitions, radiative decays, $\cdots$). The radiative decays of vector mesons in the context of Zweig's rule and explicit SU(3)-symmetry violation induced by a non-vanishing strange-quark mass was considered in Ref. [@chiv] in the non-relativistic quark model. The different coupling constants appearing there were fixed from a fit to experimental data. Phenomenology involving spin-1 particles has been discussed before within different approaches. See for instance Refs. [@chiv]- [@ivan].

@@ -7,12 +7,13 @@ section_number: 7.4
 pages: 219-230
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.974
-latex_coverage_ratio: 0.701
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 0.787
+latex_coverage_ratio: 1.0
 ---
 The Teichm\"uller space of a punctured surface may also be parametrized using ideal triangles instead of pairs-of-pants: this viewpoint is maybe a bit simpler, and generalises successfully to dimension three (via ideal tetrahedra). The coordinates that it produces are called \emph{shear coordinates}.\index{shear coordinates}
+
 
 \subsection{Ideal triangulations}
 In dimension two and three it is customary to relax the definition of \emph{triangulation}, originally restricted to simplicial complexes, see Section \ref{triangulations:subsection}. We prefer to define a triangulation in a looser sense, as a finite set of triangles glued together by pairing their edges. 
@@ -41,6 +42,7 @@ Let $\Sigma$ be the non-compact surface obtained by removing the $p$ vertices of
 We have $\chi(\Sigma) = \chi(S) -p = p-3k+2k-p = -k$. An ideal triangulation for $S_{0,0,3}$ is constructed by attaching $\Delta_1$ and $\Delta_2$ via the obvious maps. An ideal triangulation for $S_{g,0,1}$ is constructed in Figure \ref{triangulated_surface:fig}-(left) for all $g\geqslant 1$. An ideal triangulation for $S_{g,0,p}$ with $\chi(S_{g,0,p})<0$ and $p\geqslant 2$ is obtained from one of these by increasing $p$ as in Figure \ref{triangulated_surface:fig}-(right).
 \end{proof}
 
+
 \subsection{Hyperbolic ideal triangulations}
 Let $\calT$ be an oriented triangulation with triangles
 $\Delta_1,\ldots, \Delta_{2k}$. We substitute every $\Delta_i$ with an ideal hyperbolic triangle (recall that it is unique up to isometry) and pair the edges with some orientation-reversing isometries. The resulting oriented punctured surface $\Sigma$ now inherits a hyperbolic structure of area $k\pi$, since an ideal triangle has area $\pi$. We call $\calT$ a \emph{hyperbolic ideal triangulation} for $\Sigma$.
@@ -63,6 +65,7 @@ $\Delta_1,\ldots, \Delta_{2k}$. We substitute every $\Delta_i$ with an ideal hyp
 \end{figure}
 
 The edges are infinite lines and the gluing isometry is not unique: indeed there is a 1-parameter family of isometries to choose from at every pair of edges, and the hyperbolic structure depends on that -- although the topology of $\Sigma$ does not. To encode this dependence, we note that every edge of an ideal triangle has a preferred \emph{midpoint} defined in Figure \ref{triangoli_ideali:fig}. The orientation-reversing isometry between two edges of two triangles is determined by the signed distance $d$ (called \emph{shear}) of their two midpoints as shown in Figure \ref{shear:fig}-(left). The hyperbolic structure on $\Sigma$ is determined by the \emph{shear coordinates} $d=(d_1, \ldots, d_{3k})$ of the $3k$ edges of the triangulation.
+
 
 \subsection{Complete solutions}
 The hyperbolic structure on $\Sigma$ may be incomplete! Recall that a hyperbolic surface is complete if and only if its universal cover is $\matH^2$, so we now look at the universal cover of $\Sigma$. 
@@ -120,6 +123,7 @@ The hyperbolic structure on $\Sigma$ is complete if and only if $d$ satisfies th
 Let $N(v)$ be a small punctured closed disc at $v$ for every ideal vertex $v$. The closure of $\Sigma \setminus \cup_v N(v)$ is compact. Therefore $\Sigma$ is complete if and only if each $N(v)$ is.
 \end{proof} 
 
+
 \subsection{Shear coordinates for Teichm\"uller space}
 The solution space of the completeness equations is some linear subspace $V \subset \matR^{3k}$ of dimension at least $3k-p = -3\chi(\Sigma)-p$. Note that this is precisely the dimension of $\Teich(\Sigma)$, see Section \ref{Teich:finite:type:subsection}. We have constructed a map
 $${\rm sh}\colon V \longrightarrow \Teich(\Sigma).$$
@@ -146,6 +150,7 @@ We can now parametrize $\Teich(\Sigma)$.
 \begin{proof}
 Proposition \ref{straightens:prop} shows that in every metric the initial triangulation $\calT$ straightens to an ideal hyperbolic one and is hence realised by some $d$, so $\sh$ is surjective. Moreover the straightened triangulation is unique and the parameters $d_i$ are obtained intrinsically from it, so $\sh$ is also injective.
 \end{proof}
+
 
 \subsection{Incomplete metrics} \label{incomplete:metrics:subsection}
 The shear coordinates $d$ may define an incomplete metric on $\Sigma$, and we now determine its metric completion $\overline \Sigma$.
@@ -193,6 +198,7 @@ The map sends $d\in\matR^{3k}$ to the complete hyperbolic $\overline \Sigma$, an
 
 For instance, $\matR^3$ parametrizes altogether all the hyperbolic metrics on the pair of pants, where each boundary component becomes either an oriented geodesic or ``degenerates'' to a cusp.
 
+
 \subsection{References}
 Most of the material presented here is standard and can be found in many books, starting from Thurston's notes \cite{Th}. The main reference is Farb -- Margalit \cite{FM}, which also contains the proof of Proposition \ref{strettamente:convessa:prop}, that appeared originally in a paper of Bestvina, Bromberg, Fujiwara, and Souto \cite{BBFS}. The proof of the Collar Lemma is taken from Hubbard \cite{Hu}.
 
@@ -207,3 +213,114 @@ Here is a quick sketch of this analogy. We have already seen that $\matH^n$ comp
 We construct in this chapter a similar compactification of the open ball $\Teich(S_g)$ to a closed disc. The action of the mapping class group $\MCG(S_g)$ extends to this closed disc, and by Brouwer's theorem every non-trivial element $\varphi$ of $\MCG(S_g)$ has a fixed point there. According to the position of the fixed points of $\varphi$, we say that $\varphi$ is \emph{finite order}, \emph{reducible}, or \emph{pseudo-Anosov}. 
 
 If $\varphi$ is an isometry for some hyperbolic structure of $S_g$, it belongs to the first type. Dehn twists belong to the second. The pseudo-Anosov maps are both the most mysterious and the most important, and for their study we need to introduce a wealth of beautiful new technology: \emph{geodesic currents}, \emph{laminations}, and \emph{train tracks}.
+
+
+\section{Thurston's compactification}
+Let $S_g$ be a surface of genus $g\geqslant 2$.
+Recall that $\Teich(S_g)$ is the Teichm\"uller space of $S_g$ and $\calS = \calS(S_g)$ is the set of all non-trivial simple closed curves in $S_g$, considered up to isotopy and orientation reversal: all the closed curves considered in this chapter are \emph{unoriented}. 
+
+Although $\Teich(S_g)$ and $\calS$ are very different in nature, we want to compactify both spaces by embedding them in a single bigger space. The model that we have in mind, and that we would like to extend to higher genus surfaces, is the flat torus picture that was painted in Section \ref{length:torus:subsection}. 
+
+We briefly summarise it. The Teichm\"uller space $\Teich(T)$ of the torus $T$ is $\matH^2$ and it compactifies to $\overline {\matH^2}$; the mapping class group $\MCG(T)$ acts on $\overline {\matH^2}$ as a discrete group of isometries; as such, the non-trivial elements of $\MCG(T)$ are divided into three classes (hyperbolic, parabolic, elliptic); the simple closed curves form a dense countable set of rational points in $\partial \matH^2 = \matR\cup \{\infty\}$.
+
+We now may wonder whether there is an analogous identification between $\Teich(S_g)$ and $\matH^{6g-6}$ that transforms $\Teich(S_g)$ into a discrete subgroup of $\Iso(\matH^n)$. This is unfortunately not the case, and the compactification of $\Teich(S_g)$ must be constructed from scratch via different methods: we compactify $\Teich(S_g)$ by embedding it in a bigger infinite-dimensional space.
+
+
+\subsection{Projective immersion} \label{projective:immersion:subsection}
+In Chapter  \ref{Teichmuller:chapter} we have used the length functions to construct an embedding
+$$i\colon \Teich(S_g) \hookrightarrow \matR^\calS.$$
+We know that $\Teich(S_g)$ is homeomorphic to an open ball of dimension $6g-6$, and we want to compactify it in a geometrically meaningful way. A first tentative could be to take its closure in $\matR^\calS$, but this does not work:
+
+\begin{prop}
+The subspace $i(\Teich(S_g))$ is closed in $\matR^\calS$.
+\end{prop}
+\begin{proof}
+The inclusion is proper, hence closed by Proposition \ref{propria:chiusa:prop}.
+\end{proof}
+
+We are apparently stuck, so we turn back to our model, hyperbolic space, to get some inspiration. We recall that $\matH^n$ is properly embedded in the lorentzian $\matR^{n+1}$ as a hyperboloid $I^n$. To compactify $\matH^n$, we may consider its image $K^n$ in $\matRP^n$ (the Klein model) and take the closure $\overline{K^n}$ there.
+
+We try to mimic this construction, by considering the infinite-dimensional projective space $\matP(\matR^\calS)$ with the projection 
+$$\pi\colon \matR^\calS\setminus \{0\} \longrightarrow \matP(\matR^\calS).$$
+We first need to check that $\Teich(S_g)$ embeds there.
+\begin{prop}
+The composition
+$$\pi\circ i \colon \Teich(S_g) \longrightarrow \matP(\matR^\calS)$$
+is injective.
+\end{prop}
+\begin{proof}
+Suppose by contradiction that there are two distinct points $m, m' \in \Teich(S_g)$ with $\pi(i(m)) = \pi(i(m'))$; this implies that there is a constant $k>1$ such that $\ell^\gamma(m) = k\cdot\ell^\gamma(m')$ for all $\gamma\in\calS$. That sounds very unlikely, and we now prove that it easily leads to a contradiction.
+
+Let $\gamma_1, \gamma_2 \in \calS$ be two curves with $i(\gamma_1,\gamma_2)=1$. We take $x_0 = \gamma_1 \cap \gamma_2$ as a basepoint for $\pi_1(S_g, x_0)$ and note that the elements $\gamma_2*\gamma_1$ and $\gamma_2*\gamma_1^{-1}$ are represented by two more non-trivial simple closed curves in $S_g$. It is easily checked that the formula
+$$\tr(A)\cdot \tr(B) = \tr(AB) + \tr(A^{-1}B)$$
+holds for any $A,B \in \SLR$. Proposition \ref{trace:prop} implies that
+$$2\cosh \left(\frac{L(\gamma_1)}2 \right) \cdot \cosh\left(\frac{L(\gamma_2)}2 \right) = 
+\cosh\left(\frac{L(\gamma_2*\gamma_1)}2 \right) + \cosh\left(\frac{L(\gamma_2*\gamma_1^{-1})}2 \right).$$
+We have obtained a relation between the lengths of $\gamma_1, \gamma_2$, $\gamma_2* \gamma_1$, and $\gamma_2*\gamma_1^{-1}$ that holds for any hyperbolic metric on $S_g$. It may be rewritten as: 
+$$ \cosh\left(\tfrac{L(\gamma_1) + L(\gamma_2)}2 \right) + \cosh\left(\tfrac{L(\gamma_1) - L(\gamma_2)}2 \right) = \cosh\left(\tfrac{L(\gamma_2*\gamma_1)}2 \right) + \cosh\left(\tfrac{L(\gamma_2*\gamma_1^{-1})}2 \right).
+$$
+By contradiction every $m'$-length is $k$ times a $m$-length: this equation is hence valid after multiplying every argument by $k$. It is easy to check that 
+$$\cosh a + \cosh b = \cosh c + \cosh d, \quad \cosh ka + \cosh kb = \cosh kc + \cosh kd$$ 
+if and only if $\{a,b\} = \{c,d\}$. This leads to a contradiction: the number $L(\gamma_1)+L(\gamma_2)$ is strictly bigger than $L(\gamma_2*\gamma_1)$ or $L(\gamma_2*\gamma_1^{-1})$, since $\gamma_2*\gamma_1$ and $\gamma_2*\gamma_1^{-1}$ have a non-geodesic representative of length $L(\gamma_1)+L(\gamma_2)$.
+\end{proof}
+
+We have embedded $\Teich(S_g)$ in $\matP(\matR^\calS)$, and we now turn to the set $\calS$.
+
+
+\subsection{Thurston's compactification}
+We now embed $\calS$ in $\matP(\matR^\calS)$. A simple closed curve $\gamma \in \calS$ defines a functional $i(\gamma) \in \matR^\calS$ by setting:
+$$i(\gamma)(\eta) = i(\gamma, \eta).$$
+We have constructed a map $i\colon \calS \to \matR^\calS$.
+\begin{prop}
+The composition
+$$\pi \circ i\colon\calS \longrightarrow \matP(\matR^\calS)$$
+is injective.
+\end{prop}
+\begin{proof}
+Let $\gamma_1, \gamma_2\in \calS$ be distinct. There is always a curve $\eta\in\calS$ with $i(\gamma_1,\eta)\neq 0$ and $i(\gamma_2,\eta)=0$. (If $i(\gamma_1,\gamma_2)>0$, simply take $\eta=\gamma_2$. Otherwise, it is an easy exercise.)
+\end{proof}
+
+We will now tacitly consider both $\Teich(S_g)$ and $\calS$ as subsets of $\matR^\calS$.
+\begin{prop}
+The subsets $\Teich(S_g)$ and $\calS$ are disjoint in $\matP(\matR^\calS)$.
+\end{prop}
+\begin{proof}
+For each $\gamma\in\calS$ we have $i(\gamma,\gamma)=0$, while every curve has positive length on any hyperbolic metric.
+\end{proof}
+
+We can now state Thurston's compactification theorem.\index{Thurston's compactification theorem} 
+
+\begin{teo} \label{compattificazione:teo}
+The closure $\overline{\Teich(S_g)}$ of $\Teich(S_g)$ in $\matP(\matR^\calS)$ is homeomorphic to the closed disc $D^{6g-6}$. Its interior is $\Teich(S_g)$ and its boundary sphere contains $\calS$ as a dense subset.
+\end{teo}
+In particular, the closure of $\calS$ is homeomorphic to a sphere $S^{6g-7}$. 
+The proof of Theorem \ref{compattificazione:teo} occupies most of this chapter and will be completed in Section \ref{MCG:conclusion:subsection}. We will introduce in the process various new geometric objects that play an important role in the topology of manifolds in dimension two and three: \emph{geodesic currents}, \emph{laminations}, and \emph{train tracks}.
+
+For the moment we content ourselves with checking that this projective embedding strategy works at least on the much simpler flat torus case.
+
+
+\subsection{The torus}
+The Teichm\"uller space of the torus $T$ is described in Section \ref{length:torus:subsection} and needs no further comment; nevertheless, we prove here that the projective embedding strategy works for $T$, just as a sanity check before approaching the more complicated higher genus surfaces.
+
+\begin{prop} \label{T:compactification:prop}
+The space $\Teich(T)$ embeds in $\matP(\matR^\calS)$ and its closure there is homeomorphic to a closed disc $D^2$. The interior of this disc is $\Teich(T)$ and its boundary contains $\calS$ as a dense subset.
+\end{prop}
+\begin{proof}
+Everything can be written explicitly by identifying $\Teich(T)$ with the half-plane $H^2$ and $\calS$ with the set $\matQ\cup \{\infty\} \subset \partial H^2$. Exercise \ref{i:torus:ex} and Proposition \ref{lunghezza:toro:prop} give
+\begin{align*}
+i\left(\frac pq, \frac rs \right) & = \left|\det \begin{pmatrix} p & r \\ q & s \end{pmatrix}\right| = |ps-qr| = |s|\cdot \left|p-q\frac rs \right|, \\ 
+\ell^{\frac pq}(z) & = \frac {|p+qz|}{\sqrt{\Im z}}.
+\end{align*}
+Therefore the images of $\frac rs\in\calS$ and $z\in H^2 = \Teich(T)$ in $\matP(\matR^\calS)$ are respectively the functionals
+\begin{align*}
+\frac pq & \longmapsto \left|p - q\frac rs\right| \ {\rm if\ } s \neq 0 {\rm \ and \ } |q|\ {\rm if } \ s=0, \\
+\frac pq & \longmapsto \left|p+qz\right|.
+\end{align*}
+We could remove the constants $|s|$ and $\sqrt{\Im z}$ because we are considering functionals in $\matP(\matR^\calS)$ rather than in $\matR^\calS$. 
+We define for all $z \in  \overline{H^2}$ the functional
+\begin{align*}
+f_z & \colon \frac pq \longmapsto |p+qz| \quad {\rm if\ } z\neq \infty,\\
+f_\infty & \colon \frac pq \longmapsto |q|.
+\end{align*}
+and we get a continuous immersion $z \mapsto f_z$ of $\overline{H^2}$ into $\matP(\matR^\calS)$. The immersion is closed because it sends a compact space to a Hausdorff space, hence it is a homeomorphism onto its image. The image is the closure of $\Teich(T)$ and its boundary contains $\calS$ as a dense set.
+\end{proof}

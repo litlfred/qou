@@ -8,331 +8,175 @@ pages: 7-12
 source_pdf: 0911.1038v2.pdf
 source_sha256: 3bc566efaefd44c6
 doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS — We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class."
+text_source: latex
+latex_prose_ratio: 0.926
+latex_coverage_ratio: 0.872
 ---
-symmetric functionk(µ) := |µ| + 2g − 1 = p1(µ) + 2g − 1, therefore for
-a given symmetric functions fg andhg we can deﬁne symmetric functions
-˜fg(µ) := k(µ)
-( k(µ )+1
-3
-)
-fg(µ) and ˜hg(µ) := k(µ)
-( k(µ )+1
-3
-)
-hg(µ). We notice
-that in equations (4) and (5) we sum over all partitions µ which satisfy
-k(µ) = k. Therefore the following proposition is an immediate conse -
-quence of Theorem 1.1.
-Proposition 1.2. For anyg ≥ 1 there exist inhomogeneous symmetric func-
-tions ˜fg and ˜hg, having maximal degree 4g, such that
-kK k,k +1−2g =
-∑
-|µ |=k+1−2g
-(
-l(µ) + 2g − 2
-)
-! ˜fg(µ)Rµ
-=
-∑
-|µ |=k+1−2g
-(2g − 1)l(µ ) ˜hg(µ)Qµ,
-where ˜fg(µ) = ˜fg(µ1,µ 2,... ) and ˜hg(µ) = ˜hg(µ1,µ 2,... ). These symmet-
-ric functions are independent ofk.
-In fact, the opposite implication holds true as well and Theo rem 1.1 is
-a consequence of Proposition 1.2: roughly speaking we will s how that the
-symmetric functions ˜fg and ˜hg are divisible by the polynomialk
-( k+1
-3
-)
-. One
-can notice that Proposition 1.2 stated that ˜fg and ˜hg are independent ofk, so
-the divisibility which we will show is a divisibility of symm etric functions
-˜fg and ˜hg by the symmetric function K which has a property that for any
-partitionµ such that |µ| =k+1 −2g we have thatK(µ) = k
-( k+1
-3
-)
-. We shall
-explain precisely what this divisibility means and show in S ection 3 that it
-8 MACIEJ DOŁ ˛ EGA AND PIOTR ´SNIADY
-holds indeed by studying the arithmetic properties of Kerov polynomials
-and their divisibility by prime numbers.
-The remaining difﬁculty is to prove Proposition 1.2. We shal l do it in
-Section 2 by analysis of the Goulden-Rattan formula.
-Section 4 is a presentation of technical and complicated proofs of lemmas
-which are used in the previous sections.
-2. G OULDEN -RATTAN FORMULA AND EXISTENCE OF SYMMETRIC
-POLYNOMIALS
-2.1. Power seriesPλ. Following Goulden and Rattan [GR07] we deﬁne
-(6) C(t) = 1
-1 −∑
-i≥2 Riti =
-∑
-µ
-t|µ |l(µ)! Rµ.
-LetD =t d
-dt and deﬁne form ≥ 1
-Pm(t) = − 1
-m!C(t)
-(
-D +m − 2
-)
-C(t) · · ·
-(
-D + 1
-)
-C(t)DC (t).
-For example, we have
-P1(t) = −C(t),
-P2(t) = −1
-2C(t)DC (t),
-P3(t) = −1
-6C(t)(D + 1)C(t)DC (t)
-= −1
-6
-[
-C(t)DC (t)DC (t) +C(t)2DC (t)
-]
-= −1
-6
-[
-C(t)D
-(
-C(t) ·DC (t)
-)
-+C(t)2DC (t)
-]
-= −1
-6
-[
-C(t)
-(
-DC (t)
-) 2
-+C(t)2D2C(t) +C(t)2DC (t)
-]
-.
-Finally, for a partitionλ, we writePλ (t) =∏ l(λ )
-j=1Pλ j (t).
-Forp = (p0,...,p l) ∈ Nl+1 we deﬁne
-E(p) := C(t)p0DC (t)p1 · · ·DC (t)pl.
-Lemma 2.1.
-(a) Let p ∈ Nl+1,q ∈ Nm+1 and denote by |p| := p0 + · · · +pl (|q| =
-q0 + · · ·qm respectively). Then
-E(p) ·E(q) =
-∑
-r∈Nl+m+1,
-|r|=|p|+|q|
-cp,q
-r E(r),
-wherecp,q
-r ∈ Z.
-STRUCTURE OF KEROV CHARACTER POLYNOMIALS 9
-(b) For any partition λ the fraction Pλ (t)
-C(t) is a linear combination of
-termsE(p) wherep ∈ Nk such that |p| = |λ| − 1 andk ≤ |λ| −
-l(λ) + 1.
-Proof. Let p = (p0,...,p l) ∈ Nl+1, q = (q0,...,q m) ∈ Nm+1. We will
-show part (a) by induction onl. It is obvious forl = 0. Forl = 1 we have:
-E(p) ·E(q) = E(p0,p 1 +q0,q 1,q 2,...,q m) −E(p0 +p1,q 0,q 1,...,q m)
-by the Leibniz rule. Let us assume, that the inductive assert ion holds for
-somel ≥ 1 and let p = (p0,...,p l+1). Then by the Leibniz rule we have
-that
-(7) E(p) ·E(q) = C(t)p0D [E(p′) ·E(q)] −C(t)p0+p1 [E(p′′) ·E(q′)],
-wherep′ = (p1,...,p l+1),p′′ = (0,p 2,...,p l+1),q′ = (0,q 0,...,q m). By
-the inductive assertion, the right hand side of (7) is equal to
-∑
-α ∈Nl+m+1,
-|α |=|p|+|q|−p0
-cαC(t)p0DE(α) −
-∑
-β ∈Nl+m+2,
-|β |=|p|+|q|
-cβE(β),
-wherecα,c β ∈ Z. But it means that
-E(p) ·E(q) =
-∑
-r∈Nl+m+2,
-|r|=|p|+|q|
-cp,q
-r E(r),
-wherecp,q
-r ∈ Z which ﬁnishes the proof of part (a).
-For part (b) we notice that each functionPm(t) is a linear combination of
-E(p), wherep ∈ Nk, |p| =m andk ≤m − 1 and we apply part (a). □
-2.2. Polynomial structure of coefﬁcients ofPλ .
-Deﬁnition 2.2. Iff is a symmetric function of degree d and 2g ≥ 2 is an
-integer then the formal power series
-(8) F (t) =
-∑
-µ
-t|µ |(
-l(µ) + 2g − 2
-)
-!f (µ) Rµ
-will be called a power-sum of the ﬁrst kind with degree d and genusg and
-the formal power series
-(9) F (t) =
-∑
-µ
-t|µ |(2g − 1)l(µ )f (µ) Qµ
-will be called a power-sum of the second kind with degreed and genusg.
-Lemma 2.3.
-(a) C(t) is a power-sum of the ﬁrst (respectively, second) kind with de-
-gree 0 and genus 1.
-10 MACIEJ DOŁ ˛ EGA AND PIOTR ´SNIADY
-(b) If F (t) is a power-sum of the ﬁrst (respectively, second) kind with
-degreed and genus g then DF (t) is a power-sum of the ﬁrst (re-
-spectively, second) kind with degreed + 1 and genusg.
-(c) If F (t) is a power-sum of the ﬁrst (respectively, second) kind with
-degree d and genus g then C(t)F (t) is a power-sum of the ﬁrst
-(respectively, second) kind with degreed and genusg + 1
-2.
-Proof. In order to prove point (a) it sufﬁces to notice that
-C(t) =
-∑
-µ
-t|µ |l(µ)! Rµ =
-∑
-µ
-t|µ |Qµ.
-In order to prove point (b) letF (t) be in the form (8). Then
-DF (t) =
-∑
-µ
-t|µ |(
-l(µ) + 2g − 2
-)
-!
-[
-(p1(µ)f (µ)
-]
-Rµ
-is again of the form (8).
-IfF (t) is of the form (9), then
-DF (t) =
-∑
-µ
-t|µ |(2g − 1)l(µ )[
-(p1(µ)f (µ)
-]
-Qµ
-is again of the form (9) which shows part (b).
-For part (c) we can assume that the symmetric function f is equal to
-monomial symmetric functionmλ for some partitionλ.
-We deﬁne
-Cn =
-∑
-|µ |=n
-l(µ)! Rµ =
-∑
-|µ |=n
-Qµ,
-Cµ =
-∏
-i≥2
-C mi(µ )
-i
-mi(µ)!.
-The correspondence between these three families (Q,R andC) is given by
-Qn =
-∑
-|µ |=n
-(−1)l(µ )(l(µ) − 1)! Cµ,
-−Rn =
-∑
-|µ |=n
-(−1)l(µ ) Qµ =
-∑
-|µ |=n
-(−1)l(µ )l(µ)! Cµ.
-Following Lassalle, [Las08] we deﬁne the (formal) alphabet A by
-Ri = −hi(A), Q i = −pi(A)/i, C i = (−1)iei(A).
-Writing
-uµ =l(µ)!/
-∏
-i≥1
-mi(µ), ǫ µ = (−1)n−l(µ ), z µ =
-∏
-i≥1
-imi(µ )mi(µ)!,
-STRUCTURE OF KEROV CHARACTER POLYNOMIALS 11
-the previous relations can be understood in a frame of symmetric functions
-theory, and they are merely the classical properties [Mac95, pp. 25 and 33]
-pn = −n
-∑
-|µ |=n
-(−1)l(µ )uµhµ/l(µ) = −n
-∑
-|µ |=n
-ǫµuµeµ/l(µ),
-en =
-∑
-|µ |=n
-ǫµuµhµ =
-∑
-|µ |=n
-ǫµz−1
-µ pµ,
-hn =
-∑
-|µ |=n
-z−1
-µ pµ =
-∑
-|µ |=n
-ǫµuµeµ.
-Using this notation, it sufﬁces to show that for any monomial symmetric
-functionmλ and anyg we have
-(10)( ∑
-µ
-t|µ |mλ (µ) (l(µ) + 2g − 2)!
-l(µ)! (−1)l(µ )uµhµ
-)( ∑
-ρ
-t|ρ|(−1)l(ρ)uρhρ
-)
-=
-( ∑
-ν
-t|ν| mλ (ν)
-l(λ) + 2g − 1
-(l(ν) + 2g − 1)!
-l(ν)! (−1)l(ν)uνhν
-)
-,
-because the right hand side is a power-sum of the ﬁrst kind wit h degree |λ|
-and genusg + 1
-2, and it sufﬁces to show, that for any monomial symmetric
-functionmλ and anyg we have
-(11)( ∑
-µ
-t|µ |mλ (µ)(2g − 1)l(µ )(−1)l(µ )z−1
-µ pµ
-)( ∑
-ρ
-t|ρ|(−1)l(ρ)z−1
-ρ pρ
-)
-=
-( ∑
-ν
-t|ν|
-( 2g − 1
-2g
-) l(λ )
-mλ (ν)(2g)l(ν)(−1)l(ν)z−1
-ν pν
-)
-,
-because the right hand side is a power-sum of the second kind w ith degree
-|λ| and genus g + 1
-2. In order to prove (10) and (11) it is enough to use
-Lemma 4.1. □
+For a given positive integer $g$ we define a symmetric function $k(\mu) := |\mu|+2g-1 = p_1(\mu) + 2g - 1$, therefore for a given symmetric functions $f_g$ and $h_g$ we can define symmetric functions $\tilde{f}_g(\mu) := k(\mu) \binom{k(\mu)+1}{3} f_g(\mu)$ and $\tilde{h}_g(\mu) := k(\mu) \binom{k(\mu)+1}{3} h_g(\mu)$. We notice that in equations [\[eq:lassalle1\]](#eq:lassalle1){reference-type="eqref" reference="eq:lassalle1"} and [\[eq:lassalle6\]](#eq:lassalle6){reference-type="eqref" reference="eq:lassalle6"} we sum over all partitions $\mu$ which satisfy $k(\mu) = k$. Therefore the following proposition is an immediate consequence of Theorem [\[theo:main\]](#theo:main){reference-type="ref" reference="theo:main"}.
+
+::: proposition
+[]{#prop:main-prop label="prop:main-prop"} For any $g\geq 1$ there exist inhomogeneous symmetric functions $\tilde{f}_g$ and $\tilde{h}_g$, having maximal degree $4g$, such that $$\begin{aligned}
+k\ K_{k,k+1-2g} &=  \sum_{|\mu|=k+1-2g}
+\big(l(\mu) + 2g - 2\big)! \ \tilde{f}_g(\mu) \mathcal{R}_\mu \\ 
+ &= \sum_{|\mu|=k+1-2g}
+(2g - 1)^{l(\mu)}\ \tilde{h}_g(\mu) \mathcal{Q}_\mu,
+\end{aligned}$$ where $\tilde{f}_g(\mu) = \tilde{f}_g(\mu_1,\mu_2,\dots)$ and $\tilde{h}_g(\mu)
+= \tilde{h}_g(\mu_1,\mu_2,\dots)$. These symmetric functions are independent of $k$.
+:::
+
+In fact, the opposite implication holds true as well and Theorem [\[theo:main\]](#theo:main){reference-type="ref" reference="theo:main"} is a consequence of Proposition [\[prop:main-prop\]](#prop:main-prop){reference-type="ref" reference="prop:main-prop"}: roughly speaking we will show that the symmetric functions $\tilde{f}_g$ and $\tilde{h}_g$ are divisible by the polynomial $k \binom{k+1}{3}$. One can notice that Proposition [\[prop:main-prop\]](#prop:main-prop){reference-type="ref" reference="prop:main-prop"} stated that $\tilde{f}_g$ and $\tilde{h}_g$ are independent of $k$, so the divisibility which we will show is a divisibility of symmetric functions $\tilde{f}_g$ and $\tilde{h}_g$ by the symmetric function $K$ which has a property that for any partition $\mu$ such that $|\mu| = k +1 - 2g$ we have that $K(\mu) = k
+\binom{k+1}{3}$. We shall explain precisely what this divisibility means and show in Section [\[sec:divisibility\]](#sec:divisibility){reference-type="ref" reference="sec:divisibility"} that it holds indeed by studying the arithmetic properties of Kerov polynomials and their divisibility by prime numbers.
+
+The remaining difficulty is to prove Proposition [\[prop:main-prop\]](#prop:main-prop){reference-type="ref" reference="prop:main-prop"}. We shall do it in Section [1](#sec:existence){reference-type="ref" reference="sec:existence"} by analysis of the Goulden-Rattan formula.
+
+Section [\[sec:technical\]](#sec:technical){reference-type="ref" reference="sec:technical"} is a presentation of technical and complicated proofs of lemmas which are used in the previous sections.
+
+# Goulden-Rattan formula and existence of symmetric polynomials {#sec:existence}
+
+## Power series $P_\lambda$
+
+Following Goulden and Rattan [@GouldenRattan2007] we define
+
+$$C(t)=\frac{1}{1-\sum_{i\geq 2}\mathcal{R}_i t^i} = 
+
+
+
+\sum_{\mu} t^{|\mu|} l(\mu)!\ \mathcal{R}_\mu.$$ Let $D=t \frac{d}{dt}$
+
+and define for $m\geq 1$
+
+$$P_m(t)=-\frac{1}{m!}C(t)\big(D+m-2\big)C(t)\cdots
+\big(D+1\big)C(t)DC(t).$$
+
+For example, we have $$\begin{aligned}
+\nonumber P_1(t)&=-C(t),\\ 
+\nonumber P_2(t)&=-\frac{1}{2}C(t)DC(t),\\
+\nonumber
+
+P_3(t)&
+=-\frac{1}{6}
+C(t)(D+1)C(t)DC(t) \\
+\nonumber &= -\frac{1}{6}\left[C(t)DC(t)DC(t) + C(t)^2DC(t)\right] \\
+\nonumber &= 
+-\frac{1}{6}
+\left[C(t)D\big(C(t)\cdot DC(t)\big) + C(t)^2DC(t)\right] \\
+\nonumber &=
+-\frac{1}{6}\left[C(t)\big(DC(t)\big)^2+C(t)^2D^2C(t)+C(t)^2DC(t)\right] .
+\end{aligned}$$ Finally, for a partition $\lambda$, we write $P_{\lambda}(t)=\prod_{j=1}^{l(\lambda)} P_{\lambda_j}(t)$.
+
+For $p = (p_0,\dots,p_l) \in \mathbb{N}^{l+1}$ we define
+
+$$E(p) := C(t)^{p_0} D C(t)^{p_1} \cdots D C(t)^{p_l}.$$
+
+::: lemma
+[]{#lem:admissible label="lem:admissible"}  
+
+1.  []{#admissible:A label="admissible:A"} Let $p \in \mathbb{N}^{l+1}, q \in \mathbb{N}^{m+1}$ and denote by $|p| := p_0 + \cdots + p_l$ ($|q| = q_0 + \cdots q_m$ respectively). Then $$E(p)\cdot E(q) = \sum_{\substack{r \in \mathbb{N}^{l+m+1}, \\ |r| = |p|+|q|}}c^{p,q}_r
+    E(r),$$ where $c^{p,q}_r \in \mathbb{Z}$.
+
+2.  []{#admissible:B label="admissible:B"} For any partition $\lambda$ the fraction $\frac{P_{\lambda}(t)}{C(t)}$ is a linear combination of terms $E(p)$ where $p \in \mathbb{N}^k$ such that $|p| =
+    |\lambda|-1$ and $k \leq| \lambda|-l(\lambda)+1$.
+:::
+
+::: proof
+*Proof.* Let $p = (p_0,\dots,p_l) \in \mathbb{N}^{l+1}$, $q = (q_0,\dots,q_m) \in \mathbb{N}^{m+1}$. We will show part [\[admissible:A\]](#admissible:A){reference-type="ref" reference="admissible:A"} by induction on $l$. It is obvious for $l = 0$. For $l = 1$
+
+we have: $$E(p)\cdot E(q) = E(p_0,p_1 + q_0, q_1,q_2,\dots,q_m) -
+E(p_0+p_1,q_0,q_1,\dots,q_m)$$
+
+by the Leibniz rule. Let us assume, that the inductive assertion holds for some $l \geq 1$ and let $p =
+(p_0, \dots,p_{l+1})$. Then by the Leibniz rule we have that $$\label{leibnizA}
+E(p)\cdot E(q) = C(t)^{p_0}D \left[ E(p')\cdot E(q)\right] -
+C(t)^{p_0+p_1}\left[ E(p'')\cdot E(q')\right],$$ where $p' = (p_1,\dots,p_{l+1})$, $p'' = (0,p_2,\dots,p_{l+1})$, $q' =
+(0,q_0,\dots,q_m)$.
+
+By the inductive assertion, the right hand side of [\[leibnizA\]](#leibnizA){reference-type="eqref" reference="leibnizA"} is equal to $$\sum_{\substack{\alpha \in \mathbb{N}^{l+m+1}, \\ |\alpha| = |p|+|q|-p_0}} c_\alpha
+C(t)^{p_0} D
+E(\alpha) - \sum_{\substack{ \beta \in \mathbb{N}^{l+m+2}, \\|\beta| = |p|+|q|}}c_\beta
+E(\beta),$$ where $c_\alpha,c_\beta \in \mathbb{Z}$. But it means that $$E(p)\cdot E(q) = \sum_{\substack{r \in \mathbb{N}^{l+m+2}, \\|r| = |p|+|q|}} c^{p,q}_r
+E(r),$$ where $c^{p,q}_r \in \mathbb{Z}$ which finishes the proof of part [\[admissible:A\]](#admissible:A){reference-type="ref" reference="admissible:A"}.
+
+For part [\[admissible:B\]](#admissible:B){reference-type="ref" reference="admissible:B"} we notice that each function $P_m(t)$ is a linear combination of $E(p)$, where $p \in \mathbb{N}^k, |p| = m$ and $k \leq m-1$ and we apply part [\[admissible:A\]](#admissible:A){reference-type="ref" reference="admissible:A"}. ◻
+:::
+
+## Polynomial structure of coefficients of $P_\lambda$
+
+::: definition
+If $f$ is a symmetric function of degree $d$ and $2g\geq 2$ is an integer then the formal power series $$\label{eq:postac-F-nice}
+F(t)=  \sum_{\mu}  t^{|\mu|}
+\big(l(\mu) + 2g - 2\big)!\ f(\mu)\ \mathcal{R}_\mu$$ will be called *a power-sum of the first kind with degree $d$ and genus $g$* and the formal power series $$\label{eq:postac-F-vnice}
+F(t)=  \sum_{\mu}  t^{|\mu|}(2g-1)^{l(\mu)}\ f(\mu)\ \mathcal{Q}_\mu$$ will be called *a power-sum of the second kind with degree $d$ and genus $g$*.
+:::
+
+::: lemma
+[]{#lem:nice label="lem:nice"}  
+
+1.  []{#case1 label="case1"} $C(t)$ is a power-sum of the first (respectively, second) kind with degree $0$ and genus $1$.
+
+2.  []{#case1.5 label="case1.5"} If $F(t)$ is a power-sum of the first (respectively, second) kind with degree $d$ and genus $g$ then $D F(t)$ is a power-sum of the first (respectively, second) kind with degree $d+1$ and genus $g$.
+
+3.  []{#case2 label="case2"} If $F(t)$ is a power-sum of the first (respectively, second) kind with degree $d$ and genus $g$ then $C(t) F(t)$ is a power-sum of the first (respectively, second) kind with degree $d$ and genus $g+\frac{1}{2}$.
+:::
+
+::: proof
+*Proof.* In order to prove point [\[case1\]](#case1){reference-type="ref" reference="case1"} it suffices to notice that $$C(t)=\sum_{\mu}  t^{|\mu|} l(\mu)!\ 
+\mathcal{R}_\mu = \sum_{\mu}  t^{|\mu|}\mathcal{Q}_\mu.$$
+
+In order to prove point [\[case1.5\]](#case1.5){reference-type="ref" reference="case1.5"} let $F(t)$ be in the form [\[eq:postac-F-nice\]](#eq:postac-F-nice){reference-type="eqref" reference="eq:postac-F-nice"}. Then $$DF(t)=\sum_{\mu}  t^{|\mu|}
+\big(l(\mu) + 2g - 2\big)!\ \big[ (p_1(\mu) f(\mu)\big] \
+\mathcal{R}_\mu$$ is again of the form [\[eq:postac-F-nice\]](#eq:postac-F-nice){reference-type="eqref" reference="eq:postac-F-nice"}.
+
+If $F(t)$ is of the form [\[eq:postac-F-vnice\]](#eq:postac-F-vnice){reference-type="eqref" reference="eq:postac-F-vnice"}, then $$DF(t)=\sum_{\mu}  t^{|\mu|}
+(2g-1)^{l(\mu)}\ \big[ (p_1(\mu) f(\mu)\big] \
+\mathcal{Q}_\mu$$ is again of the form [\[eq:postac-F-vnice\]](#eq:postac-F-vnice){reference-type="eqref" reference="eq:postac-F-vnice"} which shows part [\[case1.5\]](#case1.5){reference-type="ref" reference="case1.5"}.
+
+For part [\[case2\]](#case2){reference-type="ref" reference="case2"} we can assume that the symmetric function $f$ is equal to monomial symmetric function $m_{\lambda}$ for some partition $\lambda$.
+
+We define $$\begin{aligned}
+ C_n & = \sum_{|\mu|=n} l(\mu)!\ \mathcal{R}_\mu = \sum_{|\mu|=n}
+\mathcal{Q}_\mu, \\
+\quad
+\mathcal{C}_\mu & =\prod_{i \ge 2} \frac{C_i^{m_i(\mu)}}{m_i(\mu)!}.
+\end{aligned}$$ The correspondence between these three families ($Q, R$ and $C$) is given by $$\begin{split}
+Q_n&= \sum_{|\mu|=n} {(-1)}^{l(\mu)} (l(\mu)-1)!  \,  \mathcal{C}_\mu,\\
+-\mathcal{R}_n&=\sum_{|\mu|=n} {(-1)}^{l(\mu)} \,  \mathcal{Q}_\mu=
+\sum_{|\mu|=n} {(-1)}^{l(\mu)} l(\mu)!\,  \mathcal{C}_\mu.
+\end{split}$$ Following Lassalle, [@Lassalle-preprint2007] we define the (formal) alphabet $\mathbb{A}$ by $$\mathcal{R}_i = - h_i(\mathbb{A}), \quad Q_i = - p_i(\mathbb{A}) / i, \quad
+C_i = (-1)^{i} e_i(\mathbb{A}).$$ Writing $$u_{\mu} = l(\mu)! / \prod_{i \geq 1} m_i(\mu), \quad \epsilon_{\mu} =
+(-1)^{n - l(\mu)}, \quad z_{\mu} = \prod_{i \geq 1} i^{m_i(\mu)}m_i(\mu)!,$$ the previous relations can be understood in a frame of symmetric functions theory, and they are merely the classical properties [@Macdonald1995 pp. 25 and 33] $$\begin{split}
+p_n&=-n \sum_{|\mu|=n} {(-1)}^{l(\mu)} \,  u_\mu h_\mu/l(\mu)
+=-n \sum_{|\mu|=n} \epsilon_\mu  u_\mu e_\mu/ l(\mu),\\
+e_n&= \sum_{|\mu|=n} \epsilon_\mu u_\mu h_\mu= \sum_{|\mu|=n} \epsilon_\mu
+z_{\mu}^{-1} p_{\mu},\\
+h_n&=\sum_{|\mu|=n} z_{\mu}^{-1} p_{\mu}=
+\sum_{|\mu|=n} \epsilon_\mu u_\mu e_\mu.
+\end{split}$$
+
+Using this notation, it suffices to show that for any monomial symmetric function $m_{\lambda}$ and any $g$ we have $$\begin{gathered}
+\label{sym:R}
+\bigg(\sum_{\mu} t^{|\mu|} m_{\lambda}(\mu) \frac{(l(\mu) + 2g -
+2)!}{l(\mu)!} (-1)^{l(\mu)} u_{\mu} h_{\mu} \bigg) \bigg(\sum_{\rho} t^{|\rho|}
+(-1)^{l(\rho)} u_{\rho} h_{\rho} \bigg) = \\
+\bigg(\sum_{\nu} t^{|\nu|} \frac{m_{\lambda}(\nu)}{l(\lambda) + 2g -1}
+\frac{(l(\nu) + 2g -
+1)!}{l(\nu)!} (-1)^{l(\nu)} u_{\nu} h_{\nu} \bigg),
+\end{gathered}$$ because the right hand side is a power-sum of the first kind with degree $|\lambda|$ and genus $g+\frac{1}{2}$, and it suffices to show, that for any monomial symmetric function $m_{\lambda}$ and any $g$ we have $$\begin{gathered}
+\label{sym:Q}
+\bigg(\sum_{\mu} t^{|\mu|} m_{\lambda}(\mu) (2g - 1)^{l(\mu)}
+(-1)^{l(\mu)} z^{-1}_{\mu} p_{\mu} \bigg) \bigg(\sum_{\rho} t^{|\rho|}
+(-1)^{l(\rho)} z^{-1}_{\rho} p_{\rho} \bigg) = \\
+\bigg(\sum_{\nu} t^{|\nu|} \left(\frac{2g - 1}{2g}\right)^{l(\lambda)}
+m_{\lambda}(\nu) (2g)^{l(\nu)} (-1)^{l(\nu)} z^{-1}_{\nu}
+p_{\nu} \bigg),
+\end{gathered}$$ because the right hand side is a power-sum of the second kind with degree $|\lambda|$ and genus $g+\frac{1}{2}$. In order to prove [\[sym:R\]](#sym:R){reference-type="eqref" reference="sym:R"} and [\[sym:Q\]](#sym:Q){reference-type="eqref" reference="sym:Q"} it is enough to use Lemma [\[lem:technical1\]](#lem:technical1){reference-type="ref" reference="lem:technical1"}. ◻
+:::
+
 The main result of this subsection is the following proposition.
-Proposition 2.4. Pλ (t)
-C(t) is a linear combination of power-sums of the ﬁrst
-(respectively, second) kind of genus |λ |
-2 and degree at most |λ| −l(λ).
-Proof. It is enough to apply Lemma 2.1 and Lemma 2.3. □
-12 MACIEJ DOŁ ˛ EGA AND PIOTR ´SNIADY
+
+::: proposition
+[]{#prop:it-is-nice label="prop:it-is-nice"} $\frac{P_{\lambda}(t)}{C(t)}$ is a linear combination of power-sums of the first (respectively, second) kind of genus $\frac{|\lambda|}{2}$ and degree at most $|\lambda|-l(\lambda)$.
+:::
+
+::: proof
+*Proof.* It is enough to apply Lemma [\[lem:admissible\]](#lem:admissible){reference-type="ref" reference="lem:admissible"} and Lemma [\[lem:nice\]](#lem:nice){reference-type="ref" reference="lem:nice"}. ◻
+:::

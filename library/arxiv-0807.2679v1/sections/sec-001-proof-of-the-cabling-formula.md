@@ -7,10 +7,10 @@ section_number: null
 pages: 4-12
 source_pdf: 0807.2679v1.pdf
 source_sha256: 69ef10f8e70fc6f6
-text_source: latex
-latex_prose_ratio: 0.96
-latex_coverage_ratio: 0.743
 doc_brief: "A cabling formula for the colored Jones polynomial Roland van der Veen — We prove an explicit cabling formula for the colored Jones po lynomial."
+text_source: latex
+latex_prose_ratio: 0.859
+latex_coverage_ratio: 0.975
 ---
 Let us fix a banded link $L$ with $c$ components $L_1,\hdots, L_c$. Choosing a component $L_i$ of $L$ and opening it up we can write $L$ as the closure of a banded $(1,1)$-tangle $T_i$. Define $T_{i;s}$ to be the banded $(s,s)$-tangle obtained from $T_i$ by replacing the opened component $L_i$ of $T_i$ by $s$ parallel bands. In terms of these tangles the $(i;r,s)$-cabling of $L$ is equal to the closure of the composition $T_{i;s} \circ B_s^r$, see also figure 1.
 
@@ -18,38 +18,28 @@ Note that the link $L_{i;s}^r$ has $c+g-1$ components, where $g = \mathrm{gcd}(r
 
 We denote the the $N$-dimensional irreducible representation of quantum $sl_2$ by $V_N$. Using the above coloring, the torus braid corresponds to a morphism from $V = \bigotimes_{k=0}^{s-1} V_{N_{k\ \mathrm{mod}g}}$ to itself. In terms of these morphisms we can now state that the unnormalized $(M_1,\hdots,M_{i-1},\mathbf{N},\hdots,M_c)$-colored Jones polynomial of the $(i;r,s)$-cabling of $L$ (abbreviated by $J$) is the following quantum trace:
 
-$$\begin{equation}
-\label{Jonesquantumtrace}J = J_{M_1,\hdots,M_{i-1},\mathbf{N},\hdots,M_c}(L^r_{i;s}) = \mathrm{Tr}_q (B_s^r \circ T_{i;s},V)
-\end{equation}$$
+$$\label{Jonesquantumtrace}J = J_{M_1,\hdots,M_{i-1},\mathbf{N},\hdots,M_c}(L^r_{i;s}) = \mathrm{Tr}_q (B_s^r \circ T_{i;s},V)$$
 
 The first step in calculating this trace is to expand it using the isotypical decomposition of the tensor product as quantum $sl_2$ representations:
 
-$$\begin{equation}
-\label{Isodec}V=\bigotimes_{k=0}^{s-1} V_{N_{k\ \mathrm{mod} g}} \cong \bigoplus_{j=1}^{p|\mathbf{N}|-s+1} \mathrm{Hom}(V_j,V) \otimes V_j
-\end{equation}$$
+$$\label{Isodec}V=\bigotimes_{k=0}^{s-1} V_{N_{k\ \mathrm{mod} g}} \cong \bigoplus_{j=1}^{p|\mathbf{N}|-s+1} \mathrm{Hom}(V_j,V) \otimes V_j$$
 
-The range of the summation is calculated by the Clebsch-Gordan rule [@Procesi]. The isomorphism maps $(\alpha_j\otimes v)$ on the right to $\alpha_j(v)$ and $B^r_s \circ T_{i;s}$ acts on $\mathrm{Hom}(V_j,V)$ only, while quantum $sl_2$ acts on the $V_j$ only. We can therefore expand the quantum trace in [\[Jonesquantumtrace\]](#Jonesquantumtrace){reference-type="eqref" reference="Jonesquantumtrace"} as follows: $$\begin{equation}
-\label{Isotrace}J = \mathrm{Tr}_q(B^r_s \circ T_{i;s},V) = \sum_j \mathrm{Tr}(B^r_s \circ T_{i;s},\mathrm{Hom}(V_j,V))\mathrm{Tr}_q(\mathrm{Id},V_j)
-\end{equation}$$ We know that $\mathrm{Tr}_q(\mathrm{Id},V_j) = [j] = (q^{j/2}-q^{-j/2})/(q^{1/2}-q^{-1/2})$. To calculate the other traces we study how $B^r_s \circ T_{i;s}$ acts on an element $\alpha \in \mathrm{Hom}(V_j,V)$. The action is by composition so first we look at $T_{i;s} \circ \alpha$, the action of $T_{i;s}$. According to the graphical calculus [@Turaev] the colored tangle $T_{i;s}$ represents the same map as the $(1,1)$-tangle $T_i$ colored with $V$. Furthermore we can depict $\alpha$ as a coupon connecting the top of a vertical strand colored $V_j$ to the lower end of $T_i$ (this end is colored $V$), see figure 2.
+The range of the summation is calculated by the Clebsch-Gordan rule [@Procesi]. The isomorphism maps $(\alpha_j\otimes v)$ on the right to $\alpha_j(v)$ and $B^r_s \circ T_{i;s}$ acts on $\mathrm{Hom}(V_j,V)$ only, while quantum $sl_2$ acts on the $V_j$ only. We can therefore expand the quantum trace in [\[Jonesquantumtrace\]](#Jonesquantumtrace){reference-type="eqref" reference="Jonesquantumtrace"} as follows: $$\label{Isotrace}J = \mathrm{Tr}_q(B^r_s \circ T_{i;s},V) = \sum_j \mathrm{Tr}(B^r_s \circ T_{i;s},\mathrm{Hom}(V_j,V))\mathrm{Tr}_q(\mathrm{Id},V_j)$$ We know that $\mathrm{Tr}_q(\mathrm{Id},V_j) = [j] = (q^{j/2}-q^{-j/2})/(q^{1/2}-q^{-1/2})$. To calculate the other traces we study how $B^r_s \circ T_{i;s}$ acts on an element $\alpha \in \mathrm{Hom}(V_j,V)$. The action is by composition so first we look at $T_{i;s} \circ \alpha$, the action of $T_{i;s}$. According to the graphical calculus [@Turaev] the colored tangle $T_{i;s}$ represents the same map as the $(1,1)$-tangle $T_i$ colored with $V$. Furthermore we can depict $\alpha$ as a coupon connecting the top of a vertical strand colored $V_j$ to the lower end of $T_i$ (this end is colored $V$), see figure 2.
 
 Now we can slide the coupon $\alpha$ up along the $(1,1)$-tangle $T_{i}$. We obtain $\alpha$ on top of $T_i$, where $T_i$ is now colored with $V_j$. Since $V_j$ is irreducible, the operator represented by $T_i$ is multiplication by a scalar. By closing $T_i$ one sees that this scalar is exactly $[j]^{-1}J_{M_1,\hdots,M_{i-1},j,\hdots,M_c}(L)$. We conclude that $T_{i;s} \circ \alpha = [j]^{-1}J_{M_1,\hdots,M_{i-1},j,\hdots,M_c}(L)\alpha$.
 
-<figure data-latex-placement="here">
+<figure>
 <div class="center">
 <embed src="Slide.eps" />
 </div>
 <figcaption>Sliding the coupon <span class="math inline"><em>α</em></span> up through the tangle <span class="math inline"><em>T</em><sub><em>i</em>; <em>s</em></sub></span>.</figcaption>
 </figure>
 
-The above argument shows that $B^r_s \circ T_{i;s} \circ \alpha = [j]^{-1}J_{M_1,\hdots,M_{i-1},j,\hdots,M_c}(L) B^r_s \circ \alpha$. Therefore equation [\[Isotrace\]](#Isotrace){reference-type="eqref" reference="Isotrace"} becomes: $$\begin{equation}
-\label{JIs} J = \sum_{j=1}^{p|\mathbf{N}|-s+1}\mathrm{Tr}(B^r_s,\mathrm{Hom}(V_j,V))J_{M_1,\hdots,M_{i-1},j,\hdots,M_c}(L)
-\end{equation}$$
+The above argument shows that $B^r_s \circ T_{i;s} \circ \alpha = [j]^{-1}J_{M_1,\hdots,M_{i-1},j,\hdots,M_c}(L) B^r_s \circ \alpha$. Therefore equation [\[Isotrace\]](#Isotrace){reference-type="eqref" reference="Isotrace"} becomes: $$\label{JIs} J = \sum_{j=1}^{p|\mathbf{N}|-s+1}\mathrm{Tr}(B^r_s,\mathrm{Hom}(V_j,V))J_{M_1,\hdots,M_{i-1},j,\hdots,M_c}(L)$$
 
 Note that an equation such as [\[JIs\]](#JIs){reference-type="eqref" reference="JIs"} remains valid when one replaces $B^r_s$ by any braid $B$. Such a satellite formula also appears in [@MortonStrickland].
 
-We now concentrate on calculating the trace $\mathrm{Tr}(B_s^r,\mathrm{Hom}(V_j,V))$. Note that $(B_s^r)^s = ((\sigma_1\cdots \sigma_{s-1})^s)^r$ is a central element of the braid group. The element $C = (\sigma_1\cdots \sigma_{s-1})^s$ can also be thought of as a curl in $s$ parallel strands (hence the extra curls in the definition of $B^r_s$), so it acts on $\alpha$ as $C\circ \alpha = q^{\frac{j^2-1}{4}}\alpha$. If we set $D = q^{-\frac{r}{s}\frac{j^2-1}{4}}B^r_s$, then $D^s$ acts as the identity on $\mathrm{Hom}(V_j,V)$. An argument by Jones and Rosso [@JonesRosso] shows that its trace does not depend on $q$. For the record we express the trace we were looking for in terms of $D$: $$\begin{equation}
-\label{BD}\mathrm{Tr}(B^r_s,\mathrm{Hom}(V_j,V)) = q^{\frac{r}{s}\frac{j^2-1}{4}}\mathrm{Tr}(D,\mathrm{Hom}(V_j,V))
-\end{equation}$$ Since the trace of $D$ does not depend on $q$ we can calculate it at $q = 1$. In this case $B^r_s = D$ equals the permutation $(\sigma_1\cdots \sigma_{s-1})^r$ and the representation $V$ can be viewed as an $SL(2)$ representation. By collecting common factors in the tensor product we see that $V \cong \bigotimes_{k=0}^{g-1} V_{N_k}^{\otimes p}$, where $p = s/g$. Note that our permutation $D$ acts on $V$ by permuting the factors inside each tensor power. More precisely $D = c_0\cdots c_{g-1}$ where the $c_k$ are disjoint $p$-cycles and $c_k$ permutes the factors of $V_{N_k}^{\otimes p}$. We can therefore interpret $D$ as an element of the Cartesian product $S_p^g$.
+We now concentrate on calculating the trace $\mathrm{Tr}(B_s^r,\mathrm{Hom}(V_j,V))$. Note that $(B_s^r)^s = ((\sigma_1\cdots \sigma_{s-1})^s)^r$ is a central element of the braid group. The element $C = (\sigma_1\cdots \sigma_{s-1})^s$ can also be thought of as a curl in $s$ parallel strands (hence the extra curls in the definition of $B^r_s$), so it acts on $\alpha$ as $C\circ \alpha = q^{\frac{j^2-1}{4}}\alpha$. If we set $D = q^{-\frac{r}{s}\frac{j^2-1}{4}}B^r_s$, then $D^s$ acts as the identity on $\mathrm{Hom}(V_j,V)$. An argument by Jones and Rosso [@JonesRosso] shows that its trace does not depend on $q$. For the record we express the trace we were looking for in terms of $D$: $$\label{BD}\mathrm{Tr}(B^r_s,\mathrm{Hom}(V_j,V)) = q^{\frac{r}{s}\frac{j^2-1}{4}}\mathrm{Tr}(D,\mathrm{Hom}(V_j,V))$$ Since the trace of $D$ does not depend on $q$ we can calculate it at $q = 1$. In this case $B^r_s = D$ equals the permutation $(\sigma_1\cdots \sigma_{s-1})^r$ and the representation $V$ can be viewed as an $SL(2)$ representation. By collecting common factors in the tensor product we see that $V \cong \bigotimes_{k=0}^{g-1} V_{N_k}^{\otimes p}$, where $p = s/g$. Note that our permutation $D$ acts on $V$ by permuting the factors inside each tensor power. More precisely $D = c_0\cdots c_{g-1}$ where the $c_k$ are disjoint $p$-cycles and $c_k$ permutes the factors of $V_{N_k}^{\otimes p}$. We can therefore interpret $D$ as an element of the Cartesian product $S_p^g$.
 
 One can view each of the tensor powers $V_{N_k}^{\otimes p}$ as a $S_p \times GL(V_{N_k})$ representation, where $S_p$ acts by permuting the tensor factors and $GL(V_{N_k})$ acts diagonally. By Schur-Weyl duality [@Procesi] this space allows a simultaneous decomposition into irreducibles:
 
@@ -67,17 +57,11 @@ $$V \cong \bigoplus_{j}\left(\bigoplus_{\lambda_0\hdots \lambda_{g-1} \vdash p}E
 
 Note that we only allow $\lambda_k$ to have length $\leq N_k$. Comparing this decomposition with the isotypical decomposition [\[Isodec\]](#Isodec){reference-type="eqref" reference="Isodec"} for $q = 1$ we see that:
 
-$$\begin{equation}
-\label{Homdec}\mathrm{Hom}(V_j,V) \cong \bigoplus_{\lambda_0\hdots \lambda_{g-1} \vdash p}E_{\lambda_0}\otimes \cdots \otimes E_{\lambda_{g-1}}\otimes  \mathrm{Hom}(V_j,W_{\lambda_0}\otimes \cdots \otimes W_{\lambda_{g-1}})
-\end{equation}$$
+$$\label{Homdec}\mathrm{Hom}(V_j,V) \cong \bigoplus_{\lambda_0\hdots \lambda_{g-1} \vdash p}E_{\lambda_0}\otimes \cdots \otimes E_{\lambda_{g-1}}\otimes  \mathrm{Hom}(V_j,W_{\lambda_0}\otimes \cdots \otimes W_{\lambda_{g-1}})$$
 
-The action of $D$ on this space is only on the $E_{\lambda_k}$. As above we write $D  = c_0\cdots c_{g-1}$ as a product of disjoint $p$-cycles and we note that the cycle $c_k$ acts in $E_{\lambda_k}$. If we define $R_{j,\lambda_0\hdots,\lambda_{g-1}}=\mathrm{dim}(\mathrm{Hom}(V_j,W_{\lambda_0}\otimes \cdots \otimes W_{\lambda_{g-1}}))$ and denote all $c_k$ by $c$ we have the following expression for the trace: $$\begin{equation}
-\label{TrD}\mathrm{Tr}(D,\mathrm{Hom}(V_j,V)) =  \sum_{\lambda_0,\hdots \lambda_{g-1} \vdash p} \chi_{\lambda_0}(c)\cdots\chi_{\lambda_{g-1}}(c)\ R_{j,\lambda_0\hdots,\lambda_{g-1}}
-\end{equation}$$
+The action of $D$ on this space is only on the $E_{\lambda_k}$. As above we write $D  = c_0\cdots c_{g-1}$ as a product of disjoint $p$-cycles and we note that the cycle $c_k$ acts in $E_{\lambda_k}$. If we define $R_{j,\lambda_0\hdots,\lambda_{g-1}}=\mathrm{dim}(\mathrm{Hom}(V_j,W_{\lambda_0}\otimes \cdots \otimes W_{\lambda_{g-1}}))$ and denote all $c_k$ by $c$ we have the following expression for the trace: $$\label{TrD}\mathrm{Tr}(D,\mathrm{Hom}(V_j,V)) =  \sum_{\lambda_0,\hdots \lambda_{g-1} \vdash p} \chi_{\lambda_0}(c)\cdots\chi_{\lambda_{g-1}}(c)\ R_{j,\lambda_0\hdots,\lambda_{g-1}}$$
 
-Here $\chi_{\lambda}$ is the character of the symmetric group $S_p$. To calculate these traces we note that the dimensions $R_{j,\lambda_1\hdots,\lambda_g}$ are encoded in the following product expansion of Schur functions [@Macdonald]: $$\begin{equation}
-\label{GenSchur}\prod_{k=0}^{g-1} s_{\lambda_k}(t^{N_k-1},t^{N_k-3},...,t^{-N_k+1}) = \sum_{\mu \vdash p|\mathbf{N}|-s}R_{\mu_1-\mu_2+1,\lambda_0\hdots,\lambda_{g-1}}s_{\mu}(t,t^{-1})
-\end{equation}$$
+Here $\chi_{\lambda}$ is the character of the symmetric group $S_p$. To calculate these traces we note that the dimensions $R_{j,\lambda_1\hdots,\lambda_g}$ are encoded in the following product expansion of Schur functions [@Macdonald]: $$\label{GenSchur}\prod_{k=0}^{g-1} s_{\lambda_k}(t^{N_k-1},t^{N_k-3},...,t^{-N_k+1}) = \sum_{\mu \vdash p|\mathbf{N}|-s}R_{\mu_1-\mu_2+1,\lambda_0\hdots,\lambda_{g-1}}s_{\mu}(t,t^{-1})$$
 
 The above condition on the direct sum in [\[Homdec\]](#Homdec){reference-type="eqref" reference="Homdec"} that the length of $\lambda_k$ is no more than $N_k$ is now incorporated into the Schur functions, because an $N$-variable Schur function $s_{\lambda}$ is nonzero only if $\lambda$ has no more than $N$ parts.
 
@@ -85,33 +69,23 @@ As a quick check that the above formula [\[GenSchur\]](#GenSchur){reference-type
 
 Using the product of Schur functions in [\[GenSchur\]](#GenSchur){reference-type="eqref" reference="GenSchur"} as a generating function for the dimensions $R$ we can compute $\mathrm{Tr}(D,\mathrm{Hom}(V_{\mu},V))$ simultaneously for all $\mu$. First we sum the right hand side and the left hand side of equation [\[GenSchur\]](#GenSchur){reference-type="eqref" reference="GenSchur"} with the characters as in the sum in [\[TrD\]](#TrD){reference-type="eqref" reference="TrD"}:
 
-$$\begin{equation}
-\label{GenR}\sum_{\mu \vdash |\mathbf{N}|-s}\left(\sum_{\lambda_0,\hdots \lambda_{g-1} \vdash p} \chi_{\lambda_0}(c)\cdots\chi_{\lambda_{g-1}}(c)R_{\mu,\lambda_0\hdots,\lambda_{g-1}}\right)s_{\mu}(t,t^{-1}) =
-\end{equation}$$ $$\sum_{\lambda_0,\hdots\lambda_{g-1} \vdash p} \chi_{\lambda_0}(c)\cdots \chi_{\lambda_{g-1}}(c)\prod_{k=0}^{g-1} s_{\lambda_k}(t^{N_k-1},t^{N_k-3},...,t^{-N_k+1}) =$$ $$\prod_{k=0}^{g-1} \sum_{\lambda_k\vdash p}\chi_{\lambda_k}(c)s_{\lambda_k}(t^{N_k-1},t^{N_k-3},...,t^{-N_k+1}) =$$ $$\begin{equation}
-\label{PowProd}\prod_{k=0}^{g-1}p_p(t^{N_k-1},t^{N_k-3},...,t^{-N_k+1})
-\end{equation}$$
+$$\label{GenR}\sum_{\mu \vdash |\mathbf{N}|-s}\left(\sum_{\lambda_0,\hdots \lambda_{g-1} \vdash p} \chi_{\lambda_0}(c)\cdots\chi_{\lambda_{g-1}}(c)R_{\mu,\lambda_0\hdots,\lambda_{g-1}}\right)s_{\mu}(t,t^{-1}) =$$ $$\sum_{\lambda_0,\hdots\lambda_{g-1} \vdash p} \chi_{\lambda_0}(c)\cdots \chi_{\lambda_{g-1}}(c)\prod_{k=0}^{g-1} s_{\lambda_k}(t^{N_k-1},t^{N_k-3},...,t^{-N_k+1}) =$$ $$\prod_{k=0}^{g-1} \sum_{\lambda_k\vdash p}\chi_{\lambda_k}(c)s_{\lambda_k}(t^{N_k-1},t^{N_k-3},...,t^{-N_k+1}) =$$ $$\label{PowProd}\prod_{k=0}^{g-1}p_p(t^{N_k-1},t^{N_k-3},...,t^{-N_k+1})$$
 
 In the last line we used the expansion of the power sum function $p_p$ in terms of Schur functions [@Macdonald] p.114. We can use the notion of plethysm [@Macdonald] p.138 to write the power sums in terms of the complete symmetric functions $h$ as follows: $$p_p(t^{N_k-1},t^{N_k-3},...,t^{-N_k+1}) = (p_p \circ h_{N_k-1})(t,t^{-1}) = h_{N_k-1}(t^p,t^{-p})$$
 
 As with partitions we define $h_{\mathbf{N}-1} = \prod_{k=0}^{g-1}h_{N_k-1}$ so that we can write the above product [\[PowProd\]](#PowProd){reference-type="eqref" reference="PowProd"} as:
 
-$$\begin{equation}
-\label{HAnswer}\prod_{k=0}^{g-1}p_p(t^{N_k-1},t^{N_k-3},...,t^{-N_k+1})=h_{\mathbf{N}-1}(t^p,t^{-p})
-\end{equation}$$
+$$\label{HAnswer}\prod_{k=0}^{g-1}p_p(t^{N_k-1},t^{N_k-3},...,t^{-N_k+1})=h_{\mathbf{N}-1}(t^p,t^{-p})$$
 
 Comparing equations [\[GenR\]](#GenR){reference-type="eqref" reference="GenR"} and [\[HAnswer\]](#HAnswer){reference-type="eqref" reference="HAnswer"} we see that to compute the traces in [\[TrD\]](#TrD){reference-type="eqref" reference="TrD"} we need to express $h_{\mathbf{N}-1}(t^p,t^{-p})$ in terms of the $s_{\mu}(t,t^{-1})$. The coefficients in this expansion will be our traces.
 
-First we consider the case where $p=1$. Since we have $s = g$ there are $\left\lfloor (|\mathbf{N}|-g)/2\right\rfloor+1$ two part partitions $\mu \vdash |\mathbf{N}|-s$, that we will number by the half integers $w = (\mu_1-\mu_2)/2$. Since $h_{\mathbf{N}-1}(t,t^{-1})$ is a product of geometric series we can use the notation defined in the introduction to write: $h_{\mathbf{N}-1}(t,t^{-1}) =$ $$\begin{equation}
-\label{P1geval}\sum_{w=(|\mathbf{N}|-g)/2-\left\lfloor (|\mathbf{N}|-g)/2\right\rfloor}^{(|\mathbf{N}|-g)/2}\left({g \choose w}_{\mathbf{N}}- {g \choose w+1}_{\mathbf{N}}\right)\frac{t^{2w+1}-t^{-2w-1}}{t-t^{-1}}
-\end{equation}$$
+First we consider the case where $p=1$. Since we have $s = g$ there are $\left\lfloor (|\mathbf{N}|-g)/2\right\rfloor+1$ two part partitions $\mu \vdash |\mathbf{N}|-s$, that we will number by the half integers $w = (\mu_1-\mu_2)/2$. Since $h_{\mathbf{N}-1}(t,t^{-1})$ is a product of geometric series we can use the notation defined in the introduction to write: $h_{\mathbf{N}-1}(t,t^{-1}) =$ $$\label{P1geval}\sum_{w=(|\mathbf{N}|-g)/2-\left\lfloor (|\mathbf{N}|-g)/2\right\rfloor}^{(|\mathbf{N}|-g)/2}\left({g \choose w}_{\mathbf{N}}- {g \choose w+1}_{\mathbf{N}}\right)\frac{t^{2w+1}-t^{-2w-1}}{t-t^{-1}}$$
 
 The above equation settles the case $p=1$ since the Schur functions are exactly the geometric series in the two variable case. We will come back to the $p=1$ case after we have found the coefficients for $p>1$. We will then show that these cases can be unified into a single cabling formula for the colored Jones polynomial.
 
 From now on let's assume that $p\geq 2$. We will carry out the expansion of $h_{\mathbf{N}-1}(t^p,t^{-p})$ into two variable Schur functions in a little more generality by setting $x_1 = t$ and $x_2 = t^{-1}$. As a first step consider the following fundamental identity [@Macdonald] p.62 relating the complete symmetric functions to the Schur functions:
 
-$$\begin{equation}
-\label{FundId} \sum_{\lambda}h_{\lambda}(x)m_{\lambda}(y) = \prod_{i,j}(1-x_iy_j)^{-1}  = \sum_{\lambda}s_{\lambda}(x)s_{\lambda}(y)
-\end{equation}$$
+$$\label{FundId} \sum_{\lambda}h_{\lambda}(x)m_{\lambda}(y) = \prod_{i,j}(1-x_iy_j)^{-1}  = \sum_{\lambda}s_{\lambda}(x)s_{\lambda}(y)$$
 
 Here $m_{\lambda}(y)$ is the monomial symmetric function and $x = (x_1,x_2,\hdots)$ and the sums range over all partitions $\lambda$. The first part of the identity [\[FundId\]](#FundId){reference-type="eqref" reference="FundId"} implies that $h_{\mathbf{N}-1}(x_1^p,x_2^p)$ is the coefficient of $\mathbf{y}^{p(\mathbf{N}-1)} = y_0^{p (N_0-1)}\cdots y_{g-1}^{p (N_{g-1}-1)}$ in the expansion of the product $\prod_{k=0}^{g-1}(1-x_1^py_k^p)^{-1}(1-x_2^py_k^p)^{-1}$. Factoring we can also write this product as $\prod_{k=0}^{g-1}\prod_{u=0}^{p-1}(1-x_1\omega^u y_k)^{-1}(1-x_2\omega^u y_k)^{-1}$, where $\omega = \exp(2\pi i/p)$. Using the second half of the identity [\[FundId\]](#FundId){reference-type="eqref" reference="FundId"} we can expand the same product into two variable Schur functions: $$\prod_{k=0}^{g-1}\prod_{u=0}^{p-1}(1-x_1\omega^u y_k)^{-1}(1-x_2\omega^u y_k)^{-1} = \sum_{\mu}s_{\mu}(y_0,\omega y_0,\hdots,\omega^{p-1} y_{g-1})s_{\mu}(x_1,x_2)$$
 
@@ -125,7 +99,7 @@ The above argument shows that $K_{\mu} = \sigma_p(\mu)|K_{\mu}|$, and that $|K_{
 
 To count the number of such sequences we first look a all ways of constructing two part partitions by attaching length $p$-border strips, starting with the empty partition. One notices that the lower leftmost corner of a new border strip can be attached at exactly two places: either the end of the first row or the end of the second row. It follows that we can list all possibilities in a Pascal-like triangle, see figure 3.
 
-<figure data-latex-placement="here">
+<figure>
 <div class="center">
 <embed src="Pascal2.eps" />
 </div>
@@ -141,3 +115,17 @@ We can now summarize the calculation of $J = J_{M_1,\hdots,M_{i-1},\mathbf{N},\h
 Remarkably this formula is also valid for $p=1$. In this case the non-negative $w$ run through all partitions and both $w$ and $-(w+1)$ contribute to the same term $J_{M_1,\hdots,M_{i-1},|2w+1|,\hdots,M_c}(L)$, thus producing the coefficients found in [\[P1geval\]](#P1geval){reference-type="eqref" reference="P1geval"}.
 
 Finally the convention $J_{M_1,\hdots,M_{i-1},-k,\hdots,M_c} = -J_{M_1,\hdots,M_{i-1},k,\hdots,M_c}$ allows us to incorporate the sign into the colored Jones polynomial because $\mathrm{sgn}(w) = \mathrm{sgn}(2wp+1)$. Noting that $p = s/g$ the proof of theorem 1 is complete.
+
+# Proof of the volume conjecture for zero volume links
+
+As an application of the cabling formula we just proved we will show that the volume conjecture holds true for all zero volume knots and links (corollary 1). Such links are related to cabling by the fact that all links of zero simplicial volume are obtained from the unknot by repeated cabling and connected sum [@Gordon].
+
+In the volume conjecture the usual normalization of the colored Jones polynomial for knots is to divide by the value of the unknot. However, if a link has $s$ split components then the unnormalized Jones has at least an $s$ fold zero at the $N$-th root of unity [@vanderVeen]. We therefore choose to normalize it by dividing by $[N]^s$. For convenience we work with $A = q^{1/4}$ instead of $q$ so that for the volume conjecture we need to evaluate at $A = e^{\pi i/2N}$.
+
+The unnormalized colored Jones polynomial of a link with $c$ components is a multi-sequence of Laurent polynomials in $A$ of the form $P_{\mathbf{N}}(A) = \sum_j a_{j,\mathbf{N}}A^j$, where $\mathbf{N} = (N_1,\hdots,N_c)$. We say that a multi-sequence is moderate if there exist $C,m>0$ such that $$\forall\ \mathbf{N}:\quad |\mathrm{maxdeg}P_{\mathbf{N}}|,|\mathrm{mindeg}P_{\mathbf{N}}|,|a_{j,\mathbf{N}}| < C|\mathbf{N}|^m$$ It is clear that the set of moderate sequences is closed under products and differentiation with respect to $A$.
+
+To prove the volume conjecture for all zero volume links we first show that their unnormalized colored Jones polynomials are moderate. Since such links are obtained from the unknot by repeated cabling and connected sum, we need to show that $[N]$ is moderate (trivial) and that the set of moderate multi-sequences is closed under taking products and under an operation that generalizes cabling of links that we now define. Given two multi-sequences $P_{\mathbf{M}}(A)$ and $Q_{\mathbf{N},w}(A)$ define a new multi-sequence $R$ by $$R_{M_1,\hdots M_{i-1}, \mathbf{N},\hdots,M_c}(A) = \sum_{|w|\leq (|\mathbf{N}|-g)/2}Q_{\mathbf{N},2w}(A)P_{M_1,\hdots,M_{i-1},|2wp+1|,\hdots, M_c}(A)$$
+
+The triangle inequality shows that that if $P$ and $Q$ are moderate then so is $R$. The cabling formula applied to the colored Jones polynomial $J$ of any link is an example of the above defined operation where $P = J$ and $Q_{\mathbf{N},w}(A)$ is a multi-sequence that does not depend on the link and is readily read off from the cabling formula or rather the version at the end of the last section. It is not hard to see that this $Q$ is indeed moderate.
+
+Now that we know that the unnormalized colored Jones polynomial of a zero volume knot $J_{\mathbf{N}}(A)$ is moderate we conclude the proof of corollary 1 as follows. To evaluate the normalized Jones polynomial we will use 'l Hospital's rule after writing it as $$J_{N,\hdots,N}(A)/[N]^s = \tilde{J}_{N,\hdots,N}(A)/(A^{2N}-A^{-2N})^s$$ where $\tilde{J}$ = $(A^{2}-A^{-2})^sJ$ is again moderate. If we differentiate both numerator and denominator $s$ times with respect to $A$ and evaluate at $e^{\pi i/2N}$ we get $(\frac{e^{\pi i/2N}}{-4N})\frac{d^s}{dA^s}\tilde{J}_{N,\hdots,N}(e^{\pi i/2N})$. Since $\frac{d^s}{dA^s}\tilde{J}_{\mathbf{N}}$ is again moderate, it follows that: $$\lim_{N\to \infty}\frac{2\pi}{N}|\frac{J_{N,\hdots,N}}{[N]^k}(e^{\frac{\pi i}{2N}})| = 0$$

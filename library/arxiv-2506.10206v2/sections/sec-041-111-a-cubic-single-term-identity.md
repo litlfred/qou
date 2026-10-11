@@ -8,55 +8,21 @@ pages: 31-31
 source_pdf: 2506.10206v2.pdf
 source_sha256: d0631a9abd9b1da3
 doc_brief: "Analytic dilogarithm identities — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations"
+text_source: latex
+latex_prose_ratio: 0.958
+latex_coverage_ratio: 1.0
 ---
-Using Lemma 2, set:
-(u− 1)
-
-2u3− 4u2 + 3u−
-p
-u(4− 3u)
-
-2 (u4− 3u3 + 4u2− 2u + 1) =z
-2u2− 3u−
-p
-u(4− 3u)
-2(u− 1)2 = 1−z
-The solution u =r1 is the real root of u3− 2u2 +u + 1 = 0. And z = 1/r2, where r2 is the
-complex root located in the fourth quadrant. Consequently, we obtain that
-2 ln
-r2− 1
-r2
-
-ln
-(r1− 1)r2
-2
-2r1r2 +r1
-
-+ 3 ln2
-1−r1
-r2
-
-+ ln2(1−r1) +π2
-3 =−4ℜ Li2
-
-r1− r1
-r2
-
-Using Lemma 1 and setting u =p3, where p is the real root of u3−u− 1 = 0 also gives the
-single-term dilogarithm in terms of the plastic constant/ratio:
-π2
-12 + 6 ln2(p) + 1
-6
- 
-arctan
- p
-p(3p− 1)
-p2− 2p3
-!!2
-=ℜLi2
- 
-−p4 +p2i
-p
-p(3p− 1)
-2
-!
+Using Lemma [\[previously10p2\]](#previously10p2){reference-type="ref" reference="previously10p2"}, set: $$\begin{aligned}
+\frac{(u-1) \left(2 u^3 - 4 u^2 + 3 u - \sqrt{u(4 - 3 u)}\right)}{2 \left(u^4 - 3 u^3 + 4 u^2 - 2 u + 1\right)} = z
+\\
+\frac{2 u^2 - 3 u - \sqrt{u(4 - 3 u)}}{2 (u-1)^2} = 1 - z
+\end{aligned}$$ The solution $u=r_1$ is the real root of $u^3 - 2 u^2 + u + 1=0$. And $z=1/r_2$, where $r_2$ is the complex root located in the fourth quadrant. Consequently, we obtain that $$\begin{aligned}
+2 \ln\left(\frac{r_2 - 1}{r_2}\right) \ln\left(\frac{(r_1 - 1) r_2^2}{2 r_1 r_2 + r_1}\right) 
++ 3 \ln^2\left(\frac{1 - r_1}{r_2}\right) 
++ \ln^2(1 - r_1) 
++ \frac{\pi^2}{3} 
+= -4 \Re \operatorname{Li}_2\left(r_1 - \frac{r_1}{r_2}\right)
+\end{aligned}$$ Using Lemma [\[previously10p1\]](#previously10p1){reference-type="ref" reference="previously10p1"} and setting $u=p^3$, where $p$ is the real root of $u^3-u-1=0$ also gives the single-term dilogarithm in terms of the plastic constant/ratio: $$\begin{aligned}
+\frac{\pi^2}{12} + 6 \ln^2(p) + \frac{1}{6} \left( \operatorname{arctan} \left( \frac{\sqrt{p (3 p - 1)}}{p^2 - 2 p^3} \right) \right)^2 
+= \Re\mathrm{Li}_2\left( \frac{-p^4 + p^2 i \sqrt{p (3p - 1)}}{2} \right)
+\end{aligned}$$

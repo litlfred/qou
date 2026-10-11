@@ -7,10 +7,10 @@ section_number: 5
 pages: 15-17
 source_pdf: 2507.12454v1.pdf
 source_sha256: 156fd9080847b4e7
-text_source: latex
-latex_prose_ratio: 0.968
-latex_coverage_ratio: 0.942
 doc_brief: "COHOMOLOGY RINGS OF CHARACTER VARIETIES ANTON MELLIT — In this talk I give an introduction and present some recent progress towards understanding the cohomology rings of character varieties of"
+text_source: latex
+latex_prose_ratio: 0.984
+latex_coverage_ratio: 0.993
 ---
 In order to explain our approach we need to introduce some ideas.
 
@@ -34,10 +34,8 @@ Now suppose we are on $\mathrm{Hilb}^n(\mathbb C^2)$. Then $\mathscr{H}_2$ acts 
 
 ## Geometric engineering
 
-An indication similar to the one above is given in [@chuang2015parabolic], where a physical explanation of Conjecture [\[conj:partition function conjecture\]](#conj:partition function conjecture){reference-type="ref" reference="conj:partition function conjecture"} is provided via interpreting the left hand side (the partition function) as $$\begin{equation}
-\label{eq:geometric engineering}
-        \Omega = \chi(\mathrm{Hilb}_n(\mathbb{C}^2), P^{\otimes k} \otimes (\Omega^{*})^{\otimes g}\otimes O(g-1)).
-\end{equation}$$ Here $P$ is the Procesi bundle ($S_n$-equivariant bundle coming from Haiman's identification $\mathrm{Hilb}_n(\mathbb{C}^2)=S_n-\mathrm{Hilb}(\mathbb{C}^{2n})$), $\Omega^*$ is the bundle of differential forms, $\chi$ denotes the equivariant Euler characteristic.
+An indication similar to the one above is given in [@chuang2015parabolic], where a physical explanation of Conjecture [\[conj:partition function conjecture\]](#conj:partition function conjecture){reference-type="ref" reference="conj:partition function conjecture"} is provided via interpreting the left hand side (the partition function) as $$\label{eq:geometric engineering}
+        \Omega = \chi(\mathrm{Hilb}_n(\mathbb{C}^2), P^{\otimes k} \otimes (\Omega^{*})^{\otimes g}\otimes O(g-1)).$$ Here $P$ is the Procesi bundle ($S_n$-equivariant bundle coming from Haiman's identification $\mathrm{Hilb}_n(\mathbb{C}^2)=S_n-\mathrm{Hilb}(\mathbb{C}^{2n})$), $\Omega^*$ is the bundle of differential forms, $\chi$ denotes the equivariant Euler characteristic.
 
 ## Proposal
 

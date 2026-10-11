@@ -7,13 +7,14 @@ section_number: 3.5
 pages: 105-109
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.84
-latex_coverage_ratio: 0.801
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 We now introduce three important variations on the complete hyperbolic manifolds theme.
 The first consists of admitting a totally geodesic boundary, the second is a brief overlook of some phenomena that may occur when the completeness hypothesis is dropped, and in the third we allow some conical singularity on a codimension-two geodesic stratum.
+
 
 \subsection{Hyperbolic manifolds with geodesic boundary}
 We reformulate a definition of hyperbolic (elliptic, flat) manifolds that allows the presence of some geodesic boundary. These manifolds are useful because they can be glued along their boundaries to produce new hyperbolic (elliptic, flat) manifolds.
@@ -57,6 +58,7 @@ The manifold $N=\matH^n/_\Gamma$ contains naturally $M$.
 For every $p \in \partial M$, let $\gamma_p(t)$ be the unit speed geodesic starting at $p$ orthogonal to $\partial M$ and directed outward. By looking at the universal cover one sees easily that the map $\partial M \times [0,+\infty) \to N \setminus \interior M$, $(p,t)\mapsto \gamma_p(t)$ is a diffeomorphism (we use here that $\tilde M\subset \matH^n$ is convex).
 \end{proof}
 
+
 \subsection{Cut and paste}
 Hyperbolic manifolds with geodesic boundary are useful because they can be glued to produce new hyperbolic manifolds.
 
@@ -70,6 +72,7 @@ The interiors of $M$ and $N$ inherit their hyperbolic metrics. When we glue $p$ 
 \end{proof}
 
 Conversely, if an orientable hyperbolic manifold $M$ contains an orientable geodesic hypersurface $N$, we can cut $M$ along $N$ to get a hyperbolic manifold with geodesic boundary. The boundary will consist of two copies of $N$.
+
 
 \subsection{Non-complete hyperbolic manifolds} \label{non-complete:subsection}
 There is no classification of simply connected non-complete hyperbolic manifolds: for instance, we may get plenty of uninteresting examples by removing complicated closed sets from $\matH^n$. However, the first part of the proof of Theorem \ref{simply:teo} still applies and provides the following:
@@ -104,6 +107,7 @@ $$\rho\colon \pi_1(M) \longrightarrow \Iso(\matH^n).$$
 
 As every metric space, a non-complete Riemannian manifold $M$ has a unique \emph{completion} $\overline M$, a complete metric space that contains $M$ as an open dense set. The completion $\overline M$ is however not necessarily a manifold, except in some lucky cases. These lucky cases are extremely important in dimension three, as we will see in Chapter \ref{three:chapter}. In that chapter we will understand the completion $\overline M$ of a hyperbolic three-manifold by studying its developing map and holonomy.
 
+
 \subsection{Singularities} \label{singularities:subsection}
 A particular class of non-complete hyperbolic manifolds deserves our attention, because their completions are some nice and natural objects: manifolds with \emph{cone angles} along some codimension-two singular geodesic stratum.
 
@@ -118,6 +122,7 @@ that sends $\tilde S$ to $S$. If $p\in \tilde S$ and $q\in \overline X$ then $d(
 \end{ex}
 
 The space $\tilde S$ is the \emph{singularity} of $\overline X$ and should be interpreted as lying in $\overline X$ with infinite cone angle: the space $\overline X$ looks like a book with infinitely many pages (it is not locally compact at $\tilde S$). Singularities with finite cone angles will be defined in the next section as quotients of this model. The dimensions that will be interesting for us are of course $n=2$ and $3$, where $\tilde S$ is a point and a line, respectively.
+
 
 \subsection{Cone manifolds}
 For every $\theta\in \matR$ there is a well-defined rotation $\Rot_\theta\colon \overline X \to \overline X$ of angle $\theta$ around $\tilde S$, which projects to a rotation in $\matH^n$ of angle $\theta$ around $S$; note that $\Rot_\theta \neq \id$ for all $\theta \neq 0$, including $\theta = 2k\pi$.
@@ -143,6 +148,7 @@ Points with cone angle $2\pi$ may be considered as ordinary points, while points
 
 The singular locus of $M$ is a geodesic codimension-two manifold, and its complement is an ordinary hyperbolic manifold, whose metric completion is $M$.
 Flat and spherical manifolds with cone angles are defined in the same way. \index{elliptic manifold!with cone angles} \index{flat manifold!with cone angles}
+
 
 \subsection{Examples}
 The following simple construction is already a source of many two-dimensional examples: let $P$ be any polygon in $\matH^2, \matR^2,$ or $S^2$, with some inner angles $\alpha_1,\ldots, \alpha_k$. By doubling $P$ along its edges we get a topological sphere with $k$ cone points of angles $2\alpha_1, \ldots, 2\alpha_k < 2\pi$. This is a hyperbolic, flat, or spherical surface with cone angles.

@@ -7,10 +7,10 @@ section_number: VII
 pages: 13-14
 source_pdf: 2106.01332v4.pdf
 source_sha256: 44c19a99624997bf
+doc_brief: "Braided matter interactions in quantum gravity via 1-handle attachment — 9 sections: INTRODUCTION; (for C𝓁(6)) and B3 (for C𝓁(4)). In; THEORIES ON RIBBON GRAPHS"
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
-doc_brief: "Braided matter interactions in quantum gravity via 1-handle attachment — 9 sections: INTRODUCTION; (for C𝓁(6)) and B3 (for C𝓁(4)). In; THEORIES ON RIBBON GRAPHS"
 ---
 \label{Sec:Pre-geometry}
 

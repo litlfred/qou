@@ -109,7 +109,7 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.94,
+     "prose_ratio": 0.951,
      "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
@@ -117,16 +117,16 @@
     {
      "id": "sec-001-proof-of-the-main-theorem",
      "title": "Proof of the main theorem",
-     "prose_ratio": 0.988,
-     "coverage_ratio": 0.983,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-proof-of-the-lemmas",
      "title": "Proof of the lemmas",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.809,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     }

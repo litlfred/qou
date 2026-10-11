@@ -7,17 +7,15 @@ section_number: 1
 pages: 1-2
 source_pdf: 0008027v1.pdf
 source_sha256: 8bce0b8a1bca372e
-text_source: latex
-latex_prose_ratio: 0.946
-latex_coverage_ratio: 0.89
 doc_brief: "KASHAEV’S INVARIANT AND THE VOLUME OF A — I follow Y."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.993
 ---
 []{#sec:introduction label="sec:introduction"} In [@Kashaev:MODPLA95] R. Kashaev introduced a link invariant by using the quantum dilogarithm and after some concrete calculations for the knots $4_1$, $5_2$, and $6_1$, he conjectured in [@Kashaev:LETMP97] the asymptotic behavior of his invariant determines the hyperbolic volume for hyperbolic links. More precisely his conjecture is as follows. For an integer $N\ge2$ let $\langle{L}\rangle_N$ be the Kashaev invariant of a link $L$.
 
 ::: conj
-If $L$ is hyperbolic, i.e. $S^3\setminus{L}$ has a complete hyperbolic structure, then $$\begin{equation*}
-    2\pi\lim_{N\to\infty}\frac{\log\left|\langle{L}\rangle_N\right|}{N}=\operatorname{Vol}(L),
-\end{equation*}$$ where $\operatorname{Vol}(L)$ is the volume of $S^3\setminus{L}$.
+If $L$ is hyperbolic, i.e. $S^3\setminus{L}$ has a complete hyperbolic structure, then $$2\pi\lim_{N\to\infty}\frac{\log\left|\langle{L}\rangle_N\right|}{N}=\operatorname{Vol}(L),$$ where $\operatorname{Vol}(L)$ is the volume of $S^3\setminus{L}$.
 :::
 
 On the other hand in [@Murakami/Murakami:volume], J. Murakami and I proved that Kashaev's invariant coincides with a colored Jones polynomial evaluated at a root of unity. By using this Y. Yokota, following D. Thurston [@D.Thurston:Grenoble], considered a tetrahedron decomposition corresponding to the $R$-matrix used to define colored Jones polynomials and showed that at least for a concrete example, the knot $6_2$, this decomposition gives a nice and constructive proof for Kashaev's conjecture [@Yokota:Murasugi70] (he also mentioned that this seems work well for other knots; especially for alternating knots). Several computations (without tetrahedron decompositions) were made in [@Murakami/Murakami/Okamoto/Takata/Yokota:CS] and the conjecture was also confirmed for the knots $6_3$, $7_2$, and $8_9$, and for the Whitehead link. (In [@Murakami/Murakami/Okamoto/Takata/Yokota:CS] a relation between the asymptotic behavior of the Kashaev invariant and the Chern--Simons invariant is also mentioned.)

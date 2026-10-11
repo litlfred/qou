@@ -7,10 +7,10 @@ section_number: null
 pages: 73-79
 source_pdf: 2601.07906v2.pdf
 source_sha256: e69b1bf37f2c75b0
-text_source: latex
-latex_prose_ratio: 0.958
-latex_coverage_ratio: 0.899
 doc_brief: "March 2026 A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS 3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
+text_source: latex
+latex_prose_ratio: 0.912
+latex_coverage_ratio: 1.0
 ---
 \label{sec:discussion}
 
@@ -98,4 +98,11 @@ The main technical difficulty in this construction is to identify the correct co
 
 The extension of the theory to the setting of boundary CFT's is also possible and has been considered in \cite{Hung:2024gma, Wang:2025bcx, Jafferis:2025yxt, Hung:2025vgs, Geng:2025efs, Jafferis:2025jle}. 
 
-Lastly, one can also drop the orientability assumption, in which case the boundary ensemble has new independent data in form of the cross-cap normalization $\Gamma_i$, which non-trivially interacts with the structure constants. From the bulk point of view, a boundary crosscap allows a bulk Wilson line to end there. This means that in the non-orientable theory, the moment $\overline{\Gamma_i C_{ijj}}$ can be non-trivial, see e.g. \cite{Tsiares:2020ewp}. It would be interesting to work out the details.
+Lastly, one can also drop the orientability assumption, in which case the boundary ensemble has new independent data in form of the cross-cap normalization $\Gamma_i$, which non-trivially interacts with the structure constants. From the bulk point of view, a boundary crosscap allows a bulk Wilson line to end there. This means that in the non-orientable theory, the moment $\overline{\Gamma_i C_{ijj}}$ can be non-trivial, see e.g. \cite{Tsiares:2020ewp}. It would be interesting to work out the details. 
+
+
+
+
+
+\section{Acknowledgments}
+It is a pleasure to thank Jan de Boer,  Jeevan Chandra, Tolya Dymarsky, Laura Foini, Thomas Hartman, Luca Iliesiu, Daniel Jafferis, Juan Maldacena, Alex Maloney, Eric Perlmutter, Julian Sonner and Gabriele di Ubaldo for useful discussions. We also thank Diandian Wang for explaining the installation of the software Orb to us. BP is supported by the ERC Consolidator Grant GeoChaos No 101169611. DL is supported by the SNF starting grant “The Fundamental Description of the Expanding Universe”. DL is also supported by the Fonds National Suisse de la Recherche Scientifique (Schweizerischer Nationalfonds zur Förderung der wissenschaftlichen Forschung) through the Project Grant 200021\_215300 and  NCCR51NF40-141869 The Mathematics of Physics (SwissMAP). LE is supported by the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 101115511). While at MIT, SC was supported by the U.S. Department of Energy, Office of Science, Office of High Energy Physics of U.S. Department of Energy under grant Contract Number DE-SC0012567 (High Energy Theory research), DOE Early Career Award  DE-SC0021886 and the Packard Foundation Award in Quantum Black Holes and Quantum Computation.

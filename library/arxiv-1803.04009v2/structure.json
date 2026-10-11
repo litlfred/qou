@@ -232,8 +232,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "jhepexample.tex",
-   "tex_sections": 5,
-   "overlaid": 1,
+   "tex_sections": 12,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -243,27 +243,34 @@
     {
      "id": "sec-000-1-introduction-and-summary",
      "title": "Introduction and Summary",
-     "prose_ratio": 0.966,
-     "coverage_ratio": 0.413,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.866,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-001-23-relation-between-the-two-constructions",
      "title": "Relation between the two constructions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.865,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-3-symmetry-enhancement",
      "title": "Symmetry enhancement",
-     "prose_ratio": 0.974,
-     "coverage_ratio": 0.775,
+     "prose_ratio": 0.897,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-42-small-hyperbolic-manifolds",
      "title": "Small hyperbolic manifolds",
-     "result": "no matching \\section"
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.569,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-b2-the-global-structure-of-the-symmetries-and-t",

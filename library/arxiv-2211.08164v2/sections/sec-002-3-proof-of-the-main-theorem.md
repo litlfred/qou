@@ -7,10 +7,10 @@ section_number: 3
 pages: 3-6
 source_pdf: 2211.08164v2.pdf
 source_sha256: aff9ff3ef5ac28be
-text_source: latex
-latex_prose_ratio: 0.956
-latex_coverage_ratio: 0.975
 doc_brief: "INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS — In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann"
+text_source: latex
+latex_prose_ratio: 0.811
+latex_coverage_ratio: 1.0
 ---
 The proof of the main theorem will be a consequence of the following four facts.
 
@@ -87,3 +87,43 @@ The previous four facts can be summarised in the following theorem.
 
 
 The proof of the main theorem follows directly from the result above.
+
+
+\section{Simple \we points}
+
+Laing and Singerman in \cite{laings} searched for all Riemann surfaces of genus $g >2$ admitting a transitive action on the \we points, but under the additional assumption that such  points are simple (namely, of weight 1). They succeeded in giving a partial answer to this problem by taking advantage of the geometric richness in the case of platonic Riemann surfaces, leaving the case of $\mathbf{S}_4$ acting on genus $g=3$ with signature $(0; 2,2,2,3)$ as an open problem. In fact, referring to that situation, they pointed out that  ``it is unclear whether there could be any [Riemann surface in the family $\mathscr{K}_3$] where the group does not fix any Weierstrass points or whether the weight of the Weierstrass points is equal to one". 
+
+\s
+
+Observe that the proof of Fact 4 shows that there are only two scenarios for the distribution of the \we points of $X \in \mathscr{K}_3,$ namely:
+\begin{enumerate}
+\item the \we points form a long orbit and they are simple, or
+\item  the \we points form a short orbit of length 12 and they are double.
+\end{enumerate}
+
+Following the results of \cite{keem}, the latter case occurs if and only if $X$ is Fermat's quartic or $X$ is isomorphic to $$\mathscr{C}_3 : x^4+y^4+z^4+3(x^2y^2+y^2z^2+z^2x^2)=0.$$
+
+\s
+All the above coupled with \cite[Theorem 15]{laings} is the proof of the following result.
+
+
+
+\begin{customthm}{2}
+There is a transitive action on the \we points on a compact Riemann surface $\cX$ of genus $g > 2$ and the \we points are simple if and only if one of the following statements holds.
+\begin{enumerate} 
+\item $g=4$ and $\cX$ is isomorphic to Bring's curve. 
+\item $g=3$ and $\cX \in \mathscr{K}_3$  is isomorphic $\mathscr{C}_t$ for some $t$ different from  $0$ and $3.$
+\end{enumerate}
+\end{customthm}
+
+The theorem above answers a question posed by Laing and Singerman and completes \cite[Theorem 15]{laings}. 
+
+\s
+
+For the sake of completeness, we recall that the \we points of Bring's curve were found by Edge in \cite{edge}; see also \cite[Section 3.1]{bra}.
+
+
+\begin{rema}
+The \we points of  Fermat's quartic were obtained by Hasse in \cite{hasse}. Besides, the \we points of $\mathscr{C}_3$ can be easily computed, since they are the fixed points of the involutions conjugate to $[x:y:z] \mapsto [-x:y:z]$. Explicitly, the \we points of $\mathscr{C}_3$ are   $$[0:1:\zeta], [1: \zeta: 0], [\zeta:0:1] \,\, \mbox{ where }\,\, \zeta = \pm \sqrt{\tfrac{-3\pm\sqrt{5}}{2}}.$$As simple Weierstrass points  are precisely ordinary flexes,
+ the \we points of $\mathscr{C}_t$ for  $t \neq 0, -1, \pm 2, 3, t_0$ are the points  of $\mathscr{C}_t$ at which the Hessian determinant vanishes.
+\end{rema}

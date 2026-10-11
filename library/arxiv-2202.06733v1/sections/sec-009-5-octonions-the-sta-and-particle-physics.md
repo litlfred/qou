@@ -7,10 +7,10 @@ section_number: 5
 pages: 12-18
 source_pdf: 2202.06733v1.pdf
 source_sha256: e670632090447f14
-text_source: latex
-latex_prose_ratio: 0.979
-latex_coverage_ratio: 0.949
 doc_brief: "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE — Diﬀerent ways of representing the groupSU(3) within a Geometric Algebra approach are"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 Now, excitingly, we can start to reinterpret what we have already discussed above for the STA approach to the strong force, as a partial piece of a larger scale project for understanding the symmetries that nature may want to use. Here is a proposal:
 
@@ -127,6 +127,7 @@ The first example, is of how it appears to be possible to accommodate in this sp
 
 We will start with the new approach to $SU(8)$/$E_7$, since although more complicated, the necessary states and linkages needed for the $G_2$ example become clearer if viewed in this context.
 
+
 \subsection{An identification of the $SU(8)$ subgroup of $E_7$  within the 64-dimensional octonionic left multiplication space}
 
 What we will do here is consider the full space of 64 STA states we get corresponding to the distinct chains of octonion multiplication we can carry out to the left on some initial (general) STA state $\phi$.
@@ -167,6 +168,7 @@ The net effect is to give us 56 root vectors in the abstract space of the $T_j$.
 Having constructed the {\em Cartan matrix} for the roots we have found, it now appears that instead we are dealing with the group $SU(8)$, which indeed has 56 root vectors and 7 CSA vectors in the adjoint representation. This is still strongly linked to $E_7$, however, since it is a subgroup of $E_7$, and the two occur together jointly as part of the foundation of {\em supergravity theories} (see e.g.\ \cite{CREMMER1979141}).
 
 More generally, it will be very interesting to see if the larger space of `STA states' referred to above allows a representation of the full $E_8$, and how this ties in with existing Geometric Algebra techniques for analysis of $E_8$ being used by Pierre Dechant\cite{dechant20178}, which have already shone an interesting and fresh light on the root structure of $E_8$. We should also mention the work of integrating the group $E_6$ with octonions, carried out over some years by Tevian Dray and Corrine Manogue (e.g.\ \cite{Manogue_2010}), and which is another example of explicitly seeking to integrate exceptional groups, particle physics and octonions, and for which we hope there will be interesting analogues within the STA.
+
 
 \subsection{The group $G_2$ and the representation of quarks and gluons via the STA}
 

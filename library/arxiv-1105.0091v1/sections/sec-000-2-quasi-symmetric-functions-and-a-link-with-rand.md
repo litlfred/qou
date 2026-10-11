@@ -7,10 +7,10 @@ section_number: 2
 pages: 12-22
 source_pdf: 1105.0091v1.pdf
 source_sha256: 7d6f72e016b25027
-text_source: latex
-latex_prose_ratio: 0.985
-latex_coverage_ratio: 0.833
 doc_brief: "E-mail: meliot@phare.normalesup.org — In this paper, we review the representation theory of the inﬁnite symmetric group, and we extend the works of Kerov and Vershik by proving that the irreducible"
+text_source: latex
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 0.99
 ---
 []{#randompermutation label="randompermutation"} In this section, we shall explain how the coherent systems of measures on $\mathfrak{Y}$ are related to models of random permutations that can be defined by using generalized riffle shuffles in the sense of [@Stan01; @Ful02].
 
@@ -25,10 +25,10 @@ If $w=x_{4}x_{3}x_{1}x_{5}x_{1}x_{1}x_{3}x_{4}$, then $\mathrm{Std}(w)=64182357$
 Now, for any permutation $\sigma \in \mathfrak{S}_{n}$, we define elements $F_{\sigma}$ and $G_{\sigma}$ in $\mathbb{C}\langle X \rangle$ by $$G_{\sigma}=\sum_{w\,\,|\,\,\mathrm{Std}(w)=\sigma}w\qquad;\qquad F_{\sigma}=G_{\sigma^{-1}}.$$ It turns out that the $F_{\sigma}$'s with $\sigma \in \mathfrak{S}=\bigsqcup_{n \in\mathbb{N}}\mathfrak{S}_{n}$ generate linearly a subalgebra of $\mathbb{C}\langle X \rangle$. For two permutations $\sigma=\sigma(1)\cdots \sigma(p)$ and $\tau=\tau(1)\cdots \tau(q)$, we define their shifted **shuffle product** $\sigma \cshuffle \tau$ as the set of permutations $\upsilon$ of size $p+q$ such that $\sigma(1),\sigma(2),\ldots, \sigma(p)$ appear in this order in the word of $\upsilon$, and $\tau(1)+p,\tau(2)+p,\ldots,\tau(q)+p$ also appear in this order in the word of $\upsilon$.
 
 ::: example
-If $\sigma=21$ and $\tau=231$, then $$\begin{align*}
+If $\sigma=21$ and $\tau=231$, then $$\begin{aligned}
 \sigma \cshuffle \tau&= 21 \shuffle 453\\
 &\!\!\!=\{21453,24153,24513,24531,42153,42513,42531,45213,45231,45321\}.
-\end{align*}$$
+\end{aligned}$$
 :::
 
 For all permutations $\sigma,\tau \in \mathfrak{S}$, by sorting the words appearing in the product $F_{\sigma}F_{\tau}$ according to their standardization, one sees readily that $F_{\sigma}F_{\tau}=\sum_{\upsilon \in \sigma\cshuffle\tau}F_{\upsilon}.$
@@ -102,15 +102,15 @@ For the two first, exactly as in the case of $\mathbf{Sym}$, it amounts to repla
 :::
 
 ::: proof
-*Proof.* We have seen just before that $\mathbb{Q}_{n,\omega}[\sigma]=G_{\sigma}(A-B+\gamma E)$ defines a probability measure on $\mathfrak{S}_{n}$. Now, for any partition $\lambda \in \mathfrak{Y}_{n}$, we can write: $$\begin{align*}
+*Proof.* We have seen just before that $\mathbb{Q}_{n,\omega}[\sigma]=G_{\sigma}(A-B+\gamma E)$ defines a probability measure on $\mathfrak{S}_{n}$. Now, for any partition $\lambda \in \mathfrak{Y}_{n}$, we can write: $$\begin{aligned}
 \sum_{\Lambda(\sigma)=\lambda}\mathbb{Q}_{n,\omega}[\sigma]&=\sum_{\Lambda(\sigma)=\lambda} L_{c(\sigma^{-1})}(A-B+\gamma E)=\sum_{P,Q \in \mathrm{ST}(\lambda)}L_{c(P)}(A-B+\gamma E)\\
 &=(\dim \lambda)\,\,s_{\lambda}(A-B+\gamma E)=\mathbb{P}_{n,\omega}[\lambda].
-\end{align*}$$ Finally, the specialization $A-B+\gamma E$ of $\mathbf{FQSym}$ factors through the quotient map $\pi : \mathbf{FQSym}\to \mathbf{QSym}$, and in this latter algebra, it is not difficult to compute it: $$\begin{align*}
+\end{aligned}$$ Finally, the specialization $A-B+\gamma E$ of $\mathbf{FQSym}$ factors through the quotient map $\pi : \mathbf{FQSym}\to \mathbf{QSym}$, and in this latter algebra, it is not difficult to compute it: $$\begin{aligned}
 \mathbb{Q}_{n,\omega}[\sigma]&=G_{\sigma}(A-B+\gamma E)=L_{c(\sigma^{-1})}(A-B+\gamma E)\\
 &=[(\mathrm{id}\otimes \nu \otimes \mathrm{id})\circ (\Delta \otimes \mathrm{id})\circ \Delta]L_{c}(A,\overline{B},\gamma E)\\
 &=\sum_{i+j+k=n} L_{c_{\left[\!\left[1,i\right]\!\right]}}(A)\,(\nu L_{c_{\left[\!\left[i+1,i+j\right]\!\right]}})(\overline{B})\,L_{c_{\left[\!\left[i+j+1,n\right]\!\right]}}(\gamma E)\\
 &=\sum_{i+j+k=n}L_{c_{\left[\!\left[1,i\right]\!\right]}}(\alpha)\,L_{\overline{c_{\left[\!\left[i+1,i+j\right]\!\right]}}}(\beta)\,\frac{\gamma^{k}}{k!}.
-\end{align*}$$ ◻
+\end{aligned}$$ ◻
 :::
 
 ::: example
@@ -142,17 +142,17 @@ This algorithm is called in [@Ful02] an $(\alpha,\beta,\gamma)$-shuffle.
 :::
 
 ::: proof
-*Proof.* Let us give a purely algebraic proof. If $X$ is a formal alphabet, we denote by $\phi_{X} : \mathbf{FQSym}\to \mathbb{C}$ the corresponding specialization, and by $u_{X}$ and $t_{X}$ the maps $$\begin{align*}
+*Proof.* Let us give a purely algebraic proof. If $X$ is a formal alphabet, we denote by $\phi_{X} : \mathbf{FQSym}\to \mathbb{C}$ the corresponding specialization, and by $u_{X}$ and $t_{X}$ the maps $$\begin{aligned}
 u_{X}:\mathbf{FQSym}&\to \mathbf{FQSym}\qquad\qquad;\qquad\qquad t_{X}:\mathbf{FQSym}\to \mathbf{FQSym}\\
 F_{\sigma} &\mapsto F_{\sigma}(X)\, F_{12\ldots n}\qquad\qquad\qquad\qquad\quad\,\qquad F_{\sigma}\mapsto F_{\sigma}(X)\,F_{\sigma}.
-\end{align*}$$ Notice that if $X=(\zeta)$ is a single variable, then $u_{(\zeta)}=t_{(\zeta)}$. We start from the identity $\mathbb{Q}_{n,\omega}[\sigma]=G_{\sigma}(A-B+\gamma E)$, and we expand it: $$\begin{align*}
+\end{aligned}$$ Notice that if $X=(\zeta)$ is a single variable, then $u_{(\zeta)}=t_{(\zeta)}$. We start from the identity $\mathbb{Q}_{n,\omega}[\sigma]=G_{\sigma}(A-B+\gamma E)$, and we expand it: $$\begin{aligned}
 \mathbb{Q}_{n,\omega}[\sigma]&=\phi_{A-B+\gamma E}(G_{\sigma})=m^{3}\circ (\phi_{A}\otimes \phi_{-B}\otimes \phi_{\gamma E})\circ \Delta^{3} (G_{\sigma})\\
 &=m^{3}\circ (\phi_{A}\otimes \phi_{\overline{B}}\otimes \phi_{\gamma E})\circ(1\otimes \nu \otimes 1)\circ \Delta^{3} (G_{\sigma})
-\end{align*}$$ The operator applied to $G_{\sigma}$ can be further expanded in $$m^{2\infty +1}\circ \left(\left(\otimes_{i}\,\phi_{(\alpha_{i})}\right) \otimes \left(\otimes_{j}\,\phi_{(\beta_{j})}\right) \otimes \phi_{\gamma E}\right)\circ\left(1^{\otimes \infty}\otimes \nu^{\otimes \infty} \otimes 1\right)\circ \Delta^{2\infty +1}$$ where the meaning of the symbols $2\infty+1$ is quite clear from what precedes. Let us denote $I^{2\infty+1} = 1^{\otimes \infty}\otimes \nu^{\otimes \infty}\otimes 1$. Then, $\mathbb{Q}_{n,\omega}[\sigma]$ can be rewritten as: $$\begin{align*}
+\end{aligned}$$ The operator applied to $G_{\sigma}$ can be further expanded in $$m^{2\infty +1}\circ \left(\left(\otimes_{i}\,\phi_{(\alpha_{i})}\right) \otimes \left(\otimes_{j}\,\phi_{(\beta_{j})}\right) \otimes \phi_{\gamma E}\right)\circ\left(1^{\otimes \infty}\otimes \nu^{\otimes \infty} \otimes 1\right)\circ \Delta^{2\infty +1}$$ where the meaning of the symbols $2\infty+1$ is quite clear from what precedes. Let us denote $I^{2\infty+1} = 1^{\otimes \infty}\otimes \nu^{\otimes \infty}\otimes 1$. Then, $\mathbb{Q}_{n,\omega}[\sigma]$ can be rewritten as: $$\begin{aligned}
 &\left\langle \Delta^{2 \infty +1}(F_{12\ldots n})\vphantom{\left(\left(\otimes_{i}\,u_{(\alpha_{i})}\right) \otimes \left(\otimes_{j}\,u_{(\beta_{j})}\right) \otimes u_{\gamma E}\right)\circ I^{2\infty+1} \circ \Delta^{2\infty +1} (G_{\sigma})}\,\right |\left.\left(\left(\otimes_{i}\,u_{(\alpha_{i})}\right) \otimes \left(\otimes_{j}\,u_{(\beta_{j})}\right) \otimes u_{\gamma E}\right)\circ I^{2\infty+1} \circ \Delta^{2\infty +1} (G_{\sigma}) \vphantom{\Delta^{2 \infty +1}(F_{12\ldots n})}\right\rangle\\
 &=\left\langle \Delta^{2 \infty +1}(F_{12\ldots n})\vphantom{\big(\big(\!\otimes_{i}\,t_{(\alpha_{i})}\big) \otimes \big(\!\otimes_{j}\,t_{(\beta_{j})}\big) \otimes u_{\gamma E}\big)\circ I^{2\infty+1} \!\circ \Delta^{2\infty +1} (G_{\sigma})}\,\right |\left.\big(\big(\!\otimes_{i}\,t_{(\alpha_{i})}\big) \otimes \big(\!\otimes_{j}\,t_{(\beta_{j})}\big) \otimes u_{\gamma E}\big)\circ I^{2\infty+1} \!\circ \Delta^{2\infty +1} (G_{\sigma}) \vphantom{\Delta^{2 \infty +1}(F_{12\ldots n})}\right\rangle\\
 &=\left\langle m^{2\infty+1} \circ I^{2\infty+1} \circ \! \big(\big(\!\otimes_{i}\,t_{(\alpha_{i})}^{*}\big) \otimes \big(\!\otimes_{j}\,t_{(\beta_{j})}^{*}\big) \otimes u_{\gamma E}^{*}\big) \! \circ \Delta^{2 \infty +1}(F_{12\ldots n})\vphantom{G_{\sigma}}\,\right |\left.G_{\sigma} \vphantom{m^{2\infty+1} \circ I^{2\infty+1} \circ \! \big(\big(\!\otimes_{i}\,t_{(\alpha_{i})}^{*}\big) \otimes \big(\!\otimes_{j}\,t_{(\beta_{j})}^{*}\big) \otimes u_{\gamma E}^{*}\big) \! \circ \Delta^{2 \infty +1}(F_{12\ldots n})}\right\rangle
-\end{align*}$$ Here, we have used extensively the property of self-adjointness of $\mathbf{FQSym}$. Now, we have to check that the operator applied to $F_{12\ldots n}$ encodes the random steps of the $\omega$-shuffle. We describe a probability distribution $\mathbb{P}$ on $\mathfrak{S}_{n}$ by an element $\sum_{\sigma \in \mathfrak{S}_{n}}\mathbb{P}[\sigma]\,F_{\sigma} \in \mathbf{FQSym}$, and the effect of our random steps by matrices $$M=\sum_{\sigma,\tau}c_{\sigma\tau}\,F_{\sigma}\otimes G_{\tau},$$ where the $G$'s are considered as elements of the dual space of $\mathbf{FQSym}$. We also introduce the operator of uniformization $$U=\sum_{n\in \mathbb{N}}\sum_{\sigma\in \mathfrak{S}_{n}}\frac{1}{n!}\,F_{\sigma}\otimes G_{12\ldots n}.$$ Notice that for any $n$, $$u_{\gamma E}^{*}(F_{12\ldots n})=\frac{\gamma^{n}}{n!}\,F_{12\ldots n}=(U \circ t_{(\gamma)})(F_{12\ldots n})\qquad;\qquad F_{12\ldots n}=G_{12\ldots n}.$$ For this reason, we can rewrite the probability $\mathbb{Q}_{n,\omega}$ as $$\left\langle m^{2\infty+1} \circ \widetilde{I}^{2\infty+1} \circ \big(\big(\otimes_{i}\,t_{(\alpha_{i})}\big) \otimes \big(\otimes_{j}\,t_{(\beta_{j})}\big) \otimes t_{(\gamma)}\big) \circ \Delta^{2 \infty +1}(F_{12\ldots n})\vphantom{G_{\sigma}}\,\right |\left.G_{\sigma} \vphantom{m^{2\infty+1} \circ \widetilde{I}^{2\infty+1} \circ \big(\big(\otimes_{i}\,t_{(\alpha_{i})}\big) \otimes \big(\otimes_{j}\,t_{(\beta_{j})}\big) \otimes t_{(\gamma)}\big) \circ \Delta^{2 \infty +1}(F_{12\ldots n})}\right\rangle,$$ where $\widetilde{I}^{2\infty+1}=1^{\otimes \infty}\otimes \nu^{\otimes \infty} \otimes U$.
+\end{aligned}$$ Here, we have used extensively the property of self-adjointness of $\mathbf{FQSym}$. Now, we have to check that the operator applied to $F_{12\ldots n}$ encodes the random steps of the $\omega$-shuffle. We describe a probability distribution $\mathbb{P}$ on $\mathfrak{S}_{n}$ by an element $\sum_{\sigma \in \mathfrak{S}_{n}}\mathbb{P}[\sigma]\,F_{\sigma} \in \mathbf{FQSym}$, and the effect of our random steps by matrices $$M=\sum_{\sigma,\tau}c_{\sigma\tau}\,F_{\sigma}\otimes G_{\tau},$$ where the $G$'s are considered as elements of the dual space of $\mathbf{FQSym}$. We also introduce the operator of uniformization $$U=\sum_{n\in \mathbb{N}}\sum_{\sigma\in \mathfrak{S}_{n}}\frac{1}{n!}\,F_{\sigma}\otimes G_{12\ldots n}.$$ Notice that for any $n$, $$u_{\gamma E}^{*}(F_{12\ldots n})=\frac{\gamma^{n}}{n!}\,F_{12\ldots n}=(U \circ t_{(\gamma)})(F_{12\ldots n})\qquad;\qquad F_{12\ldots n}=G_{12\ldots n}.$$ For this reason, we can rewrite the probability $\mathbb{Q}_{n,\omega}$ as $$\left\langle m^{2\infty+1} \circ \widetilde{I}^{2\infty+1} \circ \big(\big(\otimes_{i}\,t_{(\alpha_{i})}\big) \otimes \big(\otimes_{j}\,t_{(\beta_{j})}\big) \otimes t_{(\gamma)}\big) \circ \Delta^{2 \infty +1}(F_{12\ldots n})\vphantom{G_{\sigma}}\,\right |\left.G_{\sigma} \vphantom{m^{2\infty+1} \circ \widetilde{I}^{2\infty+1} \circ \big(\big(\otimes_{i}\,t_{(\alpha_{i})}\big) \otimes \big(\otimes_{j}\,t_{(\beta_{j})}\big) \otimes t_{(\gamma)}\big) \circ \Delta^{2 \infty +1}(F_{12\ldots n})}\right\rangle,$$ where $\widetilde{I}^{2\infty+1}=1^{\otimes \infty}\otimes \nu^{\otimes \infty} \otimes U$.
 
 1.  Starting from the state $F_{12\ldots n}$, the first step of our algorithm can be written $$S_{1}=\left(\left(\otimes_{i}\,t_{(\alpha_{i})}\right) \otimes \left(\otimes_{j}\,t_{(\beta_{j})}\right) \otimes t_{(\gamma)}\right) \circ t_{E}^{\otimes 2\infty+1} \circ \Delta^{2\infty+1} \circ t_{E^{-1}}.$$ Indeed, $\Delta^{2\infty+1}$ enables us to cut the deck in every possible way $$n=n_{1}+n_{2}+\cdots+m_{1}+m_{2}+\cdots+l,$$ and the other operators take account of the probabilities (we use the $t_{(\zeta)}$'s for the powers and the $t_{E}$'s for the factorials).
 

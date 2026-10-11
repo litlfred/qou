@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-5
 source_pdf: 1211.1812v5.pdf
 source_sha256: 211667ea1312d47f
-text_source: latex
-latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.979
 doc_brief: "Presheaves of superselection structures in curved spaceti mes Ezio Vasselli ezio.vasselli@gmail.com — We show that superselection structures on curved spacetime s, that are expected to describe"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.99
 ---
 []{#intro label="intro"}
 
@@ -24,22 +24,18 @@ A celebrated mathematical byproduct is the Doplicher-Roberts duality for compact
 
 The mathematical scenario of the above construction is the one defined by Haag, Kastler and then Araki in the middle sixties ([@Ara Chp.4],[@Haa Chp.III]): we have a base $\Delta_{dc}$ of the Minkowski spacetime, the one of double cones, and, for any $o \in \Delta_{dc}$, a *C\**-algebra $A_o$ that is interpreted as the one of quantum observables localized within $o$. Starting from this interpretation, it is natural to require that there are inclusion \*-morphisms
 
-$$\begin{equation}
-\label{eq.00}
+$$\label{eq.00}
 \jmath_{o'o} : A_o \to A_{o'}
 \ \ : \ \
 \jmath_{o'' o'} \circ \jmath_{o'o} = \jmath_{o'' o}
 \ \ , \ \
 \forall o \subseteq o' \subseteq o'' \in \Delta_{dc}
-\ .
-\end{equation}$$
+\ .$$
 
 The pair $\EuFrak{A}:= (A,\jmath)$ is known as the *observable net* and is usually -- but not always -- realized by means of quantum fields in the sense of Wightman ([@Ara §4.8]). An important point is that $\Delta_{dc}$ is a directed *poset* (partially ordered set) when ordered under inclusion, and this implies that we can construct the inductive limit *C\**-algebra $\vec{A} := \lim_j (A,\jmath)$ that can be represented as a \*-algebra of operators on a fixed Hilbert space. The superselection structure is then realized as a symmetric tensor *C\**-category $T$ of \*-endomorphisms of $\vec{A}$, and characterized as the dual of the compact gauge group $G$. This means, in particular, that any $\rho \in {\bf obj \ }T$ defines a finite-dimensional, unitary representation
 
-$$\begin{equation}
-\label{eq.rep}
-u_\rho : G \to UH_\rho
-\end{equation}$$
+$$\label{eq.rep}
+u_\rho : G \to UH_\rho$$
 
 such that $H_\rho$ appears in the field algebra as the $G$-vector space spanned by a multiplet of field operators
 
@@ -89,10 +85,8 @@ $I : \EuFrak{S}^\bullet \to \EuFrak{C}$,
 
 where $\EuFrak{C}$ is a presheaf of full subcategories of the one of Hilbert spaces. This is a crucial point: $I$ may not exist or not to be unique, so the same holds for $\mathcal G$ which, when existing, will depend on the choice of $I$. This does not exclude that there is a criterion to select a unique \"physical\" gauge group bundle $\mathcal G_{phys}$, nevertheless our results show that the isomorphism
 
-$$\begin{equation}
-\label{eq.01}
-Z^{1,\bullet}(\EuFrak{A}) \ \simeq \ \widehat\mathcal G_{phys}
-\end{equation}$$
+$$\label{eq.01}
+Z^{1,\bullet}(\EuFrak{A}) \ \simeq \ \widehat\mathcal G_{phys}$$
 
 does not suffice to characterize $\mathcal G_{phys}$, differently from what happens in the Minkowski spacetime.
 

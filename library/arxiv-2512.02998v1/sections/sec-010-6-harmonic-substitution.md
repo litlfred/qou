@@ -7,10 +7,10 @@ section_number: 6
 pages: 17-23
 source_pdf: 2512.02998v1.pdf
 source_sha256: 146ff93cd70baad4
-text_source: latex
-latex_prose_ratio: 0.972
-latex_coverage_ratio: 0.796
 doc_brief: "STABILITY OFKNOT EQUIVALENCE AT LOW REGULARITY, AND SYMMETRIC CRITICAL KNOTS FOR THEMÖBIUS ENERGY — We present sufficient criteria for the equivalence of tame knots at low regularity."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:harmonic}
 In this section we study the effects on the local distortion of

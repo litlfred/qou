@@ -8,421 +8,597 @@ pages: 48-57
 source_pdf: 1103.4815v3.pdf
 source_sha256: 28647b02ea1441e3
 doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal"
+text_source: latex
+latex_prose_ratio: 0.878
+latex_coverage_ratio: 0.986
 ---
-We now provide the data we will feed into Lemma B.1 in order to produce a 2-functor
-RM : GrbΓ (M ) /d47/d47 2-BunΓ (M ) that is inverse to the 2-functor EM constructed in the previous
-section. These data are:
-1. A principal Γ-2-bundle RG for each Γ-bundle gerbe G overM .
-2. A 1-isomorphism AG : G /d47/d47 EM (RG) for each Γ-bundle gerbe G overM .
-3. A 1-isomorphism RA : P /d47/d47 P ′ and a 2-isomorphism ηA : A /d43/d51 EM (RA) for all principal
-Γ-2-bundles P, P ′ overM and all bundle gerbe 1-morphisms A : EM (P) /d47/d47 EM (P ′).
-– 48 –
-Construction of the principal Γ -2-bundle RG
-We assume that G consists of a surjective submersion π : Y /d47/d47 M , a principal Γ-bundle P over
-Y [2] and a bundle gerbe product µ. Let α :P /d47/d47 Γ 0 be the anchor of P , and let χ :P /d47/d47 Y [2]
-be the bundle projection.
-The Lie groupoid P of the principal 2-bundle RG is deﬁned by
-P0 :=Y × Γ 0 and P1 :=P × Γ 0;
-source map, target maps, and composition are given by, respectiv ely,
-s(p,g ) := (π2(χ(p)),g ) , t(p,g ) := (π1(χ(p)),α (p)−1·g) and ( p2,g 2)◦(p1,g 1) := (µ(p1,p 2),g 1).
-(7.2.1)
-The identity morphism of an object ( y,g ) ∈ P 0 is (ty,g ) ∈ P 1, where ty denotes the unit element in
-P over the point (y,y ), see Lemma 5.2.5. The inverse of a morphism ( p,g ) ∈ P 1 is (i(p),α (p)−1g),
-where i : P /d47/d47 P is the map from Lemma 5.2.5. The bundle projection is π(y,g ) := π(y). The
-action is given on objects and morphisms by
-R0((y,g ),g ′) := (y,gg ′) and R1((p,g ),γ ) :=
-(
-p ◦
-(
-idg ·γ · idt(γ )−1g−1α (p)
-)
-,g ·s(γ)
-)
-. (7.2.2)
-Lemma 7.2.1. This deﬁnes a functor R : P × Γ /d47/d47 P, and R is an action of Γ on P.
-Proof. We assume that t : H /d47/d47 G is a smooth crossed module, and that Γ is the Lie 2-group
-associated to it, see Example 2.4.2 and Remark 2.4.3. Then we use the c orrespondence between
-principal Γ-bundles and principal H-bundles with H-anti-equivariant maps to G of Lemma 2.2.9.
-Writingγ = (h,g ′), we have
-R1((p,g ),γ ) = (p⋆ gh,gg ′).
-With this simple formula at hand it is straightforward to show that R respects source and tar-
-get maps and satisﬁes the axiom of an action. For the composition, w e assume composable
-(p2,g 2), (p1,g 1) ∈ P 1, i.e. g2 =α(p1)−1g1, and composable ( h2,g ′
-2), (h1,g ′
-1) ∈ Γ 1, i.e. g′
-2 =t(h1)g′
-1.
-Then we have
-R((p2,g 2) ◦ (p1,g 1), (h2,g ′
-2) ◦ (h1,g ′
-1)) = R((µ(p1,p 2),g 1), (h2h1,g ′
-1))
-= ( µ(p1,p 2)⋆g1(h2h1),g 1g′
-1)
-= ( µ(p1⋆g1h2,p 2)⋆g1h1,g 1g′
-1)
-= ( µ(p1,p 2⋆g2h2)⋆g1h1,g 1g′
-1)
-= ( µ(p1⋆g1h1,p 2⋆g2h2),g 1g′
-1)
-= ( p2⋆g2h2,g 2g′
-2) ◦ (p1⋆g1h1,g 1g′
-1)
-= R((p2,g 2), (h2,g ′
-2)) ◦R((p1,g 1), (h1,g ′
-1)),
-– 49 –
-ﬁnishing the proof. □
-It is obvious that the action R preserves the projection π. Thus, in order to complete the
-construction of the principal 2-bundle RG it remains to show that the functor τ = (pr 1,R ) is a
-weak equivalence. This is the content of the following two lemmata in co nnection with Theorem
-2.3.13.
-Lemma 7.2.2. τ is smoothly essentially surjective.
-Proof. The condition we have to check is whether or not the map
-(Y × Γ 0 × Γ 0)τ ×t ((P × Γ 0) ×M (P × Γ 0))
-(s×s)◦pr2 /d47/d47 (Y × Γ 0) ×M (Y × Γ 0)
-is a surjective submersion. The left hand side is diﬀeomorphic to ( P × Γ 0)π 1 ×π 1 (P × Γ 0) via pr 2,
-so that this is equivalent to checking that
-s ×s : (P × Γ 0)π 1◦χ ×π 1◦χ (P × Γ 0) /d47/d47 (Y × Γ 0) ×M (Y × Γ 0)
-is a surjective submersion. Since the Γ 0-factors are just spectators, this is in turn equivalent to
-checking that
-(π2 ×π2) ◦ (χ ×χ) : P π 1◦χ ×π 1◦χ P /d47/d47 Y [2]
-is a surjective submersion. It ﬁts into the pullback diagram
-P π 1◦χ ×π 1◦χ P /d31 /d127 /d47/d47
-χ ×χ
-/d15/d15
-P ×P
-χ ×χ
-/d15/d15
-Y [2]π 1 ×π 1Y [2]
-π 2 ×π 2
-/d15/d15
-/d31 /d127 /d47/d47Y [2] ×Y [2]
-π 2 ×π 2
-/d15/d15
-Y [2] /d31 /d127 /d47/d47Y ×Y
-which has a surjective submersion on the right hand side; hence, als o the map on the left hand side
-must be a surjective submersion. □
-Lemma 7.2.3. τ is smoothly fully faithful.
-Proof. We assume a smooth manifold N with two smooth maps
-f :N /d47/d47 (P0 × Γ 0) × (P0 × Γ 0) and g :N /d47/d47 P1 ×M P1
-– 50 –
-such that the diagram
-N
-f
-/d15/d15
-g /d47/d47 P1 ×M P1
-s×t
-/d15/d15
-(P0 × Γ 0) × (P0 × Γ 0) τ ×τ
-/d47/d47 (P0 ×M P0) × (P0 ×M P0)
-is commutative. For a ﬁxed point n ∈ N we put
-((p1,g 1), (p2,g 2)) := g(n) ∈ (P × Γ 0) ×M (P × Γ 0)
+\label{sec:reconstruction}
+
+
+We now provide the data we will feed into Lemma \ref{lem:equivalence} in order to produce a 2-functor
+$\mathscr{R}_M\maps \grb \Gamma M \to \zwoabun \Gamma M$
+that is inverse to the 2-functor $\mathscr{E}_M$ constructed in the previous section. These data are:
+\begin{enumerate}
+\item 
+A principal $\Gamma$-2-bundle $\mathscr{R}_\mathcal{G}$ for each $\Gamma$-bundle gerbe $\mathcal{G}$ over $M$.
+
+\item
+A 1-isomorphism $\mathcal{A}_{\mathcal{G}}: \mathcal{G} \to \mathscr{E}_M(\mathscr{R}_{\mathcal{G}})$ for each  $\Gamma$-bundle gerbe $\mathcal{G}$ over $M$.
+
+\item
+A 1-isomorphism $\mathscr{R}_{\mathcal{A}}: \mathcal{P} \to \mathcal{P}'$ and a 2-isomorphism $\eta_{\mathcal{A}}: \mathcal{A} \Rightarrow \mathscr{E}_M(\mathscr{R}_{\mathcal{A}})$ for all principal $\Gamma$-2-bundles $\mathcal{P},\mathcal{P}'$ over $M$ and all bundle gerbe 1-morphisms $\mathcal{A}: \mathscr{E}_M(\mathcal{P}) \to \mathscr{E}_M(\mathcal{P}')$. 
+
+
+\end{enumerate}
+
+
+
+\subsubsection{Construction of the principal $\Gamma$-2-bundle $\mathscr{R}_{\mathcal{G}}$}
+
+
+ We assume that $\mathcal{G}$ consists of a surjective submersion $\pi:Y \to M$, a principal $\Gamma$-bundle $P$ over $Y^{[2]}$ and a bundle gerbe product $\mu$. Let $\alpha: P \to \Gamma_0$ be the anchor of $P$, and let $\chi: P \to Y^{[2]}$ be the bundle projection. 
+
+
+The Lie groupoid $\mathcal{P}$ of the principal 2-bundle $\mathscr{R}_\mathcal{G}$ is defined by
+\begin{equation*}
+\mathcal{P}_0 := Y \times \Gamma_0
+\quand
+\mathcal{P}_1 := P \times \Gamma_0\text{;}
+\end{equation*}
+source map, target maps, and composition are given by, respectively,
+\begin{multline}
+\label{defbundlefromgerbe}
+s(p,g):= (\pi_2(\chi(p)),g)
+\quomma
+t(p,g):=  (\pi_1(\chi(p)),\alpha(p)^{-1} \cdot g)
+\quand 
+(p_2,g_2) \circ (p_1,g_1) := (\mu(p_1 , p_2), g_1)\text{.}
+\end{multline}
+\begin{comment}
+This is well-defined because
+\begin{equation*}
+s(\mu(p_1,p_2), g_1) = (\pi_2(\chi(\mu(p_1 , p_2))),g_1)= s(p_1,g_1)
+\end{equation*}
 and
-((y,g, ˜g), (y′,g ′, ˜g′)) := f (n) ∈ (Y × Γ 0 × Γ 0) × (Y × Γ 0 × Γ 0).
-The commutativity of the diagram implies χ(p1) = χ(p2) = ( y′,y ), so that there exists γ′ ∈ Γ 1
-with p2 =p1 ◦γ′. We deﬁne γ := idg−1
-1
-·γ′ · idα (p2)−1g2 , which yields a morphism γ ∈ Γ 1 satisfying
-τ (p1,g 1,γ ) = (p1,g 1,p 2,g 2) = g(n). On the other hand, we check that
-(s(p1,g 1,γ ),t (p1,g 1,γ )) = (π2(p1),g 1,s (γ),π 1(p1),α (p1)−1g1,t (γ)) = f (n),
-using that s(γ) = g−1
-1 g2 and t(γ) = g−1
-1 α(p1)α(p2)−1g2. Summarizing, we have deﬁned a smooth
-map
-σ :N /d47/d47 P1 × Γ 1 :n ✤ /d47/d47 (p1,g 1,γ )
-such that τ ◦σ = g and (s ×t) ◦σ = f . Now let σ′ : N /d47/d47 P1 × Γ 1 be another such map, and
-let σ′(n) =: ( p′
-1,g ′
-1,γ ′). The condition that τ (σ(n)) = g(n) = τ (σ′(n)) shows immediately that
-p1 =p′
-1 and g1 = g′
-1, and then that p1 ◦γ = p1 ◦γ′. But since the Γ-action on P is principal, we
-haveγ =γ′. This shows σ =σ′. Summarizing, P1 × Γ 1 is a pullback. □
-Example 7.2.4. Suppose Γ = BU(1) (see Example 2.1.1 (b)) and suppose G is a Γ-bundle gerbe over
-M , also known as a U(1)-bundle gerbe, see Example 5.1.7. Then, the as sociated principal BU(1)-
-2-bundle RG has the groupoid P with P0 =Y and P1 =P , source and target maps s =π2 ◦χ and
-t = π1 ◦χ, and composition p2 ◦p1 = µ(p1,p 2). The action of BU(1) on P is trivial on the level
-of objects and the given U(1)-action on P on the level of morphisms. The same applies for general
-abelian Lie groups A instead of U(1).
-Construction of the 1-isomorphism AG : G /d47/d47 EM (RG)
-The Γ-bundle gerbe EM (RG) has the surjective submersion ˜Y :=Y × Γ 0 with ˜π(y,g ) := π(y). The
-total space of its Γ-bundle ˜P is ˜P := P × Γ 0 × Γ 0; it has the anchor α(p,g,h ) = h, the bundle
-projection
-˜χ : ˜P /d47/d47 ˜Y [2] : (p,g,h ) ✤ /d47/d47 ((π1(χ(p)),α (p)−1g), (π2(χ(p)),gh −1)),
-– 51 –
-the Γ-action is
-(p,g,h ) ◦γ
-(7.1.1)
-= (( p,g ) ◦R((tπ 2(χ (p)),gh −1),γ ),s (γ))
-(7.2.2)
-= (( p,g ) ◦ (tπ 2(χ (p)) ◦ (idgh−1 ·γ · idg−1 ),gh −1s(γ)),s (γ))
-(7.2.1)
-= ( µ(tπ 2(χ (p)) ◦
-(
-idgh−1 ·γ · idg−1
-)
-,p ),gh −1s(γ),s (γ))
-(2.4.3)
-= ( p ◦
-(
-idgh−1 ·γ · idg−1α (p)
-)
-,gh −1s(γ),s (γ)),
-and its bundle gerbe product ˜µ is given by
-˜µ((p23,g 23,h 23), (p12,g 12,h 12))
-(7.1.3)
-= (( p12,g 12) ◦R((p23,g 23), idh12 ),h 23h12)
-(7.2.2)
-= (( p12,g 12) ◦ (p23,g 23h12),h 23h12)
-(7.2.1)
-= ( µ(p23,p 12),g 23h12,h 23h12).
-In order to compare the bundle gerbes G and EM (RG) we consider the smooth maps σ :Y /d47/d47 Y ×Γ 0
-and ˜σ :P /d47/d47 ˜P that are deﬁned by σ(y) := (y, 1) and ˜σ(p) := (p,α (p),α (p)).
-Lemma 7.2.5. ˜σ deﬁnes an isomorphism ˜σ :P /d47/d47 (σ ×σ)∗ ˜P of Γ -bundles over Y [2]. Moreover,
-the diagram
-π∗
-23P ⊗π∗
-12P
-µ
-/d15/d15
-˜σ ⊗˜σ /d47/d47 ˜π∗
-23 ˜P ⊗ ˜π∗
-12 ˜P
-˜µ
-/d15/d15
-π∗
-13P ˜σ
-/d47/d47 ˜π∗
-13 ˜P
+\begin{equation*}
+t(\mu(p_1,p_2), g_1) =  (\pi_1(\chi(\mu(p_1, p_2))),\alpha(p_2)^{-1}\alpha(p_1)^{-1}g_1) = t(p_2,g_2)
+\end{equation*}
+where we have used $\alpha(\mu(p_1 , p_2))=\alpha(p_1 , p_2)=\alpha(p_1)\alpha(p_2)$ from Definition \ref{def:tensorproduct} and the target-source matching condition $g_2=\alpha(p_1)^{-1}g_1$.
+\end{comment}
+The identity morphism of an object $(y,g) \in \mathcal{P}_0$ is $(t_y,g) \in \mathcal{P}_1$, where $t_{y}$ denotes the unit element in $P$ over the point $(y,y)$, see Lemma \ref{lem:buntriv}. The inverse of a morphism $(p,g) \in \mathcal{P}_1$ is $(i(p),\alpha(p)^{-1}g)$, where $i: P \to P$  is the map from Lemma \ref{lem:buntriv}.
+\begin{comment}
+Indeed, we have $s(\id_{(y,g)})= (\pi_2(t_y),g) = (y,g) = (\pi_1(t_y),\alpha(t_y)^{-1},g) = t(\id_{(y,g)})$. The axioms for an identity are
+\begin{equation*}
+(p,g) \circ \id_{s(p,g)} =(p,g) \circ  (t_{\pi_2(\chi(p))},g) = (\mu(t_{\pi_2(\chi(p))},p),g) = (p,g)
+\end{equation*}
+and
+\begin{equation*}
+\id_{t(p,g)} \circ (p,g)=(t_{\pi_1(\chi(p))},\alpha(p)^{-1}  g) \circ (p,g) = (\mu(p,t_{\pi_1(\chi(p))}),g)=(p,g)\text{.}
+\end{equation*}
+
+Concerning the inverses, we have
+\begin{multline*}
+s((p,g)^{-1}) = s(i(p), \alpha(p)^{-1}g) = (\pi_2(i(p)), \alpha(p)^{-1}g) \\= (\pi_1(p), \alpha(p)^{-1}g) = (\pi_1(p), \alpha(p)^{-1}g) = t(p,g)
+\end{multline*}
+and
+\begin{equation*}
+t((p,g)^{-1}) = t(i(p),\alpha(p)^{-1}g) = (\pi_1(i(p)), \alpha(i(p))^{-1}\alpha(p)^{-1}g) = (\pi_2(p),g) = s(p,g)\text{.}
+\end{equation*}
+The axioms for inverses are
+\begin{equation*}
+(p,g) \circ (i(p),\alpha(p)^{-1}g) = (\mu(i(p),p),\alpha(p)^{-1}g) = (t_{\pi_1(p)},\alpha(p)^{-1}g) = \id_{t(p,g)}
+\end{equation*}
+and
+\begin{equation*}
+(i(p),\alpha(p)^{-1}g) \circ (p,g) = (\mu(p,i(p)),g) = (t_{\pi_2(p)},g) = \id_{s(p,g)}\text{.}
+\end{equation*}
+\end{comment}
+The bundle projection is $\pi(y,g) := \pi(y)$. The action is given on objects and morphisms by
+\begin{equation}
+\label{defaction}
+R_0((y,g),g') := (y,gg')
+\quand
+R_1((p,g),\gamma) := \Big(p \circ \big(\id_{g} \cdot \gamma \cdot \id_{t(\gamma)^{-1}g^{-1}\alpha(p)}\big),g\cdot s(\gamma)\Big)\text{.}
+\end{equation}
+
+\begin{lemma}
+\label{lem:action}
+This defines a functor 
+$R: \mathcal{P} \times \Gamma \to \mathcal{P}$, and $R$ is an action of $\Gamma$ on $\mathcal{P}$.
+\end{lemma}
+
+\begin{proof}
+We assume that $t:H \to G$ is a smooth crossed module, and that $\Gamma$ is the Lie 2-group associated to it, see Example \ref{crossedmodule} and Remark \ref{rem:crossedmodule}. Then we use the correspondence between principal $\Gamma$-bundles and principal $H$-bundles with $H$-anti-equivariant maps to $G$ of Lemma \ref{actionbundles}.
+Writing $\gamma = (h,g')$, we have
+\begin{equation*}
+R_1((p,g),\gamma) = (p \star \lw{g}{h},gg')\text{.}
+\end{equation*}
+\begin{comment}
+Indeed, we have $s(\gamma)=g'$, $t(\gamma) = t(h)g'$ and 
+\begin{equation*}
+\id_{g} \cdot \gamma \cdot \id_{t(\gamma)^{-1}g^{-1}\alpha(p)} = (1,g) \cdot (h,g') \cdot (1,g'^{-1}t(h)^{-1}g^{-1}\alpha(p)) = (\lw{g}{h},t(\lw{g}{h^{-1}})\alpha(p)) \text{,}
+\end{equation*}
+and $p \star h$ was defined as $p \circ (h,t(h^{-1})\alpha(p))$, see Lemma \ref{actionbundles}. 
+\end{comment}
+With this simple formula at hand it is straightforward to show that $R$ respects source and target maps and satisfies the axiom of an action.  
+\begin{comment}
+Indeed, we have
+\begin{multline*}
+s(R((p,g),(h,g'))) = s(p \star \lw gh , gg') = (\pi_2(p \star \lw gh),gg') \\= (\pi_2(p),gg')= R((\pi_2(p),g),g') = R(s(p,g),s(h,g'))
+\end{multline*}
+and
+\begin{eqnarray*}
+t(R((p,g),(h,g'))) &=& t(p \star \lw gh , gg') \\&=& (\pi_1(p \star \lw gh),\alpha(p \star \lw gh)^{-1}gg')  \\ &=& (\pi_1(p), (t(\lw gh^{-1})\alpha(p))^{-1}gg') \\ &=& (\pi_1(p),\alpha(p)^{-1}(gt(h^{-1})g^{-1})^{-1}gg') \\ &=& R((\pi_1(p), \alpha(p)^{-1}g), t(h)g')
+\\&=& R(t(p,g),t(h,g'))\text{.}
+\end{eqnarray*}
+
+Finally, we check that the functor $R$ is an action in the sense of Definition \ref{def:rightaction}. On objects this is trivial, and on morphisms we calculate \begin{eqnarray*}
+R(R((p,g),(h_2,g_2')),(h_1,g_1')) 
+&=& R((p \star \lw{g}h_2,gg_2'),(h_1,g_1'))\\
+&=& (p \star (\lw g(h_2 \cdot \lw{g_2'}h_1)),gg_2'g_1')\\
+&=& R((p,g), (h_2 \cdot \lw{g_2'}h_1,g_2'g_1'))\\
+&=& R((p,g),(h_2,g_2') \cdot (h_1,g_1')) \text{.}
+\end{eqnarray*}
+\end{comment}
+For the composition, we assume composable  $(p_2,g_2),(p_1,g_1) \in \mathcal{P}_1$, i.e. $g_2 = \alpha(p_1)^{-1}g_1$, and composable $(h_2,g_2'),(h_1,g_1') \in \Gamma_1$, i.e. $g_2' = t(h_1)g_1'$. Then we have
+\begin{eqnarray*}
+R((p_2,g_2) \circ (p_1,g_1),(h_2,g_2') \circ (h_1,g_1')) 
+&=& R((\mu(p_1,p_2),g_1),(h_2h_1,g_1'))\\
+&=& (\mu(p_1,p_2) \star \lw{g_1}{(h_2h_1)},g_1g_1')\\
+&=& (\mu(p_1 \star \lw{g_1}{h_2},p_2) \star \lw{g_1}{h_1},g_1g_1')\\
+&=& (\mu(p_1,p_2 \star \lw{g_2}{h_2}) \star \lw{g_1}{h_1},g_1g_1')\\
+&=& (\mu(p_1\star \lw{g_1}{h_1},p_2 \star \lw{g_2}{h_2}) ,g_1g_1')\\
+&=& (p_2 \star \lw{g_2}h_2,g_{2}g_{2}') \circ (p_1 \star \lw{g_1}h_1,g_1g_1')\\
+&=& R((p_2,g_2),(h_2,g_2')) \circ R((p_1,g_1),(h_1,g_1'))\text{,}
+\end{eqnarray*} 
+finishing the proof.
+\end{proof}
+
+
+It is obvious that the action $R$ preserves the projection $\pi$. Thus,  in order to complete the construction of the principal 2-bundle  $\mathscr{R}_\mathcal{G}$  it  remains to show that the functor $\tau = (\mathrm{pr}_1,R)$ is a weak equivalence.
+This is the content of the following two lemmata in connection with Theorem \ref{weak}.
+
+\begin{lemma}
+$\tau$ is smoothly essentially surjective. 
+\end{lemma}
+
+\begin{proof}
+The condition we have to check is whether or not the map
+\begin{equation*}
+\alxydim{@C=2cm}{(Y \times \Gamma_0 \times \Gamma_0) \lli{\tau}\times_t ((P \times \Gamma_0) \times_M (P \times \Gamma_0)) \ar[r]^-{(s \times s) \circ \mathrm{pr}_2} & (Y \times \Gamma_0) \times_M (Y \times \Gamma_0)}
+\end{equation*}
+is a surjective submersion. The left hand side is diffeomorphic to $(P \times \Gamma_0) \lli{\pi_1} \times_{\pi_1} (P \times \Gamma_0)$ via $\mathrm{pr}_2$, so that this is equivalent to checking that
+\begin{equation*}
+s \times s: (P \times \Gamma_0) \lli{\pi_1 \circ \chi} \times_{\pi_1 \circ \chi} (P \times \Gamma_0) \to  (Y \times \Gamma_0) \times_M (Y \times \Gamma_0)
+\end{equation*}
+is a surjective submersion. Since the $\Gamma_0$-factors are just spectators, this is in turn equivalent to checking that
+\begin{equation*}
+(\pi_2 \times \pi_2) \circ (\chi \times \chi): P \lli{\pi_1 \circ \chi}\times_{\pi_1 \circ \chi} P \to Y^{[2]}
+\end{equation*} 
+is a surjective submersion. It fits into the pullback diagram
+\begin{equation*}
+\alxydim{@R=1.3cm}{P \lli{\pi_1 \circ \chi}\times_{\pi_1 \circ \chi} P \ar@{^(->}[r] \ar[d]_{\chi \times \chi} & P \times P \ar[d]^{\chi \times \chi} \\ Y^{[2]} \lli{\pi_1}\times_{\pi_1} Y^{[2]} \ar[d]_{\pi_2 \times \pi_2} \ar@{^(->}[r] & Y^{[2]} \times Y^{[2]} \ar[d]^{\pi_2 \times \pi_2} \\ Y^{[2]} \ar@{^(->}[r] & Y \times Y}
+\end{equation*}
+which has  a surjective submersion on the right hand side; hence, also the map on the left hand side must be a surjective submersion. 
+\end{proof}
+
+\begin{lemma}
+$\tau$ is smoothly fully faithful. 
+\end{lemma}
+
+\begin{proof}
+We assume a smooth manifold $N$ with two smooth maps 
+\begin{equation*}
+f: N \to (\mathcal{P}_0 \times \Gamma_0) \times (\mathcal{P}_0 \times \Gamma_0)
+\quand
+g: N \to \mathcal{P}_1 \times_M \mathcal{P}_1
+\end{equation*}
+such that the diagram
+\begin{equation*}
+\alxydim{@R=1.3cm}{N \ar[d]_{f} \ar[r]^-{g} & \mathcal{P}_1 \times_M \mathcal{P}_1 \ar[d]^{s \times t} \\  (\mathcal{P}_0 \times \Gamma_0) \times (\mathcal{P}_0 \times \Gamma_0) \ar[r]_-{\tau \times \tau} & (\mathcal{P}_0 \times_M \mathcal{P}_0) \times (\mathcal{P}_0 \times_M \mathcal{P}_0) }
+\end{equation*}
+is commutative. For a fixed point $n \in N$ we put 
+\begin{equation*}
+((p_1,g_1),(p_2,g_2)):= g(n)\in (P \times \Gamma_0) \times_M (P \times \Gamma_0)
+\end{equation*}
+and
+\begin{equation*}
+((y,g,\tilde g),(y',g',\tilde g')) := f(n) \in (Y \times \Gamma_0 \times \Gamma_0) \times (Y \times \Gamma_0 \times \Gamma_0)\text{.}
+\end{equation*}
+\begin{comment}
+The condition that the diagram is commutative means
+\begin{eqnarray*}
+(y,g,y,g\tilde g) &=& (\pi_2(p_1),g_1,\pi_2(p_2),g_2) \\
+(y',g',y',g'\tilde g') &=& (\pi_1(p_1), \alpha(p_1)^{-1}g_1,\pi_1(p_2),\alpha(p_2)^{-1}g_2)\text{.}
+\end{eqnarray*}
+\end{comment}
+The commutativity of the diagram implies $\chi(p_1)=\chi(p_2)=(y',y)$, so that there exists  $\gamma' \in \Gamma_1$ with $p_2 = p_1 \circ \gamma'$. We define 
+$\gamma := \id_{g_1^{-1}} \cdot \gamma'\cdot \id_{\alpha(p_2)^{-1}g_2}$, 
+which yields a morphism $\gamma\in \Gamma_1$ satisfying $\tau(p_1,g_1,\gamma) = (p_1,g_1,p_2,g_2) = g(n)$. On the other hand, we check that 
+\begin{equation*}
+(s(p_1,g_1,\gamma), t(p_1,g_1,\gamma)) = (\pi_2(p_1),g_1,s(\gamma),\pi_1(p_1),\alpha(p_1)^{-1}g_1,t(\gamma))  = f(n)\text{,}
+\end{equation*} 
+using that $s(\gamma) = g_1^{-1}g_2$ and $t(\gamma) = g_1^{-1}\alpha(p_1)\alpha(p_2)^{-1}g_2$. Summarizing, we have defined a smooth map
+\begin{equation*}
+\sigma: N \to \mathcal{P}_1 \times \Gamma_1:n \mapsto (p_1,g_1,\gamma)
+\end{equation*}
+such that $\tau \circ \sigma = g$ and $(s \times t) \circ \sigma=f$. Now let $\sigma':N \to \mathcal{P}_1 \times \Gamma_1$ be another such map, and let $\sigma'(n) =: (p_1',g_1',\gamma')$. The condition that $\tau(\sigma(n)) =g(n) = \tau(\sigma'(n))$  shows immediately that $p_1=p_1'$ and $g_1=g_1'$, and then that $p_1 \circ \gamma = p_1 \circ \gamma'$. But since the $\Gamma$-action on $P$ is principal, we have $\gamma=\gamma'$. This shows $\sigma=\sigma'$.
+Summarizing, $\mathcal{P}_1 \times \Gamma_1$ is a pullback. 
+\begin{comment}
+More precisely,
+\begin{equation*}
+\alxydim{}{\mathcal{P}_1 \times \Gamma_1 \ar[r]^{\tau} \ar[d]_{s \times t} & \mathcal{P}_1 \times_M \mathcal{P}_1 \ar[d]^{s \times t} \\  (\mathcal{P}_0 \times \Gamma_0) \times (\mathcal{P}_0 \times \Gamma_0) \ar[r]_-{\tau \times \tau} & (\mathcal{P}_0 \times_M \mathcal{P}_0) \times (\mathcal{P}_0 \times_M \mathcal{P}_0) }
+\end{equation*}
+is a pullback diagram.
+\end{comment}
+\end{proof}
+
+
+
+
+\begin{example}
+\label{trans_abelian}
+Suppose $\Gamma = \mathcal{B}\ueins$ (see Example \ref{example_groupoids} \erf{exBG}) and suppose $\mathcal{G}$ is a $\Gamma$-bundle gerbe over $M$, also known as a $\ueins$-bundle gerbe, see Example \ref{ex:abelianbundlegerbes}. Then, the associated principal $\mathcal{B}\ueins$-2-bundle $\mathscr{R}_\mathcal{G}$ has the  groupoid $\mathcal{P}$ with $\mathcal{P}_0=Y$ and $\mathcal{P}_1=P$, source and target maps $s = \pi_2 \circ \chi$ and $t=\pi_1 \circ \chi$, and composition $p_2 \circ p_1 = \mu(p_1,p_2)$. The action of $\mathcal{B}\ueins$ on $\mathcal{P}$ is trivial on the level of objects and the given $\ueins$-action on $P$ on the level of morphisms. The same applies for general abelian Lie groups $A$ instead of $\ueins.$
+\end{example}
+
+
+
+\subsubsection{Construction of the 1-isomorphism $\mathcal{A}_{\mathcal{G}}: \mathcal{G} \to \mathscr{E}_M(\mathscr{R}_{\mathcal{G}})$}
+
+
+The $\Gamma$-bundle gerbe $\mathscr{E}_M(\mathscr{R}_\mathcal{G})$ has the surjective submersion $\tilde Y := Y \times \Gamma_0$ with $\tilde\pi(y,g) := \pi(y)$. The total space of its $\Gamma$-bundle $\tilde P$ is $\tilde P := P \times \Gamma_0 \times \Gamma_0$; it has the anchor $\alpha(p,g,h)= h$, the bundle projection
+\begin{equation*}
+\tilde\chi: \tilde P \to \tilde Y^{[2]}: (p,g,h) \mapsto (  (\pi_1(\chi(p)),\alpha(p)^{-1}  g),(\pi_2(\chi(p)),gh^{-1}))\text{,}
+\end{equation*}
+ the $\Gamma$-action is
+\begin{eqnarray*}
+(p,g,h) \circ \gamma 
+&\stackrel{\text{\erf{defgerbefrombundle}}}{=}&  ((p,g) \circ R((t_{\pi_2(\chi(p))},gh^{-1}),\gamma),s(\gamma))
+ \\&\stackrel{\text{\erf{defaction}}}{=}& ((p,g) \circ (t_{\pi_2(\chi(p))} \circ (\id_{gh^{-1}} \cdot \gamma \cdot \id_{g^{-1}}),gh^{-1} s(\gamma)),s(\gamma))
+ \\&\stackrel{\text{\erf{defbundlefromgerbe}}}{=}& (\mu (t_{\pi_2(\chi(p))} \circ \big(\id_{gh^{-1}} \cdot \gamma \cdot \id_{g^{-1}}\big),p),gh^{-1} s(\gamma),s(\gamma))
+ \\&\stackrel{\text{\erf{deftensorproductrel}}}{=}& (p \circ \big(\id_{gh^{-1}} \cdot \gamma \cdot \id_{g^{-1}\alpha(p)}\big),gh^{-1} s(\gamma),s(\gamma))\text{,}
+\end{eqnarray*}
+ and its bundle gerbe product $\tilde\mu$ is given by
+\begin{eqnarray*}
+\tilde\mu((p_{23},g_{23},h_{23}),(p_{12},g_{12},h_{12})) 
+&\stackrel{\text{\erf{defmu}}}{=}&   ((p_{12},g_{12}) \circ R((p_{23},g_{23}),\id_{h_{12}}) ,h_{23}h_{12})
+\\&\stackrel{\text{\erf{defaction}}}{=}& ((p_{12},g_{12}) \circ (p_{23},g_{23}h_{12}) ,h_{23}h_{12})
+\\&\stackrel{\text{\erf{defbundlefromgerbe}}}{=}&   (\mu(p_{23},p_{12}),g_{23}h_{12} ,h_{23}h_{12})\text{.}
+\end{eqnarray*}
+In order to compare the bundle gerbes $\mathcal{G}$ and $\mathscr{E}_M(\mathscr{R}_\mathcal{G})$ we consider the smooth maps  $\sigma: Y \to Y \times \Gamma_0$ and $\tilde\sigma: P \to \tilde P$  that are defined  by $\sigma(y):=(y,1)$ and $\tilde\sigma(p) := (p,\alpha(p),\alpha(p))$. 
+
+\begin{lemma}
+$\tilde\sigma$ defines an isomorphism $\tilde\sigma: P \to (\sigma \times \sigma)^{*}\tilde P$ of $\Gamma$-bundles over $Y^{[2]}$. Moreover, the diagram
+\begin{equation*}
+\alxydim{@C=1.4cm@R=1.3cm}{\pi_{23}^{*}P \otimes \pi_{12}^{*}P \ar[d]_{\mu} \ar[r]^{\tilde\sigma \otimes \tilde\sigma} & \tilde\pi_{23}^{*}\tilde P  \otimes \tilde\pi_{12}^{*}\tilde P \ar[d]^{\tilde\mu} \\ \pi_{13}^{*}P \ar[r]_{\tilde\sigma} & \tilde\pi_{13}^{*}\tilde P}
+\end{equation*}
 is commutative.
-Proof. For the ﬁrst part it suﬃces to prove that ˜ σ is Γ-equivariant, preserves the anchors, and that
-the diagram
-P
-χ
-/d15/d15
-˜σ /d47/d47 ˜P
-˜χ
-/d15/d15
-Y [2]
-σ ×σ
-/d47/d47 ˜Y [2]
-is commutative. Indeed, the commutativity of the diagram is obvious , and also that the anchors
-are preserved. For the Γ-equivariance, we have
-˜σ(p ◦γ) = (p ◦γ,s (γ),s (γ)) = (p,α (p),α (p)) ◦γ = ˜σ(p) ◦γ.
+\end{lemma}
+
+
+\begin{proof}
+For the first part it suffices to prove that $\tilde\sigma$ is $\Gamma$-equivariant, preserves the anchors, and that the diagram
+\begin{equation*}
+\alxydim{@R=1.3cm}{P \ar[d]_{\chi} \ar[r]^{\tilde\sigma} & \tilde P \ar[d]^{\tilde\chi} \\ Y^{[2]} \ar[r]_{\sigma \times \sigma} & \tilde Y^{[2]}}
+\end{equation*}
+is commutative. Indeed, the commutativity of the diagram is obvious, and also that the anchors are preserved. For the $\Gamma$-equivariance, we have
+\begin{equation*}
+\tilde\sigma(p \circ \gamma) = (p \circ \gamma, s(\gamma), s(\gamma)) = (p,\alpha(p),\alpha(p)) \circ \gamma= \tilde\sigma(p) \circ \gamma\text{.}
+\end{equation*}  
 Finally, we calculate
-˜µ((p23,α (p23),α (p23)), (p12,α (p12),α (p12))) = ( µ(p23,p 12),α (p23)α(p12),α (p23)α(p12))
-= ( µ(p23,p 12),α (µ(p23,p 12)),α (µ(p23,p 12)))
-– 52 –
-which shows the commutativity of the diagram. □
-Via Lemma 5.2.7 the bundle morphism ˜σ deﬁnes the required 1-morphism AG, and Lemma 5.2.3
-guarantees that AG is a 1- isomorphism.
-Construction of the 1-morphism RA : P /d47/d47 P ′
-Let A : EM (P) /d47/d47 EM (P ′) be a 1-morphism between Γ-bundle gerbes obtained from principal
-Γ-2-bundles P and P ′ over M . By Lemma 5.2.8 we can assume that A consists of a principal
-Γ-bundle χ :Q /d47/d47 Z withZ = P0 ×M P ′
-0, and some isomorphism β overZ [2]. For preparation, we
-consider the ﬁbre products Zr := P0 ×M P ′[2]
-0 and Zl := P [2]
-0 ×M P ′
-0 with the obvious embeddings
-ιl :Zl /d47/d47 Z andιr :Zr /d47/d47 Z obtained by doubling elements. Together with the trivialization of
-Corollary 5.2.6, the pullbacks of β along ιl and ιr yield bundle morphisms
-βl :=ι∗
-lβ : pr ∗
-13Q /d47/d47 pr∗
-23Q ⊗ pr∗
-12P and βr :=ι∗
-rβ : pr ∗
-23P ′ ⊗ pr∗
-12Q /d47/d47 pr∗
-13Q,
-where P := P1 × Γ 0 and P ′ := P ′ × Γ 0 are the principal Γ-bundles of the Γ-bundle gerbes EM (P)
-and EM (P ′), respectively.
-Lemma 7.2.6. The bundle morphisms βl and βr have the following properties:
-(i) They commute with each other in these sense that the diagr am
-P ′
-p′
-1,p ′
-2
-⊗Qp1,p ′
-1
-β❘❘❘❘❘❘❘❘❘
-/d41/d41❘❘❘❘❘❘❘❘❘❘❘
-β r /d47/d47
-id ⊗β l
-/d15/d15
-Qp1,p ′
-2
-β l
-/d15/d15
-P ′
-p′
-1,p ′
-2
-⊗Qp2,p ′
-1 ⊗Pp1,p 2 β r ⊗id
-/d47/d47Qp2,p ′
-2 ⊗Pp1,p 2
-is commutative for all ((p1,p ′
-1), (p2,p ′
-2)) ∈ Z [2].
-(ii) βl is compatible with the bundle gerbe product µ in the sense that
-βl|p1,p 3,p ′ = (id ⊗µp1,p 2,p 3) ◦ (βl|p2,p 3,p ′ ⊗ id) ◦βl|p1,p 2,p ′
-for all (p1,p 2,p 3,p ′) ∈ P [3]
-0 ×M P ′
-0.
-(iii) βr is compatible with the bundle gerbe product µ′ in the sense that
-βr|p,p ′
-1,p ′
-3 ◦ (µ′
-p′
-1,p ′
-2,p ′
-3
-⊗ id) = βr|p,p ′
-2,p ′
-3 ◦ (id ⊗βr|p,p ′
-1,p ′
-2)
-for all (p,p ′
-1,p ′
-2,p ′
-3) ∈ P 0 ×M P ′[3]
-0 .
-– 53 –
-Proof. The identities (ii) and (iii) follow by restricting the commutative diagram (5.1.1) to the
-submanifolds P [3]
-0 ×M P ′
-0 and P0 ×M P ′[3]
-0 of Z [3], respectively. Similarly, the commutativity of
-the two triangular subdiagrams in (i) follows by restricting (5.1.1) alon g appropriate embeddings
-Z [2] /d47/d47 Z [3]. □
-Now we are in position to deﬁne the anafunctor RA. First, we consider the left action
-β0 : Γ 0 ×Q /d47/d47 Q : (g,q ) ✤ /d47/d47 βr((id,g ),q )
-that satisﬁes α(β0(g,q )) = gα(q). The action β0 is properly discontinuous and free because βr is a
-bundle isomorphism. The quotient F :=Q/Γ 0 is the total space of the anafunctor RA we want to
-construct. Left and right anchors of an element q ∈ F with χ(q) = (p,p ′) are given by
-αl(q) := p and αr(q) := R(p′,α (q)).
-The actions are deﬁned by
-ρl(ρ,q ) := β−1
-l (q, (ρ, 1)) and ρr(q,ρ ′) := βr((R(ρ′, idα (q)−1 ), 1),q ).
-The left action is invariant under the action β0 because of Lemma 7.2.6 (i). For the right action,
-invariance follows from Lemma 7.2.6 (ii) and the identity
-µ′((R(ρ′, idα (q)−1g−1 ), 1), (id,g ))
-(7.1.3)
-= µ′((id,g ), (R(ρ′, idα (q)−1 ), 1)).
-Lemma 7.2.7. The above formulas deﬁne an anafunctor F : P /d47/d47 P ′.
-Proof. The compatibility between anchors and actions is easy to che ck. The axiom for the actions
-ρl andρr follows from Lemma 7.2.6 (ii) and (iii). Lemma 7.2.6 (i) shows that the actio ns commute.
-It remains to prove that αl : F /d47/d47 P0 is a principal P ′-bundle. Since αl is a composition of
-surjective submersions, we only have to show that the map
-τ :F α r ×t P ′ /d47/d47 F α l ×α l F : (q,ρ ′) ✤ /d47/d47 (q,ρr(q,ρ ′))
-is a diﬀeomorphism. We construct an inverse map τ −1 as follows. For ( q1,q 2) with χ(q1) = (p,p ′)
-and χ(q2) = (p, ˜p′), choose a representative
-((˜ρ′,g ′), ˜q) := βr|−1
-p,p ′, ˜p′(q2).
-Such choices can be made locally in a smooth way, and the result will not depend on them. We
-haveχ(˜q) = (p,p ′) that that there exists a unique γ ∈ Γ 1 such that q1 = ˜q ◦γ. Now we put
-τ −1(q1,q 2) := (q1,R (˜ρ′,γ −1)).
-– 54 –
-The calculation of τ −1 ◦τ is straightforward. For the calculation of ( τ ◦τ −1)(q1,q 2) we have to
-compute in the second component
-βr((R(˜ρ′,γ −1 · idα (q1)−1 ), 1),q 1) = βr((R(˜ρ′,γ −1 · idα (q1)−1 ), 1) ◦ (γ · idα (˜q)−1), ˜q)
-= βr((˜ρ′,α (q1)α(˜q)−1), ˜q)
-= β0(α(q1)α(˜q)−1g′−1,βr((˜ρ′,g ′), ˜q))
-= β0(α(q1)α(˜q)−1g′−1,q 2),
-and this is equivalent to q2. □
-In order to promote the anafunctor F to a 1-morphism between principal 2-bundles, we have
-to do two things: we have to check that F commutes with the projections of the bundle P1 and
-P2, and we have to construct a Γ-equivariant structure on F . For the ﬁrst point we use Remark
-6.1.6 (b), whose criterion π ◦αl = π ◦αr is clearly satisﬁed. For the second point we provide a
-smooth action ρ :F × Γ 1 /d47/d47 F in the sense of Deﬁnition A.1 and use Lemma A.2, which provides
-a construction of a Γ-equivariant structure. The action is deﬁned by
-ρ(q,γ ) := β−1
-l (q ◦ (idα (q) ·γ · idt(γ )−1), (idR(α l(q),t (γ )),t (γ))). (7.2.3)
-Lemma 7.2.8. This deﬁnes a smooth action of Γ 1 on F in the sense of Deﬁnition A.1.
-Proof. Smoothness is clear from the deﬁnition. The identity
-ρ(ρ(q,γ 1),γ 2) = β−1
-l (q ◦ (idα (q) ·γ1 ·γ2 · idt(γ 2)−1t(γ 1)−1), (id,t (γ1 ·γ2))) = ρ(q,γ 1 ·γ2)
-follows from the deﬁnition and the two identities
-α(ρ(q,γ )) = α(q)s(γ) and ( γ1·idt(γ 1)−1)·(ids(γ 1)·γ2·idt(γ 2)−1t(γ 1)−1) = γ1·γ2·idt(γ 2)−1t(γ 1)−1 .
-(7.2.4)
-The latter can easily be veriﬁed upon substituting a crossed module f or Γ. Checking condition (i)
-of Deﬁnition A.1 just uses the deﬁnitions. We check condition (ii) in two steps. First we prove the
-identity
-ρ(ρl(ρ,q ),γl ◦γ) = ρl(R(ρ,γl),ρ (q,γ )).
+\begin{eqnarray*}
+\tilde\mu((p_{23},\alpha(p_{23}),\alpha(p_{23})),(p_{12},\alpha(p_{12}),\alpha(p_{12}))) &=& (\mu(p_{23},p_{12}),\alpha(p_{23})\alpha(p_{12}) ,\alpha(p_{23})\alpha(p_{12}))
+\\&=& (\mu(p_{23},p_{12}),\alpha(\mu(p_{23},p_{12})),\alpha(\mu(p_{23},p_{12})))
+\end{eqnarray*}
+which shows the commutativity of the diagram.
+\end{proof}
+
+Via Lemma \ref{lem:invertibility}  the bundle morphism $\tilde\sigma$ defines the required 1-morphism $\mathcal{A}_{\mathcal{G}}$, and Lemma \ref{lem:nonstablemorphisms} guarantees that $\mathcal{A}_{\mathcal{G}}$ is  a 1-\emph{iso}morphism.
+
+
+
+\subsubsection{Construction of the 1-morphism $\mathscr{R}_{\mathcal{A}}: \mathcal{P} \to \mathcal{P}'$}
+
+Let $\mathcal{A}: \mathscr{E}_M(\mathcal{P}) \to \mathscr{E}_M(\mathcal{P}')$ be a 1-morphism between $\Gamma$-bundle gerbes obtained from principal $\Gamma$-2-bundles $\mathcal{P}$ and $\mathcal{P}'$ over $M$.
+By Lemma \ref{lem:canonicalrefinement} we can assume that $\mathcal{A}$ consists of a principal $\Gamma$-bundle $\chi:Q\to Z$ with $Z=\mathcal{P}_0 \times_M \mathcal{P}_0'$, and some isomorphism $\beta$ over $Z^{[2]}$. For preparation,
+we consider the fibre products $Z_r:= \mathcal{P}_0 \times_M \mathcal{P}_0'^{[2]}$ and $Z_l := \mathcal{P}_0^{[2]} \times_M \mathcal{P}_0'$ with the obvious embeddings $\iota_l: Z_l \to Z$ and $\iota_r: Z_r \to Z$ obtained by doubling elements. Together with the trivialization of Corollary \ref{co:groupoidstructure}, the pullbacks of $\beta$ along $\iota_l$ and $\iota_r$ yield bundle morphisms
+\begin{equation*}
+\beta_l := \iota_l^{*}\beta : \mathrm{pr}_{13}^{*}Q \to \mathrm{pr}_{23}^{*}Q \otimes \mathrm{pr}_{12}^{*}P
+\quand
+ \beta_r := \iota_r^{*}\beta : \mathrm{pr}_{23}^{*}P' \otimes \mathrm{pr}_{12}^{*}Q \to \mathrm{pr}_{13}^{*}Q\text{,}
+\end{equation*}
+where $P := \mathcal{P}_1 \times \Gamma_0$ and $P' := \mathcal{P}' \times \Gamma_0$ are the principal $\Gamma$-bundles of the $\Gamma$-bundle gerbes $\mathscr{E}_M(\mathcal{P})$ and $\mathscr{E}_M(\mathcal{P}')$, respectively. \begin{comment}
+Over points $(p,p_1',p_2') \in Z_r$ and $(p_1,p_2,p') \in Z_l$, the bundle morphisms $\beta_r$ and $\beta_l$ are fibrewise like
+\begin{equation*}
+\beta_l: Q_{p_1,p'} \to Q_{p_2,p'} \otimes P_{p_1,p_2}
+\quand
+\beta_r: P'_{p_1',p_2'} \otimes Q_{p,p_1'} \to Q_{p,p_2'}\text{.}
+\end{equation*}
+\end{comment}
+
+\begin{lemma}
+\label{lem:betaprop}
+The bundle morphisms $\beta_l$ and $\beta_r$ have the following properties:
+\begin{enumerate}[(i)]
+\item 
+They commute with each other in these sense that the diagram
+\begin{equation*}
+\alxydim{@C=1.7cm@R=1.3cm}{P'_{p_1',p_2'} \otimes Q_{p_1,p_1'} \ar[dr]|{\beta}  \ar[r]^-{\beta_r } \ar[d]_{\id \otimes \beta_l} & Q_{p_1,p_2'} \ar[d]^{\beta_l} \\ P'_{p_1',p_2'} \otimes Q_{p_2,p_1'} \otimes P_{p_1,p_2} \ar[r]_-{\beta_r \otimes \id} & Q_{p_2,p_2'} \otimes P_{p_1,p_2}}
+\end{equation*}
+is commutative for all $((p_1,p_1'),(p_2,p_2')) \in Z^{[2]}$. 
+
+\item
+$\beta_l$ is compatible with the bundle gerbe product $\mu$ in the sense that
+\begin{equation*}
+\beta_l|_{p_1,p_3,p'} = (\id \otimes \mu_{p_1,p_2,p_3}) \circ (\beta_l|_{p_2,p_3,p'} \otimes \id) \circ \beta_l|_{p_1,p_2,p'}
+\end{equation*}
+for all $(p_1,p_2,p_3,p')\in \mathcal{P}_0^{[3]} \times_M \mathcal{P}_0'$.
+
+\item
+$\beta_r$ is compatible with the bundle gerbe product $\mu'$ in the sense that
+\begin{equation*}
+\beta_r|_{p,p_1',p_3'} \circ (\mu'_{p_1',p_2',p_3'} \otimes \id)  = \beta_r|_{p,p_2',p_3'} \circ (\id \otimes \beta_r|_{p,p_1',p_2'})
+\end{equation*}
+for all $(p,p_1',p_2',p_3')\in \mathcal{P}_0 \times_M \mathcal{P}_0'^{[3]}$.
+
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+The identities (ii) and (iii) follow by restricting the commutative diagram \erf{compgerbemorph} to the submanifolds $\mathcal{P}_0^{[3]} \times_M \mathcal{P}_0'$ and $\mathcal{P}_0 \times_M \mathcal{P}_0'^{[3]}$  of $Z^{[3]}$, respectively. Similarly, the commutativity of the two triangular subdiagrams in (i) follows by restricting \erf{compgerbemorph} along appropriate embeddings $Z^{[2]} \to Z^{[3]}$.
+\end{proof}
+
+Now we are in position to define the anafunctor $\mathscr{R}_{\mathcal{A}}$. First, we consider the left action
+\begin{equation*}
+\beta_0: \Gamma_0 \times Q \to Q : (g,q) \mapsto \beta_r((\id,g),q)
+\end{equation*}
+that satisfies $\alpha(\beta_0(g,q)) = g\alpha(q)$. 
+\begin{comment}
+If $\chi(q)=(p,p')$, then $\chi(\id_{p'},g) = (p',R(p',g^{-1})) $ and $\chi(\beta_0(g,q)) = (p,R(p',g^{-1}))$. We have
+\begin{multline*}
+\beta_0(g_2,\beta_0(g_1,q)) = \beta_r((\id,g_2),\beta_r((\id,g_1),q)) \stackrel{\text{(iii)}}{=} \beta_r(\mu'((\id,g_2),(\id,g_1)),q)\\=\beta_r((\id,g_2g_1),q)=\beta_0(g_2g_1,g). \end{multline*}
+\end{comment}
+The action $\beta_0$ is properly discontinuous and free because $\beta_r$ is a bundle isomorphism. 
+The quotient $F := Q/\Gamma_0$ is the total space of the anafunctor $\mathscr{R}_{\mathcal{A}}$ we want to construct. Left and right anchors of an element $q\in F$ with $\chi(q)=(p,p')$ are given by 
+\begin{equation*}
+\alpha_l(q) := p
+\quand
+\alpha_r(q) := R(p',\alpha(q))\text{.}
+\end{equation*}
+\begin{comment}
+This is well-defined under the action of $\beta_0$; for $\alpha_l$ this is clear and for $\alpha_r$ this is
+\begin{equation*}
+\alpha_r(\beta_0(g,q)) = R(R(p',g^{-1}),\alpha(\beta_0(g,q))) = R(p',g^{-1}g\alpha(q))=\alpha_r(q)\text{.}
+\end{equation*}
+\end{comment}
+The actions are  defined by
+\begin{equation*}
+\rho_l(\rho, q) := \beta_l^{-1}(q,(\rho,1))
+\quand
+\rho_r(q , \rho') := \beta_r((R(\rho',\id_{\alpha(q)^{-1}}),1),q)\text{.}
+\end{equation*}
+The left action is invariant under the action $\beta_0$ because of Lemma \ref{lem:betaprop} (i). For the right action, invariance follows from Lemma \ref{lem:betaprop} (ii) and the identity
+\begin{equation*}
+\mu'((R(\rho',\id_{\alpha(q)^{-1}g^{-1}}),1),(\id,g)) \stackrel{\text{\erf{defmu}}}{=}  \mu'((\id,g),(R(\rho',\id_{\alpha(q)^{-1}}),1))\text{.}
+\end{equation*}
+
+\begin{lemma}
+The above formulas  define an anafunctor $F : \mathcal{P} \to \mathcal{P}'$.
+\end{lemma}
+
+
+\begin{proof}
+The compatibility between anchors and actions is easy to check. The axiom for the actions $\rho_l$ and $\rho_r$ follows from Lemma \ref{lem:betaprop} (ii) and (iii). Lemma \ref{lem:betaprop} (i) shows that the actions commute.
+It remains to prove that $\alpha_l: F \to \mathcal{P}_0$ is a principal $\mathcal{P}'$-bundle. Since $\alpha_l$ is a composition of surjective submersions, we only have to show that the map
+\begin{equation*}
+\tau: F \lli{\alpha_r} \times_{t} \mathcal{P}' \to F \lli{\alpha_l} \times_{\alpha_l} F : (q,\rho') \mapsto (q, \rho_r(q ,\rho'))
+\end{equation*} 
+is a diffeomorphism. We construct an inverse map $\tau^{-1}$ as follows. For $(q_1,q_2)$ with $\chi(q_1) = (p,p')$ and $\chi(q_2)\eq (p,\tilde p')$, choose a representative \begin{equation*}
+((\tilde\rho',g'),\tilde q) := \beta_r|_{p,p',\tilde p'}^{-1}(q_2)\text{.}
+\end{equation*}
+Such choices can be made locally in a smooth way, and the result will not depend on them. We have $\chi(\tilde q) = (p,p')$ that that there exists a unique $\gamma \in \Gamma_1$ such that $q_1 = \tilde q \circ \gamma$. Now we put
+\begin{equation*}
+\tau^{-1}(q_1,q_2) := (q_1, R(\tilde\rho',\gamma^{-1}))\text{.}
+\end{equation*}
+The calculation of $\tau^{-1} \circ \tau$ is straightforward.
+\begin{comment}
+Indeed, if $q_2 = \beta_r((R(\rho',\id_{\alpha(q)^{-1}}),1),q)$, we get $\tilde\rho' := R(\rho',\id_{\alpha(q)^{-1}})$, $g'=1$ and $\tilde q=q$, in particular $\gamma = \id_{\alpha(q)}$. Then, $R(\tilde\rho',\gamma^{-1}) = \rho'$.
+\end{comment}
+For the calculation of $(\tau \circ \tau^{-1})(q_1,q_2)$ we have to compute in the second component
+\begin{eqnarray*}
+\beta_r((R(\tilde\rho',\gamma^{-1} \cdot \id_{\alpha(q_1)^{-1}}),1),q_1) &=& \beta_r((R(\tilde\rho',\gamma^{-1}\cdot \id_{\alpha(q_1)^{-1}}),1) \circ (\gamma \cdot \id_{\alpha(\tilde q)^{-1}}),\tilde q)
+\\&=& \beta_r((\tilde\rho',\alpha(q_1)\alpha(\tilde q)^{-1}),\tilde q)
+\\&=& \beta_0(\alpha(q_1)\alpha(\tilde q)^{-1}g'^{-1},\beta_r((\tilde\rho',g'),\tilde q))
+\\&=& \beta_0(\alpha(q_1)\alpha(\tilde q)^{-1}g'^{-1},q_{2})\text{,}
+\end{eqnarray*}
+and this is equivalent to $q_2$. 
+\end{proof}
+
+
+
+
+
+
+In order to promote the anafunctor $F$ to a 1-morphism between principal 2-bundles, we have to do two things: we have to check that $F$ commutes with the projections of the bundle $\mathcal{P}_1$ and $\mathcal{P}_2$, and we have to construct a $\Gamma$-equivariant structure on $F$. For the first point we use Remark \ref{rem:preserving} \erf{rem:preserving:b}, whose criterion $\pi \circ \alpha_l = \pi \circ \alpha_r$ is clearly satisfied. For the second point we provide a smooth action $\rho: F \times \Gamma_1 \to F$ in the sense of Definition \ref{def:actionanafunctor} and  use Lemma \ref{lem:equivarianceidentification}, which provides a construction of a $\Gamma$-equivariant structure. The action is defined by
+\begin{equation}
+\label{gammaactionanafunctorconstruction}
+\rho(q,\gamma) := \beta_l^{-1}(q \circ (\id_{\alpha(q)} \cdot \gamma \cdot \id_{t(\gamma)^{-1}}),(\id_{R(\alpha_l(q),t(\gamma))},t(\gamma))) \text{.}
+\end{equation}
+
+
+\begin{lemma}
+This defines a smooth action of $\Gamma_1$ on $F$ in the sense of Definition \ref{def:actionanafunctor}.
+\end{lemma}
+
+
+\begin{proof}
+Smoothness is clear from the definition. The identity
+\begin{equation*}
+\rho(\rho(q,\gamma_1),\gamma_2) = \beta_l^{-1}(q \circ (\id_{\alpha(q)} \cdot  \gamma_1 \cdot \gamma_2 \cdot \id_{t(\gamma_2)^{-1}t(\gamma_1)^{-1}}),(\id,t(\gamma_{1}\cdot\gamma_{2}))) = \rho(q,\gamma_1 \cdot \gamma_2)
+\end{equation*}
+follows from the definition and the two identities 
+\begin{multline}
+\label{eq:lem729id1}
+\alpha(\rho(q,\gamma)) = \alpha(q)s(\gamma)
+\quand
+(\gamma_{1} \cdot \id_{t(\gamma_{1})^{-1}}) \cdot ( \id_{s(\gamma_1)} \cdot \gamma_{2} \cdot \id_{t(\gamma_{2})^{-1}t(\gamma_1)^{-1}}) =\gamma_1 \cdot \gamma_2 \cdot \id_{t(\gamma_2)^{-1}t(\gamma_1)^{-1}} \text{.}
+\end{multline}
+The latter can easily be verified upon substituting a crossed module for $\Gamma$. 
+\begin{comment}
+Indeed, the calculation is 
+\footnotesize
+\begin{eqnarray*}
+&&\hspace{-1cm}\rho(\rho(q,\gamma_1),\gamma_2)
+\\&=& \beta_l^{-1}(\rho(q,\gamma_1) \circ (\id_{\alpha(\rho(q,\gamma_1))} \cdot \gamma_{2} \cdot \id_{t(\gamma_{2})^{-1}}),(\id,t(\gamma_{2})))
+\\&\stackrel{\text{\erf{eq:lem729id1}}}{=}& \beta_l^{-1}(\beta_l^{-1}(q \circ (\id_{\alpha(q)} \cdot \gamma_{1} \cdot \id_{t(\gamma_{1})^{-1}}),(\id,t(\gamma_{1}))) \circ (\id_{\alpha(q)s(\gamma_1)} \cdot \gamma_{2} \cdot \id_{t(\gamma_{2})^{-1}}),(\id,t(\gamma_{2})))
+\\&=& \beta_l^{-1}(\beta_l^{-1}(q \circ (\id_{\alpha(q)} \cdot \gamma_{1} \cdot \id_{t(\gamma_{1})^{-1}}),(\id,t(\gamma_{1})),  \id_{\alpha(q)s(\gamma_1)} \cdot \gamma_{2} \cdot \id_{t(\gamma_{2})^{-1}}),(\id,t(\gamma_{2})))
+\\&=& \beta_l^{-1}(\beta_l^{-1}(q \circ (\id_{\alpha(q)} \cdot \gamma_{1} \cdot \id_{t(\gamma_{1})^{-1}}) \circ ( \id_{\alpha(q)s(\gamma_1)} \cdot \gamma_{2} \cdot \id_{t(\gamma_{2})^{-1}t(\gamma_1)^{-1}}),(\id,t(\gamma_{1}))),(\id,t(\gamma_{2})))
+\\&=& \beta_l^{-1}(q \circ (\id_{\alpha(q)} \cdot \gamma_{1} \cdot \id_{t(\gamma_{1})^{-1}}) \circ ( \id_{\alpha(q)s(\gamma_1)} \cdot \gamma_{2} \cdot \id_{t(\gamma_{2})^{-1}t(\gamma_1)^{-1}}),(\id,t(\gamma_{1}\cdot\gamma_{2})))
+\\&=& \beta_l^{-1}(q \circ (\id_{\alpha(q)} \cdot ((\gamma_{1} \cdot \id_{t(\gamma_{1})^{-1}}) \circ ( \id_{s(\gamma_1)} \cdot \gamma_{2} \cdot \id_{t(\gamma_{2})^{-1}t(\gamma_1)^{-1}}))),(\id,t(\gamma_{1}\cdot\gamma_{2})))
+\\&\stackrel{\text{\erf{eq:lem729id1}}}{=}& \beta_l^{-1}(q \circ (\id_{\alpha(q)} \cdot  \gamma_1 \cdot \gamma_2 \cdot \id_{t(\gamma_2)^{-1}t(\gamma_1)^{-1}}),(\id,t(\gamma_{1}\cdot\gamma_{2})))
+\end{eqnarray*}
+\end{comment}
+\begin{comment}
+The proof of the second identity is
+\begin{eqnarray*}
+(\gamma_{1} \cdot \id_{t(\gamma_{1})^{-1}}) &=& (h_1,g_1)\cdot (1,g_1^{-1}t(h_1)^{-1}) \\&=& (h_1,t(h_1)^{-1})
+\\
+( \id_{s(\gamma_1)} \cdot \gamma_{2} \cdot \id_{t(\gamma_{2})^{-1}t(\gamma_1)^{-1}}) &=& (1,g_1) \cdot (h_2,g_2) \cdot (1,g_2^{-1}t(h_2)^{-1}g_1^{-1}t(h_1)^{-1})
+\\&=& (\lw{g_1}h_2,g_1g_2) \cdot  (1,g_2^{-1}t(h_2)^{-1}g_1^{-1}t(h_1)^{-1})
+\\ &=&  (\lw{g_1}h_2, g_1t(h_2)^{-1}g_1^{-1}t(h_1)^{-1})
+\\
+(\gamma_{1} \cdot \id_{t(\gamma_{1})^{-1}}) \circ ( \id_{s(\gamma_1)} \cdot \gamma_{2} \cdot \id_{t(\gamma_{2})^{-1}t(\gamma_1)^{-1}}) &=&  (h_1,t(h_1)^{-1}) \circ(\lw{g_1}h_2, g_1t(h_2)^{-1}g_1^{-1}t(h_1)^{-1})
+\\&=& (h_1\lw{g_1}h_2, g_1t(h_2)^{-1}g_1^{-1}t(h_1)^{-1})
+\\&=& (h_1,g_1) \cdot (h_2,g_2) \cdot (1,g_2^{-1}t(h_2)^{-1}g_1^{-1}t(h_1)^{-1})
+\\&=& \gamma_1\cdot \gamma_2 \cdot \id_{t(\gamma_2)^{-1}t(\gamma_1)^{-1}}\text{.}
+\end{eqnarray*}
+\end{comment}
+Checking  condition (i) of Definition \ref{def:actionanafunctor} just uses the definitions.
+\begin{comment}
+\begin{eqnarray*}
+\alpha_l(\rho(q,\gamma)) 
+&=& \alpha_l(\beta_l^{-1}(q \circ (\id_{\alpha(q)} \cdot \gamma \cdot \id_{t(\gamma)^{-1}}),(\id_{R(\alpha_l(q),t(\gamma))},t(\gamma))))
+\\&=& t(\id_{R(\alpha_l(q),t(\gamma))})
+\\&=& R(\alpha_l(q),t(\gamma))
+\\
+\alpha_r(\rho(q,\gamma)) &=& \alpha_r(\beta_l^{-1}(q \circ (\id_{\alpha(q)} \cdot \gamma \cdot \id_{t(\gamma)^{-1}}),(\id_{R(\alpha_l(q),t(\gamma))},t(\gamma))))
+\\&=& R(\alpha_r(q \circ (\id_{\alpha(q)} \cdot \gamma \cdot \id_{t(\gamma)^{-1}})),t(\gamma))
+\\&=& R(\alpha_r(q),\alpha(q)^{-1}\alpha(q \circ (\id_{\alpha(q)} \cdot \gamma \cdot \id_{t(\gamma)^{-1}}))t(\gamma))
+\\&=& R(\alpha_r(q),\alpha(q)^{-1}s(\id_{\alpha(q)} \cdot \gamma \cdot \id_{t(\gamma)^{-1}})t(\gamma))
+\\&=& R(\alpha_r(q),s(\gamma))\text{.}
+\end{eqnarray*}
+\end{comment}
+We check condition (ii) in two steps. First we prove the identity
+\begin{equation*}
+\rho(\rho_l(\rho,q),\gamma_l \circ \gamma) = \rho_l(R(\rho,\gamma_l),\rho(q,\gamma))\text{.}
+\end{equation*}
 The main ingredient is the decomposition
-idα (q) · (γl ◦γ) · idt(γ l)−1 = (idα (q) ·γ · idt(γ )−1) ◦ (idα (q)s(γ )t(γ )−1 ·γl · idt(γ l)−1 ) (7.2.5)
-that can e.g. be veriﬁed in the crossed module language. Now we comp ute
-ρ(ρl(ρ,q ),γl ◦γ) = β−1
-l (q ◦ (idα (q) · (γl ◦γ) · idt(γ l)−1 ), (R(ρ,t (γl)),t (γl)))
-(7.2.5)
-= β−1
-l (q ◦ (idα (q) ·γ · idt(γ )−1), (R(ρ,γl),t (γl)))
-= ρl(R(ρ,γl),ρ (q,γ )).
-– 55 –
+\begin{equation}
+\label{eq:lem729id2}
+\id_{\alpha(q)} \cdot (\gamma_l \circ \gamma) \cdot \id_{t(\gamma_l)^{-1}} = (\id_{\alpha(q)} \cdot \gamma \cdot \id_{t(\gamma)^{-1}}) \circ (\id_{\alpha(q)s(\gamma)t(\gamma)^{-1}} \cdot \gamma_l \cdot \id_{t(\gamma_l)^{-1}})
+\end{equation}
+that can e.g. be verified in the crossed module language. 
+\begin{comment}
+Indeed, we have with $\gamma=(h,g)$ and $\gamma_l = (h_l,g_l)$ and $t(\gamma) = t(h)g=g_l=s(\gamma_l)$:
+\begin{eqnarray*}
+\id_{\alpha(q)} \cdot \gamma \cdot \id_{t(\gamma)^{-1}} &=& (\lw{\alpha(q)}{h},\alpha(q)t(h)^{-1})
+\\
+\id_{\alpha(q)s(\gamma)t(\gamma)^{-1}} \cdot \gamma_l \cdot \id_{t(\gamma_l)^{-1}} &=& (\lw{\alpha(q)t(h)^{-1}}{h_l},\alpha(q)t(h)^{-1}t(h_l)^{-1})
+\\
+\id_{\alpha(q)} \cdot (\gamma_l \circ \gamma) \cdot \id_{t(\gamma_l)^{-1}} &=& (\lw{\alpha(q)}{(h_lh)},\alpha(q)t(h)^{-1}t(h_l)^{-1})\text{,}
+\end{eqnarray*}
+and the composition of the first two expressions yields the third.
+\end{comment}
+Now we compute
+\begin{eqnarray*}
+\rho(\rho_l(\rho,q),\gamma_l \circ \gamma) &=& \beta_l^{-1}(q \circ (\id_{\alpha(q)} \cdot (\gamma_l \circ \gamma) \cdot \id_{t(\gamma_l)^{-1}}), (R(\rho,t(\gamma_l)),t(\gamma_l)))
+\\&\stackrel{\text{\erf{eq:lem729id2}}}{=}&  \beta_l^{-1}(q \circ  (\id_{\alpha(q)} \cdot \gamma \cdot \id_{t(\gamma)^{-1}}) ,(R(\rho,\gamma_l),t(\gamma_l)))
+\\&=& \rho_l(R(\rho,\gamma_l),\rho(q,\gamma))\text{.}
+\end{eqnarray*}
 The second step is to show the identity
-ρ(ρr(q,ρ ′),γ ◦γr) = ρr(ρ(q,γ ),R (ρ′,γr)).
+\begin{equation*}
+\rho(\rho_r(q,\rho'),\gamma \circ \gamma_r) = \rho_r(\rho(q,\gamma),R(\rho',\gamma_r))\text{.}
+\end{equation*}
 Here we use the decomposition
-idα (q) · (γ ◦γr) · idt(γ )−1 = (idα (q) ·γ · idt(γ )−1) ◦ (idα (q) ·γr · idt(γ )−1). (7.2.6)
+\begin{equation}
+\label{eq:lem729id3}
+\id_{\alpha(q)} \cdot (\gamma \circ \gamma_r) \cdot \id_{t(\gamma)^{-1}} = (\id_{\alpha(q)} \cdot \gamma \cdot \id_{t(\gamma)^{-1}}) \circ (\id_{\alpha(q)}\cdot \gamma_r \cdot \id_{t(\gamma)^{-1}})\text{.}
+\end{equation}
+\begin{comment}
+For $\gamma=(h,g)$ and $\gamma_r=(h_r,g_r)$ with $g = t(h_r)g_r$ we have
+\begin{eqnarray*}
+\id_{\alpha(q)} \cdot (\gamma \circ \gamma_r) \cdot \id_{t(\gamma)^{-1}} &=&  (\lw{\alpha(q)}{(hh_r),\alpha(q)t(h_r)^{-1}t(h)^{-1}})
+\\
+\id_{\alpha(q)} \cdot \gamma \cdot \id_{t(\gamma)^{-1}} &=&  (\lw{\alpha(q)}{h},\alpha(q)t(h)^{-1})
+\\
+\id_{\alpha(q)}\cdot \gamma_r \cdot \id_{t(\gamma)^{-1}} &=&  (\lw{\alpha(q)}{h_r},\alpha(q)t(h_r)^{-1}t(h)^{-1})
+\end{eqnarray*}
+and the composition of the last two expressions clearly gives the first.
+\end{comment}
 Then we compute
-ρ(ρr(q,ρ ′),γ ◦γr)
-= β−1
-l (βr((R(ρ′, idα (q)−1 ), 1),q ◦ (idα (q) · (γ ◦γr) · idt(γ )−1)), (id,t (γ)))
-(7.2.6)
-= β−1
-l (βr((R(ρ′,γr · ids(γ )−1α (q)−1 ), 1),
-β0(α(q)s(γr)s(γ)−1α(q)−1,q ◦ (idα (q) ·γ · idt(γ )−1))), (id,t (γ)))
-(7.2.4)
-= β−1
-l (βr((R(ρ′,γr · idα (ρ(q,γ ))−1 )),q ◦ (idα (q) ·γ · idt(γ )−1)), (id,t (γ)))
-= ρr(ρ(q,γ ),R (ρ′,γr)),
-where we have employed the equivalence relation on F that was generated by the action of β0. □
-Construction of a 2-isomorphism ηA : A /d43/d51 EM (RA)
-We may again assume that the common reﬁnement of A is the ﬁbre product P0 ×M P ′
-0; otherwise,
-the proof of Lemma 5.2.8 provides a 2-isomorphism between A and one of these. Now, A and
-EM (RA) have the same common reﬁnement, and ηA is given by the map
-η :Q /d47/d47 F × Γ 0 :q ✤ /d47/d47 (q,α (q)).
-This is obviously smooth and respects the projections to the base: if χ(q) = (p,p ′), then
-χ(q,α (q))
-(7.1.6)
-= ( αl(q),R (αr(q),α (q)−1)) = (p,p ′).
-Further, it respects the Γ-actions:
-η(q ◦γ) = (q ◦γ,s (γ)) = β−1
-l (q ◦γ, (id, 1))
-(7.2.3)
-= ( ρ(q, idα (q)−1 ·γ),s (γ))
-(7.1.6)
-= η(q) ◦γ,
-so thatη is a bundle morphism. It remains to verify the commutativity of the co mpatibility diagram
-(5.1.4). Let ((ρ′,g ′),q ′) ∈P ′⊗ζ∗
-1Q, and let (q, (ρ,g )) ∈ζ∗
-2Q⊗P be a representative for β((ρ′,g ′),q ′).
-In particular, we have α(q)g =g′α(q′), since βr is anchor-preserving. Then, we get clockwise
-(η ⊗ id)(β((ρ′,g ′),q ′)) = ((q,α (q)), (ρ,g )). (7.2.7)
-– 56 –
-Counter-clockwise, we have to use the isomorphism of Lemma 7.1.5 th at we call ˜β here. Then,
-˜β((id ⊗η)((ρ′,g ′),q ′)) = ˜β((ρ′,g ′), (q′,α (q′))) = ((˜q,g ′α(q′)g−1), (ρ,g )) (7.2.8)
-where the choices (˜ρ,h ) we have to make for the deﬁnition of ˜β are here (ρ,g −1), and ˜q is deﬁned
-in (7.1.7), which gives here
-˜q =β−1
-l (βr((ρ′, 1),q ′), (R(ρ−1, idg−1 ),g −1)).
-Comparing (7.2.7) and (7.2.8) it remains to prove q = ˜q in F . As F was the quotient of Q by the
-action β0, it suﬃces to have
-β0(g′, ˜q)
-(i)
-= β−1
-l (βr((id,g ′),βr((ρ′, 1),q ′)), (R(ρ−1, idg−1 ),g −1))
-(iii)
-= β−1
-l (βr((ρ′,g ′),q ′), (R(ρ−1, idg−1 ),g −1))
-= β−1
-l (β−1
-l (q, (ρ,g )), (R(ρ−1, idg−1 ),g −1))
-(ii)
-= β−1
-l (q, (id, 1))
-= q.
-This ﬁnishes the construction of the 2-isomorphism ηA.
+\begin{eqnarray*}
+&&\hspace{-1.5cm}\rho(\rho_r(q,\rho'),\gamma \circ \gamma_r) \\&=& \beta_l^{-1}(\beta_r((R(\rho',\id_{\alpha(q)^{-1}}),1),q \circ (\id_{\alpha(q)} \cdot (\gamma \circ \gamma_r) \cdot \id_{t(\gamma)^{-1}})),(\id,t(\gamma)))
+\\&\stackrel{\text{\erf{eq:lem729id3}}}{=}&
+\beta_l^{-1}(\beta_r((R(\rho',\gamma_r\cdot \id_{s(\gamma)^{-1}\alpha(q)^{-1}}),1),\\&&\hspace{2cm}\beta_0(\alpha(q)s(\gamma_r)s(\gamma)^{-1}\alpha(q)^{-1},q \circ (\id_{\alpha(q)} \cdot \gamma \cdot \id_{t(\gamma)^{-1}}))),(\id,t(\gamma)))
+\\&\stackrel{\text{\erf{eq:lem729id1}}}{=}& \beta_l^{-1}(\beta_r((R(\rho',\gamma_r \cdot \id_{\alpha(\rho(q,\gamma))^{-1}})),q \circ (\id_{\alpha(q)} \cdot \gamma \cdot \id_{t(\gamma)^{-1}})),(\id,t(\gamma)))
+\\ &=& \rho_r(\rho(q,\gamma),R(\rho',\gamma_r))\text{,}
+\end{eqnarray*}
+where we have employed the equivalence relation on $F$ that was generated by the action of $\beta_0$. 
+\end{proof}
+
+
+
+\subsubsection{Construction of a 2-isomorphism $\eta_{\mathcal{A}}: \mathcal{A} \Rightarrow \mathscr{E}_M(\mathscr{R}_{\mathcal{A}})$}
+
+
+We may again assume that the common refinement of $\mathcal{A}$ is the fibre product $\mathcal{P}_0 \times_M \mathcal{P}_0'$; otherwise, the proof of Lemma \ref{lem:canonicalrefinement} provides a 2-isomorphism between $\mathcal{A}$ and one of these.  
+Now, $\mathcal{A}$ and $\mathscr{E}_M(\mathscr{R}_{\mathcal{A}})$ have the same common refinement, and $\eta_{\mathcal{A}}$ is given by the map
+\begin{equation*}
+\eta: Q \to F \times \Gamma_0 : q \mapsto (q,\alpha(q))\text{.}
+\end{equation*}
+This is obviously smooth and respects the projections to the base: if $\chi(q)=(p,p')$, then 
+\begin{equation*}
+\chi(q,\alpha(q)) \stackrel{\text{\erf{eq:emorph}}}{=} (\alpha_l(q),R(\alpha_r(q),\alpha(q)^{-1}))=(p,p')\text{.}
+\end{equation*}
+Further, it respects the $\Gamma$-actions:
+\begin{equation*}
+\eta(q \circ \gamma) = (q \circ \gamma, s(\gamma)) = \beta_l^{-1}(q \circ \gamma,(\id,1))  \stackrel{\text{\erf{gammaactionanafunctorconstruction}}}{=} (\rho(q,\id_{\alpha(q)^{-1}}\cdot \gamma),s(\gamma))\stackrel{\text{\erf{eq:emorph}}}{=} \eta(q) \circ \gamma\text{,}
+\end{equation*}
+so that $\eta$ is a bundle morphism. It remains to verify the commutativity of the compatibility diagram \erf{eq:comp2morphsimple}. Let $((\rho',g'),q') \in P' \otimes \zeta_1^{*}Q$, and let $(q,(\rho,g)) \in \zeta_2^{*}Q \otimes P$ be a representative for $\beta((\rho',g'),q')$. In particular, we have $\alpha(q)g=g'\alpha(q')$, since $\beta_r$ is anchor-preserving. Then, we get clockwise
+\begin{equation}
+\label{eq:clockwiseeta}
+(\eta \otimes \id)(\beta((\rho',g'),q')) = ((q,\alpha(q)),(\rho,g))\text{.}
+\end{equation}
+Counter-clockwise, we have to use the isomorphism  of Lemma \ref{lem:eonemorphisms} that we call $\tilde\beta$ here. Then,
+\begin{equation}
+\label{eq:counterclockwiseeta}
+\tilde\beta((\id \otimes \eta)((\rho',g'),q')) = \tilde\beta((\rho',g'),(q',\alpha(q')))
+= ((\tilde q,g'\alpha(q')g^{-1}),(\rho, g))
+\end{equation}
+where the choices $(\tilde\rho,h)$ we have to make for the definition of $\tilde\beta$ are here $(\rho,g^{-1})$, and $\tilde q$ is defined in  \erf{eq:ftilde}, which gives  here
+\begin{equation*}
+\tilde q = \beta_l^{-1}(\beta_r((\rho',1),q'),(R(\rho^{-1},\id_{g^{-1}}),g^{-1}))\text{.}
+\end{equation*}
+\begin{comment}
+Indeed, the full calculation is
+\begin{eqnarray*}
+\tilde q &:=& \rho(\rho_l(\rho^{-1} , \rho_r(q', R(\rho',\id_{\alpha(q')}))),\id_{g^{-1}}) \\&=& \rho(\beta_l^{-1}(\beta_r((\rho',1),q'),(\rho^{-1},1)),\id_{g^{-1}}) \\ &=& \beta_l^{-1}(\beta_r((\rho',1),q'),\mu((\rho^{-1},1) ,(\id,g^{-1}))) \\ &=& \beta_l^{-1}(\beta_r((\rho',1),q'),(R(\rho^{-1},\id_{g^{-1}}),g^{-1}))
+\end{eqnarray*}
+\end{comment}
+Comparing \erf{eq:clockwiseeta} and \erf{eq:counterclockwiseeta} it remains to prove $q = \tilde q$ in $F$. As $F$ was the quotient of $Q$ by the action $\beta_0$, it suffices to have
+\begin{eqnarray*}
+\beta_0(g',\tilde q) &\stackrel{\text{(i)}}{=}& \beta_l^{-1}(\beta_r((\id,g'),\beta_r((\rho',1),q')), (R(\rho^{-1},\id_{g^{-1}}),g^{-1}))
+\\ &\stackrel{\text{(iii)}}{=}& \beta_l^{-1}(\beta_r((\rho',g'),q'), (R(\rho^{-1},\id_{g^{-1}}),g^{-1}))
+\\ &=& \beta_l^{-1}(\beta_l^{-1}(q,(\rho,g)), (R(\rho^{-1},\id_{g^{-1}}),g^{-1}))
+\\ &\stackrel{\text{(ii)}}{=}& \beta_l^{-1}(q,(\id,1))
+\\ &=& q\text{.}
+\end{eqnarray*}
+This finishes the construction of the 2-isomorphism $\eta_{\mathcal{A}}$. 
+
+
+
+
+
+\begin{appendix}
+
+\setsecnumdepth{1}

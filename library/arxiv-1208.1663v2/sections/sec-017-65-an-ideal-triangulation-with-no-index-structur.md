@@ -8,59 +8,31 @@ pages: 22-23
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
 doc_brief: "The 3D index of an ideal triangulation and angle structures — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary"
+text_source: latex
+latex_prose_ratio: 0.963
+latex_coverage_ratio: 0.974
 ---
-T which contains an edge e and a tetrahedron ∆ 1 such that goes around e ﬁve times with
-shapes Z, Z′, Z′, Z′′ and Z′′. Suppose that no other tetrahedron touches e. Then the
-equation for a generalized angle structure around e reads
-α + 2β + 2γ = 2, α +β +γ = 1
-This forces α = 0 so no generalized angle structure has α> 0. Note that the corresponding
-gluing equations around the edge e reads
-z(z′)2(z′′)2 = 1, zz ′z′′ =−1, z ′ = (1−z)−1
-which forces z = 1. Thus the gluing equations have no non-degenerate solution, i.e., no
-solution with shapes in C\{ 0, 1}.
-More complicated examples can be arranged using special conﬁgurations of two or more
-edges and tetrahedra. In all examples that we could generate with no index structure, the
-triangulation is degenerate.
-Of course, the arguments of a shape solution to the gluing equations is a generalized angle
-structure. The latter, however, need not be an index structure if some of the shapes are real,
-or have negative imaginary part; see for instance the triangulation of m064 in Section 6.4.
-6.6. Invariance under the 2↔ 0 move. The next lemma implies the invariance of the
-index of an ideal triangulation under a 2 ↔ 0 move. Such a move is also known as a
-pillowcase move, described in detail in [9, Sec.6].
-Lemma 6.3. For integersm,e,c we have
-∑
-e
-I∆(m,e )I∆(m,e +c)qe =δc,0.
-Proof. Equations (B.1) and (B.2) imply that
-∑
-e
-I∆(m,e )xe = (q−m
-2 +1x−1)∞
-(q−m
-2x)∞
-.
-THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES 23
-Since
-(q−m
-2 +1x−1)∞
-(q−m
-2x)∞
-· (q−m
-2 +1(qx−1)−1)∞
-(q−m
-2 (qx−1))∞
-= 1,
-it follows that ∑
-e,e′
-I∆(m,e )xeI∆(m,e′)qe′
-x−e′
-= 1.
-Therefore, ∑
-e,e′:e−e′=c
-I∆(m,e )I∆(m,e′)qe′
-=δc,0.
-This implies that ∑
-e′
-I∆(m,e′ +c)I∆(m,e′)qe′
-=δc,0.
-The result follows. □
+[]{#sub.noindex label="sub.noindex"}
+
+Consider an ideal triangulation $\mathcal T$ which contains an edge $e$ and a tetrahedron $\Delta_1$ such that goes around $e$ five times with shapes $Z$, $Z'$, $Z'$, $Z''$ and $Z''$. Suppose that no other tetrahedron touches $e$. Then the equation for a generalized angle structure around $e$ reads $$\alpha+ 2 \beta+ 2 \gamma=2, \qquad \alpha+ \beta+ \gamma=1$$ This forces $\alpha=0$ so no generalized angle structure has $\alpha>0$. Note that the corresponding gluing equations around the edge $e$ reads $$z (z')^2 (z'')^2 = 1, \qquad z z' z'' =-1, \qquad z'=(1-z)^{-1} \,$$ which forces $z=1$. Thus the gluing equations have no non-degenerate solution, i.e., no solution with shapes in $\mathbb C\setminus\{0,1\}$.
+
+More complicated examples can be arranged using special configurations of two or more edges and tetrahedra. In all examples that we could generate with no index structure, the triangulation is degenerate.
+
+Of course, the arguments of a shape solution to the gluing equations is a generalized angle structure. The latter, however, need not be an index structure if some of the shapes are real, or have negative imaginary part; see for instance the triangulation of `m064` in Section [\[sub.m064\]](#sub.m064){reference-type="ref" reference="sub.m064"}.
+
+## Invariance under the $2 \leftrightarrow 0$ move {#sub.20move}
+
+The next lemma implies the invariance of the index of an ideal triangulation under a $2\leftrightarrow 0$ move. Such a move is also known as a pillowcase move, described in detail in [@GHRS Sec.6].
+
+::: lemma
+[]{#lem.20move label="lem.20move"} For integers $m,e,c$ we have $$\sum_e I_{\Delta}(m,e)I_{\Delta}(m,e+c) q^e=\delta_{c,0} \,.$$
+:::
+
+::: proof
+*Proof.* Equations [\[eq.QDL\]](#eq.QDL){reference-type="eqref" reference="eq.QDL"} and [\[IDQDL\]](#IDQDL){reference-type="eqref" reference="IDQDL"} imply that $$\sum_e I_{\Delta}(m,e)x^e = 
+\frac{(q^{-\frac{m}{2}+1}x^{-1})_\infty}{
+(q^{-\frac{m}{2}}x)_\infty} \,.$$ Since $$\frac{(q^{-\frac{m}{2}+1}x^{-1})_\infty}{
+(q^{-\frac{m}{2}}x)_\infty} \cdot
+\frac{(q^{-\frac{m}{2}+1}(q x^{-1})^{-1})_\infty}{
+(q^{-\frac{m}{2}}(q x^{-1}))_\infty} =1 \,,$$ it follows that $$\sum_{e,e'} I_{\Delta}(m,e) x^e I_{\Delta}(m,e') q^{e'} x^{-e'}=1 \,.$$ Therefore, $$\sum_{e,e': e-e'=c} I_{\Delta}(m,e) I_{\Delta}(m,e') q^{e'} =\delta_{c,0} \,.$$ This implies that $$\sum_{e'} I_{\Delta}(m,e'+c) I_{\Delta}(m,e') q^{e'}=\delta_{c,0} \,.$$ The result follows. ◻
+:::

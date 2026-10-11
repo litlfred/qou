@@ -311,8 +311,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main_vdM.tex",
-   "tex_sections": 8,
-   "overlaid": 7,
+   "tex_sections": 14,
+   "overlaid": 10,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -327,95 +327,107 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-11-motivation",
      "title": "Motivation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-12-isomorphic-fundamental-groups-via-localized-d",
      "title": "Isomorphic fundamental groups via localized distortion",
-     "result": "no matching \\section"
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.441,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-003-13-stability-of-knot-equivalence",
      "title": "Stability of knot equivalence",
-     "prose_ratio": 0.312,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.844,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-14-symmetric-critical-points-for-scale-invariant",
      "title": "Symmetric critical points for scale-invariant knot energies",
-     "result": "no matching \\section"
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.883,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-15-strategy-and-outline-of-the-paper",
      "title": "Strategy and outline of the paper",
-     "result": "no matching \\section"
+     "prose_ratio": 0.908,
+     "coverage_ratio": 0.92,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-2-sets-with-local-distortion-below-a-quarter-cir",
      "title": "Sets with local distortion below a quarter circle",
-     "prose_ratio": 0.965,
-     "coverage_ratio": 0.652,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-007-3-pseudo-gradient-flow-for-the-distance-function",
      "title": "Pseudo-gradient flow for the distance function",
-     "prose_ratio": 0.96,
-     "coverage_ratio": 0.727,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-008-4-isomorphisms-of-fundamental-groups",
      "title": "Isomorphisms of fundamental groups",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.721,
+     "prose_ratio": 0.663,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-009-5-stability-of-knot-equivalence",
      "title": "Stability of knot equivalence",
-     "prose_ratio": 0.941,
-     "coverage_ratio": 0.786,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.532,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-010-6-harmonic-substitution",
      "title": "Harmonic substitution",
-     "prose_ratio": 0.972,
-     "coverage_ratio": 0.796,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-011-7-weak-fractional-compactness",
      "title": "Weak fractional compactness",
-     "prose_ratio": 0.93,
-     "coverage_ratio": 0.819,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-012-8-symmetric-critical-knots",
      "title": "Symmetric critical knots",
-     "prose_ratio": 0.734,
-     "coverage_ratio": 0.781,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.779,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-013-acknowledgements",
      "title": "Acknowledgements",
-     "result": "no matching \\section"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-014-references",

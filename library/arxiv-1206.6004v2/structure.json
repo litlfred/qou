@@ -271,8 +271,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "sigma12-065.tex",
-   "tex_sections": 5,
-   "overlaid": 1,
+   "tex_sections": 18,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -282,52 +282,74 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.947,
-     "coverage_ratio": 0.893,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-two-sextics",
      "title": "Two sextics",
-     "prose_ratio": 0.348,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.741,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-22-the-hulekcraig-sextic",
      "title": "The Hulek\u2013Craig sextic",
-     "result": "no matching \\section"
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-31-special-points-of-the-hulekcraig-representati",
      "title": "Special points of the Hulek\u2013Craig representation and desingularisation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-32-branched-covers-of-p1",
      "title": "Branched covers of P1",
-     "result": "no matching \\section"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.928,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-41-introduction-to-h",
      "title": "Introduction to H",
-     "result": "no matching \\section"
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.895,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-43-understanding-the-isomorphism-f",
      "title": "Understanding the isomorphism f",
-     "result": "no matching \\section"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-5-vector-of-riemann-constants",
      "title": "Vector of Riemann constants",
-     "prose_ratio": 0.349,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-52-symmetries-and-the-vector-of-riemann-constant",
      "title": "Symmetries and the vector of Riemann constants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-references",

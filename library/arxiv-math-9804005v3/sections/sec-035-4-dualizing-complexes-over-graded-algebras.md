@@ -7,10 +7,10 @@ section_number: 4
 pages: 20-22
 source_pdf: 9804005v3.pdf
 source_sha256: 62d069533bb97a00
-text_source: latex
-latex_prose_ratio: 0.66
-latex_coverage_ratio: 0.921
 doc_brief: "RINGS WITH AUSLANDER DUALIZING COMPLEXES — A ring with an Auslander dualizing complex is a generalizati on of an Auslander-Gorenstein ring."
+text_source: latex
+latex_prose_ratio: 0.997
+latex_coverage_ratio: 0.969
 ---
 In this section we consider connected $\mathbb{Z}$-graded $k$-algebras, namely algebras $A = \bigoplus_{n \geq 0} A_{n}$ with $A_{0} \cong k$ and $A_{n}$ a finitely generated $k$-module.
 
@@ -237,16 +237,16 @@ We do not know if the under the assumptions of the proposition above the Ausland
 :::
 
 ::: proof
-*Proof.* Given a finitely generated graded $A$-module $M$ and a graded $A^{\circ}$-submodule $N \subset \operatorname{Ext}^{q}_{A}(M, R_{A})$ we want to prove that $\operatorname{Ext}^{p}_{A^{\circ}}(N, R_{A}) = 0$ for all $p < q$. Let $L := \{ b \in B \mid \sum_{g \in G} g(b) = 0 \}$, so $B = A \oplus L$. We have isomorphisms of graded $A^{\circ}$-modules $$\begin{multline*}
+*Proof.* Given a finitely generated graded $A$-module $M$ and a graded $A^{\circ}$-submodule $N \subset \operatorname{Ext}^{q}_{A}(M, R_{A})$ we want to prove that $\operatorname{Ext}^{p}_{A^{\circ}}(N, R_{A}) = 0$ for all $p < q$. Let $L := \{ b \in B \mid \sum_{g \in G} g(b) = 0 \}$, so $B = A \oplus L$. We have isomorphisms of graded $A^{\circ}$-modules $$\begin{gathered}
 \operatorname{Ext}^{q}_{A}(M, R_{A}) \oplus
 \operatorname{Ext}^{q}_{A}(L \otimes_{A} M, R_{A}) \cong \\
 \operatorname{Ext}^{q}_{A}(B \otimes_{A} M, R_{A}) \cong
 \operatorname{Ext}^{q}_{B}(B \otimes_{A} M, R_{B})
-\end{multline*}$$ that respect the $G$-action. Note that $G$ acts trivially on $\operatorname{Ext}^{q}_{A}(M, R_{A})$. Consider the graded $B^{\circ}$-module $N \cdot B \subset \operatorname{Ext}^{q}_{B}(B \otimes_{A} M, R_{B})$. Clearly $N \cdot B = N + N \cdot L$. But if $$n = \sum_{i} n_{i} l_{i} \in N \cap (N \cdot L)$$ with $n_{i} \in N$ and $l_{i} \in L$, then $$n = |G|^{-1} \sum_{g \in G} g \left(\sum_{i} n_{i} l_{i} \right)
-= \sum_{i} n_{i} \cdot |G|^{-1} \sum_{g \in G} g(l_{i}) = 0 .$$ We conclude that $N \cdot B = N \oplus N \cdot L$ as graded $A^{\circ}$-modules. Therefore $$\begin{multline*}
+\end{gathered}$$ that respect the $G$-action. Note that $G$ acts trivially on $\operatorname{Ext}^{q}_{A}(M, R_{A})$. Consider the graded $B^{\circ}$-module $N \cdot B \subset \operatorname{Ext}^{q}_{B}(B \otimes_{A} M, R_{B})$. Clearly $N \cdot B = N + N \cdot L$. But if $$n = \sum_{i} n_{i} l_{i} \in N \cap (N \cdot L)$$ with $n_{i} \in N$ and $l_{i} \in L$, then $$n = |G|^{-1} \sum_{g \in G} g \left(\sum_{i} n_{i} l_{i} \right)
+= \sum_{i} n_{i} \cdot |G|^{-1} \sum_{g \in G} g(l_{i}) = 0 .$$ We conclude that $N \cdot B = N \oplus N \cdot L$ as graded $A^{\circ}$-modules. Therefore $$\begin{gathered}
 \operatorname{Ext}^{p}_{A^{\circ}}(N, R_{A}) \oplus
 \operatorname{Ext}^{p}_{A^{\circ}}(N \cdot L, R_{A}) \cong \\
 \operatorname{Ext}^{p}_{A^{\circ}}(N \cdot B, R_{A}) \cong
 \operatorname{Ext}^{p}_{B^{\circ}}(N \cdot B, R_{B}) = 0 .
-\end{multline*}$$ ◻
+\end{gathered}$$ ◻
 :::

@@ -7,10 +7,10 @@ section_number: 4.3
 pages: 131-136
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.991
-latex_coverage_ratio: 0.777
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{geodesic:spectrum:section}
 We now study the geodesic spectrum and the isometry group of hyperbolic manifolds. The geodesic spectrum of $M$ is the set of the lengths of all the closed geodesics in $M$. We prove that a finite-volume $M$ has a discrete geodesic spectrum (with finite multiplicities) and a finite isometry group.\index{geodesic spectrum}
@@ -18,6 +18,7 @@ We now study the geodesic spectrum and the isometry group of hyperbolic manifold
 Then we turn to finite covers and derive some geometric consequences from the residually finiteness of fundamental groups.
 
 We are almost exclusively interested in finite-volume hyperbolic manifolds. The general strategy when proving something about finite-volume hyperbolic manifolds is the following: we first suppose that the manifold is compact for simplicity, and then we adapt the proof to the non-compact case by looking at what happens to the cusps.
+
 
 \subsection{Geodesic spectrum} \label{geodesic:spectrum:subsection}
 We start by proving the following.
@@ -49,6 +50,7 @@ if $\gamma$ wraps multiple times along a curve $\eta$, then $\eta$ is shorter th
 A shortest geodesic may be non-simple when $M$ has cusps! By doubling an ideal triangle along its boundary we construct a hyperbolic surface called the \emph{thrice-punctured sphere} which has three cusps and contains various closed geodesics, none of which is simple. See Chapter \ref{surfaces:chapter}.
 \end{rem}
 
+
 \subsection{Isometry group}
 We now study the isometry group $\Iso(M)$ of a hyperbolic manifold $M$.
 Recall that the \emph{normaliser} $N(H)$ of a subgroup $H < G$ is the set of elements $g\in G$ such that $gH=Hg$. It is the biggest subgroup of $G$ containing $H$ as a normal subgroup.
@@ -77,6 +79,7 @@ Recall that the \emph{centraliser} of $H< G$ is the set of elements $g \in G$ su
 Let $M=\matH^n/_\Gamma$ be a finite-volume hyperbolic manifold. The centralizer of $\Gamma$ in $\Iso(\matH^n)$ is trivial.
 \end{ex}
 
+
 \subsection{Outer automorphism group}
 The \emph{automorphism group} of a group $G$ is the group $\Aut(G)$ of all the isomorphisms $G\to G$. The \emph{inner automorphisms} are those isomorphisms of type $g\mapsto hgh^{-1}$ for some $h\in G$, and they form a normal subgroup $\Int(G)\triangleleft \Aut(G)$. The quotient
 $$\Out(G) = \Aut(G)/_{\Int(G)}$$
@@ -88,6 +91,7 @@ $\pi_1(X,x_0) \to \pi_1(X,x_1)$, unique only up to post-composing with an inner 
 The group $\Omeo(X)$ of all homeomorphisms of $X$ does not act directly on $\pi_1(X)$ because of the inner-automorphism ambiguity, but we get a natural homomorphism 
 $$\Omeo (X) \longrightarrow \Out(\pi_1(X))$$
 which is neither injective nor surjective in general. We note that homotopic self-homeomorphisms give rise to the same element in $\Out(\pi_1(X))$.
+
 
 \subsection{Finite isometry groups}
 We turn back to hyperbolic manifolds. 
@@ -128,6 +132,7 @@ For every $x\in M$ there is a unique geodesic $\gamma_x$ of length $d(x,\varphi_
 
 The finiteness of the isometry groups is peculiar to the hyperbolic world: we will see in Remark \ref{torus:isometries:oss} that the isometry group of a flat torus is infinite.
 
+
 \subsection{Finite covers} \label{finite:covers:subsection}
 Let $M=\matH^n/_\Gamma$ be a complete finite-volume hyperbolic manifold. How many finite covers $\tilde M \to M$ are there above $M$? Quite a lot, thanks to the following.
 
@@ -155,6 +160,7 @@ If $M$ is a closed hyperbolic manifold, for every $R>0$ there is a finite cover 
 \end{cor}
 
 We can summarise this by saying that every closed hyperbolic manifold has arbitrarily fat finite covers.
+
 
 \subsection{Subgroup separability}
 The geometric consequences of residually finiteness are quite remarkable: we now introduce a stronger algebraic notion that will lead to more geometric applications.

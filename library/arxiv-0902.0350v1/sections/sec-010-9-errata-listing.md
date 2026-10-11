@@ -7,10 +7,10 @@ section_number: 9
 pages: 35-38
 source_pdf: 0902.0350v1.pdf
 source_sha256: 4591687132c93973
-text_source: latex
-latex_prose_ratio: 0.994
-latex_coverage_ratio: 0.947
 doc_brief: "A REVISION OF THE PROOFOF THE KEPLER CONJECTURE — The Kepler conjecture asserts that no packing of congruent balls in three-dimensional Euclidean space has density greater than that of the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 The abridged version of the Kepler conjecture
 in the Annals \cite{Hales:2005:Annals}
@@ -47,6 +47,7 @@ In addition to the corrections to the text mentioned below,
 there have been some corrections to the computer code, including some typos in the
 listings of nonlinear inequalities.
 They are described in detail in~\cite{Hales:2008:Errata}.
+
 
 
 \subsection{Listing}\hfill\break

@@ -7,10 +7,10 @@ section_number: VIII
 pages: 14-15
 source_pdf: 2106.01332v4.pdf
 source_sha256: 44c19a99624997bf
-text_source: latex
-latex_prose_ratio: 0.995
-latex_coverage_ratio: 0.52
 doc_brief: "Braided matter interactions in quantum gravity via 1-handle attachment — 9 sections: INTRODUCTION; (for C𝓁(6)) and B3 (for C𝓁(4)). In; THEORIES ON RIBBON GRAPHS"
+text_source: latex
+latex_prose_ratio: 0.851
+latex_coverage_ratio: 1.0
 ---
 \label{Sec:Discussion}
 
@@ -23,3 +23,34 @@ While our result develops an appealing theoretical framework, we stress that at 
 
 
 Among the points to bear in mind for forthcoming investigations, the issue of implementing a covariant representation that encodes quantum fluctuations, without requesting the splitting among space and time, is one of the most urgent. A possible way to overcome this problem could be considering a braided surface that is embedded in a $4$-dimensional space. Deepening the link among braided matter and the emergence of an infrared regulator for gravity is as crucial as the previous point to this line of research, and will deserve detailed forthcoming studies. Finally, demonstrating that the handle attachment hereby introduced instantiates a non-local realization of the scalar Hamiltonian  constraint, would be a major corroboration of the idea that the emergence of matter and gravity are intrinsically related.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Acknowledgement} 
+ We thank the anonymous Referee for comments and suggestions that helped improve the manuscript. 
+NG was supported by the Natural Science Foundation of the Jiangsu Higher Education Institutions of China Programme Grant 19KJB140018 and XJTLU REF-18-02-03 Grant. AM wishes to acknowledge support by the NSFC, through the grant No. 11875113, the Shanghai Municipality, through the grant No. KBH1512299, and by Fudan University, through the grant No. JJH1512105. EZ was supported by the Estonian Research Council through the grant MOBJD679.

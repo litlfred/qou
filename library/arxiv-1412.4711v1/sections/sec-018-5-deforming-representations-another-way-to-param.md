@@ -7,10 +7,10 @@ section_number: 5
 pages: 22-28
 source_pdf: 1412.4711v1.pdf
 source_sha256: 4fb1d6ee062cca8c
-text_source: latex
-latex_prose_ratio: 0.984
-latex_coverage_ratio: 0.948
 doc_brief: "CHARACTER VARIETIES FOR SL (3, C): THE FIGURE EIGHT KNOT — We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{deformation}
 
@@ -83,6 +83,7 @@ properties of the $R_i$ are given mostly without proof; however, the reader can
 check most of them with the aid of suitable computer algebra software.
 \vvv\noind
 
+
 \subsection{The first component, $R_1$}  \label{ss:R1}
 We use the presentation
 \[ \Gamma_8 \h=\h \langle a \bc b \;|\; a\,b\,b\,b\,a\,B\,A\,A\,B \rangle \h,\]
@@ -125,6 +126,7 @@ to unipotent matrices.  These are as follows:
 These form a complex conjugate pair, corresponding to the complete hyperbolic structure
 on the figure-eight knot complement.  The deformation space of the complete structure
 has one complex dimension, as in the classical $\mathrm{PSL(2,\mathbb C)}$ case.
+
 
 
 \subsection{The other two components, $R_2$ and $R_3$}\label{ss:R_2-R_3}
@@ -198,6 +200,7 @@ order $3$.  Since $a \bc c$ generate the knot group $\Gamma_8$, the result follo
 $\alpha = R_2(a\,c) \;,\; \beta = R_2(c\,a\,c)^{-1} \;,\; \gamma = R_2(c)$.  It was
 previously known that the images of the representations $\rho_2 \bc \rho_3$
 were isomorphic to $T(3,3,4)$, see \cite{DF}.
+
 
 \subsection{A focus on the $\mathrm{PU}(2,1)$ case}
 

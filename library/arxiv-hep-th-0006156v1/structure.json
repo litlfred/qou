@@ -1037,7 +1037,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 7,
+   "tex_sections": 34,
    "overlaid": 2,
    "thresholds": {
     "title": 0.85,
@@ -1053,8 +1053,8 @@
     {
      "id": "sec-001-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.951,
-     "coverage_ratio": 0.976,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1290,8 +1290,8 @@
     {
      "id": "sec-047-5-conclusions-and-comments",
      "title": "Conclusions and comments",
-     "prose_ratio": 0.963,
-     "coverage_ratio": 0.995,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },

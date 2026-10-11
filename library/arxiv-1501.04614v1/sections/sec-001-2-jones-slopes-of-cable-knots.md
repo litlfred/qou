@@ -7,10 +7,10 @@ section_number: 2
 pages: 3-7
 source_pdf: 1501.04614v1.pdf
 source_sha256: ebebcae0c1823217
-text_source: latex
-latex_prose_ratio: 0.934
-latex_coverage_ratio: 0.985
 doc_brief: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL II — We continue our study of the degree of the colored Jones polyn omial under knot cabling started in [8]."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 Let $K_{p,q}$ be the $(p,q)$-cable of a knot $K$, where $q > 1$. For $n>0$, let $\CS_n$ be the set of all $k$ such that 
  $$

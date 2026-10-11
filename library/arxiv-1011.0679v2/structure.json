@@ -222,8 +222,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 6,
-   "overlaid": 3,
+   "tex_sections": 10,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -239,51 +239,61 @@
     {
      "id": "sec-001-11-affine-hecke-algebras",
      "title": "Affine Hecke algebras",
-     "result": "no matching \\section"
+     "prose_ratio": 0.417,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-1-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.354,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.14,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-003-12-parabolic-induction",
      "title": "Parabolic induction",
-     "result": "no matching \\section"
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-13-the-schwartz-algebra",
      "title": "The Schwartz algebra",
-     "result": "no matching \\section"
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-14-analytic-r-groups-for-tempered-representation",
      "title": "Analytic R-groups for tempered representations",
-     "prose_ratio": 0.562,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-3-the-arthur-formula",
      "title": "The Arthur formula",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.959,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-007-4-algebras-of-invariants",
      "title": "Algebras of invariants",
-     "prose_ratio": 0.979,
-     "coverage_ratio": 0.903,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-008-5-analytic-r-groups-for-non-tempered-representat",
      "title": "Analytic R-groups for non-tempered representations",
-     "prose_ratio": 0.964,
-     "coverage_ratio": 0.924,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

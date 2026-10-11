@@ -484,7 +484,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "sigma24-055.tex",
-   "tex_sections": 10,
+   "tex_sections": 39,
    "overlaid": 0,
    "thresholds": {
     "title": 0.85,
@@ -505,7 +505,7 @@
     {
      "id": "sec-002-21-the-quantum-modularity-conjecture",
      "title": "The quantum modularity conjecture",
-     "prose_ratio": 0.386,
+     "prose_ratio": 0.131,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -531,7 +531,8 @@
     {
      "id": "sec-007-34-the-quadratic-relation",
      "title": "The quadratic relation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.186,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-008-35-higher-level-and-weight-spaces",

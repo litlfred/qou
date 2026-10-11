@@ -7,12 +7,13 @@ section_number: 12.4
 pages: 391-394
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.986
-latex_coverage_ratio: 0.726
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 The eight three-dimensional geometries include the three isotropic ones, plus five more. Among the five non-isotropic geometries, two are products of lower-dimensional geometries. We analyse them here.
+
 
 \subsection{$S^2 \times \matR$ geometry.}
 We equip $S^2\times \matR$ with the product metric. The product $S^2\times \matR$ is the poorest of the eight geometries, in the sense that there are very few manifolds modelled on $S^2\times \matR$. 
@@ -48,6 +49,7 @@ where $\tau$ is any translation, $\iota$ is the antipodal map and $r,r'$ are ref
 
 Conversely, pick an orientable $M = (S^2\times S^1)/_\Gamma$. The discrete subgroup $\Gamma < \Iso(S^2) \times \Iso(\matR)$ preserves the foliation into spheres $S^2\times \{x\}$ which descends into a foliation into spheres and/or projective planes for $M$. Therefore $M$ decomposes into orientable interval bundles $S^2\times I$ and $\matRP^2\timtil I$, and is hence either $S^2\times S^1$ or $\matRP^2 \timtil S^1$.
 \end{proof}
+
 
 \subsection{$\matH^2 \times \matR$ geometry}
 We give $\matH^2 \times \matR$ the product metric. The discussion of the previous section applies as is to this case, showing that horizontal and vertical planes in the tangent spaces have sectional curvature $-1$ and $0$. This in turn implies that

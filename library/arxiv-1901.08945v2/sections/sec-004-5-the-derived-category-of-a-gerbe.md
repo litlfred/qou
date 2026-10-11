@@ -7,10 +7,10 @@ section_number: 5
 pages: 20-24
 source_pdf: 1901.08945v2.pdf
 source_sha256: df222d76e597057f
-text_source: latex
-latex_prose_ratio: 0.97
-latex_coverage_ratio: 0.957
 doc_brief: "DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES — It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group decomposes accordi ng to the char- acters of"
+text_source: latex
+latex_prose_ratio: 0.997
+latex_coverage_ratio: 0.978
 ---
 []{#sec:decomp-deriv-categ label="sec:decomp-deriv-categ"} In this section we generalize some of the results by Căldăraru [@caldararu2000 Chapter 2] and Lieblich [@lieblich2004 Section 2.2.4] on the basic structure of derived categories of gerbes and twisted sheaves. Throughout the section, we let $\alpha\colon X \to S$ be a gerbe banded by a diagonalizable group $\Delta$ with character group $A$.
 
@@ -23,14 +23,9 @@ Consider the special case $\Delta = {\ensuremath{\mathbb{G}_{\operatorname{m}}}}
 We state the following lemma for convenient reference. See Remark [\[rem-trivial-case\]](#rem-trivial-case){reference-type="ref" reference="rem-trivial-case"} for sharper results.
 
 ::: lemma
-[]{#lem:affine-derived-decomp label="lem:affine-derived-decomp"} Let $S$ be an affine scheme and let $\alpha\colon X \to S$ be a trivial $\Delta$-gerbe, where $\Delta$ is a diagonalizable group. Then the obvious functor $$\begin{equation}
-\label{eq-equiv-qcoh}
-{\operatorname{D}}({\ensuremath{\operatorname{Qcoh}}}(X)) \xrightarrow{\sim} {\operatorname{D}}_{\operatorname{qc}}(X)
-\end{equation}$$ is a monoidal equivalence and induces equivalences $$\begin{equation}
-\label{eq-equiv-qcoh-chi}
-{\operatorname{D}}({\ensuremath{\operatorname{Qcoh}}}_\chi(X)) \xrightarrow{\sim} {\operatorname{D}}_{{\operatorname{qc}}, \chi}(X)
-\end{equation}$$ for each character $\chi$ of $\Delta$. Moreover, let $T$ be an affine scheme and let $\beta\colon X' \to T$ be a trivial $\Delta'$-gerbe, where $\Delta'$ is a diagonalizable group. Assume that we have a morphism $\rho\colon X \to X'$ of algebraic stacks. Then the squares $$\begin{equation}
-\label{eq-commute-derived}
+[]{#lem:affine-derived-decomp label="lem:affine-derived-decomp"} Let $S$ be an affine scheme and let $\alpha\colon X \to S$ be a trivial $\Delta$-gerbe, where $\Delta$ is a diagonalizable group. Then the obvious functor $$\label{eq-equiv-qcoh}
+{\operatorname{D}}({\ensuremath{\operatorname{Qcoh}}}(X)) \xrightarrow{\sim} {\operatorname{D}}_{\operatorname{qc}}(X)$$ is a monoidal equivalence and induces equivalences $$\label{eq-equiv-qcoh-chi}
+{\operatorname{D}}({\ensuremath{\operatorname{Qcoh}}}_\chi(X)) \xrightarrow{\sim} {\operatorname{D}}_{{\operatorname{qc}}, \chi}(X)$$ for each character $\chi$ of $\Delta$. Moreover, let $T$ be an affine scheme and let $\beta\colon X' \to T$ be a trivial $\Delta'$-gerbe, where $\Delta'$ is a diagonalizable group. Assume that we have a morphism $\rho\colon X \to X'$ of algebraic stacks. Then the squares $$\label{eq-commute-derived}
 \xymatrix{
 {\operatorname{D}}({\ensuremath{\operatorname{Qcoh}}}(X')) \ar[r]^-{\sim}\ar[d]_{\mathsf{L}\rho^*} & {\operatorname{D}}_{\operatorname{qc}}(X') \ar[d]^{\rho^*}\\
 {\operatorname{D}}({\ensuremath{\operatorname{Qcoh}}}(X)) \ar[r]^-{\sim}& {\operatorname{D}}_{\operatorname{qc}}(X), \\
@@ -38,8 +33,7 @@ We state the following lemma for convenient reference. See Remark [\[rem-trivia
 \xymatrix{
 {\operatorname{D}}({\ensuremath{\operatorname{Qcoh}}}(X')) \ar[r]^-{\sim} & {\operatorname{D}}_{\operatorname{qc}}(X') \\
 {\operatorname{D}}({\ensuremath{\operatorname{Qcoh}}}(X)) \ar[r]^-{\sim}\ar[u]^{\mathsf{R}\rho_*}& {\operatorname{D}}_{\operatorname{qc}}(X)\ar[u]_{\rho_*} \\
-}
-\end{equation}$$ commute up to natural equivalence.
+}$$ commute up to natural equivalence.
 :::
 
 ::: proof
@@ -57,20 +51,16 @@ Note that $\rho$ induces a morphism $S \to T$ on the coarse spaces, so $\rho$ fa
 The next theorem is the main structure theorem for the derived category of a $\Delta$-gerbe and the derived analog of Theorem [\[t-qc-gerbe-split\]](#t-qc-gerbe-split){reference-type="ref" reference="t-qc-gerbe-split"}. It is a generalization of the observation in [@lieblich2004 Section 2.2.4] that the derived category splits according to characters in certain situations.
 
 ::: theorem
-[]{#t:chi-splitting-D-qc-X label="t:chi-splitting-D-qc-X"} Let $S$ be an algebraic stack and $\alpha\colon X \to S$ a gerbe banded by a diagonalizable group $\Delta$. Then ${\operatorname{D}}_{{\operatorname{qc}}, \chi}(X)$ is a triangulated subcategory of ${\operatorname{D}}_{{\operatorname{qc}}}(X)$ for each $\Delta_S$-character $\chi$, and taking the coproduct gives an equivalence $$\begin{equation}
-\label{eq-equivalence-derived}
+[]{#t:chi-splitting-D-qc-X label="t:chi-splitting-D-qc-X"} Let $S$ be an algebraic stack and $\alpha\colon X \to S$ a gerbe banded by a diagonalizable group $\Delta$. Then ${\operatorname{D}}_{{\operatorname{qc}}, \chi}(X)$ is a triangulated subcategory of ${\operatorname{D}}_{{\operatorname{qc}}}(X)$ for each $\Delta_S$-character $\chi$, and taking the coproduct gives an equivalence $$\label{eq-equivalence-derived}
 \prod_{\chi \in A} {\operatorname{D}}_{{\operatorname{qc}}, \chi}(X) \xrightarrow[{}]{\sim}{\operatorname{D}}_{\operatorname{qc}}(X),
 \qquad
  (\mathcal{F}_\chi)_{\chi \in A} 
 \mapsto 
-\bigoplus_{\chi \in A} \mathcal{F}_\chi,
-\end{equation}$$ of triangulated categories, where $A$ denotes the character group of $\Delta$.
+\bigoplus_{\chi \in A} \mathcal{F}_\chi,$$ of triangulated categories, where $A$ denotes the character group of $\Delta$.
 
-Furthermore, assume that $\mathcal{F}_\chi$ and $\mathcal{G}_\psi$ are objects in ${\operatorname{D}}_{\operatorname{qc}}(X)$ which are homogeneous for $\Delta_S$-characters $\chi$ and $\psi$, respectively. Then the objects $$\begin{equation}
-\label{eq-der-monoidal}
+Furthermore, assume that $\mathcal{F}_\chi$ and $\mathcal{G}_\psi$ are objects in ${\operatorname{D}}_{\operatorname{qc}}(X)$ which are homogeneous for $\Delta_S$-characters $\chi$ and $\psi$, respectively. Then the objects $$\label{eq-der-monoidal}
 \mathcal{F}_\chi \otimes \mathcal{G}_\psi, \qquad
-{\mathcal{H}{om}}(\mathcal{G}_\psi, \mathcal{F}_\chi)
-\end{equation}$$ are $\chi\psi$- and $\chi\psi^{-1}$-homogeneous, respectively.
+{\mathcal{H}{om}}(\mathcal{G}_\psi, \mathcal{F}_\chi)$$ are $\chi\psi$- and $\chi\psi^{-1}$-homogeneous, respectively.
 :::
 
 ::: proof
@@ -80,22 +70,16 @@ Recall that we work with sheaves on the lisse--étale sites over $X$ and $S$. N
 
 Let $E$ be a subset of the set $A$ of characters of $\Delta$, and let ${\ensuremath{\operatorname{Qcoh}}}_E(X)$ denote the full subcategory of ${\ensuremath{\operatorname{Qcoh}}}(X)$ of objects which are direct sums of $\chi$-homogeneous objects for $\chi \in E$. Let $F$ be the complement of $E$ in $A$. It follows from Theorem [\[t-qc-gerbe-split\]](#t-qc-gerbe-split){reference-type="ref" reference="t-qc-gerbe-split"} that $({\ensuremath{\operatorname{Qcoh}}}_E(X), {\ensuremath{\operatorname{Qcoh}}}_F(X))$ is a torsion pair in ${\ensuremath{\operatorname{Qcoh}}}(X)$ and that both ${\ensuremath{\operatorname{Qcoh}}}_E(X)$ and ${\ensuremath{\operatorname{Qcoh}}}_F(X)$ are abelian subcategories of ${\ensuremath{\operatorname{Qcoh}}}(X)$.
 
-Let $\mathcal{E}$ and $\mathcal{F}$ be objects of ${\ensuremath{\operatorname{Qcoh}}}_E(X)$ and ${\ensuremath{\operatorname{Qcoh}}}_F(X)$, respectively. We will show that $$\begin{equation}
-\label{eq-ext-vanishing}
+Let $\mathcal{E}$ and $\mathcal{F}$ be objects of ${\ensuremath{\operatorname{Qcoh}}}_E(X)$ and ${\ensuremath{\operatorname{Qcoh}}}_F(X)$, respectively. We will show that $$\label{eq-ext-vanishing}
 \mathop{\mathrm{Ext}}^n_{\mathcal{O}_X}(\mathcal{E}, \mathcal{F})
-\cong \mathop{\mathrm{H}}^n(\mathsf{R}\Gamma\mathsf{R}{\mathcal{H}{om}}_{\mathcal{O}_X}(\mathcal{E}, \mathcal{F}))
-\end{equation}$$ vanishes for each $n$. Since $\mathsf{R}\Gamma\mathsf{R}{\mathcal{H}{om}}_{\mathcal{O}_X}(\mathcal{E}, \mathcal{F})
+\cong \mathop{\mathrm{H}}^n(\mathsf{R}\Gamma\mathsf{R}{\mathcal{H}{om}}_{\mathcal{O}_X}(\mathcal{E}, \mathcal{F}))$$ vanishes for each $n$. Since $\mathsf{R}\Gamma\mathsf{R}{\mathcal{H}{om}}_{\mathcal{O}_X}(\mathcal{E}, \mathcal{F})
 \cong
-\mathsf{R}\Gamma\mathsf{R}\alpha_\ast\mathsf{R}{\mathcal{H}{om}}_{\mathcal{O}_X}(\mathcal{E}, \mathcal{F}),$ this follows if we prove that $\mathsf{R}\alpha_\ast\mathsf{R}{\mathcal{H}{om}}_{\mathcal{O}_X}(\mathcal{E}, \mathcal{F})$ vanishes. The $n$-th cohomology sheaf of $\mathsf{R}\alpha_\ast\mathsf{R}{\mathcal{H}{om}}_{\mathcal{O}_X}(\mathcal{E}, \mathcal{F})$ is easily seen to be the sheaf of $\mathcal{O}_S$-modules associated to the presheaf $$\begin{equation*}
-(U \to S) \mapsto
+\mathsf{R}\Gamma\mathsf{R}\alpha_\ast\mathsf{R}{\mathcal{H}{om}}_{\mathcal{O}_X}(\mathcal{E}, \mathcal{F}),$ this follows if we prove that $\mathsf{R}\alpha_\ast\mathsf{R}{\mathcal{H}{om}}_{\mathcal{O}_X}(\mathcal{E}, \mathcal{F})$ vanishes. The $n$-th cohomology sheaf of $\mathsf{R}\alpha_\ast\mathsf{R}{\mathcal{H}{om}}_{\mathcal{O}_X}(\mathcal{E}, \mathcal{F})$ is easily seen to be the sheaf of $\mathcal{O}_S$-modules associated to the presheaf $$(U \to S) \mapsto
 \mathop{\mathrm{Ext}}^n_{\mathcal{O}_{X_U}}(\mathcal{E}|_{X_U}, 
-\mathcal{F}|_{X_U})
-\end{equation*}$$ where $U$ is a scheme and $U \rightarrow S$ is smooth. It is therefore enough to verify the vanishing of [\[eq-ext-vanishing\]](#eq-ext-vanishing){reference-type="eqref" reference="eq-ext-vanishing"} when $S$ is affine and the gerbe $\alpha\colon X \to S$ is trivial. But in this situation the functor [\[eq-equiv-qcoh\]](#eq-equiv-qcoh){reference-type="eqref" reference="eq-equiv-qcoh"} is an equivalence by Lemma [\[lem:affine-derived-decomp\]](#lem:affine-derived-decomp){reference-type="ref" reference="lem:affine-derived-decomp"}, so we get the desired vanishing from Lemma [\[p:abelian-torsion-pair\]](#p:abelian-torsion-pair){reference-type="ref" reference="p:abelian-torsion-pair"}.[\[enum:Ext-TF\]](#enum:Ext-TF){reference-type="ref" reference="enum:Ext-TF"} or, more easily, from Theorem [\[t-qc-gerbe-split\]](#t-qc-gerbe-split){reference-type="ref" reference="t-qc-gerbe-split"}.
+\mathcal{F}|_{X_U})$$ where $U$ is a scheme and $U \rightarrow S$ is smooth. It is therefore enough to verify the vanishing of [\[eq-ext-vanishing\]](#eq-ext-vanishing){reference-type="eqref" reference="eq-ext-vanishing"} when $S$ is affine and the gerbe $\alpha\colon X \to S$ is trivial. But in this situation the functor [\[eq-equiv-qcoh\]](#eq-equiv-qcoh){reference-type="eqref" reference="eq-equiv-qcoh"} is an equivalence by Lemma [\[lem:affine-derived-decomp\]](#lem:affine-derived-decomp){reference-type="ref" reference="lem:affine-derived-decomp"}, so we get the desired vanishing from Lemma [\[p:abelian-torsion-pair\]](#p:abelian-torsion-pair){reference-type="ref" reference="p:abelian-torsion-pair"}.[\[enum:Ext-TF\]](#enum:Ext-TF){reference-type="ref" reference="enum:Ext-TF"} or, more easily, from Theorem [\[t-qc-gerbe-split\]](#t-qc-gerbe-split){reference-type="ref" reference="t-qc-gerbe-split"}.
 
-All direct and inverse truncation systems in ${\operatorname{D}}_{\operatorname{qc}}(X)$ are effective by Propositions [\[p:ab4-trunc\]](#p:ab4-trunc){reference-type="ref" reference="p:ab4-trunc"} and [\[p:Dqc-truncation-complete\]](#p:Dqc-truncation-complete){reference-type="ref" reference="p:Dqc-truncation-complete"}. Hence the hypotheses of Theorem [\[t:sod-DBA\]](#t:sod-DBA){reference-type="ref" reference="t:sod-DBA"} are satisfied, so we get a semi-orthogonal decomposition $$\begin{equation}
-\label{eq-so-decomp}
-{\operatorname{D}}_{\operatorname{qc}}(X) = \langle {\operatorname{D}}_{{\operatorname{qc}}, F}(X), {\operatorname{D}}_{{\operatorname{qc}}, E}(X)\rangle,
-\end{equation}$$ where ${\operatorname{D}}_{{\operatorname{qc}}, E}$ denotes the full subcategory of ${\operatorname{D}}_{\operatorname{qc}}(X)$ of objects with cohomology in ${\ensuremath{\operatorname{Qcoh}}}_E(X)$ and similarly for ${\operatorname{D}}_{{\operatorname{qc}}, F}(X)$.
+All direct and inverse truncation systems in ${\operatorname{D}}_{\operatorname{qc}}(X)$ are effective by Propositions [\[p:ab4-trunc\]](#p:ab4-trunc){reference-type="ref" reference="p:ab4-trunc"} and [\[p:Dqc-truncation-complete\]](#p:Dqc-truncation-complete){reference-type="ref" reference="p:Dqc-truncation-complete"}. Hence the hypotheses of Theorem [\[t:sod-DBA\]](#t:sod-DBA){reference-type="ref" reference="t:sod-DBA"} are satisfied, so we get a semi-orthogonal decomposition $$\label{eq-so-decomp}
+{\operatorname{D}}_{\operatorname{qc}}(X) = \langle {\operatorname{D}}_{{\operatorname{qc}}, F}(X), {\operatorname{D}}_{{\operatorname{qc}}, E}(X)\rangle,$$ where ${\operatorname{D}}_{{\operatorname{qc}}, E}$ denotes the full subcategory of ${\operatorname{D}}_{\operatorname{qc}}(X)$ of objects with cohomology in ${\ensuremath{\operatorname{Qcoh}}}_E(X)$ and similarly for ${\operatorname{D}}_{{\operatorname{qc}}, F}(X)$.
 
 We are now ready to prove that the functor [\[eq-equivalence-derived\]](#eq-equivalence-derived){reference-type="eqref" reference="eq-equivalence-derived"} is an equivalence. First note that it is well defined since ${\operatorname{D}}_{\operatorname{qc}}(X)$ has arbitrary coproducts. Let $\chi \in A$ and set $E = \{\chi\}$, $F = A -\{\chi\}$. Then $\mathop{\mathrm{Hom}}_{{\operatorname{D}}_{\operatorname{qc}}(X)}(\mathcal{F}_\chi, \mathcal{G})$ vanishes whenever $\mathcal{F}_\chi \in {\operatorname{D}}_{{\operatorname{qc}}, \chi}(X)$ and $\mathcal{G} \in {\operatorname{D}}_{{\operatorname{qc}}, F}$ by the semi-orthogonal decomposition [\[eq-so-decomp\]](#eq-so-decomp){reference-type="eqref" reference="eq-so-decomp"}. Since ${\operatorname{D}}_{{\operatorname{qc}}, \chi}(X)$ is a full subcategory of ${\operatorname{D}}_{\operatorname{qc}}(X)$, it follows that the functor [\[eq-equivalence-derived\]](#eq-equivalence-derived){reference-type="eqref" reference="eq-equivalence-derived"} is fully faithful.
 
@@ -124,10 +108,8 @@ g_*\colon {\operatorname{D}}_{\operatorname{qc}}(Y) \to {\operatorname{D}}_{\ope
 
 ::: proposition
 []{#t:equivalence-epi-derived label="t:equivalence-epi-derived"} Let $X$ and $X'$ be gerbes over $S$ banded by diagonalizable groups $\Delta$ and $\Delta'$, respectively, and let $\rho\colon X \to X'$ be a morphism over $S$ with induced morphism $\varphi\colon \Delta_S \to \Delta'_S$ on the bands. Fix a character $\chi'\colon \Delta'_S \to {\ensuremath{\mathbb{G}_{\operatorname{m},S}}}$, and let $\chi =
-  \chi' \circ \varphi$. Then the pull-back functor $\rho^*$ takes $\chi'$-homogeneous objects to $\chi$-homogeneous objects and induces an equivalence $$\begin{equation}
-    \label{eq:restricted-pb-derived}
-    \rho^*\colon {\operatorname{D}}_{{\operatorname{qc}},\chi'}(X') \xrightarrow[{}]{\sim}{\operatorname{D}}_{{\operatorname{qc}},\chi}(X)
-\end{equation}$$ of triangulated categories. In particular, if $X' = S$ then $\rho^*\colon {\operatorname{D}}_{\operatorname{qc}}(S) \to {\operatorname{D}}_{\operatorname{qc}}(X)$ is fully faithful with essential image consisting of those objects that are homogeneous for the trivial character.
+  \chi' \circ \varphi$. Then the pull-back functor $\rho^*$ takes $\chi'$-homogeneous objects to $\chi$-homogeneous objects and induces an equivalence $$\label{eq:restricted-pb-derived}
+    \rho^*\colon {\operatorname{D}}_{{\operatorname{qc}},\chi'}(X') \xrightarrow[{}]{\sim}{\operatorname{D}}_{{\operatorname{qc}},\chi}(X)$$ of triangulated categories. In particular, if $X' = S$ then $\rho^*\colon {\operatorname{D}}_{\operatorname{qc}}(S) \to {\operatorname{D}}_{\operatorname{qc}}(X)$ is fully faithful with essential image consisting of those objects that are homogeneous for the trivial character.
 :::
 
 ::: proof
@@ -141,13 +123,7 @@ For the general case, we proceed exactly as in the proof of Proposition [\[t:eq
 Similarly as in the underived case, we get the following corollaries.
 
 ::: corollary
-[]{#cor:twisted-power-derived label="cor:twisted-power-derived"} Let $S$ be an algebraic stacks and let $\alpha\colon X \to S$ be a gerbe banded by $\Delta$, and choose a character $\chi\colon \Delta_S \to {\ensuremath{\mathbb{G}_{\operatorname{m},S}}}$. Then we have an equivalence $$\begin{equation*}
-
-{\operatorname{D}}_{{\operatorname{qc}},\chi_*\alpha}(S)\cong {\operatorname{D}}_{{\operatorname{qc}}, \chi}(X)
-\end{equation*}$$ of categories, where $\chi_*\alpha$ is defined as in Construction [\[cons-gerbe-pf\]](#cons-gerbe-pf){reference-type="ref" reference="cons-gerbe-pf"}. In the particular case when $\Delta = {\ensuremath{\mathbb{G}_{\operatorname{m}}}}$, this gives the equivalence $$\begin{equation*}
-
-{\operatorname{D}}_{{\operatorname{qc}},\alpha^d}(S)\cong {\operatorname{D}}_{{\operatorname{qc}},d}(X)
-\end{equation*}$$ for any $d \in \mathbb{Z}$, where $\alpha^d$ is defined as in Construction [\[cons-gerbe-operations\]](#cons-gerbe-operations){reference-type="ref" reference="cons-gerbe-operations"}.
+[]{#cor:twisted-power-derived label="cor:twisted-power-derived"} Let $S$ be an algebraic stacks and let $\alpha\colon X \to S$ be a gerbe banded by $\Delta$, and choose a character $\chi\colon \Delta_S \to {\ensuremath{\mathbb{G}_{\operatorname{m},S}}}$. Then we have an equivalence $${\operatorname{D}}_{{\operatorname{qc}},\chi_*\alpha}(S)\cong {\operatorname{D}}_{{\operatorname{qc}}, \chi}(X)$$ of categories, where $\chi_*\alpha$ is defined as in Construction [\[cons-gerbe-pf\]](#cons-gerbe-pf){reference-type="ref" reference="cons-gerbe-pf"}. In the particular case when $\Delta = {\ensuremath{\mathbb{G}_{\operatorname{m}}}}$, this gives the equivalence $${\operatorname{D}}_{{\operatorname{qc}},\alpha^d}(S)\cong {\operatorname{D}}_{{\operatorname{qc}},d}(X)$$ for any $d \in \mathbb{Z}$, where $\alpha^d$ is defined as in Construction [\[cons-gerbe-operations\]](#cons-gerbe-operations){reference-type="ref" reference="cons-gerbe-operations"}.
 :::
 
 ::: proof
@@ -155,16 +131,14 @@ Similarly as in the underived case, we get the following corollaries.
 :::
 
 ::: corollary
-[]{#cor:twisted-tensor-derived label="cor:twisted-tensor-derived"} Let $S$ be an algebraic stack and let $\alpha\colon X \to S$ and $\beta\colon Y \to S$ be ${\ensuremath{\mathbb{G}_{\operatorname{m}}}}$-gerbes. Then the tensor product and the internal Hom-functor on ${\operatorname{D}}_{\operatorname{qc}}(X\times_S Y)$ induce triangulated functors $$\begin{align*}
+[]{#cor:twisted-tensor-derived label="cor:twisted-tensor-derived"} Let $S$ be an algebraic stack and let $\alpha\colon X \to S$ and $\beta\colon Y \to S$ be ${\ensuremath{\mathbb{G}_{\operatorname{m}}}}$-gerbes. Then the tensor product and the internal Hom-functor on ${\operatorname{D}}_{\operatorname{qc}}(X\times_S Y)$ induce triangulated functors $$\begin{aligned}
 \otimes & \colon {\operatorname{D}}_{{\operatorname{qc}}, \alpha}(S) \times {\operatorname{D}}_{{\operatorname{qc}}, \beta}(S)
 \to {\operatorname{D}}_{{\operatorname{qc}}, \alpha\beta}(S),\\
 {\mathcal{H}{om}}& \colon {\operatorname{D}}_{{\operatorname{qc}}, \alpha}(S)^{\operatorname{op}}\times {\operatorname{D}}_{{\operatorname{qc}}, \beta}(S)
 \to {\operatorname{D}}_{{\operatorname{qc}}, \alpha^{-1}\beta}(S).
-\end{align*}$$ Furthermore, if $f\colon T \to S$ is an arbitrary morphism of algebraic stacks, then we get an induced pair of adjoint functors $$\begin{equation*}
-  f^* \colon {\operatorname{D}}_{{\operatorname{qc}}, \alpha}(S) \to {\operatorname{D}}_{{\operatorname{qc}}, f^*\alpha}(T),
+\end{aligned}$$ Furthermore, if $f\colon T \to S$ is an arbitrary morphism of algebraic stacks, then we get an induced pair of adjoint functors $$f^* \colon {\operatorname{D}}_{{\operatorname{qc}}, \alpha}(S) \to {\operatorname{D}}_{{\operatorname{qc}}, f^*\alpha}(T),
   \qquad
-  f_* \colon {\operatorname{D}}_{{\operatorname{qc}}, f^*\alpha}(T) \to {\operatorname{D}}_{{\operatorname{qc}}, \alpha}(S).
-\end{equation*}$$
+  f_* \colon {\operatorname{D}}_{{\operatorname{qc}}, f^*\alpha}(T) \to {\operatorname{D}}_{{\operatorname{qc}}, \alpha}(S).$$
 :::
 
 ::: proof
@@ -182,10 +156,8 @@ Finally, it should be emphasized that there certainly are interesting cases when
 ::: remark
 []{#rem:decomposition-O-modules label="rem:decomposition-O-modules"} Theorem [\[t:chi-splitting-D-qc-X\]](#t:chi-splitting-D-qc-X){reference-type="ref" reference="t:chi-splitting-D-qc-X"} would be trivial if the category ${\ensuremath{\operatorname{Mod}}}(X_{\operatorname{lis-\acute{e}t}}, \mathcal{O}_X)$ admitted a decomposition similar to the one for ${\ensuremath{\operatorname{Qcoh}}}(X)$ described in Theorem [\[t-qc-gerbe-split\]](#t-qc-gerbe-split){reference-type="ref" reference="t-qc-gerbe-split"}. We do not know whether this is the case, but we suspect it is not.
 
-In [@sga-3-1-2011 Exposé 1, Proposition 4.7.2], it is stated that the category of (not necessarily quasi-coherent) sheaves of $G-\mathcal{O}_S$-modules on the small Zariski site is equivalent to the category of sheaves of $\mathcal{A}$-comodules for any affine group scheme $G = \mathop{\mathrm{Spec}}_S \mathcal{A}$ over a scheme $S$. If this were true, then it should be possible to adapt the proof to our situation and to get a decomposition of ${\ensuremath{\operatorname{Mod}}}(X_{\operatorname{lis-\acute{e}t}}, \mathcal{O}_X)$. However, we suspect that the previously cited proposition might be wrong, since it uses [@sga-3-1-2011 Exposé 1, Proposition 4.6.4] which in turn uses the fact that the canonical morphism $$\begin{equation}
-  \label{eq:qcoh-push-pull}
-  \mathcal{F}\otimes_S \mathcal{A} \to \alpha_\ast\alpha^\ast\mathcal{F}
-\end{equation}$$ is an isomorphism whenever $\mathcal{F}$ is quasi-coherent and $\alpha\colon X = \mathop{\mathrm{Spec}}_S \mathcal{A} \to S$ is affine. But this is certainly not true in general if we drop the condition that $\mathcal{F}$ be quasi-coherent.
+In [@sga-3-1-2011 Exposé 1, Proposition 4.7.2], it is stated that the category of (not necessarily quasi-coherent) sheaves of $G-\mathcal{O}_S$-modules on the small Zariski site is equivalent to the category of sheaves of $\mathcal{A}$-comodules for any affine group scheme $G = \mathop{\mathrm{Spec}}_S \mathcal{A}$ over a scheme $S$. If this were true, then it should be possible to adapt the proof to our situation and to get a decomposition of ${\ensuremath{\operatorname{Mod}}}(X_{\operatorname{lis-\acute{e}t}}, \mathcal{O}_X)$. However, we suspect that the previously cited proposition might be wrong, since it uses [@sga-3-1-2011 Exposé 1, Proposition 4.6.4] which in turn uses the fact that the canonical morphism $$\label{eq:qcoh-push-pull}
+  \mathcal{F}\otimes_S \mathcal{A} \to \alpha_\ast\alpha^\ast\mathcal{F}$$ is an isomorphism whenever $\mathcal{F}$ is quasi-coherent and $\alpha\colon X = \mathop{\mathrm{Spec}}_S \mathcal{A} \to S$ is affine. But this is certainly not true in general if we drop the condition that $\mathcal{F}$ be quasi-coherent.
 
 Let for example $S$ be a scheme with an open subscheme $U$ such that the inclusion $j \colon U \rightarrow S$ is affine and quasi-compact and $\mathcal{F}=j_! \mathcal{O}_U$ is not quasi-coherent. Then the canonical morphism $j_!
 \mathcal{O}_U \cong \mathcal{F} \otimes j_*\mathcal{O}_U \rightarrow

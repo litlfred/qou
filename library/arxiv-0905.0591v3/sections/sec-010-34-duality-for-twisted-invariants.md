@@ -8,78 +8,98 @@ pages: 9-11
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
 doc_brief: "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
+text_source: latex
+latex_prose_ratio: 0.966
+latex_coverage_ratio: 0.959
 ---
-r ↦→
-r. Let F be a free abelian group, with its natural involution. We exte nd the involution
-on R to the group ring R[F ] and the quotient ﬁeld Q(R[F ]) in the usual way. We equip
-R[F ]k with the standard hermitian inner product ⟨v,w ⟩ =vtw (where we view elements in
-R[F ]k as column vectors).
-LetN be a 3–manifold with empty or toroidal boundary and let α :π1(N ) → GL(k,R [F ])
-a representation. We denote by α :π1(N ) → GL(k,R [F ]) the representation given by
-⟨α(g−1)v,w ⟩ = ⟨v,α(g)w⟩
-for all v,w ∈R[F ]k,g ∈π1(N ). Put diﬀerently, for any g ∈π1(N ) we have
-α(g) = (α(g)−1)t ∈ GL(k,R [F ]).
-We say that a representation is unitary if α =α.
-Note that if ψ : π1(N ) → F is a non–trivial homomorphism to a free abelian group F
-and γ :π1(N ) → GL(k,R ) a representation, then
-γ ⊗ψ =γ ⊗ψ.
-The following duality theorem can be proved using the ideas o f [Ki96] and [KL99a,
-Corollary 5.2].
-10 STEF AN FRIEDL AND STEF ANO VIDUSSI
-Proposition 3.6. Let N be a 3–manifold with empty or toroidal boundary and let α :
-π1(N ) → GL(k,R [F ]) a representation. Then
-τ (N,α ) .=τ (N,a) ∈R[F ].
-In particular if ψ : π1(N ) → F is a non–trivial homomorphism to a free abelian group F
-and γ :π1(N ) → GL(k,R ) is a unitary representation, then τ (N,γ ⊗ψ) is reciprocal, i.e.
-τ (N,γ ⊗ψ) = τ (N,γ ⊗ψ) ∈R[F ].
-It is easy to see that in general the twisted Reidemeister tor sion is not reciprocal if one
-considers representations α such that α(g) ⁄= α(g) for some g ∈ π1(N ). Hillman, Silver
-and Williams [HSW09] give much more subtle examples which sh ow that there also exist
-knots K together with special linear representations such that the corresponding twisted
-Reidemeister torsion is not reciprocal.
-The following proposition follows from the discussion in [F K06].
-Proposition 3.7. Let N be a closed 3–manifold and let α : π1(N ) → GL(k,R [F ]) a
-representation withR a Noetherian UFD. Assume that ∆ α
-N,i ⁄= 0 for all i. Then the following
-equalities hold:
-∆ α
-N,2
-.= ∆
-a
-N,0 and
-∆ α
-N
-.= ∆
-a
-N.
-3.5. Shapiro’s lemma for twisted invariants. Let N be a 3–manifold with empty or
-toroidal boundary. Let p : ˆN → N be a ﬁnite cover of degree d. Let F be a free abelian
-group and let ˆα :π1( ˆN ) → GL(k,R [F ]) a representation.
-Now consider the R[F ]k–module
-Z[π1(N )] ⊗Z[π1( ˆN )]R[F ]k.
-If g1,...,g d are representatives of π1(N )/π1( ˆN ) and if e1,...,e k is the canonical basis of
-R[F ]k, then it is straightforward to see that the above R[F ]–module is a free R[F ]–module
-with basis gi ⊗ej,i = 1,...,d,j = 1,...,k . The group π1(N ) acts on
-Z[π1(N )] ⊗Z[π1( ˆN )]R[F ]k =R[F ]kd
-via left multiplication which deﬁnes a representation π1(N ) → GL(kd,R [F ]) which we
-denote by α.
-Remark. (1) Let ˆγ : π1( ˆN ) → GL(k,R ) be a representation. Let ψ : π1(N ) → F be a
-non–trivial homomorphism to a free abelian group F . We write ˆψ =ψ ◦p∗ and we
-denote by γ the representation given by left multiplication by π1(N ) on
-Z[π1(N )] ⊗Z[π1( ˆN )]Rk =Rkd.
-Given ˆα = ˆγ ⊗ ˆψ we have in that case α =γ ⊗ψ.
-(2) If ˆγ is the trivial one–dimensional representation, and ˆN the cover of N correspond-
-ing to an epimorphism ϕ :π1(N ) →G to a ﬁnite group, then we have γ =ϕ.
-The following is now a variation on Shapiro’s lemma (cf. [FV0 8a, Lemma 3.3] and
-[HKL08, Section 3]).
-A SUR VEY OF TWISTED ALEXANDER POLYNOMIALS 11
-Theorem 3.8. We have
-τ ( ˆN, ˆα) .=τ (N,α ).
-If R is furthermore a Noetherian UFD, then
-∆ ˆα
-ˆN,i
-.= ∆ α
-N,i.
-In its simplest form Theorem 3.8 says that given an epimorphi sm γ : π1(N ) → G to
-a ﬁnite group the corresponding twisted Alexander polynomi als of N are just untwisted
-Alexander polynomials of the corresponding ﬁnite cover.
+\label{section:duality}
+
+Let   $R$ be a ring with a (possibly trivial) involution $r\mapsto \overline{r}$.
+Let $F$ be a free abelian group, with its natural involution. We extend the involution on $R$ to the group ring $R[F]$ and the quotient field $Q(R[F])$ in the usual way.
+We equip $R[F]^k$ with the
+standard hermitian inner product $\langle v ,w \rangle=v^t\overline{w}$ (where we view elements in $R[F]^k$
+as column vectors).
+
+Let $N$ be a 3--manifold with empty or toroidal boundary
+and let $\alpha:\pi_1(N)\to \mbox{GL}(k,R[F])$ a representation.
+We denote by  $\overline{\alpha} : \pi_1(N) \to \mbox{GL}(k,R[F])$  the representation given by
+\[ \langle \alpha(g^{-1})v,w\rangle =\langle v,\overline{\alpha}(g)w\rangle \]
+for all $v,w\in R[F]^k,g\in \pi_1(N)$. Put differently, for any $g\in \pi_1(N)$ we have
+\[ \overline{\alpha}(g)= \overline{\left(\alpha(g)^{-1}\right)^t} \in \mbox{GL}(k,R[F]).\]
+We say that a representation is \emph{unitary} if $\overline{\alpha}=\alpha$.
+
+
+Note that if  $\psi:\pi_1(N)\to F$  is a non--trivial homomorphism to a free abelian group $F$
+and  $\gamma:\pi_1(N)\to \mbox{GL}(k,R)$  a representation, then
+\[ \overline{\gamma \otimes \psi} = \overline{\gamma}\otimes \psi.\]
+
+The following duality theorem can be proved using the ideas of \cite{Ki96} and \cite[Corollary~5.2]{KL99a}.
+
+\begin{proposition}   \label{prop:dualitytau}
+Let $N$ be a 3--manifold with empty or toroidal boundary and let $\alpha:\pi_1(N)\to \mbox{GL}(k,R[F])$ a representation.
+Then
+\[ \overline{\tau(N,{\alpha})} \doteq  {\tau(N,\overline{a})}\in R[F].\]
+In particular if  $\psi:\pi_1(N)\to F$  is a non--trivial homomorphism to a free abelian group $F$
+and  $\gamma:\pi_1(N)\to \mbox{GL}(k,R)$  is a unitary  representation, then $\tau(N,\gamma\otimes \psi)$ is reciprocal, i.e.
+\[ \overline{\tau(N,\gamma\otimes \psi)}=\tau(N,\gamma\otimes \psi)\in R[F].\]
+\end{proposition}
+
+It is easy to see that in general the twisted Reidemeister torsion is not reciprocal if one considers representations
+$\alpha$
+such that  $\alpha(g)\ne \overline{\alpha(g)}$ for some $g\in \pi_1(N)$.
+Hillman, Silver and Williams \cite{HSW09} give much more subtle examples which show that there also exist knots $K$
+together with special linear representations such that the corresponding twisted Reidemeister torsion  is not reciprocal.
+
+The following proposition follows from the discussion in \cite{FK06}.
+
+\begin{proposition} \label{prop:dualitydelta}
+Let $N$ be a closed 3--manifold  and let $\alpha:\pi_1(N)\to \mbox{GL}(k,R[F])$ a representation with $R$  a  Noetherian UFD.
+Assume that  $\Delta_{N,i}^{\alpha} \ne 0$ for all $i$. Then the following equalities hold:
+\[ \overline{\Delta_{N,2}^{\alpha}}\doteq \Delta_{N,0}^{\overline{a}} \mbox{ and }  \overline{\Delta_{N}^{\alpha}}\doteq \Delta_{N}^{\overline{a}}.\]
+\end{proposition}
+
+
+
+
+
+\subsection{Shapiro's lemma for twisted invariants}
+
+Let $N$ be a 3--manifold with empty or toroidal boundary.
+Let $p:\hat{N}\to N$ be a finite cover of degree $d$.
+Let $F$ be a free abelian group and let $\hat{\alpha}:\pi_1(\hat{N})\to \mbox{GL}(k,R[F])$ a representation.
+
+ Now consider  the $R[F]^k$--module
+ \[ \mathbb{Z}[\pi_1({N})]\otimes_{\mathbb{Z}[\pi_1(\hat{N})]} R[F]^k.\]
+ If $g_1,\dots,g_d$ are representatives of $\pi_1(N)/\pi_1(\hat{N})$ and if $e_1,\dots,e_k$ is the canonical basis of $R[F]^k$,
+ then it is straightforward to see that the above $R[F]$--module is a free $R[F]$--module with basis $g_i\otimes e_j, i=1,\dots,d, j=1,\dots,k$.
+ The group $\pi_1(N)$ acts on
+\[ \mathbb{Z}[\pi_1({N})]\otimes_{\mathbb{Z}[\pi_1(\hat{N})]} R[F]^k =R[F]^{kd}\]
+via left multiplication which defines a representation $\pi_1(N)\to \mbox{GL}(kd,R[F])$ which we denote by $\alpha$.
+
+\begin{remark}
+\begin{enumerate}
+\item
+Let  $\hat{\gamma}:\pi_1(\hat{N})\to \mbox{GL}(k,R)$  be a  representation.
+Let  $\psi:\pi_1(N)\to F$ be a non--trivial homomorphism to a free abelian group $F$.
+We write $\hat{\psi}=\psi\circ p_*$ and we  denote by $\gamma$ the
+ representation given by left multiplication by $\pi_1(N)$ on
+\[ \mathbb{Z}[\pi_1({N})]\otimes_{\mathbb{Z}[\pi_1(\hat{N})]} R^k =R^{kd}.\]
+Given $\hat{\alpha}=\hat{\gamma}\otimes \hat{\psi}$ we have in that case $\alpha=\gamma \otimes \psi$.
+\item If $\hat{\gamma}$ is the trivial one--dimensional representation, and $\hat{N}$ the cover of $N$ corresponding to an epimorphism
+$\varphi:\pi_1(N)\to G$ to a finite group, then we have $\gamma=\varphi$.
+\end{enumerate}
+\end{remark}
+
+
+The following is now a variation on Shapiro's lemma (cf. \cite[Lemma~3.3]{FV08a} and \cite[Section~3]{HKL08}).
+
+\begin{theorem}\label{thm:shapiro}
+We have
+\[ \tau(\hat{N},\hat{\alpha}) \doteq \tau(N,\alpha).\]
+If $R$ is furthermore a  Noetherian UFD, then
+\[ \Delta_{\hat{N},i}^{\hat{\alpha}} \doteq  \Delta_{N,i}^{\alpha}.\]
+\end{theorem}
+
+In its simplest form Theorem \ref{thm:shapiro} says that given an
+epimorphism
+$\gamma:\pi_1(N)\to G$ to a finite group the corresponding twisted Alexander polynomials of $N$ are just  untwisted Alexander polynomials of the corresponding finite cover.

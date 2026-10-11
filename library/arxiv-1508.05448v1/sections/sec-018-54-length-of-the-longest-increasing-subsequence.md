@@ -7,10 +7,10 @@ section_number: 5.4
 pages: 110-112
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
-text_source: latex
-latex_prose_ratio: 0.938
-latex_coverage_ratio: 0.992
 doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 Consider a permutation $\pi\in S_n$. An increasing subsequence $i_1,i_2,\dots,i_k$ of a permutation $i\mapsto \pi(i)$ is a subsequence such that $i_1<\dots<i_k$ and $\pi(i_1)<\pi(i_2)<\dots<\pi(i_k)$. We will be concerned with determining the length of the longest increasing subsequence in a given permutation. Denote the length of the longest increasing subsequence of $\pi$ by $\ell(\pi)$.
 

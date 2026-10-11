@@ -8,453 +8,290 @@ pages: 36-40
 source_pdf: 2104.04941v2.pdf
 source_sha256: 84426ed37754aa78
 doc_brief: "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES — Fock and Goncharov [FG06b] introduced cluster ensembles, p roviding a framework for coordi- nates on varieties of surface"
+text_source: latex
+latex_prose_ratio: 0.92
+latex_coverage_ratio: 0.958
 ---
-recall work of Zickert to describe the eﬀect of rot in terms of canonical forms, taking (h1,h 2,h 3,u ) to
-(h3,h 1,h 2,~u). We show, using an identity of Fomin–Zelevinsky, that when a ll hi are trivial, µ∗
-rotTw takes
-coordinates of u to those of ~u. Then we show that the monomial map m of M is exactly what is necessary
-to extend to the general case. The ﬁnal pieces ~µO1 and ~µO2, rearrange the vertices without changing their
-coordinates according to Lemmas 7.1 and 7.2.
-Recall that by Proposition 4.5, we have
-~u =h−1
-2 (w0(h1))−1(ΦΨΦΨ)( u)(w0(h1))h2.
-So we must consider (ΦΨ) 2(u) in terms of minor coordinates, then show that the result agre es in general
-with the cluster action of µrot. In other words, we must show that µ∗
-rot ﬁts into the diagram of Figure 30.
-We interpret the actions of the maps Φ and Ψ on generalized minors, then appeal to an identity of Fomin–
-Zelevinsky that applies at every step of the mutation sequen ce µrotTw.
-Conf ∗
-3(G/N) N− ∩w0G0 (C∗)m
-Conf ∗
-3(G/N) N− ∩w0G0 (C∗)m
-cyc3 (w0(h1)h2)
-(
-ΦΨ) 2(•)
-)
-YV
-µ∗
-rot
-YV
-Figure 30. Maps Φ and Ψ by Proposition 4.5, YV by Deﬁnition 5.18.
-Lemma 7.4. Item 4 of Deﬁnition 4.16 holds for h1 =h2 =h3 are all trivial.
-Proof. By Remark 2.35, we need only consider the commuting diagrams for A-coordinates; the diagrams for
-X -coordinates will then follow immediately by applying p.
-Let ~u = (w0(h1))−1(ΦΨ) 2(u)w0(h1)h2 for notation. The core idea is that, modulo coordinates of hi,
-∆ wkωik ,eωik
-(u) is approximately ∆ w0ωik ,wkωik
-(~u). The mutation sequence µrot transforms ∆ w0ωik ,wkωik
-to
-∆ wkωik ,eωik
-by [FZ99, Theorem 1.17], therefore changing coordinates of u into coordinates of ~u. Later, we
-will show that the monomial map exactly compensates for the c oordinates of hi.
-To be more precise, the coordinate assigned to interior vert exvi,j is (lettingk =k(i,j ) as in Deﬁnition 5.18)
-vi,j = ∆ wkωik ,eωik
-(u) · ∆ ωi (σG(h−1
-1 )h2) · ∆
-wk(i,j) ωi
-⊕ (σG(h1))
-Focusing on the ﬁrst term, consider (ΦΨ) 2(u) = [Ψ([Ψ( u)w0]−)w0]−. Letting x• ∈ N+, h• ∈ H, and
-y• ∈N−,
-y0 =u x 1 = Ψ( y0) y2H2x2 =x1w0
-y2 = (ΦΨ)( u) x3 = Ψ( y2) y4H4x4 =x3w0
-y4 = (ΦΨ) 2(u).
-36
-Expanding those terms, we have
-y4H4x4 =x3w0
-= Ψ( y2)w0
-= Ψ( x1w0x−1
-2 H −1
-2 )w0
-= Ψ(Ψ( y0)w0x−1
-2 H −1
-2 )w0
-= Ψ( H −1
-2 )Ψ(x−1
-2 )Ψ(w0)y0w0
-=H −1
-2 Ψ(x−1
-2 )w0y0w0
-=
-∈N−
-/bracehtipdownleft/bracehtipupright/bracehtipupleft/bracehtipdownright
-H −1
-2 Ψ(x−1
-2 )H2 ·
-∈H/bracehtipdownleft/bracehtipupright/bracehtipupleft/bracehtipdownright
-H −1
-2 sG ·
-∈N+
-/bracehtipdownleft/bracehtipupright/bracehtipupleft/bracehtipdownright
-w0−1y0w0
-Extracting the N− term, (ΦΨ) 2(u) = y4 =H −1
-2 Ψ(x−1
-2 )H2, which we can rewrite via
-H2 = [Ψ( y0)w0]0, x 2 = Ψ([Ψ( y0)w0]−1
-+ ).
-Now, consider the minor ∆ w0ωik ,wkωik
-(y4). Denote by w∗
-k the word deﬁned by Deﬁnition 2.18 using ﬁxed
-presentation i∗ =σG(i). By relying on a number of identities from [FZ99],
-∆ w0ωik ,wkωik
-(H −1
-2 Ψ(x−1
-2 )H2) =
-∆ w0ωik ,wkωik
-(Ψ(x−1
-2 )) · ∆ wkωik ,wkωik
-(H2)
-∆ w0ωik ,w0ωik
-(H2)([FZ99, Equation 2.14])
-∆ w0ωik ,wkωik
-(Ψ(x−1
-2 )) = ∆ wkωik ,w0ωik
-(x−1
-2 )([FZ99, Equation 2.25])
-= ∆ wkωik ,w0ωik
-(Ψ([Ψ( y0)w0]−1
-+ )−1)
-= ∆ w∗
-kωi∗
-k
-,w0ωi∗
-k
-(w0[Ψ(y0)w0]−1
-+ w0
-−1)
-= ∆ w0w∗
-kωi∗
-k
-,eωi∗
-k
-([Ψ(y0)w0]−1
-+ )
-= ∆ w0w∗
-kωi∗
-k
-,eωi∗
-k
-([w0y0]−)
-=
-(
-∆ w0w∗
-kωi∗
-k
-,eωi∗
-k
-(w0y0)
-)/(
-∆ eωi∗
-k
-,eωi∗
-k
-(w0y0)
-)
-([FZ99, Equation 2.23])
-=
-(
-∆ w∗
-kωi∗
-k
-,eωi∗
-k
-(y0)
-)/(
-∆ ωi∗
-k ([w0
-−1y0]0)
-)
-Also, by Lemma 4.3, H2 = [Ψ( y0)w0]0 = [w0−1y0]0 = (w0(h3h1)h2)−1, where the hi in the last term refer
-to the elements of H in the canonical form for Conf ∗
-3(G/N+). Writing solely in terms of (h1,h 2,h 3,u )), we
-have
-∆ w0ωik ,wkωik
-((ΦΨ) 2(u)) = ∆ w∗
-kωi∗
-k
-,eωi∗
-k
-(u) ·
-∆ w0ωik ,w0ωik
-(w0(h3h1)h2)∆ eωi∗
-k
-,eωi∗
-k
-(w0(h3h1)h2)
-∆ wkωik ,wkωik
-(w0(h3h1)h2)
-= ∆ w∗
-kωi∗
-k
-,eωi∗
-k
-(u) · 1
-∆ wkωik ,wkωik
-(w0(h3h1)h2)
-Now, introducing the factor of w0(h1)h2, we have
-∆ w0ωik ,wkωik
-(~u) = ∆ w0ωik ,wkωik
-((w0(h1))−1(ΦΨ) 2(u)w0(h1)h2)
-= ∆ w0ωik ,wkωik
-((ΦΨ) 2(u)) · ∆ w0ωik ,w0ωik
-(w0(h1)−1h−1
-2 ) · ∆ wkωik ,wkωik
-(w0(h1)h2)
-= ∆ w∗
-kωi∗
-k
-,eωi∗
-k
-(u) · 1
-∆ wkωik ,wkωik
-(w0(h3))∆ w0ωik ,w0ωik
-(w0(h1)h2)
-Thus, including the assignment of the monomial map m, the coordinate at vi,j is given by
-vi,j = ∆ w0ωik ,wkωik
-(~u) ·
-1/bracehtipdownleft /bracehtipupright/bracehtipupleft /bracehtipdownright
-∆ eωii ,eωii (w0(h1)h2) · ∆ w0ωik ,w0ωik
-(w0(h1)h2) ·∆ wkωik ,wkωik
-(w0(h3)) · ∆
-wkωik
-⊕ (w0(h−1
-1 ))
-= ∆ w0ωik ,wkωik
-(~u ·w0(h3)) · ∆
-wkωik
-⊕ (w0(h−1
-1 ))
-37
-In the case that h1 =h2 =h3 =e, we may ignore the frozen vertices of the quiver. The proof is completed
-by appealing to the identity of [FZ99, Theorem 1.17], which s tates that when length(usi) = length(u) + 1
-and length(vsi) = length(v) + 1,
-∆ uωi,vωi∆ usiωi,vsiωi = ∆ usiωi,vωi ∆ vωi,usiωi +
-∏
-j⁄=i
-∆ −aji
-uωi,vωi.
-This identity exactly matches the quiver mutation relation at each step of µrotTw, so each ~µCol(i) in µrot
-transforms the coordinates of vi,• from
-∆ cnωj,cmωj (~u)
-to
-∆ cn−1ωj ,cm−1ωj (~u).
-Thus, after applying µrotTw the vertex vi,j has coordinate
-∆ w∗
-m+r−kωi∗
-k
-,eωi∗
-k
-(~u).
-By Lemmas 7.1 and 7.2, ~µO1 converts the wm+r−k to wk, and ~µO2 removes the ·∗. Thus µrot changes
-coordinates for u into those for h−1
-2 w0(h1)−1(ΦΨ) 2(u)w0(h1)h2 as desired. □
-Proof of Lemma 5.10. Since we ignored frozen vertices above, the result applies t o Q0. Since the quiver
-mutation changes coordinates of α to those of rot(α), it is of order 3 and induces a graph isomorphism. □
-Lemma 7.5. Item 4 of Deﬁnition 4.16 holds for arbitrary h1,h 2,h 3.
-Proof. In the case that h1,h 2,h 3 are not trivial, we must verify that the equation of [FZ99, Th eorem 1.17]
-still holds with the frozen vertices considered, which intr oduce factors not included in the equation. Again,
-we only consider A-coordinates by Remark 2.35. We note the following:
-• The vertices Bk take the place of ∆ w0ωik ,eωik
-(~u) = χi∗
-k ([w0−1~u]0) = χi∗
-k (w0(h2h3)h1)−1 in the
-equation. Therefore, they should be considered as
-Bk = ∆ w0ωik ,eωik
-(~u) · Ak∗
-Ck
-= ∆ w0ωik ,eωik
-(~u ·w0(h3)) ·Ak∗.
-• If, at each step of the mutation, the frozen vertices and the m onomial map m induce equal extra
-factors on the ∆ usiωi,vωi∆ vωi,usiωi and∏
-j⁄=i ∆ −aji
-uωi,vωi terms, then the diﬀerence of the ﬁnal terms
-from coordinates of ~u will also be a monomial map.
-• If this ﬁnal diﬀerence monomial map matches m, the result will be proven.
-• Since the extra factors at each coordinate are given by a mono mial map, each frozen vertex may be
-checked individually.
-For any particular group, these results may be veriﬁed by a fe w numerical calculations: to verify the
-monomial identity xa1
-1 · · ·xam
-m
-?
-= xb1
-1 · · ·xbm
-m , taking log of both sides reduces to ∑
-i log(xi)(ai −bi)
-?
-= 0 .
-Therefore, evaluating at m + 1 linearly independent choices of vector ⟨log(xi)⟩ veriﬁes the result. This has
-been carried out for the exceptional groups. The test-murot sub-program of [Gil20] may be used for this
-purpose.
-We present an argument that the coordinates of h1 are treated correctly by the monomial map and µrot
-for type Dn; other arguments are similar.
-We will ignore all terms other than h1,j =Aj, and annotate vertices with these. Half the Coxeter number
-minus one will be denoted ℓ, which in the case of Dn is equal to n − 2. Then we will trace the eﬀects of
-µrotTw in general. The objective is to show that, starting with the a ssignments given by the monomial factors
-attached to ∆ w0ωik ,wkωik
-(~u) above, we end with those factors of given by the monomial map m following
-rot (i.e. the powers associated to h2 by m). Before applying any mutations, QDn is as in Figure 31. The
-formula for Aj factors is, following ∆
-wkωik
-⊕ (w0(h−1
-1 )),
-at vi,j :
-
-
-
-Aj i ≥n − 1
-Aj i<n − 1,i +j <n
-AjAi+j+1−n i<n − 1,i +j ≥n
-at Ak :Ak, at Bk :Ak∗, at Ck : 1
-38
-A1A2
-· · ·
-Aℓ−1Aℓ
-A1A2
-· · ·
-Aℓ−1A1Aℓ
-...............
-A1A2
-· · ·
-Aℓ−3Aℓ−1Aℓ−2Aℓ
-A1A1A2
-· · ·
-Aℓ−2Aℓ−1Aℓ−1Aℓ
-A1A2
-· · ·
-Aℓ−1Aℓ
-A1A2
-· · ·
-Aℓ−1Aℓ
-A1
-A2
-...
-Aℓ−1
-Aℓ
-An
-An−1
-1
-1
-...
-1
-1
-1
-1
-A1A2
-· · ·
-Aℓ−1Aℓ
-An−1
-An
-Figure 31. QDn before any mutation.
-After one iteration of ~µCol(1), by straight-forward induction the factor at vi,j matches that at vi,j+1, as
-in Figure 32.
-A2A2
-· · ·
-Aℓ−1Aℓ
-A2A2
-· · ·
-Aℓ−1A1Aℓ
-...............
-A2A2
-· · ·
-Aℓ−3Aℓ−1Aℓ−2Aℓ
-A1A2A1A2
-· · ·
-Aℓ−2Aℓ−1Aℓ−1Aℓ
-A2A2
-· · ·
-Aℓ−1Aℓ
-A2A2
-· · ·
-Aℓ−1Aℓ
-A1
-A2
-...
-Aℓ−1
-Aℓ
-An
-An−1
-1
-1
-...
-1
-1
-1
-1
-A1A2
-· · ·
-Aℓ−1Aℓ
-An−1
-An
-Figure 32. QDn after~µCol(1).
-After∏ ℓ
-y=1~µCol(y), this pattern continues as shown in Figure 33: for j < ℓ, we have the factor at vi,j
-matching the original factor at vi,j+1. At vi,ℓ, however, the factor matches the original factor associate d to
-39
-Bi. Therefore, the new formula for Aj factors at vi,j is
-at vi,j :
-
-
-
-Ai∗ j =ℓ
-Aj+1 j <ℓ,i ≥n − 1
-Aj+1 j <ℓ,i<n − 1,i +j <n
-Aj+1Ai+j+2−n j <ℓ,i<n − 1,i +j ≥n
-A2A3
-· · ·
-AℓA1
-A2A3
-· · ·
-A1AℓA2
-...............
-A2A3
-· · ·
-Aℓ−2AℓAℓ−1
-A1A2A2A3
-· · ·
-Aℓ−1AℓAℓ
-A2A3
-· · ·
-AℓAn
-A2A3
-· · ·
-AℓAn−1
-A1
-A2
-...
-Aℓ−1
-Aℓ
-An
-An−1
-1
-1
-...
-1
-1
-1
-1
-A1A2
-· · ·
-Aℓ−1Aℓ
-An−1
-An
-Figure 33. QDn after∏ ℓ
-y=1~µCol(y).
-Each successive ∏ ...
-y=1~µCol(y) performs the same adjustment: factors of Aj are copied from left to right.
-As can be shown by induction, after ∏ k
-x=1
-∏ ℓ+1−x
-y=1 ~µCol(y), the formula for Aj factors at vi,j is
-at vi,j :
-
-
-
-Ai∗ j >ℓ −k
-Aj+k j ≤ℓ −k,i ≥n − 1
-Aj+k j ≤ℓ −k,i<n − 1,i +j <n
-Aj+kAi+j+1+k−n j ≤ℓ −k,i<n − 1,i +j ≥n
-Thus, after applying µrotTw, each vi,j has a factor of Ai∗ attached. Since the monomial map m associates
-a factor of ∆ ωi (h2) = Bi, rotation renames A• to B•, and ~µO1 renames vi,j to vi∗,j, the result is proven.
-Proofs that the monomial map works correctly for factors of h2 and h3 for type D, and for all factors of
-type A, B, and C, have similar forms, and the result has been numerically che cked for exceptional types.
-This proves the result in all cases. □
+\label{sec:proof-of-rot}
+
+  We now turn to verifying the longer mutations, starting with $\murot$.
+  First, we recall work of Zickert to describe the effect of
+  $\operatorname{rot}$ in terms of canonical forms, taking $(h_1, h_2,
+  h_3, u)$ to $(h_3, h_1, h_2, \widetilde{u})$. We show, using an
+  identity of Fomin--Zelevinsky, that when all $h_i$ are trivial,
+  $\murottwistind$ takes coordinates of $u$ to those of $\widetilde{u}$.
+  Then we show that the monomial map $\monomialmap$ of $\conftoquiv$ is
+  exactly what is necessary to extend to the general case. The final
+  pieces $\muint{O1}$ and $\muint{O2}$, rearrange the vertices without
+  changing their coordinates according to
+  \cref{lem:colsigmaG-does-sigmaG,lem:rowsigmaG-does-sigmaG}.
+
+  Recall that by \cref{prop:Phi-Psi-and-rot}, we have \[ \widetilde{u} =
+    h_2^{-1} (w_0(h_1))^{-1} (\Phi \Psi \Phi \Psi)(u) (w_0(h_1)) h_2. \]
+  So we must consider $(\Phi \Psi)^{2}(u)$ in terms of minor
+  coordinates, then show that the result agrees in general with the
+  cluster action of $\murot$. In other words, we must show that
+  $\murotind$ fits into the diagram of \cref{fig:Psi-Phi-murot-cd}. We
+  interpret the actions of the maps $\Phi$ and $\Psi$ on generalized
+  minors, then appeal to an identity of Fomin--Zelevinsky that applies
+  at every step of the mutation sequence $\murottwist$.
+
+  \begin{figure}[h]
+    \centering \includestandalone[mode=image|tex]{fig/Psi-Phi-murot-cd}
+
+    \caption{Maps $\Phi$ and $\Psi$ by \cref{prop:Phi-Psi-and-rot},
+      $\minorcoordmap_V$ by \cref{def:conf_3_star-to-seed-torus}.
+      \label{fig:Psi-Phi-murot-cd}
+    }
+  \end{figure}
+
+  \begin{lemma}
+    \label{lem:fgcs-exists-rot-works-trivial}
+    \Cref{def:fgcs-rot-works} of \cref{def:fgcs} holds for $h_1 = h_2 =
+    h_3$ are all trivial.
+
+  \end{lemma}
+  \begin{proof}
+    By \cref{rem:p-commutes-with-mutation}, we need only consider the
+    commuting diagrams for $\mathcal{A}$-coordinates; the diagrams for
+    $\mathcal{X}$-coordinates will then follow immediately by applying
+    $\TtoZ$.
+
+    Let $\widetilde{u} = (w_0(h_1))^{-1} (\Phi \Psi)^2(u) w_0(h_1) h_2$
+    for notation. The core idea is that, modulo coordinates of $h_i$,
+    $\genminoryz{w_k}{e}{i_k}(u)$ is approximately
+    $\genminoryz{w_0}{w_k}{i_k}(\widetilde{u})$. The mutation sequence
+    $\murot$ transforms $\genminoryz{w_0}{w_k}{i_k}$ to
+    $\genminoryz{w_k}{e}{i_k}$ by
+    \cite[Theorem~1.17]{fominzelevinsky1999}, therefore changing
+    coordinates of $u$ into coordinates of $\widetilde{u}$. Later, we
+    will show that the monomial map exactly compensates for the
+    coordinates of $h_i$.
+
+    To be more precise, the coordinate assigned to interior vertex
+    $v_{i,j}$ is (letting $k = k(i,j)$ as in
+    \cref{def:conf_3_star-to-seed-torus}) \[ v_{i,j} =
+      \genminoryz{w_k}{e}{i_k}(u) \cdot
+      \genminor{}{i}(\sigma_G(h_1^{-1}) h_2) \cdot \genminornumerator{w_{k(i,j)}}{\fundamentalweight_i}(\sigma_G(h_1))
+    \] Focusing on the first term, consider $(\Phi \Psi)^2(u) = [ \Psi([
+        \Psi(u) \lifttoG{w_0} ]_{-}) \lifttoG{w_0} ]_{-}$. Letting
+    $x_{\bullet} \in N_{+}$, $h_{\bullet} \in H$, and $y_{\bullet} \in
+    N_{-}$,
+    \begin{align*}
+      y_0 &= u & x_1 &= \Psi(y_0) & y_2 H_2 x_2 &= x_1 \lifttoG{w_0} \\
+      y_2 &= (\Phi \Psi)(u) & x_3 &= \Psi(y_2) & y_4 H_4 x_4 &= x_3 \lifttoG{w_0} \\
+      y_4 &= (\Phi \Psi)^2(u).
+    \end{align*}
+    Expanding those terms, we have
+    \begin{align*}
+      y_4 H_4 x_4 &= x_3 \lifttoG{w_0} \\
+      &= \Psi(y_2) \lifttoG{w_0} \\
+      &= \Psi(x_1 \lifttoG{w_0} x_2^{-1} H_2^{-1}) \lifttoG{w_0} \\
+      &= \Psi(\Psi(y_0) \lifttoG{w_0} x_2^{-1} H_2^{-1}) \lifttoG{w_0} \\
+      &= \Psi(H_2^{-1}) \Psi(x_2^{-1}) \Psi(\lifttoG{w_0}) y_0 \lifttoG{w_0} \\
+      &= H_2^{-1} \Psi(x_2^{-1}) \lifttoG{w_0} y_0 \lifttoG{w_0} \\
+      &= \overbrace{H_2^{-1} \Psi(x_2^{-1}) H_2}^{\in N_{-}} \cdot \overbrace{H_2^{-1} s_G}^{\in H} \cdot \overbrace{\lifttoG{w_0}^{-1} y_0 \lifttoG{w_0}}^{\in N_{+}}
+    \end{align*}
+    Extracting the $N_{-}$ term, $(\Phi \Psi)^2(u) = y_4 = H_2^{-1}
+    \Psi(x_2^{-1}) H_2$, which we can rewrite via \[ H_2 = [ \Psi(y_0)
+        \lifttoG{w_0} ]_{0}, \qquad x_2 = \Psi([\Psi(y_0) \lifttoG{w_0}
+      ]_{+}^{-1}). \]
+
+    Now, consider the minor $\genminoryz{w_0}{w_k}{i_k}(y_4)$. Denote by
+    $w_k^{\ast}$ the word defined by \cref{def:gamma-k} using fixed
+    presentation $\word{i}^{\ast} = \sigma_G(\word{i})$. By relying on a
+    number of identities from \cite{fominzelevinsky1999},
+    \begin{align*}
+      \genminoryz{w_0}{w_k}{i_k}(H_2^{-1} \Psi(x_2^{-1}) H_2) &= \frac{\genminoryz{w_0}{w_k}{i_k}(\Psi(x_2^{-1})) \cdot \genminoryz{w_k}{w_k}{i_k}(H_2)}{\genminoryz{w_0}{w_0}{i_k}(H_2)} \tag{\cite[Equation~2.14]{fominzelevinsky1999}} \\
+      \genminoryz{w_0}{w_k}{i_k}(\Psi(x_2^{-1})) &= \genminoryz{w_k}{w_0}{i_k}(x_2^{-1}) \tag{\cite[Equation~2.25]{fominzelevinsky1999}} \\
+      &= \genminoryz{w_k}{w_0}{i_k}( \Psi([\Psi(y_0)\lifttoG{w_0} ]_{+}^{-1})^{-1} ) \\
+      &= \genminoryz{w_k^{\ast}}{w_0}{i_k^{\ast}}( \lifttoG{w_0} [\Psi(y_0)\lifttoG{w_0} ]_{+}^{-1} \lifttoG{w_0}^{-1} ) \\
+      &= \genminoryz{w_0w_k^{\ast}}{e}{i_k^{\ast}}( [\Psi(y_0)\lifttoG{w_0} ]_{+}^{-1} ) \\
+      &= \genminoryz{w_0w_k^{\ast}}{e}{i_k^{\ast}}( [\lifttoG{w_0} y_0]_{-} ) \\
+      &= \left(\genminoryz{w_0w_k^{\ast}}{e}{i_k^{\ast}}( \lifttoG{w_0} y_0 )\middle) \middle/ \middle(\genminoryz{e}{e}{i_k^{\ast}}(\lifttoG{w_0} y_0) \right) \tag{\cite[Equation~2.23]{fominzelevinsky1999}} \\
+      &= \left(\genminoryz{w_k^{\ast}}{e}{i_k^{\ast}}( y_0 ) \middle) \middle/ \middle( \genminor{}{i_k^{\ast}}([\lifttoG{w_0}^{-1} y_0]_{0}) \right)
+    \end{align*}
+    Also, by \cref{lem:canonical-form-for-conf_3_star}, $H_2 =
+    [\Psi(y_0) \lifttoG{w_0}]_{0} = [\lifttoG{w_0}^{-1} y_0]_{0} =
+    (w_0(h_3 h_1) h_2)^{-1}$, where the $h_i$ in the last term refer to
+    the elements of $H$ in the canonical form for
+    $\Conf_{3}^{\ast}(G/N_{+})$. Writing solely in terms of $(h_1, h_2,
+    h_3, u)$), we have
+    \begin{align*}
+      \genminoryz{w_0}{w_k}{i_k}((\Phi \Psi)^2(u)) &= \genminoryz{w_k^{\ast}}{e}{i_k^{\ast}}(u) \cdot \frac{ \genminoryz{w_0}{w_0}{i_k}( w_0(h_3 h_1)h_2 ) \genminoryz{e}{e}{i_k^{\ast}}( w_0(h_3 h_1)h_2 ) }{ \genminoryz{w_k}{w_k}{i_k}( w_0(h_3 h_1) h_2 ) } \\
+      &= \genminoryz{w_k^{\ast}}{e}{i_k^{\ast}}(u) \cdot \frac{ 1 }{ \genminoryz{w_k}{w_k}{i_k}( w_0(h_3 h_1) h_2 ) } \\
+    \end{align*}
+    Now, introducing the factor of $w_0(h_1) h_2$, we have
+    \begin{align*}
+      \genminoryz{w_0}{w_k}{i_k}(\widetilde{u}) &= \genminoryz{w_0}{w_k}{i_k}((w_0(h_1))^{-1} (\Phi \Psi)^2(u) w_0(h_1) h_2) \\
+      &= \genminoryz{w_0}{w_k}{i_k}((\Phi \Psi)^2(u)) \cdot \genminoryz{w_0}{w_0}{i_k}(w_0(h_1)^{-1}h_2^{-1}) \cdot \genminoryz{w_k}{w_k}{i_k}(w_0(h_1)h_2) \\
+      &= \genminoryz{w_k^{\ast}}{e}{i_k^{\ast}}(u) \cdot \frac{1}{ \genminoryz{w_k}{w_k}{i_k}(w_0(h_3)) \genminoryz{w_0}{w_0}{i_k}(w_0(h_1) h_2) }
+    \end{align*}
+
+    Thus, including the assignment of the monomial map $\monomialmap$,
+    the coordinate at $v_{i,j}$ is given by
+    \begin{align*}
+      v_{i,j} &= \genminoryz{w_0}{w_k}{i_k}(\widetilde{u}) \cdot \overbrace{\genminoryz{e}{e}{i_i}(w_0(h_1) h_2) \cdot \genminoryz{w_0}{w_0}{i_k}(w_0(h_1)h_2)}^{1} \cdot \genminoryz{w_k}{w_k}{i_k}(w_0(h_3)) \cdot \genminornumerator{w_k}{\fundamentalweight_{i_k}}(w_0(h_1^{-1})) \\
+      &= \genminoryz{w_0}{w_k}{i_k}(\widetilde{u} \cdot w_0(h_3)) \cdot \genminornumerator{w_k}{\fundamentalweight_{i_k}}(w_0(h_1^{-1}))
+    \end{align*}
+
+    In the case that $h_1 = h_2 = h_3 = e$, we may ignore the frozen
+    vertices of the quiver. The proof is completed by appealing to the
+    identity of \cite[Theorem~1.17]{fominzelevinsky1999}, which states
+    that when $\length(u s_i) = \length(u) + 1$ and $\length(v s_i) =
+    \length(v) + 1$, \[ \genminoryz{u}{v}{i} \genminoryz{us_i}{vs_i}{i}
+      = \genminoryz{u s_i}{v}{i} \genminoryz{v}{u s_i}{i} + \prod_{j \ne
+        i} \genminoryz{u}{v}{i}^{-a_{ji}}. \]
+
+    This identity exactly matches the quiver mutation relation at each
+    step of $\murottwist$, so each $\mucol(i)$ in $\murot$ transforms
+    the coordinates of $v_{i,\bullet}$ from \[
+      \genminoryz{c^n}{c^m}{j}(\widetilde{u})\] to \[
+      \genminoryz{c^{n-1}}{c^{m-1}}{j}(\widetilde{u}).\] Thus, after
+    applying $\murottwist$ the vertex $v_{i,j}$ has coordinate \[
+      \genminoryz{w_{m+r-k}^{\ast}}{e}{i_k^{\ast}}(\widetilde{u}). \] By
+    \cref{lem:colsigmaG-does-sigmaG,lem:rowsigmaG-does-sigmaG},
+    $\muint{O1}$ converts the $w_{m+r-k}$ to $w_k$, and $\muint{O2}$
+    removes the $\cdot^{\ast}$. Thus $\murot$ changes coordinates for
+    $u$ into those for $h_2^{-1} w_0(h_1)^{-1} (\Phi \Psi)^2(u) w_0(h_1)
+    h_2$ as desired.
+  \end{proof}
+
+  \begin{proof}[Proof of \cref{lem:murot-works-for-making-Q}]
+    Since we ignored frozen vertices above, the result applies to $Q_0$.
+    Since the quiver mutation changes coordinates of $\alpha$ to those
+    of $\operatorname{rot}(\alpha)$, it is of order 3 and induces a
+    graph isomorphism.
+  \end{proof}
+
+  \begin{lemma}
+    \label{lem:fgcs-exists-rot-works-nontrivial}
+    \Cref{def:fgcs-rot-works} of \cref{def:fgcs} holds for arbitrary
+    $h_1, h_2, h_3$.
+  \end{lemma}
+  \begin{proof}
+    In the case that $h_1, h_2, h_3$ are not trivial, we must verify
+    that the equation of \cite[Theorem~1.17]{fominzelevinsky1999} still
+    holds with the frozen vertices considered, which introduce factors
+    not included in the equation. Again, we only consider
+    $\mathcal{A}$-coordinates by \cref{rem:p-commutes-with-mutation}. We
+    note the following:
+
+    \begin{itemize}
+    \item
+      The vertices $B_k$ take the place of
+      $\genminoryz{w_0}{e}{i_k}(\widetilde{u}) =
+      \chi_{i_k^{\ast}}([\lifttoG{w_0}^{-1} \widetilde{u}]_{0}) =
+      \chi_{i_k^{\ast}}(w_0(h_2 h_3) h_1)^{-1}$ in the equation.
+      Therefore, they should be considered as \[ B_k =
+        \genminoryz{w_0}{e}{i_k}(\widetilde{u}) \cdot
+        \frac{A_{k^{\ast}}}{C_k} =
+        \genminoryz{w_0}{e}{i_k}(\widetilde{u} \cdot w_0(h_3)) \cdot
+        A_{k^{\ast}}. \]
+    \item
+      If, at each step of the mutation, the frozen vertices and the
+      monomial map $\monomialmap$ induce equal extra factors on the
+      $\genminoryz{u s_i}{v}{i} \genminoryz{v}{u s_i}{i}$ and $\prod_{j
+        \ne i} \genminoryz{u}{v}{i}^{-a_{ji}}$ terms, then the
+      difference of the final terms from coordinates of $\widetilde{u}$
+      will also be a monomial map.
+    \item
+      If this final difference monomial map matches $\monomialmap$, the
+      result will be proven.
+    \item
+      Since the extra factors at each coordinate are given by a monomial
+      map, each frozen vertex may be checked individually.
+    \end{itemize}
+
+    For any particular group, these results may be verified by a few
+    numerical calculations: to verify the monomial identity $x_1^{a_1}
+    \dotsb x_m^{a_m} \stackrel{?}{=} x_1^{b_1} \dotsb x_m^{b_m}$, taking
+    $\log$ of both sides reduces to $\sum_{i} \log(x_i) (a_i - b_i)
+    \stackrel{?}{=} 0$. Therefore, evaluating at $m+1$ linearly
+    independent choices of vector $\langle\log(x_i)\rangle$ verifies the
+    result. This has been carried out for the exceptional groups. The
+    \texttt{test-murot} sub-program of \cite{gilles2020sw} may be used
+    for this purpose.
+
+    We present an argument that the coordinates of $h_1$ are treated
+    correctly by the monomial map and $\murot$ for type $D_n$; other
+    arguments are similar.
+
+    We will ignore all terms other than $h_{1,j} = A_j$, and annotate
+    vertices with these. Half the Coxeter number minus one will be
+    denoted $\ell$, which in the case of $D_n$ is equal to $n - 2$. Then
+    we will trace the effects of $\murottwist$ in general. The objective
+    is to show that, starting with the assignments given by the monomial
+    factors attached to $\genminoryz{w_0}{w_k}{i_k}(\widetilde{u})$
+    above, we end with those factors of given by the monomial map
+    $\monomialmap$ following $\operatorname{rot}$ (i.e.\ the powers
+    associated to $h_2$ by $\monomialmap$). Before applying any
+    mutations, $Q_{D_n}$ is as in \cref{fig:murot-QD7-stage0}. The
+    formula for $A_j$ factors is, following
+    $\genminornumerator{w_k}{\fundamentalweight_{i_k}}(w_0(h_1^{-1}))$,
+    \[ \text{at }v_{i,j} : \begin{cases} A_{j} & i \ge n-1 \\ A_{j} & i
+        < n-1, i + j < n \\ A_{j} A_{i+j+1-n} & i < n-1, i + j \ge n
+      \end{cases} \qquad \text{at }A_k: A_k, \qquad \text{at }B_k:
+      A_{k^{\ast}}, \qquad \text{at }C_k: 1 \]
+
+    \begin{figure}[h]
+      \centering
+      \includestandalone[mode=image|tex]{fig/murot-QD7-stage0}
+
+      \caption{$Q_{D_n}$ before any mutation.
+        \label{fig:murot-QD7-stage0}
+      }
+    \end{figure}
+
+    After one iteration of $\mucol(1)$, by straight-forward induction
+    the factor at $v_{i,j}$ matches that at $v_{i,j+1}$, as in
+    \cref{fig:murot-QD7-stage1}.
+
+    \begin{figure}[h]
+      \centering
+      \includestandalone[mode=image|tex]{fig/murot-QD7-stage1}
+
+      \caption{$Q_{D_n}$ after $\mucol(1)$.
+        \label{fig:murot-QD7-stage1}
+      }
+    \end{figure}
+
+    After $\prod_{y=1}^{\ell} \mucol(y)$, this pattern continues as
+    shown in \cref{fig:murot-QD7-stage2}: for $j < \ell$, we have the
+    factor at $v_{i,j}$ matching the original factor at $v_{i,j+1}$. At
+    $v_{i,\ell}$, however, the factor matches the original factor
+    associated to $B_i$. Therefore, the new formula for $A_j$ factors at
+    $v_{i,j}$ is \[ \text{at }v_{i,j} : \begin{cases} A_{i^{\ast}} & j =
+        \ell \\ A_{j+1} & j < \ell, i \ge n-1 \\ A_{j+1} & j < \ell, i <
+        n-1, i + j < n \\ A_{j+1} A_{i+j+2-n} & j < \ell, i < n-1, i + j
+        \ge n \end{cases} \]
+
+    \begin{figure}[h]
+      \centering
+      \includestandalone[mode=image|tex]{fig/murot-QD7-stage2}
+
+      \caption{$Q_{D_n}$ after $\prod_{y=1}^{\ell}\mucol(y)$.
+        \label{fig:murot-QD7-stage2}
+      }
+    \end{figure}
+
+    Each successive $\prod_{y=1}^{\dotsc} \mucol(y)$ performs the same
+    adjustment: factors of $A_j$ are copied from left to right. As can
+    be shown by induction, after $\prod_{x=1}^{k} \prod_{y=1}^{\ell + 1
+      - x} \mucol(y)$, the formula for $A_j$ factors at $v_{i,j}$ is \[
+      \text{at }v_{i,j} : \begin{cases} A_{i^{\ast}} & j > \ell - k \\
+        A_{j+k} & j \le \ell - k, i \ge n-1 \\ A_{j+k} & j \le \ell - k,
+        i < n-1, i + j < n \\ A_{j+k} A_{i+j+1+k-n} & j \le \ell - k, i
+        < n-1, i + j \ge n \end{cases} \]
+
+    Thus, after applying $\murottwist$, each $v_{i,j}$ has a factor of
+    $A_{i^{\ast}}$ attached. Since the monomial map $\monomialmap$
+    associates a factor of $\genminor{}{i}(h_2) = B_{i}$, rotation
+    renames $A_{\bullet}$ to $B_{\bullet}$, and $\muint{O1}$ renames
+    $v_{i,j}$ to $v_{i^{\ast},j}$, the result is proven.
+
+    Proofs that the monomial map works correctly for factors of $h_2$
+    and $h_3$ for type $D$, and for all factors of type $A$, $B$, and
+    $C$, have similar forms, and the result has been numerically checked
+    for exceptional types. This proves the result in all cases.
+  \end{proof}

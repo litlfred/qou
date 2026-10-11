@@ -531,7 +531,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "kharkiv4.tex",
    "tex_sections": 10,
-   "overlaid": 4,
+   "overlaid": 2,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -542,17 +542,15 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.925,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-v-ector-mesons-q-deformation-vs-mixing",
      "title": "V ector mesons: q-deformation vs mixing",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.98,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.551,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-3-octet-baryon-mass-sum-rules-best-can",
@@ -614,10 +612,8 @@
     {
      "id": "sec-013-8-mass-relations-from-anyonic-realization",
      "title": "Mass relations from anyonic realization",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.976,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.438,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-014-9-algebras-of-q-oscillators-q-bose-gas-and",

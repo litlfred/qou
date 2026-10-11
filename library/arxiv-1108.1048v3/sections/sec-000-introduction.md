@@ -7,10 +7,10 @@ section_number: null
 pages: 1-4
 source_pdf: 1108.1048v3.pdf
 source_sha256: 6f2b83450ba923d0
-text_source: latex
-latex_prose_ratio: 0.886
-latex_coverage_ratio: 0.944
 doc_brief: "CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS — We give an explicit construction of irreducible modules ove r Khovanov-Lauda- Rouquier algebras R and their"
+text_source: latex
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 0.989
 ---
 The *Khovanov-Lauda-Rouquier algebras* (*KLR algebras*) were introduced independently by Khovanov-Lauda [@KL09; @KL11] and Rouquier [@R08] to give a categorification of quantum groups. Let $U_q(\mathfrak{g})$ be the quantum group associated with a symmetrizable Cartan datum, and let $R$ be the corresponding KLR algebra. For a dominant integral weight $\lambda$ of $U_q(\mathfrak{g})$, the algebra $R$ has a special quotient $R^{\lambda}$ corresponding to $\lambda$, which is called the *cyclotomic Khovanov-Lauda-Rouquier algebra* ( *cyclotomic KLR algebra*) of weight $\lambda$. It was conjectured that the cyclotomic quotient $R^{\lambda}$ gives a categorification of the irreducible highest weight $U_q(\mathfrak{g})$-module $V(\lambda)$. This was shown for type $\mathsf{A}$ in [@BK08; @BK09; @BS08]. In [@KK11], Kang and Kashiwara proved this conjecture for all symmetrizable Cartan data. Webster [@Webster10] has announced a categorification of tensor products of highest weight modules. In a recent paper, Kang, Oh and Park [@KOP11a] extended the study of KLR algebras to provide a categorification of quantum generalized Kac-Moody algebras and their crystals. Moreover, Kang, Kashiwara and Oh [@KKO11] proved the cyclotomic categorification conjecture for irreducible highest weight modules over quantum generalized Kac-Moody algebras.
 
@@ -25,9 +25,7 @@ Here is a brief description of our work. Let $(\mathfrak{A}, \mathsf{P}, \Pi,
 \subset I_{(k+1)}$ and $|I_{(k)}|=k$ for all $k$. Let $\mathfrak{B}_k$ be the crystal obtained from $B(\infty)$ by forgetting the $i$-arrows for $i \notin I_{(k)}$. For $v \in
 B(\infty)$, let $u_0 = v$ and let $u_k$ be the highest weight vector of the connected component of $\mathfrak{B}_k$ containing $v$ for $k=1,\ldots,n$. Then, there exists a sequence $\mathbf{i}_k$ of elements in $I$ such that $u_{k-1} =  \tilde{f}_{\mathbf{i}_k}u_k$, where $\tilde{f}_{\mathbf{i}_k}$ is a product of the Kashiwara operators corresponding to the terms in the sequence $\mathbf{i}_k$. For $k=1,\ldots,n$, define $$\mathcal{N}_k(v) =  \tilde{f}_{\mathbf{i}_k} \mathbf{1},$$ where $\mathbf{1}$ is the trivial for the KLR algebra $R(0) := \mathbb{C}$. In Proposition [\[Prop: crystal iso\]](#Prop: crystal iso){reference-type="ref" reference="Prop: crystal iso"}, we prove for any symmetrizable Cartan datum that $\mathsf{ hd}\,\mathsf {Ind}( \mathcal{N}_1(v) \boxtimes \cdots \boxtimes \mathcal{N}_n(v)
 )$ is an irreducible graded $R$-module and that the map $\Phi: B(\infty)
-\longrightarrow \mathbb{B}(\infty)$ defined by $$\begin{equation}
-\label{eq:crystaliso}  \Phi(v) = \mathsf{ hd}\,\mathsf {Ind}\left( \mathcal{N}_1(v) \boxtimes \cdots \boxtimes \mathcal{N}_n(v)\right) \ \  \text{ for } v \in B(\infty)
-\end{equation}$$ is a crystal isomorphism.
+\longrightarrow \mathbb{B}(\infty)$ defined by $$\label{eq:crystaliso}  \Phi(v) = \mathsf{ hd}\,\mathsf {Ind}\left( \mathcal{N}_1(v) \boxtimes \cdots \boxtimes \mathcal{N}_n(v)\right) \ \  \text{ for } v \in B(\infty)$$ is a crystal isomorphism.
 
 When $\mathfrak{A}$ is of finite type, the modules $\mathcal{N}_k(v)$ can be given a more explicit description in terms of the Kashiwara operators $\tilde{f}_i$ via the *adapted strings* introduced by Littelmann in [@Lit98]. For this, we choose a special expression $w_0= r_{\mathbf{s}_1} \cdots r_{\mathbf{s}_n}$ of the longest element $w_0$ in the Weyl group $W$. Here the $\mathbf{s}_k$ are sequences of indices in $I$ (see Table [\[Tb: w0\]](#Tb: w0){reference-type="ref" reference="Tb: w0"}). Using the description of adapted strings given in [@Lit98], we prove for $v \in
 B(\infty)$ that $$\mathcal{N}_k(v) =  \tilde{f}_{\mathbf{s}_k} ^{\mathbf{a}(v)_k} \mathbf{1},$$ where $\mathbf{a}(v)$ is the adapted string of $v$ with respect to this expression for $w_0$, and ${\mathbf{a}(v)_k}$ is the subsequence of $\mathbf{a}(v)$ defined by $\eqref{Eq: subseq of a}$ (see Proposition [\[Prop: description of Nk\]](#Prop: description of Nk){reference-type="ref" reference="Prop: description of Nk"} below).
@@ -36,20 +34,18 @@ Our main result is an explicit construction of the irreducible graded modules ov
 \mathsf{C}_n, \mathsf{D}_n$). For $a,b \in \mathbf{B}$ with $a \succ b$, using the structure of the crystal $\mathbf{B}$, in [\[Eq: def of nabla\]](#Eq: def of nabla){reference-type="eqref" reference="Eq: def of nabla"} we associate to $a,b$ an irreducible graded module $\Delta_{(a,b)}$. The modules $\Delta_{(a,b)}$ are 1- or 2-dimensional, and in general they are *not* the cuspidal modules found in [@HMM09; @KR09]. Using the description of $\mathcal{S}$ (resp. $\mathcal{S}^\lambda$), we define for $v \in B(\infty)$ (resp. $v \in B(\lambda)$) the module $\Delta(\mathbf{a}(v);k)$ to be the outer tensor product of modules $\Delta_{(a,b)}$ as in [\[Eq: nabla\]](#Eq: nabla){reference-type="eqref" reference="Eq: nabla"}. Then, it follows from Lemma [\[Lem: gluing
 lemma\]](#Lem: gluing
 lemma){reference-type="ref" reference="Lem: gluing
-lemma"} that $$\begin{equation}
-\label{eq:NhdInd} \mathcal{N}_k(v) = \mathsf{ hd}\,\mathsf {Ind}\Delta(\mathbf{a}(v);k)\ \ \text{ for } \  k=1,\ldots,n.
-\end{equation}$$
+lemma"} that $$\label{eq:NhdInd} \mathcal{N}_k(v) = \mathsf{ hd}\,\mathsf {Ind}\Delta(\mathbf{a}(v);k)\ \ \text{ for } \  k=1,\ldots,n.$$
 
 The description of the irreducible modules in [\[eq:crystaliso\]](#eq:crystaliso){reference-type="eqref" reference="eq:crystaliso"} works for all symmetrizable Cartan data. It follows from [\[eq:crystaliso\]](#eq:crystaliso){reference-type="eqref" reference="eq:crystaliso"} and [\[eq:NhdInd\]](#eq:NhdInd){reference-type="eqref" reference="eq:NhdInd"} that the irreducible modules for the KLR algebras of finite classical type can be obtained from taking the outer tensor product of heads of induced modules, inducing, then taking the head of the induced module. But this unduly complicated process can be simplified. Indeed, we prove for the module $\Delta(\mathbf{a}(v)): =
 \Delta(\mathbf{a}(v);1) \boxtimes
 \cdots \boxtimes \Delta(\mathbf{a}(v);n)$ that $\mathsf{ hd}\,\mathsf {Ind}\Delta(\mathbf{a}(v))$ is irreducible for $v
-\in B(\infty)$ (resp. $v \in B(\lambda)$) for all finite classical types and that the maps $$\begin{align*}
+\in B(\infty)$ (resp. $v \in B(\lambda)$) for all finite classical types and that the maps $$\begin{aligned}
 \Psi:& B(\infty) \longrightarrow \mathbb{B}(\infty)\ \  \ \text{ given  by }    \Psi(v) = \mathsf{ hd}\,\mathsf {Ind}\,\Delta(\mathbf{a}(v)) \  \text{ for } \ v \in B(\infty),\\
 \Psi^\lambda:&  B(\lambda)\ \longrightarrow \mathbb{B}(\lambda)\ \ \ \  \text{ given by }   \Psi^\lambda(v) = \mathsf{ hd}\,\mathsf {Ind}\,\Delta(\mathbf{a}(v)) \   \text{ for } \  v \in B(\lambda)
-\end{align*}$$ are crystal isomorphisms (Theorem [\[Thm: main theorem\]](#Thm: main theorem){reference-type="ref" reference="Thm: main theorem"}). Using that fact, we show for the finite classical types that $$\begin{align*}
+\end{aligned}$$ are crystal isomorphisms (Theorem [\[Thm: main theorem\]](#Thm: main theorem){reference-type="ref" reference="Thm: main theorem"}). Using that fact, we show for the finite classical types that $$\begin{aligned}
 \mathcal{A} &= \{ \mathsf{ hd}\,\mathsf {Ind}\Delta(\mathbf{a})\mid \mathbf{a} \in \mathcal{S}  \} \ \  \hbox{\rm and}  \\
 \mathcal{A}^\lambda &= \{ \mathsf{ hd}\,\mathsf {Ind}\Delta(\mathbf{a} )\mid \mathbf{a} \in \mathcal{S}^\lambda \},
-\end{align*}$$ as $\mathbf{a}$ ranges over the adapted strings, provide complete lists of all the irreducible graded modules over $R$ and $R^\lambda$, respectively, up to isomorphism and grading shift (Corollary [\[Cor: complete lists\]](#Cor: complete lists){reference-type="ref" reference="Cor: complete lists"}).
+\end{aligned}$$ as $\mathbf{a}$ ranges over the adapted strings, provide complete lists of all the irreducible graded modules over $R$ and $R^\lambda$, respectively, up to isomorphism and grading shift (Corollary [\[Cor: complete lists\]](#Cor: complete lists){reference-type="ref" reference="Cor: complete lists"}).
 
 Our paper is organized as follows. Section 1 contains a brief review of crystal bases and KLR algebras associated with any symmetrizable Cartan datum. This section culminates with the proof of the crystal isomorphism $\Phi: B(\infty) \longrightarrow \mathbb{B}(\infty)$ in [\[eq:crystaliso\]](#eq:crystaliso){reference-type="eqref" reference="eq:crystaliso"}. Section 2 specializes to the case of finite type, first reviewing Littelmann's result (see [@Lit98]) on adapted stings and then giving an explicit description of the modules $\mathcal{N}_k(v)$ for all finite types via adapted stings. Combining this description with the definition of $\mathcal{N}_k(v)$, we obtain an expression for $\mathcal{N}_k(v)$ in terms of Kashiwara operators.
 

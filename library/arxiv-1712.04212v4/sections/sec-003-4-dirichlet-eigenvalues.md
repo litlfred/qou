@@ -7,15 +7,16 @@ section_number: 4
 pages: 19-22
 source_pdf: 1712.04212v4.pdf
 source_sha256: 521911fc8724f3c2
-text_source: latex
-latex_prose_ratio: 0.89
-latex_coverage_ratio: 0.917
 doc_brief: "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION — In this paper, we consider a concentration of measure problem on Riemannian manifolds with"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:Dirichlet eigenvalues}
 In what follows,
 let $(M,d_{M},m_{M,f})$ denote an $n$-dimensional weighted Riemannian manifold with boundary defined as (\ref{eq:weighted volume measure}) such that $m_{M,f}$ is a Borel probability measure.
 We study the metric measure space with boundary $(M,f)$ defined as (\ref{eq:weighted Riemannian manifold}).
+
 
 
 \subsection{Boundary separation distances and Dirichlet eigenvalues}
@@ -104,6 +105,7 @@ and for every sequence $\{\Omega_{\alpha}\}^{k}_{\alpha=1}$ of Borel subsets wit
 \end{equation*}
 where $\phi_{f,1}$ is an $L^{2}$-normalized eigenfunction for $\nu_{f,1}(M)$.
 \end{rem}
+
 
 
 \subsection{Observable inscribed radii and Dirichlet eigenvalues}

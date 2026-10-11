@@ -257,7 +257,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "revision.tex",
-   "tex_sections": 10,
+   "tex_sections": 32,
    "overlaid": 10,
    "thresholds": {
     "title": 0.85,
@@ -269,63 +269,63 @@
      "id": "sec-000-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.857,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-1-the-flyspeck-project",
      "title": "The Flyspeck project",
-     "prose_ratio": 0.964,
-     "coverage_ratio": 0.989,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-2-blueprint-edition-of-the-kepler-conjecture",
      "title": "Blueprint edition of the Kepler conjecture",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 0.949,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-3-formalizing-the-ordinary-mathematics",
      "title": "Formalizing the ordinary mathematics",
-     "prose_ratio": 0.971,
-     "coverage_ratio": 0.95,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-4-standard-ml-reimplementation-of-code",
      "title": "Standard ML reimplementation of code",
-     "prose_ratio": 0.976,
-     "coverage_ratio": 0.982,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-5-proving-nonlinear-inequalities-with-bernstein",
      "title": "Proving nonlinear inequalities with Bernstein bases",
-     "prose_ratio": 0.983,
-     "coverage_ratio": 0.946,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-006-6-tame-graph-enumeration",
      "title": "Tame graph enumeration",
-     "prose_ratio": 0.986,
-     "coverage_ratio": 0.932,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-007-7-verifying-linear-programs",
      "title": "Verifying linear programs",
-     "prose_ratio": 0.966,
-     "coverage_ratio": 0.935,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -337,16 +337,16 @@
     {
      "id": "sec-009-8-biconnected-graphs",
      "title": "Biconnected graphs",
-     "prose_ratio": 0.988,
-     "coverage_ratio": 0.889,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-010-9-errata-listing",
      "title": "Errata listing",
-     "prose_ratio": 0.994,
-     "coverage_ratio": 0.947,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

@@ -7,10 +7,10 @@ section_number: 2
 pages: 9-16
 source_pdf: 1409.4073v1.pdf
 source_sha256: b40be7f0022f70a1
-text_source: latex
-latex_prose_ratio: 0.807
-latex_coverage_ratio: 0.91
 doc_brief: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — W e introduce “sheaﬁﬁcation” functors from categories of (l ax monoidal) linear functors to categories of quasi-coherent sheaves"
+text_source: latex
+latex_prose_ratio: 0.844
+latex_coverage_ratio: 0.987
 ---
 In this section we define and describe particular functors that generalize sheafification functors for affine schemes or projective schemes. The idea is to interpret the category of modules or graded modules respectively as a category of $R$-linear functors. More precisely:
 
@@ -96,11 +96,11 @@ Let $g\colon\stY\arr\stX$ be a morphism of fibered categories. Then there exists
 :::
 
 ::: proof
-*Proof.* Let $\Gamma\in\L_{R}(\shC,A)$. Let also $\mathop{\mathrm{\textup{Spec}}}B\arrdi{\xi}\stY$ be a map and $N\in\mathop{\mathrm{\textup{Mod}}}B\otimes_{R}A$. Denote by $F\colon\shC\arr\mathop{\mathrm{\textup{Mod}}}B$ and $G\colon g^{*}\shC\arr\mathop{\mathrm{\textup{Mod}}}B$ the functors obtained by taking sections over $B$. In particular $F=G\circ g^{*}$. We have isomorphisms $$\begin{alignat*}
+*Proof.* Let $\Gamma\in\L_{R}(\shC,A)$. Let also $\mathop{\mathrm{\textup{Spec}}}B\arrdi{\xi}\stY$ be a map and $N\in\mathop{\mathrm{\textup{Mod}}}B\otimes_{R}A$. Denote by $F\colon\shC\arr\mathop{\mathrm{\textup{Mod}}}B$ and $G\colon g^{*}\shC\arr\mathop{\mathrm{\textup{Mod}}}B$ the functors obtained by taking sections over $B$. In particular $F=G\circ g^{*}$. We have isomorphisms $$\begin{aligned}
 {1}
 \mathop{\mathrm{\textup{Hom}}}_{B\otimes_{R}A}(\shF_{g^{*}\Gamma,g^{*}\shC}(B),N) & \simeq\mathop{\mathrm{\textup{Hom}}}_{\L_{R}(g^{*}\shC,A)}(g^{*}\Gamma,\mathop{\mathrm{\textup{Hom}}}_{B}(G,N))\simeq\mathop{\mathrm{\textup{Hom}}}_{\L_{R}(\shC,A)}(\Gamma,g_{*}\mathop{\mathrm{\textup{Hom}}}_{B}(G,N))\\
  & =\mathop{\mathrm{\textup{Hom}}}_{\L_{R}(\shC,A)}(\Gamma,\mathop{\mathrm{\textup{Hom}}}_{B}(F,N))\simeq\mathop{\mathrm{\textup{Hom}}}_{B\otimes_{R}A}((g^{*}\shF_{\Gamma,\shC})(B),N)
-\end{alignat*}$$ In particular we get an isomorphism $(g^{*}\shF_{\Gamma,\shC})(B)\simeq\shF_{g^{*}\Gamma,g^{*}\shC}(B)$. By a direct check it follows that this isomorphism is natural in $\Gamma$ and it also extends as an isomorphism of functors $g^{*}\shF_{\Gamma,\shC}\simeq\shF_{g^{*}\Gamma,g^{*}\shC}$. ◻
+\end{aligned}$$ In particular we get an isomorphism $(g^{*}\shF_{\Gamma,\shC})(B)\simeq\shF_{g^{*}\Gamma,g^{*}\shC}(B)$. By a direct check it follows that this isomorphism is natural in $\Gamma$ and it also extends as an isomorphism of functors $g^{*}\shF_{\Gamma,\shC}\simeq\shF_{g^{*}\Gamma,g^{*}\shC}$. ◻
 :::
 
 Notice that, as soon as $g^{*}\colon\mathop{\mathrm{\textup{QCoh}}}\stX\arr\mathop{\mathrm{\textup{QCoh}}}\stY$ has a right adjoint $g_{*}\colon\mathop{\mathrm{\textup{QCoh}}}\stY\arr\mathop{\mathrm{\textup{QCoh}}}\stX$ (see [\[prop:properties of push-forward\]](#prop:properties of push-forward){reference-type="ref" reference="prop:properties of push-forward"}), then $g_{*}\Omega^{\shG}\simeq\Omega^{g_{*}\shG}$ for $\shG\in\mathop{\mathrm{\textup{QCoh}}}_{A}\stY$ and the above proposition follows taking the left adjoints.
@@ -172,9 +172,9 @@ A morphism of pseudo-monoidal functors $(\Omega,\iota^{\Omega})\arr(\Gamma,\iota
 ::: defn
 []{#def: monoidal subcategories label="def: monoidal subcategories"} We define the categories:
 
-- $\mathop{\mathrm{\textup{Rings}}}_{A}\stX$, whose objects are $\alB\in\mathop{\mathrm{\textup{QCoh}}}_{A}\stX$ with an $A$-linear map $m\colon\alB\otimes_{\odi{\stX_{A}}}\alB\arr\alB$, called the multiplication;
+-   $\mathop{\mathrm{\textup{Rings}}}_{A}\stX$, whose objects are $\alB\in\mathop{\mathrm{\textup{QCoh}}}_{A}\stX$ with an $A$-linear map $m\colon\alB\otimes_{\odi{\stX_{A}}}\alB\arr\alB$, called the multiplication;
 
-- $\mathop{\mathrm{\textup{QAlg}}}_{A}\stX$, as the (not full) subcategory of $\mathop{\mathrm{\textup{Rings}}}_{A}\stX$ whose objects are $\alB$ with a commutative, associative multiplication with a unity and the arrows are morphisms preserving unities;
+-   $\mathop{\mathrm{\textup{QAlg}}}_{A}\stX$, as the (not full) subcategory of $\mathop{\mathrm{\textup{Rings}}}_{A}\stX$ whose objects are $\alB$ with a commutative, associative multiplication with a unity and the arrows are morphisms preserving unities;
 
 We also set $\mathop{\mathrm{\textup{Rings}}}\stX=\mathop{\mathrm{\textup{Rings}}}_{R}\stX$ and $\mathop{\mathrm{\textup{QAlg}}}\stX=\mathop{\mathrm{\textup{QAlg}}}_{R}\stX$.
 

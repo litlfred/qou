@@ -7,10 +7,10 @@ section_number: 7
 pages: 17-22
 source_pdf: 1912.09457v3.pdf
 source_sha256: c00b3801060fc3cc
-text_source: latex
-latex_prose_ratio: 0.953
-latex_coverage_ratio: 0.957
 doc_brief: "GENERALIZED NEGLIGIBLE MORPHISMS AND THEIR TENSOR IDEALS — We introduce a generalization of the notion of a negligible morphism and study the associated tensor ideals and thick id eals."
+text_source: latex
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 0.989
 ---
 []{#sec:tilting-eval label="sec:tilting-eval"}
 
@@ -20,27 +20,27 @@ The remaining necessary properties to define the $k$-negligible ideals for eithe
 
 We will use the following notation (similar to [@Parshall-Wang]) in the following:
 
-- $R$ an irreducible root system in an euclidian space $E$, $R^+$ a fixed set of positive roots, $\phi$ the simple roots.
+-   $R$ an irreducible root system in an euclidian space $E$, $R^+$ a fixed set of positive roots, $\phi$ the simple roots.
 
-- $h$ the Coxeter number of $R$, $\rho$ the half sum of the positive roots.
+-   $h$ the Coxeter number of $R$, $\rho$ the half sum of the positive roots.
 
-- $\alpha^{\vee} = 2\alpha/(\alpha,\alpha)$ the dual root to $\alpha \in R$.
+-   $\alpha^{\vee} = 2\alpha/(\alpha,\alpha)$ the dual root to $\alpha \in R$.
 
-- $W$ the finite Weyl group.
+-   $W$ the finite Weyl group.
 
-- $X$ the integral weight lattice of $R$.
+-   $X$ the integral weight lattice of $R$.
 
-- $X^+$ the dominant integral weights.
+-   $X^+$ the dominant integral weights.
 
-- $Q$ the ${\mathbb Z}$-span of $R$.
+-   $Q$ the ${\mathbb Z}$-span of $R$.
 
-- $W_{\ell} = W \rtimes T_{\ell}$ for the group of translations $T_{\ell} \ni t_{\ell}:E \to E$, $x \mapsto x + \ell\lambda$ for $\lambda \in Q$ and an odd integer $\ell$.
+-   $W_{\ell} = W \rtimes T_{\ell}$ for the group of translations $T_{\ell} \ni t_{\ell}:E \to E$, $x \mapsto x + \ell\lambda$ for $\lambda \in Q$ and an odd integer $\ell$.
 
-- $d_{\alpha} = (\alpha,\alpha)/(\alpha_0,\alpha_0)$ for the shortest root $\alpha_0$ of $\phi$.
+-   $d_{\alpha} = (\alpha,\alpha)/(\alpha_0,\alpha_0)$ for the shortest root $\alpha_0$ of $\phi$.
 
-- $wht(\lambda) = \sum_{\alpha \in \phi} r_{\alpha} d_{\alpha}$ for $\lambda = \sum_{\alpha \in \phi} r_{\alpha} \alpha$.
+-   $wht(\lambda) = \sum_{\alpha \in \phi} r_{\alpha} d_{\alpha}$ for $\lambda = \sum_{\alpha \in \phi} r_{\alpha} \alpha$.
 
-- $C_{\ell}$ the fundamental alcove $\{ \lambda \in X^+ \ | \ 0 < \ <\lambda + \rho, \alpha^{\vee}>  \ < \ell \ \text{ for all } \alpha \in R^+\}$ and $\overline{C}_{\ell}$ its closure.
+-   $C_{\ell}$ the fundamental alcove $\{ \lambda \in X^+ \ | \ 0 < \ <\lambda + \rho, \alpha^{\vee}>  \ < \ell \ \text{ for all } \alpha \in R^+\}$ and $\overline{C}_{\ell}$ its closure.
 
 Recall that the affine Weyl group acts on $X$. The fundamental domain for this action is the closed alcove $\overline{C}_{\ell}$. The affine Weyl group $W_{\ell}$ can be identified with the set of alcoves in $X$ by matching $w \in W_{\ell}$ with $w \cdot C_{\ell}$. The alcove corresponding to $w$ is denoted by $C_w$. We denote $W_{\ell}^+ = \{ w \in W \ | \ w \cdot C_{\ell} \subset X^+ \} \subset W$.
 

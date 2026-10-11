@@ -7,10 +7,10 @@ section_number: 3
 pages: 8-10
 source_pdf: 0805.1447v2.pdf
 source_sha256: b7ee20b0a7f5f3da
-text_source: latex
-latex_prose_ratio: 0.979
-latex_coverage_ratio: 0.9
 doc_brief: "Braid ordering and the geometry of closed braid — The relationships between braid ordering and the ge- ometry of its closure is studied."
+text_source: latex
+latex_prose_ratio: 0.908
+latex_coverage_ratio: 0.97
 ---
 In this section, we summarize basic machinery of Birman-Menasco's braid foliation theory in case of an embedded essential surface. For details of these techniques, see [@bf] or [@bm2].
 
@@ -48,9 +48,13 @@ We call an intersection point of $A$ with $F$ *vertex*. For each vertex $p$, the
 
 A foliation of $F$ is classified into following three types according to its containing leaves; We say $F$ is *tiled* if $F$ is foliated entirely b-arc and *circular* if $F$ is foliated entirely c-circle. The remaining case, if $F$ is foliated by both b-arcs and c-circles, we say $F$ is *mixed*. In tiled surface, there are only bb-singularity and circular surface has only cc-singularity. Mixed foliation might have all types of singularity and always contains bc-singularity.
 
-<figure id="fig:regions" data-latex-placement="htbp">
+<figure id="fig:regions">
 <div class="center">
 <embed src="tile.eps" style="width:120mm" />
 </div>
 <figcaption>bb-tile,bc-annulus,cc-pants</figcaption>
 </figure>
+
+# Proof of theorem [\[thm:main1\]](#thm:main1){reference-type="ref" reference="thm:main1"}
+
+Now we are ready to prove theorem [\[thm:main1\]](#thm:main1){reference-type="ref" reference="thm:main1"}. From now on, we always assume $F$ satisfies all conditions (1)-(5) described in section 3. First we consider the case $g=0$. In this case, $F$ is never circular foliated. The main result of [@bm1] shows in this case $\widehat{\beta}$ admit exchange move if $F$ is tiled and $\beta$ has word representatives which contains no $\sigma_{k}^{\pm1}$ for some $k$, so $[\beta]_{D}=0$. Thus, in this case theorem holds. Thus, we always assume $g>0$.

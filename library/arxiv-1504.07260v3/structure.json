@@ -573,8 +573,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "CHL_arX4.tex",
-   "tex_sections": 6,
-   "overlaid": 1,
+   "tex_sections": 25,
+   "overlaid": 18,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -590,116 +590,169 @@
     {
      "id": "sec-001-11-fricke-s-duality",
      "title": "Fricke S-duality",
-     "result": "no matching \\section"
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.781,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-12-black-hole-microstate-counting",
      "title": "Black hole microstate counting",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-13-connection-with-moonshine",
      "title": "Connection with moonshine",
-     "result": "no matching \\section"
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-14-outline",
      "title": "Outline",
-     "result": "no matching \\section"
+     "prose_ratio": 0.082,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-005-21-heterotic-type-ii-duality",
      "title": "Heterotic-type II duality",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-006-2-non-geometric-chl-models",
      "title": "Non-geometric CHL models",
-     "prose_ratio": 0.346,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.177,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-007-22-generalities-on-chl-models",
      "title": "Generalities on CHL models",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.909,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-23-consistency-and-level-matching",
      "title": "Consistency and level matching",
-     "result": "no matching \\section"
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.926,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-31-string-string-duality-and-fricke-s-duality",
      "title": "String-string duality and Fricke S-duality",
-     "result": "no matching \\section"
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.874,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-32-self-duality-and-the-witten-index",
      "title": "Self-duality and the Witten index",
-     "result": "no matching \\section"
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.867,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-33-heterotic-t-duality",
      "title": "Heterotic T-duality",
-     "result": "no matching \\section"
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.918,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-34-atkin-lehner-dualities",
      "title": "Atkin-Lehner dualities",
-     "result": "no matching \\section"
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.8,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-4-lattice-of-electric-magnetic-charges",
      "title": "Lattice of electric-magnetic charges",
-     "prose_ratio": 0.027,
+     "prose_ratio": 0.072,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-014-41-purely-electric-charges",
      "title": "Purely electric charges",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.563,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-015-42-purely-magnetic-charges",
      "title": "Purely magnetic charges",
-     "result": "no matching \\section"
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.919,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-016-43-fricke-s-duality-and-n-modular-lattices",
      "title": "Fricke S-duality and N-modular lattices",
-     "result": "no matching \\section"
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.948,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-017-5-bps-state-counting",
      "title": "BPS-state counting",
-     "prose_ratio": 0.238,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-018-51-the-type-ii-helicity-supertrace",
      "title": "The type II helicity supertrace",
-     "result": "no matching \\section"
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.93,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-019-52-helicity-supertrace-for-type-iia-chl-models",
      "title": "Helicity supertrace for type IIA CHL models",
-     "result": "no matching \\section"
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.871,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-020-53-topological-amplitudes-and-fricke-s-duality",
      "title": "Topological amplitudes and Fricke S-duality",
-     "result": "no matching \\section"
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.831,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-021-54-the-heterotic-helicity-supertrace",
      "title": "The heterotic helicity supertrace",
-     "result": "no matching \\section"
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.85,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-022-6-conclusions",
      "title": "Conclusions",
-     "prose_ratio": 0.983,
-     "coverage_ratio": 0.958,
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -726,13 +779,14 @@
     {
      "id": "sec-027-a4-lattice-of-electric-magnetic-charges",
      "title": "A.4 Lattice of electric-magnetic charges",
-     "prose_ratio": 0.389,
+     "prose_ratio": 0.471,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-028-b-heterotic-t-duality",
      "title": "B Heterotic T-duality",
-     "result": "no matching \\section"
+     "prose_ratio": 0.578,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-029-c-symmetries-and-lattices",

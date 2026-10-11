@@ -392,8 +392,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "guts.arxiv.2.tex",
-   "tex_sections": 4,
-   "overlaid": 2,
+   "tex_sections": 22,
+   "overlaid": 17,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -403,107 +403,154 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.751,
-     "coverage_ratio": 0.996,
+     "prose_ratio": 0.998,
+     "coverage_ratio": 0.796,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-the-standard-model",
      "title": "The Standard Model",
-     "prose_ratio": 0.026,
+     "prose_ratio": 0.053,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-11-guide-to-further-reading",
      "title": "Guide to Further Reading",
-     "result": "no matching \\section"
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.687,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-21-isospin-and-su2",
      "title": "Isospin and SU(2)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-22-the-fundamental-fermions",
      "title": "The Fundamental Fermions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-005-221-quarks",
      "title": "Quarks",
-     "result": "no matching \\section"
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-222-leptons",
      "title": "Leptons",
-     "result": "no matching \\section"
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-23-the-fundamental-forces",
      "title": "The Fundamental Forces",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-008-231-isospin-and-su2-redux",
      "title": "Isospin and SU(2), Redux",
-     "result": "no matching \\section"
+     "prose_ratio": 0.945,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-232-hypercharge-and-u1",
      "title": "Hypercharge and U(1)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-233-electroweak-symmetry-breaking",
      "title": "Electroweak Symmetry Breaking",
-     "result": "no matching \\section"
+     "prose_ratio": 0.949,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-234-color-and-su3",
      "title": "Color and SU(3)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-24-the-standard-model-representation",
      "title": "The Standard Model Representation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-25-generations",
      "title": "Generations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.99,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-014-31-the-su5-gut",
      "title": "The SU(5) GUT",
-     "result": "no matching \\section"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-015-32-the-spin10-theory",
      "title": "The Spin(10) Theory",
-     "result": "no matching \\section"
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-016-33-the-patisalam-model",
      "title": "The Pati\u2013Salam Model",
-     "result": "no matching \\section"
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-017-34-the-route-to-spin10-via-patisalam",
      "title": "The Route to Spin(10) via Pati\u2013Salam",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-018-35-the-question-of-compatibility",
      "title": "The Question of Compatibility",
-     "result": "no matching \\section"
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-019-4-conclusion",
      "title": "Conclusion",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 0.676,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     }

@@ -394,8 +394,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "DG_genlevel_22v2.tex",
-   "tex_sections": 6,
-   "overlaid": 2,
+   "tex_sections": 15,
+   "overlaid": 10,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -405,8 +405,8 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.949,
-     "coverage_ratio": 0.937,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -419,39 +419,56 @@
     {
      "id": "sec-002-21-perturbative-complex-chern-simons-theory-at-g",
      "title": "Perturbative complex Chern-Simons theory at generic level",
-     "result": "no matching \\section"
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.911,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-22-resurgent-structure-of-complex-chern-simons-t",
      "title": "Resurgent structure of complex Chern-Simons theory",
-     "prose_ratio": 0.594,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-23-stokes-constants-and-bps-invariants",
      "title": "Stokes constants and BPS invariants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.881,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-3-figure-eight",
      "title": "Figure eight",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-006-31-asymptotic-series",
      "title": "Asymptotic series",
-     "result": "no matching \\section"
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.912,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-32-holomorphic-blocks",
      "title": "Holomorphic blocks",
-     "result": "no matching \\section"
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.917,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-33-resurgent-structure",
      "title": "Resurgent structure",
-     "result": "no matching \\section"
+     "prose_ratio": 0.926,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-4-three-twists",
@@ -462,23 +479,30 @@
     {
      "id": "sec-010-41-asymptotic-series",
      "title": "Asymptotic series",
-     "result": "no matching \\section"
+     "prose_ratio": 0.762,
+     "coverage_ratio": 0.801,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-42-holomorphic-blocks",
      "title": "Holomorphic blocks",
-     "result": "no matching \\section"
+     "prose_ratio": 0.474,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-012-43-resurgent-structure",
      "title": "Resurgent structure",
-     "result": "no matching \\section"
+     "prose_ratio": 0.691,
+     "coverage_ratio": 0.807,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-013-5-conclusion-and-discussion",
      "title": "Conclusion and discussion",
-     "prose_ratio": 0.977,
-     "coverage_ratio": 0.793,
+     "prose_ratio": 0.888,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

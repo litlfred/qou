@@ -7,13 +7,14 @@ section_number: 7
 pages: 34-43
 source_pdf: 2504.18825v2.pdf
 source_sha256: 829f97190cb1c8ad
-text_source: latex
-latex_prose_ratio: 0.913
-latex_coverage_ratio: 0.985
 doc_brief: "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU — 16 sections: Introduction; Preliminaries; Murnaghan–Nakayama rule for the cy"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{s:LPAR}
 In this section, as the second application of our Murnaghan--Nakayama rule, we will establish a  L\"ubeck--Prasad--Adin--Roichman formula for the cyclotomic Hecke algebra $\mathscr{H}_{m,n}(q,\bm{u})$. To proceed with this, We will present an algorithm for $\chi^{(\la^{(1)},\la^{(2)},\cdots,\la^{(m)})}_{\bmu}$ using the corresponding single partition $\la$ with empty $m$-core and $(\la^{(1)},\la^{(2)},\cdots,\la^{(m)})$ as its $m$-quotient. Finally, we will explain how our formula recovers the Adin-Roichman formula for the complex reflection group $\mathscr{W}_{m,n}$ \cite{AR}, and particularly the L\"ubeck-Prasad formula for the hyperoctahedral group \cite{LP}.
+
 
 \subsection{A restatement of the Murnaghan--Nakayama rule}
 In this subsection, we restate the Murnaghan--Nakayama rule established in Section \ref{s:M-N} in terms of $\eta^{\bla}_{\btau;r}$ defined as below. 
@@ -64,6 +65,7 @@ For a partition $\mu=(\mu_1,\mu_2,\cdots,\mu_t)$ $(\mu_t>0)$, define $\mathcal{P
 \begin{align}\label{e:restate-MN}
     \chi^{\bla}_{\bmu}=q^{n-l(\bmu)}\sum_{r=1}^m\sum_{\btau\in\mathcal{P}_m(\mu^{(r)})}\eta^{\bla}_{\btau;r}.
 \end{align}
+
 
 \subsection{A  L\"ubeck--Prasad--Adin--Roichman-type formula}
 Now, we will identify a partition $\la$ with its {\em boundary sequence} $\partial(\la)$, which is a finite $0/1$ sequence constructed as follows: commence at the southwestern vertex of the diagram of $\la$, and traverse along the edges of the southeastern boundary proceeding towards the northeastern vertex; represent each horizontal movement by a $1$, and each vertical movement by a $0$. Clearly, $\la$ is determined by its boundary sequence $\partial(\la)$ and invariant under adding $0$'s (resp. $1$'s) to the head (resp. tail) of $\partial(\la)$. We define the {\em anchor} of $\partial(\la)=(s_1,s_2,\cdots,s_t)$ is the position $i$ such that $\#\{1\leq j\leq i\mid s_j=1\}=\#\{i+1\leq j\leq t\mid s_j=0\}$. We usually insert a vertical line ``$\mid$" into $\partial(\la)$ to indicate the anchor. See Figure \ref{F:partial} for an example. 
@@ -546,6 +548,7 @@ Let $\bla=(\la^{(1)},\la^{(2)},\cdots,\la^{(m)}),\bmu\in \mathcal{P}_{n,m}$. We 
 \begin{exmp}
     Figure \ref{F:remove2} presents four removal processes corresponding to those of Figure \ref{F:remove}. Let us take the leftmost one as an example. We firstly remove a $6$-generalized ribbon $\theta^{'}_1$ colored by $1$, which has two connected components. So $ht(\theta^{'}_1)=2+1=3$. As we can see, $a(\la)=(1,3,2,3,2,1,2,3)$ and $a(\la\setminus\theta^{'}_1)=(3,2,1,3,2,2,1,3)$. So $\I(\theta^{'}_1)=3$. Similarly, we have $ht(\theta^{'}_2)=2$ and $\I(\theta^{'}_2)=2$. Thus, this process contribute the sum term $u^r_2(1-q^{-2})^3(-q^{-2})^0$.
 \end{exmp}
+
 
 \subsection{Specialization to $\mathscr{W}_{m,n}$ case} This subsection aims to explain how our result (Theorem \ref{t:AR}) reduces to the special case for $\mathscr{W}_{m,n}$, which was considered in \cite{AR}. As we mentioned in section \ref{s:special}, the irreducible character $\phi^{\bm{\la}}$ can be obtained from $\chi^{\bla}$ by specializing $\bm{u}=\bm{\zeta}=(1,\zeta,\zeta^2,\cdots,\zeta^{m-1})$ and $q=1$, where $\zeta$ is the primitive $m$-th root of unity. In this case, $\eta^{\la}_{\btau;m}=0$ unless each partition $\tau^{(i)}$ ($1\leq i\leq l(\mu^{(m)})$) has only one row, i.e., $\tau^{(i)}=(\mu^{(m)}_i)$. Moreover, only those processes of removing ribbons (not generalized ribbons) from $\la$ can contribute the summation. Therefore, if $\btau\in\mathcal{P}_m(\mu^{(m)})$, then $\eta^{\la}_{\btau;m}\Big|_{\substack{
 \bm{u}=\bm{\zeta}\\ q=1}}$ equals the sum of values obtained by all possible applications of the following algorithm:\\

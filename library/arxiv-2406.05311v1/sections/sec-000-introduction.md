@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-2
 source_pdf: A_quantum_Murnaghan--Nakayama_rule_for_the_flag_ma.pdf
 source_sha256: c431fca150329547
-text_source: latex
-latex_prose_ratio: 0.942
-latex_coverage_ratio: 0.974
 doc_brief: "A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD C. BENEDETTI, N. BERGERON, L. COLMENAREJO, F. SALIOLA, AND F. SOTTILE — 5 sections: Introduction; A Murnaghan–Nakayama rule for (cla; A Murnagha"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.996
 ---
 The is a method for computing values of the irreducible characters of symmetric groups [@Mu37; @Na41a; @Na41b]. Under the identification of the character ring with the ring of symmetric functions, it translates into a rule for the multiplication of a Schur symmetric function by a Newton power sum. As explained in [@MorrisonSottile Sect. 2], in the cohomology ring of a Grassmannian, the Murnaghan--Nakayama formula is a formula for the intersection product of a Schubert variety with a component of the Chern character of the tautological bundle (a tautological class), as these tautological classes are essentially Newton power sums. Consequently, any formula describing multiplication by a tautological class will also be called a Murnaghan--Nakayama rule.
 

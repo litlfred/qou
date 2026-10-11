@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-2
 source_pdf: 2202.06733v1.pdf
 source_sha256: e670632090447f14
-text_source: latex
-latex_prose_ratio: 0.982
-latex_coverage_ratio: 0.971
 doc_brief: "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE — Diﬀerent ways of representing the groupSU(3) within a Geometric Algebra approach are"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec1}
 

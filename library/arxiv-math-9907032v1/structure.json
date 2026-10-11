@@ -350,8 +350,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "combopt.tex",
-   "tex_sections": 11,
-   "overlaid": 8,
+   "tex_sections": 14,
+   "overlaid": 11,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -361,24 +361,24 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.957,
-     "coverage_ratio": 0.97,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-1-background",
      "title": "BACKGROUND",
-     "prose_ratio": 0.955,
-     "coverage_ratio": 0.982,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-2-necessary-conditions-on-dihedral-angles",
      "title": "NECESSARY CONDITIONS ON DIHEDRAL ANGLES",
-     "prose_ratio": 0.912,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -396,18 +396,23 @@
     {
      "id": "sec-005-4-dihedral-angles-of-delaunay-triangulations",
      "title": "DIHEDRAL ANGLES OF DELAUNAY TRIANGULATIONS",
-     "prose_ratio": 0.478,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.926,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-41-some-corollaries-and-re\ufb01nements",
      "title": "Some corollaries and re\ufb01nements",
-     "result": "no matching \\section"
+     "prose_ratio": 0.93,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-5-a-network-flow-approach",
      "title": "A NETWORK FLOW APPROACH",
-     "prose_ratio": 0.955,
+     "prose_ratio": 1.0,
      "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
@@ -420,7 +425,7 @@
     {
      "id": "sec-009-6-delaunay-triangulations-of-infinite-sets-of-po",
      "title": "DELAUNAY TRIANGULATIONS OF INFINITE SETS OF POINTS",
-     "prose_ratio": 0.326,
+     "prose_ratio": 0.456,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -431,12 +436,15 @@
     {
      "id": "sec-011-61-remarks-and-corollaries",
      "title": "Remarks and Corollaries",
-     "result": "no matching \\section"
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-7-delaunay-cells-in-moduli-space",
      "title": "DELAUNAY CELLS IN MODULI SPACE",
-     "prose_ratio": 0.966,
+     "prose_ratio": 0.994,
      "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
@@ -444,24 +452,24 @@
     {
      "id": "sec-013-8-computational-complexity",
      "title": "COMPUTATIONAL COMPLEXITY",
-     "prose_ratio": 0.962,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-014-9-some-applications-to-combinatorial-geometry",
      "title": "SOME APPLICATIONS TO COMBINATORIAL GEOMETRY",
-     "prose_ratio": 0.939,
-     "coverage_ratio": 0.991,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-015-10-linear-hyperbolic-structures-on-3-manifolds",
      "title": "LINEAR HYPERBOLIC STRUCTURES ON 3-MANIFOLDS",
-     "prose_ratio": 0.87,
-     "coverage_ratio": 0.993,
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },

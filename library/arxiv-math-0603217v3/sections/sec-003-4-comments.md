@@ -7,23 +7,21 @@ section_number: 4
 pages: 4-5
 source_pdf: 0603217v3.pdf
 source_sha256: d7375d4fee00dd98
-text_source: latex
-latex_prose_ratio: 0.849
-latex_coverage_ratio: 0.976
 doc_brief: "A version of the volume conjecture — W e propose a version of the volume conjecture that would rela te a certain limit of the colored Jones polynomials of a knot to th e volume function deﬁned by a"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.964
 ---
 In [@Gukov:COMMP2005 (5.29)], Gukov proposed the following conjecture.
 
 ::: conj
-[@Gukov:COMMP2005][]{#conj:Gukov label="conj:Gukov"} Let $K$ be a knot in the three-sphere. For $a\in\mathbb{C}\setminus\mathbb{Q}$, define the function $l(a)$ as follows: $$\begin{equation}
-\label{eq:lambda}
+[@Gukov:COMMP2005][]{#conj:Gukov label="conj:Gukov"} Let $K$ be a knot in the three-sphere. For $a\in\mathbb{C}\setminus\mathbb{Q}$, define the function $l(a)$ as follows: $$\label{eq:lambda}
   l(a):=
   -\frac{d}{d\,a}
   \left\{
     a\lim_{N\to\infty}
     \frac{\log{J_N\left(K;\exp(2\pi{a}\sqrt{-1}/N)\right)}}{N}
-  \right\}.
-\end{equation}$$ Then the pair $\left(\exp\bigl(l(a)\bigr),-\exp(\pi{a}\sqrt{-1})\right)$ is a zero of the $A$-polynomial of $K$ introduced in [@Cooper/Culler/Gillet/Long/Shalen:INVEM1994].
+  \right\}.$$ Then the pair $\left(\exp\bigl(l(a)\bigr),-\exp(\pi{a}\sqrt{-1})\right)$ is a zero of the $A$-polynomial of $K$ introduced in [@Cooper/Culler/Gillet/Long/Shalen:INVEM1994].
 :::
 
 Using our parameterization $u:=2\pi{a}\sqrt{-1}-2\pi\sqrt{-1}$, we have $l(a)=-v_{K}(u)/2-\pi\sqrt{-1}$. Then Conjecture [\[conj:Gukov\]](#conj:Gukov){reference-type="ref" reference="conj:Gukov"} states that the pair $\left(-\exp\bigl(-v_{K}(u)/2\bigr),\exp(u/2)\right)$ is a zero of the $A$-polynomial.
@@ -44,11 +42,9 @@ Let $\Delta(K;t)$ be the Alexander polynomial of a knot $K$. For the figure-eigh
 *Proof.* First note that $\Delta(E;t)=-t^2+3t-1$ and $\Delta\bigl(T(a,b);t\bigr)
 =\left(t^{ab}-1\right)(t-1)/\left(t^a-1\right)\left(t^b-1\right)$.
 
-For the figure-eight knot $E$, we have from [@Murakami/Yokota:JREIA] $$\begin{equation*}
-  H(E;u)
+For the figure-eight knot $E$, we have from [@Murakami/Yokota:JREIA] $$H(E;u)
   =
-  \operatorname{Li}_2(y^{-1}\exp(-u))-\operatorname{Li}_2(y\exp(-u))+\left(\log(-y)+\pi\sqrt{-1}\right)u,
-\end{equation*}$$ where $y$ is a solution to the equation $y+y^{-1}=2\cosh(u)-1$. Put $u:=\pm\operatorname{arccosh}(3/2)$. Then $y=1$ and so $H(E;u)$ vanishes. Note that we take the branch of $\log$ so that $\log(-1)=-\pi\sqrt{-1}$. It is easy to see that $\exp(\pm\operatorname{arccosh}(3/2))$ are the roots of $\Delta(E;\exp(u))=0$.
+  \operatorname{Li}_2(y^{-1}\exp(-u))-\operatorname{Li}_2(y\exp(-u))+\left(\log(-y)+\pi\sqrt{-1}\right)u,$$ where $y$ is a solution to the equation $y+y^{-1}=2\cosh(u)-1$. Put $u:=\pm\operatorname{arccosh}(3/2)$. Then $y=1$ and so $H(E;u)$ vanishes. Note that we take the branch of $\log$ so that $\log(-1)=-\pi\sqrt{-1}$. It is easy to see that $\exp(\pm\operatorname{arccosh}(3/2))$ are the roots of $\Delta(E;\exp(u))=0$.
 
 For the torus knot $T(a,b)$ the zero of $H\bigl(T(a,b);u\bigr)$ is $2\pi\sqrt{-1}/(ab)-2\pi\sqrt{-1}$. It is also a zero of $\Delta(T(a,b);\exp(u))$. ◻
 :::

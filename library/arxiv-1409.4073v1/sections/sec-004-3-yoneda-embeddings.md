@@ -7,10 +7,10 @@ section_number: 3
 pages: 16-26
 source_pdf: 1409.4073v1.pdf
 source_sha256: b40be7f0022f70a1
-text_source: latex
-latex_prose_ratio: 0.855
-latex_coverage_ratio: 0.938
 doc_brief: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — W e introduce “sheaﬁﬁcation” functors from categories of (l ax monoidal) linear functors to categories of quasi-coherent sheaves"
+text_source: latex
+latex_prose_ratio: 0.835
+latex_coverage_ratio: 0.991
 ---
 In this section we address the problem of when the Yoneda functor $\mathop{\mathrm{\textup{QCoh}}}_{A}\stX\arr\L_{R}(\shC,A)$ is fully faithful and describe its essential image. This will led us to the notion of generating category and left exactness for functors in $\L_{R}(\shC,A)$.
 
@@ -83,10 +83,7 @@ In general we can still conclude that:
 Now we want to address the problem of what is the essential image of the Yoneda functor $\Omega^{*}\colon\mathop{\mathrm{\textup{QCoh}}}_{A}\stX\arr\L_{R}(\shC,A)$. We will see that if $\shF\in\mathop{\mathrm{\textup{QCoh}}}_{A}\stX$ the associated Yoneda functor $\Omega^{\shF}$ is always "left exact" and we will give sufficient conditions assuring that "left exact" functors in $\L_{R}(\shC,A)$ are Yoneda functors associated with some quasi-coherent sheaf on $\stX$. Since $\shC$ is not abelian, we introduce an ad hoc notion of left exactness.
 
 ::: defn
-[]{#def: left exact functors label="def: left exact functors"} Let $\shD$ be a subcategory of $\mathop{\mathrm{\textup{QCoh}}}\stX$. A *test sequence* for $\shD$ is an exact sequence $$\begin{equation}
-\bigoplus_{k\in K}\E_{k}\arr\bigoplus_{j\in J}\E_{j}\arr\E\arr0\text{ with }\E,\E_{j},\E_{k}\in\shD\text{ for all }j\in J,k\in K\label{eq:exact sequence for functor exactness}
-\end{equation}$$ in $\mathop{\mathrm{\textup{QCoh}}}\stX$ given by maps $u_{j}\colon\E_{j}\arr\E$, $u_{kj}\colon\E_{k}\arr\E_{j}$ such that for all $k\in K$ the set $\{j\in J\st u_{kj}\neq0\}$ is finite. We will also say that it is a test sequence for $\E\in\shD$. A finite test sequence for $\E\in\shD$ is an exact sequence $$\E''\arr\E'\arr\E\arr0\text{ with }\E',\E''\in\shD^{\oplus}$$ Given $\Gamma\in\L_{R}(\shD,A)$ we say that $\Gamma$ is exact on the test sequence ([\[eq:exact sequence for functor exactness\]](#eq:exact sequence for functor exactness){reference-type="ref" reference="eq:exact sequence for functor exactness"}) if the sequence $$\begin{equation}
-\begin{tikzpicture}[xscale=2.9,yscale=-0.8]     
+[]{#def: left exact functors label="def: left exact functors"} Let $\shD$ be a subcategory of $\mathop{\mathrm{\textup{QCoh}}}\stX$. A *test sequence* for $\shD$ is an exact sequence $$\bigoplus_{k\in K}\E_{k}\arr\bigoplus_{j\in J}\E_{j}\arr\E\arr0\text{ with }\E,\E_{j},\E_{k}\in\shD\text{ for all }j\in J,k\in K\label{eq:exact sequence for functor exactness}$$ in $\mathop{\mathrm{\textup{QCoh}}}\stX$ given by maps $u_{j}\colon\E_{j}\arr\E$, $u_{kj}\colon\E_{k}\arr\E_{j}$ such that for all $k\in K$ the set $\{j\in J\st u_{kj}\neq0\}$ is finite. We will also say that it is a test sequence for $\E\in\shD$. A finite test sequence for $\E\in\shD$ is an exact sequence $$\E''\arr\E'\arr\E\arr0\text{ with }\E',\E''\in\shD^{\oplus}$$ Given $\Gamma\in\L_{R}(\shD,A)$ we say that $\Gamma$ is exact on the test sequence ([\[eq:exact sequence for functor exactness\]](#eq:exact sequence for functor exactness){reference-type="ref" reference="eq:exact sequence for functor exactness"}) if the sequence $$\begin{tikzpicture}[xscale=2.9,yscale=-0.8]     
 \node (A0_2) at (2, 0) {$(x_j )_j$};     
 \node (A0_3) at (3, 0) {$(\sum_j \Gamma_{u_{kj}}(x_j))_k$};     
 \node (A1_0) at (0.4, 1) {$0$};     
@@ -101,8 +98,7 @@ Now we want to address the problem of what is the essential image of the Yoneda 
 \path (A1_2) edge [->]node [auto] {$\scriptstyle{}$} (A1_3);     
 \path (A1_1) edge [->]node [auto] {$\scriptstyle{}$} (A1_2);   
 \end{tikzpicture}
-\label{Gamma on a test sequence}
-\end{equation}$$ is exact. We say that $\Gamma$ is left exact if it is left exact on all short exact sequences in $\shD$. We define $\mathop{\mathrm{\textup{Lex}}}_{R}(\shD,A)$ as the subcategory of $\L_{R}(\shD,A)$ of functors exact on all test sequences in $\shD$.
+\label{Gamma on a test sequence}$$ is exact. We say that $\Gamma$ is left exact if it is left exact on all short exact sequences in $\shD$. We define $\mathop{\mathrm{\textup{Lex}}}_{R}(\shD,A)$ as the subcategory of $\L_{R}(\shD,A)$ of functors exact on all test sequences in $\shD$.
 :::
 
 ::: rem
@@ -229,9 +225,7 @@ In an abelian category $\alA$, given $X,Y\in\alA$ we can always define the abeli
 :::
 
 ::: defn
-[]{#def: cohomologically left exact label="def: cohomologically left exact"} Given a surjective map $\mu=\oplus_{j}\mu_{j}\colon\oplus_{j}\E_{j}\arr\E$ with $\E,\E_{j}\in\shC$ we set $\Omega^{\mu}=\oplus_{j}\Omega^{\mu_{j}}\colon\oplus_{j}\Omega^{\E_{j}}\arr\Omega^{\E}$. A functor $\Gamma\in\L_{R}(\shC,A)$ is *cohomologically left exact* on $\mu$ if $$\begin{equation}
-\mathop{\mathrm{\textup{Hom}}}_{\L_{R}(\shC,R)}(\Omega^{\E}/\mathop{\mathrm{\textup{Im}}}(\Omega^{\mu}),\Gamma)=\mathop{\mathrm{\textup{Ext}}}_{\L_{R}(\shC,R)}^{1}(\Omega^{\E}/\mathop{\mathrm{\textup{Im}}}(\Omega^{\mu}),\Gamma)=0\label{eq:cohomological vanishing left exact functors}
-\end{equation}$$ It is cohomologically left exact if it is so on all surjections $\mu$ as above.
+[]{#def: cohomologically left exact label="def: cohomologically left exact"} Given a surjective map $\mu=\oplus_{j}\mu_{j}\colon\oplus_{j}\E_{j}\arr\E$ with $\E,\E_{j}\in\shC$ we set $\Omega^{\mu}=\oplus_{j}\Omega^{\mu_{j}}\colon\oplus_{j}\Omega^{\E_{j}}\arr\Omega^{\E}$. A functor $\Gamma\in\L_{R}(\shC,A)$ is *cohomologically left exact* on $\mu$ if $$\mathop{\mathrm{\textup{Hom}}}_{\L_{R}(\shC,R)}(\Omega^{\E}/\mathop{\mathrm{\textup{Im}}}(\Omega^{\mu}),\Gamma)=\mathop{\mathrm{\textup{Ext}}}_{\L_{R}(\shC,R)}^{1}(\Omega^{\E}/\mathop{\mathrm{\textup{Im}}}(\Omega^{\mu}),\Gamma)=0\label{eq:cohomological vanishing left exact functors}$$ It is cohomologically left exact if it is so on all surjections $\mu$ as above.
 :::
 
 We setup some notation. We denote by $\Phi_{\shC}(\E)$ for $\E\in\shC$ the set of subfunctor of $\Omega^{\E}$of the form $\mathop{\mathrm{\textup{Im}}}(\Omega^{\mu})$ for some surjective map $\mu\colon\oplus_{j}\E_{i}\arr\E$ with $\E_{j}\in\shC$ and by $\Phi_{\shC}$ the disjoint union of all the $\Phi_{\shC}(\E)$. Given $\Delta=\mathop{\mathrm{\textup{Im}}}(\Omega^{\mu})\in\Phi_{\shC}$ and $\Gamma\in\L_{R}(\shC,A)$ we will say that $\Gamma$ is cohomologically left exact on $\Delta$ if it is cohomologically left exact on $\mu$. Notice that, using Yoneda's lemma, we have an $A$-linear isomorphism $$\mathop{\mathrm{\textup{Hom}}}_{\L_{R}(\shC,R)}(\oplus_{j}\Omega^{\E_{j}},\Gamma)\simeq\prod_{j}\Gamma_{\E_{j}}\text{ for all }\E_{j}\in\shC\comma\Gamma\in\L_{R}(\shC,A)$$ In particular $\mathop{\mathrm{\textup{Hom}}}_{\L_{R}(\shC,R)}(\Omega^{\E},-)$, which is the evaluation in $\E$, is exact, which implies that $\mathop{\mathrm{\textup{Ext}}}_{\L_{R}(\shC,R)}^{1}(\Omega^{\E},-)=0$.
@@ -306,9 +300,9 @@ We now show how to reduce the number of test sequences in order to check when a 
 ::: prop
 []{# prop: Lex and left exact functors label=" prop: Lex and left exact functors"} Let $\shD\subseteq\mathop{\mathrm{\textup{QCoh}}}\stX$ be a subcategory and $\Gamma\in\L_{R}(\shD,A)$. If $\Gamma\in\mathop{\mathrm{\textup{Lex}}}_{R}(\shD,A)$ then $\Gamma$ is exact on finite test sequences in $\shD$ and transforms arbitrary direct sums in $\shD$ into products. The converse holds if one of the following conditions is satisfied:
 
-- the category $\shD$ is stable by arbitrary direct sums;
+-   the category $\shD$ is stable by arbitrary direct sums;
 
-- all the sheaves in $\shD$ are finitely presented, $\shD\subseteq\mathop{\mathrm{\textup{QCoh}}}^{\shD}\stX$ and $\stX$ is quasi-compact. In this case $\Gamma\in\mathop{\mathrm{\textup{Lex}}}_{R}(\shD,A)$ if and only if it is cohomologically left exact on all surjective maps $\E'\arr\E$ with $\E\in\shD$ and $\E'\in\shD^{\oplus}$.
+-   all the sheaves in $\shD$ are finitely presented, $\shD\subseteq\mathop{\mathrm{\textup{QCoh}}}^{\shD}\stX$ and $\stX$ is quasi-compact. In this case $\Gamma\in\mathop{\mathrm{\textup{Lex}}}_{R}(\shD,A)$ if and only if it is cohomologically left exact on all surjective maps $\E'\arr\E$ with $\E\in\shD$ and $\E'\in\shD^{\oplus}$.
 
 In any of the above cases, if moreover $\shD$ is additive and all surjections in $\shD$ have kernel in $\shD$ then $\mathop{\mathrm{\textup{Lex}}}_{R}(\shD,A)$ is the subcategory of $\L_{R}(\shD,A)$ of left exact functors which transforms arbitrary direct sums in products.
 :::
@@ -387,4 +381,46 @@ If $\shD$ is a monoidal subcategory of $\mathop{\mathrm{\textup{QCoh}}}\stX$ we 
 
 ::: thm
 []{#thm:rewriting of general equivalences for monoidal functors label="thm:rewriting of general equivalences for monoidal functors"} The theorems [\[thm:equivalence for QCoh X\]](#thm:equivalence for QCoh X){reference-type="ref" reference="thm:equivalence for QCoh X"}, [\[thm:equivalence for noetherian algebraic stacks\]](#thm:equivalence for noetherian algebraic stacks){reference-type="ref" reference="thm:equivalence for noetherian algebraic stacks"}, [\[thm:equivalence for Loc X\]](#thm:equivalence for Loc X){reference-type="ref" reference="thm:equivalence for Loc X"} continue to hold if we replace $\mathop{\mathrm{\textup{Lex}}}_{R}$ by $\mathop{\mathrm{\textup{PMLex}}}_{R}$ (resp. $\mathop{\mathrm{\textup{MLex}}}_{R}$), $\mathop{\mathrm{\textup{QCoh}}}_{A}\stX$ by $\mathop{\mathrm{\textup{QRings}}}_{A}\stX$ (resp. $\mathop{\mathrm{\textup{QAlg}}}_{A}\stX$) and the word "functors" by "pseudo-monoidal functors" (resp. "monoidal functors").
+:::
+
+# []{#sec: group schemes representation label="sec: group schemes representation"} Group schemes and representations.
+
+Let $G$ be a flat and affine group scheme over $R$. In this section we want to interpret the results obtained in the case $\stX=\mathop{\mathrm{\textup{B}}}_{R}G$, the stack of $G$-torsors for the *fpqc* topology, which is a quasi-compact fpqc stack with affine diagonal.
+
+If $A$ is an $R$-algebra, by standard theory we have that $\mathop{\mathrm{\textup{QCoh}}}_{A}\mathop{\mathrm{\textup{B}}}_{R}G$ is the category $\mathop{\mathrm{\textup{Mod}}}^{G}A$ of $G$-comodules over $A$. Recall that the regular representation $R[G]$ of $G$ is by definition the $G$-comodule $p_{*}\odi G$. By definition it comes equipped with a morphism of $R$-algebras $\varepsilon\colon R[G]\arr R$ induced by the unit section of $G$.
+
+::: rem
+[]{#rem: crucial isomorphism invariants RG and modules label="rem: crucial isomorphism invariants RG and modules"} If $M\in\mathop{\mathrm{\textup{Mod}}}^{G}A$ then the composition $$(M\otimes_{R}R[G])^{G}\arr M\otimes_{R}R[G]\arrdi{\id_{M}\otimes\varepsilon}M$$ is an isomorphism. This follows from [@Jantzen2003 3.4] applied to $G=H$.
+:::
+
+We start with a criterion to find a set of generators for $\mathop{\mathrm{\textup{QCoh}}}\mathop{\mathrm{\textup{B}}}_{R}G$.
+
+::: prop
+[]{#thm:generating sheaves for BG label="thm:generating sheaves for BG"} If the regular representation $R[G]$ is a filtered direct limit of modules $B_{i}\in\mathop{\mathrm{\textup{Mod}}}^{G}R$ which are finitely presented as $R$-modules then $\{\duale B_{i}\}_{i\in I}$ generates $\mathop{\mathrm{\textup{Mod}}}^{G}R$.
+:::
+
+::: proof
+*Proof.* Set $B=R[G]$ and $\varepsilon_{i}\colon B_{i}\arr R$ for the composition $B_{i}\arr B\arrdi{\varepsilon}R$ and let $M\in\mathop{\mathrm{\textup{Mod}}}^{G}R$. Since filtered direct limits commute with tensor products and taking invariants, by [\[rem: crucial isomorphism invariants RG and modules\]](#rem: crucial isomorphism invariants RG and modules){reference-type="ref" reference="rem: crucial isomorphism invariants RG and modules"} we have that the limit of the maps $(\varepsilon_{i}\otimes\id_{M})_{|(B_{i}\otimes M)^{G}}\colon(B_{j}\otimes M)^{G}\arr M$ is an isomorphism. This means that for any $m\in M$ there exists $i_{m}\in I$ and an element $\psi_{m}\in(B_{i_{m}}\otimes M)^{G}$ such that $(\varepsilon_{i}\otimes\id_{M})(\psi_{m})=m$. The map $B_{i}\otimes M\arr\mathop{\mathrm{\textup{Hom}}}(\duale{B_{i}},M)$ is $G$-equivariant and therefore we obtain a $\delta_{m}\in\mathop{\mathrm{\textup{Hom}}}^{G}(\duale{B_{i}},M)$ such that $\delta_{m}(\varepsilon_{i})=m$. This implies that the map $$\bigoplus_{m\in M}\delta_{m}\colon\bigoplus_{m\in M}\duale B_{i_{m}}\arr M$$ is surjective and therefore that $M$ is generated by $\{\duale{B_{i}}\}_{i\in I}$. ◻
+:::
+
+::: rem
+[]{#rem: resolution property for BG cases label="rem: resolution property for BG cases"} The class $\shG_{R}$ of flat, affine group schemes $G$ over $R$ such that $R[G]$ is a direct limit of modules in $\mathop{\mathrm{\textup{Loc}}}(\mathop{\mathrm{\textup{B}}}_{R}G)$ is stable by arbitrary products and projective limits. Moreover by construction contains all groups which are flat, finite and finitely presented over $R$, i.e. $R[G]\in\mathop{\mathrm{\textup{Loc}}}(\mathop{\mathrm{\textup{B}}}_{R}G)$, and thus all profinite groups. Since any $G$-comodule is the union of the sub $G$-comodules which are finitely generated $R$-modules (see [@Jantzen2003 2.13]), we see that $\shG_{R}$ contains all flat groups defined over a Dedekind domain or a field, such as $\mathop{\mathrm{\textup{GL}}}_{r}$, $\text{SL}_{r}$ and all diagonalizable groups. Proposition [\[thm:generating sheaves for BG\]](#thm:generating sheaves for BG){reference-type="ref" reference="thm:generating sheaves for BG"} tells us that if $G\in\shG_{R}$ then $\mathop{\mathrm{\textup{B}}}_{R}G$ has the resolution property.
+:::
+
+Let $A$ be an $R$-algebra. We denote by $\mathop{\mathrm{\textup{Loc}}}^{G}A$ the subcategory of $\mathop{\mathrm{\textup{Mod}}}^{G}A$ of $G$-comodules that are locally free of finite rank (projective of finite type) as $A$-modules, so that $\mathop{\mathrm{\textup{Loc}}}(\mathop{\mathrm{\textup{B}}}_{R}G)\simeq\mathop{\mathrm{\textup{Loc}}}^{G}R$. We define $\mathop{\mathrm{\textup{QAdd}}}^{G}A$ ($\mathop{\mathrm{\textup{QPMon}}}^{G}A$, $\mathop{\mathrm{\textup{QMon}}}^{G}A$) as the category of *covariant* $R$-linear (pseudo-monoidal, monoidal) functors $\mathop{\mathrm{\textup{Loc}}}^{G}R\arr\mathop{\mathrm{\textup{Mod}}}A$. We set $\mathop{\mathrm{\textup{QRings}}}^{G}A$ for the category of $M\in\mathop{\mathrm{\textup{Mod}}}^{G}A$ with a $G$-equivariant map $M\otimes_{A}M\arr M$ and $\mathop{\mathrm{\textup{QAlg}}}^{G}A$ for the (not full) subcategory of $\mathop{\mathrm{\textup{QRings}}}^{G}A$ of commutative $R$-algebras.
+
+::: defn
+The group $G$ is called *linearly reductive* if the functor $(-)^{G}\colon\mathop{\mathrm{\textup{Mod}}}^{G}R\arr\mathop{\mathrm{\textup{Mod}}}R$ is exact.
+:::
+
+::: rem
+[]{#rem: LocG R semisimple if G linearly reductive label="rem: LocG R semisimple if G linearly reductive"} If $G$ is linearly reductive then any short exact sequence in $\mathop{\mathrm{\textup{Loc}}}^{G}R$ splits. Indeed if $M\arr N$ is surjective then $\mathop{\mathrm{\textup{Hom}}}_{R}^{G}(N,M)\arr\mathop{\mathrm{\textup{Hom}}}_{R}^{G}(N,N)$ is surjective, yielding a $G$-equivariant section $N\arr M$.
+:::
+
+::: thm
+[]{#thm:general theorem for BG label="thm:general theorem for BG"} If $\mathop{\mathrm{\textup{B}}}_{R}G$ has the resolution property then the functors $$\mathop{\mathrm{\textup{Mod}}}^{G}A\arr\mathop{\mathrm{\textup{QAdd}}}^{G}A\comma\mathop{\mathrm{\textup{QRings}}}^{G}A\arr\mathop{\mathrm{\textup{QPMon}}}^{G}A\comma\mathop{\mathrm{\textup{QAlg}}}^{G}A\arr\mathop{\mathrm{\textup{QMon}}}^{G}A$$ which maps $M$ to the functor $(-\otimes_{R}M)^{G}\colon\mathop{\mathrm{\textup{Loc}}}^{G}R\arr\mathop{\mathrm{\textup{Mod}}}A$ are well defined, fully faithful and have essential image the subcategory of functors which are left exact on short exact sequences in $\mathop{\mathrm{\textup{Loc}}}^{G}R$. In particular they are equivalences if $G$ is a linearly reductive group.
+:::
+
+::: proof
+*Proof.* Set $\shC=\mathop{\mathrm{\textup{Loc}}}^{G}R$. The functor $\duale{(-)}\colon\mathop{\mathrm{\textup{Loc}}}^{G}R\arr\mathop{\mathrm{\textup{Loc}}}^{G}R$ is an equivalence and therefore we get equivalences $\mathop{\mathrm{\textup{QAdd}}}^{G}A\simeq\L_{R}(\shC,A)$, $\mathop{\mathrm{\textup{QPMon}}}^{G}A\simeq\mathop{\mathrm{\textup{PML}}}_{R}(\shC,A)$ and $\mathop{\mathrm{\textup{QMon}}}^{G}A\simeq\mathop{\mathrm{\textup{ML}}}_{R}(\shC,A)$. Left exact functors are sent to left exact functors. Under those equivalences $\Omega^{M}$ corresponds to $(-\otimes_{R}M)^{G}$ because $\mathop{\mathrm{\textup{Hom}}}_{\mathop{\mathrm{\textup{B}}}_{R}G}(\duale{\E},M)\simeq\mathop{\mathrm{\textup{H}}}^{0}(\E\otimes_{\odi{\mathop{\mathrm{\textup{B}}}_{R}G}}M)\simeq(\E\otimes_{R}M)^{G}$. Thus the result follows from [\[prop:excatness properties of Omega\* and shF\*\]](#prop:excatness properties of Omega* and shF*){reference-type="ref" reference="prop:excatness properties of Omega* and shF*"}, [\[thm:equivalence for Loc X\]](#thm:equivalence for Loc X){reference-type="ref" reference="thm:equivalence for Loc X"}, [\[thm:rewriting of general equivalences for monoidal functors\]](#thm:rewriting of general equivalences for monoidal functors){reference-type="ref" reference="thm:rewriting of general equivalences for monoidal functors"} and [\[rem: LocG R semisimple if G linearly reductive\]](#rem: LocG R semisimple if G linearly reductive){reference-type="ref" reference="rem: LocG R semisimple if G linearly reductive"}. ◻
 :::

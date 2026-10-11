@@ -8,79 +8,23 @@ pages: 34-34
 source_pdf: 2506.10206v2.pdf
 source_sha256: d0631a9abd9b1da3
 doc_brief: "Analytic dilogarithm identities — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations"
+text_source: latex
+latex_prose_ratio: 0.943
+latex_coverage_ratio: 1.0
 ---
-We can rewrite Theorem 5 so that the three-term dilogarithm combination
-Li2
- 
-2u2− 3u−
-p
-u(4− 3u)
-2(u− 1)u
-!
-−
-Li2
- 
-2u2− 3u−
-p
-u(4− 3u)
-2(u− 1)2
-!
-+ Li2
- u
-u− 1
-
-admits the closed form
-−1
-2 ln2
- 
-2u2− 3u +
-p
-u(4− 3u)
-−2(u− 1)2
-!
-− π2
-6 + 3
-2 ln2
- 
-1− u−
-p
-u(4− 3u)
-2(u− 1)
-!
-.
-We proceed to apply the substitutions
-2u2− 3u−
-p
-−u(3u− 4)
-2(u− 1)u =
- u
-u− 1
-m
-,
-2u2− 3u +
-p
-−u(3u− 4)
-2(u− 1)2 =
- u
-u− 1
-−m
-, and
-2u2− 3u−
-p
-−u(3u− 4)
-2(u− 1)2 =
- u
-u− 1
-m+1
-.
-Substituting u = h
-h−1, we have the ladder identity
-−Li2(h−m)− Li2(hm+1) + Li2(h) = 3
-2 ln2
-1−h−m
-1−h
-
-for arbitrary powers, where (hm +h− 3)hm+1 + 1 = 0.
-Example 16. Form =−4 we have that h5 + 2h4 + 4h3 + 3h2 + 2h + 1 = 0. This can be
-proved by applying Roger’s identity and then Landen’s identity. A similar approach can be
-applied to many of Lewin’s ladder identities.
+[]{#subsection3ladder label="subsection3ladder"} We can rewrite Theorem [\[previouslymaster\]](#previouslymaster){reference-type="ref" reference="previouslymaster"} so that the three-term dilogarithm combination $$\begin{gathered}
+ \operatorname{Li}_2\left(\frac{2u^2 - 3u - \sqrt{u(4-3u)}}{2(u - 1)u}\right) - \\ 
+ \operatorname{Li}_2\left(\frac{2u^2 - 3u - \sqrt{u(4 - 3u)}}{2(u - 1)^2}\right) 
+ + \operatorname{Li}_2\left(\frac{u}{u - 1}\right) 
+\end{gathered}$$ admits the closed form $$- \frac{1}{2} \ln^2\left(\frac{2u^2 - 3u + \sqrt{u(4 - 3u)}}{-2(u - 1)^2}\right) - \frac{\pi^2}{6}
+ + \frac{3}{2} \ln^2\left(1 - \frac{u - \sqrt{u(4 - 3u)}}{2(u - 1)}\right).$$ We proceed to apply the substitutions $$\begin{aligned}
+\frac{2u^2 - 3u - \sqrt{-u(3u - 4)}}{2(u - 1)u} & = \left(\frac{u}{u - 1}\right)^m,\\
+\frac{2u^2 - 3u + \sqrt{-u(3u - 4)}}{2(u - 1)^2} & = \left(\frac{u}{u - 1}\right)^{-m}, \ \text{and} \\
+\frac{2u^2 - 3u - \sqrt{-u(3u - 4)}}{2(u - 1)^2} & = \left(\frac{u}{u - 1}\right)^{m + 1}. 
+\end{aligned}$$ Substituting $u = \frac{h}{h-1}$, we have the ladder identity $$\begin{aligned}
+- \mathrm{Li}_2(h^{-m}) - \mathrm{Li}_2(h^{m+1}) + \mathrm{Li}_2(h) = \frac{3}{2} \ln^2\left( \frac{1 - h^{-m}}{1 - h} \right)
+\end{aligned}$$ for arbitrary powers, where $(h^m + h - 3) h^{m + 1} + 1 = 0$.
+
+::: example
+For $m=-4$ we have that $h^5 + 2 h^4 + 4 h^3 + 3 h^2 + 2 h + 1=0$. This can be proved by applying Roger's identity and then Landen's identity. A similar approach can be applied to many of Lewin's ladder identities.
+:::

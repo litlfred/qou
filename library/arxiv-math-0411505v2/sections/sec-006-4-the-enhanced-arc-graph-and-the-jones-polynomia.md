@@ -7,10 +7,10 @@ section_number: 4
 pages: 7-8
 source_pdf: 0411505v2.pdf
 source_sha256: a38cec365e0a227e
-text_source: latex
-latex_prose_ratio: 0.967
-latex_coverage_ratio: 0.962
 doc_brief: "A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION — The colored Jones function of a knot is a sequence of Laurent p olynomials that encodes the Jones polynomial of a knot and its parallels."
+text_source: latex
+latex_prose_ratio: 0.956
+latex_coverage_ratio: 1.0
 ---
 \lbl{sub.enhanced}
 
@@ -144,3 +144,14 @@ only if $f(v)\leq n$ for each vertex $v$. Thus, in the above sum, only
 finitely many terms contribute. As a result, when $n=1$,
 Theorems \ref{thm.main} and \ref{thm.arcjones} coincide. 
 \end{remark}
+
+
+
+
+\section{Proof of Theorem \ref{thm.nonc}}
+\lbl{sec.prpr}
+
+Theorem \ref{thm.main} is used in this section to prove the main 
+Theorem \ref{thm.nonc}.
+In the rest of the paper we then prove Theorem \ref{thm.main} from 
+Theorem \ref{thm.arcjonesn}.

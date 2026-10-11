@@ -7,10 +7,10 @@ section_number: VI
 pages: 10-13
 source_pdf: 2106.01332v4.pdf
 source_sha256: 44c19a99624997bf
-text_source: latex
-latex_prose_ratio: 0.993
-latex_coverage_ratio: 0.985
 doc_brief: "Braided matter interactions in quantum gravity via 1-handle attachment — 9 sections: INTRODUCTION; (for C𝓁(6)) and B3 (for C𝓁(4)). In; THEORIES ON RIBBON GRAPHS"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 The fact that isotopy classes of trivalent braided networks are used in the scheme described above implicitly raises two important issues. The first relates to the possibility of associating conserved quantities to particles embedded in braided networks. Secondly, we ideally want to consider invariants that distinguish different particles in Bilson-Thompson's model, and different configurations of particle networks. In the previous literature the invariant link has been used to argue that particles correspond to different states \cite{BT2}. This is a link-valued invariant of braided networks, in the sense that it associates a topological link to a given braided network. In \cite{JH}, the author has constructed certain topologies on braided networks that distinguish different topological configurations associated to particles in Bilson-Thompson's model. We follow a different paradigm in the present article, which is particularly suitable to distinguish different braided network configurations. We utilize, in fact, algebraic invariants of isotopy classes of braided networks based on Kauffman-Lins recoupling theory \cite{KL}. We provide a formulation of invariants closely related to those of \cite{Yokota,Handlebodies}, where we do not preserve Reidemeister move I, but rather we have invariance under the framed Reidemeister move I. In fact, the invariants given by Mizusawa and Murakami in \cite{Handlebodies} are suitable as well in the precise formulation thereby given, although twists would be neglected and the particles in Bilson-Thompson model would be indistinguishable. Topologically, the isotopy classes of Bilson-Thompson particles can be distinguished by their combed position. Since during the evolution with respect to time the bradied network might be substantially deformed (for instance by $1$-handle slides), it might not be straightforward to individuate the particles in a braided network, and having some global factor in the invariant provides information that might not be immediately retrived.  One further subtlety concerns the fact that Matsuzaki's moves treat embeddings in the $3$-space $\mathbb R^3$, or its compactification $\mathbb S^3$. For different manifolds, which are not simply connected, some differences arise, such as the fact that there are different types of unknotted surfaces (depending on which holes they wrap around), but the local moves remain unchanged, and the same paradigm can be applied.\\
 
@@ -34,6 +34,7 @@ where $+$ or $-$ depends on whether we consider positive or negative twists, res
 \end{proof}
 
 \bigskip 
+
 
 \subsection{Examples and Computations}
 

@@ -365,8 +365,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "ms.tex",
-   "tex_sections": 9,
-   "overlaid": 3,
+   "tex_sections": 21,
+   "overlaid": 12,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -387,88 +387,119 @@
     {
      "id": "sec-002-12-likelihood-based-inference",
      "title": "Likelihood-based inference",
-     "prose_ratio": 0.174,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.256,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-003-121-the-likelihood-approach",
      "title": "The likelihood approach",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-122-practical-challenges",
      "title": "Practical challenges",
-     "result": "no matching \\section"
+     "prose_ratio": 0.897,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-131-likelihood-of-a-pomp",
      "title": "Likelihood of a POMP",
-     "result": "no matching \\section"
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.867,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-132-evaluation-of-the-likelihood",
      "title": "Evaluation of the likelihood",
-     "result": "no matching \\section"
+     "prose_ratio": 0.677,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-14-iterated-filtering-methods",
      "title": "Iterated filtering methods",
-     "prose_ratio": 0.436,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.779,
+     "coverage_ratio": 0.376,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-008-141-algorithm",
      "title": "Algorithm",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.878,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-151-the-problem-of-interest",
      "title": "The problem of interest",
-     "result": "no matching \\section"
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-152-formulation-of-a-pomp-model",
      "title": "Formulation of a POMP model",
-     "result": "no matching \\section"
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-153-inference",
      "title": "Inference",
-     "result": "no matching \\section"
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-154-practical-advice",
      "title": "Practical advice",
-     "result": "no matching \\section"
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-16-extensions",
      "title": "Extensions",
-     "prose_ratio": 0.988,
-     "coverage_ratio": 0.969,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-014-17-rotavirus-example",
      "title": "Rotavirus example",
-     "prose_ratio": 0.964,
-     "coverage_ratio": 0.98,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-015-18-concluding-comments",
      "title": "Concluding comments",
-     "prose_ratio": 0.81,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.812,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-016-182-further-reading",
      "title": "Further reading",
-     "result": "no matching \\section"
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.237,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     }
    ]
   }

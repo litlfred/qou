@@ -427,8 +427,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "trace.tex",
-   "tex_sections": 6,
-   "overlaid": 2,
+   "tex_sections": 24,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -469,25 +469,32 @@
     {
      "id": "sec-006-16-acknowledgements",
      "title": "Acknowledgements",
-     "result": "no matching \\section"
+     "prose_ratio": 0.902,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-2-ribbon-categories-and-traces",
      "title": "Ribbon Categories and Traces",
-     "prose_ratio": 0.664,
-     "coverage_ratio": 0.964,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.691,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-008-23-traces-in-ribbon-categories",
      "title": "Traces in Ribbon Categories",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.91,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-24-tensor-ideals-in-a-ribbon-category",
      "title": "Tensor Ideals in a Ribbon Category",
-     "result": "no matching \\section"
+     "prose_ratio": 0.105,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-010-25",
@@ -502,36 +509,50 @@
     {
      "id": "sec-012-4-a-trace-on-the-ideal-of-negligibles-in-reps0",
      "title": "A trace on the ideal of negligibles in Rep(S0)",
-     "prose_ratio": 0.648,
-     "coverage_ratio": 0.89,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.654,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-013-42-dimensions-in-the-non-semisimple-block",
      "title": "Dimensions in the Non-Semisimple Block",
-     "result": "no matching \\section"
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-014-5-a-trace-on-the-ideal-of-negligibles-in-repst-w",
      "title": "A trace on the ideal of negligibles in Rep(St) when tZ0",
-     "prose_ratio": 0.126,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-015-51-notation",
      "title": "Notation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.947,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-016-52-the-object-mn",
      "title": "The Object Mn",
-     "result": "no matching \\section"
+     "prose_ratio": 0.877,
+     "coverage_ratio": 0.89,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-017-53-an-ambidextrous-trace-on-mn",
      "title": "An Ambidextrous Trace on Mn",
-     "result": "no matching \\section"
+     "prose_ratio": 0.608,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-018-61",

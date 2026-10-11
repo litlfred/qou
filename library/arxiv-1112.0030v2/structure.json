@@ -191,8 +191,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "colored_v2.tex",
-   "tex_sections": 6,
-   "overlaid": 4,
+   "tex_sections": 24,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -202,34 +202,32 @@
     {
      "id": "sec-000-1-setting-the-stage",
      "title": "Setting the stage",
-     "prose_ratio": 0.945,
-     "coverage_ratio": 0.972,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-algebra-of-bps-states-and-its-representations",
      "title": "Algebra of BPS states and its representations",
-     "prose_ratio": 0.933,
-     "coverage_ratio": 0.958,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-3-b-model-and-matrix-factorizations",
      "title": "B-model and matrix factorizations",
-     "prose_ratio": 0.921,
-     "coverage_ratio": 0.612,
+     "prose_ratio": 0.619,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-5-mirror-symmetry-for-knots",
      "title": "Mirror symmetry for knots",
-     "prose_ratio": 0.936,
-     "coverage_ratio": 0.519,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.492,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-004-appendix-a-notations",

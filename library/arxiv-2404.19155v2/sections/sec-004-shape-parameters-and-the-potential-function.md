@@ -7,23 +7,22 @@ section_number: null
 pages: 14-19
 source_pdf: 2404.19155v2.pdf
 source_sha256: 45b9ed90006536b3
-text_source: latex
-latex_prose_ratio: 0.84
-latex_coverage_ratio: 0.818
 doc_brief: "Octahedral coordinates from the Wirtinger presentation Calvin McPhail-Snyder Duke University calvin@sl2.site — Letρ be a representation of a knot group (or more generally, the funda- mental group of"
+text_source: latex
+latex_prose_ratio: 0.967
+latex_coverage_ratio: 0.976
 ---
 []{#sec:potential label="sec:potential"}
 
-One way to subdivide the octahedral decomposition is to split the octahedron at each crossing into four tetrahedra as in [1](#fig:shape-parameters-diagram){reference-type="ref+label" reference="fig:shape-parameters-diagram"}, with one for each region touching the crossing. We can geometrize the tetrahedra by placing their vertices in the boundary at infinity of hyperbolic space, i.e. $\psp$. Such geometric ideal tetrahedra are determined up to congruence by the cross-ratio of their vertices, usually called the . In this case these parameters are given by [\[eq:b-shapes\]](#eq:b-shapes){reference-type="ref+label" reference="eq:b-shapes"}. When a shape parameter is $0$, $1$, or $\infty$ it represents a geometrically degenerate tetrahedron whose vertices coincide. [\[thm:gauge-equivalent-to-admissible\]](#thm:gauge-equivalent-to-admissible){reference-type="ref+label" reference="thm:gauge-equivalent-to-admissible"} says that for a given representation we can always avoid tetrahedra with shape $0$ or $\infty$. In this section we study when tetrahedra with shape $1$ occur.
+One way to subdivide the octahedral decomposition is to split the octahedron at each crossing into four tetrahedra as in [1](#fig:shape-parameters-diagram){reference-type="ref" reference="fig:shape-parameters-diagram"}, with one for each region touching the crossing. We can geometrize the tetrahedra by placing their vertices in the boundary at infinity of hyperbolic space, i.e. $\psp$. Such geometric ideal tetrahedra are determined up to congruence by the cross-ratio of their vertices, usually called the . In this case these parameters are given by [\[eq:b-shapes\]](#eq:b-shapes){reference-type="ref" reference="eq:b-shapes"}. When a shape parameter is $0$, $1$, or $\infty$ it represents a geometrically degenerate tetrahedron whose vertices coincide. [\[thm:gauge-equivalent-to-admissible\]](#thm:gauge-equivalent-to-admissible){reference-type="ref" reference="thm:gauge-equivalent-to-admissible"} says that for a given representation we can always avoid tetrahedra with shape $0$ or $\infty$. In this section we study when tetrahedra with shape $1$ occur.
 
 <figure id="fig:shape-parameters-diagram">
 
-<figcaption> One can divide the octahedron at a crossing into four tetrahedra, one for each region touching the crossing. The shape parameters are then given as ratios of the <span class="math inline"><em>b</em></span> and <span class="math inline"><em>m</em></span>-coordinates, as in <a href="#eq:b-shapes" data-reference-type="ref+label" data-reference="eq:b-shapes">[eq:b-shapes]</a>. </figcaption>
+<figcaption> One can divide the octahedron at a crossing into four tetrahedra, one for each region touching the crossing. The shape parameters are then given as ratios of the <span class="math inline"><em>b</em></span> and <span class="math inline"><em>m</em></span>-coordinates, as in <a href="#eq:b-shapes" data-reference-type="ref" data-reference="eq:b-shapes">[eq:b-shapes]</a>. </figcaption>
 </figure>
 
 ::: definition
-An octahedral coloring of a crossing is if any of the shape parameters $$\begin{equation}
-    \label{eq:b-shapes}
+An octahedral coloring of a crossing is if any of the shape parameters $$\label{eq:b-shapes}
     z_N
     =
     \frac{
@@ -54,17 +53,16 @@ An octahedral coloring of a crossing is if any of the shape parameters $$\begin{
       m_2 b_{2'}
       }{
       b_{1'}
-    }
-\end{equation}$$ are $1$. (These quantities can never be $0$ or $\infty$ as part of the definition of octahedral coloring.) An octahedral coloring of a diagram is pinched if any of its crossings are.
+    }$$ are $1$. (These quantities can never be $0$ or $\infty$ as part of the definition of octahedral coloring.) An octahedral coloring of a diagram is pinched if any of its crossings are.
 :::
 
-We can use [\[def:associated-octahedral\]](#def:associated-octahedral){reference-type="ref+label" reference="def:associated-octahedral"} to directly find the shape parameters of the octahedral coloring associated to a decorated representation. As a corollary we see that being pinched is a gauge-invariant property.
+We can use [\[def:associated-octahedral\]](#def:associated-octahedral){reference-type="ref" reference="def:associated-octahedral"} to directly find the shape parameters of the octahedral coloring associated to a decorated representation. As a corollary we see that being pinched is a gauge-invariant property.
 
-:::: theorem
+::: theorem
 []{#thm:shape-formula label="thm:shape-formula"} Let $D$ be a tangle diagram with an admissible decorated shadow $\slg$ coloring $i \mapsto (g_i, L_i), j \mapsto u_j$ and let $c$ be a crossing of $D$.
 
 ::: thmenum
-[]{#thm:shape-formula:formula label="thm:shape-formula:formula"} The shape parameters of the crossing are given by $$\begin{align}
+[]{#thm:shape-formula:formula label="thm:shape-formula:formula"} The shape parameters of the crossing are given by $$\begin{aligned}
         \label{eq:zN-formula}
         z_N
       &=
@@ -144,19 +142,20 @@ We can use [\[def:associated-octahedral\]](#def:associated-octahedral){reference
         }{
         h(v_{2'} \upf{u_E})
       }
-\end{align}$$ in terms of the $$h\left(
+    
+\end{aligned}$$ in terms of the $$h\left(
         \begin{bmatrix}
           v^1 & v^2
         \end{bmatrix}
       \right)
-      \mathrel{:=}\frac{v^1}{v^2}.$$ Here the regions and segments are labeled as in [\[fig:crossing-types\]](#fig:crossing-types){reference-type="ref+label" reference="fig:crossing-types"} and the $v_i$ are nonzero elements of the $L_i$ (i.e. representative eigenvectors).
+      \mathrel{:=}\frac{v^1}{v^2}.$$ Here the regions and segments are labeled as in [\[fig:crossing-types\]](#fig:crossing-types){reference-type="ref" reference="fig:crossing-types"} and the $v_i$ are nonzero elements of the $L_i$ (i.e.representative eigenvectors).
 
 []{#thm:shape-formula:pinched label="thm:shape-formula:pinched"} The crossing is pinched if and only if $L_1 = L_2$. Note that this condition does not depend on the choice of shadow coloring and is invariant under gauge transformations.
 :::
-::::
+:::
 
 ::: proof
-*Proof.* [\[thm:shape-formula:formula\]](#thm:shape-formula:formula){reference-type="ref" reference="thm:shape-formula:formula"} [\[eq:zN-formula\]](#eq:zN-formula){reference-type="ref+Label" reference="eq:zN-formula"} follows directly from the expressions for $b_1$ and $b_{2'}$ in [\[def:associated-octahedral\]](#def:associated-octahedral){reference-type="ref+label" reference="def:associated-octahedral"} and $$v_1 \upf{u_N} = \begin{bmatrix}
+*Proof.* [\[thm:shape-formula:formula\]](#thm:shape-formula:formula){reference-type="ref" reference="thm:shape-formula:formula"} follows directly from the expressions for $b_1$ and $b_{2'}$ in [\[def:associated-octahedral\]](#def:associated-octahedral){reference-type="ref" reference="def:associated-octahedral"} and $$v_1 \upf{u_N} = \begin{bmatrix}
       v_1 u_N & v_1 \evec{2}
     \end{bmatrix}
     .$$ The same method gives $$z_W = 
@@ -178,13 +177,13 @@ We can use [\[def:associated-octahedral\]](#def:associated-octahedral){reference
       }{
       h(v_{2} \upf{u_W})
     }
-    .$$ To obtain [\[eq:zW-formula\]](#eq:zW-formula){reference-type="ref+label" reference="eq:zW-formula"}, write $$m_1^{-1} v_1 u_N
+    .$$ To obtain [\[eq:zW-formula\]](#eq:zW-formula){reference-type="ref" reference="eq:zW-formula"}, write $$m_1^{-1} v_1 u_N
     =
     v_1 g_1 u_N
     =
-    v_1 u_W$$ as $u_W = g_1 u_N$ by the definition of shadow coloring. [\[eq:zS-formula,eq:zE-formula\]](#eq:zS-formula,eq:zE-formula){reference-type="ref+Label" reference="eq:zS-formula,eq:zE-formula"} follow from the same argument.
+    v_1 u_W$$ as $u_W = g_1 u_N$ by the definition of shadow coloring. follow from the same argument.
 
-[\[thm:shape-formula:pinched\]](#thm:shape-formula:pinched){reference-type="ref" reference="thm:shape-formula:pinched"} One can use [\[eq:b-transf-positive,eq:b-transf-negative\]](#eq:b-transf-positive,eq:b-transf-negative){reference-type="ref+label" reference="eq:b-transf-positive,eq:b-transf-negative"} to show that $z_W = 1$ if and only if the crossing is pinched. $\upf{u_W}$ is invertible, so $v_1 \upf{u_W}$ and $v_2 \upf{u_W}$ are dependent iff $v_1$ and $v_2$ are. ◻
+[\[thm:shape-formula:pinched\]](#thm:shape-formula:pinched){reference-type="ref" reference="thm:shape-formula:pinched"} One can use [\[eq:b-transf-positive,eq:b-transf-negative\]](#eq:b-transf-positive,eq:b-transf-negative){reference-type="ref" reference="eq:b-transf-positive,eq:b-transf-negative"} to show that $z_W = 1$ if and only if the crossing is pinched. $\upf{u_W}$ is invertible, so $v_1 \upf{u_W}$ and $v_2 \upf{u_W}$ are dependent iff $v_1$ and $v_2$ are. ◻
 :::
 
 The following corollary is useful when defining state integrals for the quantum invariants constructed in [@McPhailSnyderVolume].
@@ -194,7 +193,7 @@ If $\rho : \pi(D) \to \slg$ is a non-pinched representation, then it is gauge-eq
 :::
 
 ::: proof
-*Proof.* The argument is similar to the proof of [\[thm:gauge-equivalent-to-admissible\]](#thm:gauge-equivalent-to-admissible){reference-type="ref+label" reference="thm:gauge-equivalent-to-admissible"}. The shape parameter for a corner by segments $i$ and $k$ near region $j$ is $$z_{ik}^{j} =
+*Proof.* The argument is similar to the proof of [\[thm:gauge-equivalent-to-admissible\]](#thm:gauge-equivalent-to-admissible){reference-type="ref" reference="thm:gauge-equivalent-to-admissible"}. The shape parameter for a corner by segments $i$ and $k$ near region $j$ is $$z_{ik}^{j} =
     \frac{
       v_i u_j
       }{
@@ -204,7 +203,7 @@ If $\rho : \pi(D) \to \slg$ is a non-pinched representation, then it is gauge-eq
       v_k \evec{2}
       }{
       v_i \evec{2}
-    }$$ By [\[eq:type-A-gauge\]](#eq:type-A-gauge){reference-type="ref+label" reference="eq:type-A-gauge"} after applying a type (A) gauge transformation by $A \in \slg$ the shape parameter $$z_{ik}^{j} =
+    }$$ By [\[eq:type-A-gauge\]](#eq:type-A-gauge){reference-type="ref" reference="eq:type-A-gauge"} after applying a type (A) gauge transformation by $A \in \slg$ the shape parameter $$z_{ik}^{j} =
     \frac{
       v_i u_j
       }{
@@ -236,16 +235,14 @@ To explain the connection to the Volume Conjecture we introduce a version of the
     t
   }
   dt
-  .$$ $\mathop{\mathrm{Li_2}}$ has a branch point at $1$, where it is continuous but not differentiable. It can be used to compute the volumes [@Zagier2007] and Chern-Simons invariants [@Neumann2004] of hyperbolic $3$-manifolds. Set $$\begin{equation}
-  \mathop{\mathrm{L}}(\zeta)
+  .$$ $\mathop{\mathrm{Li_2}}$ has a branch point at $1$, where it is continuous but not differentiable. It can be used to compute the volumes [@Zagier2007] and Chern-Simons invariants [@Neumann2004] of hyperbolic $3$-manifolds. Set $$\mathop{\mathrm{L}}(\zeta)
   \mathrel{:=}
   \frac{
     \mathop{\mathrm{Li_2}}(e^{2\pi \mathsf{i}\zeta})
     }{
     2\pi \mathsf{i}
   }
-  .
-\end{equation}$$ Let $D$ be a link with $\ell$ components. Fix a choice $\mu = (\mu_1, \dots, \mu_\ell)$ of complex number for each component of $\ell$ and introduce a variable $\beta_1, \dots, \beta_n$ for each segment of $D$. We think of the $\beta_i$ and $\mu_j$ as logarithms of the $b$ and $m$ coordinates of some octahedral coloring. For each crossing $c$ (as in [1](#fig:shape-parameters-diagram){reference-type="ref+label" reference="fig:shape-parameters-diagram"}) of $D$ set $$\potl[c]{} =
+  .$$ Let $D$ be a link with $\ell$ components. Fix a choice $\mu = (\mu_1, \dots, \mu_\ell)$ of complex number for each component of $\ell$ and introduce a variable $\beta_1, \dots, \beta_n$ for each segment of $D$. We think of the $\beta_i$ and $\mu_j$ as logarithms of the $b$ and $m$ coordinates of some octahedral coloring. For each crossing $c$ (as in [1](#fig:shape-parameters-diagram){reference-type="ref" reference="fig:shape-parameters-diagram"}) of $D$ set $$\potl[c]{} =
   \mathop{\mathrm{L}}(\beta_{2'} - \beta_{1})
   -\mathop{\mathrm{L}}(\beta_2 - \beta_1 - \mu_1)
   +\mathop{\mathrm{L}}(\beta_{2} - \beta_{1'} + \mu_2 - \mu_1)
@@ -253,17 +250,15 @@ To explain the connection to the Volume Conjecture we introduce a version of the
   .$$ The arguments are logarithms of the shape parameters [\[eq:b-shapes\]](#eq:b-shapes){reference-type="eqref" reference="eq:b-shapes"}.
 
 ::: definition
-The of $D$ with respect to $\mu$ is $$\begin{equation}
-    \label{eq:potential-function}
+The of $D$ with respect to $\mu$ is $$\label{eq:potential-function}
     \potl[D, \mu]{\beta_1, \dots, \beta_n}
     =     
     \sum_{\text{crossings } c}
-    \epsilon(c) \Phi_c
-\end{equation}$$ where $\epsilon(c) = +1$ for positive crossings and $-1$ for negative crossings. Because $\mathop{\mathrm{Li_2}}$ has a branch point at $1$ this function is analytic when the arguments of the functions $\mathop{\mathrm{L}}$ (i.e. the logarithms of the shape parameters) are not in $2\pi \mathsf{i}\mathbb{Z}$.
+    \epsilon(c) \Phi_c$$ where $\epsilon(c) = +1$ for positive crossings and $-1$ for negative crossings. Because $\mathop{\mathrm{Li_2}}$ has a branch point at $1$ this function is analytic when the arguments of the functions $\mathop{\mathrm{L}}$ (i.e.the logarithms of the shape parameters) are not in $2\pi \mathsf{i}\mathbb{Z}$.
 :::
 
 ::: theorem
-[]{#thm:critical-points-are-reps label="thm:critical-points-are-reps"} Let $\mathcal{C}_{D, \mu}$ be the set of generalized critical points of $\potl[D, \mu]{}$, i.e. points $\beta = (\beta_1, \dots, \beta_n)$ where $$\frac{
+[]{#thm:critical-points-are-reps label="thm:critical-points-are-reps"} Let $\mathcal{C}_{D, \mu}$ be the set of generalized critical points of $\potl[D, \mu]{}$, i.e.points $\beta = (\beta_1, \dots, \beta_n)$ where $$\frac{
         \partial \potl[D, \mu]{}
       }{
         \partial \beta_i
@@ -294,12 +289,12 @@ The of $D$ with respect to $\mu$ is $$\begin{equation}
     1$$ is the segment equation of segment $i$. ◻
 :::
 
-One can easily handle pinched crossings by working directly with octahedral colorings or by using shadow $\slg$-colorings and [\[thm:holonomies-match\]](#thm:holonomies-match){reference-type="ref+label" reference="thm:holonomies-match"}. However, the smoothness of $\potl[D, \mu]{}$ is still significant for the Volume Conjecture. Most proofs follow @Yokota2000 by showing that the large $N$ asymptotics of the Kashaev invariant are given by a contour integral of the form $$\int_{\Gamma} e^{N \potl[D, \mu]{\beta_1, \dots, \beta_n}} \,d\beta_1 \cdots d\beta_n$$ as $N \to \infty$. The saddle-point method for determining the asymptotics of these integrals works best near analytic critical points of $\potl[D,\mu]{}$. More significantly the proof usually requires moving the contour $\Gamma$ through the parameter space which requires $\potl[D, \mu]{}$ to be complex-analytic.
+One can easily handle pinched crossings by working directly with octahedral colorings or by using shadow $\slg$-colorings and [\[thm:holonomies-match\]](#thm:holonomies-match){reference-type="ref" reference="thm:holonomies-match"}. However, the smoothness of $\potl[D, \mu]{}$ is still significant for the Volume Conjecture. Most proofs follow @Yokota2000 by showing that the large $N$ asymptotics of the Kashaev invariant are given by a contour integral of the form $$\int_{\Gamma} e^{N \potl[D, \mu]{\beta_1, \dots, \beta_n}} \,d\beta_1 \cdots d\beta_n$$ as $N \to \infty$. The saddle-point method for determining the asymptotics of these integrals works best near analytic critical points of $\potl[D,\mu]{}$. More significantly the proof usually requires moving the contour $\Gamma$ through the parameter space which requires $\potl[D, \mu]{}$ to be complex-analytic.
 
 As part of this argument it is important to know whether a representation $\rho$ occurs as the holonomy of an octahedral coloring from an *analytic* critical point. Typically we only care about $\rho$ up to conjugacy, which motivates the following definition:
 
 ::: definition
-Let $\rho : \pi(L) \to \slg$ be a representation of a link group and $D$ a diagram of $L$. We say that $\rho$ is if it is conjugate to the holonomy of a non-pinched octahedral coloring $\chi$ of $D$, i.e. to the holonomy of a generalized critical point.
+Let $\rho : \pi(L) \to \slg$ be a representation of a link group and $D$ a diagram of $L$. We say that $\rho$ is if it is conjugate to the holonomy of a non-pinched octahedral coloring $\chi$ of $D$, i.e.to the holonomy of a generalized critical point.
 :::
 
 ::: corollary
@@ -307,7 +302,7 @@ Let $\rho : \pi(L) \to \slg$ be a representation of a link group and $D$ a diagr
 :::
 
 ::: proof
-*Proof.* [\[thm:shape-formula\]](#thm:shape-formula){reference-type="ref+label" reference="thm:shape-formula"}[\[thm:shape-formula:pinched\]](#thm:shape-formula:pinched){reference-type="ref" reference="thm:shape-formula:pinched"}. ◻
+*Proof.* [\[thm:shape-formula\]](#thm:shape-formula){reference-type="ref" reference="thm:shape-formula"}[\[thm:shape-formula:pinched\]](#thm:shape-formula:pinched){reference-type="ref" reference="thm:shape-formula:pinched"}. ◻
 :::
 
 In other words, $\rho$ corresponds to a pinched octahedral coloring if and only if at some crossing the images of the Wirtinger generators have the same distinguished fixed point when acting on $\psp$ by fractional linear transformations. If we restrict our attention to hyperbolic knots then we can give a purely group-theoretic characterization. Recall that the holonomy of the complete hyperbolic structure is a faithful, discrete representation $\rho : \pi(K) \to \pslg$. It is boundary-parabolic (the meridians have eigenvalues $\pm 1$) and always lifts to $\slg$. Because its meridians are parabolic it has a unique decoration.
@@ -328,7 +323,7 @@ Conversely, suppose $\rho$ corresponds to a pinched octahedral coloring of $D$ s
 
 The existence of analytic critical points of $\potl[D, \mu]{}$ has previously been studied, and we can express our results in this context. An edge of an ideal triangulation of a knot complement is (homtopically) if it is homotopic to a curve in the boundary of a regular neighborhood of the knot.
 
-:::: corollary
+::: corollary
 []{#thm:non-peripheral label="thm:non-peripheral"} Let $D$ be a diagram of a hyperbolic knot.
 
 ::: thmenum
@@ -336,7 +331,7 @@ The existence of analytic critical points of $\potl[D, \mu]{}$ has previously be
 
 []{#thm:non-peripheral:alternating label="thm:non-peripheral:alternating"} If $D$ is reduced and alternating then it is arc-faithful.
 :::
-::::
+:::
 
 ::: proof
 *Proof.* [\[thm:non-peripheral:equiv\]](#thm:non-peripheral:equiv){reference-type="ref" reference="thm:non-peripheral:equiv"} If $D$ is arc-faithful then there is a non-pinched octahedral coloring $\chi$ with holonomy the complete hyperbolic structure. From $\chi$ we can obtain a nondegenerate solution of the gluing equations of the octahedral decomposition, and by [@Dunfield2012 Lemma 3.5] the existence of such a solution implies the edges of the octahedral decomposition are homotopically non-peripheral.
@@ -348,7 +343,7 @@ Conversely, suppose the edges of the octahedral decomposition are homotopically 
 
 It is easy to find diagrams that are not arc-faithful. However, by avoiding these obvious bad configurations it also seems easy to find arc-faithful diagrams.
 
-::::: example
+::: example
 Any diagram with a kink
 
 ::: center
@@ -360,7 +355,7 @@ is never-arc faithful. More generally any piece of a diagram that looks like
 :::
 
 will prevent arc-faithfulness.
-:::::
+:::
 
 According to @DiagramSite's database [@DiagramSite] of boundary-parabolic representations every hyperbolic knot with at most $12$ crossings has an arc-faithful diagram. We conjecture this holds for all hyperbolic knots, and as discussed above this seems relevant to a general proof of the Volume Conjecture.
 

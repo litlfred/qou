@@ -369,8 +369,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "symmetry-569844-submit-arxiv_TAM.tex",
-   "tex_sections": 10,
-   "overlaid": 2,
+   "tex_sections": 23,
+   "overlaid": 11,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -380,30 +380,42 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.98,
-     "coverage_ratio": 0.851,
+     "prose_ratio": 0.886,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-21-as-warmup-branched-coverings-of-2-manifolds",
      "title": "As Warmup: Branched Coverings of 2-Manifolds",
-     "result": "no matching \\section"
+     "prose_ratio": 0.946,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-22-branched-coverings-of-3-manifolds",
      "title": "Branched Coverings of 3-Manifolds",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.852,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-23-branched-covering-of-4-manifolds",
      "title": "Branched Covering of 4-Manifolds",
-     "result": "no matching \\section"
+     "prose_ratio": 0.899,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-24-branched-coverings-of-knot-complements",
      "title": "Branched Coverings of Knot Complements",
-     "result": "no matching \\section"
+     "prose_ratio": 0.845,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-41-k3-surfaces-and-octonions",
@@ -413,22 +425,34 @@
     {
      "id": "sec-006-42-from-immersed-surfaces-in-k3-surfaces-to-ferm",
      "title": "From Immersed Surfaces in K3 Surfaces to Fermions and Knot Complements",
-     "result": "no matching \\section"
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-43-fermions-as-knot-complements",
      "title": "Fermions as Knot Complements",
-     "result": "no matching \\section"
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-44-torus-bundle-as-gauge-fields",
      "title": "Torus Bundle as Gauge Fields",
-     "result": "no matching \\section"
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-45-fermions-bosons-and-3-braids",
      "title": "Fermions, Bosons and 3-Braids",
-     "result": "no matching \\section"
+     "prose_ratio": 0.768,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-5-electric-charge-and-quasimodularity",
@@ -438,17 +462,24 @@
     {
      "id": "sec-011-51-electric-charge-as-dehn-twist-of-the-boundary",
      "title": "Electric Charge as Dehn Twist of the Boundary",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-52-electric-charge-as-a-frame-of-the-knot-comple",
      "title": "Electric Charge as a Frame of the Knot Complement",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-53-the-charge-spectrum",
      "title": "The Charge Spectrum",
-     "result": "no matching \\section"
+     "prose_ratio": 0.272,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-014-54-vanishing-of-the-magnetic-charge-and-quasimod",
@@ -458,16 +489,14 @@
     {
      "id": "sec-015-7-fermions-and-number-theory",
      "title": "Fermions and Number Theory",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 0.504,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.504,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-016-9-conclusions-and-outlook",
      "title": "Conclusions and Outlook",
-     "prose_ratio": 0.986,
-     "coverage_ratio": 0.284,
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.344,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     }
    ]

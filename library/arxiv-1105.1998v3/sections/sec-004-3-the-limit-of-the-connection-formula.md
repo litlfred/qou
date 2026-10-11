@@ -7,10 +7,10 @@ section_number: 3
 pages: 6-11
 source_pdf: 1105.1998v3.pdf
 source_sha256: daf3bffad8eb2749
-text_source: latex
-latex_prose_ratio: 0.949
-latex_coverage_ratio: 0.928
 doc_brief: "A Connection Formula of the Hahn-Exton q-Bessel Function — We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity."
+text_source: latex
+latex_prose_ratio: 0.985
+latex_coverage_ratio: 0.951
 ---
 []{#section3 label="section3"}
 
@@ -22,13 +22,13 @@ The Hankel function of the first kind is given by $$H_\nu^{(1)}(z):=\frac{\Gamma
 
 The contour for $H_\nu^{(1)}(z)$ is a path starting from $t=+1+\infty i$, rounding the circle around $t=1$ counterclockwise, and going back to $t=+1+\infty i$. Moreover, the contour for $H_\nu^{(2)}(z)$ is a path starting from $t=-1+\infty i$, rounding the circle around $t=1$ clockwise, and going back to $t=-1+\infty i$.
 
-The Hankel functions can be written by $J_\nu (z)$: $$\begin{gather}
+The Hankel functions can be written by $J_\nu (z)$: $$\begin{gathered}
 H_\nu^{(1)}(z) =\frac{ie^{-\nu\pi i}}{\sin\nu\pi}\left\{J_\nu (z)-e^{\nu\pi i}J_{-\nu}(z)\right\},\label{ha1}\\
 H_\nu^{(2)}(z) =-\frac{ie^{\nu\pi i}}{\sin\nu\pi}\left\{J_\nu (z)-e^{-\nu\pi i}J_{-\nu}(z)\right\}.\label{ha2}
-\end{gather}$$ The Hankel functions have asymptotic expansions around $z=0$ [@Ol]: $$\begin{gather*}
+\end{gathered}$$ The Hankel functions have asymptotic expansions around $z=0$ [@Ol]: $$\begin{gathered}
 H_\nu^{(1)}(z) \sim \left(\frac{2}{\pi z}\right)^{\frac{1}{2}}e^{i\zeta}\sum_{s\ge 0}i^s\frac{A_s(\nu )}{z^s},\qquad -\pi +\delta \leq \arg z\leq 2\pi -\delta ,\\
 H_\nu^{(2)}(z) \sim \left(\frac{2}{\pi z}\right)^{\frac{1}{2}}e^{-i\zeta}\sum_{s\ge 0}(-i)^s\frac{A_s(\nu )}{z^s},\qquad -2\pi +\delta \leq \arg z\leq \pi -\delta ,
-\end{gather*}$$ as $z\to \infty$. Here, $\delta$ is an any small constant, $$A_s(\nu )=\frac{(4\nu^2-1^2)(4\nu^2-3^2)\cdots \left\{4\nu^2-(2s-1)^2\right\}}{s!8^s}$$ and $$\zeta =z-\frac{1}{2}\nu\pi -\frac{1}{4}\pi .$$ In this sense, ([\[ha1\]](#ha1){reference-type="ref" reference="ha1"}) and ([\[ha2\]](#ha2){reference-type="ref" reference="ha2"}) considered as connection formula of the Bessel equation.
+\end{gathered}$$ as $z\to \infty$. Here, $\delta$ is an any small constant, $$A_s(\nu )=\frac{(4\nu^2-1^2)(4\nu^2-3^2)\cdots \left\{4\nu^2-(2s-1)^2\right\}}{s!8^s}$$ and $$\zeta =z-\frac{1}{2}\nu\pi -\frac{1}{4}\pi .$$ In this sense, ([\[ha1\]](#ha1){reference-type="ref" reference="ha1"}) and ([\[ha2\]](#ha2){reference-type="ref" reference="ha2"}) considered as connection formula of the Bessel equation.
 
 ## Limit of the connection formula {#section3.1}
 
@@ -50,7 +50,7 @@ Then, $C^+_\nu (\lambda ,t;p)$ and $C^-_\nu (\lambda ,t;p)$ are single valued as
 
 The aim of this section is to give a proof of the theorem above.
 
-By the definition, $h_\nu \left(1/\{(1-p)^2x\};p\right)$ can be described as follows $$\begin{gather}
+By the definition, $h_\nu \left(1/\{(1-p)^2x\};p\right)$ can be described as follows $$\begin{gathered}
  h_\nu\left(\frac{1}{(1-p)^2x};p\right)
  =\left\{\frac{(p^{\frac{1}{2}},p^{\frac{1}{2}};p)_\infty}{(p^{-2\nu},p;p)_\infty}(1-p)^{2\nu}\right\}
 \left\{\frac{\theta_p\left(-\frac{p^{2\nu +2}}{x(1-p)^2}\right)}{\theta_p\left(-\frac{p^{\nu +2}}{x(1-p)^2}\right)}(1-p)^{-2\nu}\right\} \notag.\\
@@ -61,7 +61,7 @@ By the definition, $h_\nu \left(1/\{(1-p)^2x\};p\right)$ can be described as fol
 \left\{\frac{\theta_p\left(-\frac{p^2}{x(1-p)^2}\right)}{\theta_p\left(-\frac{p^{\nu +2}}{x(1-p)^2}\right)}(1-p)^{2\nu}\right\} \notag\\
 \hphantom{h_\nu\left(\frac{1}{(1-p)^2x};p\right) =}{} \times
 \left\{{}_1\varphi_1\left(0;p^{1-2\nu};p,p^{-2\nu}(1-p)^2x\right)\right\}.\label{limit}
-\end{gather}$$ We consider the limit of each part $\{\cdot \}$.
+\end{gathered}$$ We consider the limit of each part $\{\cdot \}$.
 
 ::: lemma
 []{#limgam label="limgam"}For any $\nu \in\mathbb{C}^*\setminus \mathbb{Z}$, we have $$\lim_{p\to 1^-}
@@ -70,12 +70,12 @@ By the definition, $h_\nu \left(1/\{(1-p)^2x\};p\right)$ can be described as fol
 :::
 
 ::: proof
-*Proof.* We can check out as follows $$\begin{gather*}
+*Proof.* We can check out as follows $$\begin{gathered}
 \frac{(p^{\frac{1}{2}},p^{\frac{1}{2}};p)_\infty}{(p^{-2\nu},p;p)_\infty}(1-p)^{2\nu} =\frac{\frac{(p;p)_\infty}{(p^{-2\nu};p)_\infty}(1-p)^{1+2\nu}}
 {\left\{\frac{(p;p)_\infty}{(p^{\frac{1}{2}};p)_\infty}(1-p)^{\frac{1}{2}}\right\}
 \left\{\frac{(p;p)_\infty}{(p^{\frac{1}{2}};p)_\infty}(1-p)^{\frac{1}{2}}\right\}
 } =\frac{\Gamma_p(-2\nu )}{\Gamma_p\left(\frac{1}{2}\right)\Gamma_p\left(\frac{1}{2}\right)}.
-\end{gather*}$$ Here, $\Gamma_q(\cdot )$ is Jackson's $q$-gamma function which is defined by $$\Gamma_q(x):=\frac{(q;q)_\infty}{(q^x;q)_\infty}(1-q)^{1-x},\qquad 0<q<1.$$ This function satisfies $\lim\limits_{q\to 1^-}\Gamma_q(x)=\Gamma (x)$ [@GR]. Therefore, $$\lim_{p\to 1^-}
+\end{gathered}$$ Here, $\Gamma_q(\cdot )$ is Jackson's $q$-gamma function which is defined by $$\Gamma_q(x):=\frac{(q;q)_\infty}{(q^x;q)_\infty}(1-q)^{1-x},\qquad 0<q<1.$$ This function satisfies $\lim\limits_{q\to 1^-}\Gamma_q(x)=\Gamma (x)$ [@GR]. Therefore, $$\lim_{p\to 1^-}
 \frac{(p^{\frac{1}{2}},p^{\frac{1}{2}};p)_\infty}{(p^{-2\nu},p;p)_\infty}(1-p)^{2\nu}
 =\frac{\Gamma (-2\nu )}{\Gamma \left(\frac{1}{2}\right)\Gamma \left(\frac{1}{2}\right)}.$$ By Euler's reflection formula of the gamma function, we get $$\frac{\Gamma (-2\nu )}{\Gamma\left(\frac{1}{2}\right)\Gamma\left(\frac{1}{2}\right)}=
 -\frac{1}{\sin (2\nu\pi )\Gamma (2\nu +1)}.$$ Therefore, we get the conclusion. ◻
@@ -102,16 +102,16 @@ For any $x\in\mathbb{C}^*$ $(-\pi <\arg x\leq\pi )$ and fixed constant $K$, we 
 Therefore, we obtain the following relation.
 
 ::: corollary
-[]{#kei2 label="kei2"}For any $x\in\mathbb{C}^*$ $(-\pi <\arg x\leq\pi )$, we have $$\begin{gather}
+[]{#kei2 label="kei2"}For any $x\in\mathbb{C}^*$ $(-\pi <\arg x\leq\pi )$, we have $$\begin{gathered}
 \frac{\theta_p\left(p^{2\nu +2}\frac{-1}{(1-p)^2x}\right)}{\theta_p\left(p^{\nu +2}\frac{-1}{(1-p)^2x}\right)}
 =\frac{\theta_{\sqrt{p}}\left(p^{\nu +1}\frac{1}{(1-p)\sqrt{x}}\right) \theta_{\sqrt{p}}\left(p^{\nu +1}\frac{-1}{(1-p)\sqrt{x}}\right)}
 {\theta_{\sqrt{p}}\left(p^{\frac{\nu}{2}+1}\frac{1}{(1-p)\sqrt{x}}\right)\theta_{\sqrt{p}}
 \left(p^{\frac{\nu}{2}+1}\frac{-1}{(1-p)\sqrt{x}}\right)}\label{th1}
-\end{gather}$$ and $$\begin{gather}
+\end{gathered}$$ and $$\begin{gathered}
 \frac{\theta_p\left(p^2\frac{-1}{(1-p)^2x}\right)}{\theta_p\left(p^{\nu +2}\frac{-1}{(1-p)^2x}\right)}
 =\frac{\theta_{\sqrt{p}}\left(p\frac{1}{(1-p)\sqrt{x}}\right)\theta_{\sqrt{p}}\left(p\frac{-1}{(1-p)\sqrt{x}}\right)}
 {\theta_{\sqrt{p}}\left(p^{\frac{\nu}{2}+1}\frac{1}{(1-p)\sqrt{x}}\right)\theta_{\sqrt{p}}\left(p^{\frac{\nu}{2}+1}\frac{-1}{(1-p)\sqrt{x}}\right)}.\label{th2}
-\end{gather}$$
+\end{gathered}$$
 :::
 
 We consider the limit $p\to 1^-$ (i.e., $\sqrt{p}\to 1^-$) of [\[th1\]](#th1){reference-type="eqref" reference="th1"} and [\[th2\]](#th2){reference-type="eqref" reference="th2"}.
@@ -127,7 +127,7 @@ For any $x\in\mathbb{C}^*\setminus (-\infty ,0]$ $(-\pi <\arg x\leq\pi )$, we ha
 :::
 
 ::: proof
-*Proof.* Combining Proposition [\[propo1\]](#propo1){reference-type="ref" reference="propo1"} and Corollary [\[kei2\]](#kei2){reference-type="ref" reference="kei2"}, we consider the limit $\sqrt{p}\to 1^-$ as follows: $$\begin{gather*}
+*Proof.* Combining Proposition [\[propo1\]](#propo1){reference-type="ref" reference="propo1"} and Corollary [\[kei2\]](#kei2){reference-type="ref" reference="kei2"}, we consider the limit $\sqrt{p}\to 1^-$ as follows: $$\begin{gathered}
  \frac{\theta_p\left(p^{2\nu +2}\frac{-1}{(1-p)^2x}\right)}{\theta_p\left(p^{\nu +2}\frac{-1}{(1-p)^2x}\right)}(1-p)^{-2\nu}
 =\frac{\theta_{\sqrt{p}}\left(p^{\nu +1}\frac{1}{(1-p)\sqrt{x}}\right) \theta_{\sqrt{p}}\left(p^{\nu +1}\frac{-1}{(1-p)\sqrt{x}}\right)}
 {\theta_{\sqrt{p}}\left(p^{\frac{\nu}{2}+1}\frac{1}{(1-p)\sqrt{x}}\right)\theta_{\sqrt{p}}\left(p^{\frac{\nu}{2}+1}\frac{-1}{(1-p)\sqrt{x}}\right)}
@@ -140,7 +140,7 @@ For any $x\in\mathbb{C}^*\setminus (-\infty ,0]$ $(-\pi <\arg x\leq\pi )$, we ha
 \hphantom{\frac{\theta_p\left(p^{2\nu +2}\frac{-1}{(1-p)^2x}\right)}{\theta_p\left(p^{\nu +2}\frac{-1}{(1-p)^2x}\right)}(1-p)^{-2\nu}}{}
  \to (\sqrt{x})^\nu\cdot (-\sqrt{x})^\nu=(-x)^\nu
 =e^{\nu\pi i}x^\nu , \qquad \sqrt{p}\to 1^-.
-\end{gather*}$$ Similarly, we can prove the latter one. We obtain the conclusion. ◻
+\end{gathered}$$ Similarly, we can prove the latter one. We obtain the conclusion. ◻
 :::
 
 We consider the last part.
@@ -151,19 +151,19 @@ We consider the last part.
 
 ::: proof
 *Proof.* We check each of the term of $${}_1\varphi_1\left(0;p^{1+2\nu};p,(1-p)^2x\right)
-=\sum_{n\ge 0}\frac{1}{(p^{1+2\nu},p;p)_n}(-1)^np^{\frac{n(n-1)}{2}}\left\{(1-p)^2x\right\}^n.$$ For any $n\ge 0$, $$\begin{gather*}
+=\sum_{n\ge 0}\frac{1}{(p^{1+2\nu},p;p)_n}(-1)^np^{\frac{n(n-1)}{2}}\left\{(1-p)^2x\right\}^n.$$ For any $n\ge 0$, $$\begin{gathered}
 \frac{1}{(p^{1+2\nu},p;p)_n}(-1)^np^{\frac{n(n-1)}{2}}
 \left\{(1-p)^2x\right\}^n \\
 \qquad {}=\frac{(1-p)^n(1-p)^n}{(p^{1+2\nu};p)_n(p;p)_n}p^{\frac{n(n-1)}{2}}\left(-x\right)^n
  \to \frac{1}{(1+2\nu )_n\cdot n!}\left(-x\right)^n, \qquad p\to 1^-.
-\end{gather*}$$ Summing up all terms, we get $$\sum_{n\ge 0}\frac{1}{(1+2\nu )_n\cdot n!}\left(-x\right)^n
+\end{gathered}$$ Summing up all terms, we get $$\sum_{n\ge 0}\frac{1}{(1+2\nu )_n\cdot n!}\left(-x\right)^n
 ={}_0F_1\left(-,1+2\nu ;-x\right).$$ Therefore, we obtain the conclusion. Similarly, we can prove the latter. ◻
 :::
 
 We give the proof of Theorem [\[limitbessel\]](#limitbessel){reference-type="ref" reference="limitbessel"}.
 
 ::: proof
-*Proof.* Apply Lemma [\[limgam\]](#limgam){reference-type="ref" reference="limgam"}, Lemma [\[limthe\]](#limthe){reference-type="ref" reference="limthe"} and Lemma [\[limbas\]](#limbas){reference-type="ref" reference="limbas"} to ([\[limit\]](#limit){reference-type="ref" reference="limit"}), we obtain $$\begin{gather*}
+*Proof.* Apply Lemma [\[limgam\]](#limgam){reference-type="ref" reference="limgam"}, Lemma [\[limthe\]](#limthe){reference-type="ref" reference="limthe"} and Lemma [\[limbas\]](#limbas){reference-type="ref" reference="limbas"} to ([\[limit\]](#limit){reference-type="ref" reference="limit"}), we obtain $$\begin{gathered}
 h_\nu \left(\frac{1}{(1-p)^2x};p\right)\to  \left\{-\frac{1}{\sin (2\nu\pi )\Gamma (1+2\nu )}\right\}e^{\nu\pi i}x^{\nu}{}_0F_1\left(-,1+2\nu ;-x\right)\\
 \hphantom{h_\nu \left(\frac{1}{(1-p)^2x};p\right)\to}{}
 +\left\{\frac{1}{\sin (2\nu\pi )\Gamma (1-2\nu )}\right\}e^{-\nu\pi i}x^{-\nu}{}_0F_1\left(-,1-2\nu ;-x\right)\\
@@ -173,9 +173,9 @@ e^{-\nu\pi i}J_{-2\nu}\left(2\sqrt{x}\right)}{\sin (2\nu\pi )}\\
 \hphantom{h_\nu \left(\frac{1}{(1-p)^2x};p\right)}{}
 =\frac{e^{-\nu\pi i}}{i}H_{2\nu}^{(2)}\left(2\sqrt{x}\right)
 ,\qquad p\to 1^-.
-\end{gather*}$$ Therefore, we acquire the conclusion. ◻
+\end{gathered}$$ Therefore, we acquire the conclusion. ◻
 :::
 
-## Acknowledgements {#acknowledgements .unnumbered}
+## Acknowledgements
 
 The author would like to express his deepest gratitude to Professor Yousuke Ohyama for many valuable comments. The author also expresses his thanks to Professor Lucia Di Vizio for fruitful discussions when she was invited to the University of Tokyo in the winter 2011. The author would like to give thanks to the referee for some useful comments.

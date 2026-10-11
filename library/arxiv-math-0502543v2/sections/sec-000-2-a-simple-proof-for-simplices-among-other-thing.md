@@ -7,10 +7,10 @@ section_number: 2
 pages: 3-5
 source_pdf: 0502543v2.pdf
 source_sha256: 227ef8150cb08faf
-text_source: latex
-latex_prose_ratio: 0.965
-latex_coverage_ratio: 0.966
 doc_brief: "CONTINUITY OF VOLUMES – ON A GENERALIZATION OF A CONJECTURE OF J.W.MILNOR — In his paper [6] J."
+text_source: latex
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 0.989
 ---
 []{#simplices label="simplices"}
 
@@ -18,19 +18,15 @@ In dimension $2,$ the result follows immediately from Gauss' formula, which stat
 
 The simple proof relies on the *Schläfli differential equality* (see [@milnorcol], which states that in a space of constant curvature $K,$ and dimension $n$ the volume of a smooth family of polyhedra $P$ satisfies the differential equation:
 
-$$\begin{equation}
-\label{schlafli1}
-K d V(P) = \dfrac{1}{n-1} \sum_F V_{n-2}(F) d \theta_F,
-\end{equation}$$
+$$\label{schlafli1}
+K d V(P) = \dfrac{1}{n-1} \sum_F V_{n-2}(F) d \theta_F,$$
 
 where the sum is over all codimension-$2$ faces, $V_{n-2}$ is the $n-2$ dimensional volume of $F,$ and $\theta_F$ is the dihedral angle at $F.$
 
 Another way of writing the Schläfli formula is:
 
-$$\begin{equation}
-\label{schlafli2}
-K \dfrac{\partial V(P)}{\partial \theta_F} = V_{n-2}(F).
-\end{equation}$$
+$$\label{schlafli2}
+K \dfrac{\partial V(P)}{\partial \theta_F} = V_{n-2}(F).$$
 
 This is the form we will use.
 
@@ -43,9 +39,9 @@ We are left with dimension $3.$ All we really need is noting that the partial de
 ::: theorem
 []{#sobemb label="sobemb"} Let $\Omega$ be a $C^{0,1}$ domain in $\mathbb{R}^n.$ Then,
 
-- (i) If $k p < n,$ the space $W^{k,p}(\Omega)$ is continuously imbedded in $L^{p^*}(\Omega),$ where $p^* = np/(n - kp),$ and compactly imbedded in $L^q(\Omega)$ for any $q < p^*.$
+-   (i) If $k p < n,$ the space $W^{k,p}(\Omega)$ is continuously imbedded in $L^{p^*}(\Omega),$ where $p^* = np/(n - kp),$ and compactly imbedded in $L^q(\Omega)$ for any $q < p^*.$
 
-- (ii) If $0 \leq m < k - \frac{n}{p} < m+1,$ the space $W^{k, p}$ is continously embedded in $C^{m, \alpha}(\overline{\Omega}),$ $\alpha=k -n/p - m,$ and compactly embedded in $C^{m, \beta}(\overline{\Omega})$ for any $\beta < \alpha.$
+-   (ii) If $0 \leq m < k - \frac{n}{p} < m+1,$ the space $W^{k, p}$ is continously embedded in $C^{m, \alpha}(\overline{\Omega}),$ $\alpha=k -n/p - m,$ and compactly embedded in $C^{m, \beta}(\overline{\Omega})$ for any $\beta < \alpha.$
 :::
 
 Here, the Sobolev space $W^{k, p}$ is the space of functions whose first $k$ (distributional) derivatives are in $L^p.$

@@ -7,10 +7,10 @@ section_number: null
 pages: 8-9
 source_pdf: 1312.3086v1.pdf
 source_sha256: ff328e7c7cbdc70c
-text_source: latex
-latex_prose_ratio: 0.915
-latex_coverage_ratio: 1.0
 doc_brief: "Quantum repeater with Rydberg blocked atomic ensembles in fiber-coupled cavities — 7 sections: Introduction; The sequence; At the end of this sequence, the s"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 In this paper we proposed a quantum repeater scenario based on Rydberg blocked ensembles placed in cavities which are linked by optical fibers. Entanglement generation between two neighboring nodes is performed in a heralded way by the transmission of a photon whose polarization is entangled with the state of the first atomic ensemble, followed by its absorption by the neighboring atomic ensemble. Photon losses and spontaneous emission from the Rydberg level can be detected thanks to an error-syndrome measurement involving ensemble laser manipulations, ionizing pulses and (very efficient) ion detections. An implementation with Cs atoms was suggested and analyzed.
 

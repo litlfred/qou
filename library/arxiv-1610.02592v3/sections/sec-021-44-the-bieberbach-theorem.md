@@ -7,13 +7,14 @@ section_number: 4.4
 pages: 136-143
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.897
-latex_coverage_ratio: 0.758
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{Bieberbach:section}
 The Margulis Lemma for Lie groups is fairly general and has important applications also in the elliptic and flat geometries. The most important one is the Bieberbach Theorem.
+
 
 \subsection{Elliptic manifolds}
 Recall that every complete elliptic manifold is isometric to $S^n/_\Gamma$ for some finite group $\Gamma < \On(n) = \Iso(S^{n-1})$ acting freely. We now improve the Margulis Lemma \ref{G:lemma} for $G=\On(n)$ by promoting ``nilpotent'' to ``abelian''. To this purpose we need the following.
@@ -56,6 +57,7 @@ We obtain a fairly interesting corollary about finite subgroups of $\On(n)$.
 For every $n$ there is a $N>0$ such that every finite subgroup of $\On(n)$ contains an abelian subgroup of index at most $N$.
 \end{cor}
 
+
 \subsection{Isometries of Euclidean space}
 We now turn to flat manifolds. Recall that a complete flat manifold is isometric to $\matR^n/_\Gamma$ for some discrete group $\Gamma < \Iso(\matR^n)$ acting freely. Every isometry $g$ of $\matR^n$ can be written uniquely as
 $$g\colon x \longmapsto Ax +b$$
@@ -83,6 +85,7 @@ $$[Ax+b, Cx+d] = [A,C]x + A(I-C)A^{-1}b + AC(I-A^{-1})C^{-1}d.$$
 In particular we get
 $$[Ax+b,x+d] = x + (A-I)d.$$
 \end{ex}
+
 
 \subsection{Discrete groups}
 The homomorphism $r\colon \Iso(\matR^n)\to \On(n)$ that sends every isometry to its rotational part induces an exact sequence
@@ -146,6 +149,7 @@ and hence $(I-C)b\in W^\perp$, and analogously $(A-I)d \in W^\perp$. We deduce t
 \end{proof}
 
 
+
 \subsection{Crystallographic groups} \label{crystallographic:subsection}
 A \emph{crystallographic group} is a discrete subgroup $\Gamma <\Iso(\matR^n)$ with compact quotient $\matR^n/_\Gamma$.\index{group!crystallographic group}
 
@@ -183,6 +187,7 @@ Let $M=\matR^n/_\Gamma$ be a finite-volume flat manifold. Up to taking finite in
 
 Suppose some element $Ax + b$ is not a translation: every element of $\Gamma$ commutes with it and hence preserves the space $\Fix (A)$ that has dimension $k<n$; hence $M$ is isometric to $\Fix (A)/_\Gamma \times \matR^{n-k}$ and has infinite volume.
 \end{proof}
+
 
 \subsection{References}
 Most of the material introduced in this chapter is standard and can be found in Benedetti -- Petronio \cite{BP}, Ratcliffe \cite{R}, and of course in Thurston's notes \cite{Th}. We have also consulted Thurston's book \cite{Th_book} for the part on chrystallographic groups. Proposition \ref{Long:prop} was taken from a paper of Long \cite{L}.

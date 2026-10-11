@@ -157,7 +157,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 7,
-   "overlaid": 6,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -167,48 +167,46 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.988,
-     "coverage_ratio": 0.538,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.549,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-the-straightening",
      "title": "The straightening",
-     "prose_ratio": 0.985,
-     "coverage_ratio": 0.995,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-volume-of-representations",
      "title": "Volume of representations",
-     "prose_ratio": 0.986,
-     "coverage_ratio": 0.977,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-comparison-with-simplicial-volume",
      "title": "Comparison with simplicial volume",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.946,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-rigidity-of-representations",
      "title": "Rigidity of representations",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.972,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-corollaries",
      "title": "Corollaries",
-     "prose_ratio": 0.989,
-     "coverage_ratio": 0.703,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     }

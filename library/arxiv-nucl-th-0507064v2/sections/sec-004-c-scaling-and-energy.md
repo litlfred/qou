@@ -8,105 +8,153 @@ pages: 5-6
 source_pdf: 0507064v2.pdf
 source_sha256: dcfad7240ba81bf5
 doc_brief: "The Virial Equation of State of Low-Density Neutron Matter — 9 sections: Front matter; VIRIAL EQUATION OF STATE; INTRODUCTION"
+text_source: latex
+latex_prose_ratio: 0.761
+latex_coverage_ratio: 1.0
 ---
-If the virial coeﬃcients are temperature independent,
-then the power series in the fugacity for the pressure and
-the density will have no explicit temperature dependence.
-Consequently, the dependence of the pressure on density
-and temperature will be given by
-P (n, T ) = T 5/ 2 f (n/T 3/ 2) , (9)
-where f (x) is a scaling function of n/T 3/ 2. If this scaling
-relation holds, one can predict the pressure P (n′, T ′) at
-0 0.002 0.004 0.006 0.008 0.01 0.012
-n [fm
--3
-]
--2
--1.5
--1
--0.5
-0
-E/N - 3T/2 [MeV]
-T=4 MeV
-T=8 MeV
-T=20 MeV
-FIG. 4: (Color online) The energy per particle E/N versus
-density n for T = 4, 8 and 20 MeV. In order to clearly show
-the interaction eﬀects we have subtracted the free kinetic e n-
-ergy 3 T /2 from all curves. The energy per particle obtained
-using the universal relation ǫ = 3P/2 with the corresponding
-virial pressures are indistinguishable from these curves. The
-circles indicate where the fugacity is z = 0 .5, and for this
-density range, the fugacities are z < 1.60, 0 .77 and 0 .25 for
-T = 4, 8 and 20 MeV.
-a new temperature T ′ from P (n, T ) through
-P (n′, T ′) =
-( T ′
-T
-) 5/ 2
-P (n, T ) , (10)
-with n′ = ( T ′/T )3/ 2 n. In Fig. 3, we demonstrate that
-low-density neutron matter scales according to Eq. (10).
-The predicted pressures for T ′ = 4 MeV obtained from
-virial pressures calculated for T = 1, 8 and 20 MeV are in
-excellent agreement with the unscaled T = 4 MeV virial
-pressure. Fig. 3 also gives results for the scaled pressures
-(T = 1, 8 and 20 MeV scaled to T ′ = 4 MeV and unscaled
-T = 4 MeV) obtained from the virial equation of state
-with bn calculated only from the S-wave scattering length
-anp. Although Table I shows that bn increases by 35%
-from T = 1 to 20 MeV in this case, the scaling symmetry
-continues to hold to a good approximation.
-In the scaling regime, b′
-n = 0 and therefore the energy
-density, Eq. (8), is given by
-ǫ = 3P/2 . (11)
-This is a general thermodynamic relation in the universal
-regime [36]. In Fig. 4, we show the energy per particle
-for T = 4, 8 and 20 MeV. In order to separate the inter-
-action eﬀects we have subtracted the free kinetic energy
-3T /2 from all curves. We have also calculated the energy
-per particle from the virial pressures using the universal
-relation Eq. (11). The resulting curves for the energy per
-particle are indistinguishable from those shown in Fig. 4.
-This demonstrates that the b′
-n term is indeed negligible.
-6
-0 0.01 0.02 0.03 0.04 0.05
-n [fm
--3
-]
-1
-2
-3
-4
-5
-6
-7
-8
-S/N
-T=10 MeV
-T=16 MeV
-T=20 MeV
-FIG. 5: (Color online) The entropy per particle S/N versus
-density n for T = 10, 16 and 20 MeV. Also shown are the
-FHNC results of Friedman and Pandharipande (crosses) [19].
-The circles indicate where the fugacity is z = 0.5.
+\begin{figure}[t]
+\begin{center}
+\includegraphics[scale=0.36,clip=]{pressure_neut_scaling.eps}
+\caption{(Color online) The pressure $P$ versus density $n$
+calculated for $T=1$, $4$, $8$ and $20 \mev$ and scaled to a 
+temperature of $T'=4 \mev$ (for details see text). The lower
+curves are results for the scaled pressures obtained with a 
+virial coefficient calculated only from the S-wave scattering length
+$a_{np}$. The latter curves have been shifted for better readability.
+The circles indicate where the fugacity is $z =0.5$, and for this
+density range, the fugacity is $z<0.87$.}
+\label{Fig3}
+\end{center}
+\end{figure}
+
+
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[scale=0.36,clip=]{energy_neut.eps}
+\caption{(Color online) The energy per particle $E/N$ versus
+density $n$ for $T=4$, $8$ and $20 \mev$. In order to clearly 
+show the interaction effects we have subtracted the free kinetic 
+energy $3T/2$ from all curves. The energy per particle
+obtained using the universal relation $\epsilon = 3P/2$ with
+the corresponding virial pressures are indistinguishable from
+these curves. The circles indicate where the fugacity is $z =0.5$,
+and for this density range, the fugacities are $z<1.60$, 
+$0.77$ and $0.25$ for $T=4$, $8$ and $20 \mev$.}
+\label{Fig4}
+\end{center}
+\end{figure}
+
+
+If the virial coefficients are temperature independent, then the power series 
+in the fugacity for the pressure and the density will have no explicit 
+temperature dependence. Consequently, the dependence of the pressure on
+density and temperature will be given by
+\be
+P(n,T) = T^{5/2} \, f(n/T^{3/2}) \,,
+\ee
+where $f(x)$ is a scaling function of $n/T^{3/2}$. If this scaling relation 
+holds, one can predict the pressure $P(n',T')$ at a new temperature $T'$ 
+from $P(n,T)$ through
+\be
+P(n',T')=\biggl(\frac{T'}{T}\biggr)^{5/2} P(n,T) \,,
+\label{pscale}
+\ee
+with $n'=(T'/T)^{3/2} \, n$. In Fig.~\ref{Fig3}, we demonstrate that 
+low-density neutron matter scales according to Eq.~(\ref{pscale}).
+The predicted pressures for $T'=4 \mev$ obtained from virial pressures 
+calculated for $T=1$, $8$ and $20 \mev$ are in excellent agreement with 
+the unscaled $T=4 \mev$ virial pressure. Fig.~\ref{Fig3} also gives
+results for the scaled pressures ($T=1$, $8$ and $20 \mev$ scaled to 
+$T'=4 \mev$ and unscaled $T=4 \mev$) obtained from the virial equation of 
+state with $b_n$ calculated only from the S-wave scattering length $a_{np}$.
+Although Table~\ref{Table1} shows that $b_n$ increases by $35 \%$ from
+$T=1$ to $20 \mev$ in this case, the scaling symmetry continues 
+to hold to a good approximation.
+
+In the scaling regime, $b_n^\prime = 0$ and therefore the energy
+density, Eq.~(\ref{epsilon}), is given by
+\be
+\epsilon = 3 P/2 \,.
+\label{uniepsilon}
+\ee
+This is a general thermodynamic relation in the universal 
+regime~\cite{Ho}. In Fig.~\ref{Fig4}, we show the energy per 
+particle for $T=4$, $8$ and $20 \mev$. In order to separate
+the interaction effects we have subtracted the free kinetic 
+energy $3T/2$ from all curves. We have also calculated the
+energy per particle from the virial pressures using the
+universal relation Eq.~(\ref{uniepsilon}). The resulting
+curves for the energy per particle are indistinguishable from
+those shown in Fig.~\ref{Fig4}. This
+demonstrates that the $b_n^\prime$ term is indeed negligible.
 While neutron matter scales as in the unitary limit, the
-thermodynamic properties depend on the value of the
-virial coeﬃcient, and the latter depends on the physics
-of NN scattering.
-Finally, we emphasize that the universal relation for
-the energy density, Eq. (11), holds independent of the
-value of the universal interaction coeﬃcient given by ξ
-for T = 0 and bn for higher temperatures. In fact,
-Eq. (11) is valid for T = 0, where the energy per par-
-ticle only scales with density, E/N ∼ ξ n2/ 3 according
-to Eq. (2), and for the virial regime, where the en-
-ergy per particle scales with density and temperature
-E/N ∼ ξ(T /n2/ 3) n2/ 3 ∼ ~ξ(T /n2/ 3) T , with Fermi tem-
-perature TF ∼ n2/ 3. The latter scaling is very explicit to
-lowest order in the density, where the energy per particle
-is given by
-E
-N ≈ 3
+thermodynamic properties depend on the value of the virial
+coefficient, and the latter depends on the physics of NN 
+scattering.
+
+Finally, we emphasize that the universal relation for the energy
+density, Eq.~(\ref{uniepsilon}), holds independent of the value
+of the universal interaction coefficient given by $\xi$ for $T=0$
+and $b_n$ for higher temperatures. In fact, Eq.~(\ref{uniepsilon})
+is valid for $T=0$, where the energy per particle only scales with
+density, $E/N \sim \xi \, n^{2/3}$ according to Eq.~(\ref{unieos}), and
+for the virial regime, where the energy per particle scales with
+density and temperature $E/N \sim \xi(T/n^{2/3}) \, n^{2/3}
+\sim \widetilde{\xi}(T/n^{2/3}) \, T$, with Fermi temperature
+$T_{\rm F} \sim n^{2/3}$. The latter scaling is very
+explicit to lowest order in the 
+density, where the energy per particle is given by
+\be
+\frac{E}{N} \approx \frac{3}{2} \, T \, ( 1 - b_n \lambda^3 n/2 ) \,.
+\ee
+
+
+\subsection{Entropy and Free Energy}
+
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[scale=0.36,clip=]{entropy_neut.eps}
+\caption{(Color online) The entropy per particle $S/N$ 
+versus density $n$ for $T=10$, $16$ and $20 \mev$.
+Also shown are the FHNC results of Friedman and Pandharipande
+(crosses)~\cite{FP}. The circles indicate where the fugacity is $z =0.5$.}
+\label{Fig5}
+\end{center}
+\end{figure}
+
+
+We present our virial results for the entropy per particle in
+Fig.~\ref{Fig5} for temperatures $T=10$, $16$ and $20 \mev$. 
+The FHNC results are again in very good agreement with
+the model-independent virial equation of state, with the exception
+of two FHNC points that seem to either reflect numerical instabilities or
+are typos in~\cite{FP}. As indicated by the circles for $z=0.5$ in 
+Fig.~\ref{Fig5}, we observe that the range of validity of the virial
+equation of state is bounded by a constant entropy per particle,
+independent of the temperature. This is easily understood from the 
+expression for the entropy per particle in the scaling regime 
+with $b_n^\prime = 0$,
+\be
+\frac{S}{N} = \frac{5}{2} \, 
+\biggl(1- \frac{z b_n}{1+2z b_n}\biggr) - \log z \,.
+\ee
+Therefore, if one takes as the range of validity of the virial equation 
+of state $z \lesssim 0.5$, this is equivalent to $S/N \gtrsim 2.9$ for
+$b_n = 0.31$, in agreement with Fig.~\ref{Fig5}. For completeness, we also
+show the free energy per particle in Fig.~\ref{Fig6}. As for the pressure
+and the entropy, the FHNC results agree well with our model-independent
+virial predictions.
+
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[scale=0.36,clip=]{free_energy_neut.eps}
+\caption{(Color online) The free energy per particle $F/N$ 
+versus density $n$ for $T=10$, $16$ and $20 \mev$.
+Also shown are the FHNC results of Friedman and Pandharipande
+(crosses)~\cite{FP}. The circles indicate where the fugacity is $z =0.5$.}
+\label{Fig6}
+\end{center}
+\end{figure}

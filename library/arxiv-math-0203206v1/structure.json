@@ -657,8 +657,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 6,
-   "overlaid": 1,
+   "tex_sections": 17,
+   "overlaid": 10,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -679,12 +679,13 @@
     {
      "id": "sec-002-21-tensor-categories",
      "title": "Tensor Categories",
-     "result": "no matching \\section"
+     "prose_ratio": 0.472,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-003-2-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.221,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -720,7 +721,8 @@
     {
      "id": "sec-010-22-algebraic-quantum-groups",
      "title": "Algebraic Quantum Groups",
-     "result": "no matching \\section"
+     "prose_ratio": 0.559,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-011-2-the-linear-mappings-t1t-2-froma-a-into-m-a-a-s",
@@ -740,7 +742,8 @@
     {
      "id": "sec-014-23-discrete-and-compact-case",
      "title": "Discrete and Compact Case",
-     "result": "no matching \\section"
+     "prose_ratio": 0.44,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-015-2-s2a-faf-1-a-a",
@@ -750,23 +753,33 @@
     {
      "id": "sec-016-24-examples",
      "title": "Examples",
-     "result": "no matching \\section"
+     "prose_ratio": 0.696,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-017-3-representation-theory",
      "title": "Representation Theory",
-     "prose_ratio": 0.125,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.0,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-018-31-the-universal-corepresentation",
      "title": "The Universal Corepresentation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-019-32-representations-vs-corepresentations-as-tenso",
      "title": "Representations vs. Corepresentations as Tensor \u2217-Categories",
-     "result": "no matching \\section"
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-020-2-s-\u03b7-\u03b2v-\u03be-\u03be-\u03b2v-\u03b7-\u03be\u03b7-k",
@@ -776,7 +789,10 @@
     {
      "id": "sec-021-33-conjugates-for-representations-and-corepresen",
      "title": "Conjugates for Representations and Corepresentations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.719,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-022-1-v-1-j-j-1-j-js2-\u03b9v",
@@ -791,27 +807,34 @@
     {
      "id": "sec-024-4-cocommutative-algebraic-quantum-groups-vs-comp",
      "title": "Cocommutative Algebraic Quantum Groups vs. Compact Group s",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.962,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-025-5-from-concrete-tensor-categories-to-discrete-qu",
      "title": "From Concrete Tensor Categories to Discrete Quantum Group s",
-     "prose_ratio": 0.029,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-026-51-natural-transformations-of--preserving-functo",
      "title": "Natural Transformations of \u2217-Preserving Functors",
-     "result": "no matching \\section"
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.925,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-027-52-concrete-tensor--categories-and-discrete-quan",
      "title": "Concrete Tensor \u2217-Categories and Discrete Quantum Semigroups",
-     "prose_ratio": 0.348,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.659,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-028-1-a",
@@ -826,12 +849,18 @@
     {
      "id": "sec-030-53-conjugates-and-antipodes-discrete-quantum-gro",
      "title": "Conjugates and Antipodes: Discrete Quantum Groups",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-031-54-the-non--case",
      "title": "The Non- \u2217 Case",
-     "result": "no matching \\section"
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-032-6-concrete-braided-and-symmetric-categories",

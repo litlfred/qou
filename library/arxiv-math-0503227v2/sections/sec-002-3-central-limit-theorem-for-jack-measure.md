@@ -7,10 +7,10 @@ section_number: 3
 pages: 9-13
 source_pdf: 0503227v2.pdf
 source_sha256: 4e83adfdef827103
-text_source: latex
-latex_prose_ratio: 0.982
-latex_coverage_ratio: 1.0
 doc_brief: "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios By Jason Fulman — Bolthausen used a variation of Stein’s method to give an"
+text_source: latex
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 0.992
 ---
 []{#jack label="jack"}
 
@@ -64,9 +64,9 @@ Lemma [\[moments2\]](#moments2){reference-type="ref" reference="moments2"} is th
 
 1.  ([@K4]) $\ee(X_{j,\alpha}^2|\lambda(j-1))= \alpha(j-1)$.
 
-2.  ([@La]) $$\begin{eqnarray*}
-     \ee(X_{j,\alpha}^4|\lambda(j-1)) & = & \alpha^2 {j \choose 2} + \alpha(\alpha-1)^2(j-1) + 3 \alpha \sum_{x \in \lambda(j-1)} c_{\alpha}(x)^2 \\  & & + 3\alpha(\alpha-1) \sum_{x \in \lambda(j-1)} c_{\alpha}(x).
-    \end{eqnarray*}$$
+2.  ([@La]) $$\begin{aligned}
+     \ee(X_{j,\alpha}^4|\lambda(j-1)) & = & \alpha^2 {j \choose 2} + \alpha(\alpha-1)^2(j-1) + 3 \alpha \sum_{x \in \lambda(j-1)} c_{\alpha}(x)^2 \\  & & + 3\alpha(\alpha-1) \sum_{x \in \lambda(j-1)} c_{\alpha}(x). 
+    \end{aligned}$$
 :::
 
 Lemma [\[identity2\]](#identity2){reference-type="ref" reference="identity2"} is the $\alpha$ version of Lemma [\[identity\]](#identity){reference-type="ref" reference="identity"}. The proof is combinatorial, as opposed to the algebraic argument given for Lemma [\[identity\]](#identity){reference-type="ref" reference="identity"}.
@@ -108,10 +108,10 @@ Finally, we give the analog of Lemma [\[boundmom\]](#boundmom){reference-type="r
 :::
 
 ::: proof
-*Proof.* The proof method is the same as that of Lemma [\[boundmom\]](#boundmom){reference-type="ref" reference="boundmom"}, using the Cauchy-Schwarz inequality in the first part and the conditional Cauchy-Schwarz inequality in the second part. One uses that $\ee (X_{n,\alpha}^2|\lambda(n-1))=\alpha(n-1)$ for all $\lambda(n-1)$ (part 1 of Lemma [\[moments2\]](#moments2){reference-type="ref" reference="moments2"}). Also one needs that $$\begin{eqnarray*}
+*Proof.* The proof method is the same as that of Lemma [\[boundmom\]](#boundmom){reference-type="ref" reference="boundmom"}, using the Cauchy-Schwarz inequality in the first part and the conditional Cauchy-Schwarz inequality in the second part. One uses that $\ee (X_{n,\alpha}^2|\lambda(n-1))=\alpha(n-1)$ for all $\lambda(n-1)$ (part 1 of Lemma [\[moments2\]](#moments2){reference-type="ref" reference="moments2"}). Also one needs that $$\begin{aligned}
 \ee(X_{n,\alpha}^4) & = & \alpha^2 {n \choose 2} +
 \alpha(\alpha-1)^2(n-1) + 3 \alpha \ee \left( \sum_{x \in
 \lambda(n-1)} c_{\alpha}(x)^2 \right)\\ & = & \alpha^2 {n \choose 2} +
-3 \alpha^2 {n-1 \choose 2} + \alpha(\alpha-1)^2(n-1).
-\end{eqnarray*}$$ The first equality used part 2 of Lemma [\[moments2\]](#moments2){reference-type="ref" reference="moments2"} and the fact that $\ee(T_{n-1,\alpha}) = 0$. The second equality used part 4 of Lemma [\[ismart2\]](#ismart2){reference-type="ref" reference="ismart2"} and Lemma [\[identity2\]](#identity2){reference-type="ref" reference="identity2"} with $r=2$. ◻
+3 \alpha^2 {n-1 \choose 2} + \alpha(\alpha-1)^2(n-1). 
+\end{aligned}$$ The first equality used part 2 of Lemma [\[moments2\]](#moments2){reference-type="ref" reference="moments2"} and the fact that $\ee(T_{n-1,\alpha}) = 0$. The second equality used part 4 of Lemma [\[ismart2\]](#ismart2){reference-type="ref" reference="ismart2"} and Lemma [\[identity2\]](#identity2){reference-type="ref" reference="identity2"} with $r=2$. ◻
 :::

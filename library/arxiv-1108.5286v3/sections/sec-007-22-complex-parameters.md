@@ -8,197 +8,235 @@ pages: 21-24
 source_pdf: 1108.5286v3.pdf
 source_sha256: 447d90883adce21e
 doc_brief: "Hochschild homology of affine Hecke algebras — Let H = H(R,q ) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not roots of unity."
+text_source: latex
+latex_prose_ratio: 0.984
+latex_coverage_ratio: 0.986
 ---
-Everything we discussed in the previous subsection has a nat ural analogue for graded
-Hecke algebras. The condition q positive translates to k real valued, but with the
-scaling isomorphisms (7) we can also reach complex paramete rs.
-In the graded setting we have to replace T P undT P
-un by the vector spaces tP and
-iaP . In the groupoid G we have to omit the parts KP , so we get a groupoid W′ with
-W′
-P Q = {g ∈ Γ ⋉W |g(P ) = Q} P,Q ⊂ ∆ .
-Theorem 2.4. Suppose that kα ∈ R for all α ∈R. There exists a natural Q-linear
-bijection
-ζ∨ :GQ(H ⋊ Γ) →GQ(S(t∗) ⋊W′)
+\label{sec:complex}
+
+Everything we discussed in the previous subsection has a natural analogue for graded 
+Hecke algebras. The condition $q$ positive translates to $k$ real valued, but with the 
+scaling isomorphisms \eqref{eq:1.3} we can also reach complex parameters.
+
+In the graded setting we have to replace $T^P$ und $T^P_{un}$ by the vector spaces 
+$\mf t^P$ and $i \mf a^P$. In the groupoid $\mc G$ we have to omit the parts $K_P$, 
+so we get a groupoid $\mc W'$ with
+\[
+\mc W'_{PQ} = \{ g \in \Gamma \ltimes W \mid g(P) = Q \} \qquad P,Q \subset \Delta .
+\]
+
+\begin{thm}\label{thm:6.4}
+Suppose that $k_\alpha \in \R$ for all $\alpha \in R$. 
+There exists a natural $\Q$-linear bijection
+\[
+\zeta^\vee : G_\Q (\mh H \rtimes \Gamma) \to G_\Q (S (\mf t^*) \rtimes W')
+\]
 such that:
-(1 ) ζ∨(π) is a tempered virtual S(t∗) ⋊W′-representation if and only if π is a tem-
-pered virtual H ⋊ Γ -representation.
-(2 ) ζ∨ commutes with parabolic induction, in the sense that for a su bgroup Γ′
-P ⊂ Γ P ,
-a tempered HP ⋊ Γ′
-P -representationπ and λ ∈ tW (RP )⋊Γ ′
-P we have
-ζ∨(
-IndH⋊Γ
-HP ⋊Γ ′
-P
-(π ◦φλ)
-)
-= Ind S(t∗)⋊(W ⋊Γ)
-S(t∗)⋊(W (RP )⋊Γ ′
-P )(ζ∨(π) ◦φλ);
-(3 ) if λ ∈ ia and π is a virtual representation with central character in W′λ + a,
-then so is ζ∨(π);
-(4 ) if π is tempered and admits a real central character, then ζ∨(π) = π ◦m0 with
-m0 as in (7).
-Proof. For H ⋊ Γ-representations which admit a central character whose co mpo-
-nent in ia is small, this follows from Theorems 2.2 and 1.3. The extra co ndition (4)
-is actually the starting point for the construction of ζ∨, see [Sol3, Section 2.3]. We
-can generalize this to all H ⋊ Γ-representations via the scaling isomorphisms
-mǫ : H( ˜R,ǫk ) ⋊ Γ → H( ˜R,k ) ⋊ Γ
-for ǫ> 0. ✷
-An induction datum for H is a triple ( P,δ,λ ) such that P ⊂ ∆ ,δ is a discrete
-series representation of HP and λ ∈ tP . Suppose that µ ∈ iaP and that ρ is an
-irreducible direct summand of the representation Ind
-HP ⋊Γ (P,δ,µ)
-HP (δ ◦φµ) (which is
-completely reducible). We abbreviate Γ ρ = Γ (P,δ,µ) and tρ = (tP )Γ ρ . We say that
-{
-πρ(λ) := Ind H⋊Γ
-HP ⋊Γ ρ
-(ρ ◦φλ) |λ ∈ tρ}
-(43)
-is an analytic family of H ⋊ Γ-representations. Notice that
-±µ ∈ tρ (44)
-21
-and that the central character of πρ(−µ) equals the central character of πΓ (P,δ, 0) =
-IndH⋊Γ
-HP δ. Moreover the weights satisfy an integrality property with respect to
-Zk := Z{kα |α ∈R}.
-By [Opd, Theorem A.7] every S(t∗
-P )-weightν of δ is a residual point for ( ˜RP,k P ).
-The classiﬁcation of such distinguished points in [HeOp, Se ction 4] shows thatα(ν) ∈
-ZkP for all α ∈ RP . By [BaMo, Theorem 6.4] this property is preserved under
-induction, that is, α(ν) ∈ Zk for every α ∈R and every S(t∗)-weightν of Ind H⋊Γ
-HP δ.
-We conclude that all S(t∗)-weights of πρ(λ) lie in
-W′(λ +µ) + Hom(ZR, Zk), (45)
-where we consider Hom( ZR, Zk) as a lattice in aR ⊂ t.
-To the analytic family πρ we associate the group
-W′
-ρ =
-{
-g ∈ W′ |g(P ) = P,δ ◦ψ−1
-g ∼
-=δ,g stabilizes {πρ(λ) |λ ∈iaρ}
+\begin{enumerate}[\textup{(}1\textup{)}]
+\item $\zeta^\vee (\pi)$ is a tempered virtual $S (\mf t^*) \rtimes W'$-representation 
+if and only if $\pi$ is a tempered virtual $\mh H \rtimes \Gamma$-representation.
+\item $\zeta^\vee$ commutes with parabolic induction, in the sense that for a subgroup 
+$\Gamma'_P \subset \Gamma_P$, a tempered $\mh H^P \rtimes \Gamma'_P$-representation 
+$\pi$ and $\lambda \in \mf t^{W(R_P) \rtimes \Gamma'_P}$ we have
+\[
+\zeta^\vee \big( \mr{Ind}_{\mh H^P \rtimes \Gamma'_P}^{\mh H \rtimes \Gamma} 
+(\pi \circ \phi_\lambda) \big) = 
+\mr{Ind}_{S (\mf t^*) \rtimes (W (R_P) \rtimes \Gamma'_P)}^{S (\mf t^*) 
+\rtimes (W \rtimes \Gamma)} (\zeta^\vee (\pi) \circ \phi_\lambda) ;
+\]
+\item if $\lambda \in i \mf a$ and $\pi$ is a virtual representation with central character in 
+$W' \lambda + \mf a$, then so is $\zeta^\vee (\pi)$;
+\item if $\pi$ is tempered and admits a real central character, then 
+$\zeta^\vee (\pi) = \pi \circ m_0$ with $m_0$ as in \eqref{eq:1.3}.
+\end{enumerate}
+\end{thm}
+\emph{Proof.}
+For $\mh H \rtimes \Gamma$-representations which admit a central character whose component
+in $i \mf a$ is small, this follows from Theorems \ref{thm:6.2} and \ref{thm:2.2}. The extra
+condition (4) is actually the starting point for the construction of $\zeta^\vee$, see 
+\cite[Section 2.3]{Sol-Irr}. We can generalize this to all $\mh H \rtimes \Gamma$-representations
+via the scaling isomorphisms
+\[
+m_\ep : \mh H (\tilde{\mc R},\ep k) \rtimes \Gamma \to \mh H (\tilde{\mc R},k) \rtimes \Gamma
+\]
+for $\ep > 0 . \qquad \Box$
+\\[2mm]
+
+An induction datum for $\mh H$ is a triple $(P,\delta,\lambda)$ such that 
+$P \subset \Delta, \delta$ is a discrete series representation of $\mh H_P$ and 
+$\lambda \in \mf t^P$. Suppose that $\mu \in i \mf a^P$ and that $\rho$ is an 
+irreducible direct summand of the representation 
+$\mr{Ind}_{\mh H^P}^{\mh H^P \rtimes \Gamma_{(P,\delta,\mu)}}(\delta \circ \phi_\mu)$ (which
+is completely reducible). We abbreviate $\Gamma_\rho = \Gamma_{(P,\delta,\mu)}$
+and $\mf t^\rho = (\mf t^P)^{\Gamma_\rho}$. We say that 
+\begin{equation} \label{eq:6.13}
+\big\{ \pi_\rho (\lambda) := \mr{Ind}_{\mh H^P \rtimes \Gamma_\rho}^{\mh H \rtimes \Gamma}
+(\rho \circ \phi_\lambda) \mid \lambda \in \mf t^\rho \big\}
+\end{equation}
+is an analytic family of $\mh H \rtimes \Gamma$-representations. Notice that 
+\begin{equation}\label{eq:6.6}
+\pm \mu \in \mf t^\rho 
+\end{equation}
+and that the central character of $\pi_\rho (-\mu)$ equals the central character of 
+$\pi^\Gamma (P,\delta,0) = \mr{Ind}_{\mh H^P}^{\mh H \rtimes \Gamma} \delta$. Moreover the
+weights satisfy an integrality property with respect to 
+\[
+\Z k := \Z \{ k_\alpha \mid \alpha \in R \} . 
+\]
+By \cite[Theorem A.7]{Opd-Sp} every $S (\mf t_P^*)$-weight $\nu$ of $\delta$ is a residual 
+point for $(\tilde{\mc R}_P, k_P)$. The classification of such distinguished points 
+in \cite[Section 4]{HeOp} shows that $\alpha (\nu) \in \Z k_P$ for all $\alpha \in R_P$.
+By \cite[Theorem 6.4]{BaMo2} this property is preserved under induction, that is, 
+$\alpha (\nu) \in \Z k$ for every $\alpha \in R$ and every $S (\mf t^*)$-weight $\nu$ of 
+$\mr{Ind}_{\mh H^P}^{\mh H \rtimes \Gamma} \delta$. We conclude that all 
+$S (\mf t^*)$-weights of $\pi_\rho (\lambda)$ lie in
+\begin{equation}\label{eq:6.4}
+W' (\lambda + \mu) + \mr{Hom}(\Z R, \Z k) ,
+\end{equation}
+where we consider $\mr{Hom}(\Z R, \Z k)$ as a lattice in $\mf a_R \subset \mf t$.
+ 
+To the analytic family $\pi_\rho$ we associate the group
+\[
+\mc W'_\rho = \big\{ g \in \mc W' \mid g(P) = P , \delta \circ \psi_g^{-1} \cong \delta , 
+g \text{ stabilizes } \{ \pi_\rho (\lambda) \mid \lambda \in i \mf a^\rho \} \big\}. 
+\]
+\texttt{Correction (2022):} The new comments on pages \pageref{eq:smoothFamily}, 
+\pageref{eq:6.2} and \pageref{eq:6.12} 
+also apply to the below construction and to Corollary \ref{cor:6.5}. If we can instead use one 
+of the good cases listed on page \pageref{eq:6.12}, the remainder of the paper holds for those
+families of $\mh H \rtimes \Gamma$-representations. Otherwise, there is still a satisfactory 
+substitute for Corollary \ref{cor:6.5} in terms of families of virtual $\mh H \rtimes 
+\Gamma$-representations, worked out in \cite{SolHHtwisted}.\\[2mm]
+
+\noindent
+Our discussion of $\C [X] \rtimes W' = \mc O (T) \rtimes W'$ before Theorem \ref{thm:6.2} 
+applies just as well to $\mh H(\tilde{\mc R},0) \rtimes \Gamma = S (\mf t^*) \rtimes W'$.
+The considerations that lead to Lemma \ref{lem:6.3} also show:
+
+\begin{cor}\label{cor:6.5}
+There exist analytic families of $\mh H \rtimes \Gamma$-representations $\pi_{\rho_w}$ for
+$w \in \langle W' \rangle$, such that:
+\enuma{
+\item The parameter space $\mf t^{\rho_w} / \mc W'_{\rho_w}$ is isomorphic to
+$\mf t^w / Z_{W'}(w)$, as orbifolds.
+\item $\pi_{\rho_w} (\lambda)$ and $\pi_{\rho_w}(\lambda')$ have the same trace if and only
+if $\lambda$ and $\lambda'$ lie in the same $\mc W'_{\rho_w}$-orbit.
+\item The family of representations 
+\[
+\{ \pi_{\rho_w}(\lambda ) \mid w \in \langle W' \rangle, 
+\lambda \in \mf t^{\rho_w} / \mc W'_{\rho_w} \}
+\]
+contains no repetitions and forms a basis of $G_\Q (\mh H \rtimes \Gamma)$.
 }
-.
-Correction (2022): The new comments on pages 16, 18 and 19 also apply to the
-below construction and to Corollary 2.5. If we can instead us e one of the good cases
-listed on page 19, the remainder of the paper holds for those f amilies of H ⋊ Γ-
-representations. Otherwise, there is still a satisfactory substitute for Corollary 2.5
-in terms of families of virtual H ⋊ Γ-representations, worked out in [Sol5].
-Our discussion of C[X] ⋊W′ = O(T ) ⋊W′ before Theorem 2.2 applies just as well
-to H( ˜R, 0) ⋊ Γ = S(t∗) ⋊W′. The considerations that lead to Lemma 2.3 also show:
-Corollary 2.5. There exist analytic families of H ⋊ Γ -representationsπρw for w ∈
-⟨W′⟩, such that:
-(a) The parameter space tρw/W′
-ρw is isomorphic to tw/ZW ′(w), as orbifolds.
-(b) πρw (λ) and πρw (λ′) have the same trace if and only if λ and λ′ lie in the same
-W′
-ρw -orbit.
-(c) The family of representations
-{πρw (λ) |w ∈ ⟨W′⟩,λ ∈ tρw/W′
-ρw }
-contains no repetitions and forms a basis of GQ(H ⋊ Γ) .
-The scaling isomorphisms mǫ for ǫ ∈ C× from (7) provide an immediate gener-
-alization of Theorem 2.4 and Corollary 2.5 to graded Hecke al gebras H( ˜R,ǫk ) ⋊ Γ
-such that k is real valued and ǫ ∈ C. To retain the formulation of Theorem 2.4 one
-must modify the notions tempered and discrete series, in the sense that everywhere
-in Section 1.5 one must use ǫa− instead of a−. Let us call this ǫ-tempered and
-ǫ-discrete series. We can also consider the family of algebra s
-{
-H( ˜R,ǫk ) ⋊ Γ |ǫ ∈ C
-}
-.
-22
-For every ǫ ∈ C the analytic families of H( ˜R,ǫk ) ⋊ Γ-representations
-{πm∗
-ǫ (ρw)(λ) |w ∈ ⟨W′⟩,λ ∈ tρw/W′
-ρw }
-fulﬁll Corollary 2.5. We note that the matrix coeﬃcients of πm∗
-ǫ (ρw)(λ) depend
-algebraically onǫ andλ. More speciﬁcally, by (45) the S(t∗)-weights ofπm∗
-ǫ (ρw)(−ǫµ)
-lie in Hom( ZR, Zkǫ) ⊂ tR and depend linearly on ǫ.
-Next we generalize Section 2.1 to certain complex parameter functionsq. As the
-analogue of a line ǫR we use a one-parameter subgroup of C×. We consider qǫ for a
-positive parameter function q and ǫ ∈ C. Then (23) becomes
-ku,ǫ,α =
-(
-logqα∨/2 + (1 +α(u)) logqα∨
-)
-ǫ/2 α ∈Ru.
-Notice that ǫ = 0 corresponds to the algebra H(R,q 0) ⋊ Γ = C[X] ⋊W′, which we
-understand very well. On the other hand, for ǫ ∈iR \ {0} the parameter qα∨ can be
-a root of unity (unequal to 1), in which case the aﬃne Hecke alg ebra H(R,q ) can
-diﬀer substiantially from those with positive parameters. T herefore we assume that
-ℜ(ǫ) ⁄= 0.
-Theorem 2.6. Theorem 2.2 and Lemma 2.3 also hold for parameter functions qǫ
-with q positive and ǫ ∈ C \iR. For the interpretation of Theorem 2.2 we have to
-replace a− by ǫa−, Trs by exp(ǫa) and tempered by ǫ-tempered.
-Moreover we can choose the required analytic families of H(R,q ǫ)⋊Γ -representations
-such that the matrix coeﬃcients of the representations depe nd analytically on ǫ and
-all A-weights depend polynomially on the variables
-{
-q±ǫ/2
-α∨ |α∨ ∈R∨
-nr
-}
-.
-Proof. Every t ∈ T can be written uniquely as t = uc with u ∈ Tun and
-c ∈ exp(ǫa), since ℜ(ǫ) ⁄= 0. In this setting Theorem 1.2 remains valid. Moreover
-ku,ǫ,,α ∈ǫR and ⟨α,λ ⟩ ∈ǫR for all α ∈R and λ ∈ǫa, so ⟨α,ǫ a⟩ and ⟨α,ǫ a⟩ +ku,ǫ,α
-have positive distance toπiZ\{0}. This ensures that Theorem 1.3 applies to all λ in a
-suitable tubular neighborhood of ǫa in t. Its part (b) tells us that ˆH(R,q ǫ)W ′u exp(λ)⋊
-Γ is Morita equivalent to ˆH( ˜RP (u),ǫk P (u))W ′
-ZP (u)λ ⋊W′
-P (u), while H( ˜RP (u),ǫk P (u)) is
-isomorphic to a graded Hecke algebra with real parameter fun ctionkP (u) by means
-of mǫ. To H( ˜RP (u),k P (u)) we can apply Theorem 2.4, which gives us Theorem 2.2
-for H ⋊ Γ-representations with central character in W′u exp(ǫa). Combining these
-results for all u ∈Tun yields the map
-ζ∨ :G(H(R,q ǫ) ⋊ Γ) →G(X ⋊W′).
-It makes Theorem 2.2 true for qǫ, because it does so on all sets u exp(ǫa).
-Let us construct the required analytic families of H(R,q ǫ) ⋊ Γ-representations.
-We start with (42) and let σ be any of the σw,i. With Theorem 1.3 we transfer
-the HP ⋊ Γ σ-representation to a tempered representation ˜ σ of HP (u) ⋊ ˜Γ, for a
-suitable subgroup ˜Γ ⊂ W′. Taking for u the unitary part of an A-weight of σ,
-we can achieve that ˜ σ has real central character. Then m∗
-ǫ (˜σ) is an ǫ-tempered
-representation of H( ˜RP (u),ǫk P (u)) ⋊ ˜Γ. Now Theorem 1.3 in the opposite direction
-23
-yields an ǫ-tempered representation of H(RP, (qP )ǫ) ⋊ Γ σ, which we call m∗
-ǫ (σ). We
-claim that the analytic families of H(R,q ǫ) ⋊ Γ-representations
-{πm∗
-ǫ (σw,i)(t) |w ∈ ⟨W′⟩, 1 ≤i ≤c(w),t ∈T σw,i/Gσw,i }
-fulﬁll Lemma 2.3. By construction ζ∨(πm∗
-ǫ (σw,i)(t)) equals ζ∨(σw,i)(t). In view of
-Lemma 2.3 and since Theorem 2.2 holds for q and qǫ, this implies the claim.
-In view of [Sol3, (4.6)], m∗
-ǫ (σ) is also the composition of σ with the algebra
-homomorphism ρǫ from [Sol3, Proposition 4.1.2]. Although in [Sol3] the auth or
-assumed that ǫ ∈ [−1, 1], the relevant calculations remain valid for ǫ ∈ C \iR. This
-shows that the matrix coeﬃcients of m∗
-ǫ (σ) depend analytically on ǫ. More precisely,
-for every v ∈ W e the operator πm∗
-ǫ (σw,i)(t,N v) depends in a complex analytic way
-on ǫ and t.
-By (34) all A-weights of πσw,i (t) are of the form γ(tuc) where γ ∈W′ and uc is
-a weight of σw,i with unitary part u ∈Tun and absolute value c ∈Y ⊗ZqZ/2. This
-in turn implies that all A-weights of πm∗
-ǫ (σw,i)(t) are of the form
-γ(tucǫ) cǫ ∈qǫZ/2, (46)
-and in particular that (for ﬁxed t) they depend polynomially on
-{
-q±ǫ/2
-α∨ | α∨ ∈
-R∨
-nr
-}
-. ✷
-Since the whole situation depends in complex analytic fashi on on ǫ, it is natural
-to expect that Theorem 2.6 extends to all but ﬁnitely many ǫ ∈ C. Indeed this is
-known when q is an equal parameter function [KaLu], but the methods of thi s paper
-are insuﬃcient to prove it.
+\end{cor}
+
+The scaling isomorphisms $m_\ep$ for $\ep \in \C^\times$ from \eqref{eq:1.3} provide an
+immediate generalization of Theorem \ref{thm:6.4} and Corollary \ref{cor:6.5} to graded
+Hecke algebras $\mh H (\tilde R,\ep k) \rtimes \Gamma$ such that $k$ is real valued and
+$\ep \in \C$. To retain the formulation of Theorem \ref{thm:6.4} one must modify the 
+notions tempered and discrete series, in the sense that everywhere in Section \ref{sec:temp}
+one must use $\ep \mf a^-$ instead of $\mf a^-$. Let us call this $\ep$-tempered and
+$\ep$-discrete series. We can also consider the family of algebras 
+\[
+\big\{ \mh H (\tilde{\mc R} , \ep k) \rtimes \Gamma \mid \ep \in \C \big\} .
+\]
+For every $\ep \in \C$ the analytic families of 
+$\mh H (\tilde{\mc R} , \ep k) \rtimes \Gamma$-representations 
+\[
+\{ \pi_{m_\ep^* (\rho_w )} (\lambda) \mid w \in \langle W' \rangle, 
+\lambda \in \mf t^{\rho_w} / \mc W'_{\rho_w} \}
+\]
+fulfill Corollary \ref{cor:6.5}. We note that the matrix coefficients of
+$\pi_{m_\ep^* (\rho_w )} (\lambda)$ depend algebraically on $\ep$ and $\lambda$. More 
+specifically, by \eqref{eq:6.4} the $S(\mf t^*)$-weights of $\pi_{m_\ep^* (\rho_w)} (-\ep \mu)$ 
+lie in $\mr{Hom} (\Z R, \Z k \ep) \subset \mf t_R$ and depend linearly on $\ep$.
+
+Next we generalize Section \ref{sec:positive} to certain
+complex parameter functions $q$. As the analogue of a line $\ep \R$ we use a one-parameter
+subgroup of $\C^\times$. We consider $q^\ep$ for a positive parameter function $q$ and 
+$\ep \in \C$. Then \eqref{eq:2.3} becomes
+\[
+k_{u,\ep,\alpha} = \big( \log q_{\alpha^\vee / 2} + (1 + \alpha (u)) \log q_{\alpha^\vee} \big)
+\ep / 2 \qquad \alpha \in R_u .
+\]
+Notice that $\ep = 0$ corresponds to the algebra $\mc H (\mc R ,q^0) \rtimes \Gamma = 
+\C [X] \rtimes W'$, which we understand very well. On the other hand, for $\ep \in i \R 
+\setminus \{0\}$ the parameter $q_{\alpha^\vee}$ can be a root of unity (unequal to 1), 
+in which case the affine Hecke algebra $\mc H (\mc R ,q)$ can differ substiantially from 
+those with positive parameters. Therefore we assume that $\Re (\ep) \neq 0$.
+
+\begin{thm}\label{thm:6.6}
+Theorem \ref{thm:6.2} and Lemma \ref{lem:6.3} also hold for parameter functions $q^\ep$ with
+$q$ positive and $\ep \in \C \setminus i \R$.
+For the interpretation of Theorem \ref{thm:6.2} we have to replace $\mf a^-$ by $\ep \mf a^-$,
+$T_{rs}$ by $\exp (\ep \mf a)$ and tempered by $\ep$-tempered. 
+
+Moreover we can choose the required analytic families of $\mc H (\mc R,q^\ep) \rtimes 
+\Gamma$-representations such that the matrix coefficients of the representations depend 
+analytically on $\ep$ and all $\mc A$-weights depend polynomially on the variables
+$\big\{ q_{\alpha^\vee}^{\pm \ep/2} \mid \alpha^\vee \in R_{nr}^\vee \big\}$.
+\end{thm}
+\emph{Proof.}
+Every $t \in T$ can be written uniquely as $t = u c$ with $u \in T_{un}$ and 
+$c \in \exp (\ep \mf a)$, since $\Re (\ep) \neq 0$. In this setting Theorem \ref{thm:2.1} 
+remains valid. Moreover $k_{u,\ep,,\alpha} \in \ep \R$ and 
+$\langle \alpha, \lambda \rangle \in \ep \R$ for all $\alpha \in R$ and $\lambda \in \ep \mf a$, 
+so $\langle \alpha, \ep \mf a \rangle$ and $\langle \alpha, \ep \mf a \rangle + k_{u,\ep,\alpha}$ 
+have positive distance to $\pi i \Z \setminus \{0\}$. This ensures that Theorem \ref{thm:2.2} 
+applies to all $\lambda$ in a suitable tubular neighborhood of $\ep \mf a$ in $\mf t$. 
+Its part (b) tells us that
+$\widehat{\mc H (\mc R,q^\ep)}_{W'u \exp (\lambda)} \rtimes \Gamma$ is Morita equivalent to 
+$\widehat{\mh H (\tilde{\mc R}^{P(u)}, \ep k^{P(u)})}_{W'_{\Z P(u)} \lambda} \rtimes W'_{P(u)}$,
+while $\mh H (\tilde{\mc R}^{P(u)}, \ep k^{P(u)})$ is isomorphic to a graded Hecke algebra
+with real parameter function $k^{P(u)}$ by means of $m_{\ep}$. To 
+$\mh H (\tilde{\mc R}^{P(u)}, k^{P(u)})$ we can apply Theorem \ref{thm:6.4}, which gives us
+Theorem \ref{thm:6.2} for $\mc H \rtimes \Gamma$-representations with central character
+in $W' u \exp (\ep \mf a)$. Combining these results for all $u \in T_{un}$ yields the map
+\[
+\zeta^\vee : G (\mc H (\mc R ,q^\ep ) \rtimes \Gamma) \to G (X \rtimes W') .
+\]
+It makes Theorem \ref{thm:6.2} true for $q^\ep$, because it does so on all sets 
+$u \exp (\ep \mf a)$.
+
+Let us construct the required analytic families of $\mc H (\mc R,q^\ep ) \rtimes 
+\Gamma$-representations. We start with \eqref{eq:6.3} and let $\sigma$ be any of the
+$\sigma_{w,i}$. With Theorem \ref{thm:2.2} we transfer the $\mc H^P \rtimes \Gamma_\sigma
+$-representation to a tempered representation $\tilde \sigma$ of $\mh H^{P(u)} \rtimes 
+\tilde{\Gamma}$, for a suitable subgroup $\tilde \Gamma \subset W'$. Taking for $u$ the 
+unitary part of an $\mc A$-weight of $\sigma$, we can achieve that $\tilde \sigma$ has 
+real central character. Then $m_\ep^* (\tilde \sigma)$ is an $\ep$-tempered representation of 
+$\mh H (\tilde{\mc R}^P(u), \ep k^{P(u)}) \rtimes \tilde{\Gamma}$. Now Theorem \ref{thm:2.2}
+in the opposite direction yields an $\ep$-tempered representation of 
+$\mc H (\mc R^P , (q^P)^\ep ) \rtimes \Gamma_\sigma$, which we call $m_\ep^* (\sigma)$.
+We claim that the analytic families of $\mc H (\mc R ,q^\ep) \rtimes \Gamma$-representations
+\[
+\{ \pi_{m_\ep^* (\sigma_{w,i})}(t) \mid w \in \langle W' \rangle , 1 \leq i \leq c(w) ,
+t \in T^{\sigma_{w,i}} / \mc G_{\sigma_{w,i}} \} 
+\]
+fulfill Lemma \ref{lem:6.3}. By construction $\zeta^\vee (\pi_{m_\ep^* (\sigma_{w,i})}(t))$ 
+equals $\zeta^\vee (\sigma_{w,i})(t)$. In view of Lemma \ref{lem:6.3} and
+since Theorem \ref{thm:6.2} holds for $q$ and $q^\ep$, this implies the claim.
+
+In view of \cite[(4.6)]{Sol-Irr}, $m_\ep^* (\sigma)$ is also the composition of $\sigma$ 
+with the algebra homomorphism $\rho_\ep$ from \cite[Proposition 4.1.2]{Sol-Irr}. Although 
+in \cite{Sol-Irr} the author assumed that $\ep \in [-1,1]$, the relevant calculations 
+remain valid for $\ep \in \C \setminus i \R$. This shows that the matrix coefficients of 
+$m_\ep^* (\sigma)$ depend analytically on $\ep$. More precisely, for every $v \in W^e$ the 
+operator $\pi_{m_\ep^* (\sigma_{w,i})}(t,N_v)$ depends in a complex analytic way on 
+$\ep$ and $t$.
+
+By \eqref{eq:monomial} all $\mc A$-weights of $\pi_{\sigma_{w,i}}(t)$ are of the form
+$\gamma (t u c)$ where $\gamma \in W'$ and $uc$ is a weight of $\sigma_{w,i}$ with unitary 
+part $u \in T_{un}$ and absolute value $c \in Y \otimes_\Z q^{\Z / 2}$. This in turn 
+implies that all $\mc A$-weights of $\pi_{m_\ep^* (\sigma_{w,i})}(t)$ are of the form
+\begin{equation} \label{eq:6.weights}
+\gamma (t u c^\ep )  \qquad c^\ep \in q^{\ep \Z / 2},
+\end{equation}
+and in particular that (for fixed $t$) they depend polynomially on
+$\big\{ q_{\alpha^\vee}^{\pm \ep/2} \mid \alpha^\vee \in R_{nr}^\vee \big\}. \qquad \Box$ 
+\\[2mm]
+Since the whole situation depends in complex analytic fashion on $\ep$, it is natural to
+expect that Theorem \ref{thm:6.6} extends to all but finitely many $\ep \in \C$. 
+Indeed this is known when $q$ is an equal parameter function \cite{KaLu}, but the methods 
+of this paper are insufficient to prove it.
+\vspace{3mm}

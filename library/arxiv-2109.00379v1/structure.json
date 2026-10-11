@@ -299,8 +299,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "text30.tex",
-   "tex_sections": 5,
-   "overlaid": 2,
+   "tex_sections": 14,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -316,28 +316,37 @@
     {
      "id": "sec-001-11-motivation",
      "title": "Motivation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-12-torsion-and-its-twisted-version",
      "title": "Torsion and its twisted version",
-     "result": "no matching \\section"
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.468,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-003-13-neumannzagier-matrices-and-their-twisted-vers",
      "title": "Neumann\u2013Zagier matrices and their twisted version",
-     "result": "no matching \\section"
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-14-the-1-loop-invariant-and-its-twisted-version",
      "title": "The 1-loop invariant and its twisted version",
-     "result": "no matching \\section"
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-2-proofs-twisted-nz-matrices",
      "title": "Proofs: twisted NZ matrices",
-     "prose_ratio": 0.936,
-     "coverage_ratio": 0.867,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -360,15 +369,15 @@
     {
      "id": "sec-009-4-proofs-twisted-1-loop-invariant",
      "title": "Proofs: twisted 1-loop invariant",
-     "prose_ratio": 0.93,
-     "coverage_ratio": 0.915,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-010-5-examples-continued",
      "title": "Examples, continued",
-     "prose_ratio": 0.141,
+     "prose_ratio": 0.194,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -384,7 +393,10 @@
     {
      "id": "sec-013-acknowledgments",
      "title": "Acknowledgments",
-     "result": "no matching \\section"
+     "prose_ratio": 0.731,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-014-references",

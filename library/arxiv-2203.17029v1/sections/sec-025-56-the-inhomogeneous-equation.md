@@ -9,533 +9,487 @@ source_pdf: 2203.17029v1.pdf
 source_sha256: 5557f7f272cb8a43
 doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
 duplicate_of: "modularqholonomicmodules"
+text_source: latex
+latex_prose_ratio: 0.875
+latex_coverage_ratio: 0.949
 ---
-this into a homogeneous equation of one degree higher
-tf (t; q) + (1 − 3qt)f (qt; q) + (3tq2 − 1)f (q2t; q) − tq3f (q3t; q) = 0 (250)
-with Newton polygon shown in Figure 5.
-Now from the general theory the solutions f (±1) and g(0,0) and g(0,1) are the same as the
-solutions in Section 5.1. We do ﬁnd two additional solutions which are in fact solutions to
-the inhomogeneous equation, namely
-ˆf (0)(t, q) =
-∞∑
-k=0
-(−1)kq−k(k+1)/2(q; q)2
-ktk , (251)
-a divergent formal power series solution at t = 0 and
-g(0,2)(t; q) =
-∞∑
-k=0
-
- 1
-2
-(
-1
-2 E1(q) − 1
-2 +
-k∑
-j=1
-1 + qj
-1 − qj
-
-
-2
-−
-
- 1
-2 E1(q) − 1
-2 +
-k∑
-j=1
-1 + qj
-1 − qj
-
- θ′(t−1; q)
-θ(t−1; q)
-+ 1
-2
-θ′′(t−1; q)
-θ(t−1; q) +
-k∑
-j=1
-qj
-(1 − qj)2 − 1
-24 − 1
-24 E2(q)
-)
-(−1)k qk(k+1)/2
-(q; q)2
-k
-t−1−k ,
-(252)
-where E2(q) = 1 − 24∑ ∞
-k=0 qk/(1 − qk)2, a convergent solution at t = ∞. So, we must resum
-ˆf (0)(t, q). For |ξ| < 1, we have
-B1 ˆf (0)(ξ, q) =
-∞∑
-k=0
-(q; q)2
-kξk (253)
-which can be analytically continued away from ξ ∈ q
-/CI
-≤0 using the relation
-(1 − ξ)B1 ˆf (0)(ξ, q) + 2qξB1 ˆf (0)(qξ, q ) − q2ξB1 ˆf (0)(q2ξ, q) = 1 . (254)
-48 STA VROS GAROUF ALIDIS AND CAMPBELL WHEELER
-f (0)
-B1
-B1f (0)
-Therefore, we deﬁne
-f (0)(t, λ2, q) = ( L1B1 ˆf (0))(t, λ2, q) = 1
-θ(λ2; q)
-∑
-k∈/CI
-(−1)kqk(k+1)λk
-2B1 ˆf (0)(qkλ2t, q). (255)
+\label{sec.4.inhom.x1}
+
+We now consider Equation~\eqref{41x1inhom}.
+We can convert this into a homogeneous equation of one degree higher
+\be
+tf(t;q)+(1-3qt)f(qt;q)+(3tq^2-1)f(q^2t;q)-tq^3f(q^3t;q)=0
+\ee
+with Newton polygon shown in Figure~\ref{f.413}.
+
+\begin{figure}[!htpb]
+\begin{center}
+\begin{tikzpicture}[scale=0.8,baseline=-3]
+\draw[<->,thick] (-1.5,0) -- (7.5,0);
+\draw[<->,thick] (0,-1.5) -- (0,3.5);
+\foreach \x in {2,4,6}
+\draw[thick] (\x,-2pt) -- (\x,2pt);
+\filldraw (0,2) circle (2pt);
+\filldraw (2,0) circle (2pt);
+\filldraw (2,2) circle (2pt);
+\filldraw (4,0) circle (2pt);
+\filldraw (4,2) circle (2pt);
+\filldraw (6,2) circle (2pt);
+\node at (1,2.3) {$g^{(0,0)}$};
+\node at (3,2.3) {$g^{(0,1)}$};
+\node at (5,2.3) {$g^{(0,2)}$};
+\node at (0.5,0.8) {$f^{(-1)}$};
+\node at (5.5,0.8) {$f^{(1)}$};
+\node at (3,-0.3) {$f^{(0)}$};
+\draw (0,2) -- (2,0) -- (4,0) -- (6,2) -- cycle;
+\fill[blue,opacity=0.2] (0,2) -- (2,0) -- (4,0) -- (6,2) -- cycle;
+\end{tikzpicture}
+\caption{The Newton polygon of Equation~\eqref{41x1inhom}.}
+\label{f.413}
+\end{center}
+\end{figure}
+
+\noindent
+Now from the general theory the solutions $f^{(\pm1)}$ and $g^{(0,0)}$ and
+$g^{(0,1)}$ are the same as the solutions in Section~\ref{subsec.41sols}. We do
+find two additional
+solutions which are in fact solutions to the inhomogeneous equation, namely
+\be
+\hat{f}^{(0)}(t,q)=\sum_{k=0}^{\infty}(-1)^{k}q^{-k(k+1)/2}(q;q)_{k}^{2}t^{k} \,,
+\ee
+a divergent formal power series solution at $t=0$ and
+\be
+\label{g2}
+{\small
+\begin{aligned}
+g^{(0,2)}(t;q)
+&=
+\sum_{k=0}^{\infty}\left(\frac{1}{2}\Bigg(\frac{1}{2}E_{1}(q)-\frac{1}{2}+\sum_{j=1}^{k}\frac{1+q^{j}}{1-q^{j}}\right)^{2}
+  -\left(\frac{1}{2}E_{1}(q)-\frac{1}{2}+\sum_{j=1}^{k}\frac{1+q^{j}}{1-q^{j}}\right)\frac{\theta'(t^{-1};q)}{\theta(t^{-1};q)}\\
+  &\qquad\qquad+\frac{1}{2}\frac{\theta''(t^{-1};q)}{\theta(t^{-1};q)}
+  +\sum_{j=1}^{k}\frac{q^{j}}{(1-q^{j})^2}-\frac{1}{24}-\frac{1}{24}E_{2}(q)\Bigg)
+(-1)^{k}\frac{q^{k(k+1)/2}}{(q;q)_{k}^{2}}t^{-1-k}\,,
+\end{aligned}
+}
+\ee
+where $E_{2}(q)=1-24\sum_{k=0}^{\infty}q^{k}/(1-q^{k})^2$,
+a convergent solution at $t=\infty$. So, we must resum $\hat{f}^{(0)}(t,q)$. For $|\xi|<1$, we have
+\be
+\Bor_{1}\hat{f}^{(0)}(\xi,q)
+=
+\sum_{k=0}^{\infty}(q;q)_{k}^{2}\xi^{k}
+\ee
+which can be analytically continued away from $\xi\in q^{\BZ_{\leq0}}$ using the
+relation
+\be
+(1-\xi)\Bor_{1}\hat{f}^{(0)}(\xi,q)+2q\xi \Bor_{1}\hat{f}^{(0)}(q\xi,q)
+-q^2\xi \Bor_{1}\hat{f}^{(0)}(q^{2}\xi,q) = 1.
+\ee
+\begin{center}
+\begin{tikzpicture}
+\draw[<->,thick] (-1,0) -- (4,0);
+\draw[<->,thick] (0,-1) -- (0,2);
+\foreach \x in {1,2,3}
+\draw[thick] (\x,-2pt) -- (\x,2pt);
+\filldraw (0,1) circle (2pt);
+\filldraw (1,0) circle (2pt);
+\filldraw (1,1) circle (2pt);
+\filldraw (2,0) circle (2pt);
+\filldraw (2,1) circle (2pt);
+\filldraw (3,1) circle (2pt);
+\draw (0,1) -- (1,0) -- (2,0) -- (3,1) -- cycle;
+\fill[blue,opacity=0.2] (0,1) -- (1,0) -- (2,0) -- (3,1) -- cycle;
+\node at (1.5,-0.25) {\begin{tiny}$f^{(0)}$\end{tiny}};
+\draw[->,ultra thick] (3+2,0) -- (4+2,0);
+\node at (3.5+2,0.4) {$\Bor_{1}$};
+\draw[<->,thick] (-1+8,0) -- (4+8,0);
+\draw[<->,thick] (0+8,-1) -- (0+8,2);
+\foreach \x in {1+8,2+8,3+8}
+\draw[thick] (\x,-2pt) -- (\x,2pt);
+\filldraw (0+8,1) circle (2pt);
+\filldraw (0+8,0) circle (2pt);
+\filldraw (1+8,1) circle (2pt);
+\filldraw (1+8,0) circle (2pt);
+\filldraw (2+8,1) circle (2pt);
+\filldraw (3+8,1) circle (2pt);
+\draw (0+8,1) -- (0+8,0) -- (1+8,0) -- (3+8,1) -- cycle;
+\fill[blue,opacity=0.2] (0+8,1) -- (0+8,0) -- (1+8,0) -- (3+8,1) -- cycle;
+\node at (1.5+8,-0.25) {\begin{tiny}$\Bor_{1}f^{(0)}$\end{tiny}};;
+\end{tikzpicture}
+\end{center}
+Therefore, we define
+\be\label{f0x1}
+f^{(0)}(t,\lambda_{2},q)
+=
+(\Lap_{1}\Bor_{1}\hat{f}^{(0)})(t,\lambda_{2},q)
+=
+\frac{1}{\theta(\lambda_{2};q)}\sum_{k\in\BZ}(-1)^{k}q^{k(k+1)}
+\lambda_{2}^{k}\Bor_{1}\hat{f}^{(0)}(q^{k}\lambda_{2}t,q).
+\ee
 Now we consider the matrices
-U(t, λ1, λ2, q) = W (f (1)(t, λ1, q), f (−1)(t, q), f (0)(t, λ2, q))
+\be
+\label{U413}
+\begin{aligned}
+&U(t,\lambda_{1},\lambda_{2},q)
 =
-
-
-0 1 0
-0 0 1
-q−2t−1 −q−2 q−2t−1 − 2q−1
-
-
-
-
-0 0 1
-f (1)(t, λ1, q) f (−1)(t, q) f (0)(t, λ2, q)
-f (1)(qt, λ1, q) f (−1)(qt, λ1, q) f (0)(qt, λ2, q)
-
-
-(256)
+W(f^{(1)}(t,\lambda_{1},q),f^{(-1)}(t,q),f^{(0)}(t,\lambda_{2},q))\\
+&=
+\begin{pmatrix}
+0 & 1 & 0\\
+0 & 0 & 1\\
+q^{-2}t^{-1} & -q^{-2} & q^{-2}t^{-1}-2q^{-1}
+\end{pmatrix}
+\begin{pmatrix}
+0 & 0 & 1\\
+f^{(1)}(t,\lambda_{1},q) & f^{(-1)}(t,q) & f^{(0)}(t,\lambda_{2},q)\\
+f^{(1)}(qt,\lambda_{1},q) & f^{(-1)}(qt,\lambda_{1},q) & f^{(0)}(qt,\lambda_{2},q)
+\end{pmatrix}
+\end{aligned}
+\ee
 and
-V (t, q) = W (g(0,0)(t, q), g(0,1)(t, q), g(0,2)(t, q))
+\be
+\label{V413}
+\begin{aligned}
+V(t,q)
+&=
+W(g^{(0,0)}(t,q),g^{(0,1)}(t,q),g^{(0,2)}(t,q))\\
+&=
+\begin{pmatrix}
+0 & 1 & 0\\
+0 & 0 & 1\\
+q^{-2}t^{-1} & -q^{-2} & q^{-2}t^{-1}-2q^{-1}
+\end{pmatrix}
+\begin{pmatrix}
+0 & 0 & 1\\
+g^{(0,0)}(t,q) & g^{(0,1)}(t,q) & g^{(0,2)}(t,q)\\
+g^{(0,0)}(qt,q) & g^{(0,1)}(qt,q) & g^{(0,2)}(qt,q)\\
+\end{pmatrix}.
+\end{aligned}
+\ee
+With these formulae we will now go on to prove Theorem~\ref{thm.41b}.
+
+\begin{proof}[Proof of Theorem~\ref{thm.41b}]
+  The identification of the first two columns of $\vM(t,\lambda_{1},\lambda_{2},q)$
+  with those in Equation~\eqref{M413} follows from Theorem~\ref{thm.41}.
+  Equations~\eqref{U413} and~\eqref{V413}, together with Lemma~\ref{lem.41det}
+  imply that 
+\be
+-\det(U(t,\lambda_{1},\lambda_{2},q))
 =
-
-
-0 1 0
-0 0 1
-q−2t−1 −q−2 q−2t−1 − 2q−1
-
-
-
-
-0 0 1
-g(0,0)(t, q) g(0,1)(t, q) g(0,2)(t, q)
-g(0,0)(qt, q) g(0,1)(qt, q) g(0,2)(qt, q)
-
- .
-(257)
-With these formulae we will now go on to prove Theorem
-1.8.
-Proof of Theorem 1.8. The identiﬁcation of the ﬁrst two columns of
-− →
-M(t, λ1, λ2, q) with those
-in Equation ( 37) follows from Theorem 1.7. Equations ( 256) and ( 257), together with
-Lemma 5.4 imply that
-− det(U(t, λ1, λ2, q)) = det( V (t, q)) = q−3t−3 . (258)
-Hence, det(
-− →
-M(t, λ1, λ2, q)) = −1 which in turn implies that
-− →
-M3,3(t, λ2, q) = 1.
-Now, Equation ( 37), written in the form U(t, λ1, λ2, q) = V (t, q)
-− →
-M(t, λ1, λ2, q), together
-with Equations ( 256) and ( 257) and the fact that
-− →
-M3,3 = 1 imply that
-f (0) =
-− →
-M1,3g(0,0) +
-− →
-M2,3g(0,1) + g(0,2) . (259)
-Thus, to determine the two remaining entries of the monodromy mat rix, we need to show
-that the function
-E3 := f (0) − (m1,3g(0,0) + m2,3g(0,1) + g(0,2)) (260)
-vanishes identically, where
-m1,3(t, q) = ℘(t, q), m 2,3(t, λ2, q) = 1
-2
-℘′(t, q) − ℘′(λ2, q)
-℘(t, q) − ℘(λ2, q) (261)
-denote the two entries of the matrix on the right hand-side of Equa tion ( 37). Note that
-E3(t, λ2, q) is a meromorphic function of t with potential simple poles at λ−1
-2 q
-/CI
-(coming from
-MODULAR q-HOLONOMIC MODULES 49
-f (0) and m2,3) and potential double poles at q
-/CI
-(coming from g(0,1), g(0,2), m1,3 and m2,3).
-Since Res t=q−mλ−1
-2
-m2,3(t, λ2, q) dt
-2πit = 1 , combined with equation ( 208) gives
-Rest=q−mλ−1
-2
-m2,3(t, λ2, q)g(0,1)(t, q) dt
-2πit = f (−1)(q−mλ−1
-2 , q) , (262)
-we see from Lemma 5.6 that E3 has no poles at λ−1
-2 q
-/CI
-. Now noting that
-m2,3(t, λ2, q) = θ′(t−1; q)
-θ′(t−1; q) + θ′(λ−1; q)
-θ′(λ−1; q) − θ′(λ−1t−1; q)
-θ′(λ−1t−1; q) + 1
-2 , (263)
+\det(V(t,q))
+=
+q^{-3}t^{-3} \,.
+\ee
+Hence, $\det(\vM(t,\lambda_{1},\lambda_{2},q))=-1$ which in turn
+implies that $\vM_{3,3}(t,\lambda_{2},q)=1$.
+
+Now, Equation~\eqref{M413}, written in the form $U(t,\lambda_{1},\lambda_{2},q)=
+V(t,q) \vM(t,\lambda_{1},\lambda_{2},q)$, together with Equations~\eqref{U413}
+and~\eqref{V413} and the fact that $\vM_{3,3}=1$ imply that
+\be
+\label{fgs0}
+f^{(0)} = \vM_{1,3} g^{(0,0)} + \vM_{2,3} g^{(0,1)} + g^{(0,2)} \,.
+\ee
+Thus, to determine the two remaining entries of the monodromy matrix, we need to
+show that the function
+\be
+\label{fgs}
+\calE_3 :=f^{(0)} -(m_{1,3} g^{(0,0)} + m_{2,3} g^{(0,1)} + g^{(0,2)}) 
+\ee
+vanishes identically, where 
+\be
+\label{m1323}
+m_{1,3}(t,q) = \wp(t,q), \qquad
+m_{2,3}(t,\lambda_{2},q)
+= \frac{1}{2}\frac{\wp'(t,q)-\wp'(\lambda_{2},q)}{\wp(t,q)-\wp(\lambda_{2},q)}
+\ee
+denote the two entries of the matrix on the right hand-side of Equation~\eqref{M413}.
+Note that $\calE_3(t,\lambda_{2},q)$ is a meromorphic function of $t$
+with potential simple poles at $\lambda_2^{-1} q^\BZ$ (coming from $f^{(0)}$ and
+$m_{2,3}$) and potential double poles at $q^\BZ$ (coming from
+$g^{(0,1)}$, $g^{(0,2)}$, $m_{1,3}$ and $m_{2,3}$). 
+Since
+$\Res_{t=q^{-m}\lambda_{2}^{-1}} m_{2,3}(t,\lambda_{2},q) \frac{dt}{2\pi it} = 1 \,,
+$
+combined with equation~\eqref{fg} gives
+\be
+\Res_{t=q^{-m}\lambda_{2}^{-1}}m_{2,3}(t,\lambda_{2},q)
+g^{(0,1)}(t,q) \frac{dt}{2\pi it} =  f^{(-1)}(q^{-m}\lambda_{2}^{-1},q) \,,
+\ee
+we see from Lemma~\ref{lem.resf0} that $\calE_3$ has no poles at
+$\lambda_{2}^{-1} q^\BZ$. Now noting that
+\be
+m_{2,3}(t,\lambda_{2},q)
+=
+\frac{\theta'(t^{-1};q)}{\theta'(t^{-1};q)}
++\frac{\theta'(\lambda^{-1};q)}{\theta'(\lambda^{-1};q)}
+-\frac{\theta'(\lambda^{-1}t^{-1};q)}{\theta'(\lambda^{-1}t^{-1};q)}+\frac{1}{2}\,,
+\ee
 the only terms that contribute to the polar part of
-g(0,2)(t, q) + m2,3(t, λ2, q)g(0,1)(t, q) + m1,3(t, q)g(0,0)(t, q) (264)
-at t = qmε for ε ∼ 1 are
-∞∑
-k=0
-(
-−
-(
-k − 2E(k)
-1 (q)
-) θ′(ε−1; q)
-θ(ε−1; q) + 1
-2
-θ′′(q−mε−1; q)
-θ(q−mε−1; q)
-+
-(
-k − m − θ′(ε−1; q)
-θ(ε−1; q) − 2E(k)
-1 (q)
-) θ′(ε−1; q)
-θ(ε−1; q) − 1
-2
-θ′(ε−1; q)
-θ(ε−1; q)
-+ θ′(ε−1; q)2
-θ(ε−1; q)2 − θ′′(ε−1; q)
-θ(ε−1; q)
-)
-(−1)k qk(k+1)/2−m−mk
-(q; q)2
-k
-ε−1−k
-=
-∞∑
-k=0
-( 1
-2
-θ′′(q−mε−1; q)
-θ(q−mε−1; q) −
-(
-m + 1
-2
-) θ′(ε−1; q)
-θ(ε−1; q) − θ′′(ε−1; q)
-θ(ε−1; q)
-)
-(−1)k qk(k+1)/2
-(q; q)2
-k
-ε−1−k.
-(265)
-This has a potentially simple pole at ε = 1 however noting that
-Resε=1
-θ′′(q−mε−1; q)
-θ(q−mε−1; q)
-dε
-2πiε = −2m + 1
-Resε=1
-θ′(ε−1; q)
-θ(ε−1; q)
-dε
-2πiε = −1
-(266)
-we see that the residue vanishes and therefore ( 264) has a removable singularity at all points
-t ∈ q
-/CI
-. Therefore, we see that E3 is a holomorphic (for t ∈ /BV
-×) solution of Equation ( 28)
-and therefore from Corollary 5.5 we see that E3(t, λ2, q) = C(q)g(0,0)(t, q). To ﬁnish the proof
-we note that for t on some compact set where the functions are holomorphic, Lemma 5.1
-and Lemma 5.7 implies that
-− C(q)
-(q; q)2
-∞
-= lim
-r→∞
-C(q)g(0,0)(tr, q)
-θ(qrt; q)
-= lim
-r→∞
-f (0)(t, λ2, q) − (g(0,2)(t, q) + m2,3(t, λ2, q)g(0,1)(t, q) + m1,3(t, q)g(0,0)(t, q))
-θ(qrt; q)
-= 1
-(q; q)2
-∞
-(m1,3(t−1, q) − m1,3(t, q)) = 0 ,
-where we note that m1,3(t, q) is the Weierstrass ℘-function plus a constant which is even in
-z where t = e(z).
-50 STA VROS GAROUF ALIDIS AND CAMPBELL WHEELER
-Our next task is to compute the residues of f (0).
-Lemma 5.6. (a) The function B1 ˆf (0)(ξ, q) has simple poles at ξ ∈ q
-/CI
+\be
+\label{gsoff0}
+  g^{(0,2)}(t,q)+m_{2,3}(t, \lambda_{2},q)
+  g^{(0,1)}(t,q)+m_{1,3}(t,q) g^{(0,0)}(t,q)
+\ee
+at $t=q^{m}\ve$ for $\ve\sim 1$ are
+\be
+\begin{aligned}
+&\sum_{k=0}^{\infty}\bigg(
+-\left(k-2E^{(k)}_{1}(q)\right)\frac{\theta'(\ve^{-1};q)}{\theta(\ve^{-1};q)}
++\frac{1}{2}\frac{\theta''(q^{-m}\ve^{-1};q)}{\theta(q^{-m}\ve^{-1};q)}\\
+&\qquad+\left(k-m-\frac{\theta'(\ve^{-1};q)}{\theta(\ve^{-1};q)}-2E^{(k)}_{1}(q)
+\right)\frac{\theta'(\ve^{-1};q)}{\theta(\ve^{-1};q)}
+-\frac{1}{2}\frac{\theta'(\ve^{-1};q)}{\theta(\ve^{-1};q)}\\
+&\qquad+\frac{\theta'(\ve^{-1};q)^2}{\theta(\ve^{-1};q)^2}
+-\frac{\theta''(\ve^{-1};q)}{\theta(\ve^{-1};q)}\bigg)(-1)^{k}
+\frac{q^{k(k+1)/2-m-mk}}{(q;q)_{k}^{2}}\ve^{-1-k}\\
+&=\sum_{k=0}^{\infty}\bigg(
+\frac{1}{2}\frac{\theta''(q^{-m}\ve^{-1};q)}{\theta(q^{-m}\ve^{-1};q)}
+-\left(m+\frac{1}{2}\right)\frac{\theta'(\ve^{-1};q)}{\theta(\ve^{-1};q)}
+-\frac{\theta''(\ve^{-1};q)}{\theta(\ve^{-1};q)}\bigg)
+(-1)^{k}\frac{q^{k(k+1)/2}}{(q;q)_{k}^{2}}\ve^{-1-k}.
+\end{aligned}
+\ee
+This has a potentially simple pole at $\ve=1$ however noting that
+\be
+\begin{aligned}
+  \Res_{\ve=1}\frac{\theta''(q^{-m}\ve^{-1};q)}{\theta(q^{-m}\ve^{-1};q)}
+  \frac{d\ve}{2\pi i\ve}
+&=
+-2m+1\\
+\Res_{\ve=1}\frac{\theta'(\ve^{-1};q)}{\theta(\ve^{-1};q)}\frac{d\ve}{2\pi i\ve}
+&=
+-1
+\end{aligned}
+\ee
+we see that the residue vanishes and therefore \eqref{gsoff0} has a removable
+singularity at all points $t\in q^{\BZ}$. Therefore, we see that $\calE_3$ is
+a holomorphic (for $t \in \BC^\times$) solution of Equation~\eqref{41x1} and
+therefore from Corollary~\ref{cor:41holsol} we see that
+$\calE_3(t,\lambda_{2},q) = C(q)g^{(0,0)}(t,q)$. 
+To finish the proof we note that for $t$ on some compact set where the functions
+are holomorphic, Lemma~\ref{lem.fglimits} and Lemma~\ref{lem.fglimits.inhom}
+implies that
+\begin{align*}
+-\frac{C(q)}{(q;q)_{\infty}^{2}} &=
+\lim_{r\rightarrow\infty}\frac{C(q) g^{(0,0)}(t^r,q)}{\theta(q^{r}t;q)} \\  
+&=\lim_{r\rightarrow\infty}\frac{
+f^{(0)}(t,\lambda_{2},q)-(g^{(0,2)}(t,q) + m_{2,3}(t,\lambda_{2},q)
+g^{(0,1)}(t,q) + m_{1,3}(t,q)  g^{(0,0)}(t,q))}{\theta(q^{r}t;q)} \\ &=
+\frac{1}{(q;q)_{\infty}^{2}}(m_{1,3}(t^{-1},q)-m_{1,3}(t,q))= 0 \,,
+\end{align*}
+where we note that $m_{1,3}(t,q)$ is the Weierstrass $\wp$-function plus a
+constant which is even in $z$ where $t=\e(z)$.
+
+Our next task is to compute the residues of $f^{(0)}$. 
+
+\begin{lemma}
+\label{lem.resf0}
+\rm{(a)}
+The function $\Bor_{1}\hat{f}^{(0)}(\xi,q)$ has simple poles at $\xi \in q^\BZ$
 with residue
-R(m, q) := Res ξ=q−mB1 ˆf (0)(ξ, q) dξ
-2πiξ = −(q; q)2
-∞
-m∑
-ℓ=0
-qm
-(q; q)ℓ(q; q)m−ℓ
-. (267)
-(b) The function f (0)(t, q) has simple poles at t ∈ λ−1
-2 q
-/CI
+\be
+\label{resBf0}
+R(m,q) :=
+\Res_{\xi=q^{-m}}\Bor_{1}\hat{f}^{(0)}(\xi,q)\frac{d\xi}{2\pi i\xi}
+= -(q;q)_{\infty}^{2}\sum_{\ell=0}^{m}\frac{q^{m}}{(q;q)_{\ell}(q;q)_{m-\ell}} \,.
+\ee
+\rm{(b)}
+The function $f^{(0)}(t,q)$ has simple poles at $t\in \lambda_{2}^{-1}q^{\BZ}$
 with residue
-Rest=q−mλ−1
-2
-f (0)(t, λ2, q) dt
-2πit = f (−1)(q−mλ−1
-2 , q) . (268)
-Proof. For part (a), notice that
-B1 ˆf (0)(ξ, q) =
-∞∑
-k=0
-(q; q)2
-kξk = (q; q)2
-∞
-∞∑
-k=0
-1
-(qk+1; q)∞
-ξk
-= (q; q)2
-∞
-∞∑
-k,ℓ,n=0
-qkn+kℓ+n+ℓ
-(q; q)ℓ(q; q)n
-ξk = (q; q)2
-∞
-∞∑
-ℓ,n=0
-qn+ℓ
-(q; q)ℓ(q; q)n(1 − qn+ℓξ)
-(269)
-is the analytic continuation of B1 ˆf (0). From this, it clearly follows that the only poles are
-simple, located at ξ = q
-/CI
-. (Alternatively, one can also use the linear q-diﬀerence equation
-satisﬁed by this function, though this is not needed here). We comp ute the residue as follows:
-R(m, q) = Res ξ=q−m(q; q)2
-∞
-∞∑
-ℓ,n=0
-qn+ℓ
-(q; q)ℓ(q; q)n(1 − qn+ℓξ)
-dξ
-2πiξ
-= −(q; q)2
-∞
-m∑
-ℓ=0
-qm
-(q; q)ℓ(q; q)m−ℓ
-.
-(270)
-For part (b), the pole structure is clear noting that Equation ( 255) is convergent if all the
-terms are and that B1 ˆf (0)(qktλ2, q) has poles at t ∈ λ−1
-2 q
-/CI
-≤−k. We compute the residues as
-follows:
-Rest=q−mλ−1
-2
-f (0)(t, λ2, q) dt
-2πit = Res t=q−mλ−1
-2
-(L1B1 ˆf (0))(t, λ2, q) dt
-2πit
-= Res t=q−mλ−1
-2
-1
-θ(λ2, q)
-∑
-k∈/CI
-(−1)kqk(k+1)/2λk
-2B1 ˆf (0)(qkλ2t, q) dt
-2πit
-= 1
-θ(λ2, q)
-∑
-k∈/CI
-(−1)kqk(k+1)/2λk
-2R(m − k, q)
-= 1
-θ(λ2, q) (−1)mqm(m+1)/2λm
-2
-∞∑
-k=0
-(−1)kqk(k−1)/2(q−mλ−1
-2 )kR(k, q)
-= −(q; q)2
-∞
-θ(λ2, q) (−1)mqm(m+1)/2λm
-2
-∞∑
-k,ℓ=0
-(−1)k qk(k+1)/2
-(q; q)ℓ(q; q)k−ℓ
-(q−mλ−1
-2 )k
-= f (−1)(q−mλ−1
-2 , q) .
-(271)
-□
-MODULAR q-HOLONOMIC MODULES 51
-Lemma 5.7. For t in some compact set where the functions are holomorphic, we have
-lim
-r→∞
-g(0,2)(qrt, q)
-θ(qrt; q) = 1
-(q; q)2
-∞
-m1,3(t−1, q) lim
-r→∞
-f (0)(qrt, q)
-θ(qrt; q) = 0 . (272)
-Proof. We have
-(−1)rqr(r+1)/2tr+1g(0,2)(qrt, q)
+\be
+\label{resf0}
+\Res_{t=q^{-m}\lambda_{2}^{-1}}f^{(0)}(t,\lambda_{2},q)\frac{dt}{2\pi it} =
+f^{(-1)}(q^{-m}\lambda_{2}^{-1},q) \,.
+\ee
+\end{lemma}
+
+\begin{proof}
+For part (a), notice that
+\be
+\begin{aligned}
+\Bor_{1}\hat{f}^{(0)}(\xi,q)
+&=
+\sum_{k=0}^{\infty}(q;q)_{k}^{2}\xi^{k}
 =
-∞∑
-k=−r
-(
-1
-2
-(
-1
-2 E1(q) − r − 1
-2 − θ′(t−1; q)
-θ(t−1; q) +
-k+r∑
-j=1
-1 + qj
-1 − qj
-) 2
-−
-(
-1
-2 E1(q) − r − 1
-2 − θ′(t−1; q)
-θ(t−1; q) +
-k+r∑
-j=1
-1 + qj
-1 − qj
-)
-θ′(t−1; q)
-θ(t−1; q)
-+ 1
-2
-θ′′(t−1; q)
-θ(t−1; q) +
-k+r∑
-j=1
-qj
-(1 − qj)2 − 1
-24 − 1
-24E2(q)
-)
-(−1)k qk(k+1)/2
-(q; q)2
-k+r
-t−k .
-(273)
-Then noting that 1 /24 − E2(q)/24 −∑ k
-j=1 qj/(1 − qj)2) = O(qk+1) the proof then proceeds
-as in Lemma
-5.1. □
-To ﬁnish the proof of Theorem 1.8 we will use the state integrals introduced in [ 24,
-Eqn.(73)]. ∫
-/CA +iε
-Φ b(x)2 exp
-(
-−πix2 − 2π zx
-b
-)
-1 + ˜q1/2 exp
-(
-− 2πx
-b
-) dx . (274)
-The factorisation of this integral was done in [ 24, Thm.7]. The fact this module is not
-self dual (see Proposition 2.6) means that additional functions arise in the factorisation.
-It was shown, using Equation ( 52), that Equation ( 274) factors as an elementary function
-holomorphic in /BV
-′ times
-I(z, τ ) =τ 2g(0,2)(˜t, ˜q) + τ g(0,1)(˜t, ˜q)L0(t, q) − g(0,0)(˜t, ˜q)L1(t, q) (275)
+(q;q)_{\infty}^{2}\sum_{k=0}^{\infty}\frac{1}{(q^{k+1};q)_{\infty}}\xi^{k}\\
+&=
+(q;q)_{\infty}^{2}\sum_{k,\ell,n=0}^{\infty}
+\frac{q^{kn+k\ell+n+\ell}}{(q;q)_{\ell}(q;q)_{n}}\xi^{k}
+=
+(q;q)_{\infty}^{2}\sum_{\ell,n=0}^{\infty}\frac{q^{n+\ell}}{
+  (q;q)_{\ell}(q;q)_{n}(1-q^{n+\ell}\xi)}
+\end{aligned}
+\ee
+is the analytic continuation of $\Bor_{1}\hat{f}^{(0)}$. From this, it clearly
+follows that the only poles are simple, located at $\xi=q^\BZ$. (Alternatively,
+one can also use the linear $q$-difference equation satisfied by this function,
+though this is not needed here). We compute the residue as follows:
+\be
+\begin{aligned}
+R(m,q)
+&=
+\Res_{\xi=q^{-m}}(q;q)_{\infty}^{2}\sum_{\ell,n=0}^{\infty}
+\frac{q^{n+\ell}}{(q;q)_{\ell}(q;q)_{n}(1-q^{n+\ell}\xi)}\frac{d\xi}{2\pi i\xi}\\
+&=
+-(q;q)_{\infty}^{2}\sum_{\ell=0}^{m}\frac{q^{m}}{(q;q)_{\ell}(q;q)_{m-\ell}}.
+\end{aligned}
+\ee
+
+For part (b), the pole structure is clear noting that Equation~\eqref{f0x1}
+is convergent if all the terms are and that
+$\Bor_{1}\hat{f}^{(0)}(q^{k}t\lambda_{2},q)$ has poles at
+$t\in\lambda_{2}^{-1}q^{\BZ_{\leq -k}}$. We compute the residues as follows:
+\be
+\begin{aligned}
+\Res_{t=q^{-m}\lambda_{2}^{-1}}&\,f^{(0)}(t,\lambda_{2},q)\frac{dt}{2\pi it}
+=
+\Res_{t=q^{-m}\lambda_{2}^{-1}}(\Lap_{1}\Bor_{1}\hat{f}^{(0)})(t,\lambda_{2},q)
+\frac{dt}{2\pi it}\\
+&=
+\Res_{t=q^{-m}\lambda_{2}^{-1}}\frac{1}{\theta(\lambda_{2},q)}
+\sum_{k\in\BZ}(-1)^{k}q^{k(k+1)/2}\lambda_{2}^{k}\Bor_{1}\hat{f}^{(0)}(q^{k}
+\lambda_{2}t,q)\frac{dt}{2\pi it}\\
+&=
+\frac{1}{\theta(\lambda_{2},q)}\sum_{k\in\BZ}(-1)^{k}q^{k(k+1)/2}
+\lambda_{2}^{k}R(m-k,q)\\
+
+
+
+&=
+\frac{1}{\theta(\lambda_{2},q)}(-1)^{m}q^{m(m+1)/2}\lambda_{2}^{m}
+\sum_{k=0}^{\infty}(-1)^{k}q^{k(k-1)/2}(q^{-m}\lambda_{2}^{-1})^{k}R(k,q)\\
+
+
+
+
+
+&=
+\frac{-(q;q)_{\infty}^{2}}{\theta(\lambda_{2},q)}(-1)^{m}q^{m(m+1)/2}
+\lambda_{2}^{m}\sum_{k,\ell=0}^{\infty}(-1)^{k}
+\frac{q^{k(k+1)/2}}{(q;q)_{\ell}(q;q)_{k-\ell}}(q^{-m}\lambda_{2}^{-1})^{k}\\
+
+
+&=
+f^{(-1)}(q^{-m}\lambda_{2}^{-1},q) \,.
+\end{aligned}
+\ee
+\end{proof}
+\begin{lemma}
+\label{lem.fglimits.inhom}
+  For $t$ in some compact set where the functions are holomorphic, we have
+\be
+\begin{aligned}
+\lim_{r\rightarrow\infty}\frac{g^{(0,2)}(q^{r}t,q)}{\theta(q^{r}t;q)}
+&=
+\frac{1}{(q;q)_{\infty}^2} m_{1,3}(t^{-1},q)
+&\qquad
+\lim_{r\rightarrow\infty}\frac{f^{(0)}(q^{r}t,q)}{\theta(q^{r}t;q)}
+&=
+0 \,.
+  \end{aligned}
+\ee
+\end{lemma}
+
+\begin{proof}
+We have
+\be
+\begin{aligned}
+&(-1)^{r}q^{r(r+1)/2}t^{r+1}g^{(0,2)}(q^{r}t,q)\\
+&=
+\sum_{k=-r}^{\infty}
+\Bigg(\frac{1}{2}\left(\frac{1}{2}E_{1}(q)-r-\frac{1}{2}-\frac{\theta'(t^{-1};q)}{\theta(t^{-1};q)}+\sum_{j=1}^{k+r}\frac{1+q^{j}}{1-q^{j}}\right)^{2}\\
+&\qquad\qquad-\left(\frac{1}{2}E_{1}(q)-r-\frac{1}{2}-\frac{\theta'(t^{-1};q)}{\theta(t^{-1};q)}+\sum_{j=1}^{k+r}\frac{1+q^{j}}{1-q^{j}}\right)
+  \frac{\theta'(t^{-1};q)}{\theta(t^{-1};q)}\\
+  &\qquad\qquad+\frac{1}{2}
+  \frac{\theta''(t^{-1};q)}{\theta(t^{-1};q)}+\sum_{j=1}^{k+r}\frac{q^{j}}{(1-q^{j})^2}-\frac{1}{24}-\frac{1}{24}E_{2}(q)\Bigg)(-1)^{k}
+\frac{q^{k(k+1)/2}}{(q;q)_{k+r}^{2}}t^{-k} \,.
+\end{aligned}
+\ee
+Then noting that $1/24-E_2(q)/24-\sum_{j=1}^{k}q^j/(1-q^j)^2)=O(q^{k+1})$ the proof then proceeds as in Lemma~\ref{lem.fglimits}.
+\end{proof}
+
+To finish the proof of
+Theorem~\ref{thm.41b} we will use the state integrals introduced in
+~\cite[Eqn.(73)]{GGMW:trivial}.
+
+
+
+
+
+
+
+
+\be\label{41inhom.sint}
+\int_{\BR+i\ve}
+\Phi_{\sfb}(x)^2
+\frac{\exp\left(-\pi i x^{2}-2\pi\frac{zx}{\sfb}\right)}{1+\tq^{1/2}
+  \exp\left(-\frac{2\pi x}{\sfb}\right)}dx\,.
+\ee
+The factorisation of this integral was done in \cite[Thm.7]{GGMW:trivial}. The
+fact this module is not self dual (see Proposition~\ref{41inhom.not.sd}) means
+that additional functions arise in the factorisation. It was shown, using
+Equation~\eqref{S.mod.thd}, that Equation~\eqref{41inhom.sint} factors as an
+elementary function holomorphic in $\BC'$ times
+\be
+\begin{aligned}
+\calI(z,\tau)
+=&
+\tau^{2}g^{(0,2)}(\tilde{t},\tq)
++\tau g^{(0,1)}(\tilde{t},\tq)L_{0}(t,q)-g^{(0,0)}(\tilde{t},\tq)L_{1}(t,q)
+\end{aligned}
+\ee
 where
-L0(t, q) = 1 − 1
-2 E1(q) + θ′(t−1; q)
-θ(t−1; q) +
-∞∑
-k=1
-(−1)k qk(k+1)/2
-(q; q)2
-k(1 − qk) t−k
-L1(t, q) = − 5
-12 + 1
-2E1 − E1(q)2 − 1
-24 E2(q) −
-( 1
-8 − 1
-8E1(q)
-) θ′(t−1; q)
-θ(t−1; q) − θ′′(t−1; q)
-2θ(t−1; q)
-+
-∞∑
-k=1
-(−1)k qk(k+1)/2
-(q; q)2
-k(1 − qk)t−k
-(
-1
-2E1(q) − 1
-2 − θ′(t−1; q)
-θ(t−1; q) +
-k∑
-j=1
-1 + qj
-1 − qj + qk
-1 − qk
-)
-.
-(276)
-These functions Li where then shown to satisfy
-L0(t, q) − L0(qt, q) = −qtg (0,0)(qt, q)
-L1(t; q) − L1(qt, q) = −qtg (0,1)(qt, q).
-(277)
-52 STA VROS GAROUF ALIDIS AND CAMPBELL WHEELER
-Notice that functions satisfying these equations are unique up to t he addition of an elliptic
-function. Therefore, with exactly the same argument in [
-24, Thm.4] with the addition of
-checking the principal parts of the LHS and RHS we can then show th at
-V (t, q)−1
-( 0 1 0
-0 0 1
-q−2t−1 −q−2 q−2t−1 − 2q−1
-)
+\be
+\label{41.stateint.fac.inhom}
+\begin{aligned}
+L_{0}(t,q)
+&=
+1-\frac{1}{2}E_{1}(q)+\frac{\theta'(t^{-1};q)}{\theta(t^{-1};q)}
++\sum_{k=1}^{\infty}(-1)^{k}\frac{q^{k(k+1)/2}}{(q;q)_{k}^{2}(1-q^{k})}t^{-k}\\
+L_{1}(t,q)
+&=
+-\frac{5}{12}+\frac{1}{2}E_{1}-E_{1}(q)^{2}-\frac{1}{24}E_{2}(q)
+-\left(\frac{1}{8}-\frac{1}{8}E_{1}(q)\right)\frac{\theta'(t^{-1};q)}{\theta(t^{-1};q)}
+-\frac{\theta''(t^{-1};q)}{2\theta(t^{-1};q)}\\
+&\quad+\sum_{k=1}^{\infty}(-1)^{k}
+\frac{q^{k(k+1)/2}}{(q;q)_{k}^{2}(1-q^{k})}t^{-k}
+\left(\frac{1}{2}E_{1}(q)-\frac{1}{2}-\frac{\theta'(t^{-1};q)}{\theta(t^{-1};q)}+\sum_{j=1}^{k}\frac{1+q^{j}}{1-q^{j}}
+  +\frac{q^{k}}{1-q^{k}}\right)\,.
+\end{aligned}
+\ee
+These functions $L_{i}$ where then shown to satisfy
+\be
+\begin{aligned}
+  L_{0}(t,q)-L_{0}(qt,q)&=-qtg^{(0,0)}(qt,q)\\
+  L_{1}(t;q)-L_{1}(qt,q)&=-qtg^{(0,1)}(qt,q).
+\end{aligned}
+\ee
+Notice that functions satisfying these equations are unique up to the
+addition of an elliptic function. Therefore, with exactly the same argument in
+~\cite[Thm.4]{GGMW:trivial} with the addition of checking the principal parts
+of the LHS and RHS we can then show that
+\be
+{\small
+V(t,q)^{-1}
+\begin{pmatrix}
+0 & 1 & 0\\
+0 & 0 & 1\\
+q^{-2}t^{-1} & -q^{-2} & q^{-2}t^{-1}-2q^{-1}
+\end{pmatrix}
 =
-
-
-−L1(t, q ) −qt2g(0,1)(qt, q ) qt2g(0,1)(t, q )
-L0(t, q ) qt2g(0,0)(qt, q ) −qt2g(0,0)(qt, q )
-1 0 0
-
- .
-(278)
-Therefore, we see that the entries of Ω V,S are combinations of elementary functions times
-I(z+n+mτ, τ ) for m, n ∈ {−2, −1, 0, 1, 2}. Using the explicit expressions for the monodromy
-one can prove it satisﬁes Equation (
-32) with equal weights (2 , 1, 0) and again using part (c)
-of Theorem 1.2 complete the proof. □
+\begin{pmatrix}
+  -L_{1}(t,q) & -qt^2g^{(0,1)}(qt,q) & qt^2g^{(0,1)}(t,q)\\
+  L_{0}(t,q)& qt^2g^{(0,0)}(qt,q) & -qt^2g^{(0,0)}(qt,q)\\
+  1 & 0 & 0
+\end{pmatrix}.
+}
+\ee
+
+\noindent
+Therefore, we see that the entries of $\Om_{V,S}$ are combinations of elementary
+functions times $\calI(z+n+m\tau,\tau)$ for $m,n\in\{-2,-1,0,1,2\}$. Using the
+explicit expressions for the monodromy one can prove it satisfies Equation
+~\eqref{M41c} with equal weights $(2,1,0)$ and again using part (c) of Theorem
+~\ref{thm.ST} complete the proof.
+\end{proof}

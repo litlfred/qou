@@ -7,7 +7,8 @@
   "bytes": 247765,
   "pages": 18,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -483,6 +484,155 @@
   "likely_scanned": false,
   "toc_entries": 26,
   "sections": 26,
-  "chars_total": 37192
+  "chars_total": 37192,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 18,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-i-introduction-and-statement-of-results",
+     "title": "INTRODUCTION AND STATEMENT OF RESULTS",
+     "prose_ratio": 0.296,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-6-kn",
+     "title": "KN(",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-4-\u03b12-aj-2vq2",
+     "title": "(\u03b12 \u2212aj + 2v)q2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-c-the-ordinary-di\ufb00erential-equation",
+     "title": "The ordinary di\ufb00erential equation",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.446,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-004-ii-differential-equations",
+     "title": "DIFFERENTIAL EQUATIONS",
+     "prose_ratio": 0.075,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-2-x-y",
+     "title": "(x \u2212y)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-4-qx-i-kt1\u03c7j\u03c6-y",
+     "title": "Q(x) (I \u2212Kt)\u22121\u03c7J\u03c6 (y) \u2212",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-4-qx-u",
+     "title": "Q(x) u \u2212",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-4-qx-v",
+     "title": "Q(x) v \u2212",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-4-x-\u03b12-\u03c6x-0",
+     "title": "(x \u2212\u03b12) \u03c6(x) = 0,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-4-qx-1",
+     "title": "Q(x) \u22121",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-4-qx-x",
+     "title": "Q(x) \u2212x",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-4-qx-1",
+     "title": "Q(x) + 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-2-qx-v-1",
+     "title": "Q(x) v \u22121",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-4-px-u",
+     "title": "P(x) u \u2212",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-4-qx-qy",
+     "title": "Q(x) Q(y)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-4-\u03b12-s-q-1",
+     "title": "(\u03b12 \u2212s) q + 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-iii-asymptotics",
+     "title": "ASYMPTOTICS",
+     "prose_ratio": 0.304,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-018-1-the-region-x-1",
+     "title": "The region x \u226a1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-2-the-region-x-1-sx-1",
+     "title": "The region x \u226a1, \u221asx \u226b1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-2-1\u03b1",
+     "title": "( 1+\u03b1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-3-the-region-s-x-1-1-x-s-1",
+     "title": "The region \u221as x \u226b1, (1 \u2212x) s \u226b1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-4-the-region-x-1",
+     "title": "The region x \u21921",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-5-determination-of-as-bs-and-cs",
+     "title": "Determination of a(s), b(s) and c(s)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-6-the-asymptotics-of-\u03bbi",
+     "title": "The asymptotics of \u03bbi",
+     "prose_ratio": 0.474,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-025-acknowledgments",
+     "title": "Acknowledgments",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

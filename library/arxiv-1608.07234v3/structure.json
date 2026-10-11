@@ -178,7 +178,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "derivedHecke.tex",
-   "tex_sections": 9,
+   "tex_sections": 78,
    "overlaid": 1,
    "thresholds": {
     "title": 0.85,
@@ -189,17 +189,17 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.94,
-     "coverage_ratio": 0.926,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.046,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-001-2-derived-hecke-algebra",
      "title": "Derived Hecke algebra",
-     "prose_ratio": 0.959,
-     "coverage_ratio": 0.368,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.825,
+     "coverage_ratio": 0.722,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-index-of-symbols-and-important-notation",

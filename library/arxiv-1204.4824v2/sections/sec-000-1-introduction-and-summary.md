@@ -7,10 +7,10 @@ section_number: 1
 pages: 4-11
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
-text_source: latex
-latex_prose_ratio: 0.975
-latex_coverage_ratio: 0.983
 doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:Introduction}
 
@@ -242,7 +242,8 @@ in the mathematical literature, e.g. \cite{MR1209700,MR729194} and especially \c
 which contains some examples of spectral networks with $K=3$.
 
 
-\subsection*{Open problems}
+
+\subsection{Open problems}
 
 Our work in this paper leaves many directions unexplored or incompletely explored.  Here are a few:
 

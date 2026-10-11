@@ -7,10 +7,10 @@ section_number: 6
 pages: 18-23
 source_pdf: 1108.0687v3.pdf
 source_sha256: 66ba88e13a429a0a
-text_source: latex
-latex_prose_ratio: 0.994
-latex_coverage_ratio: 0.665
 doc_brief: "Concentration of Lipschitz functionals of determinantal a nd other strong Rayleigh measures — Let {X1,...,X n} be a collection of binary valued random variables and let f : {0, 1}n → R be a Lipschitz"
+text_source: latex
+latex_prose_ratio: 0.951
+latex_coverage_ratio: 0.982
 ---
 []{#s:continuous label="s:continuous"}
 
@@ -18,11 +18,9 @@ We consider here only simple point processes and often assume ${\mathbb E}N < \i
    \rho_k (x_1 , \ldots , x_k) \, dx_1 \cdots dx_k \, .$$ In particular, $${\mathbb E}N = \int_{\mathbb{R}^d} \rho_1 (x) \, dx$$ so under the assumption ${\mathbb E}N < \infty$, we see that $\rho_1 (x) \, dx$ is a finite measure on $\mathbb{R}^d$. If $\rho_1$ is not finite, we will assume it is $\sigma$-finite. In any case, $\rho_1$ is called the **first intensity measure**; see [@HKPV Sections 1.2 and 4.2] for further discussion of joint intensities and determinantal measures.
 
 ::: defn
-A point process ${\cal Z}$ is said to be determinantal if it has joint intensities $\{ \rho_k \}$ and there is a measurable kernel $K : (\mathbb{R}^d)^2 \to {\cal C}$ such that $$\begin{equation}
- \label{eq:kernel}
+A point process ${\cal Z}$ is said to be determinantal if it has joint intensities $\{ \rho_k \}$ and there is a measurable kernel $K : (\mathbb{R}^d)^2 \to {\cal C}$ such that $$\label{eq:kernel}
 \rho_k (x_1 , \ldots , x_k)
-   = \det \left ( K(x_i , x_j) \right )_{1 \leq i,j \leq k} \, .
-\end{equation}$$ If $K(y,x) = \overline{K(x,y)}$ for every $x,y$, then the process is said to be Hermitian. When discussing determinantal processes below, we will always assume they are Hermitian.
+   = \det \left ( K(x_i , x_j) \right )_{1 \leq i,j \leq k} \, .$$ If $K(y,x) = \overline{K(x,y)}$ for every $x,y$, then the process is said to be Hermitian. When discussing determinantal processes below, we will always assume they are Hermitian.
 :::
 
 Stochastic covering carries over to the continuous case. To state the relevant results we invoke the notion of the **Palm process**. This is a version of the process conditioned on the (measure zero) event of a point at a specified location, $x$. It may be obtained by conditioning on there being a point within distance $\epsilon$ of a given location $x$, then taking a weak limit. A more complete treatment may be found in [@kallenberg]. The following proposition is proved in [@goldman10].
@@ -74,3 +72,7 @@ The mean number of points in any region $D$ is $1/\pi$ times the area $|D|$, so 
 Fix $\rho < 1$ and $r > 0$ and let $f$ count the number of zeros of the restriction ${\cal Z}_\rho$ of ${\cal Z}$ to the disk of radius $1-\rho$ that are "hyperbolically lonely", meaning that no other point of ${\cal Z}_\rho$ is within a hyperbolic distance $r$. Let $c_r$ denote the maximum number of points at mutual hyperbolic distance $r$ that may be be placed in a disk of hyperbolic radius $r$. Arguing as in Example [\[eg:ginibre\]](#eg:ginibre){reference-type="ref" reference="eg:ginibre"} we see that $f$ is Lipschitz with constant $c_r$. The mean number of points in ${\cal Z}_\rho$ is $\rho^2 / (1 - \rho^2)$ which for simplicity we can bound from above by $1/(1-\rho^2)$. An application of Theorem [\[th:continuous\]](#th:continuous){reference-type="ref" reference="th:continuous"} to $f / c_r$ now yields $${\mathbb P}(|f - {\mathbb E}f| \geq a) \leq 5 \exp \left (
    - \frac{a^2}{16 c_r a + 32 c_r^2 (1 - \rho^2)^{-1} } \right ) \, .$$
 :::
+
+# Acknowledgments
+
+We thank Subhroshekhar Ghosh and an anonymous referee for detailed comments leading to the correction and improvement of the exposition and results.

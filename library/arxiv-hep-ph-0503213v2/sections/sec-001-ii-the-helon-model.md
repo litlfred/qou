@@ -7,10 +7,10 @@ section_number: II
 pages: 1-2
 source_pdf: 0503213v2.pdf
 source_sha256: 637a9e53b9b30776
-text_source: latex
-latex_prose_ratio: 0.95
-latex_coverage_ratio: 0.948
 doc_brief: "A topological model of composite preons — 14 sections: INTRODUCTION; THE HELON MODEL; PHENOMENOLOGY OF THE HELON"
+text_source: latex
+latex_prose_ratio: 0.993
+latex_coverage_ratio: 0.993
 ---
 []{#sec:helons label="sec:helons"} Let us now introduce our topologically-based toy model of quarks, leptons, and gauge bosons. It is convenient to represent the most fundamental objects in this model by twists through $\pm\pi$ in a ribbon. For convenience let us denote a twist through $\pi$ as a "dum", and a twist through $-\pi$ as a "dee" ($U$ and $E$ for short, after Tweedle-dum and Tweedle-dee [@wonderland]). Generically we refer to such twists by the somewhat whimsical name "tweedles"[@yesteryear]. We hope to deduce the properties of quarks and leptons and their interactions from the behaviour of their constituent tweedles, and to do so we shall employ a set of assumptions that govern their behaviour:\
 **1) Unordered pairing:** *Tweedles combine in pairs, so that their total twist is $\,0$ modulo $2\pi$, and the ordering of tweedles within a pair is unimportant*. The three possible combinations of $UU$, $EE$, and $UE \equiv EU$ can be represented as ribbons bearing twists through the angles $+2\pi$, $-2\pi$, and $0$ respectively. A twist through $\pm 2\pi$ is interpreted as an electric charge of $\pm e/3$. We shall refer to such pairs of tweedles as *helons* (evoking their helical structure) and denote the three types of helons by $H_+$, $H_-$, and $H_0$.\

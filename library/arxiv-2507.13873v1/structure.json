@@ -257,8 +257,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Draftv6.tex",
-   "tex_sections": 5,
-   "overlaid": 2,
+   "tex_sections": 9,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -268,48 +268,64 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.868,
-     "coverage_ratio": 0.955,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-correlation-functions-on-the-quantum-disk",
      "title": "Correlation functions on the quantum disk",
-     "prose_ratio": 0.174,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.985,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-q-correlation-functions",
      "title": "q-Correlation functions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-quantum-hyperbolic-disk",
      "title": "Quantum hyperbolic disk",
-     "result": "no matching \\section"
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.927,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-a-candidate-bulk-description-for-q-holography",
      "title": "A candidate bulk description for q-holography",
-     "prose_ratio": 0.074,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.796,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-definition-and-classical-structure-of-sinh-dilat",
      "title": "Definition and classical structure of sinh dilaton gravity",
-     "result": "no matching \\section"
+     "prose_ratio": 0.931,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-probe-regime-of-sinh-dilaton-gravity",
      "title": "Probe regime of sinh dilaton gravity",
-     "result": "no matching \\section"
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.924,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-concluding-remarks",
      "title": "Concluding remarks",
-     "prose_ratio": 0.941,
-     "coverage_ratio": 0.862,
+     "prose_ratio": 0.892,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },

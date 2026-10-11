@@ -7,16 +7,17 @@ section_number: 11.3
 pages: 360-367
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.907
-latex_coverage_ratio: 0.83
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 While a Dehn \emph{filling} consists of attaching a solid torus to a boundary component, a Dehn \emph{surgery} is a two-step operation that consists of drilling a tubular neighbourhood of a knot and then re-gluing it via a different map. 
 
 Using this fundamental operation we can describe \emph{every} closed three-manifold via some reasonable and combinatorial drawing on the plane: a link diagram with some rational numbers attached to its components. Such a combinatorial description has a strong four-dimensional flavour and is called a \emph{Kirby diagram}.
 
 In this section we introduce some basic knot theory concepts: longitudes, Seifert surfaces, Dehn surgery, and the Lickorish-Wallace Theorem which asserts that every closed orientable 3-manifold is obtained by surgerying some link in $S^3$.
+
 
 \subsection{Canonical longitudes} \label{canonical:longitudes:subsection}
 The tubular neighbourhood $N$ of a knot $K\subset S^3$ is a solid torus. As usual with solid tori, a \emph{meridian} is a simple closed curve $m\subset \partial N$ bounding a disc in $N$ and a \emph{longitude} is any other simple closed curve $l$ such that $m$ and $l$ generate $H_1(\partial N,\matZ)$. The meridian $m$ is unique up to sign, but the longitude $l$ is not: if $l$ is a longitude, then $l+km$ also is for any $k\in \matZ$. 
@@ -40,6 +41,7 @@ In the map $\matZ\times \matZ = H_1(\partial M) \to H_1(M)  =\matZ $ the meridia
 \end{proof}
 
 We call $l$ the \emph{canonical longitude} of $K$. The torus $T=\partial M$ is hence equipped with a canonical basis $(m,l)$ for $H_1(T,\matZ)$; we orient $m$ and $l$ as shown in Figure \ref{torus:ml:fig}, like a right-hand screw. The pair $(m,l)$ is well-defined up to reversing both their signs. 
+
 
 \subsection{Seifert surfaces}
 We now show that the canonical longitude has a concrete geometric interpretation.
@@ -75,6 +77,7 @@ A knot has genus zero $\Longleftrightarrow$ it bounds a disc.
 \end{proof}
 
 Figure \ref{Seifert_surface:fig} shows that the trefoil knot has genus one.
+
 
 \subsection{Dehn surgery}
 Let $L\subset M$ be a link with some $k$ components in an orientable 3-manifold $M$. A \emph{Dehn surgery} on $L$ is a Dehn filling of the complement of $L$. In other words, it is a two-step operation that consists of:\index{Dehn surgery}
@@ -131,6 +134,7 @@ If the coefficient is $\frac 1{q}$ the surgered manifold $N$ is a homology spher
 
 We have just found a simple method to construct plenty of homology spheres.
 
+
 \subsection{Torus knots}
 As a first example, we study the effect of a Dehn surgery on torus knots. We suppose $p,q \geqslant 1$.
 
@@ -177,6 +181,7 @@ using Exercise \ref{two:lens:ex}.
 We note that we never get $S^2\times S^1$ or $S^3$ via non-trivial surgeries on non-trivial torus knots. The lens space with smallest fundamental group that we may get is $L(5,1)$, which arises from a $5$-Dehn surgery on the trefoil knot.
 
 
+
 \subsection{The Lickorish-Wallace theorem}
 We now prove that the Dehn surgery construction is as general as possible.
 
@@ -211,6 +216,7 @@ Therefore $M_{i+1}$ is obtained from $M_i$ by Dehn surgery along $\gamma_{i+1}$.
 
 The theorem shows that every closed orientable three-manifold can be constructed using Kirby diagrams. As for knots and many other combinatorial descriptions of topological objects, it is important to note that many different Kirby diagrams may describe the same three-manifold, and in general it is hard to tell, given two diagrams, whether they define the same manifold or not.
 
+
 \subsection{Four-manifolds}
 The theorem of Lickorish and Wallace has a nice four-dimensional interpretation, which shows in particular that every closed orientable three-manifold is the boundary of a simply-connected four-manifold.
 
@@ -237,6 +243,7 @@ We first deformation retract the two-handles over their core discs, and then we 
 \end{proof}
 
 To construct contractible four-manifolds, we need to employ 1-handles.
+
 
 \subsection{Three-manifolds with boundary}
 The Lickorish-Wallace Theorem extends to compact manifolds with boundary, in the appropriate way. 

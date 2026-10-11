@@ -7,10 +7,10 @@ section_number: 2
 pages: 7-12
 source_pdf: 2504.18825v2.pdf
 source_sha256: 829f97190cb1c8ad
+doc_brief: "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU — 16 sections: Introduction; Preliminaries; Murnaghan–Nakayama rule for the cy"
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.982
-doc_brief: "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU — 16 sections: Introduction; Preliminaries; Murnaghan–Nakayama rule for the cy"
+latex_coverage_ratio: 1.0
 ---
 \subsection{Multipartitions and corresponding symmetric functions}
 The terminologies and notations about classical {\it partitions}, such as {\it length, weight, diagram}, etc, can be found in \cite[Chapter I]{Mac}. Now we introduce the corresponding notions and definitions in the context of {\em multipartitions}. A $m$-multipartition (resp. $m$-multicomposition) of $n$ is an ordered tuple $\bm{\la}=(\la^{(1)},\la^{(2)},\cdots,\la^{(m)})$ of partitions (resp. compositions) $\la^{(i)}$ such that $|\bm{\la}|=\sum_{i=1}^{m}|\la^{(i)}|=n$. We denote by $\mathcal{P}_{n,m}$ the set of all $m$-multipartitions of $n$. Let $C_{n,m}$ denote the set of $m$-tuples of nonnegative integers summing to $n$, i.e., an element in $C_{n,m}$ has the form $(c_1, c_2, \cdots, c_m)$ with $c_i$ nonnegative integer such that $\sum_{i=1}^{m}c_i=n$. 
@@ -135,6 +135,7 @@ Then we have
 \langle s_{\bm{\la}}, s_{\bm{\mu}} \rangle_{\otimes}=\delta_{\bm{\la}\bm{\mu}}.
 \end{align}
 This means $\{s_{\bm{\la}}\mid\bm{\la}\in \mathcal{P}_{n,m}\}$ forms an orthonormal basis in $\Lambda_{\mathbb{Q}}^{\otimes m}$.
+
 
 
 \subsection{Frobenius-type formula for the cyclotomic Hecke algebra}\label{ss:Fro}
@@ -267,6 +268,7 @@ Let $\bm{\la},\bm{\mu}\in \mathcal{P}_{n,m}$, then the irreducible character $\c
 q_{\bm{\mu}}(x;q,\bm{u})=\sum_{\bm{\la}\in \mathcal{P}_{n,m}} \chi^{\bm{\la}}_{\bm{\mu}}s_{\bm{\la}}.
 \end{align}
 \end{thm}
+
 
 \subsection{$\la$-ring theory} For the $\la$-ring theory, we mainly refer the reader to \cite{Knu}. A {\em pre-$\lambda$-ring} is a commutative ring $\R$ with identity $1$ endowed a series of operations $\lambda^i: \R\rightarrow \R$ for $i\in\mathbb{N}$, such that for all $r\in\R$, the formal power series
 \begin{align}\label{E:c1}

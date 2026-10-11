@@ -7,10 +7,10 @@ section_number: null
 pages: 12-37
 source_pdf: 0505056v2.pdf
 source_sha256: 1b6580406c3d35b5
-text_source: latex
-latex_prose_ratio: 0.991
-latex_coverage_ratio: 0.975
 doc_brief: "Matrix factorizations and link homology II — To a presentation of an oriented link as the closure of a braid we assign a complex of bigraded vector spaces."
+text_source: latex
+latex_prose_ratio: 0.999
+latex_coverage_ratio: 0.99
 ---
 []{#sec-proofs label="sec-proofs"}
 
@@ -55,25 +55,22 @@ Thus, although the 2-periodic complex $C(\Gamma)$ as well as its cohomology $H(\
 Recall the row operation $[ij]_{\lambda}$ on a Koszul matrix of a factorization: $$\left( \begin{array}{cc} a_i & b_i \\ a_j & b_j \end{array} \right) 
  \hspace{0.15in} \lra \hspace{0.15in} 
  \left( \begin{array}{cc} a_i & b_i+\lambda b_j \\ a_j-\lambda 
- a_i & b_j \end{array} \right)$$ Denote by $|0\rangle$ and $|1\rangle$ the standard basis vectors in factorizations $(a_i, b_i)$ and $(a_j, b_j)$: $$\begin{eqnarray*}
+ a_i & b_j \end{array} \right)$$ Denote by $|0\rangle$ and $|1\rangle$ the standard basis vectors in factorizations $(a_i, b_i)$ and $(a_j, b_j)$: $$\begin{aligned}
  & & R|0\rangle \stackrel{a_i}{\lra} R|1 \rangle 
  \stackrel{b_i}{\lra} R|0\rangle , \\
  & & R|0\rangle \stackrel{a_j}{\lra} R|1 \rangle 
- \stackrel{b_j}{\lra} R|0\rangle.
-\end{eqnarray*}$$ Let $|00\rangle, |01\rangle, |10\rangle, |11\rangle$ be the standard basis vectors in the tensor product factorization $(a_i,b_i)\otimes (a_j,b_j).$ The row operation $[ij]_{\lambda}$ corresponds to the isomorphism of factorizations $$(a_i,b_i)\otimes (a_j,b_j) \cong (a_i , b_i + \lambda b_j) \otimes 
+ \stackrel{b_j}{\lra} R|0\rangle. 
+\end{aligned}$$ Let $|00\rangle, |01\rangle, |10\rangle, |11\rangle$ be the standard basis vectors in the tensor product factorization $(a_i,b_i)\otimes (a_j,b_j).$ The row operation $[ij]_{\lambda}$ corresponds to the isomorphism of factorizations $$(a_i,b_i)\otimes (a_j,b_j) \cong (a_i , b_i + \lambda b_j) \otimes 
   (a_j -\lambda a_i, b_j)$$ which takes the standard basis of the LHS factorization to the basis $$|00\rangle, |01\rangle, |10> + \lambda |01\rangle, |11\rangle$$ of the RHS tensor product.
 
-Denote by $\psi(y)$ the following morphism between two Koszul factorizations: $$\begin{equation*}
-   \begin{CD}
+Denote by $\psi(y)$ the following morphism between two Koszul factorizations: $$\begin{CD}
      R @>{x}>> R @>{yz}>> R  \\
      @V{1}VV      @V{y}VV   @V{1}VV \\
      R @>{xy}>> R @>{z}>> R
-   \end{CD}
-\end{equation*}$$
+   \end{CD}$$
 
 ::: lemma
-[]{#comm-lemma label="comm-lemma"} The following squares are commutative: $$\begin{equation*}
-   \begin{CD}
+[]{#comm-lemma label="comm-lemma"} The following squares are commutative: $$\begin{CD}
   \left( \begin{array}{cc} a_1 & b_1 \\ a_2 & b_2 c_2 \end{array}\right)   
    @>{\mathrm{Id}\otimes \psi(c_2)}>>  
  \left( \begin{array}{cc} a_1 & b_1 \\ a_2c_2 & b_2  \end{array}\right)   
@@ -84,9 +81,7 @@ Denote by $\psi(y)$ the following morphism between two Koszul factorizations: $$
     @>{\mathrm{Id}\otimes \psi(c_2)}>> 
     \left( \begin{array}{cc} a_1 & b_1+\lambda b_2 c_2 \\ (a_2-\lambda a_1)c_2 & 
     b_2  \end{array}\right)   
-   \end{CD}
-\end{equation*}$$ $$\begin{equation*}
-   \begin{CD}
+   \end{CD}$$ $$\begin{CD}
   \left( \begin{array}{cc} a_1 & b_1 \\ a_2 & b_2 c_2 \end{array}\right)   
    @>{\mathrm{Id}\otimes \psi(c_2)}>>  
  \left( \begin{array}{cc} a_1 & b_1 \\ a_2c_2 & b_2  \end{array}\right)   
@@ -99,21 +94,18 @@ Denote by $\psi(y)$ the following morphism between two Koszul factorizations: $$
     \left( \begin{array}{cc} a_1-\lambda c_2 a_2 & b_1 \\ 
    a_2 c_2  & 
     b_2 +\lambda b_1 \end{array}\right)   
-   \end{CD}
-\end{equation*}$$
+   \end{CD}$$
 :::
 
 *Proof:* direct computation. $\square$
 
-Denote by $\psi'(y)$ the \"opposite\" morphism of $\psi(y)$: $$\begin{equation*}
-   \begin{CD}
+Denote by $\psi'(y)$ the \"opposite\" morphism of $\psi(y)$: $$\begin{CD}
      R @>{xy}>> R @>{z}>> R  \\
      @V{y}VV      @V{1}VV   @V{y}VV \\
      R @>{x}>> R @>{yz}>> R
-   \end{CD}
-\end{equation*}$$ The analogue of lemma [\[comm-lemma\]](#comm-lemma){reference-type="ref" reference="comm-lemma"} holds for $\psi'$ as well (just reverse all horizontal arrows in the commutative diagrams above). We call $\psi$ and $\psi'$ *flip* morphisms.
+   \end{CD}$$ The analogue of lemma [\[comm-lemma\]](#comm-lemma){reference-type="ref" reference="comm-lemma"} holds for $\psi'$ as well (just reverse all horizontal arrows in the commutative diagrams above). We call $\psi$ and $\psi'$ *flip* morphisms.
 
-Starting with the Koszul matrices for $C(\Gamma^0)$ and $C(\Gamma^1)$ and applying a row transformation to each of them, we get the following equivalent Koszul forms for these factorizations: $$\begin{eqnarray}
+Starting with the Koszul matrices for $C(\Gamma^0)$ and $C(\Gamma^1)$ and applying a row transformation to each of them, we get the following equivalent Koszul forms for these factorizations: $$\begin{aligned}
 C(\Gamma^0): &  \label{fla-gam-n}
 \left( \begin{array}{cc} a & x_1-x_4 \\ a & x_2 -x_3 \end{array} 
    \right)\hspace{0.06in} \xrightarrow{[12]_1} \hspace{0.06in} 
@@ -124,14 +116,12 @@ C(\Gamma^0): &  \label{fla-gam-n}
    \right)\hspace{0.06in} \xrightarrow{[21]_{-x_2}} \hspace{0.06in} 
   \left( \begin{array}{cc} a & x_1+x_2-x_3-x_4 \\ 0 & (x_2 -x_3)(x_4-x_2) 
   \end{array} 
-   \right) &
-\end{eqnarray}$$ The first rows of these new Koszul matrices for $C(\Gamma^0), C(\Gamma^1)$ are identical while the second rows look related. In fact, there is a flip morphism $\psi(x_4-x_2)$ from $(0,(x_2 -x_3)(x_4-x_2))$ to $(0, x_2 -x_3)$: $$\begin{equation*}
-   \begin{CD}
+   \right) & 
+\end{aligned}$$ The first rows of these new Koszul matrices for $C(\Gamma^0), C(\Gamma^1)$ are identical while the second rows look related. In fact, there is a flip morphism $\psi(x_4-x_2)$ from $(0,(x_2 -x_3)(x_4-x_2))$ to $(0, x_2 -x_3)$: $$\begin{CD}
      R @>{0}>> R @>{(x_2-x_3)(x_4-x_2)}>> R  \\
      @V{1}VV      @V{x_4-x_2}VV   @V{1}VV \\
      R @>{0}>> R @>{\quad  x_2-x_3 \quad }>> R
-   \end{CD}
-\end{equation*}$$ and the flip morphism $\psi'(x_4-x_2)$ back. Tensoring these flip morphisms with the identity morphism on the first row, we obtain maps of factorizations $$\mathrm{Id}\otimes \psi'(x_4-x_2)\hspace{0.02in} : \hspace{0.02in} 
+   \end{CD}$$ and the flip morphism $\psi'(x_4-x_2)$ back. Tensoring these flip morphisms with the identity morphism on the first row, we obtain maps of factorizations $$\mathrm{Id}\otimes \psi'(x_4-x_2)\hspace{0.02in} : \hspace{0.02in} 
   C(\Gamma^0)\lra C(\Gamma^1), \hspace{0.35in} 
    \mathrm{Id}\otimes \psi(x_4-x_2)\hspace{0.02in} : \hspace{0.02in} 
   C(\Gamma^1)\lra C(\Gamma^0).$$
@@ -168,10 +158,8 @@ Factorizations $\Gamma_1$ and $\Gamma_2$ are isomorphic in $hmf_w$ if $\Gamma_2$
 <figcaption></figcaption>
 </figure>
 
-To show independence of $D$ on the number and position of marks, we need to check compatibility of the isomorphisms $C(\Gamma_1)\cong C(\Gamma_2)$ above with maps $\chi_0, \chi_1.$ We'll only work through one case and leave the others to an interested reader. Let's check that complexes of factorizations $$0 \lra C(\Gamma^1_1) \stackrel{\chi_1}{\lra}  C(\Gamma^0_1)\lra 0$$ and $$\begin{equation}
-0 \lra   C(\Gamma^1_2) \stackrel{\chi_1}{\lra}C(\Gamma^0_2)\lra 0
-\label{fla-sec}
-\end{equation}$$ are chain homotopy equivalent, for figure [2](#rmarks2){reference-type="ref" reference="rmarks2"} diagrams. The first complex, written via Koszul matrices, has the form $$\left( \begin{array}{cc} a & x_1 +x_5 -x_3 -x_4 \\
+To show independence of $D$ on the number and position of marks, we need to check compatibility of the isomorphisms $C(\Gamma_1)\cong C(\Gamma_2)$ above with maps $\chi_0, \chi_1.$ We'll only work through one case and leave the others to an interested reader. Let's check that complexes of factorizations $$0 \lra C(\Gamma^1_1) \stackrel{\chi_1}{\lra}  C(\Gamma^0_1)\lra 0$$ and $$0 \lra   C(\Gamma^1_2) \stackrel{\chi_1}{\lra}C(\Gamma^0_2)\lra 0
+\label{fla-sec}$$ are chain homotopy equivalent, for figure [2](#rmarks2){reference-type="ref" reference="rmarks2"} diagrams. The first complex, written via Koszul matrices, has the form $$\left( \begin{array}{cc} a & x_1 +x_5 -x_3 -x_4 \\
    0 & (x_5 - x_3)(x_4-x_5) \\ a & x_2 -x_5 \end{array}\right) 
  \xrightarrow{\Id \otimes \psi(x_4-x_5) \otimes Id} 
    \left( \begin{array}{cc} a & x_1 +x_5 -x_3 -x_4 \\
@@ -202,13 +190,11 @@ Consider type IA Reidemeister move as depicted in figure [3](#curl1){reference-
 <figcaption>Resolutions of <span class="math inline"><em>D</em><sub>2</sub></span></figcaption>
 </figure>
 
-The differential is the identity on the first row, and on the second row given by $$\begin{equation*}
-   \begin{CD}
+The differential is the identity on the first row, and on the second row given by $$\begin{CD}
      R @>{0}>> R\{-1,3\} @>{0}>> R  \\
      @V{1}VV      @V{x_4-x_2}VV   @V{1}VV \\
      R @>{0}>> R\{-1,1\} @>{0}>> R
-   \end{CD}
-\end{equation*}$$ Therefore, the complex splits into a direct sum of a contractible complex and the tensor product of $(a, x_1-x_4)$ with $$0 \lra R\{-1,3\} \xrightarrow{x_4-x_2} R\{-1,1\} \lra 0.$$ Since $x_2$ is an internal variable, we can remove a contractible summand $$0 \lra R\{-1,3\} \xrightarrow{x_4-x_2} R(x_4-x_2)\{-1,1\} \lra 0$$ from the above complex and reduce the ground ring to $R'=\Q[a,x_1,x_4].$ We get the complex $(a, x_1-x_4)$ shifted by $\{-1,1\}[-1].$ Thus, $C(D_2)\{0,2\}\cong C(\Gamma)\{-1,1\}[-1],$ for $\Gamma$ as in figure [4](#digon){reference-type="ref" reference="digon"}. Since $\Gamma\cong D_1,$ there is an isomorphism $C(D_2)\{1,1\}[1]\cong C(D_1).$ We record this as
+   \end{CD}$$ Therefore, the complex splits into a direct sum of a contractible complex and the tensor product of $(a, x_1-x_4)$ with $$0 \lra R\{-1,3\} \xrightarrow{x_4-x_2} R\{-1,1\} \lra 0.$$ Since $x_2$ is an internal variable, we can remove a contractible summand $$0 \lra R\{-1,3\} \xrightarrow{x_4-x_2} R(x_4-x_2)\{-1,1\} \lra 0$$ from the above complex and reduce the ground ring to $R'=\Q[a,x_1,x_4].$ We get the complex $(a, x_1-x_4)$ shifted by $\{-1,1\}[-1].$ Thus, $C(D_2)\{0,2\}\cong C(\Gamma)\{-1,1\}[-1],$ for $\Gamma$ as in figure [4](#digon){reference-type="ref" reference="digon"}. Since $\Gamma\cong D_1,$ there is an isomorphism $C(D_2)\{1,1\}[1]\cong C(D_1).$ We record this as
 
 ::: prop
 Complexes of matrix factorizations $C(D_1)$ and $C(D_2)\{1,1\}[1]$ are isomorphic as objects of $K(hmf_w),$ with $w=a(x_1-x_4).$
@@ -227,12 +213,12 @@ Complexes of matrix factorizations $C(D_1)$ and $C(D_2)$ are isomorphic as objec
 
 **5. Invariance under Reidemeister move IIa.**
 
-<figure id="ta1" data-latex-placement="htb">
+<figure id="ta1">
 
 <figcaption>Type IIa move</figcaption>
 </figure>
 
-<figure id="reid2a" data-latex-placement="htb">
+<figure id="reid2a">
 
 <figcaption>Four resolutions of <span class="math inline"><em>D</em><sub>1</sub></span></figcaption>
 </figure>
@@ -243,13 +229,13 @@ Complexes of matrix factorizations $C(D_1)$ and $C(D_2),$ for the diagrams depic
 []{#rei-m-t label="rei-m-t"} Complexes of matrix factorizations $C(D_1)$ and $C(D_2)$ are equivalent as objects of $K(hmf_w).$
 :::
 
-*Proof:* It suffices to show that $f_1$ is an isomorphism (in $hmf_w$) from $C(\Gamma_{00})$ to a direct summand of $C(\Gamma_{10}),$ and that there is a decomposition $$C(\Gamma_{10}) \cong \mathrm{Im}(f) \oplus M$$ with $f_2$ restricting to an isomorphism between $M$ and $C(\Gamma_{11}).$ Then $C(D_1)$ would be isomorphic to a direct sum of contractible complexes $$\begin{eqnarray*}
+*Proof:* It suffices to show that $f_1$ is an isomorphism (in $hmf_w$) from $C(\Gamma_{00})$ to a direct summand of $C(\Gamma_{10}),$ and that there is a decomposition $$C(\Gamma_{10}) \cong \mathrm{Im}(f) \oplus M$$ with $f_2$ restricting to an isomorphism between $M$ and $C(\Gamma_{11}).$ Then $C(D_1)$ would be isomorphic to a direct sum of contractible complexes $$\begin{aligned}
 & & 0 \lra C(\Gamma_{00}) \stackrel{\Id}{\lra} \mathrm{Im}(f) \lra 0, \\
 & & 0 \lra M \stackrel{f_2}{\lra} C(\Gamma_{11}) \lra 0
-\end{eqnarray*}$$ and the factorization $C(\Gamma_{01}),$ isomorphic to $C(D_2).$
+\end{aligned}$$ and the factorization $C(\Gamma_{01}),$ isomorphic to $C(D_2).$
 
 We start by writing down the diagram of factorizations and maps $$C(\Gamma_{00}) \stackrel{f_1}{\lra} C(\Gamma_{10}) 
-\stackrel{f_2}{\lra}C(\Gamma_{11})$$ and simplify them in $hmf_w$ by removing contractible direct summand factorizations from each of the three terms. The diagram has the form $$\begin{eqnarray*}
+\stackrel{f_2}{\lra}C(\Gamma_{11})$$ and simplify them in $hmf_w$ by removing contractible direct summand factorizations from each of the three terms. The diagram has the form $$\begin{aligned}
 & & \left( \begin{array}{cc} a & x_1+ x_2-x_5 -x_6 \\ 0  & x_2-x_6 \\
   a & x_5 + x_6 -x_3 -x_4 \\ 0 & (x_6-x_4)(x_3-x_6) \end{array}
    \right) \stackrel{f_1}{\lra} 
@@ -259,9 +245,9 @@ We start by writing down the diagram of factorizations and maps $$C(\Gamma_{00})
 & & \left( \begin{array}{cc} a & x_1+ x_2-x_5 -x_6 \\ 0 & (x_2-x_6)(x_5-x_2) \\
   a & x_5 + x_6 -x_3 -x_4 \\ 0 & x_6-x_4 \end{array}
    \right)
-\end{eqnarray*}$$ with $$f_1= \Id \otimes \psi'(x_5-x_2) \otimes \Id^{\otimes 2}, 
+\end{aligned}$$ with $$f_1= \Id \otimes \psi'(x_5-x_2) \otimes \Id^{\otimes 2}, 
  \hspace{0.2in} 
-  f_2= \Id^{\otimes 3} \otimes \psi(x_3-x_6).$$ Apply row transformation $[13]_1$ to all three Koszul matrices. The new matrices will have identical first rows $(a, x_1+x_2-x_3-x_4)$ and identical third rows $(0, x_5+x_6-x_3-x_4).$ We remove the third rows and exclude internal variable $x_5$ substituting $x_3+x_4-x_5$ in its place everywhere else. The diagram becomes the tensor product of the Koszul factorization $(a, x_1+x_2-x_3-x_4)$ and the diagram $$\begin{eqnarray*}
+  f_2= \Id^{\otimes 3} \otimes \psi(x_3-x_6).$$ Apply row transformation $[13]_1$ to all three Koszul matrices. The new matrices will have identical first rows $(a, x_1+x_2-x_3-x_4)$ and identical third rows $(0, x_5+x_6-x_3-x_4).$ We remove the third rows and exclude internal variable $x_5$ substituting $x_3+x_4-x_5$ in its place everywhere else. The diagram becomes the tensor product of the Koszul factorization $(a, x_1+x_2-x_3-x_4)$ and the diagram $$\begin{aligned}
 & & 
  \left( \begin{array}{c} x_2-x_6 \\ (x_6-x_4)(x_3-x_6) \end{array} 
   \right) \stackrel{g_1}{\lra} 
@@ -269,27 +255,23 @@ We start by writing down the diagram of factorizations and maps $$C(\Gamma_{00})
   \end{array} \right) \stackrel{g_2}{\lra} \\ 
 & &  \left( \begin{array}{c} (x_2-x_6)(x_3+x_4-x_6-x_2) \\ x_6-x_4 
   \end{array} \right)
-\end{eqnarray*}$$ where $$g_1=\psi'(x_3+x_4-x_6-x_2)\otimes \Id, \hspace{0.2in} 
-   g_2= \Id \otimes \psi(x_3-x_5).$$ We omitted the first columns from the Koszul matrices, since their terms are all zeros. The only internal variable left is $x_6.$ The bottom term in the first two factorizations is $$(x_6-x_4)(x_3-x_6) = - x_6^2 + (x_3 + x_4) x_6 -x_3 x_4.$$ Let $R'=\Q[a,x_1, x_2, x_3,x_4]$ be the polynomial ring on all external variables. Currently we're working over the ring $R'[x_6].$ We remove the bottom term from the first two factorizations simultaneously reducing to $R',$ imposing the relation $x_6^2 = (x_3+x_4)x_6 - x_3 x_4,$ and treating multiplication by $x_6$ as an endomorphism of the free $R'$-module $R'[x_6]/((x_6-x_4)(x_3-x_6)).$ Likewise, in the rightmost factorization, we remove the bottom row $(x_6-x_4),$ reduce to the ground ring $R'$ and impose the relation $x_6=x_4.$ Our diagram simplifies to $$\begin{equation*}
-   \begin{CD}
+\end{aligned}$$ where $$g_1=\psi'(x_3+x_4-x_6-x_2)\otimes \Id, \hspace{0.2in} 
+   g_2= \Id \otimes \psi(x_3-x_5).$$ We omitted the first columns from the Koszul matrices, since their terms are all zeros. The only internal variable left is $x_6.$ The bottom term in the first two factorizations is $$(x_6-x_4)(x_3-x_6) = - x_6^2 + (x_3 + x_4) x_6 -x_3 x_4.$$ Let $R'=\Q[a,x_1, x_2, x_3,x_4]$ be the polynomial ring on all external variables. Currently we're working over the ring $R'[x_6].$ We remove the bottom term from the first two factorizations simultaneously reducing to $R',$ imposing the relation $x_6^2 = (x_3+x_4)x_6 - x_3 x_4,$ and treating multiplication by $x_6$ as an endomorphism of the free $R'$-module $R'[x_6]/((x_6-x_4)(x_3-x_6)).$ Likewise, in the rightmost factorization, we remove the bottom row $(x_6-x_4),$ reduce to the ground ring $R'$ and impose the relation $x_6=x_4.$ Our diagram simplifies to $$\begin{CD}
      R'1\oplus R'x_6  @>{x_2-x_6}>> R'1\oplus R'x_6   \\
      @V{1}VV      @V{x_3+x_4-x_6-x_2}VV  \\
      R'1\oplus R'x_6 @>{(x_2-x_4)(x_3-x_2)}>> R'1\oplus R' x_6 \\
      @V{x_6\to x_4}VV      @V{x_6\to x_4}VV  \\
      R'    @>{(x_2-x_4)(x_3-x_2)}>> R'  
-   \end{CD}
-\end{equation*}$$ where, for instance, the bottom row denotes the factorization $$R' \stackrel{0}{\lra} R' \xrightarrow{ (x_2-x_4)(x_3-x_2)} R'$$ and the maps $g_1, g_2$ are given by vertical arrows. Stripping off a contractible summand $$R'1 \stackrel{1}{\lra} R'(x_2-x_6)$$ from the first factorization, we reduce it to $$R'(x_6+x_2-x_3-x_4) \xrightarrow{(x_2-x_4)(x_2-x_3)} R' 1.$$ The middle factorization is a direct sum of two isomorphic (up to grading shift) factorizations $$R' 1  \xrightarrow{(x_2-x_4)(x_3-x_2)} R' 1$$ and $$R'(x_6+x_2-x_3-x_4) \xrightarrow{(x_2-x_4)(x_3-x_2)} 
+   \end{CD}$$ where, for instance, the bottom row denotes the factorization $$R' \stackrel{0}{\lra} R' \xrightarrow{ (x_2-x_4)(x_3-x_2)} R'$$ and the maps $g_1, g_2$ are given by vertical arrows. Stripping off a contractible summand $$R'1 \stackrel{1}{\lra} R'(x_2-x_6)$$ from the first factorization, we reduce it to $$R'(x_6+x_2-x_3-x_4) \xrightarrow{(x_2-x_4)(x_2-x_3)} R' 1.$$ The middle factorization is a direct sum of two isomorphic (up to grading shift) factorizations $$R' 1  \xrightarrow{(x_2-x_4)(x_3-x_2)} R' 1$$ and $$R'(x_6+x_2-x_3-x_4) \xrightarrow{(x_2-x_4)(x_3-x_2)} 
  R'(x_6+x_2-x_3-x_4).$$ The map $g_1$ takes the top factorization (in its reduced form) isomorphically onto the second summand of the middle factorization. The map $g_2$ restricts to an isomorphism from the first direct summand of the middle factorization to the bottom factorization. Our claim and the proposition follow. $\square$
 
 The invariance under the mirror image of the figure [6](#ta1){reference-type="ref" reference="ta1"} move can be verified similarly.
 
 **6. Invariance under Reidemeister move III.**
 
-Let factorization $\Upsilon$ be given by the following Koszul matrix: $$\begin{equation*}
- \left( \begin{array}{cc} a & x_1+x_2+x_3-x_4-x_5-x_6 \\
+Let factorization $\Upsilon$ be given by the following Koszul matrix: $$\left( \begin{array}{cc} a & x_1+x_2+x_3-x_4-x_5-x_6 \\
        0  & x_1x_2+x_1x_3+x_2x_3 - x_4x_5 -x_4x_6 -x_5x_6 \\
-       0  & x_1 x_2 x_3 -x_4 x_5 x_6 \end{array} \right)
-\end{equation*}$$ The gradings are normalized so that the differential has bidegree $(1,1).$ For instance, the bottom row denotes the factorization $$R \stackrel{0}{\lra} R\{-1,5\} \xrightarrow{x_1 x_2 x_3 -x_4 x_5 x_6}
+       0  & x_1 x_2 x_3 -x_4 x_5 x_6 \end{array} \right)$$ The gradings are normalized so that the differential has bidegree $(1,1).$ For instance, the bottom row denotes the factorization $$R \stackrel{0}{\lra} R\{-1,5\} \xrightarrow{x_1 x_2 x_3 -x_4 x_5 x_6}
        R$$ with $R=\Q[a,x_1, \dots, x_6].$ The potential is $w=a(x_1+x_2+x_3-x_4-x_5-x_6).$
 
 <figure id="fourgr">
@@ -298,10 +280,10 @@ Let factorization $\Upsilon$ be given by the following Koszul matrix: $$\begin{e
 </figure>
 
 ::: prop
-[]{#t-three label="t-three"} In $hmf_w$ there are isomorphisms $$\begin{eqnarray}
+[]{#t-three label="t-three"} In $hmf_w$ there are isomorphisms $$\begin{aligned}
    C(\Gamma_1) & \cong & C(\Gamma_4)\{0,2\} \oplus  \Upsilon ,  \\
- C(\Gamma_3) & \cong & C(\Gamma_2)\{0,2\} \oplus  \Upsilon ,
-\end{eqnarray}$$ for $\Gamma_1, \Gamma_2, \Gamma_3, \Gamma_4$ depicted in figure [8](#fourgr){reference-type="ref" reference="fourgr"}.
+ C(\Gamma_3) & \cong & C(\Gamma_2)\{0,2\} \oplus  \Upsilon , 
+\end{aligned}$$ for $\Gamma_1, \Gamma_2, \Gamma_3, \Gamma_4$ depicted in figure [8](#fourgr){reference-type="ref" reference="fourgr"}.
 :::
 
 *Proof:* To prove the first isomorphism, we place labels $x_7, x_8, x_9$ (from top to bottom) on the three marks of $\Gamma_1$ and write $C(\Gamma_1)$ in the Koszul form $$C(\Gamma_1) = \left( \begin{array}{cc} 
@@ -351,7 +333,7 @@ After removing contractible summands $$0 \lra C(\Gamma_{100}) \{ 0,2\} \stackrel
 
 <figure id="rthree2">
 
-<figcaption>Complex <span class="math inline"><em>C</em><sup>′</sup></span></figcaption>
+<figcaption>Complex <span class="math inline"><em>C</em>′</span></figcaption>
 </figure>
 
 ::: lemma
@@ -457,11 +439,9 @@ Thus, the complex $C',$ depicted in figure [11](#rthree2){reference-type="ref" 
 \stackrel{b_2}{\lra}\Gamma''$ the composition $m(b_2)m(b_1)$ is nontrivial in $hmf_w.$
 :::
 
-*Proof:* It suffices to check that the composition $$\begin{equation}
- \label{eq-4-maps} 
+*Proof:* It suffices to check that the composition $$\label{eq-4-maps} 
 \Upsilon \subset C(\Gamma_{111}) \stackrel{\chi_1}{\lra} C(\Gamma_{110}) 
-\stackrel{\chi_1}{\lra} C(\Gamma_{100}) \stackrel{\chi_1}{\lra} C(\Gamma_{000})
-\end{equation}$$ is not null-homotopic. Denote the composition of the last 3 maps by $\chi'_1$ and the corresponding \"adjoint\" composition $$C(\Gamma_{000})\stackrel{\chi_0}{\lra}C(\Gamma_{100})
+\stackrel{\chi_1}{\lra} C(\Gamma_{100}) \stackrel{\chi_1}{\lra} C(\Gamma_{000})$$ is not null-homotopic. Denote the composition of the last 3 maps by $\chi'_1$ and the corresponding \"adjoint\" composition $$C(\Gamma_{000})\stackrel{\chi_0}{\lra}C(\Gamma_{100})
 \stackrel{\chi_0}{\lra}C(\Gamma_{110}) 
 \stackrel{\chi_0}{\lra}C(\Gamma_{111})$$ by $\chi'_0.$ We claim that the map $\chi'_1\mathrm{pr} \chi'_0$ is non-zero, where $\mathrm{pr}$ is the projection from $C(\Gamma_{111})$ onto its direct summand $\Upsilon.$ The map $\chi'_0$ has degree $(0,6)$ and the product $\chi'_1\chi'_0$ is equal to the multiplication by $(x_4-x_2)^2(x_5-x_3)$ endomorphism of $C(\Gamma_{000}),$ since the composition $\chi_1\chi_0$ is the multiplication by a suitable linear combination of $x$'s. The complementary direct summand of $C(\Gamma_{111})$ is isomorphic to $C(\Gamma_{100})\{0,2\}.$ Denote by $\widetilde{\mathrm{pr}}$ the projection onto this direct summand. Then $\mathrm{pr} + \widetilde{\mathrm{pr}}$ is the identity endomorphism of $C(\Gamma_{111}).$
 
@@ -473,10 +453,8 @@ The differential in the complex $C'$ can be written as $$d= \sum_b  \lambda_b  m
 []{#all-nonzero label="all-nonzero"} All coefficients $\lambda_b$ are nonzero rational numbers.
 :::
 
-Assume otherwise: $\lambda_b=0$ for some $b.$ Every square in the diagram of $C'$ anticommutes, and from lemma [\[2-nontriv\]](#2-nontriv){reference-type="ref" reference="2-nontriv"} we derive that some other $\lambda$'s would have to be zero. In fact, there will be enough zero maps to split the complex into the direct sum of at least two subcomplexes, each comprised of two or four factorizations in figure [11](#rthree2){reference-type="ref" reference="rthree2"}. Specifically, the complex will either decompose into a direct sum of 3 subcomplexes of the form $$\begin{equation}
- \label{sub-com-2}  
-0 \lra C(\Gamma) \stackrel{m(b)}{\lra} C(\Gamma') \lra 0
-\end{equation}$$ for some three arrows $b,$ or as the direct sum of one subcomplex of type ([\[sub-com-2\]](#sub-com-2){reference-type="ref" reference="sub-com-2"}) and the complementary summand containing the other four factorizations.
+Assume otherwise: $\lambda_b=0$ for some $b.$ Every square in the diagram of $C'$ anticommutes, and from lemma [\[2-nontriv\]](#2-nontriv){reference-type="ref" reference="2-nontriv"} we derive that some other $\lambda$'s would have to be zero. In fact, there will be enough zero maps to split the complex into the direct sum of at least two subcomplexes, each comprised of two or four factorizations in figure [11](#rthree2){reference-type="ref" reference="rthree2"}. Specifically, the complex will either decompose into a direct sum of 3 subcomplexes of the form $$\label{sub-com-2}  
+0 \lra C(\Gamma) \stackrel{m(b)}{\lra} C(\Gamma') \lra 0$$ for some three arrows $b,$ or as the direct sum of one subcomplex of type ([\[sub-com-2\]](#sub-com-2){reference-type="ref" reference="sub-com-2"}) and the complementary summand containing the other four factorizations.
 
 A decomposition of $C'$ into a direct sum of 3 subcomplexes contradicts lemmas [\[lemma-indec\]](#lemma-indec){reference-type="ref" reference="lemma-indec"}, [\[not-iso\]](#not-iso){reference-type="ref" reference="not-iso"}. To see the impossibility of the decomposition of the second kind, it's enough to show that the complementary summand cannot be trivial in $hmf_w.$ This summand would consist of four factorizations that sit in the vertices of one of the four squares in figure [11](#rthree2){reference-type="ref" reference="rthree2"}. For instance, it could have the form $$0 \lra C(Y) \lra C(\Gamma_{110})\oplus C(\Gamma_{011}) \lra 
   C(\Gamma_{010}) \lra 0.$$ Triviality of the summand would imply that its identity map is null-homotopic. In particular, the identity map of the rightmost factorization in the complex would factor through a map to the middle term. This map should have bidegree $(0,0).$ The following lemma establishes the contradiction.
@@ -493,14 +471,13 @@ To summarize, we established that the coefficients $\lambda_b$ in the differenti
 
 **7. Computing the Euler characteristic.**
 
-Given a braid diagram $D,$ the complexes $C(D\sigma^{\pm 1}_i)$ are, up to shifts, the cones of maps $\chi_0, \chi_1$ between factorizations assigned to diagrams $D$ and $De_i$ where $e_i$ denotes a wide edge placed between $i$-th and $(i+1)$-st strands of the braid. See Section [\[section-one\]](#section-one){reference-type="ref" reference="section-one"} and figure [\[cones\]](#cones){reference-type="ref" reference="cones"} for details. Recall that $\langle D\rangle$ denotes the Euler characteristic of cohomology $H(D).$ Our definition of $C(D\sigma^{\pm 1}_i)$ via cones implies the following relations on the Euler characteristics: $$\begin{eqnarray*}
+Given a braid diagram $D,$ the complexes $C(D\sigma^{\pm 1}_i)$ are, up to shifts, the cones of maps $\chi_0, \chi_1$ between factorizations assigned to diagrams $D$ and $De_i$ where $e_i$ denotes a wide edge placed between $i$-th and $(i+1)$-st strands of the braid. See Section [\[section-one\]](#section-one){reference-type="ref" reference="section-one"} and figure [\[cones\]](#cones){reference-type="ref" reference="cones"} for details. Recall that $\langle D\rangle$ denotes the Euler characteristic of cohomology $H(D).$ Our definition of $C(D\sigma^{\pm 1}_i)$ via cones implies the following relations on the Euler characteristics: $$\begin{aligned}
  \langle D\sigma_i \rangle & = & \langle De_i \rangle - q^2 \langle  D \rangle , \\
  \langle D\sigma^{-1}_i \rangle & = & q^{-2}( \langle De_i \rangle - 
    \langle  D \rangle).
-\end{eqnarray*}$$ Excluding $\langle De_i \rangle,$ we get $$\begin{equation*}
-  q^{-1} \langle D\sigma_i \rangle - q^{-1}  \langle D\sigma^{-1}_i \rangle 
-    = ( q^{-1} - q)  \langle  D \rangle ,
-\end{equation*}$$ which is the relation satisfied by the function $F(D)$ defined in Section [\[section-one\]](#section-one){reference-type="ref" reference="section-one"}. If $D$ is the one-strand braid diagram of the unknot, $H(D) \cong \Q[x]\{-1,1\}$ and $$\langle D \rangle = \frac{t^{-1}}{q^{-1}-q},$$ which is our normalization of $F(D).$ Propositions proved above imply that $\langle D \rangle$ satisfies all other defining properties of $F(D).$ Therefore, $\langle D \rangle = F(D)$ and Theorem [\[sec-thm\]](#sec-thm){reference-type="ref" reference="sec-thm"} follows. $\square$
+ 
+\end{aligned}$$ Excluding $\langle De_i \rangle,$ we get $$q^{-1} \langle D\sigma_i \rangle - q^{-1}  \langle D\sigma^{-1}_i \rangle 
+    = ( q^{-1} - q)  \langle  D \rangle ,$$ which is the relation satisfied by the function $F(D)$ defined in Section [\[section-one\]](#section-one){reference-type="ref" reference="section-one"}. If $D$ is the one-strand braid diagram of the unknot, $H(D) \cong \Q[x]\{-1,1\}$ and $$\langle D \rangle = \frac{t^{-1}}{q^{-1}-q},$$ which is our normalization of $F(D).$ Propositions proved above imply that $\langle D \rangle$ satisfies all other defining properties of $F(D).$ Therefore, $\langle D \rangle = F(D)$ and Theorem [\[sec-thm\]](#sec-thm){reference-type="ref" reference="sec-thm"} follows. $\square$
 
 **Acknowledgements:** The idea to consider matrix factorizations with the potential $ax$ came up when the authors were attending Virginia Topology Conference in December of 2004. We'd like to thank Slava Krushkal and Frank Quinn, the conference organizers, for bringing us together and creating an inspiring research atmosphere. M.K. is grateful to Sergei Gukov, Peter Ozsváth, Jacob Rasmussen, Albert Schwarz and Oleg Viro for interesting discussions. We'd like to acknowledge NSF support via grants DMS-0407784 and DMS-0196131.
 

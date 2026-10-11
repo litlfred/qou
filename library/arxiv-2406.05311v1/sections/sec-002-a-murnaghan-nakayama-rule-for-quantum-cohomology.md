@@ -7,10 +7,10 @@ section_number: 3
 pages: 8-12
 source_pdf: A_quantum_Murnaghan--Nakayama_rule_for_the_flag_ma.pdf
 source_sha256: c431fca150329547
-text_source: latex
-latex_prose_ratio: 0.925
-latex_coverage_ratio: 1.0
 doc_brief: "A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD C. BENEDETTI, N. BERGERON, L. COLMENAREJO, F. SALIOLA, AND F. SOTTILE — 5 sections: Introduction; A Murnaghan–Nakayama rule for (cla; A Murnagha"
+text_source: latex
+latex_prose_ratio: 0.981
+latex_coverage_ratio: 0.949
 ---
 []{#S:qCoh label="S:qCoh"}
 
@@ -20,51 +20,43 @@ The (small) quantum cohomology ring $qH^*{\mathbb F}\ell_n$ of the flag manifold
 
 As a ${\mathbb Z}$-module, we have
 
-$$\begin{equation*}
-    qH^*{\mathbb F}\ell_n\ =\  {\mathbb Z}[q_1,\dotsc,q_{n-1}] \otimes_{\mathbb Z}H^*{\mathbb F}\ell_n\,,
-\end{equation*}$$
+$$qH^*{\mathbb F}\ell_n\ =\  {\mathbb Z}[q_1,\dotsc,q_{n-1}] \otimes_{\mathbb Z}H^*{\mathbb F}\ell_n\,,$$
 
 where $q_1,\dotsc,q_{n-1}$ are indeterminates. To simplify notation, write ${\mathbb Z}[q]$ for ${\mathbb Z}[q_1,\dotsc,q_{n-1}]$, and use multiindex notation, for $\alpha\in{\mathbb N}^{n-1}$, we have ${\color{RoyalBlue}q^\alpha}\vcentcolon= q_1^{\alpha_1}\dotsb q_{n-1}^{\alpha_{n-1}}$. The Schubert classes $\{{\mathfrak S}_w\}_{w \in S_n}$ in $H^*{\mathbb F}\ell_n$ form a ${\mathbb Z}[q]$-basis of $qH^*{\mathbb F}\ell_n$. We write ${\color{RoyalBlue}{\mathfrak S}_u \ast {\mathfrak S}_v}$ for the product of Schubert classes ${\mathfrak S}_u$ and ${\mathfrak S}_v$ in $qH^*{\mathbb F}\ell_n$ to distinguish it from the product ${\color{RoyalBlue}{\mathfrak S}_u \cdot {\mathfrak S}_v}$ in $H^*{\mathbb F}\ell_n$.
 
 The ring structure of $qH^*{\mathbb F}\ell_n$ is determined by the  [@FGP]. For every $u\in S_n$ and $1\leq k<n$ we have,
 
-$$\begin{equation}
-    \label{quantum-Monk-formula}
+$$\label{quantum-Monk-formula}
     {\mathfrak S}_u * {\mathfrak S}_{(k,k+1)}
     \ =\ 
     \sum_{\substack{1 \leq i \leq k < j \leq n \\ \ell(u) + 1 = \ell(u(i,j))}} {\mathfrak S}_{u (i,j)}\ 
     \ +\ 
-    \sum_{\substack{1 \leq i \leq k < j \leq n \\ \ell(u) + 1 = \ell(u(i,j)) + 2(j - i)}} q_{i,j} {\mathfrak S}_{u (i,j)}
-\end{equation}$$
+    \sum_{\substack{1 \leq i \leq k < j \leq n \\ \ell(u) + 1 = \ell(u(i,j)) + 2(j - i)}} q_{i,j} {\mathfrak S}_{u (i,j)}$$
 
 where ${\color{RoyalBlue}q_{i,j}}\vcentcolon=q_iq_{i+1}\dotsb q_{j-1}$ for $i < j$. The summand on the left above comes from the classical Monk formula [\[classical-Monk-formula\]](#classical-Monk-formula){reference-type="eqref" reference="classical-Monk-formula"}. For example, in $qH^*{\mathbb F}\ell_4$ we have,
 
-$$\begin{equation}
-   \label{Eq:q-Monk}
+$$\label{Eq:q-Monk}
     {\mathfrak S}_{1432} * {\mathfrak S}_{(2,3)}
     \ =\  {\mathfrak S}_{3412} \ +\ {\mathfrak S}_{2431}
-    \ +\ q_{2}{\mathfrak S}_{1342} \ +\  q_{2,3} {\mathfrak S}_{1234}\,.
-\end{equation}$$
+    \ +\ q_{2}{\mathfrak S}_{1342} \ +\  q_{2,3} {\mathfrak S}_{1234}\,.$$
 
 Givental and Kim [@GiventalKim] proved that $qH^*{\mathbb F}\ell_n\simeq {\mathbb Z}[q][x] / I^q_n$ for a certain ideal $I^q_n$, establishing an analog to Borel's presentation [\[borel-presentation\]](#borel-presentation){reference-type="eqref" reference="borel-presentation"}. Fomin, Gelfand, and Postnikov [@FGP] defined ${\color{RoyalBlue}{\mathfrak S}^q_w(x)}$ in ${\mathbb Z}[q][x]$ so that the quantum product of Schubert classes satisfies ${\mathfrak S}_u \ast {\mathfrak S}_v \mapsto ({\mathfrak S}^q_u(x) + I^q_n) ({\mathfrak S}^q_v(x) + I^q_n)$, for $u,v\in S_n$, under this isomorphism. To simplify notation, for $f(x) \in {\mathbb Z}[q][x]$, we will write ${\mathfrak S}_u \ast f(x)$ for ${\mathfrak S}^q_u(x) f(x) + I^q_n$.
 
 As explained in Section [\[cohomology-ring-of-the-flag-manifold\]](#cohomology-ring-of-the-flag-manifold){reference-type="ref" reference="cohomology-ring-of-the-flag-manifold"}, every Schur polynomial is a Schubert polynomial: more precisely, $s_\lambda(x_1, \ldots, x_k) = {\mathfrak S}_{v(\lambda, k)}(x)$, where $\lambda \subseteq R_{k, n-k}$. Analogously, we define the , for $\lambda \subseteq R_{k, n-k}$, to be ${s_\lambda^q(x_1,\dotsc,x_k)} \vcentcolon= {\mathfrak S}^q_{v(\lambda,k)}(x)$. Following Equation [\[Eq:PowerSumHook\]](#Eq:PowerSumHook){reference-type="eqref" reference="Eq:PowerSumHook"}, the is defined to be
 
-$$\begin{multline}
+$$\begin{gathered}
     \label{Eq:Q-powerSum}
     \qquad  {\color{RoyalBlue}p^q_r(x_1,\dotsc,x_k)}\ \vcentcolon= \\
         s^q_{(r)}(x_1,\dotsc,x_k) - s^q_{(r-1,1)}(x_1,\dotsc,x_k) +
                    \dotsb + (-1)^{r+1} s^q_{(1^r)}(x_1,\dotsc,x_k)\,.
     \qquad
-\end{multline}$$
+\end{gathered}$$
 
 ## Quantum $k$-Bruhat order
 
 The terms appearing in the quantum Monk formula [\[quantum-Monk-formula\]](#quantum-Monk-formula){reference-type="eqref" reference="quantum-Monk-formula"} define a ranked partial order on the (infinite) set
 
-$$\begin{equation*}
-    {\color{RoyalBlue}S_n[q]}\  \vcentcolon=\  \big\{ q^\alpha u \mid u\in S_n \text{ and } \alpha\in{\mathbb N}^{n-1}\big\}\,.
-\end{equation*}$$
+$${\color{RoyalBlue}S_n[q]}\  \vcentcolon=\  \big\{ q^\alpha u \mid u\in S_n \text{ and } \alpha\in{\mathbb N}^{n-1}\big\}\,.$$
 
 The on $S_n[q]$ is defined by the following cover relations:
 
@@ -78,7 +70,7 @@ The on $S_n[q]$ is defined by the following cover relations:
 
 We will say that covers of type (1) and their extensions by (3) are , and covers of type (2) and their extensions by (3) are . The on $S_n[q]$ is given by ${\color{RoyalBlue}\ell(q^\alpha u)} \vcentcolon= 2 \deg q^\alpha + \ell(u)$, where $\deg q^\alpha$ is the usual degree of the monomial $q^\alpha$ in ${\mathbb Z}[q]$. Figure [1](#fig:quantum-2-Bruhat-poset){reference-type="ref" reference="fig:quantum-2-Bruhat-poset"} shows two levels of the quantum $2$-Bruhat order on $S_4[q]$ starting at the permutation $14\raisebox{-0.5pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{9pt}}\hspace{0.55pt}32$. We draw the classical covers in green and the quantum covers in red. Compare the first level to the example in [\[Eq:q-Monk\]](#Eq:q-Monk){reference-type="eqref" reference="Eq:q-Monk"}.
 
-<figure id="fig:quantum-2-Bruhat-poset" data-latex-placement="htpb">
+<figure id="fig:quantum-2-Bruhat-poset">
 <div class="picture">
 <p>(330,80)(10,0) ( 10, 70)<span><span class="math inline">$34\raisebox{-1pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{11pt}}\hspace{0.55pt}21$</span></span> ( 52, 70)<span><span class="math inline">$q_{2,3} 21\raisebox{-1pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{11pt}}\hspace{0.55pt}34$</span></span> (110, 70)<span><span class="math inline">$q_{2} 23\raisebox{-1pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{11pt}}\hspace{0.55pt}41$</span></span> (160, 70)<span><span class="math inline">$q_{2} 14\raisebox{-1pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{11pt}}\hspace{0.55pt}32$</span></span> (230, 70)<span><span class="math inline">$q_{2} 31\raisebox{-1pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{11pt}}\hspace{0.55pt}42$</span></span> (290, 70)<span><span class="math inline">$q_{2,3} 13\raisebox{-1pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{11pt}}\hspace{0.55pt}24$</span></span></p>
 <p>( 65,46)<span>(-2,1)<span>40</span></span> ( 72,46)<span>(0,1)<span>20</span></span> ( 80,46)<span>(2,1)<span>40</span></span></p>
@@ -111,7 +103,7 @@ Let $u, w \in S_n$ and suppose that $u \leq_k^q q^{\alpha}w$ in the quantum $k$-
 
 The interval on the left in Figure [\[F:k-Bruhat\]](#F:k-Bruhat){reference-type="ref" reference="F:k-Bruhat"} is a minimal interval in the quantum $5$-Bruhat order in $S_8$. Figure [2](#F:more_minimal){reference-type="ref" reference="F:more_minimal"} displays two minimal intervals in quantum $k$-Bruhat order on $S_5[q]$ for $k=2,3$.
 
-<figure id="F:more_minimal" data-latex-placement="htb">
+<figure id="F:more_minimal">
 <div class="picture">
 <p>(100,110)(-15,0) (13,0)<span><embed src="q-int1.eps" /></span> (25,100)<span><span class="math inline">$q_{1,5}q_{2,4}12\raisebox{-0.5pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{9pt}}\hspace{0.55pt}354$</span></span> (-15, 75)<span><span class="math inline">$q_{2,5}52\raisebox{-0.5pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{9pt}}\hspace{0.55pt}314$</span></span> (38, 75)<span><span class="math inline">$q_{1,5}15\raisebox{-0.5pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{9pt}}\hspace{0.55pt}324$</span></span> (-15, 50)<span><span class="math inline">$q_{2,5}51\raisebox{-0.5pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{9pt}}\hspace{0.55pt}324$</span></span> (38, 50)<span><span class="math inline">$q_{1,5}14\raisebox{-0.5pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{9pt}}\hspace{0.55pt}325$</span></span> ( 0, 25)<span><span class="math inline">$54\raisebox{-0.5pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{9pt}}\hspace{0.55pt}321$</span></span> (38, 25)<span><span class="math inline">$q_{1,5}13\raisebox{-0.5pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{9pt}}\hspace{0.55pt}425$</span></span> ( 0, 0)<span><span class="math inline">$53\raisebox{-0.5pt}{\hspace{0.55pt}\color{magenta}\rule{0.75pt}{9pt}}\hspace{0.55pt}421$</span></span></p>
 </div>
@@ -126,28 +118,23 @@ The interval on the left in Figure [\[F:k-Bruhat\]](#F:k-Bruhat){reference-type
 As for Corollary [\[C:classical-schubert-times-powersum\]](#C:classical-schubert-times-powersum){reference-type="ref" reference="C:classical-schubert-times-powersum"}, we derive the quantum Murnaghan--Nakayama formula from an intermediate result describing the quantum product of a Schubert class ${\mathfrak S}_u$ by a quantum hook Schur polynomial $s_{(b, 1^{a-1})}^q(x_1,\dotsc,x_k)$.
 
 ::: theorem
-[]{#thm:q_hook_product label="thm:q_hook_product"} Let $u \in S_n$ , $a \leq k$ and $b \leq n-k$. Then $$\begin{equation*}
-        {\mathfrak S}_u
+[]{#thm:q_hook_product label="thm:q_hook_product"} Let $u \in S_n$ , $a \leq k$ and $b \leq n-k$. Then $${\mathfrak S}_u
         \ast
         s^q_{(b,1^{a-1})} (x_1, \dots, x_k)
         = \sum
         \left(\begin{smallmatrix} s(wu^{-1})-1 \\ \mathop{\mathrm{ht}}(wu^{-1})-a \end{smallmatrix}\right)
         q^\alpha
-        {\mathfrak S}_{w}\,,
-\end{equation*}$$ the sum over all minimal intervals $[u,  q^{\alpha}w]_k^q$ such that $\ell(q^\alpha w) - \ell(u)= a{+}b{-}1$.
+        {\mathfrak S}_{w}\,,$$ the sum over all minimal intervals $[u,  q^{\alpha}w]_k^q$ such that $\ell(q^\alpha w) - \ell(u)= a{+}b{-}1$.
 :::
 
 The proof depends on Theorem [\[Th:nonZero\]](#Th:nonZero){reference-type="ref" reference="Th:nonZero"} and Lemma [\[L:Quantum_is_Classical\]](#L:Quantum_is_Classical){reference-type="ref" reference="L:Quantum_is_Classical"}, which will be proved in subsequent sections.
 
 ::: proof
-*Proof.* For $u,w \in S_n$, a partition $\lambda$, $k \in {\mathbb N}$ with $1\leq k$ and $\alpha\in {\mathbb N}^{n-1}$, define quantum Littlewood--Richardson coefficients $C^{q^\alpha w}_{u,v(\lambda,k)}\in q^\alpha {\mathbb N}$ by $$\begin{equation}
-        \label{eq-definition-Cq}
+*Proof.* For $u,w \in S_n$, a partition $\lambda$, $k \in {\mathbb N}$ with $1\leq k$ and $\alpha\in {\mathbb N}^{n-1}$, define quantum Littlewood--Richardson coefficients $C^{q^\alpha w}_{u,v(\lambda,k)}\in q^\alpha {\mathbb N}$ by $$\label{eq-definition-Cq}
         {\mathfrak S}_u \ast s^q_\lambda(x_1, \ldots, x_k)
-        \ =\ \sum_{q^\alpha w \in S_n[q]} C^{q^\alpha w}_{u,v(\lambda,k)} {\mathfrak S}_w\,.
-\end{equation}$$ We must prove that
+        \ =\ \sum_{q^\alpha w \in S_n[q]} C^{q^\alpha w}_{u,v(\lambda,k)} {\mathfrak S}_w\,.$$ We must prove that
 
-$$\begin{equation*}
-        C^{q^\alpha w}_{u,v((b, 1^{a-1}),k)}\ =\ 
+$$C^{q^\alpha w}_{u,v((b, 1^{a-1}),k)}\ =\ 
         \begin{cases}
             q^\alpha \left(\begin{smallmatrix} s(wu^{-1})-1 \\ \mathop{\mathrm{ht}}(wu^{-1})-a \end{smallmatrix}\right),
             &
@@ -161,55 +148,43 @@ $$\begin{equation*}
             \begin{array}[t]{lr}
                 \text{otherwise.}
             \end{array}
-        \end{cases}
-\end{equation*}$$
+        \end{cases}$$
 
-Suppose that $[u, q^{\alpha}w]_k^q$ is a minimal interval with $\ell(q^\alpha w) - \ell(u) = a{+}b{-}1$. By Theorem [\[Th:nonZero\]](#Th:nonZero){reference-type="ref" reference="Th:nonZero"}, there exists a hook partition $\gamma$ with $|\gamma| = \ell(q^\alpha w) - \ell(u)$ and $C^{q^\alpha w}_{u,v(\gamma,k)} \neq 0$. By Lemma [\[L:Quantum_is_Classical\]](#L:Quantum_is_Classical){reference-type="ref" reference="L:Quantum_is_Classical"}, there exist permutations $y, z \in S_n$ satisfying $$\begin{equation}
-        \label{properties-of-y-and-z}
+Suppose that $[u, q^{\alpha}w]_k^q$ is a minimal interval with $\ell(q^\alpha w) - \ell(u) = a{+}b{-}1$. By Theorem [\[Th:nonZero\]](#Th:nonZero){reference-type="ref" reference="Th:nonZero"}, there exists a hook partition $\gamma$ with $|\gamma| = \ell(q^\alpha w) - \ell(u)$ and $C^{q^\alpha w}_{u,v(\gamma,k)} \neq 0$. By Lemma [\[L:Quantum_is_Classical\]](#L:Quantum_is_Classical){reference-type="ref" reference="L:Quantum_is_Classical"}, there exist permutations $y, z \in S_n$ satisfying $$\label{properties-of-y-and-z}
         y\ \leq_k\ z,
         \quad
         \ell(z) - \ell(y)\ =\ \ell(q^\alpha w) - \ell(u) = a{+}b{-}1,
         \quad
-        zy^{-1}\ =\ wu^{-1},
-\end{equation}$$ and such that $$\begin{equation}
-        \label{eq-leung-li-reduction}
+        zy^{-1}\ =\ wu^{-1},$$ and such that $$\label{eq-leung-li-reduction}
         C^{q^\alpha w}_{u,v(\mu,k)}\ =\  q^\alpha c^z_{y,v(\mu,k)}
-        \quad \text{for all partitions $\mu$ with $|\mu| = a{+}b{-}1$\,.}
-\end{equation}$$ This implies that $z y^{-1}$ is a minimal permutation, since $$\begin{align*}
+        \quad \text{for all partitions $\mu$ with $|\mu| = a{+}b{-}1$\,.}$$ This implies that $z y^{-1}$ is a minimal permutation, since $$\begin{aligned}
         \ell(z) - \ell(y)
         = \ell(q^\alpha w) - \ell(u)
         = \#\mathop{\mathrm{supp}}(w u^{-1}) - s(w u^{-1})
         = \#\mathop{\mathrm{supp}}(z y^{-1}) - s(z y^{-1}),
-\end{align*}$$ where the middle equality follows from the assumption that $[u, q^{\alpha}w]_k^q$ is minimal. Then $$\begin{equation}
-        C^{q^\alpha w}_{u,v((b, 1^{a-1}),k)}
+    
+\end{aligned}$$ where the middle equality follows from the assumption that $[u, q^{\alpha}w]_k^q$ is minimal. Then $$C^{q^\alpha w}_{u,v((b, 1^{a-1}),k)}
         \ =\ q^\alpha c^z_{y,v((b, 1^{a-1}),k)}
         \ =\ q^\alpha \left(\begin{smallmatrix} s(zy^{-1})-1 \\ \mathop{\mathrm{ht}}(zy^{-1})-a \end{smallmatrix}\right)
-        \ =\ q^\alpha \left(\begin{smallmatrix} s(wu^{-1})-1 \\ \mathop{\mathrm{ht}}(wu^{-1})-a \end{smallmatrix}\right),
-\end{equation}$$ where the first equality follows from [\[eq-leung-li-reduction\]](#eq-leung-li-reduction){reference-type="eqref" reference="eq-leung-li-reduction"} and the second equality follows from Proposition [\[P:classical_hook\]](#P:classical_hook){reference-type="ref" reference="P:classical_hook"} and that $z y^{-1}$ is a minimal permutation.
+        \ =\ q^\alpha \left(\begin{smallmatrix} s(wu^{-1})-1 \\ \mathop{\mathrm{ht}}(wu^{-1})-a \end{smallmatrix}\right),$$ where the first equality follows from [\[eq-leung-li-reduction\]](#eq-leung-li-reduction){reference-type="eqref" reference="eq-leung-li-reduction"} and the second equality follows from Proposition [\[P:classical_hook\]](#P:classical_hook){reference-type="ref" reference="P:classical_hook"} and that $z y^{-1}$ is a minimal permutation.
 
 Conversely, suppose $C^{q^\alpha w}_{u,v((b, 1^{a-1}), k)} \neq 0$. By Lemma [\[L:Quantum_is_Classical\]](#L:Quantum_is_Classical){reference-type="ref" reference="L:Quantum_is_Classical"}, there exist $y, z \in S_n$ satisfying [\[properties-of-y-and-z\]](#properties-of-y-and-z){reference-type="eqref" reference="properties-of-y-and-z"} and [\[eq-leung-li-reduction\]](#eq-leung-li-reduction){reference-type="eqref" reference="eq-leung-li-reduction"}. Setting $\mu = (b, 1^{a-1})$ in [\[eq-leung-li-reduction\]](#eq-leung-li-reduction){reference-type="eqref" reference="eq-leung-li-reduction"} gives
 
-$$\begin{equation}
-        C^{q^\alpha w}_{u,v((b, 1^{a-1}),k)}
-        \ =\ q^\alpha c^z_{y,v((b, 1^{a-1}),k)}.
-\end{equation}$$ Since the left hand side is assumed to be nonzero, we have that $c^z_{y,v((b, 1^{a-1}),k)}$ is nonzero. It now follows from Proposition [\[P:classical_hook\]](#P:classical_hook){reference-type="ref" reference="P:classical_hook"} that $z y^{-1}$ is a minimal permutation so that $$\begin{equation*}
-        \ell(q^\alpha w) - \ell(u)
+$$C^{q^\alpha w}_{u,v((b, 1^{a-1}),k)}
+        \ =\ q^\alpha c^z_{y,v((b, 1^{a-1}),k)}.$$ Since the left hand side is assumed to be nonzero, we have that $c^z_{y,v((b, 1^{a-1}),k)}$ is nonzero. It now follows from Proposition [\[P:classical_hook\]](#P:classical_hook){reference-type="ref" reference="P:classical_hook"} that $z y^{-1}$ is a minimal permutation so that $$\ell(q^\alpha w) - \ell(u)
         = \ell(z) - \ell(y)
         = \#\mathop{\mathrm{supp}}(z y^{-1}) - s(z y^{-1})
-        = \#\mathop{\mathrm{supp}}(w u^{-1}) - s(w u^{-1}),
-\end{equation*}$$ where the first and last equalities follow from [\[properties-of-y-and-z\]](#properties-of-y-and-z){reference-type="eqref" reference="properties-of-y-and-z"}. Thus, $[u, q^\alpha w]_k^q$ is a minimal interval such that $\ell(q^\alpha w) - \ell(u) = a{+}b{-}1$. ◻
+        = \#\mathop{\mathrm{supp}}(w u^{-1}) - s(w u^{-1}),$$ where the first and last equalities follow from [\[properties-of-y-and-z\]](#properties-of-y-and-z){reference-type="eqref" reference="properties-of-y-and-z"}. Thus, $[u, q^\alpha w]_k^q$ is a minimal interval such that $\ell(q^\alpha w) - \ell(u) = a{+}b{-}1$. ◻
 :::
 
 The following was conjectured in [@Morrison]. It follows from Theorem [\[thm:q_hook_product\]](#thm:q_hook_product){reference-type="ref" reference="thm:q_hook_product"} in the same way that Corollary [\[C:classical-schubert-times-powersum\]](#C:classical-schubert-times-powersum){reference-type="ref" reference="C:classical-schubert-times-powersum"} follows from Proposition [\[P:classical_hook\]](#P:classical_hook){reference-type="ref" reference="P:classical_hook"}, and is the signature result in this paper.
 
 ::: corollary
-[]{#C:quantumMN label="C:quantumMN"} Let $u \in S_n$. Then $$\begin{equation*}
-        {\mathfrak S}_u \ast p_r^q(x_1,\dotsc,x_k) = \sum (-1)^{\mathop{\mathrm{ht}}(wu^{-1})+1} q^\alpha {\mathfrak S}_{w}
-\end{equation*}$$ the sum over all minimal intervals $[u, q^{\alpha}w]_k^q$ of rank $r$ such that $wu^{-1}$ is a single cycle.
+[]{#C:quantumMN label="C:quantumMN"} Let $u \in S_n$. Then $${\mathfrak S}_u \ast p_r^q(x_1,\dotsc,x_k) = \sum (-1)^{\mathop{\mathrm{ht}}(wu^{-1})+1} q^\alpha {\mathfrak S}_{w}$$ the sum over all minimal intervals $[u, q^{\alpha}w]_k^q$ of rank $r$ such that $wu^{-1}$ is a single cycle.
 :::
 
 ::: example
-[]{#Ex:MN_example label="Ex:MN_example"} In $qH^*{\mathbb F}\ell_8$, if $u=68235741$, then the product ${\mathfrak S}_{u}\ast p^q_4(x_1,\dotsc,x_5)$ is $$\begin{gather*}
+[]{#Ex:MN_example label="Ex:MN_example"} In $qH^*{\mathbb F}\ell_8$, if $u=68235741$, then the product ${\mathfrak S}_{u}\ast p^q_4(x_1,\dotsc,x_5)$ is $$\begin{gathered}
       {\mathfrak S}_{(2,3,5,7,4)u}
     + {\mathfrak S}_{(2,4,3,5,7)u}
     + {\mathfrak S}_{(3,5,6,7,4)u}
@@ -233,7 +208,7 @@ The following was conjectured in [@Morrison]. It follows from Theorem [\[thm:q
     + q_{2,8}{\mathfrak S}_{(1,7,5,6,8)u}
  
     -q_{2,8}q_{5,7}{\mathfrak S}_{(1,7,5,4,8)u} \,.
-\end{gather*}$$
+\end{gathered}$$
 
 Note that unlike in ordinary cohomology, this is not an identity among quantum Schubert polynomials ${\mathfrak S}^q_w(x)$, but rather among their images in the quotient ring ${\mathbb Z}[q][x]/I^q_n$.
 :::

@@ -6,7 +6,7 @@
   "sha256": "236704063f12c05e34426a59d228f8be807d7804dee54123f6de36eaeea93928",
   "bytes": 148906,
   "pages": 10,
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -71,7 +71,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 2,
-   "overlaid": 0,
+   "overlaid": 1,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -81,9 +81,10 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction.",
-     "prose_ratio": 0.988,
-     "coverage_ratio": 0.484,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.893,
+     "result": "overlaid",
+     "converter": "pandoc"
     }
    ]
   }

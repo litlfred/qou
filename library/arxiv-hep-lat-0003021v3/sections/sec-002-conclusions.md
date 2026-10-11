@@ -7,10 +7,10 @@ section_number: null
 pages: 19-20
 source_pdf: 0003021v3.pdf
 source_sha256: b35dfd9ab88b71d8
-text_source: latex
-latex_prose_ratio: 0.988
-latex_coverage_ratio: 1.0
 doc_brief: "Low-lying Eigenvalues of the QCD Dirac Operator at Finite Temperature — We compute the low-lying spectrum of the staggered Dirac operator above and below the ﬁnite temperature phase transition in"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 The purpose of this study has been to find the extent to which Random
 Matrix Theory may be able to describe low-lying eigenvalue distributions and

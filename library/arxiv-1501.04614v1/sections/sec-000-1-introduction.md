@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-3
 source_pdf: 1501.04614v1.pdf
 source_sha256: ebebcae0c1823217
-text_source: latex
-latex_prose_ratio: 0.983
-latex_coverage_ratio: 0.967
 doc_brief: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL II — We continue our study of the degree of the colored Jones polyn omial under knot cabling started in [8]."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 For a knot $K \subset S^3$, let $n(K)$ denote a tubular neighborhood of
 $K$ and let $M_K:=\overline{ S^3\setminus n(K)}$ denote the exterior of

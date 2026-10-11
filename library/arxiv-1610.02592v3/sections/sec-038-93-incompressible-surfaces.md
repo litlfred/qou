@@ -7,14 +7,15 @@ section_number: 9.3
 pages: 295-302
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.988
-latex_coverage_ratio: 0.809
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 We have proved that every compact oriented 3-manifold decomposes along essential spheres and discs, into some canonical pieces that do not contain essential spheres or discs anymore. 
 
 We would like to pursue this strategy with the next simplest surfaces, namely tori and annuli. To this purpose we define the important notion of \emph{incompressible} surface in a three-manifold, which applies to all surfaces of non-positive Euler characteristic.
+
 
 \subsection{Incompressible surfaces}
 Throughout all this section $M$ denotes a compact orientable 3-manifold with (possibly empty) boundary. Let $S\subset M$ be a properly embedded orientable surface. A \emph{compressing disc} for $S$ is a disc $D\subset M$ with $\partial D = D \cap S$, such that $\partial D$ does not bound a disc in $S$. With this hypothesis, the surgery in Figure \ref{incompressible:fig} is called a \emph{compression}: it transform $S$ into a new surface $S'\subset M$ which is simpler than $S$.\index{compressing disc}
@@ -66,6 +67,7 @@ If $S\subset M$ is incompressible, every component of $\partial S$ is non-trivia
 If a component of $\partial S$ is trivial in $\partial M$, it bounds a disc $D\subset \partial M$ there. By taking an innermost one we get $D\cap S = \partial D$, and by pushing $D$ inside $M$ we find a compressing disc for $S$.
 \end{proof}
 
+
 \subsection{Tori}
 The first closed surface to look at is the torus.
 
@@ -91,6 +93,7 @@ If $T$ is not incompressible, it compresses along a disc $D$. The result of the 
 
 If $M=S^3$ the case (3) can be excluded: if $T$ is contained in a ball $B$, then it bounds a solid torus ``on the outside'' using the complementary ball $S^3\setminus B$. We will also exclude the case (1) when we show that $S^3$ contains no incompressible surfaces.
 
+
 \subsection{$\partial$-incompressible surfaces}
 There is of course also a $\partial$-version of incompressibility. Let $S\subset M$ be a properly embedded orientable surface in a 3-manifold $M$. A \emph{$\partial$-compressing disc} for $S$ is a disc $D$ with $\partial D = \alpha \cup \beta$, where $\alpha$ lies in $S$ and $\beta$ in $\partial M$ as in Figure \ref{incompressible2:fig}-(left); we also require that there is no sub-disc $D'\subset S$ with $\partial D' = \alpha\cup \beta' $ and $\beta'\subset\partial S$. 
 The move in Figure \ref{incompressible2:fig} is a \emph{$\partial$-compression} and transforms $S$ into a surface $S'\subset M$ simpler than $S$:
@@ -106,6 +109,7 @@ A properly embedded connected orientable compact $S\subset M$ with $\chi(S)\leqs
 
 \begin{cor} Let $S\subset M$ be any properly embedded orientable surface. After $\partial$-compressing it a finite number of times it transforms into a disjoint union of spheres, discs, and $\partial$-incompressible surfaces.
 \end{cor}
+
 
 \subsection{Annuli}
 The first non-closed surface to look at is the annulus. Let a \emph{tube} be the tubular neighbourhood of a properly embedded arc.
@@ -138,6 +142,7 @@ As a corollary, we get a simple criterion for detecting incompressible and $\par
 \begin{cor} \label{A:non-parallel:cor}
 Let $A\subset M$ be a properly embedded annulus in an irreducible and $\partial$-irreducible 3-manifold. If the components of $\partial A$ are non-trivial and non-parallel in $\partial M$, the annulus $A$ is incompressible and $\partial$-incompressible.
 \end{cor}
+
 
 \subsection{Handlebodies}
 We study some examples. We investigate the incompressible and $\partial$-incompressible surfaces in the three-sphere and in the handlebodies. Recall that a ($\partial$)-incompressible surface is always compact, orientable, connected, properly embedded, and with non-positive Euler characteristic by hypothesis.
@@ -192,6 +197,7 @@ One easily sees that the only incompressible surface that this move can produce 
 \begin{warning}
 The handlebody $H_2$ contains many complicated properly embedded incompressible surfaces! However, these are all $\partial$-compressible. The main difference between $H_1$ and $H_2$ is that $\pi_1(H_2)=\matZ*\matZ$ is a free group of rank two and contains many free groups of arbitrarily high rank, so there is a lot of space for $\pi_1$-injective incompressible surfaces in $H_2$ with boundary (whose fundamental group is free).
 \end{warning}
+
 
 \subsection{Line bundles}
 We now turn to product line bundles. Recall that $S_g$ is the closed orientable surface of genus $g$. 

@@ -7,14 +7,15 @@ section_number: 1.7
 pages: 45-53
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.98
-latex_coverage_ratio: 0.818
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 Many nice topological spaces can be constructed iteratively starting from finitely many points and then attaching some discs of increasing dimension called \emph{cells}. When the topological space is a differentiable manifold one typically thickens the cells to \emph{handles}. 
 
 Cells and handles are beautifully introduced by Hatcher \cite{HAT} and Kosinksi \cite{K}, respectively.
+
 
 \subsection{Cell complexes}
 A \emph{finite cell complex} of dimension $n$ (briefly, a $n$-complex) is a topological space obtained iteratively in the following manner:
@@ -39,6 +40,7 @@ In particular, the space $X$ is connected if and only if $X^1$ is, and its funda
 A presentation for the fundamental group of a cell complex $X$ can be constructed as follows.
 If $x_0\in X^0$, we fix a maximal tree $T\subset X^1$ containing $x_0$ and equip the $k$ arcs in $X^1\setminus T$ with some arbitrary orientations. These arcs determine some generators $g_1,\ldots, g_k\in\pi_1(X,x_0)$. The boundary of a $2$-cell makes a circular path in $X^1$: every time it crosses an arc $g_i$ in some direction (entering from one side and exiting from the other) we write the corresponding letter $g_i^{\pm 1}$ and get a word. The $s$ two-cells produce $s$ word relations. We have constructed a presentation for $\pi_1(X)$.
 
+
 \subsection{Euler characteristic}
 The \emph{Euler characteristic} of a $n$-complex $X$ is the integer  \index{Euler characteristic}
 $$\chi (X) = \sum_{i=0}^n (-1)^i C_i$$
@@ -56,6 +58,7 @@ It is much harder to control homology under coverings. The Euler characteristic 
 
 \begin{teo} A closed differentiable manifold $M$ has a nowhere-vanishing vector field if and only if $\chi(M)=0$.
 \end{teo}
+
 
 \subsection{Aspherical cell-complexes}
 A finite cell complex is locally contractible and hence has a universal cover $\tilde X$. If $\tilde X$ is contractible the complex  $X$ is called \emph{aspherical}. \index{cell complex!aspherical cell complex}
@@ -112,6 +115,7 @@ The fundamental group of an aspherical manifold $M$ has no torsion.
 Up to passing to a cover, it suffices to consider the case $\pi_1(M) \isom \matZ/_{n\matZ}$ for some $n\geqslant 2$. This case is excluded because the cohomology of $M$ is isomorphic to the (suitably defined) cohomology of $\matZ/_{n\matZ}$, which has however infinite dimension.
 \end{proof}
 
+
 \subsection{Gluing portion of boundaries}
 Every compact differentiable $n$-manifold $M$ can be obtained topologically as a finite complex. The finite complex structure is however not designed to describe the smooth structure of $M$, and for that purpose it is better to replace $k$-cells with some thickened objects called \emph{$k$-handles}. These handles are $n$-discs glued iteratively along portions of their boundaries. Before describing them, we briefly explain how smooth manifolds can be glued along portions of their boundaries.
 
@@ -129,6 +133,7 @@ The glued manifold depends (up to diffeomorphism) only on the isotopy class of $
 \end{figure}
 
 
+
 \subsection{Handles} \label{handles:subsection}
 Let $M$ be a (possibly empty or disconnected) $n$-manifold with boundary and $0\leqslant k \leqslant n$. A \emph{$k$-handle} is a manifold $D^k\times D^{n-k}$ attached to $M$ along some diffeomorphism $\varphi\colon \partial D^k \times D^{n-k}\to Y\subset \partial M$, hence producing a new manifold $M'$. 
 
@@ -143,6 +148,7 @@ Let $M$ be a (possibly empty or disconnected) $n$-manifold with boundary and $0\
 For instance, a $0$-handle is a $D^0 \times D^n = D^n$ attached to nothing, since $\partial D^0 = \varnothing$. This means that attaching a 0-handle to $M$ consists of adding a disjoint disc $D^n$ to it. For instance, by attaching a 0-handle to the empty set we create a disc $D^n$ out of nothing. 
 
 A $1$-handle is a $D^1\times D^{n-1}$ attached along $\partial D^1 \times D^{n-1} = S^0 \times D^{n-1}$, that is two copies of $D^{n-1}$. Some examples in dimension $n=2,3$ are shown in Figure \ref{handles:fig}. A $2$-handle is a $D^2\times D^{n-2}$ attached along $\partial D^2 \times D^{n-2} = S^1\times D^{n-2}$. When $n=2$ this is a disc attached along its boundary, see Figure \ref{handles:fig}-(left).
+
 
 \subsection{Handle decompositions}
 A sequence of handle attachments \index{handle decomposition}
@@ -166,6 +172,7 @@ Every compact connected manifold $M$ has a handle decomposition with one $0$-han
 
 If $M$ has a handle decomposition with $n_i$ handles of index $i$ then
 $$\chi(M) = \sum_{i=0}^n (-1)^i n_i.$$
+
 
 \subsection{Triangulations} \label{triangulations:subsection}
 Instead of decomposing a manifold into handles, one may decide to decompose it into simplexes as in Figure \ref{Torus-triang:fig}. One such decomposition is called a triangulation: we now give a formal definition.
@@ -191,6 +198,7 @@ Handle decompositions are often more flexible and efficient than triangulations,
 
 On a simplicial complex $X$, the \emph{star} of a vertex $v$ is the set of all simplexes containing $v$ plus all their sub-simplexes; the \emph{link} of $v$ is the subset of the star consisting of the simplexes that do not contain $v$. Topologically, the star of $v$ is a closed neighbourhood of $v$ homeomorphic to a cone on its link.
 \index{star of a vertex} \index{link of a vertex}
+
 
 \subsection{Hypersurfaces and cohomology}
 The techniques introduced in this chapter furnish another characterisation of the first cohomology group of a manifold. Let $[X,Y]$ denote the homotopy classes of continuous maps $X \to Y$.
@@ -223,6 +231,7 @@ An oriented connected properly embedded hypersurface $S\subset M$ is separating 
 \begin{proof}
 The surface $S$ is separating if and only if $S \cdot \alpha = 0$ for every loop $\alpha$ transverse to $S$ (exercise). Since $\omega([S], [\alpha]) = S \cdot \alpha$ and $\omega$ is non-degenerate (see Section \ref{intersection:subsection}), this holds precisely when $[S]=0$.
 \end{proof}
+
 
 \subsection{Topological discs}
 Finally, we mention a purely topological theorem that will be used only at one point in this book, in Chapter \ref{automorfismi:chapter}.

@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-3
 source_pdf: 2205.01282v2.pdf
 source_sha256: 00f656afa60db838
-text_source: latex
-latex_prose_ratio: 0.887
-latex_coverage_ratio: 0.919
 doc_brief: "Witten-Reshetikhin-Turaev invariants and homological blocks for plumbed homology spheres — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed 3-manifolds."
+text_source: latex
+latex_prose_ratio: 0.965
+latex_coverage_ratio: 0.981
 ---
 []{#sec:intro label="sec:intro"}
 
@@ -33,7 +33,7 @@ In the above setting, we can state the conjecture of Gukov--Pei--Putrov--Vafa [
 In this paper, we prove this conjecture for a wide class of plumbing graphs.
 
 ::: thm
-[]{#thm:main label="thm:main"} [\[conj:GPPV\]](#conj:GPPV){reference-type="ref+label" reference="conj:GPPV"} is true for plumbing graphs depicted in [1](#fig:main){reference-type="ref+label" reference="fig:main"}.
+[]{#thm:main label="thm:main"} [\[conj:GPPV\]](#conj:GPPV){reference-type="ref" reference="conj:GPPV"} is true for plumbing graphs depicted in [1](#fig:main){reference-type="ref" reference="fig:main"}.
 :::
 
 <figure id="fig:main">
@@ -41,10 +41,10 @@ In this paper, we prove this conjecture for a wide class of plumbing graphs.
 <figcaption></figcaption>
 </figure>
 
-Here we remark that a plumbing graph has the form depicted in [1](#fig:main){reference-type="ref+label" reference="fig:main"} if and only if $\abs{\overline{v}} + 2 - \deg(v) > 0$ for any vertex $v \in V$, where $\deg(v)$ is the degree of $v$ and $\overline{v} \coloneqq \{ i \in V \mid \{i, v \} \in E, \, \deg(i) = 1 \}$.
+Here we remark that a plumbing graph has the form depicted in [1](#fig:main){reference-type="ref" reference="fig:main"} if and only if $\abs{\overline{v}} + 2 - \deg(v) > 0$ for any vertex $v \in V$, where $\deg(v)$ is the degree of $v$ and $\overline{v} \coloneqq \{ i \in V \mid \{i, v \} \in E, \, \deg(i) = 1 \}$.
 
-In a proof of [\[thm:main\]](#thm:main){reference-type="ref+label" reference="thm:main"}, the most difficult point is to prove the vanishing of weighted Gauss sums that appear in coefficients of negative degree in asymptotic expansions of homological blocks. The previous works [@BMM_high_depth; @MM] deal with this difficulty by direct calculations ([@BMM_high_depth Theorem 4.1],[@MM Proposition 4.2]). However, we prove it indirectly by using our asymptotic formula ([\[prop:Euler\--Maclaurin_poly\]](#prop:Euler--Maclaurin_poly){reference-type="ref+label" reference="prop:Euler--Maclaurin_poly"} and [\[cor:asymp_F(f; t)\]](#cor:asymp_F(f; t)){reference-type="ref+label" reference="cor:asymp_F(f; t)"}) and holomorphy of a rational function whose radial limits are WRT invariants. In a sense, our technique is a generalisation of the method of Lawrence--Zagier [@LZ pp.98, Proposition] using $L$-funcitons for periodic maps.
+In a proof of [\[thm:main\]](#thm:main){reference-type="ref" reference="thm:main"}, the most difficult point is to prove the vanishing of weighted Gauss sums that appear in coefficients of negative degree in asymptotic expansions of homological blocks. The previous works [@BMM_high_depth; @MM] deal with this difficulty by direct calculations ([@BMM_high_depth Theorem 4.1],[@MM Proposition 4.2]). However, we prove it indirectly by using our asymptotic formula ([\[prop:Euler\--Maclaurin_poly\]](#prop:Euler--Maclaurin_poly){reference-type="ref" reference="prop:Euler--Maclaurin_poly"} and [\[cor:asymp_F(f; t)\]](#cor:asymp_F(f; t)){reference-type="ref" reference="cor:asymp_F(f; t)"}) and holomorphy of a rational function whose radial limits are WRT invariants. In a sense, our technique is a generalisation of the method of Lawrence--Zagier [@LZ pp.98, Proposition] using $L$-funcitons for periodic maps.
 
-This paper will be organised as follows. In [\[sec:fund_data\]](#sec:fund_data){reference-type="ref+label" reference="sec:fund_data"}, we prepare some notations for plumbing graphs $\Gamma$ which we use throughout this paper. In [\[sec:WRT\]](#sec:WRT){reference-type="ref+label" reference="sec:WRT"}, we calculate WRT invariants for plumbed homology spheres $M(\Gamma)$. The point of our calculation is to represent WRT invariants as a sum for the submatrix of $W^{-1}$ with vertices whose degrees are greater than $2$. In [\[sec:HB_false\]](#sec:HB_false){reference-type="ref+label" reference="sec:HB_false"}, we express homological blocks as false theta functions. Then we can study the asymptotic expansions of homological blocks as $q \to \zeta_k$. To calculate asymptotic expansions, we develop a formula in [\[subsec:Euler\--Maclaurin\]](#subsec:Euler--Maclaurin){reference-type="ref+label" reference="subsec:Euler--Maclaurin"} by the Euler--Maclaurin summation formula based on Zagier [@Zagier_asymptotic Equation (44)].
+This paper will be organised as follows. In [\[sec:fund_data\]](#sec:fund_data){reference-type="ref" reference="sec:fund_data"}, we prepare some notations for plumbing graphs $\Gamma$ which we use throughout this paper. In [\[sec:WRT\]](#sec:WRT){reference-type="ref" reference="sec:WRT"}, we calculate WRT invariants for plumbed homology spheres $M(\Gamma)$. The point of our calculation is to represent WRT invariants as a sum for the submatrix of $W^{-1}$ with vertices whose degrees are greater than $2$. In [\[sec:HB_false\]](#sec:HB_false){reference-type="ref" reference="sec:HB_false"}, we express homological blocks as false theta functions. Then we can study the asymptotic expansions of homological blocks as $q \to \zeta_k$. To calculate asymptotic expansions, we develop a formula in [\[subsec:Euler\--Maclaurin\]](#subsec:Euler--Maclaurin){reference-type="ref" reference="subsec:Euler--Maclaurin"} by the Euler--Maclaurin summation formula based on Zagier [@Zagier_asymptotic Equation (44)].
 
-In [\[subsec:asymp_Gauss\]](#subsec:asymp_Gauss){reference-type="ref+label" reference="subsec:asymp_Gauss"}, we develop the important asymptotic formula, which plays a central role in proving our main theorem. This formula asserts that the same factors appear in the asymptotic expansions of homological blocks and rational functions whose radial limits are WRT invariants. Finally, we prove our main theorem in [\[sec:proof_main\]](#sec:proof_main){reference-type="ref+label" reference="sec:proof_main"}.
+In [\[subsec:asymp_Gauss\]](#subsec:asymp_Gauss){reference-type="ref" reference="subsec:asymp_Gauss"}, we develop the important asymptotic formula, which plays a central role in proving our main theorem. This formula asserts that the same factors appear in the asymptotic expansions of homological blocks and rational functions whose radial limits are WRT invariants. Finally, we prove our main theorem in [\[sec:proof_main\]](#sec:proof_main){reference-type="ref" reference="sec:proof_main"}.

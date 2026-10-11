@@ -8,454 +8,71 @@ pages: 40-43
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
 doc_brief: "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and"
+text_source: latex
+latex_prose_ratio: 0.934
+latex_coverage_ratio: 0.971
 ---
-section we prove Theorem B, which is a categoriﬁcation of the motivic wall crossing
-formula (8). In Section 6.4 we will prove that this isomorphism can be r ealised in
-terms of multiplication in the cohomological Hall algebra. Even without considering
-the CoHA we can still prove that there is some isomorphism (10). The mere
-existence of this isomorphism is enough for many applications.
-Fix a dimension vector d ∈ NQ0. Denote by HN d the set of Harder–Narasimhan
-types for d, that is, sequences d1, . . . ,ds ∈ NQ0\{0} such that the slopes Ξζ (d1), . . . ,Ξζ (ds)
-are strictly decreasing and ∑ s
-i=1 di = d. Recall that by [37, Prop.3.4], the moduli
-stack Md has a stratiﬁcation by locally closed substacks
-(64) Md =
-∐
-d∈HNd
-Mζ
-d
-where Mζ
-d is the stack of representations which have Harder–Narasimhan ty pe d
-with respect to the stability condition ζ.
-This is a stratiﬁcation in the following weak sense. We deﬁne similarly to
-[37, Def.3.6] a partial ordering ≤′ on HN d. First, given d = ( d1, . . . ,ds) ∈
-HNd we deﬁne P (d) to be the convex hull in C of the origin and the points
-(∑ k
-l=1|dl|, Ξζ (dl)|dl|) for 1 ≤ l ≤ s. As in [37, Prop.3.7] it is easy to show that for
-a representation ρ of Harder–Narasimhan type
-d, the polytope P (d) is the convex
-hull of 0 ,ζ · d andζ · dim(ρ′) for all representations ρ′ ⊂ρ with slope greater than
-Ξζ (d). We write e ≤′ d if the polygon P (d) is contained in P (e). The condition
-on a representation ρ to have a subrepresentation ρ′ ⊂ρ of ﬁxed dimension d′ is
-closed, since the morphism Md′,d − d′ → Md is proper. It follows that
-Mζ
-d ⊂
-⋃
-e∈HNd
-e≤′d
-Mζ
-e.
-Each of the stacks Mζ
-d can be written as a global quotient stack
-Mζ
-d
-∼
-= Xζ
-d/Gd
-where Xζ
-d ⊂ Xd is the subspace of representations preserving the ﬂag deﬁned by d,
-such that each of the associated dr-dimensional subquotients is ζ-semistable, and
-Gd ⊂ Gd is the subgroup preserving the same ﬂag. Each of these stacks co mes
-with a map pd : Mζ
-d → M d sending a representation to its semisimpliﬁcation, and
-an inclusion id : Mζ
-d → Md given by forgetting the Harder-Narasimhan ﬁltration.
-COHAS AND QUANTUM ENVELOPING ALGEBRAS 41
-The diagram
-Mζ
-d
-pd
-/d15/d15
-id /d47/d47 Md
-pd
-/d125/d125④④④④④④④④④
-Md
-commutes. In the following theorem, the map qζ
-µ is as deﬁned in (46).
-Theorem 4.12. Let ζ be a Bridgeland stability condition on Q, not necessarily
-generic. Then there are isomorphisms
-(65) H
-(
-p!φ mon
-Tr(W )IC M(Q)
-)
-∼
-= ⊠
-tw
-⊕,−∞
-µ
-− →∞ H
-(
-qζ
-µ ,!pζ
-µ ,!φ mon
-Tr(W )ζ
-µ
-IC Mζ -ss
-µ
-(Q)
-)
-and
-(66) H
-(
-p∗φ mon
-Tr(W )IC M(Q)
-)
-∼
-= ⊠
-tw
-⊕,∞
-µ
-− →−∞ H
-(
-qζ
-µ ,∗pζ
-µ ,∗φ mon
-Tr(W )ζ
-µ
-IC Mζ -ss
-µ
-(Q)
-)
-.
-Assume in addition that ζ is generic. Then there are isomorphisms
-(67) H
-(
-p!φ mon
-Tr(W )IC M(Q)
-)
-∼
-= ⊠
-tw
-⊕,−∞
-µ
-− →∞ Sym⊠⊕
-(
-qζ
-µ ,!BPSζ
-W,µ ⊗ H(BC*)∨
-vir
-)
-and
-(68) H
-(
-p∗φ mon
-Tr(W )IC M(Q)
-)
-∼
-= ⊠
-tw
-⊕,∞
-µ
-− →−∞ Sym⊠⊕
-(
-qζ
-µ ,∗BPSζ
-W,µ ⊗ H(BC*)vir
-)
-.
-Proof. As in the proof of Theorem 4.10 we only need to prove the case for wh ich
-W = 0 and then we can deduce the general case from the fact that mo nodromic
-vanishing cycle functors are exact, and commute with proper maps and the relevant
-monoidal structures. We ﬁrst prove that the isomorphism (65) ex ists. Fix a d ∈
-NQ0 . Then if we complete ≥′ to a total ordering ≥ of HN d and deﬁne, for each
-d ∈ HNd,
-Mζ
-≤
-d :=
-⋃
-e≤d
-Mζ
-e
-Mζ
-<
-d :=
-⋃
-e<d
-Mζ
-e
-then Mζ
-≤
-d ⊂ Md is a closed embedding, and Mζ
-d ⊂ Mζ
-≤
-d is an open embedding
-with complement Mζ
-<
-d ⊂ Mζ
-≤
-d. We denote by
-id : Mζ
-d֒→Md(69)
-i<d : Mζ
-<
-d֒→Md(70)
-i≤d : Mζ
-≤
-d֒→Md(71)
-the natural inclusions. We will show that all of the terms in the followin g distin-
-guished triangle are pure, and that the connecting maps are zero, and furthermore
-that the triangle is split:
-(72) H
-(
-pd,!i
-d,!QMζ
-d
-)
-→ H
-(
-pd,!i≤d,!QMζ
-≤
-d
-)
-→ H
-(
-pd,!i<d,!QMζ
-<
-d
-)
-→ .
-42 BEN DA VISON AND SVEN MEINHARDT
-Fix
-d ∈ HNd. Consider the following commutative diagram
-Mζ
-d
-qd
-/d15/d15
-id /d47/d47 Md
-pd
-/d15/d15
-Xζ
-d/(Gd1 × . . . × Gds)
-q2, d /d47/d47
-q1, d
-/d53/d53❥❥❥❥❥❥❥❥❥❥❥❥❥❥❥❥❥❥❥
-Mζ -ss
-d1 × . . . × Mζ -ss
-ds
-pζ
-d1 ×...×pζ
-ds
-/d15/d15
-Mζ -ss
-d1 × . . . × Mζ -ss
-ds
-qζ
-d1 ×...×qζ
-ds
-/d15/d15
-Md1 × . . . × Mds
-⊕ /d47/d47 Md
-where q1,d is an aﬃne ﬁbration of relative dimension
-f1(d) :=
-∑
-1≤r<r ′≤s
-dr · dr′
-and q2,d is an aﬃne ﬁbration of relative dimension
-f2(d) :=
-∑
-1≤r<r ′≤s
-∑
-a∈Q1
-dr′
-s(a) dr
-t(a) .
-We deﬁne
-(73) (
-d, d) := f1(d) − f2(d).
-For f ∈ NQ0 we deﬁne f · d =∑
-r≤s f · dr. Fix n, and let f ≫ 0. Then since there
-are isomorphisms
-Hn
-(
-pd,!i
-d,!QMd
-)
-∼
-= Hn
-(
-⊕!(qζ
-d1 × . . . × qζ
-ds)!(pζ
-d1 × . . . × pζ
-ds)!L−(
-d,d)
-Mζ -ss
-d1 ×...×Mζ -ss
-ds
-)
-∼
-= Hn
-(
-⊕!(qζ
-d1 × . . . × qζ
-ds)!(πζ
-f ,d1 × . . . ×πζ
-f ,ds)!L−(
-d,d)−f ·d
-Mζ
-f , d1 ×...×Mζ
-f , ds
-)
-the complex Hn
-(
-pd,!i
-d,!QMd
-)
-is pure, by properness of qζ
-dr , πζ
-f ,dr and ⊕. The
-claim regarding the distinguished triangles (72) then follows by induct ion, and
-semisimplicity of the category of pure mixed Hodge modules. Taking ca re of the
-twists, we calculate
-H (p!IC M(Q)) = H
-(
-p!L(d,d)/2
-M
-)(74)
-∼
-=
-⨁
-d∈HN
-H
-(
-pd,!id,!L(d,d)/2
-Md
-)
-∼
-=
-⨁
-(d1,...,ds)∈HN
-qζ
-d1,! H
-(
-pζ
-d1,!QMζ -ss
-d1
-)
-⊠⊕ . . . ⊠⊕ qζ
-ds,! H
-(
-pζ
-ds,!QMζ -ss
-ds
-)
-⊗ L−(
-d,d)+(d,d)/2
-∼
-=
-⨁
-(d1,...,ds)∈HN
-qζ
-ds,! H
-(
-pζ
-ds,!IC Mζ -ss
-ds
-(Q)
-)
-⊠tw
-⊕ . . . ⊠tw
-⊕ qζ
-d1,! H
-(
-pζ
-d1,!IC Mζ -ss
-d1
-(Q)
-)
-∼
-=⊠
-tw
-⊕,−∞
-µ
-− →∞qζ
-µ ,! H
-(
-pζ
-µ ,!IC Mζ -ss
-µ
-(Q)
-)
-.
-COHAS AND QUANTUM ENVELOPING ALGEBRAS 43
-This completes the proof of the ﬁrst part of the theorem: since pζ
-µ is approximated
-by proper maps, and qζ
-µ is proper, there are isomorphisms
-qζ
-µ ,! H(pζ
-µ ,!IC Mζ -ss
-µ
-(Q)) ∼
-= H(qζ
-µ ,!pζ
-µ ,!IC Mζ -ss
-µ
-(Q))
-as required.
-Since qζ
-µ : Mζ -ss
-µ → Mµ is a morphism of monoids, qζ
-µ ,! is a symmetric monoidal
-functor. If ζ is generic, we may then apply Theorem 4.10 at each slope µ ∈
-(−∞, ∞), to deduce (67). Finally we prove that there are isomorphisms (66 ) and
-(68). Note that it is enough to construct the restrictions of thes e isomorphisms
-to each space Md. Restricting to this component, there are ﬁnitely many ten-
-sor products of sheaves on the left hand side and the right hand sid e of (66) and
-(68), involving H(pd′,∗IC Md′ (Q)) and H(pζ
-d′,∗IC Mζ -ss
-d′
-(Q)) for d′ ∈ Λζ
-µ satisfying
-d′ ≤ d. Then the isomorphisms are given by taking the Verdier duals of (65) and
-(67) respectively, by Remarks 2.15 and 3.9. □
-Arguing as in the proof of Theorem 4.10, using properness of qζ and approxima-
-tion of pζ
-µ by proper maps for the relevant base change isomorphisms, we ded uce
-the corollary
-Corollary 4.13. Letζ be a Bridgeland stability condition for Q, not necessarily
-assumed to be generic. Then there is an isomorphism of NQ0 -graded monodromic
-mixed Hodge structures
-Hc(MS , ICW )∨ ∼
-= ⊠
-tw
-+,∞
-µ
-− →−∞ Hc
-(
-Mζ -ss,S
-µ , ICζ
-W,µ
-) ∨
-ifζ is generic, we may combine this isomorphism with the absolut e integrality iso-
-morphisms for each slope µ (Theorem A) to obtain the isomorphism
-Hc(MS , ICW )∨ ∼
-= ⊠
-tw
-+,∞
-µ
-− →−∞ Sym⊠+
-(
-H(BC*)vir ⊗ BPSζ ,S
-µ
-)
-.
-Remark 4.14. In the case W = 0, and S = CQ−mod we obtain the isomorphism
-(75) H ( M, IC M(Q)) ∼
-= ⊠
-tw
-+,∞
-µ
-− →−∞ H
-(
-Mζ -ss
-µ , IC Mζ -ss
-µ
-(Q)
-)
-.
-The existence of such an isomorphism is proved by Franzen and Reineke in [17] via a
-vanishing result for even cohomology, and before that for th e case of a Dynkin quiver
-which is not an orientation of E8 by Rimanyi in [38], where this result is a corollary
-of the existence of a Poincar´ e–Birkhoﬀ–Witt isomorphism f or hypercohomology.
+[]{#cwcfSec label="cwcfSec"} In this section we prove Theorem [\[CWCT\]](#CWCT){reference-type="ref" reference="CWCT"}, which is a categorification of the motivic wall crossing formula ([\[WCI\]](#WCI){reference-type="ref" reference="WCI"}). In Section [\[CWCF\]](#CWCF){reference-type="ref" reference="CWCF"} we will prove that this isomorphism can be realised in terms of multiplication in the cohomological Hall algebra. Even without considering the CoHA we can still prove that there is *some* isomorphism ([\[gthmd\]](#gthmd){reference-type="ref" reference="gthmd"}). The mere existence of this isomorphism is enough for many applications.
+
+Fix a dimension vector $\mathop{\mathrm{\mathbf{d}}}\in\mathbb{N}^{Q_0}$. Denote by $\mathop{\mathrm{HN}}_{\mathop{\mathrm{\mathbf{d}}}}$ the set of Harder--Narasimhan types for $\mathop{\mathrm{\mathbf{d}}}$, that is, sequences $\mathop{\mathrm{\mathbf{d}}}^1,\ldots,\mathop{\mathrm{\mathbf{d}}}^s\in\mathbb{N}^{Q_0}\setminus \{0\}$ such that the slopes $\Xi^{\upzeta}(\mathop{\mathrm{\mathbf{d}}}^1),\ldots,\Xi^{\upzeta}(\mathop{\mathrm{\mathbf{d}}}^s)$ are strictly decreasing and $\sum_{i=1}^s \mathop{\mathrm{\mathbf{d}}}^i=\mathop{\mathrm{\mathbf{d}}}$.
+
+Recall that by [@Reineke_HN Prop.3.4], the moduli stack $\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}$ has a stratification by locally closed substacks $$\label{HNstrat}
+\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}=\coprod_{\overline{\mathop{\mathrm{\mathbf{d}}}}\in\mathop{\mathrm{HN}}_{\mathop{\mathrm{\mathbf{d}}}}}\mathfrak{M}_{\overline{\mathop{\mathrm{\mathbf{d}}}}}^{\upzeta}$$ where $\mathfrak{M}_{\overline{\mathop{\mathrm{\mathbf{d}}}}}^{\upzeta}$ is the stack of representations which have Harder--Narasimhan type $\overline{\mathop{\mathrm{\mathbf{d}}}}$ with respect to the stability condition $\upzeta$.
+
+This is a stratification in the following weak sense. We define similarly to [@Reineke_HN Def.3.6] a partial ordering $\leq'$ on $\mathop{\mathrm{HN}}_{\mathop{\mathrm{\mathbf{d}}}}$. First, given $\overline{\mathop{\mathrm{\mathbf{d}}}}=(\mathop{\mathrm{\mathbf{d}}}^1,\ldots,\mathop{\mathrm{\mathbf{d}}}^s)\in\mathop{\mathrm{HN}}_{\mathop{\mathrm{\mathbf{d}}}}$ we define $P(\overline{\mathop{\mathrm{\mathbf{d}}}})$ to be the convex hull in $\mathbb{C}$ of the origin and the points $(\sum_{l=1}^k\lvert \mathop{\mathrm{\mathbf{d}}}^l\rvert,\Xi^{\upzeta}(\mathop{\mathrm{\mathbf{d}}}^l)\lvert\mathop{\mathrm{\mathbf{d}}}^l\rvert)$ for $1\leq l\leq s$. As in [@Reineke_HN Prop.3.7] it is easy to show that for a representation $\uprho$ of Harder--Narasimhan type $\overline{\mathop{\mathrm{\mathbf{d}}}}$, the polytope $P(\overline{\mathop{\mathrm{\mathbf{d}}}})$ is the convex hull of $0,\upzeta\cdot\mathop{\mathrm{\mathbf{d}}}$ and $\upzeta\cdot\dim(\uprho')$ for all representations $\uprho'\subset \uprho$ with slope greater than $\Xi^{\upzeta}(\mathop{\mathrm{\mathbf{d}}})$. We write $\mathop{\mathrm{\mathbf{e}}}\leq'\mathop{\mathrm{\mathbf{d}}}$ if the polygon $P(\mathop{\mathrm{\mathbf{d}}})$ is contained in $P(\mathop{\mathrm{\mathbf{e}}})$. The condition on a representation $\uprho$ to have a subrepresentation $\uprho'\subset\uprho$ of fixed dimension $\mathop{\mathrm{\mathbf{d}}}'$ is closed, since the morphism $\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}-\mathop{\mathrm{\mathbf{d}}}'}\rightarrow \mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}$ is proper. It follows that $$\overline{\mathfrak{M}_{\overline{\mathop{\mathrm{\mathbf{d}}}}}^{\upzeta}}\subset \bigcup_{\substack{\overline{\mathop{\mathrm{\mathbf{e}}}}\in\mathop{\mathrm{HN}}_{\mathop{\mathrm{\mathbf{d}}}}\\ \overline{\mathop{\mathrm{\mathbf{e}}}}\leq' \overline{\mathop{\mathrm{\mathbf{d}}}}}}\mathfrak{M}_{\overline{\mathop{\mathrm{\mathbf{e}}}}}^{\upzeta}.$$ Each of the stacks $\mathfrak{M}^{\upzeta}_{\overline{\mathop{\mathrm{\mathbf{d}}}}}$ can be written as a global quotient stack $$\mathfrak{M}^{\upzeta}_{\overline{\mathop{\mathrm{\mathbf{d}}}}}\cong X^{\upzeta}_{\overline{\mathop{\mathrm{\mathbf{d}}}}}/G_{\overline{\mathop{\mathrm{\mathbf{d}}}}}$$ where $X^{\upzeta}_{\overline{\mathop{\mathrm{\mathbf{d}}}}}\subset X_{\mathop{\mathrm{\mathbf{d}}}}$ is the subspace of representations preserving the flag defined by $\overline{\mathop{\mathrm{\mathbf{d}}}}$, such that each of the associated $\mathop{\mathrm{\mathbf{d}}}^r$-dimensional subquotients is $\upzeta$-semistable, and $G_{\overline{\mathop{\mathrm{\mathbf{d}}}}}\subset G_{\mathop{\mathrm{\mathbf{d}}}}$ is the subgroup preserving the same flag. Each of these stacks comes with a map $p_{\overline{\mathop{\mathrm{\mathbf{d}}}}}\colon \mathfrak{M}^{\upzeta}_{\overline{\mathop{\mathrm{\mathbf{d}}}}}\rightarrow\mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}}$ sending a representation to its semisimplification, and an inclusion $i_{\overline{\mathop{\mathrm{\mathbf{d}}}}}\colon \mathfrak{M}^{\upzeta}_{\overline{\mathop{\mathrm{\mathbf{d}}}}}\rightarrow \mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}$ given by forgetting the Harder-Narasimhan filtration. The diagram $$\xymatrix{
+\mathfrak{M}_{\overline{\mathop{\mathrm{\mathbf{d}}}}}^{\upzeta}\ar[d]^{p_{\overline{\mathop{\mathrm{\mathbf{d}}}}}}\ar[r]^{i_{\overline{\mathop{\mathrm{\mathbf{d}}}}}}&\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}\ar[dl]^{p_{\mathop{\mathrm{\mathbf{d}}}}}\\
+\mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}}
+}$$ commutes. In the following theorem, the map $q^{\upzeta}_{\upmu}$ is as defined in ([\[qmudef\]](#qmudef){reference-type="ref" reference="qmudef"}).
+
+::: theorem
+[]{#gcDT label="gcDT"} Let $\upzeta$ be a Bridgeland stability condition on $Q$, not necessarily generic. Then there are isomorphisms $$\label{ngwc}
+\mathop{\mathrm{\mathcal{H}}}\left(p_!\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)}\mathcal{IC}_{\mathfrak{M}}(\mathbb{Q})\right)\cong\mbox{\larger[3]{$\boxtimes$}}_{\oplus, -\infty\xrightarrow{\upmu} \infty}^{\mathop{\mathrm{tw}}} \mathop{\mathrm{\mathcal{H}}}\left(q_{\upmu,!}^{\upzeta}p_{\upmu,!}^{\upzeta}\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)_{\upmu}^{\upzeta}}\mathcal{IC}_{\mathfrak{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}}}}(\mathbb{Q})\right)$$ and $$\label{ngwcnc}
+\mathop{\mathrm{\mathcal{H}}}\left(p_*\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)}\mathcal{IC}_{\mathfrak{M}}(\mathbb{Q})\right)\cong\mbox{\larger[3]{$\boxtimes$}}_{\oplus, \infty\xrightarrow{\upmu} -\infty}^{\mathop{\mathrm{tw}}} \mathop{\mathrm{\mathcal{H}}}\left(q_{\upmu,*}^{\upzeta}p_{\upmu,*}^{\upzeta}\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)_{\upmu}^{\upzeta}}\mathcal{IC}_{\mathfrak{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}}}}(\mathbb{Q})\right).$$
+
+Assume in addition that $\upzeta$ is generic. Then there are isomorphisms $$\label{gwPBW}
+\mathop{\mathrm{\mathcal{H}}}\left(p_!\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)}\mathcal{IC}_{\mathfrak{M}}(\mathbb{Q})\right)\cong \mbox{\larger[3]{$\boxtimes$}}_{\oplus,-\infty \xrightarrow{\upmu}\infty}^{\mathop{\mathrm{tw}}} \mathop{\mathrm{Sym}}_{\boxtimes_{\oplus}}\left(q_{\upmu,!}^{\upzeta}\mathcal{BPS}_{W,\upmu}^{\upzeta}\otimes\mathop{\mathrm{H}}(\mathop{\mathrm{B\mathbb{C}^*}})^{\vee}_{\mathop{\mathrm{vir}}}\right)$$ and $$\label{gwPBWnc}
+\mathop{\mathrm{\mathcal{H}}}\left(p_*\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)}\mathcal{IC}_{\mathfrak{M}}(\mathbb{Q})\right)\cong \mbox{\larger[3]{$\boxtimes$}}_{\oplus, \infty\xrightarrow{\upmu} -\infty }^{\mathop{\mathrm{tw}}} \mathop{\mathrm{Sym}}_{\boxtimes_{\oplus}}\left(q_{\upmu,*}^{\upzeta}\mathcal{BPS}_{W,\upmu}^{\upzeta}\otimes\mathop{\mathrm{H}}(\mathop{\mathrm{B\mathbb{C}^*}})_{\mathop{\mathrm{vir}}}\right).$$
+:::
+
+::: proof
+*Proof.* As in the proof of Theorem [\[weakPBW\]](#weakPBW){reference-type="ref" reference="weakPBW"} we only need to prove the case for which $W=0$ and then we can deduce the general case from the fact that monodromic vanishing cycle functors are exact, and commute with proper maps and the relevant monoidal structures. We first prove that the isomorphism ([\[ngwc\]](#ngwc){reference-type="ref" reference="ngwc"}) exists. Fix a $\mathop{\mathrm{\mathbf{d}}}\in\mathbb{N}^{Q_0}$. Then if we complete $\geq'$ to a total ordering $\geq$ of $\mathop{\mathrm{HN}}_{\mathop{\mathrm{\mathbf{d}}}}$ and define, for each $\overline{\mathop{\mathrm{\mathbf{d}}}}\in\mathop{\mathrm{HN}}_{\mathop{\mathrm{\mathbf{d}}}}$, $$\begin{aligned}
+\mathfrak{M}_{\leq \overline{\mathop{\mathrm{\mathbf{d}}}}}^{\upzeta}\colonequals &\bigcup_{\overline{\mathop{\mathrm{\mathbf{e}}}}\leq \overline{\mathop{\mathrm{\mathbf{d}}}}}\mathfrak{M}_{\overline{\mathop{\mathrm{\mathbf{e}}}}}^{\upzeta}\\
+\mathfrak{M}_{< \overline{\mathop{\mathrm{\mathbf{d}}}}}^{\upzeta}\colonequals &\bigcup_{\overline{\mathop{\mathrm{\mathbf{e}}}}< \overline{\mathop{\mathrm{\mathbf{d}}}}}\mathfrak{M}_{\overline{\mathop{\mathrm{\mathbf{e}}}}}^{\upzeta}
+\end{aligned}$$ then $\mathfrak{M}_{\leq \overline{\mathop{\mathrm{\mathbf{d}}}}}^{\upzeta}\subset \mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}$ is a closed embedding, and $\mathfrak{M}_{\overline{\mathop{\mathrm{\mathbf{d}}}}}^{\upzeta}\subset\mathfrak{M}_{\leq \overline{\mathop{\mathrm{\mathbf{d}}}}}^{\upzeta}$ is an open embedding with complement $\mathfrak{M}_{<\overline{\mathop{\mathrm{\mathbf{d}}}}}^{\upzeta}\subset\mathfrak{M}_{\leq \overline{\mathop{\mathrm{\mathbf{d}}}}}^{\upzeta}$. We denote by $$\begin{aligned}
+i_{\overline{\mathop{\mathrm{\mathbf{d}}}}}\colon &\mathfrak{M}_{\overline{\mathop{\mathrm{\mathbf{d}}}}}^{\upzeta}\hookrightarrow\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}} \label{id}\\
+i_{<\overline{\mathop{\mathrm{\mathbf{d}}}}}\colon &\mathfrak{M}_{<\overline{\mathop{\mathrm{\mathbf{d}}}}}^{\upzeta}\hookrightarrow\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}\label{idd}\\
+i_{\leq\overline{\mathop{\mathrm{\mathbf{d}}}}}\colon &\mathfrak{M}_{\leq \overline{\mathop{\mathrm{\mathbf{d}}}}}^{\upzeta}\hookrightarrow\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}\label{iddd}
+\end{aligned}$$ the natural inclusions. We will show that all of the terms in the following distinguished triangle are pure, and that the connecting maps are zero, and furthermore that the triangle is split: $$\label{HNtri}
+\mathop{\mathrm{\mathcal{H}}}\left(p_{\mathop{\mathrm{\mathbf{d}}},!}i_{\overline{\mathop{\mathrm{\mathbf{d}}}},!}\mathbb{Q}_{\mathfrak{M}^{\upzeta}_{\overline{\mathop{\mathrm{\mathbf{d}}}}}}\right)\rightarrow \mathop{\mathrm{\mathcal{H}}}\left(p_{\mathop{\mathrm{\mathbf{d}}},!}i_{\leq \overline{\mathop{\mathrm{\mathbf{d}}}},!}\mathbb{Q}_{\mathfrak{M}^{\upzeta}_{\leq \overline{\mathop{\mathrm{\mathbf{d}}}}}}\right)\rightarrow \mathop{\mathrm{\mathcal{H}}}\left(p_{\mathop{\mathrm{\mathbf{d}}},!}i_{< \overline{\mathop{\mathrm{\mathbf{d}}}},!}\mathbb{Q}_{\mathfrak{M}^{\upzeta}_{< \overline{\mathop{\mathrm{\mathbf{d}}}}}}\right)\rightarrow.$$ Fix $\overline{\mathop{\mathrm{\mathbf{d}}}}\in\mathop{\mathrm{HN}}_{\mathop{\mathrm{\mathbf{d}}}}$. Consider the following commutative diagram $$\xymatrix{
+&\mathfrak{M}_{\overline{\mathop{\mathrm{\mathbf{d}}}}}^{\upzeta}\ar[d]^{q_{\overline{\mathop{\mathrm{\mathbf{d}}}}}}\ar[r]^-{i_{\overline{\mathop{\mathrm{\mathbf{d}}}}}}&\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}\ar[ddd]^{p_{\mathop{\mathrm{\mathbf{d}}}}}\\
+X^{\upzeta}_{\overline{\mathop{\mathrm{\mathbf{d}}}}}/(G_{\mathop{\mathrm{\mathbf{d}}}^1}\times\ldots \times G_{\mathop{\mathrm{\mathbf{d}}}^s})\ar[r]^{q_{2,\overline{\mathop{\mathrm{\mathbf{d}}}}}}\ar[ur]^{q_{1,\overline{\mathop{\mathrm{\mathbf{d}}}}}}&\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}^1}^{\upzeta\mathop{\mathrm{-ss}}}\times\ldots\times\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}^s}^{\upzeta\mathop{\mathrm{-ss}}}\ar[d]^{p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}^1}\times\ldots\times p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}^s}}\\
+&\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}^1}\times\ldots\times\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}^s}\ar[d]^{q^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}^1}\times\ldots\times q^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}^s}}\\
+&\mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}^1}\times\ldots\times\mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}^s}\ar[r]^-{\oplus}&\mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}}
+}$$ where $q_{1,\overline{\mathop{\mathrm{\mathbf{d}}}}}$ is an affine fibration of relative dimension $$f_1(\overline{\mathop{\mathrm{\mathbf{d}}}})\colonequals \sum_{1\leq r<r'\leq s}\mathop{\mathrm{\mathbf{d}}}^r\cdot \mathop{\mathrm{\mathbf{d}}}^{r'}$$ and $q_{2,\overline{\mathop{\mathrm{\mathbf{d}}}}}$ is an affine fibration of relative dimension $$f_2(\overline{\mathop{\mathrm{\mathbf{d}}}})\colonequals \sum_{1\leq r<r'\leq s}\sum_{a\in Q_1}\mathop{\mathrm{\mathbf{d}}}^{r'}_{s(a)}\mathop{\mathrm{\mathbf{d}}}^{r}_{t(a)}.$$ We define $$\label{dddotdef}
+(\overline{\mathop{\mathrm{\mathbf{d}}}},\overline{\mathop{\mathrm{\mathbf{d}}}})\colonequals f_1(\overline{\mathop{\mathrm{\mathbf{d}}}})-f_2(\overline{\mathop{\mathrm{\mathbf{d}}}}).$$ For $\mathbf{f}\in\mathbb{N}^{Q_0}$ we define $\mathbf{f}\cdot\overline{\mathop{\mathrm{\mathbf{d}}}}=\sum_{r\leq s}\mathbf{f}\cdot\mathop{\mathrm{\mathbf{d}}}^r$.
+
+Fix $n$, and let $\mathbf{f}\gg 0$. Then since there are isomorphisms $$\begin{aligned}
+\mathop{\mathrm{\mathcal{H}}}^n\left(p_{\mathop{\mathrm{\mathbf{d}}},!}i_{\overline{\mathop{\mathrm{\mathbf{d}}}},!}\mathbb{Q}_{\mathfrak{M}_{\overline{\mathop{\mathrm{\mathbf{d}}}}}}\right)
+\cong& \mathop{\mathrm{\mathcal{H}}}^n\left(\oplus_!(q^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}^1}\times\ldots\times q^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}^s})_!(p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}^1}\times\ldots\times p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}^s})_!\mathbb{L}^{-(\overline{\mathop{\mathrm{\mathbf{d}}}},\overline{\mathop{\mathrm{\mathbf{d}}}})}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}^1}^{\upzeta\mathop{\mathrm{-ss}}}\times\ldots\times\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}^s}^{\upzeta\mathop{\mathrm{-ss}}}}\right)\\
+\cong& \mathop{\mathrm{\mathcal{H}}}^n\left(\oplus_!(q^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}^1}\times\ldots\times q^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}^s})_!(\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}^1}\times\ldots\times \uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}^s})_!\mathbb{L}^{-(\overline{\mathop{\mathrm{\mathbf{d}}}},\overline{\mathop{\mathrm{\mathbf{d}}}})-\mathbf{f}\cdot\overline{\mathop{\mathrm{\mathbf{d}}}}}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}^1}^{\upzeta}\times\ldots\times\mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}^s}}\right)\\
+\end{aligned}$$ the complex $\mathop{\mathrm{\mathcal{H}}}^n\left(p_{\mathop{\mathrm{\mathbf{d}}},!}i_{\overline{\mathop{\mathrm{\mathbf{d}}}},!}\mathbb{Q}_{\mathfrak{M}_{\overline{\mathop{\mathrm{\mathbf{d}}}}}}\right)$ is pure, by properness of $q^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}^r}$, $\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}^r}$ and $\oplus$. The claim regarding the distinguished triangles ([\[HNtri\]](#HNtri){reference-type="ref" reference="HNtri"}) then follows by induction, and semisimplicity of the category of pure mixed Hodge modules. Taking care of the twists, we calculate $$\begin{aligned}
+\label{int1}
+\mathop{\mathrm{\mathcal{H}}}\left(p_!\mathcal{IC}_{\mathfrak{M}}(\mathbb{Q})\right)=&\mathop{\mathrm{\mathcal{H}}}\left(p_!\mathbb{L}^{(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}_{\mathfrak{M}}\right)\\
+\nonumber\cong&\bigoplus_{\overline{\mathop{\mathrm{\mathbf{d}}}}\in\mathop{\mathrm{HN}}}\mathop{\mathrm{\mathcal{H}}}\left(p_{\mathop{\mathrm{\mathbf{d}}},!}i_{\overline{\mathop{\mathrm{\mathbf{d}}}},!}\mathbb{L}^{(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}_{\mathfrak{M}_{\overline{\mathop{\mathrm{\mathbf{d}}}}}}\right)\\
+\nonumber\cong&\bigoplus_{(\mathop{\mathrm{\mathbf{d}}}^1,\ldots,\mathop{\mathrm{\mathbf{d}}}^s)\in\mathop{\mathrm{HN}}}q^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}^1,!}\mathop{\mathrm{\mathcal{H}}}\left(p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}^1,!}\mathbb{Q}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}^1}^{\upzeta\mathop{\mathrm{-ss}}}}\right)\boxtimes_{\oplus}\ldots\boxtimes_{\oplus} q^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}^s,!}\mathop{\mathrm{\mathcal{H}}}\left(p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}^s,!}\mathbb{Q}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}^s}^{\upzeta\mathop{\mathrm{-ss}}}}\right)\otimes\mathbb{L}^{-(\overline{\mathop{\mathrm{\mathbf{d}}}},\overline{\mathop{\mathrm{\mathbf{d}}}})+(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}\\
+\nonumber\cong&\bigoplus_{(\mathop{\mathrm{\mathbf{d}}}^1,\ldots,\mathop{\mathrm{\mathbf{d}}}^s)\in\mathop{\mathrm{HN}}}q^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}^s,!}\mathop{\mathrm{\mathcal{H}}}\left(p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}^s,!}\mathcal{IC}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}^s}^{\upzeta\mathop{\mathrm{-ss}}}}(\mathbb{Q})\right)\boxtimes^{\mathop{\mathrm{tw}}}_{\oplus}\ldots\boxtimes^{\mathop{\mathrm{tw}}}_{\oplus} q^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}^1,!}\mathop{\mathrm{\mathcal{H}}}\left(p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}^1,!}\mathcal{IC}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}^1}^{\upzeta\mathop{\mathrm{-ss}}}}(\mathbb{Q})\right)\\
+\nonumber \cong&\mbox{\larger[3]{$\boxtimes$}}_{\oplus, -\infty\xrightarrow{\upmu} \infty}^{\mathop{\mathrm{tw}}} q_{\upmu,!}^{\upzeta}\mathop{\mathrm{\mathcal{H}}}\left(p_{\upmu,!}^{\upzeta}\mathcal{IC}_{\mathfrak{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}}}}(\mathbb{Q})\right).
+\end{aligned}$$ This completes the proof of the first part of the theorem: since $p^{\upzeta}_{\upmu}$ is approximated by proper maps, and $q^{\upzeta}_{\upmu}$ is proper, there are isomorphisms $$q^{\upzeta}_{\upmu,!} \mathop{\mathrm{\mathcal{H}}}(p^{\upzeta}_{\upmu,!}\mathcal{IC}_{\mathfrak{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}}}}(\mathbb{Q}))\cong \mathop{\mathrm{\mathcal{H}}}(q^{\upzeta}_{\upmu,!}p^{\upzeta}_{\upmu,!}\mathcal{IC}_{\mathfrak{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}}}}(\mathbb{Q}))$$ as required.
+
+Since $q^{\upzeta}_{\upmu}\colon \mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\upmu}\rightarrow\mathcal{M}_{\upmu}$ is a morphism of monoids, $q^{\upzeta}_{\upmu,!}$ is a symmetric monoidal functor. If $\upzeta$ is generic, we may then apply Theorem [\[weakPBW\]](#weakPBW){reference-type="ref" reference="weakPBW"} at each slope $\upmu\in(-\infty,\infty)$, to deduce ([\[gwPBW\]](#gwPBW){reference-type="ref" reference="gwPBW"}). Finally we prove that there are isomorphisms ([\[ngwcnc\]](#ngwcnc){reference-type="ref" reference="ngwcnc"}) and ([\[gwPBWnc\]](#gwPBWnc){reference-type="ref" reference="gwPBWnc"}). Note that it is enough to construct the restrictions of these isomorphisms to each space $\mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}}$. Restricting to this component, there are finitely many tensor products of sheaves on the left hand side and the right hand side of ([\[ngwcnc\]](#ngwcnc){reference-type="ref" reference="ngwcnc"}) and ([\[gwPBWnc\]](#gwPBWnc){reference-type="ref" reference="gwPBWnc"}), involving $\mathop{\mathrm{\mathcal{H}}}(p_{\mathop{\mathrm{\mathbf{d}}}',*}\mathcal{IC}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}'}}(\mathbb{Q}))$ and $\mathop{\mathrm{\mathcal{H}}}(p^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}',*}\mathcal{IC}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta\mathop{\mathrm{-ss}}}}(\mathbb{Q}))$ for $\mathop{\mathrm{\mathbf{d}}}'\in\Uplambda_{\upmu}^\upzeta$ satisfying $\mathop{\mathrm{\mathbf{d}}}'\leq \mathop{\mathrm{\mathbf{d}}}$. Then the isomorphisms are given by taking the Verdier duals of ([\[ngwc\]](#ngwc){reference-type="ref" reference="ngwc"}) and ([\[gwPBW\]](#gwPBW){reference-type="ref" reference="gwPBW"}) respectively, by Remarks [\[finSD\]](#finSD){reference-type="ref" reference="finSD"} and [\[twDual\]](#twDual){reference-type="ref" reference="twDual"}. ◻
+:::
+
+Arguing as in the proof of Theorem [\[weakPBW\]](#weakPBW){reference-type="ref" reference="weakPBW"}, using properness of $q^{\upzeta}$ and approximation of $p_{\upmu}^{\upzeta}$ by proper maps for the relevant base change isomorphisms, we deduce the corollary
+
+::: corollary
+Let $\upzeta$ be a Bridgeland stability condition for $Q$, not necessarily assumed to be generic. Then there is an isomorphism of $\mathbb{N}^{Q_0}$-graded monodromic mixed Hodge structures $$\mathop{\mathrm{H}}_c(\mathfrak{M}^{\mathcal{S}},\mathfrak{IC}_{W})^{\vee}\cong\mbox{\larger[3]{$\boxtimes$}}_{+, \infty\xrightarrow{\upmu} -\infty}^{\mathop{\mathrm{tw}}}\mathop{\mathrm{H}}_c\left(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\upmu},\mathfrak{IC}_{W,\upmu}^{\upzeta}\right)^{\vee}$$ if $\upzeta$ is generic, we may combine this isomorphism with the absolute integrality isomorphisms for each slope $\upmu$ (Theorem [\[ThmA\]](#ThmA){reference-type="ref" reference="ThmA"}) to obtain the isomorphism $$\mathop{\mathrm{H}}_c(\mathfrak{M}^{\mathcal{S}},\mathfrak{IC}_W)^{\vee}\cong\mbox{\larger[3]{$\boxtimes$}}_{+, \infty\xrightarrow{\upmu} -\infty}^{\mathop{\mathrm{tw}}}\mathop{\mathrm{Sym}}_{\boxtimes_+}\left(\mathop{\mathrm{H}}(\mathop{\mathrm{B\mathbb{C}^*}})_{\mathop{\mathrm{vir}}}\otimes\mathop{\mathrm{BPS}}^{\upzeta,\mathcal{S}}_{\upmu}\right).$$
+:::
+
+::: remark
+In the case $W=0$, and $\mathcal{S}=\mathbb{C}Q\mathrm{-mod}$ we obtain the isomorphism $$\mathop{\mathrm{H}}\left(\mathfrak{M},\mathcal{IC}_{\mathfrak{M}}(\mathbb{Q}) \right)\cong\mbox{\larger[3]{$\boxtimes$}}_{+, \infty\xrightarrow{\upmu} -\infty}^{\mathop{\mathrm{tw}}} \mathop{\mathrm{H}}\left(\mathfrak{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}}},\mathcal{IC}_{\mathfrak{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}}}}(\mathbb{Q})\right).$$ The existence of such an isomorphism is proved by Franzen and Reineke in [@FrRe15] via a vanishing result for even cohomology, and before that for the case of a Dynkin quiver which is not an orientation of $E_8$ by Rimanyi in [@Ri13], where this result is a corollary of the existence of a Poincaré--Birkhoff--Witt isomorphism for hypercohomology.
+:::

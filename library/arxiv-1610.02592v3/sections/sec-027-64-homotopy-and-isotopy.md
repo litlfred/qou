@@ -7,10 +7,10 @@ section_number: 6.4
 pages: 189-193
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.845
-latex_coverage_ratio: 0.867
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 We have proved that ``homotopy implies isotopy'' for non-trivial simple closed curves in $S_g$, and now we want to prove an analogous result for diffeomorphisms of $S_g$.
 A crucial ingredient is the following theorem proved by Smale in the 1950s, which considers the self-diffeomorphisms of the disc $D^2$.
@@ -20,6 +20,7 @@ Two diffeomorphisms $\varphi, \psi\colon D^2 \to D^2$ that coincide on $\partial
 \end{teo}
 
 There is a proof of Theorem \ref{Smale:teo} in the topological category that is surprisingly easy and works in any dimension. 
+
 
 \subsection{The Alexander trick} \label{Alexander:subsection}
 The proof of the following fact is so immediate, that it has a name: it is usually called the \emph{Alexander trick}.\index{Alexander trick}
@@ -35,6 +36,7 @@ The proof is complete.
 Unfortunately this proof does not work in the smooth category, because the function $F$ is not smooth (and not smoothable) at $(0,0)$. Of course, as every continuous map, our $F$ may be approximated by smooth functions, but the injectivity of the slices $F(\cdot, t)$ can be lost in the approximation.  
 
 Moreover, the statement in the smooth category is just false in dimension $n\geqslant 7$: there are self-diffeomorphisms of $D^n$ that are \emph{not} smoothly isotopic to $\id_{D^n}$ in high dimension, and this is connected to the existence of \emph{exotic spheres}, differentiable manifolds that are homeomorphic but not diffeomorphic to $S^n$.\index{exotic sphere} 
+
 
 \subsection{Self-diffeomorphisms of the disc} \label{self:disc:subsection}
 After this very brief excursion in the topological world, we turn back to the smooth category: every map considered so far is smooth by assumption like in the rest of the book. 
@@ -93,6 +95,7 @@ To fix that it suffices to compose each $\varphi_t$ with a diffeomorphism of $D^
 \begin{oss} \label{Smale:collar:rem}
 If $\varphi\colon D^2 \to D^2$ is the identity on a collar of $S^1$, we can easily transform the isotopy $\varphi_t$ so that it is the identity on this collar for all $t$. This will be useful to glue isotopies.
 \end{oss}
+
 
 \subsection{Homotopy and isotopy of diffeomorphisms}
 We are now ready to promote homotopies to isotopies of diffeomorphisms. We start with the easier sphere case, which is a simple consequence of Theorem \ref{Smale:teo}.

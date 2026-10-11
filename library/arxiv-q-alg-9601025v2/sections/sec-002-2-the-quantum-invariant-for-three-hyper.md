@@ -7,10 +7,10 @@ section_number: 2
 pages: 3-3
 source_pdf: 9601025v2.pdf
 source_sha256: 369b0a1a92ce67a8
+doc_brief: "The hyperbolic volume of knots from the quantum dilogarithm — The invariant of a link in three-sphere, associated with the cyclic quantum dilogarithm, depends on a natural number N ."
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
-doc_brief: "The hyperbolic volume of knots from the quantum dilogarithm — The invariant of a link in three-sphere, associated with the cyclic quantum dilogarithm, depends on a natural number N ."
+latex_coverage_ratio: 0.983
 ---
 []{#sec1 label="sec1"}
 

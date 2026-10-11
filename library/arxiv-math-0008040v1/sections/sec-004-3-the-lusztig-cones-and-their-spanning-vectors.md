@@ -7,10 +7,10 @@ section_number: 3
 pages: 5-8
 source_pdf: 0008040v1.pdf
 source_sha256: a72319b55dbaf20b
-text_source: latex
-latex_prose_ratio: 0.992
-latex_coverage_ratio: 0.977
 doc_brief: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A — Let U be the quantum group associated to a Lie algebra g of type An."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.985
 ---
 Lusztig [@lusztig7] introduced certain regions which, in low rank, give rise to canonical basis elements of a particularly simple form. The *Lusztig cone*, $C_{\mathbf{i}}$, corresponding to $\mathbf{i}\in \chi_n$, is defined to be the set of points ${{\mathbf{a}}}\in {\N}^k$ satisfying the following inequalities:\
 (\*) For every pair $s,s'\in [1,k]$ with $s<s'$, $i_s=i_{s'}=i$ and $i_p\not=i$ whenever $s<p<s'$, we have $$(\sum_p a_p)-a_s - a_{s'}\geq 0,$$ where the sum is over all $p$ with $s<p<s'$ such that $i_p$ is joined to $i$ in the Dynkin diagram (we call such a pair $s,s'$ a *minimal pair*).
@@ -34,7 +34,7 @@ We shall need the chamber diagram (chamber ansatz) for $\mathbf{i}$ defined in 
 <p>4 1 4 / 4 2 6 / 6 7 6 / 6 8 4 / 4 11 4 / 4 12 2 / 2 13 2 /</p>
 <p>6 1 6 / 6 2 4 / 4 5 4 / 4 6 2 / 2 9 2 / 2 10 0 / 0 13 0 /</p>
 <p>[c] at 4.5 5 [c] at 8.5 3 [c] at 6.5 1</p>
-<figcaption>The Chamber Diagram of <span class="math inline">(1, 3, 2, 1, 3, 2)</span>.<span id="chamberdiagram" data-label="chamberdiagram"></span></figcaption>
+<figcaption>The Chamber Diagram of <span class="math inline">(1,3,2,1,3,2)</span>.<span id="chamberdiagram" label="chamberdiagram"></span></figcaption>
 </figure>
 
 We denote the chamber diagram of $\mathbf{i}$ by CD($\mathbf{i}$). A *chamber* will be defined as a pair $(c,{\mathbf{i}})$, where $c$ is a bounded component of the complement of CD($\mathbf{i}$). Each chamber $(c,{\mathbf{i}})$ can be labelled with the numbers of the strings passing below it, denoted $l(c,{\mathbf{i}})$. Following [@bfz1], we call such a label a chamber set. For example, the chamber sets corresponding to the $3$ bounded chambers in Figure [1](#chamberdiagram){reference-type="ref" reference="chamberdiagram"} are $134,3,13$. Note that the set of chamber sets of $\bf i$ is independent of its commutation class (so we can talk also of the chamber sets of such a commutation class). Every subset of $[1,n+1]$ can arise as a chamber set for some $\bf i$, except for subsets of the form $[1,j]$ and $[j,n+1]$ for $1\leq j\leq n+1$; this is observed in the proof of [@bfz1 Theorem 2.7.1].
@@ -64,7 +64,7 @@ Suppose $Q$ is a quiver of type $A_n$. Let $\Lambda\subseteq [2,n]$ be the set o
 <p>2 5 6 / 6 6 5 /</p>
 <p>1 6 6 /</p>
 </div>
-<figcaption>The arrangement Arr<span class="math inline">{2, 4}</span>.<span id="arrangement" data-label="arrangement"></span></figcaption>
+<figcaption>The arrangement Arr<span class="math inline">{2, 4}</span>.<span id="arrangement" label="arrangement"></span></figcaption>
 </figure>
 
 If $P$ is a partial quiver, let $l(P)$ be the subset of $[1,n+1]$ defined in the following way. Put $l_1(P)=\{j\in [2,n]\,:\,\mbox{edge\ $j$\ of\ $P$\ is\ an\ 

@@ -8,224 +8,91 @@ pages: 4-8
 source_pdf: 1804.10084v1.pdf
 source_sha256: 716da9708f06d930
 doc_brief: "Concentration of Lipschitz Functions of Negatively Dependent Variables — We explore the question whether Lipschitz functions of random var iables under various forms of negative correlation satisfy"
+text_source: latex
+latex_prose_ratio: 0.987
+latex_coverage_ratio: 0.996
 ---
-As we show in Appendix A, it is not possible to replicate the martingale an alysis of McDiarmid’s
-inequality under negative regression, if we work with a ﬁxed ordering of variables X1, . . . , X n. The
-problem is that a particular variable X1 might have a large inﬂuence on the distribution of the
-remaining variables, and hence aﬀect signiﬁcantly the conditional ex pectation of f once the value
-of X1 is revealed.
-Our way around this issue is that we can choose variables adaptively, in order to construct a
-martingale with bounded diﬀerences. Our goal is to choose a variable that does not aﬀect the
-remaining variables too heavily. Due to negative regression, we know that conditioning on Xi = 1
-can only aﬀect the remaining variables negatively. Hence the only thin g we have to worry about is
-that this negative eﬀect is too large. However, the following lemma sh ows that there always exists
-a variable whose negative inﬂuence on the remaining variables is not to o large.
-Lemma 1. Let X1, . . . , X n be {0, 1} random variables. Fix K ⊂ [n] and aK ∈ { 0, 1}K such that
-P r[XK = aK] > 0. Then there exists i ∈ [n] \ K such that either Xi conditioned on XK = aK is
-deterministic, or
-∑
-ℓ∈[n]\(K∪{i})
-(E[Xℓ | XK = aK, X i = 0] − E[Xℓ | XK = aK, X i = 1]) ≤ 1.
-Proof. Let us denote L = [n] \ K. We consider the following quantity:
-Var
-[ ∑
-i∈L
-Xi | XK = aK
-]
-=
-∑
-i∈L
-
-Var[Xi | XK = aK] +
-∑
-j∈L\{i}
-Cov[Xi, X j | XK = aK]
-
- .
-Variance is always nonnegative, so at least one term of the summatio n over i ∈ L must be non-
-negative:
-Var[Xi | XK = aK] +
-∑
-j∈L\{i}
-Cov[Xi, X j | XK = aK] ≥ 0. (1)
-4
-Let us denote πi = Pr[Xi = 1 | XK = aK]. We can write
-Var[Xi | XK = aK] = E[X 2
-i | XK = aK] − (E[Xi | XK = ak])2 = πi(1 − πi)
-and
-Cov[Xi, X j | XK = aK] = E[XiXj | XK = aK] − E[Xi | XK = aK] E[Xj | XK = aK]
-= πi(E[Xj | XK = aK, X i = 1] − E[Xj | XK = aK]).
-Since E[Xj | XK = aK] = πiE[Xj | XK = aK, X i = 1] + (1 − πi)E[Xj | XK = aK, X i = 0], we can
-rewrite this as
-Cov[Xi, X j | XK = aK] = πi(1 − πi)(E[Xj | XK = aK, X i = 1] − E[Xj | XK = aK, X i = 0]).
-If πi = 0 or πi = 1, then Xi conditioned on XK = aK is deterministic, and we are done. Otherwise,
-substitute the expressions for Var[Xi | XK = aK] and Cov[Xi, X j | XK = aK] in (1), divide by
-πi(1 − πi), and conclude that
-∑
-ℓ∈L\{i}
-(E[Xℓ | XK = aK, X i = 0] − E[Xℓ | XK = aK, X i = 1]) ≤ 1.
-Next, we show that conditioning on Xi indeed cannot aﬀect the conditional expectation of f
-too much. To prove this, we need one more tool, which is Strassen’s m onotone coupling theorem
-(easily proved from the max-ﬂow min-cut theorem).
-Theorem 2 (Strassen’s Theorem). Consider two probability measures µ (0) and µ (1) on {0, 1}L.
-Suppose that for every down-closed M ⊂ {0, 1}L, µ (1)(M ) ≥ µ (0)(M ). Then there exists a coupling
-ν : {0, 1}L × {0, 1}L → [0, 1] such that:
-µ (1)(x) =
-∑
-y
-ν(x, y ),
-µ (0)(y) =
-∑
-x
-ν(x, y ),
-and ν(x, y ) = 0 unless x ≤ y coordinate-wise.
-I.e., if µ (1) dominates µ (0) on every down-closed event, then it is possible to transform µ (0) into
-µ (1) in such a way that we only transfer probability mass downwards in {0, 1}L. From the condition
-of negative regression and Strassen’s theorem, we get immediately the following.
-Corollary 1. For random variables X1, . . . , X n satisfying negative regression, K ⊂ [n], aK ∈
-{0, 1}K, and i ∈ [n] \ K such that Pr[XK = ak, X i = 0] > 0, Pr[XK = ak, X i = 1] > 0, there exists
-a coupling ν : {0, 1}L × {0, 1}L → [0, 1] for L = [n] \ (K ∪ {i}) such that
-µ (1)(aL) = Pr[ XL = aL | XK = aK, X i = 1] =
-∑
-y
-ν(aL, y ),
-µ (0)(bL) = Pr[ XL = bL | XK = aK, X i = 0] =
-∑
-x
-ν(x, b L),
-and ν(x, y ) = 0 unless x ≤ y.
-Now we are ready to construct a martingale with bounded diﬀerence s. We formalize this as
-follows.
-5
-Lemma 2. Given {0, 1} random variables X1, . . . , X n satisfying negative regression, and a 1-
-Lipschitz function f : {0, 1}n → R, there exists an adaptive ordering (random permutation)
-π (1), π (2), . . . , π (n) such that:
-• π (1) is deterministic.
-• For each 1 ≤ k < n , π (k + 1) is determined by π ([k]) = {π (1), . . . , π (k)} = K and XK = aK.
-• If we denote Yk = E[f (X) | π ([k]), X π([k])], then Y0, Y 1, . . . , Y n is a martingale.
-• Conditioned on π ([k]) = K, X K = aK, there are α < β, β − α ≤ 2, such that Yk+1 − Yk ∈ [α, β ]
-with prob. 1.
-• For monotone f , Yk+1 − Yk ∈ [α, β ] where β − α ≤ 1.
-Proof. Let us ﬁx π ([k]) = K and XK = aK. Given this conditioning, there exists i ∈ [n] \ K as
-provided by Lemma 1. Let us deﬁne π (k + 1) to be the minimum index i satisfying the conclusion
-of Lemma 1.
-Now let us consider Yk = E[f (X) | π ([k]) = K, X K = aK]. Under this conditioning, π (k + 1)
-is deterministic and Xπ(k+1) could take two possible values (0 or 1) which determines the value of
-Yk+1. By construction, Yk = EXπ (k+1) [Yk+1 | π ([k]) = K, X K = aK]. By averaging over all possible
-choices of K and aK consistent with the same value of Yk, we also get Yk = E[Yk+1 | Yk]; i.e., the
-sequence Y0, Y 1, . . . , Y n forms a martingale.
-Our goal now is to analyze how much Yk+1 can deviate from Yk. In the following we ﬁx
-π ([k]) = K and XK = aK. We have Yk = E[f (X) | π ([k]) = K, X K = aK]. Recall that this
-conditioning also determines the choice of π (k + 1) (but of course not the value of Xπ(k+1)). If
-Xπ(k+1) attains only one possible value under this conditioning, then Yk+1 = Yk and we are done
-— hence, let us assume that both values of Xπ(k+1) occur with positive probability. For c = 0 , 1,
-let us denote
-Y (c)
-k+1 = E[f (X) | π (1), . . . , π (k), π (k + 1), X π(1), . . . , X π(k); Xπ(k+1) = c].
-We claim that |Y (1)
-k+1 − Y (0)
-k+1| ≤ 2, and in the case of monotone f , |Y (1)
-k+1 − Y (0)
-k+1| ≤ 1; showing this
-will complete the proof.
-Let L = [ n] \ π ([k + 1]) = [ n] \ (K ∪ {π (k + 1)}). Denote by µ (c) the probability distribution
-of XL ∈ { 0, 1}L conditioned on π ([k]) = K, XK = aK, and Xπ(k+1) = c ∈ { 0, 1}. By Corollary 1,
-there is a monotone coupling ν(x, y ) between µ (1) and µ (0). We can write
-Y (1)
-k+1 = E[f (X) | π ([k]) = K, X K = aK, X π(k+1) = 1]
-=
-∑
-aL∈{0,1}L
-µ (1)(aL) f (XK = aK, X π(k+1) = 1, X L = aL)
-=
-∑
-aL,bL∈{0,1}L
-ν(aL, b L) f (XK = aK, X π(k+1) = 1, X L = aL).
-Similarly,
-Y (0)
-k+1 = E[f (X) | π ([k]) = K, X K = aK, X π(k+1) = 0]
-=
-∑
-bL∈{0,1}L
-µ (0)(bL) f (XK = aK, X π(k+1) = 0, X L = bL)
-=
-∑
-aL,bL∈{0,1}L
-ν(aL, b L) f (XK = aK, X π(k+1) = 0, X L = bL).
-Now we can compare the values of f in the two expressions. First we modify the coordinate Xπ(k+1),
-and then the remaining coordinates XL. Since f is 1-Lipschitz, we have
-⏐⏐f (XK = aK, X π(k+1) = 1, X L = aL) − f (XK = aK, X π(k+1) = 0, X L = aL)
-⏐⏐ ≤ 1.
-6
-Next, since aL ≤ bL in all the terms with ν(aL, b L) > 0, we have
-⏐⏐f (XK = ak, X π(k+1) = 0, X K = aL) − f (XK = ak, X π(k+1) = 0, X K = bL)
-⏐⏐ ≤ ‖bL‖1 − ‖aL‖1.
-By the triangle inequality,
-⏐⏐f (XK = ak, X π(k+1) = 1, X K = aL) − f (XK = ak, X π(k+1) = 0, X K = bL)
-⏐⏐ ≤ 1 + ‖bL‖1 − ‖aL‖1.
-Hence
-⏐⏐⏐Y (1)
-k+1 − Y (0)
-k+1
-⏐⏐⏐ ≤
-∑
-aL,bL∈{0,1}L
-ν(aL, b L)(1 + ‖bL‖1 − ‖aL‖1)
-= 1 +
-∑
-bL∈{0,1}L
-µ (0)(bL) ‖bL‖1 −
-∑
-aL∈{0,1}L
-µ (1)(aL) ‖aL‖1
-= 1 +
-∑
-ℓ∈L
-E[Xℓ | XK = aK, X π(k+1) = 0] −
-∑
-ℓ∈L
-E[Xℓ | XK = aK, X π(k+1) = 1]
-by the properties of µ (0), µ (1) and ν. Finally, we recall that π (k + 1) was chosen so as to satisfy the
-conclusion of Lemma 1:
-∑
-ℓ∈L
-E[Xℓ | XK = aK, X π(k+1) = 0] −
-∑
-ℓ∈L
-E[Xℓ | XK = aK, X π(k+1) = 1] ≤ 1.
-This concludes the proof that |Y (1)
-k+1 − Y (0)
-k+1| ≤ 2.
-In the case of monotone f , we observe that we can improve some of the inequalities: we get
-0 ≤ f (XK = aK, X π(k+1) = 1, X L = aL) − f (XK = aK, X π(k+1) = 0, X L = aL) ≤ 1
-and
-0 ≥ f (XK = ak, X π(k+1) = 0, X K = aL) − f (XK = ak, X π(k+1) = 0, X K = bL)| ≥ ‖ aL‖1 − ‖bL‖1
-whenever aL ≤ bL. This implies that
-1 ≥ f (XK = ak, X π(k+1) = 1XK = aL) − f (XK = ak, X π(k+1) = 0, X K = bL) ≥ ‖aL‖1 − ‖bL‖1
-and by the same computations as above, we conclude that 1 ≥ Y (1)
-k+1 − Y (0)
-k+1 ≥ −1.
-Theorem 1 now follows by standard exponential moment analysis; se e for example [9]. For
-completeness, we summarize the rest of the analysis as follows.
-Proof of Theorem 1. For a parameter λ ∈ R, we estimate the exponential moment E[eλf (X1,...,Xn)] =
-E[eλYn ]. Inductively, we prove that E[eλ(Yk−Y0)] ≤ ekλ2/2 (for monotone f , the bound improves to
-ekλ2/8). The inductive step is that
-E[eλ(Yk+1−Yk) | π ([k]) = K, X K = aK] ≤ eλ2/2
-which is true because under this conditioning, Yk+1 − Yk is a random variable of expectation 0,
-conﬁned to an interval of length 2 (see Lemma 2). It is known that t he exponential moment of such
-a variable is upper-bounded by eλ2/2. By averaging over all choices of K and aK that yield the
-same value of Yk, we also obtain E[eλ(Yk+1−Yk) | Yk] ≤ eλ2/2. In the case of f monotone, Yk+1 − Yk
-is conﬁned to an interval of length 1 and the exponential moment is u pper-bounded by eλ2/8.
-From here, by induction, we obtain
-E[eλ(Yk+1−Y0)] = EYk [EYk+1[eλ(Yk+1−Yk) | Yk] eλ(Yk−Y0)] ≤ eλ2/2 EYk [eλ(Yk−Y0)] ≤ e(k+1)λ2/2.
-7
-Therefore, E[eλ(Yn−Y0)] ≤ enλ2/2. (For f monotone, the bound improves to enλ2/8.)
-Recall that Y0 = E[f (X1, . . . , X n)] = µ . By Markov’s inequality applied to the exponential
-moment, we get
-Pr[f (X1, . . . , X n) > µ + t] = Pr
-[
-eλ(Yn−Y0) ≥ eλt
-]
-≤ E[eλ(Yn−Y0)]
-eλt = enλ2/2−λt.
-The choice of λ = t/n gives the upper-tail bound in Theorem 1; the other bounds follow sim ilarly.
+As we show in Appendix [\[app:error\]](#app:error){reference-type="ref" reference="app:error"}, it is not possible to replicate the martingale analysis of McDiarmid's inequality under negative regression, if we work with a fixed ordering of variables $X_1,\ldots,X_n$. The problem is that a particular variable $X_1$ might have a large influence on the distribution of the remaining variables, and hence affect significantly the conditional expectation of $f$ once the value of $X_1$ is revealed.
+
+Our way around this issue is that we can choose variables *adaptively*, in order to construct a martingale with bounded differences. Our goal is to choose a variable that does not affect the remaining variables too heavily. Due to negative regression, we know that conditioning on $X_i=1$ can only affect the remaining variables negatively. Hence the only thing we have to worry about is that this negative effect is too large. However, the following lemma shows that there always exists a variable whose negative influence on the remaining variables is not too large.
+
+::: lemma
+[]{#lem:pick label="lem:pick"} Let $X_1, \ldots, X_n$ be $\{0,1\}$ random variables. Fix $K \subset [n]$ and $a_K \in \{0,1\}^K$ such that $Pr[X_K=a_K] > 0$. Then there exists $i \in [n] \setminus K$ such that either $X_i$ conditioned on $X_K=a_K$ is deterministic, or $$\sum_{\ell \in [n] \setminus (K \cup \{i\})} \left( {\mathbb E}[ X_\ell \mid X_K = a_K, X_i = 0] - {\mathbb E}[ X_\ell \mid X_K = a_K, X_i = 1] \right) \leq 1.$$
+:::
+
+::: proof
+*Proof.* Let us denote $L = [n] \setminus K$. We consider the following quantity: $$\begin{aligned}
+\mathsf{Var}\big[\sum_{i \in L} X_i \mid X_K=a_K\big] 
+ = \sum_{i \in L} \left( \mathsf{Var}[X_i \mid X_K=a_K] + \sum_{j \in L \setminus \{i\}} \mathsf{Cov}[X_i, X_j \mid X_K=a_K] \right).
+\end{aligned}$$ Variance is always nonnegative, so at least one term of the summation over $i \in L$ must be non-negative: $$\label{eq:1}
+\mathsf{Var}[X_i \mid X_K=a_K] + \sum_{j \in L \setminus \{i\}} \mathsf{Cov}[X_i, X_j \mid X_K=a_K] \geq 0.$$ Let us denote $\pi_i = \Pr[X_i=1 \mid X_K=a_K]$. We can write $$\mathsf{Var}[X_i \mid X_K=a_K] = {\mathbb E}[X_i^2 \mid X_K=a_K] - ({\mathbb E}[X_i \mid X_K=a_k])^2 = \pi_i (1-\pi_i)$$ and $$\begin{aligned}
+\mathsf{Cov}[X_i,X_j \mid X_K=a_K] & = & {\mathbb E}[X_i X_j \mid X_K=a_K] - {\mathbb E}[X_i \mid X_K=a_K] \, {\mathbb E}[X_j \mid X_K=a_K] \\
+ & = & \pi_i ( {\mathbb E}[X_j \mid X_K=a_K, X_i=1] - {\mathbb E}[X_j \mid X_K=a_K] ).
+\end{aligned}$$ Since ${\mathbb E}[X_j \mid X_K=a_K] = \pi_i  {\mathbb E}[X_j \mid X_K=a_K, X_i=1] + (1-\pi_i)  {\mathbb E}[X_j \mid X_K=a_K, X_i=0]$, we can rewrite this as $$\begin{aligned}
+\mathsf{Cov}[X_i,X_j \mid X_K=a_K] = \pi_i (1-\pi_i) ( {\mathbb E}[X_j \mid X_K=a_K, X_i=1] -  {\mathbb E}[X_j \mid X_K=a_K, X_i=0]).
+\end{aligned}$$ If $\pi_i=0$ or $\pi_i=1$, then $X_i$ conditioned on $X_K=a_K$ is deterministic, and we are done. Otherwise, substitute the expressions for $\mathsf{Var}[X_i \mid X_K=a_K]$ and $\mathsf{Cov}[X_i,X_j \mid X_K=a_K]$ in ([\[eq:1\]](#eq:1){reference-type="ref" reference="eq:1"}), divide by $\pi_i (1-\pi_i)$, and conclude that $$\sum_{\ell \in L \setminus \{i\}} \left( {\mathbb E}[ X_\ell \mid X_K = a_K, X_i = 0] - {\mathbb E}[ X_\ell \mid X_K = a_K, X_i = 1] \right) \leq 1.$$ ◻
+:::
+
+Next, we show that conditioning on $X_i$ indeed cannot affect the conditional expectation of $f$ too much. To prove this, we need one more tool, which is Strassen's monotone coupling theorem (easily proved from the max-flow min-cut theorem).
+
+::: theorem
+Consider two probability measures $\mu^{(0)}$ and $\mu^{(1)}$ on $\{0,1\}^L$. Suppose that for every down-closed $M \subset \{0,1\}^L$, $\mu^{(1)}(M) \geq \mu^{(0)}(M)$. Then there exists a coupling $\nu:\{0,1\}^L \times \{0,1\}^L \rightarrow [0,1]$ such that: $$\mu^{(1)}(x) = \sum_y \nu(x, y),$$ $$\mu^{(0)}(y) = \sum_x \nu(x, y),$$ and $\nu(x, y) = 0$ unless $x \leq y$ coordinate-wise.
+:::
+
+I.e., if $\mu^{(1)}$ dominates $\mu^{(0)}$ on every down-closed event, then it is possible to transform $\mu^{(0)}$ into $\mu^{(1)}$ in such a way that we only transfer probability mass *downwards* in $\{0,1\}^L$. From the condition of negative regression and Strassen's theorem, we get immediately the following.
+
+::: corollary
+[]{#cor:coupling label="cor:coupling"} For random variables $X_1,\ldots,X_n$ satisfying negative regression, $K \subset [n]$, $a_K \in \{0,1\}^K$, and $i \in [n] \setminus K$ such that $\Pr[X_K=a_k, X_i=0] > 0$, $\Pr[X_K=a_k, X_i=1] > 0$, there exists a coupling $\nu:\{0,1\}^L \times \{0,1\}^L \rightarrow [0,1]$ for $L = [n] \setminus (K \cup \{i\})$ such that $$\mu^{(1)}(a_L) = \Pr[X_L=a_L \mid X_K=a_K, X_i=1] = \sum_y \nu(a_L,y),$$ $$\mu^{(0)}(b_L) = \Pr[X_L=b_L \mid X_K=a_K, X_i=0] = \sum_x \nu(x,b_L),$$ and $\nu(x,y) = 0$ unless $x \leq y$.
+:::
+
+Now we are ready to construct a martingale with bounded differences. We formalize this as follows.
+
+::: lemma
+[]{#lem:martingale label="lem:martingale"} Given $\{0,1\}$ random variables $X_1,\ldots,X_n$ satisfying negative regression, and a $1$-Lipschitz function $f:\{0,1\}^n \rightarrow {\mathbb R}$, there exists an adaptive ordering (random permutation) $\pi(1), \pi(2), \ldots, \pi(n)$ such that:
+
+::: compactitem
+$\pi(1)$ is deterministic.
+
+For each $1 \leq k<n$, $\pi(k+1)$ is determined by $\pi([k]) = \{\pi(1),\ldots,\pi(k)\} = K$ and $X_K = a_K$.
+
+If we denote $Y_k = {\mathbb E}[f(X) \mid \pi([k]),X_{\pi([k])}]$, then $Y_0,Y_1,\ldots,Y_n$ is a martingale.
+
+Conditioned on $\pi([k])=K, X_K=a_K$, there are $\alpha<\beta, \beta-\alpha \leq 2$, such that $Y_{k+1} - Y_k \in [\alpha,\beta]$ with prob. $1$.
+
+For monotone $f$, $Y_{k+1} - Y_k \in [\alpha,\beta]$ where $\beta-\alpha \leq 1$.
+:::
+:::
+
+::: proof
+*Proof.* Let us fix $\pi([k]) = K$ and $X_K = a_K$. Given this conditioning, there exists $i \in [n] \setminus K$ as provided by Lemma [\[lem:pick\]](#lem:pick){reference-type="ref" reference="lem:pick"}. Let us define $\pi(k+1)$ to be the minimum index $i$ satisfying the conclusion of Lemma [\[lem:pick\]](#lem:pick){reference-type="ref" reference="lem:pick"}.
+
+Now let us consider $Y_k = {\mathbb E}[f(X) \mid \pi([k])=K,X_K=a_K]$. Under this conditioning, $\pi(k+1)$ is deterministic and $X_{\pi(k+1)}$ could take two possible values ($0$ or $1$) which determines the value of $Y_{k+1}$. By construction, $Y_k = {\mathbb E}_{X_{\pi(k+1)}}[Y_{k+1} \mid \pi([k])=K, X_K=a_K]$. By averaging over all possible choices of $K$ and $a_K$ consistent with the same value of $Y_k$, we also get $Y_k = {\mathbb E}[Y_{k+1} \mid Y_k]$; i.e., the sequence $Y_0,Y_1,\ldots,Y_n$ forms a martingale.
+
+Our goal now is to analyze how much $Y_{k+1}$ can deviate from $Y_k$. In the following we fix $\pi([k])=K$ and $X_K = a_K$. We have $Y_k = {\mathbb E}[f(X) \mid \pi([k])=K, X_K=a_K]$. Recall that this conditioning also determines the choice of $\pi(k+1)$ (but of course not the value of $X_{\pi(k+1)}$). If $X_{\pi(k+1)}$ attains only one possible value under this conditioning, then $Y_{k+1} = Y_k$ and we are done --- hence, let us assume that both values of $X_{\pi(k+1)}$ occur with positive probability. For $c=0,1$, let us denote $$Y_{k+1}^{(c)} = {\mathbb E}[f(X) \mid \pi(1),\ldots,\pi(k), \pi(k+1), X_{\pi(1)}, \ldots,X_{\pi(k)}; X_{\pi(k+1)}=c].$$ We claim that $|Y_{k+1}^{(1)} - Y_{k+1}^{(0)}| \leq 2$, and in the case of monotone $f$, $|Y_{k+1}^{(1)} - Y_{k+1}^{(0)}| \leq 1$; showing this will complete the proof.
+
+Let $L = [n] \setminus \pi([k+1]) = [n] \setminus (K \cup \{ \pi(k+1) \})$. Denote by $\mu^{(c)}$ the probability distribution of $X_L \in \{0,1\}^L$ conditioned on $\pi([k])=K$, $X_K=a_K$, and $X_{\pi(k+1)} = c \in \{0,1\}$. By Corollary [\[cor:coupling\]](#cor:coupling){reference-type="ref" reference="cor:coupling"}, there is a monotone coupling $\nu(x,y)$ between $\mu^{(1)}$ and $\mu^{(0)}$. We can write $$\begin{aligned}
+Y^{(1)}_{k+1} & = & {\mathbb E}[f(X) \mid \pi([k])=K, X_K=a_K, X_{\pi(k+1)}=1] \\
+& = & \sum_{a_L \in \{0,1\}^L} \mu^{(1)}(a_L) \, f(X_K=a_K, X_{\pi(k+1)}=1, X_L=a_L) \\
+& = & \sum_{a_L,b_L \in \{0,1\}^L} \nu(a_L,b_L) \, f(X_K=a_K, X_{\pi(k+1)}=1, X_L=a_L).
+\end{aligned}$$ Similarly, $$\begin{aligned}
+Y^{(0)}_{k+1} & = & {\mathbb E}[f(X) \mid \pi([k])=K, X_K=a_K, X_{\pi(k+1)}=0] \\
+& = & \sum_{b_L \in \{0,1\}^L} \mu^{(0)}(b_L) \, f(X_K=a_K, X_{\pi(k+1)}=0, X_L=b_L) \\
+& = & \sum_{a_L, b_L \in \{0,1\}^L} \nu(a_L,b_L) \, f(X_K=a_K, X_{\pi(k+1)}=0, X_L=b_L).
+\end{aligned}$$ Now we can compare the values of $f$ in the two expressions. First we modify the coordinate $X_{\pi(k+1)}$, and then the remaining coordinates $X_L$. Since $f$ is $1$-Lipschitz, we have $$\abs{f(X_K=a_K, X_{\pi(k+1)}=1, X_L=a_L) - f(X_K=a_K, X_{\pi(k+1)}=0, X_L=a_L)} \leq 1.$$ Next, since $a_L \leq b_L$ in all the terms with $\nu(a_L,b_L) > 0$, we have $$\abs{f(X_K=a_k, X_{\pi(k+1)}=0, X_K=a_L) - f(X_K=a_k, X_{\pi(k+1)}=0, X_K=b_L)} \leq \| b_L \|_1 - \| a_L \|_1.$$ By the triangle inequality, $$\abs{f(X_K=a_k, X_{\pi(k+1)}=1, X_K=a_L) - f(X_K=a_k, X_{\pi(k+1)}=0, X_K=b_L)} \leq 1 + \| b_L \|_1 - \| a_L \|_1.$$ Hence $$\begin{aligned}
+ \abs{Y^{(1)}_{k+1} - Y^{(0)}_{k+1}} & \leq & \sum_{a_L,b_L \in \{0,1\}^L} \nu(a_L,b_L) (1 + \|b_L\|_1 - \|a_L\|_1) \\
+  & = & 1 + \sum_{b_L \in \{0,1\}^L} \mu^{(0)}(b_L) \, \| b_L \|_1 - \sum_{a_L \in \{0,1\}^L} \mu^{(1)}(a_L)\,  \| a_L \|_1 \\
+  & = & 1 + \sum_{\ell \in L} {\mathbb E}[X_\ell \mid X_K=a_K, X_{\pi(k+1)}=0] - \sum_{\ell \in L} {\mathbb E}[X_\ell \mid X_K=a_K, X_{\pi(k+1)}=1]
+\end{aligned}$$ by the properties of $\mu^{(0)}, \mu^{(1)}$ and $\nu$. Finally, we recall that $\pi(k+1)$ was chosen so as to satisfy the conclusion of Lemma [\[lem:pick\]](#lem:pick){reference-type="ref" reference="lem:pick"}: $$\sum_{\ell \in L} {\mathbb E}[X_\ell \mid X_K=a_K, X_{\pi(k+1)}=0] - \sum_{\ell \in L} {\mathbb E}[X_\ell \mid X_K=a_K, X_{\pi(k+1)}=1] \leq 1.$$ This concludes the proof that $|Y^{(1)}_{k+1} - Y^{(0)}_{k+1}| \leq 2$.
+
+In the case of monotone $f$, we observe that we can improve some of the inequalities: we get $$0 \leq f(X_K=a_K, X_{\pi(k+1)}=1, X_L=a_L) - f(X_K=a_K, X_{\pi(k+1)}=0, X_L=a_L) \leq 1$$ and $$0 \geq f(X_K=a_k, X_{\pi(k+1)}=0, X_K=a_L) - f(X_K=a_k, X_{\pi(k+1)}=0, X_K=b_L)| \geq \| a_L \|_1 - \| b_L \|_1$$ whenever $a_L \leq b_L$. This implies that $$1 \geq f(X_K=a_k, X_{\pi(k+1)}=1 X_K=a_L) - f(X_K=a_k, X_{\pi(k+1)}=0, X_K=b_L) \geq \| a_L \|_1 - \| b_L \|_1$$ and by the same computations as above, we conclude that $1 \geq Y^{(1)}_{k+1} - Y^{(0)}_{k+1} \geq -1$. ◻
+:::
+
+Theorem [\[thm:Lipschitz-R\]](#thm:Lipschitz-R){reference-type="ref" reference="thm:Lipschitz-R"} now follows by standard exponential moment analysis; see for example [@McDiarmid89]. For completeness, we summarize the rest of the analysis as follows.
+
+::: proof
+*Proof of Theorem [\[thm:Lipschitz-R\]](#thm:Lipschitz-R){reference-type="ref" reference="thm:Lipschitz-R"}.* For a parameter $\lambda \in {\mathbb R}$, we estimate the exponential moment ${\mathbb E}[e^{\lambda f(X_1,\ldots,X_n)}] = {\mathbb E}[e^{\lambda Y_n}]$. Inductively, we prove that ${\mathbb E}[e^{\lambda (Y_k - Y_0)}] \leq e^{k \lambda^2 / 2}$ (for monotone $f$, the bound improves to $e^{k \lambda^2 / 8}$). The inductive step is that $${\mathbb E}[e^{\lambda (Y_{k+1} - Y_k)} \mid \pi([k])=K, X_K=a_K] \leq e^{\lambda^2 / 2}$$ which is true because under this conditioning, $Y_{k+1} - Y_k$ is a random variable of expectation $0$, confined to an interval of length $2$ (see Lemma [\[lem:martingale\]](#lem:martingale){reference-type="ref" reference="lem:martingale"}). It is known that the exponential moment of such a variable is upper-bounded by $e^{\lambda^2 / 2}$. By averaging over all choices of $K$ and $a_K$ that yield the same value of $Y_k$, we also obtain ${\mathbb E}[e^{\lambda (Y_{k+1} - Y_k)} \mid Y_k] \leq e^{\lambda^2 / 2}.$ In the case of $f$ monotone, $Y_{k+1} - Y_k$ is confined to an interval of length $1$ and the exponential moment is upper-bounded by $e^{\lambda^2 / 8}$.
+
+From here, by induction, we obtain $${\mathbb E}[e^{\lambda (Y_{k+1} - Y_0)}] = {\mathbb E}_{Y_k}[ {\mathbb E}_{Y_{k+1}}[e^{\lambda (Y_{k+1} - Y_k)} \mid Y_k] \ e^{\lambda (Y_k-Y_0)}] \leq e^{\lambda^2 / 2} \ {\mathbb E}_{Y_k}[e^{\lambda(Y_k-Y_0)}] \leq e^{(k+1) \lambda^2 / 2}.$$ Therefore, ${\mathbb E}[e^{\lambda (Y_n - Y_0)}] \leq e^{n \lambda^2 / 2}$. (For $f$ monotone, the bound improves to $e^{n \lambda^2 / 8}$.)
+
+Recall that $Y_0 = {\mathbb E}[f(X_1,\ldots,X_n)] = \mu$. By Markov's inequality applied to the exponential moment, we get $$\Pr[f(X_1,\ldots,X_n) > \mu+t] = \Pr[e^{\lambda (Y_n - Y_0)} \geq e^{\lambda t}] \leq \frac{{\mathbb E}[e^{\lambda (Y_n-Y_0)}]}{e^{\lambda t}} = e^{n \lambda^2 / 2 - \lambda t}.$$ The choice of $\lambda = t/n$ gives the upper-tail bound in Theorem [\[thm:Lipschitz-R\]](#thm:Lipschitz-R){reference-type="ref" reference="thm:Lipschitz-R"}; the other bounds follow similarly. ◻
+:::

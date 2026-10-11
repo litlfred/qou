@@ -8,31 +8,20 @@ pages: 12-13
 source_pdf: 1401.5542v1.pdf
 source_sha256: f7cd278a274f37c5
 doc_brief: "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS — The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by theA-coordinates on"
+text_source: latex
+latex_prose_ratio: 0.947
+latex_coverage_ratio: 0.92
 ---
-coordinates, it follows that ρ is deﬁned over the Ptolemy ﬁeld. Hence, the trace ﬁeld is a
-subﬁeld of the Ptolemy ﬁeld.
-Fix a maximal tree G with 1 or 3-cycle as in Figures 10 or 11. As explained in Section 4.3
-the edges of G are basic generators of α∗. We may thus assume without loss of generality
-that the Ptolemy coordinates ci of the edges εi of G are 1. By (5.1), it is thus enough to
-show that the Ptolemy coordinates of the remaining 1-cells are in the trace ﬁeld.
-Let γ denote the (lifted) natural cocycle of c. Then γ assigns to each edge path p in ˆM a
-matrix γ(p)∈ SL(2, C). Let
-(5.2) α(a) =
-(
-0 −a−1
-a 0
-)
-, β (b) =
-(
-1 b
-0 1
-)
-.
-THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS 13
-As shown in Figure 3, γ takes long and short edges to elements of the form α(a) and β(b),
-respectively, wherea and b are given in terms of the Ptolemy coordinates.
-Sinceρ is boundary-non trivial, there exists for each cuspi ofM a peripheral loopMi with
-γ(Mi)∈P non-trivial. We shall here refer to such loops as non-trivial. Fix such non-trivial
-loops Mi, once and for all, and let mi⁄= 0 be such that γ(Mi) = β(mi). For any edge path
-p with end point on a cusp i we can alter Mi by a conjugation if necessary (this does not
-changemi) so that p is composable with Mi.
+Since the natural cocycle is given in terms of the Ptolemy coordinates, it follows that $\rho$ is defined over the Ptolemy field. Hence, the trace field is a subfield of the Ptolemy field.
+
+Fix a maximal tree $G$ with $1$ or $3$-cycle as in Figures~\ref{fig:TreeWithCycle} or \ref{fig:TreeWithThreeCycle}. As explained in Section~\ref{sec:AlphaStarBasic} the edges of $G$ are basic generators of $\alpha^*$. We may thus assume without loss of generality that the Ptolemy coordinates $c_i$ of the edges $\varepsilon_i$ of $G$ are $1$. By~\eqref{eq:kc}, it is thus enough to show that the Ptolemy coordinates of the remaining $1$-cells are in the trace field.
+
+
+Let $\gamma$ denote the (lifted) natural cocycle of $c$. Then $\gamma$ assigns to each edge path $p$ in $\widehat M$ a matrix $\gamma(p)\in\SL(2,\C)$. Let
+\begin{equation}\label{eq:AlphaBeta}
+\alpha(a)=\begin{pmatrix}0&-a^{-1}\\a&0\end{pmatrix},\qquad \beta(b)=\begin{pmatrix}1&b\\0&1\end{pmatrix}.
+\end{equation}
+As shown in Figure~\ref{fig:PtolemyToCocycle}, $\gamma$ takes long and short edges to elements of the form $\alpha(a)$ and $\beta(b)$, respectively, where $a$ and $b$ are given in terms of the Ptolemy coordinates.
+
+Since $\rho$ is boundary-non trivial, there exists for each cusp $i$ of $M$ a peripheral loop $M_i$ with $\gamma(M_i)\in P$ non-trivial. We shall here refer to such loops as \emph{non-trivial}. Fix such non-trivial loops $M_i$, once and for all, and let $m_i\neq 0$ be such that $\gamma(M_i)=\beta(m_i)$.
+For any edge path $p$ with end point on a cusp $i$ we can alter $M_i$ by a conjugation if necessary (this does not change $m_i$) so that $p$ is composable with $M_i$.

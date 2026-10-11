@@ -7,13 +7,14 @@ section_number: 15.2
 pages: 458-469
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.935
-latex_coverage_ratio: 0.79
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{solution:space:section}
 In this section we study the combinatorial properties of ideal triangulations of three-manifolds in general. We study the space of solutions to the consistency equations, we prove that it is a complex manifold and exhibit a concrete parametrisation via the holonomy of peripheral curves.
+
 
 \subsection{Edges and tetrahedra}
 Throughout this section, we let $N$ be a compact oriented three-manifold $N$ with $\partial N = T_1 \sqcup \ldots \sqcup T_c$ consisting of tori, and define $M=\interior N$. Let $\calT$ be any ideal triangulation for $M$. 
@@ -28,6 +29,7 @@ since $f = 2t$. Then $e=t$.
 \end{proof}
 
 Recall that in the consistency equations we get one complex variable $z_i$ for each tetrahedron and one equation for each edge; since we have the same number of edges and tetrahedra, one would guess that the solutions form typically a discrete set of points, but this is surprisingly not the case: we now show that some equations are redundant, leaving some space for a higher-dimensional space of solutions. The origin of this redundancy lies in the combinatorial properties of three-dimensional triangulations.
+
 
 \subsection{Incidence matrices} \label{incidence:matrices:subsection}
 We denote respectively by $\Delta_1, \ldots, \Delta_n$ and $e_1,\ldots, e_n$ the tetrahedra and edges of $\calT$. We fix an orientation on $M$, which induces an orientation on each tetrahedron, and we assign numbers 1, 2, and 3 to pairs of opposite edges on each $\Delta_i$ in a way that is orientation-preservingly isomorphic to Figure \ref{tetrahedron_labels:fig}.
@@ -134,6 +136,7 @@ These three lemmas imply Proposition \ref{AB:exact:prop}. In particular we get t
 We have $\rk A = 2n-c$.
 \end{cor}
 
+
 \subsection{A symplectic form} \label{symplectic:form:subsection}
 We define an alternating bilinear form $\omega$ on $\matR^{3n}$ as follows: for every $i=1,\ldots, n$ consider the form
 $$\omega_i = \begin{pmatrix}
@@ -153,6 +156,7 @@ In other words, we need to prove that $\omega(A_j, A_k)=0$ for any rows $A_j, A_
 Each tetrahedron $\Delta_i$ contributes to the number $\omega(A_{n+j}, A_{n+k})$ as follows: if two edges contained in some face $f$ of $\Delta_i$ correspond to the edges $j$ and $k$ of the triangulation, they contribute with a $\pm 1$; the face $f$ is also contained in an adjacent tetrahedron where they contribute with opposite sign, and hence everything sums to zero.
 \end{proof}
 
+
 \subsection{The solution space} \label{solution:space:subsection}
 We now employ the combinatorial results of the previous sections to study the consistency equations for $\calT$. 
 We assign the variables $z_j$, $\frac 1{1-z_j}$, and $\frac{z_j-1}{z_j}$ to the edges of type 1, 2, and 3 in each tetrahedron $\Delta_j$. These three variables lie in the upper half-plane 
@@ -170,6 +174,7 @@ by setting $g=(g_1,\ldots, g_n)$. The \emph{solution space} is the set
 $$\Def(M,\calT) = g^{-1}(e^{2\pi i},\ldots, e^{2\pi i}).$$
 This space consists precisely of the solutions to the consistency equations of $\calT$. 
 Each solution $z\in \Def(M,\calT)$ gives a hyperbolic metric on $M$, which ``deforms'' as $z$ varies: this justifies the use of the symbol ``$\Def$''. We want to prove that $\Def(M,\calT)$ is a complex manifold of dimension $c$. 
+
 
 \subsection{Complex differentials} \label{complex:diff:subsection}
 We use the biholomorphism $\log\colon \widetilde{\matC^*} \to \matC$ and define the function $G(z) = \log g(z)$ for all $z\in \matC_+^n$. Now 
@@ -277,6 +282,7 @@ The image of $G\colon \matC_+^n \to \matC^n$ lies entirely in a $(n-c)$-dimensio
 
 We now want to define a nice holomorphic parametrisation for the manifold $\Def(M,\calT)$, and to this purpose we need to investigate further the combinatorial properties of $\calT$ by looking more closely at its ideal vertices.
 
+
 \subsection{Boundary curves} \label{boundary:curves:subsection}
 Recall that $M=\interior N$ and the ideal vertices $v_1,\ldots, v_c$ of $\calT$ correspond to the boundary tori $T_1,\ldots, T_c$ of $N$, which are triangulated by $\calT$. Recall also that there are $n$ tetrahedra $\Delta_1,\ldots, \Delta_n$ in $\calT$ and each $\Delta_i$ has three edge pairs labeled with $i, n+i,$ and $2n+i$.
 
@@ -342,6 +348,7 @@ The proof is not yet complete, because every tetrahedron $\Delta_i$ determines f
 
 Up to symmetries of the tetrahedron and up to interchanging the colours, the possible non-zero contributions are all shown in Figure \ref{curves_far_contribution:fig}. Each configuration as in the first row cancels with an opposite one produced by the tetrahedron adjacent to the grey face. The contributions in the second row arise when $\gamma$ and $\gamma'$ cross the endpoints of an edge $e$ on opposite sides, and one checks that the contributions of all the cycle of tetrahedra incident to $e$ sum to zero (exercise).
 \end{proof}
+
 
 \subsection{Holonomy parameters} \label{holonomy:subsection}
 We now fix a non-trivial oriented simple closed curve $\gamma_i$ on each $T_i$ and a representation of $\gamma_i$ as a simplicial (possibly non-injective) path in the triangulated $T_i$.

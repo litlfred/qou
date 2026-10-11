@@ -7,10 +7,10 @@ section_number: 6.9
 pages: 61-62
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.975
-doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
+latex_coverage_ratio: 1.0
 ---
 Perhaps unexpectedly, it turns out that $S^u$  packages all of the  isospin up-type states together,  and $S^d$ packages all of the  down-type states together.  This is of course, if one goes ahead and makes an assumption about the placement of $\nu$ into $S^u$ and $\bar{\nu}$ into $S^d$.  
 

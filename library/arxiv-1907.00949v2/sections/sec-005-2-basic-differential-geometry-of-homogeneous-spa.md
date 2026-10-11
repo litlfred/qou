@@ -8,9 +8,10 @@ pages: 4-5
 source_pdf: 1907.00949v2.pdf
 source_sha256: 865defaa34bf42be
 doc_brief: "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces."
+text_source: latex
+latex_prose_ratio: 0.909
+latex_coverage_ratio: 0.938
 ---
-We will need some rudimentary properties of homogeneous spaces not typically found in the
-manifold optimization literature, e.g., [2, 16]. This section provides a self-contained review, kept
-to a bear minimum of just what we need later. We refer readers to standard references [20, 22, 8]
-for more information.
-OPTIMIZATION ON FLAG MANIFOLDS 5
+[]{#sec:basic label="sec:basic"}
+
+We will need some rudimentary properties of homogeneous spaces not typically found in the manifold optimization literature, e.g., [@AMS2009; @EAS]. This section provides a self-contained review, kept to a bear minimum of just what we need later. We refer readers to standard references [@Helgason1978; @KN1969; @Boothby1975] for more information.

@@ -7,10 +7,10 @@ section_number: 2
 pages: 2-3
 source_pdf: 0203462v1.pdf
 source_sha256: 337c24b051365f0a
-text_source: latex
-latex_prose_ratio: 0.713
-latex_coverage_ratio: 0.817
 doc_brief: "1Astronomy & Astrophysics manuscript no. (will be inserted by hand later) — We present a high-resolution (R=75,000, S/N ∼ 500) spectroscopic analysis of the bright (V=11.7), extreme halo giant CS"
+text_source: latex
+latex_prose_ratio: 0.895
+latex_coverage_ratio: 0.989
 ---
 []{#observations label="observations"}
 
@@ -49,5 +49,17 @@ Reductions were performed using the UVES context within MIDAS. The succession of
 
 Radial velocities given in the table are only those computed from the 480-580nm red spectra (which permitted corrections for small instrumental shifts from the telluric absorption lines). In addition to the spectra reported here, we took exposures of CS 31082-001 with UVES again in September 2001 (5-9 september) and the radial velocity was still impressively unchanged (mean of four measurements in 2001 V$_{r\:
 barycentric}=139.05\pm0.05 kms^{-1}$) and Aoki (2002, private communication) found V$_{r\:barycentric}=138.9\pm0.24 kms^{-1}$ from observations with HDS on the Subaru telescope. There is therefore *no sign* of radial velocity variations in this star, and hence *no hint that CS 31082-001 could be a binary*.
+
+# Abundance analysis, and derived abundances of the lighter elements
+
+<figure id="F-C">
+<p><span><embed src="M2317f3.ps" style="width:8cm" /></span></p>
+<figcaption>Fit of CH lines of the G band in CS 31082-001 . <span><em>Dots:</em></span> observations: <span><em>lines:</em></span> synthetic spectra computed for the abundances indicated in the figure.</figcaption>
+</figure>
+
+<figure id="F-O">
+<p><span><embed src="M2317f4.ps" style="width:8cm" /></span></p>
+<figcaption>The forbidden [O I] 6300 Å line in CS 31082-001 . Symbols as in Fig. <a href="#F-C" data-reference-type="ref" data-reference="F-C">1</a></figcaption>
+</figure>
 
 [^1]: In the two frames that were obtained through the image slicer, the extraction was simply an average of all pixels in the object profile, spread over four slices.

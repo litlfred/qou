@@ -476,8 +476,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 6,
-   "overlaid": 3,
+   "tex_sections": 50,
+   "overlaid": 17,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -492,77 +492,111 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.247,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.888,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-001-12-the-grothendieck-group",
      "title": "The Grothendieck group",
-     "result": "no matching \\section"
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-14-comparing-grothendieck-group-and-trace",
      "title": "Comparing Grothendieck group and trace",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-2-elementary-notions-of-trace",
      "title": "Elementary notions of trace",
-     "prose_ratio": 0.624,
-     "coverage_ratio": 0.947,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.625,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-22-hochschild-homology-and-the-trace-of-a-ring",
      "title": "Hochschild homology and the trace of a ring",
-     "result": "no matching \\section"
+     "prose_ratio": 0.935,
+     "coverage_ratio": 0.9,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-3-trace-of-a-linear-category",
      "title": "Trace of a linear category",
-     "prose_ratio": 0.132,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.982,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-31-hochschildmitchell-homology-and-the-trace",
      "title": "Hochschild\u2013Mitchell homology and the trace",
-     "result": "no matching \\section"
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.902,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-32-the-trace-and-direct-sums",
      "title": "The trace and direct sums",
-     "result": "no matching \\section"
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-33-the-trace-and-idempotent-completions",
      "title": "The trace and idempotent completions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-34-the-trace-and-categories-of-complexes",
      "title": "The trace and categories of complexes",
-     "result": "no matching \\section"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-35-the-trace-and-split-grothendieck-groups",
      "title": "The trace and split Grothendieck groups",
-     "result": "no matching \\section"
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.914,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-36-the-trace-of-a-graded-linear-category",
      "title": "The trace of a graded linear category",
-     "result": "no matching \\section"
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-37-hochschildmitchell-homology-of-strongly-upper",
      "title": "Hochschild\u2013Mitchell homology of strongly upper triangular categories",
-     "result": "no matching \\section"
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-013-4-categorified-quantum-groups",
      "title": "Categorified quantum groups",
-     "prose_ratio": 0.026,
+     "prose_ratio": 0.047,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -578,26 +612,32 @@
     {
      "id": "sec-016-43-symmetric-functions-and-bubbles",
      "title": "Symmetric functions and bubbles",
-     "result": "no matching \\section"
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-017-5-graded-traces-of-categorified-quantum-groups",
      "title": "Graded traces of categorified quantum groups",
-     "prose_ratio": 0.674,
-     "coverage_ratio": 0.932,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.721,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-018-52-the-current-algebra-for-sln",
      "title": "The current algebra for sln",
-     "result": "no matching \\section"
+     "prose_ratio": 0.935,
+     "coverage_ratio": 0.891,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-019-6-action-on-center-of-objects-in",
      "title": "Action on center of objects in",
-     "prose_ratio": 0.965,
-     "coverage_ratio": 0.945,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

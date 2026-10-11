@@ -8,39 +8,25 @@ pages: 4-5
 source_pdf: 2205.07095v1.pdf
 source_sha256: 2ec6916399150e2d
 doc_brief: "Virial Expansions for Correlation Functions in Canonical Ensemble A. L. Rebenko — The inﬁnite set of coupled integral nonlinear equations for correlation func- tions in the case of classical"
+text_source: latex
+latex_prose_ratio: 0.971
+latex_coverage_ratio: 1.0
 ---
-For any function ψ ∈C0(Γ 0) deﬁne generating functional :
-~Fψ(j) =
-∞∑
-N =0
-1
-N !
-∫
-RdN
-(dx)Nj(x1) · · ·j(xN )ψ(x1,...,x N) =
-=
-∫
-Γ 0
-e(j;γ)ψ(γ)λσ(dγ), (2.3)
-where functional e(j;γ) is deﬁned by the formula
-e(j;γ) :=
-{
-1, γ = ∅,∏
-x∈γj(x), γ ∈ Γ 0 \ {∅}, (2.4)
-4
-and j ∈ C0(Rd) is bounded (take for simplicity j ≤ 1), continuum,
-nonnegative function.
-It is easy to calculate using the lemma 2.1 that
-~Fψ1(j) ~Fψ2(j) = ~Fψ1∗ψ2(j) =
-∫
-Γ 0
-e(j;γ)(ψ1 ∗ψ2)(γ)λσ(dγ), (2.5)
-where ψ1 ∗ ψ2 is product ψ1 and ψ2 in commutative algebra A, which
-was introduced by Ruelle (see [23], Ch. 4). Formula (2.5) est ablishes an
-unambiguous correspondence between the algebra of generat ing functionals
-with operation of ordinary multiplication and the algebra A. Recall that
-for γ = {x1,x 2,...xn}
-(ψ1 ∗ψ2)(γ) =
-∑
-ξ⊆γ
-ψ1(ξ)ψ2(γ \ξ). (2.6)
+For any function $\psi\in C_0(\Gamma_0)$ define *generating functional* : $$\begin{aligned}
+\label{GFf}
+\widetilde{F}_\psi(j)&\;=\;\sum_{N=0}^{\infty}\frac{1}{N!}\int_{\Bbb R^{dN}}(dx)^{N}j(x_1)\cdots j(x_N)\psi(x_1,\ldots, x_N)=\notag \\
+&\;=\;\int_{\Gamma_0}e(j;\gamma)\psi(\gamma)\lambda_\sigma(d\gamma),
+\end{aligned}$$ where functional $e(j;\gamma)$ is defined by the formula $$\begin{aligned}
+\label{I-lam4}
+e(j;\gamma):=\;&\begin{cases}
+ 1,\;&\gamma=\emptyset,\\
+  \prod_{x\in\gamma}j(x),
+\;&\gamma\in\Gamma_0\setminus\{\emptyset\},
+  \end{cases}
+\end{aligned}$$
+
+and $j\in C_0(\Bbb R^d)$ is bounded (take for simplicity $j\leq 1$), continuum, nonnegative function.
+
+It is easy to calculate using the lemma [\[lem2\]](#lem2){reference-type="ref" reference="lem2"} that $$\label{odprod}
+  \widetilde{F}_{\psi_1}(j)\widetilde{F}_{\psi_2}(j)\;=\;\widetilde{F}_{\psi_1*\psi_2}(j)=\int_{\Gamma_0}e(j;\gamma)(\psi_1*\psi_2)(\gamma)\lambda_\sigma(d\gamma),$$ where $\psi_1*\psi_2$ is product $\psi_1$ and $\psi_2$ in commutative algebra $\mathcal{A}$, which was introduced by Ruelle (see [@Ru69], Ch. 4). Formula [\[odprod\]](#odprod){reference-type="eqref" reference="odprod"} establishes an unambiguous correspondence between the algebra of generating functionals with operation of ordinary multiplication and the algebra $\mathcal {A}$. Recall that for $\gamma=\{x_1, x_2, ... x_n\}$ $$\label{odprodRu}
+(\psi_1*\psi_2)(\gamma)= \sum_{\xi\subseteq\gamma}\psi_{1}(\xi)\psi_{2}(\gamma\setminus\xi).$$

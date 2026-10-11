@@ -124,16 +124,16 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.981,
-     "coverage_ratio": 0.994,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-experimental-setup",
      "title": "Experimental Setup",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -141,7 +141,7 @@
      "id": "sec-002-3-results",
      "title": "Results",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.992,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -149,7 +149,7 @@
      "id": "sec-003-4-conclusion",
      "title": "Conclusion",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.398,
+     "coverage_ratio": 0.403,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     }
    ]

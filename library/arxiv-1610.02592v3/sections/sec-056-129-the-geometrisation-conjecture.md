@@ -7,14 +7,15 @@ section_number: 12.9
 pages: 409-413
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.968
-latex_coverage_ratio: 0.855
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{geometrisation:section}
 
 We can finally state the famous Geometrisation Conjecture, proposed by Thurston in 1982 and proved twenty years later by Perelman in 2002.
+
 
 \subsection{Statement and main consequences}
 We say that a compact 3-manifold with (possibly empty) boundary consisting of tori is \emph{geometric} if its interior has a finite-volume complete geometric structure modelled on one of the eight geometries:\index{three-manifold!geometric three-manifold} 
@@ -67,6 +68,7 @@ Being simple, it is geometric. Seifert manifolds with boundary are never simple.
 
 That statement is not true for closed manifolds, because many Seifert manifolds fibering over $S^2$ with at most 3 singular fibres are simple. 
 
+
 \subsection{Surface bundles}
 There is a nice way to formulate geometrisation for surface bundles. 
 We start with the much simpler torus case.
@@ -97,6 +99,7 @@ Use Proposition \ref{trichotomy:prop}.
 \end{proof}
 
 Theorem \ref{fibering:geometrisation:teo} was initially proved by Thurston in the 1980s. In the same years Thurston also proved the geometrisation conjecture for all Haken 3-manifolds. Before Perelman's proof the conjecture was open ``only'' in the non-Haken case, and it naturally split in three parts: the Conjectures \ref{Poincare:conj}, \ref{finite:conj}, and \ref{hyperbolisation:conj}. Perelman's proof certifies geometrisation in all cases with a unified technique.
+
 
 \subsection{References}
 This chapter contains many technical proofs. Most of them were taken from Scott \cite{S}, that is the standard reference on the geometrisation of Seifert manifolds, and Thurson's book \cite{Th_book}. We have also consulted a nice survey of Bonahon \cite{B3}, that contains in particular the suggestion of calculating the Ricci tensors in the non-product geometries. Thurson's geometrisation conjecture appears in \cite{Th_conj} in 1982, while Perelman's proof consists of three papers that he sent to the arXiv in 2003 \cite{Pe1, Pe2, Pe3}.

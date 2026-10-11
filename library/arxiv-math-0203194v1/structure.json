@@ -9969,7 +9969,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
-   "tex_sections": 18,
+   "tex_sections": 106,
    "overlaid": 0,
    "thresholds": {
     "title": 0.85,
@@ -9980,22 +9980,26 @@
     {
      "id": "sec-000-2-introduction",
      "title": "INTRODUCTION",
-     "result": "no matching \\section"
+     "prose_ratio": 0.347,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-4-introduction",
      "title": "INTRODUCTION",
-     "result": "no matching \\section"
+     "prose_ratio": 0.313,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-6-introduction",
      "title": "INTRODUCTION",
-     "result": "no matching \\section"
+     "prose_ratio": 0.292,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-003-8-introduction",
      "title": "INTRODUCTION",
-     "result": "no matching \\section"
+     "prose_ratio": 0.101,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-004-1-analytic-continuation-topological-point-of-vie",
@@ -10029,7 +10033,7 @@
     {
      "id": "sec-009-1-analytic-continuation-topological-point-of-vie",
      "title": "ANALYTIC CONTINUATION; TOPOLOGICAL POINT OF VIEW. 11",
-     "prose_ratio": 0.249,
+     "prose_ratio": 0.416,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -10050,7 +10054,7 @@
     {
      "id": "sec-013-1-analytic-continuation-topological-point-of-vie",
      "title": "ANALYTIC CONTINUATION; TOPOLOGICAL POINT OF VIEW. 13",
-     "prose_ratio": 0.041,
+     "prose_ratio": 0.068,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -10066,7 +10070,8 @@
     {
      "id": "sec-016-13-berkovich-geometry-and-the-principle-of-monod",
      "title": "Berkovich geometry and the principle of monodromy",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-017-131-rigid-analytic-spaces-are-endowed-with-a-gro",
@@ -10107,7 +10112,7 @@
     {
      "id": "sec-024-1-analytic-continuation-topological-point-of-vie",
      "title": "ANALYTIC CONTINUATION; TOPOLOGICAL POINT OF VIEW. 17",
-     "prose_ratio": 0.025,
+     "prose_ratio": 0.034,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -10198,7 +10203,7 @@
     {
      "id": "sec-042-1-analytic-continuation-topological-point-of-vie",
      "title": "ANALYTIC CONTINUATION; TOPOLOGICAL POINT OF VIEW. 19",
-     "prose_ratio": 0.042,
+     "prose_ratio": 0.036,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -10249,7 +10254,7 @@
     {
      "id": "sec-052-2-analytic-continuation-algebraic-approach-23",
      "title": "ANALYTIC CONTINUATION; ALGEBRAIC APPROACH. 23",
-     "prose_ratio": 0.101,
+     "prose_ratio": 0.083,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -10280,7 +10285,7 @@
     {
      "id": "sec-058-2-analytic-continuation-algebraic-approach-25",
      "title": "ANALYTIC CONTINUATION; ALGEBRAIC APPROACH. 25",
-     "prose_ratio": 0.096,
+     "prose_ratio": 0.079,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -10321,7 +10326,7 @@
     {
      "id": "sec-066-2-analytic-continuation-algebraic-approach-27",
      "title": "ANALYTIC CONTINUATION; ALGEBRAIC APPROACH. 27",
-     "prose_ratio": 0.027,
+     "prose_ratio": 0.023,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -10352,7 +10357,7 @@
     {
      "id": "sec-072-2-analytic-continuation-algebraic-approach-29",
      "title": "ANALYTIC CONTINUATION; ALGEBRAIC APPROACH. 29",
-     "prose_ratio": 0.008,
+     "prose_ratio": 0.006,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -10414,7 +10419,7 @@
     {
      "id": "sec-084-2-analytic-continuation-algebraic-approach-33",
      "title": "ANALYTIC CONTINUATION; ALGEBRAIC APPROACH. 33",
-     "prose_ratio": 0.364,
+     "prose_ratio": 0.366,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -10455,7 +10460,8 @@
     {
      "id": "sec-092-42-over-the-p-adics-prolegomena",
      "title": "Over the p-adics; prolegomena",
-     "result": "no matching \\section"
+     "prose_ratio": 0.183,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-093-422-one-simple-tentative-answer-would-be-to-repl",
@@ -10470,7 +10476,7 @@
     {
      "id": "sec-095-4-abelian-periods-as-algebraic-integrals-45",
      "title": "ABELIAN PERIODS AS ALGEBRAIC INTEGRALS. 45",
-     "prose_ratio": 0.097,
+     "prose_ratio": 0.118,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -10496,7 +10502,7 @@
     {
      "id": "sec-100-4-abelian-periods-as-algebraic-integrals-47",
      "title": "ABELIAN PERIODS AS ALGEBRAIC INTEGRALS. 47",
-     "prose_ratio": 0.241,
+     "prose_ratio": 0.398,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -10522,13 +10528,14 @@
     {
      "id": "sec-105-4-abelian-periods-as-algebraic-integrals-49",
      "title": "ABELIAN PERIODS AS ALGEBRAIC INTEGRALS. 49",
-     "prose_ratio": 0.059,
+     "prose_ratio": 0.129,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-106-46-periods-of-cm-elliptic-curves-and-values-of-t",
      "title": "Periods of CM elliptic curves and values of the Gamma fun c-",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-107-461-the-case-of-an-elliptic-curve-a-with-supersi",
@@ -10548,7 +10555,7 @@
     {
      "id": "sec-110-4-abelian-periods-as-algebraic-integrals-51",
      "title": "ABELIAN PERIODS AS ALGEBRAIC INTEGRALS. 51",
-     "prose_ratio": 0.134,
+     "prose_ratio": 0.118,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -10678,13 +10685,13 @@
     {
      "id": "sec-134-4-moduli-problems-for-p-divisible-groups-83",
      "title": "Moduli problems for p-divisible groups. 83",
-     "prose_ratio": 0.006,
+     "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-135-6-the-p-adic-period-mapping-and-the-gauss-manin",
      "title": "The p-adic period mapping and the Gauss-Manin connection. 90",
-     "prose_ratio": 0.04,
+     "prose_ratio": 0.038,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -10840,7 +10847,7 @@
     {
      "id": "sec-165-3-a-stroll-in-the-crystalline-world-79",
      "title": "A STROLL IN THE CRYSTALLINE WORLD. 79",
-     "prose_ratio": 0.066,
+     "prose_ratio": 0.091,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -10851,7 +10858,8 @@
     {
      "id": "sec-167-35-interlude-analytic-spaces-associated-with-for",
      "title": "Interlude : analytic spaces associated with formal sch emes",
-     "result": "no matching \\section"
+     "prose_ratio": 0.007,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-168-351-let-us-\ufb01rst-review-the-raynaud-berthelot-con",
@@ -10876,7 +10884,7 @@
     {
      "id": "sec-172-3-a-stroll-in-the-crystalline-world-81",
      "title": "A STROLL IN THE CRYSTALLINE WORLD. 81",
-     "prose_ratio": 0.041,
+     "prose_ratio": 0.045,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -10907,7 +10915,8 @@
     {
      "id": "sec-178-41-moduli-problem-for-p-divisible-groups-quasi-i",
      "title": "Moduli problem for p-divisible groups quasi-isogenous to a",
-     "result": "no matching \\section"
+     "prose_ratio": 0.004,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-179-411-here-we-work-over-the-discrete-valuation-rin",
@@ -10917,7 +10926,7 @@
     {
      "id": "sec-180-4-moduli-problems-for-p-divisible-groups-85",
      "title": "MODULI PROBLEMS FOR p-DIVISIBLE GROUPS. 85",
-     "prose_ratio": 0.046,
+     "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -10983,7 +10992,7 @@
     {
      "id": "sec-193-6-the-p-adic-period-mapping-and-the-gauss-manin",
      "title": "THE p-ADIC PERIOD MAPPING AND THE GAUSS-MANIN CONNECTION. 91",
-     "prose_ratio": 0.056,
+     "prose_ratio": 0.044,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -11029,7 +11038,7 @@
     {
      "id": "sec-202-6-the-p-adic-period-mapping-and-the-gauss-manin",
      "title": "THE p-ADIC PERIOD MAPPING AND THE GAUSS-MANIN CONNECTION. 93",
-     "prose_ratio": 0.084,
+     "prose_ratio": 0.065,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -11060,7 +11069,7 @@
     {
      "id": "sec-208-6-the-p-adic-period-mapping-and-the-gauss-manin",
      "title": "THE p-ADIC PERIOD MAPPING AND THE GAUSS-MANIN CONNECTION. 95",
-     "prose_ratio": 0.314,
+     "prose_ratio": 0.259,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -11111,7 +11120,8 @@
     {
      "id": "sec-218-73-global-uniformization",
      "title": "Global uniformization",
-     "result": "no matching \\section"
+     "prose_ratio": 0.113,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-219-74-example-the-\u02c7cerednik-drinfeld-uniformization",
@@ -11203,7 +11213,7 @@
     {
      "id": "sec-236-4-non-archimedean-orbifolds-uniformizing-di\ufb00eren",
      "title": "Non-archimedean orbifolds, uniformizing di\ufb00erential e quations",
-     "prose_ratio": 0.008,
+     "prose_ratio": 0.01,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -11916,7 +11926,8 @@
     {
      "id": "sec-377-33-local-monodromy-of-p-adic-di\ufb00erential-equatio",
      "title": "Local monodromy of p-adic di\ufb00erential equations and Galois",
-     "result": "no matching \\section"
+     "prose_ratio": 0.004,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-378-331-the-di\ufb00erential-sub--k-algebra",
@@ -12171,7 +12182,8 @@
     {
      "id": "sec-428-4-non-archimedean-orbifolds-159",
      "title": "NON-ARCHIMEDEAN ORBIFOLDS. 159",
-     "result": "no matching \\section"
+     "prose_ratio": 0.043,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-429-413-a-morphism-f-is-called-an-orbifold-covering",
@@ -12206,7 +12218,8 @@
     {
      "id": "sec-435-4-non-archimedean-orbifolds-161",
      "title": "NON-ARCHIMEDEAN ORBIFOLDS. 161",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-436-418-more-generally-let-us-consider-a-shimura-var",
@@ -12286,7 +12299,8 @@
     {
      "id": "sec-451-4-non-archimedean-orbifolds-165",
      "title": "NON-ARCHIMEDEAN ORBIFOLDS. 165",
-     "result": "no matching \\section"
+     "prose_ratio": 0.02,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-452-445-an-orbifold-is-said-to-be-uniformizable25-if",
@@ -12311,7 +12325,8 @@
     {
      "id": "sec-456-4-non-archimedean-orbifolds-167",
      "title": "NON-ARCHIMEDEAN ORBIFOLDS. 167",
-     "result": "no matching \\section"
+     "prose_ratio": 0.027,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-457-1-ss--sets-\u03c0temp",
@@ -12441,7 +12456,8 @@
     {
      "id": "sec-482-4-non-archimedean-orbifolds-169",
      "title": "NON-ARCHIMEDEAN ORBIFOLDS. 169",
-     "result": "no matching \\section"
+     "prose_ratio": 0.046,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-483-459-assume-that-s-is-the-analyti\ufb01cation-of-a-smo",
@@ -12466,7 +12482,8 @@
     {
      "id": "sec-487-4-non-archimedean-orbifolds-171",
      "title": "NON-ARCHIMEDEAN ORBIFOLDS. 171",
-     "result": "no matching \\section"
+     "prose_ratio": 0.033,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-488-1-ss-it-factors-through-an",
@@ -12496,7 +12513,8 @@
     {
      "id": "sec-493-4-non-archimedean-orbifolds-173",
      "title": "NON-ARCHIMEDEAN ORBIFOLDS. 173",
-     "result": "no matching \\section"
+     "prose_ratio": 0.12,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-494-476-in-general-it-is-quite-hard-to-compute-unifo",
@@ -12641,7 +12659,8 @@
     {
      "id": "sec-522-55-arithmetic-p-adic-triangle-groups-a-p-adic-an",
      "title": "Arithmetic p-adic triangle groups. A p-adic analogue of T akeuchi\u2019s",
-     "result": "no matching \\section"
+     "prose_ratio": 0.002,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-523-551-arithmeticp-adic-triangle-groups-are-hyperbo",
@@ -12751,7 +12770,8 @@
     {
      "id": "sec-544-64-the-non-archimedean-triangle-groups-32-4-6-22",
      "title": "The non-archimedean triangle groups \u2206 3(2, 4, 6), \u2206 2(2, 4, 6) and",
-     "result": "no matching \\section"
+     "prose_ratio": 0.004,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-545-641-our-aim-here-is-to-explore-the-combinatorics",

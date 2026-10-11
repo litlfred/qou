@@ -8,12 +8,12 @@ pages: 35-35
 source_pdf: 1409.0848v3.pdf
 source_sha256: 5af73ef812ccee40
 doc_brief: "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES — This work forms a foundational study of factorization homol ogy, or topological chiral homology, at the generality of stratiﬁed spaces with tangen tial"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-In this section we give two classes of examples of homology theories. The ﬁrst class is quite formal,
-and depends only on the homotopy type of the tangent classiﬁer, Entr(X)
-τX
-−−→B, of a B-manifold.
-The second class is not homotopy invariant in general, yet we identify an understood subclass for
-when these examples only depend on the proper homotopy type of the tangent classiﬁer – this is
-the statement of non-abelian Poincar´ e duality for structured st ratiﬁed spaces.
-Fix an∞-category of basics B.
+In this section we give two classes of examples of homology theories.  
+The first class is quite formal, and depends only on the homotopy type of the tangent classifier, ${\sf Entr}(X)\xra{\tau_X} \cB$, of a $\cB$-manifold.
+The second class is not homotopy invariant in general, yet we identify an understood subclass for when these examples only depend on the \emph{proper} homotopy type of the tangent classifier -- this is the statement of non-abelian Poincar\'e duality for structured stratified spaces.
+\\
+Fix an $\oo$-category of basics $\cB$.

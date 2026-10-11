@@ -7,7 +7,8 @@
   "bytes": 284274,
   "pages": 9,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -194,6 +195,80 @@
   "likely_scanned": false,
   "toc_entries": 9,
   "sections": 9,
-  "chars_total": 37611
+  "chars_total": 37611,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "paper-rev.tex",
+   "tex_sections": 10,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-i-hip",
+     "title": "Hip",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-c-b-lang",
+     "title": "B. Lang",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-i-introduction",
+     "title": "INTRODUCTION",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-ii-expectations-from-chrmt",
+     "title": "EXPECTATIONS FROM CHRMT",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-iii-gauge-field-configurations-and",
+     "title": "GAUGE FIELD CONFIGURATIONS AND",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-iv-reporting-the-results",
+     "title": "REPORTING THE RESULTS",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-c-soft-inner-edge",
+     "title": "Soft inner edge",
+     "prose_ratio": 0.943,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-v-summary-and-conclusions",
+     "title": "SUMMARY AND CONCLUSIONS",
+     "prose_ratio": 0.534,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-acknowledgments",
+     "title": "Acknowledgments",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

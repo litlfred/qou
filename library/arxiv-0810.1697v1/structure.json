@@ -182,8 +182,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "article2.tex",
-   "tex_sections": 5,
-   "overlaid": 4,
+   "tex_sections": 12,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -193,7 +193,7 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.983,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
@@ -201,24 +201,32 @@
     {
      "id": "sec-001-2-basic-definitions-and-notations",
      "title": "Basic definitions and notations",
-     "prose_ratio": 0.216,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.932,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-21-examples",
      "title": "Examples",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-22-the-multilinear-bracket",
      "title": "The multilinear bracket",
-     "result": "no matching \\section"
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-3-expansion-of-cables-in-the-skein-module",
      "title": "Expansion of cables in the skein module",
-     "prose_ratio": 0.989,
-     "coverage_ratio": 0.989,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -226,15 +234,15 @@
      "id": "sec-005-4-proof-of-theorem-1",
      "title": "Proof of Theorem 1",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.963,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-5-appendix",
      "title": "Appendix",
-     "prose_ratio": 0.875,
-     "coverage_ratio": 0.857,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },

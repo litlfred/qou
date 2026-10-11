@@ -7,28 +7,20 @@ section_number: 4.1
 pages: 59-65
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
-text_source: latex
-latex_prose_ratio: 0.977
-latex_coverage_ratio: 0.942
 doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Given any $n\times n$ matrix $A$, any positive integer $k$, and any nonnegative integers $p(1),q(1),\dots,p(k),q(k)$, we may define $$\begin{equation}
-M_n(\mathbf{p};\mathbf{q})\, 
-=\, \frac{1}{n}\, \operatorname{tr}[A_n^{p(1)} (A_n^*)^{q(1)} \cdots A_n^{p(k)} (A_n^*)^{q(k)}]\, ,
-\end{equation}$$ for $\mathbf{p}=(p(1),\dots,p(k))$, $\mathbf{q}=(q(1),\dots,q(k))$. Notice that $M_0=1$. As an example, consider $$\begin{multline}
+Given any $n\times n$ matrix $A$, any positive integer $k$, and any nonnegative integers $p(1),q(1),\dots,p(k),q(k)$, we may define $$M_n(\mathbf{p};\mathbf{q})\, 
+=\, \frac{1}{n}\, \operatorname{tr}[A_n^{p(1)} (A_n^*)^{q(1)} \cdots A_n^{p(k)} (A_n^*)^{q(k)}]\, ,$$ for $\mathbf{p}=(p(1),\dots,p(k))$, $\mathbf{q}=(q(1),\dots,q(k))$. Notice that $M_0=1$. As an example, consider $$\begin{gathered}
 M_n((2,2);(2,2))\, = \\ \, \frac{1}{n}\, \sum_{j_1,\dots,j_8=1}^n a_n(j_1,j_2) a_n(j_2,j_3) \overline{a}_n(j_4,j_3) \overline{a}_n(j_5,j_4) a_n(j_5,j_6) a_n(j_6,j_7)
 \overline{a}_n(j_8,j_7) \overline{a}_n(j_1,j_8)\, .
-\end{multline}$$ If we consider the Ginibre ensemble and let $a_n(j,k) = (X(j,k)+iY(j,k))/\sqrt{2n}$ as before, then we have $$\begin{equation}
-\mathbb{E}[a_n(j,k) a_n(j',k')]\, =\, \mathbb{E}[\overline{a}_n(j,k) \overline{a}_n(j',k')], =\, 0\ \text{ and } \
-\mathbb{E}[a_n(j,k) \overline{a}_n(j',k')]\, =\, n^{-1} \delta_{j,j'} \delta_{k,k'}\, .
-\end{equation}$$ Recall that Wick's rule says that for mean $0$ Gaussian random variables $X_1,\dots,X_n$, $$\mathbb{E}(X_1X_2\dots X_n)=\sum \prod_{i,j}(X_iX_j)$$ where the sum is over all distinct ways of dividing $1,\dots,n$ into pairs. Using this, and defining $m_n(\mathbf{p},\mathbf{q}) = \mathbb{E}[M_n(\mathbf{p},\mathbf{q})]$, gives us: $$\begin{equation}
-\label{eq:recurrence}
+\end{gathered}$$ If we consider the Ginibre ensemble and let $a_n(j,k) = (X(j,k)+iY(j,k))/\sqrt{2n}$ as before, then we have $$\mathbb{E}[a_n(j,k) a_n(j',k')]\, =\, \mathbb{E}[\overline{a}_n(j,k) \overline{a}_n(j',k')], =\, 0\ \text{ and } \
+\mathbb{E}[a_n(j,k) \overline{a}_n(j',k')]\, =\, n^{-1} \delta_{j,j'} \delta_{k,k'}\, .$$ Recall that Wick's rule says that for mean $0$ Gaussian random variables $X_1,\dots,X_n$, $$\mathbb{E}(X_1X_2\dots X_n)=\sum \prod_{i,j}(X_iX_j)$$ where the sum is over all distinct ways of dividing $1,\dots,n$ into pairs. Using this, and defining $m_n(\mathbf{p},\mathbf{q}) = \mathbb{E}[M_n(\mathbf{p},\mathbf{q})]$, gives us: $$\label{eq:recurrence}
 m_n(\mathbf{p},\mathbf{q})\, =\, \sum_{(\mathbf{p}',\mathbf{q}',\mathbf{p}'',\mathbf{q}'') \in \mathcal{S}(\mathbf{p},\mathbf{q})} 
 
-\mathbb{E}[M_n(\mathbf{p}',\mathbf{q}') M_n(\mathbf{p}'',\mathbf{q}'')]\, ,
-\end{equation}$$ where $\mathcal{S}(\mathbf{p},\mathbf{q})$ is the set of all admissible pairs, which we describe now. Let $R = p(1)+\dots+p(k)+q(1)+\dots+q(k)$, and define $\sigma = (\sigma(1),\dots,\sigma(R)) \in \{+1,-1\}^R$ as $\sigma\, =\, ((+1)^{p(1)},(-1)^{q(1)},\dots,(+1)^{p(k)},(-1)^{q(k)})$ viewed as spins on vertices arranged on a circle. We will sometimes denote this as $\sigma_{\mathbf{p},\mathbf{q}}$. Let $\Sigma(\mathbf{p},\mathbf{q})$ denote pairs $(\sigma',\sigma'')$ as follows. We match up the first $+1$ and any $-1$. Where these two are removed, we pinch the circle into two smaller circles. Then the remaining spins on the two smaller circles comprise $\sigma'$ and $\sigma''$. E.g., for a particular example $$\begin{equation}
-\sigma = (\underline{+1},+1,\underline{-1},-1,+1,+1,-1,-1) \mapsto (\sigma',\sigma'') = ((+1),(-1,+1,+1,-1,-1))\, .
-\end{equation}$$ The set $\Sigma(\mathbf{p},\mathbf{q})$ is the set of all possible pairs $(\sigma',\sigma'')$ obtainable in this way. We then define $\mathcal{S}(\mathbf{p},\mathbf{q})$ to be the set of all pairs $(\mathbf{p}',\mathbf{q}')$ and $(\mathbf{p}'',\mathbf{q}'')$ by mapping backwards $\Sigma(\mathbf{p},\mathbf{q})$ from $\sigma'$ and $\sigma''$, this way.
+\mathbb{E}[M_n(\mathbf{p}',\mathbf{q}') M_n(\mathbf{p}'',\mathbf{q}'')]\, ,$$ where $\mathcal{S}(\mathbf{p},\mathbf{q})$ is the set of all admissible pairs, which we describe now. Let $R = p(1)+\dots+p(k)+q(1)+\dots+q(k)$, and define $\sigma = (\sigma(1),\dots,\sigma(R)) \in \{+1,-1\}^R$ as $\sigma\, =\, ((+1)^{p(1)},(-1)^{q(1)},\dots,(+1)^{p(k)},(-1)^{q(k)})$ viewed as spins on vertices arranged on a circle. We will sometimes denote this as $\sigma_{\mathbf{p},\mathbf{q}}$. Let $\Sigma(\mathbf{p},\mathbf{q})$ denote pairs $(\sigma',\sigma'')$ as follows. We match up the first $+1$ and any $-1$. Where these two are removed, we pinch the circle into two smaller circles. Then the remaining spins on the two smaller circles comprise $\sigma'$ and $\sigma''$. E.g., for a particular example $$\sigma = (\underline{+1},+1,\underline{-1},-1,+1,+1,-1,-1) \mapsto (\sigma',\sigma'') = ((+1),(-1,+1,+1,-1,-1))\, .$$ The set $\Sigma(\mathbf{p},\mathbf{q})$ is the set of all possible pairs $(\sigma',\sigma'')$ obtainable in this way. We then define $\mathcal{S}(\mathbf{p},\mathbf{q})$ to be the set of all pairs $(\mathbf{p}',\mathbf{q}')$ and $(\mathbf{p}'',\mathbf{q}'')$ by mapping backwards $\Sigma(\mathbf{p},\mathbf{q})$ from $\sigma'$ and $\sigma''$, this way.
 
 Using this, we wish to give the main ideas of the proof of the following theorem.
 
@@ -92,10 +84,8 @@ The easiest version of COM is just $L^2$-concentration. For example, the followi
 
 ::: lemma
 []{#lem:unifGrad label="lem:unifGrad"} Suppose $f : \mathbb{R}^n \to \mathbb{R}$ is a function such that\
-$\|\nabla f\|^2_{\infty} = \sup_{\mathbf{x} \in \mathbb{R}^n} \sum_{k=1}^n \left(\frac{\partial f}{\partial x_k}(\mathbf{x})\right)^2$ is finite. Then if $U_1,\dots,U_n,V_1,\dots,V_n$ are IID $\mathcal{N}(0,1)$ random variables then $$\begin{equation}
-\label{eq:lemG}
-\mathbb{E}\left[\left(f(\mathbf{U})-f(\mathbf{V})\right)^2\right]\, \leq\, 2 \|\nabla f\|_{\infty}^2\, .
-\end{equation}$$
+$\|\nabla f\|^2_{\infty} = \sup_{\mathbf{x} \in \mathbb{R}^n} \sum_{k=1}^n \left(\frac{\partial f}{\partial x_k}(\mathbf{x})\right)^2$ is finite. Then if $U_1,\dots,U_n,V_1,\dots,V_n$ are IID $\mathcal{N}(0,1)$ random variables then $$\label{eq:lemG}
+\mathbb{E}\left[\left(f(\mathbf{U})-f(\mathbf{V})\right)^2\right]\, \leq\, 2 \|\nabla f\|_{\infty}^2\, .$$
 :::
 
 This can be proved using the basic, but important method of "quadratic interpolation," which is sometimes called the "smart path method" by some mathematicians working on spin glasses.
@@ -106,17 +96,13 @@ This can be proved using the basic, but important method of "quadratic interpola
 + \cos(\theta)\, \mathbf{Z}$. Then $\frac{d}{d\theta} \widetilde{\mathbf{U}}(\theta) = \widetilde{\mathbf{U}}(\theta+\frac{\pi}{2})$, and $\mathbb{E}[\widetilde{\mathbf{U}}(\theta) \widetilde{\mathbf{U}}(\theta+\frac{\pi}{2})] = 0$. This means that $\widetilde{\mathbf{U}}(\theta)$ is statistically independent of its $\theta$-derivative. Similar results hold for $\widetilde{\mathbf{V}}(\theta)$. On the other hand $\mathbb{E}[\widetilde{\mathbf{V}}(\theta) \widetilde{\mathbf{U}}(\theta+\frac{\pi}{2})] = 
 -\sin(\theta)\cos(\theta)$.
 
-Next, using the fundamental theorem of calculus, $$\begin{equation}
-\mathbb{E}\left[\left(f(\mathbf{U})-f(\mathbf{V})\right)^2\right]\,
+Next, using the fundamental theorem of calculus, $$\mathbb{E}\left[\left(f(\mathbf{U})-f(\mathbf{V})\right)^2\right]\,
 =\, \int_0^{\pi/2} \frac{d}{d\theta}
 \mathbb{E}\left[\left(f(\widetilde{\mathbf{U}}(\theta))-f(\widetilde{\mathbf{V}}(\theta))\right)^2\right]\,
-d\theta\, ,
-\end{equation}$$ and an easy calculation using Gaussian integration by parts (and the covariance formulas mentioned above) shows that $$\begin{equation}
-\frac{d}{d\theta}
+d\theta\, ,$$ and an easy calculation using Gaussian integration by parts (and the covariance formulas mentioned above) shows that $$\frac{d}{d\theta}
 \mathbb{E}\left[\left(f(\widetilde{\mathbf{U}}(\theta))-f(\widetilde{\mathbf{V}}(\theta))\right)^2\right]\,
 =\, 2\sin(2\theta) \mathbb{E}\left[\nabla f(\widetilde{\mathbf{U}}(\theta)) \cdot 
-\nabla f(\widetilde{\mathbf{V}}(\theta))\right]\, .
-\end{equation}$$ Then (4.7) follows by using the Cauchy-Schwarz inequality. ◻
+\nabla f(\widetilde{\mathbf{V}}(\theta))\right]\, .$$ Then (4.7) follows by using the Cauchy-Schwarz inequality. ◻
 :::
 
 This is only the simplest Gaussian COM result. Notice that the method of proof is similar to the method used to proved Talagrand's Gaussian concentration of measure inequality for Lipschitz functions as stated in chapter 2 Theorem [\[GCOM\]](#GCOM){reference-type="ref" reference="GCOM"}
@@ -125,12 +111,10 @@ This lemma is a tool which can be applied to show that the various mixed matrix 
 
 Since the goal of this section is to give a general outline of the proof of the formula for the mixed matrix moments and relate it to spin glass techniques, we will just state that the desired concentration of measure result is true.
 
-Then we are able to boost ([\[eq:recurrence\]](#eq:recurrence){reference-type="ref" reference="eq:recurrence"}) to $$\begin{equation}
-\label{eq:recur2}
+Then we are able to boost ([\[eq:recurrence\]](#eq:recurrence){reference-type="ref" reference="eq:recurrence"}) to $$\label{eq:recur2}
 \lim_{n \to \infty} m_n(\mathbf{p},\mathbf{q}) - 
 \sum_{(\mathbf{p}',\mathbf{q}',\mathbf{p}'',\mathbf{q}'') \in \mathcal{S}(\mathbf{p},\mathbf{q})} 
-m_n(\mathbf{p}',\mathbf{q}') m_n(\mathbf{p}'',\mathbf{q}'')\, =\, 0\, .
-\end{equation}$$ Another easy fact is that, due to symmetry, $m_n(\mathbf{p},\mathbf{q})=0$ unless $p(1)+\dots+p(k)=q(1)+\dots+q(k)$. And, of course, $m_0=1$.
+m_n(\mathbf{p}',\mathbf{q}') m_n(\mathbf{p}'',\mathbf{q}'')\, =\, 0\, .$$ Another easy fact is that, due to symmetry, $m_n(\mathbf{p},\mathbf{q})=0$ unless $p(1)+\dots+p(k)=q(1)+\dots+q(k)$. And, of course, $m_0=1$.
 
 Using this, and the method of induction, one can then prove Theorem [\[thm:MMM\]](#thm:MMM){reference-type="ref" reference="thm:MMM"}.
 

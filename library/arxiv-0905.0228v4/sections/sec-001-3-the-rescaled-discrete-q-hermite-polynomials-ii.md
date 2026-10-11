@@ -7,10 +7,10 @@ section_number: 3
 pages: 7-12
 source_pdf: 0905.0228v4.pdf
 source_sha256: 1744545d0f210949
-text_source: latex
-latex_prose_ratio: 0.936
-latex_coverage_ratio: 0.919
 doc_brief: "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS — Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 By definition \eqref{eq:H2} and \eqref{eq:ACR} we have 
 \begin{align}

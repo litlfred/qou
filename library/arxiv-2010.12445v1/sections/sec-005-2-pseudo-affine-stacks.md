@@ -7,10 +7,10 @@ section_number: 2
 pages: 10-14
 source_pdf: 2010.12445v1.pdf
 source_sha256: 16e9ca22ecc1f296
-text_source: latex
-latex_prose_ratio: 0.921
-latex_coverage_ratio: 0.938
 doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect"
+text_source: latex
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 0.977
 ---
 One of the key points in the proof of Theorem [\[thma\]](#thma){reference-type="ref" reference="thma"} is a characterization of the following stacks.
 

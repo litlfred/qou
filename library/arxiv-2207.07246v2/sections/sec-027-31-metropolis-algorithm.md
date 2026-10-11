@@ -7,44 +7,30 @@ section_number: 3.1
 pages: 61-64
 source_pdf: 2207.07246v2.pdf
 source_sha256: 91e70e5fe39e07a5
-text_source: latex
-latex_prose_ratio: 0.959
-latex_coverage_ratio: 0.976
 doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 58 sections: Front matter; ABSTRACT; LIST OF TABLES"
+text_source: latex
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 0.995
 ---
 []{#MarkovChian label="MarkovChian"}
 
-In general, for a normalized probability distribution $\pi(s)$ such that $\sum_s \pi(s)=1$, $\langle F \rangle$ the expectation value of function $F(s)$ is, $$\begin{equation}
-\langle F \rangle = \sum_s F(s) \pi(s),
-\label{Fave}
-\end{equation}$$ where the letter $s$ means a set of variables which can describe a state. In the Monte Carlo method, if we can sample $n$ states which effectively explore the state space of $\pi(s)$ and are distributed according to $\pi(s)$, denoting those states as $\{s_0,s_1,s_2...,s_n\} \in s$, then the expectation value $\langle F \rangle$ can be calculated by, $$\begin{equation}
-\langle F \rangle = \frac{\sum_{i=0}^n F(s_i) }{n} .
-\label{FaveMC}
-\end{equation}$$
+In general, for a normalized probability distribution $\pi(s)$ such that $\sum_s \pi(s)=1$, $\langle F \rangle$ the expectation value of function $F(s)$ is, $$\langle F \rangle = \sum_s F(s) \pi(s),
+\label{Fave}$$ where the letter $s$ means a set of variables which can describe a state. In the Monte Carlo method, if we can sample $n$ states which effectively explore the state space of $\pi(s)$ and are distributed according to $\pi(s)$, denoting those states as $\{s_0,s_1,s_2...,s_n\} \in s$, then the expectation value $\langle F \rangle$ can be calculated by, $$\langle F \rangle = \frac{\sum_{i=0}^n F(s_i) }{n} .
+\label{FaveMC}$$
 
-So it is clear that we need to make a process which can continuously generate a series of states {$s_0,s_1,s_2,s_3$\...} such that they distributed according to a target distribution $\pi(s)$. In order to do so, we need a transition probability $\mathcal{P}(s\rightarrow s')$ which is the probability for state $s$ to transit to $s'$. Once this process reaches its equilibrium status, it must satisfy, $$\begin{equation}
-\sum_s \pi(s) \mathcal{P}(s\rightarrow s')=\pi(s').
-\label{equilibriumeq}
-\end{equation}$$
+So it is clear that we need to make a process which can continuously generate a series of states {$s_0,s_1,s_2,s_3$\...} such that they distributed according to a target distribution $\pi(s)$. In order to do so, we need a transition probability $\mathcal{P}(s\rightarrow s')$ which is the probability for state $s$ to transit to $s'$. Once this process reaches its equilibrium status, it must satisfy, $$\sum_s \pi(s) \mathcal{P}(s\rightarrow s')=\pi(s').
+\label{equilibriumeq}$$
 
-We can require the number of states that make transition from any $s$ to $s'$ equals that transit from $s'$ back to $s$, $$\begin{equation}
-\pi(s) \mathcal{P}(s\rightarrow s')=\pi(s') \mathcal{P}(s'\rightarrow s).
-\label{detailbalance}
-\end{equation}$$ Eq.([\[detailbalance\]](#detailbalance){reference-type="ref" reference="detailbalance"}) is the detailed balance condition ([@Ceperley95a]). Note that $\sum_{s'} \mathcal{P}(s\rightarrow s')=\sum_{s} \mathcal{P}(s'\rightarrow s)=1$, so once we reach the detailed balance, Eq.([\[equilibriumeq\]](#equilibriumeq){reference-type="ref" reference="equilibriumeq"}) the equilibrium status will automatically become valid and therefore the states we generated will indeed be distributed according to $\pi(s)$.
+We can require the number of states that make transition from any $s$ to $s'$ equals that transit from $s'$ back to $s$, $$\pi(s) \mathcal{P}(s\rightarrow s')=\pi(s') \mathcal{P}(s'\rightarrow s).
+\label{detailbalance}$$ Eq.([\[detailbalance\]](#detailbalance){reference-type="ref" reference="detailbalance"}) is the detailed balance condition ([@Ceperley95a]). Note that $\sum_{s'} \mathcal{P}(s\rightarrow s')=\sum_{s} \mathcal{P}(s'\rightarrow s)=1$, so once we reach the detailed balance, Eq.([\[equilibriumeq\]](#equilibriumeq){reference-type="ref" reference="equilibriumeq"}) the equilibrium status will automatically become valid and therefore the states we generated will indeed be distributed according to $\pi(s)$.
 
-The transition probability can be written as, $$\begin{equation}
-\mathcal{P}(s\rightarrow s')=T(s\rightarrow s') A(s\rightarrow s'),
-\label{PeqTA}
-\end{equation}$$ where $T(s\rightarrow s')$ is a proposed transition probability and $A(s\rightarrow s')$ is the acceptance probability which will be used to judge if the proposed transition is accepted or not. With Eq.([\[PeqTA\]](#PeqTA){reference-type="ref" reference="PeqTA"}), the detailed balance equation Eq.([\[detailbalance\]](#detailbalance){reference-type="ref" reference="detailbalance"}) can be further written as, $$\begin{equation}
-\frac{A(s\rightarrow s')}{A(s'\rightarrow s)}=\frac{\pi(s')T(s'\rightarrow s)}{\pi(s) T(s\rightarrow s') } .
-\label{detailbalanceAoA}
-\end{equation}$$
+The transition probability can be written as, $$\mathcal{P}(s\rightarrow s')=T(s\rightarrow s') A(s\rightarrow s'),
+\label{PeqTA}$$ where $T(s\rightarrow s')$ is a proposed transition probability and $A(s\rightarrow s')$ is the acceptance probability which will be used to judge if the proposed transition is accepted or not. With Eq.([\[PeqTA\]](#PeqTA){reference-type="ref" reference="PeqTA"}), the detailed balance equation Eq.([\[detailbalance\]](#detailbalance){reference-type="ref" reference="detailbalance"}) can be further written as, $$\frac{A(s\rightarrow s')}{A(s'\rightarrow s)}=\frac{\pi(s')T(s'\rightarrow s)}{\pi(s) T(s\rightarrow s') } .
+\label{detailbalanceAoA}$$
 
-A common choice of the acceptance probability $A(s\rightarrow s')$ which can satisfy Eq.([\[detailbalanceAoA\]](#detailbalanceAoA){reference-type="ref" reference="detailbalanceAoA"}) and thus the detailed balance condition is ([@Kalos1986a]), $$\begin{equation}
-A(s\rightarrow s')=
+A common choice of the acceptance probability $A(s\rightarrow s')$ which can satisfy Eq.([\[detailbalanceAoA\]](#detailbalanceAoA){reference-type="ref" reference="detailbalanceAoA"}) and thus the detailed balance condition is ([@Kalos1986a]), $$A(s\rightarrow s')=
 \min \left[  1, \frac{\pi(s')T(s'\rightarrow s)}{\pi(s) T(s\rightarrow s')} \right] .
-\label{Accptequation}
-\end{equation}$$
+\label{Accptequation}$$
 
 As we can see, the normalization factors in $\pi(s)$ and $\pi(s')$ and that in $T(s \rightarrow s')$ and $T(s'\rightarrow s)$ will be canceled out in Eqs.([\[detailbalanceAoA\]](#detailbalanceAoA){reference-type="ref" reference="detailbalanceAoA"},[\[Accptequation\]](#Accptequation){reference-type="ref" reference="Accptequation"}) so those factors are irrelevant in calculating $A$. In order to make the value of $A(s\rightarrow s')$ larger, we can try to make $T(s'\rightarrow s)$ similar with $\pi(s)$, and $T(s'\rightarrow s)$ similar with $\pi(s')$, such that the numerator and denominator in Eq.([\[Accptequation\]](#Accptequation){reference-type="ref" reference="Accptequation"}) can largely cancel. That will usually make the calculation efficient. In the ideal case, if we can make $T(s'\rightarrow s)=\pi(s)$ and $T(s'\rightarrow s')=\pi(s')$, then $A(s\rightarrow s')=1$ so we just need to always accept the new proposed states, but this is normally not possible, and if possible the Metropolis method would be unnecessary.
 

@@ -7,10 +7,10 @@ section_number: 6
 pages: 10-10
 source_pdf: 0104104v3.pdf
 source_sha256: e2154399f783aa9b
+doc_brief: "Geometry of Four-vector Fields on Quaternionic Flag Manifolds — The purpose of this paper is to describe certain natural 4-ve ctor ﬁelds on quaternionic ﬂag manifolds, which geometrically determ ine"
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.979
-doc_brief: "Geometry of Four-vector Fields on Quaternionic Flag Manifolds — The purpose of this paper is to describe certain natural 4-ve ctor ﬁelds on quaternionic ﬂag manifolds, which geometrically determ ine"
+latex_coverage_ratio: 1.0
 ---
 We elaborate on some general notions related to group actions in the
 quatrisson context where we recall the notation set forth

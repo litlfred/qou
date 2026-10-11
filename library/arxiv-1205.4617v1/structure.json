@@ -105,7 +105,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "anc/gut.tex",
    "tex_sections": 4,
-   "overlaid": 2,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -123,15 +123,16 @@
     {
      "id": "sec-001-2-su5-gauge-symmetry",
      "title": "SU(5) Gauge Symmetry",
-     "prose_ratio": 0.989,
-     "coverage_ratio": 0.45,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-4-discussion-and-conclusion",
      "title": "Discussion and Conclusion",
-     "prose_ratio": 0.988,
-     "coverage_ratio": 0.66,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     }

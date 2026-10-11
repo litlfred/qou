@@ -8,29 +8,40 @@ pages: 138-139
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
 doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
+text_source: latex
+latex_prose_ratio: 0.977
+latex_coverage_ratio: 1.0
 ---
-Since quantum gravity eﬀects could destabilize the proton, the eventual fate
-of the universe would be governed by the proton lifetime [392 , 390]. Thus, for
-example, over long time span white dwarfs and neutron stars w ill be powered
-by proton decay. The proton decay mode p → e+π0 within a white dwarf
-will result in the process
-p +e− →γ +γ +γ +γ (330)
-where two of the γ’s come from the decay of the π0 and the other two arise
-from the annihilation of e+ +e−, and where the energy of each of the photons
-will be ∼ mp/4. The photons have a short mean free path and will quickly
-thermalize. Other decay modes would involve neutrinos whic h would escape.
-An estimate of the luminosity of the white dwarf powered by pr oton decay
-gives [390]
-138
-L∗ ≃ 10−22L⊙( 1035
-τP yrs ) (331)
-where L⊙ stands for stellar luminosity. The white dwarf luminosity a rising
-from proton decay is indeed extremely small relative to the s olar luminosity.
-If we assume that the white dwarf consists of N nucleons initi ally, then the
-time for it to deplete to N0 because of nucleon disintegration is given by [390]
-τ =τPln(N
-N0
-) (332)
-For N ∼ 1057 and N0 = 1 one ﬁnds τ ∼ 131τP . A similar analysis holds
-for neutron stars and for planets although the evolution of t he neutron star
-under nucleon decay processes is more involved.
+Since quantum gravity effects could destabilize the proton, the eventual fate of 
+	 the universe would be governed by  the proton lifetime~\cite{Dicus:1981ab,Adams:1996xe}. 
+	 Thus, for example, over long
+	 time span white  dwarfs and neutron stars will be powered by proton decay. The proton
+	 decay mode $p\to  e^+\pi^0$  within a white dwarf will result in the process   
+
+	\beqn
+	p+e^-\to \gamma +\gamma+\gamma +\gamma 
+	\eeqn
+     where two of the $\gamma$'s  come from the decay of the $\pi^0$ and the other two arise
+     from the annihilation of $e^++e^-$, and where the 
+     energy of each of the photons will be 
+     $\sim m_p/4$.  The photons have a short mean free path and will quickly thermalize.
+      Other decay modes would involve neutrinos which would escape. An estimate of the 
+      luminosity of the white  dwarf powered by proton decay gives~\cite{Adams:1996xe}
+      
+      \beqn
+      L_{*}\simeq 10^{-22} L_{\odot} (\frac{10^{35}}{\tau_P ~{\rm  yrs}})       
+      \eeqn
+      where $L_{\odot}$ stands for stellar luminosity.
+      The white dwarf luminosity arising from  proton decay is indeed extremely small
+      relative to the solar luminosity. If we assume that the white dwarf consists of
+      N  nucleons  initially, then the time for it  to deplete to $N_0$ 
+      because of nucleon disintegration is given by~\cite{Adams:1996xe}
+      
+      
+      \beqn
+      \tau =\tau_P ln(\frac{N}{N_0})      
+      \eeqn 
+      For $N\sim 10^{57}$ and
+     $N_0 =1$  one finds $\tau \sim 131 \tau_P$. A similar analysis holds for neutron stars and
+     for planets although the evolution of the neutron star under nucleon decay processes
+     is more involved.

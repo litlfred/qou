@@ -7,7 +7,7 @@
   "bytes": 208743,
   "pages": 17,
   "text_source": "embedded",
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -240,8 +240,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "EldanShamir20-arxiv.tex",
-   "tex_sections": 5,
-   "overlaid": 0,
+   "tex_sections": 13,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -251,34 +251,50 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.452,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-001-11-a-lower-bound-on-the-entropy",
      "title": "A lower bound on the entropy",
-     "result": "no matching \\section"
+     "prose_ratio": 0.964,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-12-an-application-concentration-of-negatively-de",
      "title": "An application: Concentration of negatively dependent random variables",
-     "result": "no matching \\section"
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-13-relation-to-the-works-of-anari-liu-oveis-ghar",
      "title": "Relation to the works of Anari, Liu, Oveis-Gharan and Vinzant",
-     "result": "no matching \\section"
+     "prose_ratio": 0.985,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-2-preliminaries-and-a-stochastic-construction",
      "title": "Preliminaries and a stochastic construction",
-     "prose_ratio": 0.23,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-22-stochastic-localization",
      "title": "Stochastic localization",
-     "result": "no matching \\section"
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-3-proof-of-theorem-2",
@@ -288,7 +304,8 @@
     {
      "id": "sec-007-31-estimating-the-variance-in-terms-of-the-trans",
      "title": "Estimating the variance in terms of the transportation distance between tilts",
-     "result": "no matching \\section"
+     "prose_ratio": 0.488,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-008-32-proof-of-proposition-13-the-stochastic-coupli",

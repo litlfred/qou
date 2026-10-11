@@ -7,10 +7,10 @@ section_number: null
 pages: 9-10
 source_pdf: 2404.02087v1.pdf
 source_sha256: ac92bd0dff8ad907
-text_source: latex
-latex_prose_ratio: 0.684
-latex_coverage_ratio: 1.0
 doc_brief: "Extreme plasmons Aakash A. Sahai 1 1Department of Electrical Engineering, University of Colorado Denver, Denver, CO 80204 ∗ Nanosciences largely rely on plasmons which are quasiparticles constituted b"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 In conclusion, characteristics of the new class of plasmons necessitate a non-perturbative, quantum kinetic framework. 
 

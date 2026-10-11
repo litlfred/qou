@@ -7,10 +7,10 @@ section_number: 3
 pages: 5-7
 source_pdf: 1704.00850v3.pdf
 source_sha256: 09dd9c99453ba251
-text_source: latex
-latex_prose_ratio: 0.961
-latex_coverage_ratio: 0.915
 doc_brief: "Estimating the spectral gap of a trace-class Markov operator — The utility of a Markov chain Monte Carlo algorithm is, in large part, determined by the size of the spectral gap of the corresponding"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.986
 ---
 []{#powersum label="powersum"}
 
@@ -18,23 +18,15 @@ We now develop some results relating $\lambda_1$ to the power sum of $P$'s eigen
 
 The magnitude of $s_k$ is directly related to the convergence behavior of the chain. For instance, suppose that the chain starts at a point mass $\Phi_0 = u$, then the chi-square distance between the distribution of $\Phi_k$ and the stationary distribution is given by [see e.g. @diaconis2008gibbs] $$\chi_k^2(u) := \int_{S_U} \frac{\left(p^{(k)}(u,u') - \pi(u') \right)^2}{\pi(u')} \, \mu(du') =  \sum_{i=1}^{\kappa} \lambda_i^{2k} |f_i(u)|^2,$$ where $f_i: S_U \to \mathbb{C}$ is the normalized eigenfunction corresponding to $\lambda_i$. It follows that $$s_{2k} = \sum_{i=1}^{\kappa} \lambda_i^{2k} = \int_{S_U} \chi_k^2(u) \pi(u) \, \mu(du),$$ which is the average of $\chi_k^2(u)$ under $\pi.$ More importantly, one can use functions of $s_k$ to bound $\lambda_1,$ and thus the spectral gap.
 
-Observe that, $$\begin{equation*}
- \lambda_1 \leq u_k := (s_k-1)^{1/k},\quad
-          \forall \, k \in \mathbb{N} \,.
-\end{equation*}$$ Moreover, if $\kappa \geq 1,$ then it's easy to show that $$\begin{equation*}
- \lambda_1 \geq l_k :=
+Observe that, $$\lambda_1 \leq u_k := (s_k-1)^{1/k},\quad
+          \forall \, k \in \mathbb{N} \,.$$ Moreover, if $\kappa \geq 1,$ then it's easy to show that $$\lambda_1 \geq l_k :=
           \frac{s_k-1}{s_{k-1}-1}, \quad \forall \, k \in \mathbb{N}
-          \,.
-\end{equation*}$$ We now show that, in fact, these bounds are monotone in $k$ and converge to $\lambda_1$.
+          \,.$$ We now show that, in fact, these bounds are monotone in $k$ and converge to $\lambda_1$.
 
 ::: proposition
-[]{#eigenlim label="eigenlim"} As $k \to \infty$, $$\begin{equation}
- \label{uklim}
-        u_k \downarrow \lambda_1 \,,
-\end{equation}$$ and if furthermore $\kappa \geq 1,$ $$\begin{equation}
- \label{lklim}
-        l_k \uparrow \lambda_1 \,.
-\end{equation}$$
+[]{#eigenlim label="eigenlim"} As $k \to \infty$, $$\label{uklim}
+        u_k \downarrow \lambda_1 \,,$$ and if furthermore $\kappa \geq 1,$ $$\label{lklim}
+        l_k \uparrow \lambda_1 \,.$$
 :::
 
 ::: proof

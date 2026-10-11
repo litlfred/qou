@@ -8,38 +8,47 @@ pages: 46-47
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
 doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R) — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual"
+text_source: latex
+latex_prose_ratio: 0.979
+latex_coverage_ratio: 0.958
 ---
-Under the transformation ξ, we can now express all the operators deﬁned earlier
-on ˆH toH. We have
-Proposition 5.15. The action π : ˆA−→H is given by
-π( ˆA) = e−2πbs, (5.35)
-π( ˆB) = Gb(−it)◦e2πb(pt−ps)◦Gb(−it)−1. (5.36)
-Hence in particular W is indeed a genuine element in M (A⊗ ˆA).
-We also note that by general theory, the multiplicative unitary for ˆA is given by
-ˆW = ΣW ∗Σ, (5.37)
-46
-where Σ is the permutation operator on the tensor product. The c oproduct induces
-by ˆW is precisely the one we deﬁned earlier, that ˆA and ˆB transformed as how A
-and B do.
-Proposition 5.16. The modular maps act on H by:
-ˆT (f ) = f (s +t−iQ,−t)e−πQte−πit2
-(5.38)
-ˆT ∗(f ) = f (s +t,−t)e−πQte−πit2
-(5.39)
-ˆ∇(f ) = f (s +iQ,t ) (5.40)
-ˆJ(f ) = f (s +t− iQ
-2 ,−t)e−πQte−πit2
-. (5.41)
-From these actions, we can verify all the well-known properties bet ween these
-maps onH (see [25] Prop 2.1, 2.11,2.12):
-Proposition 5.17. Forx∈A,y∈ ˆA, we have the properties:
-ˆJΛ R(x) = Λ( R(x)∗), (5.42)
-ˆ∇− 1
-2 Λ(x) = Λ R(τi/2(x)), (5.43)
-ˆT ∗Λ(x) = Λ( S−1(x)∗), (5.44)
-ˆJJ = νi/4J ˆJ, (5.45)
-R(x) = ˆJx ∗ ˆJ, (5.46)
-ˆR(y) = Jy ∗J. (5.47)
-Furthermore, if we deﬁne on H the operator G ([24] Prop 3.22):
-GΛ((hR⊗ 1)(∆( x∗)(y⊗ 1))) = Λ(( hR⊗ 1)(∆( y∗)(x⊗ 1))) (5.48)
-and its polar decomposition G =IN 1/2, then we have ˆT ∗ =G, ˆJ =I and ˆ∇ =N −1.
+\label{sec:Dual:multi}
+Under the transformation $\xi$, we can now express all the operators defined earlier on $\hat{\cH}$ to $\cH$. We have
+\begin{Prop}
+The action $\pi: \hat{\cA}\to \cH$ is given by
+\begin{eqnarray}
+\pi(\hat{A}) &=& e^{-2\pi bs},\\
+\pi(\hat{B}) &=& G_b(-it) \circ e^{2\pi b(p_t-p_s)} \circ G_b(-it)\inv.
+\end{eqnarray}
+\end{Prop}
+
+Hence in particular $W$ is indeed a genuine element in $M(\cA\ox \hat{\cA})$.
+
+We also note that by general theory, the multiplicative unitary for $\hat{\cA}$ is given by
+\Eq{\hat{W}=\S W^* \S,}
+where $\S$ is the permutation operator on the tensor product. The coproduct induces by $\hat{W}$ is precisely the one we defined earlier, that $\hat{A}$ and $\hat{B}$ transformed as how $A$ and $B$ do.
+
+\begin{Prop} The modular maps act on $\cH$ by:
+\begin{eqnarray}
+\hat{T}(f) &=& \over[f](s+t-iQ,-t)e^{-\pi Qt}e^{-\pi it^2}\\
+\hat{T^*}(f)&=&\over[f](s+t,-t)e^{-\pi Qt}e^{-\pi it^2}\\
+\hat{\DD}(f)&=&f(s+iQ,t)\\
+\hat{J}(f)&=&\over[f](s+t-\frac{iQ}{2},-t)e^{-\pi Qt}e^{-\pi it^2}.
+\end{eqnarray}
+\end{Prop}
+
+From these actions, we can verify all the well-known properties between these maps on $\cH$ (see \cite{KV2} Prop 2.1, 2.11,2.12):
+\begin{Prop} \label{RJ} For $x\in \cA, y\in\hat{\cA}$, we have the properties:
+\begin{eqnarray}
+\hat{J}\L_R(x)&=&\L(R(x)^*),\\
+\hat{\DD}^{-\frac{1}{2}}\L(x) &=& \L_R(\t_{i/2}(x)),\\
+\hat{T}^*\L(x)&=&\L(S\inv(x)^*),\\
+\label{nu}\hat{J}J&=&\nu^{i/4}J\hat{J},\\
+\label{R1}R(x)&=&\hat{J}x^*\hat{J},\\
+\label{R2}\hat{R}(y)&=&Jy^*J.
+\end{eqnarray}
+Furthermore, if we define on $\cH$ the operator $G$ (\cite{KV1} Prop 3.22):
+\Eq{G \L((h_R\ox 1)(\D(x^*)(y\ox 1)))= \L((h_R\ox 1)(\D(y^*)(x\ox1)))}
+and its polar decomposition $G=IN^{1/2}$, then we have
+$\hat{T}^*=G, \hat{J}=I$ and $\hat{\DD}=N\inv$.
+\end{Prop}

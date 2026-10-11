@@ -7,10 +7,10 @@ section_number: 5
 pages: 12-16
 source_pdf: 0902.0350v1.pdf
 source_sha256: 4591687132c93973
-text_source: latex
-latex_prose_ratio: 0.983
-latex_coverage_ratio: 0.946
 doc_brief: "A REVISION OF THE PROOFOF THE KEPLER CONJECTURE — The Kepler conjecture asserts that no packing of congruent balls in three-dimensional Euclidean space has density greater than that of the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:zumkeller}
 
@@ -61,6 +61,7 @@ $[\sfrac{a+b}2,b]$, and then re-evaluating the formula yields an improved
 result. However, depending on the problem, the number of required subdivisions
 can be very large. This is why checking some inequalities takes a very long
 time.
+
 
 \subsection{From geometrical functions to polynomials}
 Fortunately, better methods than interval arithmetic are available, if the
@@ -135,6 +136,7 @@ approximations were chosen (using polynomial interpolation) in a way such that
 \gamma (2,2,2,2,2,2) = g (2,2,2,2,2,2) = \pt. \label{eq-gamma-g-pt}
 \end{equation}
 This is important, because otherwise~\eqref{g-pt} cannot hold.
+
 
 
 

@@ -7,14 +7,14 @@ section_number: 5
 pages: 10-14
 source_pdf: 2201.05665v1.pdf
 source_sha256: bad7bde03d199a73
-text_source: latex
-latex_prose_ratio: 0.959
-latex_coverage_ratio: 0.976
 doc_brief: "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY — This is a survey of Harold Widom’s work in random matrices."
+text_source: latex
+latex_prose_ratio: 0.998
+latex_coverage_ratio: 0.986
 ---
 The asymmetric simple exclusion process (ASEP) was introduced (in the probability literature) in Spitzer's 1970 work [@Sp]. It is a continuous time Markov process of interacting particles on the integer lattice ${\Bbb Z}$. A particle at a location $x$ waits an exponential time with parameter one (independently of all other particles). When that time has elapsed, the particle flips a coin and with probability $p$ attempts to jump one position to the right, and with probability $q=1-p$ attempts to jump one position to the left. These jumps are achieved only if the destination site is unoccupied at that time. Due to the memoryless property of the exponential distribution, this defines a Markov process. See Figure [2](#fig:asep){reference-type="ref" reference="fig:asep"} for an illustration of ASEP. Since its appearance, the ASEP model has attracted immense attention in both the mathematical and physics communities, due to the fact that this is one of the simplest nontrivial processes modeling nonequilibrium phenomena.
 
-<figure id="fig:asep" data-latex-placement="h">
+<figure id="fig:asep">
 
 <figcaption>In the ASEP, particles jump left and right according to exponential clocks with rates <span class="math inline"><em>q</em></span> and <span class="math inline"><em>p</em></span>. All jumps are independent, and those that would lead to collisions are excluded (the grey <span class="math inline">×</span>).</figcaption>
 </figure>
@@ -29,15 +29,13 @@ When $N\geq 2$, the Master equation becomes more complicated. When the $x_i$ are
 
 There is hope, however. The generator of ASEP (the operator on the right-hand side of the Master equation) is related by a similarity transform to the Hamiltonian of the XXZ quantum spin chain, itself a special limit of the six-vertex model. These models have a long history in the realm of exactly solvable models in statistical mechanics, e.g. [@Baxter], and it was known since [@Lieb] that the coordinate Bethe ansatz can be used to diagonalize the six-vertex model transfer matrix. For the six-vertex model and XXZ spin chain, one has to assume boundary conditions (e.g. work on a torus). However, since the generator of ASEP is stochastic, one can work directly on the full space ${\Bbb Z}$. This actually leads to a significant simplification to the Bethe ansatz---there are no longer complicated Bethe equations! Instead, one has to develop an analog of the classical Plancherel theory, now for the Bethe ansatz eigenfunctions. This is essentially accomplished by [@133] as well as [@BCPS].
 
-<figure id="fig:asep" data-latex-placement="h">
+<figure id="fig:asep">
 
 <figcaption>Harold Widom with his long-time collaborator, Craig Tracy at Oberwolfach in May 2009. Seen on the blackboard is calculations related to their work on ASEP. Photo courtesy of the Archives of the Mathematisches Forschungsinstitut Oberwolfach.</figcaption>
 </figure>
 
-The following formula was proved in [@133]. The $N=2$ case had previously appeared in work of Rákos and Schütz [@RakosSchutz]. Provided $p\neq 0$, $$\begin{equation}
-\label{eq:tranprob}
-P_{\vec{y}}(\vec{x};t) = \sum_{\sigma \in S_N} \frac{1}{(2\pi i)^N}\int\cdots \int A_{\sigma} \prod_{j=1}^{N} \xi_{\sigma(j)}^{x_j-y_{\sigma(j)}-1} e^{\epsilon(\xi_j)t} d\xi_j.
-\end{equation}$$ Here, the sum $\sigma\in S_N$ is taken over all permutations $\sigma$ on $N$ elements; the $\xi_j$ variables are complex and integrated over contours which are assumed to be circles around the origin with radii small enough so as not to contain any poles of the $A_\sigma$ term; this $A_{\sigma}$ term is given by the formula $$A_{\sigma} = \prod \left\{S_{\alpha\beta}:\{\alpha,\beta\}\textrm{ is an inversion of }\sigma\right\},\qquad S_{\alpha\beta} = - \frac{p+q \xi_{\alpha} \xi_{\beta} - \xi_{\alpha}}{p+q \xi_{\alpha} \xi_{\beta} - \xi_{\beta}}.$$ where the product is of terms $S_{\alpha\beta}$ over all pairs $1\leq \alpha<\beta\leq N$ such that $\sigma(\alpha)>\sigma(\beta)$.
+The following formula was proved in [@133]. The $N=2$ case had previously appeared in work of Rákos and Schütz [@RakosSchutz]. Provided $p\neq 0$, $$\label{eq:tranprob}
+P_{\vec{y}}(\vec{x};t) = \sum_{\sigma \in S_N} \frac{1}{(2\pi i)^N}\int\cdots \int A_{\sigma} \prod_{j=1}^{N} \xi_{\sigma(j)}^{x_j-y_{\sigma(j)}-1} e^{\epsilon(\xi_j)t} d\xi_j.$$ Here, the sum $\sigma\in S_N$ is taken over all permutations $\sigma$ on $N$ elements; the $\xi_j$ variables are complex and integrated over contours which are assumed to be circles around the origin with radii small enough so as not to contain any poles of the $A_\sigma$ term; this $A_{\sigma}$ term is given by the formula $$A_{\sigma} = \prod \left\{S_{\alpha\beta}:\{\alpha,\beta\}\textrm{ is an inversion of }\sigma\right\},\qquad S_{\alpha\beta} = - \frac{p+q \xi_{\alpha} \xi_{\beta} - \xi_{\alpha}}{p+q \xi_{\alpha} \xi_{\beta} - \xi_{\beta}}.$$ where the product is of terms $S_{\alpha\beta}$ over all pairs $1\leq \alpha<\beta\leq N$ such that $\sigma(\alpha)>\sigma(\beta)$.
 
 This sum over the symmetric group may seem reminiscent of the expansion formula for determinants. In the special case when $p=1$ (which is the same at taking $p=0$, up to some symmetry), there is factorization and $A_\sigma = (-1)^{\sigma} \prod_{j=1}^{N} (1-\xi_{\sigma(j)})^{\sigma(j)-j}$. This implies that for $p=1$, $$P_{\vec{y}}(\vec{x};t)=\det\left(\frac{1}{2\pi i} \int (1-\xi)^{j-i} \xi^{x_i-y_j-1}e^{\epsilon(\xi)t} d\xi\right)_{i,j=1}^{N}$$ which recovers one aspect of the determinantal structure for TASEP, see [@Schutz].
 
@@ -45,15 +43,11 @@ Returning to ([\[eq:tranprob\]](#eq:tranprob){reference-type="ref" reference="eq
 
 Let us now record the main result of the asymptotics performed in [@135]. In fact, in [@139], a more general class of initial data was considered in which sites in ${\Bbb N}$ are inititally occupied according to independent Bernoulli coin flips with probability $\rho\in (0,1]$ of having a particle. The case $\rho=1$ recovers the step initial data.
 
-Assume that $0\leq p < q$ and put $\gamma := q-p$. Denote also $\sigma =  m/t \leq 1$ and define the constants, $$c_1 := -1 + 2\sqrt{\sigma}, \quad c_2 := \sigma^{-1/6}\Bigl(1 - \sqrt{\sigma}\Bigr)^{2/3}.$$ Then [@135; @139] shows that (cf. ([\[betaedge\]](#betaedge){reference-type="ref" reference="betaedge"}) and ([\[bdj\]](#bdj){reference-type="ref" reference="bdj"})), $$\begin{equation}
-\label{asep1}
+Assume that $0\leq p < q$ and put $\gamma := q-p$. Denote also $\sigma =  m/t \leq 1$ and define the constants, $$c_1 := -1 + 2\sqrt{\sigma}, \quad c_2 := \sigma^{-1/6}\Bigl(1 - \sqrt{\sigma}\Bigr)^{2/3}.$$ Then [@135; @139] shows that (cf. ([\[betaedge\]](#betaedge){reference-type="ref" reference="betaedge"}) and ([\[bdj\]](#bdj){reference-type="ref" reference="bdj"})), $$\label{asep1}
 \lim_{t \to \infty}\textrm{Prob}\left(\frac{x_m\Bigl(t/\gamma\Bigr) - c_1t}{c_2t^{1/3}} \leq s\right)
-= F_2(s), \quad \textrm{when}\quad 0 < \sigma < \rho^2,
-\end{equation}$$ and $$\begin{equation}
-\label{asep2}
+= F_2(s), \quad \textrm{when}\quad 0 < \sigma < \rho^2,$$ and $$\label{asep2}
 \lim_{t \to \infty}\textrm{Prob}\left(\frac{x_m\Bigl(t/\gamma\Bigr) - c_1t}{c_2t^{1/3}} \leq s\right)
-= F_1(s)^2, \quad \textrm{when}\quad \sigma = \rho^2, \quad \rho < 1.
-\end{equation}$$
+= F_1(s)^2, \quad \textrm{when}\quad \sigma = \rho^2, \quad \rho < 1.$$
 
 We emphasize again that ASEP is not a determinantal process and hence none of the usual "integrable techniques", such as the orthogonal polynomial approach, the Riemann-Hilbert method, the Borodin-Okounkov formula, or the theory of integrable Fredholm operators are readily applicable. In spite of the absence of such tools, the Tracy-Widom distributions still arise!
 

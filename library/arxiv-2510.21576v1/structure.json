@@ -241,8 +241,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
-   "tex_sections": 7,
-   "overlaid": 4,
+   "tex_sections": 13,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -257,37 +257,36 @@
     {
      "id": "sec-001-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.943,
-     "coverage_ratio": 0.545,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.574,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-short-time-approximation",
      "title": "Short-time approximation",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.543,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.556,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-003-results",
      "title": "Results",
-     "prose_ratio": 0.758,
-     "coverage_ratio": 0.935,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.744,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-cross-sections",
      "title": "Cross Sections",
-     "result": "no matching \\section"
+     "prose_ratio": 0.891,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-conclusions",
      "title": "Conclusions",
-     "prose_ratio": 0.648,
-     "coverage_ratio": 0.919,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },

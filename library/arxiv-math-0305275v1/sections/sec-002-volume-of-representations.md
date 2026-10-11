@@ -7,10 +7,10 @@ section_number: null
 pages: 9-15
 source_pdf: 0305275v1.pdf
 source_sha256: 9b356a9d716a0d3e
-text_source: latex
-latex_prose_ratio: 0.986
-latex_coverage_ratio: 0.977
 doc_brief: "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds — Let W be a compact manifold and let ρ be a representation of its fundamental group into PSL(2 , C)."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.984
 ---
 []{#s 3 label="s 3"}
 
@@ -19,7 +19,7 @@ For this section we fix an ideally triangulated manifold $M$ and a representatio
 In this section we recall the notion of volume of an equivariant map from $\widetilde{M}$ to $\ensuremath{\mathbb H}^3$. We prove that if we restrict to the class of pseudo-developing maps, then the volume of $\rho$ is well-defined. Namely the volume does not depend neither on the pseudo-developing map nor on the product structure of the cusps. Such a volume can be calculated using a straightening of any pseudo-developing map and it is exactly the algebraic sum of the volumes of the straightened tetrahedra.
 
 ::: defitit
-Volume of pseudo-developing map[]{#d vdr label="d vdr"} Let $D_\rho$ be a pseu­do-de­vel­op­ing map for $\rho$. Let $\omega$ be the volume form of $\ensuremath{\mathbb H}^3$ and let $D_\rho^*\omega$ be the pull-back of $\omega$. Since $D_\rho$ is equivariant, then $D_\rho^*\omega$ projects to a $3$-form, that we still call $D_\rho^*\omega$, on $M$. The volume ${\rm vol}(D_\rho)$ of $D_\rho$ is defined by: $${\rm vol}(D_\rho)=\int_M D_\rho^*\omega.$$
+Volume of pseudo-developing map[]{#d vdr label="d vdr"} Let $D_\rho$ be a pseudo-developing map for $\rho$. Let $\omega$ be the volume form of $\ensuremath{\mathbb H}^3$ and let $D_\rho^*\omega$ be the pull-back of $\omega$. Since $D_\rho$ is equivariant, then $D_\rho^*\omega$ projects to a $3$-form, that we still call $D_\rho^*\omega$, on $M$. The volume ${\rm vol}(D_\rho)$ of $D_\rho$ is defined by: $${\rm vol}(D_\rho)=\int_M D_\rho^*\omega.$$
 :::
 
 ::: remark
@@ -58,7 +58,7 @@ From Lemma [\[l at\]](#l at){reference-type="ref" reference="l at"} it follows 
 :::
 
 ::: remark
-From Lemma [\[l at\]](#l at){reference-type="ref" reference="l at"} it follows that ${\rm vol}(D_\rho)$ is finite for any pseu­do-de­vel­op­ing map $D_\rho$.
+From Lemma [\[l at\]](#l at){reference-type="ref" reference="l at"} it follows that ${\rm vol}(D_\rho)$ is finite for any pseudo-developing map $D_\rho$.
 :::
 
 The following lemma is proved in [@D].
@@ -113,7 +113,7 @@ Since ${\rm vol}(D_\rho)={\rm Strvol}(D_\rho)$ it follows that such a volume doe
 :::
 
 ::: defi
-The volume ${\rm vol}(\rho)$ of $\rho$ is the volume of any pseu­do-de­vel­op­ing map for $\rho$.
+The volume ${\rm vol}(\rho)$ of $\rho$ is the volume of any pseudo-developing map for $\rho$.
 :::
 
 As the following corollary shows, for hyperbolic manifolds the volume of the holonomy is exactly the hyperbolic volume.

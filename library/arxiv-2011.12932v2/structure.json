@@ -194,8 +194,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "2021-04-19_survey.tex",
-   "tex_sections": 8,
-   "overlaid": 1,
+   "tex_sections": 12,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -205,20 +205,26 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.994,
-     "coverage_ratio": 0.687,
+     "prose_ratio": 0.702,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-semisimple-constructions",
      "title": "Semisimple constructions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-early-non-semisimple-constructions",
      "title": "Early non-semisimple constructions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.875,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-appendix-a-ends",

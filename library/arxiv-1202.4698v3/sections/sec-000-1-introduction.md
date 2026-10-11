@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-2
 source_pdf: 1202.4698.pdf
 source_sha256: 54171c652161ca5b
-text_source: latex
-latex_prose_ratio: 0.979
-latex_coverage_ratio: 0.975
 doc_brief: "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \setcounter{equation}{0}
 

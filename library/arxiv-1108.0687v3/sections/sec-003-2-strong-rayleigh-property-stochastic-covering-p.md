@@ -7,10 +7,10 @@ section_number: 2
 pages: 4-6
 source_pdf: 1108.0687v3.pdf
 source_sha256: 66ba88e13a429a0a
-text_source: latex
-latex_prose_ratio: 0.965
-latex_coverage_ratio: 0.972
 doc_brief: "Concentration of Lipschitz functionals of determinantal a nd other strong Rayleigh measures — Let {X1,...,X n} be a collection of binary valued random variables and let f : {0, 1}n → R be a Lipschitz"
+text_source: latex
+latex_prose_ratio: 0.988
+latex_coverage_ratio: 0.939
 ---
 []{#sec:covering label="sec:covering"}
 
@@ -21,19 +21,14 @@ The **strong Rayleigh condition** is said to hold for a measure ${\mathbb P}$ on
 
 The definition of the stochastic covering property requires a few preliminary definitions. Recall that a measure $\nu$ on a partially ordered set is said to **stochastically dominate** a measure $\rho$, denoted $\nu\succeq \rho$, if $\nu(A) \geq \rho(A)$ for every upwardly closed set $A$. An equivalent condition is that there exists a coupling, that is a measure $Q$ on ${\mathcal B}_n \times {\mathcal B}_n$ with respective marginals $\nu$ and $\rho$, supported on the set $\{ (x,y) : x \geq y \}$. If ${\mathbb P}$ is a measure on ${\mathcal B}_n$ making the coordinate variables $\{ X_i : 1 \leq i \leq n \}$ negatively associated, an immediate consequence of negative association is that the conditional measure $({\mathbb P}{\, | \, } X_n = 0)$ on ${\mathcal B}_{n-1}$ stochastically dominates the conditional measure $({\mathbb P}{\, | \, } X_n = 1)$.
 
-<figure id="fig:implications" data-latex-placement="ht">
-<img src="implications" />
-<figcaption>relations among negative dependence properties</figcaption>
-</figure>
+![relations among negative dependence properties](implications){#fig:implications}
 
 We say that the probability measure $\nu$ on ${\mathcal B}_n$ **stochastically covers** another probability measure $\rho$ if there is a measure on ${\mathcal B}_n^2$ with first marginal $\nu$ and second marginal $\rho$ (in other words, a coupling) supported on the set of pairs $(x,y)$ for which $x = y$ or $x$ covers $y$ in the coordinatewise partial order; here $x$ is said to cover $y$ when $x > y$ but there is no $z$ such that $x > z > y$. We denote the covering relation in ${\mathcal B}_n$ by $x \; \cdot \kern-5pt >y$, and one measure covering another by $\nu\triangleright\rho$. Stochastic covering is strictly stronger than stochastic domination, and may be thought of as "stochastic domination, but by at most 1".
 
 Stochastic covering combines stochastic ordering with closeness in the so-called $L^\infty$-transportation metric, defined on probability measures on a given metric space as follows: $d_\infty
-(\mu , \nu)$ is the least $\rho$ such that there is a coupling of $\mu$ and $\nu$ supported on the set $\{ (x,y) : |x-y| \leq \rho \}$. Thus $\mu \triangleright\nu$ implies $d_\infty (\mu , \nu) \leq 1$. This is useful because if $||f||_{\rm Lip}$ denotes the Lipschitz norm on Lipschitz functions, then $$\begin{equation}
- \label{eq:transport}
+(\mu , \nu)$ is the least $\rho$ such that there is a coupling of $\mu$ and $\nu$ supported on the set $\{ (x,y) : |x-y| \leq \rho \}$. Thus $\mu \triangleright\nu$ implies $d_\infty (\mu , \nu) \leq 1$. This is useful because if $||f||_{\rm Lip}$ denotes the Lipschitz norm on Lipschitz functions, then $$\label{eq:transport}
 \left | \int f \, d\mu - \int f \, d\nu \right |
-  \leq ||f||_{\rm Lip} \; d_\infty (\mu , \nu) \, .
-\end{equation}$$
+  \leq ||f||_{\rm Lip} \; d_\infty (\mu , \nu) \, .$$
 
 Suppose that $x \geq y$ and we compare the conditional laws ${\mathbb P}_x :=
 ({\mathbb P}{\, | \, } X_j = x_j, j \in S)$ and ${\mathbb P}_y := ({\mathbb P}{\, | \, } X_j = y_j, j \in S)$ on the remaining coordinates, that is as laws on $\{ 0 , 1 \}^{S^c}$. If ${\mathbb P}$ and all its conditionalizations are negatively associated, it follows that ${\mathbb P}_x \preceq {\mathbb P}_y$.

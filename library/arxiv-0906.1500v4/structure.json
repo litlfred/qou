@@ -682,8 +682,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "limitformula.tex",
-   "tex_sections": 10,
-   "overlaid": 1,
+   "tex_sections": 36,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -693,7 +693,7 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.176,
+     "prose_ratio": 0.145,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -731,7 +731,7 @@
     {
      "id": "sec-007-3-definition-of-the-polynomial-torsion",
      "title": "Definition of the polynomial torsion",
-     "prose_ratio": 0.223,
+     "prose_ratio": 0.257,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -767,7 +767,10 @@
     {
      "id": "sec-014-321-the-acyclicity-of-local-system-for-manifolds",
      "title": "The acyclicity of local system for manifolds with tori\u2013boun dary. In this section",
-     "result": "no matching \\section"
+     "prose_ratio": 0.947,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-015-4-examples-of-computations",
@@ -788,21 +791,24 @@
     {
      "id": "sec-018-5-change-of-coefficients",
      "title": "Change of coefficients",
-     "prose_ratio": 0.932,
-     "coverage_ratio": 0.965,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-019-6-a-derivative-formula",
      "title": "A derivative formula",
-     "prose_ratio": 0.167,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.929,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-020-61-bridge-from-the-polynomial-torsion-to-the-non",
      "title": "Bridge from the polynomial torsion to the non\u2013abelian Reide meister tor-",
-     "result": "no matching \\section"
+     "prose_ratio": 0.254,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-021-62-proof-of-theorem-5-we-begin-by-introducing-th",
@@ -822,7 +828,8 @@
     {
      "id": "sec-024-63-example-the-non-abelian-reidemeister-torsion",
      "title": "Example: the non-abelian Reidemeister torsion of the White head link",
-     "result": "no matching \\section"
+     "prose_ratio": 0.294,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-025-71-dual-surfaces-of-\u03d5-with-rank-one-using-the-un",
@@ -873,7 +880,10 @@
     {
      "id": "sec-034-822-computation-of-\u03d5ad\u03c1",
      "title": "Computation of \u2206 \u03d5\u2297Ad\u25e6\u03c1",
-     "result": "no matching \\section"
+     "prose_ratio": 0.837,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-035-824-conclusion-substituting-\u03bd-1-shm-r-b-1-and-eq",

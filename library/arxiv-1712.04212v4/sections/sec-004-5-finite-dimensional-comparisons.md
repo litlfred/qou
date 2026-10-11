@@ -7,12 +7,13 @@ section_number: 5
 pages: 22-26
 source_pdf: 1712.04212v4.pdf
 source_sha256: 521911fc8724f3c2
-text_source: latex
-latex_prose_ratio: 0.896
-latex_coverage_ratio: 0.867
 doc_brief: "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION — In this paper, we consider a concentration of measure problem on Riemannian manifolds with"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:Comparisons}
+
 
 
 \subsection{Estimates}
@@ -194,6 +195,7 @@ d_{M}(\Omega,\bm) \leq \frac{1}{(n-1)\lambda e^{-2\,\delta}}\,\log \frac{1}{\eta
 \end{equation*}
 This completes the proof of Theorem \ref{thm:twisted weighted main theorem}.
 \end{proof}
+
 
 
 \subsection{Proof of Theorem \ref{thm:main theorem}}

@@ -8,155 +8,88 @@ pages: 5-6
 source_pdf: 1202.4698.pdf
 source_sha256: 54171c652161ca5b
 doc_brief: "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as"
+text_source: latex
+latex_prose_ratio: 0.955
+latex_coverage_ratio: 0.939
 ---
-The composition of Clebsch-Gordan maps allows us to deﬁne two natural families of projection
-operators
-(sCα4
-α3,α2,α1(αs)Ψ)(x4) =
-∫
-R3
-dx1dx2dx3 E (s)
-αs (A|X)ψ(x3,x 2,x 1), (2.11)
-(tCα4
-α3,α2,α1(αt)Ψ)(x4) =
-∫
-R3
-dx1dx2dx3 E (t)
-αt (A|X)ψ(x3,x 2,x 1), (2.12)
-with integral kernels E (s)
-αs (A|X) and E (t)
-αt (A|X) given as
-E (s)
-αs (A|X) =
-∫
-dxs
-(α4
-x4 | α3
-x3
-αs
-xs
-)
-b
-(αs
-xs | α2
-x2
-α1
-x1
-)
-b, (2.13)
-E (t)
-αt (A|X) =
-∫
-dxt
-(α4
-x4 | αt
-xt
-α1
-x1
-)
-b
-(αt
-xt | α3
-x3
-α2
-x2
-)
-b. (2.14)
-The b-6j symbols
-{ α1
-α3
-α2
-α4 | αs
-αt
-}
-b are then deﬁned by the relations
-E (s)
-αs (A|Z) =
-∫
-Q/2+iR
-dµ(αt)
-{ α1
-α3
-α2
-α4 | αs
-αt
-}
-b E (t)
-αt (A|Z), (2.15)
-where the Plancherel measuredµ(α) is explicitly given by the expression
-dµ(α) = dαM (α), M (α) := |Sb(2α)|2. (2.16)
-It is clear that the explicit expression for the b-6j symbols depends on the normalization chosen
-for the Clebsch-Gordan maps. We will denote the 6j symbols corresponding to
-(α3
-x3 | α2
-x2
-α1
-x1
-)an
-b
+The composition of Clebsch-Gordan maps allows us to define two natural
+families of projection operators 
+\begin{align}
+&({}_{}^s\SC^{\al_4}_{\al_3,\al_2,\al_1}(\al_s)\Psi)(x_4)\,=\,
+\int_{\BR^3}dx_1dx_2dx_3\;
+\CE_{\al_s}^{(s)}(A|X)\psi(x_3,x_2,x_1)\,,\\
+&({}_{}^t\SC^{\al_4}_{\al_3,\al_2,\al_1}(\al_t)\Psi)(x_4)\,=\,
+\int_{\BR^3}dx_1dx_2dx_3\;
+\CE_{\al_t}^{(t)}(A|X)\psi(x_3,x_2,x_1)\,,
+\end{align}
+with integral kernels $\CE_{\al_s}^{(s)}(A|X)$
+and $\CE_{\al_t}^{(t)}(A|X)$ given as
+\begin{align}
+&\CE_{\al_s}^{(s)}(A|X)\,=\,\int dx_s\;
+\big(\,{}^{\al_4}_{x_4}\,|\,{}^{\al_3}_{x_3}\,{}^{\al_s}_{x_s}\big)_b
+\big(\,{}^{\al_s}_{x_s}\,|\,{}^{\al_2}_{x_2}\,{}^{\al_1}_{x_1}\big)_b\,,\\
+&\CE_{\al_t}^{(t)}(A|X)\,=\,\int dx_t\;
+\big(\,{}^{\al_4}_{x_4}\,|\,{}^{\al_t}_{x_t}\,{}^{\al_1}_{x_1}\big)_b
+\big(\,{}^{\al_t}_{x_t}\,|\,{}^{\al_3}_{x_3}\,{}^{\al_2}_{x_2}\big)_b\,.
+\end{align}
+
+The b-$6j$ symbols $\big\{\,{}^{\al_1}_{\al_3}\,{}^{\al_2}_{{\al}_4}\,|\,{}^{\al_s}_{\al_t}\big\}_b$ are then defined by the relations
+\begin{equation}\label{fusion'}
+\CE_{\al_s}^{(s)}(A|Z)\,=\,\int_{{Q/2}+\textup{i}\BR} d\mu(\al_t)\;
+\big\{\,{}^{\al_1}_{\al_3}\,{}^{\al_2}_{{\al}_4}\,|\,{}^{\al_s}_{\al_t}\big\}_b\,
+\CE_{\al_t}^{(t)}(A|Z)\,,
+\end{equation}
+where the Plancherel measure $d\mu(\al)$ is explicitly given by
+the expression
+\begin{equation} \label{Pmeas}
+d\mu(\al)\,=\,d\al\;M(\al)\,,\qquad M(\al):=|S_b(2\al)|^2\,.
+\end{equation}
+It is clear that the explicit expression for the b-$6j$ symbols
+depends on the normalization chosen for the
+Clebsch-Gordan maps. We will denote 
+the $6j$ symbols corresponding to 
+$\big(\,{}^{\al_3}_{x_3}\,|\,{}^{\al_2}_{x_2}\,
+{}^{\al_1}_{x_1}\big)_b^{\rm an}$
+and 
+$\big(\,{}^{\al_3}_{x_3}\,|\,{}^{\al_2}_{x_2}\,
+{}^{\al_1}_{x_1}\big)_b^{}$ by
+$\big\{\,{}^{\al_1}_{\al_3}\,{}^{\al_2}_{{\al}_4}\,|\,{}^{\al_s}_{\al_t}\big\}_b^{\rm an}$
 and
-(α3
-x3 | α2
-x2
-α1
-x1
-)
-b by
-{ α1
-α3
-α2
-α4 | αs
-αt
-} an
-b and
-{ α1
-α3
-α2
-α4 | αs
-αt
-}
-b, respectively.
-The b-6j symbols
-{ α1
-α3
-α2
-α4 | αs
-αt
-} an
-b were calculated in [PT2]1,
-{ α1
-α3
-α2
-¯α4 | αs
-αt
-} an
-b = Sb(α2 +αs −α1)Sb(αt +α1 −α4)
-Sb(α2 +αt −α3)Sb(αs +α3 −α4) (2.17)
-×
-∫
-C
-duS b(−α2 ± (α1 −Q/2) +u)Sb(−α4 ± (α3 −Q/2) +u)
-×Sb(α2 +α4 ± (αt −Q/2) −u)Sb(Q ± (αs −Q/2) −u).
-The following notation has been usedSb(α ±u) := Sb(α +u)Sb(α −u). The integral in (2.17)
-will be deﬁned for αk ∈ Q/2 + iR by using a contour C that approachesQ + iR near inﬁnity,
-and passes the real axis in (Q/2,Q ), and for other values ofαk by analytic continuation.
-The b-6j symbols corresponding to the normalization deﬁned above ar e then given by the
-formula { α1
-α3
-α2
-α4 | αs
-αt
-}
-b = M (αs,α2,α1)M (α4,α3,αs)
-M (αt,α3,α2)M (α4,αt,α1)
-{ α1
-α3
-α2
-α4 | αs
-αt
-} an
-b . (2.18)
-withM(α3,α 2,α 1) being deﬁned in (2.9).
-1The formula below coincides with equation (228) in [T01] after shifting s → u − α s − Q/ 2. We have moved
-a factor |Sb(2α t)|2 into the measure of integration in (2.15).
-6
+$\big\{\,{}^{\al_1}_{\al_3}\,{}^{\al_2}_{{\al}_4}\,|\,{}^{\al_s}_{\al_t}\big\}_b^{}$,
+respectively.
+
+The b-$6j$ symbols $\big\{\,{}^{\al_1}_{\al_3}\,{}^{\al_2}_{{\al}_4}\,|\,{}^{\al_s}_{\al_t}\big\}_b^{\rm an}$ were calculated in \cite{PT2}\footnote{The formula below coincides with equation (228) in \cite{Teschner:2001rv} after shifting $s \rightarrow u-\alpha_s-Q/2$. We have moved a factor $|S_b(2\al_t)|^2$ into the
+measure of integration in \rf{fusion'}.}, 
+\begin{align} \label{6j1}
+
+
+\big\{\,{}^{\al_1}_{\al_3}\,{}^{\al_2}_{\bar{\al}_4}\,|\,{}^{\al_s}_{\al_t}\big\}_b^{\rm an}= & 
+\;\frac{S_b(\alpha_2+\alpha_s-\alpha_1) S_b(\alpha_t+\alpha_1-\alpha_4)}{S_b(\alpha_2+\alpha_t-\alpha_3) S_b(\alpha_s+\alpha_3-\alpha_4)} \\
+& \times  \int_{\CC}du\; 
+S_b(-\alpha_2 \pm (\alpha_1-Q/2)+u) 
+S_b(-\alpha_4 \pm (\alpha_3-Q/2) +u) \nonumber \\[-.5ex] &
+\hspace{1.125cm}\times  
+S_b(\alpha_2 + \alpha_4 \pm (\alpha_t-Q/2) - u) 
+S_b(Q \pm (\alpha_s - Q/2) - u) \,.
+\notag\end{align}
+The following notation has been used
+$
+S_b(\alpha \pm u) :=
+S_b(\alpha+u)
+S_b(\alpha-u).
+$
+The integral in \rf{6j1} will be defined for $\al_k\in Q/2+\textup{i}\BR$ by
+using a contour $\CC$ that approaches $Q+\textup{i}\BR$ near infinity,
+and passes the real axis in $(Q/2,Q)$, and for other values 
+of $\al_k$ by analytic continuation.
+
+The b-$6j$ symbols corresponding to the 
+normalization defined above are then given by the formula
+\begin{equation} \label{norm}
+\big\{\,{}^{\al_1}_{\al_3}\,{}^{\al_2}_{{\al}_4}\,|\,{}^{\al_s}_{\al_t}\big\}_b^{}={\textstyle
+\frac{M(\alpha_s,\alpha_2,\alpha_1)M(\alpha_4,\alpha_3,\alpha_s)}{M(\alpha_t,\alpha_3,\alpha_2) M(\alpha_4,\alpha_t,\alpha_1)} }
+\big\{\,{}^{\al_1}_{\al_3}\,{}^{\al_2}_{{\al}_4}\,|\,{}^{\al_s}_{\al_t}\big\}_b^{\rm an}\,.
+
+
+\end{equation}
+with $M(\al_3,\al_2,\al_1)$ being defined in \rf{normcoef}.

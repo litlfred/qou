@@ -7,10 +7,10 @@ section_number: 6.3
 pages: 176-189
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.954
-latex_coverage_ratio: 0.91
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{curves:surfaces:section}
 It is natural to study a manifold by examining the lower-dimensional sub-manifolds that it contains: we now look at closed curves in surfaces and unveil an unexpectedly rich world. We will discover that the study of curves in surfaces is tightly connected to hyperbolic geometry: 
@@ -20,6 +20,7 @@ We first prove various facts on curves, and then we use this knowledge to deduce
 
 We concentrate for simplicity on the genus-$g$ closed orientable surfaces $S_g$, although much of the discussion could be easily extended to finite-type surfaces $S_{g,b,p}$ with the appropriate modifications. 
 
+
 \subsection{Definitions}
 We start by recalling and fixing some basic definitions.
 A \emph{curve} on a differentiable manifold $M$ is a smooth map $\gamma \colon I\to M$ defined on some interval $I$, while a \emph{closed curve} is a smooth map $\gamma\colon S^1\to M$.\index{closed curve}\index{regular curve} 
@@ -27,6 +28,7 @@ A \emph{curve} on a differentiable manifold $M$ is a smooth map $\gamma \colon I
 A (possibly closed) curve $\gamma$ is \emph{regular} if $\gamma'(t)\neq 0$ for all $t$. All the curves will be tacitly assumed to be regular; moreover, with a little abuse we will sometimes indicate by $\gamma$ the \emph{support} of the curve $\gamma$, that is its image.
 
 A curve is \emph{simple} if it is an embedding, and the support of a simple closed curve is a one-dimensional submanifold of $M$ diffeomorphic to $S^1$. Recall that all isotopies are smooth by assumption, see Section \ref{isotopy:subsection}. Two simple closed curves are isotopic if and only if they are ambiently isotopic. Two simple closed curves with the same support and orientation are isotopic by Lemma \ref{diffeo:isotopi:lemma}. 
+
 
 \subsection{Simple closed curves on the sphere}
 We would like to classify the simple closed curves on a given closed surface up to isotopy, but we will soon realise that this task is harder than one could expect. A closed surface may contain many complicated closed curves, difficult to draw and visualise.
@@ -43,6 +45,7 @@ Theorem \ref{dischi:teo} and Lemma~\ref{diffeo:isotopi:lemma} together imply tha
 \end{proof}
 
 The simple closed curves in a torus are much more interesting.
+
 
 \subsection{Simple closed curves in the torus}
 We now classify the simple closed curves in the torus $T=S^1\times S^1$ up to isotopy. The fundamental group $\pi_1(T) = \matZ\times \matZ$ is abelian, hence a closed curve $\gamma$ is determined up to free homotopy by its class $(m,n)\in\matZ\times\matZ$.
@@ -76,6 +79,7 @@ Finally, we pick two simple closed curves $\gamma, \eta$ of the same type $(m,n)
 \end{figure}
 
 Simple closed curves in surfaces of higher genus are more complicated to classify, but are still very important. A couple of techniques used in the previous proof (cutting along curves and simplifying bigons) will be employed again in the higher-genus context.
+
 
 \subsection{Preliminaries on simple curves}
 Let $S_g$ be a closed orientable surface of some genus $g\geqslant 1$. We now prove some topological facts on simple closed curves in $S_g$, sometimes employing hyperbolic geometry.
@@ -128,6 +132,7 @@ A non-trivial simple closed curve in $S_g$ is never freely homotopic to its inve
 If $g=1$ the curves $\gamma$ and $\gamma^*$ represent distinct elements (and hence conjugacy classes) in $\pi_1(S_1) =  \matZ \times \matZ$. If $g\geqslant 2$, give $S_g$ a hyperbolic metric. The curve $\gamma$ is homotopic to a closed geodesic $\bar\gamma$ and hence $\gamma^*$ is homotopic to its inverse $\bar\gamma^*$, which is distinct from $\bar\gamma$ as a closed geodesic by definition. Distinct closed geodesics are not homotopic.
 \end{proof}
 
+
 \subsection{Simple closed geodesics}
 Let now $S_g$ have genus $g\geqslant 2$ and be equipped with a hyperbolic metric.
 We know from Corollary \ref{unique:closed:geodesic:cor}
@@ -175,6 +180,7 @@ Since the lifts of $\bar\gamma$ do not intersect, the geodesic $\bar\gamma$ does
 
 We will soon promote ``homotopic'' to ``isotopic''.
 
+
 \subsection{Geometric intersection}
 Isotopy classes of simple closed curves on $S_g$ form a complicate and interesting set, and a way to study it consists of looking at the way these curves intersect each other. The \emph{algebraic} intersection is too weak a tool, because it detects only their homology classes. We now introduce the much finer \emph{geometric} intersection.
 
@@ -189,6 +195,7 @@ A tubular neighbourhood of $\gamma$ is diffeomorphic to $S^1\times [-1,1]$ becau
 Recall that the \emph{algebraic} intersection of two curves counts the intersections with sign. Geometric and algebraic intersections behave much differently and are equal only modulo $2$.
 
 The geometric intersection $i(\gamma_1,\gamma_2)$ remains unaffected if we substitute $\gamma_1$ with its inverse, that is if we reverse its orientation. 
+
 
 \subsection{The bigon criterion}
 Two simple closed curves $\gamma_1$ and $\gamma_2$ in an orientable surface $S$ are in \emph{minimal position} if they intersect transversely in exactly $i(\gamma_1,\gamma_2)$ points. How can we know if two transverse simple closed curves in $S_g$ are in minimal position? We now prove a nice and simple criterion: they are in minimal position if and only if they do not form \emph{bigons}.
@@ -281,6 +288,7 @@ Let $\gamma$ and $\eta$ be non-trivial simple closed curves in the torus $T$ of 
 $$i(\gamma, \eta \big) = \left|\det \begin{pmatrix} p & r \\ q & s \end{pmatrix}\right|.$$
 \end{ex}
 
+
 \subsection{Homotopy and isotopy of curves}
 We are now going to prove some ``homotopy implies isotopy'' theorems: we start with closed curves and we end in the next section with self-diffeomorphisms of surfaces. These slightly technical theorems have the remarkable and pleasant effect of making life easier in dimensions two and three (their impact to three-dimensional topology will be clear in the next chapter): topologists use these theorems everyday when they manipulate two- and three-manifolds.
 
@@ -312,6 +320,7 @@ Two homotopic simple closed curves in a \emph{three}-manifold are not necessaril
 \begin{cor}
 Let $g\geqslant 2$ and $S_g$ have a hyperbolic metric. Every non-trivial simple closed curve in $S_g$ is isotopic to a simple closed geodesic.
 \end{cor}
+
 
 \subsection{Multicurves}
 Our next goal is to prove a ``homotopy implies isotopy'' theorem for self-diffeomorphisms of surfaces. The core of the proof is contained in the next section, and we will need there the notion of \emph{multicurve}: we now introduce this simple concept and extend some of the previous results from curves to multicurves.\index{multicurve} 
@@ -370,6 +379,7 @@ Let $g\geqslant 2$ and $S_g$ have a hyperbolic metric. Every essential multicurv
 \end{cor}
 
 In particular every pants decomposition straightens to a (unique) geodesic one: this fact will be used in Chapter \ref{Teichmuller:chapter} to parametrize all the hyperbolic metrics on a given $S_g$.
+
 
 \subsection{Minimal position}
 We end this discussion on multicurves by showing that the minimal position is unique up  to isotopy.

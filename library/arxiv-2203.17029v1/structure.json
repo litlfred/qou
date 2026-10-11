@@ -6,7 +6,7 @@
   "sha256": "5557f7f272cb8a438cdf7b35118d702cd0f14dd029e0a66b8e1c951b7bbf014e",
   "bytes": 722072,
   "pages": 65,
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -575,8 +575,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "text55.tex",
-   "tex_sections": 5,
-   "overlaid": 0,
+   "tex_sections": 32,
+   "overlaid": 24,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -592,22 +592,34 @@
     {
      "id": "sec-001-11-summary",
      "title": "Summary",
-     "result": "no matching \\section"
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.652,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-12-motivation",
      "title": "Motivation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-14-the-generalised-q-hypergeometric-equation-is",
      "title": "The generalised q-hypergeometric equation is modular",
-     "result": "no matching \\section"
+     "prose_ratio": 0.921,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-15-modular-q-holonomic-modules-in-chernsimons-th",
      "title": "Modular q-holonomic modules in Chern\u2013Simons theory",
-     "result": "no matching \\section"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-2-a-review-of-linear-q-difference-equations",
@@ -618,52 +630,82 @@
     {
      "id": "sec-006-21-preliminaries",
      "title": "Preliminaries",
-     "result": "no matching \\section"
+     "prose_ratio": 0.844,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-22-an-algorithm-for-a-fundamental-matrix",
      "title": "An algorithm for a fundamental matrix",
-     "result": "no matching \\section"
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-23-the-q-borel-and-the-q-laplace-transforms",
      "title": "The q-Borel and the q-Laplace transforms",
-     "result": "no matching \\section"
+     "prose_ratio": 0.931,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-24-the-slash-operator-and-proof-of-theorem-12",
      "title": "The slash operator and proof of Theorem 1.2",
-     "result": "no matching \\section"
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-25-duality",
      "title": "Duality",
-     "result": "no matching \\section"
+     "prose_ratio": 0.91,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-26-categorical-aspects",
      "title": "Categorical aspects",
-     "result": "no matching \\section"
+     "prose_ratio": 0.876,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-31-solutions",
      "title": "Solutions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.689,
+     "coverage_ratio": 0.943,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-013-32-self-duality",
      "title": "Self duality",
-     "result": "no matching \\section"
+     "prose_ratio": 0.901,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-014-33-state-integral",
      "title": "State integral",
-     "result": "no matching \\section"
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-015-34-resonance",
      "title": "Resonance",
-     "result": "no matching \\section"
+     "prose_ratio": 0.884,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-016-4-proof-of-theorems-15-and-16",
@@ -673,63 +715,94 @@
     {
      "id": "sec-017-41-the-q-pochhammer-symbol",
      "title": "The q-Pochhammer symbol",
-     "result": "no matching \\section"
+     "prose_ratio": 0.845,
+     "coverage_ratio": 0.92,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-018-42-the-appell-lerch-sums",
      "title": "The Appell-Lerch sums",
-     "result": "no matching \\section"
+     "prose_ratio": 0.844,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-019-51-solutions",
      "title": "Solutions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.095,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-020-5-a-q-difference-equation-of-the-41-knot",
      "title": "A q-difference equation of the 41 knot",
-     "prose_ratio": 0.178,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.828,
+     "coverage_ratio": 0.899,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-021-52-monodromy",
      "title": "Monodromy",
-     "result": "no matching \\section"
+     "prose_ratio": 0.862,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-022-53-residues",
      "title": "Residues",
-     "result": "no matching \\section"
+     "prose_ratio": 0.894,
+     "coverage_ratio": 0.824,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-023-54-determinants",
      "title": "Determinants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.695,
+     "coverage_ratio": 0.919,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-024-55-state-integral",
      "title": "State integral",
-     "result": "no matching \\section"
+     "prose_ratio": 0.272,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-025-56-the-inhomogeneous-equation",
      "title": "The inhomogeneous equation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.875,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-026-57-the-x-deformation",
      "title": "The x-deformation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-027-58-an-analytic-lift-of-the-colored-jones-polynom",
      "title": "An analytic lift of the colored Jones polynomial",
-     "result": "no matching \\section"
+     "prose_ratio": 0.88,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-028-acknowledgements",
      "title": "Acknowledgements",
-     "result": "no matching \\section"
+     "prose_ratio": 0.636,
+     "coverage_ratio": 0.812,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-029-references",

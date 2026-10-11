@@ -154,7 +154,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 6,
-   "overlaid": 4,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -164,31 +164,32 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.995,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-harmonic-functions-and-exchangeable-pairs",
      "title": "Harmonic functions and exchangeable pairs",
-     "prose_ratio": 0.989,
-     "coverage_ratio": 0.99,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-3-irreducible-characters-of-the-symmetric-group",
      "title": "Irreducible characters of the symmetric group",
-     "prose_ratio": 0.983,
-     "coverage_ratio": 0.441,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-5-asymptotic-multiplicities-in-tensor-products-o",
      "title": "Asymptotic multiplicities in tensor products of representations",
-     "prose_ratio": 0.976,
-     "coverage_ratio": 0.985,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

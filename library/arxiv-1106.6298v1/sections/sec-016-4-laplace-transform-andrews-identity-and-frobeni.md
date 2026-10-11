@@ -7,14 +7,15 @@ section_number: 4
 pages: 15-16
 source_pdf: 1106.6298v1.pdf
 source_sha256: 23b0754067873a04
-text_source: latex
-latex_prose_ratio: 0.652
-latex_coverage_ratio: 0.959
 doc_brief: "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INVARIANTS — In 2006 Habiro initiated a construction of generating functions for Witten– Reshetikhin–Turaev (WRT) invariants known as uniﬁed WRT invariant s."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.683
 ---
 \label{map-frob}
 The aim of this section is to define the Laplace transform
  and to study its image.
+
 
 
 
@@ -85,6 +86,7 @@ $(q^{k+1};q)_{k+1}$.
 discovered by Andrews.
 
 
+
 \subsection{Andrews identity}
 To warm up
 we start with the  identity from the Ramanujan ``Lost'' Notebook:
@@ -134,109 +136,3 @@ that
 $$\cL_{-1,1;n}((q^{n};q)_{k+1}\; (q^{-n};q)_{k+1})=2(q^{k+1};q)_{k+1}\, .$$
 The same holds also for $\cL_{1,1;n}$ up to units.
 This allows to write the explicit formula for $I_M$ given in the introduction.
-
-\subsection{Frobenius isomorphism}
-It remains to
-show that the image of the
-Laplace transform
-belongs to $\R_b$, i.e. that
-certain roots of $q$ exist in $\R_b$.
-
-
-In \cite{BBL} we proved the following.
-
-
-\begin{Thm}\label{frob}{\rm [Beliakova--B\"uhler--Le]}
-The Frobenius endomorphism
- $F_b: \Z[1/b][q]^{\N_b} \to \Z[1/b][q]^{\N_b}$, sending $q$ to $q^b$,
- is an isomorphism.
-\end{Thm}
-
-
-This implies the
-existence of the $b$th root of $q$ in $\calS_{b,0}$
-defined by
-\[
-q^{1/b}:=F^{-1}_b (q)  \in \calS_{b,0}\,.
-\]
-
-
-
-Let us mention that this result does not hold over $\Q$, i.e.
-for  $y \in\Q^{\N_b}$ with $y^b=1$ we have $y=\pm 1$.
-
-Further, we introduce
-another Frobenius homomorphism
-$$G_m : R[q]^{\N_b} \to R[q]^{m\N_b} \quad \text{ by } \qquad G_m(q) = q^m.$$
-Since $\Phi_{mr}(q)$ always divides $\Phi_{r}(q^m)$,  $G_m$ is well--defined.
-
-This map allows us to transfer $q^{1/b}$ from $\calS_{p,0}$
-to $\calS_{p,i}$ with $i> 0$, and hence to define a
-realization of $q^{a^2/b}$ in $\calS_p$ with the correct evaluation.
-
-
-\subsection{Integrality}
-The proof of integrality of the SO(3) WRT invariants for
-all  roots of unity and for all 3--manifolds is given in \cite{BL}.
-Note that even restricted to rational homology 3--spheres,
-this fact requires a separate proof, since
- the existence
-of $I_M \in \R_b$ does not imply  integrality of the WRT invariants,
-unless $b= 1$. In this subsection
-we define a subring $\Gamma_b \subset \R_b$, such that
-for any $f\in \Gamma_b$, $\ev_\xi(f)\in \Z[\xi]$.
-
-
-The fact that $I_{M,1}$ belongs
-to this subring was proved in \cite{BL}. We conjecture that
-this holds in general.
-
-For any divisor $c$ of $b$, let us decompose
-$\N=\cup_{c|b}\; c\; \N_{b/c}$. Then
-$$\Z[1/b][q]^\N=\prod_{c|b} \Z[1/b][q]^{c\,\N_{b/c}}\, .$$
-Analogously, we have
-$\Gamma_b=\prod_{c|b} \Gamma_{b,c}$, where
-$\Gamma_{b,c} \subset \Z[1/b][q]^{c\, \N_{b/c}}$ is defined as follows.
-
-Let $A_{b,c}=\Z[e_c][q^{\pm 1}, q^{\pm c/b}]$.
-Put $t=q^{c/b}$ and let $A^{(m)}_{b,c}$ be the algebra generated over  $A_{b,c}$
-by
-$$\frac{(t;t)_m}{(q^c;q^c)_{m}}\;
- \frac{(e_c;e_c)_{(c-1)/2}}{\widetilde {(q;q)_m}}\; $$
-where $$\widetilde{(q;q)_m}=\prod^m_{i=1, c\, \nmid\,  i}(1-q^i)\, .$$
-Then
-every element $f\in \Gamma_{b,c}$ has a presentation
-$$f=\sum^\infty_{m=0} f_m \; \frac{(q^{m+1};q)_{m+1}}{1-q}
-$$
-with $f_m\in A^{(m)}_{b,c}$.
-For any root of unity $\xi$ of odd order $r$ with $(r,b)=c$
-and $f\in \Gamma_{b,c}$, we have
-$$ \ev_\xi (f)= \ev_\xi \left(\sum^{(r-3)/2}_{m=0} f_m \frac{(q^{m+1};q)_{m+1}}{1-q}
-\right)\; .$$
-
-
-
-
-
-
-
-
-Observe that for $m<(r-1)/2$,
-$$
-\ev_\xi (\widetilde {(q;q)_{m}}) \; \mid\;
-(e_c;e_c)_{(c-1)/2}
-\;\;\text{and}\;\;
-\ev_\xi \left(\frac{(t;t)_m}{(q^c;q^c)_{m}}
-\right) \in \Z[\xi]\, .$$
-
-
-
-\begin{conjecture}
-For any $M\in \M_b$,
-there exists an invariant $I'_M \in \Gamma_b$, such that
-for any root of unity $\xi$ of odd order
-$\ev_\xi(I'_M)=\tau_M(\xi)$.
-\end{conjecture}
-
-We also expect that $\Gamma_{b,b}$ is determined by its Taylor
-expansion at $e_b$.

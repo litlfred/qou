@@ -203,7 +203,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "Algebraic_constructions_in_the_category_of_vector_bundles.tex",
    "tex_sections": 6,
-   "overlaid": 2,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -224,22 +224,23 @@
      "id": "sec-002-1-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.921,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-2-the-category-of-generalized-lie-algebroids",
      "title": "The category of generalized Lie algebroids",
-     "prose_ratio": 0.986,
-     "coverage_ratio": 0.439,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.995,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-6-torsion-and-curvature-forms-identities-of-cart",
      "title": "Torsion and curvature forms. Identities of Cartan and Bianchi type",
-     "prose_ratio": 0.986,
-     "coverage_ratio": 0.533,
+     "prose_ratio": 0.971,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     }

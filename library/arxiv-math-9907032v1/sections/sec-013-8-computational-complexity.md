@@ -7,10 +7,10 @@ section_number: 8
 pages: 21-22
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
-text_source: latex
-latex_prose_ratio: 0.962
-latex_coverage_ratio: 1.0
 doc_brief: "Combinatorial optimization in geometry (Rivin) — extends and unifies results on ideal polyhedra in H³ to singular Euclidean structures on surfaces, possibly with infinitely many singularities."
+text_source: latex
+latex_prose_ratio: 0.992
+latex_coverage_ratio: 0.986
 ---
 []{#complexsec label="complexsec"}
 

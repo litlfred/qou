@@ -7,10 +7,10 @@ section_number: 6
 pages: 22-30
 source_pdf: 1202.0067v3.pdf
 source_sha256: 2ce621c8982ee764
-text_source: latex
-latex_prose_ratio: 0.961
-latex_coverage_ratio: 0.941
 doc_brief: "CHARACTER DEFLATIONS AND A GENERALIZATION OF THE MURNAGHAN–NAKAYAMA RULE ANTON EVSEEV, ROWENA PAGET AND MARK WILDON — 8 sections: Introduction; Deflation by averaging; Skew characters"
+text_source: latex
+latex_prose_ratio: 0.997
+latex_coverage_ratio: 0.961
 ---
 []{#sec:gendef label="sec:gendef"}
 
@@ -57,10 +57,8 @@ We define a relation $\mathcal{R}$ on the set of border strips of length $n$ by
 We denote the set of $(a,1^b)$-like border-strip $n$-diagrams of shape $\kappa$ by $\mathcal{B}_{a,b}^\kappa$.
 :::
 
-<figure id="fig:skewDiag" data-latex-placement="t">
-<embed src="SkewDiagram.pdf" />
-<figcaption>A <span class="math inline">(4, 1<sup>4</sup>)</span>-like border-strip <span class="math inline">3</span>-diagram of shape <span class="math inline">(9, 8, 7, 7, 6, 2, 1)/(5, 5, 3, 3)</span>. Ribbons in the horizontal border-strip <span class="math inline">3</span>-diagram are shown in light grey and white, with their initial boxes labelled <span class="math inline"><em>I</em></span>; ribbons in the vertical border-strip <span class="math inline">3</span>-diagram are shown in light grey and dark grey with their terminal boxes labelled <span class="math inline"><em>T</em></span>.</figcaption>
-</figure>
+![A $(4,1^4)$-like border-strip $3$-diagram of shape $(9,8,7,7,6,2,1) /     
+(5,5,3,3)$. Ribbons in the horizontal border-strip $3$-diagram are shown in light grey and white, with their initial boxes labelled $I$; ribbons in the vertical border-strip $3$-diagram are shown in light grey and dark grey with their terminal boxes labelled $T$.](SkewDiagram.pdf){#fig:skewDiag}
 
 We note that, by a simple counting argument, whenever $(D,E)\in \mathcal{B}_{a,b}^{\kappa}$, the elements of $D$ are pairwise disjoint, as well as those of $E$, and we have $(\bigcup D) \cap (\bigcup E) = \sigma$. Definition [\[def:hook-like\]](#def:hook-like){reference-type="ref" reference="def:hook-like"} is inspired by the Littlewood--Richardson Rule (see [@JK 2.8.13] or [@StanleyII A1.3.3]) in the case of a hook partition $(a,1^b)$. In this case the rule states that the multiplicity of $\chi^{(a,1^b)}$ in $\chi^\kappa$ is the number of ways to represent $\kappa$ as a union of two skew shapes $\alpha$ and $\beta$ satisfying the following:
 
@@ -101,14 +99,14 @@ Note that since $|\kappa| = mn$, the border-strips in $D$ and $E$ are necessaril
 ::: proof
 *Proof of Theorem [\[thm:hookdefl\]](#thm:hookdefl){reference-type="ref" reference="thm:hookdefl"}.* The proof is by induction on $b$. Recall that $g$ denotes an $n$-cycle. In the case $b=0$ we have $$(\mathop{\mathrm{Def\hskip-0.3pt res}}^{\chi^{(m)}}_{S_n} \chi^{\kappa})(g)= a_{\kappa, (n)}= \varepsilon_n(\kappa) | \mathcal{D}^\kappa_{m,0}|=\varepsilon_n(\kappa) | \mathcal{B}^\kappa_{m,0}|,$$ where the first equality follows from Theorem [\[thm:cd\]](#thm:cd){reference-type="ref" reference="thm:cd"} and the second by Lemma [\[lemma:horiz\]](#lemma:horiz){reference-type="ref" reference="lemma:horiz"}.
 
-For $b>0$, we combine Proposition [\[prop:omega\]](#prop:omega){reference-type="ref" reference="prop:omega"} with Lemmas [\[lemma:D_a,b\]](#lemma:D_a,b){reference-type="ref" reference="lemma:D_a,b"} and [\[lemma:DandB\]](#lemma:DandB){reference-type="ref" reference="lemma:DandB"}, Young's Rule and the inductive hypothesis to get $$\begin{align*}
+For $b>0$, we combine Proposition [\[prop:omega\]](#prop:omega){reference-type="ref" reference="prop:omega"} with Lemmas [\[lemma:D_a,b\]](#lemma:D_a,b){reference-type="ref" reference="lemma:D_a,b"} and [\[lemma:DandB\]](#lemma:DandB){reference-type="ref" reference="lemma:DandB"}, Young's Rule and the inductive hypothesis to get $$\begin{aligned}
 (\mathop{\mathrm{Def\hskip-0.3pt res}}^{\chi^{(a ,1^{b})}}_{S_n} \chi^{\kappa}) (g) &=
  \langle\omega (\mathop{\mathrm{Res}}_{S_m \wr S_n} \chi^{\kappa}), \chi^{(a,1^b)} \rangle\\
  & =    \langle\omega (\mathop{\mathrm{Res}}_{S_m \wr S_n} \chi^{\kappa}), \mathop{\mathrm{Ind}}_{S_a \times S_b}^{S_m} (\chi^{(a)} \times \chi^{(1^b)}) - \chi^{(a+1,1^{b-1})} \rangle\\
 & =  \varepsilon_n(\kappa) |\mathcal{D}^\kappa_{a,b}|- (\mathop{\mathrm{Def\hskip-0.3pt res}}^{\chi^{(a+1 ,1^{b-1})}}_{S_n} \chi^{\vartheta}) (g)\\
 & =  \varepsilon_n(\kappa) |\mathcal{D}^\kappa_{a,b}| -  \varepsilon_{n} (\kappa) |\mathcal{B}^{\kappa}_{a+1,b-1}|\\
  & =   \varepsilon_{n} (\kappa) |\mathcal{B}^{\kappa}_{a ,b}|.
-\end{align*}$$ as required. ◻
+\end{aligned}$$ as required. ◻
 :::
 
 It remains to demonstrate the truth of the two lemmas.
@@ -120,11 +118,11 @@ In the general case, let $\kappa=\lambda / \mu$. By Frobenius reciprocity and Le
 \langle\omega(\mathop{\mathrm{Res}}_{S_m \wr S_n} \chi^\kappa), \ \mathop{\mathrm{Ind}}_{S_a \times S_b}^{S_m} (\chi^{(a)} \times \chi^{(1^b)}) \rangle
 = \hskip2in \\ 
 \hskip1in \langle\sum_\tau \omega(\mathop{\mathrm{Res}}_{S_a \wr S_n} \chi^{\tau / \mu}) \times \omega(\mathop{\mathrm{Res}}_{S_b \wr S_n} \chi^{\lambda / \tau}), \chi^{(a)} \times \chi^{(1^b)} \rangle, 
-\end{split}$$ where the sum is over all partitions $\tau$ such that $\mu \subseteq \tau \subseteq \lambda$ and $|\tau / \mu| = an$. Using the two extreme cases, it follows that $$\begin{align*}
+\end{split}$$ where the sum is over all partitions $\tau$ such that $\mu \subseteq \tau \subseteq \lambda$ and $|\tau / \mu| = an$. Using the two extreme cases, it follows that $$\begin{aligned}
 \langle\omega(\mathop{\mathrm{Res}}_{S_m \wr S_n} \chi^\kappa), \ \mathop{\mathrm{Ind}}_{S_a \times S_b}^{S_m} (\chi^{(a)} \times \chi^{(1^b)}) \rangle&=   \sum_\tau \varepsilon_n(\tau / \mu) |\mathcal D^{\tau / \mu}_{a,0}| \varepsilon_n(\lambda / \tau) |\mathcal D^{\lambda / \tau}_{0,b}|\\
  & = \varepsilon_n(\lambda / \mu) \sum_\tau |\mathcal D^{\tau / \mu}_{a,0} | \, |\mathcal D^{\lambda / \tau}_{0,b}|\\
 &=   \varepsilon_n(\lambda / \mu) |\mathcal D^{\lambda/ \mu}_{a,b}|
-\end{align*}$$ as required. ◻
+\end{aligned}$$ as required. ◻
 :::
 
 The proof of Lemma [\[lemma:DandB\]](#lemma:DandB){reference-type="ref" reference="lemma:DandB"} relies upon the following simple result.

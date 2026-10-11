@@ -7,15 +7,16 @@ section_number: 11.5
 pages: 372-377
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.982
-latex_coverage_ratio: 0.9
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 0.851
+latex_coverage_ratio: 1.0
 ---
 In Chapter \ref{Three:topology:chapter} we cut every closed three-manifold along spheres, and it is now time to decompose it further along tori. 
 This two-steps cutting operation is called the \emph{JSJ decomposition} of the manifold, after the names of Jaco, Shalen, and Johansson who discovered it in the mid 1970s.\index{JSJ decomposition}
 
 The core of this decomposition is the existence of a canonical set of disjoint essential tori, unique up to isotopy. 
+
 
 \subsection{Canonical torus decomposition}
 Let $M$ be an orientable irreducible and $\partial$-irreducible compact 3-manifold with (possibly empty) boundary consisting of tori. How can we define a canonical set of disjoint essential tori in $M$? The answer is not obvious: for instance, if $M$ is a Seifert manifold, it may contain many vertical incompressible tori and there is no canonical way to choose among them.
@@ -41,6 +42,7 @@ Such a minimal decomposition is called the \emph{canonical torus decomposition} 
 \begin{oss}
 Torus (semi-)bundles are closed: therefore if $M$ is not itself a torus (semi-)bundle, the blocks of its canonical decomposition are either Seifert or simple.
 \end{oss}
+
 
 \subsection{Existence and uniqueness}
 Let  $M$ be an orientable irreducible and $\partial$-irreducible compact 3-manifold with (possibly empty) boundary consisting of tori. We now prove Theorem \ref{JSJ:teo}. Let us start by showing existence.
@@ -79,6 +81,7 @@ The proof of Theorem \ref{JSJ:teo} is complete.
 The sphere decomposition of Theorem \ref{prime:teo} and the torus decomposition of Theorem \ref{JSJ:teo} differ in two aspects: (i) the set of decomposing spheres is \emph{not} canonical up to isotopy, while the set of tori is; (ii) on the other hand, after cutting along the spheres and capping off we get a canonical set of prime manifolds, whereas if we cut along the tori we get some canonical manifolds with toric boundaries, but there is no canonical way to cap them off. 
 \end{oss}
 
+
 \subsection{Geometric decomposition} \label{geometric:decomposition:subsection}
 The \emph{geometric decomposition} is a slight variation of the canonical torus decomposition that is more suited to the geometrisation perspective that we will encounter in the next chapters. It is constructed from the canonical torus decomposition $S$ for $M$ as follows. Whenever a block $N$ of the torus decomposition is diffeomorphic to $K\timtil I$,  
 we substitute the torus $\partial N$ in $S$ with the core Klein bottle $K$ of $K\timtil I$. This substitution has the effect of deleting $N$ from the list of blocks of the decomposition.\index{geometric decomposition}
@@ -104,6 +107,7 @@ The geometric decomposition of $\tilde M$ is the counterimage of that of $M$.
 The criterion of Proposition \ref{criterion:geometric:prop} lifts from $M$ to $\tilde M$.
 \end{proof}
 
+
 \subsection{Graph manifolds}
 Waldhausen introduced in the 1960s a simple but non-trivial class of three-manifolds using only two blocks. Here $D$ and $P$ are the disc and the pair-of-pants.
 
@@ -124,6 +128,7 @@ Let $M$ be an orientable three-manifold. The following are equivalent:
 Use Corollary~\ref{DF:Seifert:cor} and Proposition \ref{criterion:geometric:prop}. 
 \end{proof}
 
+
 \subsection{References}
 Most of the arguments contained in this chapter are well-known to three-dimensional topologists and can be found in many books. A standard introduction to knots and links is Rolfsen \cite{Ro}, and much more on Dehn surgeries and their four-dimensional interpretations is contained in Gompf -- Stipsicz \cite{GS}. A proof of the JSJ decomposition can be found in Hatcher \cite{H}, the original papers of Jaco -- Shalen and Johannson are \cite{JS} and \cite{Jo}. Fomenko -- Matveev \cite{FM} contains a chapter devoted to graph manifolds; the original paper of Waldhausen is \cite{Wa}.
 
@@ -134,3 +139,40 @@ We have concluded the previous chapter by defining a \emph{geometric decompositi
 There are eight nice Riemannian metrics available in dimension three. Three of them are the constant curvature ones (hyperbolic, elliptic, and flat), while the other five are some kind of (sometimes twisted) products of low-dimensional geometries. All these metrics are \emph{homogeneous}: distinct points have isometric neighbourhoods.
 
 The Seifert manifolds studied in the previous chapters occupy precisely six of these eight geometries, and we analyse them in detail here.
+
+
+\section{Introduction}
+A connected Riemannian manifold $M$ is \emph{homogeneous} if for every $p,q\in M$ there is an isometry of $M$ sending $p$ to $q$, and is \emph{isotropic} if at each point $p$ every isometry of $T_pM$ is realised by an isometry of $M$. It is easy to prove that a complete isotropic manifold is also homogeneous and has constant sectional curvature: the fundamental examples of isotropic spaces are $S^n$, $\matR^n$, and $\matH^n$.\index{manifold!Riemannian manifold!homogeneous Riemannian manifold}\index{manifold!Riemannian manifold!isotropic Riemannian manifold}
+
+The homogeneous condition alone (without isotropy) is more relaxed and produces manifolds that may not have constant sectional curvature.
+We introduce in this chapter eight important homogeneous simply-connected complete Riemannian 3-manifolds:
+$$S^3,\ \matR^3,\ \matH^3,\ S^2\times \matR,\ \matH^2\times \matR,\ \Nil,\ \Sol,\ \widetilde{\SL_2}.$$
+The first three manifolds are also isotropic and have constant sectional curvature, the other five are not. 
+
+Let $M$ be one of these eight model manifolds. We say that a Riemannian 3-manifold $N$ has a \emph{geometric structure modelled on $M$} if $N$ is locally isometric to $M$, that is if every point $p\in N$ has an open neighbourhood isometric to some open set in $M$. This implies that $N$ is \emph{locally homogeneous}: every two points $p,q\in N$ have isometric neighbourhoods $U(p) \isom U(q)$, both isometric to an $\varepsilon$-ball at any point of $M$.
+
+If $N$ is complete, the developing map construction of Theorem \ref{simply:teo} applies also in this context and shows that $N = M/_\Gamma$ for some discrete group $\Gamma <\Iso(M)$ acting freely. \index{geometric structure}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{c||ccc}
+       & \phantom{\Big|} $\chi>0$ & $\chi = 0$ & $\chi<0$ \\
+ \hline \hline
+ $e=0$ & \phantom{\Big|} $S^2 \times \matR$ & $\matR^3$ & $\matH^2 \times \matR$ \\
+ $e\neq 0$ & \phantom{\big|} $S^3$ & $\Nil$ & $\widetilde {\SL_2}$
+\end{tabular}
+\vspace{.2 cm}
+\nota{The closed manifolds modelled on six geometries are precisely the six commensurable classes of Seifert manifolds, distinguished by the numbers $e$ and $\chi$.}
+\label{Seifert:geometry:table}
+\end{center}
+\end{table}
+
+We now start a long journey through these eight geometries. The final goal of this chapter is to prove the following.
+
+\begin{teo} \label{Seifert:geometrisation:teo}
+A closed orientable 3-manifold has a geometric structure modelled on one of the following six geometries:
+$$S^3,\ \matR^3,\ S^2\times \matR,\ \matH^2\times \matR,\ \Nil,\ \widetilde{\SL_2}$$
+if and only if it is a Seifert manifold of the appropriate commensurability class, as prescribed by Table \ref{Seifert:geometry:table}. It has a $\Sol$ geometric structure if and only if it is a torus (semi-)bundle of Anosov type.
+\end{teo}
+
+It is a surprising (and maybe disappointing) fact that, despite its elegance and generality, the only known proof of this theorem available today works by investigating each geometry separately and carefully, often employing quite different techniques. We start with the elliptic case.

@@ -8,216 +8,110 @@ pages: 19-22
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
 doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R) — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual"
+text_source: latex
+latex_prose_ratio: 0.983
+latex_coverage_ratio: 0.952
 ---
-Here we describe several properties of the quantum dilogarithm inv olving integra-
-tions.
-Lemma 3.7. [2, (3.31), (3.32)] We have the following Fourier transform ation
-formula:
-∫
-R+i0
-e2πitr e−πit2
-Gb(Q +it)dt =
-¯ζb
-Gb( Q
-2−ir)
-=gb(e2πbr), (3.24)
-∫
-R+i0
-e2πitr e−πQt
-Gb(Q +it)dt =ζbGb(Q
-2−ir) = 1
-gb(e2πbr) =g∗
-b (e2πbr), (3.25)
-where the contour goes above the pole at t = 0.
-Using the reﬂection properties, we also obtain
-∫
-R+i0
-e2πitreπQtGb(−it)dt =
-¯ζb
-Gb( Q
-2−ir)
-, (3.26)
-∫
-R+i0
-e2πitreπit2
-Gb(−it)dt =ζbGb(Q
-2−ir), (3.27)
-where again the contour goes above the pole at t = 0.
-19
-Lemma 3.8. [2, B.4] q-Binomial Theorem: For positive self-adjoint variables u,v
-with uv =q2vu, we have:
-(u +v)ib−1t =
-∫
-C
-( it
-iτ
-)
-b
-uib−1(t−τ )vib−1τdτ, (3.28)
-where the q-beta function (or q-binomial coeﬃcient) is given by
-(
-t
-τ
-)
-b
-= Gb(−τ )Gb(τ−t)
-Gb(−t) , (3.29)
-and C is the contour along R that goes above the pole at τ = 0 and below the pole
-at τ =t.
-Lemma 3.9. [32, Lem 15] We have the Tau-Beta Theorem:
-∫
-C
-e−2πτ βGb(α +iτ )
-Gb(Q +iτ )dτ = Gb(α)Gb(β)
-Gb(α +β) , (3.30)
-where the contour C goes along R and goes above the poles of Gb(Q +iτ ) and below
-those of Gb(α +iτ ). By the asymptotic properties of Gb, the integral converges for
-Re(β)> 0,Re (α +β)<Q .
-Lemma 3.10. Rewriting the integral transform in [44] in terms of Gb, we obtain
-the 4-5 relation given by:
-∫
-C
-dτe −2πγτ Gb(α +iτ )Gb(β +iτ )
-Gb(α +β +γ +iτ )Gb(Q +iτ ) = Gb(α)Gb(β)Gb(γ)
-Gb(α +γ)Gb(β +γ), (3.31)
-where the contour C goes along R and goes above the poles of the denominator, and
-below the poles of the numerator. By the asymptotic properti es of Gb, the integral
-converges for Re(γ)> 0.
-An important corollary of Lemma 3.9 is the following:
-Corollary 3.11. Letf (z)∈W (cf. Deﬁnition 2.23), then we have
-lim
-ǫ− →0
-∫
-C
-Gb(Q−ǫ)Gb(iz)
-Gb(Q +iz−ǫ) f (z)dz =f (0), (3.32)
-where the contour go above the poles of the denominator and be low the poles of
-the numerator. Alternatively, we can shift the poles so that the expression is an
-integration over R:
-lim
-ǫ− →0
-∫
-R
-Gb(Q− 2ǫ)Gb(iz +ǫ)
-Gb(Q +iz−ǫ) f (z)dz =f (0). (3.33)
+\label{sec:QDilog:Int}
+Here we describe several properties of the quantum dilogarithm involving integrations.
+
+\begin{Lem}\label{FT} \cite[(3.31), (3.32)]{BT} We have the following Fourier transformation formula:
+\Eq{\int_{\R+i0} e^{2\pi i t r}\frac{e^{-\pi i t^2}}{G_b(Q+i
+t)}dt=\frac{\bar{\ze_b}}{G_b(\frac{Q}{2}-ir)}=g_b(e^{2\pi b r}), }
+\Eq{\int_{\R+i0} e^{2\pi i t r}\frac{e^{-\pi Qt}}{G_b(Q+i
+t)}dt=\ze_b G_b(\frac{Q}{2}-ir)=\frac{1}{g_b(e^{2\pi br})}=g_b^*(e^{2\pi br}) ,} where the contour goes above the pole
+at $t=0$.
+
+Using the reflection properties, we also obtain \Eq{\int_{\R+i0} 
+e^{2\pi i t r}e^{\pi Q t}G_b(-i
+t)dt=\frac{\bar{\ze_b}}{G_b(\frac{Q}{2}-ir)},}
+\Eq{\int_{\R+i0} 
+e^{2\pi i t r}e^{\pi it^2}G_b(-it)dt=\ze_b G_b(\frac{Q}{2}-ir),}
+where again the contour goes above the pole at $t=0$.
+\end{Lem}
+
+
+
+
+\begin{Lem} \label{qbi}\cite[B.4]{BT} $q$-Binomial Theorem:
+For positive self-adjoint variables $u,v$ with $uv=q^2vu$, we have:
+\Eq{(u+v)^{ib\inv t}=\int_{C}\veca{it\\i\t}_b u^{ib\inv (t-\t)}v^{ib\inv \t}d\t ,}
+where the $q$-beta function (or $q$-binomial coefficient) is given by
+\Eq{\veca{t\\\t}_b=\frac{G_b(-\t)G_b(\t-t)}{G_b(-t)},}
+and $C$ is the contour along $\R$ that goes above the pole at $\t=0$
+and below the pole at $\t=t$.
+\end{Lem}
+
+\begin{Lem}\label{tau} \cite[Lem 15]{PT2} We have the Tau-Beta Theorem:
+\Eq{\int_C e^{-2\pi \t \b}
+\frac{G_b(\a+i\t)}{G_b(Q+i\t)}d\t =\frac{G_b(\a)G_b(\b)}{G_b(\a+\b)},}
+where the contour $C$ goes along $\R$ and goes above the poles of
+$G_b(Q+i\t)$ and below those of $G_b(\a+i\t)$. By the asymptotic properties of $G_b$, the integral converges for $Re(\b)>0, Re(\a+\b)<Q$.
+\end{Lem}
+
+\begin{Lem}\label{45}Rewriting the integral transform in \cite{Vo} in terms of $G_b$, we obtain the 4-5 relation given by:
+\Eq{\int_C d\t e^{-2\pi \c\t}\frac{G_b(\a+i\t)G_b(\b+i\t)}{G_b(\a+\b+\c+i\t)G_b(Q+i\t)}=\frac{G_b(\a)G_b(\b)G_b(\c)}{G_b(\a+\c)G_b(\b+\c)},}
+where the contour $C$ goes along $\R$ and goes above the poles of the denominator, and below the poles of the numerator. By the asymptotic properties of $G_b$, the integral converges for $Re(\c)>0$.
+\end{Lem}
+
+An important corollary of Lemma \ref{tau} is the following:
+\begin{Cor} \label{delta} Let $f(z)\in \cW$ (cf. Definition \ref{WDef}), then we have
+\Eq{\lim_{\e\to 0}\int_C\frac{G_b(Q-\e)G_b(iz)}{G_b(Q+iz-\e)} f(z)dz = f(0),}
+where the contour go above the poles of the denominator and below the poles of the numerator. Alternatively, we can shift the poles so that the expression is an integration over $\R$:
+\Eq{\lim_{\e\to 0}\int_\R\frac{G_b(Q-2\e)G_b(iz+\e)}{G_b(Q+iz-\e)} f(z)dz = f(0).}
 Formally as distribution,
-Gb(Q)Gb(ix)
-Gb(Q +ix) =δ(x), x ∈ R. (3.34)
-20
-Proof. By Lemma 3.9, we have
-lim
-ǫ− →0
-∫
-R
-Gb(Q− 2ǫ)Gb(iz +ǫ)
-Gb(Q +iz−ǫ) f (z)dz
-= lim
-ǫ− →0
-∫
-R
-∫
-C
-e−2πτ (iz+ǫ)Gb(Q− 2ǫ +iτ )
-Gb(Q +iτ ) f (z)dτdz,
-where the contour C goes above the pole at τ = 0.
-Now by Corollary 3.4, the integrand in τ has asymptotics
-⏐
-⏐
-⏐
-⏐e−2πτ ǫGb(Q− 2ǫ +iτ )
-Gb(Q +iτ )
-⏐
-⏐
-⏐
-⏐∼
-{ e−2πτ ǫ τ−→∞
-e2πτ ǫ τ−→−∞ .
-Hence the integrand is absolutely convergent in both τ and z. Hence we can inter-
-change the integration order of τ and z,
-= lim
-ǫ− →0
-∫
-C
-∫
-R
-e−2πτ (iz+ǫ)Gb(Q− 2ǫ +iτ )
-Gb(Q +iτ ) f (z)dzdτ
-= lim
-ǫ− →0
-∫
-C
-e−2πτ ǫGb(Q− 2ǫ +iτ )
-Gb(Q +iτ ) (Ff )(τ )dτ,
-whereF is the Fourier transform. Since f ∈ W,Ff ∈ W as well, hence the
-integrand is absolutely convergent independent of ǫ. Hence we can interchange the
-limit and ﬁnally obtain
-=
-∫
-R
-lim
-ǫ− →0
-e−2πτ (iz+ǫ)Gb(Q− 2ǫ +iτ )
-Gb(Q +iτ ) (Ff )(τ )dτ
-=
-∫
-R
-(Ff )(τ )dτ
-= f (0),
-where the last line follows from the properties of Fourier transform .
-Remark 3.12. This is just the analogue of the delta function as a hyperfunc tion.
-Since the integrand is 0 unless z is close to 0, it suﬃces to notice that near z = 0 ,
-from the analytic properties for Gb we have Gb(z)∼ 1
-Gb(Q−z)∼ 1
-2πz , so that
-lim
-ǫ− →0
-Gb(Q− 2ǫ)Gb(iz +ǫ)
-Gb(Q +iz−ǫ)
-∼ lim
-ǫ− →0
-2ǫ
-2πi(iz−ǫ)(iz +ǫ)
-= lim
-ǫ− →0
-1
-2πi
-( 1
-z−iǫ− 1
-z +iǫ
-)
-= δ(z).
-21
-Intuitively, restricting to x∈ R, Gb(Q)Gb(ix)
-Gb(Q+ix) is always 0 unless x = 0 , in which
-case it is ∞. The properties of Gb say that it gives the right normalization to be a
-delta function.
+\Eq{\frac{G_b(Q)G_b(ix)}{G_b(Q+ix)}=\d(x),\tab x\in\R.}
+\end{Cor}
+
+\begin{proof} By Lemma \ref{tau}, we have
+\begin{eqnarray*}
+&&\lim_{\e\to 0}\int_\R\frac{G_b(Q-2\e)G_b(iz+\e)}{G_b(Q+iz-\e)} f(z)dz\\
+&=&\lim_{\e\to 0}\int_\R \int_C e^{-2\pi\t(iz+\e)}\frac{G_b(Q-2\e+i\t)}{G_b(Q+i\t)}f(z)d\t dz,\\
+\end{eqnarray*}
+where the contour $C$ goes above the pole at $\t=0$.
+
+Now by Corollary \ref{asymp}, the integrand in $\t$ has asymptotics
+$$\left|e^{-2\pi\t\e}\frac{G_b(Q-2\e+i\t)}{G_b(Q+i\t)}\right|\sim\left\{\begin{array}{cc}e^{-2\pi \t\e}& \t\to\oo\\ e^{2\pi \t\e}&\t\to-\oo\end{array}.\right.$$
+Hence the integrand is absolutely convergent in both $\t$ and $z$. Hence we can interchange the integration order of $\t$ and $z$,
+\begin{eqnarray*}
+&=&\lim_{\e\to 0}\int_C \int_\R e^{-2\pi\t(iz+\e)}\frac{G_b(Q-2\e+i\t)}{G_b(Q+i\t)}f(z)dz d\t \\
+&=&\lim_{\e\to 0}\int_C e^{-2\pi\t\e}\frac{G_b(Q-2\e+i\t)}{G_b(Q+i\t)}(\cF f)(\t)d\t ,\\
+\end{eqnarray*}
+where $\cF$ is the Fourier transform. Since $f\in \cW, \cF f\in \cW$ as well, hence the integrand is absolutely convergent independent of $\e$. Hence we can interchange the limit and finally obtain
+\begin{eqnarray*}
+&=&\int_\R \lim_{\e\to 0}e^{-2\pi\t(iz+\e)}\frac{G_b(Q-2\e+i\t)}{G_b(Q+i\t)}(\cF f)(\t)d\t  \\
+&=&\int_\R(\cF f)(\t)d\t \\
+&=&f(0),
+\end{eqnarray*}
+where the last line follows from the properties of Fourier transform.
+\end{proof}
+\begin{Rem}
+This is just the analogue of the delta function as a hyperfunction. Since the integrand is $0$ unless $z$ is close to 0, it suffices to notice that near $z=0$, from the analytic properties for $G_b$  we have $G_b(z) \sim \frac{1}{G_b(Q-z)}\sim\frac{1}{2\pi z}$, so that
+\begin{eqnarray*}
+&&\lim_{\e\to0}\frac{G_b(Q-2\e)G_b(iz+\e)}{G_b(Q+iz-\e)}\\
+&\sim&\lim_{\e\to0} \frac{2\e}{2\pi i(iz-\e)(iz+\e)}\\
+&=&\lim_{\e\to0}\frac{1}{2\pi i}\left(\frac{1}{z-i\e}-\frac{1}{z+i\e}\right)\\
+&=&\d(z).
+\end{eqnarray*}
+
+Intuitively, restricting to $x\in\R$, $\frac{G_b(Q)G_b(ix)}{G_b(Q+ix)}$ is always 0 unless $x=0$, in which case it is $\oo$. The properties of $G_b$ say that it gives the right normalization to be a delta function.
+\end{Rem}
+
 The other variants which we will also use include:
-Corollary 3.13. Forf (x)∈W , we have
-lim
-ǫ− →0
-∫
-R
-Gb(ǫ−ix)Gb(ǫ +ix)
-Gb(2ǫ) f (x)dx = f (0), (3.35)
-lim
-ǫ− →0
-∫
-R
-Gb(ǫ +ix−b)Gb(Q +b− 2ǫ)
-Gb(Q +ix−ǫ) f (x)dx = −q2f (0) +f (−ib), (3.36)
+\begin{Cor} For $f(x)\in\cW$, we have
+\begin{eqnarray}
+\lim_{\e\to0}\int_\R \frac{G_b(\e-ix)G_b(\e+ix)}{G_b(2\e)}f(x)dx &=& f(0),\\
+\lim_{\e\to0}\int_\R \frac{G_b(\e+ix-b)G_b(Q+b-2\e)}{G_b(Q+ix-\e)}f(x)dx &=& -q^2 f(0)+f(-ib),
+\end{eqnarray}
 or formally
-Gb(−ix)Gb(ix)
-Gb(0) = δ(x), (3.37)
-Gb(ix−b)Gb(Q +b)
-Gb(Q +ix) = −q2δ(x) +δ(x +ib), (3.38)
-which follows from the functional properties of Gb(x) and similar arguments as
-above.
-A particular important case in the study of modular double (see the n ext sec-
-tion) is proved in [2, Lem 3] and [44] which can also be obtained from the above
-arguments:
-Corollary 3.14. Let u,v be positive self-adjoint operators satisfying uv = q2vu.
-By taking t−→−ib−1 in Lemma 3.8 we obtain
-(u +v)1/b2
-=u1/b2
-+v1/b2
-. (3.39)
+\begin{eqnarray}
+\frac{G_b(-ix)G_b(ix)}{G_b(0)}&=&\d(x),\\
+\frac{G_b(ix-b)G_b(Q+b)}{G_b(Q+ix)}&=&-q^2\d(x)+\d(x+ib),
+\end{eqnarray}
+which follows from the functional properties of $G_b(x)$ and similar arguments as above.
+\end{Cor}
+
+A particular important case in the study of modular double (see the next section) is proved in \cite[Lem 3]{BT} and \cite{Vo} which can also be obtained from the above arguments:
+\begin{Cor}\label{u+v} Let $u,v$ be positive self-adjoint operators satisfying $uv=q^2vu$. By taking $t\to -ib\inv$ in Lemma \ref{qbi} we obtain
+\Eq{(u+v)^{1/b^2} = u^{1/b^2}+v^{1/b^2}.}
+\end{Cor}

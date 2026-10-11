@@ -8,144 +8,134 @@ pages: 15-17
 source_pdf: 0806.4741v1.pdf
 source_sha256: 5e7ad85a99fb3552
 doc_brief: "The deformation quantizations of the hyperbolic plane — We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order"
+text_source: latex
+latex_prose_ratio: 0.948
+latex_coverage_ratio: 0.911
 ---
-For convenience, we ﬁx a particular choice of closed star product ⋆ on M associated as above with the
-function
-P(ζ) = P
-closed
-(ζ) :=
-√
-cosh(ℏζ). (80)
-We denote the corresponding intertwiner by T closed. We then note that, from the above discussion, the
-analogue of equation (68) for the direct operator U in this case can be rewritten under the following form:
-− 2|¯zW (x, ¯z) =F⋆
-(x)W (x, ¯z) , (81)
+\label{SectSL}
+For convenience, we fix a particular choice of closed star product $\star$ on $\MM$ associated as above with
+the function 
+\begin{equation}
+\cp(\zeta)\;=\;\cp^{\mbox{\tiny{\rm closed}}}(\zeta):=\sqrt{\cosh(\hbar \zeta)}\;.
+\end{equation}
+We denote the corresponding intertwiner by $T^{{\mbox{\tiny{\rm closed}}}}$. We then note that, from the above discussion,  the analogue of equation (\ref{ES}) for the direct operator $U$ in this case can be rewritten under the following form:
+\begin{equation}\label{BoxBrutApp}
+- \Box_{|\bar{{  z}}} W({  x},\bar{{  z}}) = F^\star_{{ (x)}}
+W({ x},\bar{{  z}}) \quad ,
+\end{equation}
 with
-W (x, ¯z) =
-(
-(φ∗
-ℏ)−1◦F◦ T
-closed)
-|zu(z−1x) , (82)
-and where the operator 2 is given by (61). Observe that from (82) the function W (x, ¯z) =W (a,n,b,r ) takes
-the form
-W (a,n,b,r ) = (1 + ℏ2r2)1/4qe−irnqF (q,r ) , (83)
-with q =e2(a−b) and
-F (q,r ) =
-∫
-eiqry u(1
-2 lnq,y )dy , (84)
-and where ( a,n ) are the coordinates of x, (b,𝓁 ) those of z, and, ( b,r ) those of ¯z, r being the variable
-conjugated to 𝓁 through the Fourier transformationF which only aﬀect the second z-coordinate.
-The right-hand side of eq. (81) is simpler :
-F⋆
-xW (x, ¯z) =e2aq
-(
-2qn∂ q− (k′ +n2)∂n
-)
-W (q,n,r ) (85)
-15
-k′ being for the operator F⋆
-x the corresponding of k for the operator F in ρ1
-ℏ(F )|z (see eqs (48)), so ﬁnally
-eq. (81) simpliﬁes to the following equation for F (q,r ) :
-(
-−r ℏ2q2 (1 + ℏ2r2)∂2
-q−r (1 + ℏ2r2)2∂2
-r + 2q (1 + ℏ2r2)2∂r∂q− 2 ℏ2r2 (1 + ℏ2r2)∂r +V
-)
-F (q,r ) = 0, (86)
+\begin{equation}\label{DefWApp}
+W({  x},\bar{{  z}}) = \left( (\phi_\hbar ^*)^{-1} \circ {\cal F}
+\circ T^{{\mbox{\tiny{\rm closed}}}} \right)_{|{  z}} u({ z}^{-1}{  x}) \quad ,
+\end{equation}
+and where  the operator $\Box$ is given by (\ref{box1}). 
+Observe that from  (\ref{DefWApp})
+ the function $W({
+x},\bar{{z}}) = W(a,n,b,r)$ takes the form 
+\begin{equation}\label{FormeW}
+W  (a,n,b,r) =   (1+ \hbar^2 \,r^2)^{1/4} \, q
+\, e^{-i  r  n  q} \, F (q,r) \quad,
+\end{equation}
+with $q =  e^{2(a-b)}$ and
+\begin{equation}\label{uF}
+F (q,r) = \int\, e^{i\,  q\,r\, y} \, u
+(\frac{1}{2} \ln  q,y) \, dy \quad,
+\end{equation}
+and where $ (a,n)$ are the coordinates of $x$, $(b,\ell)$ those of $z$, and, 
+$(b,r)$ those of $\bar z$, $r$ being the variable conjugated to $\ell$ through the
+Fourier transformation  ${\cal F}$ which only affect the second
+$z$-coordinate.
+
+\noindent The right-hand side of eq. (\ref{BoxBrutApp}) is simpler  :
+\begin{eqnarray}\label{BoxBox}
+F^\star_{ x}W(x,\bar z)= e^{2\,a}q\left(2\,q\,n\,\partial_q-(k'+n^2)\partial_n\right) W(q,n,r)\quad 
+\end{eqnarray}
+$k'$ being for the operator $F^\star_{x}$ the corresponding of $k$ for the  operator $F$ in $\rho_\hbar ^1(F)_{|{  z}}$  (see eqs (\ref{fundamental})), so finally eq. (\ref{BoxBrutApp}) simplifies to the following equation for $F  (q,
+r)$ :
+\begin{equation}\label{BoxFqr}
+\left(-r\,  \hbar^2 q^2\,(1+\hbar^2  r^2  ) \partial_q^2 - r\,(1+\hbar^2 r^2)^2 \partial_r^2  + 2\,q\,(1+\hbar^2 r^2)^2 \partial_r
+\partial_q   - 2\,\hbar^2\,r^2\,(1+\hbar^2 r^2)  \partial_r +
+V\right) F (q,r) = 0 \ ,
+\end{equation}
+with 
+\begin{equation}
+V\;=\;V(q,r)\;:=\;r\,(-\frac{\hbar^2}4 (2+\hbar^2 r^2 ) + (1+\hbar^2 r^2) (k - k' q^2))\;.
+\end{equation}
+
+\noindent The problem  amounts thus to solve the corresponding equation for $F_\hbar (q,
+r)$, from which we could find $u_\hbar$ by
+inverting (\ref{uF}). We set 
+\begin{equation}
+G(q,r)  = q^{1/2} (1+ r^2\hbar^2)^{1/4}\,F(q,r)\;,
+\end{equation}
+\noindent and use the variables:
+\begin{equation}\label{UVqr}
+U = q^{\frac{1}{2}}\sinh(\frac{\hbar}{2}\zeta) \quad, \quad V =
+q^{\frac{1}{2}}\cosh(\frac{\hbar}{2}\zeta)  \quad,
+\end{equation}
 with
-V = V (q,r ) := r (− ℏ2
-4 (2 + ℏ2r2) + (1 +ℏ2r2)(k−k′q2)). (87)
-The problem amounts thus to solve the corresponding equation for Fℏ(q,r ), from which we could ﬁnd uℏ by
-inverting (84). We set
-G(q,r ) =q1/2(1 +r2ℏ2)1/4F (q,r ), (88)
-and use the variables:
-U =q
-1
-2 sinh( ℏ
-2ζ) , V =q
-1
-2 cosh( ℏ
-2ζ) , (89)
+\begin{equation}\label{rzeta}
+r\;=:\;\frac{1}{\hbar}\sinh(\hbar\zeta)\;.
+\end{equation}
+\noindent The equation then becomes
+\begin{equation}\label{wave}
+\left[\partial_U \partial_V + \tilde{Q}(U,V)\right] G(U,V) = 0
+\quad,
+\end{equation}
 with
-r =: 1
-ℏ sinh(ℏζ). (90)
-The equation then becomes [
-∂U∂V + ˜Q(U,V )
-]
-G(U,V ) = 0 , (91)
+\begin{equation}
+\tilde{Q}(U,V) = -\frac{4}{\hbar^2} \frac{UV}{(U^2 - V^2)^2}
+(\frac{\hbar^2}{4} - k + k'(U^2 - V^2)^2) \quad.
+\end{equation}
+Note that here : $U^2 - V^2 = -q$, hence $U^2 - V^2<0$. Setting  $U^2=\frac{1}{2}(t-x)$,
+$V^2=\frac{1}{2}(t+x)$ and $G(q,r)=H(t,x)$, one then gets
+\begin{equation}
+\left\{x^2(\partial^2_t-\partial^2_x)-\frac
+1{\hbar^2}[\frac{\hbar^2}{4} -k+k'x^2]\right\}H(t,x)=0\;.
+\end{equation}
+Applying a method of separation of variables to the latter yields solutions  as  superpositions of 
+the following modes:
+\begin{equation}
+F_{\hbar,s} (q,r) =  h_s(q) (1+\hbar^2
+\, r^2)^{-1/4} e^{i s q\sqrt{1+\hbar^2\,r^2} }\quad,
+\end{equation}
 with
-˜Q(U,V ) =− 4
-ℏ2
-UV
-(U2−V 2)2 ( ℏ2
-4 −k +k′(U2−V 2)2) . (92)
-Note that here :U2−V 2 =−q, henceU2−V 2 < 0. Setting U2 = 1
-2(t−x),V 2 = 1
-2(t+x) andG(q,r ) =H(t,x ),
-one then gets {
-x2(∂2
-t−∂2
-x)− 1
-ℏ2 [ ℏ2
-4 −k +k′x2]
-}
-H(t,x ) = 0. (93)
-Applying a method of separation of variables to the latter yields solutions as superpositions of the following
-modes:
-Fℏ,s(q,r ) =hs(q)(1 + ℏ2r2)−1/4eisq
-√
-1+ℏ2r2
-, (94)
-with
-hs(x) =AJ√
-k
-ℏ
-[
-√
-s2 +k′/ℏ2 x] +BY√
-k
-ℏ
-[
-√
-s2 +k′/ℏ2 x] , (95)
-where Jµ and Yµ denote Bessel functions of the ﬁrst and second kinds (see ref. [41]). From (84)
-u(a,l ) = e2a
-2π
-∫
-e−irle 2a
-F (e2a,r )dr , (96)
+\begin{equation}\label{hs}
+h_s(x)= A\, J_{\frac
+{\sqrt{k}}{\hbar}}[\sqrt{s^2+ {k'} /{\hbar^2}}\,\,
+x] + B\, Y_{\frac{\sqrt{k}}{\hbar}}[\sqrt{s^2+  {k'}/ {\hbar^2}}\,\, x]\quad,
+\end{equation}
+where $J_\m$ and $Y_\mu$ denote  Bessel functions of the first and second kinds (see ref. \cite{Wa}).
+From (\ref{uF})
+\begin{equation}\label{Ftou}
+u(a,l) = \frac{e^{2a}}{2 \pi}\int\, e^{-i \,r\, l\, e^{2a}} F(
+e^{2a},r) \, dr \quad,
+\end{equation}
 thus (up to constant factors)
-uℏ,s(a,l ) =e2ahs(e2a)
-∫
-Hs(a,b )eible2a
-db , (97)
+\begin{equation}\label{uGen}
+u_{\hbar,s}(a,l) =  e^{2a} \, h_s(  e^{2a})\, \int \, {\cal
+H}_s(a,b) \, e^{i  b  l e^{2a}} \, db \quad,
+\end{equation}
 with
-Hs(a,b ) = (1 + ℏ2r2)−1/4eis
-√
-1+ℏ2r2e2a
-. (98)
-We may use a similar technique to determine the kernel of the inverse operator U−1. By writing
-[U−1f](x) =
-∫
-v(z−1x)f(z)dz , (99)
-one ﬁnds:
-2¯xM(¯x,z ) =−F⋆
-zM(¯x,z ) (100)
+\begin{equation}\label{uGenbis}
+{\cal H}_s(a,b) = (1+ \hbar^2r^2)^{-1/4} e^{  i s
+\sqrt{1+\hbar^2r^2} e^{2a}} \quad.
+\end{equation}
+We may use a similar technique to determine the kernel of the inverse operator $U^{-1}$. By writing
+\begin{equation}
+ [U^{-1}f]({x})=\int \, v({z}^{-1}{x}) \, f({z}) d{z} \quad,
+ \end{equation}
+one finds:
+\begin{equation}\label{BoxBrutAppInv}
+ \Box_{\bar{{x}}} M(\bar{{x}},{z}) = - F^\star_{{z}} M(\bar{{x}},{z}) \quad
+ \end{equation}
 with
-M(¯x,z ) =
-(
-(φ∗
-ℏ)−1◦F◦ TP)
-|xvP(z−1x) . (101)
-Solutions to (100) can be deduced by using a slight generalization of what we have done here above. We
-ﬁnally get,
-vℏ,s(a,l ) =e−2ahs(e−2a)
-∫
-(1 + ℏ2r2)−1/4eis
-√
-1+ℏ2r2e−2a
-e−ibldb . (102)
-16
+\begin{equation}\label{M}
+M(\bar{{  x}},{z}) = \left( (\phi_\hbar^*)^{-1} \circ {\cal F}
+\circ T^{{\cal P}} \right)_{|{ x}} v^{{\cal P}}({z}^{-1}{x}) \quad .
+\end{equation}
+Solutions to (\ref{BoxBrutAppInv}) can be deduced by using a slight generalization of what we have done here above. We finally get,
+\begin{equation}\label{vGen2}
+v_{\hbar,s}(a,l) = e^{-2a} \, h_s(  e^{-2a})\, \int
+\, (1+ \hbar^2r^2)^{-1/4} e^{  i s \sqrt{1+\hbar^2r^2} e^{-2a}} \, e^{-i b l} \, db \quad.
+\end{equation}

@@ -7,12 +7,13 @@ section_number: 11.4
 pages: 367-372
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.981
-latex_coverage_ratio: 0.745
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 Seifert manifolds have base orbifolds of dimension 2 and smooth fibres of dimension 1. We now introduce a complementary construction where the base orbifolds have dimension 1 and the smooth fibres have dimension 2. These are called \emph{surface bundles}.
+
 
 \subsection{Surface bundles}
 A \emph{surface bundle over $S^1$} is a fibre bundle $M\to S^1$ of a compact orientable 3-manifold $M$ (possibly with boundary) over the circle, whose fibre $\Sigma$ is a connected compact orientable surface. If $M$ has boundary, then $\Sigma$ also has, and $\partial M$ consists of tori fibering over $S^1$.\index{surface bundle over $S^1$}
@@ -34,6 +35,7 @@ The diffeomorphism $g\colon \Sigma\to \Sigma$ that conjugates them extends to $\
 \end{proof}
 
 The manifolds $M_\psi$ and $M_{\psi^{-1}}$ are (orientation-reversingly) diffeomorphic.
+
 
 \subsection{Properties}
 We now start to investigate the topological properties of surface bundles.
@@ -64,6 +66,7 @@ If $\chi(\Sigma)>0$ then $\MCG(\Sigma)$ is trivial and we are done, so we suppos
 
 The manifold $M$ is covered by $\Sigma \times \matR$, whose interior is covered by $\matR^2 \times \matR = \matR^3$: hence $M$ is irreducible. It is also $\partial$-irreducible because its double also fibres and hence is irreducible. Therefore $M$ is Haken. 
 \end{proof}
+
 
 \subsection{Semi-bundles}
 The Seifert fibrations are circle bundles over two-dimensional orbifolds, and likewise it is natural to consider surface bundles over 1-orbifolds. The compact 1-orbifolds are $S^1$ and the closed segment with mirrored endpoints. We have already considered the $S^1$ case and we now define some surface bundles over the closed segment, called \emph{semi-bundles}.
@@ -107,6 +110,7 @@ S^1\ar[r] & I
 $$
 Every semi-bundle is thus covered by an ordinary bundle.
 
+
 \subsection{Seifert manifolds} \label{Seifert:fibers:subsection}
 We now classify the Seifert manifolds that have a surface (semi-)bundle structure.
 
@@ -130,6 +134,7 @@ Every circle fibering over these pieces is an interval bundle by Proposition \re
 
 Conversely, if $M$ has a (semi-)bundle structure the orientable fibre is essential and is hence either horizontal or vertical: we get one of the types listed.
 \end{proof}
+
 
 \subsection{Torus bundles}
 A \emph{torus bundle} is of course a surface bundle $M\to S^1$ with fibre a torus $T$. We fix a basis for $\pi_1(T)$, so that $\MCG(T) = \SLZ$. By what said above, every matrix $A\in \SLZ$ defines a torus bundle $M_A$\index{torus bundle} with monodromy $A$. We want to understand when $M_A$ is a Seifert manifold.
@@ -181,6 +186,7 @@ If $|\tr A|=2$ then $A$ is conjugate to $\matr {\pm 1}e0{\pm 1}$ and we use Exer
 \end{proof}
 
 When $|\tr A| > 2$ we say that the monodromy $A$ is \emph{Anosov}.
+
 
 \subsection{Bundles with $\chi(\Sigma) <0$}
 Proposition \ref{torus:bundle:classification:prop} does not extend to surface bundles with $\chi(\Sigma)<0$; indeed it may happen that non-conjugate monodromies in $\MCG(\Sigma)$ give rise to diffeomorphic manifolds and understanding when this happens is a hard problem.

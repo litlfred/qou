@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-5
 source_pdf: 0707.2003v2.pdf
 source_sha256: 0b8fe37aabeee412
-text_source: latex
-latex_prose_ratio: 0.99
-latex_coverage_ratio: 0.981
 doc_brief: "A geometric model for Hochschild homology of Soergel bimodules BEN WEBSTER GEORDIE WILLIAMSON School of Mathematics Mathematisches Institut Institute for Advanced Study der Universität Freiburg — An"
+text_source: latex
+latex_prose_ratio: 0.997
+latex_coverage_ratio: 0.997
 ---
 []{#sec:introduction label="sec:introduction"}
 
@@ -57,11 +57,7 @@ More generally, Soergel bimodules can be identified with the $\BB$-equivariant h
 Our central result is a geometric description of Hochschild homology $\HH_*(-)$ of these modules.
 
 ::: thm
-[]{#sec:introduction-1 label="sec:introduction-1"} Let $\mc F$ be a semi-simple $\BB$-equivariant perverse sheaf on $G$ and let $R$ be its $\BB$-equivariant cohomology. Then $$\begin{equation*}
-    \HH_*(\S{})\cong \hc_{B}(G,\mc F),
-\end{equation*}$$ where $B$ acts by conjugation (i.e., by the diagonal inclusion $B\hookrightarrow\BB$). In particular, we have $$\begin{equation*}
-    \HH_*(\S w)\cong\IH_{B}^*(\Gw).
-\end{equation*}$$
+[]{#sec:introduction-1 label="sec:introduction-1"} Let $\mc F$ be a semi-simple $\BB$-equivariant perverse sheaf on $G$ and let $R$ be its $\BB$-equivariant cohomology. Then $$\HH_*(\S{})\cong \hc_{B}(G,\mc F),$$ where $B$ acts by conjugation (i.e., by the diagonal inclusion $B\hookrightarrow\BB$). In particular, we have $$\HH_*(\S w)\cong\IH_{B}^*(\Gw).$$
 :::
 
 Unfortunately, $\IH_{B}^*(\Gw)$ has a single grading, whereas $\HH_*(\S w)$ has two: by decomposition into the components $\HH_i$ ("the Hochschild grading"), and one coming from the grading on $\S
@@ -70,44 +66,30 @@ w$ ("the polynomial grading"). This isomorphism takes the single grading on $\IH
 We can give a geometric interpretation of these gradings, but in a somewhat roundabout manner. A result of Rasmussen [@Ras06] shows that
 
 ::: thm
-[]{#intro-e-f label="intro-e-f"} Assume $G=\SL n$ or $\GL n$. Then $\IC({G_w})$ is equivariantly formal. Thus, the map $$\begin{equation*}
-    i^*_T: \IH^*_T(G_w)\to \hc_T(T,\IC({G_w}))\cong H^*_T(T)\otimes \IC({G_w})_e
-\end{equation*}$$ is injective and an isomorphism after tensoring with the fraction field of $S$.
+[]{#intro-e-f label="intro-e-f"} Assume $G=\SL n$ or $\GL n$. Then $\IC({G_w})$ is equivariantly formal. Thus, the map $$i^*_T: \IH^*_T(G_w)\to \hc_T(T,\IC({G_w}))\cong H^*_T(T)\otimes \IC({G_w})_e$$ is injective and an isomorphism after tensoring with the fraction field of $S$.
 :::
 
 Furthermore, since $H^*_T(T,\IC({G_w}))\cong S\otimes_\C
 H^*(T,\IC({G_w}))$ by the Künneth theorem, we can equip this $S$ module with a bigrading, with an "equivariant" grading from the first factor, and a "topological" grading from the second.
 
 ::: thm
-[]{#grading-match label="grading-match"} The intersection cohomology $\IH^*_B(G_w)$ obtains "topological" and "equivariant" gradings by transport of structure from the map $i^*$ and $\HH_*(\S w)$ obtains the same by the isomorphism of Theorem [\[sec:introduction-1\]](#sec:introduction-1){reference-type="ref" reference="sec:introduction-1"}. These are related to the "Hochschild" and "polynomial" gradings by $$\begin{equation*}
-    \deg_t(\ga)=\deg_h(\ga) \hspace{15mm} \deg_e(\ga)=\deg_p(\ga)-2\deg_h(\ga)
-\end{equation*}$$ where $\deg_*(x)$ denotes the degree of $x$ in the grading whose name begins with the letter $*$.
+[]{#grading-match label="grading-match"} The intersection cohomology $\IH^*_B(G_w)$ obtains "topological" and "equivariant" gradings by transport of structure from the map $i^*$ and $\HH_*(\S w)$ obtains the same by the isomorphism of Theorem [\[sec:introduction-1\]](#sec:introduction-1){reference-type="ref" reference="sec:introduction-1"}. These are related to the "Hochschild" and "polynomial" gradings by $$\deg_t(\ga)=\deg_h(\ga) \hspace{15mm} \deg_e(\ga)=\deg_p(\ga)-2\deg_h(\ga)$$ where $\deg_*(x)$ denotes the degree of $x$ in the grading whose name begins with the letter $*$.
 :::
 
 The case where $\Gw$ is smooth is of special interest to us, so any reader who is unhappy with the presence of intersection cohomology and perverse sheaves can restrict to that case, in which case intersection cohomology is canonically isomorphic to Čech cohomology.
 
 ::: thm
-[]{#ind-HH label="ind-HH"} If $\Gw$ is smooth (in any type), then the Hochschild homology of $\S w$ is of the form $$\begin{equation*}
-    \HH_*(\S w)=\land^\bullet(\ga_1,\ldots, \ga_n)\otimes_{\C}\HT
-\end{equation*}$$ where $\{\ga_i\}_{i=1,\ldots,m}$ are generators with $$\begin{equation*}
-    \deg_h(\ga_i)=1\hspace{15mm}\deg_p(\ga_i)=2k_i
-\end{equation*}$$ for positive integers $k_i$ determined by the geometry of $\Gw$.
+[]{#ind-HH label="ind-HH"} If $\Gw$ is smooth (in any type), then the Hochschild homology of $\S w$ is of the form $$\HH_*(\S w)=\land^\bullet(\ga_1,\ldots, \ga_n)\otimes_{\C}\HT$$ where $\{\ga_i\}_{i=1,\ldots,m}$ are generators with $$\deg_h(\ga_i)=1\hspace{15mm}\deg_p(\ga_i)=2k_i$$ for positive integers $k_i$ determined by the geometry of $\Gw$.
 :::
 
 These integers can be calculated using the action of $w$ on the root system, or in $\SL n$ by presenting $\Gw/B$ as an iterated Grassmannian bundle.
 
 While the indecomposable modules $\S w$ are perhaps most natural from the perspective of geometry or representation theory, definition (1) (and the study of knot homology, which we discuss briefly in Section [\[sec:knot-homol-soerg\]](#sec:knot-homol-soerg){reference-type="ref" reference="sec:knot-homol-soerg"}) encourages us to concentrate on the modules $\S{\Bi}$. We call these particular Soergel bimodules **Bott-Samelson** for reasons which will be clarified in Section [\[sec:geom-soerg-bimod\]](#sec:geom-soerg-bimod){reference-type="ref" reference="sec:geom-soerg-bimod"}.
 
-Bott-Samelson modules are naturally identified with the equivariant homology of the "groupy" Bott-Samelson space $$\begin{equation*}
-  \BSi\cong P_{s}\times_{B} P_{t} \times_{B} \cdots\times_{B}P_{u}.
-\end{equation*}$$ and essentially the analogues of all appropriate theorems connecting the $\BB$-orbit closures in $G$ with Soergel bimodules are true here.
+Bott-Samelson modules are naturally identified with the equivariant homology of the "groupy" Bott-Samelson space $$\BSi\cong P_{s}\times_{B} P_{t} \times_{B} \cdots\times_{B}P_{u}.$$ and essentially the analogues of all appropriate theorems connecting the $\BB$-orbit closures in $G$ with Soergel bimodules are true here.
 
 ::: thm
-[]{#BS-match label="BS-match"} If $G=\SL n$ or $\GL n$, then for all $\Bi$, we have $$\begin{equation*}
-    \S{\Bi}\cong H^*_{\BB}(\BSi)\hspace{15mm}\HH_*(\S{\Bi})\cong H^*_{B}(\BSi).
-\end{equation*}$$ The $T$-conjugation on $\BSi$ is equivariantly formal, and the injection $$\begin{equation*}
-    i^*_T:H^*_T(\BSi)\to H_T^*(\BSi^T)
-\end{equation*}$$ induces a bigrading on $H^*_T(\BSi)$ matching that on $\HH_*(\S{\Bi})$ as in Theorem [\[grading-match\]](#grading-match){reference-type="ref" reference="grading-match"}.
+[]{#BS-match label="BS-match"} If $G=\SL n$ or $\GL n$, then for all $\Bi$, we have $$\S{\Bi}\cong H^*_{\BB}(\BSi)\hspace{15mm}\HH_*(\S{\Bi})\cong H^*_{B}(\BSi).$$ The $T$-conjugation on $\BSi$ is equivariantly formal, and the injection $$i^*_T:H^*_T(\BSi)\to H_T^*(\BSi^T)$$ induces a bigrading on $H^*_T(\BSi)$ matching that on $\HH_*(\S{\Bi})$ as in Theorem [\[grading-match\]](#grading-match){reference-type="ref" reference="grading-match"}.
 :::
 
 The structure of the paper is as follows: In Section [\[sec:knot-homol-soerg\]](#sec:knot-homol-soerg){reference-type="ref" reference="sec:knot-homol-soerg"}, we discuss the importance of the Hochschild homology of Soergel bimodules in knot theory. In Section [\[sec:hochsch-homol-dg\]](#sec:hochsch-homol-dg){reference-type="ref" reference="sec:hochsch-homol-dg"}, we prove Theorem [\[sec:introduction-1\]](#sec:introduction-1){reference-type="ref" reference="sec:introduction-1"}, using the formalism of dg-modules, the relevant points of which we will summarize in Section [\[sec:equi-derived-cat\]](#sec:equi-derived-cat){reference-type="ref" reference="sec:equi-derived-cat"}. In Section [\[sec:geom-soerg-bimod\]](#sec:geom-soerg-bimod){reference-type="ref" reference="sec:geom-soerg-bimod"}, we will cover in more detail how to construct Soergel bimodules as equivariant intersection cohomology of various varieties. Finally, in Section [\[sec:equiv-form\]](#sec:equiv-form){reference-type="ref" reference="sec:equiv-form"}, we prove Theorems [\[intro-e-f\]](#intro-e-f){reference-type="ref" reference="intro-e-f"} -- [\[BS-match\]](#BS-match){reference-type="ref" reference="BS-match"}.

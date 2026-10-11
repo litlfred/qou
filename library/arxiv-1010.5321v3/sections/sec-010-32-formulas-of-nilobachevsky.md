@@ -8,37 +8,14 @@ pages: 8-9
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
 doc_brief: "Formulas on hyperbolic volume — This paper collects some important formulas on hyperbolic volume."
+text_source: latex
+latex_prose_ratio: 0.95
+latex_coverage_ratio: 1.0
 ---
-The formulas of this subsection can be found in [6] or [8].
-Barrel-wedge: Barrel-wedge is a sector of a barrel intersected from it by tw o meridian-plane
-through its axis of rotation. Let T be the area of a meridian-intersection and p be the length of
-its parallel circular arcs. Then we have
-v = 1
-2pT.
-Orthosceme: Let the non-rectangular dihedral angles of an orthosceme be α , β andγ, respec-
-tively. There admitted at the edges a, z and c, respectively. (See in Fig.6 ). Introduce the
-parameter δ by the equalities:
-tanhδ := tanha tanα = tanhc tanγ,
-and the Milnor form of the Lobachevsky-function (see in [7]) :
-Λ(x) = −
-x∫
-0
-ln |2 sinζ|dζ,
-respectively. Then the volume v of the orthosceme is
-1
-4
-[
-Λ(α +δ) − Λ(α −δ) − Λ
-(π
-2 −β +δ
-)
-+ Λ
-(π
-2 −β −δ
-)
-+ Λ(γ +δ) − Λ(γ −δ) + 2Λ
-(π
-2 −δ
-)]
-.
-8
+The formulas of this subsection can be found in [@lobacsevszkij] or [@molnar].
+
+Barrel-wedge is a sector of a barrel intersected from it by two meridian-plane through its axis of rotation. Let $T$ be the area of a meridian-intersection and $p$ be the length of its parallel circular arcs. Then we have
+
+$$v=\frac{1}{2}pT.$$
+
+Let the non-rectangular dihedral angles of an orthosceme be $\alpha$, $\beta$ and $\gamma$, respectively. There admitted at the edges $a$, $z$ and $c$, respectively. (See in Fig.6 ). Introduce the parameter $\delta$ by the equalities: $$\tanh \delta:=\tanh a\tan\alpha =\tanh c\tan\gamma,$$ and the Milnor form of the Lobachevsky-function (see in [@milnor]): $$\Lambda (x)=-\int \limits_{0}^x\ln|2\sin \zeta|{\mathrm d\zeta},$$ respectively. Then the volume $v$ of the orthosceme is $$\frac{1}{4}\left[\Lambda (\alpha +\delta)-\Lambda (\alpha -\delta)-\Lambda \left(\frac{\pi}{2}-\beta +\delta\right)+\Lambda \left(\frac{\pi}{2}-\beta -\delta\right)+\Lambda (\gamma +\delta)-\Lambda (\gamma -\delta)+2\Lambda \left(\frac{\pi}{2}-\delta\right)\right].$$

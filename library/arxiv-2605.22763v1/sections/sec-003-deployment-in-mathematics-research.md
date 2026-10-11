@@ -7,10 +7,10 @@ section_number: null
 pages: 6-8
 source_pdf: 2605.22763v1.pdf
 source_sha256: 1fe6b92bb5eb0b45
-text_source: latex
-latex_prose_ratio: 0.775
-latex_coverage_ratio: 0.813
 doc_brief: "Advancing mathematics research with AI-driven formal proof search — 14 sections: Introduction; AlphaProof Nexus; Systematic Evaluation on Open Prob"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \paragraph{Optimization Theory.} Agent (D) resolved an open question in optimization: proving an exact $\mathcal{O}(1/t)$ convergence rate for the Anchored Gradient Descent-Ascent (GDA) algorithm for min-max convex-concave optimization, thereby tightening the slower bound established by \cite{ryu2019ode}. 
 The proof departs from continuous-time ordinary differential equations (ODE) analysis used in previous work, instead using a discrete-time recurrence-based approach. The agent did not merely verify a fixed algorithm: we marked the learning schedule as a parameter within an \texttt{EVOLVE-VALUE} block in the input file, allowing the agent to simultaneously search for the schedule and the proof, ultimately discovering a novel parameter choice that yields the stronger guarantee. We previously released a deformalized version of the proof as a preprint \cite{surina2026improvedlastiterateconvergencerate}. 

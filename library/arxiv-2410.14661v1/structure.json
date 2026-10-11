@@ -392,8 +392,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
-   "tex_sections": 6,
-   "overlaid": 3,
+   "tex_sections": 24,
+   "overlaid": 15,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -403,8 +403,8 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.869,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -417,54 +417,74 @@
     {
      "id": "sec-002-21-defintion-of-the-reshetikhin-turaev-invariant",
      "title": "Defintion of the Reshetikhin-Turaev invariants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.893,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-22-dilogarithm-and-lobachevsky-functions",
      "title": "Dilogarithm and Lobachevsky functions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.857,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-23-quantum-dilogrithm-functions",
      "title": "Quantum dilogrithm functions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.886,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-24-saddle-point-method",
      "title": "Saddle point method",
-     "result": "no matching \\section"
+     "prose_ratio": 0.906,
+     "coverage_ratio": 0.892,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-3-computations-of-the-potential-function",
      "title": "Computations of the potential function",
-     "prose_ratio": 0.901,
-     "coverage_ratio": 0.792,
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.909,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-007-4-poisson-summation-formula",
      "title": "Poisson summation formula",
-     "prose_ratio": 0.952,
-     "coverage_ratio": 0.898,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.931,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-008-5-asymptotic-expansions",
      "title": "Asymptotic expansions",
-     "prose_ratio": 0.038,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.8,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-51-preparations",
      "title": "Preparations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.903,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-55-final-proof",
      "title": "Final proof",
-     "result": "no matching \\section"
+     "prose_ratio": 0.6,
+     "coverage_ratio": 0.846,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-6-appendices",
@@ -475,12 +495,18 @@
     {
      "id": "sec-012-61-geometry-of-the-critical-point",
      "title": "Geometry of the critical point",
-     "result": "no matching \\section"
+     "prose_ratio": 0.889,
+     "coverage_ratio": 0.8,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-62-critical-value-gives-the-complex-volume",
      "title": "Critical value gives the complex volume",
-     "result": "no matching \\section"
+     "prose_ratio": 0.6,
+     "coverage_ratio": 0.857,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-014-63-proof-of-proposition-52",
@@ -490,17 +516,26 @@
     {
      "id": "sec-015-64-estimation-of-the-critical-value",
      "title": "Estimation of the critical value",
-     "result": "no matching \\section"
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.873,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-016-65-two-dimensional-saddle-point-method",
      "title": "Two-dimensional saddle point method",
-     "result": "no matching \\section"
+     "prose_ratio": 0.882,
+     "coverage_ratio": 0.866,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-017-66-one-dimensional-saddle-point-method",
      "title": "One-dimensional saddle point method",
-     "result": "no matching \\section"
+     "prose_ratio": 0.826,
+     "coverage_ratio": 0.822,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-018-references",

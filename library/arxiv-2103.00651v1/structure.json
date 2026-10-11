@@ -127,31 +127,31 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.959,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-preliminaries-and-main-result",
      "title": "Preliminaries and Main Result",
-     "prose_ratio": 0.98,
-     "coverage_ratio": 0.953,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-3-proof-of-theorem-1-and-additional-results",
      "title": "Proof of Theorem 1 and Additional Results",
-     "prose_ratio": 0.969,
-     "coverage_ratio": 0.94,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-4-example",
      "title": "Example",
-     "prose_ratio": 0.985,
-     "coverage_ratio": 0.612,
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     }

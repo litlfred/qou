@@ -5,7 +5,8 @@
   "file": "9504015v2.pdf",
   "sha256": "ea5588225a393477d8b59b4f1374ec9192da2632b9beccdd0f17bb68f9584047",
   "bytes": 284338,
-  "pages": 33
+  "pages": 33,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "Witten's invariants of rational homology spheres at prime values of K and trivial connection contribution",
   "authors_raw": "Values of K and Trivial Connection Contribution",
-  "abstract": "We establish a relation between the coeﬃcients of asymptotic expan sion of the trivial connection contribution to Witten’s invariant of rational homology spheres and the invariants that T. Ohtsuki extracted from Witte n’s invariant at prime values of K. We also rederive the properties of prime K invariants discovered by H. Murakami and T. Ohtsuki. We do this by using the bo unds on Taylor series expansion of the Jones polynomial of algebraically sp lit links, studied in our previous paper. These bounds are enough to prove t hat Ohtsuki’s invariants are of ﬁnite type. The relation between Ohtsuki’s invarian ts and trivial connection contribution is veriﬁed explicitly for lens spaces and Seife rt manifolds. 1Work supported by the National Science Foundation under Grant N o. PHY-92 09978.",
+  "abstract": "We establish a relation between the coe\ufb03cients of asymptotic expan sion of the trivial connection contribution to Witten\u2019s invariant of rational homology spheres and the invariants that T. Ohtsuki extracted from Witte n\u2019s invariant at prime values of K. We also rederive the properties of prime K invariants discovered by H. Murakami and T. Ohtsuki. We do this by using the bo unds on Taylor series expansion of the Jones polynomial of algebraically sp lit links, studied in our previous paper. These bounds are enough to prove t hat Ohtsuki\u2019s invariants are of \ufb01nite type. The relation between Ohtsuki\u2019s invarian ts and trivial connection contribution is veri\ufb01ed explicitly for lens spaces and Seife rt manifolds. 1Work supported by the National Science Foundation under Grant N o. PHY-92 09978.",
   "docinfo": {
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20210809025023-04'00'",
@@ -25,9 +26,9 @@
    "Title": "arXiv:q-alg/9504015v2  24 Apr 1995"
   },
   "title_lines": [
-   "Witten’s Invariants of Rational Homology Spheres at Prime"
+   "Witten\u2019s Invariants of Rational Homology Spheres at Prime"
   ],
-  "title_prev": "Witten’s Invariants of Rational Homology Spheres at Prime"
+  "title_prev": "Witten\u2019s Invariants of Rational Homology Spheres at Prime"
  },
  "toc": [
   {
@@ -53,7 +54,7 @@
   },
   {
    "level": 1,
-   "title": "Trǫµνρ",
+   "title": "Tr\u01eb\u00b5\u03bd\u03c1",
    "page": 2,
    "source": "inferred",
    "number": "2"
@@ -67,7 +68,7 @@
   },
   {
    "level": 1,
-   "title": "Z Z[x] instead of (1.11) (in other words, he did not ﬁx the coeﬃcient at x",
+   "title": "Z Z[x] instead of (1.11) (in other words, he did not \ufb01x the coe\ufb03cient at x",
    "page": 5,
    "source": "inferred",
    "number": "2"
@@ -81,35 +82,35 @@
   },
   {
    "level": 1,
-   "title": "(3+κ)",
+   "title": "(3+\u03ba)",
    "page": 9,
    "source": "inferred",
    "number": "4"
   },
   {
    "level": 1,
-   "title": "(κ−1)",
+   "title": "(\u03ba\u22121)",
    "page": 9,
    "source": "inferred",
    "number": "4"
   },
   {
    "level": 1,
-   "title": "(1−κ)√",
+   "title": "(1\u2212\u03ba)\u221a",
    "page": 11,
    "source": "inferred",
    "number": "4"
   },
   {
    "level": 1,
-   "title": "N (1−κ) uN",
+   "title": "N (1\u2212\u03ba) uN",
    "page": 11,
    "source": "inferred",
    "number": "4"
   },
   {
    "level": 1,
-   "title": "(κ − 1)(sign (pj) − 1) ∈ Z Z, we conclude that to prove Theorem 1.1 it is enough to",
+   "title": "(\u03ba \u2212 1)(sign (pj) \u2212 1) \u2208 Z Z, we conclude that to prove Theorem 1.1 it is enough to",
    "page": 12,
    "source": "inferred",
    "number": "4"
@@ -130,35 +131,35 @@
   },
   {
    "level": 1,
-   "title": "(1−κ)",
+   "title": "(1\u2212\u03ba)",
    "page": 15,
    "source": "inferred",
    "number": "4"
   },
   {
    "level": 1,
-   "title": "Z ZK[x] and using the “checked binomial polynomial”",
+   "title": "Z ZK[x] and using the \u201cchecked binomial polynomial\u201d",
    "page": 15,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(−1)m(2m)!",
+   "title": "(\u22121)m(2m)!",
    "page": 17,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "N (κ−1)",
+   "title": "N (\u03ba\u22121)",
    "page": 18,
    "source": "inferred",
    "number": "4"
   },
   {
    "level": 1,
-   "title": "(κ−1)(sign(p)−1)",
+   "title": "(\u03ba\u22121)(sign(p)\u22121)",
    "page": 20,
    "source": "inferred",
    "number": "4"
@@ -186,35 +187,35 @@
   },
   {
    "level": 1,
-   "title": "(κ−1)√",
+   "title": "(\u03ba\u22121)\u221a",
    "page": 23,
    "source": "inferred",
    "number": "4"
   },
   {
    "level": 1,
-   "title": "(κ−1) sign( p",
+   "title": "(\u03ba\u22121) sign( p",
    "page": 24,
    "source": "inferred",
    "number": "4"
   },
   {
    "level": 1,
-   "title": "(κ−1)∑",
+   "title": "(\u03ba\u22121)\u2211",
    "page": 28,
    "source": "inferred",
    "number": "4"
   },
   {
    "level": 1,
-   "title": "(κ−1) ˇq4∗P H∗n2",
+   "title": "(\u03ba\u22121) \u02c7q4\u2217P H\u2217n2",
    "page": 28,
    "source": "inferred",
    "number": "4"
   },
   {
    "level": 1,
-   "title": "(κ−1) ei π",
+   "title": "(\u03ba\u22121) ei \u03c0",
    "page": 28,
    "source": "inferred",
    "number": "4"
@@ -228,7 +229,7 @@
   },
   {
    "level": 1,
-   "title": "(M) · · · Smn",
+   "title": "(M) \u00b7 \u00b7 \u00b7 Smn",
    "page": 30,
    "source": "inferred",
    "number": "1"
@@ -281,9 +282,9 @@
    "n_words": 36
   },
   {
-   "id": "sec-003-2-trǫµνρ",
+   "id": "sec-003-2-tr\u01eb\u00b5\u03bd\u03c1",
    "number": "2",
-   "title": "Trǫµνρ",
+   "title": "Tr\u01eb\u00b5\u03bd\u03c1",
    "level": 1,
    "page_start": 2,
    "page_end": 4,
@@ -303,7 +304,7 @@
   {
    "id": "sec-005-2-z-zx-instead-of-111-in-other-words-he-did-not",
    "number": "2",
-   "title": "Z Z[x] instead of (1.11) (in other words, he did not ﬁx the coeﬃcient at x",
+   "title": "Z Z[x] instead of (1.11) (in other words, he did not \ufb01x the coe\ufb03cient at x",
    "level": 1,
    "page_start": 5,
    "page_end": 8,
@@ -321,9 +322,9 @@
    "n_words": 146
   },
   {
-   "id": "sec-007-4-3κ",
+   "id": "sec-007-4-3\u03ba",
    "number": "4",
-   "title": "(3+κ)",
+   "title": "(3+\u03ba)",
    "level": 1,
    "page_start": 9,
    "page_end": 9,
@@ -331,9 +332,9 @@
    "n_words": 196
   },
   {
-   "id": "sec-008-4-κ1",
+   "id": "sec-008-4-\u03ba1",
    "number": "4",
-   "title": "(κ−1)",
+   "title": "(\u03ba\u22121)",
    "level": 1,
    "page_start": 9,
    "page_end": 11,
@@ -341,9 +342,9 @@
    "n_words": 642
   },
   {
-   "id": "sec-009-4-1κ",
+   "id": "sec-009-4-1\u03ba",
    "number": "4",
-   "title": "(1−κ)√",
+   "title": "(1\u2212\u03ba)\u221a",
    "level": 1,
    "page_start": 11,
    "page_end": 11,
@@ -351,9 +352,9 @@
    "n_words": 36
   },
   {
-   "id": "sec-010-4-n-1κ-un",
+   "id": "sec-010-4-n-1\u03ba-un",
    "number": "4",
-   "title": "N (1−κ) uN",
+   "title": "N (1\u2212\u03ba) uN",
    "level": 1,
    "page_start": 11,
    "page_end": 12,
@@ -361,9 +362,9 @@
    "n_words": 69
   },
   {
-   "id": "sec-011-4-κ-1sign-pj-1-z-z-we-conclude-that-to-prove-the",
+   "id": "sec-011-4-\u03ba-1sign-pj-1-z-z-we-conclude-that-to-prove-the",
    "number": "4",
-   "title": "(κ − 1)(sign (pj) − 1) ∈ Z Z, we conclude that to prove Theorem 1.1 it is enough to",
+   "title": "(\u03ba \u2212 1)(sign (pj) \u2212 1) \u2208 Z Z, we conclude that to prove Theorem 1.1 it is enough to",
    "level": 1,
    "page_start": 12,
    "page_end": 12,
@@ -391,9 +392,9 @@
    "n_words": 270
   },
   {
-   "id": "sec-014-4-1κ",
+   "id": "sec-014-4-1\u03ba",
    "number": "4",
-   "title": "(1−κ)",
+   "title": "(1\u2212\u03ba)",
    "level": 1,
    "page_start": 15,
    "page_end": 15,
@@ -403,7 +404,7 @@
   {
    "id": "sec-015-2-z-zkx-and-using-the-checked-binomial-polynomia",
    "number": "2",
-   "title": "Z ZK[x] and using the “checked binomial polynomial”",
+   "title": "Z ZK[x] and using the \u201cchecked binomial polynomial\u201d",
    "level": 1,
    "page_start": 15,
    "page_end": 17,
@@ -413,7 +414,7 @@
   {
    "id": "sec-016-2-1m2m",
    "number": "2",
-   "title": "(−1)m(2m)!",
+   "title": "(\u22121)m(2m)!",
    "level": 1,
    "page_start": 17,
    "page_end": 18,
@@ -421,9 +422,9 @@
    "n_words": 565
   },
   {
-   "id": "sec-017-4-n-κ1",
+   "id": "sec-017-4-n-\u03ba1",
    "number": "4",
-   "title": "N (κ−1)",
+   "title": "N (\u03ba\u22121)",
    "level": 1,
    "page_start": 18,
    "page_end": 20,
@@ -431,9 +432,9 @@
    "n_words": 796
   },
   {
-   "id": "sec-018-4-κ1signp1",
+   "id": "sec-018-4-\u03ba1signp1",
    "number": "4",
-   "title": "(κ−1)(sign(p)−1)",
+   "title": "(\u03ba\u22121)(sign(p)\u22121)",
    "level": 1,
    "page_start": 20,
    "page_end": 20,
@@ -471,9 +472,9 @@
    "n_words": 614
   },
   {
-   "id": "sec-022-4-κ1",
+   "id": "sec-022-4-\u03ba1",
    "number": "4",
-   "title": "(κ−1)√",
+   "title": "(\u03ba\u22121)\u221a",
    "level": 1,
    "page_start": 23,
    "page_end": 24,
@@ -481,9 +482,9 @@
    "n_words": 82
   },
   {
-   "id": "sec-023-4-κ1-sign-p",
+   "id": "sec-023-4-\u03ba1-sign-p",
    "number": "4",
-   "title": "(κ−1) sign( p",
+   "title": "(\u03ba\u22121) sign( p",
    "level": 1,
    "page_start": 24,
    "page_end": 28,
@@ -491,9 +492,9 @@
    "n_words": 1458
   },
   {
-   "id": "sec-024-4-κ1",
+   "id": "sec-024-4-\u03ba1",
    "number": "4",
-   "title": "(κ−1)∑",
+   "title": "(\u03ba\u22121)\u2211",
    "level": 1,
    "page_start": 28,
    "page_end": 28,
@@ -501,9 +502,9 @@
    "n_words": 128
   },
   {
-   "id": "sec-025-4-κ1-ˇq4p-hn2",
+   "id": "sec-025-4-\u03ba1-\u02c7q4p-hn2",
    "number": "4",
-   "title": "(κ−1) ˇq4∗P H∗n2",
+   "title": "(\u03ba\u22121) \u02c7q4\u2217P H\u2217n2",
    "level": 1,
    "page_start": 28,
    "page_end": 28,
@@ -511,9 +512,9 @@
    "n_words": 43
   },
   {
-   "id": "sec-026-4-κ1-ei-π",
+   "id": "sec-026-4-\u03ba1-ei-\u03c0",
    "number": "4",
-   "title": "(κ−1) ei π",
+   "title": "(\u03ba\u22121) ei \u03c0",
    "level": 1,
    "page_start": 28,
    "page_end": 29,
@@ -533,7 +534,7 @@
   {
    "id": "sec-028-1-m-smn",
    "number": "1",
-   "title": "(M) · · · Smn",
+   "title": "(M) \u00b7 \u00b7 \u00b7 Smn",
    "level": 1,
    "page_start": 30,
    "page_end": 32,
@@ -566,6 +567,177 @@
   "likely_scanned": false,
   "toc_entries": 31,
   "sections": 31,
-  "chars_total": 50643
+  "chars_total": 50643,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 1,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-l-rozansky-1",
+     "title": "Rozansky 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-1-introduction",
+     "title": "Introduction",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-2-tr\u01eb\u00b5\u03bd\u03c1",
+     "title": "Tr\u01eb\u00b5\u03bd\u03c1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-2-z-zkx-111",
+     "title": "Z ZK[x]. (1.11)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-2-z-zx-instead-of-111-in-other-words-he-did-not",
+     "title": "Z Z[x] instead of (1.11) (in other words, he did not \ufb01x the coe\ufb03cient at x",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-2-gaussian-sums-and-divisibility-in-cyclotomic-r",
+     "title": "Gaussian Sums and Divisibility in Cyclotomic Ring",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-4-3\u03ba",
+     "title": "(3+\u03ba)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-4-\u03ba1",
+     "title": "(\u03ba\u22121)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-4-1\u03ba",
+     "title": "(1\u2212\u03ba)\u221a",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-4-n-1\u03ba-un",
+     "title": "N (1\u2212\u03ba) uN",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-4-\u03ba-1sign-pj-1-z-z-we-conclude-that-to-prove-the",
+     "title": "(\u03ba \u2212 1)(sign (pj) \u2212 1) \u2208 Z Z, we conclude that to prove Theorem 1.1 it is enough to",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-2-j-res",
+     "title": "J (res)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-3-gaussian-sums-and-integrals",
+     "title": "Gaussian Sums and Integrals",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-4-1\u03ba",
+     "title": "(1\u2212\u03ba)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-2-z-zkx-and-using-the-checked-binomial-polynomia",
+     "title": "Z ZK[x] and using the \u201cchecked binomial polynomial\u201d",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-2-1m2m",
+     "title": "(\u22121)m(2m)!",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-4-n-\u03ba1",
+     "title": "N (\u03ba\u22121)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-4-\u03ba1signp1",
+     "title": "(\u03ba\u22121)(sign(p)\u22121)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-4-a-general-rational-surgery-f-ormula",
+     "title": "A General Rational Surgery F ormula",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-1-s-45",
+     "title": "S, (4.5)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-1-s-47",
+     "title": "S, (4.7)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-4-\u03ba1",
+     "title": "(\u03ba\u22121)\u221a",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-4-\u03ba1-sign-p",
+     "title": "(\u03ba\u22121) sign( p",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-4-\u03ba1",
+     "title": "(\u03ba\u22121)\u2211",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-4-\u03ba1-\u02c7q4p-hn2",
+     "title": "(\u03ba\u22121) \u02c7q4\u2217P H\u2217n2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-4-\u03ba1-ei-\u03c0",
+     "title": "(\u03ba\u22121) ei \u03c0",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-5-discussion",
+     "title": "Discussion",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-1-m-smn",
+     "title": "(M) \u00b7 \u00b7 \u00b7 Smn",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-030-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

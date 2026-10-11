@@ -7,10 +7,10 @@ section_number: 5
 pages: 27-35
 source_pdf: 1409.4073v1.pdf
 source_sha256: b40be7f0022f70a1
-text_source: latex
-latex_prose_ratio: 0.724
-latex_coverage_ratio: 0.934
 doc_brief: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — W e introduce “sheaﬁﬁcation” functors from categories of (l ax monoidal) linear functors to categories of quasi-coherent sheaves"
+text_source: latex
+latex_prose_ratio: 0.769
+latex_coverage_ratio: 0.989
 ---
 ::: defn
 A (contravariant) monoidal functor $\Omega\colon\catC\arr\catD$ between symmetric monoidal categories is called *strong* if the maps $$\Omega_{V}\otimes\Omega_{W}\arr\Omega_{V\otimes W}$$ are isomorphisms for all $V,W\in\catC$ and the map $J\arr F_{I}$ is an isomorphism, where $I$ and $J$ are the unities of $\catC$ and $\catD$ respectively.
@@ -21,9 +21,7 @@ In this section we want to understand what sheaves of algebras correspond to str
 We will consider only fpqc stacks with quasi-affine diagonal, for instance algebraic stacks with quasi-affine diagonal (see [@Laumon1999 Corollary 10.7]) and quasi-separated schemes. This is because resolution property is somehow meaningless for other stacks, see for instance Remark $(1)$ in the introduction of [@Totaro2002].
 
 ::: defn
-If $\stX$ is a fiber category over $R$, $\shC\subseteq\mathop{\mathrm{\textup{Loc}}}\stX$ is a monoidal subcategory and $A$ is an $R$-algebra we define $\mathop{\mathrm{\textup{SMex}}}_{R}(\shC,A)$ as the subcategory of $\mathop{\mathrm{\textup{MLex}}}_{R}(\shC,A)$ of functors $\Gamma$ which are strong monoidal and, for all geometric points $\mathop{\mathrm{\textup{Spec}}}k\arr\mathop{\mathrm{\textup{Spec}}}A$, $\Gamma\otimes_{A}k\in\mathop{\mathrm{\textup{MLex}}}_{R}(\shC,k)$. Given a fiber category $\stY$ we denote by $\text{Fib}_{\stX,\shC}(\stY)$ the category of *covariant*, $R$-linear and strong monoidal functors $\Gamma\colon\shC\arr\mathop{\mathrm{\textup{Loc}}}\stY$ which are exact on all exact sequences $\E''\arr\E'\arr\E\arr0$ with $\E\in\shC$ and $\E',\E''\in\shC^{\oplus}$. We also define $\text{Fib}_{\stX,\shC}$ as the fiber category over $R$ whose fiber over an $R$-algebra $A$ is $\text{Fib}_{\stX,\shC}(\mathop{\mathrm{\textup{Spec}}}A)$ and we call $\shP_{\shC}$ the functor $$\begin{equation}
-\shP_{\shC}\colon\stX\arr\text{Fib}_{\stX,\shC}\comma(\mathop{\mathrm{\textup{Spec}}}A\arrdi s\stX)\longmapsto(s^{*}\colon\shC\arr\mathop{\mathrm{\textup{Loc}}}A)\label{eq:tannaka reconstruction functor}
-\end{equation}$$
+If $\stX$ is a fiber category over $R$, $\shC\subseteq\mathop{\mathrm{\textup{Loc}}}\stX$ is a monoidal subcategory and $A$ is an $R$-algebra we define $\mathop{\mathrm{\textup{SMex}}}_{R}(\shC,A)$ as the subcategory of $\mathop{\mathrm{\textup{MLex}}}_{R}(\shC,A)$ of functors $\Gamma$ which are strong monoidal and, for all geometric points $\mathop{\mathrm{\textup{Spec}}}k\arr\mathop{\mathrm{\textup{Spec}}}A$, $\Gamma\otimes_{A}k\in\mathop{\mathrm{\textup{MLex}}}_{R}(\shC,k)$. Given a fiber category $\stY$ we denote by $\text{Fib}_{\stX,\shC}(\stY)$ the category of *covariant*, $R$-linear and strong monoidal functors $\Gamma\colon\shC\arr\mathop{\mathrm{\textup{Loc}}}\stY$ which are exact on all exact sequences $\E''\arr\E'\arr\E\arr0$ with $\E\in\shC$ and $\E',\E''\in\shC^{\oplus}$. We also define $\text{Fib}_{\stX,\shC}$ as the fiber category over $R$ whose fiber over an $R$-algebra $A$ is $\text{Fib}_{\stX,\shC}(\mathop{\mathrm{\textup{Spec}}}A)$ and we call $\shP_{\shC}$ the functor $$\shP_{\shC}\colon\stX\arr\text{Fib}_{\stX,\shC}\comma(\mathop{\mathrm{\textup{Spec}}}A\arrdi s\stX)\longmapsto(s^{*}\colon\shC\arr\mathop{\mathrm{\textup{Loc}}}A)\label{eq:tannaka reconstruction functor}$$
 :::
 
 We will prove the following:

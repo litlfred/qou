@@ -7,13 +7,14 @@ section_number: 6.5
 pages: 193-199
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.974
-latex_coverage_ratio: 0.796
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{MCG:section}
 We have just proved that two self-diffeomorphisms of $S_g$ are homotopic if and only if they are isotopic. We have also seen that when $g=0$ there are only two self-diffeomorphisms up to isotopy: the identity and a reflection. Do we get a more complicated picture when $g\geqslant 1$? Yes, we get an interesting group, called the \emph{mapping class group} of $S_g$. The group is naturally defined on all finite-type surfaces $S_{g,b,p}$.\index{group!mapping class group}
+
 
 \subsection{Definition}
 Recall that the finite-type orientable surface $S_{g,b,p}$ has genus $g$, it has $b$ boundary components, and $p$ punctures. 
@@ -33,6 +34,7 @@ with $n=2g+ \max\{b+p-1,0\}$. This homomorphism is neither injective nor surject
 
 The mapping class group of a sphere is trivial, so we look at the torus.
 
+
 \subsection{The torus}
 The mapping class group of the torus is a familiar group of $2\times 2$ matrices.
 
@@ -49,6 +51,7 @@ A matrix $A\in\SLZ$ acts linearly on $\matR^2$ preserving the orientation and th
 The mapping class group of a surface $S_g$ of genus $g\geqslant 2$ is not isomorphic to a familiar group of matrices, at least as far as we know: indeed (except some low-genus cases) it is still unknown whether $\MCG(S_{g,b,p})$ is \emph{linear}, \emph{i.e.}~isomorphic to a subgroup of $\GL(n,\matC)$ for some integer $n$.
 
 For the moment we content ourselves with a concrete description of some particularly simple elements of $\MCG(S_{g,b,p})$ called \emph{Dehn twists}.
+
 
 \subsection{Dehn twists} \label{Dehn:twist:subsection}
 Let $\gamma$ be a non-trivial simple closed curve in the interior of $S_{g,b,p}$. The \emph{Dehn twist} along $\gamma$ is the element $T_\gamma \in \MCG(S_{g,b,p})$ defined as follows.\index{Dehn twist}
@@ -102,6 +105,7 @@ Every such matrix in $\SL_2(\matZ)$ is conjugate to $\matr 1 {\pm 1} 0 1$.
 \end{ex}
 
 We have seen that Dehn twists generate $\MCG(T)$, while many elements $A\in \MCG(T)$ are neither Dehn twists nor powers of Dehn twists (those with $\tr A \neq 2$). These two facts extend to higher-genus surfaces $S_g$; we start by generalising the first.
+
 
 \subsection{Dehn twists generate}
 Dehn twists are basic elements in the mapping class group, and we now prove that they generate the whole group. We restrict ourselves for simplicity to compact surfaces $S_{g,b}$.
@@ -163,6 +167,7 @@ We first prove the case $g=0$ by induction on $b$. We know that $\MCG(S_{0,1})$ 
 We prove the case $g>0$ by induction on $g$. Let $\alpha$ be a non-separating simple closed curve. Since these are all related, up to isotopies and Dehn twists we may suppose that $\varphi$ is the identity on $\alpha$; as above we can cut $S_{g,b}$ along $\alpha$, get $S_{g-1,b+2}$ and conclude by induction on $g$. 
 \end{proof}
 
+
 \subsection{Action on simple closed curves}
 We now show that every element $\varphi\in\MCG(S_g)$ is determined by the way it permutes the (isotopy classes of) simple closed curves in $S_g$.
 
@@ -174,6 +179,7 @@ The proof of Theorem \ref{omotopi:isotopi:teo} shows that if $\varphi$ fixes the
 \end{proof}
 
 Recall that every simple closed curve is oriented by assumption: if we considered \emph{unoriented} simple closed curves the proposition would be false, because in low genus there are some $\varphi$ that send every curve to its inverse: this happens for instance with the map $-I \in \SLZ = \MCG(T)$. 
+
 
 \subsection{References}
 The main source for this chapter is the book of Farb -- Margalit \cite{FM}, which contains a lot more information on the mapping class group of surfaces. We have also consulted Benedetti -- Petronio \cite{BP} and Thurson's notes \cite{Th} and book \cite{Th_book}, in particular for Smale's Theorem, that was originally proved in \cite{Sma}.

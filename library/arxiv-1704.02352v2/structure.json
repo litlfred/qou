@@ -659,8 +659,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "approximate-factorization-Jack.tex",
-   "tex_sections": 7,
-   "overlaid": 1,
+   "tex_sections": 62,
+   "overlaid": 21,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -670,125 +670,187 @@
     {
      "id": "sec-000-15-irreducible-characters-of-symmetric-groups-pl",
      "title": "Irreducible characters of symmetric groups. Plancherel measure",
-     "result": "no matching \\section"
+     "prose_ratio": 0.862,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-001-16-irreducible-jack-characters",
      "title": "Irreducible Jack characters",
-     "result": "no matching \\section"
+     "prose_ratio": 0.901,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-19-cumulants",
      "title": "Cumulants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-110-asymptotics",
      "title": "Asymptotics",
-     "result": "no matching \\section"
+     "prose_ratio": 0.9,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-111-hypothesis-asymptotics-of",
      "title": "Hypothesis: asymptotics of",
-     "result": "no matching \\section"
+     "prose_ratio": 0.875,
+     "coverage_ratio": 0.906,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-112-hypothesis-approximate-factorization-of-char",
      "title": "Hypothesis: approximate factorization of characters",
-     "prose_ratio": 0.312,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.834,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-116-example",
      "title": "Example",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-007-115-the-second-main-result-central-limit-theorem",
      "title": "The second main result: Central Limit Theorem",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.459,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-008-117-content-of-the-paper",
      "title": "Content of the paper",
-     "result": "no matching \\section"
+     "prose_ratio": 0.855,
+     "coverage_ratio": 0.679,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-21-conditional-cumulants",
      "title": "Conditional cumulants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.707,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-22-normalized-jack-characters",
      "title": "Normalized Jack characters",
-     "result": "no matching \\section"
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.907,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-23-the-deformation-parameters",
      "title": "The deformation parameters",
-     "result": "no matching \\section"
+     "prose_ratio": 0.904,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-27-equivalent-characterizations-of-approximate-f",
      "title": "Equivalent characterizations of approximate factorization of characters",
-     "result": "no matching \\section"
+     "prose_ratio": 0.903,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-34-functionals-sk",
      "title": "Functionals Sk",
-     "result": "no matching \\section"
+     "prose_ratio": 0.9,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-014-35-free-cumulants-rk",
      "title": "Free cumulants Rk",
-     "result": "no matching \\section"
+     "prose_ratio": 0.914,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-015-4-technical-results",
      "title": "Technical results",
-     "prose_ratio": 0.004,
+     "prose_ratio": 0.083,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-016-41-slowly-growing-sequence-of-moments-determines",
      "title": "Slowly growing sequence of moments determines the measure",
-     "result": "no matching \\section"
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-017-42-slow-growth-of-rn-implies-slow-growth-of-sn",
      "title": "Slow growth of (Rn) implies slow growth of (Sn)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.837,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-018-43-estimates-on-some-classes-of-permutations",
      "title": "Estimates on some classes of permutations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-019-44-growth-of-free-cumulants",
      "title": "Growth of free cumulants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-020-53-the-limiting-probability-measure-p",
      "title": "The limiting probability measure P",
-     "result": "no matching \\section"
+     "prose_ratio": 0.894,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-021-55-weak-convergence-of-probability-measures-impl",
      "title": "Weak convergence of probability measures implies uniform convergence of densities",
-     "result": "no matching \\section"
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-022-56-convergence-of-densities-in-probability",
      "title": "Convergence of densities, in probability.",
-     "result": "no matching \\section"
+     "prose_ratio": 0.892,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-023-acknowledgments",
      "title": "Acknowledgments",
      "prose_ratio": 0.875,
-     "coverage_ratio": 0.7,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },

@@ -7,10 +7,10 @@ section_number: 13.3
 pages: 424-429
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.978
-latex_coverage_ratio: 0.786
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \subsection{Introduction}
 We want to prove the following.
@@ -25,6 +25,7 @@ This very powerful theorem says that an algebraic isomorphism between fundamenta
 We prove Mostow's rigidity in this section. All the ingredients are already there, we only need to make a little last effort.
 
 We note that closed hyperbolic manifolds are aspherical because their universal cover $\matH^n$ is contractible. For such manifolds every isomorphism $\pi_1(M)\to \pi_1(N)$ is induced by a homotopy equivalence $f\colon M \to N$, unique up to homotopy: see Corollary \ref{aspherical:cor}. To prove Mostow's theorem we need to promote this homotopy equivalence to an isometry in dimension $n=3$. We already know that $\Vol(M) = \Vol(N)$ by Corollary \ref{stesso:volume:cor}.
+
 
 \subsection{Proof of Mostow's theorem}
 Let $f\colon M \to N$ be a smooth homotopy equivalence. Recall from Theorem \ref{estensione:teo} that $f$lifts to a map $\tilde f\colon \matH^3 \to \matH^3$ which extends continuously to a homeomorphism $\tilde f\colon\partial \matH^3 \to \partial\matH^3$ of the boundary spheres.
@@ -95,6 +96,7 @@ $$\psi\colon M \to N.$$
 A homotopy between $f$ and $\psi$ may be constructed from a convex combination of $\tilde f$ and $\psi$ in $\matH^n$, which is also $\Gamma$-equivariant and hence descends.
 \end{proof}
 
+
 \subsection{Consequences of Mostow rigidity}
 The most important consequence is that the entire geometry of a closed hyperbolic $3$-manifold is a topological invariant:  numerical quantities like the volume of the manifold, its geodesic spectrum, etc.~depend only on the topology of the manifold.
 We single out another application. 
@@ -109,6 +111,7 @@ every automorphism of $\pi_1(M)$ is represented by a homotopy equivalence since 
 \end{proof}
 We note that this is false in dimension $n=2$, where $\Iso(S)$ is finite and $\Out(\pi_1(S))$ is infinite. 
 
+
 \subsection{Orbifolds and cone manifolds}
 While by Mostow's theorem an orientable closed 3-manifold $M$ can have at most one hyperbolic structure, it may have plenty of hyperbolic cone manifold or orbifold structures, typically distinguished by their singular sets and their cone angles. For instance $M=S^3$ has plenty of such structures, as we will see.
 
@@ -121,6 +124,7 @@ $$\Vol(O) \geqslant v_3\|M\|.$$
 \begin{proof}
 By Selberg's Lemma there is a degree-$d$ orbifold covering $N \to O$ which is a closed hyperbolic manifold. We have $\Vol(N) = d\Vol(O)$, and since the covering is a degree-$d$ map $N \to M$ we can apply Corollary \ref{degree:d:cor} and get $\|M\| \leqslant \frac{\|N\|}d = \frac{\Vol(N)}{dv_3} = \frac{\Vol(O)}{v_3}.$
 \end{proof}
+
 
 \subsection{References}
 Most of the proofs presented in this chapter were taken from Benedetti -- Petronio \cite{BP}, and are also contained in Thurson's notes \cite{Th}. The proof of Mostow's rigidity presented here was proposed by Gromov and applies to every dimension $n\geqslant 3$, because ideal regular simplexes have indeed the maximum volume by Haagerup and Munkholm \cite{HM}. 

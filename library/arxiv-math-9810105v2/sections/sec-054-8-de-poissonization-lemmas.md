@@ -7,10 +7,10 @@ section_number: 8
 pages: 50-51
 source_pdf: 9810105v2.pdf
 source_sha256: 0a432946234949c1
-text_source: latex
-latex_prose_ratio: 0.985
-latex_coverage_ratio: 0.957
 doc_brief: "ON THE DISTRIBUTION OF THE LENGTH OF THE LONGEST INCREASING SUBSEQUENCE OF RANDOM PERMUTATIONS — The authors consider the length, lN, of the length of the longest increasing subsequence of a random"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{s- dep}
 

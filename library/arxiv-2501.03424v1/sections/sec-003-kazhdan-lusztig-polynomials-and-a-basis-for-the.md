@@ -8,17 +8,15 @@ pages: 5-5
 source_pdf: 2501.03424v1.pdf
 source_sha256: 53e00a30fd850a5b
 doc_brief: "Soergel bimodules and Kazhdan-Lusztig polynomials ethan eugene wynner — This paper presents an exposition of Soergel bimodules, the categ oriﬁcation of Hecke alge- bras, and their applications to"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Let x∈ W , and deﬁne
-δx = δs1 δs2··· δsm ,
-for a reduced expression ˜x = (s1, s2, . . . sm). We call the involution H→H , h↦→¯h deﬁned by
-¯δ = δ−1
-s = δs + (v− v−1),
-the Kazhdan-Lusztig involution. We deﬁne the Kazhdan-Lusztig basis ofH to be the set {bx| x∈
-W}, where elements bx are self-dual and of the (degree-bounded) form
-bx = δx +
-∑
-y<x
-hy,x δy,
-where y < x is in the sense of Bruhat decomposition, and hy,x ∈ vZ[v]. These coeﬃcients hy,x are
-called Kazhdan-Lusztig polynomials.
+Let $x \in W$, and define 
+ $$\delta_x = \delta_{s_1}\delta_{s_2}\cdots\delta_{s_m},$$
+ for a reduced expression $\Tilde{x} = (s_1, s_2, \ldots s_m).$
+ We call the involution $\mathcal{H} \rightarrow \mathcal{H},$ $h \mapsto \bar{h}$ defined by 
+ $$\bar{\delta} = \delta^{-1}_s = \delta_s + (v - v^{-1}),$$
+ the \textit{Kazhdan-Lusztig involution.} We define the \textit{Kazhdan-Lusztig basis} of $\mathcal{H}$ to be the set $\{b_x \st x \in W\},$ where elements $b_x$ are self-dual and of the (degree-bounded) form 
+ $$b_x = \delta_x + \sum_{y < x}h_{y,x}\delta_y,$$
+ where $y < x$ is in the sense of Bruhat decomposition, and $h_{y,x} \in v\Z[v]$. These coefficients $h_{y,x}$ are called \textit{Kazhdan-Lusztig polynomials.}

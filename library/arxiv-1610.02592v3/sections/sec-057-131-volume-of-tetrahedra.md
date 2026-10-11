@@ -7,13 +7,14 @@ section_number: 13.1
 pages: 413-418
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.972
-latex_coverage_ratio: 0.842
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{volume:tetrahedra:section}
 The volume of an ideal hyperbolic tetrahedron is a simple (but integral) formula that involves the \emph{Lobachevsky function}: we now prove this formula here. As a consequence we show that the regular ideal tetrahedron is the hyperbolic tetrahedron with maximal volume.
+
 
 \subsection{The Lobachevsky function}
 The \emph{Lobachevsky function} is\index{Lobachevsky function}
@@ -54,6 +55,7 @@ Since $\Lambda$ is odd and $\pi$-periodic, we have
 $$\int_0^\pi \Lambda (m\theta) = 0$$
 for any integer $m$. Hence $C(m)=0$ and the formula is proved. Finally we note that $\Lambda''(\theta) = -\cot \theta $ is strictly negative in $(0,\frac \pi 2)$ and strictly positive in $(\frac \pi 2, \pi)$, hence $\Lambda$ is strictly positive in $(0, \frac \pi 2)$ and strictly negative in $(\frac \pi 2, \pi)$.
 \end{proof}
+
 
 \subsection{Volumes of ideal tetrahedra}
 An ideal tetrahedron in $\matH^3$ is the convex hull of four non-planar ideal points. Quite surprisingly, every ideal tetrahedron has some non-trivial symmetries.\index{ideal tetrahedron} 

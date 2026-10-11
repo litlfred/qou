@@ -3970,8 +3970,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "smfcal.tex",
-   "tex_sections": 27,
-   "overlaid": 2,
+   "tex_sections": 118,
+   "overlaid": 12,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -3981,7 +3981,7 @@
     {
      "id": "sec-000-63-vector-bundles-associated-to-q-di\ufb00erence-modu",
      "title": "Vector bundles associated to q-di\ufb00erence modules. . . . . . . . . . . . . . . . . 108",
-     "prose_ratio": 0.013,
+     "prose_ratio": 0.008,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -4005,13 +4005,13 @@
     {
      "id": "sec-004-74-from-class-numbers-of-quadratic-forms-to-the",
      "title": "From class numbers of quadratic forms to the q-Euler equation . . . 127",
-     "prose_ratio": 0.014,
+     "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-005-11-the-problem",
      "title": "The problem",
-     "prose_ratio": 0.022,
+     "prose_ratio": 0.007,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -4032,12 +4032,13 @@
     {
      "id": "sec-009-113-what-this-paper-could-contain-but-does-not-b",
      "title": "What this paper could contain but does not. \u2014 Before de-",
-     "result": "no matching \\section"
+     "prose_ratio": 0.491,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-010-11-the-problem-3",
      "title": "THE PROBLEM 3",
-     "prose_ratio": 0.26,
+     "prose_ratio": 0.157,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -4063,7 +4064,8 @@
     {
      "id": "sec-015-1131-about-the-asumption-that-the-slopes-are-int",
      "title": "About the asumption that the slopes are integral . \u2014 The \u201cabstract\u201d",
-     "result": "no matching \\section"
+     "prose_ratio": 0.103,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-016-4-chapter-1-introduction",
@@ -4143,21 +4145,22 @@
     {
      "id": "sec-030-acknowledgements",
      "title": "Acknowledgements",
-     "prose_ratio": 0.99,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-031-21-the-category-of-q-di\ufb00erence-modules",
      "title": "The category of q-di\ufb00erence modules",
-     "prose_ratio": 0.016,
+     "prose_ratio": 0.571,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-032-211-some-general-facts-about-di\ufb00erence-modules-h",
      "title": "Some general facts about di\ufb00erence modules. \u2014 Here, we also",
-     "result": "no matching \\section"
+     "prose_ratio": 0.199,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-033-1-much-of-what-follows-will-be-extended-to-the-c",
@@ -4208,7 +4211,7 @@
     {
      "id": "sec-042-21-the-category-of-q-difference-modules-15",
      "title": "THE CATEGORY OF q-DIFFERENCE MODULES 15",
-     "prose_ratio": 0.345,
+     "prose_ratio": 0.429,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -4219,7 +4222,7 @@
     {
      "id": "sec-044-22-the-newton-polygon-and-the-slope-\ufb01ltration",
      "title": "The Newton polygon and the slope \ufb01ltration",
-     "prose_ratio": 0.012,
+     "prose_ratio": 0.015,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -4235,7 +4238,7 @@
     {
      "id": "sec-047-22-the-newton-polygon-and-the-slope-filtration-1",
      "title": "THE NEWTON POLYGON AND THE SLOPE FILTRATION 17",
-     "prose_ratio": 0.207,
+     "prose_ratio": 0.241,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -4256,7 +4259,7 @@
     {
      "id": "sec-051-22-the-newton-polygon-and-the-slope-filtration-1",
      "title": "THE NEWTON POLYGON AND THE SLOPE FILTRATION 19",
-     "prose_ratio": 0.074,
+     "prose_ratio": 0.088,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -4287,8 +4290,10 @@
     {
      "id": "sec-057-23-application-to-the-analytic-isoformal-classif",
      "title": "APPLICATION TO THE ANALYTIC ISOFORMAL CLASSIFICATION 21",
-     "prose_ratio": 0.304,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.876,
+     "coverage_ratio": 0.802,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-058-22-chapter-2-some-general-nonsense",
@@ -4298,12 +4303,13 @@
     {
      "id": "sec-059-231-a-prototypal-example-and-the-q-borel-transfo",
      "title": "A prototypal example and the q-Borel transformation. \u2014 To",
-     "result": "no matching \\section"
+     "prose_ratio": 0.273,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-060-23-application-to-the-analytic-isoformal-classif",
      "title": "APPLICATION TO THE ANALYTIC ISOFORMAL CLASSIFICATION 23",
-     "prose_ratio": 0.22,
+     "prose_ratio": 0.221,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -4314,7 +4320,7 @@
     {
      "id": "sec-062-23-application-to-the-analytic-isoformal-classif",
      "title": "APPLICATION TO THE ANALYTIC ISOFORMAL CLASSIFICATION 25",
-     "prose_ratio": 0.169,
+     "prose_ratio": 0.221,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -4335,19 +4341,20 @@
     {
      "id": "sec-066-23-application-to-the-analytic-isoformal-classif",
      "title": "APPLICATION TO THE ANALYTIC ISOFORMAL CLASSIFICATION 27",
-     "prose_ratio": 0.174,
+     "prose_ratio": 0.212,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-067-31-isoformal-analytic-classes-of-analytic-q-di\ufb00e",
      "title": "Isoformal analytic classes of analytic q-di\ufb00erence modules",
-     "prose_ratio": 0.05,
+     "prose_ratio": 0.391,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-068-311-extension-classes-of-analytic-q-di\ufb00erence-mo",
      "title": "Extension classes of analytic q-di\ufb00erence modules. \u2014 From",
-     "result": "no matching \\section"
+     "prose_ratio": 0.247,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-069-1-reading-the-appendix-is-not-a-prerequisite-to",
@@ -4362,7 +4369,7 @@
     {
      "id": "sec-071-31-isoformal-analytic-classes-of-analytic-q-diff",
      "title": "ISOFORMAL ANALYTIC CLASSES OF ANALYTIC q-DIFFERENCE MODULES 31",
-     "prose_ratio": 0.307,
+     "prose_ratio": 0.217,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -4390,7 +4397,8 @@
     {
      "id": "sec-076-0-formal-case",
      "title": "(formal case)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.011,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-077-322-the-index-in-the-general-case-generally-spea",
@@ -4421,19 +4429,22 @@
     {
      "id": "sec-082-33-explicit-description-of-fp1p-k-in-the-case-of",
      "title": "Explicit description of F(P1,...,P k) in the case of integral slopes",
-     "prose_ratio": 0.146,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.65,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-083-33-explicit-description-of-f-p1-pk-in-the-case-o",
      "title": "EXPLICIT DESCRIPTION OF F (P1, . . . , Pk) IN THE CASE OF INTEGRAL SLOPES 37",
-     "prose_ratio": 0.045,
+     "prose_ratio": 0.217,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-084-331-analytic-classi\ufb01cation-with-2-integral-slope",
      "title": "Analytic classi\ufb01cation with 2 integral slopes. \u2014 From the re-",
-     "result": "no matching \\section"
+     "prose_ratio": 0.128,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-085-0-ir2",
@@ -4453,7 +4464,7 @@
     {
      "id": "sec-088-33-explicit-description-of-f-p1-pk-in-the-case-o",
      "title": "EXPLICIT DESCRIPTION OF F (P1, . . . , Pk) IN THE CASE OF INTEGRAL SLOPES 39",
-     "prose_ratio": 0.211,
+     "prose_ratio": 0.183,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -4469,30 +4480,38 @@
     {
      "id": "sec-091-33-explicit-description-of-f-p1-pk-in-the-case-o",
      "title": "EXPLICIT DESCRIPTION OF F (P1, . . . , Pk) IN THE CASE OF INTEGRAL SLOPES 41",
-     "prose_ratio": 0.185,
+     "prose_ratio": 0.15,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-092-333-computational-consequences-of-the-birkho\ufb00-gu",
      "title": "Computational consequences of the Birkho\ufb00-Guenther nor-",
-     "result": "no matching \\section"
+     "prose_ratio": 0.893,
+     "coverage_ratio": 0.877,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-093-34-interpolation-by-q-gevrey-classes",
      "title": "Interpolation by q-Gevrey classes",
-     "prose_ratio": 0.54,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.854,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-094-34-interpolation-by-q-gevrey-classes-43",
      "title": "INTERPOLATION BY q-GEVREY CLASSES 43",
-     "prose_ratio": 0.044,
+     "prose_ratio": 0.073,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-095-342-isoformal-q-gevrey-classi\ufb01cation",
      "title": "Isoformal q-Gevrey classi\ufb01cation. \u2014",
-     "result": "no matching \\section"
+     "prose_ratio": 0.602,
+     "coverage_ratio": 0.927,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-096-343-another-kind-of-q-gevrey-interpolation-a-som",
@@ -4559,7 +4578,7 @@
     {
      "id": "sec-107-43-the-fundamental-isomorphism",
      "title": "The fundamental isomorphism",
-     "prose_ratio": 0.15,
+     "prose_ratio": 0.287,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -4576,13 +4595,14 @@
     {
      "id": "sec-110-43-the-fundamental-isomorphism-59",
      "title": "THE FUNDAMENTAL ISOMORPHISM 59",
-     "prose_ratio": 0.053,
+     "prose_ratio": 0.099,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-111-432-geometric-interpretation-of-the-elements-of",
      "title": "Geometric interpretation of the elements of H 1(Eq; \u039bI). \u2014 We",
-     "result": "no matching \\section"
+     "prose_ratio": 0.248,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-112-0-a-pp01k1-r2",
@@ -4592,13 +4612,13 @@
     {
      "id": "sec-113-43-the-fundamental-isomorphism-61",
      "title": "THE FUNDAMENTAL ISOMORPHISM 61",
-     "prose_ratio": 0.469,
+     "prose_ratio": 0.363,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-114-43-the-fundamental-isomorphism-63",
      "title": "THE FUNDAMENTAL ISOMORPHISM 63",
-     "prose_ratio": 0.025,
+     "prose_ratio": 0.012,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -4620,38 +4640,42 @@
     {
      "id": "sec-118-44-the-isoformal-classification-by-the-cohomolog",
      "title": "THE ISOFORMAL CLASSIFICATION BY THE COHOMOLOGY OF THE S TOKES SHEAF65",
-     "prose_ratio": 0.657,
-     "coverage_ratio": 0.949,
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-119-51-some-preparatory-notations-and-results",
      "title": "Some preparatory notations and results",
-     "prose_ratio": 0.067,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.929,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-120-511-divisors-and-sectors-on-the-elliptic-curve-e",
      "title": "Divisors and sectors on the elliptic curve E q = C\u2217/qZ. \u2014 The",
-     "result": "no matching \\section"
+     "prose_ratio": 0.436,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-121-51-some-preparatory-notations-and-results-69",
      "title": "SOME PREPARATORY NOTATIONS AND RESULTS 69",
-     "prose_ratio": 0.431,
+     "prose_ratio": 0.286,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-122-51-some-preparatory-notations-and-results-71",
      "title": "SOME PREPARATORY NOTATIONS AND RESULTS 71",
-     "prose_ratio": 0.182,
+     "prose_ratio": 0.143,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-123-512-jacobi-theta-function-q-exponential-growth-a",
      "title": "Jacobi Theta function, q-exponential growth and q-Gevrey",
-     "result": "no matching \\section"
+     "prose_ratio": 0.475,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-124-1-we-say-that-f-has-q-exponential-growth-of-orde",
@@ -4666,7 +4690,7 @@
     {
      "id": "sec-126-52-asymptotics-relative-to-a-divisor-73",
      "title": "ASYMPTOTICS RELATIVE TO A DIVISOR 73",
-     "prose_ratio": 0.212,
+     "prose_ratio": 0.203,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -4682,19 +4706,19 @@
     {
      "id": "sec-129-52-asymptotics-relative-to-a-divisor-75",
      "title": "ASYMPTOTICS RELATIVE TO A DIVISOR 75",
-     "prose_ratio": 0.351,
+     "prose_ratio": 0.341,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-130-52-asymptotics-relative-to-a-divisor-77",
      "title": "ASYMPTOTICS RELATIVE TO A DIVISOR 77",
-     "prose_ratio": 0.278,
+     "prose_ratio": 0.273,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-131-52-asymptotics-relative-to-a-divisor-79",
      "title": "ASYMPTOTICS RELATIVE TO A DIVISOR 79",
-     "prose_ratio": 0.136,
+     "prose_ratio": 0.13,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -4740,13 +4764,14 @@
     {
      "id": "sec-140-52-asymptotics-relative-to-a-divisor-81",
      "title": "ASYMPTOTICS RELATIVE TO A DIVISOR 81",
-     "prose_ratio": 0.459,
+     "prose_ratio": 0.484,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-141-531-f-rom-a-q-gevrey-power-series-to-an-entire-f",
      "title": "F rom a q-Gevrey power series to an entire function. \u2014 As",
-     "result": "no matching \\section"
+     "prose_ratio": 0.071,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-142-1-for-all-kr-z2-one-has",
@@ -4802,7 +4827,8 @@
     {
      "id": "sec-152-541-relative-divisors-and-two-levels-asymptotics",
      "title": "Relative divisors and two levels asymptotics. \u2014 Let \u039b \u2032, \u039b be",
-     "result": "no matching \\section"
+     "prose_ratio": 0.085,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-153-1-we-call-values-of-f-over-the-relative-divisor",
@@ -4827,19 +4853,19 @@
     {
      "id": "sec-157-54-relative-divisors-and-multisummable-functions",
      "title": "RELATIVE DIVISORS AND MULTISUMMABLE FUNCTIONS 91",
-     "prose_ratio": 0.547,
+     "prose_ratio": 0.422,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-158-55-analytic-classification-of-linear-q-differenc",
      "title": "ANALYTIC CLASSIFICATION OF LINEAR q-DIFFERENCE EQUATIONS 93",
-     "prose_ratio": 0.111,
+     "prose_ratio": 0.148,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-159-55-analytic-classi\ufb01cation-of-linear-q-di\ufb00erence",
      "title": "Analytic classi\ufb01cation of linear q-di\ufb00erence equations",
-     "prose_ratio": 0.027,
+     "prose_ratio": 0.042,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -4855,18 +4881,19 @@
     {
      "id": "sec-162-55-analytic-classification-of-linear-q-differenc",
      "title": "ANALYTIC CLASSIFICATION OF LINEAR q-DIFFERENCE EQUATIONS 95",
-     "prose_ratio": 0.38,
+     "prose_ratio": 0.542,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-163-552-stokes-phenomenon-and-analytic-classi\ufb01cation",
      "title": "Stokes phenomenon and analytic classi\ufb01cation. \u2014 Write",
-     "result": "no matching \\section"
+     "prose_ratio": 0.177,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-164-55-analytic-classification-of-linear-q-differenc",
      "title": "ANALYTIC CLASSIFICATION OF LINEAR q-DIFFERENCE EQUATIONS 97",
-     "prose_ratio": 0.464,
+     "prose_ratio": 0.389,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -4958,19 +4985,22 @@
     {
      "id": "sec-181-63-v-ector-bundles-associated-to-q-di\ufb00erence-mod",
      "title": "V ector bundles associated to q-di\ufb00erence modules",
-     "prose_ratio": 0.157,
+     "prose_ratio": 0.367,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-182-63-vector-bundles-associated-to-q-difference-mod",
      "title": "VECTOR BUNDLES ASSOCIATED TO q-DIFFERENCE MODULES 109",
-     "prose_ratio": 0.367,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.844,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-183-632-sheaf-theoretical-interpretation-of-irregula",
      "title": "Sheaf theoretical interpretation of irregularity . \u2014 We inter-",
-     "result": "no matching \\section"
+     "prose_ratio": 0.593,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-184-1-in-its-original-form-adams-lemma-1-31-20-says",
@@ -4995,19 +5025,20 @@
     {
      "id": "sec-188-71-the-q-euler-equation-and-con\ufb02uent-basic-hyper",
      "title": "The q-Euler equation and con\ufb02uent basic hypergeometric series",
-     "prose_ratio": 0.078,
+     "prose_ratio": 0.357,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-189-71-the-q-euler-equation-and-confluent-basic-hype",
      "title": "THE q-EULER EQUATION AND CONFLUENT BASIC HYPERGEOMETRIC SERIES 113",
-     "prose_ratio": 0.114,
+     "prose_ratio": 0.571,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-190-711-a-digest-on-the-q-euler-equation",
      "title": "A digest on the q-Euler equation. \u2014",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-191-7111-formal-solution-we-obtain-it-for-instance-b",
@@ -5022,13 +5053,14 @@
     {
      "id": "sec-193-71-the-q-euler-equation-and-confluent-basic-hype",
      "title": "THE q-EULER EQUATION AND CONFLUENT BASIC HYPERGEOMETRIC SERIES 115",
-     "prose_ratio": 0.131,
+     "prose_ratio": 0.095,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-194-712-some-con\ufb02uent-basic-hypergeometric-functions",
      "title": "Some con\ufb02uent basic hypergeometric functions. \u2014 Usual basic",
-     "result": "no matching \\section"
+     "prose_ratio": 0.376,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-195-7121-factoring-l-to-get-l-q2z\u03c3qa\u03c3qb-we-\ufb01rst-look",
@@ -5043,13 +5075,13 @@
     {
      "id": "sec-197-71-the-q-euler-equation-and-confluent-basic-hype",
      "title": "THE q-EULER EQUATION AND CONFLUENT BASIC HYPERGEOMETRIC SERIES 117",
-     "prose_ratio": 0.351,
+     "prose_ratio": 0.31,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-198-72-the-symmetric-square-of-the-q-euler-equation",
      "title": "The symmetric square of the q-Euler equation",
-     "prose_ratio": 0.171,
+     "prose_ratio": 0.298,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -5065,23 +5097,30 @@
     {
      "id": "sec-201-72-the-symmetric-square-of-the-q-euler-equation",
      "title": "THE SYMMETRIC SQUARE OF THE q-EULER EQUATION 121",
-     "prose_ratio": 0.098,
+     "prose_ratio": 0.163,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-202-7212-algebraic-summation-of-the-square-of-the-ts",
      "title": "Algebraic summation of the square of the Tshakalo\ufb00 s eries. \u2014 The",
-     "result": "no matching \\section"
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-203-722-analytic-aspects",
      "title": "Analytic aspects. \u2014",
-     "result": "no matching \\section"
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.873,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-204-7222-multisummability",
      "title": "Multisummability . \u2014",
-     "result": "no matching \\section"
+     "prose_ratio": 0.022,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-205-1-if-\u03bb-\u00b5-then-fg-o2\u03bb",
@@ -5155,13 +5194,16 @@
     {
      "id": "sec-218-74-f-rom-class-numbers-of-quadratic-forms-to-the",
      "title": "F rom class numbers of quadratic forms to the q-Euler equation",
-     "prose_ratio": 0.293,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.884,
+     "coverage_ratio": 0.905,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-219-741-the-generating-series-for-the-class-numbers",
      "title": "The generating series for the class numbers. \u2014 Consider the",
-     "result": "no matching \\section"
+     "prose_ratio": 0.411,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-220-742-modular-relations-in-order-to-obtain-modular",
@@ -5171,7 +5213,7 @@
     {
      "id": "sec-221-74-from-class-numbers-of-quadratic-forms-to-the",
      "title": "FROM CLASS NUMBERS OF QUADRATIC FORMS TO THE q-EULER EQUATION129",
-     "prose_ratio": 0.271,
+     "prose_ratio": 0.163,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {

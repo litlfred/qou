@@ -7,54 +7,36 @@ section_number: 5
 pages: 13-14
 source_pdf: 1507.03238v3.pdf
 source_sha256: 1da6a5498c08a521
-text_source: latex
-latex_prose_ratio: 0.823
-latex_coverage_ratio: 0.88
 doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety forSL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
+text_source: latex
+latex_prose_ratio: 0.969
+latex_coverage_ratio: 0.823
 ---
 []{#sec:EdgeRelations label="sec:EdgeRelations"} We now define a relation among the Ptolemy coordinates of a decorated (boundary-unipotent) representation. This relation is a consequence of the Ptolemy relations in the case when all Ptolemy coordinates are nonzero, but if some Ptolemy coordinates are zero, this relation is independent of the Ptolemy relations. Hence, when defining the invariant Ptolemy variety this relation must be imposed in addition to the Ptolemy relations.
 
 Let $K$ be the space obtained by cyclically gluing together ordered simplices $\Delta_0,\dots,\Delta_{N-1}$ along a common edge. We order the vertices of each simplex such that the common edge is the $01$ edge of each simplex, and such that the orientations induced by the orderings agree (see Figure [\[fig:EdgeNbh\]](#fig:EdgeNbh){reference-type="ref" reference="fig:EdgeNbh"}). We refer to the edges (other than the common edge) as *top*, *bottom*, and *center* edges respectively.
 
 ::: lemma
-[]{#lemma:edgeRelationEquivalence label="lemma:edgeRelationEquivalence"} Let $c$ be a Ptolemy assignment on $K$ where all the Ptolemy coordinates of the top and bottom edges of $K$ are nonzero. We then have $$\begin{equation}
-\label{eq:EdgeRelations}
-\sum_{k=0}^{N-1} \frac{c_{23,k}}{c_{12,k}c_{13,k}}=0\iff\sum_{k=0}^{N-1}\frac{c_{23,k}}{c_{02,k}c_{03,k}}=0.
-\end{equation}$$ Moreover, if the Ptolemy coordinate $c_{01}$ of the interior edge is also nonzero, both equations are satisfied.
+[]{#lemma:edgeRelationEquivalence label="lemma:edgeRelationEquivalence"} Let $c$ be a Ptolemy assignment on $K$ where all the Ptolemy coordinates of the top and bottom edges of $K$ are nonzero. We then have $$\label{eq:EdgeRelations}
+\sum_{k=0}^{N-1} \frac{c_{23,k}}{c_{12,k}c_{13,k}}=0\iff\sum_{k=0}^{N-1}\frac{c_{23,k}}{c_{02,k}c_{03,k}}=0.$$ Moreover, if the Ptolemy coordinate $c_{01}$ of the interior edge is also nonzero, both equations are satisfied.
 :::
 
 ::: proof
-*Proof.* We first assume that $c_{01}\neq 0$. We have $$\begin{equation}
-\label{eq:First}
+*Proof.* We first assume that $c_{01}\neq 0$. We have $$\label{eq:First}
 \begin{aligned}
 c_{01}\sum_{k=0}^{N-1} \frac{c_{23,k}}{c_{12,k}c_{13,k}}&=\sum_{k=0}^{N-1} \frac{c_{02,k}c_{13,k}-c_{03,k}c_{12,k}}{c_{12,k}c_{13,k}}\\
 &=\sum_{k=0}^{N-1} \frac{c_{03,k-1}c_{13,k}-c_{03,k}c_{13,k-1}}{c_{13,k-1}c_{13,k}}\\
 &=\sum_{k=0}^{N-1}\Big(\frac{c_{03,k-1}}{c_{13,k-1}}-\frac{c_{03,k}}{c_{13,k}}\big)\\
 &=0.
-\end{aligned}
-\end{equation}$$ Here, the first equality follows from the Ptolemy relations [\[eq:PtolemyRelation\]](#eq:PtolemyRelation){reference-type="eqref" reference="eq:PtolemyRelation"}, and the second from the identification relations $c_{12,k}=c_{13,k-1}$ and $c_{02,k}=c_{03,k-1}$ (indices modulo $N$). By a similar computation, one also has $$\begin{equation}
-\label{eq:Second}
-c_{01}\sum_{k=0}^{N-1} \frac{c_{23,k}}{c_{02,k}c_{03,k}}=0.
-\end{equation}$$ Since we are assuming that $c_{01}\neq 0$, [\[eq:First\]](#eq:First){reference-type="eqref" reference="eq:First"} and [\[eq:Second\]](#eq:Second){reference-type="eqref" reference="eq:Second"} together prove the second statement.
+\end{aligned}$$ Here, the first equality follows from the Ptolemy relations [\[eq:PtolemyRelation\]](#eq:PtolemyRelation){reference-type="eqref" reference="eq:PtolemyRelation"}, and the second from the identification relations $c_{12,k}=c_{13,k-1}$ and $c_{02,k}=c_{03,k-1}$ (indices modulo $N$). By a similar computation, one also has $$\label{eq:Second}
+c_{01}\sum_{k=0}^{N-1} \frac{c_{23,k}}{c_{02,k}c_{03,k}}=0.$$ Since we are assuming that $c_{01}\neq 0$, [\[eq:First\]](#eq:First){reference-type="eqref" reference="eq:First"} and [\[eq:Second\]](#eq:Second){reference-type="eqref" reference="eq:Second"} together prove the second statement.
 
 If $c_{01}=0$, the Ptolemy relations become $c_{03,k}c_{12,k}=c_{02,k}c_{13,k}$, which together with the identification relations $c_{12,k}=c_{13,k-1}$ and $c_{02,k}=c_{03,k-1}$ imply that the ratio between $c_{12,k}c_{13,k}$ and $c_{02,k}c_{03,k}$ is independent of $k$. This concludes the proof. ◻
 :::
 
-<figure id="fig:EdgeRelationTop" data-latex-placement="htb">
-<div class="minipage">
-
-</div>
-<div class="minipage">
-
-</div>
+<figure id="fig:EdgeRelationTop">
 <p><br />
 </p>
-<div class="minipage">
-
-</div>
-<div class="minipage">
-
-</div>
 <figcaption>Bruhat cocycle on <span class="math inline">$\overline K$</span> (near top vertex).</figcaption>
 </figure>
 
@@ -69,28 +51,3 @@ When all Ptolemy coordinates are nonzero, the fundamental correspondence provide
 ## Edge relations for $\mathop{\mathrm{PSL}}(2,\mathbb C)$ Ptolemy assignments
 
 The obvious analogue of Lemma [\[lemma:edgeRelationEquivalence\]](#lemma:edgeRelationEquivalence){reference-type="ref" reference="lemma:edgeRelationEquivalence"} for $\mathop{\mathrm{PSL}}(2,\mathbb C)$ Ptolemy assignments still holds and we define the edge relations for $\mathop{\mathrm{PSL}}(2,\mathbb C)$ Ptolemy assignments by the exact same formula [\[eq:EdgeRelations\]](#eq:EdgeRelations){reference-type="ref" reference="eq:EdgeRelations"}.
-
-## Edge relations for enhanced Ptolemy assignments
-
-Let $c$ be an enhanced Ptolemy assignment on $K$ where all the Ptolemy coordinates of the top and and bottom edges of $K$ are nonzero. The identification relations are given by $c_{12,k}=t_kh_kc_{13,k-1}$, $c_{02,k}=b_kh_kc_{03,k-1}$ and $c_{01,k}=c_{01,k-1}t_kb_k$, where the $t_k$, $b_k$ and $h_k$ are monomials in the $m_s$ and $l_s$ (see Figure [\[fig:FatEdgeNbh\]](#fig:FatEdgeNbh){reference-type="ref" reference="fig:FatEdgeNbh"}). An elementary modification (we leave the details to the reader) of the proof of Lemma [\[lemma:edgeRelationEquivalence\]](#lemma:edgeRelationEquivalence){reference-type="ref" reference="lemma:edgeRelationEquivalence"} shows that we have $$\begin{equation}
-\label{eq:EdgeEquationsEnhanced}
-\sum_{k=0}^{N-1}\Big(\frac{c_{23,k}}{c_{12,k}c_{13,k}}\prod_{j=1}^k t_j^2\Big)=0\iff\sum_{k=0}^{N-1}\Big(\frac{c_{23,k}}{c_{02,k}c_{03,k}}\prod_{j=1}^k b_k^2\Big)=0,
-\end{equation}$$ and that both are satisfied if the $c_{01,k}$ are nonzero. We refer to these as *edge relations*. The geometric interpretation of the edge relations is given in Figure [2](#fig:FatEdgeRelationTop){reference-type="ref" reference="fig:FatEdgeRelationTop"}.
-
-<figure id="fig:FatEdgeRelationTop" data-latex-placement="htb">
-<div class="minipage">
-
-</div>
-<div class="minipage">
-
-</div>
-<p><br />
-</p>
-<div class="minipage">
-
-</div>
-<div class="minipage">
-
-</div>
-<figcaption>Fattened Bruhat cocycle (top view).</figcaption>
-</figure>

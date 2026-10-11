@@ -7,13 +7,14 @@ section_number: 14.1
 pages: 429-441
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.963
-latex_coverage_ratio: 0.895
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{cusped:section}
 We know that every cusped finite-volume complete hyperbolic surface is constructed by gluing isometrically finitely many ideal triangles along their edges (see Proposition \ref{straightens:prop}). Likewise, we now construct plenty of cusped hyperbolic three-manifolds by gluing isometrically finitely many ideal tetrahedra along their faces.
+
 
 \subsection{Ideal tetrahedra}
 Ideal triangles are all isometric, but ideal tetrahedra are not! We now show that they can be described up to isometry by a single complex parameter $z$ with $\Im z >0$.\index{ideal tetrahedron}
@@ -49,6 +50,7 @@ Proposition \ref{symmetries:ideal:tetrahedron:prop} shows that some symmetries o
 
 On a regular ideal tetrahedron the triangular sections are equilateral and hence all edges have the same modulus $z = e^{\frac{\pi i}3}$.
 
+
 \subsection{Ideal triangulations} \label{ideal:subsection}
 Let $\Delta_1,\ldots, \Delta_n$ be identical copies of the standard oriented 3-simplex. As in the two-dimensional case, a \emph{triangulation} $\calT$ is a partition of the $4n$ faces of the tetrahedra into $2n$ pairs, and for each pair a simplicial isometry between the two faces. The triangulation is \emph{oriented} if the simplicial isometries are orientation-reversing. If we glue the tetrahedra along the simplicial isometries we get a topological space $X$, which is not necessarily a topological manifold. Let $M$ be $X$ minus the vertices of the triangulation: we say that $\calT$ is an \emph{ideal triangulation} for $M$.
 
@@ -70,6 +72,7 @@ If we truncate the tetrahedra as in Figure \ref{truncated:fig} before gluing the
 
 We will always suppose that $\calT$ is oriented and $M$ is connected, so $M=\interior N$ for some compact $N$ with boundary. Every ideal vertex $v$ in $\calT$ is locally a cone over a small triangulated closed surface $\Sigma\subset M$ obtained by truncating the tetrahedra incident to $v$. We call such a $\Sigma$ the \emph{link} of $v$. 
 
+
 \subsection{Hyperbolic ideal triangulations}
 Let $\calT$ be an oriented ideal triangulation with tetrahedra $\Delta_1,\ldots, \Delta_n$ of a 3-manifold $M$. We now substitute every $\Delta_i$ with an ideal hyperbolic tetrahedron and pair their faces with orientation-reversing isometries. As opposite to the two-dimensional case, the ideal hyperbolic tetrahedra are not unique (they depend on a complex modulus $z_i$) but the isometric pairing of their faces is uniquely determined in virtue of the following.
 
@@ -90,6 +93,7 @@ We see the ideal triangles in $\matH^2$ and recall that for any two triples of p
 If we substitute each $\Delta_i$ with an ideal hyperbolic tetrahedron, we immediately get a well-defined hyperbolic structure on $M$ minus the edges of $\calT$.
 We now try to extend this hyperbolic structure to the edges: we can do this if we are able to glue all the $h$ tetrahedra around each edge $e$ inside $\matH^3$ as in Figure \ref{tetrahedron3:fig}. Let $z_1,\ldots, z_h$ be the complex moduli associated to the edges of the $h$ tetrahedra incident to $e$. As shown in the figure, if $z_1\cdots z_h = 1$ and the sum of their argument is $2\pi$ (and not some higher multiple of $2\pi$) then all tetrahedra can be glued simultaneously inside $\matH^3$ and the hyperbolic structure extends naturally to $e$. If this holds at every edge $e$ of $\calT$ then  $M$ inherits a hyperbolic structure and $\calT$ is said to be a \emph{hyperbolic} (or \emph{geometric}) \emph{ideal triangulation} for $M$.\index{hyperbolic ideal triangulation}
 
+
 \subsection{Consistency equations}
 We want to parametrize the hyperbolic structures on $M$ that may be constructed in this way from a fixed ideal triangulation $\calT$. We pick an arbitrary edge for every tetrahedron $\Delta_i$ and assign to it a complex variable $z_i$ with $\Im z_i>0$, and the other edges of $\Delta_i$ are automatically labeled by one of the variables $z_i$, $\frac{z_i-1}{z_i}$, or $\frac 1{1-z_i}$ as indicated in Figure \ref{tetraedro2:fig} (recall that the tetrahedra are oriented). As we have seen, for every edge $e$ in $\calT$ we obtain an equation of type 
 $$w_1\cdots w_h = 1$$ 
@@ -98,6 +102,7 @@ $$w_1\cdots w_h = 1$$
 We have thus obtained a system of \emph{consistency equations}, with a variable $z_i$ for each tetrahedron and an equation $w_1\cdots w_h = 1$ for each edge. A solution $z = (z_1,\ldots, z_n)$ to these equations produces a hyperbolic ideal triangulation and hence a hyperbolic structure on $M$. Recall that we assume $\Im z_i>0$ $\ \forall i$.
 
 As in the two-dimensional case, the resulting hyperbolic structure is not necessarily complete, and to get a complete hyperbolic manifold we must add more equations.
+
 
 \subsection{Completeness equations} \label{complete:solutions:subsection}
 Our aim is to construct a complete finite-volume hyperbolic metric on $M$. By Corollary \ref{tame:cor} if $M$ has such a metric the link of every ideal vertex of $\calT$ is a triangulated torus and identifies a cusp of $M$, so we will henceforth suppose that the links of all vertices are tori. In other words $M$ is the interior of a compact 3-manifold $N$ bounded by some $c>0$ tori.
@@ -157,6 +162,7 @@ We get two equations for each of the $c$ boundary tori and hence $2c$ equations 
 Let $\calT$ be an ideal triangulation of $M=\interior N$ with $n$ tetrahedra and $\partial N$ consisting of $c$ tori. If a point $z = (z_1,\ldots, z_n)$ with $\Im z_i >0$ satisfies the $n$ consistency equations and the $2c$ completeness equations, then $M$ admits a finite-volume complete hyperbolic metric.
 \end{prop}
 
+
 \subsection{Examples}
 On a triangulation $\calT$, the \emph{valence} of an edge $e$ is the number of tetrahedra incident to it, counted with multiplicity. The simplest kinds of solutions arise in the following construction. 
 
@@ -200,6 +206,7 @@ We can further decompose each regular ideal octahedron into four non-regular ide
 $$i, \ \frac 1{1-i} = \frac{1+i}2, \ \frac{i-1}i = 1+i$$
 and they satisfy the consistency and completeness equations in a less trivial way than before. The edges of the resulting triangulation have varying valences 4, 6, and 8.
 
+
 \subsection{SnapPea}
 It is of course hard to construct ideal triangulations by hand, except in some very symmetric and simple cases like the one just described. And it is even more difficult to solve the consistency and completeness equations.
 
@@ -225,6 +232,7 @@ SnapPea can calculate numerically a wealth of geometrical invariants with some p
 Is SnapPea guaranteed to find a hyperbolic structure on $M$ if there is one? No, it is not, although in practice it succeeds most of the time. The fact that $M$ is hyperbolic does not guarantee that there is a solution to Thurston's equations on a given triangulation $\calT$, and the existence of a solution does not guarantee that SnapPea will be able to find it. 
 
 We note that for most ideal triangulations $\calT$ of a hyperbolic $M$ there is no solution to Thurston's equations, and SnapPea is clever enough to modify $\calT$ to increase the probability to find one. In all known examples, a cusped hyperbolic $M$ admits at least \emph{one} geometric ideal triangulation, but whether this holds true for all cusped hyperbolic 3-manifolds $M$ is still an open question.
+
 
 \subsection{Cusped census}
 As with knots tabulations, topologists have used computers to list the cusped hyperbolic manifolds that can be triangulated with few ideal tetrahedra.
@@ -298,6 +306,7 @@ The figure-eight knot complement is $M2_1$, while $M2_2$ is another hyperbolic m
 The manifold $M4_1^2$ is the Whitehead link complement, that can be obtained by pairing the faces of a single ideal regular octahedron $O$. Indeed the volume of $O$ is $8\Lambda\big(\frac {\pi} 4\big) = 3.6638623767\ldots $
 
 After the figure eight knot and the Whitehead link, a notable sequence of hyperbolic links in $S^3$ with increasing number of components is shown in Figure \ref{sequence:fig}. Their complements are conjectured to be the smallest hyperbolic manifolds with $i=1,\ldots, 5$ cusps (see the references at the end of the chapter).
+
 
 \subsection{Hyperbolic knots}
 How many hyperbolic knots in $S^3$ are there? There are infinitely many hyperbolic knots, and infinitely many non-hyperbolic knots. Geometrisation translates hyperbolicity into an appealing topological condition:

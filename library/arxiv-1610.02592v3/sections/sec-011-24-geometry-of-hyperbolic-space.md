@@ -7,12 +7,13 @@ section_number: 2.4
 pages: 76-81
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.963
-latex_coverage_ratio: 0.842
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 We study the geometry of $\matH^n$. We prove that $\matH^n$ has constant sectional curvature $-1$, that the distance function along lines is convex, we define convex combinations and barycenters, and study parallel transport along lines. Finally, we prove that $\Iso(\matH^n)$ is a unimodular Lie group.
+
 
 \subsection{Area and curvature}
 We can verify that $\matH^n$ has constant sectional curvature $-1$. It should be no surprise that $\matH^n$ has constant curvature, since it has many symmetries (\emph{i.e.}~isometries). To calculate its sectional curvature we compute the area of a disc. 
@@ -41,6 +42,7 @@ Pick $p\in \matH^n$ and $W\subset T_p$ a 2-dimensional subspace. The image $\exp
 $$A(r) = 2\pi(\cosh r - 1) = 2\pi \left(\frac {r^2}{2!} + \frac {r^4}{4!} + o(r^4)\right) = \pi r^2 + \frac{\pi r^4}{12} + o(r^4)$$
 and hence $K=-1$ following the area formula in Section \ref{gauss:subsection}.
 \end{proof}
+
 
 \subsection{Convexity of the distance function}
 We recall that a function $f\colon \matR^n \to \matR$ is \emph{strictly convex} if 
@@ -85,6 +87,7 @@ The function $d$ is proper, that is it has minimum, if and only if the two lines
 The distance function on parallel lines in $\matR^n$ is not strictly convex (it is only convex).
 \end{ex}
 
+
 \subsection{Convex combinations} \label{convex:subsection}
 Let $p_1,\ldots, p_k$ be $k$ points in $\matH^n, \matR^n$, or $S^n$ and $t_1,\ldots, t_k$ be non-negative numbers with $t_1+\ldots + t_k=1$. The \emph{convex combination}  \index{convex combination} 
 $$p = t_1p_1+ \ldots + t_kp_k$$ 
@@ -117,12 +120,14 @@ Every finite group $\Gamma<\Iso(\matH^n)$ fixes a point in $\matH^n$.
 The barycenter of any orbit is fixed by $\Gamma$.
 \end{proof}
 
+
 \subsection{Parallel transport} \label{parallel:subsection}
 On Riemannian manifolds, the parallel transport is a way to slide frames along geodesics. On $\matH^n$ we can do this simply as follows: for every geodesic $\gamma$, we put $\gamma$ into vertical position in the half-space model $H^n$, and slide the frames vertically in the obvious way.  \index{parallel transport}
 
 This construction furnishes in particular, for every pair $x,y \in \matH^n$ of points, a canonical isometry between $T_x\matH^n$ and $T_y\matH^n$, obtained by sliding frames along the unique geodesic $\gamma$ containing $x$ and $y$.
 
 This canonical identification is of course not transitive on a triple of non-collinear points $x,y,z$: the curvature of $\matH^n$ is responsible for that.
+
 
 \subsection{Unimodularity}
 The following is a consequence of Corollary \ref{O:unimodular:cor}.
@@ -134,6 +139,7 @@ The isometry group $\Isomet(\matH^n)$ is unimodular.
 \begin{oss} \label{Haar:oss}
 A Haar measure for $\Iso(\matH^n)$ may be constructed concretely as follows: fix a point $x\in \matH^n$ and define the measure of a Borel set $S\subset \Iso(\matH^n)$ as the measure of $S(x) = \cup_{\varphi\in S} \varphi(x)\subset\matH^n$. This measure is obviously left-invariant, and is hence also right-invariant since $\Iso(\matH^n)$ is unimodular. As a consequence, it does not depend on the choice of $x$.
 \end{oss}
+
 
 \subsection{References}
 The hyperbolic space is introduced in various books: two standard references are Benedetti -- Petronio \cite{BP} and Ratcliffe \cite{R}, and most of the arguments presented here were borrowed from these two sources. The proof of Proposition \ref{distanza:convessa:prop} was taken from Farb -- Margalit \cite{FM}.

@@ -6,7 +6,7 @@
   "sha256": "cee15456257d3028d54a86f851f3bc714779023b88b5d98c57206a784e73ede3",
   "bytes": 649597,
   "pages": 19,
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -316,8 +316,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "paper-integrals.tex",
-   "tex_sections": 4,
-   "overlaid": 0,
+   "tex_sections": 18,
+   "overlaid": 11,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -327,79 +327,117 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.12,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.014,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-001-background-and-motivation",
      "title": "Background and motivation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.742,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-our-results",
      "title": "Our results",
-     "result": "no matching \\section"
+     "prose_ratio": 0.86,
+     "coverage_ratio": 0.558,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-cyclic-and-principal-type-invariants",
      "title": "Cyclic and principal type invariants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.87,
+     "coverage_ratio": 0.892,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.124,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.812,
+     "coverage_ratio": 0.514,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-diagrams-and-colorings",
      "title": "Diagrams and colorings",
-     "result": "no matching \\section"
+     "prose_ratio": 0.9,
+     "coverage_ratio": 0.757,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-gauge-transformations-and-nondegeneracy",
      "title": "Gauge transformations and nondegeneracy",
-     "result": "no matching \\section"
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.856,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-segment-equations",
      "title": "Segment equations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.902,
+     "coverage_ratio": 0.778,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-quantum-dilogarithms",
      "title": "Quantum dilogarithms",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.909,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-the-action-and-state-sums",
      "title": "The action and state sums",
-     "result": "no matching \\section"
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.871,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-state-integrals",
      "title": "State integrals",
-     "result": "no matching \\section"
+     "prose_ratio": 0.905,
+     "coverage_ratio": 0.656,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-classical-dilogarithms",
      "title": "Classical dilogarithms",
-     "result": "no matching \\section"
+     "prose_ratio": 0.769,
+     "coverage_ratio": 0.906,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-asymptotics",
      "title": "Asymptotics",
-     "result": "no matching \\section"
+     "prose_ratio": 0.025,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-013-the-classical-action",
      "title": "The classical action",
-     "result": "no matching \\section"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.401,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-014-barriers-to-moving-the-contour",
      "title": "Barriers to moving the contour",
-     "result": "no matching \\section"
+     "prose_ratio": 0.858,
+     "coverage_ratio": 0.271,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     }
    ]
   }

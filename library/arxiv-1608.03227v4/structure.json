@@ -1288,8 +1288,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "MF_final_Arxiv.tex",
-   "tex_sections": 14,
-   "overlaid": 1,
+   "tex_sections": 77,
+   "overlaid": 49,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1305,28 +1305,42 @@
     {
      "id": "sec-001-11-motivation",
      "title": "Motivation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.979,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-12-main-result",
      "title": "Main result",
-     "result": "no matching \\section"
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.932,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-13-sheaves-on-hilbert-schemes",
      "title": "Sheaves on Hilbert schemes",
-     "prose_ratio": 0.19,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.922,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-14-braids-and-matrix-factorizations",
      "title": "Braids and matrix factorizations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-15-structure-of-the-paper",
      "title": "Structure of the paper",
-     "result": "no matching \\section"
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-2-basic-space-and-matrix-factorizations",
@@ -1337,79 +1351,120 @@
     {
      "id": "sec-007-21-notations-conventions",
      "title": "Notations, conventions",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-22-matrix-factorizations-three-lemmas",
      "title": "Matrix factorizations: three lemmas",
-     "result": "no matching \\section"
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-23-koszul-matrix-factorizations",
      "title": "Koszul matrix factorizations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-3-equivariant-structure-of-matrix-factorizations",
      "title": "Equivariant structure of matrix factorizations and their push-forwards",
-     "prose_ratio": 0.462,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-32-push-forward",
      "title": "Push forward",
-     "result": "no matching \\section"
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-33-chevalley-eilenberg-complex",
      "title": "Chevalley-Eilenberg complex",
-     "result": "no matching \\section"
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-34-equivariant-matrix-factorizations",
      "title": "Equivariant matrix factorizations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.902,
+     "coverage_ratio": 0.906,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-014-35-extension-lemmas",
      "title": "Extension lemmas",
-     "result": "no matching \\section"
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.932,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-015-36-lifting-lemma-for-morphisms",
      "title": "Lifting lemma for morphisms",
-     "result": "no matching \\section"
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-016-37-equivariant-push-forward",
      "title": "Equivariant push-forward",
-     "result": "no matching \\section"
+     "prose_ratio": 0.915,
+     "coverage_ratio": 0.901,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-017-4-convolution-algebra-definition",
      "title": "Convolution algebra: definition",
-     "prose_ratio": 0.095,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-018-41-category-of-b2-equivariant-matrix-factorizati",
      "title": "Category of B2-equivariant matrix factorizations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.919,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-019-42-potential-and-main-category-of-matrix-factori",
      "title": "Potential and main category of matrix factorizations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-020-43-convolution",
      "title": "Convolution",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.513,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-021-44-convolution-of-the-g-slice",
      "title": "Convolution of the G-slice",
-     "result": "no matching \\section"
+     "prose_ratio": 0.932,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-022-5-knorrer-reduction",
@@ -1420,27 +1475,42 @@
     {
      "id": "sec-023-51-construction-of-the-knorrer-functor",
      "title": "Construction of the Knorrer functor",
-     "result": "no matching \\section"
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-024-52-properties-of-the-knorrer-functor",
      "title": "Properties of the Knorrer functor",
-     "result": "no matching \\section"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-025-53-convolution-on-the-reduced-space",
      "title": "Convolution on the reduced space",
-     "result": "no matching \\section"
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.914,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-026-54-reduced-vs-non-reduced-convolution",
      "title": "Reduced vs. non-reduced convolution",
-     "result": "no matching \\section"
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-027-55-row-operations-for-generalized-equivariant-ko",
      "title": "Row operations for generalized equivariant Koszul matrix factorizations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.623,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-028-56-proof-of-proposition-54",
@@ -1450,23 +1520,32 @@
     {
      "id": "sec-029-6-induction-functors",
      "title": "Induction functors",
-     "prose_ratio": 0.105,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-030-61-construction-of-the-induction-functor",
      "title": "Construction of the induction functor",
-     "result": "no matching \\section"
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.922,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-031-62-computational-aspects-of-push-forward",
      "title": "Computational aspects of push-forward",
-     "result": "no matching \\section"
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-032-63-induction-functor-in-reduced-case",
      "title": "Induction functor in reduced case",
-     "result": "no matching \\section"
+     "prose_ratio": 0.211,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-033-64-proof-of-proposition-61",
@@ -1481,75 +1560,110 @@
     {
      "id": "sec-035-7-inclusion-functor-and-the-generators-for-the-b",
      "title": "Inclusion functor and the generators for the braid group",
-     "prose_ratio": 0.189,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-036-71-unit-in-convolution-algebra",
      "title": "Unit in convolution algebra",
-     "result": "no matching \\section"
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-037-72-inclusion-functor",
      "title": "Inclusion functor",
-     "result": "no matching \\section"
+     "prose_ratio": 0.844,
+     "coverage_ratio": 0.931,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-038-73-generators-of-the-braid-group",
      "title": "Generators of the braid group",
-     "result": "no matching \\section"
+     "prose_ratio": 0.931,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-039-8-general-properties-of-convolution-algebra",
      "title": "General properties of convolution algebra",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-040-81-auxiliary-lemma",
      "title": "Auxiliary Lemma",
-     "result": "no matching \\section"
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-041-82-reduced-case-version-of-the-auxiliary-lemma",
      "title": "Reduced case version of the auxiliary lemma",
-     "result": "no matching \\section"
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.917,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-042-83-reduced-convolution-with-rank-1-matrix-factor",
      "title": "Reduced convolution with rank 1 matrix factorizations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.915,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-043-84-involution",
      "title": "Involution",
-     "result": "no matching \\section"
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.922,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-044-9-two-strands",
      "title": "Two strands",
-     "prose_ratio": 0.059,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-045-91-general-method-of-the-proof",
      "title": "General method of the proof",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-046-92-equivariant-structure-for-the-generators",
      "title": "Equivariant structure for the generators",
-     "result": "no matching \\section"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-047-93-properties-of-the-basic-matrix-factorizations",
      "title": "Properties of the basic matrix factorizations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.838,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-048-94-inversion-of-the-elementary-positive-braid",
      "title": "Inversion of the elementary positive braid",
-     "result": "no matching \\section"
+     "prose_ratio": 0.035,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-049-95-proof-of-theorem-96",
@@ -1559,13 +1673,16 @@
     {
      "id": "sec-050-10-three-strands-and-two-crossings",
      "title": "Three strands and two crossings",
-     "prose_ratio": 0.096,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-051-101-a-geometric-interpretation-for-the-matrix-fa",
      "title": "A geometric interpretation for the matrix factorization",
-     "result": "no matching \\section"
+     "prose_ratio": 0.415,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-052-102-proof-of-lemma-104",
@@ -1575,7 +1692,7 @@
     {
      "id": "sec-053-11-three-strands-three-crossings",
      "title": "Three strands three crossings",
-     "prose_ratio": 0.264,
+     "prose_ratio": 0.287,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -1586,49 +1703,70 @@
     {
      "id": "sec-055-113-convolution",
      "title": "Convolution",
-     "result": "no matching \\section"
+     "prose_ratio": 0.532,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-056-114-end-of-the-proof-of-the-theorem-76",
      "title": "End of the proof of the theorem 7.6",
-     "result": "no matching \\section"
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-057-12-sheaves-on-the-hilbert-scheme",
      "title": "Sheaves on the Hilbert scheme",
-     "prose_ratio": 0.372,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-058-122-braid-complex",
      "title": "Braid complex",
-     "result": "no matching \\section"
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.917,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-059-123-geometry-of-the-critical-locus",
      "title": "Geometry of the critical locus",
-     "result": "no matching \\section"
+     "prose_ratio": 0.892,
+     "coverage_ratio": 0.937,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-060-124-stability-conditions-on-critical-locus",
      "title": "Stability conditions on critical locus",
-     "result": "no matching \\section"
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-061-125-stability-conditions-for-the-matrix-factoriz",
      "title": "Stability conditions for the matrix factorizations.",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.94,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-062-127-conjugacy-class-invariant",
      "title": "Conjugacy class invariant",
-     "result": "no matching \\section"
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-063-13-link-invariant",
      "title": "Link invariant",
-     "prose_ratio": 0.69,
-     "coverage_ratio": 0.942,
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1640,13 +1778,16 @@
     {
      "id": "sec-065-14-connections-with-other-knot-invariants",
      "title": "Connections with other knot invariants",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-066-141-unknot",
      "title": "Unknot",
-     "result": "no matching \\section"
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-067-list-of-symbols",

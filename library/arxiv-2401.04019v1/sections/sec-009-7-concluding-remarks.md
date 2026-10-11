@@ -7,10 +7,10 @@ section_number: 7
 pages: 18-20
 source_pdf: 2401.04019v1.pdf
 source_sha256: 1a29e52a81639640
-text_source: latex
-latex_prose_ratio: 0.972
-latex_coverage_ratio: 0.956
 doc_brief: "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY — The work of Andrews and Merca on the truncated Euler’s pen- tagonal number theorem led to a resurgence in research on tru ncated"
+text_source: latex
+latex_prose_ratio: 0.991
+latex_coverage_ratio: 0.984
 ---
 []{#concluding label="concluding"}
 
@@ -21,32 +21,30 @@ At the end of [@M1], Merca made another conjecture about the non-negativity of t
 ::: theorem
 For $1\leq S<R$ and $k\geq 1$,
 
-- $T_{+}(q,k,S,R)$ has non-negative coefficients;
+-   $T_{+}(q,k,S,R)$ has non-negative coefficients;
 
-- $T_{-}(q,k,S,R)$ has non-positive coefficients.
+-   $T_{-}(q,k,S,R)$ has non-positive coefficients.
 :::
 
 ::: proof
 *Proof.* Let $1\leq S <R$ and $k\geq 1$.
 
-To show that for the $q$-series $T_+(q,k,S,R)$ has non-negative coefficients, we rewrite it as $$\begin{align*}
+To show that for the $q$-series $T_+(q,k,S,R)$ has non-negative coefficients, we rewrite it as $$\begin{aligned}
 &T_+(q,k,S,R)
 \\& =\frac{1}{(q^S, q^{R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n-1)R/2+3nS}(1-q^{n(R-S)}+q^{n(R-S)}-q^{S+nR})\\ & = \frac{1}{(q^S, q^{2R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n-1)R/2+3nS}\, \frac{1-q^{n(R-S)}}{1-q^{R-S}}\\ & \ \ \ + \frac{1}{(q^{S+R}, q^{R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n-1)R/2+3nS+nR-nS}\, \frac{1-q^{(n+1)S}}{1-q^S}\\ & = \frac{1}{(q^S, q^{2R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n-1)R/2+3nS} (1+q^{R-S}+q^{2(R-S)}+\cdots +q^{(n-1)(R-S)})\\ & \ \ \ + \frac{1}{(q^{S+R}, q^{R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n+1)R/2+2nS}(1+q^{S}+q^{2S}+\cdots+ q^{nS})
 .
-\end{align*}$$ Clearly, this $q$-series has non-negative coefficients.
+\end{aligned}$$ Clearly, this $q$-series has non-negative coefficients.
 
-If $k\geq 2$, we rewrite $$\begin{align*}
+If $k\geq 2$, we rewrite $$\begin{aligned}
 &-T_-(q,k,S,R)\\ & = - \frac{1}{(q^S, q^{R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n+ 1)R/2- 3nS}(1-q^{S- nR})\\& =\frac{1}{(q^S, q^{R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n+1)R/2-3nS+S-nR}(1-q^{n(R-S)}+q^{n(R-S)}-q^{nR-S})\\ & = \frac{1}{(q^S, q^{2R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n+1)R/2-3nS+S-nR}\, \frac{1-q^{n(R-S)}}{1-q^{R-S}}\\ & \ \ \ + \frac{1}{(q^{S+R}, q^{R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n+1)R/2-3nS+S-nR+nR-nS}\, \frac{1-q^{(n-1)S}}{1-q^S}\\ & = \frac{1}{(q^S, q^{2R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n-1)R/2-3nS+S} (1+q^{R-S}+q^{2(R-S)}+\cdots +q^{(n-1)(R-S)})\\ & \ \ \ + \frac{1}{(q^{S+R}, q^{R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n+1)R/2-4nS+S}(1+q^{S}+q^{2S}+\cdots+ q^{(n-2)S})
 .
-\end{align*}$$ If $k=1$, we have $$\begin{align*}
-&-T_-(q,1,S,R) =\frac{q^{R-2S}}{(q^S, q^{2R-S};q^R)_\infty}  - T_-(q,2,S,R).
-\end{align*}$$ Clearly, in each case $-T_-(q,1,S,R)$ has non-negative coefficients. ◻
+\end{aligned}$$ If $k=1$, we have $$\begin{aligned}
+&-T_-(q,1,S,R) =\frac{q^{R-2S}}{(q^S, q^{2R-S};q^R)_\infty}  - T_-(q,2,S,R). 
+\end{aligned}$$ Clearly, in each case $-T_-(q,1,S,R)$ has non-negative coefficients. ◻
 :::
 
-Finally, we note that results of a similar flavor appear in [@M2]. Let $g(n)=|\mathcal P_{\pm 1,5}(n)|$ (respectively $h(n)=|\mathcal P_{\pm 2,5}(n)|$) be the number of partitions of $n$ into parts congruent to $\pm 1 \mod 5$ (respectively $\pm 2\mod 5$). If $\xi(n)$ is either of $g(n)$ or $h(n)$, Merca [@M2 Corollary 3.3] proves the following families of linear homogeneous inequalities. For $k\geq 1$, $S\in\{1,2\}$, and $n\geq 0$ $$\begin{equation}
-\label{eq:M2}
-        u_{\xi,S}^{\pm}(n):= \pm \sum_{j=k}^\infty\left(\xi\left(n-5j(3j\pm 1)/2\pm 3jS\right)-\xi\left(n-5j(3j\pm 1)/2\mp (3j\pm 1)S\right) \right)\geq 0
-\end{equation}$$ and asks for combinatorial interpretations of these sums. The requested interpretations can be read off the generating functions obtained in the proofs in [@M2].
+Finally, we note that results of a similar flavor appear in [@M2]. Let $g(n)=|\mathcal P_{\pm 1,5}(n)|$ (respectively $h(n)=|\mathcal P_{\pm 2,5}(n)|$) be the number of partitions of $n$ into parts congruent to $\pm 1 \mod 5$ (respectively $\pm 2\mod 5$). If $\xi(n)$ is either of $g(n)$ or $h(n)$, Merca [@M2 Corollary 3.3] proves the following families of linear homogeneous inequalities. For $k\geq 1$, $S\in\{1,2\}$, and $n\geq 0$ $$\label{eq:M2}
+        u_{\xi,S}^{\pm}(n):= \pm \sum_{j=k}^\infty\left(\xi\left(n-5j(3j\pm 1)/2\pm 3jS\right)-\xi\left(n-5j(3j\pm 1)/2\mp (3j\pm 1)S\right) \right)\geq 0$$ and asks for combinatorial interpretations of these sums. The requested interpretations can be read off the generating functions obtained in the proofs in [@M2].
 
 In the proof of [@M2 Theorem 2.1] (with $R=5, S=1$) it is shown that $$\sum_{n=0}^\infty u_{g,1}^{+}(n)q^n=\frac{1}{(q^{6},q^{4};q^5)_\infty}\sum_{j=k}^\infty q^{5j(3j+1)/2-3j}\big(1+q+q^{2}+\cdots +q^{6j}\big).$$
 
@@ -54,15 +52,15 @@ Now, $\displaystyle \frac{1}{(q^{6},q^{4};q^5)_\infty}$ is the generating functi
 
 Then $$u_{g,1}^+(n)=|\{(\lambda,(5j+1)^j\cup \delta_{1,5,j})\vdash n  \mid   \lambda\in \mathcal P_{\pm 1, 5}, m_\lambda(1)\leq 6j, j\geq k\}|.$$
 
-In a similar way we can show that $$\begin{align*}
+In a similar way we can show that $$\begin{aligned}
 u_{h,2}^+(n)&=|\{ (\lambda, (5(j-1)+2)^j\cup \delta_{2,5,j})\vdash n \mid \lambda \in \mathcal P_{\pm2,5}, m_{\lambda}(2)\leq 6j, j\geq k \}|\\
 u_{g,1}^-(n)&=|\{ (\lambda, (5j+1)^{j-1}\cup\delta_{1,5,j}\cup (4)) \vdash n \mid \lambda \in \mathcal P_{\pm1,5}, m_{\lambda}(1)\leq 6j-2, j\geq k\}|\\ 
-u_{h,2}^-(n)&=|\{(\lambda, (5(j-1)+2)^{j-1}\cup \delta_{2,5,j}\cup (3)) \vdash n\mid \lambda \in \mathcal P_{\pm 2, 5}, m_\lambda(2)\leq 6j-2, j\geq k \}|.
-\end{align*}$$
+u_{h,2}^-(n)&=|\{(\lambda, (5(j-1)+2)^{j-1}\cup \delta_{2,5,j}\cup (3)) \vdash n\mid \lambda \in \mathcal P_{\pm 2, 5}, m_\lambda(2)\leq 6j-2, j\geq k \}|. 
+\end{aligned}$$
 
-Using the generating functions in [@M2 Corollary 3.2], we have $$\begin{align*}
+Using the generating functions in [@M2 Corollary 3.2], we have $$\begin{aligned}
 u_{g,2}^+(n)&=|\{ (\lambda, (\delta_{4,5,2j-1}\setminus \delta_{4,5,j-1}))\vdash n \mid \lambda \in \mathcal P_{\pm1,5}, m_{\lambda}(1)\leq 12j+1, j\geq k \}|\\ u_{g,2}^-(n)&=|\{ (\lambda, (\delta_{4,5,2j-2}\setminus \delta_{4,5,j-1})\cup(5(j-1)+1))\vdash n \mid \lambda \in \mathcal P_{\pm1,5}, m_{\lambda}(1)\leq 12j-3, j\geq k \}|\\
 u_{h,1}^+(n)&=|\{ (\lambda, (\delta_{2,5,2j}\setminus \delta_{2,5,j}))\vdash n \mid \lambda \in \mathcal P_{\pm2,5}, m_{\lambda}(2)\leq 3j-2, j\geq k \}|\\ & \ \ \ +|\{ (\lambda, (\delta_{3,5,2j+1}\setminus \delta_{3,5,j+2})\cup(5j+3))\vdash n \mid \lambda \in \mathcal P_{\pm2,5}, m_{\lambda}(3)= 1, j\geq k \}|
 \\ u_{h,1}^-(n)&=|\{ (\lambda, (\delta_{2,5,2j-1}\setminus \delta_{2,5,j}) \cup(5(j-1)+3))\vdash n \mid \lambda \in \mathcal P_{\pm2,5}, m_{\lambda}(2)\leq 3j-3, j\geq k \}|\\ & \ \ \ 
 +|\{ (\lambda, (\delta_{3,5,2j}\setminus \delta_{3,5,j+1})\cup(5(j-1)+2))\vdash n \mid \lambda \in \mathcal P_{\pm2,5}, m_{\lambda}(3)= 1, j\geq k \}|.
-\end{align*}$$
+\end{aligned}$$

@@ -844,8 +844,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 7,
-   "overlaid": 1,
+   "tex_sections": 72,
+   "overlaid": 25,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -855,28 +855,42 @@
     {
      "id": "sec-000-coxeter-systems-hecke-algebras-and-kazhdan-luszt",
      "title": "Coxeter Systems, Hecke algebras, and Kazhdan-Lusztig preliminaries",
-     "prose_ratio": 0.304,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-001-remark",
      "title": "Remark:",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.926,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-example",
      "title": "Example",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-kazhdan-lusztig-polynomials-and-a-basis-for-the",
      "title": "Kazhdan-Lusztig polynomials, and a basis for the Hecke algebra",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-lemma",
      "title": "Lemma:",
-     "result": "no matching \\section"
+     "prose_ratio": 0.955,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-soergel-bimodules",
@@ -887,118 +901,169 @@
     {
      "id": "sec-006-easing-into-it",
      "title": "Easing into it",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-bott-samelson-bimodules",
      "title": "Bott-Samelson bimodules",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-example-of-soergel-bimodule",
      "title": "Example of Soergel bimodule",
-     "result": "no matching \\section"
+     "prose_ratio": 0.379,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-009-lemma",
      "title": "Lemma",
-     "result": "no matching \\section"
+     "prose_ratio": 0.5,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-010-remark",
      "title": "Remark",
-     "result": "no matching \\section"
+     "prose_ratio": 0.347,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-011-important-remark",
      "title": "Important Remark",
-     "result": "no matching \\section"
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-historical-interlude-the-kazhdan-lusztig-conject",
      "title": "Historical Interlude: The Kazhdan-Lusztig conjectures",
-     "prose_ratio": 0.519,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-013-back-to-kazhdan-lusztig",
      "title": "Back to Kazhdan-Lusztig",
-     "result": "no matching \\section"
+     "prose_ratio": 0.773,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-014-theorem",
      "title": "Theorem",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-015-theorem-polo",
      "title": "Theorem (Polo)",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-016-more-on-positivity",
      "title": "More on positivity",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-017-flag-and-schubert-varieties",
      "title": "Flag and Schubert varieties",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-018-the-v-functor",
      "title": "The V-functor",
-     "result": "no matching \\section"
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-019-translation-functors",
      "title": "Translation functors",
-     "result": "no matching \\section"
+     "prose_ratio": 0.509,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-020-lemma",
      "title": "Lemma",
-     "result": "no matching \\section"
+     "prose_ratio": 0.318,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-021-corollary",
      "title": "Corollary",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-022-projectives",
      "title": "Projectives",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-023-proposition",
      "title": "Proposition",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-024-recontextualizing-soergel-modules-from-bott-same",
      "title": "Recontextualizing Soergel modules from Bott-Samelson modules",
-     "result": "no matching \\section"
+     "prose_ratio": 0.686,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-025-proposition",
      "title": "Proposition",
-     "result": "no matching \\section"
+     "prose_ratio": 0.135,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-026-proving-the-kazhdan-lusztig-conjecture",
      "title": "Proving the Kazhdan-Lusztig conjecture",
-     "result": "no matching \\section"
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-027-restating-the-conjecture",
      "title": "Restating the conjecture",
-     "result": "no matching \\section"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-028-references",
      "title": "References",
-     "prose_ratio": 0.969,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
@@ -1012,37 +1077,52 @@
     {
      "id": "sec-030-computation-of",
      "title": "Computation of",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-031-geometric-representation-of-a-coxeter-system",
      "title": "Geometric representation of a Coxeter system",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-032-a-fun-but-ancillary-category",
      "title": "A fun but ancillary category",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-033-in-aid-of-lemma-423",
      "title": "In aid of lemma 4.2.3,",
-     "result": "no matching \\section"
+     "prose_ratio": 0.068,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-034-proposition",
      "title": "Proposition",
-     "result": "no matching \\section"
+     "prose_ratio": 0.351,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-035-berstein-gelfand-gelfand-reciprocity",
      "title": "Berstein-Gelfand-Gelfand Reciprocity",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-036-bgg-reciprocity",
      "title": "BGG Reciprocity",
-     "result": "no matching \\section"
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     }
    ]
   }

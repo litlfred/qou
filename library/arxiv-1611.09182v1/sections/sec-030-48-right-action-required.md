@@ -8,87 +8,150 @@ pages: 36-40
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
 doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
+text_source: latex
+latex_prose_ratio: 0.964
+latex_coverage_ratio: 0.994
 ---
-Readers may have noticed that the left action of C⊗ H on itself was not enough to describe
-ΨL + ΨR together as a single irreducible representation. That is, the left action alone has
-only ΨL (or ΨR) as an irrep. However, the combined Dirac spinor, Ψ L + ΨR, does become
-an irreducible representation of a Cliﬀord algebra when the right action of C⊗ H is also
-included. Readers will ﬁnd this theme coming up again in future chapters.
-4.9 Parity and the ﬁeld strength tensor
+Readers may have noticed that the left action of $\CH$ on itself was not enough to describe $\Psi_{\textup{L}}+\Psi_{\textup{R}}$ together as a single irreducible representation.  That is, the left action alone has only $\Psi_{\textup{L}}$ (or $\Psi_{\textup{R}}$) as an irrep.  However, the combined Dirac spinor, $\Psi_{\textup{L}}+\Psi_{\textup{R}}$, does become an irreducible representation of a Clifford algebra when the right action of $\CH$ is also included.  Readers will find this theme coming up again in future chapters.
+
+
+
+
+
+
+\section{Parity and the field strength tensor\label{Fmunu}  }
+
+
 The work in this section is to appear in a joint paper, together with G. Fiore from INFN.
-In Section 3.6, we introduced four-vectors, p, as generalized ideals under the hermitian
-invariant-action,mh. These can be described as
-p =p0 +p1iϵx +p2iϵy +p3iϵz, (4.12)
-which transform under the Lorentz group as p′ =mh(L,p ) =LpL†, for L∈SL(2, C).
-Furthermore, in Section 3.7, we introduced the ﬁeld strength tensor,F , as a generalized
-ideal under the quaternionic invariant-action, mq. Explicitly, we had
-F = (B1−iE1)ϵx + (B2−iE2)ϵy + (B3−iE3)ϵz, (4.13)
-which transforms under the Lorentz group as F′ = mq(L,F ) = LF~L. Of course, we also
-studied spinors and scalars in previous sections, but these will not be relevant for us at the
-moment.
-Given these two Lorentz representations, we might wonder how parity transformations
-are to be carried out. Under a parity transformation, we would expect
-28
-p ↦→ p′ =p0−p1iϵx−p2iϵy−p3iϵz,
-F ↦→ F′ = (B1 +iE1)ϵx + (B2 +iE2)ϵy + (B3 +iE3)ϵz.
-(4.14)
-Now, it might be tempting to consider the quaternionic conjugate as the parity conju-
-gate, since ~ϵx =−ϵx, ~ϵy =−ϵy, and ~ϵz =−ϵz. However, the quaternionic conjugate sends
-F↦→−F , which does not give the desired result: Ei↦→−Ei, and Bj↦→Bj. So how might
-we deﬁne a parity transformation?
-In Section 4.7, we demonstrated a representation of the Dirac algebra, C⊗Cl(1, 3),
-using both left and right multiplication of C⊗ H on itself. From this Cliﬀord algebra, it is
-then possible to deﬁne a parity transformation:
-γ0 ↦→ γ0 = 1|iϵx, γ j ↦→ −γj =−iϵj|ϵy, (4.15)
-for j = 1, 2, 3.
-So, the question is now: how do we use this parity transformation on the γµ to induce
-a parity transformation on p and F ?
-The resolution to this question is not obvious, because p and F are objects which are
-derived from C⊗ H≃ Cl(2) structure, while the γµ belong in ( C⊗ H)⊗C (C⊗ H)≃
-C⊗Cl(1, 3)≃ Cl(4). One solution, which we will now show, is to generalize the Cl(2)
-objects, p and F , to two new Cl(4) operators, ˆp and ˆF . We might hope, then, that under
-the right conditions, ˆp and ˆF would reduce to p and F . In summary, we would like to
-see the parity transformations on ˆp and ˆF , given by equation 4.15, automatically induce
-parity transformations on p and F .
-Let us then deﬁne ˆp to be
-ˆp≡pµγµ =p0 1|iϵx +pjiϵj|ϵy, (4.16)
-for pµ∈ R, for µ = 0, 1, 2, 3, and j = 1, 2, 3. This is none other than the usual pµγµ of
-quantum ﬁeld theory.
-Making use of the Cliﬀord algebraic description of [51], let us deﬁne ˆF to be
-ˆF≡Fµνγµν =F0iγ0i +Fjkγjk =Eiϵi|ϵz−Bjϵj| 1, (4.17)
-for µ,ν = 0, 1, 2, 3, Fµν∈ R, γµν≡ 1
-2 [γµ,γν], and i,j = 1, 2, 3.
-29
-It is then trivial to see that under a parity transformation given by
-γ0 ↦→ γ0 = 1|iϵx, γ j ↦→ −γj =−iϵj|ϵy, (4.18)
-for j = 1, 2, 3, the operator, ˆp transforms as
-ˆp ↦→ ˆp′ =p0 1|iϵx−pjiϵj|ϵy, (4.19)
-and the operator, ˆF transforms as
-ˆF ↦→ ˆF′ =−Eiϵi|ϵz−Bjϵj| 1, (4.20)
-as we would expect.
-So, we have a new description for four-momenta, ˆp, and the ﬁeld strength tensor, ˆF ,
-which transform as they should under parity. We would now like to know how these relate
-to the generalized ideals, p and F that we found earlier in Sections 3.6 and 3.7.
-We ﬁnd that the operators ˆp and ˆF reduce to the generalized ideals p and F , when ˆp
-and ˆF are taken to be operators, acting on spinors in C⊗ H. Incorporating the object γ0,
-we ﬁnd that ˆp reduces to p, or p∗, on Weyl spinors,
-γ0ˆp ΨL =p∗ ΨL, γ 0ˆp ΨR =p ΨR. (4.21)
-Similarly, we ﬁnd that ˆF reduces to F , or F∗, on Weyl spinors as
-ˆF ΨL =−F∗ ΨL, ˆF ΨR =−F ΨR. (4.22)
-Readers may note that a parity transformation on ˆp and ˆF now automatically induces the
-correct parity transformation on p andF , when these objects are taken to be operators on
-spinors.
-Finally, we point out that this deﬁnition of parity,
-γ0 ↦→ γ0 = 1|iϵx, γ j ↦→ −γj =−iϵj|ϵy, (4.23)
-sends γ5 ↦→ −γ5, so that left- and right-handed Weyl spinors are swapped under this
-transformation, as we would expect.
-30
-In summary, we have shown that the parity conjugate of theC⊗Cl(1, 3)≃ (C⊗ H)⊗C
-(C⊗ H) algebra may be used to induce a parity conjugate on our generalized ideals in
-C⊗ H.
-Note that we have also demonstrated a way to write down four-vectors, and the ﬁeld
-strength tensor, in the Dirac algebra formalism, which makes use of the generalized ideals
-found in Sections 3.6 and 3.7. Namely,
-ˆp ΨD =γ0mc(p∗, ΨD), ˆF ΨD =mc(−F∗, ΨD). (4.24)
-31
-Chapter 5
+
+
+In Section~\ref{mh}, we introduced four-vectors, $p$,  as generalized ideals under the hermitian invariant-action, $m_h$.   These can be described as 
+
+\begin{equation}p =  p_0 + p_1i{\epsilon_x} +p_2i{\epsilon_y} + p_3i{\epsilon_z}, 
+\end{equation}
+
+\noindent which transform under the Lorentz group as $p' = m_h(L,p) = LpL^{\dagger}$, for $L\in SL(2,\C)$.
+
+
+
+
+Furthermore, in Section~\ref{mq}, we introduced the  field strength tensor, $F$, as a generalized ideal under the quaternionic invariant-action, $m_q$.  Explicitly, we had
+
+\begin{equation}F = \left( B_1 -iE_1\right){\epsilon_x} + \left( B_2-iE_2 \right){\epsilon_y}  + \left( B_3-iE_3  \right){\epsilon_z},
+\end{equation}
+
+\noindent which transforms under the Lorentz group as $F' =m_q(L, F)=LF\widetilde{L}$.  Of course, we also studied spinors and scalars in previous sections, but these will not be relevant for us at the moment.
+
+
+
+Given these two Lorentz representations, we might wonder how parity transformations are to be carried out.  Under a parity transformation, we would expect
+
+\begin{equation}\begin{array}{lll}p& \hspace{2mm}\mapsto& \hspace{2mm}p' =  p_0 - p_1i{\epsilon_x} -p_2i{\epsilon_y} - p_3i{\epsilon_z}, \vspace{6mm}\\
+F&  \hspace{2mm}\mapsto\hspace{2mm}& F' = \left( B_1 +iE_1\right){\epsilon_x} + \left( B_2+iE_2 \right){\epsilon_y}  + \left( B_3+iE_3  \right){\epsilon_z}.
+\end{array}
+\end{equation}
+
+
+
+Now, it might be tempting to consider the quaternionic conjugate as the parity conjugate, since $\widetilde{\epsilon_x} = -\epsilon_x$, $\widetilde{\epsilon_y} = -\epsilon_y$, and $\widetilde{\epsilon_z} = -\epsilon_z$.  However, the quaternionic conjugate sends $F\mapsto -F$, which does not give the desired result:  $E_i\mapsto-E_i$, and $B_j\mapsto B_j$.  So how might we define a parity transformation?
+
+
+
+
+
+
+
+In Section~\ref{da}, we demonstrated a representation of the Dirac algebra, $\C\otimes Cl(1,3)$, using both left and right multiplication of $\CH$ on itself.  From this Clifford algebra, it is then possible to define a parity transformation:
+
+\begin{equation}\label{parity} \gamma^0\hspace{2mm}\mapsto\hspace{2mm}\gamma^0 = 1\hspace{1mm}|\hspace{1mm}i\epsilon_x,\hspace{1cm} \gamma^j\hspace{2mm}\mapsto\hspace{2mm}-\gamma^j = -i\epsilon_j \hspace{1mm}| \hspace{1mm}\epsilon_y,
+\end{equation}
+
+\noindent for $j = 1,2,3.$  
+
+
+
+So, the question is now:  how do we use this parity transformation on the $\gamma^{\mu}$ to induce a parity transformation on $p$ and $F$?  
+
+
+The resolution to this question is not obvious, because $p$ and $F$ are objects which are derived from $\CH\simeq\CLtwo$ structure, while the $\gamma^{\mu}$ belong in $\left(\CH\right)\otimes_{\C}\left(\CH\right)\simeq\C\otimes Cl(1,3) \simeq \CLfour$.  One solution, which we will now show, is to generalize the $\CLtwo$ objects, $p$ and $F$, to two new $\CLfour$ operators, $\hat{p}$ and $\hat{F}$.  We might hope, then, that under the right conditions, $\hat{p}$ and $\hat{F}$ would reduce to $p$ and $F$.   In summary, we would like to see the parity transformations on $\hat{p}$ and $\hat{F}$, given by equation~\ref{parity}, automatically induce parity transformations on $p$ and $F$.
+
+
+Let us then define $\hat{p}$ to be
+
+\begin{equation}\hat{p} \equiv p_{\mu} \gamma^{\mu} = p_0 \hspace{1mm}1\hspace{1mm}|\hspace{1mm}i\epsilon_x + p_j\hspace{1mm} i\epsilon_j \hspace{1mm}| \hspace{1mm}\epsilon_y, 
+\end{equation}
+
+\noindent for $p_{\mu}\in\R$, for $\mu = 0,1, 2, 3$, and $j=1,2,3.$ This is none other than the usual $p_{\mu} \gamma^{\mu}$ of quantum field theory.
+
+
+
+Making use of  the Clifford algebraic description of~\cite{loun}, let us define $\hat{F}$ to be 
+
+\begin{equation} \hat{F} \equiv F_{\mu\nu}\gamma^{\mu\nu}  = F_{0i}\gamma^{0i} + F_{jk}\gamma^{jk} = E_i\hspace{1mm}\epsilon_{i} \hspace{1mm}|\hspace{1mm} \epsilon_z - B_j\hspace{1mm} \epsilon_j\hspace{1mm}|\hspace{1mm}1,
+\end{equation}
+
+\noindent for $\mu, \nu = 0,1, 2, 3$, $F_{\mu\nu}\in \R$,  $\gamma^{\mu\nu}\equiv \frac{1}{2}\left[\gamma^{\mu}, \gamma^{\nu}\right]$, and $i, j = 1,2,3$.
+
+
+
+It is then trivial to see that under a parity transformation given by 
+
+\begin{equation} \gamma^0\hspace{2mm}\mapsto\hspace{2mm}\gamma^0 = 1\hspace{1mm}|\hspace{1mm}i\epsilon_x,\hspace{1cm} \gamma^j\hspace{2mm}\mapsto\hspace{2mm}-\gamma^j = -i\epsilon_j \hspace{1mm}| \hspace{1mm}\epsilon_y,
+\end{equation}
+
+\noindent for $j = 1,2,3,$ the operator, $\hat{p}$ transforms as 
+
+\begin{equation}\hat{p}\hspace{2mm}\mapsto\hspace{2mm} \hat{p}' = p_0 \hspace{1mm}1\hspace{1mm}|\hspace{1mm}i\epsilon_x - p_j\hspace{1mm} i\epsilon_j \hspace{1mm}| \hspace{1mm}\epsilon_y,
+\end{equation}
+
+\noindent and the operator, $\hat{F}$ transforms as
+
+\begin{equation} \hat{F}\hspace{2mm}\mapsto\hspace{2mm} \hat{F}' = -E_i\hspace{1mm}\epsilon_{i} \hspace{1mm}|\hspace{1mm} \epsilon_z - B_j\hspace{1mm} \epsilon_j\hspace{1mm}|\hspace{1mm}1,
+\end{equation}
+
+\noindent as we would expect.
+
+So, we  have a new description for four-momenta, $\hat{p}$, and the field strength tensor, $\hat{F}$, which transform as they should under parity.  We would now like to know how these relate to the generalized ideals, $p$ and $F$ that we found earlier in Sections~\ref{mh} and \ref{mq}.  
+
+
+
+We find that the operators $\hat{p}$ and $\hat{F}$ reduce to the generalized ideals $p$ and $F$, when $\hat{p}$ and $\hat{F}$ are taken to be operators, \it acting on spinors \rm in $\CH$.  Incorporating the object $\gamma^0$, we find that $\hat{p}$ reduces to $p$, or $p^*$, on Weyl spinors,
+
+\begin{equation} \gamma^0 \hat{p} \hspace{1mm}\Psi_{\textup{L}} = p^*\hspace{1mm}\Psi_{\textup{L}}, \hspace{1cm}  \gamma^0 \hat{p} \hspace{1mm}\Psi_{\textup{R}} = p\hspace{1mm}\Psi_{\textup{R}}.
+\end{equation}
+
+
+
+
+
+
+\noindent Similarly, we find that $\hat{F}$ reduces to $F$, or $F^*$, on Weyl spinors as
+
+\begin{equation}\hat{F}\hspace{1mm}\Psi_{\textup{L}} =-F^*\hspace{1mm}\Psi_{\textup{L}}, \hspace{1cm} \hat{F}\hspace{1mm}\Psi_{\textup{R}} =-F\hspace{1mm}\Psi_{\textup{R}}.
+\end{equation}
+
+\noindent Readers may note that a parity transformation on $\hat{p}$ and $\hat{F}$ now automatically induces the correct parity transformation on $p$ and $F$, when these objects are taken to be operators on spinors.
+
+
+Finally, we point out that this definition of parity, 
+
+\begin{equation} \gamma^0\hspace{2mm}\mapsto\hspace{2mm}\gamma^0 = 1\hspace{1mm}|\hspace{1mm}i\epsilon_x,\hspace{1cm} \gamma^j\hspace{2mm}\mapsto\hspace{2mm}-\gamma^j = -i\epsilon_j \hspace{1mm}| \hspace{1mm}\epsilon_y,
+\end{equation}
+
+\noindent sends $\gamma^5 \mapsto -\gamma^5$, so that left- and right-handed Weyl spinors are swapped under this transformation, as we would expect.
+
+\medskip
+
+In summary, we have shown that the parity conjugate of the  $\C\otimes Cl(1,3) \simeq \left(\CH\right)\otimes_{\C}\left(\CH\right)$ algebra may be used to induce a parity conjugate on our  generalized ideals in $\CH$.   
+
+Note that we have also demonstrated a way to write down four-vectors, and the field strength tensor, in the Dirac algebra formalism, which makes use of the generalized ideals found in Sections~\ref{mh} and \ref{mq}.  Namely, 
+
+\begin{equation}\hat{p}\hspace{1mm} \Psi_{\textup{D}} =  \gamma^0\hspace{1mm} m_c(p^*, \Psi_{\textup{D}}), \hspace{1cm} \hat{F}\hspace{1mm}\Psi_{\textup{D}} = m_c(-F^*, \Psi_{\textup{D}}).
+\end{equation}
+
+
+
+
+
+
+\chapter{Standard model of particle physics\label{SM}  }

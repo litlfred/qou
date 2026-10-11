@@ -7,10 +7,10 @@ section_number: null
 pages: 3-6
 source_pdf: 0611181v2.pdf
 source_sha256: 6931e3ebca584de9
-text_source: latex
-latex_prose_ratio: 0.988
-latex_coverage_ratio: 0.983
 doc_brief: "Proof of the volume conjecture for Whitehead chains — We prove the volume conjecture for an inﬁnite family of links called White- head chains that generalizes both the Whitehead link and the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 In this section we give an overview of the proof of the main theorem, postponing the proofs of the more technical lemmas to the next section.
 
@@ -50,10 +50,8 @@ Let us choose a fixed number $\delta \in (\frac{1}{2},\frac{c+d+5}{2(c+d+4)})$ o
 |k-\left\lfloor\frac{N}{4}\right\rfloor|$ to be the distances from the maximum. The next lemma shows how we can estimate the other values of $S_{n,k}$.
 
 ::: lem
-Using the above definitions of $n',k'$ and $\delta$ we have:\
-$\mathrm{a)}$ If $n'+k' < N^\delta$ then $S_{n,k}\tilde{S}_N^{-1} = \exp(-\frac{\pi}{N}(n'^2+2n'k'+2k'^2))
-+ \mathcal{O}(N^{3\delta - 2})$, as $N \to \infty$.\
-$\mathrm{b)}$ There are $C,\epsilon >
+Using the above definitions of $n',k'$ and $\delta$ we have:$\mathrm{a)}$ If $n'+k' < N^\delta$ then $S_{n,k}\tilde{S}_N^{-1} = \exp(-\frac{\pi}{N}(n'^2+2n'k'+2k'^2))
++ \mathcal{O}(N^{3\delta - 2})$, as $N \to \infty$. $\mathrm{b)}$ There are $C,\epsilon >
 0$ such that if $n'+k' \geq N^\delta$ then $S_{n,k}\tilde{S}_N^{-1} < C \exp(-\epsilon N^{2\delta - 1})$
 :::
 
@@ -80,8 +78,7 @@ For $b\geq 2$ and $N$ odd we have: $J_{N,a,b,c,d}\sim$ $$\exp\left(-(c+d)\log\sq
 Postponing the proofs of these lemmas to the next subsection we can now prove the main theorem.
 
 ::: proof
-*Proof.* (of the main theorem)\
-Using an explicit decomposition of the complement into ideal octahedra it can be shown that $\mathrm{Vol}(W_{a,b,c,d}) =
+*Proof.* (of the main theorem) Using an explicit decomposition of the complement into ideal octahedra it can be shown that $\mathrm{Vol}(W_{a,b,c,d}) =
 8(c+d)\Lambda(\frac{\pi}{4})$, see [@van; @der; @Veen]. Let us first suppose that $b = 1$. According to lemma 4 there is a constant $C'$ such that we have: $$J_{N,a,1,c,d}\sim
 \exp\left(\log(\tilde{S}_N^{c+d})+\frac{c+d+3}{2}\log(N)+Ni\frac{\mathrm{CS}}{2\pi}+
 C' \right)$$ Using lemma 3 we get: $$\sim \exp\frac{1}{2\pi}\left((\mathrm{Vol}(W_{a,1,c,d})+i\mathrm{CS})N + 3\pi\log(N)+ E\right),\  N\to\infty$$ The case $b \geq 2$ follows in the same way by combining lemma 3 and lemma 5. ◻

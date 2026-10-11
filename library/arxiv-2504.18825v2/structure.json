@@ -192,7 +192,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
-   "tex_sections": 8,
+   "tex_sections": 26,
    "overlaid": 7,
    "thresholds": {
     "title": 0.85,
@@ -251,8 +251,8 @@
     {
      "id": "sec-008-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.982,
-     "coverage_ratio": 0.991,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -260,15 +260,15 @@
      "id": "sec-009-preliminaries",
      "title": "Preliminaries",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.982,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-010-murnaghan-nakayama-rule-for-the-cyclotomic-hecke",
      "title": "Murnaghan\u2013Nakayama rule for the cyclotomic Hecke algebra",
-     "prose_ratio": 0.949,
-     "coverage_ratio": 0.968,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -276,31 +276,31 @@
      "id": "sec-011-special-cases-of-the-murnaghan-nakayama-rule",
      "title": "Special cases of the Murnaghan\u2013Nakayama rule",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.967,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-012-a-dual-murnaghan-nakayama-rule-via-vertex-operat",
      "title": "A dual Murnaghan\u2013Nakayama rule via vertex operators",
-     "prose_ratio": 0.966,
-     "coverage_ratio": 0.971,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-013-application-i-regev-type-formula",
      "title": "Application I: Regev-type formula",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 0.978,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-014-application-ii-lu-beck-prasad-adin-roichman-type",
      "title": "Application II: Lu\u0308beck\u2013Prasad\u2013Adin\u2013Roichman-type formula",
-     "prose_ratio": 0.913,
-     "coverage_ratio": 0.985,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

@@ -7,10 +7,10 @@ section_number: 4
 pages: 15-23
 source_pdf: 2104.04941v2.pdf
 source_sha256: 84426ed37754aa78
-text_source: latex
-latex_prose_ratio: 0.901
-latex_coverage_ratio: 0.983
 doc_brief: "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES — Fock and Goncharov [FG06b] introduced cluster ensembles, p roviding a framework for coordi- nates on varieties of surface"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.945
 ---
 \label{sec:reps-from-conf3star}
 
@@ -26,7 +26,8 @@ doc_brief: "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES —
   fixed ideal triangulations. We follow \cite{fockgoncharov2006} for the
   surface case and \cite{zickert2016} for the $3$-manifold case.
 
-  \subsection{Configurations and gluings}
+  
+\subsection{Configurations and gluings}
 
   \label{sec:configurations-and-gluings}
 
@@ -163,7 +164,8 @@ doc_brief: "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES —
     and \cite[Section~2.3]{zickert2016} for more details.
   \end{remark}
 
-  \subsection{Triangular quivers and Fock--Goncharov coordinate
+  
+\subsection{Triangular quivers and Fock--Goncharov coordinate
     structures}
 
   We want a variety that is independent of the choice of triangulation.
@@ -454,7 +456,8 @@ doc_brief: "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES —
   quickly as described in \cref{sec:products}. The construction for
   \cref{thm:fgcs-exists} is given in \cref{sec:main-result}.
 
-  \subsection{From coordinates to representations}
+  
+\subsection{From coordinates to representations}
 
   \label{sec:coords-to-representations}
 
@@ -668,44 +671,3 @@ doc_brief: "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES —
   These moduli spaces have further interpretations and properties,
   explored in \cite{fockgoncharov2006}, \cite{fockgoncharov2006_2},
   \cite{fockgoncharov2009}, \cite{goncharovshen2018}, etc.
-
-  \subsection{Regarding \texorpdfstring{$3$}{3}-manifolds}
-
-  The process described can be applied to $3$-manifolds as well as
-  surfaces. We omit all details. An element of $\Conf_4^{\ast}(G/K)$ is
-  attached to each tetrahedron, and the coordinates for these flag
-  varieties are encoded on a quiver for each face of the tetrahedron.
-
-  As in \cref{def:gluing-configurations}, only two copies of
-  $\Conf_3^{\ast}(G/K)$ are necessary to define an element in
-  $\Conf_4^{\ast}(G/K)$, so any two copies of $Q$ should determine all
-  the coordinates of the tetrahedron. Therefore, the coordinates on any
-  pair of faces determine the coordinates on the other pair. This
-  relation is given by the mutation $\muflip$.
-
-  Finally, as coordinates are identified along glued edges in the
-  surface case, in the $3$-manifold case they are glued along faces, as
-  in \cref{fig:tetrahedra-with-quivers}. When reconstructing $\rho$, the
-  path $\gamma$ is homotoped as before and the same elements on each
-  segment are used.
-
-  \begin{figure}[h]
-    \centering
-    \includestandalone[mode=image|tex]{fig/tetrahedra-with-quivers}
-
-    \caption{Two tetrahedra with a face identification. The quivers
-      $Q_{C_2}$ on the front two faces of each tetrahedron are shown.
-      \label{fig:tetrahedra-with-quivers}
-    }
-  \end{figure}
-
-  The $\mathcal{A}$-coordinate variety constructed this way is called
-  the \defined{Ptolemy variety}, see \cite{ggz2015}, \cite{gtz2015},
-  \cite{zickert2016} for details. The variety constructed by the
-  $\mathcal{X}$-coordinates will be the analogue of the \defined{shape
-    coordinates} of \cite{ggz2015}, and the defining equations will
-  generalize Thurston's gluing equations.
-
-  Defining varieties by quivers in this fashion allows efficient
-  computation, and databases have been constructed of Ptolemy varieties
-  for large numbers of triangulations, See \cite{unhyperbolic}.

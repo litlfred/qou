@@ -7,10 +7,10 @@ section_number: null
 pages: 1-3
 source_pdf: 2402.01890v4.pdf
 source_sha256: e1eeb2865f0b53e1
-text_source: latex
-latex_prose_ratio: 0.782
-latex_coverage_ratio: 0.896
 doc_brief: "On the spherical partition algebra — For k ∈ N we introduce an idempotent subalgebra, the spherical partition algebra SP k, of the partition algebra Pk, that we define using an embedding associated"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 The {\it partition algebra} $ \ParAlg  $ arose around thirty years ago 
 in the second named author's work on the Potts model in statistical mechanics, 
@@ -253,7 +253,8 @@ numbers for $ \SpheAlg(t)$ and finally, in section \ref{tilting}, we obtain the 
 of the indecomposable projective modules and tilting modules. 
   
 
-\subsection*{{\color{black}{Acknowledgements}}}
+
+\subsection{{\color{black}{Acknowledgements}}}
 The authors would like to express their gratitude to Stephen Griffeth and Luc Lapointe for 
 insightful comments on the results of the paper. They are especially grateful to Alexander Wilson for
 pointing out the connection to the multiset partition algebra and for mentioning the references

@@ -8,35 +8,24 @@ pages: 33-34
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
 doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
+text_source: latex
+latex_prose_ratio: 0.983
+latex_coverage_ratio: 0.983
 ---
-With a little relabelling, it becomes obvious that these minimal left ideals naturally exhibit
-Fock space structure. Taking α1 = ϵ↓↑, it then follows that α†
-1 = ϵ↑↓, which have the
-anticommutation relations,
-25
-{α1,α 1} ={α†
-1,α†
-1} = 0 {α1,α†
-1} = 1. (4.6)
-Deﬁning the (formal) vacuum states to be v≡ ΩΩ† and v∗≡ Ω†Ω for Ψ R and ΨL, respec-
-tively, we have
-ΨR =ψ↑
-Rϵ↑↓ +ψ↓
-Rϵ↓↓ =ψ↑
-R α†
-1v +ψ↓
-R v (4.7)
-ΨL =ψ↑
-Lϵ↑↑ +ψ↓
-Lϵ↓↑ =ψ↑
-L v∗ +ψ↓
-L α1v∗. (4.8)
-That is, α†
-1 acts as a raising operator from the vacuum v within Ψ R, and α∗†
-1 =−α1 acts
-as a raising operator from the vacuum v∗ within ΨL. It should be clear to the reader that
-v and v∗ represent vacua only in an algebraic sense, and are not meant to represent the
-zero-particle state.
-Such Fock space structure will reappear in other constructions, for example, when we
-build minimal left ideals from the algebra C⊗ O. Moreover, it comes up again in the work
-of L´ aszl´ o, [49].
+With a little relabelling, it becomes obvious that these minimal left ideals naturally exhibit Fock space structure.  Taking $\alpha_1 = \epsilon_{\downarrow\uparrow}$, it then follows that $\alpha_1^{\dagger} = \epsilon_{\uparrow\downarrow}$, which have the anticommutation relations,
+
+\begin{equation}\begin{array}{lll} \{\alpha_1, \alpha_1\} =  \{\alpha_1^{\dagger}, \alpha_1^{\dagger}\} = 0 & \hspace{1cm} &  \{\alpha_1, \alpha_1^{\dagger}\} = 1.
+\end{array}\end{equation}
+
+\noindent Defining the (formal) vacuum states to be $v\equiv \Omega\Omega^{\dagger}$ and $v^{*}\equiv \Omega^{\dagger}\Omega$ for $\Psi_{\textup{R}}$ and $\Psi_{\textup{L}}$, respectively, we have
+
+\begin{equation}  \Psi_{\textup{R}}  =  \psi^{\uparrow}_{\textup{R}} \hspace{1mm} \epsilon_{\uparrow \downarrow} +  \psi^{\downarrow}_{\textup{R}} \hspace{1mm} \epsilon_{\downarrow \downarrow} =   \psi^{\uparrow}_{\textup{R}} \hspace{1.5mm} \alpha_1^{\dagger}v +  \psi^{\downarrow}_{\textup{R}} \hspace{1.5mm} v
+\end{equation}
+
+\begin{equation}   \Psi_{\textup{L}} = \psi^{\uparrow}_{\textup{L}} \hspace{1mm} \epsilon_{\uparrow \uparrow} +  \psi^{\downarrow}_{\textup{L}} \hspace{1mm} \epsilon_{\downarrow \uparrow} = \psi^{\uparrow}_{\textup{L}} \hspace{1.5mm} v^* +  \psi^{\downarrow}_{\textup{L}} \hspace{1.5mm} \alpha_1v^*.
+\end{equation}
+
+
+\noindent That is, $\alpha_1^{\dagger}$ acts as a raising operator from the vacuum $v$ within $\Psi_{\textup{R}}$, and $\alpha_1^{*\dagger} = -\alpha_1$ acts as a raising operator from the vacuum $v^*$ within $\Psi_{\textup{L}}$.  It should be clear to the reader that $v$ and $v^*$ represent vacua only in an algebraic sense, and are not meant to represent the zero-particle state.
+
+Such Fock space structure will reappear in other constructions, for example, when we build minimal left ideals from the algebra $\CO$.  Moreover, it comes up again in the work of L\'{a}szl\'{o}, \cite{andras}.

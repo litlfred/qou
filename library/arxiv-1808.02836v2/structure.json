@@ -426,8 +426,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "00_main.tex",
-   "tex_sections": 5,
-   "overlaid": 1,
+   "tex_sections": 23,
+   "overlaid": 18,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -437,28 +437,40 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.2,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.987,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-001-11-minimal-ideal-triangulations-via-geometry",
      "title": "Minimal ideal triangulations via geometry",
-     "result": "no matching \\section"
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-12-minimal-ideal-triangulations-via-topology",
      "title": "Minimal ideal triangulations via topology",
-     "result": "no matching \\section"
+     "prose_ratio": 0.716,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-23-ideal-triangulations",
      "title": "Ideal triangulations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.186,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-004-13-other-classes-of-hyperbolic-3manifolds",
      "title": "Other classes of hyperbolic 3\u2013manifolds",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-2-the-anatomy-of-a-minimal-ideal-triangulation",
@@ -469,87 +481,128 @@
     {
      "id": "sec-006-21-triangulations-and-pseudo-manifolds",
      "title": "Triangulations and pseudo-manifolds",
-     "result": "no matching \\section"
+     "prose_ratio": 0.971,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-22-edge-paths-and-edge-loops",
      "title": "Edge paths and edge loops",
-     "result": "no matching \\section"
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.347,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-008-24-layered-solid-tori",
      "title": "Layered solid tori",
-     "result": "no matching \\section"
+     "prose_ratio": 0.963,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-25-properties-of-minimal-triangulations",
      "title": "Properties of minimal triangulations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.972,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-26-faces-in-minimal-ideal-triangulations-of-cusp",
      "title": "Faces in minimal ideal triangulations of cusped hyperbolic 3\u2013manifolds",
-     "result": "no matching \\section"
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-27-low-degree-edges-in-minimal-ideal-triangulati",
      "title": "Low degree edges in minimal ideal triangulations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-28-layered-punctured-solid-tori-in-ideal-triangu",
      "title": "Layered punctured solid tori in ideal triangulations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-3-normal-surfaces-representing-z2homology-classe",
      "title": "Normal surfaces representing Z2\u2013homology classes",
-     "prose_ratio": 0.339,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.949,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-014-31-rank-1-colouring-of-edges-and-the-canonical-s",
      "title": "Rank-1 colouring of edges and the canonical surface",
-     "result": "no matching \\section"
+     "prose_ratio": 0.928,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-015-32-rank-2-colouring-of-edges",
      "title": "Rank-2 colouring of edges",
-     "result": "no matching \\section"
+     "prose_ratio": 0.9,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-016-33-combinatorial-bounds-for-triangulations",
      "title": "Combinatorial bounds for triangulations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-017-4-quadrilateral-surfaces-and-minimal-ideal-trian",
      "title": "Quadrilateral surfaces and minimal ideal triangulations",
-     "prose_ratio": 0.977,
-     "coverage_ratio": 0.975,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-018-5-the-monodromy-ideal-triangulations-of-once-pun",
      "title": "The monodromy ideal triangulations of once-punctured torus bundles",
-     "prose_ratio": 0.351,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.949,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-019-52-reduction-using-coverings",
      "title": "Reduction using coverings",
-     "result": "no matching \\section"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-020-53-closed-one-sided-incompressible-surfaces",
      "title": "Closed one-sided incompressible surfaces",
-     "result": "no matching \\section"
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-021-54-further-examples",
      "title": "Further examples",
-     "result": "no matching \\section"
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.177,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     }
    ]
   }

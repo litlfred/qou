@@ -7,10 +7,10 @@ section_number: 5.3
 pages: 105-110
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
+doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.963
-doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
+latex_coverage_ratio: 1.0
 ---
 The Fisher-Yates algorithm is a method of obtaining a uniform random permutation from a finite set. The algorithm was first introduced by Fisher and Yates in [@FisherYates]. Their original introduction of the algorithm was as a \"paper and pencil\" type algorithm for generating a random permutation of $n$ numbers by hand. The algorithm was first presented as a computer algorithm by Durstenfeld [@Durstenfeld] and became more widely known in a work by Knuth [@Knuth].
 
@@ -47,15 +47,16 @@ We end up with $L=(1,3,4,2)$ as our random permutation. A Python code for perfor
 As mentioned, this algorithm shuffles the numbers $(1,\dots,n)$ uniformly, so that each permutation is equally likely. Since we are trying to simulate a Mallows random permutation, we have adapted this algorithm to return a permutation distributed according to the Mallows measure.
 
 ::: fy2
-**Fisher Yates Algorithm for a Mallows Permutation 1**. * \*
+**Fisher Yates Algorithm for a Mallows Permutation 1**. * \
+*
 
-For a permutation of length $n$, with Mallows parameter $q$, we have the following algorithm to generate a Mallows distributed random permutation.\
+**For a permutation of length $n$, with Mallows parameter $q$, we have the following algorithm to generate a Mallows distributed random permutation.\
 \
 1) Begin with $i=1$ and $L=(1)$.\
 2) Let $m=i+1$ and let $k$ be a random integer distributed according to a geometric distribution with probability $p=1-q$.\
 3) Let $j=1+((k-1)\%m)$, where by $\%m$, we mean modulo $m$.\
 4) If $j=1$, append $m$ to the end of the list $L$. Otherwise, insert $m$ into $L$ at position $m+1-j$.\
-5) Increment $i$ by $1$. If $i<n$, go back to step 2. Otherwise, the algorithm terminates.
+5) Increment $i$ by $1$. If $i<n$, go back to step 2. Otherwise, the algorithm terminates.**
 :::
 
 We will not go through an example here, as this algorithm runs very similarly to the uniform Fisher Yates algorithm. Since it may not be obvious, we will prove why this modified algorithm generates a random permutation distributed according to the Mallows measure.

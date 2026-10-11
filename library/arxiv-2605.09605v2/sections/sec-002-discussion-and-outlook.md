@@ -7,10 +7,10 @@ section_number: null
 pages: 11-12
 source_pdf: 2605.09605v2.pdf
 source_sha256: 24496fb444a2b558
-text_source: latex
-latex_prose_ratio: 0.957
-latex_coverage_ratio: 0.978
 doc_brief: "Cocycle Actions on Hidden Quantum Markov Models: — We develop a symmetry action framework for hidden quantum Markov models (HQMMs) tailored to one-dimensional quantum spin systems and"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.99
 ---
 []{#Sect_Discussion label="Sect_Discussion"}
 

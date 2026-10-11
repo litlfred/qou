@@ -7,16 +7,17 @@ section_number: 2.3
 pages: 72-76
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.979
-latex_coverage_ratio: 0.881
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{isometry:2:3:section}
 With the hyperboloid model the isometry group $\Iso(\matH^n)$ is the matrix group $O^+(n,1)$. We now see that in dimensions $n=2$ and $3$ the group $\Iso^+(\matH^n)$ is also isomorphic to some familiar groups of $2\times 2$ matrices. 
 
 We start with a concise tour on M\"obius transformations. 
 \index{M\"obius transformation and anti-transformation}
+
 
 \subsection{M\"obius transformations}
 Let the \emph{Riemann sphere} be $S=\matC \cup \{\infty\}$, homeomorphic to $S^2$. Consider the group
@@ -41,6 +42,7 @@ By conjugating with translations $z\mapsto z+b$ and complex dilations $z \mapsto
 
 By composing line reflections we get all translations and rotations, and by composing circle inversions we get all dilations. With these operations and the inversion $z\mapsto \frac 1 {\bar z}$ one can easily act transitively on triples of points. They generate $\Conf(S)$ by Exercise \ref{Mobius:freely:ex}.
 \end{proof}
+
 
 \subsection{M\"obius transformations of $H^2$}
 We consider the half-plane $H^2\subset \matC$ as $H^2 = \{z\ |\ \Im z >0\}$ and denote by $\Conf(H^2)$ the subgroup of $\Conf(S)$ consisting of all maps that preserve $H^2$.
@@ -86,6 +88,7 @@ z \mapsto \frac{\bar z+i}{i\bar z+1}.
 \end{equation*}
 \end{ex}
 
+
 \subsection{Isometries of $H^2$}
 After this short detour on M\"obius transformations, we turn back to our hyperbolic spaces. We can characterise the isometry group of $H^2$. 
 \begin{prop} \label{H2:prop}
@@ -109,6 +112,7 @@ We find
 $$\Delta = (d-a)^2 +4bc = (d+a)^2 - 4 = \tr^2 A - 4.$$
 There is a fixed point in $H^2$ if and only if $\Delta <0$; if $\Delta > 0$ we find two fixed points in $\matR\cup\{\infty\}$ and if $\Delta = 0$ only one.
 \end{proof}
+
 
 \subsection{Isometries of $H^3$}
 We have proved that $\Iso^+(H^2) = \PSLR$. Quite surprisingly, the isometry group $\Iso^+(H^3)$ is also isomorphic to a group of $2\times 2$ matrices! To prove this, we make the following identifications:

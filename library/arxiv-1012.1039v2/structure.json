@@ -216,8 +216,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 3,
-   "overlaid": 2,
+   "tex_sections": 6,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -227,37 +227,48 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.931,
-     "coverage_ratio": 0.932,
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.951,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-11-outline",
      "title": "Outline",
-     "result": "no matching \\section"
+     "prose_ratio": 0.919,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-2-simplicial-volume-and-duality",
      "title": "Simplicial volume and duality",
-     "prose_ratio": 0.053,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.909,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-21-gromov-norms",
      "title": "Gromov norms",
-     "result": "no matching \\section"
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-22-symmetrization",
      "title": "Symmetrization",
-     "result": "no matching \\section"
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-3-main-result",
      "title": "Main result",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.957,
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },

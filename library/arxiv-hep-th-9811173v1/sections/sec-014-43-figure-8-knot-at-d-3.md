@@ -8,9 +8,10 @@ pages: 10-10
 source_pdf: 9811173v1.pdf
 source_sha256: 986bf57947746523
 doc_brief: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links — We identify 998 closed hyperbolic 3-manifolds whose volumes are ratio nally related to"
+text_source: latex
+latex_prose_ratio: 0.759
+latex_coverage_ratio: 1.0
 ---
-The ﬁrst case, at D = −3, is elementary. The unique 11 arithmetic knot is the ﬁgure-8 knot
-of Fig. 3. Its volume is the ﬁrst entry of Table 19. It links Clausen valu es at 2 arctan
-√
-3
-and 2π/ 3. This relation clearly poses no analytical puzzle, since the angles ar e identical.
+The first case, at $D=-3$, is elementary. The unique[^1] arithmetic knot is the figure-8 knot of Fig. 3. Its volume is the first entry of Table 19. It links Clausen values at $2\arctan\sqrt3$ and $2\pi/3$. This relation clearly poses no analytical puzzle, since the angles are identical.
+
+[^1]: See Helaman Ferguson's sculpture at ` http://www.mtholyoke.edu/acad/math/ma/sculpture.htm`

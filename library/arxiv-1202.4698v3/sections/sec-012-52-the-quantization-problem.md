@@ -8,46 +8,80 @@ pages: 14-15
 source_pdf: 1202.4698.pdf
 source_sha256: 54171c652161ca5b
 doc_brief: "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as"
+text_source: latex
+latex_prose_ratio: 0.98
+latex_coverage_ratio: 0.981
 ---
-The quantum Teichm¨ uller theory [Fo97, Ka98, CF99, CF00] co nstructs a non-commutative
-algebra Ab deforming the Poisson-algebra of geodesic length function s on Teichm¨ uller space.
-In the so-called length representation [T03, T05] one may co nstruct natural representations of
-this algebra associated to pants decompositions of the Riemann surface under consideration.
-For the case under consideration, the aim is to construct a on e-parameter family of non-
-commutative deformations Ab of the Poisson-algebra of functions on T0,4 ≡ T (C0,4) which has
-generators Ls, Lt, Lu corresponding to the functions Lσ,σ ∈ {s,t,u }, respectively. There is
-one algebraic relation that should be satisﬁed among the three generators Ls, Lt, Lu.
-Natural representationsπσ,σ ∈ {s,t,u }, of Ab by operators on suitable spaces of functions
-ψσ(lσ) can be constructed in terms of the quantum counterparts of the Darboux variableslσ,kσ,
-now represented by the operators lσ, kσ deﬁned as
-lσψσ(lσ) := lσψσ(lσ), ksψσ(lσ) := 4πb2 1
-i
-∂
-∂ls
-ψσ(lσ). (5.6)
-The operator πσ(Lσ) acts as operator of multiplication in the representation πσ, πσ(Lσ) ≡
-2 cosh(lσ)/2. The remaining two generators of Ab are then represented as difference operators.
-Considering the representation πs, for example, we will ﬁnd that πs(Lt) can be represented in
-the form
-πs(Lt)ψs(ls) =
-[
-D+(ls)e+ks +D0(ls) +D−(ls)e−ks
-]
-ψs(ls). (5.7)
-This formula should of course reproduce (5.2) or (5.5) in theclassical limit, but due to ordering
-issues and other possible quantum corrections it is a priori far from obvious how to deﬁne the
-coefﬁcientsDǫ(ls),ǫ = −, 0, +.
-15
-Note, in particular, that the requirement that πs(Ls) acts as multiplication operator leaves a
-large freedom. A gauge transformation
-ψs(ls) = eiχ(ls)ψ′
-s(ls), (5.8)
-would lead to a representationπ′
-s of the form (5.7) with ks replaced by
-k′
-s := ks + 4πb2∂lsχ(ls). (5.9)
-This is nothing but the quantum version of a canonical transformation (ls,k s) → (ls,k s +f (ls)).
-The representationπ′
-s(Lt) may then be obtained from (5.7) by replacing Dǫ(ls) →Eǫ(ls) with
-Eǫ(ls) equal to ei(χ(ls−4ǫiπb2)−χ(ls))Dǫ(ls) for ǫ = −1, 0, 1. Fixing a particular set of Darboux
-coordinates corresponds to ﬁxing a particular choice of the coefﬁcientsDǫ(ls) in (5.7).
+The quantum Teichm\"uller theory \cite{Fo97,Ka97,CF99,CF00}
+constructs a non-commutative
+algebra $\CA_b$ 
+deforming the Poisson-algebra of geodesic length functions
+on Teichm\"uller space. In the so-called 
+length representation \cite{Teschner:2003at,T05} one may construct 
+natural representations of this algebra associated to pants 
+decompositions of the Riemann surface under consideration. 
+
+For the case under consideration, the aim is to construct a 
+one-parameter family
+of non-commutative deformations $\CA_b$ 
+of the Poisson-algebra
+of functions on $\CT_{0,4}\equiv\CT(C_{0,4})$ which has generators
+$\CL_s$, $\CL_t$, $\CL_u$ corresponding to the 
+functions 
+$L_\si$, $\si\in\{s,t,u\}$, respectively. There is one algebraic
+relation that should be satisfied
+among the three generators $\CL_s$, $\CL_t$, $\CL_u$.
+
+Natural representations $\pi_\si$, $\si\in\{s,t,u\}$, 
+of $\CA_b$ by operators on suitable spaces of functions 
+$\psi_\si(l_\si)$ can be constructed in terms of the quantum counterparts of
+the Darboux variables $l_\si$, $k_\si$, now represented by the
+operators
+$\sll_\si$, $\sk_\si$ defined as
+\begin{equation}
+\sll_\si\,\psi_\si(l_\si):=\,l_\si\,
+\psi_\si(l_\si)\,,\qquad 
+\sk_s\,\psi_\si(l_\si):=4\pi b^2
+\frac{1}{\textup{i}}\frac{\pa}{\pa l_s}\psi_\si(l_\si)\,.
+\end{equation}
+The operator $\pi_\si(\CL_\si)$ acts as 
+operator of multiplication in the representation $\pi_\si$,
+
+$\pi_\si(\CL_\si)\equiv 2\cosh(\sll_\si)/2$.
+
+The remaining two generators of $\CA_b$ are then represented 
+as difference operators. Considering the representation
+$\pi_s$, for example, we will find that $\pi_s(\CL_t)$
+can be represented in the form
+\begin{equation}\label{Diffop}
+\pi_s(\CL_t)\psi_s(l_s)\,=\,\big[ 
+D_+(l_s)e^{+\sk_s}+D_0(l_s)+D_-(l_s)e^{-\sk_s}\big]\psi_s(l_s)\,.
+\end{equation}
+This formula should of course reproduce \rf{FN-FK} or \rf{FN-FK'}  
+in the classical 
+limit, but due to ordering issues and other
+possible quantum corrections it is a priori far from obvious how 
+to define the coefficients $D_\ep(l_s)$, $\ep=-,0,+$. 
+
+Note, in particular, that the 
+requirement that $\pi_s(\CL_s)$ acts as multiplication 
+operator leaves a large freedom. 
+A gauge transformation 
+\begin{equation}\label{gauge}
+\psi_s(l_s)\,=\,e^{\textup{i}\chi(l_s)}\psi_s'(l_s)\,,
+\end{equation}
+would lead to a representation $\pi_s'$ of the form \rf{Diffop}
+with $\sk_s$ replaced by
+\begin{equation}\label{q-can}
+\sk'_s:=\,\sk_s+4\pi b^2\,\pa_{l_s}\chi(l_s)\,.
+\end{equation}
+This is nothing but the quantum version of a
+canonical transformation $(l_s,k_s)\ra (l_s,k_s+f(l_s))$. 
+The representation 
+$\pi_s'(\CL_t)$ may then be obtained from \rf{Diffop}
+by replacing 
+$D_\ep(l_s)\ra E_\ep(l_s)$ with 
+$E_\ep(l_s)$ equal to $e^{\textup{i}(\chi(l_s-4\ep \textup{i} \pi b^2)-\chi(l_s))}
+D_\ep(l_s)$ for $\ep=-1,0,1$. Fixing a particular set of Darboux coordinates
+corresponds to fixing a particular choice of the
+coefficients $D_\ep(l_s)$ in \rf{Diffop}.

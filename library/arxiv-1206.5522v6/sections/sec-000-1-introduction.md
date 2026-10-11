@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-6
 source_pdf: 1206.5522v6.pdf
 source_sha256: 6e992242435b5e9f
-text_source: latex
-latex_prose_ratio: 0.981
-latex_coverage_ratio: 0.94
 doc_brief: "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS — Factorization homology theories of topological manifolds , after Beilinson, Drinfeld and Lurie, are homology-type theories for topological"
+text_source: latex
+latex_prose_ratio: 0.997
+latex_coverage_ratio: 0.987
 ---
 Factorization homology takes an algebraic input, either an $n$-disk algebra or more generally a stack over $n$-disk algebras, and outputs a homology-type theory for $n$-dimensional manifolds. In the case where the input coefficients are an $n$-disk algebra, this factorization homology -- the topological chiral homology introduced by Lurie [@dag] -- satisfies an analogue of the axioms of Eilenberg and Steenrod. This work proves this statement and some consequences afforded by this point of view.
 
@@ -24,9 +24,9 @@ One might address this question by first making it more precise, by defining exa
 
 Reformulating the Eilenberg--Steenrod axioms slightly, one can think of an ordinary homology theory $\mathcal F$ as a functor $\mathop{\mathrm{\sf Spaces}}^{\sf fin}\rightarrow{\sf Ch}$ from the topological category of spaces homotopy equivalent to finite CW complexes to the topological category of projective chain complexes[^1] satisfying two conditions:
 
-- The canonical morphism $\bigoplus_J \mathcal F(X_\alpha) \rightarrow\mathcal F(\coprod_J X_\alpha)$ is an equivalence for any finite set $J$;
+-   The canonical morphism $\bigoplus_J \mathcal F(X_\alpha) \rightarrow\mathcal F(\coprod_J X_\alpha)$ is an equivalence for any finite set $J$;
 
-- Excision: for any diagram of cofibrations of spaces $X' \hookleftarrow X \hookrightarrow X''$, the resulting map of chain complexes $$\mathcal F(X')\underset{\mathcal F(X)} \oplus\mathcal F(X'') \longrightarrow \mathcal F\Bigl(X'\underset{X}\sqcup X''\Bigr)$$ is a quasi-isomorphism.
+-   Excision: for any diagram of cofibrations of spaces $X' \hookleftarrow X \hookrightarrow X''$, the resulting map of chain complexes $$\mathcal F(X')\underset{\mathcal F(X)} \oplus\mathcal F(X'') \longrightarrow \mathcal F\Bigl(X'\underset{X}\sqcup X''\Bigr)$$ is a quasi-isomorphism.
 
 The first condition can be restated as saying that the functor $\mathcal F$ is symmetric monoidal with respect to the disjoint union and direct sum. Let $\mathbf H(\mathop{\mathrm{\mathsf{Spaces}}}, {\sf Ch}^\oplus)$ stand for the collection of such functors. The Eilenberg--Steenrod axioms for ordinary homology can then be reformulated as follows.
 
@@ -66,7 +66,7 @@ Factorization homology and related ideas have recently become the subject of clo
 
 It is a compelling general question as to how much of manifold topology can be captured by factorization homology; this question is closely related to the Goodwillie--Weiss manifold calculus [@weiss]. Factorization homology of $M$ is determined by an object $\mathbb E_M$, the presheaf of spaces on $n$-disks determined by embeddings into $M$, which is an *a priori* weaker invariant of $M$ than $M$ itself. $\mathbb E_M$ encodes the homotopy type of $M$, the homotopy type of all higher configuration spaces ${\mathop{\mathrm{\mathsf{Conf}}}}_j(M)$ of $M$, and the tangent bundles $T\mathop{\mathrm{\mathsf{Conf}}}_i(M)$, as well as coherence data relating these, and it would be very interesting to know when this is sufficient to reconstruct $M$.
 
-### **Implementation of $\infty$-categories** {#implementation-of-infty-categories .unnumbered}
+### **Implementation of $\infty$-categories**
 
 In this work, we use Joyal's *quasi-category* model of $\mathop{\mathrm{\infty}}$-category theory [@joyal]. Boardman and Vogt first introduced these simplicial sets in [@bv], as weak Kan complexes, and their and Joyal's theory has been developed in great depth by Lurie in [@topos] and [@dag], our primary references; see the first chapter of [@topos] for an introduction. We use this model, rather than model categories or simplicial categories, because of the great technical advantages for constructions involving categories of functors, which are ubiquitous in this work.
 
@@ -76,27 +76,27 @@ We will also make use of topological categories, such as $\mathop{\mathrm{{\math
 
 The reader uncomfortable with this language can substitute the words "topological category\" for "$\mathop{\mathrm{\infty}}$-category\" wherever they occur in this paper to obtain the correct sense of the results, but they should then bear in mind the proviso that technical difficulties may then abound in making the statements literally true. The reader only concerned with algebras in chain complexes, rather than spectra, can likewise substitute "pre-triangulated differential graded category\" for "stable $\mathop{\mathrm{\infty}}$-category\" wherever those words appear, with the same proviso.
 
-### **Notation** {#notation .unnumbered}
+### **Notation**
 
-- $\mathop{\mathrm{\mathsf{Spaces}}}$ is the $\infty$-category of spaces. This $\infty$-category has numerous constructions and characterizations: as the ${\sf Kan}$-enriched category of Kan complexes; as the free small colimit completion of the terminal $\infty$-category $\ast$; and as $\infty$-groupoids.
+-   $\mathop{\mathrm{\mathsf{Spaces}}}$ is the $\infty$-category of spaces. This $\infty$-category has numerous constructions and characterizations: as the ${\sf Kan}$-enriched category of Kan complexes; as the free small colimit completion of the terminal $\infty$-category $\ast$; and as $\infty$-groupoids.
 
-- $\mathop{\mathrm{{\sf Disk}}}_n$ and $\mathop{\mathrm{\mathsf{Mfld}}}_n$ are ordinary categories of manifolds with embeddings; $\mathop{\mathrm{{\mathcal D}\sf isk}}_n$ and $\mathop{\mathrm{{\mathcal M}\mathsf{fld}}}_n$ are topological categories of manifolds with embeddings, where the spaces of embeddings carry the compact-open topology. See Definition [\[def.ddisk\]](#def.ddisk){reference-type="ref" reference="def.ddisk"} versus Definition [\[manifold\]](#manifold){reference-type="ref" reference="manifold"}.
+-   $\mathop{\mathrm{{\sf Disk}}}_n$ and $\mathop{\mathrm{\mathsf{Mfld}}}_n$ are ordinary categories of manifolds with embeddings; $\mathop{\mathrm{{\mathcal D}\sf isk}}_n$ and $\mathop{\mathrm{{\mathcal M}\mathsf{fld}}}_n$ are topological categories of manifolds with embeddings, where the spaces of embeddings carry the compact-open topology. See Definition [\[def.ddisk\]](#def.ddisk){reference-type="ref" reference="def.ddisk"} versus Definition [\[manifold\]](#manifold){reference-type="ref" reference="manifold"}.
 
-- $\mathop{\mathrm{\mathsf{Top}}}(n)$ is the topological group of homeomorphisms of $\mathbb R^n$, endowed with the compact-open topology.
+-   $\mathop{\mathrm{\mathsf{Top}}}(n)$ is the topological group of homeomorphisms of $\mathbb R^n$, endowed with the compact-open topology.
 
-- After Definition [\[bmanifold\]](#bmanifold){reference-type="ref" reference="bmanifold"}, we fix a space $B$ with a map $B\rightarrow\mathop{\mathrm{\sf BTop}}(n)$ and consider $B$-framed $n$-manifolds. Any occurrence of $B$ thereafter refers to this choice.
+-   After Definition [\[bmanifold\]](#bmanifold){reference-type="ref" reference="bmanifold"}, we fix a space $B$ with a map $B\rightarrow\mathop{\mathrm{\sf BTop}}(n)$ and consider $B$-framed $n$-manifolds. Any occurrence of $B$ thereafter refers to this choice.
 
-- We use $\mathop{\mathrm{\sf colim}}$ and $\mathop{\mathrm{\sf lim}}$ to denote colimits and limits in $\mathop{\mathrm{\infty}}$-categories, which correspond to *homotopy* colimits and limits in topological categories or model categories. (In the one or two places where we use a point-set colimit, we employ unmistakeably jarring notation to distinguish the two.)
+-   We use $\mathop{\mathrm{\sf colim}}$ and $\mathop{\mathrm{\sf lim}}$ to denote colimits and limits in $\mathop{\mathrm{\infty}}$-categories, which correspond to *homotopy* colimits and limits in topological categories or model categories. (In the one or two places where we use a point-set colimit, we employ unmistakeably jarring notation to distinguish the two.)
 
-- For $k$ a ring we use the notation ${\sf Mod}_k$ for the $\infty$-category of $k$-modules. This is an $\infty$-category associated to the differential graded category of chain complexes over $k$. (See §1.3 of [@dag] for a thorough account.) We will sometimes use the notation ${\sf Ch}_k$ for this $\infty$-category, and should $k$ be the integers we drop it from the subscript.
+-   For $k$ a ring we use the notation ${\sf Mod}_k$ for the $\infty$-category of $k$-modules. This is an $\infty$-category associated to the differential graded category of chain complexes over $k$. (See §1.3 of [@dag] for a thorough account.) We will sometimes use the notation ${\sf Ch}_k$ for this $\infty$-category, and should $k$ be the integers we drop it from the subscript.
 
-- $\mathcal E_n$ will stand for the topological operad of little $n$-cubes, as defined in [@bv].
+-   $\mathcal E_n$ will stand for the topological operad of little $n$-cubes, as defined in [@bv].
 
-- $\mathsf C_\ast(X)$ is the singular chains on a topological space $X$.
+-   $\mathsf C_\ast(X)$ is the singular chains on a topological space $X$.
 
-- ${\sf Sym}(V)$ is the free commutative algebra on an object $V$ of a symmetric monoidal $\infty$-category. In a symmetric monoidal $\mathop{\mathrm{\infty}}$-category, commutative algebras are equivalent to $\mathcal E_{\mathop{\mathrm{\infty}}}$-algebras, so ${\sf Sym}(V)$ is also the free $\mathcal E_{\mathop{\mathrm{\infty}}}$-algebra on $V$.
+-   ${\sf Sym}(V)$ is the free commutative algebra on an object $V$ of a symmetric monoidal $\infty$-category. In a symmetric monoidal $\mathop{\mathrm{\infty}}$-category, commutative algebras are equivalent to $\mathcal E_{\mathop{\mathrm{\infty}}}$-algebras, so ${\sf Sym}(V)$ is also the free $\mathcal E_{\mathop{\mathrm{\infty}}}$-algebra on $V$.
 
-- For $X\in \mathcal X$ an object of an $\infty$-category, we notate $\mathcal X_{/X}$ and $\mathcal X^{X/}$ for the over- and under-$\infty$-categories. For $(A\to X)$ and $(B\to X)$ two objects of $\mathcal X_{/X}$, we may denote the space of morphisms from the first to the second as $\mathop{\mathrm{\sf Map}}_{/X}(A,B)$.
+-   For $X\in \mathcal X$ an object of an $\infty$-category, we notate $\mathcal X_{/X}$ and $\mathcal X^{X/}$ for the over- and under-$\infty$-categories. For $(A\to X)$ and $(B\to X)$ two objects of $\mathcal X_{/X}$, we may denote the space of morphisms from the first to the second as $\mathop{\mathrm{\sf Map}}_{/X}(A,B)$.
 
 ::: ack
 JF foremost thanks Kevin Costello for many conversations on this subject, which have motivated and clarified this work, from Theorem [\[homology\]](#homology){reference-type="ref" reference="homology"} to the computations of the following sections, and without which JF likely would not have pursued it. Our joint works with Hiro Lee Tanaka build and improve on many of the ideas here, and we thank him for his collaboration. JF first learned the basic idea of factorization homology in conversations with Jacob Lurie and Dennis Gaitsgory in 2007, and we have both benefitted greatly from their generosity in sharing many other insights in these intervening years. JF thanks Sasha Beilinson and Mike Hopkins for their great influence which has shaped his thoughts on this subject. We also thank Grégory Ginot and Owen Gwilliam for helpful conversations and Pranav Pandit for comments on an earlier draft of this paper. We thank Amabel Wilson and Theo Johnson--Freyd for correcting the hypotheses in the statement of Proposition [\[prop.5.3\]](#prop.5.3){reference-type="ref" reference="prop.5.3"}. Finally, we thank the anonymous referee whose careful feedback has considerably improved this article.

@@ -744,8 +744,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "NASTiA.tex",
-   "tex_sections": 4,
-   "overlaid": 2,
+   "tex_sections": 21,
+   "overlaid": 10,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -755,7 +755,7 @@
     {
      "id": "sec-000-11-abelian-stokes-theorem",
      "title": "Abelian Stokes theorem",
-     "prose_ratio": 0.004,
+     "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -766,56 +766,72 @@
     {
      "id": "sec-002-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.662,
-     "coverage_ratio": 0.974,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.336,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-003-12-historical-remarks",
      "title": "Historical remarks",
-     "result": "no matching \\section"
+     "prose_ratio": 0.276,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-004-2-non-abelian-stokes-theorem",
      "title": "Non-Abelian Stokes theorem",
-     "prose_ratio": 0.051,
+     "prose_ratio": 0.118,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-005-13-contents",
      "title": "Contents",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.313,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-006-21-operator-formalism",
      "title": "Operator formalism",
-     "result": "no matching \\section"
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-211-calculus-of-paths",
      "title": "Calculus of paths",
-     "result": "no matching \\section"
+     "prose_ratio": 0.953,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-212-ordering",
      "title": "Ordering",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-213-theorem",
      "title": "Theorem",
-     "result": "no matching \\section"
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-22-path-integral-formalism",
      "title": "Path-integral formalism",
-     "result": "no matching \\section"
+     "prose_ratio": 0.083,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-011-221-coherent-state-approach",
      "title": "Coherent-state approach",
-     "result": "no matching \\section"
+     "prose_ratio": 0.157,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-012-1-we-will-determine-a-coherent-stateholomorphic",
@@ -860,22 +876,32 @@
     {
      "id": "sec-020-222-holomorphic-approach",
      "title": "Holomorphic approach",
-     "result": "no matching \\section"
+     "prose_ratio": 0.829,
+     "coverage_ratio": 0.937,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-021-223-measure",
      "title": "Measure",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.66,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-022-23-generalizations",
      "title": "Generalizations",
-     "result": "no matching \\section"
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-023-231-t-opology",
      "title": "T opology",
-     "result": "no matching \\section"
+     "prose_ratio": 0.951,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-024-13-c1",
@@ -885,7 +911,8 @@
     {
      "id": "sec-025-232-higher-dimensional-forms",
      "title": "Higher-dimensional forms",
-     "result": "no matching \\section"
+     "prose_ratio": 0.133,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-026-2-the-forms-are-of-a-very-particular-shape-namel",
@@ -895,13 +922,16 @@
     {
      "id": "sec-027-3-applications",
      "title": "Applications",
-     "prose_ratio": 0.367,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-028-31-two-dimensional-yang-mills-theory",
      "title": "Two-dimensional Yang-Mills theory",
-     "result": "no matching \\section"
+     "prose_ratio": 0.479,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-029-2-f-af-a-if-at-a",
@@ -931,7 +961,8 @@
     {
      "id": "sec-034-32-three-dimensional-topological-quantum-\ufb01eld-th",
      "title": "Three-dimensional topological quantum \ufb01eld theory",
-     "result": "no matching \\section"
+     "prose_ratio": 0.446,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-035-3-a-a-a",
@@ -946,13 +977,16 @@
     {
      "id": "sec-037-33-other-applications",
      "title": "Other applications",
-     "result": "no matching \\section"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-038-4-summary",
      "title": "Summary",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.986,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },

@@ -6,7 +6,7 @@
   "sha256": "9a8dbc1a143f7448e02fc7a60e40955738c1a63fc2badf03771a875897d0701b",
   "bytes": 1142020,
   "pages": 21,
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -116,8 +116,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "indexplumbing.tex",
-   "tex_sections": 3,
-   "overlaid": 0,
+   "tex_sections": 14,
+   "overlaid": 1,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -127,14 +127,17 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.918,
-     "coverage_ratio": 0.477,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.913,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-001-22-analysis-on-homological-block-and-index-of-le",
      "title": "Analysis on homological block and index of lens space theory",
-     "result": "no matching \\section"
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.437,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     }
    ]
   }

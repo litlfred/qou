@@ -470,8 +470,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "qDilog.45.tex",
-   "tex_sections": 7,
-   "overlaid": 1,
+   "tex_sections": 34,
+   "overlaid": 14,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -487,88 +487,127 @@
     {
      "id": "sec-001-11-bloch-groups-and-associated-units",
      "title": "Bloch groups and associated units",
-     "result": "no matching \\section"
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.643,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-12-algebraic-k-groups-and-associated-units",
      "title": "Algebraic K-groups and associated units",
-     "result": "no matching \\section"
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-14-motivation-from-quantum-topology",
      "title": "Motivation from quantum topology",
-     "result": "no matching \\section"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-15-plan-of-the-paper",
      "title": "Plan of the paper",
-     "result": "no matching \\section"
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.942,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-24-compatibilities",
      "title": "Compatibilities",
-     "result": "no matching \\section"
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.912,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-25-the-5-term-relation",
      "title": "The 5-term relation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.918,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-26-an-eigenspace-computation",
      "title": "An eigenspace computation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.885,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-3-chern-classes-for-algebraic-k-theory",
      "title": "Chern Classes for algebraic K-theory",
-     "prose_ratio": 0.752,
-     "coverage_ratio": 0.918,
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.784,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-009-34-upgrading-from-s-units-to-units",
      "title": "Upgrading from S-units to units",
-     "result": "no matching \\section"
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.928,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-35-proof-of-theorem-15",
      "title": "Proof of Theorem 1.5",
-     "result": "no matching \\section"
+     "prose_ratio": 0.881,
+     "coverage_ratio": 0.906,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-4-reduction-to-finite-fields",
      "title": "Reduction to finite fields",
-     "prose_ratio": 0.124,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-41-local-chern-class-maps",
      "title": "Local Chern class maps",
-     "result": "no matching \\section"
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.866,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-42-the-bloch-group-of-fq",
      "title": "The Bloch group of Fq",
-     "result": "no matching \\section"
+     "prose_ratio": 0.455,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-014-51-proof-of-theorem-16",
      "title": "Proof of Theorem 1.6",
-     "result": "no matching \\section"
+     "prose_ratio": 0.642,
+     "coverage_ratio": 0.129,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-015-6-the-connecting-homomorphism-to-k-theory",
      "title": "The connecting homomorphism to K-theory",
-     "prose_ratio": 0.954,
-     "coverage_ratio": 0.258,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-016-acknowledgements",
      "title": "Acknowledgements",
-     "result": "no matching \\section"
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-017-references",

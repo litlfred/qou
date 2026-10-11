@@ -6,7 +6,7 @@
   "sha256": "5fb8b89b432401ea28d10e34d348c5cdebe43cf3ddb95c0475aaee869fa276fc",
   "bytes": 705675,
   "pages": 66,
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -1848,8 +1848,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "paper.tex",
-   "tex_sections": 16,
-   "overlaid": 0,
+   "tex_sections": 87,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1864,18 +1864,24 @@
     {
      "id": "sec-001-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.063,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.944,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-11-the-wrt-invariant-for-integral-homology-spher",
      "title": "The WRT invariant for integral homology spheres. Witten [77] intro-",
-     "result": "no matching \\section"
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.894,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-12-the-ring-\u02c6zq-of-analytic-functions-on-the-set",
      "title": "The ring \u02c6Z[q] of analytic functions on the set of roots of unity. The",
-     "result": "no matching \\section"
+     "prose_ratio": 0.328,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-004-13-a-uni\ufb01ed-wrt-invariant-jm-with-values-in-\u02c6zq",
@@ -1993,8 +1999,10 @@
     {
      "id": "sec-026-4-universal-sl2-invariant-of-bottom-tangles",
      "title": "Universal sl2 invariant of bottom tangles",
-     "prose_ratio": 0.441,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.713,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-027-42-universalsl2-invariant-of-bottom-tangles-for",
@@ -2009,7 +2017,8 @@
     {
      "id": "sec-029-43-universal-sl2-invariant-of-algebraically-spli",
      "title": "Universal sl2-invariant of algebraically-split, 0-framed bottom tan-",
-     "result": "no matching \\section"
+     "prose_ratio": 0.38,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-030-3-forpq-0-and-f\u03c81\u00b5-s-with-f-u-\u02c6i",
@@ -2065,13 +2074,16 @@
     {
      "id": "sec-040-6-knots",
      "title": "Knots",
-     "prose_ratio": 0.105,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.789,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-041-61-the-elements-pn-and-p",
      "title": "The elements Pn and P \u2032\u2032",
-     "result": "no matching \\section"
+     "prose_ratio": 0.268,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-042-62-the-reduced-jones-polynomials-of-knots-we-pro",
@@ -2111,7 +2123,7 @@
     {
      "id": "sec-049-7-remarks-on-knot-invariants",
      "title": "Remarks on knot invariants",
-     "prose_ratio": 0.144,
+     "prose_ratio": 0.225,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -2132,7 +2144,10 @@
     {
      "id": "sec-053-72-melvin-morton-expansions-and-rozanskys-ration",
      "title": "Melvin-Morton expansions and Rozansky\u2019s rationality theo rem. Rozan-",
-     "result": "no matching \\section"
+     "prose_ratio": 0.875,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-054-28-kazuo-habiro",
@@ -2142,7 +2157,7 @@
     {
      "id": "sec-055-8-algebraically-split-links",
      "title": "Algebraically-split links",
-     "prose_ratio": 0.124,
+     "prose_ratio": 0.19,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -2168,7 +2183,10 @@
     {
      "id": "sec-060-85-remarks-on-boundary-links-and-boundary-bottom",
      "title": "Remarks on boundary links and boundary bottom tangles. In this",
-     "result": "no matching \\section"
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.932,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-061-9-twists",
@@ -2231,13 +2249,16 @@
     {
      "id": "sec-072-12-some-properties-of-jm",
      "title": "Some properties of JM",
-     "prose_ratio": 0.178,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.887,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-073-122-on-determination-of-jm-by-in\ufb01nitely-many-wrt",
      "title": "On determination of JM by in\ufb01nitely many WRT invariants. In this",
-     "result": "no matching \\section"
+     "prose_ratio": 0.327,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-074-123-power-series-invariants-in-this-subsection-w",
@@ -2318,7 +2339,7 @@
     {
      "id": "sec-089-14-examples",
      "title": "Examples",
-     "prose_ratio": 0.101,
+     "prose_ratio": 0.145,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -2334,7 +2355,8 @@
     {
      "id": "sec-092-142-powers-of-the-ribbon-element-and-the-twist-e",
      "title": "Powers of the ribbon element and the twist element. Here we give",
-     "result": "no matching \\section"
+     "prose_ratio": 0.129,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-093-2-hh2",
@@ -2349,7 +2371,7 @@
     {
      "id": "sec-095-15-knots-in-integral-homology-spheres",
      "title": "Knots in integral homology spheres",
-     "prose_ratio": 0.209,
+     "prose_ratio": 0.294,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -2375,7 +2397,10 @@
     {
      "id": "sec-100-154-cyclotomic-\ufb01nite-type-invariants-of-integral",
      "title": "Cyclotomic \ufb01nite type invariants of integral homology sphe res. Kricker",
-     "result": "no matching \\section"
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-101-16-concluding-remarks",

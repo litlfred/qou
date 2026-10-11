@@ -172,7 +172,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 10,
-   "overlaid": 4,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -182,8 +182,8 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.976,
-     "coverage_ratio": 0.934,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -198,23 +198,24 @@
     {
      "id": "sec-002-3-two-q-exponential-functions",
      "title": "Two q-exponential functions",
-     "prose_ratio": 0.985,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-4-covering-transformations",
      "title": "Covering transformations",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.154,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-6-the-q-borel-laplace-transformations",
      "title": "The q-Borel-Laplace transformations",
-     "prose_ratio": 0.969,
-     "coverage_ratio": 0.626,
+     "prose_ratio": 0.604,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -222,7 +223,7 @@
      "id": "sec-005-9-the-q-borel-laplace-transformations-of-level-r",
      "title": "The q-Borel-Laplace transformations of level r-1 and its application",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.226,
+     "coverage_ratio": 0.337,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     }
    ]

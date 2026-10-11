@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-4
 source_pdf: 2404.03933v2.pdf
 source_sha256: 48aff6e97e1f1267
-text_source: latex
-latex_prose_ratio: 0.964
-latex_coverage_ratio: 0.925
 doc_brief: "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY — We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 ## 
 
@@ -26,25 +26,17 @@ The two dimensional irreducible representation of $U_q(\mathfrak{sl}_2)$ is a si
 
 The multiplicities of tilting modules over $U_q(\mathfrak{sl}_2)$ in tensor powers of $L(1)$ also give the dimensions of simple modules for the corresponding Temperley-Lieb algebras, which can be considered as endomorphism algebras of tensor powers of $L(1)$ over $U_q(\mathfrak{sl}_2)$, see e.g. [@AST], [@ILZ]. We provide a detailed derivation of the multiplicity formulas for the case of $U_q(\mathfrak{sl}_2)$ and the small quantum group $u_q(\mathfrak{sl}_2)$. In the case of the big quantum group $U_q(\mathfrak{sl}_2)$ our result agrees with the formulas obtained earlier in [@And17], where the case of $U(\mathfrak{sl}_2)$ over a field of positive characteristics and the mixed case are also considered.
 
-For $q=e^{i\frac{\pi m}{l}}$ where $l$ is odd and $m$ and $l$ are mutually prime, indecomposable tilting modules of $U_q(\mathfrak{sl}_2)$ of type ${\bf 1}$ are parametrized by integers. For such tilting modules we write $T(k)$ with $k=lk_1+k_0$, $m_1\in\mathbb{Z}_{\geq 0}$, $0\leq k_0\leq l-2$. For details see Section [\[qsl2\]](#qsl2){reference-type="ref" reference="qsl2"}. The multiplicities of $T(k)$ in the decomposition of the tensor power $T(1)^{\otimes N}$ $$T(1)^{\otimes N}= \bigoplus_{n\in\mathbb{Z}_{\geq 0}}T(n)^{\oplus M^{(l)}_n(N)}$$ are given in Theorem [\[comb_coef\]](#comb_coef){reference-type="ref" reference="comb_coef"}, see also [@And17], *Corollary 3.5*. They are also computed in [@Sol] in terms of lattice paths, and as an integral of characters and their duals in Section [\[integralchar\]](#integralchar){reference-type="ref" reference="integralchar"}. The character of $T(k)$ is determined by characters of the Weyl modules(see Section [\[qsl2\]](#qsl2){reference-type="ref" reference="qsl2"}) and can be explicitly computed (see Lemma [\[fchar\]](#fchar){reference-type="ref" reference="fchar"}) $$\begin{equation*}
-    \mathrm{ch}_{T(k_1l+k_0)}(x)=
+For $q=e^{i\frac{\pi m}{l}}$ where $l$ is odd and $m$ and $l$ are mutually prime, indecomposable tilting modules of $U_q(\mathfrak{sl}_2)$ of type ${\bf 1}$ are parametrized by integers. For such tilting modules we write $T(k)$ with $k=lk_1+k_0$, $m_1\in\mathbb{Z}_{\geq 0}$, $0\leq k_0\leq l-2$. For details see Section [\[qsl2\]](#qsl2){reference-type="ref" reference="qsl2"}. The multiplicities of $T(k)$ in the decomposition of the tensor power $T(1)^{\otimes N}$ $$T(1)^{\otimes N}= \bigoplus_{n\in\mathbb{Z}_{\geq 0}}T(n)^{\oplus M^{(l)}_n(N)}$$ are given in Theorem [\[comb_coef\]](#comb_coef){reference-type="ref" reference="comb_coef"}, see also [@And17], *Corollary 3.5*. They are also computed in [@Sol] in terms of lattice paths, and as an integral of characters and their duals in Section [\[integralchar\]](#integralchar){reference-type="ref" reference="integralchar"}. The character of $T(k)$ is determined by characters of the Weyl modules(see Section [\[qsl2\]](#qsl2){reference-type="ref" reference="qsl2"}) and can be explicitly computed (see Lemma [\[fchar\]](#fchar){reference-type="ref" reference="fchar"}) $$\mathrm{ch}_{T(k_1l+k_0)}(x)=
     \begin{cases}
         \frac{x^{k_0+1}-x^{-(k_0+1)}}{x-x^{-1}},& \textit{if $0\leq k_0\leq l-1$ and $k_1=0$},\\
         \frac{x^{(k_1+1)l}-x^{-(k_1+1)l}}{x-x^{-1}},& \textit{if $k_0=l-1$ and $k_1\in\mathbb{Z}_{>0}$},\\
         (x^{k_0+1}+x^{-(k_0+1)})\frac{x^{k_1l}-x^{-k_1l}}{x-x^{-1}},& \textit{if $0\leq k_0\leq l-2$ and $k_1\in\mathbb{Z}_{>0}$}.
-    \end{cases}
-\end{equation*}$$ When $x>0$ all these characters are positive and we have the character probability measure on indecomposable tilting components with the probability of module $T(n)$ occurring in $T(1)^{\otimes N}$ being $$\begin{equation}
-\label{cchh}
-    p^{(l)}_N(k;x)=\frac{M^{(l)}_{k}(N)\mathrm{ch}_{T(k)}(x)}{(\mathrm{ch}_{T(1)}(x))^N}.
-\end{equation}$$ In Theorem [\[theomch\]](#theomch){reference-type="ref" reference="theomch"} we prove the weak convergence of ([\[cchh\]](#cchh){reference-type="ref" reference="cchh"}) to the tensor product $p_1(\bullet;t)\otimes p_2(\bullet;t)$, where $t=\mathrm{ln}x$, $p_2$ is the Gaussian measure on $\mathbb{R}$ with the density $$\begin{equation*}
-    p_2(\alpha;t)=\sqrt{\frac{l}{2\pi}}\mathrm{cosh}(t)e^{-\frac{\alpha^2l}{2}\left(\mathrm{cosh}(t)\right)^2},\quad\alpha\in\mathbb{R}
-\end{equation*}$$ and $p_1$ is the discrete probability measure on $k_0=0,1,\ldots,l-1$ with $$\begin{equation*}
-p_1(k_0;t)=
+    \end{cases}$$ When $x>0$ all these characters are positive and we have the character probability measure on indecomposable tilting components with the probability of module $T(n)$ occurring in $T(1)^{\otimes N}$ being $$\label{cchh}
+    p^{(l)}_N(k;x)=\frac{M^{(l)}_{k}(N)\mathrm{ch}_{T(k)}(x)}{(\mathrm{ch}_{T(1)}(x))^N}.$$ In Theorem [\[theomch\]](#theomch){reference-type="ref" reference="theomch"} we prove the weak convergence of ([\[cchh\]](#cchh){reference-type="ref" reference="cchh"}) to the tensor product $p_1(\bullet;t)\otimes p_2(\bullet;t)$, where $t=\mathrm{ln}x$, $p_2$ is the Gaussian measure on $\mathbb{R}$ with the density $$p_2(\alpha;t)=\sqrt{\frac{l}{2\pi}}\mathrm{cosh}(t)e^{-\frac{\alpha^2l}{2}\left(\mathrm{cosh}(t)\right)^2},\quad\alpha\in\mathbb{R}$$ and $p_1$ is the discrete probability measure on $k_0=0,1,\ldots,l-1$ with $$p_1(k_0;t)=
 \begin{cases}
     \frac{(e^{t(k_0+1)}+e^{-t(k_0+1)})(e^{t(l-1-k_0)}-e^{-t(l-1-k_0)})}{l(e^{tl}-e^{-tl})},& \textit{if $k_0=0,\ldots,l-2$},\\
     \frac{1}{l},& \textit{if $k_0=l-1$}.
-\end{cases}
-\end{equation*}$$ Note that this tensor product of distributions is reminiscent to the tensor product formula for tilting modules from Theorem [\[tilt_prod\]](#tilt_prod){reference-type="ref" reference="tilt_prod"}. We use it indirectly in the proof of Theorem [\[fchar\]](#fchar){reference-type="ref" reference="fchar"}. We expect a more direct use of Theorem [\[tilt_prod\]](#tilt_prod){reference-type="ref" reference="tilt_prod"} in the derivation of the weak limit of the character measure based on Markov processes.
+\end{cases}$$ Note that this tensor product of distributions is reminiscent to the tensor product formula for tilting modules from Theorem [\[tilt_prod\]](#tilt_prod){reference-type="ref" reference="tilt_prod"}. We use it indirectly in the proof of Theorem [\[fchar\]](#fchar){reference-type="ref" reference="fchar"}. We expect a more direct use of Theorem [\[tilt_prod\]](#tilt_prod){reference-type="ref" reference="tilt_prod"} in the derivation of the weak limit of the character measure based on Markov processes.
 
 We also compute the intermediate scaling of the character measure(near Plancherel behavior of the character measure), when $N\to\infty$, $t\to0$ such that $t\sqrt{N}$ is finite. And we compute the limit when $N,t\to\infty$ such that $\theta=N e^{-2t}$ is finite, which corresponds to the critical drift. In the latter case the limit probability measure is geometric in the variable $s=\frac{N-k}{2}$.
 

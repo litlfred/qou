@@ -321,8 +321,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 5,
-   "overlaid": 2,
+   "tex_sections": 19,
+   "overlaid": 14,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -332,15 +332,15 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.979,
-     "coverage_ratio": 0.889,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-categories-and-connections",
      "title": "Categories and Connections",
-     "prose_ratio": 0.984,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
@@ -348,70 +348,104 @@
     {
      "id": "sec-002-3-2-categories-and-2-connections",
      "title": "2-Categories and 2-Connections",
-     "prose_ratio": 0.322,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.965,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-32-path-2-groupoids",
      "title": "Path 2-Groupoids",
-     "result": "no matching \\section"
+     "prose_ratio": 0.93,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-33-2-groups",
      "title": "2-Groups",
-     "result": "no matching \\section"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-34-2-connections",
      "title": "2-Connections",
-     "result": "no matching \\section"
+     "prose_ratio": 0.96,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-4-examples-and-applications",
      "title": "Examples and Applications",
-     "prose_ratio": 0.026,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-41-shifted-abelian-groups",
      "title": "Shifted Abelian Groups",
-     "result": "no matching \\section"
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-43-tangent-2-groups",
      "title": "Tangent 2-Groups",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-44-inner-automorphism-2-groups",
      "title": "Inner Automorphism 2-Groups",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-46-string-2-groups",
      "title": "String 2-Groups",
-     "result": "no matching \\section"
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-5-further-topics",
      "title": "Further Topics",
-     "prose_ratio": 0.013,
+     "prose_ratio": 0.304,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-012-51-gauge-transformations",
      "title": "Gauge Transformations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.876,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-013-52-curvature",
      "title": "Curvature",
-     "result": "no matching \\section"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.826,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-014-53-nontrivial-2-bundles",
      "title": "Nontrivial 2-Bundles",
-     "result": "no matching \\section"
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.553,
+     "result": "overlaid",
+     "converter": "latex"
     }
    ]
   }

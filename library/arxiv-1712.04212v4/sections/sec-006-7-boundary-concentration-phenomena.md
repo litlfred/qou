@@ -7,12 +7,13 @@ section_number: 7
 pages: 30-35
 source_pdf: 1712.04212v4.pdf
 source_sha256: 521911fc8724f3c2
-text_source: latex
-latex_prose_ratio: 0.906
-latex_coverage_ratio: 0.884
 doc_brief: "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION — In this paper, we consider a concentration of measure problem on Riemannian manifolds with"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:Boundary concentration phenomena}
+
 
 
 \subsection{Critical scale orders}\label{sec:Sequences of model spaces}
@@ -148,6 +149,7 @@ we complete the proof of Corollary \ref{cor:ball model Levy family}.
 \end{proof}
 
 
+
 \subsection{Positive dimensional cases}\label{sec:Positive dimensional cases}
 In this subsection,
 we summarize corollaries of Theorem \ref{thm:weighted main theorem}.
@@ -231,6 +233,7 @@ we deduce
 \end{equation*}
 We conclude the desired statement.
 \end{ex}
+
 
 
 \subsection{One dimensional cases}\label{sec:One dimensional cases}

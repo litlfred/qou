@@ -536,8 +536,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 9,
-   "overlaid": 4,
+   "tex_sections": 29,
+   "overlaid": 24,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -547,29 +547,38 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-background",
      "title": "Background",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.705,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-our-approach",
      "title": "Our approach",
-     "result": "no matching \\section"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-acknowledgments",
      "title": "Acknowledgments",
-     "result": "no matching \\section"
+     "prose_ratio": 0.964,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-1-preliminaries",
      "title": "Preliminaries",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.95,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -582,85 +591,122 @@
     {
      "id": "sec-006-21-finite-tensor-categories",
      "title": "Finite tensor categories",
-     "result": "no matching \\section"
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.883,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-22-module-categories-over-tensor-categories",
      "title": "Module categories over tensor categories",
-     "result": "no matching \\section"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.835,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-23-the-internal-hom",
      "title": "The internal Hom",
-     "result": "no matching \\section"
+     "prose_ratio": 0.894,
+     "coverage_ratio": 0.852,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-3-the-coend-for-module-categories",
      "title": "The (co)end for module categories",
-     "prose_ratio": 0.758,
-     "coverage_ratio": 0.858,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.794,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-010-31-existence-of-coends",
      "title": "Existence of (co)ends",
-     "result": "no matching \\section"
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.878,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-4-hopf-algebras-in-braided-tensor-categories",
      "title": "Hopf algebras in braided tensor categories",
-     "prose_ratio": 0.702,
-     "coverage_ratio": 0.951,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.726,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-012-42-yetter-drinfeld-modules",
      "title": "Yetter-Drinfeld modules",
-     "result": "no matching \\section"
+     "prose_ratio": 0.859,
+     "coverage_ratio": 0.867,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-013-5-monoidal-module-categories",
      "title": "Monoidal module categories",
-     "prose_ratio": 0.331,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.741,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-014-51-sections-of-monoidal-functors",
      "title": "Sections of monoidal functors",
-     "result": "no matching \\section"
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.89,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-015-52-some-natural-module-transformations",
      "title": "Some natural module transformations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.879,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-016-6-fiber-functors-and-reconstruction-results",
      "title": "Fiber functors and reconstruction results",
-     "prose_ratio": 0.205,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-017-61-coalgebras-constructed-from-a-coend",
      "title": "Coalgebras constructed from a coend",
-     "result": "no matching \\section"
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.879,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-018-62-some-auxiliary-results",
      "title": "Some auxiliary results",
-     "result": "no matching \\section"
+     "prose_ratio": 0.885,
+     "coverage_ratio": 0.882,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-019-63-reconstruction-results",
      "title": "Reconstruction results",
-     "result": "no matching \\section"
+     "prose_ratio": 0.928,
+     "coverage_ratio": 0.888,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-020-64-hopf-algebras-in-c-constructed-from-a-coend",
      "title": "Hopf algebras in C constructed from a coend",
-     "result": "no matching \\section"
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.935,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-021-7-examples-and-applications",
@@ -671,28 +717,40 @@
     {
      "id": "sec-022-71-generic-example",
      "title": "Generic Example",
-     "result": "no matching \\section"
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-023-72-generic-consequences",
      "title": "Generic Consequences",
-     "result": "no matching \\section"
+     "prose_ratio": 0.842,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-024-73-lifting-and-cocycles-deformations",
      "title": "Lifting and cocycles deformations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.986,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-025-74-the-logarithmic-kazhdan-lusztig-conjecture",
      "title": "The logarithmic Kazhdan Lusztig conjecture",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-026-8-questions",
      "title": "Questions",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.962,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

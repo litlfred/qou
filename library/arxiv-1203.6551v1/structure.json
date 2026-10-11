@@ -174,8 +174,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "hyamfest_arxiv.tex",
-   "tex_sections": 9,
-   "overlaid": 5,
+   "tex_sections": 10,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -185,40 +185,38 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.683,
+     "prose_ratio": 0.673,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-5-higher-order-terms-in-the-neumann-zagier-asymp",
      "title": "Higher order terms in the Neumann-Zagier asymptotic formula",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.974,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-6-hyperbolic-graphs-with-parabolic-meridians",
      "title": "Hyperbolic graphs with parabolic meridians",
-     "prose_ratio": 0.98,
-     "coverage_ratio": 0.974,
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-7-associated-circle-packings-and-cusp-moduli",
      "title": "Associated circle packings and cusp moduli",
-     "prose_ratio": 0.981,
-     "coverage_ratio": 0.578,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.577,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-004-9-some-open-questions",
      "title": "Some Open Questions",
-     "prose_ratio": 0.89,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },

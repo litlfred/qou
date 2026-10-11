@@ -8,90 +8,95 @@ pages: 96-99
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
 doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
+text_source: latex
+latex_prose_ratio: 0.983
+latex_coverage_ratio: 0.986
 ---
-models
-We turn now to a discussion of proton decay in the universal ex tra dimen-
-sion (UED) models. In these models it is possible to control p roton decay via
-the use of extra symmetries that might arise in models with un iversal extra
-dimensions [278, 279]. Thus in six dimensions with two unive rsal extra di-
-mensions the standard model particles are charged under the U(1) symmetry
-which arises due to the extra dimensions x4 and x5 and thus this symmetry
-may be labeled as U(1)45. Even after compactiﬁcation a discrete Z8 sym-
-metry survives. The symmetry allows only very high dimensio n baryon and
-lepton number violating operators, i.e., dimension sixtee n or higher which
-96
-leads to a suppression of proton decay. In six dimensions the Lorentz sym-
-metry is SO(1, 7) and in six dimensional space on can introduce Dirac ma-
-trices Γ M (M=0,1,..,5) which are 8 × 8 and can deﬁne a Γ 7 matrix so that
-Γ 7 = Γ 0Γ 1..Γ 5. Using Γ 7 one can deﬁne chiral eigenstates ⊖± of chiralities
-± and thus a six dimensions ψ can be broken up into two ψ±. Each of the
-six dimensional chiralities states are full four component Dirac ﬁelds in four
-dimensions and can be further decomposed in left and right ch iral projec-
-tions under the four dimensional chiral projection. An inte resting result is
-that the Standard Model gauge and gravitational anomalies c ancel only for
-certain combinations of chiral assignments which are one of the following two
-possibilities [278]
-(i) Q+, U−, D−, L+, E−, N−; (ii) Q+, U−, D−, L−, E+, N+ (250)
-where all the quark-lepton ﬁelds are in six dimensions and wh ere N is a
-gauge singlet that is needed for the cancellation of gravita tional anomaly. On
-compactiﬁcation the zero modes of Q+, U−, D− etc ﬁelds will be the standard
-model ﬁelds. The U(1)45 quantum numbers of the ﬁelds are as follows
-(uL,dL,uR,dR)(−1
-2 ), (νL,eL,νR,eR)(∓1
-2 ) (251)
-Because of Eq.(251) one can immediately see that lepton and b aryon num-
-ber violating operators of the type QQQL/M are forbidden. Thus Lorentz
-invariance in six dimensions severely constraints the oper ators and the al-
-lowed lepton and baryon number violating operators must hav e at least three
-quarks and three leptons. This constraint leads to interest ing new signals for
-proton decay. Thus consider the following operator allowed by the above
-constraints [278]
-O17 = C17
-Λ 11 ( ¯L+D−)3 ˜H (252)
-where ˜H is the conjugate Higgs doublet in six dimensions, and Λ is the scale
-up to which the six dimensional eﬀective theory is valid. On c ompactiﬁcation
-one can obtain the eﬀective baryon and lepton number violati ng operator in
-four dimensions. The eﬀective operator in four dimensions c ontains the term
-97
-(¯νLdR)2(¯lLdR) which implies proton decay modes of the type, π+π+e−νν and
-π+π+µ−νν . As estimate of proton decay into these modes is then
-τ (p →π+π+l−νν ) ≃ 1035yr
-C 2
-17
-( (2 × 10−12
-P5f (π) )( MC
-0.5TeV )12( Λ
-5MC
-)22 (253)
-HereP5 is the phase space factor which is estimated to be ≤ 2×10−12,f (π) is
-aππ form factor which is expected to be O(1), andMC = 1/R is the compact-
-iﬁcation scale. Setting C17 = 1 and the ratios within the braces to unity one
-ﬁnd that τ (p → π+π+l−νν ) ≃ 1035 yr. The current experimental limits on
-the mode p →π+π+e− isτp> 3 × 1031 yr. Thus we see that with the default
-values of the parameters in Eq.(253) the partial lifetime τ (p → π+π+l−νν )
-is much larger by orders of magnitude than the current limits of similar type
-processes. One must, however, keep in mind the extreme sensi tivity of the
-theoretical predictions because of the high powers on quant ities which are
-currently unknown. The above results have been derived usin g the six di-
-mensional symmetry. On compactiﬁcation of the two extra dim ensions, the
-SO(1,5) symmetry including the U(1)45 subgroup symmetry is broken and a
-simple choice is compactiﬁcation of T 2/Z2 orbifold of equal radii. In this case
-the U(1)45 symmetry is broken down to a Z8 symmetry. This discrete sym-
-metry is suﬃcient to guarantee that there are no baryon and le pton number
-violating processes with less than three quarks and three le ptons. Of course
-it remains to be seen if the considerations of Casimir energy indeed lead to
-the vacuum state with the desired symmetry. Some progress al ong this di-
-rection is made in Ref. [280]. Further development of this sc heme has been
-carried out in the analysis of Ref. [281] where issues of neut rino masses and
-of dark matter are also addressed. The gauge group investiga ted here include
-SU (2)L ×U(1)I3R ×U(1)B−L andSU (2) ×SU (2)R ×U(1)B−L and compact-
-iﬁcations on a T 2/Z2 orT 2/Z2 ×Z ′
-2 orbifolding is considered. The dominant
-decay mode of the neutron in this model is n → 3ν. Aside from the power
-law suppression of proton decay, a similar mechanism for the generation of
-small neutrino masses is also valid. Further, in this model d ark matter could
-consist of two components consisting of Kaluza-Klein excit ations of the neu-
-trino and of the photon. In summary in UED models a discrete su bgroup of
-the Lorentz symmetry in six dimensions continues to forbid d angerous proton
-decay operators when reduction to four dimension is carried out.
-98
+We turn now to a discussion of proton decay in the  universal extra 
+dimension (UED) models.
+In these models  
+it is possible  to control proton decay via  the use of extra symmetries that 
+might arise in models  with universal extra 
+dimensions~\cite{Appelquist:2000nn,Appelquist:2001mj}. Thus in six dimensions 
+with two universal extra 
+dimensions the standard model particles  are charged  under the $U(1)$ symmetry which
+arises due to the extra dimensions $x_4$ and $x_5$ and thus this symmetry may be labeled
+as $U(1)_{45}$.
+ Even after  compactification a discrete $Z_8$ symmetry survives. The  
+symmetry allows only very high dimension baryon and lepton number violating  operators,
+i.e., dimension sixteen or  higher which leads to a suppression of proton decay.
+In six dimensions  the Lorentz  symmetry is $SO(1,7)$  and  in six dimensional  space
+on can introduce Dirac  matrices $\Gamma^M$ (M=0,1,..,5) which are  $8\times 8$ and
+can define a $\Gamma^7$ matrix so that $\Gamma^7=\Gamma^0\Gamma^1..\Gamma^5$. Using 
+$\Gamma^7$ one  can define chiral eigenstates  ${\cal  \Psi}_{\pm}$ of chiralities  $\pm$ 
+and thus a six  dimensions  $\cal{\psi}$ can be  broken up into two $\cal{\psi}_{\pm}$.
+Each of the six dimensional chiralities  states are full four  component Dirac fields 
+in four dimensions and  can be  further decomposed in left and right chiral projections
+under  the four dimensional chiral projection. An interesting result is that the
+Standard  Model gauge  and gravitational anomalies  cancel only for  certain
+combinations of  chiral assignments which are one of the following two 
+possibilities~\cite{Appelquist:2000nn}
+
+\beqn
+(i) ~{\cal Q_+, U_-, D_-, L_+, E_-, N_-}; ~(ii) ~{\cal Q_+, U_-, D_-, L_-, E_+, N_+}
+\eeqn
+where all the quark-lepton fields are in six dimensions and where $\cal{N}$ is a gauge
+singlet that is  needed for  the cancellation of gravitational  anomaly. On compactification
+the zero modes of ${\cal Q_+, U_-, D_-}$ etc  fields will  be the standard model fields.
+The $U(1)_{45}$ quantum numbers of  the fields are as  follows
+\beqn
+(u_L,d_L, u_R, d_R)(-\frac{1}{2}), ~(\nu_L, e_L, \nu_R, e_R)(\mp \frac{1}{2})   
+\label{6dqn}
+\eeqn
+Because of Eq.(\ref{6dqn}) one can immediately see that  lepton and  baryon number violating
+operators  of  the type $QQQL/M$ are forbidden. Thus Lorentz invariance
+in six  dimensions severely constraints the operators and  the allowed lepton and baryon number
+violating operators must have at least three quarks and  three leptons. This constraint
+leads to interesting new signals for proton decay. Thus consider  the following operator
+allowed by the above constraints~\cite{Appelquist:2000nn}                                    
+\beqn
+{\cal O}_{17} =\frac{C_{17}}{\Lambda^{11}} (\bar {\cal L_+ D_-})^3 \tilde {\cal H}
+\label{o17}
+\eeqn
+where  $\tilde {\cal H}$ is the conjugate Higgs doublet  in six dimensions, and $\Lambda$ 
+is the scale up to which the six dimensional effective theory is  valid. On compactification
+one can obtain the effective baryon and lepton number violating operator  in four dimensions.
+The effective operator in four dimensions contains  the term $(\bar \nu_Ld_R)^2(\bar l_Ld_R)$
+which implies proton decay modes of the type, $\pi^+\pi^+e^-\nu\nu$ and   
+$\pi^+\pi^+\mu^-\nu\nu$. As estimate of proton decay into these modes is then 
+
+\beqn
+\tau(p\to \pi^+\pi^+l^-\nu \nu)\simeq 
+\frac{10^{35}yr}{C_{17}^2} (\frac{(2\times 10^{-12}}{P_5 f(\pi)})  
+(\frac{M_C}{0.5 TeV})^{12} (\frac{\Lambda}{5M_C})^{22}
+\label{pipienunu}
+\eeqn
+ Here  $P_5$ is the phase space factor  which is estimated to be $\leq 2\times 10^{-12}$, 
+$f(\pi)$ is a $\pi\pi$ form factor which is expected to be $O(1)$, and $M_C=1/R$ is the compactification
+scale. Setting $C_{17}=1$ and the ratios within the braces to unity one find  that 
+$\tau(p\to \pi^+\pi^+l^-\nu \nu)\simeq 10^{35}$ yr. The current experimental limits on 
+the mode $p\to \pi^+\pi^+e^-$ is $\tau_p> 3\times 10^{31}$ yr. Thus we  see  that with
+the default values of the parameters in Eq.(\ref{pipienunu}) the partial lifetime 
+$\tau(p\to \pi^+\pi^+l^-\nu \nu)$
+ is much larger by orders of 
+magnitude than the current limits of similar type processes. One must, however, keep in mind
+the extreme sensitivity of the theoretical predictions because of the high powers on
+quantities which are currently unknown. 
+The above results have been derived using the six dimensional symmetry. On compactification
+of the two extra dimensions, the SO(1,5) symmetry including the $U(1)_{45}$ subgroup symmetry 
+is broken and a simple choice is compactification of $T^2/Z_2$ orbifold of equal radii. In this
+case the $U(1)_{45}$ symmetry is broken down to a $Z_8$ symmetry. This discrete symmetry is sufficient
+to guarantee  that there  are no baryon and  lepton number violating processes with less than
+three quarks and three  leptons. Of  course it remains to be  seen if the considerations  of 
+Casimir energy indeed lead  to the vacuum state with the desired  symmetry. Some  progress 
+along this direction is made in Ref.~\cite{Ponton:2001hq}. 
+ Further development of this scheme has been carried out in the analysis of Ref.~\cite{Mohapatra:2005wg}
+where issues of neutrino masses and of dark matter are also addressed. The gauge group investigated here
+include $SU(2)_L\times U(1)_{I_{3R}}\times U(1)_{B-L}$ and $SU(2)\times SU(2)_R\times U(1)_{B-L}$
+and compactifications on a $T^2/Z_2$ or $T^2/Z_2\times Z_2'$ orbifolding is considered. The dominant decay
+mode of the neutron in this model  is $n\to 3\nu$.  Aside from the power law 
+suppression of proton decay, a similar mechanism for the generation of small neutrino masses 
+is also valid. Further, in this model dark matter could consist of two components consisting of 
+Kaluza-Klein excitations of the neutrino and of the photon. In summary in UED models  a discrete
+subgroup of the Lorentz symmetry in six dimensions continues to forbid dangerous proton decay operators
+when reduction to four dimension is carried out.

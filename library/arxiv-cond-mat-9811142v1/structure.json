@@ -7,7 +7,8 @@
   "bytes": 353717,
   "pages": 37,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -195,6 +196,68 @@
   "likely_scanned": false,
   "toc_entries": 9,
   "sections": 9,
-  "chars_total": 64872
+  "chars_total": 64872,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "peter3.tex",
+   "tex_sections": 33,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.64,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-2-x-y-\u03c4x-\u03c4y",
+     "title": "(x, y; \u03c4x, \u03c4y) :=",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-2-x1",
+     "title": "(x(1)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-0-ja",
+     "title": "Ja",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-0-ja",
+     "title": "Ja(",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-discussion",
+     "title": "Discussion",
+     "prose_ratio": 0.515,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-0-4xy-\u03c1t-hard",
+     "title": "(4XY ) \u03c1T hard",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

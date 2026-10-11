@@ -7,16 +7,16 @@ section_number: 1
 pages: 1-4
 source_pdf: 0805.1447v2.pdf
 source_sha256: b7ee20b0a7f5f3da
-text_source: latex
-latex_prose_ratio: 0.983
-latex_coverage_ratio: 0.966
 doc_brief: "Braid ordering and the geometry of closed braid — The relationships between braid ordering and the ge- ometry of its closure is studied."
+text_source: latex
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 0.96
 ---
 In this paper we study an application of left-invariant total ordering of braid group $B_{n}$ to knot theory. An left-invariant total ordering, called Dehornoy ordering is an interesting structure of braid groups found in 1990's by Dehornoy ([@d]). Today the ordering is interpreted in both algebraic and geometric way and these interpretation shows the Dehornoy ordering is a quite natural structure of braid groups.
 
 Braid groups are very important tool for studying links. Many link invariants such as Jones polynomial are first constructed via closed braid representative of links, so it is natural to study an application of this interesting structure of braid groups to knot theory. In [@mn],[@ma] it is found that braid ordering can be seen as some kinds of restriction for admissibility of braid moves. Braid moves are moves of closed braids which do not change their representing link types. Most typical (and important) example of braid moves are *exchange move* or *destabilization, stabilization*, which is shown in figure [1](#braidmove){reference-type="ref" reference="braidmove"}. These works suggest that there would be some relationships between Birman-Menasco's braid foliation theory and ordering of braid groups because braid moves appears naturally in braid foliation theory ([@bf]). For example, exchange move is used to make braid foliation simple and it is one of the most fundamental operation in Birman-Menasco's braid foliation theory. Indeed, we investigate relationship between braid foliation and left invariant total ordering of braid groups, and obtain following result:
 
-<figure id="braidmove" data-latex-placement="htbp">
+<figure id="braidmove">
 <div class="center">
 <embed src="braidmove.eps" style="width:120mm" />
 </div>
@@ -45,11 +45,11 @@ As an application of theorem [\[thm:main1\]](#thm:main1){reference-type="ref" re
 
 Theorem [\[thm:main2\]](#thm:main2){reference-type="ref" reference="thm:main2"} partially answers the question.
 
-<figure id="fig:example" data-latex-placement="htbp">
+<figure id="fig:example">
 <div class="center">
 <embed src="example.eps" style="width:60mm" />
 </div>
-<figcaption>Examples of periodic (a), pseudo-Anosov (b), reducible (c) braids all of whose closure are <span class="math inline">(2, 3)</span>-Torus knots</figcaption>
+<figcaption>Examples of periodic (a), pseudo-Anosov (b), reducible (c) braids all of whose closure are <span class="math inline">(2,3)</span>-Torus knots</figcaption>
 </figure>
 
 ::: thm

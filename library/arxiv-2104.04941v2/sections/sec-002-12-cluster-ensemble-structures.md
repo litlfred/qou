@@ -8,37 +8,36 @@ pages: 4-5
 source_pdf: 2104.04941v2.pdf
 source_sha256: 84426ed37754aa78
 doc_brief: "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES — Fock and Goncharov [FG06b] introduced cluster ensembles, p roviding a framework for coordi- nates on varieties of surface"
+text_source: latex
+latex_prose_ratio: 0.918
+latex_coverage_ratio: 0.972
 ---
-Ptolemy’s Theorem. Another structure that encodes the iden tity is a cluster ensemble . We defer a
-detailed description to Section 2.7, but for now we only need that a cluster ensemble consists of a quiver
-(a directed graph with a skew-symmetrizable adjacency matr ix) and a pair of coordinate structures ( A- and
-X -coordinates), and that the shape of the quiver dictates how the coordinates change under mutation (a
-certain local alteration of the quiver).
-4
-The quiver of the cluster ensemble which realizes ac +bd =ef for the A-coordinates is given (along with
-the eﬀect of the only relevant mutation) in Figure 5. The quiv ers are inscribed in two quadrilaterals with
-diﬀerent diagonals.
-0
-1
-2
-3
-v1
-v2 v3
-v4
-v5
-0
-1
-2
-3
-v1
-v2 v3
-v4
-v′
-5
-µ5
-Figure 5. Quiver for type A1. The A-coordinate at vk isak. The relation on A-coordinates
-for mutating at v5 is a1a3 +a2a4 =a5a′
-5.
-For other surfaces Σ , larger collections of triangles can be glued together. Ret riangulations (and reorder-
-ings) can be computed as sequences of mutations, and the coor dinate changes are given by collections of
-low-degree polynomial relations.
+In the above program, the retriangulation identity was given by
+  Ptolemy's Theorem. Another structure that encodes the identity is a
+  \defined{cluster ensemble}. We defer a detailed description to
+  \cref{sec:cluster-ensembles}, but for now we only need that a cluster
+  ensemble consists of a \defined{quiver} (a directed graph with a
+  skew-symmetrizable adjacency matrix) and a pair of coordinate
+  structures ($\mathcal{A}$- and $\mathcal{X}$-coordinates), and that
+  the shape of the quiver dictates how the coordinates change under
+  \defined{mutation} (a certain local alteration of the quiver).
+
+  The quiver of the cluster ensemble which realizes $ac + bd = ef$ for
+  the $\mathcal{A}$-coordinates is given (along with the effect of the
+  only relevant mutation) in \cref{fig:QA1-and-flip}. The quivers are
+  inscribed in two quadrilaterals with different diagonals.
+
+  \begin{figure}[h]
+    \centering \includestandalone[mode=image|tex]{fig/QA1-and-flip}
+
+    \caption{Quiver for type $A_1$. The $\mathcal{A}$-coordinate at
+      $v_k$ is $a_k$. The relation on $\mathcal{A}$-coordinates for
+      mutating at $v_5$ is $a_1 a_3 + a_2 a_4 = a_5 a_5'$.
+      \label{fig:QA1-and-flip}
+    }
+  \end{figure}
+
+  For other surfaces $\Sigma$, larger collections of triangles can be
+  glued together. Retriangulations (and reorderings) can be computed as
+  sequences of mutations, and the coordinate changes are given by
+  collections of low-degree polynomial relations.

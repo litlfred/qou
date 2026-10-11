@@ -7,10 +7,10 @@ section_number: 7
 pages: 15-20
 source_pdf: 1904.12095v2.pdf
 source_sha256: 7006b250f0d3c991
-text_source: latex
-latex_prose_ratio: 0.934
-latex_coverage_ratio: 0.963
 doc_brief: "Verified computations for closed hyperbolic 3-manifolds Matthias Goerner — Extending methods ﬁrst used by Casson, we show how to verify a hyper- bolic structure on a ﬁnite triangulation of a closed"
+text_source: latex
+latex_prose_ratio: 0.938
+latex_coverage_ratio: 0.963
 ---
 []{#sec:algo label="sec:algo"}
 
@@ -21,14 +21,12 @@ Let $\mathcal{T}$ be an oriented, finite 3-dimensional triangulation. Let $o=V(\
 We will either fail in one of the steps or obtain intervals $\underline{\overline{\nu_{e_1}}},\dots,\underline{\overline{\nu_{e_m}}}$ guaranteed to contain values for $\nu_{e_1},\dots,\nu_{e_m}$ yielding a hyperbolic structure on $\mathcal{T}$ as follows:
 
 1.  []{#step:submatrix label="step:submatrix"} Find a subsystem of equations of full rank:\
-    Since the given approximations for the edge parameters are close to a hyperbolic structure, evaluating the Jacobian $$\begin{equation}
-     \label{eqn:jacobian}
-    M=\left(\frac{\partial \Theta_{e_j}}{\partial \nu_{e_i}}\right)_{i=1,\dots,m;j=1,\dots,m}
-    \end{equation}$$ gives a matrix close to a singular matrix that we expect to have rank $m-3o$ (see Conjecture [\[conjecture:main\]](#conjecture:main){reference-type="ref" reference="conjecture:main"}). Pick a suitable set of $m-3o$ rows and columns such that the resulting submatrix of $M$ has full rank.\
-    This corresponds to picking two partitions of the edges of $\mathcal{T}$ $$\begin{eqnarray*}
+    Since the given approximations for the edge parameters are close to a hyperbolic structure, evaluating the Jacobian $$\label{eqn:jacobian}
+    M=\left(\frac{\partial \Theta_{e_j}}{\partial \nu_{e_i}}\right)_{i=1,\dots,m;j=1,\dots,m}$$ gives a matrix close to a singular matrix that we expect to have rank $m-3o$ (see Conjecture [\[conjecture:main\]](#conjecture:main){reference-type="ref" reference="conjecture:main"}). Pick a suitable set of $m-3o$ rows and columns such that the resulting submatrix of $M$ has full rank.\
+    This corresponds to picking two partitions of the edges of $\mathcal{T}$ $$\begin{aligned}
     E(\mathcal{T})=E^\sim \cup E^=&\mbox{with}& E^\sim=\{e^\sim_1,\dots,e^\sim_{3o}\},~E^= = \{e^=_1,\dots,e^=_{m-3o}\}\\
     E(\mathcal{T})=E^\mathrm{fixed} \cup E^\mathrm{var}& \mbox{with}& E^\mathrm{fixed} = \{e^{\mathrm{fixed}}_1,\dots,e^{\mathrm{fixed}}_{3o}\}, ~E^\mathrm{var} = \{e^{\mathrm{var}}_1,\dots,e^{\mathrm{var}}_{m-3o}\}
-    \end{eqnarray*}$$ such that $$M'=\left(\frac{\partial \Theta_{e^=_j}}{\partial \nu_{e^\mathrm{var}_i}}\right)_{i=1,\dots,m-3o;j=1,\dots,m-3o}$$ has full rank near the given values. Keep the values of $\nu_{e^\mathrm{fixed}_i}$ fixed from now on.
+    \end{aligned}$$ such that $$M'=\left(\frac{\partial \Theta_{e^=_j}}{\partial \nu_{e^\mathrm{var}_i}}\right)_{i=1,\dots,m-3o;j=1,\dots,m-3o}$$ has full rank near the given values. Keep the values of $\nu_{e^\mathrm{fixed}_i}$ fixed from now on.
 
 2.  []{#step:intervalNewton label="step:intervalNewton"} Find an interval solution to the above subsystem of equations:\
     Using interval Newton method or Krawczyk test, find large enough intervals $$\underline{\overline{\nu_{e^\mathrm{var}_1}}},\dots,\underline{\overline{\nu_{e^\mathrm{var}_{m-3o}}}}$$ for the edges in $E^\mathrm{var}$ such that they contain a point where $\Theta_{e^=_j}=2\pi$ for every $e^=_j\in E^=$. To have intervals $\underline{\overline{\nu_{e_1}}},\dots,\underline{\overline{\nu_{e_m}}}$ for all edges of the triangulation, simply use the interval $[\nu_{e^\mathrm{fixed}_i},\nu_{e^\mathrm{fixed}_i}]$ containing only the fixed value $\nu_{e^\mathrm{fixed}_i}$ for each remaining edge $e^\mathrm{fixed}_i\in E^\mathrm{fixed}$.
@@ -82,7 +80,7 @@ These conditions are straightforward to check with interval arithmetics given th
 
 We need to pick a gimbal loop $\Gamma_k$ in each "vertex link" $(L_k,L^=_k)$. Note that this complex consists of the small hexagons (with alternating $\beta$- and $\gamma$-edges) of the doubly-truncated simplices (see Figure [\[fig:DoublyTruncated\]](#fig:DoublyTruncated){reference-type="ref" reference="fig:DoublyTruncated"}) and polygons coming from the ends of the prisms (see Figure [\[fig:Prism\]](#fig:Prism){reference-type="ref" reference="fig:Prism"} and [\[fig:gimbalLoopsInTriangulation\]](#fig:gimbalLoopsInTriangulation){reference-type="ref" reference="fig:gimbalLoopsInTriangulation"}). For a vertex $v_k$, pick a hexagon in $L^=_k$, mark it as "used" and starting with its boundary (oriented such that it traverses a $\gamma^{\sigma(0)\sigma(1)\sigma(2)}$ with $\sigma\in A_4$), expand this edge-loop until it touches each boundary component of $L^=_k$ as follows: pick a $\beta$-edge of the edge-loop that is adjacent to an unused hexagon $H$ and replace the $\beta$-edge by the five other edges of $H$, marking $H$ as "used" (see Figure [1](#fig:findingAGimbalLoop){reference-type="ref" reference="fig:findingAGimbalLoop"}). It is faster to exhaust all $\beta$-edges of one hexagon first in breadth-first search manner (vs depth-first search) before moving on to the next hexagon.
 
-<figure id="fig:findingAGimbalLoop" data-latex-placement="h">
+<figure id="fig:findingAGimbalLoop">
 <div class="center">
 
 </div>
@@ -91,12 +89,12 @@ We need to pick a gimbal loop $\Gamma_k$ in each "vertex link" $(L_k,L^=_k)$. No
 
 ## Step [\[step:avoidGimbal\]](#step:avoidGimbal){reference-type="ref" reference="step:avoidGimbal"}: Computing the gimbal function's derivative
 
-We then need to compute $[Dg(K)]$ which boils down to computing the derivatives $\partial m_{\Gamma_k}/\partial T_i$ of the gimbal matrices $m_{\Gamma_k}$ associated to the gimbal loops $\Gamma_k$. Focusing on one $i$ and $k$, note that $m_{\Gamma_k}$ is given by an alternating product the form $$\prod\nolimits_1 \cdot R_{T_i}\cdot \prod\nolimits_2  \cdot R_{T_i} \cdot \prod\nolimits_3 \cdot R_{T_i} \cdots \prod\nolimits_q$$ where $\prod\nolimits_k$ stands for a product of $\beta$- and $\gamma$-matrices and rotations $R_{T_{i'}}$ with $i'\not=i$ ($q$ is actually at most three since an edge of $\mathcal{T}$ has two ends which might or might not end in the same vertex). We can then compute the derivative as $$\begin{eqnarray*}
+We then need to compute $[Dg(K)]$ which boils down to computing the derivatives $\partial m_{\Gamma_k}/\partial T_i$ of the gimbal matrices $m_{\Gamma_k}$ associated to the gimbal loops $\Gamma_k$. Focusing on one $i$ and $k$, note that $m_{\Gamma_k}$ is given by an alternating product the form $$\prod\nolimits_1 \cdot R_{T_i}\cdot \prod\nolimits_2  \cdot R_{T_i} \cdot \prod\nolimits_3 \cdot R_{T_i} \cdots \prod\nolimits_q$$ where $\prod\nolimits_k$ stands for a product of $\beta$- and $\gamma$-matrices and rotations $R_{T_{i'}}$ with $i'\not=i$ ($q$ is actually at most three since an edge of $\mathcal{T}$ has two ends which might or might not end in the same vertex). We can then compute the derivative as $$\begin{aligned}
 \frac{\partial m_{\Gamma_k}}{\partial T_i} &=& \phantom{+} \prod\nolimits_1 \cdot R'_{T_i}\cdot \prod\nolimits_2  \cdot R_{T_i} \cdot \prod\nolimits_3 \cdots R_{T_i} \cdot \prod\nolimits_q\\
  & & + ~ \cdots \\
  & & +\prod\nolimits_1 \cdot R_{T_i}\cdot \prod\nolimits_2  \cdot R_{T_i} \cdot \prod\nolimits_3 \cdots R'_{T_i} \cdot \prod\nolimits_q \quad \mbox{where}~
 R'_\omega = \left(\begin{array}{ccc} -\sin\omega & -\cos\omega & \\ \phantom{-}\cos\omega & -\sin\omega & \\ & & 0\end{array}\right).
-\end{eqnarray*}$$
+\end{aligned}$$
 
 We need to evaluate this using the intervals from Step [\[step:intervalNewton\]](#step:intervalNewton){reference-type="ref" reference="step:intervalNewton"} for the $\beta$- and $\gamma$-matrices and the intervals $\underline{\overline{\Theta_{e^\sim_1}}},\dots,\underline{\overline{\Theta_{e^\sim_{3o}}}}$ from Step [\[step:approxEdgeEqn\]](#step:approxEdgeEqn){reference-type="ref" reference="step:approxEdgeEqn"} for $R'_{T_i}$ and all the $R_{T_j}$.
 

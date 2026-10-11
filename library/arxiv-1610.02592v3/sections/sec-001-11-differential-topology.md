@@ -7,14 +7,15 @@ section_number: 1.1
 pages: 17-23
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.808
-latex_coverage_ratio: 0.786
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{differential:topology:section}
 We introduce manifolds, bundles, embeddings, tubular neighbourhoods, isotopies, and connected sums. Throughout this book, we will always work in the smooth category. 
 The material contained in this section is carefully explained in \emph{Differentiable manifolds} of Kosinksi \cite{K}.
+
 
 \subsection{Differentiable manifolds}
 A \emph{topological manifold} of dimension $n$ is a paracompact Hausdorff topological space $M$ locally homeomorphic to $\matR^n$. In other words, there is a covering $\{U_i\}$ of $M$ consisting of open sets $U_i$ homeomorphic to open sets $V_i$ in $\matR^n$.
@@ -61,6 +62,7 @@ A \emph{diffeomorphism} is a smooth map $f\colon M \to M'$ that admits a smooth 
 A manifold which can be oriented is called \emph{orientable}.
 \index{manifold!oriented manifold}
 
+
 \subsection{Tangent space} \label{tangente:subsection}
 Let $M$ be a differentiable manifold of dimension $n$. We may define for every point $p\in M$ a $n$-dimensional vector space $T_pM$ called the \emph{tangent space}. 
 
@@ -92,6 +94,7 @@ In this theorem a condition satisfied at a single point (differential invertible
 
 If $\gamma\colon I \to M$ is a curve, its \emph{velocity} $\gamma'(t)$ in $t\in I$ is the tangent vector $\gamma'(t) = d\gamma_t(1)$. Here ``1'' means the vector 1 in the tangent space $T_tI = \matR$. We note that the velocity is a vector and not a number: the modulus of a tangent vector is not defined in a differentiable manifold (because the tangent space is just a real vector space, without a norm).
 
+
 \subsection{Differentiable submanifolds}
 Let $N$ be a differentiable manifold of dimension $n$. 
 \begin{defn}
@@ -100,6 +103,7 @@ A subset $M\subset N$ is a \emph{differentiable submanifold} of dimension $m\leq
 \index{submanifold!differentiable submanifold}
 
 The pairs $\{(U\cap M, \varphi|_{U\cap M})\}$ form an atlas for $M$, which inherits a structure of $m$-dimensional differentiable manifold. At every point $p\in M$ the tangent space $T_p M$ is a linear subspace of $T_p N$. 
+
 
 \subsection{Fibre bundles}
 We introduce an important type of smooth maps. 
@@ -112,6 +116,7 @@ such that every fibre $\pi^{-1}(p)$ is diffeomorphic to a fixed manifold $F$ and
 
 The manifolds $E$ and $B$ are called the \emph{total} and \emph{base manifold}, respectively. The manifold $F$ is the \emph{fibre} of the bundle. A \emph{section} of the bundle is a smooth map $s\colon B\to E$ such that $\pi\circ s = \id_B$. Two fibre bundles $\pi\colon E \to B$ and $\pi'\colon E' \to B$ are \emph{isomorphic} if there is a diffeomorphism $\psi\colon E \to E'$ such that $\pi = \pi'\circ\psi$.
 
+
 \subsection{Vector bundles}
 A \emph{smooth vector bundle} is a smooth fibre bundle where every fibre $\pi^{-1}(p)$ has the structure of a $n$-dimensional real vector space which varies smoothly with $p$. Formally, we require that $F=\matR^n$ and $\psi_i (p,\cdot)\colon F \to \pi^{-1}(p) $ be an isomorphism of vector spaces for every $\psi_i$ as above.
 \index{vector bundle}
@@ -120,6 +125,7 @@ The \emph{zero-section} of a smooth vector bundle is the section $s\colon B \to 
 
 Two vector bundles are \emph{isomorphic} if there is a diffeomorphism $\psi$ as above, which restricts to an isomorphism of vector spaces on each fibre.
 As every manifold here is differentiable, likewise every bundle will be smooth and we will hence often omit this word.
+
 
 \subsection{Tangent and normal bundle}
 Let $M$ be a differentiable manifold of dimension $n$. The union of all tangent spaces 
@@ -131,9 +137,11 @@ Let $M\subset N$ be a smooth submanifold of $N$. The \emph{normal space} at a po
 $$\nu M = \bigcup_{p\in M} \nu_p M$$ 
 and is also naturally a smooth vector bundle over $M$. The normal bundle is not  canonically contained in $TN$ like the tangent bundle, but (even more usefully) it may be embedded directly in $N$, as we will soon see.
 
+
 \subsection{Vector fields}
 A \emph{vector field} $X$ on a smooth manifold $M$ is a section of its tangent bundle. A point $p$ and a vector $v\in T_pM$ determine an \emph{integral curve} $\alpha\colon I\to M$ starting from $v$, that is a smooth curve with $\alpha(0) = p, \alpha'(0) = v$, and $\alpha'(t) = X(\alpha(t))$ for all $t\in I$. The curve $\alpha$ is unique if we require the interval $I$ to be maximal. It depends smoothly on $p$ and $v$.
 \index{vector field}
+
 
 \subsection{Immersions and embeddings}
 A smooth map $f\colon M \to N$ between manifolds is an \emph{immersion} if its differential is everywhere injective: note that this does not imply that $f$ is injective. 
@@ -143,6 +151,7 @@ The map is an \emph{embedding} if it is a diffeomorphism onto its image: this me
 
 \begin{teo} If $M$ is compact, every injective immersion $f\colon M \to N$ is an embedding.
 \end{teo}
+
 
 \subsection{Isotopy and ambient isotopy} \label{isotopy:subsection}
 Let $X$ and $Y$ be topological spaces. We recall that a \emph{homotopy} between two continuous maps $\varphi, \psi\colon X \to Y$ is a continuous map $F\colon X\times [0,1]\to Y$  such that $F_0 = \varphi$ and $F_1 = \psi$, where $F_t = F(\cdot, t)$. 
@@ -158,6 +167,7 @@ are \emph{ambiently isotopic} if there is an ambient isotopy $F$ of $N$ such tha
 \begin{teo} 
 If $M$ is compact, two embeddings $\varphi, \psi\colon M \to N$ are isotopic if and only if they are ambiently isotopic.
 \end{teo}
+
 
 \subsection{Tubular neighbourhood}
 Let $M\subset N$ be a differentiable submanifold. A \emph{tubular neighbourhood} of $M$ is an open subset $U\subset N$ with a diffeomorphism $\nu M \to U$ sending identically the zero-section onto $M$. 
@@ -182,6 +192,7 @@ For every $n$, there are exactly two vector bundles of dimension $n$ over $S^1$ 
 
 Again, the orientable vector bundle is $S^1 \times \matR^n $ and the non-orientable one is denoted by $S^1 \timtil \matR^n$. These simple facts allow us to fully understand the possible neighbourhoods of curves in surfaces, and of curves and surfaces inside orientable 3-manifolds. 
 
+
 \subsection{Manifolds with boundary}
 Let a \emph{differentiable manifold $M$ with boundary} be a topological space with charts on a fixed half-space of $\matR^n$ instead of $\matR^n$, forming a smooth atlas. (By definition, maps from subsets of $\matR^n$ are smooth if they locally admit extensions to smooth functions defined on open domains.) 
 \index{manifold!manifold with boundary}
@@ -205,6 +216,7 @@ A \emph{boundary component} $N$ of $M$ is a connected component of $\partial M$.
 A \emph{closed manifold} is a compact manifold without boundary.
 \index{manifold!closed manifold}
 
+
 \subsection{Cut and paste} \label{cut:subsection}
 If $M\subset N$ is a closed and orientable $(n-1)$-submanifold in the interior of an orientable $n$-manifold $N$, it has a tubular neighbourhood diffeomorphic to $M \times \matR$. The operation of \emph{cutting} $N$ along $M$ consists of the removal of the portion $M\times (-1,1)$. The resulting manifold $N'$ has two new boundary components $M\times \{-1\}$ and $M\times \{1\}$, both diffeomorphic to $M$. By the uniqueness of the tubular neighbourhood, the manifold $N'$ depends (up to diffeomorphisms) only on the isotopy class of $M\subset N$.
 
@@ -220,6 +232,7 @@ Now we identify the points $(p,t)$ and $(\varphi (p), 1-t)$ of the open collars,
 \begin{prop} \label{depend:diffeo:prop}
 The resulting smooth manifold depends (up to diffeomorphism) only on the isotopy class of $\varphi$.
 \end{prop}
+
 
 \subsection{Connected sum} \label{sum:subsection}
 We introduce an important cut-and-paste operation. The \emph{connected sum} of two connected oriented $n$-manifolds $M$ and $M'$ is a new $n$-manifold obtained by choosing two $n$-discs $D\subset \interior{M}$ and $D'\subset \interior{M'}$ and an orientation-reversing diffeomorphism $\varphi\colon D \to D'$. The new manifold is constructed in two steps: we first remove the interiors of $D$ and $D'$ from $M\sqcup M'$, thus creating two new boundary components $\partial D$ and $\partial D'$, and then glue these boundary components along $\varphi|_{\partial D}$. See Figure \ref{Connected_sum:fig}.\index{connected sum}
@@ -244,6 +257,7 @@ The oriented smooth manifold $M\# M'$ depends (up to diffeomorphism) only on $M$
 \end{prop}
 
 We can invert a connected sum as follows. Suppose a $n$-manifold $M$ contains a separating $(n-1)$-sphere $N\subset \interior{M}$. We fix a diffeomorphism $\varphi\colon N \to \partial D^n$. By cutting $M$ along $N$ we get two new boundary components diffeomorphic to $N$ and we glue two discs to them via the map $\varphi$. We get two manifolds $N_1, N_2$ such that $M=N_1\# N_2$.
+
 
 \subsection{Transversality}
 Let $f\colon M \to N$ be a smooth map between manifolds and $X\subset N$ be a submanifold. We say that $f$ is \emph{transverse} to $X$ if for any $p\in f^{-1}X$ the following condition holds:

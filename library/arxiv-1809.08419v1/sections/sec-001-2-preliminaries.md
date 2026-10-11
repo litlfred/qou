@@ -7,10 +7,10 @@ section_number: 2
 pages: 2-3
 source_pdf: 1809.08419v1.pdf
 source_sha256: 7ebca632544a6ea4
-text_source: latex
-latex_prose_ratio: 0.971
-latex_coverage_ratio: 0.91
 doc_brief: "GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER GROUPS — For the noncrystallographic Coxeter groups of type H, we construct their Gr¨ obner- Shirshov bases and the corresponding standard"
+text_source: latex
+latex_prose_ratio: 0.981
+latex_coverage_ratio: 0.966
 ---
 In this section, we recall a basic theory of *Gröbner-Shirshov bases* for associative algebras to make the paper self-contained.
 
@@ -29,11 +29,9 @@ Given a subset $S$ of monic elements in $\mathbb{F}\langle X\rangle$, a monomial
 :::
 
 ::: lem
-[]{#division label="division"} Every $p \in \mathbb{F}\langle X\rangle$ can be expressed as $$\begin{equation}
- \label{equ-1}
+[]{#division label="division"} Every $p \in \mathbb{F}\langle X\rangle$ can be expressed as $$\label{equ-1}
 p = \sum \alpha_i a_is_ib_i + \sum \beta_j
-u_j,
-\end{equation}$$ where $\alpha_i, \beta_j \in \mathbb{F}$, $a_i, b_i, u_j \in \langle X\rangle$, $s_i \in S$, $a_i \overline{s_i} b_i \leq
+u_j,$$ where $\alpha_i, \beta_j \in \mathbb{F}$, $a_i, b_i, u_j \in \langle X\rangle$, $s_i \in S$, $a_i \overline{s_i} b_i \leq
 \overline{p}$, $u_j \leq
 \overline{p}$ and $u_j$ are $S$-standard.
 :::

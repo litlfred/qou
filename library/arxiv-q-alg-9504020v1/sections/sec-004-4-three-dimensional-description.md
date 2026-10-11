@@ -8,197 +8,64 @@ pages: 5-9
 source_pdf: 9504020v1.pdf
 source_sha256: 0baef40fa9934c91
 doc_brief: "A link invariant from quantum dilogarithm — The link invariant, arising from the cyclic quantum dilogarithm via the particular R-matrix construction, is proved to coincide with the invariant of"
+text_source: latex
+latex_prose_ratio: 0.978
+latex_coverage_ratio: 0.988
 ---
-In this section we establish the connection of the link invar iant constructed in
-Sect. 3 with the invariant of triangulated links of [14], rel ated in turn to cyclic
-quantum dilogarithm [11]. First, remind the necessary form ulas from [14] in
-slightly diﬀerent notations.
-We will assume that the integer N is odd, and the square root of ω will be
-thought to be taken as an N -th root of unity:
-ω 1/ 2 =ω (N +1)/ 2. (4.1)
-For complex x,y,z , satisfying the Fermat equation
-xN +yN =zN, (4.2)
-and integers m,n deﬁne the function
-w(x,y,z |m,n ) = w(x,y,z |m −n)ω n2/ 2, (4.3)
-4
-where
-w(x,y,z |n) =
-n∏
-j=1
-y
-z −xω j. (4.4)
-The Fermat equation (4.2) ensures the periodicity relation :
-w(x,y,z |n +N ) = w(x,y,z |n). (4.5)
-This latter property enables us to consider the ﬁnite set ZN instead of Z.
-For any non-coinciding complex numbers z0,z 1,z 2,z 3, and α,β,γ,δ,a,c ∈
-ZN deﬁne two functions:
-T 0123(a,c )γ,δ
-α,β =ρ0123ω c(γ −α )+αδ +ac/ 2w(x03x12,x 01x23,x 02x13|γ −a,α )δβ,γ +δ,
-(4.6)
-and
-T 0123(a,c )α,β
-γ,δ =
-ρ0123ω c(γ −α )−αδ −ac/ 2δβ,γ +δ
-w(x03x12/ω,x 01x23,x 02x13|γ +a,α ), (4.7)
-where
-xij = (zi −zj)1/N , i,j = 0, 1, 2, 3, (4.8)
-withN -th root being chosen to be real for real diﬀerence zi −zj; scalar functions
-ρ0123 andρ0123 depend on only z’s and their explicit form can be found in [14].
-These symbols can be associated with tetrahedrons in R3 as is described below.
-In what follows for a polyhedron X, considered as a collection of vertices,
-edges, triangles, and tetrahedrons, we will denote by Λ i(X),i = 0, 1, 2, 3 the sets
-of simplices of corresponding dimension. Consider a topolo gical 1 tetrahedron
-t in R3. Order the vertices by ﬁxing a bijective map
-u: {0, 1, 2, 3} ∋ i ↦→ui ∈ Λ 0(t). (4.9)
-Put an arrow on each edge, pointing from a “larger” vertex (wi th respect to
-above ordering) to a “smaller” one. Each face also gets its’ o wn orientation.
-Let ul be the top of the tetrahedron. Let us look from it down at the ve rtices
-ui,u j,u k, where
-{i,j,k } = {0, 1, 2, 3} \ {l}, i<j <k. (4.10)
-We will see two possible views: either ui,u j,u k, in the order which they are
-written, go round in the counter-clockwise direction (the “ right” orientation)
-or, in the clockwise one (the “left” orientation). The tetra hedron itself has
-two possible orientations in the following sense. Call the t etrahedron “right
-(left)”-oriented if the face u0u1u2 has the right (left) orientation in the above
-sense.
-Introduce three maps:
-s: Λ 0(t) →C, c : Λ 1(t) →ZN, α : Λ 2(t) →ZN, (4.11)
-1 the term “topological” here means that edges and faces of the tetrahedron can be curved
-5
-where s is injective, and c satisﬁes the following relations:
-∑
-e∋v
-c(e) = 1/ 2, v ∈ Λ 0(t). (4.12)
-Let cij = c(uiuj) (uiuj is the edge having ends ui and uj), α i = α (ujukul),
-{j,k,l } = {0, 1, 2, 3} \ {i}, and zi = s(ui). Deﬁne the symbol associated with
-the tetrahedron t:
-tu(s,c,α ) =
-{
-T 0123(c01,c 12)α 2,α 0
-α 3,α 1, right orientation;
-T 0123(c01,c 12)α 3,α 1
-α 2,α 0, left orientation. (4.13)
-The variables associated with the second map in (4.11) will b e called ZN -
-charges. Using symbols (4.13), one can associate a “partiti on” function to any
-ﬁnitely triangulated three-manifold with a triangulated t angle passing through
-the all interior 0-simplices. The construction goes as foll ows.
-Let M be a ﬁnite triangulation of an oriented 3-dimensional manif old with
-boundary. Fix a subset of 1-simplices T ⊂ Λ 1(M \∂M ) in such a way that any
-interior 0-simplex belongs to exactly two elements from T , so the latter is some
-triangulated tangle in M , passing through the all interior vertices. Denote
-I = {0, 1,...,K − 1}, where K is the number of vertices in M , and ﬁx the
-following maps:
-u:I → Λ 0(M ), s : Λ 0(M ) →C, c T : Λ 3(M )×Λ 1(M ) →ZN, α : Λ 2(M ) →ZN,
-(4.14)
-where u is bijective, s, injective, and cT satisﬁes the restrictions:
-e ⁄∈Λ 1(t) ⇒cT (t,e ) = 0;
-∑
-e∋v
-cT (t,e ) = 1/ 2, v ∈t ∈ Λ 3(M ); (4.15)
-∑
-t∈Λ 3(M )
-cT (t,e ) =
-{ 0, e ∈T ;
-1, e ∈ Λ 1(M \∂M ) \T . (4.16)
-Denote the total ZN -charges on Λ 1(∂M ) by
-∂c tot: Λ 1(∂M ) ∋e ↦→
-∑
-t∈Λ 3(M )
-cT (t,e ) ∈ZN, (4.17)
-and also the restrictions of the remained maps in (4.14) by
-∂u: Λ 0(∂M ) →I, ∂s : Λ 0(∂M ) →C, ∂α : Λ 2(∂M ) →ZN. (4.18)
-Then, the partition function reads:
-M∂u (T,∂s,∂c tot,∂α ) = N −K0
-∑
-α,∂α =ﬁxed
-∏
-t∈Λ 3(M )
-tu(s,c T,α )
-∏
-e∈Λ 1(M \∂M )\T
-⟨s(∂e)⟩−1,
-(4.19)
-where
-⟨s(∂e)⟩ = (s(uj) −s(ui))(N −1)/N , e =uiuj; (4.20)
-andK0 being the number of interior 0-simplices. As is reﬂected in t he left hand
-side of (4.19), the partition function depends (up to N -th roots of unity) only
-6
-on the boundary data as well as on the topological class of the triangulated
-tangle (see [14] for the deﬁnition). This is the consequence of the relations the
-symbols (4.13) satisfy, which are described in [14]. When ∂M = ∅ partition
-function (4.19) multiplied by N 2 reduces to the invariant of triangulated links
-[14].
-To make contact with the results of Sect. 3, we have just to spe cify the
-triangulated 3-manifold with tangle, corresponding to R-symbol (2.8). The
-most economic way is to consider singular triangulated mani folds [17].
-Letu1,u 2,u 3,u 4 be four points in R3, specifying the right-oriented tetrahe-
-dron u1u2u3u4. Glue to four faces of the latter four other tetrahedrons
-u1u2u4u5, u 2u3u4u5′, u 0u1u2u3, u 0′u1u3u4.
-We have added four new vertices u0,u 0′,u 5,u 5′. Among the latter identify the
-“primed” vertices with the corresponding “non-primed” one s:
-u0 =u0′, u 5 =u5′. (4.21)
-While doing this, we glue also the added tetrahedrons pairwi se along the cor-
-responding faces. As a result we get a triangulated octahedr on u0u1u2u3u4u5.
-The next step consists in attaching four more tetrahedrons,
-u0u1u2u5, u 0u2u3u5, u 0u3u4u5, u 0u1u4u5,
-to the octahedron, each one being glued along two faces. For e xample, tetra-
-hedron u0u1u2u5 is attached along faces u0u1u2 and u1u2u5, and similarly the
-others. Thus we obtain singular triangulated three-ball B, where among others
-four diﬀerent 1-simplices have coinciding ends u0 and u5. We will distinguish
-them by specifying the tetrahedron to which they belong. For example,
-[u0u5]12 ∈ Λ 1(u0u1u2u5), (4.22)
-and similarly for the others. Besides, Λ 2(∂B ) consists of four pairs of 2-
-simplices, each being given by one and the same triple of vert ices:
-Λ 2(∂B ) = {[u0uiu5]±, i = 1, 2, 3, 4}, (4.23)
-where we distinguish elements within each pair by their orie ntation (+ ( −) cor-
-responds to the right (left) orientation). To write down the partition function,
-we have to specify the tangle. Let us choose it as follows:
-T = {u1u3,u 2u4}. (4.24)
-Now, providing B with additional data (4.14), one can calculate the partitio n
-function (4.19). The result reads:
-B∂u (T,∂s,∂c tot,∂α )
-= (s05)N −1
-N −1∑
-i1,i 2,i 3,i 4=0
-R(i1,i 2,i 3,i 4|c12,c 23,c 34,c 14)
-4∏
-m=1
-ψ α −
-m−α +
-m+cm
-m,i m ,(4.25)
-7
-where
-α ±
-m =α ([u0umu5]±), s ij = (s(ui) −s(uj))1/N (4.26)
-cm =∂c tot(umu5), c ij =∂c tot([u0u5]ij), (4.27)
-and
-ψ k
-m,j =ω jks[k−1]
-0m s[−k]
-m5 , (4.28)
-see also (2.4). The role of ψ -functions is to intertwine the indices of diﬀerent
-nature. Note that the ZN -charges are related with the angle-dependent data
-for the enhanced R-matrix.
-Formula (4.25) enables us to prove the second part of Theorem 1. Indeed,
-let we are given a link, represented by a two-strand tangle. T hen, using cor-
-respondence (4.25), we associate to the latter partition fu nction of a singular
-triangulated three-ball with four boundary 0-simplices, t he tangle by its strands
-being attached to two of them. To get the invariant in S3, we have to glue the
-ball with another (empty) one, making the tangle to pass thro ugh the other two
-vertices and converting it into the link under consideratio n. This last process
-is equivalent to choosing boundary conditions (3.2).
-One can prove also the YBE (2.13) via consideration the trian gulated three-
-balls, corresponding to two sides of YBE, and transforming t hem to each other
-by a sequence of elementary moves deﬁned in [14].
-A remark is in order. In [15] it has been shown that the univers al R-
-matrix in Drinfeld double can be represented as a product of s olutions to the
-constant pentagon relation, the canonical element in Heise nberg double being
-such solution. This construction can be extended also to the case of non-
-constant solutions to the pentagon relation. In particular , using cyclic quantum
-dilogarithm of [11] and specializing the parameters, one ca n derive R-matrix
-(2.12). The derivation given in this section is essentially equivalent to the latter.
-On the other hand, the cyclic quantum dilogarithm can be obta ined from the
-quantum dilogarithm with q non-root of unity 2 in the limit, where q approaches
-a root of unity [6]. Thus, it is natural to consider R-matrix (2.12) as a cyclic
-counterpart of the universal R-matrix in Uq(sl(2)).
+[]{#sec3 label="sec3"}
+
+In this section we establish the connection of the link invariant constructed in Sect. [\[sec2\]](#sec2){reference-type="ref" reference="sec2"} with the invariant of triangulated links of [@K], related in turn to cyclic quantum dilogarithm [@FK]. First, remind the necessary formulas from [@K] in slightly different notations.
+
+We will assume that the integer $N$ is odd, and the square root of $\omega$ will be thought to be taken as an $N$-th root of unity: $$\omega^{1/2}=\omega^{(N+1)/2}.$$ For complex $x,y,z$, satisfying the Fermat equation $$x^N+y^N=z^N,\label{Fermat}$$ and integers $m,n$ define the function $$w(x,y,z|m,n)=w(x,y,z|m-n)\omega^{n^2/2},$$ where $$w(x,y,z|n)=\prod_{j=1}^n{y\over z-x\omega^j}.$$ The Fermat equation ([\[Fermat\]](#Fermat){reference-type="ref" reference="Fermat"}) ensures the periodicity relation: $$w(x,y,z|n+N)=w(x,y,z|n).$$ This latter property enables us to consider the finite set $Z_N$ instead of $Z$.
+
+For any non-coinciding complex numbers $z_0,z_1,z_2,z_3$, and $\a,\b,\g,\d,a,c\in Z_N$ define two functions: $$T^{0123}(a,c)_{\a,\b}^{\g,\d}=
+\rho_{0123}\omega^{c(\g-\a)+\a\d+ac/2}w(x_{03}x_{12},x_{01}x_{23},
+x_{02}x_{13}|\g-a,\a)\delta_{\b,\g+\d},\label{T}$$ and $$\overline T^{0123}(a,c)^{\a,\b}_{\g,\d}=
+{\overline\rho_{0123}\omega^{c(\g-\a)-\a\d-ac/2}\delta_{\b,\g+\d}\over
+w(x_{03}x_{12}/\omega,x_{01}x_{23},
+x_{02}x_{13}|\g+a,\a)},\label{Tbar}$$ where $$x_{ij}=(z_i-z_j)^{1/N},\quad i,j=0,1,2,3,$$ with $N$-th root being chosen to be real for real difference $z_i-z_j$; scalar functions $\rho_{0123}$ and $\overline\rho_{0123}$ depend on only $z$'s and their explicit form can be found in [@K]. These symbols can be associated with tetrahedrons in $R^3$ as is described below.
+
+In what follows for a polyhedron $X$, considered as a collection of vertices, edges, triangles, and tetrahedrons, we will denote by $\Lambda_i(X)$, $i=0,1,2,3$ the sets of simplices of corresponding dimension. Consider a topological [^1] tetrahedron $t$ in $R^3$. Order the vertices by fixing a bijective map $$u\colon \{0,1,2,3\}\ni i\mapsto u_i\in\Lambda_0(t).$$ Put an arrow on each edge, pointing from a "larger" vertex (with respect to above ordering) to a "smaller" one. Each face also gets its' own orientation. Let $u_l$ be the top of the tetrahedron. Let us look from it down at the vertices $u_i,u_j,u_k$, where $$\{i,j,k\}=\{0,1,2,3\}\setminus \{l\},\quad i<j<k.$$ We will see two possible views: either $u_i,u_j,u_k$, in the order which they are written, go round in the counter-clockwise direction (the "right" orientation) or, in the clockwise one (the "left" orientation). The tetrahedron itself has two possible orientations in the following sense. Call the tetrahedron "right (left)"-oriented if the face $u_0u_1u_2$ has the right (left) orientation in the above sense.
+
+Introduce three maps: $$s\colon \Lambda_0(t)\to C,\quad c\colon \Lambda_1(t)\to Z_N,
+\quad\alpha\colon \Lambda_2(t)\to Z_N,\label{charge}$$ where $s$ is injective, and $c$ satisfies the following relations: $$\sum_{e\ni v}c(e)=1/2,\quad v\in\Lambda_0(t).$$ Let $c_{ij}=c(u_iu_j)$ ($u_iu_j$ is the edge having ends $u_i$ and $u_j$), $\alpha_i=\alpha(u_ju_ku_l)$, $\{j,k,l\}=\{0,1,2,3\}\setminus\{i\}$, and $z_i=s(u_i)$. Define the symbol associated with the tetrahedron $t$: $$t_u(s,c,\alpha)=\cases{ T^{0123}(c_{01},c_{12})
+_{\alpha_3,\alpha_1}^{\alpha_2,\alpha_0},& right orientation;\cr
+\overline T^{0123}(c_{01},c_{12})
+^{\alpha_3,\alpha_1}_{\alpha_2,\alpha_0},& left orientation.\cr}\label{tetr}$$ The variables associated with the second map in ([\[charge\]](#charge){reference-type="ref" reference="charge"}) will be called $Z_N$-charges. Using symbols ([\[tetr\]](#tetr){reference-type="ref" reference="tetr"}), one can associate a "partition" function to any finitely triangulated three-manifold with a triangulated tangle passing through the all interior 0-simplices. The construction goes as follows.
+
+Let $M$ be a finite triangulation of an oriented 3-dimensional manifold with boundary. Fix a subset of 1-simplices $T\subset\Lambda_1(M\setminus\partial M)$ in such a way that any interior 0-simplex belongs to exactly two elements from $T$, so the latter is some triangulated tangle in $M$, passing through the all interior vertices. Denote $I=\{0,1,\ldots,K-1\}$, where $K$ is the number of vertices in $M$, and fix the following maps: $$u\colon I\to\Lambda_0(M),\quad s\colon\Lambda_0(M)\to C,\quad
+c_T\colon\Lambda_3(M)\times\Lambda_1(M)\to Z_N,\quad
+\alpha\colon\Lambda_2(M)\to Z_N,\label{allmaps}$$ where $u$ is bijective, $s$, injective, and $c_T$ satisfies the restrictions: $$e\not\in\Lambda_1(t)\Rightarrow c_T(t,e)=0;
+\quad\sum_{e\ni v}c_T(t,e)=1/2,\quad v\in t\in\Lambda_3(M);$$ $$\sum_{t\in\Lambda_3(M)}c_T(t,e)=\cases{0,&$e\in T$;\cr
+                       1,&$e\in
+\Lambda_1(M\setminus\partial M)\setminus T$.\cr}$$ Denote the total $Z_N$-charges on $\Lambda_1(\partial M)$ by $$\partial c_{tot}\colon \Lambda_1(\partial M)\ni e\mapsto
+\sum_{t\in\Lambda_3(M)}c_T(t,e)\in Z_N,$$ and also the restrictions of the remained maps in ([\[allmaps\]](#allmaps){reference-type="ref" reference="allmaps"}) by $$\partial u\colon\Lambda_0(\partial M)\to I,\quad
+\partial s\colon\Lambda_0(\partial M)\to C,\quad
+\partial\alpha\colon\Lambda_2(\partial M)\to Z_N.$$ Then, the partition function reads: $$M_{\partial u}(T,\partial s,\partial c_{tot},\partial\alpha)=N^{-K_0}
+\sum_{\alpha,\partial\a=\mathrm{fixed}}
+\prod_{t\in\Lambda_3(M)}
+t_u(s,c_T,\alpha)\prod_{e\in\Lambda_1(M\setminus\partial M)\setminus T}
+\langle s(\partial e)
+\rangle^{-1},\label{partfun}$$ where $$\langle s(\partial e)\rangle=(s(u_j)-s(u_i))^{(N-1)/N},\quad e=u_iu_j;$$ and $K_0$ being the number of interior 0-simplices. As is reflected in the left hand side of ([\[partfun\]](#partfun){reference-type="ref" reference="partfun"}), the partition function depends (up to $N$-th roots of unity) only on the boundary data as well as on the topological class of the triangulated tangle (see [@K] for the definition). This is the consequence of the relations the symbols ([\[tetr\]](#tetr){reference-type="ref" reference="tetr"}) satisfy, which are described in [@K]. When $\partial M=\emptyset$ partition function ([\[partfun\]](#partfun){reference-type="ref" reference="partfun"}) multiplied by $N^2$ reduces to the invariant of triangulated links [@K].
+
+To make contact with the results of Sect. [\[sec2\]](#sec2){reference-type="ref" reference="sec2"}, we have just to specify the triangulated 3-manifold with tangle, corresponding to $R$-symbol ([\[R\]](#R){reference-type="ref" reference="R"}). The most economic way is to consider singular triangulated manifolds [@TV].
+
+Let $u_1,u_2,u_3,u_4$ be four points in $R^3$, specifying the right-oriented tetrahedron $u_1u_2u_3u_4$. Glue to four faces of the latter four other tetrahedrons $$u_1u_2u_4u_5,\quad u_2u_3u_4u_{5'},\quad u_0u_1u_2u_3,
+\quad u_{0'}u_1u_3u_4.$$ We have added four new vertices $u_0,u_{0'},u_5,u_{5'}$. Among the latter identify the "primed" vertices with the corresponding "non-primed" ones: $$u_0=u_{0'},\quad u_5=u_{5'}.$$ While doing this, we glue also the added tetrahedrons pairwise along the corresponding faces. As a result we get a triangulated octahedron $u_0u_1u_2u_3u_4u_5$. The next step consists in attaching four more tetrahedrons, $$u_0u_1u_2u_5,\quad u_0u_2u_3u_5,\quad u_0u_3u_4u_5,
+\quad u_0u_1u_4u_5,$$ to the octahedron, each one being glued along two faces. For example, tetrahedron $u_0u_1u_2u_5$ is attached along faces $u_0u_1u_2$ and $u_1u_2u_5$, and similarly the others. Thus we obtain singular triangulated three-ball $B$, where among others four different 1-simplices have coinciding ends $u_0$ and $u_5$. We will distinguish them by specifying the tetrahedron to which they belong. For example, $$_{12}\in \Lambda_1(u_0u_1u_2u_5),$$ and similarly for the others. Besides, $\Lambda_2(\partial B)$ consists of four pairs of 2-simplices, each being given by one and the same triple of vertices: $$\Lambda_2(\partial B)=\{[u_0u_iu_5]^{\pm},\quad i=1,2,3,4\},$$ where we distinguish elements within each pair by their orientation ($+$ ($-$) corresponds to the right (left) orientation). To write down the partition function, we have to specify the tangle. Let us choose it as follows: $$T=\{u_1u_3,u_2u_4\}.$$ Now, providing $B$ with additional data ([\[allmaps\]](#allmaps){reference-type="ref" reference="allmaps"}), one can calculate the partition function ([\[partfun\]](#partfun){reference-type="ref" reference="partfun"}). The result reads: $$\begin{aligned}
+\lefteqn{B_{\partial u}(T,\partial s,\partial c_{tot},
+\partial\alpha)}\qquad\nonumber\\
+&&=(s_{05})^{N-1}
+\sum_{i_1,i_2,i_3,i_4=0}^{N-1}R(i_1,i_2,i_3,i_4|c_{12},c_{23},c_{34},c_{14})
+\prod_{m=1}^4\psi_{m,i_m}^{\a_m^--\a_m^++c_m},\label{octahed}
+\end{aligned}$$ where $$\a_m^\pm=\alpha([u_0u_mu_5]^{\pm}),\quad s_{ij}=(s(u_i)-s(u_j))^{1/N}$$ $$c_m=\partial c_{tot}(u_mu_5),\quad c_{ij}=\partial c_{tot}([u_0u_5]_{ij}),$$ and $$\psi_{m,j}^k=\omega^{jk}s_{0m}^{[k-1]}s_{m5}^{[-k]},$$ see also ([\[brac\]](#brac){reference-type="ref" reference="brac"}). The role of $\psi$-functions is to intertwine the indices of different nature. Note that the $Z_N$-charges are related with the angle-dependent data for the enhanced $R$-matrix.
+
+Formula ([\[octahed\]](#octahed){reference-type="ref" reference="octahed"}) enables us to prove the second part of Theorem [\[theo\]](#theo){reference-type="ref" reference="theo"}. Indeed, let we are given a link, represented by a two-strand tangle. Then, using correspondence ([\[octahed\]](#octahed){reference-type="ref" reference="octahed"}), we associate to the latter partition function of a singular triangulated three-ball with four boundary 0-simplices, the tangle by its strands being attached to two of them. To get the invariant in $S^3$, we have to glue the ball with another (empty) one, making the tangle to pass through the other two vertices and converting it into the link under consideration. This last process is equivalent to choosing boundary conditions ([\[boundary\]](#boundary){reference-type="ref" reference="boundary"}).
+
+One can prove also the YBE ([\[YBE\]](#YBE){reference-type="ref" reference="YBE"}) via consideration the triangulated three-balls, corresponding to two sides of YBE, and transforming them to each other by a sequence of elementary moves defined in [@K].
+
+A remark is in order. In [@K1] it has been shown that the universal $R$-matrix in Drinfeld double can be represented as a product of solutions to the constant pentagon relation, the canonical element in Heisenberg double being such solution. This construction can be extended also to the case of non-constant solutions to the pentagon relation. In particular, using cyclic quantum dilogarithm of [@FK] and specializing the parameters, one can derive $R$-matrix ([\[R-matrix\]](#R-matrix){reference-type="ref" reference="R-matrix"}). The derivation given in this section is essentially equivalent to the latter. On the other hand, the cyclic quantum dilogarithm can be obtained from the quantum dilogarithm with $q$ non-root of unity [^2] in the limit, where $q$ approaches a root of unity [@BR]. Thus, it is natural to consider $R$-matrix ([\[R-matrix\]](#R-matrix){reference-type="ref" reference="R-matrix"}) as a cyclic counterpart of the universal $R$-matrix in $U_q(sl(2))$.
+
+[^1]: the term "topological" here means that edges and faces of the tetrahedron can be curved
+
+[^2]: in this case the quantum dilogarithm is precisely the canonical element in Heisenberg double of $BU_q(sl(2))$, the Borel sub-algebra of $U_q(sl(2))$ [@K]

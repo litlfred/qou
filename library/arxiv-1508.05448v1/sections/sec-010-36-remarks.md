@@ -7,10 +7,10 @@ section_number: 3.6
 pages: 55-59
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
-text_source: latex
-latex_prose_ratio: 0.954
-latex_coverage_ratio: 0.975
 doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
+text_source: latex
+latex_prose_ratio: 0.941
+latex_coverage_ratio: 0.972
 ---
 By generalizing this method introduced by Chatterjee and Ledoux, we are able to show concentration of measure of the empirical spectral distribution not only for operator compressions via $SO(n)$ but also for operators that are \"compressed\" by conjugation with a Gaussian matrix. It is likely that this method could be applied to a much wider range of Markov chains, given that the chain does not change too many entries at once, has an appropriate invariant distribution, and for which the spectral gap is known. It is possible that better bounds for the Gaussian compression could be obtained by adapting the method to use the \"second\" spectral gap or the exponential decay rate in relative entropy found in [@BLV].
 
@@ -21,20 +21,18 @@ It is worth noting that Talagrand's isoperimetric inequality [@Talagrand] gives 
 
 The purpose of this section is to make some observations about the mixed matrix moments for non-Hermitian random matrices. The results in this chapter can be found in [@MWSS]. Let $\operatorname{Mat}_n(\mathbb{C})$ denote the set of $n\times n$ matrices with complex entries. We use this notation here because we will use $M_n$ for something else later.
 
-The model we will focus on most is the complex Ginibre ensemble, given by $$\begin{equation}
-A_n \in \operatorname{Mat}_n(\mathbb{C})\, ,\quad A_n = (a_n(j,k))_{j,k=1}^{n}\, ,\quad
-a_n(j,k)\, =\, \frac{X(j,k)+iY(j,k)}{\sqrt{2n}}\, ,
-\end{equation}$$ where $(X(j,k))_{j,k=1}^{\infty}$, $(Y(j,k))_{j,k=1}^{\infty}$ are IID, $\mathcal{N}(0,1)$ real random variables.
+The model we will focus on most is the complex Ginibre ensemble, given by $$A_n \in \operatorname{Mat}_n(\mathbb{C})\, ,\quad A_n = (a_n(j,k))_{j,k=1}^{n}\, ,\quad
+a_n(j,k)\, =\, \frac{X(j,k)+iY(j,k)}{\sqrt{2n}}\, ,$$ where $(X(j,k))_{j,k=1}^{\infty}$, $(Y(j,k))_{j,k=1}^{\infty}$ are IID, $\mathcal{N}(0,1)$ real random variables.
 
 Much of what we will say has already been explored by Chalker and Mehlig in a pair of papers [@CM; @MC], in particular, in their definition of expected overlap functions. There are other models of interest which were explored by Fyodorov and coauthors [@FY1; @FY2], for which one can obtain more explicit formulas for the expected overlap functions. Our main emphasis will be to relate Chalker and Mehlig's formulas for the overlap functions of the complex Ginibre ensemble to the mixed matrix moments.
 
 Our motivation in considering this problem is the following. There is a rough analogy between mean-field spin glasses and random matrices, as far as the mathematical methods are concerned. We indicate this in the table in Figure [1.1](#fig:1){reference-type="ref" reference="fig:1"}. We will give more details and references in a later discussion, but we would like to point out some of the analogies now. This analogy leads to a method to calculate moments, but there is still the question about how to relate the moments to the spectral information for the matrix.  
 
-<figure id="fig:1" data-latex-placement="h">
+<figure id="fig:1">
 <div class="center">
 
 </div>
-<figcaption>Some analogous elements in random matrix and spin glass theory. (Proofs may differ considerably.) <span id="fig:1" data-label="fig:1"></span></figcaption>
+<figcaption>Some analogous elements in random matrix and spin glass theory. (Proofs may differ considerably.) <span id="fig:1" label="fig:1"></span></figcaption>
 </figure>
 
 Although the main subject of this subject is random matrices, we will give a very brief introduction to spin glasses, just to motivate our analogy. Spin glasses are physical objects. We will not say much about the physics behind them, as the subject of this paper is mathematics. However, we will give a quote from Daniel Mattis's book [@Mattis] in his discussion of dilute magnetic alloys. He says :\

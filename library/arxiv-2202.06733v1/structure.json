@@ -285,8 +285,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
-   "tex_sections": 6,
-   "overlaid": 4,
+   "tex_sections": 14,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -301,64 +301,78 @@
     {
      "id": "sec-001-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.982,
-     "coverage_ratio": 0.971,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-2-characteristic-multivectors-and-su3",
      "title": "Characteristic multivectors and SU(3)",
-     "prose_ratio": 0.327,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.887,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-22-the-characteristic-polynomial-and-the-cayley",
      "title": "The characteristic polynomial and the Cayley-Hamilton theorem",
-     "result": "no matching \\section"
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.869,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-24-the-characteristic-polynomial-and-cayley-hami",
      "title": "The characteristic polynomial and Cayley-Hamilton theorem for SU(3)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.855,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-3-ga-and-the-forces-of-nature",
      "title": "GA and the forces of nature",
-     "prose_ratio": 0.127,
+     "prose_ratio": 0.248,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-006-31-strong-forces",
      "title": "Strong forces",
-     "result": "no matching \\section"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.738,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-4-octonions-and-the-sta",
      "title": "Octonions and the STA",
-     "prose_ratio": 0.6,
-     "coverage_ratio": 0.964,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.617,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-008-41-explicit-assignment-of-octonion-units-to-sta",
      "title": "Explicit assignment of octonion units to STA elements",
-     "result": "no matching \\section"
+     "prose_ratio": 0.881,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-5-octonions-the-sta-and-particle-physics",
      "title": "Octonions, the STA and particle physics",
-     "prose_ratio": 0.979,
-     "coverage_ratio": 0.949,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-010-6-future-prospects",
      "title": "Future prospects",
-     "prose_ratio": 0.983,
-     "coverage_ratio": 0.956,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

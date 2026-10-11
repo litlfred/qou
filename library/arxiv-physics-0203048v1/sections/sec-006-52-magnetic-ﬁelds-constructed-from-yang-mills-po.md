@@ -8,168 +8,69 @@ pages: 8-11
 source_pdf: 0203048v1.pdf
 source_sha256: 47204f32280e91a3
 doc_brief: "Towards a third-order topological invariant for magnetic fields — An expression for a third-order link integral of three magne tic ﬁelds is presented."
+text_source: latex
+latex_prose_ratio: 0.981
+latex_coverage_ratio: 0.986
 ---
-As mentioned above we now interpret the three components of the non-Abelian
-pure gauge Yang-Mills potential A as potentials of three independent, non-vanishing
-magnetic ﬁelds. It is suﬃcient to consider only one of the three pote ntials Ai, since
-due to ˆni = xi/||x|| and the cyclic symmetry of equation (30) in the indices i,j,k
-all three ﬁelds can be obtained from just one ﬁeld by rotations that map the xi-axes
-on one another. From equation (30) we calculate the vector poten tial A3 in spherical
-coordinatesx =r sinϑ cosϕ,y =r sinϑ sinϕ, andz =r cosϑ. Using unit basis vectors
-er, eϑ, eϕ and ﬁxing a value for the “coupling constant” of q = 2, we ﬁnd
-A3 = −2π cosϑ
-(1 +r2)3/ 2 er + sinϑ
-r sin
-( 2πr√
-1 +r2
-)
-eϑ − 2 sinϑ
-r sin2
-( πr√
-1 +r2
-)
-eϕ. (31)
-The corresponding magnetic ﬁeld can be calculated from B3 = ∇ × A3. It is easy to
-check that the ﬁelds Bi are well deﬁned and scale as ||Bi(x)|| → 4π2 for r → 0 and
-as ||Bi(x)|| → r−4 for r → ∞. Hence, they have no singularity and decay suﬃciently
-fast for large radii.
-Let us note that the ﬁelds Bi are highly symmetric and similar. Looking at the
-vector potential A3 we observe that it is independent of the variable ϕ, therefore B3
-is invariant under rotations leaving the x3-axis ﬁxed. Since the potentials (30) are
-cyclic in i,j,k it follows that each Bi ﬁeld is invariant under rotations about the xi
-axis. We have pointed out before that a rotation that maps the Euc lidian basis vector
-ﬁeld e1 to e2 also maps B1 to B2 etc. Furthermore, B3 is similar to the total ﬁeld
-B = B1 + B2 + B3 in the following sense: Let R be a rotation that maps the Euclidian
-basis vector e3 to the vector
-√
-3R(e3) = e1 + e2 + e3, then B =
-√
-3R(B3).
-The magnetic ﬁelds Bi are only of interest for us if their third-order invariant does
-not vanish. Explicitly calculating Ai for i = 1, 2, 3 we ﬁnd, using the main Theorem,
-H (3)(B1, B2, B3) =
-∫ ∞
-0
-4π
-r2(1 +r2)3/ 2
-(
-cos( 2πr√
-r2 + 1
-) − 1
-)
-dr = −16π2. (32)
-The fact that this integral is non-vanishing proves, that the cons tructed invariant
-cannot only be applied to all cases for which we where able to calculate the already
-Third-order topological invariant 9
-existing invariant, i.e. to three mutually unlinked ﬂux tubes, but also t o examples of
-triples of ﬁelds not having disjunct support. It is thus a true gener alization of the
-existing invariant known from the Massey triple product.
-As we have pointed out before, H (3) is related to the vacuum winding number
-W (g) of the connection ω =g−1dg. We easily ﬁnd (see also Frankel 1997)
-W (g) := 1
-24π2
-∫
-V
-tr(g−1dg ∧g−1dg ∧g−1dg)
-= − 1
-96π2
-∫
-V
-ǫijkAi ∧Aj ∧Ak (33)
-= − 1
-16π2H (3)(B1, B2, B3),
-where the trace term is usually referred to as the Cartan three-f orm on SU (2).
-In the general case the cross-helicities of three magnetic ﬁelds, f or which we are
-able to ﬁnd potentials such that ∇ · (Ai × Aj) = Bi · Aj − Ai · Bj = 0, do not have to
-vanish. In our example we can easily verify that they do vanish, i.e. H(Bi, Bj) = 0 for
-i ⁄=j. Of more interest are the three non-trivial self-helicities. If a trip le of magnetic
-ﬁelds is derived from a Yang-Mills vacuum, equation (24) together wit hF = 0 implies
-dAi + 1
-2ǫijkAj ∧Ak = 0.
-Using the deﬁnitions Bi = dAi and Gi =Aj ∧Ak we ﬁnd for ( i,j,k ) cyclic
-Bi = −Aj ∧Ak = −Gi.
-Thus, for i = 1, 2, 3, we observe that
-H(Bi, Bi) =
-∫
-V
-Ai · Bi d3x = −
-∫
-V
-Ai · Gi d3x = −H (3)(B1, B2, B3).
-Therefore the self-helicities are equal to the value of the third-or der invariant. This is
-a peculiarity of all magnetic ﬁeld triples derived from an SU (2) Yang-Mills vacuum.
-In our analysis of the three example magnetic ﬁelds we now turn our a ttention to
-the topological structure of the ﬁelds and the linkage of individual ﬁ eld lines. Figure 4
-and 5 show numerically integrated ﬁeld lines, where the starting point s for integration
-are indicated by the foot points of the arrows that give the ﬁeld line d irection. We
-observe that all ﬁeld lines are closed and have an elliptical shape. Figu res 2 and 3
-visualize the toroidal structure of the individual ﬁelds at the examp le of B3. Using
-A3 =A3
-r er +A3
-ϑ eϑ +A3
-ϕ eϕ and ∂
-∂ϕ A3 = 0 it follows that B3 can be written
-B3 = ∇ × A3 = 1
-r sinϑ ∇(r sinϑA3
-ϕ ) × eϕ +B3
-ϕ eϕ. (34)
-Therefore, the ﬁeld lines of B3 lie on ϕ-invariant toroidal surfaces described by
-r sinϑA3
-ϕ = const. Figure 2 shows the poloidal B3-ﬁeld and contour lines for three
-diﬀerent values of r sinϑA3
-ϕ . A toroidal surface with r sinϑA3
-ϕ = −1.8 and four ﬁeld
-lines on it is drawn in Figure 3. The central ﬁeld line, sitting within all tori is
-characterized by B3
-r = B3
-ϑ = 0. In view of the last equation, this is equivalent to
-∇(r sinϑA3
-ϕ ) = 0 which yields r =
-√
-1/3 and ϑ = π/2. We observe that all ﬁeld
-lines wind around the central ﬁeld line exactly once. From this and the toroidal
-structure of B3 we can conclude that any two arbitrary ﬁeld lines l and l′ of B3 have
-a Gauß linkage lk(l,l ′) = 1.
-Finally let us discuss the linking properties among ﬁeld lines of diﬀerent ﬁ elds.
-To give an example, one ﬁeld line of each ﬁeld is plotted in Figure 4. The sy mmetric
-Third-order topological invariant 10
-appearance is due to the choice of symmetric starting points for th e ﬁeld line
-integration. As was stressed above, the magnetic ﬁelds Bi can be obtained from
-one another by cyclic permutations of the Cartesian coordinates xi. In the same way
-the integration starting points for the ﬁeld lines γ1,γ2 andγ3 where chosen to be the
-cyclic permuted coordinate triples (0 , 0.8, 0), (0, 0, 0.8) and (0.8, 0, 0). It is interesting
-that the total linkage of the set of ﬁeld lines is lk( γ1,γ 2) + lk(γ2,γ 3) + lk(γ3,γ 1) = −3.
-Even though we have seen that the mutual cross-helicities of all th ree ﬁelds vanish,
-Figure 2. The vector plot shows the
-projection of the B3-ﬁeld onto the x1-
-x3-plane. The arrow lengths are not to
-scale. The solid lines are contour levels
-with values − 0. 5, − 1, − 1. 8 of the plotted
-density distribution r sin ϑA 3
-ϕ .
-Figure 3. The drawn torus is the
-surface at which r sin ϑA 3
-ϕ = − 1. 8. All
-ﬁeld lines of B3 lie on toroidal surfaces
-described by r sin ϑA 3
-ϕ = const. Four
-ﬁeld lines lying on this torus are drawn.
-Figure 4. The three ﬁeld lines γ i
-belong to the respective ﬁelds Bi. Their
-total linkage is lk( γ 1, γ 2) + lk(γ 2, γ 3) +
-lk(γ 3, γ 1) = − 3.
-Figure 5. For each ﬁeld line γ 1 and
-γ 3 there exists a ﬁeld line ˜ γ 1 such that
-lk(γ 1, γ 3) + lk(˜γ 1, γ 3) vanishes.
-Third-order topological invariant 11
-their individual ﬁeld lines, in general, are linked pairwise. To be more pre cise: If
-we e.g. ﬁx one ﬁeld line γ3 of B3, then all ﬁeld lines of B1 and B2 are either linked
-withγ3 exactly once or they intersect γ3 twice. For reasons of symmetry, there exists
-for each ﬁeld line γ1 of B1 a ﬁeld line ˜γ1 of B1, such that we ﬁnd the total linkage
-lk(γ1,γ 3) + lk(˜γ1,γ 3) = 0. Hence, the cross-helicity H(B1,γ 3) vanishes, which in
-turn implies H(B1, B3) = 0. Figure 5 shows such ﬁeld lines γ1, ˜γ1 and γ3 with
-(0, 0.8, 0), (0, −0.8, 0) and (0 .8, 0, 0) as their respective starting points for the ﬁeld
-line integration. Finally let us remark that in the same way as we obtaine d ˜γ1 we
-can obtain ﬁeld lines ˜ γ2 and ˜γ3, here with integration starting points (0 , −0.8, 0),
-(0, 0, −0.8) and ( −0.8, 0, 0). Together, these three ﬁeld lines yield a conﬁguration
-complementary to the one shown in Figure 4, which now has a total link age of +3.
+As mentioned above we now interpret the three components of the non-Abelian pure gauge Yang-Mills potential $A$ as potentials of three independent, non-vanishing magnetic fields. It is sufficient to consider only one of the three potentials $A^i$, since due to $\hat{n}^i = x^i/||\bx||$ and the cyclic symmetry of ([\[Yang-Mills-potential-components\]](#Yang-Mills-potential-components){reference-type="ref" reference="Yang-Mills-potential-components"}) in the indices $i,j,k$ all three fields can be obtained from just one field by rotations that map the $x^i$-axes on one another. From ([\[Yang-Mills-potential-components\]](#Yang-Mills-potential-components){reference-type="ref" reference="Yang-Mills-potential-components"}) we calculate the vector potential $\bA^3$ in spherical coordinates $x = r \sin\vartheta \cos\varphi$, $y = r \sin\vartheta \sin\varphi$, and $z = r \cos\vartheta$. Using unit basis vectors $\be_r,\be_\vartheta, \be_\varphi$ and fixing a value for the "coupling constant" of $q=2$, we find $$\begin{aligned}
+\fl
+   \bA^3 \,=\, 
+   \frac{-2\pi \cos\vartheta }{(1+r^2)^{3/2}}\,\be_r \,+\,
+   \frac{\sin\vartheta}{r}\sin\left(\frac{2\pi r}{\sqrt{1+r^2}}\right)\,
+   \be_\vartheta
+   \,-\,\frac{2 \sin\vartheta}{r}\sin^2\left( \frac{\pi r}{\sqrt{1+r^2}}\right)
+   \be_\varphi. \label{Equation-Ai}
+\end{aligned}$$ The corresponding magnetic field can be calculated from $\bB^3 =
+ \nabla\times\bA^3$. It is easy to check that the fields $\bB^i$ are well defined and scale as $|| \bB^i(\bx) || \rightarrow  4\pi^2$ for $r\rightarrow 0$ and as $|| \bB^i(\bx) || \rightarrow  r^{-4}$ for $r\rightarrow \infty$. Hence, they have no singularity and decay sufficiently fast for large radii.
+
+Let us note that the fields $\bB^i$ are highly symmetric and similar. Looking at the vector potential $\bA^3$ we observe that it is independent of the variable $\varphi$, therefore $\bB^3$ is invariant under rotations leaving the $x^3$-axis fixed. Since the potentials ([\[Yang-Mills-potential-components\]](#Yang-Mills-potential-components){reference-type="ref" reference="Yang-Mills-potential-components"}) are cyclic in $i,j,k$ it follows that each $\bB^i$ field is invariant under rotations about the $x^i$ axis. We have pointed out before that a rotation that maps the Euclidian basis vector field $\be_{1}$ to $\be_{2}$ also maps $\bB^1$ to $\bB^2$ etc. Furthermore, $\bB^3$ is similar to the total field $\bB = \bB^1+\bB^2+\bB^3$ in the following sense: Let $R$ be a rotation that maps the Euclidian basis vector $\be_{3}$ to the vector $\sqrt{3}\,R(\be_{3}) = \be_{1}+\be_{2}+\be_{3}$, then $\bB = \sqrt{3}\,R(\bB^3)$.
+
+The magnetic fields $\bB^i$ are only of interest for us if their third-order invariant does not vanish. Explicitly calculating $\bA^i$ for $i=1,2,3$ we find, using the main Theorem, $$\begin{aligned}
+\fl
+H^{(3)}(\bB^1,\bB^2,\bB^3) 
+   &= \int_0^\infty \frac{4\pi}{r^2(1+r^2)^{3/2}}
+      \left(\cos(\frac{2\pi r}{\sqrt{r^2+1}})-1\right)\,dr
+   = -16 \pi^2 \label{H-3-in-example}.
+\end{aligned}$$ The fact that this integral is non-vanishing proves, that the constructed invariant cannot only be applied to all cases for which we where able to calculate the already existing invariant, i.e. to three mutually unlinked flux tubes, but also to examples of triples of fields not having disjunct support. It is thus a true generalization of the existing invariant known from the Massey triple product.
+
+As we have pointed out before, $H^{(3)}$ is related to the vacuum winding number $W(g)$ of the connection $\omega=g^{-1}\d g$. We easily find (see also Frankel 1997) $$\begin{aligned}
+ W(g)  &:= \nonumber
+ \frac{1}{24\pi^2}\int_V tr(g^{-1} d g \wedge g^{-1} d g \wedge g^{-1} d g)\\
+         &= 
+   - \frac{1}{96\pi^2}\int_V\epsilon_{\indi\indj\indk}
+                  A^\indi \wedge A^\indj \wedge A^\indk
+  \label{H-3-and-W} \\
+         &= -\frac{1}{16\pi^2} H^{(3)}(\bB^1,\bB^2,\bB^3), \nonumber 
+\end{aligned}$$ where the trace term is usually referred to as the Cartan three-form on $SU(2)$.
+
+In the general case the cross-helicities of three magnetic fields, for which we are able to find potentials such that $\nabla\cdot(\bA^i\times\bA^j)=\bB^i\cdot\bA^j-\bA^i\cdot\bB^j= 0$, do not have to vanish. In our example we can easily verify that they do vanish, i.e. $H(\bB^i,\bB^j) = 0$ for $i\ne j$. Of more interest are the three non-trivial self-helicities. If a triple of magnetic fields is derived from a Yang-Mills vacuum, ([\[dF-su2\]](#dF-su2){reference-type="ref" reference="dF-su2"}) together with $F=0$ implies $$\d A^\indi+\frac{1}{2}\,\epsilon_{\indi\indj\indk}A^\indj\wedge A^\indk = 0.$$ Using the definitions $B^\indi = \d A^\indi$ and $G^\indi = A^\indj \wedge A^\indk$ we find for $(\indi,\indj,\indk)$ cyclic $$B^\indi = -A^ \indj \wedge A^\indk = - G^\indi.$$ Thus, for $i=1,2,3$, we observe that $$H(\bB^i,\bB^i) =  \int_V \bA^i\cdot\bB^i \dxxx 
+                  = -\int_V \bA^i\cdot\bG^i \dxxx = -H^{(3)}(\bB^1,\bB^2,\bB^3).$$ Therefore the self-helicities are equal to the value of the third-order invariant. This is a peculiarity of all magnetic field triples derived from an $SU(2)$ Yang-Mills vacuum.
+
+<figure id="Figure-B3-field-lines-on-torus">
+<div class="center">
+<embed src="ghcmfig3.eps" />
+</div>
+<div class="center">
+<embed src="ghcmfig4.eps" style="width:82.0%" />
+</div>
+<figcaption>The drawn torus is the surface at which <span class="math inline"><em>r</em>sin <em>ϑ</em><em>A</em><sub><em>φ</em></sub><sup>3</sup> =  − 1.8</span>. All field lines of <span class="math inline">$\bB^3$</span> lie on toroidal surfaces described by <span class="math inline"><em>r</em>sin <em>ϑ</em><em>A</em><sub><em>φ</em></sub><sup>3</sup> = <em>c</em><em>o</em><em>n</em><em>s</em><em>t</em></span>. Four field lines lying on this torus are drawn. <span id="Figure-B3-field-lines-on-torus" label="Figure-B3-field-lines-on-torus"></span></figcaption>
+</figure>
+
+<figure id="Figure-zero-cross-helicity">
+<div class="center">
+<embed src="ghcmfig5.eps" />
+</div>
+<div class="center">
+<embed src="ghcmfig6.eps" />
+</div>
+<figcaption>For each field line <span class="math inline"><em>γ</em><sup>1</sup></span> and <span class="math inline"><em>γ</em><sup>3</sup></span> there exists a field line <span class="math inline"><em>γ̃</em><sup>1</sup></span> such that <span class="math inline">lk(<em>γ</em><sup>1</sup>,<em>γ</em><sup>3</sup>) + lk(<em>γ̃</em><sup>1</sup>,<em>γ</em><sup>3</sup>)</span> vanishes. <span id="Figure-zero-cross-helicity" label="Figure-zero-cross-helicity"></span></figcaption>
+</figure>
+
+In our analysis of the three example magnetic fields we now turn our attention to the topological structure of the fields and the linkage of individual field lines. Figure [\[Figure-B-1-2-3-field-lines\]](#Figure-B-1-2-3-field-lines){reference-type="ref" reference="Figure-B-1-2-3-field-lines"} and [2](#Figure-zero-cross-helicity){reference-type="ref" reference="Figure-zero-cross-helicity"} show numerically integrated field lines, where the starting points for integration are indicated by the foot points of the arrows that give the field line direction. We observe that all field lines are closed and have an elliptical shape. Figures [\[Figure-B3-field-dens-cont\]](#Figure-B3-field-dens-cont){reference-type="ref" reference="Figure-B3-field-dens-cont"} and [1](#Figure-B3-field-lines-on-torus){reference-type="ref" reference="Figure-B3-field-lines-on-torus"} visualize the toroidal structure of the individual fields at the example of $\bB^3$. Using $\bA^3 =   A^3_r\, \be_r + A^3_\vartheta\, \be_\vartheta + 
+                 A^3_\varphi\, \be_\varphi$ and $\frac{\p}{\p \varphi}\bA^3=0$ it follows that $\bB^3$ can be written $$\bB^3 = \nabla\times\bA^3 = \frac{1}{r\sin\vartheta}
+         \nabla(r\sin\vartheta A^3_\varphi)\times\be_\varphi
+                           + B^3_\varphi\be_\varphi.$$ Therefore, the field lines of $\bB^3$ lie on $\varphi$-invariant toroidal surfaces described by $r\sin\vartheta A^3_\varphi = \mbox{const}$. Figure [\[Figure-B3-field-dens-cont\]](#Figure-B3-field-dens-cont){reference-type="ref" reference="Figure-B3-field-dens-cont"} shows the poloidal $\bB^3$-field and contour lines for three different values of $r\sin\vartheta A^3_\varphi$. A toroidal surface with $r\sin\vartheta A^3_\varphi = -1.8$ and four field lines on it is drawn in Figure [1](#Figure-B3-field-lines-on-torus){reference-type="ref" reference="Figure-B3-field-lines-on-torus"}. The central field line, sitting within all tori is characterized by $B^3_r = B^3_\vartheta = 0$. In view of the last equation, this is equivalent to $\nabla(r\sin\vartheta A^3_\varphi)=0$ which yields $r=\sqrt{1/3}$ and $\vartheta=\pi/2$. We observe that all field lines wind around the central field line exactly once. From this and the toroidal structure of $\bB^3$ we can conclude that any two arbitrary field lines $l$ and $l'$ of $\bB^3$ have a Gauß  linkage $lk(l,l')=1$.
+
+Finally let us discuss the linking properties among field lines of different fields. To give an example, one field line of each field is plotted in Figure [\[Figure-B-1-2-3-field-lines\]](#Figure-B-1-2-3-field-lines){reference-type="ref" reference="Figure-B-1-2-3-field-lines"}. The symmetric appearance is due to the choice of symmetric starting points for the field line integration. As was stressed above, the magnetic fields $\bB^i$ can be obtained from one another by cyclic permutations of the Cartesian coordinates $x^i$. In the same way the integration starting points for the field lines $\gamma^1$, $\gamma^2$ and $\gamma^3$ where chosen to be the cyclic permuted coordinate triples $(0, 0.8, 0)$, $(0, 0, 0.8)$ and $(0.8, 0, 0)$. It is interesting that the total linkage of the set of field lines is $\text{lk}(\gamma^1,\gamma^2)+
+ \text{lk}(\gamma^2,\gamma^3)+
+ \text{lk}(\gamma^3,\gamma^1)=-3$. Even though we have seen that the mutual cross-helicities of all three fields vanish, their individual field lines, in general, are linked pairwise. To be more precise: If we e.g. fix one field line $\gamma^3$ of $\bB^3$, then all field lines of $\bB^1$ and $\bB^2$ are either linked with $\gamma^3$ exactly once or they intersect $\gamma^3$ twice. For reasons of symmetry, there exists for each field line $\gamma^1$ of $\bB^1$ a field line $\tilde{\gamma}^1$ of $\bB^1$, such that we find the total linkage $\text{lk}(\gamma^1,\gamma^3) + \text{lk}(\tilde{\gamma}^1,\gamma^3)=0$. Hence, the cross-helicity $H(\bB^1,\gamma^3)$ vanishes, which in turn implies $H(\bB^1, \bB^3)=0$. Figure [2](#Figure-zero-cross-helicity){reference-type="ref" reference="Figure-zero-cross-helicity"} shows such field lines $\gamma^1$, $\tilde{\gamma}^1$ and $\gamma^3$ with $(0, 0.8, 0)$, $(0, -0.8, 0)$ and $(0.8, 0, 0)$ as their respective starting points for the field line integration. Finally let us remark that in the same way as we obtained $\tilde{\gamma}^1$ we can obtain field lines $\tilde{\gamma}^2$ and $\tilde{\gamma}^3$, here with integration starting points $(0, -0.8, 0)$, $(0, 0, -0.8)$ and $(-0.8, 0, 0)$. Together, these three field lines yield a configuration complementary to the one shown in Figure [\[Figure-B-1-2-3-field-lines\]](#Figure-B-1-2-3-field-lines){reference-type="ref" reference="Figure-B-1-2-3-field-lines"}, which now has a total linkage of $+3$.

@@ -7,10 +7,10 @@ section_number: 5
 pages: 8-10
 source_pdf: 1301.6953v1.pdf
 source_sha256: 8c9231d0832df3b6
-text_source: latex
-latex_prose_ratio: 0.967
-latex_coverage_ratio: 0.849
 doc_brief: "LU TP 13-03 Januray 2013 — 12 sections: Chiral Perturbation Theory; Introduction; Determining low-energy-constants i"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 The methods of effective field theory and in particular ChPT can also be
 used for extensions. A simple extension is to take QCD with $N$ light

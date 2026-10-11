@@ -7,7 +7,7 @@
   "bytes": 974336,
   "pages": 70,
   "text_source": "embedded",
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -632,8 +632,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "QuadricFukaya-Final.tex",
-   "tex_sections": 5,
-   "overlaid": 0,
+   "tex_sections": 37,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -643,53 +643,75 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-11-two-contexts",
      "title": "Two contexts",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-12-the-theorem",
      "title": "The theorem",
-     "result": "no matching \\section"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.618,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-13-entropy",
      "title": "Entropy",
-     "result": "no matching \\section"
+     "prose_ratio": 0.835,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-14-representation-varieties",
      "title": "Representation varieties",
-     "result": "no matching \\section"
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-15-instanton-floer-homology",
      "title": "Instanton Floer homology",
-     "result": "no matching \\section"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-17-homological-mirror-symmetry",
      "title": "Homological Mirror Symmetry",
-     "result": "no matching \\section"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-18-another-birational-motivation",
      "title": "Another birational motivation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-19-outline-of-proof",
      "title": "Outline of proof",
-     "result": "no matching \\section"
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-2-the-representation-variety",
      "title": "The representation variety",
-     "prose_ratio": 0.357,
+     "prose_ratio": 0.511,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -705,7 +727,8 @@
     {
      "id": "sec-012-24-faithfulness",
      "title": "Faithfulness",
-     "result": "no matching \\section"
+     "prose_ratio": 0.554,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-013-3-the-fukaya-category",
@@ -725,7 +748,10 @@
     {
      "id": "sec-016-33-twisting-and-generation",
      "title": "Twisting and generation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.612,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-017-35-grading-and-deformations",
@@ -740,7 +766,7 @@
     {
      "id": "sec-019-4-from-the-base-locus-to-the-relative-quadric",
      "title": "From the base locus to the relative quadric",
-     "prose_ratio": 0.31,
+     "prose_ratio": 0.574,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -756,7 +782,8 @@
     {
      "id": "sec-022-44-an-illustrative-example",
      "title": "An illustrative example",
-     "result": "no matching \\section"
+     "prose_ratio": 0.342,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-023-45-idempotents-and-blow-ups",
@@ -771,7 +798,7 @@
     {
      "id": "sec-025-5-from-the-curve-to-the-relative-quadric",
      "title": "From the curve to the relative quadric",
-     "prose_ratio": 0.013,
+     "prose_ratio": 0.017,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {

@@ -7,19 +7,19 @@ section_number: 5
 pages: 29-32
 source_pdf: 1303.5278v1.pdf
 source_sha256: 92e417c93f8b883a
-text_source: latex
-latex_prose_ratio: 0.959
-latex_coverage_ratio: 0.848
 doc_brief: "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD — In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of"
 duplicate_of: "topologicalinvariance3dindex"
+text_source: latex
+latex_prose_ratio: 0.993
+latex_coverage_ratio: 0.914
 ---
 []{#sec.02move label="sec.02move"}
 
 Let $M$ be a cusped 3-manifold and consider the 0--2 move on a pair $\mathcal{T}$ and $\widetilde\mathcal{T}$ of ideal triangulations of $M$ with $N$ and $N+2$ tetrahedra, as shown in Figure [1](#0-2move_labelled){reference-type="ref" reference="0-2move_labelled"}.
 
-<figure id="0-2move_labelled" data-latex-placement="htb">
+<figure id="0-2move_labelled">
 <p><span class="math inline"><em>e</em></span> at 32 95 <span class="math inline"><em>e</em></span> at 32 95 <span class="math inline"><em>e</em><sub>2</sub></span> at 8 129 <span class="math inline"><em>e</em><sub>4</sub></span> at 55 127 <span class="math inline"><em>e</em><sub>1</sub></span> at 8 55 <span class="math inline"><em>e</em><sub>3</sub></span> at 55 54</p>
-<p><span class="math inline"><em>e</em><sub>2</sub></span> at 165 124 <span class="math inline"><em>e</em><sub>4</sub></span> at 215 123 <span class="math inline"><em>e</em><sub>1</sub></span> at 165.5 55 <span class="math inline"><em>e</em><sub>3</sub></span> at 216 55 <span class="math inline"><em>e</em><sup>′</sup></span> at 175 79.5 <span class="math inline"><em>e</em><sup>″</sup></span> at 207 97.5 <span class="math inline"><em>ẽ</em></span> at 186 110.5</p>
+<p><span class="math inline"><em>e</em><sub>2</sub></span> at 165 124 <span class="math inline"><em>e</em><sub>4</sub></span> at 215 123 <span class="math inline"><em>e</em><sub>1</sub></span> at 165.5 55 <span class="math inline"><em>e</em><sub>3</sub></span> at 216 55 <span class="math inline"><em>e</em>′</span> at 175 79.5 <span class="math inline"><em>e</em>″</span> at 207 97.5 <span class="math inline"><em>ẽ</em></span> at 186 110.5</p>
 <p><span class="math inline"><em>ā</em><sub>2</sub></span> at 113 58 <span class="math inline"><em>ā</em><sub>1</sub></span> at 138 58 <span class="math inline"><em>c̄</em><sub>2</sub></span> at 121 71 <span class="math inline"><em>b̄</em><sub>2</sub></span> at 121 45 <span class="math inline"><em>b̄</em><sub>1</sub></span> at 130 71 <span class="math inline"><em>c̄</em><sub>1</sub></span> at 130 45</p>
 <p><span class="math inline"><em>ā</em><sub>1</sub></span> at 238 70 <span class="math inline"><em>ā</em><sub>2</sub></span> at 263 70 <span class="math inline"><em>c̄</em><sub>1</sub></span> at 246 83 <span class="math inline"><em>b̄</em><sub>1</sub></span> at 246 57 <span class="math inline"><em>b̄</em><sub>2</sub></span> at 255 83 <span class="math inline"><em>c̄</em><sub>2</sub></span> at 255 57</p>
 <p><span class="math inline"><em>ā</em><sub>1</sub></span> at 172 20 <span class="math inline"><em>c̄</em><sub>1</sub></span> at 159 20 <span class="math inline"><em>b̄</em><sub>1</sub></span> at 185 20 <span class="math inline"><em>ā</em><sub>2</sub></span> at 172 9.4 <span class="math inline"><em>b̄</em><sub>2</sub></span> at 159 9.4 <span class="math inline"><em>c̄</em><sub>2</sub></span> at 185 9.4</p>
@@ -47,26 +47,22 @@ Case 1: If $e \notin \mathcal X$ we can order the edges of $\mathcal{T}$ so that
 
 Case 2: If $e \in \mathcal X$ we can order the edges so $\mathcal X = \{ e, e_{N-r+1}, \ldots, e_{N-2}, e_{N-1} \}$. Then we can compute $I_{\widetilde\mathcal{T}}$ by omitting the edge set $\widetilde{\mathcal X} =  \{ e'', e_{N-r+1}, \ldots, e_{N-2}, e_{N-1} \}$.
 
-Then $$\begin{equation}
-\label{eq.JD_index_sum1}
+Then $$\label{eq.JD_index_sum1}
 I_{\widetilde\mathcal{T}} (\widetilde\varpi)= \sum_{\widetilde\boldsymbol{k}\in \widetilde S} \ 
 q^{k' + k'' + \widetilde k + \sum_{i=1}^{N-1} k_i } \,
-J(T_1,\widetilde\boldsymbol{k},\widetilde\varpi) J(T_2,\widetilde\boldsymbol{k},\widetilde\varpi) \prod_{j=3}^{N+2} J(T_j, \widetilde\boldsymbol{k},\widetilde\varpi),
-\end{equation}$$ where $$\widetilde S = \left\{ \widetilde\boldsymbol{k}= (k',k'',\widetilde k, k_1, \ldots, k_{N-1}) \in \mathbb{Z}^{N+2} : k_{N-i}=0 \text { for } i=1, \ldots, r  \right\} \text{  in case 1}$$ and $$\widetilde S = \left\{ \widetilde\boldsymbol{k}= (k',k'',\widetilde k, k_1, \ldots, k_{N-1})\in \mathbb{Z}^{N+2} : k''=0, k_{N-i}=0 \text { for } i=1, \ldots, r-1 \right\} \text{  in case 2}.$$ Note that in both cases, the new edge $\tilde e$ is *included* in the set of basic edges so $\tilde k$ varies over $\mathbb{Z}$ in the sum.
+J(T_1,\widetilde\boldsymbol{k},\widetilde\varpi) J(T_2,\widetilde\boldsymbol{k},\widetilde\varpi) \prod_{j=3}^{N+2} J(T_j, \widetilde\boldsymbol{k},\widetilde\varpi),$$ where $$\widetilde S = \left\{ \widetilde\boldsymbol{k}= (k',k'',\widetilde k, k_1, \ldots, k_{N-1}) \in \mathbb{Z}^{N+2} : k_{N-i}=0 \text { for } i=1, \ldots, r  \right\} \text{  in case 1}$$ and $$\widetilde S = \left\{ \widetilde\boldsymbol{k}= (k',k'',\widetilde k, k_1, \ldots, k_{N-1})\in \mathbb{Z}^{N+2} : k''=0, k_{N-i}=0 \text { for } i=1, \ldots, r-1 \right\} \text{  in case 2}.$$ Note that in both cases, the new edge $\tilde e$ is *included* in the set of basic edges so $\tilde k$ varies over $\mathbb{Z}$ in the sum.
 
-Now we look at the contribution to $I_{\widetilde\mathcal{T}}$ coming from the tetrahedra $T_1,T_2$ and summed over the weight $\widetilde k$ on $\tilde e$, namely $$\begin{equation}
-\label{tilde_k_sum}
+Now we look at the contribution to $I_{\widetilde\mathcal{T}}$ coming from the tetrahedra $T_1,T_2$ and summed over the weight $\widetilde k$ on $\tilde e$, namely $$\label{tilde_k_sum}
 \sum_{\widetilde k \in \mathbb{Z}}
 q^{\widetilde k}
-J( T_1; \widetilde\boldsymbol{k},\widetilde\varpi)  J( T_2; \widetilde\boldsymbol{k},\widetilde\varpi)
-\end{equation}$$ where $$J( T_1; \widetilde\boldsymbol{k},\widetilde\varpi)=J_{\Delta}(k' + \widetilde k+\bar a_{\widetilde\varpi,1}, k_2+k_3+\bar b_{\widetilde\varpi,1},k_1+k_4+\bar c_{\widetilde\varpi,1})$$ and $$J( T_2; \widetilde\boldsymbol{k},\widetilde\varpi)=J_{\Delta}(k'' + \widetilde k +\bar a_{\widetilde\varpi,2},  k_1+k_4+\bar b_{\widetilde\varpi,2},k_2+k_3+\bar c_{\widetilde\varpi,2}).$$
+J( T_1; \widetilde\boldsymbol{k},\widetilde\varpi)  J( T_2; \widetilde\boldsymbol{k},\widetilde\varpi)$$ where $$J( T_1; \widetilde\boldsymbol{k},\widetilde\varpi)=J_{\Delta}(k' + \widetilde k+\bar a_{\widetilde\varpi,1}, k_2+k_3+\bar b_{\widetilde\varpi,1},k_1+k_4+\bar c_{\widetilde\varpi,1})$$ and $$J( T_2; \widetilde\boldsymbol{k},\widetilde\varpi)=J_{\Delta}(k'' + \widetilde k +\bar a_{\widetilde\varpi,2},  k_1+k_4+\bar b_{\widetilde\varpi,2},k_2+k_3+\bar c_{\widetilde\varpi,2}).$$
 
 Recall that $\varpi$ be an oriented multi-curve which is normal with respect to the triangulation $\mathcal{T}_\partial$ of $\partial M$ induced by $\mathcal{T}$. Since the index only depends on the homology class of a peripheral curve, we can calculate $I_{\widetilde\mathcal{T}}([\varpi])$ by using for $\widetilde\varpi$ a corresponding curve on $\partial M$ which is normal with respect to $\widetilde\mathcal{T}_\partial$ and goes "straight through" each pair of added triangles on $\partial M$. See Figure [2](#0-2_bdry_curve_changes){reference-type="ref" reference="0-2_bdry_curve_changes"}.
 
-<figure id="0-2_bdry_curve_changes" data-latex-placement="htb">
+<figure id="0-2_bdry_curve_changes">
 <p><span class="math inline"><em>ā</em><sub>2</sub></span> at 93 29 <span class="math inline"><em>ā</em><sub>1</sub></span> at 118 29 <span class="math inline"><em>c̄</em><sub>2</sub></span> at 101 42 <span class="math inline"><em>b̄</em><sub>2</sub></span> at 101 16 <span class="math inline"><em>b̄</em><sub>1</sub></span> at 110 42 <span class="math inline"><em>c̄</em><sub>1</sub></span> at 110 16</p>
 <p><span class="math inline"><em>ā</em><sub>2</sub></span> at 105.5 88 <span class="math inline"><em>c̄</em><sub>2</sub></span> at 92.5 88 <span class="math inline"><em>b̄</em><sub>2</sub></span> at 118.5 88 <span class="math inline"><em>ā</em><sub>1</sub></span> at 105.5 77.4 <span class="math inline"><em>b̄</em><sub>1</sub></span> at 92.5 77.4 <span class="math inline"><em>c̄</em><sub>1</sub></span> at 118.5 77.4 <img src="draws_eps/0-2_bdry_curve_changes" style="width:10cm" alt="image" /></p>
-<figcaption>Changes in peripheral curve from <span class="math inline"><em>ϖ</em></span> in <span class="math inline">𝒯<sub>∂</sub></span> to <span class="math inline"><em>ϖ̃</em></span> in <span class="math inline">$\widetilde\mathcal{T}_\partial$</span>. Note that the curve in the top diagram could go either way around the new vertex. </figcaption>
+<figcaption>Changes in peripheral curve from <span class="math inline">ϖ</span> in <span class="math inline">𝒯<sub>∂</sub></span> to <span class="math inline">$\widetilde\varpi$</span> in <span class="math inline">$\widetilde\mathcal{T}_\partial$</span>. Note that the curve in the top diagram could go either way around the new vertex. </figcaption>
 </figure>
 
 Then we have $$\bar a_{\widetilde\varpi,1}=\bar a_{\widetilde\varpi,2}=0,\quad
@@ -79,3 +75,5 @@ J_{\Delta}(k'' + \widetilde k ,  k_1+k_4+y,k_2+k_3+x)
 q^{k + \sum_{i=1}^{N-1} k_i } \,
  \prod_{j=3}^{N+2} J(T_j, \boldsymbol{k},\varpi)= I_{\mathcal{T}} (\varpi),$$ where $$S = \left\{ \boldsymbol{k}=(k, k_1, \ldots, k_{N-1})  \in \mathbb{Z}^{N} : k_{N-i}=0 \text { for } i=1, \ldots, r \right\} \text{  in case 1}$$ and $$S = \left\{ \boldsymbol{k}= (k, k_1, \ldots, k_{N-1}) \in \mathbb{Z}^{N} : k=0, k_{N-i}=0 \text { for } i=1, \ldots, r-1 \right\} \text{  in case 2}.$$ This completes the proof of invariance of the index under the 0--2 move. ◻
 :::
+
+# The $\mathcal X_M^{\mathrm{EP}}$ class of triangulations {#sec.XEPM}

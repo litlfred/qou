@@ -7,10 +7,10 @@ section_number: 2
 pages: 3-9
 source_pdf: 0503227v2.pdf
 source_sha256: 4e83adfdef827103
-text_source: latex
-latex_prose_ratio: 0.977
-latex_coverage_ratio: 1.0
 doc_brief: "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios By Jason Fulman — Bolthausen used a variation of Stein’s method to give an"
+text_source: latex
+latex_prose_ratio: 0.992
+latex_coverage_ratio: 0.996
 ---
 []{#plancherel label="plancherel"}
 
@@ -83,18 +83,18 @@ Lemma [\[boundmom\]](#boundmom){reference-type="ref" reference="boundmom"} gives
 ::: proof
 *Proof.* By the Cauchy-Schwarz inequality, $\ee(|X_n|^3) \leq \sqrt{\ee(X_n^2) \ee(X_n^4)}$. By Lemma [\[moments\]](#moments){reference-type="ref" reference="moments"}, $\ee(X_n^2) = n-1$ and $$\ee(X_n^4) =
 \ee(\ee(X_n^4|\lambda(n-1))) = {n \choose 2} + 3 \ee \left( \sum_{x
-\in \lambda(n-1)} c(x)^2 \right).$$ By Lemma [\[identity\]](#identity){reference-type="ref" reference="identity"} with $r=2$ and then part 4 of Lemma [\[ismart\]](#ismart){reference-type="ref" reference="ismart"}, $$\begin{eqnarray*}
+\in \lambda(n-1)} c(x)^2 \right).$$ By Lemma [\[identity\]](#identity){reference-type="ref" reference="identity"} with $r=2$ and then part 4 of Lemma [\[ismart\]](#ismart){reference-type="ref" reference="ismart"}, $$\begin{aligned}
 \ee \left( \sum_{x \in \lambda(n-1)} c(x)^2 \right) & = & \ee \left[ \left( \sum_{x \in
 \lambda(n-1)} c(x) \right)^2 - 2 e_2(\lambda(n-1)) \right]\\ & = & {n-1 \choose
-2} \ee ( T_{n-1}^2 )\\ & = & {n-1 \choose 2}.
-\end{eqnarray*}$$ This proves the first assertion.
+2} \ee ( T_{n-1}^2 )\\ & = & {n-1 \choose 2}. 
+\end{aligned}$$ This proves the first assertion.
 
-For the second assertion, note (using part 4 of Lemma [\[ismart\]](#ismart){reference-type="ref" reference="ismart"} in the final equality) that $$\begin{eqnarray*}
+For the second assertion, note (using part 4 of Lemma [\[ismart\]](#ismart){reference-type="ref" reference="ismart"} in the final equality) that $$\begin{aligned}
 \ee(|T_{n-1}||X_n|^3) & = &\ee(\ee(|T_{n-1}||X_n|^3|\lambda(n-1)))\\ &
 = & \ee(|T_{n-1}| \ee(|X_n|^3|\lambda(n-1)))\\ & \leq &
 \sqrt{\ee(T_{n-1}^2) \ee(\ee(|X_n|^3|\lambda(n-1))^2)}\\ & = &
-\sqrt{ \ee(\ee(|X_n|^3|\lambda(n-1))^2)}.
-\end{eqnarray*}$$ The conditional version of the Cauchy-Schwarz inequality and part 1 of Lemma [\[moments\]](#moments){reference-type="ref" reference="moments"} give that $\ee(|X_n|^3|\lambda(n-1))^2$ is at most $$\ee(X_n^2|\lambda(n-1)) \ee(X_n^4|\lambda(n-1)) = (n-1)
+\sqrt{ \ee(\ee(|X_n|^3|\lambda(n-1))^2)}. 
+\end{aligned}$$ The conditional version of the Cauchy-Schwarz inequality and part 1 of Lemma [\[moments\]](#moments){reference-type="ref" reference="moments"} give that $\ee(|X_n|^3|\lambda(n-1))^2$ is at most $$\ee(X_n^2|\lambda(n-1)) \ee(X_n^4|\lambda(n-1)) = (n-1)
 \ee(X_n^4|\lambda(n-1)).$$ Thus $$\sqrt{ \ee(\ee(|X_n|^3|\lambda(n-1))^2)} \leq \sqrt{(n-1) \ee(X_n^4)},$$ and the proof of the first assertion showed this to equal $(n-1) \sqrt{2n-3}$, as desired. ◻
 :::
 
@@ -122,7 +122,7 @@ As in Stein's method [@Stn], let $$f(x)=f_{z,b}(x) =
     \ee(X_n|T_n)] = \frac{n-1}{\sqrt{{n \choose 2}}} \ee(T_n
     f(T_n)),$$ so that $$\ee[
     f'(T_n) - T_n f(T_n)] = \ee \left[ f'(T_n) -
-    \frac{\sqrt{{n \choose 2}}}{n-1} X_n f(T_n) \right].$$ By part 1 of Lemma [\[ismart\]](#ismart){reference-type="ref" reference="ismart"} and part 1 of Lemma [\[moments\]](#moments){reference-type="ref" reference="moments"}, this is equal to $$\begin{eqnarray*}
+    \frac{\sqrt{{n \choose 2}}}{n-1} X_n f(T_n) \right].$$ By part 1 of Lemma [\[ismart\]](#ismart){reference-type="ref" reference="ismart"} and part 1 of Lemma [\[moments\]](#moments){reference-type="ref" reference="moments"}, this is equal to $$\begin{aligned}
  & & \ee \left[ f'(T_n) \right] + \ee \left[  \frac{X_n^2}{n-1} f'(\sqrt{\frac{n-2}{n}} T_{n-1}) -
     f'(\sqrt{\frac{n-2}{n}} T_{n-1}) \right]  \\ & & - \ee \left[
     \frac{\sqrt{{n \choose 2}}}{n-1} X_n f(T_n) - \frac{\sqrt{{n
@@ -131,22 +131,22 @@ As in Stein's method [@Stn], let $$f(x)=f_{z,b}(x) =
     \left[ f'(T_n) - f'(\sqrt{\frac{n-2}{n}} T_{n-1}) \right]\\ & & - \ee \left[
     \frac{X_n^2}{n-1} \int_0^1  f'(\sqrt{\frac{n-2}{n}}
     T_{n-1} + t \frac{X_n}{\sqrt{{n \choose 2}}}) -
-    f'(\sqrt{\frac{n-2}{n}} T_{n-1}) dt \right].
-\end{eqnarray*}$$
+    f'(\sqrt{\frac{n-2}{n}} T_{n-1}) dt \right]. 
+\end{aligned}$$
 
 Next we upper bound $\ee[ f'(T_n) - f'(\sqrt{\frac{n-2}{n}}
     T_{n-1})]$. Recall from [@Bol] or [@Man] that for any $x$ and $\Delta$, $$|f'(x+\Delta) - f'(x)| \leq |\Delta| \left( 3+
     2|x| + \frac{1}{b} \int_{0}^1 \ii_{[z,z+b]}(x+s \Delta) ds \right).$$ Thus $\ee[ f'(T_n) -
     f'(\sqrt{\frac{n-2}{n}} T_{n-1})] \leq A_1 + A_2 + A_3$ where
 
-- $A_1 = \frac{ 3 \ee(|X_n|)}{\sqrt{{n \choose 2}}}$.
+-   $A_1 = \frac{ 3 \ee(|X_n|)}{\sqrt{{n \choose 2}}}$.
 
-- $A_2 = \frac{2 \sqrt{\frac{n-2}{n}}}{\sqrt{{n \choose 2}}}
-  \ee(|X_n||T_{n-1}|)$.
+-   $A_2 = \frac{2 \sqrt{\frac{n-2}{n}}}{\sqrt{{n \choose 2}}}
+    \ee(|X_n||T_{n-1}|)$.
 
-- $A_3 = \ee \left[ \frac{|X_n|}{b \sqrt{{n \choose 2}}} \int_0^1
-  \ii_{[z,z+b]}(\sqrt{\frac{n-2}{n}} T_{n-1}+
-  \frac{s X_n}{\sqrt{{n \choose 2}}}) ds \right]$.
+-   $A_3 = \ee \left[ \frac{|X_n|}{b \sqrt{{n \choose 2}}} \int_0^1
+    \ii_{[z,z+b]}(\sqrt{\frac{n-2}{n}} T_{n-1}+
+    \frac{s X_n}{\sqrt{{n \choose 2}}}) ds \right]$.
 
 By part 3 of Lemma [\[ismart\]](#ismart){reference-type="ref" reference="ismart"}, $\ee(|X_n|) \leq \sqrt{\ee(X_n^2)} =
     \sqrt{n-1}$; thus $A_1 \leq \frac{3 \sqrt{2}}{\sqrt{n}}$. By parts 3 and 4 of Lemma [\[ismart\]](#ismart){reference-type="ref" reference="ismart"}, $$\ee(|X_n| |T_{n-1}|)
@@ -178,16 +178,16 @@ Next, we upper bound $$\ee \left| \frac{ X_n^2}{n-1} \int_0^1
     \left[f'(\sqrt{\frac{n-2}{n}} T_{n-1} + t \frac{X_n}{\sqrt{{n
     \choose 2}}}) - f'(\sqrt{\frac{n-2}{n}} T_{n-1}) \right] dt \right|.$$ Arguing as in the previous paragraph this is at most $B_1+B_2+B_3$ where
 
-- $B_1 = \frac{1}{n-1} \int_{0}^1 \frac{3t \ee(|X_n|^3)}{\sqrt{{n
-  \choose 2}}} dt = \frac{3 \ee(|X_n|^3)}{2 (n-1) \sqrt{{n \choose 2}}}$.
+-   $B_1 = \frac{1}{n-1} \int_{0}^1 \frac{3t \ee(|X_n|^3)}{\sqrt{{n
+    \choose 2}}} dt = \frac{3 \ee(|X_n|^3)}{2 (n-1) \sqrt{{n \choose 2}}}$.
 
-- $B_2 = \frac{1}{n-1} \int_{0}^1 \frac{2t
-  \sqrt{\frac{n-2}{n}}}{\sqrt{{n \choose 2}}} \ee(|T_{n-1}||X_n|^3) dt =
-  \frac{\sqrt{\frac{n-2}{n}}}{(n-1) \sqrt{{n \choose 2}}}
-  \ee(|T_{n-1}||X_n|^3)$.
+-   $B_2 = \frac{1}{n-1} \int_{0}^1 \frac{2t
+    \sqrt{\frac{n-2}{n}}}{\sqrt{{n \choose 2}}} \ee(|T_{n-1}||X_n|^3) dt =
+    \frac{\sqrt{\frac{n-2}{n}}}{(n-1) \sqrt{{n \choose 2}}}
+    \ee(|T_{n-1}||X_n|^3)$.
 
-- $B_3 = \frac{1}{n-1} \ee \left[ \frac{|X_n|^3}{b \sqrt{n \choose 2}} \int_{0}^1 \int_0^1 t \ii_{[z,z+b]}(\sqrt{\frac{n-2}{n}} T_{n-1} + st \frac{X_n}{\sqrt{{n
-  \choose 2}}}) ds dt \right]$.
+-   $B_3 = \frac{1}{n-1} \ee \left[ \frac{|X_n|^3}{b \sqrt{n \choose 2}} \int_{0}^1 \int_0^1 t \ii_{[z,z+b]}(\sqrt{\frac{n-2}{n}} T_{n-1} + st \frac{X_n}{\sqrt{{n
+    \choose 2}}}) ds dt \right]$.
 
 To bound $B_1$, use part 1 of Lemma [\[boundmom\]](#boundmom){reference-type="ref" reference="boundmom"} to conclude that $B_1 \leq \frac{3}{\sqrt{n}}$. To bound $B_2$, use part 2 of Lemma [\[boundmom\]](#boundmom){reference-type="ref" reference="boundmom"} to conclude that $B_2
 \leq \frac{2}{\sqrt{n}}$. To bound $B_3$, one uses an argument almost identical to that for $A_3$ to conclude that $$B_3 \leq

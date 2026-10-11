@@ -7,10 +7,10 @@ section_number: null
 pages: 11-12
 source_pdf: 2510.21576v1.pdf
 source_sha256: 17a79b59d590c8da
-text_source: latex
-latex_prose_ratio: 0.648
-latex_coverage_ratio: 0.919
 doc_brief: "Relativistic corrections for lepton-nucleus scattering in the short-time approximation — 7 sections: Relativistic corrections for lepto; Introduction; Short-time approximation"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 []{#sec:conclusion label="sec:conclusion"} In this work, we have presented an extension of the STA that includes relativistic effects and allows us to provide accurate predictions for large-momentum-transfer quasielastic reactions. Such effects enter via the currents, describing the interaction of the lepton with the nucleus, as well as via the final-state energy of struck nucleons.
 

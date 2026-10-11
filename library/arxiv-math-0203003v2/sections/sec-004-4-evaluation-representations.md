@@ -7,10 +7,10 @@ section_number: 4
 pages: 10-10
 source_pdf: 0203003v2.pdf
 source_sha256: 7579ae76959396b8
-text_source: latex
-latex_prose_ratio: 0.993
-latex_coverage_ratio: 0.98
 doc_brief: "On the quantum Kazhdan-Lusztig functor Pavel I. Etingof Adriano A. Moura etingof@math.mit.edu adrianoam@ime.unicamp.br Introduction One of the most exciting developments in representation the ory in t"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.979
 ---
 In this section we would like to study the action of the functor $\text{$\mathcal{F}$}$ on evaluation representations of $U_q(\widehat{\mathfrak{s}}l_n)$. Let $W_\nu(z)$ be the evaluation representation of $U_q({\widehat{\mathfrak{s}}l}_n)$ with dominant integral highest weight $\nu$, evaluated at $z\in \text{$\mathbb{C}$}^*$.
 

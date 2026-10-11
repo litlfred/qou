@@ -8,215 +8,106 @@ pages: 12-16
 source_pdf: 0408210v3.pdf
 source_sha256: 16d5ccb83a86954f
 doc_brief: "A SIMPLE ALGEBRAIC PROOF OF THE ALGEBRAIC INDEX THEOREM — In math.QA/0311303 B. Feigin, G. Felder, and B."
+text_source: latex
+latex_prose_ratio: 0.987
+latex_coverage_ratio: 0.981
 ---
-Let M be either a smooth real symplectic manifold of dimension 2 n or a smooth aﬃne
-algebraic variety (over C) of the complex dimension 2 n endowed with an algebraic symplectic
-form. Let ∗ be a star-product in the vector space C(M)((ℏ)) of smooth (resp. regular)
-functions on M. Throughout this section we denote the algebra ( C(M)((ℏ)), ∗) by A and
-the subalgebra (C(M)[[ℏ]], ∗) of A by A+
-Due to remark 2 after theorem 2, we may safely assume that ∗ is obtained by Fedosov’s
-procedure. Since in this case the vector bundle is trivial the Fedoso v star-product depends
-only on the pair (∂s, Ω ℏ), where ∂s is the symplectic connection on M and Ω ℏ ∈ ℏΩ 2(M)[[ℏ]]
-is a series of closed two-forms. Let D = ∇ + ℏ−1[A, · ] be the corresponding Fedosov connec-
-tion.
-For any idempotent P in the matrix algebra glN (A+) we assign the top degree De Rham
-cohomology class
-cl(P ) = [Ψ D(P )] ∈H 2n(M)((ℏ)), (31)
-where D is naturally extended to the Fedosov connection on the Weyl algebr a bundle
-W (End(LN )) associated with the trivial bundle LN of rank N .
-Due to statements i) and ii) (31) gives a well-deﬁned map
-cl : K0(A+) ↦→H 2n(M)((ℏ))
-from the K0-group of the algebra A+ to H 2n(M)((ℏ)).
-Deﬁnition 6 The zeroth term q =P |ℏ=0 of an idempotent P ∈ glN (A+) is called the prin-
-cipal part of P .
-It is obvious that q is an idempotent in the matrix algebra glN (C(M)) and the operation of
-taking the principal part gives a well-deﬁned principal symbol map
-Ξ : K0(A+) ↦→K0(C(M)). (32)
-12
-Due to the observation of L. Boutet de Monvel and V. Guillemin [4] for any idempotent
-q in the matrix algebra glN (C(M)) there exists an idempotent P ∈ glN (A+) whose principal
-part is q. (See the explicit formula for P in [9], eq. (6 . 1. 4))
-Using standard arguments of the index theory we can prove that t he cohomology class
-(31) of an idempotent P ∈ glN (A+) depends only on its principal part. For our purposes we
-need a slightly more general statement:
-Proposition 3 Let V be a vector bundle over M and ∗ be the Fedosov star-product in
-EndV [[ℏ]]. Then if two idempotents P1,P 2 ∈ (EndV [[ℏ]], ∗) have the same principal part
-P1
-⏐⏐⏐
-ℏ=0
-=P2
-⏐⏐⏐
-ℏ=0
-,
-the cohomology classes [Ψ D(P1)] and [Ψ D(P2)] coincide.
-Proof is a straightforward generalization of the arguments in the proof o f theorem 6. 1. 3 in
-[9] . ✷
-The precise dependence of the cohomology class cl(P ) on the principal part q of P is
-given by the local algebraic index theorem
-Theorem 4 For any element Π ∈K0(A+) the cohomology class cl(Π) coincides with the top
-component of the cup product
-cl(Π) =
-[
-ˆA(M) exp
-(
-−F
-ℏ
-)
-ch(Ξ(Π))
-]
-2n
-,
-of the ˆA-genus of M, the exponent e− F
-ℏ of the Deligne-Fedosov class
-F =
-[
-−ω + Ω ℏ
-]
-of the star-product in A+ and the Chern character ch(Ξ(Π)) of the principal symbol Ξ(Π) of
-Π .
-Proof. Let P be an idempotent in the matrix algebra glN (A+) and q ∈ glN (C(M)) be the
-principal part of P . As an idempotent endomorphism of the trivial bundle LN or rank N, q
-deﬁnes a subbundle E =Imq ⊂LN .
-It suﬃces to prove that the 2 n-form Ψ D(P ) has the same cohomology class as the 2 n-th
-component of the form
-det
-( R/ 2
-sinh (R/ 2)
-) 1/ 2
-exp
-( ω − Ω ℏ
-ℏ
-)
-tr exp(RE),
-where R is the curvature form of the symplectic connection ∂s, RE is the curvature form of
-the vector bundle E , and tr stands for the ordinary matrix trace.
-We start with an observation that q is a ﬂat section of End(LN ) with respect to the
-connection
-∂LN =d + [q(dq) − (dq)q, · ]. (33)
-Let DLN be the Fedosov connection (17) corresponding to the initial symple ctic connec-
-tion∂s on M, the initial series Ω h of closed two-forms and the connection (33) on the trivial
-13
-bundle LN . By claim 3 of theorem 2 there exists an element U ∈ IN ⊕W 1(EndLN ) which
-establishes the equivalence between the connections D andDLN in the sense of deﬁnition 4.
-Therefore, by statement iii) of theorem 3
-Ψ D(P ) − Ψ DLN ( ~P ) ∈dΩ 2n−1(M)((ℏ)),
-where ~P =σ(U −1 ◦P ◦U) is an idempotent in the algebra ( EndLN, ˜∗), with the star-product
-˜∗ corresponding to the Fedosov connection DLN .
-Notice that, ~P and P have the same principal part ~P
-⏐⏐⏐
-ℏ=0
-=P
-⏐⏐⏐
-ℏ=0
-=q. Let us consider
-q as an element in the algebra ( EndLN, ˜∗) . By claim 1 of theorem 2 we may assume that
-DLN satisﬁes normalization condition (27). Therefore, by lemma 1 the ele mentq is ﬂat with
-respect to DLN , and hence q is an idempotent of the algebra ( EndLN, ˜∗) . By proposition 3
-we may safely assume that ~P =q .
-We recall that E =Imq ⊂LN is the subbundle of LN , corresponding to the idempotent
-q and denote by ~E the subbundle ~E ⊂LN corresponding to the complementary idempotent
-IN −q ∈EndLN . Thus, our trivial vector bundle LN is isomorphic to the direct sum E ⊕ ~E .
-Let us ﬁx an isomorphism u
-u : L ~→ E ⊕ ~E.
-Since qu =uqu−1 ∈EndE⊕ ~E is the projector onto E along ~E
-qu
-⏐⏐⏐
-Γ( E)((ℏ))
-=Im, q u
-⏐⏐⏐
-Γ( ~E)((ℏ))
-= 0, (34)
-where m is the rank of E and Im is the identity endomorphism of E .
-Due to remark 1 after theorem 2
-DE⊕ ~E =DLN + [uDLN (u−1), · ] (35)
-is the Fedosov connection on the Weyl algebra bundle W (EndE⊕ ~E).
-Furthermore,qu =uqu−1 is ﬂat with respect to DE⊕ ~E, and hence the connection DE⊕ ~E
-preserves the following subspaces of EndE⊕ ~E((ℏ))
-{a ∈EndE⊕ ~E((ℏ)) | a
-⏐⏐⏐
-Γ( E)((ℏ))
-⊂ Γ(E)((ℏ)), a
-⏐⏐⏐
-Γ( ~E)((ℏ))
-= 0},
-{a ∈EndE⊕ ~E((ℏ)) | a
-⏐⏐⏐
-Γ( ~E)((ℏ))
-⊂ Γ( ~E)((ℏ)), a
-⏐⏐⏐
-Γ( E)((ℏ))
-= 0}.
-The latter implies that DE⊕ ~E is a direct sum DE ⊕D ~E of the Fedosov connections
-DE = ∇E + 1
-ℏ [AE, · ], D
-~E = ∇
-~E + 1
-ℏ [A
-~E, · ] (36)
-on the bundles W (EndE) and W (End ~E), respectively. Thus, due to (34) and statement i)
-of theorem 3 we have
-Ψ DLN ( ~P ) = Ψ DE (Im),
-where Im is as above the identity endomorphism of the vector bundle E .
-14
-Using statement iv) of theorem 3 we get that
-Ψ DE (Im) − 1
-ℏnQn(C(AE,A E),...,C (AE,A E)) ∈dΩ 2n−1(M)((ℏ)), (37)
-where Qn ∈ ((Snh)∗)h is the n-th component of the adjoint invariant form (11), h = glN ⊕
-sp2n , AE ∈ Ω 1(W (EndE)) is the one-form of the Fedosov connection DE (36), and C is the
-ﬁberwise “curvature” (7) of the projection (9).
-To compute C(AE,A E) we mention that since the Fedosov connection DE⊕ ~E is obtained
-from the DLN via conjugation (35) the connection DE⊕ ~E has the same Fedosov-Weyl curva-
-ture (18)
-ℏ(R +RE⊕ ~E) + 2∇E⊕ ~EAE⊕ ~E + 1
-ℏ [AE⊕ ~E,A E⊕ ~E] = −ω + Ω ℏ.
-Here AE⊕ ~E is the one-form of the Fedosov connection DE⊕ ~E, ∇E⊕ ~E is the operator (16)
-corresponding to the symplectic connection ∂s and the connection ∂E⊕ ~E onE ⊕ ~E obtained
-from ∂LN via the isomorphism u . Finally, RE⊕ ~E is the curvature form of the connection
-∂E⊕ ~E .
-On the other hand the Fedosov connection DE⊕ ~E is a direct sum of the Fedosov connec-
-tions DE and D ~E . Hence,
-ℏ(R +RE) + 2∇EAE + 1
-ℏ [AE,A E] = −ω + Ω ℏ, (38)
-where RE is the curvature form of the connection ∂E on E and ∇E is the operator (16)
-corresponding to the symplectic connection ∂s on M and the connection ∂E .
-Notice that, the projection pr(AE) may be non-zero. However, using the trick of propo-
-sition 1 we can absorb the terms that contribute to pr(AE) into the operator ∇E. In this
-way we change both 3 the symplectic connection ∂s on M and the connection ∂E on E ,
-and therefore we change curvature forms R and RE. It is not hard to show that after this
-rearrangement equation (38) still holds.
-Since pr(AE) is now vanishing pr∇(AE) = ∇pr(AE) = 0 . Thus, applying pr to both
-sides of (38) we get
-C(AE,A E) = ℏ2R + ℏ2RE − ℏ(−ω + Ω ℏ). (39)
-Substituting (39) into equation (37) we complete the proof of the t heorem. ✷
-4 Concluding remarks.
-We would like to mention that our result (theorem 4) is derived from th e purely algebraic fact
-(10) about the cohomology of Lie algebra of matrices over the Weyl algebra. In this respect
-our approach is very reminiscent of ﬁnding “local” proofs of the Riem ann-Roch-Hirzebruch
-theorem [1], [3], [5], [6], and [12]. Thus, in [1] and [3] the Riemann-Roch the orem for families
-of Riemann curves is deduced from purely algebraic facts about the cohomology of the Lie
-algebra of vector ﬁelds. In paper [12] this idea is generalized to highe r dimensions.
-3Notice that, both the new Christoﬀel form Γ and the new connectio n form Γ E become formal power
-series in ℏ .
-15
-The Bressler-Nest-Tsygan theorem [6] or the Riemann-Roch theo rem for deformation
-quantizations, which we already mentioned in the introduction, is also a local statement based
-on purely algebraic relations between Hochschild, cyclic, and Lie algeb ra (co)homology. It
-seems that this result is the most general Riemann-Roch type theo rem which can be proven
-in the symplectic setting using the methods of [6].
-A very similar statement to our result is proposed in recent paper [11 ] by B. Feigin, A.
-Losev, and B. Shoikhet. In this paper the authors consider the alg ebra Diﬀ( E) of holomorphic
-diﬀerential operators acting on sections of a holomorphic vector b undle E over a compact
-complex manifold X of the complex dimension n. They give a tractable notion of Hochschild
-homology HH • of Diﬀ( E) for which HH •(Diﬀ( E)) = H 2n−•(X, C) and construct a map
-Λ : Diﬀ( E) ↦→H 2n(X, C) (40)
-which induces an isomorphismHH 0(Diﬀ( E)) ∼=H 2n(X, C) . Then, using the original Riemann-
-Roch-Hirzebruch theorem and assuming that the Euler character istic of E is nonzero the
-authors of [11] deduce that for any D ∈ Diﬀ( E), the pairing of Λ( D) with the fundamental
-class [X] coincides with the super-trace str(D) of D .
-We would like mention that the technique used in [11] to deﬁne the map ( 40) is very
-similar to the procedure of constructing the Hochschild cocycle (5) . This technique was
-originally proposed in paper [14] and we suspect that it has an indepen dent interest.
-Notice that, since our proof of theorem 4 is purely algebraic, it can b e generalized in
-a straightforward manner to the setting of the symplectic Lie algeb roids [17] . In this case
-the local algebraic index theorem relates the cohomology classes of the De Rham complex
-associated with the corresponding Lie algebroid.
+Let ${\cal M}$ be either a smooth real symplectic manifold of dimension $2n$ or a smooth affine algebraic variety (over ${\Bbb C}$) of the complex dimension $2n$ endowed with an algebraic symplectic form. Let $*$ be a star-product in the vector space $C({\cal M})(({\hbar}))$ of smooth (resp. regular) functions on ${\cal M}$. Throughout this section we denote the algebra $(C({\cal M})(({\hbar})),*)$ by ${\Bbb A}$ and the subalgebra $(C({\cal M})[[{\hbar}]],*)$ of ${\Bbb A}$ by ${\Bbb A}^+$
+
+Due to remark $2$ after theorem [\[F\]](#F){reference-type="ref" reference="F"}, we may safely assume that $*$ is obtained by Fedosov's procedure. Since in this case the vector bundle is trivial the Fedosov star-product depends only on the pair $({\partial}^s, {\Omega}_{{\hbar}})$, where ${\partial}^s$ is the symplectic connection on ${\cal M}$ and ${\Omega}_{{\hbar}}\in {\hbar}{\Omega}^2({\cal M})[[{\hbar}]]$ is a series of closed two-forms. Let $D= {\nabla}+ {\hbar}^{-1}[A,\cdot\,]$ be the corresponding Fedosov connection.
+
+For any idempotent $P$ in the matrix algebra ${\mathfrak{gl}}_N({\Bbb A}^+)$ we assign the top degree De Rham cohomology class $$\label{class}
+cl(P) = [\Psi_D(P)] \in H^{2n}({\cal M})(({\hbar}))\,,$$ where $D$ is naturally extended to the Fedosov connection on the Weyl algebra bundle $W(End(L_N))$ associated with the trivial bundle $L_N$ of rank $N$ .
+
+Due to statements $i)$ and $ii)$ ([\[class\]](#class){reference-type="ref" reference="class"}) gives a well-defined map $$cl \,:\, K_0({\Bbb A}^+) \mapsto H^{2n}({\cal M})(({\hbar}))$$ from the $K_0$-group of the algebra ${\Bbb A}^+$ to $H^{2n}({\cal M})(({\hbar}))$.
+
+::: defi
+The zeroth term $q=P|_{{\hbar}=0}$ of an idempotent $P\in {\mathfrak{gl}}_N({\Bbb A}^{+})$ is called the principal part of $P$ .
+:::
+
+It is obvious that $q$ is an idempotent in the matrix algebra ${\mathfrak{gl}}_N(C({\cal M}))$ and the operation of taking the principal part gives a well-defined principal symbol map $$\label{symb}
+\Xi\,:\, K_0({\Bbb A}^+) \mapsto
+K_0(C({\cal M}))\,.$$
+
+Due to the observation of L. Boutet de Monvel and V. Guillemin [@BM-G] for any idempotent $q$ in the matrix algebra ${\mathfrak{gl}}_N(C({\cal M}))$ there exists an idempotent $P\in {\mathfrak{gl}}_N({\Bbb A}^+)$ whose principal part is $q$. (See the explicit formula for $P$ in [@F1], eq. ($6.1.4$))
+
+Using standard arguments of the index theory we can prove that the cohomology class ([\[class\]](#class){reference-type="ref" reference="class"}) of an idempotent $P\in{\mathfrak{gl}}_N({\Bbb A}^+)$ depends only on its principal part. For our purposes we need a slightly more general statement:
+
+::: pred
+[]{#only label="only"} Let $V$ be a vector bundle over ${\cal M}$ and $*$ be the Fedosov star-product in $End_V[[{\hbar}]]$. Then if two idempotents $P_1, P_2\in (End_V[[{\hbar}]], *)$ have the same principal part $$P_1\Big|_{{\hbar}=0} = P_2\Big|_{{\hbar}=0}\,,$$ the cohomology classes $[\Psi_D(P_1)]$ and $[\Psi_D(P_2)]$ coincide.
+:::
+
+**Proof** is a straightforward generalization of the arguments in the proof of theorem $6.1.3$ in [@F1] . $\Box$
+
+The precise dependence of the cohomology class $cl(P)$ on the principal part $q$ of $P$ is given by the local algebraic index theorem
+
+::: teo
+[]{#index label="index"} For any element $\Pi \in K_0({\Bbb A}^+)$ the cohomology class $cl(\Pi)$ coincides with the top component of the cup product $$cl(\Pi) = \Big[ \,{\hat{A}}({\cal M}) \exp\left(-\frac{F}{{\hbar}}\right)\, ch(\Xi(\Pi))\,
+\Big]_{2n}\,,$$ of the ${\hat{A}}$-genus of ${\cal M}$, the exponent $\displaystyle e^{-\frac{F}{{\hbar}}}$ of the Deligne-Fedosov class $$F= \Big[ -{\omega}+ {\Omega}_{{\hbar}} \Big]$$ of the star-product in ${\Bbb A}^+$ and the Chern character $ch(\Xi(\Pi))$ of the principal symbol $\Xi(\Pi)$ of $\Pi$ .
+:::
+
+**Proof.** Let $P$ be an idempotent in the matrix algebra ${\mathfrak{gl}}_N({\Bbb A}^+)$ and $q\in {\mathfrak{gl}}_N(C({\cal M}))$ be the principal part of $P$. As an idempotent endomorphism of the trivial bundle $L_N$ or rank $N$, $q$ defines a subbundle $E= Im\,q\subset  L_N$.
+
+It suffices to prove that the $2n$-form $\Psi_D(P)$ has the same cohomology class as the $2n$-th component of the form $$\det\Big(\frac{R/2}{sinh\,(R/2)}
+\Big)^{1/2}\exp\left( \frac{{\omega}- {\Omega}_{{\hbar}}}{{\hbar}}\right)
+\, tr \exp(R^E)\,,$$ where $R$ is the curvature form of the symplectic connection ${\partial}^s$, $R^E$ is the curvature form of the vector bundle $E$ , and $tr$ stands for the ordinary matrix trace.
+
+We start with an observation that $q$ is a flat section of $End(L_{N})$ with respect to the connection $$\label{pa-L}
+{\partial}^{L_N} = d + [q(dq)-(dq)q,\cdot\,]\,.$$
+
+Let $D^{L_N}$ be the Fedosov connection ([\[F-conn\]](#F-conn){reference-type="ref" reference="F-conn"}) corresponding to the initial symplectic connection ${\partial}^s$ on ${\cal M}$, the initial series ${\Omega}_h$ of closed two-forms and the connection ([\[pa-L\]](#pa-L){reference-type="ref" reference="pa-L"}) on the trivial bundle $L_N$ . By claim $3$ of theorem [\[F\]](#F){reference-type="ref" reference="F"} there exists an element $U\in I_N \oplus W^1(End_{L_N})$ which establishes the equivalence between the connections $D$ and $D^{L_N}$ in the sense of definition [\[equiv\]](#equiv){reference-type="ref" reference="equiv"}. Therefore, by statement $iii)$ of theorem [\[main\]](#main){reference-type="ref" reference="main"} $$\Psi_{D}(P) - \Psi_{D^{L_N}}(\widetilde{P}) \in
+d{\Omega}^{2n-1}({\cal M})(({\hbar}))\,,$$ where $\widetilde{P}= {\sigma}(U^{-1}\circ P \circ U)$ is an idempotent in the algebra $(End_{L_N}, \tilde{*})$, with the star-product $\tilde{*}$ corresponding to the Fedosov connection $D^{L_N}$ .
+
+Notice that, $\widetilde{P}$ and $P$ have the same principal part $\widetilde{P}\Big|_{{\hbar}=0}=P\Big|_{{\hbar}=0}=q$. Let us consider $q$ as an element in the algebra $(End_{L_N}, \tilde{*})$ . By claim $1$ of theorem [\[F\]](#F){reference-type="ref" reference="F"} we may assume that $D^{L_N}$ satisfies normalization condition ([\[norm\]](#norm){reference-type="ref" reference="norm"}). Therefore, by lemma [\[Tech\]](#Tech){reference-type="ref" reference="Tech"} the element $q$ is flat with respect to $D^{L_N}$, and hence $q$ is an idempotent of the algebra $(End_{L_N}, \tilde{*})$ . By proposition [\[only\]](#only){reference-type="ref" reference="only"} we may safely assume that $\widetilde{P}=q$ .
+
+We recall that $E= Im\,q\subset L_N$ is the subbundle of $L_N$ , corresponding to the idempotent $q$ and denote by $\widetilde{E}$ the subbundle $\widetilde{E}\subset L_N$ corresponding to the complementary idempotent $I_N-q\in End_{L_N}$ . Thus, our trivial vector bundle $L_N$ is isomorphic to the direct sum $E\oplus \widetilde{E}$ . Let us fix an isomorphism $u$ $$u\,:\, L ~\widetilde{\rightarrow}~ E\oplus \widetilde{E}\,.$$
+
+Since $q_u= u q u^{-1}\in End_{E\oplus \widetilde{E}}$ is the projector onto $E$ along $\widetilde{E}$ $$\label{E-m}
+q_u\, \Big|_{{\Gamma}(E)(({\hbar}))} = I_m\,, \qquad
+q_u\, \Big|_{{\Gamma}(\widetilde{E})(({\hbar}))} = 0\,,$$ where $m$ is the rank of $E$ and $I_m$ is the identity endomorphism of $E$ .
+
+Due to remark $1$ after theorem [\[F\]](#F){reference-type="ref" reference="F"} $$\label{conj}
+D^{E\oplus \widetilde{E}} = D^{L_N} + [u D^{L_N}(u^{-1}), \cdot\,]$$ is the Fedosov connection on the Weyl algebra bundle $W(End_{E\oplus \widetilde{E}})$.
+
+Furthermore, $q_u= u q u^{-1}$ is flat with respect to $D^{E\oplus \widetilde{E}}$, and hence the connection $D^{E\oplus \widetilde{E}}$ preserves the following subspaces of $End_{E\oplus \widetilde{E}}(({\hbar}))$ $$\{a\in End_{E\oplus \widetilde{E}}(({\hbar}))~|~ a\,\Big|_{{\Gamma}(E)(({\hbar}))}
+\subset {\Gamma}(E)(({\hbar})),~ \ a\,\Big|_{{\Gamma}(\widetilde{E})(({\hbar}))}=0 \}\,,$$ $$\{a\in End_{E\oplus \widetilde{E}}(({\hbar}))~|~ a\,\Big|_{{\Gamma}(\widetilde{E})(({\hbar}))}
+\subset {\Gamma}(\widetilde{E})(({\hbar})),~ \ a\,\Big|_{{\Gamma}(E)(({\hbar}))}=0 \}\,.$$ The latter implies that $D^{E\oplus \widetilde{E}}$ is a direct sum $D^E \oplus D^{\widetilde{E}}$ of the Fedosov connections $$\label{D-E}
+D^E = {\nabla}^E  + \frac1{{\hbar}}[A^E, \cdot\,]\,,
+\qquad
+D^{\widetilde{E}} = {\nabla}^{\widetilde{E}}  + \frac1{{\hbar}}[A^{\widetilde{E}}, \cdot\,]$$ on the bundles $W(End_{E})$ and $W(End_{\widetilde{E}})$, respectively. Thus, due to ([\[E-m\]](#E-m){reference-type="ref" reference="E-m"}) and statement $i)$ of theorem [\[main\]](#main){reference-type="ref" reference="main"} we have $$\Psi_{D^{L_N}}(\widetilde{P}) = \Psi_{D^E}(I_m)\,,$$ where $I_m$ is as above the identity endomorphism of the vector bundle $E$ .
+
+Using statement $iv)$ of theorem [\[main\]](#main){reference-type="ref" reference="main"} we get that $$\label{vot-ono}
+\Psi_{D^E}(I_m) - \frac1{{\hbar}^n}\,Q_n(C(A^E,A^E), \dots, C(A^E,A^E))
+\in d {\Omega}^{2n-1}({\cal M})(({\hbar}))\,,$$ where $Q_n\in ((S^n{\mathfrak{h}})^*)^{{\mathfrak{h}}}$ is the $n$-th component of the adjoint invariant form ([\[Qn\]](#Qn){reference-type="ref" reference="Qn"}), ${\mathfrak{h}}= {\mathfrak{gl}}_N \oplus {\mathfrak{sp}}_{2n}$ , $A^E\in {\Omega}^1(W(End_{E}))$ is the one-form of the Fedosov connection $D^E$ ([\[D-E\]](#D-E){reference-type="ref" reference="D-E"}), and $C$ is the fiberwise "curvature" ([\[curvature\]](#curvature){reference-type="ref" reference="curvature"}) of the projection ([\[pr\]](#pr){reference-type="ref" reference="pr"}).
+
+To compute $C(A^E, A^E)$ we mention that since the Fedosov connection $D^{E\oplus\widetilde{E}}$ is obtained from the $D^{L_N}$ via conjugation ([\[conj\]](#conj){reference-type="ref" reference="conj"}) the connection $D^{E\oplus\widetilde{E}}$ has the same Fedosov-Weyl curvature ([\[Weyl-c\]](#Weyl-c){reference-type="ref" reference="Weyl-c"}) $${\hbar}(R+R^{E\oplus\widetilde{E}}) +2 {\nabla}^{E\oplus\widetilde{E}}
+A^{E\oplus\widetilde{E}} + \frac1{{\hbar}}
+[A^{E\oplus\widetilde{E}},  A^{E\oplus\widetilde{E}}] =
+-{\omega}+ {\Omega}_{{\hbar}}\,.$$ Here $A^{E\oplus\widetilde{E}}$ is the one-form of the Fedosov connection $D^{E\oplus\widetilde{E}}$, ${\nabla}^{E\oplus\widetilde{E}}$ is the operator ([\[nabla\]](#nabla){reference-type="ref" reference="nabla"}) corresponding to the symplectic connection ${\partial}^s$ and the connection ${\partial}^{E\oplus\widetilde{E}}$ on $E\oplus \widetilde{E}$ obtained from ${\partial}^{L_N}$ via the isomorphism $u$ . Finally, $R^{E\oplus\widetilde{E}}$ is the curvature form of the connection ${\partial}^{E\oplus\widetilde{E}}$ .
+
+On the other hand the Fedosov connection $D^{E\oplus\widetilde{E}}$ is a direct sum of the Fedosov connections $D^E$ and $D^{\widetilde{E}}$ . Hence, $$\label{the-same}
+{\hbar}(R+ R^{E}) +2 {\nabla}^{E}
+A^{E} + \frac1{{\hbar}}
+[A^{E}, A^{E}] =
+-{\omega}+ {\Omega}_{{\hbar}}\,,$$ where $R^E$ is the curvature form of the connection ${\partial}^E$ on $E$ and ${\nabla}^E$ is the operator ([\[nabla\]](#nabla){reference-type="ref" reference="nabla"}) corresponding to the symplectic connection ${\partial}^s$ on ${\cal M}$ and the connection ${\partial}^E$ .
+
+Notice that, the projection $pr(A^E)$ may be non-zero. However, using the trick of proposition [\[absor\]](#absor){reference-type="ref" reference="absor"} we can absorb the terms that contribute to $pr(A^E)$ into the operator ${\nabla}^E$. In this way we change both[^1] the symplectic connection ${\partial}^s$ on ${\cal M}$ and the connection ${\partial}^E$ on $E$ , and therefore we change curvature forms $R$ and $R^E$. It is not hard to show that after this rearrangement equation ([\[the-same\]](#the-same){reference-type="ref" reference="the-same"}) still holds.
+
+Since $pr(A^E)$ is now vanishing $pr {\nabla}(A^E)= {\nabla}pr (A^E)=0$ . Thus, applying $pr$ to both sides of ([\[the-same\]](#the-same){reference-type="ref" reference="the-same"}) we get $$\label{that}
+C(A^E, A^E) = {\hbar}^2 R + {\hbar}^2 R_E - {\hbar}
+(-{\omega}+ {\Omega}_{{\hbar}})\,.$$ Substituting ([\[that\]](#that){reference-type="ref" reference="that"}) into equation ([\[vot-ono\]](#vot-ono){reference-type="ref" reference="vot-ono"}) we complete the proof of the theorem. $\Box$
+
+# Concluding remarks.
+
+We would like to mention that our result (theorem [\[index\]](#index){reference-type="ref" reference="index"}) is derived from the purely algebraic fact ([\[FFS\]](#FFS){reference-type="ref" reference="FFS"}) about the cohomology of Lie algebra of matrices over the Weyl algebra. In this respect our approach is very reminiscent of finding "local" proofs of the Riemann-Roch-Hirzebruch theorem [@ACKP], [@BS], [@BNT], [@BNT1], and [@FT]. Thus, in [@ACKP] and [@BS] the Riemann-Roch theorem for families of Riemann curves is deduced from purely algebraic facts about the cohomology of the Lie algebra of vector fields. In paper [@FT] this idea is generalized to higher dimensions.
+
+The Bressler-Nest-Tsygan theorem [@BNT1] or the Riemann-Roch theorem for deformation quantizations, which we already mentioned in the introduction, is also a local statement based on purely algebraic relations between Hochschild, cyclic, and Lie algebra (co)homology. It seems that this result is the most general Riemann-Roch type theorem which can be proven in the symplectic setting using the methods of [@BNT1].
+
+A very similar statement to our result is proposed in recent paper [@FLS] by B. Feigin, A. Losev, and B. Shoikhet. In this paper the authors consider the algebra ${\rm Diff}({\cal E})$ of holomorphic differential operators acting on sections of a holomorphic vector bundle ${\cal E}$ over a compact complex manifold $X$ of the complex dimension $n$. They give a tractable notion of Hochschild homology $HH_{{\bullet}}$ of ${\rm Diff}({\cal E})$ for which $\displaystyle HH_{{\bullet}}({\rm Diff}({\cal E}))= H^{2n-{\bullet}}(X, {\Bbb C})$ and construct a map $$\label{La}
+{\Lambda}\,:\, {\rm Diff}({\cal E}) \mapsto H^{2n}(X, {\Bbb C})$$ which induces an isomorphism $HH_0({\rm Diff}({\cal E})) \cong H^{2n}(X,{\Bbb C})$ . Then, using the original Riemann-Roch-Hirzebruch theorem and assuming that the Euler characteristic of ${\cal E}$ is nonzero the authors of [@FLS] deduce that for any ${\cal D}\in {\rm Diff}({\cal E})$, the pairing of ${\Lambda}({\cal D})$ with the fundamental class $[X]$ coincides with the super-trace $str({\cal D})$ of ${\cal D}$ .
+
+We would like mention that the technique used in [@FLS] to define the map ([\[La\]](#La){reference-type="ref" reference="La"}) is very similar to the procedure of constructing the Hochschild cocycle ([\[tau\]](#tau){reference-type="ref" reference="tau"}) . This technique was originally proposed in paper [@L] and we suspect that it has an independent interest.
+
+Notice that, since our proof of theorem [\[index\]](#index){reference-type="ref" reference="index"} is purely algebraic, it can be generalized in a straightforward manner to the setting of the symplectic Lie algebroids [@NT-Lie] . In this case the local algebraic index theorem relates the cohomology classes of the De Rham complex associated with the corresponding Lie algebroid.
+
+[^1]: Notice that, both the new Christoffel form ${\Gamma}$ and the new connection form ${\Gamma}^E$ become formal power series in ${\hbar}$ .

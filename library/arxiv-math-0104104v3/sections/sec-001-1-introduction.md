@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-2
 source_pdf: 0104104v3.pdf
 source_sha256: e2154399f783aa9b
-text_source: latex
-latex_prose_ratio: 0.792
-latex_coverage_ratio: 1.0
 doc_brief: "Geometry of Four-vector Fields on Quaternionic Flag Manifolds — The purpose of this paper is to describe certain natural 4-ve ctor ﬁelds on quaternionic ﬂag manifolds, which geometrically determ ine"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 In this paper we wish to describe certain natural $4$-vector fields 
 on quaternionic flag manifolds. In the context of the 

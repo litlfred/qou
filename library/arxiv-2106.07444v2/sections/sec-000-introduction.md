@@ -7,10 +7,10 @@ section_number: null
 pages: 1-15
 source_pdf: 2106.07444v2.pdf
 source_sha256: 5acca39c07bcdddd
-text_source: latex
-latex_prose_ratio: 0.979
-latex_coverage_ratio: 0.975
 doc_brief: "FROM THE HECKE CATEGORY TO THE UNIPOTENT LOCUS — Let W be the W eyl group of a split semisimple group G. Its Hecke category HW can be built from pure perverse sheaves on the double ﬂag variety of G."
+text_source: latex
+latex_prose_ratio: 0.989
+latex_coverage_ratio: 0.994
 ---
 ## Summary
 
@@ -18,9 +18,9 @@ Let $\bb{V}$ be a finite-dimensional vector space over a subfield of $\bb{R}$, a
 
 If $W = S_n$, the symmetric group on $n$ letters, then $\mathit{Br}_W = \mathit{Br}_n$, the classical braid group on $n$ strands. Any braid $\beta$ can be closed up, end-to-end, to yield a topological link $\hat{\beta}$ in $3$-dimensional space. If $\beta, \beta' \in \mathit{Br}_n$ are conjugate, then $\hat{\beta}, \hat{\beta}'$ are isotopic. Ocneanu, building on work of Jones, used this observation to construct an isotopy invariant of links called the HOMFLY series out of class functions on the groups $\mathit{Br}_n$. These functions, in turn, factor through functions called Markov traces on the algebras $H_{S_n}$ [@homfly; @jones]. Y. Gomi discovered that the latter admit a uniform generalization to any finite Coxeter group $W$ [@gomi].
 
-It is now known that $H_W$ is the (triangulated) Grothendieck ring of a monoidal triangulated category that we will call the Hecke category $\sf{H}_W$. Gomi's Markov trace is categorified by an additive functor $$\begin{align}
+It is now known that $H_W$ is the (triangulated) Grothendieck ring of a monoidal triangulated category that we will call the Hecke category $\sf{H}_W$. Gomi's Markov trace is categorified by an additive functor $$\begin{aligned}
 \sf{HHH} : \sf{H}_W \to \mathsf{Vect}_3,
-\end{align}$$ where $\mathsf{Vect}_3$ denotes the category of triply-graded vector spaces. As $W$ runs over the symmetric groups, these functors can be used to construct a link invariant valued in $\mathsf{Vect}_3$, originally constructed by Khovanov--Rozansky [@kr; @khovanov]. More precisely, there is a map from braids $\beta \in \mathit{Br}_W$ to objects $\cal{R}(\beta) \in \sf{H}_W$, due to Rouquier [@rouquier_2006], and $\sf{HHH}(\cal{R}(\beta))$ can be used to construct an isotopy invariant of $\hat{\beta}$ that decategorifies to its HOMFLY series.
+\end{aligned}$$ where $\mathsf{Vect}_3$ denotes the category of triply-graded vector spaces. As $W$ runs over the symmetric groups, these functors can be used to construct a link invariant valued in $\mathsf{Vect}_3$, originally constructed by Khovanov--Rozansky [@kr; @khovanov]. More precisely, there is a map from braids $\beta \in \mathit{Br}_W$ to objects $\cal{R}(\beta) \in \sf{H}_W$, due to Rouquier [@rouquier_2006], and $\sf{HHH}(\cal{R}(\beta))$ can be used to construct an isotopy invariant of $\hat{\beta}$ that decategorifies to its HOMFLY series.
 
 The most general definition of $\sf{H}_W$ is purely algebraic: the homotopy category of Soergel bimodules over $\Sym(\bb{V})$ [@ew_2014; @ew_2016]. However, in representation theory, we are especially interested in the case where $\bb{V}$ is the span of a root lattice and $W$ is the Weyl group of the corresponding semisimple algebraic group $G$ over an algebraically closed field, say, $\bar{\bb{F}}$ for a finite field $\bb{F}$. Here, the Hecke category can be defined in terms of the geometry of $G$, or rather, its split form $G_0$ over $\bb{F}$. We are led to hope that $\sf{HHH}(\cal{R}(\beta))$ might be expressed in terms of the (co)homology of an explicit variety over $\bb{F}$ attached to $\beta$.
 
@@ -28,21 +28,20 @@ In the series of papers [@ww_2008; @ww_2011; @ww_2017], Webster--Williamson rela
 
 One of our goals is to simplify this situation. Instead of chromatography, we will use a formalism of weight realization functors, inspired by works of Bezrukavnikov--Yun [@by], Lusztig--Yun [@ly_2020], and Rider [@rider]. For special braids $\beta \in \mathit{Br}_n$ called Richardson braids, Galashin--Lam have recently used Rider's work to identify a certain summand of $\sf{HHH}(\cal{R}(\beta))$, its so-called "lowest Hochschild degree," with the torus-equivariant compactly-supported cohomology of a positroid variety [@gl]. Their argument generalizes to any Weyl group $W$. We go further: For any positive $\beta \in \mathit{Br}_W$, we realize the entirety of $\sf{HHH}(\cal{R}(\beta))$ within the equivariant Borel--Moore homology of an explicit $G$-variety over the unipotent locus of $G$.
 
-Our viewpoint will lead us to introduce a refinement of $\sf{HHH}$, valued in modules rather than vector spaces. Henceforth, we base-change $\bb{V}$ to a field of the form $\bar{\mathbf{Q}}_\ell$ for some prime $\ell$ invertible in $\bb{F}$. Form the semidirect-product ring $$\begin{align}
+Our viewpoint will lead us to introduce a refinement of $\sf{HHH}$, valued in modules rather than vector spaces. Henceforth, we base-change $\bb{V}$ to a field of the form $\bar{\mathbf{Q}}_\ell$ for some prime $\ell$ invertible in $\bb{F}$. Form the semidirect-product ring $$\begin{aligned}
 \bb{A}_W = \bar{\mathbf{Q}}_\ell[W] \ltimes \Sym(\bb{V}),
-\end{align}$$ endowed with the grading where $W$ and $\bb{V}$ are respectively placed in degrees $0$ and $2$. Let $\mathsf{Mod}_2^b(\bb{A}_W)$ be the category of $\bb{A}_W$-modules equipped with a bigrading where the $\bb{A}_W$-action is diagonally graded, both gradings are bounded below, and the difference between the gradings is uniformly bounded. We will construct a contravariant(!) monoidal trace $$\begin{align}
+\end{aligned}$$ endowed with the grading where $W$ and $\bb{V}$ are respectively placed in degrees $0$ and $2$. Let $\mathsf{Mod}_2^b(\bb{A}_W)$ be the category of $\bb{A}_W$-modules equipped with a bigrading where the $\bb{A}_W$-action is diagonally graded, both gradings are bounded below, and the difference between the gradings is uniformly bounded. We will construct a contravariant(!) monoidal trace $$\begin{aligned}
 \sf{AH} : \sf{H}_W^\op \to \mathsf{Mod}_2^b(\bb{A}_W).
-\end{align}$$ We will show that $\sf{HHH}^\vee$ is the sum of the $\mathop{\mathrm{\text{$\Lambda$}}}^i(\bb{V})$-isotypic components of $\sf{AH}$, where $\mathop{\mathrm{\text{$\Lambda$}}}^i(\bb{V})$ denotes the $i$th exterior power of $\bb{V}$, viewed as a representation of $W$. The appearance of $\mathop{\mathrm{\text{$\Lambda$}}}^i(\bb{V})$ is reminiscent of work of Bezrukavnikov--Tolmachov on a monodromic model of $\sf{HHH}$ [@bt]. For positive $\beta$, we will find that $$\begin{align}
+\end{aligned}$$ We will show that $\sf{HHH}^\vee$ is the sum of the $\mathop{\mathrm{\text{$\Lambda$}}}^i(\bb{V})$-isotypic components of $\sf{AH}$, where $\mathop{\mathrm{\text{$\Lambda$}}}^i(\bb{V})$ denotes the $i$th exterior power of $\bb{V}$, viewed as a representation of $W$. The appearance of $\mathop{\mathrm{\text{$\Lambda$}}}^i(\bb{V})$ is reminiscent of work of Bezrukavnikov--Tolmachov on a monodromic model of $\sf{HHH}$ [@bt]. For positive $\beta$, we will find that $$\begin{aligned}
 \label{eq:a_w-to-varieties}
 \sf{AH}(\cal{R}(\beta)) \simeq \gr_\ast^{\bm{w}} \ur{H}_{-\ast}^{!, G}(\cal{Z}(\beta))
-\end{align}$$ for a certain $G$-scheme $\cal{Z}(\beta)$, where on the right-hand side, $\ur{H}_\ast^{!, G}(-) = \ur{H}_\ast^{!, G}(-, \bar{\mathbf{Q}}_\ell)$ denotes equivariant Borel--Moore homology and $\bm{w}$ denotes the weight filtration coming from an $\bb{F}$-structure on $\cal{Z}(\beta)$. In the case of the identity $\bb{1} \in \mathit{Br}_W$, the reduced scheme $\cal{Z}(\bb{1})^\red$ is the variety Steinberg introduced in [@steinberg_1976]. In particular, $\sf{AH}(\cal{R}(\bb{1})) \simeq \bb{A}_W$ by a result of Lusztig [@lusztig_1988].
+\end{aligned}$$ for a certain $G$-scheme $\cal{Z}(\beta)$, where on the right-hand side, $\ur{H}_\ast^{!, G}(-) = \ur{H}_\ast^{!, G}(-, \bar{\mathbf{Q}}_\ell)$ denotes equivariant Borel--Moore homology and $\bm{w}$ denotes the weight filtration coming from an $\bb{F}$-structure on $\cal{Z}(\beta)$. In the case of the identity $\bb{1} \in \mathit{Br}_W$, the reduced scheme $\cal{Z}(\bb{1})^\red$ is the variety Steinberg introduced in [@steinberg_1976]. In particular, $\sf{AH}(\cal{R}(\bb{1})) \simeq \bb{A}_W$ by a result of Lusztig [@lusztig_1988].
 
 (To explain the contravariance: The definition of $\sf{AH}$ will involve a $\Hom$ functor. It turns out that we need a contravariant, not covariant, $\Hom$ to get the right-hand side of [\[eq:a_w-to-varieties\]](#eq:a_w-to-varieties){reference-type="eqref" reference="eq:a_w-to-varieties"} to match $\sf{AH}(\cal{R}(\beta))$ rather than $\sf{AH}(\cal{R}(\beta^{-1}))$.)
 
-Let us sketch the geometry that underlies $\sf{H}_W$ and $\sf{AH}$. Let $\cal{B} = \cal{B}_0 \otimes_\bb{F} \bar{\bb{F}}$ and $\cal{U} = \cal{U}_0 \otimes_\bb{F} \bar{\bb{F}}$ denote the flag variety and unipotent locus of $G = G_0 \otimes_\bb{F} \bar{\bb{F}}$. The Hecke category of $W$ can be interpreted as $$\begin{align}
+Let us sketch the geometry that underlies $\sf{H}_W$ and $\sf{AH}$. Let $\cal{B} = \cal{B}_0 \otimes_\bb{F} \bar{\bb{F}}$ and $\cal{U} = \cal{U}_0 \otimes_\bb{F} \bar{\bb{F}}$ denote the flag variety and unipotent locus of $G = G_0 \otimes_\bb{F} \bar{\bb{F}}$. The Hecke category of $W$ can be interpreted as $$\begin{aligned}
 \sf{H}_W = \sf{K}^b(\sf{C}(\cal{B}_0 \times \cal{B}_0)),
-\end{align}$$ where $\sf{C}(\cal{B}_0 \times \cal{B}_0)$ is a certain full, additive subcategory of $\sf{D}_{G, m}^b(\cal{B}_0 \times \cal{B}_0)$ generated by pure shifted perverse sheaves. (More precisely, it is generated by the shift-twists of the intersection complexes of the $G_0$-orbits of $\cal{B}_0 \times \cal{B}_0$.) The monoidal product on $\sf{H}_W$ arises from a geometrically-defined convolution. The operation of passing from a braid to its conjugacy class is *very roughly* realized by pulling and pushing sheaves from $\cal{B}_0 \times \cal{B}_0$ to $G_0$ through the following diagram, implicit in Lusztig's work on character sheaves and now known as the **horocycle correspondence**: $$\begin{equation}
-\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]
+\end{aligned}$$ where $\sf{C}(\cal{B}_0 \times \cal{B}_0)$ is a certain full, additive subcategory of $\sf{D}_{G, m}^b(\cal{B}_0 \times \cal{B}_0)$ generated by pure shifted perverse sheaves. (More precisely, it is generated by the shift-twists of the intersection complexes of the $G_0$-orbits of $\cal{B}_0 \times \cal{B}_0$.) The monoidal product on $\sf{H}_W$ arises from a geometrically-defined convolution. The operation of passing from a braid to its conjugacy class is *very roughly* realized by pulling and pushing sheaves from $\cal{B}_0 \times \cal{B}_0$ to $G_0$ through the following diagram, implicit in Lusztig's work on character sheaves and now known as the **horocycle correspondence**: $$\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]
 \matrix(m)[matrix of math nodes, row sep=2.5em, column sep=2.5em, text height=2ex, text depth=0.5ex]
 {   \cal{B}_0 \times \cal{B}_0
         &G_0 \times \cal{B}_0\\
@@ -52,15 +51,13 @@ Let us sketch the geometry that underlies $\sf{H}_W$ and $\sf{AH}$. Let $\cal{B}
 \path[->,font=\scriptsize, auto]
 (m-1-2)     edge node[above]{$\mathit{act}$} (m-1-1)
 (m-1-2)     edge node[right]{$\mathit{pr}$} (m-2-2);
-\end{tikzpicture}
-\end{equation}$$ Above, $\mathit{act}$ and $\mathit{pr}$ are the action and projection maps.
+\end{tikzpicture}$$ Above, $\mathit{act}$ and $\mathit{pr}$ are the action and projection maps.
 
-We introduce similar subcategories $\sf{C}(G_0) \subseteq \sf{D}_{G, m}^b(G_0)$ and $\sf{C}(\cal{U}_0) \subseteq \sf{D}_{G, m}^b(\cal{U}_0)$. (The category $\sf{C}(G_0)$ is generated by objects of the form $E \otimes M$, where $E$ is a mixed version of a unipotent character sheaf and $M$ is a pure weight-zero Frobenius module; the category $\sf{C}(\cal{U}_0)$ is generated by the pullbacks of these objects along the inclusion $i : \cal{U}_0 \to G_0$.) In particular, $\sf{C}(G_0)$ contains the Grothendieck--Springer sheaf $\cal{G}$, while $\sf{C}(\cal{U}_0)$ contains the Springer sheaf $\cal{S} \simeq i^\ast \cal{G}\langle -{\dim \bb{V}}\rangle$. The horocycle correspondence gives rise to a functor $$\begin{align}
+We introduce similar subcategories $\sf{C}(G_0) \subseteq \sf{D}_{G, m}^b(G_0)$ and $\sf{C}(\cal{U}_0) \subseteq \sf{D}_{G, m}^b(\cal{U}_0)$. (The category $\sf{C}(G_0)$ is generated by objects of the form $E \otimes M$, where $E$ is a mixed version of a unipotent character sheaf and $M$ is a pure weight-zero Frobenius module; the category $\sf{C}(\cal{U}_0)$ is generated by the pullbacks of these objects along the inclusion $i : \cal{U}_0 \to G_0$.) In particular, $\sf{C}(G_0)$ contains the Grothendieck--Springer sheaf $\cal{G}$, while $\sf{C}(\cal{U}_0)$ contains the Springer sheaf $\cal{S} \simeq i^\ast \cal{G}\langle -{\dim \bb{V}}\rangle$. The horocycle correspondence gives rise to a functor $$\begin{aligned}
 \sf{CH} : \sf{C}(\cal{B}_0 \times \cal{B}_0) \to \sf{C}(\cal{U}_0),
-\end{align}$$ while pullback gives rise to a functor $i^\ast \langle-{\dim \bb{V}}\rangle : \sf{C}(G_0) \to \sf{C}(\cal{U}_0)$.
+\end{aligned}$$ while pullback gives rise to a functor $i^\ast \langle-{\dim \bb{V}}\rangle : \sf{C}(G_0) \to \sf{C}(\cal{U}_0)$.
 
-Crucially, $\sf{C}(\cal{B}_0 \times \cal{B}_0)$ and $\sf{C}(\cal{U}_0)$ satisfy a certain $\Ext$-vanishing condition (see Section [\[sec:mixed\]](#sec:mixed){reference-type="ref" reference="sec:mixed"}) that allows us to define realization functors $\rho : \sf{K}^b(\sf{C}(\cal{B}_0^2)) \to \sf{D}_{G, m}^b(\cal{B}_0^2)$ and $\rho : \sf{K}^b(\sf{C}(\cal{U}_0)) \to \sf{D}_{G, m}^b(\cal{U}_0)$. Even though we are unable to construct a similar functor for $G_0$, the diagram $$\begin{equation}
-\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]
+Crucially, $\sf{C}(\cal{B}_0 \times \cal{B}_0)$ and $\sf{C}(\cal{U}_0)$ satisfy a certain $\Ext$-vanishing condition (see Section [\[sec:mixed\]](#sec:mixed){reference-type="ref" reference="sec:mixed"}) that allows us to define realization functors $\rho : \sf{K}^b(\sf{C}(\cal{B}_0^2)) \to \sf{D}_{G, m}^b(\cal{B}_0^2)$ and $\rho : \sf{K}^b(\sf{C}(\cal{U}_0)) \to \sf{D}_{G, m}^b(\cal{U}_0)$. Even though we are unable to construct a similar functor for $G_0$, the diagram $$\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]
 \matrix(m)[matrix of math nodes, row sep=2.5em, column sep=4em, text height=2ex, text depth=0.5ex]
 {   \sf{K}^b(\sf{C}(\cal{B}_0 \times \cal{B}_0))
         &\sf{K}^b(\sf{C}(G_0))
@@ -76,12 +73,11 @@ Crucially, $\sf{C}(\cal{B}_0 \times \cal{B}_0)$ and $\sf{C}(\cal{U}_0)$ satisfy 
 (m-2-1)     edge node{$\sf{CH}$} (m-2-2)
 (m-1-3)     edge node[right]{$\rho$} (m-2-3)    
 (m-1-1)     edge node[left]{$\rho$} (m-2-1);
-\end{tikzpicture}
-\end{equation}$$ commutes. The monoidal trace $\sf{AH}$ is the composition $$\begin{align}
+\end{tikzpicture}$$ commutes. The monoidal trace $\sf{AH}$ is the composition $$\begin{aligned}
 \sf{H}_W = \sf{K}^b(\sf{C}(\cal{B}_0 \times \cal{B}_0))
     \to \sf{D}_{G, m}^b(\cal{U}_0)
     \xrightarrow{\gr_\ast^{\bm{w}} \SHom^\ast(-, \cal{S})} \mathsf{Mod}_2^b(\bb{A}_W),
-\end{align}$$ where the first arrow is the functor produced by the diagram, and $\SHom^\ast$ denotes an $\Ext$-space endowed with a Frobenius action. We use:
+\end{aligned}$$ where the first arrow is the functor produced by the diagram, and $\SHom^\ast$ denotes an $\Ext$-space endowed with a Frobenius action. We use:
 
 1.  The bottom-left part of the diagram to match $\sf{AH}$ with the homology of the generalized Steinberg scheme $\cal{Z}(\beta)$ (in Section [\[sec:varieties\]](#sec:varieties){reference-type="ref" reference="sec:varieties"}).
 
@@ -89,10 +85,9 @@ Crucially, $\sf{C}(\cal{B}_0 \times \cal{B}_0)$ and $\sf{C}(\cal{U}_0)$ satisfy 
 
 The main obstacle with (2) is that Webster--Williamson interpret $\sf{HHH}$ using the hypercohomology of objects over $G$, whereas we define $\sf{AH}$ using objects over $\cal{U}$. Moreover, in their work, the Hochschild degree of $\sf{HHH}$ arises from $\gr_\ast^{\bm{w}}$, while in our work, it arises from $\mathop{\mathrm{\text{$\Lambda$}}}^\ast(\bb{V})$. So the matching in (2) is fairly indirect. Using orthogonality results of Lusztig [@lusztig_1985_2] and Rider--Russell [@rr], we reduce the problem to checking certain direct-summand categories $\sf{C}_{\hat{W}}(G_0) \subseteq \sf{C}(G_0)$ and $\sf{C}_{\hat{W}}(\cal{U}_0) \subseteq \sf{C}(\cal{U}_0)$, which are roughly the "principal blocks" generated by $\cal{G}$ and $\cal{S}$. On the level of these blocks, the key input is a geometrically-defined isomorphism between $\SEnd^\ast(\cal{S})$ and the pure part of $\SEnd^\ast(\cal{G})$ (in Section [\[sec:steinberg\]](#sec:steinberg){reference-type="ref" reference="sec:steinberg"}).
 
-As for (1), let us sketch the definition of $\cal{Z}(\beta)$. Let $\mathit{Br}_W^+ \subseteq \mathit{Br}_W$ be the monoid of positive braids. The map $\mathit{Br}_W \to W$ admits a set-theoretic section $W \to \mathit{Br}_W^+$ that we will denote $w \mapsto \sigma_w$. (In fact, the images of the $\sigma_w$ in $H_W$ form a $\bb{Z}[\bm{q}^{\pm\frac{1}{2}}]$-basis.) Deligne [@deligne_1997] and Broué--Michel [@bm_1997] introduced a map $$\begin{align}
+As for (1), let us sketch the definition of $\cal{Z}(\beta)$. Let $\mathit{Br}_W^+ \subseteq \mathit{Br}_W$ be the monoid of positive braids. The map $\mathit{Br}_W \to W$ admits a set-theoretic section $W \to \mathit{Br}_W^+$ that we will denote $w \mapsto \sigma_w$. (In fact, the images of the $\sigma_w$ in $H_W$ form a $\bb{Z}[\bm{q}^{\pm\frac{1}{2}}]$-basis.) Deligne [@deligne_1997] and Broué--Michel [@bm_1997] introduced a map $$\begin{aligned}
 \beta \mapsto O(\beta)
-\end{align}$$ from elements of $\mathit{Br}_W^+$ to $G$-varieties over $\cal{B} \times \cal{B}$, such that $O(\sigma_w)$ is the $G$-orbit of $\cal{B} \times \cal{B}$ indexed by $w$, and such that $O$ takes compositions of braids to fiber products over $\cal{B}$, up to explicit isomorphisms. We form a cartesian square: $$\begin{equation}
-\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]
+\end{aligned}$$ from elements of $\mathit{Br}_W^+$ to $G$-varieties over $\cal{B} \times \cal{B}$, such that $O(\sigma_w)$ is the $G$-orbit of $\cal{B} \times \cal{B}$ indexed by $w$, and such that $O$ takes compositions of braids to fiber products over $\cal{B}$, up to explicit isomorphisms. We form a cartesian square: $$\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]
 \matrix(m)[matrix of math nodes, row sep=2em, column sep=2.5em, text height=2ex, text depth=0.5ex]
 {   O(\beta)
         &\cal{U}(\beta)\\
@@ -104,22 +99,21 @@ As for (1), let us sketch the definition of $\cal{Z}(\beta)$. Let $\mathit{Br}_W
 (m-1-2)     edge (m-2-2)
 (m-1-1)     edge (m-2-1)
 (m-2-2)     edge node[above]{$\mathit{act}$} (m-2-1);
-\end{tikzpicture}
-\end{equation}$$ Then the map $\cal{U}(\bb{1}) \to \cal{U}$ is the Springer resolution. We define $\cal{Z}(\beta)$ be the fiber product $\cal{U}(\bb{1}) \times_\cal{U} \cal{U}(\beta)$.
+\end{tikzpicture}$$ Then the map $\cal{U}(\bb{1}) \to \cal{U}$ is the Springer resolution. We define $\cal{Z}(\beta)$ be the fiber product $\cal{U}(\bb{1}) \times_\cal{U} \cal{U}(\beta)$.
 
-In the rest of the paper, we study the decategorification of $\sf{AH}$. Let $R(W)$ be the representation ring of $W$. Any $M \in \mathsf{Mod}_2^b(\bb{A}_W)$ decategorifies to an element $$\begin{align}
-[M]_{\bm{q}} = \sum_{i,j} {(-1)^{i - j}}\bm{q}^{\frac{j}{2}} M^{i, j} \in R(W)(\!(\bm{q}^{\frac{1}{2}})\!)
-\end{align}$$ that we call its graded character. As a result, $\sf{AH}$ decategorifies to a $\bb{Z}[\bm{q}^{\pm\frac{1}{2}}]$-linear function $H_W \to R(W)(\!(\bm{q}^{\frac{1}{2}})\!)$. After multiplying by a normalization factor that clears denominators, we get a function $$\begin{align}
+In the rest of the paper, we study the decategorification of $\sf{AH}$. Let $R(W)$ be the representation ring of $W$. Any $M \in \mathsf{Mod}_2^b(\bb{A}_W)$ decategorifies to an element $$\begin{aligned}
+_{\bm{q}} = \sum_{i,j} {(-1)^{i - j}}\bm{q}^{\frac{j}{2}} M^{i, j} \in R(W)(\!(\bm{q}^{\frac{1}{2}})\!)
+\end{aligned}$$ that we call its graded character. As a result, $\sf{AH}$ decategorifies to a $\bb{Z}[\bm{q}^{\pm\frac{1}{2}}]$-linear function $H_W \to R(W)(\!(\bm{q}^{\frac{1}{2}})\!)$. After multiplying by a normalization factor that clears denominators, we get a function $$\begin{aligned}
 \langle{-}\rangle_{\bm{q}} : H_W \to R(W)[\bm{q}^{\pm\frac{1}{2}}]
-\end{align}$$ that admits an especially simple formula in terms of the character theory of $H_W$. If we write $\hat{W}$ for the set of irreducible characters of $W$, then it is $$\begin{align}
+\end{aligned}$$ that admits an especially simple formula in terms of the character theory of $H_W$. If we write $\hat{W}$ for the set of irreducible characters of $W$, then it is $$\begin{aligned}
 \langle{\beta}\rangle_{\bm{q}} = \sum_{\phi, \psi \in \hat{W}} {\{\phi, \psi\}}\phi_{\bm{q}}(\beta)\psi,
-\end{align}$$ where $\phi_{\bm{q}} : H_W \to \bb{Z}[\bm{q}^{\pm\frac{1}{2}}]$ corresponds to $\phi : \bb{Z}[W] \to \bb{Z}$ under Tits's deformation theorem and $\{-, -\}$ is a $\bb{Q}$-valued pairing on $\hat{W}$ derived from Lusztig's work on the character theory of $G(\bb{F})$ [@lusztig_1984]. The function $\langle{-}\rangle_{\bm{q}}$ can be used to recover Gomi's Markov trace, and our formula is closely related to his formula. In particular, we will show that various properties of the Markov trace extend to $\langle{-}\rangle_{\bm{q}}$: its rationality, the palindromic symmetry of its coefficients, and its compatibility with parabolic subgroups of $W$.
+\end{aligned}$$ where $\phi_{\bm{q}} : H_W \to \bb{Z}[\bm{q}^{\pm\frac{1}{2}}]$ corresponds to $\phi : \bb{Z}[W] \to \bb{Z}$ under Tits's deformation theorem and $\{-, -\}$ is a $\bb{Q}$-valued pairing on $\hat{W}$ derived from Lusztig's work on the character theory of $G(\bb{F})$ [@lusztig_1984]. The function $\langle{-}\rangle_{\bm{q}}$ can be used to recover Gomi's Markov trace, and our formula is closely related to his formula. In particular, we will show that various properties of the Markov trace extend to $\langle{-}\rangle_{\bm{q}}$: its rationality, the palindromic symmetry of its coefficients, and its compatibility with parabolic subgroups of $W$.
 
 The function $w \mapsto \langle{\sigma_w}\rangle_{\bm{q}}$, evaluated on elements $w \in W$ of minimal Bruhat length in their conjugacy classes, recovers the function that Lusztig--Yun introduce in [@ly_2019], up to a normalization factor. Thus it also encodes the map from conjugacy classes in $W$ to unipotent classes in $G$ that Lusztig constructs in [@lusztig_2011].
 
-The definition of $\langle{-}\rangle_{\bm{q}}$ can be extended to any finite Coxeter group $W$, as a consequence of [@lusztig_1993; @lusztig_1994; @malle]. In this generality, we will relate special values of $\langle{-}\rangle_{\bm{q}}$ to the cyclotomic block theory of $H_W$, *i.e.*, to the representation theory of the ring obtained from $H_W$ by specializing $\bm{q}^{\frac{1}{2}}$ to a root of unity. To this end, we need a central element $\pi \in \mathit{Br}_W^+$ known as the full twist. We will say that an element $\beta \in \mathit{Br}_W$ is periodic of slope $\nu= \frac{m}{n} \in \bb{Q}$ iff $$\begin{align}
+The definition of $\langle{-}\rangle_{\bm{q}}$ can be extended to any finite Coxeter group $W$, as a consequence of [@lusztig_1993; @lusztig_1994; @malle]. In this generality, we will relate special values of $\langle{-}\rangle_{\bm{q}}$ to the cyclotomic block theory of $H_W$, *i.e.*, to the representation theory of the ring obtained from $H_W$ by specializing $\bm{q}^{\frac{1}{2}}$ to a root of unity. To this end, we need a central element $\pi \in \mathit{Br}_W^+$ known as the full twist. We will say that an element $\beta \in \mathit{Br}_W$ is periodic of slope $\nu= \frac{m}{n} \in \bb{Q}$ iff $$\begin{aligned}
 \beta^n = \pi^m.
-\end{align}$$ For such $\beta$, we give an explicit formula for $\langle{\beta}\rangle_{\bm{q}}$ in terms of constants of the form $\mathrm{Deg}_\phi(e^{2\pi i\nu})$, where $\mathrm{Deg}_\phi(\bm{q})$ is the so-called generic or unipotent degree of $\phi$ [@gp §8.1.8]. The constants $\mathrm{Deg}_\phi(e^{2\pi i\nu})$ are integers that roughly control the sizes of the blocks of $H_W(e^{\pi i\nu}) = H_W|_{\bm{q}^{1/2} = e^{\pi i\nu}}$.
+\end{aligned}$$ For such $\beta$, we give an explicit formula for $\langle{\beta}\rangle_{\bm{q}}$ in terms of constants of the form $\mathrm{Deg}_\phi(e^{2\pi i\nu})$, where $\mathrm{Deg}_\phi(\bm{q})$ is the so-called generic or unipotent degree of $\phi$ [@gp §8.1.8]. The constants $\mathrm{Deg}_\phi(e^{2\pi i\nu})$ are integers that roughly control the sizes of the blocks of $H_W(e^{\pi i\nu}) = H_W|_{\bm{q}^{1/2} = e^{\pi i\nu}}$.
 
 As an application, we relate $[\sf{AH}(\cal{R}(\beta))]_{\bm{q}}$ to the representations of a symplectic reflection algebra $\bb{D}_\nu^\mathit{rat}\supseteq \bb{A}_W$ known as the rational Cherednik algebra or rational double affine Hecke algebra (DAHA). We can view it as a deformation of $\bb{D}_0^\mathit{rat}= \bar{\mathbf{Q}}_\ell[W] \ltimes \cal{D}(\bb{V})$ that depends on $\nu$, where $\cal{D}(\bb{V})$ is the Weyl algebra of differential operators on $\bb{V}$. Like a semisimple Lie algebra, $\bb{D}_\nu^\mathit{rat}$ admits a "category $\sf{O}$" of well-behaved modules, except that the simple objects are parametrized by $\hat{W}$. We respectively write $L_\nu(\phi)$ and $\Delta_\nu(\phi)$ for the simple and Verma objects indexed by $\phi \in \hat{W}$. There is a functor from category $\sf{O} = \sf{O}_\nu$ to the category of $H_W(e^{\pi i\nu})$-modules, known as the Knizhnik--Zamolodchikov functor, that sends $\Delta_\nu(\phi)$ to the $H_W(e^{\pi i\nu})$-module associated with $\phi_{\bm{q}}$.
 
@@ -146,30 +140,30 @@ In Section [\[sec:steinberg\]](#sec:steinberg){reference-type="ref" reference="s
 In Section [\[sec:varieties\]](#sec:varieties){reference-type="ref" reference="sec:varieties"}, we first review the positive braid monoid $\mathit{Br}_W^+ \subseteq \mathit{Br}_W$. Then we review the map $\beta \mapsto O(\beta)$ studied by Deligne and Broué--Michel and the map $\beta \mapsto \cal{R}(\beta)$ introduced by Rouquier. Using our realization formalism, we rederive the folklore comparison between the variety $O(\beta)$ and the complexes $\cal{R}(\beta)$, $\cal{R}(\beta^{-1})$ for positive $\beta$. Using the work in Section [\[sec:a_w\]](#sec:a_w){reference-type="ref" reference="sec:a_w"}, we prove:
 
 ::: mainthm
-[]{#thm:a_w-to-varieties label="thm:a_w-to-varieties"} We have $$\begin{align}
+[]{#thm:a_w-to-varieties label="thm:a_w-to-varieties"} We have $$\begin{aligned}
 \sf{AH}^{i, j}(\cal{R}(\beta))
 \simeq \gr_{j + 2r}^{\bm{w}} \ur{H}_{-(i + 2r)}^{!, G}(\cal{Z}(\beta))
-\end{align}$$ for all $\beta \in \mathit{Br}_W^+$ and $i, j \in \bb{Z}$.
+\end{aligned}$$ for all $\beta \in \mathit{Br}_W^+$ and $i, j \in \bb{Z}$.
 :::
 
 In Section [\[sec:kr\]](#sec:kr){reference-type="ref" reference="sec:kr"}, we review Khovanov--Rozansky homology and its geometric interpretation in terms of the horocycle correspondence due to Webster--Williamson. We use the work of Sections [\[sec:hecke\]](#sec:hecke){reference-type="ref" reference="sec:hecke"}, [\[sec:a_w\]](#sec:a_w){reference-type="ref" reference="sec:a_w"}, and [\[sec:steinberg\]](#sec:steinberg){reference-type="ref" reference="sec:steinberg"} to show:
 
 ::: mainthm
-[]{#thm:a_w-to-kr label="thm:a_w-to-kr"} With respect to the grading conventions on $\sf{AH}$ in Section [\[sec:a_w\]](#sec:a_w){reference-type="ref" reference="sec:a_w"} and on $\sf{HHH}$ in Section [\[sec:kr\]](#sec:kr){reference-type="ref" reference="sec:kr"}, we have $$\begin{align}
+[]{#thm:a_w-to-kr label="thm:a_w-to-kr"} With respect to the grading conventions on $\sf{AH}$ in Section [\[sec:a_w\]](#sec:a_w){reference-type="ref" reference="sec:a_w"} and on $\sf{HHH}$ in Section [\[sec:kr\]](#sec:kr){reference-type="ref" reference="sec:kr"}, we have $$\begin{aligned}
 (\sf{HHH}^{i, i + j, k})^\vee
     \simeq \Hom_W(\mathop{\mathrm{\text{$\Lambda$}}}^i(\bb{V}), \sf{AH}^{j + k, j}(-))
-\end{align}$$ as functors $\sf{H}_W \to \sf{Vect}$ for all $i, j, k \in \bb{Z}$.
+\end{aligned}$$ as functors $\sf{H}_W \to \sf{Vect}$ for all $i, j, k \in \bb{Z}$.
 :::
 
 Let $\cal{X}(\beta) = \cal{X}(\beta)_0 \otimes \bar{\bb{F}}$ be the fiber of $\cal{U}(\beta) = \cal{U}(\beta)_0 \otimes \bar{\bb{F}}$ above $1 \in \cal{U}$. Using well-known properties of the $W$-action on the Springer resolution, we deduce:
 
 ::: maincor
-[]{#cor:kr-to-varieties label="cor:kr-to-varieties"} We have $$\begin{align}
+[]{#cor:kr-to-varieties label="cor:kr-to-varieties"} We have $$\begin{aligned}
 \sf{HHH}^{0, j, k}(\cal{R}(\beta))^\vee
     &\simeq \gr_{j + 2r}^{\bm{w}} \ur{H}_{-(j + k + 2r)}^{!, G}(\cal{U}(\beta)),\\
 \sf{HHH}^{r, r + j, k}(\cal{R}(\beta))^\vee
     &\simeq \gr_{j + 2(r - N)}^{\bm{w}} \ur{H}_{-(j + k + 2(r - N))}^{!, G}(\cal{X}(\beta)).
-\end{align}$$ for all $\beta \in \mathit{Br}_W^+$, where $N = \dim \cal{B}$.
+\end{aligned}$$ for all $\beta \in \mathit{Br}_W^+$, where $N = \dim \cal{B}$.
 :::
 
 Combining the corollary with a "Serre duality" result for $\sf{HHH}$ [@ghmn], we find that for $G = \SL_n$ and any $\beta \in \mathit{Br}_W^+$, there is a weight-preserving isomorphism between the equivariant Borel--Moore homologies of the varieties $\cal{U}(\beta)$ and $\cal{X}(\beta\pi)$. We revisit this observation in §[0.3.2](#subsubsec:serre-duality){reference-type="ref" reference="subsubsec:serre-duality"}.
@@ -177,19 +171,19 @@ Combining the corollary with a "Serre duality" result for $\sf{HHH}$ [@ghmn], we
 In Section [\[sec:decat\]](#sec:decat){reference-type="ref" reference="sec:decat"}, we introduce the function $\langle{-}\rangle_{\bm{q}} : H_W \to R(W)[\bm{q}^{\pm\frac{1}{2}}]$ in terms of the background covered in Appendix [\[sec:coxeter\]](#sec:coxeter){reference-type="ref" reference="sec:coxeter"}. Its definition can be extended to any finite Coxeter group $W$. In the case of Weyl groups, we show that $\langle{-}\rangle_{\bm{q}}$ is the decategorification of $\sf{AH}$ up to a normalization factor. The key ingredient is a multiplicity formula for character sheaves that involves $\{-, -\}$, due to Lusztig [@lusztig_1985_3 Cor. 14.11] [@lusztig_1986 Thm. 23.1].
 
 ::: mainthm
-[]{#thm:decat label="thm:decat"} If $W$ is a Weyl group, and $\cal{K} \in \sf{H}_W$ decategorifies to $\beta \in H_W$, then $$\begin{align}
-[\sf{AH}^\vee(\cal{K})]_{\bm{q}} = \langle{\beta}\rangle_{\bm{q}} \cdot [\Sym(\bb{V})]_{\bm{q}},
-\end{align}$$ where $(\sf{AH}^\vee)^{i, j} = (\sf{AH}^{i, j})^\vee$ for all $i, j$ and $[\Sym(\bb{V})]_{\bm{q}} = \sum_i {\bm{q}^i} \Sym^i(\bb{V})$.
+[]{#thm:decat label="thm:decat"} If $W$ is a Weyl group, and $\cal{K} \in \sf{H}_W$ decategorifies to $\beta \in H_W$, then $$\begin{aligned}
+_{\bm{q}} = \langle{\beta}\rangle_{\bm{q}} \cdot [\Sym(\bb{V})]_{\bm{q}},
+\end{aligned}$$ where $(\sf{AH}^\vee)^{i, j} = (\sf{AH}^{i, j})^\vee$ for all $i, j$ and $[\Sym(\bb{V})]_{\bm{q}} = \sum_i {\bm{q}^i} \Sym^i(\bb{V})$.
 :::
 
-Next, we explain the precise relationship between $\langle{-}\rangle_{\bm{q}}$ and the Markov trace studied by Ocneanu and Gomi: See Proposition [\[prop:markov\]](#prop:markov){reference-type="ref" reference="prop:markov"}. It is most conveniently stated in terms of the class function $\langle{-}\rangle_{\bm{q}}^0 : \mathit{Br}_W \to R(W)(\!(\bm{q}^{\frac{1}{2}})\!)$ defined by $$\begin{align}
+Next, we explain the precise relationship between $\langle{-}\rangle_{\bm{q}}$ and the Markov trace studied by Ocneanu and Gomi: See Proposition [\[prop:markov\]](#prop:markov){reference-type="ref" reference="prop:markov"}. It is most conveniently stated in terms of the class function $\langle{-}\rangle_{\bm{q}}^0 : \mathit{Br}_W \to R(W)(\!(\bm{q}^{\frac{1}{2}})\!)$ defined by $$\begin{aligned}
 \langle{\beta}\rangle_{\bm{q}}^0 = (-\bm{q}^{\frac{1}{2}})^{|\beta|}\langle{\beta}\rangle_{\bm{q}} \cdot \varepsilon [\Sym(\bb{V})]_{\bm{q}},
-\end{align}$$ where $|\beta|$ is the writhe of $\beta$ and $\varepsilon$ is the sign character of $W$ (see §[\[subsec:representation\]](#subsec:representation){reference-type="ref" reference="subsec:representation"}).
+\end{aligned}$$ where $|\beta|$ is the writhe of $\beta$ and $\varepsilon$ is the sign character of $W$ (see §[\[subsec:representation\]](#subsec:representation){reference-type="ref" reference="subsec:representation"}).
 
 Using properties of $\{-, -\}$, we show that certain rationality and symmetry properties of the Markov trace generalize to $\langle{-}\rangle_{\bm{q}}$ and $\langle{-}\rangle_{\bm{q}}^0$. For Weyl groups, the strongest form of the rationality property will be Theorem [\[thm:pole\]](#thm:pole){reference-type="ref" reference="thm:pole"}, which we prove in Section [\[sec:dl\]](#sec:dl){reference-type="ref" reference="sec:dl"}. For general Coxeter groups, the remaining properties are:
 
 ::: mainthm
-[]{#thm:symmetry label="thm:symmetry"} For all $\beta \in \mathit{Br}_W$, we have $$\begin{align}
+[]{#thm:symmetry label="thm:symmetry"} For all $\beta \in \mathit{Br}_W$, we have $$\begin{aligned}
 \langle{\beta}\rangle_{\bm{q}} 
 &\in \bm{q}^{-\frac{|\beta|}{2}}R(W)[\bm{q}] \cap R(W)[\bm{q}^{\frac{1}{2}} - \varepsilon \bm{q}^{-\frac{1}{2}}],\\
 \langle{\beta}\rangle_{\bm{q}}^0
@@ -197,21 +191,21 @@ Using properties of $\{-, -\}$, we show that certain rationality and symmetry pr
     R(W)[\![\bm{q}]\!] \cap R(W)(\bm{q}) \cap
     (\bm{q}^{\frac{1}{2}})^{|\beta| - r}
     R(W)[(\bm{q}^{\frac{1}{2}} - \bm{q}^{-\frac{1}{2}})^{\pm 1}].
-\end{align}$$ In particular, $\langle{\beta}\rangle_{\bm{q}}$ and $\langle{\beta}\rangle_{\bm{q}}^0$ are invariant under $\bm{q}^{\frac{1}{2}} \mapsto -\varepsilon\bm{q}^{-\frac{1}{2}}$ and $\bm{q}^{\frac{1}{2}} \mapsto -\bm{q}^{-\frac{1}{2}}$, respectively. Moreover, $\langle{\beta}\rangle_{\bm{q}}^0$ has degree $|\beta| - r$ as a rational function in $\bm{q}$.
+\end{aligned}$$ In particular, $\langle{\beta}\rangle_{\bm{q}}$ and $\langle{\beta}\rangle_{\bm{q}}^0$ are invariant under $\bm{q}^{\frac{1}{2}} \mapsto -\varepsilon\bm{q}^{-\frac{1}{2}}$ and $\bm{q}^{\frac{1}{2}} \mapsto -\bm{q}^{-\frac{1}{2}}$, respectively. Moreover, $\langle{\beta}\rangle_{\bm{q}}^0$ has degree $|\beta| - r$ as a rational function in $\bm{q}$.
 :::
 
-In Section [\[sec:dl\]](#sec:dl){reference-type="ref" reference="sec:dl"}, we again assume that $W$ is the Weyl group of $G$. After reviewing background on Deligne--Lusztig virtual representations, we use their properties to express $\langle{-}\rangle_{\bm{q}}^0$ in terms of the $\bb{F}$-point counts of the fibers of the map $\cal{U}(\beta) \to \cal{U}$. Namely, we need results of Deligne--Lusztig--Springer [@dl Thm. 6.9] [@springer_1976 Thm. 5.6], Kazhdan [@kazhdan], Lusztig [@lusztig_1984 Cor. 4.24-4.25], and Geck--Lusztig [@geck Prop. 1.3]. To state the formula, let $\cal{B}_g$ denote the Springer fiber above $g \in G$, and let $$\begin{align}
+In Section [\[sec:dl\]](#sec:dl){reference-type="ref" reference="sec:dl"}, we again assume that $W$ is the Weyl group of $G$. After reviewing background on Deligne--Lusztig virtual representations, we use their properties to express $\langle{-}\rangle_{\bm{q}}^0$ in terms of the $\bb{F}$-point counts of the fibers of the map $\cal{U}(\beta) \to \cal{U}$. Namely, we need results of Deligne--Lusztig--Springer [@dl Thm. 6.9] [@springer_1976 Thm. 5.6], Kazhdan [@kazhdan], Lusztig [@lusztig_1984 Cor. 4.24-4.25], and Geck--Lusztig [@geck Prop. 1.3]. To state the formula, let $\cal{B}_g$ denote the Springer fiber above $g \in G$, and let $$\begin{aligned}
 Q_g(w) = \sum_n
 {\tr(wF \mid \ur{H}^{2n}(\cal{B}_g, \bar{\mathbf{Q}}_\ell))}
-\end{align}$$ for all $w \in W$. When $G$ is a *special* algebraic group in the sense of Serre [@grothendieck_1958], the formula below is a kind of virtual weight series for $[\cal{Z}(\beta)/G]$, so it is a corollary of Theorem [\[thm:decat\]](#thm:decat){reference-type="ref" reference="thm:decat"} via [@hr Appendix] and [@joyce Thm. 4.10] (see Remark [\[rem:special\]](#rem:special){reference-type="ref" reference="rem:special"}). However, not all algebraic groups are special.
+\end{aligned}$$ for all $w \in W$. When $G$ is a *special* algebraic group in the sense of Serre [@grothendieck_1958], the formula below is a kind of virtual weight series for $[\cal{Z}(\beta)/G]$, so it is a corollary of Theorem [\[thm:decat\]](#thm:decat){reference-type="ref" reference="thm:decat"} via [@hr Appendix] and [@joyce Thm. 4.10] (see Remark [\[rem:special\]](#rem:special){reference-type="ref" reference="rem:special"}). However, not all algebraic groups are special.
 
 ::: mainthm
-[]{#thm:virtual label="thm:virtual"} For all $\beta \in \mathit{Br}_W^+$, we have $$\begin{align}
+[]{#thm:virtual label="thm:virtual"} For all $\beta \in \mathit{Br}_W^+$, we have $$\begin{aligned}
 \langle{\beta}\rangle_{\bm{q}}^0|_{\bm{q}= q}
 &= \frac{(-1)^{r - |\beta|}}{|G^F|}
     \sum_{u \in \cal{U}^F}
     |\cal{U}(\beta)_u^F| Q_u
-\end{align}$$ in $\bb{Q} \otimes R(W)$, where $q = |\bb{F}|$.
+\end{aligned}$$ in $\bb{Q} \otimes R(W)$, where $q = |\bb{F}|$.
 :::
 
 For $G = \PGL_n$, taking $\varepsilon$-isotypic components on both sides and applying the Serre-duality result of [@ghmn], or Kálmán's earlier result [@kalman], recovers a theorem of Shende--Treumann--Zaslow, matching the "lowest" $a$-degree of the HOMFLY series of the link closure of $\beta$ with the stacky point count of $[\cal{X}(\beta\pi)/G]$ [@stz Thm. 6.34]. In fact, Kálmán's result generalizes to a statement about Gomi's Markov trace. For general $G$, this generalization and Theorem [\[thm:virtual\]](#thm:virtual){reference-type="ref" reference="thm:virtual"} together imply [@lusztig_2021 Prop. 2.2], which Lusztig attributes to Kawanaka [@kawanaka]: See Corollary [\[cor:virtual\]](#cor:virtual){reference-type="ref" reference="cor:virtual"}.
@@ -219,8 +213,7 @@ For $G = \PGL_n$, taking $\varepsilon$-isotypic components on both sides and app
 Recall that a subgroup $W' \subseteq W$ is parabolic iff it is the stabilizer of a vector in $\bb{V}$. In this case, there is an inclusion of Iwahori--Hecke algebras $H_{W'} \subseteq H_W$. Using Theorem [\[thm:virtual\]](#thm:virtual){reference-type="ref" reference="thm:virtual"} and the compatibility of Deligne--Lusztig characters with parabolic induction, we show that $\langle{-}\rangle_{\bm{q}}$ is similarly compatible with parabolic induction.
 
 ::: mainthm
-[]{#thm:induction label="thm:induction"} If $W$ is a Weyl group of rank $r$ and $W' \subseteq W$ is a parabolic subgroup of rank $r'$, then we have commutative diagrams: $$\begin{equation}
-\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]
+[]{#thm:induction label="thm:induction"} If $W$ is a Weyl group of rank $r$ and $W' \subseteq W$ is a parabolic subgroup of rank $r'$, then we have commutative diagrams: $$\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth]
 \matrix(m)[matrix of math nodes, row sep=2.5em, column sep=3em, text height=2ex, text depth=0.5ex]
 {   H_{W'}
         &R(W')[\bm{q}^{\pm \frac{1}{2}}]\\
@@ -246,43 +239,42 @@ Recall that a subgroup $W' \subseteq W$ is parabolic iff it is the stabilizer of
             edge (m-2-1)
 (m-1-2)     edge node{$\frac{1}{(1 - \bm{q})^{r - r'}} \Ind_{W'}^W$} (m-2-2)
 (m-2-1)     edge node{$\langle{-}\rangle_{\bm{q}}^0$} (m-2-2);
-\end{tikzpicture}
-\end{equation}$$ In particular, $\langle{\bb{1}}\rangle_{\bm{q}}$ is the character of the regular representation of $W$, placed in $\bm{q}$-degree zero, and $\langle{\bb{1}}\rangle_{\bm{q}}^0 = (1 - \bm{q})^{-r}\langle{\bb{1}}\rangle_{\bm{q}}$.
+\end{tikzpicture}$$ In particular, $\langle{\bb{1}}\rangle_{\bm{q}}$ is the character of the regular representation of $W$, placed in $\bm{q}$-degree zero, and $\langle{\bb{1}}\rangle_{\bm{q}}^0 = (1 - \bm{q})^{-r}\langle{\bb{1}}\rangle_{\bm{q}}$.
 :::
 
 To conclude Section [\[sec:dl\]](#sec:dl){reference-type="ref" reference="sec:dl"}, we bound the pole of $\langle{-}\rangle_{\bm{q}}^0$ at $\bm{q}= 1$ using Theorem [\[thm:virtual\]](#thm:virtual){reference-type="ref" reference="thm:virtual"} and an idea of Lusztig from [@lusztig_2011 §5]. For all $w \in W$, let $r(w)$ be the dimension of the fixed subspace $\bb{V}^w \subseteq \bb{V}$.
 
 ::: mainthm
-[]{#thm:pole label="thm:pole"} If $W$ is a Weyl group and $\beta \in \mathit{Br}_W^+$ maps to $w \in W$, then $$\begin{align}
+[]{#thm:pole label="thm:pole"} If $W$ is a Weyl group and $\beta \in \mathit{Br}_W^+$ maps to $w \in W$, then $$\begin{aligned}
 \langle{\beta}\rangle_{\bm{q}}^0 \in \frac{1}{(1 - \bm{q})^{r(w)}}\, R(W)[\bm{q}].
-\end{align}$$ That is, the pole of $\langle{-}\rangle_{\bm{q}}^0$ at $\bm{q}= 1$ is at most $r(w)$.
+\end{aligned}$$ That is, the pole of $\langle{-}\rangle_{\bm{q}}^0$ at $\bm{q}= 1$ is at most $r(w)$.
 :::
 
-In the case where $\beta = \sigma_w$ for some $w \in W$, this result follows from work of Lusztig--Yun in [@ly_2019]. Indeed, if $w \in W$ has minimal Bruhat length in its conjugacy class, then Theorem [\[thm:virtual\]](#thm:virtual){reference-type="ref" reference="thm:virtual"} essentially implies $$\begin{align}
+In the case where $\beta = \sigma_w$ for some $w \in W$, this result follows from work of Lusztig--Yun in [@ly_2019]. Indeed, if $w \in W$ has minimal Bruhat length in its conjugacy class, then Theorem [\[thm:virtual\]](#thm:virtual){reference-type="ref" reference="thm:virtual"} essentially implies $$\begin{aligned}
 \langle{\sigma_w}\rangle_{\bm{q}}^0 = \frac{\Psi(w)}{(1 - \bm{q})^{r(w)}},
-\end{align}$$ where $\Psi : W \to R(W)[\bm{q}]$ is the function introduced in *ibid.*
+\end{aligned}$$ where $\Psi : W \to R(W)[\bm{q}]$ is the function introduced in *ibid.*
 
 In Sections [\[sec:periodic\]](#sec:periodic){reference-type="ref" reference="sec:periodic"}-[\[sec:daha\]](#sec:daha){reference-type="ref" reference="sec:daha"}, we allow $W$ to be any finite Coxeter group and $\bb{V}$ any realization of $W$ such that $\bb{V}^W = 0$. In Section [\[sec:periodic\]](#sec:periodic){reference-type="ref" reference="sec:periodic"}, we compute $\langle{\beta}\rangle_{\bm{q}}$ for periodic $\beta$. The key input is that, essentially by Schur's lemma, the full twist $\pi$ acts on any simple $H_W$-module by a monomial in $\bm{q}^{\frac{1}{2}}$. This, together with a deformation argument of Jones [@jones §9], allows us to determine the character values $\phi_{\bm{q}}(\beta)$ whenever some nonzero power of $\beta$ equals a power of the full twist.
 
 ::: mainthm
-[]{#thm:periodic label="thm:periodic"} If $\beta \in \mathit{Br}_W$ is periodic of slope $\nu$, then $$\begin{align}
+[]{#thm:periodic label="thm:periodic"} If $\beta \in \mathit{Br}_W$ is periodic of slope $\nu$, then $$\begin{aligned}
 \langle{\beta}\rangle_{\bm{q}}
 =   \sum_{\phi \in \hat{W}}
     {\bm{q}^{\nu\bb{c}(\phi)}}
     \mathrm{Deg}_\phi(e^{2\pi i\nu}) 
     \phi,
-\end{align}$$ where $\mathrm{Deg}_\phi(\bm{q}) \in \bb{Q}[\bm{q}]$ and $\bb{c}(\phi) \in \bb{Z}$ are the unipotent degree and content of $\phi$, respectively (see §[\[subsec:degrees\]](#subsec:degrees){reference-type="ref" reference="subsec:degrees"}, §[\[subsec:families\]](#subsec:families){reference-type="ref" reference="subsec:families"}).
+\end{aligned}$$ where $\mathrm{Deg}_\phi(\bm{q}) \in \bb{Q}[\bm{q}]$ and $\bb{c}(\phi) \in \bb{Z}$ are the unipotent degree and content of $\phi$, respectively (see §[\[subsec:degrees\]](#subsec:degrees){reference-type="ref" reference="subsec:degrees"}, §[\[subsec:families\]](#subsec:families){reference-type="ref" reference="subsec:families"}).
 :::
 
-In the setting of the above theorem, we will have $\mathrm{Deg}_\phi(e^{2\pi i\nu}) \in \bb{Z}$ for all $\phi$ and $\nu$. It will be convenient to set $$\begin{align}
+In the setting of the above theorem, we will have $\mathrm{Deg}_\phi(e^{2\pi i\nu}) \in \bb{Z}$ for all $\phi$ and $\nu$. It will be convenient to set $$\begin{aligned}
 \Omega_\nu= \bigoplus_{\phi \in \hat{W}} \mathrm{Deg}_\phi(e^{2\pi i\nu})\Delta_\nu(\phi),
-\end{align}$$ viewed as a virtual $\bb{D}_\nu^\mathit{rat}$-module. In Section [\[sec:daha\]](#sec:daha){reference-type="ref" reference="sec:daha"}, we deduce:
+\end{aligned}$$ viewed as a virtual $\bb{D}_\nu^\mathit{rat}$-module. In Section [\[sec:daha\]](#sec:daha){reference-type="ref" reference="sec:daha"}, we deduce:
 
 ::: maincor
-[]{#cor:periodic label="cor:periodic"} If $\beta \in \mathit{Br}_W$ is periodic of slope $\nu$, then $$\begin{align}
+[]{#cor:periodic label="cor:periodic"} If $\beta \in \mathit{Br}_W$ is periodic of slope $\nu$, then $$\begin{aligned}
 {[\Omega_\nu]_{\bm{q}}}
 =   (\bm{q}^{\frac{1}{2}})^{r - |\beta|} \cdot \langle{\beta}\rangle_{\bm{q}}^0
-\end{align}$$ in $R(W)[(\bm{q}^{\frac{1}{2}} - \bm{q}^{-\frac{1}{2}})^{\pm 1}]$.
+\end{aligned}$$ in $R(W)[(\bm{q}^{\frac{1}{2}} - \bm{q}^{-\frac{1}{2}})^{\pm 1}]$.
 :::
 
 In what follows, let $d_1, \ldots, d_r$ be the invariant degrees of the $W$-action on $\bb{V}$ [@gp 149]. We say that $\nu\in \bb{Q}$ is:
@@ -306,14 +298,16 @@ In Section [\[sec:daha\]](#sec:daha){reference-type="ref" reference="sec:daha"},
 
 2.  If $\nu$ is a singular slope, then $\Omega_\nu$ is a virtual linear combination of torsion modules over the subring $\Sym(\bb{V}^\vee) \subseteq \bb{D}_\nu^\mathit{rat}$.
 
-3.  If $\nu$ is a regular elliptic slope, $\nu> 0$, and $W$ is a Weyl group, then $$\begin{align}
-            [\Omega_\nu]_{\bm{q}} \in R(W)[\bm{q}^{\pm\frac{1}{2}}].
-    \end{align}$$ That is, $\Omega_\nu$ is a difference of finite-dimensional $\bb{D}_\nu^\mathit{rat}$-modules.
+3.  If $\nu$ is a regular elliptic slope, $\nu> 0$, and $W$ is a Weyl group, then $$\begin{aligned}
+    _{\bm{q}} \in R(W)[\bm{q}^{\pm\frac{1}{2}}].
+            
+    \end{aligned}$$ That is, $\Omega_\nu$ is a difference of finite-dimensional $\bb{D}_\nu^\mathit{rat}$-modules.
 
-4.  If $\nu$ is a cuspidal slope and $\nu> 0$, then $$\begin{align}
-            [\Omega_\nu]_{\bm{q}} = \sum_{\psi \in \hat{W}_1}
+4.  If $\nu$ is a cuspidal slope and $\nu> 0$, then $$\begin{aligned}
+    _{\bm{q}} = \sum_{\psi \in \hat{W}_1}
             {[L_\nu(\psi)]_{\bm{q}}},
-    \end{align}$$ where $\hat{W}_1 \subseteq \hat{W}$ is the set of elements of greatest $\bb{a}$-value within their $e^{2\pi i\nu}$-blocks, among the $e^{2\pi i\nu}$-blocks of $H_W$ of defect $1$ (see §[\[subsec:cyclotomic\]](#subsec:cyclotomic){reference-type="ref" reference="subsec:cyclotomic"}).
+            
+    \end{aligned}$$ where $\hat{W}_1 \subseteq \hat{W}$ is the set of elements of greatest $\bb{a}$-value within their $e^{2\pi i\nu}$-blocks, among the $e^{2\pi i\nu}$-blocks of $H_W$ of defect $1$ (see §[\[subsec:cyclotomic\]](#subsec:cyclotomic){reference-type="ref" reference="subsec:cyclotomic"}).
 :::
 
 Parts (1) and (2) together imply a result of Dunkl--de Jeu--Opdam [@djo Thm. 4.9(1)], while part (3) implies a result of Varagnolo--Vasserot [@vv Thm. 2.8.1(a)]. The key machinery in the proof of part (4) is work of Geck on the block theory of $H_W$, which shows that when $\nu$ is cuspidal, the values $\mathrm{Deg}_\phi(e^{2\pi i\nu})$ are computable and all belong to $\{-1, 0, 1\}$ [@geck]. Part (4) implies:
@@ -321,9 +315,9 @@ Parts (1) and (2) together imply a result of Dunkl--de Jeu--Opdam [@djo Thm. 4.
 ::: maincor
 []{#cor:cuspidal label="cor:cuspidal"} Keeping the hypotheses of Theorem [\[thm:slopes\]](#thm:slopes){reference-type="ref" reference="thm:slopes"}, suppose that $W$ is irreducible (see §[\[subsec:coxeter-group\]](#subsec:coxeter-group){reference-type="ref" reference="subsec:coxeter-group"}) and at least one of the following is true:
 
-- $W$ is not of type $E_8$ or $H_4$.
+-   $W$ is not of type $E_8$ or $H_4$.
 
-- $\nu\notin \frac{1}{15}\bb{Z}$.
+-   $\nu\notin \frac{1}{15}\bb{Z}$.
 
 Then $[\Omega_\nu]_{\bm{q}} = [L_\nu(1)]_{\bm{q}}$.
 :::
@@ -362,15 +356,15 @@ Is there a geometric explanation for the (shifted) isomorphism $\gr_\ast^{\bm{w}
 
 Oblomkov--Rozansky have recently proved that the Khovanov--Rozansky invariant of a *knot* enjoys a bigraded symmetry that categorifies the $\bm{q}^{\frac{1}{2}} \mapsto -\bm{q}^{-\frac{1}{2}}$ symmetry of its HOMFLY series [@or], resolving a conjecture from [@dgr]. We expect this result to extend to $\sf{AH}$. More precisely, we expect that for certain positive braids $\beta$, the stack $[\cal{Z}(\beta)/G]$ enjoys a "curious Lefschetz" property that implies a corresponding bigraded symmetry of the module $\sf{AH}(\cal{R}(\beta))$, by way of Theorem [\[thm:a_w-to-varieties\]](#thm:a_w-to-varieties){reference-type="ref" reference="thm:a_w-to-varieties"}.
 
-Following Hausel--Rodriguez-Villegas [@hr], if $X_0$ is (a stack quotient of) a variety over $\bb{F}$ of dimension $d$ and $X = X_0 \otimes \bar{\bb{F}}$, then we say that the curious Lefschetz property holds for $X$ iff there are isomorphisms $$\begin{align}
+Following Hausel--Rodriguez-Villegas [@hr], if $X_0$ is (a stack quotient of) a variety over $\bb{F}$ of dimension $d$ and $X = X_0 \otimes \bar{\bb{F}}$, then we say that the curious Lefschetz property holds for $X$ iff there are isomorphisms $$\begin{aligned}
 \gr_{d - j}^{\bm{w}} \ur{H}_!^i(X, \bar{\mathbf{Q}}_\ell)
 \xrightarrow{\sim}
 \gr_{d + j}^{\bm{w}} \ur{H}_!^{i + j}(X, \bar{\mathbf{Q}}_\ell)
-\end{align}$$ of compactly-supported cohomology for all $i$ and $j$, induced by the cup product with a fixed class in $\ur{H}_!^2$. This means the series $$\begin{align}
+\end{aligned}$$ of compactly-supported cohomology for all $i$ and $j$, induced by the cup product with a fixed class in $\ur{H}_!^2$. This means the series $$\begin{aligned}
 (\bm{q}^{\frac{1}{2}})^{-d} \sum_{i, j}
     \bm{q}^{\frac{j}{2}} t^i
     \gr_j^{\bm{w}} \ur{H}_!^i(X, \bar{\mathbf{Q}}_\ell)
-\end{align}$$ is invariant under $\bm{q}^{\frac{1}{2}} \mapsto \bm{q}^{-\frac{1}{2}} t^{-1}$. Mellit has recently established this property for character varieties with structure group $G = \GL_n$ [@mellit]. In the course of his proof, he also establishes the property for certain varieties closely related to the fibers of the maps $\cal{X}(\beta) \to \cal{B}$ (see Appendix [\[sec:varieties-other\]](#sec:varieties-other){reference-type="ref" reference="sec:varieties-other"}). His results, as well as our Theorem [\[thm:symmetry\]](#thm:symmetry){reference-type="ref" reference="thm:symmetry"}, suggest evidence for:
+\end{aligned}$$ is invariant under $\bm{q}^{\frac{1}{2}} \mapsto \bm{q}^{-\frac{1}{2}} t^{-1}$. Mellit has recently established this property for character varieties with structure group $G = \GL_n$ [@mellit]. In the course of his proof, he also establishes the property for certain varieties closely related to the fibers of the maps $\cal{X}(\beta) \to \cal{B}$ (see Appendix [\[sec:varieties-other\]](#sec:varieties-other){reference-type="ref" reference="sec:varieties-other"}). His results, as well as our Theorem [\[thm:symmetry\]](#thm:symmetry){reference-type="ref" reference="thm:symmetry"}, suggest evidence for:
 
 ::: conj
 For all $\beta \in \mathit{Br}_W^+$, the curious Lefschetz property holds for $\cal{U}(\beta)$ and $\cal{Z}(\beta)$. If, in addition, $\beta$ maps to an element $w \in W$ such that $\bb{V}^w = 0$, then the property also holds for their stack quotients by $G$.
@@ -388,21 +382,21 @@ Let $W = S_n$ and $\nu= \frac{m}{n}$, with $m, n > 0$ coprime. Gorsky, Oblomkov,
 
 For any almost-simple, simply-connected group $G$ and regular elliptic slope $\nu$, Oblomkov--Yun have related the DAHA module $L_\nu(1)$ to a complex projective $\bb{G}_m$-variety that we will denote $\cal{B}_\nu^\mathit{aff}$ [@oy]. In technical terms, $\cal{B}_\nu^\mathit{aff}$ is an affine Springer fiber of Iwahori type with structure group $G$. By means of the topology of a generalized Hitchin fibration, its equivariant cohomology is endowed with an increasing filtration $\bm{p}_{\leq \ast}$ called the perverse filtration.
 
-There is a flat deformation of $\bb{A}_W$ over $\bar{\mathbf{Q}}_\ell[\epsilon]$ that we will denote $\bb{A}_{W, \epsilon}$, known as Lusztig's graded or degenerate affine Hecke algebra and satisfying $\bb{A}_{W, \epsilon}|_{\epsilon = 0} = \bb{A}_W$. Oblomkov--Yun construct an $\bb{A}_{W, \epsilon}$-action on $\ur{H}_{\bb{G}_m}^\ast(\cal{B}_\nu^\mathit{aff}, \bar{\mathbf{Q}}_\ell)$ that sends $\epsilon$ to the equivariant parameter. Similarly, there is a flat deformation of $\bb{D}_\nu^\mathit{rat}$ over $\bar{\mathbf{Q}}_\ell[\epsilon]$ to a graded algebra that we will denote $\bb{D}_{\nu, \epsilon}^\mathit{rat}$, satisfying $\bb{D}_{\nu, \epsilon}^\mathit{rat}|_{\epsilon = 1} = \bb{D}_\nu^\mathit{rat}$ [@oy §4.2.4]. The $\bb{A}_{W, \epsilon}$-action on $\ur{H}_{\bb{G}_m}^\ast(\cal{B}_\nu^\mathit{aff}, \bar{\mathbf{Q}}_\ell)$ induces an $\bb{A}_W$-action that extends to a $\bb{D}_{\nu, \epsilon}^\mathit{rat}$-action. For $G = \SL_n$ and regular elliptic $\nu$, it turns out that $$\begin{align}
+There is a flat deformation of $\bb{A}_W$ over $\bar{\mathbf{Q}}_\ell[\epsilon]$ that we will denote $\bb{A}_{W, \epsilon}$, known as Lusztig's graded or degenerate affine Hecke algebra and satisfying $\bb{A}_{W, \epsilon}|_{\epsilon = 0} = \bb{A}_W$. Oblomkov--Yun construct an $\bb{A}_{W, \epsilon}$-action on $\ur{H}_{\bb{G}_m}^\ast(\cal{B}_\nu^\mathit{aff}, \bar{\mathbf{Q}}_\ell)$ that sends $\epsilon$ to the equivariant parameter. Similarly, there is a flat deformation of $\bb{D}_\nu^\mathit{rat}$ over $\bar{\mathbf{Q}}_\ell[\epsilon]$ to a graded algebra that we will denote $\bb{D}_{\nu, \epsilon}^\mathit{rat}$, satisfying $\bb{D}_{\nu, \epsilon}^\mathit{rat}|_{\epsilon = 1} = \bb{D}_\nu^\mathit{rat}$ [@oy §4.2.4]. The $\bb{A}_{W, \epsilon}$-action on $\ur{H}_{\bb{G}_m}^\ast(\cal{B}_\nu^\mathit{aff}, \bar{\mathbf{Q}}_\ell)$ induces an $\bb{A}_W$-action that extends to a $\bb{D}_{\nu, \epsilon}^\mathit{rat}$-action. For $G = \SL_n$ and regular elliptic $\nu$, it turns out that $$\begin{aligned}
 \label{eq:oy}
 \gr_\ast^{\bm{p}}\ur{H}_{\bb{G}_m}^\ast(\cal{B}_\nu^\mathit{aff}, \bar{\mathbf{Q}}_\ell)|_{\epsilon = 1} \simeq L_\nu(1)
-\end{align}$$ as $\bb{D}_\nu^\mathit{rat}$-modules, via an isomorphism that sends the $\bm{p}$-grading to the grading on $[L_\nu(1)]_{\bm{q}}$. The authors of [@gors] define the geometric candidate for $\bm{f}_{\leq \ast}$ to be the difference of the perverse and cohomological filtrations on the left-hand side of [\[eq:oy\]](#eq:oy){reference-type="eqref" reference="eq:oy"}, up to a shift.
+\end{aligned}$$ as $\bb{D}_\nu^\mathit{rat}$-modules, via an isomorphism that sends the $\bm{p}$-grading to the grading on $[L_\nu(1)]_{\bm{q}}$. The authors of [@gors] define the geometric candidate for $\bm{f}_{\leq \ast}$ to be the difference of the perverse and cohomological filtrations on the left-hand side of [\[eq:oy\]](#eq:oy){reference-type="eqref" reference="eq:oy"}, up to a shift.
 
 In forthcoming work, we will study a conjectural *transcendental* retraction from the stack $[\cal{Z}(\beta)/G]$ to the variety $\cal{B}_\nu^\mathit{aff}$ for any periodic braid $\beta \in \mathit{Br}_W^+$ of regular elliptic slope $\nu$. It is expected to be a kind of nonabelian Hodge correspondence, where $[\cal{Z}(\beta)/G]$ plays the role of the "Betti" side and $\cal{B}_\nu^\mathit{aff}$ plays the role of the "Dolbeault" side. In particular, the retraction should transport the doubled weight filtration $\bm{w}_{\leq 2\ast}$ on the compactly-supported cohomology of $[\cal{Z}(\beta)/G]$ to the perverse filtration $\bm{p}_{\leq \ast}$ on the cohomology of $\cal{B}_\nu^\mathit{aff}$, up to a degree shift. We are thus led to conjecture a Betti origin for the filtration $\bm{f}_{\leq \ast}$.
 
-As evidence, note that the $G$-action on $\cal{Z}(\bb{1})$ extends to a $(G \times \bb{G}_m)$-action. The isomorphism $\bb{A}_W \simeq \ur{H}_{-\ast}^{!, G}(\cal{Z}(\bb{1}))$ can be lifted to an isomorphism $$\begin{align}
+As evidence, note that the $G$-action on $\cal{Z}(\bb{1})$ extends to a $(G \times \bb{G}_m)$-action. The isomorphism $\bb{A}_W \simeq \ur{H}_{-\ast}^{!, G}(\cal{Z}(\bb{1}))$ can be lifted to an isomorphism $$\begin{aligned}
 \bb{A}_{W, \epsilon} \simeq \ur{H}_{-\ast}^{!, G \times \bb{G}_m}(\cal{Z}(\bb{1})),
-\end{align}$$ as shown in [@lusztig_1988]. Unfortunately, as Zhiwei Yun pointed out to me, there is no obvious $(G \times \bb{G}_m)$-action on $\cal{Z}(\beta)$ for other $\beta$, even when $\beta$ is periodic. Even so, I hope for the following:
+\end{aligned}$$ as shown in [@lusztig_1988]. Unfortunately, as Zhiwei Yun pointed out to me, there is no obvious $(G \times \bb{G}_m)$-action on $\cal{Z}(\beta)$ for other $\beta$, even when $\beta$ is periodic. Even so, I hope for the following:
 
 ::: conj
-[]{#conj:daha label="conj:daha"} There is a flat deformation of $\sf{AH}$ over $\bar{\mathbf{Q}}_\ell[\epsilon]$ to a functor $$\begin{align}
+[]{#conj:daha label="conj:daha"} There is a flat deformation of $\sf{AH}$ over $\bar{\mathbf{Q}}_\ell[\epsilon]$ to a functor $$\begin{aligned}
 \sf{AH}_\epsilon : \sf{H}_W^\op \to \mathsf{Mod}_2^b(\bb{A}_{W, \epsilon})
-\end{align}$$ such that for all $\cal{K} \in \sf{H}_W$:
+\end{aligned}$$ such that for all $\cal{K} \in \sf{H}_W$:
 
 1.  The $\bb{A}_W$-action on $\sf{AH}(\cal{K})$ extends to a $\bm{w}$-*filtered* $\bb{A}_{W, \epsilon}$-action on $\sf{AH}_\epsilon(\cal{K})$, where $\bm{w}$ denotes the second grading. By [@oy Prop. 4.3.1], the latter action induces a $\bm{w}$-*graded* $\bb{A}_W$-action on $\sf{AH}_\epsilon(\cal{K})$.
 

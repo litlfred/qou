@@ -134,7 +134,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 3,
+   "tex_sections": 4,
    "overlaid": 1,
    "thresholds": {
     "title": 0.85,
@@ -150,15 +150,16 @@
     {
      "id": "sec-001-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.529,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.503,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-acknowledgments",
      "title": "Acknowledgments",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-references",

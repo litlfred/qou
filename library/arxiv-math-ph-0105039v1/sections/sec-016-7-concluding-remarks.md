@@ -7,10 +7,10 @@ section_number: 7
 pages: 28-30
 source_pdf: 0105039v1.pdf
 source_sha256: 850e6a00721e38d0
-text_source: latex
-latex_prose_ratio: 0.933
-latex_coverage_ratio: 0.878
 doc_brief: "Hyperbolic Structure Arising from a Knot Invariant — We study the knot invariant based on the quantum dilogarithm function."
+text_source: latex
+latex_prose_ratio: 0.878
+latex_coverage_ratio: 1.0
 ---
 We have studied the knot invariant
 by use of the infinite dimensional representation of the quantum
@@ -130,3 +130,33 @@ give the Chern--Simons term,
   \mathrm{i} \, \mathrm{CS}(K)
   \Bigr) .
 \end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Acknowledgement}
+The author would like to thank Hitoshi Murakami for  kind explanation
+of his results and for
+stimulating discussions.
+He is also grateful to R.~Kashaev and Y.~Yokota for useful communications.
+Thanks are to Referee for useful comments.
+
+
+\newpage
+\bibliographystyle{physics}

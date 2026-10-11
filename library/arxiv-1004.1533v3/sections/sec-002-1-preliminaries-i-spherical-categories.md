@@ -7,10 +7,10 @@ section_number: 1
 pages: 2-6
 source_pdf: 1004.1533v3.pdf
 source_sha256: 95c1544431e6bf37
-text_source: latex
-latex_prose_ratio: 0.977
-latex_coverage_ratio: 0.949
 doc_brief: "TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT — In this paper we show how one can extend Turaev-Viro invarian ts, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{s:prelim}
 

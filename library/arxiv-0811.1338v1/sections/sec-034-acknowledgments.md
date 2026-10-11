@@ -7,10 +7,10 @@ section_number: null
 pages: 45-46
 source_pdf: 0811.1338v1.pdf
 source_sha256: 9a57cb6e014d3ead
+doc_brief: "Modern theory of nuclear forces — 36 sections: QCD and Nuclear F orces 1; Conventional approaches to the nuc; EFT for F ew-Nucleon Systems: F ou"
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
-doc_brief: "Modern theory of nuclear forces — 36 sections: QCD and Nuclear F orces 1; Conventional approaches to the nuc; EFT for F ew-Nucleon Systems: F ou"
 ---
 We thank all our collaborators for sharing their insights into
 the topics discussed here. The work of E.E. was supported 

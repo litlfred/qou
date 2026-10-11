@@ -7,10 +7,10 @@ section_number: 3
 pages: 16-18
 source_pdf: 9804005v3.pdf
 source_sha256: 62d069533bb97a00
-text_source: latex
-latex_prose_ratio: 0.633
-latex_coverage_ratio: 0.926
 doc_brief: "RINGS WITH AUSLANDER DUALIZING COMPLEXES — A ring with an Auslander dualizing complex is a generalizati on of an Auslander-Gorenstein ring."
+text_source: latex
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 0.974
 ---
 In this section we consider dualizing complexes which satisfy a special condition discovered by Van den Bergh [@VdB]. Rigid dualizing complexes are unique and even functorial. Furthermore if $R$ is an Auslander rigid dualizing complex then the canonical dimension $\operatorname{Cdim}_{R}$ is particularly well behaved (as examples indicate; see Question [\[a4.15\]](#a4.15){reference-type="ref" reference="a4.15"}). By default $A$ and $B$ denote noetherian $k$-algebras.
 

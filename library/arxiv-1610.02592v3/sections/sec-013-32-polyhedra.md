@@ -7,13 +7,14 @@ section_number: 3.2
 pages: 86-90
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.969
-latex_coverage_ratio: 0.839
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 A polyhedron in $\matH^n$ is a natural geometric object, that may be used to visualise discrete groups in $\Iso(\matH^n)$ and hence hyperbolic manifolds. 
 Polyhedra may sometimes be combined to form some tessellations of the space. 
+
 
 \subsection{Polyhedra} \label{polyhedra:subsection}
 A \emph{half-space} in $\matH^n$ is the closure of one of the two portions of space delimited by a hyperplane. We say that a set of half-spaces is locally finite if their boundary hyperplanes are. \index{polyhedron}
@@ -41,6 +42,7 @@ The convex hull of finitely many points in $\matH^n$ that are not contained in a
 \end{ex}
 
 Everything we said holds with no modifications for $\matR^n$. On $S^n$ some care should be taken: some definitions need to be modified slightly to take into account the annoying presence of antipodal points. We gloss over this technical point.
+
 
 \subsection{Finite polyhedra}
 We now enlarge slightly the class of compact polyhedra by admitting finitely many vertices at infinity. \index{polyhedron!finite polyhedron}
@@ -88,6 +90,7 @@ For every ideal vertex of $P$, a small horoball centred at $p$ intersects $P$ in
 A finite polyhedron without finite vertices is called an \emph{ideal polyhedron}.
 \index{polyhedron!ideal polyhedron}
 
+
 \subsection{Polygons}
 A polygon is just a polyhedron of dimension two. In contrast with Euclidean geometry, a strikingly simple formula relates the area of a finite polygon with its inner angles. We define the inner angle of an ideal vertex to be zero. 
 
@@ -122,6 +125,7 @@ The sum of the inner angles of a hyperbolic polygon is strictly smaller than tha
 
 \begin{cor} Every ideal triangle has area $\pi$.
 \end{cor}
+
 
 \subsection{Platonic solids} \label{platonici:subsection}
 The theory of three-dimensional polyhedra in $\matH^3$ is very rich: we limit ourselves to the study of the platonic solids.

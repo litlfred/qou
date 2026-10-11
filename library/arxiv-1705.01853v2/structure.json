@@ -307,8 +307,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "linesm.tex",
-   "tex_sections": 4,
-   "overlaid": 2,
+   "tex_sections": 11,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -336,12 +336,14 @@
     {
      "id": "sec-003-31-theta-angles-10",
      "title": "Theta Angles 10",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-004-32-electroweak-symmetry-breaking-12",
      "title": "Electroweak Symmetry Breaking 12",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-005-4-summary-14",
@@ -351,7 +353,7 @@
     {
      "id": "sec-006-2-a-review-of-line-operators",
      "title": "A Review of Line Operators",
-     "prose_ratio": 0.98,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
@@ -359,7 +361,7 @@
     {
      "id": "sec-007-3-line-operators-in-the-standard-model",
      "title": "Line Operators in the Standard Model",
-     "prose_ratio": 0.186,
+     "prose_ratio": 0.383,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -375,25 +377,34 @@
     {
      "id": "sec-010-31-theta-angles",
      "title": "Theta Angles",
-     "result": "no matching \\section"
+     "prose_ratio": 0.959,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-32-electroweak-symmetry-breaking",
      "title": "Electroweak Symmetry Breaking",
-     "result": "no matching \\section"
+     "prose_ratio": 0.986,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-4-summary",
      "title": "Summary",
-     "prose_ratio": 0.819,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.836,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-013-acknowledgements",
      "title": "Acknowledgements",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-014-references",

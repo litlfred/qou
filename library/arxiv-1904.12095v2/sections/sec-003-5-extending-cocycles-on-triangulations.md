@@ -7,10 +7,10 @@ section_number: 5
 pages: 12-14
 source_pdf: 1904.12095v2.pdf
 source_sha256: 7006b250f0d3c991
-text_source: latex
-latex_prose_ratio: 0.878
-latex_coverage_ratio: 1.0
 doc_brief: "Verified computations for closed hyperbolic 3-manifolds Matthias Goerner — Extending methods ﬁrst used by Casson, we show how to verify a hyper- bolic structure on a ﬁnite triangulation of a closed"
+text_source: latex
+latex_prose_ratio: 0.955
+latex_coverage_ratio: 0.96
 ---
 []{#sec:extendCocycles label="sec:extendCocycles"}
 

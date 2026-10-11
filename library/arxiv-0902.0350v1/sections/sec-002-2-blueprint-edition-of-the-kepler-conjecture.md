@@ -7,16 +7,17 @@ section_number: 2
 pages: 5-7
 source_pdf: 0902.0350v1.pdf
 source_sha256: 4591687132c93973
-text_source: latex
-latex_prose_ratio: 0.992
-latex_coverage_ratio: 0.949
 doc_brief: "A REVISION OF THE PROOFOF THE KEPLER CONJECTURE — The Kepler conjecture asserts that no packing of congruent balls in three-dimensional Euclidean space has density greater than that of the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:blueprint}
 
 The {\it blueprint edition} of the proof of the Kepler conjecture is a second-generation proof that contains far more explicit detail than the original proof.  The blueprint edition is available at \cite{hales:2008:blueprint}, \cite{hales:2008:collection}.   Many proofs have been significantly simplified and systematized.   It has been written in a manner to permit easy formalization.  As its name might suggest, this version is intended as a blueprint for the construction of a formal proof.
 This section 
 compares the blueprint edition with the original.
+
 
 
 \subsection{Lemmas in elementary geometry}
@@ -55,6 +56,7 @@ $$
 
 
  
+
 
 \subsection{Background material}
 

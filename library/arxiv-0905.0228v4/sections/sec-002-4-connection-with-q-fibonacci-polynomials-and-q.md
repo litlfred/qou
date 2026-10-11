@@ -7,10 +7,10 @@ section_number: 4
 pages: 12-16
 source_pdf: 0905.0228v4.pdf
 source_sha256: 1744545d0f210949
-text_source: latex
-latex_prose_ratio: 0.93
-latex_coverage_ratio: 0.956
 doc_brief: "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS — Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 We define the Lucas polynomials  by
 $$

@@ -8,7 +8,10 @@ pages: 1-1
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
 doc_brief: "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the polynomial ring"
+text_source: latex
+latex_prose_ratio: 0.944
+latex_coverage_ratio: 1.0
 ---
-In this paper we construct an invariant of integral homology spheres which uniﬁes
-the SU (2) Witten-Reshetikhin-Turaev invariants at all roots of u nity, which we
-announced in a previous paper [17].
+[]{#sec1 label="sec1"}
+
+In this paper we construct an invariant of integral homology spheres which unifies the $SU(2)$ Witten-Reshetikhin-Turaev invariants at all roots of unity, which we announced in a previous paper [@H:rims2001].

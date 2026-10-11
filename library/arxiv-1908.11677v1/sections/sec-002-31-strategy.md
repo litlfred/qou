@@ -8,84 +8,142 @@ pages: 11-12
 source_pdf: 1908.11677v1.pdf
 source_sha256: c53663eeb457daf9
 doc_brief: "Variational formulae and estimates of O’Hara’s knot energies — O’Hara’s energies, introduced by Jun O’Hara, were proposedto answer the question of what is the canonical shape in a given knot typ e"
+text_source: latex
+latex_prose_ratio: 0.895
+latex_coverage_ratio: 0.971
 ---
-Let f , φ , ψ ∈ W 1+σ, 2p(R/ LZ, Rn) ∩ W 1, ∞(R/ LZ, Rn), and assume that f is
-bi-Lipschitz. By [3], we already know the estimate
-‖Mα (f )‖Lp ≤ C. (3.1)
-Combining Theorem 2.1 and H¨ older’s inequality, ifp > 1, we have
-‖G1(f )[φ ]‖L1 ≤ p‖Mα (f )‖p−1
-Lp ‖δMα (f )[φ ]‖Lp,
-‖G2(f )[φ ]‖L1 ≤ 2‖Mα (f )‖p
-Lp‖φ ′‖L∞ ,
-‖H1(f )[φ , ψ ]‖L1 ≤ p‖Mα (f )‖p−1
-Lp ‖δ2Mα (f )[φ , ψ ]‖Lp,
-‖H2(f )[φ , ψ ]‖L1 ≤ p(p − 1)‖Mα (f )‖p−2
-Lp ‖δMα (f )[φ ]‖Lp‖δMα (f )[ψ ]‖Lp,
-‖H3(f )[φ , ψ ]‖L1 ≤ 2‖G1(f )[φ ]‖L1‖ψ ′‖L∞ ,
-‖H4(f )[φ , ψ ]‖L1 ≤ 2‖G1(f )[ψ ]‖L1‖φ ′‖L∞ ,
-‖H5(f )[φ , ψ ]‖L1 ≤ 6‖Mα (f )‖p
-Lp‖φ ′‖L∞ ‖ψ ′‖L∞ ,
-‖H6(f )[φ , ψ ]‖L1 ≤ 4‖Mα (f )‖p
-Lp‖φ ′‖L∞ ‖ψ ′‖L∞ .
-Hence, if there exists C = C(f ) > 0 such that
-‖δMα (f )[φ ]‖Lp ≤ C‖φ ′‖W σ, 2p∩L∞ ,
-‖δ2Mα (f )[φ , ψ ]‖Lp ≤ C‖φ ′‖W σ, 2p∩L∞ ‖ψ ′‖W σ, 2p∩L∞ , (3.2)
-then the desired L1-estimates for G(α,p )(f ) and H(α,p )(f ) follow.
-Next we observe that since ‖∆f ‖Rn ≤ D(f ) holds, and using the bi-Lipschitz
-estimate, we deduce that there exists ˜C = ˜C(f ) > 0 such that 0 ≤ N (τ ) ≤ ˜C.
-Hence, we have
-|ϕ (j)
-α (N (τ ))| ≤ max
-t∈[0, ˜C]
-|ϕ (j)
-α (t)| < ∞
-for j = 0 , 1, 2. By Proposition 2.5, H¨ older’s inequality, and (3.1), we can show
-(3.2) if there exists C = C(f ) > 0 such that
-‖‖‖‖
-δN (τ )[φ ]
-‖∆f ‖α
-Rn
-‖‖‖‖
-Lp
-≤ C‖φ ′‖W σ, 2p∩L∞ ,
-‖‖‖‖
-δ2N (τ )[φ , ψ ]
-‖∆f ‖α
-Rn
-‖‖‖‖
-Lp
-≤ C‖φ ′‖W σ, 2p∩L∞ ‖ψ ′‖W σ, 2p∩L∞ ,
-‖‖‖‖
-δ‖∆f ‖2
-Rd [φ ]
-‖∆f ‖2
-Rn
-‖‖‖‖
-L∞
-≤ C‖φ ′‖L∞ ,
-‖‖‖‖
-δ2‖∆f ‖2
-Rd [φ , ψ ]
-‖∆f ‖2
-Rn
-‖‖‖‖
-L∞
-≤ C‖φ ′‖L∞ ‖ψ ′‖L∞ .
-Similarly, to obtain the desired L∞-estimates and continuity, it suﬃces to con-
-sider the corresponding properties of
-δN (τ )[φ ]
-‖∆f ‖α
-Rn
-, δ2N (τ )[φ , ψ ]
-‖∆f ‖α
-Rn
-, δ‖∆f ‖2
-Rd[φ ]
-‖∆f ‖2
-Rn
-, δ2‖∆f ‖2
-Rd[φ , ψ ]
-‖∆f ‖2
-Rn
-. (3.3)
-11
+Let
+$\vecf$,
+$\vecphi$,
+$\vecpsi \in W^{1+\sigma , 2p}(\R/\calL\Z , \R^n) \cap W^{1,\infty}(\R/\calL\Z , \R^n)$,
+and assume that
+$\vecf$
+is bi-Lipschitz.
+By \cite{B12},
+we already know the estimate
+\begin{equation}\label{Malpha Lp}
+	\| \scrM_\alpha(\vecf) \|_{L^p} \leq C.
+\end{equation}
+Combining Theorem \ref{variation} and H\"{o}lder's inequality,
+if
+$p>1$,
+we have
+\begin{align*}
+	\| \scrG_1(\vecf)[\vecphi] \|_{L^1}
+	&\leq
+	p \| \scrM_\alpha(\vecf) \|_{L^p}^{p-1} \| \delta \scrM_\alpha(\vecf)[\vecphi] \|_{L^p},
+\\
+	\| \scrG_2(\vecf)[\vecphi] \|_{L^1}
+	&\leq
+	2 \| \scrM_\alpha(\vecf) \|_{L^p}^p \| \vecphi^\prime \|_{L^\infty},
+\\
+	\| \scrH_1(\vecf)[\vecphi,\vecpsi] \|_{L^1}
+	&\leq
+	p \| \scrM_\alpha(\vecf) \|_{L^p}^{p-1} \| \delta^2 \scrM_\alpha(\vecf) [\vecphi,\vecpsi] \|_{L^p},
+\\
+	\| \scrH_2(\vecf)[\vecphi,\vecpsi] \|_{L^1}
+	&\leq
+	p(p-1) \| \scrM_\alpha(\vecf) \|_{L^p}^{p-2}
+	\| \delta \scrM_\alpha(\vecf) [\vecphi] \|_{L^p} \| \delta \scrM_\alpha(\vecf) [\vecpsi] \|_{L^p},
+\\
+	\| \scrH_3(\vecf)[\vecphi,\vecpsi] \|_{L^1}
+	&\leq
+	2 \| \scrG_1(\vecf)[\vecphi] \|_{L^1} \| \vecpsi^\prime \|_{L^\infty},
+\\
+	\| \scrH_4(\vecf)[\vecphi,\vecpsi] \|_{L^1}
+	&\leq
+	2 \| \scrG_1(\vecf)[\vecpsi] \|_{L^1} \| \vecphi^\prime \|_{L^\infty},
+\\
+	\| \scrH_5(\vecf)[\vecphi,\vecpsi] \|_{L^1}
+	&\leq
+	6 \| \scrM_\alpha(\vecf) \|_{L^p}^p
+	\| \vecphi^\prime \|_{L^\infty} \| \vecpsi^\prime \|_{L^\infty},
+\\
+	\| \scrH_6(\vecf)[\vecphi,\vecpsi] \|_{L^1}
+	&\leq
+	4 \| \scrM_\alpha(\vecf) \|_{L^p}^p
+	\| \vecphi^\prime \|_{L^\infty} \| \vecpsi^\prime \|_{L^\infty}.
+\end{align*}
+Hence,
+if there exists
+$C=C(\vecf)>0$
+such that
+\begin{equation}\label{what to prove Malpha}
+\begin{split}
+	\| \delta \scrM_\alpha(\vecf)[\vecphi] \|_{L^p}
+	&\leq C \| \vecphi^\prime \|_{W^{\sigma,2p} \cap L^\infty},
+\\
+	\| \delta^2 \scrM_\alpha(\vecf)[\vecphi,\vecpsi] \|_{L^p}
+	&\leq
+	C \| \vecphi^\prime \|_{W^{\sigma,2p} \cap L^\infty}
+	\| \vecpsi^\prime \|_{W^{\sigma,2p} \cap L^\infty},
+\end{split}
+\end{equation}
+then the desired
+$L^1$-estimates for
+$\scrG_{(\alpha,p)}(\vecf)$
+and
+$\scrH_{(\alpha,p)}(\vecf)$
+follow.
+
+Next we observe that since
+$\| \Delta \vecf \|_{\R^n} \leq \scrD(\vecf)$
+holds,
+and using the bi-Lipschitz estimate,
+we deduce that there exists
+$\tilde{C}=\tilde{C}(\vecf)>0$
+such that
+$0 \leq \scrN(\vectau) \leq \tilde{C}$.
+Hence,
+we have
+\[
+	| \vphi_\alpha^{(j)} (\scrN(\vectau)) | \leq
+	\max_{t \in [0,\tilde{C}]} | \vphi_\alpha^{(j)} (t) | < \infty
+\]
+for
+$j=0,1,2$.
+By Proposition \ref{variation Malpha},
+H\"{o}lder's inequality,
+and \eqref{Malpha Lp},
+we can show \eqref{what to prove Malpha} if there exists
+$C=C(\vecf)>0$
+such that
+\begin{align*}
+	\left\|
+	\frac{ \delta \scrN(\vectau)[\vecphi] }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	\right\|_{L^p}
+	&\leq
+	C \| \vecphi^\prime \|_{W^{\sigma,2p} \cap L^\infty},
+\\
+	\left\|
+	\frac{ \delta^2 \scrN(\vectau)[\vecphi,\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	\right\|_{L^p}
+	&\leq
+	C \| \vecphi^\prime \|_{W^{\sigma,2p} \cap L^\infty}
+	\| \vecpsi^\prime \|_{W^{\sigma,2p} \cap L^\infty},
+\\
+	\left\|
+	\frac{ \delta\| \Delta \vecf \|_{\R^d}^2[\vecphi] }{ \| \Delta \vecf \|_{\R^n}^2 }
+	\right\|_{L^\infty}
+	&\leq
+	C \| \vecphi^\prime \|_{L^\infty},
+\\
+	\left\|
+	\frac{ \delta^2\| \Delta \vecf \|_{\R^d}^2[\vecphi,\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^2 }
+	\right\|_{L^\infty}
+	&\leq
+	C \| \vecphi^\prime \|_{L^\infty} \| \vecpsi^\prime \|_{L^\infty}.
+\end{align*}
+Similarly,
+to obtain the desired
+$L^\infty$-estimates and continuity,
+it suffices to consider the corresponding properties of
+\begin{equation}\label{what to prove}
+	\frac{ \delta \scrN(\vectau)[\vecphi] }{ \| \Delta \vecf \|_{\R^n}^\alpha },
+	\quad
+	\frac{ \delta^2 \scrN(\vectau)[\vecphi,\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^\alpha },
+	\quad
+	\frac{ \delta\| \Delta \vecf \|_{\R^d}^2[\vecphi] }{ \| \Delta \vecf \|_{\R^n}^2 },
+	\quad
+	\frac{ \delta^2\| \Delta \vecf \|_{\R^d}^2[\vecphi,\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^2 }.
+\end{equation}

@@ -7,10 +7,10 @@ section_number: null
 pages: 1-5
 source_pdf: 1108.5286v3.pdf
 source_sha256: 447d90883adce21e
-text_source: latex
-latex_prose_ratio: 0.991
-latex_coverage_ratio: 0.967
 doc_brief: "Hochschild homology of affine Hecke algebras — Let H = H(R,q ) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not roots of unity."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \addcontentsline{toc}{section}{Introduction}
 

@@ -7,13 +7,14 @@ section_number: 1.3
 pages: 31-34
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.972
-latex_coverage_ratio: 0.614
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{measure:theory:section}
 We will use some basic measure theory only in Chapter \ref{automorfismi:chapter}.
+
 
 \subsection{Borel measure}
 A \emph{Borel set} in a topological space $X$ is any subset obtained from open sets through the operations of countable union, countable intersection, and relative complement. Let $\calF$ denote the set of all Borel sets.
@@ -33,6 +34,7 @@ Since $D$ is discrete, the measure $\delta_D$ is locally finite.
 \end{example}
 
 The \emph{support} of a measure is the set of all points $x\in X$ such that $\mu(U)>0$ for any open set $U$ containing $x$. The support is a closed subset of $X$. The measure is \emph{fully supported} if its support is $X$. The support of $\delta_D$ is of course $D$. A point $x\in X$ is an \emph{atom} for $\mu$ if $\mu(\{x\})>0$.
+
 
 \subsection{Construction by local data}
 A measure can be defined using local data in the following way.
@@ -57,6 +59,7 @@ If $X$ is paracompact and separable, Proposition \ref{ricoprimento:prop} holds f
 By paracompactness and separability the open covering $\{U_i\}$ has a refinement that is locally finite and countable: apply Proposition \ref{ricoprimento:prop} to the refinement to get a measure $\mu$. To prove that indeed $\mu|_{U_i} = \mu_i$ apply Proposition \ref{ricoprimento:prop} again to the covering of $U_i$ given by the refinement.
 \end{proof}
 
+
 \subsection{Topology on the measures space} \label{topology:measure:subsection}
 In what follows we suppose for simplicity that $X$ is a finite-dimensional topological manifold, although everything is valid in a much wider generality. We indicate by $\calM(X)$ the space of all locally finite Borel measures on $X$ and by $C_c(X)$ the space of all continuous functions $X\to \matR$ with compact support: the space $C_c(X)$ is not a Banach space, but it is a topological vector space.
 
@@ -76,6 +79,7 @@ Let $V$ be a real topological vector space. Every vector $v\in V$ defines a func
 \end{defn}
 
 We give $C_c(X)^*$, and hence $\calM(X)$, the weak-* topology. 
+
 
 \subsection{Sequences of measures} \label{mu:sequence:subsection}
 By definition, a sequence of measures  $\mu_i$ converges to $\mu$ if and only if $\int_{\mu_i} f \to \int_\mu f$ for any $f\in C_c(X)$. This type of weak convergence is usually denoted with the symbol

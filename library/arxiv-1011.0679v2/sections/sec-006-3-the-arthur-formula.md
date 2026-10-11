@@ -7,10 +7,10 @@ section_number: 3
 pages: 14-17
 source_pdf: 1011.0679v2.pdf
 source_sha256: 6fa4bbcf4e908373
-text_source: latex
-latex_prose_ratio: 0.975
-latex_coverage_ratio: 0.959
 doc_brief: "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS — Let π, π ′ be tempered representations of an aﬃne Hecke algebra with positive parameters."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:Arthur}
 

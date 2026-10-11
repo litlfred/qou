@@ -7,10 +7,10 @@ section_number: 8
 pages: 23-26
 source_pdf: 1907.00949v2.pdf
 source_sha256: 865defaa34bf42be
-text_source: latex
-latex_prose_ratio: 0.952
-latex_coverage_ratio: 0.974
 doc_brief: "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces."
+text_source: latex
+latex_prose_ratio: 0.978
+latex_coverage_ratio: 0.937
 ---
 []{#sec:num label="sec:num"}
 
@@ -20,22 +20,17 @@ In the following we will assume the identification in [\[eq:identify\]](#eq:iden
 
 ## Principal flags {#sec:dis}
 
-Let $M \in \mathbb{R}^{n \times n}$ be symmetric. We seek the solution to $$\begin{equation}
-\label{eq:dis}
+Let $M \in \mathbb{R}^{n \times n}$ be symmetric. We seek the solution to $$\label{eq:dis}
 \begin{tabular}{rl}
 maximize & $ \mathop{\mathrm{tr}}(Y^{\scriptscriptstyle\mathsf{T}}MY)$ \\[1ex]
 subject to & $\llbracket Y \rrbracket\in \mathop{\mathrm{Flag}}(n_1,\dots,n_d; n)$.
-\end{tabular}
-\end{equation}$$ Here $Y \in \mathbb{R}^{n \times n_d}$, $Y^{\scriptscriptstyle\mathsf{T}}Y = 1$, and the objective function is well-defined as a function on the flag manifold: If we have $Y$ and $Y'$ with $\llbracket Y \rrbracket= \llbracket Y'\rrbracket$, then they must be related as in [\[eq:rep\]](#eq:rep){reference-type="eqref" reference="eq:rep"} and thus $\mathop{\mathrm{tr}}(Y^{\scriptscriptstyle\mathsf{T}}MY) =  \mathop{\mathrm{tr}}(Y^{\prime{\scriptscriptstyle\mathsf{T}}} MY')$.
+\end{tabular}$$ Here $Y \in \mathbb{R}^{n \times n_d}$, $Y^{\scriptscriptstyle\mathsf{T}}Y = 1$, and the objective function is well-defined as a function on the flag manifold: If we have $Y$ and $Y'$ with $\llbracket Y \rrbracket= \llbracket Y'\rrbracket$, then they must be related as in [\[eq:rep\]](#eq:rep){reference-type="eqref" reference="eq:rep"} and thus $\mathop{\mathrm{tr}}(Y^{\scriptscriptstyle\mathsf{T}}MY) =  \mathop{\mathrm{tr}}(Y^{\prime{\scriptscriptstyle\mathsf{T}}} MY')$.
 
 As we saw in Example [\[eg:pca\]](#eg:pca){reference-type="ref" reference="eg:pca"}, when $M$ is a sample covariance matrix, the solution to [\[eq:dis\]](#eq:dis){reference-type="eqref" reference="eq:dis"} is equivalent to PCA when we seek a complete flag, i.e., $d=n-1$ and $n_i =i$, $i =1,\dots,n-1$. An advantage proffered by this approach is that if we do not know the intrinsic dimension of the data set a priori, then finding the flag as opposed to any particular subspace gives us the entire profile, showing how increasing dimension accounts for an increasingly amount of variance. The problem in [\[eq:dis\]](#eq:dis){reference-type="eqref" reference="eq:dis"} is thus a generalization of PCA, allowing us to seek any flag, not necessarily a complete one. It may also be interpreted as finding subspaces of dimensions $n_1,n_2-n_1,\dots,n_d-n_{d-1}$ that are independent and explain different levels of variance in the data set.
 
 Figure [1](#fig:convergence){reference-type="ref" reference="fig:convergence"} shows the convergence trajectories of steepest descent, i.e., Algorithm [\[alg:sd\]](#alg:sd){reference-type="ref" reference="alg:sd"}, on the flag manifold $\mathop{\mathrm{Flag}}(3,7,12; 60)$, a $623$-dimensional manifold. The symmetric matrix $M \in \mathbb{R}^{60 \times 60}$ is generated randomly with standard normal entries. Since the true solution of [\[eq:dis\]](#eq:dis){reference-type="eqref" reference="eq:dis"} may be determined in closed form --- it is the sum of the $k$ largest eigenvalues of $M$ --- we may therefore conclude that Algorithm [\[alg:sd\]](#alg:sd){reference-type="ref" reference="alg:sd"} converges to the true solution in around $80$ iterations. Indeed the function values stabilize after as few as $10$ iterations. At least for this problem, we see that the vanishing of the Riemannian gradient serves as a viable stopping condition. In our implementation, our stopping conditions are determined by (i) Frobenius norm of Riemannian gradient, (ii) distance between successive iterates, and (iii) number of iterations.
 
-<figure id="fig:convergence" data-latex-placement="h">
-<embed src="flag1log.pdf" />
-<figcaption>Convergence trajectories for <a href="#eq:dis" data-reference-type="eqref" data-reference="eq:dis">[eq:dis]</a> on <span class="math inline">Flag (3, 7, 12; 60)</span>.</figcaption>
-</figure>
+![Convergence trajectories for [\[eq:dis\]](#eq:dis){reference-type="eqref" reference="eq:dis"} on $\mathop{\mathrm{Flag}}(3,7,12; 60)$.](flag1log.pdf){#fig:convergence}
 
 We perform extensive experiments beyond that in Figure [1](#fig:convergence){reference-type="ref" reference="fig:convergence"} by taking average of $100$ instances of the problem [\[eq:dis\]](#eq:dis){reference-type="eqref" reference="eq:dis"} for various values of $n_1,\dots,n_d$. We tabulate our results showing accuracy and speed in Tables [1](#table:distdis1){reference-type="ref" reference="table:distdis1"}--[4](#table:timedis2){reference-type="ref" reference="table:timedis2"}. Tables [1](#table:distdis1){reference-type="ref" reference="table:distdis1"} and [3](#table:distdis2){reference-type="ref" reference="table:distdis2"} show that Algorithm [\[alg:sd\]](#alg:sd){reference-type="ref" reference="alg:sd"} is robust across all dimensions of flags and ambient spaces that we tested. Tables [2](#table:timedis1){reference-type="ref" reference="table:timedis1"} and [4](#table:timedis2){reference-type="ref" reference="table:timedis2"} show that elapsed time taken for Algorithm [\[alg:sd\]](#alg:sd){reference-type="ref" reference="alg:sd"} increases roughly linearly with the dimension of the flag manifold.
 
@@ -81,17 +76,12 @@ We perform extensive experiments beyond that in Figure [1](#fig:convergence){re
 
 ## Nonlinear eigenflags {#sec:disv}
 
-This is a variation of the principal flag problem [\[eq:dis\]](#eq:dis){reference-type="eqref" reference="eq:dis"}: $$\begin{equation}
-\label{eq:eig}
+This is a variation of the principal flag problem [\[eq:dis\]](#eq:dis){reference-type="eqref" reference="eq:dis"}: $$\label{eq:eig}
 \begin{tabular}{rl}
 maximize & $\sum_{i=1}^{d}\mathop{\mathrm{tr}}(Y_i^{\scriptscriptstyle\mathsf{T}}MY_i)^2$\\[1ex]
 subject to & $\llbracket Y_1,\dots,Y_d \rrbracket\in \mathop{\mathrm{Flag}}(n_1,\dots,n_d; n)$.
-\end{tabular}
-\end{equation}$$ Again $M \in \mathbb{R}^{n \times n}$ is a symmetric matrix and the flag is given in Stiefel coordinates $Y = [Y_1,\dots,Y_d] \in \mathbb{R}^{n \times n_d}$, $Y^{\scriptscriptstyle\mathsf{T}}Y = I$, but partitioned into submatrices $Y_i \in \mathbb{R}^{n \times (n_i - n_{i-1})}$, $Y_i^{\scriptscriptstyle\mathsf{T}}Y_i = I$, $i =1,\dots,d$. More generally, the objective function in [\[eq:eig\]](#eq:eig){reference-type="eqref" reference="eq:eig"} may be replaced by $\sum_{i=1}^{d}f_i\bigl(\mathop{\mathrm{tr}}(Y_i^{\scriptscriptstyle\mathsf{T}}M Y_i)\bigr)$ with $f_1,\dots,f_d \in C^2(\mathbb{R})$. Choosing $f_1(x) = \dots = f_d(x) = x$ gives us [\[eq:dis\]](#eq:dis){reference-type="eqref" reference="eq:dis"} and choosing $f_1(x) = \dots = f_d(x) = x^2$ gives us [\[eq:eig\]](#eq:eig){reference-type="eqref" reference="eq:eig"}. Note that it will take considerable effort to formulate a problem like [\[eq:eig\]](#eq:eig){reference-type="eqref" reference="eq:eig"} as a constrained optimization problem in Euclidean space.
+\end{tabular}$$ Again $M \in \mathbb{R}^{n \times n}$ is a symmetric matrix and the flag is given in Stiefel coordinates $Y = [Y_1,\dots,Y_d] \in \mathbb{R}^{n \times n_d}$, $Y^{\scriptscriptstyle\mathsf{T}}Y = I$, but partitioned into submatrices $Y_i \in \mathbb{R}^{n \times (n_i - n_{i-1})}$, $Y_i^{\scriptscriptstyle\mathsf{T}}Y_i = I$, $i =1,\dots,d$. More generally, the objective function in [\[eq:eig\]](#eq:eig){reference-type="eqref" reference="eq:eig"} may be replaced by $\sum_{i=1}^{d}f_i\bigl(\mathop{\mathrm{tr}}(Y_i^{\scriptscriptstyle\mathsf{T}}M Y_i)\bigr)$ with $f_1,\dots,f_d \in C^2(\mathbb{R})$. Choosing $f_1(x) = \dots = f_d(x) = x$ gives us [\[eq:dis\]](#eq:dis){reference-type="eqref" reference="eq:dis"} and choosing $f_1(x) = \dots = f_d(x) = x^2$ gives us [\[eq:eig\]](#eq:eig){reference-type="eqref" reference="eq:eig"}. Note that it will take considerable effort to formulate a problem like [\[eq:eig\]](#eq:eig){reference-type="eqref" reference="eq:eig"} as a constrained optimization problem in Euclidean space.
 
-<figure id="fig:convergence2" data-latex-placement="h">
-<embed src="flag2log.pdf" />
-<figcaption>Convergence trajectories for <a href="#eq:eig" data-reference-type="eqref" data-reference="eq:eig">[eq:eig]</a> on <span class="math inline">Flag (3, 7, 12; 60)</span>.</figcaption>
-</figure>
+![Convergence trajectories for [\[eq:eig\]](#eq:eig){reference-type="eqref" reference="eq:eig"} on $\mathop{\mathrm{Flag}}(3,7,12; 60)$.](flag2log.pdf){#fig:convergence2}
 
 The convergence trajectories for Algorithm [\[alg:sd\]](#alg:sd){reference-type="ref" reference="alg:sd"} applied to [\[eq:eig\]](#eq:eig){reference-type="eqref" reference="eq:eig"} are shown in Figure [2](#fig:convergence2){reference-type="ref" reference="fig:convergence2"}. The nonlinearity imposes a cost --- it takes around $390$ iterations to satisfy one of the our stopping criteria, although the function values stabilize after around $60$ iterations. The jagged spikes seen in Figure [2](#fig:convergence2){reference-type="ref" reference="fig:convergence2"} are a result of iterates moving along a geodesic and then jumping to another geodesic. So this is indicative of steepest descent following a path that comprises multiple geodesics. A caveat is that unlike the principal flag problem [\[eq:dis\]](#eq:dis){reference-type="eqref" reference="eq:dis"}, we do not have a closed-form solution for [\[eq:eig\]](#eq:eig){reference-type="eqref" reference="eq:eig"} and thus we may only guarantee convergence to a local minimizer, which is reflected in Figure [2](#fig:convergence2){reference-type="ref" reference="fig:convergence2"}.

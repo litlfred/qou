@@ -7,10 +7,10 @@ section_number: null
 pages: 1-3
 source_pdf: 0611181v2.pdf
 source_sha256: 6931e3ebca584de9
-text_source: latex
-latex_prose_ratio: 0.94
-latex_coverage_ratio: 0.989
 doc_brief: "Proof of the volume conjecture for Whitehead chains — We prove the volume conjecture for an inﬁnite family of links called White- head chains that generalizes both the Whitehead link and the"
+text_source: latex
+latex_prose_ratio: 0.951
+latex_coverage_ratio: 0.989
 ---
 The volume conjecture relates the colored Jones polynomials of a knot to the simplicial volume of its complement. More precisely, let us denote the normalized $N$-colored Jones polynomial of a knot $K$ by $J_N(K)$ and let $\mathrm{Vol}(K)$ be $v_3$ times the simplicial volume (Gromov norm) of $\mathbb{S}^3 - K$, where $v_3$ is the volume of the hyperbolic regular ideal tetrahedron. The volume conjecture can now be stated as follows:
 

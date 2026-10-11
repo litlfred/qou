@@ -8,22 +8,22 @@ pages: 9-9
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
 doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
+text_source: latex
+latex_prose_ratio: 0.966
+latex_coverage_ratio: 1.0
 ---
-obtained from Donaldson-Thomas theory. In the case of the gene ralised Kronecker quiver with
-k > 0 arrows (see also [ 19]) these BPS structures (Γ , Z, Ω) have
-Γ = Ze1⊕ Ze2, ⟨e1, e2⟩ =−k,
-and are speciﬁed by a central charge Z : Γ → C satisfying Im Z(ei) > 0 for i = 1 , 2. The BPS
-invariants depend only on the sign of
-ν = Im (Z(e2)/Z(e1)).
-If ν > 0 then the only nonzero BPS invariants are Ω( ±e1) = Ω(±e2) = 1 . In the case ν = 0 the
-BPS structure is non-generic, and also non-integral in general: Jo yce and Song [ 21, Section 6.2]
-show that
-Ω( e1 + e2) = (−1)k−1· k
-2 .
-The most interesting case is ν < 0. When k = 1 the only nonzero BPS invariants are
-Ω(±e1) = Ω(±e2) = Ω(±(e1 + e2)) = 1 .
-The case k = 2 has the inﬁnite set of nonzero invariants
-Ω(±(me1 + ne2)) = 1 if |m− n| = 1, Ω(±(e1 + e2)) =−2,
-with all others being zero. In general, for k > 2, these BPS structures are not very well-understood.
-However, it is known [ 29, Theorem 6.4] that they are not in general ray-ﬁnite. It is also exp ected
-that there exist regions in C∗ in which the active rays are dense.
+\label{newnew}
+
+
+
+Interesting examples of BPS structures can be obtained from  Donaldson-Thomas theory.  In the case of the  generalised Kronecker quiver with $k>0$ arrows (see also \cite{GP}) these  BPS structures $(\Gamma,Z,\Omega)$ have \[\Gamma=\bZ e_1\oplus \bZ e_2, \qquad \<e_1,e_2\>=-k,\] and  are specified by a central charge $Z\colon \Gamma\to \bC$ satisfying $\Im Z(e_i)>0$ for $i=1,2$. The  BPS invariants depend only on the sign of \[\nu=\Im \,(Z(e_2)/Z(e_1)).\]
+
+If $\nu>0$ then
+the only nonzero BPS invariants are
+$\Omega(\pm e_1)=\Omega(\pm e_2)=1.$
+In the  case $\nu=0$ the BPS structure is non-generic, and also non-integral in general: Joyce and Song \cite[Section 6.2]{JS} show that \[\Omega(e_1+e_2)=(-1)^{k-1}\cdot \frac{ k}{2}.\] The most interesting case is $\nu<0$.  When $k=1$  the only nonzero BPS invariants are
+\[\Omega(\pm e_1)=\Omega(\pm e_2)=\Omega(\pm (e_1+e_2))=1.\]
+The case $k=2$ has the infinite set of nonzero invariants
+\[\Omega(\pm (me_1 + ne_2))=1 \text{ if }|m-n|=1, \qquad \Omega(\pm(e_1+e_2))=-2,\]
+with all others being zero. 
+In general, for $k>2$, these  BPS structures are not very well-understood. However, it is known \cite[Theorem 6.4]{R} that  they are not in general ray-finite. It is also expected  that there exist regions in $\bC^*$ in which the active rays are dense.

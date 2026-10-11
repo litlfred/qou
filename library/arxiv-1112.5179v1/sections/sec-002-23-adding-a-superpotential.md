@@ -8,55 +8,30 @@ pages: 11-12
 source_pdf: 1112.5179v1.pdf
 source_sha256: b58af08336c40994
 doc_brief: "3-Manifolds and 3d Indices — We identify a large classR of three-dimensionalN = 2 superconformal ﬁeld the- ories."
+text_source: latex
+latex_prose_ratio: 0.989
+latex_coverage_ratio: 0.795
 ---
-In the framework of [19], another important operation on a 3d N = 2 SCFT T was the
-addition of a superpotential. The index is aﬀected by superpotential terms in a simple
-fashion; one just has to drop, in an appropriate way, any ﬂavor symmetry broken by the
-superpotential.
-This has three basic consequences. To illustrate them, suppose that we add a superpo-
-tentialW charged only under the ﬁrst U(1) of the ﬂavor symmetry group U(1)N; in other
-words,W has electric chargecW = (1, 0,..., 0). Suppose thatW also has R-chargeRW. Then:
-1. In order for W not to break R-symmetry, its R-charge must equal 2. This requires an
-electric R-charge shift by αe = (RW− 2, 0,..., 0), so that RW−αe·cW = 2, thereby
-multiplying the index by q(1−RW/2)e1, where e = (e1,...,e N).
-2. The theory cannot be coupled to ﬂux for a broken ﬂavor symmetry. Therefore, we must
-restrict m = (0,m′), where m′ = (m2,...,m N).
-3. The Hilbert space cannot be graded by the broken ﬂavor charge, and states whose
-diﬀerence in charge is a multiple of cW will now live in the same charge sector. This
-means that we must sum over e1.
-Altogether, we ﬁnd that the addition of W amounts to
-IT (γ;q) +W−→ IT′(γ′;q) =
-∑
-e1∈Z
-q
-(
-1−RW
-2
-)
-e1IT (γ;q)
-⏐⏐
-m1=0, (2.21)
-7It is interesting to remark that in the context of four-dimensional N = 2 gauge theory, wall-crossing
-considerations lead to the conjecture that (−1)R+2j3 should always be equal to a quadratic reﬁnement of the
-charge lattice when acting on BPS states [20].
-– 10 –
-with a new reduced charge vector γ′ = (m′,e′) = (m2,...,m N,e 2,...,e N).
-In general, a superpotential might contain a sum of several operators Oi, with general
-electric chargesci and R-chargesRi. We can add these operators one at a time, in any order.
-Each of them transforms the index as
-IT (γ;q)
-+Oi
-−→ IT′(γ′;q) =
-∑
-n∈Z
-q
-(
-1−Ri
-2
-)
-nIT (e +nci,m ;q)
-⏐⏐
-m·ci=0. (2.22)
-This can be thought of as a discrete version of a “symplectic quotient,” with respect to a
-moment map⟨ci,m⟩. After adding all the operators Oi, we will be left with a charge vector
-γ′ = (m′,e′) that obeys m′·ci = 0 and e′≡e′ +nici (ni∈ Z), for all i.
+[]{#sec:W label="sec:W"}
+
+In the framework of [@DGG], another important operation on a 3d $\mathcal{N}=2$ SCFT $\mathcal{T}$ was the addition of a superpotential. The index is affected by superpotential terms in a simple fashion; one just has to drop, in an appropriate way, any flavor symmetry broken by the superpotential.
+
+This has three basic consequences. To illustrate them, suppose that we add a superpotential $\mathcal{W}$ charged only under the first $U(1)$ of the flavor symmetry group $U(1)^N$; in other words, $\mathcal{W}$ has electric charge $c_\mathcal{W}= (1,0,...,0)$. Suppose that $\mathcal{W}$ also has R-charge $R_\mathcal{W}$. Then:
+
+1.  In order for $\mathcal{W}$ not to break R-symmetry, its R-charge must equal 2. This requires an electric R-charge shift by $\alpha_e = (R_\mathcal{W}-2,0,...,0)$, so that $R_\mathcal{W}- \alpha_e\cdot c_\mathcal{W}=2$, thereby multiplying the index by $q^{(1-R_\mathcal{W}/2)e_1}$, where $e = (e_1,...,e_N)$.
+
+2.  The theory cannot be coupled to flux for a broken flavor symmetry. Therefore, we must restrict $m=(0,m')$, where $m'=(m_2,...,m_N)$.
+
+3.  The Hilbert space cannot be graded by the broken flavor charge, and states whose difference in charge is a multiple of $c_\mathcal{W}$ will now live in the same charge sector. This means that we must sum over $e_1$.
+
+Altogether, we find that the addition of $\mathcal{W}$ amounts to
+
+$$\mathcal{I}_\mathcal{T}(\gamma;q)\;\overset{+\mathcal{W}}{\longrightarrow}\; \mathcal{I}_{\mathcal{T}'}(\gamma';q) = \sum_{e_1\in {\mathbb Z}}q^{\big(1-\frac{R_\mathcal{W}}{2}\big)e_1} \mathcal{I}_\mathcal{T}(\gamma;q)\,\big|_{\,m_1=0}\,,$$
+
+with a new reduced charge vector $\gamma' = (m',e') = (m_2,...,m_N,e_2,...,e_N)$.
+
+In general, a superpotential might contain a sum of several operators $\mathcal{O}_i$, with general electric charges $c_i$ and R-charges $R_i$. We can add these operators one at a time, in any order. Each of them transforms the index as
+
+$$\mathcal{I}_\mathcal{T}(\gamma;q)\;\overset{+\mathcal{O}_i}{\longrightarrow}\; \mathcal{I}_{\mathcal{T}'}(\gamma';q) = \sum_{n\in {\mathbb Z}} q^{\big(1-\frac{R_i}{2}\big)n}\mathcal{I}_\mathcal{T}(e+n\hspace{.04cm}c_i,m;q)\,\big|_{\,m\cdot c_i = 0}\,.$$
+
+This can be thought of as a discrete version of a "symplectic quotient," with respect to a moment map $\langle c_i, m \rangle$. After adding all the operators $\mathcal{O}_i$, we will be left with a charge vector $\gamma'=(m',e')$ that obeys $m'\cdot c_i = 0$ and $e'\equiv e'+n_ic_i$  ($n_i\in {\mathbb Z}$), for all $i$.

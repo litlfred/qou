@@ -7,10 +7,10 @@ section_number: 3
 pages: 7-9
 source_pdf: 1203.4538v1.pdf
 source_sha256: 5e44909e355c78d6
-text_source: latex
-latex_prose_ratio: 0.94
-latex_coverage_ratio: 0.953
 doc_brief: "The exponential-logarithmic equivalence classes of surreal numbers — 7 sections: Introduction.; Preliminaries on surreal numbers.; Sign sequences."
+text_source: latex
+latex_prose_ratio: 0.985
+latex_coverage_ratio: 0.987
 ---
 []{#sect:kappa label="sect:kappa"}
 
@@ -19,20 +19,20 @@ In this section we define and describe a new map $\kappa$, which takes naturally
 ::: defn
 []{#defi:equiv-exp label="defi:equiv-exp"} We set :
 
-- the **exponential equivalence relation** to be:
+-   the **exponential equivalence relation** to be:
 
-  ::: center
-  $\forall x,y\in\textbf{NO}^{\gg 1},\ x\sim_{\exp}y\Leftrightarrow \exists n\in\mathbb{N},\ \log^n(|x|)\leq |y|\leq\exp^n(|x|)$;\
-  :::
+    ::: center
+    $\forall x,y\in\textbf{NO}^{\gg 1},\ x\sim_{\exp}y\Leftrightarrow \exists n\in\mathbb{N},\ \log^n(|x|)\leq |y|\leq\exp^n(|x|)$;\
+    :::
 
-- the **exponential comparison relation** to be:
+-   the **exponential comparison relation** to be:
 
-  ::: center
-  $\forall x,y\in\textbf{NO}^{\gg 1},\ x\gg _{\exp}y\Leftrightarrow \forall n,\ \log^n(|x|)>|y|$.
-  :::
+    ::: center
+    $\forall x,y\in\textbf{NO}^{\gg 1},\ x\gg _{\exp}y\Leftrightarrow \forall n,\ \log^n(|x|)>|y|$.
+    :::
 :::
 
-:::: thm
+::: thm
 []{#theo:kappa-defi label="theo:kappa-defi"} The recursive formula $$\forall a\in\textbf{No},\ \kappa(a)=\kappa_a:=\langle \exp^n(0),\ \exp^n (\kappa_{a^L})\ |\ \log^n (\kappa_{a^R})\rangle$$ (where it is understood that $n\in\mathbb{N}$) defines a map
 
 ::: center
@@ -51,9 +51,9 @@ with values in $\textbf{No}_{>0}^{\gg 1}$ and such that:
 \(ii\)
 
 :   there is a uniformity property for this formula (i.e. the recursive formula does not depend on the choice of the cut for $a$).
-::::
+:::
 
-:::: demo
+::: demo
 We proceed by transfinite induction on the length of the surreals considered. For $l(a)=0$, i.e. $a=0=\langle \emptyset|\emptyset\rangle$, we have:
 
 ::: center
@@ -69,9 +69,9 @@ We consider $a\in\textbf{No}$ with $l(a)>0$, and suppose that the theorem holds 
 \(i\) To show the property $a<b\Rightarrow\kappa_a\ll_{\exp}\kappa_b$, we proceed as in [@gonshor_surreal Theorems 3.1, 3.4 et 5.2] by induction on the natural sum of $l(a)$ and $l(b)$. So we consider $a<b$ in $\textbf{No}$. We denote by $c$ the common initial segment of $a$ and $b$. There are two cases. Either $c=a\textrm{ or }b$: in this case, the property follows directly from the recursive definition of $\kappa$, since $a=b^L$ or $b=a^R$ respectively. Or we have $a<c<b$ with $c<_sa$ and $c<_sb$. Then the natural sum of $a$ and $c$, and of $b$ and $c$, is less than the one of $a$ and $b$. By the induction hypothesis, we obtain that $\kappa_a\ll_{\exp}\kappa_c$ and $\kappa_c<_{\exp}\kappa_b$, so $\kappa_a\ll_{\exp}\kappa_b$.
 
 \(ii\) Concerning the uniformity property, we refer to [@gonshor_surreal Theorems 3.2, 3.5, Corollary to Theorem 5.2 etc]. Let $a=\langle L\ |\ R\rangle\in\textbf{No}$. By Theorem [\[theo:cofin\]](#theo:cofin){reference-type="ref" reference="theo:cofin"} (3.), $(L,R)$ is cofinal in the canonical cut $(L_a,R_a)$ of $a$. By the preceding property, it implies that $(\kappa(L),\kappa(R))$ and $(\kappa(L_a),\kappa(R_a))$ are cofinals, and that $\kappa(L)\ll_{\exp}\kappa_a\ll_{\exp}\kappa(R)\Rightarrow\kappa(L)<\kappa_a<\kappa(R)$ (these inequalities concern elements in $\textbf{No}_{>0}^{\gg 1}$). So we can apply Theorem [\[theo:cofin\]](#theo:cofin){reference-type="ref" reference="theo:cofin"} (2.) to obtain $\kappa_a=\langle\kappa(L_a)\ |\ \kappa(R_a)\rangle = \langle\kappa(L)\ |\ \kappa(R)\rangle$.
-::::
+:::
 
-:::: ex
+::: ex
 We compute some particular values:
 
 ::: center
@@ -84,7 +84,7 @@ $\begin{array}{lcl}
 &=&\omega^{\omega^{-\omega}}\ ;\\
 \end{array}$
 :::
-::::
+:::
 
 ::: thm
 []{#theo:kappa-equivEL label="theo:kappa-equivEL"} A surreal number $b\in\textbf{No}$ is of the form $\kappa_a$ for some $a\in\textbf{No}$ if and only if $b$ is the representative of minimal length in an exponential equivalence class.

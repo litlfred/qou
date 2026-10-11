@@ -180,8 +180,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "HQMM_associated_with_AKLT.tex",
-   "tex_sections": 7,
-   "overlaid": 4,
+   "tex_sections": 13,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -191,8 +191,8 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.942,
-     "coverage_ratio": 0.964,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -205,42 +205,48 @@
     {
      "id": "sec-002-hidden-quantum-markov-models",
      "title": "Hidden Quantum Markov Models",
-     "result": "no matching \\section"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.85,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-the-aklt-state-and-its-spt-order",
      "title": "The AKLT State and its SPT Order",
-     "result": "no matching \\section"
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.899,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-hqmm-structure-of-the-aklt-state",
      "title": "HQMM Structure of the AKLT State",
-     "prose_ratio": 0.898,
-     "coverage_ratio": 0.883,
+     "prose_ratio": 0.921,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-entanglement-dynamics-in-hidden-markov-channel",
      "title": "Entanglement Dynamics in Hidden Markov Channel",
-     "prose_ratio": 0.989,
-     "coverage_ratio": 0.902,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-spt-order-on-the-aklts-hqmms",
      "title": "SPT order on the AKLT,s HQMMs",
-     "prose_ratio": 0.983,
-     "coverage_ratio": 0.918,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-007-conclusion",
      "title": "Conclusion",
-     "prose_ratio": 0.956,
-     "coverage_ratio": 0.318,
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.365,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     }
    ]

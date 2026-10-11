@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-1
 source_pdf: 1202.0461v1.pdf
 source_sha256: 656a2ea80ef2e25c
-text_source: latex
-latex_prose_ratio: 0.99
-latex_coverage_ratio: 0.995
 doc_brief: "Draft version October 11, 2018 DOUBLE DEGENERATE MERGERS AS PROGENITORS OF HIGH-FIELD MAGNETIC WHITE DWARFS — High-ﬁeld magnetic white dwarfs have been long suspected to be the result of stellar"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.995
 ---
 []{#intro label="intro"}
 

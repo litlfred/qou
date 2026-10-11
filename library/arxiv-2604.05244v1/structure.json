@@ -216,7 +216,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
-   "tex_sections": 10,
+   "tex_sections": 24,
    "overlaid": 0,
    "thresholds": {
     "title": 0.85,
@@ -232,7 +232,7 @@
     {
      "id": "sec-001-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.491,
+     "prose_ratio": 0.19,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {

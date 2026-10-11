@@ -7,17 +7,17 @@ section_number: null
 pages: 17-20
 source_pdf: 0405028v2.pdf
 source_sha256: 90a0e4ba456988d6
-text_source: latex
-latex_prose_ratio: 0.925
-latex_coverage_ratio: 0.9
 doc_brief: "ON THE QUANTUM INVARIANT FOR THE BRIESKORN HOMOLOGY SPHERES — We study an exact asymptotic behavior of the Witten–Reshet ikhin–Turaev SU(2) in- variant for the Brieskorn homology spheres Σ( p1, p 2"
+text_source: latex
+latex_prose_ratio: 0.991
+latex_coverage_ratio: 0.978
 ---
 []{#sec:torsion label="sec:torsion"}
 
 An asymptotic behavior of the Witten invariant $Z_k(\mathcal{M})$ can be given from the definition [\[Witten_and_tau\]](#Witten_and_tau){reference-type="eqref" reference="Witten_and_tau"}. In a large $N$ limit, the first term in eqs. [\[tau_limit\]](#tau_limit){reference-type="eqref" reference="tau_limit"} and [\[tau_Poincare_limit\]](#tau_Poincare_limit){reference-type="eqref" reference="tau_Poincare_limit"} dominate an asymptotic behavior of the quantum invariant, which will be shown to denote a contribution from flat connections. We obtain the following;
 
 ::: coro
-We have an asymptotic behavior of the Witten invariant [\[Witten\]](#Witten){reference-type="eqref" reference="Witten"} for the Brieskorn homology spheres in $N\to\infty$ as $$\begin{multline}
+We have an asymptotic behavior of the Witten invariant [\[Witten\]](#Witten){reference-type="eqref" reference="Witten"} for the Brieskorn homology spheres in $N\to\infty$ as $$\begin{gathered}
     Z_{N-2}\bigl( \Sigma(p_1,p_2, p_3) \bigr)
     \\
     \sim
@@ -34,7 +34,8 @@ We have an asymptotic behavior of the Witten invariant [\[Witten\]](#Witten){re
       \right)^2 
       \pi \mathrm{i} N
     }
-\end{multline}$$ where the $\mathbf{S}$-matrix is defined in eq. [\[S_transformation\]](#S_transformation){reference-type="eqref" reference="S_transformation"}, and the sum runs over $\gamma(p_1,p_2,p_3)$ distinct triples satisfying eq. [\[ell_condition\]](#ell_condition){reference-type="eqref" reference="ell_condition"}.
+  
+\end{gathered}$$ where the $\mathbf{S}$-matrix is defined in eq. [\[S_transformation\]](#S_transformation){reference-type="eqref" reference="S_transformation"}, and the sum runs over $\gamma(p_1,p_2,p_3)$ distinct triples satisfying eq. [\[ell_condition\]](#ell_condition){reference-type="eqref" reference="ell_condition"}.
 :::
 
 We see that, except a decaying factor $\mathrm{e}^{-\frac{\phi(p_1,p_2,p_3)}{2 N} \pi  \mathrm{i}}$, our result proves eq. [\[asymptotic_Witten\]](#asymptotic_Witten){reference-type="eqref" reference="asymptotic_Witten"} exactly as we have seen that a dominating exponential factor denotes the Chern--Simons invariant [\[CS_B\]](#CS_B){reference-type="eqref" reference="CS_B"} for the Brieskorn homology spheres.
@@ -42,20 +43,17 @@ We see that, except a decaying factor $\mathrm{e}^{-\frac{\phi(p_1,p_2,p_3)}{2 N
 In fact we can establish a relationship among the $\mathbf{S}$-matrix, the Reidemeister torsion, and the spectral flow;
 
 ::: theorem
-$$\begin{equation}
-    \label{S_and_torsion}
+$$\label{S_and_torsion}
     \sqrt{2} \,
     \mathbf{S}_{1,1,1}^{\ell_1, \ell_2, \ell_3}
     =
     \sqrt{T_\alpha} \,
-    \mathrm{e}^{-2 \pi \mathrm{i}  I_\alpha/4}
-\end{equation}$$ where the triple $(\ell_1,\ell_2,\ell_3)$ satisfies eq. [\[ell_condition\]](#ell_condition){reference-type="eqref" reference="ell_condition"}.
+    \mathrm{e}^{-2 \pi \mathrm{i}  I_\alpha/4}$$ where the triple $(\ell_1,\ell_2,\ell_3)$ satisfies eq. [\[ell_condition\]](#ell_condition){reference-type="eqref" reference="ell_condition"}.
 :::
 
 ::: proof
 *Proof.* A proof of the absolute value of $\sqrt{2} \,
-\mathbf{S}_{1,1,1}^{\ell_1,\ell_2,\ell_3}$ is straightforward since it is known [@DFreed92a] that the Reidemeister torsion of the Brieskorn homology sphere is given by $$\begin{equation}
-  \sqrt{T_\alpha}
+\mathbf{S}_{1,1,1}^{\ell_1,\ell_2,\ell_3}$ is straightforward since it is known [@DFreed92a] that the Reidemeister torsion of the Brieskorn homology sphere is given by $$\sqrt{T_\alpha}
   =
   \frac{8}{\sqrt{P}} \,
   \prod_{j=1}^3
@@ -64,10 +62,9 @@ $$\begin{equation}
     P \,
     \frac{\ell_j}{p_j^{~2}}
     \Bigr)
-  \right|
-\end{equation}$$
+  \right|$$
 
-To prove a part of the phase factor, we recall that the spectral flow of the Brieskorn homology spheres is given by [@FintuStern90a] $$\begin{multline}
+To prove a part of the phase factor, we recall that the spectral flow of the Brieskorn homology spheres is given by [@FintuStern90a] $$\begin{gathered}
   I_\alpha
   =
   -3 - 
@@ -91,13 +88,11 @@ To prove a part of the phase factor, we recall that the spectral flow of the Bri
   \Biggr)
   \mod 8
   \label{spectral}
-\end{multline}$$ where $$\begin{equation}
-  e \equiv
+\end{gathered}$$ where $$e \equiv
   e(\ell_1,\ell_2, \ell_3)
-  = P \sum_{j=1}^3 \frac{p_j - \ell_j}{p_j}
-\end{equation}$$
+  = P \sum_{j=1}^3 \frac{p_j - \ell_j}{p_j}$$
 
-Using this we have $$\begin{align*}
+Using this we have $$\begin{aligned}
   \mathrm{e}^{-2 \pi \mathrm{i} I_\alpha/4}
   & =
   \mathrm{e}^{\frac{\pi \mathrm{i}}{2}
@@ -132,7 +127,7 @@ Using this we have $$\begin{align*}
     \,
     \sin \left( \frac{ e \, \pi}{p_j}  \right)
   \right)
-\end{align*}$$ Here in the second equality we have used $\frac{P}{p_j} \cdot q_j =1 \pmod {p_j}$, and an identity [@LCJeff92a; @Rozan95a], $$\begin{multline}
+\end{aligned}$$ Here in the second equality we have used $\frac{P}{p_j} \cdot q_j =1 \pmod {p_j}$, and an identity [@LCJeff92a; @Rozan95a], $$\begin{gathered}
   -\mathrm{i} \,
   \mathop{\mathrm{sign}}
   \left(
@@ -154,8 +149,7 @@ Using this we have $$\begin{align*}
       \sin^2 \left(\frac{k \, n \, \pi}{p}\right) 
     \right)
   \right)
-\end{multline}$$ where we suppose $n\in\mathbb{Z}$ and $q \, r =1 \pmod p$. We further see that $$\begin{equation*}
-  \prod_{j=1}^3 
+\end{gathered}$$ where we suppose $n\in\mathbb{Z}$ and $q \, r =1 \pmod p$. We further see that $$\prod_{j=1}^3 
   \sin \left(
     \frac{ e \, \pi}{p_j}
   \right)
@@ -169,8 +163,7 @@ Using this we have $$\begin{align*}
   \prod_{j=1}^3
   \sin\left(
     \pi \, P \, \frac{\ell_j}{p_j^{~2}}
-  \right)
-\end{equation*}$$ and $$\begin{align*}
+  \right)$$ and $$\begin{aligned}
   \prod_{j=1}^3 
   \mathop{\mathrm{sign}}\left(
     \sin \left(
@@ -179,7 +172,7 @@ Using this we have $$\begin{align*}
   \right)
   & =
   1
-\end{align*}$$ which follows from $$\begin{align*}
+\end{aligned}$$ which follows from $$\begin{aligned}
   \sin \left( \frac{ q_1 \, e \, \pi}{p_1} \right)
   & =
   (-1)^{1 + q_1 ( p_2 p_3 + \ell_2 p_3 + p_2\ell_3)} 
@@ -195,8 +188,7 @@ Using this we have $$\begin{align*}
   \left(
     \frac{\ell_1 \, \pi}{p_1}
   \right)
-\end{align*}$$ Collecting these results, we obtain $$\begin{equation*}
-  \mathrm{e}^{-2 \pi \mathrm{i} I_\alpha/4}
+\end{aligned}$$ Collecting these results, we obtain $$\mathrm{e}^{-2 \pi \mathrm{i} I_\alpha/4}
   =
   (-1)^{
     1+ P + P \sum_{j=1}^3 \frac{\ell_j}{p_j}
@@ -213,26 +205,25 @@ Using this we have $$\begin{align*}
     \left(
       \frac{ P \, \ell_j \, \pi}{p_j^{~2}}
     \right)
-  \right)
-\end{equation*}$$ which proves a phase factor of eq. [\[S_and_torsion\]](#S_and_torsion){reference-type="eqref" reference="S_and_torsion"}. ◻
+  \right)$$ which proves a phase factor of eq. [\[S_and_torsion\]](#S_and_torsion){reference-type="eqref" reference="S_and_torsion"}. ◻
 :::
 
 We reconsider some examples from section [\[sec:WRT\]](#sec:WRT){reference-type="ref" reference="sec:WRT"};
 
-- the Poincaré homology sphere $\Sigma(2,3,5)$:
+-   the Poincaré homology sphere $\Sigma(2,3,5)$:
 
-  We have two triples $(\ell_1, \ell_2, \ell_3)
-    =(1,1,1)$ and $(1,1,2)$. These respectively give the spectral flow [\[spectral\]](#spectral){reference-type="eqref" reference="spectral"} $I_\alpha = 4$ and $0$, which supports eq. [\[tau_Poincare_limit\]](#tau_Poincare_limit){reference-type="eqref" reference="tau_Poincare_limit"}.
+    We have two triples $(\ell_1, \ell_2, \ell_3)
+      =(1,1,1)$ and $(1,1,2)$. These respectively give the spectral flow [\[spectral\]](#spectral){reference-type="eqref" reference="spectral"} $I_\alpha = 4$ and $0$, which supports eq. [\[tau_Poincare_limit\]](#tau_Poincare_limit){reference-type="eqref" reference="tau_Poincare_limit"}.
 
-- $\Sigma(2,3,7)$:
+-   $\Sigma(2,3,7)$:
 
-  We have $(\ell_1, \ell_2, \ell_3)
-    =
-    (1,1,2)$ and $(1,1,3)$, which give $I_\alpha = 6$ and $2$ respectively. This is consistent with a result in previous section.
+    We have $(\ell_1, \ell_2, \ell_3)
+      =
+      (1,1,2)$ and $(1,1,3)$, which give $I_\alpha = 6$ and $2$ respectively. This is consistent with a result in previous section.
 
-- $\Sigma(3,4,5)$:
+-   $\Sigma(3,4,5)$:
 
-  We have four triples $(\ell_1, \ell_2, \ell_3)
-    =(1,1,3),
-    (1,1,4),
-    (1,2,1)$, and $(1,2,2)$. For these irreducible representations, we get from eq. [\[spectral\]](#spectral){reference-type="eqref" reference="spectral"} $I_\alpha = 2, 4, 6,$ and $0$. This result is consistent with an asymptotic expansion given before.
+    We have four triples $(\ell_1, \ell_2, \ell_3)
+      =(1,1,3),
+      (1,1,4),
+      (1,2,1)$, and $(1,2,2)$. For these irreducible representations, we get from eq. [\[spectral\]](#spectral){reference-type="eqref" reference="spectral"} $I_\alpha = 2, 4, 6,$ and $0$. This result is consistent with an asymptotic expansion given before.

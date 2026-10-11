@@ -7,10 +7,10 @@ section_number: 4
 pages: 12-14
 source_pdf: 1606.01832v3.pdf
 source_sha256: da982c95b9674382
+doc_brief: "FLATNESS AND COMPLETION REVISITED AMNON YEKUTIELI — We continue investigating the interaction between ﬂatness and a- adic completion for inﬁnitely generated A-modules."
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.936
-doc_brief: "FLATNESS AND COMPLETION REVISITED AMNON YEKUTIELI — We continue investigating the interaction between ﬂatness and a- adic completion for inﬁnitely generated A-modules."
+latex_coverage_ratio: 1.0
 ---
 \label{sec:WPR} 
 

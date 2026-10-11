@@ -7,10 +7,10 @@ section_number: 5
 pages: 16-16
 source_pdf: 2301.00125v3.pdf
 source_sha256: 7ecd0cff7d6c2ec4
-text_source: latex
-latex_prose_ratio: 0.993
-latex_coverage_ratio: 0.931
 doc_brief: "Generating Function for Pinsky’s Combinatorial Second Mom ent Formula for the Generalized Ulam Problem Samen Hossein The Bronx High School of Science 75 Bronx Science Bvd — Given a uniform random"
+text_source: latex
+latex_prose_ratio: 0.938
+latex_coverage_ratio: 1.0
 ---
 We have presented some explicit formula for the generating function of the combinatorial array $A(N,j)$.
 This arrray was introduced by Ross Pinsky in his beautiful combinatorial formula for the 2nd moment
@@ -49,3 +49,9 @@ Either we will return to this problem, possibly in collaboration with other rese
 Or else perhaps some other researchers will resolve this, indepenent from ourselves.
 
 \label{sec:Outlook}
+
+
+\section{Acknowledgments}
+
+S.S.~is grateful to Dongsheng Wu for a  helpful conversation. The work of S.S.~was partly supported by 
+a Simons collaboration grant.

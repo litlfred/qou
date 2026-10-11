@@ -7,10 +7,10 @@ section_number: 2
 pages: 8-13
 source_pdf: 1408.3518v3.pdf
 source_sha256: cf18585b886587c7
-text_source: latex
-latex_prose_ratio: 0.938
-latex_coverage_ratio: 0.992
 doc_brief: "On Augmentation Algorithms for Linear and Integer-Linear Programming: — 4 sections: Introduction.; Our Contributions; Proofs"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 We present the proofs to the above results in separate subsections. We will use the following  lemma (a slight variation from Theorem 3.1 in \cite{Ahuja+Magnanti+Orlin}) which  establishes the bounds we claim once we can guarantee sufficient improvement at each iteration:
 \begin{lemma}
@@ -38,6 +38,7 @@ In conclusion, after $2/\beta$ augmentations, we have either reached the optimum
 It is important to note that in the ILP case $f^k$ is integer, and we can apply Lemma \ref{Lemma: Sufficient improvement leads to polynomial algorithm} with $\epsilon=1$ and conclude that we can reach the optimum in $O(\log{(H)}/\beta)$ augmentations. In the LP case, let $\delta$ denote the least common multiple of all subdeterminants of $A$. Observe that once we find a feasible solution $\vex_k$ with objective value $f^k$ satisfying $f^k-f^*<\epsilon=1/\delta$, then any vertex with an objective value of at most $f^k$ must be optimal. As explained above (right before the statement of Theorem \ref{theorem:main, ILP case}), such a vertex can be found from $\vex_k$ in at most $n$ additional augmentations. This leads to extra factors of $n$ and of $\log(\delta)$ in the bounds for the LP cases compared to the ILP cases.
 
 
+
 \subsection{Proof of Lemma \ref{ILP-greedy} and Theorem \ref{theorem:main, ILP case}}
 
 Let us assume that $\vex_k$ is a non-optimal feasible solution, and let $\vex_{\min}$ be an optimal solution to the ILP. Then there exists a (sign-compatible) representation
@@ -49,6 +50,7 @@ with $\alpha_i>0$, $\alpha_i\in\Z$ and with $\alpha_i\veg_i\red \vex_{\min} - \v
 Note that sign-compatibility of the representation $\vex_{\min}-\vex_k =\sum\alpha_i\veg_i$ implies that for all $i$ the vectors $\vex_{k}+\alpha_i\veg_i$ and $\vex_{\min}-\alpha_i\veg_i$ are all feasible solutions, since their components lie between the components of $\vex_k$ and of $\vex_{\min}$. Moreover, we can observe that for all such sign-compatible representations $\vex_{\min}-\vex_k =\sum\alpha_i\veg_i$ we must have $\vecc^\T\veg_i\leq 0$ for all $i$, as otherwise $\vex_{\min}-\alpha_i\veg_i$ would be a feasible solution with $\vecc^\T (\vex_{\min}-\alpha_i\veg_i)=\vecc^\T\vex_{\min}-\alpha_i\vecc^\T\veg_i<\vecc^\T\vex_{\min}$, contradicting the minimality of $\vex_{\min}$.
 
 Next, we analyze what happens for each choice of augmentation rule:
+
 
 \subsubsection{Proof of Lemma \ref{ILP-greedy}: Discrete deepest descent.} We observe that
 \[
@@ -70,6 +72,7 @@ Now let $\alpha\vez$ be the discrete deepest-descent augmentation applied to $\v
 Thus, we have a factor of $\beta=1/(2n-2)$ of objective-function decrease at each augmentation, leading to the desired polynomial number of augmentations via Lemma \ref{Lemma: Sufficient improvement leads to polynomial algorithm} taking $\epsilon=1$.
 In this case, we get the number of augmentations bounded by $(4n-4)\,\,\log(\vecc^\T (\vex_0-\vex_{\min})))$.
 
+
 \subsubsection{Proof of part (a) of Theorem \ref{theorem:main, ILP case}: Discrete Dantzig descent.} We observe that
 \[
   0>\vecc^\T (\vex_{\min}-\vex_k)
@@ -89,6 +92,7 @@ Now let $\alpha\vez$ be the discrete Dantzig-descent augmentation  applied to $\
   \geq \frac{\vecc^\T (\vex_0-\vex_{\min})}{(2n-2)\gamma},
 \]
 where $\gamma$ is the maximum entry in any feasible integer solution (or, equivalently, in any vertex of $P_I$). Thus, we have a factor of $\beta=1/((2n-2) \gamma)$ of objective-function decrease at each augmentation leading to the desired polynomial number of augmentations via Lemma \ref{Lemma: Sufficient improvement leads to polynomial algorithm} taking $\epsilon=1$. In this case we get the number of augmentations bounded by  $(4n-4)\,\gamma \, \log(\vecc^\T (\vex_0-\vex_{\min})))$
+
 
 
 
@@ -202,6 +206,7 @@ For discrete steepest descent, no direction from $\Graver(A)$ is chosen twice as
 
 
 
+
 \subsection{Proof of Lemma \ref{LP-greedy} and Theorem \ref{theorem:main, LP case}}
 
 Let us assume that $\vex_k$ is a non-optimal feasible solution, and let $\vex_{\min}$ be an optimal solution to the LP. Then there exists a (sign-compatible) representation
@@ -212,6 +217,7 @@ with $\alpha_i>0$ and with $\alpha_i\veg_i\red \vex_{\min} - \vex_k$. Moreover, 
 Again, sign-compatibility of the representation $\vex_{\min}-\vex_k =\sum\alpha_i\veg_i$ implies that for all $i$ the vectors $\vex_{k}+\alpha_i\veg_i$ and $\vex_{\min}-\alpha_i\veg_i$ are all feasible solutions.
 
 Let us now analyze what happens for each choice of augmentation rule:
+
 
 \subsubsection{Proof of Lemma \ref{LP-greedy} for Discrete deepest descent.} We observe that
 \[
@@ -234,6 +240,7 @@ Thus, we have a factor of $\beta=1/n$ of objective-function value decrease at ea
   |\vecc^\T(\vex_k-\vex_{\min})|=\sum|\alpha_i\vecc^\T\veg_i| <(2n-2)\cdot\epsilon/(2n-2)=\epsilon.
 \]
 Hence, we can decide effectively when we should stop making discrete deepest-descent augmentations and should rather find a nearby vertex.
+
 
 
 
@@ -262,9 +269,11 @@ where $\gamma$ is the maximum entry in any feasible solution (or, equivalently, 
 Applying Lemma \ref{Lemma: Sufficient improvement leads to polynomial algorithm} with $\epsilon=1/\delta$ then yields the desired bound on the number of augmentations $2n^2\delta\gamma\,\log(\delta\,\vecc^\T (\vex_0-\vex_{\min})))$ to reach a vertex $\bar\vex$ with $|\vecc^\T(\bar\vex-\vex_{\min})|<1/\delta$. This vertex must be optimal.
 
 
+
 \subsubsection{Proof of part (b) of Theorem \ref{theorem:main, LP case}: Discrete steepest descent.}
 
 The proof here follows exactly the same lines of the proof to Theorem \ref{theorem:main, ILP case}, part (c).
+
 
 \subsection{Proof of Theorem \ref{Theorem: N-fold LPs and IPs are strongly poly-time solvable}.}
 

@@ -283,8 +283,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "manuscriptCharlierClaeys.tex",
-   "tex_sections": 6,
-   "overlaid": 2,
+   "tex_sections": 34,
+   "overlaid": 1,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -299,10 +299,8 @@
     {
      "id": "sec-001-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.629,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.541,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-2-i",
@@ -357,7 +355,7 @@
     {
      "id": "sec-012-acknowledgements",
      "title": "Acknowledgements",
-     "prose_ratio": 0.967,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"

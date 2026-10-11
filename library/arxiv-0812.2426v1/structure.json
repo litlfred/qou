@@ -7,7 +7,7 @@
   "bytes": 288612,
   "pages": 19,
   "text_source": "embedded",
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -793,8 +793,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "brug-vir.tex",
-   "tex_sections": 6,
-   "overlaid": 0,
+   "tex_sections": 32,
+   "overlaid": 1,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -978,7 +978,7 @@
     {
      "id": "sec-033-4-quantum-double-of-hopf-monads",
      "title": "Quantum double of Hopf monads",
-     "prose_ratio": 0.093,
+     "prose_ratio": 0.103,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -999,7 +999,10 @@
     {
      "id": "sec-037-43-the-coend-of-a-category-of-modules-over-a-hop",
      "title": "The coend of a category of modules over a Hopf monad. Let T be a",
-     "result": "no matching \\section"
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.942,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-038-5-reshetikhin-turaev-invariants-from-categorical",

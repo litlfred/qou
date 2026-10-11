@@ -7,10 +7,10 @@ section_number: 6
 pages: 30-31
 source_pdf: 2505.00799v2.pdf
 source_sha256: cc9d2ab4c6c79b50
-text_source: latex
-latex_prose_ratio: 0.966
-latex_coverage_ratio: 1.0
 doc_brief: "QUANTUM MODULAR FORMS AND RESURGENCE — In 2010, Zagier described a new phenomenon which he called quantum mod- ularity."
+text_source: latex
+latex_prose_ratio: 0.992
+latex_coverage_ratio: 0.992
 ---
 []{#sec: questions label="sec: questions"} We conclude with a selection of follow-up questions of interest to the authors.
 

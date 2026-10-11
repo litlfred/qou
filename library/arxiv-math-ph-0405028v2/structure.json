@@ -133,7 +133,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "brieskorn.tex",
    "tex_sections": 9,
-   "overlaid": 1,
+   "overlaid": 2,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -148,17 +148,18 @@
     {
      "id": "sec-000-s-matrix-and-the-reidemeister-torsion",
      "title": "S-matrix and the Reidemeister Torsion",
-     "prose_ratio": 0.925,
-     "coverage_ratio": 0.9,
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-the-ohtsuki-invariant",
      "title": "The Ohtsuki Invariant",
-     "prose_ratio": 0.794,
-     "coverage_ratio": 0.271,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.875,
+     "coverage_ratio": 0.593,
+     "result": "overlaid",
+     "converter": "pandoc"
     }
    ]
   }

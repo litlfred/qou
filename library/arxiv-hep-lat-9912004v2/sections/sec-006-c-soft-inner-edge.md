@@ -8,137 +8,36 @@ pages: 7-8
 source_pdf: 9912004v2.pdf
 source_sha256: 7033719ec7a8a0bc
 doc_brief: "Microscopic Universality and the Chiral Phase Transition in two Flavor QCD F. Farchioni — 9 sections: Hip; B. Lang; INTRODUCTION"
+text_source: latex
+latex_prose_ratio: 0.943
+latex_coverage_ratio: 1.0
 ---
-We now turn to the results for T > Tc. In our results
-for 243 × 12 at β = 5.85 (Fig. 1(c)) a gap in the spectral
-distributions is obvious. However even at β = 5.8 we may
-speculate, that a clear signal of a gap is only prevented
-by the (topological) quasi-zero modes responsible for the
-small bump at small eigenvalues.
-Recall, that chRMT [16] predicts the presence of a gap
-in the spectral density ρ(λ) of the Dirac operator cen-
-tered around λ = 0. Furthermore, the inner edge of this
-gap is predicted to show a singularity, at a point A, in
-the macroscopic spectral density [37]
-ρ(λ, u) = K
- λ2
-A2 −1
-u+1/2
-,
-u = 0, 2, 4, ... ,
-(4.2)
-where K is a known constant.
-The constant u takes
-the value u = 0 in the generic chRMT, i. e. without
-ﬁne-tuning the matrix potential in (2.1) (which would be
-necessary in order to obtain higher values of u). This
-corresponds to a square-root-like eigenvalue density near
-A.
-One concern here is to measure u. With the limited
-amount of data available it is not possible to do this based
-on the spectral density only. Instead we propose to study
-the average distance between the smallest and the sequel
-eigenvalues ⟨qi−1
-2 ⟩≡⟨λi+1 −λ1⟩; the extraction of u is
-carried out by noting the following scaling relation in the
-index i, ordering by size the eigenvalues which follow the
-smallest,
-⟨qi−1
-2 ⟩∝
-
-i −1
-2
-
-1
-u+3/2
-.
-(4.3)
-This proportionality follows by integration in (4.2).
-In Fig. 5 we display the seven average distances, ⟨qi⟩,
-from the ensemble of 146 conﬁgurations on a 243 × 12
-lattice for βg = 5.85. We also exhibit the best ﬁt to (4.3)
-with respect to u, giving u = 0.117(71). Also shown are
-the corresponding curves for u = 0 and u = 2. The value
-u = 0 is clearly favored.
-0
-2
-4
-6
-i
-0
-0.005
-0.01
-0.015
-<qi>
-u=0.117
-u=0
-u=2
-nx=24  nt=12
-m=0.008
-β=5.85
-FIG. 5. The behavior of the average distance from the
-smallest eigenvalue to the i’th eigenvalue for the 243 × 12
-ensemble at β = 5.85.
-Since the two-point correlations behave as expected
-from RMT, we now turn to the one-point distribution.
-The microscopic behavior of the spectral density in the
-vicinity of this singularity is universal in the chRMT
-sense, but depends on the value of u [37]. For u = 0
-the exact analytical prediction for the microscopic spec-
-tral density in the vicinity of the inner edge is [20]
-ρAi(z, 0) = (Ai′(z))2 −z (Ai(z))2 .
-(4.4)
-Here the origin has been moved to the inner spectral end-
-point A by means of the rescaled eigenvalue z, which is
-deﬁned through
-7
-λ = A
-"
-1 + z
-2
-
-2
-πAK
-
-1
-u+ 3
-2
-#
-.
-(4.5)
-The consistency with the prediction (4.3) for u = 0
-and the approximate validity of chRMT correlations in
-the level spacing statistics above Tc suggest that the Airy-
-density (4.4) corresponding to the value u = 0 should ﬁt
-the spectral density. If it does, then we can extract the
-inner-endpoint A of the spectrum in the thermodynamic
-limit, by ﬁtting ρAi(z, 0) with respect to A to the lowest
-part of the spectral density, see Fig. 6.
-0
-0.01
-0.02
-0.03
-λ
-0
-0.001
-0.002
-0.003
-ρ(λ)
-nx=24  nt=12
-m=0.008
-β=5.85
-FIG. 6.
-The
-u
-=
-0
-Airy
-density
-with
-endpoint
-λ = A = 0.0205. Approximately the domain of the ﬁrst three
-eigenvalues is shown.
-This ﬁt does not convincingly conﬁrm Airy density.
-However, the statistical ﬂuctuations at this β-value af-
-fect the one-point distribution substantially and prevent
-a decisive comparison.
+We now turn to the results for $T>T_c$. In our results for $24^3\times 12$ at $\beta=5.85$ (Fig. [\[all-dist\]](#all-dist){reference-type="ref" reference="all-dist"}(c)) a gap in the spectral distributions is obvious. However even at $\beta=5.8$ we may speculate, that a clear signal of a gap is only prevented by the (topological) quasi-zero modes responsible for the small bump at small eigenvalues.
+
+Recall, that chRMT[@JaVe96] predicts the presence of a gap in the spectral density $\rho(\lambda)$ of the Dirac operator centered around $\lambda=0$. Furthermore, the inner edge of this gap is predicted to show a singularity, at a point $A$, in the macroscopic spectral density [@KaFr98] $$\rho(\lambda,u)=K\left(\frac{\lambda^2}{A^2}-1\right)^{u+1/2} \ ,
+\ \ u=0,2,4,...  \  \ ,  
+\label{AiSingularity}$$ where $K$ is a known constant. The constant $u$ takes the value $u=0$ in the generic chRMT, i. e. without fine-tuning the matrix potential in ([\[Z\]](#Z){reference-type="ref" reference="Z"}) (which would be necessary in order to obtain higher values of $u$). This corresponds to a square-root-like eigenvalue density near $A$.
+
+One concern here is to measure $u$. With the limited amount of data available it is not possible to do this based on the spectral density only. Instead we propose to study the average distance between the smallest and the sequel eigenvalues $\langle q_{i-\frac{1}{2}}\rangle
+\equiv\langle\lambda_{i+1}-\lambda_1\rangle$; the extraction of $u$ is carried out by noting the following scaling relation in the index $i$, ordering by size the eigenvalues which follow the smallest, $$\langle q_{i-\frac{1}{2}}\rangle\propto \left(i-\frac{1}{2}\right)^\frac{1}{u+3/2} \ .
+\label{qi}$$ This proportionality follows by integration in ([\[AiSingularity\]](#AiSingularity){reference-type="ref" reference="AiSingularity"}).
+
+In Fig. [1](#AND){reference-type="ref" reference="AND"} we display the seven average distances, $\langle
+q_i\rangle$, from the ensemble of 146 configurations on a $24^3\times12$ lattice for $\beta_g=5.85$. We also exhibit the best fit to ([\[qi\]](#qi){reference-type="ref" reference="qi"}) with respect to $u$, giving $u=0.117(71)$. Also shown are the corresponding curves for $u=0$ and $u=2$. The value $u=0$ is clearly favored.
+
+<figure id="AND">
+
+<figcaption>The behavior of the average distance from the smallest eigenvalue to the <span class="math inline"><em>i</em></span>’th eigenvalue for the <span class="math inline">24<sup>3</sup> × 12</span> ensemble at <span class="math inline"><em>β</em> = 5.85</span>.</figcaption>
+</figure>
+
+Since the two-point correlations behave as expected from RMT, we now turn to the one-point distribution. The microscopic behavior of the spectral density in the vicinity of this singularity is universal in the chRMTsense, but depends on the value of $u$ [@KaFr98]. For $u=0$ the exact analytical prediction for the microscopic spectral density in the vicinity of the inner edge is [@Fo93] $$\rho_{\rm Ai}(z,0)=({\rm Ai}'(z))^2-z\,({\rm Ai}(z))^2 \ .  
+\label{AiDens}$$ Here the origin has been moved to the inner spectral endpoint $A$ by means of the rescaled eigenvalue $z$, which is defined through $$\lambda=A\left[1+\frac{z}{2}\left(\frac{2}{\pi AK}\right)^\frac{1}{u+\frac{3}{2}}\right] \ .$$
+
+The consistency with the prediction ([\[qi\]](#qi){reference-type="ref" reference="qi"}) for $u=0$ and the approximate validity of chRMTcorrelations in the level spacing statistics above $T_c$ suggest that the Airy-density ([\[AiDens\]](#AiDens){reference-type="ref" reference="AiDens"}) corresponding to the value $u=0$ should fit the spectral density. If it does, then we can extract the inner-endpoint $A$ of the spectrum in the thermodynamic limit, by fitting $\rho_{\rm Ai}(z,0)$ with respect to $A$ to the lowest part of the spectral density, see Fig. [2](#AiryFig){reference-type="ref" reference="AiryFig"}.
+
+<figure id="AiryFig">
+
+<figcaption>The <span class="math inline"><em>u</em> = 0</span> Airy density with endpoint <span class="math inline"><em>λ</em> = <em>A</em> = 0.0205</span>. Approximately the domain of the first three eigenvalues is shown.</figcaption>
+</figure>
+
+This fit does not convincingly confirm Airy density. However, the statistical fluctuations at this $\beta$-value affect the *one-point distribution* substantially and prevent a decisive comparison.

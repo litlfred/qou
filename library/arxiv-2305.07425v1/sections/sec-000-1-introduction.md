@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-3
 source_pdf: 2305.07425v1.pdf
 source_sha256: 2f7d2ac5818b6af4
-text_source: latex
-latex_prose_ratio: 0.764
-latex_coverage_ratio: 0.981
 doc_brief: "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS — The set of equivalence classes of cobounded actions of a grou p G on diﬀerent hyperbolic metric spaces carries a natural partial order."
+text_source: latex
+latex_prose_ratio: 0.997
+latex_coverage_ratio: 0.947
 ---
 A fixed group $G$ will admit many different cobounded actions on different hyperbolic metric spaces. Abbott, Balasubramanya, and Osin in [@ABO19] show that the set of equivalence classes of cobounded hyperbolic actions of a group $G$ carries a natural partial order; see Section [\[sec:prelim\]](#sec:prelim){reference-type="ref" reference="sec:prelim"}. The resulting poset is called the *poset of hyperbolic structures* on $G$, denoted $\mathcal{H}(G)$. Roughly speaking, one action is larger than another if the smaller space can be formed by equivariantly collapsing some subspaces of the larger. The motivation is that the larger an action is in this partial order, the more information about the geometry of the group it should provide.
 
@@ -52,10 +52,8 @@ The first and third author give a straightforward criterion to show that a group
 
 Theorem [\[thm:graphandSFmflds\]](#thm:graphandSFmflds){reference-type="ref" reference="thm:graphandSFmflds"} generalizes [@AR19 Theorem 1.1], in which the first and third authors show that flip graph manifold groups, a special class of graph manifold groups, are $\mathcal{H}$--inaccessible.
 
-The class of non-elementary graph manifold groups belongs to a larger class of graphs of groups called *Croke-Kleiner admissible groups* that were introduced by Croke and Kleiner in [@CK02]. Roughly speaking, Croke-Kleiner admissible groups are modeled on the JSJ structure of graph manifolds where the (fundamental groups of the) Seifert fibered pieces are replaced by central extensions $G$ of general hyperbolic groups $H$: $$\begin{equation*}
-\label{centralExtEQ}
-1\to Z(G)=\mathbb Z\to G\to H\to 1.
-\end{equation*}$$ In some sense, Croke-Kleiner admissible groups are the simplest interesting groups constructed algebraically from a finite number of hyperbolic groups. The $\mathcal{H}$--inaccessibility of non-elementary graph manifold groups follows from the following result for Croke-Kleiner admissible groups.
+The class of non-elementary graph manifold groups belongs to a larger class of graphs of groups called *Croke-Kleiner admissible groups* that were introduced by Croke and Kleiner in [@CK02]. Roughly speaking, Croke-Kleiner admissible groups are modeled on the JSJ structure of graph manifolds where the (fundamental groups of the) Seifert fibered pieces are replaced by central extensions $G$ of general hyperbolic groups $H$: $$\label{centralExtEQ}
+1\to Z(G)=\mathbb Z\to G\to H\to 1.$$ In some sense, Croke-Kleiner admissible groups are the simplest interesting groups constructed algebraically from a finite number of hyperbolic groups. The $\mathcal{H}$--inaccessibility of non-elementary graph manifold groups follows from the following result for Croke-Kleiner admissible groups.
 
 ::: thm
 []{#thm1 label="thm1"} Every Croke-Kleiner admissible group has a subgroup of index at most $2$ which is $\mathcal{H}$--inaccessible.
@@ -88,7 +86,3 @@ Many basic questions about posets of hyperbolic structures are still open. Surpr
 ::: ques
 Let $M$ be a graph manifold with underlying graph containing only one vertex. Is $\pi_1(M)$ $\mathcal{H}$--inaccessible?
 :::
-
-## Acknowledgments
-
-Abbott was partially supported by NSF grants DMS-1803368 and DMS-2106906. Nguyen was partially supported by Project ICRTM04_2021.07 of the International Centre for Research and Postgraduate Training in Mathematics, VietNam. Rasmussen was partially supported by NSF grants DMS-1840190 and DMS-2202986.

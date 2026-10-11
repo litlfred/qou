@@ -7,10 +7,10 @@ section_number: 2
 pages: 3-8
 source_pdf: 2507.12454v1.pdf
 source_sha256: 156fd9080847b4e7
-text_source: latex
-latex_prose_ratio: 0.969
-latex_coverage_ratio: 0.955
 doc_brief: "COHOMOLOGY RINGS OF CHARACTER VARIETIES ANTON MELLIT — In this talk I give an introduction and present some recent progress towards understanding the cohomology rings of character varieties of"
+text_source: latex
+latex_prose_ratio: 0.979
+latex_coverage_ratio: 0.973
 ---
 ## Equations
 
@@ -32,11 +32,12 @@ The output is
                 m111, m112, m121, a1, m211, m212, m221, a2, m311, m312, m321, a3, x, y, z, a4 over 
                 Rational Field  
 
-So for each $4$-tuple of matrices satisfying the conditions, the corresponding $x, y, z\in\mathbb C$ as above produce a solution to the so called *Markov equation* with parameters $a_1, a_2, a_3, a_4$: $$\begin{multline}
+So for each $4$-tuple of matrices satisfying the conditions, the corresponding $x, y, z\in\mathbb C$ as above produce a solution to the so called *Markov equation* with parameters $a_1, a_2, a_3, a_4$: $$\begin{gathered}
 \label{eq:markov}
         xyz + x^2 + y^2 + z^2 - (a_1 a_2 + a_3 a_4) x - (a_1 a_3 + a_2 a_4) y - (a_1 a_4 + a_2 a_3) z \\
         + a_1 a_2 a_3 a_4 + a_1^2 + a_2^2 + a_3^2 + a_4^2 - 4=0.
-\end{multline}$$
+    
+\end{gathered}$$
 
 Conversely, suppose $x, y, z\in\mathbb C$ is a solution to the Markov equation. Let us see that for generically chosen values $a_1, a_2, a_3, a_4$ we can always uniquely recover the tuple of matrices, up to conjugation.
 
@@ -58,7 +59,7 @@ Although the ring structure in the Fricke-Klein situation turns out to be trivia
 
 <figure id="fig:triangle">
 
-<figcaption><span id="fig:triangle" data-label="fig:triangle"></span>Markov’s cubic as the complement of a triangle in the projective plane blown up at six points</figcaption>
+<figcaption><span id="fig:triangle" label="fig:triangle"></span>Markov’s cubic as the complement of a triangle in the projective plane blown up at six points</figcaption>
 </figure>
 
 Assuming the parameters $a_1,a_2,a_3,a_4\in \mathbb C\setminus\{-2,2\}$ are generic, the cubic $X$ given by the Markov equation [\[eq:markov\]](#eq:markov){reference-type="eqref" reference="eq:markov"} is nonsingular. Let $\overline{X}\subset \mathbb C\mathbb P^3$ be the solution set of the homogenization of [\[eq:markov\]](#eq:markov){reference-type="eqref" reference="eq:markov"}. Its affine part is $X\subset \overline{X}$, and the complement $\overline{X}\setminus X$ is given in $\mathbb C\mathbb P^2$ as the solution set of the homogeneous equation $xyz=0$, thus it is a union of three lines forming a triangle. Denote this triangle by $\Delta$. We refer to Figure [1](#fig:triangle){reference-type="ref" reference="fig:triangle"}. It is straightforward to check that homogenization of any cubic of the form $$xyz + x^2 + y^2 + z^2 + \text{lower degree terms}$$ does not have any singularities at infinity. So $\overline{X}$ is a smooth cubic surface, and therefore can be obtained as a blowup of $\mathbb C\mathbb P^2$ at $6$ points (for background see [@hartshorne1977algebraic]). The cubic $\overline{X}$, as any other smooth cubic surface contains $27$ projective lines. Three of them form $\Delta$. The intersection graph of the $27$ lines is well-known and one can see that for any triangle one can choose $6$ lines which do not intersect pairwise and do not contain any of the lines of the triangle. Each side of the triangle intersects $2$ of the $6$ lines. Blowing down these $6$ lines we obtain a map $\overline{X}\to \mathbb C\mathbb P^2$. The $3$ lines of $\Delta$ are isomorphically mapped to $3$ lines on $\mathbb C\mathbb P^2$. Choosing coordinates appropriately, one can assume that $f(\Delta)$ is the complement of $\mathbb C^*\times\mathbb C^*\subset \mathbb C\mathbb P^2$. So we have $$U = f^{-1}(\mathbb C^*\times\mathbb C^*) = \mathbb C^*\times\mathbb C^* \subset X,$$ an open subset, and the complement $X\setminus U$ is a disjoint union of $6$ copies of $\mathbb C$: $$X = \mathbb C^*\times\mathbb C^* \sqcup \underbrace{\mathbb C\sqcup \cdots \sqcup \mathbb C}_{\text{$6$ copies}}.$$ The $6$ copies of $\mathbb C$ are divided into $3$ pairs according to which of the three lines of $\Delta$ they intersect.
@@ -82,26 +83,26 @@ These findings can be summarized in the table on Figure [2](#fig:cohomology){ref
 <figure id="fig:cohomology">
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: center;"><span class="math inline"><em>H</em><sup>*</sup></span></th>
 <th style="text-align: center;"><span class="math inline"><em>W</em><sub><em>i</em></sub><em>H</em><sup><em>i</em></sup></span></th>
 <th style="text-align: center;"><span class="math inline"><em>W</em><sub><em>i</em> + 2</sub><em>H</em><sup><em>i</em></sup>/<em>W</em><sub><em>i</em></sub><em>H</em><sup><em>i</em></sup></span></th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: center;"><span class="math inline"><em>H</em><sup>2</sup></span></td>
 <td style="text-align: center;"><span class="math inline">ℂ<sup>4</sup> = ⟨<em>c</em><sub>1</sub>(<em>L</em><sub><em>i</em></sub>) | <em>i</em> = 1, 2, 3, 4⟩</span></td>
 <td style="text-align: center;"><span class="math inline">ℂ = ⟨<em>ω</em> = symplectic form⟩</span></td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;"><span class="math inline"><em>H</em><sup>0</sup></span></td>
 <td style="text-align: center;"><span class="math inline">ℂ = ⟨1⟩</span></td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
-<figcaption><span id="fig:cohomology" data-label="fig:cohomology"></span>Cohomology of the Markov cubic</figcaption>
+<figcaption><span id="fig:cohomology" label="fig:cohomology"></span>Cohomology of the Markov cubic</figcaption>
 </figure>
 
 The $4$ algebraic classes in $H^2(X)$ can be represented by characteristic classes of line bundles. The extra class can be represented by an explicit holomorphic symplectic form as explained below. Using the natural coordinates on $\mathbb C^*\times \mathbb C^*$, the form is written as $$\omega = \frac{dx}x \wedge \frac{dy} y,$$ and one can verify that the form extends to the whole of $X$.
@@ -114,7 +115,5 @@ $$\mathrm{MH}(X; q,t) := q^{\frac12 \dim_\mathbb CX} P(X;q^{-\frac12} t^{-\frac1
 
 We should also compare our calculations with the number of points on our variety over $\mathbb F_q$. Assuming all the lines are defined over the base field, we see that the first computation produces $$(q-1)^2 + 6 q  = q^2 + 4 q + 1.$$ The second computation produces $$q^2 + 7q + 1 - (q+1) - q - (q-1) = q^2 + 4 q + 1.$$ In each case, one can track how the different powers of $q$ contribute to the cohomology so that $q^2$ corresponds to $H^0$ and $4q + 1$ corresponds to $H^2$.
 
-In any case, for a general algebraic variety $X$, if the number of points is a polynomial of $q$, we have $$\begin{equation}
-\label{eq:Fq points and mixed Hodge}
-        |X(\mathbb{F}_q)| = q^{\dim_\mathbb CX} P(X;-1,q^{-\frac12}) = q^{\frac12 \dim_\mathbb CX} \mathrm{MH}(X;q,q^{-1}),
-\end{equation}$$ assuming $\mathrm{MH}$ is indeed a polynomial in $q$, $t$, which means that all the weights are even and the cohomology is concentrated in even degrees.
+In any case, for a general algebraic variety $X$, if the number of points is a polynomial of $q$, we have $$\label{eq:Fq points and mixed Hodge}
+        |X(\mathbb{F}_q)| = q^{\dim_\mathbb CX} P(X;-1,q^{-\frac12}) = q^{\frac12 \dim_\mathbb CX} \mathrm{MH}(X;q,q^{-1}),$$ assuming $\mathrm{MH}$ is indeed a polynomial in $q$, $t$, which means that all the weights are even and the cohomology is concentrated in even degrees.

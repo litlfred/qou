@@ -8,244 +8,64 @@ pages: 37-40
 source_pdf: 1011.6483v3.pdf
 source_sha256: 7a425e51860c37a4
 doc_brief: "DERIVED HIGHER HOCHSCHILD HOMOLOGY — W e study the higher Hochschild chain functor, factorizatio n alge- bras and their relationship with topological chiral homolo gy."
+text_source: latex
+latex_prose_ratio: 0.991
+latex_coverage_ratio: 0.894
 ---
-cally constant factorization algebra on M×Dn−m, pushforward along the natural
-projection π1 : M×Dm−n→ M induces a factorization algebra π1∗(A) on M ,
-which is locally constant. Given a monoidal ( ∞, 1)-categoryC and a manifold X,
-we denote by Faclc
-X (C) the (sub)category of locally constant factorization
-algebra on X taking value in C.
-We recall the following Proposition which is essentially due to Lurie [25] a nd
-Costello [9].
-Proposition 10. The pushforward along p : Rn→ pt induces an equivalence of
-(∞, 1)-categories
-p∗ :Faclc
-Rn (k-Mod ∞)
-≃
-−→En-Alg∞.
-Proof. We sketch the proof. Details will appear elsewhere. Restricting to o pen
-sets homeomorphic to an euclidean disk, we obtain a tautological fun ctor for :
-Faclc
-Rn (k-Mod ∞)→ N (Disklc(Rn))-Alg where N (Disklc(Rn))-Alg stands for the
-full subcategory spanned by the locally constant N (Disk(Rn))-algebras in the sense
-of [25, Deﬁnition 5.2.4.7]. By [25, Theorem 5.2.4.9 and Example 5.2.4.3], the la tter
-category is equivalent to En-Alg∞ and, under this equivalence, for (F ) identiﬁes
-with the global sectionF (Rn)∼=p∗(F ) for any locally constant factorization algebra
-F .
-We deﬁne an inverse to p∗ as follows. Let CVX be the set of open convex
-subsets of Rn, which is a factorizing basis. To an En-algebra E, one associates
-aCVX -factorization algebra E deﬁned by C↦→E(C) := E. As shown in [8], the
-CVX -factorization algebraE has an unique extension to a factorization algebra on
-Rn iﬀ it satisﬁes the ˇCech condition ˇC(U,E)→E (U ) for any factorizing subcover
-U⊂CVX of a convex open U . This follows again from [25, Section 5]. Indeed, by
-Theorem 5.3.4.10 in [25], the En-algebraE gives rise to a factorizable cosheaf E on
-the Ran space Ran( Rn). It is easy to check that the factorizing cover U gives rise
-to a cover of Ran( U ) precisely given by PU. Since every open set in U is convex,
-and
-∫
-CE∼= E for any convex open subset C⊂ U , by [25, Theorem 5.3.4.14], we
-get a canonical equivalence ˇC(PU,E )
-≃
-−→ ˇC(U,E) which makes the diagram
-E(Ran(U ))
-≃
-/d39/d39❖❖❖❖❖❖❖❖❖❖❖❖ ˇC(PU,E )≃/d111/d111 ≃ /d47/d47 ˇC(U,E)
-/d120/d120qqqqqqqqqqq
-E
-commutative (the top left equivalence follows from the fact that E is a cosheaf
-on Ran(U )). Thus, ˇC(U,E)→E (U ) is an equivalence and E aCVX -factorization
-algebra. We denote q(E) :=E the induced factorization algebra over Rn.
-We need to check that q(E) is locally constant. It is suﬃcient to prove that for
-any open D homeomorphic to an euclidean disk, the map E(D)→E (Rn)∼= E is
-an equivalence. This follows from the Kister-Mazur Theorem [25, The orem 5.2.1.5]
-which yields an isotopy between the inclusion֒→Rn and an homeomorphism of
-Rn.
-By construction,p∗◦q(E) = p∗(E)∼=E. Conversely,F being locally constant, for
-any convex open set C, we have a canonical equivalence F (C)∼=F (Rn). It follows
-that theCVX -factorization algebra deﬁned by p∗(F ) is canonically equivalent to the
-38 G. GINOT, T. TRADLER, AND M. ZEINALIAN
-restriction ofF to convex open sets. By uniqueness of the extension of factoriza tion
-algebra deﬁned on a factorization basis, q◦p∗∼= id. □
-Lemma 4. LetM be a manifold and π1 :M× Rd→M the canonical projection.
-The pushforward by π1 induces an equivalence of (∞, 1)-categories
-π1∗ :Faclc
-M×Rd (k-Mod ∞)
-≃
-−→Faclc
-M (Ed-Alg∞)
-In particular, if F∈ Faclc
-M×Rd (k-Mod ∞), then its factorization homology
-HF (F,M× Rd) = p∗(F )(pt)∼=p∗◦π1∗(F )(pt)∼=HF (π1∗(F ),M )
-is an Ed-algebra (here p :X→pt is the unique map).
-Proof. Let π2 : M× Rd→ Rd be the second canonical projection. For any open
-setU inM , the restriction A|U×Rd is a (locally constant) factorization algebra and
-π2∗(A|U×Rd ) is a factorization algebra on Rd. Note that π2∗(A|U×Rd ) is locally
-constant. Indeed, let B be any (open, homeomorphic to a) ball B⊂ Rn and denote
-Ballg(U ) the set of geodesic convex open sets in U (for a choice of a metric on
-U ). Then the family Ballg(U )×B is a factorizing cover of U×B. Since A is
-locally constant, for any inclusion֒→˜B of open sets (homeomorphic to) balls
-and geodesic convex open set O inU , the structure map A(O×B)→A (O× ~B) is
-a quasi-isomorphism. Using that A is a factorization algebra we get
-π2∗(A|U×Rd )(B) ∼= A(U×B)
-∼= ˇC(Ballg(U )×B,A)
-∼=
-⨁
-k>0
-⨁
-α1...αk∈P Ball g (U)
-⨂
-i1∈α1,...ik∈αk
-A((Ui1∩···∩ Uik )×B)[k− 1]
-∼=
-⨁
-k>0
-⨁
-α1...αk∈P Ball g (U)
-⨂
-i1∈α1,...ik∈αk
-A((Ui1∩···∩ Uik )× ˜B)[k− 1]
-∼= ˇC(Ballg(U )× ~B,A) ∼= π2∗(A|U×Rd )( ~B),
-which proves that π2∗(A|U×Rd ) is locally constant (since the above composition is
-the structure map π2∗(A|U×Rd )(B)→π2∗(A|U×Rd )( ~B)). Hence, by Proposition 10,
-π2∗(A|U×Rd ) is equivalent to an Ed-algebraAU and there are canonical equivalences
-AU ∼= π2∗(A|U×Rd )(Rd) ∼= A(U× Rd).
-Since π1∗(A)(U ) = A(U× Rd)∼= AU , it follows that for each open subset U ∈
-Op(M ), π1∗(A)(U ) is an Ed-algebra. Since A is a (pre)factorization algebra on
-M× Rd, the structure maps
-µU1,...,Uk,V :π1∗(A)(U1)⊗···⊗ π1∗(A)(Uk)∼=A(U1× Rd)⊗···⊗A (Uk× Rd)
-−→A (V× Rd)∼=π1∗(A)(V )
-are maps of Ed-algebras. Further, since A is a factorization algebra and locally
-constant, it follows that π1∗(A)(U ) belongs to Faclc
-M (Ed-Alg∞).
-Now we build an inverse of π1∗. Consider B in Faclc
-M (Ed-Alg∞). For any
-U∈Op(M ),B(U ) is an Ed-algebra (compatible with the prefactorization algebra
-structure map) and thus deﬁnes canonically a locally constant fact orization algebra
-on Rd: Op(Rd)∋V ↦→B(U )(V ). A basis of neighborhood of M×Rd is given by the
-productsU×V ∈Op(M )×Op(Rd). In order to extend B to a factorization algebra
-DERIVED HIGHER HOCHSCHILD, TCH, F ACTORIZATION ALGEBRAS 39
-onM×Rd, it is enough (by [8]) to prove that the rule ( U×V )↦→B(U )(V ) deﬁnes an
-Op(M )×Op(Rd)-factorization algebra whereOp(M )×Op(Rd) is the cover ofM×Rd
-obtained by taking the products of open sets. The latter follows fr om the fact
-that the Ed-algebra structure is natural with respects to the inclusions µU1...,Un, ˜U
-of pairwise disjoint open subsets of ˜U ∈ Op(M ). Hence the rule ( U× V ) ↦→
-B(U )(V ) extends to give a factorization algebra E(B) on M× Rd. It is immediate
-by construction that E(B) is locally constant and functorial in B.
-It remains to prove that E :Faclc
-M (Ed-Alg∞)→Faclc
-M×Rd (k-Mod ∞) is a natural
-inverse toπ1∗. Recall from above that the Ed-algebra structure on π1∗(A)(U ) is the
-one of the Ed-algebraA(U× Rd), which corresponds to the factorization algebra
-V ↦→π2∗(A|U×Rd (V ))∼=A(U×V ). It follows that there is a natural equivalence
-E
-(
-π1∗(A)
-)(
-U×V
-) ∼=A(U×V ) in k-Mod ∞. Further there are natural equivalences
-(inEd-Alg∞)π1∗(E(B))(U )∼=E(B)(U× Rd)∼=B(U ). The lemma now follows. □
-LetA be a locally constant factorization algebra on a manifold M and assume
-that there is a codimension 1 submanifold (possibly with corners) N of M with a
-trivialization N×D1 of its neighborhood such that M is decomposable as M =
-X∪N ×IY where X,Y are submanifolds (with corners) of M glued along N×D1.
-According to Lemma 4 above HF (A|N ×D1 ) is an E1-algebra.
-Lemma 5 (Excision for locally constant factorization algebras) . HF (A|X ) and
-HF (A|Y ) are right and left HF (A|N ×D1)-modules and further,
-HF (A) ∼= HF (A|X )
-L
-⊗
-HF (A|N ×D1 )
-HF (A|Y ).
-Proof. SinceA is locally constant, the canonical map A
-(
-X\
-(
-N× [t, 1)
-) )
-→A (X)
-is an equivalence for all t∈ D1. This follows, since for any open set of the form
-U× (a,b ) ⊂ N× D1, where U is homeomorphic to a ball, there is a natural
-equivalenceA(U× (a,b ))∼=A(U× (a′,b ′)) for any a′ < a < b < b′ and that the
-open sets of the form U× (a,b ) form a factorizing cover of N×D1. Similarly, we
-have natural equivalences of E1-algebrasA(N× (a,b ))
-≃
-−→N×D1 (as in the proof
-of Lemma 4).
-Let U be an open set in X and V1,...,V k be (not necessarily disjoint) open
-subsets inN . Then for any sequence of pairwise disjoint open intervals I0,I 1,...,I k
-inD1 (where we assumeI0 = (−1,t 0) for somet0∈D1), the open Vi×Ii (i = 1...k )
-are pairwise disjoint and disjoint from X−\
-(
-N× [t0, 1). To shorten notation, we
-denote Xt0 :=X\
-(
-N× [t0, 1)
-)
-The structure maps of a prefactorization algebras
-yield a map
-A(X)⊗A (N×D1)⊗n
-/d44/d44❳❳❳❳❳❳❳❳❳❳❳❳❳❳❳❳❳❳❳❳❳❳❳❳❳❳❳❳❳
-∼= /d47/d47A(Xt0 )⊗A (N×I1)⊗···⊗A (N×Ik)
-µXt0 ,N ×I1...N ×Ik,X
-/d15/d15
-A(X)
-This map is natural with respect to the prefactorization algebra st ructure ofA and
-AN ×D1, hence induces a structure of right HF (AN ×D1 )∼=A(N×D1)-module on
-HF (A|X )∼=A(X). A similar argument applies to HF (A|Y ).
-40 G. GINOT, T. TRADLER, AND M. ZEINALIAN
-The open sets Xt0,Ys :=Y\
-(
-N×(−1,s ]
-)
-andN×(a,b ) (wheret0,s,a<b ∈D1)
-forms a factorizing coverN ofM and we also denote ~N the induced factorizing cover
-ofN×D1. A ﬁnite sequence of pairwise disjoint open sets in N is just a sequence
-Xto,N × (t1,t 2),...,N × (tm,tm+1),Ytm for−1<t 0 <··· <t m+2 < 1. Note that
-the complexes A
-(
-N× (ti,ti+1)
-)
-are canonically equivalent to π2∗(A)
-(
-(ti,ti+1)
-)
-,
-where π2 : N×D1→ D1 is the projection on the second factor. Since A(Xt0 )∼=
-A(X),A(Ytm+2 )∼=A(Y ), we have
-HF (A) ∼= ˇC(N,A) ∼= A(X)⊗ ˇC( ~N,A|N ×D1)⊗A (Y ).
-Note that the canonical map p : M → pt factors as M
-q
-→ [−1, 1]→ pt where
-q is the map identifying X\ (N×D1) with {−1}, Y \ (N×D1) with {1} and
-projecting N×D1 onto D1 = (−1, 1) by the second projection. Then the factor-
-ization homology HF (A)∼= p∗(A)∼= p∗
-(
-q∗(A)
-)
-identiﬁes with the factorization
-homology of the locally constant factorization algebra q∗(A) on the closed interval
-[−1, 1] and further ˇC
-(
-N,A
-) ∼= ˇC
-(
-I,q ∗(A)
-)
-whereI is the (factorizing) cover of
-[−1, 1] given by the intervals. Thus we are left to the case of a (locally con stant)
-factorization algebra on [−1, 1] which assign the E1-algebraA(N×D1) to any open
-interval (a,b ), and the modules A(X) to [−1,t ) and A(Y ) to ( s, 1] (with respect
-to the modules structures deﬁned in the beginning of the proof). B y [9, 8], its
-factorization homology is the (derived) tensor product A(X)⊗L
-A(N ×D1)A(Y ). In-
-deed, the ˇCech complex ˇC
-(
-I,q ∗(A)
-)
-is equivalent to the two-sided Bar construction
-Bar
-(
-A(X),A(N×D1),A(Y )
-)
-(strictly speaking after replacing the E1-algebra
-and modules by diﬀerential graded associative ones). □
+If $\mathcal{A}$ is a locally constant factorization algebra on $M\times D^{n-m}$, pushforward along the natural projection ${\pi_1}: M\times D^{m-n}\to M$ induces a factorization algebra ${\pi_1}_*(\mathcal{A})$ on $M$, which is locally constant. Given a monoidal $(\infty,1)$-category $\mathcal{C}$ and a manifold $X$, we denote by **$Fac_X^{lc}(\mathcal{C})$ the (sub)category of locally constant factorization algebra** on $X$ taking value in $\mathcal{C}$.
+
+We recall the following Proposition which is essentially due to Lurie [@L-VI] and Costello [@Co].
+
+::: proposition
+[]{#P:Fac=En label="P:Fac=En"} The pushforward along $p: \mathbb R^n\to pt$ induces an equivalence of $(\infty,1)$-categories $$p_*:{\mathop{Fac}}^{lc}_{\mathbb R^n}(k\textit{-}Mod_\infty) \stackrel{\simeq}\longrightarrow E_n\textit{-}Alg_\infty.$$
+:::
+
+::: proof
+*Proof.* We sketch the proof. Details will appear elsewhere. Restricting to open sets homeomorphic to an euclidean disk, we obtain a tautological functor $\mathop{for}: {\mathop{Fac}}^{lc}_{\mathbb R^n}(k\textit{-}Mod_\infty)\to N(\text{Disk}^{lc}(\mathbb R^n))\textit{-}Alg$ where $N(\text{Disk}^{lc}(\mathbb R^n))\textit{-}Alg$ stands for the full subcategory spanned by the locally constant $N(\mathop{Disk}(\mathbb R^n))$-algebras in the sense of [@L-VI Definition 5.2.4.7]. By  [@L-VI Theorem 5.2.4.9 and Example 5.2.4.3], the latter category is equivalent to $E_n\textit{-}Alg_\infty$ and, under this equivalence, $\mathop{for}(\mathcal{F})$ identifies with the global section $\mathcal{F}(\mathbb R^n)\cong p_*(\mathcal{F})$ for any locally constant factorization algebra $\mathcal{F}$.
+
+We define an inverse to $p_*$ as follows. Let $\mathcal{CVX}$ be the set of open convex subsets of $\mathbb R^n$, which is a factorizing basis. To an $E_n$-algebra $E$, one associates a $\mathcal{CVX}$-factorization algebra $\mathcal{E}$ defined by $C\mapsto \mathcal{E}(C):= E$. As shown in [@CG], the $\mathcal{CVX}$-factorization algebra $\mathcal{E}$ has an *unique* extension to a factorization algebra on $\mathbb R^n$ iff it satisfies the Čech condition $\check{C}(\mathcal{U},\mathcal{E})\to \mathcal{E}(U)$ for any factorizing subcover $\mathcal{U}\subset \mathcal{CVX}$ of a convex open $U$. This follows again from [@L-VI Section 5]. Indeed, by Theorem 5.3.4.10 in [@L-VI], the $E_n$-algebra $E$ gives rise to a factorizable cosheaf $\underline{E}$ on the Ran space $\text{Ran}(\mathbb R^n)$. It is easy to check that the factorizing cover $\mathcal{U}$ gives rise to a cover of $\text{Ran}(U)$ precisely given by $P\mathcal{U}$. Since every open set in $\mathcal{U}$ is convex, and $\int_C E \cong E$ for any convex open subset $C\subset U$, by [@L-VI Theorem 5.3.4.14], we get a canonical equivalence $\check{C}(P\mathcal{U},\underline{E}) \stackrel{\simeq}\longrightarrow \check{C}(\mathcal{U},\mathcal{E})$ which makes the diagram $$\xymatrix{  \underline{E}(\text{Ran}(U)) \ar[rd]_{\simeq}&  \check{C}(P\mathcal{U},\underline{E}) \ar[l]_{\simeq} \ar[r]^{\simeq} & \check{C}(\mathcal{U},\mathcal{E}) \ar[ld]\\ & E & }$$ commutative (the top left equivalence follows from the fact that $\underline{E}$ is a cosheaf on $\text{Ran}(U)$). Thus, $\check{C}(\mathcal{U},\mathcal{E})\to \mathcal{E}(U)$ is an equivalence and $\mathcal{E}$ a $\mathcal{CVX}$-factorization algebra. We denote $q(E):=\mathcal{E}$ the induced factorization algebra over $\mathbb R^n$.
+
+We need to check that $q(E)$ is locally constant. It is sufficient to prove that for any open $D$ homeomorphic to an euclidean disk, the map $\mathcal{E}(D) \to \mathcal{E}(\mathbb R^n)\cong E$ is an equivalence. This follows from the Kister-Mazur Theorem [@L-VI Theorem 5.2.1.5] which yields an isotopy between the inclusion $D\hookrightarrow \mathbb R^n$ and an homeomorphism of $\mathbb R^n$.
+
+By construction, $p_*\circ q(E) = p_*(\mathcal{E}) \cong E$. Conversely, $\mathcal{F}$ being locally constant, for any convex open set $C$, we have a canonical equivalence $\mathcal{F}(C) \cong \mathcal{F}(\mathbb R^n)$. It follows that the $\mathcal{CVX}$-factorization algebra defined by $p_*(\mathcal{F})$ is canonically equivalent to the restriction of $\mathcal{F}$ to convex open sets. By uniqueness of the extension of factorization algebra defined on a factorization basis, $q\circ p_* \cong \text{id}$. ◻
+:::
+
+::: lemma
+[]{#L:EnFact label="L:EnFact"} Let $M$ be a manifold and $\pi_1: M\times \mathbb R^d \to M$ the canonical projection. The pushforward by $\pi_1$ induces an equivalence of $(\infty,1)$-categories $${\pi_1}_*: {\mathop{Fac}}^{lc}_{M\times \mathbb R^d}(k\textit{-}Mod_\infty) \stackrel{\simeq}\longrightarrow {\mathop{Fac}}^{lc}_M({E_d}\textit{-}Alg_\infty)$$
+:::
+
+In particular, if $\mathcal{F}\in \mathop{Fac}_{M\times \mathbb R^d}^{lc}(k\textit{-}Mod_\infty)$, then its factorization homology $$HF(\mathcal{F},M\times \mathbb R^d)=p_*(\mathcal{F})(pt)\cong p_* \circ {\pi_1}_*(\mathcal{F})(pt)\cong HF({\pi_1}_*(\mathcal{F}),M)$$ is an $E_d$-algebra (here $p:X\to pt$ is the unique map).
+
+::: proof
+*Proof.* Let $\pi_2: M\times \mathbb R^d \to \mathbb R^d$ be the second canonical projection. For any open set $U$ in $M$, the restriction $\mathcal{A}_{|U\times \mathbb R^d}$ is a (locally constant) factorization algebra and ${\pi_2}_*(\mathcal{A}_{|U\times \mathbb R^d})$ is a factorization algebra on $\mathbb R^d$. Note that ${\pi_2}_*(\mathcal{A}_{|U\times \mathbb R^d})$ is locally constant. Indeed, let $B$ be any (open, homeomorphic to a) ball $B\subset \mathbb R^n$ and denote $\mathcal{B}\mathit{all}^g(U)$ the set of geodesic convex open sets in $U$ (for a choice of a metric on $U$). Then the family $\mathcal{B}\mathit{all}^g(U)\times B$ is a factorizing cover of $U\times B$. Since $\mathcal{A}$ is locally constant, for any inclusion $B\hookrightarrow \tilde{B}$ of open sets (homeomorphic to) balls and geodesic convex open set $O$ in $U$, the structure map $\mathcal{A}(O\times B) \to \mathcal{A}(O\times \widetilde{B})$ is a quasi-isomorphism. Using that $\mathcal{A}$ is a factorization algebra we get $$\begin{aligned}
+ {\pi_2}_*(\mathcal{A}_{|U\times \mathbb R^d})(B)&\cong& \mathcal{A}(U\times B) \\&\cong & \check{C}(\mathcal{B}\mathit{all}^g(U)\times B,\mathcal{A})\\
+&\cong &\bigoplus_{k>0}\bigoplus_{\alpha_1\dots \alpha_k \in P\mathcal{B}\mathit{all}^g(U)}  \bigotimes_{i_1\in \alpha_1,\dots i_k\in \alpha_k}\mathcal{A}((U_{i_1}\cap \cdots \cap U_{i_k})\times B)[k-1]\\
+&\cong &\bigoplus_{k>0}\bigoplus_{\alpha_1\dots \alpha_k \in P\mathcal{B}\mathit{all}^g(U)}  \bigotimes_{i_1\in \alpha_1,\dots i_k\in \alpha_k}\mathcal{A}((U_{i_1}\cap \cdots \cap U_{i_k})\times \tilde{B})[k-1]\\
+&\cong & \check{C}(\mathcal{B}\mathit{all}^g(U)\times \widetilde{B},\mathcal{A}) \; \cong\; {\pi_2}_*(\mathcal{A}_{|U\times \mathbb R^d})(\widetilde{B}),
+\end{aligned}$$ which proves that ${\pi_2}_*(\mathcal{A}_{|U\times \mathbb R^d})$ is locally constant (since the above composition is the structure map ${\pi_2}_*(\mathcal{A}_{|U\times \mathbb R^d})(B)\to {\pi_2}_*(\mathcal{A}_{|U\times \mathbb R^d})(\widetilde{B})$). Hence, by Proposition [\[P:Fac=En\]](#P:Fac=En){reference-type="ref" reference="P:Fac=En"}, ${\pi_2}_*(\mathcal{A}_{|U\times \mathbb R^d})$ is equivalent to an $E_d$-algebra $A_U$ and there are canonical equivalences $$A_U \; \cong \; {\pi_2}_*(\mathcal{A}_{|U\times \mathbb R^d})(\mathbb R^d)\; \cong \; \mathcal{A}(U\times \mathbb R^d).$$ Since ${\pi_1}_*(\mathcal{A})(U)= \mathcal{A}(U\times \mathbb R^d)\cong A_U$, it follows that for each open subset $U\in Op(M)$, ${\pi_1}_*(\mathcal{A})(U)$ is an $E_d$-algebra. Since $\mathcal{A}$ is a (pre)factorization algebra on $M\times \mathbb R^d$, the structure maps $$\begin{gathered}
+\mu_{U_1,\dots, U_k, V}:{\pi_1}_*(\mathcal{A})(U_1) \otimes \cdots \otimes {\pi_1}_*(\mathcal{A})(U_k) \cong \mathcal{A}(U_1\times \mathbb R^d)\otimes \cdots \otimes \mathcal{A}(U_k\times \mathbb R^d) \\
+\longrightarrow \mathcal{A}(V\times \mathbb R^d)\cong {\pi_1}_*(\mathcal{A})(V)
+\end{gathered}$$ are maps of $E_d$-algebras. Further, since $\mathcal{A}$ is a factorization algebra and locally constant, it follows that ${\pi_1}_*(\mathcal{A})(U)$ belongs to $\mathop{Fac}^{lc}_M({E_d}\textit{-}Alg_\infty)$.
+
+Now we build an inverse of ${\pi_1}_*$. Consider $\mathcal{B}$ in $\mathop{Fac}^{lc}_M({E_d}\textit{-}Alg_\infty)$. For any $U\in Op(M)$, $\mathcal{B}(U)$ is an $E_d$-algebra (compatible with the prefactorization algebra structure map) and thus defines canonically a locally constant factorization algebra on $\mathbb R^d$: $Op(\mathbb R^d) \ni V \mapsto \mathcal{B}(U)(V)$. A basis of neighborhood of $M\times \mathbb R^d$ is given by the products $U\times V \in Op(M)\times Op(\mathbb R^d)$. In order to extend $\mathcal{B}$ to a factorization algebra on $M\times \mathbb R^d$, it is enough (by [@CG]) to prove that the rule $(U\times V)\mapsto \mathcal{B}(U)(V)$ defines an $Op(M)\times Op(\mathbb R^d)$-factorization algebra where $Op(M)\times Op(\mathbb R^d)$ is the cover of $M\times \mathbb R^d$ obtained by taking the products of open sets. The latter follows from the fact that the $E_d$-algebra structure is natural with respects to the inclusions $\mu_{U_1\dots, U_n, \tilde{U}}$ of pairwise disjoint open subsets of $\tilde{U}\in Op(M)$. Hence the rule $(U\times V)\mapsto \mathcal{B}(U)(V)$ extends to give a factorization algebra $E(\mathcal{B})$ on $M\times \mathbb R^d$. It is immediate by construction that $E(\mathcal{B})$ is locally constant and functorial in $\mathcal{B}$.
+
+It remains to prove that $E:\mathop{Fac}^{lc}_M({E_d}\textit{-}Alg_\infty) \to \mathop{Fac}^{lc}_{M\times \mathbb R^d}(k\textit{-}Mod_\infty)$ is a natural inverse to ${\pi_1}_*$. Recall from above that the $E_d$-algebra structure on ${\pi_1}_*(\mathcal{A})(U)$ is the one of the $E_d$-algebra $\mathcal{A}(U\times \mathbb R^d)$, which corresponds to the factorization algebra $V\mapsto {\pi_2}_*(\mathcal{A}_{|U\times \mathbb R^d}(V)) \cong \mathcal{A}(U\times V)$. It follows that there is a natural equivalence $E\big({\pi_1}_*(\mathcal{A})\big) \big(U\times V\big)\cong \mathcal{A}(U\times V)$ in $k\textit{-}Mod_\infty$. Further there are natural equivalences (in ${E_d}\textit{-}Alg_\infty$) ${\pi_1}_*(E(\mathcal{B}))(U)\cong E(\mathcal{B})(U\times \mathbb R^d)\cong \mathcal{B}(U)$. The lemma now follows. ◻
+:::
+
+Let $\mathcal{A}$ be a locally constant factorization algebra on a manifold $M$ and assume that there is a codimension $1$ submanifold (possibly with corners) $N$ of $M$ with a trivialization $N\times D^1$ of its neighborhood such that $M$ is decomposable as $M=X\cup_{N\times I}Y$ where $X,Y$ are submanifolds (with corners) of $M$ glued along $N \times D^1$. According to Lemma [\[L:EnFact\]](#L:EnFact){reference-type="ref" reference="L:EnFact"} above $HF(\mathcal{A}_{|N\times D^1})$ is an $E_1$-algebra.
+
+::: lemma
+[]{#L:Enmodule label="L:Enmodule"} $HF(\mathcal{A}_{|X})$ and $HF(\mathcal{A}_{|Y})$ are right and left $HF(\mathcal{A}_{|N\times D^1})$-modules and further, $$HF(\mathcal{A}) \; \cong \; HF(\mathcal{A}_{|X}) \mathop{\otimes}_{HF(\mathcal{A}_{|N\times D^1})}^{\mathbb{L}} HF(\mathcal{A}_{|Y}).$$
+:::
+
+::: proof
+*Proof.* Since $\mathcal{A}$ is locally constant, the canonical map $\mathcal{A}\Big(X\setminus \big(N\times [t, 1)\big)\Big) \to \mathcal{A}(X)$ is an equivalence for all $t\in D^1$. This follows, since for any open set of the form $U\times (a,b) \subset N\times D^1$, where $U$ is homeomorphic to a ball, there is a natural equivalence $\mathcal{A}(U\times (a,b)) \cong \mathcal{A}(U\times (a',b'))$ for any $a'<a<b<b'$ and that the open sets of the form $U\times (a,b)$ form a factorizing cover of $N\times D^1$. Similarly, we have natural equivalences of $E_1$-algebras $\mathcal{A}(N\times (a,b))\stackrel{\simeq}\longrightarrow N\times D^1$ (as in the proof of Lemma [\[L:EnFact\]](#L:EnFact){reference-type="ref" reference="L:EnFact"}).
+
+Let $U$ be an open set in $X$ and $V_1,\dots, V_k$ be (not necessarily disjoint) open subsets in $N$. Then for any sequence of pairwise disjoint open intervals $I_0,I_1,\dots, I_k$ in $D^1$ (where we assume $I_0=(-1,t_0)$ for some $t_0\in D^1$), the open $V_i \times I_i$ ($i=1\dots k$) are pairwise disjoint and disjoint from $X-\setminus \big(N\times [t_0, 1)$. To shorten notation, we denote $X_{t_0}:=X\setminus \big(N\times [t_0, 1)\big)$ The structure maps of a prefactorization algebras yield a map $$\begin{aligned}
+\xymatrix{\mathcal{A}(X) \otimes \mathcal{A}(N\times D^1)^{\otimes n} \ar[rrd] \ar[rr]^{\hspace{-15pt}\cong} && \mathcal{A}(X_{t_0}) \otimes \mathcal{A}(N\times I_1) \otimes \cdots \otimes \mathcal{A}(N\times I_k) \ar[d]^{\mu_{X_{t_0}, N\times I_1\dots N\times I_k, X}}\\ && \mathcal{A}(X)}
+\end{aligned}$$ This map is natural with respect to the prefactorization algebra structure of $\mathcal{A}$ and $\mathcal{A}_{N\times D^1}$, hence induces a structure of right $HF(\mathcal{A}_{N\times D^1})\cong \mathcal{A} ({N\times D^1})$-module on $HF(\mathcal{A}_{|X})\cong \mathcal{A}(X)$. A similar argument applies to $HF(\mathcal{A}_{|Y})$.
+
+The open sets $X_{t_0}$, $Y_{s}:=Y\setminus \big(N\times (-1,s]\big)$ and $N\times (a,b)$ (where $t_0, s, a<b \in D^1$) forms a factorizing cover $\mathcal{N}$ of $M$ and we also denote $\widetilde{\mathcal{N}}$ the induced factorizing cover of $N\times D^1$. A finite sequence of pairwise disjoint open sets in $\mathcal{N}$ is just a sequence $X_{to},  N\times (t_1,t_2),\dots, N\times (t_m, t_{m+1}), Y_{t_m}$ for $-1<t_0<\cdots<t_{m+2}<1$. Note that the complexes $\mathcal{A}\Big(N\times (t_i, t_{i+1})\Big)$ are canonically equivalent to ${\pi_2}_\ast(\mathcal{A})\Big((t_i,t_{i+1})\Big)$, where $\pi_2: N\times D^1 \to D^1$ is the projection on the second factor. Since $\mathcal{A}(X_{t_0})\cong \mathcal{A}(X)$, $\mathcal{A}(Y_{t_{m+2}})\cong \mathcal{A}(Y)$, we have $$HF(\mathcal{A}) \;\cong \; \check{C}(\mathcal{N},\mathcal{A}) \; \cong \; \mathcal{A}(X) \otimes \check{C}(\widetilde{\mathcal{N}},\mathcal{A}_{|N\times D^1})\otimes \mathcal{A}(Y).$$ Note that the canonical map $p:M\to pt$ factors as $M\stackrel{q}\to [-1,1] \to pt$ where $q$ is the map identifying $X\setminus (N\times D^1)$ with $\{-1\}$, $Y\setminus (N\times D^1)$ with $\{1\}$ and projecting $N\times D^1$ onto $D^1=(-1,1)$ by the second projection. Then the factorization homology $HF(\mathcal{A})\cong p_\ast(\mathcal{A}) \cong p_\ast\big(q_\ast(\mathcal{A}) \big)$ identifies with the factorization homology of the locally constant factorization algebra $q_\ast(\mathcal{A})$ on the closed interval $[-1,1]$ and further $\check{C}\big(\mathcal{N},\mathcal{A}\big)\cong \check{C}\big(\mathcal{I},q_\ast(\mathcal{A})\big)$ where $\mathcal{I}$ is the (factorizing) cover of $[-1,1]$ given by the intervals. Thus we are left to the case of a (locally constant) factorization algebra on $[-1,1]$ which assign the $E_1$-algebra $\mathcal{A}(N\times D^1)$ to any open interval $(a,b)$, and the modules $\mathcal{A}(X)$ to $[-1,t)$ and $\mathcal{A}(Y)$ to $(s,1]$ (with respect to the modules structures defined in the beginning of the proof). By [@Co; @CG], its factorization homology is the (derived) tensor product $\mathcal{A}(X) \otimes^{\mathbb{L}}_{\mathcal{A}(N\times D^1)}\mathcal{A}(Y)$. Indeed, the Čech complex $\check{C}\big(\mathcal{I},q_\ast(\mathcal{A})\big)$ is equivalent to the
+
+two-sided Bar construction $\mathop{Bar}\Big(\mathcal{A}(X), \mathcal{A}(N\times D^1), \mathcal{A}(Y) \Big)$ (strictly speaking after replacing the $E_1$-algebra and modules by differential graded associative ones). ◻
+:::

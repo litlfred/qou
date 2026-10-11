@@ -7,10 +7,10 @@ section_number: 9
 pages: 36-37
 source_pdf: 2108.03616v2.pdf
 source_sha256: 63696ad045602440
-text_source: latex
-latex_prose_ratio: 0.967
-latex_coverage_ratio: 0.961
 doc_brief: "Circuit imbalance measures and linear programming ∗ — We study properties and applications of various circuit imbalance mea sures associated with linear spaces."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:graver}
 We now briefly discuss implications of circuit imbalances to the integer program (IP) of the form

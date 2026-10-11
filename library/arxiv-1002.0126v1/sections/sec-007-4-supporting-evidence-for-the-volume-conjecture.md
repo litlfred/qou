@@ -8,9 +8,14 @@ pages: 22-22
 source_pdf: 1002.0126v1.pdf
 source_sha256: ea218a0586a13490
 doc_brief: "An introduction to the volume conjecture — This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts."
+text_source: latex
+latex_prose_ratio: 0.897
+latex_coverage_ratio: 1.0
 ---
-The Volume Conjecture is proved only for several knots and links bu t I think it
-is true possibly with some modiﬁcation; for example we may need to rep lace the
-limit with the limit superior (see [38, Conjecture 2]). In this section I will explain
-why I think it is true.
-Remark 4.1 (Caution!) . Descriptions in this section are not rigorous.
+[]{#sec:VC_proof label="sec:VC_proof"}
+
+The Volume Conjecture is proved only for several knots and links but I think it is true possibly with some modification; for example we may need to replace the limit with the limit superior (see [@van_der_Veen:ACTMV2009 Conjecture 2]). In this section I will explain why I think it is true.
+
+::: remark
+Descriptions in this section are *not rigorous*.
+:::

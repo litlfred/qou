@@ -7,14 +7,15 @@ section_number: 12.5
 pages: 394-404
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.98
-latex_coverage_ratio: 0.624
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 0.775
+latex_coverage_ratio: 1.0
 ---
 There are still three non-isotropic geometries to analyse. These geometries are not products, but they have a reasonable bundle structure, so that many of the arguments of the previous section can be extended with not much effort.
 
 We start with the geometry $\Nil$, which is a $\matR$-bundle over $\matR^2$. This geometry is fully carried by a Lie group called the \emph{Heisenberg group}.\index{group!Heisenberg group}\index{$\Nil$\ geometry}
+
 
 \subsection{The Heisenberg group} 
 The \emph{Heisenberg group} consists of all matrices
@@ -29,6 +30,7 @@ $$(x,y,z) \cdot (x',y',z') = (x+x', y+y', z+z'+xy').$$
 The commutator of two elements is
 $$\big[(x,y,z), (x',y',z')\big] = (0,0,xy'-x'y).$$
 \end{ex}
+
 
 \subsection{The geometry of Nil}
 Every left-invariant Riemannian structure on a Lie group $G$ is constructed by fixing a scalar product at the tangent space $T_e G$ of $e\in G$ and then extending it by left-multiplication. Here $e=(0,0,0)$ and we give $T_e\Nil = \matR^3$ the Euclidean scalar product. This defines a left-invariant Riemannian structure on $\Nil$.
@@ -72,6 +74,7 @@ $$R_{ij} = \frac 12 \cdot \begin{pmatrix}
 \end{pmatrix}.
 $$
 When $x=0$ the Ricci tensor is a diagonal matrix with entries $-\frac 12, -\frac 12, \frac 12$. For a unit vector $v\in T_p\Nil$, recall that $R_{ij}v^iv^j$ equals twice the average value of the sectional curvatures of the planes containing $v$: this average value ranges here from $-\frac 14$ to $\frac 14$ and is maximal when $v=(0,0,\pm 1)$. This holds when $x=0$ and hence at all points $p\in \Nil$ by left-multiplication.
+
 
 \subsection{The isometry group of Nil}
 The group Nil acts on itself isometrically by left-multiplication. Left-multiplication by $(a,b,c)$ preserves the bundle $\Nil \to \matR^2$ and induces on $\matR^2$ a translation by the vector $(a,b)$. 
@@ -163,6 +166,7 @@ It has a nilpotent subgroup of index at most two, because
 the subgroup $\Iso_0^+(\Nil)< \Iso^+(\Nil)$ is nilpotent and has index two.
 \end{proof}
 
+
 \subsection{Nil geometry}
 We now classify the manifolds modelled on $\Nil$. 
 
@@ -231,4 +235,182 @@ $$\pm\sum \frac{q_i}{p_i} (p_1\cdots p_k)= \pm e \cdot p_1\cdots p_k \neq 0.$$
 Therefore the linear system has a unique solution $(t_1,\ldots, t_k, u)$. The lift $l'$ is necessarily non-trivial, otherwise we would get a lift $\pi_1(S) \to \Iso^+(\Nil)$ that is excluded by Proposition \ref{Nil:no:lift:prop}. Therefore the lift is injective.
 
 If $S$ is non-orientable the proof is similar and left as an exercise.
+\end{proof}
+
+
+\section{$\widetilde{\SL_2}$ geometry}
+The $\widetilde{\SL_2}$ geometry is similar to $\Nil$, but it is now a $\matR$-bundle over $\matH^2$. The geometry is again fully carried by the Lie group $\widetilde{\SL_2}$, which is the universal cover of both $\SL_2(\matR)$ and $\PSLR$. It is convenient to identify $\PSLR$ with the unit tangent bundle of $\matH^2$.\index{$\widetilde{\SL_2}$ geometry}
+
+
+\subsection{The unit tangent bundle}
+The tangent bundle $TM$ of a Riemannian $n$-manifold $M$ has a natural Riemannian structure, which we briefly introduce.
+
+The tangent space at any point $x\in TM$ splits into a \emph{vertical} subspace $V_x  = \ker dp_x$ where $p\colon TM \to M$ is the projection, and a \emph{horizontal} subspace $H_x $ determined by the metric tensor on $M$ as follows: use the parallel transport to move the tangent vector $x$ along all geodesics exiting from $p(x)$; the result is a small $n$-surface in $TM$ containing $x$ and we set $H_x$ to be its tangent space at $x$. 
+
+To define a metric on $TM$ we impose that $V_x$ and $H_x$ be orthogonal and we give to each space the metric of $T_xM$, via the natural identification $V_x = T_xM$ and via the isomorphism $dp_x\colon H_x \to T_xM$. 
+
+The \emph{unit tangent bundle} $UM\subset TM$ consists of all unitary tangent vectors and inherits a Riemannian structure. Every isometry $f\colon M \to M$ induces an isometry $df\colon UM \to UM$.
+
+
+
+\subsection{The space $U\matH^2$}
+We now focus on the case $M=\matH^2$ we are interested in. Parallel transport was defined explicitly in Section \ref{parallel:subsection}. 
+We represent $\matH^2$ using the upper half-plane model $H^2 = \{\Im z > 0\}$, so that $TH^2 = H^2 \times \matC$ and $UH^2 = H^2 \times S^1$ has coordinates $(z,\theta)$. The tangent space $T_{(z,\theta)}UH^2$ is naturally identified with $\matC\times \matR = \matR^3$.
+
+\begin{lemma} \label{UH2:tensor:lemma}
+The metric tensor of $UH^2$ at $(z,\theta)$ is
+$$
+\begin{pmatrix}
+2y^{-2} & 0 & y^{-1} \\
+0 & y^{-2} & 0 \\
+y^{-1} & 0 & 1 
+\end{pmatrix}
+$$
+where $z=x+iy$.
+\end{lemma}
+\begin{proof}
+We first consider the disc model $D^2$ of $\matH^2$ with $TD^2 = D^2 \times \matC$ and $T_{(z,v)} TD^2 = \matC \times \matC$.  
+We focus at a point $(0,v)$ and determine the decomposition 
+$$T_{(0,v)} = H_{(0,v)} \oplus V_{(0,v)}.$$ 
+We have $V_{(0,v)} = 0 \times \matC$ and we now determine $H_{(0,v)}$. Every geodesic through $0$ is a Euclidean line $l$ and the parallel transport of $v\in T_0D^2$ along $l$ forms a constant angle with $l$: the parallel transport of $v$ at $z\in l$ is just the rescaled vector $(1-|z|^2)v$. Parallel transports of $v$ along lines passing through $0$ form a surface, which is the graph of the function $f(z) = (1-|z|^2)v$, whose tangent plane at $0$ is $H_{(0,v)} = \matC \times 0$ since $\frac{\partial f}{\partial x} = \frac{\partial f}{\partial y} = 0$ at $0$.
+
+We have discovered that the horizontal and vertical planes at $(0,v)$ are just the coordinate ones of $T_{(0,v)} = \matC \times \matC$. By definition these are orthogonal and inherit a metric tensor from that of $T_0D^2$, which is $4$ times the Euclidean one. Therefore the metric tensor at $T_{(0,v)} = \matC^2$ is $4$ times the Euclidean one. 
+
+We now turn to the unitary sub-bundle $UD^2 = D^2 \times S^1$. We use the natural identifications $T_{(0,\theta)} UD^2 = \matC \times \matR = \matR^3$ and we deduce that the vectors $(1,0,0)$, $(0,1,0)$, $(0,0,1) \in T_{(0,\theta)}$ are orthogonal and have norm $2,2,1$ respectively. 
+
+The M\"obius transformation
+$$f(z) = \frac{z - i}{i z - 1}$$
+is an isometry between the two models $D^2$ and $H^2$ that sends $0$ to $i$. 
+It is holomorphic and its complex derivative is
+$$f'(z) = \frac{-2}{(iz-1)^2}.$$
+The isometry $f\colon D^2\to H^2$ induces an isometry $f_*\colon UD^2 \to UH^2$, that is $f_*\colon D^2\times S^1 \to H^2 \times S^1$, which is as follows:
+\begin{align*}
+f_*(z,\theta) & = \left(\frac{z-i}{iz-1}, \theta + {\rm arg} (f'(z))\right) \\
+& = \left(\frac{z-i}{iz-1}, \theta +\pi - 2 {\rm arg} (iz-1)\right)  \\
+& = \left(\frac{z-i}{iz-1}, \theta +\pi - 2 \Im \log (iz-1)\right).  
+\end{align*}
+In particular $f_*(0,\theta) = (i, \theta + \pi)$.
+Recall that the Jacobians of a holomorphic $g$ and of $\log g$ are
+$$
+Jg = \begin{pmatrix} \Re g' & -\Im g' \\ \Im g' & \Re g' \end{pmatrix},
+\quad
+J(\log g) = \begin{pmatrix} \Re \frac{g'}g & -\Im \frac{g'}g \\ \Im \frac{g'}g & \Re \frac{g'}g \end{pmatrix}.
+$$
+The differential of $f_*$ at the point $(z,\theta)$ is hence
+$$
+(df_*)_{(z,\theta)} =
+\begin{pmatrix}
+\Re \frac{-2}{(iz-1)^2} & - \Im \frac{-2}{(iz-1)^2} & 0 \\
+\Im \frac{-2}{(iz-1)^2} & \Re \frac{-2}{(iz-1)^2} & 0 \\
+-2 \Im \frac{1}{z+i} & - 2 \Re \frac{1}{z+i} & 1 
+\end{pmatrix}.
+$$
+In particular at $z=0$ we get
+$$
+(df_*)_{(0,\theta)} =
+\begin{pmatrix}
+-2 & 0 & 0 \\ 
+0 & -2 & 0 \\
+2 & 0 & 1 
+\end{pmatrix}.
+$$
+Since this is an isometry, the three image vectors $(-2,0,2)$, $(0,-2,0)$, and $(0,0,1)$ are orthogonal with norm $2,2,1$, hence $(1,0,-1)$, $(0,1,0)$, and $(0,0,1)$ form an orthonormal basis at $T_{(i,\theta+\pi)}UH^2$ and the metric tensor there is
+$$\begin{pmatrix}
+2 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 1
+\end{pmatrix}.
+$$
+The tensor is independent of $\theta$. To find its value at $(z,\theta)$ for a generic $z\in H^2$ it suffices to transport it via an isometry that sends $i$ to $z$. Every such isometry is a composition of a horizontal translation (which does not change the tensor) and a dilation $g(z) = \lambda z$ with $\lambda >0$. We have $g'(z) = \lambda$ and $g_*(z,\theta) = (\lambda z, \theta)$, therefore $dg_*$ sends the above orthonormal basis at $T_{(i,\theta)}$ to the basis $(\lambda, 0, -1)$, $(0,\lambda,0)$, $(0,0,1)$. The metric tensor at $(\lambda i, \theta)$ is hence
+$$\begin{pmatrix}
+2\lambda^{-2} & 0 & \lambda^{-1} \\
+0 & \lambda^{-2} & 0 \\
+\lambda^{-1} & 0 & 1
+\end{pmatrix}.
+$$
+The proof is complete.
+\end{proof}
+At a point $(x,y,\theta) \in UH^2$, an orthonormal basis is
+\begin{equation} \label{UH2:orthonormal:eqn}
+(y,0,-1), \quad (0,y,0), \quad (0,0,1).
+\end{equation}
+The planes orthogonal to $(0,0,1)$ form a contact structure similar to the one drawn in Figure \ref{contact:fig}. 
+
+We remark that the metric tensor at $(x,y,\theta)$ has determinant $y^{-4}$, like in the product metric $H^2 \times S^1$: therefore the volume form in $UH^2$ is the same as in the product metric (although the metric tensor is not).
+
+The non-zero Christoffel symbols at $(x,y,\theta)$ are:
+$$\Gamma^1_{12} = \Gamma^1_{21} = -\frac 3{2y}, \quad 
+\Gamma^1_{23} = \Gamma^1_{32} = -\frac 12,$$
+$$\Gamma^2_{11} = \frac 2y, \quad
+\Gamma^2_{13} = \Gamma^2_{31} = \frac 12, \quad \Gamma^2_{22} = -\frac 1y,$$
+$$\Gamma^3_{12} = \Gamma^3_{21} = \frac 1{y^2}, \quad
+\Gamma^3_{23} = \Gamma^3_{32} = \frac 1{2y}.$$
+The Ricci tensor is
+$$
+R_{ij} = \frac 12 \cdot
+\begin{pmatrix}
+-2 y^{-2} & 0 & y^{-1} \\
+0 & - 3y^{-2} & 0 \\
+y^{-1} & 0 & 1
+\end{pmatrix}.
+$$
+When $y=1$ we can represent the Ricci tensor in the orthonormal basis (\ref{UH2:orthonormal:eqn}) and get a diagonal matrix with values $-\frac 32$, $-\frac 32$, $\frac 12$. For a vector $v\in T_{(z,\theta)} U\matH^2$, recall that $R_{ij}v_iv_j$ is twice the average value of the sectional curvatures of the planes containing $v$: this average value ranges from $-\frac 34$ to $\frac 14$ and is maximal when $v=(0,0,\pm 1)$. This holds when $y=1$ and hence for any $z\in U\matH^2$ by acting via isometries of $\matH^2$. 
+
+
+\subsection{$\widetilde{\SL_2}$ geometry}
+Let $\widetilde {\SL_2}$ be the universal cover of $\SL_2 = \SL_2(\matR)$. 
+As a universal cover of a Lie group, it is also a Lie group.
+We have coverings
+$$\widetilde{\SL_2} \longrightarrow \SL_2 \longrightarrow \PSLR = \Iso^+(\matH^2).$$
+The group $\PSLR$ acts freely and transitively on $U\matH^2$ and hence we can identify $\PSLR$ with $U\matH^2$. With this identification $\PSLR$ inherits a left-invariant Riemannian metric that lifts to a left-invariant Riemannian metric on the Lie group $\widetilde{\SL_2}$. 
+
+In the previous section we have identified $U\matH^2$ with $H^2 \times S^1$ and we can likewise identify $\widetilde{\SL_2}$ with $H^2 \times \matR$, and get an explicit metric tensor from Lemma \ref{UH2:tensor:lemma}.
+
+Since $U\matH^2$ is a circle bundle over $\matH^2$, likewise $\widetilde{\SL_2}$ is a line bundle over $\matH^2$. The group $\matR$ acts isometrically on $\widetilde \SL_2$ by translating every fibre.
+
+\begin{prop}
+Every isometry of $\widetilde{\SL_2}$ preserves the line bundle and induces an isometry of $\matH^2$. We have
+$$0 \longrightarrow \matR \longrightarrow \Iso^+(\widetilde{\SL_2}) \stackrel p\longrightarrow \Iso(\matH^2) \longrightarrow 0.$$
+The group $\Iso^+(\widetilde{\SL_2})$ has two components. 
+\end{prop}
+\begin{proof}
+The groups $\matR$ and $\widetilde{\SL_2}$ belong to the component $\Iso^+_\circ (\widetilde{\SL_2})$ containing $e$ which has dimension at least $1+3=4$. We conclude as in the proof of Proposition \ref{Nil:isometries:prop}.
+\end{proof}
+
+\begin{ex}
+The unit tangent bundle of a finite-area complete hyperbolic surface is naturally a manifold modelled on $\widetilde{\SL_2}$.
+\end{ex}
+
+As for $\Nil$, cocompact groups do no lift.
+
+\begin{prop} \label{SL2:no:lift:prop}
+Let $\Gamma < \Iso(\matH^2)$ be discrete and cocompact. There is no homomorphism $f\colon \Gamma \to \Iso^+(\widetilde{\SL_2})$ such that $p\circ f = \id$.
+\end{prop}
+\begin{proof}
+Up to taking a finite index subgroup we may suppose that $\Gamma$ acts freely and hence $S=\matH^2/_\Gamma$ is a closed hyperbolic surface. If $\Gamma$ lifts, consider the group $G< \Iso^+(\widetilde{\SL_2})$ generated by $f(\Gamma)$ and $2 \pi\in \matR$, isomorphic to $\Gamma \times \matZ$. The quotient $\widetilde{\SL_2}/_G$ is naturally the unit tangent bundle of $S$ and is hence the Seifert manifold $\big(S, (1, \chi(S))\big)$ by Remark \ref{bundle:oss}. Its fundamental group is however not a product $\Gamma \times \matZ$ by Exercise \ref{bundle:ex}.
+\end{proof}
+
+\begin{prop} \label{SL2:cofinite:prop}
+A discrete group $\Gamma < \Iso^+(\widetilde{\SL_2})$ is cofinite if and only if both $p(\Gamma)$ and $\Gamma \cap \ker p$ are discrete and cofinite.
+\end{prop}
+\begin{proof}
+Same proof as Proposition \ref{H2R:prop}, with a minor variation: if $p(\Gamma)$ is not discrete, up to taking an index-two subgroup we suppose that $p(\Gamma) <  \Iso^+(\matH^2)$; the $\matR$-action commutes with $\Gamma$ and $[f,g]$ depends only on $p(f)$ and $p(g)$, so that proof applies.
+\end{proof}
+
+We now classify the manifolds having a $\widetilde{\SL_2}$ geometry.
+
+\begin{cor}
+If the interior of a compact orientable manifold $M$ admits a finite-volume complete $\widetilde{\SL_2}$ geometry then $M$ is a Seifert manifold with $\chi<0$. If $M$ is closed then $e\neq 0$.
+\end{cor}
+\begin{proof}
+We have $\interior M= \widetilde{\SL_2}/_\Gamma$ with $\Gamma$ cofinite. Proposition \ref{SL2:cofinite:prop} furnishes a Seifert fibration $M\to S$ over the finite-area orbifold $S=\matH^2/_{p(\Gamma)}$. If $M$ is closed we get $e\neq 0$: if not, up to taking a finite index subgroup we would get $M=S\times S^1$ contradicting Proposition \ref{SL2:no:lift:prop}.
+\end{proof}
+
+We now prove the converse.
+
+\begin{prop}
+If $M$ is a Seifert manifold with $\chi<0$ and either $\partial M\neq \emptyset$ or $e\neq 0$, the interior of $M$ admits a finite-volume $\widetilde{\SL_2}$ geometry.
+\end{prop}
+\begin{proof}
+If $M$ is closed we apply the proof of Proposition \ref{Nil:construct:prop}. If $\partial M \neq \emptyset$ the presentations of $\pi_1(S)$ and $\pi_1(M)$ are as described there, except that they do not contain the relator $c_i^{p_i}$ whenever $c_i$ represents a boundary component of $M$. So we have less constraints and we easily see that a solution to the final linear problem exists also in this case. 
 \end{proof}

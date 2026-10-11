@@ -7,7 +7,7 @@
   "bytes": 1421939,
   "pages": 53,
   "text_source": "embedded",
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -1098,8 +1098,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "speed_wide.tex",
-   "tex_sections": 5,
-   "overlaid": 0,
+   "tex_sections": 26,
+   "overlaid": 12,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1109,7 +1109,8 @@
     {
      "id": "sec-000-11-mod-\u03c6-convergence",
      "title": "Mod-\u03c6 convergence",
-     "result": "no matching \\section"
+     "prose_ratio": 0.006,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-2-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan-n",
@@ -1119,13 +1120,16 @@
     {
      "id": "sec-002-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.356,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-003-12-results-and-outline-of-the-paper",
      "title": "Results and outline of the paper",
-     "result": "no matching \\section"
+     "prose_ratio": 0.634,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-4-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan-n",
@@ -1135,7 +1139,10 @@
     {
      "id": "sec-005-13-stable-distributions-and-mod-stable-convergen",
      "title": "Stable distributions and mod-stable convergence",
-     "result": "no matching \\section"
+     "prose_ratio": 0.646,
+     "coverage_ratio": 0.922,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-6-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan-n",
@@ -1151,7 +1158,10 @@
     {
      "id": "sec-008-21-the-notion-of-zone-of-control",
      "title": "The notion of zone of control",
-     "result": "no matching \\section"
+     "prose_ratio": 0.893,
+     "coverage_ratio": 0.532,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-8-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan-n",
@@ -1161,7 +1171,8 @@
     {
      "id": "sec-010-22-spaces-of-test-functions",
      "title": "Spaces of test functions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.428,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-011-0-r",
@@ -1186,7 +1197,10 @@
     {
      "id": "sec-015-23-estimates-for-test-functions",
      "title": "Estimates for test functions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.928,
+     "coverage_ratio": 0.899,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-016-14-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
@@ -1196,7 +1210,8 @@
     {
      "id": "sec-017-24-smoothing-techniques",
      "title": "Smoothing techniques",
-     "result": "no matching \\section"
+     "prose_ratio": 0.156,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-018-1-the-kernel\u03c1-is-non-negative-with",
@@ -1226,7 +1241,8 @@
     {
      "id": "sec-023-25-bounds-on-the-kolmogorov-distance",
      "title": "Bounds on the Kolmogorov distance",
-     "result": "no matching \\section"
+     "prose_ratio": 0.316,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-024-3-then-there-exists-a-constantc\u03b1cvkk-1-such-that",
@@ -1257,7 +1273,10 @@
     {
      "id": "sec-029-31-sums-of-independent-random-variables",
      "title": "Sums of independent random variables",
-     "result": "no matching \\section"
+     "prose_ratio": 0.815,
+     "coverage_ratio": 0.828,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-030-20-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
@@ -1272,7 +1291,8 @@
     {
      "id": "sec-032-32-winding-number-of-a-planar-brownian-motion",
      "title": "Winding number of a planar Brownian motion",
-     "result": "no matching \\section"
+     "prose_ratio": 0.571,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-033-14-v-f\u00e9ra-y-p--l-m\u00e9liot-and-a-nikeghbali",
@@ -1282,7 +1302,8 @@
     {
      "id": "sec-034-33-approximation-of-a-stable-law-by-compound-poi",
      "title": "Approximation of a stable law by compound Poisson laws",
-     "result": "no matching \\section"
+     "prose_ratio": 0.059,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-035-22-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
@@ -1297,7 +1318,10 @@
     {
      "id": "sec-037-34-convergence-of-ornsteinuhlenbeck-processes-to",
      "title": "Convergence of Ornstein\u2013Uhlenbeck processes to stable laws",
-     "result": "no matching \\section"
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.894,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-038-26-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
@@ -1307,7 +1331,10 @@
     {
      "id": "sec-039-35-logarithms-of-characteristic-polynomials-of-r",
      "title": "Logarithms of characteristic polynomials of random matrices",
-     "result": "no matching \\section"
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.87,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-040-28-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
@@ -1323,7 +1350,8 @@
     {
      "id": "sec-042-41-cumulants-zone-of-control-and-kolmogorov-boun",
      "title": "Cumulants, zone of control and Kolmogorov bound",
-     "result": "no matching \\section"
+     "prose_ratio": 0.597,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-043-30-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
@@ -1333,7 +1361,10 @@
     {
      "id": "sec-044-42-dependency-graphs",
      "title": "Dependency graphs",
-     "result": "no matching \\section"
+     "prose_ratio": 0.866,
+     "coverage_ratio": 0.804,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-045-1-ifdn-onn12\u03b5-for-\u03b5-0-thenyn-snnn",
@@ -1343,7 +1374,8 @@
     {
      "id": "sec-046-43-unbounded-random-variables-and-truncation-met",
      "title": "Unbounded random variables and truncation methods",
-     "result": "no matching \\section"
+     "prose_ratio": 0.597,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-047-0-otherwise-using-h\u00f6lder-and-bienaym\u00e9-chebyshev",
@@ -1358,28 +1390,40 @@
     {
      "id": "sec-049-5-ising-model-and-markov-chains",
      "title": "Ising model and Markov chains",
-     "prose_ratio": 0.071,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-050-51-weighted-graphs-and-spanning-trees",
      "title": "Weighted graphs and spanning trees",
-     "result": "no matching \\section"
+     "prose_ratio": 0.822,
+     "coverage_ratio": 0.764,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-051-52-uniform-weighted-dependency-graphs",
      "title": "Uniform weighted dependency graphs",
-     "result": "no matching \\section"
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.834,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-052-53-magnetization-of-the-ising-model",
      "title": "Magnetization of the Ising model",
-     "result": "no matching \\section"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.856,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-053-54-functionals-of-markov-chains",
      "title": "Functionals of Markov chains",
-     "result": "no matching \\section"
+     "prose_ratio": 0.341,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-054-2-kr-\u03b8p-trt1",
@@ -1409,7 +1453,8 @@
     {
      "id": "sec-059-55-the-case-of-linear-functionals-of-the-empiric",
      "title": "The case of linear functionals of the empirical measure",
-     "result": "no matching \\section"
+     "prose_ratio": 0.404,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-060-5-setf1-1-f2-1-and-f3-0",

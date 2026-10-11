@@ -8,50 +8,36 @@ pages: 14-15
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
 doc_brief: "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the polynomial ring"
+text_source: latex
+latex_prose_ratio: 0.713
+latex_coverage_ratio: 0.946
 ---
-In this section, we recall the deﬁnition of the universal inv ariant of bottom tan-
-gles, and prove necessary results.
-4.1. Bottom tangles. Here we recall from [20] the notion of bottom tangles.
-An n-component bottom tangle T = T1∪···∪ Tn is a framed tangle in a cube,
-which is drawn as a diagram in a rectangle as usual, consistin g of n arcsT1,... ,T n
-such that for each i = 1,... ,n the componentTi runs from the 2ith endpoint on the
-bottom to the (2 i− 1)st endpoint on the bottom, where the endpoints are counted
-from the left. For example, see Figure 4.1 (a). (Here and in wh at follows, we use
-the blackboard framing convention.)
-For each n≥ 0, let BTn denote the set of the isotopy classes of n-component
-bottom tangles. Set BT = ⋃
-n≥0 BTn.
-The closure cl(T ) of T is the n-component, oriented, ordered framed link in
-S3, obtained from T by pasting a “ ∪-shaped tangle” to each component of L, as
-A UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANT 15
-T1 T2 T3 L1 L2 L3
-(a) (b)
-Figure 4.1. (a) A 3-component bottom tangle T =T1∪T2∪T3.
-(b) Its closure cl(L) = L1∪L2∪L3.
-, , , ,
-Figure 4.2. Fundamental tangles: vertical line, positive and neg-
-ative crossings, local minimum and local maximum. Here the o ri-
-entations are arbitrary.
-αS’( ) βS’( )
-αS’( ) βS’( )
-1
-κ
-1 κ −1
-1
-Figure 4.3. How to put elements of Uh on the strings. For each
-string in the positive and the negative crossings, “ S′” should be
-replaced with id if the string is oriented downward, and by S oth-
-erwise.
-depicted in Figure 4.1 (b). For any oriented, ordered framed link L, there is a
-bottom tangle whose closure is isotopic to L.
-The linking matrix of a bottom tangle T =T1∪···∪ Tn is deﬁned as that of the
-closure T . Thus the linking number of Ti and Tj, i⁄= j, is deﬁned as the linking
-number of the corresponding components in cl(T ), and the framing of Ti is deﬁned
-as the framing of the closure of Ti.
-A link or a bottom tangle is called algebraically-split if the linking matrix is
-diagonal.
-For n≥ 0, let BT0
-n denote the subset of BTn consisting of algebraically-split,
-0-framed bottom tangles. Set BT0 = ⋃
-n≥0 BT0
-n⊂ BT.
+[]{#sec4 label="sec4"}
+
+In this section, we recall the definition of the universal invariant of bottom tangles, and prove necessary results.
+
+## Bottom tangles {#sec:bottom-tangles}
+
+Here we recall from [@H:universal] the notion of bottom tangles.
+
+An $n$-component *bottom tangle* $T=T_1\cup \cdots\cup T_n$ is a framed tangle in a cube, which is drawn as a diagram in a rectangle as usual, consisting of $n$ arcs $T_1,\ldots,T_n$ such that for each $i=1,\ldots,n$ the component $T_i$ runs from the $2i$th endpoint on the bottom to the $(2i-1)$st endpoint on the bottom, where the endpoints are counted from the left. For example, see Figure [\[fig:bt\]](#fig:bt){reference-type="ref" reference="fig:bt"} (a). (Here and in what follows, we use the blackboard framing convention.)
+
+For each $n\ge 0$, let $\BT_n$ denote the set of the isotopy classes of $n$-component bottom tangles. Set $\BT=\bigcup_{n\ge 0}\BT_n$.
+
+The *closure* $\cl(T)$ of $T$ is the $n$-component, oriented, ordered framed link in $S^3$, obtained from $T$ by pasting a "$\cup$-shaped tangle" to each component of $L$, as depicted in Figure [\[fig:bt\]](#fig:bt){reference-type="ref" reference="fig:bt"} (b). For any oriented, ordered framed link $L$, there is a bottom tangle whose closure is isotopic to $L$.
+
+The *linking matrix* of a bottom tangle $T=T_1\cup \cdots\cup T_n$ is defined as that of the closure $T$. Thus the linking number of $T_i$ and $T_j$, $i\neq j$, is defined as the linking number of the corresponding components in $\cl(T)$, and the framing of $T_i$ is defined as the framing of the closure of $T_i$.
+
+A link or a bottom tangle is called *algebraically-split* if the linking matrix is diagonal.
+
+For $n\ge 0$, let $\BT^0_n$ denote the subset of $\BT_n$ consisting of algebraically-split, $0$-framed bottom tangles. Set $\BT^0=\bigcup_{n\ge 0}\BT^0_n\subset \BT$.
+
+## Universal $sl_2$ invariant of bottom tangles {#sec:univ-sl2-invar}
+
+For each ribbon Hopf algebra $H$, there is a "universal invariant" of links and tangles from which one can recover the operator invariants, such as the colored Jones polynomials. Such universal invariants has been studied in [@Lawrence:89; @Lawrence:90; @Reshetikhin:89; @Lee:90; @Ohtsuki:93; @Kauffman:93; @Kerler:97; @Kauffman-Radford:01]. Here we need only the case of bottom tangles, which is described in [@H:universal].
+
+For $T=T_1\cup \cdots\cup T_n\in \BT_n$, we define the *universal $sl_2$ invariant* $J_T\in U_h^{\ho n}$ of $T$ as follows. We choose a diagram for $T$, which is obtained from copies of *fundamental tangle*, see Figure [\[fig:fundamental\]](#fig:fundamental){reference-type="ref" reference="fig:fundamental"}, by pasting horizontally and vertically.
+
+For each copy of fundamental tangle in the diagram of $T$, we put elements of $U_h$ with the rule described in Figure [\[fig:fundamental2\]](#fig:fundamental2){reference-type="ref" reference="fig:fundamental2"}.
+
+We set $$J_T =\sum J_{(T_1)}\otimes \cdots\otimes J_{(T_n)}\in U_h^{\ho n},$$ where for each $i=1,\ldots,n$, the $i$th tensorand $J_{(T_i)}$ is defined to be the product of the elements put on the component $T_i$. Here the elements read off along each component are written from right to left. Then $J_T$ does not depend on the choice of diagram, and defines an isotopy invariant of bottom tangles.

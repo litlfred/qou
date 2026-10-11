@@ -8,303 +8,295 @@ pages: 10-12
 source_pdf: 0507033v2.pdf
 source_sha256: 57509b3ce5f9f8cc
 doc_brief: "Cluster Formation and The Virial Equation of State of Low-De nsity Nuclear Matter — 19 sections: Front matter; INTRODUCTION; FORMALISM"
+text_source: latex
+latex_prose_ratio: 0.839
+latex_coverage_ratio: 1.0
 ---
-Next, we present our results for the pressure. In
-Fig. 10, we plot the pressure of symmetric nuclear mat-
-ter for T = 10 MeV. The formation of α particles re-
-duces the total number of particles in the system, and
-this signiﬁcantly lowers the pressure. For comparison,
-we also show in Fig. 10 the microscopic Fermi hyper-
-netted-chain (FHNC) equation of state of Friedman and
-Pandharipande [13]. The latter calculation is based on a
-variational wave function with only two-nucleon correla-
-tions. However, the model-independent virial equation of
-state shows that there are large α concentrations in this
-density regime. For example, at the threshold density of
-nb = 0.013 fm−3 (from Fig. 9) we have xα = 0.40. Micro-
-scopic calculations may require wave functions with four-
-nucleon correlations to accurately describe these α par-
-ticle contributions. This suggests that all present micro-
-scopic variational or Brueckner equations of state are in-
-complete in their description of low-density nuclear mat-
-ter. In Fig. 10, we also give the pressure for densities be-
-yond the threshold density of Fig. 9 in order to compare
-virial and FHNC results, which both omit the formation
-of heavy nuclei.
-The error band in Fig. 10 is again estimated from a
-0 0.01 0.02 0.03 0.04 0.05
-nb [fm
--3
-]
-0
-0.05
-0.1
-0.15
-0.2
-0.25
-0.3
-P [MeV fm
--3
-]
-free n,p,α  gas
-virial
-virial, no alphas
-FP
-FIG. 10: (Color online) The pressure P of symmetric nuclear
-matter versus baryon density nb for T = 10 MeV. The dotted
-error band for the virial equation of state is based on an es-
-timate of a neglected third virial coeﬃcient b(3)
-nuc = ± 10. Also
-shown are virial results without α particles ( zα = 0) and
-the microscopic FHNC results of Friedman and Pandhari-
-pande (FP) [13]. The eﬀects of interactions are illustrated
-by comparing to the pressure of a free gas of nucleons and
-alpha particles. Over this density range, the fugacities ar e
-zn = zp < 0. 21 ( < 0. 51 without alphas, < 0. 32 for the free
-gas) and zα < 0. 04 ( < 0. 17 free gas).
-neglected third virial coeﬃcient b(3)
-nuc = ±10. For the
-pressure, this involves a cancellation. Increasing b(3)
-nuc de-
-creases the nucleonic contribution to the pressure due to
-the additional attractive interaction between nucleons.
-However, a larger b(3)
-nuc also reduces the formation of α
-particles (due to a lower alpha chemical potential), and
-this acts to increase the total pressure. Therefore, a pos-
-itive b(3)
-nuc reduces the pressure at very low densities, but
-then leads to a larger pressure with increasing density.
-In Fig. 11, we show our results for the pressure of sym-
-metric nuclear matter for T = 4 MeV in comparison to
-the phenomenological LS and Shen equations of state.
-The pressure given in Fig. 11 also includes the contri-
-bution of an electron and photon gas as in Appendix C
-of [26]. We ﬁnd the pressures given by the virial equation
+Next, we present our results for the pressure.  In Fig.~\ref{Fig10}, 
+we plot the pressure of symmetric nuclear matter for $T=10 \mev$.
+The formation of $\alpha$ particles reduces the 
+total number of particles in the system, and 
+this significantly lowers the pressure. For comparison, we also show 
+in Fig.~\ref{Fig10} the microscopic Fermi hyper-netted-chain (FHNC) 
+equation of state of Friedman and Pandharipande~\cite{FP}.  The
+latter calculation is based on a variational wave function with only
+two-nucleon correlations.  However, the model-independent virial 
+equation of state shows that there are large $\alpha$ concentrations 
+in this density regime.  For example, at the threshold density of 
+$n_b=0.013 \fm^{-3}$ (from Fig. \ref{Fig9}) we have $x_\alpha 
+= 0.40$.  Microscopic calculations may require wave functions 
+with four-nucleon correlations to accurately describe these $\alpha$ 
+particle contributions.  {\it This suggests that all present microscopic 
+variational or Brueckner equations of state are incomplete in their
+description of low-density nuclear matter.}  In Fig.~\ref{Fig10},
+we also give the pressure for densities beyond the threshold density
+of Fig.~\ref{Fig9} in order to compare virial and FHNC results, which
+both omit the formation of heavy nuclei.
+
+The error band in Fig.~\ref{Fig10} is again estimated from
+a neglected third virial coefficient $b_{\text{nuc}}^{(3)} = \pm 10$.  
+For the pressure, this involves a cancellation. Increasing 
+$b_{\text{nuc}}^{(3)}$ decreases the nucleonic contribution 
+to the pressure due to the additional attractive interaction 
+between nucleons. However, a larger $b_{\text{nuc}}^{(3)}$ also 
+reduces the formation of $\alpha$ particles (due to a lower alpha
+chemical potential), and this acts to increase the total pressure.           
+Therefore, a positive $b_{\text{nuc}}^{(3)}$ reduces the pressure
+at very low densities, but then leads to a larger pressure with
+increasing density.
+
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[scale=0.36,clip=]{pressure_T4_Yp0.5.eps}
+\caption{(Color online) The pressure $P$ of symmetric nuclear 
+matter versus baryon density $n_b$ for $T=4 \mev$. As discussed 
+in the text, these results include the contribution of an electron
+and photon gas, and we also show the virial pressure without this
+contribution. In addition, we give the results of the LS~\cite{LS} 
+and Shen~\cite{Shen} equations of state. Over this density range, 
+the fugacities are $z_n = z_p < 0.06$ and $z_\alpha < 0.01$.}
+\label{Fig11}
+\end{center}
+\end{figure}
+
+
+In Fig.~\ref{Fig11}, we show our results for the pressure of
+symmetric nuclear matter for $T=4 \mev$ in comparison to the
+phenomenological LS and Shen equations 
+of state.  The pressure given in Fig.~\ref{Fig11} also includes 
+the contribution of an electron and photon gas as in Appendix~C
+of~\cite{LS}. We find the pressures given by the virial equation 
 of state and the phenomenological models agree well.
-In a separate paper [6], we have demonstrated that the
-equation of state of low-density neutron matter scales to
-a very good approximation. Table I shows that the neu-
-tron virial coeﬃcient bn(T ) is practically independent of
-the temperature. If all virial coeﬃcients are tempera-
-ture independent, and provided the condition for chemi-
-cal equilibrium does not introduce a strong temperature
-dependence through zα (zn, zp, T ), then the power series
-in the fugacity for the pressure and the baryon density
-will have no explicit temperature dependence. In this
-11
-0 0.0004 0.0008 0.0012 0.0016
-nb [fm
--3
-]
-0
-0.002
-0.004
-0.006
-0.008
-0.01
-0.012
-0.014
-P [MeV fm
--3
-]
-virial
-LS
-Shen
-virial, no e, γ
-FIG. 11: (Color online) The pressure P of symmetric nuclear
-matter versus baryon density nb for T = 4 MeV. As discussed
-in the text, these results include the contribution of an ele c-
-tron and photon gas, and we also show the virial pressure
-without this contribution. In addition, we give the results of
-the LS [26] and Shen [27] equations of state. Over this densit y
-range, the fugacities are zn = zp < 0. 06 and zα < 0. 01.
-0 0.005 0.01 0.015 0.02
-nb [fm
--3
-]
-0
-0.005
-0.01
-0.015
-0.02
-P [MeV fm
--3
-]
-T=4 MeV
-T=1 scaled to 4 MeV
-T=8 scaled to 4 MeV
-neutron matter
-nuclear matter
-FIG. 12: (Color online) The pressure P of pure neutron mat-
-ter and of symmetric nuclear matter calculated for T = 1, 4
-and 8 MeV and scaled to a temperature of T ′ = 4 MeV (for
-details see text). The circle indicates where zn = 0. 5 for pure
-neutron matter. For symmetric nuclear matter, the fugaciti es
-are zn = zp < 0. 10 and zα < 0. 09 over this density range.
-case, the pressure will scale as
-P (nb, T ) = T 5/ 2 f (nb/T 3/ 2) , (35)
-where f (x) is some function of nb/T 3/ 2. If this scaling
-relation holds, one can predict the pressure P (nb, T ′) at
-a new temperature T ′ from the original P (nb, T ) through
-10
--4
-10
--3
-10
--2 0.05
-nb [fm
--3
-]
-0
-1
-2
-3
-4
-5
-6
-7
-8
-S/A
-free n,p,α  gas
-virial
-LS
-Shen
-Wolff
-FIG. 13: (Color online) The entropy per baryon S/A versus
-baryon density nb for T = 4 MeV and Yp = 1/ 2. As discussed
-in the text, these results include the contribution of an ele c-
-tron and photon gas. Also shown are results for the LS [26],
-Shen [27] and the Wolﬀ [44] equations of state. The eﬀects
-of interactions are illustrated by comparing to the entropy of
-a free gas of nucleons and alpha particles. Over this density
-range, the fugacities are zn = zp < 0. 11 ( < 0. 17 for the free
-gas) and zα < 0. 17 ( < 0. 81 free gas).
-P (nb, T ′) =
-( T ′
-T
-) 5/ 2
-P (~nb, T ) , (36)
-with nb = (T ′/T )3/ 2 ~nb.
-We study this scaling symmetry in Fig. 12, where we
-have used Eq. (36) to predict the pressure of neutron
-matter for T ′ = 4 MeV from virial pressures calculated
-for T = 1 and 8 MeV. The agreement with the unscaled
-T = 4 MeV virial pressure is excellent. This demon-
-strates that low-density neutron matter scales, even when
-interactions are included. Fig. 12 also shows scaled pres-
-sures of symmetric nuclear matter for T ′ = 4 MeV using
-T = 1 and 8 MeV results as input. These scaled pres-
-sures do not agree with the T = 4 MeV virial pressure.
-Therefore, nuclear matter does not scale, which is due
-to clustering and mainly comes as a result of the strong
-temperature dependence of zα and xα .
-D. Entropy and Energy
-The entropy per baryon S/A of symmetric nuclear mat-
-ter is shown for T = 4 MeV in Fig. 13. Here, our virial
-calculation again includes the entropy of an electron and
-photon gas as in Appendix C of [26]. The entropy is
-clearly seen to reﬂect the composition. At low densities,
-the LS entropy is above the other calculations because
-of the low α mass fraction in the LS model. At high
-12
-10
--5
-10
--4
-10
--3 0.005
-nb [fm
--3
-]
-0
-2
-4
-6
-8
-10
-12
-S/A
-virial
-LS
-Shen
-FIG. 14: (Color online) The entropy per baryon S/A versus
-baryon density nb for T = 4 MeV and Yp = 0. 05. As discussed
-in the text, these results include the contribution of an ele c-
-tron and photon gas. Also shown are results for the LS [26]
-and the Shen [27] equations of state. The circle indicates
-where zn = 0. 5 ( zp = 0. 002 and zα = 0. 001).
-densities, the entropy in the phenomenological models is
-below our virial result due to the formation of heavy nu-
-clei. This deviation coincides with the threshold density
-of Fig. 9. In Fig. 13, we also show the entropy per baryon
-for the Wolﬀ equation of state [44], to give a measure
-for the model dependence of the onset of heavy nuclei.
-The entropy per baryon for extremely neutron-rich mat-
-ter Yp = 0 .05 is shown in Fig. 14. Now there is very
-little change in composition, and thus good agreement
+
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[scale=0.36,clip=]{pressure_scaling.eps}
+\caption{(Color online) The pressure $P$ of pure neutron matter 
+and of symmetric nuclear matter calculated for $T=1$, $4$ and 
+$8 \mev$ and scaled to a temperature of $T'=4 \mev$ (for details 
+see text). The circle indicates where $z_n =0.5$ for pure neutron
+matter. For symmetric nuclear matter, the fugacities are 
+$z_n = z_p < 0.10$ and $z_\alpha < 0.09$ over this density range.}
+\label{Fig12}
+\end{center}
+\end{figure}
+
+
+In a separate paper~\cite{vEOSneut}, we have demonstrated that the 
+equation of state of low-density neutron matter scales to a
+very good approximation.  Table~\ref{Table1} shows that the
+neutron virial coefficient $b_n(T)$ is practically independent 
+of the temperature.  If all virial coefficients are 
+temperature independent, and provided the condition for
+chemical equilibrium does not introduce a strong temperature dependence
+through $z_\alpha(z_n,z_p,T)$, then the power series in the 
+fugacity for the pressure and the baryon density will have no 
+explicit temperature dependence.  In this case, the pressure 
+will scale as
+\begin{equation}
+P(n_b,T) = T^{5/2} \, f(n_b/T^{3/2}) \,,
+\end{equation}
+where $f(x)$ is some function of $n_b/T^{3/2}$.  If this scaling
+relation holds, one can predict the pressure $P(n_b,T')$ at a new 
+temperature $T'$ from the original $P(n_b,T)$ through
+\begin{equation}
+P(n_b,T')=\biggl(\frac{T'}{T}\biggr)^{5/2} P(\widetilde{n}_b,T) \,,
+\label{pscale}
+\end{equation}
+with $n_b = (T'/T)^{3/2} \, \widetilde{n}_b$.
+
+We study this scaling symmetry in Fig.~\ref{Fig12}, 
+where we have used Eq.~(\ref{pscale}) to predict 
+the pressure of neutron matter for $T'=4 \mev$ from virial pressures 
+calculated for $T=1$ and $8 \mev$.  The agreement with the unscaled
+$T=4 \mev$ virial pressure is excellent.  This demonstrates that 
+low-density neutron matter scales, even when interactions are included.  
+Fig.~\ref{Fig12} also shows scaled pressures of symmetric nuclear matter 
+for $T'=4 \mev$ using $T=1$ and $8 \mev$ results as input.  
+These scaled pressures 
+do not agree with the $T=4 \mev$ virial pressure.  Therefore, nuclear 
+matter does not scale, which is due to clustering and mainly 
+comes as a result of the strong 
+temperature dependence of $z_\alpha$ and $x_\alpha$. 
+
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[scale=0.36,clip=]{entropy_T4_Yp0.5_v2.eps}
+\caption{(Color online) The entropy per baryon $S/A$ versus baryon 
+density $n_b$ for $T=4 \mev$ and $Y_p=1/2$. As discussed in the text, 
+these results include the contribution of an electron and photon gas. 
+Also shown are results for the LS~\cite{LS}, Shen~\cite{Shen} and the 
+Wolff~\cite{wolff} equations of state. 
+The effects of interactions are illustrated by comparing to the
+entropy of a free gas of nucleons and alpha particles.
+Over this density range, 
+the fugacities are $z_n = z_p < 0.11$ ($< 0.17$ for the free gas) 
+and $z_\alpha < 0.17$ ($< 0.81$ free gas).}
+\label{Fig13}
+\end{center}
+\end{figure}
+
+
+
+\subsection{Entropy and Energy}
+
+The entropy per baryon $S/A$ of symmetric nuclear matter is shown 
+for $T=4 \mev$ in Fig.~\ref{Fig13}.  Here, our virial calculation 
+again includes the entropy of an electron and photon gas as in
+Appendix~C of~\cite{LS}.  The entropy is clearly seen to 
+reflect the composition.  At low densities, the LS entropy is 
+above the other calculations because of the low $\alpha$ mass
+fraction in the LS model.  At high densities, the entropy in the
+phenomenological models is below our virial result due to the 
+formation of heavy nuclei.  This deviation coincides with the threshold
+density of Fig.~\ref{Fig9}.  In Fig.~\ref{Fig13}, we also show 
+the entropy per baryon for the Wolff equation of state~\cite{wolff},
+to give a measure for the model dependence of the onset 
+of heavy nuclei. The entropy per baryon for extremely 
+neutron-rich matter $Y_p=0.05$ is shown in Fig.~\ref{Fig14}.  Now 
+there is very little change in composition, and thus good agreement 
 between the virial and phenomenological results.
-In addition to the entropy, we show our results for the
-energy per baryon E/A in Fig. 15. In the limit of very
-low density, the energy reduces to the kinetic energy of an
-ideal classical gas 3 T /2. Therefore, we have subtracted
-3T /2 from E/A in Fig. 15, in order to clearly show the
-interaction eﬀects. We ﬁnd that the energy per baryon
-for pure neutron matter is somewhat below 3 T /2 due to
-the attractive nuclear interactions. Our neutron matter
-results are in excellent agreement with the scaling law for
-the energy density ǫ = 3/2P , which follows from Eq. (30)
-when the virial coeﬃcients are temperature independent,
-as is the case for neutron matter with b′
-n ≈ 0. In contrast,
-E/A for symmetric nuclear matter drops very rapidly
-with increasing density. This reﬂects the large binding
-energy as α particles form. As can be seen from Fig. 15,
-this drop becomes more rapid for lower temperatures.
-We therefore expect that the inclusion of heavy nuclei,
-or many-nucleon correlations, are necessary to obtain a
-constant energy per particle E/A ≈ − 16 MeV for T = 0
-nuclear matter at subsaturation densities.
-0 0.001 0.002 0.003 0.004 0.005
-nb [fm
--3
-]
--10
--8
--6
--4
--2
-0
-E/A - 3T/2 [MeV]
-neutron matter, T=4 MeV
-nuclear matter, T=4 MeV
-nuclear matter, T=2 MeV
-FIG. 15: (Color online) The energy per baryon E/A versus
-baryon density nb for T = 4 MeV (and also T = 2 MeV (dot-
-ted) for nuclear matter). In order to clearly show the intera c-
-tion eﬀects we have subtracted the free kinetic energy 3 T / 2
-from all curves. The circle indicates where zn = 0 . 5 for pure
-neutron matter. For symmetric nuclear matter, the fugaciti es
-are zn = zp < 0. 08, 0 . 02 and zα < 0. 03, 0 . 11 for T = 4 and
-2 MeV respectively.
-E. Symmetry Energy
-The symmetry energy SE characterizes how the energy
-rises as one moves away from equal numbers of neutrons
-and protons,
-SE = 1
-8
-∂2
-∂Yp
-2
-E
-A
-⏐⏐⏐⏐
-Yp=1/ 2
-. (37)
-We evaluate the second derivative of the energy per
-baryon with respect to the proton fraction numerically.
-Fig. 16 shows the symmetry energy for T = 4 MeV. At
-very low density, SE rises slowly with density. To low-
-est order in the density and neglecting α particles, the
-symmetry energy is given by
-SE ≈ 3
+
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[scale=0.36,clip=]{entropy_T4_Yp0.05.eps}
+\caption{(Color online) The entropy per baryon $S/A$ versus baryon 
+density $n_b$ for $T=4 \mev$ and $Y_p=0.05$. As discussed in the text, 
+these results include the contribution of an electron and photon gas. 
+Also shown 
+are results for the LS~\cite{LS} and the Shen~\cite{Shen} equations 
+of state. The circle indicates where $z_n =0.5$ ($z_p = 0.002$ and 
+$z_\alpha = 0.001$).}
+\label{Fig14}
+\end{center}
+\end{figure}
+
+
+In addition to the entropy, we show our results for the energy
+per baryon $E/A$ in Fig.~\ref{Fig15}.  In the limit of very low 
+density, the energy reduces to the kinetic energy of an ideal 
+classical gas $3T/2$.  Therefore, we have subtracted $3T/2$ from 
+$E/A$ in Fig.~\ref{Fig15}, in order to clearly show the interaction 
+effects. We find that the energy per baryon for pure neutron 
+matter is somewhat below $3T/2$ due to the attractive nuclear 
+interactions. Our neutron matter 
+results are in excellent agreement with
+the scaling law for the energy density $\epsilon = 3/2 P$,
+which follows from Eq.~(\ref{epsilon}) when the virial coefficients 
+are temperature independent, as is the case for neutron matter
+with $b_n' \approx 0$. In contrast, $E/A$ for symmetric nuclear 
+matter drops very rapidly with increasing density.  This reflects 
+the large binding energy as $\alpha$ particles form. As can be seen
+from Fig.~\ref{Fig15}, this drop becomes more rapid for lower 
+temperatures.  We therefore expect that the inclusion of 
+heavy nuclei, or many-nucleon correlations, are
+necessary to obtain a constant energy per particle $E/A \approx 
+-16 \mev$ for $T=0$ nuclear matter at subsaturation densities.
+
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[scale=0.36,clip=]{energy_T4.eps}
+\caption{(Color online) The energy per baryon $E/A$ versus baryon 
+density $n_b$ for $T=4 \mev$ (and also $T=2 \mev$ (dotted) for 
+nuclear matter). In order to clearly show the interaction 
+effects we have subtracted the free kinetic energy $3T/2$ from 
+all curves. The circle indicates where $z_n =0.5$ for pure neutron
+matter. For symmetric nuclear matter, the fugacities are $z_n = z_p 
+< 0.08$, $0.02$ and $z_\alpha < 0.03$, $0.11$ for $T=4$ and $2 \mev$ 
+respectively.}
+\label{Fig15}
+\end{center}
+\end{figure}
+
+
+
+\subsection{Symmetry Energy}
+
+The symmetry energy $S_E$ characterizes how the energy rises as one 
+moves away from equal numbers of neutrons and protons,
+\begin{equation}
+S_E = \frac{1}{8} \frac{\partial^2}{{\partial Y_p}^2} 
+\frac{E}{A} \: \biggr|_{Y_p=1/2} \,.
+\label{se}
+\end{equation}
+We evaluate the second derivative of the energy per baryon with
+respect to the proton fraction numerically. Fig.~\ref{Fig16}
+shows the symmetry energy for $T=4 \mev$.  At very low density, 
+$S_E$ rises slowly with density. To lowest order in the density
+and neglecting $\alpha$ particles, the symmetry energy is given by
+\begin{equation}
+S_E \approx \frac{3}{8} \, T \lambda^3 n_b (b_{pn} - 2 T b_{pn}^\prime/3
+- b_n + 2 T b_n^\prime/3) \,.
+\end{equation}
+Then, as $\alpha$ particles form, $S_E$ rises much faster with 
+density.  As a result of clustering, the symmetry energy 
+is large even at a very small fraction of saturation density. 
+This is analogous to the observed behavior for the energy.
+
+We also show in Fig.~\ref{Fig16} the symmetry free energy $S_F$ defined as
+\begin{equation}
+S_F = \frac{1}{8} \frac{\partial^2}{{\partial Y_p}^2} 
+\frac{F}{A} \: \biggr|_{Y_p=1/2} \,.
+\label{sf}
+\end{equation}
+To lowest order in 
+the density and neglecting $\alpha$ particles, the symmetry free energy 
+is given by
+\begin{equation}
+S_F \approx \frac{T}{2}+\frac{1}{4} \, T \lambda^3 n_b (b_{pn}-b_n) \,,
+\end{equation}
+where the $T/2$ term is from the entropy of mixing in the free 
+energy density.  Again, as $\alpha$ particles form, we find in 
+Fig.~\ref{Fig16} that $S_F$ increases rapidly with density.
+
+Finally, the temperature dependence of the symmetry energy is shown 
+in Fig.~\ref{Fig17} for $T=2$, $4$ and $8 \mev$.  The lower the 
+temperature, the more rapidly $S_E$ rises with density. We conclude 
+that, in the thermodynamic limit, the symmetry energy is large at
+low densities due to cluster formation.
+
+Isospin observables in asymmetric heavy-ion collisions, such as
+the $N/Z$ ration of emitted fragments, are often analyzed with
+semiclassical simulations, where nucleons move in isospin-dependent
+mean fields and undergo two-nucleon collisions. The isospin-dependent
+mean-field implies a certain symmetry energy. The density dependence
+of this symmetry energy can be adjusted to improve agreement with
+the data, e.g., see~\cite{tsang}. This phenomenological symmetry
+energy at low densities is in general much smaller than our
+virial $S_E$. This is because the symmetry energy in the virial 
+expansion includes the contributions of clusters with high central
+densities even at low baryon density. The relation between $S_E$
+and the symmetry energy of mean-field models for single nuclei
+should therefore be investigated in future work.
+
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[scale=0.36,clip=]{symenergy_T4.eps}
+\caption{(Color online) The symmetry energy $S_E$ and the symmetry 
+free energy $S_F$ versus baryon density $n_b$ for $T=4 \mev$. 
+Also shown are virial results without $\alpha$ particles 
+($z_\alpha=0$). Over this density range, the fugacities are 
+$z_n = z_p < 0.09$ ($< 0.37$ without alphas) and $z_\alpha  < 0.06$.}
+\label{Fig16}
+\end{center}
+\end{figure}
+
+
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[scale=0.36,clip=]{symenergy_Ts.eps}
+\caption{(Color online) The symmetry energy $S_E$ versus baryon 
+density $n_b$ for $T=2$, $4$ and $8 \mev$. Over this
+density range, the fugacities are 
+$z_n = z_p < 0.02$, $0.09$, $0.13$ and
+$z_\alpha  < 0.18$, $0.06$, $0.01$ for $T=2$, $4$, $8 \mev$.}
+\label{Fig17}
+\end{center}
+\end{figure}

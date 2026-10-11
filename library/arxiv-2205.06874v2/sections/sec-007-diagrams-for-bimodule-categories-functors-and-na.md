@@ -8,8 +8,10 @@ pages: 12-12
 source_pdf: 2205.06874v2.pdf
 source_sha256: 9b41365160c17ab4
 doc_brief: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg — We define a"
+text_source: latex
+latex_prose_ratio: 0.957
+latex_coverage_ratio: 0.957
 ---
-In the following, we use diagrammatic calculus for 2-categories and apply it to the 2-categories Cat of (small)
-categories, functors and natural transformations and to the 2-categoriesBimodθ(C,D) and Modθ(C) from
-Theorem 1.17. The diagrammatic calculus goes back to Joyal and Street [JS91] in the smooth setting, and
-was also studied by Barrett et al. [BMS12] in the PL setting. We summarise the description from [BMS12].
+In the following, we  use  diagrammatic calculus for 2-categories and apply it  to the 2-categories Cat of (small) categories, functors and natural transformations and to the 2-categories
+$\Bimod^\theta(\mac,\mad)$ and $\mathrm{Mod}^\theta(\mac)$ from Theorem \ref{th:pivot}. 
+The diagrammatic calculus goes back to Joyal and Street \cite{JS}  in the smooth setting, and was also studied by Barrett et al.~\cite{BMS} in the PL setting. We summarise the description from \cite{BMS}.
