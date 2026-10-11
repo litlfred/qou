@@ -196,7 +196,8 @@ letter). Fitted towers **D 10.29 / T 31.85 / ³He 2.53** — **all three fail
 D or ³He.
 
 **(vii) The obstruction may not be the selector at all — hypothesis, scope (a).**
-Relayed: **8 of the 14 live blocks** have an eigenvalue within `0.007` of a `Φ_q`
+Relayed: **7 of the 14 live blocks** (corrected from 8, and the May word is
+not pole-free either — it has 1) have an eigenvalue within `0.007` of a `Φ_q`
 pole `μ = q^j` (closest T `(7,2)` at `8.9e-4`), with roughly **1000×**
 amplification. Verified here, the May probe had already named this for *one*
 block — ³He's `[5,4]` is *"structurally over-twisted … carries the dominant
@@ -207,6 +208,69 @@ and a one-block integer flip is the wrong instrument. 🛑 Hold it as a
 hypothesis: no invariant is yet named, so this is scope (a), and two relayed
 threads would decide it (whether the proximity is structural or accidental, and
 which word change causes it).
+
+**(viii) The pole proximity is ACCIDENTAL, and item (vii)'s mechanism is
+withdrawn.** Relayed, for all 10 `(eigenvalue, j)` pairs with `d < 0.01` where
+`d(q) = |1 − q^{−j}μ(q)|`: `d` drifts smoothly when the word is rebuilt at each
+`q`; each crossing is a **simple zero away from `q₀`** (`q*/q₀ − 1 ∈
+[−8.3e-3, +1.6e-2]`, closest T `(7,2)` at `−1.340e-3`); `μ ≠ c·q^j`, with
+`dlog μ/dlog q` running 1.40–3.94; `|μ/q^j| − 1 ~ 1e-3`, **not** `~1e-60`; and
+the proton→muon pin moves `d` by `≤ 8.8e-6` relative. So item (vii)'s *"any
+truncation is ill-conditioned"* is **withdrawn as a mechanism** — the near-poles
+are a coincidence of this word's spectrum. Their report leaves two gaps: the ³He
+`(6,3)` `j=2` crossing (secant non-convergent) and poles with `j ≥ 4` — the
+latter is real, since at the proton pin `q⁴ = 1.517953` against D `(4,2)`'s
+`max|μ| = 1.514`, a gap of `0.0040`.
+
+**Cause, isolated with the producer's own switches** (verified: `atom_braid_word_3A`
+at `computations/mass_at_3A_proper.py:456` takes `intra_order` and
+`pn_convention`): the `intra_order` change **grouped → borromean alone** produces
+all 7 near-poles; the colour-weighted p-n letter alone shifts distances `≤ 8 %`.
+**That change is the owner-ruled correctness fix of 2026-09-05** (`qou-hu1f`) —
+the grouped word was not `β_Bor`, the alternating one is, matched to `5e-60`
+against the Lean closed form. The near-poles are a side effect of a change that
+was right for an independent reason, and are **not** evidence against it.
+
+**(ix) Seven PRE-REGISTERED q-only rules, all failing.** `PREREGISTRATION.md`
+sha256 `3d3f628a2318b0c4790bedc785d4fea3f74e33d73b211f581db01c69d9cbd832`, frozen
+**2026-10-11T05:41:29Z before any tower was computed** — which is what makes
+these predictions rather than selections. Rules: **R1a/b/c** pole index
+`⌊log_q max|μ|⌋` (three variants); **R2** cyclotomic termination; **R3**
+Garoufalidis–Zagier optimal truncation; **R3′** smallest-term truncation; **R4** a
+Habiro-degree bound, flagged by its author as *their own construction, because
+the corpus defines no Habiro selector*.
+
+The criterion is **the conjecture's own**, verified verbatim at
+`brane-tower-z-habiro.md` §52-60 — within `∼5 %` of AME
+`{2.224566, 8.481798, 7.71806}` MeV *"without per-atom retuning"*. **All 7 fail
+on all 3 atoms**, on both words, under both unit maps; the uniform `k = 1/2/3`
+baselines and the fitted May rule fail too. **Best cell anywhere: 26 %.** Each is
+**scope (a)** for that rule alone.
+
+**(x) 🛑 TRUNCATION IS CUTTING A CONVERGENT PRODUCT — and this is the finding.**
+`Φ_q^{[≤k]}(μ) = Π_{j≤k}(1 − q^{−j}μ)^{−1}` **converges** at `q₀ > 1`: verified,
+and elementary — `q^{−j} → 0` geometrically, so the factors → 1 and
+`Σ|q^{−j}μ| < ∞`. The untruncated tower is `~1e8–1e9` for every atom (relayed).
+Every q-intrinsic rule picks `k_λ = 2…22` and lands at `1e2–1e9`; **only `k ≈ 1`
+gives an O(1) tower.**
+
+**Under §NO FITTING that is decisive.** If no rule derivable from `q` reaches
+`k ≈ 1`, and only `k ≈ 1` yields a number of the right order, then *"the right
+`k`"* is not a function of the mathematics — it is whatever makes the output
+small. **That is selection against the target by construction**, and it explains
+why every candidate for five months has been a fit. The failure is not that the
+right invariant is still unfound; it is that the quantity being chosen is fixed
+by the answer.
+
+**A GAP IN THE CONJECTURE'S OWN STATEMENT, not in a candidate.** R2 cannot fire
+— `q₀` is not a root of unity and no eigenvalue sits *on* a pole — and `Φ_q` is
+**not a class in any `R/(P_k)`**, since `P_∞ ≡ 0` there. So the conjecture's
+*"cyclotomic projection evaluated at `z = μ`"* is **undefined at generic
+eigenvalues without an extra choice**. That belongs on
+`conj:brane-tower-z-habiro`. Separately, the conjecture **never specifies the
+dimensionless → MeV map**, so every MeV comparison above inherits an unstated
+convention; the `n⋆` claim gets no support, and the Cauchy-limit claim is
+untouched.
 
 **What would replace it:** a *derived* structural selector `λ ↦ k_λ`, or a
 proof that none exists. Bean `qou-9f4h`, which stays open per §13a (the

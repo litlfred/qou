@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-10T18:19:11Z
-updated_at: 2026-10-11T06:32:56Z
+updated_at: 2026-10-11T06:43:56Z
 parent: b9cj
 ---
 
@@ -250,7 +250,9 @@ for D or ³He, and **all three fitted towers fail `|tower| < 2`** — by 5×, 16
 and 1.3×. So the rule does not even reproduce its own recorded verdict once the
 word and the convention are brought current.
 
-**8 of the 14 live blocks have an eigenvalue within 0.007 of a Φ_q pole**
+**7 of the 14 live blocks have an eigenvalue within 0.007 of a Φ_q pole**
+(corrected from 8 — see the 06:39Z relay below; the May word is not pole-free
+either, it has 1)
 `μ = q^j`, by `min_j |1 − q^{−j} μ|`; the closest is T `(7,2)` at **8.9e-4**.
 Near-pole amplification is roughly **1000×**.
 
@@ -284,7 +286,7 @@ consumer re-checks it.
 ### What the near-pole finding suggests, and how to hold it
 
 Quotes 1-2 show the May probe had near-pole structure for **one** block and used
-`m_near_pole` as a failed scalar input. The relayed measurement puts **8 of 14**
+`m_near_pole` as a failed scalar input. The relayed measurement puts **7 of 14** (corrected from 8)
 blocks near a pole, with ~1000× amplification. If that holds up, **the
 obstruction is not the choice of truncation order at all** — it is that `Φ_q` is
 being evaluated close to its own poles, where any truncation is
@@ -303,3 +305,131 @@ recomputed; the three source quotes are.
 
 **Still `todo`.** This removes a candidate and proposes a mechanism. It derives
 no selector.
+
+---
+
+## 2026-10-11 (06:39Z + 06:41Z relays) — the pole proximity is ACCIDENTAL, and all 7 pre-registered q-only rules FAIL
+
+Two relays from the sibling session, recorded at ofri's request. The second
+contains the finding that reframes this whole arc, so read §Finding 1 first if
+reading only one thing. **Verified-here items are marked; everything else is
+their compute, labelled relayed.**
+
+### Correction to the figure I published: 7 of 14, not 8 — and the May word was not pole-free
+
+Corrected above in place. The report's own §3 tables list **seven** blocks below
+0.007. And the May word has **1** near-pole — its ³He `(5,4)` block sits at
+**0.00197** (`j = 2`) — so the contrast is **1 → 7**, not *none → 8*.
+
+### CAUSE — isolated with the producer's own kwargs, and it is an owner-ruled correctness fix
+
+🔎 **Verified here.** `computations/mass_at_3A_proper.py:456`
+`atom_braid_word_3A` does take exactly the two parameters needed to separate the
+changes — `intra_order: str = "borromean"` and
+`pn_convention: str = "bring_color_weighted"` — so the split is done with the
+producer's own switches, not a reconstruction. Relayed: May = `grouped` +
+`strict_averaged`, matching the `e2204a4a5d55` word to **9.7e-62**.
+
+**The `intra_order` change alone (grouped → borromean) produces the current
+spectra and all 7 near-poles.** The colour-weighted p-n letter alone shifts pole
+distances by **≤ 8 %**.
+
+🔎 **And that change is the owner-ruled fix of 2026-09-05** (bean `qou-hu1f`),
+per the producer's own docstring: the grouped word *"is a different element of
+`H₃(q)` from the alternating word the comment names, and only the alternating
+one is `β_Bor`"* — matched to `5e-60` against the Lean closed form. **So the
+pole proliferation arrived as a side effect of a change that was right for an
+entirely independent reason.** Worth stating plainly: the near-poles are not
+evidence against the 2026-09-05 ruling.
+
+### ACCIDENTAL, NOT STRUCTURAL — this retracts the hypothesis I recorded above
+
+My 06:29Z append said *"the obstruction is not the choice of truncation order at
+all — `Φ_q` is being evaluated close to its own poles, where any truncation is
+ill-conditioned."* **Withdrawn as a mechanism.** Relayed, holding for all 10
+`(eigenvalue, j)` pairs with `d < 0.01` on the current word, where
+`d(q) = |1 − q^{−j}μ(q)|`:
+
+- `d(q)` **drifts smoothly** when the word is rebuilt at each `q`.
+- Each crossing is a **simple zero away from `q₀`**: `q*/q₀ − 1 ∈
+  [−8.3e-3, +1.6e-2]`; closest is T `(7,2)` `j=2` at **−1.340e-3**.
+- **`μ ≠ c·q^j`**: `dlog μ / dlog q` runs **1.40–3.94**, so the eigenvalues are
+  not tracking the pole locus.
+- `|μ/q^j| − 1 ~ 1e-3`, **not ~1e-60** — i.e. near, not on.
+- Proton → muon pin changes `d` by **≤ 8.8e-6** relative, so it is not an
+  artefact of the anchor either.
+- Only `k = 1` towers are stable: **0.45 / 3.69 / 1.51**.
+
+**Unresolved in their own report:** the ³He `(6,3)` `j=2` crossing (the secant
+did not converge), and poles with `j ≥ 4`. 🔎 That last one is real and I
+checked it: at the proton pin `q⁴ = 1.517953`, against D `(4,2)`'s quoted
+`max|μ| = 1.514` — a gap of **0.0040**, so `j ≥ 4` poles are genuinely in range
+and the sweep is incomplete there.
+
+### The 7 PRE-REGISTERED q-only rules: ALL FAIL, on both words, under both unit maps
+
+**The discipline here is right and should be the template.** `PREREGISTRATION.md`
+sha256 `3d3f628a2318b0c4790bedc785d4fea3f74e33d73b211f581db01c69d9cbd832`,
+frozen **2026-10-11T05:41:29Z, before any tower was computed**. That is what
+makes these predictions rather than selections, per §NO FITTING.
+
+Rules: **R1a/b/c** pole index `⌊log_q max|μ|⌋` (per block / per eigenvalue /
+ceiling); **R2** cyclotomic termination; **R3** Garoufalidis–Zagier optimal
+truncation; **R3′** smallest-term truncation; **R4** a Habiro-degree bound —
+flagged by its author as **the agent's own construction, because the corpus
+defines no Habiro selector**.
+
+🔎 **The criterion is the conjecture's own, verified verbatim** at
+`folio/quantum-observable-universe/mass-theory/brane-tower-z-habiro.md` §52-60:
+compare with AME `{2.224566, 8.481798, 7.71806}` MeV, and *"A candidate rule
+closing all three to within ∼5 % **without per-atom retuning** constitutes the
+empirical signature."* The anti-fit clause is in the conjecture itself.
+
+**Result: all 7 rules fail on all 3 atoms**, on the current and May words, under
+both unit maps (M1 = tower as MeV; M2 = `m_e`·tower). The uniform `k = 1/2/3`
+baselines and the fitted May rule fail too. **Best cell anywhere: 26 %** (M2,
+³He, `k=2`, May word) against a 5 % target. Each failure is **scope (a)** for
+that rule alone.
+
+### 🛑 Finding 1 — truncation is cutting a CONVERGENT product, and this is the finding
+
+`Φ_q^{[≤k]}(μ) = Π_{j≤k}(1 − q^{−j}μ)^{−1}` **converges** at `q₀ > 1`. 🔎
+Verified here, and it is elementary: `q > 1` ⇒ `q^{−j} → 0` geometrically ⇒ the
+factors → 1 and `Σ|q^{−j}μ| < ∞`, so the product converges absolutely. Relayed:
+the **untruncated** tower is `~1e8–1e9` for every atom.
+
+**So the truncation order is not regularising a divergence — it is cutting a
+convergent product short.** Every q-intrinsic rule picks `k_λ = 2…22` and lands
+at `1e2–1e9`; **only `k ≈ 1` gives an O(1) tower.**
+
+**Why that is decisive under §NO FITTING, and it is the sharpest thing in this
+bean:** if no rule derivable from `q` reaches `k ≈ 1`, and only `k ≈ 1` produces
+a number of the right order, then *"the right `k`"* is **not a function of the
+mathematics** — it is whatever makes the output small. That is selection against
+the target **by construction**, and it explains why every candidate for five
+months has been a fit rather than a derivation. The failure is not that the
+right invariant has not been found yet; it is that the quantity being chosen is
+fixed by the answer.
+
+### Finding 2 — a GAP IN THE CONJECTURE'S OWN STATEMENT
+
+**R2 cannot fire at all**: `q₀` is not a root of unity, and no eigenvalue sits
+*on* a pole. More than that — `Φ_q` is **not a class in any `R/(P_k)`**, since
+`P_∞ ≡ 0` there. So the conjecture's *"cyclotomic projection evaluated at
+`z = μ`"* is **undefined at generic eigenvalues without an extra choice**. That
+is a defect in the statement, not in a candidate rule, and it belongs on
+`conj:brane-tower-z-habiro` rather than here.
+
+### Unsettled, and stated as such
+
+- **The conjecture never specifies the dimensionless → MeV map.** M1 vs M2 is
+  the agent's choice, so every MeV comparison above inherits an unstated
+  convention. This should be pinned before any further scoring.
+- The **`n⋆` claim** in the conjecture **gets no support** from any of this.
+- The **Cauchy-limit claim is untouched** — not tested, not refuted.
+
+**Still `todo`.** Five months of candidates, ten refuted ansätze, one fitted
+rule now known to rest on invented inputs, a block-basis SDP exclusion, and
+seven pre-registered q-only rules all failing. What this arc has produced is a
+well-documented negative and one structural reason to expect it (Finding 1). It
+has not produced a selector.
