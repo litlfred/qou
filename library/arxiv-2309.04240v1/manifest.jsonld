@@ -1,0 +1,41 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2309.04240v1/manifest.jsonld",
+  "@type": [
+    "folio-assistant-core:SourceDocument"
+  ],
+  "title": "arxiv-2309.04240v1",
+  "contains": [
+    "library/arxiv-2309.04240v1/sections/sec-front-matter",
+    "library/arxiv-2309.04240v1/sections/sec-000",
+    "library/arxiv-2309.04240v1/sections/sec-001",
+    "library/arxiv-2309.04240v1/sections/sec-002",
+    "library/arxiv-2309.04240v1/sections/sec-003",
+    "library/arxiv-2309.04240v1/sections/sec-004",
+    "library/arxiv-2309.04240v1/sections/sec-005",
+    "library/arxiv-2309.04240v1/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2309.04240v1",
+    "title_source": "slug",
+    "source_file": "2309.04240v1.pdf",
+    "source_sha256": "792154a0d6a57e34131050a66bca21f6ddbf53e8ff8dc99a6038f7b36b8dd4a9",
+    "pages": 10,
+    "arxiv": {
+      "id": "2309.04240",
+      "version": "1",
+      "primary_class": "math.GT",
+      "stamp_date": "8 Sep 2023"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

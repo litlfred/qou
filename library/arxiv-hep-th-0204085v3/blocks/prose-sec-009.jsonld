@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-th-0204085v3/blocks/prose-sec-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "WZNW fusion matrix. Finally, in appendix C we present a way to ﬁnd degenerate",
+  "pageStart": 3,
+  "pageEnd": 6,
+  "text": "../sections/sec-009-3-wznw-fusion-matrix-finally-in-appendix-c-we-pr.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0204085v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0204085v3/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2504.02266v3/blocks/prose-sec-014",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Bethe ansatz. The Bethe ansatz is a method to find joint eigenvectors of the Gaudin",
+  "pageStart": 13,
+  "pageEnd": 13,
+  "text": "../sections/sec-014-42-bethe-ansatz-the-bethe-ansatz-is-a-method-to.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2504.02266v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2504.02266v3/manifest.jsonld",
+  "provenance": "ingested"
+}

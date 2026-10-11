@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-th-0204085v3/sections/sec-027",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Let us introduce for short δ = j1 + j2 + j3 + j4 + 2 + b−2, and let us consider for",
+  "pageStart": 13,
+  "pageEnd": 14,
+  "contains": [
+    "library/arxiv-hep-th-0204085v3/blocks/prose-sec-027"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0204085v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0204085v3/manifest.jsonld",
+  "provenance": "ingested"
+}

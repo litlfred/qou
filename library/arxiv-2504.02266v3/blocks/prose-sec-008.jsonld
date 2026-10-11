@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2504.02266v3/blocks/prose-sec-008",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Skein categories. Similarly to the classical case, we have means to interpolate the",
+  "pageStart": 4,
+  "pageEnd": 5,
+  "text": "../sections/sec-008-24-skein-categories-similarly-to-the-classical-c.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2504.02266v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2504.02266v3/manifest.jsonld",
+  "provenance": "ingested"
+}

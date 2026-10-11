@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2504.02266v3/manifest.jsonld",
+  "@type": [
+    "folio-assistant-core:SourceDocument"
+  ],
+  "title": "Knizhnik-Zamolodchikov equations in Deligne categories",
+  "contains": [
+    "library/arxiv-2504.02266v3/sections/sec-front-matter",
+    "library/arxiv-2504.02266v3/sections/sec-000",
+    "library/arxiv-2504.02266v3/sections/sec-001",
+    "library/arxiv-2504.02266v3/sections/sec-002",
+    "library/arxiv-2504.02266v3/sections/sec-003",
+    "library/arxiv-2504.02266v3/sections/sec-004",
+    "library/arxiv-2504.02266v3/sections/sec-005",
+    "library/arxiv-2504.02266v3/sections/sec-006",
+    "library/arxiv-2504.02266v3/sections/sec-007",
+    "library/arxiv-2504.02266v3/sections/sec-008",
+    "library/arxiv-2504.02266v3/sections/sec-009",
+    "library/arxiv-2504.02266v3/sections/sec-010",
+    "library/arxiv-2504.02266v3/sections/sec-011",
+    "library/arxiv-2504.02266v3/sections/sec-012",
+    "library/arxiv-2504.02266v3/sections/sec-013",
+    "library/arxiv-2504.02266v3/sections/sec-014",
+    "library/arxiv-2504.02266v3/sections/sec-015",
+    "library/arxiv-2504.02266v3/sections/sec-016"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2504.02266v3",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2504.02266v3.pdf",
+    "source_sha256": "a12193f740b6ee53c86a78f822de5393a8bb5a29f5bb7de0c71a38c44e082b3b",
+    "pages": 20,
+    "arxiv": {
+      "id": "2504.02266",
+      "version": "3",
+      "primary_class": "math.RT",
+      "stamp_date": "30 Jun 2026"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

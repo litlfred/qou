@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2208.05331v6/blocks/prose-sec-007",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The monodromy theorem in category O",
+  "pageStart": 27,
+  "pageEnd": 29,
+  "text": "../sections/sec-007-8-the-monodromy-theorem-in-category-o.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2208.05331v6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2208.05331v6/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-th-0204085v3/sections/sec-023",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Using the invariance of the LFT fusion matrix w.r.t. conformal weights, one can",
+  "pageStart": 12,
+  "pageEnd": 12,
+  "contains": [
+    "library/arxiv-hep-th-0204085v3/blocks/prose-sec-023"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0204085v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0204085v3/manifest.jsonld",
+  "provenance": "ingested"
+}

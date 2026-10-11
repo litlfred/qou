@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2309.04240v1/blocks/prose-sec-003",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Some properties of the polynomials R and S",
+  "pageStart": 5,
+  "pageEnd": 5,
+  "text": "../sections/sec-003-23-some-properties-of-the-polynomials-r-and-s.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2309.04240v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2309.04240v1/manifest.jsonld",
+  "provenance": "ingested"
+}

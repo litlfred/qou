@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2504.02266v3/blocks/prose-sec-016",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "(so𝑡, so2𝑛) duality. Consider the space Λ∙(𝑉⊗𝑊), dim(𝑉) = 𝑡, dim(𝑊) = 𝑛. We",
+  "pageStart": 14,
+  "pageEnd": 20,
+  "text": "../sections/sec-016-51-so𝑡-so2𝑛-duality-consider-the-space-λ𝑉𝑊-dim𝑉.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2504.02266v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2504.02266v3/manifest.jsonld",
+  "provenance": "ingested"
+}

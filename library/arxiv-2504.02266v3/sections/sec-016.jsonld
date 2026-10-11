@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2504.02266v3/sections/sec-016",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "(so𝑡, so2𝑛) duality. Consider the space Λ∙(𝑉⊗𝑊), dim(𝑉) = 𝑡, dim(𝑊) = 𝑛. We",
+  "pageStart": 14,
+  "pageEnd": 20,
+  "contains": [
+    "library/arxiv-2504.02266v3/blocks/prose-sec-016",
+    "library/arxiv-2504.02266v3/blocks/thm-sec-016-01",
+    "library/arxiv-2504.02266v3/blocks/ex-sec-016-02",
+    "library/arxiv-2504.02266v3/blocks/thm-sec-016-03",
+    "library/arxiv-2504.02266v3/blocks/lem-sec-016-04",
+    "library/arxiv-2504.02266v3/blocks/thm-sec-016-05",
+    "library/arxiv-2504.02266v3/blocks/thm-sec-016-06",
+    "library/arxiv-2504.02266v3/blocks/thm-sec-016-07"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2504.02266v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2504.02266v3/manifest.jsonld",
+  "provenance": "ingested"
+}

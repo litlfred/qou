@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2208.05331v6/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Casimir connection",
+  "pageStart": 14,
+  "pageEnd": 18,
+  "contains": [
+    "library/arxiv-2208.05331v6/blocks/prose-sec-004",
+    "library/arxiv-2208.05331v6/blocks/thm-sec-004-01",
+    "library/arxiv-2208.05331v6/blocks/thm-sec-004-02",
+    "library/arxiv-2208.05331v6/blocks/thm-sec-004-03",
+    "library/arxiv-2208.05331v6/blocks/rem-sec-004-04",
+    "library/arxiv-2208.05331v6/blocks/thm-sec-004-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2208.05331v6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2208.05331v6/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-th-0204085v3/blocks/prose-sec-018",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "WZNW fusion matrix follows (see Appendix for this special value",
+  "pageStart": 9,
+  "pageEnd": 11,
+  "text": "../sections/sec-018-3-wznw-fusion-matrix-follows-see-appendix-for-th.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0204085v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0204085v3/manifest.jsonld",
+  "provenance": "ingested"
+}

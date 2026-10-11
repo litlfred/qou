@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2208.05331v6/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Parabolic pure braid group actions",
+  "pageStart": 29,
+  "pageEnd": 35,
+  "contains": [
+    "library/arxiv-2208.05331v6/blocks/prose-sec-008",
+    "library/arxiv-2208.05331v6/blocks/lem-sec-008-01",
+    "library/arxiv-2208.05331v6/blocks/rem-sec-008-02",
+    "library/arxiv-2208.05331v6/blocks/thm-sec-008-03",
+    "library/arxiv-2208.05331v6/blocks/rem-sec-008-04",
+    "library/arxiv-2208.05331v6/blocks/thm-sec-008-05",
+    "library/arxiv-2208.05331v6/blocks/thm-sec-008-06",
+    "library/arxiv-2208.05331v6/blocks/cor-sec-008-07"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2208.05331v6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2208.05331v6/manifest.jsonld",
+  "provenance": "ingested"
+}

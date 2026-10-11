@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2208.05331v6/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Braided Coxeter categories",
+  "pageStart": 18,
+  "pageEnd": 24,
+  "contains": [
+    "library/arxiv-2208.05331v6/blocks/prose-sec-005",
+    "library/arxiv-2208.05331v6/blocks/rem-sec-005-01",
+    "library/arxiv-2208.05331v6/blocks/rem-sec-005-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2208.05331v6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2208.05331v6/manifest.jsonld",
+  "provenance": "ingested"
+}
