@@ -42,6 +42,12 @@ not ``z³`` (the same defect `gram.rs` fixed in `TR_M[5]`). The exact `jets`
 reproduce the committed value under that z^len rule to ~12 digits, which
 identifies the formula; it does not make the value a trace. A convention-D
 trace needs the per-word element, which the certificates do not store.
+**Deleted 2026-10-11 (owner ruling, litlfred/qou#7685):** v9 no longer
+writes `tr_markov_f64` / `tr_markov_cleared` / `tr_markov_denom_power`; it
+writes `tr_markov_d`, the exact Ocneanu trace at ``z = q³/(q²+1)``, computed
+in v9 from the full crossing product. The old values and code are on branch
+`cat/cat-harness/fsh-guts` under
+`fsh-guts/deprecated/tools/hecke-engine/v9-tr-markov-zlen/`.
 
 **And 34 of the 35 v9 certificates were built with a pre-fix crossing.**
 Their exact polynomials carry odd powers of ``t``; at every commit they are
@@ -50,6 +56,9 @@ proportional to ``σ⁻¹ = σ − (t² − t⁻²)`` under v9's own relation
 ``σ² = (t² − t⁻²)σ + 1``. Only 40Ar (`1b1b1d5`) uses the fixed crossing.
 So the 22 fields re-anchored on 2026-10-10 are faithful evaluations of a
 mis-built element. Only `fsh-guts` deprecated scripts read these files.
+All 35 were regenerated with the current v9 on 2026-10-11 (#7686), so the
+v9 certificates now carry proton-pin `*_f64` fields straight from the
+generator and this script has nothing to re-anchor in them.
 
 That matters because the obvious alternative — re-running the generator — is
 actively destructive here: the 51 committed certificates come from four
