@@ -1,0 +1,239 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2208.05331v6",
+ "source": {
+  "file": "2208.05331v6.pdf",
+  "sha256": "54b4a400388dbf414b72469a85b260c07a8fb6e4a11ca0e0df97bbb0338c0dc5",
+  "bytes": 506117,
+  "pages": 36,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-11T06:00:38Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2208.05331",
+   "version": "6",
+   "primary_class": "math.QA",
+   "stamp_date": "8 Jan 2024"
+  },
+  "doi": null,
+  "title": "PURE BRAID GROUP ACTIONS ON CATEGORY O MODULES",
+  "authors_raw": "ANDREA APPEL AND VALERIO TOLEDANO LAREDO",
+  "title_lines": [
+   "PURE BRAID GROUP ACTIONS ON CATEGORY O MODULES"
+  ],
+  "abstract": "Let g be a symmetrisable Kac\u2013Moody algebra and U\u210fg its quan- tised enveloping algebra. Answering a question of P. Etingof, we prove that the quantum Weyl group operators of U\u210fg give rise to a canonical action of the pure braid group of g on any category O (not necessarily integrable) U\u210fg\u2013module V. By relying on our recent results [ATL15], we show that this action describes the monodromy of the rational Casimir connection on the g\u2013module V corre- sponding to V. We also extend these results to yield equivalent representations of parabolic pure braid groups on parabolic category O for U\u210fg and g.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20240108234216-05'00'"
+  },
+  "title_raw": "PURE BRAID GROUP ACTIONS ON CATEGORY O MODULES",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "PURE BRAID GROUP ACTIONS ON CATEGORY O MODULES Contents Introduction Kac\u2013Moody algebras and quantum groups Faithfulness of category O integrable modules Quantum Weyl group actions of pure braid groups The Casimir connection Braided Coxeter categories The equivariant monodromy theorem The monodromy t",
+   "outline": "1. Introduction",
+   "text": "PURE BRAID GROUP ACTIONS ON CATEGORY O MODULES",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Kac\u2013Moody algebras and quantum groups",
+   "page": 7,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Faithfulness of category O integrable modules",
+   "page": 10,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Quantum Weyl group actions of pure braid groups",
+   "page": 12,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "The Casimir connection",
+   "page": 14,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Braided Coxeter categories",
+   "page": 18,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "The equivariant monodromy theorem",
+   "page": 24,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "The monodromy theorem in category O",
+   "page": 27,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Parabolic pure braid group actions",
+   "page": 29,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 35,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 773,
+   "n_words": 128
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 7,
+   "n_chars": 14721,
+   "n_words": 2682
+  },
+  {
+   "id": "sec-001-2-kacmoody-algebras-and-quantum-groups",
+   "number": "2",
+   "title": "Kac\u2013Moody algebras and quantum groups",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 6546,
+   "n_words": 1315
+  },
+  {
+   "id": "sec-002-3-faithfulness-of-category-o-integrable-modules",
+   "number": "3",
+   "title": "Faithfulness of category O integrable modules",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 4762,
+   "n_words": 946
+  },
+  {
+   "id": "sec-003-4-quantum-weyl-group-actions-of-pure-braid-group",
+   "number": "4",
+   "title": "Quantum Weyl group actions of pure braid groups",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 6110,
+   "n_words": 1232
+  },
+  {
+   "id": "sec-004-5-the-casimir-connection",
+   "number": "5",
+   "title": "The Casimir connection",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 18,
+   "n_chars": 7382,
+   "n_words": 1479
+  },
+  {
+   "id": "sec-005-6-braided-coxeter-categories",
+   "number": "6",
+   "title": "Braided Coxeter categories",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 24,
+   "n_chars": 15218,
+   "n_words": 2914
+  },
+  {
+   "id": "sec-006-7-the-equivariant-monodromy-theorem",
+   "number": "7",
+   "title": "The equivariant monodromy theorem",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 27,
+   "n_chars": 4719,
+   "n_words": 811
+  },
+  {
+   "id": "sec-007-8-the-monodromy-theorem-in-category-o",
+   "number": "8",
+   "title": "The monodromy theorem in category O",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 6534,
+   "n_words": 1160
+  },
+  {
+   "id": "sec-008-9-parabolic-pure-braid-group-actions",
+   "number": "9",
+   "title": "Parabolic pure braid group actions",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 35,
+   "n_chars": 10841,
+   "n_words": 2010
+  },
+  {
+   "id": "sec-009-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 5265,
+   "n_words": 748
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "toc_inferred_entries": 0,
+  "sections": 11,
+  "chars_total": 82871
+ }
+}
