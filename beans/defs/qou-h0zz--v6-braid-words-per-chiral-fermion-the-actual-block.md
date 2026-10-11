@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - 8f-open
 created_at: 2026-08-10T18:34:14Z
-updated_at: 2026-10-10T14:47:10Z
+updated_at: 2026-10-11T07:33:41Z
 parent: qou-8lxd
 ---
 
@@ -145,3 +145,137 @@ across two fronts were stale against a sibling bean — and then recommended
 on the strength of its title. A `scrapped` bean with 294 lines of verified
 sorry-free Lean is the sharpest form of that trap: the status says "ignore me"
 and the body holds the answer.
+
+
+---
+
+## The quark side, measured: `u` is forced WITHOUT the interpretive step — and coherence is load-bearing at only two of the four fermions (2026-10-11)
+
+Working item (c) of this bean's open set — derive the quark framing the way the
+lepton one was derived. The result is a **negative about where the framework
+does work**, and it is more useful than the derivation would have been.
+
+### What the corpus did not have
+
+Corpus-grepped before writing anything: `u_multiset_forced`, any
+positive-total mirror of `no_positive_of_negative_total`, and any bean mentioning
+a forced `u` multiset are **all absent** — 0 hits across `folio/**/*.lean`
+(excluding `.lake`) and 0 across `beans/defs/`. So this is new Lean, not a
+re-derivation.
+
+### Measured, by exhaustive enumeration over `{-1,0,1}³` (exact integers)
+
+| `T` | multisets, no coherence | with coherence | any mixed-sign assignment reaches `T`? |
+|---:|---|---|---|
+| −3 (**e**) | `(-1,-1,-1)` | same | no |
+| −2 | `(-1,-1,0)` | same | no |
+| −1 (**d**) | `(-1,-1,1)`, `(-1,0,0)` | `(-1,0,0)` | **yes** |
+| 0 (**ν**) | `(-1,0,1)`, `(0,0,0)` | `(0,0,0)` | **yes** |
+| +1 | `(-1,1,1)`, `(0,0,1)` | `(0,0,1)` | **yes** |
+| +2 (**u**) | `(0,1,1)` | same | no |
+| +3 | `(1,1,1)` | same | no |
+
+**Sign-coherence — the one interpretive step in this whole arc — is load-bearing
+only at `T ∈ {−1, 0, +1}`.** Of the four first-generation fermions, exactly two
+sit in that window: `d` (`T = −1`) and `ν` (`T = 0`). **`u` (`T = +2`) and `e`
+(`T = −3`) are forced by range and total alone.** The arc's earlier write-up
+credits all four to coherence-or-component-constancy; that over-attributes two
+of them.
+
+### Lean added (additive — no existing declaration touched)
+
+In `QOU/StandardModel/SignCoherentTwist.lean`:
+
+| decl | hypotheses | gives |
+|---|---|---|
+| `u_multiset_forced` | `hrange`, `hsum = 2` — **no `SignCoherent`** | `u = {0,1,1}` in one of three orderings |
+| `no_mixed_sign_at_total_two` | `hrange`, `hsum = 2` | `∀ i, 0 ≤ t i` — the alternative coherence would exclude does not exist |
+| `coherent_of_total_two` | `hrange`, `hsum = 2` | `SignCoherent t` — at `T = 2` coherence is a **consequence**, not an assumption |
+| `no_negative_of_positive_total` | `hsum > 0`, `hcoh` | the mirror of `no_positive_of_negative_total`, for the general positive case |
+
+Contrast with the existing `d_multiset_forced`, which **does** take
+`SignCoherent` and provably needs it (`d_mixed_sign_not_coherent`).
+
+### The finding, stated as a negative
+
+**For `u` the framework's component structure does no work.** Leptons differ in
+kind: there "a closure is a knot" ⟹ transitive π ⟹ constant framing *forces*
+the answer (`ComponentFraming.lepton_framing_determined`). For quarks the
+Borromean identity-π makes component-constancy **vacuous**, and what determines
+the multiset is integer arithmetic on a range the framework did not derive.
+
+So an agent looking for a framework mechanism that picks `u`'s multiset is
+looking for something `hrange` and `hsum` have already settled. This closes
+item (c) as a question — not by deriving it, but by showing there is nothing
+there to derive.
+
+### What this does NOT change — do not read it as progress on the conjecture
+
+- **The TOTAL is still pinned by the SM target**, `T = 3Q`. Item 1 of this bean
+  is untouched, `Q(f)` for a single chiral fermion is still underived, and the
+  framework's `Q = w/2` is still hadron-level.
+- **`hrange` — entries in `{-1,0,1}` — is itself an input**, not derived here.
+  If the range were wider, `T = 2` would not be unique, so the `u` result is
+  conditional on it exactly as everything else in this arc is.
+- **Chirality is untouched** (`qou-wqto`): no braid word separates `u_L` from
+  `u_R`, and nothing above addresses it.
+- **The `1/3` normalisation** is still the Bilson-Thompson helon precedent.
+- `conj:sm-hypercharge-invariant` stays **open**. Per rule 13a nothing is closed.
+
+### The corpus already had the CONVERSE, and the two run in opposite directions
+
+`ComponentFraming.u_multiset_forces_nontransitive` (line 147) proves
+**multiset ⟹ braid**: `{0,1,1}` is non-constant, so a transitive π would kill
+it, hence `u`'s closure must be non-transitive — multi-component, consistent
+with Borromean. That is the cross-check this arc records as "passing".
+
+`u_multiset_forced` is the **other direction**: **range + total ⟹ multiset**.
+Neither implies the other, and having both is what makes the accounting
+complete — the braid constrains the multiset's *shape* (non-constant), and the
+arithmetic pins the multiset *exactly*. What neither supplies is the total.
+
+Declaration names verified against the live files rather than carried from the
+predecessor bean: `ComponentFraming.lean` lines 97-300 (14 declarations,
+including `lepton_framing_determined` : 246, `nu_framing_is_zero` : 261,
+`nu_distinct_multiset_excluded` : 276, `e_framing_is_neg_one` : 287,
+`u_multiset_available_at_identity` : 300).
+
+Main's last 200 commits touched **nothing** under
+`folio/quantum-observable-universe/lean/QOU/StandardModel/`, so this is not
+racing a sibling.
+
+### Verification record, including the red run
+
+The first `lean`-direct run of these four was **rc=1, RED** — one error, in
+`coherent_of_total_two`:
+
+    error: omega could not prove the goal: a possible counterexample may
+    satisfy  c <= -1,  -1 <= b <= 1,  -1 <= a <= 1,  1 <= a + b <= 3
+    where a := t 1, b := t 2, c := t i
+
+The *claim* was fine; the **proof** was wrong — and **my first diagnosis of it
+was also wrong**, which is the part worth recording.
+
+I read the error as being in `coherent_of_total_two` and blamed a
+pattern-`intro` on a `Prop`-valued `def`. Rewriting that proof changed nothing:
+the second run returned the **identical** error. Line 300 is not in
+`coherent_of_total_two` at all (that starts at 303) — it is the closing `omega`
+of **`no_mixed_sign_at_total_two`**, which begins at 293.
+
+The actual bug: that theorem concludes `∀ i, 0 ≤ t i`, over an **arbitrary**
+`i : Fin 3`, while I supplied only `hrange 0`, `hrange 1`, `hrange 2`. So omega
+had no constraint on `t i` and the counterexample it printed says exactly that
+(`c := t i`, `c ≤ -1`, with only `t 1` and `t 2` bounded). I had copied the
+hypothesis pattern from `d_multiset_forced`, whose conclusion is about `t 0`,
+`t 1`, `t 2` *specifically* — where three `have`s are sufficient. Fixed with
+`intro i` + `fin_cases i <;> omega`.
+
+Two reusable lessons, the second more expensive than the first:
+
+1. **A `∀ i` conclusion over `Fin n` needs case analysis, not three `have`s.**
+   The sufficient-for-a-concrete-index pattern looks identical and is not.
+2. **Read the error's line number against the declaration boundaries before
+   theorising.** I attributed an error to the declaration *after* the one that
+   raised it, rewrote a correct proof, and spent a second four-minute
+   verification confirming nothing. Lean reports the first error only, so a
+   later declaration's status was never in evidence either way.

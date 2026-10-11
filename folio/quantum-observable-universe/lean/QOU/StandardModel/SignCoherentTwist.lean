@@ -223,4 +223,92 @@ invisible to every constraint the battery imposes. -/
 theorem cancel_preserves_total (a b c : ℤ) :
     (a - 1) + (b + 1) + c = a + b + c := by ring
 
+/-! ## The `u` side: forced by arithmetic alone, with the framework contributing nothing
+
+Bean `qou-h0zz` records the quark side as *"CONSISTENT rather than derived:
+identity-π leaves `{0,1,1}` available, and a transitive π would have KILLED
+it."* That is correct about the **component-framing** route and it understates
+what is true of the multiset, in a direction worth stating precisely.
+
+`d`'s multiset needs sign-coherence (`d_multiset_forced` above), because
+`{−1,−1,1}` and `{−1,0,0}` both have total `−1` and only coherence separates
+them. **`u` needs no such hypothesis.** Three entries drawn from `{−1,0,1}`
+cannot reach total `2` unless two of them are `1`, since `1+1+(−1) = 1`; so the
+third is `0` and the multiset is `{0,1,1}` by range and total alone. No
+mixed-sign assignment reaches `2` at all, which is why coherence has nothing to
+do for `u` and why the `1·2·2·1` residual already showed `1` in that slot.
+
+The consequence is the one to carry, and it is a **negative**: for `u` the
+framework's component structure does no work. Leptons are different in kind —
+there "a closure is a knot" *forces* the framing through
+`ComponentFraming.lepton_framing_determined`. For quarks the Borromean
+identity-π makes component-constancy vacuous, and what determines the multiset
+is integer arithmetic on a range the framework did not derive. So an agent
+looking for a framework mechanism that picks `u`'s multiset is looking for
+something `hrange` and `hsum` have already settled; the open objects are the
+**total** (still pinned by the SM target, `T = 3Q` — bean `qou-h0zz` item 1) and
+**chirality** (`qou-wqto`), not this.
+-/
+
+/-- Sign-coherence plus a **positive** total forbids any negative strand — the
+mirror of `no_positive_of_negative_total`, recorded for the general positive
+case even though `u` below does not need it. -/
+theorem no_negative_of_positive_total {t : Fin 3 → ℤ}
+    (hsum : 0 < t 0 + t 1 + t 2) (hcoh : SignCoherent t) :
+    ∀ i, 0 ≤ t i := by
+  by_contra hcon
+  push_neg at hcon
+  obtain ⟨i, hi⟩ := hcon
+  -- some strand is negative, so coherence forbids any positive strand
+  have hnonpos : ∀ j, t j ≤ 0 := by
+    intro j
+    by_contra hj
+    push_neg at hj
+    exact hcoh ⟨j, i, hj, hi⟩
+  have h0 := hnonpos 0
+  have h1 := hnonpos 1
+  have h2 := hnonpos 2
+  omega
+
+/-- **`u = {0,1,1}` is forced by range and total alone.**
+
+Note the hypotheses: unlike `d_multiset_forced` this takes **no**
+`SignCoherent` argument. With entries in `{−1,0,1}` summing to `2` the multiset
+is `{0,1,1}` in one of its three orderings, because two entries must be `1` and
+the remainder is then `0`. -/
+theorem u_multiset_forced {t : Fin 3 → ℤ}
+    (hrange : ∀ i, -1 ≤ t i ∧ t i ≤ 1)
+    (hsum : t 0 + t 1 + t 2 = 2) :
+    (t 0 = 0 ∧ t 1 = 1 ∧ t 2 = 1) ∨
+    (t 0 = 1 ∧ t 1 = 0 ∧ t 2 = 1) ∨
+    (t 0 = 1 ∧ t 1 = 1 ∧ t 2 = 0) := by
+  have h0 := hrange 0
+  have h1 := hrange 1
+  have h2 := hrange 2
+  omega
+
+/-- **No mixed-sign assignment reaches total `2`.**  This is why `u` needs no
+coherence hypothesis: the alternative coherence would have excluded does not
+exist, where for `d` it does (`d_mixed_sign_not_coherent`). -/
+theorem no_mixed_sign_at_total_two {t : Fin 3 → ℤ}
+    (hrange : ∀ i, -1 ≤ t i ∧ t i ≤ 1)
+    (hsum : t 0 + t 1 + t 2 = 2) :
+    ∀ i, 0 ≤ t i := by
+  have h0 := hrange 0
+  have h1 := hrange 1
+  have h2 := hrange 2
+  intro i
+  fin_cases i <;> omega
+
+/-- Corollary: at total `2` the range constraint already implies sign-coherence,
+so coherence is not an extra assumption there — it is a consequence. -/
+theorem coherent_of_total_two {t : Fin 3 → ℤ}
+    (hrange : ∀ i, -1 ≤ t i ∧ t i ≤ 1)
+    (hsum : t 0 + t 1 + t 2 = 2) :
+    SignCoherent t := by
+  intro h
+  obtain ⟨i, j, hi, hj⟩ := h
+  have hj0 := no_mixed_sign_at_total_two hrange hsum j
+  exact absurd hj (by omega)
+
 end QOU.StandardModel.SignCoherentTwist
