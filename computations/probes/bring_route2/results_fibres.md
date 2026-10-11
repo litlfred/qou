@@ -1,5 +1,8 @@
 # Route 2, option 1c: results
 
+> **🛑 CORRECTION 2026-10-11 (`results_signed.md`).** The seen candidates in this file are the generator sequences of `qbeta_candidate_closures_are_links_probe.CANDIDATES`, with the signs erased. The scored nucleon has σ₁⁻¹ in its core and averaged ud letters; it is a sum of four braids. Every statement here about the *seen candidates* is withdrawn. The statements about fresh positive words stand.
+
+
 Recipe: `preregistration-fibres.md`, committed (3e485f3217) before this run. Producer: `fibres_probe.py`. Exact integer and sympy arithmetic for the braid keys; mpmath at 60 dps for q-lengths, with q₀ the proton pin. **6/6 checks pass.** No Q_β, CODATA or mass input.
 
 ## 1. Where the 316 word classes collapse

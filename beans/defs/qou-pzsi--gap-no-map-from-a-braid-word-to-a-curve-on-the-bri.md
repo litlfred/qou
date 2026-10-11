@@ -380,3 +380,7 @@ Owner, 2026-10-10: work the energy / O'Hara principle by **route 1**, *"Multi-st
 - To try to settle A vs B: flow the spectral functional directly, and put more points on the knotted component. Both are method changes and would need a new pre-registration.
 - Route 2 (a Bring-surface embedding) remains undefined.
 - Route 3 (`qou-uh5f`) is untouched.
+
+## 2026-10-11 — CORRECTION: route 2 used sign-erased candidates (results_signed.md)
+
+Route 2 and options 1 through 1d (and route 1, ohara_link_energy) took the seen candidates from the sign-erased generator list in qbeta_candidate_closures_are_links_probe. The canonical nucleon (pyhecke.atom.build_nucleon_nf) has a (σ₀σ₁⁻¹)³ core and averaged ud letters, so it is a SUM OF FOUR BRAIDS. Under route 2 every proton term has a Bring loop (L = 9.21 / 15.94 / 6.37 / 20.44), whereas the sign-erased nuc11 is parabolic with no loop. Every seen-candidate read-across from route 2 is WITHDRAWN, including 1d's "Rule A → nuc11, Rule B → class A". The fresh-positive-word results stand. γγ words (σ₀σ₁⁻¹)^k never get a Bring loop under route 2's "exactly one fixed point" rule: this is a limit of the rule (3 ∤ k: no conjugate of Γ₀(2) contains the word; 3 | k: the word is pure, so all three conjugates contain it). Scope (a). The selection rule stays OPEN.

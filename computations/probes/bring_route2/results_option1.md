@@ -1,5 +1,8 @@
 # Route 2, option 1: results (ropelength Λ = L/τ on fresh words)
 
+> **🛑 CORRECTION 2026-10-11 (`results_signed.md`).** The seen candidates in this file are the generator sequences of `qbeta_candidate_closures_are_links_probe.CANDIDATES`, with the signs erased. The scored nucleon has σ₁⁻¹ in its core and averaged ud letters; it is a sum of four braids. Every statement here about the *seen candidates* is withdrawn. The statements about fresh positive words stand.
+
+
 Recipe: `preregistration-option1.md`, committed before computing (67fee1b20b).
 Producer: `option1_ropelength_probe.py`, mpmath at 30 dps. All 67 checks pass:
 - the class count is 94;
