@@ -144,7 +144,7 @@ Owner instruction: no citation-only steps; everything to be proved in Lean on Ma
 | `H_n → TL_n` onto; `dim TL_n` | `heckeToTL_surjective`, `heckeTLEquiv`; `MathlibExt/TemperleyLiebNormalIdxCatalan` (normal words ≃ Dyck words), `…NormalFormSpanning.finrank_le_catalan` | onto: done. `dim TL_n ≤ C_n`: done for all `n`, any commutative ring. Equality and the Jones normal-form basis: done over `ℝ` for real `q ≠ 0` not a root of unity (`TemperleyLiebDimCatalan.finrank_eq_catalan`, `normalBasis`), via a direct TL action on `V^{⊗n}` whose image contains the Jimbo image |
 | Jimbo `Ř`: quadratic, Yang–Baxter, action on `V^{⊗n}` | `RMatrixSl2`, `heckeActionN`; `SchurWeyl/JimboActionKernel` | done. Kernel = trace radical and image dimension `C_n`: done over ordered fields (`ker_jimbo_eq_traceRadicalIdeal`, `finrank_range_jimbo_eq_catalan`); over `ℂ` open |
 | `U_q(𝔰𝔩₂)`, `q`-Schur–Weyl | `Mass/QuantumSl2Fundamental`: representation data `E,F,K^±`, coproduct, `V^{⊗n}`; every adjacent `Ř` commutes with `Δ^{(n)}` | partial. The algebra as a quotient ring and the double commutant are missing; the rigidity route below does not need them |
-| KZ on `n` points as a `B_n` representation | 2 strands (`KohnoTwoPoint.kzExchange_quad`); PR #7719 (`Mass/KZHolonomy/`): flatness of the KZ form on `Conf_n(ℂ)` (`kzForm_isFlatOn`), endpoint-only transport on star-shaped sets (`flat_transport_eq`), `kzBraidRep : B_n →* Aˣ` with braid relations, equal to the permutation action at coupling 0 | done on PR #7719, including continuity in the coupling (`continuous_kzBraidRep`) |
+| KZ on `n` points as a `B_n` representation | 2 strands (`KohnoTwoPoint.kzExchange_quad`); `Mass/KZHolonomy/`: flatness of the KZ form on `Conf_n(ℂ)` (`kzForm_isFlatOn`), endpoint-only transport on star-shaped sets (`flat_transport_eq`), `kzBraidRep : B_n →* Aˣ` with braid relations, equal to the permutation action at coupling 0 | done, merged to main (PR #7719, `e1f5d1b4e`), including continuity in the coupling (`continuous_kzBraidRep`) |
 | Drinfeld associator; skein-category universal property | — | missing (very large each); Mathlib has neither |
 
 **Proposed full-Lean route (judgement, not a finding): bypass Drinfeld and the skein category.**
@@ -167,3 +167,15 @@ Kohno's own proof is a rigidity argument, and in Lean it needs strictly less tha
 4. The weight-preserving intertwiner (#7632) transports the weighted trace.
 
 This needs neither `U_q(𝔰𝔩₂)`, nor Drinfeld's associator, nor the skein category.
+
+### 5.1 Assembly status (2026-10-11, PR #7673)
+
+These are proved without sorry; their only axioms are `propext`, `Classical.choice` and `Quot.sound`.
+- `BraidHeckeFactor`: if a braid representation `θ` has `θ(σ₀)` satisfying the Hecke quadratic, then every `θ(σ_j)` does, because all `σ_j` are conjugate. So `θ` factors through `H_m(q)` (`heckeOfBraidRepOfZero`).
+- `KZTwoStrandHecke`: for two strands the KZ holonomy is `θ(σ₀) = e^{θ(1−c)} e₊ − e^{−θ(1+c)} e₋`. After rescaling it satisfies the Hecke quadratic with `q = e^{2πiκ}`, so it factors through `H_1(q)`.
+- `KohnoComparison`: two representations of `∏ M_{d_i}` are conjugate exactly when the ranks of their matrix-unit idempotents agree. On a preconnected parameter set, continuous families that are conjugate at one point are conjugate everywhere.
+
+Three gaps stand between these and the full theorem.
+1. The Hecke quadratic for the KZ generator when `n ≥ 3`. This needs the local monodromy at the collision divisor, i.e. the regular-singularity analysis.
+2. Continuity in `q` of the Wedderburn isomorphism. `heckeWedderburn` is currently built one `q` at a time.
+3. A base point. At coupling 0 we have `q = 1`, which the generic Wedderburn excludes. So either the decomposition of `ℂ[S_n]` must glue continuously onto the generic one, or the base point must be chosen elsewhere.
