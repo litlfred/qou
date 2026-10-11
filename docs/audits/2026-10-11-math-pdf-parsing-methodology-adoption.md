@@ -72,11 +72,11 @@ Read off `cat-harness-tools` at `b7351df` (2026-10-11):
 
 Filed on `litlfred/cat-harness-tools`, where the rung code lives:
 
-- an LLM-judge stage for `formula-benchmark.py`, with verdicts recorded as
+- [#130](https://github.com/litlfred/cat-harness-tools/issues/130): an LLM-judge stage for `formula-benchmark.py`, with verdicts recorded as
   data;
-- formula-region detection for OCR'd or scanned pages (ScanSSD-style),
+- [#131](https://github.com/litlfred/cat-harness-tools/issues/131): formula-region detection for OCR'd or scanned pages (ScanSSD-style),
   emitted as a sidecar;
-- volume-scan document separation as a proposal arm with majority-vote
+- [#132](https://github.com/litlfred/cat-harness-tools/issues/132): volume-scan document separation as a proposal arm with majority-vote
   boundaries (zbMATH method), confirmed before anything is promoted.
 
 ## What this note does not claim
