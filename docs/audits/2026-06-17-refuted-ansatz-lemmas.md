@@ -171,11 +171,42 @@ and changing its truncation order cannot change the tower at all.** T `[6,3]`
 and ³He `[5,4]` are two-row and survive. That is a structural statement and does
 not depend on the 60-dps numbers.
 
-**(v) "max-|μ|" is more broadly wrong than stated above.** The entry above cites
-the probe's docstring sentence placing T's `max|μ| = 8.23` at `[4,3,1,1]`.
-Relayed from the float64 data itself, `argmax|μ|` differs from the cut block for
-**all three** atoms — D `[3,3]`, T `[3,3,3]`, ³He `[3,3,3]` — so the mislabel is
-not a one-atom discrepancy. The rule was max-|contrib| throughout.
+**(v) "max-|μ|" is more broadly wrong than stated above — and its origin is a
+FALSE POST-HOC OBSERVATION inside the probe, not a careless rename.** The entry
+above cites the probe's docstring sentence placing T's `max|μ| = 8.23` at
+`[4,3,1,1]`. The actual origin is one line of the probe's own witness prose:
+
+> *"Numerical signal: outlier partitions are the **max-|μ|** ones in
+> `ρ_λ(β_atom)`."*
+
+The rule selected by **max-|contrib|** (its own "Candidate rule under test");
+the probe then *remarked* that the outliers "are the max-|μ| ones"; and that
+remark was promoted into the rule's identity downstream, arriving at the
+catalogue as *"1 iff λ is the max-|μ| partition"*. **The remark is false** —
+relayed from the float64 data, `argmax|μ|` differs from the cut block for **all
+three** atoms (D `[3,3]`, T `[3,3,3]`, ³He `[3,3,3]`). So this is a wrong claim
+*inside* the probe that nothing re-derived, which is the same class as the rest
+of this entry.
+
+**(vi) On the CURRENT production word the rule fails its own verdict** (relayed,
+convention D at the proton pin, 60 dps, cross-checks ≤ 1e-52; word
+`atom_braid_word_3A`, borromean intra order `7db032fb48`, colour-weighted p-n
+letter). Fitted towers **D 10.29 / T 31.85 / ³He 2.53** — **all three fail
+`|tower| < 2`**, by 5×, 16× and 1.3×, and the cut block is not `argmax|μ|` for
+D or ³He.
+
+**(vii) The obstruction may not be the selector at all — hypothesis, scope (a).**
+Relayed: **8 of the 14 live blocks** have an eigenvalue within `0.007` of a `Φ_q`
+pole `μ = q^j` (closest T `(7,2)` at `8.9e-4`), with roughly **1000×**
+amplification. Verified here, the May probe had already named this for *one*
+block — ³He's `[5,4]` is *"structurally over-twisted … carries the dominant
+near-pole multiplicity"* — and used `m_near_pole` as one of the failed 2-input
+scalar parameters. If the 8-of-14 figure holds, the difficulty is that `Φ_q` is
+being evaluated near its own poles, where **any** truncation is ill-conditioned
+and a one-block integer flip is the wrong instrument. 🛑 Hold it as a
+hypothesis: no invariant is yet named, so this is scope (a), and two relayed
+threads would decide it (whether the proximity is structural or accidental, and
+which word change causes it).
 
 **What would replace it:** a *derived* structural selector `λ ↦ k_λ`, or a
 proof that none exists. Bean `qou-9f4h`, which stays open per §13a (the

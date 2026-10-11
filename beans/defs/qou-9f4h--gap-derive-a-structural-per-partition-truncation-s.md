@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-10T18:19:11Z
-updated_at: 2026-10-11T05:42:03Z
+updated_at: 2026-10-11T06:32:56Z
 parent: b9cj
 ---
 
@@ -223,3 +223,83 @@ pre-registration is what makes a rule a prediction rather than a selection.
 
 **Still `todo`.** Nothing here derives a selector; most of it narrows the space
 and corrects the record.
+
+---
+
+## 2026-10-11 (later) — the CURRENT word fails both May claims, and the obstruction may not be the selector at all
+
+Relayed from the sibling session at ofri's request. Their compute is marked
+relayed; the corroboration below is **verified here from the May probe's own
+source**, and it sharpens the account of the mislabel.
+
+### RELAYED — the current production word, convention D, proton pin, 60 dps
+
+`atom_braid_word_3A`, borromean intra order (`7db032fb48`), colour-weighted p-n
+letter; cross-checks agreeing to ≤ 1e-52. Report cited as
+`/mnt/project-files/mass-endomorphism/klambda/current-word-D/current-word-D.md`
+(not readable from this container).
+
+| atom | k=1 | k=2 | k=3 | fitted |
+|---|---:|---:|---:|---:|
+| D | 0.451 | 181.2 | 1281 | **10.29** |
+| T | 3.689 | 161.4 | 1621 | **31.85** |
+| ³He | 1.505 | 24.76 | 41.31 | **2.53** |
+
+**Neither May claim survives on this word.** The cut block is not `argmax|μ|`
+for D or ³He, and **all three fitted towers fail `|tower| < 2`** — by 5×, 16×
+and 1.3×. So the rule does not even reproduce its own recorded verdict once the
+word and the convention are brought current.
+
+**8 of the 14 live blocks have an eigenvalue within 0.007 of a Φ_q pole**
+`μ = q^j`, by `min_j |1 − q^{−j} μ|`; the closest is T `(7,2)` at **8.9e-4**.
+Near-pole amplification is roughly **1000×**.
+
+### VERIFIED HERE — the May probe already named this mechanism, and the "max-|μ|" label was a FALSE POST-HOC OBSERVATION inside it
+
+Three quotes from
+`0763606e4f^:_deprecated/probes/probe_phiq_per_partition_klambda.py`:
+
+1. **Line 35-39** — ³He's cut block `[5,4]` is *"structurally over-twisted — the
+   partition [5,4] … carries the dominant **near-pole** multiplicity that broke
+   the 2-input rules"*.
+2. **Lines 210, 251** — `m_near_pole` was already one of the **2-input rule
+   parameters that failed** at uniform `k`.
+3. **Line 255, and this is the one that matters** — *"Numerical signal: outlier
+   partitions are the **max-|μ|** ones in `ρ_λ(β_atom)`."*
+
+**So the origin of the "max-|μ|" label is quote 3: a post-hoc numerical
+*observation* about the outliers, not the selection rule.** The rule selected by
+max-|contrib| (its own "Candidate rule under test"); the probe then remarked
+that the outliers "are the max-|μ| ones"; and that remark was promoted into the
+rule's identity downstream, where it reached the catalogue as *"1 iff λ is the
+max-|μ| partition"*.
+
+**And the observation is false.** Measured (relayed, float64 data): `argmax|μ|`
+differs from the cut block for **all three** atoms — D `[3,3]`, T `[3,3,3]`,
+³He `[3,3,3]`. So the mislabel is not a careless rename between files; it is a
+**wrong claim inside the probe** that nothing re-derived. That is the same class
+as everything else in this arc: a conclusion written into prose where no
+consumer re-checks it.
+
+### What the near-pole finding suggests, and how to hold it
+
+Quotes 1-2 show the May probe had near-pole structure for **one** block and used
+`m_near_pole` as a failed scalar input. The relayed measurement puts **8 of 14**
+blocks near a pole, with ~1000× amplification. If that holds up, **the
+obstruction is not the choice of truncation order at all** — it is that `Φ_q` is
+being evaluated close to its own poles, where any truncation is
+ill-conditioned and a one-block integer flip is the wrong instrument.
+
+🛑 **Hold this as a hypothesis, not a finding.** Scope (a) at best: it says this
+*construction* is ill-conditioned on this word, and no invariant is yet named
+that would make it scope (b). The sibling reports two open threads that would
+decide it — whether the pole proximity is **structural or accidental**, and
+**which of the two word changes causes it** — plus the **pre-registered q-only
+rules**. Pre-registration is the right shape under §NO FITTING: it makes a rule
+a prediction rather than a selection.
+
+**Do not re-derive their numbers from this bean.** Nothing here is independently
+recomputed; the three source quotes are.
+
+**Still `todo`.** This removes a candidate and proposes a mechanism. It derives
+no selector.
