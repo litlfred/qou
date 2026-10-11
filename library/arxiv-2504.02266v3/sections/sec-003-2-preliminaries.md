@@ -8,6 +8,7 @@ pages: 2-3
 source_pdf: 2504.02266v3.pdf
 source_sha256: a12193f740b6ee53
 toc_source: inferred
+doc_brief: "Knizhnik-Zamolodchikov equations in Deligne categories — We consider the Knizhnik-Zamolodchikov equations in Deligne Categories in the context of (gl𝑚, gl𝑛) and (so𝑚, so2𝑛) dualities."
 ---
 produce the 𝐺𝐿𝑡duality under which the KZ connection maps to the dynamical connection
 on a certain simple module for the dual general linear Lie algebra. The integral formulas

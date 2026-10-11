@@ -8,6 +8,7 @@ pages: 3-3
 source_pdf: 2504.02266v3.pdf
 source_sha256: a12193f740b6ee53
 toc_source: inferred
+doc_brief: "Knizhnik-Zamolodchikov equations in Deligne categories — We consider the Knizhnik-Zamolodchikov equations in Deligne Categories in the context of (gl𝑚, gl𝑛) and (so𝑚, so2𝑛) dualities."
 ---
 grant DMS-2001318. Alexander Varchenko’s work was partially supported by the Simons
 Foundation grant TSM-00012774. We thank UROP and UROP+ organizers for providing

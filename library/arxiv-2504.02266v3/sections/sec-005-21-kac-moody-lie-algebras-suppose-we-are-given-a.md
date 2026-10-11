@@ -8,6 +8,7 @@ pages: 3-3
 source_pdf: 2504.02266v3.pdf
 source_sha256: a12193f740b6ee53
 toc_source: inferred
+doc_brief: "Knizhnik-Zamolodchikov equations in Deligne categories — We consider the Knizhnik-Zamolodchikov equations in Deligne Categories in the context of (gl𝑚, gl𝑛) and (so𝑚, so2𝑛) dualities."
 ---
 size 𝑛and rank 𝑙, such that
 𝑎𝑖𝑖= 2,

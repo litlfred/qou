@@ -8,6 +8,7 @@ pages: 9-10
 source_pdf: 2309.04240v1.pdf
 source_sha256: 792154a0d6a57e34
 toc_source: outline
+doc_brief: "BURAU REPRESENTATION OF BRAID GROUPS AND q-RATIONALS — We establish a link between the new theory of q-deformed ratio- nal numbers and the classical Burau representation of the braid group B3."
 ---
 [1] Alexander, J.W. Topological invariants of knots and links. Trans. Amer. Math. Soc. 30
 (1928), 275-306. 1

@@ -8,6 +8,7 @@ pages: 7-10
 source_pdf: 2208.05331v6.pdf
 source_sha256: 54b4a400388dbf41
 toc_source: outline
+doc_brief: "PURE BRAID GROUP ACTIONS ON CATEGORY O MODULES — Let g be a symmetrisable Kac–Moody algebra and Uℏg its quan- tised enveloping algebra. Answering a question of P."
 ---
 2.1. Symmetrisable Kac–Moody algebras [Kac90]. Let I be a ﬁnite set and
 A = (aij)i,j∈I a generalised Cartan matrix, i.e., aii = 2, aij ∈Z⩽0, i̸ = j, and

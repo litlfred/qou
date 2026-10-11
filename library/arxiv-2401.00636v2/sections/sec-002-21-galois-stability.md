@@ -8,6 +8,7 @@ pages: 3-4
 source_pdf: 2401.00636v2.pdf
 source_sha256: 35e372d04cedf234
 toc_source: outline
+doc_brief: "PERIODIC AND QUASI-MOTIVIC PENCILS OF FLAT CONNECTIONS — We introduce a new notion of a periodic pencil of ﬂat connections on a smooth algebraic variety X."
 ---
 group and Y an aﬃne G-variety, both deﬁned over K.
 Deﬁnition 2.1. A point y ∈Y (K) is said to be Galois-stable up to G-action if for any

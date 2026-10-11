@@ -8,6 +8,7 @@ pages: 2-3
 source_pdf: 2401.00636v2.pdf
 source_sha256: 35e372d04cedf234
 toc_source: outline
+doc_brief: "PERIODIC AND QUASI-MOTIVIC PENCILS OF FLAT CONNECTIONS — We introduce a new notion of a periodic pencil of ﬂat connections on a smooth algebraic variety X."
 ---
 iliary results. In Section 3 we discuss properties of periodic pencils of ﬂat connections and of
 pencils with periodic monodromy, which is a weaker but more readily veriﬁable condi-

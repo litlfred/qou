@@ -1,0 +1,112 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2504.02266v3",
+ "source_sha256": "a12193f740b6ee53",
+ "brief": "Knizhnik-Zamolodchikov equations in Deligne categories — We consider the Knizhnik-Zamolodchikov equations in Deligne Categories in the context of (gl𝑚, gl𝑛) and (so𝑚, so2𝑛) dualities.",
+ "extended": "**Knizhnik-Zamolodchikov equations in Deligne categories**\n\n*P. Etingof ⋆, I. Motorin*, A. Varchenko♢, and I. Zhu†*\n\n20 pp, 18 sections.\n\n**Abstract.** We consider the Knizhnik-Zamolodchikov equations in Deligne Categories in the context of (gl𝑚, gl𝑛) and (so𝑚, so2𝑛) dualities. We derive integral formulas for the solutions in the first case and compute monodromy in both cases.\n\n**Outline.** Front matter; Introduction; Preliminaries; References; 2 Preliminaries; 1.1 Acknowledgements. Pavel Etingof’s work was; 2.1 Kac-Moody Lie algebras. Suppose we are giv; 2.2 General linear groups and algebras. The ge; 2.3 The Deligne category. The Deligne category; 2.4 Skein categories. Similarly to the classic; 3 KZ equations and dynamical differential equa; 3.1 Knizhnik-Zamolodchikov equations. Consider; 3.2 (gl𝑡, gl𝑛+𝑚) duality. Let 𝑡be a positive i; 4 Solutions to dynamical differential equation; 4.1 Integral formulas. In this section we make; 4.2 Bethe ansatz. The Bethe ansatz is a method; 5 The orthogonal case; 5.1 (so𝑡, so2𝑛) duality. Consider the space Λ∙\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3.4: A function 𝑓: {(𝑧1, · · · , 𝑧𝑛+𝑚) ∈C𝑛+𝑚| 𝑧𝑖̸ = 𝑧𝑗} →𝑀𝜆,𝜇is a flat section\n- Theorem 3.7: The isomorphism 𝜑in (3.27) identifies the dynamical connection on\n- Theorem 4.1: For any appropriate cycle\n- Theorem 5.1: A function 𝑓: {(𝑧1, · · · , 𝑧𝑛) ∈C𝑛| 𝑧𝑖̸ = 𝑧𝑗} →𝑀𝜆,𝜇is a flat section of\n- Theorem 5.3: Consider the pair of embeddings of an 𝑂(𝑉) × so(𝑈)-module\n- Theorem 5.5: The isomorphism 𝜑identifies the connection (5.19) on 𝑊𝛾⊤[𝛽] and the",
+ "tokens": {
+  "brief": 45,
+  "extended": 391
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-preliminaries",
+   "title": "Preliminaries",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-references",
+   "title": "References",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-003-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-004-11-acknowledgements-pavel-etingofs-work-was-part",
+   "title": "Acknowledgements. Pavel Etingof’s work was partially supported by the NSF",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-005-21-kac-moody-lie-algebras-suppose-we-are-given-a",
+   "title": "Kac-Moody Lie algebras. Suppose we are given an integer square matrix 𝐴of",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-006-22-general-linear-groups-and-algebras-the-genera",
+   "title": "General linear groups and algebras. The general linear group 𝐺𝐿𝑛(C) is the",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-007-23-the-deligne-category-the-deligne-category-rep",
+   "title": "The Deligne category. The Deligne category Rep(𝐺𝐿, 𝑇) for a variable 𝑇and the",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-008-24-skein-categories-similarly-to-the-classical-c",
+   "title": "Skein categories. Similarly to the classical case, we have means to interpolate the",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-009-3-kz-equations-and-dynamical-differential-equati",
+   "title": "KZ equations and dynamical differential equations",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-010-31-knizhnik-zamolodchikov-equations-consider-the",
+   "title": "Knizhnik-Zamolodchikov equations. Consider the category Rep(𝐺𝐿𝑡) for a com-",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-011-32-gl𝑡-gl𝑛𝑚-duality-let-𝑡be-a-positive-integer-a",
+   "title": "(gl𝑡, gl𝑛+𝑚) duality. Let 𝑡be a positive integer and gl𝑡the corresponding general",
+   "pages": "6-10"
+  },
+  {
+   "id": "sec-012-4-solutions-to-dynamical-differential-equations",
+   "title": "Solutions to dynamical differential equations",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-013-41-integral-formulas-in-this-section-we-make-the",
+   "title": "Integral formulas. In this section we make the same assumptions for 𝑡as in the",
+   "pages": "10-13"
+  },
+  {
+   "id": "sec-014-42-bethe-ansatz-the-bethe-ansatz-is-a-method-to",
+   "title": "Bethe ansatz. The Bethe ansatz is a method to find joint eigenvectors of the Gaudin",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-015-5-the-orthogonal-case",
+   "title": "The orthogonal case",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-016-51-so𝑡-so2𝑛-duality-consider-the-space-λ𝑉𝑊-dim𝑉",
+   "title": "(so𝑡, so2𝑛) duality. Consider the space Λ∙(𝑉⊗𝑊), dim(𝑉) = 𝑡, dim(𝑊) = 𝑛. We",
+   "pages": "14-20"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

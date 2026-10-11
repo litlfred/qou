@@ -8,6 +8,7 @@ pages: 3-4
 source_pdf: 2504.02266v3.pdf
 source_sha256: a12193f740b6ee53
 toc_source: inferred
+doc_brief: "Knizhnik-Zamolodchikov equations in Deligne categories — We consider the Knizhnik-Zamolodchikov equations in Deligne Categories in the context of (gl𝑚, gl𝑛) and (so𝑚, so2𝑛) dualities."
 ---
 group of invertible matrices of size 𝑛over C. The standard choice of a maximal torus
 𝑇𝑛of 𝐺𝐿𝑛(C) is the subgroup of diagonal matrices and the standard choice of a Borel

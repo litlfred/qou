@@ -8,6 +8,7 @@ pages: 7-8
 source_pdf: 0204085v3.pdf
 source_sha256: e0df7d49c43273c4
 toc_source: inferred
+doc_brief: "arXiv:hep-th/0204085v3 12 Nov 2002 — Three explicit and equivalent representations for the monodromy of the confor- mal blocks in the SL(2, C)/SU(2) WZNW model are proposed in terms of the same"
 ---
 of this relation, see [27]); hence, knowing the precise correspondence between the two
 quantities allows us to compute the monodromy of the conformal block in the H+

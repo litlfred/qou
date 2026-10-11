@@ -1,0 +1,237 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-hep-th-0204085v3",
+ "source_sha256": "e0df7d49c43273c4",
+ "brief": "arXiv:hep-th/0204085v3 12 Nov 2002 — Three explicit and equivalent representations for the monodromy of the confor- mal blocks in the SL(2, C)/SU(2) WZNW model are proposed in terms of the same",
+ "extended": "**arXiv:hep-th/0204085v3 12 Nov 2002**\n\n*SL(2, C)/SU(2) WZNW model*\n\n27 pp, 43 sections.\n\n**Abstract.** Three explicit and equivalent representations for the monodromy of the confor- mal blocks in the SL(2, C)/SU(2) WZNW model are proposed in terms of the same quantity computed in Liouville ﬁeld theory. We show that there are two possible fusion matrices in this model. This is due to the fact that the conformal blocks, being solutions to the Knizhnik-Zamolodchikov equation, have a singularity when the SL(2, C) isospin coordinate x equals the worldsheet variable z. We study the asymptotic behaviour of the conformal block when x goes to z. The obtained rela- tion inserted into a four point correlation function in the SL(2, C)/SU(2) WZNW model gives some expression in terms of two correlation functions in Liouville ﬁeld theory.\n\n**Outline.** Front matter; Abstract; Introduction; 3 WZNW model the techniques; 3 WZNW model, it was proposed in [12] as a qua; 3 WZNW model some; 3 WZNW model [13], as a consequence from a sim; 3 WZNW model (i.e. the fusion matrix,; 3 WZNW model. In section two we will propose t; 3 WZNW, constructed in terms of two Liou-; 3 WZNW fusion matrix. Finally, in appendix C w; 3 WZNW; 3 WZNW model) is; 3 (j3, j2, j1) = (ν(b)b−2b2)1+j1+j2+j3; 3 (j4, j3, j21)CH+; 3 (j21, j2, j1)|Gs; 3 WZNW model (for an explanation; 3 WZNW fusion matrix,\n\n**Extracted claims (proposals, not verified).**\n- Proposition 1: The spin jm,n that labels the degenerate representation of ˆsl(2) Pjn,m are",
+ "tokens": {
+  "brief": 48,
+  "extended": 378
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-3-wznw-model-the-techniques",
+   "title": "WZNW model the techniques",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-003-3-wznw-model-it-was-proposed-in-12-as-a-quantum",
+   "title": "WZNW model, it was proposed in [12] as a quantum group struc-",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-004-3-wznw-model-some",
+   "title": "WZNW model some",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-005-3-wznw-model-13-as-a-consequence-from-a-similar",
+   "title": "WZNW model [13], as a consequence from a similar property of a 5",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-006-3-wznw-model-ie-the-fusion-matrix",
+   "title": "WZNW model (i.e. the fusion matrix,",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-007-3-wznw-model-in-section-two-we-will-propose-thre",
+   "title": "WZNW model. In section two we will propose three explicit formulas for the",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-008-3-wznw-constructed-in-terms-of-two-liou",
+   "title": "WZNW, constructed in terms of two Liou-",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-009-3-wznw-fusion-matrix-finally-in-appendix-c-we-pr",
+   "title": "WZNW fusion matrix. Finally, in appendix C we present a way to ﬁnd degenerate",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-010-3-wznw",
+   "title": "WZNW",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-011-3-wznw-model-is",
+   "title": "WZNW model) is",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-012-3-j3-j2-j1-νbb2b21j1j2j3",
+   "title": "(j3, j2, j1) = (ν(b)b−2b2)1+j1+j2+j3",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-013-3-j4-j3-j21ch",
+   "title": "(j4, j3, j21)CH+",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-014-3-j21-j2-j1gs",
+   "title": "(j21, j2, j1)|Gs",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-015-3-wznw-model-for-an-explanation",
+   "title": "WZNW model (for an explanation",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-016-3-wznw-fusion-matrix",
+   "title": "WZNW fusion matrix,",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-017-3-wznw-model",
+   "title": "WZNW model",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-018-3-wznw-fusion-matrix-follows-see-appendix-for-th",
+   "title": "WZNW fusion matrix follows (see Appendix for this special value",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-019-1-one-might-wonder-why-on-the-ﬁrst-picture-we-di",
+   "title": "One might wonder why on the ﬁrst picture we did not also consider the case where",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-020-2-the-case-when-one-of-the-external-spins-corres",
+   "title": "The case when one of the external spins corresponds to a ˆsl(2) degenerate repre-",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-021-3-the-su2-wznw-model-is-obtained-by-substituting",
+   "title": "The SU(2) WZNW model is obtained by substituting b by ib and by giving the",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-022-4-it-is-straightforward-to-check-the-following-s",
+   "title": "It is straightforward to check the following symmetry properties",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-023-5-using-the-invariance-of-the-lft-fusion-matrix",
+   "title": "Using the invariance of the LFT fusion matrix w.r.t. conformal weights, one can",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-024-6-if-reji-i-1-4-are-close-enough-to-1",
+   "title": "If Re(ji), i = 1 . . . 4 are close enough to −1",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-025-7-hexagonal-equation",
+   "title": "Hexagonal equation:",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-026-8-pentagonal-equation",
+   "title": "Pentagonal equation:",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-027-9-let-us-introduce-for-short-δ-j1-j2-j3-j4-2-b2",
+   "title": "Let us introduce for short δ = j1 + j2 + j3 + j4 + 2 + b−2, and let us consider for",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-028-3-j3-j2-j1-νbb2bj2bj1ch",
+   "title": "(j3, ˜j2, ˜j1) = (ν(b))−b−2B(j2)B(j1)CH+",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-029-3-j3-j2-j1",
+   "title": "(j3, j2, j1)",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-030-3-j4-j3-j21ch",
+   "title": "(˜j4, ˜j3, j21)CH+",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-031-3-j21-j2-j1gs",
+   "title": "(j21, ˜j2, ˜j1)|Gs",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-032-3-wznw-is-related-to-the-4-point-conformal-block",
+   "title": "WZNW is related to the 4 point conformal block",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-033-1-it-is-straightforward-to-check-the-property",
+   "title": "It is straightforward to check the property",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-034-2-let-us-consider-again-the-case-of-the-su2-wznw",
+   "title": "Let us consider again the case of the SU(2) WZNW model: for the same reason we",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-035-3-degenerate-representations-and-fusion-rules-fo",
+   "title": "Degenerate representations and fusion rules for ˆsl(2) are well known [21]; in appendix",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-036-4-it-is-instructive-to-use-relation-42-to-expres",
+   "title": "It is instructive to use relation (42) to express the behavior when x →z of a",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-037-5-if-we-make-the-same-analysis-as-above-studying",
+   "title": "If we make the same analysis as above studying this time the behavior when x →1",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-038-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "18-24"
+  },
+  {
+   "id": "sec-039-references",
+   "title": "References",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-040-3-wznw-model-phys-lett-b-521-127",
+   "title": "WZNW model”, Phys. Lett. B 521, 127",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-041-v-s-dotsenko-and-v-a-fateev-four-point-correlati",
+   "title": "S. Dotsenko and V. A. Fateev, “Four point correlations functions and the operator",
+   "pages": "26-27"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

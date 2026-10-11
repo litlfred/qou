@@ -8,6 +8,7 @@ pages: 6-10
 source_pdf: 2504.02266v3.pdf
 source_sha256: a12193f740b6ee53
 toc_source: inferred
+doc_brief: "Knizhnik-Zamolodchikov equations in Deligne categories — We consider the Knizhnik-Zamolodchikov equations in Deligne Categories in the context of (gl𝑚, gl𝑛) and (so𝑚, so2𝑛) dualities."
 ---
 linear Lie algebra. In this section we derive a duality between the KZ equations for gl𝑡
 and dynamical differential equations for gl𝑛+𝑚, via the joint action of gl𝑡and gl𝑛+𝑚on

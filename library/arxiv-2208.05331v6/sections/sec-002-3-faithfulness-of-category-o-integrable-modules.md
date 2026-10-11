@@ -8,6 +8,7 @@ pages: 10-12
 source_pdf: 2208.05331v6.pdf
 source_sha256: 54b4a400388dbf41
 toc_source: outline
+doc_brief: "PURE BRAID GROUP ACTIONS ON CATEGORY O MODULES — Let g be a symmetrisable Kac–Moody algebra and Uℏg its quan- tised enveloping algebra. Answering a question of P."
 ---
 Integrable Uℏg-modules are well–known to be faithful, i.e., the only element of
 Uℏg acting trivially on every integrable module is zero [Lus93, Prop. 3.5.4]. To

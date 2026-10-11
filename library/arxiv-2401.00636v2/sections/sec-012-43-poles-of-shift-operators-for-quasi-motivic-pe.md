@@ -8,6 +8,7 @@ pages: 11-12
 source_pdf: 2401.00636v2.pdf
 source_sha256: 35e372d04cedf234
 toc_source: outline
+doc_brief: "PERIODIC AND QUASI-MOTIVIC PENCILS OF FLAT CONNECTIONS — We introduce a new notion of a periodic pencil of ﬂat connections on a smooth algebraic variety X."
 ---
 tors Aj for ∇. Let Bj be the set of exceptional values of s where ∇(s) is not isomorphic to
 ∇(s+ ej). It is clear that Bj is a contained in the pole divisor Zj ⊂Cn of the projection Aj∗

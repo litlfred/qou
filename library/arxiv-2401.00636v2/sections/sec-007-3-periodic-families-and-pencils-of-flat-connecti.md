@@ -8,6 +8,7 @@ pages: 6-8
 source_pdf: 2401.00636v2.pdf
 source_sha256: 35e372d04cedf234
 toc_source: outline
+doc_brief: "PERIODIC AND QUASI-MOTIVIC PENCILS OF FLAT CONNECTIONS — We introduce a new notion of a periodic pencil of ﬂat connections on a smooth algebraic variety X."
 ---
 3.1. Polynomial families and pencils of ﬂat connections. Let k be an algebraically
 closed ﬁeld, X a smooth irreducible algebraic variety over k, and V a ﬁnite dimensional

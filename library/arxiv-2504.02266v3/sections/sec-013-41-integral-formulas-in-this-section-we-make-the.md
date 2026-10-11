@@ -8,6 +8,7 @@ pages: 10-13
 source_pdf: 2504.02266v3.pdf
 source_sha256: a12193f740b6ee53
 toc_source: inferred
+doc_brief: "Knizhnik-Zamolodchikov equations in Deligne categories — We consider the Knizhnik-Zamolodchikov equations in Deligne Categories in the context of (gl𝑚, gl𝑛) and (so𝑚, so2𝑛) dualities."
 ---
 Lemma 3.5. We wish to write explicit integral formulas for the flat sections of the ∇𝐾𝑍(ℏ)
 connection on Hom-spaces 3.4. Due to Theorem 3.4 it suffices to find flat sections of the

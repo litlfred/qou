@@ -8,6 +8,7 @@ pages: 11-11
 source_pdf: 2401.00636v2.pdf
 source_sha256: 35e372d04cedf234
 toc_source: outline
+doc_brief: "PERIODIC AND QUASI-MOTIVIC PENCILS OF FLAT CONNECTIONS — We introduce a new notion of a periodic pencil of ﬂat connections on a smooth algebraic variety X."
 ---
 various kinds of singularities of quasi-motivic pencils. Since we are using the Riemann-Hilbert
 correspondence, we will work over k = C, but as our statements are purely algebraic, they

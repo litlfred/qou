@@ -8,6 +8,7 @@ pages: 25-27
 source_pdf: 2401.00636v2.pdf
 source_sha256: 35e372d04cedf234
 toc_source: outline
+doc_brief: "PERIODIC AND QUASI-MOTIVIC PENCILS OF FLAT CONNECTIONS — We introduce a new notion of a periodic pencil of ﬂat connections on a smooth algebraic variety X."
 ---
 5.3.1. Rational Casimir connections. Consider the setting of 5.1.1. Let hreg be the regular
 part of the Cartan subalgebra h ⊂g as in 5.2.1. Let V be a ﬁnite dimensional g-module.

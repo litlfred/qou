@@ -8,6 +8,7 @@ pages: 12-12
 source_pdf: 2401.00636v2.pdf
 source_sha256: 35e372d04cedf234
 toc_source: outline
+doc_brief: "PERIODIC AND QUASI-MOTIVIC PENCILS OF FLAT CONNECTIONS — We introduce a new notion of a periodic pencil of ﬂat connections on a smooth algebraic variety X."
 ---
 module W, let ∇W be the ﬂat connection on X with ﬁber W associated to ∇. It is clear
 that if ∇has regular singularities then so does ∇W, and if ∇(s) has periodic monodromy, is

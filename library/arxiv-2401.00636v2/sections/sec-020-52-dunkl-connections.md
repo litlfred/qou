@@ -8,6 +8,7 @@ pages: 22-25
 source_pdf: 2401.00636v2.pdf
 source_sha256: 35e372d04cedf234
 toc_source: outline
+doc_brief: "PERIODIC AND QUASI-MOTIVIC PENCILS OF FLAT CONNECTIONS — We introduce a new notion of a periodic pencil of ﬂat connections on a smooth algebraic variety X."
 ---
 5.2.1. Dunkl connections. Let W be an irreducible ﬁnite Coxeter group with reﬂection rep-
 resentation h, S ⊂W the set of reﬂections, and for any w ∈S let αw ∈h∗\ 0 be such that

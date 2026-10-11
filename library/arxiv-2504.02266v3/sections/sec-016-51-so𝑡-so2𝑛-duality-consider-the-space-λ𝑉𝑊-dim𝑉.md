@@ -8,6 +8,7 @@ pages: 14-20
 source_pdf: 2504.02266v3.pdf
 source_sha256: a12193f740b6ee53
 toc_source: inferred
+doc_brief: "Knizhnik-Zamolodchikov equations in Deligne categories — We consider the Knizhnik-Zamolodchikov equations in Deligne Categories in the context of (gl𝑚, gl𝑛) and (so𝑚, so2𝑛) dualities."
 ---
 fix the following notations from [3]. Let so2𝑛be the orthogonal Lie algebra preserving the
 form (𝑣𝑖, 𝑣𝑗) = 𝛿𝑖,−𝑗on a space C2𝑛with the basis 𝑣𝑖, 𝑖∈{−𝑛, . . . , −1, 1, . . . , 𝑛}. Let

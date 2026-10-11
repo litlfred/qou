@@ -1,0 +1,62 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2309.04240v1",
+ "source_sha256": "792154a0d6a57e34",
+ "brief": "BURAU REPRESENTATION OF BRAID GROUPS AND q-RATIONALS — We establish a link between the new theory of q-deformed ratio- nal numbers and the classical Burau representation of the braid group B3.",
+ "extended": "**BURAU REPRESENTATION OF BRAID GROUPS AND q-RATIONALS**\n\n*SOPHIE MORIER-GENOUD, VALENTIN OVSIENKO, AND ALEXANDER VESELOV*\n\n10 pp, 8 sections.\n\n**Abstract.** We establish a link between the new theory of q-deformed ratio- nal numbers and the classical Burau representation of the braid group B3. We apply this link to the open problem of classiﬁcation of faithful complex spe- cializations of this representation. As a result we provide an answer to this problem in terms of the singular set of the q-rationals and prove the faithful- ness of the Burau representation specialized at complex t ∈C∗outside the annulus 3 −2 √ 2 ≤|t| ≤3 + 2 √ 2.\n\n**Outline.** Front matter; 1 Introduction; 2 q-rationals and q-deformed modular group; 2.2 Matrices of continued fractions; 2.3 Some properties of the polynomials R and S; 3 Proof of the main theorems; 4 Discussion; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: The Burau representation ρ3 specialized at t0 ∈C∗is faithful if and\n- Theorem 2: The specialized Burau representation ρt0\n- Proposition 6: The polynomials R and S have positive\n- Proposition 8: can be extended for an arbitrary rational r\n- Proposition 7: implies that the polynomials R and S have no roots for\n- Proposition 10: The q-deformed action of the modular group (2.2) coincides with",
+ "tokens": {
+  "brief": 48,
+  "extended": 330
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-2-q-rationals-and-q-deformed-modular-group",
+   "title": "q-rationals and q-deformed modular group",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-002-22-matrices-of-continued-fractions",
+   "title": "Matrices of continued fractions",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-003-23-some-properties-of-the-polynomials-r-and-s",
+   "title": "Some properties of the polynomials R and S",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-004-3-proof-of-the-main-theorems",
+   "title": "Proof of the main theorems",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-005-4-discussion",
+   "title": "Discussion",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-006-references",
+   "title": "References",
+   "pages": "9-10"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

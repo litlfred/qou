@@ -8,6 +8,7 @@ pages: 17-18
 source_pdf: 2401.00636v2.pdf
 source_sha256: 35e372d04cedf234
 toc_source: outline
+doc_brief: "PERIODIC AND QUASI-MOTIVIC PENCILS OF FLAT CONNECTIONS — We introduce a new notion of a periodic pencil of ﬂat connections on a smooth algebraic variety X."
 ---
 (i.e., linearity in s) is satisﬁed in many interesting examples listed in the next section, it is still
 quite restrictive and unfortunately rules out many other important examples, for instance

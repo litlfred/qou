@@ -8,6 +8,7 @@ pages: 10-11
 source_pdf: 2401.00636v2.pdf
 source_sha256: 35e372d04cedf234
 toc_source: outline
+doc_brief: "PERIODIC AND QUASI-MOTIVIC PENCILS OF FLAT CONNECTIONS — We introduce a new notion of a periodic pencil of ﬂat connections on a smooth algebraic variety X."
 ---
 4.1. Quasi-motivic families. It is often hard to prove directly that a given family ∇of
 ﬂat connections is periodic, as the operators Aj may be diﬃcult to compute. However, if

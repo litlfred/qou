@@ -8,6 +8,7 @@ pages: 27-27
 source_pdf: 2401.00636v2.pdf
 source_sha256: 35e372d04cedf234
 toc_source: outline
+doc_brief: "PERIODIC AND QUASI-MOTIVIC PENCILS OF FLAT CONNECTIONS — We introduce a new notion of a periodic pencil of ﬂat connections on a smooth algebraic variety X."
 ---
 odromy representation of the connection is unitary, hence semisimple for small real values
 of s. Thus such pencils are generically semisimple.

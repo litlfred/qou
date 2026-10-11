@@ -8,6 +8,7 @@ pages: 27-27
 source_pdf: 2401.00636v2.pdf
 source_sha256: 35e372d04cedf234
 toc_source: outline
+doc_brief: "PERIODIC AND QUASI-MOTIVIC PENCILS OF FLAT CONNECTIONS — We introduce a new notion of a periodic pencil of ﬂat connections on a smooth algebraic variety X."
 ---
 for generic s, so that Theorem 4.6(ii) applies. For example, it follows from Theorem 1.2 in
 [MTL] and a result of the ﬁrst author (included in [MTL] as Theorem 1.8) that the Casimir

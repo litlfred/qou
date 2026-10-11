@@ -8,6 +8,7 @@ pages: 13-14
 source_pdf: 2504.02266v3.pdf
 source_sha256: a12193f740b6ee53
 toc_source: inferred
+doc_brief: "Knizhnik-Zamolodchikov equations in Deligne categories — We consider the Knizhnik-Zamolodchikov equations in Deligne Categories in the context of (gl𝑚, gl𝑛) and (so𝑚, so2𝑛) dualities."
 ---
 Following Section 3, let 𝑡be a positive integer and so𝑡be the Lie algebra of the or-
 thogonal group 𝑂𝑡preserving the form (𝑒𝑖, 𝑒𝑗) = 𝛿𝑖𝑗for an orthonormal basis {𝑒𝑖} of the

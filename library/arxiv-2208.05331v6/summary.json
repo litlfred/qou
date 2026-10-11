@@ -1,0 +1,77 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2208.05331v6",
+ "source_sha256": "54b4a400388dbf41",
+ "brief": "PURE BRAID GROUP ACTIONS ON CATEGORY O MODULES — Let g be a symmetrisable Kac–Moody algebra and Uℏg its quan- tised enveloping algebra. Answering a question of P.",
+ "extended": "**PURE BRAID GROUP ACTIONS ON CATEGORY O MODULES**\n\n*ANDREA APPEL AND VALERIO TOLEDANO LAREDO*\n\n36 pp, 11 sections.\n\n**Abstract.** Let g be a symmetrisable Kac–Moody algebra and Uℏg its quan- tised enveloping algebra. Answering a question of P. Etingof, we prove that the quantum Weyl group operators of Uℏg give rise to a canonical action of the pure braid group of g on any category O (not necessarily integrable) Uℏg–module V. By relying on our recent results [ATL15], we show that this action describes the monodromy of the rational Casimir connection on the g–module V corre- sponding to V. We also extend these results to yield equivalent representations of parabolic pure braid groups on parabolic category O for Uℏg and g.\n\n**Outline.** Front matter; 1 Introduction; 2 Kac–Moody algebras and quantum groups; 3 Faithfulness of category O integrable module; 4 Quantum Weyl group actions of pure braid gro; 5 The Casimir connection; 6 Braided Coxeter categories; 7 The equivariant monodromy theorem; 8 The monodromy theorem in category O; 9 Parabolic pure braid group actions; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem: Category O integrable Uℏg–modules are faithful for Dℏ.\n- Theorem: [Bri71] to the case of an arbitrary Weyl group.\n- Theorem: The fundamental groups of X/W and X are isomorphic to BW and PW\n- Theorem: (1) A is abelian, that is takes values in M = Hom(Π1(X; Wx0), exp(ℏh)).\n- Theorem: There is a unique morphism B : Π1(X; Wx0) −→exp(ℏh) such that\n- Theorem: (1) There is a canonical equivalence of braided pre–Coxeter categories (cf. Re-",
+ "tokens": {
+  "brief": 40,
+  "extended": 397
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-7"
+  },
+  {
+   "id": "sec-001-2-kacmoody-algebras-and-quantum-groups",
+   "title": "Kac–Moody algebras and quantum groups",
+   "pages": "7-10"
+  },
+  {
+   "id": "sec-002-3-faithfulness-of-category-o-integrable-modules",
+   "title": "Faithfulness of category O integrable modules",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-003-4-quantum-weyl-group-actions-of-pure-braid-group",
+   "title": "Quantum Weyl group actions of pure braid groups",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-004-5-the-casimir-connection",
+   "title": "The Casimir connection",
+   "pages": "14-18"
+  },
+  {
+   "id": "sec-005-6-braided-coxeter-categories",
+   "title": "Braided Coxeter categories",
+   "pages": "18-24"
+  },
+  {
+   "id": "sec-006-7-the-equivariant-monodromy-theorem",
+   "title": "The equivariant monodromy theorem",
+   "pages": "24-27"
+  },
+  {
+   "id": "sec-007-8-the-monodromy-theorem-in-category-o",
+   "title": "The monodromy theorem in category O",
+   "pages": "27-29"
+  },
+  {
+   "id": "sec-008-9-parabolic-pure-braid-group-actions",
+   "title": "Parabolic pure braid group actions",
+   "pages": "29-35"
+  },
+  {
+   "id": "sec-009-references",
+   "title": "References",
+   "pages": "35-36"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

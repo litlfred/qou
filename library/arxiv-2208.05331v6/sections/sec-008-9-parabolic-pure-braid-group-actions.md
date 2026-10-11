@@ -8,6 +8,7 @@ pages: 29-35
 source_pdf: 2208.05331v6.pdf
 source_sha256: 54b4a400388dbf41
 toc_source: outline
+doc_brief: "PURE BRAID GROUP ACTIONS ON CATEGORY O MODULES — Let g be a symmetrisable Kac–Moody algebra and Uℏg its quan- tised enveloping algebra. Answering a question of P."
 ---
 In this section, we extend the results of Sections 4 and 8 to parabolic pure braid
 groups.

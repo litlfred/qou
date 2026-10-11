@@ -8,6 +8,7 @@ pages: 12-14
 source_pdf: 2208.05331v6.pdf
 source_sha256: 54b4a400388dbf41
 toc_source: outline
+doc_brief: "PURE BRAID GROUP ACTIONS ON CATEGORY O MODULES — Let g be a symmetrisable Kac–Moody algebra and Uℏg its quan- tised enveloping algebra. Answering a question of P."
 ---
 4.1. Completions. Let A be an algebra, C ⊂Rep(A) a full subcategory, and
 End(fC) the algebra of endomorphisms of the forgetful functor fC : C →Vect. By

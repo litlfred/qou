@@ -8,6 +8,7 @@ pages: 3-4
 source_pdf: 2309.04240v1.pdf
 source_sha256: 792154a0d6a57e34
 toc_source: outline
+doc_brief: "BURAU REPRESENTATION OF BRAID GROUPS AND q-RATIONALS — We establish a link between the new theory of q-deformed ratio- nal numbers and the classical Burau representation of the braid group B3."
 ---
 In this section we give the precise and adapted for computations deﬁnition of
 the q-rationals, and recall their main properties, which are necessary for the proof

@@ -1,0 +1,152 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2401.00636v2",
+ "source_sha256": "35e372d04cedf234",
+ "brief": "PERIODIC AND QUASI-MOTIVIC PENCILS OF FLAT CONNECTIONS — We introduce a new notion of a periodic pencil of ﬂat connections on a smooth algebraic variety X.",
+ "extended": "**PERIODIC AND QUASI-MOTIVIC PENCILS OF FLAT CONNECTIONS**\n\n*PAVEL ETINGOF AND ALEXANDER VARCHENKO*\n\n29 pp, 26 sections.\n\n**Abstract.** We introduce a new notion of a periodic pencil of ﬂat connections on a smooth algebraic variety X. This is a family ∇(s1, ..., sn) of ﬂat connections on a trivial vector bundle on X depending linearly on parameters s1, ..., sn and generically invariant, up to isomorphism, under the shifts si 7→si + 1 for all i. If in addition ∇has regular singularities, we call it a quasi-motivic pencil. We use tools from complex analysis to establish various remarkable properties of such pencils over C. For example, we show that the monodromy of a quasi-motivic pencil is deﬁned over the ﬁeld of algebraic functions in e2πisj, and that its singularities are constrained to an arrangement of hyperplanes with integer normal vectors.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 Galois-stability; 2.2 Exponentially bounded holomorphic function; 2.3 Generically periodic holomorphic maps up t; 2.4 Algebraic independence of exponentials; 2.5 Geometric local systems; 3 Periodic families and pencils of flat connec; 3.4 Families and pencils with periodic monodro; 3.5 Quantum connections; 4 Quasi-motivic families and pencils of flat c; 4.2 Jumping loci of quasi-motivic pencils; 4.3 Poles of shift operators for quasi-motivic; 4.4 Endomorphism algebras of quasi-motivic pen; 4.5 Semisimplicity loci of quasi-motivic penci; 4.6 Motivic families; 4.7 A speculative digression: quasi-geometric \n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.5: Let ρ : Cn →V be an exponentially bounded holomorphic map which is\n- Theorem 2.6: Let E : Cn →(C×)n be the exponential map given by\n- Theorem 3.9: A pencil ∇of ﬂat connections on X with ﬁber V has periodic monodromy if\n- Theorem 4.1: A family ∇of ﬂat connections with regular singularities on a complex variety\n- Theorem 4.1: motivates the following deﬁnition.\n- Theorem 4.4: Every codimension 1 irreducible Zariski closed subset H of the jumping locus",
+ "tokens": {
+  "brief": 38,
+  "extended": 512
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-21-galois-stability",
+   "title": "Galois-stability",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-22-exponentially-bounded-holomorphic-functions",
+   "title": "Exponentially bounded holomorphic functions",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-004-23-generically-periodic-holomorphic-maps-up-to-g",
+   "title": "Generically periodic holomorphic maps up to G-action",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-005-24-algebraic-independence-of-exponentials",
+   "title": "Algebraic independence of exponentials",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-006-25-geometric-local-systems",
+   "title": "Geometric local systems",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-007-3-periodic-families-and-pencils-of-flat-connecti",
+   "title": "Periodic families and pencils of flat connections",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-008-34-families-and-pencils-with-periodic-monodromy",
+   "title": "Families and pencils with periodic monodromy",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-009-35-quantum-connections",
+   "title": "Quantum connections",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-010-4-quasi-motivic-families-and-pencils-of-flat-con",
+   "title": "Quasi-motivic families and pencils of flat connections",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-011-42-jumping-loci-of-quasi-motivic-pencils",
+   "title": "Jumping loci of quasi-motivic pencils",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-012-43-poles-of-shift-operators-for-quasi-motivic-pe",
+   "title": "Poles of shift operators for quasi-motivic pencils",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-013-44-endomorphism-algebras-of-quasi-motivic-pencil",
+   "title": "Endomorphism algebras of quasi-motivic pencils",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-014-45-semisimplicity-loci-of-quasi-motivic-pencils",
+   "title": "Semisimplicity loci of quasi-motivic pencils",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-015-46-motivic-families",
+   "title": "Motivic families",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-016-47-a-speculative-digression-quasi-geometric-conn",
+   "title": "A speculative digression: quasi-geometric connections",
+   "pages": "14-17"
+  },
+  {
+   "id": "sec-017-48-pseudo-pencils",
+   "title": "Pseudo-pencils",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-018-5-examples-of-periodic-pencils",
+   "title": "Examples of periodic pencils",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-019-51-kz-connections",
+   "title": "KZ connections",
+   "pages": "18-22"
+  },
+  {
+   "id": "sec-020-52-dunkl-connections",
+   "title": "Dunkl connections",
+   "pages": "22-25"
+  },
+  {
+   "id": "sec-021-53-casimir-connections",
+   "title": "Casimir connections",
+   "pages": "25-27"
+  },
+  {
+   "id": "sec-022-54-irreducibility",
+   "title": "Irreducibility",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-023-55-unitarity-and-generic-semisimplicity",
+   "title": "Unitarity and generic semisimplicity",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-024-references",
+   "title": "References",
+   "pages": "27-29"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

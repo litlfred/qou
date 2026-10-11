@@ -8,6 +8,7 @@ pages: 18-22
 source_pdf: 2401.00636v2.pdf
 source_sha256: 35e372d04cedf234
 toc_source: outline
+doc_brief: "PERIODIC AND QUASI-MOTIVIC PENCILS OF FLAT CONNECTIONS — We introduce a new notion of a periodic pencil of ﬂat connections on a smooth algebraic variety X."
 ---
 5.1.1. KZ connections for ﬁnite dimensional simple Lie algebras. Let g be a ﬁnite dimen-
 sional simple Lie algebra over C with triangular decomposition g = n−⊕h ⊕n+ and root
