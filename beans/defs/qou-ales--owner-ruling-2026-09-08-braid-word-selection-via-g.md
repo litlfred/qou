@@ -204,6 +204,16 @@ which **is** the disjoint-block form of the connected-sum multiplicativity step 
 
 Recorded as §7b of the step-11 audit; §7 reason 3 re-scoped from "not formalised" to "conditionally formalised on an open PR". Coordination comment posted on #7418.
 
+## 2026-10-11 — quark template tracked order by order in q (reading 3)
+
+Probe `computations/probes/quark_template/` (pre-registered at 6b9dd5d172; exact over Q(q); 4/4 checks).
+
+- **Flavour is invisible at order t⁰** (t = q − 1): since σ⁻¹ = σ − h, every quark letter equals σ at q = 1, all 8 template variants give the same element, and χ_(2,1) = 0 there. So reading 3 holds with equality at order zero for every template. The verdict is decided at order t¹ (where the sign bits enter), or at t³ when t¹ cancels. No verdict flips between truncation orders t¹…t⁶ or across the sub-interval of (1, ∞) containing q₀.
+- **k = 0, builder placement:** the corpus template (u = σ, d = σ⁻¹, ud = average) FAILS reading 3 for both nucleons (χ_(2,1) = −0.09198 p, −0.18200 n). Its sign changes exactly at q*² + q*⁻² = 1 + 2cos(2π/7), q* = 1.27890, above q₀. Every bar-swapped template (u = σ⁻¹, d = σ) passes for both nucleons, under every pair rule. The two flavour-blind templates also pass.
+- **With the gluon pair σ₀σ₀:** no template passes for both nucleons.
+- **Placement varied too:** the corpus template has 4/8 admissible placements per nucleon; the builder's is not one of them. So reading 3 constrains sign map and placement jointly, not the template alone.
+- **Tension, unresolved:** this bean's 2026-09-05 "swap refuted" rests on a comparison with measured binding data, which cannot select under the no-fitting rule. Reading 3, the ruled derived test, points to the swap at k = 0 and the builder placement. This is an owner decision. The bean stays open.
+
 **2026-10-11 — H_9: reading 3 tracked up the tower (issue #7701, PR #7702).** Pre-registered (`computations/probes/ales_h9/preregistration.md`, committed before any H_9 number), then computed at 60 dps, proton pin, convention D; H_6 diproton ratio reproduced to 4.7e-60 before H_9 was trusted. Blocks at H_9: (9),(8,1),(7,2),(6,3),(5,4), dims 1/8/27/48/42; `y_λ = 0` exactly on every ≥3-row shape at n = 3, 6, 9.
 
 **Finding (scope (a), this candidate set only):** the tower REJECTS nothing and ADMITS everything H_3 rejected. All 19 homogeneous words (core, 16 k = 0 words, both live elements) are reading-3-feasible at H_6 and H_9 with no bond and with `G³` on every interface; the 10 H_3-rejected ones (incl. LIVE_p, LIVE_n) are admitted. Compositions: pp/pn/nn 16 YY + 65 admitted of 81; ³He (p|p|n) and ³H (p|n|n) 64 YY + 665 admitted of 729; 0 rejected anywhere. Mechanism (hypothesis H1′, SU(2) Clebsch–Gordan branching of the two-row blocks, (3) = spin 3/2, (2,1) = spin ½; verified on 8433 free characters to 5e-25, NOT Lean-proved): homogeneous feasibility is `x = χ_(2,1)/χ_(3) ≥ 0 / −1/2 / −0.389489` at H_3 / H_6 / H_9 (binding blocks (2,1) / (5,1) / (5,4)); candidates span x ∈ [−0.3315, 1.994]. Thresholds are NOT monotone in A (m = 1…8: 0, −0.5, −0.389, −0.634, −0.552, −0.707, −0.643, −0.754; odd A tighter), so the tower is not a one-way filter in general.
