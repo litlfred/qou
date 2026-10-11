@@ -411,93 +411,22 @@ fn crossing_sym(ti: u8, tj: u8) -> (LPoly, LPoly, bool) {
 struct SymPauliAcc {
     tr_alt: LPoly,
     net: LPoly,
-    tr_markov: LPoly,  // Markov trace: Σ c_w × z^ℓ(w) where z = 1/(√q + 1/√q)
     net_by_len: Vec<LPoly>,
 }
 
 impl SymPauliAcc {
-    fn zero() -> Self { Self { tr_alt: LPoly::zero(), net: LPoly::zero(), tr_markov: LPoly::zero(), net_by_len: Vec::new() } }
+    fn zero() -> Self { Self { tr_alt: LPoly::zero(), net: LPoly::zero(), net_by_len: Vec::new() } }
 
     fn add_term(&mut self, coeff: &LPoly, word_len: usize) {
         self.net = self.net.add(coeff);
         let l = word_len as i64;
         let sign = if l % 2 == 0 { 1i64 } else { -1i64 };
         self.tr_alt = self.tr_alt.add(&coeff.scale_i64(sign).shift(-2 * word_len as i32));
-        // Markov trace: weight by z^ℓ
-        // z = 1/(t + t⁻¹) where t = q^{1/2}
-        // z^ℓ = 1/(t + t⁻¹)^ℓ
-        // In Laurent polynomial arithmetic: multiply coeff by (t+t⁻¹)^{-ℓ}
-        // But (t+t⁻¹)^{-ℓ} is NOT a Laurent polynomial.
-        // Instead: store Σ c_w × (t+t⁻¹)^{max_len - ℓ(w)} and divide by (t+t⁻¹)^{max_len} later.
-        // OR: just compute tr_M at the end from net_by_len.
         // Per-length tracking
         while self.net_by_len.len() <= word_len {
             self.net_by_len.push(LPoly::zero());
         }
         self.net_by_len[word_len] = self.net_by_len[word_len].add(coeff);
-    }
-
-    fn compute_tr_markov_poly(&self) -> (LPoly, usize) {
-        // tr_M = Σ_ℓ net_by_len[ℓ] / (t + t⁻¹)^ℓ
-        // Cleared form: tr_M_cleared = Σ_ℓ net_by_len[ℓ] × (t + t⁻¹)^{L-ℓ}
-        // where L = max word length
-        // Then tr_M = tr_M_cleared / (t + t⁻¹)^L
-        //
-        // (t + t⁻¹) as Laurent poly: T^1 + T^{-1}
-        // (t + t⁻¹)^k computed by repeated multiplication
-
-        let max_len = self.net_by_len.len().saturating_sub(1);
-
-        // Precompute (t + t⁻¹)^k for k = 0..max_len
-        let t_plus_tinv = {
-            let mut p = LPoly::zero();
-            p.terms.insert(1, BigInt::one());   // t^1
-            p.terms.insert(-1, BigInt::one());  // t^{-1}
-            p
-        };
-
-        let mut powers = vec![LPoly::one()]; // (t+t⁻¹)^0 = 1
-        for _ in 1..=max_len {
-            let prev = powers.last().unwrap();
-            powers.push(prev.mul(&t_plus_tinv));
-        }
-
-        // tr_M_cleared = Σ_ℓ net_by_len[ℓ] × (t+t⁻¹)^{max_len - ℓ}
-        let mut cleared = LPoly::zero();
-        for (ell, poly) in self.net_by_len.iter().enumerate() {
-            if poly.is_zero() { continue; }
-            let power_idx = max_len - ell;
-            if power_idx < powers.len() {
-                cleared = cleared.add(&poly.mul(&powers[power_idx]));
-            }
-        }
-
-        (cleared, max_len)
-    }
-
-    fn compute_tr_markov_f64(&self, t0: f64, pn_count: u32) -> f64 {
-        let z = 1.0 / (t0 + 1.0/t0);
-        let denom = 2.0_f64.powi(pn_count as i32);
-        let mut tr_m = 0.0;
-        for (ell, poly) in self.net_by_len.iter().enumerate() {
-            let val = poly.eval_f64(t0);
-            tr_m += val * z.powi(ell as i32);
-        }
-        tr_m / denom
-    }
-
-    fn compute_tr_markov_mpfr(&self, t0_f64: f64, pn_count: u32, prec: u32) -> MpFloat {
-        let t0 = MpFloat::with_val(prec, t0_f64);
-        let z = MpFloat::with_val(prec, 1.0) / (MpFloat::with_val(prec, &t0 + MpFloat::with_val(prec, 1.0) / &t0));
-        let denom = MpFloat::with_val(prec, 2.0).pow(pn_count as u32);
-        let mut tr_m = MpFloat::with_val(prec, 0.0);
-        let mut z_pow = MpFloat::with_val(prec, 1.0);
-        for poly in &self.net_by_len {
-            let val = poly.eval_mpfr(t0_f64, prec);
-            tr_m += MpFloat::with_val(prec, &val * &z_pow);
-            z_pow = MpFloat::with_val(prec, &z_pow * &z);
-        }
-        MpFloat::with_val(prec, tr_m / denom)
     }
 
     fn merge(&mut self, other: &SymPauliAcc) {
@@ -743,6 +672,197 @@ impl Eng {
     }
 }
 
+// ════════════════════════════════════════════════════════════════
+// Exact Ocneanu (Markov) trace, convention D
+// ════════════════════════════════════════════════════════════════
+//
+// The element is re-expanded in the T_w (permutation) basis of H_A(q), where
+// T_w T_s = T_{ws} if ws > w, and T_{ws} + h T_w otherwise (σ² = hσ + 1,
+// h = t² − t⁻²). The trace is the unique one with tr(x T_{n−1} y) = z·tr(xy),
+// computed by peeling the strand n−1 off each permutation; it is a polynomial
+// in z with Laurent-polynomial coefficients in t, and only then is
+// z = q³/(q²+1) substituted. Ported from
+// computations/probes/v9_markov_trace_convention_d_probe.py, which checks the
+// same recursion for cyclicity and the Markov property. Bean qou-m7py.
+
+const Q0_50: &str = "1.1099785827513808075916690956107688798744991218736";
+const TW_CAP: usize = 4_000_000;
+
+mod markov {
+    use super::{LPoly, Elem, MpFloat, Pow};
+    use num_bigint::BigInt;
+    use num_traits::{One, Zero};
+    use rustc_hash::FxHashMap;
+
+    /// z-polynomial: entry k is the coefficient of z^k.
+    pub type ZPoly = Vec<LPoly>;
+    type Tw = FxHashMap<Vec<u8>, LPoly>;
+
+    fn h() -> LPoly {
+        let mut p = LPoly::zero();
+        p.terms.insert(2, BigInt::one());
+        p.terms.insert(-2, -BigInt::one());
+        p
+    }
+
+    fn add_into(m: &mut Tw, k: Vec<u8>, v: LPoly) {
+        let e = m.entry(k).or_insert_with(LPoly::zero);
+        *e = e.add(&v);
+    }
+
+    /// e · T_{s_i}
+    fn mul_s(e: &Tw, i: usize, h: &LPoly) -> Tw {
+        let mut out: Tw = FxHashMap::default();
+        for (w, c) in e {
+            let mut ws = w.clone();
+            ws.swap(i, i + 1);
+            add_into(&mut out, ws, c.clone());
+            if w[i] > w[i + 1] {
+                add_into(&mut out, w.clone(), c.mul(h));
+            }
+        }
+        out.retain(|_, c| !c.is_zero());
+        out
+    }
+
+    fn zp_add_scaled(acc: &mut ZPoly, c: &LPoly, p: &ZPoly, shift: usize) {
+        for (k, pk) in p.iter().enumerate() {
+            if pk.is_zero() { continue; }
+            while acc.len() <= k + shift { acc.push(LPoly::zero()); }
+            acc[k + shift] = acc[k + shift].add(&c.mul(pk));
+        }
+    }
+
+    struct Tracer { memo: FxHashMap<Vec<u8>, ZPoly>, h: LPoly }
+
+    impl Tracer {
+        fn new() -> Self { Self { memo: FxHashMap::default(), h: h() } }
+
+        fn tr_perm(&mut self, w: &[u8]) -> ZPoly {
+            if let Some(r) = self.memo.get(w) { return r.clone(); }
+            let n = w.len();
+            let r = if n == 0 {
+                vec![LPoly::one()]
+            } else if w[n - 1] as usize == n - 1 {
+                self.tr_perm(&w[..n - 1])
+            } else {
+                // w = x · s_{n−2} ⋯ s_j with x ∈ S_{n−1}; Markov removes s_{n−2}.
+                let j = w.iter().position(|&v| v as usize == n - 1).unwrap();
+                let mut x = w.to_vec();
+                x.remove(j);
+                let mut e: Tw = FxHashMap::default();
+                e.insert(x, LPoly::one());
+                if n >= 3 {
+                    let mut i = n - 3;
+                    while i >= j {
+                        e = mul_s(&e, i, &self.h);
+                        if i == 0 { break; }
+                        i -= 1;
+                    }
+                }
+                let mut acc: ZPoly = Vec::new();
+                for (u, c) in &e {
+                    let tu = self.tr_perm(u);
+                    zp_add_scaled(&mut acc, c, &tu, 1);
+                }
+                acc
+            };
+            self.memo.insert(w.to_vec(), r.clone());
+            r
+        }
+
+        fn trace(&mut self, e: &Tw) -> ZPoly {
+            let mut acc: ZPoly = Vec::new();
+            for (w, c) in e {
+                let tw = self.tr_perm(w);
+                zp_add_scaled(&mut acc, c, &tw, 0);
+            }
+            acc
+        }
+    }
+
+    fn word_tw(word: &[usize], a: usize, coeff: &LPoly, h: &LPoly, cap: usize) -> Option<Tw> {
+        let mut e: Tw = FxHashMap::default();
+        e.insert((0..a as u8).collect(), coeff.clone());
+        for &g in word {
+            e = mul_s(&e, g, h);
+            if e.len() > cap { return None; }
+        }
+        Some(e)
+    }
+
+    /// tr(σ₀σ₁σ₀) = h·z² + z: the identity gram.rs TR_M[5] records.
+    fn self_check() {
+        let h = h();
+        let e = word_tw(&[0, 1, 0], 3, &LPoly::one(), &h, 100).unwrap();
+        let tr = Tracer::new().trace(&e);
+        let want: ZPoly = vec![LPoly::zero(), LPoly::one(), h];
+        let trim = |p: &ZPoly| -> Vec<LPoly> {
+            let mut v = p.clone();
+            while v.last().map_or(false, |x| x.is_zero()) { v.pop(); }
+            v
+        };
+        assert_eq!(trim(&tr), trim(&want), "Markov trace self-check failed");
+    }
+
+    /// Exact trace of the normal-form element, or None if a word's T_w
+    /// expansion exceeds `cap` permutations.
+    pub fn trace_of_elem(elem: &Elem, a: usize, cap: usize) -> Option<ZPoly> {
+        self_check();
+        let h = h();
+        let mut total: Tw = FxHashMap::default();
+        for (w, c) in &elem.terms {
+            let word: Vec<usize> = (0..w.len()).map(|i| w.get(i) as usize).collect();
+            for (k, v) in word_tw(&word, a, c, &h, cap)? {
+                add_into(&mut total, k, v);
+            }
+            if total.len() > cap { return None; }
+        }
+        total.retain(|_, c| !c.is_zero());
+        Some(Tracer::new().trace(&total))
+    }
+
+    pub fn exact_terms(tr: &ZPoly) -> Vec<(usize, i32, String)> {
+        let mut out = Vec::new();
+        for (k, p) in tr.iter().enumerate() {
+            for (e, v) in &p.terms {
+                if !v.is_zero() { out.push((k, *e, v.to_string())); }
+            }
+        }
+        out
+    }
+
+    /// Σ_k tr_k(t) z^k at q₀ (50-digit proton pin), z = q³/(q²+1), ÷ 2^pn,
+    /// as a 60-significant-digit decimal string.
+    pub fn eval_conv_d(tr: &ZPoly, pn: u32) -> String {
+        let maxc = tr.iter().flat_map(|p| p.terms.values())
+            .map(|v| v.to_string().len()).max().unwrap_or(1) as u32;
+        let prec = 4 * (maxc + 200);
+        let q = MpFloat::with_val(prec, MpFloat::parse(super::Q0_50).unwrap());
+        let t = MpFloat::with_val(prec, q.sqrt_ref());
+        let q2 = MpFloat::with_val(prec, &q * &q);
+        let z = MpFloat::with_val(prec, MpFloat::with_val(prec, &q2 * &q) / (q2 + 1u32));
+        let tinv = MpFloat::with_val(prec, 1u32) / &t;
+        let mut sum = MpFloat::with_val(prec, 0u32);
+        let mut zk = MpFloat::with_val(prec, 1u32);
+        for p in tr {
+            for (e, v) in &p.terms {
+                let c = MpFloat::with_val(prec, MpFloat::parse(v.to_string()).unwrap());
+                let te = if *e >= 0 {
+                    MpFloat::with_val(prec, t.clone().pow(*e as u32))
+                } else {
+                    MpFloat::with_val(prec, tinv.clone().pow((-*e) as u32))
+                };
+                sum += MpFloat::with_val(prec, &c * &te) * &zk;
+            }
+            zk = MpFloat::with_val(prec, &zk * &z);
+        }
+        let den = MpFloat::with_val(prec, MpFloat::with_val(prec, 2u32).pow(pn));
+        let v = MpFloat::with_val(prec, sum / den);
+        v.to_string_radix(10, Some(60))
+    }
+}
+
 fn main() {
     let args: Vec<String> = std::env::args().collect();
     if args.len() < 3 {
@@ -776,12 +896,8 @@ fn main() {
     let pre_final = elem.n_terms();
 
     // Optional per-word dump of the complete normal-form element, BEFORE the
-    // final strip, so its genuine Markov trace can be computed word by word.
-    // `tr_markov_f64` below weights each word by z^len(w), which is not the
-    // Markov trace for words that repeat a generator (e.g. tr(σ0σ1σ0) =
-    // h·z² + z, not z³), and uses the excised convention-C z. Only meaningful
-    // when `accum` is empty, i.e. nothing was stripped mid-construction, so
-    // `elem` is the full product. Bean qou-m7py.
+    // final strip. Only the full crossing product when `accum` is empty, i.e.
+    // nothing was stripped mid-construction. Bean qou-m7py.
     if let Ok(path) = std::env::var("V9_DUMP_ELEM") {
         let mut words: Vec<(Vec<u8>, Vec<(i32, String)>)> = elem.terms.iter()
             .map(|(w, c)| ((0..w.len()).map(|i| w.get(i)).collect(),
@@ -798,6 +914,42 @@ fn main() {
         std::fs::write(&path, serde_json::to_string(&dump).unwrap()).unwrap();
         eprintln!("  dumped {} words to {} (mid-strip: {})", elem.n_terms(), path, mid_stripped);
     }
+
+    // Exact Ocneanu trace at convention D, z = q³/(q²+1), of the full
+    // crossing product. Taken here, before the final Pauli strip, and only
+    // when nothing was stripped mid-construction: a stripped element is not
+    // the product, so its trace would not be the nucleus's.
+    let tr_markov_d = {
+        use hecke_engine::certificate::MarkovTraceD;
+        let mid_stripped = !accum.net.is_zero() || !accum.net_by_len.is_empty();
+        let base = |computed: bool| MarkovTraceD {
+            computed, value: None, exact_z_t: None, reason: None,
+            z: "q^3/(q^2+1)".to_string(),
+            q0: Q0_50.to_string(),
+            normalisation: "divided by 2^pn_count, like the *_f64 fields".to_string(),
+        };
+        if mid_stripped {
+            let mut r = base(false);
+            r.reason = Some("element was stripped mid-construction, so it is not the \
+                crossing product and its trace is not defined here".to_string());
+            r
+        } else {
+            match markov::trace_of_elem(&elem, a, TW_CAP) {
+                Some(tr) => {
+                    let mut r = base(true);
+                    r.value = Some(markov::eval_conv_d(&tr, elem.pn_count));
+                    r.exact_z_t = Some(markov::exact_terms(&tr));
+                    eprintln!("  tr_M^D(q₀)/2^pn = {}", r.value.as_ref().unwrap());
+                    r
+                }
+                None => {
+                    let mut r = base(false);
+                    r.reason = Some(format!("T_w expansion exceeded {} permutations", TW_CAP));
+                    r
+                }
+            }
+        }
+    };
 
     let final_removed = Eng::strip_with_pauli(&mut elem.terms);
     let post_final = elem.n_terms();
@@ -896,18 +1048,6 @@ fn main() {
     println!("  max coeff ~10^{:.0}", mc);
     println!("  time = {:.1}s", elapsed);
 
-    // Markov trace: tr_M = Σ_ℓ net_by_len[ℓ] × z^ℓ
-    let tr_m_val = if mc < 300.0 {
-        total.compute_tr_markov_f64(t0_val, elem.pn_count)
-    } else {
-        let prec = (mc as u32 + 100) * 4;
-        total.compute_tr_markov_mpfr(t0_val, elem.pn_count, prec).to_f64()
-    };
-    println!("  tr_M(q₀)   = {:.10e}  (Markov trace of full NF)", tr_m_val);
-    let (tr_m_cleared, tr_m_L) = total.compute_tr_markov_poly();
-    println!("  tr_M_cleared: {} terms, denom=(t+t⁻¹)^{}", tr_m_cleared.terms.len(), tr_m_L);
-    println!("  tr_M(t) = tr_M_cleared(t) / (t+t⁻¹)^{} / 2^{}", tr_m_L, elem.pn_count);
-
     // Print jet bundle decomposition
     eprintln!("\n  Jet bundle (net by word length):");
     // The canonical proton anchor, not the 5-digit 1.10998 literal this used
@@ -968,15 +1108,7 @@ fn main() {
         f_pauli_f64: if f.is_finite() { Some(f) } else { None },
         tr_alt_f64: if tr_alt_val.is_finite() { Some(tr_alt_val) } else { None },
         net_f64: if net_val.is_finite() { Some(net_val) } else { None },
-        tr_markov_f64: if tr_m_val.is_finite() { Some(tr_m_val) } else { None },
-        tr_markov_cleared: {
-            let (cleared, _) = total.compute_tr_markov_poly();
-            SparsePoly::from_btree(&cleared.terms)
-        },
-        tr_markov_denom_power: {
-            let (_, l) = total.compute_tr_markov_poly();
-            l
-        },
+        tr_markov_d,
         strands: Vec::new(), // TODO: collect during build
         total_words: elem.n_terms(),
         max_coeff_log10: mc,
