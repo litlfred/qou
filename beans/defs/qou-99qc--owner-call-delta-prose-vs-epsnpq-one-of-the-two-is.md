@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-10-04T15:21:54Z
+updated_at: 2026-10-11T07:50:29Z
 parent: qou-10v9
 ---
 
@@ -3333,3 +3333,7 @@ citations, and 3 further files carry the same assertion with no lemma named at
 all, so a grep on the identifier cannot find them. Full per-site table and blast
 radius on `qou-6moa`; fixed so far in AGENTS.md and
 `QOU/Mass/AltCharShiftMultiset.lean` (PR #7459).
+
+### Cross-link (2026-10-11)
+
+the p-n interface convention R3 made canonical is the one the corpus's uniqueness theorem does NOT cover (it fails `BarInvariant`), so "canonical" there is not proved canonicity. Record: [`2026-10-11-atom-word-provenance.md`](../../docs/audits/2026-10-11-atom-word-provenance.md).

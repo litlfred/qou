@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-10T18:19:11Z
-updated_at: 2026-10-11T07:01:23Z
+updated_at: 2026-10-11T07:50:29Z
 parent: b9cj
 ---
 
@@ -461,3 +461,7 @@ The two **statement** defects — the undefined cyclotomic projection and the
 unspecified dimensionless → MeV map — are split out to **`qou-f1wk`**, since
 they are defects in `conj:brane-tower-z-habiro` rather than in any candidate
 rule. The content block is **not** edited; both are owner decisions.
+
+### Cross-link (2026-10-11)
+
+same defect class one file over: `closed_form_tau_M.py:79` restates a conditional's antecedent as settled ("IS derived"), as the May k_λ probe did with its own "max-|μ|" remark. Record: [`2026-10-11-atom-word-provenance.md`](../../docs/audits/2026-10-11-atom-word-provenance.md).
