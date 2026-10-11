@@ -34,11 +34,11 @@ So the length is a property of the **closed loop on Bring**, not of the word: di
 |---|---|
 | γγ core (σ₀σ₁⁻¹)³ | 16.1692 |
 | proton terms σ₀^± σ₁^± | 9.2064, 15.9431, 6.3677, 20.4442 |
-| neutron terms | 6.3677, 20.4442, 23.0159, no loop |
+| neutron terms (weights ¼, ½, ¼; corrected 2026-10-11) | 15.9431, 20.4442, no loop |
 
 Adding the quark and gluon letters to the core moves the loop, in both directions, depending on the signs in the ud letters.
 
-**Observation, not tested:** the core's length 16.16921667511886513803487 equals, to 25 digits, the length of one positive 11-letter braid in `results_rules11.json` (trace 22, period (1,2,2,2)). Whether that is the **same loop** (via the symmetry rule of `preregistration-sameloop.md`) was not checked.
+**Tested (`results_core_sameloop.md`):** the core's length 16.16921667511886513803487 equals, to 25 digits, the length of one positive 11-letter braid in `results_rules11.json` (00001100011, trace 22, period (1,2,2,2)), and the symmetry rule of `preregistration-sameloop.md` confirms they are the **same loop**. The two braids are not conjugate, since their exponent sums are 0 and 11, so route 2 identifies non-conjugate braids.
 
 ## 3. What this changes
 
