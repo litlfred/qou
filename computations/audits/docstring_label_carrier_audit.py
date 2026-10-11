@@ -32,10 +32,19 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent  # computations/
 #   when this count RISES after a citation fix, check whether the fix's own
 #   explanatory text is what rose. A drain that documents itself reads as growth.
 #
-# Consequence for the FLIP-TO-BLOCKING condition in scripts/precision-gates.sh:
-# the count cannot reach 0 while any producer explains a retired label in prose,
-# so "0" is the wrong trigger for this gate as written. Flagged, not changed —
-# the gate's threshold is an owner decision (bean qou-3kni).
+# 🛑 SUPERSEDED 2026-10-11, and the resolution is worth more than the problem.
+# This block concluded that "the count cannot reach 0 while any producer explains
+# a retired label in prose, so 0 is the wrong trigger." That followed only
+# because the explanations were written in LABEL SYNTAX. Drop the `prop:`/`conj:`
+# prefix -- say "the retired `constit-factor-tau-M-proton-identity` proposition"
+# and point at docs/audits/2026-10-11-retired-label-records.md, which carries the
+# label, the retiring commit and the recovery command -- and the prose keeps
+# every pointer a reader needs while this detector stops counting it.
+#
+# So the threshold was never the thing to change; the CONVENTION was. The
+# surface drained 26 -> 0 that way (groups C, B, A), and the gate now runs at
+# --max 0. A reader who needs the old label string finds it in the record doc,
+# which is in docs/ and therefore outside this audit's scan.
 
 LABEL = re.compile(r'\b((?:conj|prop|def|thm|lem|cor|rem|sec|ex|sim|alg):'
                    r'[A-Za-z0-9][A-Za-z0-9_-]{2,})')
@@ -120,17 +129,29 @@ if _UNKNOWN:
 
 if set(_FLAGS) & {"--selftest", "--self-test"}:
     ok = True
-    # 1. no truncation: the uppercase-bearing label must appear in FULL
+    # 🛑 ASSERTIONS 1-2 ARE SYNTHETIC, and they used to depend on LIVE CORPUS
+    # CITATIONS -- which broke the moment the surface was drained to 0 on
+    # 2026-10-11. Three assertions failed at once ("not captured", "not even
+    # cited" x2) on a tree where the detector was working perfectly: they were
+    # asserting that the corpus still CITES a retired label, which is the thing
+    # the gate exists to eliminate. A calibration keyed on corpus state goes
+    # stale exactly when the corpus is fixed, i.e. at the worst possible moment.
+    # Fixtures instead: these now test the REGEX and the CARRIER LOOKUP, which
+    # is what they were always meant to test.
+
+    # 1. no truncation. The uppercase-bearing label must match in FULL. This is
+    #    the original calibration -- `[a-z0-9-]` clipped it at the uppercase M
+    #    and reported the fragment as dead -- and it is a property of LABEL, so
+    #    it is tested against a fixture, not against what the corpus cites.
     full = "prop:constit-factor-tau-M-proton-identity"
-    if full not in cites:
-        print(f"SELFTEST FAIL: truncation — {full} not captured"); ok = False
-    if "prop:constit-factor-tau-" in cites:
-        print("SELFTEST FAIL: truncated fragment captured"); ok = False
-    # 2. known DEAD must classify dead
+    got = [m.group(1) for m in LABEL.finditer(f"see {full} for the identity")]
+    if got != [full]:
+        print(f"SELFTEST FAIL: truncation — matched {got!r}, expected [{full!r}]"); ok = False
+    # 2. known-DEAD stems must have NO carrier. Carrier lookup is independent of
+    #    whether anything still cites them, so this survives a drained corpus.
     for l in ("conj:pl-jsj-mass-integration-equivalence",
               "conj:denominator-zeros-as-sw-critical-points"):
-        if l not in cites: print(f"SELFTEST FAIL: {l} not even cited"); ok = False
-        elif has_carrier(l): print(f"SELFTEST FAIL: known-dead {l} read as live"); ok = False
+        if has_carrier(l): print(f"SELFTEST FAIL: known-dead {l} read as live"); ok = False
     # 3. known LIVE must classify live
     for l in ("conj:shared-denominator-cusp-holonomy",
               "def:q-pochhammer-partial-product"):

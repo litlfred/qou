@@ -26,7 +26,7 @@ SnapPea kernel and is left to a future witness.
 Manuscript references:
   - conj:shared-denominator-cusp-holonomy
   - `pl-jsj-mass-integration-equivalence`          [REMOVED -- see below]
-  - conj:denominator-zeros-as-sw-critical-points  [no carrier]
+  - `denominator-zeros-as-sw-critical-points`  [no carrier]
   (The two labels marked [no carrier] were blocks in the removed
    `descartes-universe/` chapter; no file in the tree defines them.
    See bean qou-3kni.)
@@ -40,6 +40,11 @@ needed after Tier 1+2 (algebraic-residue swap on principal Galois orbit +
 Moebius-from-binomials derivation)". It was a REDUNDANT bridge, not a lost one.
 Its chapter `descartes-universe/` has since been removed entirely, so there is
 no longer anywhere for it to live. Do NOT restore it.
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

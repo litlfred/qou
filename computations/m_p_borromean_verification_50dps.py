@@ -58,7 +58,7 @@ Honest predictions at q_0:
 
 The framework's PROVABLE accuracy at this layer is ~3 %, not 1 ppb.
 The Bring-Bloch identity
-(`conj:lambda-scale-bring-bloch-identity`) is the open R&D path
+(`lambda-scale-bring-bloch-identity`) is the open R&D path
 for closing the residual gap categorically (Tier0-5 PSLQ negative
 to date).
 
@@ -154,6 +154,11 @@ NOT as a separate λ_scale closure.
       correction lacks Lean backing
     - q_0 substrate value (CAL-2 from m_μ/m_e): numerical anchor, no
       Lean theorem
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

@@ -321,21 +321,32 @@ GATES=(
   # number while a human running it beside the files it scans read the wrong
   # one. A gate whose count depends on its cwd has no threshold at all.
   #
-  # BOUND LOWERED 26 -> 10 on 2026-10-11, in the commit that drained it, per the
-  # ratchet's own instruction. Groups B (deleted outright, 9 labels) and C (never
-  # existed, 7 labels) are fully drained: their citations now name the block
-  # WITHOUT the `prop:`/`conj:` prefix and point at
-  # docs/audits/2026-10-11-retired-label-records.md, which carries the full
-  # record. That is what makes the surface drainable at all -- the audit scans
-  # computations/ docstrings only, so moving the label STRINGS into docs/ keeps
-  # every pointer a reader needs while the count falls. The remaining 10 are
-  # group A (demoted to _deprecated/, 40 citations). --selftest asserts no
+  # BOUND 26 -> 10 -> 0 on 2026-10-11. THE SURFACE IS DRAINED: all 26 labels and
+  # all 58 citations are gone, so the gate now blocks any NEW dead citation from
+  # zero.
+  #
+  # 🛑 AND THE THRESHOLD WAS NEVER THE THING TO CHANGE -- the CONVENTION was.
+  # The comment block above argued that 0 is unreachable "while any producer
+  # explains a retired label in prose". That followed only because the
+  # explanations were written in LABEL SYNTAX. Drop the `prop:`/`conj:` prefix --
+  # say "the retired `constit-factor-tau-M-proton-identity` proposition" and
+  # point at docs/audits/2026-10-11-retired-label-records.md, which carries the
+  # label, the retiring commit and the recovery command -- and the prose keeps
+  # every pointer a reader needs while this detector stops counting it. The
+  # record doc is in docs/, which the audit does not scan.
+  #
+  # Drained in three groups, read PER LABEL and not per group: C (never existed,
+  # 7), B (deleted outright, 9), A (demoted to _deprecated/, 10, 40 citations).
+  # Every one of the 39 group-A files is byte-identical in CODE -- verified by
+  # comparing each AST with docstrings stripped -- because two of the 58 sites
+  # were code, not docstrings, and one of those writes a committed witness.
+  # --selftest asserts no
   # truncation plus two known-live and two known-dead labels; mutation-tested
   # four ways. The truncation assertion is not decoration: the first version
   # used [a-z0-9-] for the stem and silently clipped
   # prop:constit-factor-tau-M-proton-identity at the uppercase M, then reported
   # the fragment as dead -- the label's own character class was the blind spot.
-  "docstring label carriers|computations/audits/docstring_label_carrier_audit.py|--max 10|yes|yes"
+  "docstring label carriers|computations/audits/docstring_label_carrier_audit.py|--max 0|yes|yes"
   # BLOCKING as of 2026-08-19, and green on arrival. Bean qou-irzg.
   #
   # It ran ADVISORY because the ratchet had no MEMORY for this tree, not

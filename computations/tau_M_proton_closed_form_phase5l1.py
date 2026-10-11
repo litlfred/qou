@@ -41,9 +41,14 @@ y_λ(q) via y_lambda_wenzl_bridge.y_lambda_wenzl_bridge_symbolic.
 Output: a sympy expression for the STRUCTURAL T(B_p, q) — a
 Laurent rational in q.
 
-  Ref: prop:constit-factor-tau-M-proton-identity.md (Phase 5l)
+  Ref: `constit-factor-tau-M-proton-identity` (Phase 5l)
   Ref: hecke_character_symbolic.py (symbolic Hoefsmit matrices)
   Ref: y_lambda_wenzl_bridge.py (Wenzl y_λ closed form)
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

@@ -9,7 +9,7 @@ left over after PR #826's K_3* = 4_1 resolution and Phase 5f's
 Background:
   - PR #826 + Phase 5f (PR #831): K_3* = 4_1 brings variance from
     1.82× (uniform) to 1.551×; FR at k=1, 2 marginal (+0.5%).
-  - Phase 5b (PR #819 conj:alpha-cosh-h-z-step-correction): at the
+  - Phase 5b (PR #819 `alpha-cosh-h-z-step-correction`): at the
     |Δ_λ*| single-block level, α ≈ [3]_q² · cosh(h) to 0.022%.
   - Hypothesis: cosh(h) is a structural correction missing from the
     depth-stratified formula. The 1.54× variance is the *integrated*
@@ -27,9 +27,14 @@ This probe tests four injection points:
 Each variant is tested against the K_3* = 4_1 baseline (variance 1.551×
 from PR #826). Reports best variance + which variant.
 
-  Ref: conj:alpha-cosh-h-z-step-correction
+  Ref: `alpha-cosh-h-z-step-correction`
   Ref: prop:depth-stratified-frobenius-reciprocity
   Ref: PR #826, PR #819 Phase 5b, PR #831 Phase 5f
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 
