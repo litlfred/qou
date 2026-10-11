@@ -7,7 +7,10 @@
   "bytes": 129450,
   "pages": 5,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:20Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -17,18 +20,27 @@
    "stamp_date": "6 Aug 2015"
   },
   "doi": null,
-  "title": "Knotty inflation and the dimensionality of spacetime",
-  "authors_raw": "Arjun Berera, 1, \u2217 Roman V. Buniy, 2, \u2020 Thomas W. Kephart, 3, \u2021 Heinrich P\u00e4s,4, \u00a7 and Jo\u00e3o G. Rosa5, \u00b6",
+  "title": "Knotty in\ufb02ation and the dimensionality of spacetime",
+  "authors_raw": "Arjun Berera,1, \u2217Roman V. Buniy,2, \u2020 Thomas W. Kephart,3, \u2021 Heinrich P\u00e4s,4, \u00a7 and Jo\u00e3o G. Rosa5, \u00b6",
   "title_lines": [
    "Knotty inflation and the dimensionality of spacetime"
   ],
   "abstract": null,
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
-   "CreationDate": "D:20150806201743-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20150806201743-04'00'"
+  },
+  "title_raw": "Knotty inflation and the dimensionality of spacetime",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Knotty in\ufb02ation and the dimensionality of spacetime",
+   "text": "Knotty inflation and the dimensionality of spacetime",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -37,10 +49,63 @@
    "title": "Acknowledgments",
    "page": 5,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "5"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -49,8 +114,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 22213,
-   "n_words": 3766
+   "n_chars": 22081,
+   "n_words": 3664,
+   "label_start": null,
+   "label_end": "5"
   },
   {
    "id": "sec-000-acknowledgments",
@@ -59,15 +126,27 @@
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 4065,
-   "n_words": 684
+   "n_chars": 4063,
+   "n_words": 682,
+   "label_start": "5",
+   "label_end": "5"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 1,
+  "toc_inferred_entries": 1,
+  "toc_inferred_mean_confidence": 0.7,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
   "sections": 2,
-  "chars_total": 26278
+  "chars_total": 26144
  }
 }

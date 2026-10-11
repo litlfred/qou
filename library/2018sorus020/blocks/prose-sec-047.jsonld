@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/2018sorus020/blocks/prose-sec-047",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/2018sorus020/blocks/prose-sec-047",
   "kind": "prose",
-  "title": "InterpretationoftheTheorem:singularitiesandAlexan-",
-  "pageStart": 58,
-  "pageEnd": 65,
-  "text": "../sections/sec-047-232-interpretationofthetheoremsingularitiesandal.md",
-  "derivedFrom": "library/2018sorus020/manifest",
-  "sourceDocument": "library/2018sorus020/manifest",
+  "title": "The split case",
+  "pageStart": 91,
+  "pageEnd": 96,
+  "text": "../sections/sec-047-331-the-split-case.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./2018sorus020/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./2018sorus020/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ds15v1-2008/blocks/prose-sec-035",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ds15v1-2008/blocks/prose-sec-035",
   "kind": "prose",
-  "title": "Quintuple Products",
-  "pageStart": 26,
-  "pageEnd": 26,
-  "text": "../sections/sec-035-2362-quintuple-products.md",
-  "derivedFrom": "library/ds15v1-2008/manifest",
-  "sourceDocument": "library/ds15v1-2008/manifest",
+  "title": "Inter-Dependence Between Identities",
+  "pageStart": 40,
+  "pageEnd": 40,
+  "text": "../sections/sec-035-6-inter-dependence-between-identities.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ds15v1-2008/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ds15v1-2008/manifest.jsonld",
   "provenance": "ingested"
 }

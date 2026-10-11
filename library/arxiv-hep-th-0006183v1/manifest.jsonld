@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0006183v1/manifest.jsonld",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-0006183v1/manifest.jsonld",
   "@type": [
-    "folio-assistant-core:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
-  "title": "Fine-tuning and the Wilson renormalization group",
+  "title": "arxiv-hep-th-0006183v1",
   "contains": [
     "library/arxiv-hep-th-0006183v1/sections/sec-front-matter",
     "library/arxiv-hep-th-0006183v1/sections/sec-000",
@@ -18,14 +18,14 @@
     "library/arxiv-hep-th-0006183v1/sections/sec-003",
     "library/arxiv-hep-th-0006183v1/sections/sec-004",
     "library/arxiv-hep-th-0006183v1/sections/sec-005",
-    "library/arxiv-hep-th-0006183v1/sections/sec-006"
+    "library/arxiv-hep-th-0006183v1/sections/sec-006",
+    "library/arxiv-hep-th-0006183v1/sections/sec-007"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "arxiv-hep-th-0006183v1",
-    "title_source": "corroborated",
-    "title_from": "structure.json metadata.title",
-    "title_verified": true,
+    "title_source": "slug",
     "source_file": "0006183v1.pdf",
     "source_sha256": "2c9c4d97ce4f71a3a81787ba64e8b40b6fadab8d118259340a5932e8262751ae",
     "pages": 22,

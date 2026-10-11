@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/symmetry-04-00039-v3/blocks/prose-sec-020",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/symmetry-04-00039-v3/blocks/prose-sec-020",
   "kind": "prose",
-  "title": "Scaffolds for the Family Tree",
+  "title": "Expansion to Three Generations",
   "pageStart": 41,
-  "pageEnd": 46,
-  "text": "../sections/sec-020-81-scaffolds-for-the-family-tree.md",
-  "derivedFrom": "library/symmetry-04-00039-v3/manifest",
-  "sourceDocument": "library/symmetry-04-00039-v3/manifest",
+  "pageEnd": 41,
+  "text": "../sections/sec-020-8-expansion-to-three-generations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./symmetry-04-00039-v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./symmetry-04-00039-v3/manifest.jsonld",
   "provenance": "ingested"
 }

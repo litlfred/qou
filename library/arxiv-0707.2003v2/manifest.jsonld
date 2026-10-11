@@ -5,23 +5,22 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0707.2003v2/manifest.jsonld",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0707.2003v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "arxiv-0707.2003v2",
   "contains": [
+    "library/arxiv-0707.2003v2/sections/sec-front-matter",
     "library/arxiv-0707.2003v2/sections/sec-000",
     "library/arxiv-0707.2003v2/sections/sec-001",
     "library/arxiv-0707.2003v2/sections/sec-002",
     "library/arxiv-0707.2003v2/sections/sec-003",
     "library/arxiv-0707.2003v2/sections/sec-004",
     "library/arxiv-0707.2003v2/sections/sec-005",
-    "library/arxiv-0707.2003v2/sections/sec-006",
-    "library/arxiv-0707.2003v2/sections/sec-007"
+    "library/arxiv-0707.2003v2/sections/sec-006"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "licenceRecord": {
     "status": "unknown",
     "searched": [
@@ -36,19 +35,9 @@
   },
   "meta": {
     "doc_id": "arxiv-0707.2003v2",
-    "title_source": "slug",
     "source_file": "0707.2003v2.pdf",
     "source_sha256": "0b8fe37aabeee412467f3f45b6af8a534c98a0da25ea47c6d914dd2c4b1b0203",
-    "pages": 20,
-    "arxiv": {
-      "id": "0707.2003",
-      "version": "2",
-      "primary_class": "math.AG",
-      "stamp_date": "7 Aug 2007"
-    },
-    "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "granularity": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

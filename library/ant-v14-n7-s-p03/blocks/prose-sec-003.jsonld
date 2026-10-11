@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s-p03/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s-p03/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "Action du groupe de Galois motivique 1784",
-  "pageStart": 1,
-  "pageEnd": 8,
-  "text": "../sections/sec-003-4-action-du-groupe-de-galois-motivique-1784.md",
-  "derivedFrom": "library/ant-v14-n7-s-p03/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p03/manifest",
+  "title": "Action du groupe de Galois motivique",
+  "pageStart": 38,
+  "pageEnd": 39,
+  "text": "../sections/sec-003-4-action-du-groupe-de-galois-motivique.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ant-v14-n7-s-p03/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ant-v14-n7-s-p03/manifest.jsonld",
   "provenance": "ingested"
 }

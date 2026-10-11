@@ -1,16 +1,18 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s-p04/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s-p04/blocks/prose-sec-004",
+  "@type": [],
   "kind": "prose",
-  "title": "Proof of Theorem 6",
-  "pageStart": 4,
-  "pageEnd": 5,
-  "text": "../sections/sec-004-5-proof-of-theorem-6.md",
-  "derivedFrom": "library/ant-v14-n7-s-p04/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p04/manifest",
+  "title": "Proof of Theorem 7",
+  "pageStart": 8,
+  "pageEnd": 9,
+  "text": "../sections/sec-004-7-proof-of-theorem-7.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p04/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p04/manifest.jsonld",
   "provenance": "ingested"
 }

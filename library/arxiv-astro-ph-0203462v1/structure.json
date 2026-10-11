@@ -7,7 +7,10 @@
   "bytes": 886686,
   "pages": 20,
   "text_source": "embedded",
-  "extractor": "pypdf",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -18,170 +21,616 @@
    "stamp_date": "26 Mar 2002"
   },
   "doi": null,
-  "title": "1Astronomy & Astrophysics manuscript no. (will be inserted by hand later)",
+  "title": "arXiv:astro-ph/0203462v1 26 Mar 2002",
   "authors_raw": "The extreme r-element rich, iron-poor halo giant CS 31082-001",
   "title_lines": [
-   "1Astronomy & Astrophysics manuscript no",
+   "Astronomy & Astrophysics manuscript no",
    "(will be inserted by hand later)"
   ],
-  "abstract": "We present a high-resolution (R=75,000, S/N \u223c 500) spectroscopic analysis of the bright (V=11.7), extreme halo giant CS 31082-001 ([Fe/H] = \u22122.9), obtained in an ESO-VLT Large Programme dedicated to very metal-poor stars. We \ufb01nd CS 31082-001 to be extremely rich in r-process elements, comparable in this respect only to the similarly metal-poor, but carbon-enriched, giant CS 22892-052 . As a result of the extreme overabundance of the heaviest r-process elements, and negligible blending from CH and CN mo lecular lines, a reliable measurement is obtained of the U II line at 386 nm, for the \ufb01rst time in a halo star, along with numerous lines of Th II, as well as lines of 25 other r-process elements. Abundance estimates for a total of 43 ele ments (44 counting Hydrogen) are reported in CS 31082-001 , almost half of the entire perio dic table. The main atmospheric parameters of CS 31082-001 are as follo ws: Tef f = 4825 \u00b1 50 K, log g = 1 .5 \u00b1 0.3 (cgs), [Fe/H] = \u22122.9 \u00b10.1 (in LTE), and microturbulence 1.8 \u00b1 0.2 km/s. Carbon and nitrogen are not signi\ufb01cantly enhanced relative to iron. As usual in giant stars, Li is depl eted by dilution (log(Li/H)=0.85). The \u03b1-elements show the usual enhancements with respect to iron, with [O/Fe]= 0 .6 \u00b1 0.2 (from [O I] 6300 \u02daA), [Mg/Fe]= 0 .45 \u00b1 0.16, [Si/Fe]= 0.24 \u00b1 0.1, and [Ca/Fe]= 0 .41 \u00b1 0.08, while [Al/Fe] is near \u22120.5. The r-process elements show unusual patterns: among the lightest elements (Z \u223c40), Sr and Zr follow the Solar r-element distribution, but Ag is down by 0.8 dex. All elements with 56 \u2264 Z \u2264 72 follow the Solar r-element pattern, reduced by about 1.25 dex. Accordingly, the [ r/Fe] enhancement is about +1.7 dex (a factor of 50), very simi lar to that of CS 22892-052 . Pb, in contrast, seems to be below the shifted Solar r-process distribution, possibly indicating an error in the latter, while thorium is more enhanced than the lighter nuclides. In CS 31082-001 , log(Th/Eu) is \u22120.22 \u00b1 0.07, higher than in the Solar System ",
+  "abstract": "We present a high-resolution (R=75,000, S/N \u223c500) spectroscopic analysis of the bright (V=11.7), extreme halo giant CS 31082-001 ([Fe/H] = \u22122.9), obtained in an ESO-VLT Large Programme dedicated to very metal-poor stars. We \ufb01nd CS 31082-001 to be extremely rich in r-process elements, comparable in this respect only to the similarly metal-poor, but carbon-enriched, giant CS 22892-052 . As a result of the extreme overabundance of the heaviest r-process elements, and negligible blending from CH and CN molecular lines, a reliable measurement is obtained of the U II line at 386 nm, for the \ufb01rst time in a halo star, along with numerous lines of Th II, as well as lines of 25 other r-process elements. Abundance estimates for a total of 43 elements (44 counting Hydrogen) are reported in CS 31082-001 , almost half of the entire periodic table. The main atmospheric parameters of CS 31082-001 are as follows: Teff = 4825 \u00b1 50 K, log g = 1.5 \u00b1 0.3 (cgs), [Fe/H] = \u22122.9 \u00b10.1 (in LTE), and microturbulence 1.8\u00b1 0.2 km/s. Carbon and nitrogen are not signi\ufb01cantly enhanced relative to iron. As usual in giant stars, Li is depleted by dilution (log(Li/H)=0.85). The \u03b1-elements show the usual enhancements with respect to iron, with [O/Fe]= 0.6 \u00b1 0.2 (from [O I] 6300 \u02daA), [Mg/Fe]= 0.45 \u00b1 0.16, [Si/Fe]= 0.24 \u00b1 0.1, and [Ca/Fe]= 0.41 \u00b1 0.08, while [Al/Fe] is near \u22120.5. The r-process elements show unusual patterns: among the lightest elements (Z\u223c40), Sr and Zr follow the Solar r-element distribution, but Ag is down by 0.8 dex. All elements with 56 \u2264Z \u226472 follow the Solar r-element pattern, reduced by about 1.25 dex. Accordingly, the [r/Fe] enhancement is about +1.7 dex (a factor of 50), very similar to that of CS 22892-052 . Pb, in contrast, seems to be below the shifted Solar r-process distribution, possibly indicating an error in the latter, while thorium is more enhanced than the lighter nuclides. In CS 31082-001 , log(Th/Eu) is \u22120.22\u00b1 0.07, higher than in the Solar System (\u22120.46) or in CS 2",
   "docinfo": {
+   "Title": "arXiv:astro-ph/0203462v1  26 Mar 2002",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181116063032-05'00'",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:astro-ph/0203462v1  26 Mar 2002"
+   "CreationDate": "D:20181116063032-05'00'"
+  },
+  "title_raw": "Astronomy & Astrophysics manuscript no. (will be inserted by hand later)",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:astro-ph/0203462v1 26 Mar 2002",
+   "heading": "The extreme r -element rich, iron-poor halo giant CS 31082-001",
+   "text": "Astronomy & Astrophysics manuscript no. (will be inserted by hand later)",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Observatoire de Paris-Meudon, GEPI, 2 pl. Jules Janssen, F- 92195 Meudon Cedex, France",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "GRAAL, Universit\u00b4 e de Montpellier II, F-34095 Montpellier Cedex 05, France",
-   "page": 1,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Observatoire de Paris, GEPI, 61 av. de l\u2019Observatoire, F-75 014 Paris, France",
-   "page": 1,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Lund Observatory, Box 43, S-221 00 Lund, Sweden",
-   "page": 1,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "Astronomical Observatory, NBIfAFG, Juliane Maries Vej 30, DK-2100 Copenhagen, Denmark",
-   "page": 1,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
    "title": "Introduction",
    "page": 2,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Observations and reductions",
    "page": 2,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
-   "title": "In the two frames that were obtained through the image",
+   "title": "Abundance analysis, and derived abundances of the lighter elements",
    "page": 3,
    "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Abundance analysis, and derived abundances of",
-   "page": 3,
-   "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Model atmosphere and stellar parameters",
    "page": 3,
    "source": "inferred",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Abundances of light and iron-peak elements",
    "page": 5,
    "source": "inferred",
-   "number": "3.2"
-  },
-  {
-   "level": 1,
-   "title": "In the classical notation where log \u01eb(H) = 12 and [X /H] =",
-   "page": 5,
-   "source": "inferred",
-   "number": "2"
+   "number": "3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Neutron-capture elements",
    "page": 7,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Linelists and physical data",
    "page": 7,
    "source": "inferred",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Error budget",
    "page": 7,
    "source": "inferred",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "7"
   },
   {
    "level": 2,
-   "title": "The lighter elements, 38 \u2264Z\u226448",
+   "title": "The lighter elements, 38$\\leq$Z$\\leq$48",
    "page": 8,
    "source": "inferred",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "8"
   },
   {
    "level": 2,
-   "title": "The second-peak elements, 56 \u2264Z\u226472",
+   "title": "The second-peak elements, 56$\\leq$Z$\\leq$72",
    "page": 10,
    "source": "inferred",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "10"
   },
   {
    "level": 2,
-   "title": "The third-peak elements and the actinides,",
+   "title": "The third-peak elements and the actinides, 76$\\leq$Z$\\leq$92",
    "page": 11,
    "source": "inferred",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Is the r-process universal ?",
    "page": 13,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "13"
+  },
+  {
+   "level": 1,
+   "title": "The age of CS,31082-001,",
+   "page": 14,
+   "source": "inferred",
+   "number": "6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "Conclusions and future work",
    "page": 16,
    "source": "inferred",
-   "number": "7"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 16,
-   "source": "inferred",
-   "number": null
+   "number": "7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "16"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Comparison of the spectrum of CS 31082-001(thick line) and CS 22892-052 (narrow line) showing the much reduced molecular band strength in the former. Upper panel: CN 3871 and 3883\u02daA band heads; lower panel: G band (CH). The spectrum of CS 22892-052was obtained during the comissioning of the spectrog",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Fit of CH lines of the G band in CS 31082-001. Dots: observations: lines: synthetic spectra computed for the abundances indicated in the \ufb01gure",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The forbidden [O I] 6300 \u02daA line in CS 31082-001. Symbols as in Fig. 2",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Log of the observations, and measured signal-to-noise ratio per pixel from the extracted and co-added spectra",
+   "page": 4,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Colors and e\ufb00ective temperature of CS 31082- 001",
+   "page": 5,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The observed Nb II 3215 \u02daA, Ru I 3799 \u02daA, and Rh I 3434 \u02daA lines in CS 31082-001. Symbols as in Fig. 2",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The observed Pd I 3242 \u02daA, Ag I 3281 \u02daA, and 3383 \u02daA lines in CS 31082-001. Symbols as in Fig. 2",
+   "page": 6,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The observed Eu 4129 and Hf II 3999 \u02daA line in CS 31082-001. Symbols as in Fig. 2",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "table",
+   "number": "4",
+   "title": "Th and U lines used in the abundance determination",
+   "page": 8,
+   "confidence": 0.7,
+   "evidence": [
+    "referenced"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "The observed Os I 4261 \u02daA, 4420 \u02daA, and Ir I 3513 \u02daA lines in CS 31082-001. Symbols as in Fig. 2",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "table",
+   "number": "6",
+   "title": "Error budget for neutron-capture elements",
+   "page": 9,
+   "confidence": 0.7,
+   "evidence": [
+    "referenced"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "The observed Pb I 4057 \u02daA lines in CS 31082- 001 (upper",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "The observed Th II 3351 \u02daA, 3434\u02daA, 4019\u02daA and 4086\u02daA lines in CS 31082-001. Dots: observations; line: synthetic spectrum computed for the mean Th abundance, log \u01eb(Th)=-0.98",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "The observed U II 3859 \u02daA line in CS 31082-001. Symbols as in Fig. 2. The best \ufb01t is found for log \u01eb(U)=\u22121.92",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "Top: Neutron-capture-element abundances of CS 31082-001compared to the Solar System r-process scaled to match the 56\u2264Z\u226469 elemental abundances of",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "Neutron-capture-element",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "Abundances of CS 31082-001compared to the predictions of Qian & Wasserburg (2001b,2002) three component phenomenological model",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "15"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -189,232 +638,213 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 428,
-   "n_words": 73
-  },
-  {
-   "id": "sec-000-1-observatoire-de-paris-meudon-gepi-2-pl-jules-j",
-   "number": "1",
-   "title": "Observatoire de Paris-Meudon, GEPI, 2 pl. Jules Janssen, F- 92195 Meudon Cedex, France",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 29,
-   "n_words": 2
-  },
-  {
-   "id": "sec-001-2-graal-universit-e-de-montpellier-ii-f-34095-mo",
-   "number": "2",
-   "title": "GRAAL, Universit\u00b4 e de Montpellier II, F-34095 Montpellier Cedex 05, France",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 42,
-   "n_words": 2
-  },
-  {
-   "id": "sec-002-3-observatoire-de-paris-gepi-61-av-de-lobservato",
-   "number": "3",
-   "title": "Observatoire de Paris, GEPI, 61 av. de l\u2019Observatoire, F-75 014 Paris, France",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 122,
-   "n_words": 17
-  },
-  {
-   "id": "sec-003-5-lund-observatory-box-43-s-221-00-lund-sweden",
-   "number": "5",
-   "title": "Lund Observatory, Box 43, S-221 00 Lund, Sweden",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-004-6-astronomical-observatory-nbifafg-juliane-marie",
-   "number": "6",
-   "title": "Astronomical Observatory, NBIfAFG, Juliane Maries Vej 30, DK-2100 Copenhagen, Denmark",
-   "level": 1,
-   "page_start": 1,
    "page_end": 2,
-   "n_chars": 3682,
-   "n_words": 639
+   "n_chars": 4638,
+   "n_words": 738,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
-   "id": "sec-005-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 5098,
-   "n_words": 839
+   "n_chars": 5090,
+   "n_words": 831,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
-   "id": "sec-006-2-observations-and-reductions",
+   "id": "sec-001-2-observations-and-reductions",
    "number": "2",
    "title": "Observations and reductions",
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 2248,
-   "n_words": 359
+   "n_chars": 2996,
+   "n_words": 474,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
-   "id": "sec-007-1-in-the-two-frames-that-were-obtained-through-t",
-   "number": "1",
-   "title": "In the two frames that were obtained through the image",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 703,
-   "n_words": 117
-  },
-  {
-   "id": "sec-008-3-abundance-analysis-and-derived-abundances-of",
+   "id": "sec-002-3-abundance-analysis-and-derived-abundances-of-t",
    "number": "3",
-   "title": "Abundance analysis, and derived abundances of",
+   "title": "Abundance analysis, and derived abundances of the lighter elements",
    "level": 1,
    "page_start": 3,
    "page_end": 3,
    "n_chars": 20,
-   "n_words": 3
+   "n_words": 3,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
-   "id": "sec-009-31-model-atmosphere-and-stellar-parameters",
+   "id": "sec-003-31-model-atmosphere-and-stellar-parameters",
    "number": "3.1",
    "title": "Model atmosphere and stellar parameters",
    "level": 2,
    "page_start": 3,
    "page_end": 5,
-   "n_chars": 5283,
-   "n_words": 878
+   "n_chars": 5230,
+   "n_words": 825,
+   "label_start": "3",
+   "label_end": "5"
   },
   {
-   "id": "sec-010-32-abundances-of-light-and-iron-peak-elements",
+   "id": "sec-004-32-abundances-of-light-and-iron-peak-elements",
    "number": "3.2",
    "title": "Abundances of light and iron-peak elements",
    "level": 2,
    "page_start": 5,
-   "page_end": 5,
-   "n_chars": 2516,
-   "n_words": 492
-  },
-  {
-   "id": "sec-011-2-in-the-classical-notation-where-log-\u01ebh-12-and",
-   "number": "2",
-   "title": "In the classical notation where log \u01eb(H) = 12 and [X /H] =",
-   "level": 1,
-   "page_start": 5,
    "page_end": 7,
-   "n_chars": 5434,
-   "n_words": 966
+   "n_chars": 7974,
+   "n_words": 1434,
+   "label_start": "5",
+   "label_end": "7"
   },
   {
-   "id": "sec-012-4-neutron-capture-elements",
+   "id": "sec-005-4-neutron-capture-elements",
    "number": "4",
    "title": "Neutron-capture elements",
    "level": 1,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 978,
-   "n_words": 164
+   "n_chars": 974,
+   "n_words": 160,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-013-41-linelists-and-physical-data",
+   "id": "sec-006-41-linelists-and-physical-data",
    "number": "4.1",
    "title": "Linelists and physical data",
    "level": 2,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 1364,
-   "n_words": 225
+   "n_chars": 1362,
+   "n_words": 223,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-014-42-error-budget",
+   "id": "sec-007-42-error-budget",
    "number": "4.2",
    "title": "Error budget",
    "level": 2,
    "page_start": 7,
-   "page_end": 8,
-   "n_chars": 3720,
-   "n_words": 683
-  },
-  {
-   "id": "sec-015-43-the-lighter-elements-38-z48",
-   "number": "4.3",
-   "title": "The lighter elements, 38 \u2264Z\u226448",
-   "level": 2,
-   "page_start": 8,
-   "page_end": 10,
-   "n_chars": 6458,
-   "n_words": 1156
-  },
-  {
-   "id": "sec-016-44-the-second-peak-elements-56-z72",
-   "number": "4.4",
-   "title": "The second-peak elements, 56 \u2264Z\u226472",
-   "level": 2,
-   "page_start": 10,
-   "page_end": 11,
-   "n_chars": 3262,
-   "n_words": 562
-  },
-  {
-   "id": "sec-017-45-the-third-peak-elements-and-the-actinides",
-   "number": "4.5",
-   "title": "The third-peak elements and the actinides,",
-   "level": 2,
-   "page_start": 11,
    "page_end": 13,
-   "n_chars": 9390,
-   "n_words": 1653
+   "n_chars": 22866,
+   "n_words": 3982,
+   "label_start": "7",
+   "label_end": "13"
   },
   {
-   "id": "sec-018-5-is-the-r-process-universal",
+   "id": "sec-008-5-is-the-r-process-universal",
    "number": "5",
    "title": "Is the r-process universal ?",
    "level": 1,
    "page_start": 13,
    "page_end": 16,
-   "n_chars": 12685,
-   "n_words": 2197
+   "n_chars": 12625,
+   "n_words": 2137,
+   "label_start": "13",
+   "label_end": "16"
   },
   {
-   "id": "sec-019-7-conclusions-and-future-work",
+   "id": "sec-009-7-conclusions-and-future-work",
    "number": "7",
    "title": "Conclusions and future work",
    "level": 1,
    "page_start": 16,
-   "page_end": 16,
-   "n_chars": 2994,
-   "n_words": 488
-  },
-  {
-   "id": "sec-020-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 16,
    "page_end": 20,
-   "n_chars": 14965,
-   "n_words": 2739
+   "n_chars": 17859,
+   "n_words": 3116,
+   "label_start": "16",
+   "label_end": "20"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 21,
-  "sections": 22,
-  "chars_total": 81421,
+  "toc_entries": 14,
+  "toc_inferred_entries": 14,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.1,
+  "toc_inferred_method": "latex",
+  "figure_entries": 17,
+  "figure_sequence_gaps": [
+   "table 3",
+   "table 5"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 33,
+    "items": [
+     "Cowley R.C., Aikman G.C.C. & Fisher W.A. 1977, Publ. Dom. McWilliam, A., Preston, G. W., Sneden, C., & Searle, L. 1995, Astrophys. Obs. Victoria, 15, 37 AJ 109,",
+     "Delyannis, C. 1998, AJ 116, 2489 Michaud, G. Charland, Y., Vauclair, S., & Vauclair, G. 1976, Cutri, R.M., et al., 2002, Second Incremental Data Release ApJ 210,",
+     "Kotzlowski, H. 2000, in \u201dOptical and IR Telescope Washington D.C., 1970) Instrumentation and Detectors\u201d, Masanori Iye and Alan Musiol, K., & Labuz, S. 1993, Phys. Scr. 27,",
+     "Moorwood (Eds.), Proc. SPIE Vol. 4008, p. 534 Nilsson, H., Ivarsson, S., Johansson, S., & Lundberg, H. 2001 Depagne, E., et al., 2002, in preparation A&A 381,",
+     "Edvardsson, B., Andersen, J., Gustafsson, B., et al. 1993 A&A Nilsson, H., Zhang, Z., Lundberg, H., Johansson, S., & 275, 101 Nordstr\u00a8om, B. 2001, A&A 382,",
+     "Fouqu\u00b4e, P., Chevallier, L., Cohen, M., et al. 2000 A&AS 141, Nissen, P., Primas, F., & Asplund, M., 2001, New Astronomy 313 Reviews, 45,",
+     "Gallagher, A., 1967, Phys. Rev. 157, 24 Norris, J.E., Ryan, S.G., & Beers, T.C. 2001, ApJ 561,",
+     "Goly, A., Kusz, J., Nguyen Quang, B., & Weniger, S. 1991, J. Pagel, B., & Tautvai\u02d8sien`e, G. 1997, MNRAS 288,",
+     "Quant. Spectrosc. Radiat. Transfer 45, 157 Plez, B. 1998 A&A 337,",
+     "Goriely, S., & Arnould, M. 2001, A&A in press Plez, B., Brett, J.M., & Nordlund, \u02daA. 1992, A&A 256,",
+     "Goriely, S., & Clerbaux, B. 1999, A&A 346, 798 Plez, B., Smith, & V.V., Lambert, D.L. 1993, ApJ 418,",
+     "Gratton, R.G. & Sneden, C., 1994, A&A 287, 927 Prantzos, N., Hashimoto, M., & Nomoto, K. 1990, A&A 234, Gustafsson, B., Bell, R. A., Eriksson, K., & Nordlund, \u02daA.,",
+     "A&A 42, 407 Prasad, C.V.V., & Bernath, P.F. 1992, JMS 156,",
+     "Gustafsson, B., & Mitzuno-Wiedner, M. 2001 in \u201dAstrophysical Prasad, C.V.V., Bernath, P.F., Frum, C., & Engleman, R.Jr. Timescales\u201d, PASP Conf. Series 245, 271 1992, JMS 151,",
+     "Qian, Y.-Z., Wasserburg, G. J. 2001a, 552, L55 Whaling, W. 1982, ApJ 261,",
+     "Qian, Y.-Z., Wasserburg, G. J. 2001b, 559,",
+     "Hill, V., Plez, B., Cayrel, C., & Beers, T. 2001 in Qian, Y.-Z., Wasserburg, G. J. 2002, 567,",
+     "\u201dAstrophysical Timescales\u201d, PASP Conf. Series 245,",
+     "Reader, J., & Sansonetti, C.J. 1986, Phys. Rev. 33,",
+     "Israelian, G., Garc\u00b4\u0131a L\u00b4opez, R., Ram\u00b4on, J., & Rebolo, R. 1998, Rehfuss, B.D., Suh, M.H., & Miller, T.A. 1992, JMS 151,",
+     "ApJ 507,",
+     "Ryan, S.G., Norris, J.E., & Beers, T.C. 1992, ApJ, 471,",
+     "Schatz, H., Toejnes, R., Kratz, K.-L., et al. 2002, in preparation 1988, JMS 127,",
+     "Sneden, C., McWilliam, A., Preston, G. W., et al. 1996, ApJ, Jaschek, M., & Malaroda, S. 1970, Nature, 225,",
+     "Johnson, J., & Bolte M. 2001, ApJ 554, 888 467,",
+     "J\u00f8rgensen, U.G., Larsson, M., Iwamae, A., & Yu, B. 1996, A&A Sneden, C., Cowan, J. J., Burris, D. L. & Truran, J. W. 1998, 315, 204 ApJ, 496,",
+     "Kwiatkowski, M., Zimmermann, P., Bi\u00b4emont, E., & Grevesse, L25 N. 1984, A&A 135, 59 Spite, M. 1967, Ann. Astrophys. 30,",
+     "Lage, C.S. & Whaling, W. 1976, J. Quant. Spectrosc. Radiat. Tsujimoto, T., Shigeyama, T., & Yoshii, Y. 2000, ApJ 531, L33 Transfer 16, 537 Anthony-Twarog, B.J., & Twarog, B. 2000 AJ 119,",
+     "Larsson, M., Siegbahn, P.E.M., & Agren, H. 1983, ApJ 272, Umeda, H., & Nomoto, K. 2002, ApJ 565,",
+     "369 Van Eck, S., Goriely, S., Jorissen, A., & Plez, B. 2001, Nature Lawler, J.E., Bonvallet, G., & Sneden, C. 2001a ApJ 556,452 412,",
+     "Lawler, J.E., Wickli\ufb00e, M.E., Sen Harog, E.A., & Sneden, C. Vladilo, G., Bonifacio, P., Centuri\u00b4on, M., & Molaro, P. 2000, 2001b, ApJ 563, 1088 ApJ, 543,",
+     "S. 1996, ApJS, 107, 475 A. 1985, Phys. Scr. 31,",
+     "Luque, J., & Crosley, D.R. 1999 SRI International Report MP Westin, J., Sneden, C., Gustafsson, B. & Cowan, J. J. 2000, 99-009 ApJ, 530,"
+    ]
+   },
+   "found_not_listed": {
+    "count": 7,
+    "items": [
+     "1 Introduction",
+     "2 Observations and reductions",
+     "3 Abundance analysis, and derived abundances of the lighter elements",
+     "3 LTE",
+     "4 Neutron-capture elements",
+     "5 Is the r-process universal ?",
+     "7 Conclusions and future work"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 11,
+  "chars_total": 81634,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "M2317.tex",
    "tex_sections": 14,
-   "overlaid": 10,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -427,77 +857,45 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-000-1-observatoire-de-paris-meudon-gepi-2-pl-jules-j",
-     "title": "Observatoire de Paris-Meudon, GEPI, 2 pl. Jules Janssen, F- 92195 Meudon Cedex, France",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-001-2-graal-universit-e-de-montpellier-ii-f-34095-mo",
-     "title": "GRAAL, Universit\u00b4 e de Montpellier II, F-34095 Montpellier Cedex 05, France",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-002-3-observatoire-de-paris-gepi-61-av-de-lobservato",
-     "title": "Observatoire de Paris, GEPI, 61 av. de l\u2019Observatoire, F-75 014 Paris, France",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-003-5-lund-observatory-box-43-s-221-00-lund-sweden",
-     "title": "Lund Observatory, Box 43, S-221 00 Lund, Sweden",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-004-6-astronomical-observatory-nbifafg-juliane-marie",
-     "title": "Astronomical Observatory, NBIfAFG, Juliane Maries Vej 30, DK-2100 Copenhagen, Denmark",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-005-1-introduction",
+     "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.98,
+     "prose_ratio": 0.928,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-2-observations-and-reductions",
+     "id": "sec-001-2-observations-and-reductions",
      "title": "Observations and reductions",
-     "prose_ratio": 0.895,
-     "coverage_ratio": 0.989,
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.863,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-1-in-the-two-frames-that-were-obtained-through-t",
-     "title": "In the two frames that were obtained through the image",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-008-3-abundance-analysis-and-derived-abundances-of",
-     "title": "Abundance analysis, and derived abundances of",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-009-31-model-atmosphere-and-stellar-parameters",
-     "title": "Model atmosphere and stellar parameters",
-     "prose_ratio": 0.958,
-     "coverage_ratio": 0.876,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-010-32-abundances-of-light-and-iron-peak-elements",
-     "title": "Abundances of light and iron-peak elements",
-     "prose_ratio": 0.363,
+     "id": "sec-002-3-abundance-analysis-and-derived-abundances-of-t",
+     "title": "Abundance analysis, and derived abundances of the lighter elements",
+     "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-011-2-in-the-classical-notation-where-log-\u01ebh-12-and",
-     "title": "In the classical notation where log \u01eb(H) = 12 and [X /H] =",
-     "result": "no matching \\section"
+     "id": "sec-003-31-model-atmosphere-and-stellar-parameters",
+     "title": "Model atmosphere and stellar parameters",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.877,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-012-4-neutron-capture-elements",
+     "id": "sec-004-32-abundances-of-light-and-iron-peak-elements",
+     "title": "Abundances of light and iron-peak elements",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-4-neutron-capture-elements",
      "title": "Neutron-capture elements",
      "prose_ratio": 0.915,
      "coverage_ratio": 0.687,
@@ -505,7 +903,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-41-linelists-and-physical-data",
+     "id": "sec-006-41-linelists-and-physical-data",
      "title": "Linelists and physical data",
      "prose_ratio": 0.927,
      "coverage_ratio": 1.0,
@@ -513,55 +911,27 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-42-error-budget",
+     "id": "sec-007-42-error-budget",
      "title": "Error budget",
-     "prose_ratio": 0.912,
-     "coverage_ratio": 0.939,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-015-43-the-lighter-elements-38-z48",
-     "title": "The lighter elements, 38 \u2264Z\u226448",
-     "prose_ratio": 0.99,
-     "coverage_ratio": 0.96,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-016-44-the-second-peak-elements-56-z72",
-     "title": "The second-peak elements, 56 \u2264Z\u226472",
-     "prose_ratio": 0.974,
-     "coverage_ratio": 0.988,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-017-45-the-third-peak-elements-and-the-actinides",
-     "title": "The third-peak elements and the actinides,",
-     "prose_ratio": 0.985,
-     "coverage_ratio": 0.993,
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-018-5-is-the-r-process-universal",
+     "id": "sec-008-5-is-the-r-process-universal",
      "title": "Is the r-process universal ?",
-     "prose_ratio": 0.565,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-019-7-conclusions-and-future-work",
-     "title": "Conclusions and future work",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-020-references",
-     "title": "References",
-     "result": "no matching \\section"
+     "id": "sec-009-7-conclusions-and-future-work",
+     "title": "Conclusions and future work",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.402,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     }
    ]
   }

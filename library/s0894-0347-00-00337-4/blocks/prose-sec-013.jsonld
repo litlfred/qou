@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s0894-0347-00-00337-4/blocks/prose-sec-013",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/s0894-0347-00-00337-4/blocks/prose-sec-013",
   "kind": "prose",
-  "title": "J|y|−1",
-  "pageStart": 11,
-  "pageEnd": 11,
-  "text": "../sections/sec-013-2-jy1.md",
-  "derivedFrom": "library/s0894-0347-00-00337-4/manifest",
-  "sourceDocument": "library/s0894-0347-00-00337-4/manifest",
+  "title": "A.1. Fredholm determinants and determinantal processes",
+  "pageStart": 28,
+  "pageEnd": 30,
+  "text": "../sections/sec-013-a1-fredholm-determinants-and-determinantal-proce.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./s0894-0347-00-00337-4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./s0894-0347-00-00337-4/manifest.jsonld",
   "provenance": "ingested"
 }

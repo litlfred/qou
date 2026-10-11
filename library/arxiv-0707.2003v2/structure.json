@@ -7,6 +7,10 @@
   "bytes": 178276,
   "pages": 20,
   "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:18Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -17,21 +21,30 @@
    "stamp_date": "7 Aug 2007"
   },
   "doi": null,
-  "title": "A geometric model for Hochschild homology of Soergel bimodules BEN WEBSTER GEORDIE WILLIAMSON School of Mathematics Mathematisches Institut Institute for Advanced Study der Universit\u00e4t Freiburg",
-  "authors_raw": null,
+  "title": "A geometric model for Hochschild homology of Soergel bimodules Introduction",
+  "authors_raw": "BEN WEBSTER",
   "title_lines": [
    "A geometric model for Hochschild",
-   "homology of Soergel bimodules",
-   "BEN WEBSTER GEORDIE WILLIAMSON",
-   "School of Mathematics Mathematisches Institut",
-   "Institute for Advanced Study der Universit\u00e4t Freiburg"
+   "homology of Soergel bimodules"
   ],
-  "abstract": "An important step in the calculation of the triply graded lin k homology theory of Khovanov and Rozansky is the determinati on of the Hochschild homology of Soergel bimodules for SL(n). W e present a ge- ometric model for this Hochschild homology for any simple gr oup G, as equivariant intersection homology of B\u00d7 B -orbit closures in G. W e show that, in type A these orbit closures are equivariantly forma l for the conju- gation T -action. W e use this fact to show that in the case where the cor re- sponding orbit closure is smooth, this Hochschild homology is an exterior algebra over a polynomial ring on generators whose degree is explicitly determined by the geometry of the orbit closure, and describ e its Hilbert series, proving a conjecture of Jacob Rasmussen.",
+  "abstract": "An important step in the calculation of the triply graded link homology theory of Khovanov and Rozansky is the determination of the Hochschild homology of Soergel bimodules for SL(n). We present a ge- ometric model for this Hochschild homology for any simple group G, as equivariant intersection homology of B \u00d7 B-orbit closures in G. We show that, in type A these orbit closures are equivariantly formal for the conju- gation T -action. We use this fact to show that in the case where the corre- sponding orbit closure is smooth, this Hochschild homology is an exterior algebra over a polynomial ring on generators whose degree is explicitly determined by the geometry of the orbit closure, and describe its Hilbert series, proving a conjecture of Jacob Rasmussen.",
   "docinfo": {
+   "Title": "arXiv:0707.2003v2  [math.AG]  7 Aug 2007",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181026135328-04'00'",
    "Creator": "dvips(k) 5.95a Copyright 2005 Radical Eye Software",
-   "Title": "arXiv:0707.2003v2  [math.AG]  7 Aug 2007"
+   "CreationDate": "D:20181026135328-04'00'"
+  },
+  "title_raw": "A geometric model for Hochschild homology of Soergel bimodules",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:0707.2003v2 [math.AG] 7 Aug 2007",
+   "heading": "A geometric model for Hochschild homology of Soergel bimodules Introduction",
+   "text": "A geometric model for Hochschild homology of Soergel bimodules",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,60 +53,251 @@
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Acknowledgments",
    "page": 5,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Knot homology and Soergel bimodules",
    "page": 5,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The equivariant derived category and dg-modules",
    "page": 7,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Hochschild homology and dg-algebras",
    "page": 12,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The geometry of Bott-Samelson bimodules",
    "page": 14,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Equivariant formality",
    "page": 15,
    "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 19,
-   "source": "inferred",
-   "number": null
+   "number": "6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1220,
+   "n_words": 172,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -101,8 +305,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 7015,
-   "n_words": 1273
+   "n_chars": 6971,
+   "n_words": 1228,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-acknowledgments",
@@ -111,8 +317,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 1055,
-   "n_words": 171
+   "n_chars": 1041,
+   "n_words": 156,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-2-knot-homology-and-soergel-bimodules",
@@ -121,8 +329,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 3162,
-   "n_words": 595
+   "n_chars": 3146,
+   "n_words": 577,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-3-the-equivariant-derived-category-and-dg-module",
@@ -131,8 +341,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 12,
-   "n_chars": 10112,
-   "n_words": 1814
+   "n_chars": 10042,
+   "n_words": 1798,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-4-hochschild-homology-and-dg-algebras",
@@ -141,8 +353,10 @@
    "level": 1,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 2164,
-   "n_words": 391
+   "n_chars": 2169,
+   "n_words": 394,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-5-the-geometry-of-bott-samelson-bimodules",
@@ -151,8 +365,10 @@
    "level": 1,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 2970,
-   "n_words": 534
+   "n_chars": 2958,
+   "n_words": 521,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-6-equivariant-formality",
@@ -160,27 +376,29 @@
    "title": "Equivariant formality",
    "level": 1,
    "page_start": 15,
-   "page_end": 19,
-   "n_chars": 7171,
-   "n_words": 1422
-  },
-  {
-   "id": "sec-007-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 19,
    "page_end": 20,
-   "n_chars": 2237,
-   "n_words": 350
+   "n_chars": 9326,
+   "n_words": 1679,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 8,
+  "toc_entries": 7,
+  "toc_inferred_entries": 7,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
   "sections": 8,
-  "chars_total": 35886,
+  "chars_total": 36873,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "hochschild-soergel.tex",
@@ -193,10 +411,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.997,
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -204,54 +427,49 @@
      "id": "sec-001-acknowledgments",
      "title": "Acknowledgments",
      "prose_ratio": 0.989,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-2-knot-homology-and-soergel-bimodules",
      "title": "Knot homology and Soergel bimodules",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.988,
+     "prose_ratio": 0.994,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-3-the-equivariant-derived-category-and-dg-module",
      "title": "The equivariant derived category and dg-modules",
-     "prose_ratio": 0.991,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-4-hochschild-homology-and-dg-algebras",
      "title": "Hochschild homology and dg-algebras",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.983,
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-5-the-geometry-of-bott-samelson-bimodules",
      "title": "The geometry of Bott-Samelson bimodules",
-     "prose_ratio": 0.842,
-     "coverage_ratio": 0.988,
+     "prose_ratio": 0.836,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-6-equivariant-formality",
      "title": "Equivariant formality",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.997,
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.729,
      "result": "overlaid",
      "converter": "pandoc"
-    },
-    {
-     "id": "sec-007-references",
-     "title": "References",
-     "result": "no matching \\section"
     }
    ]
   }

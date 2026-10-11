@@ -5,215 +5,607 @@
   "file": "Invariant_eigendistributions_2.pdf",
   "sha256": "ee43c3ebeff9526549f27b92244b135534e92c95b0025cd13d0ff822253c1987",
   "bytes": 286346,
-  "pages": 33
+  "pages": 33,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:25Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
   "title": "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups",
-  "authors_raw": null,
-  "abstract": null,
-  "docinfo": {
-   "CreationDate": "D:20030713101716",
-   "Producer": "Acrobat Distiller 4.05 for Windows"
-  },
-  "title_prev": "REPRESENTATIONSOFWEYL GROUPS 1 Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups W. ROSSMANN1",
+  "authors_raw": "W. ROSSMANN1",
   "title_lines": [
-   "REPRESENTATIONSOFWEYL GROUPS 1",
+   "REPRESENTATIONS OF WEYL GROUPS",
    "Invariant eigendistributions on a semisimple Lie algebra",
    "and homology classes on the conormal variety II:",
-   "representations of Weyl groups",
-   "W. ROSSMANN1"
-  ]
+   "representations of Weyl groups"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "Acrobat Distiller 4.05 for Windows",
+   "CreationDate": "D:20030713101716"
+  },
+  "title_raw": "REPRESENTATIONS OF WEYL GROUPS Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups",
+   "text": "REPRESENTATIONS OF WEYL GROUPS Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Introduction",
+   "title": "Contents",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "1"
+  },
+  {
+   "level": 1,
+   "title": "Introduction.",
+   "page": 1,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Construction of Weyl group representations",
-   "page": 1,
+   "page": 2,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Specialization",
-   "page": 1,
+   "page": 4,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "Lemma.",
+   "page": 4,
+   "source": "inferred",
+   "number": "3.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "4"
   },
   {
    "level": 1,
-   "title": "Springer theory",
-   "page": 1,
+   "title": "Springer Theory",
+   "page": 6,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "6"
   },
   {
    "level": 1,
-   "title": "Coherent families of eigendistributions",
-   "page": 1,
+   "title": "Coherent families of eigendistributions.",
+   "page": 7,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "7"
+  },
+  {
+   "level": 2,
+   "title": "Corollary.",
+   "page": 10,
+   "source": "inferred",
+   "number": "5.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "10"
   },
   {
    "level": 1,
-   "title": "Character contours and characteristic cycles",
-   "page": 1,
+   "title": "Characters and characteristic cycles.",
+   "page": 10,
    "source": "inferred",
-   "number": "6"
+   "number": "6",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "Asymptotics at zero",
-   "page": 1,
+   "page": 12,
    "source": "inferred",
-   "number": "7"
+   "number": "7",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "Harmonic polynomials",
-   "page": 1,
+   "page": 16,
    "source": "inferred",
-   "number": "8"
+   "number": "8",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "Univalence",
-   "page": 1,
+   "page": 21,
    "source": "inferred",
-   "number": "9"
+   "number": "9",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "21"
+  },
+  {
+   "level": 2,
+   "title": "Lemma.",
+   "page": 22,
+   "source": "inferred",
+   "number": "9.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "22"
   },
   {
    "level": 1,
    "title": "Nilpotent orbital integrals",
-   "page": 1,
+   "page": 24,
    "source": "inferred",
-   "number": "10"
+   "number": "10",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "24"
   },
   {
    "level": 1,
    "title": "A conjecture of Joseph",
-   "page": 1,
-   "source": "inferred",
-   "number": "11"
-  },
-  {
-   "level": 1,
-   "title": "Appendix: comparison with the Kazhdan-Lusztig construction",
-   "page": 1,
-   "source": "inferred",
-   "number": "12"
-  },
-  {
-   "level": 1,
-   "title": "Supported bya grant from NSERC Canada",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 2,
-   "title": "Lemma. The inclusion Bν →B induces a W-map H∗(Bν) → H∗(B). This map factors",
-   "page": 4,
-   "source": "inferred",
-   "number": "3.1"
-  },
-  {
-   "level": 2,
-   "title": "Corollary . In top dimension the W -map",
-   "page": 6,
-   "source": "inferred",
-   "number": "3.2"
-  },
-  {
-   "level": 2,
-   "title": "Theorem. The map",
-   "page": 9,
-   "source": "inferred",
-   "number": "5.1"
-  },
-  {
-   "level": 2,
-   "title": "Theorem. The character contour C(M) of a (g,K )-moduleM and the characteristic variety",
-   "page": 11,
-   "source": "inferred",
-   "number": "6.1"
-  },
-  {
-   "level": 2,
-   "title": "Theorem. For any nilpotent Go-orbit O in igo∗ and any 2n-cycle Γ∈H2n(S( ¯O)) over ¯O,",
-   "page": 13,
-   "source": "inferred",
-   "number": "7.1"
-  },
-  {
-   "level": 2,
-   "title": "Lemma. TheWo-representation of type χO occurs with multiplicity one in degree eo =eo(O)",
-   "page": 20,
-   "source": "inferred",
-   "number": "8.1"
-  },
-  {
-   "level": 2,
-   "title": "Theorem. Let Γ ∈ H2n(S( ¯O)) be a 2n−cycle Γ over ¯O on the conormal variety S of the",
-   "page": 21,
-   "source": "inferred",
-   "number": "8.2"
-  },
-  {
-   "level": 2,
-   "title": "Lemma. The map",
-   "page": 21,
-   "source": "inferred",
-   "number": "9.1"
-  },
-  {
-   "level": 2,
-   "title": "Addendum to theorem 8.2. The polynomials cΓ and pO are given by",
-   "page": 23,
-   "source": "inferred",
-   "number": "9.3"
-  },
-  {
-   "level": 2,
-   "title": "Theorem. LetO be a nilpotent Go-orbit in igo∗. Then",
    "page": 26,
    "source": "inferred",
-   "number": "10.1"
+   "number": "11",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "26"
   },
   {
    "level": 1,
    "title": "Appendix. Comparison with the Kazhdan-Lusztig construction",
    "page": 28,
    "source": "inferred",
-   "number": "12"
+   "number": "12",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "28"
   },
   {
    "level": 1,
-   "title": "References",
+   "title": "REFERENCES",
    "page": 31,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "31"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "number": "1",
-   "title": "Introduction",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 182,
+   "n_words": 26,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-contents",
+   "number": null,
+   "title": "Contents",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 15,
+   "n_words": 2,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-2-construction-of-weyl-group-representations",
@@ -222,245 +614,207 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 309,
+   "n_words": 41,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-002-3-specialization",
-   "number": "3",
-   "title": "Specialization",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-003-4-springer-theory",
-   "number": "4",
-   "title": "Springer theory",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-004-5-coherent-families-of-eigendistributions",
-   "number": "5",
-   "title": "Coherent families of eigendistributions",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-005-6-character-contours-and-characteristic-cycles",
-   "number": "6",
-   "title": "Character contours and characteristic cycles",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-006-7-asymptotics-at-zero",
-   "number": "7",
-   "title": "Asymptotics at zero",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-007-8-harmonic-polynomials",
-   "number": "8",
-   "title": "Harmonic polynomials",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-008-9-univalence",
-   "number": "9",
-   "title": "Univalence",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-009-10-nilpotent-orbital-integrals",
-   "number": "10",
-   "title": "Nilpotent orbital integrals",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-010-11-a-conjecture-of-joseph",
-   "number": "11",
-   "title": "A conjecture of Joseph",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-011-12-appendix-comparison-with-the-kazhdan-lusztig",
-   "number": "12",
-   "title": "Appendix: comparison with the Kazhdan-Lusztig construction",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 2298,
-   "n_words": 365
-  },
-  {
-   "id": "sec-012-1-supported-bya-grant-from-nserc-canada",
+   "id": "sec-002-1-introduction",
    "number": "1",
-   "title": "Supported bya grant from NSERC Canada",
+   "title": "Introduction.",
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 6994,
-   "n_words": 1107
+   "n_chars": 8769,
+   "n_words": 1588,
+   "label_start": "1",
+   "label_end": "4"
   },
   {
-   "id": "sec-013-31-lemma-the-inclusion-bν-b-induces-a-w-map-hbν",
+   "id": "sec-003-3-specialization",
+   "number": "3",
+   "title": "Specialization",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 795,
+   "n_words": 151,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-004-31-lemma",
    "number": "3.1",
-   "title": "Lemma. The inclusion Bν →B induces a W-map H∗(Bν) → H∗(B). This map factors",
+   "title": "Lemma.",
    "level": 2,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 2078,
-   "n_words": 361
+   "n_chars": 2490,
+   "n_words": 528,
+   "label_start": "4",
+   "label_end": "6"
   },
   {
-   "id": "sec-014-32-corollary-in-top-dimension-the-w--map",
-   "number": "3.2",
-   "title": "Corollary . In top dimension the W -map",
-   "level": 2,
+   "id": "sec-005-4-springer-theory",
+   "number": "4",
+   "title": "Springer Theory",
+   "level": 1,
    "page_start": 6,
-   "page_end": 9,
-   "n_chars": 6204,
-   "n_words": 997
+   "page_end": 7,
+   "n_chars": 3831,
+   "n_words": 712,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-015-51-theorem-the-map",
-   "number": "5.1",
-   "title": "Theorem. The map",
-   "level": 2,
-   "page_start": 9,
-   "page_end": 11,
-   "n_chars": 5781,
-   "n_words": 947
+   "id": "sec-006-5-coherent-families-of-eigendistributions",
+   "number": "5",
+   "title": "Coherent families of eigendistributions.",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 4376,
+   "n_words": 871,
+   "label_start": "7",
+   "label_end": "10"
   },
   {
-   "id": "sec-016-61-theorem-the-character-contour-cm-of-a-gk--mod",
-   "number": "6.1",
-   "title": "Theorem. The character contour C(M) of a (g,K )-moduleM and the characteristic variety",
+   "id": "sec-007-52-corollary",
+   "number": "5.2",
+   "title": "Corollary.",
    "level": 2,
-   "page_start": 11,
-   "page_end": 13,
-   "n_chars": 2825,
-   "n_words": 444
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 99,
+   "n_words": 16,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
-   "id": "sec-017-71-theorem-for-any-nilpotent-go-orbit-o-in-igo-a",
-   "number": "7.1",
-   "title": "Theorem. For any nilpotent Go-orbit O in igo∗ and any 2n-cycle Γ∈H2n(S( ¯O)) over ¯O,",
-   "level": 2,
-   "page_start": 13,
-   "page_end": 20,
-   "n_chars": 11032,
-   "n_words": 1913
+   "id": "sec-008-6-characters-and-characteristic-cycles",
+   "number": "6",
+   "title": "Characters and characteristic cycles.",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 4548,
+   "n_words": 791,
+   "label_start": "10",
+   "label_end": "12"
   },
   {
-   "id": "sec-018-81-lemma-thewo-representation-of-type-χo-occurs",
-   "number": "8.1",
-   "title": "Lemma. TheWo-representation of type χO occurs with multiplicity one in degree eo =eo(O)",
-   "level": 2,
-   "page_start": 20,
+   "id": "sec-009-7-asymptotics-at-zero",
+   "number": "7",
+   "title": "Asymptotics at zero",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 16,
+   "n_chars": 7340,
+   "n_words": 1445,
+   "label_start": "12",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-010-8-harmonic-polynomials",
+   "number": "8",
+   "title": "Harmonic polynomials",
+   "level": 1,
+   "page_start": 16,
    "page_end": 21,
-   "n_chars": 910,
-   "n_words": 149
+   "n_chars": 8015,
+   "n_words": 1493,
+   "label_start": "16",
+   "label_end": "21"
   },
   {
-   "id": "sec-019-82-theorem-let-γ-h2ns-o-be-a-2ncycle-γ-over-o-on",
-   "number": "8.2",
-   "title": "Theorem. Let Γ ∈ H2n(S( ¯O)) be a 2n−cycle Γ over ¯O on the conormal variety S of the",
-   "level": 2,
+   "id": "sec-011-9-univalence",
+   "number": "9",
+   "title": "Univalence",
+   "level": 1,
    "page_start": 21,
    "page_end": 21,
-   "n_chars": 2252,
-   "n_words": 390
+   "n_chars": 1573,
+   "n_words": 285,
+   "label_start": "21",
+   "label_end": "21"
   },
   {
-   "id": "sec-020-91-lemma-the-map",
-   "number": "9.1",
-   "title": "Lemma. The map",
+   "id": "sec-012-92-lemma",
+   "number": "9.2",
+   "title": "Lemma.",
    "level": 2,
    "page_start": 21,
-   "page_end": 23,
-   "n_chars": 2662,
-   "n_words": 466
+   "page_end": 24,
+   "n_chars": 3613,
+   "n_words": 758,
+   "label_start": "21",
+   "label_end": "24"
   },
   {
-   "id": "sec-021-93-addendum-to-theorem-82-the-polynomials-cγ-and",
-   "number": "9.3",
-   "title": "Addendum to theorem 8.2. The polynomials cΓ and pO are given by",
-   "level": 2,
-   "page_start": 23,
+   "id": "sec-013-10-nilpotent-orbital-integrals",
+   "number": "10",
+   "title": "Nilpotent orbital integrals",
+   "level": 1,
+   "page_start": 24,
    "page_end": 26,
-   "n_chars": 2904,
-   "n_words": 505
+   "n_chars": 2794,
+   "n_words": 536,
+   "label_start": "24",
+   "label_end": "26"
   },
   {
-   "id": "sec-022-101-theorem-leto-be-a-nilpotent-go-orbit-in-igo",
-   "number": "10.1",
-   "title": "Theorem. LetO be a nilpotent Go-orbit in igo∗. Then",
-   "level": 2,
+   "id": "sec-014-11-a-conjecture-of-joseph",
+   "number": "11",
+   "title": "A conjecture of Joseph",
+   "level": 1,
    "page_start": 26,
    "page_end": 28,
-   "n_chars": 5243,
-   "n_words": 939
+   "n_chars": 4794,
+   "n_words": 956,
+   "label_start": "26",
+   "label_end": "28"
   },
   {
-   "id": "sec-023-12-appendix-comparison-with-the-kazhdan-lusztig",
+   "id": "sec-015-12-appendix-comparison-with-the-kazhdan-lusztig",
    "number": "12",
    "title": "Appendix. Comparison with the Kazhdan-Lusztig construction",
    "level": 1,
    "page_start": 28,
    "page_end": 31,
-   "n_chars": 4727,
-   "n_words": 840
+   "n_chars": 5054,
+   "n_words": 1167,
+   "label_start": "28",
+   "label_end": "31"
   },
   {
-   "id": "sec-024-references",
+   "id": "sec-016-references",
    "number": null,
-   "title": "References",
+   "title": "REFERENCES",
    "level": 1,
    "page_start": 31,
    "page_end": 33,
-   "n_chars": 4206,
-   "n_words": 589
+   "n_chars": 4233,
+   "n_words": 616,
+   "label_start": "31",
+   "label_end": "33"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 25,
-  "sections": 25,
-  "chars_total": 60116
+  "toc_entries": 17,
+  "toc_inferred_entries": 17,
+  "toc_inferred_mean_confidence": 0.738,
+  "toc_inferred_empty_share": 0.059,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 18,
+  "chars_total": 62830
  }
 }

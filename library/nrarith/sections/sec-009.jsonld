@@ -1,20 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/nrarith/sections/sec-009",
   "@type": [
     "doco:Section"
   ],
-  "title": "In this section we associate to a Kleinian group \u0000 a quaternion algebra over the",
-  "pageStart": 7,
-  "pageEnd": 9,
+  "title": "Further comments",
+  "pageStart": 35,
+  "pageEnd": 37,
   "contains": [
-    "library/nrarith/blocks/prose-sec-009",
-    "library/nrarith/blocks/lem-sec-009-01",
-    "library/nrarith/blocks/thm-sec-009-02",
-    "library/nrarith/blocks/thm-sec-009-03",
-    "library/nrarith/blocks/prop-sec-009-04"
+    "library/nrarith/blocks/prose-sec-009"
   ],
-  "derivedFrom": "library/nrarith/manifest",
-  "sourceDocument": "library/nrarith/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./nrarith/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./nrarith/manifest.jsonld",
   "provenance": "ingested"
 }

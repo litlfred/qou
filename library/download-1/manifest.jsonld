@@ -1,17 +1,37 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/download-1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Central and Lp-concentration of 1-Lipschitz maps into R-trees",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./download-1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Central and L^{p}-concentration of 1-Lipschitz maps into \\mbi{R}-trees",
   "contains": [
+    "library/download-1/sections/sec-front-matter",
     "library/download-1/sections/sec-000",
-    "library/download-1/sections/sec-001"
+    "library/download-1/sections/sec-001",
+    "library/download-1/sections/sec-002",
+    "library/download-1/sections/sec-003",
+    "library/download-1/sections/sec-004",
+    "library/download-1/sections/sec-005",
+    "library/download-1/sections/sec-006",
+    "library/download-1/sections/sec-007",
+    "library/download-1/sections/sec-008",
+    "library/download-1/sections/sec-009",
+    "library/download-1/sections/sec-010",
+    "library/download-1/sections/sec-011",
+    "library/download-1/sections/sec-012"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "download-1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "Download (1).pdf",
     "source_sha256": "bbb001c909958e8a2c281846eeab29e5bb49e1d1f4645f51221afb88ac641e3f",
     "pages": 24,

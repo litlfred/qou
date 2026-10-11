@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-q-alg-9707006v1/manifest.jsonld",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-q-alg-9707006v1/manifest.jsonld",
   "@type": [
-    "folio-assistant-core:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
-  "title": "Drinfeld twist for quantum su(2) in the adjoint representation",
+  "title": "arxiv-q-alg-9707006v1",
   "contains": [
     "library/arxiv-q-alg-9707006v1/sections/sec-front-matter",
     "library/arxiv-q-alg-9707006v1/sections/sec-000",
@@ -17,14 +17,21 @@
     "library/arxiv-q-alg-9707006v1/sections/sec-002",
     "library/arxiv-q-alg-9707006v1/sections/sec-003",
     "library/arxiv-q-alg-9707006v1/sections/sec-004",
-    "library/arxiv-q-alg-9707006v1/sections/sec-005"
+    "library/arxiv-q-alg-9707006v1/sections/sec-005",
+    "library/arxiv-q-alg-9707006v1/sections/sec-006",
+    "library/arxiv-q-alg-9707006v1/sections/sec-007",
+    "library/arxiv-q-alg-9707006v1/sections/sec-008",
+    "library/arxiv-q-alg-9707006v1/sections/sec-009",
+    "library/arxiv-q-alg-9707006v1/sections/sec-010",
+    "library/arxiv-q-alg-9707006v1/sections/sec-011",
+    "library/arxiv-q-alg-9707006v1/sections/sec-012",
+    "library/arxiv-q-alg-9707006v1/sections/sec-013"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "arxiv-q-alg-9707006v1",
-    "title_source": "corroborated",
-    "title_from": "structure.json metadata.title",
-    "title_verified": true,
+    "title_source": "slug",
     "source_file": "9707006v1.pdf",
     "source_sha256": "b9513be9294f56d92ab0094ea4817e962e459af346f424b6ba524381ab52a418",
     "pages": 11,

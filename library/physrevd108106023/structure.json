@@ -5,25 +5,42 @@
   "file": "PhysRevD.108.106023.pdf",
   "sha256": "50c7980e88cd21a07f420b53a6dc0d9397e6334cad2c6c39eb27b5745817e209",
   "bytes": 412161,
-  "pages": 11
+  "pages": 11,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:26Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.1103/PhysRevD.108.106023",
   "title": "Knot-quiver correspondence for double twist knots",
-  "authors_raw": "Center for Quantum and Topological Systems (CQTS), NYUAD Research Institute",
+  "authors_raw": "Vivek Kumar Singh",
+  "title_lines": [
+   "Knot-quiver correspondence for double twist knots"
+  ],
   "abstract": null,
   "docinfo": {
-   "CreationDate": "D:20231130000000",
-   "Creator": "Published by the American Physical Society",
+   "Title": "Knot-quiver correspondence for double twist knots",
    "Producer": "Acrobat Distiller 10.1.16 (Windows)",
-   "Title": "Knot-quiver correspondence for double twist knots"
+   "Creator": "Published by the American Physical Society",
+   "CreationDate": "D:20231130000000"
   },
-  "title_prev": "Knot-quiver correspondence for double twist knots Vivek Kumar Singh *",
-  "title_lines": [
-   "Knot-quiver correspondence for double twist knots",
-   "Vivek Kumar Singh *"
-  ]
+  "title_raw": "Knot-quiver correspondence for double twist knots",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Knot-quiver correspondence for double twist knots",
+   "heading": "PHYSICAL REVIEW D 108, 106023 (2023) Knot-quiver correspondence for double twist knots",
+   "text": "Knot-quiver correspondence for double twist knots",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -31,163 +48,346 @@
    "title": "INTRODUCTION",
    "page": 1,
    "source": "inferred",
-   "number": "I"
+   "number": "I",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "1"
+  },
+  {
+   "level": 2,
+   "title": "Reverse engineering of Melvin-Morton-Rozansky (MMR) expansion",
+   "page": 2,
+   "source": "inferred",
+   "number": "A",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "DOUBLE TWIST KNOTS",
    "page": 3,
    "source": "inferred",
-   "number": "II"
+   "number": "II",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "3"
+  },
+  {
+   "level": 2,
+   "title": "Colored HOMFLY-PT polynomials for a class of double twist knots K\u00f0p; \u2212m\u00de",
+   "page": 4,
+   "source": "inferred",
+   "number": "A",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "4"
   },
   {
    "level": 1,
-   "title": "Fk ˜Fk /C1/C1/C1 /C1/C1/C1 Fk ˜Fk /C1/C1/C1 Fk ˜Fk",
-   "page": 5,
+   "title": "KNOT-QUIVER CORRESPONDENCE",
+   "page": 4,
    "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "T⊤",
-   "page": 5,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "U2 ˜R2",
-   "page": 5,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "R⊤",
-   "page": 5,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Knot-quiver correspondence for Kðp; − 3Þ",
-   "page": 6,
-   "source": "inferred",
-   "number": "C"
+   "number": "III",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "CONCLUSION AND DISCUSSION",
    "page": 7,
    "source": "inferred",
-   "number": "IV"
+   "number": "IV",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "7"
   },
   {
    "level": 1,
-   "title": "Acknowledgments",
+   "title": "ACKNOWLEDGMENTS",
    "page": 8,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "8"
+  },
+  {
+   "level": 1,
+   "title": "APPENDIX: QUIVER MATRIX",
+   "page": 8,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "8"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Double twist knots (m, p denote number of full twists)",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-i-introduction",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 771,
+   "n_words": 113,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-a-reverse-engineering-of-melvin-morton-rozansky",
+   "number": "A",
+   "title": "Reverse engineering of Melvin-Morton-Rozansky (MMR) expansion",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 51,
+   "n_words": 5,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-001-i-introduction",
    "number": "I",
    "title": "INTRODUCTION",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 4830,
-   "n_words": 822
+   "n_chars": 4795,
+   "n_words": 798,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
-   "id": "sec-001-ii-double-twist-knots",
+   "id": "sec-002-ii-double-twist-knots",
    "number": "II",
    "title": "DOUBLE TWIST KNOTS",
    "level": 1,
    "page_start": 2,
-   "page_end": 5,
-   "n_chars": 9285,
-   "n_words": 1817
+   "page_end": 3,
+   "n_chars": 5570,
+   "n_words": 1017,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
-   "id": "sec-002-0-fk-fk-c1c1c1-c1c1c1-fk-fk-c1c1c1-fk-fk",
-   "number": "0",
-   "title": "Fk ˜Fk /C1/C1/C1 /C1/C1/C1 Fk ˜Fk /C1/C1/C1 Fk ˜Fk",
+   "id": "sec-003-iii-knot-quiver-correspondence",
+   "number": "III",
+   "title": "KNOT-QUIVER CORRESPONDENCE",
    "level": 1,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 52,
-   "n_words": 12
-  },
-  {
-   "id": "sec-003-1-r",
-   "number": "1",
-   "title": "R⊤",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 46,
-   "n_words": 12
-  },
-  {
-   "id": "sec-004-1-t",
-   "number": "1",
-   "title": "T⊤",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-005-1-u2-r2",
-   "number": "1",
-   "title": "U2 ˜R2",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 6,
-   "n_chars": 6118,
-   "n_words": 1468
-  },
-  {
-   "id": "sec-006-c-knot-quiver-correspondence-for-kðp-3þ",
-   "number": "C",
-   "title": "Knot-quiver correspondence for Kðp; − 3Þ",
-   "level": 1,
-   "page_start": 6,
+   "page_start": 3,
    "page_end": 7,
-   "n_chars": 2304,
-   "n_words": 670
+   "n_chars": 12364,
+   "n_words": 3380,
+   "label_start": "3",
+   "label_end": "7"
   },
   {
-   "id": "sec-007-iv-conclusion-and-discussion",
+   "id": "sec-004-iv-conclusion-and-discussion",
    "number": "IV",
    "title": "CONCLUSION AND DISCUSSION",
    "level": 1,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 3219,
-   "n_words": 556
+   "n_chars": 3197,
+   "n_words": 536,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
-   "id": "sec-008-acknowledgments",
+   "id": "sec-005-acknowledgments",
    "number": null,
-   "title": "Acknowledgments",
+   "title": "ACKNOWLEDGMENTS",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1005,
+   "n_words": 167,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-006-appendix-quiver-matrix",
+   "number": null,
+   "title": "APPENDIX: QUIVER MATRIX",
    "level": 1,
    "page_start": 8,
    "page_end": 11,
-   "n_chars": 10403,
-   "n_words": 2428
+   "n_chars": 10099,
+   "n_words": 3044,
+   "label_start": "8",
+   "label_end": "11"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 9,
-  "sections": 9,
-  "chars_total": 36257
+  "toc_entries": 8,
+  "toc_inferred_entries": 8,
+  "toc_inferred_mean_confidence": 0.738,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 37852
  }
 }

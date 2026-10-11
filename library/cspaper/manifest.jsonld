@@ -1,33 +1,31 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/cspaper/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Combinatorics of triangulations and the Chern-Simons invariant for hyperbolic 3-manifolds",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./cspaper/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Combinatorics of Triangulations and the Chern-Simons Invariant for Hyperbolic 3-Manifolds",
   "contains": [
+    "library/cspaper/sections/sec-front-matter",
     "library/cspaper/sections/sec-000",
     "library/cspaper/sections/sec-001",
     "library/cspaper/sections/sec-002",
     "library/cspaper/sections/sec-003",
     "library/cspaper/sections/sec-004",
-    "library/cspaper/sections/sec-005",
-    "library/cspaper/sections/sec-006",
-    "library/cspaper/sections/sec-007",
-    "library/cspaper/sections/sec-008",
-    "library/cspaper/sections/sec-009",
-    "library/cspaper/sections/sec-010",
-    "library/cspaper/sections/sec-011",
-    "library/cspaper/sections/sec-012",
-    "library/cspaper/sections/sec-013",
-    "library/cspaper/sections/sec-014",
-    "library/cspaper/sections/sec-015",
-    "library/cspaper/sections/sec-016",
-    "library/cspaper/sections/sec-017"
+    "library/cspaper/sections/sec-005"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "cspaper",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "cspaper.pdf",
     "source_sha256": "1910c380cf79bf426140dfce9c6bb6ab13c2cb47297015ee6c47f288423b8211",
     "pages": 29,

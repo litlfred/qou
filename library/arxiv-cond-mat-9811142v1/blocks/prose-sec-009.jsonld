@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-009",
+  "kind": "prose",
+  "title": "Connection with the bulk",
+  "pageStart": 27,
+  "pageEnd": 32,
+  "text": "../sections/sec-009-53-connection-with-the-bulk.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-cond-mat-9811142v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-cond-mat-9811142v1/manifest.jsonld",
+  "provenance": "ingested"
+}

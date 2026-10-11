@@ -7,7 +7,10 @@
   "bytes": 161011,
   "pages": 6,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -17,141 +20,196 @@
    "stamp_date": "14 Jul 2003"
   },
   "doi": null,
-  "title": "Distribution of the k-th smallest Dirac operator eigenvalu e",
+  "title": "arXiv:hep-th/0006111v2 14 Jul 2003",
   "authors_raw": "Poul H. Damgaard",
   "title_lines": [
-   "Distribution of the k-th smallest Dirac operator eigenvalu e"
+   "Distribution of the k-th smallest Dirac operator eigenvalue"
   ],
   "abstract": null,
   "docinfo": {
+   "Title": "arXiv:hep-th/0006111v2  14 Jul 2003",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20190503012705-04'00'",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:hep-th/0006111v2  14 Jul 2003"
+   "CreationDate": "D:20190503012705-04'00'"
+  },
+  "title_raw": "Distribution of the k-th smallest Dirac operator eigenvalue",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-th/0006111v2 14 Jul 2003",
+   "heading": "Distribution of the k-th smallest Dirac operator eigenvalue",
+   "text": "Distribution of the k-th smallest Dirac operator eigenvalue",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "5 inferred entries, 100% of them starting on page(s) 3, 5 of 6 \u2014 a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (5 inferred entries, 100% of them starting on page(s) 3, 5 of 6 \u2014 a list found ON a page, not the document's structure): one section per page.",
+ "figures": [
   {
-   "level": 1,
-   "title": "(\u03b6, {\u00b5 }) = \u03b6",
-   "page": 3,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(\u03b6) = \u03b6",
-   "page": 3,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(\u03b6) = const . \u03b6 (3\u2212\u03bd )/ 2e\u2212\u03b6 2/ 8 Pf [(i \u2212 j)Ii+j+3(\u03b6)] ,",
-   "page": 3,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(\u03b6) = 1",
-   "page": 3,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(\u03b6) + J 2",
-   "page": 5,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(\u03b6)",
-   "page": 5,
-   "source": "inferred",
-   "number": "1"
+   "kind": "figure",
+   "number": "1",
+   "title": "Microscopic spectral density \u03c1S(\u03b6) (thin line), k-th smallest eigenvalue distribution pk(\u03b6), k = 1, 2, 3, 4 (solid lines),",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
   }
  ],
- "toc_source": "inferred",
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-front-matter",
+   "id": "page-001",
    "number": null,
-   "title": "Front matter",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
-   "page_end": 3,
-   "n_chars": 11799,
-   "n_words": 2334
+   "page_end": 1,
+   "n_chars": 5066,
+   "n_words": 822,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-000-1-\u03b6-\u00b5-\u03b6",
-   "number": "1",
-   "title": "(\u03b6, {\u00b5 }) = \u03b6",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 3354,
+   "n_words": 688,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 344,
-   "n_words": 78
+   "n_chars": 3779,
+   "n_words": 795,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
-   "id": "sec-001-1-\u03b6-\u03b6",
-   "number": "1",
-   "title": "(\u03b6) = \u03b6",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 205,
-   "n_words": 39
-  },
-  {
-   "id": "sec-002-1-\u03b6-const-\u03b6-3\u03bd-2e\u03b6-2-8-pf-i-jiij3\u03b6",
-   "number": "1",
-   "title": "(\u03b6) = const . \u03b6 (3\u2212\u03bd )/ 2e\u2212\u03b6 2/ 8 Pf [(i \u2212 j)Ii+j+3(\u03b6)] ,",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 242,
-   "n_words": 66
-  },
-  {
-   "id": "sec-003-1-\u03b6-1",
-   "number": "1",
-   "title": "(\u03b6) = 1",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 4,
-   "n_chars": 54,
-   "n_words": 15
-  },
-  {
-   "id": "sec-004-1-\u03b6",
-   "number": "1",
-   "title": "(\u03b6)",
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
    "level": 1,
    "page_start": 4,
-   "page_end": 5,
-   "n_chars": 4470,
-   "n_words": 1082
+   "page_end": 4,
+   "n_chars": 2666,
+   "n_words": 575,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
-   "id": "sec-005-0-\u03b6-j-2",
-   "number": "0",
-   "title": "(\u03b6) + J 2",
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
    "level": 1,
    "page_start": 5,
+   "page_end": 5,
+   "n_chars": 3957,
+   "n_words": 748,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
    "page_end": 6,
-   "n_chars": 5108,
-   "n_words": 917
+   "n_chars": 2778,
+   "n_words": 464,
+   "label_start": "6",
+   "label_end": "6"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 6,
-  "sections": 7,
-  "chars_total": 22222
+  "toc_entries": 0,
+  "toc_inferred_entries": 5,
+  "toc_inferred_mean_confidence": 0.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "regex",
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 21600
  }
 }

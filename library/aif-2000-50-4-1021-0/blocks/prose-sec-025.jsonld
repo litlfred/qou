@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-025",
+  "kind": "prose",
+  "title": "Étude globale",
+  "pageStart": 31,
+  "pageEnd": 33,
+  "text": "../sections/sec-025-332-étude-globale.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./aif-2000-50-4-1021-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./aif-2000-50-4-1021-0/manifest.jsonld",
+  "provenance": "ingested"
+}

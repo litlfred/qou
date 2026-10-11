@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ds15v1-2008/blocks/prose-sec-044",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ds15v1-2008/blocks/prose-sec-044",
   "kind": "prose",
-  "title": "Mod 27 Identities",
-  "pageStart": 28,
-  "pageEnd": 29,
-  "text": "../sections/sec-044-327-mod-27-identities.md",
-  "derivedFrom": "library/ds15v1-2008/manifest",
-  "sourceDocument": "library/ds15v1-2008/manifest",
+  "title": "Conclusion",
+  "pageStart": 56,
+  "pageEnd": 56,
+  "text": "../sections/sec-044-8-conclusion.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ds15v1-2008/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./ds15v1-2008/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-031",
+  "kind": "prose",
+  "title": "ZERO TEMPERATURE LIMIT",
+  "pageStart": 42,
+  "pageEnd": 44,
+  "text": "../sections/sec-031-623-zero-temperature-limit.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-ph-0003017v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-ph-0003017v2/manifest.jsonld",
+  "provenance": "ingested"
+}

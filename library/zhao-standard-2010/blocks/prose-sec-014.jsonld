@@ -1,16 +1,18 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/zhao-standard-2010/blocks/prose-sec-014",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/zhao-standard-2010/blocks/prose-sec-014",
+  "@type": [],
   "kind": "prose",
-  "title": "Jianqiang Zhao",
-  "pageStart": 16,
-  "pageEnd": 16,
-  "text": "../sections/sec-014-16-jianqiang-zhao.md",
-  "derivedFrom": "library/zhao-standard-2010/manifest",
-  "sourceDocument": "library/zhao-standard-2010/manifest",
+  "title": "Upper bound of d(w, N) by Deligne and Goncharov",
+  "pageStart": 21,
+  "pageEnd": 21,
+  "text": "../sections/sec-014-74-upper-bound-of-dw-n-by-deligne-and-goncharov.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zhao-standard-2010/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zhao-standard-2010/manifest.jsonld",
   "provenance": "ingested"
 }

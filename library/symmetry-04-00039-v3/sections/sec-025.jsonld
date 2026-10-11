@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/symmetry-04-00039-v3/sections/sec-025",
   "@type": [
     "doco:Section"
   ],
-  "title": "Time is identified as the odd dimension in the 2 + 1 dimensions occupied by each FMS",
+  "title": "Retrospective",
   "pageStart": 52,
   "pageEnd": 53,
   "contains": [
     "library/symmetry-04-00039-v3/blocks/prose-sec-025"
   ],
-  "derivedFrom": "library/symmetry-04-00039-v3/manifest",
-  "sourceDocument": "library/symmetry-04-00039-v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./symmetry-04-00039-v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./symmetry-04-00039-v3/manifest.jsonld",
   "provenance": "ingested"
 }

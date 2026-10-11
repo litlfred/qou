@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-0001202v2
-doc_title: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees"
+doc_title: "arXiv:hep-th/0001202v2 29 Jan 2000"
 section_id: sec-003-4-bigrading-the-connes-moscovici-subalgebra
 section_title: "Bigrading the Connes-Moscovici subalgebra"
 section_number: 4
 pages: 5-6
 source_pdf: 0001202v2.pdf
 source_sha256: b2e3e22ea3d51c0b
-doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
+toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0

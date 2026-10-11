@@ -5,29 +5,44 @@
   "file": "fujii-2005-degeneration-of-hyperbolic-structures-figure-eight.pdf",
   "sha256": "bca3996c7a667b189b9c46e2d745be632afdcc86ed6517a602c25da21db975cb",
   "bytes": 181901,
-  "pages": 12
+  "pages": 12,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:25Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve",
-  "authors_raw": "In this paper, we consider a hyperbolic structure on a manifold to be a",
-  "abstract": null,
-  "docinfo": {
-   "CreationDate": "D:20070928065601Z",
-   "Producer": "Acrobat Distiller 5.0.5 (Windows)",
-   "Creator": "dvips(k) 5.95b Copyright 2005 Radical Eye Software",
-   "Title": "45-2_09.dvi"
-  },
+  "title": "Degeneration of hyperbolic structures on the \ufb01gure-eight knot complement and points of \ufb01nite order on an elliptic curve",
+  "authors_raw": "Michihiko Fujii",
   "title_lines": [
    "J. Math. Kyoto Univ. (JMKYAZ)",
-   "45-2 (2005), 343–354",
+   "45-2 (2005), 343\u2013354",
    "Degeneration of hyperbolic structures on the",
    "figure-eight knot complement and points of",
-   "finite order on an elliptic curve",
-   "Michihiko Fujii"
+   "finite order on an elliptic curve"
   ],
-  "title_prev": "J. Math. Kyoto Univ. (JMKYAZ) 45-2 (2005), 343–354 Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve Michihiko Fujii"
+  "abstract": null,
+  "docinfo": {
+   "Title": "45-2_09.dvi",
+   "Producer": "Acrobat Distiller 5.0.5 (Windows)",
+   "Creator": "dvips(k) 5.95b Copyright 2005 Radical Eye Software",
+   "CreationDate": "D:20070928065601Z"
+  },
+  "title_raw": "J. Math. Kyoto Univ. (JMKYAZ) 45-2 (2005), 343\u2013354 Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "45-2_09.dvi",
+   "heading": "Degeneration of hyperbolic structures on the \ufb01gure-eight knot complement and points of \ufb01nite order on an elliptic curve",
+   "text": "J. Math. Kyoto Univ. (JMKYAZ) 45-2 (2005), 343\u2013354 Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -35,88 +50,333 @@
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "343"
   },
   {
    "level": 1,
-   "title": "Deformation of hyperbolic structures and hyperbolic Dehn ﬁll-",
+   "title": "Deformation of hyperbolic structures and hyperbolic Dehn \ufb01lling",
    "page": 2,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "344"
   },
   {
    "level": 1,
-   "title": "A birational map from the deformation curve C to an elliptic",
+   "title": "A birational map from the deformation curve C to an elliptic curve in Weierstrass form",
    "page": 6,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "348"
   },
   {
    "level": 1,
-   "title": "X2 + X0X2",
-   "page": 6,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "X1 =0⇑/arrowvertexdbl⇓X0 =−x0 −x1,X 1 =x2,X 2 =−x1",
-   "page": 6,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "Points of ﬁnite order on the elliptic curve E and Dehn ﬁlling on",
+   "title": "Points of \ufb01nite order on the elliptic curve E and Dehn \ufb01lling on the \ufb01gure-eight knot",
    "page": 7,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "349"
   },
   {
    "level": 2,
    "title": "Rational points on E and Haken manifolds",
    "page": 7,
    "source": "inferred",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "349"
   },
   {
    "level": 2,
-   "title": "Points of ﬁnite order on E and Sol manifolds",
+   "title": "Points of \ufb01nite order on E and Sol manifolds",
    "page": 8,
    "source": "inferred",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "350"
   },
   {
    "level": 2,
-   "title": "Points of ﬁnite order on E and Euclidean orbifolds",
+   "title": "Points of \ufb01nite order on E and Euclidean orbifolds",
    "page": 8,
    "source": "inferred",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "350"
   },
   {
    "level": 2,
    "title": "Theorem",
    "page": 9,
    "source": "inferred",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "351"
   },
   {
    "level": 1,
    "title": "Appendix",
    "page": 10,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "352"
   },
   {
    "level": 1,
    "title": "References",
    "page": 12,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "354"
+  },
+  {
+   "level": 2,
+   "title": "Fujii, Deformations of hyperbolic structures on the \ufb01gure eight knot complement and an elliptic curve associated to them, in Perspectives of",
+   "page": 12,
+   "source": "inferred",
+   "number": "M",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "354"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "345"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "346"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "",
+   "page": 10,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "352"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "343",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "344",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "345",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "346",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "347",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "348",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "349",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "350",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "351",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "352",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "353",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "354",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 192,
+   "n_words": 30,
+   "label_start": "343",
+   "label_end": "343"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -124,125 +384,147 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2400,
-   "n_words": 419
+   "n_chars": 2367,
+   "n_words": 392,
+   "label_start": "343",
+   "label_end": "344"
   },
   {
    "id": "sec-001-2-deformation-of-hyperbolic-structures-and-hyper",
    "number": "2",
-   "title": "Deformation of hyperbolic structures and hyperbolic Dehn ﬁll-",
+   "title": "Deformation of hyperbolic structures and hyperbolic Dehn \ufb01lling",
    "level": 1,
    "page_start": 2,
    "page_end": 6,
-   "n_chars": 10755,
-   "n_words": 2076
+   "n_chars": 10527,
+   "n_words": 1880,
+   "label_start": "344",
+   "label_end": "348"
   },
   {
    "id": "sec-002-3-a-birational-map-from-the-deformation-curve-c",
    "number": "3",
-   "title": "A birational map from the deformation curve C to an elliptic",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 623,
-   "n_words": 142
-  },
-  {
-   "id": "sec-003-1-x2-x0x2",
-   "number": "1",
-   "title": "X2 + X0X2",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 24,
-   "n_words": 8
-  },
-  {
-   "id": "sec-004-0-x1-0arrowvertexdblx0-x0-x1x-1-x2x-2-x1",
-   "number": "0",
-   "title": "X1 =0⇑/arrowvertexdbl⇓X0 =−x0 −x1,X 1 =x2,X 2 =−x1",
+   "title": "A birational map from the deformation curve C to an elliptic curve in Weierstrass form",
    "level": 1,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 1465,
-   "n_words": 306
+   "n_chars": 2099,
+   "n_words": 455,
+   "label_start": "348",
+   "label_end": "349"
   },
   {
-   "id": "sec-005-4-points-of-ﬁnite-order-on-the-elliptic-curve-e",
+   "id": "sec-003-4-points-of-\ufb01nite-order-on-the-elliptic-curve-e",
    "number": "4",
-   "title": "Points of ﬁnite order on the elliptic curve E and Dehn ﬁlling on",
+   "title": "Points of \ufb01nite order on the elliptic curve E and Dehn \ufb01lling on the \ufb01gure-eight knot",
    "level": 1,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 20,
-   "n_words": 3
+   "n_chars": 25,
+   "n_words": 4,
+   "label_start": "349",
+   "label_end": "349"
   },
   {
-   "id": "sec-006-41-rational-points-on-e-and-haken-manifolds",
+   "id": "sec-004-41-rational-points-on-e-and-haken-manifolds",
    "number": "4.1",
    "title": "Rational points on E and Haken manifolds",
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 1930,
-   "n_words": 320
+   "n_chars": 1918,
+   "n_words": 312,
+   "label_start": "349",
+   "label_end": "350"
   },
   {
-   "id": "sec-007-42-points-of-ﬁnite-order-on-e-and-sol-manifolds",
+   "id": "sec-005-42-points-of-\ufb01nite-order-on-e-and-sol-manifolds",
    "number": "4.2",
-   "title": "Points of ﬁnite order on E and Sol manifolds",
+   "title": "Points of \ufb01nite order on E and Sol manifolds",
    "level": 2,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 2063,
-   "n_words": 468
+   "n_chars": 2045,
+   "n_words": 446,
+   "label_start": "350",
+   "label_end": "350"
   },
   {
-   "id": "sec-008-43-points-of-ﬁnite-order-on-e-and-euclidean-orbi",
+   "id": "sec-006-43-points-of-\ufb01nite-order-on-e-and-euclidean-orbi",
    "number": "4.3",
-   "title": "Points of ﬁnite order on E and Euclidean orbifolds",
+   "title": "Points of \ufb01nite order on E and Euclidean orbifolds",
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 1785,
-   "n_words": 348
+   "n_chars": 1737,
+   "n_words": 308,
+   "label_start": "350",
+   "label_end": "351"
   },
   {
-   "id": "sec-009-44-theorem",
+   "id": "sec-007-44-theorem",
    "number": "4.4",
    "title": "Theorem",
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 2656,
-   "n_words": 531
+   "n_chars": 2620,
+   "n_words": 503,
+   "label_start": "351",
+   "label_end": "352"
   },
   {
-   "id": "sec-010-appendix",
+   "id": "sec-008-appendix",
    "number": null,
    "title": "Appendix",
    "level": 1,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 1416,
-   "n_words": 374
+   "n_chars": 1357,
+   "n_words": 328,
+   "label_start": "352",
+   "label_end": "354"
   },
   {
-   "id": "sec-011-references",
+   "id": "sec-009-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 1556,
-   "n_words": 267
+   "n_chars": 396,
+   "n_words": 61,
+   "label_start": "354",
+   "label_end": "354"
+  },
+  {
+   "id": "sec-010-m-fujii-deformations-of-hyperbolic-structures-on",
+   "number": "M",
+   "title": "Fujii, Deformations of hyperbolic structures on the \ufb01gure eight knot complement and an elliptic curve associated to them, in Perspectives of",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1050,
+   "n_words": 160,
+   "label_start": "354",
+   "label_end": "354"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 12,
+  "toc_entries": 11,
+  "toc_inferred_entries": 11,
+  "toc_inferred_mean_confidence": 0.741,
+  "toc_inferred_empty_share": 0.091,
+  "toc_inferred_method": "font",
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
   "sections": 12,
-  "chars_total": 26693
+  "chars_total": 26333
  }
 }

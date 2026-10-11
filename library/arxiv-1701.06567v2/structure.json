@@ -6,6 +6,11 @@
   "sha256": "c1610b50f5a7e22c4d5bc359cd5b8f6a7e8c121b3eae079bd2a1e41a2956c8da",
   "bytes": 1189704,
   "pages": 81,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:20Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -17,1537 +22,1637 @@
   },
   "doi": null,
   "title": "BPS spectra and 3-manifold invariants",
-  "authors_raw": "Sergei Gukov 1, Du Pei 1,2, Pavel Putrov 3, Cumrun Vafa 4",
-  "abstract": "We provide a physical de\ufb01nition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian \ufb02at connections. The physical system in question involves a 6d \ufb01vebrane theory onM3 times a 2-disk,D2, whose Hilbert space of BPS states plays the role of a basic building block in categori\ufb01cation of various partition functions of 3dN = 2 theory T [M3]: D2\u00d7S1 half-index, S2\u00d7S1 superconformal index, and S2\u00d7S1 topologically twisted index. The \ufb01rst partition function is labeled by a choice of boundary condition and provides a re\ufb01nement of Chern-Simons (WRT) invariant. A linear combination of them in the unre\ufb01ned limit gives the analytically continued WRT invariant ofM3. The last two can be factorized into the product of half-indices. We show how this works explicitly for many examples, including Lens spaces, circle \ufb01brations over Riemann surfaces, and plumbed 3-manifolds. CALT-TH-2016-039 arXiv:1701.06567v2 [hep-th] 24 May 2017",
-  "docinfo": {
-   "CreationDate": "D:20170525004610Z",
-   "Creator": "TeX",
-   "Producer": "pdfTeX-1.40.17"
-  },
+  "authors_raw": "Sergei Gukov1, Du Pei1,2, Pavel Putrov3, Cumrun Vafa4",
   "title_lines": [
    "BPS spectra and 3-manifold invariants"
-  ]
+  ],
+  "abstract": "We provide a physical de\ufb01nition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian \ufb02at connections. The physical system in question involves a 6d \ufb01vebrane theory on M3 times a 2-disk, D2, whose Hilbert space of BPS states plays the role of a basic building block in categori\ufb01cation of various partition functions of 3d N = 2 theory T[M3]: D2 \u00d7 S1 half-index, S2 \u00d7 S1 superconformal index, and S2 \u00d7 S1 topologically twisted index. The \ufb01rst partition function is labeled by a choice of boundary condition and provides a re\ufb01nement of Chern-Simons (WRT) invariant. A linear combination of them in the unre\ufb01ned limit gives the analytically continued WRT invariant of M3. The last two can be factorized into the product of half-indices. We show how this works explicitly for many examples, including Lens spaces, circle \ufb01brations over Riemann surfaces, and plumbed 3-manifolds. CALT-TH-2016-039 arXiv:1701.06567v2 [hep-th] 24 May 2017",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.17",
+   "Creator": "TeX",
+   "CreationDate": "D:20170525004610Z"
+  },
+  "title_raw": "BPS spectra and 3-manifold invariants",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "BPS spectra and 3-manifold invariants",
+   "text": "BPS spectra and 3-manifold invariants",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Walter Burke Institute for Theoretical Physics, California Institute of Technology,",
-   "page": 1,
+   "title": "Introduction",
+   "page": 3,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
-   "title": "Center for Quantum Geometry of Moduli Spaces, Deparment of Mathematics, University",
-   "page": 1,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "School of Natural Sciences, Institute for Advanced Study, Princeton, NJ 08540, USA",
-   "page": 1,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Je\ufb00erson Physical Laboratory, Harvard University, Cambridge, MA 02138, USA",
-   "page": 1,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "Fivebranes on 3-manifolds and categori\ufb01cation of WRT invariant",
+   "title": "Fivebranes on 3-manifolds and categorification of WRT invariant",
    "page": 6,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Preliminaries",
    "page": 6,
    "source": "inferred",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
   },
   {
    "level": 2,
-   "title": "D2\u00d7S1 partition function of T [M3] and WRT invariant",
+   "title": "$D^2\\times S^1$ partition function of $T[M_3]$ and WRT invariant",
    "page": 7,
    "source": "inferred",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "6"
+  },
+  {
+   "level": 3,
+   "title": "Categorification of WRT invaraiant",
+   "page": 7,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "6"
+  },
+  {
+   "level": 3,
+   "title": "Physics behind the proposal",
+   "page": 9,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "8"
+  },
+  {
+   "level": 3,
+   "title": "Resurgence in 3d ${\\mathcal N}=2$ theories",
+   "page": 12,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "11"
   },
   {
    "level": 2,
-   "title": "Realization in terms of counting solutions of di\ufb00erential equations",
+   "title": "Realization in terms of counting solutions of differential equations",
    "page": 14,
    "source": "inferred",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Surgeries, triangulations, and Atiyah-Floer",
    "page": 16,
    "source": "inferred",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "15"
   },
   {
    "level": 2,
-   "title": "Superconformal index of T [M3] and its factorization",
+   "title": "Superconformal index of $T[M_3]$ and its factorization",
    "page": 18,
    "source": "inferred",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "17"
   },
   {
    "level": 2,
-   "title": "Further re\ufb01nement",
+   "title": "Further refinement",
    "page": 19,
    "source": "inferred",
-   "number": "2.6"
+   "number": "2.6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "18"
   },
   {
    "level": 2,
-   "title": "Topologically twisted index of T [M3]",
+   "title": "Topologically twisted index of $T[M_3]$",
    "page": 20,
    "source": "inferred",
-   "number": "2.7"
+   "number": "2.7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "19"
   },
   {
    "level": 2,
-   "title": "Generalization to U(N)",
+   "title": "Generalization to $U(N)$",
    "page": 21,
    "source": "inferred",
-   "number": "2.8"
+   "number": "2.8",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "20"
   },
   {
    "level": 2,
-   "title": "Relation to open GW invariants on T\u2217M3",
+   "title": "Relation to open GW invariants on $T^*M_3$",
    "page": 22,
    "source": "inferred",
-   "number": "2.9"
+   "number": "2.9",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "21"
   },
   {
    "level": 2,
-   "title": "Langlands duality and \ufb02at connections",
+   "title": "Langlands duality and flat connections",
    "page": 24,
    "source": "inferred",
-   "number": "2.10"
+   "number": "2.10",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "23"
+  },
+  {
+   "level": 2,
+   "title": "3-manifolds and the ``bottom row''",
+   "page": 24,
+   "source": "inferred",
+   "number": "2.11",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "23"
   },
   {
    "level": 1,
    "title": "Examples",
    "page": 27,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "26"
   },
   {
    "level": 2,
-   "title": "M3 =S3",
+   "title": "$M_3=S^3$",
    "page": 27,
    "source": "inferred",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": 0.5,
+   "evidence": [
+    "latex"
+   ],
+   "page_label": "26"
   },
   {
    "level": 3,
    "title": "Categorifying the index",
    "page": 29,
    "source": "inferred",
-   "number": "3.1.1"
+   "number": "3.1.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "28"
   },
   {
    "level": 3,
-   "title": "The t =q\u03b2 reduction from BPS spectral sequence",
+   "title": "The $t=q^{\\beta}$ reduction from BPS spectral sequence",
    "page": 30,
    "source": "inferred",
-   "number": "3.1.2"
+   "number": "3.1.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "29"
   },
   {
    "level": 2,
-   "title": "M3 =L(p, 1)",
+   "title": "$M_3=L(p,1)$",
    "page": 32,
    "source": "inferred",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "31"
   },
   {
    "level": 3,
-   "title": "Re\ufb01ned superconformal index",
+   "title": "Refined superconformal index",
    "page": 32,
    "source": "inferred",
-   "number": "3.2.1"
+   "number": "3.2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "31"
   },
   {
    "level": 3,
-   "title": "Topologically twisted index of T [L(p, 1)]",
+   "title": "Topologically twisted index of $T[L(p,1)]$",
    "page": 34,
    "source": "inferred",
-   "number": "3.2.2"
+   "number": "3.2.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "33"
   },
   {
-   "level": 1,
-   "title": "(q)\u02c6Z(\u03b2)",
-   "page": 37,
+   "level": 3,
+   "title": "$t=q^\\beta$ reduction",
+   "page": 36,
    "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(1/q) +\u02c6Z(\u03b2)",
-   "page": 37,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(q)\u02c6Z(\u03b2)",
-   "page": 37,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(1/q) +\u02c6Z(\u03b2)",
-   "page": 37,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(q)\u02c6Z(\u03b2)",
-   "page": 37,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(1/q) (3.64)",
-   "page": 37,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(q)\u00b7 2\u02c6Z(\u2212\u03b2)",
-   "page": 37,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(q)\u02c6Z(\u2212\u03b2)",
-   "page": 37,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(q)\u02c6Z(\u2212\u03b2)",
-   "page": 37,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(1/q). (3.65)",
-   "page": 37,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(q) = 1, \u02c6Z(0)",
-   "page": 38,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(q) =\u2212q1/5, \u02c6Z(0)",
-   "page": 38,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(q) = 1 +q +q2, \u02c6Z(1)",
-   "page": 38,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(q) =\u2212q1/5(1 + 2q +q2), \u02c6Z(1)",
-   "page": 38,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(q) = 1, \u02c6Z(\u22121)",
-   "page": 38,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(q) = 0, \u02c6Z(\u22121)",
-   "page": 38,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(q) = 1 +q + 2q2 + 2q3 + 2q4 +q5 +q6,",
-   "page": 38,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(q) =\u2212q1/5(1 + 2q + 3q2 + 3q3 + 3q4 + 2q5 +q6),",
-   "page": 38,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(q) =\u2212q2/(1\u2212q2),",
-   "page": 38,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(q) =\u2212q6/5/(1\u2212q2),",
-   "page": 38,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(q) =q12 +q11 + 2q10 + 3q9 + 4q8 + 4q7 + 5q6 + 4q5 + 4q4 + 3q3 + 2q2 +q + 1,",
-   "page": 38,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(q) =\u2212q1/5(",
-   "page": 38,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(q) = (q7 +q5 +q4 +q3 +q2)/",
-   "page": 38,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(q) =q11/5(",
-   "page": 38,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(q) =q14/5(",
-   "page": 38,
-   "source": "inferred",
-   "number": "2"
+   "number": "3.2.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "35"
   },
   {
    "level": 3,
    "title": "Cyclotomic expansion",
    "page": 39,
    "source": "inferred",
-   "number": "3.2.4"
+   "number": "3.2.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "38"
   },
   {
    "level": 3,
-   "title": "Positivity of coe\ufb03cients",
+   "title": "Positivity of coefficients",
    "page": 41,
    "source": "inferred",
-   "number": "3.2.5"
-  },
-  {
-   "level": 1,
-   "title": "Positivity of homological blocks \u02c6Za. Besides overall signs, all homological blocks are",
-   "page": 43,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Positivity of the superconformal index I and twisted indexItop. After factorizing out",
-   "page": 43,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Positivity of \u201c \u03b2-reduced\u201d homological blocks \u02c6Z(\u03b2)",
-   "page": 43,
-   "source": "inferred",
-   "number": "3"
+   "number": "3.2.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "40"
   },
   {
    "level": 3,
-   "title": "Comparison with re\ufb01ned CS",
+   "title": "Comparison with refined CS",
    "page": 43,
    "source": "inferred",
-   "number": "3.2.6"
-  },
-  {
-   "level": 1,
-   "title": "(2k + 4\u03b2)1/2",
-   "page": 45,
-   "source": "inferred",
-   "number": "4"
+   "number": "3.2.6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "42"
   },
   {
    "level": 2,
-   "title": "M3 =O(\u2212p)\u2192 \u03a3g",
+   "title": "$M_3=O(-p)\\rightarrow \\Sigma_g$",
    "page": 46,
    "source": "inferred",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "45"
   },
   {
    "level": 3,
    "title": "Homological blocks and WRT invariant",
    "page": 47,
    "source": "inferred",
-   "number": "3.3.1"
+   "number": "3.3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "46"
   },
   {
    "level": 3,
    "title": "Factorization of the superconformal index",
    "page": 48,
    "source": "inferred",
-   "number": "3.3.2"
-  },
-  {
-   "level": 1,
-   "title": "(q) =q\u22122 + 1, \u02c6Z(\u22122)",
-   "page": 50,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(q) =q\u22124/5, \u02c6Z(\u22122)",
-   "page": 50,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(q) = 1",
-   "page": 50,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(q) =\u2212",
-   "page": 50,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(q) = 1",
-   "page": 50,
-   "source": "inferred",
-   "number": "2"
+   "number": "3.3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "47"
   },
   {
    "level": 3,
-   "title": "Comparison with re\ufb01ned CS",
+   "title": "Comparison with refined CS",
    "page": 50,
    "source": "inferred",
-   "number": "3.3.3"
+   "number": "3.3.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "49"
   },
   {
    "level": 2,
-   "title": "M3 = plumbed",
+   "title": "${M_3}=\\text{plumbed}$",
    "page": 51,
    "source": "inferred",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "50"
   },
   {
    "level": 3,
-   "title": "Homological blocks \u02c6Za",
+   "title": "Homological blocks $\\widehat{Z}_a$",
    "page": 52,
    "source": "inferred",
-   "number": "3.4.1"
-  },
-  {
-   "level": 1,
-   "title": "In the special case when the plumbing graph has just one vertex, the expression for the",
-   "page": 53,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Generically it is well-de\ufb01ned only if M is negative de\ufb01nite, i.e. M3(\u0393) is a link of a",
-   "page": 53,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "The formula ( 3.145) de\ufb01nes homological blocks \u02c6Za(q) in terms of a plumbing graph",
-   "page": 53,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Even though the formula has the structure of the \u201cindex of a quiver theory\u201d, it is not",
-   "page": 53,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "Suppose M < 0. Then \u02c6Za(q) is a well-de\ufb01ned series in q convergent in the unit disk",
-   "page": 53,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "We have",
-   "page": 53,
-   "source": "inferred",
-   "number": "6"
+   "number": "3.4.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "51"
   },
   {
    "level": 3,
-   "title": "Problems on the T [M3] side",
+   "title": "Problems on the $T[M_3]$ side",
    "page": 55,
    "source": "inferred",
-   "number": "3.4.2"
+   "number": "3.4.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "54"
   },
   {
    "level": 1,
-   "title": "Adding knots and links into M3",
+   "title": "Adding knots and links into $M_3$",
    "page": 55,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "54"
   },
   {
    "level": 2,
-   "title": "Links in M3 and line operators in T [M3]",
+   "title": "Links in $M_3$ and line operators in $T[M_3]$",
    "page": 56,
    "source": "inferred",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "55"
   },
   {
    "level": 2,
-   "title": "Links in S2\u00d7S1 and Rozansky\u2019s proposal",
+   "title": "Links in $S^2\\times S^1$ and Rozansky's proposal",
    "page": 60,
    "source": "inferred",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "59"
   },
   {
    "level": 2,
-   "title": "Links in L(p, 1)",
+   "title": "Links in $L(p,1)$",
    "page": 63,
    "source": "inferred",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "62"
   },
   {
    "level": 3,
-   "title": "Unre\ufb01ned index of T [L(p, 1)] with Wilson loops",
+   "title": "Unrefined index of $T[L(p,1)]$ with Wilson loops",
    "page": 64,
    "source": "inferred",
-   "number": "4.3.1"
+   "number": "4.3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "63"
   },
   {
    "level": 3,
-   "title": "Re\ufb01nement and categori\ufb01cation",
+   "title": "Refinement and categorification",
    "page": 65,
    "source": "inferred",
-   "number": "4.3.2"
+   "number": "4.3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "64"
   },
   {
    "level": 2,
-   "title": "Comparison with re\ufb01ned CS",
+   "title": "Comparison with refined CS",
    "page": 66,
    "source": "inferred",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "65"
   },
   {
    "level": 1,
-   "title": "(q;K,\u03bb )",
-   "page": 67,
+   "title": "${\\mathbb Z}[[q]]$-valued invariant for negative definite plumbed 3-manifolds",
+   "page": 68,
    "source": "inferred",
-   "number": "0"
+   "number": "A",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "67"
   },
   {
    "level": 1,
-   "title": "(q)",
-   "page": 67,
+   "title": "Cabling in $M_3$ versus color in $T[M_3]$",
+   "page": 72,
    "source": "inferred",
-   "number": "0"
+   "number": "B",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "71"
   },
   {
    "level": 1,
-   "title": "Acknowledgments",
-   "page": 67,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "(2k)L/2",
-   "page": 69,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "(2k)L/2 (q 1/2\u2212 q \u22121/2)\u00d7",
-   "page": 69,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(A.10)",
-   "page": 69,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "F\u03c9(x1,...,x L)|xv=q nv/2 (A.15)",
-   "page": 70,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "(2k)L/2 (q 1/2\u2212 q \u22121/2) lim",
-   "page": 71,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "F\u03c9(x1,...,x L)|xv=q nv/2 =",
-   "page": 71,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "(q 1/2\u2212 q \u22121/2)| detM|1/2",
-   "page": 71,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(q 1/2\u2212 q \u22121/2)| detM|1/2\u00d7",
-   "page": 71,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Categori\ufb01cation of the Turaev-Viro invariants",
+   "title": "Categorification of the Turaev-Viro invariants",
    "page": 74,
    "source": "inferred",
-   "number": "C"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 76,
-   "source": "inferred",
-   "number": null
+   "number": "C",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "73"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The space of BPS states in 3d N = 2 theory on R \u00d7 D2 with an impurity, relevant to the physical realization of Heegaard Floer homology HF(M3), monopole Floer homology HM(M3), as well as categori\ufb01cation of WRT invariants of 3-manifolds with knots",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Another representation of the background in Figure 1",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Critical points of f",
+   "page": 13,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "The reduced Poincar\u00b4e polynomial of the bottom row of the HOMFLY-PT homology for simple knots colored by \u03bb = \u25a1. The unreduced HOMFLY-PT homology is in\ufb01nite-dimensional and its Poincar\u00b4e \u201cpolynomial\u201d is, in fact, a power series in q and t",
+   "page": 26,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "25"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Pole structure of the integrands in (3.122) and (3.129). The green contour corresponds to a choice of the contour \u03b3 such that in the t \u21921 limit it agrees with the principal-value prescription in (3.127) which reproduces the WRT invariant. The blue contour is the standard physical choice of contour f",
+   "page": 49,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "48"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "An example of a plumbing graph \u0393 (left) and the corresponding link L(\u0393) of framed unknots",
+   "page": 51,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "50"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "3d Kirby moves that relate plumbing graphs which result in homeomorphic 3-manifolds",
+   "page": 52,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "51"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Braid representations of 2-, 3and 4-cables of unknot with framing 1",
+   "page": 72,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "71"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "72",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "73",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "74",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "75",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "76",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "77",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "78",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "79",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "80",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-1-walter-burke-institute-for-theoretical-physics",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1520,
+   "n_words": 232,
+   "label_start": null,
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-1-introduction",
    "number": "1",
-   "title": "Walter Burke Institute for Theoretical Physics, California Institute of Technology,",
+   "title": "Introduction",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 23,
-   "n_words": 4
-  },
-  {
-   "id": "sec-001-2-center-for-quantum-geometry-of-moduli-spaces-d",
-   "number": "2",
-   "title": "Center for Quantum Geometry of Moduli Spaces, Deparment of Mathematics, University",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 27,
-   "n_words": 4
-  },
-  {
-   "id": "sec-002-3-school-of-natural-sciences-institute-for-advan",
-   "number": "3",
-   "title": "School of Natural Sciences, Institute for Advanced Study, Princeton, NJ 08540, USA",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-003-4-je\ufb00erson-physical-laboratory-harvard-universit",
-   "number": "4",
-   "title": "Je\ufb00erson Physical Laboratory, Harvard University, Cambridge, MA 02138, USA",
-   "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 6,
-   "n_chars": 11476,
-   "n_words": 1867
+   "n_chars": 10828,
+   "n_words": 1791,
+   "label_start": "1",
+   "label_end": "5"
   },
   {
-   "id": "sec-004-2-fivebranes-on-3-manifolds-and-categori\ufb01cation",
-   "number": "2",
-   "title": "Fivebranes on 3-manifolds and categori\ufb01cation of WRT invariant",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 274,
-   "n_words": 51
-  },
-  {
-   "id": "sec-005-21-preliminaries",
+   "id": "sec-001-21-preliminaries",
    "number": "2.1",
    "title": "Preliminaries",
    "level": 2,
    "page_start": 6,
-   "page_end": 7,
-   "n_chars": 1302,
-   "n_words": 224
+   "page_end": 9,
+   "n_chars": 6022,
+   "n_words": 1031,
+   "label_start": "5",
+   "label_end": "8"
   },
   {
-   "id": "sec-006-22-d2s1-partition-function-of-t-m3-and-wrt-invar",
-   "number": "2.2",
-   "title": "D2\u00d7S1 partition function of T [M3] and WRT invariant",
-   "level": 2,
-   "page_start": 7,
+   "id": "sec-002-physics-behind-the-proposal",
+   "number": null,
+   "title": "Physics behind the proposal",
+   "level": 3,
+   "page_start": 9,
    "page_end": 14,
-   "n_chars": 16864,
-   "n_words": 2851
+   "n_chars": 12268,
+   "n_words": 2146,
+   "label_start": "8",
+   "label_end": "13"
   },
   {
-   "id": "sec-007-23-realization-in-terms-of-counting-solutions-of",
+   "id": "sec-003-23-realization-in-terms-of-counting-solutions-of",
    "number": "2.3",
-   "title": "Realization in terms of counting solutions of di\ufb00erential equations",
+   "title": "Realization in terms of counting solutions of differential equations",
    "level": 2,
    "page_start": 14,
    "page_end": 16,
-   "n_chars": 6958,
-   "n_words": 1139
+   "n_chars": 6986,
+   "n_words": 1167,
+   "label_start": "13",
+   "label_end": "15"
   },
   {
-   "id": "sec-008-24-surgeries-triangulations-and-atiyah-floer",
+   "id": "sec-004-24-surgeries-triangulations-and-atiyah-floer",
    "number": "2.4",
    "title": "Surgeries, triangulations, and Atiyah-Floer",
    "level": 2,
    "page_start": 16,
-   "page_end": 18,
-   "n_chars": 6383,
-   "n_words": 1043
-  },
-  {
-   "id": "sec-009-25-superconformal-index-of-t-m3-and-its-factoriz",
-   "number": "2.5",
-   "title": "Superconformal index of T [M3] and its factorization",
-   "level": 2,
-   "page_start": 18,
-   "page_end": 19,
-   "n_chars": 2510,
-   "n_words": 408
-  },
-  {
-   "id": "sec-010-26-further-re\ufb01nement",
-   "number": "2.6",
-   "title": "Further re\ufb01nement",
-   "level": 2,
-   "page_start": 19,
-   "page_end": 20,
-   "n_chars": 1860,
-   "n_words": 308
-  },
-  {
-   "id": "sec-011-27-topologically-twisted-index-of-t-m3",
-   "number": "2.7",
-   "title": "Topologically twisted index of T [M3]",
-   "level": 2,
-   "page_start": 20,
-   "page_end": 21,
-   "n_chars": 1830,
-   "n_words": 299
-  },
-  {
-   "id": "sec-012-28-generalization-to-un",
-   "number": "2.8",
-   "title": "Generalization to U(N)",
-   "level": 2,
-   "page_start": 21,
-   "page_end": 22,
-   "n_chars": 1960,
-   "n_words": 309
-  },
-  {
-   "id": "sec-013-29-relation-to-open-gw-invariants-on-tm3",
-   "number": "2.9",
-   "title": "Relation to open GW invariants on T\u2217M3",
-   "level": 2,
-   "page_start": 22,
-   "page_end": 24,
-   "n_chars": 3207,
-   "n_words": 585
-  },
-  {
-   "id": "sec-014-210-langlands-duality-and-\ufb02at-connections",
-   "number": "2.10",
-   "title": "Langlands duality and \ufb02at connections",
-   "level": 2,
-   "page_start": 24,
    "page_end": 27,
-   "n_chars": 7944,
-   "n_words": 1374
+   "n_chars": 26390,
+   "n_words": 4577,
+   "label_start": "15",
+   "label_end": "26"
   },
   {
-   "id": "sec-015-31-m3-s3",
-   "number": "3.1",
-   "title": "M3 =S3",
-   "level": 2,
-   "page_start": 27,
-   "page_end": 27,
-   "n_chars": 219,
-   "n_words": 37
-  },
-  {
-   "id": "sec-016-3-examples",
+   "id": "sec-005-3-examples",
    "number": "3",
    "title": "Examples",
    "level": 1,
    "page_start": 27,
    "page_end": 29,
-   "n_chars": 3078,
-   "n_words": 557
+   "n_chars": 3107,
+   "n_words": 592,
+   "label_start": "26",
+   "label_end": "28"
   },
   {
-   "id": "sec-017-311-categorifying-the-index",
+   "id": "sec-006-311-categorifying-the-index",
    "number": "3.1.1",
    "title": "Categorifying the index",
    "level": 3,
    "page_start": 29,
-   "page_end": 30,
-   "n_chars": 2816,
-   "n_words": 525
-  },
-  {
-   "id": "sec-018-312-the-t-q\u03b2-reduction-from-bps-spectral-sequenc",
-   "number": "3.1.2",
-   "title": "The t =q\u03b2 reduction from BPS spectral sequence",
-   "level": 3,
-   "page_start": 30,
-   "page_end": 32,
-   "n_chars": 4229,
-   "n_words": 775
-  },
-  {
-   "id": "sec-019-32-m3-lp-1",
-   "number": "3.2",
-   "title": "M3 =L(p, 1)",
-   "level": 2,
-   "page_start": 32,
-   "page_end": 32,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-020-321-re\ufb01ned-superconformal-index",
-   "number": "3.2.1",
-   "title": "Re\ufb01ned superconformal index",
-   "level": 3,
-   "page_start": 32,
-   "page_end": 34,
-   "n_chars": 3012,
-   "n_words": 531
-  },
-  {
-   "id": "sec-021-322-topologically-twisted-index-of-t-lp-1",
-   "number": "3.2.2",
-   "title": "Topologically twisted index of T [L(p, 1)]",
-   "level": 3,
-   "page_start": 34,
-   "page_end": 37,
-   "n_chars": 6959,
-   "n_words": 1231
-  },
-  {
-   "id": "sec-022-0-q\u02c6z\u03b2",
-   "number": "0",
-   "title": "(q)\u02c6Z(\u03b2)",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 37,
-   "n_chars": 101,
-   "n_words": 17
-  },
-  {
-   "id": "sec-023-1-q\u02c6z\u03b2",
-   "number": "1",
-   "title": "(q)\u02c6Z(\u2212\u03b2)",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 37,
-   "n_chars": 147,
-   "n_words": 30
-  },
-  {
-   "id": "sec-024-0-1q-\u02c6z\u03b2",
-   "number": "0",
-   "title": "(1/q) +\u02c6Z(\u03b2)",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 37,
-   "n_chars": 36,
-   "n_words": 7
-  },
-  {
-   "id": "sec-025-2-1q-364",
-   "number": "2",
-   "title": "(1/q) (3.64)",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 37,
-   "n_chars": 23,
-   "n_words": 5
-  },
-  {
-   "id": "sec-026-0-q-2\u02c6z\u03b2",
-   "number": "0",
-   "title": "(q)\u00b7 2\u02c6Z(\u2212\u03b2)",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 37,
-   "n_chars": 53,
-   "n_words": 10
-  },
-  {
-   "id": "sec-027-2-1q-365",
-   "number": "2",
-   "title": "(1/q). (3.65)",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 38,
-   "n_chars": 92,
-   "n_words": 20
-  },
-  {
-   "id": "sec-028-0-q-1-\u02c6z0",
-   "number": "0",
-   "title": "(q) = 1, \u02c6Z(0)",
-   "level": 1,
-   "page_start": 38,
-   "page_end": 38,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-029-1-q-q15-\u02c6z0",
-   "number": "1",
-   "title": "(q) =\u2212q1/5, \u02c6Z(0)",
-   "level": 1,
-   "page_start": 38,
-   "page_end": 38,
-   "n_chars": 65,
-   "n_words": 16
-  },
-  {
-   "id": "sec-030-0-q-1-q-q2-\u02c6z1",
-   "number": "0",
-   "title": "(q) = 1 +q +q2, \u02c6Z(1)",
-   "level": 1,
-   "page_start": 38,
-   "page_end": 38,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-031-1-q-q151-2q-q2-\u02c6z1",
-   "number": "1",
-   "title": "(q) =\u2212q1/5(1 + 2q +q2), \u02c6Z(1)",
-   "level": 1,
-   "page_start": 38,
-   "page_end": 38,
-   "n_chars": 20,
-   "n_words": 4
-  },
-  {
-   "id": "sec-032-0-q-1-\u02c6z1",
-   "number": "0",
-   "title": "(q) = 1, \u02c6Z(\u22121)",
-   "level": 1,
-   "page_start": 38,
-   "page_end": 38,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-033-1-q-0-\u02c6z1",
-   "number": "1",
-   "title": "(q) = 0, \u02c6Z(\u22121)",
-   "level": 1,
-   "page_start": 38,
-   "page_end": 38,
-   "n_chars": 95,
-   "n_words": 28
-  },
-  {
-   "id": "sec-034-0-q-1-q-2q2-2q3-2q4-q5-q6",
-   "number": "0",
-   "title": "(q) = 1 +q + 2q2 + 2q3 + 2q4 +q5 +q6,",
-   "level": 1,
-   "page_start": 38,
-   "page_end": 38,
-   "n_chars": 5,
-   "n_words": 1
-  },
-  {
-   "id": "sec-035-1-q-q151-2q-3q2-3q3-3q4-2q5-q6",
-   "number": "1",
-   "title": "(q) =\u2212q1/5(1 + 2q + 3q2 + 3q3 + 3q4 + 2q5 +q6),",
-   "level": 1,
-   "page_start": 38,
-   "page_end": 38,
-   "n_chars": 41,
-   "n_words": 9
-  },
-  {
-   "id": "sec-036-0-q-q21q2",
-   "number": "0",
-   "title": "(q) =\u2212q2/(1\u2212q2),",
-   "level": 1,
-   "page_start": 38,
-   "page_end": 38,
-   "n_chars": 6,
-   "n_words": 1
-  },
-  {
-   "id": "sec-037-1-q-q651q2",
-   "number": "1",
-   "title": "(q) =\u2212q6/5/(1\u2212q2),",
-   "level": 1,
-   "page_start": 38,
-   "page_end": 38,
-   "n_chars": 178,
-   "n_words": 50
-  },
-  {
-   "id": "sec-038-0-q-q12-q11-2q10-3q9-4q8-4q7-5q6-4q5-4q4-3q3-2q2",
-   "number": "0",
-   "title": "(q) =q12 +q11 + 2q10 + 3q9 + 4q8 + 4q7 + 5q6 + 4q5 + 4q4 + 3q3 + 2q2 +q + 1,",
-   "level": 1,
-   "page_start": 38,
-   "page_end": 38,
-   "n_chars": 179,
-   "n_words": 53
-  },
-  {
-   "id": "sec-039-0-q-q7-q5-q4-q3-q2",
-   "number": "0",
-   "title": "(q) = (q7 +q5 +q4 +q3 +q2)/",
-   "level": 1,
-   "page_start": 38,
-   "page_end": 38,
-   "n_chars": 25,
-   "n_words": 5
-  },
-  {
-   "id": "sec-040-1-q-q115",
-   "number": "1",
-   "title": "(q) =q11/5(",
-   "level": 1,
-   "page_start": 38,
-   "page_end": 38,
-   "n_chars": 47,
-   "n_words": 13
-  },
-  {
-   "id": "sec-041-2-q-q145",
-   "number": "2",
-   "title": "(q) =q14/5(",
-   "level": 1,
-   "page_start": 38,
    "page_end": 39,
-   "n_chars": 1336,
-   "n_words": 230
+   "n_chars": 20365,
+   "n_words": 3964,
+   "label_start": "28",
+   "label_end": "38"
   },
   {
-   "id": "sec-042-324-cyclotomic-expansion",
+   "id": "sec-007-324-cyclotomic-expansion",
    "number": "3.2.4",
    "title": "Cyclotomic expansion",
    "level": 3,
    "page_start": 39,
-   "page_end": 41,
-   "n_chars": 3674,
-   "n_words": 753
-  },
-  {
-   "id": "sec-043-325-positivity-of-coe\ufb03cients",
-   "number": "3.2.5",
-   "title": "Positivity of coe\ufb03cients",
-   "level": 3,
-   "page_start": 41,
-   "page_end": 43,
-   "n_chars": 3271,
-   "n_words": 556
-  },
-  {
-   "id": "sec-044-1-positivity-of-homological-blocks-\u02c6za-besides-o",
-   "number": "1",
-   "title": "Positivity of homological blocks \u02c6Za. Besides overall signs, all homological blocks are",
-   "level": 1,
-   "page_start": 43,
-   "page_end": 43,
-   "n_chars": 412,
-   "n_words": 66
-  },
-  {
-   "id": "sec-045-2-positivity-of-the-superconformal-index-i-and-t",
-   "number": "2",
-   "title": "Positivity of the superconformal index I and twisted indexItop. After factorizing out",
-   "level": 1,
-   "page_start": 43,
-   "page_end": 43,
-   "n_chars": 606,
-   "n_words": 102
-  },
-  {
-   "id": "sec-046-3-positivity-of-\u03b2-reduced-homological-blocks-\u02c6z\u03b2",
-   "number": "3",
-   "title": "Positivity of \u201c \u03b2-reduced\u201d homological blocks \u02c6Z(\u03b2)",
-   "level": 1,
-   "page_start": 43,
-   "page_end": 43,
-   "n_chars": 341,
-   "n_words": 56
-  },
-  {
-   "id": "sec-047-326-comparison-with-re\ufb01ned-cs",
-   "number": "3.2.6",
-   "title": "Comparison with re\ufb01ned CS",
-   "level": 3,
-   "page_start": 43,
-   "page_end": 44,
-   "n_chars": 603,
-   "n_words": 114
-  },
-  {
-   "id": "sec-048-4-2k-4\u03b212",
-   "number": "4",
-   "title": "(2k + 4\u03b2)1/2",
-   "level": 1,
-   "page_start": 44,
-   "page_end": 46,
-   "n_chars": 2606,
-   "n_words": 469
-  },
-  {
-   "id": "sec-049-33-m3-op-\u03c3g",
-   "number": "3.3",
-   "title": "M3 =O(\u2212p)\u2192 \u03a3g",
-   "level": 2,
-   "page_start": 46,
    "page_end": 47,
-   "n_chars": 1809,
-   "n_words": 339
+   "n_chars": 13790,
+   "n_words": 2642,
+   "label_start": "38",
+   "label_end": "46"
   },
   {
-   "id": "sec-050-331-homological-blocks-and-wrt-invariant",
+   "id": "sec-008-331-homological-blocks-and-wrt-invariant",
    "number": "3.3.1",
    "title": "Homological blocks and WRT invariant",
    "level": 3,
    "page_start": 47,
    "page_end": 48,
-   "n_chars": 2446,
-   "n_words": 424
+   "n_chars": 2472,
+   "n_words": 456,
+   "label_start": "46",
+   "label_end": "47"
   },
   {
-   "id": "sec-051-332-factorization-of-the-superconformal-index",
+   "id": "sec-009-332-factorization-of-the-superconformal-index",
    "number": "3.3.2",
    "title": "Factorization of the superconformal index",
    "level": 3,
    "page_start": 48,
-   "page_end": 50,
-   "n_chars": 2832,
-   "n_words": 499
-  },
-  {
-   "id": "sec-052-0-q-1",
-   "number": "0",
-   "title": "(q) = 1",
-   "level": 1,
-   "page_start": 50,
-   "page_end": 50,
-   "n_chars": 66,
-   "n_words": 16
-  },
-  {
-   "id": "sec-053-0-q-q2-1-\u02c6z2",
-   "number": "0",
-   "title": "(q) =q\u22122 + 1, \u02c6Z(\u22122)",
-   "level": 1,
-   "page_start": 50,
-   "page_end": 50,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-054-1-q-q45-\u02c6z2",
-   "number": "1",
-   "title": "(q) =q\u22124/5, \u02c6Z(\u22122)",
-   "level": 1,
-   "page_start": 50,
-   "page_end": 50,
-   "n_chars": 105,
-   "n_words": 32
-  },
-  {
-   "id": "sec-055-1-q",
-   "number": "1",
-   "title": "(q) =\u2212",
-   "level": 1,
-   "page_start": 50,
-   "page_end": 50,
-   "n_chars": 971,
-   "n_words": 170
-  },
-  {
-   "id": "sec-056-333-comparison-with-re\ufb01ned-cs",
-   "number": "3.3.3",
-   "title": "Comparison with re\ufb01ned CS",
-   "level": 3,
-   "page_start": 50,
-   "page_end": 51,
-   "n_chars": 1317,
-   "n_words": 225
-  },
-  {
-   "id": "sec-057-34-m3-plumbed",
-   "number": "3.4",
-   "title": "M3 = plumbed",
-   "level": 2,
-   "page_start": 51,
-   "page_end": 52,
-   "n_chars": 2024,
-   "n_words": 377
-  },
-  {
-   "id": "sec-058-341-homological-blocks-\u02c6za",
-   "number": "3.4.1",
-   "title": "Homological blocks \u02c6Za",
-   "level": 3,
-   "page_start": 52,
-   "page_end": 53,
-   "n_chars": 848,
-   "n_words": 162
-  },
-  {
-   "id": "sec-059-1-in-the-special-case-when-the-plumbing-graph-ha",
-   "number": "1",
-   "title": "In the special case when the plumbing graph has just one vertex, the expression for the",
-   "level": 1,
-   "page_start": 53,
-   "page_end": 53,
-   "n_chars": 48,
-   "n_words": 10
-  },
-  {
-   "id": "sec-060-2-generically-it-is-well-de\ufb01ned-only-if-m-is-neg",
-   "number": "2",
-   "title": "Generically it is well-de\ufb01ned only if M is negative de\ufb01nite, i.e. M3(\u0393) is a link of a",
-   "level": 1,
-   "page_start": 53,
-   "page_end": 53,
-   "n_chars": 71,
-   "n_words": 11
-  },
-  {
-   "id": "sec-061-3-the-formula-3145-de\ufb01nes-homological-blocks-\u02c6za",
-   "number": "3",
-   "title": "The formula ( 3.145) de\ufb01nes homological blocks \u02c6Za(q) in terms of a plumbing graph",
-   "level": 1,
-   "page_start": 53,
-   "page_end": 53,
-   "n_chars": 376,
-   "n_words": 65
-  },
-  {
-   "id": "sec-062-4-even-though-the-formula-has-the-structure-of-t",
-   "number": "4",
-   "title": "Even though the formula has the structure of the \u201cindex of a quiver theory\u201d, it is not",
-   "level": 1,
-   "page_start": 53,
-   "page_end": 53,
-   "n_chars": 110,
-   "n_words": 20
-  },
-  {
-   "id": "sec-063-5-suppose-m-0-then-\u02c6zaq-is-a-well-de\ufb01ned-series",
-   "number": "5",
-   "title": "Suppose M < 0. Then \u02c6Za(q) is a well-de\ufb01ned series in q convergent in the unit disk",
-   "level": 1,
-   "page_start": 53,
-   "page_end": 53,
-   "n_chars": 212,
-   "n_words": 36
-  },
-  {
-   "id": "sec-064-6-we-have",
-   "number": "6",
-   "title": "We have",
-   "level": 1,
-   "page_start": 53,
-   "page_end": 55,
-   "n_chars": 1254,
-   "n_words": 292
-  },
-  {
-   "id": "sec-065-342-problems-on-the-t-m3-side",
-   "number": "3.4.2",
-   "title": "Problems on the T [M3] side",
-   "level": 3,
-   "page_start": 55,
-   "page_end": 55,
-   "n_chars": 1588,
-   "n_words": 266
-  },
-  {
-   "id": "sec-066-4-adding-knots-and-links-into-m3",
-   "number": "4",
-   "title": "Adding knots and links into M3",
-   "level": 1,
-   "page_start": 55,
-   "page_end": 56,
-   "n_chars": 3100,
-   "n_words": 522
-  },
-  {
-   "id": "sec-067-41-links-in-m3-and-line-operators-in-t-m3",
-   "number": "4.1",
-   "title": "Links in M3 and line operators in T [M3]",
-   "level": 2,
-   "page_start": 56,
-   "page_end": 60,
-   "n_chars": 10549,
-   "n_words": 1856
-  },
-  {
-   "id": "sec-068-42-links-in-s2s1-and-rozanskys-proposal",
-   "number": "4.2",
-   "title": "Links in S2\u00d7S1 and Rozansky\u2019s proposal",
-   "level": 2,
-   "page_start": 60,
-   "page_end": 63,
-   "n_chars": 5794,
-   "n_words": 1060
-  },
-  {
-   "id": "sec-069-43-links-in-lp-1",
-   "number": "4.3",
-   "title": "Links in L(p, 1)",
-   "level": 2,
-   "page_start": 63,
-   "page_end": 64,
-   "n_chars": 656,
-   "n_words": 126
-  },
-  {
-   "id": "sec-070-431-unre\ufb01ned-index-of-t-lp-1-with-wilson-loops",
-   "number": "4.3.1",
-   "title": "Unre\ufb01ned index of T [L(p, 1)] with Wilson loops",
-   "level": 3,
-   "page_start": 64,
-   "page_end": 65,
-   "n_chars": 2013,
-   "n_words": 394
-  },
-  {
-   "id": "sec-071-432-re\ufb01nement-and-categori\ufb01cation",
-   "number": "4.3.2",
-   "title": "Re\ufb01nement and categori\ufb01cation",
-   "level": 3,
-   "page_start": 65,
-   "page_end": 66,
-   "n_chars": 2243,
-   "n_words": 490
-  },
-  {
-   "id": "sec-072-44-comparison-with-re\ufb01ned-cs",
-   "number": "4.4",
-   "title": "Comparison with re\ufb01ned CS",
-   "level": 2,
-   "page_start": 66,
-   "page_end": 66,
-   "n_chars": 1208,
-   "n_words": 211
-  },
-  {
-   "id": "sec-073-0-qk\u03bb",
-   "number": "0",
-   "title": "(q;K,\u03bb )",
-   "level": 1,
-   "page_start": 66,
-   "page_end": 67,
-   "n_chars": 1550,
-   "n_words": 272
-  },
-  {
-   "id": "sec-074-0-q",
-   "number": "0",
-   "title": "(q)",
-   "level": 1,
-   "page_start": 67,
-   "page_end": 67,
-   "n_chars": 273,
-   "n_words": 44
-  },
-  {
-   "id": "sec-075-acknowledgments",
-   "number": null,
-   "title": "Acknowledgments",
-   "level": 1,
-   "page_start": 67,
-   "page_end": 69,
-   "n_chars": 2947,
-   "n_words": 510
-  },
-  {
-   "id": "sec-076-4-2kl2",
-   "number": "4",
-   "title": "(2k)L/2",
-   "level": 1,
-   "page_start": 69,
-   "page_end": 69,
-   "n_chars": 371,
-   "n_words": 89
-  },
-  {
-   "id": "sec-077-2-2kl2-q-12-q-12",
-   "number": "2",
-   "title": "(2k)L/2 (q 1/2\u2212 q \u22121/2)\u00d7",
-   "level": 1,
-   "page_start": 69,
-   "page_end": 69,
-   "n_chars": 117,
-   "n_words": 24
-  },
-  {
-   "id": "sec-078-2-a10",
-   "number": "2",
-   "title": "(A.10)",
-   "level": 1,
-   "page_start": 69,
-   "page_end": 70,
-   "n_chars": 1242,
-   "n_words": 244
-  },
-  {
-   "id": "sec-079-4-f\u03c9x1x-lxvq-nv2-a15",
-   "number": "4",
-   "title": "F\u03c9(x1,...,x L)|xv=q nv/2 (A.15)",
-   "level": 1,
-   "page_start": 70,
-   "page_end": 71,
-   "n_chars": 1378,
-   "n_words": 287
-  },
-  {
-   "id": "sec-080-2-2kl2-q-12-q-12-lim",
-   "number": "2",
-   "title": "(2k)L/2 (q 1/2\u2212 q \u22121/2) lim",
-   "level": 1,
-   "page_start": 71,
-   "page_end": 71,
-   "n_chars": 24,
-   "n_words": 5
-  },
-  {
-   "id": "sec-081-4-f\u03c9x1x-lxvq-nv2",
-   "number": "4",
-   "title": "F\u03c9(x1,...,x L)|xv=q nv/2 =",
-   "level": 1,
-   "page_start": 71,
-   "page_end": 71,
-   "n_chars": 17,
-   "n_words": 5
-  },
-  {
-   "id": "sec-082-2-q-12-q-12-detm12",
-   "number": "2",
-   "title": "(q 1/2\u2212 q \u22121/2)| detM|1/2",
-   "level": 1,
-   "page_start": 71,
-   "page_end": 71,
-   "n_chars": 392,
-   "n_words": 80
-  },
-  {
-   "id": "sec-083-2-q-12-q-12-detm12",
-   "number": "2",
-   "title": "(q 1/2\u2212 q \u22121/2)| detM|1/2\u00d7",
-   "level": 1,
-   "page_start": 71,
-   "page_end": 74,
-   "n_chars": 5516,
-   "n_words": 994
-  },
-  {
-   "id": "sec-084-c-categori\ufb01cation-of-the-turaev-viro-invariants",
-   "number": "C",
-   "title": "Categori\ufb01cation of the Turaev-Viro invariants",
-   "level": 1,
-   "page_start": 74,
-   "page_end": 76,
-   "n_chars": 5442,
-   "n_words": 916
-  },
-  {
-   "id": "sec-085-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 76,
    "page_end": 81,
-   "n_chars": 12039,
-   "n_words": 1869
+   "n_chars": 70243,
+   "n_words": 12749,
+   "label_start": "47",
+   "label_end": "80"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 92,
-  "sections": 86,
-  "chars_total": 169841,
+  "toc_entries": 44,
+  "toc_inferred_entries": 44,
+  "toc_inferred_mean_confidence": 0.989,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 8,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "t = q\u03b2 reduction"
+    ]
+   },
+   "found_not_listed": {
+    "count": 6,
+    "items": [
+     "4 Adding knots and links into M3",
+     "2.9 Relation to open GW invariants on T \u2217M3",
+     "3.4.1 Homological blocks bZa",
+     "4 Adding knots and links into M3",
+     "4.2 Links in S2 \u00d7 S1 and Rozansky\u2019s proposal",
+     "4.3.2 Re\ufb01nement and categori\ufb01cation"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 11,
+  "chars_total": 173991,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "3ManBPS-10.tex",
    "tex_sections": 41,
-   "overlaid": 22,
+   "overlaid": 10,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1555,120 +1660,52 @@
    },
    "sections": [
     {
-     "id": "sec-000-1-walter-burke-institute-for-theoretical-physics",
-     "title": "Walter Burke Institute for Theoretical Physics, California Institute of Technology,",
+     "id": "sec-front-matter",
+     "title": "Front matter",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-001-2-center-for-quantum-geometry-of-moduli-spaces-d",
-     "title": "Center for Quantum Geometry of Moduli Spaces, Deparment of Mathematics, University",
-     "result": "no matching \\section"
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.937,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-002-3-school-of-natural-sciences-institute-for-advan",
-     "title": "School of Natural Sciences, Institute for Advanced Study, Princeton, NJ 08540, USA",
-     "result": "no matching \\section"
+     "id": "sec-001-21-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-003-4-je\ufb00erson-physical-laboratory-harvard-universit",
-     "title": "Je\ufb00erson Physical Laboratory, Harvard University, Cambridge, MA 02138, USA",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-004-2-fivebranes-on-3-manifolds-and-categori\ufb01cation",
-     "title": "Fivebranes on 3-manifolds and categori\ufb01cation of WRT invariant",
-     "prose_ratio": 0.917,
+     "id": "sec-002-physics-behind-the-proposal",
+     "title": "Physics behind the proposal",
+     "prose_ratio": 0.972,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-21-preliminaries",
-     "title": "Preliminaries",
-     "prose_ratio": 0.849,
-     "coverage_ratio": 0.974,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-006-22-d2s1-partition-function-of-t-m3-and-wrt-invar",
-     "title": "D2\u00d7S1 partition function of T [M3] and WRT invariant",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.961,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-007-23-realization-in-terms-of-counting-solutions-of",
-     "title": "Realization in terms of counting solutions of di\ufb00erential equations",
+     "id": "sec-003-23-realization-in-terms-of-counting-solutions-of",
+     "title": "Realization in terms of counting solutions of differential equations",
      "prose_ratio": 0.98,
-     "coverage_ratio": 0.969,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-24-surgeries-triangulations-and-atiyah-floer",
+     "id": "sec-004-24-surgeries-triangulations-and-atiyah-floer",
      "title": "Surgeries, triangulations, and Atiyah-Floer",
-     "prose_ratio": 0.937,
-     "coverage_ratio": 0.979,
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-25-superconformal-index-of-t-m3-and-its-factoriz",
-     "title": "Superconformal index of T [M3] and its factorization",
-     "prose_ratio": 0.693,
-     "coverage_ratio": 0.796,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-010-26-further-re\ufb01nement",
-     "title": "Further re\ufb01nement",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.555,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-011-27-topologically-twisted-index-of-t-m3",
-     "title": "Topologically twisted index of T [M3]",
-     "prose_ratio": 0.967,
-     "coverage_ratio": 0.968,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-012-28-generalization-to-un",
-     "title": "Generalization to U(N)",
-     "prose_ratio": 0.951,
-     "coverage_ratio": 0.96,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-013-29-relation-to-open-gw-invariants-on-tm3",
-     "title": "Relation to open GW invariants on T\u2217M3",
-     "prose_ratio": 0.985,
-     "coverage_ratio": 0.977,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-014-210-langlands-duality-and-\ufb02at-connections",
-     "title": "Langlands duality and \ufb02at connections",
-     "prose_ratio": 0.916,
-     "coverage_ratio": 0.953,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-015-31-m3-s3",
-     "title": "M3 =S3",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-016-3-examples",
+     "id": "sec-005-3-examples",
      "title": "Examples",
      "prose_ratio": 0.969,
      "coverage_ratio": 0.994,
@@ -1676,387 +1713,36 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-311-categorifying-the-index",
+     "id": "sec-006-311-categorifying-the-index",
      "title": "Categorifying the index",
-     "prose_ratio": 0.963,
-     "coverage_ratio": 0.921,
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-312-the-t-q\u03b2-reduction-from-bps-spectral-sequenc",
-     "title": "The t =q\u03b2 reduction from BPS spectral sequence",
-     "prose_ratio": 0.951,
+     "id": "sec-007-324-cyclotomic-expansion",
+     "title": "Cyclotomic expansion",
+     "prose_ratio": 0.97,
      "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-32-m3-lp-1",
-     "title": "M3 =L(p, 1)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-020-321-re\ufb01ned-superconformal-index",
-     "title": "Re\ufb01ned superconformal index",
-     "prose_ratio": 0.308,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-021-322-topologically-twisted-index-of-t-lp-1",
-     "title": "Topologically twisted index of T [L(p, 1)]",
-     "prose_ratio": 0.451,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-022-0-q\u02c6z\u03b2",
-     "title": "(q)\u02c6Z(\u03b2)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-023-1-q\u02c6z\u03b2",
-     "title": "(q)\u02c6Z(\u2212\u03b2)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-024-0-1q-\u02c6z\u03b2",
-     "title": "(1/q) +\u02c6Z(\u03b2)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-025-2-1q-364",
-     "title": "(1/q) (3.64)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-026-0-q-2\u02c6z\u03b2",
-     "title": "(q)\u00b7 2\u02c6Z(\u2212\u03b2)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-027-2-1q-365",
-     "title": "(1/q). (3.65)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-028-0-q-1-\u02c6z0",
-     "title": "(q) = 1, \u02c6Z(0)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-029-1-q-q15-\u02c6z0",
-     "title": "(q) =\u2212q1/5, \u02c6Z(0)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-030-0-q-1-q-q2-\u02c6z1",
-     "title": "(q) = 1 +q +q2, \u02c6Z(1)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-031-1-q-q151-2q-q2-\u02c6z1",
-     "title": "(q) =\u2212q1/5(1 + 2q +q2), \u02c6Z(1)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-032-0-q-1-\u02c6z1",
-     "title": "(q) = 1, \u02c6Z(\u22121)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-033-1-q-0-\u02c6z1",
-     "title": "(q) = 0, \u02c6Z(\u22121)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-034-0-q-1-q-2q2-2q3-2q4-q5-q6",
-     "title": "(q) = 1 +q + 2q2 + 2q3 + 2q4 +q5 +q6,",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-035-1-q-q151-2q-3q2-3q3-3q4-2q5-q6",
-     "title": "(q) =\u2212q1/5(1 + 2q + 3q2 + 3q3 + 3q4 + 2q5 +q6),",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-036-0-q-q21q2",
-     "title": "(q) =\u2212q2/(1\u2212q2),",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-037-1-q-q651q2",
-     "title": "(q) =\u2212q6/5/(1\u2212q2),",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-038-0-q-q12-q11-2q10-3q9-4q8-4q7-5q6-4q5-4q4-3q3-2q2",
-     "title": "(q) =q12 +q11 + 2q10 + 3q9 + 4q8 + 4q7 + 5q6 + 4q5 + 4q4 + 3q3 + 2q2 +q + 1,",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-039-0-q-q7-q5-q4-q3-q2",
-     "title": "(q) = (q7 +q5 +q4 +q3 +q2)/",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-040-1-q-q115",
-     "title": "(q) =q11/5(",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-041-2-q-q145",
-     "title": "(q) =q14/5(",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-042-324-cyclotomic-expansion",
-     "title": "Cyclotomic expansion",
-     "prose_ratio": 0.957,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-043-325-positivity-of-coe\ufb03cients",
-     "title": "Positivity of coe\ufb03cients",
-     "prose_ratio": 0.77,
-     "coverage_ratio": 0.966,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-044-1-positivity-of-homological-blocks-\u02c6za-besides-o",
-     "title": "Positivity of homological blocks \u02c6Za. Besides overall signs, all homological blocks are",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-045-2-positivity-of-the-superconformal-index-i-and-t",
-     "title": "Positivity of the superconformal index I and twisted indexItop. After factorizing out",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-046-3-positivity-of-\u03b2-reduced-homological-blocks-\u02c6z\u03b2",
-     "title": "Positivity of \u201c \u03b2-reduced\u201d homological blocks \u02c6Z(\u03b2)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-047-326-comparison-with-re\ufb01ned-cs",
-     "title": "Comparison with re\ufb01ned CS",
-     "prose_ratio": 0.185,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-048-4-2k-4\u03b212",
-     "title": "(2k + 4\u03b2)1/2",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-049-33-m3-op-\u03c3g",
-     "title": "M3 =O(\u2212p)\u2192 \u03a3g",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-050-331-homological-blocks-and-wrt-invariant",
+     "id": "sec-008-331-homological-blocks-and-wrt-invariant",
      "title": "Homological blocks and WRT invariant",
      "prose_ratio": 0.949,
-     "coverage_ratio": 0.974,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-051-332-factorization-of-the-superconformal-index",
+     "id": "sec-009-332-factorization-of-the-superconformal-index",
      "title": "Factorization of the superconformal index",
-     "prose_ratio": 0.427,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-052-0-q-1",
-     "title": "(q) = 1",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-053-0-q-q2-1-\u02c6z2",
-     "title": "(q) =q\u22122 + 1, \u02c6Z(\u22122)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-054-1-q-q45-\u02c6z2",
-     "title": "(q) =q\u22124/5, \u02c6Z(\u22122)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-055-1-q",
-     "title": "(q) =\u2212",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-056-333-comparison-with-re\ufb01ned-cs",
-     "title": "Comparison with re\ufb01ned CS",
-     "prose_ratio": 0.132,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-057-34-m3-plumbed",
-     "title": "M3 = plumbed",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-058-341-homological-blocks-\u02c6za",
-     "title": "Homological blocks \u02c6Za",
-     "prose_ratio": 0.315,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-059-1-in-the-special-case-when-the-plumbing-graph-ha",
-     "title": "In the special case when the plumbing graph has just one vertex, the expression for the",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-060-2-generically-it-is-well-de\ufb01ned-only-if-m-is-neg",
-     "title": "Generically it is well-de\ufb01ned only if M is negative de\ufb01nite, i.e. M3(\u0393) is a link of a",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-061-3-the-formula-3145-de\ufb01nes-homological-blocks-\u02c6za",
-     "title": "The formula ( 3.145) de\ufb01nes homological blocks \u02c6Za(q) in terms of a plumbing graph",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-062-4-even-though-the-formula-has-the-structure-of-t",
-     "title": "Even though the formula has the structure of the \u201cindex of a quiver theory\u201d, it is not",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-063-5-suppose-m-0-then-\u02c6zaq-is-a-well-de\ufb01ned-series",
-     "title": "Suppose M < 0. Then \u02c6Za(q) is a well-de\ufb01ned series in q convergent in the unit disk",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-064-6-we-have",
-     "title": "We have",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-065-342-problems-on-the-t-m3-side",
-     "title": "Problems on the T [M3] side",
-     "prose_ratio": 0.965,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.729,
      "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-066-4-adding-knots-and-links-into-m3",
-     "title": "Adding knots and links into M3",
-     "prose_ratio": 0.968,
-     "coverage_ratio": 0.946,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-067-41-links-in-m3-and-line-operators-in-t-m3",
-     "title": "Links in M3 and line operators in T [M3]",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.961,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-068-42-links-in-s2s1-and-rozanskys-proposal",
-     "title": "Links in S2\u00d7S1 and Rozansky\u2019s proposal",
-     "prose_ratio": 0.892,
-     "coverage_ratio": 0.914,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-069-43-links-in-lp-1",
-     "title": "Links in L(p, 1)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-070-431-unre\ufb01ned-index-of-t-lp-1-with-wilson-loops",
-     "title": "Unre\ufb01ned index of T [L(p, 1)] with Wilson loops",
-     "prose_ratio": 0.977,
-     "coverage_ratio": 0.944,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-071-432-re\ufb01nement-and-categori\ufb01cation",
-     "title": "Re\ufb01nement and categori\ufb01cation",
-     "prose_ratio": 0.288,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-072-44-comparison-with-re\ufb01ned-cs",
-     "title": "Comparison with re\ufb01ned CS",
-     "prose_ratio": 0.143,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-073-0-qk\u03bb",
-     "title": "(q;K,\u03bb )",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-074-0-q",
-     "title": "(q)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-075-acknowledgments",
-     "title": "Acknowledgments",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-076-4-2kl2",
-     "title": "(2k)L/2",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-077-2-2kl2-q-12-q-12",
-     "title": "(2k)L/2 (q 1/2\u2212 q \u22121/2)\u00d7",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-078-2-a10",
-     "title": "(A.10)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-079-4-f\u03c9x1x-lxvq-nv2-a15",
-     "title": "F\u03c9(x1,...,x L)|xv=q nv/2 (A.15)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-080-2-2kl2-q-12-q-12-lim",
-     "title": "(2k)L/2 (q 1/2\u2212 q \u22121/2) lim",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-081-4-f\u03c9x1x-lxvq-nv2",
-     "title": "F\u03c9(x1,...,x L)|xv=q nv/2 =",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-082-2-q-12-q-12-detm12",
-     "title": "(q 1/2\u2212 q \u22121/2)| detM|1/2",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-083-2-q-12-q-12-detm12",
-     "title": "(q 1/2\u2212 q \u22121/2)| detM|1/2\u00d7",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-084-c-categori\ufb01cation-of-the-turaev-viro-invariants",
-     "title": "Categori\ufb01cation of the Turaev-Viro invariants",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-085-references",
-     "title": "References",
-     "result": "no matching \\section"
+     "converter": "latex"
     }
    ]
   }

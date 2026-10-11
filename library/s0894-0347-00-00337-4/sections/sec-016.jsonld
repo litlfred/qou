@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/s0894-0347-00-00337-4/sections/sec-016",
   "@type": [
     "doco:Section"
   ],
-  "title": "Commuting diﬀerence operator. Consider the diﬀerence operators ∆and",
-  "pageStart": 14,
-  "pageEnd": 14,
+  "title": "A.4. Convergence of trace class operators",
+  "pageStart": 32,
+  "pageEnd": 33,
   "contains": [
     "library/s0894-0347-00-00337-4/blocks/prose-sec-016"
   ],
-  "derivedFrom": "library/s0894-0347-00-00337-4/manifest",
-  "sourceDocument": "library/s0894-0347-00-00337-4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./s0894-0347-00-00337-4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./s0894-0347-00-00337-4/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s0894-0347-00-00337-4/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/s0894-0347-00-00337-4/blocks/prose-sec-010",
   "kind": "prose",
-  "title": "Proof of Theorem 1. As noted above, Theorem 1 is a limit case of Theorem",
-  "pageStart": 9,
-  "pageEnd": 9,
-  "text": "../sections/sec-010-21-proof-of-theorem-1-as-noted-above-theorem-1-i.md",
-  "derivedFrom": "library/s0894-0347-00-00337-4/manifest",
-  "sourceDocument": "library/s0894-0347-00-00337-4/manifest",
+  "title": "Edge of the spectrum: Convergence to the Airy ensemble",
+  "pageStart": 19,
+  "pageEnd": 19,
+  "text": "../sections/sec-010-4-edge-of-the-spectrum-convergence-to-the-airy-e.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./s0894-0347-00-00337-4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./s0894-0347-00-00337-4/manifest.jsonld",
   "provenance": "ingested"
 }

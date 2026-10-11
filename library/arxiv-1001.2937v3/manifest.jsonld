@@ -9,12 +9,10 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1001.2937v3",
+  "title": "Microscopic Spectrum of the Wilson Dirac Operator",
   "contains": [
-    "library/arxiv-1001.2937v3/sections/sec-000",
-    "library/arxiv-1001.2937v3/sections/sec-001",
-    "library/arxiv-1001.2937v3/sections/sec-002",
-    "library/arxiv-1001.2937v3/sections/sec-003"
+    "library/arxiv-1001.2937v3/sections/sec-front-matter",
+    "library/arxiv-1001.2937v3/sections/sec-000"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -27,7 +25,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1001.2937v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1001.2937v3.pdf",
     "source_sha256": "ab44349bc21634ff8d9fd07f8ab61ddcae333a16af659677f1928a90e7064b21",
     "pages": 4,

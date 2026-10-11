@@ -1,18 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/bsmf-2002-130-3-457-0/sections/sec-003",
   "@type": [
     "doco:Section"
   ],
-  "title": "The Inﬁnitesimal Rigidity Lemma",
-  "pageStart": 15,
-  "pageEnd": 17,
+  "title": "Proj associated to the hyperideal polyhedron P, the line segment joining v to v′",
+  "pageStart": 7,
+  "pageEnd": 8,
   "contains": [
-    "library/bsmf-2002-130-3-457-0/blocks/prose-sec-003",
-    "library/bsmf-2002-130-3-457-0/blocks/prop-sec-003-01",
-    "library/bsmf-2002-130-3-457-0/blocks/lem-sec-003-02"
+    "library/bsmf-2002-130-3-457-0/blocks/prose-sec-003"
   ],
-  "derivedFrom": "library/bsmf-2002-130-3-457-0/manifest",
-  "sourceDocument": "library/bsmf-2002-130-3-457-0/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./bsmf-2002-130-3-457-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./bsmf-2002-130-3-457-0/manifest.jsonld",
   "provenance": "ingested"
 }

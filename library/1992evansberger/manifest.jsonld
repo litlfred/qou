@@ -1,16 +1,34 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/1992evansberger/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "A Hierarchy of Linking Integrals",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./1992evansberger/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "1992evansberger",
   "contains": [
-    "library/1992evansberger/sections/sec-000"
+    "library/1992evansberger/sections/page-001",
+    "library/1992evansberger/sections/page-002",
+    "library/1992evansberger/sections/page-003",
+    "library/1992evansberger/sections/page-004",
+    "library/1992evansberger/sections/page-005",
+    "library/1992evansberger/sections/page-006",
+    "library/1992evansberger/sections/page-007",
+    "library/1992evansberger/sections/page-008",
+    "library/1992evansberger/sections/page-009",
+    "library/1992evansberger/sections/page-010",
+    "library/1992evansberger/sections/page-011",
+    "library/1992evansberger/sections/page-012"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "1992evansberger",
+    "title_source": "slug",
     "source_file": "1992EvansBerger.pdf",
     "source_sha256": "6f100e931a1e5f2241cb428f007fe82abbe99f2f30047cc0d769ef0d6ad1389e",
     "pages": 12,

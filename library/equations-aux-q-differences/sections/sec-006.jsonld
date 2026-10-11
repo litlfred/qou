@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/equations-aux-q-differences/sections/sec-006",
   "@type": [
     "doco:Section"
   ],
-  "title": "L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHANG",
-  "pageStart": 7,
-  "pageEnd": 7,
+  "title": "Classiﬁcation locale des ´equations irr´eguli`eres",
+  "pageStart": 17,
+  "pageEnd": 18,
   "contains": [
     "library/equations-aux-q-differences/blocks/prose-sec-006"
   ],
-  "derivedFrom": "library/equations-aux-q-differences/manifest",
-  "sourceDocument": "library/equations-aux-q-differences/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./equations-aux-q-differences/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./equations-aux-q-differences/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/symmetry-04-00039-v3/blocks/prose-sec-039",
+  "kind": "prose",
+  "title": "Time Triplication",
+  "pageStart": 70,
+  "pageEnd": 71,
+  "text": "../sections/sec-039-e2-time-triplication.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./symmetry-04-00039-v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./symmetry-04-00039-v3/manifest.jsonld",
+  "provenance": "ingested"
+}

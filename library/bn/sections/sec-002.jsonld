@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/bn/sections/sec-002",
   "@type": [
     "doco:Section"
   ],
-  "title": "The complex hyperbolic case. In §10 we turn the case where H 1(X)q",
-  "pageStart": 5,
-  "pageEnd": 6,
+  "title": "Topological preliminaries",
+  "pageStart": 9,
+  "pageEnd": 14,
   "contains": [
     "library/bn/blocks/prose-sec-002"
   ],
-  "derivedFrom": "library/bn/manifest",
-  "sourceDocument": "library/bn/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./bn/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./bn/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/0510388v1/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/0510388v1/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "The vector triple product in R",
-  "pageStart": 38,
-  "pageEnd": 39,
-  "text": "../sections/sec-006-15-the-vector-triple-product-in-r.md",
-  "derivedFrom": "library/0510388v1/manifest",
-  "sourceDocument": "library/0510388v1/manifest",
+  "title": "Scalar-valued Green's operators in R3 , S3 and H3 .",
+  "pageStart": 15,
+  "pageEnd": 17,
+  "text": "../sections/sec-006-5-scalar-valued-greens-operators-in-r3-s3-and-h3.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./0510388v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./0510388v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -7,6 +7,10 @@
   "bytes": 269766,
   "pages": 9,
   "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -17,425 +21,304 @@
    "stamp_date": "19 Jul 2006"
   },
   "doi": null,
-  "title": "Knots in Condensed Matters Y. M. Cho \u2217",
-  "authors_raw": "Center for Theoretical Physics and School of Physics",
+  "title": "Knots in Condensed Matters",
+  "authors_raw": "Y. M. Cho\u2217",
   "title_lines": [
-   "Knots in Condensed Matters",
-   "Y. M. Cho \u2217"
+   "Knots in Condensed Matters"
   ],
   "abstract": null,
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20211110081634-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20211110081634-05'00'"
+  },
+  "title_raw": "Knots in Condensed Matters",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Knots in Condensed Matters",
+   "text": "Knots in Condensed Matters",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "INTRODUCTION",
+   "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "I"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "KNOT IN SKYRME THEOR Y",
+   "title": "Knot in Skyrme theory",
    "page": 1,
    "source": "inferred",
-   "number": "II"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "(\u2202\u00b5\u03c9)2 + (1 \u2212 cos \u03c9)(\u2202\u00b5 \u02c6n)2",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u2202\u00b5\u03c9\u2202\u03bd \u02c6n \u2212 \u2202\u03bd\u03c9\u2202\u00b5 \u02c6n)2",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(1 \u2212 cos \u03c9)\u2202\u00b5",
-   "page": 2,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "(1 \u2212 cos \u03c9) sin \u03c9(\u2202\u00b5 \u02c6n \u00d7 \u2202\u03bd \u02c6n)2 = 0,",
-   "page": 2,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "(1 \u2212 cos \u03c9)\u02c6n \u00d7 \u2202\u00b5 \u02c6n",
-   "page": 2,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "(1 \u2212 cos \u03c9)",
-   "page": 2,
-   "source": "inferred",
-   "number": "16"
-  },
-  {
-   "level": 1,
-   "title": "(1 \u2212 cos \u03c9)2(\u02c6n \u00b7\u2202\u00b5 \u02c6n \u00d7 \u2202\u03bd \u02c6n)\u2202\u03bd \u02c6n",
-   "page": 2,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "(\u2202\u00b5 \u02c6n)2 \u2212 \u03b1",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u2202\u00b5 \u02c6n \u00d7 \u2202\u03bd \u02c6n)2, (6)",
-   "page": 2,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "KNOT IN TWO-COMPONENT",
+   "title": "Knot in Two-component Bose-Einstein Condensates",
    "page": 3,
    "source": "inferred",
-   "number": "III"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "3"
   },
   {
    "level": 1,
-   "title": "(\u03c6\u2020\u03c6)2 \u2212 1",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u2202i\u03c1)2 + \u03c12",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u03c12 \u2212 \u03c12",
-   "page": 3,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "(\u03c12 \u2212 \u03c12",
-   "page": 4,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u2202\u00b5 \u02c6n)2,",
-   "page": 4,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "N\u00b5\u03bd, (20)",
-   "page": 4,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u2202i \u02c6n)2 + \u03bb",
-   "page": 4,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "(\u2202i \u02c6n)2\u03c1 = \u03bb",
-   "page": 4,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "KNOT IN TWO-GAP",
+   "title": "Knot in Two-gap Superconductors",
    "page": 6,
    "source": "inferred",
-   "number": "IV"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "6"
   },
   {
    "level": 1,
-   "title": "F 2",
-   "page": 6,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "(\u2202\u00b5 \u02c6n)2 + g2(A\u00b5 + \u02dcA\u00b5)2",
-   "page": 6,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "DISCUSSION",
+   "title": "Discussion",
    "page": 8,
    "source": "inferred",
-   "number": "V"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "8"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The baby skyrmion (dashed line) with m = 0, n = 1 and the helical baby skyrmion (solid line) with m = n = 1 in Skyrme theory. Here",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The non-Abelian vortex (dashed line) with m = 0, n = 1 and the helical vortex (solid line) with m = n = 1 in the gauge theory of two-component BEC. Here we have put",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The non-Abelian vortex (dashed line) with m = 0, n = 1 and the helical vortex (solid line) with m = n = 1 in two-gap superconductor. Here we have put g = 1, \u03bb = 2, k = \u03c10/10, and",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The regular helical magnetic vortex with m = n = 1 in two-gap superconductor. Here we have put g = 1, \u03bb = 2, k = 0.12\u03c10, A2(0) = 0.5, and",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-i-introduction",
-   "number": "I",
-   "title": "INTRODUCTION",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 3280,
-   "n_words": 521
+   "n_chars": 947,
+   "n_words": 141,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-ii-knot-in-skyrme-theor-y",
-   "number": "II",
-   "title": "KNOT IN SKYRME THEOR Y",
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 648,
-   "n_words": 138
+   "page_end": 1,
+   "n_chars": 1679,
+   "n_words": 252,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-2-\u00b5\u03c92-1-cos-\u03c9\u00b5-\u02c6n2",
+   "id": "sec-001-2-knot-in-skyrme-theory",
    "number": "2",
-   "title": "(\u2202\u00b5\u03c9)2 + (1 \u2212 cos \u03c9)(\u2202\u00b5 \u02c6n)2",
+   "title": "Knot in Skyrme theory",
    "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 20,
-   "n_words": 9
-  },
-  {
-   "id": "sec-003-2-\u00b5\u03c9\u03bd-\u02c6n-\u03bd\u03c9\u00b5-\u02c6n2",
-   "number": "2",
-   "title": "(\u2202\u00b5\u03c9\u2202\u03bd \u02c6n \u2212 \u2202\u03bd\u03c9\u2202\u00b5 \u02c6n)2",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 139,
-   "n_words": 37
-  },
-  {
-   "id": "sec-004-8-1-cos-\u03c9\u00b5",
-   "number": "8",
-   "title": "(1 \u2212 cos \u03c9)\u2202\u00b5",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 36,
-   "n_words": 11
-  },
-  {
-   "id": "sec-005-8-1-cos-\u03c9-sin-\u03c9\u00b5-\u02c6n-\u03bd-\u02c6n2-0",
-   "number": "8",
-   "title": "(1 \u2212 cos \u03c9) sin \u03c9(\u2202\u00b5 \u02c6n \u00d7 \u2202\u03bd \u02c6n)2 = 0,",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 7,
-   "n_words": 3
-  },
-  {
-   "id": "sec-006-4-1-cos-\u03c9\u02c6n-\u00b5-\u02c6n",
-   "number": "4",
-   "title": "(1 \u2212 cos \u03c9)\u02c6n \u00d7 \u2202\u00b5 \u02c6n",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 65,
-   "n_words": 21
-  },
-  {
-   "id": "sec-007-8-1-cos-\u03c92\u02c6n-\u00b5-\u02c6n-\u03bd-\u02c6n\u03bd-\u02c6n",
-   "number": "8",
-   "title": "(1 \u2212 cos \u03c9)2(\u02c6n \u00b7\u2202\u00b5 \u02c6n \u00d7 \u2202\u03bd \u02c6n)\u2202\u03bd \u02c6n",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 507,
-   "n_words": 115
-  },
-  {
-   "id": "sec-008-2-\u00b5-\u02c6n2-\u03b1",
-   "number": "2",
-   "title": "(\u2202\u00b5 \u02c6n)2 \u2212 \u03b1",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-009-4-\u00b5-\u02c6n-\u03bd-\u02c6n2-6",
-   "number": "4",
-   "title": "(\u2202\u00b5 \u02c6n \u00d7 \u2202\u03bd \u02c6n)2, (6)",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 3,
-   "n_chars": 2931,
-   "n_words": 579
-  },
-  {
-   "id": "sec-010-iii-knot-in-two-component",
-   "number": "III",
-   "title": "KNOT IN TWO-COMPONENT",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 1539,
-   "n_words": 247
-  },
-  {
-   "id": "sec-011-2-\u03c6\u03c62-1",
-   "number": "2",
-   "title": "(\u03c6\u2020\u03c6)2 \u2212 1",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 254,
-   "n_words": 57
-  },
-  {
-   "id": "sec-012-2-i\u03c12-\u03c12",
-   "number": "2",
-   "title": "(\u2202i\u03c1)2 + \u03c12",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 1482,
-   "n_words": 269
-  },
-  {
-   "id": "sec-013-8-\u03c12-\u03c12",
-   "number": "8",
-   "title": "(\u03c12 \u2212 \u03c12",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 4,
-   "n_chars": 474,
-   "n_words": 104
-  },
-  {
-   "id": "sec-014-4-\u00b5-\u02c6n2",
-   "number": "4",
-   "title": "(\u2202\u00b5 \u02c6n)2,",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 52,
-   "n_words": 16
-  },
-  {
-   "id": "sec-015-2-n\u00b5\u03bd-20",
-   "number": "2",
-   "title": "N\u00b5\u03bd, (20)",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 301,
-   "n_words": 60
-  },
-  {
-   "id": "sec-016-8-i-\u02c6n2-\u03bb",
-   "number": "8",
-   "title": "(\u2202i \u02c6n)2 + \u03bb",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 757,
-   "n_words": 171
-  },
-  {
-   "id": "sec-017-4-i-\u02c6n2\u03c1-\u03bb",
-   "number": "4",
-   "title": "(\u2202i \u02c6n)2\u03c1 = \u03bb",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 6,
-   "n_chars": 5751,
-   "n_words": 1135
-  },
-  {
-   "id": "sec-018-iv-knot-in-two-gap",
-   "number": "IV",
-   "title": "KNOT IN TWO-GAP",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 847,
-   "n_words": 135
-  },
-  {
-   "id": "sec-019-4-f-2",
-   "number": "4",
-   "title": "F 2",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 228,
-   "n_words": 61
-  },
-  {
-   "id": "sec-020-4-\u00b5-\u02c6n2-g2a\u00b5-a\u00b52",
-   "number": "4",
-   "title": "(\u2202\u00b5 \u02c6n)2 + g2(A\u00b5 + \u02dcA\u00b5)2",
-   "level": 1,
-   "page_start": 6,
+   "page_start": 1,
    "page_end": 8,
-   "n_chars": 8000,
-   "n_words": 1613
+   "n_chars": 25658,
+   "n_words": 4871,
+   "label_start": null,
+   "label_end": "8"
   },
   {
-   "id": "sec-021-v-discussion",
-   "number": "V",
-   "title": "DISCUSSION",
+   "id": "sec-002-5-discussion",
+   "number": "5",
+   "title": "Discussion",
    "level": 1,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 4054,
-   "n_words": 705
+   "n_chars": 4049,
+   "n_words": 700,
+   "label_start": "8",
+   "label_end": "9"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 24,
-  "sections": 22,
-  "chars_total": 31372,
+  "toc_entries": 5,
+  "toc_inferred_entries": 5,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 4,
+  "chars_total": 32333,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "cm9.tex",
    "tex_sections": 5,
-   "overlaid": 2,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -443,119 +326,31 @@
    },
    "sections": [
     {
-     "id": "sec-000-i-introduction",
-     "title": "INTRODUCTION",
-     "prose_ratio": 1.0,
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.643,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-ii-knot-in-skyrme-theor-y",
-     "title": "KNOT IN SKYRME THEOR Y",
-     "prose_ratio": 0.087,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-001-2-knot-in-skyrme-theory",
+     "title": "Knot in Skyrme theory",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-002-2-\u00b5\u03c92-1-cos-\u03c9\u00b5-\u02c6n2",
-     "title": "(\u2202\u00b5\u03c9)2 + (1 \u2212 cos \u03c9)(\u2202\u00b5 \u02c6n)2",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-003-2-\u00b5\u03c9\u03bd-\u02c6n-\u03bd\u03c9\u00b5-\u02c6n2",
-     "title": "(\u2202\u00b5\u03c9\u2202\u03bd \u02c6n \u2212 \u2202\u03bd\u03c9\u2202\u00b5 \u02c6n)2",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-004-8-1-cos-\u03c9\u00b5",
-     "title": "(1 \u2212 cos \u03c9)\u2202\u00b5",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-005-8-1-cos-\u03c9-sin-\u03c9\u00b5-\u02c6n-\u03bd-\u02c6n2-0",
-     "title": "(1 \u2212 cos \u03c9) sin \u03c9(\u2202\u00b5 \u02c6n \u00d7 \u2202\u03bd \u02c6n)2 = 0,",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-006-4-1-cos-\u03c9\u02c6n-\u00b5-\u02c6n",
-     "title": "(1 \u2212 cos \u03c9)\u02c6n \u00d7 \u2202\u00b5 \u02c6n",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-007-8-1-cos-\u03c92\u02c6n-\u00b5-\u02c6n-\u03bd-\u02c6n\u03bd-\u02c6n",
-     "title": "(1 \u2212 cos \u03c9)2(\u02c6n \u00b7\u2202\u00b5 \u02c6n \u00d7 \u2202\u03bd \u02c6n)\u2202\u03bd \u02c6n",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-008-2-\u00b5-\u02c6n2-\u03b1",
-     "title": "(\u2202\u00b5 \u02c6n)2 \u2212 \u03b1",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-009-4-\u00b5-\u02c6n-\u03bd-\u02c6n2-6",
-     "title": "(\u2202\u00b5 \u02c6n \u00d7 \u2202\u03bd \u02c6n)2, (6)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-010-iii-knot-in-two-component",
-     "title": "KNOT IN TWO-COMPONENT",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-011-2-\u03c6\u03c62-1",
-     "title": "(\u03c6\u2020\u03c6)2 \u2212 1",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-012-2-i\u03c12-\u03c12",
-     "title": "(\u2202i\u03c1)2 + \u03c12",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-013-8-\u03c12-\u03c12",
-     "title": "(\u03c12 \u2212 \u03c12",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-014-4-\u00b5-\u02c6n2",
-     "title": "(\u2202\u00b5 \u02c6n)2,",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-015-2-n\u00b5\u03bd-20",
-     "title": "N\u00b5\u03bd, (20)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-016-8-i-\u02c6n2-\u03bb",
-     "title": "(\u2202i \u02c6n)2 + \u03bb",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-017-4-i-\u02c6n2\u03c1-\u03bb",
-     "title": "(\u2202i \u02c6n)2\u03c1 = \u03bb",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-018-iv-knot-in-two-gap",
-     "title": "KNOT IN TWO-GAP",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-019-4-f-2",
-     "title": "F 2",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-020-4-\u00b5-\u02c6n2-g2a\u00b5-a\u00b52",
-     "title": "(\u2202\u00b5 \u02c6n)2 + g2(A\u00b5 + \u02dcA\u00b5)2",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-021-v-discussion",
-     "title": "DISCUSSION",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "id": "sec-002-5-discussion",
+     "title": "Discussion",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.765,
      "result": "overlaid",
      "converter": "latex"
     }

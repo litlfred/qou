@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-math-0203003v2
-doc_title: "On the quantum Kazhdan-Lusztig functor Pavel I. Etingof Adriano A. Moura etingof@math.mit.edu adrianoam@ime.unicamp.br Introduction One of the most exciting developments in represe"
+doc_title: "arXiv:math/0203003v2 [math.QA] 24 Apr 2002"
 section_id: sec-001-1-representations-of-quantum-dynamical-r-matrice
-section_title: "Representations of Quantum Dynamical R-Matrices with Spe c-"
+section_title: "Representations of Quantum Dynamical R-Matrices with Spectral Parameters"
 section_number: 1
 pages: 2-4
 source_pdf: 0203003v2.pdf
 source_sha256: 7579ae76959396b8
-doc_brief: "On the quantum Kazhdan-Lusztig functor Pavel I. Etingof Adriano A. Moura etingof@math.mit.edu adrianoam@ime.unicamp.br Introduction One of the most exciting developments in representation the ory in t"
+toc_source: inferred
 text_source: latex
-latex_prose_ratio: 0.991
-latex_coverage_ratio: 0.978
+latex_prose_ratio: 0.957
+latex_coverage_ratio: 0.966
 ---
 Let $\mathfrak{a}$ be a finite dimensional abelian Lie algebra over , $V$ be a finite dimensional semisimple $\mathfrak{a}$-module, and $\gamma \in \text{$\mathbb{C}$}^*$. The quantum dynamical Yang-Baxter equation with spectral parameter and step $\gamma$ is $$\begin{aligned}
 \notag

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/symmetry-04-00039-v3/sections/sec-038",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Introductory",
+  "pageStart": 68,
+  "pageEnd": 70,
+  "contains": [
+    "library/symmetry-04-00039-v3/blocks/prose-sec-038"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./symmetry-04-00039-v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./symmetry-04-00039-v3/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -6,7 +6,11 @@
   "sha256": "548a0eece08bd967c0f4f44754210f765a970010d14e5ad97917668c7d9476a5",
   "bytes": 190287,
   "pages": 19,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:24Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -16,100 +20,311 @@
    "stamp_date": "28 May 2006"
   },
   "doi": null,
-  "title": "Triply-graded link homology and Hochschild homology of Soergel bimodules Mikhail Khovanov",
-  "authors_raw": "October 14, 2005",
+  "title": "Triply-graded link homology and Hochschild homology of Soergel bimodules",
+  "authors_raw": "Mikhail Khovanov",
   "title_lines": [
    "Triply-graded link homology and Hochschild",
-   "homology of Soergel bimodules",
-   "Mikhail Khovanov"
+   "homology of Soergel bimodules"
   ],
-  "abstract": "We trade matrix factorizations and Koszul complexes for Hochschild homology of Soergel bimodules to modify the construction of triply- graded link homology and relate it to Kazhdan-Lusztig theor y. Hochschild homology. Let R be a k-algebra, where k is a \ufb01eld, Re = R \u2297k Rop be the enveloping algebra of R, and M be an R-bimodule (equivalently, a left Re-module). The functor of R-coinvariants associates to M the factorspace MR = M/[R, M], where [R, M] is the subspace of M spanned by vectors of the form rm \u2212 mr. We have MR = R \u2297Re M. The R-coinvariants functor is right exact and its i-th derived functor takes M to TorRe i (R, M). The latter space is also denoted HHi(R, M) and called the i-th Hochschild homology of M. The Hochschild homology of M is the direct sum HH(R, M) def = \u2295 i\u22650 HHi(R, M). To compute Hochschild homology, we choose a resolution of the R-bimodule R by projective R-bimodules . . . \u2212 \u2192P2 \u2212 \u2192P1 \u2212 \u2192P0 \u2212 \u2192R \u2212 \u21920, and tensor the resolution with M : . . . \u2212 \u2192P2 \u2297Re M \u2212 \u2192P1 \u2297Re M \u2212 \u2192P0 \u2297Re M \u2212 \u21920. Homology of this complex is isomorphic to the Hochschild hom ology of M. 1",
+  "abstract": "We trade matrix factorizations and Koszul complexes for Hochschild homology of Soergel bimodules to modify the construction of triply- graded link homology and relate it to Kazhdan-Lusztig theory. Hochschild homology. Let R be a k-algebra, where k is a \ufb01eld, Re = R \u2297k Rop be the enveloping algebra of R, and M be an R-bimodule (equivalently, a left Re-module). The functor of R-coinvariants associates to M the factorspace MR = M/[R, M], where [R, M] is the subspace of M spanned by vectors of the form rm \u2212mr. We have MR = R \u2297Re M. The R-coinvariants functor is right exact and its i-th derived functor takes M to TorRe i (R, M). The latter space is also denoted HHi(R, M) and called the i-th Hochschild homology of M. The Hochschild homology of M is the direct sum HH(R, M) def = \u2295 i\u22650HHi(R, M). To compute Hochschild homology, we choose a resolution of the R-bimodule R by projective R-bimodules . . . \u2212\u2192P2 \u2212\u2192P1 \u2212\u2192P0 \u2212\u2192R \u2212\u21920, and tensor the resolution with M : . . . \u2212\u2192P2 \u2297Re M \u2212\u2192P1 \u2297Re M \u2212\u2192P0 \u2297Re M \u2212\u21920. Homology of this complex is isomorphic to the Hochschild homology of M. 1",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript SVN PRE-RELEASE 8.62",
-   "CreationDate": "D:20080203121924-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20080203121924-05'00'"
+  },
+  "title_raw": "Triply-graded link homology and Hochschild homology of Soergel bimodules",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Triply-graded link homology and Hochschild homology of Soergel bimodules",
+   "text": "Triply-graded link homology and Hochschild homology of Soergel bimodules",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "Z-",
-   "page": 7,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "R\u2032 over the subalgebra R\u2032",
-   "page": 8,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
    "title": "References",
    "page": 17,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "17"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "From left to right: R-bimodules R, M, N \u2297R M; Hochschild homology of M",
+   "page": 3,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "To left and right pictures we assign R-bimodules R and Bi, respectively",
+   "page": 6,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "To the left picture we assign R3-bimodule B2 \u2297B1 \u2297B2; to the right picture\u2013the Hochschild homology of this bimodule",
+   "page": 6,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "A resolution D of a braid\u2019s closure",
+   "page": 9,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 7,
-   "n_chars": 10227,
-   "n_words": 2033
-  },
-  {
-   "id": "sec-001-2-z",
-   "number": "2",
-   "title": "Z-",
-   "level": 1,
-   "page_start": 7,
-   "page_end": 8,
-   "n_chars": 2092,
-   "n_words": 403
-  },
-  {
-   "id": "sec-002-1-r-over-the-subalgebra-r",
-   "number": "1",
-   "title": "R\u2032 over the subalgebra R\u2032",
-   "level": 1,
-   "page_start": 8,
    "page_end": 17,
-   "n_chars": 18427,
-   "n_words": 3591
+   "n_chars": 30494,
+   "n_words": 5607,
+   "label_start": "1",
+   "label_end": "17"
   },
   {
-   "id": "sec-003-references",
+   "id": "sec-000-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 3942,
-   "n_words": 575
+   "n_chars": 3914,
+   "n_words": 547,
+   "label_start": "17",
+   "label_end": "19"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 4,
-  "sections": 4,
-  "chars_total": 34688
+  "toc_entries": 1,
+  "toc_inferred_entries": 1,
+  "toc_inferred_mean_confidence": 0.7,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 2,
+  "chars_total": 34408
  }
 }

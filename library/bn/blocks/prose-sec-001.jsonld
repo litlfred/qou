@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/bn/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/bn/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "The ﬁnite case. Let q be a primitive dth root of unity. In §8 we show",
-  "pageStart": 4,
-  "pageEnd": 5,
-  "text": "../sections/sec-001-1-the-ﬁnite-case-let-q-be-a-primitive-dth-root-o.md",
-  "derivedFrom": "library/bn/manifest",
-  "sourceDocument": "library/bn/manifest",
+  "title": "Introduction",
+  "pageStart": 1,
+  "pageEnd": 9,
+  "text": "../sections/sec-001-1-introduction.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./bn/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./bn/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -9,20 +9,15 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1106.2975v1",
+  "title": "The Polyanalytic Ginibre Ensembles",
   "contains": [
+    "library/arxiv-1106.2975v1/sections/sec-front-matter",
     "library/arxiv-1106.2975v1/sections/sec-000",
     "library/arxiv-1106.2975v1/sections/sec-001",
     "library/arxiv-1106.2975v1/sections/sec-002",
     "library/arxiv-1106.2975v1/sections/sec-003",
     "library/arxiv-1106.2975v1/sections/sec-004",
-    "library/arxiv-1106.2975v1/sections/sec-005",
-    "library/arxiv-1106.2975v1/sections/sec-006",
-    "library/arxiv-1106.2975v1/sections/sec-007",
-    "library/arxiv-1106.2975v1/sections/sec-008",
-    "library/arxiv-1106.2975v1/sections/sec-009",
-    "library/arxiv-1106.2975v1/sections/sec-010",
-    "library/arxiv-1106.2975v1/sections/sec-011"
+    "library/arxiv-1106.2975v1/sections/sec-005"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -35,7 +30,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1106.2975v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1106.2975v1.pdf",
     "source_sha256": "7e966c7392b70ae0c617e3ff2a5b4caaf95f1bfc0c887dd3476083d4fcc43c5d",
     "pages": 31,

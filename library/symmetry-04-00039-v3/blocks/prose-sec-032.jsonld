@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/symmetry-04-00039-v3/blocks/prose-sec-032",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/symmetry-04-00039-v3/blocks/prose-sec-032",
   "kind": "prose",
-  "title": "L = ( / ) ( / ) cos dA sA w r V   (A-11)",
-  "pageStart": 59,
-  "pageEnd": 72,
-  "text": "../sections/sec-032-2-l-cos-da-sa-w-r-v-a-11.md",
-  "derivedFrom": "library/symmetry-04-00039-v3/manifest",
-  "sourceDocument": "library/symmetry-04-00039-v3/manifest",
+  "title": "Contingency in Second Order Fusion",
+  "pageStart": 61,
+  "pageEnd": 62,
+  "text": "../sections/sec-032-b-contingency-in-second-order-fusion.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./symmetry-04-00039-v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./symmetry-04-00039-v3/manifest.jsonld",
   "provenance": "ingested"
 }

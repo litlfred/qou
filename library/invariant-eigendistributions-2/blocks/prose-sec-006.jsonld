@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/invariant-eigendistributions-2/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/invariant-eigendistributions-2/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "Asymptotics at zero",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-006-7-asymptotics-at-zero.md",
-  "derivedFrom": "library/invariant-eigendistributions-2/manifest",
-  "sourceDocument": "library/invariant-eigendistributions-2/manifest",
+  "title": "Coherent families of eigendistributions.",
+  "pageStart": 7,
+  "pageEnd": 10,
+  "text": "../sections/sec-006-5-coherent-families-of-eigendistributions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./invariant-eigendistributions-2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./invariant-eigendistributions-2/manifest.jsonld",
   "provenance": "ingested"
 }

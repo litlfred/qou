@@ -5,21 +5,34 @@
   "file": "ant-v14-n7-s-p04.pdf",
   "sha256": "6abd838a4c933311f3ffd0d14c21b1ba88152e7572278b09d33671b0ae949a9d",
   "bytes": 312221,
-  "pages": 10
+  "pages": 10,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:18Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.2140/ant.2020.14.1791",
   "title": "Elliptic curves over totally real cubic fields are modular",
-  "authors_raw": "Maarten Derickx , Filip Najman and Samir Siksek",
+  "authors_raw": "Maarten Derickx, Filip Najman and Samir Siksek",
+  "title_lines": [
+   "Elliptic curves over totally real cubic fields are modular"
+  ],
   "abstract": null,
   "docinfo": {
    "Producer": "pypdf"
   },
-  "title_prev": "Elliptic curves over totally real cubic ﬁelds are modular",
-  "title_lines": [
-   "Elliptic curves over totally real cubic fields are modular"
-  ]
+  "title_raw": "Elliptic curves over totally real cubic fields are modular",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "msp",
+   "text": "Elliptic curves over totally real cubic fields are modular",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -27,74 +40,195 @@
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "1791"
   },
   {
    "level": 1,
    "title": "Images mod 3, 5, 7 and modularity",
    "page": 2,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1792"
   },
   {
    "level": 1,
    "title": "Modular curves",
    "page": 3,
    "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Modularity of elliptic curves over Q(ζ7)+",
-   "page": 4,
-   "source": "inferred",
-   "number": "4"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1793"
   },
   {
    "level": 1,
    "title": "Proof of Theorem 6",
    "page": 4,
    "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "The modular curve X(b5, ns7)",
-   "page": 5,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "Namely, one given by the pencil of quadrics going",
-   "page": 7,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "This means that there is only one Q-rational g2",
-   "page": 7,
-   "source": "inferred",
-   "number": "4"
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1794"
   },
   {
    "level": 1,
    "title": "Proof of Theorem 7",
    "page": 8,
    "source": "inferred",
-   "number": "7"
+   "number": "7",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1798"
   },
   {
    "level": 1,
    "title": "References",
    "page": 9,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "1799"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1791",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1792",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "1793",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "1794",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "1795",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "1796",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "1797",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "1798",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "1799",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "1800",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 466,
+   "n_words": 70,
+   "label_start": "1791",
+   "label_end": "1791"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -102,8 +236,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3251,
-   "n_words": 529
+   "n_chars": 3252,
+   "n_words": 530,
+   "label_start": "1791",
+   "label_end": "1792"
   },
   {
    "id": "sec-001-2-images-mod-3-5-7-and-modularity",
@@ -113,7 +249,9 @@
    "page_start": 2,
    "page_end": 3,
    "n_chars": 1782,
-   "n_words": 339
+   "n_words": 339,
+   "label_start": "1792",
+   "label_end": "1793"
   },
   {
    "id": "sec-002-3-modular-curves",
@@ -122,85 +260,63 @@
    "level": 1,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 3925,
-   "n_words": 726
+   "n_chars": 4788,
+   "n_words": 911,
+   "label_start": "1793",
+   "label_end": "1794"
   },
   {
-   "id": "sec-003-4-modularity-of-elliptic-curves-over-qζ7",
-   "number": "4",
-   "title": "Modularity of elliptic curves over Q(ζ7)+",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 800,
-   "n_words": 161
-  },
-  {
-   "id": "sec-004-5-proof-of-theorem-6",
+   "id": "sec-003-5-proof-of-theorem-6",
    "number": "5",
    "title": "Proof of Theorem 6",
    "level": 1,
    "page_start": 4,
-   "page_end": 5,
-   "n_chars": 2085,
-   "n_words": 395
-  },
-  {
-   "id": "sec-005-6-the-modular-curve-xb5-ns7",
-   "number": "6",
-   "title": "The modular curve X(b5, ns7)",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 7,
-   "n_chars": 5069,
-   "n_words": 919
-  },
-  {
-   "id": "sec-006-4-namely-one-given-by-the-pencil-of-quadrics-goi",
-   "number": "4",
-   "title": "Namely, one given by the pencil of quadrics going",
-   "level": 1,
-   "page_start": 7,
-   "page_end": 7,
-   "n_chars": 224,
-   "n_words": 48
-  },
-  {
-   "id": "sec-007-4-this-means-that-there-is-only-one-q-rational-g",
-   "number": "4",
-   "title": "This means that there is only one Q-rational g2",
-   "level": 1,
-   "page_start": 7,
    "page_end": 8,
-   "n_chars": 1613,
-   "n_words": 277
+   "n_chars": 9337,
+   "n_words": 1872,
+   "label_start": "1794",
+   "label_end": "1798"
   },
   {
-   "id": "sec-008-7-proof-of-theorem-7",
+   "id": "sec-004-7-proof-of-theorem-7",
    "number": "7",
    "title": "Proof of Theorem 7",
    "level": 1,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 2500,
-   "n_words": 457
+   "n_chars": 2556,
+   "n_words": 513,
+   "label_start": "1798",
+   "label_end": "1799"
   },
   {
-   "id": "sec-009-references",
+   "id": "sec-005-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 4471,
-   "n_words": 660
+   "n_chars": 4475,
+   "n_words": 664,
+   "label_start": "1799",
+   "label_end": "1800"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 10,
-  "sections": 10,
-  "chars_total": 25720
+  "toc_entries": 6,
+  "toc_inferred_entries": 6,
+  "toc_inferred_mean_confidence": 0.75,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 26656
  }
 }

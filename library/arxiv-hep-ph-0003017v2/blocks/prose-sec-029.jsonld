@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-029",
+  "kind": "prose",
+  "title": "QCD PARTITION FUNCTION AT NONZERO CHEMICAL POTENTIAL",
+  "pageStart": 41,
+  "pageEnd": 41,
+  "text": "../sections/sec-029-621-qcd-partition-function-at-nonzero-chemical-p.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-ph-0003017v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-ph-0003017v2/manifest.jsonld",
+  "provenance": "ingested"
+}

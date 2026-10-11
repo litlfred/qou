@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/equations-aux-q-differences/sections/sec-007",
   "@type": [
     "doco:Section"
   ],
-  "title": "Modules aux q-diﬀ´erences. Les solutions du syst` eme (2.3.1) sont",
-  "pageStart": 7,
-  "pageEnd": 7,
+  "title": "Sommabilit´e des solutions formelles d’´equations aux q-diﬀ´erences et classiﬁcation locale des syst`emes irr´eguliers",
+  "pageStart": 18,
+  "pageEnd": 19,
   "contains": [
     "library/equations-aux-q-differences/blocks/prose-sec-007"
   ],
-  "derivedFrom": "library/equations-aux-q-differences/manifest",
-  "sourceDocument": "library/equations-aux-q-differences/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./equations-aux-q-differences/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./equations-aux-q-differences/manifest.jsonld",
   "provenance": "ingested"
 }

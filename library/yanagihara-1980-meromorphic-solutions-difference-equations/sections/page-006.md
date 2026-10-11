@@ -1,0 +1,56 @@
+---
+doc_id: yanagihara-1980-meromorphic-solutions-difference-equations
+doc_title: "Meromorphic Solutions of Some Difference Equations"
+section_id: page-006
+section_title: "Page 6"
+section_number: null
+pages: 6-6
+source_pdf: yanagihara-1980-meromorphic-solutions-difference-equations.pdf
+source_sha256: c5e4a39ec3d43d8f
+toc_source: undetermined
+---
+314 N. YANAGIHARA
+
+§3. Existence of meromorphic solutions
+
+In the equation (1.3), we can suppose that pg, using a linear transformation
+if necessary.
+
+Lemma 4 (Julia). Let R(w) be such that p=q=>2. Then, either
+(a) there is a number 2 such that
+
+(3.1) A=RQ), |R’@|>1,
+or (b) there is a number 2 such that
+(3.2) 4=R(Q), R”M=1.
+
+For the proof, see [6, Ourves, p. 158 and p. 317].
+Now, let 2 be a number for which (3.2) holds. Putting
+
+(3.3) y(x)=2+ 1/w(x),
+we obtain
+
+, _ _ Rm) —m i
+3.3") w(r+ =w((1 me e+ ).
+
+where m=1 if R’(2)40; R™(2)=0 (lL<k<m) and R'™*(2)40 if R’(2)=0.
+Further, put
+
+G4) w= 6)" / |~ecepr®”}:
+
+we get
+
+(3.5) ot D=o@)+1+ 3) boty.
+We write
+
+(3.6) F@aztl+ 3. be =2414 6).
+
+Theorem 5. (i) Let 2 be a number for which (3.1) holds. Then (1.3) has a
+meromorphic solution y=a,(x) such that
+
+o{x)=A+ >) Kel", e*= RA),
+j=l
+in Dio, )= (05 |e*1< Leh
+
+GB.7)
+
+in which «,0 can be arbitrarily prescribed, and xj, j =2, are determined uniquely as a

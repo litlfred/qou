@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-000",
   "kind": "prose",
-  "title": "Physics Division, Argonne National Laboratory, Lemont, IL 60439, USA",
+  "title": "Isomers",
   "pageStart": 2,
   "pageEnd": 2,
-  "text": "../sections/sec-000-1-physics-division-argonne-national-laboratory-l.md",
-  "derivedFrom": "library/kondev-2021-chinese-phys-c-45-030001/manifest",
-  "sourceDocument": "library/kondev-2021-chinese-phys-c-45-030001/manifest",
+  "text": "../sections/sec-000-22-isomers.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./kondev-2021-chinese-phys-c-45-030001/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./kondev-2021-chinese-phys-c-45-030001/manifest.jsonld",
   "provenance": "ingested"
 }

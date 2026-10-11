@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/invariant-eigendistributions-2/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/invariant-eigendistributions-2/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "Character contours and characteristic cycles",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-005-6-character-contours-and-characteristic-cycles.md",
-  "derivedFrom": "library/invariant-eigendistributions-2/manifest",
-  "sourceDocument": "library/invariant-eigendistributions-2/manifest",
+  "title": "Springer Theory",
+  "pageStart": 6,
+  "pageEnd": 7,
+  "text": "../sections/sec-005-4-springer-theory.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./invariant-eigendistributions-2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./invariant-eigendistributions-2/manifest.jsonld",
   "provenance": "ingested"
 }

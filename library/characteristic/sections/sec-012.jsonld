@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/characteristic/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Higher rank groups",
+  "pageStart": 11,
+  "pageEnd": 12,
+  "contains": [
+    "library/characteristic/blocks/prose-sec-012"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./characteristic/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./characteristic/manifest.jsonld",
+  "provenance": "ingested"
+}

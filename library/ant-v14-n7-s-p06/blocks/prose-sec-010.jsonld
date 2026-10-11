@@ -1,16 +1,18 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s-p06/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s-p06/blocks/prose-sec-010",
+  "@type": [],
   "kind": "prose",
-  "title": "Taking real parts",
-  "pageStart": 22,
-  "pageEnd": 29,
-  "text": "../sections/sec-010-2-taking-real-parts.md",
-  "derivedFrom": "library/ant-v14-n7-s-p06/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p06/manifest",
+  "title": "Proof of Theorem 1.6",
+  "pageStart": 37,
+  "pageEnd": 39,
+  "text": "../sections/sec-010-10-proof-of-theorem-16.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p06/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p06/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-0707.2003v2
-doc_title: "A geometric model for Hochschild homology of Soergel bimodules BEN WEBSTER GEORDIE WILLIAMSON School of Mathematics Mathematisches Institut Institute for Advanced Study der Univers"
+doc_title: "A geometric model for Hochschild homology of Soergel bimodules Introduction"
 section_id: sec-004-4-hochschild-homology-and-dg-algebras
 section_title: "Hochschild homology and dg-algebras"
 section_number: 4
 pages: 12-14
 source_pdf: 0707.2003v2.pdf
 source_sha256: 0b8fe37aabeee412
-doc_brief: "A geometric model for Hochschild homology of Soergel bimodules BEN WEBSTER GEORDIE WILLIAMSON School of Mathematics Mathematisches Institut Institute for Advanced Study der Universität Freiburg — An"
+toc_source: inferred
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.983
+latex_prose_ratio: 0.99
+latex_coverage_ratio: 0.961
 ---
 []{#sec:hochsch-homol-dg label="sec:hochsch-homol-dg"}
 

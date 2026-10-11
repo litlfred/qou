@@ -1,19 +1,19 @@
 ---
 doc_id: kmj-48-2-255
-doc_title: "A formula for the colored Jones polynomial of 2-bridge knots"
+doc_title: "A Formula for the Colored Jones Polynomial of 2-Bridge Knots"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-3
 source_pdf: KMJ-48-2-255.pdf
 source_sha256: 720279042c6d762b
-doc_brief: "A formula for the colored Jones polynomial of 2-bridge knots — We derive a formula for the colored Jones polynomial of 2-bridge knots."
+toc_source: inferred
 ---
 For a positive integer n, the n-colored Jones polynomial is a Laurent polyno-
 mial invariant in q of a knot colored with n-dimensional irreducible representation
 of Uq(sl2). We denote by JK(n) the n-colored Jones polynomial of a knot K, which
 is normalized so that the colored Jones polynomial of the trivial knot is 1. Then,
-JK (2) coincides with the original Jones polynomial of a knot K deﬁned by V. F.
+JK(2) coincides with the original Jones polynomial of a knot K deﬁned by V. F.
 R. Jones [3]. K. Habiro [2] and T. T. Q. Le gave explicit formulas for the n-colored
 Jones polynomials of the trefoil knot and the ﬁgure eight knot. Moreover, a formula
 for the colored Jones polynomials of twist knots was given by G. Masbaum [7], using
@@ -22,12 +22,13 @@ In this paper, we give a formula for the colored Jones polynomial of the 2-bridg
 knot S(p, t), using a formula obtained by R. Lawrence and O. Ron in [5]. As an
 application of our formula, we obtain a relation between the degree of the colored
 Jones polynomial and the crossing number for the 2-bridge knots S(4p + 1, 2p + 1)
-and S(4p − 1, 2p − 1).
+and S(4p −1, 2p −1).
 Let p and t be coprime odd integers with p > t > 1. We denote by S(p, t)
-the 2-bridge knot of type ( p, t) using Schubert notation. We explain how to draw
-a diagram of the 2-bridge knot S(p, t)(see [1], [4]). Drawn two disjoint vertical
-segments w1 = AB and w2 = CD , divide each segments into p segments, and
-number from 0 to 2 p − 1 in both sides of the dividing points of each segment as
+the 2-bridge knot of type (p, t) using Schubert notation. We explain how to draw
+a diagram of the 2-bridge knot S(p, t)(see [1], [4]).
+Drawn two disjoint vertical
+segments w1 = AB and w2 = CD, divide each segments into p segments, and
+number from 0 to 2p −1 in both sides of the dividing points of each segment as
 pictured in Figure 1. The points B and D are numbered 0, and the points A and
 C numbered p. Next draw two disjoint simple curves v1 from B to C and v2 from
 D to A, which underpass the segments w1 and w2. Along the curve v1, one starts
@@ -36,12 +37,13 @@ Received June 29, 2006.
 Key words and phrases: Knots, Jones polynomial.
 This research is partially supported by Grant-in-Aid for Scientiﬁc Research (C)
 255
-256 Toshie Takata
-from 0, i.e. B of the segments w1, and meets w2 at t, and next meets w1 at 2 t,
-and then meets w2 at 3 t. This is to be repeated until one reaches p (= C) of w2.
+256
+Toshie Takata
+from 0, i.e. B of the segments w1, and meets w2 at t, and next meets w1 at 2t,
+and then meets w2 at 3t. This is to be repeated until one reaches p (= C) of w2.
 Similarly, along the curve v2, one starts from 0(= D) of w2, and meets w1 at t,
-and next meets w2 at 2 t, and then meets w1 at 3 t. This is to be repeated until one
-reaches p (= A) of w1. Here we take it mod 2 p. This regular projection is called
+and next meets w2 at 2t, and then meets w1 at 3t. This is to be repeated until one
+reaches p (= A) of w1. Here we take it mod 2p. This regular projection is called
 Schubert’s normal form. For example, Schubert’s normal form for the S(5, 3) (the
 ﬁgure eight knot) is as in Figure 1.
 0
@@ -70,48 +72,149 @@ B
 C
 D
 Figure 1.
-We will prepare with some notations. Let us put p′ = p − 1
-2 . For 1 ≤ j ≤ p′,
-deﬁne integers r(j) so that r(j) ≡ (2j − 1)t mod 2 p and −p < r (j) < p . We put
-σj := r(j)
-|r(j)| , r′(j) := |r(j)| + 1
-2 and ir′(j) = j. Note that σj = ( −1)[(2j−1)t/p],
-where [ x] denotes the greatest integer less than or equal to x. For an integer i,
-sign(i) is the sign of i. We put m = (m1, · · · , mp′ ), m0 = 0. We will also deﬁne for
+We will prepare with some notations. Let us put p′ = p −1
+2
+. For 1 ≤j ≤p′,
+deﬁne integers r(j) so that r(j) ≡(2j −1)t mod 2p and −p < r(j) < p. We put
+σj :=
+r(j)
+|r(j)|, r′(j) := |r(j)| + 1
+2
+and ir′(j) = j. Note that σj = (−1)[(2j−1)t/p],
+where [x] denotes the greatest integer less than or equal to x. For an integer i,
+sign(i) is the sign of i. We put m = (m1, · · · , mp′), m0 = 0. We will also deﬁne for
 σ = ±1
-(qσ)k = (qσ − 1)((qσ)2 − 1) · · · ((qσ)k − 1),
-{
+(qσ)k = (qσ −1)((qσ)2 −1) · · · ((qσ)k −1),
+½
 n
 m
-}
+¾
 σ
-= (qσ)n
+=
+(qσ)n
 (qσ)m(qσ)n−m
 .
 We obtain
 Theorem 1. A formula for the n-colored Jones polynomial of the 2-bridge knot
-A Formula for the Colored Jones Polynomial of 2-Bridge Knots 257
+A Formula for the Colored Jones Polynomial of 2-Bridge Knots
+257
 S(p, t) is given by
-(1) JS(p,t)(n) =
-∑
-0≤mj−1≤mj ≤n−1
+(1)
+JS(p,t)(n) =
+X
+0≤mj−1≤mj≤n−1
 qa(m)n+b1(m)+b2(m) X(m),
 where
-a(m) = − 1
+a(m)
+=
+−1
 2
 p′
-∑
+X
 j=1
 
 
 p′
-∑
+X
 k=r′(j)
-(σik + σip′+1−k )
+(σik + σip′+1−k)
 
- (mj − mj−1) − 1
+(mj −mj−1) −1
 2
-p′−1∑
+p′−1
+X
 j=1
 (σj+1 + σp′+1−j)mj
-− 1
+−1
+2(σp′ + 1)mp′ −
+p′
+X
+j=1
+σj,
+b1(m)
+=
+−a(m)
++
+X
+1≤k≤p−t
+2
+1 −σik
+2
+mik−1 −
+X
+p−t
+2 +1≤k≤p′
+mik−1 +
+X
+p−t
+2 +1≤k≤p′
+1 + σik
+2
+mik
+−(1 + σp′)mp′ + 1
+2
+p′−1
+X
+j=1
+(σj+1 −σj)mj
+−1
+2
+X
+1≤k≤p′−1
+X
+k+1≤k′≤p′
+1 + sign(ik −ik′)
+2
+(σik −σik′)(mik −mik−1)(mik′ −mik′−1)
++
+p′
+X
+j=1
+σj(
+r′(j)
+X
+k=1
+(mik −mik−1))mj−1,
+b2(m)
+=
+
+
+
+
+
+P
+p−t
+2 +1≤k≤t−1
+2
+1 + σik
+2
+mik−1
+if
+p < 2t,
+−P
+t+1
+2 +1≤k≤p−t
+2
+1 + σik
+2
+mik−1
+if
+p > 2t,
+X(m)
+=
+(¯qσp′)n−1(¯qσp′)mp′
+(¯qσp′)n−mp′−1
+
+
+p′
+Y
+j=1
+(q−σj)mj−mj−1
+
+
+−1
+(−1)mp′.
+The plan of the present paper is as follows. In section 2, we review Lawrence
+and Ron’s result and give a proof for Theorem 1. In section 3, we get a more explicit
+formula for the colored Jones polynomial of twist knots and estimate the maximal
+and minimal degrees.

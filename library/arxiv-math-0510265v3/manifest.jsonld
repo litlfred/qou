@@ -9,12 +9,10 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0510265v3",
+  "title": "Triply-graded link homology and Hochschild homology of Soergel bimodules",
   "contains": [
-    "library/arxiv-math-0510265v3/sections/sec-000",
-    "library/arxiv-math-0510265v3/sections/sec-001",
-    "library/arxiv-math-0510265v3/sections/sec-002",
-    "library/arxiv-math-0510265v3/sections/sec-003"
+    "library/arxiv-math-0510265v3/sections/sec-front-matter",
+    "library/arxiv-math-0510265v3/sections/sec-000"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -32,7 +30,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0510265v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0510265v3.pdf",
     "source_sha256": "548a0eece08bd967c0f4f44754210f765a970010d14e5ad97917668c7d9476a5",
     "pages": 19,

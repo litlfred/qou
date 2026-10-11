@@ -1,23 +1,30 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Jump to Bibliography by Stavros Garoufalidis and Don Zagier Published: 2023",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./celebratio-mathematica-neumann-hyperbolic-3-manifolds/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "celebratio-mathematica-neumann-hyperbolic-3-manifolds",
   "contains": [
+    "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/sections/sec-front-matter",
     "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/sections/sec-000",
     "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/sections/sec-001",
     "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/sections/sec-002",
     "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/sections/sec-003",
     "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/sections/sec-004",
     "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/sections/sec-005",
-    "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/sections/sec-006",
-    "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/sections/sec-007"
+    "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/sections/sec-006"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "celebratio-mathematica-neumann-hyperbolic-3-manifolds",
+    "title_source": "slug",
     "source_file": "Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds.pdf",
     "source_sha256": "9e541693c60cbd3ffbc5ce0e1e8fe5c84bf8c7a22d8a74faec8173bebda8f34b",
     "pages": 27,

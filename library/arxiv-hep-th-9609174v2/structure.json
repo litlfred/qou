@@ -8,6 +8,9 @@
   "pages": 18,
   "text_source": "embedded",
   "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -18,7 +21,7 @@
    "stamp_date": "23 Sep 1996"
   },
   "doi": null,
-  "title": "Universality of random matrices in the microscopic limit and the Dirac operator spectrum",
+  "title": "arXiv:hep-th/9609174v2 23 Sep 1996",
   "authors_raw": "G. Akemann\u2217, P. H. Damgaard\u2020, U. Magnea\u2021 and S. Nishigaki\u00a7",
   "title_lines": [
    "Universality of random matrices in the microscopic limit",
@@ -30,211 +33,422 @@
    "Producer": "GPL Ghostscript 10.01.2",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20241126155412-05'00'"
+  },
+  "title_raw": "Universality of random matrices in the microscopic limit and the Dirac operator spectrum",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-th/9609174v2 23 Sep 1996",
+   "heading": "Universality of random matrices in the microscopic limit and the Dirac operator spectrum",
+   "text": "Universality of random matrices in the microscopic limit and the Dirac operator spectrum",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
    "title": "Introduction",
    "page": 2,
    "source": "inferred",
-   "number": null
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "1"
   },
   {
    "level": 1,
-   "title": "(V (\u03bb)+V (\u00b5)) 1",
+   "title": "Chiral unitary ensembles",
+   "page": 4,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "3"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotics of orthogonal polynomials",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "Universal correlations",
    "page": 8,
    "source": "inferred",
-   "number": "2"
+   "number": "2.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "7"
   },
   {
    "level": 1,
-   "title": "(u(t)x)",
+   "title": "Unitary ensembles",
    "page": 11,
    "source": "inferred",
-   "number": "2"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "10"
   },
   {
-   "level": 1,
-   "title": "(ux)",
-   "page": 13,
+   "level": 2,
+   "title": "Asymptotics of orthogonal polynomials",
+   "page": 11,
    "source": "inferred",
-   "number": "2"
+   "number": "3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "10"
   },
   {
-   "level": 1,
-   "title": "(V (\u03bb2)+V (\u00b52)) 1",
+   "level": 2,
+   "title": "Universal correlations",
    "page": 14,
    "source": "inferred",
-   "number": "2"
+   "number": "3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "13"
   },
   {
    "level": 1,
-   "title": "(ux)J\u03b1\u22121",
+   "title": "Conclusion and speculation",
    "page": 15,
    "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(u\u2032x) = 1",
-   "page": 15,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "J\u03b1\u22123",
-   "page": 15,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Acknowledgements",
-   "page": 17,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 18,
-   "source": "inferred",
-   "number": null
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "14"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 576,
-   "n_words": 80
+   "n_chars": 1008,
+   "n_words": 136,
+   "label_start": null,
+   "label_end": "1"
   },
   {
-   "id": "sec-001-introduction",
-   "number": null,
+   "id": "sec-000-1-introduction",
+   "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
-   "page_end": 8,
-   "n_chars": 14963,
-   "n_words": 2861
+   "page_end": 4,
+   "n_chars": 6099,
+   "n_words": 1001,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
-   "id": "sec-002-2-v-\u03bbv-\u00b5-1",
+   "id": "sec-001-2-chiral-unitary-ensembles",
    "number": "2",
-   "title": "(V (\u03bb)+V (\u00b5)) 1",
+   "title": "Chiral unitary ensembles",
    "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2856,
+   "n_words": 593,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-002-21-asymptotics-of-orthogonal-polynomials",
+   "number": "2.1",
+   "title": "Asymptotics of orthogonal polynomials",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 5510,
+   "n_words": 1189,
+   "label_start": "4",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-003-22-universal-correlations",
+   "number": "2.2",
+   "title": "Universal correlations",
+   "level": 2,
    "page_start": 8,
    "page_end": 11,
-   "n_chars": 5363,
-   "n_words": 1099
+   "n_chars": 4411,
+   "n_words": 896,
+   "label_start": "7",
+   "label_end": "10"
   },
   {
-   "id": "sec-003-2-utx",
-   "number": "2",
-   "title": "(u(t)x)",
+   "id": "sec-004-3-unitary-ensembles",
+   "number": "3",
+   "title": "Unitary ensembles",
    "level": 1,
    "page_start": 11,
-   "page_end": 13,
-   "n_chars": 2325,
-   "n_words": 489
+   "page_end": 11,
+   "n_chars": 795,
+   "n_words": 159,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
-   "id": "sec-004-2-ux",
-   "number": "2",
-   "title": "(ux)",
-   "level": 1,
-   "page_start": 13,
+   "id": "sec-005-31-asymptotics-of-orthogonal-polynomials",
+   "number": "3.1",
+   "title": "Asymptotics of orthogonal polynomials",
+   "level": 2,
+   "page_start": 11,
    "page_end": 14,
-   "n_chars": 2158,
-   "n_words": 446
+   "n_chars": 4878,
+   "n_words": 1023,
+   "label_start": "10",
+   "label_end": "13"
   },
   {
-   "id": "sec-005-2-v-\u03bb2v-\u00b52-1",
-   "number": "2",
-   "title": "(V (\u03bb2)+V (\u00b52)) 1",
-   "level": 1,
+   "id": "sec-006-32-universal-correlations",
+   "number": "3.2",
+   "title": "Universal correlations",
+   "level": 2,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 578,
-   "n_words": 128
+   "n_chars": 1903,
+   "n_words": 424,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
-   "id": "sec-006-2-uxj\u03b11",
-   "number": "2",
-   "title": "(ux)J\u03b1\u22121",
+   "id": "sec-007-4-conclusion-and-speculation",
+   "number": "4",
+   "title": "Conclusion and speculation",
    "level": 1,
    "page_start": 15,
-   "page_end": 15,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-007-2-ux-1",
-   "number": "2",
-   "title": "(u\u2032x) = 1",
-   "level": 1,
-   "page_start": 15,
-   "page_end": 15,
-   "n_chars": 1046,
-   "n_words": 237
-  },
-  {
-   "id": "sec-008-2-j\u03b13",
-   "number": "2",
-   "title": "J\u03b1\u22123",
-   "level": 1,
-   "page_start": 15,
-   "page_end": 17,
-   "n_chars": 4001,
-   "n_words": 683
-  },
-  {
-   "id": "sec-009-acknowledgements",
-   "number": null,
-   "title": "Acknowledgements",
-   "level": 1,
-   "page_start": 17,
    "page_end": 18,
-   "n_chars": 319,
-   "n_words": 53
-  },
-  {
-   "id": "sec-010-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 18,
-   "page_end": 18,
-   "n_chars": 1418,
-   "n_words": 251
+   "n_chars": 5641,
+   "n_words": 966,
+   "label_start": "14",
+   "label_end": "17"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 11,
-  "sections": 11,
-  "chars_total": 32747,
+  "toc_entries": 8,
+  "toc_inferred_entries": 8,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 9,
+  "chars_total": 33101,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 8,
-   "overlaid": 1,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -242,62 +456,67 @@
    },
    "sections": [
     {
-     "id": "sec-000-abstract",
-     "title": "Abstract",
+     "id": "sec-front-matter",
+     "title": "Front matter",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-001-introduction",
+     "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.724,
-     "coverage_ratio": 0.994,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-2-v-\u03bbv-\u00b5-1",
-     "title": "(V (\u03bb)+V (\u00b5)) 1",
-     "result": "no matching \\section"
+     "id": "sec-001-2-chiral-unitary-ensembles",
+     "title": "Chiral unitary ensembles",
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-003-2-utx",
-     "title": "(u(t)x)",
-     "result": "no matching \\section"
+     "id": "sec-002-21-asymptotics-of-orthogonal-polynomials",
+     "title": "Asymptotics of orthogonal polynomials",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-004-2-ux",
-     "title": "(ux)",
-     "result": "no matching \\section"
+     "id": "sec-003-22-universal-correlations",
+     "title": "Universal correlations",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-005-2-v-\u03bb2v-\u00b52-1",
-     "title": "(V (\u03bb2)+V (\u00b52)) 1",
-     "result": "no matching \\section"
+     "id": "sec-004-3-unitary-ensembles",
+     "title": "Unitary ensembles",
+     "prose_ratio": 0.251,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-006-2-uxj\u03b11",
-     "title": "(ux)J\u03b1\u22121",
-     "result": "no matching \\section"
+     "id": "sec-005-31-asymptotics-of-orthogonal-polynomials",
+     "title": "Asymptotics of orthogonal polynomials",
+     "prose_ratio": 0.508,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-007-2-ux-1",
-     "title": "(u\u2032x) = 1",
-     "result": "no matching \\section"
+     "id": "sec-006-32-universal-correlations",
+     "title": "Universal correlations",
+     "prose_ratio": 0.266,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-008-2-j\u03b13",
-     "title": "J\u03b1\u22123",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-009-acknowledgements",
-     "title": "Acknowledgements",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-010-references",
-     "title": "References",
-     "result": "no matching \\section"
+     "id": "sec-007-4-conclusion-and-speculation",
+     "title": "Conclusion and speculation",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.865,
+     "result": "overlaid",
+     "converter": "latex"
     }
    ]
   }
