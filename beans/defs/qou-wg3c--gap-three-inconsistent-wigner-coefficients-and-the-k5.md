@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-11T07:35:00Z
-updated_at: 2026-10-11T07:55:00Z
+updated_at: 2026-10-11T08:45:00Z
 parent: qou-8lxd
 ---
 
@@ -113,3 +113,13 @@ Since `w = dim_q^2/[4]!` and `dim_q = [4]!/H_q`, the hook product is
 
 The sharp question is no longer "which Wigner coefficient" but **which
 definition of `C_lambda` the corpus means**. Owner decision; nothing edited.
+
+
+---
+
+# 2026-10-11 — Option 3 applied (owner "1 2")
+
+Caveat authorNotes added to `prop:wigner-np-pairing`, `prop:wigner-coefficient-derivation`,
+`prop:wigner-2-coefficient`, `prop:mass-coefficient-shadow-price` and
+`prop:unified-iterative-correction`. No values, statements or Lean changed. Validate: valid
+(11 pre-existing warnings). Stays todo: which definition of C_lambda is meant is open.
